@@ -12,7 +12,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* [Cockpit > Managing assets > Assets hierarchy](/users-guide/cockpit/#managing-assets) in the *User guide* for more information about group objects.
+* [Cockpit > Managing assets > Assets hierarchy](/users-guide/cockpit/#managing-assets) in the *User guide* for information on the asset hierarchy, assets and groups.
 * [Administration > Managing permissions > Inventory roles](/users-guide/administration/#inventory-roles) in the *User guide* on how to assign inventory roles to groups of devices.
 * The [managed objects API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Managed-objects) for REST API methods concerning managed objects (devices or groups of devices).
 * The [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-control-API) for REST API methods concerning device management.

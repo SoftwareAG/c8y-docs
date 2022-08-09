@@ -36,12 +36,12 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* [Device management library > Firmware](/reference/device-management-library/#firmware) in the *Reference guide* for the device management library entry on firmware.
-* [Device management library > Software](/reference/device-management-library/#software) in the *Reference guide* for the device management library entry on software.
-* [Device management library > Configuration](/reference/device-management-library/#configuration) in the *Reference guide* for the device management library entry on configurations.
+* [Device management library > Firmware](/reference/device-management-library/#firmware) in the *Reference guide* for the device management library entry on the `c8y_Firmware` fragment used in managed objects.
+* [Device management library > Software](/reference/device-management-library/#software) in the *Reference guide* for the device management library entry on legacy software management via the `c8y_SoftwareList` fragment, software updates via the `c8y_SoftwareUpdate` fragment and advanced software management via the `c8y_SupportedOperations` and `c8y_SupportedSoftwareTypes` fragments used in managed objects.
+* [Device management library > Configuration](/reference/device-management-library/#configuration) in the *Reference guide* for the device management library entry on text-based configuration, file-based configuration and typed file-based configuration.
 * The [device credentials API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-credentials) for REST API methods concerning device credentials.
-* [Device management library > Device profile](/reference/device-management-library/#device-profile) in the *Reference guide* for the device management library entry on device profiles.
-* [Device integration using MQTT > Device certificates](/device-sdk/mqtt/#device-certificates) in the *Device SDK guide* for more information on device certificates in the context of MQTT.
+* [Device management library > Device profile](/reference/device-management-library/#device-profile) in the *Reference guide* for the device management library entry on the `c8y_DeviceProfile` fragment used in managed objects.
+* [Device integration using MQTT > Device certificates](/device-sdk/mqtt/#device-certificates) in the *Device SDK guide* for information on device certificates in the context of MQTT.
 {{< /c8y-admon-related >}}
 
 ### Overview

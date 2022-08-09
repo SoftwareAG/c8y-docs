@@ -5,7 +5,6 @@ layout: redirect
 ---
 
 {{< c8y-admon-related >}}
-* [Device management library > Device details](/reference/device-management-library/#device-details) in the *Reference guide* for the device management library entry on device details.
 * The [device control API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Device-control-API) for REST API methods concerning device management.
 {{< /c8y-admon-related >}}
 

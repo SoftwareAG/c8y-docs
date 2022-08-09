@@ -118,8 +118,7 @@ and be removed when that is done.
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
 For persistent subscriptions, this can result in notifications remaining in storage if never consumed by the application.
-However, unconsumed persistent notifications will be retained, and for high throughput scenarios this can result in notifications remaining in storage 
-if never consumed by the application.
+However, unconsumed persistent notifications will be retained, and for high throughput scenarios this can result in notifications remaining in storage if never consumed by the application.
 
 They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again (and so will not drain down persisted notifications).

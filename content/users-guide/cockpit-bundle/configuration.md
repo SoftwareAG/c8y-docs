@@ -6,15 +6,15 @@ layout: redirect
 
 {{< product-c8y-iot >}} offers you to configure custom Cockpit applications according to your individual needs.
 
-### Requirements
-
-To use this functionality, the following requirements have to be met:
+{{< c8y-admon-req >}}
+To use the Cockpit configuration functionality, the following requirements have to be met:
 
 * You must have ADMIN permission for the permission type "Application management".
 
 * The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to clone an application see [Managing applications > Custom application > To add a custom application](/users-guide/administration/#adding-applications).
 
 If these requirements are met, an **App configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
+{{/< c8y-admon-req >}}
 
 ### To configure a custom Cockpit application
 
@@ -45,7 +45,7 @@ In the **Home dashboard** section, you can select how the home dashboard, that i
 You can select if the customization of the home dashboard
 * is reflected throughout the entire tenant (the default)
 * is only reflected in the current custom application
-* is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory". 
+* is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory".
 
 #### Misc
 

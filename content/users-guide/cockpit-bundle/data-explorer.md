@@ -22,10 +22,11 @@ In the data explorer, data points (that is measurements or sensor data) can be v
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- Datapoints existing in the data point library are visible by anyone without the need of any permissions.
 - To view and select all available data points: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
 - To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for "Measurements" in the inventory roles
 - To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
+
+Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
 {{< /c8y-admon-req >}}
 
 The data explorer is available for all assets or just for a particular asset.

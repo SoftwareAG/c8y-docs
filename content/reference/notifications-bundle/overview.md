@@ -96,7 +96,7 @@ However, a different consumer name is passed as the `consumer` query string argu
 For example, instance 1 of the subscriber microservice could pass in `notification2/consumer?token=xyz&consumer=instance1` while instance 2 could use `notification2/consumer?token=XYZ&consumer=instance2`.
 Currently, determining the instance ID of a microservice replica is not supported by the {{< product-c8y-iot >}} microservice API. An external application with named instances can be used instead.
 
-### NonPersistent subscriptions
+### Non-persistent subscriptions
 
 When subscribing, it is possible to pass in an optional boolean `nonPersistent` query parameter with a value of true.
 Note that there is no need to mark a subscription as shared - only the token is marked as shared. 

@@ -22,7 +22,7 @@ Reports enable you to track applications, alarms, assets, and other data in a da
 ROLES & PERMISSIONS:
 
 - To view reports: READ permission for permission type "Inventory"
-- To edit reports: ADMIN permission for permission type "Inventory"
+- To edit a report: ADMIN permission for permission type "Inventory"
 - To add a new report: CREATE permission for permission type "Inventory"
 - To delete a report: ADMIN permission for permission type "Inventory"
 

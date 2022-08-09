@@ -104,8 +104,7 @@ Both the token and the subscriptions have `nonPersistent` but only the token has
 This changes the subscription to not persist notifications on replicated secondary storage for the named subscription.
 They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
 Note that there can be both nonPersistent and ordinary (i.e. persistent) subscriptions on a managed object with the same subscription name.
-These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `nonPersistent` equal to true or false to select
-the nonPeristent or (by default) the persistent topic.
+These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `nonPersistent` equal to true or false to select the non-persistent or (by default) the persistent topic.
 
 The messaging service will keep nonPersistent notifications in memory but will drop notifications if more than a configurable limit is reached per subscriber/consumer (default is 1000).
 

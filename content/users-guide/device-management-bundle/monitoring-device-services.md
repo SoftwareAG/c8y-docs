@@ -6,7 +6,7 @@ layout: redirect
 
 {{< c8y-admon-related >}}
 * The [alarms API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms.
-* [Device management library > Alarms](/reference/device-management-library/#alarms) in the *Reference guide* for the device management library entry on alarms.
+* [Device management library > Alarms](/reference/device-management-library/#alarms) in the *Reference guide* for the device management library entry on how to raise and clear alarms.
 * The [events API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Events) for REST API methods concerning events.
 * The [measurements API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Measurements) for REST API methods concerning measurements.
 * [Device management library > Measurements](/reference/device-management-library/#measurements) in the *Reference guide* for the device management library entry on measurements.

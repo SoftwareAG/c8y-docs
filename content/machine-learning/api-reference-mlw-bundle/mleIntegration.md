@@ -708,7 +708,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 200 - OK
 
 {
-    "id": "1601355085_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "castingDefect",
     "description": "test project",
     "createdAt": "Tue Sep 29 04:51:25 2020",
@@ -890,7 +890,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 200 - OK
 
 {
-    "id": "1601355085_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "castingDefect",
     "description": "test project",
     "createdAt": "Tue Sep 29 04:51:25 2020",
@@ -1062,7 +1062,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 200 - OK
 
 {
-    "id": "1601355085_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "castingDefect",
     "description": "test project",
     "createdAt": "Tue Sep 29 04:51:25 2020",

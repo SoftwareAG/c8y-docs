@@ -67,7 +67,7 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
          "type":"WORKFLOW",
          "message":"In Progress",
          "id":"160128911974_WorkFlow",
-         "projectID":"1600784593_Project",
+         "projectID":"0f981b26132d412097ee5e54a257ce9f",
          "tasksID":"160128911998_Tasks",
          "listOfModelAccuracy":[  
          ],
@@ -75,7 +75,7 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
          "pID":"140281294558976"
       }
    ],
-   "projectID":"1600784593_Project",
+   "projectID":"0f981b26132d412097ee5e54a257ce9f",
    "projectName":"Demo project",
    "recurrence":"ONE_TIME",
    "startDate":"2020-03-08",

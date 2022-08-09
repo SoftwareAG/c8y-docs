@@ -46,7 +46,7 @@ curl --location --request GET '{{url}}/service/mlw/projects'
 {
     "data": [
         {
-            "id": "1631773118_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial",
             "description": "Regression tests",
             "createdAt": "2021-09-16T06:18:38.193833Z",
@@ -128,7 +128,7 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 200 - OK
 
 {
-    "id": "1631774924_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T06:48:44.995815Z",
@@ -385,7 +385,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1631774924_Project/'
 201 - OK
 
 {
-    "id": "1631774924_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "ProjectNameChanged",
     "description": "A dummy project",
     "createdAt": "2021-09-16T06:48:44.995815Z",
@@ -705,7 +705,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 {
     "data": [
         {
-            "id": "1631773118_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial",
             "description": "Regression tests",
             "createdAt": "2021-09-16T06:18:38.193833Z",
@@ -818,7 +818,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 {
     "data": [
         {
-            "id": "1601507741_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial",
             "description": "Regression tests",
             "createdAt": "2021-09-16T06:18:38.193833Z",
@@ -841,7 +841,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
             }
         },
         {
-            "id": "1601507600_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial 2",
             "description": "Regression tests 2",
             "createdAt": "2021-09-16T06:18:30.193833Z",
@@ -946,7 +946,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 200 - OK
 
 {
-    "id": "1631779101_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",
@@ -1048,7 +1048,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 200 - OK
 
 {
-    "id": "1631779101_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",
@@ -1306,7 +1306,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/
 200 - OK
 
 {
-    "id": "1631774924_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T06:48:44.995815Z",
@@ -1500,7 +1500,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
 
 
 
-{ "id": "1631779101_Project",
+{ "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",
@@ -2072,7 +2072,7 @@ curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources
 200 - OK
 
 {
-    "id": "1631779101_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",

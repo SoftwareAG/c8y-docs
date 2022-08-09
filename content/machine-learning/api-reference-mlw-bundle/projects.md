@@ -959,7 +959,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
     "resources": {
         "data": [
             {
-                "id": "1631779109_0780_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "irisDataset.csv",
                 "description": "",
                 "createdAt": "2021-09-16T07:58:29.494787Z",
@@ -1061,7 +1061,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
     "resources": {
         "data": [
             {
-                "id": "1631779109_0780_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "irisDataset.csv",
                 "description": "",
                 "createdAt": "2021-09-16T07:58:29.494787Z",
@@ -1319,7 +1319,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/
     "resources": {
         "data": [
             {
-                "id": "1631777752_0720_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "irisDataset.csv",
                 "description": "",
                 "createdAt": "2021-09-16T07:35:52.294740Z",
@@ -1770,7 +1770,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 200 - OK
 
 {
-    "id": "1631781323_0128_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "samplePY.py",
     "description": "",
     "createdAt": "2021-09-16T08:35:23.743283Z",
@@ -1999,7 +1999,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/r
 {
     "message": "File updated successfully!",
     "data": {
-        "id": "1601422676_0095_Resource",
+        "id": "0f981b26132d412097ee5e54a257ce9f",
         "name": "sampleCode.py",
         "description": "",
         "createdAt": "Tue Sep 29 23:37:56 2020",
@@ -2090,7 +2090,7 @@ curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources
         "model": [],
         "code": [
             {
-                "id": "1631781425_0955_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "samplePY1.py",
                 "description": "",
                 "createdAt": "2021-09-16T08:37:05.724194Z",

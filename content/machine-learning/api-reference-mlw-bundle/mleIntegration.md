@@ -198,7 +198,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 200 - OK
 
 {
-    "id": "1601355165_0193_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "deployModel.pmml",
     "description": "",
     "createdAt": "Tue Sep 29 04:52:45 2020",
@@ -280,7 +280,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 200 - OK
 
 {
-    "id": "1601357305_0916_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "admsNNN_1601357289.onnx",
     "description": "",
     "createdAt": "Tue Sep 29 05:28:25 2020",
@@ -312,7 +312,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 200 - OK
 
 {
-    "id": "1601357604_0359_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "PPP.pipeline",
     "description": "",
     "createdAt": "Tue Sep 29 05:33:24 2020",
@@ -340,9 +340,9 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
     "mimeType": "application/PIPELINE",
     "extension": ".pipeline",
     "category": "Pipeline",
-    "preProcessingID": "1601357477_0219_Resource",
-    "modelID": "1601357305_0916_Resource",
-    "postProcessingID": "1601357477_0011_Resource",
+    "preProcessingID": "0f981b26132d412097ee5e54a257ce9f",
+    "modelID": "0f981b26132d412097ee5e54a257ce9f",
+    "postProcessingID": "0f981b26132d412097ee5e54a257ce9f",
     "deployed": true,
     "mleID": "PPP"
 }
@@ -463,7 +463,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 200 - OK
 
 {
-    "id": "1601355165_0193_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "deployModel.pmml",
     "description": "",
     "createdAt": "Tue Sep 29 04:52:45 2020",
@@ -545,7 +545,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 200 - OK
 
 {
-    "id": "1601357305_0916_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "admsNNN_1601357289.onnx",
     "description": "",
     "createdAt": "Tue Sep 29 05:28:25 2020",
@@ -576,7 +576,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 200 - OK
 
 {
-    "id": "1601357604_0359_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "PPP.pipeline",
     "description": "",
     "createdAt": "Tue Sep 29 05:33:24 2020",
@@ -604,9 +604,9 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
     "mimeType": "application/PIPELINE",
     "extension": ".pipeline",
     "category": "Pipeline",
-    "preProcessingID": "1601357477_0219_Resource",
-    "modelID": "1601357305_0916_Resource",
-    "postProcessingID": "1601357477_0011_Resource",
+    "preProcessingID": "0f981b26132d412097ee5e54a257ce9f",
+    "modelID": "0f981b26132d412097ee5e54a257ce8f",
+    "postProcessingID": "0f981b26132d412097ee5e54a257ce6f",
     "deployed": false,
     "mleID": "PPP"
 }
@@ -720,7 +720,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
     "resources": {
         "data": [
             {
-                "id": "1601359513_0301_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "admissions_test.csv",
                 "description": "",
                 "createdAt": "Tue Sep 29 06:05:13 2020",
@@ -753,7 +753,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
                 "category": "Data"
             },
             {
-                "id": "1601359589_0521_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "predicted_admissions_test_1601359589.csv",
                 "description": "",
                 "createdAt": "Tue Sep 29 06:06:29 2020",
@@ -789,7 +789,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
         ],
         "model": [
             {
-                "id": "1601355165_0193_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "deployModel.pmml",
                 "description": "",
                 "createdAt": "Tue Sep 29 04:52:45 2020",
@@ -902,7 +902,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
     "resources": {
         "data": [
             {
-                "id": "1614316005_0649_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "testDefectImage.jpg",
                 "description": "",
                 "createdAt": "Fri Feb 26 05:06:45 2021",
@@ -916,7 +916,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
                 "category": "Data"
             },
             {
-                "id": "1614323024_0177_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce8f",
                 "name": "predicted_testDefectImage_1614323024.json",
                 "description": "",
                 "createdAt": "Fri Feb 26 07:03:44 2021",
@@ -946,7 +946,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
         ],
         "model": [
             {
-                "id": "1601357305_0916_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce7f",
                 "name": "castingDefectModel_1614316284.onnx",
                 "description": "",
                 "createdAt": "Tue Sep 29 05:28:25 2020",
@@ -964,7 +964,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
         ],
         "code": [
             {
-                "id": "1614316005_0840_Resource",
+                "id": "0f981b26132d412097ee5e54a257cabf",
                 "name": "castingPreProcessingForNN.py",
                 "description": "",
                 "createdAt": "Fri Feb 26 05:06:45 2021",
@@ -979,7 +979,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
                 "deployed": false
             },
             {
-                "id": "1614316005_0402_Resource",
+                "id": "0f981b26132d412097ee5e54a257ccdf",
                 "name": "castingPostProcessingForNN.py",
                 "description": "",
                 "createdAt": "Fri Feb 26 05:06:45 2021",
@@ -996,7 +996,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
         ],
         "pipeline": [
             {
-                "id": "1614319009_0143_Resource",
+                "id": "0f981b26132d412097ee5e54a257cfgf",
                 "name": "PPP.pipeline",
                 "description": "",
                 "createdAt": "Fri Feb 26 05:56:49 2021",
@@ -1024,9 +1024,9 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
                 "mimeType": "application/PIPELINE",
                 "extension": ".pipeline",
                 "category": "Pipeline",
-                "preProcessingID": "1614316005_0840_Resource",
-                "modelID": "1614316842_0538_Resource",
-                "postProcessingID": "1614316005_0402_Resource",
+                "preProcessingID": "0f981b26132d412097ee5e54a257ce9f",
+                "modelID": "0f981b26132d412097ee5e54a257ce8f",
+                "postProcessingID": "0f981b26132d412097ee5e54a257ce7f",
                 "deployed": true,
                 "mleID": "PPP"
             }
@@ -1074,7 +1074,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
     "resources": {
         "data": [
             {
-                "id": "1601359513_0301_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "admissions_test.csv",
                 "description": "",
                 "createdAt": "Tue Sep 29 06:05:13 2020",
@@ -1107,7 +1107,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
                 "category": "Data"
             },
             {
-                "id": "1601360114_0707_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce8f",
                 "name": "predicted_admissions_test_1601360114.csv",
                 "description": "",
                 "createdAt": "Tue Sep 29 06:15:14 2020",
@@ -1141,7 +1141,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
         ],
         "model": [
             {
-                "id": "1601357305_0916_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce7f",
                 "name": "admsNNN_1601357289.onnx",
                 "description": "",
                 "createdAt": "Tue Sep 29 05:28:25 2020",

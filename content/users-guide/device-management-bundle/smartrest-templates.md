@@ -15,7 +15,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* [SmartREST 2.0](/reference/smartrest-two/) in the *Reference guide* for more information on SmartREST.
+* [SmartREST 2.0](/reference/smartrest-two/) in the *Reference guide* for details on the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
 * [Device integration using MQTT](/device-sdk/mqtt/) in the *Device SDK guide* for information on integrating devices via MQTT.
 {{< /c8y-admon-related >}}
 

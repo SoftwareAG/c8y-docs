@@ -11,6 +11,13 @@ helpcontent:
     Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group."
 ---
 
+{{< c8y-admon-related >}}
+- [Connecting devices](/users-guide/device-management#connecting-devices) for more information on connecting devices to the {{< product-c8y-iot >}} Cockpit
+- [Grouping devices](/users-guide/device-management#grouping-devices) for more information on grouping devices.
+- [Monitoring and controlling devices](/users-guide/device-management#monitoring-and-controlling-devices) for more details on managing devices in {{< product-c8y-iot >}}.
+
+
+
 <a name="assets"></a>
 ### Assets hierarchy
 
@@ -115,7 +122,7 @@ ROLES & PERMISSIONS in groups context:
 - To delete any group: ADMIN permission for permission type "Inventory"
 - To rename a group or change group description: ADMIN permission for permission type "Inventory"
 - To view specific groups: READ permissions for "Inventory" in the inventory roles
-- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles 
+- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles
 
 Note that global inventory permissions override inventory role permissions.
 {{< /c8y-admon-req >}}

@@ -76,7 +76,7 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
       {
          "status":"INITIALISING",
          "type":"NN",
-         "projectID":"1600784593_Project",
+         "projectID":"0f981b26132d412097ee5e54a257ce9f",
          "log":{
 
          },
@@ -94,7 +94,7 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
          "pID":"1394"
       }
    ],
-   "projectID":"1600784593_Project",
+   "projectID":"0f981b26132d412097ee5e54a257ce9f",
    "projectName":"blah project",
    "startDate":"2020-03-08",
    "startTimeH":"18",

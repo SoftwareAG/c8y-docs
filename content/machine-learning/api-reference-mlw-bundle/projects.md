@@ -572,7 +572,7 @@ curl --request GET "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9
 404 - Not Found
 
 {
-    "message": "Project with id '1644309674_Project' not found.",
+    "message": "Project with id '0f981b26132d412097ee5e54a257ce9f' not found.",
     "errorCode": 404,
     "exception": "Project not found"
 }
@@ -772,7 +772,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d41209
 
 {
     "error": "general/internalError",
-    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project delete not allowed."
+    "message": "Running task(s) found associated with projectId: 0f981b26132d412097ee5e54a257ce9f. Project delete not allowed."
 }
 ```
 
@@ -907,7 +907,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d41209
 
 {
     "error": "general/internalError",
-    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project version delete not allowed.",
+    "message": "Running task(s) found associated with projectId: 0f981b26132d412097ee5e54a257ce9f. Project version delete not allowed.",
 }
 ```
 
@@ -988,8 +988,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
                 ],
                 "editedAt": "",
                 "type": "CSV",
-                "url": "./MLW/1631779101_Project/Data/irisDataset.csv",
-                "downloadUrl": "/download/1631779101_Project/Data/irisDataset.csv",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
                 "size": 2878,
                 "mimeType": "text/csv",
                 "extension": ".csv",
@@ -1090,8 +1090,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
                 ],
                 "editedAt": "",
                 "type": "CSV",
-                "url": "./MLW/1631779101_Project/Data/irisDataset.csv",
-                "downloadUrl": "/download/1631779101_Project/Data/irisDataset.csv",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
                 "size": 2878,
                 "mimeType": "text/csv",
                 "extension": ".csv",
@@ -1348,8 +1348,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
                 ],
                 "editedAt": "",
                 "type": "CSV",
-                "url": "./MLW/1631774924_Project/Data/irisDataset.csv",
-                "downloadUrl": "/download/1631774924_Project/Data/irisDataset.csv",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
                 "size": 2878,
                 "mimeType": "text/csv",
                 "extension": ".csv",
@@ -1520,7 +1520,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'properties': [],
     'editedAt': '',
     'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Orig.jpg',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/MD.Orig.jpg',
     'size': 39675,
     'mimeType': 'image/jpeg',
     'extension': '.jpg',
@@ -1532,7 +1532,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'properties': [],
     'editedAt': '',
     'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Diet.jpg',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/MD.Diet.jpg',
     'size': 42146,
     'mimeType': 'image/jpeg',
     'extension': '.jpg',
@@ -1549,7 +1549,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
       'value': ['Dense3', 'PredictedClass']}],
     'editedAt': '',
     'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600753267.json',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/predicted_MD_1600753267.json',
     'size': 222,
     'mimeType': 'application/json',
     'extension': '.json',
@@ -1561,7 +1561,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'properties': [],
     'editedAt': '',
     'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/sample.zip',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/sample.zip',
     'size': 22655457,
     'mimeType': 'application/zip',
     'extension': '.zip',
@@ -1578,7 +1578,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
       'value': ['Dense3', 'PredictedClass']}],
     'editedAt': '',
     'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600753576.json',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/predicted_MD_1600753576.json',
     'size': 235,
     'mimeType': 'application/json',
     'extension': '.json',
@@ -1596,7 +1596,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
       'value': ['target', 'gpa', 'gre']}],
     'editedAt': '',
     'type': 'CSV',
-    'url': './MLW/1600750565_Project/Data/admissions.csv',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/admissions.csv',
     'size': 17192,
     'mimeType': 'text/csv',
     'extension': '.csv',
@@ -1608,7 +1608,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Model/sampleNewDemo_1600751365.onnx',
     'size': 8296336,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
@@ -1621,7 +1621,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePost.py',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePost.py',
     'size': 260,
     'mimeType': 'text/x-python',
     'extension': '.py',
@@ -1633,7 +1633,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePre.py',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePre.py',
     'size': 278,
     'mimeType': 'text/x-python',
     'extension': '.py',
@@ -1653,7 +1653,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
       'key': 'postProcessingID'}],
     'editedAt': '',
     'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/samplePipe.pipeline',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Pipeline/samplePipe.pipeline',
     'size': 134,
     'mimeType': 'application/PIPELINE',
     'extension': '.pipeline',
@@ -1667,7 +1667,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
     'properties': [],
     'editedAt': '',
     'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/NN-Designer/sample.architecture',
     'size': 17176,
     'mimeType': 'application/ARCHITECTURE',
     'extension': '.architecture',
@@ -1777,8 +1777,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
     "properties": [],
     "editedAt": "2021-09-16T08:35:23.743283Z",
     "type": "PY",
-    "url": "./MLW/1631779101_Project/Code/samplePY.py",
-    "downloadUrl": "/download/1631779101_Project/Code/samplePY.py",
+    "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePY.py",
+    "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Code/samplePY.py",
     "size": 0,
     "mimeType": "application/CODE",
     "extension": ".py",
@@ -1902,7 +1902,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
 {
     "data": {
         "name": "sampleNotebook1.ipynb",
-        "path": "1601283001_Project/Code/sampleNotebook1.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/sampleNotebook1.ipynb",
         "last_modified": "2020-09-29T23:02:37.279122Z",
         "created": "2020-09-29T23:02:37.279122Z",
         "content": {
@@ -1919,7 +1919,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
     },
     "session": {
         "id": "bce72e99-6e7b-47dd-b236-2852936147dd",
-        "path": "1601283001_Project/Code/sampleNotebook1.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/sampleNotebook1.ipynb",
         "name": "sampleNotebook1",
         "type": "notebook",
         "kernel": {
@@ -1930,7 +1930,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             "connections": 1
         },
         "notebook": {
-            "path": "1601283001_Project/Code/sampleNotebook1.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/sampleNotebook1.ipynb",
             "name": "sampleNotebook1"
         }
     }
@@ -2006,7 +2006,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee
         "properties": [],
         "editedAt": "Tue Sep 29 23:37:56 2020",
         "type": "PY",
-        "url": "./MLW/1601283001_Project/Code/sampleCode.py",
+        "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Code/sampleCode.py",
         "size": 32,
         "mimeType": "application/CODE",
         "extension": ".py",
@@ -2097,8 +2097,8 @@ curl --request DELETE "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257
                 "properties": [],
                 "editedAt": "2021-09-16T08:37:05.724194Z",
                 "type": "PY",
-                "url": "./MLW/1631779101_Project/Code/samplePY1.py",
-                "downloadUrl": "/download/1631779101_Project/Code/samplePY1.py",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePY1.py",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Code/samplePY1.py",
                 "size": 0,
                 "mimeType": "application/CODE",
                 "extension": ".py",

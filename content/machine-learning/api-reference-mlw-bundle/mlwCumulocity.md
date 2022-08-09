@@ -279,7 +279,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
             "executedAt": "Mon Sep 28 10:06:49 2020",
             "deviceID": "446",
             "projectID": "0f981b26132d412097ee5e54a257ce9f",
-            "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+            "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/sensorData2.csv",
             "pID": "987",
             "status": "In Progress"
         }

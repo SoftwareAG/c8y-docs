@@ -50,7 +50,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
 {
     "data": {
         "name": "untitled.ipynb",
-        "path": "1601355085_Project/Code/untitled.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
         "last_modified": "2020-09-30T07:31:59.062747Z",
         "created": "2020-09-30T07:31:59.062747Z",
         "content": {
@@ -67,7 +67,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
     },
     "session": {
         "id": "e2ba72b2-2daf-4aa6-851d-1b3e491cc2f3",
-        "path": "1601355085_Project/Code/untitled.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
         "name": "untitled",
         "type": "notebook",
         "kernel": {
@@ -78,7 +78,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             "connections": 0
         },
         "notebook": {
-            "path": "1601355085_Project/Code/untitled.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
             "name": "untitled"
         }
     }
@@ -150,7 +150,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee
 
 {
     "name": "untitled.ipynb",
-    "path": "1601355085_Project/Code/untitled.ipynb",
+    "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
     "last_modified": "2020-09-30T07:40:02.608464Z",
     "created": "2020-09-30T07:40:02.608464Z",
     "content": null,
@@ -245,7 +245,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
     "data": [
         {
             "id": "e1b8e814-36c2-4e5a-ba2a-e3524fe2d03c",
-            "path": "1600784593_Project/Code/untitled.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
             "name": "untitled",
             "type": "notebook",
             "kernel": {
@@ -256,7 +256,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
                 "connections": 0
             },
             "notebook": {
-                "path": "1600784593_Project/Code/untitled.ipynb",
+                "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
                 "name": "untitled"
             },
             "projectID": "0f981b26132d412097ee5e54a257ce9f",
@@ -265,7 +265,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
         },
         {
             "id": "e2ba72b2-2daf-4aa6-851d-1b3e491cc2f3",
-            "path": "1601355085_Project/Code/untitled.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
             "name": "untitled",
             "type": "notebook",
             "kernel": {
@@ -276,7 +276,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
                 "connections": 0
             },
             "notebook": {
-                "path": "1601355085_Project/Code/untitled.ipynb",
+                "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
                 "name": "untitled"
             },
             "projectID": "0f981b26132d412097ee5e54a257ce9f",

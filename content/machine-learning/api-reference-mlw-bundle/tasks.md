@@ -167,7 +167,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks' \
             "executedAt": "Mon Sep 28 10:06:49 2020",
             "deviceID": "446",
             "projectID": "0f981b26132d412097ee5e54a257ce9f",
-            "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+            "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/sensorData2.csv",
             "pID": "987",
             "status": "COMPLETED",
             "dateFrom": "2020-07-03T06:00:00.000Z",
@@ -376,7 +376,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
                     "id": "1600941378153",
                     "executedAt": "Thu Sep 24 09:56:18 2020",
                     "pID": "68",
-                    "fileName": "./MLW/1600784593_Project/Model/cast_1600941378.onnx",
+                    "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Model/cast_1600941378.onnx",
                     "completedAt": "Thu Sep 24 11:03:41 2020",
                     "fileSaved": true
                 }
@@ -501,7 +501,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
     "executedAt": "Mon Sep 28 10:06:49 2020",
     "deviceID": "446",
     "projectID": "0f981b26132d412097ee5e54a257ce9f",
-    "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+    "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/sensorData2.csv",
     "pID": "987",
     "status": "COMPLETED",
     "dateFrom": "2020-07-03T06:00:00.000Z",

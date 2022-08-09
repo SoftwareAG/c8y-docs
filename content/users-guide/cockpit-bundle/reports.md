@@ -18,6 +18,16 @@ helpcontent:
 
 Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the asset hierarchy.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view reports: READ permission for permission type "Inventory"
+- To edit a report: ADMIN permission for permission type "Inventory"
+- To add a new report: CREATE permission for permission type "Inventory"
+- To delete a report: ADMIN permission for permission type "Inventory"
+
+{{< /c8y-admon-req >}}
+
 To show all reports, click **Reports** in the navigator.
 
 In the **Reports** page you will find a list displaying all reports with their names, an optional description and a navigator toggle.

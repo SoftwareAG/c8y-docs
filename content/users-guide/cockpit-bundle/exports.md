@@ -13,9 +13,18 @@ aliases:
   - /users-guide/cockpit/#export
 ---
 
-
-
 The export functionality lets you export specific data to either CSV or Excel files.
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view exports: READ permission for permission type "Inventory"
+- To edit an export: ADMIN permission for permission type "Inventory"
+- To add a new export: CREATE or ADMIN permission for permission type "Inventory"
+- To schedule an export: ADMIN permission for permission type "Schedule export"
+- To duplicate an export: ADMIN permission for permission type "Inventory"
+- To delete an export: ADMIN permission for permission type "Inventory"
+  {{< /c8y-admon-req >}}
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 

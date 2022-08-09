@@ -15,6 +15,10 @@ helpcontent:
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 
+{{< c8y-admon-req >}}
+The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
+{{/< c8y-admon-req >}}
+
 Smart rules are parameterized. There are two sources for parameters:
 
 - **Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
@@ -27,8 +31,6 @@ There are two different types of smart rules:
   Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
 
 {{< c8y-admon-req >}}
-The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
-
 ROLES & PERMISSIONS for global smart rules:
 
 - To view a global smart rules: READ permission for permission type "Global smart rules" or "CEP management" and READ permission for permission type "Inventory"
@@ -43,8 +45,6 @@ ROLES & PERMISSIONS for global smart rules:
   Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
 
 {{< c8y-admon-req >}}
-The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
-
 ROLES & PERMISSIONS for local smart rules:
 
 - To view local smart rules: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles

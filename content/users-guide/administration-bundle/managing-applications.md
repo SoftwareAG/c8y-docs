@@ -260,11 +260,11 @@ In the **Properties** tab, each application will show the following information,
 
 ### Application plugins
 
-To display a grid of all plugins installed on an application click on the **Plugins** tab.
+Switch to the **Plugins** tab to view all plugins installed on an application. 
 
 <img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
 
-In the **Plugins** tab one can extend the current application by installing or removing plugins. Additionally the view offers a grid view of all currently installed plugins.
+In the **Plugins** tab you can manage all currently installed plugins. 
 
 <a name="editing-and-removing"></a>
 ### To edit an application
@@ -324,27 +324,27 @@ The selected application will be reactivated by removing the respective files fr
 The Microfrontends feature offers better shareability and reusability of UI features across the different applications in the form of packages. With Microfrontends, UI features can now be developed as packages and added to an application without coding knowledge. Users have the ability to develop two types of applications:
 
 - **Plugins** can be used to extend existing applications without the need of re-building the application.
-- **Blueprints** are compositions of multiple UI functionalities which can be hosted by the platform and can be used to create a new applications from scratch.
+- **Blueprints** are compositions of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
 
-Packages are compositions of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. They are located in the "Packages" tab in the "Applications" page.
+Packages are compositions of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. They are located in the **Packages** tab in the **Applications** page.
 
-To add a new package click on the "Add Package" button.
+To add a new package click **Add Package**.
 
 <img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
 
-By clicking on a package, one can view additional data related to the package such as "Package overview" which includes description and images as well as some meta information which is taken from the "package.json".
+By clicking on a package, you can see the package details such as **Package overview** which includes a description and images as well as some meta information which is taken from the *package.json*.
 
-Additionally, it is possible to view all available plugins within the selected package on the right hand side. To install a plugin simply click on the "Install plugin" button and select the desired application.  
+Additionally, it is possible to view all available plugins within the selected package at the right. To install a plugin click **Install plugin** and select the desired application.  
 
 <img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
 
-In the archives tab, one can see all previously uploaded binaries related to the current package. The binaries displayed in that view can be downloaded by clicking on the three dots next to each archive.
+In the **Archives** tab, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded by clicking on the three dots next to each archive.
 
 <img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
 
-In the versions tab it is possible to select or upload different versions. Versions will indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version it is possible to observe additional information such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be chosen in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+In the **Versions** tab you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
-To switch to a different version click on the three dots next to the desired version and click "Set as latest". To delete a version click "Delete" in the external menu.
+To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
 
 <img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Archive view">
 

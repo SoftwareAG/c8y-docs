@@ -169,10 +169,8 @@ For details on the fields, see also [Application properties](#application-proper
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. Select **Install from available packages**.
-<br><br>
-<img src="/images/users-guide/Administration/admin-application-blueprint-install.png" alt="Blueprint package">
-<br><br>
-3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
+3. Select the desired package. 
+4. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
 5. Enter an application key, used to identify this application.
 6. Enter the path where the application can be reached.
 7. Click **Save** to create the application.
@@ -321,16 +319,16 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Packages
 
-The Microfrontends feature offers better shareability and reusability of UI features across the different applications in the form of packages. With Microfrontends, UI features can now be developed as packages and added to an application without coding knowledge. Users have the ability to develop two types of applications:
+The Microfrontends feature offers better shareability and reusability of UI features across the different applications in the form of packages. With Microfrontends, UI features can now be developed as packages and added to an application without coding knowledge. You can develop two types of applications:
 
 - **Plugins** can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are compositions of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
 
 Packages are compositions of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. They are located in the **Packages** tab in the **Applications** page.
 
-To add a new package click **Add Package**.
-
 <img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
+
+To add a new package click **Add Package**.
 
 By clicking on a package, you can see the package details such as **Package overview** which includes a description and images as well as some meta information which is taken from the *package.json*.
 

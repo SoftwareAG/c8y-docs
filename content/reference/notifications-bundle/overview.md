@@ -84,8 +84,8 @@ This can be achieved by creating a token with a subscription and subscriber name
 
 Notifications (messages) will be distributed among all connections to the Notification 2.0 WebSocket endpoint.
 They all use a token for the same subscription and the same subscriber, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens (for example if the tokens can not be shared over the network).
-The subscription name defines the topic messages are published on, while the subscriber identifies the backend (north side) application that's usually used.
-The application can consist of more than one instance running in parallel in the shared use case.
+The subscription name defines the topic messages are published on, while the subscriber identifies the backend (north side) application that will consume the notifications.
+The application can consist of more than one instances or "consumers" running in parallel in the shared use case.
 
 Notifications will be delivered in order with respect to the notification generating device.
 The notifications will be delivered to the same application instance, except when a new instance or a failure changes the application topology.

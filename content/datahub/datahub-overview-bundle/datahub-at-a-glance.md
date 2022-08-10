@@ -56,7 +56,7 @@ Offloading refers to moving data from the Operational Store of {{< product-c8y-i
 * Build a low-cost long-term archive of data.
 * Separate analytical workloads from operational workloads.
 
-The starting point is one of the base {{< product-c8y-iot >}} collections, such as the measurements collection, that is to be offloaded into the data lake. Once an offloading pipeline for this collection has been configured and started, a couple of actions take place.
+The starting point is one of the {{< product-c8y-iot >}} base collections, such as the measurements collection, that is to be offloaded into the data lake. Once an offloading pipeline for this collection has been configured and started, a couple of actions take place.
 
 {{< c8y-admon-info >}}
 {{< product-c8y-iot >}} DataHub only supports offloading for the following {{< product-c8y-iot >}} base collections: **alarms**, **events**, **inventory**, **measurements**. Offloading of other collections is currently not supported.
@@ -71,7 +71,7 @@ The mapping automatically extracts a standard set of attributes from each entity
 As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake. Apache Parquet is a column-based storage format which enables compression and efficient data fetching. These Parquet files are managed in a folder structure based on a temporal hierarchy, because analytical queries commonly have a temporal background. For example, compute the average oil pressure of last month. In order to ensure a compact layout of the Parquet files, {{< product-c8y-iot >}} DataHub also regularly runs a compaction algorithm over these files in the background, which combines multiple smaller files in larger files. As the data is stored in a time-based hierarchical manner in the data lake, {{< product-c8y-iot >}} DataHub can efficiently prune partitions. In addition, queries can explicitly leverage this temporal structure to increase query performance.
 
 {{< c8y-admon-important >}}
-You must not modify the data lake contents as this will corrupt your offloading pipelines and neither data consistency nor completeness can be guaranteed any more.
+You must not modify the folders in the data lake being created by {{< product-c8y-iot >}} DataHub as this will corrupt your offloading pipelines and neither data consistency nor completeness can be guaranteed any more.
 {{< /c8y-admon-important >}}
 
 The scheduler of {{< product-c8y-iot >}} DataHub runs the offloading pipelines in a periodic manner. The UI shows for each pipeline the corresponding schedule. Within each of these pipeline executions, newly arrived data is extracted from the {{< product-c8y-iot >}} collection and transformed and stored in the same way as described above. These incremental offloading tasks are designed to ensure a loss-free and duplicate-free offloading from the collection. For example, if one offloading execution fails, the next execution will automatically pick up the increments the failed one should have processed.

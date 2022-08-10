@@ -53,7 +53,7 @@ You might also see a folder named *c8y_cdh_temp*. The folder is used for {{< pro
 
 #### Spaces
 
-A space in Dremio helps in organizing your data sets. {{< product-c8y-iot >}} DataHub auto-configures a space which is named `YourTenantIdSpace`, for example, `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections), for the inventory, events, and alarms collections there is a pair of preconfigured views providing either all or latest data.
+A space in Dremio helps in organizing your data sets. {{< product-c8y-iot >}} DataHub auto-configures a space which is named `YourTenantIdSpace`, for example, `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections), for the inventory, events, and alarms collections there are preconfigured views providing either all or latest data.
 
 #### Job history
 

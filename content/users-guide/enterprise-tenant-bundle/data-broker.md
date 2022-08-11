@@ -21,6 +21,10 @@ Data broker lets you share data selectively with other tenants. You can share:
 - measurements,
 - operations.
 
+{{< c8y-admon-req >}}
+To be able to use this feature, your tenant must be subscribed to the application “feature-broker”.
+{{< /c8y-admon-req >}}
+
 Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
 <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >

@@ -17,7 +17,7 @@ helpcontent:
 - [Monitoring and controlling devices](/users-guide/device-management#monitoring-and-controlling-devices) for more details on managing devices in {{< product-c8y-iot >}}.
 - [Protocol integration guide](/guides/protocol-integration/#overview) for more information on using protocols in {{< product-c8y-iot >}}.
 - [Web SDK guide](/guides/web/#overview) for more information on working with Web SDK in the {{< product-c8y-iot >}} environment.
-
+{{< /c8y-admon-related >}}
 
 <a name="assets"></a>
 ### Assets hierarchy

@@ -15,6 +15,11 @@ For dedicated and self-hosted instances, the Messaging Service and Notifications
 
 Please contact [product support](/welcome/contacting-support/) to inquire about using the Messaging Service and Notifications 2.0 capabilities in your {{< product-c8y-iot >}} environment.
 See the *Messaging Service - Installation & operations guide* for further technical details of the configuration required, but note that these tasks can only be performed by a {{< product-c8y-iot >}} platform operator, not by a normal user.
+
+ROLES & PERMISSIONS:
+
+* To view and manage Notifications 2.0 subscriptions (read, create, delete): ADMIN permission for the permission type "Notification 2". 
+
 {{< /c8y-admon-req >}}
 
 Notifications 2.0 improves upon the [Real-time notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) by providing stronger delivery semantics and ordering guarantees.

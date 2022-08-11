@@ -63,7 +63,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
    "individualTasks":[
       {
          "type":"CODE",
-         "projectID":"1600784593_Project",
+         "projectID":"0f981b26132d412097ee5e54a257ce9f",
          "tasksID":"160136083625_Tasks",
          "taskName":"script1",
          "id":"160136083614_Tasks",
@@ -72,7 +72,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
          "status":"RUNNING"
       }
    ],
-   "projectID":"1600784593_Project",
+   "projectID":"0f981b26132d412097ee5e54a257ce9f",
    "projectName":"blah project",
    "startDate":"2020-03-08",
    "startTimeH":"18",

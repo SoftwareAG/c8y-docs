@@ -52,7 +52,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks' \
             "type": "C8YDATA",
             "cronExpression": "",
             "status": "Not Scheduled",
-            "projectID": "1601283001_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "projectName": "ExampleProject",
             "properties": [
                 {
@@ -166,8 +166,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks' \
             "type": "C8YDATA",
             "executedAt": "Mon Sep 28 10:06:49 2020",
             "deviceID": "446",
-            "projectID": "1601283001_Project",
-            "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
+            "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/sensorData2.csv",
             "pID": "987",
             "status": "COMPLETED",
             "dateFrom": "2020-07-03T06:00:00.000Z",
@@ -176,7 +176,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks' \
             "fileSaved": true
         }
     ],
-    "projectID": "1601283001_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "ExampleProject",
     "properties": [
         {
@@ -282,7 +282,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
                 "1600941378153": {
                     "status": "COMPLETED",
                     "type": "NN",
-                    "projectID": "1600784593_Project",
+                    "projectID": "0f981b26132d412097ee5e54a257ce9f",
                     "log": {
                         "ARCH_READ": {
                             "timestamp": "2020-09-24 09:56:18.299939",
@@ -376,12 +376,12 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
                     "id": "1600941378153",
                     "executedAt": "Thu Sep 24 09:56:18 2020",
                     "pID": "68",
-                    "fileName": "./MLW/1600784593_Project/Model/cast_1600941378.onnx",
+                    "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Model/cast_1600941378.onnx",
                     "completedAt": "Thu Sep 24 11:03:41 2020",
                     "fileSaved": true
                 }
             },
-            "projectID": "1600784593_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "projectName": "blah project",
             "startDate": "2020-09-24",
             "startTimeH": "09",
@@ -500,8 +500,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
     "type": "C8YDATA",
     "executedAt": "Mon Sep 28 10:06:49 2020",
     "deviceID": "446",
-    "projectID": "1601283001_Project",
-    "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
+    "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/sensorData2.csv",
     "pID": "987",
     "status": "COMPLETED",
     "dateFrom": "2020-07-03T06:00:00.000Z",
@@ -631,7 +631,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/tas
             "cronExpression": "",
             "status": "Not Scheduled",
             "individualTasks": [],
-            "projectID": "1601283001_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "projectName": "ExampleProject",
             "properties": [
                 {

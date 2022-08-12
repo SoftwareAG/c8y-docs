@@ -210,11 +210,11 @@ The entered **Default value** has to adhere to all validations provided beforeha
   If you want to upload the blueprint for a building,you must name the custom property "Building blueprint" and specify the file type of the blueprint file. When you create the asset, you can upload the respective file. Once the asset is created, you can view this file for future reference.
 
 
-##### Types of Custom properties
+### Types of Custom properties
 
 Custom properties are of 2 types.
 
-* **Simple Custom property**:
+* **Simple custom property**:
 
 If an attribute consists of a single key value pair, then it is a Simple custom property.
 
@@ -225,7 +225,7 @@ If an attribute consists of a single key value pair, then it is a Simple custom 
  If the custom property is named "Building color", you must use the key "building_color" with the Default value being "white".
 
 
-* **Complex Custom property**:
+* **Complex custom property**:
 
  A complex custom property consists of multiple key value pairs, meaning it contains a root object followed by one or more key value pairs. You can select the complex custom property option by turning on the toggle. If you turn on the toggle, you must define each key value pair as well as providing a Type for each pair.
 

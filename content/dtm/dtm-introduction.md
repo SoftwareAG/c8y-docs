@@ -8,7 +8,7 @@ Welcome to the {{< product-c8y-iot >}} Digital Twin Manager (DTM) application.
 
 The Digital Twin Manager (DTM) application allows you to create and manage assets around your physical connected devices in {{< product-c8y-iot >}} using a digital representation of a physical hierarchy of assets and devices. Here, assets can be used to structure and describe devices in logical hierarchies as encountered in the real world environment to help with visualizing the hierarchy in a digital setting.
 
-Once the Asset hierarchy is created in DTM, the hierarchy can be applied to other applications such as OEE or Machine portal. It would save a lot of time and efforts, as the hierarchy is created only once and can be used directly in other {{< product-c8y-iot >}} hosted applications.
+Once the asset hierarchy is created in DTM, the hierarchy can be applied to other applications such as OEE or Machine portal. It would save a lot of time and efforts, as the hierarchy is created only once and can be used directly in other {{< product-c8y-iot >}} hosted applications.
 
 Devices for the DTM application are created using the {{< product-c8y-iot >}} Device Management application.
 For details on the Device Management application, see (Device Management)[/guides/users-guide/device-management-bundle/#overview] in the *User guide*.

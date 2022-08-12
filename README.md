@@ -50,8 +50,7 @@ layout: root # don't change
 weight: 90 # order the section in the section dropdown in ascending order
 ---
 ```
-<!-- TODO: fix broken link -->
-Grab the icon classes in the [styleguide](http://styleguide.cumulocity.com/icons/)
+Grab the icon classes in the [Styleguide](https://styleguide.cumulocity.com/#/icons/cumulocity)
 
 ### 2. Add the section root directory
 

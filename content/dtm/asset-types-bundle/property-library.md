@@ -174,17 +174,17 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
 ##### Enumeration
 
-  If you want to choose a value from the drop-down menu during the asset creation, then select **Type** as **Enumeration** when creating the custom property.
+To choose a value from the drop-down menu during the asset creation, then select **Type** as **Enumeration** when creating the custom property.
 
-  When you select **Enumeration** as the custom property **Type**, a second field appears below. Here, enter all desired information separated by a comma.
+When you select **Enumeration** as the custom property **Type**, a second field appears below. Here, enter all desired information separated by a comma.
 
-   During asset creating, these values appear as menu options in the drop-down menu. Select one of the options to initialize the custom property with that option.
+During asset creating, these values appear as menu options in the drop-down menu. Select one of the options to initialize the custom property with that option.
 
-  **Example:**
+**Example:**
 
-   If you create a custom property for "building color" and the color must be either black, white or grey, you have to provide these options separated by a colon when creating the custom property.
+If you create a custom property for "building color" and the color must be either black, white or grey, you have to provide these options separated by a colon when creating the custom property.
 
-   ![Property-enum](/images/dtm/custom-property/dtm-property-library-type-enum.png)
+![Custom property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
 
 
@@ -207,7 +207,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
  **Example:**
 
-  If you want to upload the blueprint for a building,you must name the custom property "Building blueprint" and specify the file type of the blueprint file. When you create the asset, you can upload the respective file. Once the asset is created, you can view this file for future reference.
+To upload the blueprint for a building, you must name the custom property "Building blueprint" and specify the file type of the blueprint file. When you create the asset, you can upload the respective file. Once the asset is created, you can view this file for future reference.
 
 
 ### Types of Custom properties
@@ -249,9 +249,6 @@ In case of validation issues, the respective fields are also highlighted red and
 {{< /c8y-admon-info>}}
 
 ![Property-validation](/images/dtm/custom-property/dtm-property-library-validation-issues.png)
-
-
-If you want to cancel the creation of a new custom property, click **Cancel** at the bottom. In this case, you do not receive a notification and the **Add new property** screen closes.
 
 Once the custom properties are created, they are listed on the left. For simple custom properties you see the **Type** as well as the labels. For complex custom properties you see the **Object** against the labels.
 

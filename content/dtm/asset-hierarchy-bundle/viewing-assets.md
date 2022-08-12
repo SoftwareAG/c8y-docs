@@ -29,16 +29,16 @@ Expand the hierarchy on the leftside navigation and select the desired asset to 
 
 The fields that are editable are marked using an **Edit icon** against the fields.
 
-If you want to modify any of the asset details, click **Edit icon**, enter new details and save the same.
+To modify any of the asset details, click **Edit icon**, enter new details and save the same.
 
 
 
 ### To delete an asset
 
-If you want to delete the subasset or device in the hierarchy, then click the **Delete icon** against the subasset or device.
+To delete the subasset or device in the hierarchy, click the **Delete** icon next to the subasset or device.
 
 {{< c8y-admon-info>}}
-**Delete icon** appears on hover against each row under Subassets section.
+**Delete icon** appears on hover against each row under the subassets section.
 {{< /c8y-admon-info>}}
 
 On click of the **Delete icon**, a confirmation pop-up is displayed, asking if you want to delete the asset or device.

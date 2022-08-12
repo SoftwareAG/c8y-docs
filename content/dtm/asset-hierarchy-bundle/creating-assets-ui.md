@@ -49,7 +49,7 @@ Root asset type is an asset type which is at the top of hierarchy and does not h
 
 Next, the asset hierarchy is displayed in the left tab, with the respective dialog window opening in the right tab. Fill out all the mandatory field labeled "required" to move to the next section.
 
-You also have the option of adding a description or assigning devices to your root asset. If you want to add more than one root asset, click the **Add** button.
+You also have the option of adding a description or assigning devices to your root asset. To add more than one root asset, click the **Add** button.
 The other building block to your asset are the **custom properties**. Here you find all [custom properties](/dtm/asset-types/#property-library) assigned to the asset type that you create. Fill in the required information.
 
 {{< c8y-admon-info>}}
@@ -74,7 +74,7 @@ If there are validation errors on the page, they are indicated by red highlights
 
 **Example:**
 
-If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** drop down menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. If you want to add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
+If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** drop down menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. In order to add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
 
 Click **Next** to see the next lower asset level, for example, "Floor". Fill out all required fields. Here, you also have the option to add numerous assets on this level. Click **Next**.
 
@@ -161,7 +161,7 @@ Click **Assign devices** in the **New asset** page. This opens a new dialog wind
 
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
 
-If you want to add a new device, you must add it through the **Device Management** application. For more details refer to the [Device Management](/users-guide/device-management/#connecting-devices) section in the *User guide*.
+To add a new device, you must add it through the **Device Management** application. For more details refer to the [Device Management](/users-guide/device-management/#connecting-devices) section in the *User guide*.
 
 {{< c8y-admon-info>}}
 
@@ -207,19 +207,17 @@ Click **Add** on the bottom to add the asset for the second floor.
 
 ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
-If you want to delete an added asset template, click the **Delete** icon on the top right.
+To delete an added asset template, click the **Delete** icon on the top right.
 
 {{< c8y-admon-info>}}
 **Delete** icon appears on hover.
 {{< /c8y-admon-info>}}
 
-If you want to modify any of the details for an asset on the previous screen during asset hierarchy creation, click **Previous**.
-
-If you want to cancel the creation of the asset, click **Cancel**.
+To modify any of the details for an asset on the previous screen during asset hierarchy creation, click **Previous**.
 
 You can track your progress with the green check marks on the asset hierarchy levels on the left.
 
-If you want to modify any of the assets, navigate to the respective asset page using the **Previous** and **Next** buttons.
+To modify any of the assets, navigate to the respective asset page using the **Previous** and **Next** buttons.
 
 Once you created all assets for each hierarchy level, you see the **Confirmation** page. This page shows the entire hierarchy with all the created assets.
 
@@ -276,6 +274,6 @@ For more details on how to assign devices, see [**Assign devices**](/dtm/asset-h
 
 ### To import assets
 
-If you want to import the assets in bulk, either for the entire hierarchy or only for the child hierarchy, you can use the bulk import option.
+To import the assets in bulk, either for the entire hierarchy or only for the child hierarchy, use the bulk import option.
 
 See [Bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) for more details on how to import assets in bulk.

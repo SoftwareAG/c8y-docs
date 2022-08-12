@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-If you want to import the entire asset hierarchy with all assets at once, you can use the bulk import feature. For each [asset type](/dtm/asset-types/#asset-types), a CSV template is provided.
+To import the entire asset hierarchy with all assets at once, you can use the bulk import feature. For each [asset type](/dtm/asset-types/#asset-types), a CSV template is provided.
 
 You can fill in the required details in this template and upload this file, to create the assets in bulk for the selected asset type.
 
@@ -92,7 +92,7 @@ Modify the excel settings so that date can be provided in yyyy-mm-dd format, so 
 
 If the **Type** of custom property is **Date**, then input must be provided in yyyy-mm-dd format.
 
-If you want to provide a file input as custom property value, then first the file must be uploaded in Cumulocity tenant using {{< product-c8y-iot >}} API.
+To provide a file input as custom property value, then first the file must be uploaded in Cumulocity tenant using {{< product-c8y-iot >}} API.
 
 Refer to this section to upload a file in Cumulocity : [Provide link here]
 

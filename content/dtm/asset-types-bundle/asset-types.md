@@ -26,34 +26,66 @@ In the overview you see the following four categories:
 
 Click **Configure columns** to configure the displayed columns.
 
-If you want to reload the screen, click **Reload**.
+To reload the screen, click **Reload**.
 
 
 ### To create a new asset type
 
 
-If you want to add a new asset type, click **Add asset type** on the top right.
+To add a new asset type, click **Add asset type** on the top right. This opens the **Building Asset Type** page (see image below).
 
 
- ![assettype-create-new](/images/dtm/asset-type/dtm-asset-type-create-new.png)
+ ![Building Asset Type page](/images/dtm/asset-type/dtm-asset-type-create-new.png)
 
 To create a new asset type you have to fill out the following six attributes:
 
-*	**Label**: This information is mandatory. It refers to the name of the asset type. The asset type is further addressed using the information provided here.
+<table>
+<col width="20">
+<col width="60">
+<col width="20">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Mandatory / Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><b>Label</b></td>
+<td style="text-align:left">refers to the name of the asset type. The asset type is further addressed using the information provided here.</td>
+<td style="text-align:left"><b>This information is mandatory.</b></td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Key</b></td>
+<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM.</td>
+<td style="text-align:left"><b>This information is mandatory.</b></td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Description</b></td>
+<td style="text-align:left">Provides a brief description of the asset type.</td>
+<td style="text-align:left"><b>This information is optional.</b></td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Icon</b></td>
+<td style="text-align:left">It is displayed against the label for each asset type. By default no icon is selected. To select an icon, click **Select icon** on the left. This opens a dialog window where you can either search or filter icons by type or select an icon from the predefined list. Click **Save**.</td>
+<td style="text-align:left"><b>This information is optional.</b></td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Child asset types</b></td>
+<td style="text-align:left">Restricts the asset assignment to the defined types. If not set, then no child assets are allowed by default.  To add child asset types, click **Add child asset type**. You see a drop-down field where you can select the allowed **child asset type**. Repeat this process to select multiple **child asset types**. The selected **child asset types** are then displayed under **Allowed child asset types** with the checkbox **Required** on the right. Check the box if the asset type must require this **child asset type**. By default this check box remains unchecked. To disassociate the child asset from the selected asset type, click the **Remove** icon next to the check box.</td>
+<td style="text-align:left"><b>This information is optional.</b></td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Custom properties</b></td>
+<td style="text-align:left">By default no custom properties are selected.</td>
+<td style="text-align:left"><b>This information is optional.</b></td>
+</tr>
+</tbody>
+</table>
 
-*	**Key**: This information is mandatory. It uniquely identifies the asset type. Note that **Key** can only contain letters and numbers, no special characters or space are allowed.
-
-*	**Description**: This information is optional. It offers a brief description of the asset type.
-
-*	**Icon**: This information is optional. It is displayed against the label for each asset type. By default no icon is selected. To select an icon, click **Select icon** on the left. This opens a dialog window where you can either search or filter icons by type or select an icon from the predefined list. Click **Save**. If you do not want to select an icon at this point, click **Cancel**. The dialog window closes automatically.
 
 
-![Select an icon for the asset type](/images/dtm/asset-type/dtm-asset-type-select-icon.png)
-
-
-* **Child asset types**: This information is optional. It restricts the asset assignment to the defined types. If not set, then no child assets are allowed by default.  To add child asset types, click **Add child asset type**. You see a drop-down field where you can select the allowed **child asset type**. Repeat this process to select multiple **child asset types**. The selected **child asset types** are then displayed under **Allowed child asset types** with the checkbox **Required** on the right. Check the box if the asset type must require this **child asset type**. By default this check box remains unchecked.
-
-If you want to disassociate the child asset from the selected asset type, click the **Remove** icon next to the check box.
 
 {{< c8y-admon-info>}}
 If you do not select and check an **child asset types**, then the asset cannot have any child assets.
@@ -67,14 +99,14 @@ If one or more **child asset types** are checked as required, an asset created w
 
    If “building” is an asset type and you select "floor" as an allowed child asset type, then the newly created asset “SAG Building” can only have "floor" assets as its child assets.
 
-* **Custom properties**: This information is optional. By default no custom properties are selected.
+<!--- ### To add a custom property
 
-If you want to add custom property, click **Add custom property**. You see a drop-down field where you can select the existing custom properties. Select the desired custom property. Repeat this process to select multiple custom properties.
+To add custom property, click **Add custom property**. You see a drop-down field where you can select the existing custom properties. Select the desired custom property. Repeat this process to select multiple custom properties.
 You can reorder the custom properties via drag and drop.
 
 The selected custom properties are then displayed under **Custom properties** with the checkbox **Required** on the right. Check the box if the asset type must require this custom property. By default this check box remains unchecked.
 
-If you want to disassociate the custom property from asset type, click the **Remove** icon next to the check box.
+To disassociate the custom property from asset type, click the **Remove** icon next to the check box.
 
 Once you have filled all mandatory fields you can click **Save**.
 
@@ -84,7 +116,7 @@ Once you have filled all mandatory fields you can click **Save**.
 
     ![Validation message for asset type](/images/dtm/asset-type/dtm-asset-type-validation-error.png)
 
-   If you want to cancel the operation, click **Cancel**. There will be no notification. Any inputs will be discarded.
+   There will be no notification. Any inputs will be discarded.
 
    On click, a dropdown is displayed and all existing custom properties are displayed.
    Choose the custom properties one by one.
@@ -93,7 +125,7 @@ Once you have filled all mandatory fields you can click **Save**.
    For each of the custom property chosen a **Required** check box is displayed on right. By default it is unchecked.
    If you enable the checkbox, then during asset creation the custom property has to be defined.
 
-   If you want to disassociate the custom property, click the **Remove** icon against it.
+   To remove the custom property, click the **Remove** icon next to it.
 
    To search for specific custom properties type the respective name in the drop-down field.
 
@@ -103,7 +135,7 @@ Once you have filled all mandatory fields you can click **Save**.
 
    Once the custom property is created, you can add this custom property in asset type being created.
 
-    ![assettype-validation](/images/dtm/asset-type/dtm-asset-type-validation-error.png)
+    ![assettype-validation](/images/dtm/asset-type/dtm-asset-type-validation-error.png)---> 
 
 ### To create an asset type for the entire hierarchy
 
@@ -118,7 +150,7 @@ By using this approach, you can create the desired hierarchy including all asset
 
 ### Modifying an existing asset type
 
-If you want to modify an asset type, click the **Edit** icon on the right side of each asset type.
+To modify an asset type, click the **Edit** icon on the right side of each asset type.
 
 Modify the required fields in the dialog window and click **Save**.
 
@@ -158,7 +190,7 @@ You also have the option of sorting the columns using the **Sort** option for th
 Hover over a column to see the **Sort** option.
 {{< /c8y-admon-info>}}
 
-If you want to filter asset types based on text, us the **Filter** option.
+To filter asset types based on text, us the **Filter** option.
 
 {{< c8y-admon-info>}}
 Hover over a column to see the **Filter** option.

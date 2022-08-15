@@ -13,7 +13,8 @@ When you navigate to the **Property library** page via **“Configuration> Digit
 
 If you use a tenant which already has defined custom properties already defined **Property library**, you can find the list of defined custom properties on the left. The selected custom properties are listed on the right.
 
-#### Create a new Custom property
+#create-new-custom-property
+### To create a new custom property
 
 In order to add a custom property, click **Add custom property** on the bottom left. Enter the required data in the dialog box on the right and click **Save**. You can now select this custom property.
 
@@ -271,3 +272,10 @@ You can also delete any custom property from the list. Select the respective cus
  If the search entry does not match with any custom properties, you get a notification.
 
  Once you have defined all necessary custom properties for your project, you need to define the required [asset types](/dtm/asset-types/#asset-types).
+
+
+ <!---![Add new custom property via asset types](/images/dtm/asset-type/dtm-asset-type-create-new-custom-property.png)
+
+    Once the custom property is created, you can add this custom property in asset type being created.
+
+     ![assettype-validation](/images/dtm/asset-type/dtm-asset-type-validation-error.png)--->

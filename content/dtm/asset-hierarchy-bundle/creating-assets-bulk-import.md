@@ -5,9 +5,9 @@ layout: redirect
 ---
 
 
-To import the entire asset hierarchy with all assets at once, you can use the bulk import feature. For each [asset type](/dtm/asset-types/#asset-types), a CSV template is provided.
+To import the entire asset hierarchy with all assets at once, use the bulk import feature. For each [asset type](/dtm/asset-types/#asset-types), a CSV template is provided.
 
-You can fill in the required details in this template and upload this file, to create the assets in bulk for the selected asset type.
+Fill in the required details in this template and upload this file, to create the assets in bulk for the selected asset type.
 
 ### To create a role to use the bulk import feature
 
@@ -115,22 +115,22 @@ Once you fill in all details, save the CSV template in your system.
 
 To upload the CSV template follow the below steps:
 
-* Click **Import assets** in **Assets** page.
+1. Click **Import assets** in **Assets** page.
 
-* Choose the asset type in IMPORT ASSETS window.
+2. Choose the asset type in IMPORT ASSETS window.
 
-* Upload the previously filled and saved CSV template in the **Drop file here** section.
+3. Upload the previously filled and saved CSV template in the **Drop file here** section.
 
-* If all the inputs are provided correctly, bulk import is successful and same is notified with a pop-up notification. The asset hierarchy with all the assets are created successfully.
+4. If all the inputs are provided correctly, bulk import is successful and same is notified with a pop-up notification. The asset hierarchy with all the assets are created successfully.
 
-* You can view the newly created assets in **Assets** page.
+5. View the newly created assets in **Assets** page.
 
 If the inputs are not provided in the correct format, bulk import fails with validation errors and same is displayed in a FAILED ASSET IMPORTS window. No assets are created.
 
 ![bulk-import-failed-import](/images/dtm/bulk-import/dtm-bulk-import-failed-asset-imports.png)
 
 
-You can rectify the issues and try the import again.
+Rectify the issues and try the import again.
 
 If there is an issue with the template being uploaded (example: invalid template or incorrect asset hierarchy), then the same is notified with a pop-up notification and assets will not be created.
 
@@ -151,12 +151,10 @@ From any hierarchy level, template will be downloaded only for its succeeding ch
 
 Once you enter all the details correctly for child asset in the CSV template, upload the template using below steps:
 
-* Click on **Import assets**.
+1. Click **Import assets**.
 
-* Upload the CSV template in the **Drop file here** section in IMPORT ASSETS window.
+2. Upload the CSV template in the **Drop file here** section in the **Import assets** dialog window.
 
-* If all details are mentioned correctly in CSV template, the child asset hierarchy is created successfully.
-
-If partial import is not successful, same is notified with a pop-up notification.
-
-In case there are validation issues, it is displayed in **Failed asset imports** window. Rectify the errors and try again with valid inputs.
+{{< c8y-admon-info>}}
+If all details are mentioned correctly in CSV template, the child asset hierarchy is created successfully. If partial import is not successful, same is notified with a pop-up notification. In case there are validation issues, it is displayed in **Failed asset imports** window. Rectify the errors and try again with valid inputs.
+{{< /c8y-admon-info>}}

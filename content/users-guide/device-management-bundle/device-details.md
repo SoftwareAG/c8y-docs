@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-related >}}
-Refer to the hyperlinks throughout this chapter for related topics.
+References to related content in the documentation are mentioned in the details descriptions below.
 {{< /c8y-admon-related >}}
 
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface.

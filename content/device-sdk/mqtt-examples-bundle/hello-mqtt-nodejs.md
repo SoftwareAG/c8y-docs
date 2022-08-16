@@ -91,8 +91,8 @@ client.on("message", function (topic, message) {
         console.log("...restarting...");
         setTimeout(function() {
             client.publish("s/us", "503,c8y_Restart");
+            console.log("...done...");
         }, 1000);
-        console.log("...done...");
     }
 });
 ```

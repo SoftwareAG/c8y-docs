@@ -9,9 +9,9 @@ You have two options for creating assets in the DTM application. The following s
 
 ### Assets
 
-In DTM assets are the digital representation of physical assets. An asset in DTM can contain numerous subassets and devices. You also have the opportunity to define properties or attributes of an assets through [custom properties](/dtm/asset-types/#property-library).
+In DTM assets are the digital representation of physical assets. An asset in DTM can contain numerous subassets and devices. You also have the opportunity to define properties or parameters of an assets through [custom properties](/dtm/asset-types/#property-library).
 
-To work with assets in DTM navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets (SCREENSHOT NECESSARY).
+To work with assets in DTM navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are shown in the **Assets** page by default, instead you see a message is displayed prompting to create the assets (SCREENSHOT NECESSARY).
 
 If you already created assets, you find them listed on this page (see image below).
 
@@ -19,7 +19,7 @@ If you already created assets, you find them listed on this page (see image belo
 
 **Example:**
 
-In DTM, an asset for "HVAC" could contain the condenser and the cooling system as subassets. If there are devices associated with this "HVAC" asset or either of its subassets, you can  assign devices to the corresponding assets or subassets.
+In DTM, an asset for "HVAC" could contain the condenser and the cooling system as subassets. If there are devices associated with this "HVAC" asset or either of its subassets, you can assign devices to the corresponding assets or subassets.
 
 
 #### Asset hierarchy
@@ -32,7 +32,7 @@ It is similar to a tree structure, with the root level asset on top and its subs
 
 **Example:**
 
-You create the root asset level "Building" is a root level with the child asset "Floor", which has the child asset "Room", then the hierarchy would be displayed as follows:
+You create the root asset level "Building" is a root level with the child asset "Floor", which has the child asset "Room", then the hierarchy would be shown as follows:
 
 Building > Floor > Room
 
@@ -47,7 +47,7 @@ First you have to choose the desired asset type from the **Choose asset type** d
 Root asset type is an asset type which is at the top of hierarchy and does not have any parent asset type above it.
 {{< /c8y-admon-info>}}
 
-Next, the asset hierarchy is displayed in the left tab, with the respective dialog window opening in the right tab. Fill out all the mandatory field labeled "required" to move to the next section.
+Next, the asset hierarchy is shown in the left tab, with the respective dialog window opening in the right tab. Fill out all the mandatory field labeled "required" to move to the next section.
 
 You also have the option of adding a description or assigning devices to your root asset. To add more than one root asset, click the **Add** button.
 The other building block to your asset are the **custom properties**. Here you find all [custom properties](/dtm/asset-types/#property-library) assigned to the asset type that you create. Fill in the required information.
@@ -74,7 +74,7 @@ If there are validation errors on the page, they are indicated by red highlights
 
 **Example:**
 
-If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** dropdown menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. In order to add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
+If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** dropdown menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. To add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
 
 Click **Next** to see the next lower asset level, for example, "Floor". Fill out all required fields. Here, you also have the option to add numerous assets on this level. Click **Next**.
 
@@ -109,7 +109,7 @@ In case “Project start date” is a custom property for the "Building" asset, 
 
 If the **Type** of custom property is “File upload”, then during asset hierarchy creation a file browser is displayed, and you must choose a valid file to be uploaded.
 
-When creating the custom property**, allowed file types are defined. When creating the asset hierarchy, the file chosen for upload must belong to the list of allowed file types. Any file type not mentioned in the list will not be allowed.
+When creating the custom property**, allowed file types are defined. When creating the asset hierarchy, the file selected for upload must belong to the list of allowed file types. Any file type not mentioned in the list will not be allowed.
 
 **Example:**
 
@@ -125,7 +125,7 @@ In case the custom property is of **Type** “Enumeration”, then when creating
 
 **Example:**
 
-If “building color” is a custom property and color of the building can be either “white” or “black” or “grey” alone, then **Type** can be chosen as **Enumeration** and these 3 colors can be provided as list of options during the creation of custom property.
+If “building color” is a custom property and color of the building can be either “white” or “black” or “grey” alone, then **Type** can be selected as **Enumeration** and these 3 colors can be provided as list of options during the creation of custom property.
 
 When asset hierarchy is being created, a dropdown appears with these three options and you must choose a value for custom property from this dropdown.
 
@@ -148,7 +148,7 @@ The remaining custom properties can be defined during asset creation or can be a
 {{< /c8y-admon-info>}}
 
 
-The custom property section appears only, if for the asset type the custom properties were chosen. In case, the asset type does not have any custom properties, then during asset hierarchy creation, the custom property section is not displayed.
+The custom property section appears only, if for the asset type the custom properties were selected. In case, the asset type does not have any custom properties, then during asset hierarchy creation, the custom property section is not displayed.
 
 * Assigned Devices: By default no devices are assigned. You can assign devices for the assets using below steps.--->
 
@@ -179,7 +179,7 @@ Click **Reload** to reload the page and display the latest list of devices prese
 
 Click **Sort** on the applicable columns to view the device data in either ascending or descending order.
 
-In case you want to filter devices based on text, use the **Filter** option in the applicable columns. If you apply a filter, you see a notification at the top.
+To filter devices based on text, use the **Filter** option in the applicable columns. If you apply a filter, you see a notification at the top.
 
 To clear the filters, click **Clear all filters**.
 
@@ -201,7 +201,7 @@ At each hierarchy level, you can create multiple assets from a single asset type
 
 **Example:**
 
-In case you have one building with two floors, you first create the asset hierarchy level for “building”. Second, using the "Floor" asset type, you add the first floor.
+For one building with two floors, you first create the asset hierarchy level for "Building". Then use the asset type "Floor" to add the floors.
 
 Click **Add** on the bottom to add the asset for the second floor.
 

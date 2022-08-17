@@ -37,7 +37,7 @@ Click **Add asset type** on the top right to add a new asset type. This opens th
 
  ![Building Asset Type page](/images/dtm/asset-type/dtm-asset-type-create-new.png)
 
-Provide the following six attributes:
+Provide the following six parameters:
 
 <table>
 <col width="20">
@@ -54,32 +54,32 @@ Provide the following six attributes:
 <tr>
 <td style="text-align:left"><b>Label</b></td>
 <td style="text-align:left">Refers to the name of the asset type. This name is used for the asset throughout the application.</td>
-<td style="text-align:left"><b>Mandatory</b></td>
+<td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset type in the DTM.</td>
-<td style="text-align:left"><b>Mandatory</b></td>
+<td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Description</b></td>
 <td style="text-align:left">Provides a brief description of the asset type.</td>
-<td style="text-align:left"><b>Optional</b></td>
+<td style="text-align:left">Optional</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Icon</b></td>
 <td style="text-align:left">Displayed next to the label for each asset type. By default, no icon is selected. </td>
-<td style="text-align:left"><b>Optional</b></td>
+<td style="text-align:left">Optional</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Child asset types</b></td>
 <td style="text-align:left">Restricts the asset assignment to the defined types. By default, no child assets are allowed if this field is not set.</td>
-<td style="text-align:left"><b>Optional</b></td>
+<td style="text-align:left">Optional</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Custom properties</b></td>
-<td style="text-align:left">Attributes that define an asset type. By default, no custom properties are selected.</td>
-<td style="text-align:left"><b>Optional</b></td>
+<td style="text-align:left">Parameters that define an asset type. By default, no custom properties are selected.</td>
+<td style="text-align:left">Optional</td>
 </tr>
 </tbody>
 </table>
@@ -93,7 +93,7 @@ The total number of asset types is displayed on the bottom left of the page. Use
 To select an icon, click the select icon on the left. In the following dialog window you can either search or filter icons by type or select an icon from the predefined list. Select the desired icon and click **Save**.
 
 #### To add a child asset type
-Click **Add child asset type** to add a new child asset type. In the dropdown select one or multiple allowed child asset types. The selected child asset types are then displayed under **Allowed child asset types** with the checkbox **Required** on the right. If the asset type requires this child asset type, select the checkbox. By default, it is clear. Click the  remove icon next to the checkbox to remove the child asset from the selected asset type.
+Click **Add child asset type** to add a new child asset type. In the dropdown select one or multiple allowed child asset types. The selected child asset types are then displayed under **Allowed child asset types** with the checkbox **Required** on the right. If the asset type requires this child asset type, select the checkbox. By default, it is clear. Click the remove icon next to the checkbox to remove the child asset from the selected asset type.
 
 {{< c8y-admon-info>}}
 If you do not select and check a child asset type, then the asset cannot have any child assets.

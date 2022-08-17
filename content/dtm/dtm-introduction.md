@@ -15,4 +15,4 @@ For details on the Device Management application, see (Device Management)[/guide
 
 Assets are created in the DTM application using asset types as the blueprint for assets. An asset type consists of one or more custom properties and subassets.
 
-DTM also provides a localization feature, where you can customize and display the translation for certain content. See [ADD HYPERLINK TO TRANSLATIONS HERE]().
+DTM also provides a localization feature to customize the translation for certain content. See [ADD HYPERLINK TO TRANSLATIONS HERE]().

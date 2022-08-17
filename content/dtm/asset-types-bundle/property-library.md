@@ -4,12 +4,13 @@ title: Property library
 layout: redirect
 ---
 
-The **Property library** section allows you to create custom properties. Custom properties are the attributes that define an [asset type](/dtm/asset-types/#asset-types). One or more custom properties are used to define an asset type.
-Also, the same custom property can belong to 2 different asset types.
+Custom properties are the attributes that define an [asset type](/dtm/asset-types/#asset-types). One or more custom properties are used to define one or more asset types.
+Custom properties are created in the **Property library**.
+
 
 ### Custom property attributes
 
-When you navigate to the **Property library** page via **“Configuration> Digital twin library > Property library”** for the first time, there will be no custom property present in the system. Click **Add custom property** at the top right to add your first custom property.
+When you navigate to the **Property library** page via **Configuration> Digital twin library > Property library** for the first time, there will be no custom property present in the system. Click **Add custom property** at the top right to add your first custom property.
 
 If you use a tenant which already has defined custom properties already defined **Property library**, you can find the list of defined custom properties on the left. The selected custom properties are listed on the right.
 
@@ -166,7 +167,7 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
 ##### Date Picker
 
-  If you select this option in the **Type** drop-down list, you must choose a date and custom property during asset creation to be initialized to that value.
+  If you select this option in the **Type** dropdown list, you must choose a date and custom property during asset creation to be initialized to that value.
 
   **Example:**
 
@@ -175,11 +176,11 @@ The entered **Default value** has to adhere to all validations provided beforeha
 
 ##### Enumeration
 
-To choose a value from the drop-down menu during the asset creation, then select **Type** as **Enumeration** when creating the custom property.
+To choose a value from the dropdown menu during the asset creation, then select **Type** as **Enumeration** when creating the custom property.
 
 When you select **Enumeration** as the custom property **Type**, a second field appears below. Here, enter all desired information separated by a comma.
 
-During asset creating, these values appear as menu options in the drop-down menu. Select one of the options to initialize the custom property with that option.
+During asset creating, these values appear as menu options in the dropdown menu. Select one of the options to initialize the custom property with that option.
 
 **Example:**
 
@@ -217,7 +218,7 @@ Custom properties are of 2 types.
 
 * **Simple custom property**:
 
-If an attribute consists of a single key value pair, then it is a Simple custom property.
+A simple custom property consists of a single key value pair. This option is set by default when creating new custom properties
 
 ![Property-simple](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
 

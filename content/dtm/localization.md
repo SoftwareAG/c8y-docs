@@ -8,7 +8,7 @@ The **Localization** feature is provided in the DTM application. To use this fea
 
 Once you have enabled feature branding, open the **Localization** page on the left menu.
 
-To change the language for the **DTM** application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the drop down menu. You need to refresh your screen for the application to display the newly selected language.
+To change the language for the **DTM** application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the dropdown menu. You need to refresh your screen for the application to display the newly selected language.
 
 Additionally, if you want to add translations for the [custom property](/dtm/asset-types/#property-library) or [asset types](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
 
@@ -36,11 +36,11 @@ Next, click **Apply** to apply the changes.
 
  You can add or edit translations for all the keys in two ways:
 
-* Hover over the respective column for the **Edit** icon to be visible. Click the icon to select the desired language and add or edit the translation.
+* Hover over the respective column for the edit icon to be visible. Click the icon to select the desired language and add or edit the translation.
 
-* Click the **Edit icon** in each row to open the dialog window **Edit term translations**. Add or edit the translation for any language. Click **Save** to finish the process.
+* Click the edit icon in each row to open the dialog window **Edit term translations**. Add or edit the translation for any language. Click **Save** to finish the process.
 
-The **Edit** icon is present for each row and on click **Edit term translations** dialog window loads.
+The edit icon is present for each row and click **Edit term translations** dialog window loads.
 
 Translation can be added or modified for any of the languages and the changes can be saved using **Save** button.
 

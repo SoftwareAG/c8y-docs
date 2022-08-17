@@ -20,7 +20,7 @@ Under **Quick links** click **Roles**.
 
 In the **Global roles** tab, select the role which is already assigned for your username.
 
-Set all available permissions for **Digital Twin** under "Permissions" section by selecting the following check boxes:
+Set all available permissions for **Digital Twin** under "Permissions" section by selecting the following checkboxes:
 
                 * Under **Application access**, select the "Digital Twin".
 

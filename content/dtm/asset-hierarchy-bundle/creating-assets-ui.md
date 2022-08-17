@@ -41,7 +41,7 @@ Building > Floor > Room
 
 To create an asset via the UI, click the **Add Asset** button in the top right corner of the **Assets** page. This opens the **New asset** page, where you can create a new asset and asset hierarchy.
 
-First you have to choose the desired asset type from the **Choose asset type** drop down menu on the top left. These asset types are root asset types. They are labeled "START NODE" in the hierarchy.
+First you have to choose the desired asset type from the **Choose asset type** dropdown menu on the top left. These asset types are root asset types. They are labeled "START NODE" in the hierarchy.
 
 {{< c8y-admon-info>}}
 Root asset type is an asset type which is at the top of hierarchy and does not have any parent asset type above it.
@@ -74,7 +74,7 @@ If there are validation errors on the page, they are indicated by red highlights
 
 **Example:**
 
-If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** drop down menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. In order to add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
+If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** dropdown menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. In order to add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
 
 Click **Next** to see the next lower asset level, for example, "Floor". Fill out all required fields. Here, you also have the option to add numerous assets on this level. Click **Next**.
 
@@ -134,9 +134,9 @@ When asset hierarchy is being created, a dropdown appears with these three optio
 
 ### Custom property of Type Boolean
 
-In case the custom property is of the **Type** “Boolean”, then a check box will be present against the custom property.
+In case the custom property is of the **Type** “Boolean”, then a checkbox will be present against the custom property.
 
-When creating the asset, the presence or absence of the custom property can be defined by enabling or disabling the check box respectively.
+When creating the asset, the presence or absence of the custom property can be defined by enabling or disabling the checkbox respectively.
 
 
 {{< c8y-admon-info>}}
@@ -184,7 +184,7 @@ In case you want to filter devices based on text, use the **Filter** option in t
 To clear the filters, click **Clear all filters**.
 
 {{< c8y-admon-info>}}
-The **Sort** and **Filter** icons appear on hover over each column.
+The sort icon and the filter icons appear on hover over each column.
 {{< /c8y-admon-info>}}
 
 You can select devices through the checkbox. To cancel your selection, click **Cancel** on the top bar, which removes all selected devices.
@@ -207,10 +207,10 @@ Click **Add** on the bottom to add the asset for the second floor.
 
 ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
-To delete an added asset template, click the **Delete** icon on the top right.
+To delete an added asset template, click the delete icon on the top right.
 
 {{< c8y-admon-info>}}
-**Delete** icon appears on hover.
+The delete icon appears on hover.
 {{< /c8y-admon-info>}}
 
 To modify any of the details for an asset on the previous screen during asset hierarchy creation, click **Previous**.

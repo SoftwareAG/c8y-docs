@@ -12,7 +12,7 @@ Custom properties are created in the **Property library**.
 
 When you navigate to the **Property library** page via **Configuration> Digital twin library > Property library** for the first time, there will be no custom property present in the system. Click **Add custom property** at the top right to add your first custom property.
 
-If you use a tenant which already has defined custom properties already defined **Property library**, you can find the list of defined custom properties on the left. The selected custom properties are listed on the right.
+If you use a tenant which already has custom properties defined, you find the list of defined custom properties on the left. The selected custom properties are listed on the right.
 
 #create-new-custom-property
 ### To create a new custom property
@@ -104,13 +104,13 @@ If not selected, there will be no minimum length criteria set for this custom pr
   This field is optional and provides the flexibility of assigning a default value to the custom property. If this field is left empty, you can enter any value for this custom property during the asset creation.
 
   {{< c8y-admon-info>}}
-The entered **Default value** has to adhere to all validations provided beforehand. If you have set the **Min length**, **Max length** and/or **RegExP**, the default value must fulfill all set validations.
+The entered **Default value** has to adhere to all validations provided beforehand. If you have set the **Min length**, **Max length** and/or **RegExp**, the default value must fulfill all set validations.
 {{< /c8y-admon-info>}}
 
 
   **Example:**
 
-   If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExP** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+   If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExp** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
    If you enter the information correctly according to the set criteria, the default value information for this custom property is valid.
 
@@ -184,7 +184,7 @@ During asset creating, these values appear as menu options in the dropdown menu.
 
 **Example:**
 
-If you create a custom property for "building color" and the color must be either black, white or grey, you have to provide these options separated by a colon when creating the custom property.
+If you create a custom property for "building color" and the color must be either black, white or grey, you have to provide these options separated by a comma when creating the custom property.
 
 ![Custom property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
@@ -196,9 +196,9 @@ If you create a custom property for "building color" and the color must be eithe
 
   **Example:**
 
-  If you define a custom property called "Whiteboard" for a building where there are rooms with a whiteboard and some without, then the custom property needs to be created as Boolean. So when the asset is created, if the room has a whiteboard, it is then initialized to "true". If there is no whiteboard in the room, the asset is initialized to "false".
+  If you define a custom property called "Whiteboard" for a building where there are rooms with a whiteboard and some without, then the custom property needs to be created as Boolean.
 
-  Initialize it to "true" if a whiteboard is present in the room, and initialize it to "false" if there is no whiteboard.
+  Initialize it to "true" if a whiteboard is present in the room, and initialize it to "false" if there is no whiteboard when creating the asset.
 
 
 ##### File upload
@@ -240,7 +240,7 @@ In case of Complex custom property, each key value pair must be defined, and typ
  ![Property-complex](/images/dtm/custom-property/dtm-property-library-complex-property.png)
 
 
-Fill all the mandatory fields and click **Save** to create a custom property. Based in the input, you create a either a **Simple custom property** or a **Complex custom property**. In case of a **Complex custom property** each key value pair must be defined, also provide the **Type** for each key value pair.
+Fill all the mandatory fields and click **Save** to create a custom property. Based on the input, you create either a **Simple custom property** or a **Complex custom property**. In case of a **Complex custom property** each key value pair must be defined, also provide the **Type** for each key value pair.
 
 When the process is completed successfully, you see a green pop-up notification at the top right corner of the screen.
 
@@ -252,7 +252,7 @@ In case of validation issues, the respective fields are also highlighted red and
 
 ![Property-validation](/images/dtm/custom-property/dtm-property-library-validation-issues.png)
 
-Once the custom properties are created, they are listed on the left. For simple custom properties you see the **Type** as well as the labels. For complex custom properties you see the **Object** against the labels.
+Once the custom properties are created, they are listed on the left. For simple custom properties you see the **Type** as the labels. For complex custom properties you see the **Object** against the labels.
 
 You can select any custom property from this list. Click the desired custom property to see all the details on the right of the screen. You can now view or edit any content of the custom property. Click **Save** to save your changes.
 

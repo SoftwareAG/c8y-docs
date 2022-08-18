@@ -75,7 +75,7 @@ The CSV template has the following fields:
 
 If the hierarchy is like “Building --> Floor --> Room” and you want to enter details to create a Room asset “Room 1”. Then **Path** value for “Room 1” asset will be “Building 1/Floor 1”, where “Building 1” and “Floor 1” are the assets for Building and Floor asset types respectively.
 
-*	Device ID/External ID : If the asset being created has a device associated with it, then provide the Device ID of the device here. This field is optional.
+*	Device ID/External ID : If the asset being created has a device associated with it, then provide the Device ID of the device here. If there are multiple devices, enter device IDs separated by ";". This field is optional.
 *	Description : Optional field Description briefly describes the asset being created.
 *	Custom properties for the asset type : 6th column onwards (in the CSV template), all the custom properties for the root asset types and all its subsequent child asset types are listed.
 
@@ -86,11 +86,12 @@ The custom properties which are mandatory are mentioned with a “required” la
 
 The [Type](/dtm/asset-types/#types-of-custom-property) of the custom property is also mentioned as a label, for better understanding.
 
+If the **Type** of custom property is **Date**, then input must be provided in yyyy-mm-dd format.
+
 {{< c8y-admon-info>}}
 Modify the excel settings so that date can be provided in yyyy-mm-dd format, so that date is not auto corrected on input.
 {{< /c8y-admon-info>}}
 
-If the **Type** of custom property is **Date**, then input must be provided in yyyy-mm-dd format.
 
 To provide a file input as custom property value, then first the file must be uploaded in Cumulocity tenant using {{< product-c8y-iot >}} API.
 

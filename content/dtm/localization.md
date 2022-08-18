@@ -8,7 +8,7 @@ The **Localization** feature is provided in the DTM application. To use this fea
 
 Once you have enabled feature branding, open the **Localization** page on the left menu.
 
-To change the language for the **DTM** application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the dropdown menu. You need to refresh your screen for the application to display the newly selected language.
+To change the language for the DTM application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the dropdown menu. You need to refresh your screen for the application to display the newly selected language.
 
 Additionally, if you want to add translations for the [custom property](/dtm/asset-types/#property-library) or [asset types](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
 
@@ -16,11 +16,11 @@ Additionally, if you want to add translations for the [custom property](/dtm/ass
 
 On your first time login, the **Localization** page will show a row named **Group** as key. If necessary, add a translation for "group" according to the explanation above.
 
-Once you created all custom properties and asset types, then all they names are added as keys in the **Localization** page. You can further add the translations as required.
+Once you create all custom properties and asset types, then all those names are added as keys in the **Localization** page. You can further add the translations as required.
 
 In case you want to add new translation in the DTM application, same can be done by adding the text as key and adding the required translation for the respective languages.
 
-### To adding new keys for translations
+### To add new keys for translations
 
 Add new keys and their respective translations using the **Add term** option on the top right.
 

@@ -9,9 +9,9 @@ Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by 
 
 ### To view an asset
 
-Select any **asset**. subassets page will load. This page contains the asset details, created and last updated time on top right. Also options to [**Add child assets**](/dtm/asset-hierarchy/#add-child-assets), [**Assign devices**](/dtm/asset-hierarchy/#assign-devices) and [**Import assets**](/dtm/asset-hierarchy/#creating-assets-bulk-import) are displayed on the top bar.
+Select any **asset**. subassets page will load. This page contains the asset details, created and last updated time on top right. Also options to [**Add child assets**](/dtm/asset-hierarchy/#to-add-child-assets), [**Assign devices**](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) and [**Import assets**](/dtm/asset-hierarchy/#creating-assets-bulk-import) are displayed on the top bar.
 
-Asset name and description along with the icon gets displayed on top. All subassets and devices for this asset* will get listed in the Subassets section.
+Asset name and description along with the icon gets displayed on top. All subassets and devices for this asset will get listed in the Subassets section.
 
 All the custom properties for this asset will be displayed on the right.
 
@@ -27,7 +27,7 @@ Expand the hierarchy on the leftside navigation and select the desired asset to 
 
 ### To modify an asset
 
-The fields that are editable are marked using an dit icon against the fields.
+The fields that are editable are marked using an edit icon against the fields.
 
 To modify any of the asset details, click edit icon, enter new details and save the same.
 
@@ -38,7 +38,7 @@ To modify any of the asset details, click edit icon, enter new details and save 
 To delete the subasset or device in the hierarchy, click the delete icon next to the subasset or device.
 
 {{< c8y-admon-info>}}
-dlete icon appears on hover against each row under the subassets section.
+delete icon appears on hover against each row under the subassets section.
 {{< /c8y-admon-info>}}
 
 On click of the delete icon, a confirmation pop-up is displayed, asking if you want to delete the asset or device.

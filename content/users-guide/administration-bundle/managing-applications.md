@@ -319,7 +319,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Packages
 
-The Microfrontends feature offers better shareability and reusability of UI features across the different applications in the form of packages. With Microfrontends, UI features can now be developed as packages and added to an application without coding knowledge. You can develop two types of applications:
+Packages offer better shareability and reusability of UI features across the different applications. UI features can now be developed as packages and added to an application without coding knowledge. You can develop two types of applications:
 
 - **Plugins** can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are compositions of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.

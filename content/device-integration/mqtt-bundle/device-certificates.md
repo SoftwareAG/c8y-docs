@@ -369,24 +369,27 @@ Then the added certificate should be visible:
     	"certInPemFormat" : "<CERT_PEM_VALUE>"
     }
 ```
-### Perform Proof Of Possession
+### Perform a proof of possession
 
-Why and for what do I need Proof Of Possession?
+The Cumulocity IoT platform uses X.509 certificates to authenticate end devices.
+The certificates work with a chain of trust: you can create trustworthy subcertificates with a trusted certificate.
+Each certificate consists of a public and a private part.
+Also see asymmetric encryption.
 
-The Cumulocity Platform uses X.509 certificates to authenticate end devices. The certificates used there work with a so-called chain of trust, which means, that one can create further trustworthy subcertificates with an already trusted certificate. Each certificate consists of a private and a public part (see also: asymmetric encryption).
+The Cumulocity IoT platform receives the public part of each certificate that is to be used for device authentication.
+The assignment of the device to a tenant is also done by the certificate, since each certificate must be uniquely assigned.
 
-The Cumulocity Platform receives the public part of each certificate that is to be used for device authentication. The assignment of the device to a tenant is also done by the certificate, since each certificate must be uniquely assigned.
+However, since the public part of a certificate (and the subcertificates) is not secret, anyone on the internet theoretically has access to it.
+A potential attacker could upload the public part of a certificate to the Cumulocity IoT platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).
 
-However, since the public part of a certificate (and the sub certificates) is not secret, potentially every Internet user worldwide has access to it. This makes it possible for a potential attacker to upload the public part of a certificate to the Cumulocity platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).
+To ensure verification of ownership by the uploader, a proof of possession is required by the platform.
 
-To ensure a verification of ownership by the uploader, a Proof Of Possession is required by the platform.
-
-The sub-steps for this are as follows:
-- Upload of the certificate to the platform
-- Download of the Unsigned Key
-- Encryption of the Unsigned Key by the certificate owner (which thereby becomes a Signed Key)
-- Upload of the signed key to the platform
-- Proof of Possession is confirmed if the uploaded signed key matches the signed key expected by the platform.
+The steps for the proof of possession are as follows:
+- Upload of the certificate to the platform,
+- Download of the unsigned key,
+- Encryption of the unsigned key by the certificate owner, which makes the key a signed key,
+- Upload of the signed key to the platform,
+- The proof of possession is confirmed if the uploaded signed key matches the signed key expected by the platform.
 
 ### Install and configure the MQTT client
 

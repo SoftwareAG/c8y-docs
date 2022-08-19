@@ -4,6 +4,8 @@ layout: bundle
 title: Localization
 ---
 
+### Localization feature
+
 The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). It should then appear under [Subscribed applications](/users-guide/administration/#subscribed-applications) in your tenant.
 
 Once you have enabled feature branding, open the **Localization** page on the left menu.

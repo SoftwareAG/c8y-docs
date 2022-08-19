@@ -11,7 +11,9 @@ You have two options for creating assets in the DTM application. The following s
 
 In the DTM application assets are the digital representation of physical assets. An asset in the DTM application can contain numerous subassets and devices. You also have the opportunity to define properties or attributes of an asset through [custom properties](/dtm/asset-types/#property-library).
 
-To work with assets in the DTM application navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets (SCREENSHOT NECESSARY).
+To work with assets in the DTM application navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets.
+
+![no-assets-view](/images/dtm/assets/dtm-assets-no-assets.png)
 
 If you already created assets, you find them listed on this page (see image below).
 
@@ -268,7 +270,7 @@ If you must add devices to any hierarchy level, then click **Assign devices** on
 
 In the following dialog window you see a list of all devices present in your tenant. You can choose one or multiple devices from this list and assign them to the particular asset.
 
-For more details on how to assign devices, see [**Assign devices**](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset). 
+For more details on how to assign devices, see [**Assign devices**](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset).
 
 
 ### To import assets

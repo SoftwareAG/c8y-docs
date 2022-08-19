@@ -369,6 +369,24 @@ Then the added certificate should be visible:
     	"certInPemFormat" : "<CERT_PEM_VALUE>"
     }
 ```
+### Perform Proof Of Possession
+
+Why and for what do I need Proof Of Possession?
+
+The Cumulocity Platform uses X.509 certificates to authenticate end devices. The certificates used there work with a so-called chain of trust, which means, that one can create further trustworthy subcertificates with an already trusted certificate. Each certificate consists of a private and a public part (see also: asymmetric encryption).
+
+The Cumulocity Platform receives the public part of each certificate that is to be used for device authentication. The assignment of the device to a tenant is also done by the certificate, since each certificate must be uniquely assigned.
+
+However, since the public part of a certificate (and the sub certificates) is not secret, potentially every Internet user worldwide has access to it. This makes it possible for a potential attacker to upload the public part of a certificate to the Cumulocity platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).
+
+To ensure a verification of ownership by the uploader, a Proof Of Possession is required by the platform.
+
+The sub-steps for this are as follows:
+- Upload of the certificate to the platform
+- Download of the Unsigned Key
+- Encryption of the Unsigned Key by the certificate owner (which thereby becomes a Signed Key)
+- Upload of the signed key to the platform
+- Proof of Possession is confirmed if the uploaded signed key matches the signed key expected by the platform.
 
 ### Install and configure the MQTT client
 

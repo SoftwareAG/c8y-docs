@@ -31,13 +31,13 @@ All in all, this is both error prone and not very user friendly!
 The extended device registration provides the following advantages:
 
 - **Extensibility of the device registration wizard**
-You can easily add own forms to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
+<br>You can easily add own forms to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
 
 - **Support for bulk registration using custom CSV**
-You can customize the bulk registration and hence implement support for CSV files of a different format.
+<br>You can customize the bulk registration and hence implement support for CSV files of a different format.
 
 - **No UI code changes required**
-You do not need to write UI Angular code. This keeps the amount of integration work as little as possible. The device integration developer only needs to subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
+<br>You do not need to write UI Angular code. This keeps the amount of integration work as little as possible. The device integration developer only needs to subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
 
 
 ### Extension enabling
@@ -76,7 +76,8 @@ There are two types of extensions:
 ### Single device registration
 
 After enabling the `extensibleDeviceRegistration` extension type, the Device management > Devices > Register device menu is being extended with an entry corresponding to the extension `name` property:
-![Select guide](/images/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+
+![Select guide](/images//concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
 
 From now on, everything will be rendered based on data provided via the custom microservice. The added menu entry opens a window which fetches the form definition using the following endpoint:
 
@@ -141,7 +142,8 @@ The important part is the `pages` array which contains steps of the wizard that 
 JSON Schema is a generic-purpose language to specify data, along with constraints and data types and simple validations.
 
 As a result the following wizard will be displayed:
-![Select guide](/images/extensible-device-registration/extensible-single-device-reg.png)
+
+![Select guide](/images//concepts-guide/extensible-device-registration/extensible-single-device-reg.png)
 
 In the final step all data collected via the wizard will be sent back to the microservice using the following REST endpoint:
 
@@ -178,7 +180,7 @@ Creates a single device based on the collected data. Sends application/json with
 
 The following diagram visualizes the single device registration flow:
 
-![Single diagram](/images/extensible-device-registration/single-diagram.png)
+![Single diagram](/images//concepts-guide/extensible-device-registration/single-diagram.png)
 
 
 ### Bulk device registration
@@ -187,7 +189,7 @@ The key functionality required for many device integrations is the ability to re
 
 After enabling the `extensibleBulkDeviceRegistration` extension type, the Device management > Devices > Register device  `Bulk device registration` modal is being displayed with an extended wizard entry corresponding to the extension `name` property:
 
-![Select guide](/images/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+![Select guide](/images//concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
 
 Additionally, the microservice provides the title of the wizard step and example bulk file(s):
 ```json
@@ -208,7 +210,8 @@ Additionally, the microservice provides the title of the wizard step and example
 ```
 
 As a result the following wizard will be displayed:
-![Select guide](/images/extensible-device-registration/extensible-bulk-device-reg.png)
+
+![Select guide](/images/concepts-guide/extensible-device-registration/extensible-bulk-device-reg.png)
 
 #### API specification
 
@@ -239,7 +242,7 @@ Sends multipart form-data of the csv file type.
 
 The following diagram visualizes the bulk device registration flow:
 
-![Bulk diagram](/images/extensible-device-registration/bulk-diagram-sync.png)
+![Bulk diagram](/images//concepts-guide/extensible-device-registration/bulk-diagram-sync.png)
 
 
 ### Limitations

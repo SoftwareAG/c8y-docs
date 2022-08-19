@@ -53,7 +53,6 @@ Provide the following six parameters:
 <tbody>
 <tr>
 <td style="text-align:left"><b>Label</b></td>
-<<<<<<< HEAD
 <td style="text-align:left">Refers to the name of the asset type. This name is used for the asset throughout the application.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
@@ -69,7 +68,6 @@ Provide the following six parameters:
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.</td>
 <td style="text-align:left"><b>Mandatory</b></td>
->>>>>>> 4387f49580182663c107c332c6dcf63766012630
 </tr>
 <tr>
 <td style="text-align:left"><b>Description</b></td>

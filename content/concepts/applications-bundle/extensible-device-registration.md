@@ -5,7 +5,7 @@ layout: redirect
 ---
 ### Introduction
 
-To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, an extensible device registration has been introduced which enables you to easily add own device protocols to the device registration process in {{< product-c8y-iot >}}.
+To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, an extensible device registration is available with release 10.15,  which enables you to easily add own device protocols to the device registration process in {{< product-c8y-iot >}}.
 
 The general concept is based on extending the device registration using a metadata-based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing simple descriptions of the required registration attributes. The metadata is then used by the UI to render a corresponding device registration wizard.
 

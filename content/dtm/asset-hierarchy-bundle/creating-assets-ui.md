@@ -4,14 +4,22 @@ title: Creating assets via the UI
 layout: redirect
 ---
 
-You have two options for creating assets in the DTM application. The following section describes how to create an asset via the UI. Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into DTM.
+You have two options for creating assets in the DTM application. The following section describes how to create an asset via the UI. Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.
 
 
 ### Assets
 
+<<<<<<< HEAD
 In DTM assets are the digital representation of physical assets. An asset in DTM can contain numerous subassets and devices. You also have the opportunity to define properties or parameters of an assets through [custom properties](/dtm/asset-types/#property-library).
 
 To work with assets in DTM navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are shown in the **Assets** page by default, instead you see a message is displayed prompting to create the assets (SCREENSHOT NECESSARY).
+=======
+In the DTM application assets are the digital representation of physical assets. An asset in the DTM application can contain numerous subassets and devices. You also have the opportunity to define properties or attributes of an asset through [custom properties](/dtm/asset-types/#property-library).
+
+To work with assets in the DTM application navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets.
+
+![no-assets-view](/images/dtm/assets/dtm-assets-no-assets.png)
+>>>>>>> 4387f49580182663c107c332c6dcf63766012630
 
 If you already created assets, you find them listed on this page (see image below).
 
@@ -32,7 +40,11 @@ It is similar to a tree structure, with the root level asset on top and its subs
 
 **Example:**
 
+<<<<<<< HEAD
 You create the root asset level "Building" is a root level with the child asset "Floor", which has the child asset "Room", then the hierarchy would be shown as follows:
+=======
+You create the root asset level "Building" with the child asset "Floor", which has the child asset "Room", then the hierarchy would be displayed as follows:
+>>>>>>> 4387f49580182663c107c332c6dcf63766012630
 
 Building > Floor > Room
 
@@ -53,10 +65,10 @@ You also have the option of adding a description or assigning devices to your ro
 The other building block to your asset are the **custom properties**. Here you find all [custom properties](/dtm/asset-types/#property-library) assigned to the asset type that you create. Fill in the required information.
 
 {{< c8y-admon-info>}}
- The custom properties are defined when [creating the asset type](/dtm/asset-types/#creating-a-new-asset-type). When creating an asset you must provide the values for all custom properties.
+ The custom properties are defined when [creating the asset type](/dtm/asset-types/#to-create-a-new-asset-type). When creating an asset you must provide the values for all custom properties.
 {{< /c8y-admon-info>}}
 
-Click **Assing device** to assign any registered devices to this asset. See [Assigning devices to an asset](HYPERLINK) for more information.
+Click **Assing device** to assign any registered devices to this asset. See [Assigning devices to an asset](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) for more information.
 
 Click **Next** to reach the following hierarchy level of your **asset hierarchy**. Fill out the fields as necessary for your asset and click **Next**.
 Repeat this process for all **asset hierarchy** levels according to the assets requirements.
@@ -67,14 +79,17 @@ As you define each hierarchy level of your new asset, you see a green check mark
 
 {{< c8y-admon-info>}}
 If there are validation errors on the page, they are indicated by red highlights. Correct the required information to continue with the process.
-{< /c8y-admon-info>}}
 
 ![Adding a new asset](/images/dtm/assets/dtm-assets-create-text-type.png)
 
 
 **Example:**
 
+<<<<<<< HEAD
 If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** dropdown menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. To add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
+=======
+If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** dropdown menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. In order to add numerous assets to this level, click **Add** at the bottom. Repeat this process until all desired assets on this level have been filled out.
+>>>>>>> 4387f49580182663c107c332c6dcf63766012630
 
 Click **Next** to see the next lower asset level, for example, "Floor". Fill out all required fields. Here, you also have the option to add numerous assets on this level. Click **Next**.
 
@@ -219,7 +234,7 @@ You can track your progress with the green check marks on the asset hierarchy le
 
 To modify any of the assets, navigate to the respective asset page using the **Previous** and **Next** buttons.
 
-Once you created all assets for each hierarchy level, you see the **Confirmation** page. This page shows the entire hierarchy with all the created assets.
+Once you create all assets for each hierarchy level, you see the **Confirmation** page. This page shows the entire hierarchy with all the created assets.
 
 ![Confirmation page asset creation](/images/dtm/assets/dtm-assets-confirmation-page.png)
 
@@ -227,7 +242,7 @@ If all changes are sufficient, click **Confirm** to create the entire asset hier
 
 On successful asset hierarchy creation, you see a pop-up notification in the top right corner.
 
-Once the asset hierarchy is created, you can see it by clicking the root asset and following the navigation. See [viewing assets](/dtm/asset-hierarchy/#view-asset) for more information.
+Once the asset hierarchy is created, you can see it by clicking the root asset and following the navigation. See [viewing assets](/dtm/asset-hierarchy/#viewing-assets) for more information.
 
 
 ### Subassets
@@ -269,7 +284,7 @@ If you must add devices to any hierarchy level, then click **Assign devices** on
 
 In the following dialog window you see a list of all devices present in your tenant. You can choose one or multiple devices from this list and assign them to the particular asset.
 
-For more details on how to assign devices, see [**Assign devices**](/dtm/asset-hierarchy/#assign-devices).
+For more details on how to assign devices, see [**Assign devices**](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset).
 
 
 ### To import assets

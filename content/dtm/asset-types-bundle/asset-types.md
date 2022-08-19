@@ -32,7 +32,7 @@ Click **Reload** to reload the screen.
 
 ### To create a new asset type
 
-Click **Add asset type** on the top right to add a new asset type. This opens the **Building Asset Type** page.
+Click **Add asset type** on the top right to add a new asset type. This opens the **New asset type** page.
 
 
  ![Building Asset Type page](/images/dtm/asset-type/dtm-asset-type-create-new.png)
@@ -53,6 +53,7 @@ Provide the following six parameters:
 <tbody>
 <tr>
 <td style="text-align:left"><b>Label</b></td>
+<<<<<<< HEAD
 <td style="text-align:left">Refers to the name of the asset type. This name is used for the asset throughout the application.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
@@ -60,6 +61,15 @@ Provide the following six parameters:
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset type in the DTM.</td>
 <td style="text-align:left">Mandatory</td>
+=======
+<td style="text-align:left">Refers to the name of the asset type. This name is used for the asset type throughout the application.</td>
+<td style="text-align:left"><b>Mandatory</b></td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Key</b></td>
+<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.</td>
+<td style="text-align:left"><b>Mandatory</b></td>
+>>>>>>> 4387f49580182663c107c332c6dcf63766012630
 </tr>
 <tr>
 <td style="text-align:left"><b>Description</b></td>
@@ -118,16 +128,15 @@ Click **Save** to save your settings.
 If there are any validation issues with a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
-If there is no custom property meeting your requirements, click **New custom property**. For more details on how to create a new custom property see [Property Library > To create a new custom property](/dtm/asset-types/#create-new-custom-property).
-
+If there is no custom property meeting your requirements, click **New custom property**. For more details on how to create a new custom property see [Property Library > To create a new custom property](/dtm/asset-types/#to-create-a-new-custom-property).
 
 ### Root asset type
 
-To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided templates first. This root asset type can then be used to create an asset hierarchy, which then defines all the assets, subassets, custom properties and devices in the DTM. As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
+To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided templates first. This root asset type can then be used to create an asset hierarchy, which then defines all the assets, subassets, custom properties and devices in the DTM application. As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
 
 ### To create an asset type for the entire hierarchy
 
-To create an asset type for the entire hierarchy, first create all required [custom properties](/dtm/asset-types/#property-library). Then [create the asset types](/dtm/asset-types/#creating-a-new-asset-type) in a bottom-up approach, that is, all the child asset types are created first, followed by the root asset type at the end.
+To create an asset type for the entire hierarchy, first create all required [custom properties](/dtm/asset-types/#property-library). Then [create the asset types](/dtm/asset-types/#to-create-a-new-asset-type) in a bottom-up approach, that is, all the child asset types are created first, followed by the root asset type at the end.
 
 Afterwards, you can start [creating assets](/dtm/asset-hierarchy/#creating-assets-ui) for the new asset hierarchy.
 

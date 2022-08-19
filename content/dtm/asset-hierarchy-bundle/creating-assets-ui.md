@@ -76,7 +76,7 @@ Root asset types are asset types which are at the top of hierarchy and don't hav
 
 7. Click **Next** to reach the next hierarchy level of your **asset hierarchy** and fill out the fields as necessary for your asset. Repeat for all asset hierarchy levels in the assets requirements.
 
-8. The **Confirmation** dialogue displays an overview of your asset and asset hierarchy levels. Click **Create** and create your asset. The asset is now listed in the **Assets** page.
+8. The **Confirmation** dialog displays an overview of your asset and asset hierarchy levels. Click **Create** and create your asset. The asset is now listed in the **Assets** page.
 
 As you define each hierarchy level of your new asset, you see a green check mark on each asset hierarchy level in the overview on the left.
 

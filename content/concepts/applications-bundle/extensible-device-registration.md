@@ -5,52 +5,51 @@ layout: redirect
 ---
 ### Introduction
 
-Due to growing number of IoT protocols, Extensible Device Registration enables possibility 
-to easily add own device protocol to device registration process.
+To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, an extensible device registration has been introduced which enables you to easily add own device protocols to the device registration process in {{< product-c8y-iot >}}.
 
-The over all concept is to extend the device registration using a metadata based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing a simple description of the required registration attributes. 
+The general concept is based on extending the device registration using a metadata-based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing simple descriptions of the required registration attributes. The metadata is then used by the UI to render a corresponding device registration wizard.
 
-The metadata will be used by the UI to render a corresponding device registration wizard. There are two possible ways to extend the UI:
-- with [single device registration](/concepts/applications/#single-device-registration) form
-- and [bulk device registration](/concepts/applications/#bulk-device-registration) form
+There are two possible ways to extend the UI:
+- with a [single device registration](/concepts/applications/#single-device-registration) form
+- with a [bulk device registration](/concepts/applications/#bulk-device-registration) form
 
-{{< c8y-admon-info >}}
-As a precondition, [application extension](/concepts/applications/#extension-enabling) have to be defined and the microservice must implement the predefined endpoints used for getting device registration metadata and creating the device.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+As a precondition, the application extension [{Configuration}}] definition has to be defined and, in case of single device registration, the microservice realizing the registration has to provide additional metadata.
+{{< /c8y-admon-required >}}
 
-### The extension drivers 
-Device registration rely on the general single or bulk registration of the platform. However, some of these integrations suffer from major usability or technical issues, because the generic registration workflow can’t be customized to the needs of these protocols.
+### The extension drivers
+
+The device registration relies on the general single or bulk registration of the platform. However, some of these integrations suffer from major usability or technical issues, because the generic registration workflow can’t be customized to the needs of these protocols.
 
 - Input Validation is not possible: As the generic bulk registration directly creates devices in the platform, it is not possible to perform validation of extra registration attributes.
 - Unused data in bulk registration process: Some information is required to be present in the CSV to satisfy the general bulk registration constraints, but the data may not be needed by the microservice at all.
 
 All in all, this is both error prone and not very user friendly!
 
-### Extension strength
+### Advantages of extended device registration
 
-#### Extensibility of the Device Registration wizard
-The ease of own forms addition to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers
+The extended device registration provides the following advantages:
 
-#### Support for bulk registration using custom CSV
-The user can also customize the bulk registration and hence implement support for CSV files of a different format.
+- **Extensibility of the device registration wizard**
+You can easily add own forms to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
 
-#### No UI code changes required
-Users do not need to write UI Angular code to keep the amount of integration work as little as possible.
+- **Support for bulk registration using custom CSV**
+You can customize the bulk registration and hence implement support for CSV files of a different format.
 
-#### Plugin-based approach
-The device integration developer only needs to subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
+- **No UI code changes required**
+You do not need to write UI Angular code. This keeps the amount of integration work as little as possible. The device integration developer only needs to subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
 
 
-### Extension Enabling
+### Extension enabling
 
-First step in order to extend Device Registration flow is to define extension in the application representation.
+As a first step to extend the device registration flow you must define extensions in the application representation.
 
 {{< c8y-admon-info >}}
-Below `extensions` fragment can be placed either as root level or inside `manifest` fragment of the application representation.
+The `extensions` fragment can be placed either as root level or inside the `manifest` fragment of the application representation.
 {{< /c8y-admon-info >}}
 
 There are two types of extensions:
- - Single device registrations type: `extensibleDeviceRegistration`, e.g.:
+ - Single device registrations type: `extensibleDeviceRegistration`, for example:
 
 ```json
 "extensions": [
@@ -62,7 +61,7 @@ There are two types of extensions:
   ...
 ]
 ```
-- Bulk device registration type: `extensibleBulkDeviceRegistration`, e.g.:
+- Bulk device registration type: `extensibleBulkDeviceRegistration`, for example:
 ```json
 "extensions": [
   {
@@ -74,15 +73,16 @@ There are two types of extensions:
 ]
 ```
 
-### Single Device Registration
+### Single device registration
 
-After enabling `extensibleDeviceRegistration` extension type, Device management > Devices > `Register Device` menu is being extended with entry named after extension `name` property:
-![Select guide](/images/concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+After enabling the `extensibleDeviceRegistration` extension type, the Device management > Devices > Register device menu is being extended with an entry corresponding to the extension `name` property:
+![Select guide](/images/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
 
-From now on everything will be rendered based in data provided via custom microservice. Added menu entry will open modal which is going to fetch the form definition using following endpoint:
+From now on, everything will be rendered based on data provided via the custom microservice. The added menu entry opens a window which fetches the form definition using the following endpoint:
 
-{{< c8y-admon-info >}}
+
 The context of the microservice, which is taken from application definition:
+
 ```
 {
   "contextPath": "<relative path>",
@@ -92,13 +92,11 @@ The context of the microservice, which is taken from application definition:
   ...
 }
 ```
-{{< /c8y-admon-info >}}
 
 `GET /service/<contextPath>/deviceRegistration/metadata&lang=<user-language>`
 
-{{< c8y-admon-info >}}
-Make use of the `lang` query paramerer in your microservice to respond with the already translated JSON Schema metadata.<br> See also [Limitations](/concepts/applications/#limitations).
-{{< /c8y-admon-info >}}
+Make use of the `lang` query parameter in your microservice to respond with the already translated JSON Schema metadata. See also [Limitations](/concepts/applications/#limitations).
+
 
 Example metadata definition:
 ```json
@@ -139,13 +137,13 @@ Example metadata definition:
     }
 }
 ```
-The important part is `pages` array which contains steps of the wizard that the modal is going to render accordingly to Json Schema definition: [https://json-schema.org/](https://json-schema.org/).
+The important part is the `pages` array which contains steps of the wizard that the modal is going to render accordingly to the JSON Schema definition: [https://json-schema.org/](https://json-schema.org/).
 JSON Schema is a generic-purpose language to specify data, along with constraints and data types and simple validations.
 
-As a result of following wizard will be displayed:
-![Select guide](/images/concepts-guide/extensible-device-registration/extensible-single-device-reg.png)
+As a result the following wizard will be displayed:
+![Select guide](/images/extensible-device-registration/extensible-single-device-reg.png)
 
-In the final step all data collected via the wizard will be sent back to the microservice using following rest endpoint:
+In the final step all data collected via the wizard will be sent back to the microservice using the following REST endpoint:
 
 `POST /service/<contextPath>/deviceRegistration`
 
@@ -157,39 +155,41 @@ In the final step all data collected via the wizard will be sent back to the mic
 }
 ```
 
-The form is able to send anything defined via JSON Schema standard and the microservis which provides the form definition is responsible to properly handle submitted data.
+The form is able to send anything defined via JSON Schema standard and the microservice which provides the form definition is responsible for the proper handling of the submitted data.
 
-#### API Specification
+#### API specification
 
-The device integration microservices have to implement following REST endpoints:
-
+The device integration microservices must implement the following REST endpoints:
 
 ```
 GET /service/<contextPath>/deviceRegistration/metadata?lang=<user-language>
 Accept: application/json
 ```
-Returns the metadata in the vocabulary of JSON Schema.
+Returns the metadata in the vocabulary of the JSON Schema.
 
 
 ```
 POST /service/<contextPath>/deviceRegistration
 Content-type: application/json
 ```
-
 Creates a single device based on the collected data. Sends application/json with key-value pairs.
 
-#### Single Device Registration flow diagram
-![Single diagram](/images/concepts-guide/extensible-device-registration/single-diagram.png)
+#### Single device registration flow diagram
+
+The following diagram visualizes the single device registration flow:
+
+![Single diagram](/images/extensible-device-registration/single-diagram.png)
 
 
-### Bulk Device Registration
+### Bulk device registration
 
 The key functionality required for many device integrations is the ability to register many devices at the same time. Currently, all protocols have to rely on the bulk-registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
 
-After enabling `extensibleBulkDeviceRegistration` extension type, Device management > Devices > Registration > Register device > `Bulk device registration` modal is being displayed with extended wizard entry after extension `name` property:
-![Select guide](/images/concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+After enabling the `extensibleBulkDeviceRegistration` extension type, the Device management > Devices > Register device  `Bulk device registration` modal is being displayed with an extended wizard entry corresponding to the extension `name` property:
 
-Additionally, the microservice is providing title of the wizard step and example bulk file(s):
+![Select guide](/images/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+
+Additionally, the microservice provides the title of the wizard step and example bulk file(s):
 ```json
 {
   "c8y_DeviceRegistration": {
@@ -207,19 +207,19 @@ Additionally, the microservice is providing title of the wizard step and example
 }
 ```
 
-As a result of following wizard will be displayed:
-![Select guide](/images/concepts-guide/extensible-device-registration/extensible-bulk-device-reg.png)
+As a result the following wizard will be displayed:
+![Select guide](/images/extensible-device-registration/extensible-bulk-device-reg.png)
 
-#### API Specification
+#### API specification
 
-The device integration microservices have to implement following REST endpoints:
+The device integration microservices have to implement the following REST endpoints:
 
 ```
 GET /service/<contextPath>/deviceRegistration/metadata?lang=<user-language>
 Accept: application/json
 ```
 
-Returns the metadata in the vocabulary of JSON Schema.
+Returns the metadata in the vocabulary of the JSON Schema.
 
 ```
 POST /service/<contextPath>/deviceRegistration/bulk`
@@ -232,16 +232,19 @@ Content-Type: text/csv
 --boundary--
 ```
 
-Sends multipart form-data of csv file type.
+Sends multipart form-data of the csv file type.
 
 
 #### Bulk flow diagram
-![Bulk diagram](/images/concepts-guide/extensible-device-registration/bulk-diagram-sync.png)
+
+The following diagram visualizes the bulk device registration flow:
+
+![Bulk diagram](/images/extensible-device-registration/bulk-diagram-sync.png)
 
 
 ### Limitations
 
--   The concept does not allow the microservice to hook into deregistrations/decommissioning of a device: 
+-   The concept does not allow the microservice to hook into deregistrations/decommissioning of a device:
     - Any device integration microservice has to check if a device was deleted, for example to perform garbage collection.
 - Interactive steps (like “Bluetooth Coupling”) can not be implemented as of now: The reason here is that the concept assumes only static properties are required for a device registration, not a sort of process that requires user interactions
     - In theory, the meta-data based approach can easily be extended in a way that the JSON used to render the form is not static, but dynamically generated by the microservice. For example, you could specify a “page” that draws the next specification dynamically from an endpoint after posting all given user inputs there
@@ -249,6 +252,3 @@ Sends multipart form-data of csv file type.
 - No custom validations in the UI besides input validations by the JSON Schema vocabulary
 - No custom styling possible
 - Internationalization is not handled by the UI. As microservice developer it is your responsibility to provide already translated JSON Schema metadata
-
-
-

@@ -247,6 +247,7 @@ The delete icon appears on hover.
 
 On successful asset hierarchy creation, you see a pop-up notification in the top right corner.
 You can view the newly created asset hierarchy by clicking the root asset and following the navigation.
+Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 
 ### Subassets
 

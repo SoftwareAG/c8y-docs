@@ -11,8 +11,8 @@ to easily add own device protocol to device registration process.
 The over all concept is to extend the device registration using a metadata based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing a simple description of the required registration attributes. 
 
 The metadata will be used by the UI to render a corresponding device registration wizard. There are two possible ways to extend the UI:
-- with [single](#single) device registration form
-- and [bulk](#bulk) device registration] form
+- with [single device registration](/concepts/applications/#single-device-registration) form
+- and [bulk device registration](/concepts/applications/#bulk-device-registration) form
 
 {{< c8y-admon-info >}}
 As a precondition, application extension [{Configuration}}] definition have to defined and, in case of Single Device Registration, microservice realizing the registration have to provide additional metadata.
@@ -74,7 +74,7 @@ There are two types of extensions:
 ]
 ```
 
-### <a name="single"></a> Single Device Registration
+### Single Device Registration
 
 After enabling `extensibleDeviceRegistration` extension type, Device management > Devices > `Register Device` menu is being extended with entry named after extension `name` property:
 ![Select guide](/images/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
@@ -96,7 +96,7 @@ The context of the microservice, which is taken from application definition:
 `GET /service/<contextPath>/deviceRegistration/metadata&lang=<user-language>`
 
 {{< c8y-admon-info >}}
-Make use of the `lang` query paramerer in your microservice to respond with the already translated JSON Schema metadata.<br> See also [Limitations](#limitations).
+Make use of the `lang` query paramerer in your microservice to respond with the already translated JSON Schema metadata.<br> See also [Limitations](/concepts/applications/#limitations).
 {{< /c8y-admon-info >}}
 
 Example metadata definition:
@@ -181,7 +181,7 @@ Creates a single device based on the collected data. Sends application/json with
 ![Single diagram](/images/extensible-device-registration/single-diagram.png)
 
 
-### <a name="bulk"></a> Bulk Device Registration
+### Bulk Device Registration
 
 The key functionality required for many device integrations is the ability to register many devices at the same time. Currently, all protocols have to rely on the bulk-registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
 
@@ -238,7 +238,7 @@ Sends multipart form-data of csv file type.
 ![Bulk diagram](/images/extensible-device-registration/bulk-diagram-sync.png)
 
 
-### <a name="limitations"></a> Limitations
+### Limitations
 
 -   The concept does not allow the microservice to hook into deregistrations/decommissioning of a device: 
     - Any device integration microservice has to check if a device was deleted, for example to perform garbage collection.

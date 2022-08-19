@@ -15,7 +15,7 @@ There are two possible ways to extend the UI:
 
 {{< c8y-admon-req >}}
 As a precondition, the application extension [{Configuration}}] definition has to be defined and, in case of single device registration, the microservice realizing the registration has to provide additional metadata.
-{{< /c8y-admon-required >}}
+{{< /c8y-admon-req >}}
 
 ### The extension drivers
 

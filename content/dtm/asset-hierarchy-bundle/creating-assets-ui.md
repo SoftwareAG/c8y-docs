@@ -9,17 +9,11 @@ You have two options for creating assets in the DTM application. The following s
 
 ### Assets
 
-<<<<<<< HEAD
-In DTM assets are the digital representation of physical assets. An asset in DTM can contain numerous subassets and devices. You also have the opportunity to define properties or parameters of an assets through [custom properties](/dtm/asset-types/#property-library).
-
-To work with assets in DTM navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are shown in the **Assets** page by default, instead you see a message is displayed prompting to create the assets (SCREENSHOT NECESSARY).
-=======
-In the DTM application assets are the digital representation of physical assets. An asset in the DTM application can contain numerous subassets and devices. You also have the opportunity to define properties or attributes of an asset through [custom properties](/dtm/asset-types/#property-library).
+In the DTM application assets are the digital representation of physical assets. An asset in the DTM application can contain numerous subassets and devices. You also have the opportunity to define properties or parameters of an asset through [custom properties](/dtm/asset-types/#property-library).
 
 To work with assets in the DTM application navigate to the **Assets** page using the navigator on the left. When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets.
 
 ![no-assets-view](/images/dtm/assets/dtm-assets-no-assets.png)
->>>>>>> 4387f49580182663c107c332c6dcf63766012630
 
 If you already created assets, you find them listed on this page (see image below).
 
@@ -40,11 +34,7 @@ It is similar to a tree structure, with the root level asset on top and its subs
 
 **Example:**
 
-<<<<<<< HEAD
-You create the root asset level "Building" is a root level with the child asset "Floor", which has the child asset "Room", then the hierarchy would be shown as follows:
-=======
-You create the root asset level "Building" with the child asset "Floor", which has the child asset "Room", then the hierarchy would be displayed as follows:
->>>>>>> 4387f49580182663c107c332c6dcf63766012630
+If you create the root asset level "Building" with the child asset "Floor", which has the child asset "Room", then the hierarchy would be displayed as follows:
 
 Building > Floor > Room
 
@@ -85,11 +75,8 @@ If there are validation errors on the page, they are indicated by red highlights
 
 **Example:**
 
-<<<<<<< HEAD
 If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** dropdown menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. To add numerous assets to this level, click **Add new** at the bottom. Repeat this process until all desired assets on this level have been filled out.
-=======
-If you are creating an asset hierarchy for the asset "Building", select the root asset level "Building" in the **Choose asset type** dropdown menu. Starting with the root asset level, you see the dialog window "Building" on the right. Enter the name of the building in the field **Name**, for example, "Administration building". In the field **Description** you can enter a brief description of this asset, for example, "Office building for administration department". However, this field is optional and can be left empty. In order to add numerous assets to this level, click **Add** at the bottom. Repeat this process until all desired assets on this level have been filled out.
->>>>>>> 4387f49580182663c107c332c6dcf63766012630
+
 
 Click **Next** to see the next lower asset level, for example, "Floor". Fill out all required fields. Here, you also have the option to add numerous assets on this level. Click **Next**.
 

@@ -57,6 +57,8 @@ If you are subscribed to the required applications you will see other options fo
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
+Microservice developers can also use the [Extensible device registration](https://cumulocity.com/guides/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
+
 <a name="device-registration-manually"></a>
 #### To connect a  device manually
 

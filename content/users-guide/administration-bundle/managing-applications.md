@@ -165,7 +165,7 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 For details on the fields, see also [Application properties](#application-properties) below.
 
 <a name="blueprint-application"></a>
-##### To install an application from a blueprint
+##### To install from a blueprint
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. Select **Install from available packages**.
@@ -256,6 +256,7 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
+<a name="application-plugins"></a>
 ### Application plugins
 
 Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
@@ -321,14 +322,14 @@ The selected application will be reactivated by removing the respective files fr
 
 Packages are a combination of plugins, blueprints or both. Blueprints can be installed, while plugins can extend an existing application. Packages offer better shareability and reusability of UI features across the different applications. UI features can now be developed as packages and added to an application without coding knowledge. You can develop two types of applications:
 
-- **Plugins** can be used to extend existing applications without the need of re-building the application.
-- **Blueprints** are compositions of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
+- [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
+- **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
 
-Packages are compositions of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. They are located in the **Packages** tab in the **Applications** page.
+Packages are combinations of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. They are located in the **Packages** tab in the **All applications** page.
 
 <img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
 
-To add a new package click **Add Package**.
+To add a new package click **Add package** at the top right.
 
 By clicking on a package, you can see the package details such as **Package overview** which includes a description and images as well as some meta information which is taken from the *package.json*.
 
@@ -336,11 +337,11 @@ Additionally, it is possible to view all available plugins within the selected p
 
 <img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
 
-In the **Archives** tab, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded by clicking on the three dots next to each archive.
+In the **Archives** tab of the plugin, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded via the context menu next to each archive.
 
 <img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
 
-In the **Versions** tab you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+In the **Versions** tab of a plugin, you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
 To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
 

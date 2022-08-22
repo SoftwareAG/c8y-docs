@@ -14,17 +14,8 @@ There are two possible ways to extend the UI:
 - with a [bulk device registration](/concepts/applications/#bulk-device-registration) form
 
 {{< c8y-admon-req >}}
-As a precondition, the application extension [{Configuration}}] definition has to be defined and, in case of single device registration, the microservice realizing the registration has to provide additional metadata.
+Extensible device registration requires [application extension](/concepts/applications/#extension-enabling) to be defined and the microservice to implement the predefined endpoints used for getting device registration metadata and creating the device.
 {{< /c8y-admon-req >}}
-
-### The extension drivers
-
-The device registration relies on the general single or bulk registration of the platform. However, some of these integrations suffer from major usability or technical issues, because the generic registration workflow can’t be customized to the needs of these protocols.
-
-- Input Validation is not possible: As the generic bulk registration directly creates devices in the platform, it is not possible to perform validation of extra registration attributes.
-- Unused data in bulk registration process: Some information is required to be present in the CSV to satisfy the general bulk registration constraints, but the data may not be needed by the microservice at all.
-
-All in all, this is both error prone and not very user friendly!
 
 ### Advantages of extended device registration
 
@@ -81,8 +72,12 @@ After enabling the `extensibleDeviceRegistration` extension type, the Device man
 
 From now on, everything will be rendered based on data provided via the custom microservice. The added menu entry opens a window which fetches the form definition using the following endpoint:
 
+`GET /service/<contextPath>/deviceRegistration/metadata&lang=<user-language>`
 
-The context of the microservice, which is taken from application definition:
+Make use of the `lang` query parameter in your microservice to respond with the already translated JSON Schema metadata. See also [Limitations](/concepts/applications/#limitations).
+
+
+The UI automatically takes the contextPath for the GET request from the application definition of the microservice:
 
 ```
 {
@@ -93,11 +88,6 @@ The context of the microservice, which is taken from application definition:
   ...
 }
 ```
-
-`GET /service/<contextPath>/deviceRegistration/metadata&lang=<user-language>`
-
-Make use of the `lang` query parameter in your microservice to respond with the already translated JSON Schema metadata. See also [Limitations](/concepts/applications/#limitations).
-
 
 Example metadata definition:
 ```json
@@ -139,7 +129,6 @@ Example metadata definition:
 }
 ```
 The important part is the `pages` array which contains steps of the wizard that the modal is going to render accordingly to the JSON Schema definition: [https://json-schema.org/](https://json-schema.org/).
-JSON Schema is a generic-purpose language to specify data, along with constraints and data types and simple validations.
 
 As a result the following wizard will be displayed:
 
@@ -157,7 +146,7 @@ In the final step all data collected via the wizard will be sent back to the mic
 }
 ```
 
-The form is able to send anything defined via JSON Schema standard and the microservice which provides the form definition is responsible for the proper handling of the submitted data.
+The form is able to send anything defined via JSON Schema and the microservice which provides the form definition is responsible for the proper handling of the submitted data.
 
 #### API specification
 

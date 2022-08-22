@@ -24,8 +24,6 @@ If you already created assets, you find them listed on this page (see image belo
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
-**Example:**
-
 In DTM, an asset for "HVAC" could contain the condenser and the cooling system as subassets.
 If there are devices associated with this "HVAC" asset or either of its subassets, you can assign devices to the corresponding assets or subassets.
 

@@ -122,13 +122,13 @@ Modify the excel settings to provide the date in a YYYY-MM-DD format. This preve
 
 To provide a file input as a custom property value, the file must first be uploaded to a Cumulocity IoT tenant using the {{< product-c8y-iot >}} API.
 
-Refer to this section to upload a file in Cumulocity : [Provide link here]
+Refer to the [Binaries API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
 
 The binary ID in the API response must be provided as input for the custom property field with type "file" in the CSV template.
 
 If the type is "Boolean", the input field must be either "true" or "false".
 If the type is "enumeration", then the input field must be in the list of values specified during creation of the custom property.
-If the type is "text" or "number" and criteria were provided during custom property creation, then the input value in CSV template must fulfill all the criteria.
+If the type is "text" or "number" and custom criteria were provided during custom property creation, then the input value in CSV template must fulfill all the custom property criteria.
 
 Fill in details for all the assets which must be created as part of the asset hierarchy.
 

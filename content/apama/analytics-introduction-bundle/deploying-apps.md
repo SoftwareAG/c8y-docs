@@ -89,9 +89,8 @@ The following permissions are required by the microservice in order to start up 
 
 5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
 
-{{< c8y-admon-info >}}
-After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains. 
+>**Info**: After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains. 
 They are now available at *softwareag* instead of within the Docker Hub environment at *store/softwareag*.
 If you still use the images from the previous location, you must migrate them.
 See also [Apama Docker image availability on Docker Hub]({{< link-sag-tech-forum >}}/t/apama-docker-image-availability-on-docker-hub/260207).
-{{< /c8y-admon-info >}}
+

@@ -49,7 +49,7 @@ Data from the CSV file can be previewed by clicking the preview icon <img src="/
 
 The following steps illustrate how to ingest and transform data available in AWS S3 buckets.
 
-1. Click **Settings** in the navigator to register the S3 credentials with Machine Learning Workbench (MLW).
+1. Click **Settings** in the navigator then click on AWS-S3 tab to register the S3 credentials with Machine Learning Workbench (MLW).
 
     ![AWS S3 Credentials](/images/zementis/mlw-app-s3-settings-page.png)
 

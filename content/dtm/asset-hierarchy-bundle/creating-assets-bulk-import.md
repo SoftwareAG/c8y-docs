@@ -128,7 +128,7 @@ The binary ID in the API response must be provided as input for the custom prope
 
 If the type is "Boolean", the input field must be either "true" or "false".
 If the type is "enumeration", then the input field must be in the list of values specified during creation of the custom property.
-If the type is "text" or "number" and criteria were provided during custom property creation, then the input value in CSV template must fulfilf all the criteria.
+If the type is "text" or "number" and criteria were provided during custom property creation, then the input value in CSV template must fulfill all the criteria.
 
 Fill in details for all the assets which must be created as part of the asset hierarchy.
 

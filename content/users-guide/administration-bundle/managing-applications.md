@@ -258,11 +258,11 @@ In the **Properties** tab, each application will show the following information,
 
 ### Application plugins
 
-Switch to the **Plugins** tab to view all plugins installed on an application. 
+Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
 
 <img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
 
-In the **Plugins** tab you can manage all currently installed plugins. 
+In the **Plugins** tab you can add and remove plugins. Additionally, you can install plugins to an application.
 
 <a name="editing-and-removing"></a>
 ### To edit an application
@@ -319,7 +319,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Packages
 
-Packages offer better shareability and reusability of UI features across the different applications. UI features can now be developed as packages and added to an application without coding knowledge. You can develop two types of applications:
+Packages are a combination of plugins, blueprints or both. Blueprints can be installed, while plugins can extend an existing application. Packages offer better shareability and reusability of UI features across the different applications. UI features can now be developed as packages and added to an application without coding knowledge. You can develop two types of applications:
 
 - **Plugins** can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are compositions of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.

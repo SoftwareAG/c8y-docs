@@ -67,8 +67,8 @@ client.onMessageArrived = function (message) {
         log("...restarting...");
         setTimeout(function() {
             publish("s/us", "503,c8y_Restart");
+            log("...done...");
         }, 1000);
-        log("...done...");
     }
 };
 

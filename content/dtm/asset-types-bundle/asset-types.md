@@ -98,10 +98,20 @@ The total number of asset types is displayed on the bottom left of the page. Use
 
 #### To select an icon
 
-To select an icon, click the select icon on the left. In the following dialog window you can either search or filter icons by type or select an icon from the predefined list. Select the desired icon and click **Save**.
+To select an icon:
+
+1. Click the select icon on the left.
+2. In the following dialog window search or filter icons by type or select an icon from the predefined list.
+3. Select the desired icon.
+4. Click **Save**.
 
 #### To add a child asset type
-Click **Add child asset type** to add a new child asset type. In the dropdown select one or multiple allowed child asset types. The selected child asset types are then displayed under **Allowed child asset types** with the checkbox **Required** on the right. If the asset type requires this child asset type, select the checkbox. By default, it is clear. Click the remove icon next to the checkbox to remove the child asset from the selected asset type.
+
+1. Click **Add child asset type** to add a new child asset type.
+2. In the dropdown select one or multiple allowed child asset types.
+3. The selected child asset types are then displayed under **Allowed child asset types** with the checkbox **Required** on the right.
+   If the asset type requires this child asset type, select the checkbox. By default, it is clear.
+4. Click the remove icon next to the checkbox to remove the child asset from the selected asset type.
 
 {{< c8y-admon-info>}}
 If you do not select and check a child asset type, then the asset cannot have any child assets.
@@ -115,12 +125,14 @@ If the asset type is "Building" and you select "Floor" as an allowed child asset
 
 #### To add a custom property to an asset type
 
-Click **Add custom property** to add a new custom property to the asset type. In the resulting dialog box, select one or multiple custom properties from the dropdown field. To search for specific custom properties type the respective name in the dropdown field. The selected custom properties are then displayed on the **Custom properties** segment with the checkbox **Required** on the right. If the asset type requires this custom property, select the checkbox. By default, it remains clear.
-You can reorder the custom properties via drag and drop.
-
-To remove the custom property from the asset type, click the remove icon next to the checkbox.
-
-Click **Save** to save your settings.
+1. Click **Add custom property** to add a new custom property to the asset type.
+2. In the resulting dialog box, select one or multiple custom properties from the dropdown field.
+   To search for specific custom properties type the respective name in the dropdown field.
+3. The selected custom properties are then displayed on the **Custom properties** segment with the checkbox **Required** on the right.
+   If the asset type requires this custom property, select the checkbox. By default, it remains clear.
+4. Reorder the custom properties via drag and drop.
+5. To remove the custom property from the asset type, click the remove icon next to the checkbox.
+6. 6Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
 If there are any validation issues with a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
@@ -143,14 +155,13 @@ This approach, allows you to create the desired hierarchy including all asset ty
 
 ### To modify an asset type
 
-To modify an asset type, click the edit icon on the right side of each asset type.
-
-In the editor, make your changes and click **Save**.
-
+1. Click the edit icon on the right side of each asset type.
+2. Make your changes in the editor.
+3. Click **Save**.
 
 ### To delete an asset type
 
-Click **Delete** to delete an existing asset type. There are two ways to delete an asset.
+There are two ways to delete an asset.
 
 #### Delete each asset type individually
 
@@ -167,6 +178,7 @@ To sort columns, hover over the respective column header and click the sort icon
 
 ### To filter asset types
 
-Use the filter option to filter asset types based on text in the respective asset group. Hover over a column title for the filter icon to appear on the right. Click the icon to filter the assets in this column.
-
-To clear all applied filters click **Clear filters** at the top.
+1. Use the filter option to filter asset types based on text in the respective asset group.
+2. Hover over a column title for the filter icon to appear on the right.
+3. Click the icon to filter the assets in this column.
+4. To clear all applied filters click **Clear filters** at the top.

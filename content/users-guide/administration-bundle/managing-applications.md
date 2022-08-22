@@ -165,7 +165,7 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 For details on the fields, see also [Application properties](#application-properties) below.
 
 <a name="blueprint-application"></a>
-##### To install from a blueprint
+##### To install an application from a blueprint
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. Select **Install from available packages**.
@@ -256,7 +256,6 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
-<a name="application-plugins"></a>
 ### Application plugins
 
 Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
@@ -341,7 +340,7 @@ In the **Archives** tab of the plugin, you see all previously uploaded binaries 
 
 <img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
 
-In the **Versions** tab of a plugin, you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+In the **Versions** tab of a package, you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
 To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
 

@@ -319,7 +319,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Packages
 
-Packages are combinations of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. Packages offer better shareability and reusability of UI features across the different applications. UI features can now be developed as packages and added to an application without coding knowledge. You can develop two types of applications:
+Packages are combinations of plugins and blueprints which can be packed together in a single package and can be deployed to the platform. Packages offer better shareability and reusability of UI features across the different applications. UI features can be developed as packages and added to an application without coding knowledge. Packages can consist of two types of applications:
 
 - [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.

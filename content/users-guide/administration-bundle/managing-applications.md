@@ -336,7 +336,7 @@ Additionally, it is possible to view all available plugins within the selected p
 
 <img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
 
-In the **Archives** tab of the plugin, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded via the context menu next to each archive.
+In the **Archives** tab, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded via the context menu next to each archive.
 
 <img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
 

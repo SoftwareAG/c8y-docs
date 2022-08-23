@@ -23,4 +23,9 @@ To change the memory and CPU limit:
    - `[admin@iot-edge-server ~]$ sudo service opcua-mgmt-service restart`
    - `[admin@iot-edge-server ~]$ sudo service opcua-device-gateway restart`
 
->**Important:** Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+{{< c8y-admon-important >}}
+
+Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+
+{{< /c8y-admon-important >}}
+

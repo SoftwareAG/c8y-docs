@@ -26,7 +26,11 @@ and
 [admin@iot-edge-server ~]$  service cumulocity-core-karaf start
 ```
 
->**Important:** Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+{{< c8y-admon-important >}}
+
+Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+
+{{< /c8y-admon-important >}}
 
 ### Increasing the system performance
 

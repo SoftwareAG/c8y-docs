@@ -38,7 +38,7 @@ Before adding a new section, check if the content fit in any of the available se
 - Analytics guide
 - Reference guide
 
-A new section is defined by a markdown file with the following front matter:
+A new section is defined by a Markdown file with the following front matter:
 
 ```yaml
 ---
@@ -50,12 +50,11 @@ layout: root # don't change
 weight: 90 # order the section in the section dropdown in ascending order
 ---
 ```
-
-Grab the icon classes in the [styleguide](http://styleguide.cumulocity.com/icons/)
+Grab the icon classes in the [Styleguide](https://styleguide.cumulocity.com/#/icons/cumulocity)
 
 ### 2. Add the section root directory
 
-All guides are stored in the ```content``` directory. To add a new section, create a directory here and name it with the `bundle` value set in the front matter.
+All guides are stored in the `content` directory. To add a new section, create a directory here and name it with the `bundle` value set in the front matter.
 
 ### 3. Add a subsection
 
@@ -70,7 +69,7 @@ aliases: # if needed, add the redirects here, otherwise remove this
   - /concepts-guide/introduction-to-cumulocity/
   - /concepts-guide/introduction-to-cumulocity.html
 ---
-# add optional content as markdown
+# add optional content as Markdown
 Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage.
 ```
 
@@ -82,7 +81,7 @@ When adding multiple subsections, the content provided in this file will be rend
 
 To display multiple blocks of content and provide anchor links to display in the navigator, you'll have to follow these steps:
 
-1. add a directory with the exact same name as the markdown file adding the suffix `-bundle`, e.g. `introduction-bundle`.
+1. Add a directory with the exact same name as the Markdown file adding the suffix `-bundle`, e.g. `introduction-bundle`.
 
 &nbsp;
 
@@ -96,7 +95,7 @@ headless: true # states that all content inside this directory is just a resourc
 ```
 
 &nbsp;
-3. Add a markdown file for each block of content with the following front matter:
+3. Add a Markdown file for each block of content with the following front matter:
 
 ```yaml
 ---
@@ -104,7 +103,7 @@ title: Overview # will be used as anchor, i.e. guides/users-guide/introduction/#
 weight: 10 # to set the position in the page
 ---
 
-## Add content as markdown or HTML
+## Add content as Markdown or HTML
 
 * Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.
 * Device management, data visualization and remote control functionality through the web.
@@ -124,7 +123,7 @@ To use the images in your pages, just add the relative path e.g `![image title](
 
 ## Redirects
 
-Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/guides` out of the url. Check the folowing example:
+Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/guides` out of the url. Check the following example:
 
 ```yaml
 ---
@@ -150,8 +149,8 @@ Cumulocity provides documentation for multiple releases, for that you'll have to
   "name":"10.5.0", 
   "longname": "Release 10.5.0 (GA)"
 }```
-- Deploy using the jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
-- Deploy the `default` branch using the jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
+- Deploy using the Jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
+- Deploy the `default` branch using the Jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
 
 ---
 © Cumulocity GmbH  2019 + All rights reserved.

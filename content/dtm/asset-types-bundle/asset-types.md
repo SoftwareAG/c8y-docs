@@ -32,7 +32,7 @@ Click **Reload** to reload the screen.
 
 ### To create a new asset type
 
-Click **Add asset type** on the top right to add a new asset type. This opens the **New asset type** page.
+Click **Add asset type** on the top right to add a new asset type. This opens the **Building Asset type** page.
 
 
  ![Building Asset Type page](/images/dtm/asset-type/dtm-asset-type-create-new.png)
@@ -53,15 +53,17 @@ Provide the following six parameters:
 <tbody>
 <tr>
 <td style="text-align:left"><b>Label</b></td>
-<td style="text-align:left">Refers to the name of the asset type. This name is used for the asset throughout the application.</td>
+<td style="text-align:left">Refers to the name of the asset type.<br>
+This name is used for the asset throughout the application.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM.</td>
+<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.</td>
 <td style="text-align:left">Mandatory</td>
 =======
-<td style="text-align:left">Refers to the name of the asset type. This name is used for the asset type throughout the application.</td>
+<td style="text-align:left">Refers to the name of the asset type.<br>
+This name is used for the asset type throughout the application.</td>
 <td style="text-align:left"><b>Mandatory</b></td>
 </tr>
 <tr>
@@ -76,17 +78,20 @@ Provide the following six parameters:
 </tr>
 <tr>
 <td style="text-align:left"><b>Icon</b></td>
-<td style="text-align:left">Displayed next to the label for each asset type. By default, no icon is selected. </td>
+<td style="text-align:left">Displayed next to the label for each asset type.<br>
+By default, no icon is selected. </td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Child asset types</b></td>
-<td style="text-align:left">Restricts the asset assignment to the defined types. By default, no child assets are allowed if this field is not set.</td>
+<td style="text-align:left">Restricts the asset assignment to the defined types.<br>
+By default, no child assets are allowed if this field is not set.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Custom properties</b></td>
-<td style="text-align:left">Parameters that define an asset type. By default, no custom properties are selected.</td>
+<td style="text-align:left">Parameters that define an asset type.<br>
+By default, no custom properties are selected.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 </tbody>
@@ -97,8 +102,6 @@ Once all required asset types are created, you can start creating [assets](/dtm/
 The total number of asset types is displayed on the bottom left of the page. Use the **Items per page** dropdown option to change the number of entries per page.
 
 #### To select an icon
-
-To select an icon:
 
 1. Click the select icon on the left.
 2. In the following dialog window search or filter icons by type or select an icon from the predefined list.
@@ -132,7 +135,7 @@ If the asset type is "Building" and you select "Floor" as an allowed child asset
    If the asset type requires this custom property, select the checkbox. By default, it remains clear.
 4. Reorder the custom properties via drag and drop.
 5. To remove the custom property from the asset type, click the remove icon next to the checkbox.
-6. 6Click **Save** to save your settings.
+6. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
 If there are any validation issues with a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
@@ -142,13 +145,17 @@ If there is no custom property meeting your requirements, click **New custom pro
 
 ### Root asset type
 
-To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided templates first. This root asset type can then be used to create an asset hierarchy, which then defines all the assets, subassets, custom properties and devices in the DTM application. As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
+To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided templates first.
+
+This root asset type can then be used to create an asset hierarchy, which then defines all the assets, subassets, custom properties and devices in the DTM application.
+
+As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
 
 ### To create an asset type for the entire hierarchy
 
-To create an asset type for the entire hierarchy, first create all required [custom properties](/dtm/asset-types/#property-library). Then [create the asset types](/dtm/asset-types/#to-create-a-new-asset-type) in a bottom-up approach, that is, all the child asset types are created first, followed by the root asset type at the end.
-
-Afterwards, you can start [creating assets](/dtm/asset-hierarchy/#creating-assets-ui) for the new asset hierarchy.
+1. Create all required [custom properties](/dtm/asset-types/#property-library).
+2. Then [create the asset types](/dtm/asset-types/#to-create-a-new-asset-type) in a bottom-up approach, that is, all the child asset types are created first, followed by the root asset type at the end.
+3. Start [creating assets](/dtm/asset-hierarchy/#creating-assets-ui) for the new asset hierarchy.
 
 This approach, allows you to create the desired hierarchy including all asset types, subasset types and custom properties in one process.
 
@@ -161,7 +168,7 @@ This approach, allows you to create the desired hierarchy including all asset ty
 
 ### To delete an asset type
 
-There are two ways to delete an asset.
+There are two ways to delete an asset:
 
 #### Delete each asset type individually
 

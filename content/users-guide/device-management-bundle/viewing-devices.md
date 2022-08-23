@@ -18,6 +18,7 @@ A detailed device list will be displayed.
 ![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
 <a name="device-list"></a>
+
 ### Device information
 
 For each device, the device list shows the following information provided in columns:
@@ -68,7 +69,7 @@ For each device, the device list shows the following information provided in col
 </tr>
 <tr>
 <td style="text-align:left">Alarms</td>
-<td style="text-align:left">The alarm status of the device, showing number and type of alarms currently unresolved for the device. See <a href="#alarm-monitoring" class="no-ajaxy">Working with alarms</a> for further information on working with alarms.</td>
+<td style="text-align:left">The alarm status of the device, showing number and type of alarms currently unresolved for the device. Only includes alarms for the parent device. See <a href="#alarm-monitoring" class="no-ajaxy">Working with alarms</a> for further information on working with alarms.</td>
 </tr>
 </tbody>
 </table>
@@ -76,6 +77,7 @@ For each device, the device list shows the following information provided in col
 For users with global roles the devices list displays the items in a paginated manner. You can select the number of items per page and directly jump to any page. Users with inventory roles see up to 50 items initially. If there are more than 50 devices available more devices are loaded as you scroll down the list.
 
 <a name="configuring-columns"></a>
+
 ### Configuring columns
 
 The columns shown in the device list may be configured to your needs.
@@ -84,7 +86,7 @@ The columns shown in the device list may be configured to your needs.
 
 1. In the table header, click **Configure columns**.
 2. In the resulting dropdown, select/clear the checkboxes for all columns as required. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
-<br>
+   <br>
 
 The device list will reflect your changes and only show the selected columns.
 
@@ -93,8 +95,8 @@ The device list will reflect your changes and only show the selected columns.
 Moreover, you can add custom columns to show additional device properties.
 
 1. In the **Configure columns** dropdown, click **Add custom column**.<br>
-![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
-2. In the **Header** field, enter a header for the new custom column.  
+   ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+2. In the **Header** field, enter a header for the new custom column.
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select {{< product-c8y-iot >}} standard fragments like `c8y_Mobile.mcc`.
 4. Switch the **Add another column after saving this one** toggle to active to create another custom column right after saving the current one without leaving the dialog.
 5. Click **Save**.
@@ -117,6 +119,7 @@ Deleting a device means to remove the device from the {{< product-c8y-iot >}} da
 {{< /c8y-admon-important >}}
 
 <a name="filtering-devices"></a>
+
 ### To filter devices
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria.
@@ -131,10 +134,10 @@ Most columns represent text fields. You can filter these columns by simply enter
 
 Apart from filtering for text there are several other options:
 
-* In case of date fields (for example **Registration date**), you specify a date range to filter for.
-* In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
-* In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
-* For custom columns, select **Only rows where value is defined** to filter based on whether the fragment exists,  or specify one or more filter terms the entry must match.
+- In case of date fields (for example **Registration date**), you specify a date range to filter for.
+- In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
+- In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+- For custom columns, select **Only rows where value is defined** to filter based on whether the fragment exists, or specify one or more filter terms the entry must match.
 
 Finally, click **Apply** to carry out the filtering.
 

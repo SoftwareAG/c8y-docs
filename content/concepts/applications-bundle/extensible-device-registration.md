@@ -68,7 +68,7 @@ There are two types of extensions:
 
 After enabling the `extensibleDeviceRegistration` extension type, the Device management > Devices > Register device menu is being extended with an entry corresponding to the extension `name` property:
 
-![Select guide](/images//concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+![Select guide](/images/concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
 
 From now on, everything will be rendered based on data provided via the custom microservice. The added menu entry opens a window which fetches the form definition using the following endpoint:
 
@@ -132,7 +132,7 @@ The important part is the `pages` array which contains steps of the wizard that 
 
 As a result the following wizard will be displayed:
 
-![Select guide](/images//concepts-guide/extensible-device-registration/extensible-single-device-reg.png)
+![Select guide](/images/concepts-guide/extensible-device-registration/extensible-single-device-reg.png)
 
 In the final step all data collected via the wizard will be sent back to the microservice using the following REST endpoint:
 
@@ -169,7 +169,7 @@ Creates a single device based on the collected data. Sends application/json with
 
 The following diagram visualizes the single device registration flow:
 
-![Single diagram](/images//concepts-guide/extensible-device-registration/single-diagram.png)
+![Single diagram](/images/concepts-guide/extensible-device-registration/single-diagram.png)
 
 
 ### Bulk device registration
@@ -178,7 +178,7 @@ The key functionality required for many device integrations is the ability to re
 
 After enabling the `extensibleBulkDeviceRegistration` extension type, the Device management > Devices > Register device  `Bulk device registration` modal is being displayed with an extended wizard entry corresponding to the extension `name` property:
 
-![Select guide](/images//concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+![Select guide](/images/concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
 
 Additionally, the microservice provides the title of the wizard step and example bulk file(s):
 ```json
@@ -231,7 +231,7 @@ Sends multipart form-data of the csv file type.
 
 The following diagram visualizes the bulk device registration flow:
 
-![Bulk diagram](/images//concepts-guide/extensible-device-registration/bulk-diagram-sync.png)
+![Bulk diagram](/images/concepts-guide/extensible-device-registration/bulk-diagram-sync.png)
 
 
 ### Limitations

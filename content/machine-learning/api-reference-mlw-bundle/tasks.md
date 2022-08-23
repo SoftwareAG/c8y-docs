@@ -46,7 +46,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks' \
 {
     "data": [
         {
-            "id": "1601287609_Tasks",
+            "id": "656ea4",
             "name": "sensorData2",
             "createdAt": "Mon Sep 28 10:06:49 2020",
             "type": "C8YDATA",
@@ -142,7 +142,7 @@ Gets the details of the parent task running or completed.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks' \
+curl --location --request GET '{{url}}/service/mlw/tasks/656ea4' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -152,7 +152,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks' \
 200 - OK
 
 {
-    "id": "1601287609_Tasks",
+    "id": "656ea4",
     "name": "sensorData2",
     "createdAt": "Mon Sep 28 10:06:49 2020",
     "type": "C8YDATA",
@@ -160,8 +160,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks' \
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1601287609_0411_Cumulocity",
-            "tasksID": "1601287609_Tasks",
+            "id": "656ea5",
+            "tasksID": "656ea4",
             "taskName": "sensorData2",
             "type": "C8YDATA",
             "executedAt": "Mon Sep 28 10:06:49 2020",
@@ -224,7 +224,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks' \
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks'
+curl --location --request GET '{{url}}/service/mlw/tasks/656ea4'
 ```
 
 **Example Response**
@@ -262,7 +262,7 @@ Deletes and stops all the individual tasks running under a parent task and delet
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
+curl --location --request DELETE '{{url}}/service/mlw/tasks/656ea4' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -444,7 +444,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks'
+curl --location --request DELETE '{{url}}/service/mlw/tasks/656ea4'
 ```
 
 **Example Response**
@@ -484,7 +484,7 @@ Provides the complete details of the individual task running under a parent task
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
+curl --location --request GET '{{url}}/service/mlw/tasks/656ea4/task/656ea5' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -494,8 +494,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 200 - OK
 
 {
-    "id": "1601287609_0411_Cumulocity",
-    "tasksID": "1601287609_Tasks",
+    "id": "656ea5",
+    "tasksID": "656ea4",
     "taskName": "sensorData2",
     "type": "C8YDATA",
     "executedAt": "Mon Sep 28 10:06:49 2020",
@@ -516,7 +516,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
+curl --location --request GET '{{url}}/service/mlw/tasks/656ea4/task/656ea5'
 ```
 
 **Example Response**
@@ -555,7 +555,7 @@ Triggers an early stop callback for the neural network training task
 ```
 200 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601289809_Task' \
+curl --location --request PUT '{{url}}/service/mlw/tasks/656ea4/task/1601289809_Task' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -574,7 +574,7 @@ curl --location --request PUT '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 ```
 401 - Unauthorized
 
-curl --location --request PUT '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601289809_Task'
+curl --location --request PUT '{{url}}/service/mlw/tasks/656ea4/task/1601289809_Task'
 ```
 
 **Example Response**
@@ -613,7 +613,7 @@ Deletes and stops the individual task running under a parent task.
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
+curl --location --request DELETE '{{url}}/service/mlw/tasks/656ea4/task/656ea5' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -624,7 +624,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/tas
 {
     "data": [
         {
-            "id": "1601287609_Tasks",
+            "id": "656ea4",
             "name": "sensorData2",
             "createdAt": "Mon Sep 28 10:06:49 2020",
             "type": "C8YDATA",
@@ -680,7 +680,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/tas
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
+curl --location --request DELETE '{{url}}/service/mlw/tasks/656ea4/task/656ea5'
 ```
 
 **Example Response**

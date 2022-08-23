@@ -42,7 +42,7 @@ Trains the WorkFlow using the already created AutoML model, pre-processing scrip
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/160128911974_WorkFlow/workflow" \
+curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
      --header "Authorization: {{auth}}" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain","startDate": "2020-03-08T18:30:00.000Z","testSize":0.33}'
@@ -54,7 +54,7 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
 200 - OK
 
 {
-   "id":"160128911998_Tasks",
+   "id":"656ea4",
    "name":"workFlowTrain",
    "createdAt":"Mon Sep 28 10:31:59 2020",
    "type":"WORKFLOW",
@@ -66,9 +66,9 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
          "status":"RUNNING",
          "type":"WORKFLOW",
          "message":"In Progress",
-         "id":"160128911974_WorkFlow",
+         "id":"656ea5",
          "projectID":"0f981b26132d412097ee5e54a257ce9f",
-         "tasksID":"160128911998_Tasks",
+         "tasksID":"656ea4",
          "listOfModelAccuracy":[  
          ],
          "executedAt":"Mon Sep 28 10:31:59 2020",
@@ -117,7 +117,7 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
 ```
 401 - Unauthorized
 
-curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/160128911974_WorkFlow/workflow" \
+curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
 ```
@@ -139,7 +139,7 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
 ```
 409 - Conflict
 
-curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/160128911974_WorkFlow/workflow" \
+curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
      --header "Authorization: {{auth}}" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
@@ -162,7 +162,7 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
 ```
 409 - Conflict
 
-curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/160128911974_WorkFlow/workflow" \
+curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
      --header "Authorization: {{auth}}" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":""}'

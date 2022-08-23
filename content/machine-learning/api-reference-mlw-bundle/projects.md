@@ -260,7 +260,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 200 - OK
 
 {
-    "id": "1631777908_Tasks",
+    "id": "656ea4",
     "name": "Sample Project",
     "createdAt": "2021-09-16T07:38:28.712732Z",
     "type": "COMMIT/PULL",
@@ -268,11 +268,11 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1631777908_0957_Commit",
+            "id": "656ea5",
             "pID": "140104349759232",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631777908_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T07:38:28.712732Z",
@@ -1152,7 +1152,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
 200 - OK
 
 {
-    "id": "1631780828_Tasks",
+    "id": "656ea4",
     "name": "Sample Project",
     "createdAt": "2021-09-16T08:27:08.878904Z",
     "type": "COMMIT/PULL",
@@ -1160,11 +1160,11 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1631780828_0963_Commit",
+            "id": "656ea5",
             "pID": "140106208573184",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631780828_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:27:08.878904Z",
@@ -1184,11 +1184,11 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             ]
         },
         {
-            "id": "1631780859_0744_Commit",
+            "id": "656ea5",
             "pID": "140106208573184",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631780828_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:27:39.810531Z",
@@ -1208,10 +1208,10 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
             ]
         },
         {
-            "id": "1631780908_0710_Pull",
+            "id": "656ea6",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631780828_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:28:28.709415Z",

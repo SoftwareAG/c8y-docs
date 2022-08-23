@@ -248,7 +248,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 200 - OK
 
 {
-    "id": "161399268167_Tasks",
+    "id": "656ea4",
     "name": "anomalySampleData_1613992681",
     "createdAt": "Mon Feb 22 11:18:01 2021",
     "type": "S3",

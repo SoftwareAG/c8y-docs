@@ -273,7 +273,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 200 - OK
 
 {
-    "id": "1631782896_Tasks",
+    "id": "656ea4",
     "name": "sampleClassifiactionModel2",
     "createdAt": "2021-09-16T09:01:36.773619Z",
     "type": "AUTOML",
@@ -284,7 +284,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
             "targetVar": "col1",
             "problem_type": "Classification",
             "id": "1631782868_autoML",
-            "tasksID": "1631782896_Tasks",
+            "tasksID": "656ea4",
             "shape": [
                 150,
                 5
@@ -663,7 +663,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 200 - OK
 
 {
-    "id": "1631783243_Tasks",
+    "id": "656ea4",
     "name": "sampleAnomaly2",
     "createdAt": "2021-09-16T09:07:23.487543Z",
     "type": "ANOMALY",
@@ -675,7 +675,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
             "message": "In progress",
             "problem_type": "Anomaly",
             "id": "1631783211_autoML",
-            "tasksID": "1631783243_Tasks",
+            "tasksID": "656ea4",
             "shape": [
                 106,
                 4

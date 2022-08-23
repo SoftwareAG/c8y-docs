@@ -264,7 +264,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 200 - OK
 
 {
-    "id": "1601287609_Tasks",
+    "id": "656ea4",
     "name": "sensorData2",
     "createdAt": "Mon Sep 28 10:06:49 2020",
     "type": "C8YDATA",
@@ -272,8 +272,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1601287609_0411_Cumulocity",
-            "tasksID": "1601287609_Tasks",
+            "id": "656ea5",
+            "tasksID": "656ea4",
             "taskName": "sensorData2",
             "type": "C8YDATA",
             "executedAt": "Mon Sep 28 10:06:49 2020",

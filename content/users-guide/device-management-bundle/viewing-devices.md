@@ -116,19 +116,6 @@ The device will be permanently deleted from the platform.
 Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 {{< /c8y-admon-important >}}
 
-<a name="searching-devices"></a>
-### To search for devices
-
-{{< product-c8y-iot >}} includes a full-text search for devices.
-
-Click the **Search** button at the top right and enter a search term into the textbox.
-
-For details on the search functionality, refer to [Getting Started > UI functionalities and features](/users-guide/getting-started#gui-features).
-
-Our example shows a search for "NTC".
-
-![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
-
 <a name="filtering-devices"></a>
 ### To filter devices
 

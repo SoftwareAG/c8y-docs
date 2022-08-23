@@ -7,19 +7,22 @@ layout: redirect
 Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by adding assets, they can be viewed by clicking the parent asset.
 
 
+<a name=""></a>
 ### To view an asset
 
 1. Select an asset.
 
 2. The **Subassets** page contains the asset details, created and last updated at the time displayed at the top right.
 
-3. Optionally [add child assets](/dtm/asset-hierarchy/#to-add-child-assets), [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) from the top bar.
+3. Optionally [add child assets](/dtm/asset-hierarchy/#add-child-assets), [assign devices](/dtm/asset-hierarchy/#assign-devices-to-asset) or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) from the top bar.
 
 4. The asset name and description along with the icon are displayed at the top.
 All subassets and devices for this asset will get listed in the **Subassets** section.
 
 5. All the custom properties for this asset will be displayed on the right.
 
+
+<a name=""></a>
 #### To view an asset hierarchy
 
 To view an asset hierarchy:
@@ -28,13 +31,17 @@ To view an asset hierarchy:
 
 2. When you click the subassets, their child asset hierarchy is displayed. This way, you can view the entire hierarchy.
 
-3. You can also view the hierarchy and navigate to the particular asset using the [navigator](/users-guide/getting-started/#main-screen-elements) on the left. Expand the hierarchy in the leftside navigation and select the desired asset to view the asset details.
+3. You can also view the hierarchy and navigate to the particular asset using the navigator on the left. Expand the hierarchy in the navigation and select the desired asset to view the asset details.
 
+
+<a name=""></a>
 ### To modify an asset
 
 Fields are marked editable by an edit icon.
 To modify any of the asset details, click the edit icon, enter new details and save.
 
+
+<a name=""></a>
 ### To delete an asset
 
 To delete a subasset or device in the hierarchy:

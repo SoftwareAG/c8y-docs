@@ -6,10 +6,10 @@ title: Localization
 
 {{< c8y-admon-related >}}
 * [Subscribed applications](/users-guide/administration/#subscribed-applications) for more information on how to access the DTM application in your tenant.
-*
 
+{{< /c8y-admon-related >}}
 
-
+<a name=""></a>
 ### Localization feature
 
 The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). It should then appear under [Subscribed applications](/users-guide/administration/#subscribed-applications) in your tenant.
@@ -32,6 +32,8 @@ Once you create all custom properties and asset types, then all those names are 
 
 To add a new translation in the DTM application, you can add the text as key and add the translations as required.
 
+
+<a name=""></a>
 ### To add new keys for translations
 
 Add new keys and their respective translations using the **Add term** option on the top right.
@@ -44,23 +46,29 @@ Fill all the mandatory fields in the dialog window and click **Save**. The new k
 
 Next, click **Apply** to apply the changes.
 
+
+<a name=""></a>
 ### To add and edit translations
 
  You can add or edit translations for all the keys in two ways:
 
-* Hover over the respective column for the edit icon to be visible. Click the icon to select the desired language and add or edit the translation.
+1. Hover over the respective column for the edit icon to be visible.
+2. Click the icon to select the desired language.
+3. Add or edit the translation.
+4. Click **Save**.
 
-* Click the edit icon in each row to open the dialog window **Edit term translations**. Add or edit the translation for any language. Click **Save** to finish the process.
+or:
 
-The edit icon is present for each row and click **Edit term translations** dialog window loads.
+1. Click the edit icon in each row to open the dialog window **Edit term translations**.
+2. Add or edit the translation for any language.
+3. Click **Save**.
 
-Translation can be added or modified for any of the languages and the changes can be saved using **Save** button.
+Add or modify the translation for any language in {{< product-c8y-iot >}}.
+
+Once all your translations are done, change the language under **User settings**. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
 
 
-Once all your translations are in place, change the language under **User settings**. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
-
-
-The added translations will now be displayed in the DTM application.
+The added translations are now displayed in the DTM application.
 
 To change the language for the DTM application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the dropdown menu. You need to refresh your screen for the application to display the newly selected language.
 

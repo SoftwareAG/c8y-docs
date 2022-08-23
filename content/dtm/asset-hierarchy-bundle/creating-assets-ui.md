@@ -9,6 +9,7 @@ The following section describes how to create an asset via the UI.
 Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.
 
 
+<a name="assets"></a>
 ### Assets
 
 In the DTM application assets are the digital representation of physical assets.
@@ -24,19 +25,12 @@ If you already created assets, you find them listed on this page (see image belo
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
-In DTM, an asset for "HVAC" could contain the condenser and the cooling system as subassets.
-If there are devices associated with this "HVAC" asset or either of its subassets, you can assign devices to the corresponding assets or subassets.
 
+<a name=""></a>
+### Asset hierarchy
 
-#### Asset hierarchy
-
-You can see the asset hierarchy in the **New asset** page.
-
-The asset hierarchy provides a bird's eye view of the entire hierarchy.
-It is compiled by the root asset type and all its subsequent child asset types.
-Each hierarchy level comprises of custom properties for the asset as well as its subassets and devices.
-
-It is similar to a tree structure, with the root level asset on top and its child assets branching out below.
+The asset hierarchy is displayed on the right in the **New asset** page. An asset hierarchy consists of the root asset type and all its subsequent child asset types.
+Each hierarchy level comprises of numerous custom properties for the asset as well as its subassets and devices.
 
 **Example:**
 
@@ -45,7 +39,8 @@ If you create the root asset level "Building" with the child asset "Floor", whic
 Building > Floor > Room
 
 
-### To add an asset
+<a name="create-asset"></a>
+### To create an asset
 
 To add an asset via the UI:
 
@@ -61,14 +56,14 @@ Root asset types are asset types which are at the top of hierarchy and don't hav
 
 3. The asset hierarchy is shown in the left tab and the respective dialog window is shown in the right tab. Fill out the fields labeled "required".
 
-4. Optionally, add a description or [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) to your root asset.
+4. Optionally, add a description or [assign devices](#assign-devices-to-asset) to your root asset.
 
 5. To add more than one root asset, click the **Add** button.
 
 6. Under **custom properties**, fill in the required information. Here you find all [custom properties](/dtm/asset-types/#property-library) assigned to the asset type that you create.
 
     {{< c8y-admon-info>}}
- The custom properties are defined when [creating the asset type](/dtm/asset-types/#to-create-a-new-asset-type).
+ The custom properties are defined when [creating the asset type](/dtm/asset-types/#create-asset-type).
  When creating an asset you must provide the values for all custom properties.
     {{< /c8y-admon-info>}}
 
@@ -99,85 +94,10 @@ Fill out all required fields.
 You have the option to add numerous assets on this level.
 Click **Next**.
 
-
-
-<!--
-#### Custom property of type "text" or "number"
-
-If the type of a custom property is either "text" or "number", then provide a valid text or numeric input as value.
-
-**Example:**
-
-If the "Building" asset is being created, and "Building Dimension" and “Building color” are the 2 custom properties for this asset, then the values must be provided for both.
-
-The "Building color" can be "white" and the value of "Building dimension" can be 98 and 50 for building height and width respectively.
-
-If default values were provided when creating a custom property of type text or number, then the default values are displayed.
-You can keep them or enter a new value.
-If no default value was assigned during creation, then you must provide a value.
-
-
-### Custom property of type "date picker"
-
-If the type of a custom property is "date picker", then a calendar will be displayed.
-Provide a date as its value.
-
-**Example:**
-
-If "Project start date" is a custom property for the "Building" asset, then the start date of the project can be provided as its value when creating the "Building" asset.
-
 ![assets-date](/images/dtm/assets/dtm-assets-create-date-type.png)
 
-### Custom property of type "file upload"
 
-If the type of a custom property is "file upload", then during asset hierarchy creation a file browser is displayed.
-Select a valid file to be uploaded.
-
-When creating the custom property, the allowed file types are defined.
-When creating the asset hierarchy, the file selected for upload must belong to the list of allowed file types.
-Any file type not mentioned in the list will not be allowed.
-
-**Example:**
-
-The blueprint for a building can be uploaded as one of the custom properties and used for future references.
-
-{{< c8y-admon-info>}}
-Uploading a file which is not present in the allowed file types list, results in a validation error and the asset will not be created.
-{{< /c8y-admon-info>}}
-
-### Custom property of type "enumeration"
-
-If a custom property is of type "enumeration", then when creating the asset hierarchy the options provided during creation are displayed in a dropdown.
-Select a value for the custom property from this dropdown.
-
-**Example:**
-
-If “building color” is a custom property and the color of the building can only be "white", "black" or "grey", then select the type  "enumeration".
-The three colors are provided as a list of options during the creation of the custom property.
-
-When the asset hierarchy is being created, a dropdown appears with these three options and you must select a value for the custom property from this dropdown.
-
-![assets-enum](/images/dtm/assets/dtm-assets-create-enum-type.png)
-
-### Custom property of type "Boolean"
-
-If a custom property is of type "Boolean", a checkbox will be present for the custom property.
-
-When creating the asset, the presence or absence of the custom property can be defined by selecting or deselecting the checkbox.
-
-
-{{< c8y-admon-info >}}
-When the asset type is defined, a few of the custom properties are marked as **Required** using a checkbox.
-When the asset is created, these custom properties must be assigned a value.
-If any of the mandatory fields aren't assigned a value, then the **Next** or **Create** buttons are disabled.
-The remaining properties can either be assigned a value during asset creation or after the asset is created.
-{{< /c8y-admon-info >}}
-
-The custom property section only appears if the custom properties were selected for the asset type.
-If the asset type does not have any custom properties, then the custom property section is not displayed during asset hierarchy creation.
--->
-
-
+<a name="assign-devices-to-asset"></a>
 ### To assign devices to an asset
 
 When you create a new asset you have the option of assigning one or more devices to this asset.
@@ -189,13 +109,15 @@ When you create a new asset you have the option of assigning one or more devices
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
 
 To add a new device, add it through the **Device Management** application.
-Refer to the [Device Management](/users-guide/device-management/#connecting-devices) section in the *User guide*.
+Refer to [Device Management > Connecting devices > Device registration](/users-guide/device-management/#connecting-devices) in the *User guide*.
 
 {{< c8y-admon-info>}}
 Only select devices which are part of the current asset.
 If a device belongs to a child asset, then select it when you create the child asset.
 {{< /c8y-admon-info>}}
 
+
+<a name=""></a>
 #### To filter and select devices
 
 Various columns specify the device details for each device.
@@ -219,6 +141,8 @@ The sort icon and the filter icons appear on hover over each column.
 
 7. Click the **Assign** button at the bottom. The window closes and you can continue creating the asset.
 
+
+<a name=""></a>
 ### To add multiple instances in an asset
 
 At each hierarchy level, you can create multiple assets from a single asset type.
@@ -231,7 +155,7 @@ For one building with two floors, you first create the asset hierarchy level for
 
     ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
-2. To delete an added asset template, click the delete icon at the top right.
+2. To delete an added asset template, hover over the click the delete icon at the top right.
 
     {{< c8y-admon-info>}}
 The delete icon appears on hover.
@@ -247,6 +171,8 @@ On successful asset hierarchy creation, you see a pop-up notification in the top
 You can view the newly created asset hierarchy by clicking the root asset and following the navigation.
 Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 
+
+<a name=""></a>
 ### Subassets
 
 Click the root asset in the **Assets** page to load the **Subassets** page.
@@ -254,8 +180,10 @@ It shows the details of the root asset, all subassets, child devices and custom 
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-In the top right corner in the **Subassets** page, you can [add child assets](#to-add-child-assets), [assign devices](#to-assign-devices-to-an-asset) and [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import).
+In the top right corner in the **Subassets** page, you can [add child assets](#add-child-assets), [assign devices](#assign-devices-to-asset) and [import assets in bulk](/dtm/asset-hierarchy/#creating-assets-bulk-import).
 
+
+<a name="add-child-assets"></a>
 #### To add child assets
 
 1. Click **Add child asset** in the **Subassets** page to load the **Asset hierarchy** for a root asset or asset.
@@ -271,7 +199,7 @@ If you navigate to the "Building" asset and click **Add child asset**, then the 
 
 If you navigate to the existing "Floor" asset and want to add a child asset, then you can only add child assets for "Room".
 
-For details how to add assets in the asset hierarchy, see [To add assets](#to-add-assets).
+For details how to add assets in the asset hierarchy, see [To add assets](#create-asset).
 
 {{< c8y-admon-info>}}
 If you are at the end of the hierarchy, clicking **Add child asset** will show no option to create child assets.

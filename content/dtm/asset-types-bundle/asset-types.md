@@ -4,11 +4,7 @@ title: Asset types
 layout: redirect
 ---
 
-The asset type is a blueprint or template to create [assets](/dtm/asset-hierarchy/#assets). An asset type defines how the asset will look like when created. Multiple assets can be created through one single asset type. An asset type consists of one or more [custom properties](/dtm/asset-types/#property-library).
-
-{{< c8y-admon-info >}}
-While every asset belongs to only one asset type, it cannot have multiple asset types as the source template.
-{{< /c8y-admon-info >}}
+The asset type is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like when created. An asset type consists of one or more [custom properties](/dtm/asset-types/#property-library).
 
 To reach the **Asset types** page, navigate to **Configuration > Digital Twin Library > Asset types**.
 
@@ -30,7 +26,8 @@ Click **Configure columns** to configure the displayed columns.
 Click **Reload** to reload the screen.
 
 
-### To create a new asset type
+<a name="create-asset-type"></a>
+### To create an asset type
 
 Click **Add asset type** on the top right to add a new asset type. This opens the **Building Asset type** page.
 
@@ -41,8 +38,8 @@ Provide the following six parameters:
 
 <table>
 <col width="20">
-<col width="60">
-<col width="20">
+<col width="50">
+<col width="30">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -61,15 +58,6 @@ This name is used for the asset throughout the application.</td>
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.</td>
 <td style="text-align:left">Mandatory</td>
-=======
-<td style="text-align:left">Refers to the name of the asset type.<br>
-This name is used for the asset type throughout the application.</td>
-<td style="text-align:left"><b>Mandatory</b></td>
-</tr>
-<tr>
-<td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.</td>
-<td style="text-align:left"><b>Mandatory</b></td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Description</b></td>
@@ -101,6 +89,8 @@ Once all required asset types are created, you can start creating [assets](/dtm/
 
 The total number of asset types is displayed on the bottom left of the page. Use the **Items per page** dropdown option to change the number of entries per page.
 
+
+<a name=""></a>
 #### To select an icon
 
 1. Click the select icon on the left.
@@ -108,6 +98,8 @@ The total number of asset types is displayed on the bottom left of the page. Use
 3. Select the desired icon.
 4. Click **Save**.
 
+
+<a name=""></a>
 #### To add a child asset type
 
 1. Click **Add child asset type** to add a new child asset type.
@@ -126,6 +118,8 @@ If one or more child asset types are checked as required, an asset created with 
 
 If the asset type is "Building" and you select "Floor" as an allowed child asset type, then the newly created asset "SAG Building" can only have "Floor" assets as child assets.
 
+
+<a name=""></a>
 #### To add a custom property to an asset type
 
 1. Click **Add custom property** to add a new custom property to the asset type.
@@ -141,8 +135,10 @@ If the asset type is "Building" and you select "Floor" as an allowed child asset
 If there are any validation issues with a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
-If there is no custom property meeting your requirements, click **New custom property**. For more details on how to create a new custom property see [Property Library > To create a new custom property](/dtm/asset-types/#to-create-a-new-custom-property).
+If there is no custom property meeting your requirements, click **New custom property**. For more details on how to create a new custom property see [Property Library > To create a custom property](/dtm/asset-types/#create-custom-property).
 
+
+<a name=""></a>
 ### Root asset type
 
 To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided templates first.
@@ -151,38 +147,50 @@ This root asset type can then be used to create an asset hierarchy, which then d
 
 As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
 
+
+<a name=""></a>
 ### To create an asset type for the entire hierarchy
 
 1. Create all required [custom properties](/dtm/asset-types/#property-library).
-2. Then [create the asset types](/dtm/asset-types/#to-create-a-new-asset-type) in a bottom-up approach, that is, all the child asset types are created first, followed by the root asset type at the end.
-3. Start [creating assets](/dtm/asset-hierarchy/#creating-assets-ui) for the new asset hierarchy.
+2. Then [create the asset types](#create-asset-type) in a bottom-up approach, that is, all the child asset types are created first, followed by the root asset type at the end.
+3. [Create assets](/dtm/asset-hierarchy/#create-asset) for the new asset hierarchy.
 
 This approach, allows you to create the desired hierarchy including all asset types, subasset types and custom properties in one process.
 
 
+<a name=""></a>
 ### To modify an asset type
 
 1. Click the edit icon on the right side of each asset type.
 2. Make your changes in the editor.
 3. Click **Save**.
 
+
+<a name=""></a>
 ### To delete an asset type
 
 There are two ways to delete an asset:
 
+
+<a name=""></a>
 #### Delete each asset type individually
 
 On the **Asset types** page, hover over the desired asset type and click the delete icon on the right.
 
+
+<a name=""></a>
 #### Delete the asset types in bulk
 
 On the **Asset types** page, select the checkboxes next to the desired asset types. Click **Delete** to delete the selected asset types.
 
 
+<a name=""></a>
 ### To sort asset types
 
 To sort columns, hover over the respective column header and click the sort icon for an ascending or descending order.
 
+
+<a name=""></a>
 ### To filter asset types
 
 1. Use the filter option to filter asset types based on text in the respective asset group.

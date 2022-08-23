@@ -8,6 +8,7 @@ To import the entire asset hierarchy with all assets at once, use the bulk impor
 For each [asset type](/dtm/asset-types/#asset-types), a CSV template is provided.
 Fill in the required details in this template and upload the file to create the assets in a bulk for the selected asset type.
 
+<a name=""></a>
 ### To create a role to use the bulk import feature
 
 To use the Bulk import feature, you must provide permission for **Digital Twin** role, following these steps:
@@ -34,6 +35,8 @@ Once the permissions are assigned, the bulk import feature can be used.
 If the permissions are not assigned, then the CSV template will not be downloaded correctly.
 {{< /c8y-admon-info>}}
 
+
+<a name=""></a>
 ### To download a CSV template for bulk import
 
 Follow the steps below:
@@ -58,6 +61,7 @@ Follow the steps below:
 	<br/>
 
 5. Click **Download Template** to download the CSV template.
+
 
 <a name="csv-template-parameters"></a>
 ### CSV template parameters
@@ -137,6 +141,8 @@ Then enter the asset details for child asset types under the root asset.
 Next, enter the details for the next level in the hierarchy of child assets and repeat until the details for all the assets are entered in the CSV template.
 Save the CSV template in your system.
 
+
+<a name=""></a>
 ### To upload a CSV template
 
 To upload the CSV template follow the steps below:
@@ -158,6 +164,8 @@ No assets are created.
 
 If the bulk import fails, review the reported issues and try again.
 
+
+<a name=""></a>
 ### Partial import
 
 If the asset hierarchy already exists, and you want to import more assets, it can be achieved by a partial import.
@@ -166,7 +174,7 @@ To import a single child asset or the child asset hierarchy:
 
 1. Navigate to the child asset page and download the template using **Import assets**.
 
-2. Fill in the details for the child asset hierarchy in the CSV template. See [Filling CSV template for bulk import](#csv-template-parameters) for details.
+2. Fill in the details for the child asset hierarchy in the CSV template. See [CSV template parameters](#csv-template-parameters) for more details.
 
 	{{< c8y-admon-info>}}
 From any hierarchy level, the template will be downloaded only for its child hierarchy.

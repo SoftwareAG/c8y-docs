@@ -5,7 +5,7 @@ layout: redirect
 ---
 ### Introduction
 
-To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, an extensible device registration is available with release 10.15,  which enables you to easily add own device protocols to the device registration process in {{< product-c8y-iot >}}.
+To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, an extensible device registration is available with release 10.15.
 
 The general concept is based on extending the device registration using a metadata-based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing simple descriptions of the required registration attributes. The metadata is then used by the UI to render a corresponding device registration wizard.
 
@@ -146,7 +146,7 @@ In the final step all data collected via the wizard will be sent back to the mic
 }
 ```
 
-The form is able to send anything defined via JSON Schema and the microservice which provides the form definition is responsible for the proper handling of the submitted data.
+The form is able to send anything defined via JSON Schema to the microservice. The Microservice provides the form definition and is responsible for the proper handling of the submitted data.
 
 #### API specification
 
@@ -174,7 +174,7 @@ The following diagram visualizes the single device registration flow:
 
 ### Bulk device registration
 
-The key functionality required for many device integrations is the ability to register many devices at the same time. Currently, all protocols have to rely on the bulk-registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
+Many device integrations require the registration of many devices at the same time. Currently, all protocols have to rely on the bulk registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
 
 After enabling the `extensibleBulkDeviceRegistration` extension type, the Device management > Devices > Register device  `Bulk device registration` modal is being displayed with an extended wizard entry corresponding to the extension `name` property:
 

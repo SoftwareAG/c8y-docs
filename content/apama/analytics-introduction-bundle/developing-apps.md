@@ -135,7 +135,7 @@ For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]
 
 **Step 5 - Run and test the monitor file**
 
-When running the project locally, you must provide your {{< product-c8y-iot >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity IoT client. For example:
+When running the project locally, you must provide your {{< product-c8y-iot >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client. For example:
 
 ```
 CUMULOCITY_USERNAME=user@example.com
@@ -153,6 +153,23 @@ Note that the above description assumes that you are connecting to a tenant wher
 ```
 CUMULOCITY_TENANT=my_custom_tenant
 ```
+
+If the project needs to run locally in a multi-tenant environment, enable the multi-tenant support and provide the name of the multi-tenant microservice to use 
+by configuring the following properties in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client:
+
+```
+# Enable multi-tenant support
+CUMULOCITY_MULTI_TENANT_APPLICATION=true
+ 
+# The name of the multi-tenant microservice to use.
+# If a multi-tenant microservice does not already exist, either upload a multi-tenant microservice or
+# create a microservice with a valid manifest. Subscribe the microservice to tenants for which you want
+# to run the project.
+CUMULOCITY_MULTI_TENANT_MICROSERVICE_NAME=example-multi-tenant-ms
+```
+
+In addition, make sure that the monitor files are able to work with the multi-tenant microservice. 
+For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
 
 You can now proceed with testing your EPL in {{< sag-designer >}}.
 

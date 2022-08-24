@@ -18,10 +18,10 @@ helpcontent:
 ---
 
 
-In the data explorer, data points (that is measurements or sensor data) can be visualized.
+In the data explorer, data points (that is, measurements or sensor data) can be visualized.
 
 
-The data explorer is available for all assets or just for a particular asset.
+The data explorer is available for all assets at once or just for a particular asset.
 
 * Click **Data explorer** in the navigator to visualize all data points of all assets.
 
@@ -31,7 +31,7 @@ In the data explorer, you see a list of available data points at the right. The 
 
 On the left, in the main card, you see its visualization.
 
-![data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
+![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
 The visualization is generated based on data point properties.
 

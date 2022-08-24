@@ -155,7 +155,7 @@ CUMULOCITY_TENANT=my_custom_tenant
 ```
 
 If the project needs to run locally in a multi-tenant environment, enable the multi-tenant support and provide the name of the multi-tenant microservice to use 
-by configuring following properties in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client:
+by configuring the following properties in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client:
 
 ```
 # Enable multi-tenant support

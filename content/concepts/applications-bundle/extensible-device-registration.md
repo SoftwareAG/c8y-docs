@@ -21,14 +21,11 @@ Extensible device registration requires [application extensions](/concepts/appli
 
 The extended device registration provides the following advantages:
 
-- **Extensibility of the device registration wizard**
-<br>You can easily add own forms to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
+- **Extensibility of the device registration wizard**: You can easily add own forms to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
 
-- **Support for bulk registration using custom CSV**
-<br>You can customize the bulk registration and hence implement support for CSV files of a different format.
+- **Support for bulk registration using custom CSV**: You can customize the bulk registration and hence implement support for CSV files of a different format.
 
-- **No UI code changes required**
-<br>You do not need to write UI Angular code. This keeps the amount of integration work as little as possible. The device integration developer only needs to subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
+- **No UI code changes required**: You do not need to write UI Angular code. This keeps the amount of integration work as little as possible. The device integration developer only needs to subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
 
 
 ### Extension enabling

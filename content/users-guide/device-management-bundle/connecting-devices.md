@@ -146,7 +146,7 @@ The list of device registrations is presented in the image below. Note that the 
 
 When a device connected to {{< product-c8y-iot >}} doesn't use a security token, the registration can proceed without providing any value in the security token input.
 
-If a security token is provided for a device which is connected unsecurely, it will be accepted and the token will be ignored.
+If a security token is provided for a device which is connected insecurely, it will be accepted and the token will be ignored.
 
 **Registration using a security token**
 

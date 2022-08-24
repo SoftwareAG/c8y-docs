@@ -135,7 +135,7 @@ For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]
 
 **Step 5 - Run and test the monitor file**
 
-When running the project locally, you must provide your {{< product-c8y-iot >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity IoT client. For example:
+When running the project locally, you must provide your {{< product-c8y-iot >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client. For example:
 
 ```
 CUMULOCITY_USERNAME=user@example.com
@@ -155,7 +155,7 @@ CUMULOCITY_TENANT=my_custom_tenant
 ```
 
 If the project needs to run locally in a multi-tenant environment, enable the multi-tenant support and provide the name of the multi-tenant microservice to use 
-by configuring following properties in the *CumulocityIoT.properties* file under the Cumulocity IoT client:
+by configuring following properties in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client:
 
 ```
 # Enable multi-tenant support

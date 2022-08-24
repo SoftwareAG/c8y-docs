@@ -71,7 +71,7 @@ The **Default value** field is only shown if the selected **Type** is either "Te
 Once you have defined all necessary custom properties for your project, you must define the [asset types](/dtm/asset-types/#asset-types).
 
 
-<a name=""></a>
+<a name="custom-property-types"></a>
 ### Custom property types
 
 To further define the custom property you can select one of the six following options listed under **Type**:

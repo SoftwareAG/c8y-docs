@@ -110,8 +110,7 @@ For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path 
 <tr>
 <td style="text-align:left"><b>Custom properties for the asset type</b></td>
 <td style="text-align:left">6th column onwards (in the CSV template), all the custom properties for the root asset types and all its subsequent child asset types are listed.<br><br>
-<b>Info:</b><br>
-The [Type](/dtm/asset-types/#types-of-custom-property) of the custom property is also mentioned as a label, for better understanding.
+<b>Info:</b><br>The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Custom property type</a> is also mentioned as a label, for better understanding.
 </td>
 <td style="text-align:left">Mandatory</td>
 </tr>

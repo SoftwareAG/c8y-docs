@@ -43,7 +43,10 @@ This only applies if you are using Apama 10.3 or later.
 
 The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
 
-Apama can only be used in a single-tenant microservice. Therefore, the microservice manifest must set the isolation level to PER_TENANT. The reason for this is that Apama's Cumulocity IoT transport connectivity plug-in can only communicate with the tenant to which it is deployed. Therefore, having an Apama shared between multiple tenants is invalid.
+Apama can be used in either a single-tenant microservice or a multi-tenant microservice. 
+Therefore, the microservice manifest must set the isolation level to either PER_TENANT or MULTI_TENANT.
+When Apama is used in a multi-tenant microservice, the Apama application must be written to be multi-tenant aware. 
+For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
 
 The following permissions are required by the microservice in order to start up and and use all features in the Cumulocity IoT transport from EPL. These are set with requiredRoles in the microservice manifest.
 

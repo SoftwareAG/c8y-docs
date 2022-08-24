@@ -48,7 +48,7 @@ Therefore, the microservice manifest must set the isolation level to either PER_
 When Apama is used in a multi-tenant microservice, the Apama application must be written to be multi-tenant aware. 
 For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
 
-The following permissions are required by the microservice in order to start up and and use all features in the Cumulocity IoT transport from EPL. These are set with requiredRoles in the microservice manifest.
+The following permissions are required by the microservice in order to start up and use all features in the {{< product-c8y-iot >}} transport from EPL. These are set with requiredRoles in the microservice manifest.
 
 - ROLE_APPLICATION_MANAGEMENT_READ
 - ROLE_INVENTORY_READ

@@ -12,4 +12,4 @@ To create the connection from your own code, simply call the `connectToCumulocit
 CumulocityRequestInterface cumulocity := CumulocityRequestInterface.connectToCumulocity();
 ```
 
-This will automatically create a connection using the credentials and connection details provided to your microservice, or using the configuration for the Cumulocity IoT transport when connecting from an external Apama instance.
+This will automatically create a connection using the credentials and connection details provided to your microservice, or using the configuration for the {{< product-c8y-iot >}} transport when connecting from an external Apama instance.

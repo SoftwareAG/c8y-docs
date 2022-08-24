@@ -154,6 +154,23 @@ Note that the above description assumes that you are connecting to a tenant wher
 CUMULOCITY_TENANT=my_custom_tenant
 ```
 
+If the project needs to run locally in a multi-tenant environment, enable the multi-tenant support and provide the name of the multi-tenant microservice to use 
+by configuring following properties in the *CumulocityIoT.properties* file under the Cumulocity IoT client:
+
+```
+# Enable multi-tenant support
+CUMULOCITY_MULTI_TENANT_APPLICATION=true
+ 
+# The name of the multi-tenant microservice to use.
+# If a multi-tenant microservice does not already exist, either upload a multi-tenant microservice or
+# create a microservice with a valid manifest. Subscribe the microservice to tenants for which you want
+# to run the project.
+CUMULOCITY_MULTI_TENANT_MICROSERVICE_NAME=example-multi-tenant-ms
+```
+
+In addition, make sure that the monitor files are able to work with the multi-tenant microservice. 
+For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
+
 You can now proceed with testing your EPL in {{< sag-designer >}}.
 
 Once the EPL app is ready, refer to [Deploying apps](/apama/analytics-introduction/#deploying-apps) to find out how to deploy it to {{< product-c8y-iot >}}.

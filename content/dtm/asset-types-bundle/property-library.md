@@ -111,12 +111,12 @@ If the custom property is "Employee ID" with the regular expression "^SAGEMPID[a
 Assigns a default value to the custom property. If this field is left empty in the custom property, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
-The default value has to adhere to all validations provided beforehand. If you have set the **Min length**, **Max length** and/or **RegExP**, the default value must fulfill all set validations.
+The default value has to adhere to all validations provided beforehand. If you have set the **Min length**, **Max length** and/or **RegExp**, the default value must fulfill all set validations.
 {{< /c8y-admon-info>}}
 
 **Example:**
 
- If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExP** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+ If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExp** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
 
 <a name=""></a>

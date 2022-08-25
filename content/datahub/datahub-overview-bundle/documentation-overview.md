@@ -16,4 +16,4 @@ For your convenience, here is an overview of the contents of this document:
 | [Operating {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub) | Run administrative tasks |
 | [Running {{< product-c8y-iot >}} DataHub on {{< product-c8y-iot >}} Edge](/datahub/running-datahub-on-the-edge) | Run the Edge edition of {{< product-c8y-iot >}} DataHub |
 | [Integrating {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products](/datahub/integrating-datahub-with-other-products) | Learn how to integrate {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products |
-| [Release notes](/datahub/datahub-release-notes) | Get news about the latest {{< product-c8y-iot >}} DataHub releases |
+| [Release notes](https://{{< domain-c8y >}}/releasenotes/about/introduction/) | Get news about the latest {{< product-c8y-iot >}} DataHub releases |

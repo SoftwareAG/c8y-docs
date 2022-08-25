@@ -8,7 +8,9 @@ The {{< product-c8y-iot >}} C++ SDK offers two message buffering methods in case
 
 The user guide of the  C++ SDK mentions the pros and cons of each buffering technique in the `SrReporter()` description.
 
-  >**Info:** It implements a capacity limited buffering technique for counteracting long periods of network error. This buffering technique can be further categorized into memory backed and file backed buffering. Memory backed buffering is more efficient since there is no file I/O involved, while the buffering is limited by the available memory and doesn't survive a sudden outage. Oppositely, file backed buffering performs a lot of file I/O operations, but at the same time, its capacity is much larger and buffered messages will not be lost in case of a sudden outage.
+{{< c8y-admon-info >}}
+It implements a capacity limited buffering technique for counteracting long periods of network error. This buffering technique can be further categorized into memory backed and file backed buffering. Memory backed buffering is more efficient since there is no file I/O involved, while the buffering is limited by the available memory and doesn't survive a sudden outage. Oppositely, file backed buffering performs a lot of file I/O operations, but at the same time, its capacity is much larger and buffered messages will not be lost in case of a sudden outage.
+{{< /c8y-admon-info >}}
 
 This section shows you how to change to file-backed buffering method in the {{< product-c8y-iot >}} Linux agent. Change from
 

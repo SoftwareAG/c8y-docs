@@ -13,8 +13,10 @@ The device protocol assigned during Sigfox device registration can be changed fr
 
 ![Sigfox LPWAN Tab](/images/device-protocols/sigfox/sigfox-lpwan-tab.png)
 
-> **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
+{{< c8y-admon-info >}}
+Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
+{{< /c8y-admon-info >}}
 
 To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one.
 

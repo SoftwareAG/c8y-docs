@@ -526,7 +526,7 @@ A status of PENDING means here that the device has not yet picked up the operati
 
 #### Listening for events
 
-Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time as described in [Real-time processing in {{< product-c8y-iot >}}](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/reference/real-time-statements)) to create a new rule module "myRule":
+Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time as described in [Real-time processing in {{< product-c8y-iot >}}](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](https://{{< domain-c8y >}}/guides/10.9.0/event-language/real-time-statements/)) to create a new rule module "myRule":
 
 ```sql
 select *

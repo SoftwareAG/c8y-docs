@@ -45,8 +45,9 @@ The CSV file used in bulk registration should meet the requirements described in
 
 Single registration is not supported for devices which are going to use certificates for authentication.
 
->**Info:** During device registration, the device user is created, which is necessary for device communication with the platform.
-
+{{< c8y-admon-info >}}
+During device registration, the device user is created, which is necessary for device communication with the platform.
+{{< /c8y-admon-info >}}
 
 ### JWT token retrieval
 
@@ -66,6 +67,10 @@ The minimum allowed value is 5 minutes.
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
+
+{{< c8y-admon-caution >}}
+A device can only subscribe to a topic like <kbd>s/dat</kbd> once certificate based mutual authentication is successful. The MQTT broker will not make any information available on the device's subscribed topics until the device publishes a message to <kbd>s/uat</kbd> or <kbd>s/us</kbd>.
+{{< /c8y-admon-caution >}}
 
 ### Introduction to X.509 certificates
 

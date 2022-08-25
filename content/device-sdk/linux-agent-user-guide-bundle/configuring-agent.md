@@ -132,10 +132,11 @@ You can change various Modbus parameters in the configuration file. The **modbus
 |modbus.transmitrate|The transmit rate for reporting measurements to {{< product-c8y-iot >}} [in seconds]||
 |modbus.pollingrate|The polling rate for querying the Modbus client for data [in seconds]|modbus.pollingrate=30|
 |modbus.readonly|Controls the ability to write data to clients. 1 is read-only, 0 is writable|modbus.readonly=0|
-|modbus.timeout.usec|The timeout interval used to wait for a response from a Modbus client [in microseconds] (from version 4.2.9 and onwards)|modbus.timeout.usec=5000000|
+|modbus.timeout.usec|The timeout interval used to wait for a response from a Modbus client [in microseconds](from version 4.2.9 and onwards)|modbus.timeout.usec=5000000|
 
-> **Info:** We recommend you to change the Modbus parameters via the Modbus Cloud Fieldbus UI.
-
+{{< c8y-admon-info >}}
+We recommend you to change the Modbus parameters via the Modbus Cloud Fieldbus UI.
+{{< /c8y-admon-info >}}
 
 #### Modbus-TCP configuration
 
@@ -198,7 +199,9 @@ You can change various CANopen parameters in the configuration file.
 |canopen.pollingRate|The polling rate for querying CANopen node for data [in seconds]|canopen.pollingRate=5|
 |canopen.baud|The baud rate of the CAN line [in kbit/s]|canopen.baud=125|
 
->**Info:** We recommend you to change these CANopen parameters via the CANopen Cloud Fieldbus UI.
+{{< c8y-admon-info >}}
+We recommend you to change these CANopen parameters via the CANopen Cloud Fieldbus UI.
+{{< /c8y-admon-info >}}
 
 #### CANopen port
 

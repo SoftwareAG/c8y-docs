@@ -4,7 +4,7 @@ title: Querying offloaded Cumulocity IoT data
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} DataHub offers an SQL interface so that you can efficiently query offloaded (device) data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of {{< product-c8y-iot >}} to the data lake.
+{{< product-c8y-iot >}} DataHub offers an SQL interface so that you can efficiently query offloaded device data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of {{< product-c8y-iot >}} to the data lake.
 
 ### Overview
 
@@ -14,7 +14,7 @@ Different standard interfaces exist for that purpose, namely JDBC, ODBC, and RES
 
 ### Access to data lake contents
 
-You need a separate Dremio account to run SQL queries. The Dremio account is required to authenticate your requests when running queries against the data lake using Dremio. Contact the administrator for the Dremio account settings.
+You need a separate Dremio account to run SQL queries. The Dremio account is required to authenticate your requests when running queries against the data lake using Dremio. In the initial configuration step, a corresponding Dremio user has been created. Contact the administrator for the Dremio account settings.
 
 When you have established a connection, you can run SQL queries against your tables in the data lake (to which new data is appended whenever the offloading pipeline has successfully run). The source you refer to in the query is defined by your tenant ID and the target table you have specified in the offloading configuration. The identifier to be used as the source in a SQL query is defined as follows for the different data lake providers:
 
@@ -29,7 +29,9 @@ SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms;
 ```
 You can easily look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" at the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
 
-> **Info:** The offloading pipeline must be executed at least once with corresponding data being offloaded before you can run a query.
+{{< c8y-admon-info >}}
+The offloading pipeline must be executed at least once with corresponding data being offloaded before you can run a query.
+{{< /c8y-admon-info >}}
 
 ### Using the Dremio UI
 

@@ -16,7 +16,9 @@ ServicesPlatform platform = new ServicesPlatformImpl("<URL>", new CumulocityCred
 
 The URL pointing to the platform must be of the form *&lt;tenant>.{{< domain-c8y >}}*, for example *https://demos.{{< domain-c8y >}}*, which will process all the API requests.
 
-**Info**: You must have appropriate credentials to be able to access the Services API from outside. See the example above.
+{{< c8y-admon-info >}}
+You must have appropriate credentials to be able to access the Services API from outside. See the example above.
+{{< /c8y-admon-info >}}
 
 ### Accessing the SMS Messaging API
 

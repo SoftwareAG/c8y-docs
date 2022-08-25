@@ -9,10 +9,18 @@ To install {{< product-c8y-iot >}} Edge using the user interface:
 1. Connect and start the Edge appliance in the hypervisor. Wait until the network configuration screen appears.
     <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
 
-  > **Info:** The network configuration blue screen does not appear post installation. After the installation, you must use the Administration application or the REST API to configure the network.
+    {{< c8y-admon-info >}}
+The network configuration blue screen does not appear post installation. After the installation, you must use the Administration application or the REST API to configure the network.
+    {{< /c8y-admon-info >}}
 
 2. Configure the network for your Edge appliance, see the sample screenshot.
-<img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+  <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+
+  > **Important:** While configuring the network on VMware based hypervisors, do not us the IP addresses:
+  >
+  > - X.X.X.1 (used by VMnet8 network adapter on host)
+  > -  X.X.X.2 (used by VMnet8 network adapter's gateway)
+  > - X.X.X.254 (used by VMnet8 network adapter's DHCP server)
 
 3. Press **Enter** to save the network configuration.
 <img src="/images/edge/edge-network-configurator-2.png" name="Network Configurator" style="width:75%;"/>
@@ -29,7 +37,9 @@ To install {{< product-c8y-iot >}} Edge using the user interface:
 
 7. Provide a password for the root user of the guest operating system below **Guest OS root**, and click **Next**.
 
-	>**Important:** Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
+    {{< c8y-admon-important >}}
+Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
+    {{< /c8y-admon-important >}}
 
 8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
 
@@ -49,8 +59,12 @@ To install {{< product-c8y-iot >}} Edge using the user interface:
 
 During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears.
 
->**Info:** If you still see the installation in progress, refresh the browser.
+{{< c8y-admon-info >}}
+If you still see the installation in progress, refresh the browser.
+{{< /c8y-admon-info >}}
 
 Next, click **Open {{< product-c8y-iot >}} Edge**.
 
->**Important:** In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.
+{{< c8y-admon-important >}}
+In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.
+{{< /c8y-admon-important >}}

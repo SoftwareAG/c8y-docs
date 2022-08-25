@@ -38,12 +38,26 @@ For troubleshooting purposes, we recommend you to enable the DEBUG log level for
 For example:
 
 ```
-
     <logger name="com.cumulocity.opcua.client.gateway" level="DEBUG"/>
     <logger name="com.cumulocity" level="DEBUG"/>
     <logger name="c8y" level="DEBUG"/>
 
     <root level="DEBUG">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT"/>
+    </root>
+```
+
+If there is an unknown error during the address space scans, enable DEBUG or TRACE log level specifically for the scanners:
+
+```
+    <logger name="com.cumulocity.opcua.client.BaseAddressSpaceScanner" level="DEBUG" />
+    <logger name="com.cumulocity.opcua.client.OpcuaAddressSpaceFullScanner" level="DEBUG" />
+    <logger name="com.cumulocity.opcua.client.OpcuaAddressSpaceLightScanner" level="DEBUG" />
+    <logger name="com.cumulocity.opcua.client.OpcuaAddressSpaceReverseFullScanner" level="DEBUG" />
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
         <appender-ref ref="STDOUT"/>
     </root>
 ```

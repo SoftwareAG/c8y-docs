@@ -111,7 +111,9 @@ The kubernetes_logs.zip file contains the logs of all Kubernetes platform compon
 * kube-proxy-*XX*
 * kube-scheduler-server
 
->**Info:** The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
+{{< c8y-admon-info >}}
+The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
+{{< /c8y-admon-info >}}
 
 The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-xx-xx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
@@ -119,7 +121,9 @@ The hosted microservices are captured at *cumulocity-single-node* path in the ar
 
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
 
->**Important:** The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the *User guide*.
+{{< c8y-admon-important >}}
+The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the *User guide*.
+{{< /c8y-admon-important >}}
 
 Following are the available keys used in the configuration file:
 

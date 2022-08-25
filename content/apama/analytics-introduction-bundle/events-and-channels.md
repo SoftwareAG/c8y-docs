@@ -6,7 +6,9 @@ layout: redirect
 
 In Apama EPL, interactions with the rest of the {{< product-c8y-iot >}} ecosystem are done via events. A number of event definitions is provided for accessing {{< product-c8y-iot >}} data.
 
-> **Info:** Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events. For more information on Apama events, see [Defining event types]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-c8y-iot >}} events, see [Events](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Events) in the {{< openapi >}}.
+{{< c8y-admon-info >}}
+Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events. For more information on Apama events, see [Defining event types]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-c8y-iot >}} events, see [Events](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Events) in the {{< openapi >}}.
+{{< /c8y-admon-info >}}
 
 ### Predefined event types
 
@@ -91,6 +93,6 @@ on all Alarm() as alarm {
 
 For events that have come from {{< product-c8y-iot >}}, one of `isUpdate()` or `isCreate()` will always return true. Both actions are provided for choice and readability.
 
-For more information, including examples for the different types of objects, see [Receiving update notifications]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
+For more information, including examples for the different types of objects, see [Receiving update notifications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation.
 
 See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.

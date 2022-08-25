@@ -14,9 +14,11 @@ Before setting up the connection to Microsoft Power BI in {{< product-c8y-iot >}
 
 {{< product-c8y-iot >}} DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select Dremio as a database [(https://docs.dremio.com/client-applications/microsoft-power-bi/)](https://docs.dremio.com/client-applications/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
 
->**Info:** The Microsoft Power BI datasets should use the DirectQuery mode, which prevents replicating and caching the data from the data lake.
+{{< c8y-admon-info >}}
+The Microsoft Power BI datasets should use the DirectQuery mode, which prevents replicating and caching the data from the data lake.
+{{< /c8y-admon-info >}}
 
-A report is typically published so that it is available to other users as well. For a published report it is currently required to deploy a Microsoft Power BI gateway which establishes the connection between Microsoft Power BI and Dremio. See the tutorial on the Dremio website [(https://www.dremio.com/tutorials/connecting-power-bi-gateway-to-dremio/)](https://www.dremio.com/tutorials/connecting-power-bi-gateway-to-dremio/) for detailed instructions.
+A report is typically published so that it is available to other users as well. For a published report, it is currently required to deploy a Microsoft Power BI gateway which establishes the connection between Microsoft Power BI and Dremio. See the tutorial on the Dremio website [(https://www.dremio.com/tutorials/connecting-power-bi-gateway-to-dremio/)](https://www.dremio.com/tutorials/connecting-power-bi-gateway-to-dremio/) for detailed instructions.
 
 #### Configuring access to Microsoft Power BI reports
 
@@ -34,7 +36,9 @@ Next you must register an Azure Active Directory application, which serves as se
 4. Skip creating a workspace and importing content.
 5. Grant permissions to the service principal.
 
->**Info:** An application created with the wizard can be used as a service principal.
+{{< c8y-admon-info >}}
+An application created with the wizard can be used as a service principal.
+{{< /c8y-admon-info >}}
 
 Alternatively, you can create a service principal application following the section *Creating an Azure AD app in the Microsoft Azure portal* on the Microsoft website [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
 
@@ -76,4 +80,6 @@ Once the settings are defined, you can access and work with the reports.
 
 The selected report is shown and can be interacted with. You can open multiple reports. For each opened report, a tab entry shows up in the action bar. To close the currently selected report, click **Remove report** in the action bar.
 
->**Info:** The list of currently opened reports is not stored permanently. When closing the browser, the list will be flushed. It will also be flushed if the settings are deleted.
+{{< c8y-admon-info >}}
+The list of currently opened reports is not stored permanently. When closing the browser, the list will be flushed. It will also be flushed if the settings are deleted.
+{{< /c8y-admon-info >}}

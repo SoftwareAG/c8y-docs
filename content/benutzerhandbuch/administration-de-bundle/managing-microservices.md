@@ -85,7 +85,9 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 </tbody>
 </table>
 
->**Info:** Alle hier aufgelisteten Anwendungen sind vom Typ "Microservice".
+{{< c8y-admon-info >}}
+Alle hier aufgelisteten Anwendungen sind vom Typ "Microservice".
+{{< /c8y-admon-info >}}
 
 <a name="custom-microservices"></a>
 ### Benutzerdefinierte Microservices
@@ -97,7 +99,9 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 2. Legen Sie im darauf folgenden Dialog eine entsprechende ZIP-Datei ab oder navigieren Sie in Ihrem Dateisystem zu der Datei. Beachten Sie, dass die hochzuladende Datei nicht größer als 500 MB sein darf.
 3. Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
->**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [General aspects](/microservice-sdk/concept) im *Microservice SDK Guide*.
+{{< c8y-admon-important title="Wichtig" >}}
+Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [General aspects](/microservice-sdk/concept) im *Microservice SDK Guide*.
+{{< /c8y-admon-important >}}
 
 <a name="microservice-properties"></a>
 ### Microservice-Attribute
@@ -213,11 +217,15 @@ Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweilige
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten.
 
-> **Info:** Falls Ihr Microservice in zwei Instanzen aufgeteilt wurde, können Sie zwar zwischen diesen wechseln, es ist jedoch nicht möglich, die Logdaten beider Instanzen gleichzeitig anzuzeigen.
+{{< c8y-admon-info >}}
+Falls Ihr Microservice in zwei Instanzen aufgeteilt wurde, können Sie zwar zwischen diesen wechseln, es ist jedoch nicht möglich, die Logdaten beider Instanzen gleichzeitig anzuzeigen.
+{{< /c8y-admon-info >}}
 
 Neben der Instanz-Auswahlliste können Sie das Zeitintervall wählen, in dem die Logeinträge angezeigt werden sollen, indem Sie ein Datum im Kalender auswählen und eine Uhrzeit eingeben.
 
-> **Info:** Die hier eingegebene Uhrzeit kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit des Servers unterscheiden.
+{{< c8y-admon-info >}}
+Die hier eingegebene Uhrzeit kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit des Servers unterscheiden.
+{{< /c8y-admon-info >}}
 
 Rechts oben stehen weitere Funktionalitäten zur Verfügung:
 
@@ -229,7 +237,7 @@ Anfänglich werden auf der Registerkarte **Logdaten** der ausgewählten Microser
 
 Rechts unten finden Sie die folgenden Navigationsschaltflächen:
 
-* **Zum Anfang** - führt direkt zu den ältesten verfügbaren Logeinträgen für den Microservice nach dessen Neustart (maximale Logkapazität: 350 MB).
+* **Zum Anfang** - führt direkt zu den ältesten verfügbaren Logeinträgen für den Microservice nach dessen Neustart (maximale Logkapazität: 35 MB).
 * **Zurück** - erhöht das Zeitintervall in Schritten von 10 Minuten.
 * **Vor** - verringert das Zeitintervall in Schritten von 10 Minuten.
 * **Zum Ende** - führt direkt zu den neuesten verfügbaren Logeinträgen.
@@ -238,6 +246,8 @@ Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine en
 
 <img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
+{{< c8y-admon-info >}}
+Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen oder die Logdaten aus den zuvor rotierten Protokollen mit über 35 MB anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
 
->Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
+Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
+{{< /c8y-admon-info >}}

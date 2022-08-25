@@ -70,4 +70,6 @@ Using inventory roles, you can selectively assign a support user for specific su
 2. Create a group of all subtenants which you want to be supported by the user.
 3. Assign the "Support" inventory role to above group as described in [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
-> **Info:** The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number must be provided first, in order to login as a support user.
+{{< c8y-admon-info >}}
+The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number must be provided first, in order to login as a support user.
+{{< /c8y-admon-info >}}

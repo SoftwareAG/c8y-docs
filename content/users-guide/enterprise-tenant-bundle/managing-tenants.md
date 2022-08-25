@@ -18,9 +18,13 @@ helpcontent:
 
 Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
-> **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
+{{< c8y-admon-important >}}
+There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
+{{< /c8y-admon-important >}}
 
->**Info:** If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
+{{< c8y-admon-info >}}
+If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
+{{< /c8y-admon-info >}}
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -155,10 +159,13 @@ The tenant's data remains in the database and can be made available later by cli
 
 Refer to [Usage statistics and billing > Lifecycle](#lifecycle) for details on the billing perspective of suspended tenants.
 
->**Important:** Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.
->
-> **Info:** If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
+{{< c8y-admon-important >}}
+Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.
+{{< /c8y-admon-important>}}
 
+{{< c8y-admon-info >}}
+If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
+{{< /c8y-admon-info >}}
 
 #### To suspend a subtenant
 
@@ -170,14 +177,17 @@ Refer to [Usage statistics and billing > Lifecycle](#lifecycle) for details on t
 
 As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
->**Info:** If you are a service provider, you can suppress this email.
-
+{{< c8y-admon-info >}}
+If you are a service provider, you can suppress this email.
+{{< /c8y-admon-info >}}
 
 ### Deleting subtenants
 
->**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}.
->
->Administrators in {{< enterprise-tenant >}}s are only allowed to suspend active subtenants, but not to delete them.
+{{< c8y-admon-important >}}
+Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}.
+
+Administrators in {{< enterprise-tenant >}}s are only allowed to suspend active subtenants, but not to delete them.
+{{< /c8y-admon-important >}}
 
 #### To delete a subtenant
 
@@ -244,7 +254,9 @@ Platform administrators can limit the request rate of each subtenant via the fol
 
 The request throttling mechanism is only enabled when both HTTP properties (limit HTTP queue and limit HTTP requests) are configured. If one of the values is omitted, it does not work.
 
->**Important:** Rate limiting can be an effective countermeasure against threats like brute force login attempts, API abuse and request flooding thus reducing the number of malicious/unwanted traffic. This helps in protecting against DoS (Denial of Service) attacks and saving the available bandwidth for legitimate requests.
+{{< c8y-admon-important >}}
+Rate limiting can be an effective countermeasure against threats like brute force login attempts, API abuse and request flooding thus reducing the number of malicious/unwanted traffic. This helps in protecting against DoS (Denial of Service) attacks and saving the available bandwidth for legitimate requests.
+{{< /c8y-admon-important >}}
 
 It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}} by using the following subtenant custom fragments:
 
@@ -277,7 +289,13 @@ A tenant policy is a set of tenant options and retention rules. Tenant options a
 
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
->**Info:** The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+{{< c8y-admon-info >}}
+The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-important >}}
+Tenant options specified in a tenant policy are **not encrypted**. You should not specify or overwrite tenant options here with a "credentials." prefix, since the platform expects those options to be encrypted with data that will appear after the tenant has been created.
+{{< /c8y-admon-important >}}
 
 #### To view tenant policies
 
@@ -298,7 +316,9 @@ For each tenant policy, the name, an optional description and the number of opti
 
 The tenant policy will be added to the tenant policies list.
 
->**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
+{{< c8y-admon-important >}}
+When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
+{{< /c8y-admon-important >}}
 
 #### To edit a tenant policy
 
@@ -328,14 +348,18 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
 
-> **Info:** These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+{{< c8y-admon-info >}}
+These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+{{< /c8y-admon-info >}}
 
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
 
 - all own applications,
 - all subscribed applications which have different names than the own applications.
 
-> **Info:** In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
+{{< c8y-admon-info >}}
+In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
+{{< /c8y-admon-info >}}
 
 On the right, you see the **Subscribed on tenant creation** and the **Subscribed on platform upgrade** columns.
 
@@ -356,7 +380,9 @@ If you want to return to the settings inherited from the tenant hierarchy, just 
 
 Save the settings by clicking **Save** at the bottom of the page.
 
-> **Info:** Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
+{{< c8y-admon-info >}}
+Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
+{{< /c8y-admon-info >}}
 
 <a name="default-applications"></a>
 #### Overriding default subscriptions

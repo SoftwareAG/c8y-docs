@@ -104,7 +104,9 @@ $ ./microservice pack --name hello-world
 
 It will create a ZIP file named _hello-world.zip_ and an intermediate _image.tar_ which is an exported Docker image.
 
-> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< c8y-admon-important >}}
+When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+{{< /c8y-admon-important >}}
 
 ### Deploying
 
@@ -118,6 +120,8 @@ $ ./microservice deploy -n hello-world -d <URL> -u <username> -p <password> -te 
 
 Note that you must have a tenant and user credentials in order to deploy your microservice.    
 The successful execution will create an application on the {{< product-c8y-iot >}} platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your application will be listed in **Ecosystem** > **Microservices** in the Administration application.
+
+If the name of the microservice application is not provided in the manifest file, it will be automatically inferred from the ZIP file name without the version number.
 
 For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
 

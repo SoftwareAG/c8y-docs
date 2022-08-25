@@ -36,7 +36,9 @@ int main ()
 }
 ```
 
-> **Info**: It is strongly encouraged that you pick a different random value for `deviceID` as this is the unique identifier of your device.
+{{< c8y-admon-info >}}
+It is strongly encouraged that you pick a different random value for `deviceID` as this is the unique identifier of your device.
+{{< /c8y-admon-info >}}
 
 For convenience, let's define a shell variable `C8Y_LIB_PATH` to hold the library root path and use it to feed the compiler, so it can find all the necessary C++ header files and shared library (*.so* file).
 
@@ -44,7 +46,9 @@ For convenience, let's define a shell variable `C8Y_LIB_PATH` to hold the librar
 $ export C8Y_LIB_PATH=/library/root/path
 $ g++ -std=c++11 -I$C8Y_LIB_PATH/include main.cc -L$C8Y_LIB_PATH/lib -lsera
 ```
-> **Info**: You can define the variable `C8Y_LIB_PATH` in your *.bashrc* file, so you don't need to define it every time when launching a new terminal. From now on, let's assume you have done it, so it won't be mentioned in later examples.
+{{< c8y-admon-info >}}
+You can define the variable `C8Y_LIB_PATH` in your *.bashrc* file, so you don't need to define it every time when launching a new terminal. From now on, let's assume you have done it, so it won't be mentioned in later examples.
+{{< /c8y-admon-info >}}
 
 Finally, it's time to run our first program.
 
@@ -67,7 +71,9 @@ As illustrated previously, the program will print to the standard output *Hello 
 
 The obtained device credential is stored in the folder */tmp/helloc8y* as defined in the variable `credentialPath`. You can also find the credential in **Management** > **Device credentials** in the Device Management application.
 
-> **Info**: If you re-run the program a second time, it will print *Hello world of {{< product-c8y-iot >}}!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
+{{< c8y-admon-info >}}
+If you re-run the program a second time, it will print *Hello world of {{< product-c8y-iot >}}!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
+{{< /c8y-admon-info >}}
 
 ### Integrating to the platform
 
@@ -241,7 +247,9 @@ int main ()
 }
 ```
 
-> **Info**: If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughout the program lifetime since there is no way to remove a `SrTimer` from the `SrAgent`. Alternatively, you can use `SrTimer.connect` to register a different callback or deactivate it by `SrTimer.stop`. This is a design choice for encouraging timer reuse, instead of dynamically creating and destroying timers.
+{{< c8y-admon-info >}}
+If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughout the program lifetime since there is no way to remove a `SrTimer` from the `SrAgent`. Alternatively, you can use `SrTimer.connect` to register a different callback or deactivate it by `SrTimer.stop`. This is a design choice for encouraging timer reuse, instead of dynamically creating and destroying timers.
+{{< /c8y-admon-info >}}
 
 ### Handling operations
 
@@ -412,8 +420,9 @@ function init()
 end
 ```
 
-> **Info**: If you encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you must modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to Lua. The proper version number depends on your installed Lua version and your Linux distribution.
-
+{{< c8y-admon-info >}}
+If you encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you must modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to Lua. The proper version number depends on your installed Lua version and your Linux distribution.
+{{< /c8y-admon-info >}}
 
 ### Using MQTT instead of HTTP
 

@@ -21,11 +21,17 @@ Data broker lets you share data selectively with other tenants. You can share:
 - measurements,
 - operations.
 
+{{< c8y-admon-req >}}
+To be able to use this feature, your tenant must be subscribed to the application “feature-broker”.
+{{< /c8y-admon-req >}}
+
 Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
 <img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
->**Important:** Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+{{< c8y-admon-important >}}
+Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+{{< /c8y-admon-important >}}
 
 Be aware of the following limitations of the data broker:
 
@@ -56,7 +62,9 @@ For each data connector, the following information is provided:
 
 Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
-> **Info:** If the source tenant has been suspended all its data broker connectors will be suspended as well.
+{{< c8y-admon-info >}}
+If the source tenant has been suspended all its data broker connectors will be suspended as well.
+{{< /c8y-admon-info >}}
 
 <a name="data-broker-connector-edit"></a>
 #### To add a data connector
@@ -92,7 +100,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 	</tr>
 	<tr>
 	<td style="text-align:left">API</td>
-	<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).</td>
+	<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, managed objects) or being received (operations).</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Fragments to filter</td>

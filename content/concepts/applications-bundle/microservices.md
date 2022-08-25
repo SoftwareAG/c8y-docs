@@ -21,4 +21,6 @@ The hosting of the microservice is provided by {{< product-c8y-iot >}}. This way
 
 For detailed information on developing and deploying microservices on top of {{< product-c8y-iot >}} refer to the [Microservice SDK guide](/microservice-sdk/introduction) which provides information on the general concept of microservices in {{< product-c8y-iot >}} as well as specific guidance and examples for various programming languages.
 
->**Info:** For Microservice developers {{< company-c8y >}} provides Microservice SDK in [Java programming language](/microservice-sdk/java) and [C# programming language](/microservice-sdk/cs) for .Net Core. Refer to the relevant sections in the [Microservice SDK guide](/microservice-sdk/introduction).
+{{< c8y-admon-info >}}
+For Microservice developers {{< company-c8y >}} provides Microservice SDK in [Java programming language](/microservice-sdk/java) and [C# programming language](/microservice-sdk/cs) for .Net Core. Refer to the relevant sections in the [Microservice SDK guide](/microservice-sdk/introduction).
+{{< /c8y-admon-info >}}

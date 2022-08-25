@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: LWM2M device protocols
 layout: redirect
 ---
@@ -10,7 +10,7 @@ Device protocols are accessible through the **Devices Types** menu in the Device
 <a name="creating_device_protocols"></a>
 ### Creating LWM2M device protocols
 
-Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
+Once you have registered a device, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
 
 To add a new LWM2M device protocol follow these steps:
 
@@ -37,7 +37,9 @@ In the device protocol page, you will see the description at the top left and th
 
 Below, a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
-> **Info:** LWM2M protocol resources cannot be edited.
+{{< c8y-admon-info >}}
+LWM2M protocol resources cannot be edited.
+{{< /c8y-admon-info >}}
 
 Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is "degrees Celsius".
 
@@ -117,7 +119,9 @@ Below is an example where the &ldquo;connectivity:updateRssi&rdquo; custom actio
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
 
-> **Info:** At least one functionality must be set to enable "Auto observe".
+{{< c8y-admon-info >}}
+At least one functionality must be set to enable "Auto observe".
+{{< /c8y-admon-info >}}
 
 ![Resource](/images/device-protocols/lwm2m/lwm2m-autoobserve.png)
 
@@ -131,4 +135,4 @@ There are 2 types of alarms raised related to device protocol mapping failures.
 - Alarm for no mapping known: This alarm is raised when value is read or observed but no mapping for this resource is found.
 This can be resolved by importing device protocol for this resource.
 
-- Alarm due to non-numeric/non-boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-boolean value.
+- Alarm due to non-numeric/non-Boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-Boolean value.

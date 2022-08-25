@@ -45,7 +45,7 @@ In the context menu of each offloading pipeline, you will find actions for manag
 
 ##### Editing/showing an offloading pipeline
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in the future.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
@@ -78,15 +78,17 @@ The import/export functionality allows you to backup your offloading configurati
 
 The action bar provides an **Export** button, which exports all offloading configurations. The button is disabled if no offloading configurations are defined. If you click **Export**, all offloading configurations are exported into a file. The file is located in the local download folder used by your browser.
 
->**Warning:** You must not modify the contents of the export file as this might corrupt the import step.
+{{< c8y-admon-caution >}}
+You must not modify the contents of the export file as this might corrupt the import step.
+{{< /c8y-admon-caution >}}
 
 ##### Import of offloading configurations
 
 The action bar provides an **Import** button, which imports offloading configurations from a file with previously exported configurations.
 
-Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the description, and the internal UUID of the original configuration. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported and therefore the checkbox is not shown for such an entry. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
+Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the internal UUID of the original configuration, the target table name, and the description. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
 
-To change the import file, click the delete icon next to the file name and select a new file to import the configurations from.
+To select a different import file, click the delete icon next to the file name and select a new file to import the configurations from.
 
 To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 

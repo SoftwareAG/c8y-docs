@@ -9,13 +9,12 @@ You can deploy the following to {{< product-c8y-iot >}}:
 * EPL apps. You can [develop or import a single \*.mon file with the Streaming Analytics application](#single-mon-file). This is the simplest mechanism for deploying an EPL app.
 * Apama applications. You can upload complex Apama applications (that is, Apama projects developed with {{< sag-designer >}}) to {{< product-c8y-iot >}} and [deploy them as custom microservices](#deploying-as-microservice) using the {{< product-c8y-iot >}} Microservice SDK.
 
-> **Info:** In the Streaming Analytics application, the term "activate" is used for deploying an app.
-
+{{< c8y-admon-info >}}
+In the Streaming Analytics application, the term "activate" is used for deploying an app.
+{{< /c8y-admon-info >}}
 
 <a name="single-mon-file"></a>
 ### Deploying EPL apps as single \*.mon files with the Streaming Analytics application
-
->**Info**: To be able to deploy single \*.mon files with the Streaming Analytics application, your tenant must be subscribed to both the Apama-ctrl microservice and the Streaming Analytics application provided in {{< product-c8y-iot >}}. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, the EPL Apps page is not available in the Streaming Analytics application. If you want to have this capability, contact [product support](/welcome/contacting-support).
 
 When an EPL app (that is, a \*.mon file) is activated in {{< product-c8y-iot >}}, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you must share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
@@ -36,15 +35,20 @@ Using {{< sag-designer >}}, you can also develop more complex projects which:
 
 These kinds of applications should be deployed as microservices to {{< product-c8y-iot >}}.
 
->**Info**: This only applies if you are using Apama 10.3 or later.
+{{< c8y-admon-info >}}
+This only applies if you are using Apama 10.3 or later.
+{{< /c8y-admon-info >}}
 
 #### Required settings in the microservice manifest
 
 The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
 
-Apama can only be used in a single-tenant microservice. Therefore, the microservice manifest must set the isolation level to PER_TENANT. The reason for this is that Apama's Cumulocity IoT transport connectivity plug-in can only communicate with the tenant to which it is deployed. Therefore, having an Apama shared between multiple tenants is invalid.
+Apama can be used in either a single-tenant microservice or a multi-tenant microservice. 
+Therefore, the microservice manifest must set the isolation level to either PER_TENANT or MULTI_TENANT.
+When Apama is used in a multi-tenant microservice, the Apama application must be written to be multi-tenant aware. 
+For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
 
-The following permissions are required by the microservice in order to start up and and use all features in the Cumulocity IoT transport from EPL. These are set with requiredRoles in the microservice manifest.
+The following permissions are required by the microservice in order to start up and use all features in the {{< product-c8y-iot >}} transport from EPL. These are set with requiredRoles in the microservice manifest.
 
 - ROLE_APPLICATION_MANAGEMENT_READ
 - ROLE_INVENTORY_READ
@@ -63,7 +67,9 @@ The following permissions are required by the microservice in order to start up 
 - ROLE_BULK_OPERATION_READ
 - ROLE_SMS_ADMIN
 
-> **Info:** The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest.
+{{< c8y-admon-info >}}
+The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest.
+{{< /c8y-admon-info >}}
 
 #### To deploy an Apama application as a microservice
 
@@ -88,3 +94,10 @@ The following permissions are required by the microservice in order to start up 
     You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< sag-designer >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
 
 5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
+
+{{< c8y-admon-info >}}
+After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains. 
+They are now available at *softwareag* instead of within the Docker Hub environment at *store/softwareag*.
+If you still use the images from the previous location, you must migrate them.
+See also [Apama Docker image availability on Docker Hub]({{< link-sag-tech-forum >}}/t/apama-docker-image-availability-on-docker-hub/260207).
+{{< /c8y-admon-info >}}

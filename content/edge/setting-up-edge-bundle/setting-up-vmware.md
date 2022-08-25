@@ -8,7 +8,9 @@ layout: redirect
 
 To set up the Edge appliance in VMware Workstation Player, follow the steps below.
 
->**Info:** The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
+{{< c8y-admon-info >}}
+The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
+{{< /c8y-admon-info >}}
 
 1. In VMware, navigate to **Player** > **File** > **Open** to import the Edge appliance.
 
@@ -16,7 +18,9 @@ To set up the Edge appliance in VMware Workstation Player, follow the steps belo
 
 3. Change the Edge appliance name if required and click **Import**. You can also change the storage path of the Edge appliance here.
 
-   >**Important:** On VMware Workstation, you must use UTC on your host machine. If you choose not to use UTC, you may have time sync issues. Set `rtc.diffFromUTC=0` in the .vmx file to avoid the time sync issues.
+   {{< c8y-admon-important >}}
+On VMware Workstation, you must use UTC on your host machine. If you choose not to use UTC, you may have time sync issues. Set `rtc.diffFromUTC=0` in the .vmx file to avoid the time sync issues.
+   {{< /c8y-admon-important >}}
 
 4. Start the Edge appliance by clicking **Play virtual machine**.
 

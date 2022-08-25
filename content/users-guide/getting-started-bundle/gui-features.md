@@ -88,7 +88,7 @@ On entering a search term into the textbox at the top of the **Search** window, 
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format, see also [Device Management > Grouping devices > Subassets view](/users-guide/device-management#subassets-tab).
+Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format, see also [Device Management > Grouping devices > Subassets page](/users-guide/device-management#subassets-tab).
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
 

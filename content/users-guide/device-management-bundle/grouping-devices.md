@@ -40,9 +40,9 @@ Click a group to view its details.
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
 
 <a name="subassets-tab"></a>
-**Subassets view**
+**Subassets page**
 
-At the top of the **Subassets** view, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
+At the top of the **Subassets** page, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
 
 Below, all assets assigned to the group are listed. For each asset, various information is displayed, for example the type and name. As with the top-level groups list, you can add or remove columns and customize the list to your preference, or you can apply filters to filter the list for certain criteria.
 
@@ -63,12 +63,12 @@ The new group will be added to the groups list.
 A group can be created with "0" devices in it.
 {{< /c8y-admon-info >}}
 
-To add a new group as a child of an existing group, navigate to its **Subassets** view and click **Add Group** in the top menu bar.
+To add a new group as a child of an existing group, navigate to its **Subassets** page and click **Add Group** in the top menu bar.
 
 ### To edit a group
 
 1. In the navigator, click a group to open it.
-2. In the **Subassets** view, you can edit the name and description of the group.
+2. In the **Subassets** page, you can edit the name and description of the group.
 
 For further information on permissions, see [Managing permissions](/users-guide/administration#managing-permissions) in the Administration section.
 
@@ -89,14 +89,14 @@ You can quickly assign devices to groups by using the drag and drop functionalit
 
 Moreover, you can assign devices performing the following steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Subassets** view.
+1. In the navigator, select a group from the **Group** menu and then open the **Subassets** page.
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
 
 ![Assign devices](/images/users-guide/DeviceManagement/devmgmt-group-assign.png)
 
-The devices will be assigned to the selected group and shown as subassets in the **Subassets** view.
+The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
 **From the device perspective**
 

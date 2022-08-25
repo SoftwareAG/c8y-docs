@@ -29,6 +29,7 @@ pipeline {
       steps {
         sh '''bash --login
         python /stageScanner.py
+        python /qa.py
           if [ -f "properties.json" ]
   then
   	DOC_VERSION=$( jq -r '.name' < properties.json )

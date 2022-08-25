@@ -9,24 +9,20 @@ title: Localization
 
 {{< /c8y-admon-related >}}
 
+{{< c8y-admon-req >}}
+* Subscribed to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
+{{< /c8y-admon-req >}}
+
 <a name=""></a>
 ### Localization feature
 
-The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). It should then appear under [Subscribed applications](/users-guide/administration/#subscribed-applications) in your tenant.
-
-
-{{< c8y-admon-req >}}
-* Subscribed to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview)
-{{< /c8y-admon-req >}}
-
-
-To use the **Localization** feature in the DTM application, subscribe to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page in the navigator.
+The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page in the navigator.
 
 Additionally, if you want to add translations for the [custom property](/dtm/asset-types/#property-library) or [asset types](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
 
 ![Main view localization page](/images/dtm/localization/dtm-localozation-main-page.png)
 
-Initially, the **Localization** page will show a row called **Group** as key. If necessary, add a translation for "group" according to the explanation above.
+Initially, the **Localization** page will show a row called **Group** as key. If necessary, add a translation for "Group" according to the explanation above.
 
 Once you create all custom properties and asset types, then all those names are added as keys in the **Localization** page. You can further add the translations as required.
 

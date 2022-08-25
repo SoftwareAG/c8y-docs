@@ -29,12 +29,8 @@ Click **Reload** to reload the screen.
 <a name="create-asset-type"></a>
 ### To create an asset type
 
-Click **Add asset type** on the top right to add a new asset type. This opens the **Building Asset type** page.
-
-
- ![Building Asset Type page](/images/dtm/asset-type/dtm-asset-type-create-new.png)
-
-Provide the following six parameters:
+Click Add asset type on the top right to add a new asset type. This opens the **New Asset type** page.
+Here, provide the following six parameters:
 
 <table>
 <col width="20">
@@ -51,7 +47,7 @@ Provide the following six parameters:
 <tr>
 <td style="text-align:left"><b>Label</b></td>
 <td style="text-align:left">Refers to the name of the asset type.<br>
-This name is used for the asset throughout the application.</td>
+This name is used for the asset type throughout the application.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -169,7 +165,7 @@ This approach, allows you to create the desired hierarchy including all asset ty
 <a name=""></a>
 ### To delete an asset type
 
-There are two ways to delete an asset:
+There are two ways to delete an asset type:
 
 
 <a name=""></a>

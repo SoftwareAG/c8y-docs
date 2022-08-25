@@ -155,7 +155,7 @@ For one building with two floors, you first create the asset hierarchy level for
 
     ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
-2. To delete an added asset template, hover over the click the delete icon at the top right.
+2. To delete an added asset template, click the delete icon at the top right.
 
     {{< c8y-admon-info>}}
 The delete icon appears on hover.

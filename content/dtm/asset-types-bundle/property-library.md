@@ -53,7 +53,7 @@ Custom properties have the following parameters:
 </tr>
 <tr>
 <td style="text-align:left"><b>Type</b></td>
-<td style="text-align:left">Defines the type of the custom property. It can be any of the following categories – Text, Number, File upload, Date picker, Enumeration or Boolean.</td>
+<td style="text-align:left">Defines the type of the custom property. It can be any of the following categories – <a href="#custom-text" class="no-ajaxy">Text</a>, <a href="#custom-number" class="no-ajaxy">Number</a>, <a href="#custom-file-upload" class="no-ajaxy">File upload</a>, <a href="#custom-date-picker" class="no-ajaxy">Date picker</a>, <a href="#custom-enumeration" class="no-ajaxy">Enumeration</a>, or <a href="#custom-boolean" class="no-ajaxy">Boolean</a>.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -77,7 +77,7 @@ Once you have defined all necessary custom properties for your project, you must
 To further define the custom property you can select one of the six following options listed under **Type**:
 
 
-<a name=""></a>
+<a name="custom-text"></a>
 #### Text
 
 Select **Text** if the custom property value is a string, for example, a building name. Enter a valid text.
@@ -116,10 +116,10 @@ The default value has to adhere to all validations provided beforehand. If you h
 
 **Example:**
 
- If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExp** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+If the custom property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExp** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
 
-<a name=""></a>
+<a name="custom-number"></a>
 #### Number
 
 For this type you must provide a numeric value for the asset creation, for example, the height of a building.
@@ -162,7 +162,7 @@ If the **Minimum** and/or **Maximum** is checked, the given **Default value** is
 If the custom property is "Building height" with a **Minimum** of 80 and a **Maximum** of 150, the **Default value** must be between 80 to 150.
 
 
-<a name=""></a>
+<a name="custom-date-picker"></a>
 #### Date Picker
 
 If selected, you must select a date from the calendar displayed in the dialog window during the asset creation.
@@ -172,7 +172,7 @@ If selected, you must select a date from the calendar displayed in the dialog wi
 If "Project start date" is a custom property for the "Building" asset, then you must select the start date of the project when creating the asset.
 
 
-<a name=""></a>
+<a name="custom-enumeration"></a>
 #### Enumeration
 
 Select **Enumeration** to list several values that apply to this custom property.
@@ -187,7 +187,7 @@ If you create a custom property for "building color" and the color must be eithe
 
 ![Custom property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
-<a name=""></a>
+<a name="custom-boolean"></a>
 #### Boolean
 
 If selected, the presence of the custom property can either be true or false during the asset creation.
@@ -198,7 +198,7 @@ An asset with this custom property shows a checkbox. Selecting this checkbox set
 
 If you create a custom property called "Whiteboard" for a building which has rooms with a whiteboard and rooms without a whiteboard, then the custom property must be created with the type "Boolean". When you create an asset for a room with a whiteboard, it is then initialized to "true". If there is no whiteboard in the room, the asset is initialized to "false".
 
-<a name=""></a>
+<a name="custom-file-upload"></a>
 #### File upload
 
 This option allows you to upload a file to define the custom property.
@@ -225,7 +225,7 @@ To upload the blueprint for a building, you must name the custom property "Build
 2. Enter the desired name in the search field on the top left.
 3. Click the search icon.
 
-All custom properties matching the search values are displayed on the screen on the right. If the search entry does not match with any custom properties, you see a notification.
+All custom properties matching the search values are displayed on the screen on the left. If the search entry does not match with any custom properties, you see a notification.
 
 
 <a name=""></a>

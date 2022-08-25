@@ -30,11 +30,7 @@ Click **Reload** to reload the screen.
 ### To create an asset type
 
 Click Add asset type on the top right to add a new asset type. This opens the **New Asset type** page.
-
-
- ![Building Asset Type page](/images/dtm/asset-type/dtm-asset-type-create-new.png)
-
-Provide the following six parameters:
+Here, provide the following six parameters:
 
 <table>
 <col width="20">

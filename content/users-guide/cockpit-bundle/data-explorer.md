@@ -29,7 +29,7 @@ ROLES & PERMISSIONS:
 Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
 {{< /c8y-admon-req >}}
 
-The data explorer is available for all assets or just for a particular asset.
+The data explorer is available for all assets at once or just for a particular asset.
 
 - Click **Data explorer** in the navigator to visualize all data points of all assets.
 
@@ -39,7 +39,7 @@ In the data explorer, you see a list of available data points at the right. The 
 
 On the left, in the main card, you see its visualization.
 
-![data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
+![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
 The visualization is generated based on data point properties.
 

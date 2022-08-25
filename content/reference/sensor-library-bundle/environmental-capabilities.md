@@ -36,7 +36,7 @@ In a managed object, a motion sensor is modeled as a simple empty fragment:
 "c8y_MotionSensor" : {}
 ```
 
-### c8y\_MotionMeasurement
+### c8y\_SpeedMeasurement
 
 |Measurement|Units|Description|
 |:----------|:----|:----------|
@@ -44,7 +44,7 @@ In a managed object, a motion sensor is modeled as a simple empty fragment:
 |speed|km/h|Measured speed towards (+ve) or away (-ve) from the sensor.|
 
 ```json
-"c8y_MotionMeasurement": {
+"c8y_SpeedMeasurement": {
   "motionDetected": { "value": 1.0, "unit": "", "type": "BOOLEAN" },
   "speed": { "value": -63.2, "unit": "km/h" }
 }

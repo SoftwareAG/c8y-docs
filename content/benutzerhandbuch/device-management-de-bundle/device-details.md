@@ -323,7 +323,7 @@ Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KP
 Um Messwertgraphen anzuzeigen, muss das Gerät Messwerte in einem bestimmten Fragmentformat senden.
 
 	"fragment_name" : {
-		"serie_name" : {
+		"series_name" : {
 			"value" : ...
 			"unit" : ...
 		}
@@ -335,7 +335,7 @@ Beispiel:
 	      "Speed": { "value": 1234, "unit": "km/h" }
 	}
 
-`"Fragment_name"` und `"serie_name"` können durch verschiedene gültige JSON-Attributnamen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
+`"Fragment_name"` und `"series_name"` können durch verschiedene gültige JSON-Attributnamen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
 
 <a name="network"></a>
 ### Netzwerk

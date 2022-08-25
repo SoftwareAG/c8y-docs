@@ -78,7 +78,7 @@ TOTP must be set up by each user individually.
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- To revoke secret: ADMIN permission for permission type "User management"
+- To revoke a secret: ADMIN permission for permission type "User management"
 - To disable TOTP enforcement: ADMIN permission for permission type "User management"
 
 {{< /c8y-admon-req >}}

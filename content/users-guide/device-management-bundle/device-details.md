@@ -325,7 +325,8 @@ The screenshot below, for example, shows a chart for temperature measurement wit
 
 ![Measurements](/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
 
-If a chart contains measurements with different series, one Y-axis is rendered per series. In the example above, temperature measurements consist of two parameters with series T and K (representing C and K as units), so two axes are rendered.
+If a chart contains measurements with different series, one Y-axis is rendered per series. In the example above, temperature data is recorded from two sensors namely "sensors-1" and "sensor-2" having the same unit as °C. Here measurements from different sensors are categorized 
+as separate "Series" data. The measurements from the respective sensors are stored using separate series names (same as the sensor names) and hence, two axes are rendered here.
 Only one Y-axis is rendered if the measurements belong to the same series.
 
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
@@ -435,7 +436,7 @@ In the command prompt you can enter arbitrary command text. To send the command 
 When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 {{< /c8y-admon-important >}}
 
-For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
+For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **Predefined commands** above the command prompt area to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt. You may also add new commands here for re-use.
 
 ![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 

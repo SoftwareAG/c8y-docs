@@ -40,7 +40,7 @@ Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
 When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations or any combination of these) to filter by. The alarms with children and events with children enable users to create explicit subscriptions that allow the delivery of child as well as parent managed object events and alarms.
-It is also possible to filter by presence of a specific JSON fragment or "fragment type".
+It is also possible to filter by the presence of a specific value of a JSON "type" attribute using an OData expression, at the moment only the "or" operator is supported which allows filtering of multiple types with the use of an expression `'type1' or 'type2' [or 'typeN']` (as the type attribute is assumed, it is equivalent to a `type eq 'type1' or type eq 'type2' [or type eq 'typeN']` expression).
 When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
 For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
 
@@ -64,7 +64,7 @@ The protocol is text-based and described in detail in the next section.
 The tenant context ("tenant") is used for subscribing to and receiving notifications, in addition to the managed object context ("mo") mentioned above.
 Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context.
 This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
-It is also possible to subscribe to all alarms that are generated in the tenant context.
+It is also possible to subscribe to all alarms or events that are generated in the tenant context.
 
 See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
 

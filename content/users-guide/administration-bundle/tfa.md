@@ -56,15 +56,13 @@ TOTP must be set up by each user individually.
 {{< c8y-admon-req >}}
 
 Users can not revoke their own TOTP secret. The secret of a user is only revoked by their respective parent user.
+See [{{< enterprise-tenant >}} > Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies) in the *User guide* for detailed information on user hierarchies.
 
 ROLES & PERMISSIONS:
 
-- To revoke secret: ADMIN or CREATE permission for permission type "User management"
+- To revoke a secret: ADMIN or CREATE permission for permission type "User management"
 
 {{< /c8y-admon-req >}}
-
-
-To revoke the secret follow these steps:
 
 1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
 2. Scroll down to **Login options**.
@@ -81,7 +79,7 @@ TOTP must be set up by each user individually.
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-- To revoke secret: ADMIN or CREATE permission for permission type "User management"
+- To revoke a secret: ADMIN or CREATE permission for permission type "User management"
 - To disable TOTP enforcement: ADMIN permission for permission type "User management"
 
 {{< /c8y-admon-req >}}

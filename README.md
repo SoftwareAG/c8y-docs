@@ -153,4 +153,5 @@ Cumulocity provides documentation for multiple releases, for that you'll have to
 - Deploy the `default` branch using the Jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
 
 ---
-© Cumulocity GmbH  2019 + All rights reserved.
+© Cumulocity GmbH  2022 + All rights reserved.
+

@@ -101,3 +101,18 @@ They are now available at *softwareag* instead of within the Docker Hub environm
 If you still use the images from the previous location, you must migrate them.
 See also [Apama Docker image availability on Docker Hub]({{< link-sag-tech-forum >}}/t/apama-docker-image-availability-on-docker-hub/260207).
 {{< /c8y-admon-info >}}
+  
+{{< c8y-admon-important >}}
+Apama 10.15.0 introduces several new container images provided via Docker Hub and some of the existing container images have changed content.
+When building images for use as a Cumulocity IoT microservice, this is now different to earlier releases.
+You must now use the 
+[softwareag/apama-cumulocity-jre](https://hub.docker.com/r/softwareag/apama-cumulocity-jre) image with the
+[softwareag/apama-cumulocity-builder](https://hub.docker.com/r/softwareag/apama-cumulocity-builder) image as a builder image. 
+To do this with the default project Dockerfile created by Software AG Designer in 10.15.0 and previous versions, 
+you must either change the `FROM` lines in the Dockerfile appropriately
+(you only need to do this once) or build using the following flags (you have to do this every time):
+
+```
+--build-arg APAMA_BUILDER=softwareag/apama-cumulocity-builder:10.15 --build-arg APAMA_IMAGE=softwareag/apama-cumulocity-jre:10.15
+``` 
+{{< /c8y-admon-important >}}

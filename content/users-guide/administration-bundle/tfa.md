@@ -6,13 +6,13 @@ The two-factor authentication (TFA) is an extra layer of security that only comp
 
 There are two possible TFA strategies: Short Message Service (SMS) and Time-based One-Time Password (TOTP). Only one of them can be active at a time.
 
+Starting with **release 10.18**, {{< company-c8y >}} will deprecate the SMS-based TFA to only support TOTP-based TFA which is more reliable.
+
 To check whether TFA is enabled for a certain user, go to the **Users** page and see the TFA status column right from the password strength column. A key icon indicates that TFA is enabled and by hovering over it you can see the strategy that is being used.
 
 ![TFA status](/images/users-guide/Administration/admin-tfa-sms.png)
 
 ### SMS
-
-Starting with **release 10.18**, {{< company-c8y >}} will deprecate the SMS-based TFA to only support TOTP-based TFA which is more reliable.
 
 {{< c8y-admon-req >}}
 When adding a user and TFA is enabled, a mobile phone number must be specified. Without a valid phone number a login is impossible.

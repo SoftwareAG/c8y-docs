@@ -10,7 +10,9 @@ To check whether TFA is enabled for a certain user, go to the **Users** page and
 
 ![TFA status](/images/users-guide/Administration/admin-tfa-sms.png)
 
-### SMS (Deprecated)
+### SMS
+
+Starting with **release 10.18**, {{< company-c8y >}} will deprecate the SMS-based TFA to only support TOTP-based TFA which is more reliable.
 
 {{< c8y-admon-req >}}
 When adding a user and TFA is enabled, a mobile phone number must be specified. Without a valid phone number a login is impossible.

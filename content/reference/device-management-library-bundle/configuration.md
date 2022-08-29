@@ -4,7 +4,14 @@ title: Configuration
 layout: redirect
 ---
 
-The **Configuration** tab allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. This tab appears for devices when they announce support for any of the available formats.
+The **Configuration** tab allows three different formats for device configuration:
+
+* Text-based configuration
+* Legacy file-based configuration
+* Typed file-based configuration
+
+They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device.
+This tab appears for devices when they announce support for any of the available formats.
 
 ### Text-based configuration
 

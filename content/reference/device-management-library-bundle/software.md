@@ -123,7 +123,7 @@ The 516 static response template is available for dealing with software list ope
 116 template used for updating the device’s own managed object:
 
 1. Receive ```c8y_SoftwareList``` operation <br>
-   `516,deviceSerial,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
+   `516,DeviceSerial,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
 2. Set operation status to EXECUTING <br>
    `501,c8y_SoftwareList`
 3. Uninstall and install software
@@ -179,7 +179,7 @@ The device is expected to perform the following actions:
 The 528 static response template is available for dealing with software update operations:
 
 1. Receive ```c8y_SoftwareUpdate``` operation <br>
-   `528,deviceSerial,software_a,4.0.0,http://example.com/software_a,install,software_b,3.0.0,http://example.com/software_b,delete`
+   `528,DeviceSerial,software_a,4.0.0,http://example.com/software_a,install,software_b,3.0.0,http://example.com/software_b,delete`
 2. Set operation status to EXECUTING <br>
    `501,c8y_SoftwareUpdate`
 3. Uninstall and install software
@@ -422,7 +422,7 @@ The 529 static response template is available for dealing with software update o
 Advanced Software Management:
 
 1. Receive ```c8y_SoftwareUpdate``` operation <br>
-   `529,deviceSerial,software_a,4.0.0,"type A",http://example.com/software_a,install,software_b,3.0.0,"type B",http://example.com/software_b,delete`
+   `529,DeviceSerial,software_a,4.0.0,"type A",http://example.com/software_a,install,software_b,3.0.0,"type B",http://example.com/software_b,delete`
 2. Set operation status to EXECUTING <br>
    `501,c8y_SoftwareUpdate`
 3. Uninstall and install software

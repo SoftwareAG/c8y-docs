@@ -6,8 +6,7 @@ weight: 30
 aliases:
   - /predictive-analytics/remaining-useful-life/#getting-started
 ---
-
-We have added a *CONFIG.json* file to the attached ZIP file. This file is meant for capturing the tenant details and credentials which will be used by the demo scripts.
+A new *CONFIG.json* file is now attached to the ZIP file. This file is meant for capturing the tenant details and credentials which will be used by the demo scripts.
 
 Execute the following steps:
 

@@ -288,7 +288,7 @@ Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. W
 
 ![Operation status diagram](/images/rest/operations.png)
 
-The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
+The benefit of this execution flow is that it supports devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
 To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:
 

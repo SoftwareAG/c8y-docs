@@ -327,7 +327,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
     HTTP/1.1 200 OK
 
-Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time operations in {{< product-c8y-iot >}} is described in [Device control notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Device-control-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time operations in {{< product-c8y-iot >}} is described in the [Device control notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Device-control-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /notification/operations HTTP/1.1
     Content-Type: application/json

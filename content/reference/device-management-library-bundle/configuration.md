@@ -79,9 +79,9 @@ Template creation:<br>
 Receiving the operation:
 
 1. Receive the ```c8y_SendConfiguration``` operation using the custom template created above <br>
-  `100,L2P_MQTT_FX_Client,4801`
+  `100,DeviceSerial,4801`
 2. Set operation status to EXECUTING
-  `501,c8y_ SendConfiguration`
+  `501,c8y_SendConfiguration`
 3. Upload the current configuration state using the 113 static template
   `113,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
 4. Set operation status to SUCCESSFUL
@@ -103,7 +103,7 @@ The device is expected to perform the following actions:
 The 513 static response template is available to receive ```c8y_Configuration``` operations:
 
 1. Receive ```c8y_Configuration``` operation <br>
-  `511,deviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
+  `511,DeviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Configuration`
 3. Install and apply configuration as included

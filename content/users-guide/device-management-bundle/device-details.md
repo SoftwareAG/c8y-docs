@@ -296,7 +296,7 @@ In the **Logs** tab you can manage log information from devices.
 3. Select the type of log from the dropdown field. The supported logs listed are usually device-specific.
 4. Optionally, specify a text filter. For example, if you enter "Users", only lines including the term "Users" will appear in the returned log information.
 5. Specify the maximum number of lines to be returned (counted from the end). The default value is 1000.
-1. Click **Request log**.
+1. Click **Request log file**.
 
 The log information will be requested from the device.
 
@@ -321,11 +321,13 @@ Hover over a row and click the delete icon, to delete the log information.
 
 The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series".
 
-The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
+The screenshot below, for example, shows a chart for temperature measurement with two different series.
 
 ![Measurements](/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
 
-If a chart contains graphs with different units, one Y-axis is rendered per unit. In the example above, motion measurements consist of three parameters with unit "meter per square second", so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
+If a chart contains measurements with different series, one Y-axis is rendered per series. In the example above, temperature data is recorded from two sensors namely "sensors-1" and "sensor-2" having the same unit as °C. Here measurements from different sensors are categorized 
+as separate "Series" data. The measurements from the respective sensors are stored using separate series names (same as the sensor names) and hence, two axes are rendered here.
+Only one Y-axis is rendered if the measurements belong to the same series.
 
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
 
@@ -348,7 +350,7 @@ You can influence the graphical display and axes limits by setting up so-called 
 In order to see measurement graphs, the device must send measurements in a specified fragment format.
 
 	"fragment_name" : {
-		"serie_name" : {
+		"series_name" : {
 			"value" : ...
 			"unit" : ...
 		}
@@ -360,7 +362,7 @@ Example:
 	      "Speed": { "value": 1234, "unit": "km/h" }
 	}
 
-`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure must be exactly as above, two-level deep JSON object.
+`"Fragment_name"` and `"series_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure must be exactly as above, two-level deep JSON object.
 
 <a name="network"></a>
 ### Network
@@ -380,7 +382,7 @@ For SMS configuration, the router needs to be configured to accept SMS commands.
 1. Enter the Access Point Name (APN).
 2. Enter the username and the password of your account in the platform to which you wish to establish a connection.
 3. Select the authentication type.
-4. Click **Save changes** to save your settings.
+4. Click **Save** to save your settings.
 
 #### To configure LAN parameters
 
@@ -396,7 +398,7 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 2. Enter the DNS.
 3. Enter the DNS 2.
 4. Enter the domain name.
-5. Click **Save changes** to save your settings.
+5. Click **Save** to save your settings.
 
 {{< c8y-admon-info >}}
 If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
@@ -426,7 +428,7 @@ The device shell enables you to interactively work with remote devices. Many ind
 
 The **Shell** tab presents a command prompt to enter commands.
 
-In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated if the device is online.
+In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated once the command is written in the text area.
 
 ![Device shell](/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
 
@@ -434,9 +436,7 @@ In the command prompt you can enter arbitrary command text. To send the command 
 When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 {{< /c8y-admon-important >}}
 
-Click **View history** at the right of the top menu bar to switch to the **Control** tab which displays a list of the previously executed commands. For details, refer to [Monitoring and controlling devices > Working with operations](#operation-monitoring).
-
-For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
+For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **Predefined commands** above the command prompt area to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt. You may also add new commands here for re-use.
 
 ![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 

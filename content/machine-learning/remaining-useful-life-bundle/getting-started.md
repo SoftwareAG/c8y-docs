@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Getting started
 layout: redirect
 weight: 30
 

@@ -20,7 +20,7 @@ For this demo we are using a popular data set from NASA, called CMAPSS. CMAPSS 
 
 To start the demo, complete the following steps:
 
-* Train a machine learning model via a Jupyter notebook in MLW.
+* Train a machine learning model via a Jupyter Notebook in MLW.
 * Create a demo device in {{< product-c8y-iot >}} that mimics an actual engine.
 * Simulate measurements for the demo device.
 * Generate remaining useful life estimates based on the simulated data.

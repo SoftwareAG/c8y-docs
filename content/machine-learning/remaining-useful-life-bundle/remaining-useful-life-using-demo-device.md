@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/remaining-useful-life/#remaining-useful-life-using-demo-device
 ---
 
-A fully functional remaining useful life estimate demo can be prepared with the help of a demo device.
+A fully functional Remaining Useful Life Estimate demo can be prepared with the help of a demo device.
 For this, use the artifacts provided as part of the project *RemainingUsefulLifeDemoProject.zip* file.
 
 #### Start with Machine Learning Workbench
@@ -35,9 +35,9 @@ The following steps illustrate the training of a Random Forest machine learning 
 
 #### Model deployment and predictions
 
-Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine (MLE) for predictions.
+Once the model is available in the **Model** folder, it can be deployed to Machine Learning Engine for predictions.
 
-Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *RUL_rf.pmml* model to Machine Learning Engine (MLE). Predict *test_FD001.csv* data available in the **Data** folder, using the *RULRFRegressor* PMML model.
+Follow the steps described in [Machine Learning Workbench > Automated ML > Model deployment and predictions](/machine-learning/web-app-mlw/#model-deployment-and-predictions) and deploy the *RUL_rf.pmml* model to Machine Learning Engine. Predict *test_FD001.csv* data available in the **Data** folder, using the *RULRFRegressor* PMML model.
 
 
 #### Register a demo device on the platform
@@ -76,7 +76,7 @@ For this demo we created a number of widgets to show the {{< product-c8y-iot >}}
 * A data points graph displaying a collection of data points.
 * A KPI Widget displaying the last measurement value of a device.
 
-See screenshot below and follow the description in [User Guide > Cockpit](/users-guide/cockpit).
+See screenshot below and follow the description in [Cockpit](/users-guide/cockpit) in the *User guide*.
 
 <img src="/images/zementis/RemainingUsefulLife/rul-widgets.png" alt="Download" style="display:inline-block; margin:0"> <br>
 

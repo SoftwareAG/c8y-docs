@@ -9,7 +9,7 @@ aliases:
 
 Download the [RemainingUsefulLifeDemoProject.zip](/files/zementis/RemainingUsefulLifeDemoProject.zip) file which contains the scripts and sample data set used in this demo.
 
-Running the demo scripts requires 
+This requires the following:
 
 * Prior experience with Python, Jupyter Notebook, JSON, REST and understanding of data science processes.
 * Familiarity with {{< product-c8y-iot >}} and its in-built apps.

@@ -49,11 +49,13 @@ Data from the CSV file can be previewed by clicking the preview icon <img src="/
 
 The following steps illustrate how to ingest and transform data available in AWS S3 buckets.
 
-1. Click **Settings** in the navigator then click on AWS-S3 tab to register the S3 credentials with Machine Learning Workbench (MLW).
+1. Click **Settings** in the navigator, then click the AWS-S3 tab to register the S3 credentials with Machine Learning Workbench (MLW).
+
 
     ![AWS S3 Credentials](/images/zementis/mlw-app-s3-settings-page.png)
 
-2. Click **Projects** in the navigator then select the project. Click the add resources icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from AWS S3**.
+2. Click **Projects** in the navigator, then select the project. Click the add resources icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from AWS S3**.
+
 
 3. Select the bucket from which you want to pull the data and click the save icon <img src="/images/zementis/mlw-aws-save-icon.png" alt="Download" style="display:inline-block; margin:0"> to save the zip file in project's resources.
 

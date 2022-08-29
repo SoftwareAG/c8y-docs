@@ -12,7 +12,7 @@ For this, use the artifacts provided as part of the project *RemainingUsefulLife
 
 #### Start with Machine Learning Workbench
 
-Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *RemainingUsefulLifeDemoProject.zip* project to MLW. This creates a new project named **RemainingUsefulLifeDemoProject_uuid**, with a number of resources. You will get text and csv files in the **Data** folder and notebooks in the **Code** folder.
+Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *RemainingUsefulLifeDemoProject.zip* project to MLW. This creates a new project named **RemainingUsefulLifeDemoProject_uuid**, with a number of resources. You will get .text and .csv files in the **Data** folder and notebooks in the **Code** folder.
 
 #### Train the PMML model
 
@@ -20,9 +20,9 @@ For this use case, we are building a Random Forest machine learning model to pre
 
 The integrated Jupyter Notebook feature within {{< product-c8y-iot >}} Machine Learning Workbench helps in writing the code that creates the Random Forest model in PMML format using the training data *train_FD001.csv* contained in the **Data** folder. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train a Random Forest model.
 
-After the model is created, the scikit-learn object can be converted to PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
+Once your created the model, convert the scikit-learn object to PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
-The following steps illustrate the training of a Random Forest machine learning model using the Jupyter Notebook.
+The following steps illustrate the training of a Random Forest machine learning model using the Jupyter Notebook:
 
 1. Open the *TrainRULModel.ipynb* file in the **Code** folder of the project.
 
@@ -47,13 +47,13 @@ We have added a script *RegisterDevice.ipynb* which registers a demo device in {
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, a device named "RemainingUsefulLifeDemo" is registered in {{< product-c8y-iot >}}.
-3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. See image below. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application (see image below). The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 
 <img src="/images/zementis/RemainingUsefulLife/remaining-useful-life_get_device_id.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
 #### Register a second demo device to receive the predictions
 
-Please use the script *RegisterDeviceForPrediction.ipynb* to register the second demo device named "RULPredictionDevice". This device is used to receive the predictions. Follow the steps as described for the first demo device.
+Use the script *RegisterDeviceForPrediction.ipynb* to register the second demo device named "RULPredictionDevice". This device is used to receive the predictions. Follow the steps as described for the first demo device.
 
 #### Simulate measurements for the demo device
 
@@ -64,7 +64,7 @@ Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 
 #### Schedule scoring the simulated data
 
-Use the Python script *SchedulePrediction.py* to score the simulated data and send the predictions to the second demo device "RULPredictionDevice". In order to execute the script on a schedule, follow the steps described in [Machine Learning Workbench > Task Scheduler](/machine-learning/web-app-mlw/#scheduler). As part of this demo we configured the scheduler as shown in the below screenshot.
+Use the Python script *SchedulePrediction.py* to score the simulated data and send the predictions to the second demo device "RULPredictionDevice". In order to execute the script on a schedule, follow the steps described in [Machine Learning Workbench > Task Scheduler](/machine-learning/web-app-mlw/#scheduler). As part of this demo we configured the schedule as shown in the below screenshot.
 
 <img src="/images/zementis/RemainingUsefulLife/rul-schedule-task.png" alt="Download" style="display:inline-block; margin:0"> <br>
 

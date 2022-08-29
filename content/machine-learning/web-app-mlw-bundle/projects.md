@@ -46,7 +46,7 @@ Once the files are uploaded, they will be placed under the respective categories
 <a name="deleting-resources"></a>
 ### Deleting resources
 
-To delete resource(s), click **Projects** in the navigator, select the projects from which you want to delete and then click on resource category(for eg: Data). Select the resource(s), a delete icon will appear on top right corner. Click on this delete icon to delete selected resource.
+To delete resource(s), click **Projects** in the navigator, select the projects from which you want to delete and select the resource category (for example, Data), a delete icon will appear on top right corner. Click the icon to delete the selected resource.
 
 ![Resource delete](/images/zementis/mlw-app-delete-resources.png)
 
@@ -68,7 +68,7 @@ The project card will show the different versions available for that project.
 <a name="switching-project-version"></a>
 ### Switching between project versions
 
-To switch to a different version of the project, click **Projects** in the navigator, select the version you want to switch to and click on pull option. The version switch message will show up in the respective project tile.
+To switch to a different version of the project, click **Projects** in the navigator, select the version you want to switch to and click **Pull**. The version switch message will show up in the respective project tile.
 
 ![Version Pull](/images/zementis/mlw-app-project-version-pull.png)
 
@@ -116,32 +116,32 @@ Once the task has reached **COMPLETED** status, the project would be successfull
 <a name="deleting-a-project-version"></a>
 ### Deleting a project version
 
-To delete a specific version of the project, click **Projects** in the navigator, select the version you want to delete and click on delete option. 
+To delete a specific version of the project, click **Projects** in the navigator, select the version you want to delete and click **Delete**. 
 
 ![Project version delete](/images/zementis/mlw-app-project-version-delete.png)
 
-Click **Tasks** in the navigator and click the respective task name, which in this case is the project name underscore version underscore version number underscore delete (ex. demoproject_version_v1_delete), to display the status of the delete process in the **Task History** section at the center.
+Click **Tasks** in the navigator and click the respective task name, which in this case is the project name underscore version underscore version number underscore delete (for example, demoproject_version_v1_delete), to display the status of the delete process in the **Task History** section at the center.
 
 Once the task has reached **COMPLETED** status, the project version would be successfully deleted.
 
 <a name="deleting-multiple-projects"></a>
 ### Deleting multiple projects
 
-To delete multiple projects, click **Projects** in the navigator, then click on Bulk Actions option <img src="/images/zementis/mlw-bulk-actions-icon.png" alt="Bulk Actions" style="display:inline-block; margin:0"> on top right. select the projects you want to delete and click on delete option. 
+To delete multiple projects, click **Projects** in the navigator, then click **Bulk Actions** <img src="/images/zementis/mlw-bulk-actions-icon.png" alt="Bulk Actions" style="display:inline-block; margin:0"> on top right. Select the projects you want to delete and click **Delete**. 
 
 ![Project delete](/images/zementis/mlw-app-multi-project-delete.png)
 
-Click **Tasks** in the navigator and click the respective task names for each deleted project, which in this case is the project name underscore delete (ex. demoproject_delete), to display the status of the delete process in the **Task History** section at the center.
+Click **Tasks** in the navigator and click the respective task names for each deleted project, which in this case is the project name underscore delete (for example, demoproject_delete), to display the status of the delete process in the **Task History** section at the center.
 
-Once the task has reached **COMPLETED** status, the project version would be successfully deleted.
+Once the task has reached **COMPLETED** status, the project version is successfully deleted.
 
-Please note, project or specific project delete will fail with a notification if there is any ongoing task associated with the project.
+Note, to delete a project or a specific project will fail with a notification if there is any ongoing task associated with the project.
 
 <a name="Task-grouping-and-deletion"></a>
 ### Task grouping and deletion
 
-Project tasks are grouped separately for each projects. To see tasks associated with a project click **Tasks** in the navigator, and then choose the project to see all its tasks.
+Project tasks are grouped separately for each projects. To see tasks associated with a project click **Tasks** in the navigator, and then select the project to see all its tasks.
 
-To delete task(s), click **Tasks** in the navigator, select the project to display associated tasks. Select the task(s), a delete icon will appear on top right corner. Click on this delete icon to delete selected task(s). 
+To delete task(s), click **Tasks** in the navigator, select the project to display associated tasks. Select the task(s) and click the delete icon in the top right corner.
 
 ![Task delete](/images/zementis/mlw-app-project-tasks-delete.png)

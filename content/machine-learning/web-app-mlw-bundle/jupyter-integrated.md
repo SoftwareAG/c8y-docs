@@ -44,13 +44,15 @@ Click on **Settings** in the navigator, switch to JEG tab and enter the JEG cred
 
 ![JEG Setting](/images/zementis/mlw-app-jeg-settings-page.png)
 
-Once JEG credentials are set, all previously active NB instances will be killed. While opening any notebook desired JEG kernel needs to be selected.
+Once JEG credentials are set, all previously active NB instances are killed. While opening any notebook desired JEG kernel needs to be selected.
+
 
 ![JEG Kernels](/images/zementis/mlw-app-jeg-kernels.png)
 
 A new library **mlw-sdk** has been developed to help move files between MLW & JEG. The sample code snippets for this library is available to be used readily.
 
-To open the code snippets panel, click on the Code snippets icon <img src="/images/zementis/mlw-sdk-code-snippets-icon.png" alt="Code Snippets" style="display:inline-block; margin:0"> at the end of jupyter notebook tool bar.
+To open the code snippets panel, click on the code snippets icon <img src="/images/zementis/mlw-sdk-code-snippets-icon.png" alt="Code Snippets" style="display:inline-block; margin:0"> at the end of jupyter notebook tool bar.
+
 Choose the desired code snippet from this panel & click on **insert** option to populate the code in jupter notebook cells.'
 
 ![MLW SDK Code Snippets](/images/zementis/mlw-sdk-code-snippets-panel.png)
@@ -63,6 +65,7 @@ Choose the desired code snippet from this panel & click on **insert** option to 
 
 Jupyter NB instances are grouped separately for each projects. To see Jupyter instance associated with a project click **Assets** in the navigator, and then choose the project to see all its active notebook instances.
 
-To kill instance(s), click **Assets** in the navigator, select the project to display associated instances. Select the instance(s),and click on the kill instance icon <img src="/images/zementis/mlw-kill-instance-icon.png" alt="Kill instance" style="display:inline-block; margin:0"> at the top right.
+To kill instance(s), click **Assets** in the navigator, select the project to display associated instances. Select the instance(s),and click the kill instance icon <img src="/images/zementis/mlw-kill-instance-icon.png" alt="Kill instance" style="display:inline-block; margin:0"> at the top right.
+
 
 ![Asset delete](/images/zementis/mlw-app-project-assets-delete.png)

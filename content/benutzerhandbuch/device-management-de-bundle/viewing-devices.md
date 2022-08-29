@@ -113,19 +113,6 @@ Das Objekt wird dauerhaft aus der Plattform gelöscht.
 Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 {{< /c8y-admon-important >}}
 
-<a name="searching-devices"></a>
-### So suchen Sie nach Geräten
-
-{{< product-c8y-iot >}} umfasst eine Volltextsuche nach Geräten.
-
-Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein.
-
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features).
-
-Unser Beispiel zeigt eine Suche nach "NTC".
-
-![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
-
 <a name="filtering-devices"></a>
 ### So filtern Sie Geräte
 

@@ -13,6 +13,11 @@ aliases:
   - /users-guide/cockpit/#export
 ---
 
+
+{{< c8y-admon-related >}}
+- The [Streaming Analytics guide](/guides/apama/#overview) for details on working with Apama Streaming Analytics. 
+{{< /c8y-admon-related >}}
+
 The export functionality lets you export specific data to either CSV or Excel files.
 
 {{< c8y-admon-req >}}

@@ -4,6 +4,11 @@ title: Smart rules collection
 layout: redirect
 ---
 
+{{< c8y-admon-related >}}
+- [Administration](/users-guide/administration#reprio-alarms) in the *User guide* for details on alarms in {{< product-c8y-iot >}}.
+{{< /c8y-admon-related >}}
+
+
 <a name="business"></a>
 
 {{< product-c8y-iot >}} includes preset global smart rule types. Each global smart rule type provides different parameters to configure.

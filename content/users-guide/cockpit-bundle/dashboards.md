@@ -16,6 +16,10 @@ helpcontent:
     Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
 weight: 40
 ---
+{{< c8y-admon-related >}}
+- The [Web SDK guide](/guides/web/#overview) for more information on working with Web SDK in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 

@@ -19,10 +19,6 @@ For these environments, {{< product-c8y-iot >}} offers the so-called SmartREST p
 
 In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST.
 
-{{< c8y-admon-info >}}
-The following sections assume a basic understanding of the SmartREST protocol. If you are not familiar with it yet, we recommend you to review the [SmartREST reference](/reference/smartrest-two).
-{{< /c8y-admon-info >}}
-
 ### How does SmartREST work?
 
 The image below illustrates how SmartREST works. Devices and other clients connect to a dedicated SmartREST endpoint on {{< product-c8y-iot >}} and send their data in rows of comma-separated values. These rows are expanded by {{< product-c8y-iot >}}'s SmartREST proxy into standard {{< product-c8y-iot >}} REST API requests. In the same way, responses from {{< product-c8y-iot >}} are compressed by the proxy from their original JSON format into comma-separated values before sending them back to the device.

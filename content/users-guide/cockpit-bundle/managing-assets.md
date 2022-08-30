@@ -12,10 +12,10 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-- The [Concepts guide](/guides/concepts/#domain-model) for details on the {{< product-c8y-iot >}}'s domain model.
+- The [Concepts guide](/concepts/domain-model#overview) for details on the {{< product-c8y-iot >}}'s domain model.
 - [Device Management](/users-guide/device-management#overview) in the *User guide* for details on working with devices in {{< product-c8y-iot >}}.
-- The [Protocol integration guide](/guides/protocol-integration/#overview) for more information on using protocols in {{< product-c8y-iot >}}.
-- The [Web SDK guide](/guides/web/#overview) for more information on working with Web SDK in the {{< product-c8y-iot >}} environment.
+- The [Protocol integration guide](/protocol-integration/#overview) for more information on using protocols in {{< product-c8y-iot >}}.
+- The [Web SDK guide](/web/#overview) for more information on working with Web SDK in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 <a name="assets"></a>

@@ -10,7 +10,7 @@ layout: redirect
 {{< c8y-admon-related >}}
 - [Device Management](/users-guide/device-management#overview) in the *User guide* for details on working with devices in {{< product-c8y-iot >}}.
 - [Administration](/users-guide/administration#managing-applications) in the *User guide* for details on managing applications in {{< product-c8y-iot >}}.
-- The [Protocol integration guide](/guides/protocol-integration/cloud-fieldbus/#overview) for more information on using Cloud Fieldbus in {{< product-c8y-iot >}}.
+- The [Protocol integration guide](/protocol-integration/cloud-fieldbus/#overview) for more information on using Cloud Fieldbus in {{< product-c8y-iot >}}.
 {{< /c8y-admon-related >}}
 
 

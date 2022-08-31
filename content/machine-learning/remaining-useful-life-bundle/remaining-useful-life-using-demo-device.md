@@ -22,7 +22,7 @@ The integrated Jupyter Notebook feature within {{< product-c8y-iot >}} Machine L
 
 Once your created the model, convert the scikit-learn object to PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
-The following steps illustrate the training of a Random Forest machine learning model using the Jupyter Notebook:
+The following steps illustrate the training of a machine learning model using the Jupyter Notebook:
 
 1. Open the *TrainRULModel.ipynb* file in the **Code** folder of the project.
 
@@ -71,10 +71,10 @@ Use the Python script *SchedulePrediction.py* to score the simulated data and se
 #### Create Widgets
 
 For this demo we created a number of widgets to show the {{< product-c8y-iot >}} display capabilities:
-* A data points list, which is a table display of a collection of data points.
-* A silo displaying current values for selected measurements.
-* A data points graph displaying a collection of data points.
 * A KPI Widget displaying the last measurement value of a device.
+* A data points list, which is a table display of a collection of data points.
+* A data points graph displaying a collection of data points.
+
 
 See screenshot below and follow the description in [Cockpit](/users-guide/cockpit) in the *User guide*.
 

@@ -42,7 +42,7 @@ c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/pu
 ```
 
 {{< c8y-admon-important >}}
-The `key` property must match the application key specified for the application during creation, otherwise you will not be able to authenticate for using the web application.
+The `key` property must match the application key specified for the application during creation, otherwise the user will not be able to authenticate using the web application.
 {{< /c8y-admon-important >}}
 
 ### Dynamic fetched options

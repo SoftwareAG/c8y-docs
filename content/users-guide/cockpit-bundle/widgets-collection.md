@@ -101,7 +101,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#quick-links">Quick links</a></td>
-<td align="left">Provides several quick links to relevant operations.</td>
+<td align="left">Provides several quick links to relevant operations (deprecated).</td>
 </tr>
 <tr>
 <td align="left"><a href="#radial-gauge">Radial Gauge</a></td>
@@ -487,7 +487,7 @@ The "Pie chart" widget displays data points (measurements) with current values i
 <a name="quick-links"></a>
 ### Quick links
 
-The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
+The "Quick links" widget is deprecated and can no longer be found in the widgets list, thus it can no longer be added to a dashboard. Instead, we recommend you to use the "<a href='#help-service'>Help and service</a>" widget.
 
 ![Quick links widget](/images/users-guide/cockpit/cockpit-widget-quick-links.png)
 

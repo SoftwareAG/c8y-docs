@@ -109,7 +109,7 @@ Folgende Typen sind verfügbar:
 </tr>
 <tr>
 <td align="left"><a href="#quick-links">Quick Links</a></td>
-<td align="left">Stellt mehrere Quick Links zu entsprechenden Operationen bereit.</td>
+<td align="left">Stellt mehrere Quick Links zu entsprechenden Operationen bereit (veraltet).</td>
 </tr>
 <tr>
 <td align="left"><a href="#relay-array-control">Relaisfeldsteuerung</a></td>
@@ -509,7 +509,7 @@ Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeig
 <a name="quick-links"></a>
 ### Quick Links
 
-Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Operationen an. Es können keinen zusätzlichen Parameter konfiguriert werden.
+Das Widget "Quick links" ist veraltet und kann nicht mehr in der Widgets-Liste gefunden werden, sodass es nicht mehr zu einem Dashboard hinzugefügt werden kann. Stattdessen empfehlen wir Ihnen, das Widget "<a href='#help-service'>Hilfe und Service</a>" zu verwenden.
 
 ![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
 

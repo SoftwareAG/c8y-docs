@@ -108,10 +108,6 @@ Folgende Typen sind verfügbar:
 <td align="left">Zeigt Datenpunkte in Form eines linearen Zeigers.</td>
 </tr>
 <tr>
-<td align="left"><a href="#quick-links">Quick Links</a></td>
-<td align="left">Stellt mehrere Quick Links zu entsprechenden Operationen bereit.</td>
-</tr>
-<tr>
 <td align="left"><a href="#relay-array-control">Relaisfeldsteuerung</a></td>
 <td align="left">Ermöglicht es, Relais in einem Relaisfeld unabhängig voneinander ein- oder auszuschalten.</td>
 </tr>
@@ -505,14 +501,6 @@ Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sic
 {{< /c8y-admon-info >}}
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
-
-<a name="quick-links"></a>
-### Quick Links
-
-Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Operationen an. Es können keinen zusätzlichen Parameter konfiguriert werden.
-
-![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
-
 
 <a name="relay-array-control"></a>
 ### Relaisfeldsteuerung

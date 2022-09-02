@@ -39,14 +39,14 @@ The Jupyter Notebook environment currently supports Python 3 kernel.
 <a name="Jupyter-Enterprise-Gateway-and-MLW-library"></a>
 ### Jupyter Enterprise Gateway and MLW library
 
-Jupyter Enterprise Gateway (JEG) is now integrated to use with MLW. To use JEG, credentials needs to be entered first.
+Jupyter Enterprise Gateway (JEG) is now integrated to use with MLW. To use JEG, credentials needs to be set first.
 
 Click **Settings** in the navigator, switch to the **JEG** tab and enter the JEG credentials.
 
 
 ![JEG Setting](/images/zementis/mlw-app-jeg-settings-page.png)
 
-Once the JEG credentials are set, all previously active NB instances are killed. While opening any notebook the desired JEG kernel must be selected.
+Once the JEG credentials are set, all previously active Notebook instances will be killed. While opening any notebook, the desired JEG kernel must be selected from the dropdown list.
 
 
 
@@ -69,10 +69,10 @@ Select the desired code snippet from this panel & click the **insert** option to
 <a name="Assets-grouping-and-deletion"></a>
 ### Assets grouping and deletion
 
-Jupyter Notebook instances are grouped separately for each projects. To see the Jupyter instance associated with a project click **Assets** in the navigator, and then select the project to see all its active notebook instances.
+Jupyter Notebook instances are grouped separately for each projects. To see the Jupyter Notebook instance associated with a project, click **Assets** in the navigator, and then select the project to see all its active notebook instances.
 
 
-To kill instance(s), click **Assets** in the navigator and select a project to display the associated instances. Select the instance(s),and click the kill instance icon <img src="/images/zementis/mlw-kill-instance-icon.png" alt="Kill instance" style="display:inline-block; margin:0"> at the top right.
+To kill instance(s), click **Assets** in the navigator and select a project to display the associated instances. Select the instance(s), and click the kill instance icon <img src="/images/zementis/mlw-kill-instance-icon.png" alt="Kill instance" style="display:inline-block; margin:0"> at the top right.
 
 
 

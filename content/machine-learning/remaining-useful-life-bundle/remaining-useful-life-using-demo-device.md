@@ -12,7 +12,7 @@ For this, use the artifacts provided as part of the project *RemainingUsefulLife
 
 #### Start with Machine Learning Workbench
 
-Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *RemainingUsefulLifeDemoProject.zip* project to MLW. This creates a new project named **RemainingUsefulLifeDemoProject_uuid**, with a number of resources. You will get .text and .csv files in the **Data** folder and notebooks in the **Code** folder.
+Follow the steps described in [Machine Learning Workbench > Upload a project](/machine-learning/web-app-mlw/#upload-a-project) and upload the *RemainingUsefulLifeDemoProject.zip* project to MLW. This creates a new project named **RemainingUsefulLifeDemoProject_uuid**, with a number of resources. You will get .txt and .csv files in the **Data** folder and notebooks in the **Code** folder.
 
 #### Train the PMML model
 

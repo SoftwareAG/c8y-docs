@@ -144,7 +144,7 @@ Note, that deleting a project or a specific project version will fail with a not
 <a name="Task-grouping-and-deletion"></a>
 ### Task grouping and deletion
 
-Project tasks are grouped separately for each project. To see tasks associated with a project click **Tasks** in the navigator, and then select the project to see all its tasks.
+Tasks are grouped separately for each project. To see tasks associated with a project, click **Tasks** in the navigator, and then select the project to see all its associated tasks.
 
 To delete task(s), click **Tasks** in the navigator and select the project to display its associated tasks. Select the task(s) and click the delete icon at the top right.
 

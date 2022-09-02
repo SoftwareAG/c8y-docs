@@ -8,13 +8,17 @@ Machine Learning Workbench (MLW) provides a version-controlled project-based str
 
 Projects functionality includes:
 
-* [Creating a new project](#creating-a-new-project)
-* [Adding resources to the project - drag and drop, upload single or multiple files](#uploading-resources)
-* [Committing a project - version management](#committing-a-project-version)
-* [Switching between project versions](#switching-project-version)
-* [Downloading a project as a compressed file](#downloading-a-project)
-* [Uploading a project](#uploading-a-project)
-* [Deleting a project](#deleting-a-project)
+- [Creating a new project](#creating-a-new-project)
+- [Uploading resources](#uploading-resources)
+- [Deleting resources](#deleting-resources)
+- [Committing a project version](#committing-a-project-version)
+- [Switching between project versions](#switching-between-project-versions)
+- [Downloading a project](#downloading-a-project)
+- [Uploading a project](#uploading-a-project)
+- [Deleting a project](#deleting-a-project)
+- [Deleting a project version](#deleting-a-project-version)
+- [Deleting multiple projects](#deleting-multiple-projects)
+- [Task grouping and deletion](#task-grouping-and-deletion)
 
 <a name="creating-a-new-project"></a>
 ### Creating a new project
@@ -46,16 +50,16 @@ Once the files are uploaded, they will be placed under the respective categories
 <a name="deleting-resources"></a>
 ### Deleting resources
 
-To delete resource(s), click **Projects** in the navigator, select the projects from which you want to delete resources and select the resource category (for example, Data). Click the delete icon on top right corner to delete the selected resource.
+To delete resource(s), click **Projects** in the navigator, select the project from which you want to delete resources, select the resource category (for example, Data) and select the resource(s). Click the delete icon on top right corner to delete the selected resource.
 
 ![Resource delete](/images/zementis/mlw-app-delete-resources.png)
 
 <a name="committing-a-project-version"></a>
 ### Committing a project version
 
-To commit a project with its resources for versioning, click the plus icon <img src="/images/zementis/mlw-commit-add-icon.png" alt="Commit" style="display:inline-block; margin:0"> at the top, next to the project name, and click **Commit Project**.
+To commit a project with its resources for versioning, click the plus icon <img src="/images/zementis/mlw-commit-add-icon.png" alt="Commit" style="display:inline-block; margin:0"> next to the project name at the top.
 
-You can select all or a subset of resource files that need to be committed to a version. and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+You can select all or a subset of resource files that need to be committed to a version. And click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 ![Commit version](/images/zementis/mlw-app-project-commit-select.png)
 
@@ -68,7 +72,7 @@ The project card will show the different versions available for that project.
 <a name="switching-project-version"></a>
 ### Switching between project versions
 
-To switch to a different version of the project, click **Projects** in the navigator, select the version you want to switch to and click **Pull**. The version switch message will show up in the respective project tile.
+To switch to a different version of the project, click **Projects** in the navigator, select the version you want to switch to in the project tile and click **Pull**. The version switch message will show up in the respective project tile.
 
 ![Version Pull](/images/zementis/mlw-app-project-version-pull.png)
 
@@ -116,7 +120,7 @@ Once the task has reached **COMPLETED** status, the project would be successfull
 <a name="deleting-a-project-version"></a>
 ### Deleting a project version
 
-To delete a specific version of the project, click **Projects** in the navigator, select the version you want to delete and click **Delete**. 
+To delete a specific version of the project, click **Projects** in the navigator, select the version you want to delete in the project tile and click **Delete**. 
 
 ![Project version delete](/images/zementis/mlw-app-project-version-delete.png)
 

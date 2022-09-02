@@ -10,11 +10,9 @@ A new *CONFIG.json* file is now attached to the ZIP file. This file is meant for
 
 Execute the following steps:
 
-1.  Update the *CONFIG.json* with the appropriate values and save it. 
-2. Replace `c_url` with your tenant URL, `c_user` with your tenant username and `c_pass` with your tenant password. 
-3. Leave the `c_device_source` and `c_device_pred`.
+Update the *CONFIG.json* with the appropriate values and save it. Replace `c_url` with your tenant URL, `c_user` with your tenant username and `c_pass` with your tenant password. Leave the `c_device_source` and `c_device_pred`.
 
-	CONFIG.json
+	CONFIG.JSON
 	{
 		c_url:https://yourtenant.{{< domain-c8y >}}
 		c_user:user@company.com

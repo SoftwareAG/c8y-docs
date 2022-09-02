@@ -28,7 +28,7 @@ The following steps illustrate the training of a machine learning model using th
 
 2. Follow the steps described in [Machine Learning Workbench > Jupyter Notebook > Editing and executing a notebook](/machine-learning/web-app-mlw/#editing-and-executing-a-notebook) and execute the existing code snippets in each cell of the *TrainRULModel.ipynb* to train an Random Forest PMML model. Make sure to uncomment the first two lines in the first cell to install *seaborn* and *matplotlib*, in case they are not already installed. See image of the notebook below.
 
-3. After all steps are completed, please click the refresh icon <img src="/images/zementis/mlw-refresh-icon.png" alt="Refresh" style="display:inline-block; margin:0"> at the top of **Tabs** to list the newly created *RUL_rf.pmml* with model name *RULRFRegressor* in the **Model** folder.
+3. After all steps are completed, click the refresh icon <img src="/images/zementis/mlw-refresh-icon.png" alt="Refresh" style="display:inline-block; margin:0"> at the top of **Tabs** to list the newly created *RUL_rf.pmml* with model name *RULRFRegressor* in the **Model** folder.
 
 
 ![Train Model using Jupyter Notebook](/images/zementis/RemainingUsefulLife/rul-jnb.png)

@@ -46,7 +46,7 @@ curl --location --request GET '{{url}}/service/mlw/projects'
 {
     "data": [
         {
-            "id": "1631773118_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial",
             "description": "Regression tests",
             "createdAt": "2021-09-16T06:18:38.193833Z",
@@ -128,7 +128,7 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 200 - OK
 
 {
-    "id": "1631774924_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T06:48:44.995815Z",
@@ -248,10 +248,10 @@ Commit the resources of project for version control. The response will be a long
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/commit' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
 --header 'Authorization: {{auth}}
 --header 'Content-Type: application/json' \
---data-raw '{"listOfResources":["1631777710_0928_Resource","1631777752_0720_Resource"]}'
+--data-raw '{"listOfResources":["72c0673497344164a80e298f679b8139","72c0673497344164a80e298f679b8138"]}'
 ```
 
 **Example Response**
@@ -260,7 +260,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 200 - OK
 
 {
-    "id": "1631777908_Tasks",
+    "id": "656ea4",
     "name": "Sample Project",
     "createdAt": "2021-09-16T07:38:28.712732Z",
     "type": "COMMIT/PULL",
@@ -268,15 +268,15 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1631777908_0957_Commit",
+            "id": "656ea5",
             "pID": "140104349759232",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631777908_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T07:38:28.712732Z",
-            "projectID": "1631774924_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v0",
             "properties": [
                 {
@@ -292,7 +292,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
             ]
         }
     ],
-    "projectID": "1631774924_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "Sample Project",
     "properties": [
         {
@@ -314,9 +314,9 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/commit' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
 --header 'Content-Type: application/json' \
---data-raw '{"listOfResources":["1601506946_0758_Resource","1600753264_0658_Resource","1600753348_0604_Resource","1600753265_0780_Resource","1601507104_0819_Resource"]}'
+--data-raw '{"listOfResources":["72c0673497344164a80e298f679b8139","72c0673497344164a80e298f679b8138","72c0673497344164a80e298f679b8137","72c0673497344164a80e298f679b8136","72c0673497344164a80e298f679b8131"]}'
 ```
 
 **Example Response**
@@ -336,7 +336,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 ```
 409 - Conflict
 
-curl --request POST "{{url}}/service/mlw/projects/1600932615_Project/commit" --header "Authorization: {{auth}}"
+curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit" --header "Authorization: {{auth}}"
 ```
 **Example Response**
 
@@ -373,7 +373,7 @@ Updates the exiting project name and description with given new project name and
 ```
 201 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1631774924_Project/' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
@@ -385,7 +385,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1631774924_Project/'
 201 - OK
 
 {
-    "id": "1631774924_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "ProjectNameChanged",
     "description": "A dummy project",
     "createdAt": "2021-09-16T06:48:44.995815Z",
@@ -411,7 +411,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1631774924_Project/'
 ```
 409 - Conflict
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
@@ -431,7 +431,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 ```
 401 - Unauthorized
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
@@ -492,7 +492,7 @@ To facilitate collaboration and sharing, MLW allows you to export the contents o
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump' \
 --header 'Authorization: {{auth}}
 --header 'Content-Type: application/json' \
 ```
@@ -517,11 +517,11 @@ curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/d
             "id": "97f42d387a534ca9902dfaff9e945a6d",
             "message": "Zipping your project",
             "executedAt": "2022-02-09T08:14:51.399136Z",
-            "projectID": "1644309675_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "tasksID": "ecebc016f83843859e06d10cddce59ec"
         }
     },
-    "projectID": "1644309675_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "sortTime": 1644394491,
     "projectName": "WF",
     "recurrence": "ONE_TIME",
@@ -543,7 +543,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/d
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/dump' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump' \
 --header 'Content-Type: application/json'
 ```
 
@@ -564,7 +564,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1644309675_Project/d
 ```
 404 - Not Found
 
-curl --request GET "{{url}}/service/mlw/projects/1644309674_Project/dump" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump" --header "Authorization: {{auth}}"
 ```
 **Example Response**
 
@@ -572,7 +572,7 @@ curl --request GET "{{url}}/service/mlw/projects/1644309674_Project/dump" --head
 404 - Not Found
 
 {
-    "message": "Project with id '1644309674_Project' not found.",
+    "message": "Project with id '0f981b26132d412097ee5e54a257ce9f' not found.",
     "errorCode": 404,
     "exception": "Project not found"
 }
@@ -629,11 +629,11 @@ curl --location --request POST '{{url}}/service/mlw/projects/upload' \
             "id": "ca16d85213014c6a980afacf1ebd7798",
             "message": "Uploading your project",
             "executedAt": "2022-02-09T08:24:53.046085Z",
-            "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "tasksID": "395dc2be201b418b97f56f213b820de5"
         }
     },
-    "projectID": "e92475e081cf4edfa592b52b7e5f0ddf_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "sortTime": 1644395093,
     "projectName": "WorkFlow_project_e02232",
     "recurrence": "ONE_TIME",
@@ -692,7 +692,7 @@ If there is any running task associated with the project, the delete operation w
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 ```
@@ -705,7 +705,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 {
     "data": [
         {
-            "id": "1631773118_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial",
             "description": "Regression tests",
             "createdAt": "2021-09-16T06:18:38.193833Z",
@@ -737,7 +737,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -760,7 +760,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 400 - Bad Request
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -772,7 +772,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 
 {
     "error": "general/internalError",
-    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project delete not allowed."
+    "message": "Running task(s) found associated with projectId: 0f981b26132d412097ee5e54a257ce9f. Project delete not allowed."
 }
 ```
 
@@ -805,7 +805,7 @@ If there is any running task associated with the project, the delete operation w
 ```
 200 - OK
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 ```
@@ -818,7 +818,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 {
     "data": [
         {
-            "id": "1601507741_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial",
             "description": "Regression tests",
             "createdAt": "2021-09-16T06:18:38.193833Z",
@@ -841,7 +841,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
             }
         },
         {
-            "id": "1601507600_Project",
+            "id": "0f981b26132d412097ee5e54a257ce9f",
             "name": "MLW Testing Trial 2",
             "description": "Regression tests 2",
             "createdAt": "2021-09-16T06:18:30.193833Z",
@@ -872,7 +872,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 401 - Unauthorized
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -895,7 +895,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 ```
 400 - Bad Request
 
-curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project?versionNumber=v0' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
 --header 'Content-Type: application/json' \
 ```
 
@@ -907,7 +907,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 
 {
     "error": "general/internalError",
-    "message": "Running task(s) found associated with projectId: 1601507741_Project. Project version delete not allowed.",
+    "message": "Running task(s) found associated with projectId: 0f981b26132d412097ee5e54a257ce9f. Project version delete not allowed.",
 }
 ```
 
@@ -936,7 +936,7 @@ Retrieves the list of files available in the project. It contains info related t
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -946,7 +946,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 200 - OK
 
 {
-    "id": "1631779101_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",
@@ -959,7 +959,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
     "resources": {
         "data": [
             {
-                "id": "1631779109_0780_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "irisDataset.csv",
                 "description": "",
                 "createdAt": "2021-09-16T07:58:29.494787Z",
@@ -988,8 +988,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
                 ],
                 "editedAt": "",
                 "type": "CSV",
-                "url": "./MLW/1631779101_Project/Data/irisDataset.csv",
-                "downloadUrl": "/download/1631779101_Project/Data/irisDataset.csv",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
                 "size": 2878,
                 "mimeType": "text/csv",
                 "extension": ".csv",
@@ -1038,7 +1038,7 @@ Scans the project structure to list any un-reported file in the system, which wo
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?refresh=true' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources?refresh=true' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1048,7 +1048,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 200 - OK
 
 {
-    "id": "1631779101_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",
@@ -1061,7 +1061,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
     "resources": {
         "data": [
             {
-                "id": "1631779109_0780_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "irisDataset.csv",
                 "description": "",
                 "createdAt": "2021-09-16T07:58:29.494787Z",
@@ -1090,8 +1090,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
                 ],
                 "editedAt": "",
                 "type": "CSV",
-                "url": "./MLW/1631779101_Project/Data/irisDataset.csv",
-                "downloadUrl": "/download/1631779101_Project/Data/irisDataset.csv",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
                 "size": 2878,
                 "mimeType": "text/csv",
                 "extension": ".csv",
@@ -1142,7 +1142,7 @@ Pulls all the resources from the {{ < product-c8y-iot > }} inventory of the sele
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?versionNumber=v0' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources?versionNumber=v0' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1152,7 +1152,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 200 - OK
 
 {
-    "id": "1631780828_Tasks",
+    "id": "656ea4",
     "name": "Sample Project",
     "createdAt": "2021-09-16T08:27:08.878904Z",
     "type": "COMMIT/PULL",
@@ -1160,15 +1160,15 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1631780828_0963_Commit",
+            "id": "656ea5",
             "pID": "140106208573184",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631780828_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:27:08.878904Z",
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v0",
             "properties": [
                 {
@@ -1184,15 +1184,15 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
             ]
         },
         {
-            "id": "1631780859_0744_Commit",
+            "id": "656ea5",
             "pID": "140106208573184",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631780828_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:27:39.810531Z",
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v1",
             "properties": [
                 {
@@ -1208,14 +1208,14 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
             ]
         },
         {
-            "id": "1631780908_0710_Pull",
+            "id": "656ea6",
             "status": "RUNNING",
             "message": "In progress",
-            "tasksID": "1631780828_Tasks",
+            "tasksID": "656ea4",
             "taskName": "Sample Project",
             "type": "COMMIT/PULL",
             "executedAt": "2021-09-16T08:28:28.709415Z",
-            "projectID": "1631779101_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "versionNumber": "v0",
             "properties": [
                 {
@@ -1232,7 +1232,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
             "pID": "140106208573184"
         }
     ],
-    "projectID": "1631779101_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "Sample Project",
     "properties": [
         {
@@ -1254,7 +1254,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources?versionNumber=v0'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources?versionNumber=v0'
 ```
 
 **Example Response**
@@ -1295,7 +1295,7 @@ To upload the resource files to use in the project, files like csv, txt, json.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/resources' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --header 'Authorization: {{auth}}' \
 --form 'file=@/../../iris Dataset.csv'
 ```
@@ -1306,7 +1306,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/
 200 - OK
 
 {
-    "id": "1631774924_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T06:48:44.995815Z",
@@ -1319,7 +1319,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/
     "resources": {
         "data": [
             {
-                "id": "1631777752_0720_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "irisDataset.csv",
                 "description": "",
                 "createdAt": "2021-09-16T07:35:52.294740Z",
@@ -1348,8 +1348,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/
                 ],
                 "editedAt": "",
                 "type": "CSV",
-                "url": "./MLW/1631774924_Project/Data/irisDataset.csv",
-                "downloadUrl": "/download/1631774924_Project/Data/irisDataset.csv",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Data/irisDataset.csv",
                 "size": 2878,
                 "mimeType": "text/csv",
                 "extension": ".csv",
@@ -1379,7 +1379,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1631779101_Project/
 ```
 409 - Not Supported
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --header '{{auth}}' \
 --form 'file=@/../../LogisticR.pmml'
 ```
@@ -1399,7 +1399,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources' \
 --form 'file=@/../../iris Dataset.csv'
 ```
 
@@ -1487,7 +1487,7 @@ To create a new pipeline file.
 ```
 200 - OK
 
-curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/resources/createnew" \
+curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/createnew" \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
@@ -1500,7 +1500,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
 
 
 
-{ "id": "1631779101_Project",
+{ "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",
@@ -1513,31 +1513,31 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
         "v0",
         "v1"
     ],
- 'resources': {'data': [{'id': '1600753567_0365_Resource',
+ 'resources': {'data': [{'id': '72c0673497344164a80e298f679b8139',
     'name': 'MD.Orig.jpg',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Orig.jpg',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/MD.Orig.jpg',
     'size': 39675,
     'mimeType': 'image/jpeg',
     'extension': '.jpg',
     'category': 'Data'},
-   {'id': '1600751893_0717_Resource',
+   {'id': '72c0673497344164a80e298f679b8138',
     'name': 'MD.Diet.jpg',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'IMAGE',
-    'url': './MLW/1600750565_Project/Data/MD.Diet.jpg',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/MD.Diet.jpg',
     'size': 42146,
     'mimeType': 'image/jpeg',
     'extension': '.jpg',
     'category': 'Data'},
-   {'id': '1600753267_0571_Resource',
+   {'id': '72c0673497344164a80e298f679b8137',
     'name': 'predicted_MD_1600753267.json',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1549,24 +1549,24 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
       'value': ['Dense3', 'PredictedClass']}],
     'editedAt': '',
     'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600753267.json',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/predicted_MD_1600753267.json',
     'size': 222,
     'mimeType': 'application/json',
     'extension': '.json',
     'category': 'Data'},
-   {'id': '1600750617_0744_Resource',
+   {'id': '72c0673497344164a80e298f679b8136',
     'name': 'sample.zip',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/sample.zip',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/sample.zip',
     'size': 22655457,
     'mimeType': 'application/zip',
     'extension': '.zip',
     'category': 'Data'},
-   {'id': '1600753576_0003_Resource',
+   {'id': '72c0673497344164a80e298f679b8135',
     'name': 'predicted_MD_1600753576.json',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1578,12 +1578,12 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
       'value': ['Dense3', 'PredictedClass']}],
     'editedAt': '',
     'type': 'JSON',
-    'url': './MLW/1600750565_Project/Data/predicted_MD_1600753576.json',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/predicted_MD_1600753576.json',
     'size': 235,
     'mimeType': 'application/json',
     'extension': '.json',
     'category': 'Data'},
-   {'id': '1601252767_0581_Resource',
+   {'id': '72c0673497344164a80e298f679b8134',
     'name': 'admissions.csv',
     'description': '',
     'createdAt': 'Mon Sep 28 00:26:07 2020',
@@ -1596,49 +1596,49 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
       'value': ['target', 'gpa', 'gre']}],
     'editedAt': '',
     'type': 'CSV',
-    'url': './MLW/1600750565_Project/Data/admissions.csv',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Data/admissions.csv',
     'size': 17192,
     'mimeType': 'text/csv',
     'extension': '.csv',
     'category': 'Data'}],
-  'model': [{'id': '1600751811_0233_Resource',
+  'model': [{'id': '72c0673497344164a80e298f679b8141',
     'name': 'sampleNewDemo_1600751365.onnx',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Model/sampleNewDemo_1600751365.onnx',
     'size': 8296336,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True}],
-  'code': [{'id': '1600752121_0420_Resource',
+  'code': [{'id': '72c0673497344164a80e298f679b8142',
     'name': 'samplePY.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePost.py',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePost.py',
     'size': 260,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'},
-   {'id': '1600751640_0643_Resource',
+   {'id': '72c0673497344164a80e298f679b8145',
     'name': 'samplePre.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/samplePre.py',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePre.py',
     'size': 278,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'}],
-  'pipeline': [{'id': '1600753248_0497_Resource',
+  'pipeline': [{'id': '72c0673497344164a80e298f679b8187',
     'name': 'samplePipe.pipeline',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
@@ -1653,21 +1653,21 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
       'key': 'postProcessingID'}],
     'editedAt': '',
     'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/samplePipe.pipeline',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/Pipeline/samplePipe.pipeline',
     'size': 134,
     'mimeType': 'application/PIPELINE',
     'extension': '.pipeline',
     'category': 'Pipeline',
     'deployed': True}],
   'workflow': [],
-  'nn-designer': [{'id': '1600750594_0269_Resource',
+  'nn-designer': [{'id': '72c0673497344164a80e298f679b8177',
     'name': 'sample.architecture',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
+    'url': './MLW/0f981b26132d412097ee5e54a257ce9f/NN-Designer/sample.architecture',
     'size': 17176,
     'mimeType': 'application/ARCHITECTURE',
     'extension': '.architecture',
@@ -1688,7 +1688,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST "{{url}}/service/mlw/projects/1631779101_Project/resources/createnew" \
+curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/createnew" \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
 ```
@@ -1760,7 +1760,7 @@ Gets the details of a resource file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/resources/1631781323_0128_Resource' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1770,15 +1770,15 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 200 - OK
 
 {
-    "id": "1631781323_0128_Resource",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "samplePY.py",
     "description": "",
     "createdAt": "2021-09-16T08:35:23.743283Z",
     "properties": [],
     "editedAt": "2021-09-16T08:35:23.743283Z",
     "type": "PY",
-    "url": "./MLW/1631779101_Project/Code/samplePY.py",
-    "downloadUrl": "/download/1631779101_Project/Code/samplePY.py",
+    "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePY.py",
+    "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Code/samplePY.py",
     "size": 0,
     "mimeType": "application/CODE",
     "extension": ".py",
@@ -1792,7 +1792,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1631779101_Project/r
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/1600786266_0437_Resource"
+curl --request GET "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139"
 ```
 
 **Example Response**
@@ -1831,7 +1831,7 @@ Gets the content of the code file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601419709_0877_Resource/preview' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/preview' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1850,7 +1850,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601419709_0877_Resource/preview' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/preview' \
 ```
 
 **Example Response**
@@ -1890,7 +1890,7 @@ Gets the content of the notebook file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601420557_0857_Resource/jnb-content' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1902,7 +1902,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 {
     "data": {
         "name": "sampleNotebook1.ipynb",
-        "path": "1601283001_Project/Code/sampleNotebook1.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/sampleNotebook1.ipynb",
         "last_modified": "2020-09-29T23:02:37.279122Z",
         "created": "2020-09-29T23:02:37.279122Z",
         "content": {
@@ -1919,7 +1919,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
     },
     "session": {
         "id": "bce72e99-6e7b-47dd-b236-2852936147dd",
-        "path": "1601283001_Project/Code/sampleNotebook1.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/sampleNotebook1.ipynb",
         "name": "sampleNotebook1",
         "type": "notebook",
         "kernel": {
@@ -1930,7 +1930,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
             "connections": 1
         },
         "notebook": {
-            "path": "1601283001_Project/Code/sampleNotebook1.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/sampleNotebook1.ipynb",
             "name": "sampleNotebook1"
         }
     }
@@ -1942,7 +1942,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601420557_0857_Resource/jnb-content'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content'
 
 ```
 
@@ -1985,7 +1985,7 @@ Updates the contents of a file.
 ```
 200 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/resources/1601422676_0095_Resource/save' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/save' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content":"def hello():\r\n    return '\''Hello'\''"}'
@@ -1999,14 +1999,14 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/r
 {
     "message": "File updated successfully!",
     "data": {
-        "id": "1601422676_0095_Resource",
+        "id": "0f981b26132d412097ee5e54a257ce9f",
         "name": "sampleCode.py",
         "description": "",
         "createdAt": "Tue Sep 29 23:37:56 2020",
         "properties": [],
         "editedAt": "Tue Sep 29 23:37:56 2020",
         "type": "PY",
-        "url": "./MLW/1601283001_Project/Code/sampleCode.py",
+        "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Code/sampleCode.py",
         "size": 32,
         "mimeType": "application/CODE",
         "extension": ".py",
@@ -2020,7 +2020,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/resources/1601422676_0095_Resource/save' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/save' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content":"def hello():\r\n    return '\''Hello'\''"}'
 
@@ -2063,7 +2063,7 @@ Deletes a resource file.
 ```
 200 - OK
 
-curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources/1631781323_0128_Resource" --header "Authorization: {{auth}}"
+curl --request DELETE "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -2072,7 +2072,7 @@ curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources
 200 - OK
 
 {
-    "id": "1631779101_Project",
+    "id": "0f981b26132d412097ee5e54a257ce9f",
     "name": "Sample Project",
     "description": "A dummy project",
     "createdAt": "2021-09-16T07:58:21.293930Z",
@@ -2090,15 +2090,15 @@ curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources
         "model": [],
         "code": [
             {
-                "id": "1631781425_0955_Resource",
+                "id": "0f981b26132d412097ee5e54a257ce9f",
                 "name": "samplePY1.py",
                 "description": "",
                 "createdAt": "2021-09-16T08:37:05.724194Z",
                 "properties": [],
                 "editedAt": "2021-09-16T08:37:05.724194Z",
                 "type": "PY",
-                "url": "./MLW/1631779101_Project/Code/samplePY1.py",
-                "downloadUrl": "/download/1631779101_Project/Code/samplePY1.py",
+                "url": "./MLW/0f981b26132d412097ee5e54a257ce9f/Code/samplePY1.py",
+                "downloadUrl": "/download/0f981b26132d412097ee5e54a257ce9f/Code/samplePY1.py",
                 "size": 0,
                 "mimeType": "application/CODE",
                 "extension": ".py",
@@ -2127,7 +2127,7 @@ curl --request DELETE "{{url}}/service/mlw/projects/1631779101_Project/resources
 ```
 401 - Unauthorized
 
-curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources/1600786266_0437_Resource"
+curl --request DELETE "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139"
 ```
 
 **Example Response**
@@ -2168,7 +2168,7 @@ Downloads a resource file.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/download' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/download' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -2195,7 +2195,7 @@ col1,col2,col3,col4,target
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/download' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/download' \
 ```
 
 **Example Response**

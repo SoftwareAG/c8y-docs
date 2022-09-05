@@ -57,7 +57,7 @@ Train a neural network model using architecture file.
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","shuffleData":true,"codeID":"1601282978_0253_Resource","problemType":"classification","startDate": "2020-03-08T18:30:00.000Z"}'
+--data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"72c0673497344164a80e298f679b8139","shuffleData":true,"codeID":"72c0673497344164a80e298f679b8138","problemType":"classification","startDate": "2020-03-08T18:30:00.000Z"}'
 
 ```
 
@@ -76,7 +76,7 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
       {
          "status":"INITIALISING",
          "type":"NN",
-         "projectID":"1600784593_Project",
+         "projectID":"0f981b26132d412097ee5e54a257ce9f",
          "log":{
 
          },
@@ -87,14 +87,14 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
          "history":[
 
          ],
-         "tasksID":"1601358322415",
+         "tasksID":"656ea4",
          "taskName":"modelName",
          "id":"1601358322191",
          "executedAt":"Tue Sep 29 05:45:22 2020",
          "pID":"1394"
       }
    ],
-   "projectID":"1600784593_Project",
+   "projectID":"0f981b26132d412097ee5e54a257ce9f",
    "projectName":"blah project",
    "startDate":"2020-03-08",
    "startTimeH":"18",
@@ -158,7 +158,7 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
 
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Content-Type: text/plain' \
---data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"someName","dataID":"1601289034_0614_Resource","shuffleData":true,"codeID":"1601282978_0253_Resource","problemType":"classification"}'
+--data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"someName","dataID":"72c0673497344164a80e298f679b8138","shuffleData":true,"codeID":"72c0673497344164a80e298f679b8139","problemType":"classification"}'
 ```
 
 **Example Response**
@@ -181,7 +181,7 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
---data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"Adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"","shuffleData":true,"dataID":"1600786268_0337_Resource"}'
+--data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"Adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"","shuffleData":true,"dataID":"72c0673497344164a80e298f679b8139"}'
 ```
 
 **Example Response**

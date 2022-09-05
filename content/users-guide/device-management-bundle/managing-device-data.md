@@ -176,10 +176,6 @@ The status of the bulk operation is shown in the **Bulk operations** tab under *
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
 
-{{< c8y-admon-info >}}
-Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
-{{< /c8y-admon-info >}}
-
 <a name="software-repo"></a>
 ### Managing device software
 
@@ -320,10 +316,6 @@ Hover over the software item which you want to delete and click the delete icon.
 The status and details of the bulk operation are shown in the **Bulk operations** tab under **Device control**.
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
-
-{{< c8y-admon-info >}}
-Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
-{{< /c8y-admon-info >}}
 
 <a name="configuration-repository"></a>
 ### Managing configurations

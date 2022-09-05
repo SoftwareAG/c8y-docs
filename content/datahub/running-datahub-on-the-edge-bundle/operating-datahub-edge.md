@@ -93,9 +93,9 @@ Browse to the data lake folder **/opt/mongodb/cdh-master/datalake**. The data wi
 ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE
 ```
 
-{{< c8y-admon-warning >}}
+{{< c8y-admon-caution >}}
 Data being deleted from the data lake cannot be recovered anymore.
-{{< /c8y-admon-warning >}}
+{{< /c8y-admon-caution >}}
 
 #### Backup and Restore
 

@@ -73,7 +73,7 @@ Updating a devices often changes fundamental system components. This operation s
 {{< product-c8y-iot >}} provides the 515 static response template to deal with installing firmware images:
 
 1. Receive ```c8y_Firmware``` (image) operation <br>
-  `515,deviceSerial,ubuntu core,20.04.3,http://test.com`
+  `515,DeviceSerial,ubuntu core,20.04.3,http://test.com`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Firmware`
 3. Install firmware image
@@ -120,7 +120,7 @@ The device is expected to perform the following actions:
 {{< product-c8y-iot >}} provides the 525 static response template to deal with installing firmware patches. It works very similarly to the 515 template, it just adds the dependency parameter as fifth parameter. The fact that a patch instead of a complete image should be installed is implicit because this template is only triggered for patches.
 
 1. Receive ```c8y_Firmware``` (patch) operation <br>
-  `525,deviceSerial,ubuntu core,20.04.3,http://test.com,20.04.3`
+  `525,DeviceSerial,ubuntu core,20.04.3,http://test.com,20.04.3`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Firmware`
 3. Verify if currently installed firmware version and dependency version match

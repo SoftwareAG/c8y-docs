@@ -9,7 +9,7 @@ Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen
 
 ![Device info](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-info.png)
 
-Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d. h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind. Eine detaillierte Beschreibung der Operationen und Fragmente für die jeweilige Gerätedetail-Registerkarte finden Sie in der [Device Management Library](/reference/device-management-library) im *Reference Guide*.
+Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d. h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind. Eine detaillierte Beschreibung der Operationen und Fragmente für die jeweilige Gerätedetail-Registerkarte finden Sie in der [Device Management Library](/reference/device-management-library/#overview) im *Reference Guide*.
 
 Eingangs wird die Registerkarte **Info** angezeigt, die allgemeine Informationen zu einem Gerät enthält und bei allen Geräte vorhanden ist.
 
@@ -83,7 +83,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 </tr>
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/lwm2m">LWM2M</a></td>
-<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LWM2M</a>.</td>
+<td style="text-align:left">Enthält nähere Informationen zu über LightweightM2M verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/lwm2m">LightweightM2M</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Messwerte</a></td>
@@ -96,6 +96,10 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <tr>
 <td style="text-align:left"><a href="../../protocol-integration/opcua">OPCUA-Server</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu über einen OPCUA-Server verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/opcua">OPCUA</a>.</td>
+</tr>
+<tr>
+<td align="left"><a href="#services">Services</a></td>
+<td align="left">Bietet eine Übersicht über die Services, die auf einem Gerät ausgeführt werden.</td>
 </tr>
 <tr>
 <td align="left"><a href="#shell">Shell</a></td>
@@ -132,7 +136,9 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 </tbody>
 </table>
 
->**Info:** Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der {{< product-c8y-iot >}}-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Eine detaillierte Beschreibung der Registerkarte **Modbus** ist beispielsweise unter [Cloud Fieldbus](/protocol-integration/cloud-fieldbus) im *Protocol Integration Guide* zu finden.
+{{< c8y-admon-info >}}
+Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der {{< product-c8y-iot >}}-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Eine detaillierte Beschreibung der Registerkarte **Modbus** ist beispielsweise unter [Cloud Fieldbus](/protocol-integration/cloud-fieldbus) im *Protocol Integration Guide* zu finden.
+{{< /c8y-admon-info >}}
 
 Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 
@@ -162,12 +168,13 @@ Weitere Informationen zum Verwalten und Aktualisieren von Firmware auf einem Ger
 
 Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie unter [Geräteprofile auf Geräte anwenden](#applying-device-profiles).
 
+
 <a name="identity"></a>
 ### Identifikator
 
 {{< product-c8y-iot >}} kann Geräte und Assets mit mehreren externen Identifikatoren verknüpfen. Geräte werden beispielsweise oft durch die IMEI ihres Modems, eine Microcontroller-Seriennummer oder ein Asset-Tag identifiziert. Die Registerkarte **Identifikator** listet alle gespeicherten Identifikatoren für ein Gerät auf.
 
-Dies ist etwa hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält.
+Dies ist z. B. hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält.
 
 <a name="info"></a>
 ### Info
@@ -222,7 +229,6 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 </tbody>
 </table>
 
-<a name="child-devices"></a>
 ### Kindgeräte
 
 Die Registerkarte **Kindgeräte** zeigt eine Liste von Geräten, die mit dem aktuellen Gerät verbunden sind. Wenn es sich bei dem aktuellen Gerät beispielsweise um ein Gateway handelt, werden alle Maschinen, die mit dem Gateway verbunden sind, aufgelistet.
@@ -241,7 +247,8 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 #### So fordern Sie den aktuellen textbasierten Konfigurationssnapshot an.
 
 1. Navigieren Sie zur Registerkarte **Konfiguration**.
-2. Klicken Sie auf **Snapshot vom Gerät abrufen**.
+2. Wählen Sie eine der geräteunterstützten Konfigurationen aus der Liste.
+3. Klicken Sie auf **Snapshot vom Gerät abrufen**.
 
 #### So können Sie einen textbasierten Konfigurationssnapshot hinzufügen oder bearbeiten
 
@@ -250,7 +257,9 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 
 ![Text-based configuration](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-textconfig.png)
 
-> **Info:** Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
+{{< c8y-admon-info >}}
+Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
+{{< /c8y-admon-info >}}
 
 <a name="logs"></a>
 ### Logdaten
@@ -270,7 +279,7 @@ Die Loginformationen des Geräts werden abgefragt.
 
 ![Logs tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
 
->Das Abfragen der Logdaten von einem Gerät kann einige Zeit in Anspruch nehmen.
+Das Abfragen der Logdaten von einem Gerät kann einige Zeit in Anspruch nehmen.
 
 Sobald die Logdaten vom Gerät auf die {{< product-c8y-iot >}}-Plattform übertragen wurden, werden Sie in der Registerkarte **Logdateien** gelistet. Die Zeile in der Liste zeigt das jeweils angeforderte Zeitintervall.
 
@@ -314,7 +323,7 @@ Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KP
 Um Messwertgraphen anzuzeigen, muss das Gerät Messwerte in einem bestimmten Fragmentformat senden.
 
 	"fragment_name" : {
-		"serie_name" : {
+		"series_name" : {
 			"value" : ...
 			"unit" : ...
 		}
@@ -326,7 +335,7 @@ Beispiel:
 	      "Speed": { "value": 1234, "unit": "km/h" }
 	}
 
-`"Fragment_name"` und `"serie_name"` können durch verschiedene gültige JSON-Attributnamen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
+`"Fragment_name"` und `"series_name"` können durch verschiedene gültige JSON-Attributnamen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
 
 <a name="network"></a>
 ### Netzwerk
@@ -337,7 +346,9 @@ In der Registerkarte **Netzwerk** können Parameter für das mobile Netzwerk (WA
 
 Die WAN-Parameter auf der Benutzeroberfläche entsprechen dem ersten im Router gespeicherten Profil. Diese Parameter können remote oder per SMS konfiguriert werden.
 
-> **Info:** Für die SMS-Konfiguration muss der Router so konfiguriert werden, dass er SMS-Kommandos akzeptiert.
+{{< c8y-admon-info >}}
+Für die SMS-Konfiguration muss der Router so konfiguriert werden, dass er SMS-Kommandos akzeptiert.
+{{< /c8y-admon-info >}}
 
 #### So konfigurieren Sie WAN-Parameter
 
@@ -350,7 +361,9 @@ Die WAN-Parameter auf der Benutzeroberfläche entsprechen dem ersten im Router g
 
 Zum Konfigurieren von LAN-Parametern geben Sie einfach **IP-Adresse** und **Subnetzmaske** ein.
 
-> **Info:** Die Felder **Name** und **MAC-Adresse** sind nicht konfigurierbar.
+{{< c8y-admon-info >}}
+Die Felder **Name** und **MAC-Adresse** sind nicht konfigurierbar.
+{{< /c8y-admon-info >}}
 
 #### So konfigurieren Sie DHCP-Parameter
 
@@ -360,7 +373,26 @@ Zum Konfigurieren von LAN-Parametern geben Sie einfach **IP-Adresse** und **Subn
 4. Geben Sie den Domain-Namen ein.
 5. Klicken Sie auf **Änderungen speichern**, um Ihre Eingaben zu speichern.
 
-> **Info:** Wenn die LAN-Konfiguration deaktiviert ist, ist automatisch auch die DHCP-Konfiguration deaktiviert.
+{{< c8y-admon-info >}}
+Wenn die LAN-Konfiguration deaktiviert ist, ist automatisch auch die DHCP-Konfiguration deaktiviert.
+{{< /c8y-admon-info >}}
+
+<a name="services"></a>
+### Services
+
+Die Registerkarte **Services** enthält eine Liste aller auf einem Gerät ausgeführten Services mit deren Status, Namen, Typ und letztem Aktualisierungsdatum.
+In jeder Spalte können die Services anhand des jeweils angezeigten Wertes gefiltert und/oder sortiert werden.
+
+![Services overview](/images/benutzerhandbuch/DeviceManagement/devmgmt-services-overview.png)
+
+Die Plattform gibt drei Statusoptionen für Services vor: **In Betrieb**, **Außer Betrieb** und **Unbekannt**.
+Diese vordefinierten Status haben jeweils eine eigene grafische Darstellung und können direkt im Filter **Status** ausgewählt werden:
+
+![Status filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-services-status-filter.png)
+
+Andere Statusoptionen sind ebenfalls zulässig und können frei definiert werden, siehe [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in der Web SDK-Dokumentation.
+Sie verwenden alle das gleiche Symbol und müssen im Filter **Status** manuell eingegeben werden.
+Ein Tooltip am Statussymbol zeigt ihren tatsächlichen Wert an.
 
 <a name="shell"></a>
 ### Shell
@@ -373,7 +405,9 @@ In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie
 
 ![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
->**Wichtig:** Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+{{< c8y-admon-important title="Wichtig" >}}
+Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+{{< /c8y-admon-important >}}
 
 Klicken Sie auf **Historie ansehen** rechts in der oberen Menüleiste, um zur Registerkarte **Steuerung** zu wechseln, in der eine Liste der zuvor ausgeführten Kommandos angezeigt wird. Weitere Informationen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Operationen](#operation-monitoring).
 
@@ -407,7 +441,9 @@ Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten
 
 In {{< product-c8y-iot >}} können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte **Tracking** angezeigt werden.
 
->**Info:** Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut `c8y_Position` enthält.
+{{< c8y-admon-info >}}
+Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut `c8y_Position` enthält.
+{{< /c8y-admon-info >}}
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert.
 

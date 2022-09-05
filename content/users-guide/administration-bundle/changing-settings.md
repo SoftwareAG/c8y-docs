@@ -81,15 +81,14 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 {{< /c8y-admon-info >}}
 
-#### OAI-Secure session configuration
+#### OAI-Secure
 
-OAI-Secure can work in two modes with significant differences:
-
-##### Without a configuration related to the session (session configuration turned off)
+OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
+##### OAI-Secure without the configuration related to the session management (session configuration turned off)
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
-##### With the configuration of the session (session configuration turned on)
+##### OAI-Secure with the configuration of the session management (session configuration turned on)
 
 Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 
@@ -155,25 +154,34 @@ During the session token renewal the previous token is revoked and a new one is 
 
 
 <a name="token-settings"></a>
-#### Token and cookie settings
 
-OAI-Secure is based on JWT stored in a browser cookie. The lifespan for both, token and cookie, is configurable by tenant options belonging to the category `oauth.internal`.
+#### Token generation with OAI-Secure
 
-##### Token settings
+OAI-Secure is primarily based on JWT stored in a browser cookie. It can be also used to generate JWT in the response body.
+The lifespan of the tokens and the cookie is configurable by tenant options belonging to the category `oauth.internal`.
 
-The default token validity time is two weeks. This can be changed with tenant options:
+##### Lifespan configuration of JWT stored in the cookie
+
+JWT tokens stored in the browser cookie have a default validity time of two weeks.
+This can be changed with tenant options:
  - category: `oauth.internal`;
  - key: `basic-token.lifespan.seconds`;
 
 The minimum allowed value is 5 minutes.
 
-##### Cookies settings
+##### Lifespan configuration of cookies
 
-Cookies used to store a token in a browser have their own validity time that can be changed with tenant options:
+Cookies used to store a JWT token in a browser have their own validity time that can be changed with tenant options:
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
 The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
+
+##### Lifespan configuration of JWT in response body
+
+The lifespan of JWT tokens generated in the response body is configured with the following tenant options:
+- category: `oauth.internal`;
+- key: `body-token.lifespan.seconds`;
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
@@ -248,7 +256,7 @@ At the top left, you can select a template. The selected option has an effect on
 <a name="custom-template"></a>
 ##### Custom template
 
-![Request configuration](/images/users-guide/Administration/admin-sso-1.png)
+![Custom authorization request](/images/users-guide/Administration/sso-custom-authorization-request.png)
 
 As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided.
 
@@ -260,11 +268,11 @@ Be aware that the body field of each request, after filling placeholders with va
 
 Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from {{< product-c8y-iot >}}.
 
-![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-custom.png)
+![Custom logout request](/images/users-guide/Administration/sso-custom-logout-request.png)
 
 The **Basic** section of the **Single sign-on** page consists of the following configuration settings:
 
-![OAuth configuration](/images/users-guide/Administration/admin-sso-2.png)
+![Custom basic configuration](/images/users-guide/Administration/sso-custom-basic.png)
 
 |Field|Description|
 |:---|:---|
@@ -275,12 +283,10 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Provider name|Name of the provider
 |Visible on Login page|Indicates whether the login option is enabled or not.
 |Audience|Expected aud parameter of JWT
-|Group|(Deprecated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
-|Applications|(Deprecated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-7.png)
+ ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
 
  In the example above, if a user tries to login a decoded JWT claims look like:
 
@@ -305,7 +311,7 @@ When using "=" as operator you may use wildcards in the **Value** field. The sup
 In case the asterisk character should be matched literally it must be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
 
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-8.png)
+ ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-WHEN.png)
 
 In this case the following claim will match the condition:
 
@@ -326,19 +332,20 @@ As you can see, there is an option to verify if a value exists in a list via the
 
 By default, dynamic access mapping assigns user roles, based on the access token, on every user login. This means, that it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login. To change this behaviour, select the **Use dynamic access mapping only on user creation** checkbox at the bottom of the **Access mapping** section.
 
-![OAuth configuration](/images/users-guide/Administration/admin-sso-dynamic-access-mapping.png)
+![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
 When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
+The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+![User ID configuration](/images/users-guide/Administration/sso-custom-userid-config.png)
 
  If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
 
 Next, the **User data mappings** can be configured:
 
-![OAuth configuration](/images/users-guide/Administration/admin-sso-user-data-mappings.png)
+![User data mappings](/images/users-guide/Administration/sso-custom-userdata-mapping.png)
 
 On user login, user data like first name, last name, email and phone number can also be derived from JWT claims. Each field represents the claim name that is used to retrieve the data from JWT. The user data mapping configuration is optional and as admin manager you can only use the required fields. If the configuration is empty or the claim name cannot be found in the JWT token then the values in the user data are set as empty.
 
@@ -348,19 +355,19 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 1. By specifying the Azure AD certificate discovery address.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
+ ![Signature verification Azure](/images/users-guide/Administration/sso-signature-verification-Azure-AD.png)
 
 2. By specifying the ADFS manifest address (for ADFS 3.0).
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+ ![Signature verification ADFS](/images/users-guide/Administration/sso-signature-verification-ADFS-manifest.png)
 
 3. By providing the public key of a certificate manually to {{< product-c8y-iot >}}. A certificate definition requires an algorithm information, public key value and validity period.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+ ![Signature verification Custom](/images/users-guide/Administration/sso-signature-verification-custom.png)
 
-4. By specifying the JWKS (JSON Web Key Set) address.
+4. By specifying the JWKS (JSON Web Key Set) URI. JWKS is a set of JWK objects containing a public key used to verify tokens issued by the authorization server.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+ ![Signature verification JWKS](/images/users-guide/Administration/sso-signature-verification-JWKS.png)
 
 
 {{< c8y-admon-info >}}
@@ -380,10 +387,10 @@ Inside some fields you can use placeholders that are resolved by {{< product-c8y
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
 
 To use a placeholder in a field, put it inside two curly brackets preceded with a dollar sign:
-![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
+![Placeholder standalone](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
 
 Placeholders can also be used as a part of text:
-![OAuth configuration](/images/users-guide/Administration/admin-sso-placeholder-text.png)
+![Placeholder text](/images/users-guide/Administration/admin-sso-placeholder-text.png)
 
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 
@@ -446,9 +453,9 @@ To confirm if the logout event for all users or a single user has been received 
 
 When the "Azure AD" template is selected the configuration panel will look similar to the following:
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic.png)
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-1.png)
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-2.png)
+ ![Azure Basic configuration](/images/users-guide/Administration/sso-azure-basic.png)
+ ![Azure access mapping](/images/users-guide/Administration/sso-azure-access-mapping.png)
+ ![Azure user data mapping](/images/users-guide/Administration/sso-azure-userdata-mappings.png)
 
 |Field|Description|
 |:---|:---|
@@ -462,7 +469,7 @@ When the "Azure AD" template is selected the configuration panel will look simil
 
 Optionally single logout can be configured:
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-azure.png)
+ ![Azure logout request](/images/users-guide/Administration/admin-sso-logout-azure.png)
 
 |Field|Description|
 |:---|:---|
@@ -470,8 +477,6 @@ Optionally single logout can be configured:
 |Redirect URL| Address to redirect the user to after successful logout from the authorization server
 
 The second part of the panel is the same as for the "Custom" template, where access mapping, user data mapping, user ID field selection and signature verification address are provided.
-
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
 
 
 ##### Troubleshooting

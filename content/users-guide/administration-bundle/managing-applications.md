@@ -131,8 +131,9 @@ Click **Add application** at the top right of the **All applications** tab.
 
 In the resulting dialog box, select one of the following methods:
 
-* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system.
+* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system
 * [External application](#external-application) - by linking to an application running elsewhere
+* [Install from available packages](#blueprint-application) - by selecting a package blueprint
 * [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
 <a name="uploading-zip-files"></a>
@@ -163,6 +164,19 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
+<a name="blueprint-application"></a>
+##### To install an application from a blueprint
+
+1. Click **Add application** at the top right of the **All applications** tab.
+2. Select **Install from available packages**.
+3. Select the desired package. 
+4. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
+5. Enter an application key, used to identify this application.
+6. Enter the path where the application can be reached.
+7. Click **Save** to create the application.
+
+For details on the fields, see also [Application properties](#application-properties) below.
+
 <a name="clone-application"></a>
 ##### To duplicate an application
 
@@ -170,30 +184,21 @@ Duplicating an application might be useful if you want to customize a subscribed
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. In the upcoming dialog, select **Duplicate existing application**.
-3. Select the desired application from the dropdown list.
-<br><br>
-<img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
-<br><br>
-4. In the next window, provide a name for the application.
+3. Select the desired application from the dropdown list, for example "Cockpit".
+4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
     {{< c8y-admon-info >}}
-The platform restricts the use of the prefix "feature-". You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
+The platform restricts the use of the prefix "feature-" in the **Name** field. You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
     {{< /c8y-admon-info >}}
-5. Provide an application key, used to identify this application.
-6. Provide the application path as part of the URL to invoke the application. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
-7. Finally, click **Duplicate** to create the application.
+5. Finally, click **Duplicate** to create the application.
 
 {{< c8y-admon-info >}}
-The above mentioned fields for name, key and path of the duplicated application are per default provided with their corresponding value from the original application, extended by a number. In case the application has been subscribed to this tenant, there will be an additional toggle that allows to either inherit the values from the original application or modify them.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
+In case the application has been subscribed to the tenant, there is an additional toggle **Overrule subscribed application**. If you turn this toggle on, the values for name, key and path will be inherited from the original application and your duplicated application will overrule the subscribed application. Turn it off, to modify the values.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 
 For details on the fields, see also [Application properties](#application-properties) below.
-
-{{< c8y-admon-info >}}
-If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
-{{< /c8y-admon-info >}}
 
 <a name="application-properties"></a>
 ### Application properties
@@ -251,6 +256,13 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
+### Application plugins
+
+Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
+
+<img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
+
+In the **Plugins** tab you can add and remove plugins. Additionally, you can install plugins to an application.
 
 <a name="editing-and-removing"></a>
 ### To edit an application
@@ -304,6 +316,37 @@ If a hosted application is not deployed correctly, users may reactivate it.
 3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate**.
 
 The selected application will be reactivated by removing the respective files from the application directory and unpacking the host application package again.
+
+### Packages
+
+Packages are combinations of plugins and blueprints which can be packed together into a single package and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge. 
+
+Packages can contain two types of applications:
+
+- [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
+- **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
+
+Packages can be located on the **Packages** tab in the **Applications** page.
+
+<img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
+
+To add a new package click **Add package** at the top right.
+
+By clicking on a package, you can see the package details such as **Package overview** which includes a description and images as well as some meta information which is taken from the *package.json*.
+
+Additionally, it is possible to view all available plugins within the selected package at the right. To install a plugin click **Install plugin** and select the desired application.  
+
+<img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
+
+In the **Archives** tab, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded via the context menu next to each archive.
+
+<img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
+
+In the **Versions** tab of a package, you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+
+To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
+
+<img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Archive view">
 
 ### Features
 

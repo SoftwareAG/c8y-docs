@@ -14,7 +14,7 @@ In the navigator, select **Auditing** and then **Query log** to view the query l
 The {{< product-c8y-iot >}} DataHub feature for storing query profiles needs to be enabled. The profiles are deleted after a retention period, so for older months profiles may no longer be available.
 {{< /c8y-admon-info >}}
 
-At the top of the page you can offload queries and ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Use the pagination buttons at the bottom of the page to navigate through the result list.
+At the top of the page you can select either offload or ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Use the pagination buttons at the bottom of the page to navigate through the result list.
 
 For each offloading query, the following information is provided:
 
@@ -30,6 +30,7 @@ For each ad-hoc query, the following information is provided:
 
 | Column name | Description
 | ---         |  ---
+| User | The username of the Dremio user, which has been used to execute the query
 | Query | The SQL query, complemented by a status icon showing success or failure of the query execution
 | Runtime (s) | The runtime of the execution in seconds
 | Data scanned (MB) | The amount of data the ad-hoc query has read from the data lake

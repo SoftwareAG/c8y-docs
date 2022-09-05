@@ -35,60 +35,21 @@ See also [Viewing devices > Filtering devices](/users-guide/device-management/#f
 
 Note that this function only creates a temporary filter. For permanent filters, you can use the [smart groups](#smart-groups) function.  
 
-Click a group to view its details. Per default, the **Subassets** tab is displayed.
+Click a group to view its details.
 
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
 
 <a name="subassets-tab"></a>
-**Subassets tab**
+**Subassets page**
 
-At the top of the **Subassets** tab, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
+At the top of the **Subassets** page, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
 
 Below, all assets assigned to the group are listed. For each asset, various information is displayed, for example the type and name. As with the top-level groups list, you can add or remove columns and customize the list to your preference, or you can apply filters to filter the list for certain criteria.
 
 Morover, you can assign devices, see [To assign a device to a group](#assigning-devices).
 
-**Info Tab**
-
-In the **Info** tab, the following information is provided:
-
-<table>
-<thead>
-<colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
-</colgroup><thead>
-<tr>
-<th align="left">Card</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Notes</td>
-<td align="left">Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click <strong>Edit</strong>, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box.</td>
-</tr>
-<tr>
-<td align="left">Group data</td>
-<td align="left">Displays editable information on the group (name, description).</td>
-</tr>
-<tr>
-<td align="left">Active, critical alarms</td>
-<td align="left">Shows the active critical alarms for the devices in the group.</td>
-</tr>
-</tbody>
-</table>
-
-
-**Bulk operations**
-
-In the **Bulk operations** tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
-
-{{< c8y-admon-info >}}
-Bulk operations are ordered by date, showing the latest operation at the top.
-{{< /c8y-admon-info >}}
-
 <a name="add-group"></a>
+
 ### To add a group
 
 1. Click **Add group** at the right of the top menu bar.
@@ -102,12 +63,12 @@ The new group will be added to the groups list.
 A group can be created with "0" devices in it.
 {{< /c8y-admon-info >}}
 
-To add a new group as a child of an existing group, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
+To add a new group as a child of an existing group, navigate to its **Subassets** page and click **Add Group** in the top menu bar.
 
 ### To edit a group
 
 1. In the navigator, click a group to open it.
-2. In the **Subassets** tab, you can edit the name and description of the group. Switch to the **Info** tab, if you want to edit the notes.
+2. In the **Subassets** page, you can edit the name and description of the group.
 
 For further information on permissions, see [Managing permissions](/users-guide/administration#managing-permissions) in the Administration section.
 
@@ -128,15 +89,14 @@ You can quickly assign devices to groups by using the drag and drop functionalit
 
 Moreover, you can assign devices performing the following steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Subassets** tab.
+1. In the navigator, select a group from the **Group** menu and then open the **Subassets** page.
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
 
 ![Assign devices](/images/users-guide/DeviceManagement/devmgmt-group-assign.png)
 
-The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
-
+The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
 **From the device perspective**
 

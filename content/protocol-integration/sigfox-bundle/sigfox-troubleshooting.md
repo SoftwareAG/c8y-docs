@@ -4,18 +4,34 @@ title: Troubleshooting
 layout: redirect
 ---
 
+### Sigfox callbacks in backend.sigfox.com are not created correctly
 
-### No active contracts with free slots available
+### Device registration
 
-![No active contracts with free slots available error](/images/device-protocols/sigfox/sigfox-troubleshooting-nocontracts.png)
+#### No active contracts with free slots available.
 
 Active contracts with free slots are filtered based on the activation end time and tokens in use. Contracts in which the activation end time is higher than the current time or the activation end time is unlimited, and contracts in which the max tokens are higher than the tokens in use or the max tokens are unlimited will be considered.
 
 In order to resolve this error, please contact support.sigfox.com to create a contract for your Sigfox account.
 
-### Sigfox callbacks in backend.sigfox.com are not created correctly
+#### No Sigfox provider settings are found.
 
-![Callback information](/images/device-protocols/sigfox/sigfox-troubleshooting-callbacks.png)
+This warning message shows up  when there are no connections set up for the sigfox connectivity.
+
+To resolve this, refer to [Configure Sigfox credentials](#connectivity-sigfox).
+
+#### No Sigfox device type configured.
+
+This warning message shows up when no Sigfox device protocol exists to be used for device registration.
+
+To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
+
+### Connectivity
+
+#### Sigfox callbacks in backend.sigfox.com are not created correctly
+
+<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-callbacks.png" alt="Sigfox callbacks error" style="max-width: 100%">
+<br>
 
 The information for the callback setup is retrieved by a microservice.
 
@@ -29,31 +45,26 @@ To verify whether your setup is correct, execute the following REST API request:
 The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
-#### No Sigfox provider settings are found
 
-This warning message shows up when there are no credentials set up for the Sigfox account.
+This warning message shows up when there are no connections set up for the Sigfox account. To resolve this click **Settings** to navigate to the Administration application where the connections are configured.
 
-<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without credentials" style="max-width: 100%">
+<img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without connections" style="max-width: 100%">
 <br>
-
-To resolve this, refer to [Configure Sigfox credentials](#connectivity-sigfox).
 
 #### No device protocols configured
 
-This warning message shows up when no Sigfox device protocol exists to be used for device registration.
+This warning message shows up when no Sigfox device protocol exists to be used for device registration. To resolve this, click **Device protocols** to navigate to the **Device protocols** page where the protocols are configured.
 
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-device-type-error.png" alt="No device protocol given for Sigfox" style="max-width: 100%">
 
-To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
-
-
 ### Issues with alarm provisioning
+#### Issues with alarm provisioning
 
 ![!Failed operation](/images/device-protocols/sigfox/sigfox-troubleshooting-failedoperation.png)
 
 If the "transfer operation failed" alarm is triggered, the device is already provisioned in the Sigfox platform and changing the device type in the Sigfox platform failed. In order to fix this issue, you must manually change the device type in the Sigfox platform to the intended one.
 
-### Provisioned status is set to false
+#### Provisioned status is set to false
 
 ![!False provision](/images/device-protocols/sigfox/sigfox-troubleshooting-falseprovision.png)
 
@@ -69,7 +80,7 @@ The **Provisioned** status is set to true when the device provisioning process i
 The status is updated asynchronously which means that sometimes you might have to wait a bit until it is set to true.
 {{< /c8y-admon-info >}}
 
-### Callback creation failed
+#### Callback creation failed
 
 ![Callback creation failed](/images/device-protocols/sigfox/sigfox-troubleshooting-callback.png)
 

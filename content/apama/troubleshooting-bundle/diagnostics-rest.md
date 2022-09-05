@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-info >}}
-These endpoints are not available for the Apama Smart Rules-only microservice.
+These endpoints are not available for the Apama-ctrl-smartrules and Apama-ctrl-smartrulesmt microservices.
 {{< /c8y-admon-info >}}
 
 The following diagnostics endpoints are available for REST requests. These require authentication as a user with READ permission for "CEP management":

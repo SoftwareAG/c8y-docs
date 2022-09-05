@@ -22,11 +22,10 @@ In the navigator, select **Status** and then **Offloading** to get an overview o
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
 | Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
-| Job name | The name of the pipeline job
+| Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled; for a manual execution it is empty
-| \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
 Click **Reload** to refresh the status being shown.
 
@@ -46,11 +45,10 @@ The list shows the execution history, with each execution consisting of the foll
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
 | Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
-| Job name | The name of the pipeline
+| Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty
-| \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
 The system is configured to keep a limited history of the last job executions.
 

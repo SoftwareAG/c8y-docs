@@ -18,4 +18,4 @@ This includes personal identifiable information, such as username, email address
 {{< /c8y-admon-info >}}
 
 For more information, see [REST implementation](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation) in the {{< openapi >}}
-and [Invoking other parts of the Cumulocity IoT REST API]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
+and [Invoking other parts of the Cumulocity IoT REST API]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.

@@ -6,9 +6,7 @@ layout: redirect
 
 If you want to change the environment variables for Karaf (such as `JAVA_MAX_MEM` and the microservice proxy variables like `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`, `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`  and so on), you must update the file */usr/share/cumulocity-core-karaf/bin/setenv.* To do so:
 
-1. Start the Edge appliance.
-
-2. Log in to Edge appliance.
+1. Log in to the Edge appliance.
 
 3. Open the file */usr/share/cumulocity-core-karaf/bin/setenv*.
 
@@ -28,7 +26,11 @@ and
 [admin@iot-edge-server ~]$  service cumulocity-core-karaf start
 ```
 
->**Important:** Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+{{< c8y-admon-important >}}
+
+Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+
+{{< /c8y-admon-important >}}
 
 ### Increasing the system performance
 

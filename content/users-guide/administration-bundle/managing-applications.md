@@ -19,16 +19,15 @@ helpcontent:
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-"Application management" permission:
-* READ - allows to view applications and microservices.
-* ADMIN - allows to manage applications and microservices (create, update, copy).
+* To view applications and microservices: READ permission for the "Application management" permission type
+* To manage applications and microservices (create, update, copy): ADMIN permission for the "Application management" permission type
 
-By default on tenant creation there are default roles available that can be used as example of configuration for above mentioned permissions:
-* Tenant Manager - can manage tenant wide configurations like applications, tenant options and retention rules.
+On tenant creation there are default roles available that can be used as sample configuration for the above mentioned permissions:
+* Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules.
 
-Please note that for complete application management some additional permissions in different permission scopes might be required per feature, for example:
-* [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) of enterprise tenant will require additionally "Option management" permission with READ and ADMIN access.
-* [Managing subscriptions](http://localhost:1313/guides/users-guide/enterprise-tenant/#applications) of enterprise tenant will require additionally "Tenant management" permission with READ and ADMIN access.
+Note that for complete application management some additional permission types with different permission levels might be required per feature, for example:
+* [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for the Enterprise tenant additionally require READ and ADMIN permission for the "Option management" permission type.
+* [Managing subscriptions](/users-guide/enterprise-tenant/#applications) for the Enterprise tenant additionally requires READ and ADMIN permission for the "Tenant management" permission type.
 
 {{< /c8y-admon-req >}}
 

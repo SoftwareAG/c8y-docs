@@ -536,5 +536,5 @@ Otherwise contact the device integrator or manufacturer.
 {{< /c8y-admon-caution >}}
 
 {{< c8y-admon-info >}}
-If the device has child devices, their owner must also be updated.
+If the device has child devices, their owners must also be updated.
 {{< /c8y-admon-info >}}

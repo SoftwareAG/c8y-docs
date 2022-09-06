@@ -13,10 +13,16 @@ helpcontent:
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-User management permission:
+"User management" permission:
 * READ - permission required in order to view users
 * ADMIN - permission required in order to manage (create, edit, delete, disable/enable, delegate, manage permissions) all existing users
 * CREATE - permission required in order to create users. 
+
+"Own user management" permission (have no influence on user management capabilities):
+* READ - View own user
+* ADMIN - Edit own user
+
+Please note that by each user created on platform can edit information about himself by default, "Own user management" permissions are not affecting such users. Those permissions are existing to manage specific users created for technical purpose for example by microservices, and determine whenever such users can be managed by respective services. 
 
 By default on tenant creation there are default roles available that can be used as example of configuration for above mentioned permissions:
 * Global User Manager - Can access and modify the full user hierarchy

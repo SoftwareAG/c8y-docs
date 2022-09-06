@@ -14,13 +14,18 @@ The network configuration blue screen does not appear post installation. After t
     {{< /c8y-admon-info >}}
 
 2. Configure the network for your Edge appliance, see the sample screenshot.
-  <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+    <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+    
+    {{< c8y-admon-important >}}
 
-  > **Important:** While configuring the network on VMware based hypervisors, do not us the IP addresses:
-  >
-  > - X.X.X.1 (used by VMnet8 network adapter on host)
-  > -  X.X.X.2 (used by VMnet8 network adapter's gateway)
-  > - X.X.X.254 (used by VMnet8 network adapter's DHCP server)
+While configuring the network on VMware based hypervisors, do not us the IP addresses:
+
+- X.X.X.1 (used by VMnet8 network adapter on host)
+- X.X.X.2 (used by VMnet8 network adapter's gateway)
+
+- X.X.X.254 (used by VMnet8 network adapter's DHCP server)
+
+{{< /c8y-admon-important >}}
 
 3. Press **Enter** to save the network configuration.
 <img src="/images/edge/edge-network-configurator-2.png" name="Network Configurator" style="width:75%;"/>

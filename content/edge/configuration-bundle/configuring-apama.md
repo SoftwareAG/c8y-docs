@@ -6,7 +6,7 @@ layout: redirect
 
 ### Updating the memory and CPU limit for Apama
 
-If the system performance is slow, you must increase the memory. The memory limit for Apama container is set to 2048 MB and the CPU limit is set to 256 as default values. For most use cases, these values are sufficient. You can change the values as per your requirements.
+The memory limit for Apama container is set to 2048 MB and the CPU limit is set to 256 as default values. For most use cases, these values are sufficient. You can change the values as per your requirements.
 
 `CTRL_DOCKER_OPTIONS="--memory 2048m --cpu-shares 256"`
 

@@ -12,9 +12,15 @@ helpcontent:
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
+
+User management permission:
 * READ - permission required in order to view users
 * ADMIN - permission required in order to manage (create, edit, delete, disable/enable, delegate, manage permissions) all existing users
 * CREATE - permission required in order to create users. 
+
+By default on tenant creation there are default roles available that can be used as example of configuration for above mentioned permissions:
+* Global User Manager - Can access and modify the full user hierarchy
+* Shared User Manager - Can create new user as his own sub-users and manage this ("feature-user-hierarchy" application subscription required)
 
 Please note that CREATE permission when subscribed to "feature-user-hierachy" application allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) of underlying users. For details see: [Manage user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies)
 {{< /c8y-admon-req >}}

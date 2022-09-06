@@ -528,10 +528,10 @@ Do the following:
 7. Remove the new device object that was created earlier but keep the device user.
 9. Turn on the new physical device.
 
-The new physical device will be sending its data to the existing managed object.
+The new physical device sends its data to the existing managed object.
 
 {{< c8y-admon-caution >}}
-The above steps will only work if the device is using standard device bootstrapping.
+The above steps only work if the device is using standard device bootstrapping.
 Otherwise contact the device integrator or manufacturer.
 {{< /c8y-admon-caution >}}
 

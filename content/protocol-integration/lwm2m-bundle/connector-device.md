@@ -54,7 +54,7 @@ Syntax:   `invalidateRegistrationsForEndpoint <endpointId>`
 
 Example usage:  `invalidateRegistrationsForEndpoint urn:imei:012345678901234`
 
-This command invalidates all known LWM2M registrations for the endpoint urn:imei:012345678901234
+This command invalidates all known LWM2M registrations for the endpoint urn:imei:012345678901234.
 
 ### Invalidate Registrations by LWM2M registration id
 

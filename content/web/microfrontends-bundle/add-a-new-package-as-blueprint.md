@@ -301,7 +301,7 @@ The biggest difference is the _package.json_ file, where fields such as `isPacka
 The following list shows the fields and what they are responsible for:
 
 - `isPackage`: Indicates if the application is a package. In case of a widget that is added using Module Federation, set the value to `true`.
-- `package`: The type of package (for example, `blueprint`, but the type of the package can also be a plugin.).
+- `package`: The type of package (for example, `blueprint`, but the type of the package can also be a plugin).
 - `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the _README.md_ file).
   - `name`: The name of the exported module.
   - `module`: The name of the Angular module class.

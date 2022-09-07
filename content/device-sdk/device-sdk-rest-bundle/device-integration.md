@@ -520,11 +520,11 @@ You can replace a physical device that is already connected to the {{< product-c
 Do the following:
 
 1. Turn off the old physical device.
-2. Register and bootstrap the new device just like a regular device.
+2. [Register and bootstrap](/users-guide/device-management/#device-registration) the new device just like a regular device.
 3. After the device has created its new managed object, turn the new physical device off.
-4. Open the new device object in {{< Cumulocity IoT >}}'s Device Management and look up the device owner and the device's external IDs.
+4. Open the new device object in [{{< product-c8y-iot >}}'s Device Management](/users-guide/device-management/#info) and look up the device owner and the device's external IDs.
 5. Remove the external IDs from the device.
-6. Open the old device in {{< Cumulocity IoT >}}'s Device Management and change its owner to the one you looked up, and also add the external IDs you removed from the new device.
+6. Open the old device in {{< product-c8y-iot >}}'s Device Management and change its owner to the one you looked up, and also add the external IDs you removed from the new device.
 7. Remove the new device object that was created earlier but keep the device user.
 9. Turn on the new physical device.
 

@@ -44,7 +44,7 @@ Example usage: `cleanupClusterTenantObjectsForEndpoint urn:imei:012345678901234`
 <a name="lwm2m-invalidate-lwm2m-registrations"></a>
 ## Invalidate Registrations
 
-The LWM2M connector device may be used to invalidate LWM2M registrations. This is sometimes helpful to force a LWM2M device to re-register. 
+The LWM2M connector device may be used to invalidate LWM2M registrations. This is sometimes helpful to force a LWM2M device to re-register.
 
 ### Invalidate Registrations by Endpoint
 
@@ -54,7 +54,7 @@ Syntax:   `invalidateRegistrationsForEndpoint <endpointId>`
 
 Example usage:  `invalidateRegistrationsForEndpoint urn:imei:012345678901234`
 
-This operation will invalidate all known LWM2M registrations for the endpoint urn:imei:012345678901234
+This command invalidates all known LWM2M registrations for the endpoint urn:imei:012345678901234
 
 ### Invalidate Registrations by LWM2M registration id
 
@@ -64,4 +64,4 @@ Syntax:   `invalidateRegistrationById <registrationId>`
 
 Example usage:  `invalidateRegistrationById F7DqjmW3Yy`
 
-This operation will invalidate the LWM2M registration with the ID F7DqjmW3Yy.
+This command invalidates the LWM2M registration with the ID F7DqjmW3Yy.

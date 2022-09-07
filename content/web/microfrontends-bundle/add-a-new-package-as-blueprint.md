@@ -4,7 +4,9 @@ layout: redirect
 weight: 40
 ---
 
-**Version:** 1011.153.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1015.33.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+
+With Module Federation it is possible to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
 
 Blueprints are combination of multiple UI functionalities that can be hosted by the platform (static files) and can be used to scaffold a new solution from scratch. On the other hand, a package is the composition of plugins and blueprints. As a blueprint can export plugins as well, they can be packed together into one package and deployed to the platform.
 
@@ -89,112 +91,13 @@ import {
   C8yStepper,
   SetupComponent
 } from "@c8y/ngx-components";
-import {SetupStep} from "./setup-step";
 
 @Component({
   selector: "c8y-cockpit-setup-step1",
-  templateUrl: "./setup-step.component.html",
+  templateUrl: "./setup-step1.component.html",
   host: {class: "d-contents"}
 })
-export class SetupStep1Component extends SetupStep {
-  constructor(
-    public stepper: C8yStepper,
-    protected step: CdkStep,
-    protected setup: SetupComponent,
-    protected appState: AppStateService,
-    protected alert: AlertService
-  ) {
-    super(stepper, step, setup, appState, alert);
-  }
-}
-```
-
-2. Create a "setup-step1.component.html" template:
-
-```html
-<form #stepForm="ngForm" name="form" class="d-contents">
-  <div class="container-fluid flex-no-shrink fit-w">
-    <div class="row separator-bottom">
-      <div
-        class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 p-t-24 p-l-16 p-r-16"
-      >
-        <h3 translate class="text-medium l-h-base">Misc</h3>
-        <p class="lead text-normal" translate>
-          Miscellaneous settings for the current application.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="inner-scroll flex-grow">
-    <div class="container-fluid fit-w">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <c8y-misc-config [config]="config"></c8y-misc-config>
-        </div>
-      </div>
-    </div>
-  </div>
-  <c8y-cockpit-setup-stepper-buttons
-    [index]="stepper.selectedIndex"
-    (onNext)="next()"
-    (onBack)="back()"
-  >
-  </c8y-cockpit-setup-stepper-buttons>
-</form>
-```
-
-3. Add a "cockpit-setup-stepper-buttons.component.ts" file which would show the buttons on each step:
-
-```typescript
-import {Component, EventEmitter, Input, Output} from "@angular/core";
-
-@Component({
-  selector: "c8y-cockpit-setup-stepper-buttons",
-  templateUrl: "./cockpit-setup-stepper-buttons.component.html"
-})
-export class CockpitSetupStepperButtonsComponent {
-  @Input() index;
-  @Output() onNext = new EventEmitter<void>();
-  @Output() onBack = new EventEmitter<void>();
-}
-```
-
-4. Add a "cockpit-setup-stepper-buttons.component.html" template:
-
-```html
-<div class="card-footer separator d-flex j-c-center">
-  <button
-    class="btn btn-default"
-    type="button"
-    (click)="onBack.emit()"
-    *ngIf="index !== 0"
-    translate
-  >
-    Previous
-  </button>
-  <button
-    class="btn btn-primary"
-    type="submit"
-    (click)="onNext.emit()"
-    translate
-  >
-    Save and continue
-  </button>
-</div>
-```
-
-5. Add a "setup-step.ts" file in which we will define the default app configuration:
-
-```typescript
-import {CdkStep} from "@angular/cdk/stepper";
-import {
-  AppStateService,
-  AlertService,
-  C8yStepper,
-  SetupComponent
-} from "@c8y/ngx-components";
-
-export abstract class SetupStep {
+export class SetupStep1Component {
   config = {
     rootNodes: [],
     features: {
@@ -236,7 +139,49 @@ export abstract class SetupStep {
 }
 ```
 
-6. Finally we will extend the _app.module.ts_ file to include the new stepper components:
+2. Create a "setup-step1.component.html" template:
+
+```html
+<form #stepForm="ngForm" name="form" class="d-contents">
+  <div class="container-fluid flex-no-shrink fit-w">
+    <div class="row separator-bottom">
+      <div
+        class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 p-t-24 p-l-16 p-r-16"
+      >
+        <h3 translate class="text-medium l-h-base">Misc</h3>
+        <p class="lead text-normal" translate>
+          Miscellaneous settings for the current application.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="inner-scroll flex-grow">
+    <div class="container-fluid fit-w">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <c8y-misc-config [config]="config"></c8y-misc-config>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer separator d-flex j-c-center">
+    <button
+      class="btn btn-default"
+      type="button"
+      (click)="back()"
+      *ngIf="index !== 0"
+      translate
+    >
+      Previous
+    </button>
+    <button class="btn btn-primary" type="submit" (click)="next()" translate>
+      Save and continue
+    </button>
+  </div>
+</form>
+```
+
+3. Finally we will extend the _app.module.ts_ file to include the new stepper components:
 
 ```typescript
 import {NgModule} from "@angular/core";
@@ -254,15 +199,10 @@ import {
 } from "@c8y/ngx-components";
 import {SetupStep1Component} from "./setup-step1.component";
 import {DatapointLibraryModule} from "@c8y/ngx-components/datapoint-library";
-import {CockpitSetupStepperButtonsComponent} from "./cockpit-setup-stepper-buttons.component";
 import {MiscConfigComponent} from "./misc-config.component";
 
 @NgModule({
-  declarations: [
-    SetupStep1Component,
-    CockpitSetupStepperButtonsComponent,
-    MiscConfigComponent
-  ],
+  declarations: [SetupStep1Component, MiscConfigComponent],
   imports: [
     BrowserAnimationsModule,
     RouterModule.forRoot(),
@@ -279,7 +219,7 @@ import {MiscConfigComponent} from "./misc-config.component";
           stepperId: Steppers.SETUP,
           component: SetupStep1Component,
           label: gettext("Step 1"),
-          setupId: "example",
+          setupId: "exampleId",
           priority: 0
         }
       ] as SetupStep[],

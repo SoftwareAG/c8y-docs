@@ -74,6 +74,223 @@ tsconfig.json;
 
 You have now created your first package blueprint that uses Module Federation.
 
+### Stepper setup (optional)
+
+The HOOK_STEPPER can be additionally provided to allow application customization during the first load of an applicaiton. In this optional step we will show a small single step example in which the user will be able to choose whether the navigator will be collapsed or not on start up.
+
+1. Create a new "setup-step1.component.ts" file with the following content:
+
+```typescript
+import {CdkStep} from "@angular/cdk/stepper";
+import {Component} from "@angular/core";
+import {
+  AlertService,
+  AppStateService,
+  C8yStepper,
+  SetupComponent
+} from "@c8y/ngx-components";
+import {SetupStep} from "./setup-step";
+
+@Component({
+  selector: "c8y-cockpit-setup-step1",
+  templateUrl: "./setup-step.component.html",
+  host: {class: "d-contents"}
+})
+export class SetupStep1Component extends SetupStep {
+  constructor(
+    public stepper: C8yStepper,
+    protected step: CdkStep,
+    protected setup: SetupComponent,
+    protected appState: AppStateService,
+    protected alert: AlertService
+  ) {
+    super(stepper, step, setup, appState, alert);
+  }
+}
+```
+
+2. Create a "setup-step1.component.html" template:
+
+```html
+<form #stepForm="ngForm" name="form" class="d-contents">
+  <div class="container-fluid flex-no-shrink fit-w">
+    <div class="row separator-bottom">
+      <div
+        class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 p-t-24 p-l-16 p-r-16"
+      >
+        <h3 translate class="text-medium l-h-base">Misc</h3>
+        <p class="lead text-normal" translate>
+          Miscellaneous settings for the current application.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="inner-scroll flex-grow">
+    <div class="container-fluid fit-w">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <c8y-misc-config [config]="config"></c8y-misc-config>
+        </div>
+      </div>
+    </div>
+  </div>
+  <c8y-cockpit-setup-stepper-buttons
+    [index]="stepper.selectedIndex"
+    (onNext)="next()"
+    (onBack)="back()"
+  >
+  </c8y-cockpit-setup-stepper-buttons>
+</form>
+```
+
+3. Add a "cockpit-setup-stepper-buttons.component.ts" file which would show the buttons on each step:
+
+```typescript
+import {Component, EventEmitter, Input, Output} from "@angular/core";
+
+@Component({
+  selector: "c8y-cockpit-setup-stepper-buttons",
+  templateUrl: "./cockpit-setup-stepper-buttons.component.html"
+})
+export class CockpitSetupStepperButtonsComponent {
+  @Input() index;
+  @Output() onNext = new EventEmitter<void>();
+  @Output() onBack = new EventEmitter<void>();
+}
+```
+
+4. Add a "cockpit-setup-stepper-buttons.component.html" template:
+
+```html
+<div class="card-footer separator d-flex j-c-center">
+  <button
+    class="btn btn-default"
+    type="button"
+    (click)="onBack.emit()"
+    *ngIf="index !== 0"
+    translate
+  >
+    Previous
+  </button>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    (click)="onNext.emit()"
+    translate
+  >
+    Save and continue
+  </button>
+</div>
+```
+
+5. Add a "setup-step.ts" file in which we will define the default app configuration:
+
+```typescript
+import {CdkStep} from "@angular/cdk/stepper";
+import {
+  AppStateService,
+  AlertService,
+  C8yStepper,
+  SetupComponent
+} from "@c8y/ngx-components";
+
+export abstract class SetupStep {
+  config = {
+    rootNodes: [],
+    features: {
+      alarms: true,
+      dataExplorer: true,
+      groups: true
+    },
+    hideNavigator: false,
+    userSpecificHomeDashboard: false
+  };
+  pending = false;
+
+  constructor(
+    public stepper: C8yStepper,
+    protected step: CdkStep,
+    protected setup: SetupComponent,
+    protected appState: AppStateService,
+    protected alert: AlertService
+  ) {}
+
+  async next() {
+    this.pending = true;
+    try {
+      const newConfig = {...this.setup.data$.value, ...this.config};
+      await this.appState.updateApplicationConfig(newConfig);
+      this.setup.stepCompleted(this.stepper.selectedIndex);
+      this.setup.data$.next(newConfig);
+      this.stepper.next();
+    } catch (ex) {
+      this.alert.addServerFailure(ex);
+    } finally {
+      this.pending = false;
+    }
+  }
+
+  back() {
+    this.stepper.previous();
+  }
+}
+```
+
+6. Finally we will extend the _app.module.ts_ file to include the new stepper components:
+
+```typescript
+import {NgModule} from "@angular/core";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AssetsNavigatorModule} from "@c8y/ngx-components/assets-navigator";
+import {RouterModule as ngRouterModule} from "@angular/router";
+import {
+  CoreModule,
+  BootstrapComponent,
+  RouterModule,
+  SetupStep,
+  HOOK_STEPPER,
+  Steppers,
+  gettext
+} from "@c8y/ngx-components";
+import {SetupStep1Component} from "./setup-step1.component";
+import {DatapointLibraryModule} from "@c8y/ngx-components/datapoint-library";
+import {CockpitSetupStepperButtonsComponent} from "./cockpit-setup-stepper-buttons.component";
+import {MiscConfigComponent} from "./misc-config.component";
+
+@NgModule({
+  declarations: [
+    SetupStep1Component,
+    CockpitSetupStepperButtonsComponent,
+    MiscConfigComponent
+  ],
+  imports: [
+    BrowserAnimationsModule,
+    RouterModule.forRoot(),
+    ngRouterModule.forRoot([], {enableTracing: false, useHash: true}),
+    CoreModule.forRoot(),
+    DatapointLibraryModule.forRoot(),
+    AssetsNavigatorModule
+  ],
+  providers: [
+    {
+      provide: HOOK_STEPPER,
+      useValue: [
+        {
+          stepperId: Steppers.SETUP,
+          component: SetupStep1Component,
+          label: gettext("Step 1"),
+          setupId: "example",
+          priority: 0
+        }
+      ] as SetupStep[],
+      multi: true
+    }
+  ],
+  bootstrap: [BootstrapComponent]
+})
+export class AppModule {}
+```
+
 ### Differences in approach to creating custom applications
 
 There are a couple of differences between a simple widget and one that is built according to the Module Federation guidelines.
@@ -93,7 +310,7 @@ The following list shows the fields and what they are responsible for:
 A blueprint can also include plugins, which can later be used to extend other applications.
 {{< /c8y-admon-info >}}
 
-### 3. Deployment
+### Deployment
 
 Uploading the package is the same as for regular widgets.
 Execute the following commands sequentially:

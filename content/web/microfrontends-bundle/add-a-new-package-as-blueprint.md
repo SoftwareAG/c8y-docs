@@ -291,6 +291,8 @@ import {MiscConfigComponent} from "./misc-config.component";
 export class AppModule {}
 ```
 
+Now on the first application start, users will have to complete the single step wizard above.
+
 ### Differences in approach to creating custom applications
 
 There are a couple of differences between a simple widget and one that is built according to the Module Federation guidelines.

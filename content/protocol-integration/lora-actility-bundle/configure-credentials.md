@@ -21,8 +21,8 @@ Enter the following information:
 - **Profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
 - **Application Server ID**: TLS security ID between provider platform and agent. The application server ID should be unique to the route address. This is an optional field. Leave empty to disable security.
 - **Application Server Key**: TLS security key between provider platform and agent. The value should be in hex and 16 bytes. Do not change the application server key if  the application server ID is not updated. This is an optional field. Leave empty to disable security.
-- **Admin API version**: The version that the Thingpark admin API uses. By-default it will be set to "latest".
-- **Core API version**:  The version that the Thingpark core API uses. By-default it will be set to "latest".
+- **Admin API version**: The version that the Thingpark admin API uses. The default is "latest".
+- **Core API version**:  The version that the Thingpark core API uses. The default is "latest".
 - **Username**: Your ThingPark account username.
 - **Password**: Your ThingPark account password.
 

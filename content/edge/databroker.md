@@ -1,6 +1,6 @@
 ---
 weight: 52
-title: Installing Pulsar & Databroker on Edge
+title: Installing the Messaging Service & the Microservices-Based Databroker on Edge
 layout: bundle
 ---
 

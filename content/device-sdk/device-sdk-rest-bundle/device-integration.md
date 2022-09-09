@@ -532,6 +532,6 @@ Do the following:
 
 The new physical device sends its data to the existing managed object.
 
->**Caution:** The above steps only work if the device is using standard device bootstrapping. Otherwise contact the device integrator or manufacturer.
+>**Warning:** The above steps only work if the device is using standard device bootstrapping. Otherwise contact the device integrator or manufacturer.
 
 >**Info:** If the device has child devices, their owners must also be updated.

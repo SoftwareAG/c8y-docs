@@ -532,11 +532,6 @@ Do the following:
 
 The new physical device sends its data to the existing managed object.
 
-{{< c8y-admon-caution >}}
-The above steps only work if the device is using standard device bootstrapping.
-Otherwise contact the device integrator or manufacturer.
-{{< /c8y-admon-caution >}}
+>**Caution:** The above steps only work if the device is using standard device bootstrapping. Otherwise contact the device integrator or manufacturer.
 
-{{< c8y-admon-info >}}
-If the device has child devices, their owners must also be updated.
-{{< /c8y-admon-info >}}
+>**Info:** If the device has child devices, their owners must also be updated.

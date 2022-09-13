@@ -26,7 +26,7 @@ In dieser Version werden folgende Browser unterstützt:
 [3] {{< product-c8y-iot >}} ist in Internet Explorer 11 funktionsfähig, die angebotene Benutzeroberfläche entspricht jedoch nicht dem neuesten Stand der Technik. Daher wird {{< product-c8y-iot >}} 10.7 die letzte Version sein, die diesen Browser unterstützt. In nachfolgenden Releases wird weiterhin die neueste Version des Microsoft Edge Browsers (als Nachfolger des Internet Explorer) unterstützt.
 {{< /c8y-admon-important >}}
 
-Sie können {{< product-c8y-iot >}} auch auf gängigen Smartphones und Tablets nutzen. Unsere Produkte wurden mit den folgenden mobilen Webbrowsern getestet:
+Sie können auch gängige Webbrowser für Smartphones und Tablets verwenden. Unsere Produkte wurden mit den folgenden mobilen Webbrowsern getestet:
 
 * Chrome auf Android (neueste Version) auf Galaxy Smartphones und Tablets
 * Safari auf iOS (neueste Version) auf Apple iPhone und iPad

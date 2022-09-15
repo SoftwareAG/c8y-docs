@@ -6,7 +6,9 @@ aliases:
   - /users-guide/overview/#gui-features
 ---
 
-
+{{< c8y-admon-related >}}
+- [Cockpit](/users-guide/cockpit/#overview)
+{{< /c8y-admon-related >}}
 
 <a name="screen"></a>
 ### Main screen elements

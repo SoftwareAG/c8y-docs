@@ -60,7 +60,7 @@ This command invalidates all known LWM2M registrations for the endpoint `urn:ime
 
 Alternatively an LWM2M registration may be invalidated using its ID, using the following command:
 
-Syntax:   `invalidateRegistrationById <registrationId>`
+Syntax: `invalidateRegistrationById <registration_ID>`
 
 Example usage: `invalidateRegistrationById F7DqjmW3Yy`
 

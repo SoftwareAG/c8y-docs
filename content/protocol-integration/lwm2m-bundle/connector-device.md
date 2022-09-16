@@ -50,7 +50,7 @@ The LWM2M connector device may be used to invalidate LWM2M registrations. This i
 
 This command removes the LWM2M registrations using an endpoint ID.
 
-Syntax:   `invalidateRegistrationsForEndpoint <endpointId>`
+Syntax: `invalidateRegistrationsForEndpoint <endpoint_ID>`
 
 Example usage: `invalidateRegistrationsForEndpoint urn:imei:012345678901234`
 

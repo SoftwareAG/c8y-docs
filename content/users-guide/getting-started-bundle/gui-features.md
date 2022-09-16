@@ -7,7 +7,9 @@ aliases:
 ---
 
 {{< c8y-admon-related >}}
-- [Cockpit](/users-guide/cockpit/#overview)
+- [Cockpit](/users-guide/cockpit/#overview) for more details on the {{< product-c8y-iot >}} UI.
+- [Administration > Managing applications](/users-guide/administration/#managing-applications) for more information on managing applications and microservices in {{< product-c8y-iot >}}.
+- [Device Management](/users-guide/device-management/#overview) for more information on working with devices in the {{< product-c8y-iot >}} UI.
 {{< /c8y-admon-related >}}
 
 <a name="screen"></a>

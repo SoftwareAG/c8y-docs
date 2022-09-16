@@ -10,7 +10,8 @@ aliases:
 
 {{< c8y-admon-related >}}
 - [{{< openapi >}} > Tenants > Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) for details on tenant ID and tenant domain.
-- []()
+- [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding) and [User options and settings](/users-guide/getting-started/#user-settings) for information on customizing the cookie banner.
+{{< /c8y-admon-related >}}
 
 
 You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.
@@ -48,8 +49,6 @@ For example, loading graphs with large amounts of data points may make the mobil
 
 <a name="url"></a>
 ### URL
-
-
 
 To access the applications for your {{< product-c8y-iot >}} tenant, use the following URL:
 

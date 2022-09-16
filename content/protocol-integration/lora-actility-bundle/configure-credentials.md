@@ -19,8 +19,8 @@ Enter the following information:
 - **Description**: The description of the Actility connection being created.
 - **Actility ThingPark URL**: The Actility ThingPark URL may change based on the type of the Actility ThingPark account we use (for example, Community or Enterprise edition).
 - **Profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
-- **Application Server ID**: Application server ID that will be used for TLS security between the ThingPark platform and the agent. This is an optional field. Leave empty to disable security.
-- **Application Server Key**: Application server private key that will be used for TLS security between the ThingPark platform and the agent for the uplink and downlink communications. Value should be in hex and 16 bytes. This is an optional field. Leave empty to disable security.
+- **Application Server ID**: Application server ID that will be used for TLS security between the ThingPark platform and the agent. This is an optional field. Leave empty to disable security. If it's enabled, then the agent will generate a token and use it for all the uplink and down-link messages.  
+- **Application Server Key**: Application server private key that will be used for TLS security between the ThingPark platform and the agent for the uplink and downlink communications. Value should be in hex and 16 bytes. This is an optional field. Leave empty to disable security. If it's enabled, then the agent will generate a token and use it for all the uplink and down-link messages.
 - **Admin API version**: The version that the ThingPark admin API uses. By-default it will be set to "latest".
 - **Core API version**:  The version that the ThingPark core API uses. By-default it will be set to "latest".
 - **Username**: Your ThingPark account username.

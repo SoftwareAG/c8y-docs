@@ -22,7 +22,7 @@ ROLES & PERMISSIONS:
 * To view the own user: READ permission
 * To edit the own user: ADMIN permission
 
-Note that each user created on the platform can edit its own information by default, independent on the "Own user management" permissions. The purpose of the "Own user management" permission is to manage specific users created for technical purposes, for example, by microservices, and determine whenever such users can be managed by respective services. 
+Note that each user created on the platform can edit its own information by default, regardless of the "Own user management" permissions. The purpose of the "Own user management" permission is to manage specific users created for technical purposes, for example, by microservices, and determine whether such users can be managed by respective services. 
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above mentioned permissions:
 * Global User Manager - Can access and modify the full user hierarchy

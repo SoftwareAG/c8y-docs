@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 30
 title: Assigning the Loriot admin role permission
 layout: redirect
 ---

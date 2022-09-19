@@ -6,15 +6,11 @@ layout: redirect
 
 {{< product-c8y-iot >}} can interface with LORIOT Network Server through the Loriot agent microservice. You can:
 
-* Configure the Loriot agent endpoint in LORIOT Network Server using {{< product-c8y-iot >}} data forwarder.
+* Configure the Loriot agent endpoint in LORIOT Network Server using {{< product-c8y-iot >}} data forwarder or create a Loriot LNS Connection and register the device in Cumulocity. 
 * Assign a device protocol for the LoRa device for payload processing.
 * Decode upstream payload packets using a web-based user interface.
 * Post-process raw device data through {{< product-c8y-iot >}} events.
 * Make use of existing {{< product-c8y-iot >}} features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
-
-{{< c8y-admon-info >}}
-The Loriot agent automatically creates a LoRa device in the {{< product-c8y-iot >}} platform if it does not exist so explicit registration is not required.
-{{< /c8y-admon-info >}}
 
 The following illustration gives an overview of the {{< product-c8y-iot >}} Loriot LoRa integration.
 
@@ -22,11 +18,12 @@ The following illustration gives an overview of the {{< product-c8y-iot >}} Lori
 
 The following sections describe how to:
 
-* [Configure Loriot agent endpoint credentials](#configure-loriot-credentials) in LORIOT Network Server.
+* [Configure Loriot agent endpoint credentials via the Loriot Network Server and register devices on receiving uplink messages](#configure-loriot-credentials-register-network-server)
+* [Configure the Loriot agent endpoint credentials and register the devices via Cumulocity](#configure-loriot-credentials-cumulocity) to create Loriot LNS Connections and to register devices in Cumulocity with the API. 
 * [Assign the Loriot admin role](#assign-loriot-admin-role) to the user in {{< product-c8y-iot >}}.
-* [Register devices](#register-loriot-device) and visualize Loriot payload using {{< product-c8y-iot >}}.
 * [Create device protocols](#create-loriot-device-protocols) for all devices.
 * [Set device protocol](#assign-loriot-device-protocol) for processing the Loriot LoRa device payload for creating measurements or events in {{< product-c8y-iot >}}.
+* [Send operations](#operations-loriot) to devices.
 
 Moreover, check out
 

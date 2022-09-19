@@ -31,7 +31,7 @@ Hardware requirements for the host OS are excluded.
 Copy the {{< product-c8y-iot >}} DataHub Edge archive to the {{< product-c8y-iot >}} Edge.
 
 ```shell
-scp datahub-<version>.tgz admin@<edge_ip_address>:/tmp
+scp datahub-edge.tar admin@<edge_ip_address>:/tmp
 ```
 
 Log in as admin into {{< product-c8y-iot >}} Edge.
@@ -43,7 +43,7 @@ ssh admin@<edge_ip_address>
 Run the install script.
 
 ```shell
-sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
+sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-edge.tar
 ```
 
 During script execution, you are prompted for the username and password of the administration user of the tenant <em>edge</em>. During installation, you are also prompted to set the new password of the Dremio <em>admin</em> account. It takes a few minutes to complete the installation. After completion you can delete the {{< product-c8y-iot >}} DataHub Edge archive.

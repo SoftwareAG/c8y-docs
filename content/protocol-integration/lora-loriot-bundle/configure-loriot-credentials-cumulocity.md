@@ -56,7 +56,7 @@ After the Loriot LNS connection is created, the device can be registered using t
 
 POST <kbd>{{url}}/service/loriot/newDeviceRequest</kbd>
 
-The body of the POST Request is as shown below:
+The body of the POST request:
 
 ```
 {

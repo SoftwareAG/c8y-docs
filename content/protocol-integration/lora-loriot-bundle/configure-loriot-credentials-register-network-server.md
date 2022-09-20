@@ -39,7 +39,7 @@ all gateway information.
 You must enable the "gw" message option on LORIOT Network Server while connecting to the Loriot LoRa agent, see [Configuring the Loriot agent endpoint credentials](#configure-loriot-credentials).
 {{< /c8y-admon-info >}}
 
-In the below Loriot LoRa device message `gws` represents a list of gateways involved in the network.
+In the Loriot LoRa device message below, `gws` represents a list of gateways involved in the network:
 
 ```
 {

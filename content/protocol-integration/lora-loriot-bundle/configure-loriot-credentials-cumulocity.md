@@ -4,7 +4,8 @@ title: Configure the Loriot agent endpoint credentials and register the devices 
 layout: redirect
 ---
 
-## <a name="cumulocity-loriot-connection-configuration">Creation of Loriot LNS Connection in Cumulocity</a>
+<a name="cumulocity-loriot-connection-configuration">
+### Creation of Loriot LNS Connection in Cumulocity</a>
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 

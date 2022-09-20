@@ -37,7 +37,7 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 Select the connection to be updated, make your edits, and save the connection.
 
 
-If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Click the link to download the file with the details of the associated devices: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
+If there are devices associated with the connection, an error message appears, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Click the link to download the file with the details of the associated devices: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
 
 ![Update connection information](/images/device-protocols/lora-loriot/loriot-admin-settings-update.png)
 

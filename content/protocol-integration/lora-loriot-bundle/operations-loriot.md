@@ -18,6 +18,6 @@ If you enter the command without defining a port, it will be sent to the default
 
 ![Port configuration](/images/device-protocols/lora-loriot/loriot-devices-port.png)
 
-Click **Execute**. The operation will be sent to the device. The timing depends on Loriot Platform.
+Click **Execute**. The operation will be sent to the device. The timing depends on Loriot platform.
 
 The status of the operation is set to SUCCESSFUL when the operation has successfully been sent to the Loriot platform. The status of the operation is set to FAILED when a problem occurred with the validation of the command or after the operation has been sent to the Loriot platform.

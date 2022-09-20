@@ -8,7 +8,7 @@ weight: 40
 
 With Module Federation it is possible to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
 
-Blueprints are combination of multiple UI functionalities that can be hosted by the platform (static files) and can be used to scaffold a new solution from scratch. On the other hand, a package is the composition of plugins and blueprints. As a blueprint can export plugins as well, they can be packed together into one package and deployed to the platform.
+Blueprints are combinations of multiple UI functionalities that can be hosted by the platform (static files) and can be used to scaffold a new solution from scratch. On the other hand, a package is the composition of plugins and blueprints. As a blueprint can export plugins as well, they can be packed together into one package and deployed to the platform.
 
 ### Initialize the blueprint example
 
@@ -78,7 +78,7 @@ You have now created your first package blueprint that uses Module Federation.
 
 ### Stepper setup (optional)
 
-The HOOK_STEPPER can be additionally provided to allow application customization during the first load of an applicaiton. In this optional step we will show a small single step example in which the user will be able to choose whether the navigator will be collapsed or not on start up.
+The HOOK_STEPPER can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
 
 1. Create a new "setup-step1.component.ts" file with the following content:
 
@@ -181,7 +181,7 @@ export class SetupStep1Component {
 </form>
 ```
 
-3. Finally we will extend the _app.module.ts_ file to include the new stepper components:
+3. Finally we extend the _app.module.ts_ file to include the new stepper components:
 
 ```typescript
 import {NgModule} from "@angular/core";

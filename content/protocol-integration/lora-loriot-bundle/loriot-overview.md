@@ -6,7 +6,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} can interface with LORIOT Network Server through the Loriot agent microservice. You can:
 
-* Configure the Loriot agent endpoint in LORIOT Network Server using {{< product-c8y-iot >}} data forwarder or create a Loriot LNS Connection and register the device in Cumulocity. 
+* Configure the Loriot agent endpoint in LORIOT Network Server using {{< product-c8y-iot >}} data forwarder or create a Loriot LNS connection and register the device in {{< product-c8y-iot >}}. 
 * Assign a device protocol for the LoRa device for payload processing.
 * Decode upstream payload packets using a web-based user interface.
 * Post-process raw device data through {{< product-c8y-iot >}} events.

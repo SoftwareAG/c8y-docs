@@ -19,8 +19,8 @@ helpcontent:
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-* To view applications and microservices: assign READ permission for the "Application management" permission type
-* To manage applications and microservices (create, update, copy, delete): assign ADMIN permission for the "Application management" permission type
+* To view applications and microservices: READ permission for the "Application management" permission type
+* To manage applications and microservices (create, update, copy, delete): ADMIN permission for the "Application management" permission type
 
 On tenant creation there are default roles available that can be used as sample configuration for the above mentioned permissions:
 * Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules.

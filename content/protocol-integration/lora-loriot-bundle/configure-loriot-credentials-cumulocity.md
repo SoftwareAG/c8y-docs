@@ -42,7 +42,7 @@ If there are devices associated with the connection, an error message will appea
 ![Update connection information](/images/device-protocols/lora-loriot/loriot-admin-settings-update.png)
 
 <a name="delete-connection"></a>
-### To delete a connection
+#### To delete a connection
 
 Select the connection to be deleted and click **Delete**.
 

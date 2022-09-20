@@ -25,7 +25,9 @@ Click **Save**. If the information you have entered is correct, the message "Con
 
 To add another connection, click **Add Connection** and follow the steps above.
 
-Note: Always keep the **Gateway Information** option enabled because the Loriot agent only processes "gw" (gateway information) messages.
+{{< c8y-admon-info >}}
+Always keep the **Gateway Information** option enabled because the Loriot agent only processes "gw" (gateway information) messages.
+{{< /c8y-admon-info >}}
 
 ![Enable gateway information option](/images/device-protocols/lora-loriot/loriot-gateway-option-enabled.png)
 

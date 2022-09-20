@@ -16,7 +16,7 @@ When you select **Connectivity** for the first time, you are asked to create a c
 Enter the following information:
 
 - **Name**: The name of the Loriot connection being created.
-- **Base URL**: The URL associated with the Loriot Provider account.
+- **Base URL**: The URL associated with the Loriot provider account.
 - **Username**: Your Loriot account username.
 - **Password**: Your Loriot account password.
 

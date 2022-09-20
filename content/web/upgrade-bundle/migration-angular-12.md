@@ -1,5 +1,5 @@
 ---
-title: Upgrading to Angular 12 from 11
+title: Upgrading from Angular 11 to Angular 12
 # layout: redirect
 weight: 6
 ---
@@ -12,7 +12,7 @@ Angular 12 is supported from version `10.11.45.0`. The following configuration c
 - Use Node version `14`.
 
 {{< c8y-admon-info >}}
-`AOT` is not yet supported.
+AOT (Ahead-of-time compilation) is not yet supported.
 {{< /c8y-admon-info >}}
 
 #### How to enable IVY
@@ -47,5 +47,5 @@ Deep imports are not supported. For example, you must import from `@c8y/ngx-comp
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option `"Use legacy View Engine language service"` is not selected.
+If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option "Use legacy View Engine language service" is not selected.
 {{< /c8y-admon-info >}}

@@ -54,7 +54,7 @@ If there are devices associated with the connection, an error message appears, s
 
 After the Loriot LNS connection is created, the device can be registered using the REST API, whose endpoint and POST body are as follows:
 
-POST {{url}}/service/loriot/newDeviceRequest
+POST <kbd>{{url}}/service/loriot/newDeviceRequest</kbd>
 
 The body of the POST Request is as shown below:
 

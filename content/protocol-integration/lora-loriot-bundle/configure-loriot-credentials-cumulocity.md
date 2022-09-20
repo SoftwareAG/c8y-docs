@@ -11,7 +11,7 @@ Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {
 <a name="add-new-connection"></a>
 ### To add a new connection
 
-If you select **Connectivity** for the first time, you are asked to create a connection. Click **Add Connection**.
+When you select **Connectivity** for the first time, you are asked to create a connection. Click **Add Connection**.
 
 Enter the following information:
 

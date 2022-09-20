@@ -20,7 +20,7 @@ Enter the following information:
 - **Username**: Your Loriot account username.
 - **Password**: Your Loriot account password.
 
-Click **Save**. If you have entered the correct information, you see the message "Connection created".
+Click **Save**. If the information you have entered is correct, the message "Connection created" appears.
 
 To add another connection, click **Add Connection** and follow the steps above.
 

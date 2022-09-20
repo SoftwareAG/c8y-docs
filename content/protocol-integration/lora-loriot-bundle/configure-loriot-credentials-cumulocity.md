@@ -50,7 +50,8 @@ If there are devices associated with the connection, an error message appears, s
 
 ![Delete connection](/images/device-protocols/lora-loriot/loriot-admin-settings-delete.png)
 
-## <a name="loriot-device-registration">Loriot device registration via API</a>
+<a name="loriot-device-registration">
+### Loriot device registration via API</a>
 
 After the Loriot LNS connection is created, the device can be registered using the REST API, whose endpoint and POST body are as follows:
 

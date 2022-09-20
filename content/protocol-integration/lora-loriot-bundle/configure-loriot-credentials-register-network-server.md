@@ -25,7 +25,7 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 
 ![Enable gateway information option](/images/device-protocols/lora-loriot/loriot-gateway-option-enabled.png)
 
-The Loriot devices can now be registered in Cumulocity when uplink messages are received. 
+The Loriot devices can now be registered in {{< product-c8y-iot >}} when uplink messages are received. 
 
 ## <a name="uplink-message-device-creation">Device Creation via Loriot Uplink Message</a>
 

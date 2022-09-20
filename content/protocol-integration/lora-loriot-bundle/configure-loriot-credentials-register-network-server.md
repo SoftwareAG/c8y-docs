@@ -27,7 +27,8 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 
 The Loriot devices can now be registered in {{< product-c8y-iot >}} when uplink messages are received. 
 
-## <a name="uplink-message-device-creation">Device Creation via Loriot Uplink Message</a>
+<a name="uplink-message-device-creation">
+### Device creation via Loriot uplink message</a>
 
 While processing the Loriot LoRa device request, the Loriot agent automatically creates the device in the {{< product-c8y-iot >}} platform, if it does not yet exist. This means that the user does not need to register the Loriot LoRa device explicitly.
 

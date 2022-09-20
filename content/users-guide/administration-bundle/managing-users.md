@@ -28,7 +28,7 @@ On tenant creation, there are default roles available that can be used as a samp
 * Global User Manager - Can access and modify the full user hierarchy
 * Shared User Manager - Can create new users as his own subusers and manage them ("feature-user-hierarchy" application subscription required)
 
-Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Manage user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies).
+Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies).
 {{< /c8y-admon-req >}}
 
 The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.

@@ -265,7 +265,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Own user management</td>
-<td align="left">View or edit your own user.</td>
+<td align="left">View or edit your own user. Note that this permission may only be applicable to technical users.</td>
 </tr>
 </tbody>
 </table>

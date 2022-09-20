@@ -10,7 +10,7 @@ layout: redirect
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 
 <a name="add-new-connection"></a>
-### To add a new connection
+#### To add a new connection
 
 When you select **Connectivity** for the first time, you are asked to create a connection. Click **Add Connection**.
 

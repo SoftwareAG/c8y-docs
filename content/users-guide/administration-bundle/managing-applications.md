@@ -16,6 +16,21 @@ helpcontent:
     Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
 ---
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+* To view applications and microservices: READ permission for the "Application management" permission type
+* To manage applications and microservices (create, update, copy, delete): ADMIN permission for the "Application management" permission type
+
+On tenant creation there are default roles available that can be used as sample configuration for the above mentioned permissions:
+* Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules.
+
+Note that for complete application management some additional permission types with different permission levels might be required per feature, for example:
+* [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Option management" permission type.
+* [Managing subscriptions](/users-guide/enterprise-tenant/#applications) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Tenant management" permission type.
+
+{{< /c8y-admon-req >}}
+
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications) in the *Concepts guide*.
 
 * [Applications](#applications) -  all web applications either subscribed to the tenant or owned by the tenant.

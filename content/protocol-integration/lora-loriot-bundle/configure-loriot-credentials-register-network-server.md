@@ -30,7 +30,8 @@ The Loriot devices can now be registered in {{< product-c8y-iot >}} when uplink 
 <a name="uplink-message-device-creation">
 ### Device creation via Loriot uplink message</a>
 
-While processing the Loriot LoRa device request, the Loriot agent automatically creates the device in the {{< product-c8y-iot >}} platform, if it does not yet exist. This means that the user does not need to register the Loriot LoRa device explicitly.
+While processing the Loriot LoRa device request, the Loriot agent automatically creates the device in the {{< product-c8y-iot >}} platform, if it does not yet exist.
+This means that you do not need to register the Loriot LoRa device explicitly.
 
 LORIOT Network Server forwards two types of messages to the Loriot agent: "rx" (uplink message) and "gw" (gateway information).
 

@@ -17,7 +17,7 @@ LORIOT Network Server forwards the LoRa device messages to the external applicat
 
 ![Output page with https forwarder](/images/device-protocols/lora-loriot/loriot-output-https-page.png)
 
-Use {{< product-c8y-iot >}} data forwarder for configuring the Loriot endpoint using Basic authentication.
+Use {{< product-c8y-iot >}} data forwarder for configuring the Loriot endpoint using basic authentication.
 
 ![Setting endpoint credentials](/images/device-protocols/lora-loriot/loriot-endpoint-assignment.png)
 

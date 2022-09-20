@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Configure the Loriot agent endpoint credentials via the Loriot Network Server and register devices on receiving uplink messages
+title: Endpoint configuration and device registration via uplink message
 layout: redirect
 ---
 

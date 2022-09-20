@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Configure the Loriot agent endpoint credentials and register the devices via Cumulocity
+title: Loriot Connection creation and device registration via Cumulocity
 layout: redirect
 ---
 

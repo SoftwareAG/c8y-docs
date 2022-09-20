@@ -32,7 +32,7 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 ![Enable gateway information option](/images/device-protocols/lora-loriot/loriot-gateway-option-enabled.png)
 
 <a name="update-credentials-in-a-connection"></a>
-### To update a connection
+#### To update a connection
 
 Select the connection to be updated, make your edits, and save the connection.
 

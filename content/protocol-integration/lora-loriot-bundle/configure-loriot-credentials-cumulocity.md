@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Loriot Connection creation and device registration via Cumulocity
+title: Device registration via Cumulocity
 layout: redirect
 ---
 

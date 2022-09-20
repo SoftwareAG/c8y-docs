@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Endpoint configuration and device registration via uplink message
+title: Device Registration via uplink message
 layout: redirect
 ---
 

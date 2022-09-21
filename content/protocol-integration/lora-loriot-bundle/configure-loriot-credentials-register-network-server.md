@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Device Registration via uplink message
+title: Device registration via uplink message
 layout: redirect
 ---
 

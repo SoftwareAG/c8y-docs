@@ -59,7 +59,7 @@ Application created. Go into the folder "app-blueprint" and run npm install
 5. Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are _package.json_ and `README.md`.
+For this tutorial, the most important files are *package.json* and *README.md*.
 
 ```console
 app.module.spec.ts;
@@ -80,7 +80,7 @@ You have now created your first package blueprint that uses Module Federation.
 
 The HOOK_STEPPER can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
 
-1. Create a new "setup-step1.component.ts" file with the following content:
+1. Create a new *setup-step1.component.ts* file with the following content:
 
 ```typescript
 import {CdkStep} from "@angular/cdk/stepper";
@@ -139,7 +139,7 @@ export class SetupStep1Component {
 }
 ```
 
-2. Create a "setup-step1.component.html" template:
+2. Create a *setup-step1.component.html* template:
 
 ```html
 <form #stepForm="ngForm" name="form" class="d-contents">

@@ -7,7 +7,7 @@ aliases:
 
 ---
 
-You access the {{< product-c8y-iot >}} platform using a [domain name](#domain) in a web browser.
+You access the Edge appliance using a [domain name](#domain) in a web browser.
 
 ### Supported browsers
 
@@ -18,12 +18,12 @@ Supported browsers in this version are:
 * Google Chrome [2]
 * Internet Explorer 11 [3]
 
-[1] Only the latest Extended Support Release of Mozilla Firefox is explicitly supported. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of {{< product-c8y-iot >}} with other versions of Mozilla Firefox cannot be guaranteed.
+[1] Only the latest Extended Support Release of Mozilla Firefox is explicitly supported. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of the Edge appliance with other versions of Mozilla Firefox cannot be guaranteed.
 
-[2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of {{< product-c8y-iot >}} with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
+[2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of the Edge appliance with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
 
 {{< c8y-admon-important >}}
-[3] Though {{< product-c8y-iot >}} is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
+[3] Though the Edge appliance is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} Edge 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
 {{< /c8y-admon-important >}}
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
@@ -32,8 +32,9 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} on mobile devices shows some limitations.
+{{< product-c8y-iot >}} Edge on mobile devices shows some limitations.
 The limitations could be the following:
+
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
@@ -44,7 +45,7 @@ For example, loading graphs with large amounts of data points may make the mobil
 
 ### Accessing the Edge appliance using the domain name
 
-The {{< product-c8y-iot >}} Edge appliance is accessible using the domain name configured as part of the installation.
+The Edge appliance is accessible using the domain name configured as part of the installation.
 
 There are two ways to configure the accessibility with the domain names:
 

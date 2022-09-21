@@ -6,9 +6,9 @@ layout: redirect
 
 {{< product-c8y-iot >}} can interface with LORIOT Network Server through the Loriot agent microservice. You can:
 
-* Register the device in 2 ways:
-  - Create a Loriot LNS Connection and register the device using Cumulocity.
-  - Configure the Loriot Agent Endpoint via Loriot Network Server and register the device via uplink message. In order to be able to send downlink messages, the devices created using this method need to be re-registered via Cumulocity, so as to be associated with a connection and device type.  
+* Register the device in two ways:
+  - Create a Loriot LNS connection and register the device using {{< product-c8y-iot >}}.
+  - Configure the Loriot Agent endpoint via Loriot Network Server and register the device via uplink message. In order to be able to send downlink messages, the devices created using this method need to be re-registered via {{< product-c8y-iot >}} to be associated with a connection and device type.  
 * Assign a device protocol for the LoRa device for payload processing.
 * Decode upstream payload packets using a web-based user interface.
 * Post-process raw device data through {{< product-c8y-iot >}} events.

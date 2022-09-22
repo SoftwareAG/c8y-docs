@@ -8,7 +8,7 @@ aliases:
 ---
 
 {{< c8y-admon-related >}}
-- [Administration > Managing applications](/users-guide/administration/#managing-applications) for more information on managing applications and microservices in {{< product-c8y-iot >}}.
+- [Administration > Managing applications](/users-guide/administration/#managing-applications) for details on  other available applications and information on managing applications in {{< product-c8y-iot >}}.
 {{< /c8y-admon-related >}}
 
 

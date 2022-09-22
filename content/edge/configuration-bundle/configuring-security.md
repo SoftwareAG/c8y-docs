@@ -24,7 +24,7 @@ The Edge appliance is security hardened, by default. Furthermore, there are cert
 5. Specify the following parameters:
 	|<div style="width:100px">Configuration</div>|Category|Parameter|Description
 	|:---|:---|:---|:---
-	|Operating system|SELinux|**SELinux mode**|**permissive**: In the permissive mode, the system acts as if SELinux is enforcing the loaded security policy, including labeling objects and emitting access denial entries in the logs.<br><br>**enforcing**: In enforcing mode SELinux operates normally, enforcing the loaded security policy on the entire system.
+	|Operating system|SELinux|**SELinux mode**|**permissive**: In the permissive mode, the system acts as if SELinux is enforcing the loaded security policy, including labeling objects and emitting access denial entries in the logs.<br><br>**enforcing**: In the enforcing mode, SELinux operates normally, enforcing the loaded security policy on the entire system.
 	||SSH|**SSH enabled**|Enables or disables the SSH functionality of the Edge appliance.
 	||Session inactivity|**Login sessions inactivity timeout (seconds)**|The idle duration before a user session is terminated.
 	||Rsyslog remote logging server||The remote logging server to transfer the local logs to the remote logging server.

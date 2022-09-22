@@ -68,3 +68,14 @@ At the bottom of the list in the **Knowledge Hub** dialog, you can find several 
 * **UPGRADE {{< product-c8y-iot >}}** - View pricing and purchase {{< product-c8y-iot >}}
 
 These options may vary from time to time.
+
+### Turning off
+
+In case you would like to turn off the **Knowledge Hub**:
+
+1. Click the **User** button at the right of the top bar and then click **User Settings**.
+2. In the **Edit user** dialog box click the switch that is called **Enable knowledge hub**.
+
+![Knowledge Hub turning off](/images/users-guide/getting-started/getting-started-knowledge-hub-turning-off.png)
+
+3. Click **Save** to apply your settings.

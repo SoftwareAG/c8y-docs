@@ -74,7 +74,7 @@ These options may vary from time to time.
 In case you would like to turn off the **Knowledge Hub**:
 
 1. Click the **User** button at the right of the top bar and then click **User Settings**.
-2. In the **Edit user** dialog box click the switch that is called **Enable knowledge hub**.
+2. In the **Edit user** dialog box switch the **Enable Knowledge Hub** toggle.
 
 ![Knowledge Hub turning off](/images/users-guide/getting-started/getting-started-knowledge-hub-turning-off.png)
 

@@ -69,7 +69,7 @@ At the bottom of the list in the **Knowledge Hub** dialog, you can find several 
 
 These options may vary from time to time.
 
-### Turning off
+### Turning off the Knowledge Hub
 
 In case you would like to turn off the **Knowledge Hub**:
 

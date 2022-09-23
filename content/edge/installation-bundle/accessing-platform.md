@@ -93,6 +93,14 @@ https://<domain_name>
 
 The Edge appliance login screen appears. Log in with your credentials created during the installation.
 
+- To log in to the {{< management-tenant >}}, prefix the username with *management*:
+  - Username: management/<*Edge admin username*>
+  - Password: password provided during the installation
+
+- To log in to the edge tenant, use the Edge admin credentials or prefix the Edge admin username with *edge*:
+  - Username: edge/<*Edge admin username*>
+  - Password: password provided during the installation
+
 {{< c8y-admon-important >}}
 Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Edge appliance.
 {{< /c8y-admon-important >}}

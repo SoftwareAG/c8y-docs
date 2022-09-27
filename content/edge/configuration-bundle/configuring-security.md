@@ -22,24 +22,27 @@ The Edge appliance is security hardened, by default. Furthermore, there are cert
    You can either import a JSON file to prefill the values or enter the values manually.
 
 6. Specify the following parameters:
-  |<div style="width:100px">Configuration</div>|Category|Parameter|Description
-  |:---|:---|:---|:---
-  |Operating system|SELinux|**SELinux mode**|SELinux secures the operating system from unprivileged actions of confined users. When enabled, SELinux has two modes: permissive and enforcing.<br><br>**permissive**: In the permissive mode, SELinux policy is not enforced. The system remains operational and SELinux does not deny any operations but only logs AVC messages, which can be then used for troubleshooting, debugging, and SELinux policy improvements. Each AVC is logged only once in this case.<br><br>**enforcing**: In the enforcing mode, it enforces the SELinux policy and denies access based on SELinux policy rules.<br><br>Default value: permissive
-  ||SSH|**SSH enabled**|Enables or disables the SSH functionality of the Edge appliance. By default, the SSH functionality is enabled.<br><br>Changing the value to false disables the SSH functionality. When disabled, you will not be able to SSH into the Edge appliance, locally or remotely.<br><br>Default value: True
-  ||Session inactivity|**Login sessions inactivity timeout (seconds)**|The idle duration before a user session is terminated. When configured, the user session terminates after the specified idle duration.<br><br>Default value: 600 seconds<br>Minimum value: 0<br>Maximum value: 4294967295
-  ||Audit logging|**Audit logging enabled**|Enables or disables audit logging. By default, audit logging is disabled. A value of true enables audit logging. Enabling audit logging decreases the disk space.<br><br>Default value: False
-  ||Remote logging|**Audisp remote logging server**|The remote logging server to transfer the audit logs to the remote logging server. By default, the remote logging server is not configured.<br><br> When configured, the audit logs are transferred to the specified remote logging server.
-  |||**Server**|The IP address or the hostname of the destination server.
-  |||**Port**|The port on the destination server.
-  ||Remote logging|**Rsyslog remote logging server**|The remote logging server to transfer the local logs to the remote logging server. By default, the remote logging server is not configured.<br><br> When configured, the local logs are transferred to the specified remote logging server.
-  |||**Server**|The IP address or the hostname of the destination server.
-  |||**Port**|The port on the destination server.
-  |||**Protocol**|The protocol (TCP or UDP) used to transfer the logs.
-  ||Login banner|**Login banner**|The login banner for your Edge appliance.
-  |Kubernetes|Audit policy||Audit policy defines rules about what events should be recorded and what data they should include.
-  |||**Level**|The audit level of the event controls what data is recorded. When configured, the data is logged to the specified audit level. Logging more data decreases the disk space. <br><br>**None** - do not log events.<br>**Metadata** - log request metadata (requesting user, timestamp, resource, verb, etc.) but not request or response body.<br>**Request** - log event metadata and request body but not response body. This does not apply for non-resource requests.<br>**RequestResponse** - log event metadata, request and response bodies. This does not apply for non-resource requests.<br><br>Default value: None
-  |||**Maximum age (days)**|The maximum number of days to retain the old audit log files. A high value has more impact on the disk space.<br><br>Default value: 30 days<br>Minimum value: 0<br>Maximum value: 2147483647
-  |||**Maximum numbers of log files to retain**|The maximum number of audit log files to retain. Setting a value of 0 indicates that there is no restriction on the number of files to retain. A high value has more impact on the disk space.<br><br>Default value: 10 files<br>Minimum value: 0<br>Maximum value: 2147483647
-  |||**Maximum size (megabytes)**|The maximum size in megabytes of the audit log file before it gets rotated. A high value has more impact on the disk space.<br><br>Default value: 100 MB<br>Minimum value: 0<br>Maximum value: 2147483647
-
+    |<div style="width:100px">Configuration</div>|Category|Parameter|Description
+    |:---|:---|:---|:---
+    |Operating system|SELinux|**SELinux mode**|SELinux secures the operating system from unprivileged actions of confined users. When enabled, SELinux has two modes: permissive and enforcing.<br><br>**permissive**: In the permissive mode, SELinux policy is not enforced. The system remains operational and SELinux does not deny any operations but only logs AVC messages, which can be then used for troubleshooting, debugging, and SELinux policy improvements. Each AVC is logged only once in this case.<br><br>**enforcing**: In the enforcing mode, it enforces the SELinux policy and denies access based on SELinux policy rules.<br><br>{{< c8y-admon-important >}}
+  In the enforcing mode, you cannot access the Edge appliance remotely through VNC.<br>{{< /c8y-admon-important >}}<br>Default value: permissive
+    ||SSH|**SSH enabled**|Enables or disables the SSH functionality of the Edge appliance. By default, the SSH functionality is enabled.<br><br>Changing the value to false disables the SSH functionality. When disabled, you will not be able to SSH into the Edge appliance, locally or remotely.<br><br>Default value: True
+    ||Session inactivity|**Login sessions inactivity timeout (seconds)**|The idle duration before a user session is terminated. When configured, the user session terminates after the specified idle duration.<br><br>Default value: 600 seconds<br>Minimum value: 0<br>
+    ||Audit logging|**Audit logging enabled**|Enables or disables audit logging. By default, audit logging is disabled. A value of true enables audit logging. Enabling audit logging increases the consumption of disk space.<br><br>{{< c8y-admon-important >}}
+  Once enabled, you cannot disable the audit logging configuration.
+  {{< /c8y-admon-important >}}<br>Default value: False
+    ||Remote logging|**Audisp remote logging server**|The remote logging server to transfer the audit logs to the remote logging server. By default, the remote logging server is not configured.<br><br> When configured, the audit logs are transferred to the specified remote logging server.
+    |||**Server**|The IP address or the hostname of the destination server.
+    |||**Port**|The port on the destination server.
+    ||Remote logging|**Rsyslog remote logging server**|The remote logging server to transfer the local logs to the remote logging server. By default, the remote logging server is not configured.<br><br> When configured, the local logs are transferred to the specified remote logging server.
+    |||**Server**|The IP address or the hostname of the destination server.
+    |||**Port**|The port on the destination server.
+    |||**Protocol**|The protocol (TCP or UDP) used to transfer the logs.
+    ||Login banner|**Login banner**|The login banner for your Edge appliance.
+    |Kubernetes|Audit policy||Audit policy defines rules about what events should be recorded and what data they should include.
+    |||**Level**|The audit level of the event controls what data is recorded. When configured, the data is logged to the specified audit level. Logging more data increases the consumption of disk space. <br><br>**None** - do not log events.<br>**Metadata** - log request metadata (requesting user, timestamp, resource, verb, etc.) but not request or response body.<br>**Request** - log event metadata and request body but not response body. This does not apply for non-resource requests.<br>**RequestResponse** - log event metadata, request and response bodies. This does not apply for non-resource requests.<br><br>Default value: None
+  |||**Maximum age (days)**|The maximum number of days to retain the old audit log files. A high value has more impact on the disk space.<br><br>Default value: 30 days<br>Minimum value: 0<br>
+      |||**Maximum numbers of log files to retain**|The maximum number of audit log files to retain. Setting a value of 0 indicates that there is no restriction on the number of files to retain. A high value has more impact on the disk space.<br><br>Default value: 10 files<br>Minimum value: 0<br>
+      |||**Maximum size (megabytes)**|The maximum size in megabytes of the audit log file before it gets rotated. A high value has more impact on the disk space.<br><br>Default value: 100 MB<br>Minimum value: 0<br>
+    
 7. Click **Save**.

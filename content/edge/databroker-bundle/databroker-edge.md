@@ -10,6 +10,7 @@ The bundle for installing the Messaging Service and the microservice-based data 
 
 {{< c8y-admon-req >}}
 You need to ensure that microservices are enabled for Edge as both the Messaging Service and data broker run as Kubernetes pods. Running microservices on a basic Edge install requires the number of CPU cores to be increased from 2 to 4 and the RAM to be increased from 6GB to 8GB. Running the Messaging Service and data broker requires an extra 4GB of RAM on top of this.
+{{< /c8y-admon-req >}}
 
 Using SCP, copy the bundle to the /tmp directory on the Edge server - you will need to enter the password for the Edge Linux administrative/login account when prompted. For Example:
 

@@ -359,30 +359,15 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 #### To retrieve and apply a configuration snapshot
 
-{{< c8y-admon-info >}}
-The following steps apply to devices which do not support multiple configuration types. For information on devices that support multiple configuration types, see the section below.
-{{< /c8y-admon-info >}}
+The managing of configurations from and to a device can be done in multiple ways. Depending on user permissions and settings of the device user may be able to work with text based, typed file-based and legacy file-based configurations. More detailed and technical information can be found in the [Device management library](/reference/device-management-library/#configuration).
 
-1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
+#### To retrieve and apply a configuration snapshot to a device which supports typed file-based configurations
 
-The retrieved snapshot can be found in the **Configuration repository**, under **Management** menu in the navigator.
-
-![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
-
-To apply a configuration snapshot to a device:
-
-1. Navigate to the desired device and open its **Configuration** tab.
-2. Under **Configuration snapshot**, select a configuration from the dropdown field.
-3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
-
-![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
-
-#### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
+Typed file-based configurations are the recomended way of hadnling configurations on a device. Here devices can manage multiple configurations at the same time. For different types different configurations can be uploaded/retrieved. The file communication is aslo updated with this approach and handled in a more efficient way.
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Device-supported configurations**, select the desired configuration type and click
-**Get snapshot from device** at the right.
+   **Get snapshot from device** at the right.
 
 Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
 
@@ -404,6 +389,18 @@ To apply a configuration snapshot to a device which supports multiple configurat
 {{< c8y-admon-info >}}
 Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
 {{< /c8y-admon-info >}}
+
+#### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configurations
+
+Devices that want to manage configuration as files can achieve a basic form using legacy file-based configuration. This way only allows one configuration to be set per a device.
+
+![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
+
+#### To retrieve and apply a configuration snapshot to a device which supports typed text-based configurations
+
+The most basic form of configuration is a simple text-based configuration. Here a simple text command can be send or recieved from a device. We recommend you to use this form for small human readable configuration files only.
+
+![Send Text Configuration](/images/users-guide/DeviceManagement/devmgmt-devices-config-text-getnewsnapshot.png)
 
 <a name="credentials"></a>
 ### Managing device credentials

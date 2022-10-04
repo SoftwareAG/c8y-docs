@@ -62,3 +62,18 @@ For more information about developing and hosting a microservice, see [Microserv
 {{< c8y-admon-info >}}
 {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
 {{< /c8y-admon-info >}}
+
+### Deploying microservices with a lower manifest version
+
+A microservice specifies an API version in the microservice manifest. Depending on this API version, the microservice runs with all or only a restricted set of capabilities. More precisely, all capabilities are granted to microservices with API version 1 whereas only the capability `CAP_NET_BIND_SERVICE` is granted to microservices with API version 2. 
+
+By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe a microservice with API version 1 in the edge tenant.
+
+To upload and subscribe a microservice with API version 1 in the edge tenant:
+
+1. Log in to the {{< management-tenant >}}.
+2. Enable the microservice hosting feature.
+3. Go to **Tenants** > **Subtenants** and click the edge tenant.
+4. Go to **Applications** and subscribe to the **Feature-privileged-microservice-hosting** application from the **Available applications**.
+   {{< c8y-admon-info >}} It might take up to ten minutes until the edge tenant is able to upload and subscribe to privileged microservices. {{< /c8y-admon-info >}}
+5. Log in to the edge tenant and upload a microservice with API version 1.

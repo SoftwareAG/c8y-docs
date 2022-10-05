@@ -396,7 +396,7 @@ Devices that want to manage configuration as files can achieve a basic form usin
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
 
-#### To retrieve and apply a configuration snapshot to a device which supports typed text-based configurations
+#### To retrieve and apply a configuration snapshot to a device which supports text-based configuration
 
 The most basic form of configuration is a simple text-based configuration. Here a simple text command can be send or recieved from a device. We recommend you to use this form for small human readable configuration files only.
 

@@ -24,15 +24,15 @@ Substitute the relevant values of `<LOGIN_USERNAME>` and `<DNS_NAME_OF_SERVER>`.
 ssh <LOGIN_USERNAME>@<DNS_NAME_OF_SERVER> -t "/bin/bash -c 'cd /tmp && sudo /opt/c8y/utilities/install_signed_package.sh /tmp/pulsar-edge-install-1015.0.0.tgz"
 ```
 
-You will need to enter the Edge Linux admin account password again followed by the Cumulocity admin account password.
+Enter the Edge Linux admin account password, again followed by the {{< product-c8y-iot >}} admin account password.
 
-To confirm the Messaging Service and data broker are now running, log into the Edge VM using ssh with the connection details used previously and run:
+To confirm the Messaging Service and data broker are now running, log into the Edge VM using SSH with the connection details used previously and run:
 
 ```bash
 sudo kubectl get pods -A
 ```
 
-Which should return something like this:
+The command returns something like this:
 
 ```
 NAMESPACE                NAME                                                             READY   STATUS      RESTARTS   AGE
@@ -54,9 +54,9 @@ kube-system              kube-controller-manager-localhost                      
 kube-system              kube-proxy-92lm6                                                 1/1     Running     0          82m
 kube-system              kube-scheduler-localhost                                         1/1     Running     0          82m
 kube-system              metrics-server-5b78d5f9c6-7l45k                                  1/1     Running     0          82m
-tigera-operator          tigera-operator-76bbbcbc85-6clrf                                 1/1     Running     0          82m```
+tigera-operator          tigera-operator-76bbbcbc85-6clrf                                 1/1     Running     0          82m
 ```
-he key pods that should be running are `pulsar-bookie-0`, `pulsar-broker-0`, `pulsar-zookeeper-0` and `databroker-agent-server`, with a suffix for the pod name specific to the installation. It may take a few minutes for the Kubernetes pods to settle into a running state after the installation has finished.
+The key pods that should be running are `pulsar-bookie-0`, `pulsar-broker-0`, `pulsar-zookeeper-0` and `databroker-agent-server`, with a suffix for the pod name specific to the installation. It may take a few minutes for the Kubernetes pods to settle into a running state after the installation has finished.
 
 For more information on installing and troubleshooting the Messaging Service see the "Messaging Service Installation & operations guide", part of the Cumulocity IoT Platform documentation set available from https://documentation.softwareag.com/ (Software AG Empower login required).
 

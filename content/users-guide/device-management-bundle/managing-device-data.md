@@ -392,7 +392,7 @@ Under **Available supported configurations**, only configuration files with a ma
 
 #### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configurations
 
-Devices that want to manage configuration as files can achieve a basic form using legacy file-based configuration. This way only allows one configuration to be set per a device.
+Devices managing configuration as files can do so in a basic form using legacy file-based configuration. Legacy file-based configuration only allows a single configuration to be set per a device.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
 

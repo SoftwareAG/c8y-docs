@@ -69,7 +69,7 @@ A microservice specifies an API version in the microservice manifest. Depending 
 
 By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the Edge tenant.
 
-To upload and subscribe a microservice with API version 1 in the edge tenant:
+To upload and subscribe to a microservice with API version 1 in the Edge tenant:
 
 1. Log in to the {{< management-tenant >}}.
 2. Enable the microservice hosting feature.

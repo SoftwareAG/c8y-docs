@@ -8,7 +8,7 @@ After a successful installation, you can reconfigure the network and also config
 
 {{< c8y-admon-important >}}
 
-Do not use the below IP addresses in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+Do not use the IP addresses from the below blocks in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
 
 - 10.96.0.0/12 - reserved for Kubernetes service
 - 10.88.0.1/16 - reserved for Podman network

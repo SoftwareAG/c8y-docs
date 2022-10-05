@@ -9,19 +9,19 @@ The microservice-based data broker is an optional component of {{< product-c8y-i
 The bundle for installing the Messaging Service and the microservice-based data broker comes as a `.tgz` file which contains the Messaging Service and data broker files, an install script and a digital signature. This bundle is unpacked, the signature verified and the install script executed by another script that is part of the standard Edge install. The bundle can be downloaded from the [Software AG Empower server](https://empower.softwareag.com/). The bundle is named "Cumulocity IoT Data Broker Edge".
 
 {{< c8y-admon-req >}}
-Ensure that microservices are enabled for Edge as both the Messaging Service and data broker run as Kubernetes pods. Running microservices on a basic Edge installation requires the number of CPU cores to be increased from 2 to 4 and the RAM to be increased from 6GB to 8GB. Running the Messaging Service and data broker requires an extra 4GB of RAM on top of this.
+Ensure that [microservice hosting feature is enabled](https://cumulocity.com/guides/edge/configuration/#configuring-microservices) for Edge as both the Messaging Service and data broker run as Kubernetes pods. Running microservices on a basic Edge installation requires the number of CPU cores to be increased from 2 to 4 and the RAM to be increased from 6GB to 8GB. Running the Messaging Service and data broker requires an extra 4GB of RAM on top of this.
 
 {{< /c8y-admon-req >}}
 
 Using SCP, copy the bundle to the */tmp* directory on the Edge server. Enter the password for the Edge Linux administrative/login account when prompted. For example:
 
 ```bash
-scp C:\Temp\<BUNDLE_NAME> "<LOGIN_USERNAME>@<DNS_NAME_OF_SERVER>:/tmp/<BUNDLE_NAME>"
+scp pulsar-edge-install-1015.0.0.tgz	 "<LOGIN_USERNAME>@<DNS_NAME_OF_SERVER>:/tmp/"
 ```
 
-Substitute the relevant values of `<LOGIN_USERNAME>`, `<DNS_NAME_OF_SERVER>` and `<BUNDLE_NAME>`. Then run:
+Substitute the relevant values of `<LOGIN_USERNAME>` and `<DNS_NAME_OF_SERVER>`. Then run:
 ```bash
-ssh <LOGIN_USERNAME>@<DNS_NAME_OF_SERVER> -t "/bin/bash -c 'cd /tmp && sudo /opt/c8y/utilities/install_signed_package.sh /tmp/<BUNDLE_NAME>"
+ssh <LOGIN_USERNAME>@<DNS_NAME_OF_SERVER> -t "/bin/bash -c 'cd /tmp && sudo /opt/c8y/utilities/install_signed_package.sh /tmp/pulsar-edge-install-1015.0.0.tgz"
 ```
 
 You will need to enter the Edge Linux admin account password again followed by the Cumulocity admin account password.

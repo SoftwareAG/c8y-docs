@@ -4,22 +4,22 @@ title: Installing the Messaging Service and the microservice-based data broker o
 layout: redirect
 ---
 
-The microservice-based data broker is an optional component of {{< product-c8y-iot >}} Edge. The data broker is a {{< product-c8y-iot >}} feature that allows a {{< product-c8y-iot >}} tenant to send data in motion (live measurements, events and alarms), using the standard {{< product-c8y-iot >}} REST API requests, to another tenant as that data arrives in the first tenant. It is often used to 'ship' data from remote Edge {{< product-c8y-iot >}} instances in the field to a central {{< product-c8y-iot >}} instance, where all data from all remote 'field' locations can be seen and handled together. Another use case may be where devices are leased; the devices are managed by the leasing company in its tenant, and the devices' measurements, etc. are sent, via a data broker connection, onto the leasing tenant for application data processing.
+The microservice-based data broker is an optional component of {{< product-c8y-iot >}} Edge. The data broker is a {{< product-c8y-iot >}} feature that allows a {{< product-c8y-iot >}} tenant to send data in motion (live measurements, events and alarms), using the standard {{< product-c8y-iot >}} REST API requests, to another tenant as that data arrives in the first tenant. It is often used to 'ship' data from remote Edge {{< product-c8y-iot >}} instances in the field to a central {{< product-c8y-iot >}} instance, where all data from all remote 'field' locations can be seen and handled together. Another use case is when devices are leased. The devices are managed by the leasing company in its tenant, and the devices' measurements and other data are sent to the leasing tenant via a data broker connection for application data processing.
 
 The bundle for installing the Messaging Service and the microservice-based data broker comes as a `.tgz` file which contains the Messaging Service and data broker files, an install script and a digital signature. This bundle is unpacked, the signature verified and the install script executed by another script that is part of the standard Edge install. The bundle can be downloaded from the [Software AG Empower server](https://empower.softwareag.com/). The bundle is named "Cumulocity IoT Data Broker Edge".
 
 {{< c8y-admon-req >}}
-You need to ensure that microservices are enabled for Edge as both the Messaging Service and data broker run as Kubernetes pods. Running microservices on a basic Edge install requires the number of CPU cores to be increased from 2 to 4 and the RAM to be increased from 6GB to 8GB. Running the Messaging Service and data broker requires an extra 4GB of RAM on top of this.
+Ensure that microservices are enabled for Edge as both the Messaging Service and data broker run as Kubernetes pods. Running microservices on a basic Edge installation requires the number of CPU cores to be increased from 2 to 4 and the RAM to be increased from 6GB to 8GB. Running the Messaging Service and data broker requires an extra 4GB of RAM on top of this.
+
 {{< /c8y-admon-req >}}
 
-Using SCP, copy the bundle to the /tmp directory on the Edge server - you will need to enter the password for the Edge Linux administrative/login account when prompted. For Example:
+Using SCP, copy the bundle to the */tmp* directory on the Edge server. Enter the password for the Edge Linux administrative/login account when prompted. For example:
 
 ```bash
 scp C:\Temp\<BUNDLE_NAME> "<LOGIN_USERNAME>@<DNS_NAME_OF_SERVER>:/tmp/<BUNDLE_NAME>"
 ```
 
-substituting the relevant values of `<LOGIN_USERNAME>`, `<DNS_NAME_OF_SERVER>` and `<BUNDLE_NAME>`. Then run:
-
+Substitute the relevant values of `<LOGIN_USERNAME>`, `<DNS_NAME_OF_SERVER>` and `<BUNDLE_NAME>`. Then run:
 ```bash
 ssh <LOGIN_USERNAME>@<DNS_NAME_OF_SERVER> -t "/bin/bash -c 'cd /tmp && sudo /opt/c8y/utilities/install_signed_package.sh /tmp/<BUNDLE_NAME>"
 ```
@@ -56,8 +56,8 @@ kube-system              kube-scheduler-localhost                               
 kube-system              metrics-server-5b78d5f9c6-7l45k                                  1/1     Running     0          82m
 tigera-operator          tigera-operator-76bbbcbc85-6clrf                                 1/1     Running     0          82m```
 ```
-The key pods that should be running are the `pulsar-bookie-0`, `pulsar-broker-0`, `pulsar-zookeeper-0` and `databroker-agent-server` (with an installation-specific suffix on the pod name). It may take a few minutes for the Kubernetes pods to settle into a Running state after the installation has been done.
+he key pods that should be running are `pulsar-bookie-0`, `pulsar-broker-0`, `pulsar-zookeeper-0` and `databroker-agent-server`, with a suffix for the pod name specific to the installation. It may take a few minutes for the Kubernetes pods to settle into a running state after the installation has finished.
 
 For more information on installing and troubleshooting the Messaging Service see the "Messaging Service Installation & operations guide", part of the Cumulocity IoT Platform documentation set available from https://documentation.softwareag.com/ (Software AG Empower login required).
 
-For more information on configuring and using the microservice-based data broker, see the [Microservice-based data broker](https://cumulocity.com/guides/users-guide/enterprise-tenant/#ms-data-broker) section of the Cumulocity user guide.
+For more information on configuring and using the microservice-based data broker, see [Enterprise tenant > Microservice-based data broker](/users-guide/enterprise-tenant/#ms-data-broker) in the *User guide*.

@@ -75,5 +75,5 @@ To upload and subscribe to a microservice with API version 1 in the Edge tenant:
 2. Enable the microservice hosting feature.
 3. Go to **Tenants** > **Subtenants** and click the edge tenant.
 4. Go to **Applications** and subscribe to the **Feature-privileged-microservice-hosting** application from the **Available applications**.
-   {{< c8y-admon-info >}} It might take up to ten minutes until the edge tenant is able to upload and subscribe to privileged microservices. {{< /c8y-admon-info >}}
+   {{< c8y-admon-info >}} It might take up to ten minutes until the Edge tenant is able to upload and subscribe to privileged microservices. {{< /c8y-admon-info >}}
 5. Log in to the edge tenant and upload a microservice with API version 1.

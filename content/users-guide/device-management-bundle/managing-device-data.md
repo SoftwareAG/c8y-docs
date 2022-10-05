@@ -390,7 +390,7 @@ To apply a configuration snapshot to a device which supports multiple configurat
 Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
 {{< /c8y-admon-info >}}
 
-#### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configurations
+#### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration
 
 Devices managing configuration as files can do so in a basic form using legacy file-based configuration. Legacy file-based configuration only allows a single configuration to be set per a device.
 

@@ -398,7 +398,7 @@ Devices managing configuration as files can do so in a basic form using legacy f
 
 #### To retrieve and apply a configuration snapshot to a device which supports text-based configuration
 
-The most basic form of configuration is a simple text-based configuration. Here a simple text command can be send or recieved from a device. We recommend you to use this form for small human readable configuration files only.
+The most basic form of configuration is text-based configuration. A text command can be sent or received from a device. We recommend you to use text-based configuration for short human readable configuration files only.
 
 ![Send Text Configuration](/images/users-guide/DeviceManagement/devmgmt-devices-config-text-getnewsnapshot.png)
 

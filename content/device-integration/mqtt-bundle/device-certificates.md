@@ -371,21 +371,21 @@ Then the added certificate should be visible:
 ```
 ### Perform a proof of possession
 
-The Cumulocity IoT platform uses X.509 certificates to authenticate end devices.
+{{< product-c8y-iot >}} platform uses X.509 certificates to authenticate end devices.
 The certificates work with a chain of trust: you can create trustworthy subcertificates with a trusted certificate.
 Each certificate consists of a public and a private part.
 Also see asymmetric encryption.
 
-The Cumulocity IoT platform receives the public part of each certificate that is to be used for device authentication.
+{{< product-c8y-iot >}} platform receives the public part of each certificate that is to be used for device authentication.
 The assignment of the device to a tenant is also done by the certificate, since each certificate must be uniquely assigned.
 
 However, since the public part of a certificate (and the subcertificates) is not secret, anyone on the internet theoretically has access to it.
-A potential attacker could upload the public part of a certificate to the Cumulocity IoT platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).
+A potential attacker could upload the public part of a certificate to {{< product-c8y-iot >}} platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).
 
 To ensure verification of ownership by the uploader, a proof of possession is required by the platform.
 
 The steps for the proof of possession are as follows:
-- Upload of the certificate to the platform,
+- Ensure that the certificate has been uploaded properly,
 - Download of the unsigned key,
 - Encryption of the unsigned key by the certificate owner, which makes the key a signed key,
 - Upload of the signed key to the platform,

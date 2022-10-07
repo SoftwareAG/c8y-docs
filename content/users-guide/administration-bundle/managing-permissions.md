@@ -393,6 +393,14 @@ If you try to perform actions without sufficient permissions, an error message w
 
 To help troubleshooting permissions, click the **User** button (showing the current user name) at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
 
+### Performance improvements
+
+Starting from the version 10.13 of the Cumulocity platform several improvements were implemented for users with inventory roles access. In the past slower responses could have been observed on the tenants with big inventory hierarchies. Currently following UI pages should work smoother after switching to new approach:
+* Device Management > Devices > particular device page > tabs including "Info", "Measurements", "Alarms", "Events", "Control" should load and present the data fast
+* Device Management > Devices > All devices, and all similar screens with search for multiple inventory objects 
+* All screens with aggregated alarm views from many devices, if number of alarms in the system is not big. Example screens: Cockpit > Home, Cockpit > Alarms, Device Management > Home
+* Similar for screens with aggregated events and operations from many devices. Example screens: Device Management > Overviews > Events, Device Management > Overviews > Device control
+
 <a name="app-access"></a>
 ### Granting application access
 

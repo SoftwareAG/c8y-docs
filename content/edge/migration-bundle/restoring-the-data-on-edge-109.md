@@ -153,6 +153,6 @@ Next, you must configure the Edge 10.9 appliance. For example, if you had enable
 To enable the microservice hosting feature, the {{< management-tenant >}} user must have the "Tenant Manager" role. Use the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 {{< /c8y-admon-important >}}
 
-If enabling the microservice hosting feature fails, it may be due to the [known issue](https://support.f5.com/csp/article/K18352919) with Kubernetes. After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
+If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
 For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).

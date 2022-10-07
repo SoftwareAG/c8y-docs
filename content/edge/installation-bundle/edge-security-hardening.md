@@ -1,6 +1,6 @@
 ---
 weight: 26
-title: Edge security hardening
+title: Security harden the Edge appliance
 layout: redirect
 ---
 The Edge appliance is security hardened, by default. Furthermore, there are certain security configuration that you can apply to enhance the security of the Edge appliance. To apply the security configuration, see [Security configuration](/edge/configuration/#configuring-security). 

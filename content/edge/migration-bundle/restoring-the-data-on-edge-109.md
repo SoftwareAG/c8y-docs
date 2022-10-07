@@ -62,18 +62,24 @@ mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/cockpit.zip
 mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/devicemanagement.zip
 mongofiles -d management --prefix cmdata get  114 -l /tmp/apps/administration.zip
 mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analytics-app.zip
-
->**Important:** Create a backup of the streaming-analytics-app.zip file separately.
 ```
+{{< c8y-admon-important >}}Create a backup of the streaming-analytics-app.zip file separately.{{< /c8y-admon-important >}}
+
 4. Install the ZIP package using the command:
+
 ```shell
 rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
 ```
+
+If your Edge appliance is not connected to the internet, ensure that the ZIP package is available locally and run the command:
+
+```shell
+rpm -ivh zip-3.0-11.el7.x86_64.rpm
+```
+
 5. Prepare the applications for deployment using the commands:
 
-    {{< c8y-admon-important >}}
-Do not include the *streaming-analytics-app.zip* file in the ZIP package.
-    {{< /c8y-admon-important >}}
+    {{< c8y-admon-important >}}Do not include the *streaming-analytics-app.zip* file in the ZIP package. {{< /c8y-admon-important >}}
 
 ```shell
 UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
@@ -126,13 +132,13 @@ monit restart opcua_mgmt_service_proc
 ```
 12. Restore the Streaming Analytics application.
 
-	- Log in to the {{< management-tenant >}}.
+	- Log in to the {{< management-tenant >}} using the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 
 	- Upload the *streaming-analytics-app.zip* file as a web application.
 
 	- Subscribe the Streaming Analytics application to the edge tenant.
     {{< c8y-admon-important >}}
-    To subscribe the application, you must have the "Tenant Manager" role.
+    To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.
     {{< /c8y-admon-important >}}
 
 	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
@@ -144,7 +150,9 @@ Restoring the Streaming Analytics application completes the migration procedure.
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 
 {{< c8y-admon-important >}}
-To enable the microservice hosting feature, you must have the "Tenant Manager" role.
+To enable the microservice hosting feature, the {{< management-tenant >}} user must have the "Tenant Manager" role. Use the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 {{< /c8y-admon-important >}}
+
+If enabling the microservice hosting feature fails, it may be due to the [known issue](https://support.f5.com/csp/article/K18352919) with Kubernetes. After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
 For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).

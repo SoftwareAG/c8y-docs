@@ -65,13 +65,13 @@ mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analyti
 ```
 {{< c8y-admon-important >}}Create a backup of the streaming-analytics-app.zip file separately.{{< /c8y-admon-important >}}
 
-4. Install the ZIP package using the command:
+4. Install the RPM package using the command:
 
 ```shell
 rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
 ```
 
-If your Edge appliance is not connected to the internet, ensure that the ZIP package is available locally and run the command:
+If your Edge appliance is not connected to the internet, ensure that the RPM package is available locally and run the command:
 
 ```shell
 rpm -ivh zip-3.0-11.el7.x86_64.rpm

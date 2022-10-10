@@ -363,7 +363,7 @@ Managing configurations, that is requesting a configuration from a device and se
 
 #### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration
 
-We recommend you to use typed file-based configuration. With typed file-based configuration, devices can manage multiple configurations at the same time. You can upload or retrieve different configurations for different types. Using this approach is considered to be more versatile because instead of files the configurations are handled as events, which can give more efficiency.
+We recommend you to use typed file-based configuration. With typed file-based configuration, devices can manage multiple configurations at the same time. You can upload or retrieve different configurations for different types. Using this approach is more versatile because the configurations are handled as events rather than as files, which is more efficient.
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Device-supported configurations**, select the desired configuration type and click

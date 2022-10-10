@@ -35,7 +35,7 @@ In the enforcing mode, you cannot access the Edge appliance remotely through VNC
     ||SSH|**SSH enabled**|Enables or disables the SSH functionality of the Edge appliance. By default, the SSH functionality is enabled.<br><br>Changing the value to false disables the SSH functionality. When disabled, you will not be able to SSH into the Edge appliance, locally or remotely.<br><br>Default value: True
     ||Session inactivity|**Login sessions inactivity timeout (seconds)**|The idle duration before a user session is terminated. When configured, the user session terminates after the specified idle duration.<br><br>Default value: 600 seconds<br>Minimum value: 0<br>
     ||Audit logging|**Audit logging enabled**|Enables or disables audit logging. By default, audit logging is disabled. A value of true enables audit logging. Enabling audit logging increases the consumption of disk space.<br><br>{{< c8y-admon-important >}}
-    Once enabled, you cannot disable the audit logging configuration.
+Once enabled, you cannot disable the audit logging configuration.
     {{< /c8y-admon-important >}}<br>Default value: False
     ||Remote logging|**Audisp remote logging server**|The remote logging server to transfer the audit logs to the remote logging server. By default, the remote logging server is not configured.<br><br> When configured, the audit logs are transferred to the specified remote logging server.
     |||**Server**|The IP address or the hostname of the destination server.

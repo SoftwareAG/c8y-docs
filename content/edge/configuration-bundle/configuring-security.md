@@ -7,7 +7,7 @@ layout: redirect
 The Edge appliance is security hardened by default.
 Furthermore, there are certain security configurations that you can apply to enhance the security of the Edge appliance.
 
-{{< c8y-admon-important >}}For information about Deployment seurity best practices and Tenant administration security configuration guidelines, see [Security Hardening Guidelines](/files/edge/10-13-0_Security_Hardening_Guidelines_guide.pdf).{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}For information about Deployment seurity best practices and Tenant administration security configuration guidelines, see <a href="/files/edge/10-13-0_Security_Hardening_Guidelines_guide.pdf" target="_blank">Security Hardening Guidelines</a>{{< /c8y-admon-important >}}
 
 To apply the security configuration, follow the steps below: 
 

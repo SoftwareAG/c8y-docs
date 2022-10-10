@@ -7,7 +7,12 @@ layout: redirect
 After a successful installation, you can reconfigure the network and also configure the network CIDR.
 
 {{< c8y-admon-important >}}
-Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+
+Do not use the IP addresses from the below blocks in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+
+- 10.96.0.0/12 - reserved for Kubernetes service
+- 10.88.0.1/16 - reserved for Podman network
+
 {{< /c8y-admon-important >}}
 
 ### Configuring the network using the UI

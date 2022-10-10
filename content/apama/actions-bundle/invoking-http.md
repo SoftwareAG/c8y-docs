@@ -4,7 +4,7 @@ title: Invoking HTTP services
 layout: redirect
 ---
 
-To interact with HTTP services using REST and JSON, create an `HttpTransport` instance using one of the factory methods:
+To interact with HTTP services using REST and JSON, create a `com.softwareag.connectivity.httpclient.HttpTransport` instance using one of the factory methods:
 
 * HttpTransport.getOrCreate(string host, integer port) returns HttpTransport
 * HttpTransport.getOrCreateWithConfiguration(string host, integer port, dictionary &lt;string, string&gt; configurations) returns HttpTransport (the keys in the configurations dictionary are the constants on HttpTransport with the `CONFIG_` prefix)

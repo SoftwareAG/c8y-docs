@@ -107,7 +107,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
 
     Here:
-     - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your 10.9 appliance.
+     - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your Edge 10.9 appliance.
 
     For example:
     mongorestore --drop --db edge /home/admin/migration_data/edge/

@@ -65,7 +65,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
     >**Important:** Create a backup of the streaming-analytics-app.zip file separately.
 
-4. Install the RPM package using the command:
+4. Install the RPM package by using the following command:
 
     ```shell
     rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm

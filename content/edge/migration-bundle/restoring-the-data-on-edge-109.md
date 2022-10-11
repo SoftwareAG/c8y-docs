@@ -13,7 +13,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
    Copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance.
 
-2. Backup the web applications in the Edge 10.9 appliance. To do this, you must first detect the IDs of the applications using the command:
+2. Backup the web applications in the Edge 10.9 appliance. To do this, first detect the IDs of the applications by using the following command:
 
     ```shell
     mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq

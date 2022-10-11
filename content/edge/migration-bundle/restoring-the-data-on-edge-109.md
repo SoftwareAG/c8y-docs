@@ -77,7 +77,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     rpm -ivh zip-3.0-11.el7.x86_64.rpm
     ```
 
-5. Prepare the applications for deployment using the commands:
+5. Prepare the applications for deployment by using the following commands:
 
    >**Important:** Do not include the *streaming-analytics-app.zip* file in the ZIP package.
 

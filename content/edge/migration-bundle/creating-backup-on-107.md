@@ -12,24 +12,21 @@ Before you back up the data, ensure that there is sufficient disk space to save 
 
 1. Run the following command to stop monitoring all the processes:
 
-```shell
-monit unmonitor all
-```
-
+    ```shell
+    monit unmonitor all
+    ```
 2. Stop the Karaf process using the command:
 
-```shell
-sudo service cumulocity-core-karaf stop
-```
+    ```shell
+    sudo service cumulocity-core-karaf stop
+    ```
+3. Create a backup of the MongoDB database using the commands:
 
-2. Create a backup of the MongoDB database using the commands:
+    ```shell
+    mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies the location of the backup.
+    mongodump --db=edge --out OUTPUT_DIRECTORY
+    mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.    ```
 
-```shell
-mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies the location of the backup.
-mongodump --db=edge --out OUTPUT_DIRECTORY
-mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
-```
-
-3. Note down the device ID of your Edge 10.7 appliance available at `/usr/edge/properties/edge-agent/device-id`.
-4. Create a backup of the `/etc/opcua` directory.
-5. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
+4. Note down the device ID of your Edge 10.7 appliance available at `/usr/edge/properties/edge-agent/device-id`.
+5. Create a backup of the `/etc/opcua` directory.
+6. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.

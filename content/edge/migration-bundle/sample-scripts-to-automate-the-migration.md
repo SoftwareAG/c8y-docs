@@ -29,7 +29,7 @@ layout: redirect
     ```
 2. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
-3. Run the `backup.sh` as a **root** user.
+3. Run the `backup.sh` as a root user.
 
    You can also run the script with the parameters:
    - OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.

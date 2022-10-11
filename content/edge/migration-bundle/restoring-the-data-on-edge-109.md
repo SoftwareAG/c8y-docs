@@ -129,7 +129,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
 10. Copy the */var/lib/cumulocity-agent/credentials* file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 
-11. Restart the services using the commands:
+11. Restart the services by using the following commands:
 
     ```shell
     systemctl restart cumulocity-agent

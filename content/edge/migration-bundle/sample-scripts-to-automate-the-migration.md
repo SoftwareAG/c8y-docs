@@ -22,7 +22,7 @@ layout: redirect
     ```shell
     monit unmonitor all
     ```
-2. Stop the Karaf process using the command:
+2. Stop the Karaf process by using the following command:
 
     ```shell
     sudo service cumulocity-core-karaf stop

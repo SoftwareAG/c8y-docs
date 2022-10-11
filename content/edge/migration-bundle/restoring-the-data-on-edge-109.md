@@ -115,7 +115,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     mongorestore --drop --db docker /home/admin/migration_data/docker/
     ```
 
-8. Restore the web applications of the Edge 10.9 appliance using the command:
+8. Restore the web applications of the Edge 10.9 appliance by using the following command:
 
     ```shell
     chown -R karaf:karaf /webapps/

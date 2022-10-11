@@ -10,9 +10,11 @@ layout: redirect
 
 For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
-- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi)
-- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation)
-- [https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v)
+- [Operating Cumulocity IoT Edge > Upgrading on VMware ESX](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi),
+- [Operating Cumulocity IoT Edge > Upgrading on VMware Workstation Player](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation),
+- [Operating Cumulocity IoT Edge > Upgrading on Hyper-V](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v)
+
+in the *10.7.0 Cumulocity IoT Edge guide*.
 
 To migrate from Edge 10.7 to 10.9, you must:
 - first back up the data on Edge 10.7

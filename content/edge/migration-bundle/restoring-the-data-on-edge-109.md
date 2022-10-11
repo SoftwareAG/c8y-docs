@@ -153,7 +153,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
 	- Log in to the Edge tenant and verify the Streaming Analytics application.
 
-Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from Edge 10.9 installation are removed after the migration is successful. You will now be able to log in using the Edge 10.7 user credentials.
+Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from the Edge 10.9 installation are removed after the successful migration. You are now be able to log in using the Edge 10.7 user credentials.
 
 Next, configure the Edge 10.9 appliance. For example, if you enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 

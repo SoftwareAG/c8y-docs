@@ -9,7 +9,7 @@ layout: redirect
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
 - [restore_analytics.sh](/files/edge/restore_analytics.sh) - restores the Streaming Analytics application.
 
->**IMPORTANT:** {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
+>**Important:** {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
 
 ### Using the scripts
 

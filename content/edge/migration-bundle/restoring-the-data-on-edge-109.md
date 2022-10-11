@@ -145,7 +145,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
 	- Upload the *streaming-analytics-app.zip* file as a web application.
 
-	- Subscribe the Streaming Analytics application to the edge tenant.
+	- Subscribe the Streaming Analytics application to the Edge tenant.
 
       >**Important:** To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.
 

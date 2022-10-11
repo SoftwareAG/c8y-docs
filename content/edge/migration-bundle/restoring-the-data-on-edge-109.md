@@ -90,7 +90,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     chown karaf:karaf $UI_VERSION.zip
     ```
 
-6. Restore the device ID of the Edge 10.7 appliance using the commands:
+6. Restore the device ID of the Edge 10.7 appliance by using the following commands:
 
     ```shell
     DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"

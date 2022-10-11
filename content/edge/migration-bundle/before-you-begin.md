@@ -16,7 +16,8 @@ For information about upgrading from an earlier version to {{< product-c8y-iot >
 
 in the *10.7.0 Cumulocity IoT Edge guide*.
 
-To migrate from Edge 10.7 to 10.9, you must:
-- first back up the data on Edge 10.7
-- move the backup to Edge 10.9
-- restore the data on Edge 10.9
+To migrate from Edge 10.7 to 10.9:
+
+- back up the data on Edge 10.7,
+- move the backup to Edge 10.9,
+- restore the data on Edge 10.9.

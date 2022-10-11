@@ -395,11 +395,13 @@ To help troubleshooting permissions, click the **User** button (showing the curr
 
 ### Performance improvements
 
-Starting from the version 10.13 of the Cumulocity platform several improvements were implemented for users with inventory roles access. In the past slower responses could have been observed on the tenants with big inventory hierarchies. Currently following UI pages should work smoother after switching to new approach:
-* Device Management > Devices > particular device page > tabs including "Info", "Measurements", "Alarms", "Events", "Control" should load and present the data fast
-* Device Management > Devices > All devices, and all similar screens with search for multiple inventory objects 
-* All screens with aggregated alarm views from many devices, if number of alarms in the system is not big. Example screens: Cockpit > Home, Cockpit > Alarms, Device Management > Home
-* Similar for screens with aggregated events and operations from many devices. Example screens: Device Management > Overviews > Events, Device Management > Overviews > Device control
+Starting with version 10.13 of the {{< product-c8y-iot >}} platform, several improvements have been implemented for users with inventory roles access.
+In earlier versions responses were slow for tenants with large inventory hierarchies.
+The following UI pages have an improved performance after updating to version 10.16:
+* In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
+* Pages displaying lists of inventory objects, such as [All devices](/users-guide/device-management/#viewing-devices).
+* Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
+* Pages with aggregated events and operations from multiple devices, for example, Device Management > Overviews > Events and Device Management > Overviews > Device control.
 
 <a name="app-access"></a>
 ### Granting application access

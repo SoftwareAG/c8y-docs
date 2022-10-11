@@ -31,25 +31,23 @@ Before the data back up, ensure that there is sufficient disk space to save the 
     ```shell
     sudo service cumulocity-core-karaf stop
     ```
-2. Copy the `backup.sh` script to your Edge 10.7 appliance.
+3. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
-3. Run the `backup.sh` as a root user.
+4. Run the `backup.sh` as a root user.
 
    You can also run the script with the parameters:
    - OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
    - ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
 
-    {{< c8y-admon-info >}}
-    If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
-    {{< /c8y-admon-info >}}
-
+    {{< c8y-admon-info >}}If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.{{< /c8y-admon-info >}}
+   
     For example:
     ```shell
     ./backup.sh /home/admin/
     ```
    The script creates a ZIP archive file with the migration data in the OUTPUT_DIRECTORY.
-
-4. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
+   
+5. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
 
 #### In 10.9 appliance
 

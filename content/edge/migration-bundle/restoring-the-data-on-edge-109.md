@@ -67,11 +67,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analytics-app.zip
     ```
 
-    {{< c8y-admon-important >}} 
-
-    Create a backup of the streaming-analytics-app.zip file separately.
-
-    {{< /c8y-admon-important >}}
+    {{< c8y-admon-important >}} Create a backup of the streaming-analytics-app.zip file separately.{{< /c8y-admon-important >}}
 
 4. Install the RPM package by using the following command:
 
@@ -87,7 +83,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
 5. Prepare the applications for deployment by using the following commands:
 
-   {{< /c8y-admon-important >}}
+   {{< c8y-admon-important >}}
 
    Do not include the *streaming-analytics-app.zip* file in the ZIP package.
    
@@ -159,7 +155,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
 	- Subscribe the Streaming Analytics application to the Edge tenant.
 
-      >**Important:** To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.
+      {{< c8y-admon-important >}} To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.{{< /c8y-admon-important >}}
 
 	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
 

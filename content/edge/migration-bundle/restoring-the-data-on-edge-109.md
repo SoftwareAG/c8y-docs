@@ -101,7 +101,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     systemctl restart edge-agent
     ```
 
-7. Restore the MongoDB collections from the Edge 10.7 appliance using the command:
+7. Restore the MongoDB collections from the Edge 10.7 appliance by using the following command:
 
     ```shell
     mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION

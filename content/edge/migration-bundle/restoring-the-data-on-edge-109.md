@@ -46,7 +46,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     }
     ```
 
-3. Download the web applications using the ID of the application using the command:
+3. Download the web applications using the ID of the application by using the following command:
 
     ```shell
     mkdir -p /tmp/apps/

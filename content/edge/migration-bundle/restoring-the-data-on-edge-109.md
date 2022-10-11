@@ -71,7 +71,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
     ```
 
-    If your Edge appliance is not connected to the internet, ensure that the RPM package is available locally and run the command:
+    If your Edge appliance is not connected to the internet, ensure that the RPM package is available locally and run the following command:
 
     ```shell
     rpm -ivh zip-3.0-11.el7.x86_64.rpm

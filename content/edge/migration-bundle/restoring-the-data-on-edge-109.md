@@ -139,7 +139,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     monit restart opcua_mgmt_service_proc
     ```
 
-12. Restore the Streaming Analytics application.
+12. Restore the Streaming Analytics application by following these steps:
 
 	- Log in to the {{< management-tenant >}} using the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 

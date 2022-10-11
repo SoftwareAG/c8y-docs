@@ -18,7 +18,7 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
     ```shell
     sudo service cumulocity-core-karaf stop
     ```
-3. Create a backup of the MongoDB database using the commands:
+3. Create a backup of the MongoDB database by using the following commands:
 
     ```shell
     mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies the location of the backup.

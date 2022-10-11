@@ -9,7 +9,7 @@ To restore the data, you must first copy the MongoDB backup from the Edge 10.7 a
 
 Perform the following steps as a root user in your Edge 10.9 appliance.
 
-1. Copy the backup folders from your Edge 10.7 appliance to Edge 10.9 appliance using any file transfer tool like WINSCP, SCP, or FTP.
+1. Copy the backup folders from your Edge 10.7 appliance to the Edge 10.9 appliance using any file transfer tool, such as WINSCP, SCP, or FTP.
 
    You can copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance.
 

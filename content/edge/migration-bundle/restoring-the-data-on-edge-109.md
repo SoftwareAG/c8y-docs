@@ -7,7 +7,7 @@ To restore the data, you must first copy the MongoDB backup from the Edge 10.7 a
 
 >**Important:** Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
 
-Perform these steps as **root** user in your Edge 10.9 appliance.
+Perform the following steps as a root user in your Edge 10.9 appliance.
 
 1. Copy the backup folders from your Edge 10.7 appliance to Edge 10.9 appliance using any file transfer tool like WINSCP, SCP, or FTP.
 

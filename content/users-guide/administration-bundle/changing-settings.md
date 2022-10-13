@@ -249,7 +249,20 @@ In order to use the single sign-on feature for {{< enterprise-tenant >}}s, the e
 
 To enable the feature, the administrator must configure a connection with the authorization server. This is done in the Administration application.
 
-Click the **Single sign-on** tab in the **Authentication** page.
+##### Configuration access
+
+SSO configurations can be configured to be exclusively accessible by the {{< management-tenant >}}, thus preventing other tenants from accessing the configurations.
+Users of such tenants will be unable to update the configuration. This removes the risk of an incorrectly configured SSO, which can prevent other users from login via SSO.
+The {{< management-tenant >}} can grant or restrict access to SSO configurations for specific tenants, by assigning the following option to the tenants:
+
+- category: `sso`
+- key: `auth.sso.config.access.only.for.management`
+
+With this option enabled (set to `true`), when a tenant tries to access an SSO configuration which is only accessible by the {{< management-tenant >}}, the access for that particular tenant is denied.
+
+##### Configuration view
+
+Click the **Single sign-on** tab (this tab is only shown for tenants which have access to the SSO configuration) in the **Authentication** page.
 
 At the top left, you can select a template. The selected option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 

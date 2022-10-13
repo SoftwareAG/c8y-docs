@@ -397,7 +397,7 @@ To help troubleshooting permissions, click the **User** button (showing the curr
 
 Starting with version 10.13 of the {{< product-c8y-iot >}} platform, several improvements have been implemented for users with inventory roles access.
 In earlier versions responses were slow for tenants with large inventory hierarchies.
-The following UI pages have an improved performance after updating to version 10.16:
+The following UI pages have an improved performance after updating to version {{< c8y-current-version >}}:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
 * Pages displaying lists of inventory objects, such as [All devices](/users-guide/device-management/#viewing-devices).
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.

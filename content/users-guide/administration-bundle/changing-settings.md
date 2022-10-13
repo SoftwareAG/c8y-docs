@@ -262,7 +262,8 @@ With this option enabled (set to `true`), when a tenant tries to access an SSO c
 
 ##### Configuration view
 
-Click the **Single sign-on** tab (this tab is only shown for tenants which have access to the SSO configuration) in the **Authentication** page.
+Click the **Single sign-on** tab in the **Authentication** page.
+Note that the tab is only visible for tenants which have access to the SSO configuration. 
 
 At the top left, you can select a template. The selected option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 

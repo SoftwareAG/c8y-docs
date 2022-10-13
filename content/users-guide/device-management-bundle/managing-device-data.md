@@ -359,30 +359,15 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 #### To retrieve and apply a configuration snapshot
 
-{{< c8y-admon-info >}}
-The following steps apply to devices which do not support multiple configuration types. For information on devices that support multiple configuration types, see the section below.
-{{< /c8y-admon-info >}}
+Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Device management library > Configuration](/reference/device-management-library/#configuration) in the *Reference guide* for more detailed and technical information.
 
-1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
+#### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration
 
-The retrieved snapshot can be found in the **Configuration repository**, under **Management** menu in the navigator.
-
-![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
-
-To apply a configuration snapshot to a device:
-
-1. Navigate to the desired device and open its **Configuration** tab.
-2. Under **Configuration snapshot**, select a configuration from the dropdown field.
-3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
-
-![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
-
-#### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
+We recommend you to use typed file-based configuration. With typed file-based configuration, devices can manage multiple configurations at the same time. You can upload or retrieve different configurations for different types. Using this approach is more versatile because the configurations are handled as events rather than as files, which is more efficient.
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Device-supported configurations**, select the desired configuration type and click
-**Get snapshot from device** at the right.
+   **Get snapshot from device** at the right.
 
 Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
 
@@ -404,6 +389,18 @@ To apply a configuration snapshot to a device which supports multiple configurat
 {{< c8y-admon-info >}}
 Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
 {{< /c8y-admon-info >}}
+
+#### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration
+
+Devices managing configuration as files can do so in a basic form using legacy file-based configuration. Legacy file-based configuration only allows a single configuration to be set per a device.
+
+![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
+
+#### To retrieve and apply a configuration snapshot to a device which supports text-based configuration
+
+The most basic form of configuration is text-based configuration. A text command can be sent or received from a device. We recommend you to use text-based configuration for short human readable configuration files only.
+
+![Send Text Configuration](/images/users-guide/DeviceManagement/devmgmt-devices-config-text-getnewsnapshot.png)
 
 <a name="credentials"></a>
 ### Managing device credentials

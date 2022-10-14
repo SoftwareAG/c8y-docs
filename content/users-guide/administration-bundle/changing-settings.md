@@ -328,7 +328,7 @@ In this case the following claim will match the condition:
  }
  ```
 
-As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
+There is an option to verify that a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
 By default, configuration for dynamic access mapping is selected: **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared** This means, that dynamic access mapping assigns user roles, based on the access token, on every user login, so it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login.
 To change this behaviour, select one of the following radio button at the bottom of the **Access mapping** section. :

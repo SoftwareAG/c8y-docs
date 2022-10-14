@@ -401,7 +401,7 @@ The following UI pages have an improved performance after updating to version {{
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
 * Pages displaying lists of inventory objects, such as [All devices](/users-guide/device-management/#viewing-devices).
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
-* Pages with aggregated events and operations from multiple devices, for example, Device Management > Overviews > Events and Device Management > Overviews > Device control.
+* Pages with aggregated events and operations from multiple devices, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events) and [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
 
 <a name="app-access"></a>
 ### Granting application access

@@ -334,10 +334,14 @@ By default, the configuration for dynamic access mapping is selected: **Roles se
 This means that dynamic access mapping assigns user roles, based on the access token, on every user login.
 It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login.
 To change this behavior, select one of the following radio buttons at the bottom of the **Access mapping** section:
+
 * **Use dynamic access mapping only on user creation**
-  * When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated.
+
+  When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
+  
 * **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged**
-  * When selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
+
+  When selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
 
 ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 

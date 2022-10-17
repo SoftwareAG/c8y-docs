@@ -403,7 +403,7 @@ The following UI pages have an improved performance after updating to version {{
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
 * Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events).
 
-New approach is disabled by default and needs to be switched on the tenant level using tenant option (see the Release notes for details).
+The improvements are disabled by default in version {{< c8y-current-version >}}. Activate them on tenant level by using the tenant option. See the relevant [10.13.0 release notes entry](https://cumulocity.com/releasenotes/release-10-13-0/whatsnew-10-13-0/#inventory-roles-performance-improvement) for details.
 
 <a name="app-access"></a>
 ### Granting application access

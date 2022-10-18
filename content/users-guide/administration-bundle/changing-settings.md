@@ -328,13 +328,24 @@ In this case the following claim will match the condition:
  }
  ```
 
-As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
+There is an option to verify that a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
-By default, dynamic access mapping assigns user roles, based on the access token, on every user login. This means, that it is not possible to change the user roles inside {{< product-c8y-iot >}} as these would be overridden on next user login. To change this behaviour, select the **Use dynamic access mapping only on user creation** checkbox at the bottom of the **Access mapping** section.
+By default, the configuration for dynamic access mapping is selected: **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**.
+This means that dynamic access mapping assigns user roles, based on the access token, on every user login.
+It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login.
+To change this behavior, select one of the following radio buttons at the bottom of the **Access mapping** section:
+
+* **Use dynamic access mapping only on user creation**
+
+  When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
+  
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged**
+
+  When selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
 
 ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
-When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overridden nor updated. Selecting this option also enables admins to edit roles of SSO users in the user management. For details, refer to  [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
+Selecting one of the two options mentioned above will also enable admins to edit roles of SSO users in the user management. For details, refer to [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).

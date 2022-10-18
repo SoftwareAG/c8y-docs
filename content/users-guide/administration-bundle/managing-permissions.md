@@ -377,16 +377,24 @@ If you try to perform actions without sufficient permissions, an error message w
 
 To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
 
-### Performance improvements
+### Improving the performance
 
-Starting with version 10.13 of the {{< product-c8y-iot >}} platform, several improvements have been implemented for users with inventory roles access.
-In earlier versions responses were slow for tenants with large inventory hierarchies.
-The following UI pages have an improved performance after updating to version {{< c8y-current-version >}}:
+As an administrator, you can optimize the UI performance for users with inventory roles access and particularly speed up requests for tenants with large inventory hierarchies.
+
+This performance feature can be enabled:
+- on platform level via the configuration file (see the *{{< product-c8y-iot >}} - Operations guide* for details).
+- on tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where LEGACY is the global default.
+  
+The option looks like the following in the REST API: 
+
+`{"category": "configuration", "key": "acl.algorithm-version", "value": "OPTIMIZED"}`
+
+The performance of the following UI pages can be improved by this option:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events**.
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
 * Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events).
 
-The improvements are disabled by default in version {{< c8y-current-version >}}. Activate them on tenant level by using the tenant option. See the relevant [release notes entry](https://cumulocity.com/releasenotes/release-10-13-0/whatsnew-10-13-0/#inventory-roles-performance-improvement) for details.
+By default, this option is disabled.
 
 <a name="app-access"></a>
 ### Granting application access

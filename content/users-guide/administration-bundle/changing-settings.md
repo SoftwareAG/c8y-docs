@@ -253,12 +253,7 @@ To enable the feature, the administrator must configure a connection with the au
 
 SSO configurations can be configured to be exclusively accessible by the {{< management-tenant >}}, thus preventing other tenants from accessing the configurations.
 Users of such tenants are unable to update the configuration. This removes the risk of an incorrectly configured SSO, which can prevent other users from logging in via SSO.
-The {{< management-tenant >}} can grant or restrict access to SSO configurations for specific tenants, by assigning the following option to the tenants:
-
-- category: `sso`
-- key: `auth.sso.config.access.only.for.management`
-
-With this option enabled (set to `true`), when a tenant tries to access an SSO configuration which is only accessible by the {{< management-tenant >}}, the access for that particular tenant is denied.
+The {{< management-tenant >}} can grant or restrict access to SSO configurations for specific tenants. 
 
 ##### Configuration view
 

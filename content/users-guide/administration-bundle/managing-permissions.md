@@ -382,7 +382,7 @@ To help troubleshooting permissions, click the **User** button at the right of t
 As an administrator, you can optimize the UI performance for users with inventory roles access and particularly speed up requests for tenants with large inventory hierarchies.
 
 This performance feature can be enabled:
-- on platform level via the configuration file (see the *{{< product-c8y-iot >}} - Operations guide* for details).
+- on platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
 - on tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where LEGACY is the global default.
   
 The option looks like the following in the REST API: 

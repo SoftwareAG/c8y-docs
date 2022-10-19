@@ -390,7 +390,7 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 
 The following sanitization options can be selected:
- - strict - Does not allow any JS or angularjsj directives.
+ - strict - Does not allow any JS or angularjs directives.
  - lax (default) - Allows partly JS (events) and all angularjs directives.
  - none - Allows everything.
 
@@ -539,7 +539,7 @@ The "SCADA" widget provides a graphic representation of the status of a device.
 For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
 
 The following sanitization options can be selected:
- - strict - Does not allow any JS or angularjsj directives.
+ - strict - Does not allow any JS or angularjs directives.
  - lax (default) - Allows partly JS (events) and all angularjs directives.
  - none - Allows everything.
 

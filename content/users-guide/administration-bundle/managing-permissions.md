@@ -385,11 +385,13 @@ This performance feature can be enabled:
 - on platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
 - on tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where LEGACY is the global default.
   
-The option looks like the following in the REST API: 
+The option looks like the following in the REST API (see also the [{{< openapi >}}](https://cumulocity.com/api/10.13.0/#operation/postOptionCollectionResource): 
 
 `{"category": "configuration", "key": "acl.algorithm-version", "value": "OPTIMIZED"}`
 
-The performance of the following UI pages can be improved by this option:
+The setting on tenant level has priority over the setting on platform level.
+
+The performance of the following UI pages will be improved when this option is enabled:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events**.
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
 * Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events).

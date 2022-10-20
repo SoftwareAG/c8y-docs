@@ -29,10 +29,10 @@ The Edge appliance must be connected to the internet to install the VNC componen
 2. After installing the VNC components, log in as a root user and add the *vnc-server* service to the *firewalld* firewall. For example, the following commands add the *vnc-server* to the *firewalld* with the zone set to public:
 
    `[root@iot-edge-server ~]# firewall-cmd --zone=public --permanent --add-service=vnc-server`
-    
+   
    `[root@iot-edge-server ~]# firewall-cmd --reload`
 
-    {{< c8y-admon-info >}}These are example commands and may vary based on your requirements.{{< /c8y-admon-info >}}
+    {{< c8y-admon-info >}}These are sample commands and may vary based on your requirements.{{< /c8y-admon-info >}}
 
 ### Step 2: Configuring VNC server for a user
 

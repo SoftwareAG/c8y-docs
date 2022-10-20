@@ -393,15 +393,27 @@ If you try to perform actions without sufficient permissions, an error message w
 
 To help troubleshooting permissions, click the **User** button (showing the current user name) at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/welcome/contacting-support/) can help in fixing the permissions.
 
-### Performance improvements
+### Improving the performance
 
-Starting with version 10.13 of the {{< product-c8y-iot >}} platform, several improvements have been implemented for users with inventory roles access.
-In earlier versions responses were slow for tenants with large inventory hierarchies.
-The following UI pages have an improved performance after updating to version {{< c8y-current-version >}}:
+The {{< product-c8y-iot >}} platform now has optimized UI performance for users with inventory roles access. In particular, requests for tenants with large inventory hierarchies are faster.
+
+The performance of the following UI pages is improved:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
-* Pages displaying lists of inventory objects, such as [All devices](/users-guide/device-management/#viewing-devices).
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
-* Pages with aggregated events and operations from multiple devices, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events) and [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
+* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events).
+* Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
+
+As an administrator, you can switch back to the previous solution and this improved performance feature will be disabled:
+- on platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
+- on tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where OPTIMIZED is the global default.
+
+The option looks like the following in the REST API (see also the [{{< openapi >}}](https://cumulocity.com/api/10.16.0/#operation/postOptionCollectionResource)):
+
+`{"category": "configuration", "key": "acl.algorithm-version", "value": "LEGACY"}`
+
+The setting on tenant level has priority over the setting on platform level.
+
+By default, this option is enabled.
 
 <a name="app-access"></a>
 ### Granting application access

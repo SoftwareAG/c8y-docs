@@ -9,16 +9,16 @@ layout: redirect
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
 - [restore_analytics.sh](/files/edge/restore_analytics.sh) - restores the Streaming Analytics application.
 
-{{< c8y-admon-important >}}
-{{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.
-{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}} {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.{{< /c8y-admon-important >}}
 
 ### Using the scripts
 
 #### In 10.7 appliance
 
 {{< c8y-admon-important >}}
-Before you back up the data, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
+
+Before the data back up, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
+
 {{< /c8y-admon-important >}}
 
 1. Run the following command to stop monitoring all the processes:
@@ -26,28 +26,28 @@ Before you back up the data, ensure that there is sufficient disk space to save 
     ```shell
     monit unmonitor all
     ```
-2. Stop the Karaf process using the command:
+2. Stop the Karaf process by using the following command:
 
     ```shell
     sudo service cumulocity-core-karaf stop
     ```
-2. Copy the `backup.sh` script to your Edge 10.7 appliance.
+3. Copy the `backup.sh` script to your Edge 10.7 appliance.
 
-3. Run the `backup.sh` as a **root** user.
+4. Run the `backup.sh` as a root user.
 
    You can also run the script with the parameters:
    - OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
    - ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
 
-    >**Info:** If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.
-
+    {{< c8y-admon-info >}}If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.{{< /c8y-admon-info >}}
+   
     For example:
     ```shell
     ./backup.sh /home/admin/
     ```
    The script creates a ZIP archive file with the migration data in the OUTPUT_DIRECTORY.
-
-4. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
+   
+5. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
 
 #### In 10.9 appliance
 
@@ -55,7 +55,7 @@ Before you back up the data, ensure that there is sufficient disk space to save 
 Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/configuration/#expanding-the-disk-size).
 {{< /c8y-admon-important >}}
 
-1. Log in as **root** user.
+1. Log in as a root user.
 
 2. Copy the `restore.sh` and `restore_analytics.sh` scripts to your Edge 10.9 appliance.
 

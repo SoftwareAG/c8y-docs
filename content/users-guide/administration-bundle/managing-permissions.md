@@ -395,7 +395,7 @@ To help troubleshooting permissions, click the **User** button (showing the curr
 
 ### Improving the performance
 
-The {{< product-c8y-iot >}} platform now has optimized UI performance for users with inventory roles access. In particular, requests for tenants with large inventory hierarchies are faster.
+The {{< product-c8y-iot >}} platform provides optimized UI performance for users with inventory roles access. In particular, requests for tenants with large inventory hierarchies are faster.
 
 The performance of the following UI pages is improved:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
@@ -403,7 +403,7 @@ The performance of the following UI pages is improved:
 * Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events).
 * Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
 
-As an administrator, you can switch back to the previous solution and this improved performance feature will be disabled:
+As an administrator, you can disable the performance feature:
 - on platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
 - on tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where OPTIMIZED is the global default.
 

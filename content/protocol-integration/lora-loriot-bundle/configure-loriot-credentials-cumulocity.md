@@ -63,27 +63,26 @@ If Loriot is not one of the available options, your tenant is not subscribed to 
 
 In the next window, fill in the required information:
 
-- **Title** Title of the device to be registered
+- **Title** Title of the device to be registered.
 - **Device EUI** This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
 - **Application EUI** This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number.
 - **Application key** This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
-- **Connection** Lists all configured Loriot connections in the tenant. The following Application name option is populated based on the selected Loriot connection
-- **Application name** Select the appropriate application name under which the device needs to be registered in the Loriot provider
+- **Connection** Lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
+- **Application name** Select the appropriate application name under which the device must be registered in the Loriot provider.
 - **Device protocol** Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-registration.png)
 
 Click **Register** to submit the device registration request and create the device.
 
-You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening its **Events** tab. All events related to this device are listed here.
+You can verify that the device is connected by incoming events. Click on a device and open its **Events** tab. All events related to this device are listed.
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management/).
+For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management/) in the *User guide*.
 
-In order to migrate the device from one LNS connection to another, the device needs to be re-registered.
-Navigate to the **LPWAN** tab of the Device.
-Click on the **Provider connection** dropdown.
-A prompt will appear stating that in order to migrate the device from one LNS connection to another, you need to re-register the device.
-Click on the **Re-Register** button.
+In order to migrate the device from one LNS connection to another, the device must be re-registered:
 
-The user is directed to the device registration page where he can perform the re-registration following the steps above and selecting the desired LNS connection. 
+1. Navigate to the **LPWAN** tab of the Device.
+2. Click the **Provider connection** dropdown.
+3. A prompt will appear stating that in order to migrate the device from one LNS connection to another, you must re-register the device. Click the **Re-Register** button.
+4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection. 
 

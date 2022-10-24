@@ -47,6 +47,12 @@ aliases:
   - /cs/cs-static-templates
   - /device-sdk/device-sdk-introduction
   - /device-sdk/device-integration-introduction
+  - /device-integration/cpp
+  - /device-integration/linux-agent-developer-guide
+  - /device-integration/linux-agent-user-guide
+  - /device-sdk/cpp
+  - /device-sdk/linux-agent-developer-guide
+  - /device-sdk/linux-agent-user-guide
 ---
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.

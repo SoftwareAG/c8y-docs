@@ -78,15 +78,13 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
-1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
+1. Enter the credentials for the respective SIM provider account. If you do not have any credentials, ask your administrator.
 2. Set a **Cache duration** in seconds to determine how long information from the provider is cached. This will prevent timeout issues.
 3. Click **Save** to save your settings.
 
-The configuration of the Kite provider differs from other providers as it requires the upload of a valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kiteBaseUrl.
+Depending on the connectivity provider you choose you would need to provide parameters which are specific for every provider.  **Cache duration** defines how long SIM data returned by the provider is cached before fresh data is requested again, in seconds. This mechnism aims at reducing traffic and number of requests to SIM providers for billing and reliability purposes. Longer cache duration means less traffic to your SIM provider, shorter duration means more current data is displayed.
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
-
-The Connectivity agent is now set up.
 
 <a name="link-sims"></a>
 ### Linking SIMs and mobile devices

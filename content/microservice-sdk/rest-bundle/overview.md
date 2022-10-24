@@ -19,7 +19,7 @@ The description is closely linked to the {{< openapi >}}, which describes each i
 - [Sensor library](/reference/sensor-library/) specifies the data model for sensors and controls.
 
 If you develop applications using Java or C#, check these relevant sections for even more convenient access to {{< product-c8y-iot >}}'s functionality.
-For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-sdk/rest) in the *Device SDK guide*.
+For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-integration/rest) in the *Device SDK guide*.
 
 
 ### Using the REST interfaces

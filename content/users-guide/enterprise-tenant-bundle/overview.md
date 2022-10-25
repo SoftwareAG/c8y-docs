@@ -37,7 +37,7 @@ The following sections describe the following additional functionalities availab
 <tbody>
 <tr>
 <td align="left"><a href="#managing-tenants">Managing tenants</a></td>
-<td align="left">Create and manage subtenants, and manage their properties and <a href="<a name="#subscribe"></a>">subscribed applications</a>.</td>
+<td align="left">Create and manage subtenants, and manage their properties and <a href="#subscribe">subscribed applications</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#user-hierarchies">Managing user hierarchies</a></td>

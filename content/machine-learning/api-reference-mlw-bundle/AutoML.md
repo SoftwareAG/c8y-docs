@@ -10,7 +10,9 @@ aliases:
 
 Operations on MLW Automated ML.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### GET - Start the AutoML process
 

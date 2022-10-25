@@ -14,7 +14,7 @@ With the MQTT implementation we want to reduce the logic required on the device 
 
 #### Example 1: ID of the device
 
-You need to know the ID of the device object to update data in it via REST. Also, this ID is required for every other data that needs to be associated with the device, for example, the source in a measurement, alarm or event.
+You must know the ID of the device object to update data in it via REST. Also, this ID is required for every other data that needs to be associated with the device, for example, the source in a measurement, alarm or event.
 
 To remove the necessity of persisting the ID on the device, {{< product-c8y-iot >}} offers the identity API where you can link external IDs (for example a serial number) to the object, so you can query the ID any time.
 

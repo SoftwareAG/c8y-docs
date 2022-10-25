@@ -346,7 +346,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 {{url}}/service/zementis/apply/{{model_name}}
 ```
 
-Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (that is, JSON or CSV) is handled via Accept request header parameter.
+Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (i.e. JSON or CSV) is handled via Accept request header parameter.
 
 Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
 
@@ -622,7 +622,7 @@ Apply a PMML model group to multiple records. Note that the size of the uploaded
 |:---|:---|
 |file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
 |group_name (string)|required path variable for the name of the model group to be applied
-|applyAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
+|applyAllModels (Boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
 |maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
 |maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
 
@@ -731,8 +731,8 @@ Note that the size of the uploaded file should not exceed 500 MB. If the operati
 |:---|:---|
 |file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
 |group_name (string)|required path variable for the name of the model group to be applied
-|applyAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
-|matchScore (boolean)|optional parameter used to specify if score matching should be performed. If score matching is performed, the expected and actual outputs will be compared and a Match column will be added to the outputs (default is false)
+|applyAllModels (Boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
+|matchScore (Boolean)|optional parameter used to specify if score matching should be performed. If score matching is performed, the expected and actual outputs will be compared and a Match column will be added to the outputs (default is false)
 |maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
 |maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
 
@@ -829,7 +829,9 @@ Apply an ONNX model to multiple records. Note that the size of the uploaded file
 
 The ONNX format doesn't provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
 
->**Info:** An active subscription of the Onnx microservice is required to leverage this API.
+{{< c8y-admon-info >}}
+An active subscription of the Onnx microservice is required to leverage this API.
+{{< /c8y-admon-info >}}
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 
@@ -963,7 +965,9 @@ Apply an ONNX pipeline to input data. Note that the size of the uploaded file sh
 
 The ONNX format doesn't provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model. In pipeline, the input data can be of any format as long as the pre-processing script of the pipeline can process it. However, if there is no pre-processing step in the pipeline then the input data must be in JSON format.
 
->**Info:** An active subscription of the Onnx microservice is required to leverage this API.
+{{< c8y-admon-info >}}
+An active subscription of the Onnx microservice is required to leverage this API.
+{{< /c8y-admon-info >}}
 
 **ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ or ROLE_MACHINE_LEARNING_ADMIN
 

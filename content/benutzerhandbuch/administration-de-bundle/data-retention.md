@@ -20,6 +20,19 @@ Für jede Regel wird der Name, Details zu den Daten, die gelöscht werden sollen
 
 Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert, entfernt werden.
 
+#### Datentypen
+
+Die Datenhaltungsregeln erstrecken sich auf folgende Datentypen:
++ Alarme
++ Audits
++ Bulk-Operationen
++ Ereignisse
++ Messungen
++ Operationen
+
+{{< c8y-admon-info >}}
+Datenhaltungsregeln gelten nicht für Dateien, die in der Dateiablage gespeichert sind.
+{{< /c8y-admon-info >}}
 
 <a name="add-retention-rule"></a>
 #### So fügen Sie eine Datenhaltungsregel hinzu
@@ -33,9 +46,13 @@ Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert
 
 Die Datenhaltungsregel wird zu den Berichtsdetails hinzugefügt.
 
->**Info:** Standardmäßig ist in allen Feldern außer im Feld **Maximales Alter** ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
+{{< c8y-admon-info >}}
+Standardmäßig ist in allen Feldern außer im Feld **Maximales Alter** ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
+{{< /c8y-admon-info >}}
 
->**Info:** Alarme werden nur entfernt, wenn sie den Status AUFGEHOBEN aufweisen.
+{{< c8y-admon-info >}}
+Alarme werden nur entfernt, wenn sie den Status AUFGEHOBEN aufweisen.
+{{< /c8y-admon-info >}}
 
 #### So bearbeiten Sie eine Datenhaltungsregel
 
@@ -50,21 +67,25 @@ Bewegen Sie die Maus über die Regel, die Sie löschen möchten, und klicken Sie
 
 <img src="/images/benutzerhandbuch/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
 
->**Info:** Alle Datenhaltungsregeln werden sequenziell und unabhängig voneinander ausgeführt. Wenn es zwei Datenhaltungsregeln gibt, von denen eine spezifischere mit einem höheren maximalen Alter eine Untermenge von den Dokumenten definiert, die durch eine allgemeinere Regel mit einem niedrigeren maximalen Alter definiert werden, wird alles so abgearbeitet, als gäbe es nur eine einzige, allgemeinere Regel.
->
->Betrachtet man beispielsweise die beiden folgenden Regeln:
->   
-><img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec1.png" alt="Retention rules"/>
->
->Alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind, werden entfernt, einschließlich der Messwerte, bei denen die Quelle `12345` entspricht.
->             
->Wenn jedoch die folgenden Datenhaltungsregeln definiert wurden:
->
-><img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec2.png" alt="Retention rules"/>
->
->Der Datenhaltungsprozess entfernt alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind. Alle anderen Messwerte werden erst entfernt, wenn sie älter als 60 Tage sind.
+{{< c8y-admon-info >}}
+Alle Datenhaltungsregeln werden sequenziell und unabhängig voneinander ausgeführt. Wenn es zwei Datenhaltungsregeln gibt, von denen eine spezifischere mit einem höheren maximalen Alter eine Untermenge von den Dokumenten definiert, die durch eine allgemeinere Regel mit einem niedrigeren maximalen Alter definiert werden, wird alles so abgearbeitet, als gäbe es nur eine einzige, allgemeinere Regel.
 
->**Info:** Der Quellparameter ist die ID des Geräts. Wenn dieser definiert ist, entfernt der Datenhaltungsprozess nur die Dokumente, die direkt mit dem durch die Quelle dargestellten Gerät verbunden sind, nicht jedoch die der Kinder oder zugehörigen Gruppen.
+Betrachtet man beispielsweise die beiden folgenden Regeln:
+
+<img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec1.png" alt="Retention rules"/>
+
+Alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind, werden entfernt, einschließlich der Messwerte, bei denen die Quelle `12345` entspricht.
+
+Wenn jedoch die folgenden Datenhaltungsregeln definiert wurden:
+
+<img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec2.png" alt="Retention rules"/>
+
+Der Datenhaltungsprozess entfernt alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind. Alle anderen Messwerte werden erst entfernt, wenn sie älter als 60 Tage sind.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-info >}}
+Der Quellparameter ist die ID des Geräts. Wenn dieser definiert ist, entfernt der Datenhaltungsprozess nur die Dokumente, die direkt mit dem durch die Quelle dargestellten Gerät verbunden sind, nicht jedoch die der Kinder oder zugehörigen Gruppen.
+{{< /c8y-admon-info >}}
 
 <a name="files"></a>
 ### Verwalten von Daten in der Dateiablage
@@ -79,7 +100,7 @@ Für jede Datei werden der Name, der Eigentümer, der Dateityp (z. B. image/bmp
 
 <img src="/images/benutzerhandbuch/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
-#### So laden Sie eine Datei von Ihrem Computer hoch
+#### So laden Sie eine Datei aus Ihrem Dateisystem hoch
 
 Klicken Sie auf **Datei hochladen** in der oberen Menüleiste.
 
@@ -97,4 +118,6 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
 
->**Info:** Wenn die Datei einer aktiven Anwendung entspricht, kann sie nicht gelöscht werden. Sie müssen die Anwendung erst entfernen oder ein Update ausführen, um die Datei löschen zu können.
+{{< c8y-admon-info >}}
+Wenn die Datei einer aktiven Anwendung entspricht, kann sie nicht gelöscht werden. Sie müssen die Anwendung erst entfernen oder ein Upgrade ausführen, um die Datei löschen zu können.
+{{< /c8y-admon-info >}}

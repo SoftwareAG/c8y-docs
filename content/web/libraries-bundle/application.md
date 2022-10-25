@@ -9,7 +9,7 @@ The application package (`@c8y/apps`) provides example applications for the Web 
 
 ### Prerequisites
 
-To use the @c8y/apps you need to install the [@c8y/cli](/web/development-tools/#c8y-cli). Refer to its documentation for installation instructions.
+To use the @c8y/apps you must install the [@c8y/cli](/web/development-tools/#c8y-cli). Refer to its documentation for installation instructions.
 
 Once installed you can run:
 
@@ -17,7 +17,7 @@ Once installed you can run:
 $ c8ycli new [your-app-name] [example-name]
 ```
 
-For example, to generate the tutorial application with the name `my-app` you need to run:
+For example, to generate the tutorial application with the name `my-app` you must run:
 
 ```
 $ c8ycli new my-app tutorial

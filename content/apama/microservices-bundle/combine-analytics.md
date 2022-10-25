@@ -38,7 +38,7 @@ using com.softwareag.connectivity.httpclient.Response;
 using com.apama.cumulocity.Alarm;
 using com.apama.cumulocity.Measurement;
 
-monitor LookForWifiAnomalies 
+monitor LookForWifiAnomalies
 {
     CumulocityRequestInterface cumulocity;
     action onload()
@@ -103,4 +103,3 @@ event ZementisHandler
     }
 }
 ```
-

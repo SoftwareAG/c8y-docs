@@ -107,7 +107,7 @@ To quickly get you started, the @c8y/client provides a shorthand static function
 await Client.authenticate({ tenant, user, password }), url);
 ```
 
-It internally creates a client instance and tries to contact the API to verify if the given credentials are correct. In some cases you need to use a more fine-grained authentication, for example, when you don't know which authentication strategy the user is going to use. In this case you need to construct an own instance of the client and pass the authentication strategy to it:
+It internally creates a client instance and tries to contact the API to verify if the given credentials are correct. In some cases you must use a more fine-grained authentication, for example, when you don't know which authentication strategy the user is going to use. In this case you must construct an own instance of the client and pass the authentication strategy to it:
 
 ```js
  const baseUrl = 'https://acme.{{< domain-c8y >}}';

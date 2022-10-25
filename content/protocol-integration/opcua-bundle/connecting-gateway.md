@@ -16,7 +16,9 @@ Next, establish a connection between the gateway and the OPC UA server.
 7. Select the desired authentication method. For more info, see [Authentication](/protocol-integration/opcua/#authentication).
 8. Click **Save**.
 
-> **Info:** Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space.
+{{< c8y-admon-info >}}
+Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space.
+{{< /c8y-admon-info >}}
 
 <a name="security-modes"></a>
 ### Security modes
@@ -31,4 +33,6 @@ The security mode settings tell the gateway how it should secure the connection 
 - BASIC256SHA256_SIGN
 - BASIC256SHA256_SIGN_ENCRYPT
 
-> **Info:** The security modes have nothing to do with authorization or authentication! The security mode tells the gateway how the connection should be secured and whether the connection should be encrypted or not.
+{{< c8y-admon-info >}}
+The security modes have nothing to do with authorization or authentication! The security mode tells the gateway how the connection should be secured and whether the connection should be encrypted or not.
+{{< /c8y-admon-info >}}

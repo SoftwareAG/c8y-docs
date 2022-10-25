@@ -8,7 +8,9 @@ During offloading, data from the Operational Store of {{< product-c8y-iot >}} is
 
 You can examine the latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
 
->**Info**: You need administration permissions to access the compaction job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< c8y-admon-info >}}
+You need administration permissions to access the compaction job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< /c8y-admon-info >}}
 
 ### Status of all compaction jobs
 

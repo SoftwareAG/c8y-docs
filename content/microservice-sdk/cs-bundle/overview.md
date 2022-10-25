@@ -6,7 +6,7 @@ layout: redirect
 
 This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for C#, and it contains:
 
-*   [Prerequisites](#general-prerequisites) – Development and runtime requirements you need to develop and run C# microservices.
+*   [Prerequisites](#general-prerequisites) – Development and runtime requirements you must develop and run C# microservices.
 *   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
 <!-- *   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens. -->
@@ -14,7 +14,9 @@ This section describes how to develop and deploy microservices on top of {{< pro
 
 To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial](#hello-world).
 
-> **Info:** You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
+{{< c8y-admon-info >}}
+You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
+{{< /c8y-admon-info >}}
 
 If you face any issue or need technical support, please use the [{{< product-c8y-iot >}} community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
 
@@ -30,7 +32,7 @@ For new projects, you shall use a new bundle of [building scripts](https://githu
 <a name="general-prerequisites"></a>
 ### Development prerequisites
 
-To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
+To use the C# client libraries for development, you must install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 Use the following command to verify the version of your .NET Core SDK:
 
@@ -67,7 +69,9 @@ The most important requirement is an installation of [Docker 17.06](https://docs
 
 The recommended image for production is `mcr.microsoft.com/dotnet/core/aspnet:<version> AS runtime` as it contains the .NET Core (runtime and libraries) and it is optimized for running .NET Core applications.
 
-> **Important**: {{< product-c8y-iot >}} supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
+{{< c8y-admon-important >}}
+{{< product-c8y-iot >}} supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
+{{< /c8y-admon-important >}}
 
 The SDK is based on the package `Cumulocity.SDK.Microservices` and it has a dependency on:
 

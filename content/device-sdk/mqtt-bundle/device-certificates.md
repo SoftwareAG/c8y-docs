@@ -20,7 +20,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
-* Devices need to trust the {{< product-c8y-iot >}} server certificate.
+* Devices must trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
 
@@ -45,8 +45,9 @@ The CSV file used in bulk registration should meet the requirements described in
 
 Single registration is not supported for devices which are going to use certificates for authentication.
 
->**Info:** During device registration, the device user is created, which is necessary for device communication with the platform.
-
+{{< c8y-admon-info >}}
+During device registration, the device user is created, which is necessary for device communication with the platform.
+{{< /c8y-admon-info >}}
 
 ### JWT token retrieval
 

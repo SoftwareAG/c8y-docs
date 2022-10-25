@@ -14,4 +14,6 @@ Additionally, {{< product-c8y-iot >}} Edge offers:
 
 For details on how to integrate devices using Modbus and OPC UA protocols, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) and [OPC UA](/protocol-integration/opcua/) in the *Protocol integration guide*.
 
->**Info:** Currently, only the Modbus and OPC UA protocols are supported.
+{{< c8y-admon-info >}}
+Currently, only the Modbus and OPC UA protocols are supported.
+{{< /c8y-admon-info >}}

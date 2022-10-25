@@ -31,4 +31,6 @@ To expand the disk size of the installation disk and the data disk, use the foll
 
 - [POST /edge/expand-disk](/edge/rest-api/#post-edgeexpand-disk)
 
->**Info:** If there is no disk space to expand, the task will be marked as success.
+{{< c8y-admon-info >}}
+If there is no disk space to expand, the task will be marked as success.
+{{< /c8y-admon-info >}}

@@ -15,7 +15,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create a Node.js application,
 * install the MQTT middleware (in this example we will use the library [MQTT.js](https://github.com/mqttjs/MQTT.js)),

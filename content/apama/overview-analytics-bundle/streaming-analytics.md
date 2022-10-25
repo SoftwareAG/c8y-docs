@@ -7,12 +7,12 @@ Using the Streaming Analytics application, you can add your own logic to your Io
 
 The operation logic is based on Apama's Event Processing Language (Apama EPL).
 
->**Important**: Support for streaming analytics using CEL (Esper) has ended. All new {{< product-c8y-iot >}} subscriptions use the Apama CEP engine. {{< company-sag >}} terminated support for using CEL (Esper) in {{< product-c8y-iot >}} on 31 Dec 2020 following its deprecation in 2018.
->
->For documentation on using the unsupported CEL functionality based on Esper, refer to the [{{< product-c8y-iot >}} Event Language guide](/files/apama/Cumulocity%20IoT%20Event%20Language%20guide.pdf).
->
->For details on migration, see [Migrating from CEL (Esper) to Apama](#migrate-from-esper).
+{{< c8y-admon-important >}} Support for streaming analytics using CEL (Esper) has ended. All new {{< product-c8y-iot >}} subscriptions use the Apama CEP engine. {{< company-sag >}} terminated support for using CEL (Esper) in {{< product-c8y-iot >}} on 31 Dec 2020 following its deprecation in 2018.
 
+For documentation on using the unsupported CEL functionality based on Esper, refer to the [{{< product-c8y-iot >}} Event Language guide](/files/apama/Cumulocity%20IoT%20Event%20Language%20guide.pdf).
+
+For details on migration, see [Migrating from CEL (Esper) to Apama](#migrate-from-esper).
+{{< /c8y-admon-important >}}
 
 Typical real-time analytics use cases include:
 
@@ -25,4 +25,6 @@ Typical real-time analytics use cases include:
 
 The following sections describe how you can create your own analytics or other server-side business logic and automation. You can do this using analytic models, EPL apps, and smart rules.
 
->**Info**: This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation]({{< link-apama-webhelp >}}) for further details.
+{{< c8y-admon-info >}}
+This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation]({{< link-apama-webhelp >}}) for further details.
+{{< /c8y-admon-info >}}

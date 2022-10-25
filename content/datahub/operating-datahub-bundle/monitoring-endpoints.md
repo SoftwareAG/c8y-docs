@@ -25,7 +25,7 @@ If all jobs are classified as STEADY, the endpoint returns the HTTP status code 
 Otherwise, the endpoint returns the HTTP status code 500 with the following message:
 
 	“HTTP 500 CDHCBEE0031 - Scheduler healthcheck failed: There were failed or suspended jobExecutions.”
-	
+
 The response body indicates the jobs to be checked by an administrator:
 
 ```
@@ -36,4 +36,6 @@ The response body indicates the jobs to be checked by an administrator:
 
 The endpoint can be accessed by any logged in {{< product-c8y-iot >}} user who is authorized to access the {{< product-c8y-iot >}} DataHub microservice.
 
-> **Info:** The endpoint is released as a "beta" feature. It might change in future releases without prior notice.
+{{< c8y-admon-info >}}
+The endpoint is released as a "beta" feature. It might change in future releases without prior notice.
+{{< /c8y-admon-info >}}

@@ -470,11 +470,11 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information, refer to the [Device SDK guide](/device-integration/).
+For further information, refer to [Device integration](/device-integration/).
 
 #### C# MQTT SDK
 
-It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-integration/mqtt-examples) in the *Device SDK guide*.
+It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-integration/mqtt-examples) in *Device integration*.
 
 
 ### Building and deploying on Linux

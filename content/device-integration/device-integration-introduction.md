@@ -57,7 +57,7 @@ aliases:
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
-This Device SDK guide provides detailed information on device integration using [REST](/device-integration/rest) and [C++](/device-integration/cpp).
+This Device integration guide provides detailed information on device integration using [REST](/device-integration/rest) and [C++](/device-integration/cpp).
 
 For interfacing devices with {{< product-c8y-iot >}}, we recommend you to use MQTT and [SmartREST](/reference/smartrest-two/), which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
 

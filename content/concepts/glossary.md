@@ -275,7 +275,7 @@ The behavior of a block inside a model does not depend on other blocks. There ca
 ### MQTT
 {{< product-c8y-iot >}} supports MQTT, an OASIS standard messaging protocol, for device integration.
 
-For details see [Device integration using MQTT](/device-integration/mqtt) in the *Device SDK guide*.
+For details see [Device integration using MQTT](/device-integration/mqtt) in *Device integration*.
 
 <a name=""></a>
 ### Multi-tenancy

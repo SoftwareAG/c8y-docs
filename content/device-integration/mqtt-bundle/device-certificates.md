@@ -379,6 +379,7 @@ Also see asymmetric encryption.
 
 {{< product-c8y-iot >}} platform receives the public part of each certificate that is to be used for device authentication.
 The assignment of the device to a tenant is also done by the certificate, since each certificate must be uniquely assigned.
+Performing the proof of possession steps filters out all certificates without prior proof of possession, giving preference to tenant mappings of certificates with a validated proof of possession.
 
 However, since the public part of a certificate (and the subcertificates) is not secret, anyone on the internet theoretically has access to it.
 A potential attacker could upload the public part of a certificate to {{< product-c8y-iot >}} platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).

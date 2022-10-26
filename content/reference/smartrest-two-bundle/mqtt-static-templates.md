@@ -215,9 +215,9 @@ Create a new software service for given device.
 
 |Position|Parameter  |Mandatory|Type  |
 |:-------|:----------|:--------|:-----|
-|1|service name|YES|String|
 |2|service unique external id|YES|String|
 |3|service type|YES|String|
+|1|service name|YES|String|
 |4|service status|YES|String|
 
 **Example**

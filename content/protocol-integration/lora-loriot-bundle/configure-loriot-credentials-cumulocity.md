@@ -51,25 +51,38 @@ If there are devices associated with the connection, an error message appears, s
 ![Delete connection](/images/device-protocols/lora-loriot/loriot-admin-settings-delete.png)
 
 <a name="loriot-device-registration">
-### Loriot device registration via API</a>
+### Loriot device registration</a>
 
-After the Loriot LNS connection is created, the device can be registered using the REST API, whose endpoint and POST body are as follows:
+To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
 
-POST <kbd>{{url}}/service/loriot/newDeviceRequest</kbd>
+![Register devices](/images/device-protocols/lora-loriot/loriot-selection.png)
 
-The body of the POST request:
+{{< c8y-admon-info >}}
+If Loriot is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
+{{< /c8y-admon-info >}}
 
-```
-{
-    "title": "<<Title of the device>>",
-    "deveui":"<<This is the unique identifier for the device. It is a 16 character (8 byte) long uppercase hexadecimal number>>",
-    "appeui":"<<This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number>>",
-    "appkey":"<<This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number>>",
-    "appid":"<<This is the Application ID with which the Device is associated. It is a hexadecimal number>>",
-    "deviceType": {
-        "id": "<<ID of the Device Protocol>>",
-        "name": "<<Name of the Device Protocol>>"
-    },
-    "lnsConnectionName":"<<Name of the Loriot LNS Connection>>"
-}
-```
+In the next window, fill in the required information:
+
+- **Title** Title of the device to be registered.
+- **Device EUI** This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
+- **Application EUI** This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number.
+- **Application key** This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
+- **Connection** Lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
+- **Application name** Select the appropriate application name under which the device must be registered in the Loriot provider.
+- **Device protocol** Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
+
+![Register devices](/images/device-protocols/lora-loriot/loriot-registration.png)
+
+Click **Register** to submit the device registration request and create the device.
+
+You can verify that the device is connected by incoming events. Click on a device and open its **Events** tab. All events related to this device are listed.
+
+For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management/) in the *User guide*.
+
+In order to migrate the device from one LNS connection to another, the device must be re-registered:
+
+1. Navigate to the **LPWAN** tab of the Device.
+2. Click the **Provider connection** dropdown.
+3. A prompt will appear stating that in order to migrate the device from one LNS connection to another, you must re-register the device. Click the **Re-Register** button.
+4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection. 
+

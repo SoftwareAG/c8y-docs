@@ -79,7 +79,8 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
 1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
-2. Click **Save** to save your settings.
+2. Set a **Cache duration** in seconds to determine how long information from the provider is cached. This will prevent timeout issues.
+3. Click **Save** to save your settings.
 
 The configuration of the Kite provider differs from other providers as it requires the upload of a valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kiteBaseUrl.
 

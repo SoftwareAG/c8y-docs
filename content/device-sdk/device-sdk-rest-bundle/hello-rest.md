@@ -39,8 +39,8 @@ After that, actions related to that device can be performed by referencing the d
 To create a new device in the inventory of {{< product-c8y-iot >}} the following REST request is needed:
 
     POST /inventory/managedObjects HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
-    Accept: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+    Accept: application/vnd.com.nsn.cumulocity.managedobject+json
     Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
     ...
     {
@@ -51,11 +51,11 @@ To create a new device in the inventory of {{< product-c8y-iot >}} the following
 This call can be done by executing the following curl statement:
 
     curl -v -u <username>:<password> \
-       -H 'Accept: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9' \
-       -H 'Content-type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9' \
+       -H 'Accept: application/vnd.com.nsn.cumulocity.managedobject+json' \
+       -H 'Content-type: application/vnd.com.nsn.cumulocity.managedobject+json' \
        -X POST \
        -d '{"c8y_IsDevice":{},"name":"HelloWorldDevice"}' \
-       http://<tenant-name>.cumulocity.com/inventory/managedObjects
+       https://<{{< product-c8y-iot >}} tenant domain>/inventory/managedObjects
 
 Replace `<username>`, `<password>` and `<tenant-name>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
 
@@ -72,7 +72,7 @@ You will receive a response like that:
         "lastUpdated": "2014-12-15T14:58:26.279+01:00",
         "name": "HelloWorldDevice",
         "owner": "<username>",
-        "self": "https://<tenant-ID>.cumulocity.com/inventory/managedObjects/1231234",
+        "self": "https://.../inventory/managedObjects/1231234",
         "c8y_IsDevice": {},
         ...
     }
@@ -87,8 +87,8 @@ After the device is created, we can send measurement data.
 In our case, we will send a temperature measurement in the unit of Celsius which was collected on a certain time:
 
     POST /measurement/measurements
-    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9
-    Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json
+    Accept: application/vnd.com.nsn.cumulocity.measurement+json
     ...
     {
         "c8y_TemperatureMeasurement": {
@@ -111,11 +111,11 @@ Furthermore, you should update the time value to a recent timestamp in order to 
 Note the data format for timestamp values which is explained as `date-time` in the [Swagger/OpenAPI Specification](https://swagger.io/specification/#data-types).
 
     curl -v -u <username>:<password> \
-       -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \
-       -H 'Content-type: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \
+       -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json' \
+       -H 'Content-type: application/vnd.com.nsn.cumulocity.measurement+json' \
        -X POST \
        -d '{"c8y_TemperatureMeasurement":{"T":{"value":21.23,"unit":"C"}},"time":"2014-12-15T13:00:00.123+02:00","source":{"id":"1231234"},"type":"c8y_PTCMeasurement"}' \
-       http://<tenant-name>.cumulocity.com/measurement/measurements/
+       https://<{{< product-c8y-iot >}} tenant domain>/measurement/measurements/
 
 The response to that request will look like this:
 
@@ -124,10 +124,10 @@ The response to that request will look like this:
     ...
     {
         "id": "4711",
-        "self": "https://<tenant-ID>.cumulocity.com/measurement/measurements/4711",
+        "self": "https://.../measurement/measurements/4711",
         "source": {
             "id": "1231234",
-            "self": "https://<tenant-ID>.cumulocity.com/inventory/managedObjects/1231234"
+            "self": "https://.../inventory/managedObjects/1231234"
         },
         "time": "2014-12-15T12:00:00.123+01:00",
         "type": "c8y_PTCMeasurement",

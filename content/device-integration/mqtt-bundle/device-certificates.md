@@ -375,7 +375,7 @@ Then the added certificate should be visible:
 {{< product-c8y-iot >}} platform uses X.509 certificates to authenticate end devices.
 The certificates work with a chain of trust: you can create trustworthy subcertificates with a trusted certificate.
 Each certificate consists of a public and a private part.
-Also see asymmetric encryption: https://en.wikipedia.org/wiki/Public-key_cryptography
+Also see [asymmetric encryption](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
 {{< product-c8y-iot >}} platform receives the public part of each certificate that is to be used for device authentication.
 The assignment of the device to a tenant is also done by the certificate, since each certificate must be uniquely assigned.

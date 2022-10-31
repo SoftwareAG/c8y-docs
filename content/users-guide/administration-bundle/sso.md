@@ -16,14 +16,12 @@ To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registrat
 
 1. Select **App Registrations** and click **New Registration**.
 3. In the resulting window, provide a name for the new App registration.
-4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example *https://documentation.cumulocity.com/tenant/oauth*. You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The Redirect URL is prefilled by the platform.
+4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example *https://documentation.cumulocity.com/tenant/oauth*. You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
 5. Click **Register** to create the App registration.
 
-The overview of your App registration contains some IDs and endpoints that you need later on.
+The overview of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
 
-**IDs**
-* Application (client) ID  
-* Directory (tenant) ID (Tenant in {{< product-c8y-iot >}})
+![App registration overview](/images/users-guide/Administration/admin-AAD-registration.png)
 
 Moreover, the App registration requires a secret which is used by {{< product-c8y-iot >}} for the authentication.  
 
@@ -33,9 +31,8 @@ Moreover, the App registration requires a secret which is used by {{< product-c8
 4. Click **Add** to add the secret.  
 
 {{< c8y-admon-caution >}}
-Copy the value of the new secret to another location. It will no longer be visible once you have left the page.
-
-The secret string must not include a "=" character as this may conflict with the later usage in a URL. If so, create a new one.  
+- Copy the value of the new secret to another location. It will no longer be visible once you have left the page.
+- The secret string must not include a "=" character as this may conflict with the later usage in a URL. If so, create a new one.  
 {{< /c8y-admon-caution >}}
 
 Optionally, create a user in Azure AD that you would like to use with {{< product-c8y-iot >}}.
@@ -120,15 +117,15 @@ The response will look like this:
 
 Now enter the following values in the configuration:
 
-|Azure|{< product-c8y-iot >}}|Value
+|Azure|{{< product-c8y-iot >}} |Value
 |:---|:---|:---|
-|Login URL; OpenId config; Beginning of token endpoint| Azure AD address|Address of your Azure AD tenant, for example "https:&#47;/login.microsoftonline.com"  
-|Home > Overview > Primary Domain| Tenant|Azure AD tenant name: <directoryName>.onmicrosoft.com, for example "admtest.onmicrosoft.com"
-|OpenId Config “issuer”| Token issuer| Token issuer value in form of a HTTP address: https:&#47;/sts.windows.net/<Directory tenant ID>/. Note that this won´t work without the tailing slash.
-|App registration > <app> > Application (client) ID| Application ID| for example "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
+|Login URL; OpenID config; Beginning of token endpoint| Azure AD address|Address of your Azure AD tenant, for example "https:&#47;/login.microsoftonline.com"  
+|Home > Overview > Primary Domain| Tenant| &lt;directoryName&gt;.onmicrosoft.com, for example "admtest.onmicrosoft.com"
+|OpenID config “issuer”| Token issuer| Token issuer value in form of a HTTP address: "https:&#47;/sts.windows.net/&lt;Directory tenant ID&gt;/". Note that this won´t work without the tailing slash.
+|App registration > &lt;app&gt; > Application (client) ID| Application ID| for example "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
 |Redirect URI| Address of your {{< product-c8y-iot >}} tenant followed by /tenant/oauth
-|App registration - <app> > Certificates & secrets > Value | Client secret| Azure AD client secret, for example "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
-|From Open Id Config | Public key discovery URL|https:&#47;/login.microsoftonline.com/common/discovery/keys or https:&#47;/login.microsoftonline.com/<Directory tenant ID>/discovery/keys
+|App registration - &lt;app&gt; > Certificates & secrets > Value | Client secret| Azure AD client secret, for example "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
+|From OpenID config | Public key discovery URL|"https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Directory tenant ID>/discovery/keys"
 
 
 After configuring single sign-on in {{< product-c8y-iot >}}, you can try to login. You might get an "access denied" error, if this user has no access mapping yet. But you should see a "User login" event and a JSON web token in the audit logs (**Administration** > **Accounts** > **Audit logs**).

@@ -32,7 +32,7 @@ aliases:
 </tr>
 <tr>
 <td style="text-align:center"><i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i></td>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Die Device Management-Anwendung bietet Funktionalitäten zur Verwaltung und Überwachung von Geräten und ermöglicht es, per Fernzugriff Geräte zu steuern und Fehler zu beheben.  </td>
 </tr>
 

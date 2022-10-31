@@ -79,7 +79,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Webanwendung</td>

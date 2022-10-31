@@ -55,7 +55,7 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management#simulator" class="no-ajaxy">Device-simulator</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device-simulator</a></td>
 <td style="text-align:left">Simulation aller Aspekte von IoT-Geräten</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>

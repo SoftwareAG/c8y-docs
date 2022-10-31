@@ -50,8 +50,8 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Nähere Informationen zu binärer Konfiguration finden Sie unter <a href="#configuration-repository">Verwalten von Konfigurationen</a>.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../users-guide/device-management/#connectivity">Connectivity</a></td>
-<td style="text-align:left">Stellt die SIM-Management-Funktionalität bereit. Näheres dazu finden Sie unter <a href="../../users-guide/device-management/#connectivity">Connectivity</a>.</td>
+<td style="text-align:left"><a href="../../benutzerhandbuch/device-management-de/#connectivity">Connectivity</a></td>
+<td style="text-align:left">Stellt die SIM-Management-Funktionalität bereit. Näheres dazu finden Sie unter <a href="../../benutzerhandbuch/device-management-de/#connectivity">Connectivity</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#control">Steuerung</a></td>

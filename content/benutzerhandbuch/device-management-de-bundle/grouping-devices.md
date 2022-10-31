@@ -18,13 +18,13 @@ Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat 
 
 ![Groups list](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
 
-Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/users-guide/device-management/#configuring-columns).
+Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/benutzerhandbuch/device-management-de/#configuring-columns).
 
 Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol, siehe Screenshot unten. Filterung ist jedoch nicht für die Hauptgruppenspalte verfügbar. Die Filteroption ist nur in der Untergruppenspalte verfügbar.
 
  ![Filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-filter.png)
 
-Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/users-guide/device-management/#filtering-devices).
+Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de/#filtering-devices).
 
 Beachten Sie, dass diese Funktion nur einen temporären Filter erzeugt. Für permanente Filter können Sie die Funktion [Dynamische Gruppe](#smart-groups) verwenden.  
 

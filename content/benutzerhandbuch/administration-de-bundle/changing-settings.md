@@ -616,7 +616,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/users-guide/device-management/#connectivity)
+- [SIM](/benutzerhandbuch/device-management-de/#connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 

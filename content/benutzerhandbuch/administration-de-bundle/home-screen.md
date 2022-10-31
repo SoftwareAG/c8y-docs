@@ -21,5 +21,5 @@ Die Kapazitätsbereiche zeigen:
 * Speicher: Insgesamt gespeicherte Daten in Ihrem Konto. Die Datenmenge kann durch [Datenhaltungsregeln](/users-guide/administration/#retention-rules) und durch die Menge und Größe [gespeicherter Daten](/users-guide/administration#files) verändert werden.
 * Speicherbegrenzung: Wenn eine Speicherbegrenzung pro Gerät definiert wurde, ist der Benutzer auf eine [maximale Datennutzung](/users-guide/enterprise-tenant/#storage-quota) beschränkt.
 * Hauptgeräte: Die Anzahl der Hauptgeräte, die mit Ihrem Konto verbunden sind, ohne Kindgeräte.
-* Geräte: Die Gesamtanzahl der mit Ihrem Konto verbundenen Geräte einschließlich Kindgeräte. Dies ist die Summe der Geräte, die unter [Alle Geräte](/users-guide/device-management#viewing-devices) in der Device Management-Anwendung aufgelistet sind, sowie deren direkte und indirekte Kindgeräte.
+* Geräte: Die Gesamtanzahl der mit Ihrem Konto verbundenen Geräte einschließlich Kindgeräte. Dies ist die Summe der Geräte, die unter [Alle Geräte](/benutzerhandbuch/device-management-de#viewing-devices) in der Device Management-Anwendung aufgelistet sind, sowie deren direkte und indirekte Kindgeräte.
 * Benutzer: Die Anzahl aller Geräte in diesem Konto, aktiv sowie inaktiv.

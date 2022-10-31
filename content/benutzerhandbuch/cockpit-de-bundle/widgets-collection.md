@@ -137,7 +137,7 @@ Folgende Typen sind verfügbar:
 <a name="alarm-list"></a>
 ### Alarmliste
 
-Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring).
+Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
 
 ![Alarm list widget](/images/benutzerhandbuch/cockpit/cockpit-widget-alarm-list.png)
 
@@ -159,7 +159,7 @@ Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alar
 
 ![Critical alarms](/images/benutzerhandbuch/cockpit/cockpit-widget-critical-alarms.png)
 
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 <a name="applications"></a>
 ### Anwendungen
@@ -240,7 +240,7 @@ Das Attribut "Anzahl aktiver Alarme" zeigt aktive Alarme als Symbole in der Tabe
 ![Reboot device button configuration](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
 {{< c8y-admon-info >}}
-Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Gerätedetails > Shell](/users-guide/device-management/#shell).<br>
+Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Gerätedetails > Shell](/benutzerhandbuch/device-management-de/#shell).<br>
 Sie können auch das JSON-Format für die Operation eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Operationen, um weitere Details zu erfahren.
 {{< /c8y-admon-info >}}
 
@@ -497,7 +497,7 @@ Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach
 
 ![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
 
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 <a name="relay-array-control"></a>
 ### Relaisfeldsteuerung

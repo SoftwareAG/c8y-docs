@@ -137,7 +137,7 @@ Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht meh
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -204,7 +204,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -268,7 +268,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -401,7 +401,7 @@ Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstelle
 
 * Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -792,7 +792,7 @@ Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -873,7 +873,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 

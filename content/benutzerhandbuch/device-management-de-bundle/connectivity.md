@@ -177,7 +177,7 @@ Prüfen Sie in der Registerkarte **Connectivity**, ob
 * die SIM aktiviert ist. Ist die SIM-Karte nicht aktiviert, können Sie sie aktivieren, indem Sie "Aktiviert" aus dem Status-Auswahlmenü wählen. <br> ![Activate SIM card](/images/benutzerhandbuch/connectivity/connectivity-status-activate.png) <br> Es kann eine Weile dauern, bis die SIM-Karte im Netzwerk aktiviert ist. Unter Umständen ist ein Reset des Geräts notwendig, damit es sich wieder in das Netzwerk einwählt.
 * das Gerät mit dem Netzwerk verbunden ist. Falls sich das Gerät nicht mit dem Netzwerk verbindet, kann dies mehrere Ursachen haben:
 
-  * Das Gerät befindet sich an einem Ort ohne Mobilfunkabdeckung. Falls das Gerät Netzwerk-Qualitätsparameter meldet, können Sie zur [Registerkarte **Messwerte**](/users-guide/device-management#measurements) des Geräts navigieren und die zuletzt gemeldeten Signalstärke- und Fehlerraten-Parameter überprüfen.
+  * Das Gerät befindet sich an einem Ort ohne Mobilfunkabdeckung. Falls das Gerät Netzwerk-Qualitätsparameter meldet, können Sie zur [Registerkarte **Messwerte**](/benutzerhandbuch/device-management-de#measurements) des Geräts navigieren und die zuletzt gemeldeten Signalstärke- und Fehlerraten-Parameter überprüfen.
   * Es liegt ein Netzwerk- oder Hardwareproblem (Antenne, Modem) vor. Klicken Sie zum Beispiel für das Jasper Control Center rechts oben auf das Zahnrad-Symbol, wählen Sie **SIM-Details** und öffnen Sie dann das Diagnose-Tool des Jasper Control Center. Sollte das Gerät nicht versuchen, sich mit dem Netzwerk zu verbinden, ist es möglicherweise defekt.
   * Das Gerät befindet sich in einer Datensitzung. Befindet es sich nicht in einer Datensitzung, kann dies wiederum mehrere Ursachen haben:
   * Die APN-Einstellungen sind im Gerät falsch konfiguriert.
@@ -189,7 +189,7 @@ Prüfen Sie in der Registerkarte **Connectivity**, ob
 Die Datenkonnektivität kann an verschiedenen Stellen analysiert werden:
 
 * Wenn das Gerät seine Netzwerkkonfiguration meldet, navigieren Sie zur Registerkarte **Netzwerk**. Überprüfen Sie die APN-Einstellungen und bearbeiten Sie sie gegebenenfalls.
-* Wenn das Gerät die Shell-Funktion unterstützt, navigieren Sie zur [Registerkarte **Shell**](/users-guide/device-management/#shell). Überprüfen Sie die APN-Einstellungen und die Roaming-Konfiguration und bearbeiten Sie sie gegebenenfalls.
+* Wenn das Gerät die Shell-Funktion unterstützt, navigieren Sie zur [Registerkarte **Shell**](/benutzerhandbuch/device-management-de/#shell). Überprüfen Sie die APN-Einstellungen und die Roaming-Konfiguration und bearbeiten Sie sie gegebenenfalls.
 * Überprüfen Sie im Abschnitt **Sitzungen** der Registerkarte **Connectivity**, ob das Gerät früher kommuniziert hat und wie viel Datenverkehr verbraucht wurde.
 * Überprüfen Sie im Abschnitt **Audit-Logs** der Registerkarte **Connectivity**, ob in letzter Zeit Änderungen an der SIM-Karte vorgenommen wurden.
 * Klicken Sie zum Schluss rechts oben auf das Zahnrad und wählen Sie **SIM-Details**, um zur SIM-Konfiguration im Jasper Control Center zu gelangen.
@@ -201,5 +201,5 @@ Beim Menüelement **SIM-Details** sind Anmeldedaten für das Jasper Control Cent
 
 Wenn das Gerät noch immer nichts an {{< product-c8y-iot >}} meldet, liegt möglicherweise ein Konfigurations- oder Softwareproblem am Gerät vor.
 
-* Das Gerät hat möglicherweise seine Zugangsdaten verloren, beispielsweise durch ein Reset auf die Werkseinstellungen oder durch einen kompletten Stromausfall. In diesem Fall können Sie das [Gerät neu registrieren](/users-guide/device-management/#connecting-devices).
+* Das Gerät hat möglicherweise seine Zugangsdaten verloren, beispielsweise durch ein Reset auf die Werkseinstellungen oder durch einen kompletten Stromausfall. In diesem Fall können Sie das [Gerät neu registrieren](/benutzerhandbuch/device-management-de/#connecting-devices).
 * Es könnte ein Konfigurations- oder Softwareproblem am Gerät vorliegen, das gerätespezifisch analysiert werden muss.

@@ -275,11 +275,11 @@ Einzel-Operationen werden in absteigender Zeitfolge aufgelistet. Operationen wer
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/users-guide/device-management/#firmware-repo), [Software](/users-guide/device-management/#software-repo), [Konfigurationen](/users-guide/device-management/#configuration-repository) und mehr.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) und mehr.
 
 Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 
-Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/users-guide/device-management#shell).
+Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
 {{< c8y-admon-important >}}
 Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.

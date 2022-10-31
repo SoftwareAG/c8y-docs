@@ -41,6 +41,7 @@ monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
 send msmnt to Measurement.SEND_CHANNEL;
 ```
 
+The events listed in the following table are part of the `com.apama.cumulocity` package.
 
 | Event               | Channel for sending              | Channel for receiving                 |
 | ------------------- | -------------------------------- | ------------------------------------- |

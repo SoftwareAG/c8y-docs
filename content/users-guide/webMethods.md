@@ -16,7 +16,7 @@ The complete webMethods.io Integration documentation is available at [https://do
 ### Getting started
 
 {{< c8y-admon-info >}}
-If your tenant has been created outside of {{< sag-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-c8y-iot >}} with other applications, but you cannot use the app switcher and single sign-on login.
+If your tenant has been created outside of {{< sag-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-c8y-iot >}} with other applications, but you cannot use the application switcher and single sign-on login.
 {{< /c8y-admon-info >}}
 
 To subscribe to webMethods.io Integration, perform the following steps:

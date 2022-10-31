@@ -96,7 +96,7 @@ The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
-A push connection is an active HTTPS long poll or an MQTT connection from {{< product-c8y-iot >}} to the <kbd>/notification/operations</kbd> API endpoint (not the real time API endpoint).
+A push connection is an active HTTPS long poll connection to the <kbd>/notification/operations</kbd> API endpoint or an active MQTT connection to the MQTT endpoint of {{< product-c8y-iot >}}.
 It is always green if the device is connected, even without data.
 
 {{< c8y-admon-info >}}

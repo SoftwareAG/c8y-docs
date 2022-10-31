@@ -10,5 +10,5 @@ Angular 11 is supported from version 10.10.4.0. AOT and Ivy are not yet supporte
 - Remove the `index` property from the angular.json file, if it exists. Also, the `--index` flag from ng-cli is not supported. A custom index.html file can be passed with `ApplicationOptions` `indexTemplate`.
 
 {{< c8y-admon-info >}}
-If you are using Visual Studio Code, make sure in the `Angular Language Service Plugin` the **Use legacy View Engine language service** option is selected.
+If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option "Use legacy View Engine language service" is not selected.
 {{< /c8y-admon-info >}}

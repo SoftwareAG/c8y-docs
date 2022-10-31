@@ -95,7 +95,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
 {{< c8y-admon-info >}}
-Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
+Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant-de >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 {{< /c8y-admon-info >}}
 
 <a name="branding"></a>
@@ -292,8 +292,8 @@ an die Plattform hochgeladen werden.
 
 Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
 über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant-de >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
-Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
-.iot.mycompany.com" ist, lautet die Domain des {{< management-tenant >}} "management.iot.mycompany.com".
+Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant-de >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
+.iot.mycompany.com" ist, lautet die Domain des {{< management-tenant-de >}} "management.iot.mycompany.com".
 
 {{< c8y-admon-info >}}
 Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.

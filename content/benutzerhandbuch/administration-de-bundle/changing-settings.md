@@ -168,7 +168,7 @@ Die Lebensdauer von JWT-Tokens, die im Antworttext erzeugt werden, wird mit den 
 Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in {{< openapi >}}.
 
 {{< c8y-admon-info >}}
-Falls die externe Kommunikation zum {{< management-tenant >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant >}} für das Blockieren der externen Kommunikation konfiguriert ist.
+Falls die externe Kommunikation zum {{< management-tenant-de >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant-de >}} für das Blockieren der externen Kommunikation konfiguriert ist.
 {{< /c8y-admon-info >}}
 
 #### TFA-Einstellungen

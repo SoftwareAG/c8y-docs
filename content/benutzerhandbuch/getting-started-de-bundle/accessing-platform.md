@@ -95,7 +95,7 @@ Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelang
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie dann **Abmelden** im Kontextmenü.
 
 {{< c8y-admon-info >}}
-Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
+Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant-de >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
 {{< /c8y-admon-info >}}
 
 <a name="reset-password"></a>

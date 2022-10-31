@@ -325,7 +325,7 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 |Voller Zugriff|Vollständiger Zugriff auf die verbundenen Geräte, hauptsächlich zur Vereinfachung der Konfiguration.
 
 {{< c8y-admon-info >}}
-Service Provider sehen eine weitere Berechtigung "Support" in ihrem {{< management-tenant >}}. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
+Service Provider sehen eine weitere Berechtigung "Support" in ihrem {{< management-tenant-de >}}. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
 {{< /c8y-admon-info >}}
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.

@@ -298,7 +298,7 @@ Alternativ können Sie die Liste der Einzel-Operationen nach dem Status AUSSTEHE
 
 Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, für die Sie eine Smart Rule erstellen möchten, und wählen Sie **Smart Rule erstellen**.
 
-Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/users-guide/cockpit/#create-rules) beschrieben.
+Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
 
 <a name="to-view-bulk-operations"></a>
 #### So zeigen Sie Bulk-Operationen an

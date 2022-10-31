@@ -2,8 +2,8 @@
 weight: 55
 title: Widgets-Sammlung
 aliases:
-  - /users-guide/cockpit/#widgets
-  - /users-guide/cockpit/#widget
+  - /benutzerhandbuch/cockpit-de/#widgets
+  - /benutzerhandbuch/cockpit-de/#widget
 layout: redirect
 ---
 
@@ -255,13 +255,13 @@ Um ein Attribut oder eine Aktion zu löschen, fahren Sie mit dem Mauszeiger übe
 <a name="data-graph"></a>
 ### Datenpunktgraph
 
-Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](/users-guide/cockpit/#data-explorer).
+Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](/benutzerhandbuch/cockpit-de/#data-explorer).
 
 ![Data Point Graph widget](/images/benutzerhandbuch/cockpit/cockpit-datapointsgraph-widget.png)
 
 Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, auf <b>Mehr...</b> in der oberen Menüleiste klicken und <b>Als Widget zum Dashboard senden</b> wählen.
 
-Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](/users-guide/cockpit/#data-explorer).
+Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](/benutzerhandbuch/cockpit-de/#data-explorer).
 
 Durch den Umschalter **Auto-Scroll** rechts oben am Datenpunktgraph wird das Anzeigeverhalten bestimmt:
 
@@ -299,7 +299,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 </tr>
 <tr>
 <td align="left">Sichtbare Tabellenspalten</td>
-<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="../../users-guide/cockpit/#data-explorer">Visualisieren von Daten im Daten-Explorer</a>.<br><strong>Ziel</strong>: Zielwert. Kann im <a href="../../users-guide/cockpit/#data-explorer">Daten-Explorer</a> oder in der <a href="../../users-guide/cockpit/#data-point-library">Datenpunktbibliothek</a> konfiguriert werden.<br>Aktuell: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
+<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Visualisieren von Daten im Daten-Explorer</a>.<br><strong>Ziel</strong>: Zielwert. Kann im <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Daten-Explorer</a> oder in der <a href="../../benutzerhandbuch/cockpit-de/#data-point-library">Datenpunktbibliothek</a> konfiguriert werden.<br>Aktuell: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
 </tr>
 </tbody>
 </table>

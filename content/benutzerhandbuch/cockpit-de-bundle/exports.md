@@ -1,6 +1,6 @@
 ---
 aliases:
-- /users-guide/cockpit/#export
+- /benutzerhandbuch/cockpit-de/#export
 layout: redirect
 title: Verwalten von Exporten
 weight: 65

@@ -71,7 +71,7 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 <br>
 
 {{< c8y-admon-info >}}
-Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/users-guide/enterprise-tenant/#branding).
+Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 {{< /c8y-admon-info >}}
 
 * Klicken Sie auf **Akzeptieren und fortfahren**, um die Cookie-Standardeinstellungen (erforderliche und funktionelle Cookies aktiviert) zu akzeptieren.

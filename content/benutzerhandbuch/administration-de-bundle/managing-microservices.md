@@ -76,7 +76,7 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">Sslmanagement</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de#customization" class="no-ajaxy">Sslmanagement</a></td>
 <td style="text-align:left">Aktivieren eines eigenen benutzerdefinierten Domain-Namens durch Verwendung eines SSL-Zertifikats</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
@@ -152,7 +152,7 @@ In der Registerkarte **Attribute** werden für jeden Microservice folgende Infor
 </tbody>
 </table>
 
-Nachstehend finden Sie zusätzlich Informationen zur Microservice-Version sowie zur Isolationsstufe und zum Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Nutzungsstatistiken und Abrechnung > Microservice-Nutzung](/users-guide/enterprise-tenant/#microservice-usage).
+Nachstehend finden Sie zusätzlich Informationen zur Microservice-Version sowie zur Isolationsstufe und zum Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Nutzungsstatistiken und Abrechnung > Microservice-Nutzung](/benutzerhandbuch/enterprise-tenant-de/#microservice-usage).
 
 #### Microservice-Abonnement
 

@@ -46,7 +46,7 @@ Zum Filtern der Liste nach Benutzername können Sie das Filterfeld links in der 
 
 Zum Anwenden der gewählten Filter klicken Sie auf **Anwenden**.
 
-Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/users-guide/enterprise-tenant/#user-hierarchies).
+Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie auf **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie auf **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies).
 
 <a name="creating-users"></a>
 ### So fügen Sie einen Benutzer hinzu
@@ -100,11 +100,11 @@ Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Me
 	</tr>
 	<tr>
 	<td align="left">Eigentümer</td>
-	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../users-guide/enterprise-tenant#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie auf <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	<tr>
 	<td align="left">Delegiert von</td>
-	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../users-guide/enterprise-tenant#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../benutzerhandbuch/enterprise-tenant-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	</tbody>
 	</table>
@@ -152,7 +152,7 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Klicken Sie auf **Delegierung aufheben**, um eine Delegierung zu entfernen.
 
-Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/users-guide/enterprise-tenant#user-hierarchies).
+Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de#user-hierarchies).
 
 {{< c8y-admon-info >}}
 Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.

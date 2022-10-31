@@ -44,7 +44,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <td style="text-align:left">Support aktivieren</td>
 <td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto.<br>
 <br>
-Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< management-tenant >}}en nicht global für Untermandanten-Benutzer festgelegt ist, nähere Informationen siehe <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Supportbenutzerzugriff</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
+Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< management-tenant >}}en nicht global für Untermandanten-Benutzer festgelegt ist, nähere Informationen siehe <a href="/benutzerhandbuch/enterprise-tenant-de/#support-user-access" class="no-ajaxy">Supportbenutzerzugriff</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
 </tr>
 <tr>
 <td style="text-align:left">Versionen</td>

@@ -12,7 +12,7 @@ Klicken Sie auf **Konfiguration** im Menü **Einstellungen**, um die Seite **Kon
 
 ![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
 
-Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im {{< enterprise-tenant >}} verfügbar. Weitere Informationen finden Sie unter [{{< enterprise-tenant >}} > Anpassen der Plattform](/users-guide/enterprise-tenant/#customization).
+Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im {{< enterprise-tenant >}} verfügbar. Weitere Informationen finden Sie unter [{{< enterprise-tenant >}} > Anpassen der Plattform](/benutzerhandbuch/enterprise-tenant-de/#customization).
 
 Darüber hinaus können die folgenden Einstellungen nur im {{< management-tenant >}} konfiguriert werden.
 
@@ -34,7 +34,7 @@ Aktivieren Sie die Checkbox **Nur starke "grüne" Passwörter für alle Benutzer
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportbenutzerzugriff für Untermandanten-Benutzer.
 
-Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/users-guide/enterprise-tenant/#support-user-access).
+Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -48,7 +48,7 @@ Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d.�
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [{{< enterprise-tenant >}}> Verwalten von Mandanten](/users-guide/enterprise-tenant/#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [{{< enterprise-tenant >}}> Verwalten von Mandanten](/benutzerhandbuch/enterprise-tenant-de/#managing-tenants).
 
 <a name="configuring-support-users"></a>
 #### Konfigurieren eines Supportbenutzers

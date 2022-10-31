@@ -6,7 +6,7 @@ title: Verwalten von Mandanten
 weight: 10
 ---
 
-Über den {{< enterprise-tenant >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
+Über den {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
 
 {{< c8y-admon-important >}}
 Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
@@ -176,7 +176,7 @@ Als Service Provider können Sie diese E-Mail unterdrücken.
 {{< c8y-admon-important >}}
 Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant >}} aus gelöscht werden.
 
-Administratoren in {{< enterprise-tenant >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
+Administratoren in {{< enterprise-tenant-de >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
 {{< /c8y-admon-important >}}
 
 #### So löschen Sie einen Untermandanten

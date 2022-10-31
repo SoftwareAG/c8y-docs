@@ -160,7 +160,7 @@ Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
 <a name="microservice-usage"></a>
 ### Microservice-Nutzung
 
-Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können {{< enterprise-tenant >}}s und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
+Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können {{< enterprise-tenant-de >}}s und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
 
 
 #### Abrechnungsmodi

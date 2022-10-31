@@ -11,7 +11,7 @@ Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der {{< product-c8y-iot
 Zur Nutzung dieser Funktion muss Supportbenutzerzugriff konfiguriert sein und die erforderlichen Supportbenutzer müssen im {{< management-tenant >}} erstellt sein, siehe [Administration > Plattform-Konfigurationseinstellungen > Supportbenutzer](/benutzerhandbuch/administration-de/#config-support-users).
 
 {{< c8y-admon-info >}}
-In den Public-Cloud-Instanzen von {{< product-c8y-iot >}} kann die Supportbenutzer-Funktionalität nur vom [{{< sag-support >}}](/welcome/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für {{< enterprise-tenant >}}-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
+In den Public-Cloud-Instanzen von {{< product-c8y-iot >}} kann die Supportbenutzer-Funktionalität nur vom [{{< sag-support >}}](/welcome/contacting-support/)-Team zur Bereitstellung von Kundensupport verwendet werden. Sie ist nicht für {{< enterprise-tenant-de >}}-Kunden zur Unterstützung ihrer Kunden/Untermandanten verfügbar.
 {{< /c8y-admon-info >}}
 
 <a name="configuring-support-access"></a>

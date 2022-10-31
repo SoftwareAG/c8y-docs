@@ -56,7 +56,7 @@ TOTP muss von jedem einzelnen Benutzer eingerichtet werden.
 {{< c8y-admon-req >}}
 
 Benutzer können ihr eigenes TOTP-Secret nicht zurücksetzen. Das Secret eines Benutzers wird nur von seinem jeweiligen übergeordneten Benutzer zurückgesetzt.
-Weitere Informationen zu Benutzerhierarchien finden Sie unter [{{< enterprise-tenant >}} > Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies) im *User Guide*.
+Weitere Informationen zu Benutzerhierarchien finden Sie unter [{{< enterprise-tenant-de >}} > Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies) im *User Guide*.
 
 ROLLEN UND BERECHTIGUNGEN:
 

@@ -224,7 +224,7 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 * Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
 {{< c8y-admon-info >}}
-Um die Single-Sign-On-Funktion für {{< enterprise-tenant >}}s nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
+Um die Single-Sign-On-Funktion für {{< enterprise-tenant-de >}}s nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
 {{< /c8y-admon-info >}}
 
 #### Konfigurationseinstellungen

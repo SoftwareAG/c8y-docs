@@ -6,7 +6,7 @@ aliases:
   - /users-guide/enterprise-edition/#license-management
 ---
 
-Der {{< management-tenant >}} kann die Lizenzen für die Domains der {{< enterprise-tenant >}}s über die Benutzeroberfläche verwalten.
+Der {{< management-tenant >}} kann die Lizenzen für die Domains der {{< enterprise-tenant-de >}}s über die Benutzeroberfläche verwalten.
 
 ![License management](/images/benutzerhandbuch/enterprise-tenant/et-license-management.png)
 

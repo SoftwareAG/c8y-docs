@@ -4,7 +4,7 @@ title: Aufrufen und Anmelden an der Plattform
 layout: redirect
 aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
-  - /users-guide/getting-started/#accessing-cumulocity-platform
+  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
 ---
 
 Auf die {{< product-c8y-iot >}}-Plattform können Sie über eine [URL](#url) in einem Webbrowser zugreifen.
@@ -83,7 +83,7 @@ Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}}
 
 
 {{< c8y-admon-info >}}
-Wenn Sie funktionelle Cookies aktiviert haben, können Sie das Produkterfahrungs-Tracking später über den Dialog **Benutzereinstellungen** abwählen, siehe [Benutzeroptionen und -einstellungen](/users-guide/getting-started/#user-settings).
+Wenn Sie funktionelle Cookies aktiviert haben, können Sie das Produkterfahrungs-Tracking später über den Dialog **Benutzereinstellungen** abwählen, siehe [Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
 {{< /c8y-admon-info >}}
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen {{< product-c8y-iot >}}-Anwendungen wechseln, da die {{< product-c8y-iot >}}-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".

@@ -40,9 +40,9 @@ Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Info
 * Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird
 * Name und E-Mail-Adresse des Benutzers, falls angegeben
 * Die globalen Rollen, die für den Benutzer vergeben wurden
-* Die [Stärke](/users-guide/getting-started/#change-password) des Passworts, das für den Benutzer gesetzt ist
+* Die [Stärke](/benutzerhandbuch/getting-started-de/#change-password) des Passworts, das für den Benutzer gesetzt ist
 
-Zum Filtern der Liste nach Benutzername können Sie das Filterfeld links in der oberen Menüleiste verwenden. Mit der Auswahlliste können Sie nach globalen Rollen filtern. Weitere Informationen zur Filterung finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
+Zum Filtern der Liste nach Benutzername können Sie das Filterfeld links in der oberen Menüleiste verwenden. Mit der Auswahlliste können Sie nach globalen Rollen filtern. Weitere Informationen zur Filterung finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 Zum Anwenden der gewählten Filter klicken Sie auf **Anwenden**.
 
@@ -111,7 +111,7 @@ Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Me
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/users-guide/administration/#tfa).
-	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zum Zurücksetzen des Passworts und zur Passwortstärke finden Sie unter [So ändern Sie Ihr Passwort](/users-guide/getting-started/#change-password).  
+	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zum Zurücksetzen des Passworts und zur Passwortstärke finden Sie unter [So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#change-password).  
 	* **Link für das Zurücksetzen des Passworts per E-Mail senden**: Wenn ausgewählt, erhält der Benutzer eine E-Mail mit einem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions).

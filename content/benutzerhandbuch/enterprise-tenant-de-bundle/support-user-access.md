@@ -27,7 +27,7 @@ Dies wird global im *{{< management-tenant >}}* konfiguriert, siehe [Administrat
 
 Bei globaler Aktivierung kann sich der Supportbenutzer bei allen zulässigen Untermandanten als beliebiger Benutzer uneingeschränkt anmelden.
 
-Bei globaler Deaktivierung kann der Supportbenutzerzugriff bei Bedarf immer noch durch einen Untermandanten-Benutzer eingeschaltet werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/users-guide/getting-started/#user-settings). Der Supportzugriff ist nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Mandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
+Bei globaler Deaktivierung kann der Supportbenutzerzugriff bei Bedarf immer noch durch einen Untermandanten-Benutzer eingeschaltet werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings). Der Supportzugriff ist nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Mandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
 
 Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpunkt auf **Support deaktivieren**, so dass der Benutzer eine ausstehende Supportanfrage deaktivieren kann, die sich erübrigt hat, bevor sie abläuft.
 

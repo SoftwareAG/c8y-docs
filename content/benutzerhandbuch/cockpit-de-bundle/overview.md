@@ -69,14 +69,14 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tbody>
 </table>
 
-Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de).
+Mehr über allgemeine Aspekte der {{< product-c8y-iot >}}-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/users-guide/getting-started).
 
 <a name="home"></a>
 ### Startseite
 
 Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.
 
-![Home dashboard](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
+![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 
@@ -86,6 +86,6 @@ Aus Leistungsgründen zeigt die Karte auf der Startseite Symbole für maximal 10
 
 Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.
 
-Details zum Bearbeiten von Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
+Details zum Bearbeiten von Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
 
 Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie auf **Mehr...** rechts oben in der Menüleiste und klicken Sie dann auf **Dashboard wiederherstellen**.

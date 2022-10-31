@@ -5,10 +5,10 @@ layout: redirect
 ---
 Mit der Anwendung Device Management können Sie die Daten überwachen, die Ihre Geräte über die auf ihnen ausgeführten Services senden.
 
-Die Registerkarte [Services](/benutzerhandbuch/device-management-de/#services) in der Geräte-Detailansicht bietet eine Übersicht über die Services, die auf dem jeweiligen Gerät ausgeführt werden, und dient als Einstiegspunkt zur Service-Detailansicht.
+Die Registerkarte [Services](/users-guide/device-management/#services) in der Geräte-Detailansicht bietet eine Übersicht über die Services, die auf dem jeweiligen Gerät ausgeführt werden, und dient als Einstiegspunkt zur Service-Detailansicht.
 Dort finden Sie ausführliche Informationen über Messungen, Ereignisse und Alarme, die für den betreffenden Service gesendet wurden.
 
-![Service details](/images/benutzerhandbuch/DeviceManagement/devmgmt-service-details.png)
+![Service details](/images/users-guide/DeviceManagement/devmgmt-service-details.png)
 
 Die Service-Detailansicht umfasst die folgenden Registerkarten, die in den nachstehenden Abschnitten detailliert beschrieben werden:
 <table>

@@ -6,18 +6,27 @@ weight: 30
 
 Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
 
+{{< c8y-admon-req >}}
+ROLLEN UND BERECHTIGUNGEN:
 
-Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.
+- Zum Anzeigen und Auswählen aller verfügbaren Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Visualisieren bereits ausgewählter Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Messwerte" oder LESEN-Berechtigung für "Messwerte" in den Stammdatenrollen
+- Zum Senden als Widget an Berichte/Dashboards: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
 
-* Klicken Sie auf **Daten-Explorer** im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
+Beachten Sie, dass in der Datenpunktbibliothek vorhandene Datenpunkte für jeden sichtbar sind, ohne dass eine Berechtigung benötigt wird.
+{{< /c8y-admon-req >}}
 
-* Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
+Der Daten-Explorer ist sowohl für alle Assets auf einmal als auch für einzelne Assets verfügbar.
+
+- Klicken Sie auf **Daten-Explorer** im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
+
+- Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
 
 Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
-![data explorer](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer.png)
+![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
 Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 
@@ -29,7 +38,7 @@ Die Datenpunktattribute werden folgendermaßen vorausgefüllt:
 
 In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, indem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und **[NAME] aus Bibliothek laden** wählen.
 
-![edit data points](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-edit.png)
+![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter [Anpassen von Datenpunktattributen](#customize-data-points).
 
@@ -93,7 +102,7 @@ Die Sichtbarkeit eines Datenpunkts kann mit dem Umschalter links neben dem Daten
 
 Klicken Sie auf **Datenpunkt hinzufügen** am Ende der Karte **Datenpunkte**, um einen Datenpunkt zum Daten-Explorer hinzuzufügen.
 
-![Add data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-adddatapoint.png)
+![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
 Wählen Sie im folgenden Fenster oben ein Gerät aus der Asset-Hierarchie. Es wird nur die Asset-Hierarchie unterhalb des im Navigator ausgewählten Objekts angezeigt. Wenn im Navigator **Daten-Explorer** ausgewählt wurde, wird die gesamte Asset-Hierarchie angezeigt.
 
@@ -101,7 +110,7 @@ Unten im Fenster werden alle Datenpunkte des ausgewählten Objekts angezeigt. W�
 
 Um einen Datenpunkt in der Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie **In Bibliothek speichern**.
 
-![Save data point to library](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-savedatapoint.png)
+![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
 Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibliothek](#data-point-library).
 
@@ -183,7 +192,7 @@ Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hi
 
 Klicken Sie auf **Alarm/Ereignis** hinzufügen in der Karte **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-eventsadd.png)
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
 
 Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlliste auswählen. Klicken Sie auf **Hinzufügen**, um Ihre Auswahl hinzuzufügen.
 
@@ -202,7 +211,7 @@ Wenn Sie die aktuelle Konfiguration des Daten-Explorers aufbewahren möchten, k�
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Dashboard hinzufügen**, um ein Widget aus dem Daten-Explorer eines bestimmten Assets zu erstellen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-sendwidget.png)
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen.
 
@@ -214,7 +223,7 @@ Um diese Funktion nutzen zu können, muss zunächst ein Dashboard erstellt werde
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Bericht hinzufügen**, um ein Widget aus dem Daten-Explorer des Navigators zu erstellen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-sendwidget.png)
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen.
 

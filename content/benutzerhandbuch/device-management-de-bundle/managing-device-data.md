@@ -19,7 +19,7 @@ Die Device Management-Anwendung bietet verschiedene Funktionen, die Sie bei der 
 
 Sämtliche Funktionen können über das Menü **Verwaltung** im Navigator aufgerufen werden:
 
-![Management menu](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-menu.png)
+![Management menu](/images/users-guide/DeviceManagement/devmgmt-management-menu.png)
 
 <a name="firmware-repo"></a>
 ### Verwalten von Geräte-Firmware
@@ -34,14 +34,14 @@ Klicken Sie im Menü **Verwaltung** des Navigators auf **Firmware Repository**.
 
 Die verfügbaren Firmware-Objekte werden in Form einer Liste angezeigt.
 
-![Firmware list](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-list.png)
+![Firmware list](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
 Jeder Eintrag enthält den Namen der Firmware, den Gerätetypen, auf den sie anwendbar ist (falls angegeben) und eine Bezeichnung, die angibt, ob und wie viele Versionen für eine bestimmte Firmware verfügbar sind.
-Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung und Gerätetyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
+Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung und Gerätetyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
 
 Wenn sie auf einen Eintrag klicken, werden die Details dieser Firmware sowie alle verfügbaren Versionen und Patches angezeigt.
 
-![Firmware details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-details.png)
+![Firmware details](/images/users-guide/DeviceManagement/devmgmt-firmware-details.png)
 
 Am Anfang der Liste stehen der Name der Firmware, eine Beschreibung und ein oder mehrere Gerätetypfilter (optional). Wenn ein Filter gesetzt ist, wird die Firmware nur für die entsprechenden Geräte zur Installation angeboten. Ist kein Filter gesetzt, wird sie für alle Geräte angeboten.
 
@@ -59,13 +59,13 @@ Die Liste der Versionen und Patches enthält den Versionsnamen und den Namen der
 3. Laden Sie entweder eine Binärdatei aus Ihrem Dateisystem hoch oder geben Sie eine URL an, unter der die Firmware heruntergeladen werden kann.
 4. Klicken Sie auf **Speichern**.
 
-![Add firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add.png)
+![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
 
 Das Firmware-Objekt wird der Firmware-Liste bzw. die Firmware-Version den Firmware-Details hinzugefügt und die Versionsbezeichnung wird entsprechend aktualisiert.
 
 Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Firmware bereits ausgewählt ist.
 
-![Add firmware version](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add-version.png)
+![Add firmware version](/images/users-guide/DeviceManagement/devmgmt-firmware-add-version.png)
 
 
 ##### So fügen Sie einen neuen Firmware-Patch hinzu
@@ -81,7 +81,7 @@ Wie beim Hinzufügen von Versionen sieht der Dialog etwas anders aus, wenn Sie i
 
 Der Firmware-Patch wird den Versionsdetails innerhalb der Firmware-Details hinzugefügt.
 
-![Versions and patches](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
+![Versions and patches](/images/users-guide/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
 
 #### So bearbeiten Sie eine Firmware
 
@@ -115,10 +115,10 @@ Klicken Sie im Menü **Geräte** des Navigators auf **Alle Geräte**, wählen Si
 
 Die Registerkarte **Firmware** zeigt die aktuell auf dem Gerät installierte Firmware.
 
-![Firmware tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-tab.png)
+![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
-![Firmware operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-operation-details.png)
+![Firmware operation details](/images/users-guide/DeviceManagement/devmgmt-firmware-operation-details.png)
 
 ##### So installieren/ersetzen Sie Firmware auf einem Gerät
 
@@ -126,7 +126,7 @@ Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGR
 2. Wählen Sie eine Firmware und die gewünschte Version aus der Liste. Diese enthält die gesamte Firmware, die für diesen Gerätetyp im Firmware-Repository bereitsteht.
 3. Klicken Sie auf **Installieren**.
 
-![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
+![Install firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-install.png)
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
@@ -139,15 +139,11 @@ Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzte
 
 1. Führen Sie die Firmware-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
 2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/users-guide/device-management/#monitoring-and-controlling-devices).
 
 Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
-
-{{< c8y-admon-info >}}
-Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
-{{< /c8y-admon-info >}}
 
 <a name="software-repo"></a>
 ### Verwalten von Geräte-Software
@@ -160,14 +156,14 @@ Klicken Sie im Menü **Verwaltung** des Navigators auf **Software Repository**.
 
 Die verfügbaren Software-Objekte werden in Form einer Liste angezeigt.
 
-![Software list](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-repository.png)
+![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
 Jeder Eintrag enthält den Namen der Software, den Gerätetyp, auf den sie anwendbar ist (falls angegeben), den Software-Typ (falls angegeben) sowie einen Sticker, der angibt, ob und wie viele Versionen für eine bestimmte Software verfügbar sind.
 Die Werte in jeder Spalte außer in der Spalte **Versionen** können durch Klicken auf das Filter- oder Sortiersymbol in der Spaltenüberschrift gefiltert bzw. sortiert werden.
 
 Wenn sie auf einen Eintrag klicken, werden die Details dieser Software sowie alle verfügbaren Versionen angezeigt.
 
-![Software details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-details.png)
+![Software details](/images/users-guide/DeviceManagement/devmgmt-software-details.png)
 
 Am Anfang der Liste stehen der Name der Software, eine Beschreibung, ein oder mehrere Gerätetypfilter (optional) und ein Software-Typ.
 Wenn ein Gerätetypfilter gesetzt ist, wird die Software nur für die entsprechenden Geräte zur Installation angeboten.
@@ -192,13 +188,13 @@ Die Versionen sind nach ihrem Erstellungszeitpunkt (absteigend) sortiert.
 5. Laden Sie entweder eine Binärdatei aus Ihrem Dateisystem hoch oder geben Sie eine URL an, unter der die Software heruntergeladen werden kann.
 6. Klicken Sie auf **Software hinzufügen**.
 
-![Add software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-add.png)
+![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)
 
 Das Software-Objekt wird der Software-Liste bzw. die Software-Version den Software-Details hinzugefügt und die Versionsnummer wird entsprechend aktualisiert.
 
 Wenn Sie in den Details einer bestimmten Software auf **Software hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Software bereits ausgewählt ist.
 
-![Add software version](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-add-version.png)
+![Add software version](/images/users-guide/DeviceManagement/devmgmt-software-add-version.png)
 
 
 #### So bearbeiten Sie eine Software
@@ -234,15 +230,15 @@ Klicken Sie im Menü **Geräte** des Navigators auf **Alle Geräte**, wählen Si
 
 Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte Software auf. Wenn eine bestimmte Software einen Typ hat, wird dieser neben ihrem Namen angezeigt. Sie können nach einer bestimmten Software anhand ihres Namens suchen oder die Liste anhand des Software-Typs filtern.
 
-![Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-tab.png)
+![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
 
-![Software operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-operation-details.png)
+![Software operation details](/images/users-guide/DeviceManagement/devmgmt-software-operation-details.png)
 
 ##### So installieren Sie Software auf einem Gerät
 
-1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-install.png)
+1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
 
     {{< c8y-admon-info >}}
 Im Dialog **Software installieren** werden nur Software-Elemente angezeigt, die dem Gerätetyp entsprechen. Zudem gilt: Wenn für das Gerät `c8y_SupportedSoftwareTypes` deklariert wurden, werden in dem Dialog nur die Software-Elemente angezeigt, die den unterstützten Software-Typen entsprechen.
@@ -256,13 +252,13 @@ Sie können das bereits installierte Software-Element unter **Software-Änderung
 
 4. Überprüfen Sie Ihre geplanten Änderungen unter **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.
 
-	 ![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
+	 ![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
 
-![Installed software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-installed.png)
+![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### So aktualisieren Sie Software auf einem Gerät
@@ -270,7 +266,7 @@ Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzte
 Bewegen Sie den Mauszeiger über das Software-Element, das Sie aktualisieren möchten, und klicken Sie auf **Aktualisieren**.
 Wählen Sie eine Version aus der Liste und klicken Sie erneut auf **Aktualisieren**.
 
-![Update software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-update.png)
+![Update software](/images/users-guide/DeviceManagement/devmgmt-software-update.png)
 
 Die Software wird mit der ausgewählten Version aktualisiert.
 
@@ -284,15 +280,11 @@ Bewegen Sie den Mauszeiger über das Software-Element, das Sie löschen möchten
 
 1. Führen Sie die Software-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
 2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie auf **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/users-guide/device-management/#monitoring-and-controlling-devices).
 
 Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
-
-{{< c8y-admon-info >}}
-Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
-{{< /c8y-admon-info >}}
 
 <a name="configuration-repository"></a>
 ### Verwalten von Konfigurationen
@@ -303,7 +295,7 @@ Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Kon
 
 Klicken Sie auf **Konfigurations-Repository** im Menü **Verwaltung** des Navigators. Auf der Seite **Konfigurations-Repository** werden alle verfügbaren Konfigurationssnapshots aufgelistet. Jeder Eintrag zeigt den Namen und die Beschreibung der Konfiguration sowie den Geräte- und Konfigurationstyp.
 
-![Configuration Repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo.png)
+![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
 <a name="add-snapshot"></a>
 #### So fügen Sie einen Konfigurationssnapshot hinzu
@@ -322,9 +314,9 @@ Der Konfigurationssnapshot wird dem Konfigurations-Repository hinzugefügt.
 
 Zum Bearbeiten eines Konfigurationssnapshots klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**.
 
-Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Konfigurationssnapshot hinzu](/benutzerhandbuch/device-management-de#add-snapshot).
+Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Konfigurationssnapshot hinzu](/users-guide/device-management#add-snapshot).
 
-![Configuration Repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepoedit.png)
+![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
 
 Klicken Sie auf **Konfiguration aktualisieren**, um Ihre Änderungen zu speichern.
 
@@ -345,7 +337,7 @@ Die folgenden Schritte gelten für Geräte, die nur einen Konfigurationstyp unte
 
 Der geladene Snapshot wird im **Konfigurations-Repository** im Menü **Verwaltung** des Navigators angezeigt.
 
-![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
+![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
 
 So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
 
@@ -353,7 +345,7 @@ So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
 2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
 3. Klicken Sie auf **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
 
-![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
+![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
 
 #### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
 
@@ -363,7 +355,7 @@ So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
 
 Sobald Sie den Snapshot geladen haben, können Sie ihn im Abschnitt **Vorschau** speichern oder herunterladen. Der Snapshot wird zum **Konfigurations-Repository** hinzugefügt, auf das Sie über das Menü **Verwaltung** im Navigator zugreifen können.
 
-![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
+![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
 {{< c8y-admon-info >}}
 Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird eine neue Operation erstellt. Wenn sich die Operation im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um die Operation abzubrechen oder die Änderungshistorie der Operation anzuzeigen.
@@ -376,7 +368,7 @@ So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfig
 3. Wählen Sie eine Konfigurationsdatei unter **Verfügbare unterstützte Konfigurationen**.
 4. Klicken Sie auf der rechten Seite auf **Konfiguration an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
 
-![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 {{< c8y-admon-info >}}
 Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfigurationsdateien angezeigt, die über ein passendes Konfigurationstyp-Attribut verfügen oder für die kein Konfigurationstyp definiert wurde. Zudem werden Konfigurationsdateien basierend auf dem Gerätetypen gefiltert.
@@ -387,7 +379,7 @@ Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfiguration
 
 Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#dev-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
-![Device credentials](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials.png)
+![Device credentials](/images/users-guide/DeviceManagement/devmgmt-device-credentials.png)
 
 #### So verwalten Sie Berechtigungen für ein Gerät
 
@@ -403,7 +395,7 @@ Die Rollen für die Geräte werden entsprechend aktualisiert.
 
 2. In der Detail-Seite können Sie ein Gerät deaktivieren/aktivieren, indem Sie auf den Umschalter **Aktiv** klicken, das Passwort für ein Gerät ändern oder in der Liste **Globale Rollen** Berechtigungen zuweisen oder entfernen.
 
-	![Device credentials details](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials-details.png)
+	![Device credentials details](/images/users-guide/DeviceManagement/devmgmt-device-credentials-details.png)
 
 3. Klicken Sie auf **Speichern**.
 
@@ -433,7 +425,7 @@ Geräteprofile stellen eine Kombination aus einer Firmware-Version, einem oder m
 
 Zum Anzeigen der Seite **Geräteprofile**, die sämtliche verfügbaren Geräteprofile auflistet, klicken Sie im Menü **Verwaltung** des Navigators auf **Geräteprofile**.
 
-![Device profiles list](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-list.png)
+![Device profiles list](/images/users-guide/DeviceManagement/devmgmt-device-profile-list.png)
 
 Jeder Geräteprofil-Eintrag zeigt den Profilnamen und die gewählten Gerätetypen, falls vorhanden.
 
@@ -443,7 +435,7 @@ Der Abschnitt **Name und Gerätetyp** zeigt den Namen des Profils und die option
 
 Die darauffolgenden Abschnitte listen die Firmware-Version, die Software-Pakete und die Konfigurationsdateien für dieses bestimmte Geräteprofil auf.
 
-![Device profile details](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-details.png)
+![Device profile details](/images/users-guide/DeviceManagement/devmgmt-device-profile-details.png)
 
 #### So fügen Sie ein Geräteprofil hinzu
 
@@ -507,7 +499,7 @@ Geräteprofile können angewendet werden auf:
 
 Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details des aktuell auf dem Gerät installierten Profils.
 
-![Currently installed profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-tab.png)
+![Currently installed profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-tab.png)
 
 {{< c8y-admon-info >}}
 Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ `c8y_DeviceProfile` unterstützen.
@@ -515,7 +507,7 @@ Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen
 
 Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
 
-![Device profile filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-filter.png)
+![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
 
 
 <a name="to-apply-profiles-to-single-devices"></a>
@@ -525,7 +517,7 @@ Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile
 
 1. Wählen Sie auf der Registerkarte **Geräteprofil** ein Geräteprofil aus der Auswahlliste. Es werden nur die Profile angezeigt, die zu dem Gerätetypen passen (falls angegeben), oder für die kein Gerätetyp angegeben wurde.
 
-	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
+	![Assign device profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-assign.png)
 
 2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
@@ -536,7 +528,7 @@ Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet w
 
 1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie eine neue Bulk-Operation zum Anwenden eines Geräteprofils erstellen.
 2. Klicken Sie auf der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
-3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen> So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
+3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen> So fügen Sie eine Bulk-Operation hinzu](/users-guide/device-management/#bulk-operations).
 
 Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status der Operation. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
 
@@ -557,17 +549,17 @@ Klicken Sie im Menü **Verwaltung** des Navigators auf **Vertrauenswürdige Zert
 
 Alle Zertifikate des Mandanten werden angezeigt.
 
-![Trusted certificates List](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-list.png)
+![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
 Das Symbol links neben dem jeweiligen Eintrag zeigt, ob das Zertifikat aktiv (grün) oder inaktiv (rot) ist. Ein Mandant kann jederzeit über eine beliebige Anzahl von aktiven oder inaktiven Zertifikaten verfügen.
 
 Durch Klicken auf das Pfeilsymbol rechts neben einem Zertifikat können Sie weitere Details zu dem betreffenden Zertifikat aufklappen.
 
-![Trusted certificates Entry](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-entry.png)
+![Trusted certificates Entry](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
 Die Information in der Tabelle rechts stammt von dem bereitgestellten Zertifikat. Der Inhalt ist schreibgeschützt und kann nicht geändert werden.
 
-![Trusted certificate details](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-details.png)
+![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-details.png)
 
 
 #### So fügen Sie ein Zertifikat hinzu
@@ -584,7 +576,7 @@ Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie auf **Vertrauenswürdiges Zertifikat hinzufügen** rechts in der oberen Menüleiste.
 
-	![Trusted certificate details](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-new.png)
+	![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-new.png)
 
 2. Geben Sie im nächsten Dialog die folgenden Informationen ein:
 
@@ -611,6 +603,6 @@ Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung
 
 Um ein Zertifikat dauerhaft aus der Liste der vertrauenswürdigen Zertifikate zu löschen, klicken Sie auf das Menüsymbol rechts neben dem betreffenden Eintrag und anschließend im Kontextmenu auf **Löschen**.
 
-![Trusted certificates delete](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-delete.png)
+![Trusted certificates delete](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-delete.png)
 
 Das Zertifikat wird dauerhaft gelöscht.

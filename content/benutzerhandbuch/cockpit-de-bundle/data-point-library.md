@@ -6,6 +6,14 @@ weight: 75
 
 Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute.
 
+{{< c8y-admon-req >}}
+ROLLEN UND BERECHTIGUNGEN:
+
+- Zum Hinzufügen eines Datenpunkts: ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Löschen eines Datenpunkts: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Bearbeiten eines Datenpunkts: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+  {{< /c8y-admon-req >}}
+
 Datenpunktattribute ähneln den Absatzformaten in Textverarbeitungsanwendungen. Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte. Sie bietet eine Reihe von standardisierten Datenpunkt-Templates, die problemlos auf Ihre Datenpunkte von verschiedenen Geräten angewendet werden können.
 
 Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standardvisualisierung für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die {{< product-c8y-iot >}}-Plattform die Datenpunktbibliothek und versucht, einen passenden Eintrag zu finden. Ein Eintrag gilt als "passend", wenn die Werte für Fragment und Serie in der Datenpunktbibliothek mit den Messwerten übereinstimmen. Bei einem passenden Eintrag werden die entsprechenden Datenpunktattribute für eine Standardvisualisierung verwendet.
@@ -14,7 +22,7 @@ Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsrege
 
 Klicken Sie auf **Datenpunktbibliothek** im Menü **Konfiguration** im Navigator, um die Datenpunktbibliothek zu öffnen.
 
-![Data point library](/images/benutzerhandbuch/cockpit/cockpit-data-point-library.png)
+![Data point library](/images/users-guide/cockpit/cockpit-data-point-library.png)
 
 Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enthält die folgenden Informationen:
 

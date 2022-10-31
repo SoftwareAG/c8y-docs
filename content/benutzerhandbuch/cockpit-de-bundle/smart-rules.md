@@ -4,53 +4,64 @@ title: Smart Rules
 weight: 80
 ---
 
-{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
+{{< product-c8y-iot >}} enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/users-guide/administration) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
-{{< c8y-admon-info >}}
-Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat. Um Smart Rules verwalten zu können, benötigt der Benutzer die ERSTELLEN-Berechtigung für "Stammdaten" und die ADMIN-Berechtigung für entweder "Globale Smart Rules" oder "Regeln".
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat.
+{{/< c8y-admon-req >}}
 
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
-* **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einem Template bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
-* **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
+- **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einem Template bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
+- **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
 
 Es gibt zwei Typen von Smart Rules:
 
-* **Globale Smart Rules**
+- **Globale Smart Rules**
 
   Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer und mehr).
 
-  In der Seite "Smart Rules" werden nur die globalen Smart Rules angezeigt. Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:
+{{< c8y-admon-req >}}
+ROLLEN UND BERECHTIGUNGEN für globale Smart Rules:
 
-  * Smartrule = LESEN-Berechtigung
-  * Smartrule = ADMIN-Berechtigung
-  * CEP management = ADMIN-Berechtigung
-<br>
-<br>
-* **Lokale Smart Rules**
+- Zum Anzeigen einer globalen Smart Rule: LESEN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und LESEN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Bearbeiten von globalen Smart Rules: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Erstellen einer globalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Duplizieren einer globalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Löschen einer globalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+{{< /c8y-admon-req >}}
+
+- **Lokale Smart Rules**
 
   Lokale Smart Rules werden entweder in einer Gruppe oder in einem Gerät erstellt. Sie sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.
 
+{{< c8y-admon-req >}}
+ROLLEN UND BERECHTIGUNGEN für lokale Smart Rules:
+
+- Zum Anzeigen von lokalen Smart Rules: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Bearbeiten von lokalen Smart Rules: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Erstellen einer neuen lokalen Smart Rule: CREATE-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Löschen einer lokalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+{{< /c8y-admon-req >}}
 
 Smart Rules sind an zwei Orten zu sehen:
 
-* Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
+- Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
 
-  ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
+  ![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
 
   Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
 
-* In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
+- In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
 
-  ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
+  ![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
 
-  In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.		
-
+  In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.
 
 <a name="create-rules"></a>
+
 ### So erstellen Sie eine Smart Rule
 
 Smart Rules können entweder auf der Seite **Globale Smart Rules** im Menü **Konfiguration** des Navigators (globale Smart Rules) oder in der Registerkarte **Info** einer Gruppe oder eines Geräts (lokale Smart Rules) erstellt werden.
@@ -100,7 +111,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 
 Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
+<img src="/images/users-guide/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
 
 Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
 
@@ -112,15 +123,15 @@ Beim Erstellen einer Smart Rule auf der Seite **Globale Smart Rules** ist die Re
 
 Um eine Regel explizit zu aktivieren bzw. zu deaktivieren, navigieren Sie zur Registerkarte **Info** der jeweiligen Gruppe oder des jeweiligen Geräts und stellen Sie den Umschalter **Aktiv/Inaktiv** auf **Aktiv** bzw. **Inaktiv**.  
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
+<img src="/images/users-guide/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
 
 Ein Anwendungsbeispiel für das Deaktivieren einer Smart Rule für ein einzelnes Objekt könnte sein, dass ein bestimmtes Gerät zu viele Schwellenwert-Alarme generiert. Die Regel kann lediglich für dieses Gerät deaktiviert werden, aber immer noch für alle anderen Objekte aktiv sein.
 
 Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschalter allein für die Gruppe. Sie können die Regel dann über das Auswahlfeld unterhalb des Umschalters separat für die Kinder der Gruppe aktivieren/deaktivieren.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
+<img src="/images/users-guide/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important >}}
 Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
 {{< /c8y-admon-important >}}
 
@@ -131,10 +142,10 @@ Führen Sie folgende Schritte aus, um eine Schwellenwertregel zu definieren:
 1. Navigieren Sie im Menü Gruppen zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellenwert anwenden möchten.
 2. Wechseln Sie zur Registerkarte **Daten-Explorer**.
 3. Wenn der Datenpunkt, der den Schwellenwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und [fügen Sie einen Datenpunkt hinzu](#add-data-points).
-4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
+4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
 5. Wählen Sie die Smart Rule "Bei Schwellenwertüberschreitung Alarm erzeugen".
-6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/benutzerhandbuch/cockpit-de#smart-rules-collection).
+6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/users-guide/cockpit#smart-rules-collection).
 7. Unter **Alarm erzeugen** können Sie optional den Alarmtyp und Alarmtext definieren.
 8. Unter **Ziel-Assets oder -geräte** können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.
 9. Klicken Sie auf **Erstellen**, um die Smart Rule zu erstellen.

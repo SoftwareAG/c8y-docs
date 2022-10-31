@@ -10,7 +10,7 @@ weight: 11
 
 Auf der Seite **Geräteregistrierung** werden alle Geräte, die sich aktuell im Registrierungsprozess befinden, entweder als Liste oder als Raster angezeigt.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
+<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
 Die folgenden Informationen werden für jedes Gerät angezeigt:
 
@@ -24,6 +24,11 @@ Die Geräte können einen der folgenden Status haben:
 * **Wartet auf Verbindung** - Das Gerät wurde registriert, aber kein Gerät mit der angegebenen ID hat versucht, eine Verbindung herzustellen.
 * **Bitte akzeptieren** - Es liegt eine Kommunikation von einem Gerät mit der angegebenen ID vor, doch der Benutzer, der die Registrierung vornimmt, muss noch explizit zustimmen, damit die Zugangsdaten an das Gerät gesendet werden.
 * **Akzeptiert** - Der Benutzer hat erlaubt, dass die Zugangsdaten an das Gerät gesendet werden.
+* **Blockiert** - Die Geräteregistrierung wurde blockiert, weil die Höchstzahl an fehlgeschlagenen Versuchen überschritten wurde.
+
+{{< c8y-admon-info >}}
+Wenn eine Geräteregistrierung **blockiert** ist, müssen Sie sie zuerst löschen und dann neu erstellen.
+{{< /c8y-admon-info >}}
 
 Geräte können auf verschiedene Weise mit Ihrem {{< product-c8y-iot >}}-Konto verbunden werden.
 
@@ -31,13 +36,14 @@ Geräte können auf verschiedene Weise mit Ihrem {{< product-c8y-iot >}}-Konto v
 
 Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 
-* **[Manuelle Geräteregistrierung](#device-registration-manually)** - zum manuellen Herstellen einer Verbindung mit einem oder mehreren Geräten
-* **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
+* **[Einzelregistrierung eines allgemeinen Geräts](#device-registration-manually)** - zum manuellen Herstellen einer Verbindung mit einem oder mehreren Geräten
+* **[Bulk-Registrierung für allgemeine Geräte](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
-Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. Actility LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
+Wenn Sie die erforderlichen Anwendungen abonniert haben, sehen Sie andere Optionen zur Registrierung von Geräten bestimmter Typen (z. B. Actility LoRa oder Sigfox). Eine vollständige Liste der unterstützten Protokolle finden Sie im [Protocol Integration Guide](/protocol-integration/overview).
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
+<img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
+
+Microservice-Entwickler können auch die [Erweiterte Geräteregistrierung](/concepts/applications/#extensible-device-registration) verwenden und ein benutzerdefiniertes Registrierungsformular implementieren, das sich nahtlos in die Benutzeroberfläche einfügt.
 
 <a name="device-registration-manually"></a>
 #### So verbinden Sie ein Gerät manuell
@@ -46,26 +52,36 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant.
 {{< /c8y-admon-info >}}
 
-1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
-2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.
+1. Klicken Sie auf **Registrierung** im Menü **Geräte** des Navigators.
+2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Einzelregistrierung** > **Generell**.
 
-  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+
+Der Dialog **Geräte registrieren** wird angezeigt.
+
+  <img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 3. Geben Sie im Feld **Geräte-ID** die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist.
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten, siehe auch [Gruppieren von Geräten](#grouping-devices).
-5. Klicken Sie auf **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
+5. Klicken Sie auf **Neues Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
 6. Klicken Sie auf **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
 {{< c8y-admon-info >}}
-In einem {{< enterprise-tenant-de >}} kann der {{< management-tenant-de >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant-de >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
-{{< /c8y-admon-info >}}
+In einem {{< enterprise-tenant >}} kann der {{< management-tenant >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
+<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
+{{< /c8y-admon-info >}}
 
 Nach erfolgreicher Registrierung werden die Geräte auf der Seite [Geräteregistrierung](#dev-registration) mit dem Status "Wartet auf Verbindung" angezeigt.
 
 Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung hergestellt wird.
+
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
+
+{{< c8y-admon-info >}}
+Der Bildschirm **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](#security-token-policy-for-device-registration) unterscheiden.
+{{< /c8y-admon-info >}}
+
 Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
 
 {{< c8y-admon-info >}}
@@ -73,6 +89,81 @@ Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [{{< p
 {{< /c8y-admon-info >}}
 
 <a name="creds-upload"></a>
+
+#### Sicherheitstokenregel für die Geräteregistrierung
+
+Konfigurieren Sie die Sicherheitstokenregel, um das Risiko zu mindern, dass noch nicht registrierte Geräte durch Bedrohungsakteure übernommen werden, z. B. durch Erraten ihrer Seriennummer.
+
+{{< c8y-admon-info >}}
+Die Funktion erfordert eine LESEN-Berechtigung für "Optionen". Fehlt die Berechtigung, wird die Sicherheitstokenregel standardmäßig auf OPTIONAL gesetzt.
+{{< /c8y-admon-info >}}
+
+{{< product-c8y-iot >}} unterstützt die folgenden Werte für die Sicherheitstokenregel:
+
+* IGNORIEREN - Selbst wenn ein Gerät eine sichere Registrierung erfordert, ignoriert {{< product-c8y-iot >}} dieses Erfordernis.
+* OPTIONAL - Wenn ein Gerät eine sichere Registrierung erfordert, fordert {{< product-c8y-iot >}} ein zusätzliches Sicherheitstoken vom Benutzer an.
+* ERFORDERLICH - Alle mit {{< product-c8y-iot >}} verbundenen Geräte müssen während der Registrierung ein Sicherheitstoken verwenden.
+
+Die Regel kann durch Festlegen der folgenden Mandantenoption mit einem der oben genannten Werte konfiguriert werden, z. B.:
+
+```json
+{
+  "category": "device-registration",
+  "key": "security-token.policy",
+  "value": "IGNORED"
+}
+```
+
+{{< c8y-admon-info >}}
+Der Bildschirm **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](#security-token-policy-for-device-registration) unterscheiden.
+{{< /c8y-admon-info >}}
+
+##### Ignorierte Sicherheitstokenregel
+
+Mit dem Wert "IGNORED" für die Sicherheitstokenregel kann ein mit {{< product-c8y-iot >}} verbundenes Gerät ohne jede Token-Validierung akzeptiert werden:
+
+![Accepting devices registrations under ignored security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
+
+##### Optionale Sicherheitstokenregel
+
+Die Liste der Geräteregistrierungen wird im Bild unten präsentiert. Beachten Sie, dass die Eingabe für Sicherheitstokens für alle Geräte angezeigt wird.
+
+![Accepting devices registrations under optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png)
+
+**Registrierung ohne Verwendung eines Sicherheitstokens**
+
+Wenn ein mit {{< product-c8y-iot >}} verbundenes Gerät kein Sicherheitstoken verwendet, kann die Registrierung erfolgen, ohne dass in der Sicherheitstoken-Eingabe ein Wert bereitgestellt wird.
+
+Wenn ein Sicherheitstoken für ein Gerät bereitgestellt wird, das unsicher verbunden ist, wird dieses akzeptiert und das Token wird ignoriert.
+
+**Registrierung mithilfe eines Sicherheitstokens**
+
+Wenn ein mit {{< product-c8y-iot >}} verbundenes Gerät ein Sicherheitstoken verwendet, kann die Registrierung nur abgeschlossen werden, wenn der Benutzer ein Token bereitstellt, das mit demjenigen übereinstimmt, das vom Gerät beim Herstellen der Verbindung übereinstimmt.
+
+![Providing a token for device registration request in optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png)
+
+Bei Bereitstellung eines falschen Tokens wird eine Fehlermeldung angezeigt, die über eine Nichtübereinstimmung zwischen dem vom Gerät verwendeten Wert und dem über die Benutzeroberfläche bereitgestellten Wert informiert.
+
+Nach einer bestimmten Anzahl fehlgeschlagener Versuche erreicht die Registrierung den blockierten Zustand, was durch eine entsprechende Fehlermeldung angezeigt wird.
+Die blockierte Registrierung muss vor dem nächsten Versuch, das Gerät zu verbinden, beseitigt werden.
+
+**Eingeschränkte Verwendung der Funktion "Alle akzeptieren"**
+
+Die Funktion **Alle akzeptieren** wird bei Geräten unterstützt, die ohne Verwendung eines Sicherheitstokens mit {{< product-c8y-iot >}} verbunden werden.
+
+Bei jedem Gerät, das ein Sicherheitstoken verwendet, ist die Funktion **Alle akzeptieren** nicht verfügbar und es wird eine Warnmeldung angezeigt. In den Details der Warnmeldung werden die Geräte aufgelistet, die nicht automatisch akzeptiert werden konnten.
+
+Um solche Geräte zu akzeptieren, muss der richtige **Sicherheitstoken**-Wert manuell bereitgestellt und auf **Akzeptieren** geklickt werden.
+
+
+##### Erforderliche Sicherheitstokenregel
+
+In diesem Modus muss jedes mit {{< product-c8y-iot >}} verbundene Gerät beim Herstellen der Verbindung ein Sicherheitstoken verwenden und der Benutzer muss beim Akzeptieren des Geräts dasselbe Token eingeben.
+
+Zum Akzeptieren von Geräten ist genauso vorzugehen, wie unter [Optionale Sicherheitstokenregel](#optional-security-token-policy) beschrieben.
+
+In diesem Modus werden alle Geräte, die sich ohne ein Sicherheitstoken mit {{< product-c8y-iot >}} verbinden, blockiert, und ihre Registrierung kann nicht abgeschlossen werden.
+
 #### So führen Sie eine Bulk-Registrierung von Geräten durch
 
 Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-iot >}} die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
@@ -81,12 +172,15 @@ Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-io
 Es gibt keine Einschränkung hinsichtlich der Anzahl der Geräte, die durch eine Bulk-Registrierung registriert werden können. Je mehr Geräte Sie jedoch hinzufügen, desto langsamer erfolgen die Erstellung und die Operation.
 {{< /c8y-admon-info >}}
 
-1. Klicken Sie auf **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann auf **Gerät registrieren**.
-2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.
+1. Klicken Sie auf **Registrierung** im Menü **Geräte** des Navigators.
 
-  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
+2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Bulk-Registrierung** > **Generell**.
 
-3. Klicken Sie auf **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei aus, indem Sie in Ihrem Dateisystem zu ihr navigieren.
+  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+
+3. Klicken Sie auf die Plus-Schaltfläche, um die hochzuladende CSV-Datei auszuwählen, oder wählen Sie sie durch Ziehen und Ablegen aus.
+
+  <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
 <br>
 Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierungstypen verarbeitet:
@@ -102,10 +196,10 @@ Durch Mehrfachregistrierung wird eine elementare Darstellung des Geräts erstell
 
 Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
 
-```asciidoc
-    ID;PATH
-    Device1;Group A
-    Device2;Group A/Group B			
+```
+ID;PATH
+Device1;Group A
+Device2;Group A/Group B			
 ```
 
 
@@ -115,18 +209,18 @@ Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen er
 
 Die CSV-Dateien müssen mindestens die IDs als Gerätebezeichnung und die Zugangsdaten der Geräte enthalten.
 
-Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYPE enthalten, wie in diesem Beispiel gezeigt.
+Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYPE enthalten, wie im folgenden Beispiel gezeigt.
 
-```asciidoc
-    ID;Credentials;PATH;ICCID;NAME;TYPE
-    006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
-    006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device		
+```
+ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE
+006064ce800a;LF2PWJoLG1Fz;c8y_Device;Sample_Device1;+491555555;c8y_Serial;bulk group/subgroup1;1;BASIC
+006064ce8077;OowoGKAbiNJs;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;BASIC
 ```
 
 Um die Geräte zu verbinden, werden diese mit den relevanten Informationen vorregistriert. Genauer gesagt wird jedes Gerät folgendermaßen konfiguriert:
 
 * Benutzername - der Benutzername für das {{< product-c8y-iot >}}-Konto im Format &lt;tenant&gt;/device_&lt;id&gt;, wobei sich &lt;tenant&gt; auf den Mandanten bezieht, von welchem die CSV-Datei importiert wird, und &lt;id&gt; auf den entsprechenden Wert in der CSV-Datei.
-* Passwort - das Passwort für den Zugang zu {{< product-c8y-iot >}}, entspricht dem Wert "Credentials" in der CSV-Datei.
+* Passwort - das eindeutige Passwort für jedes Gerät für den Zugang zu {{< product-c8y-iot >}}, entspricht dem Wert "Credentials" in der CSV-Datei.
 * Gerätedaten - Felder TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in der CSV-Datei.
 
 Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung zur Anzahl der Geräte, die vorregistriert wurden, sowie zu gegebenenfalls aufgetretenen Fehlern.
@@ -149,5 +243,5 @@ Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie 
 [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
 
 {{< c8y-admon-info >}}
-Wenn Sie mit dem {{< enterprise-tenant-de >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant-de >}} aus importieren.
+Wenn Sie mit dem {{< enterprise-tenant >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant >}} aus importieren.
 {{< /c8y-admon-info >}}

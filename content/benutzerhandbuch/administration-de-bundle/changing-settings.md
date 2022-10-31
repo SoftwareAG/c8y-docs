@@ -17,7 +17,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 
 Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
-![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
+![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
 {{< c8y-admon-info >}}
 Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten-Management" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
@@ -238,7 +238,7 @@ Links oben können Sie eine Vorlage auswählen. Die gewählte Option wirkt sich 
 <a name="custom-template"></a>
 ##### Benutzerdefinierte Vorlage
 
-![Custom authorization request](/images/users-guide/Administration/sso-custom-authorization-request.png)
+![Custom authorization request](/images/benutzerhandbuch/Administration/sso-custom-authorization-request.png)
 
 Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt.
 
@@ -250,11 +250,11 @@ Beachten Sie, dass das Text-Feld jeder Anfrage nach dem Ausfüllen der Platzhalt
 
 Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus {{< product-c8y-iot >}} zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
-![Custom logout request](/images/users-guide/Administration/sso-custom-logout-request.png)
+![Custom logout request](/images/benutzerhandbuch/Administration/sso-custom-logout-request.png)
 
 Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
-![Custom basic configuration](/images/users-guide/Administration/sso-custom-basic.png)
+![Custom basic configuration](/images/benutzerhandbuch/Administration/sso-custom-basic.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -268,7 +268,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 
 Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur {{< product-c8y-iot >}}-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
- ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
+ ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping.png)
 
  Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
 
@@ -293,7 +293,7 @@ Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unt
 Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
 
 
- ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-WHEN.png)
+ ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-WHEN.png)
 
 In diesem Fall sieht der JWT-Claim folgendermaßen aus:
 
@@ -314,20 +314,20 @@ Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren
 
 Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung standardmäßig Benutzerrollen anhand des Access Tokens zu. Somit ist es nicht möglich, die Benutzerrollen innerhalb von {{< product-c8y-iot >}} zu ändern, da diese bei der nächsten Anmeldung des Benutzers überschrieben würden. Um dieses Verhalten zu ändern, aktivieren Sie das Kontrollkästchen **Dynamische Zugriffszuordnung nur bei der Benutzererstellung verwenden** im unteren Teil des Abschnitts **Rechtezuordnung**.
 
-![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
+![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-2.png)
 
 Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/users-guide/administration/#attach-global) im *User Guide*.
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 Die Benutzer-ID kann auf ein beliebiges Top-Level-Feld der Autorisierungstoken-Nutzdaten gesetzt werden, die während des Anmeldeprozesses vom Autorisierungsserver an die Plattform gesendet werden. Wir empfehlen, das Autorisierungstoken in den Audit-Logs zu überprüfen und sicherzustellen, dass das richtige Feld verwendet wird (siehe [Fehlerbehebung](#troubleshooting)).
 
-![User ID configuration](/images/users-guide/Administration/sso-custom-userid-config.png)
+![User ID configuration](/images/benutzerhandbuch/Administration/sso-custom-userid-config.png)
 
  Wenn das Kontrollkästchen **Konstanten Wert verwenden** aktiviert ist, wird eine konstante Benutzer-ID für alle Benutzer verwendet, die sich über SSO an der {{< product-c8y-iot >}}-Plattform anmelden. Dies bedeutet, dass alle Benutzer, die sich über SSO anmelden, dasselbe Benutzerkonto in der {{< product-c8y-iot >}}-Plattform nutzen. Die Verwendung dieser Option wird nicht empfohlen.
 
 Danach kann das **Benutzerdaten-Mapping** konfiguriert werden:
 
-![User data mappings](/images/users-guide/Administration/sso-custom-userdata-mapping.png)
+![User data mappings](/images/benutzerhandbuch/Administration/sso-custom-userdata-mapping.png)
 
 Beim Benutzer-Login können Benutzerdaten wie Vorname, Nachname, E-Mail-Adresse und Telefonnummer auch von JWT-Claims abgeleitet werden. Jedes Feld repräsentiert den Claim-Namen, der zum Abrufen der Daten von JWT verwendet wird. Die Konfiguration des Benutzerdaten-Mappings ist optional und als Admin-Manager können Sie nur die erforderlichen Felder verwenden. Falls die Konfiguration leer ist oder der Claim-Name im JWT-Token nicht gefunden werden kann, werden die Werte in den Benutzerdaten als leer festgelegt.
 
@@ -337,19 +337,19 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats.
 
- ![Signature verification Azure](/images/users-guide/Administration/sso-signature-verification-Azure-AD.png)
+ ![Signature verification Azure](/images/benutzerhandbuch/Administration/sso-signature-verification-Azure-AD.png)
 
 2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0).
 
- ![Signature verification ADFS](/images/users-guide/Administration/sso-signature-verification-ADFS-manifest.png)
+ ![Signature verification ADFS](/images/benutzerhandbuch/Administration/sso-signature-verification-ADFS-manifest.png)
 
 3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats für {{< product-c8y-iot >}}. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall.
 
- ![Signature verification Custom](/images/users-guide/Administration/sso-signature-verification-custom.png)
+ ![Signature verification Custom](/images/benutzerhandbuch/Administration/sso-signature-verification-custom.png)
 
 4. Durch Spezifizieren der JWKS (JSON Web Key Set)-URI. JWKS ist eine Gruppe von JWK-Objekten, die einen öffentlichen Schlüssel zum Verifizieren von Tokens enthalten, die vom Autorisierungsserver ausgegeben werden.
 
- ![Signature verification JWKS](/images/users-guide/Administration/sso-signature-verification-JWKS.png)
+ ![Signature verification JWKS](/images/benutzerhandbuch/Administration/sso-signature-verification-JWKS.png)
 
 
 {{< c8y-admon-info >}}
@@ -369,10 +369,10 @@ In einigen Feldern können Sie Platzhalter verwenden, die während der Laufzeit 
 Diese Platzhalter können in Autorisierungsanfragen, Token-Anfragen, Refresh-Anfragen und Abmeldeanfragen in folgenden Feldern verwendet werden: URL, Text, Kopfzeilen und Anfrageparameter
 
 Um in einem Feld einen Platzhalter zu verwenden, schließen Sie diesen mit vorangehendem Dollarzeichen in geschweifte Klammern ein:
-![Placeholder standalone](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
+![Placeholder standalone](/images/benutzerhandbuch/Administration/admin-sso-placeholder-standalone.png)
 
 Platzhalter können auch als Textteile verwendet werden:
-![Placeholder text](/images/users-guide/Administration/admin-sso-placeholder-text.png)
+![Placeholder text](/images/benutzerhandbuch/Administration/admin-sso-placeholder-text.png)
 
 Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder falsch geschriebene Platzhalter wird im Text unverarbeitet gelassen.
 
@@ -435,9 +435,9 @@ Um festzustellen, ob das Abmeldeereignis für alle Benutzer oder einen einzelnen
 
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
- ![Azure Basic configuration](/images/users-guide/Administration/sso-azure-basic.png)
- ![Azure access mapping](/images/users-guide/Administration/sso-azure-access-mapping.png)
- ![Azure user data mapping](/images/users-guide/Administration/sso-azure-userdata-mappings.png)
+ ![Azure Basic configuration](/images/benutzerhandbuch/Administration/sso-azure-basic.png)
+ ![Azure access mapping](/images/benutzerhandbuch/Administration/sso-azure-access-mapping.png)
+ ![Azure user data mapping](/images/benutzerhandbuch/Administration/sso-azure-userdata-mappings.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -451,7 +451,7 @@ Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etw
 
 Optional kann Single Logout konfiguriert werden:
 
- ![Azure logout request](/images/users-guide/Administration/admin-sso-logout-azure.png)
+ ![Azure logout request](/images/benutzerhandbuch/Administration/admin-sso-logout-azure.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -469,7 +469,7 @@ In der "Administration-Anwendung" können Sie nach Klicken auf **Konten** > **Au
 
 Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
-![Audit token content](/images/users-guide/Administration/admin-sso-audit-token.png)
+![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
 
 
 <a name="default-app"></a>
@@ -477,7 +477,7 @@ Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
 Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-![Default application](/images/users-guide/Administration/admin-settings-application.png)
+![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
 Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
 
@@ -499,7 +499,7 @@ Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-co
 
 Klicken Sie auf **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
-![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
+![Properties library](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
 
 Mit benutzerdefinierten Attributen können Sie das Datenmodell der in {{< product-c8y-iot >}} integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
@@ -516,7 +516,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 
 1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie auf **Attribut hinzufügen**.
 
-	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
+	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
 
 1. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
 
@@ -590,7 +590,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
-    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+    ![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
 
 	{{< c8y-admon-info >}}
 Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
@@ -618,7 +618,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/users-guide/device-management/#connectivity)
 
-![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
+![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

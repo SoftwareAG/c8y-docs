@@ -8,7 +8,7 @@ aliases:
 
 Der {{< management-tenant >}} kann die Lizenzen für die Domains der {{< enterprise-tenant >}}s über die Benutzeroberfläche verwalten.
 
-![License management](/images/users-guide/enterprise-tenant/et-license-management.png)
+![License management](/images/benutzerhandbuch/enterprise-tenant/et-license-management.png)
 
 ### So können Sie eine Domain-Lizenz hinzufügen und validieren
 

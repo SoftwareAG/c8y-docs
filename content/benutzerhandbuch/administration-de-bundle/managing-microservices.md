@@ -6,7 +6,7 @@ weight: 35
 
 Klicken Sie auf **Microservices** im Menü **Ecosystem** des Navigators, um eine Liste oder Tabelle aller Microservices anzuzeigen, die für Ihr Konto abonniert werden.
 
-<img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
+<img src="/images/benutzerhandbuch/Administration/admin-microservices.png" alt="Microservices list">
 
 Ein Microservice ist eine spezielle Art von Anwendung, und zwar eine serverseitige Anwendung, die zum Entwickeln von Zusatzfunktionalitäten für {{< product-c8y-iot >}} dient. Als Webanwendungen können Microservices entweder von der Plattform oder von einem Service Provider für Ihren Mandanten abonniert werden oder als benutzerdefinierte Anwendungen in Ihrem Besitz sein, siehe [Abonnierte Miroservices](#custom-microservices).
 
@@ -108,7 +108,7 @@ Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Da
 
 Um weitere Details zu einem Microservice anzuzeigen, klicken Sie auf ihn, um seine Registerkarte **Attribute** zu öffnen.
 
-<img src="/images/users-guide/Administration/admin-microservice-properties.png" alt="Microservice properties" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-properties.png" alt="Microservice properties" style="max-width: 100%">
 
 In der Registerkarte **Attribute** werden für jeden Microservice folgende Informationen angezeigt:
 
@@ -158,7 +158,7 @@ Nachstehend finden Sie zusätzlich Informationen zur Microservice-Version sowie 
 
 Rechts oben in der Registerkarte **Attribute** finden Sie einen Umschalter zum Abonnieren oder Abbestellen eines Microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
 
 Eine Änderung des Abonnements ist nur möglich bei benutzerdefinierten Microservices, d. h. bei Microservices, die Sie besitzen.
 
@@ -166,7 +166,7 @@ Eine Änderung des Abonnements ist nur möglich bei benutzerdefinierten Microser
 
 In der Registerkarte **Berechtigungen** können Sie die Berechtigungen, die für den jeweiligen Microservice erforderlich sind, und die dafür bereitstehenden Rollen anzeigen.
 
-<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
 
 ### Überwachen von Microservices
 
@@ -176,7 +176,7 @@ Es gibt zwei Möglichkeiten, Microservices in der {{< product-c8y-iot >}}-Plattf
 
 Der Status eines Microservice kann in der Registerkarte **Status** der entsprechenden Microservice-Anwendung überprüft werden.
 
-<img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
 Zum Anzeigen des Status benötigen Sie folgende Berechtigungen: Rolle Anwendungsverwaltung LESEN und Rolle Stammdaten LESEN.
 
@@ -213,7 +213,7 @@ Verwenden Sie im Bereich **Bei Alarm vom Typ** den Alarmtyp `c8y_Application_Dow
 
 Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten.
 
@@ -244,7 +244,7 @@ Rechts unten finden Sie die folgenden Navigationsschaltflächen:
 
 Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine entsprechende Meldung angezeigt:
 
-<img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
 {{< c8y-admon-info >}}
 Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen oder die Logdaten aus den zuvor rotierten Protokollen mit über 35 MB anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.

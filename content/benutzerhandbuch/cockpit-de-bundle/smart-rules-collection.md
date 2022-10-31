@@ -89,7 +89,7 @@ Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm send SMS](/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
+![On alarm send SMS](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-sendsms.png)
 
 <table>
 <thead>
@@ -160,7 +160,7 @@ Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" ge
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm send email](/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
+![On alarm send email](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-sendemail.png)
 
 <table>
 <thead>
@@ -221,7 +221,7 @@ Sendet eine E-Mail oder SMS, wenn ein Alarm erzeugt wird.
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm escalate](/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
+![On alarm escalate](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-escalate.png)
 
 <table>
 <thead>
@@ -284,7 +284,7 @@ Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm increase severity](/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
+![On alarm increase severity](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-severity.png)
 
 <table>
 <thead>
@@ -351,7 +351,7 @@ Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder f
 
 Die Regel verwendet die folgenden Parameter:
 
-![On geofence create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
+![On geofence create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |<table>
 <thead>
@@ -420,7 +420,7 @@ Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" ge
 
 Die Regel verwendet die folgenden Parameter:
 
-![On geofence send email](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
+![On geofence send email](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 <table>
 <thead>
@@ -484,7 +484,7 @@ Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas- 
 
 Die Regel verwendet die folgenden Parameter:
 
-![Calculate energy consumption](/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
+![Calculate energy consumption](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-energy.png)
 
 <table>
 <thead>
@@ -548,7 +548,7 @@ Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein A
 
 Die Regel verwendet die folgenden Parameter:
 
-![On missing measurements create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
+![On missing measurements create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
 <table>
 <thead>
@@ -606,7 +606,7 @@ Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gese
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm execute operation](/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
+![On alarm execute operation](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
 <colgroup>
@@ -719,7 +719,7 @@ Durch diese Mechanismen können globale Schwellenwertbereiche in der Datenpunktb
 
 Die Regel verwendet die folgenden Parameter:
 
-![On measurement threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
+![On measurement threshold create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
 
 <table>
 <thead>
@@ -827,7 +827,7 @@ Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erz
 
 Die Regel verwendet die folgenden Parameter:
 
-![On measurement explicit threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
+![On measurement explicit threshold create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 <table>
 <thead>

@@ -11,7 +11,7 @@ Assets repräsentieren ganz allgemein Geschäftsobjekte wie Gebäude, Maschinen,
 
 Assets sind in Hierarchien organisiert. Eine Anwendung zur Energieüberwachung kann beispielsweise die folgende Hierarchie aufweisen:
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image1.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-groups-image1.png)
 
 Die Asset-Hierarchie besteht aus zwei Objekttypen:
 
@@ -47,13 +47,13 @@ Der folgende Abschnitt beschreibt, wie Sie in der Cockpit-Anwendung mit Smart-Ge
 
 Das erste Beispiel zeigt, wie Smart-Geräte mit der Asset-Hierarchie verknüpft werden:
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image2.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-groups-image2.png)
 
 Smart-Geräte werden in der Device Management-Anwendung als Top-Level-Geräte dargestellt. In der Cockpit-Anwendung können Sie Smart-Geräte in Gruppen organisieren, wie die Pfeile in der Abbildung oben zeigen.
 
 Das zweite Beispiel zeigt, wie Gateway-Geräte in der Cockpit-Anwendung verwendet werden:
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image3.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-groups-image3.png)
 
 Gateway-Geräte werden in der Device Management-Anwendung ebenfalls als Top-Level-Geräte dargestellt. Die angeschlossenen Geräte (wie etwa Modbus- oder KNX-Geräte) werden als untergeordnete Geräte angezeigt. In der Cockpit-Anwendung können diese "Kindgeräte" wie in der Abbildung oben dargestellt in einer Asset-Hierarchie organisiert werden.
 
@@ -78,7 +78,7 @@ Im Navigator werden Top-Level-Gruppen im Menü **Gruppen** auf oberster Ebene an
 
 Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gruppe aufgeführt, die angezeigt wird, wenn Sie im Navigator auf die Gruppe klicken.
 
-<img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
 {{< c8y-admon-info >}}
 Die Zahl oben in der Tabelle der Registerkarte **Kind-Assets** gibt die Gesamtanzahl der Kind-Assets an, die der aktuellen Gruppe zugewiesen sind. Jede Art von Objekt kann ein Kind-Asset sein. Weitere Informationen zum Zählen von Objekten finden Sie in der Beschreibung der Operation [Alle Kind-Assets für ein bestimmtes Objekt abrufen](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in der {{< openapi >}}.
@@ -161,7 +161,7 @@ Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
-![Assign devices](/images/users-guide/cockpit/cockpit-group-assign.png)
+![Assign devices](/images/benutzerhandbuch/cockpit/cockpit-group-assign.png)
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
 

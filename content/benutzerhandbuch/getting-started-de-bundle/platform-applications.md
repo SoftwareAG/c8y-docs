@@ -3,7 +3,7 @@ weight: 30
 title: Standardanwendungen der Plattform
 layout: redirect
 aliases:
-  - /users-guide/overview/#cumulocity-applications
+  - /benutzerhandbuch/overview-de/#cumulocity-applications
   - /benutzerhandbuch/getting-started-de/#cumulocity-applications
 ---
 

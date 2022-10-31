@@ -75,7 +75,7 @@ Führen Sie den folgenden Schritt aus, um die Konnektivität in {{< product-c8y-
 
 1. Melden Sie sich über einen {{< product-c8y-iot >}}-Administratorbenutzer bei der {{< product-c8y-iot >}}-Plattform an.
 1. Wechseln Sie zur Anwendung Administration.
-1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [READ- und ADMIN-Berechtigung für Connectivity](/users-guide/administration#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
+1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [READ- und ADMIN-Berechtigung für Connectivity](/benutzerhandbuch/administration-de#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
 2. Wechseln Sie zur Registerkarte **Mobilfunkanbieter-Einstellungen**.
 3. Wählen Sie einen Anbieter aus der Auswahlliste aus.
 1. Geben Sie die Zugangsdaten (URL, Schlüssel (im Falle von Jasper), Benutzername und Passwort) für das entsprechende SIM-Anbieter-Konto ein. Wenn Ihnen keine Zugangsdaten vorliegen, fragen Sie Ihren Administrator.

@@ -108,7 +108,7 @@ Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei z
 
 Das Passwort muss standardmäßig folgende Bedingungen erfüllen:
 
-* Es muss aus mindestens acht Zeichen bestehen (dieser Parameter kann durch den {{< management-tenant >}}en konfiguriert werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/users-guide/administration/#platform-configuration-settings).)
+* Es muss aus mindestens acht Zeichen bestehen (dieser Parameter kann durch den {{< management-tenant >}}en konfiguriert werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).)
 * Es muss alle der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 
 {{< c8y-admon-info >}}

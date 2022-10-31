@@ -343,7 +343,7 @@ Dies ermöglicht einen effizienten Überblick über größere Zeitintervalle. Es
 
 Klicken Sie auf **Echtzeit**, um Echtzeitaktualisierungen der Graphen zu erhalten, sobald neue Daten von den Geräten empfangen werden.
 
-Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/users-guide/administration).
+Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/benutzerhandbuch/administration-de).
 
 **Messwerteformate**
 

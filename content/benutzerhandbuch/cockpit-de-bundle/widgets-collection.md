@@ -168,7 +168,7 @@ Das Widget "Anwendungen" zeigt eine Liste mit Links zu allen verfügbaren Anwend
 
 ![Applications widget](/images/benutzerhandbuch/cockpit/cockpit-widget-applications.png)
 
-Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/users-guide/administration#managing-applications).
+Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
 
 <a name="asset-notes"></a>

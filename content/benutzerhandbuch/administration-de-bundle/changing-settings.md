@@ -316,7 +316,7 @@ Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung standardm
 
 ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-2.png)
 
-Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/users-guide/administration/#attach-global) im *User Guide*.
+Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#attach-global) im *User Guide*.
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 Die Benutzer-ID kann auf ein beliebiges Top-Level-Feld der Autorisierungstoken-Nutzdaten gesetzt werden, die während des Anmeldeprozesses vom Autorisierungsserver an die Plattform gesendet werden. Wir empfehlen, das Autorisierungstoken in den Audit-Logs zu überprüfen und sicherzustellen, dass das richtige Feld verwendet wird (siehe [Fehlerbehebung](#troubleshooting)).
@@ -582,7 +582,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 <a name="sms-provider"></a>
 ### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/users-guide/administration#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
+SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
 
 Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 

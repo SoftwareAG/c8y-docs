@@ -69,7 +69,7 @@ Die {{< product-c8y-iot >}}-Anwendungen enthalten Tooltips, die angezeigt werden
 
 <!-- Screenshot necessary? -->
 
-Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können [abonnierte Anwendungen](/users-guide/administration/#subscribed-applications) oder [benutzerdefinierte Anwendungen](/users-guide/administration#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) oder [benutzerdefinierte Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
 Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
 

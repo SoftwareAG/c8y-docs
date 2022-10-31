@@ -16,7 +16,7 @@ Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits
 Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/).
 {{< /c8y-admon-info >}}
 
-Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/users-guide/administration#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um eine sensible Operation handelt, sind die entsprechenden Berechtigungen granularer:
+Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration-de#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um eine sensible Operation handelt, sind die entsprechenden Berechtigungen granularer:
 
 - LESEN: Durchsuchen und Ansehen von Mandanten.
 - ERSTELLEN: Erstellen neuer Mandanten.
@@ -128,7 +128,7 @@ Hier werden die folgenden Informationen angezeigt:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global aktiviert (siehe <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h. jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h. jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzahl aktiver Anfragen</td>
@@ -223,13 +223,13 @@ Folgende Informationen werden angezeigt:
 * Name: Name der Microservice-Instanz
 * Neustarts: Anzahl der Neustarts von Microservice-Instanzen
 
-Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/users-guide/administration#managing-applications).
+Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
 
 <a name="tenants-custom-properties"></a>
 ### Benutzerdefinierte Attribute
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/users-guide/administration#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing) angezeigt.
 
 ![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
 
@@ -300,7 +300,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 1. Klicken Sie auf **Regel hinzufügen** in der oberen Menüleiste.
 <br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
-3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/users-guide/administration#retention-rules).
+3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
 4. Geben Sie optional eine Mandantenoption ein.
 5. Klicken Sie auf **Speichern**.
 

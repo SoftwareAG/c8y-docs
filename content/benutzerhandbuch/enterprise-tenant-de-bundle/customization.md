@@ -95,7 +95,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
 {{< c8y-admon-info >}}
-Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/users-guide/administration/#platform-configuration-settings).
+Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 {{< /c8y-admon-info >}}
 
 <a name="branding"></a>

@@ -63,7 +63,7 @@ Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigiere
 1. Wählen Sie im Navigator eine Gruppe aus.
 2. Auf der Seite **Kind-Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten.
 
-Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions) im Abschnitt "Administration".
+Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Abschnitt "Administration".
 
 ### So löschen Sie eine Gruppe
 

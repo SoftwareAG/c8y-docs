@@ -68,7 +68,7 @@ Mit Stammdatenrollen können Sie einen Supportbenutzer selektiv spezifischen Unt
 
 1. Erstellen Sie eine Stammdatenrolle namens "Support" mit Typ = "*" und Berechtigung = "Alle".
 2. Erstellen Sie eine Gruppe aller Untermandanten, die vom Benutzer unterstützt werden sollen.
-3. Weisen Sie die Stammdatenrolle "Support" der oben genannten Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen zu Benutzern](/users-guide/administration#attach-inventory) beschrieben.
+3. Weisen Sie die Stammdatenrolle "Support" der oben genannten Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen zu Benutzern](/benutzerhandbuch/administration-de#attach-inventory) beschrieben.
 
 {{< c8y-admon-info >}}
 Die Supportbenutzer-Funktion funktioniert nicht, wenn der Supportbenutzer Zwei-Faktor-Authentifizierung aktiviert, aber keine Telefonnummer hinterlegt hat. Die Telefonnummer muss zunächst hinterlegt werden, um sich als Supportbenutzer einloggen zu können.

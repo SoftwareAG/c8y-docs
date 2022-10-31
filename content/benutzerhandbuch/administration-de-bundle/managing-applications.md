@@ -63,7 +63,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Webanwendung</td>

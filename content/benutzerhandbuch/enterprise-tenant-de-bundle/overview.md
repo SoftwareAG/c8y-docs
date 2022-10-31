@@ -4,7 +4,7 @@ title: Übersicht
 layout: redirect
 ---
 
-Ein {{< enterprise-tenant >}} bietet zusätzliche administrative Funktionalitäten im Vergleich zu einem {{< standard-tenant >}}. Der wichtigste Unterschied ist dabei die **Mandantenfähigkeit**.
+Ein {{< enterprise-tenant >}} bietet zusätzliche administrative Funktionalitäten im Vergleich zu einem {{< standard-tenant-de >}}. Der wichtigste Unterschied ist dabei die **Mandantenfähigkeit**.
 
 Mit einem {{< enterprise-tenant >}} können Sie
 

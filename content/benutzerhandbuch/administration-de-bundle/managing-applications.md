@@ -38,7 +38,7 @@ Ihre Anwendungen sind über den Application Switcher in der oberen Leiste verfü
 
 {{< product-c8y-iot >}} stellt vielerlei Anwendungen für verschiedene Zwecke bereit. Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der potenziell verfügbaren Anwendungen an.
 
-Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-tenant >}}en oder im {{< enterprise-tenant >}}en verfügbar sind. Darüber hinaus können zahlreiche optionale Anwendungen für Ihren Mandanten abonniert sein.
+Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-tenant-de >}}en oder im {{< enterprise-tenant >}}en verfügbar sind. Darüber hinaus können zahlreiche optionale Anwendungen für Ihren Mandanten abonniert sein.
 
 {{< c8y-admon-info >}}
 In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonniert" gekennzeichnet. Abonnierte Anwendungen können nicht vom Benutzer hinzugefügt, geändert oder entfernt werden, sondern nur von einem Mandantenadministrator.
@@ -67,7 +67,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
@@ -75,7 +75,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
@@ -83,14 +83,14 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant >}}</td>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Analytics Builder-Modelle und EPL-Apps (sofern aktiviert) verwalten und bearbeiten</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}} (eingeschränkte Version für Analytics Builder), {{< enterprise-tenant >}} (Vollversion)</td>
+<td style="text-align:left">{{< standard-tenant-de >}} (eingeschränkte Version für Analytics Builder), {{< enterprise-tenant >}} (Vollversion)</td>
 </tr>
 
 </tr>

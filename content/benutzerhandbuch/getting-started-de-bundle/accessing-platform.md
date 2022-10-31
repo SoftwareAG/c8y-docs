@@ -53,7 +53,7 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 
 
 {{< c8y-admon-info >}}
-Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant >}} nutzen. Die URL für die {{< enterprise-tenant >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
+Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant-de >}} nutzen. Die URL für die {{< enterprise-tenant >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-important >}}

@@ -261,9 +261,9 @@ For example, assume a child device with the URL "https://.../inventory/managedOb
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
     {
-    "managedObject": {
-        "self" : "https://.../inventory/managedObjects/2543801"
-      }
+        "managedObject" : {
+            "id" : "2543801"
+        }
     }
 
     HTTP/1.1 201 Created

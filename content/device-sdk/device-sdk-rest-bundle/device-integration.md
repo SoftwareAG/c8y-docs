@@ -48,7 +48,7 @@ The process works as follows:
 From a device perspective, this request for credentials is a single REST request:
 
     POST /devicecontrol/deviceCredentials
-    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json
     Authorization: Basic <<Base64 encoded bootstrap credentials>>
     {
       "id" : "0000000017b769d5"
@@ -57,7 +57,7 @@ From a device perspective, this request for credentials is a single REST request
 The device issues this request repeatedly. While the user has not yet registered and accepted the device in the tenant UI, the request returns "404 Not Found." After the device has been accepted in the tenant UI, the following response is returned:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;charset=UTF-8;ver=0.9
     Content-Length: ...
     {
       "id" : "0000000017b769d5",
@@ -77,9 +77,9 @@ Request header should be:
 
 For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (i.e. *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
 
-{{< product-c8y-iot >}} uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
+{{< product-c8y-iot >}} uses the tenant ID specified with the user ID for full authentication and routing of the request to the correct tenant.
 
-If the valid tenant URL is known (e.g. *xyz.{{< domain-c8y >}}* in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
+If the valid tenant URL is known (for example *xyz.{{< domain-c8y >}}* as seen in the example above), then the username does not have to be prefixed by `<tenant ID>/` for authentication.
 
 
 #### Step 1: Check if the device is already registered
@@ -91,7 +91,7 @@ To check if a device is already registered, use a GET request on the identity AP
     GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d5 HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json;charset=UTF-8;ver=0.9
     ...
     {
         "externalId": "raspi-0000000017b769d5",
@@ -261,7 +261,9 @@ For example, assume a child device with the URL "https://.../inventory/managedOb
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
     {
-    "managedObject" : { "self" : "https://.../inventory/managedObjects/2543801" }
+        "managedObject" : {
+            "id" : "2543801"
+        }
     }
 
     HTTP/1.1 201 Created
@@ -295,7 +297,7 @@ To clean up operations that are still in EXECUTING status, query operations by a
     GET /devicecontrol/operations?agentId=2480300&status=EXECUTING HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.operationcollection+json;; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.operationcollection+json;charset=UTF-8;ver=0.9
     ...
     {
         "next": "https://.../devicecontrol/operations?agentId=2480300&status=EXECUTING",
@@ -369,7 +371,7 @@ Afterwards, the device respectively the agent needs to subscribe to notification
         "id":"2",
         "channel": "/meta/subscribe",
         "subscription": "/2480300",
-        "successful": true,
+        "successful": true
     } ]
 
 Finally, the device connects and waits for operations to be sent to it.
@@ -451,7 +453,7 @@ To create new measurements in {{< product-c8y-iot >}}, issue a POST request with
 
 #### Step 10: Send events
 
-Similar, use a POST request for events. The following example shows a location update from a GPS sensor.
+Similarly, use a POST request for events. The following example shows a location update from a GPS sensor.
 
     POST /event/events HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.event+json

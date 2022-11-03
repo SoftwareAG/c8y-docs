@@ -84,6 +84,7 @@ If the user agent is not found in the list of trusted or forbidden user agents t
 #### OAI-Secure
 
 OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
+
 ##### OAI-Secure without the configuration related to the session management (session configuration turned off)
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
@@ -92,7 +93,7 @@ When there is no configuration related to the session, OAI-Secure issues a JWT t
 
 Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 
-The OAI-Secure token acts as a session identifier on the client site (web browser). Such a token identifier which is stored in the cookie can have a preconfigured short lifetime. Then, the {{< product-c8y-iot >}} platform is responsible for renewing the session identifier without a user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then, {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs.
+The OAI-Secure token acts as a session identifier on the client side (web browser). Such a token identifier which is stored in the cookie can have a preconfigured short lifetime. Then, the {{< product-c8y-iot >}} platform is responsible for renewing the session identifier without any user interaction. It is sufficient that the user's action causes the web browser to send a request to {{< product-c8y-iot >}}. Then, {{< product-c8y-iot >}} can examine if the renewing of the session identifier should be executed and perform the operation if necessary. {{< product-c8y-iot >}} offers extensive configuration related to this behavior so that tenant administrators can adjust the configuration to their needs.
 
 If the **Use session configuration** option is enabled, the following settings can be configured on tenant level by a tenant administrator:
 
@@ -120,7 +121,7 @@ If the **Use session configuration** option is enabled, the following settings c
 </tr>
 <tr>
 <td style="text-align:left">Session renewal timeout</td>
-<td style="text-align:left">Expected to be much shorter than the absolute timeout. Defines the time after which the {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the renewal timeout.</td>
+<td style="text-align:left">Expected to be much shorter than the absolute timeout. Defines the time after which {{< product-c8y-iot >}} tries to provide a new token (session identifier). The renewal may take place only when {{< product-c8y-iot >}} receives an HTTP request from a client with a non-expired token and the period of time between obtaining the token and the execution of the request is greater than the renewal timeout.</td>
 <td style="text-align:left">1 day</td>
 </tr>
 <tr>
@@ -130,7 +131,7 @@ If the **Use session configuration** option is enabled, the following settings c
 </tr>
 <tr>
 <td style="text-align:left">Token lifespan</td>
-<td style="text-align:left">Defines the time for which a token is active. The user is able to  access the {{< product-c8y-iot >}} only with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token and cookie settings</a> below. </td>
+<td style="text-align:left">Defines the time for which a token is active. The user is only able to access {{< product-c8y-iot >}} with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token and cookie settings</a> below. </td>
 <td style="text-align:left">2 days</td>
 </tr>
 
@@ -175,7 +176,7 @@ Cookies used to store a JWT token in a browser have their own validity time that
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
-The default value is two weeks. It can also be set to any negative value so that the cookie will be deleted when the user closes the browser.
+The default value is two weeks. To have the cookie deleted when the user closes the browser, set it to any negative value.
 
 ##### Lifespan configuration of JWT in response body
 

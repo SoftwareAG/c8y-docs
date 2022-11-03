@@ -17,7 +17,7 @@ To use the SSO option the following requirements must be met:
 * The access token is issued as JWT and you know what goes into the token content.
 * The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
 * The {{< product-c8y-iot >}} platform is in version 10.4.6 but preferably higher.
-* All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
+* All microservices are built with Microservice Java SDK version 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
 In order to use the SSO feature for {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If SSO providers have a list of allowed domains, the enterprise domain should be added to that list.
@@ -208,7 +208,7 @@ To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registrat
 
 1. Select **App Registrations** and click **New Registration**.
 3. In the resulting window, provide a name for the new App registration.
-4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example *https://documentation.cumulocity.com/tenant/oauth*. You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
+4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
 5. Click **Register** to create the App registration.
 
 The overview of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
@@ -224,7 +224,7 @@ Moreover, the App registration requires a secret which is used by {{< product-c8
 
 {{< c8y-admon-caution >}}
 - Copy the value of the new secret to another location. It will no longer be visible once you have left the page.
-- The secret string must not include a "=" character as this may conflict with the later usage in a URL. If so, create a new one.  
+- The secret string must not include a "=" character as this may conflict with the later usage in a URL. If it does, create a new one.  
 {{< /c8y-admon-caution >}}
 
 Optionally, create a user in Azure AD that you would like to use with {{< product-c8y-iot >}}.

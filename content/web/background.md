@@ -82,7 +82,7 @@ Although plugins are not just data any longer, we still allow to change the appl
 
 ### Today's Generation: Native modules
 
-The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm we must bundle the modules. As bundler we choose to use webpack, as it play's nicely with Angular.
+The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm the modules must be bundled. As bundler we choose to use webpack, as it plays nicely with Angular.
 
 One major change is that so far modules (or plugins) were always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so applications can no longer be edited from the UI for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truly just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality.
 

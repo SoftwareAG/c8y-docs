@@ -319,6 +319,13 @@ Now enter the following values in the configuration:
 |App registration - &lt;app&gt; > Certificates & secrets > Value | Client secret| Azure AD client secret, for example "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
 |From OpenID config | Public key discovery URL|"https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Directory tenant ID>/discovery/keys"
 
+Optionally single logout can be configured:
+
+|Field|Description|
+|:---|:---|
+|Redirect after logout| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
+|Redirect URL| Address to redirect the user to after successful logout from the authorization server
+
 After configuring SSO in {{< product-c8y-iot >}}, you can try to login. You might get an "access denied" error, if this user has no access mapping yet. But you should see a "User login" event and a JSON web token in the audit logs (**Administration** > **Accounts** > **Audit logs**).
 
 The content looks like this:
@@ -360,7 +367,8 @@ The content looks like this:
 ]
 ```
 
-You can now use the claims to map user attributes and give permissions.
+You can now use the claims to map user attributes and give permissions in the same way as described in the section on the [custom template] (#custom-template).
+
 
 
 ### Integration with Keycloak
@@ -409,36 +417,6 @@ Moreover, it is only sent for those tenants where the client being used as a con
 In the **Session** tab, the Keycloak administrator can also check how many active sessions exist on the respective client and estimate how many tenants and users will be affected by the logout event.
 
 To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration application under **Accounts** in the **Audit Logs** tab.
-
-#### Cumulocity IoT configuration
-
-When the "Azure AD" template is selected the configuration panel will look similar to the following:
-
- ![Azure Basic configuration](/images/users-guide/Administration/sso-azure-basic.png)
- ![Azure access mapping](/images/users-guide/Administration/sso-azure-access-mapping.png)
- ![Azure user data mapping](/images/users-guide/Administration/sso-azure-userdata-mappings.png)
-
-|Field|Description|
-|:---|:---|
-|Azure AD Address| Address of your Azure AD tenant
-|Tenant| Azure AD tenant name
-|Application ID| Application ID
-|Redirect URI| Address of your {{< product-c8y-iot >}} tenant followed by /tenant/oauth
-|Client secret| Azure AD client secret if applicable
-|Button name| Button name
-|Token issuer| Token issuer value in form of a HTTP address
-
-Optionally single logout can be configured:
-
- ![Azure logout request](/images/users-guide/Administration/admin-sso-logout-azure.png)
-
-|Field|Description|
-|:---|:---|
-|Redirect after logout| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
-|Redirect URL| Address to redirect the user to after successful logout from the authorization server
-
-The second part of the panel is the same as for the "Custom" template, where access mapping, user data mapping, user ID field selection and signature verification address are provided.
-
 
 #### Troubleshooting
 

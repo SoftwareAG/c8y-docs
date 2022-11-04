@@ -103,7 +103,7 @@ In Apama Starter, a user can have a maximum of 3 active models. For example, a u
 <a name="apama_highmemoryusage"></a>
 #### High memory usage
 
-This alarm is raised whenever the correlator consumes 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
+This alarm is raised whenever the Apama-ctrl microservice and correlator consume 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
 
 There are 3 variants of this alarm, depending on the time and count restrictions of the generated diagnostics overview ZIP file.
 

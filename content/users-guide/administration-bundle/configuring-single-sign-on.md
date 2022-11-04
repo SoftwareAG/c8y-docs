@@ -6,12 +6,9 @@ layout: redirect
 
 {{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT.
 
-{{< c8y-admon-info >}}
-The SSO feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
-{{< /c8y-admon-info >}}
 
 {{< c8y-admon-req >}}
-To use the SSO option the following requirements must be met:
+To use the SSO feature the following requirements must be met:
 
 * The authorization server you use supports OAuth2 authorization code grant.
 * The access token is issued as JWT and you know what goes into the token content.
@@ -19,8 +16,9 @@ To use the SSO option the following requirements must be met:
 * The {{< product-c8y-iot >}} platform is in version 10.4.6 but preferably higher.
 * All microservices are built with Microservice Java SDK version 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
 * For on premises installation the domain-based tenant resolution is configured properly.
-
-In order to use the SSO feature for {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If SSO providers have a list of allowed domains, the enterprise domain should be added to that list.
+* For {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If SSO providers have a list of allowed domains, the enterprise domain should be added to that list.
+* Users must have a role with READ permission for "Own user management".
+* Users must have cookies enabled in the browser settings, as the SSO feature is built on top of cookies technology.
 {{< /c8y-admon-req >}}
 
 ### Configuration settings
@@ -206,18 +204,18 @@ You nee administrative access to your Azure AD.
 
 To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registration in Azure AD.  
 
-1. Select **App Registrations** and click **New Registration**.
+1. Select **App Registrations** under **Manage** on the left and at the top click **New Registration**.
 3. In the resulting window, provide a name for the new App registration.
 4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
 5. Click **Register** to create the App registration.
 
-The overview of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
+The overview in the details page of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
 
 ![App registration overview](/images/users-guide/Administration/admin-AAD-registration.png)
 
 Moreover, the App registration requires a secret which is used by {{< product-c8y-iot >}} for the authentication.  
 
-1. In the overview of your App registration, click **Certificates & secrets**.
+1. In the details page of your App registration, click **Certificates & secrets** under **Manage** on the left.
 2. Select **New client secret**.
 3. Enter a description and select an expiry time.
 4. Click **Add** to add the secret.  

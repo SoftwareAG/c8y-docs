@@ -17,21 +17,29 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
 
-The data explorer is available for all assets or just for a particular asset.
+- To view and select all available data points: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
+- To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for "Measurements" in the inventory roles
+- To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
 
-* Click **Data explorer** in the navigator to visualize all data points of all assets.
+Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
+{{< /c8y-admon-req >}}
 
-* Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
+The data explorer is available for all assets at once or just for a particular asset.
+
+- Click **Data explorer** in the navigator to visualize all data points of all assets.
+
+- Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
 In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [Adding data points](#add-data-points).
 
 On the left, in the main card, you see its visualization.
 
-![data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
+![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
 The visualization is generated based on data point properties.
 
@@ -53,7 +61,9 @@ Click **Save as default** to store the data point settings into the device's man
 
 Let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an "On measurement threshold create alarm" smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm. However, if you change this data point's settings for your device in the data explorer and click **Save as default**, then the smart rule will use these overridden settings instead of the ones from the library. For other devices though, it will still use the settings from the library.
 
->**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+{{< c8y-admon-info >}}
+Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+{{< /c8y-admon-info >}}
 
 <a name="change-visualization"></a>
 ### Changing data explorer visualization
@@ -71,7 +81,9 @@ To change the time range on the x-axis,
 * drag the x-axis and move left or right to move the time period,
 * double-click into the data explorer to zoom out.
 
->**Info:** Real-time updates will be switched off if you set a time range in the past.
+{{< c8y-admon-info >}}
+Real-time updates will be switched off if you set a time range in the past.
+{{< /c8y-admon-info >}}
 
 **Aggregation**
 
@@ -216,7 +228,9 @@ To create a widget from the data explorer of a particular asset, click **More...
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
-> **Info:** To use this function, first a dashboard must be created. For details on dashboards, refer to [Working with dashboards](#dashboards).
+{{< c8y-admon-info >}}
+To use this function, first a dashboard must be created. For details on dashboards, refer to [Working with dashboards](#dashboards).
+{{< /c8y-admon-info >}}
 
 **Send as widget to report**
 
@@ -226,7 +240,9 @@ To create a widget from the data explorer of in the navigator, click **More...**
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 
-> **Info:** To use this function, first a report must be created. For details on reports, refer to [Working with reports](#reports).
+{{< c8y-admon-info >}}
+To use this function, first a report must be created. For details on reports, refer to [Working with reports](#reports).
+{{< /c8y-admon-info >}}
 
 <a name="export-data"></a>
 ### Exporting measurement data

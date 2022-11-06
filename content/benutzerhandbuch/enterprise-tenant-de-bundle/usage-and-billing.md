@@ -1,10 +1,9 @@
 ---
-weight: 70
-title: Nutzungsstatistiken und Abrechnung
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition/#usage-and-billing
-  - /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
+- /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
+layout: redirect
+title: Nutzungsstatistiken und Abrechnung
+weight: 70
 ---
 
 <a name="usage-stats"></a>
@@ -137,11 +136,16 @@ Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandb
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Die Seite **Nutzungsstatistiken** zeigt die Zahlen für alle Untermandanten in diesem Zeitraum an.
 
->**Info:** Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt, aber die Zahlen stehen auf "0".
+{{< c8y-admon-info >}}
+Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt, aber die Zahlen stehen auf "0".
+{{< /c8y-admon-info >}}
 
 Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
-> **Wichtig:** Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
+{{< c8y-admon-important title="Wichtig" >}}
+Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
+{{< /c8y-admon-important >}}
+
 
 #### So exportieren Sie die Nutzungsstatistik-Tabelle
 
@@ -206,7 +210,7 @@ Microservice-Ressourcen werden täglich anhand von Grenzwerten erfasst, die im M
 
 **Beispiel**: Wenn ein Mandant einen Microservice 12 Stunden lang abonniert hat und der Microservice 4 CPUs und 4 GB Speicher aufweist, ist dies als 2000 CPU-Millisekunden und 2048 MB Speicher zu zählen.
 
-Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache der Abrechnung erfasst (z. B. Eigentümer, Abonnement für Mandanten):
+Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache der Abrechnung erfasst (z. B. Eigentümer, Abonnement für Mandanten):
 
 ```json
 {
@@ -247,7 +251,9 @@ Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y
 
 ### Handhabung von Zeitzonen
 
->**Wichtig:** Die Server der {{< product-c8y-iot >}}-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
+{{< c8y-admon-important title="Wichtig" >}}
+Die Server der {{< product-c8y-iot >}}-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
+{{< /c8y-admon-important >}}
 
 Die Mandanten-Nutzungsstatistiken werden täglich entsprechend dem durch die Zeitzone des Servers bestimmten Beginn des Tages (`BOD`) und Ende des Tages (`EOD`) erfasst. Wenn die lokale Zeitzone eines Benutzers nicht mit der Zeitzone des Servers übereinstimmt, kann folglich eine vom Benutzer gestartete Operation je nach Serverzeit einem anderen Tag zugewiesen werden.
 
@@ -328,6 +334,7 @@ Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen
 |Abonnierte Anwendungen | 9, 17 und EOD|
 |Microservice-Ressourcen | 9, 17 und EOD|
 
+<a name="lifecycle"></a>
 ### Lebenszyklus
 
 **Mandant**
@@ -335,7 +342,7 @@ Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen
 Ein Mandant der {{< product-c8y-iot >}}-Platform kann mehrere Status besitzen:
 
   * Aktiv - Der allgemeine Status, wenn der Mandant mit der Plattform interagieren kann. In diesem Status werden alle Abrechnungswerte gespeichert und aktualisiert.
-  * Gesperrt - Bei gesperrten Mandanten werden die Anzahl der Anfragen und die Microservice-Ressourcen nicht in Rechnung gestellt; der einzige Wert, der weiterhin berechnet wird, ist die Speichergröße. Die Microservice-Ressourcennutzung wird "wie verbraucht" in Rechnung gestellt, d.h. wenn der Mandant in den Status "Gesperrt" wechselt, werden alle Microservices gestoppt, sodass keine Ressourcen berechnet werden können.
+  * Gesperrt - Bei gesperrten Mandanten werden die Anzahl der Anfragen und die Microservice-Ressourcen nicht in Rechnung gestellt; der einzige Wert, der weiterhin berechnet wird, ist die Existenz des Mandanten und die Speichergröße. Die Microservice-Ressourcennutzung wird "wie verbraucht" in Rechnung gestellt, d. h. wenn der Mandant in den Status "Gesperrt" wechselt, werden alle Microservices gestoppt, so dass keine Ressourcen berechnet werden können.
   * Gelöscht - Dieser Vorgang kann nicht rückgängig gemacht werden. Dem Mandanten werden keine Ressourcen in Rechnung gestellt, aber es gibt auch keine Möglichkeit, die Daten wiederherzustellen.
 
 
@@ -348,7 +355,7 @@ Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt 
   * Nicht bereit - Der Microservice-Container ist noch nicht bereit, eingehenden Datenverkehr zu verarbeiten, aber die Anwendung läuft bereits.
   * Bereit - Der Microservice-Container ist bereit, eingehenden Datenverkehr zu verarbeiten. Der Status wird ausgehend von Liveness- und Readiness-Proben, die im [Microservice-Manifest](/microservice-sdk/concept/#manifest) definiert sind, auf "Bereit" gestellt. Wenn keine Proben definiert wurden, ist der Microservice direkt bereit.
 
-Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
+Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
 
   <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
@@ -359,7 +366,9 @@ Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer A
   * `Container erstellt.` - Der Microservice-Container wurde erstellt, aber noch nicht gestartet (Zustand "Geplant").
   * `Container gestartet.` - Der Microservice-Container wurde gestartet, ist jedoch noch nicht bereit, eingehenden Datenverkehr zu verarbeiten (Zustand "Nicht bereit").
 
->**Info:** Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
+{{< c8y-admon-info >}}
+Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
+{{< /c8y-admon-info >}}
 
   <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 

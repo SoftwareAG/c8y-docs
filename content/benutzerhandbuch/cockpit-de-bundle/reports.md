@@ -4,6 +4,8 @@ title: Verwenden von Berichten
 weight: 45
 ---
 
+<!-- -->
+
 Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
 
 Klicken Sie im Navigator auf **Berichte**, um alle Berichte anzuzeigen.
@@ -31,7 +33,9 @@ Näheres dazu, wie Sie die Position im Navigator konfigurieren können, finden S
 Wenn Sie die Option **Widget-Titel wenn möglich übersetzen** aktivieren, wird der Widget-Titel bei jeder Änderung der Sprache übersetzt. Beachten Sie, dass die Widget-Titel nur übersetzt werden, wenn eine gültige Übersetzung verfügbar ist.
 Klicken Sie auf **Speichern**, um den Bericht zu erstellen und der Berichtsliste hinzuzufügen.
 
-**Info:** Im Abschnitt **Vorschau** wird sofort eine Vorschau der ausgewählten Layout-Einstellungen angezeigt, um Ihre Einstellungen zu visualisieren.
+{{< c8y-admon-info >}}
+Im Abschnitt **Vorschau** wird sofort eine Vorschau der ausgewählten Layout-Einstellungen angezeigt, um Ihre Einstellungen zu visualisieren.
+{{< /c8y-admon-info >}}
 
 Als nächstes können Sie Widgets zu Ihrem Bericht hinzufügen.
 

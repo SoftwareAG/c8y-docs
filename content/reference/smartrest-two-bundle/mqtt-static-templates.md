@@ -29,8 +29,6 @@ If a parameter is in square brackets, it is optional.
 <strong><a href="#inventory-templates">Inventory templates</a></strong>
 + <a href="#100">100,createdDeviceName,deviceType</a>
 + <a href="#101">101,createdChildId,childName,childType</a>
-+ <a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a>
-+ <a href="#104">104,serviceStatus</a>
 + <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
 + <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
 + <a href="#110">110,serialNumber,hardwareModel,revision</a>
@@ -154,9 +152,9 @@ Create a new software service for given device.
 
 |Position|Parameter  |Mandatory|Type  |
 |:-------|:----------|:--------|:-----|
-|1|service name|YES|String|
-|2|service unique external id|YES|String|
-|3|service type|YES|String|
+|1|service unique external id|YES|String|
+|2|service type|YES|String|
+|3|service name|YES|String|
 |4|service status|YES|String|
 
 **Example**

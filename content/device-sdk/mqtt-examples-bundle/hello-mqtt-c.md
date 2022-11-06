@@ -27,7 +27,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create the application,
 * build and run the application.

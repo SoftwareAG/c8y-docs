@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
+Microservices deployed on the platform have a specific runtime environment and they must understand certain details about the specific {{< product-c8y-iot >}} cluster they run in. For example, a microservice needs to know the endpoint address of the {{< product-c8y-iot >}} REST APIs. This information is provided by environment variables and they are injected by {{< product-c8y-iot >}} when the container is started.
 
 ### Environment variables
 
@@ -42,7 +42,12 @@ $ docker images
 Run the Docker container for the microservice providing the environment variables:
 
 ```shell
-$ docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
+$ docker run -–cap-drop=ALL -–cap-add=NET_BIND_SERVICE \
+   -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> \
+   -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> \
+   -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> \
+   -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT \
+   -e C8Y_BASEURL=<URL> -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
 ```
 
 Use a backslash (\\) before special characters such as `&, !, ;, \`.
@@ -177,4 +182,6 @@ To execute requests against the {{< product-c8y-iot >}} platform running a micro
 
 A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other applications is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
 
-> **Important**: `C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.
+{{< c8y-admon-important >}}
+`C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.
+{{< /c8y-admon-important >}}

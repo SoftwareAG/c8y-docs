@@ -26,7 +26,9 @@ For earlier versions of {{< product-c8y-iot >}}, follow the steps in [Manual reg
 
 When using the **Connect Smartphone** wizard for device registration, your smartphone is automatically registered by {{< product-c8y-iot >}} and assigned to the "Phones" group. Tap **Done** on your smartphone to return to the main screen.
 
-> **Info:** QR codes not supported by the {{< sensor-app >}} are highlighted using a red region of interest in the Camera view. QR codes from older versions of {{< product-c8y-iot >}} will be scanned, but it is not possible to connect automatically. Instead, you are forwarded to the **Manual Registration** dialog with your tenant and instance pre-filled. From there you should continue with step 4 in [Manual registration](#manual-registration).
+{{< c8y-admon-info >}}
+QR codes not supported by the {{< sensor-app >}} are highlighted using a red region of interest in the Camera view. QR codes from older versions of {{< product-c8y-iot >}} will be scanned, but it is not possible to connect automatically. Instead, you are forwarded to the **Manual Registration** dialog with your tenant and instance pre-filled. From there you should continue with step 4 in [Manual registration](#manual-registration).
+{{< /c8y-admon-info >}}
 
 ### Manual registration
 
@@ -46,7 +48,9 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 
 6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
 
-> **Info:** If you do not accept the device request within the required time, an according message shows up. Select **Retry** to continue with the registration process.
+{{< c8y-admon-info >}}
+If you do not accept the device request within the required time, an according message shows up. Select **Retry** to continue with the registration process.
+{{< /c8y-admon-info >}}
 
 For further information about registering a device on the platform manually, refer to [Device Management > Connecting devices](/users-guide/device-management/#connecting-devices).
 

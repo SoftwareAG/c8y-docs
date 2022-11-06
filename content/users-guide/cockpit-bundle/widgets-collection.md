@@ -100,10 +100,6 @@ The following types are available:
 <td align="left">Displays data points (measurements) with current values in a pie chart presentation.</td>
 </tr>
 <tr>
-<td align="left"><a href="#quick-links">Quick links</a></td>
-<td align="left">Provides several quick links to relevant operations.</td>
-</tr>
-<tr>
 <td align="left"><a href="#radial-gauge">Radial Gauge</a></td>
 <td align="left">Displays data points in form of a radial gauge.</td>
 </tr>
@@ -201,7 +197,9 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 |Target assets or devices|Select groups or devices.
 |Properties|List of properties, see [Widget "Asset table"](#widget-asset-table).
 
->**Info:** In the view mode, this widget only displays the properties which are not empty.
+{{< c8y-admon-info >}}
+In the view mode, this widget only displays the properties which are not empty.
+{{< /c8y-admon-info >}}
 
 <a name="widget-asset-table"></a>
 ### Asset table
@@ -218,7 +216,7 @@ The "Asset table" widget shows details of a selected asset and all its child dev
 
 **Example**
 
-In the following screenshot, five columns are configured. Three property columns "Meter", "Vendor", and "Owner", which refer to the properties "name", "type" and "owner" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
+In the following screenshot, five columns are configured. Three property columns "Name", "Owner", and "Type", which refer to the properties "name", "owner" and "type" respectively. Additionally, there are two actions, one for toggling the maintenance mode, and one for rebooting the device.
 
 ![Asset table widget](/images/users-guide/cockpit/cockpit-widget-asset-table.png)
 
@@ -229,7 +227,9 @@ The resulting table is visualized as follows:
 
 Click **+Add Properties** and select one or more properties to be added.
 
-> **Info:** The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
+{{< c8y-admon-info >}}
+The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also must configure the renderer "Active Alarm Status" in the list of columns.
+{{< /c8y-admon-info >}}
 
 #### To add actions
 
@@ -239,8 +239,10 @@ Click **+Add Properties** and select one or more properties to be added.
 
 ![Reboot device button configuration](/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Device details > Shell](/users-guide/device-management/#shell).<br>
+{{< c8y-admon-info >}}
+The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Device details > Shell](/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
+{{< /c8y-admon-info >}}
 
 #### To modify the table
 
@@ -387,6 +389,11 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 
+The following code sanitization options can be selected:
+ - strict - Does not allow any JS or angularjs directives.
+ - lax (default) - Allows partly JS (events) and all angularjs directives.
+ - none - Allows everything.
+
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
 If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
@@ -402,7 +409,9 @@ The "Linear gauge" widget visualizes data points in form of a linear gauge. Min 
 
 ![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-linear-gauge.png)
 
->**Info:** If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
+{{< c8y-admon-info >}}
+If a label is not properly readable, you can help yourself by increasing the min and max value of the data point to move the label into the readable range.
+{{< /c8y-admon-info >}}
 
 You must enable at least one data point to create the "Linear gauge" widget.
 
@@ -433,13 +442,16 @@ Click a device icon, to open a popup with the following information:
 
 Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
->**Info:** If none of the target device(s) has a known location, then the widget shows a world map without icons.
+{{< c8y-admon-info >}}
+If none of the target device(s) has a known location, then the widget shows a world map without icons.
+{{< /c8y-admon-info >}}
 
 <a name="widget-message-sending"></a>
 ### Message sending
 
 The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support the operation `c8y_Message`.
 
+<a name="pie-chart"></a>
 ### Pie chart
 
 The "Pie chart" widget displays data points (measurements) with current values in a pie chart presentation.
@@ -472,13 +484,6 @@ The "Pie chart" widget displays data points (measurements) with current values i
 </tr>
 </tbody>
 </table>
-
-<a name="quick-links"></a>
-### Quick links
-
-The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
-
-![Quick links widget](/images/users-guide/cockpit/cockpit-widget-quick-links.png)
 
 <a name="radial-gauge"></a>
 ### Radial Gauge
@@ -533,7 +538,10 @@ The "SCADA" widget provides a graphic representation of the status of a device.
 
 For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
 
-> **Info:** All SVG files are sanitized in order to remove malicious code.
+The following code sanitization options can be selected:
+ - strict - Does not allow any JS or angularjs directives.
+ - lax (default) - Allows partly JS (events) and all angularjs directives.
+ - none - Allows everything.
 
 ![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 

@@ -80,7 +80,9 @@ In this example, a fragment `c8y_ThreePhaseElectricitySensor` identifies a three
 
 Using this approach, the modeling devices can make a difference between modeling elementary sensors and controls as fragments, and modeling the entire device as a combination of sensors, controls and possibly proprietary aspects of the device.
 
-The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment (`c8y\_Position`), it can be placed on a map. As soon as it has a relay, it can be switched on and off using the respective device control command as described below.
+The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment (`c8y_Position`), it can be placed on a map. As soon as it has a relay (`c8y_Relay`), it can be switched on and off using the respective device control command as described below.
+
+For more information on fragments and how managed objects are structured, see the [Device management library](reference/device-management-library/) in the *Reference guide*.
 
 #### Naming conventions of fragments
 
@@ -88,7 +90,9 @@ Fragments use a naming convention to avoid conflicts between different parties s
 
 In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device management library](/reference/device-management-library/) in the *Reference guide*.
 
-> **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
+{{< c8y-admon-important >}}
+Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
+{{< /c8y-admon-important >}}
 
 Note that {{< product-c8y-iot >}} follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 

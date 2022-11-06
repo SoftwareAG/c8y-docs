@@ -6,8 +6,9 @@ layout: redirect
 
 Click **Create a machine profile** at the right of the top menu bar to start the configuration of a new machine profile in the profile settings.  
 
->**Info:** After saving the general profile information in the first step you may skip one or more of the following steps and provide the requested information at a later point in time.
-
+{{< c8y-admon-info >}}
+After saving the general profile information in the first step you may skip one or more of the following steps and provide the requested information at a later point in time.
+{{< /c8y-admon-info >}}
 
 ### Profile
 
@@ -27,7 +28,7 @@ In the first step, you specify the profile name and type.
     **External profile**<br>
     To integrate external OEE data. It is not possible to define calculation rules or any other settings except the goals for OEE, Availability, Performance and Quality. The tethered external OEE data will be displayed without any calculation. Also no splitting takes place, so the intervals used in the incoming measurements should be configured to match the expectation.
 
-	The only mandatory measurement is the OEE value itself, whereas measurements for Performance, Availability and Quality are recommended. Technically the measurements need to meet the following criteria:
+	The only mandatory measurement is the OEE value itself, whereas measurements for Performance, Availability and Quality are recommended. Technically the measurements must meet the following criteria:
 
     **Type/Fragmenttype**
 
@@ -89,7 +90,9 @@ Next, select a machine to be connected with the profile.
 
 3. Click **Save and continue** to proceed.
 
->**Info:** Once you have saved a profile, the selected machine cannot be changed.
+{{< c8y-admon-info >}}
+Once you have saved a profile, the selected machine cannot be changed.
+{{< /c8y-admon-info >}}
 
 #### Using a shift plan
 
@@ -103,7 +106,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/shiftplan
 
 * PUT: Add or update the shift plan for the location defined in the body. If a shift plan exists for the given tenant and location, the new shift plan will be merged internally and obsolete timeslots will be removed. The resulting shift plan will then be sent to the Apama service.
 
-For details, see the [REST API documentation](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/#tag/Shiftplan).
+For details, see the [REST API documentation](https://{{< domain-c8y >}}/oee/api/10.10.0/#tag/Shiftplan).
 
 
 ### Workpiece
@@ -135,7 +138,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/productio
 
 * PUT: Add or update the list of production plans for the device defined in the body. If a production plan exists for the given tenant and device, the new production plans will be merged internally and obsolete instances will be removed. The resulting production plans will then be sent to the Apama service.
 
-For details, see the [Rest API documentation](https://{{< domain-c8y >}}/oee/api/{{< c8y-current-version >}}/#tag/Productionplan).
+For details, see the [Rest API documentation](https://{{< domain-c8y >}}/oee/api/10.10.0/#tag/Productionplan).
 
 
 ### Resolution
@@ -168,8 +171,9 @@ The six calculation methods shown in the screenshot represent the possible combi
 
 For more information on the input variables and the naming conventions of the pathways, see [OEE theory](/oee/oee-theory/).
 
->**Info:** For the calculation methods 2 & 5 (PQL & LQL), you should not use "status event" in the mapping formula for both Actual Quality Amount and Quality Losses (Amount), because as a sum they form the Actual Production Amount. Unlike the other calculation methods, no subset of the Actual Production Amount can be derived using the "status event", since calculation methods 2 & 5 only consist out of subsets.
-
+{{< c8y-admon-info >}}
+For the calculation methods 2 & 5 (PQL & LQL), you should not use "status event" in the mapping formula for both Actual Quality Amount and Quality Losses (Amount), because as a sum they form the Actual Production Amount. Unlike the other calculation methods, no subset of the Actual Production Amount can be derived using the "status event", since calculation methods 2 & 5 only consist out of subsets.
+{{< /c8y-admon-info >}}
 
 ### Matching
 
@@ -189,7 +193,9 @@ Optionally, you can record short stoppages. By default, short stoppages are not 
 
 All Availability Losses shorter than the set duration are no longer treated as Availability Losses but instead as Performance Losses. When the duration is set to one minute and an Availability Loss (time) is shorter than 60 seconds it will be deducted from the Availability Losses (time) and added to the Performance Losses (time) and the Actual Production Time.
 
->**Info:** Short shutdowns currently only work if the Actual Production Time or the Availability Losses (time) are configured via machine status events. The reason is that you can only properly observe machine uptime or downtime with machine status events and thus correctly detect if a shutdown is a short shutdown. With transformation rules you actually get one value for the whole interval and it is unclear if the Availability Loss Time is one long shutdown or consists out of multiple short shutdowns.
+{{< c8y-admon-info >}}
+Short shutdowns currently only work if the Actual Production Time or the Availability Losses (time) are configured via machine status events. The reason is that you can only properly observe machine uptime or downtime with machine status events and thus correctly detect if a shutdown is a short shutdown. With transformation rules you actually get one value for the whole interval and it is unclear if the Availability Loss Time is one long shutdown or consists out of multiple short shutdowns.
+{{< /c8y-admon-info >}}
 
 ### Goals
 
@@ -197,7 +203,9 @@ Next, you may  specify OEE target goal values in percentage. These values will b
 
 ![Goals](/images/oee/administration/profile-goals.png)
 
->**Info:** The target is only fulfilled if the current value is above (>) the target value.
+{{< c8y-admon-info >}}
+The target is only fulfilled if the current value is above (>) the target value.
+{{< /c8y-admon-info >}}
 
 ### Summary
 

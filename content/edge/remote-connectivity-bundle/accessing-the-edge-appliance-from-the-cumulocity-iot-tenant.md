@@ -17,14 +17,16 @@ To use Cloud Remote Access, you need:
 
 The following protocols are supported to connect to the Edge appliance through remote access from the {{< product-c8y-iot >}} tenant:
 
-* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
+* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/edge/remote-connectivity/#accessing-the-edge-appliance-remotely-through-vnc).
   * Shares the desktop of the remote device
   * Mouse and keyboard for interaction
 * Secure Shell (SSH)
   * Console for command line access
   * Keyboard for interaction
-* Terminal (Telnet)
-  * Console for command line access
-  * Keyboard for interaction
+
+{{< c8y-admon-important >}}
+
+Starting with {{< product-c8y-iot >}} Edge Release 10.15, the support for the Telnet protocol has been removed, as Telnet is considered to be an insecure protocol lacking built-in security measures. For accessing the Edge appliance remotely from the {{< product-c8y-iot >}} tenant, {{< company-sag >}} recommends you to use the SSH protocol instead.
+{{< /c8y-admon-important >}}
 
 For more information about remote access, see [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).

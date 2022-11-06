@@ -18,7 +18,9 @@ The user management feature allows you to manage the users within your tenant. W
 - Specify login options.
 - Enable additional login security by using Two-Factor Authentication (TFA).
 
-> **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
+{{< c8y-admon-info >}}
+The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
+{{< /c8y-admon-info >}}
 
 If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
 
@@ -30,8 +32,9 @@ For users created via an external authorization server, updating the following s
 
 Moreover, password reset in {{< product-c8y-iot >}} is disabled for users created through an external authentication server.
 
-> **Info:** Users which are using single sign-on cannot change the password of users which are managed by the platform.
-
+{{< c8y-admon-info >}}
+Users which are using single sign-on cannot change the password of users which are managed by the platform.
+{{< /c8y-admon-info >}}
 
 ### Viewing users
 
@@ -56,8 +59,9 @@ Initially, the **User** page only shows the top-level users. To see all users in
 ### To add a user
 
 1. Click **Add user** at the right of the top menu bar.  
-
-  >**Info:** If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
+  {{< c8y-admon-info >}}
+If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
+  {{< /c8y-admon-info >}}
 
 2. At the left of the **New user** window, provide the following information to identify the user:
 
@@ -114,7 +118,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 3. Select the login options for the user.
 	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
-	* **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strenth.  
+	* **User must reset password on next login**: If selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strenth.  
 	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).
@@ -122,7 +126,9 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 The new user will be added to the user list.
 
-> **Info:** By default, manually created users always have the "Own&#95;User&#95;Management" permissions set to active.
+{{< c8y-admon-info >}}
+By default, manually created users always have the "Own&#95;User&#95;Management" permissions set to active.
+{{< /c8y-admon-info >}}
 
 ### To edit a user
 
@@ -130,7 +136,9 @@ The new user will be added to the user list.
 2. Click **Change password** to change the password.
 3. Click **Save** to apply your settings.
 
-> **Info:** You need a role with user management permission to perform this option.
+{{< c8y-admon-info >}}
+You need a role with user management permission to perform this option.
+{{< /c8y-admon-info >}}
 
 ### To copy inventory roles
 
@@ -141,7 +149,9 @@ The new user will be added to the user list.
 
 The inventory roles will be copied from the selected user.
 
-> **Info:** You need a role with user management permission to perform this option.
+{{< c8y-admon-info >}}
+You need a role with user management permission to perform this option.
+{{< /c8y-admon-info >}}
 
 ### To delegate/undelegate user hierarchies
 
@@ -151,16 +161,22 @@ Click **Undelegate** to remove a delegation.
 
 Refer to [Managing User Hierarchies](/users-guide/enterprise-tenant#user-hierarchies) for details on delegation.
 
-> **Info:** You need a role with user management permission to perform this option.
+{{< c8y-admon-info >}}
+You need a role with user management permission to perform this option.
+{{< /c8y-admon-info >}}
 
 ### To disable/enable a user
 
 Click the menu icon at the right of the respective row and then click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
 
-> **Info:** You need a role with user management permission to perform this option.
+{{< c8y-admon-info >}}
+You need a role with user management permission to perform this option.
+{{< /c8y-admon-info >}}
 
 ### To delete a user
 
 Click the menu icon at the right of the respective row and then click **Delete**.
 
-> **Info:** You need a role with user management permission to perform this option.
+{{< c8y-admon-info >}}
+You need a role with user management permission to perform this option.
+{{< /c8y-admon-info >}}

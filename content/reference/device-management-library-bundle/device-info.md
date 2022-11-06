@@ -21,7 +21,9 @@ PUT /inventory/managedObjects/<deviceId>
 }
 ```
 
-> **Info:** Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< c8y-admon-info >}}
+Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< /c8y-admon-info >}}
 
 ### Agent marker
 
@@ -36,7 +38,9 @@ PUT /inventory/managedObjects/<deviceId>
 }
 ```
 
-> **Info:** Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< c8y-admon-info >}}
+Devices created through SmartREST 2.0 will automatically contain this fragment.
+{{< /c8y-admon-info >}}
 
 ### Device restart
 
@@ -101,3 +105,37 @@ PUT /inventory/managedObjects/<deviceId>
 Upload hardware information using the 110 static template. Usually this can be done once during agent application startup:
 
 `110,1234567890,myModel,1.2.3`
+
+### Agent information
+
+All devices should provide information about the agent they are running, that is the software that integrates them with {{< product-c8y-iot >}}.
+
+```http
+PUT /inventory/managedObjects/<deviceId>
+```
+
+```json
+{
+   "c8y_Agent": {
+       "name": "thin-edge.io",
+       "version": "0.6",
+       "url": "https://thin-edge.io/",
+       "maintainer": "Software AG"
+   }
+}
+```
+
+| Field      | Data type | Mandatory | Details                 |
+|------------|-----------|-----------|-------------------------|
+| name       | string    | Yes       | Name of the agent       |
+| version    | string    | Yes       | Version of the agent    |
+| url        | string    | No        | The agent URL           |
+| maintainer | string    | Yes       | Maintainer of the agent |
+
+**SmartREST example**
+
+Upload agent details using the [122](guides/reference/smartrest-two/#122) static template:
+
+`122,thin-edge.io,0.6,https://thin-edge.io/,Software AG`
+
+Do this once at agent initialization.

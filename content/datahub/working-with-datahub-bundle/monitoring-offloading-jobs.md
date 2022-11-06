@@ -8,7 +8,9 @@ Once you have configured and started your offloading pipelines, they regularly o
 
 You can either examine the corresponding latest execution for all configured pipelines or examine the execution history for a specific pipeline.
 
->**Info**: You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< c8y-admon-info >}}
+You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< /c8y-admon-info >}}
 
 ### Status of all offloading jobs
 
@@ -20,11 +22,10 @@ In the navigator, select **Status** and then **Offloading** to get an overview o
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
 | Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
-| Job name | The name of the pipeline job
+| Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled; for a manual execution it is empty
-| \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
 Click **Reload** to refresh the status being shown.
 
@@ -44,11 +45,10 @@ The list shows the execution history, with each execution consisting of the foll
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
 | Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
-| Job name | The name of the pipeline
+| Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty
-| \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
 The system is configured to keep a limited history of the last job executions.
 
@@ -62,7 +62,9 @@ You can filter the entries by their status by using the filter button at the top
 
 For a given offloading job, you can examine additional details of its execution.
 
->**Info**: You need administration permissions to access the job details.
+{{< c8y-admon-info >}}
+You need administration permissions to access the job details.
+{{< /c8y-admon-info >}}
 
 Select a job overview in the history per offloading job or in the status of all offloading jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 

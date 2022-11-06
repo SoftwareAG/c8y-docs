@@ -8,7 +8,9 @@ EPL apps are designed to listen for REST (Representational State Transfer) servi
 
 To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 
-> **Info**: This API requires version 10.6.0 or above of the Apama-ctrl microservice.
+{{< c8y-admon-info >}}
+This API requires version 10.6.0 or above of the Apama-ctrl microservice.
+{{< /c8y-admon-info >}}
 
 ### Request headers for all operations
 
@@ -25,7 +27,7 @@ The following common error response codes can be expected for all requests:
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 401  | Unauthorized.                                                |
-| 403  | Forbidden. EPL apps are not available with Apama Starter. |
+| 403  | Forbidden. EPL apps are not available with the Apama-ctrl-starter microservice. |
 
 Any other response codes that can be expected from a specific request are given below.
 
@@ -66,15 +68,15 @@ Example value for response code 200:
   "eplfiles":[
     {
       "description":"",
-      "eplPackageName": "eplfiles.Ordinal1", 
+      "eplPackageName": "eplfiles.Ordinal1",
       "errors":[
- 
+
       ],
       "id":"39615",
       "name":"Ordinal1",
       "state":"active",
       "warnings":[
- 
+
       ]
     }
   ]
@@ -109,7 +111,7 @@ Example value for response code 200:
     {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
-      "eplPackageName": "eplfiles.Ordinal1", 
+      "eplPackageName": "eplfiles.Ordinal1",
       "errors":[
       ],
       "id":"39615",
@@ -149,7 +151,7 @@ Example value for response code 200:
 {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
-      "eplPackageName": "eplfiles.Ordinal1", 
+      "eplPackageName": "eplfiles.Ordinal1",
       "errors":[
       ],
       "id":"39615",
@@ -198,15 +200,15 @@ Example for response code 201 when successfully created:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1", 
+  "eplPackageName": "eplfiles.Ordinal1",
   "errors":[
- 
+
   ],
   "id":"39615",
   "name":"Ordinal1",
   "state":"active",
   "warnings":[
- 
+
   ]
 }
 ```
@@ -216,7 +218,7 @@ Example for response code 201 when created with warnings or errors:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1", 
+  "eplPackageName": "eplfiles.Ordinal1",
   "errors":[
     {
       "line":5,
@@ -243,7 +245,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
-| id   | Identifier of the EPL file to be updated. The identifier has to be included in the path. This is a mandatory parameter. |
+| id   | Identifier of the EPL file to be updated. The identifier must be included in the path. This is a mandatory parameter. |
 
 #### Example request
 
@@ -274,15 +276,15 @@ Example value for response code 200 when successfully updated with no errors:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1", 
+  "eplPackageName": "eplfiles.Ordinal1",
   "errors":[
- 
+
   ],
   "id":"39615",
   "name":"Ordinal1",
   "state":"active",
   "warnings":[
- 
+
   ]
 }
 ```
@@ -292,7 +294,7 @@ Example value for response code 200 when updated with errors or warnings:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Ordinal1", 
+  "eplPackageName": "eplfiles.Ordinal1",
   "errors":[
     {
       "line":5,
@@ -319,7 +321,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
-| id   | Identifier of the EPL file to be deleted. The identifier has to be included in the path. This is a mandatory parameter. |
+| id   | Identifier of the EPL file to be deleted. The identifier must be included in the path. This is a mandatory parameter. |
 
 #### Example request
 
@@ -334,7 +336,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 <a name="example-404"></a>
 ### Example value for response code 404
-The response code 404 indicates that a file with a specific identifier was not found. 
+The response code 404 indicates that a file with a specific identifier was not found.
 
 ```
 {
@@ -347,7 +349,7 @@ The response code 404 indicates that a file with a specific identifier was not f
 }
 ```
 
-where 
+where
 
 - `error` is the error message.
 - `exception` specifies the exception that was raised.

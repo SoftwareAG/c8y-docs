@@ -14,7 +14,7 @@ In order to follow this tutorial, check the following prerequisites:
 
 ### Developing the "Hello, MQTT world!" client
 
-To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you need to
+To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create an HTML file and include the MQTT JavaScript client (in this example we will use [Paho JavaScript Client](https://www.eclipse.org/paho/clients/js/)),
 * create a JavaScript application,
@@ -67,8 +67,8 @@ client.onMessageArrived = function (message) {
         log("...restarting...");
         setTimeout(function() {
             publish("s/us", "503,c8y_Restart");
+            log("...done...");
         }, 1000);
-        log("...done...");
     }
 };
 

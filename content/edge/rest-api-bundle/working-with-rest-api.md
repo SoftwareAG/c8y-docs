@@ -10,9 +10,11 @@ During the installation, the certificate changes from using the IP address to th
 
 You can either upload a certificate (self-signed) issued by a certificate authority or have {{< product-c8y-iot >}} Edge generate a self-signed certificate for the domain name. Some of the endpoints could be temporarily unavailable during the installation. For example, the `edge/configuration/network` endpoint can be used only after the installation.
 
-When you use a POST request, the server starts a task running in the background and returns a response with the ID of the task. You can use that ID to track the progress of the task. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, etc. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
+When you use a POST request, the server starts a task running in the background and returns a response with the ID of the task. You can use that ID to track the progress of the task. Here, the tasks refer to the installation process, uploading license and certificate files, configuring a network, and so on. The immediate response indicates if the task is created successfully or not. To check the status of a task, use the `/edge/tasks/{id}` endpoint.
 
->**Important:** You cannot run two tasks at the same time. If you attempt to run a task when another task is in progress, then you will get a HTTP status 409.
+{{< c8y-admon-important >}}
+You cannot run two tasks at the same time. If you attempt to run a task when another task is in progress, then you will get a HTTP status 409.
+{{< /c8y-admon-important >}}
 
 ### Authentication
 
@@ -238,7 +240,9 @@ Use this endpoint to configure the {{< product-c8y-iot >}} Edge network.
 |:---|:---|
 |Content-Type|application/json
 
->**Important:** Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+{{< c8y-admon-important >}}
+Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configuration. These IP addresses are reserved for {{< product-c8y-iot >}} Edge internal purpose.
+{{< /c8y-admon-important >}}
 
 **Request**
 
@@ -255,7 +259,9 @@ Content-Type: application/json
 ```
 Use the above JSON format before the installation to configure the network.
 
->**Important:** For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
+{{< c8y-admon-important >}}
+For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
+{{< /c8y-admon-important >}}
 
 After the installation, you can configure the IP range for network CIDR using the same JSON format with an additional key `ip_range`:
 
@@ -279,7 +285,9 @@ The **ip_range** must not overlap with the reserved IP addresses. See [Reserved 
 
 Before the installation, the `dns` and the network CIDR keys are optional.
 
->**Info:** If the IP address of the Edge appliance overlaps with the Edge appliance's `ip_range`, then you must update the `ip_range`.
+{{< c8y-admon-info >}}
+If the IP address of the Edge appliance overlaps with the Edge appliance's `ip_range`, then you must update the `ip_range`.
+{{< /c8y-admon-info >}}
 
 **Response**
 
@@ -293,7 +301,9 @@ The endpoint returns HTTP status 201, if the request is successful.
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
->**Info:** {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
+{{< /c8y-admon-info >}}
 
 ### GET /edge/configuration/network
 
@@ -446,7 +456,9 @@ Content-Type: application/json
     "servers": ["pool.ntp.org"]
 }
 ```
->**Important:** If the interval is set to a value of 'n', the time synchronizes every 2<sup>n</sup> seconds. For example, if `"interval: 10"`, the time synchronizes every 2<sup>10</sup> seconds, that is 1024 seconds.
+{{< c8y-admon-important >}}
+If the interval is set to a value of 'n', the time synchronizes every 2<sup>n</sup> seconds. For example, if `"interval: 10"`, the time synchronizes every 2<sup>10</sup> seconds, that is 1024 seconds.
+{{< /c8y-admon-important >}}
 
 The servers must be NTP servers. If you specify multiple servers, any server specified in the configuration can be used for time synchronization. For more information about publicly available NTP servers, see https://www.ntppool.org/en.
 
@@ -498,7 +510,9 @@ The endpoint returns `"enabled": true` if the microservices hosting feature is e
 
 Use this endpoint to configure the microservice hosting feature.
 
->**Important:** To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< c8y-admon-important >}}
+To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< /c8y-admon-important >}}
 
 |HEADERS||
 |:---|:---|
@@ -529,7 +543,9 @@ The endpoint returns HTTP status 201, if the request is successful.
 
 The `id` returned in the JSON response is the task ID. Use the task ID for polling the task. See [GET /edge/tasks/{id}](/edge/rest-api/#get-edgetasksid).
 
->**Info:** {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
+{{< /c8y-admon-info >}}
 
 ### GET /edge/configuration/certificate
 
@@ -622,7 +638,9 @@ Use this endpoint to expand the disk size of the installation disk and the data 
 
 Before using this endpoint, you must set or edit the disk size in the hypervisor. See the hypervisor specific documentation for editing the disk size.
 
->**Info:** If there is no disk space to expand, the task will be marked as success.
+{{< c8y-admon-info >}}
+If there is no disk space to expand, the task will be marked as success.
+{{< /c8y-admon-info >}}
 
 **Request**
 

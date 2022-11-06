@@ -1,17 +1,20 @@
 ---
-weight: 10
-title: Verwalten von Mandanten
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition/#managing-tenants
-  - /benutzerhandbuch/enterprise-edition-de/#managing-tenants
+- /benutzerhandbuch/enterprise-edition-de/#managing-tenants
+layout: redirect
+title: Verwalten von Mandanten
+weight: 10
 ---
 
 Über den {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
 
-> **Wichtig:** Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
+{{< c8y-admon-important title="Wichtig" >}}
+Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
+{{< /c8y-admon-important >}}
 
->**Info:** Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/).
+{{< c8y-admon-info >}}
+Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/).
+{{< /c8y-admon-info >}}
 
 Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration-de#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um eine sensible Operation handelt, sind die entsprechenden Berechtigungen granularer:
 
@@ -26,7 +29,7 @@ Klicken Sie auf **Untermandanten** im Menü **Mandanten**, um alle in Ihrem Kont
 
 Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandanten an:
 
-* Name des Untermandanten, z. B. Name des Unternehmens Ihres Kunden.
+* Name des Untermandanten, z. B. Name des Unternehmens Ihres Kunden.
 * ID und Domain.
 * Optional: Kontaktname und Telefonnummer.
 * Das Erstellungsdatum für den Mandanten.
@@ -59,10 +62,10 @@ Im {{< management-tenant-de >}} finden Sie zudem Informationen über den überge
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
-	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
+	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
 	</tr>
 	<tr>
-	<td style="text-align:left">E-Mail des Administrators</td>
+	<td style="text-align:left">E-Mail-Adresse des Administrators</td>
 	<td style="text-align:left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
 	</tr>
 	<tr>
@@ -79,7 +82,7 @@ Im {{< management-tenant-de >}} finden Sie zudem Informationen über den überge
 	</tr>
 	<tr>
 	<td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-	<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der {{< product-c8y-iot >}}-Plattform</a>.</td>
+	<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der {{< product-c8y-iot >}}-Plattform &gt; So melden Sie sich an der Plattform an</a>).</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Mandantenregel</td>
@@ -103,7 +106,7 @@ In der Registerkarte **Attribute** können alle Felder außer **ID**, **Domain/ 
 Um das Mandantenpasswort zu ändern, klicken Sie auf **Passwort ändern**, geben Sie das neue Passwort in die dafür angezeigten Felder ein und klicken Sie auf **Speichern**.
 
 <a name="user-access"></a>
-#### Supportbenutzerzugriff
+#### Informationen zum Supportbenutzerzugriff
 
 Auf der rechten Seite der Registerkarte **Attribute** finden Sie Informationen zu Supportbenutzeranfragen/-zugriff für die Untermandanten.
 
@@ -125,7 +128,7 @@ Hier werden die folgenden Informationen angezeigt:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h. jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzahl aktiver Anfragen</td>
@@ -140,14 +143,19 @@ Hier werden die folgenden Informationen angezeigt:
 
 ### Sperren von Untermandanten
 
-Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, unabhängig davon, ob der Zugriff über ein Gerät, einen Benutzer oder eine andere Anwendung erfolgt.
+Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, unabhängig davon, ob der Zugriff über ein Gerät, einen Benutzer oder eine andere Anwendung erfolgt. Zudem sind alle seine Microservices nicht gestartet, und bei Reaktivierung des Mandanten werden alle seine Microservices neu gestartet.
 
-Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und können später durch Klicken auf **Einschalten** wieder bereitgestellt werden.
+Die Daten des Mandanten bleiben in der Datenbank und können später durch Klicken auf **Einschalten** wieder bereitgestellt werden.
 
->**Wichtig:** Mandanten, die für alle {{< product-c8y-iot >}} Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
->
-> **Info:** Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das Sperren dieses Mandanten dazu, dass alle seine Data Broker-Konnektoren ebenfalls gesperrt werden.
+Näheres zur Abrechnungsperspektive von gesperrten Mandanten finden Sie unter [Nutzungsstatistiken und Abrechnung > Lebenszyklus](#lifecycle).
 
+{{< c8y-admon-important title="Wichtig" >}}
+Mandanten, die für alle {{< product-c8y-iot >}} Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
+{{< /c8y-admon-important>}}
+
+{{< c8y-admon-info >}}
+Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das Sperren dieses Mandanten dazu, dass alle seine Data Broker-Konnektoren ebenfalls gesperrt werden.
+{{< /c8y-admon-info >}}
 
 #### So sperren Sie einen Untermandanten
 
@@ -159,14 +167,17 @@ Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und k
 
 Während des Sperrvorgangs wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.
 
->**Info:** Als Service Provider können Sie diese E-Mail unterdrücken.
-
+{{< c8y-admon-info >}}
+Als Service Provider können Sie diese E-Mail unterdrücken.
+{{< /c8y-admon-info >}}
 
 ### Löschen von Untermandanten
 
->**Wichtig:** Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant-de >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant-de >}} aus gelöscht werden.
->
->Administratoren in {{< enterprise-tenant-de >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
+{{< c8y-admon-important title="Wichtig" >}}
+Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant-de >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant-de >}} aus gelöscht werden.
+
+Administratoren in {{< enterprise-tenant-de >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
+{{< /c8y-admon-important >}}
 
 #### So löschen Sie einen Untermandanten
 
@@ -231,11 +242,16 @@ Plattformadministratoren können die Anfragerate jedes Untermandanten über die 
 * Stream-Puffer begrenzen - Begrenzung des MQTT-Anfragenpuffers für den Mandanten
 * Stream-Anfragen begrenzen - Begrenzung der MQTT-Anfragen für den Mandanten pro Sekunde
 
->**Info:** Die Anfragen-Begrenzungsfunktion wird erst aktiviert, wenn beide HTTP-Attribute (HTTP-Queue begrenzen und HTTP-Anfragen begrenzen) konfiguriert sind. Wird einer der Werte weggelassen, funktioniert es nicht.
+Die Anfragen-Begrenzungsfunktion wird erst aktiviert, wenn beide HTTP-Attribute (HTTP-Queue begrenzen und HTTP-Anfragen begrenzen) konfiguriert sind. Wird einer der Werte weggelassen, funktioniert es nicht.
+
+{{< c8y-admon-important title="Wichtig" >}}
+Eine Begrenzung der Rate kann eine wirksame Maßnahme gegen Bedrohungen wie Brute-Force-Anmeldeversuche, API-Missbrauch und Überflutung mit Anfragen sein und verringert somit die Menge des schädlichen/unerwünschten Datenverkehrs. Dies trägt zum Schutz vor DoS-Angriffen (Denial of Service) und zur Sicherstellung der für legitime Anfragen verfügbaren Bandbreite bei.
+{{< /c8y-admon-important >}}
+
 Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffers für einen Mandanten anzupassen. Dies kann mithilfe der folgenden benutzerdefinierten Untermandant-Fragmente vom {{< management-tenant-de >}} aus durchgeführt werden:
 
- - cep.queue.limit
- - data-broker.queue.limit
+* cep.queue.limit
+* data-broker.queue.limit
 
 Wenn keine Begrenzung auf Mandanten- und Systemebene vorliegt, wird die Begrenzungsfunktion als deaktiviert betrachtet und der Mandant erhält unbegrenzten Zugriff. Um die Begrenzung der Anfragerate wieder abzuschalten, setzen Sie den Wert auf "-1".
 
@@ -243,13 +259,15 @@ Wenn keine Begrenzung auf Mandanten- und Systemebene vorliegt, wird die Begrenzu
 
 Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen.
 
-Auf der Seite **[Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing)** können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
+Auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing) können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
 
 #### Produkterfahrungs-Tracking
 
 Über das Kontrollkästchen **Gainsight-Tracking aktivieren** kann ein übergeordneter Mandant das Produkterfahrungs-Tracking über die Produkterfahrungssoftware [Gainsight PX](https://www.gainsight.com/product-experience/) für den jeweiligen untergeordneten Mandanten aktivieren/deaktivieren.
 
-Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
+Auf Mandantenebene kann das Produkterfahrungs-Tracking von Gainsight durch Deaktivieren des Cookie-Banners auf der Seite **Branding** ausgeschaltet werden, siehe [Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
+
+Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
 
 
 <a name="tenant-policies"></a>
@@ -261,7 +279,13 @@ Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln
 
 Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
 
->**Info:** Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
+{{< c8y-admon-info >}}
+Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-important title="Wichtig" >}}
+In einer Mandantenregel angegebene Mandantenoptionen sind **nicht verschlüsselt**. Sie sollten hier keine Mandantenoptionen mit dem Präfix "credentials." angeben oder überschreiben, da die Plattform erwartet, dass diese Optionen bei Daten, die nach dem Erstellen des Mandaten erscheinen, verschlüsselt sind.
+{{< /c8y-admon-important >}}
 
 #### So zeigen Sie Mandantenregeln an
 
@@ -273,7 +297,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 
 #### So erstellen Sie eine Mandantenregel
 
-1. Klicken Sie auf **Mandantenregel hinzufügen** in der oberen Menüleiste.
+1. Klicken Sie auf **Regel hinzufügen** in der oberen Menüleiste.
 <br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
 3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
@@ -282,7 +306,9 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 
 Die Mandantenregel wird der Mandantenregel-Liste hinzugefügt.
 
->**Wichtig:** Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant-de >}} aus eine Aktualisierung starten.
+{{< c8y-admon-important title="Wichtig" >}}
+Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant-de >}} aus eine Aktualisierung starten.
+{{< /c8y-admon-important >}}
 
 #### So bearbeiten Sie eine Mandantenregel
 
@@ -312,16 +338,20 @@ Auf der Seite **Standardabonnements** können Sie zwei separate Listen von Anwen
 - für jeden neuen Mandanten bei dessen Erstellung,
 - für jeden bestehenden Mandanten bei einem Plattform-Upgrade.
 
-> **Info:** Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
+{{< c8y-admon-info >}}
+Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
+{{< /c8y-admon-info >}}
 
-In der Mitte der Seite wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst
+Links wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst
 
 - alle eigenen Anwendungen,
 - alle abonnierten Anwendungen, deren Namen von den eigenen Anwendungen abweichen.
 
-> **Info:** Um leichter unterscheiden zu können, welche Anwendung eine eigene und welche eine abonnierte ist, wird die Mandanten-ID des Besitzers angezeigt.
+{{< c8y-admon-info >}}
+Um leichter unterscheiden zu können, welche Anwendung eine eigene und welche eine abonnierte ist, wird die Mandanten-ID des Besitzers angezeigt.
+{{< /c8y-admon-info >}}
 
-Links sehen Sie die **Anwendungen, die zum Zeitpunkt der Erstellung für einen Mandanten abonniert sind**, und rechts die **Anwendungen, die zum Zeitpunkt des Plattform-Upgrades für einen Mandanten abonniert sind**.
+Rechts sehen Sie die Spalten **Zum Zeitpunkt der Mandantenerstellung abonniert** und **Plattform-Upgrade abonniert**.
 
 Anfänglich zeigen die Listen die aus der Mandantenhierarchie geerbten Standardabonnements.
 
@@ -340,7 +370,9 @@ Wenn Sie zu den von der Mandantenhierarchie geerbten Einstellungen zurückkehren
 
 Speichern Sie die Einstellungen, indem Sie unten auf der Seite auf **Speichern** klicken.
 
-> **Info:** Veraltete Einträge, die keinen bestehenden Anwendungen entsprechen, werden beim Speichern entfernt. Wenn eine Anwendung, die in einer der Listen ausgewählt war, entfernt wurde, wird sie während der Mandantenerstellung bzw. dem Plattform-Upgrade stillschweigend ignoriert. Wird danach (aber noch bevor die Einstellungen auf dieser Seite erneut gespeichert werden, wodurch der veraltete Eintrag gelöscht wird) eine andere Anwendung mit demselben Namen erstellt, so wird anstelle der früheren Anwendung die neue Anwendung abonniert.
+{{< c8y-admon-info >}}
+Veraltete Einträge, die keinen bestehenden Anwendungen entsprechen, werden beim Speichern entfernt. Wenn eine Anwendung, die in einer der Listen ausgewählt war, entfernt wurde, wird sie während der Mandantenerstellung bzw. dem Plattform-Upgrade stillschweigend ignoriert. Wird danach (aber noch bevor die Einstellungen auf dieser Seite erneut gespeichert werden, wodurch der veraltete Eintrag gelöscht wird) eine andere Anwendung mit demselben Namen erstellt, so wird anstelle der früheren Anwendung die neue Anwendung abonniert.
+{{< /c8y-admon-info >}}
 
 <a name="default-applications"></a>
 #### Außerkraftsetzen von Standardabonnements
@@ -350,11 +382,11 @@ Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, ind
 * zum Definieren von Web-Anwendungen, die für neue Mandanten bei deren Erstellung abonniert werden sollen:
   * category: configuration
   * key: default.tenant.applications
-  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * zum Definieren von Microservices, die für neue Mandanten bei deren Erstellung abonniert werden sollen:
   * category: configuration
   * key: default.tenant.microservices
-  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
+  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
 * zur Verwendung einer anderen Liste von Web-Anwendungen, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.applications.enabled
@@ -362,7 +394,7 @@ Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, ind
 * zum Definieren von Web-Anwendungen, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.applications
-  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * zur Verwendung einer anderen Liste von Microservices, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.microservices.enabled
@@ -370,4 +402,4 @@ Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, ind
 * zum Definieren von Microservices, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.microservices
-  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
+  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway

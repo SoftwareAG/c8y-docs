@@ -6,7 +6,9 @@ layout: redirect
 
 Before restarting your Edge appliance, ensure that your appliance is in a safe state.
 
-> **Info:** You might see alarms when you power on the Edge appliance from hibernation.
+{{< c8y-admon-info >}}
+You might see alarms when you power on the Edge appliance from hibernation.
+{{< /c8y-admon-info >}}
 
 ### Restarting the Edge appliance using the UI
 

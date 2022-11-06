@@ -1,5 +1,7 @@
 ---
-weight: 180 title: Services layout: redirect
+weight: 180
+title: Services
+layout: redirect
 ---
 
 The {{< product-c8y-iot >}} UI allows you to monitor software services running on a device. The services are represented
@@ -98,4 +100,5 @@ Or using SmartREST static template 200 sent to topic `s/us/<serviceUniqueId>`:
 
 `200,c8y_Memory,allocated,100,MB`
 
+<<<<<<< HEAD
 Similarly to measurements, alarms and events associated with the service can also be sent.

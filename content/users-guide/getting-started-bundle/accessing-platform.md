@@ -22,19 +22,23 @@ Supported browsers in this version are:
 
 [2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of {{< product-c8y-iot >}} with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
 
->**Important:** [3] Though {{< product-c8y-iot >}} is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
+{{< c8y-admon-important >}}
+[3] Though {{< product-c8y-iot >}} is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
+{{< /c8y-admon-important >}}
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
 
 * Chrome on Android (latest version) on Galaxy smartphones and tablets
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
->**Info:** {{< product-c8y-iot >}} on mobile devices shows some limitations.
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} on mobile devices shows some limitations.
 The limitations could be the following:
->* The usage may be constrained by the memory and the processing power available on the devices.<br>
-  For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
->* Using the private mode on browsers may not work.
->* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
+* The usage may be constrained by the memory and the processing power available on the devices. <br>  
+For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+* Using the private mode on browsers may not work.
+* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
+{{< /c8y-admon-info >}}
 
 <a name="url"></a>
 ### URL
@@ -48,9 +52,13 @@ https://<tenant-domain>.{{< domain-c8y >}}/
 This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
 
 
->**Info:** The above URL is only valid for {{< product-c8y-iot >}} {{< standard-tenant >}} subscribers. For {{< enterprise-tenant >}} deployments of {{< product-c8y-iot >}}, the URL is specific to your organization.
+{{< c8y-admon-info >}}
+The above URL is only valid for {{< product-c8y-iot >}} {{< standard-tenant >}} subscribers. For {{< enterprise-tenant >}} deployments of {{< product-c8y-iot >}}, the URL is specific to your organization.
+{{< /c8y-admon-info >}}
 
-> **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the {{< product-c8y-iot >}} platform.
+{{< c8y-admon-important >}}
+Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the {{< product-c8y-iot >}} platform.
+{{< /c8y-admon-important >}}
 
 <a name="login"></a>
 ### How to log into the platform
@@ -62,15 +70,21 @@ If you use one of the public cloud instances of the {{< product-c8y-iot >}} plat
 <img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
 <br>
 
-> **Info:** The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+{{< c8y-admon-info >}}
+The cookie banner is turned on by default on the {{< product-c8y-iot >}} public cloud instances. For on-premise instances, this feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+{{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
-* Click **Privacy policy** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
+* Click **Reject all** to reject all of the default cookie settings.
 * Click **Preferences** to select your individual cookie preferences:
 	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
-	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled by the user.
+	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled.
+* Click **See also our Privacy Notice** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
 
->**Info:** If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
+
+{{< c8y-admon-info >}}
+If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
+{{< /c8y-admon-info >}}
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as the {{< product-c8y-iot >}} platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
@@ -80,7 +94,9 @@ Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initiall
 
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
->**Info:** The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
+{{< c8y-admon-info >}}
+The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
+{{< /c8y-admon-info >}}
 
 <a name="reset-password"></a>
 ### How to reset your password
@@ -90,10 +106,14 @@ To explicitly logout, click the **User** button at the right of the top bar, the
 3. Check your email account for an email from the {{< product-c8y-iot >}} platform support providing a password reset link.
 4. Click the link in the email and provide your new password.
 
-> **Info:** The password reset link is only valid for one day.
+{{< c8y-admon-info >}}
+The password reset link is only valid for one day.
+{{< /c8y-admon-info >}}
 
->**Info:** The automated password reset will only work if your email address is stored with your {{< product-c8y-iot >}} user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your {{< product-c8y-iot >}} user, or your {{< product-c8y-iot >}} user has no email address stored. In either case, contact a {{< product-c8y-iot >}} administrator in your organization. Administrators can reset your password.
->
+{{< c8y-admon-info >}}
+The automated password reset will only work if your email address is stored with your {{< product-c8y-iot >}} user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your {{< product-c8y-iot >}} user, or your {{< product-c8y-iot >}} user has no email address stored. In either case, contact a {{< product-c8y-iot >}} administrator in your organization. Administrators can reset your password.
+{{< /c8y-admon-info >}}
+
 If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/welcome/contacting-support/).
 
 <a name="URLs"></a>

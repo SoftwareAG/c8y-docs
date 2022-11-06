@@ -4,13 +4,20 @@ title: Configuration
 layout: redirect
 ---
 
-The **Configuration** tab allows three different formats for device configuration. They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device. This tab appears for devices when they announce support for any of the available formats.
+The **Configuration** tab allows three different formats for device configuration:
+
+* Text-based configuration
+* Legacy file-based configuration
+* Typed file-based configuration
+
+They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device.
+This tab appears for devices when they announce support for any of the available formats.
 
 ### Text-based configuration
 
 The most basic form of configuration is a simple text-based configuration. Here the configuration is stored and transferred directly as string. We recommend you to use this form for small human readable configuration files only, for example, for microcontroller-based devices.
 
-The current configuration state of the device is communicated with the ```c8y_Configuration``` fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care must be taken that encoding is performed properly. {{< product-c8y-iot >}} supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest/#data-format) for SmartREST payloads may be required.
+The current configuration state of the device is communicated with the ```c8y_Configuration``` fragment in the device’s own managed object. It contains the complete configuration including all control characters as a string. Special care must be taken that encoding is performed properly. {{< product-c8y-iot >}} supports UTF-8 characters, additionally escaping according to the [JSON specification](https://www.json.org/json-en.html) for JSON payloads, or the [SmartREST specification](/reference/smartrest-one/#data-format) for SmartREST payloads may be required.
 
 We recommend you to upload the current configuration only on demand to save transfer data volume and device resources. There are specific operations designed to trigger a device to upload its current configuration to the platform documented below.
 
@@ -79,9 +86,9 @@ Template creation:<br>
 Receiving the operation:
 
 1. Receive the ```c8y_SendConfiguration``` operation using the custom template created above <br>
-  `100,L2P_MQTT_FX_Client,4801`
+  `100,DeviceSerial,4801`
 2. Set operation status to EXECUTING
-  `501,c8y_ SendConfiguration`
+  `501,c8y_SendConfiguration`
 3. Upload the current configuration state using the 113 static template
   `113,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
 4. Set operation status to SUCCESSFUL
@@ -103,7 +110,7 @@ The device is expected to perform the following actions:
 The 513 static response template is available to receive ```c8y_Configuration``` operations:
 
 1. Receive ```c8y_Configuration``` operation <br>
-  `511,deviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
+  `511,DeviceSerial,"c8y.url.http=https://management.cumulocity.com\nc8y.url.mqtt=mqtt.cumulocity.com\n"`
 2. Set operation status to EXECUTING <br>
   `501,c8y_Configuration`
 3. Install and apply configuration as included
@@ -117,6 +124,10 @@ The 513 static response template is available to receive ```c8y_Configuration```
 Devices that want to manage configuration as files can achieve a basic form using legacy file-based configuration. For new device integrations we recommend you to implement typed file-based configuration instead because it is more versatile.
 
 This approach stores and transfers configuration as binary files.
+
+{{< c8y-admon-info >}}
+This mechanism only works with the internal {{< product-c8y-iot >}} repository. Be aware that configurations with external URLs will not be supported if a device only supports legacy configuration. The ID which is stored in the device managed object (an example can be seen below) always refers to an internal binary saved in the inventory.
+{{< /c8y-admon-info >}}
 
 #### Upload current legacy configuration
 

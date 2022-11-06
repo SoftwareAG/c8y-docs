@@ -6,12 +6,14 @@ layout: redirect
 
 You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account or a server (you must provide the location of the archive on that server). For more information about the firmware feature, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
-> **Important:** The Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
+{{< c8y-admon-important >}}
+The Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
+{{< /c8y-admon-important >}}
 
 Before you update your Edge appliance remotely, you must:
 
-- [Enable the remote-connectivity](/edge/configuration/#configuring-remote-connectivity) feature in your Edge appliance
-- [Register your Edge appliance](/edge/configuration/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
+- [Enable the remote-connectivity](/edge/remote-connectivity/#config-remote-connectivity) feature in your Edge appliance
+- [Register your Edge appliance](/edge/remote-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
 
 To remotely update your Edge appliance:
 
@@ -29,15 +31,9 @@ To remotely update your Edge appliance:
 
 6. Optionally, you can define the device type filter when adding a new firmware. For example, *c8y_EdgeAgent*.
 
-7. Select the **Upload a binary** option to upload the archive file.
+7. Select the **Provide a file path** option to specify an HTTPS URL of a server from where the archive file can be downloaded.
 
-   Select the **Provide a file path** option to specify an HTTPS URL of a server from where the archive file can be downloaded.
-
-8. Click **Add firmware**.
-
-   ![Add firmware](/images/edge/edge-firmware-upload.png)
-
-   The firmware object appears in the firmware list.
+8. Click **Add firmware**. The firmware object appears in the firmware list.
 
 9. Click **All devices** in the **Devices** menu in the navigator, select your Edge appliance from the device list.
 
@@ -58,7 +54,7 @@ To remotely update your Edge appliance:
     ![Edge version](/images/edge/edge-check-remote-update-status.png)
     - To check the details of the update, click the text outlined in red in the figure below:
     ![Edge version](/images/edge/edge-check-remote-update-full-log.png)
-    
+
 13. Restart your Edge appliance after the firmware update is complete. You can remotely restart your Edge appliance from your tenant account as shown in the figure below:
     ![Edge version](/images/edge/edge-firmware-update-restart.png)
 
@@ -72,14 +68,14 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
 
 3. Click **Device control** in the **Overviews** menu in the navigator.
    ![Edge version](/images/edge/edge-bulk-operation-page.png)
-   
+
 4. Click **Bulk operations** and then click **New bulk operation**.
    ![Edge version](/images/edge/edge-new-bulk-operation.png)
-   
+
 5. Click **Firmware update**.
    ![Edge version](/images/edge/edge-bulk-operation-firmware-update.png)
 
-6. Select a firmware from the list. The list can be filtered by firmware name. Click **Next**. 
+6. Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
 
 7. Expand the version and select the archive file. Click **Next**.
    ![Edge version](/images/edge/edge-bulk-operation-select-version.png)
@@ -93,4 +89,3 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
    ![Edge version](/images/edge/edge-schedule-bulk-operation.png)
 
 For more information about bulk operations, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#to-view-bulk-operations) in the *User guide*.
-

@@ -5,9 +5,13 @@ weight: 10
 
 This tutorial describes how to set up and configure the Casa Systems (NetComm) routers of the [NTC-220](https://support.netcommwireless.com/products/NTC-220%20Series) series using the {{< product-c8y-iot >}} NetComm Agent package.
 
->**Info:** For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://{{< domain-c8y >}}/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the {{< product-c8y-iot >}} 10.4.6 documentation.
+{{< c8y-admon-info >}}
+For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200-01), refer to the [NetComm section](https://{{< domain-c8y >}}/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the {{< product-c8y-iot >}} 10.4.6 documentation.
+{{< /c8y-admon-info >}}
 
->**Info:** The developer documentation is available at [https://github.com/SoftwareAG/cumulocity-agents-netcomm/blob/master/doc/devguide.md](https://github.com/SoftwareAG/cumulocity-agents-netcomm/blob/master/doc/devguide.md).
+{{< c8y-admon-info >}}
+The developer documentation is available at [https://github.com/SoftwareAG/cumulocity-agents-netcomm/blob/master/doc/devguide.md](https://github.com/SoftwareAG/cumulocity-agents-netcomm/blob/master/doc/devguide.md).
+{{< /c8y-admon-info >}}
 
 ### Overview
 

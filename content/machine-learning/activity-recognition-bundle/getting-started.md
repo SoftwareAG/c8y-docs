@@ -10,7 +10,7 @@ Upload the project ZIP file to {{< product-c8y-iot >}} Machine Learning Workbenc
 
 First, update the *CONFIG.json* with the appropriate values and save it. Replace `c_url` with your tenant URL, `c_user` with your tenant username and `c_pass` with your tenant password. Leave the `c_device_source` as is for now.
 
-	CONFIG.JSON
+	CONFIG.json
 	{
 		c_url:https://yourtenant.{{< domain-c8y >}}
 		c_user:user@company.com

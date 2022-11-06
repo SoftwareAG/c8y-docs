@@ -20,7 +20,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 * Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
-* Devices need to trust the {{< product-c8y-iot >}} server certificate.
+* Devices must trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
 
@@ -45,8 +45,9 @@ The CSV file used in bulk registration should meet the requirements described in
 
 Single registration is not supported for devices which are going to use certificates for authentication.
 
->**Info:** During device registration, the device user is created, which is necessary for device communication with the platform.
-
+{{< c8y-admon-info >}}
+During device registration, the device user is created, which is necessary for device communication with the platform.
+{{< /c8y-admon-info >}}
 
 ### JWT token retrieval
 
@@ -66,6 +67,10 @@ The minimum allowed value is 5 minutes.
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
+
+{{< c8y-admon-caution >}}
+A device can only subscribe to a topic like <kbd>s/dat</kbd> once certificate based mutual authentication is successful. The MQTT broker will not make any information available on the device's subscribed topics until the device publishes a message to <kbd>s/uat</kbd> or <kbd>s/us</kbd>.
+{{< /c8y-admon-caution >}}
 
 ### Introduction to X.509 certificates
 

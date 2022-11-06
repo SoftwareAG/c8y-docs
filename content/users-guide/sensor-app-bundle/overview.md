@@ -25,7 +25,9 @@ Supported smartphone sensors include:
 *   Microphone and voice
 *   WiFi strength (selected Android devices only)
 
-> **Info:** The app only works with sensors supported by your smartphone's hardware which provide official APIs. Depending on platform support, additional sensors may be added in future releases.
+{{< c8y-admon-info >}}
+The app only works with sensors supported by your smartphone's hardware which provide official APIs. Depending on platform support, additional sensors may be added in future releases.
+{{< /c8y-admon-info >}}
 
 The latest list of supported Bluetooth devices is provided in the app. A button to take you to this page can be found when scanning for new devices. Currently the app supports the following devices:
 
@@ -36,7 +38,9 @@ The latest list of supported Bluetooth devices is provided in the app. A button 
 
 More devices will be supported in the future and made available in the app.
 
-> **Info:** The Barista.io demo demonstrates the use of connected weight and pressure sensors to brew the perfect coffee. The demo sends measurements from up to 4 connected Bluetooth devices to {{< product-c8y-iot >}} in real time.
+{{< c8y-admon-info >}}
+The Barista.io demo demonstrates the use of connected weight and pressure sensors to brew the perfect coffee. The demo sends measurements from up to 4 connected Bluetooth devices to {{< product-c8y-iot >}} in real time.
+{{< /c8y-admon-info >}}
 
 Reading vehicle sensors comes with the use of an additional OBD dongle, which exposes the vehicles sensors to the phone via WiFi or Bluetooth (Note: iOS is WiFi only). There are two supported diagnostic connectors, both based on the ELM327 microcontroller:
 

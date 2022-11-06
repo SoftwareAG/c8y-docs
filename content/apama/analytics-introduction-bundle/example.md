@@ -4,7 +4,7 @@ title: Example
 layout: redirect
 ---
 
-This example listens for new measurements using the `MeasurementFragment` API. It filters incoming measurements to find speed values above a given maximum speed and raises an alarm if the limit is breached. 
+This example listens for new measurements using the `com.apama.cumulocity.MeasurementFragment` API. It filters incoming measurements to find speed values above a given maximum speed and raises an alarm if the limit is breached. 
 
 1. Subscribe to the `MeasurementFragment.SUBSCRIBE_CHANNEL` channel.
 2. Listen to the measurement fragment and filter on `type`, which is  `c8y_SpeedMeasurement`. Ensure that `valueFragment` has the value  `c8y_speed` and that `valuesSeries` filters on `speedX` only. Also  filter on `value` when it is greater than `SPEED_LIMIT`.

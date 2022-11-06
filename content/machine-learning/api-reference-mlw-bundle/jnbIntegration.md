@@ -10,7 +10,9 @@ aliases:
 
 Operations on Jupyter Notebook.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+{{< c8y-admon-info >}}
+An active subscription of the MLW microservice is required to perform operations.
+{{< /c8y-admon-info >}}
 
 ### GET - Preview the Notebook code along with the session creation
 
@@ -36,7 +38,7 @@ Gets the content of the Jupyter Notebook file and also creates a Jupyter session
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -48,7 +50,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 {
     "data": {
         "name": "untitled.ipynb",
-        "path": "1601355085_Project/Code/untitled.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
         "last_modified": "2020-09-30T07:31:59.062747Z",
         "created": "2020-09-30T07:31:59.062747Z",
         "content": {
@@ -65,7 +67,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
     },
     "session": {
         "id": "e2ba72b2-2daf-4aa6-851d-1b3e491cc2f3",
-        "path": "1601355085_Project/Code/untitled.ipynb",
+        "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
         "name": "untitled",
         "type": "notebook",
         "kernel": {
@@ -76,7 +78,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
             "connections": 0
         },
         "notebook": {
-            "path": "1601355085_Project/Code/untitled.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
             "name": "untitled"
         }
     }
@@ -88,7 +90,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content'
 
 ```
 
@@ -125,7 +127,7 @@ Updates the contents of the Jupyter Notebook file.
 |content (string)| required body parameter for updated contents of Jupyter Notebook
 |format (string)| required body parameter for format (ex. 'json')
 |type (string)| required body parameter for type (ex. 'notebook')
-|export (boolean)| required body parameter to export notebook to Python file.
+|export (Boolean)| required body parameter to export notebook to Python file.
 
 
 **Example Request**
@@ -133,7 +135,7 @@ Updates the contents of the Jupyter Notebook file.
 ```
 200 - OK
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}} \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
@@ -148,7 +150,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 
 {
     "name": "untitled.ipynb",
-    "path": "1601355085_Project/Code/untitled.ipynb",
+    "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
     "last_modified": "2020-09-30T07:40:02.608464Z",
     "created": "2020-09-30T07:40:02.608464Z",
     "content": null,
@@ -165,7 +167,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 401 - Unauthorized
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
 "format": "json",
@@ -190,7 +192,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 400 - Error
 
-curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355159_0193_Resource/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/jnb-content' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
@@ -243,7 +245,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
     "data": [
         {
             "id": "e1b8e814-36c2-4e5a-ba2a-e3524fe2d03c",
-            "path": "1600784593_Project/Code/untitled.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
             "name": "untitled",
             "type": "notebook",
             "kernel": {
@@ -254,16 +256,16 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
                 "connections": 0
             },
             "notebook": {
-                "path": "1600784593_Project/Code/untitled.ipynb",
+                "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
                 "name": "untitled"
             },
-            "projectID": "1600784593_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "projectName": "blah project",
             "fileName": "untitled.ipynb"
         },
         {
             "id": "e2ba72b2-2daf-4aa6-851d-1b3e491cc2f3",
-            "path": "1601355085_Project/Code/untitled.ipynb",
+            "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
             "name": "untitled",
             "type": "notebook",
             "kernel": {
@@ -274,10 +276,10 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions' \
                 "connections": 0
             },
             "notebook": {
-                "path": "1601355085_Project/Code/untitled.ipynb",
+                "path": "0f981b26132d412097ee5e54a257ce9f/Code/untitled.ipynb",
                 "name": "untitled"
             },
-            "projectID": "1601355085_Project",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
             "projectName": "vinsy",
             "fileName": "untitled.ipynb"
         }

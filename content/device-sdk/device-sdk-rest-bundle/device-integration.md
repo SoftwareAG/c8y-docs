@@ -48,7 +48,7 @@ The process works as follows:
 From a device perspective, this request for credentials is a single REST request:
 
     POST /devicecontrol/deviceCredentials
-    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json
     Authorization: Basic <<Base64 encoded bootstrap credentials>>
     {
       "id" : "0000000017b769d5"
@@ -57,7 +57,7 @@ From a device perspective, this request for credentials is a single REST request
 The device issues this request repeatedly. While the user has not yet registered and accepted the device in the tenant UI, the request returns "404 Not Found." After the device has been accepted in the tenant UI, the following response is returned:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;charset=UTF-8;ver=0.9
     Content-Length: ...
     {
       "id" : "0000000017b769d5",
@@ -77,9 +77,9 @@ Request header should be:
 
 For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (that is, *t123456789.{{< domain-c8y >}}*) for requests with the user ID and password - it will return "http 403". The tenant ID must be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.{{< domain-c8y >}}* or *management.{{< domain-c8y >}}* or even *anything.{{< domain-c8y >}}* can be used.
 
-{{< product-c8y-iot >}} uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
+{{< product-c8y-iot >}} uses the tenant ID specified with the user ID for full authentication and routing of the request to the correct tenant.
 
-If the valid tenant URL is known (for example *xyz.{{< domain-c8y >}}* as seen in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
+If the valid tenant URL is known (for example *xyz.{{< domain-c8y >}}* as seen in the example above), then the username does not have to be prefixed by `<tenant ID>/` for authentication.
 
 
 #### Step 1: Check if the device is already registered
@@ -91,7 +91,7 @@ To check if a device is already registered, use a GET request on the identity AP
     GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d5 HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json;charset=UTF-8;ver=0.9
     ...
     {
         "externalId": "raspi-0000000017b769d5",
@@ -233,7 +233,7 @@ Continuing the above example, we would associate the newly created device "24803
 
 #### Step 4: Update the device in the inventory
 
-If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide* for more information on fragments.)
+If Step 1 above returned that the device was previously registered already, we must make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide* for more information on fragments.)
 
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 
@@ -261,7 +261,9 @@ For example, assume a child device with the URL "https://.../inventory/managedOb
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
     {
-    "managedObject" : { "self" : "https://.../inventory/managedObjects/2543801" }
+        "managedObject" : {
+            "id" : "2543801"
+        }
     }
 
     HTTP/1.1 201 Created
@@ -280,22 +282,20 @@ This does not delete the device itself in the inventory, only the reference. To 
 
 This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to lose all historical information associated with the device.
 
-#### Working with operations
+#### Step 6: Complete operations and subscribe
 
 Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, that means, it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
-The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
-
-#### Step 6: Complete operations and subscribe
+The benefit of this execution flow is that it supports devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
 To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:
 
     GET /devicecontrol/operations?agentId=2480300&status=EXECUTING HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.operationcollection+json;; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.operationcollection+json;charset=UTF-8;ver=0.9
     ...
     {
         "next": "https://.../devicecontrol/operations?agentId=2480300&status=EXECUTING",
@@ -327,14 +327,12 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
     HTTP/1.1 200 OK
 
-Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time data in {{< product-c8y-iot >}} is described in [Real-time notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time operations in {{< product-c8y-iot >}} is described in the [Device control notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Device-control-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
-        "id": "1",
-        "supportedConnectionTypes": ["long-polling"],
         "channel": "/meta/handshake",
         "version": "1.0"
     } ]
@@ -342,14 +340,17 @@ Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism
     HTTP/1.1 200 OK
     ...
     [ {
-        "id": "1",
-        "supportedConnectionTypes": ["websocket","long-polling"],
+        "minimumVersion": "1.0",
+        "clientId": "139jhm07u1dlry92fdl63rmq2c",
+        "supportedConnectionTypes": [
+            "long-polling",
+            "smartrest-long-polling",
+            "websocket"
+        ],
         "channel": "/meta/handshake",
         "version": "1.0",
-        "clientId": "139jhm07u1dlry92fdl63rmq2c",
-        "minimumVersion": "1.0",
         "successful": true
-    }]
+    } ]
 
 Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
 
@@ -357,7 +358,6 @@ Afterwards, the device respectively the agent needs to subscribe to notification
     Content-Type: application/json
     ...
     [ {
-        "id": "2",
         "channel": "/meta/subscribe",
         "subscription": "/2480300",
         "clientId":"139jhm07u1dlry92fdl63rmq2c"
@@ -366,10 +366,9 @@ Afterwards, the device respectively the agent needs to subscribe to notification
     HTTP/1.1 200 OK
     ...
     [ {
-        "id":"2",
         "channel": "/meta/subscribe",
         "subscription": "/2480300",
-        "successful": true,
+        "successful": true
     } ]
 
 Finally, the device connects and waits for operations to be sent to it.
@@ -378,7 +377,6 @@ Finally, the device connects and waits for operations to be sent to it.
     Content-Type: application/json
     ...
     [ {
-        "id": "3",
         "connectionType": "long-polling",
         "channel": "/meta/connect",
         "clientId": "139jhm07u1dlry92fdl63rmq2c"
@@ -386,7 +384,7 @@ Finally, the device connects and waits for operations to be sent to it.
 
 This request will hang until an operation is issued (that is, the HTTP server will not answer immediately) but will wait until an operation is available for the device (long polling).
 
-Note that there might have been operations that were pending before we subscribed to new incoming operations. We need to query these still. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for EXECUTING operations, but using PENDING instead:
+Note that there might have been operations that were pending before we subscribed to new incoming operations. We must query these still. This is done after the subscription to not miss any operations between query and subscription. The technical handling is just like previously described for EXECUTING operations, but using PENDING instead:
 
     GET /devicecontrol/operations?agentId=2480300&status=PENDING HTTP/1.1
 
@@ -439,7 +437,7 @@ To create new measurements in {{< product-c8y-iot >}}, issue a POST request with
     {
         "source": { "id": "2480300" },
         "time": "2013-07-02T16:32:30.152+02:00",
-        "type": "huawei_E3131SignalStrength",
+        "type": "SignalStrength",
         "c8y_SignalStrength": {
             "rssi": { "value": -53, "unit": "dBm" },
             "ber": { "value": 0.14, "unit": "%" }
@@ -451,16 +449,16 @@ To create new measurements in {{< product-c8y-iot >}}, issue a POST request with
 
 #### Step 10: Send events
 
-Similar, use a POST request for events. The following example shows a location update from a GPS sensor.
+Similarly, use a POST request for events. The following example shows a location update from a GPS sensor.
 
     POST /event/events HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.event+json
     ...
     {
-        "source": { "id": "1197500" },
+        "source": { "id": "2480300" },
         "text": "Location updated",
         "time": "2013-07-19T09:07:22.598+02:00",
-        "type": "queclink_GV200LocationUpdate",
+        "type": "LocationUpdate",
         "c8y_Position": {
             "alt": 73.9,
             "lng": 6.151782,
@@ -514,4 +512,29 @@ In contrast to events, alarms can be updated. If an issue is resolved (for examp
 
     HTTP/1.1 200 OK
 
-If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [CEP rule](/concepts/realtime) if they want to convert the event into an alarm.
+If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [Real-time rule](/concepts/realtime) if they want to convert the event into an alarm.
+
+### Replacing a physical device
+
+You can replace a physical device that is already connected to the {{< product-c8y-iot >}} platform while keeping its external ID and the data the device has collected.
+Do the following:
+
+1. Turn off the old physical device.
+2. [Register and bootstrap](/users-guide/device-management/#device-registration) the new device just like a regular device.
+3. After the device has created its new managed object, turn the new physical device off.
+4. Open the new device object in [{{< product-c8y-iot >}}'s Device Management](/users-guide/device-management/#info) and look up the device owner and the device's external IDs.
+5. Remove the external IDs from the device.
+6. Open the old device in {{< product-c8y-iot >}}'s Device Management and change its owner to the one you looked up, and also add the external IDs you removed from the new device.
+7. Remove the new device object that was created earlier but keep the device user.
+9. Turn on the new physical device.
+
+The new physical device sends its data to the existing managed object.
+
+{{< c8y-admon-caution >}}
+The above steps only work if the device is using standard device bootstrapping.
+Otherwise contact the device integrator or manufacturer.
+{{< /c8y-admon-caution >}}
+
+{{< c8y-admon-info >}}
+If the device has child devices, their owners must also be updated.
+{{< /c8y-admon-info >}}

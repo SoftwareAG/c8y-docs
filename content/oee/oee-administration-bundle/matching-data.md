@@ -12,7 +12,7 @@ The following image provides an overview on the matching capabilities.
 
 ![Functional overview](/images/oee/administration/matching-functional-overview.png)
 
-You can either define a single calculation rule or use categories to define at least two separate calculation rules for an input variable. The categories need to be created under **Calculation categories** first, see [Calculation categories](/oee/oee-administration/#categories). Using categories to define multiple calculation rules can for example be used to define different rules for different kinds of losses (planned vs. unplanned) or to distinguish multiple sources of amounts. The different categories are calculated individually and then aggregated to the final input variable. In the chart of the **Machine Dashboard** it is possible to not only show the aggregated input variable but also the graphs for the individual categories.
+You can either define a single calculation rule or use categories to define at least two separate calculation rules for an input variable. The categories must be created under **Calculation categories** first, see [Calculation categories](/oee/oee-administration/#categories). Using categories to define multiple calculation rules can for example be used to define different rules for different kinds of losses (planned vs. unplanned) or to distinguish multiple sources of amounts. The different categories are calculated individually and then aggregated to the final input variable. In the chart of the **Machine Dashboard** it is possible to not only show the aggregated input variable but also the graphs for the individual categories.
 
 #### Calculation rules
 
@@ -48,7 +48,7 @@ If you want to have fixed KPIs or inputs follow these instructions:
 * Actual Production Time: Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
 * Availability Loss (time): Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
 * Actual Production Amount: Needs to be derived from actual measurements.
-* Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) need to be defined.
+* Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) must be defined.
 
 ![Matching](/images/oee/administration/matching-general.png)
 

@@ -1,16 +1,12 @@
 ---
-weight: 170 title: Software layout: redirect
+weight: 170
+title: Software
+layout: redirect
 ---
 
-The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located
-using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository. Device agents are fully
-responsible for their local installation, management, and uninstall procedures and any kind of error handling during the
-operation.
+The **Software** tab allows you to install and uninstall a set of software files for a device. The files can be located using an URL or they can be hosted in the {{< product-c8y-iot >}} Software Repository. Device agents are fully responsible for their local installation, management, and uninstall procedures and any kind of error handling during the operation.
 
-The **Device details** page shows a **Software** tab for devices that announce `c8y_SoftwareList`
-and/or `c8y_SoftwareUpdate` in their `c8y_SupportedOperations` fragment in their device managed objects. It also shows
-a **Services** tab for devices that have at least one software service running. The service can have measurements,
-alarms and events assigned.
+The **Device details** page shows a **Software** tab for devices that announce ```c8y_SoftwareList``` and/or ```c8y_SoftwareUpdate``` in their ```c8y_SupportedOperations``` fragment in their device managed objects.
 
 ### Installed software
 
@@ -37,67 +33,60 @@ A device may update its software list by updating its managed object `c8y_Softwa
 ```http
 PUT /inventory/managedObjects/<deviceId>
 ```
-
 ```json
 {
-  "c8y_SoftwareList": [
-    {
-      "name": "software_a",
-      "version": "3.0.0",
-      "url": "http://example.com/software_a",
-      "softwareType": "type A"
-    },
-    {
-      "name": "software_b",
-      "version": "2.0.0",
-      "url": "http://example.com/software_b",
-      "softwareType": "type B"
-    }
-  ]
+   "c8y_SoftwareList": [
+       {
+           "name": "software_a",
+           "version": "3.0.0",
+           "url": "http://example.com/software_a"
+       },
+       {
+           "name": "software_b",
+           "version": "2.0.0",
+           "url": "http://example.com/software_b"
+       }
+   ]
 }
 ```
 
-Devices should upload the complete list of installed software during startup. Additionally the list should be updated
-any time a local change is triggered or detected. This includes cases where a change was requested through {{<
-product-c8y-iot >}} UI.
+| Field | DataType | Mandatory | Details |
+|----|----|----|----|
+| name | string | Yes | Name of the software|
+| version | string | Yes | A version identifier of the software|
+| url | string | No | A URL pointing to the location where the software file was obtained from|
+
+
+Devices should upload the complete list of installed software during startup. Additionally the list should be updated any time a local change is triggered or detected. This includes cases where a change was requested through {{< product-c8y-iot >}} UI.
 
 **SmartREST example**
 
-{{< product-c8y-iot >}} provides the static SmartREST template 116 for devices to upload their installed software. It
-takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name,
-version, and URL property of an individual package:
+{{< product-c8y-iot >}} provides the static SmartREST template 116 for devices to upload their installed software. It takes a dynamic length list of triples per software package as parameters. Each triple is interpreted as the name, version, and URL property of an individual package:
 
 `116,software_a,3.0.0,http://example.com/software_a,software_b,2.0.0,http://example.com/software_b`
 
-#### Changing installed software
+### Changing installed software
 
-Within the **Software** tab users can select software to install, to update, and to uninstall for a device. After
-confirming, the desired software configuration is sent to the device as an operation. The operation format depends on
-the device's ```c8y_SupportedOperations``` fragment.
+Within the **Software** tab users can select software to install, to update, and to uninstall for a device. After confirming, the desired software configuration is sent to the device as an operation. The operation format depends on the device's ```c8y_SupportedOperations``` fragment.
 
-##### Software list
+#### Software list
 
-If the device only supports the ```c8y_SoftwareList``` operation and the ```c8y_SupportedOperations``` fragment does not
-contain ```c8y_SoftwareUpdate```, a ```c8y_SoftwareList``` operation is sent to the device. This operation contains a
-very similar ```c8y_SoftwareList``` fragment to the one that is already present in the device’s own managed object.
-The ```c8y_SoftwareList``` operation always contains the entire list of software that should be installed on the device.
-Exactly the packages in the list should be installed. Any installed packages not contained in the list should be
-removed.
+If the device only supports the ```c8y_SoftwareList``` operation and the ```c8y_SupportedOperations``` fragment does not contain ```c8y_SoftwareUpdate```, a ```c8y_SoftwareList``` operation is sent to the device. This operation contains a very similar ```c8y_SoftwareList``` fragment to the one that is already present in the device’s own managed object. The ```c8y_SoftwareList``` operation always contains the entire list of software that should be installed on the device. Exactly the packages in the list should be installed. Any installed packages not contained in the list should be removed.
 
 ```json
 {
-  "c8y_SoftwareList": [
-    {
-      "name": "software_a",
-      "version": "4.0.0",
-      "url": "http://example.com/software_a"
-    },
-    {
-      "name": "software_b",
-      "version": "3.0.0",
-      "url": "http://example.com/software_b"
-    }
-  ]
+   "c8y_SoftwareList": [
+       {
+           "name": "software_a",
+           "version": "4.0.0",
+           "url": "http://example.com/software_a"
+       },
+       {
+           "name": "software_b",
+           "version": "3.0.0",
+           "url": "http://example.com/software_b"
+       }
+   ]
 }
 ```
 
@@ -119,46 +108,40 @@ If the desired state cannot be achieved for any reason the operation should be c
 
 **SmartREST example**
 
-The 516 static response template is available for dealing with software list operations. It works very similarly to the
-116 template used for updating the device’s own managed object:
+The 516 static response template is available for dealing with software list operations. It works very similarly to the 116 template used for updating the device’s own managed object:
 
 1. Receive ```c8y_SoftwareList``` operation <br>
-   `516,deviceSerial,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
+   `516,DeviceSerial,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
 2. Set operation status to EXECUTING <br>
-   `501,c8y_SoftwareList`
+  `501,c8y_SoftwareList`
 3. Uninstall and install software
 4. Update device’s software list in inventory <br>
-   `116,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
+  `116,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
 5. Set operation status to SUCCESSFUL <br>
-   `503,c8y_SoftwareList`
+  `503,c8y_SoftwareList`
 
-##### Software update
+#### Software update
 
-If a device supports the ```c8y_SoftwareUpdate``` operation in its ```c8y_SupportedOperations``` fragment the **
-Software** tab will create ```c8y_SoftwareUpdate``` operations for the device. Conceptually the software update is very
-similar to the software list. A desired state of software is sent to the device in form of a list of packages. The
-difference is that the ```c8y_SoftwareUpdate``` should be considered as a partial list. Each list element contains an
-additional instruction whether the package should be installed or uninstalled. Any package not listed in the software
-update list should not be touched.
+If a device supports the ```c8y_SoftwareUpdate``` operation in its ```c8y_SupportedOperations``` fragment the **Software** tab will create ```c8y_SoftwareUpdate``` operations for the device. Conceptually the software update is very similar to the software list. A desired state of software is sent to the device in form of a list of packages. The difference is that the ```c8y_SoftwareUpdate``` should be considered as a partial list. Each list element contains an additional instruction whether the package should be installed or uninstalled. Any package not listed in the software update list should not be touched.
 
 ```json
 {
-  "c8y_SoftwareUpdate": [
-    {
-      "name": "software_a",
-      "version": "4.0.0",
-      "url": "http://example.com/software_a",
-      "action": "install"
-    },
-    {
-      "name": "software_b",
-      "version": "3.0.0",
-      "url": "http://example.com/software_b",
-      "action": "delete"
-    }
-  ]
+   "c8y_SoftwareUpdate": [
+       {
+           "name": "software_a",
+           "version": "4.0.0",
+           "url": "http://example.com/software_a",
+           "action": "install"
+       },
+       {
+           "name": "software_b",
+           "version": "3.0.0",
+           "url": "http://example.com/software_b",
+           "action": "delete"
+       }
+   ]
 }
-```
+````
 
 | Field | DataType | Mandatory | Details |
 | ---- | ---- | ---- | ---- |
@@ -179,9 +162,9 @@ The device is expected to perform the following actions:
 The 528 static response template is available for dealing with software update operations:
 
 1. Receive ```c8y_SoftwareUpdate``` operation <br>
-   `528,deviceSerial,software_a,4.0.0,http://example.com/software_a,install,software_b,3.0.0,http://example.com/software_b,delete`
+   `528,DeviceSerial,software_a,4.0.0,http://example.com/software_a,install,software_b,3.0.0,http://example.com/software_b,delete`
 2. Set operation status to EXECUTING <br>
-   `501,c8y_SoftwareUpdate`
+  `501,c8y_SoftwareUpdate`
 3. Uninstall and install software
 4. Update device’s software list in inventory <br>
    `116,software_a,3.0.0,http://example.com/software_a`
@@ -413,4 +396,4 @@ Advanced Software Management:
 5. Add to the inventory installed software packages <br>
    `141,software_a,4.0.0,"type A",http://example.com/software_a`
 5. Set operation status to SUCCESSFUL <br>
-   `503,c8y_SoftwareUpdate`
+  `503,c8y_SoftwareUpdate`

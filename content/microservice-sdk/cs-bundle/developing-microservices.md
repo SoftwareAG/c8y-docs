@@ -107,7 +107,7 @@ public class HomeController : Controller
 
 ### Accessing HTTPContext in ASP.net Core
 
-In earlier versions of .Net Core, `IHttpContextAccessor` was automatically registered. This was removed. You need to register it manually if you intend to use it inside services. `IHttpContextAccessor` is only intended for accessing the `HttpContext` in locations where it is not directly available.
+In earlier versions of .Net Core, `IHttpContextAccessor` was automatically registered. This was removed. You must register it manually if you intend to use it inside services. `IHttpContextAccessor` is only intended for accessing the `HttpContext` in locations where it is not directly available.
 
 ```cs
 public void ConfigureServices(IServiceCollection services)

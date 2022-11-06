@@ -1,18 +1,18 @@
 ---
-weight: 100
-title: Speicherbegrenzung
-layout: redirect
 aliases:
-  - /Benutzerhandbuch/enterprise-edition/#storage-quota
-  - /benutzerhandbuch/enterprise-edition-de/#storage-quota
+- /benutzerhandbuch/enterprise-edition-de/#storage-quota
+layout: redirect
+title: Speicherbegrenzung
+weight: 100
 ---
-
 
 Die Speicherbegrenzung gilt für einen Mandanten, wenn der Plattformadministrator ein Speicherkontingent pro Gerät eingerichtet hat. Der insgesamt verfügbare Speicher für einen Benutzer wird mittels der Formel `Speicherkontingent pro Gerät x Anzahl der Geräte` berechnet. Jede Nacht wird überprüft, ob das Kontingent überschritten wurde.
 
 Ist das Kontingent überschritten, wird eine E-Mail an alle Mandantenadministratoren gesendet mit der Information, dass in der folgenden Nacht Daten gelöscht werden. Ist das Kontingent nach 24 Stunden weiterhin überschritten, werden alle Datenhaltungsbegrenzungen um einen festen Prozentwert herabgesetzt. Daraus resultiert, dass das Kontingent pro Gerät entsprechend verringert wird.
 
->**Info:** Das Speicherkontingent muss im Mandanten definiert werden und kann nicht durch die Konfiguration aktiviert/deaktiviert werden.
+{{< c8y-admon-info >}}
+Das Speicherkontingent muss im Mandanten definiert werden und kann nicht durch die Konfiguration aktiviert/deaktiviert werden.
+{{< /c8y-admon-info >}}
 
 #### Beispiel
 

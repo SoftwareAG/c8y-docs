@@ -4,7 +4,9 @@ title: Checking system information
 layout: redirect
 ---
 
->**Info:** You need administration permissions to access system information. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< c8y-admon-info >}}
+You need administration permissions to access system information. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< /c8y-admon-info >}}
 
 In the navigator, select **Administration** and then **System status** to get information about the system configuration and its status.
 

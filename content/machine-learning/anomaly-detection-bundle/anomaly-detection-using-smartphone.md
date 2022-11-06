@@ -9,13 +9,17 @@ aliases:
 
 This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone.
 
->**Info:** The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
+{{< c8y-admon-info >}}
+The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
+{{< /c8y-admon-info >}}
 
 #### Register a smartphone in the platform
 
 Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) in the *User guide* and register a smartphone in {{< product-c8y-iot >}}.
 
->**Info:** Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
+{{< c8y-admon-info >}}
+Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
+{{< /c8y-admon-info >}}
 
 Once registered, note down the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
 
@@ -40,7 +44,9 @@ The logic argument goes: isolating anomaly observations is easier as only a few 
 
 The integrated Jupyter Notebook feature within {{< product-c8y-iot >}} Machine Learning Workbench helps in writing the code that creates an Isolation Forest model in PMML format using the previously uploaded training data. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train the Isolation Forest model.
 
-> **Info:** To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices.
+{{< c8y-admon-info >}}
+To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices.
+{{< /c8y-admon-info >}}
 
 After the model is created, the scikit-learn object can be converted to PMML format using the Nyoka library [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 

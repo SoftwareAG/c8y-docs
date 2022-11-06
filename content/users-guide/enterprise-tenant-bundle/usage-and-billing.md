@@ -144,11 +144,16 @@ Custom properties may be defined in the [Properties Library](/users-guide/admini
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
->**Info:** If a tenant was created after the selected time period, it will show up but the numbers are "0".
+{{< c8y-admon-info >}}
+If a tenant was created after the selected time period, it will show up but the numbers are "0".
+{{< /c8y-admon-info >}}
 
 You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
-> **Important:** The date/time range used here might differ from your server time due to different time zones.
+{{< c8y-admon-important >}}
+The date/time range used here might differ from your server time due to different time zones.
+{{< /c8y-admon-important >}}
+
 
 #### To export the usage statistics table
 
@@ -254,7 +259,9 @@ For more information, refer to [Audits](https://{{< domain-c8y >}}/api/{{< c8y-c
 
 ### Timezone handling
 
->**Important:** {{< product-c8y-iot >}} platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
+{{< c8y-admon-important >}}
+{{< product-c8y-iot >}} platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
+{{< /c8y-admon-important >}}
 
 The tenant usage statistics are collected on a daily base according to the beginning of day (`BOD`) and the end of day (`EOD`), which are defined by the server timezone. As a result, if the local time zone of a user is different from the server timezone, an operation triggered by the user may be assigned to a different day according to the server time.
 
@@ -335,7 +342,7 @@ Usage statistics consist of values that are progressive like the request count a
 |Subscribed applications | 9, 17 and EOD|
 |Microservice resources | 9, 17 and EOD|
 
-<a name="Lifecycle"></a>
+<a name="lifecycle"></a>
 ### Lifecycle
 
 **Tenant**
@@ -367,7 +374,9 @@ Tenants should also be able to see the full application lifecyle in the applicat
   * `Container created.` - The microservice container has been created but not started yet (state "Scheduled").
   * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic (state "Not ready").
 
->**Info:** There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
+{{< c8y-admon-info >}}
+There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
+{{< /c8y-admon-info >}}
 
   <img src="/images/users-guide/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 

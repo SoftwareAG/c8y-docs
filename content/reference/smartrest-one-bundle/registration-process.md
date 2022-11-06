@@ -96,7 +96,7 @@ In the Postman collection, the set of requests is located in **SmartREST > Regis
 
 Create a device:
 
-	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,"{""name"":""Test Device"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
+	10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,%%,STRING,"{""name"":""%%"",""type"":""com_example_TestDevice"",""c8y_IsDevice"":{}}"
 
 Explanation:
 

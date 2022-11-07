@@ -6,7 +6,7 @@ on:
 jobs:
   backport:
     name: Backport PR
-    runs-on: [self-hosted, c8y-ui-cicd-m]
+    runs-on: [ubuntu-latest]
     if: |
       github.event.pull_request.merged == true
       && contains(github.event.pull_request.labels.*.name, 'auto-backport')

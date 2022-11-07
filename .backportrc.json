@@ -1,8 +1,5 @@
 {
   "repoOwner": "SoftwareAG",
   "repoName": "c8y-docs",
-  "prTitle": "[GRAFT][{targetBranch}] {commitMessages}",
-  "gitHostname": "github.com",
-  "githubApiBaseUrlV3": "https://github.com/api/v3",
-  "githubApiBaseUrlV4": "https://github.com/api/graphql"
+  "prTitle": "[GRAFT][{targetBranch}] {commitMessages}"
 }

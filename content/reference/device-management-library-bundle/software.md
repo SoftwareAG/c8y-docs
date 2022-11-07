@@ -191,7 +191,7 @@ The 528 static response template is available for dealing with software update o
 
 ### Advanced Software Management
 
-In this approach the `c8y_SoftwareList` fragment is placed in the single child addition of type`c8y_InstalledSoftwareList`.
+Using the "advanced" approach, the `c8y_SoftwareList` fragment is placed in the single child addition of type `c8y_InstalledSoftwareList`.
 To facilitate management of listed software packages, the Advanced Software Management default
 [microservice](https://cumulocity.com/guides/concepts/applications/#microservices) was introduced.
 

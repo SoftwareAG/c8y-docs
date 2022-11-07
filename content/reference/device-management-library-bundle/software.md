@@ -16,9 +16,8 @@ alarms and events assigned.
 
 ### Installed software
 
-The installed software packages are listed in `c8y_SoftwareList` fragment which may be placed in the device managed
-object or in the single child addition of type `c8y_InstalledSoftwareList`. Let's call the first approach *legacy*
-and the second *advanced*.
+The installed software packages are listed in the `c8y_SoftwareList` fragment which may be placed in the device managed object or in the single child addition of type `c8y_InstalledSoftwareList`.
+The first approach to managing software is referred to as "legacy" and the second as "advanced".
 
 A software package represented as the list entry must contain following properties:
 

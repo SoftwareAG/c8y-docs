@@ -9,4 +9,4 @@ layout: redirect
 
 * There are a number of full-featured open source agents and drivers in {{< company-c8y >}}'s [github.com](https://github.com/SoftwareAG/cumulocity-examples) and [mbed.org](http://mbed.org/users/vwochnik/code/) repositories. More information can be found in the "Devices" section of this documentation.
 * Client libraries for major runtime environments such as C/C++, Java and Lua, again as open source in [github.com](https://github.com/SoftwareAG).
-* Technology-neutral [REST APIs](/device-sdk/rest#device-integration) for other runtime environments.
+* Technology-neutral [REST APIs](/device-integration/rest#device-integration) for other runtime environments.

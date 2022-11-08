@@ -233,7 +233,7 @@ Navigate to **Settings > Authentication** in the Administration application and 
 
 Retrieve the relevant information by a GET request to:
 
-<code>https://login.microsoftonline.com/<Directory tenant ID>/.well-known/openid-configuration</code>
+<code>https://login.microsoftonline.com/&lt;Directory tenant ID&gt;/.well-known/openid-configuration</code>
 
 The response will look like this:
 

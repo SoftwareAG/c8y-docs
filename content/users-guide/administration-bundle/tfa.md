@@ -1,5 +1,5 @@
 ---
-weight: 61
+weight: 71
 title: Two-factor authentication
 ---
 The two-factor authentication (TFA) is an extra layer of security that only completes authentication with a combination of two different factors: something the users know (username and password) and something they have (for example, smartphone) or something they are (for example, fingerprint). You can read more on how to configure TFA in the [authentication settings](/users-guide/administration/#authentication) section.
@@ -51,7 +51,7 @@ After this process the mobile application will generate a new code every 30 seco
 
 #### Revoking the secret
 If a user loses access to the TFA code, for example, if a user loses the phone or uninstalls the application, and needs to set it up again, the secret must be revoked.
-TOTP must be set up by each user individually. 
+TOTP must be set up by each user individually.
 
 {{< c8y-admon-req >}}
 

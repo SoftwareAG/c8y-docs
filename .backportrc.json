@@ -1,0 +1,5 @@
+{
+  "repoOwner": "SoftwareAG",
+  "repoName": "c8y-docs",
+  "prTitle": "[GRAFT][{targetBranch}] {commitMessages}"
+}

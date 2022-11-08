@@ -70,6 +70,8 @@ The **Default value** field is only shown if the selected **Type** is either "Te
 
 Once you have defined all necessary custom properties for your project, you must define the [asset types](/dtm/asset-types/#asset-types).
 
+Note: We can't edit the key field once the property is created.
+
 
 <a name="custom-property-types"></a>
 ### Custom property types
@@ -203,7 +205,7 @@ If you create a custom property called "Whiteboard" for a building which has roo
 
 This option allows you to upload a file to define the custom property.
 
-If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. When you create an asset with this custom property, you can only upload files of the allowed file types.
+If selected, enter the allowed file types separated by a comma in the **Allowed file types** field and the maximum size of the file that can be uploaded in the **Max file size(MB)** field. When you create an asset with this custom property, you can only upload files of the allowed file types.
 
 **Example:**
 
@@ -215,7 +217,8 @@ To upload the blueprint for a building, you must name the custom property "Build
 
 1. Select the desired custom property in the **Property Library** to see all the details on the right of the screen.
 2. Edit any content of the custom property.
-3. Click **Save** to save your changes.
+3. On click of **Save** if the selected property is not being used by any of the existing asset types then, your changes are saved.
+4. Else, in the resulting confirmation dialogue click **Confirm** to continue or **Cancel** to cancel the deletion.
 
 
 <a name=""></a>
@@ -231,7 +234,9 @@ All custom properties matching the search values are displayed on the screen on 
 <a name=""></a>
 ### To delete a custom property
 
-Select the respective custom property in the **Property Library** and click **Delete** on the bottom right.
+1. Select the respective custom property in the **Property Library**
+2. click **Delete** on the bottom right.
+3. In the resulting confirmation dialogue, click **Confirm** to continue or **Cancel** to cancel the deletion.
 
 {{< c8y-admon-info>}}
 

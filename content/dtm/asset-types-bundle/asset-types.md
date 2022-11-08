@@ -81,6 +81,8 @@ By default, no custom properties are selected.</td>
 </tbody>
 </table>
 
+<b>Note:</b> We can't edit the key field, once the asset type is created.
+
 Once all required asset types are created, you can start creating [assets](/dtm/asset-hierarchy/#assets) using these asset types.
 
 The total number of asset types is displayed on the bottom left of the page. Use the **Items per page** dropdown option to change the number of entries per page.
@@ -133,7 +135,6 @@ If there are any validation issues with a field, it is highlighted in red with a
 
 If there is no custom property meeting your requirements, click **New custom property**. For more details on how to create a new custom property see [Property Library > To create a custom property](/dtm/asset-types/#create-custom-property).
 
-
 <a name=""></a>
 ### Root asset type
 
@@ -159,7 +160,8 @@ This approach, allows you to create the desired hierarchy including all asset ty
 
 1. Click the edit icon on the right side of each asset type.
 2. Make your changes in the editor.
-3. Click **Save**.
+3. On click of **Save** if the selected asset type is not being used by any of the existing assets then, your changes are saved.
+4. Else, in the resulting confirmation dialogue click **Confirm** to continue or **Cancel** to cancel the deletion.
 
 
 <a name=""></a>

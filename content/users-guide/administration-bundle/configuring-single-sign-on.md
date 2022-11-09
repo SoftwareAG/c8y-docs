@@ -17,7 +17,7 @@ To use the SSO feature the following requirements must be met:
 * All microservices are built with Microservice Java SDK version 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
 * For on premises installation the domain-based tenant resolution is configured properly.
 * For {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If SSO providers have a list of allowed domains, the enterprise domain should be added to that list.
-* Users must have a role with READ permission for "Own user management".
+* You must assign a role to the user with at least READ permission for "Own user management", otherwise the user cannot log in.
 * Users must have cookies enabled in the browser settings, as the SSO feature is built on top of cookies technology.
 {{< /c8y-admon-req >}}
 

@@ -52,7 +52,8 @@ This name is used for the asset type throughout the application.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.</td>
+<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.<br>
+<b>Note:</b> You cannot edit the key field, once the asset type is created.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -80,8 +81,6 @@ By default, no custom properties are selected.</td>
 </tr>
 </tbody>
 </table>
-
-<b>Note:</b> We can't edit the key field, once the asset type is created.
 
 Once all required asset types are created, you can start creating [assets](/dtm/asset-hierarchy/#assets) using these asset types.
 
@@ -160,8 +159,8 @@ This approach, allows you to create the desired hierarchy including all asset ty
 
 1. Click the edit icon on the right side of each asset type.
 2. Make your changes in the editor.
-3. On click of **Save** if the selected asset type is not being used by any of the existing assets then, your changes are saved.
-4. Else, in the resulting confirmation dialogue click **Confirm** to continue or **Cancel** to cancel the deletion.
+3. Click **Save** to save your changes.
+4. If this asset type is used by any asset, in the resulting confirmation dialogue, select **Confirm** to continue saving your changes. select **Cancel** to cancel the modification.
 
 
 <a name=""></a>

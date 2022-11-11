@@ -182,7 +182,7 @@ Die Plattform schränkt die Verwendung des Präfixes "feature-" im Feld **Name**
     {{< /c8y-admon-info >}}
 5. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
 
-    {{< /c8y-admon-info >}}
+    {{< c8y-admon-info >}}
 Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, **Abonnierte Anwendungen überschreiben**, zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 

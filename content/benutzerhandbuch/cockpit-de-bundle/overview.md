@@ -86,6 +86,6 @@ Aus Leistungsgründen zeigt die Karte auf der Startseite Symbole für maximal 10
 
 Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.
 
-Details zum Bearbeiten von Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
+Details zum Bearbeiten von Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
 
 Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie auf **Mehr...** rechts oben in der Menüleiste und klicken Sie dann auf **Dashboard wiederherstellen**.

@@ -121,7 +121,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 * [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
-* [Verfügbare Pakete installieren](#blueprint-application), um einen Paket-Blueprint auszuwählen
+* [Aus verfügbaren Pakete installieren](#blueprint-application), um einen Paket-Blueprint auszuwählen
 * [Vorhandene Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
 
 <a name="uploading-zip-files"></a>
@@ -182,8 +182,8 @@ Die Plattform schränkt die Verwendung des Präfixes "feature-" im Feld **Name**
     {{< /c8y-admon-info >}}
 5. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
 
-{{< c8y-admon-info >}}
-Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, nämlich **Abonnierte Anwendungen überschreiben** zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
+    {{< /c8y-admon-info >}}
+Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, **Abonnierte Anwendungen überschreiben**, zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
@@ -248,7 +248,7 @@ In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungs
 
 Wechseln Sie zur Registerkarte **Plugins**, um alle für eine Anwendung installierten Plugins anzuzeigen. Plugins können verwendet werden, um eine vorhandene Anwendung zu erweitern, ohne sie neu erstellen zu müssen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
+![Plugins grid](/images/benutzerhandbuch/Administration/admin-application-plugins-grid.png)
 
 Auf der Registerkarte **Plugins** können Sie Plugins hinzufügen und entfernen. Darüber hinaus können Sie Plugins in einer Anwendung installieren.
 
@@ -316,7 +316,7 @@ Pakete können zwei Arten von Anwendungen enthalten:
 
 Pakete sind in der Registerkarte **Pakete** auf der Seite **Anwendungen** zu finden.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-packages.png" alt="Packages view">
+![Packages view](/images/benutzerhandbuch/Administration/admin-application-packages.png)
 
 Um ein neues Paket hinzuzufügen, klicken Sie oben rechts auf **Paket hinzufügen**.
 
@@ -324,17 +324,17 @@ Wenn Sie auf ein Paket klicken, sehen Sie Paketdetails wie etwa die **Paketüber
 
 Zudem können Sie rechts alle verfügbaren Plugins innerhalb des gewählten Pakets sehen. Um ein Plugin zu installieren, klicken Sie auf **Plugin installieren** und wählen Sie die gewünschte Anwendung aus.  
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-packages-info.png" alt="Packages overview">
+![Packages overview](/images/benutzerhandbuch/Administration/admin-application-packages-info.png)
 
 In der Registerkarte **Archivdateien** sehen Sie alle bisher hochgeladenen Binärdateien im Zusammenhang mit dem aktuellen Paket. Die auf dieser Registerkarte angezeigten Binärdateien können über das Kontextmenü neben der jeweiligen Archivdatei heruntergeladen werden.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-packages-archives.png" alt="Archive view">
+![Archive view](/images/benutzerhandbuch/Administration/admin-application-packages-archives.png)
 
 In der Registerkarte **Versionen** des Pakets können Sie verschiedene Versionen auswählen oder hochladen. Die Versionen geben Auskunft über den Zustand des Pakets. Über sie kann überprüft werden, ob ein bestimmtes Paket veraltet ist und aktualisiert werden muss. Wenn Sie auf eine Version klicken, werden weitere Informationen wie Paketinhalt, Anwendungen oder Plugins angezeigt. Tags können verwendet werden, um Versionen mit aussagekräftigen Namen zu versehen. Das Tag "Aktuellste" dient zur Angabe der Standardversion, die ausgewählt wird, wenn kein Tag bereitgestellt wird. Das Tag "Aktuellste" wird standardmäßig auf die neueste Version gesetzt, wann immer eine Version ohne ein bestimmtes Tag hochgeladen wird.
 
 Um zu einer anderen Version zu wechseln, öffnen Sie das Kontextmenü der gewünschten Version und klicken Sie auf **Als letzte einstellen**. Um eine Version zu löschen, klicken Sie auf **Löschen**.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-packages-versions.png" alt="Archive view">
+![Archive view packages version](/images/benutzerhandbuch/Administration/admin-application-packages-versions.png)
 
 ### Funktionen
 

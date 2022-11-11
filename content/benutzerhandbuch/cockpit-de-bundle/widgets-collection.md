@@ -37,7 +37,7 @@ Folgende Typen sind verfügbar:
 </tr>
 <tr>
 <td align="left"><a href="#traffic-light">Ampel</a></td>
-<td align="left">Zeigt die Zustände eines Geräts im Form einer Ampel.</td>
+<td align="left">Zeigt die Zustände eines Geräts in Form einer Ampel.</td>
 </tr>
 <tr>
 <td align="left"><a href="#applications">Anwendungen</a></td>
@@ -174,7 +174,7 @@ Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden
 <a name="traffic-light"></a>
 ### Ampel
 
-Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
+Das "Ampel"-Widget visualisiert den Status eines Geräts in Form einer Ampel.
 
 **Konfigurierbare Parameter**
 
@@ -417,7 +417,7 @@ Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und 
 
 ![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
 
-Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
+Sie können einen Datenpunkt für den Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
 
 ![Info gauge widget data point gauge](/images/benutzerhandbuch/cockpit/cockpit-widget-data-gauge.png)
 

@@ -409,7 +409,7 @@ In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie
 
 ![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig">}}
 Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 {{< /c8y-admon-important >}}
 

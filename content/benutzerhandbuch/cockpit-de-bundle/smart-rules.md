@@ -8,7 +8,7 @@ weight: 80
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-req title="Anforderungen">}}
 Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat.
 {{/< c8y-admon-req >}}
 
@@ -23,7 +23,7 @@ Es gibt zwei Typen von Smart Rules:
 
   Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer und mehr).
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-req title="Anforderungen">}}
 ROLLEN UND BERECHTIGUNGEN für globale Smart Rules:
 
 - Zum Anzeigen einer globalen Smart Rule: LESEN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und LESEN-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -37,7 +37,7 @@ ROLLEN UND BERECHTIGUNGEN für globale Smart Rules:
 
   Lokale Smart Rules werden entweder in einer Gruppe oder in einem Gerät erstellt. Sie sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-req title="Anforderungen">}}
 ROLLEN UND BERECHTIGUNGEN für lokale Smart Rules:
 
 - Zum Anzeigen von lokalen Smart Rules: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
@@ -131,7 +131,7 @@ Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschal
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig">}}
 Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
 {{< /c8y-admon-important >}}
 

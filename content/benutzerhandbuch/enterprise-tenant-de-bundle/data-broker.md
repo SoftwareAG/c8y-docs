@@ -14,7 +14,7 @@ Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt
 - Messwerte,
 - Operationen.
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-req title="Anforderungen">}}
 Um diese Funktion verwenden zu können, muss Ihr Mandant die Anwendung "feature-broker" abonniert haben.
 {{< /c8y-admon-req >}}
 
@@ -22,7 +22,7 @@ Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie a
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig">}}
 Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 {{< /c8y-admon-important >}}
 

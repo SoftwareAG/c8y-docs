@@ -133,7 +133,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig">}}
 Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
 {{< /c8y-admon-important >}}
 
@@ -259,7 +259,7 @@ Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben eine
 
 In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig">}}
 Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
 {{< /c8y-admon-important >}}
 

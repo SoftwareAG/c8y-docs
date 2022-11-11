@@ -17,7 +17,7 @@ The fixed URL path is <kbd>/notification2/consumer/</kbd> and there are only two
 
 * `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 
-* `consumer` (optional). Its value is a non blank unique name for the consumer. While this parameter is optional it must be used for shared subscriptions (shared subscriptions are scaled out / parallel subscriptions, rather than exclusive subscriptions) if notifications for a particular device are to be delivered to the same named consumer instance in the scaled out set of consumers.
+* `consumer` (optional). Its value is a non blank unique name for the consumer.
 
 In summary, the URLs used by consumers follow the following patterns:
 

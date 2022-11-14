@@ -13,17 +13,18 @@ weight: 75
 * [SmartREST 2.0](/reference/smartrest-two/)
 * [Device integration using MQTT](/device-integration/mqtt/)
 
-{{< c8y-admon-info >}}
+
 {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, applications shall always obey a few basic rules:
 
 * Clients shall only use documented API methods and documented behavior. Do not rely on undocumented but observed behavior.
 * Clients shall only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed.
 * Clients can rely on a stable inventory API where they can manage their inventory objects. However, the data structures for objects owned by the {{< product-c8y-iot >}} platform can change.
 * APIs are free to return more JSON fields and clients must be written in a way that they ignore such fields.
-{{< /c8y-admon-info >}}
 
+
+{{< c8y-admon-info >}}
 If changes result in breaking backward compatibility, to provide our customers with the time to change their solution, such changes will be announced at least one GA release ahead of the GA release where the change becomes effective. Where the change has a wide-ranging impact, we will delay taking action until we have ascertained that the impact on our customers is minimal.
-
+{{< /c8y-admon-info >}}
 
 #### Beta APIs
 

@@ -121,7 +121,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 * [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
-* [Aus verfügbaren Pakete installieren](#blueprint-application), um einen Paket-Blueprint auszuwählen
+* [Aus verfügbaren Paketen installieren](#blueprint-application), um einen Paket-Blueprint auszuwählen
 * [Vorhandene Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
 
 <a name="uploading-zip-files"></a>

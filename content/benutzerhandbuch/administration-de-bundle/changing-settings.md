@@ -388,7 +388,7 @@ Verwenden Sie beim Konfigurieren Ihres Azure AD Ihre vollständige Domain-Adress
 
 ##### Globale Abmeldefunktion (verfügbar für Keycloak ab Version 12.0.0)
 
-Die Integration mit Keycloak gibt Administratoren die Möglichkeit, eine globale Abmeldefunktion auf Basis von OpenId Connect zu verwenden. Ein Ereignis vom Keycloak-Autorisierungsserver wird an alle Anwendungen (einschließlich der {{< product-c8y-iot >}}-Plattform) gesendet, und zwar mit einem Logout-Token, das in gleicher Weise verifiziert wird wie das Token im Anmeldeprozess. Diese Funktion ermöglicht die Beendigung von Sitzungen auf beiden Seiten - Anwendungen und Keycloak - für den jeweiligen Benutzer.
+Die Integration mit Keycloak gibt Administratoren die Möglichkeit, eine globale Abmeldefunktion auf Basis von OpenID Connect zu verwenden. Ein Ereignis vom Keycloak-Autorisierungsserver wird an alle Anwendungen (einschließlich der {{< product-c8y-iot >}}-Plattform) gesendet, und zwar mit einem Logout-Token, das in gleicher Weise verifiziert wird wie das Token im Anmeldeprozess. Diese Funktion ermöglicht die Beendigung von Sitzungen auf beiden Seiten - Anwendungen und Keycloak - für den jeweiligen Benutzer.
 
 So konfigurieren Sie die globale Abmeldefunktion:
 
@@ -416,7 +416,7 @@ So konfigurieren Sie die Funktion zum Abmelden aller Benutzer:
 2. Wählen Sie das Realm aus, das in der SSO-Konfiguration für den Mandanten verwendet wird.
 3. Navigieren Sie im Abschnitt **Configure** zu **Clients**.
 4. Wählen Sie den Client aus, der in der SSO-Konfiguration verwendet wird.
-5. Setzen Sie **Admin URL** auf "https://mytenant.{{< domain-c8y >}}/user/keycloak"
+5. Setzen Sie das Feld **Admin URL** auf "https://mytenant.{{< domain-c8y >}}/user/keycloak".
 
 So verwenden Sie die Funktion zum Abmelden aller Benutzer:
 

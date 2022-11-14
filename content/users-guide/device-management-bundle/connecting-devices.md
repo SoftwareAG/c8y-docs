@@ -223,7 +223,7 @@ After the file is uploaded, all required new groups will be created, new registr
 
 The CSV files must contain at least the IDs as device identifier and the credentials of the devices.
 
-In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in the follwoing example:
+In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in the following example:
 
 ```
 ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE

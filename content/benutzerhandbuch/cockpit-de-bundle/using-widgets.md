@@ -90,7 +90,7 @@ Wenn das Asset eine Gruppe oder ein Gerät mit Kindern ist, werden neben seinem 
 
 Wenn Sie ein nicht zugewiesenes Gerät als Asset auswählen möchten, finden Sie die nicht zugewiesenen Geräte im Ordner **Nicht zugewiesene Geräte** auf der ersten Ebene der ausgewählten Gruppe.
 
->{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 Sie können nicht den Ordner **Nicht zugewiesene Geräte** selbst auswählen. Jedes Gerät innerhalb dieses Ordners kann jedoch auf der nächsten Ebene ausgewählt werden. Klicken Sie auf **Nicht zugewiesene Geräte**, um die nächste Ebene mit allen nicht zugewiesenen Geräten zu öffnen. Klicken Sie auf das gewünschte Gerät, um es auszuwählen.
 
 {{< /c8y-admon-info >}}

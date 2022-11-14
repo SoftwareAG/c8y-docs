@@ -79,7 +79,7 @@ Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung 
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
 
 {{< c8y-admon-info >}}
-Der Bildschirm **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](#security-token-policy-for-device-registration) unterscheiden.
+Die Anzeige **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](#security-token-policy-for-device-registration) unterscheiden.
 {{< /c8y-admon-info >}}
 
 Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".

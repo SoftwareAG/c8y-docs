@@ -22,12 +22,10 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 5. All the custom properties for this asset will be displayed on the right.
 
 {{< c8y-admon-info>}}
-[Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), [Add child assets](/dtm/asset-hierarchy/#add-child-assets) buttons are not visible for the last hierarchical level.<br>
-If the custom property or asset type associated with the selected asset is modified, you can see a warning icon beside the name of the asset type(See Image below).<br>
-You see a warning message if one or more properties assocaited with the asset is not present.
+The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add child assets](/dtm/asset-hierarchy/#add-child-assets) are not visible for the last hierarchical level.<br>
+If you edit the custom property or the asset type associated with the selected asset, you see a warning icon next to the asset type name.<br>
+You see a warning message if one or more properties associated with the asset are not present.
 {{< /c8y-admon-info>}}
-
-![Asset Type Modification Warning](/images/dtm/assets/asset-type-modification-warning.png)
 
 <a name=""></a>
 #### To view an asset hierarchy

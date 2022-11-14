@@ -53,7 +53,7 @@ This name is used for the asset type throughout the application.</td>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.<br>
-<b>Note:</b> You cannot edit the key field, once the asset type is created.</td>
+{{< c8y-admon-info>}} You cannot edit the key field, once the asset type is created. {{< /c8y-admon-info>}}</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -160,7 +160,7 @@ This approach, allows you to create the desired hierarchy including all asset ty
 1. Click the edit icon on the right side of each asset type.
 2. Make your changes in the editor.
 3. Click **Save** to save your changes.
-4. If this asset type is used by any asset, in the resulting confirmation dialogue, select **Confirm** to continue saving your changes. select **Cancel** to cancel the modification.
+4. If this asset type is used by any asset, select **Confirm** in the resulting confirmation dialogue to continue saving your changes.
 
 
 <a name=""></a>

@@ -176,7 +176,7 @@ Es gibt keine Einschränkung hinsichtlich der Anzahl der Geräte, die durch eine
 
 2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Bulk-Registrierung** > **Generell**.
 
-[Bulk registration](/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png)
+![Bulk registration](/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png)
 
 3. Klicken Sie auf die Plus-Schaltfläche, um die hochzuladende CSV-Datei auszuwählen, oder wählen Sie sie durch Ziehen und Ablegen aus.
 

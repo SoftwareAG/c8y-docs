@@ -10,7 +10,7 @@ Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart R
 
 {{< c8y-admon-req title="Anforderungen">}}
 Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat.
-{{/< c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 

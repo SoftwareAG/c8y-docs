@@ -297,37 +297,6 @@ Wurde eine gehostete Anwendung nicht korrekt gestartet, kann der Benutzer sie er
 
 Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien aus dem Anwendungsverzeichnis entfernt werden und das gehostete Anwendungspaket erneut entpackt wird.
 
-### Pakete
-
-Pakete sind Kombinationen von Plugins und Blueprints, die sich zu einem einzigen Paket zusammenschnüren und dann für die Plattform bereitstellen lassen, Dadurch bieten Pakete eine bessere gemeinsame Nutzbarkeit und Wiederverwendbarkeit von UI-Funktionen in verschiedenen Anwendungen und ermöglichen das Hinzufügen von UI-Funktionen zu Anwendungen ohne Programmierkenntnisse.
-
-Pakete können zwei Arten von Anwendungen enthalten:
-
-- [**Plugins**](#application-plugins) können verwendet werden, um eine vorhandene Anwendung zu erweitern, ohne sie neu erstellen zu müssen.
-- **Blueprints** sind Kombinationen mehrerer UI-Funktionalitäten, die von der Plattform gehostet und zur Neuerstellung einer Anwendung verwendet werden können.
-
-Pakete sind in der Registerkarte **Pakete** auf der Seite **Anwendungen** zu finden.
-
-![Packages view](/images/benutzerhandbuch/Administration/admin-application-packages.png)
-
-Um ein neues Paket hinzuzufügen, klicken Sie oben rechts auf **Paket hinzufügen**.
-
-Wenn Sie auf ein Paket klicken, sehen Sie Paketdetails wie etwa die **Paketübersicht**, die eine Beschreibung und Bilder sowie einige Meta-Informationen enthält, die aus *package.json* stammen.
-
-Zudem können Sie rechts alle verfügbaren Plugins innerhalb des gewählten Pakets sehen. Um ein Plugin zu installieren, klicken Sie auf **Plugin installieren** und wählen Sie die gewünschte Anwendung aus.  
-
-![Packages overview](/images/benutzerhandbuch/Administration/admin-application-packages-info.png)
-
-In der Registerkarte **Archivdateien** sehen Sie alle bisher hochgeladenen Binärdateien im Zusammenhang mit dem aktuellen Paket. Die auf dieser Registerkarte angezeigten Binärdateien können über das Kontextmenü neben der jeweiligen Archivdatei heruntergeladen werden.
-
-![Archive view](/images/benutzerhandbuch/Administration/admin-application-packages-archives.png)
-
-In der Registerkarte **Versionen** des Pakets können Sie verschiedene Versionen auswählen oder hochladen. Die Versionen geben Auskunft über den Zustand des Pakets. Über sie kann überprüft werden, ob ein bestimmtes Paket veraltet ist und aktualisiert werden muss. Wenn Sie auf eine Version klicken, werden weitere Informationen wie Paketinhalt, Anwendungen oder Plugins angezeigt. Tags können verwendet werden, um Versionen mit aussagekräftigen Namen zu versehen. Das Tag "Aktuellste" dient zur Angabe der Standardversion, die ausgewählt wird, wenn kein Tag bereitgestellt wird. Das Tag "Aktuellste" wird standardmäßig auf die neueste Version gesetzt, wann immer eine Version ohne ein bestimmtes Tag hochgeladen wird.
-
-Um zu einer anderen Version zu wechseln, öffnen Sie das Kontextmenü der gewünschten Version und klicken Sie auf **Als letzte einstellen**. Um eine Version zu löschen, klicken Sie auf **Löschen**.
-
-![Archive view packages version](/images/benutzerhandbuch/Administration/admin-application-packages-versions.png)
-
 ### Funktionen
 
 Funktionen sind integrierte Anwendungen, die nicht durch ein spezielles Artefakt (Microservice oder Webanwendung) dargestellt werden.

@@ -157,7 +157,7 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 
 1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
 2. Wählen Sie **Verfügbare Pakete**.
-3. Wählen Sie das gewünschte Paket aus. 
+3. Wählen Sie das gewünschte Paket aus.
 4. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
 6. Geben Sie den Pfad ein, unter dem auf die Anwendung zugegriffen werden kann.
@@ -244,14 +244,6 @@ In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungs
 </tbody>
 </table>
 
-### Anwendungs-Plugins
-
-Wechseln Sie zur Registerkarte **Plugins**, um alle für eine Anwendung installierten Plugins anzuzeigen. Plugins können verwendet werden, um eine vorhandene Anwendung zu erweitern, ohne sie neu erstellen zu müssen.
-
-![Plugins grid](/images/benutzerhandbuch/Administration/admin-application-plugins-grid.png)
-
-Auf der Registerkarte **Plugins** können Sie Plugins hinzufügen und entfernen. Darüber hinaus können Sie Plugins in einer Anwendung installieren.
-
 <a name="editing-and-removing"></a>
 ### So bearbeiten Sie eine Anwendung
 
@@ -307,7 +299,7 @@ Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien 
 
 ### Pakete
 
-Pakete sind Kombinationen von Plugins und Blueprints, die sich zu einem einzigen Paket zusammenschnüren und dann für die Plattform bereitstellen lassen, Dadurch bieten Pakete eine bessere gemeinsame Nutzbarkeit und Wiederverwendbarkeit von UI-Funktionen in verschiedenen Anwendungen und ermöglichen das Hinzufügen von UI-Funktionen zu Anwendungen ohne Programmierkenntnisse. 
+Pakete sind Kombinationen von Plugins und Blueprints, die sich zu einem einzigen Paket zusammenschnüren und dann für die Plattform bereitstellen lassen, Dadurch bieten Pakete eine bessere gemeinsame Nutzbarkeit und Wiederverwendbarkeit von UI-Funktionen in verschiedenen Anwendungen und ermöglichen das Hinzufügen von UI-Funktionen zu Anwendungen ohne Programmierkenntnisse.
 
 Pakete können zwei Arten von Anwendungen enthalten:
 

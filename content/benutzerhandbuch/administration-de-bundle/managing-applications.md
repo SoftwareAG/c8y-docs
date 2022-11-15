@@ -152,19 +152,6 @@ Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis 
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
 
-<a name="blueprint-application"></a>
-##### So installieren Sie eine Anwendung anhand eines Blueprints
-
-1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
-2. Wählen Sie **Verfügbare Pakete**.
-3. Wählen Sie das gewünschte Paket aus.
-4. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
-5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
-6. Geben Sie den Pfad ein, unter dem auf die Anwendung zugegriffen werden kann.
-7. Klicken Sie auf **Speichern**, um die Anwendung zu erstellen.
-
-Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
-
 <a name="clone-application"></a>
 ##### So duplizieren Sie eine Anwendung
 

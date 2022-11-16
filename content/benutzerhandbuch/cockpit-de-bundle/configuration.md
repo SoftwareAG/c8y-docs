@@ -6,15 +6,15 @@ layout: redirect
 
 {{< product-c8y-iot >}} bietet Ihnen die Möglichkeit, benutzerdefinierte Cockpit-Anwendungen nach Ihren eigenen Bedürfnissen zu konfigurieren.
 
-### Anforderungen
-
-Zur Verwendung dieser Funktionalität müssen die folgenden Anforderungen erfüllt sein:
+{{< c8y-admon-req title="Anforderungen">}}
+Zur Verwendung der Cockpit-Konfiguration-Funktionalität müssen die folgenden Anforderungen erfüllt sein:
 
 * Sie verfügen über eine ADMIN-Berechtigung für den Berechtigungstyp "Anwendungsverwaltung".
 
 * Die Cockpit-Anwendung kann nur konfiguriert werden, wenn Sie im Besitz des Mandanten ist. Sie müssen also zuerst eine eigene Cockpit-Anwendung erstellen, indem Sie die vorhandene Cockpit-Anwendung duplizieren. Nähere Informationen zur Duplizierung einer Anwendung finden Sie unter [Verwalten von Anwendungen > Benutzerdefinierte Anwendung > So fügen Sie eine benutzerdefinierte Anwendung hinzu](/benutzerhandbuch/administration-de/#adding-applications).
 
 Wenn diese Anforderungen erfüllt sind, wird im Menü **Konfiguration** des Navigators der benutzerdefinierten Cockpit-Anwendung der Eintrag **App-Konfiguration** angezeigt.
+{{< /c8y-admon-req >}}
 
 ### So konfigurieren Sie eine benutzerdefinierte Cockpit-Anwendung
 
@@ -45,7 +45,7 @@ Im Abschnitt **Start-Dashboard** können Sie wählen, wie das Start-Dashboard, d
 Sie können auswählen, ob die Anpassung des Start-Dashboards
 * im gesamten Mandanten widergespiegelt werden soll (Standardwert)
 * nur in der aktuellen benutzerdefinierten Anwendung widergespiegelt werden soll
-* nur im aktuellen Benutzer widergespiegelt werden soll Beachten Sie, dass dieser Benutzer dann eine ERSTELLEN-Berechtigung für den Berechtigungstyp "Stammdaten" benötigt. 
+* nur im aktuellen Benutzer widergespiegelt werden soll Beachten Sie, dass dieser Benutzer dann eine ERSTELLEN-Berechtigung für den Berechtigungstyp "Stammdaten" benötigt.
 
 #### Sonstiges
 

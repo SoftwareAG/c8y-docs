@@ -16,9 +16,9 @@ helpcontent:
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 
-{{< c8y-admon-info >}}
-The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
+{{< /c8y-admon-req >}}
 
 Smart rules are parameterized. There are two sources for parameters:
 

@@ -121,6 +121,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 * [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
+* [Aus verfügbaren Paketen installieren](#blueprint-application), um einen Paket-Blueprint auszuwählen
 * [Vorhandene Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
 
 <a name="uploading-zip-files"></a>
@@ -132,7 +133,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
 {{< /c8y-admon-important >}}
 
@@ -158,30 +159,21 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 
 1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
 2. Wählen Sie im folgenden Dialog **Vorhandene Anwendung duplizieren**.
-3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste.
-<br><br>
-<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate.png" alt="Duplicate application">
-<br><br>
-4. Geben Sie im nächsten Fenster den Namen der Anwendung ein.
+3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste, z. B. "Cockpit".
+4. Geben Sie im nächsten Fenster den Namen für die Anwendung, einen Anwendungsschlüssel zur Identifizierung der Anwendung und einen Pfad als Bestandteil der URL ein, um die Anwendung aufzurufen. Standardmäßig werden die Werte der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie als Pfad den Pfad der abonnierten Originalanwendung verwenden, wird Ihre eigene Anwendung die abonnierte Anwendung überschreiben.
 <br><br>
 <img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
     {{< c8y-admon-info >}}
-Die Plattform beschränkt die Verwendung des Präfixes "feature-". Sie können keine Anwendungen mit diesem Präfix im Anwendungsnamen erstellen. Dies gilt auch für bestehende Anwendungen in Fällen, in denen die Funktion "Anwendung duplizieren" verwendet wird.
+Die Plattform schränkt die Verwendung des Präfixes "feature-" im Feld **Name** ein. Sie können keine Anwendungen mit diesem Präfix im Anwendungsnamen erstellen. Dies gilt auch für bestehende Anwendungen in Fällen, in denen die Funktion "Anwendung duplizieren" verwendet wird.
     {{< /c8y-admon-info >}}
-5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren.
-6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
-7. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
+5. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
 
 {{< c8y-admon-info >}}
-Die oben genannten Felder für Name, Schlüssel und Pfad der duplizierten Anwendung werden standardmäßig mit dem entsprechenden Wert aus der ursprünglichen Anwendung, erweitert um eine Zahl, bereitgestellt. Falls die Anwendung für diesen Mandanten abonniert wurde, ist ein weiterer Umschalter vorhanden, über den Sie die Werte entweder von der ursprünglichen Anwendung erben oder aber bearbeiten können.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
+Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, **Abonnierte Anwendungen überschreiben**, zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
-
-{{< c8y-admon-info >}}
-Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
-{{< /c8y-admon-info >}}
 
 <a name="application-properties"></a>
 ### Anwendungsattribute
@@ -239,7 +231,6 @@ In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungs
 </tbody>
 </table>
 
-
 <a name="editing-and-removing"></a>
 ### So bearbeiten Sie eine Anwendung
 
@@ -247,7 +238,7 @@ Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben eine
 
 In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
 {{< /c8y-admon-important >}}
 

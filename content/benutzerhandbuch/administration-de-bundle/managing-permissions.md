@@ -255,7 +255,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionalitäten in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionalitäten beschrieben.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Werden neue Funktionen mit neuen Berechtigungen zu {{< product-c8y-iot >}} hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 {{< /c8y-admon-important >}}
 
@@ -264,7 +264,7 @@ Werden neue Funktionen mit neuen Berechtigungen zu {{< product-c8y-iot >}} hinzu
 
 Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Änderung von Einstellungen](/benutzerhandbuch/administration-de/#custom-template) im *User Guide*.
 {{< /c8y-admon-important >}}
 
@@ -346,7 +346,7 @@ Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahllist
 * ÄNDERN - zum Ändern von Objekten (schließt nicht die LESEN-Berechtigung ein)
 * ALL - zum Lesen UND Ändern von Objekten
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, "höhere" Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit "*" als Typen und "Alle" als Berechtigung gibt.
 {{< /c8y-admon-important >}}
 
@@ -363,7 +363,7 @@ Klicken Sie auf **Benutzer** im Menü **Konten**, wählen Sie einen Benutzer aus
 
 In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie auf **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer
 alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
 {{< /c8y-admon-important >}}

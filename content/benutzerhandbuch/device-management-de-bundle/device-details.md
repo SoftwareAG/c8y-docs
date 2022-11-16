@@ -158,15 +158,15 @@ Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Ger�
 
 Die Registerkarte **Ereignisse** zeigt die mit dem Gerät verbundenen Ereignisse an. Dies ermöglicht unter anderem eine Fehlersuche. Weitere Informationen finden Sie unter [Fehlerbehebung von Geräten](#events-all).
 
-<a name="dev-profile"></a>
-### Geräteprofil
-
-Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie unter [Geräteprofile auf Geräte anwenden](#applying-device-profiles).
-
 <a name="firmware"></a>
 ### Firmware
 
 Weitere Informationen zum Verwalten und Aktualisieren von Firmware auf einem Gerät finden Sie unter [Verwalten von Firmware auf einem Gerät](#managing-firmware).
+
+<a name="dev-profile"></a>
+### Geräteprofil
+
+Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie unter [Geräteprofile auf Geräte anwenden](#applying-device-profiles).
 
 <a name="identity"></a>
 ### Identifikator

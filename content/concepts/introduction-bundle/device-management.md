@@ -3,7 +3,7 @@ title: Device management
 weight: 40
 ---
 
-{{< product-c8y-iot >}} provides extensive device management for fully certified devices. This includes
+{{< product-c8y-iot >}} provides extensive device management for fully certified devices. This includes:
 
 * Hardware and modem information.
 * Connection monitoring.

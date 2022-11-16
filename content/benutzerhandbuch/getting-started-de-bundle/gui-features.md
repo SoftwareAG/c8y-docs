@@ -178,7 +178,7 @@ Auf bestimmten Seiten durchsucht die Filterfunktion nur die auf der Seite angeze
 * Dateiablage
 {{< /c8y-admon-important >}}
 
-Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > So filtern Sie Geräte](/benutzerhandbuch/device-management-de#filtering-devices).
+Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de#filtering-devices).
 
 ### Echtzeitverhalten des Navigators
 

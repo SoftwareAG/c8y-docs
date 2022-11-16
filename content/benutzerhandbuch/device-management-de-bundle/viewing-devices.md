@@ -113,7 +113,7 @@ Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenb
 
 <a name="filtering-devices"></a>
 
-### So filtern Sie Geräte
+### Filtern von Geräten
 
 Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestimmten Kriterien zu Filtern.
 

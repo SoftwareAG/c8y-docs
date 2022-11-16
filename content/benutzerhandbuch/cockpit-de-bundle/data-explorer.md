@@ -6,18 +6,27 @@ weight: 30
 
 Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
 
+{{< c8y-admon-req title="Anforderungen">}}
+ROLLEN UND BERECHTIGUNGEN:
 
-Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.
+- Zum Anzeigen und Auswählen aller verfügbaren Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Visualisieren bereits ausgewählter Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Messwerte" oder LESEN-Berechtigung für "Messwerte" in den Stammdatenrollen
+- Zum Senden als Widget an Berichte/Dashboards: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
 
-* Klicken Sie auf **Daten-Explorer** im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
+Beachten Sie, dass in der Datenpunktbibliothek vorhandene Datenpunkte für jeden sichtbar sind, ohne dass eine Berechtigung benötigt wird.
+{{< /c8y-admon-req >}}
 
-* Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
+Der Daten-Explorer ist sowohl für alle Assets auf einmal als auch für einzelne Assets verfügbar.
+
+- Klicken Sie auf **Daten-Explorer** im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
+
+- Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
 
 Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
-![data explorer](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer.png)
+![Data explorer](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer.png)
 
 Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 

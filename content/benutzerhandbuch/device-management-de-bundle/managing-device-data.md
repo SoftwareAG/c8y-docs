@@ -145,10 +145,6 @@ Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** un
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
-{{< c8y-admon-info >}}
-Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
-{{< /c8y-admon-info >}}
-
 <a name="software-repo"></a>
 ### Verwalten von Geräte-Software
 
@@ -289,10 +285,6 @@ Bewegen Sie den Mauszeiger über das Software-Element, das Sie löschen möchten
 Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
-
-{{< c8y-admon-info >}}
-Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
-{{< /c8y-admon-info >}}
 
 <a name="configuration-repository"></a>
 ### Verwalten von Konfigurationen

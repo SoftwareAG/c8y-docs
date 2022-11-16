@@ -8,6 +8,17 @@ weight: 65
 
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
 
+{{< c8y-admon-req title="Anforderungen">}}
+ROLLEN UND BERECHTIGUNGEN:
+
+- Zum Anzeigen von Exporten: READ-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Bearbeiten eines Exports: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Hinzufügen eines Exports: ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Planen eines Exports: ADMIN-Berechtigung für Berechtigungstyp "Exportplanung"
+- Zum Duplizieren eines Exports: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Löschen eines Exports: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+  {{< /c8y-admon-req >}}
+
 Mit dieser Funktion können Sie Daten für den gesamten Mandanten anfragen. Außerdem können Sie Filter für bestimmte Geräte, Zeiträume oder Felder setzen. Die Exportdaten enthalten so lediglich Informationen über die gefilterten Daten und aktivierten Felder.
 
 Um alle Exporte anzuzeigen, klicken Sie auf **Exportieren** im Menü **Konfiguration** des Navigators.
@@ -137,7 +148,7 @@ Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Ex
 
 ![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
 {{< /c8y-admon-important >}}
 

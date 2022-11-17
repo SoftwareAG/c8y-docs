@@ -270,9 +270,10 @@ The intermediate certificate is signed by the CA certificate, but will also be u
 This step is optional.
 If you are fine with signing all the device certificates with one common CA certificate, then you can skip this step.
 However, if you need some certificates between the CA certificate and the device certificate then it is the way to go.
-Keep in mind that in the {{< product-c8y-iot >}} cloud the maximum length of the chain of certificates is currently restricted to 2 for security reasons, so you cannot use any intermediate certificate between your CA certificate and the device certificate there.
-However, you can change this behavior for dedicated installations by changing a platform wide configuration setting and increasing the allowed maximum length of the chain of certificates to more than 2.
-If you change the maximum chain length for your dedicated installation, we strongly recommend you to use the proof of possession feature to protect your service from DOS attacks.
+Keep in mind that in the {{< product-c8y-iot >}} cloud the maximum length of the chain of certificates is currently restricted to 10.
+This behaviour can be changed for dedicated installations by changing a platform wide configuration setting and increasing (or decreasing) the allowed maximum length of the chain of certificates to more (or less) than 10.
+If you use a chain with a length greater than 2, we strongly recommend you to use the proof of possession feature to protect your service from DOS attacks.
+
 To create the intermediate certificate:
 
 1. Create a new directory for intermediate certificates inside the caCertificate path: `mkdir intermediateCertificate`
@@ -383,6 +384,7 @@ Performing the proof of possession steps filters out all certificates without pr
 
 However, since the public part of a certificate (and the subcertificates) is not secret, anyone on the internet theoretically has access to it.
 A potential attacker could upload the public part of a certificate to {{< product-c8y-iot >}} platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).
+In this case the {{< product-c8y-iot >}} platform cannot decide which uploader is the legitimate one, so the platform does not accept any reference to this certificate as valid, which would result in a DOS scenario.
 
 To ensure verification of ownership by the uploader, a proof of possession is required by the platform.
 

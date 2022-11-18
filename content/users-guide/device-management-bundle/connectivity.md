@@ -38,11 +38,11 @@ The following description is primarily based on Jasper, but the same configurati
 
 The following sections describe:
 
-* How to [set up your Jasper Control Center account](#link-account) (examplarily)
-* How to configure the [connectivity](#connectivity-configuration) to the SIM provider in your {{< product-c8y-iot >}} tenant
-* How to [link SIMs](#link-sims) and mobile devices
-* Which information is shown in the [Connectivity tab](#jasperinfo)
-* How to [manage connectivity](#managing) from Device Management
+* How to [set up your Jasper Control Center account](#link-account) (examplarily).
+* How to configure the [connectivity for the SIM provider](#connectivity-configuration) in your {{< product-c8y-iot >}} tenant.
+* How to [link SIMs and mobile devices](#link-sims).
+* Which information is shown in the [Connectivity tab](#jasperinfo).
+* How to [manage connectivity](#managing) from Device Management.
 
 <a name="link-account"></a>
 ### Setting up your Jasper Control Center account
@@ -91,11 +91,11 @@ The Connectivity agent is now set up.
 <a name="link-sims"></a>
 ### Linking SIMs and mobile devices
 
-Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown,
+Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown:
 
-* your user does not have permissions for Connectivity,
-* the device is not linked to a SIM card,
-* the device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
+* Your user does not have permissions for Connectivity.
+* The device is not linked to a SIM card.
+* The device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
 
 To assign permissions, navigate to the Administration application and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.
 
@@ -144,13 +144,13 @@ The second row shows further status information: The ICCID of the SIM card, the 
 
 At the bottom you will find usage information for the current month, that is, from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
 
-The **SMS** section shows the text messages sent to the device and received from the device, including information on
+The **SMS** section shows the text messages sent to the device and received from the device, including information on:
 
-* when the message was sent or received
-* where it was sent from and where it was sent to
-* the delivery status of the message:
- * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
- * For messages from the device: "Received", if it was received by the SIM provider, or "Cancelled", if it was not yet received by the SIM provider.
+* When the message was sent or received.
+* Where it was sent from and where it was sent to.
+* The delivery status of the message:
+  * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
+  * For messages from the device: "Received", if it was received by the SIM provider, or "Cancelled", if it was not yet received by the SIM provider.
 * What the direction of the message is: MT ("Mobile terminated"), if it went to the device, or MO ("Mobile originated") if it came from the device.
 
 Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking **Send SMS**.

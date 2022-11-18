@@ -44,9 +44,9 @@ The Device Management application provides various features that support you in 
 | [Managing device firmware](#firmware-repo)           | How to retrieve and manage firmware, firmware versions, and patches in the firmware repository and how to install or update them on devices. |
 | [Managing device software](#software-repo)           | How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.          |
 | [Managing configurations](#configuration-repository) | How to retrieve configuration data, store and manage it in a configuration repository as configuration snapshot.                         |
-| [Device credentials](#credentials)                   | How to manage all credentials generated for your connected devices.                                                                         |
-| [Device profiles](#device-profiles)                  | How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.                                 |
-| [Trusted certificates](#trusted-certificates)        | How to manage trusted certificates.                                                                                                         |
+| [Managing device credentials](#credentials)          | How to manage all credentials generated for your connected devices.                                                                         |
+| [Managing device profiles](#device-profiles)         | How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.                                 |
+| [Managing trusted certificates](#trusted-certificates)| How to manage trusted certificates.                                                                                                         |
 
 All features are accessible through the **Management** menu in the navigator:
 
@@ -486,7 +486,7 @@ For details on software, see [Managing device software](#software-repo).
 
 Click **Add configuration** to add a configuration file to the profile. Select a configuration file from the list and click **Save** to add the selection to the profile. You can add multiple configuration files to a profile.
 
-For details on configuration snapshots, see [Managing configuration snapshots](#configuration-repository).
+For details on configuration snapshots, see [Managing configurations](#configuration-repository).
 
 #### To update device profiles
 
@@ -520,10 +520,10 @@ Deleting a profile deletes the entry from the device profile repository. It has 
 <a name="applying-device-profiles"></a>
 ### Applying device profiles to devices
 
-Device profiles can be assigned to
+Device profiles can be assigned to:
 
-* [individual devices](#to-apply-profiles-to-single-devices)
-* [multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices)
+* [Individual devices.](#to-apply-profiles-to-single-devices)
+* [Multiple devices through bulk operations.](#to-apply-profiles-to-multiple-devices)
 
 The **Device profile** tab of a particular device shows the details of the currently installed profile on a device.
 

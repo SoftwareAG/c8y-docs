@@ -204,7 +204,15 @@ If you create a custom property called "Whiteboard" for a building which has roo
 
 This option allows you to upload a file to define the custom property.
 
-If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size (MB)** field. When you create an asset with this custom property, you can only upload files of the allowed file types with a file size not exceeding the file size limit.
+If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size in MB** field. When you create an asset with this custom property, you can only upload files of the allowed file types with a file size not exceeding the file size limit. 
+
+{{< c8y-admon-info>}}
+
+If there is a file size limit set on the tenat, you see the limit in the label. For example: If the max file size set on tenant is 1 GB,the label looks like Max file size in MB ( Size limit on tenant: 1024 MB).<br>
+During Bulk import the file size validation is skipped as the file is already uploaded to the tenant.
+
+
+{{< /c8y-admon-info>}}
 
 **Example:**
 

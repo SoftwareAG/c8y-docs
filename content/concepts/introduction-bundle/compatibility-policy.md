@@ -14,7 +14,7 @@ weight: 75
 * [Device integration using MQTT](/device-integration/mqtt/)
 
 
-{{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, applications shall always obey a few basic rules:
+However, {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, applications shall always obey a few basic rules:
 
 * Clients shall only use documented API methods and documented behavior. Do not rely on undocumented but observed behavior.
 * Clients shall only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed.
@@ -35,7 +35,7 @@ To maintain API and product quality we may, from time to time, hold back new API
 {{< product-c8y-iot >}} Core libraries and software development kit APIs (Java/JavaScript/C++/…) may be changed. The libraries and SDKs help developers to access the REST and MQTT APIs in their custom implementation and are typically bundled with the custom implementation. In case {{< product-c8y-iot >}} provides a new version of the libraries, it is not required to upgrade the custom implementation since the underlying REST and MQTT APIs remain compatible as long as no breaking changes happen (see [API compatibility](/concepts/introduction/#api-compatibility)).
 
 {{< c8y-admon-info >}}
-Regular upgrades to the latest SDK versions are strongly recommended to be able to benefit from new product features as well as the latest bug and security fixes. Changes are communicated as part of the {{< product-c8y-iot >}} release notes. It is also strongly recommended considering software updates for devices from the start.
+Regular upgrades to the latest SDK versions are strongly recommended to be able to benefit from new product features as well as the latest bug and security fixes. Changes are communicated as part of the {{< product-c8y-iot >}} release notes. Whenever possible, it is also strongly recommended considering software updates for devices from the start.
 {{< /c8y-admon-info >}}
 
 #### No forward compatibility
@@ -48,8 +48,8 @@ For clarification, {{< product-c8y-iot >}} uses a four-digit versioning scheme. 
 
 #### Applications and microservices
 
-You can, in general, run an older application or microservice version against a newer {{< product-c8y-iot >}} backend, as long as the application or microservice uses documented APIs only.  In the rare case of announced breaking changes it might be required to update the application or microservice with a more recent version of an SDK before the change becomes effective.
+In general, you can run an older application or microservice version against a newer {{< product-c8y-iot >}} backend, as long as the application or microservice uses documented APIs only.  In the rare case of announced breaking changes it might be required to update the application or microservice with a more recent version of an SDK before the change becomes effective.
 
-#### {{< product-c8y-iot >}} functionality
+#### Cumulocity IoT functionality
 
 {{< product-c8y-iot >}} microservices and user interface features may be deprecated. In this case, the {{< product-c8y-iot >}} deprecation process provides an early indication to users of the features. Deprecation notices are included in the documentation and the release notes at least one GA release ahead of the GA release where the change becomes effective.

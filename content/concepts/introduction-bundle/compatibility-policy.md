@@ -3,15 +3,16 @@ title: Compatibility policy
 weight: 75
 ---
 
-{{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are preserved. The current compatibility statements are as follows:
+{{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained. The current compatibility statements are described as follows.
 
+<a name="api-compatibility"></a>
 #### API compatibility
 
-{{< product-c8y-iot >}}'s REST, SmartREST and MQTT APIs as documented in the product documentation are backwards compatible.  You can find such documentation at:
+{{< product-c8y-iot >}}'s REST, SmartREST and MQTT APIs as documented in the product documentation are backwards compatible.  You can find such documentation in:
 
-* [OpenAPI Specifications - {{< product-c8y-iot >}}](https://cumulocity.com/api/)
-* [SmartREST 2.0](/reference/smartrest-two/)
-* [Device integration using MQTT](/device-integration/mqtt/)
+* [{{< openapi >}}](https://cumulocity.com/api/)
+* [Reference guide > SmartREST 2.0](/reference/smartrest-two/)
+* [Device Integration > Device integration using MQTT](/device-integration/mqtt/)
 
 
 However, {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, applications shall always obey a few basic rules:
@@ -19,7 +20,7 @@ However, {{< product-c8y-iot >}} is continually improving the user experience an
 * Clients shall only use documented API methods and documented behavior. Do not rely on undocumented but observed behavior.
 * Clients shall only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed.
 * Clients can rely on a stable inventory API where they can manage their inventory objects. However, the data structures for objects owned by the {{< product-c8y-iot >}} platform can change.
-* APIs are free to return more JSON fields and clients must be written in a way that they ignore such fields.
+* APIs are free to return more JSON fields, therefore, clients must be written in a way that they ignore such fields.
 
 
 {{< c8y-admon-info >}}
@@ -32,15 +33,15 @@ To maintain API and product quality we may, from time to time, hold back new API
 
 #### SDK and client library compatibility
 
-{{< product-c8y-iot >}} Core libraries and software development kit APIs (Java/JavaScript/C++/…) may be changed. The libraries and SDKs help developers to access the REST and MQTT APIs in their custom implementation and are typically bundled with the custom implementation. In case {{< product-c8y-iot >}} provides a new version of the libraries, it is not required to upgrade the custom implementation since the underlying REST and MQTT APIs remain compatible as long as no breaking changes happen (see [API compatibility](/concepts/introduction/#api-compatibility)).
+{{< product-c8y-iot >}} core libraries and software development kit APIs (like Java, JavaScript, C++) may be changed. The libraries and SDKs help developers to access the REST and MQTT APIs in their custom implementation and are typically bundled with the custom implementation. In case {{< product-c8y-iot >}} provides a new version of the libraries, it is not required to upgrade the custom implementation since the underlying REST and MQTT APIs remain compatible as long as no breaking changes happen (see [API compatibility](#api-compatibility)).
 
 {{< c8y-admon-info >}}
-Regular upgrades to the latest SDK versions are strongly recommended to be able to benefit from new product features as well as the latest bug and security fixes. Changes are communicated as part of the {{< product-c8y-iot >}} release notes. Whenever possible, it is also strongly recommended considering software updates for devices from the start.
+Regular upgrades to the latest SDK versions are strongly recommended to be able to benefit from new product features as well as the latest bug and security fixes. Changes are communicated as part of the {{< product-c8y-iot >}} release notes. Whenever possible, it is also strongly recommended to consider software updates for devices from the start.
 {{< /c8y-admon-info >}}
 
 #### No forward compatibility
 
-We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} {{< c8y-current-version >}} , please make sure that the client library or SDK that you use has version {{< c8y-current-version >}}  or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
+We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} {{< c8y-current-version >}}, make sure that the client library or SDK that you use has version {{< c8y-current-version >}}  or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
 
 #### Version schema
 

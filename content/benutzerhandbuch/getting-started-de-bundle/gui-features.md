@@ -1,10 +1,12 @@
 ---
-aliases:
-- /benutzerhandbuch/overview-de/#gui-features
-layout: default
-title: Eigenschaften und Funktionen der Benutzeroberfläche
 weight: 40
+title: Eigenschaften und Funktionen der Benutzeroberfläche
+layout: default
+aliases:
+  - /benutzerhandbuch/overview-de/#gui-features
 ---
+
+
 
 <a name="screen"></a>
 ### Hauptbildschirmelemente
@@ -37,11 +39,11 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Leiste</b></td>
-<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Rechts neben dem Application Switcher befindet sich die Schaltfläche <b>Benutzer</b> mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
+<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Suche</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>Benutzer</b><br> Rechts neben dem Application Switcher befindet sich die Schaltfläche <b>Benutzer</b> mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Menüleiste</b></td>
-<td style="text-align:left">Je nach aktiver Anwendung und Seite gibt es eine zweite Leiste unter der oberen Leiste mit weiteren Funktionalitäten wie einem <b>Neuladen</b>-Link zum neu Laden der Seite oder einem <b>Echtzeit</b>-Link zur Anzeige von Daten in Echtzeit. </td>
+<td style="text-align:left">Je nach aktiver Anwendung und Seite gibt es eine zweite Leiste unter der oberen Leiste mit weiteren Funktionalitäten wie einem <b>Neuladen</b>-Link zum erneuten Laden der Seite oder einem <b>Echtzeit</b>-Link zur Anzeige von Daten in Echtzeit. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Rechter Einschub</b></td>
@@ -90,7 +92,7 @@ Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen en
 
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
 {{< /c8y-admon-important >}}
 
@@ -165,7 +167,7 @@ cl*
 
 Die Liste wird sofort auf die ausgewählten Objekte beschränkt.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Auf bestimmten Seiten durchsucht die Filterfunktion nur die auf der Seite angezeigten Elemente. Wenn also ein Element auf der betreffenden Seite nicht vorkommt, erscheint es auch nicht in den Ergebnissen. Sie müssen zuerst alle Ergebnisse laden, um alle Elemente durchsuchen zu können. Dieses Verhalten gilt für folgende Seiten:
 
 * Geräteprotokolle
@@ -176,7 +178,7 @@ Auf bestimmten Seiten durchsucht die Filterfunktion nur die auf der Seite angeze
 * Dateiablage
 {{< /c8y-admon-important >}}
 
-Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > So filtern Sie Geräte](/benutzerhandbuch/device-management-de#filtering-devices).
+Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de#filtering-devices).
 
 ### Echtzeitverhalten des Navigators
 

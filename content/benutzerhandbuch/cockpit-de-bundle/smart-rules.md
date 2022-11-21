@@ -8,9 +8,9 @@ weight: 80
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
-{{< c8y-admon-info >}}
-Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat. Um Smart Rules verwalten zu können, benötigt der Benutzer die ERSTELLEN-Berechtigung für "Stammdaten" und die ADMIN-Berechtigung für entweder "Globale Smart Rules" oder "Regeln".
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req title="Anforderungen">}}
+Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat.
+{{< /c8y-admon-req >}}
 
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
@@ -23,17 +23,28 @@ Es gibt zwei Typen von Smart Rules:
 
   Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer und mehr).
 
-  In der Seite "Smart Rules" werden nur die globalen Smart Rules angezeigt. Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:
+{{< c8y-admon-req title="Anforderungen">}}
+ROLLEN UND BERECHTIGUNGEN für globale Smart Rules:
 
-  * Smartrule = LESEN-Berechtigung
-  * Smartrule = ADMIN-Berechtigung
-  * CEP management = ADMIN-Berechtigung
-<br>
-<br>
-* **Lokale Smart Rules**
+- Zum Anzeigen einer globalen Smart Rule: LESEN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und LESEN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Bearbeiten von globalen Smart Rules: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Erstellen einer globalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Duplizieren einer globalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Löschen einer globalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+{{< /c8y-admon-req >}}
+
+- **Lokale Smart Rules**
 
   Lokale Smart Rules werden entweder in einer Gruppe oder in einem Gerät erstellt. Sie sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.
 
+{{< c8y-admon-req title="Anforderungen">}}
+ROLLEN UND BERECHTIGUNGEN für lokale Smart Rules:
+
+- Zum Anzeigen von lokalen Smart Rules: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Bearbeiten von lokalen Smart Rules: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Erstellen einer neuen lokalen Smart Rule: CREATE-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Löschen einer lokalen Smart Rule: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+{{< /c8y-admon-req >}}
 
 Smart Rules sind an zwei Orten zu sehen:
 
@@ -47,10 +58,10 @@ Smart Rules sind an zwei Orten zu sehen:
 
   ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
 
-  In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.		
-
+  In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.
 
 <a name="create-rules"></a>
+
 ### So erstellen Sie eine Smart Rule
 
 Smart Rules können entweder auf der Seite **Globale Smart Rules** im Menü **Konfiguration** des Navigators (globale Smart Rules) oder in der Registerkarte **Info** einer Gruppe oder eines Geräts (lokale Smart Rules) erstellt werden.
@@ -120,7 +131,7 @@ Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschal
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
 {{< /c8y-admon-important >}}
 

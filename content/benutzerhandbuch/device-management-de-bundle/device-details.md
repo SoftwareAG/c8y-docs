@@ -46,16 +46,16 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
+<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
+<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu Fieldbus-Geräten. Weitere Informationen finden Sie unter <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#firmware">Firmware</a></td>
 <td align="left">Verwaltet die Firmware eines Geräts. Siehe <a href="#managing-firmware">Verwalten von Firmware auf einem Gerät</a>.</td>
-</tr>
-<tr>
-<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
-<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
 </tr>
 <tr>
 <td align="left"><a href="#identity">Identifikator</a></td>
@@ -168,7 +168,6 @@ Weitere Informationen zum Verwalten und Aktualisieren von Firmware auf einem Ger
 
 Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie unter [Geräteprofile auf Geräte anwenden](#applying-device-profiles).
 
-
 <a name="identity"></a>
 ### Identifikator
 
@@ -229,6 +228,7 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 </tbody>
 </table>
 
+<a name="child-devices"></a>
 ### Kindgeräte
 
 Die Registerkarte **Kindgeräte** zeigt eine Liste von Geräten, die mit dem aktuellen Gerät verbunden sind. Wenn es sich bei dem aktuellen Gerät beispielsweise um ein Gateway handelt, werden alle Maschinen, die mit dem Gateway verbunden sind, aufgelistet.
@@ -298,13 +298,19 @@ Bewegen Sie den Mauszeiger über eine Zeile und klicken Sie auf das Löschen-Sym
 
 Die Registerkarte **Messwerte** zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen. Die Diagramme sind in Messwert-Typen aufgeteilt, die jeweils mehrere Graphen und "Series" enthalten können.
 
-Die Abbildung unten zeigt beispielsweise ein Diagramm mit Bewegungsmesswerten, einschließlich Graphen für Beschleunigung in drei Dimensionen sowie ein Diagramm mit Modemstatistiken im Form von Signalstärken und Bit-Fehlerraten.
+So ist etwa im Screenshot unten ein Diagramm für Temperaturmesswerte mit zwei verschiedenen Series zu sehen.
 
 ![Measurements](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-measurements.png)
 
-Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wird pro Einheit eine Y-Achse dargestellt. In der Beispielabbildung bestehen die Bewegungsmesswerte aus drei Parametern mit der Einheit "Meter je Sekundequadrat", daher wird nur eine Achse dargestellt. Die Modemstatistiken bestehen aus einer Signalstärke in Dezibel Milliwatt und der Bit-Fehlerrate in Prozent, daher wird eine Achse pro Graph dargestellt.
+Wenn ein Diagramm Messwerte mit verschiedenen Series enthält, wird pro Series eine Y-Achse dargestellt. Im Beispiel oben werden die Temperaturdaten zweier Sensoren aufgezeichnet, nämlich "sensors-1" und "sensor-2" mit der gleichen Einheit wie °C. Hier werden Messwerte verschiedener Sensoren als
+separate "Series"-Daten kategorisiert. Die Messwerte der jeweiligen Sensoren werden unter verschiedenen Series-Namen gespeichert (identisch mit den Sensornamen), und somit werden hier zwei Achsen dargestellt.
+Gehören die Messwerte derselben Series an, wird hingegen nur eine Y-Achse dargestellt.
 
 Bewegen Sie den Mauszeiger über den Graphen, um detaillierte Informationen zu den Messwerten anzuzeigen. Neben dem Mauszeiger wird ein Tooltip mit Details zum jeweiligen Messwert angezeigt (der Tooltip rastet bei dem am nächsten liegenden Messwert ein).
+
+{{< c8y-admon-info >}}
+Wir empfehlen, maximal 20 Messwerte pro Messung zu verwenden, um optimale Leistung und Lesbarkeit eines einzelnen Graphen in Device Management zu erzielen (der Graph zeigt alle verfügbaren Series an). Wenn Sie nur einige wenige Messwerte aus der Messung anzeigen wollen, empfiehlt sich die Verwendung des Data-Explorers in Cockpit. Dort können Sie die Series auswählen, die im Graph angezeigt werden sollen.
+{{< /c8y-admon-info >}}
 
 **Zeitintervall und Aggregation**
 
@@ -355,7 +361,7 @@ Für die SMS-Konfiguration muss der Router so konfiguriert werden, dass er SMS-K
 1. Geben Sie den Access Point Name (APN) ein.
 2. Geben Sie den Benutzernamen und das Passwort Ihres Kontos in der Plattform ein, mit der Sie eine Verbindung herstellen möchten.
 3. Wählen Sie den Authentifizierungstyp aus.
-4. Klicken Sie auf **Änderungen speichern**, um Ihre Eingaben zu speichern.
+4. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 #### So konfigurieren Sie LAN-Parameter
 
@@ -371,7 +377,7 @@ Die Felder **Name** und **MAC-Adresse** sind nicht konfigurierbar.
 2. Geben Sie den DNS ein.
 3. Geben Sie den DNS 2 ein.
 4. Geben Sie den Domain-Namen ein.
-5. Klicken Sie auf **Änderungen speichern**, um Ihre Eingaben zu speichern.
+5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 {{< c8y-admon-info >}}
 Wenn die LAN-Konfiguration deaktiviert ist, ist automatisch auch die DHCP-Konfiguration deaktiviert.
@@ -401,17 +407,15 @@ Die Registerkarte Shell ermöglicht es, interaktiv mit entfernten Geräten zu ar
 
 Die Registerkarte **Shell** enthält eine Kommandozeile zur Eingabe der Kommandos.
 
-In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie auf **Ausführen**, um das Kommando an das Gerät zu senden. Diese Schaltfläche ist nur aktiviert, wenn das Gerät online ist.
+In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie auf **Ausführen**, um das Kommando an das Gerät zu senden. Diese Schaltfläche wird erst aktiviert, wenn das Kommando in den Textbereich geschrieben wird.
 
 ![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 {{< /c8y-admon-important >}}
 
-Klicken Sie auf **Historie ansehen** rechts in der oberen Menüleiste, um zur Registerkarte **Steuerung** zu wechseln, in der eine Liste der zuvor ausgeführten Kommandos angezeigt wird. Weitere Informationen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Operationen](#operation-monitoring).
-
-{{< product-c8y-iot >}} stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie auf **<_Beispielkommando auswählen** rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie auf **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie auf **Ausführen**, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen.
+{{< product-c8y-iot >}} stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie über dem Kommandozeilenbereich auf **Vordefinierte Kommandos**, um ein Fenster zu öffnen, das eine Liste von verfügbaren vordefinierten Kommandos enthält. Wählen Sie das gewünschte Kommando aus und klicken Sie auf **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen.
 
 ![Device shell predefined](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
 

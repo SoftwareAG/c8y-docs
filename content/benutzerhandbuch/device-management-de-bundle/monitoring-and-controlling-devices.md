@@ -281,7 +281,7 @@ Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Op
 
 Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 {{< /c8y-admon-important >}}
 
@@ -361,10 +361,6 @@ Um die Liste der Bulk-Operationen nach Datum zu filtern, wählen Sie ein Datum i
 Um den Filter zurückzusetzen, klicken Sie direkt daneben auf **Löschen**.
 
 Um beide Filter zurücksetzen, klicken Sie auf **Filter zurücksetzen** am Ende der Liste (nur sichtbar, wenn Filter angewendet wurden).
-
-{{< c8y-admon-info >}}
-Bulk-Operationen, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Bulk-Operationen**.
-{{< /c8y-admon-info >}}
 
 >![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
 

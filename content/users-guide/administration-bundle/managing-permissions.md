@@ -16,7 +16,7 @@ helpcontent:
 
 Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
 
-The following types of roles can be associated with users:
+The following types of roles can be associated with users
 
 - Global roles: Contain permissions that apply to all data within a tenant.
 - Inventory roles: Contain permissions that apply to groups of devices.
@@ -275,7 +275,7 @@ When new features with new permissions are added to {{< product-c8y-iot >}}, the
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
 
 {{< c8y-admon-important >}}
-By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Changing settings](/users-guide/administration/#custom-template) in the *User guide*.
+By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Configuration settings](/users-guide/administration/#custom-template) in the *User guide*.
 {{< /c8y-admon-important >}}
 
 ##### To assign global roles from the user list
@@ -288,9 +288,9 @@ By default it is not possible to change roles of SSO users (created automaticall
 
 ##### To assign global roles from the user page
 
-Click on the row of the respective user in the user list.
-In the user page, select or clear the checkboxes for the relevant global roles at the right.
-Click **Save** to save your settings.
+1. Click on the row of the respective user in the user list.
+1. In the user page, select or clear the checkboxes for the relevant global roles at the right.
+1. Click **Save** to save your settings.
 
 ![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
@@ -371,7 +371,7 @@ Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Inventory roles](#inventory).
 
 {{< c8y-admon-important >}}
 If a user already has a global role containing inventory permissions, the user will be

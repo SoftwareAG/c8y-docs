@@ -121,7 +121,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 	* **User must reset password on next login**: If selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strenth.  
 	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
-4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).
+4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/users-guide/administration#managing-permissions).
 5. Click **Save** to save your settings.
 
 The new user will be added to the user list.
@@ -159,7 +159,7 @@ Click the menu icon at the right of the respective row and then click **Delegate
 
 Click **Undelegate** to remove a delegation.
 
-Refer to [Managing User Hierarchies](/users-guide/enterprise-tenant#user-hierarchies) for details on delegation.
+Refer to [Managing user hierarchies](/users-guide/enterprise-tenant#user-hierarchies) for details on delegation.
 
 {{< c8y-admon-info >}}
 You need a role with user management permission to perform this option.

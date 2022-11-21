@@ -82,7 +82,10 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 2. Set a **Cache duration** in seconds to determine how long information from the provider is cached. This will prevent timeout issues.
 3. Click **Save** to save your settings.
 
-Depending on the connectivity provider you choose you would need to provide parameters which are specific for every provider.  **Cache duration** defines how long SIM data returned by the provider is cached before fresh data is requested again, in seconds. This mechnism aims at reducing traffic and number of requests to SIM providers for billing and reliability purposes. Longer cache duration means less traffic to your SIM provider, shorter duration means more current data is displayed.
+Depending on the connectivity provider you choose you must provide parameters specific to the provider.
+The parameter **Cache duration** defines how long SIM data returned by the provider is cached before fresh data is requested again, in seconds.
+This reduces traffic and the number of requests to SIM providers for billing and reliability purposes.
+A longer cache duration means less traffic to your SIM provider while a shorter duration means that more recent data is displayed.
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
 

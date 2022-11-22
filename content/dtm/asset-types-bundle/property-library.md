@@ -210,7 +210,7 @@ If selected, enter the allowed file types separated by a comma in the **Allowed 
 
 If there is a file size limit set for the tenat, you see the limit in the label.
 
-For example: If the max file size set on tenant is 1 GB,the label looks like Max file size in MB ( Size limit on tenant: 1024 MB).<br>
+So if the maximum file size set for the tenant is 1 GB, the field **Max file size in MB** states the respective value, for example, 1024 MB.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 
 

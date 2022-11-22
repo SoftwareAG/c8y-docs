@@ -227,7 +227,7 @@ To upload the blueprint for a building, you must name the custom property "Build
 1. Select the desired custom property in the **Property Library** to see all the details on the right of the screen.
 2. Edit any content of the custom property.
 3. Click **Save** to save your changes.
-4. If this property is used by any asset type, in the resulting confirmation dialogue, select **Confirm** to continue to save your changes.
+4. If this property is used by any asset type, in the resulting confirmation dialog, select **Confirm** to continue to save your changes.
 
 
 <a name=""></a>
@@ -245,11 +245,11 @@ All custom properties matching the search values are displayed on the screen on 
 
 Select the respective custom property in the **Property Library** and click **Delete** on the bottom right.
 
-In the resulting confirmation dialogue, click **Confirm** to continue.
+In the resulting confirmation dialog, click **Confirm** to continue.
 
 {{< c8y-admon-info>}}
 
-If the custom property you want to delete, is part of an existing asset, you see a error notification and the custom property is not deleted.
+If the custom property you want to delete is part of an existing asset, you see a error notification and the custom property is not deleted.
 
 {{< /c8y-admon-info>}}
 

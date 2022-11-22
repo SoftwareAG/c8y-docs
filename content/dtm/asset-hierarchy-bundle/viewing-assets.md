@@ -57,5 +57,5 @@ To delete a subasset or device in the hierarchy:
 The delete icon appears on hover of each row under the subassets section.
     {{< /c8y-admon-info>}}
 
-2. In the resulting confirmation dialogue, click **Confirm** to continue or **Cancel** to cancel the deletion.
-3. Optionally select the checkbox in the confirmation dialogue to delete all the subassets and devices for the selected asset.
+2. In the resulting confirmation dialog, click **Confirm** to continue or **Cancel** to cancel the deletion.
+3. Optionally select the checkbox in the confirmation dialog to delete all the subassets and devices for the selected asset.

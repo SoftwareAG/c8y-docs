@@ -160,7 +160,7 @@ This approach, allows you to create the desired hierarchy including all asset ty
 1. Click the edit icon on the right side of each asset type.
 2. Make your changes in the editor.
 3. Click **Save**.
-4. If this asset type is used by any asset, select **Confirm** in the resulting confirmation dialogue to continue saving your changes.
+4. If this asset type is used by any asset, select **Confirm** in the resulting confirmation dialog to continue saving your changes.
 
 
 <a name=""></a>

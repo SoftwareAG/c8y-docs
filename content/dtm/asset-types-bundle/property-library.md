@@ -204,12 +204,14 @@ If you create a custom property called "Whiteboard" for a building which has roo
 
 This option allows you to upload a file to define the custom property.
 
-If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size in MB** field. When you create an asset with this custom property, you can only upload files of the allowed file types with a file size not exceeding the file size limit. 
+If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size in MB** field. When you create an asset with this custom property, you can only upload files that adhere to the allowed file types with their file size not exceeding the set limit.
 
 {{< c8y-admon-info>}}
 
-If there is a file size limit set on the tenat, you see the limit in the label. For example: If the max file size set on tenant is 1 GB,the label looks like Max file size in MB ( Size limit on tenant: 1024 MB).<br>
-During Bulk import the file size validation is skipped as the file is already uploaded to the tenant.
+If there is a file size limit set for the tenat, you see the limit in the label.
+
+For example: If the max file size set on tenant is 1 GB,the label looks like Max file size in MB ( Size limit on tenant: 1024 MB).<br>
+During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 
 
 {{< /c8y-admon-info>}}
@@ -241,12 +243,13 @@ All custom properties matching the search values are displayed on the screen on 
 <a name=""></a>
 ### To delete a custom property
 
-1. Select the respective custom property in the **Property Library** and click **Delete** on the bottom right.
-2. In the resulting confirmation dialogue, click **Confirm** to continue.
+Select the respective custom property in the **Property Library** and click **Delete** on the bottom right.
+
+In the resulting confirmation dialogue, click **Confirm** to continue.
 
 {{< c8y-admon-info>}}
 
-If the custom property you want to delete, is part of an existing asset, you see a error notification and custom property is not deleted.
+If the custom property you want to delete, is part of an existing asset, you see a error notification and the custom property is not deleted.
 
 {{< /c8y-admon-info>}}
 

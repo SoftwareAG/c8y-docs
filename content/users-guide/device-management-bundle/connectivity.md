@@ -91,7 +91,7 @@ The Connectivity agent is now set up.
 <a name="link-sims"></a>
 ### Linking SIMs and mobile devices
 
-Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown:
+Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, it is because:
 
 * Your user does not have permissions for Connectivity.
 * The device is not linked to a SIM card.

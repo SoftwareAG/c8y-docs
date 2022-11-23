@@ -33,7 +33,7 @@ To maintain API and product quality we may, from time to time, hold back new API
 
 #### SDK and client library compatibility
 
-{{< product-c8y-iot >}} core libraries and software development kit APIs (like Java, JavaScript, C++) may be changed. The libraries and SDKs help developers to access the REST and MQTT APIs in their custom implementation and are typically bundled with the custom implementation. In case {{< product-c8y-iot >}} provides a new version of the libraries, it is not required to upgrade the custom implementation since the underlying REST and MQTT APIs remain compatible as long as no breaking changes happen (see [API compatibility](#api-compatibility)).
+{{< product-c8y-iot >}} core libraries and SDK APIs (like Java, JavaScript, C++) may be changed. The libraries and SDKs help developers to access the REST and MQTT APIs in their custom implementation and are typically bundled with the custom implementation. In case {{< product-c8y-iot >}} provides a new version of the libraries, it is not required to upgrade the custom implementation since the underlying REST and MQTT APIs remain compatible as long as no breaking changes happen (see [API compatibility](#api-compatibility)).
 
 {{< c8y-admon-info >}}
 Regular upgrades to the latest SDK versions are strongly recommended to be able to benefit from new product features as well as the latest bug and security fixes. Changes are communicated as part of the {{< product-c8y-iot >}} release notes. Whenever possible, it is also strongly recommended to consider software updates for devices from the start.

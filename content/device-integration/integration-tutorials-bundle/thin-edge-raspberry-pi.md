@@ -170,7 +170,7 @@ sudo tedge connect c8y
 ```
 
 When the connection is established, the device will be created in {{< product-c8y-iot >}}.
-If you go to Device Management > Devices > All devices, the device is visible in the list.
+If you navigate to **Device Management** > **Devices** > **All** devices, the device is visible in the list.
 
 #### Step 3 Sending Device Data
 
@@ -372,26 +372,30 @@ sudo tedge connect C8Y
 
 ##### Installing software on a device
 
-1. Go to {{< product-c8y-iot >}}
-2. Click `All devices` in the Devices menu, select the desired device from the device list and open its Software tab.
+1. In {{< product-c8y-iot >}}, click **All devices** in the Device management application.
 
-  The Software tab shows a list of all available software installed on the device. If a given software has a type, it will be displayed next to its name. It is possible to search for a particular software by its name or filter the list by software type.
-3. Click on `Install software`, on the bottom of the page
-4. Find/select the software which was added to the repository in the previous step.
-5. Select the right version and click on `install`
-6. Then click on `apply changes`, the software will be installed.
+2. Select the desired device from the device list and open its **Software** tab.
+  The Software tab shows a list of all available software installed on the device. If a given software has a type, it is displayed next to its name. It is possible to search for a particular software by its name or filter the list by software type.
+
+3. Click **Install software** at the bottom of the page
+4. Find and select the software which was added to the repository in the previous step.
+5. Select the correct version and click **install**.
+6. Click **apply changes** and the software will be installed.
 
 When a different version of the already installed software needs to be installed, choose in step 4 the installed software from the list and in step 5 the right version.
 
-Find more information about [how to manage the software](https://cumulocity.com/guides/users-guide/device-management/#managing-software-on-a-device) on a device.
+For more information on how to manage the software, refer to [Device Management > Managing device data > Managing device software > Managing software on a device](/users-guide/device-management/#managing-software-on-a-device) in the *User guide*.
 
-How to [develop your own plugins](https://thin-edge.github.io/thin-edge.io/html/tutorials/write-my-software-management-plugin.html) is described here.
+For more information on how to develop your own plugins, refer to [Developer Documentation > Write my own software management plugin](https://thin-edge.github.io/thin-edge.io/html/tutorials/write-my-software-management-plugin.html) in the *thin-edge.io docs*.
 
 #### Step 6 Manage configuration files
 
-With thin-edge.io it is possible to manage config files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device Management.
+With thin-edge.io you can manage config files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device Management.
 
-This functionality is directly installed with the initial script. However, it is needed to configure the `/etc/tedge/c8y/c8y-configuration-plugin.toml` and add the entries for the configuration files which need to be managed. Just copy the following content to that file:
+This functionality is installed with the initial script.
+However, you must configure it in */etc/tedge/c8y/c8y-configuration-plugin.toml* and add the entries for the configuration files to be managed.
+Add the following to the file:
+
 ```
 files = [
     { path = '/etc/tedge/tedge.toml' },
@@ -400,18 +404,23 @@ files = [
     { path = '/etc/mosquitto/mosquitto.conf', type = 'mosquitto.conf' }
 ]
 ```
-where:
-* path is the full path to the configuration file.
-* type is a unique alias for each file entry which will be used to represent that file in Cumulocity UI.
 
-Then start the configuration plugin process and enable it on boot by ` systemctl ` .
+Where:
+
+* `path` is the full path to the configuration file.
+* `type` is a unique alias for each file entry which will be used to represent that file in the Cumulocity UI.
+
+Then start the configuration plugin process and enable it on boot via `systemctl`:
+
 ```
 sudo systemctl start c8y-configuration-plugin.service
 sudo systemctl enable c8y-configuration-plugin.service
 ```
 
-
-Then navigate to  {{< product-c8y-iot >}} Device Management and the desired device. Open its Configuration tab. You can find c8y-configuration-plugin and more are listed as supported configuration types, as declared in the plugin configuration file. Here you can save the configuration files into the repository or download them.
+Navigate to the Device Management application and to the desired device.
+Open its **Configuration** tab.
+c8y-configuration-plugin and more are listed as supported configuration types, as declared in the plugin configuration file.
+Save the configuration files in the repository or download them.
 
 
 ##### Change configuration files via the platform
@@ -503,8 +512,8 @@ To see the content of the log files in {{< product-c8y-iot >}}, take the followi
 If `c8y-log-plugin.toml` is added to the `c8y-configuration-plugin.toml` it is possible to do the administration from there.
 However, keep in mind that the daemon has to be restarted every time the `/etc/tedge/c8y/c8y-log-plugin.toml` is touched via the command line.
 
-##### Final remarks and summary
+##### References
 
-With this getting started tutorial you gained some insights on how to install and configure thin-edge.io on a Raspberry Pi.
-
-If you didn't try the optional steps in this tutorial, it might be a nice idea to work on these as you then get a better insight into the device management capabilities of thin-edge.io. Other things you can work on are capabilities like working with child devices, building your own plugin etc. Tutorials for that can be found [here](https://thin-edge.github.io/thin-edge.io/html/).
+The optional steps in this tutorial provide a better insight into the device management capabilities of thin-edge.io.
+Further topics are working with child devices, building your own plugin and so on.
+Tutorials for that can be found in the [thin-edge.io docs](https://thin-edge.github.io/thin-edge.io/html/).

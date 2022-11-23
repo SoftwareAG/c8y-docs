@@ -47,6 +47,6 @@ You can select if the customization of the home dashboard:
 * Is only reflected in the current custom application.
 * Is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory".
 
-#### Miscellaneous
+#### Misc
 
 Finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.

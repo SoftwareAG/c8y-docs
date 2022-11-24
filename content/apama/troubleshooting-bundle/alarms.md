@@ -44,10 +44,7 @@ The following is a list of the alarms. The information further down below explai
 - [Smart rule configuration failed](#smartrule_configuration_error)
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
-- [The correlator input queues are approaching full](#input_queues_overflow)
-- [The correlator output queues are approaching full](#output_queues_overflow)
-- [The correlator input and output queues are approaching full](#input_output_queues_overflow)
-- [The CEP queue is full](#cep_queue_full) (this alarm is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl)
+- [Performance alarms](#performance_alarms)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -327,13 +324,18 @@ This alarm is raised in certain cases when the connection between the Apama-ctrl
 
 Apama-ctrl will automatically restart. Report this to [product support](/welcome/contacting-support) if this is happening frequently.
 
-<a name="input_queues_overflow"></a>
-#### The correlator input queues are approaching full
 
-This alarm is raised whenever the correlator input queues are approaching overflow.
+<a name="performance_alarms"></a>
+#### Performance alarms
 
-- Alarm type: `input_queues_overflow`
-- Alarm text: Correlator input queues are approaching full. If this alarm is being regularly raised, there is a chance that the correlator
+The correlator's input and output queues are periodically monitored to check for building up of events.
+Full input or output queues can cause a serious performance degradation.
+Different types of alarms can be raised, where the alarm text contains a snapshot of the correlator status at the time of raising the alarm.
+
+This alarm is raised for the input queues:
+
+- Alarm type: `input_queues_filling`
+- Alarm text: Correlator input queues are filling. If this alarm is being regularly raised, there is a chance that the correlator
   cannot process the requests at the rate at which they are arriving.
   \- Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
@@ -341,19 +343,10 @@ This alarm is raised whenever the correlator input queues are approaching overfl
   Slowest context queue size: &lt;size&gt;
 - Alarm severity: WARNING
 
-The correlator's input and output queues are periodically monitored to check for building up of events. If the pending queue size grows above the normal threshold (20,000 for the input queue and 10,000 for the output queue), an alarm is raised. The alarm text contains a snapshot of the correlator status at the time of raising the alarm. A correlator with a full input or output queue can cause a serious performance degradation.
+This alarm is raised for the output queues:
 
-The correlator queue size is based on the number of events, not raw bytes.
-
-The alarm text also contains information about the slowest receiver and the most backed-up context. To diagnose the cause, see the information given in [The CEP queue is full](#cep_queue_full). A problem is likely to trigger this alarm followed by the "CEP queue is full" alarm.
-
-<a name="output_queues_overflow"></a>
-#### The correlator output queues are approaching full
-
-This alarm is raised whenever the correlator output queues are approaching overflow.
-
-- Alarm type: `output_queues_overflow`
-- Alarm text: Correlator output queues are approaching full. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
+- Alarm type: `output_queues_filling`
+- Alarm text: Correlator output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
   is not able to process the requests at the rate the correlator is sending them.
   \- Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
@@ -361,32 +354,29 @@ This alarm is raised whenever the correlator output queues are approaching overf
   Slowest context queue size: &lt;size&gt;
 - Alarm severity: WARNING
 
-See the description for [The correlator input queues are approaching full](#input_queues_overflow) for more details.
+This alarm is raised for both the input and output queues:
 
-<a name="input_output_queues_overflow"></a>
-#### The correlator input and output queues are approaching full
-
-This alarm is raised whenever both the correlator input queues and output queues are approaching overflow.
-
-- Alarm type: `input_output_queues_overflow`
-- Alarm text: Correlator input and output queues are approaching full. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
-  is not able to process the requests at the rate the correlator is sending them, causing the slowest output queue to overflow.
-  This might have also caused the slowest input queue to overflow.
+- Alarm type: `input_output_queues_filling`
+- Alarm text: Correlator input and output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
+  is not able to process the requests at the rate the correlator is sending them, causing the slowest output queue to fill up.
+  This might have also caused the slowest input queue to fill up.
   \- Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
   Slowest context queue size: &lt;size&gt;
 - Alarm severity: MAJOR
 
-See the description for [The correlator input queues are approaching full](#input_queues_overflow) for more details.
+The correlator queue sizes are based on the number of events, not raw bytes.
+See also [List of correlator status statistics]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DepAndManApaApp_list_of_correlator_status_statistics.html) in the Apama documentation.
 
-<a name="cep_queue_full"></a>
-#### The CEP queue is full
-
-This alarm is raised whenever the CEP queue for the respective tenant is full.
+Check the text from the above alarms to get an indication of which queue is blocking.
+A problem is likely to trigger these alarms, followed by this alarm:
 
 - Alarm text: Real-time event processing is currently overloaded and may stop processing your events. Please contact support.
 - Alarm severity: CRITICAL
+
+This alarm is raised whenever the CEP queue for the respective tenant is full.
+It is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl.
 
 Karaf nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
 
@@ -394,7 +384,7 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the following alarms: [The correlator input queues are approaching full](#input_queues_overflow), [The correlator output queues are approaching full](#output_queues_overflow) or [The correlator input and output queues are approaching full](#input_output_queues_overflow) (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the correlator input and output queues from the above alarms (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to {{< product-c8y-iot >}}.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.

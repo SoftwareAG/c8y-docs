@@ -422,61 +422,46 @@ Open its **Configuration** tab.
 c8y-configuration-plugin and more are listed as supported configuration types, as declared in the plugin configuration file.
 Save the configuration files in the repository or download them.
 
-
 ##### Change configuration files via the platform
 
-If there is a need to change one or more configuration files, there is more than one option to follow:
+If you want to change one or more configuration files, there are several options:
 
-* Create a whole new configuration file
+* Create a new configuration file
 * Change an existing configuration file
 
-In this tutorial the last option is explained, there are some steps to be taken:
+This tutorial makes use of the second option.
 
-![Configuration Management](./images/ConfigurationManagement.png)
-
-
-1. Save the configuration file to the repository (`Device management -> configuration`. In the list of configuration files  pick  a file to change and click on `Save to repository`).
-
-2. Go to `Management -> configuration snapshots repository`.
-3. Download the configuration file which needs to be changed (the one you saved to the repository in step 1).
-4. Edit this file as needed.
-5. Click on `Add configuration snapshot` (top right).
-6. Fill the fields, make sure the device type is `thin-edge.io`, select the right Configuration type and add the (just edited) configuration file and click on  `Add configuration`.
-7. Go back to the device and then to the configuration. In the Available supported configuration you will see the configuration file which was just created. When you click on it, you will see the content.
-
-8. Then click on  ``` send configuration to device ``` the configuration file is uploaded to the device.
-9. If you then click on ``` get snapshot from device ``` (select the right configuration file in device supported configurations), you will see the change of the configuration file.
-
-8. Then click on  `send configuration to device` the configuration file is uploaded to the device.
-9. If you then click on `get snapshot from device` (select the right configuration file in device-supported configurations), you will see the change of the configuration file.
-
-
-
-![Change Configuration](./images/ChangeConfiguration.png)
+1. In the Device Management application, select a device from **All devices**, then select a configuration file from the list in the **Configuration** tab. Save the configuration file to the repository by clicking **Save to repository**.
+2. From the left side navigation, select **Management** > **Configuration repository**.
+3. Download the configuration file from the list by clicking the three dots at the end of the row and then **Download**.
+4. Edit the file as needed.
+5. Click **Add configuration snapshot** at the top right.
+6. Fill in the fields and make sure that the device type is `thin-edge.io`. Select the correct configuration type, add the edited configuration file and click **Add configuration**.
+7. Go back to the **Configuration** tab of the device. In the available supported configurations you can see the configuration file which was just created. Click it to see its content.
+8. Click **Send configuration to device** to upload it to the device.
+9. Click **Get snapshot from device** to verify the change of the configuration file.
 
 ##### Change collectd configuration file via the platform
 
-To change the collectd metrics of the device, which are displayed in {{< product-c8y-iot >}}, the next steps are needed. These are similar to the steps in the previous paragraphs.
+To change the `collectd` metrics of the devices which are displayed in {{< product-c8y-iot >}}, follow the steps below. They are similar to the steps in the previous paragraphs.
 
+1. Add the line below to the `/etc/tedge/c8y/c8y-configuration-plugin.toml` file:
 
-1. Add this line ```{ path = '/etc/collectd/collectd.conf', type = 'collectd.conf' }, ``` to the `/etc/tedge/c8y/c8y-configuration-plugin.toml` file.
+    ```
+    { path = '/etc/collectd/collectd.conf', type = 'collectd.conf' },
+    ```
 
-2. Save the configuration file to the repository
-3. Go to `Management -> configuration` snapshots repository
-4. Download the configuration file which needs to be changed
-5. Edit this file as needed
-6. Click on ``` Add configuration snapshot ``` (top right)
-7. Fill in the fields, make sure the device type is ``` thin-edge.io ``` and select the right Configuration type and add the (just edited) configuration file.) and click on  ```Add configuration ```
-8. Go back to the device and then to the configuration. In the Available supported configuration you will see the configuration file which was just created. When you click on it, you will see the content
-9. Then click on  ``` send configuration toe device ``` the configuration file is uploaded to the device.
-10. If you then click on get snapshot from device (select the right configuration file in device supported configurations), you will see the change of the configuration file.
+2. Follow the steps in [Change configuration files via the platform](#change-configuration-files-via-the-platform).
 
 
 #### Step 7 Manage Log Files
 
 With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as a part of Device Management.
 
-This functionality is also directly installed with the initial script, but some configuration is needed for the `/etc/tedge/c8y/c8y-log-plugin.toml` and add the entries for the log files that can be requested. Just copy the following content to that file:
+This functionality is directly installed with the initial script.
+However, you must configure it in */etc/tedge/c8y/c8y-log-plugin.toml* and add the entries for the configuration files to be managed.
+Add the following to the file:
+
 ```
 files = [
   { type = "software-management", path = "/var/log/tedge/agent/software-*" },
@@ -490,27 +475,18 @@ files = [
   { type = "kern", path = "/var/log/kern.log" }
 ]
 ```
-The daemon is started/enabled via:
+
+The daemon is started and enabled with the commands below:
+
 ```
 sudo systemctl start c8y-log-plugin
-
 sudo systemctl enable c8y-log-plugin
 ```
-To see the content of the log files in {{< product-c8y-iot >}}, take the following steps:
 
-1. Go to device management and select the right device.
+To see the content of the log files in {{< product-c8y-iot >}}, follow the steps in [Device Management > Device details > Logs > To request log information](/users-guide/device-management/#to-request-log-information).
 
-2. Select `Logs`. In this screen, you can request Log files
-3. Click on `Request log file`(the top right).
-4. In the next screen you can select a date range and a type of log.
-5. Then click on `Request log file`.
-6. Refresh the page.
-7. Click on the requested log file, you should see something similar to this:
-
-![Request Log file](./images/RequestLogfile.png)
-
-If `c8y-log-plugin.toml` is added to the `c8y-configuration-plugin.toml` it is possible to do the administration from there.
-However, keep in mind that the daemon has to be restarted every time the `/etc/tedge/c8y/c8y-log-plugin.toml` is touched via the command line.
+If `c8y-log-plugin.toml` is added to the `c8y-configuration-plugin.toml` file it is possible to do the administration from there.
+However, keep in mind that the daemon must be restarted if the `/etc/tedge/c8y/c8y-log-plugin.toml` file is touched via the command line.
 
 ##### References
 

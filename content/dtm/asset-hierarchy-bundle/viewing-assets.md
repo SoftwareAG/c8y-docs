@@ -21,6 +21,11 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 
 5. All the custom properties for this asset will be displayed on the right.
 
+{{< c8y-admon-info>}}
+The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add child assets](/dtm/asset-hierarchy/#add-child-assets) are not visible for the last hierarchical level.<br>
+If you edit the custom property or the asset type associated with the selected asset, you see a warning icon next to the asset type name.<br>
+You see a warning message if one or more properties associated with the asset are not present.
+{{< /c8y-admon-info>}}
 
 <a name=""></a>
 #### To view an asset hierarchy
@@ -52,5 +57,5 @@ To delete a subasset or device in the hierarchy:
 The delete icon appears on hover of each row under the subassets section.
     {{< /c8y-admon-info>}}
 
-2. In the resulting confirmation dialogue, click **Confirm** to continue or **Cancel** to cancel the deletion.
-3. Optionally select the checkbox in the confirmation dialogue to delete all the subassets and devices for the selected asset.
+2. In the resulting confirmation dialog, click **Confirm** to continue or **Cancel** to cancel the deletion.
+3. Optionally select the checkbox in the confirmation dialog to delete all the subassets and devices for the selected asset.

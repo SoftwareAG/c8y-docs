@@ -8,7 +8,10 @@ helpcontent:
     content: "The **Subassets** tab provides information on all subassets of the particular group which is selected in the navigator. Subassets can either be other groups or devices.
 
 
-    Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group."
+    Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group. To add a group, click **Add group** at the right of the top menu bar.
+
+
+    To assign devices to a group, navigate to its **Subassets** tab, click **Assign devices** at the right of the top menu bar, and select the devices from the list. See also the *User guide*."
 ---
 
 <a name="assets"></a>
@@ -115,7 +118,7 @@ ROLES & PERMISSIONS in groups context:
 - To delete any group: ADMIN permission for permission type "Inventory"
 - To rename a group or change group description: ADMIN permission for permission type "Inventory"
 - To view specific groups: READ permissions for "Inventory" in the inventory roles
-- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles 
+- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles
 
 Note that global inventory permissions override inventory role permissions.
 {{< /c8y-admon-req >}}

@@ -7,10 +7,13 @@ aliases:
 helpcontent:
   - label: data-broker
     title: Data broker
-    content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations.
-
-
-    Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant. For details, see the *User guide*."
+    content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations."
+    label: data-connector
+    title: Data connector
+    content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** in the top menu bar. For details, see the *User guide*."
+    label: data-subscriptions
+    title: Data subscriptions
+    content: "The **Data subscriptions** page shows a list of all currently defined data forwarded to your tenant. For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card. Use the toggle to temporarily stop forwarding data into your tenant.For details, see the *User guide*."
 ---
 
 Data broker lets you share data selectively with other tenants. You can share:

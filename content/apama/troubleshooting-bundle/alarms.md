@@ -328,8 +328,10 @@ Apama-ctrl will automatically restart. Report this to [product support](/welcome
 <a name="performance_alarms"></a>
 #### Performance alarms
 
-The correlator's input and output queues are periodically monitored to check for building up of events.
-Full input or output queues can cause a serious performance degradation.
+Input or output queues that are filling up are a symptom of a serious performance degradation,
+suggesting that events are being produced faster than they can be processed.
+
+The performance of the correlator's input and output queues is periodically monitored.
 Different types of alarms can be raised, where the alarm text contains a snapshot of the correlator status at the time of raising the alarm.
 
 This alarm is raised for the input queues:
@@ -366,7 +368,6 @@ This alarm is raised for both the input and output queues:
   Slowest context queue size: &lt;size&gt;
 - Alarm severity: MAJOR
 
-The correlator queue sizes are based on the number of events, not raw bytes.
 See also [List of correlator status statistics]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DepAndManApaApp_list_of_correlator_status_statistics.html) in the Apama documentation.
 
 Check the text from the above alarms to get an indication of which queue is blocking.
@@ -384,7 +385,7 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the correlator input and output queues from the above alarms (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming smart rules, analytic models or EPL apps, or the microservice is deprived of resources, or code is not optimized, and so on. Check the correlator input and output queues from the above alarms (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to {{< product-c8y-iot >}}.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.

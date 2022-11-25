@@ -329,7 +329,7 @@ Apama-ctrl will automatically restart. Report this to [product support](/welcome
 #### Performance alarms
 
 Input or output queues that are filling up are a symptom of a serious performance degradation,
-suggesting that events are being produced faster than they can be processed.
+suggesting that events or requests are being produced by Apama or {{< product-c8y-iot >}} faster than they can be processed by Apama or {{< product-c8y-iot >}}.
 
 The performance of the correlator's input and output queues is periodically monitored.
 Different types of alarms can be raised, where the alarm text contains a snapshot of the correlator status at the time of raising the alarm.

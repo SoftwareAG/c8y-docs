@@ -38,9 +38,9 @@ The last three are optional but needed to get a good overview of the capabilitie
 
 [Step 1 Install thin-edge.io](#step-1-install-thin-edgeio)
 
-[Step 2 Configure and Connect to the platform](#step-2-configure-and-connect-to-the-platform)
+[Step 2 Configure and connect to the platform](#step-2-configure-and-connect-to-the-platform)
 
-[Step 3 Sending Device Data](#step-3-sending-device-data)
+[Step 3 Sending device data](#step-3-sending-device-data)
 
 [Step 4 Monitor the device](#step-4-monitor-the-device)
 
@@ -48,7 +48,7 @@ The last three are optional but needed to get a good overview of the capabilitie
 
 [Step 6 Manage configuration files](#step-6-manage-configuration-files)
 
-[Step 7 Manage Log Files](#step-7-manage-log-files)
+[Step 7 Manage log files](#step-7-manage-log-files)
 
 
 #### Step 1 Install thin-edge.io
@@ -172,7 +172,7 @@ sudo tedge connect c8y
 When the connection is established, the device will be created in {{< product-c8y-iot >}}.
 If you navigate to **Device Management** > **Devices** > **All** devices, the device is visible in the list.
 
-#### Step 3 Sending Device Data
+#### Step 3 Sending device data
 
 Once your device is configured and connected to {{< product-c8y-iot >}}, you can start sending measurements, events or alarms.
 With the standard configuration you can not connect externally to the mosquito broker and the messages must be sent directly from the device.
@@ -197,7 +197,7 @@ A single-valued measurement like a temperature measurement can be represented in
 { "temperature": 25 }
 ```
 
-The key-value pair represens the measurement type and the numeric value of the measurement.
+The key-value pair represents the measurement type and the numeric value of the measurement.
 The endpoint that is supervised by the tedge-mapper for measurements is:
 
 ```
@@ -337,7 +337,7 @@ Since the type is generic, any type of software can be managed.
 In thin-edge.io this can be extended with plugins.
 A particular plugin is necessary for every software type.
 
-There are the following plugins:
+The following plugins are available:
 
 * Docker
 * APT
@@ -372,15 +372,15 @@ sudo tedge connect C8Y
 
 ##### Installing software on a device
 
-1. In {{< product-c8y-iot >}}, click **All devices** in the Device management application.
+1. In {{< product-c8y-iot >}}, click **All devices** in the Device Management application.
 
 2. Select the desired device from the device list and open its **Software** tab.
-  The Software tab shows a list of all available software installed on the device. If a given software has a type, it is displayed next to its name. It is possible to search for a particular software by its name or filter the list by software type.
+  The **Software** tab shows a list of all available software installed on the device. If a given software has a type, it is displayed next to its name. It is possible to search for a particular software by its name or filter the list by software type.
 
-3. Click **Install software** at the bottom of the page
+3. Click **Install software** at the bottom of the page.
 4. Find and select the software which was added to the repository in the previous step.
-5. Select the correct version and click **install**.
-6. Click **apply changes** and the software will be installed.
+5. Select the correct version and click **Install**.
+6. Click **Apply changes** and the software will be installed.
 
 When a different version of the already installed software needs to be installed, choose in step 4 the installed software from the list and in step 5 the right version.
 
@@ -390,7 +390,7 @@ For more information on how to develop your own plugins, refer to [Developer Doc
 
 #### Step 6 Manage configuration files
 
-With thin-edge.io you can manage config files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device Management.
+With thin-edge.io you can manage configuration files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device Management.
 
 This functionality is installed with the initial script.
 However, you must configure it in */etc/tedge/c8y/c8y-configuration-plugin.toml* and add the entries for the configuration files to be managed.
@@ -454,9 +454,9 @@ To change the `collectd` metrics of the devices which are displayed in {{< produ
 2. Follow the steps in [Change configuration files via the platform](#change-configuration-files-via-the-platform).
 
 
-#### Step 7 Manage Log Files
+#### Step 7 Manage log files
 
-With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as a part of Device Management.
+With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as part of Device Management.
 
 This functionality is directly installed with the initial script.
 However, you must configure it in */etc/tedge/c8y/c8y-log-plugin.toml* and add the entries for the configuration files to be managed.

@@ -522,8 +522,8 @@ Deleting a profile deletes the entry from the device profile repository. It has 
 
 Device profiles can be assigned to:
 
-* [Individual devices.](#to-apply-profiles-to-single-devices)
-* [Multiple devices through bulk operations.](#to-apply-profiles-to-multiple-devices)
+* [Individual devices](#to-apply-profiles-to-single-devices)
+* [Multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices)
 
 The **Device profile** tab of a particular device shows the details of the currently installed profile on a device.
 

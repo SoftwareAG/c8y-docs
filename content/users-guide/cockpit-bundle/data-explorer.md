@@ -74,7 +74,7 @@ To change the visualization in the data explorer, you can modify several propert
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
-To change the time range on the x-axis:
+To change the time range on the x-axis, use one of the following options:
 
 * Select a different time range from the dropdown list in the top menu bar.
 * Enter a custom time range into the **From** and **To** fields in the data explorer.

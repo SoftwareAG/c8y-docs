@@ -45,16 +45,16 @@ A list of available data points will be opened. For each data point, the followi
 
   |Field|Description|
 |:---|:---|
-|Color|Color for the data point visualization.
-|Label|Label to identify the data point.
-|Fragment|Name of the fragment.
-|Series|Name of the series.
-|Unit|Unit used for the measurement.
-|Target|Target value.
-|Minimum|Minimum value shown on the y-axis.
-|Maximum|Minimum value shown on the y-axis.
-|Yellow range|Min/max values for the yellow range (MINOR alarms).
-|Red range|Min/max values for the red range (CRITICAL alarms).
+|Color|Color for the data point visualization
+|Label|Label to identify the data point
+|Fragment|Name of the fragment
+|Series|Name of the series
+|Unit|Unit used for the measurement
+|Target|Target value
+|Minimum|Minimum value shown on the y-axis
+|Maximum|Minimum value shown on the y-axis
+|Yellow range|Min/max values for the yellow range (MINOR alarms)
+|Red range|Min/max values for the red range (CRITICAL alarms)
 
 3. Click **Save** to add the data point to the library.
 

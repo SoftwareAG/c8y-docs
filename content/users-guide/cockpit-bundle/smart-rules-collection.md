@@ -125,7 +125,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -196,7 +196,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -257,7 +257,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -320,7 +320,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -387,7 +387,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -456,7 +456,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -520,7 +520,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -584,7 +584,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -642,7 +642,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -755,7 +755,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -861,7 +861,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>

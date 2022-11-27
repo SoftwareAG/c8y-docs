@@ -38,7 +38,8 @@ Custom properties have the following parameters:
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the custom property in the DTM application.</td>
+<td style="text-align:left">Used to uniquely identify and store the custom property in the DTM application.<br>
+{{< c8y-admon-info>}} You cannot edit the key field once the property is created. {{< /c8y-admon-info>}} </td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -203,7 +204,17 @@ If you create a custom property called "Whiteboard" for a building which has roo
 
 This option allows you to upload a file to define the custom property.
 
-If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. When you create an asset with this custom property, you can only upload files of the allowed file types.
+If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size in MB** field. When you create an asset with this custom property, you can only upload files that adhere to the allowed file types with their file size not exceeding the set limit.
+
+{{< c8y-admon-info>}}
+
+If there is a file size limit set for the tenat, you see the limit in the label.
+
+So if the maximum file size set for the tenant is 1 GB, the field **Max file size in MB** states the respective value, for example, 1024 MB.<br>
+During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
+
+
+{{< /c8y-admon-info>}}
 
 **Example:**
 
@@ -216,6 +227,7 @@ To upload the blueprint for a building, you must name the custom property "Build
 1. Select the desired custom property in the **Property Library** to see all the details on the right of the screen.
 2. Edit any content of the custom property.
 3. Click **Save** to save your changes.
+4. If this property is used by any asset type, in the resulting confirmation dialog, select **Confirm** to continue to save your changes.
 
 
 <a name=""></a>
@@ -233,9 +245,11 @@ All custom properties matching the search values are displayed on the screen on 
 
 Select the respective custom property in the **Property Library** and click **Delete** on the bottom right.
 
+In the resulting confirmation dialog, click **Confirm** to continue.
+
 {{< c8y-admon-info>}}
 
-If the custom property you want to delete, is part of an existing asset, you see a pop up notification and custom property is not deleted.
+If the custom property you want to delete is part of an existing asset, you see an error notification and the custom property is not deleted.
 
 {{< /c8y-admon-info>}}
 

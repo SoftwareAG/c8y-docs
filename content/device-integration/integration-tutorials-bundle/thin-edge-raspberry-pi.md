@@ -21,10 +21,10 @@ This makes it ideal for testing and trying out as well as some production use ca
 
 ### Prerequisites
 
-To follow this guide, you need the following:
+To follow this tutorial, you need the following:
 
 * A [{{< product-c8y-iot >}}](https://www.softwareag.cloud/site/product/cumulocity-iot.html) trial tenant.
-* A Raspberry Pi (3 or 4) with Raspian installed. For other boards and OS'es, refer to [thin-edge.io platform support](https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/supported-platforms.md) on *GitHub*.
+* A Raspberry Pi (3 or 4) with Raspian installed. For other boards and operating systems, refer to [thin-edge.io platform support](https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/supported-platforms.md) on *GitHub*.
 * An updated device. To update it, run:
   ```
   $ sudo apt-get update && sudo apt-get upgrade
@@ -135,6 +135,7 @@ sudo tedge config set c8y.url {{YOUR_C8Y_URL}}
 thin-edge.io connects via MQTT protocol using an X.509 certificate for authentication.
 To do so, a certificate must be trusted by {{< product-c8y-iot >}}.
 A certificate is trusted when it is added to the trusted certificates and is in an activated state.
+Also see [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management/#trusted-certificates) in the *User guide*.
 
 First, create the device certificate locally:
 
@@ -175,7 +176,7 @@ If you navigate to **Device Management** > **Devices** > **All** devices, the de
 #### Step 3 Sending device data
 
 Once your device is configured and connected to {{< product-c8y-iot >}}, you can start sending measurements, events or alarms.
-With the standard configuration you can not connect externally to the mosquito broker and the messages must be sent directly from the device.
+With the standard configuration you cannot connect externally to the mosquito broker and the messages must be sent directly from the device.
 
 The tedge CLI allows you to send payloads via MQTT:
 
@@ -229,20 +230,20 @@ The endpoint that is supervised by the tedge-mapper for events is:
 tedge/events/{{event-type}}
 ```
 
-The door closed event can be sent as follows:
+The "door closed" event can be sent as follows:
 
 ```
 tedge mqtt pub tedge/events/door '{"text": "A door was closed","time": "2022-06-10T05:30:45+00:00"}'
 ```
 
-An event entry will be visible in Device management -> Your device -> Events.
+An event entry will be visible in **Device management** > **Your device** > **Events**.
 
 #### Step 4 Monitor the device
 
 With thin-edge.io device monitoring, you can collect metrics from the device and forward these device metrics to {{< product-c8y-iot >}}.
 
 thin-edge.io uses the open source component `collectd` to collect the metrics from the device.
-thin-edge.io translates the `collectd` metrics from their native format to the thin-edge.io JSON format and then into the cloud-vendor-specific format.
+thin-edge.io translates the `collectd` metrics from their native format to the Thin Edge JSON format and then into the cloud-vendor-specific format.
 
 Enabling monitoring on your device is a three step process:
 
@@ -322,7 +323,7 @@ INFO: Connected
 
 ```
 
-The monitoring data will appear in {{< product-c8y-iot >}} on the device in the measurement section.
+The monitoring data will appear in {{< product-c8y-iot >}} on the device in the **Measurement** tab.
 
 ##### Edit collectd
 
@@ -369,6 +370,8 @@ sudo tedge connect C8Y
   If you would like to upload your binaries, select the **Upload a binary** option and upload the file to the {{< product-c8y-iot >}} software repository.
 
 4. Click **Add Software**.
+
+Also see [Device Management > Managing device data > Managing device software > To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version) in the *User guide**.
 
 ##### Installing software on a device
 
@@ -419,7 +422,7 @@ sudo systemctl enable c8y-configuration-plugin.service
 
 Navigate to the Device Management application and to the desired device.
 Open its **Configuration** tab.
-c8y-configuration-plugin and more are listed as supported configuration types, as declared in the plugin configuration file.
+The c8y-configuration-plugin and more are listed as supported configuration types, as declared in the plugin configuration file.
 Save the configuration files in the repository or download them.
 
 ##### Change configuration files via the platform
@@ -440,6 +443,8 @@ This tutorial makes use of the second option.
 7. Go back to the **Configuration** tab of the device. In the available supported configurations you can see the configuration file which was just created. Click it to see its content.
 8. Click **Send configuration to device** to upload it to the device.
 9. Click **Get snapshot from device** to verify the change of the configuration file.
+
+Also see [Device Management > Managing device data > Managing configurations](/users-guide/device-management/#managing-configurations) in the *User guide*.
 
 ##### Change collectd configuration file via the platform
 
@@ -485,8 +490,8 @@ sudo systemctl enable c8y-log-plugin
 
 To see the content of the log files in {{< product-c8y-iot >}}, follow the steps in [Device Management > Device details > Logs > To request log information](/users-guide/device-management/#to-request-log-information).
 
-If `c8y-log-plugin.toml` is added to the `c8y-configuration-plugin.toml` file it is possible to do the administration from there.
-However, keep in mind that the daemon must be restarted if the `/etc/tedge/c8y/c8y-log-plugin.toml` file is touched via the command line.
+If `c8y-log-plugin.toml` is added to the *c8y-configuration-plugin.toml* file it is possible to do the administration from there.
+However, keep in mind that the daemon must be restarted if the */etc/tedge/c8y/c8y-log-plugin.toml* file is touched via the command line.
 
 ##### References
 

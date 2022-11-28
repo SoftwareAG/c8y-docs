@@ -16,7 +16,7 @@ helpcontent:
 
 Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
 
-The following types of roles can be associated with users
+The following types of roles can be associated with users:
 
 - Global roles: Contain permissions that apply to all data within a tenant.
 - Inventory roles: Contain permissions that apply to groups of devices.
@@ -118,11 +118,7 @@ You may also see the following legacy roles:
 <a name="create-edit-roles"></a>
 #### To add a global role
 
-Click **Add global role** in the **Global roles** tab.
-
-In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right.
-
-The following screenshot shows the settings for the "admins" role.
+Click **Add global role** in the **Global roles** tab. In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right. The following screenshot shows the settings for the "admins" role.
 
 ![Admin example](/images/users-guide/Administration/admin-global-role-admin.png)
 
@@ -400,12 +396,12 @@ The {{< product-c8y-iot >}} platform provides optimized UI performance for users
 The performance of the following UI pages is improved:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
-* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events).
+* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
 * Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
 
-As an administrator, you can disable the performance feature:
-- on platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
-- on tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where OPTIMIZED is the global default.
+As an administrator, you can disable the performance feature by doing the following:
+- On platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
+- On tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where OPTIMIZED is the global default.
 
 The option looks like the following in the REST API (see also the [{{< openapi >}}](https://cumulocity.com/api/10.16.0/#operation/postOptionCollectionResource)):
 

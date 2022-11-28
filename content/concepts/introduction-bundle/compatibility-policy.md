@@ -12,7 +12,7 @@ weight: 75
 
 * [{{< openapi >}}](https://cumulocity.com/api/)
 * [Reference guide > SmartREST 2.0](/reference/smartrest-two/)
-* [Device SDK Guide > Device integration using MQTT](/device-integration/mqtt/)
+* [Device integration > Device integration using MQTT](/device-integration/mqtt/)
 
 
 However, {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, applications shall always obey a few basic rules:

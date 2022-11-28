@@ -30,7 +30,7 @@ helpcontent:
     Depending on the microservices subscribed to your tenant, you might see other device registration options for specific protocol types.
 
 
-    To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard. For details, see the *User guide*."
+    To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
 <a name="dev-registration"></a>

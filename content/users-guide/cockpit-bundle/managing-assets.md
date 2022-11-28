@@ -3,16 +3,22 @@ weight: 20
 title: Managing assets
 layout: redirect
 helpcontent:
-  - label: managing-assets
+  - label: managing-groups
     title: Managing assets
-    content: "The **Subassets** tab provides information on all subassets of the particular group which is selected in the navigator. Subassets can either be other groups or devices.
+    content: "Under **Subassets** all assets assigned to a particular group are listed. Subassets can either be other groups or devices.
 
 
-    Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group. To add a group, click **Add group** at the right of the top menu bar.
+    Click **Assign devices** at the top right to assign devices to the group. You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
 
-
-    To assign devices to a group, navigate to its **Subassets** tab, click **Assign devices** at the right of the top menu bar, and select the devices from the list. See also the *User guide*."
 ---
+
+Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
+
+
+Select a group from the groups list or from the navigator to see its details, particularly all assets assigned to the group. Click **Assign devices** at the top right to assign devices to the group.
+
+
+You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator.
 
 <a name="assets"></a>
 ### Assets hierarchy

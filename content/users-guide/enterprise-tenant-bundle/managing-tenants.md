@@ -10,13 +10,13 @@ helpcontent:
     content: "Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account. The **Tenants** page provides information on each subtenant such as the name of the subtenant, its ID and domain, and the status of the tenant (either active, indicated by a green checkmark icon, or suspended, indicated by a red cross icon).
 
 
-    To create a subtenant click **Create tenant** at the right of the top menu bar. For details on managing tenants see the *User guide*."
+    To create a subtenant click **Create tenant** at the top right."
     label: tenant-policies
     title: Tenant policies
     content: "During tenant creation, tenant options and retention rules may be specified. This can easily be done by using a tenant policy, which defines a set of tenant options and retention rules. Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 
-    Click **Tenant policies** in the **Tenants** menu to view all available tenant policies. To create a tenant policy, click **Add policy** in the top menu bar. For details see the *User guide*."
+    Click **Tenant policies** in the **Tenants** menu to view all available tenant policies. To create a tenant policy, click **Add policy** at the top right."
 
 ---
 

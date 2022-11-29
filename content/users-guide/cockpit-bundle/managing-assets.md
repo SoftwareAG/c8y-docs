@@ -3,7 +3,7 @@ weight: 20
 title: Managing assets
 layout: redirect
 helpcontent:
-  - label: managing-groups
+  - label: managing-assets
     title: Managing assets
     content: "Under **Subassets** all assets assigned to a particular group are listed. Subassets can either be other groups or devices.
 

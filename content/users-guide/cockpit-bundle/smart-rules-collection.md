@@ -81,9 +81,9 @@ In certain rule parameters, various trigger fields can be used as variables, see
 
 If an alarm is created, an SMS is sent.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 This rule is only available if your tenant has a configured SMS provider.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 **Parameters**
 
@@ -216,6 +216,10 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 **Functionality**
 
 If an alarm is created, sends email or SMS.
+
+{{< c8y-admon-req >}}
+This rule is only available if your tenant has a configured SMS provider.
+{{< /c8y-admon-req >}}
 
 **Parameters**
 

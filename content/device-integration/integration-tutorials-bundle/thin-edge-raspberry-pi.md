@@ -4,7 +4,7 @@ title: thin-edge.io on a Raspberry Pi
 layout: bundle
 ---
 
-This tutorial provides an overview of the installation and configuration of thin-edge.io.
+This tutorial provides an overview of the installation and configuration of [thin-edge.io](https://thin-edge.io/).
 A Raspberry Pi serves as the example device.
 The tutorial explains how to reach the goal of sending data to {{< product-c8y-iot >}} and performing some additional device management tasks in a series of steps.
 
@@ -135,7 +135,7 @@ sudo tedge config set c8y.url {{YOUR_C8Y_URL}}
 thin-edge.io connects via MQTT protocol using an X.509 certificate for authentication.
 To do so, a certificate must be trusted by {{< product-c8y-iot >}}.
 A certificate is trusted when it is added to the trusted certificates and is in an activated state.
-Also see [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management/#trusted-certificates) in the *User guide*.
+See also [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management/#trusted-certificates) in the *User guide*.
 
 First, create the device certificate locally:
 
@@ -371,7 +371,7 @@ sudo tedge connect C8Y
 
 4. Click **Add Software**.
 
-Also see [Device Management > Managing device data > Managing device software > To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version) in the *User guide**.
+See also [Device Management > Managing device data > Managing device software > To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version) in the *User guide**.
 
 ##### Installing software on a device
 

@@ -13,7 +13,7 @@ helpcontent:
     content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** at the top right."
     label: data-subscriptions
     title: Data subscriptions
-    content: "The **Data subscriptions** page shows a list of all currently defined data forwarded to your tenant. For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card. Use the toggle to temporarily stop forwarding data into your tenant."
+    content: "The **Data subscriptions** page shows a list of all currently defined data forwarded to your tenant. For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card. Use the toggle to temporarily stop forwarding data to your tenant."
 ---
 
 Data broker lets you share data selectively with other tenants. You can share:

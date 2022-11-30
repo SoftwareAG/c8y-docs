@@ -10,8 +10,24 @@ To support you with bootstrapping, running and deploying applications we have bu
 npm install -g @c8y/cli
 ```
 
+If you don't want to install the `@c8y/cli` globally you can also run it with the npx command. E.g. you can scaffold a new project quickly with:
 
-### Usage
+```
+npx @c8y/cli new
+```
+
+As any new projects brings a local `@c8y/cli` you can run the project by changing to its folder and run:
+
+```
+npx c8ycli serve
+```
+
+The `serve` command starts a local development server. It supports two important flags:
+
+- `-u`: The -u parameter specifies the Cumulocity instance to which all API requests should be proxied to. This means data is actually pulled from the configured Cumulocity instance.
+- `-p`: The port to use. If not defined, port 3000 is used. If you have an server running on this port already, the command will fail. The application will then be served at the url `http://localhost:<<port>>/apps/<<your-application-name>>/`. Tip: Usually you can simply click on the URL in the terminal by holding `CTRL`.
+
+### General usage
 
 ```
 c8ycli [options] [command]
@@ -31,7 +47,7 @@ The commands must be executed from the root path of the project.
 
 ### Commands
 
-All the commands except of ```new``` take an array of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)). These will be solved to folders or entry point manifests.
+All the commands except of `new` take an array of [glob patterns](<https://en.wikipedia.org/wiki/Glob_(programming)>). These will be solved to folders or entry point manifests.
 
 ```
     new [name] [template]                   Creates a folder to start a new application or extend an existing one
@@ -42,22 +58,25 @@ All the commands except of ```new``` take an array of [glob patterns](https://en
 ```
 
 ### The `new` command
+
 The `c8ycli new [name] [template]` helps to start an empty application or to extend one of our existing applications (Cockpit, Devicemanagement or Administration). To extend an existing application use as `[name]` and `[template]` the name of the existing application like this:
+
 ```
 $ c8ycli new cockpit cockpit
 ```
 
 {{< c8y-admon-tip >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, for example:
+
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
-{{< /c8y-admon-tip >}}
-
+  {{< /c8y-admon-tip >}}
 
 The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case a few steps must be completed via the interface before the app is scaffolded.
 
 **Step 1:**
+
 ```
 ? Enter the name of the project: (my-application)
 ```
@@ -69,6 +88,7 @@ This step can also be skipped if the name is provided in the initial command: `c
 {{< /c8y-admon-info >}}
 
 **Step 2:**
+
 ```
 ? Which base version do you want to scaffold from? (Use arrow keys)
 > 1010.0.X (latest)
@@ -83,6 +103,7 @@ This step can also be skipped if the name is provided in the initial command: `c
 In the second step, the base scaffolding version must be selected. The interface will provide the last GA release (latest), the latest available release (next) and four older GA releases. Additionally a version can be manually entered by selecting the `other` option.
 
 **Step 2 (other):**
+
 ```
 ? Enter the desired version:
 ```
@@ -113,7 +134,7 @@ This step will only show projects which are available for the selected version i
 
 ### Application options
 
-Application options can be defined with ```--app.<option>=<value>```. These will be applied to all applications found with ```[appPaths...]```.
+Application options can be defined with `--app.<option>=<value>`. These will be applied to all applications found with `[appPaths...]`.
 
 ```
     --app.name="My Application"
@@ -124,7 +145,7 @@ Application options can be defined with ```--app.<option>=<value>```. These will
 
 ### Webpack options
 
-Webpack options can be defined with ```--env.<option>=<value>```. These will be directly passed to the webpack configuration.
+Webpack options can be defined with `--env.<option>=<value>`. These will be directly passed to the webpack configuration.
 
 ```
     --env.mode="production"

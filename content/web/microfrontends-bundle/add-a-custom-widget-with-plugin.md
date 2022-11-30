@@ -1,16 +1,13 @@
 ---
-title: Custom widget plugin with Module Federation
+title: Custom widget plugin
 layout: redirect
-weight: 40
+weight: 20
 ---
 
-**Version:** 1011.153.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
-
 See [Add a custom widget to a dashboard > Create the widget components](#2-create-the-widget-components) on how to create a simple widget, what its structure looks like and how to add it to your application.
-The following tutorial focuses on how you can add this widget to an application using the Module Federation and how this process differs from the previous one.
+The following tutorial focuses on how you can add this widget to an application using the micro frontend architecture and how this process differs from the previous one.
 
-The solution below is fully based on the Module Federation functionality introduced in Webpack 5.
-For more information on the functionality refer to [Webpack: Module Federation](https://webpack.js.org/concepts/module-federation/).
+ > The solution below is fully based on the Module Federation functionality introduced in Webpack 5. For more information on the functionality refer to [Webpack: Module Federation](https://webpack.js.org/concepts/module-federation/).
 
 ### 1. Initialize the widget plugin example
 
@@ -77,16 +74,16 @@ polyfills.ts;
 tsconfig.json;
 ```
 
-You have now created your first plugin that uses Module Federation.
+You have now created your first plugin that uses the micro frontend architecture.
 
 ### 2. Differences in approach to creating custom widgets
 
-There are a couple of differences between a simple widget and one that is built according to the Module Federation guidelines.
+There are a couple of differences between a simple widget and one that is built according to the micro frontends architecture.
 
 The biggest difference is the *package.json* file, where fields such as `isPackage`, `package` and `exports` are located.
 The following list shows the fields and what they are responsible for:
 
-- `isPackage`: Indicates if the application is a package. In case of a widget that is added using Module Federation, set the value to `true`.
+- `isPackage`: Indicates if the application is a package. In case of a widget that is added using micro frontends, set the value to `true`.
 - `package`: The type of package (for example, `plugin`).
 - `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the *README.md* file):
   - `name`: The name of the exported module (that is, "Example widget plugin").
@@ -131,7 +128,7 @@ For the rest of the widget editing process follow the process for regular widget
 
 #### Debugging
 
-Another difference in the *package.json* file between a regular widget and a widget modified for Module Federation is the field `remote`, see example below:
+Another difference in the *package.json* file between a regular widget and a widget modified for micro frontend architecture is the field `remote`, see example below:
 
 ```json
 ...
@@ -172,7 +169,6 @@ Follow the console prompt to deploy the application to your tenant.
 
 ### 4. Adding a deployed widget to the shell application
 
-Currently, the views and logic related to Module Federation are hidden behind a beta flag.
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 
 - Enable the beta flag in the Administration application: `https://<yourTenantUrl>/apps/administration?beta=true`.
@@ -187,4 +183,4 @@ Your custom widget is now available in your version of the Cockpit application.
 Navigate to the dashboard where the newly added widget is available in the list of widgets to add.
 
 The `widget-plugin` was installed from within the Administration application. This is the main difference between the regular and the new approach regarding widgets.
-Module Federation allows you to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
+Micro frontends architecture allows you to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).

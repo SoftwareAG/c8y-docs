@@ -191,8 +191,7 @@ The 528 static response template is available for dealing with software update o
 
 ### Advanced Software Management
 
-Using the "advanced" approach, the `c8y_SoftwareList` fragment is placed in the single child addition of type `c8y_InstalledSoftwareList`.
-To facilitate the management of listed software packages, the Advanced Software Management default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices) was introduced.
+Using the "advanced" approach, the `c8y_SoftwareList` fragment is no longer present in the device managed object. The data is separated from the device managed object which keeps the size of the device managed object low even for very large lists of installed software. All installed software for a device can be read and managed through the Advanced Software Management default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices).
 
 Devices support Advanced Software Management when they include the `c8y_SoftwareUpdate` operation
 in their `c8y_SupportedOperations` fragment and list their supported software types in the `c8y_SupportedSoftwareTypes` fragment.

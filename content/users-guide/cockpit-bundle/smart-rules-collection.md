@@ -210,6 +210,10 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 If an alarm is created, sends email or SMS.
 
+{{< c8y-admon-info >}}
+This rule is only available if your tenant has a configured SMS provider.
+{{< /c8y-admon-info >}}
+
 **Parameters**
 
 The rule uses the following parameters:

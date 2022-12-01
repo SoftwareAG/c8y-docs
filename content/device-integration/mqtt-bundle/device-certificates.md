@@ -392,15 +392,15 @@ The steps for the proof of possession are as follows:
 - Ensure that the certificate has been uploaded properly:
 ![Check certificate upload](/images/mqtt/devmgmt-mqtt-cert-pop-check.png)
  
-- Download of the unsigned code:
-![Download unsigned code](/images/mqtt/devmgmt-mqtt-cert-pop-downloadunsigned.png)
+- Download of the unsigned verification code:
+![Download unsigned verification code](/images/mqtt/devmgmt-mqtt-cert-pop-downloadunsigned.png)
 
-- Encryption of the unsigned coce by the certificate owner, which makes the key a signed key.
+- Encryption of the unsigned verification code by the certificate owner, which makes the key a signed verification code.
 
-- Upload of the signed code to the platform:
-![Upload signed code](/images/mqtt/devmgmt-mqtt-cert-pop-uploadsigned.png)
+- Upload of the signed verification code to the platform:
+![Upload signed verification code](/images/mqtt/devmgmt-mqtt-cert-pop-uploadsigned.png)
 
-- The proof of possession is confirmed if the uploaded signed key matches the signed key expected by the platform:
+- The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform:
 ![Proof of possession completed](/images/mqtt/devmgmt-mqtt-cert-pop-completed.png)
 
 

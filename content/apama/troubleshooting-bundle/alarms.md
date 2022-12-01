@@ -396,13 +396,13 @@ To diagnose the cause, you can try the following. It may be that the Apama-ctrl 
 <a name="parent_tenant_not_subscribed"></a>
 #### Parent tenant not subscribed
 
-This alarm is raised for a child tenant that was subscribed before the parent tenant was subscribed.
+This alarm is raised for a subtenant that was subscribed before the parent tenant was subscribed.
 
 - Alarm type: `parent_tenant_not_subscribed`
 - Alarm text: Microservice functionality will not work until the enterprise tenant is also subscribed. Contact the administrator.
 - Alarm severity: MAJOR
 
 The Apama-ctrl microservice allows you to subscribe to tenants in any order.
-However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the child tenant.
+However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the subtenant.
 
 This alarm is cleared once the parent tenant is subscribed.

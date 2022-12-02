@@ -35,7 +35,7 @@ The data explorer is available for all assets at once or just for a particular a
 
 - Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
-In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [Adding data points](#add-data-points).
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](#add-data-points).
 
 On the left, in the main card, you see its visualization.
 
@@ -74,12 +74,12 @@ To change the visualization in the data explorer, you can modify several propert
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
-To change the time range on the x-axis,
+To change the time range on the x-axis, use one of the following options:
 
-* select a different time range from the dropdown list in the top menu bar,
-* enter a custom time range into the **From** and **To** fields in the data explorer,
-* drag the x-axis and move left or right to move the time period,
-* double-click into the data explorer to zoom out.
+* Select a different time range from the dropdown list in the top menu bar.
+* Enter a custom time range into the **From** and **To** fields in the data explorer.
+* Drag the x-axis and move left or right to move the time period.
+* Double-click into the data explorer to zoom out.
 
 {{< c8y-admon-info >}}
 Real-time updates will be switched off if you set a time range in the past.
@@ -134,7 +134,7 @@ To remove a data point from the data point list, click the menu icon and select 
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
 
-The following fields my be modified:
+The following fields may be modified:
 
 <table>
 <col style="width:15%">
@@ -203,7 +203,7 @@ In this case, both data points share the same y-axis. This y-axis only shows the
 
 In addition to data points you can also add alarms or events to the data explorer.
 
-In the **Alarms/ Events** card, click **Add alarm/ event** to add an alarm or event.
+In the **Alarms/Events** card, click **Add alarm/event** to add an alarm or event.
 
 ![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
 

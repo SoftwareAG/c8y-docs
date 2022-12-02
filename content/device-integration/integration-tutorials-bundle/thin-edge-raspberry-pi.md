@@ -419,11 +419,11 @@ Then start the configuration plugin process and enable it on boot via `systemctl
 sudo systemctl start c8y-configuration-plugin.service
 sudo systemctl enable c8y-configuration-plugin.service
 ```
+Finally, do the following:
 
-Navigate to the Device Management application and to the desired device.
-Open its **Configuration** tab.
-The c8y-configuration-plugin and more are listed as supported configuration types, as declared in the plugin configuration file.
-Save the configuration files in the repository or download them.
+1. Navigate to the Device Management application and to the desired device and click the **Configuration** tab.
+2. Select the c8y-configuration-plugin from the list of supported configuration types, as declared in the plugin configuration file.
+3. Save the configuration files in the repository or download them.
 
 ##### Change configuration files via the platform
 

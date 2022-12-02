@@ -42,10 +42,12 @@ On the right, select the root groups or subgroups to be displayed as top level n
 
 In the **Home dashboard** section, you can select how the home dashboard, that is, the landing page for this application, is treated.
 
-You can select if the customization of the home dashboard
-* is reflected throughout the entire tenant (the default)
-* is only reflected in the current custom application
-* is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory". 
+You can select one of the following options for the customization of the home dashboard:
+
+* It is reflected throughout the entire tenant (the default).
+* It is only reflected in the current custom application.
+* It is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory".
+
 
 #### Misc
 

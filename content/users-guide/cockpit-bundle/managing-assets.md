@@ -113,7 +113,7 @@ Devices show the following tabs:
 * **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
 * **Location** - Shows the current location of a device (only available with `c8y_Position`).
 
-If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
+If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](#dashboards) for details.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 

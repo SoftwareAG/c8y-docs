@@ -45,9 +45,9 @@ To see the **Authentication** menu entry, you must have "Tenant management" ADMI
 
 In the **Preferred login mode** field, you can select one of the following options:
 
-* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
-* Basic Auth - Should be selected only for specific compatibility reasons, since it only provides basic security.
-* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
+* OAI-Secure - recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
+* Basic Auth - should be selected only for specific compatibility reasons, since it only provides basic security.
+* Single sign-on redirect - can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
@@ -131,7 +131,7 @@ If the **Use session configuration** option is enabled, the following settings c
 </tr>
 <tr>
 <td style="text-align:left">Token lifespan</td>
-<td style="text-align:left">Defines the time for which a token is active. The user is only able to access {{< product-c8y-iot >}} with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token and cookie settings</a> below. </td>
+<td style="text-align:left">Defines the time for which a token is active. The user is only able to access {{< product-c8y-iot >}} with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token generation with OAI-Secure</a> below. </td>
 <td style="text-align:left">2 days</td>
 </tr>
 

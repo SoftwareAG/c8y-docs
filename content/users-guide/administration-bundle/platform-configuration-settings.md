@@ -24,9 +24,9 @@ In the **Passwords** section, you can specify password settings like default str
 
 Select the checkbox **Enforce "green" passwords for all users** to enforce the users in your tenant to use passwords that meet the conditions for "green" passwords, see also [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
 
-* **Password validity limit (days)** - The number of days a password may be valid before it must be reset; minimum value is  "0", maximum value is "999999". Leave empty to use the value from the tenant options configured in the {{< management-tenant >}}, see *{{< product-c8y-iot >}} Core - Operations guide*.
-* **Password history size** - The number of times before the current password can be reused.  Minimum value is "0", preset value is "10".  
-* **Minimum length of "green" password** - The minimum number of characters which are required for a safe password. Minimum (and preset) value is "8", maximum value is "32".  Leave empty to skip this constraint.
+* **Password validity limit (days)** - the number of days a password may be valid before it must be reset; minimum value is  "0", maximum value is "999999". Leave empty to use the value from the tenant options configured in the {{< management-tenant >}}, see *{{< product-c8y-iot >}} Core - Operations guide*.
+* **Password history size** - the number of times before the current password can be reused.  Minimum value is "0", preset value is "10".  
+* **Minimum length of "green" password** - the minimum number of characters which are required for a safe password. Minimum (and preset) value is "8", maximum value is "32".  Leave empty to skip this constraint.
 
 
 <a name="config-support-users"></a>
@@ -34,7 +34,7 @@ Select the checkbox **Enforce "green" passwords for all users** to enforce the u
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
-This feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances or service providers with on-prem installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, that is, to access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-tenant/#support-user-access) for more information.
+This feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances or service providers with on-prem installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, that is, to access subtenant users in case of any issues. Refer to [Enterprise tenant > Support user access](/users-guide/enterprise-tenant/#support-user-access) for more information.
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 

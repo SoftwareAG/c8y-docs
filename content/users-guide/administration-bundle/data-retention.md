@@ -55,11 +55,10 @@ The retention rule will be added to the list.
 
 {{< c8y-admon-info >}}
 Per default, an asterisk ("*") is set in all fields except the **Maximum age** field, to include all values.
-{{< /c8y-admon-info >}}
-
-{{< c8y-admon-info >}}
 Alarms are only removed if they have a status of CLEARED.
 {{< /c8y-admon-info >}}
+
+
 
 #### To edit a retention rule
 

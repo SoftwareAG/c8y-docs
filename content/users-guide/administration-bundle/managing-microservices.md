@@ -239,9 +239,9 @@ The time entered here may differ from the server time due to different time zone
 
 At the top right, additional functionality is provided:
 
-* **Download** - To download the log data for a specified time range.
-* **Dark theme** - To turn dark theme on or off.
-* **Auto refresh** - To activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
+* **Download** - to download the log data for a specified time range.
+* **Dark theme** - to turn dark theme on or off.
+* **Auto refresh** - to activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
 
 Initially, the **Logs** tab shows the latest logs of the microservice instance.
 

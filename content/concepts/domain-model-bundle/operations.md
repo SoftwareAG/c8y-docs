@@ -25,7 +25,7 @@ The following snippet shows an operation for setting the state of the relay with
 }
 ```
 
-Just like other types of data, operations are also standardized through the sensor library to simplify web app development (see below). For example, setting a switch should be the same for all switches regardless of their make.
+Just like other types of data, operations are also standardized through the sensor library to simplify application development (see below). For example, setting a switch should be the same for all switches regardless of their make.
 
 Operations are modeled just like fragments in the inventory model (see above). The same extensibility concept applies. Random vendor-proprietary extensions to the standard operations are possible. These are not denied or modified by {{< product-c8y-iot >}}.
 
@@ -39,13 +39,13 @@ Operations are modeled just like fragments in the inventory model (see above). T
 
 -   It may not even be possible to reach a mobile device over the internet. {{< product-c8y-iot >}} uses push technology to send operations to devices.
 
-To pass an operation from a web app to a device, a process of several steps is required as illustrated in the image below. Assume that the user issues a remote control operation for a device (such as a device restart) from a web app. The web app creates the operation in {{< product-c8y-iot >}} (Step "1"). {{< product-c8y-iot >}} will queue the operation for execution and return control back to the web app immediately.
+To pass an operation from an application to a device, a process of several steps is required as illustrated in the image below. Assume that the user issues a remote control operation for a device (such as a device restart) from an application. The application creates the operation in {{< product-c8y-iot >}} (Step "1"). {{< product-c8y-iot >}} will queue the operation for execution and return control back to the application immediately.
 
 At some point in time, the agent responsible for the device will request operations that are queued for the devices that it manages ("Step 2"). This will happen immediately through {{< product-c8y-iot >}}'s push mechanism or at a regular or scheduled interval.
 
 The agent will execute the operations on the devices that it manages (Step "3"), and will update {{< product-c8y-iot >}} with the results of the execution (Step "4"). The devices that the agent manages are direct or indirect children ("childDevices") of the agent.
 
-Finally, the web app can query the results of the operation (Step "5"). Audit records are generated both for the original request to run the device control operation and for the acknowledgement that the operation was actually run.
+Finally, the application can query the results of the operation (Step "5"). Audit records are generated both for the original request to run the device control operation and for the acknowledgement that the operation was actually run.
 
 ![Device control architecture](/images/concepts-guide/control.png)
 

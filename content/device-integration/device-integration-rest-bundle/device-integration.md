@@ -48,7 +48,7 @@ The process works as follows:
 From a device perspective, this request for credentials is a single REST request:
 
     POST /devicecontrol/deviceCredentials
-    Content-Type: web app/vnd.com.nsn.cumulocity.devicecredentials+json
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json
     Authorization: Basic <<Base64 encoded bootstrap credentials>>
     {
       "id" : "0000000017b769d5"
@@ -57,7 +57,7 @@ From a device perspective, this request for credentials is a single REST request
 The device issues this request repeatedly. While the user has not yet registered and accepted the device in the tenant UI, the request returns "404 Not Found." After the device has been accepted in the tenant UI, the following response is returned:
 
     HTTP/1.1 200 OK
-    Content-Type: web app/vnd.com.nsn.cumulocity.devicecredentials+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;charset=UTF-8;ver=0.9
     Content-Length: ...
     {
       "id" : "0000000017b769d5",
@@ -91,7 +91,7 @@ To check if a device is already registered, use a GET request on the identity AP
     GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d5 HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: web app/vnd.com.nsn.cumulocity.externalid+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json;charset=UTF-8;ver=0.9
     ...
     {
         "externalId": "raspi-0000000017b769d5",
@@ -112,7 +112,7 @@ If a device is not yet registered, a 404 status code and an error message is ret
     GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d6 HTTP/1.1
 
     HTTP/1.1 404 Not Found
-    Content-Type: web app/vnd.com.nsn.cumulocity.error+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.error+json;charset=UTF-8;ver=0.9
     ...
     {
         "error": "identity/Not Found",
@@ -128,8 +128,8 @@ If Step 1 above indicated that no managed object representing the device exists,
 To create a managed object, issue a POST request on the managed objects collection in the Inventory API. The following example creates a Raspberry Pi using the Linux agent:
 
     POST /inventory/managedObjects HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
-    Accept: web app/vnd.com.nsn.cumulocity.managedobject+json
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+    Accept: application/vnd.com.nsn.cumulocity.managedobject+json
     ...
     {
         "name": "RaspPi BCM2708 0000000017b769d5",
@@ -162,7 +162,7 @@ To create a managed object, issue a POST request on the managed objects collecti
     }
 
     HTTP/1.1 201 Created
-    Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9
     ...
     {
         "id": "2480300",
@@ -209,8 +209,8 @@ After the new device has been created, it can now be associated with its built-i
 Continuing the above example, we would associate the newly created device "2480300" with its hardware serial number:
 
     POST /identity/globalIds/2480300/externalIds HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.externalid+json
-    Accept: web app/vnd.com.nsn.cumulocity.externalid+json
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json
+    Accept: application/vnd.com.nsn.cumulocity.externalid+json
     ...
     {
         "type" : "c8y_Serial",
@@ -218,7 +218,7 @@ Continuing the above example, we would associate the newly created device "24803
     }
 
     HTTP/1.1 201 Created
-    Content-Type: web app/vnd.com.nsn.cumulocity.externalid+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json;charset=UTF-8;ver=0.9
     ...
     {
         "externalId": "raspi-0000000017b769d5",
@@ -238,7 +238,7 @@ If Step 1 above returned that the device was previously registered already, we m
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 
     PUT /inventory/managedObjects/2480300 HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
     ...
     {
         "c8y_Software": {
@@ -259,7 +259,7 @@ Depending on the complexity of the sensor network, devices may have child device
 For example, assume a child device with the URL "https://.../inventory/managedObjects/2543801" has already been created. To link this device with its parent, issue:
 
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.managedobjectreference+json
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
     {
         "managedObject" : {
             "id" : "2543801"
@@ -284,7 +284,7 @@ This request will also delete all data associated with the device including its 
 
 #### Step 6: Complete operations and subscribe
 
-Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} web app, its status is PENDING, that means, it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
+Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, that means, it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
@@ -295,7 +295,7 @@ To clean up operations that are still in EXECUTING status, query operations by a
     GET /devicecontrol/operations?agentId=2480300&status=EXECUTING HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: web app/vnd.com.nsn.cumulocity.operationcollection+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.operationcollection+json;charset=UTF-8;ver=0.9
     ...
     {
         "next": "https://.../devicecontrol/operations?agentId=2480300&status=EXECUTING",
@@ -320,7 +320,7 @@ To clean up operations that are still in EXECUTING status, query operations by a
 The restart seems to have executed well -- we are back after all. So let's set the operation to SUCCESSFUL.
 
     PUT /devicecontrol/operations/2593101 HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.operation+json
+    Content-Type: application/vnd.com.nsn.cumulocity.operation+json
     {
         "status": "SUCCESSFUL"
     }
@@ -330,7 +330,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time operations in {{< product-c8y-iot >}} is described in the [Device control notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Device-control-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /notification/operations HTTP/1.1
-    Content-Type: web app/json
+    Content-Type: application/json
     ...
     [ {
         "channel": "/meta/handshake",
@@ -355,7 +355,7 @@ Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism
 Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
 
     POST /notification/operations HTTP/1.1
-    Content-Type: web app/json
+    Content-Type: application/json
     ...
     [ {
         "channel": "/meta/subscribe",
@@ -374,7 +374,7 @@ Afterwards, the device respectively the agent needs to subscribe to notification
 Finally, the device connects and waits for operations to be sent to it.
 
     POST /notification/operations HTTP/1.1
-    Content-Type: web app/json
+    Content-Type: application/json
     ...
     [ {
         "connectionType": "long-polling",
@@ -432,7 +432,7 @@ The inventory entry of a device usually represents its current state, which may 
 To create new measurements in {{< product-c8y-iot >}}, issue a POST request with the measurement. The example below shows how to create a signal strength measurement.
 
     POST /measurement/measurements HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.measurement+json
+    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json
     ...
     {
         "source": { "id": "2480300" },
@@ -452,7 +452,7 @@ To create new measurements in {{< product-c8y-iot >}}, issue a POST request with
 Similarly, use a POST request for events. The following example shows a location update from a GPS sensor.
 
     POST /event/events HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.event+json
+    Content-Type: application/vnd.com.nsn.cumulocity.event+json
     ...
     {
         "source": { "id": "2480300" },
@@ -476,8 +476,8 @@ Note that all data types in {{< product-c8y-iot >}} can include arbitrary extens
 Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone needs to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 
     POST /alarm/alarms HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.alarm+json
-    Accept: web app/vnd.com.nsn.cumulocity.alarm+json
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
+    Accept: application/vnd.com.nsn.cumulocity.alarm+json
     ...
     {
         "source": { "id": "10400" },
@@ -489,7 +489,7 @@ Alarms represent events that most likely require human intervention to be solved
     }
 
     HTTP/1.1 201 Created
-    Content-Type: web app/vnd.com.nsn.cumulocity.alarm+json
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
     ...
     {
         "id": "214600",
@@ -504,7 +504,7 @@ However, you most likely should not create an alarm for a device, if there is a 
 In contrast to events, alarms can be updated. If an issue is resolved (for example the battery has been replaced, power has been restored), the corresponding alarm should be automatically cleared to save manual work. This can be done through a PUT request to the URL of the alarm. In the above example for creating an alarm, we used an "Accept" header to get the URL of the new alarm in the response. We can use this URL to clear the alarm:
 
     PUT /alarm/alarms/214600 HTTP/1.1
-    Content-Type: web app/vnd.com.nsn.cumulocity.alarm+json
+    Content-Type: application/vnd.com.nsn.cumulocity.alarm+json
     ...
     {
         "status": "CLEARED"

@@ -6,7 +6,7 @@ layout: redirect
 
 ![Sensor buttons](/images/users-guide/csa/csa-sensor-buttons.png)
 
-In order to simulate peak values, tap the 3rd button on the card for that sensor. The web app will ask if you wish to start simulating peak values. Select **Simulate** to begin. If the phone is connected to {{< product-c8y-iot >}}, then it will send these values to the platform instead of the measurements coming from the selected sensor.
+In order to simulate peak values, tap the 3rd button on the card for that sensor. The application will ask if you wish to start simulating peak values. Select **Simulate** to begin. If the phone is connected to {{< product-c8y-iot >}}, then it will send these values to the platform instead of the measurements coming from the selected sensor.
 
 Sending alarms and events requires the phone to be connected to {{< product-c8y-iot >}}. If the device is not connected, the icons are greyed out. Tap the bell icon to send an alarm.
 

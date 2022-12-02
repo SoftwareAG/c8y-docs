@@ -42,7 +42,7 @@ Increasing the memory of the Edge appliance must be followed by increasing the m
 
 ### Changing log level for Karaf
 
-This section describes how to change the log level for {{< product-c8y-iot >}} Edge specific web apps in the back-end. It does not explain how to change log settings for standard components like databases or other operating system related services.
+This section describes how to change the log level for {{< product-c8y-iot >}} Edge specific applications in the back-end. It does not explain how to change log settings for standard components like databases or other operating system related services.
 
 The log level for Karaf is defined in the following file.
 
@@ -108,4 +108,4 @@ Adjust the log levels by changing the level attribute according to the following
 |INFO|Give information about normal operations
 |DEBUG|Log all internal debug information
 
-Save the file. It is re-read by the web app every few minutes so you do not have to restart the Java process.
+Save the file. It is re-read by the application every few minutes so you do not have to restart the Java process.

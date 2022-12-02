@@ -6,9 +6,9 @@ layout: redirect
 
 Network security prevents unauthorized access to data transmitted over the network and tampering with or unauthorized modification of data. It also ensures that network services are available.
 
-{{< product-c8y-iot >}} ensures that your data stays confidential and cannot be tampered with through an end-to-end implementation of [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) from devices to web apps. It uses up-to-date encryption technology that has been independently rated "A" by [SSLlabs](https://www.ssllabs.com/). Any communication with {{< product-c8y-iot >}} is subject to individual authentication and authorization.
+{{< product-c8y-iot >}} ensures that your data stays confidential and cannot be tampered with through an end-to-end implementation of [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) from devices to applications. It uses up-to-date encryption technology that has been independently rated "A" by [SSLlabs](https://www.ssllabs.com/). Any communication with {{< product-c8y-iot >}} is subject to individual authentication and authorization.
 
-This communication architecture is illustrated below. Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols may be in use (such as ZigBee or Modbus). Securing these is a device-specific matter. Agents communicate with the {{< product-c8y-iot >}} platform using HTTPS to send and receive data. Similarly, IoT web apps use HTTPS for communication. If an IoT web app exposes own interfaces towards web browsers, it is recommended that these use HTTPS. This way, the whole path from agents to the end user is secured.
+This communication architecture is illustrated below. Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols may be in use (such as ZigBee or Modbus). Securing these is a device-specific matter. Agents communicate with the {{< product-c8y-iot >}} platform using HTTPS to send and receive data. Similarly, IoT applications use HTTPS for communication. If an IoT application exposes own interfaces towards web browsers, it is recommended that these use HTTPS. This way, the whole path from agents to the end user is secured.
 
 <center><img src="/images/concepts-guide/commsecurity.png" alt="Communication security" style="max-width: 100%"></center>
 

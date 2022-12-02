@@ -111,7 +111,7 @@ Explanation:
 
 Update operation to EXECUTING:
 
-	10,101,PUT,/devicecontrol/operations/%%, web app/vnd.com.nsn.cumulocity.operation+json, web app/vnd.com.nsn.cumulocity.operation+json,%%,INTEGER,"{""status"":""EXECUTING""}"
+	10,101,PUT,/devicecontrol/operations/%%, application/vnd.com.nsn.cumulocity.operation+json, application/vnd.com.nsn.cumulocity.operation+json,%%,INTEGER,"{""status"":""EXECUTING""}"
 
 #### Response templates
 

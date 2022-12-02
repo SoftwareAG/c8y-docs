@@ -32,7 +32,7 @@ java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,
 
 ### Adjusting gateway memory settings
 
-In certain scenarios it is required to adjust the memory settings of the gateway web app. Examples for such scenarios are the integration of servers with very large address spaces or obtaining large amounts of data from servers using high sampling rates.
+In certain scenarios it is required to adjust the memory settings of the gateway application. Examples for such scenarios are the integration of servers with very large address spaces or obtaining large amounts of data from servers using high sampling rates.
 
 You can adjust the memory settings of the gateway like with any other Java program. Typically, it is sufficient to increase the initial heap size and the maximum heap size of the gateway process.
 

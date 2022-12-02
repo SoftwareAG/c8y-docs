@@ -250,7 +250,7 @@ Commit the resources of project for version control. The response will be a long
 
 curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
 --header 'Authorization: {{auth}}
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"listOfResources":["72c0673497344164a80e298f679b8139","72c0673497344164a80e298f679b8138"]}'
 ```
 
@@ -315,7 +315,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 401 - Unauthorized
 
 curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/commit' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"listOfResources":["72c0673497344164a80e298f679b8139","72c0673497344164a80e298f679b8138","72c0673497344164a80e298f679b8137","72c0673497344164a80e298f679b8136","72c0673497344164a80e298f679b8131"]}'
 ```
 
@@ -375,7 +375,7 @@ Updates the exiting project name and description with given new project name and
 
 curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
 
@@ -413,7 +413,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee
 
 curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
 
@@ -432,7 +432,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee
 401 - Unauthorized
 
 curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
 
@@ -494,7 +494,7 @@ To facilitate collaboration and sharing, MLW allows you to export the contents o
 
 curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump' \
 --header 'Authorization: {{auth}}
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 ```
 
 **Example Response**
@@ -544,7 +544,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
 401 - Unauthorized
 
 curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/dump' \
---header 'Content-Type: web app/json'
+--header 'Content-Type: application/json'
 ```
 
 **Example Response**
@@ -605,7 +605,7 @@ To facilitate collaboration and sharing, MLW allows you to import the contents o
 
 curl --location --request POST '{{url}}/service/mlw/projects/upload' \
 --header 'Authorization: {{auth}}
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --form 'file=@"/../../WorkFlow_project.zip"'
 ```
 
@@ -649,7 +649,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/upload' \
 401 - Unauthorized
 
 curl --location --request POST '{{url}}/service/mlw/projects/upload' \
---header 'Content-Type: web app/json'
+--header 'Content-Type: application/json'
 ```
 
 **Example Response**
@@ -694,7 +694,7 @@ If there is any running task associated with the project, the delete operation w
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 ```
 
 **Example Response**
@@ -738,7 +738,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d41209
 401 - Unauthorized
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 ```
 
 
@@ -761,7 +761,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d41209
 400 - Bad Request
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 ```
 
 
@@ -807,7 +807,7 @@ If there is any running task associated with the project, the delete operation w
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 ```
 
 **Example Response**
@@ -873,7 +873,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d41209
 401 - Unauthorized
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 ```
 
 
@@ -896,7 +896,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d41209
 400 - Bad Request
 
 curl --location --request DELETE '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f?versionNumber=v0' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 ```
 
 
@@ -1489,7 +1489,7 @@ To create a new pipeline file.
 
 curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/createnew" \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
 ```
 
@@ -1689,7 +1689,7 @@ curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097e
 401 - Unauthorized
 
 curl --location --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/createnew" \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"type":"py","name":"samplePY"}'
 ```
 

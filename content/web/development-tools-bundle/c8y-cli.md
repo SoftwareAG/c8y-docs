@@ -4,7 +4,7 @@ layout: redirect
 weight: 10
 ---
 
-To support you with bootstrapping, running and deploying web apps we have build a Command Line Interface. The tool is the successor of the `cumulocity-node-tools`. To avoid conflicts, it listens to the new command `c8ycli` instead of `c8y`. You can install it via npm:
+To support you with bootstrapping, running and deploying applications we have build a Command Line Interface. The tool is the successor of the `cumulocity-node-tools`. To avoid conflicts, it listens to the new command `c8ycli` instead of `c8y`. You can install it via npm:
 
 ```
 npm install -g @c8y/cli
@@ -34,15 +34,15 @@ The commands must be executed from the root path of the project.
 All the commands except of ```new``` take an array of [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)). These will be solved to folders or entry point manifests.
 
 ```
-    new [name] [template]                   Creates a folder to start a new web app or extend an existing one
+    new [name] [template]                   Creates a folder to start a new application or extend an existing one
     serve [options] [appPaths...]           Runs local development server
-    build [options] [appPaths...]           Builds the specified web apps
-    deploy [options] [appPaths...]          Deploys web apps from the specified paths
+    build [options] [appPaths...]           Builds the specified applications
+    deploy [options] [appPaths...]          Deploys applications from the specified paths
     locale-extract [options] [srcPaths...]  Extracts all strings for translation and outputs the .po files to defined folder
 ```
 
 ### The `new` command
-The `c8ycli new [name] [template]` helps to start an empty web app or to extend one of our existing web apps (Cockpit, Devicemanagement or Administration). To extend an existing web app use as `[name]` and `[template]` the name of the existing web app like this:
+The `c8ycli new [name] [template]` helps to start an empty application or to extend one of our existing applications (Cockpit, Devicemanagement or Administration). To extend an existing application use as `[name]` and `[template]` the name of the existing application like this:
 ```
 $ c8ycli new cockpit cockpit
 ```
@@ -98,7 +98,7 @@ This question will appear only if `other` was selected in the previous step.
 ```
 ? Which base project do you want to scaffold from?
   administration
-  web app
+  application
   cockpit
   devicemanagement
   hybrid
@@ -111,12 +111,12 @@ In the final step, the base project to scaffold from must be selected.
 This step will only show projects which are available for the selected version in Step 2.
 {{< /c8y-admon-info >}}
 
-### web app options
+### Application options
 
-Application options can be defined with ```--app.<option>=<value>```. These will be applied to all web apps found with ```[appPaths...]```.
+Application options can be defined with ```--app.<option>=<value>```. These will be applied to all applications found with ```[appPaths...]```.
 
 ```
-    --app.name="My web app"
+    --app.name="My Application"
     --app.key=myapp-key
     --app.contextPath=myapplication
     --app.brandingEntry="./branding/mybranding.less"

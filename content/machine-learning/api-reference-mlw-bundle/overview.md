@@ -13,7 +13,7 @@ This guide provides users with a comprehensive set of API (Application Programmi
 
 A full path to the MLW microservice API resource consists of a base path and a resource path.
 
-The base path URI (Uniform Resource Identifier) for the MLW microservice API is `http://domain:port/service/mlw`, where HTTP or HTTPS is the protocol name, the domain is the internet domain or network address, the port is a non-negative integer representing the port number, and service/mlw represents the web app context path. The base path is static and does not change between requests; it merely identifies the server with a web app on the network.
+The base path URI (Uniform Resource Identifier) for the MLW microservice API is `http://domain:port/service/mlw`, where HTTP or HTTPS is the protocol name, the domain is the internet domain or network address, the port is a non-negative integer representing the port number, and service/mlw represents the application context path. The base path is static and does not change between requests; it merely identifies the server with an application on the network.
 
 Following the base path is the resource path. It may contain path or query parameters depending on the type of request and available resources on the server. For example, a resource path `projects/{projectID}/resources/{resourceID}/predict/{modelID}?type=PMML` contains static path definitions such as model or data/code file, path parameter projectID, resourceID and modelID for a dynamically allocated resource, and a query parameter type=PMML.
 
@@ -39,11 +39,11 @@ The HTTP response message is composed of a message header and a message body. Al
 
 The header contains response status code and header fields represented as a list of key/value pairs, i.e. `Content-Type:application/json`. Every response from MLW microservice contains a Content-Type header entry with one of the following internet media types (aka MIME) as value.
 
-* web app/json
-* web app/xml
+* application/json
+* application/xml
 * text/plain
-* web app/zip
-* web app/media
+* application/zip
+* application/media
 
 ### Errors
 

@@ -13,7 +13,7 @@ Fill in the required details in this template and upload the file to create the 
 
 To use the Bulk import feature, you must provide permission for **Digital Twin** role, following these steps:
 
-1. Navigate to the [Administration web app](/users-guide/administration/#overview) via the web app switcher in the top right corner.
+1. Navigate to the [Administration application](/users-guide/administration/#overview) via the application switcher in the top right corner.
 
 2. Under **Quick links** click **Roles**.
 
@@ -23,7 +23,7 @@ To use the Bulk import feature, you must provide permission for **Digital Twin**
 
 	* Under **Application access**, select "Digital Twin".
 
-	* Under **Custom web apps**, select "Digital Twin Manager".
+	* Under **Custom applications**, select "Digital Twin Manager".
 
 5. Click **Save**.
 

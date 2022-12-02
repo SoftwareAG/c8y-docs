@@ -93,10 +93,10 @@ The following directory structure is required to pack a microservice:
 ```bash
 /docker/Dockerfile      # Instructions to build the Docker image
 /docker/*               # All files within the directory will be included in the Docker build
-/cumulocity.json        # The web app manifest file
+/cumulocity.json        # The application manifest file
 ```
 
-The script can be run in a parent folder holding such structure, or by passing the path to the directory using the `-dir` option. For instance, to pack a "Hello World" microservice web app, execute:
+The script can be run in a parent folder holding such structure, or by passing the path to the directory using the `-dir` option. For instance, to pack a "Hello World" microservice application, execute:
 
 ```shell
 $ ./microservice pack --name hello-world
@@ -105,39 +105,39 @@ $ ./microservice pack --name hello-world
 It will create a ZIP file named _hello-world.zip_ and an intermediate _image.tar_ which is an exported Docker image.
 
 {{< c8y-admon-important >}}
-When naming your microservice web app use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 {{< /c8y-admon-important >}}
 
 ### Deploying
 
 A microservice becomes available once it has been successfully deployed on the {{< product-c8y-iot >}} platform. This is done by uploading a ZIP file with the microservice packed as specified above. A user cannot directly push an image to the Docker registry.
 
-Deploying your microservice web app is rather easy, just execute the following command:
+Deploying your microservice application is rather easy, just execute the following command:
 
 ```shell
 $ ./microservice deploy -n hello-world -d <URL> -u <username> -p <password> -te <tenant>
 ```
 
 Note that you must have a tenant and user credentials in order to deploy your microservice.    
-The successful execution will create a web app on the {{< product-c8y-iot >}} platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your web app will be listed in **Ecosystem** > **Microservices** in the Administration web app.
+The successful execution will create an application on the {{< product-c8y-iot >}} platform with the specified name, if it does not exist yet. Then it will upload the _hello-world.zip_ file into the platform. Once it has been uploaded, your application will be listed in **Ecosystem** > **Microservices** in the Administration application.
 
-If the name of the microservice web app is not provided in the manifest file, it will be automatically inferred from the ZIP file name without the version number.
+If the name of the microservice application is not provided in the manifest file, it will be automatically inferred from the ZIP file name without the version number.
 
 For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
 
 ### Subscribing
 
-You must subscribe to the web app in order to use it. Execute the following command to subscribe your tenant to the deployed microservice:
+You must subscribe to the application in order to use it. Execute the following command to subscribe your tenant to the deployed microservice:
 
 ```shell
 $ ./microservice subscribe -n hello-world -d <URL> -u <username> -p <password> -te <tenant> -id <APPLICATION_ID>
 ```
 
-It will result in tenant subscription to a web app specified by the ID parameter. If the user has already been subscribed, a warning message will be displayed.
+It will result in tenant subscription to an application specified by the ID parameter. If the user has already been subscribed, a warning message will be displayed.
 
 ### Multiple goals
 
-Goals can be executed together to pack, deploy and subscribe the web app in a single line. In this case, the web app ID will be automatically pulled by the script.
+Goals can be executed together to pack, deploy and subscribe the application in a single line. In this case, the application ID will be automatically pulled by the script.
 
 ```shell
 $ ./microservice pack deploy subscribe -n hello-world -d <URL> -u <username> -p <password> -te <tenant>

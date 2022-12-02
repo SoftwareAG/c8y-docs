@@ -4,7 +4,7 @@ title: Input variables for the OEE calculation
 layout: redirect
 ---
 
-In the OEE web app you can select different calculation methods that require different input variables.
+In the OEE application you can select different calculation methods that require different input variables.
 
 A total of 5 out of 7 input variables are required to calculate the OEE.
 
@@ -62,7 +62,7 @@ Ideal Cycle Amount
 Ideal production speed
 </td>
 <td>
-Link to the production plan or manual entry in the web app
+Link to the production plan or manual entry in the application
 </td>
 <td>
 x
@@ -91,7 +91,7 @@ Potential Production Time
 The period in which the machine is scheduled for production.
 </td>
 <td>
-Link to shift plan or manual entry in the web app
+Link to shift plan or manual entry in the application
 </td>
 <td>
 x

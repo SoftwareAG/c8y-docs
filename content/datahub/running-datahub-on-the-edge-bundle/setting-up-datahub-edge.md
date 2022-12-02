@@ -50,15 +50,15 @@ During script execution, you are prompted for the username and password of the a
 
 The install script runs the following basic steps:
 
-* Deploy the {{< product-c8y-iot >}} DataHub Edge UI as a web app to {{< product-c8y-iot >}} Core
+* Deploy the {{< product-c8y-iot >}} DataHub Edge UI as a web application to {{< product-c8y-iot >}} Core
 * Start a Docker container with the {{< product-c8y-iot >}} DataHub Edge backend and the database system for managing the backend state
 * Start a Docker container with the Dremio master and a ZooKeeper instance
 * Start a Docker container with the Dremio executor
 * Configure corresponding roles and permissions in {{< product-c8y-iot >}} Core
 
-The Docker containers will be restarted automatically if the container itself fails or the web apps within are no longer reachable.
+The Docker containers will be restarted automatically if the container itself fails or the applications within are no longer reachable.
 
-The containers are configured to store their web app state on the data disk under **/opt/mongodb**:
+The containers are configured to store their application state on the data disk under **/opt/mongodb**:
 
 * **/cdh-master/data**: the state of the Dremio master
 * **/cdh-executor/data**: the state of the Dremio executor

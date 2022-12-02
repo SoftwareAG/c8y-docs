@@ -685,7 +685,7 @@ Available arguments for `c8y_ua_command_ReadFileOperation`:
 </tbody>
 </table>
 
-After the downloaded file has been read successfully (see **Control** tab of the device) it is available in **Management** > **Files repository** in the Administration web app for download to local file system.
+After the downloaded file has been read successfully (see **Control** tab of the device) it is available in **Management** > **Files repository** in the Administration application for download to local file system.
 
 Alternatively, you can check the binary folder by using the binary API like this:
 
@@ -1369,13 +1369,13 @@ The result of the operation contains the set of nodes that match the device prot
 }
 ```
 
-### Get the current web app state of a device type
+### Get the current application state of a device type
 
-In order to know what is the current state of a device type web app, use the following operation:
+In order to know what is the current state of a device type application, use the following operation:
 
 ```json
 {
-	"description": "Get device type web app state",
+	"description": "Get device type application state",
 	"deviceId": "{server ID}",
 	"c8y_ua_command_GetDeviceTypeApplicationState": {
 		"deviceTypeId": "{device protocol ID}",
@@ -1411,7 +1411,7 @@ Available arguments for `c8y_ua_command_GetDeviceTypeApplicationState`:
 <td>matchingRootNodes</td>
 <td>list&lt;string&gt;</td>
 <td>no</td>
-<td>List of ID of the root nodes to execute the operation. When it is not provided, the web app state of all matching nodes will be returned.</td>
+<td>List of ID of the root nodes to execute the operation. When it is not provided, the application state of all matching nodes will be returned.</td>
 </tr>
 </tbody>
 </table>

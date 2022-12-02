@@ -4,7 +4,7 @@ title: Calculation
 layout: redirect
 ---
 
-### How accurate are the calculations of the OEE web app?
+### How accurate are the calculations of the OEE application?
 
 After the OEE values are calculated, they are then checked for consistency and plausibility. No deviations greater than 0.0002 are allowed. However, it should be considered that OEE is fundamentally a statistical value.
 
@@ -41,7 +41,7 @@ If the connection is interrupted and no machine data is received for an interval
 
 **Example:**
 
-The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 08:01:14-08:02:14 no machine data was send to the web app. Therefore, no calculation was triggered. These intervals are thus ignored in the section view, as you can easily deduce from the values of Availability and Actual Production Time. The red bars in the image indicate that a new calculation is triggered.
+The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 08:01:14-08:02:14 no machine data was send to the application. Therefore, no calculation was triggered. These intervals are thus ignored in the section view, as you can easily deduce from the values of Availability and Actual Production Time. The red bars in the image indicate that a new calculation is triggered.
 
 ![Loss of connection](/images/oee/faq/faq-loss-of-connection.png)
 
@@ -70,7 +70,7 @@ If the Performance is determined on the basis of the two machines working in par
 
 * The Performance is determined on the first machine, if possible.
 * The smallest of the four defined intervals of a profile is x times larger than the machining time of a workpiece. This way the values average again. However, this means that the 10 minutes interval display in the Machine Park Overview most of the time shows incorrect values.
-* The {{< product-c8y-iot >}} OEE web app created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also [Administration > Calculation example of a line profile](/oee/oee-administration#calculation-example).
+* The {{< product-c8y-iot >}} OEE application created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also [Administration > Calculation example of a line profile](/oee/oee-administration#calculation-example).
 
 Alternative starting situation:
 

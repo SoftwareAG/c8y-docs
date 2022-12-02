@@ -1,5 +1,5 @@
 ---
 weight: 40
-title: web app configuration
+title: Application configuration
 layout: bundle
 ---

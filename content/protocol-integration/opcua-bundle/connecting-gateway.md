@@ -23,7 +23,7 @@ Once a connection is established, the servers will be located in the **Child dev
 <a name="security-modes"></a>
 ### Security modes
 
-The security mode settings tell the gateway how it should secure the connection between itself and the OPC UA server. When a mode other than NONE is selected, the gateway will auto-generate a self-signed web app instance certificate and will use it to connect to the server. Possible security mode options are:
+The security mode settings tell the gateway how it should secure the connection between itself and the OPC UA server. When a mode other than NONE is selected, the gateway will auto-generate a self-signed application instance certificate and will use it to connect to the server. Possible security mode options are:
 
 - NONE
 - BASIC128RSA15_SIGN

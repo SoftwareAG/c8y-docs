@@ -4,7 +4,7 @@ title: Defining Cumulocity IoT DataHub permissions and roles
 layout: redirect
 ---
 
-Dedicated permissions define what a user is allowed to do in {{< product-c8y-iot >}} DataHub. To ease assigning permissions to users, permissions are grouped in roles. During deployment of the {{< product-c8y-iot >}} DataHub web apps the corresponding permissions as well as roles are created. If a role with the same name already exists, no new role will be created. The same holds for permissions.
+Dedicated permissions define what a user is allowed to do in {{< product-c8y-iot >}} DataHub. To ease assigning permissions to users, permissions are grouped in roles. During deployment of the {{< product-c8y-iot >}} DataHub applications the corresponding permissions as well as roles are created. If a role with the same name already exists, no new role will be created. The same holds for permissions.
 
 If you do not have corresponding {{< product-c8y-iot >}} DataHub permissions, you will get a warning after login.
 
@@ -55,5 +55,5 @@ The permissions for the role DataHub Reader are defined as follows:
 The roles DataHub Administrator, DataHub Manager, and DataHub Reader must be assigned to the respective users of your tenant. For assigning roles to users see the section [Managing permissions](/users-guide/administration/#managing-permissions). You need at least one user with the DataHub Administrator role to complete the {{< product-c8y-iot >}} DataHub configuration.
 
 {{< c8y-admon-info >}}
-You do not necessarily need to use the predefined roles to enable {{< product-c8y-iot >}} users to work with {{< product-c8y-iot >}} DataHub. Alternatively, you can modify other roles the users are associated with and add the corresponding permissions to those roles. In that case you also must add the DataHub web app to the user's web apps.
+You do not necessarily need to use the predefined roles to enable {{< product-c8y-iot >}} users to work with {{< product-c8y-iot >}} DataHub. Alternatively, you can modify other roles the users are associated with and add the corresponding permissions to those roles. In that case you also must add the DataHub application to the user's applications.
 {{< /c8y-admon-info >}}

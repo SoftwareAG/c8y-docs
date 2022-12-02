@@ -12,6 +12,6 @@ Furthermore it produces custom visualization, new control widgets and custom bus
 * Write alarm rules to reprioritize or suppress alarms and to define your SLA parameters.
 * Use [realtime](/concepts/realtime) to implement real-time business rules. For example, get an email when critical events happen, or trigger automated actions on devices in that case.
 * Set up a graphical dashboard with your most important KPIs.
-* Subscribe to plugins that contribute new functionality to the {{< product-c8y-iot >}} web app.
+* Subscribe to plugins that contribute new functionality to the {{< product-c8y-iot >}} application.
 
 ![Rules](/images/users-guide/Administration/admin-event-processing.png)

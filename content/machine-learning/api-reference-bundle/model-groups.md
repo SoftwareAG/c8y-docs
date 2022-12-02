@@ -213,7 +213,7 @@ Hence, all subsequent calls should refer to the converted name as listed in the 
 ```
 201 - Created
 
-curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
+curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
 
 {
     "groupName": "ActivityDetectionModels",
@@ -246,7 +246,7 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorizati
 ```
 400 - Bad Request
 
-curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
+curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
 
 {
     "groupName": "GroupWithDuplicateModel",
@@ -275,7 +275,7 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorizati
 ```
 401 - Unauthorized
 
-curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Content-Type: web app/json"
+curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Content-Type: application/json"
 ```
 
 **Example Response**
@@ -295,7 +295,7 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Content-Typ
 ```
 409 - Conflict
 
-curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
+curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
 
 {
    "groupName": "IrisClassification",
@@ -351,7 +351,7 @@ Update an existing PMML model group by editing the list of models which are part
 ```
 200 - OK
 
-curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
+curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
 
 {
     "groupName": "IrisClassification",
@@ -383,7 +383,7 @@ curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
 ```
 401 - Unauthorized
 
-curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Content-Type: web app/json"
+curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Content-Type: application/json"
 ```
 
 **Example Response**
@@ -403,7 +403,7 @@ curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Content-Type
 ```
 404 - Not Found
 
-curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
+curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
 
 {
     "groupName": "Dummy",

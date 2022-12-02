@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management web app, click **Register device** at the top right and select **Single device registration** > **Actility LoRa** from the dropdown.
+To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa** from the dropdown.
 
 ![Register devices](/images/device-protocols/lora-actility/lora-selection.png)
 
@@ -16,11 +16,11 @@ In the next window fill in the required information:
 - **Connection**: Lists all configured Actility connections in the tenant. The following device profile and connectivity plan option is populated based on the selected Actility connection.
 - **Device profile**: Select the Actility Thingpark device profile from the dropdown list that matches the device that you are registering.
 
-    The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows web app payload decoding for easy third-party web app integration.
+    The Actility ThingPark device profile allows to manage multi-RF profiles, ensures different LoRaWAN class compatibility (A, B or C) and allows application payload decoding for easy third-party application integration.
 - **Device protocol**: Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-device-protocols).
 - **Device EUI**: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
-- **Application EUI**: This is a global web app ID in the IEEE EUI64 address space that uniquely identifies the web app provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one web app EUI for a tenant but multiple tenants can have the same web app EUI.
-- **Application key**: This is an AES-128 web app key specific for the device that is assigned to the device by the web app owner and is responsible to encrypt. The web app key is a 32 character (16 byte) long hexadecimal number.
+- **Application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.
+- **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
@@ -51,7 +51,7 @@ The user is directed to the device registration page where he can perform the re
 
 A device is created based on the above workflow.
 
-First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the {{< product-c8y-iot >}} platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on web app EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in {{< product-c8y-iot >}} with a link to the device in the ThingPark platform. If the validation fails, a failure message will be shown (see the [device registration subsection of the troubleshooting section](#lora-device-registration-troubleshooting) and the device is not created in {{< product-c8y-iot >}}.
+First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the {{< product-c8y-iot >}} platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in {{< product-c8y-iot >}} with a link to the device in the ThingPark platform. If the validation fails, a failure message will be shown (see the [device registration subsection of the troubleshooting section](#lora-device-registration-troubleshooting) and the device is not created in {{< product-c8y-iot >}}.
 
 ### <a name="device-registration-with-abp-activation">LoRa device registration with Activation by Personalization (ABP)</a>
 

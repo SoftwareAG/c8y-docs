@@ -1,14 +1,14 @@
 ---
-title: web app options
+title: Application options
 layout: redirect
 weight: 10
 ---
 
-Each UI web app can be customized with a set of defined options.
+Each UI application can be customized with a set of defined options.
 The options objects are defined in JSON and read and merged at runtime with the following order:
 
   - Static options defined at build time
-  - Dynamic fetched options on web app boot
+  - Dynamic fetched options on application boot
   - URL options that can be added by the user as URL query params (mostly for debugging purposes)
 
 This process of collecting and merging the different options is executed by a thin bootstrap layer included in `@c8y/cli`.
@@ -17,7 +17,7 @@ Although all of the options can be defined on any of the 3 levels some might not
 
 ### Static options
 
-Defined in the `package.json` of the web app inside the fragment `c8y.application`:
+Defined in the `package.json` of the application inside the fragment `c8y.application`:
 
 ```json
 {
@@ -42,17 +42,17 @@ c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/pu
 ```
 
 {{< c8y-admon-important >}}
-The `key` property must match the web app key specified for the web app during creation, otherwise the user will not be able to authenticate using the web app.
+The `key` property must match the application key specified for the application during creation, otherwise the user will not be able to authenticate using the web application.
 {{< /c8y-admon-important >}}
 
 ### Dynamic fetched options
 
-Using the static options `dynamicOptionsUrl` the web app will try to load a json from the specified URL at boot time. In the platform's built-in web apps this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and {{< enterprise-tenant >}} customization.
-As this property is defined statically at build time, it is possible for the web app developer to decide if and where from their web apps should load the dynamic fetched options at runtime.
+Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and {{< enterprise-tenant >}} customization.
+As this property is defined statically at build time, it is possible for the application developer to decide if and where from their applications should load the dynamic fetched options at runtime.
 
 ### URL options
 
-These can just be appended to the URL of the web app as query parameters.
+These can just be appended to the URL of the application as query parameters.
 
 ```sh
 https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/options.json&rightDrawer:false
@@ -61,10 +61,10 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 ### Built-in Options
 
 Refer to the [ApplicationOptions](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) documentation for a list of the standard supported options.
-These options can easily be extended with any custom property a developer might want to include in their web app or extensions just by adding it in the static, dynamic or URL way as described above.
+These options can easily be extended with any custom property a developer might want to include in their application or extensions just by adding it in the static, dynamic or URL way as described above.
 
 {{< c8y-admon-tip >}}
-`contentSecurityPolicy` for the current web app can be checked in the following places:
+`contentSecurityPolicy` for the current application can be checked in the following places:
 - When you do `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` you can find the value of `contentSecurityPolicy` in package.json under the path: `c8y.application.contentSecurityPolicy` if it has been defined.
 - When you inspect the page, you can look for `<meta http-equiv="Content-Security-Policy" content="...">` in the `<head>` tag. The active value is enclosed in the `content` attribute.
 {{< /c8y-admon-tip >}}
@@ -72,5 +72,5 @@ These options can easily be extended with any custom property a developer might 
 <br>
 
 {{< c8y-admon-info >}}
-If you build a custom web app based on the standard web app, make sure you append your CSP value to the default one.
+If you build a custom application based on the standard application, make sure you append your CSP value to the default one.
 {{< /c8y-admon-info >}}

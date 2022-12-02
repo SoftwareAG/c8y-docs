@@ -15,17 +15,17 @@ This how-to recipe explains how to create a new tab in the device details view:
 In Web SDK for Angular, this kind of view is called `ViewContext` as it provides a view for a certain context.
 There are a couple of context views, for example, `Device`, `Group`, `User`, `Application` and `Tenant`.
 You can access them by navigating to a certain `Route` with the hash navigation.
-For example, if you go to the route `apps/cockpit/#/device/1234`, the web app tries to resolve the device with the ID `1234`.
+For example, if you go to the route `apps/cockpit/#/device/1234`, the application tries to resolve the device with the ID `1234`.
 
 The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above.
 It is referenced by another route called `/info` but reuses the context of the device to show information about it.
 
 In the following, we will guide you through the process of creating a new tab for this view that is accessible through the route `apps/cockpit/#/device/:id/hello`.
 
-### 1. Initialize the example web app
+### 1. Initialize the example application
 
-As a starting point, you need a web app supporting context routes.
-For this purpose, create a new Cockpit web app using the `c8ycli`:
+As a starting point, you need an application supporting context routes.
+For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
 c8ycli new my-cockpit cockpit  -a @c8y/apps@1009.0.18
@@ -34,10 +34,10 @@ c8ycli new my-cockpit cockpit  -a @c8y/apps@1009.0.18
 Next, you must install all dependencies. Switch to the new folder and run `npm install`.
 
 {{< c8y-admon-info >}}
-The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the web app you want to scaffold, for example:
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold a web app with the version `1009.0.18`
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold a web app with the latest official release. Same as if used without the `-a` flag
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold a web app with the latest beta release.
+The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
 ### 2. Add a new ROUTE&#95;HOOK_ONCE
@@ -105,7 +105,7 @@ export class AppModule extends HybridAppModule {
 
 Explanation of the numbers above:
 
- 1. Provides the multi-provider hook `HOOK_ROUTE_ONCE`. This tells the web app to extend the current route configuration.
+ 1. Provides the multi-provider hook `HOOK_ROUTE_ONCE`. This tells the application to extend the current route configuration.
  2. Specifies that we want to use a value to define the route hook. You can also use a class here, for example, if you want to resolve the routes asynchronously.
  3. Defines the context of the route. Use the `ViewContext` enum to define it. For this example you want to extend the context of a device.
  4. The path where it is going to be shown. It is added to the context path. For this example the complete path is: `device/:id/hello`.
@@ -116,7 +116,7 @@ Explanation of the numbers above:
 The HOOK_ONCE_ROUTE inherits the Angular Route type. All of its properties can be reused here.
 {{< /c8y-admon-info >}}
 
-After this alignment the route is registered but the web app will fail to compile as the `HelloComponent` does not exist yet.
+After this alignment the route is registered but the application will fail to compile as the `HelloComponent` does not exist yet.
 You will create it in the next section.
 
 ### 3. Add a component to display context data
@@ -151,7 +151,7 @@ export class HelloComponent {
 This component injects the `ActivatedRoute` and accesses its parent data.
 This is the key point: as the parent context route already has resolved the data of the device, this component will always show the detailed data of the current device.
 
-Adding it to the `entryComponents` in `app.module.ts` will allow you to compile the web app:
+Adding it to the `entryComponents` in `app.module.ts` will allow you to compile the application:
 
 ```js
 
@@ -214,12 +214,12 @@ export class AppModule extends HybridAppModule {
 
 ```
 
-When you now start your web app with `npm start` and navigate to a details view of a device it should look like this:
+When you now start your application with `npm start` and navigate to a details view of a device it should look like this:
 
 ![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
 You have now added a tab to a device.
-You can do the same for tenants, users or web apps details views.
+You can do the same for tenants, users or applications details views.
 
 Next you will learn how to show this tab only if a condition is met.
 
@@ -329,7 +329,7 @@ If you now post a device with the fragment `"acme_HelloWorld": {}` to the API, t
 
 Context routes help you to extend existing routes with further information.
 
-At the same time, the concept allows the web app to be consistent since the context is just resolved once and if the context is not found, it can be handled by the parent.
+At the same time, the concept allows the application to be consistent since the context is just resolved once and if the context is not found, it can be handled by the parent.
 
 However, there is currently no default way of abstracting the context route concept and implementing your own.
 Since the concept is heavily based on [Angular routing](https://angular.io/guide/router) you can implement the concept yourself.

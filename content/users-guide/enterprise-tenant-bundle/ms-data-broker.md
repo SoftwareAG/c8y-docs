@@ -20,7 +20,7 @@ See the *Messaging Service - Installation & operations guide* for further techni
 
 In summary, to work with the microservice-based data broker, the following requirements have to be met:
   * The {{< product-c8y-iot >}} Messaging Service should be available on your {{< product-c8y-iot >}} platform.
-  * Your tenant must be subscribed to the web app “feature-broker”.
+  * Your tenant must be subscribed to the application “feature-broker”.
   * Your tenant must be subscribed to the microservice “databroker-agent-server”.
 
 {{< /c8y-admon-req >}}
@@ -30,8 +30,8 @@ In summary, to work with the microservice-based data broker, the following requi
 
 1. In the {{< management-tenant >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
 2. In the **Applications** tab:
-    * Subscribe the tenant to the data broker feature (`feature-broker` web app), if it is not already subscribed.
-    * Subscribe the tenant to the data broker agent (`databroker-agent-server` web app).
+    * Subscribe the tenant to the data broker feature (`feature-broker` application), if it is not already subscribed.
+    * Subscribe the tenant to the data broker agent (`databroker-agent-server` application).
 
 ![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
 

@@ -15,7 +15,7 @@ You need configuration or administration permissions to work with offloading pip
 | [Managing offloading jobs](/datahub/working-with-datahub/#managing-offloading-jobs) | Schedule and manage offloading pipelines |
 | [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) | Monitor the results of offloading jobs |
 | [Monitoring compaction jobs](/datahub/working-with-datahub/#monitoring-compaction-jobs) | Monitor the results of compaction jobs |
-| [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded) | Query offloaded {{< product-c8y-iot >}} data in follow-up web apps |
+| [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded) | Query offloaded {{< product-c8y-iot >}} data in follow-up applications |
 | [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) | Use Dremio to refine offloaded {{< product-c8y-iot >}} data |
 | [{{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) | Learn more about best practices when working with {{< product-c8y-iot >}} DataHub |
 

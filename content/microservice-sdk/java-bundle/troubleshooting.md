@@ -42,27 +42,27 @@ The *gd\_bundle.crt* certificate can be downloaded directly from the [GoDaddy re
 
 Make sure that you use the **Target Platform** preferences page to install the SDK as described in the instructions. **Install New Software** installs software into your running Eclipse IDE, but you must install the SDK as a separate server software.
 
-##### I get "Expected to find an object at table index" when running a microservice or web app
+##### I get "Expected to find an object at table index" when running a microservice or application
 
 This error occurs due to a bug in particular Eclipse versions. As a workaround, select **Run** from the main menu and then **Run Configurations ...**. On the left, select the launch configuration that you have been using, for example, **OSGi Framework**. On the right, click the **Arguments** tab. Append a " -clean" to the **Program Arguments** and click **Apply**.
 
-##### The microservice or web app won't start
+##### The microservice or application won't start
 
 Verify that all required plug-ins are checked in your launch configuration. Go to **Run** > **Run Configurations** and select the **OSGi Framework** launch configuration. Click **Select All** and try running it again.
 
-Check if the required plug-ins are started. While the web app or microservice is running, type "ss" into the console and hit the return key. All listed plug-ins should be either in the ACTIVE or RESOLVED state.
+Check if the required plug-ins are started. While the application or microservice is running, type "ss" into the console and hit the return key. All listed plug-ins should be either in the ACTIVE or RESOLVED state.
 
 Check if you are using the correct target platform. Go to the **Target Platform** page in the preferences and check if "{{< company-c8y >}} runtime" is checked.
 
-##### The microservice web app does not compile. I get "Access Restriction" messages
+##### The microservice application does not compile. I get "Access Restriction" messages
 
 This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restriction is present in the Import-Package section.
 
 You can find the package by opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
 
-##### When starting a web app I get "address already in use" messages
+##### When starting an application I get "address already in use" messages
 
-Check if you are running another instance of the web app. Click on the **Display Selected Console** icon in the console toolbar (the terminal icon) to browse through your consoles. Terminate other running instances by clicking the red **Stop** icon in the toolbar.
+Check if you are running another instance of the application. Click on the **Display Selected Console** icon in the console toolbar (the terminal icon) to browse through your consoles. Terminate other running instances by clicking the red **Stop** icon in the toolbar.
 
 Under Unix/macOS you can also use the `lsof` command to see which process is using a particular port. For example, to see which process is using TCP port 8080 enter:
 
@@ -79,13 +79,13 @@ java     12985   neo  45u  IPv6  0x077c76d0       0t0   TCP  *:8080 (LISTEN)
 
 This means that the process 12985 is using the 8080 port and it can be killed if necessary.
 
-##### When trying to build a web app I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error
+##### When trying to build an application I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error
 
 This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, for example, 10.4.0, the version of Spring Boot must be 1.5.17 or later.
 
 ##### Missing Docker permissions in Linux
 
-When you build a microservice web app via `mvn`, you might get this error:
+When you build a microservice application via `mvn`, you might get this error:
 
 ```shell
 [ERROR] Failed to execute goal com.nsn.cumulocity.clients-java:microservice-package-maven-plugin:1004.6.12:package (package) on project hello-microservice-java: Execution package of goal com.nsn.cumulocity.clients-java:microservice-package-maven-plugin:1004.6.12:package failed: org.apache.maven.plugin.MojoExecutionException: Exception caught: java.util.concurrent.ExecutionException: com.spotify.docker.client.shaded.javax.ws.rs.ProcessingException: java.io.IOException: Permission denied -> [Help 1]

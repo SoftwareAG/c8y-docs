@@ -74,13 +74,13 @@ KEY=$(cat $UNPACK_DIR/cumulocity.json | jq .key)
 TYPE='"HOSTED"'
 
 # Create streaming analytics app
-curl -H "Content-Type: web app/json" -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/application/applications" -d "{\"name\":$NAME,\"contextPath\":$CONTEXT_PATH,\"type\":$TYPE,\"key\":$KEY,\"resourceUrl\":\"/\"}"
+curl -H "Content-Type: application/json" -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/application/applications" -d "{\"name\":$NAME,\"contextPath\":$CONTEXT_PATH,\"type\":$TYPE,\"key\":$KEY,\"resourceUrl\":\"/\"}"
 
 # Get app id of created app
 SAAPP_ID=$(curl -u "management/${USER}:${PASSWORD}" --location --request GET "localhost:/application/applications?pageSize=100" | jq -r '.applications[]| select(.key == "streaminganalytics-key").id')
 
 # Add to market
-curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/management/applications" --header "Content-Type: web app/json" -d "{\"application\":{\"id\":\"$SAAPP_ID\"}}"
+curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/management/applications" --header "Content-Type: application/json" -d "{\"application\":{\"id\":\"$SAAPP_ID\"}}"
 
 # Upload streaming analytics binary (zip)
 curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/application/applications/$SAAPP_ID/binaries" --header "Content-Type: multipart/form-data" --form "file=@$STREAMING_ANALYTICS_PATH"
@@ -91,11 +91,11 @@ sleep 1
 BIN_ID=$(curl -v -u "management/${USER}:${PASSWORD}" --location --request GET "localhost/application/applications/$SAAPP_ID/binaries" | jq -r '.attachments[0].id')
 
 # Set current version of streaming analytics to the binary id
-curl -v -u "management/${USER}:${PASSWORD}" -H "Content-Type: web app/vnd.com.nsn.cumulocity.application+json" --location --request PUT "localhost/application/applications/$SAAPP_ID" -d "{\"id\":\"$SAAPP_ID\", \"activeVersionId\":\"$BIN_ID\"}"
+curl -v -u "management/${USER}:${PASSWORD}" -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" --location --request PUT "localhost/application/applications/$SAAPP_ID" -d "{\"id\":\"$SAAPP_ID\", \"activeVersionId\":\"$BIN_ID\"}"
 
-curl -v -u "management/${USER}:${PASSWORD}" -H "Content-Type: web app/vnd.com.nsn.cumulocity.application+json" --location --request PUT "localhost/application/applications/$SAAPP_ID" -d @${UNPACK_DIR}/cumulocity.json
+curl -v -u "management/${USER}:${PASSWORD}" -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" --location --request PUT "localhost/application/applications/$SAAPP_ID" -d @${UNPACK_DIR}/cumulocity.json
 
-curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/management/applications" --header "Content-Type: web app/json" -d "{\"application\":{\"id\":\"$SAAPP_ID\"}}"
+curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/management/applications" --header "Content-Type: application/json" -d "{\"application\":{\"id\":\"$SAAPP_ID\"}}"
 
 # Subscribe edge tenant
-curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/edge/applications" --header "Content-Type: web app/json" -d "{\"application\": {\"id\":\"$SAAPP_ID\"}}"
+curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/edge/applications" --header "Content-Type: application/json" -d "{\"application\": {\"id\":\"$SAAPP_ID\"}}"

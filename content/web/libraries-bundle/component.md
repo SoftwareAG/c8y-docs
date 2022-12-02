@@ -4,7 +4,7 @@ layout: redirect
 weight: 10
 ---
 
-ngx-components is a components collection and data access layer for Angular web apps. It allows to access our platform from within an Angular web app as well as to provide the core components. To achieve this the ngx-components consists of two basic imports:
+ngx-components is a components collection and data access layer for Angular applications. It allows to access our platform from within an Angular application as well as to provide the core components. To achieve this the ngx-components consists of two basic imports:
 
  - core (`@c8y/ngx-components`) which contains all core components like title, navigator or tabs.
  - api (`@c8y/ngx-components/api`) which enables dependency injection of the [@c8y/client](/web/libraries/#client) services.
@@ -13,7 +13,7 @@ ngx-components is a components collection and data access layer for Angular web 
 
 ### Prerequisites
 
-If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) to bootstrap a new web app you must first install the package:
+If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) to bootstrap a new application you must first install the package:
 
 ```
 $ npm install @c8y/ngx-components
@@ -42,11 +42,11 @@ export class AppModule {}
 
 1. Make sure to set `useHash` navigation to true as the platform does not support [pushState](https://angular.io/guide/router#hashlocationstrategy)
 2. Import the `CoreModule` to allow the use of the `c8y-` prefixed components.
-3. Bootstrap your web app with the `BootstrapComponent` which will use the `<c8y-bootstrap>` component to initialize the root web app. Alternatively, you can bootstrap a component of your choice and include that tag into its template or only reuse the given components.
+3. Bootstrap your application with the `BootstrapComponent` which will use the `<c8y-bootstrap>` component to initialize the root application. Alternatively, you can bootstrap a component of your choice and include that tag into its template or only reuse the given components.
 
 ### Extension points
 
-To extend and compose a web app, ngx-components provide four core architecture concepts called *Extensions points*:
+To extend and compose an application, ngx-components provide four core architecture concepts called *Extensions points*:
 
 #### Content Projection (CP)
 
@@ -65,7 +65,7 @@ A good example to use this concept is the `c8y-action-bar-item` which uses a `ro
 The above example gives you an action bar item in the header bar, regardless in which component you define it. If the component is initialized the item is shown and it is removed on destroy.
 
 #### Multi Provider (MP)
-The Multi Provider extension allows a declarative approach to extend the web app. Instead of defining it in the template, you extend an already defined factory via a `HOOK`. This hook gets executed if the web app state changes. The return values are then injected into the page. You can use the normal dependency injection system of Angular and as a result you can usually return an Observable, Promise or Array of a certain type. As an example we can define the tabs of certain routes by hooking into the `HOOK_TABS` provider:
+The Multi Provider extension allows a declarative approach to extend the application. Instead of defining it in the template, you extend an already defined factory via a `HOOK`. This hook gets executed if the application state changes. The return values are then injected into the page. You can use the normal dependency injection system of Angular and as a result you can usually return an Observable, Promise or Array of a certain type. As an example we can define the tabs of certain routes by hooking into the `HOOK_TABS` provider:
 
 ```js
    import { Injectable } from '@angular/core';
@@ -142,7 +142,7 @@ A service is defined for most components of ngx-components. They can be used via
 
 #### Legacy plugins
 
-If you are extending a default web app (Cockpit, Device Management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the web app appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
+If you are extending a default application (Cockpit, Device Management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the application appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
 
 ```json
     {
@@ -176,7 +176,7 @@ You get the same result in the new Angular framework by modifying the `ng1.ts` f
 
 As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins must have the `/cumulocity.json` addition to tell webpack that a legacy plugin is imported.
 
-To use legacy plugins in your custom non-default web app you must set the `upgrade` flag in the package.json file and use the same import approach like described before:
+To use legacy plugins in your custom non-default application you must set the `upgrade` flag in the package.json file and use the same import approach like described before:
 
 ```json
     "c8y": {
@@ -189,7 +189,7 @@ To use legacy plugins in your custom non-default web app you must set the `upgra
     }
 ```
 
-Also the module definition of your web app must be changed to support these plugins:
+Also the module definition of your application must be changed to support these plugins:
 
 ```javascript
     import { NgModule } from '@angular/core';

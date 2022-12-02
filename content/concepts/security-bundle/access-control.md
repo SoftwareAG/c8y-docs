@@ -6,9 +6,9 @@ layout: redirect
 
 {{< product-c8y-iot >}} uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside {{< product-c8y-iot >}}.
 
-{{< product-c8y-iot >}} creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between usernames: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all {{< product-c8y-iot >}} web apps that a tenant subscribes to.
+{{< product-c8y-iot >}} creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between usernames: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all {{< product-c8y-iot >}} applications that a tenant subscribes to.
 
-Each new realm is automatically populated with an initial administrator user who can create further users and user groups (that is, global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration web app.
+Each new realm is automatically populated with an initial administrator user who can create further users and user groups (that is, global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
 ![User management](/images/concepts-guide/user-management.png)
 
@@ -51,7 +51,7 @@ This concept helps to assign minimal permissions to devices.
 
 ### Managing roles and assigning permissions
 
-Global roles and inventory roles are created and managed in the **Roles** page of the Administration web app in the UI.
+Global roles and inventory roles are created and managed in the **Roles** page of the Administration application in the UI.
 
 ![Permission page](/images/users-guide/Administration/admin-global-roles.png)
 

@@ -22,37 +22,37 @@ A report is typically published so that it is available to other users as well. 
 
 #### Configuring access to Microsoft Power BI reports
 
-To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither must sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an Azure Active Directory service principal object with a web app secret is used.
+To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither must sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an Azure Active Directory service principal object with an application secret is used.
 
 The following configuration steps are required, as discussed in detail in the corresponding Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers).
 
 As prerequisite you need an Azure Active Directory tenant. If you do not have an Azure Active Directory, follow the instructions in the Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant).
 
-Next you must register an Azure Active Directory web app, which serves as service principal. You must configure the service principal web app to access the REST APIs of Microsoft Power BI, following the instructions on the [Microsoft Power BI website](https://app.powerbi.com/embedsetup):
+Next you must register an Azure Active Directory application, which serves as service principal. You must configure the service principal application to access the REST APIs of Microsoft Power BI, following the instructions on the [Microsoft Power BI website](https://app.powerbi.com/embedsetup):
 
 1. Select **Embed for your customers**.
 2. Sign in to Microsoft Power BI.
-3. Register a web app with respective permissions.
+3. Register an application with respective permissions.
 4. Skip creating a workspace and importing content.
 5. Grant permissions to the service principal.
 
 {{< c8y-admon-info >}}
-An web app created with the wizard can be used as a service principal.
+An application created with the wizard can be used as a service principal.
 {{< /c8y-admon-info >}}
 
-Alternatively, you can create a service principal web app following the section *Creating an Azure AD app in the Microsoft Azure portal* on the Microsoft website [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
+Alternatively, you can create a service principal application following the section *Creating an Azure AD app in the Microsoft Azure portal* on the Microsoft website [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal).
 
-Additionally, you must add a client secret for the service principal web app. You can do that via the [Azure portal](https://portal.azure.com/). Search for **App registrations**, select your web app by its name under **All web apps**, and click the link next to the **Client credentials** entry on the **Overview** page of the web app.
+Additionally, you must add a client secret for the service principal application. You can do that via the [Azure portal](https://portal.azure.com/). Search for **App registrations**, select your application by its name under **All applications**, and click the link next to the **Client credentials** entry on the **Overview** page of the application.
 
-Next you can define a workspace to organize your reports. By adding the service principal web app as a member or admin to the workspace, it can access the reports of the workspace. Go to the [Microsoft Power BI website](https://app.powerbi.com) and conduct the following steps to grant the permissions:
+Next you can define a workspace to organize your reports. By adding the service principal application as a member or admin to the workspace, it can access the reports of the workspace. Go to the [Microsoft Power BI website](https://app.powerbi.com) and conduct the following steps to grant the permissions:
 
 1. Sign in to Microsoft Power BI.
 2. Click **Workspaces**.
 3. Select the context menu of the workspace to share with the service principal.
 4. Select **Workspace access**.
-5. Enter the name of your recently created service principal web app and grant the *Member* or *Admin* permission.
+5. Enter the name of your recently created service principal application and grant the *Member* or *Admin* permission.
 
-Only workspaces granting access to the service principal web app can be browsed from within {{< product-c8y-iot >}} DataHub. Once the workspace is available, you can publish reports to it and access it in {{< product-c8y-iot >}} DataHub.
+Only workspaces granting access to the service principal application can be browsed from within {{< product-c8y-iot >}} DataHub. Once the workspace is available, you can publish reports to it and access it in {{< product-c8y-iot >}} DataHub.
 
 ### Setting up the connection in Cumulocity IoT DataHub
 
@@ -60,9 +60,9 @@ In the navigator, select **Settings** and then **Microsoft Power BI** to define 
 
 |Settings|Description|
 |:---|:---|
-|Azure Active Directory tenant ID|The ID of the Azure Active Directory tenant. Within the tenant, an Azure Active Directory web app must exist with a service principal that is allowed to access corresponding resources of Microsoft Power BI.|
-|Client ID|The ID of the Azure Active Directory web app which has permissions to call the REST APIs of Microsoft Power BI.|
-|Client secret|The client secret, which is configured for the Azure Active Directory web app.|
+|Azure Active Directory tenant ID|The ID of the Azure Active Directory tenant. Within the tenant, an Azure Active Directory application must exist with a service principal that is allowed to access corresponding resources of Microsoft Power BI.|
+|Client ID|The ID of the Azure Active Directory application which has permissions to call the REST APIs of Microsoft Power BI.|
+|Client secret|The client secret, which is configured for the Azure Active Directory application.|
 
 Once all settings are completed, click **Save** on the action bar to save the settings and establish the connection.
 

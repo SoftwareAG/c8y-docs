@@ -53,7 +53,7 @@ To register devices, you can select one of the following options:
 * Single **[General](#device-registration-manually)** device registration - to manually connect one or more devices
 * Bulk **[General](#creds-upload)** device registration - to register larger amounts of devices in one step
 
-If you are subscribed to the required web apps you will see other options for registering devices of specific types (for example, Actility LoRa or Sigfox). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview).
+If you are subscribed to the required applications you will see other options for registering devices of specific types (for example, Actility LoRa or Sigfox). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview).
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 

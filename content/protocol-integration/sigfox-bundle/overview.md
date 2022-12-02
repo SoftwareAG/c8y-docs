@@ -30,5 +30,5 @@ Moreover, check out
 * [Troubleshooting](#sigfox-troubleshooting) in case of any issues.
 
 {{< c8y-admon-info >}}
-To be able to use the Sigfox agent, your tenant needs to be subscribed to the web app sigfox-agent. In case of any issues, please contact [product support](/welcome/contacting-support/).
+To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues, please contact [product support](/welcome/contacting-support/).
 {{< /c8y-admon-info >}}

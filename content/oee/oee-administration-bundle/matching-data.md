@@ -62,7 +62,7 @@ In this example we derive the produced amount from an event "StateEvent" of the 
 
 This rule looks like this in text form: "if evt("342", "StateEvent", "content$sub_state$id",false) = 3 then 1"
 
-If the IF condition is fulfilled, this means for the OEE web app that a workpiece has been created, see green events.<br>
+If the IF condition is fulfilled, this means for the OEE application that a workpiece has been created, see green events.<br>
 If an IF condition is fulfilled, the created workpiece (quantity = 1) is split up to the last event, regardless of whether the event fulfills the If condition or not. The splitting is shown in red.
 
 ![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-2.png)

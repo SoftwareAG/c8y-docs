@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Developing web apps
+title: Developing applications
 layout: bundle
 aliases:
   - /concepts-guide/developing-m2m-applications
@@ -10,6 +10,6 @@ aliases:
   - /konzepte/anwendungen
 ---
 
-{{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT web apps in addition to its generic functionality.
+{{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality.
 
-This section introduces the basic concepts around web apps in {{< product-c8y-iot >}}.
+This section introduces the basic concepts around applications in {{< product-c8y-iot >}}.

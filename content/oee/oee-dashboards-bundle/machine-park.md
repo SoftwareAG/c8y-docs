@@ -4,7 +4,7 @@ title: Machine Park Overview
 layout: redirect
 ---
 
-The **Overview** page is the landing page of the OEE web app. Here you can find aggregated information on the OEE values of your machine park.
+The **Overview** page is the landing page of the OEE application. Here you can find aggregated information on the OEE values of your machine park.
 
 ![Machine park overview](/images/oee/dashboards/dashboard-machine-park-overview.png)
 

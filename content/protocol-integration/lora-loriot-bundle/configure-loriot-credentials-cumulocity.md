@@ -7,7 +7,7 @@ layout: redirect
 <a name="cumulocity-loriot-connection-configuration">
 ### Creation of Loriot LNS Connection in Cumulocity</a>
 
-Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration web app. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
+Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 
 <a name="add-new-connection"></a>
 #### To add a new connection
@@ -53,22 +53,22 @@ If there are devices associated with the connection, an error message appears, s
 <a name="loriot-device-registration">
 ### Loriot device registration</a>
 
-To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management web app, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
+To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-selection.png)
 
 {{< c8y-admon-info >}}
-If Loriot is not one of the available options, your tenant is not subscribed to the relevant web apps, see information at the top.
+If Loriot is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
 {{< /c8y-admon-info >}}
 
 In the next window, fill in the required information:
 
 - **Title** Title of the device to be registered.
 - **Device EUI** This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
-- **Application EUI** This is a global web app ID in the IEEE EUI64 address space that uniquely identifies the web app provider of the device. It is a 16 character (8 byte) long hexadecimal number.
-- **Application key** This is an AES-128 web app key specific for the device that is assigned to the device by the web app owner and is responsible to encrypt. The web app key is a 32 character (16 byte) long hexadecimal number.
+- **Application EUI** This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number.
+- **Application key** This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 - **Connection** Lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
-- **Application name** Select the appropriate web app name under which the device must be registered in the Loriot provider.
+- **Application name** Select the appropriate application name under which the device must be registered in the Loriot provider.
 - **Device protocol** Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-registration.png)

@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-Simple Network Management protocol (SNMP) is a web app layer protocol, used widely in network management for monitoring network devices.
+Simple Network Management protocol (SNMP) is an application layer protocol, used widely in network management for monitoring network devices.
 
 There are two components that help SNMP-enabled devices to connect to the {{< product-c8y-iot >}} platform:
 

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Before you register a device, you must configure the Sigfox Cloud credentials in the **Connectivity** page in the Administration web app. You must set up these Sigfox Cloud credentials in Sigfox.
+Before you register a device, you must configure the Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You must set up these Sigfox Cloud credentials in Sigfox.
 
 Before you create API access to {{< product-c8y-iot >}}, you must have an "Associated user" which is added to the {{< product-c8y-iot >}} group in Sigfox Cloud and has the following profiles:
 
@@ -37,7 +37,7 @@ After creating an "Associated user" with the proper group and profiles navigate 
 
 ### Step 3
 
-After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration web app. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
+After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
 
 The **Connectivity** tab facilitates creating, updating, and deleting multiple Sigfox connections.
 

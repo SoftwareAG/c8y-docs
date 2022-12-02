@@ -3,7 +3,7 @@ weight: 10
 title: Streaming analytics with Apama EPL
 layout: redirect
 ---
-Using the Streaming Analytics web app, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert web apps of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
+Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 The operation logic is based on Apama's Event Processing Language (Apama EPL).
 
@@ -19,5 +19,5 @@ Typical real-time analytics use cases include:
 The following sections describe how you can create your own analytics or other server-side business logic and automation. You can do this using analytic models, EPL apps, and smart rules.
 
 {{< c8y-admon-info >}}
-This documentation assumes basic familiarity with Apama web app development. Refer to the [Apama documentation]({{< link-apama-webhelp >}}) for further details.
+This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation]({{< link-apama-webhelp >}}) for further details.
 {{< /c8y-admon-info >}}

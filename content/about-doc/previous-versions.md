@@ -36,7 +36,7 @@ Switch to the branch of your choice.
 
 ##### To convert the sources to HTML format
 
-The Markdown files are converted to HTML files by a web app called "Hugo".
+The Markdown files are converted to HTML files by an application called "Hugo".
 
 1. Follow the instructions in [https://gohugo.io/getting-started/installing/](https://gohugo.io/getting-started/installing/) to install the appropriate Hugo version for your operating system.
 

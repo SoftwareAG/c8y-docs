@@ -46,7 +46,7 @@ The request above is simply an example API request that could be used. For more 
 {{< /c8y-admon-info >}}
 
 
-This warning message shows up when there are no connections set up for the Sigfox account. To resolve this click **Settings** to navigate to the Administration web app where the connections are configured.
+This warning message shows up when there are no connections set up for the Sigfox account. To resolve this click **Settings** to navigate to the Administration application where the connections are configured.
 
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without connections" style="max-width: 100%">
 <br>

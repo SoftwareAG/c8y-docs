@@ -4,7 +4,7 @@ title: LWM2M connector device
 layout: redirect
 ---
 
-The LWM2M connector device is an automatically generated device for the tenants which have a subscription to the LWM2M web app.
+The LWM2M connector device is an automatically generated device for the tenants which have a subscription to the LWM2M application.
 You can use this device to manage tenant-wide LWM2M devices.
 The `help` shell command shows the available operations and how to use them.
 

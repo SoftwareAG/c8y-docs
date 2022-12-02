@@ -60,7 +60,7 @@ Note that if the job name or description contain any unsafe characters, all such
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type| web app/json
+|Content-Type| application/json
 
 **BODY**
 ```

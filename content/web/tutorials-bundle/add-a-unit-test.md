@@ -7,26 +7,26 @@ weight: 20
 **Version:** 1013.0.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 Unit testing is an essential part of every development process.
-Since version 10.13.0.0, all new `c8ycli` scaffolded web apps include the unit test framework [Jest](https://jestjs.io/) by default.
+Since version 10.13.0.0, all new `c8ycli` scaffolded applications include the unit test framework [Jest](https://jestjs.io/) by default.
 This tutorial shows you how to write and verify your first unit test.
 
-### 1. Initialize the example web app
+### 1. Initialize the example application
 
-You need a web app, for example, the empty default web app:
+You need an application, for example, the empty default application:
 
 ```js
-c8ycli new my-app web app -a @c8y/apps@1013.0.62
+c8ycli new my-app application -a @c8y/apps@1013.0.62
 ```
 
-However, any web app supports unit tests in the same way. Next, you must install all dependencies.
+However, any application supports unit tests in the same way. Next, you must install all dependencies.
 
 Switch to the new folder and run `npm install`.
 
 {{< c8y-admon-info >}}
-The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the web app you want to scaffold, for example:
- - `c8ycli new my-cockpit cockpit -a @c8y/apps@1013.0.62` will scaffold a web app with the version `1013.0.62`.
- - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold a web app with the latest official release. Same as if used without the `-a` flag.
- - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold a web app with the latest beta release.
+The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
+ - `c8ycli new my-cockpit cockpit -a @c8y/apps@1013.0.62` will scaffold an application with the version `1013.0.62`.
+ - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag.
+ - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
 ### 2. Add a component
@@ -168,5 +168,5 @@ It is common practice to commit these snapshots with your code.
 
 ### Conclusion
 
-This tutorial showed you how to add tests to newly scaffolded web apps via the `c8ycli` command.
+This tutorial showed you how to add tests to newly scaffolded applications via the `c8ycli` command.
 The advanced snapshot testing has the option to verify templates quickly.

@@ -4,19 +4,19 @@ title: Microservice development
 layout: redirect
 ---
 
-This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the {{< product-c8y-iot >}} REST APIs can be employed to develop microservice web apps.
+This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the {{< product-c8y-iot >}} REST APIs can be employed to develop microservice applications.
 
 <a name="creating-application"></a>
-### Creating web apps
+### Creating applications
 
-In order to start working with microservices, an instance of a web app must be created on the platform beforehand. It can be done using the following endpoint:
+In order to start working with microservices, an instance of an application must be created on the platform beforehand. It can be done using the following endpoint:
 
 ```http
 POST /application/applications
 Host: ...
 Authorization: Basic ...
 Content-Length: ...
-Content-Type: web app/vnd.com.nsn.cumulocity.application+json
+Content-Type: application/vnd.com.nsn.cumulocity.application+json
 {
   "key": "<APPLICATION_NAME>-key",
   "name": "<APPLICATION_NAME>",
@@ -33,13 +33,13 @@ The properties `key`, `name` and `type` from the above request body are self exp
 * `requiredRoles` - A list of {{< product-c8y-iot >}} permissions the microservice user needs in order to get data from {{< product-c8y-iot >}}, for example, if the microservice creates a managed object, one of the required roles shall be `ROLE_INVENTORY_ADMIN`.
 * `roles` - A list of microservice permissions. If the microservice exposes an own REST API, it can be secured with an own set of permissions, for example, a SMS microservice would require `SMS_ADMIN` permission to send SMS messages. These permissions become available in the tenant after microservice subscription. Afterwards, an admin user can grant such permission to  another user that wants to send SMS messages via the {{< product-c8y-iot >}} platform.
 
-The web app ID for existing web apps can be obtained employing a GET request with the name of the web app:
+The application ID for existing applications can be obtained employing a GET request with the name of the application:
 
 ```http
 GET /application/applicationsByName/<APPLICATION_NAME>
 Host: ...
 Authorization: Basic ...
-Accept: web app/vnd.com.nsn.cumulocity.application+json
+Accept: application/vnd.com.nsn.cumulocity.application+json
 ```
 
 The success response will look similar to:
@@ -78,14 +78,14 @@ The success response will look similar to:
 }
 ```
 
-The web app can be updated afterwards by employing a PUT request:
+The application can be updated afterwards by employing a PUT request:
 
 ```http
 PUT /application/applications/<APPLICATION_ID>
 Host: ...
 Authorization: Basic ...
 Content-Length: ...
-Content-Type: web app/vnd.com.nsn.cumulocity.application+json
+Content-Type: application/vnd.com.nsn.cumulocity.application+json
 {
     "key": "<APPLICATION_NAME>-key",
     "name": "<APPLICATION_NAME>",
@@ -95,9 +95,9 @@ Content-Type: web app/vnd.com.nsn.cumulocity.application+json
 }
 ```
 
-### Deploying web apps
+### Deploying applications
 
-A microservice web app gets available for {{< product-c8y-iot >}} platform users by uploading a binary ZIP file.
+A microservice application gets available for {{< product-c8y-iot >}} platform users by uploading a binary ZIP file.
 
 ```http
 POST /application/applications/<APPLICATION_ID>/binaries
@@ -108,7 +108,7 @@ Content-Type: multipart/form-data
 
 The ZIP file must consist of:
 
-* _cumulocity.json_ - The web app manifest file describing the deployment
+* _cumulocity.json_ - The application manifest file describing the deployment
 * _image.tar_ - An executable Docker image
 
 
@@ -129,7 +129,7 @@ Response:
 
 ```http
 HTTP/1.1 200 Ok
-Content-Type: web app/vnd.com.nsn.cumulocity.user+json
+Content-Type: application/vnd.com.nsn.cumulocity.user+json
 {
     "tenant": "...",
     "name": "...",
@@ -147,12 +147,12 @@ GET /application/currentApplication/subscription
 PUT /application/currentApplication
 ```
 
-For example, to get the current web app use:
+For example, to get the current application use:
 
 ```http
 GET /application/currentApplication
 Authorization: Basic ...
-Content-Type: web app/json
+Content-Type: application/json
 ```
 
 Response:
@@ -183,16 +183,16 @@ Response:
 
 ### Subscriptions
 
-Subscription in this scope means tenant subscription to a microservice web app. The subscription is an important step after deployment.
-When a microservice web app is deployed it becomes available for subscription to other tenants. Subscribing to a microservice is the same as subscribing to any other web app and it can be done in the Administration web app. Also, a tenant can be subscribed employing a POST request:
+Subscription in this scope means tenant subscription to a microservice application. The subscription is an important step after deployment.
+When a microservice application is deployed it becomes available for subscription to other tenants. Subscribing to a microservice is the same as subscribing to any other application and it can be done in the Administration application. Also, a tenant can be subscribed employing a POST request:
 
 ```http
 POST /tenant/tenants/<TENANT>/applications
 Host: ...
 Authorization: Basic ...
 Content-Length: ...
-Content-Type: web app/vnd.com.nsn.cumulocity.applicationreference+json
-Accept: web app/vnd.com.nsn.cumulocity.tenant+json
+Content-Type: application/vnd.com.nsn.cumulocity.applicationreference+json
+Accept: application/vnd.com.nsn.cumulocity.tenant+json
 {
     "application": {
         "id": "<APPLICATION_ID>"
@@ -204,7 +204,7 @@ A successful response will look similar to:
 
 ```http
 HTTP/1.1 201 Created
-Content-Type: web app/vnd.com.nsn.cumulocity.tenant+json
+Content-Type: application/vnd.com.nsn.cumulocity.tenant+json
 Content-Length: ...
 {
     "application": {
@@ -236,7 +236,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: web app/vnd.com.nsn.cumulocity.applicationusercollection+json
+Content-Type: application/vnd.com.nsn.cumulocity.applicationusercollection+json
 {
     "users": [{
         "tenant": "...",
@@ -268,7 +268,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: web app/vnd.com.nsn.cumulocity.option+json;charset=UTF-8;ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.option+json;charset=UTF-8;ver=0.9
 {
    "email.protocol": "smtps",
    "password.enforce.strength": "true",
@@ -280,14 +280,14 @@ Content-Type: web app/vnd.com.nsn.cumulocity.option+json;charset=UTF-8;ver=0.9
 
 #### Registering assets
 
-Assets are the objects that your business and your web app focuses on. For example, assets might be buildings and rooms if your business centers around building management or home automation. Or they might be routes and machines, if your business is about servicing machines.
+Assets are the objects that your business and your application focuses on. For example, assets might be buildings and rooms if your business centers around building management or home automation. Or they might be routes and machines, if your business is about servicing machines.
 
 Assets are stored in the inventory along with the devices, but they often have their own structure independent of devices. You create assets by POSTing them to the collection of managed objects in the inventory. For example, to create a new room in the inventory, use:
 
 ```http
 POST /inventory/managedObjects
-Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
-Accept: web app/vnd.com.nsn.cumulocity.managedobject+json
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+Accept: application/vnd.com.nsn.cumulocity.managedobject+json
 Authorization: Basic ...
 {
     "name": "Building 043",
@@ -299,7 +299,7 @@ Response:
 
 ```http
 HTTP/1.1 201 Created
-Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9
 ...
 {
     "owner": "admin",
@@ -333,7 +333,7 @@ For example, assuming that we have also created a room, and that room's "self" p
 
 ```http
 POST /inventory/managedObjects/2549800/childAssets HTTP/1.1
-Content-Type: web app/vnd.com.nsn.cumulocity.managedobjectreference+json
+Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 {
     "managedObject" : {
         "self" : "http://.../inventory/managedObjects/2549700"
@@ -351,7 +351,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
 ...
 {
     "owner": "admin",
@@ -380,7 +380,7 @@ Just like you link assets to other child assets, you can also link assets to dev
 
 ```http
 POST /inventory/managedObjects/2549700/childDevices
-Content-Type: web app/vnd.com.nsn.cumulocity.managedobjectreference+json
+Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 {
     "managedObject" : {
         "self" : "https://.../inventory/managedObjects/2480500"
@@ -397,7 +397,7 @@ Often, {{< product-c8y-iot >}} will not be the only IT system dealing with a com
 
 #### Querying particular capabilities
 
-To decouple web apps from the specifics of particular types of devices, web apps can use fragments to query the inventory (see the Fragments section of [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model)). For example, to find all managed objects having a location, use:
+To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model)). For example, to find all managed objects having a location, use:
 
 ```http
 GET /inventory/managedObjects?fragmentType=c8y_Position&withTotalPages=true
@@ -407,7 +407,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: web app/vnd.com.nsn.cumulocity.managedobjectcollection+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; charset=UTF-8; ver=0.9
 ...
 {
     "managedObjects": [{
@@ -454,7 +454,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: web app/vnd.com.nsn.cumulocity.measurementcollection+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; charset=UTF-8; ver=0.9
 ...
 {
     "measurements": [{
@@ -485,8 +485,8 @@ To trigger an operation on a device, POST the operation to the [Device Control A
 
 ```http
 POST /devicecontrol/operations
-Content-Type: web app/vnd.com.nsn.cumulocity.operation+json;
-Accept: web app/vnd.com.nsn.cumulocity.operation+json;
+Content-Type: application/vnd.com.nsn.cumulocity.operation+json;
+Accept: application/vnd.com.nsn.cumulocity.operation+json;
 {
     "deviceId": "2480300",
     "c8y_Restart":{}
@@ -497,7 +497,7 @@ Response:
 
 ```http
 HTTP/1.1 201 Created
-Content-Type: web app/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; ver=0.9
 ...
 {
     ...
@@ -515,7 +515,7 @@ The POST command returns immediately when the operation has been queued for the 
 GET /devicecontrol/operations/2550200 HTTP/1.1
 
 HTTP/1.1 200 OK
-Content-Type: web app/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; ver=0.9
 {
     "status": "PENDING",
     ...
@@ -526,7 +526,7 @@ A status of PENDING means here that the device has not yet picked up the operati
 
 #### Listening for events
 
-Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time as described in [Real-time processing in {{< product-c8y-iot >}}](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration web app (or the [REST API](https://{{< domain-c8y >}}/guides/10.9.0/event-language/real-time-statements/)) to create a new rule module "myRule":
+Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time as described in [Real-time processing in {{< product-c8y-iot >}}](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](https://{{< domain-c8y >}}/guides/10.9.0/event-language/real-time-statements/)) to create a new rule module "myRule":
 
 ```sql
 select *
@@ -538,7 +538,7 @@ If you have a device that sends location updates, you should see them immediatel
 
 ```http
 POST /cep/notifications
-Content-Type: web app/json
+Content-Type: application/json
 ...
 [ {
     "id": "1",
@@ -564,7 +564,7 @@ After the handshake, the client needs to subscribe to the output of the above ru
 
 ```http
 POST /cep/notifications
-Content-Type: web app/json
+Content-Type: application/json
 ...
 [ {
     "id": "2",
@@ -587,7 +587,7 @@ Finally, the client connects and waits for events to be sent to it.
 
 ```http
 POST /cep/notifications HTTP/1.1
-Content-Type: web app/json
+Content-Type: application/json
 ...
 [ {
     "id": "3",

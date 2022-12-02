@@ -15,7 +15,7 @@ For development and testing purposes, one can deploy a microservice on a local D
 
 ### Annotations
 
-The simplest way to add required behavior to your web app is to annotate a main class with `@MicroserviceApplication`. This is a collective annotation consisting of:
+The simplest way to add required behavior to your application is to annotate a main class with `@MicroserviceApplication`. This is a collective annotation consisting of:
 
 Annotation | Description
 -----------|------------
@@ -74,9 +74,9 @@ The microservice subscription module is responsible for two main features:
 * Registration
 * Tenant subscription event listening
 
-The default behavior for the package is self-registration, which means that after you run the web app it will try to register and use the generated credentials for the communication with the platform. The self-registration is required to correctly deploy the microservice on the platform.
+The default behavior for the package is self-registration, which means that after you run the application it will try to register and use the generated credentials for the communication with the platform. The self-registration is required to correctly deploy the microservice on the platform.
 
-The other way to register a web app to the platform is to do it manually. This can be done by creating a new web app on the platform with the same web app name and providing the following properties into the microservice:
+The other way to register an application to the platform is to do it manually. This can be done by creating a new application on the platform with the same application name and providing the following properties into the microservice:
 
 ```properties
 application.name=<application_name>
@@ -86,7 +86,7 @@ C8Y.bootstrap.user=<username>
 C8Y.bootstrap.password=<password>
 ```
 
-To create a web app and acquire credentials, refer to [Creating web apps](/microservice-sdk/rest#creating-application) and [Acquiring microservice credentials](/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
+To create an application and acquire credentials, refer to [Creating applications](/microservice-sdk/rest#creating-application) and [Acquiring microservice credentials](/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
 
 The subscription package provides means to monitor and it acts upon changes in tenant subscriptions to a microservice. To add a custom behavior, a developer can add an event listener for `MicroserviceSubscriptionAddedEvent` and `MicroserviceSubscriptionRemovedEvent` as the following example:
 
@@ -97,11 +97,11 @@ public void onAdded (MicroserviceSubscriptionAddedEvent event {
 });
 ```
 
-On web app startup, the `MicroserviceSubscriptionAddedEvent` is triggered for all subscribed tenants.
+On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered for all subscribed tenants.
 
 ### Heap and perm/metadata
 
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#manifest) and it is converted into Megabytes (MB). For Java web apps developed using the Java Microservice SDK the minimal value is 178MB. <br>
+To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
 10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for PermGen on JDK 7 or Metaspace on JDK 8, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
@@ -161,7 +161,7 @@ The following properties are used by a microservice:
 
 | Property                   | Description                                                                                            |
 | -------------------------- | ------------------------------------------------------------------------------------------------------ |
-| web app.name           | The name of the microservice web app.                                                              |
+| application.name           | The name of the microservice application.                                                              |
 | C8Y.bootstrap.register     | Indicates if a microservice should follow the self-registration process. True by default.              |
 | C8Y.baseURL                | Address of the platform. Provided by the deployment process.                                           |
 | C8Y.baseURL.mqtt           | Address of the MQTT service. Provided by the platform.                                                 |
@@ -195,16 +195,16 @@ The microservice settings module provides two features:
 
 By default the microservice loads the tenant options for the category specified by the microservice context path.
 The custom settings category can be specified by the manifest parameter: `settingsCategory`.
-When neither settings category nor context path is provided in the microservice manifest, the web app name is used.
+When neither settings category nor context path is provided in the microservice manifest, the application name is used.
 
 {{< c8y-admon-info >}}
-Once the microservice is deployed it is not possible to change the category during web app upgrade.
+Once the microservice is deployed it is not possible to change the category during application upgrade.
 {{< /c8y-admon-info >}}
 
-Options can be configured for the web app owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
+Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
 
 Settings are lazy cached for 10 minutes, so when they were accessed previously, the user must wait the remaining time to see the change being applied.
-When the access attempt occurs to fetch settings without the tenant context being specified, the web app owner is used to complete the request.
+When the access attempt occurs to fetch settings without the tenant context being specified, the application owner is used to complete the request.
 
 {{< c8y-admon-info >}}
 For security reasons, the functionality is not available when running the microservice in legacy mode, that is, local development or RPM installation.
@@ -337,7 +337,7 @@ It can be configured with the following parameters:
 * name (alias package.name) - defaults to project.artifactId
 * description (alias package.description) - defaults to project.description
 * jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". It will be overwritten if other options are provided
-* arguments (alias agent-package.arguments) - arguments passed during web app startup
+* arguments (alias agent-package.arguments) - arguments passed during application startup
 * encoding (alias project.build.sourceEncoding) - defaults to UTF-8
 * heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
 * perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
@@ -392,7 +392,7 @@ To upload a microservice to the server you must configure the following properti
 * url - Mandatory URL that will be used for deployment. Empty by default.
 * username - Mandatory tenant ID and username used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
-* name - Optional name of the uploaded web app. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
+* name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
 * skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it needs to be set to `false`)
 
 #### settings.xml
@@ -452,7 +452,7 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
 {{< /c8y-admon-info >}}
 
-To deploy a web app on an environment you need the following:
+To deploy an application on an environment you need the following:
 
 * URL address of your tenant
 * Authorization header as "Basic <Base64(<username>:<password>)>"
@@ -460,9 +460,9 @@ To deploy a web app on an environment you need the following:
 * ZIP build from previous steps
 
 
-##### Step 1 - Create the web app
+##### Step 1 - Create the application
 
-If the web app does not exist, create a new web app on the platform:
+If the application does not exist, create a new application on the platform:
 
 ```http
 POST /application/applications
@@ -484,11 +484,11 @@ Example:
 $ curl -X POST -s \
       -d '{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}' \
       -H "Authorization: <AUTHORIZATION>" \
-      -H "Content-type: web app/json" \
+      -H "Content-type: application/json" \
       "<URL>/application/applications"
 ```
 
-If the web app has been created correctly, you can GET the web app ID:
+If the application has been created correctly, you can GET the application ID:
 
 ```http
 GET /application/applicationsByName/<APPLICATION_NAME>
@@ -542,13 +542,13 @@ Example:
 ```shell
 $ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
        -H "Authorization: <AUTHORIZATION>" \
-       -H "Content-type: web app/json" \
+       -H "Content-type: application/json" \
        "<URL>/tenant/tenants/<TENANT_ID>/applications"
 ```
 
 #### Local Docker deployment
 
-To deploy the web app on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/concept/#environment-variables).
+To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/concept/#environment-variables).
 
 An example execution could be:
 
@@ -587,7 +587,7 @@ HTTP/1.1 503
 
 #### Properties
 
-For external/legacy deployment, the following paths will be searched in order to find a properties file specific for the environment the web app is run on:
+For external/legacy deployment, the following paths will be searched in order to find a properties file specific for the environment the application is run on:
 
 * {UPPERCASE(application_name)}_CONF_DIR/.{application_name}
 * {UPPERCASE(application_name)}_CONF_DIR/{application_name}
@@ -599,7 +599,7 @@ For external/legacy deployment, the following paths will be searched in order to
 
 #### Logging
 
-For external/legacy deployment, logging into the web app implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
+For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
 The following locations are searched for log-back file:
 
 * {UPPERCASE(application_name)}_CONF_DIR/.{application_name}/logging.xml

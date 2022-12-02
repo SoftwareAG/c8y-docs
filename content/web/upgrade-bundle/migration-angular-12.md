@@ -4,7 +4,7 @@ title: Upgrading from Angular 11 to Angular 12
 weight: 6
 ---
 
-Angular 12 is supported from version `10.11.45.0`. The following configuration changes are required before you can run the web app:
+Angular 12 is supported from version `10.11.45.0`. The following configuration changes are required before you can run the application:
 
 - Update all `@angular/*` dependencies to `12.2.x`.
 - Update `TypeScript` to version `4.2.x` as [TypeScript 4.2](https://devblogs.microsoft.com/typescript/announcing-typescript-4-2/) is now required by Angular.
@@ -17,7 +17,7 @@ AOT (Ahead-of-time compilation) is not yet supported.
 
 #### How to enable IVY
 
-Ivy is a new rendering engine for Angular web apps that improves web app speed and facilitates development. Enabling Ivy is not mandatory, but as the older view engine is deprecated, we recommend you to do so.
+Ivy is a new rendering engine for Angular applications that improves application speed and facilitates development. Enabling Ivy is not mandatory, but as the older view engine is deprecated, we recommend you to do so.
 
 During the update:
 

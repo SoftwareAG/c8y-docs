@@ -44,7 +44,7 @@ Execute a python script.
 
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1","startDate": "2020-03-08T18:30:00.000Z"}'
 
 ```
@@ -93,7 +93,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
 401 - Unauthorized
 
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1"}'
 ```
 
@@ -116,7 +116,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resou
 
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: web app/json' \
+--header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":""}'
 ```
 

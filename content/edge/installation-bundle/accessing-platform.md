@@ -38,7 +38,7 @@ The limitations could be the following:
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* The [Streaming Analytics web app](/apama/overview-analytics/) does not support mobile or touch devices.
+* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
 <a name="domain"></a>
@@ -125,9 +125,9 @@ The cookie banner is turned on by default on the Edge appliance instances. This 
 If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
 {{< /c8y-admon-info >}}
 
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the web app the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} web apps, as the Edge appliance requests you to authenticate each time when starting a web app. You can make the browser "forget" your credentials by explicitly logging out.
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as the Edge appliance requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) web app (if not configured differently).
+Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 

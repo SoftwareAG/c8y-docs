@@ -17,10 +17,10 @@ In order to follow this tutorial, check the following prerequisites:
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create an HTML file and include the MQTT JavaScript client (in this example we will use [Paho JavaScript Client](https://www.eclipse.org/paho/clients/js/)),
-* create a JavaScript web app,
-* run the web app.
+* create a JavaScript application,
+* run the application.
 
-#### Creating a JavaScript web app
+#### Creating a JavaScript application
 
 Create an HTML file (for example *hello_mqtt_js.html*) with the following content:
 
@@ -148,12 +148,12 @@ What does the code do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Running the web app
+#### Running the application
 
-Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device Management web app, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information will be displayed in the browser page.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your web app.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

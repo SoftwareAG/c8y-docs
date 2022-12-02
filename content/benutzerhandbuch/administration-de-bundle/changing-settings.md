@@ -477,7 +477,7 @@ Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
 Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-![Default web app](/images/benutzerhandbuch/Administration/admin-settings-application.png)
+![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
 Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
 

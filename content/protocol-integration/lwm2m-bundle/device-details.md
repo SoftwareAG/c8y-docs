@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-info >}}
-In the Device management web app, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
+In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
 {{< /c8y-admon-info >}}
 
 <a name="objects"></a>

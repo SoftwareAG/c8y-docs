@@ -57,7 +57,7 @@ echo "Installing zip package needed for restore procedure"
 # This will install zip package which is needed to install ui
 rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
 
-echo "Getting web app zips from 10.9"
+echo "Getting application zips from 10.9"
 # Create temp dir to get 10.9 apps from mongo
 mkdir -p /tmp/apps
 out=$(mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq)
@@ -70,7 +70,7 @@ for l in $csv; do
     chown karaf:karaf /tmp/apps/$(echo "$name" | sed -e 's/^"//' -e 's/"$//')
     zip_names="$zip_names $(echo "$name" | sed -e 's/^"//' -e 's/"$//')"
 done
-echo "Done downloading web app zips from 10.9"
+echo "Done downloading application zips from 10.9"
 
 echo "Packaging apps to be visible by karaf"
 CPWD=$PWD
@@ -88,7 +88,7 @@ tar -C $EXTRACTED_PATH -xvzf $ARCHIVE
 echo "Started archive restore procedure"
 echo "Restoring device-id from 10.7"
 DEVICE_ID=$(cat $EXTRACTED_PATH/configs/edge-agent_device-id)
-curl -v --header "Content-Type: web app/json" --request POST --data '{"device_id":"'$DEVICE_ID'"}' 127.0.0.1:3032/configuration/edge-agent
+curl -v --header "Content-Type: application/json" --request POST --data '{"device_id":"'$DEVICE_ID'"}' 127.0.0.1:3032/configuration/edge-agent
 systemctl restart edge-agent
 
 collections=$(ls $EXTRACTED_PATH/collections)

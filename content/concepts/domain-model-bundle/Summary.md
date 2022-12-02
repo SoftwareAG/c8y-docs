@@ -12,4 +12,4 @@ layout: redirect
 -   Manipulation of controls.
 -   Handling of real-time events.
 
-This model is intended to be horizontal across device vendors. In addition it is also extensible to cover any needs of special features of various devices and web apps.
+This model is intended to be horizontal across device vendors. In addition it is also extensible to cover any needs of special features of various devices and applications.

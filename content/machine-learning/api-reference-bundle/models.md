@@ -686,11 +686,11 @@ Hence, all subsequent calls should refer to the converted name as listed in the 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|
-|file|required query parameter for PMML file name, if Content-Type is web app/octet-stream<br> or a body parameter for PMML file, if Content-Type is multipart/form-data
+|file|required query parameter for PMML file name, if Content-Type is application/octet-stream<br> or a body parameter for PMML file, if Content-Type is multipart/form-data
 |applyCleanser (Boolean)|optional parameter used to automatically perform comprehensive syntactic and semantic checks, correct known issues and convert your PMML file to version 4.4 (default is true)
 
 **Example Request**
@@ -1548,7 +1548,7 @@ Upload new ONNX model. Note that the size of the uploaded ONNX file must not exc
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|

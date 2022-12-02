@@ -22,13 +22,13 @@ The user management feature allows you to manage the users within your tenant. W
 The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 {{< /c8y-admon-info >}}
 
-If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the web app switcher in the upper right corner, so that they are able to use the single sign-on feature.
+If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
 
 For users created via an external authorization server, updating the following settings in {{< product-c8y-iot >}} will have no effect (will be reset on the next user re-login):
 
 * user info (login alias, email, first name, last name, telephone)
 * global roles → configurable via SSO access mapping
-* web app access → configurable via SSO access mapping
+* application access → configurable via SSO access mapping
 
 Moreover, password reset in {{< product-c8y-iot >}} is disabled for users created through an external authentication server.
 
@@ -60,7 +60,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 1. Click **Add user** at the right of the top menu bar.  
   {{< c8y-admon-info >}}
-If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the web app switcher in the upper right corner, to enable them using the single sign-on feature.
+If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
   {{< /c8y-admon-info >}}
 
 2. At the left of the **New user** window, provide the following information to identify the user:

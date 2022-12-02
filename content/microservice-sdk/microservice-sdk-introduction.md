@@ -5,7 +5,7 @@ layout: bundle
 slug: introduction
 ---
 
-Microservices are server-side web apps which may be used to extend the {{< product-c8y-iot >}} platform with customer-specific functionality.
+Microservices are server-side applications which may be used to extend the {{< product-c8y-iot >}} platform with customer-specific functionality.
 
 If you want to jump right in, check out our Hello world tutorials for [Java](/microservice-sdk/java#java-microservice) and [C#](/microservice-sdk/cs#hello-world-basic).
 

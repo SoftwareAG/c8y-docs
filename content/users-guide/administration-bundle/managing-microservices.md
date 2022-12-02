@@ -5,24 +5,24 @@ layout: redirect
 helpcontent:
   - label: microservices
     title: Microservices
-    content: "A microservice is a specific type of web app, that is a server-side web app used to develop further functionality on top of Cumulocity IoT.
+    content: "A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of Cumulocity IoT.
 
 
-    As web apps, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom web apps.
+    As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications.
 
 
-    Click on a microservice to view the web app properties. To add a microservice, click **Add microservice** and follow the instructions in the wizard or in the *User guide*."
+    Click on a microservice to view the application properties. To add a microservice, click **Add microservice** and follow the instructions in the wizard or in the *User guide*."
 ---
 
 Click **Microservices** in the **Ecosystem** menu in the navigator to display a list or grid of all  microservices subscribed to your account.
 
 <img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
 
-A microservice is a specific type of web app, that is a server-side web app used to develop further functionality on top of {{< product-c8y-iot >}}. As web apps, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom web apps, see [Custom microservices](#custom-microservices).
+A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications, see [Custom microservices](#custom-microservices).
 
 ### Subscribed microservices
 
-{{< product-c8y-iot >}} provides a variety of microservice web apps for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available web apps.
+{{< product-c8y-iot >}} provides a variety of microservice applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
 Below you find a list of all microservices which are by default subscribed in a {{< standard-tenant >}} and/or {{< enterprise-tenant >}}. In addition, numerous optional microservices might be subscribed to your tenant.
 
@@ -73,7 +73,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">Report agent</a></td>
-<td style="text-align:left">Schedule data exports from within the Cockpit web app</td>
+<td style="text-align:left">Schedule data exports from within the Cockpit application</td>
 <td style="text-align:left">report agent</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
@@ -96,21 +96,21 @@ Below you find a list of all microservices which are by default subscribed in a 
 </table>
 
 {{< c8y-admon-info >}}
-All web apps listed here are of the type "Microservice".
+All applications listed here are of the type "Microservice".
 {{< /c8y-admon-info >}}
 
 <a name="custom-microservices"></a>
 ### Custom microservices
 
 <a name="adding-microservices"></a>
-#### To add a microservice as custom web app
+#### To add a microservice as custom application
 
 1. Click **Add microservice** at the top right.
 2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
-3. The microservice web app is created once the ZIP file has been successfully uploaded.
+3. The microservice application is created once the ZIP file has been successfully uploaded.
 
 {{< c8y-admon-important >}}
-The ZIP file must contain the web app manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
+The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
 {{< /c8y-admon-important >}}
 
 <a name="microservice-properties"></a>
@@ -141,12 +141,12 @@ In the **Properties** tab, each microservice will show the following information
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
-<td style="text-align:left">Application name; will be shown as title of the microservice web app in the top bar</td>
+<td style="text-align:left">Application name; will be shown as title of the microservice application in the top bar</td>
 <td style="text-align:left">Automatically inferred from the ZIP file name (recognized version number is dropped), unless provided in the microservice's manifest file</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the microservice web app and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
+<td style="text-align:left">Used to identify the microservice application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
 <td style="text-align:left">Automatically created, based on the ZIP file name</td>
 </tr>
 <tr>
@@ -156,7 +156,7 @@ In the **Properties** tab, each microservice will show the following information
 </tr>
 <tr>
 <td style="text-align:left">Path</td>
-<td style="text-align:left">Part of the URL invoking the web app</td>
+<td style="text-align:left">Part of the URL invoking the application</td>
 <td style="text-align:left">Automatically created as .../service/<microservice-name></td>
 </tr>
 </tbody>
@@ -184,21 +184,21 @@ You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
 #### Status information
 
-The status of the microservice can be checked in the **Status** tab of the respective microservice web app.
+The status of the microservice can be checked in the **Status** tab of the respective microservice application.
 
 <img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
-To view the status you need the following permissions: role web app management READ and role Inventory READ.
+To view the status you need the following permissions: role Application management READ and role Inventory READ.
 
 The following information is provided on the **Status** tab:
 
 * Instances - number of active, unhealthy and desired microservice instances for the current tenant.
 * Subscriptions - number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice.
-* Alarms - alarms for given web app, provided in realtime.
-* Events - events for given web app, provided in realtime.
-* Smart rules - alarms for given web app.
+* Alarms - alarms for given application, provided in realtime.
+* Events - events for given application, provided in realtime.
+* Smart rules - alarms for given application.
 
-The status information is available for subscribed web apps as well as for own web apps. Information on subscribed subtenants is only visible for the web app owner.
+The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner.
 
 ##### Alarms and events
 

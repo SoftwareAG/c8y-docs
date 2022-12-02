@@ -13,8 +13,8 @@ The following environment variables are available for microservices:
 
 Name  | Details  
 ------|--------
-APPLICATION_NAME  |  The name of the microservice web app
-APPLICATION_KEY  |  The key of the microservice web app
+APPLICATION_NAME  |  The name of the microservice application
+APPLICATION_KEY  |  The key of the microservice application
 SERVER_PORT       |  Default open port (80)
 MICROSERVICE_SUBSCRIPTION_ENABLED  |  Default value: true
 C8Y_BASEURL  |  Platform address (contains port number)
@@ -24,9 +24,9 @@ C8Y_BOOTSTRAP_REGISTER  |  Indicator whether the microservice should perform sel
 C8Y_BOOTSTRAP_TENANT  |  Bootstrap user tenant, for MULTI_TENANT - microservice owner
 C8Y_BOOTSTRAP_USER  |  Bootstrap username
 C8Y_BOOTSTRAP_PASSWORD  |  Bootstrap user password
-C8Y_TENANT  |  web app user tenant (available only for PER_TENANT isolation)
-C8Y_USER  |  web app username (available only for PER_TENANT isolation)
-C8Y_PASSWORD  |  web app user password (available only for PER_TENANT isolation)
+C8Y_TENANT  |  Application user tenant (available only for PER_TENANT isolation)
+C8Y_USER  |  Application username (available only for PER_TENANT isolation)
+C8Y_PASSWORD  |  Application user password (available only for PER_TENANT isolation)
 MEMORY_LIMIT  |  Max memory that can be used. Default value: 256M
 TZ | Timezone from the host machine or configurable tenant options
 LOG4J_FORMAT_MSG_NO_LOOKUPS | Disables the vulnerable Log4j lookup feature (see [CVE-2021-44228](https://www.cve.org/CVERecord?id=CVE-2021-44228)) <br>Default value: true
@@ -58,7 +58,7 @@ The timezone variable allows configuring a default timezone used by the microser
 The microservice installer injects the `TZ` environment variable into the microservice according to the following settings:
 
 - Tenant option in the microservice owner tenant
-- Platform web app environment variables (MICROSERVICE_RUNTIME_TIMEZONE)
+- Platform application environment variables (MICROSERVICE_RUNTIME_TIMEZONE)
 
 The tenant option has higher priority, that means, if the parameter is set in both places, the value from the tenant option is taken.
 
@@ -89,7 +89,7 @@ Proxy variables are used to set a proxy URL for different protocols. For the mic
 Proxy variables are passed into the microservice environment during installation. The microservice installer passes the variables into the environment according to the following settings:
 
  - Tenant options in the microservice owner tenant
- - Platform web app environment variables
+ - Platform application environment variables
 
 Tenant options have higher priority, that means, if the parameter is set in both places, the value from the tenant option is taken.
 
@@ -119,7 +119,7 @@ The microservice owner tenant has the tenant options:
 { "category" : "microservice.runtime", "key" : "proxy.http.port", "value" : "8080" }
 ```
 
-and there is an environment variable in the platform web app:
+and there is an environment variable in the platform application:
 
 ```properties
 MICROSERVICE_RUNTIME_PROXY_HTTP_PORT=8181
@@ -138,7 +138,7 @@ The microservice owner tenant has the tenant option:
 { "category" : "microservice.runtime", "key" : "proxy.https.host", "value" : "10.11.12.13" }
 ```
 
-and there is an environment variable in the platform web app:
+and there is an environment variable in the platform application:
 
 ```properties
 MICROSERVICE_RUNTIME_PROXY_HTTPS_PORT=8181
@@ -180,8 +180,8 @@ SOCKS_HTTP_HOST=10.11.12.13
 
 To execute requests against the {{< product-c8y-iot >}} platform running a microservice, you must send requests to the host specified by the `C8Y_BASEURL` variable.
 
-A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other web apps is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
+A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other applications is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
 
 {{< c8y-admon-important >}}
-`C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI web apps.
+`C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.
 {{< /c8y-admon-important >}}

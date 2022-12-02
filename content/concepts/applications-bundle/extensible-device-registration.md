@@ -30,10 +30,10 @@ The extended device registration provides the following advantages:
 
 ### Extension enabling
 
-As a first step to extend the device registration flow you must define extensions in the web app representation.
+As a first step to extend the device registration flow you must define extensions in the application representation.
 
 {{< c8y-admon-info >}}
-The `extensions` fragment can be placed either as root level or inside the `manifest` fragment of the web app representation.
+The `extensions` fragment can be placed either as root level or inside the `manifest` fragment of the application representation.
 {{< /c8y-admon-info >}}
 
 There are two types of extensions:
@@ -63,7 +63,7 @@ There are two types of extensions:
 
 ### Single device registration
 
-After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management web app is being extended with an entry corresponding to the extension `name` property:
+After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management application is being extended with an entry corresponding to the extension `name` property:
 
 ![Select guide](/images/concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
 
@@ -74,7 +74,7 @@ From now on, everything will be rendered based on data provided via the custom m
 Make use of the `lang` query parameter in your microservice to respond with the already translated JSON Schema metadata. See also [Limitations](/concepts/applications/#limitations).
 
 
-The UI automatically takes the contextPath for the GET request from the web app definition of the microservice:
+The UI automatically takes the contextPath for the GET request from the application definition of the microservice:
 
 ```
 {
@@ -151,16 +151,16 @@ The device integration microservices must implement the following REST endpoints
 
 ```
 GET /service/<contextPath>/deviceRegistration/metadata?lang=<user-language>
-Accept: web app/json
+Accept: application/json
 ```
 Returns the metadata in the vocabulary of the JSON Schema.
 
 
 ```
 POST /service/<contextPath>/deviceRegistration
-Content-type: web app/json
+Content-type: application/json
 ```
-Creates a single device based on the collected data. Sends web app/json with key-value pairs.
+Creates a single device based on the collected data. Sends application/json with key-value pairs.
 
 #### Single device registration flow diagram
 
@@ -205,7 +205,7 @@ The device integration microservices must implement the following REST endpoints
 
 ```
 GET /service/<contextPath>/deviceRegistration/metadata?lang=<user-language>
-Accept: web app/json
+Accept: application/json
 ```
 
 Returns the metadata in the vocabulary of the JSON Schema.

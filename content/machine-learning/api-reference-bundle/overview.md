@@ -13,7 +13,7 @@ This guide provides users with a comprehensive set of API (Application Programmi
 
 A full path to the Zementis microservice API resource consists of a base path and a resource path. 
 
-The base path URI (Uniform Resource Identifier) for the Zementis microservice API is `http://domain:port/service/zementis`, where http or https is the protocol name, domain is the internet domain or network address, port is a non-negative integer representing the port number, and service/zementis represents the web app context path. The base path is static and does not change between requests; it merely identifies the server with a web app on the network. 
+The base path URI (Uniform Resource Identifier) for the Zementis microservice API is `http://domain:port/service/zementis`, where http or https is the protocol name, domain is the internet domain or network address, port is a non-negative integer representing the port number, and service/zementis represents the application context path. The base path is static and does not change between requests; it merely identifies the server with an application on the network. 
 
 Following the base path is the resource path. It may contain path or query parameters depending on the type of the request and available resources on the server. For example, a resource path `/model/Iris_NN/source?annotated=true `contains static path definitions such as model or source, path parameter Iris_NN for a dynamically allocated resource, and a query parameter annotated=true.
 
@@ -39,10 +39,10 @@ The HTTP response message is composed of a message header and a message body. Al
 
 The header contains response status code and header fields represented as list of key/value pairs, i.e. `Content-Type:application/json`. Every response from Zementis microservice contains a Content-Type header entry with one of following internet media types (aka MIME) as value.
 
-* web app/json
-* web app/xml
+* application/json
+* application/xml
 * text/plain
-* web app/zip
+* application/zip
 
 ### Errors
 

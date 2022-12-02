@@ -24,7 +24,7 @@ To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 |               |              |
 | ------------- |:-------------|
 | Java version  | Java Runtime Environment 8 or newer version.|
-| Heap memory   | The agent Java web app can run on as little as 200MB of heap space. <br>However, based on the number of devices and the load, this needs to be adjusted.   |
+| Heap memory   | The agent Java application can run on as little as 200MB of heap space. <br>However, based on the number of devices and the load, this needs to be adjusted.   |
 | Disk space    | The {{< product-c8y-iot >}} representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
 | Hardware and OS    | Linux environment, can run on laptops or industrial PCs.     |
 

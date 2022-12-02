@@ -7,4 +7,4 @@ outputs:
 - json
 ---
 
-The Device Management web app provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely. 
+The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely. 

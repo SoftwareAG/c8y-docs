@@ -7,7 +7,7 @@ aliases:
 layout: redirect
 ---
 
-The Cockpit web app includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
+The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 The following types are available:
 
@@ -33,7 +33,7 @@ The following types are available:
 </tr>
 <tr>
 <td align="left"><a href="#applications">Applications</a></td>
-<td align="left">Provides a list of links to all available web apps.</td>
+<td align="left">Provides a list of links to all available applications.</td>
 </tr>
 <tr>
 <td align="left"><a href="#asset-notes">Asset notes</a></td>
@@ -162,13 +162,13 @@ The "All critical alarms" widget shows all objects with a critical alarm. Apart 
 For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 <a name="applications"></a>
-### web apps
+### Applications
 
-The "Applications" widget shows a list of links to all available web apps. Apart from the title, there are no additional parameters to be configured.
+The "Applications" widget shows a list of links to all available applications. Apart from the title, there are no additional parameters to be configured.
 
 ![Applications widget](/images/users-guide/cockpit/cockpit-widget-applications.png)
 
-For details on web apps, refer to [Administration > Managing web apps](/users-guide/administration/#managing-applications).
+For details on applications, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications).
 
 
 <a name="asset-notes"></a>
@@ -434,7 +434,7 @@ The icons representing the devices are color-coded. The color used follows these
 
 Click a device icon, to open a popup with the following information:
 
-* The device name. When clicked, the web app navigates to the device.
+* The device name. When clicked, the application navigates to the device.
 * The date at which the device last reported its location, if available.
 * A toggle to show/hide the device tracks for the previous and current days.
 

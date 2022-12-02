@@ -47,7 +47,7 @@ We have added a script *RegisterDevice.ipynb* which registers a demo device in {
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, a device named "RemainingUsefulLifeDemo" is registered in {{< product-c8y-iot >}}.
-3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management web app (see image below). The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application (see image below). The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 
 <img src="/images/zementis/RemainingUsefulLife/remaining-useful-life_get_device_id.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 

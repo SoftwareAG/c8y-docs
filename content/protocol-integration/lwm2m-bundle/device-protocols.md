@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
-Device protocols are accessible through the **Devices Types** menu in the Device Management web app. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types) in the *User guide*.
+Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types) in the *User guide*.
 
 <a name="creating_device_protocols"></a>
 ### Creating LWM2M device protocols
@@ -14,7 +14,7 @@ Once you have registered a device, you can manage LWM2M device protocols. Each p
 
 To add a new LWM2M device protocol follow these steps:
 
-1. In the Device Management web app, move to the **Device protocol** page.
+1. In the Device Management application, move to the **Device protocol** page.
 2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming dialog select **LWM2M** as device protocol type. <br><br>
 

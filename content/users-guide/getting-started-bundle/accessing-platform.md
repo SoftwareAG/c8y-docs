@@ -37,19 +37,19 @@ The limitations could be the following:
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* The [Streaming Analytics web app](/apama/overview-analytics/) does not support mobile or touch devices.
+* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
 <a name="url"></a>
 ### URL
 
-To access the web apps for your {{< product-c8y-iot >}} tenant, use the following URL:
+To access the applications for your {{< product-c8y-iot >}} tenant, use the following URL:
 
 ```http
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
 
-This will direct you to the login page of your default web app. See [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
 
 
 {{< c8y-admon-info >}}
@@ -86,9 +86,9 @@ The cookie banner is turned on by default on the {{< product-c8y-iot >}} public 
 If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
 {{< /c8y-admon-info >}}
 
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the web app the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} web apps, as the {{< product-c8y-iot >}} platform will request you to authenticate each time when starting a web app. You can make the browser "forget" your credentials by explicitly logging out.
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as the {{< product-c8y-iot >}} platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) web app (if not configured differently).
+Finally, click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -119,7 +119,7 @@ If you yourself are the primary administrator, your email address used on first 
 <a name="URLs"></a>
 ### How to access pages using URLs
 
-You can navigate straight to any place inside a {{< product-c8y-iot >}} web app using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
+You can navigate straight to any place inside a {{< product-c8y-iot >}} application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 
 ```http
 https://<tenant-domain>.{{< domain-c8y >}}/apps/devicemanagement/index.html#/device/<id>/info
@@ -130,4 +130,4 @@ Using such an URL, you can:
 *   Save bookmarks for specific devices or pages.
 *   Send emails with a link to devices or sensor data manually or automatically, using the real-time event engine.
 *   Use the backward and forward navigation of your browser.
-*   Write your own web apps which link directly to information contained in a {{< product-c8y-iot >}} web app.
+*   Write your own web applications which link directly to information contained in a {{< product-c8y-iot >}} application.

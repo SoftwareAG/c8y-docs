@@ -346,7 +346,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 {{url}}/service/zementis/apply/{{model_name}}
 ```
 
-Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or web app/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (i.e. JSON or CSV) is handled via Accept request header parameter.
+Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (i.e. JSON or CSV) is handled via Accept request header parameter.
 
 Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
 
@@ -357,8 +357,8 @@ If a predictive model with a binary type input is applied, this will be a single
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
-|Accept|optional header parameter for explicitly specifying text/csv or web app/json output format
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+|Accept|optional header parameter for explicitly specifying text/csv or application/json output format
 
 |PARAMS||
 |:---|:---|
@@ -587,7 +587,7 @@ curl --request POST "{{url}}/service/zementis/apply/Iris_ME_Classification " \
 curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
   --header "Authorization: {{auth}}" \
   --header "Content-Type: multipart/form-data" \
-  --header "Accept: web app/json" \
+  --header "Accept: application/json" \
   --form "file=@dummy.csv"
 ```
 
@@ -616,7 +616,7 @@ Apply a PMML model group to multiple records. Note that the size of the uploaded
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|
@@ -725,7 +725,7 @@ Note that the size of the uploaded file should not exceed 500 MB. If the operati
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|
@@ -838,7 +838,7 @@ An active subscription of the Onnx microservice is required to leverage this API
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|
@@ -974,7 +974,7 @@ An active subscription of the Onnx microservice is required to leverage this API
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|

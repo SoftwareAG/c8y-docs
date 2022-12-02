@@ -3,7 +3,7 @@ weight: 45
 title: Monitoring device services
 layout: redirect
 ---
-The Device Management web app lets you monitor the data that your devices send about the services they are running.
+The Device Management application lets you monitor the data that your devices send about the services they are running.
 
 The [Services](/users-guide/device-management/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.
 There you can see detailed information about measurements, events and alarms sent for every service.

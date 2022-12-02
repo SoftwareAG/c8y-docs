@@ -23,9 +23,9 @@ As an example:
 Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
 ```
 
-If you use the Java client for developing a web app, you must register a web app key (through [Ecosysystem > web apps](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration web app, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
+If you use the Java client for developing an application, you must register an application key (through [Ecosysystem > Applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Application-API)).
 
-For testing purposes, every tenant is subscribed to the demo web app key "uL27no8nhvLlYmW1JIK1CA==". The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`.
+For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`.
 
 ```java
 new CumulocityCredentials("<TENANT_ID>", "<USERNAME>", "<PASSWORD>", "<APPLICATION_KEY>")
@@ -170,7 +170,7 @@ for (; measurements != null; measurements = mc.getNextPage(measurements)) {
 
 ### Controlling devices
 
-The `DeviceControlResource` enables you to manipulate devices remotely. It has two sides: You can create operations in web apps to be sent to devices, and you can query operations from agents.
+The `DeviceControlResource` enables you to manipulate devices remotely. It has two sides: You can create operations in applications to be sent to devices, and you can query operations from agents.
 
 In order to control a device it must be in the child devices hierarchy of an agent managed object. The agent managed object represents your agent in the inventory. It is identified by a fragment com\_cumulocity\_model\_Agent. This is how {{< product-c8y-iot >}} identifies where to send operations to control a particular device.
 
@@ -189,7 +189,7 @@ child2Ref.setManagedObject(device);
 inventory.getManagedObject(agent.getId()). addChildDevice(child2Ref);
 ```
 
-For example, assume that you would like to switch off a relay in a meter from a web app. Similar to the previous examples, you create the operation to be executed locally, and then send it to the platform:
+For example, assume that you would like to switch off a relay in a meter from an application. Similar to the previous examples, you create the operation to be executed locally, and then send it to the platform:
 
 ```java
 DeviceControlApi control = platform.getDeviceControlApi();

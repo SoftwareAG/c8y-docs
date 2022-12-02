@@ -17,13 +17,13 @@ In order to follow this tutorial, check the following prerequisites:
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
-* create a Node.js web app,
+* create a Node.js application,
 * install the MQTT middleware (in this example we will use the library [MQTT.js](https://github.com/mqttjs/MQTT.js)),
-* run the web app.
+* run the application.
 
-#### Creating a Node.js web app
+#### Creating a Node.js application
 
-Create the _package.json_ file to list down the dependencies and other basic information about your web app.
+Create the _package.json_ file to list down the dependencies and other basic information about your application.
 
 ```json
 {
@@ -113,9 +113,9 @@ What does the code do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given `clientId`, the server will not accept it.
 
-#### Running the web app
+#### Running the application
 
-Before running the web app, the MQTT middleware must be installed. To achieve this, execute the following command:
+Before running the application, the MQTT middleware must be installed. To achieve this, execute the following command:
 
 ```shell
 $ npm install
@@ -127,10 +127,10 @@ Installation needs to be done only once. Afterwards, you only need to execute th
 $ npm start
 ```
 
-You should see a new registered device in the Device Management web app, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information about it will be printed to the console.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your web app.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

@@ -5,8 +5,8 @@ weight: 20
 ---
 
 ### Branding
-For styling the web app global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on Bootstrap 3, and the original LESS source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
-By extending these styles it is possible to change any detail of the web app but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
+For styling the application global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on Bootstrap 3, and the original LESS source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
+By extending these styles it is possible to change any detail of the application but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
 
 To override the variables it is possible to use:
 - LESS variables at build time
@@ -33,8 +33,8 @@ Here is a list of the available variables.
 --navigator-platform-logo-height: 36px; /* height of the logo set to 0 to hide the element */
 
 --navigator-font-family: inherit;
---navigator-app-name-size: 16px; /* font size of the web app name set to 0 to hide app's name */
---navigator-app-icon-size: 46px; /* size of the web app icon. set to 0 to hide the web app icon.*/
+--navigator-app-name-size: 16px; /* font size of the application name set to 0 to hide app's name */
+--navigator-app-icon-size: 46px; /* size of the application icon. set to 0 to hide the application icon.*/
 --navigator-bg-color: var(--brand-primary);
 --navigator-header-bg: var(--navigator-bg-color);
 --navigator-text-color: #ffffff;
@@ -117,7 +117,7 @@ You can check the branding changes with the help of the [@c8y/cli](/web/developm
  c8ycli server --app.brandingEntry="<path-to-your-branding.less>"
  ```
 
-You can also take a look at our tutorial web app which has an example branding applied:
+You can also take a look at our tutorial application which has an example branding applied:
 
  ```
  c8ycli new <appName> tutorial
@@ -227,7 +227,7 @@ To change the tenant brand logo inside the navigator, enter:
 
 ##### Typography
 
-The look and feel of a web app is also driven by its typography. Of course you can change the font as well.
+The look and feel of an application is also driven by its typography. Of course you can change the font as well.
 
 ```
 @font-family-sans-serif:      "Lato",Arial, Verdana, sans-serif;
@@ -236,7 +236,7 @@ The look and feel of a web app is also driven by its typography. Of course you c
 
 #### Example Branding
 
-Above we described the possible options for creating your custom branding in detail. If you do not want to start from scratch in every web app use the following example branding as snippet. It defines the most important variables.
+Above we described the possible options for creating your custom branding in detail. If you do not want to start from scratch in every application use the following example branding as snippet. It defines the most important variables.
 
 ```
 @import '~@c8y/style/extend.less';
@@ -324,9 +324,9 @@ Above we described the possible options for creating your custom branding in det
 
 ### Branding and language customization
 
-Using [application options](/web/application-configuration/#application-options), each tenant can customize the look and feel of built-in web apps and add or replace the languages available in the web apps. As described in [application options](/web/application-configuration/#application-options), the underlying mechanism is static hosted web app.
+Using [application options](/web/application-configuration/#application-options), each tenant can customize the look and feel of built-in applications and add or replace the languages available in the applications. As described in [application options](/web/application-configuration/#application-options), the underlying mechanism is static hosted web application.
 
-In this tutorial we are publishing two web apps:
+In this tutorial we are publishing two web applications:
 
 * `public-options`, where the JSON file containing the configuration will be stored
 * `ui-assets`, where any required assets will be hosted: images, favicon and translation files
@@ -417,7 +417,7 @@ In the example provided in the repository to be downloaded you can find an examp
 The imported language can be changed in the UI after login. To do so, click the User icon at the top right, select User settings from the menu and in the upcoming window select the language of your choice.
 
 ##### How to add your own translations at runtime
-You can translate certain strings at runtime, which means they don't need to be included in the build and can simply be added to the [application options](/web/application-configuration/#application-options). However, this concept doesn't allow to add new languages. You can only add new strings to existing languages or align certain translations on existing ones. To translate a certain key you need to add the following structure to the web app options:
+You can translate certain strings at runtime, which means they don't need to be included in the build and can simply be added to the [application options](/web/application-configuration/#application-options). However, this concept doesn't allow to add new languages. You can only add new strings to existing languages or align certain translations on existing ones. To translate a certain key you need to add the following structure to the application options:
 
 ```typescript
   i18nExtra?: {
@@ -446,8 +446,8 @@ Inside the folder `ui-customization` that contains both `public-options`and `ui-
 c8ycli deploy public-options ui-assets
 ```
 
-Fill in your tenant/instance information and the web apps will be deployed and will be visible to that specific tenant and its subtenants.
+Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants.
 
 {{< c8y-admon-info >}}
-For performance reasons the options are cached. Therefore the web app must be refreshed twice to make the changes visible.
+For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.
 {{< /c8y-admon-info >}}

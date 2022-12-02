@@ -90,7 +90,7 @@ POST /event/events/<eventId>/binaries
 
 Host: https://<TENANT_DOMAIN>
 Authorization: <AUTHORIZATION>
-Accept: web app/json
+Accept: application/json
 Content-Type: multipart/form-data;boundary="boundary"
 
 --boundary

@@ -48,8 +48,8 @@ For .NET development, Microsoft provides a number of different images depending 
 
 Depending on what you want to do, you need either the .NET Core SDK or the .NET Core Runtime.
 
-*   .NET Core SDK - Includes tools and libraries to build .NET Core web apps.
-*   .NET Core Runtime - Required to run .NET Core web apps.
+*   .NET Core SDK - Includes tools and libraries to build .NET Core applications.
+*   .NET Core Runtime - Required to run .NET Core applications.
 
 #### Windows system requirements
 
@@ -67,7 +67,7 @@ Depending on what you want to do, you need either the .NET Core SDK or the .NET 
 
 The most important requirement is an installation of [Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) or later.
 
-The recommended image for production is `mcr.microsoft.com/dotnet/core/aspnet:<version> AS runtime` as it contains the .NET Core (runtime and libraries) and it is optimized for running .NET Core web apps.
+The recommended image for production is `mcr.microsoft.com/dotnet/core/aspnet:<version> AS runtime` as it contains the .NET Core (runtime and libraries) and it is optimized for running .NET Core applications.
 
 {{< c8y-admon-important >}}
 {{< product-c8y-iot >}} supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.

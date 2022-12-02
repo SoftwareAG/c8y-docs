@@ -42,7 +42,7 @@ An {{< enterprise-tenant >}} offers additional administrative functionality comp
 Using an {{< enterprise-tenant >}}, you can
 
 * create and manage subtenants
-* manage the subscribed web apps/features of the subtenants
+* manage the subscribed applications/features of the subtenants
 * invoice subtenants based on usage statistics
 
 See also [multi-tenancy approach](/concepts/tenant-hierarchy/#multi-tenancy).

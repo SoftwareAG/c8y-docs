@@ -29,8 +29,8 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 
 * create a Maven project,
 * add a dependency to the MQTT Java client library to the _pom.xml_ (in this example we will use [Paho Java Client](https://eclipse.org/paho/clients/java/)),
-* create a Java web app,
-* build and run the Java web app.
+* create a Java application,
+* build and run the Java application.
 
 #### Create a Maven project
 
@@ -63,7 +63,7 @@ If you are using Java 9 or later, you must set the source and target as describe
 </properties>
 ```
 
-#### Create a Java web app
+#### Create a Java application
 
 Edit the _App.java_ file located in the folder _hello-mqtt-java/src/main/java/c8y/example_ with the following content:
 
@@ -166,9 +166,9 @@ What does the code in `main` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Build and run the web app
+#### Build and run the application
 
-Use the following commands to build the web app:
+Use the following commands to build the application:
 
 ```shell
 $ cd hello-mqtt-java
@@ -204,10 +204,10 @@ $ mvn exec:java -Dexec.mainClass="c8y.example.App"
 Received operation 510,123456789
 ```
 
-After starting the web app, you should see a new registered device in the Device Management web app, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+After starting the application, you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the Section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your web app.
+Now that you have done your first step, check out the Section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

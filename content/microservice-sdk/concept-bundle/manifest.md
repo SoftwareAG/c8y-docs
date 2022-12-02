@@ -4,7 +4,7 @@ title: Microservice manifest
 layout: redirect
 ---
 
-The web app manifest provides the required settings to manage microservice instances and the web app deployment in the {{< product-c8y-iot >}} platform.
+The application manifest provides the required settings to manage microservice instances and the application deployment in the {{< product-c8y-iot >}} platform.
 The definition is provided within the _cumulocity.json_ file in the binary uploaded to the {{< product-c8y-iot >}} platform.
 
 Here is an example manifest:
@@ -199,7 +199,7 @@ The version has an impact on the microservice upload behavior:
 *   If a new ZIP file for a microservice is uploaded but the version is the same as the previous, for example, "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
 *   If the version is a snapshot, for example, "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
 
-The snapshot postfix means that the image build is a snapshot of your web app at a given time and it is still under development. When your microservice is ready for production release, you can remove the postfix and just use the final version of your web app.
+The snapshot postfix means that the image build is a snapshot of your application at a given time and it is still under development. When your microservice is ready for production release, you can remove the postfix and just use the final version of your application.
 
 #### Provider
 

@@ -7,7 +7,7 @@ aliases:
 helpcontent:
   - label: usage-and-billing
     title: Usage statistics
-    content: "The **Usage statistics** page provides statistical information on each subtenant such as the number of API requests, the number of devices connected to the subtenant, the amount of data stored in the account, or the number web apps subscribed to the tenant. For details, see the *User guide*.
+    content: "The **Usage statistics** page provides statistical information on each subtenant such as the number of API requests, the number of devices connected to the subtenant, the amount of data stored in the account, or the number applications subscribed to the tenant. For details, see the *User guide*.
 
 
     You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria."
@@ -45,7 +45,7 @@ The following information is provided for each subtenant (not completely visible
 </tr>
 <tr>
 <td align="left">API requests</td>
-<td align="left">Total number of API requests, including requests from  devices and web apps</td>
+<td align="left">Total number of API requests, including requests from  devices and applications</td>
 </tr>
 <tr>
 <td align="left">Device API requests</td>
@@ -80,8 +80,8 @@ The following information is provided for each subtenant (not completely visible
 <td align="left">Leaf machines, without gateways and edges</td>
 </tr>
 <tr>
-<td align="left">Subscribed web apps</td>
-<td align="left">Number of web apps that the subtenant is subscribed to</td>
+<td align="left">Subscribed applications</td>
+<td align="left">Number of applications that the subtenant is subscribed to</td>
 </tr>
 <tr>
 <td align="left">Creation time</td>
@@ -196,7 +196,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed web apps is available as part of the [tenant web apps](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -339,7 +339,7 @@ Usage statistics consist of values that are progressive like the request count a
 |Request count flush| Every 5 minutes|
 |Used storage | 9, 17 and EOD|
 |Device count | 9, 17 and EOD|
-|Subscribed web apps | 9, 17 and EOD|
+|Subscribed applications | 9, 17 and EOD|
 |Microservice resources | 9, 17 and EOD|
 
 <a name="lifecycle"></a>
@@ -356,20 +356,20 @@ A {{< product-c8y-iot >}} platform tenant can have several states:
 
 **Microservice**
 
-Any extension deployed to the platform as a microservice is billed as "used" and the billing starts according to the begin of usage. After the web app is subscribed to the tenant a process of web app startup is triggered which will go through several high level phases:
+Any extension deployed to the platform as a microservice is billed as "used" and the billing starts according to the begin of usage. After the application is subscribed to the tenant a process of application startup is triggered which will go through several high level phases:
 
   * Pending - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
   * Scheduled - The microservice has been assigned to a node, the Docker container initialization has been started. The resources for the microservice have already been allocated so billing is started.
-  * Not ready - The microservice container is not ready yet to handle incoming traffic but the web app is already running.
+  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running.
   * Ready - The microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
-A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling web app '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
+A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
   <img src="/images/users-guide/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
-Tenants should also be able to see the full web app lifecyle in the web app details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the web app startup. Some of the most important are:
+Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
-  * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant. This means that the resource allocation has been successful but the web app is not running yet (maps to the state "Scheduled").
+  * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant. This means that the resource allocation has been successful but the application is not running yet (maps to the state "Scheduled").
   * `Pulling image "apama-ctrl-starter-scope-..."` - The microservice initialization process has been started and the Docker image download is already in progress (state "Scheduled").
   * `Container created.` - The microservice container has been created but not started yet (state "Scheduled").
   * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic (state "Not ready").
@@ -475,7 +475,7 @@ The table below presents which values are used in each model for billing purpose
 </tr>
 <tr>
 <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Subscribed web apps</td>
+<td style="text-align:left">Subscribed applications</td>
 <td style="text-align:left">x</td>
 <td style="text-align:left"></td>
 </tr>

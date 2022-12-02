@@ -10,7 +10,7 @@ The **Device information** tab is a predefined dashboard with several widgets th
 
 ### Device marker
 
- A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device Management web app.
+ A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device Management application.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>
@@ -48,7 +48,7 @@ Devices capable of restarting remotely can announce this capability by adding th
 
 #### Restart operation
 
-Upon clicking the **Restart** button in the Device Management web app an operation as follows is sent:
+Upon clicking the **Restart** button in the Device Management application an operation as follows is sent:
 
 ```json
 {
@@ -102,7 +102,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 **SmartREST example**
 
-Upload hardware information using the 110 static template. Usually this can be done once during agent web app startup:
+Upload hardware information using the 110 static template. Usually this can be done once during agent application startup:
 
 `110,1234567890,myModel,1.2.3`
 

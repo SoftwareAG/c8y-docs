@@ -44,7 +44,7 @@ Trains the WorkFlow using the already created AutoML model, pre-processing scrip
 
 curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
      --header "Authorization: {{auth}}" \
-     --header "Content-Type: web app/json" \
+     --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain","startDate": "2020-03-08T18:30:00.000Z","testSize":0.33}'
 ```
 
@@ -118,7 +118,7 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
 401 - Unauthorized
 
 curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
-     --header "Content-Type: web app/json" \
+     --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
 ```
 
@@ -141,7 +141,7 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
 
 curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
      --header "Authorization: {{auth}}" \
-     --header "Content-Type: web app/json" \
+     --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
 ```
 
@@ -164,7 +164,7 @@ curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce
 
 curl --request POST "{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/656ea5/workflow" \
      --header "Authorization: {{auth}}" \
-     --header "Content-Type: web app/json" \
+     --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":""}'
 ```
 

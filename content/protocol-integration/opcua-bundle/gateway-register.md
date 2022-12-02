@@ -12,7 +12,7 @@ When editing the YAML file, make sure to provide valid indentations.
 
 To run the gateway locally, the default settings should be overridden in a customized profile. To use the customized profile, create a YAML file which must follow the naming convention:
 
-    web app-<<Profile_name>>.yaml
+    application-<<Profile_name>>.yaml
 
 For example, to connect to a tenant, first a profile named *application-myTenant.yaml* will be created. The following properties will be added to the file:
 
@@ -80,11 +80,11 @@ Deletion of the legacy files can be turned off by setting the "gateway.db.addres
 The following properties can be manually configured in the YAML file:
 
 ```yaml
-# Name of the web app - this should not change
+# Name of the application - this should not change
 name: opcua-device-gateway
 # Platform location and configuration
 C8Y:
-  # This is the base URL pointing to the {{< product-c8y-iot >}} platform. This must always be customized in a web app profile.
+  # This is the base URL pointing to the {{< product-c8y-iot >}} platform. This must always be customized in an application profile.
   baseUrl: http://localhost
   # This is an internal setting of the {{< product-c8y-iot >}} SDK. It is set to true, because we typically
   # want to configure the {{< product-c8y-iot >}} SDK to always use the baseURL provided during initialization.

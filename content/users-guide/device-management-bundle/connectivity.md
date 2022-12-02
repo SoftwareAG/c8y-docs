@@ -6,7 +6,7 @@ aliases:
   - users-guide/optional-services/#connectivity
 ---
 
-The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management web app, provides basic information on mobile devices and additional connectivity details.
+The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
 
 The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platforms Comarch, Ericsson, Jasper and Kite.
 
@@ -74,7 +74,7 @@ The user is now created but does not have a password yet. Follow the instruction
 Process the following step to configure the connectivity in {{< product-c8y-iot >}}:
 
 1. Use a {{< product-c8y-iot >}} administrator user to log into the {{< product-c8y-iot >}} platform.
-1. Switch to the Administration web app.
+1. Switch to the Administration application.
 1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
@@ -92,13 +92,13 @@ A longer cache duration means less traffic to your SIM provider while a shorter 
 <a name="link-sims"></a>
 ### Linking SIMs and mobile devices
 
-Switch to the Device Management web app and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
+Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
 
 * Your user does not have permissions for Connectivity.
 * The device is not linked to a SIM card.
 * The device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
 
-To assign permissions, navigate to the Administration web app and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.
+To assign permissions, navigate to the Administration application and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.
 
 <img src="/images/users-guide/connectivity/connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
 

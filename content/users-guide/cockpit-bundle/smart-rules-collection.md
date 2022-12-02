@@ -125,7 +125,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -196,7 +196,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -261,7 +261,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -324,7 +324,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -391,7 +391,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -460,7 +460,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -524,7 +524,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -588,7 +588,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -646,7 +646,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -759,7 +759,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -777,8 +777,8 @@ For each incoming measurement value, the rule performs the following steps:
 
 * The data of the red and yellow range is collected from either:
 
-- the data point library (control parameter).
-- the source object (the measurement). If found, ranges from the source object's data point override are merged.
+    * The data point library (control parameter).
+    * The source object (the measurement). If found, ranges from the source object's data point override are merged.
 
 If no red/yellow ranges are defined in the merged parameters, no alarms are generated.
 
@@ -786,11 +786,11 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 Range values defined in the source object have a higher priority than those defined in the data point library. You can also just overwrite a single value (for example yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 {{< /c8y-admon-info >}}
 
-* Incoming value inside the red range: <br> If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
+* Incoming value inside the red range: If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
 
-* Incoming value inside the yellow range: <br>If there is no active alarm of MINOR severity of given type for the object, create a MINOR alarm, else do nothing.
+* Incoming value inside the yellow range: If there is no active alarm of MINOR severity of given type for the object, create a MINOR alarm, else do nothing.
 
-* Measurement outside of yellow and red range: <br>If there is an active alarm of given type for the object, clear the CRITICAL and/or MINOR alarm.
+* Measurement outside of yellow and red range: If there is an active alarm of given type for the object, clear the CRITICAL and/or MINOR alarm.
 
 **Troubleshooting**
 
@@ -803,11 +803,9 @@ Range values defined in the source object have a higher priority than those defi
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
 {{< c8y-admon-info >}}
-If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
-{{< /c8y-admon-info >}}
+* If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-{{< c8y-admon-info >}}
-Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+* Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 {{< /c8y-admon-info >}}
 
 <a name="threshold-explicit"></a>
@@ -867,7 +865,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -884,11 +882,9 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
 {{< c8y-admon-info >}}
-If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
-{{< /c8y-admon-info >}}
+* If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-{{< c8y-admon-info >}}
-​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+* ​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 {{< /c8y-admon-info >}}
 
 <a name="smart-rule-variables"></a>

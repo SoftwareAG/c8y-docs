@@ -44,7 +44,7 @@ ROLES & PERMISSIONS:
 
     * An icon which is shown next to the dashboard name in the navigator.
     * A menu label to be used as the name of the dashboard.
-    * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+    * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last.
 <br><br>
 4. Enable the option **Apply dashboard to all devices of type <device type>** to share the dashboard with all devices of this type.
 5. In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).

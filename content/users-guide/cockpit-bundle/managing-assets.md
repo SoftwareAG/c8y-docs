@@ -115,7 +115,7 @@ ROLES & PERMISSIONS in groups context:
 - To delete any group: ADMIN permission for permission type "Inventory"
 - To rename a group or change group description: ADMIN permission for permission type "Inventory"
 - To view specific groups: READ permissions for "Inventory" in the inventory roles
-- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles 
+- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles
 
 Note that global inventory permissions override inventory role permissions.
 {{< /c8y-admon-req >}}
@@ -135,7 +135,7 @@ ROLES & PERMISSIONS in devices context:
 - To delete any device within a group: ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
+If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](#dashboards) for details.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 

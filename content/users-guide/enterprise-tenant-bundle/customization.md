@@ -196,9 +196,9 @@ Disabling the cookie banner, also disables the product experience tracking by Ga
 
 The following parameters can be specified:
 
-* Title - Cookie banner title.
-* Text - Cookie banner text with a general statement on the cookie usage and the use cases for it.
-* Link to privacy policy - A link to the page with the privacy policy.
+* Title - cookie banner title.
+* Text - cookie banner text with a general statement on the cookie usage and the use cases for it.
+* Link to privacy policy - a link to the page with the privacy policy.
 
 <a name="domain-name"></a>
 ### Domain name
@@ -214,7 +214,7 @@ The custom domain name functionality is only available for {{< product-c8y-iot >
 There are three prerequisites for using a custom domain:
 
 1. To activate your domain, a valid license that covers your wildcard domain is required.
-   Please contact [product support](/welcome/contacting-support/) to install a license for your domain.
+   Please [contact product support](/welcome/contacting-support/) to install a license for your domain.
 2. You've obtained a valid wildcard SSL certificate for your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
@@ -301,11 +301,11 @@ After the activation is completed you will no longer be able to access your tena
 
 #### Updating your certificate
 
-When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that
+When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that the certificate meets the following requirements:
 
-* the certificate is valid, like when being uploaded for the first time,
-* the certificate is currently valid (validFrom in the past and validTo in the future),
-* the certificate has exactly the same common name (domain name) as the currently active certificate.
+* It is valid, like when being uploaded for the first time.
+* It is currently valid (validFrom in the past and validTo in the future).
+* It has exactly the same common name (domain name) as the currently active certificate.
 
 {{< c8y-admon-info >}}
 Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.

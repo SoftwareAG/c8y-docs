@@ -102,23 +102,9 @@ Depending on the asset type (group or device), various tabs are available with d
 
 Groups show the following tabs:
 
-
 * **Subassets** - Shows group details and all subassets of a group, see also [Device management > Viewing devices](/users-guide/device-management/#viewing-devices).
 * **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](#smart-rules).
 * **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
-
-{{< c8y-admon-req >}}
-ROLES & PERMISSIONS in groups context:
-
-- To view all groups: READ permission for permission type "Inventory"
-- To add new groups: CREATE permission for permission type "Inventory"
-- To delete any group: ADMIN permission for permission type "Inventory"
-- To rename a group or change group description: ADMIN permission for permission type "Inventory"
-- To view specific groups: READ permissions for "Inventory" in the inventory roles
-- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles
-
-Note that global inventory permissions override inventory role permissions.
-{{< /c8y-admon-req >}}
 
 Devices show the following tabs:
 
@@ -127,7 +113,7 @@ Devices show the following tabs:
 * **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
 * **Location** - Shows the current location of a device (only available with `c8y_Position`).
 
-If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](#dashboards) for details.
+If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 

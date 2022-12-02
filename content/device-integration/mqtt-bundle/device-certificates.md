@@ -395,7 +395,7 @@ The steps for the proof of possession are as follows:
 - Download of the unsigned verification code:
 ![Download unsigned verification code](/images/mqtt/devmgmt-mqtt-cert-pop-downloadunsigned.png)
 
-- Encrypt the unsigned verification code using the private key of the certificate to produce signed verification code.
+- Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
 
 - Upload of the signed verification code to the platform:
 ![Upload signed verification code](/images/mqtt/devmgmt-mqtt-cert-pop-uploadsigned.png)

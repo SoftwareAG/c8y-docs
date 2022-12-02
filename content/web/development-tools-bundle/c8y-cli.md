@@ -59,7 +59,7 @@ All the commands except of `new` take an array of [glob patterns](<https://en.wi
 
 ### The `new` command
 
-The `c8ycli new [name] [template]` helps to start an empty application or to extend one of our existing applications (Cockpit, Devicemanagement or Administration). To extend an existing application use as `[name]` and `[template]` the name of the existing application like this:
+The `c8ycli new [name] [template]` command creates an empty application or extends an existing application (Cockpit, Devicemanagement or Administration). To extend an existing application use the name of the existing application as `[name]` and `[template]` like this:
 
 ```
 $ c8ycli new cockpit cockpit

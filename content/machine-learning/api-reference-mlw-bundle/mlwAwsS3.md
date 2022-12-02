@@ -34,7 +34,7 @@ List names of all AWS S3 buckets.
 
 curl --location --request GET '{{url}}/service/mlw/downloadFromS3/buckets' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json'
+--header 'Content-Type: web app/json'
 ```
 
 **Example Response**
@@ -74,7 +74,7 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/buckets' \
 401 - Unauthorized
 
 curl --location --request GET '{{url}}/service/mlw/downloadFromS3/buckets' \
---header 'Content-Type: application/json'
+--header 'Content-Type: web app/json'
 ```
 
 **Example Response**
@@ -114,7 +114,7 @@ Lists the names of all files within an AWS S3 buckets.
 
 curl --location --request GET '{{url}}/service/mlw/downloadFromS3/mlwbucket/files' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json'
+--header 'Content-Type: web app/json'
 ```
 
 **Example Response**
@@ -174,7 +174,7 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/mlwbucket/file
 401 - Unauthorized
 
 curl --location --request GET '{{url}}/service/mlw/downloadFromS3/mlwbucket/files' \
---header 'Content-Type: application/json'
+--header 'Content-Type: web app/json'
 ```
 
 **Example Response**
@@ -196,7 +196,7 @@ curl --location --request GET '{{url}}/service/mlw/downloadFromS3/mlwbucket/file
 
 curl --location --request GET '{{url}}/service/mlw/downloadFromS3/nomlwbucket/files' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json'
+--header 'Content-Type: web app/json'
 ```
 
 **Example Response**
@@ -238,7 +238,7 @@ Downloads the file from AWS S3 bucket.
 
 curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/downloadFromS3/mlwbucket/download' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: web app/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'
 ```
 
@@ -287,7 +287,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 401 - Unauthorized
 
 curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/downloadFromS3/mlwbucket/download' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: web app/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'
 ```
 
@@ -310,7 +310,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097e
 
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/downloadFromS3/mlwbucket/download' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: web app/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'
 ```
 

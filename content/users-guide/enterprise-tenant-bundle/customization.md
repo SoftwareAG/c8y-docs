@@ -109,7 +109,7 @@ The [parameters](#configuration-parameters) are configured at the left side of t
 
 <img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
 
-For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
+For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch web apps in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
 
 <img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
@@ -133,7 +133,7 @@ Under **General**, you can edit the title which will be used in the browser tab.
 Under **Main logo**, specify the following items:
 
 * The favicon, which will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
-* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
+* Your branding logo, which will be shown during web app loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
 * The brand logo height.
 
 **Navigator logo**

@@ -16,19 +16,19 @@ Die vollständige Dokumentation zur webMethods.io Integration finden Sie unter [
 ### Erste Schritte
 
 {{< c8y-admon-info >}}
-Die unten beschriebene Benutzeroberfläche steht Ihnen nur zur Verfügung, wenn Ihr Mandant in der {{< sag-cloud >}} angelegt wurde. Sie können zwar webMethods.io verwenden, um {{< product-c8y-iot >}} in andere Anwendungen zu integrieren, der Application Switcher und die Single-Sign-On-Funktion werden Ihnen jedoch nicht angeboten.
+Die unten beschriebene Benutzeroberfläche steht Ihnen nur zur Verfügung, wenn Ihr Mandant in der {{< sag-cloud >}} angelegt wurde. Sie können zwar webMethods.io verwenden, um {{< product-c8y-iot >}} in andere Anwendungen zu integrieren, der web app Switcher und die Single-Sign-On-Funktion werden Ihnen jedoch nicht angeboten.
 {{< /c8y-admon-info >}}
 
 Um die webMethods.io Integration zu abonnieren, gehen Sie folgendermaßen vor:
 
 1. Melden Sie sich in der **{{< sag-cloud >}}** an der {{< product-c8y-iot >}}-Plattform an.
 
-2. Wählen Sie **webMethods.io Integration** im Application Switcher.
+2. Wählen Sie **webMethods.io Integration** im web app Switcher.
 
 ![webMethods.io App Switcher Integration](/images/benutzerhandbuch/webMethods.io/wmio-appswitcher-integration.png)
 
 {{< c8y-admon-info >}}
-Wenn das Symbol nicht verfügbar ist, haben Sie die **webMethods.io Integration** möglicherweise nicht abonniert. Wenn Sie sie abonnieren möchten, öffnen Sie den Application Switcher und klicken Sie auf **MyCloud**. Sie werden zum **{{< sag-cloud >}}**-Portal weitergeleitet, wo sie eine kostenlose Testversion abonnieren können.
+Wenn das Symbol nicht verfügbar ist, haben Sie die **webMethods.io Integration** möglicherweise nicht abonniert. Wenn Sie sie abonnieren möchten, öffnen Sie den web app Switcher und klicken Sie auf **MyCloud**. Sie werden zum **{{< sag-cloud >}}**-Portal weitergeleitet, wo sie eine kostenlose Testversion abonnieren können.
 <br><br>![webMethods.io App Switcher My Cloud](/images/benutzerhandbuch/webMethods.io/wmio-appswitcher-mycloud.png)
 {{< /c8y-admon-info >}}
 

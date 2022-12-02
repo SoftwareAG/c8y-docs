@@ -15,7 +15,7 @@ Die Benutzerverwaltungsfunktion ermöglicht es Ihnen, innerhalb Ihres Mandanten 
 Für diese Funktionen muss der Benutzer eine Rolle mit den Benutzerverwaltungsberechtigungen ADMIN oder ERSTELLEN haben.
 {{< /c8y-admon-info >}}
 
-Wenn für Ihren Mandanten in {{< sag-cloud >}} die Verwendung von Single-Sign-On (SSO) konfiguriert ist, sollten neue Benutzer unter **My Cloud** angelegt werden, um die SSO-Funktion nutzen zu können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
+Wenn für Ihren Mandanten in {{< sag-cloud >}} die Verwendung von Single-Sign-On (SSO) konfiguriert ist, sollten neue Benutzer unter **My Cloud** angelegt werden, um die SSO-Funktion nutzen zu können. My Cloud kann über den web app Switcher in der oberen rechten Ecke aufgerufen werden.
 
 Für Benutzer, die über einen externen Autorisierungsserver angelegt werden, haben die folgenden Einstellungen in {{< product-c8y-iot >}} keine Auswirkung (sie werden bei der nächsten erneuten Benutzeranmeldung zurückgesetzt):
 
@@ -53,7 +53,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 
 1. Klicken Sie auf **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
   {{< c8y-admon-info >}}
-Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
+Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den web app Switcher in der oberen rechten Ecke aufgerufen werden.
   {{< /c8y-admon-info >}}
 
 2. Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den Benutzer zu identifizieren:

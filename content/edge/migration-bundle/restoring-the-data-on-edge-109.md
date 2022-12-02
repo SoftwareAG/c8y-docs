@@ -17,12 +17,12 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
    Copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance.
 
-2. Backup the web applications in the Edge 10.9 appliance. To do this, first detect the IDs of the applications by using the following command:
+2. Backup the web apps in the Edge 10.9 appliance. To do this, first detect the IDs of the web apps by using the following command:
 
     ```shell
     mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq
 
-    The command returns the name and ID of the application. For example:
+    The command returns the name and ID of the web app. For example:
 
     {
       "metadata": {
@@ -50,15 +50,15 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     }
     ```
 
-3. Download the web applications using the ID of the application by using the following command:
+3. Download the web apps using the ID of the web app by using the following command:
 
     ```shell
     mkdir -p /tmp/apps/
     mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip
     
     Here:
-     - APP_ID refers to the ID of the application. For example, 112
-     - APP_NAME refers to the name of the application. For example, devicemanagement.zip
+     - APP_ID refers to the ID of the web app. For example, 112
+     - APP_NAME refers to the name of the web app. For example, devicemanagement.zip
     
     For example:
     mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/cockpit.zip
@@ -81,7 +81,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     rpm -ivh zip-3.0-11.el7.x86_64.rpm
     ```
 
-5. Prepare the applications for deployment by using the following commands:
+5. Prepare the web apps for deployment by using the following commands:
 
    {{< c8y-admon-important >}}
 
@@ -103,7 +103,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     ```shell
     DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
 
-    curl -v --header "Content-Type: application/json" --request POST --data
+    curl -v --header "Content-Type: web app/json" --request POST --data
     '{"device_id":"'$DEVICE_ID'"}' 127.0.0.1:3032/configuration/edge-agent
 
     systemctl restart edge-agent
@@ -123,14 +123,14 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     mongorestore --drop --db docker /home/admin/migration_data/docker/
     ```
 
-8. Restore the web applications of the Edge 10.9 appliance by using the following command:
+8. Restore the web apps of the Edge 10.9 appliance by using the following command:
 
     ```shell
     chown -R karaf:karaf /webapps/
     chown nginx:karaf /webapps
     cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
 
-    Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
+    Wait for Karaf to install the web apps. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
     ```
 
 9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
@@ -147,21 +147,21 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     monit restart opcua_mgmt_service_proc
     ```
 
-12. Restore the Streaming Analytics application by following these steps:
+12. Restore the Streaming Analytics web app by following these steps:
 
 	- Log in to the {{< management-tenant >}} using the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 
-	- Upload the *streaming-analytics-app.zip* file as a web application.
+	- Upload the *streaming-analytics-app.zip* file as a web app.
 
-	- Subscribe the Streaming Analytics application to the Edge tenant.
+	- Subscribe the Streaming Analytics web app to the Edge tenant.
 
-      {{< c8y-admon-important >}} To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.{{< /c8y-admon-important >}}
+      {{< c8y-admon-important >}} To subscribe the web app, the {{< management-tenant >}} user must have the "Tenant Manager" role.{{< /c8y-admon-important >}}
 
-	- Delete the Apama Analytics Builder and Apama EPL Apps applications.
+	- Delete the Apama Analytics Builder and Apama EPL Apps web apps.
 
-	- Log in to the Edge tenant and verify the Streaming Analytics application.
+	- Log in to the Edge tenant and verify the Streaming Analytics web app.
 
-Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from the Edge 10.9 installation are removed after the successful migration. You are now be able to log in using the Edge 10.7 user credentials.
+Restoring the Streaming Analytics web app completes the migration procedure. Note that the tenants from the Edge 10.9 installation are removed after the successful migration. You are now be able to log in using the Edge 10.7 user credentials.
 
 Next, configure the Edge 10.9 appliance. For example, if you enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 

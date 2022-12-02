@@ -12,12 +12,12 @@ If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) f
 
 The initial script was used to create a demo, which makes it easier to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file, and next a reference is added to the appropriate project file. In addition, the script creates the appropriate Dockerfile to take into account the naming of projects. Next it will create a Docker image based on a Dockerfile.
 
-The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated web server called Kestrel and as a foreground job, which makes it work really well with Docker.
+The web app created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated web server called Kestrel and as a foreground job, which makes it work really well with Docker.
 
 
 ### Building and deploying on Windows
 
-In Windows systems, Powershell is installed by default. Download the script file to build a "Hello world" application. Manage the version of scripts and replace latest to the right version number.
+In Windows systems, Powershell is installed by default. Download the script file to build a "Hello world" web app. Manage the version of scripts and replace latest to the right version number.
 
 ```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
@@ -49,13 +49,13 @@ Make sure to use the correct SDK version - 3.1.200 or define which .NET Core SDK
 dotnet new globaljson --sdk-version 3.1.200
 ```
 
-Run the script *create.ps1* to create a sample project, provide the name of the project and the API application.
+Run the script *create.ps1* to create a sample project, provide the name of the project and the API web app.
 
 ```shell
 ./create.ps1
 ```
 
-Execute the bootstrapper script to build the application and an image from a Dockerfile.
+Execute the bootstrapper script to build the web app and an image from a Dockerfile.
 
 ```shell
 ./build.ps1
@@ -88,9 +88,9 @@ Assuming that Chocolatey is installed:
 choco install curl
 ```
 
-**Step 1 - Create the application**
+**Step 1 - Create the web app**
 
-If the application does not exist, create a new application on a platform:
+If the web app does not exist, create a new web app on a platform:
 
 ```http
 POST <URL>/application/applications
@@ -98,7 +98,7 @@ POST <URL>/application/applications
 HEADERS:
   "Authorization": "<AUTHORIZATION>"
   "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
-  "Accept: application/vnd.com.nsn.cumulocity.application+json"
+  "Accept: web app/vnd.com.nsn.cumulocity.application+json"
 
 BODY:
   {
@@ -114,8 +114,8 @@ Example:
 curl -X POST -s \
 -d '{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}' \
 -H "Authorization: <AUTHORIZATION>" \
--H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
--H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
+-H "Content-Type: web app/vnd.com.nsn.cumulocity.application+json" \
+-H "Accept: web app/vnd.com.nsn.cumulocity.application+json" \
 "<URL>/application/applications"
 ```
 
@@ -144,7 +144,7 @@ Example response:
 }
 ```
 
-If the application has been created correctly, you can get the application ID from the response.
+If the web app has been created correctly, you can get the web app ID from the response.
 
 **Step 2 - Acquire the microservice bootstrap user**
 
@@ -153,14 +153,14 @@ GET <URL>/application/applications/<APPLICATION_ID>/bootstrapUser
 
 HEADERS:
   "Authorization": <AUTHORIZATION>
-  "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+  "Content-Type": web app/vnd.com.nsn.cumulocity.user+json
 ```
 
 Example response:
 
 ```http
 HTTP/1.1 200 Ok
-Content-Type: application/vnd.com.nsn.cumulocity.user+json
+Content-Type: web app/vnd.com.nsn.cumulocity.user+json
 {
   "tenant": "...",
   "name": "...",
@@ -204,13 +204,13 @@ Example:
 ```shell
 curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 -H "Authorization: <AUTHORIZATION>" \
--H "Content-type: application/json" \
+-H "Content-type: web app/json" \
  "<URL>/tenant/tenants/<TENANT_ID>/applications"
 ```
 
 **Step 5 - Verify if the microservice is running**
 
-Now you can verify if your application is running by executing
+Now you can verify if your web app is running by executing
 
 ```shell
 curl -H "Authorization: <AUTHORIZATION>" \
@@ -242,9 +242,9 @@ The expected result is like:
 ]
 ```
 
-### Running the application within the IDE
+### Running the web app within the IDE
 
-It is possible to check if the application communicates with the platform by defining relevant environmental variables in *launchSettings.json*. This file sets up the different launch environments that Visual Studio can launch automatically. Here is a snippet of the default *launchSettings.json*.
+It is possible to check if the web app communicates with the platform by defining relevant environmental variables in *launchSettings.json*. This file sets up the different launch environments that Visual Studio can launch automatically. Here is a snippet of the default *launchSettings.json*.
 
 ```json
 {
@@ -301,13 +301,13 @@ For further information refer to [General aspects > Microservice utility tool](/
 
 **Deployment**
 
-In addition, there is a *deploy.ps1* script that uses credentials stored locally. Run the script in order to deploy the application. You must provide the correct URL and credentials in the *settings.ini* file.
+In addition, there is a *deploy.ps1* script that uses credentials stored locally. Run the script in order to deploy the web app. You must provide the correct URL and credentials in the *settings.ini* file.
 
-To deploy a microservice application on the platform, you need the following:
+To deploy a microservice web app on the platform, you need the following:
 
 * URL address of the {{< product-c8y-iot >}} host of your tenant
 * Username and password to log in with
-* An application created on the platform
+* a web app created on the platform
 * ZIP build from previous steps for deployment
 
 Configure the _settings.ini_ file as follows:
@@ -350,7 +350,7 @@ appname=sample_application
 
 ### Improving the microservice
 
-The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by *create.sh*.
+The web app starts executing from the entry point `public static void Main()` in Program class where the host for the web app is created. The following shows an example of a program created by *create.sh*.
 
 ```cs
 namespace api
@@ -400,7 +400,7 @@ The method BuildWebHost performs the following tasks:
 * configures the LoggerFactory
 * specifies the class with the `UseStartup<Startup>`
 
-An example application must include Startup class. As the name suggests, it is executed first when the application starts.
+An example web app must include Startup class. As the name suggests, it is executed first when the web app starts.
 
 ```cs
 public class Startup
@@ -450,7 +450,7 @@ ENTRYPOINT ["dotnet", "api.dll"]
 It also defines what goes on in the environment inside a container:
 
 * Sets the working directory
-* Copies all from an application directory to the working directory
+* Copies all from a web app directory to the working directory
 * Sets the environment variable, in this case SERVER_PORT
 * Specifies what executable to run when the container starts
 
@@ -479,7 +479,7 @@ It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it
 
 ### Building and deploying on Linux
 
-use the wget command to download the script file to build a "Hello World" application.
+use the wget command to download the script file to build a "Hello World" web app.
 
 ```shell
 $ sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
@@ -499,7 +499,7 @@ Change the current folder, to navigate to a microservicesdk folder.
 $ cd microservicesdk-latest
 ```
 
-Run the script *create.sh* to create a sample project, provide the name of the project and the API application.
+Run the script *create.sh* to create a sample project, provide the name of the project and the API web app.
 
 ```shell
 $ ./create.sh
@@ -520,7 +520,7 @@ For a working cake you need the *build.sh* or *build.ps1* file to bootstrap cake
 * DotnetPublish
 * SingleDockerImage
 
-Execute the bootstrapper script, to build the application and an image from a Dockerfile.
+Execute the bootstrapper script, to build the web app and an image from a Dockerfile.
 
 ```shell
 $ ./build.sh
@@ -532,13 +532,13 @@ Launch the Docker container with the command:
 $ docker run -p 8999:4700 <imagename>:latest
 ```
 
-Check the status of the application that is running inside the Docker container.
+Check the status of the web app that is running inside the Docker container.
 
 ```shell
 $ curl http://localhost:8999/weatherforecast
 ```
 
-In order to deploy the application, run the deploy script. You must provide the correct URL and credentials in this script.
+In order to deploy the web app, run the deploy script. You must provide the correct URL and credentials in this script.
 
 
 #### Microservice package and deploy
@@ -561,13 +561,13 @@ For further information, refer to [General aspects > Packing](/microservice-sdk/
 
 **Deployment**
 
-In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the application run the deploy script. You must provide the correct URL and credentials in the *settings.ini* file.
+In addition, there is a *deploy.ps1* script that uses credentials stored locally. In order to deploy the web app run the deploy script. You must provide the correct URL and credentials in the *settings.ini* file.
 
-To deploy a microservice application on an environment you need the following:
+To deploy a microservice web app on an environment you need the following:
 
 * URL address of the {{< product-c8y-iot >}} host of your tenant
 * username and password to log in with
-* application name created on the platform
+* web app name created on the platform
 * ZIP build from previous steps for deployment
 
 The _settings.ini_ file contains:

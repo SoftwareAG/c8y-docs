@@ -23,7 +23,7 @@ To use the SSO feature the following requirements must be met:
 
 ### Configuration settings
 
-To enable the SSO feature, the administrator must configure a connection with the authorization server. This is done in the Administration application.
+To enable the SSO feature, the administrator must configure a connection with the authorization server. This is done in the Administration web app.
 
 #### Configuration access
 
@@ -83,7 +83,7 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global role "business" and the default application "cockpit".
+The user will be granted access to the global role "business" and the default web app "cockpit".
 
 If no access mapping matches the user access token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
 
@@ -209,7 +209,7 @@ To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registrat
 4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
 5. Click **Register** to create the App registration.
 
-The overview in the details page of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
+The overview in the details page of your App registration contains several IDs and endpoints that you need later on, like the web app (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
 
 ![App registration overview](/images/users-guide/Administration/admin-AAD-registration.png)
 
@@ -229,7 +229,7 @@ Optionally, create a user in Azure AD that you would like to use with {{< produc
 
 #### Configuring SSO for Azure AD in Cumulocity IoT
 
-Navigate to **Settings > Authentication** in the Administration application and switch to the **Single sign-on** tab.
+Navigate to **Settings > Authentication** in the Administration web app and switch to the **Single sign-on** tab.
 
 Retrieve the relevant information by a GET request to:
 
@@ -312,7 +312,7 @@ Now enter the following values in the configuration:
 |Login URL; OpenID config; Beginning of token endpoint| Azure AD address|Address of your Azure AD tenant, for example "https:&#47;/login.microsoftonline.com"  
 |Home > Overview > Primary Domain| Tenant| &lt;directoryName&gt;.onmicrosoft.com, for example "admtest.onmicrosoft.com"
 |OpenID config “issuer”| Token issuer| Token issuer value in form of a HTTP address: "https:&#47;/sts.windows.net/&lt;Directory tenant ID&gt;/". Note that this won´t work without the tailing slash.
-|App registration > &lt;app&gt; > Application (client) ID| Application ID| for example "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
+|App registration > &lt;app&gt; > web app (client) ID| web app ID| for example "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
 |Redirect URI| Address of your {{< product-c8y-iot >}} tenant followed by /tenant/oauth
 |App registration - &lt;app&gt; > Certificates & secrets > Value | Client secret| Azure AD client secret, for example "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
 |From OpenID config | Public key discovery URL|"https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Directory tenant ID>/discovery/keys"
@@ -373,7 +373,7 @@ You can now use the claims to map user attributes and give permissions in the sa
 
 #### Global logout feature (available for Keycloak in version 12.0.0 and higher)
 
-Integration with Keycloak allows administrators to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to all applications (including the {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, applications and Keycloak, for the particular user.
+Integration with Keycloak allows administrators to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to all web apps (including the {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, web apps and Keycloak, for the particular user.
 
 To configure the global logout feature follow these steps:
 
@@ -414,13 +414,13 @@ Moreover, it is only sent for those tenants where the client being used as a con
 
 In the **Session** tab, the Keycloak administrator can also check how many active sessions exist on the respective client and estimate how many tenants and users will be affected by the logout event.
 
-To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration application under **Accounts** in the **Audit Logs** tab.
+To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration web app under **Accounts** in the **Audit Logs** tab.
 
 #### Troubleshooting
 
 It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its fields contain the information required for the correct configuration described above.
 
-In Administration application, after clicking on **Accounts** > **Audit logs** you can filter by the category "Single sign-on" and look for entries "Json web token claims".
+In Administration web app, after clicking on **Accounts** > **Audit logs** you can filter by the category "Single sign-on" and look for entries "Json web token claims".
 
 The contexts of the token will be presented in JSON format.
 

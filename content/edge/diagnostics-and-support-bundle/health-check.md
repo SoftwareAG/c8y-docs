@@ -91,7 +91,7 @@ You can check the status of the platform by running the following command:
 	> Accept: */*
 	>
 	< HTTP/1.1 200 OK
-	< Content-Type: application/json
+	< Content-Type: web app/json
 	< Date: Sat, 05 May 2018 18:13:28 GMT
 	< Transfer-Encoding: chunked
 	< Server: Jetty(8.1.19.v20160209)
@@ -178,7 +178,7 @@ The list describes the tenants which on the core node have not been fully initia
 |:---|:---
 |UNINITIALIZED|Tenant has not been initialized|
 |DB_INITIALIZED|Database initialisation is performed|
-|LOCAL&#95;APPLICATION_INITIALIZED|Local applications are deployed|
+|LOCAL&#95;APPLICATION_INITIALIZED|Local web apps are deployed|
 |CEP_INITIALIZED|CEP rules are been deployed|
 |HEART&#95;BEAT&#95;MONITORING_INITIALIZED|Heartbeat monitoring for devices is been started|
 |PAYPAL_REFUND|Failed PayPal operations are refunded (when tenant is using PayPal)|
@@ -207,7 +207,7 @@ Run the following command to check the REST API availability:
 	< HTTP/1.1 200 OK
 	< Server: nginx
 	< Date: Tue, 23 Aug 2016 15:39:29 GMT
-	< Content-Type: application/vnd.com.nsn.cumulocity.platformApi+json; charset=UTF-8; ver=0.9
+	< Content-Type: web app/vnd.com.nsn.cumulocity.platformApi+json; charset=UTF-8; ver=0.9
 	< Transfer-Encoding: chunked
 	< Connection: keep-alive
 	<

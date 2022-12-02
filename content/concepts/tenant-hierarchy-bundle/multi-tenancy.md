@@ -13,7 +13,7 @@ This multi-tenancy approach has various advantages:
 * **User and permission management**
 <br>Each tenant has full admin access to their user and permission management and can create its own roles.
 * **Application management**
-<br>Each tenant can manage their applications separately and extend the platform by adding applications.
+<br>Each tenant can manage their web apps separately and extend the platform by adding web apps.
 * **Usage statistics and billing**
 <br>Having separate tenants allows for cloud-based business models, which typically charge per API call and storage.
 

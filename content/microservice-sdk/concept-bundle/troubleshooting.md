@@ -6,9 +6,9 @@ layout: redirect
 
 Some common issues have been identified and documented below.
 
-##### I get an error saying "Microservice application name is incorrect" on uploading a microservice application
+##### I get an error saying "Microservice web app name is incorrect" on uploading a microservice web app
 
-When naming your microservice application only use lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+When naming your microservice web app only use lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 
 ##### I deployed my microservice but requests to any endpoint returns an error message "Microservice not available Connection refused"
 

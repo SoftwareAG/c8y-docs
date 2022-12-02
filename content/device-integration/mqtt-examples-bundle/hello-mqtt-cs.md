@@ -39,7 +39,7 @@ To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, 
 
 * create a console project,
 * add a dependency to the MQTT C# client library (in this example we will use [{{< product-c8y-iot >}} SDK MQTT](https://github.com/SoftwareAG/cumulocity-sdk-cs)),
-* build and run the C# application.
+* build and run the C# web app.
 
 #### Creating a console project
 
@@ -49,7 +49,7 @@ To create a plain C# project with .NET Core SDK, execute the following command:
 $ dotnet new console -n hello_mqtt
 ```
 
-This will create a new console application _hello-mqtt-cs_ in the current directory with a skeleton structure for your project.
+This will create a new console web app _hello-mqtt-cs_ in the current directory with a skeleton structure for your project.
 
 #### Adding the MQTT C# client library
 
@@ -67,7 +67,7 @@ Or use the `dotnet` command as follows:
 $ dotnet add package Cumulocity.SDK.MQTT
 ```
 
-#### Creating a C# application
+#### Creating a C# web app
 
 Edit the _Programs.cs_ file in the folder _hello-mqtt-cs_ with the following content:
 
@@ -86,7 +86,7 @@ namespace hello_mqtt
 	{
 		static void Main (string[] args)
 		{
-            Console.WriteLine("The application has started. Press Ctrl-C to stop it.");
+            Console.WriteLine("The web app has started. Press Ctrl-C to stop it.");
 
             var cSource = new CancellationTokenSource();
             var myTask = Task.Factory.StartNew(() => RunJsonViaMqttClientAsync(cSource.Token), cSource.Token);
@@ -253,9 +253,9 @@ await client.PublishAsync(messageJson);
 
 For specific procedural details review [JSON via MQTT](/reference/smartrest-two/#json-via-mqtt).
 
-#### Building and running the application
+#### Building and running the web app
 
-Use the following commands to build the application:
+Use the following commands to build the web app:
 
 ```shell
 $ cd hello-mqtt-cs
@@ -268,10 +268,10 @@ and this command to run it:
 $ dotnet run
 ```
 
-After starting the application, you should see a new registered device in the Device Management application listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+After starting the web app, you should see a new registered device in the Device Management web app listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), the information about it will be printed to the console.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your web app.

@@ -12,7 +12,7 @@ Visit our [Hello world tutorial](/microservice-sdk/java/#java-microservice) and 
 
 ### Developing the IP-tracker microservice
 
-This microservice application creates a warning alarm message (for demonstration purposes) and it exposes endpoints to:
+This microservice web app creates a warning alarm message (for demonstration purposes) and it exposes endpoints to:
 
 - Verify that the microservice is up and running.
 - Pass a parameter to the platform and return a formatted string.
@@ -42,7 +42,7 @@ Your *pom.xml* file should contain a snippet similar to:
 ```
 
 {{< c8y-admon-info >}}
-This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice web app.
 {{< /c8y-admon-info >}}
 
 Finally, add the following dependency:
@@ -55,7 +55,7 @@ Finally, add the following dependency:
 </dependency>
 ```
 
-#### Update the application manifest
+#### Update the web app manifest
 
 In your _cumulocity.json_ file:
 
@@ -112,7 +112,7 @@ Your manifest file should look similar to this:
 ### Creating a managed object
 
 An alarm must be associated with a source and it requires an ID.
-Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
+Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice web app.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, for example, [My Current Location](https://mycurrentlocation.net).
@@ -123,8 +123,8 @@ Create a managed object as a device named "Microservice tracker" via POST reques
 POST <URL>/inventory/managedObjects
 
 HEADERS:
-  Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
-  Accept: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
+  Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
+  Accept: web app/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
   Authorization: <AUTHORIZATION>
 
 BODY:
@@ -141,7 +141,7 @@ BODY:
 You will get the ID of your managed object in the response.
 Assign this ID to the `"tracker.id"` key in your _cumulocity.json_ file.
 
-On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
+On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices** in the Device Management web app to verify that your device has been created and its location is displayed on the map.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-newdevice.png)
 
@@ -200,15 +200,15 @@ public class Location {
 }
 ```
 
-### Updating the application
+### Updating the web app
 
 Modify your _App.java_ file and:
 
-1. Run the microservice as a Spring application.
+1. Run the microservice as a Spring web app.
 2. Add a post-construct init method to get a subset of the environment variables and the microservice settings.
 3. Add an event listener to the microservice subscription. Each time a tenant subscribes to the microservice, an alarm will be created.
 4. Define a method to create LocationUpdate events based on the client's IP.
-4. Add the application endpoints.
+4. Add the web app endpoints.
 
 Your code should look similar to:
 
@@ -351,7 +351,7 @@ public class App {
     }
 
 
-    /* * * * * * * * * * Application endpoints * * * * * * * * * */
+    /* * * * * * * * * * web app endpoints * * * * * * * * * */
 
     // Check the microservice status/health (implemented by default)
     // GET /health
@@ -402,7 +402,7 @@ public class App {
 }
 ```
 
-### Building and deploying the application
+### Building and deploying the web app
 
 Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/microservice-sdk/java/#java-microservice) to deploy your microservice.
 You may also employ the cURL command to deploy the microservice.
@@ -413,9 +413,9 @@ $ curl -F "data=@target/iptracker-microservice-1.0.0-SNAPSHOT.zip" \
      "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-### Testing the application
+### Testing the web app
 
-You can test any endpoint of your application using the command line or a web browser.
+You can test any endpoint of your web app using the command line or a web browser.
 For example, a GET request to <kbd>location/track</kbd> will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location.
 The response will be similar to:
 
@@ -438,9 +438,9 @@ The response will be similar to:
 Using the endpoint <kbd>location/locations</kbd> will return five stored events by default.
 You can use the `max` parameter to specify a higher number.
 
-In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
+In the Device Management web app, navigate to **Devices** > **All devices** and locate your microservice tracker.
 Under **Tracking** you will see a map with the tracked locations.
-You can also develop your own web application and customize a map widget.
+You can also develop your own web app and customize a map widget.
 Refer to [Application library](/web/libraries/#application) in the *Web SDK guide*.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)

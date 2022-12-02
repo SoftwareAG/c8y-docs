@@ -4,7 +4,7 @@ title: Configuring the microservice hosting feature
 layout: redirect
 ---
 
-Microservices are server-side applications which may be used to extend the {{< product-c8y-iot >}} Edge platform with customer-specific functionality. For more information, see [Microservice SDK](/microservice-sdk/introduction/). When you enable or disable the microservice feature, the Device simulator microservice also gets enabled or disabled. To use the Device simulator, add the **Simulator** permission. For more information, see [Global roles](/users-guide/administration/#a-nameglobalaglobal-roles).
+Microservices are server-side web apps which may be used to extend the {{< product-c8y-iot >}} Edge platform with customer-specific functionality. For more information, see [Microservice SDK](/microservice-sdk/introduction/). When you enable or disable the microservice feature, the Device simulator microservice also gets enabled or disabled. To use the Device simulator, add the **Simulator** permission. For more information, see [Global roles](/users-guide/administration/#a-nameglobalaglobal-roles).
 
 For more information about Device simulator, see [Working with simulators](/users-guide/device-management/#simulator).
 
@@ -23,7 +23,7 @@ Enabling the microservice hosting feature takes about 10 to 15 minutes to comple
 
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration web app using the web app switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 3. Click **Edge** > **Microservices** in the navigator.
 4. Use the toggle button to enable the microservice hosting feature.
 
@@ -31,13 +31,13 @@ Enabling the microservice hosting feature takes about 10 to 15 minutes to comple
 If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
 {{< /c8y-admon-important >}}
 
-To deploy a microservice, in the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
+To deploy a microservice, in the Administration web app, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
 
 {{< c8y-admon-info >}}
 The **Add microservice** button will not be available if you have not enabled the microservice hosting feature.
 {{< /c8y-admon-info >}}
 
-Upload the ZIP file for your microservice application. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
+Upload the ZIP file for your microservice web app. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
 
 ### Enabling or disabling the microservice hosting feature using the REST APIs
 
@@ -69,13 +69,13 @@ A microservice specifies an API version in the microservice manifest. Depending 
 
 By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the Edge tenant.
 
-{{< c8y-admon-important >}}The MLW microservice uses API version 1. To install MLW on {{< product-c8y-iot >}} Edge version 10.15, you must subscribe the Edge tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW microservice with API version 1.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}The MLW microservice uses API version 1. To install MLW on {{< product-c8y-iot >}} Edge version 10.15, you must subscribe the Edge tenant to the **Feature-privileged-microservice-hosting** web app before uploading the MLW microservice with API version 1.{{< /c8y-admon-important >}}
 
 To upload and subscribe to a microservice with API version 1 in the Edge tenant:
 
 1. Log in to the {{< management-tenant >}}.
 2. Enable the microservice hosting feature, if not already enabled.
 3. Go to **Tenants** > **Subtenants** and click the edge tenant.
-4. Go to **Applications** and subscribe to the **Feature-privileged-microservice-hosting** application from the **Available applications**.
+4. Go to **Applications** and subscribe to the **Feature-privileged-microservice-hosting** web app from the **Available web apps**.
    {{< c8y-admon-info >}} It might take up to ten minutes until the Edge tenant is able to upload and subscribe to privileged microservices. {{< /c8y-admon-info >}}
 5. Log in to the Edge tenant and upload a microservice with API version 1.

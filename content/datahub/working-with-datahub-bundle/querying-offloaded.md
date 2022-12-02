@@ -4,7 +4,7 @@ title: Querying offloaded Cumulocity IoT data
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} DataHub offers an SQL interface so that you can efficiently query offloaded device data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of {{< product-c8y-iot >}} to the data lake.
+{{< product-c8y-iot >}} DataHub offers an SQL interface so that you can efficiently query offloaded device data and leverage the results in your own web apps. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of {{< product-c8y-iot >}} to the data lake.
 
 ### Overview
 
@@ -51,7 +51,7 @@ If you want to use an ODBC client to run SQL queries against the data lake, you 
 
 Dremio offers an [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You must authenticate with your Dremio account against Dremio in order to use the API.
 
-Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use {{< product-c8y-iot >}} DataHub's REST API, see below.
+Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based web app is not possible. It is highly recommended to use {{< product-c8y-iot >}} DataHub's REST API, see below.
 
 ### Connecting via Cumulocity IoT DataHub REST API
 

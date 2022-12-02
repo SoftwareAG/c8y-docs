@@ -9,7 +9,7 @@ An {{< enterprise-tenant >}} offers additional administrative functionality comp
 Using an {{< enterprise-tenant >}}, you can:
 
 * Create and manage subtenants.
-* Manage the subscribed applications/features of the subtenants.
+* Manage the subscribed web apps/features of the subtenants.
 * Invoice subtenants based on usage statistics.
 
 Moreover, an {{< enterprise-tenant >}} includes the following additional features:
@@ -36,7 +36,7 @@ The following sections describe the following additional functionalities availab
 <tbody>
 <tr>
 <td align="left"><a href="#managing-tenants">Managing tenants</a></td>
-<td align="left">Create and manage subtenants, and manage their properties and <a href="#subscribe">subscribed applications</a>.</td>
+<td align="left">Create and manage subtenants, and manage their properties and <a href="#subscribe">subscribed web apps</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#user-hierarchies">Managing user hierarchies</a></td>

@@ -4,7 +4,7 @@ title: Setting up Dremio users
 layout: redirect
 ---
 
-In the [initial configuration](/datahub/setting-up-datahub/#setting-up-initial-configuration) of {{< product-c8y-iot >}} DataHub, the Dremio API user is configured. This user is required for the proxy REST API, which allows you to interact with Dremio using {{< product-c8y-iot >}} DataHub. This user can also be used to directly interact with Dremio in applications, using JDBC, ODBC, or REST API.
+In the [initial configuration](/datahub/setting-up-datahub/#setting-up-initial-configuration) of {{< product-c8y-iot >}} DataHub, the Dremio API user is configured. This user is required for the proxy REST API, which allows you to interact with Dremio using {{< product-c8y-iot >}} DataHub. This user can also be used to directly interact with Dremio in web apps, using JDBC, ODBC, or REST API.
 
 Some use cases might require more than one Dremio user for the interaction with Dremio. For that purpose, additional Dremio users can be added.
 

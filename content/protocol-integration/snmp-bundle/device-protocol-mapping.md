@@ -9,7 +9,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 
 ### To create mapping from the UI
 
-1. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
+1. In the Device Management web app, click **Device protocols** in the **Device types** menu in the navigator.
 2. Open the desired device protocol (for example snmp-device-protocol). It shows a list of components representing the OIDs.
 
 	![Device protocol details](/images/device-protocols/snmp/snmp-device-protocol-detail.png)
@@ -25,7 +25,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 
 	PUT /inventory/managedObjects/{{device.protocol.id}}
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+	Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
 	{
 	   "id":"18849",
 	   "name":"snmp-device-protocol",

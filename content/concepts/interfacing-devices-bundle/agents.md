@@ -6,7 +6,7 @@ layout: redirect
 
 Internet of Things (IoT) devices come with a wide variety of protocols, parameters and network connectivity options. Protocols of devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices can be connected through mobile networks and gateways.
 
-To shield machine-to-machine applications from this numbers of access options, {{< product-c8y-iot >}} uses *agents*. An agent is a function that complies with three duties for a specific vendor and type of devices:
+To shield machine-to-machine web apps from this numbers of access options, {{< product-c8y-iot >}} uses *agents*. An agent is a function that complies with three duties for a specific vendor and type of devices:
 
 -   It translates the device-specific interface protocol into a single reference protocol.
 -   It translates the specific domain model of the device into a reference domain model.
@@ -28,7 +28,7 @@ The configuration parameters, readings, events, they all have their device-speci
 
 Devices can provide a protocol that is unsuitable for secure remote communication, in particular in public cloud environments. The protocol only supports local networking and does not pass through firewalls and proxies and it can contain sensitive data in clear text form. To avoid security issues like these, an agent can be co-located to the device and provide a secure, internet-enabled link to the remote device via {{< product-c8y-iot >}}.
 
-To summarize the benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the applications from the variety of IoT devices and protocols.
+To summarize the benefits of the agent concept: Agents enable IoT web apps to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT web apps by shielding the web apps from the variety of IoT devices and protocols.
 
 ### What agent architecture is supported?
 

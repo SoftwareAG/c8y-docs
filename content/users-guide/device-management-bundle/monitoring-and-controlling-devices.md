@@ -34,7 +34,7 @@ helpcontent:
   **Bulk operations** are single operations executed on a set of devices."
 - label: events-all
   title: Events
-  content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
+  content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for web app-specific processing. For example, a vending device sends its real-time sales in the form of events.
 
 
    You can find an overview of the events across all devices here. To view the operations of a particular device, switch to the **Events** tab in the details of the device.
@@ -58,7 +58,7 @@ Devices are represented as "pins". Click a pin to see the name of the respective
 <a name="connection-monitoring"></a>
 ### Connection monitoring
 
-In the Device Management application you can monitor the connections to your devices.
+In the Device Management web app you can monitor the connections to your devices.
 
 This can be done at the level of individual devices (see below) or across multiple devices in a list.
 
@@ -119,7 +119,7 @@ Navigate to the **Info** tab of a particular device to monitor the connections o
 Below the send connection and push connection status, the time of the last communication is displayed.
 
 {{< c8y-admon-info >}}
-"Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
+"Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another web app.
 {{< /c8y-admon-info >}}
 
 In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with {{< product-c8y-iot >}}. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
@@ -144,7 +144,7 @@ While a machine is offline, {{< product-c8y-iot >}} assumes by default
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
-There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
+There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration web app](/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
 
 {{< product-c8y-iot >}} displays service availability at the level of individual devices and across all devices.
 
@@ -492,7 +492,7 @@ This may be useful if the operation is generally a success, but contains operati
 <a name="events-all"></a>
 ### Troubleshooting devices
 
-Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
+Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for web app-specific processing. For example, a vending device sends its real-time sales in the form of events.
 
 #### To view events
 

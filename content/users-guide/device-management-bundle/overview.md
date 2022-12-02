@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-The following sections will walk you through all functionalities of the Device Management application in detail. For your convenience find an overview on the content of this document below.
+The following sections will walk you through all functionalities of the Device Management web app in detail. For your convenience find an overview on the content of this document below.
 
 |SECTION|CONTENT|
 |:---|:---|

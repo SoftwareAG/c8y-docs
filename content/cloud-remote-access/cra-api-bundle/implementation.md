@@ -24,7 +24,7 @@ To indicate that your device is capable of handling Cloud Remote Access, it shou
 
 ### Connect operation
 
-This operation is created when the application generates a connect request. The operation is then sent to the device agent to establish the connection between the WebSocket endpoint at the server and the local network endpoint.
+This operation is created when the web app generates a connect request. The operation is then sent to the device agent to establish the connection between the WebSocket endpoint at the server and the local network endpoint.
 
 Example of an `c8y_RemoteAccessConnect` operation:
 

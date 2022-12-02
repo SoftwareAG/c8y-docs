@@ -162,7 +162,7 @@ Example value for response code 200:
 }
 ```
 
-### POST - Create a new EPL application
+### POST - Create a new EPL web app
 
 Endpoint: `/service/cep/eplfiles`
 
@@ -355,5 +355,5 @@ where
 - `exception` specifies the exception that was raised.
 - `message` is a description of the exception message.
 - `path` is the path that was requested.
-- `status` is the status of the application.
+- `status` is the status of the web app.
 - `timestamp` is the timestamp in ISO format.

@@ -256,11 +256,11 @@ Hence, all subsequent calls should refer to the converted name as listed in the 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|
-|file|required query parameter for resource file name, if Content-Type is application/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
+|file|required query parameter for resource file name, if Content-Type is web app/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
 
 
 **Example Request**
@@ -642,11 +642,11 @@ Upload a new resource file containing a pre-processing or post-processing script
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+|Content-Type|required header parameter with two accepted values: web app/octet-stream or multipart/form-data
 
 |PARAMS||
 |:---|:---|
-|file|required query parameter for resource file name, if Content-Type is application/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
+|file|required query parameter for resource file name, if Content-Type is web app/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
 
 
 **Example Request**

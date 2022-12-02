@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-This section will show security concepts and aspects of {{< product-c8y-iot >}}, structured into physical security, network security, application security and access control. Finally, it shows how {{< product-c8y-iot >}} helps in managing the security of your IoT solution.
+This section will show security concepts and aspects of {{< product-c8y-iot >}}, structured into physical security, network security, web app security and access control. Finally, it shows how {{< product-c8y-iot >}} helps in managing the security of your IoT solution.
 
 This section is especially intended for IT security staff and management staff. IT security expertise is required when running {{< product-c8y-iot >}}.
 

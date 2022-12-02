@@ -136,7 +136,7 @@ To view the device in your {{< product-c8y-iot >}} account, click **All devices*
 
 ### Interacting with the platform
 
-After the Raspberry Pi has been successfully registered, you can view the device's status in the {{< product-c8y-iot >}}´s standard applications (Device Management, Cockpit and Administration).
+After the Raspberry Pi has been successfully registered, you can view the device's status in the {{< product-c8y-iot >}}´s standard web apps (Device Management, Cockpit and Administration).
 
 If you have reached this part of the tutorial successfully, you have the proof-of-concept that you can attach a device such as a Raspberry Pi to a {{< product-c8y-iot >}} server and view its status information. Congratulations!
 
@@ -158,7 +158,7 @@ The {{< product-c8y-iot >}} agent permits you to upgrade the firmware of a Raspb
 
 ##### To configure a firmware version
 
-1. In the Device Management application, click **Firmware Repository** in the **Management** menu in the navigator.
+1. In the Device Management web app, click **Firmware Repository** in the **Management** menu in the navigator.
 
 2. Click **Add Firmware**.
 

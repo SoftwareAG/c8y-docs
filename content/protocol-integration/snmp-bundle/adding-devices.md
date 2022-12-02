@@ -21,7 +21,7 @@ Both ways of device discovery can be controlled from the user interface.
 
 #### To start autodiscovery from the UI
 
-1. In the Device Management application, click **All devices** in the **Devices** menu in the navigator.
+1. In the Device Management web app, click **All devices** in the **Devices** menu in the navigator.
 2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.
 3. Enter the **IP range** and click **Save**.
 4. Once the changes are saved, the **Start autodiscovery** button gets enabled.
@@ -47,7 +47,7 @@ The following REST call will trigger autodiscovery once:
 
 	POST /devicecontrol/operations
 	Authorization: Basic ...
-	Content-Type: application/json
+	Content-Type: web app/json
     {
         "deviceId": "{{agent.device.id}}",
         "description": "Autodiscovery request",
@@ -60,7 +60,7 @@ The following REST call schedules autodiscovery for the given interval:
 
 	PUT /inventory/managedObjects/{{agent.device.id}}
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+	Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
     {
         "id": "{{agent.device.id}}",
         "c8y_SNMPGateway": {
@@ -76,7 +76,7 @@ The following REST call schedules autodiscovery for the given interval:
 
 #### To add a SNMP device manually from the UI
 
-1. In the Device Management application, click **All devices** in the **Devices** menu in the navigator.
+1. In the Device Management web app, click **All devices** in the **Devices** menu in the navigator.
 2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.<br><br>![SNMP tab](/images/device-protocols/snmp/snmp-snmp-tab.png)<br>
 3. In the **SNMP devices** section, click **Add SNMP device**.
 4. Provide the SNMP device details:
@@ -127,7 +127,7 @@ For a SNMP device with SNMP v1 or v2c
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+	Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
 	{
 	   "name":"snmp-device-0",
 	   "type":"snmp-device-protocol",
@@ -162,7 +162,7 @@ For SNMP v3, additional authentication and privacy details must be provided:
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+	Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
     {
     	"name": "snmp-device-3",
     	"type": "snmp-device-protocol",
@@ -208,7 +208,7 @@ Security level and protocols can have the following values:
 
 	POST /inventory/managedObjects/{{agent.device.id}}/childDevices
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
+	Content-Type: web app/vnd.com.nsn.cumulocity.managedobjectreference+json
     {
 		"managedObject": {
 			"id": "{{snmp.device.id}}"
@@ -219,7 +219,7 @@ To update the SNMP device details, use the following REST API:
 
 	PUT /inventory/managedObjects/{{snmp.device.id}}
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+	Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
     {
         "name": "snmp-device-1",
         "type": "snmp-device-protocol",

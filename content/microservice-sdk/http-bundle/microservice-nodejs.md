@@ -6,7 +6,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} provides SDKs for developing microservices using C# or Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/concept/#requirements).
 
-In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to verify if the microservice is up and running and get some of the environment variables.
+In this example you will learn how to create and deploy a Node.js-based microservice. The web app exposes endpoints to verify if the microservice is up and running and get some of the environment variables.
 
 It uses the {{< product-c8y-iot >}} [@c8y/client JavaScript library](https://www.npmjs.com/package/@c8y/client) to subscribe to alarms. When a new alarm is created, a Slack channel gets notified.
 
@@ -25,7 +25,7 @@ SLACK_CHANNEL_ID=<YOUR-CHANNEL_ID-GOES-HERE>
 
 ### Developing the microservice
 
-#### Configure a Node.js application
+#### Configure a Node.js web app
 
 Start by creating a folder *node-microservice* to contain your files. Inside your folder, use the following command to initialize your project:
 
@@ -45,7 +45,7 @@ Eventually, your *package.json* file should look similar to:
 {
   "name": "node-microservice",
   "version": "1.0.0",
-  "description": "{{< product-c8y-iot >}} microservice application",
+  "description": "{{< product-c8y-iot >}} microservice web app",
   "main": "app.js",
   "dependencies": {
     "@c8y/client": "^1004.0.7",
@@ -64,7 +64,7 @@ Eventually, your *package.json* file should look similar to:
 
 #### Add the source code
 
-Now create a file *app.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the {{< product-c8y-iot >}} and Slack APIs.
+Now create a file *app.js* which is the main entry point of your web app. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the {{< product-c8y-iot >}} and Slack APIs.
 
 ```javascript
 "use strict";
@@ -73,7 +73,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-// Application endpoints
+// web app endpoints
 const routes = require("./routes");
 routes(app);
 
@@ -118,7 +118,7 @@ module.exports = function(app) {
 
 At this point, your microservice would be accessible via web on its endpoints to return a "Hello world" message, verify that the microservice is up and running and get some environment variables.
 
-In order to implement the controllers, you must first create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Choose your workspace and give your app a name, for example, C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
+In order to implement the controllers, you must first create a Slack app and get a token to use the Web API. Go to [Slack API: web apps](https://api.slack.com/apps?new_app=1) to create a new app. Choose your workspace and give your app a name, for example, C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
 
 Once you have your Slack app and token ready, create the *controllers.js* file with the following content:
 
@@ -242,11 +242,11 @@ async function getUsers () {
 ```
 
 The code has two parts. The first one needs your Slack OAuth token and channel ID (chat group where the messages will be posted).
-A message is formatted using the colors of the different alarm severities that you may see in the Cockpit application. This message gets posted to the Slack channel.
+A message is formatted using the colors of the different alarm severities that you may see in the Cockpit web app. This message gets posted to the Slack channel.
 
 The second part uses basic authentication to the {{< product-c8y-iot >}} platform, it gets all active alarms and posts alarm messages to the Slack channel. After that, it subscribes to alarms and notifies the Slack channel each time a new alarm is created in the subscribed tenants.
 
-#### Dockerfile and application manifest
+#### Dockerfile and web app manifest
 
 Create a microservice manifest *cumulocity.json* with the following content:
 
@@ -283,7 +283,7 @@ CMD ["npm", "start"]
 
 ### Deploying the microservice
 
-Once you have all the required files, building and deploying the microservice application is fairly simple.
+Once you have all the required files, building and deploying the microservice web app is fairly simple.
 Execute the following Docker commands to build the Docker image and save it as _image.tar_:
 
 ```shell
@@ -298,7 +298,7 @@ $ zip node-microservice cumulocity.json image.tar
 ```
 
 The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the {{< product-c8y-iot >}} platform.
-Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Ecosystem** > **Microservices** and click **Add microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
+Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration web app, navigate to **Ecosystem** > **Microservices** and click **Add microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
 For more details about uploading a microservice ZIP file, refer to [Administration > Managing and monitoring microservices > Custom microservices](/users-guide/administration/#custom-microservices) in the *User guide*.
 

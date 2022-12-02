@@ -4,7 +4,7 @@ title: Upgrading from Angular 12 to Angular 14
 weight: 6
 ---
 
-Angular 14 is supported from version `1015.132.0`. The following configuration changes are required before you can run the application:
+Angular 14 is supported from version `1015.132.0`. The following configuration changes are required before you can run the web app:
 
 - Update all `@angular/*` dependencies to `14.0.6`.
 - Update `TypeScript` to version `4.7.4` as [TypeScript 4.6](https://devblogs.microsoft.com/typescript/announcing-typescript-4-6/) is now required by Angular.

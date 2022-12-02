@@ -4,7 +4,7 @@ title: Edge functionalities
 layout: redirect
 ---
 
-Since {{< product-c8y-iot >}} Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included applications are the same in both versions, with minor restrictions.
+Since {{< product-c8y-iot >}} Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included web apps are the same in both versions, with minor restrictions.
 
 For general information about functionalities and features of {{< product-c8y-iot >}} platform, see [{{< product-c8y-iot >}} platform](/welcome/intro-documentation/).
 
@@ -12,7 +12,7 @@ Below you can find the links to the most common functionalities of {{< product-c
 
 ### Device Management
 
-The [Device Management application](/users-guide/device-management) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
+The [Device Management web app](/users-guide/device-management) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
 
 The following functionalities are available in {{< product-c8y-iot >}} Edge and described in detail in these sections:
 
@@ -29,7 +29,7 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 
 ### Cockpit
 
-The [Cockpit application](/users-guide/cockpit) provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
+The [Cockpit web app](/users-guide/cockpit) provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 
 The following functionalities are available in {{< product-c8y-iot >}} Edge and described in detail in these sections:
 
@@ -39,7 +39,7 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 |[Visualizing data using the Data Explorer](/users-guide/cockpit#data-explorer)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](/users-guide/cockpit#data-explorer), [add data points](/users-guide/cockpit#add-data-points) to the data explorer, [customize data point properties](/users-guide/cockpit#customize-data-points), [modify the visualization](/users-guide/cockpit#change-visualization), store the [data explorer as widget](/users-guide/cockpit#create-widget), and [export](/users-guide/cockpit#export-data) the data.
 |[Working with dashboards](/users-guide/cockpit#dashboards)|[Create your own analytics and monitor pages](/users-guide/cockpit#creating-dashboards) by adding and arranging [widgets](/users-guide/cockpit#adding-widgets). [Share dashboards](/users-guide/cockpit#sharing-dashboards) among all devices of the same type.
 |[Widgets collection](/users-guide/cockpit#widgets)|Use various types of [widgets](/users-guide/cockpit#widgets) from the Widgets collection that comes with {{< product-c8y-iot >}} Edge and configure them according your needs.
-|[Working with alarms](/users-guide/device-management/#alarm-monitoring)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](/users-guide/device-management/#alarm-monitoring) in Device Management.
+|[Working with alarms](/users-guide/device-management/#alarm-monitoring)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit web app is actually the same as working with alarms in Device Management, refer to [Working with alarms](/users-guide/device-management/#alarm-monitoring) in Device Management.
 |[Managing reports](/users-guide/cockpit#reports)|Handle [reports](/users-guide/cockpit#reports) based on dashboard layouts, create [reports for exporting data](/users-guide/cockpit#reporting) in CSV or excel format and [schedule the export](/users-guide/cockpit#schedule-export).
 |[Using the Data Point Library](/users-guide/cockpit#data-point-library)|Manage default settings ("profiles") of your devices and apply them automatically using the [Data Point Library](/users-guide/cockpit#data-point-library).
 |[Working with Smart Rules](/users-guide/cockpit#smart-rules)|[Create and manage business rules](/users-guide/cockpit#create-rules) to work on incoming data in realtime and to perform actions based on this data.
@@ -47,16 +47,16 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 
 ### Administration
 
-The [Administration application](/users-guide/administration) enables account administrators to manage their users, roles, tenants and applications and lets them configure a number of settings for their account.
+The [Administration web app](/users-guide/administration) enables account administrators to manage their users, roles, tenants and web apps and lets them configure a number of settings for their account.
 
 The following functionalities are available in {{< product-c8y-iot >}} Edge and described in detail in these sections:
 
 |SECTION|CONTENT|
 |:---|:---|
 |[Configuring {{< product-c8y-iot >}} Edge](/edge/configuration/)|Providing information on Edge specific configuration options.
-|[Home Screen](/users-guide/administration#home-screen)|Providing information on your [capacity usage and subscribed applications](/users-guide/administration#home-screen).
+|[Home Screen](/users-guide/administration#home-screen)|Providing information on your [capacity usage and subscribed web apps](/users-guide/administration#home-screen).
 |[Managing Users](/users-guide/administration#managing-users)|How to [create users](/users-guide/administration#creating-users), edit, disable or delete them.
-|[Managing Permissions](/users-guide/administration#managing-permissions)|How to create and edit [global roles](/users-guide/administration#global) and [inventory roles](/users-guide/administration#inventory), how to assign them to users, and how to [grant application access](/users-guide/administration#app-access).
-|[Managing own applications](/users-guide/administration#managing-applications)|How to manage and [configure own applications](/users-guide/administration#managing-applications) in your {{< product-c8y-iot >}}  Edge account.
+|[Managing Permissions](/users-guide/administration#managing-permissions)|How to create and edit [global roles](/users-guide/administration#global) and [inventory roles](/users-guide/administration#inventory), how to assign them to users, and how to [grant web app access](/users-guide/administration#app-access).
+|[Managing own web apps](/users-guide/administration#managing-applications)|How to manage and [configure own web apps](/users-guide/administration#managing-applications) in your {{< product-c8y-iot >}}  Edge account.
 |[Changing settings](/users-guide/administration#changing-settings)|How to change account settings like [application settings](/users-guide/administration#default-app) or [password policy settings](/users-guide/administration#changing-password-settings) and how to manage the [properties library](/users-guide/administration#properties).
 |[Managing data retention](/users-guide/administration#retention-rules)|How to manage and configure [retention rules](/users-guide/administration#retention-rules) for your data and how to [manage stored files](/users-guide/administration#files) in the file repository.

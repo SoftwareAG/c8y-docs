@@ -79,7 +79,7 @@ This will create a folder *hello-microservice-java* in the current directory wit
 
 #### Specify the properties
 
-You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 1.8. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
+You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 1.8. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the web app using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
 
 ```xml
 <properties>
@@ -110,7 +110,7 @@ The response looks like this:
 
 See also [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
 
-In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
+In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice web app.
 
 ```xml
     <c8y.version>1004.6.12</c8y.version>
@@ -118,7 +118,7 @@ In the `<properties>` element specified above, add a child element `<c8y.version
 ```
 
 {{< c8y-admon-important >}}
-When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+When naming your microservice web app use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 {{< /c8y-admon-important >}}
 
 #### Add repositories and dependencies
@@ -154,7 +154,7 @@ Also add a dependency for the Microservice SDK library inside the `<dependencies
 </dependencies>
 ```
 
-Add a `<dependencyManagement>` element to automatically manage the required artifacts needed for your microservice application.
+Add a `<dependencyManagement>` element to automatically manage the required artifacts needed for your microservice web app.
 
 ```xml
 <dependencyManagement>
@@ -172,7 +172,7 @@ Add a `<dependencyManagement>` element to automatically manage the required arti
 
 #### Configure the build plugins
 
-Your microservice application must be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
+Your microservice web app must be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
 
 ```xml
 <build>
@@ -218,7 +218,7 @@ Your microservice application must be packed as a Docker image in a ZIP file inc
 The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
 
 <a name="java-example"></a>
-#### Create a Java application
+#### Create a Java web app
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
 
@@ -255,11 +255,11 @@ Employing the `@MicroserviceApplication` annotation is a simple way to add the r
 * Context
 * Settings
 * Internal platform API
-* Spring Boot application
+* Spring Boot web app
 
-#### Configure the microservice application
+#### Configure the microservice web app
 
-Create the directory _src/main/resources_ to contain an _application.properties_ file specifiying the name of the microservice application and the server port:
+Create the directory _src/main/resources_ to contain an _application.properties_ file specifiying the name of the microservice web app and the server port:
 
 ```properties
 application.name=my-first-microservice
@@ -281,7 +281,7 @@ Create the directory _src/main/configuration_ to contain a _cumulocity.json_ fil
 }
 ```
 
-#### Build the microservice application
+#### Build the microservice web app
 
 In a terminal, navigate to the folder where your _pom.xml_ is located and execute the following Maven command:
 
@@ -307,11 +307,11 @@ To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
 {{< /c8y-admon-important >}}
 
-In the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
+In the Administration web app, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
 
-Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
+Upload the ZIP file for your microservice web app and click **Subscribe** to subscribe the microservice to your tenant.
 
-Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
+Once the ZIP file has been uploaded successfully, you will see a new microservice web app created.
 
 ![Deployed microservice](/images/microservices-sdk/admin-microservice-deployed.png)
 
@@ -323,7 +323,7 @@ Employing your tenant credentials, you can test the microservice on any web brow
 https://<yourTenantDomain>/service/hello-microservice-java/health
 ```
 
-You can also use third-party applications or commands to make a GET request to your microservice endpoint. To do so, you need:
+You can also use third-party web apps or commands to make a GET request to your microservice endpoint. To do so, you need:
 
 * A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
@@ -351,9 +351,9 @@ To run a microservice which uses the {{< product-c8y-iot >}} API locally, you ne
 * A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
-#### Create the application
+#### Create the web app
 
-If the application does not exist, create a new application on the {{< product-c8y-iot >}} platform employing a POST request.
+If the web app does not exist, create a new web app on the {{< product-c8y-iot >}} platform employing a POST request.
 
 ```http
 POST <URL>/application/applications
@@ -371,24 +371,24 @@ BODY:
 }
 ```
 
-You must replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+You must replace the values `<URL>` with the URL of your {{< product-c8y-iot >}} tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice web app and its `key` name.
 
 {{< c8y-admon-important >}}
-When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+When naming your microservice web app use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 {{< /c8y-admon-important >}}
 
-The cURL command can be used to create the application with a POST request:
+The cURL command can be used to create the web app with a POST request:
 
 ```shell
 $ curl -X POST -s \
   -d '{"name":"local-microservice-java","type":"MICROSERVICE","key":"my-hello-world-ms-key"}' \
   -H "Authorization: <AUTHORIZATION>" \
-  -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
-  -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
+  -H "Content-Type: web app/vnd.com.nsn.cumulocity.application+json" \
+  -H "Accept: web app/vnd.com.nsn.cumulocity.application+json" \
   "<URL>/application/applications"
 ```
 
-In case of errors, such as invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
+In case of errors, such as invalid names, you will get the details printed in the console. When the web app is created successfully, you will get a response in JSON format similar to the following example:
 
 ```json
 {
@@ -414,7 +414,7 @@ In case of errors, such as invalid names, you will get the details printed in th
 }
 ```
 
-In the Administration application, navigate to **Ecosystem** > **Microservices**. There you will see the created microservice.
+In the Administration web app, navigate to **Ecosystem** > **Microservices**. There you will see the created microservice.
 
 #### Acquire the microservice bootstrap user
 
@@ -425,7 +425,7 @@ GET <URL>/application/applications/<APPLICATION_ID>/bootstrapUser
 
 HEADERS:
   "Authorization": <AUTHORIZATION>
-  "Content-Type": application/vnd.com.nsn.cumulocity.user+json
+  "Content-Type": web app/vnd.com.nsn.cumulocity.user+json
 ```
 
 {{< c8y-admon-info >}}
@@ -489,7 +489,7 @@ If your Docker image has run successfully, you shall see the output on the conso
 
 #### Subscribe to the microservice
 
-In the Administration application, navigate to **Ecosystem** > **Microservices**. Locate your microservice application and click it to open its details. On the top right, click **Subscribe**.
+In the Administration web app, navigate to **Ecosystem** > **Microservices**. Locate your microservice web app and click it to open its details. On the top right, click **Subscribe**.
 
 ![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 

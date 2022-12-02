@@ -10,7 +10,7 @@ To install {{< product-c8y-iot >}} Edge using the user interface:
     <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
 
     {{< c8y-admon-info >}}
-The network configuration blue screen does not appear post installation. After the installation, you must use the Administration application or the REST API to configure the network.
+The network configuration blue screen does not appear post installation. After the installation, you must use the Administration web app or the REST API to configure the network.
     {{< /c8y-admon-info >}}
 
 2. Configure the network for your Edge appliance, see the sample screenshot.

@@ -254,7 +254,7 @@ Downloads the data in the data section from Cumulocity IoT inventory wih given a
 
 curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/importFromCumulocity/data' \
 --header 'Authorization: {{auth}}' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: web app/json' \
 --data-raw '{"fileName":"sensorData2","dateFrom":"2020-07-03T06:00:00.000Z","timeFromH":11,"timeFromM":30,"dateTo":"2020-09-28T07:00:10.509Z","timeToH":12,"timeToM":30,"source":"446","series":["sensor4","sensor2","sensor3","sensor1"]}'
 ```
 

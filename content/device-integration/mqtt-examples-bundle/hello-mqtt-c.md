@@ -29,10 +29,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
-* create the application,
-* build and run the application.
+* create the web app,
+* build and run the web app.
 
-#### Creating the application
+#### Creating the web app
 
 Create a source file (for example *hello_mqtt.c*) with the following content:
 
@@ -120,15 +120,15 @@ What does the code in `publish` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
-#### Building and running the application
+#### Building and running the web app
 
-To build the application, enter
+To build the web app, enter
 
 ```shell
 $ gcc hello_mqtt.c -o hello_mqtt -lpaho-mqtt3c
 ```
 
-To run the application, enter
+To run the web app, enter
 
 ```shell
 $ ./hello_mqtt
@@ -136,10 +136,10 @@ Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
 ...
 ```
 
-After starting the application, you should see a new device in the Device Management application, listed in **All devices**.
+After starting the web app, you should see a new device in the Device Management web app, listed in **All devices**.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your web app.

@@ -8,20 +8,20 @@ The {{< product-c8y-iot >}} platform allows you to manage and monitor a variety 
 
 In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. {{< product-c8y-iot >}} DataHub is the tool designed for this purpose.
 
-With {{< product-c8y-iot >}} DataHub, you can connect existing tools and applications to {{< product-c8y-iot >}}, such as:
+With {{< product-c8y-iot >}} DataHub, you can connect existing tools and web apps to {{< product-c8y-iot >}}, such as:
 
 * Business Intelligence/reporting tools (using ODBC, JDBC)
 
-* Machine learning applications (mainly written in Python using ODBC)
+* Machine learning web apps (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Web applications](/concepts/applications/#web-applications))
+* Arbitrary custom web apps (using JDBC for Java web apps, ODBC for .NET, Python, node.js, and others, or REST for [Web web apps](/concepts/applications/#web-applications))
 
 * Other {{< company-sag >}} products like TrendMiner or {{< product-c8y-iot >}} Machine Learning Workbench
 
-The main features of the {{< product-c8y-iot >}} DataHub application are:
+The main features of the {{< product-c8y-iot >}} DataHub web app are:
 
 * It allows you to use scalable and inexpensive storage by providing an easy-to-use data pipeline that extracts data from the Operational Store of {{< product-c8y-iot >}} to a **data lake** for long-term archival and efficient analytical querying.
-* It offers an **SQL-based Query Interface** for querying the data lake and enables you to connect arbitrary applications that support ODBC, JDBC, or REST protocols.
+* It offers an **SQL-based Query Interface** for querying the data lake and enables you to connect arbitrary web apps that support ODBC, JDBC, or REST protocols.
 
 The following diagram illustrates the high-level concepts.
 
@@ -39,7 +39,7 @@ The table below summarizes the main terms used throughout this documentation.
 
 | Component | Explanation |
 | ---  | ---         |
-| {{< product-c8y-iot >}} DataHub | {{< product-c8y-iot >}} application for offloading data from the Operational Store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents; scheduler component (deployed as microservice) for triggering periodic offloading and UI component (deployed as web application) for defining, managing, and monitoring offloading pipelines
+| {{< product-c8y-iot >}} DataHub | {{< product-c8y-iot >}} web app for offloading data from the Operational Store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents; scheduler component (deployed as microservice) for triggering periodic offloading and UI component (deployed as web app) for defining, managing, and monitoring offloading pipelines
 | {{< product-c8y-iot >}} Operational Store | Internal datastore of {{< product-c8y-iot >}} where all data (alarms, events, inventory, measurements, ...) is stored in so-called base collections
 | Dremio | Internal SQL engine for extracting data from the {{< product-c8y-iot >}} Operational Store and writing to and reading from the data lake
 | Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS

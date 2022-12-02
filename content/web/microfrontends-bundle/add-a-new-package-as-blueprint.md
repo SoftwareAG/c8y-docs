@@ -6,7 +6,7 @@ weight: 40
 
 **Version:** 1015.33.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-With Module Federation it is possible to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
+With Module Federation it is possible to add new functionality while the web app is **running** (runtime), whereas the old approach only allowed new functionality to be added before the web app was **built** (compile time).
 
 Blueprints are combinations of multiple UI functionalities that can be hosted by the platform (static files) and can be used to scaffold a new solution from scratch. On the other hand, a package is the composition of plugins and blueprints. As a blueprint can export plugins as well, they can be packed together into one package and deployed to the platform.
 
@@ -24,7 +24,7 @@ c8ycli new
 ? Enter the name of the project:  (my-application) package-blueprint
 ```
 
-3. Select the version for which you want to create a sample application, for example, "1015.33.0 (next)":
+3. Select the version for which you want to create a sample web app, for example, "1015.33.0 (next)":
 
 ```console
 ? Which base version do you want to scaffold from? (Use arrow keys)
@@ -37,7 +37,7 @@ c8ycli new
   other
 ```
 
-4. Select an application template as the basis for your plugin, for example, "package-blueprint":
+4. Select a web app template as the basis for your plugin, for example, "package-blueprint":
 
 ```console
 ? Which base project do you want to scaffold from?
@@ -56,9 +56,9 @@ After a few seconds, you should see the following message:
 Application created. Go into the folder "app-blueprint" and run npm install
 ```
 
-5. Navigate to your application folder and execute `npm install`.
+5. Navigate to your web app folder and execute `npm install`.
 
-The application folder should look like the example shown below.
+The web app folder should look like the example shown below.
 For this tutorial, the most important files are *package.json* and *README.md*.
 
 ```console
@@ -78,7 +78,7 @@ You have now created your first package blueprint that uses Module Federation.
 
 ### Stepper setup (optional)
 
-The HOOK_STEPPER can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
+The HOOK_STEPPER can be additionally provided to allow web app customization during the first load of a web app. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
 
 1. Create a new *setup-step1.component.ts* file with the following content:
 
@@ -150,7 +150,7 @@ export class SetupStep1Component {
       >
         <h3 translate class="text-medium l-h-base">Misc</h3>
         <p class="lead text-normal" translate>
-          Miscellaneous settings for the current application.
+          Miscellaneous settings for the current web app.
         </p>
       </div>
     </div>
@@ -231,25 +231,25 @@ import {MiscConfigComponent} from "./misc-config.component";
 export class AppModule {}
 ```
 
-Now on the first application start, users will have to complete the single step wizard above.
+Now on the first web app start, users will have to complete the single step wizard above.
 
-### Differences in approach to creating custom applications
+### Differences in approach to creating custom web apps
 
 There are a couple of differences between a simple widget and one that is built according to the Module Federation guidelines.
 
 The biggest difference is the _package.json_ file, where fields such as `isPackage` and `package` and `exports` (not in the current blueprint app) are located.
 The following list shows the fields and what they are responsible for:
 
-- `isPackage`: Indicates if the application is a package. In case of a widget that is added using Module Federation, set the value to `true`.
+- `isPackage`: Indicates if the web app is a package. In case of a widget that is added using Module Federation, set the value to `true`.
 - `package`: The type of package (for example, `blueprint`, but the type of the package can also be a plugin).
-- `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the _README.md_ file).
+- `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell web app (see also the _README.md_ file).
   - `name`: The name of the exported module.
   - `module`: The name of the Angular module class.
   - `path`: The path to the TypeScript file with the module.
   - `description`: A brief description of what the module does.
 
 {{< c8y-admon-info >}}
-A blueprint can also include plugins, which can later be used to extend other applications.
+A blueprint can also include plugins, which can later be used to extend other web apps.
 {{< /c8y-admon-info >}}
 
 ### Deployment
@@ -267,4 +267,4 @@ and
 npm run deploy
 ```
 
-Follow the console prompt to deploy the application to your tenant.
+Follow the console prompt to deploy the web app to your tenant.

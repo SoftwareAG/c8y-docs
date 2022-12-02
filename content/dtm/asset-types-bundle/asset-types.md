@@ -47,12 +47,12 @@ Here, provide the following six parameters:
 <tr>
 <td style="text-align:left"><b>Label</b></td>
 <td style="text-align:left">Refers to the name of the asset type.<br>
-This name is used for the asset type throughout the application.</td>
+This name is used for the asset type throughout the web app.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.<br>
+<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM web app.<br>
 {{< c8y-admon-info>}} You cannot edit the key field, once the asset type is created. {{< /c8y-admon-info>}}</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
@@ -139,9 +139,9 @@ If there is no custom property meeting your requirements, click **New custom pro
 
 To create a root asset type follow a bottom-up approach by defining all subassets and custom properties in the provided templates first.
 
-This root asset type can then be used to create an asset hierarchy, which then defines all the assets, subassets, custom properties and devices in the DTM application.
+This root asset type can then be used to create an asset hierarchy, which then defines all the assets, subassets, custom properties and devices in the DTM web app.
 
-As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
+As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} web apps, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
 
 
 <a name=""></a>

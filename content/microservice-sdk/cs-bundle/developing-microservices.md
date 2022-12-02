@@ -4,7 +4,7 @@ title: Developing microservices
 layout: redirect
 ---
 
-The SDK is based on ASP.NET Core, a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class must include a `Configure` method to create the app's request processing pipeline, and can optionally include a `ConfigureServices` method to configure the app's services.
+The SDK is based on ASP.NET Core, a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected web apps. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class must include a `Configure` method to create the app's request processing pipeline, and can optionally include a `ConfigureServices` method to configure the app's services.
 
 There are two possible deployment types on the platform:
 
@@ -15,7 +15,7 @@ For development and testing purposes, you can deploy a microservice on a local D
 
 ### Microservice security
 
-The `Configure` method is used to specify how the application responds to HTTP requests. The request pipeline is configured by adding middleware components to an `IApplicationBuilder` instance.
+The `Configure` method is used to specify how the web app responds to HTTP requests. The request pipeline is configured by adding middleware components to an `IApplicationBuilder` instance.
 
 The `UseAuthentication` method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests. It replaces all of the individual middleware components with a single, common middleware component. Since ASP.NET Security does not include Basic Authentication middleware, we must add custom Basic Authentication middleware.
 
@@ -52,7 +52,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-The `Configuration` object represents a set of key/value application configuration properties.
+The `Configuration` object represents a set of key/value web app configuration properties.
 
 ```cs
 public IConfiguration Configuration { get; }
@@ -71,9 +71,9 @@ C8Y_BASEURL | URL which points to the core platform
 C8Y_BASEURL_MQTT | URL which points to the core platform with MQTT protocol
 SERVER_PORT | Port on which the microservice runs
 C8Y_MICROSERVICE_ISOLATION | Isolation level
-C8Y_TENANT | Application user tenant (available only for PER_TENANT isolation)
-C8Y_USER | Application username (available only for PER_TENANT isolation)
-C8Y_PASSWORD | Application user password (available only for PER_TENANT isolation)
+C8Y_TENANT | web app user tenant (available only for PER_TENANT isolation)
+C8Y_USER | web app username (available only for PER_TENANT isolation)
+C8Y_PASSWORD | web app user password (available only for PER_TENANT isolation)
 C8Y_BOOTSTRAP_TENANT | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_USERNAME | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_PASSWORD | Bootstrap user to get platform subscriptions
@@ -163,11 +163,11 @@ services.AddScheduler((sender, args) =>
 });
 ```
 
-It should get all subscriptions and make it available for any other part of your application to work with.
+It should get all subscriptions and make it available for any other part of your web app to work with.
 
 As you can see, the `AddScheduler` takes a delegate that handles unobserved exceptions. In our scheduler code, `TaskFactory.StartNew()` is used to run the task's code. If there is an unhandled exception, you won't see this exception. Therefore, you may want to do some logging. This is normally done by setting `TaskScheduler.UnobservedTaskException`, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
 
-The SDK allows you to subscribe to the event application subscriptions changed.
+The SDK allows you to subscribe to the event web app subscriptions changed.
 
 Start by getting the singleton instance of the hub:
 
@@ -198,9 +198,9 @@ public class HomeController : Controller
 
 ### Program class
 
-In ASP.NET Core 3.1, the Program class is used to setup the `IWebHost`. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
+In ASP.NET Core 3.1, the Program class is used to setup the `IWebHost`. This is the entry point to our web app. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
 
-There are multiple ways to configure the application.
+There are multiple ways to configure the web app.
 
 #### Simplified configuration
 
@@ -351,9 +351,9 @@ public class Startup
 
 ### Health check
 
-Health monitoring can allow near-real-time information about the state of your containers and microservices. Health monitoring is critical to multiple aspects of operating microservices and is especially important when orchestrators perform partial application upgrades in phases.
+Health monitoring can allow near-real-time information about the state of your containers and microservices. Health monitoring is critical to multiple aspects of operating microservices and is especially important when orchestrators perform partial web app upgrades in phases.
 
-For a service or web application to expose the health check endpoint, it must enable the `UseHealthChecks([url_for_health_checks])` extension method. This method goes at the `WebHostBuilder` level in the main method of the `Program` class of your ASP.NET Core service or web application, right after `UseKestrel` as shown in the code below.
+For a service or web app to expose the health check endpoint, it must enable the `UseHealthChecks([url_for_health_checks])` extension method. This method goes at the `WebHostBuilder` level in the main method of the `Program` class of your ASP.NET Core service or web app, right after `UseKestrel` as shown in the code below.
 
 ```cs
 public class Program
@@ -381,13 +381,13 @@ The basic flow is that you register your health checks in your IoC container. Yo
 
 #### Built-in platform health checks
 
-The microservice is healthy if the platform is accessible via HTTP from the application. To check it, it is possible to use an action that is built-in.
+The microservice is healthy if the platform is accessible via HTTP from the web app. To check it, it is possible to use an action that is built-in.
 
 ```cs
 .AddPlatformCheck();
 ```
 
-After that, you add the health check actions that you want to perform in that microservice. These actions are basically dependencies on other microservices (HttpUrlCheck) or databases (currently SqlCheck* for SQL Server databases). You add the action within the Startup class of each ASP.NET microservice or ASP.NET web application.
+After that, you add the health check actions that you want to perform in that microservice. These actions are basically dependencies on other microservices (HttpUrlCheck) or databases (currently SqlCheck* for SQL Server databases). You add the action within the Startup class of each ASP.NET microservice or ASP.NET web app.
 
 #### Custom health check
 
@@ -482,7 +482,7 @@ The Cake script called _build.cake_ has has the predefined tasks. These tasks re
 
 *	Clean - Cleans the specified directory, deletes files.
 *	Build – Restores the dependencies and tools of projects and the task builds all projects, but before that it does the cleaning task.
-*	Publish – The task compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The result will be placed in the output folder
-*	Docker-Build - Will save an image and an application manifest to _images/multi/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
-*	Single-DockerImage - Will save an image and an application manifest  to _images/single/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
+*	Publish – The task compiles the web app, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The result will be placed in the output folder
+*	Docker-Build - Will save an image and a web app manifest to _images/multi/image.zip_. Inside the root folder of your web app, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
+*	Single-DockerImage - Will save an image and a web app manifest  to _images/single/image.zip_. Inside the root folder of your web app, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
 *	Docker-Run - Creates a new container using default settings.

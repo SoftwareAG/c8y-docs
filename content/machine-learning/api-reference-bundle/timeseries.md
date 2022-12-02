@@ -42,7 +42,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with value application/json
+|Content-Type|required header parameter with value web app/json
 
 |PARAMS||
 |:---|:---|
@@ -70,7 +70,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 202 - ACCEPTED
 
 curl --request POST "{{url}}/service/zementis/train/timeseries?autoDeploy=true --header "Authorization: {{auth}}" \
-	--header "Content-Type: application/json"
+	--header "Content-Type: web app/json"
 
 {
     "series": [
@@ -117,7 +117,7 @@ curl --request POST "{{url}}/service/zementis/train/timeseries?autoDeploy=true -
 400 - Bad Request
 
 curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Authorization: {{auth}}" \
-	--header "Content-Type: application/json"
+	--header "Content-Type: web app/json"
 
 {
     "series": [
@@ -163,7 +163,7 @@ curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Author
 ```
 401 - Unauthorized
 
-curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Content-Type: application/json"
+curl --request POST "{{url}}/service/zementis/train/timeseries" --header "Content-Type: web app/json"
 ```
 
 **Example Response**

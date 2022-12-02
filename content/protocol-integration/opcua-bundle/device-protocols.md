@@ -152,7 +152,7 @@ Below there is an example of a full device protocol that configures a custom act
 }
 ```
 
-### Monitoring events for device protocol application
+### Monitoring events for device protocol web app
 
 When a device protocol has been applied to or un-applied from a node, a monitoring event is generated as the following:
 
@@ -177,7 +177,7 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 #### Custom action retry mechanism on external server failure
 
-If a custom action fails, a retry mechanism will be processed. This is configured in the application YAML file, and the queues will be stored in the event repository.
+If a custom action fails, a retry mechanism will be processed. This is configured in the web app YAML file, and the queues will be stored in the event repository.
 
 Queues are collections of failed custom actions, including the complete HTTP request of this custom action. Each entry of the queue is one failed custom action. The collection has a defined size in _failedCustomActionQueueSize_ and a maximum number of retries in _maxRetries_.  
 

@@ -35,7 +35,7 @@ In this case, it may happen that the breadcrumb navigation for "Machine: Drillin
 
 The standard retention for data on {{< product-c8y-iot >}} is 60 days. To save OEE data longer than 60 days, you can change the data retention in your platform settings. For more information on how to change the retention rules, see [Administration > Managing data](/users-guide/administration/#data-retention) in the *User guide*.
 
-### Which roles are distinguished by the application?
+### Which roles are distinguished by the web app?
 
 #### Default user
 

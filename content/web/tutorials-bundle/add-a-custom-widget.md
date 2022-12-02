@@ -14,10 +14,10 @@ A typical dashboard looks like this, showing various widgets:
 
 This recipe will show how to archive a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
-### 1. Initialize the example application
+### 1. Initialize the example web app
 
-As a starting point, you need an application showing dashboards.
-For this purpose, create a new Cockpit application using the `c8ycli`:
+As a starting point, you need a web app showing dashboards.
+For this purpose, create a new Cockpit web app using the `c8ycli`:
 
 ```js
 c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
@@ -26,11 +26,11 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
 Next, you must install all dependencies. Switch to the new folder and run `npm install`.
 
 {{< c8y-admon-info >}}
-The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
+The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the web app you want to scaffold, for example:
 
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `10.9.0.18`
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold a web app with the version `10.9.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold a web app with the latest official release. Same as if used without the `-a` flag
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold a web app with the latest beta release.
 {{< /c8y-admon-info >}}
 
 ### 2. Create the widget components
@@ -113,7 +113,7 @@ export class WidgetConfigDemo {
 }
 ```
 
-### 3. Add the widget to your application
+### 3. Add the widget to your web app
 
 To add the widget you must use the `HOOK_COMPONENTS` and define the created components as `entryComponent`.
 
@@ -189,11 +189,11 @@ export class AppModule extends HybridAppModule {
 Explanation of the numbers above:
 
 1. Define the components as entry components and declare them to make them accessible by this module.
-2. Add a multi-provider hook with the `HOOK_COMPONENTS`. This hook is collected by the application and adds the widget based on the values you provide.
+2. Add a multi-provider hook with the `HOOK_COMPONENTS`. This hook is collected by the web app and adds the widget based on the values you provide.
 3. The ID needs to be unique as it identifies the data stored in the inventory. The label and description is shown as the title and in the widget dropdown.
 4. These parts tell the hook to associate the previously defined components to the widget.
 
-If you now start your application with `npm start`, you should be able to add your custom widget to a dashboard.
+If you now start your web app with `npm start`, you should be able to add your custom widget to a dashboard.
 
 Once added to a dashboard, the widget looks similar to this:
 

@@ -6,11 +6,11 @@ layout: redirect
 
 This section describes specific aspects of developing microservices using the REST interface.
 
-{{< product-c8y-iot >}} employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from back-office IT systems, the communication protocol is always REST.
+{{< product-c8y-iot >}} employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web apps or from back-office IT systems, the communication protocol is always REST.
 
 REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
 
-With this API description you will learn how to use {{< product-c8y-iot >}}'s REST interfaces to develop microservice applications on top of the {{< product-c8y-iot >}} platform.
+With this API description you will learn how to use {{< product-c8y-iot >}}'s REST interfaces to develop microservice web apps on top of the {{< product-c8y-iot >}} platform.
 
 The description is closely linked to the {{< openapi >}}, which describes each interface in detail. Relevant secions in the {{< openapi >}} are in particular:
 
@@ -18,7 +18,7 @@ The description is closely linked to the {{< openapi >}}, which describes each i
 - [Device management library](/reference/device-management-library/) specifies the data model for device management.
 - [Sensor library](/reference/sensor-library/) specifies the data model for sensors and controls.
 
-If you develop applications using Java or C#, check these relevant sections for even more convenient access to {{< product-c8y-iot >}}'s functionality.
+If you develop web apps using Java or C#, check these relevant sections for even more convenient access to {{< product-c8y-iot >}}'s functionality.
 For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-integration/rest) in *Device integration*.
 
 

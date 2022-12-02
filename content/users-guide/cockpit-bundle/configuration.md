@@ -1,28 +1,28 @@
 ---
 weight: 100
-title: Configuring Cockpit applications
+title: Configuring Cockpit web apps
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} offers you to configure custom Cockpit applications according to your individual needs.
+{{< product-c8y-iot >}} offers you to configure custom Cockpit web apps according to your individual needs.
 
 {{< c8y-admon-req >}}
 To use the Cockpit configuration functionality, the following requirements have to be met:
 
 * You must have ADMIN permission for the permission type "Application management".
 
-* The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to clone an application see [Managing applications > Custom application > To add a custom application](/users-guide/administration/#adding-applications).
+* The Cockpit web app can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit web app by duplicating the existing Cockpit web app. For details, how to clone a web app see [Managing web apps > Custom web app > To add a custom web app](/users-guide/administration/#adding-applications).
 
-If these requirements are met, an **App configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
+If these requirements are met, an **App configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit web app.
 {{< /c8y-admon-req >}}
 
-### To configure a custom Cockpit application
+### To configure a custom Cockpit web app
 
 In the navigator, click **App configuration** in the **Configuration** menu.
 
 ![App configuration](/images/users-guide/cockpit/cockpit-app-configuration.png)
 
-In the **App configuration** page, you can customize your Cockpit application in various aspects.
+In the **App configuration** page, you can customize your Cockpit web app in various aspects.
 
 #### Features
 
@@ -40,12 +40,12 @@ On the right, select the root groups or subgroups to be displayed as top level n
 
 #### Home dashboard
 
-In the **Home dashboard** section, you can select how the home dashboard, that is, the landing page for this application, is treated.
+In the **Home dashboard** section, you can select how the home dashboard, that is, the landing page for this web app, is treated.
 
 You can select one of the following options for the customization of the home dashboard:
 
 * It is reflected throughout the entire tenant (the default).
-* It is only reflected in the current custom application.
+* It is only reflected in the current custom web app.
 * It is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory".
 
 #### Misc

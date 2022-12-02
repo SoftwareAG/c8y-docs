@@ -4,7 +4,7 @@ title: Using widgets in dashboards and reports
 layout: redirect
 ---
 
-Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.
+Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or web apps, or provide maps, quick links and more in dashboards or reports.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:

@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-The following sections will walk you through all functionalities of the Cockpit application in detail.
+The following sections will walk you through all functionalities of the Cockpit web app in detail.
 
 For your convenience find an overview on the content of this document below.
 
@@ -63,18 +63,18 @@ For your convenience find an overview on the content of this document below.
 <td align="left">Use pre-defined <a href="#smart-rules-collection">global smart rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email). Describes each smart rule and its configurable parameters in detail.</td>
 </tr>
 <tr>
-<td align="left"><a href="#configuration">Configuring Cockpit applications</a></td>
-<td align="left">Configure custom Cockpit applications according to your individual needs.</td>
+<td align="left"><a href="#configuration">Configuring Cockpit web apps</a></td>
+<td align="left">Configure custom Cockpit web apps according to your individual needs.</td>
 </tr>
 </tbody>
 </table>
 
-If you want to learn more about general aspects of the {{< product-c8y-iot >}} platform and its applications, refer to [Getting Started](/users-guide/getting-started).
+If you want to learn more about general aspects of the {{< product-c8y-iot >}} platform and its web apps, refer to [Getting Started](/users-guide/getting-started).
 
 <a name="home"></a>
 ### Home dashboard
 
-The Home screen of the Cockpit application is a dashboard which shows data for the general tenant.
+The Home screen of the Cockpit web app is a dashboard which shows data for the general tenant.
 
 ![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)
 

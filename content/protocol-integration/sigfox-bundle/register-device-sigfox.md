@@ -5,12 +5,12 @@ layout: redirect
 ---
 
 
-To register a Sigfox device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Sigfox** from the dropdown.
+To register a Sigfox device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management web app, click **Register device** at the top right and select **Single device registration** > **Sigfox** from the dropdown.
 
 ![Register devices](/images/device-protocols/sigfox/sigfox-registration.png)
 
 {{< c8y-admon-info >}}
-If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
+If Sigfox is not one of the available options, your tenant is not subscribed to the relevant web apps, see information at the top.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}

@@ -10,7 +10,7 @@ In some situations, the UI needs data from a custom microservice.
 While you can always read that data with any HTTP client, for example, Angular's `HttpModule`, you might want authentication out of the box.
 
 This recipe shows how to access custom endpoints with the `@c8y/client` and get authenticated automatically.
-First, it will take a deeper look at the basics to explain how the client works in Angular applications.
+First, it will take a deeper look at the basics to explain how the client works in Angular web apps.
 
 ### Basic: How the client works
 
@@ -48,17 +48,17 @@ The response is given by [fetch](https://developer.mozilla.org/en-US/docs/Web/AP
 
 In conclusion, the `@c8y/client` is a helper library for JavaScript that abstracts fetch to allow easy authentication and direct access on the common platform APIs.
 
-The next section shows how you can use that concept in an Angular application with the help of the Dependency Injection (DI) model of Angular.
+The next section shows how you can use that concept in an Angular web app with the help of the Dependency Injection (DI) model of Angular.
 
-### Basic: Interaction between @c8y/client and an Angular application
+### Basic: Interaction between @c8y/client and an Angular web app
 
-`@c8y/ngx-components` is an Angular component that allows to spin up an application.
-It is, for example, used in our basic applications like Cockpit, Administration and Device Management to display the login screen.
-When you spin up a new Angular-based application the `@c8y/client` and the `@c8y/ngx-components` are always included.
+`@c8y/ngx-components` is an Angular component that allows to spin up a web app.
+It is, for example, used in our basic web apps like Cockpit, Administration and Device Management to display the login screen.
+When you spin up a new Angular-based web app the `@c8y/client` and the `@c8y/ngx-components` are always included.
 Moreover the ngx-components have a subpackage which is called `@c8y/ngx-components/api` and which exports a `DataModule`.
 That module already imports all common endpoint services, so that you can use the standard dependency injection of Angular to access data.
 
-The example above in an Angular application would look like this:
+The example above in an Angular web app would look like this:
 
 ```js
 import { InventoryService } from '@c8y/client';                       // 1
@@ -85,10 +85,10 @@ This covers the overview on how to use the common endpoints.
 The following recipe shows how to add a custom endpoint.
 
 
-### 1. Initialize the example application
+### 1. Initialize the example web app
 
-As a starting point, you need an application showing dashboards.
-For this purpose, create a new Cockpit application using the `c8ycli`:
+As a starting point, you need a web app showing dashboards.
+For this purpose, create a new Cockpit web app using the `c8ycli`:
 
 ```js
 c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
@@ -98,17 +98,17 @@ Next, you must install all dependencies.
 Switch to the new folder and run `npm install`.
 
 {{< c8y-admon-info >}}
-The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
+The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the web app you want to scaffold, for example:
 
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `1009.0.18`
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold a web app with the version `1009.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold a web app with the latest official release. Same as if used without the `-a` flag
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold a web app with the latest beta release.
 {{< /c8y-admon-info >}}
 
 ### 2. Request data directly with fetch
 
 If you want to access data from the endpoint `service/acme` via HTTP GET, the easiest way to achieve this with authentication is to reuse the `fetch` implementation of the client.
-Add a file to the application and call it `acme.component.ts`:
+Add a file to the web app and call it `acme.component.ts`:
 
 ```js
 import { Component, OnInit } from '@angular/core';
@@ -134,7 +134,7 @@ export class AcmeComponent implements OnInit {
 2. Request the data via `fetchClient.fetch`. The function is identical to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), as a second parameter it accepts, for example, the method or data, except that it adds the authentication to the platform.
 3. Parse the data and set it onto your controller to display it in the template.
 
-Next, add a route to your application where you can show the component.
+Next, add a route to your web app where you can show the component.
 The following code does this in the `app.module.ts`, also refer to our other tutorials for more details:
 
 ```js
@@ -191,9 +191,9 @@ export class AppModule extends HybridAppModule {
 }
 ```
 
-### 3. Run and verify the application
+### 3. Run and verify the web app
 
-When you run the application with `c8ycli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
+When you run the web app with `c8ycli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
 
 ![Custom client service](/images/web-sdk/custom-client-service.png)
 

@@ -9,7 +9,7 @@ aliases:
 With user hierarchies you can reflect independent organizational entities in {{< product-c8y-iot >}} that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
 
 {{< c8y-admon-info >}}
-To be able to use this feature, your tenant must be subscribed to the application "feature-user-hierachy".
+To be able to use this feature, your tenant must be subscribed to the web app "feature-user-hierachy".
 {{< /c8y-admon-info >}}
 
 ### Viewing user hierarchies
@@ -68,6 +68,6 @@ Delegation works only inside user management and does not have any implication t
 
 ### Troubleshooting sub-users
 
-In the example below the user cannot change the access to the Administration application, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them).
+In the example below the user cannot change the access to the Administration web app, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in web apps (and the owned user cannot use them).
 
 ![Warning message](/images/users-guide/enterprise-tenant/et-warning.png)

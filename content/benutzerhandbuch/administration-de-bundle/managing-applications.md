@@ -4,7 +4,7 @@ title: Verwalten von Anwendungen
 weight: 30
 ---
 
-Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing applications](/concepts/applications) im *Concepts Guide*.
+Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Microservices, siehe auch [Developing web apps](/concepts/applications) im *Concepts Guide*.
 
 * [Anwendungen](#applications) - alle Webanwendungen, die entweder für den Mandanten abonniert sind oder die der Mandant besitzt.
 
@@ -21,14 +21,14 @@ Zudem gibt es in {{< enterprise-tenant-de >}}s die Möglichkeit, **Standardabonn
 
 Klicken Sie auf **Anwendungen** im Menü **Ecosystem** des Navigators, um eine Liste oder Tabelle aller Anwendungen in Ihrem Konto anzuzeigen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-all-applications.png" alt="All web apps" style="max-width: 100%">
 
 In der Registerkarte **Alle Anwendungen** werden alle Anwendungen angezeigt, die in Ihrem Mandanten verfügbar sind. Es gibt zwei Arten von Anwendungen:
 
 - [Abonnierte Anwendungen](#subscribed-applications) - Anwendungen, die für den Mandanten abonniert sind und entweder von der Plattform (als Standardanwendungen) oder von einem Service Provider bereitgestellt werden.
 - [Benutzerdefinierte Anwendungen](#own-applications) - Anwendungen, die der Mandant besitzt. Sie können diese Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzufügen](#adding-applications).
 
-Ihre Anwendungen sind über den Application Switcher in der oberen Leiste verfügbar.
+Ihre Anwendungen sind über den web app Switcher in der oberen Leiste verfügbar.
 
 <img src="/images/benutzerhandbuch/Administration/admin-app-switcher.png" alt="App switcher">
 
@@ -115,7 +115,7 @@ In der Registerkarte **Alle Anwendungen** sind benutzerdefinierte Anwendungen al
 
 Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
 
-<img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
+<img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add web app methods">
 
 Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
@@ -143,7 +143,7 @@ Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis 
 1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
 2. Wählen Sie **Externe Anwendung**.
 <br><br>
-<img src="/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External web app">
 <br><br>
 3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
@@ -162,7 +162,7 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste, z. B. "Cockpit".
 4. Geben Sie im nächsten Fenster den Namen für die Anwendung, einen Anwendungsschlüssel zur Identifizierung der Anwendung und einen Pfad als Bestandteil der URL ein, um die Anwendung aufzurufen. Standardmäßig werden die Werte der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie als Pfad den Pfad der abonnierten Originalanwendung verwenden, wird Ihre eigene Anwendung die abonnierte Anwendung überschreiben.
 <br><br>
-<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate web app">
 <br><br>
     {{< c8y-admon-info >}}
 Die Plattform schränkt die Verwendung des Präfixes "feature-" im Feld **Name** ein. Sie können keine Anwendungen mit diesem Präfix im Anwendungsnamen erstellen. Dies gilt auch für bestehende Anwendungen in Fällen, in denen die Funktion "Anwendung duplizieren" verwendet wird.
@@ -170,7 +170,7 @@ Die Plattform schränkt die Verwendung des Präfixes "feature-" im Feld **Name**
 5. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
 
 {{< c8y-admon-info >}}
-Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, **Abonnierte Anwendungen überschreiben**, zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
+Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, **Abonnierte Anwendungen überschreiben**, zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate web app">
 {{< /c8y-admon-info >}}
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
@@ -206,7 +206,7 @@ In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungs
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
-<td style="text-align:left">Anwendungsname; wird als Titel oben links auf der Anwendungsseite angezeigt und im Application Switcher verwendet</td>
+<td style="text-align:left">Anwendungsname; wird als Titel oben links auf der Anwendungsseite angezeigt und im web app Switcher verwendet</td>
 <td style="text-align:left">Automatisch generiert</td>
 <td style="text-align:left">Vom Benutzer vergeben</td>
 </tr>

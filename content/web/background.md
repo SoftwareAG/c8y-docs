@@ -10,18 +10,18 @@ This process involves migration effort, so we believe that providing some backgr
 
 ### Brief background: plugins vs. modules
 
-From day one the UI has always had a modular architecture. The units of functionality are grouped in "plugins" that can be composed to build applications. In practice plugins are simply modules.
+From day one the UI has always had a modular architecture. The units of functionality are grouped in "plugins" that can be composed to build web apps. In practice plugins are simply modules.
 
 Modules are a very important key feature in the latest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To better understand this concept and the enhancements it provides to the developers, it is important to understand how the module architecture worked in the previous generations of the {{< product-c8y-iot >}} Web SDK.
 
 ### 1st Generation: Runtime loading of plugins
 
-In the first generation, each application had exported plugins and imported plugins. The exported plugins were the ones available for being used throughout the platform and the imported plugins were the functionality visible in the application. This way each application had two functions:
+In the first generation, each web app had exported plugins and imported plugins. The exported plugins were the ones available for being used throughout the platform and the imported plugins were the functionality visible in the web app. This way each web app had two functions:
 
 * the UI interface that you usually expect
 * a package that exposed functionality
 
-The information on applications and plugins was stored in the database through an API. Each plugin had to be created in the context of each application. Although we already had the manifest files we used that information and called the APIs storing the data.
+The information on web apps and plugins was stored in the database through an API. Each plugin had to be created in the context of each web app. Although we already had the manifest files we used that information and called the APIs storing the data.
 
 The REST API could be reached at ```applications/<id>/plugins``` but it has now been deprecated.
 
@@ -34,9 +34,9 @@ At this time we had:
 |devicemanagement | m2m/cumulocity-ui-devicemananagement
 |cockpit | m2m/cumulocity-ui-cockpit
 
-Core was an application that did not import any plugin, it just exported plugins.
+Core was a web app that did not import any plugin, it just exported plugins.
 
-The loading of the modules was entirely dynamic. We served a very basic index.html that was the same for all applications, logged in the user with just a small javascript layer and only after authentication we fetched the application information and loaded the appropriate plugins from the respective applications and finally bootstrapped the angular.js app. So after login we had something like this:
+The loading of the modules was entirely dynamic. We served a very basic index.html that was the same for all web apps, logged in the user with just a small javascript layer and only after authentication we fetched the web app information and loaded the appropriate plugins from the respective web apps and finally bootstrapped the angular.js app. So after login we had something like this:
 
 ```html
   <!-- Added with js -->
@@ -46,11 +46,11 @@ The loading of the modules was entirely dynamic. We served a very basic index.ht
   <script src="/apps/devicemanagement/pluginZ/main.js"></script>
 ```
 
-As the information about which plugins were imported in each application was completely controlled by a REST API, every application could be easily edited from the UI: it was possible to move functionality around, adding or removing plugins from each application. This just meant updating the list of imports of each application.
+As the information about which plugins were imported in each web app was completely controlled by a REST API, every web app could be easily edited from the UI: it was possible to move functionality around, adding or removing plugins from each web app. This just meant updating the list of imports of each web app.
 
 With this structure we could easily find the URL from the definitions ```<app>/<plugin>```. This influence is still visible today in many of the plugin names.
 
-With a 3rd party client application we might have ended up with something similar to this:
+With a 3rd party client web app we might have ended up with something similar to this:
 
 ```html
   <script src="/apps/core/main.js"></script>
@@ -58,19 +58,19 @@ With a 3rd party client application we might have ended up with something simila
   <script src="/apps/myapplication/pluginA/main.js"></script>
 ```
 
-With this approach, each time the platform was updated the 3rd party applications would get the latest version of all plugins and sometimes it was difficult to update 3rd parties due to breaking changes.
+With this approach, each time the platform was updated the 3rd party web apps would get the latest version of all plugins and sometimes it was difficult to update 3rd parties due to breaking changes.
 
 ### 2nd Generation: Changing to build time bundling
 
-The main conceptual change of the second generation was that applications were self-contained. By this, we no longer used plugins as data that was loaded at runtime, and the list of script tags was rendered into the index.html during build time.
+The main conceptual change of the second generation was that web apps were self-contained. By this, we no longer used plugins as data that was loaded at runtime, and the list of script tags was rendered into the index.html during build time.
 
-This way, each time the platform was updated, 3rd party applications were only affected when they were explicitly upgraded.
+This way, each time the platform was updated, 3rd party web apps were only affected when they were explicitly upgraded.
 
 We became aware that plugins are just modules, and their names must be unique. The pattern ```<app>/<plugin>``` which was intentional earlier, became irrelevant with module names being unique, but we maintained compatibility with this naming as we do until today.
 
 Although the strategy changed drastically, the manifest files stayed fully compatible.
 
-We ended up with an index.html, generated when the application was assembled, looking like this:
+We ended up with an index.html, generated when the web app was assembled, looking like this:
 
 ```html
   <script src="./core/main.js"></script>
@@ -78,15 +78,15 @@ We ended up with an index.html, generated when the application was assembled, lo
   <script src="./myapplication/main.js"></script>
 ```
 
-Although plugins are not just data any longer, we still allow to change the applications with the UI, but it's actually an API that changes the file system. We delete directories and upload zips to create new directories, and mutate the index.html.
+Although plugins are not just data any longer, we still allow to change the web apps with the UI, but it's actually an API that changes the file system. We delete directories and upload zips to create new directories, and mutate the index.html.
 
 ### Today's Generation: Native modules
 
 The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm the modules must be bundled. As bundler we choose to use webpack, as it plays nicely with Angular.
 
-One major change is that so far modules (or plugins) were always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so applications can no longer be edited from the UI for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truly just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality.
+One major change is that so far modules (or plugins) were always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so web apps can no longer be edited from the UI for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truly just modules. We will keep the name around to refer to subpackages that contain some kind of isolated functionality.
 
-This was the clear opportunity to modularize the stack. While the focus is still on Angular we provide tools to avoid framework lock-in. This results in multiple packages published to npm which can be used standalone. For example, a developer could use the API abstraction layer implemented in the @c8y/client to develop a React application. The stack is no longer exclusively bound to Angular.
+This was the clear opportunity to modularize the stack. While the focus is still on Angular we provide tools to avoid framework lock-in. This results in multiple packages published to npm which can be used standalone. For example, a developer could use the API abstraction layer implemented in the @c8y/client to develop a React web app. The stack is no longer exclusively bound to Angular.
 
 #### Publishing to npm
 
@@ -98,9 +98,9 @@ While previously publishing a tgz to our server, we will now deploy to npm:
  - @c8y/ng1-modules
  - @c8y/ngx-components
 
-#### Branding no longer part of the application
+#### Branding no longer part of the web app
 
-So far, branding was always considered part of the application, as a module like any other. When there was the need to change it we had to change the application definition. For this we used the targets definitions. Now it is a build time option that reflects into its own entry point in the application. When building an application you will have one entry point for the application and another for the branding. That allows to update the application without redeploying the branding.
+So far, branding was always considered part of the web app, as a module like any other. When there was the need to change it we had to change the web app definition. For this we used the targets definitions. Now it is a build time option that reflects into its own entry point in the web app. When building a web app you will have one entry point for the web app and another for the branding. That allows to update the web app without redeploying the branding.
 
 ## Migrating
 
@@ -165,19 +165,19 @@ The following table shows which versions support which tooling:
 The table can be understood as follows:
 
  * The old tooling called "cumulocity-node-tools" only supports AngularJS builds until version 9.25.x
- * The new tooling called "@c8y/cli" can be used to build AngularJS applications until 9.25.x
- * Angular-only applications (= applications that are not extending our default applications: Cockpit, Device Management and Administration) can be built since 9.16.x as beta (yellow). The beta ended at 9.25.x.
- * Hybrid applications are applications that run with Angular and AngularJS at the same time and enable the use of existing AngularJS plugins in a modern Angular application.
+ * The new tooling called "@c8y/cli" can be used to build AngularJS web apps until 9.25.x
+ * Angular-only web apps (= web apps that are not extending our default web apps: Cockpit, Device Management and Administration) can be built since 9.16.x as beta (yellow). The beta ended at 9.25.x.
+ * Hybrid web apps are web apps that run with Angular and AngularJS at the same time and enable the use of existing AngularJS plugins in a modern Angular web app.
 
 {{< c8y-admon-info >}}
-The {{< product-c8y-iot >}} platform itself is running as a hybrid application in production since version 9.25.x.
+The {{< product-c8y-iot >}} platform itself is running as a hybrid web app in production since version 9.25.x.
 {{< /c8y-admon-info >}}
 
 #### Deprecating custom manifests
 
 Now developers have at their disposal all modern JS, so they just need to use normal ESM to import and export dependencies. Although the manifest files will still work, they are no longer required. We still support manifest files as entry points, so it is possible to use these as well as normal package.json files.
 
-The cumulocity.json manifest is in practice a module descriptor, so with @c8y/cli (which uses webpack as a module bundler) applications and plugin manifests are resolved and loaded into webpack as any other module, by using custom loaders and resolvers.
+The cumulocity.json manifest is in practice a module descriptor, so with @c8y/cli (which uses webpack as a module bundler) web apps and plugin manifests are resolved and loaded into webpack as any other module, by using custom loaders and resolvers.
 
 For example, built-in AngularJS plugins are now included like this:
 
@@ -195,11 +195,11 @@ And they can also be imported inside any JS file:
 import './plugins/mywidget/cumulocity.json';
 ```
 
-#### Running an existing application with @c8y/cli
+#### Running an existing web app with @c8y/cli
 
 As observed in [this diff](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples/compare/master...next) the changes to include the new tooling to an existing project are quite concise.
 
-In [@c8y/cli](/web/development-tools/#c8y-cli), the entry point of an application can be a cumulocity.json application manifest or a plain Javascript file.
+In [@c8y/cli](/web/development-tools/#c8y-cli), the entry point of a web app can be a cumulocity.json web app manifest or a plain Javascript file.
 
 ```bash
 npx c8ycli serve ./cumulocity.json
@@ -208,15 +208,15 @@ npx c8ycli serve ./src/main.js
 
 #### Using target files
 
-Although target files are deprecated, it is still possible to use them if the entry point of an application is a cumulocity.json manifest.
+Although target files are deprecated, it is still possible to use them if the entry point of a web app is a cumulocity.json manifest.
 
-To run the Cockpit application with a specific target:
+To run the Cockpit web app with a specific target:
 
 ```
 npx c8ycli serve node_modules/@c8y/ng1-modules/apps/cockpit/cumulocity.json --env.target=mytarget.json
 ```
 
-Although the modification to the application is read from the target file, the definition to run or build the application must be passed as an argument to the CLI.
+Although the modification to the web app is read from the target file, the definition to run or build the web app must be passed as an argument to the CLI.
 
 
 #### Alternative to target files

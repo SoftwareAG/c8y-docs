@@ -21,7 +21,7 @@ Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) in t
 Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 {{< /c8y-admon-info >}}
 
-Once registered, note down the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
+Once registered, note down the device ID by looking up your device on the **All Devices** page of your tenant's Device Management web app.
 
 In contrast to supervised classification models, labeled training data is not required for anomaly detection models. The model is trained with the regular data and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via {{< product-c8y-iot >}} Machine Learning Workbench that automatically transforms the JSON data into the training data format.
 
@@ -70,11 +70,11 @@ Follow the steps described in [Machine Learning Workbench > Automated ML > Model
 
 #### Create and upload Apama monitor file
 
-For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your logic to your IoT solution for the immediate processing of incoming data from devices or other data sources. This user-defined logic can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
+For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your logic to your IoT solution for the immediate processing of incoming data from devices or other data sources. This user-defined logic can for example alert web apps of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice, and raising an alarm when an anomaly is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
+Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device. Save your changes and upload this monitor file to your tenant. See [Deploying Apama web apps as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 
     using com.apama.correlator.Component;
     using com.apama.cumulocity.Alarm;
@@ -152,4 +152,4 @@ Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file 
 
 Now that you have all the pieces together, you can try to generate an anomaly. To generate an anomaly you could drop your mobile phone or throw it in the air and then catch it.
 
-You should be able to see alarms being generated from your device which will be visible under the **Alarms** page of the Device Management application.
+You should be able to see alarms being generated from your device which will be visible under the **Alarms** page of the Device Management web app.

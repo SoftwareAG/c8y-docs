@@ -19,7 +19,7 @@ helpcontent:
 Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
 {{< c8y-admon-important >}}
-There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
+There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate web app management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
@@ -153,7 +153,7 @@ The following information is displayed here:
 
 ### Suspending subtenants
 
-Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. In addition all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
+Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other web apps. In addition all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
 
 The tenant's data remains in the database and can be made available later by clicking **Activate**.
 
@@ -195,23 +195,23 @@ Click the menu icon at the right of the respective subtenant entry and then clic
 
 
 <a name="subscribe"></a>
-### Applications
+### web apps
 
-In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} applications.
+In the **Applications** tab you can view all subscribed web apps, subscribe tenants to web apps or remove the web apps from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} web apps.
 
 <img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
-#### To subscribe an application
+#### To subscribe a web app
 
-Hover over the applications under **Available applications** at the right and click **Subscribe** on the desired application.
+Hover over the web apps under **Available web apps** at the right and click **Subscribe** on the desired web app.
 
-#### To unsubscribe an application
+#### To unsubscribe a web app
 
-Hover over the applications under **Subscribed applications** at the left and click **Unsubscribe**.
+Hover over the web apps under **Subscribed web apps** at the left and click **Unsubscribe**.
 
 #### Monitoring microservices
 
-For all applications hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols:
+For all web apps hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols:
 
 <img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
 
@@ -233,7 +233,7 @@ The following information is provided:
 * Name: Microservice instance name
 * Restarts: The number of microservice instance restarts
 
-Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
+Further details are provided on the **Status** tab of the respective web app, see [Administration > Managing web apps](/users-guide/administration#managing-applications).
 
 
 <a name="tenants-custom-properties"></a>
@@ -339,11 +339,11 @@ Click the menu icon in the tenant policy entry you want to delete and then click
 <a name="default-subscriptions"></a>
 ### Default subscriptions
 
-In the {{< product-c8y-iot >}} platform, you can configure which applications and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified applications and microservices automatically get subscribed to it.
+In the {{< product-c8y-iot >}} platform, you can configure which web apps and microservices are subscribed to a tenant on tenant creation. When you create a new tenant, the specified web apps and microservices automatically get subscribed to it.
 
-In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
+In addition, you can specify which web apps and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default web apps might have been unsubscribed from a tenant after creation and you may not want these web apps to be subscribed to it again or you may want to subscribe different ones to it.
 
-In the **Default subscriptions** page, you can configure two separate lists of applications which will be subscribed by default
+In the **Default subscriptions** page, you can configure two separate lists of web apps which will be subscribed by default
 
 - to every new tenant on its creation,
 - to every existing tenant on platform upgrade.
@@ -352,13 +352,13 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
-On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
+On the left, the list of subscribable web apps (both web apps and microservices) is displayed, which consists of
 
-- all own applications,
-- all subscribed applications which have different names than the own applications.
+- all own web apps,
+- all subscribed web apps which have different names than the own web apps.
 
 {{< c8y-admon-info >}}
-In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
+In order to help you to distinguish which web app is owned and which is subscribed, the tenant ID of the owner is displayed.
 {{< /c8y-admon-info >}}
 
 On the right, you see the **Subscribed on tenant creation** and the **Subscribed on platform upgrade** columns.
@@ -368,9 +368,9 @@ Initially, the lists show the default subscriptions inherited from the tenant hi
 <img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
 
 <br>
-You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
+You can override both lists by switching the corresponding toggle. This will reveal all available web apps (initially, unselected ones are hidden) but the selection will remain the same.
 
-Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed.
+Next, adjust the lists to your needs by selecting additional web apps to be subscribed by default or deselect web apps you do not want to be subscribed.
 
 You may also deselect all of them if you don't want any subscriptions to be executed on tenant creation and/or platform upgrade.
 
@@ -381,7 +381,7 @@ If you want to return to the settings inherited from the tenant hierarchy, just 
 Save the settings by clicking **Save** at the bottom of the page.
 
 {{< c8y-admon-info >}}
-Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
+Obsolete entries not matching any existing web apps are removed on save. If a web app selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another web app with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new web app will be subscribed instead of the previous one.
 {{< /c8y-admon-info >}}
 
 <a name="default-applications"></a>
@@ -389,22 +389,22 @@ Obsolete entries not matching any existing applications are removed on save. If 
 
 The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:
 
-* to define default web applications subscribed to new tenants on creation:
+* to define default web apps subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.applications
-  * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: comma-separated list of web app names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * to define default microservices subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.microservices
   * value: comma-separated list of microservice names, for example, device-simulator,report-agent,sms-gateway
-* to use a different list of web applications to be subscribed to existing tenants on platform upgrade:
+* to use a different list of web apps to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications.enabled
   * value: true/false (when false or not set, the same list from default.tenant.applications will be used)
-* to define default web applications subscribed to existing tenants on platform upgrade:
+* to define default web apps subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications
-  * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: comma-separated list of web app names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * to use a different list of microservices to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.microservices.enabled

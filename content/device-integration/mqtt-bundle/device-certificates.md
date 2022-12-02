@@ -339,7 +339,7 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. Open the Device Management application, then navigate to the **Management** tab and select **Trusted certificates**.
+1. Open the Device Management web app, then navigate to the **Management** tab and select **Trusted certificates**.
 2. Drop your caCert.pem (or intermediateCert.pem).
 3. Check the auto-registration field.
 4. Click on the certificate status to set it to **Enabled**.
@@ -363,7 +363,7 @@ Then the added certificate should be visible:
     POST /tenant/tenants/<TENANT_ID>/trusted-certificates
     Host: https://<TENANT_DOMAIN>/
     Authorization: Basic <YOUR_AUTHENTICATION>
-    Content-Type: application/json
+    Content-Type: web app/json
     {
     	"status" :  "ENABLED",
     	"name" : "certificateName",

@@ -187,7 +187,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 
 ### Examples
 
-Below some examples are provided which may help you to get started. To see a complex and full implementation of the client into Angular, have a look at [@c8y/cli](/web/development-tools/#c8y-cli) and the `new` command to spin up a example application for Angular.
+Below some examples are provided which may help you to get started. To see a complex and full implementation of the client into Angular, have a look at [@c8y/cli](/web/development-tools/#c8y-cli) and the `new` command to spin up a example web app for Angular.
 
 
 #### Requesting list data from the inventory:

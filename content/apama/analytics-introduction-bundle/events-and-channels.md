@@ -12,7 +12,7 @@ Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events a
 
 ### Predefined event types
 
-There are some predefined event types to interact with several {{< product-c8y-iot >}} APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the {{< product-c8y-iot >}} backend, you can create an event and send it to the relevant channel. {{< product-c8y-iot >}} will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
+There are some predefined event types to interact with several {{< product-c8y-iot >}} APIs. Events are sent to Apama web apps automatically when a new measurement, alarm or event is created. For interacting with the {{< product-c8y-iot >}} backend, you can create an event and send it to the relevant channel. {{< product-c8y-iot >}} will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
 
 Look at the [data model]({{< link-apamadoc-api >}}com/apama/cumulocity/package-summary.html) in the API Reference for EPL (ApamaDoc) to see how the events for each stream are structured.
 

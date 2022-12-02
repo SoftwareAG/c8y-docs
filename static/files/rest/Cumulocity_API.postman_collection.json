@@ -150,7 +150,7 @@
                     "response": []
                 },
                 {
-                    "name": "Get application collection",
+                    "name": "Get web app collection",
                     "request": {
                         "method": "GET",
                         "header": [
@@ -169,7 +169,7 @@
                     "response": []
                 },
                 {
-                    "name": "Get specific application",
+                    "name": "Get specific web app",
                     "request": {
                         "method": "GET",
                         "header": [
@@ -2613,10 +2613,10 @@
             ]
         },
         {
-            "name": "Tenant Applications",
+            "name": "Tenant web apps",
             "item": [
                 {
-                    "name": "Get collection of tenant applications",
+                    "name": "Get collection of tenant web apps",
                     "request": {
                         "method": "GET",
                         "header": [
@@ -2627,7 +2627,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\r\n  \"application\": {\r\n    \"self\": \"{{url to application}}\"\r\n  }\r\n}"
+                            "raw": "{\r\n  \"application\": {\r\n    \"self\": \"{{url to web app}}\"\r\n  }\r\n}"
                         },
                         "url": "{{url}}/tenant/tenants/{{tenantId}}/applications",
                         "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"
@@ -2635,7 +2635,7 @@
                     "response": []
                 },
                 {
-                    "name": "Add application to tenant",
+                    "name": "Add web app to tenant",
                     "request": {
                         "method": "POST",
                         "header": [
@@ -2654,7 +2654,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\r\n  \"application\": {\r\n    \"self\": \"{{url to application}}\"\r\n  }\r\n}"
+                            "raw": "{\r\n  \"application\": {\r\n    \"self\": \"{{url to web app}}\"\r\n  }\r\n}"
                         },
                         "url": "{{url}}/tenant/tenants/{{tenantId}}/applications",
                         "description": "#### For a detailed description of the API please check out our [Tenant Reference Guide](http://cumulocity.com/guides/reference/tenants/)"

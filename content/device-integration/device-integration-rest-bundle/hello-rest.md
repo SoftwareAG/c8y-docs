@@ -39,8 +39,8 @@ After that, actions related to that device can be performed by referencing the d
 To create a new device in the inventory of {{< product-c8y-iot >}} the following REST request is needed:
 
     POST /inventory/managedObjects HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
-    Accept: application/vnd.com.nsn.cumulocity.managedobject+json
+    Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json
+    Accept: web app/vnd.com.nsn.cumulocity.managedobject+json
     Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
     ...
     {
@@ -51,8 +51,8 @@ To create a new device in the inventory of {{< product-c8y-iot >}} the following
 This call can be done by executing the following curl statement:
 
     curl -v -u <username>:<password> \
-       -H 'Accept: application/vnd.com.nsn.cumulocity.managedobject+json' \
-       -H 'Content-type: application/vnd.com.nsn.cumulocity.managedobject+json' \
+       -H 'Accept: web app/vnd.com.nsn.cumulocity.managedobject+json' \
+       -H 'Content-type: web app/vnd.com.nsn.cumulocity.managedobject+json' \
        -X POST \
        -d '{"c8y_IsDevice":{},"name":"HelloWorldDevice"}' \
        https://<{{< product-c8y-iot >}} tenant domain>/inventory/managedObjects
@@ -64,7 +64,7 @@ The same credentials used to access the {{< product-c8y-iot >}} Web GUI can be u
 You will receive a response like that:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
+    Content-Type: web app/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
     Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
     ...
     {
@@ -87,8 +87,8 @@ After the device is created, we can send measurement data.
 In our case, we will send a temperature measurement in the unit of Celsius which was collected on a certain time:
 
     POST /measurement/measurements
-    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json
-    Accept: application/vnd.com.nsn.cumulocity.measurement+json
+    Content-Type: web app/vnd.com.nsn.cumulocity.measurement+json
+    Accept: web app/vnd.com.nsn.cumulocity.measurement+json
     ...
     {
         "c8y_TemperatureMeasurement": {
@@ -111,8 +111,8 @@ Furthermore, you should update the time value to a recent timestamp in order to 
 Note the data format for timestamp values which is explained as `date-time` in the [Swagger/OpenAPI Specification](https://swagger.io/specification/#data-types).
 
     curl -v -u <username>:<password> \
-       -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json' \
-       -H 'Content-type: application/vnd.com.nsn.cumulocity.measurement+json' \
+       -H 'Accept: web app/vnd.com.nsn.cumulocity.measurement+json' \
+       -H 'Content-type: web app/vnd.com.nsn.cumulocity.measurement+json' \
        -X POST \
        -d '{"c8y_TemperatureMeasurement":{"T":{"value":21.23,"unit":"C"}},"time":"2014-12-15T13:00:00.123+02:00","source":{"id":"1231234"},"type":"c8y_PTCMeasurement"}' \
        https://<{{< product-c8y-iot >}} tenant domain>/measurement/measurements/
@@ -120,7 +120,7 @@ Note the data format for timestamp values which is explained as `date-time` in t
 The response to that request will look like this:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9
+    Content-Type: web app/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9
     ...
     {
         "id": "4711",
@@ -141,7 +141,7 @@ The response to that request will look like this:
 
 If you like to, you can repeat sending measurements. Before sending the request again, you should update the timestamp (value of attribute 'time') in order to create a time series.
 
-Now you are done. Enter the Device Management application in the {{< product-c8y-iot >}} UI, select your device on the "All devices" page and switch to the "Measurements" tab. Here you can see your measurement data.
+Now you are done. Enter the Device Management web app in the {{< product-c8y-iot >}} UI, select your device on the "All devices" page and switch to the "Measurements" tab. Here you can see your measurement data.
 
 If you do not see data, you might need to change the filter setting to, for example, "last week" to include the timestamp you used in your submitted measurement.
 

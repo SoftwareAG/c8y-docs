@@ -9,7 +9,7 @@ Microservices typically provide a REST API and {{< product-c8y-iot >}} provides 
 * Authorization: All calls are authenticated using {{< product-c8y-iot >}} credentials with basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
 * Metering: The API calls are metered in the API calls tenant statistics.
-* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers. If `contextPath` is defined in the application manifest, the API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
+* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers. If `contextPath` is defined in the web app manifest, the API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
 
 ### Authentication and authorization
 
@@ -61,7 +61,7 @@ The microservice sends the following requests to validate the credentials (provi
 
 ```
 GET http://cumulocity:8111/user/currentUser HTTP/1.1
-Accept: text/plain, application/json, application/*+json, */*
+Accept: text/plain, web app/json, web app/*+json, */*
 Authorization: Basic dGVuYW50X2lkL3VzZXJuYW1lOnBhc3N3b3JkCg==
 Content-Length: 0
 tfatoken: 23b75292468e0ba7fe03245d502d9c29e21e8a997fc7dd7e1a1df7fe31cbfb17
@@ -89,7 +89,7 @@ To verify the credentials from the request above, the microservice sends the fol
 
 ```
 GET http://cumulocity:8111/user/currentUser HTTP/1.1
-Accept: text/plain, application/json, application/*+json, */*
+Accept: text/plain, web app/json, web app/*+json, */*
 Content-Length: 0
 Cookie: authorization=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YzAwMGVlOC1hYjY5LTRiMzYtYWNhNC0xNzM4ZGYwZWNhZGIiLCJpc3MiOiJjdW11bG9jaXR5LmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJhdWQiOiJjdW11bG9jaXR5LmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJzdWIiOiJhZG1pbiIsInRjaSI6IjMxMWM3YjZiLWM1MmQtNGEzMC1iZDFlLWNiODdlMjNlODQyOSIsImlhdCI6MTY0NjkyODgxMywibmJmIjoxNjQ2OTI4ODEzLCJleHAiOjE2NDgxMzg0MTMsInRmYSI6ZmFsc2UsInRlbiI6Im1hbmFnZW1lbnQiLCJ4c3JmVG9rZW4iOiJHU0l6VFB4b2JQS1FJQmV2Uk1SWiJ9.NL5b9-iHSc3SLaPu87oazBd2_kjNiwO9tM_bXS3qCUd0_wTZ-BKc3q6sRHTKO_LNbtCQg3G6-7ZhD6TyvqjTLsyiZTsgMRtAE7ZiRPtXaFOA0_SDQ9kG_MztAZ3U9O008akgXcjEEAdphVv5eey_lADrg1BmIlqiBFoKts2JGSv1xFtXKIxpcVtRDGUkb-2qb8OhaHamT7b3HL628NSiH4VqfO38vkLLkimHEz-roqmbFGQ355TvA3-s_erO96j3rHbBPDsluFqFN0eOTCidBffKt6OvyKw-_64MaHHs6R9Ulsv-LuY-YAvlTZVxYwFAi3yn3mWlpXEAzvGYHMrx8A
 X-XSRF-TOKEN: GSIzTPxobPKQIBevRMRZ
@@ -99,11 +99,11 @@ If a request to the <kbd>/user/currentUser</kbd> REST endpoint contains the corr
 
 When a microservice receives an HTTP request, it can become necessary to use the REST API exposed by {{< product-c8y-iot >}} to fulfil the request. To access the REST API, the microservice must provide a valid credential. It can use credentials that are present in the incoming REST request or use a dedicated user account, created to access resources belonging to tenants which are subscribed to the microservice. The choice between the credentials provided together with the incoming request to the microservice REST or a dedicated account depends on the use case. In order to utilize the user credentials received by the microservice in an incoming HTTP request, the microservice must copy the credentials according to the rules described above.
 
-Furthermore, most of the HTTP requests which are sent by microservices must contain the HTTP header `X-Cumulocity-Application-Key`. The header indicates that an action is performed by an application. When the header is missing {{< product-c8y-iot >}} assumes that the HTTP request is originated by an IoT device. Therefore, a request without `X-Cumulocity-Application-Key` affects for example, the device availability state, or the billing data.
+Furthermore, most of the HTTP requests which are sent by microservices must contain the HTTP header `X-Cumulocity-Application-Key`. The header indicates that an action is performed by a web app. When the header is missing {{< product-c8y-iot >}} assumes that the HTTP request is originated by an IoT device. Therefore, a request without `X-Cumulocity-Application-Key` affects for example, the device availability state, or the billing data.
 
 Thus, the microservice must only include `X-Cumulocity-Application-Key` if the microservice proxy requests from an IoT device to the {{< product-c8y-iot >}} platform.
 
-If the microservice includes the header `X-Cumulocity-Application-Key`, the header must contain the correct application key. Then, the microservice retrieves the application key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request must contain  the credentials for basic authentication in the following format: `tenantId/username:password`. The tenant ID, username and password are read by the microservice from the following operating system environment variables: C8Y_BOOTSTRAP_TENANT, C8Y_BOOTSTRAP_USER, and C8Y_BOOTSTRAP_PASSWORD. In order to increase the performance, the microservice has to implement a caching mechanism related to the user credentials.
+If the microservice includes the header `X-Cumulocity-Application-Key`, the header must contain the correct web app key. Then, the microservice retrieves the web app key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request must contain  the credentials for basic authentication in the following format: `tenantId/username:password`. The tenant ID, username and password are read by the microservice from the following operating system environment variables: C8Y_BOOTSTRAP_TENANT, C8Y_BOOTSTRAP_USER, and C8Y_BOOTSTRAP_PASSWORD. In order to increase the performance, the microservice has to implement a caching mechanism related to the user credentials.
 
 #### Microservice authentication and multi-tenancy
 
@@ -112,7 +112,7 @@ In general, microservices use the standard {{< product-c8y-iot >}} authenticatio
 1. The microservice can be created in any tenant that has **feature-microservice-hosting** enabled.
 2. The microservices access the tenant API.
 
-At the installation time of the microservice, an application is created in the {{< management-tenant >}} reflecting the new microservice. In addition, a service user is created in the {{< management-tenant >}} that allows the microservice to retrieve subscriptions.
+At the installation time of the microservice, a web app is created in the {{< management-tenant >}} reflecting the new microservice. In addition, a service user is created in the {{< management-tenant >}} that allows the microservice to retrieve subscriptions.
 Whenever required, a platform administrator will subscribe a customer to the new microservice. As part of the subscription, a service user in the customer tenant is created using random credentials.
 
 #### Microservice authorization
@@ -123,7 +123,7 @@ Authorization is relevant on two levels:
 2. For accessing customer tenants, the microservice installs a set of required permissions for being able to operate.
 
 A microservice is associated with a service user in the {{< management-tenant >}}, which will make sure that only its subscriptions are returned. A microservice is also associated with a set of permissions that it requires for carrying out its function on a customer tenant.
-These permissions are visualized in the Administration application. The permissions are associated with the service user that is created when a platform administration associates a microservice with a tenant.
+These permissions are visualized in the Administration web app. The permissions are associated with the service user that is created when a platform administration associates a microservice with a tenant.
 
 
 ### Users and roles
@@ -137,10 +137,10 @@ There are three types of users:
 The following role types are defined for users:
 
 * Required roles: The roles that are predefined to allow access to {{< product-c8y-iot >}} Rest APIs.
-For instance, if a microservice creates measurements using the service user, measurement admin role must be added as a required role of the application.
+For instance, if a microservice creates measurements using the service user, measurement admin role must be added as a required role of the web app.
 Required roles are added to the service users.
 * Roles: The custom roles provided to tenant platform users by the microservice developer.
-These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
+These roles can be assigned or revoked to the tenant platform users or groups using the Administration web app.
 
 Custom roles must adhere to this name format in order to be shown in the UI:
 
@@ -180,7 +180,7 @@ Host: ...
 Authorization: Basic ...
 ```
 
-Bootstrap user credentials can be retrieved with a GET request authorized with application owner credentials:
+Bootstrap user credentials can be retrieved with a GET request authorized with web app owner credentials:
 
 ```http
 GET /application/applications/<APPLICATION_ID>/bootstrapUser
@@ -206,6 +206,6 @@ Steps:
 
 There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests.
 
-If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
+If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the web app context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
 
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.

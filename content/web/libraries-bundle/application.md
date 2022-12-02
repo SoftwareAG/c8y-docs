@@ -1,11 +1,11 @@
 ---
-title: Application library
+title: web app library
 layout: redirect
 weight: 30
 ---
 
 
-The application package (`@c8y/apps`) provides example applications for the Web SDK.
+The web app package (`@c8y/apps`) provides example web apps for the Web SDK.
 
 ### Prerequisites
 
@@ -17,15 +17,15 @@ Once installed you can run:
 $ c8ycli new [your-app-name] [example-name]
 ```
 
-For example, to generate the tutorial application with the name `my-app` you must run:
+For example, to generate the tutorial web app with the name `my-app` you must run:
 
 ```
 $ c8ycli new my-app tutorial
 ```
 
-### Included applications
+### Included web apps
 
-The following table provides an overview on the currently supported applications:
+The following table provides an overview on the currently supported web apps:
 
 <table>
 <col style="width:20%">
@@ -39,23 +39,23 @@ The following table provides an overview on the currently supported applications
 <tbody>
 <tr>
 <td>application</td>
-<td>An empty application to quickly bootstrap new applications. It is the default application and used if you don't specify an <code>[example-name]</code>.</td>
+<td>An empty web app to quickly bootstrap new web apps. It is the default web app and used if you don't specify an <code>[example-name]</code>.</td>
 </tr>
 <tr>
 <td>tutorial</td>
-<td>An application that already assembles most of the concepts of the <a href="/web/libraries/#component">@c8y/ngx-components</a>. Use this to get real code examples.</td>
+<td>An web app that already assembles most of the concepts of the <a href="/web/libraries/#component">@c8y/ngx-components</a>. Use this to get real code examples.</td>
 </tr>
 <tr>
 <td>cockpit</td>
-<td>The <a href="/users-guide/cockpit/">Cockpit</a> default application. Use this to extend the existing Cockpit application.</td>
+<td>The <a href="/users-guide/cockpit/">Cockpit</a> default web app. Use this to extend the existing Cockpit web app.</td>
 </tr>
 <tr>
 <td>devicemanagement</td>
-<td>The <a href="/users-guide/device-management/">Device Management</a> default application. Use this to extend the existing Device Management application.</td>
+<td>The <a href="/users-guide/device-management/">Device Management</a> default web app. Use this to extend the existing Device Management web app.</td>
 </tr>
 <tr>
 <td>administration</td>
-<td>The <a href="/users-guide/administration/">Administration</a> default application. Use this to extend the existing Administration application.</td>
+<td>The <a href="/users-guide/administration/">Administration</a> default web app. Use this to extend the existing Administration web app.</td>
 </tr>
 </tbody>
 </table>

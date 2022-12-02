@@ -24,7 +24,7 @@ Upload multiple time series data to generate a clustering model. This is an asyn
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Content-Type|required header parameter with value application/json
+|Content-Type|required header parameter with value web app/json
 
 |PARAMS||
 |:---|:---|
@@ -49,7 +49,7 @@ Upload multiple time series data to generate a clustering model. This is an asyn
 202 - ACCEPTED
 
 curl --request POST "{{url}}/service/zementis/train/clustering?autoDeploy=false" --header "Authorization: {{auth}}" \
-	--header "Content-Type: application/json"
+	--header "Content-Type: web app/json"
 
 {
      "data": [
@@ -79,7 +79,7 @@ curl --request POST "{{url}}/service/zementis/train/clustering?autoDeploy=false"
 400 - Bad Request
 
 curl --request POST "{{url}}/service/zementis/train/clustering" --header "Authorization: {{auth}}" \
-	--header "Content-Type: application/json"
+	--header "Content-Type: web app/json"
 
 {
     "data": [
@@ -107,7 +107,7 @@ curl --request POST "{{url}}/service/zementis/train/clustering" --header "Author
 ```
 401 - Unauthorized
 
-curl --request POST "{{url}}/service/zementis/train/clustering" --header "Content-Type: application/json"
+curl --request POST "{{url}}/service/zementis/train/clustering" --header "Content-Type: web app/json"
 ```
 
 **Example Response**

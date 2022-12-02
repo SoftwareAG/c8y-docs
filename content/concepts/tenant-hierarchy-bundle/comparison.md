@@ -6,7 +6,7 @@ layout: redirect
 
 ### Introduction
 
-When you think about offering your applications and services to your customers you need to think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.
+When you think about offering your web apps and services to your customers you need to think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.
 
 The first is **role-based access control (RBAC)** that is part of every tenant in the {{< product-c8y-iot >}} platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
 
@@ -44,7 +44,7 @@ The following tasks should be covered by a platform solution:
 * [Registering new devices for a customer](#device-registration)
 * [Managing access rights](#access-rights)
 * [Creating additional users](#user-management)
-* [Granting access to applications](#application-management)
+* [Granting access to web apps](#application-management)
 * [Invoicing your customer](#usage-data)
 * [Running analytics](#analytics)
 
@@ -74,7 +74,7 @@ The following sections discuss how these tasks are handled in both approaches.
 
 **Comparison:**
 
-The creation of a new customer is equally simple. However, you must consider that in the multi-tenant approach you create a new empty tenant with nothing in it but the standard applications. You still might need to subscribe additional applications, create default dashboards, configure retention and others. These are already present in the RBAC approach as they are set up only once for everyone. On the other hand, this also means that you cannot have different setups for different customers, as certain settings (like retention) are configured at tenant level.
+The creation of a new customer is equally simple. However, you must consider that in the multi-tenant approach you create a new empty tenant with nothing in it but the standard web apps. You still might need to subscribe additional web apps, create default dashboards, configure retention and others. These are already present in the RBAC approach as they are set up only once for everyone. On the other hand, this also means that you cannot have different setups for different customers, as certain settings (like retention) are configured at tenant level.
 
 <a name="device-registration"></a>
 #### Device registration
@@ -158,7 +158,7 @@ For security aspects on access control see [Security aspects > Access control](/
 Having a separate tenant for each customer they will not be limited with respect to user management and can fully utilize all management functionality. In the RBAC approach you can delegate certain management functionality and the platform will make sure that users can never overstep their boundaries. However, certain functionality like creating roles will only be available to full user management admins.
 
 <a name="application management"></a>
-#### Application management
+#### web app management
 
 <table>
 <thead>
@@ -173,15 +173,15 @@ Having a separate tenant for each customer they will not be limited with respect
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won't be able to create own applications.</td>
-<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< management-tenant >}}. This does not apply for UI applications.</td>
+<td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available web apps (of course only to those they can access themselves) but they won't be able to create own web apps.</td>
+<td style="text-align:left">Customers are free to add web apps into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< management-tenant >}}. This does not apply for UI web apps.</td>
 </tr>
 </tbody>
 </table>
 
 **Comparison:**
 
-Application management is only available on tenant level. If you want to give customers the ability to extend the platform on their own you will need to go for a separate customer tenant. In the RBAC approach you need to take care of the application management but it is still possible to have different applications for different customers. This is easily doable for UI applications however if you add microservices you need to manage it via access rights as the microservice is generally available for the whole tenant.
+Application management is only available on tenant level. If you want to give customers the ability to extend the platform on their own you will need to go for a separate customer tenant. In the RBAC approach you need to take care of the web app management but it is still possible to have different web apps for different customers. This is easily doable for UI web apps however if you add microservices you need to manage it via access rights as the microservice is generally available for the whole tenant.
 
 <a name="usage-data"></a>
 #### Invoicing and usage data

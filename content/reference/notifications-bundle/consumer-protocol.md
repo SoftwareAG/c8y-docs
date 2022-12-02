@@ -33,7 +33,7 @@ wss://your.{{< product-c8y >}}.environment.fullqualifieddomainname/notification2
 
 ### WebSocket timeouts
 
-There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault tolerant operation in any case. All consuming microservices or applications should handle the WebSocket being closed and re-connect as necessary.
+There is a timeout of 5 minutes set on idle WebSocket connections after which the connection will be closed by the server side. Therefore the consumer must be prepared to handle closed connections which is required for fault tolerant operation in any case. All consuming microservices or web apps should handle the WebSocket being closed and re-connect as necessary.
 
 ### Notification acknowledgements
 
@@ -96,7 +96,7 @@ It is therefore desirable that a notification is acknowledged as soon as possibl
 However, this should not be done until the notification has been successfully processed to make use of the at-least-once semantics that the Notification 2.0 service provides.
 
 Simply process the message and only return the acknowledgement identifier when that processing completes successfully.
-If processing is longer than a minute or so, the service will resend the notification so the WebSocket client application must be prepared to deal with duplicates.
+If processing is longer than a minute or so, the service will resend the notification so the WebSocket client web app must be prepared to deal with duplicates.
 Duplicates can also occur due to underlying network failures, consumer crashes or perceived failures (slow transmissions) and subsequent failure masking re-transmission attempts.
 
 A duplicate can be delivered out of order if several notifications are unacknowledged but only after follow-on notifications so should be easy to deal with.
@@ -105,7 +105,7 @@ For example, in the logical sequence 1,2,3,4, the notification number 2 can be d
 
 The notifications don't contain any unique identifier or timestamps to aid in de-duplication.
 Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED.
-But inventory UPDATES or logically sequenced events such as alarms and measurements require application-specific sequencing.
+But inventory UPDATES or logically sequenced events such as alarms and measurements require web app-specific sequencing.
 
 This can be achieved by including unique identifiers, sequence numbers or timestamps in the notification JSON (body) as required.
 An alternative is to look up the current value in the {{< product-c8y-iot >}} database, treating the notification as a signal only and ignoring the value carried.

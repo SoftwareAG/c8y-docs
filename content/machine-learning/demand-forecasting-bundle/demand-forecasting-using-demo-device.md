@@ -21,11 +21,11 @@ We have added a script *RegisterDevice.ipynb* which registers a demo device in {
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}.
-3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management web app. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 
 <img src="/images/zementis/DemandForecasting/demand_forecasting_register_device.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
-Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
+Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management web app. The *CONFIG.json* file is already updated by the code with the device ID.
 
 This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named *c8y_Flow*. <br>A higher value of c8y_Flow signifies higher water consumption.
 
@@ -36,7 +36,7 @@ Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you have a registered device in {{< product-c8y-iot >}}. Upon successful execution, `c8y_Flow measurements` are sent to {{< product-c8y-iot >}} on behalf of the demo device. The measurements are simulated dynamically for the last 8 days period and for every two hours (that is, 12 observations per day).
 
-We use this data to generate a time series model and forecast the next day's c8y_Flow values. Keep in mind that forecast intervals will match the observation intervals. This can be confirmed by checking the data points in the {{< product-c8y-iot >}} Cockpit application.
+We use this data to generate a time series model and forecast the next day's c8y_Flow values. Keep in mind that forecast intervals will match the observation intervals. This can be confirmed by checking the data points in the {{< product-c8y-iot >}} Cockpit web app.
 
 <img src="/images/zementis/DemandForecasting/demand_forecasting_simulate_data.PNG" alt="Download" style="display:inline-block; margin:0">
 

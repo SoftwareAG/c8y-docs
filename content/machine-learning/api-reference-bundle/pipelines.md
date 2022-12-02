@@ -194,7 +194,7 @@ Hence, all subsequent calls should refer to the converted name as listed in the 
 ```
 201 - Created
 
-curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
+curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
 
 {
     "pipelineName": "ClassifyFaultyWelds",
@@ -220,7 +220,7 @@ curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authoriz
 ```
 400 - Bad Request
 
-curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
+curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
 
 {
     "pipelineName": "PipelineDemo",
@@ -245,7 +245,7 @@ curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authoriz
 ```
 401 - Unauthorized
 
-curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Content-Type: application/json"
+curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Content-Type: web app/json"
 ```
 
 **Example Response**
@@ -265,7 +265,7 @@ curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Content-
 ```
 404 - Not Found
 
-curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
+curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
 
 {
     "pipelineName": "ClassifyWelds",
@@ -290,7 +290,7 @@ curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authoriz
 ```
 409 - Conflict
 
-curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: application/json"
+curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authorization: {{auth}}" --header "Content-Type: web app/json"
 
 {
     "pipelineName": "DetectFabricOrientation",

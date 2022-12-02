@@ -4,7 +4,7 @@ title: The sensor library
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} includes a [sensor library](/reference/sensor-library/) to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library enables applications to answer questions such as:
+{{< product-c8y-iot >}} includes a [sensor library](/reference/sensor-library/) to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library enables web apps to answer questions such as:
 
 -   What devices are installed that measure energy?
 -   What are the energy readings?

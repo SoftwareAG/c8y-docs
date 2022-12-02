@@ -4,12 +4,12 @@ title: Microservices
 layout: redirect
 ---
 
-Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of {{< product-c8y-iot >}}:
+Microservices are server-side web apps. Microservices can be used to develop for example the following functionality on top of {{< product-c8y-iot >}}:
 
 * Integrations
 * Batch analytics
 * Decoder
-* Backend applications
+* Backend web apps
 
 Microservices are deployed as Docker images to {{< product-c8y-iot >}}, and follow specific conventions. They typically provide one REST API, which is available under /service/&lt;microservice-name&gt;. They typically access {{< product-c8y-iot >}} using the documented REST API.
 

@@ -23,12 +23,12 @@ You may have stored complex data using JSON fragments as an additional column in
 Writing these functions is often an iterative process that requires multiple adaptations of the underlying logic. Leverage the Dremio SQL editor and define a dummy offloading configuration which moves a small portion of the data into the data lake for testing purposes. You can use the filter predicate to retrieve such a portion of the data; see below for time filter examples. Then you can open the table created by the offloading configuration with Dremio; using Dremio's SQL editor, you can develop the extraction logic. Once your decomposition logic for your additional columns is complete, you can copy the column transformations and use them to define a corresponding offloading configuration in {{< product-c8y-iot >}} DataHub. Once that is done, the dummy offloading pipeline can be deleted.
 
 ### Examples for time filters
-Depending on the collection, you can use different time filters. All collections support `creationTime` which represents the timestamp when the entity was persisted by the platform (UTC timezone). Mutable entities (alarms, events, inventory) also support `lastUpdated` which is the timestamp when the entity was last changed (UTC timezone). `time` is the application timestamp written by the client; it is supported in alarms, events, and measurements.
+Depending on the collection, you can use different time filters. All collections support `creationTime` which represents the timestamp when the entity was persisted by the platform (UTC timezone). Mutable entities (alarms, events, inventory) also support `lastUpdated` which is the timestamp when the entity was last changed (UTC timezone). `time` is the web app timestamp written by the client; it is supported in alarms, events, and measurements.
 
 The below time filters are examples only; you can use much more complex or simpler combinations with a mixture of AND/OR-connected conditions.
 
 ##### Alarms/events
-To offload all alarms or events which have the application time set to between 2020-02-08 14:00:00.000 and 2020-02-08 15:00:00.000, use:
+To offload all alarms or events which have the web app time set to between 2020-02-08 14:00:00.000 and 2020-02-08 15:00:00.000, use:
 
 ```
 src."time"."date" >= {ts '2020-02-08 14:00:00.000'} AND
@@ -55,7 +55,7 @@ src."lastUpdated"."date" > {ts '2020-02-08 14:00:00.000'}
 ```
 
 ##### Measurements
-To offload all data with application time between 2020-02-08 14:00:00.000 and 2020-02-08 15:00:00.000, use:
+To offload all data with web app time between 2020-02-08 14:00:00.000 and 2020-02-08 15:00:00.000, use:
 ```
 src."time"."date" >= {ts '2020-02-08 14:00:00.000'} AND
 src."time"."date" <= {ts '2020-02-08 15:00:00.000'}

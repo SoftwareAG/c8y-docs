@@ -11,9 +11,9 @@ aliases:
 <a name="screen"></a>
 ### Main screen elements
 
-The general structure common to all {{< product-c8y-iot >}} applications includes the following screen elements:
+The general structure common to all {{< product-c8y-iot >}} web apps includes the following screen elements:
 
-![{{< product-c8y-iot >}} application](/images/users-guide/getting-started/getting-started-screen-elements.png)
+![{{< product-c8y-iot >}} web app](/images/users-guide/getting-started/getting-started-screen-elements.png)
 
 <table>
 <col width="15%">
@@ -27,11 +27,11 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 <tbody>
 <tr>
 <td style="text-align:left"><b>Navigator</b></td>
-<td style="text-align:left">On the left you find the navigator. At the top of the navigator the name and logo of the application is displayed, indicating which application you are currently using. Below you find a list of entries leading to the various pages of the application. The entries are grouped into menus and menu items. You can collapse or expand menus in the navigator by clicking the menu name. Clicking the small arrow at the very left of the top bar will hide/or unhide the navigator. Per default, it is visible.</td>
+<td style="text-align:left">On the left you find the navigator. At the top of the navigator the name and logo of the web app is displayed, indicating which web app you are currently using. Below you find a list of entries leading to the various pages of the web app. The entries are grouped into menus and menu items. You can collapse or expand menus in the navigator by clicking the menu name. Clicking the small arrow at the very left of the top bar will hide/or unhide the navigator. Per default, it is visible.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Page</b></td>
-<td style="text-align:left">"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data can for example be displayed in a list with a row for each object or you can find it being presented in a grid in which objects are represented by cards. </td>
+<td style="text-align:left">"Page" actually refer to the main area in the web app. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data can for example be displayed in a list with a row for each object or you can find it being presented in a grid in which objects are represented by cards. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Tabs</b></td>
@@ -39,15 +39,15 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
-<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between web apps. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the web app Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the web app and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
-<td style="text-align:left">Depending on the active application and the active page, a secondary bar is displayed below the top bar providing further functionalities like a <b>Reload</b> link for reloading the page or a <b>Realtime</b> link for the display of realtime data. </td>
+<td style="text-align:left">Depending on the active web app and the active page, a secondary bar is displayed below the top bar providing further functionalities like a <b>Reload</b> link for reloading the page or a <b>Realtime</b> link for the display of realtime data. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Right drawer</b></td>
-<td style="text-align:left">Clicking the small arrow at the very right of the top bar will unhide/hide the right drawer, offering quick links to other applications and to relevant documentation. Per default, the right drawer is hidden.</td>
+<td style="text-align:left">Clicking the small arrow at the very right of the top bar will unhide/hide the right drawer, offering quick links to other web apps and to relevant documentation. Per default, the right drawer is hidden.</td>
 </tr>
 </tbody>
 </table>
@@ -57,21 +57,21 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 <img src="/images/users-guide/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
+{{< product-c8y-iot >}} web apps provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} web apps on touch devices, tooltips are shown when you touch a screen element for a longer time.
 {{< /c8y-admon-info >}}
 
 <a name="app-switcher"></a>
-### Application switcher
+### web app switcher
 
-The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications.
+The web app switcher allows you to quickly switch between web apps. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing web apps.
 
 <img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
 <!-- Screenshot necessary? -->
 
-The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/users-guide/administration/#subscribed-applications) or [custom applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
+The web app switcher shows all {{< product-c8y-iot >}} web apps you currently have access to. These can be [subscribed web apps](/users-guide/administration/#subscribed-applications) or [custom web apps](/users-guide/administration#own-applications). Just click the icon for the desired web app to open it as active web app.
 
-If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications:
+If you are using {{< sag-cloud >}}, the web app switcher also shows other {{< sag-cloud >}} web apps at the first level, followed by the {{< product-c8y-iot >}} web apps:
 
 <img src="/images/users-guide/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 <!-- Screenshot necessary? -->
@@ -184,8 +184,8 @@ For details on the filtering mechanism in the devices list refer to [Device Mana
 
 In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups will not be updated immediately.
 
-You will only see such changes in the navigator of the application, in which you have made the changes.
+You will only see such changes in the navigator of the web app, in which you have made the changes.
 
 **Example**
 
-If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).
+If you unassign a device from a group in the Device Management web app it is immediately removed from the group in the navigator of your current web app. However, if you have another window open with another Device management web app, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).

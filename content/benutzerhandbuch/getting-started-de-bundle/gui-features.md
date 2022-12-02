@@ -13,7 +13,7 @@ aliases:
 
 Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
 
-![{{< product-c8y-iot >}} application](/images/benutzerhandbuch/getting-started/getting-started-screen-elements.png)
+![{{< product-c8y-iot >}} web app](/images/benutzerhandbuch/getting-started/getting-started-screen-elements.png)
 
 <table>
 <col width="15%">
@@ -39,7 +39,7 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Leiste</b></td>
-<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Suche</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>Benutzer</b><br> Rechts neben dem Application Switcher befindet sich die Schaltfläche <b>Benutzer</b> mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
+<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Suche</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>Benutzer</b><br> Rechts neben dem web app Switcher befindet sich die Schaltfläche <b>Benutzer</b> mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Menüleiste</b></td>
@@ -61,17 +61,17 @@ Die {{< product-c8y-iot >}}-Anwendungen enthalten Tooltips, die angezeigt werden
 {{< /c8y-admon-info >}}
 
 <a name="app-switcher"></a>
-### Application Switcher
+### web app Switcher
 
-Über den Application Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen.
+Über den web app Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen.
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
 <!-- Screenshot necessary? -->
 
-Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) oder [benutzerdefinierte Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der web app Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) oder [benutzerdefinierte Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
-Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
+Wenn Sie die {{< sag-cloud >}} nutzen, werden im web app Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 <!-- Screenshot necessary? -->

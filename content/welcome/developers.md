@@ -6,7 +6,7 @@ layout: bundle
 
 Welcome to the {{< product-c8y-iot >}} developer documentation!
 
-Learn how to develop and deploy applications on top of our IoT platform and integrate IoT data sources.
+Learn how to develop and deploy web apps on top of our IoT platform and integrate IoT data sources.
 
 For our developer community, we offer a variety of sources to quickly get started or to dig deeper into the matter.
 
@@ -31,12 +31,12 @@ Check out the following developer guides if you are looking for step-by-step ins
 
 <tr>
 <td align="left"><a href="/web/">Web SDK guide</a></td>
-<td align="left">How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.</td>
+<td align="left">How to use the Web SDK to extend web apps with your own plugins, add your own web apps or implement further functionalities tailored to your use case.</td>
 </tr>
 
 <tr>
 <td align="left"><a href="/microservice-sdk/introduction/">Microservice SDK guide</a></td>
-<td align="left">How to use the Microservice SDK to develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorials for Java and C#.
+<td align="left">How to use the Microservice SDK to develop and deploy microservices (server-side web apps) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorials for Java and C#.
 </td>
 </tr>
 

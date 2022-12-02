@@ -80,7 +80,7 @@ In this example, a fragment `c8y_ThreePhaseElectricitySensor` identifies a three
 
 Using this approach, the modeling devices can make a difference between modeling elementary sensors and controls as fragments, and modeling the entire device as a combination of sensors, controls and possibly proprietary aspects of the device.
 
-The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment (`c8y_Position`), it can be placed on a map. As soon as it has a relay (`c8y_Relay`), it can be switched on and off using the respective device control command as described below.
+The approach also enables developing generic web app components. For example, as soon as a managed object has a position fragment (`c8y_Position`), it can be placed on a map. As soon as it has a relay (`c8y_Relay`), it can be switched on and off using the respective device control command as described below.
 
 For more information on fragments and how managed objects are structured, see the [Device management library](reference/device-management-library/) in the *Reference guide*.
 
@@ -94,7 +94,7 @@ In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for 
 Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
 {{< /c8y-admon-important >}}
 
-Note that {{< product-c8y-iot >}} follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
+Note that {{< product-c8y-iot >}} follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, web apps can add own metadata and store values in the inventory additionally. For example, a vending web app can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 
 ### Object identification
 
@@ -104,7 +104,7 @@ This identifier will always stay with the object regardless of network restructu
 
 ![Identity service](/images/concepts-guide/identification.png)
 
-To shield applications from these numbers of identifiers, {{< product-c8y-iot >}} includes an identity service that registers all identifiers for one asset that are used outside of {{< product-c8y-iot >}} and map these to a single global identifier that is used by applications.
+To shield web apps from these numbers of identifiers, {{< product-c8y-iot >}} includes an identity service that registers all identifiers for one asset that are used outside of {{< product-c8y-iot >}} and map these to a single global identifier that is used by web apps.
 
 This service is used by agents (to register external identifiers) and by business processes involving reorganisations and changes of devices (to modify maps of external identifiers to global identifiers).
 
@@ -128,9 +128,9 @@ An example asset hierarchy for building management could be buildings containing
 
 #### Child objects in hierarchies
 
-The two hierarchies above are explicitly supported by the [inventory interface](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Inventory-API) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
+The two hierarchies above are explicitly supported by the [inventory interface](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Inventory-API) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client web apps. The communication hierarchy is constructed by agents, the asset hierarchy is added by web apps on top.
 
-Note that the object hierarchies do not necessarily need to form a tree, the same asset can be a child of multiple parent assets. This enables applications to create additional, user-defined groups of objects such as working sets or virtual networks. Applications can, in addition, use fragments to define arbitrary alternative hierarchies.
+Note that the object hierarchies do not necessarily need to form a tree, the same asset can be a child of multiple parent assets. This enables web apps to create additional, user-defined groups of objects such as working sets or virtual networks. web apps can, in addition, use fragments to define arbitrary alternative hierarchies.
 
 ### Object lifecycle
 

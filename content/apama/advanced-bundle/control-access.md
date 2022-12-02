@@ -1,12 +1,12 @@
 ---
 weight: 80
-title: Controlling access to the Streaming Analytics application
+title: Controlling access to the Streaming Analytics web app
 layout: redirect
 ---
 
-By default, the Streaming Analytics application gives you access to the **Analytics Builder** and **EPL Apps** pages.
+By default, the Streaming Analytics web app gives you access to the **Analytics Builder** and **EPL Apps** pages.
 Administrators may wish to control which of these are shown on different tenants or for different users,
-or modify the wording of the cards on the home screen (see also [Customizing the home screen of the Streaming Analytics application](/apama/advanced/#customize-home-screen)).
+or modify the wording of the cards on the home screen (see also [Customizing the home screen of the Streaming Analytics web app](/apama/advanced/#customize-home-screen)).
 
 Which pages are available also depends on the variant of the Apama-ctrl microservice that is running.
 
@@ -18,12 +18,12 @@ as the EPL apps functionality is not available in Apama-ctrl-starter.
 In this case, only the card with information about the smart rules is shown.
 - For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
 
-For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
+For an entire tenant, if a "feature web app" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
 available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an {{< enterprise-tenant >}} or {{< management-tenant >}}
 (see also [{{< enterprise-tenant >}} > Managing tenants](/users-guide/enterprise-tenant/#managing-tenants) in the *User guide*)
-and then subscribing to subtenants (the subtenant administrators are then not able to unsubscribe this application if the parent tenant wishes
-to restrict access to the functionality). To create such a "feature application" within a tenant, send a POST request to `/application/applications`
-(as an administrator with the permission to create applications). For example, to disable Analytics Builder:
+and then subscribing to subtenants (the subtenant administrators are then not able to unsubscribe this web app if the parent tenant wishes
+to restrict access to the functionality). To create such a "feature web app" within a tenant, send a POST request to `/application/applications`
+(as an administrator with the permission to create web apps). For example, to disable Analytics Builder:
 
 ```
 {
@@ -56,12 +56,12 @@ Or to disable EPL Apps:
 You can also send the POST request using a curl command, for example, to disable Analytics Builder:
 
 ```
-curl --user username -X POST -H 'Content-Type: application/json' -d '{"name":"feature-disable-analyticsbuilder", "contextPath": "feature-disable-analyticsbuilder", "type":"HOSTED", "resourcesUrl":"/","manifest": {"noAppSwitcher": true},"key":"feature-disable-analyticsbuilder-key"}' -k https://{{hostname}}/application/applications/
+curl --user username -X POST -H 'Content-Type: web app/json' -d '{"name":"feature-disable-analyticsbuilder", "contextPath": "feature-disable-analyticsbuilder", "type":"HOSTED", "resourcesUrl":"/","manifest": {"noAppSwitcher": true},"key":"feature-disable-analyticsbuilder-key"}' -k https://{{hostname}}/application/applications/
 ```
 
 Or to disable EPL Apps:
 ```
-curl --user username -X POST -H 'Content-Type: application/json' -d '{"name":"feature-disable-eplapps", "contextPath": "feature-disable-eplapps", "type":"HOSTED", "resourcesUrl":"/", "manifest": {"noAppSwitcher": true},"key":"feature-disable-eplapps-key"}' -k https://{{hostname}}/application/applications/
+curl --user username -X POST -H 'Content-Type: web app/json' -d '{"name":"feature-disable-eplapps", "contextPath": "feature-disable-eplapps", "type":"HOSTED", "resourcesUrl":"/", "manifest": {"noAppSwitcher": true},"key":"feature-disable-eplapps-key"}' -k https://{{hostname}}/application/applications/
 ```
 
 By default, all users can see the same set of pages (according to the limitations above).
@@ -71,10 +71,10 @@ To enable this, set the category of the tenant option to `streaminganalytics` an
 (also see the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}) or use a curl command as given in the example below:
 
 ```
-curl --user username -X POST -H 'Content-Type: application/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options
+curl --user username -X POST -H 'Content-Type: web app/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options
 ```
 
 where you must replace the username with the name of a user who has ADMIN permission for "Option management".
 
-Note that this only affects the visibility of the cards and pages in the Streaming Analytics application.
+Note that this only affects the visibility of the cards and pages in the Streaming Analytics web app.
 The [supported REST services](/apama/analytics-introduction/#supported-rest-services) only require READ and ADMIN permissions for "CEP management".

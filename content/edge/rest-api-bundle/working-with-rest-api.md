@@ -96,7 +96,7 @@ If the installation fails, this endpoint will be available. You can use the endp
 
 ```http
 POST https://192.168.66.10/edge/install
-Content-Type: application/json
+Content-Type: web app/json
 
 	{
 		"admin": {"username": "admin", "password": "Edge1!23"},
@@ -151,7 +151,7 @@ During the process of changing the domain name, the certificate presented by the
 
 ```http
 POST https://myown.iot.com/edge/configuration/domain
-Content-Type: application/json
+Content-Type: web app/json
 
 	{
     "domain_name": "new.domain.com",
@@ -206,7 +206,7 @@ Use this endpoint to update {{< product-c8y-iot >}} Edge to a newer version.
 
 ```http
 POST https://myown.iot.com/edge/update
-Content-Type: application/json
+Content-Type: web app/json
 
 {
     "type": "upload"
@@ -248,7 +248,7 @@ Do not use the IP addresses 10.244.0.0 and 10.96.0.0 in your network configurati
 
 ```http
 POST https://192.168.66.10/edge/configuration/network
-Content-Type: application/json
+Content-Type: web app/json
 
 {
 	"address": "192.168.66.10",
@@ -269,7 +269,7 @@ After the installation, you can configure the IP range for network CIDR using th
 
 ```http
 POST https://192.168.66.10/edge/configuration/network
-Content-Type: application/json
+Content-Type: web app/json
 
 {
 	"address": "192.168.66.10",
@@ -368,7 +368,7 @@ Use this endpoint to change the hostname of the {{< product-c8y-iot >}} Edge app
 
 ```http
 POST https://myown.iot.com/edge/configuration/hostname
-Content-Type: application/json
+Content-Type: web app/json
 
 {
     "hostname": "new.iotedge.hostname"
@@ -398,7 +398,7 @@ Use this endpoint to configure remote device management.
 
 ```http
 POST https://myown.iot.com/edge/configuration/remote-connectivity
-Content-Type: application/json
+Content-Type: web app/json
 
 {
     "enabled": true,
@@ -448,7 +448,7 @@ Use this endpoint to configure the time synchronization.
 
 ```http
 POST https://myown.iot.com/edge/configuration/time-sync
-Content-Type: application/json
+Content-Type: web app/json
 
 {
     "enabled": true,
@@ -522,7 +522,7 @@ To enable or disable the microservice hosting feature, you must have the "Tenant
 
 ```http
 POST https://myown.iot.com/edge/configuration/microservices
-Content-Type: application/json
+Content-Type: web app/json
 
 {
     "enabled": true
@@ -592,7 +592,7 @@ Use this endpoint to upload the new SSL certificate and the key file.
 
 ```http
 POST https://myown.iot.com/edge/configuration/certificate
-Content-Type: application/json
+Content-Type: web app/json
 
 {
     "renewal_type": "upload"

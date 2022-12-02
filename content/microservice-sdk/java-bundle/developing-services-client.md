@@ -73,7 +73,7 @@ Sending a message:
 POST /service/messaging/smsmessaging/outbound/tel:<sender phone number>/requests
 Host: ...
 Authorization: Basic ...
-Content-Type: application/json
+Content-Type: web app/json
 {
     "outboundSMSMessageRequest": {
         "address": ["tel:<phone number>"],

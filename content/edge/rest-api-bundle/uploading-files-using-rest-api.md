@@ -20,7 +20,7 @@ In the following JSON syntax, the `Content-Type` is set to `application/octet-st
 ```http
 POST https://192.168.66.10/edge/upload/1/certificate_key
 
-Content-Type: application/octet-stream
+Content-Type: web app/octet-stream
 Content-Disposition: attachment; filename="myown-selfsigned.key"
 ```
 

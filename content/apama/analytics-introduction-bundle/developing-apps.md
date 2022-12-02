@@ -6,27 +6,27 @@ layout: redirect
 
 An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different ways:
 
-* You can use the [Streaming Analytics application](#apama-epl-apps) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
+* You can use the [Streaming Analytics web app](#apama-epl-apps) which is available from {{< product-c8y-iot >}}'s web app switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
 {{< c8y-admon-info >}}
-To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, 
+To be able to develop and deploy EPL apps with the Streaming Analytics web app and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}}, 
 your tenant must be subscribed to the Apama-ctrl microservice that supports EPL apps. 
-If you do not see the **EPL Apps** page in the Streaming Analytics application and you wish to use EPL apps, contact [product support](/welcome/contacting-support).
+If you do not see the **EPL Apps** page in the Streaming Analytics web app and you wish to use EPL apps, contact [product support](/welcome/contacting-support).
 {{< /c8y-admon-info >}}
 
 <a name="apama-epl-apps"></a>
-### Developing apps with the Streaming Analytics application
+### Developing apps with the Streaming Analytics web app
 
-The **EPL Apps** page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
+The **EPL Apps** page of the Streaming Analytics web app provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
 
 Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-**Step 1 - Invoke the Streaming Analytics application**
+**Step 1 - Invoke the Streaming Analytics web app**
 
-Open the application switcher and click the icon for the **Streaming Analytics** application. Then navigate to the **EPL Apps** page.
+Open the web app switcher and click the icon for the **Streaming Analytics** web app. Then navigate to the **EPL Apps** page.
 
 When you go to the **EPL Apps** page, the EPL app manager is shown first, listing any existing EPL apps. Each app is shown as a card. You can add new EPL apps and manage existing EPL apps from here.
 
@@ -40,7 +40,7 @@ From this page, you can:
 
 * Create new EPL apps. See below.
 
-* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
+* Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics web app.
 
 * Export EPL apps. Use the **Export** command from the actions menu to download the app as a \*.mon file.
 
@@ -87,7 +87,7 @@ See also [Deploying apps](/apama/analytics-introduction/#deploying-apps).
 <a name="sag-designer"></a>
 ### Developing apps with Software AG Designer
 
-{{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
+{{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL web app. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
 
 **Step 1 - Install Apama**
 
@@ -127,7 +127,7 @@ The bundles above are the only ones that are permissible in an EPL app, so be ca
 
 **Step 4 - Create a monitor file**
 
-To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
+To create a new Apama monitor file, refer to [Creating new monitor files for EPL web apps]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
 
 Before you import the newly created monitor file as an EPL app into {{< product-c8y-iot >}} and activate it there, you might want to test if the monitor file works as expected from within {{< sag-designer >}}.
 
@@ -145,7 +145,7 @@ CUMULOCITY_APPKEY=apamaAppKey
 ```
 
 {{< c8y-admon-info >}}
-You must [create an application](/users-guide/administration#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
+You must [create a web app](/users-guide/administration#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
 {{< /c8y-admon-info >}}
 
 Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:

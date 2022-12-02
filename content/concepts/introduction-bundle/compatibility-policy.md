@@ -15,7 +15,7 @@ weight: 75
 * [Device Integration > Device integration using MQTT](/device-integration/mqtt/)
 
 
-However, {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, applications shall always obey a few basic rules:
+However, {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, web apps shall always obey a few basic rules:
 
 * Clients shall only use documented API methods and documented behavior. Do not rely on undocumented but observed behavior.
 * Clients shall only rely on behavior that is explicitly described in the documentation. For instance, clients shall not rely on a sequence of results if no sort order is guaranteed.
@@ -41,15 +41,15 @@ Regular upgrades to the latest SDK versions are strongly recommended to be able 
 
 #### No forward compatibility
 
-We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} {{< c8y-current-version >}}, make sure that the client library or SDK that you use has version {{< c8y-current-version >}}  or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
+We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or web app against, for example, {{< product-c8y-iot >}} {{< c8y-current-version >}}, make sure that the client library or SDK that you use has version {{< c8y-current-version >}}  or lower. If you take the latest SDK version, build a web app with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
 
 #### Version schema
 
 For clarification, {{< product-c8y-iot >}} uses a four-digit versioning scheme. For compatibility checks, only the first two digits are usually relevant. The fourth digit counts maintenance builds with only corrective functional changes but no breaking API changes.
 
-#### Applications and microservices
+#### web apps and microservices
 
-In general, you can run an older application or microservice version against a newer {{< product-c8y-iot >}} backend, as long as the application or microservice uses documented APIs only.  In the rare case of announced breaking changes it might be required to update the application or microservice with a more recent version of an SDK before the change becomes effective.
+In general, you can run an older web app or microservice version against a newer {{< product-c8y-iot >}} backend, as long as the web app or microservice uses documented APIs only.  In the rare case of announced breaking changes it might be required to update the web app or microservice with a more recent version of an SDK before the change becomes effective.
 
 #### Cumulocity IoT functionality
 

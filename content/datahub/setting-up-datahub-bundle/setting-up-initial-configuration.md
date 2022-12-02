@@ -25,7 +25,7 @@ The name is composed of two parts, with the first part being fixed:
 
 The password of the Dremio API user must have at least eight characters, including at least one character and one number.
 
-Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users).
+Your follow-up web app might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users).
 
 #### Data Lake
 Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
@@ -39,7 +39,7 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
+|Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or web apps.|
 |Azure Storage shared access key|The access key used for authentication|
 
 While the other settings are fixed once the initial configuration was saved, the **Azure Storage shared access key** can be changed afterwards. Click **Edit**, set a new value, and either click **Save credentials** to save the update or **Cancel** to keep the old value.

@@ -11,9 +11,9 @@ For earlier versions of {{< product-c8y-iot >}}, follow the steps in [Manual reg
 
 ### Registration using QR code
 
-1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit web app, click **Connect Smartphone** in the right drawer or in the Welcome widget.
 
-    ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone-right-drawer.jpg)
+    ![Cockpit web app](/images/users-guide/csa/csa-connect-smartphone-right-drawer.jpg)
 
 2.  Follow the instructions in the wizard to step 3, ensuring that the app is installed on the smartphone.
 
@@ -32,7 +32,7 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
 ### Manual registration
 
-1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. In the Device Management application, select **Devices > Registration** from the navigator.
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. In the Device Management web app, select **Devices > Registration** from the navigator.
 
     ![Manual registration](/images/users-guide/csa/csa-device-registration.jpg)
 

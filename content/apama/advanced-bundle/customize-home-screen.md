@@ -1,16 +1,16 @@
 ---
 weight: 90
-title: Customizing the home screen of the Streaming Analytics application
+title: Customizing the home screen of the Streaming Analytics web app
 layout: redirect
 ---
 
-The cards that are shown on the home screen of the Streaming Analytics application contain text and links 
+The cards that are shown on the home screen of the Streaming Analytics web app contain text and links 
 which you can customize on a per-tenant and per-language basis. To do this, download the *documentation.json* file 
 for the language you wish to customize from the URL */service/cep/apamacorrelator/EN/documentation.json* 
 (this must be authenticated for a user in the {{< product-c8y-iot >}} tenant). Replace the "EN" within the URL with the 
 language code for the file you want to download. 
 
-The *documentation.json* file includes the URLs for the documentation links across the Streaming Analytics application 
+The *documentation.json* file includes the URLs for the documentation links across the Streaming Analytics web app 
 and the text that is shown on the home screen. You can modify this to your requirements.
 
 After you have made all required changes, package the modified copies into a ZIP file containing the following files:
@@ -31,8 +31,8 @@ where the *cumulocity.json* file contains the following:
 }
 ```
 
-Then upload the ZIP file using the Administration application: go to **Ecosystem** > **Applications**, click **Add application**, and select the method **Upload web application**. 
-See [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for detailed information.
+Then upload the ZIP file using the Administration web app: go to **Ecosystem** > **Applications**, click **Add web app**, and select the method **Upload web app**. 
+See [Administration > Managing web apps](/users-guide/administration/#managing-applications) in the *User guide* for detailed information.
 
 You may need to clear your browser cache for the changes to take effect. 
 

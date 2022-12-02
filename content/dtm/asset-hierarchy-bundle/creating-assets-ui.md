@@ -4,20 +4,20 @@ title: Creating assets via the UI
 layout: redirect
 ---
 
-You have two options for creating assets in the DTM application.
+You have two options for creating assets in the DTM web app.
 The following section describes how to create an asset via the UI.
-Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.
+Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM web app.
 
 
 <a name="assets"></a>
 ### Assets
 
-In the DTM application assets are the digital representation of physical assets.
-An asset in the DTM application can contain numerous subassets and devices.
+In the DTM web app assets are the digital representation of physical assets.
+An asset in the DTM web app can contain numerous subassets and devices.
 You also have the opportunity to define properties or parameters of an asset through [custom properties](/dtm/asset-types/#property-library).
 
-To work with assets in the DTM application, navigate to the **Assets** page using the navigator on the left.
-When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets.
+To work with assets in the DTM web app, navigate to the **Assets** page using the navigator on the left.
+When you first start using the DTM web app, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets.
 
 ![no-assets-view](/images/dtm/assets/dtm-assets-no-assets.png)
 
@@ -108,7 +108,7 @@ When you create a new asset you have the option of assigning one or more devices
 
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
 
-To add a new device, add it through the **Device Management** application.
+To add a new device, add it through the **Device Management** web app.
 Refer to [Device Management > Connecting devices > Device registration](/users-guide/device-management/#connecting-devices) in the *User guide*.
 
 {{< c8y-admon-info>}}

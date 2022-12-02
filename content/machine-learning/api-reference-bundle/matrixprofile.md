@@ -44,7 +44,7 @@ Get the matrix profile of a specific historical time series data.
 
 curl --request GET "{{url}}/service/zementis/matrixprofile?windowSize={{size}}&source={{id}}&valueFragmentType={{type}}&valueFragmentSeries={{series}}&dateFrom={{start}}&dateTo={{end}}" \
      --header "Authorization: {{auth}} \
-     --header "Accept: application/json"
+     --header "Accept: web app/json"
 ```
 
 **Example Response**

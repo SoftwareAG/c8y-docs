@@ -159,7 +159,7 @@ You can easily restructure groups, subgroups and devices by a drag & drop functi
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
 
 {{< c8y-admon-info >}}
-Smart groups are only available in the Device Management application and not visible in the Cockpit application.
+Smart groups are only available in the Device Management web app and not visible in the Cockpit web app.
 {{< /c8y-admon-info >}}
 
 Smart groups can be created from the device list.

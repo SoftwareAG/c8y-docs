@@ -35,7 +35,7 @@ helpcontent:
   Bulk operations have an operation type, for example "Software update" or "Firmware update", and one of the following statuses: SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY.
 
 
-  You may filter the list of bulk operations for type, status or date. Click the arrow button at the right of a bulk operation to see its details."
+  You can filter the list of bulk operations for type, status or date. Click the arrow button at the right of a bulk operation to see its details."
 - label: events-all
   title: Events
   content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.

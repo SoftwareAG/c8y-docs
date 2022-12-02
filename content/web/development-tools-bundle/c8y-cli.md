@@ -10,7 +10,7 @@ To support you with bootstrapping, running and deploying applications we have bu
 npm install -g @c8y/cli
 ```
 
-If you don't want to install the `@c8y/cli` globally you can also run it with the npx command. E.g. you can scaffold a new project quickly with:
+If you don't want to install the `@c8y/cli` globally you can also run it with the npx command. For example, you can scaffold a new project quickly by executing the following command:
 
 ```
 npx @c8y/cli new

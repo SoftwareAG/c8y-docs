@@ -183,4 +183,4 @@ Your custom widget is now available in your version of the Cockpit application.
 Navigate to the dashboard where the newly added widget is available in the list of widgets to add.
 
 The `widget-plugin` was installed from within the Administration application. This is the main difference between the regular and the new approach regarding widgets.
-Micro frontends architecture allows you to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
+The micro frontends architecture allows you to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).

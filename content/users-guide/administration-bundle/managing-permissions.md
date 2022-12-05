@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
 - label: managing-permissions
   title: Managing permissions
-  content: "Permissions define what a user is allowed to do in Cumulocity IoT applications. To manage permissions more easily, they are grouped into so-called 'roles'. Every user can be associated with a number of roles, adding up permissions of the user.
+  content: "Permissions define what a user is allowed to do in Cumulocity IoT web apps. To manage permissions more easily, they are grouped into so-called 'roles'. Every user can be associated with a number of roles, adding up permissions of the user.
 
 
   In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined (which may serve as a template), but you can define your own according to your needs.
@@ -14,14 +14,14 @@ helpcontent:
   In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device."
 ---
 
-Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
+Permissions define what a user is allowed to do in {{< product-c8y-iot >}} web apps. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
 
 The following types of roles can be associated with users:
 
 - Global roles: Contain permissions that apply to all data within a tenant.
 - Inventory roles: Contain permissions that apply to groups of devices.
 
-Moreover, application access can be granted to enable a user to use an application.
+Moreover, web app access can be granted to enable a user to use a web app.
 
 <a name="global"></a>
 ### Global roles
@@ -35,7 +35,7 @@ In the **Global roles** tab you can find the roles which grant permissions on a 
 {{< c8y-admon-info >}}
 The pre-defined roles are configured as samples for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
 
-On creating a new user, make sure that the global roles you assign to the user contain all necessary permissions relevant for this particular user in either of those roles assigned. Permissions from different roles are merged together when assigned to the same user. If, for example, a user only has the role "Cockpit User" (see below), the user is only able to access the Cockpit application and nothing more. But if you also assign inventory permission via some of the available roles, the user will get access to the whole inventory, such as devices, groups, and configurations.
+On creating a new user, make sure that the global roles you assign to the user contain all necessary permissions relevant for this particular user in either of those roles assigned. Permissions from different roles are merged together when assigned to the same user. If, for example, a user only has the role "Cockpit User" (see below), the user is only able to access the Cockpit web app and nothing more. But if you also assign inventory permission via some of the available roles, the user will get access to the whole inventory, such as devices, groups, and configurations.
 {{< /c8y-admon-info >}}
 
 The roles "admins" and "devices" have a special status:
@@ -79,11 +79,11 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Cockpit User</td>
-<td align="left">Can access the Cockpit application. In addition, you should add a role providing access to devices.</td>
+<td align="left">Can access the Cockpit web app. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
 <td align="left">Devicemanagement User</td>
-<td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
+<td align="left">Can access the Device Management web app. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
 <td align="left">Global Manager</td>
@@ -103,7 +103,7 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Tenant Manager</td>
-<td align="left">Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.</td>
+<td align="left">Can manage tenant-wide settings, such as own web apps, data brokerage, data retention, options and tenant statistics.</td>
 </tr>
 </tbody>
 </table>
@@ -120,7 +120,7 @@ You may also see the following legacy roles:
 
 Click **Add global role** in the **Global roles** tab.
 
-In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right.
+In the **New global role** page you will see a list of permission types at the left and a list of web apps to be accessed at the right.
 
 The following screenshot shows the settings for the "admins" role.
 
@@ -163,7 +163,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Application management</td>
-<td align="left">View or edit the applications available in this account.</td>
+<td align="left">View or edit the web apps available in this account.</td>
 </tr>
 
 <tr>
@@ -248,7 +248,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Tenant statistics</td>
-<td align="left">View the usage data for this account, as shown on the Home screen of the Administration application.</td>
+<td align="left">View the usage data for this account, as shown on the Home screen of the Administration web app.</td>
 </tr>
 
 <tr>
@@ -380,7 +380,7 @@ able to see or change all devices regardless of what inventory roles you set her
 
 Inventory roles are inherited from groups to all their direct and indirect subgroups, and to the devices in these groups. If you select, for example, a role with read permissions on alarms for a group of devices, the user will be able to see alarms of all devices in this group and all its subgroups.
 
-If a user has inventory access to a group of devices, the user will also have that access to all dashboards for that group of devices in the Cockpit application.
+If a user has inventory access to a group of devices, the user will also have that access to all dashboards for that group of devices in the Cockpit web app.
 
 You can also copy inventory roles from another user. To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles. Copying roles makes it easier to manage the permissions of many users as you can create a reference user and then copy the permissions from there.
 
@@ -416,16 +416,16 @@ The setting on tenant level has priority over the setting on platform level.
 By default, this option is enabled.
 
 <a name="app-access"></a>
-### Granting application access
+### Granting web app access
 
-The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order.
+The **Application Access** tab shows a list of all available web apps in your tenant in alphabetical order.
 
-To assign applications to the user, simply select the respective applications and click **Save**.
+To assign web apps to the user, simply select the respective web apps and click **Save**.
 
-For more information on application management, see [Administration > Managing applications](/users-guide/administration#managing-applications).
+For more information on web app management, see [Administration > Managing web apps](/users-guide/administration#managing-applications).
 
 ![Application access](/images/users-guide/Administration/admin-application-access.png)
 
 {{< c8y-admon-info >}}
-If a user has global permission to read all applications, an information box will be shown.
+If a user has global permission to read all web apps, an information box will be shown.
 {{< /c8y-admon-info >}}

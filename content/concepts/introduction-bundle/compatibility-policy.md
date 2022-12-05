@@ -3,7 +3,13 @@ title: Compatibility policy
 weight: 75
 ---
 
-{{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained. The current compatibility statements are described as follows.
+{{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained.
+
+{{< c8y-admon-info >}}
+For details on the release types (such as GA release or Maintenance release) and their version labels see [Release types](https://cumulocity.com/releasenotes/about/release-types/).
+{{< /c8y-admon-info >}}
+
+The current compatibility statements are described as follows.
 
 <a name="api-compatibility"></a>
 #### API compatibility
@@ -43,9 +49,9 @@ Regular upgrades to the latest SDK versions are strongly recommended to be able 
 
 We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} {{< c8y-current-version >}}, make sure that the client library or SDK that you use has version {{< c8y-current-version >}}  or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
 
-#### Version schema
+#### Maintenance release
 
-For clarification, {{< product-c8y-iot >}} uses a four-digit versioning scheme. For compatibility checks, only the first two digits are usually relevant. The fourth digit counts maintenance builds with only corrective functional changes but no breaking API changes.
+For clarification, maintenance releases for the same GA release contain only corrective functional changes but no breaking API changes.
 
 #### Applications and microservices
 

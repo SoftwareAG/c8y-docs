@@ -25,7 +25,7 @@ npx c8ycli serve
 The `serve` command starts a local development server. It supports two important flags:
 
 - `-u`: The -u parameter specifies the Cumulocity instance to which all API requests should be proxied to. This means data is actually pulled from the configured Cumulocity instance.
-- `-p`: The port to use. If not defined, port 3000 is used. If you have an server running on this port already, the command will fail. The application will then be served at the url `http://localhost:<<port>>/apps/<<your-application-name>>/`. Tip: Usually you can simply click on the URL in the terminal by holding `CTRL`.
+- `-p`: The port to use. If not defined, port 9000 is used. If you have a server running on this port already, the command will fail. The application will then be served at the URL `http://localhost:<<port>>/apps/<<your-application-name>>/`. Tip: Click the URL in the terminal while holding the "control" key.
 
 ### General usage
 
@@ -47,7 +47,7 @@ The commands must be executed from the root path of the project.
 
 ### Commands
 
-All the commands except of `new` take an array of [glob patterns](<https://en.wikipedia.org/wiki/Glob_(programming)>). These will be solved to folders or entry point manifests.
+All the commands except of `new` take an array of [glob patterns](<https://en.wikipedia.org/wiki/Glob_(programming)>). These will be resolved to directories or entry point manifests.
 
 ```
     new [name] [template]                   Creates a folder to start a new application or extend an existing one

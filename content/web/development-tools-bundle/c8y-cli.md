@@ -16,7 +16,7 @@ If you don't want to install the `@c8y/cli` globally you can also run it with th
 npx @c8y/cli new
 ```
 
-As any new projects brings a local `@c8y/cli` you can run the project by changing to its folder and run:
+A new project creates a local `@c8y/cli`. You can run the project by navigating to its directory and executing the following command:
 
 ```
 npx c8ycli serve

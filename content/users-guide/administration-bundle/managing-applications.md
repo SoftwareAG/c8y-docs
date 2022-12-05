@@ -1,63 +1,62 @@
 ---
 weight: 30
-title: Managing web apps
+title: Managing applications
 layout: redirect
 helpcontent:
-  - label: web apps
-    title: Web apps
-    content: "In the **Web apps** tab, you can see all web apps available in your tenant. There are two kinds of web apps:
+  - label: applications
+    title: Applications
+    content: "In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
 
-    **Subscribed web apps** - web apps subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of web apps for different purposes. Find a list of all web apps in the *User guide*.
+    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the *User guide*.
 
-    **Custom web apps** - web apps owned by the tenant. You can add custom web apps in various ways as own web apps.
+    **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
 
 
-    Click on a web app to view the web app properties. To add a web app, click **Add web app** and follow the instructions in the wizard, see also the *User guide*."
+    Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
 ---
 
-The {{< product-c8y-iot >}} platform distinguishes between web apps and microservices, see also [Developing web apps](/concepts/applications) in the _Concepts guide_.
+The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications) in the *Concepts guide*.
 
-- [Applications](#applications) - all web apps either subscribed to the tenant or owned by the tenant.
+* [Applications](#applications) -  all web applications either subscribed to the tenant or owned by the tenant.
 
-- [Microservices](#managing-microservices) - server-side web apps used to develop further functionality on top of {{< product-c8y-iot >}}.
+* [Microservices](#managing-microservices) - server-side applications used to develop further functionality on top of {{< product-c8y-iot >}}.
 
 Both can be accessed via the **Ecosystem** menu in the navigator.
 
-Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, that means you can specify a list of web apps that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
+Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, that means you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
 <a name="applications"></a>
+### Applications
 
-### web apps
+Click **Applications** in the **Ecosystem** menu in the navigator to display a list or grid of all applications in your account.
 
-Click **Web apps** in the **Ecosystem** menu in the navigator to display a list or grid of all web apps in your account.
+<img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
 
-<img src="/images/users-guide/Administration/admin-all-applications.png" alt="All web apps" style="max-width: 100%">
+In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
-In the **All web apps** tab, you can see all web apps available in your tenant. There are two kinds of web apps:
+- [Subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or a service provider.
+- [Custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
 
-- [Subscribed web apps](#subscribed-applications) - web apps subscribed to the tenant, either provided by the platform (as default web apps) or a service provider.
-- [Custom web apps](#own-applications) - web apps owned by the tenant. You can [add custom web apps](#adding-applications) in various ways as own web apps.
-
-Your web apps are available through the web app switcher in the top bar.
+Your applications are available through the application switcher in the top bar.
 
 <img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
+
 <a name="subscribed-applications"></a>
+### Subscribed applications
 
-### Subscribed web apps
+{{< product-c8y-iot >}} provides a variety of applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
-{{< product-c8y-iot >}} provides a variety of web apps for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available web apps.
-
-Below all web apps are listed which are by default available in the {{< standard-tenant >}} or {{< enterprise-tenant >}}. In addition, numerous optional web apps might be subscribed to your tenant.
+Below all applications are listed which are by default available in the {{< standard-tenant >}} or {{< enterprise-tenant >}}. In addition, numerous optional applications might be subscribed to your tenant.
 
 {{< c8y-admon-info >}}
-In the **All web apps** tab, subscribed web apps are labeled as "Subscribed". Subscribed web apps may not be added, modified or removed by the user but only by a tenant administrator.
+In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
 {{< /c8y-admon-info >}}
 
-#### web apps subscribed by default
+#### Applications subscribed by default
 
 <table>
 <col width="150">
@@ -77,9 +76,9 @@ In the **All web apps** tab, subscribed web apps are labeled as "Subscribed". Su
 <tbody>
 <tr>
 <td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
-<td style="text-align:left">Lets account administrators manage users, roles, tenants and web apps</td>
+<td style="text-align:left">Lets account administrators manage users, roles, tenants and applications</td>
 <td style="text-align:left">administration</td>
-<td style="text-align:left">Web web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
@@ -87,7 +86,7 @@ In the **All web apps** tab, subscribed web apps are labeled as "Subscribed". Su
 <td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective</td>
 <td style="text-align:left">cockpit</td>
-<td style="text-align:left">Web web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
@@ -95,14 +94,14 @@ In the **All web apps** tab, subscribed web apps are labeled as "Subscribed". Su
 <td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
-<td style="text-align:left">Web web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled)</td>
 <td style="text-align:left">Streaming Analytics</td>
-<td style="text-align:left">Web web app</td>
+<td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}} (limited version for Analytics Builder), {{< enterprise-tenant >}} (full version)</td>
 </tr>
 
@@ -111,110 +110,104 @@ In the **All web apps** tab, subscribed web apps are labeled as "Subscribed". Su
 </tbody>
 </table>
 
-<a name="own-applications"></a>
 
+<a name="own-applications"></a>
 ### Custom applications
 
 Custom applications may be
 
-- web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific web app (for example, a widget to the Cockpit dashboard)
-- links to a web app running elsewhere
-- duplicates of subscribed web apps (in order to be able to customize them)
+* web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard)
+* links to an application running elsewhere
+* duplicates of subscribed applications (in order to be able to customize them)
 
-In the **All web apps** tab, custom web apps are labeled as "Custom".
+In the **All applications** tab, custom applications are labeled as "Custom".  
 
 <a name="adding-applications"></a>
-
 #### To add a custom application
 
-Click **Add application** at the top right of the **All web apps** tab.
+Click **Add application** at the top right of the **All applications** tab.
 
-<img src="/images/users-guide/Administration/admin-application-add.png" alt="Add web app methods">
+<img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
 In the resulting dialog box, select one of the following methods:
 
-- [Upload web app](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system
-- [External web app](#external-application) - by linking to a web app running elsewhere
-- [Install from available packages](#blueprint-application) - by selecting a package blueprint
-- [Duplicate existing web app](#clone-application) - by creating a copy of an existing web app
+* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system
+* [External application](#external-application) - by linking to an application running elsewhere
+* [Install from available packages](#blueprint-application) - by selecting a package blueprint
+* [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
 <a name="uploading-zip-files"></a>
+##### To upload a web application
 
-##### To upload an application
-
-1. Click **Add web app** at the top right of the **All web apps** tab.
-2. Select **Upload web app**.
+1. Click **Add application** at the top right of the **All applications** tab.
+2. Select **Upload web application**.
 3. In the resulting dialog box, drop a ZIP file or browse for it in your file system.
 
-The web app is created once the ZIP file has been successfully uploaded.
+The application is created once the ZIP file has been successfully uploaded.
 
 {{< c8y-admon-important >}}
-The ZIP file must contain the _index.html_ and _cumulocity.json_ in its root directory, otherwise the web app will not work.
+The ZIP file must contain the *index.html* and *cumulocity.json* in its root directory, otherwise the application will not work.
 {{< /c8y-admon-important >}}
 
 <a name="external-application"></a>
-
 ##### To link to an external application
 
-1. Click **Add web app** at the top right of the **All web apps** tab.
-2. Select **External web app**.
-   <br><br>
-   <img src="/images/users-guide/Administration/admin-application-external.png" alt="External web app">
-   <br><br>
-3. In the resulting dialog box, enter the name of the web app. The name will be shown as title of the web app.
-4. Enter a web app key, used to identify this web app.
-5. Enter the external URL where the web app can be reached.
-6. Click **Save** to create the web app.
+1. Click **Add application** at the top right of the **All applications** tab.
+2. Select **External application**.
+<br><br>
+<img src="/images/users-guide/Administration/admin-application-external.png" alt="External application">
+<br><br>
+3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
+5. Enter an application key, used to identify this application.
+6. Enter the external URL where the application can be reached.
+7. Click **Save** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
 <a name="blueprint-application"></a>
-
 ##### To install an application from a blueprint
 
-1. Click **Add web app** at the top right of the **All web apps** tab.
+1. Click **Add application** at the top right of the **All applications** tab.
 2. Select **Install from available packages**.
-3. Select the desired package.
-4. In the resulting dialog box, enter the name of the web app. The name will be shown as title of the web app.
-5. Enter a web app key, used to identify this web app.
-6. Enter the path where the web app can be reached.
-7. Click **Save** to create the web app.
+3. Select the desired package. 
+4. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
+5. Enter an application key, used to identify this application.
+6. Enter the path where the application can be reached.
+7. Click **Save** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
 <a name="clone-application"></a>
-
 ##### To duplicate an application
 
-Duplicating a web app might be useful if you want to customize a subscribed web app according to your needs. Duplicating a subscribed web app creates a copy of the web app as an own web app, with a link to the original web app.
+Duplicating an application might be useful if you want to customize a subscribed application according to your needs. Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
-1. Click **Add web app** at the top right of the **All web apps** tab.
-2. In the upcoming dialog, select **Duplicate existing web app**.
-3. Select the desired web app from the dropdown list, for example "Cockpit".
-4. In the next window, provide a name for the web app, a web app key to identify the web app, and a path as part of the URL to invoke the web app. Per default, the values of the original web app are provided, extended by a number. If you set the path to the path of the original subscribed web app, your own web app will overrule the subscribed web app.
-   <br><br>
-   <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate web app">
-   <br><br>
-   {{< c8y-admon-info >}}
-   The platform restricts the use of the prefix "feature-" in the **Name** field. You cannot create web apps using this prefix in the web app name. This also applies to existing web apps in cases where the duplicate web app feature is used.
-   {{< /c8y-admon-info >}}
-5. Finally, click **Duplicate** to create the web app.
+1. Click **Add application** at the top right of the **All applications** tab.
+2. In the upcoming dialog, select **Duplicate existing application**.
+3. Select the desired application from the dropdown list, for example "Cockpit".
+4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.
+<br><br>
+<img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
+<br><br>
+    {{< c8y-admon-info >}}
+The platform restricts the use of the prefix "feature-" in the **Name** field. You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
+    {{< /c8y-admon-info >}}
+5. Finally, click **Duplicate** to create the application.
 
 {{< c8y-admon-info >}}
-In case the web app has been subscribed to the tenant, there is an additional toggle **Overrule subscribed web app**. If you turn this toggle on, the values for name, key and path will be inherited from the original web app and your duplicated web app will overrule the subscribed web app. Turn it off, to modify the values.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate web app">
+In case the application has been subscribed to the tenant, there is an additional toggle **Overrule subscribed application**. If you turn this toggle on, the values for name, key and path will be inherited from the original application and your duplicated application will overrule the subscribed application. Turn it off, to modify the values.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
 <a name="application-properties"></a>
-
 ### Application properties
 
-To display further details on a web app, click it to open its **Properties** tab.
+To display further details on an application, click it to open its **Properties** tab.
 
 <img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
-In the **Properties** tab, each web app will show the following information, depending on the web app type (hosted or external):
+In the **Properties** tab, each application will show the following information, depending on the application type (hosted or external):
 
 <table>
 <col width="150">
@@ -225,7 +218,7 @@ In the **Properties** tab, each web app will show the following information, dep
 <tr>
 <th style="text-align:left">Field</th>
 <th style="text-align:left">Description</th>
-<th style="text-align:left">Hosted (web app)</th>
+<th style="text-align:left">Hosted (web application)</th>
 <th style="text-align:left">External</th>
 </tr>
 </thead>
@@ -238,13 +231,13 @@ In the **Properties** tab, each web app will show the following information, dep
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
-<td style="text-align:left">Application name; will be shown as title of the web app in the top bar and in the web app switcher</td>
+<td style="text-align:left">Application name; will be shown as title of the application in the top bar and in the application switcher</td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the web app and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
+<td style="text-align:left">Used to identify the application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
@@ -256,40 +249,39 @@ In the **Properties** tab, each web app will show the following information, dep
 </tr>
 <tr>
 <td style="text-align:left">Path</td>
-<td style="text-align:left">Part of the URL invoking the web app</td>
+<td style="text-align:left">Part of the URL invoking the application</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Specified by the user; for example, if you use "hello" as web app path, the URL of the web app will be "/apps/hello"</td>
+<td style="text-align:left">Specified by the user; for example, if you use "hello" as application path, the URL of the application will be "/apps/hello"</td>
 </tr>
 </tbody>
 </table>
 
-### web app plugins
+### Application plugins
 
-Switch to the **Plugins** tab to view all plugins installed on a web app. Plugins can be used to extend existing web apps without the need of re-building the web app.
+Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
 
 <img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
 
-In the **Plugins** tab you can add and remove plugins. Additionally, you can install plugins to a web app.
+In the **Plugins** tab you can add and remove plugins. Additionally, you can install plugins to an application.
 
 <a name="editing-and-removing"></a>
+### To edit an application
 
-### To edit a web app
+Simply click the application or click the menu icon at the right of an entry and then click **Edit**.
 
-Simply click the web app or click the menu icon at the right of an entry and then click **Edit**.
-
-In the **Properties** tab, several fields can be modified, depending on the web app type (see [Application properties](#application-properties)).
+In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 {{< c8y-admon-important >}}
-Never change the system web app names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
+Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 {{< /c8y-admon-important >}}
 
-### To delete a web app
+### To delete an application
 
 Click the menu icon at the right of an entry and then click **Delete**.
 
-If you delete a web app that overwrites a subscribed web app, the currently subscribed web app becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed web app.
+If you delete an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
-It is not possible to delete subscribed web apps. This can only be done by the owner of the subscribed web app.
+It is not possible to delete subscribed applications. This can only be done by the owner of the subscribed application.
 
 ### Uploading archives
 
@@ -306,43 +298,43 @@ For custom applications, multiple file versions can be stored in {{< product-c8y
 Once uploaded, the recently uploaded version is automatically the active version, that is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 {{< c8y-admon-info >}}
-The archive functionality is not available for subscribed applications, as only the owner of the web app can perform these actions.
+The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
 {{< /c8y-admon-info >}}
 
-#### To restore an olderapplication version
+#### To restore an older application version
 
-Users can restore previous versions of a application from an archive.
+Users can restore previous versions of an application from an archive.
 
-1. Open the application properties for the respective web app by clicking on it.
+1. Open the application properties for the respective application by clicking on it.
 2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
 
 #### To reactivate a single application
 
 If a hosted application is not deployed correctly, users may reactivate it.
 
-1. Open the web app properties for the respective web app by clicking on it.
-2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate**.
+1. Open the application properties for the respective application by clicking on it.
+3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate**.
 
-The selected web app will be reactivated by removing the respective files from the web app directory and unpacking the host web app package again.
+The selected application will be reactivated by removing the respective files from the application directory and unpacking the host application package again.
 
 ### Packages
 
-Packages are combinations of plugins and blueprints which can be packed together into a single package and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to web apps without coding knowledge.
+Packages are combinations of plugins and blueprints which can be packed together into a single package and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge. 
 
-Packages can contain two types of web apps:
+Packages can contain two types of applications:
 
-- [**Plugins**](#application-plugins) can be used to extend existing web apps without the need of re-building the web app.
-- **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new web app from scratch.
+- [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
+- **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
 
-Packages can be located on the **Packages** tab in the **Web apps** page.
+Packages can be located on the **Packages** tab in the **Applications** page.
 
 <img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
 
 To add a new package click **Add package** at the top right.
 
-By clicking on a package, you can see the package details such as **Package overview** which includes a description and images as well as some meta information which is taken from the _package.json_.
+By clicking on a package, you can see the package details such as **Package overview** which includes a description and images as well as some meta information which is taken from the *package.json*.
 
-Additionally, it is possible to view all available plugins within the selected package at the right. To install a plugin click **Install plugin** and select the desired web app.
+Additionally, it is possible to view all available plugins within the selected package at the right. To install a plugin click **Install plugin** and select the desired application.  
 
 <img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
 
@@ -350,7 +342,7 @@ In the **Archives** tab, you see all previously uploaded binaries related to the
 
 <img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
 
-In the **Versions** tab of a package, you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, web apps or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+In the **Versions** tab of a package, you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
 To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
 
@@ -358,7 +350,7 @@ To switch to a different version open the context menu for the desired version a
 
 ### Features
 
-Features are web apps which are built-in and not represented by an explicit artifact (like microservices or web apps).
+Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications).
 
 In the **Features** tab, you will find a list of all features subscribed in your tenant. In an {{< enterprise-tenant >}}, the following features are available by default:
 
@@ -400,7 +392,7 @@ In the **Features** tab, you will find a list of all features subscribed in your
 </table>
 
 {{< c8y-admon-info >}}
-All web apps listed here are of the type "Feature".
+All applications listed here are of the type "Feature".
 {{< /c8y-admon-info >}}
 
 Other features may show up, depending on the individual subscriptions of your tenant.

@@ -2,22 +2,23 @@
 weight: 60
 title: Managing data
 helpcontent:
-- label: retention-rules
-  title: Retention rules
-  content: "Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings). You can however store measurements for 90 days for example, but delete alarms already after 10 days."
-- label: files
-  title: Files repository
-  content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page."
+  - label: retention-rules
+    title: Retention rules
+    content: "Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings). You can however store measurements for 90 days for example, but delete alarms already after 10 days."
+  - label: files
+    title: Files repository
+    content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web apps uploaded from the **Own web apps** page."
 ---
 
 <a name="retention-rules"></a>
+
 ### Retention rules
 
 Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings).
 
 You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
 
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration application.
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration web app.
 
 Click **Retention rules** in the **Management** menu to view a list of retention rules configured for your account.
 
@@ -25,23 +26,25 @@ Click **Retention rules** in the **Management** menu to view a list of retention
 
 For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
 
-The asterisk ("*") indicates that data with any value will be cleaned up.
+The asterisk ("\*") indicates that data with any value will be cleaned up.
 
 #### Data types
 
 The following data types are covered under retention rules:
-+ Alarms
-+ Audits
-+ Bulk operations
-+ Events
-+ Measurements
-+ Operations
+
+- Alarms
+- Audits
+- Bulk operations
+- Events
+- Measurements
+- Operations
 
 {{< c8y-admon-info >}}
 Retention rules do not apply to files stored in the files repository.
 {{< /c8y-admon-info >}}
 
 <a name="add-retention-rule"></a>
+
 #### To add a retention rule
 
 1. Click **Add rule** in the top menu bar.
@@ -54,7 +57,7 @@ Retention rules do not apply to files stored in the files repository.
 The retention rule will be added to the list.
 
 {{< c8y-admon-info >}}
-Per default, an asterisk ("*") is set in all fields except the **Maximum age** field, to include all values.
+Per default, an asterisk ("\*") is set in all fields except the **Maximum age** field, to include all values.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
@@ -66,7 +69,6 @@ Alarms are only removed if they have a status of CLEARED.
 Simply click the row of the rule you want to edit.
 
 For details on the fields, see [To add a retention rule](#add-retention-rule).
-
 
 #### To delete a retention rule
 
@@ -95,13 +97,14 @@ The source parameter is the ID of the device. When it is defined, the retention 
 {{< /c8y-admon-info >}}
 
 <a name="files"></a>
+
 ### Managing files in the file repository
 
 The file repository provides an overview of the files stored in your account.
 
 Click **Files repository** in the **Management** menu to see a list of files.
 
-The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **All applications** page.
+The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web apps uploaded from the **All web apps** page.
 
 For each file, the name of the file, its owner, the file type (for example, image/bmp, text/csv), its size and the date when it was last updated is provided.
 
@@ -115,16 +118,14 @@ Click **Upload file** in the top menu bar.
 
 In the resulting dialog box, select a file to be uploaded. If you want to upload more than one file, click **Add file** to select another file. You may also delete a file before uploading by clicking the delete icon at the right of the file field.
 
-
 #### To download a file from your account
 
 Click the menu icon at the right of the respective row and then click **Download**.
-
 
 #### To delete a file from your account
 
 Click the menu icon at the right of the respective row and then click **Delete**.
 
 {{< c8y-admon-info >}}
-If the file corresponds to an active application, it cannot be deleted. You must first remove or upgrade the application to be able to delete it.
+If the file corresponds to an active web app, it cannot be deleted. You must first remove or upgrade the web app to be able to delete it.
 {{< /c8y-admon-info >}}

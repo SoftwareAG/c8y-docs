@@ -21,7 +21,6 @@ helpcontent:
 	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Administration > Configuring single-sign on* in the *User guide*."
 ---
 
-
 From the **Settings** menu, administrators can manage various settings for the account:
 
 - Configure [authentication settings](#authentication) and [single sign-on](#configuring-single-sign-on).
@@ -31,6 +30,7 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Manage the [connectivity settings](#connectivity).
 
 <a name="authentication"></a>
+
 ### Changing authentication settings
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
@@ -45,11 +45,11 @@ To see the **Authentication** menu entry, you must have "Tenant management" ADMI
 
 In the **Preferred login mode** field, you can select one of the following options:
 
-* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
-* Basic Auth - Should be selected only for specific compatibility reasons, since it only provides basic security.
-* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
+- OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
+- Basic Auth - Should be selected only for specific compatibility reasons, since it only provides basic security.
+- Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
-This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
+This login mode will be used by the platform's web apps as the default method to authenticate users. Device authentication stays unchanged.
 
 {{< c8y-admon-important >}}
 Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
@@ -68,14 +68,15 @@ The password validity limit and the password strength may not be editable, if co
 {{< /c8y-admon-info >}}
 
 <a name="basic-auth-restrictions"></a>
+
 #### Basic Auth restrictions
 
 Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
 
 Use the **Forbidden for web browsers** toggle to disallow the usage of basic authentication for web browsers. Moreover you can specify the following parameters:
 
-* **Trusted user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted.
-* **Forbidden user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.
+- **Trusted user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and having a valid basic authentication date will be accepted.
+- **Forbidden user agents** - this list is empty by default. If some user agent is added, all the HTTP requests containing this entry in the `User-Agent` header and using basic authentication will be rejected.
 
 {{< c8y-admon-info >}}
 If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
@@ -87,7 +88,7 @@ OAI-Secure is a more secure alternative to the Basic Auth mode that also support
 
 ##### OAI-Secure without the configuration related to the session management (session configuration turned off)
 
-When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
+When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.
 
 ##### OAI-Secure with the configuration of the session management (session configuration turned on)
 
@@ -140,19 +141,18 @@ If the **Use session configuration** option is enabled, the following settings c
 
 {{< c8y-admon-info >}}
 The time parameters should depend on each other in the following manner: renewal timeout < token lifespan < absolute timeout.
-Moreover, the renewal timeout should be approximately half of the token lifespan.      
+Moreover, the renewal timeout should be approximately half of the token lifespan.
 
-Therefore, the recommended settings for a standard use case for OAI-Secure are the following:   
+Therefore, the recommended settings for a standard use case for OAI-Secure are the following:
 
- * **Session absolute timeout**: 28 800 seconds (8 hours)        
- * **Session renewal timeout**: 2700 seconds (45 minutes)        
- * **Token lifespan**: 5400 seconds (90 minutes)
+- **Session absolute timeout**: 28 800 seconds (8 hours)
+- **Session renewal timeout**: 2700 seconds (45 minutes)
+- **Token lifespan**: 5400 seconds (90 minutes)
 
 In such configurations, the idle timeout is in the range of 45 to 90 minutes, depending on when the last activity for the session was performed.
 {{< /c8y-admon-info >}}
 
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
-
 
 <a name="token-settings"></a>
 
@@ -165,14 +165,16 @@ The lifespan of the tokens and the cookie is configurable by tenant options belo
 
 JWT tokens stored in the browser cookie have a default validity time of two weeks.
 This can be changed with tenant options:
- - category: `oauth.internal`;
- - key: `basic-token.lifespan.seconds`;
+
+- category: `oauth.internal`;
+- key: `basic-token.lifespan.seconds`;
 
 The minimum allowed value is 5 minutes.
 
 ##### Lifespan configuration of cookies
 
 Cookies used to store a JWT token in a browser have their own validity time that can be changed with tenant options:
+
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
@@ -181,6 +183,7 @@ The default value is two weeks. To have the cookie deleted when the user closes 
 ##### Lifespan configuration of JWT in response body
 
 The lifespan of JWT tokens generated in the response body is configured with the following tenant options:
+
 - category: `oauth.internal`;
 - key: `body-token.lifespan.seconds`;
 
@@ -196,17 +199,18 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 
 You may select one of the following options:
 
-* **SMS-based**, supporting the following settings:
-	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
-   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
-   <br><br>
+- **SMS-based**, supporting the following settings: - **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
 
-	{{< c8y-admon-info >}}
-An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
+  - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
+    <br><br>
+
+    {{< c8y-admon-info >}}
+
+  An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
   {{< /c8y-admon-info >}}
 
-* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
-	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
+- **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
+  - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
 {{< c8y-admon-info >}}
 The TOTP method is only available with the login mode "OAI-Secure".
@@ -223,28 +227,30 @@ Users with a "devices" role are excluded from TFA and TOTP. This is also true wh
 {{< /c8y-admon-info >}}
 
 <a name="default-app"></a>
-### Changing application settings
 
-Click **Application** in the **Settings** menu to change applications settings.
+### Changing web app settings
 
-![Default application](/images/users-guide/Administration/admin-settings-application.png)
+Click **Application** in the **Settings** menu to change web apps settings.
 
-Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
+![Default web app](/images/users-guide/Administration/admin-settings-application.png)
+
+Under **Default web app**, you can select a default web app from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific web app, the web app selected as default is used as default landing page.
 
 {{< c8y-admon-info >}}
-All users must have access to this application.
+All users must have access to this web app.
 {{< /c8y-admon-info >}}
 
 Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the {{< product-c8y-iot >}} API.
 
-The **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
+The **Allowed Domain** setting will enable your JavaScript web apps to directly communicate with REST APIs.
 
-* Set it to "*" to allow communication from any host.
-* Set it to `http://my.host.com`, `http://myother.host.com` to allow applications from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
+- Set it to "\*" to allow communication from any host.
+- Set it to `http://my.host.com`, `http://myother.host.com` to allow web apps from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
 <a name="properties"></a>
+
 ### Managing the properties library
 
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
@@ -255,18 +261,19 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 
 - Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
-- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
+- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit web app.
 
 {{< c8y-admon-info >}}
 Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 {{< /c8y-admon-info >}}
 
 <a name="add-property"></a>
+
 #### To add a custom property
 
 1. Select the tab for the desired property and click **Add property**.
 
-	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
+   ![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
 
 1. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list.
 
@@ -323,13 +330,13 @@ Custom properties are visible to all authenticated users of the tenant, regardle
 2. Do your edits. For details on the fields see [To add a custom property](#add-property).
 3. Click **Save** to save your settings.
 
-
 #### To remove a custom property
 
 1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.
 
 <a name="sms-provider"></a>
+
 ### Providing SMS provider credentials
 
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, for example, on alarms.
@@ -338,26 +345,27 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 #### To enter SMS provider credentials
 
-1. Click **SMS provider** in the **Settings** menu.
+1.  Click **SMS provider** in the **Settings** menu.
 
-    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+        ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
 
-	{{< c8y-admon-info >}}
-To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
-  {{< /c8y-admon-info >}}
+        {{< c8y-admon-info >}}
 
-2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
+    To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
+    {{< /c8y-admon-info >}}
 
-3. In the resulting dialog, enter the required credentials and properties or specify optional settings, which differ depending on the provider you selected.
+2.  In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 
-4. Click **Save** to save your settings.
+3.  In the resulting dialog, enter the required credentials and properties or specify optional settings, which differ depending on the provider you selected.
+
+4.  Click **Save** to save your settings.
 
 {{< c8y-admon-info >}}
 OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select one of the other SMS providers.
 {{< /c8y-admon-info >}}
 
-
 <a name="connectivity"></a>
+
 ### Managing the connectivity settings
 
 In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials ADMIN permissions are required.

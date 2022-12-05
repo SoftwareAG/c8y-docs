@@ -6,24 +6,23 @@ layout: redirect
 
 {{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT.
 
-
 {{< c8y-admon-req >}}
 To use the SSO feature the following requirements must be met:
 
-* The authorization server you use supports OAuth2 authorization code grant.
-* The access token is issued as JWT and you know what goes into the token content.
-* The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
-* The {{< product-c8y-iot >}} platform is in version 10.4.6 but preferably higher.
-* All microservices are built with Microservice Java SDK version 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
-* For on premises installation the domain-based tenant resolution is configured properly.
-* For {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If SSO providers have a list of allowed domains, the enterprise domain should be added to that list.
-* You must assign a role to the user with at least READ permission for "Own user management", otherwise the user cannot log in.
-* Users must have cookies enabled in the browser settings, as the SSO feature is built on top of cookies technology.
-{{< /c8y-admon-req >}}
+- The authorization server you use supports OAuth2 authorization code grant.
+- The access token is issued as JWT and you know what goes into the token content.
+- The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
+- The {{< product-c8y-iot >}} platform is in version 10.4.6 but preferably higher.
+- All microservices are built with Microservice Java SDK version 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the _Microservice SDK guide_.
+- For on premises installation the domain-based tenant resolution is configured properly.
+- For {{< enterprise-tenant >}}s, the enterprise domain must be set up as redirect URI in the basic configurations. If SSO providers have a list of allowed domains, the enterprise domain should be added to that list.
+- You must assign a role to the user with at least READ permission for "Own user management", otherwise the user cannot log in.
+- Users must have cookies enabled in the browser settings, as the SSO feature is built on top of cookies technology.
+  {{< /c8y-admon-req >}}
 
 ### Configuration settings
 
-To enable the SSO feature, the administrator must configure a connection with the authorization server. This is done in the Administration application.
+To enable the SSO feature, the administrator must configure a connection with the authorization server. This is done in the Administration web app.
 
 #### Configuration access
 
@@ -39,6 +38,7 @@ Note that the tab is only visible for tenants which have access to the SSO confi
 At the top left, you can select a template. The selected option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 
 <a name="custom-template"></a>
+
 #### Custom template
 
 ![Custom authorization request](/images/users-guide/Administration/sso-custom-authorization-request.png)
@@ -59,21 +59,21 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 
 ![Custom basic configuration](/images/users-guide/Administration/sso-custom-basic.png)
 
-|Field|Description|
-|:---|:---|
-|Redirect URI|Redirect parameter. Can be used in request definitions as a ${redirectUri} placeholder
-|Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} placeholder
-|Button name|Name displayed on the button on the **Login** page
-|Issuer|OAuth token issuer
-|Provider name|Name of the provider
-|Visible on Login page|Indicates whether the login option is enabled or not
-|Audience|Expected aud parameter of JWT
+| Field                 | Description                                                                                 |
+| :-------------------- | :------------------------------------------------------------------------------------------ |
+| Redirect URI          | Redirect parameter. Can be used in request definitions as a ${redirectUri} placeholder      |
+| Client ID             | OAuth connection client ID. Can be used in request definitions as a ${clientId} placeholder |
+| Button name           | Name displayed on the button on the **Login** page                                          |
+| Issuer                | OAuth token issuer                                                                          |
+| Provider name         | Name of the provider                                                                        |
+| Visible on Login page | Indicates whether the login option is enabled or not                                        |
+| Audience              | Expected aud parameter of JWT                                                               |
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
- ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
+![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
 
- In the example above, if a user tries to login a decoded JWT claims look like:
+In the example above, if a user tries to login a decoded JWT claims look like:
 
 ```json
 {
@@ -83,7 +83,7 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global role "business" and the default application "cockpit".
+The user will be granted access to the global role "business" and the default web app "cockpit".
 
 If no access mapping matches the user access token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
 
@@ -93,25 +93,24 @@ New roles are added to the user from every matching access mapping. If one acces
 
 When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with "cur". "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
-In case the asterisk character should be matched literally it must be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
+In case the asterisk character should be matched literally it must be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\\*ipsum".
 
-
- ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-WHEN.png)
+![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-WHEN.png)
 
 In this case the following claim will match the condition:
 
- ```json
- {
- ...
- "user": {
-    "type": "human"
- },
- "role": [
-    "ADMIN"
- ],
- ...
- }
- ```
+```json
+{
+...
+"user": {
+   "type": "human"
+},
+"role": [
+   "ADMIN"
+],
+...
+}
+```
 
 There is an option to verify that a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
@@ -120,24 +119,24 @@ This means that dynamic access mapping assigns user roles, based on the access t
 It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login.
 To change this behavior, select one of the following radio buttons at the bottom of the **Access mapping** section:
 
-* **Use dynamic access mapping only on user creation**
+- **Use dynamic access mapping only on user creation**
 
   When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
 
-* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged**
+- **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged**
 
   When selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
 
 ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
-Selecting one of the two options mentioned above will also enable admins to edit roles of SSO users in the user management. For details, refer to [Administration > Managing permissions](/users-guide/administration/#attach-global) in the *User guide*.
+Selecting one of the two options mentioned above will also enable admins to edit roles of SSO users in the user management. For details, refer to [Administration > Managing permissions](/users-guide/administration/#attach-global) in the _User guide_.
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
 
 ![User ID configuration](/images/users-guide/Administration/sso-custom-userid-config.png)
 
- If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
+If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
 
 Next, the **User data mappings** can be configured:
 
@@ -151,34 +150,34 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 1. By specifying the Azure AD certificate discovery address.
 
- ![Signature verification Azure](/images/users-guide/Administration/sso-signature-verification-Azure-AD.png)
+![Signature verification Azure](/images/users-guide/Administration/sso-signature-verification-Azure-AD.png)
 
 2. By specifying the ADFS manifest address (for ADFS 3.0).
 
- ![Signature verification ADFS](/images/users-guide/Administration/sso-signature-verification-ADFS-manifest.png)
+![Signature verification ADFS](/images/users-guide/Administration/sso-signature-verification-ADFS-manifest.png)
 
 3. By providing the public key of a certificate manually to {{< product-c8y-iot >}}. A certificate definition requires an algorithm information, public key value and validity period.
 
- ![Signature verification Custom](/images/users-guide/Administration/sso-signature-verification-custom.png)
+![Signature verification Custom](/images/users-guide/Administration/sso-signature-verification-custom.png)
 
 4. By specifying the JWKS (JSON Web Key Set) URI. JWKS is a set of JWK objects containing a public key used to verify tokens issued by the authorization server.
 
- ![Signature verification JWKS](/images/users-guide/Administration/sso-signature-verification-JWKS.png)
-
+![Signature verification JWKS](/images/users-guide/Administration/sso-signature-verification-JWKS.png)
 
 {{< c8y-admon-info >}}
 {{< product-c8y-iot >}} only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (for example Elliptic-curves) are not supported.
 {{< /c8y-admon-info >}}
 
 #### Placeholders
+
 Inside some fields you can use placeholders that are resolved by {{< product-c8y-iot >}} at runtime. Available placeholders are:
 
-|Placeholder|Description|
-|:---|:---|
-|clientId|Value of the **Client ID** field
-|redirectUri| Value of the **Redirect URI** field
-|code|Code returned by the authorization server in response to authorization request
-|refreshToken| Refresh token returned by the authorization server after token request
+| Placeholder  | Description                                                                    |
+| :----------- | :----------------------------------------------------------------------------- |
+| clientId     | Value of the **Client ID** field                                               |
+| redirectUri  | Value of the **Redirect URI** field                                            |
+| code         | Code returned by the authorization server in response to authorization request |
+| refreshToken | Refresh token returned by the authorization server after token request         |
 
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
 
@@ -202,34 +201,35 @@ You nee administrative access to your Azure AD.
 
 #### Configuring Azure AD
 
-To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registration in Azure AD.  
+To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registration in Azure AD.
 
 1. Select **App Registrations** under **Manage** on the left and at the top click **New Registration**.
-3. In the resulting window, provide a name for the new App registration.
-4. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
-5. Click **Register** to create the App registration.
+2. In the resulting window, provide a name for the new App registration.
+3. As **Redirect URI type** select "Web" and enter the URL to your tenant OAuth endpoint, for example "https:&#47;/documentation.cumulocity.com/tenant/oauth"\*". You can derive this value from your {{< product-c8y-iot >}} tenant. Navigate to **Administration** > **Settings** > **Authentication** > **Single sign-on**. The redirect URL is prefilled by the platform.
+4. Click **Register** to create the App registration.
 
-The overview in the details page of your App registration contains several IDs and endpoints that you need later on, like the Application (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
+The overview in the details page of your App registration contains several IDs and endpoints that you need later on, like the web app (client) ID and the Directory (tenant) ID (for your tenant in {{< product-c8y-iot >}}).
 
 ![App registration overview](/images/users-guide/Administration/admin-AAD-registration.png)
 
-Moreover, the App registration requires a secret which is used by {{< product-c8y-iot >}} for the authentication.  
+Moreover, the App registration requires a secret which is used by {{< product-c8y-iot >}} for the authentication.
 
 1. In the details page of your App registration, click **Certificates & secrets** under **Manage** on the left.
 2. Select **New client secret**.
 3. Enter a description and select an expiry time.
-4. Click **Add** to add the secret.  
+4. Click **Add** to add the secret.
 
 {{< c8y-admon-caution >}}
+
 - Copy the value of the new secret to another location. It will no longer be visible once you have left the page.
 - The secret string must not include a "=" character as this may conflict with the later usage in a URL. If it does, create a new one.  
-{{< /c8y-admon-caution >}}
+  {{< /c8y-admon-caution >}}
 
 Optionally, create a user in Azure AD that you would like to use with {{< product-c8y-iot >}}.
 
 #### Configuring SSO for Azure AD in Cumulocity IoT
 
-Navigate to **Settings > Authentication** in the Administration application and switch to the **Single sign-on** tab.
+Navigate to **Settings > Authentication** in the Administration web app and switch to the **Single sign-on** tab.
 
 Retrieve the relevant information by a GET request to:
 
@@ -304,25 +304,24 @@ The response will look like this:
   }
 ```
 
-
 Now enter the following values in the configuration:
 
-|Azure|{{< product-c8y-iot >}} |Value
-|:---|:---|:---|
-|Login URL; OpenID config; Beginning of token endpoint| Azure AD address|Address of your Azure AD tenant, for example "https:&#47;/login.microsoftonline.com"  
-|Home > Overview > Primary Domain| Tenant| &lt;directoryName&gt;.onmicrosoft.com, for example "admtest.onmicrosoft.com"
-|OpenID config “issuer”| Token issuer| Token issuer value in form of a HTTP address: "https:&#47;/sts.windows.net/&lt;Directory tenant ID&gt;/". Note that this won´t work without the tailing slash.
-|App registration > &lt;app&gt; > Application (client) ID| Application ID| for example "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
-|Redirect URI| Address of your {{< product-c8y-iot >}} tenant followed by /tenant/oauth
-|App registration - &lt;app&gt; > Certificates & secrets > Value | Client secret| Azure AD client secret, for example "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
-|From OpenID config | Public key discovery URL|"https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Directory tenant ID>/discovery/keys"
+| Azure                                                           | {{< product-c8y-iot >}}                                                  | Value                                                                                                                                                          |
+| :-------------------------------------------------------------- | :----------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Login URL; OpenID config; Beginning of token endpoint           | Azure AD address                                                         | Address of your Azure AD tenant, for example "https:&#47;/login.microsoftonline.com"                                                                           |
+| Home > Overview > Primary Domain                                | Tenant                                                                   | &lt;directoryName&gt;.onmicrosoft.com, for example "admtest.onmicrosoft.com"                                                                                   |
+| OpenID config “issuer”                                          | Token issuer                                                             | Token issuer value in form of a HTTP address: "https:&#47;/sts.windows.net/&lt;Directory tenant ID&gt;/". Note that this won´t work without the tailing slash. |
+| App registration > &lt;app&gt; > web app (client) ID            | web app ID                                                               | for example "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"                                                                                                             |
+| Redirect URI                                                    | Address of your {{< product-c8y-iot >}} tenant followed by /tenant/oauth |
+| App registration - &lt;app&gt; > Certificates & secrets > Value | Client secret                                                            | Azure AD client secret, for example "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"                                                                                 |
+| From OpenID config                                              | Public key discovery URL                                                 | "https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Directory tenant ID>/discovery/keys"                  |
 
 Optionally single logout can be configured:
 
-|Field|Description|
-|:---|:---|
-|Redirect after logout| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
-|Redirect URL| Address to redirect the user to after successful logout from the authorization server
+| Field                 | Description                                                                                                |
+| :-------------------- | :--------------------------------------------------------------------------------------------------------- |
+| Redirect after logout | Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint |
+| Redirect URL          | Address to redirect the user to after successful logout from the authorization server                      |
 
 After configuring SSO in {{< product-c8y-iot >}}, you can try to login. You might get an "access denied" error, if this user has no access mapping yet. But you should see a "User login" event and a JSON web token in the audit logs (**Administration** > **Accounts** > **Audit logs**).
 
@@ -367,13 +366,11 @@ The content looks like this:
 
 You can now use the claims to map user attributes and give permissions in the same way as described in the section on the [custom template](#custom-template).
 
-
-
 ### Integration with Keycloak
 
 #### Global logout feature (available for Keycloak in version 12.0.0 and higher)
 
-Integration with Keycloak allows administrators to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to all applications (including the {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, applications and Keycloak, for the particular user.
+Integration with Keycloak allows administrators to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to all web apps (including the {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, web apps and Keycloak, for the particular user.
 
 To configure the global logout feature follow these steps:
 
@@ -414,13 +411,13 @@ Moreover, it is only sent for those tenants where the client being used as a con
 
 In the **Session** tab, the Keycloak administrator can also check how many active sessions exist on the respective client and estimate how many tenants and users will be affected by the logout event.
 
-To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration application under **Accounts** in the **Audit Logs** tab.
+To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration web app under **Accounts** in the **Audit Logs** tab.
 
 #### Troubleshooting
 
 It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its fields contain the information required for the correct configuration described above.
 
-In Administration application, after clicking on **Accounts** > **Audit logs** you can filter by the category "Single sign-on" and look for entries "Json web token claims".
+In Administration web app, after clicking on **Accounts** > **Audit logs** you can filter by the category "Single sign-on" and look for entries "Json web token claims".
 
 The contexts of the token will be presented in JSON format.
 

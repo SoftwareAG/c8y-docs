@@ -10,13 +10,13 @@ To support you with bootstrapping, running and deploying applications we have bu
 npm install -g @c8y/cli
 ```
 
-If you don't want to install the `@c8y/cli` globally you can also run it with the npx command. E.g. you can scaffold a new project quickly with:
+If you don't want to install the `@c8y/cli` globally you can also run it with the npx command. For example, you can scaffold a new project quickly by executing the following command:
 
 ```
 npx @c8y/cli new
 ```
 
-As any new projects brings a local `@c8y/cli` you can run the project by changing to its folder and run:
+A new project creates a local `@c8y/cli`. You can run the project by navigating to its directory and executing the following command:
 
 ```
 npx c8ycli serve
@@ -24,7 +24,7 @@ npx c8ycli serve
 
 The `serve` command starts a local development server. It supports two important flags:
 
-- `-u`: The -u parameter specifies the Cumulocity instance to which all API requests should be proxied to. This means data is actually pulled from the configured Cumulocity instance.
+- `-u`: The -u parameter specifies the {{< product-c8y-iot >}} instance to which all API requests are proxied. This means data is actually pulled from the configured {{< product-c8y-iot >}} instance.
 - `-p`: The port to use. If not defined, port 9000 is used. If you have a server running on this port already, the command will fail. The application will then be served at the URL `http://localhost:<<port>>/apps/<<your-application-name>>/`. Tip: Click the URL in the terminal while holding the "control" key.
 
 ### General usage
@@ -59,7 +59,7 @@ All the commands except of `new` take an array of [glob patterns](<https://en.wi
 
 ### The `new` command
 
-The `c8ycli new [name] [template]` helps to start an empty application or to extend one of our existing applications (Cockpit, Devicemanagement or Administration). To extend an existing application use as `[name]` and `[template]` the name of the existing application like this:
+The `c8ycli new [name] [template]` command creates an empty application or extends an existing application (Cockpit, Devicemanagement or Administration). To extend an existing application use the name of the existing application as `[name]` and `[template]` like this:
 
 ```
 $ c8ycli new cockpit cockpit
@@ -73,7 +73,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
   {{< /c8y-admon-tip >}}
 
-The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case a few steps must be completed via the interface before the app is scaffolded.
+The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case, follow the steps below to complete the process via the interface before the application is scaffolded.
 
 **Step 1:**
 
@@ -134,7 +134,7 @@ This step will only show projects which are available for the selected version i
 
 ### Application options
 
-Application options can be defined with `--app.<option>=<value>`. These will be applied to all applications found with `[appPaths...]`.
+The application options can be defined with `--app.<option>=<value>`. These will be applied to all applications found with `[appPaths...]`.
 
 ```
     --app.name="My Application"
@@ -145,7 +145,7 @@ Application options can be defined with `--app.<option>=<value>`. These will be 
 
 ### Webpack options
 
-Webpack options can be defined with `--env.<option>=<value>`. These will be directly passed to the webpack configuration.
+The webpack options can be defined with `--env.<option>=<value>`. These will be directly passed to the webpack configuration.
 
 ```
     --env.mode="production"

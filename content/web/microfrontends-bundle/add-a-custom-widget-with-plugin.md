@@ -7,7 +7,9 @@ weight: 20
 See [Add a custom widget to a dashboard > Create the widget components](#2-create-the-widget-components) on how to create a simple widget, what its structure looks like and how to add it to your application.
 The following tutorial focuses on how you can add this widget to an application using the micro frontend architecture and how this process differs from the previous one.
 
- > The solution below is fully based on the Module Federation functionality introduced in Webpack 5. For more information on the functionality refer to [Webpack: Module Federation](https://webpack.js.org/concepts/module-federation/).
+{{< c8y-admon-info >}}
+The solution below is fully based on the Module Federation functionality introduced in Webpack 5. For more information on the functionality refer to [Webpack: Module Federation](https://webpack.js.org/concepts/module-federation/).
+{{< /c8y-admon-info >}}
 
 ### 1. Initialize the widget plugin example
 
@@ -128,7 +130,7 @@ For the rest of the widget editing process follow the process for regular widget
 
 #### Debugging
 
-Another difference in the *package.json* file between a regular widget and a widget modified for micro frontend architecture is the field `remote`, see example below:
+Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remote`, see example below:
 
 ```json
 ...
@@ -183,4 +185,4 @@ Your custom widget is now available in your version of the Cockpit application.
 Navigate to the dashboard where the newly added widget is available in the list of widgets to add.
 
 The `widget-plugin` was installed from within the Administration application. This is the main difference between the regular and the new approach regarding widgets.
-Micro frontends architecture allows you to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
+The micro frontends architecture allows you to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).

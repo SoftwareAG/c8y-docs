@@ -73,7 +73,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
   {{< /c8y-admon-tip >}}
 
-The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case a few steps must be completed via the interface before the app is scaffolded.
+The `c8ycli new` command can also be provided on its own without the `[name]` and `[template]` options. In this case, follow the steps below to complete the process via the interface before the application is scaffolded.
 
 **Step 1:**
 
@@ -134,7 +134,7 @@ This step will only show projects which are available for the selected version i
 
 ### Application options
 
-Application options can be defined with `--app.<option>=<value>`. These will be applied to all applications found with `[appPaths...]`.
+The application options can be defined with `--app.<option>=<value>`. These will be applied to all applications found with `[appPaths...]`.
 
 ```
     --app.name="My Application"
@@ -145,7 +145,7 @@ Application options can be defined with `--app.<option>=<value>`. These will be 
 
 ### Webpack options
 
-Webpack options can be defined with `--env.<option>=<value>`. These will be directly passed to the webpack configuration.
+The webpack options can be defined with `--env.<option>=<value>`. These will be directly passed to the webpack configuration.
 
 ```
     --env.mode="production"

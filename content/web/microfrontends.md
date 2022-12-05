@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: "Micro frontends"
+title: Micro frontends
 layout: bundle
 ---
 

@@ -10,8 +10,8 @@ The app is compatible with Android devices running Android 5.0 or higher, and iO
 
 Using these links from your smartphone takes you to the app's install page:
 
-* [iOS](http://onelink.to/g39r8w)
-* [Android](https://play.google.com/store/apps/details?id=com.softwareag.cumulocity.iotcloudsensor)
+* iOS: http://onelink.to/g39r8w
+* Android: https://play.google.com/store/apps/details?id=com.softwareag.cumulocity.iotcloudsensor
 
 Alternatively, you can open the Apple App Store or Google Play Store from your smartphone, search for **{{< sensor-app >}}** and install the app.
 

@@ -23,7 +23,7 @@ There is a major difference between providing several tenants and providing seve
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-If you would like to use this feature, please [contact product support](/welcome/contacting-support/).
+If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
 {{< /c8y-admon-info >}}
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:

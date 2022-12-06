@@ -134,8 +134,8 @@ If the **Group or device** field is filled in, the entire descendant structure o
 
 If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 
-* Operation's device itself is a result of forwarding data.
-* Operation matches other filter criteria.
+* The operation's device itself is a result of forwarding data.
+* The operation matches other filter criteria.
 
 Updates of the operation status coming from the source tenant will be forwarded to the destination tenant.
 

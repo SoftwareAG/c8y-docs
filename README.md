@@ -171,7 +171,7 @@ Otherwise the automation starts without any target branches.
 
 ### Details
 
-The PRs created by this GitHub action will have their heading prefixed with `[GRAFT] [<targetBranch>] ` so, for example, for `release/r10.15.0` as the target branch and `[MTM-47706] fix publishing documentation` as the original PR heading, it results in  `[GRAFT] [release/r1015.0.0] [MTM-47706] fix publishing documentation` as the heading for the backport PR.
+The PRs created by this GitHub action will have their heading prefixed with `[GRAFT] [<targetBranch>]`. So, for example, for `release/r10.15.0` as the target branch and `[MTM-47706] fix publishing documentation` as the original PR heading, it results in  `[GRAFT] [release/r1015.0.0] [MTM-47706] fix publishing documentation` as the heading for the backport PR.
 In case an assignee was set for the original PR, the cherry-picked PRs will also receive the same assignee. You must add reviewers manually after the cherry-picked PRs have been created.
 
 The creation of cherry-picked PRs can take a few minutes.

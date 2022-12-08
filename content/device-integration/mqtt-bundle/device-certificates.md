@@ -403,7 +403,9 @@ The steps for the proof of possession are as follows:
 - The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform:
 ![Proof of possession completed](/images/mqtt/devmgmt-mqtt-cert-pop-completed.png)
 
-Note: If it is not possible for the admin to carry out this process himself for organizational reasons, the corresponding certificate can still be confirmed by the {{< product-c8y-iot >}} support team.
+Note: If it is not possible for the admin to carry out this process himself for organizational reasons, the proof of possession for the corresponding certificate can be manually requested and the {{< product-c8y-iot >}} support team can complete the proof of possession through a backend API upon reasonable verification.
+
+
 
 ### Install and configure the MQTT client
 

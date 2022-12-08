@@ -1,12 +1,10 @@
 ---
-title: Custom package blueprint with Module Federation
+title: Custom package blueprint
 layout: redirect
-weight: 40
+weight: 30
 ---
 
-**Version:** 1015.33.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
-
-With Module Federation it is possible to add new functionality while the application is **running** (runtime), whereas the old approach only allowed new functionality to be added before the application was **built** (compile time).
+With micro frontends it is possible to add new functionality while the application is **running** (run-time), whereas the old approach only allowed new functionality to be added before the application was **built** (compile-time).
 
 Blueprints are combinations of multiple UI functionalities that can be hosted by the platform (static files) and can be used to scaffold a new solution from scratch. On the other hand, a package is the composition of plugins and blueprints. As a blueprint can export plugins as well, they can be packed together into one package and deployed to the platform.
 
@@ -235,12 +233,12 @@ Now on the first application start, users will have to complete the single step 
 
 ### Differences in approach to creating custom applications
 
-There are a couple of differences between a simple widget and one that is built according to the Module Federation guidelines.
+There are a couple of differences between a simple widget and one that is built according to the micro frontend guidelines.
 
 The biggest difference is the _package.json_ file, where fields such as `isPackage` and `package` and `exports` (not in the current blueprint app) are located.
 The following list shows the fields and what they are responsible for:
 
-- `isPackage`: Indicates if the application is a package. In case of a widget that is added using Module Federation, set the value to `true`.
+- `isPackage`: Indicates if the application is a package. In case of a widget that is added using a micro frontend, set the value to `true`.
 - `package`: The type of package (for example, `blueprint`, but the type of the package can also be a plugin).
 - `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the _README.md_ file).
   - `name`: The name of the exported module.

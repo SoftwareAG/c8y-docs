@@ -88,7 +88,44 @@ As the token string is a JWT (JSON Web Token), it can be decoded to extract the 
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
 The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
 
-### Shared subscriptions
+### Non-persistent subscriptions and their tokens
+
+When creating a subscription, an optional Boolean `nonPersistent` field can be added to the request body, 
+and, if that field is set to the value `true`, the created subscription will be non-persistent. 
+If this field is not present or `false`, a subscription will be persistent by default.
+
+Persistent subscriptions ensure consumers never miss a message if their connection is interrupted.
+They use replicated secondary storage maintain larger backlogs (within the constraints of any maximum backlog sizes).
+When a consumer of a persistent subscription has their connection interrupted,
+whether that is due to network issues or deliberate actions by the consumer,
+upon reconnection they will continue to receive notifications from position they were at before the outage 
+(specifically, from the message after the last one they acknowledged successfully before the outage). 
+
+Non-persistent subscriptions are only buffered in memory.
+When a consumer of a non-persistent subscription has their connection interrupted,
+upon reconnection they will start receiving notifications from the most recent message of the subscription,
+missing all other notifications that occurred during the connection outage. 
+This will be the case for such temporarily disconnected consumers,
+even if other consumers of the same non-persistent subscription 
+are still receiving older messages that occurred while it was not connected. 
+
+When both a persistent and a non-persistent subscriptions are created with the same name (`subscription` field value in the request body) 
+they will be *separate*, independent subscriptions. Such subscriptions can vary by any other fields they choose: they do *not* have to be
+persistent and non-persistent variations of the same notification data, though using such similar subscriptions in notably different ways 
+may be surprising to others, so it may not be wise to do this unless they are otherwise the same. 
+
+When a consumer creates a token for either of these, 
+it can distinguish which subscription it is targeting by use of the `non-persistent` field in the token creation request.
+Like for the subscription, this field defaults to `false`, making the token target the persistent subscription. 
+Setting this field to `true` in the token creation request targets the non-persistent one.  
+
+### Shared tokens
+
+Shared tokens allow parallelization of the consumer workload. 
+This is useful if the notifications would otherwise arrive at a higher rate than the consumer can process them.
+It has no impact on the rate of notification throughput through, and thus their egress from, Cumulocity. 
+
+GAPA: IN PROGRESS here still ...
 
 There can be multiple subscriptions on a managed object, each receiving filtered notifications as specified by their individual subscription filters. A subscription name (or topic) can also be set up on many managed objects or child / parent hierarchies. These can easily lead to high volumes of notifications.
 
@@ -108,18 +145,6 @@ The same token, or one that was generated in a similar way from subscription nam
 However, a different consumer name is passed as the `consumer` query string argument.
 For example, instance 1 of the subscriber microservice could pass in `notification2/consumer?token=xyz&consumer=instance1` while instance 2 could use `notification2/consumer?token=XYZ&consumer=instance2`.
 Currently, determining the instance ID of a microservice replica is not supported by the {{< product-c8y-iot >}} microservice API. An external application with named instances can be used instead.
-
-### Non-persistent subscriptions
-
-When subscribing, it is possible to pass in an optional boolean `nonPersistent` query parameter with a value of true.
-Note that there is no need to mark a subscription as shared - only the token is marked as shared. 
-Both the token and the subscriptions have `nonPersistent` but only the token has both `nonPersistent` and `shared`.
-This changes the subscription to not persist notifications on replicated secondary storage for the named subscription.
-They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
-Note that there can be both non-persistent and ordinary (that is persistent) subscriptions on a managed object with the same subscription name.
-These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `nonPersistent` equal to true or false to select the non-persistent or (by default) the persistent topic.
-
-The messaging service will keep non-persistent notifications in memory, but will drop notifications if more than a configurable limit is reached per subscriber/consumer (default is 1000).
 
 ### Deleting subscriptions and unsubscribing a subscriber
 

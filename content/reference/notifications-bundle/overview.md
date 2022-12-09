@@ -95,13 +95,14 @@ and, if that field is set to the value `true`, the created subscription will be 
 If this field is not present or `false`, a subscription will be persistent by default.
 
 Persistent subscriptions ensure consumers never miss a message if their connection is interrupted.
-They use replicated secondary storage maintain larger backlogs (within the constraints of any maximum backlog sizes).
+They use replicated secondary storage to maintain large backlogs (within the constraints of any maximum backlog sizes)
+and to maintain the consumers' positions in subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,
 whether that is due to network issues or deliberate actions by the consumer,
 upon reconnection they will continue to receive notifications from position they were at before the outage 
 (specifically, from the message after the last one they acknowledged successfully before the outage). 
 
-Non-persistent subscriptions are only buffered in memory.
+Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted (not durable).
 When a consumer of a non-persistent subscription has their connection interrupted,
 upon reconnection they will start receiving notifications from the most recent message of the subscription,
 missing all other notifications that occurred during the connection outage. 

@@ -102,7 +102,7 @@ whether that is due to network issues or deliberate actions by the consumer,
 upon reconnection they will continue to receive notifications from the position they were at before the outage 
 (specifically, from the message after the last one they acknowledged successfully before the outage). 
 
-Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted (not durable).
+Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted across disconnections of the consumer.
 When a consumer of a non-persistent subscription has their connection interrupted,
 upon reconnection they will start receiving notifications from the most recent message of the subscription,
 missing all other notifications that occurred during the connection outage. 

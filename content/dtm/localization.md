@@ -6,16 +6,16 @@ outputs:
 - html
 - json
 helpcontent:
-- label: localization
+- label: asset-types
   title: Localization
   content: "
-  If you want to add translations for the custom property or asset types created, or if you want to add custom translations for the existing static text in the DTM application, you can achieve it by using the Localization feature. 
+  If you want to add translations for the custom properties or asset types created, or if you want to add custom translations for the existing static text in the DTM application, you can achieve it by using the Localization feature. 
 
 
-  Once you create all custom properties and asset types, then all those names are added as keys in the **Localization** page. You can further add the translations as required. 
+  Once you create all custom properties and asset types, all those names are added as keys in the **Localization** page. You can further add the translations as required. 
 
 
-  To add a new translation in the DTM application, you can use Add Term in the top menu bar and then add the text as key and add the translations as required. 
+  To add a new translation in the DTM application, click **Add term** in the top menu bar. Add the text to be translated as key and add the translations as required. 
   
 
   *To use this feature, subscribe to Feature branding in the Enterprise tenant.*"

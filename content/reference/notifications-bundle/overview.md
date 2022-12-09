@@ -110,7 +110,7 @@ This will be the case for such temporarily disconnected consumers,
 even if other consumers of the same non-persistent subscription 
 are still receiving older messages that occurred while it was not connected. 
 
-When both a persistent and a non-persistent subscriptions are created with the same name (`subscription` field value in the request body) 
+When both a persistent and a non-persistent subscription are created with the same name, that is, with the same `subscription` field value in the request body, 
 they will be *separate*, independent subscriptions. Such subscriptions can vary by any other fields they choose: they do *not* have to be
 persistent and non-persistent variations of the same notification data, though using such similar subscriptions in notably different ways 
 may be surprising to others, so it may not be wise to do this unless they are otherwise the same. 

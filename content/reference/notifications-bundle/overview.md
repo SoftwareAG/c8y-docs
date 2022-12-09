@@ -92,7 +92,7 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 
 When creating a subscription, an optional Boolean `nonPersistent` body parameter can be added to the request, 
 and, if that is set to the value `true`, the created subscription will be non-persistent. 
-If this body parameter is not present or `false`, a subscription will be persistent by default.
+If this body parameter is not present or `false`, the subscription will be persistent by default.
 
 Persistent subscriptions ensure consumers never miss a message if their connection is interrupted.
 They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
@@ -130,10 +130,10 @@ If this body parameter is not present or `false`, a token will be exclusive (not
 
 If a consumer's token is *not* shared, the consumer is an **exclusive** consumer.
 Only one consumer client can connect using an exclusive token: attempts to connect further consumers with the same exclusive token will result in error.
-An exclusive consumer will receive all notifications from the subscription its token is for.
+An exclusive consumer will receive a copy of all notifications from the subscription its token is for.
 
 If a consumer's token is shared, the consumer is a **shared** consumer. Additional consumer clients can connect using the same token.
-When only one shared consumer is connected, it receives all notifications from subscription.
+When only one shared consumer is connected, it receives a copy of all notifications from subscription.
 As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that 
 each consumer receives a non-overlapping subset (share) of the notifications from the subscription. 
 The collective ensemble of consumers sharing a token can be thought of as one logical consumer.
@@ -143,12 +143,12 @@ The notification load is divided into shares dictated by a hash of the id of the
 This means there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
 Note that, as the shares are divided by a hash of the ids, it can result in an asymmetric balance of notification load across the shares if there are few source ids involved. This should even out for higher numbers of source ids.
 
-In order to help keep the messages from a given set of source ids sticky to consumer client shares in the face of client connection interruptions, the consumers can provide an 
-optional `consumer` parameter to their connection URL string, in addition to their usual `token` parameter. 
+In order to help keep the messages from a given set of source ids sticky to consumer client shares in the face of consumer client connection interruptions, the consumer clients can provide an 
+optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
 For example: two consumers identifying themselves as *instance1* and *instance2* would connect using URL paths
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
 
-Subscriptions are always unaware of the nature of their consumers: any number of shared and exlusive tokens can created for the same subscription and they all operate independently, each recieving their own copy of the notificaitons. This means you can have multiple shared tokens for the same subscription and their load will only be divided up within the scope of each shared token.
+Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens can created for the same subscription and they all operate independently, each receiving their own copy of the notifications. This means you can have multiple shared tokens for the same subscription and their load will only be divided up within the scope of each shared token.
 
 ### Deleting subscriptions and unsubscribing a subscriber
 

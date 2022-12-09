@@ -90,9 +90,9 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 
 ### Non-persistent subscriptions and their tokens
 
-When creating a subscription, an optional Boolean `nonPersistent` field can be added to the request body, 
-and, if that field is set to the value `true`, the created subscription will be non-persistent. 
-If this field is not present or `false`, a subscription will be persistent by default.
+When creating a subscription, an optional Boolean `nonPersistent` body parameter can be added to the request, 
+and, if that is set to the value `true`, the created subscription will be non-persistent. 
+If this body parameter is not present or `false`, a subscription will be persistent by default.
 
 Persistent subscriptions ensure consumers never miss a message if their connection is interrupted.
 They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
@@ -110,24 +110,23 @@ This will be the case for such temporarily disconnected consumers,
 even if other consumers of the same non-persistent subscription 
 are still receiving older messages that occurred while it was not connected. 
 
-When both a persistent and a non-persistent subscription are created with the same name, that is, with the same `subscription` field value in the request body, 
-they will be *separate*, independent subscriptions. Such subscriptions can vary by any other fields they choose: they do *not* have to be
-persistent and non-persistent variations of the same notification data, though using such similar subscriptions in notably different ways 
-may be surprising to others, so it may not be wise to do this unless they are otherwise the same. 
+When both a persistent and a non-persistent subscription are created with the same name, that is, with the same `subscription` body parameter value in the request, 
+they will be *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters they choose: they do *not* have to be
+persistent and non-persistent variations of the same notification data, though it is not recommended as it may give rise to confusion.  
 
-When a consumer creates a token for either of these, 
-it can distinguish which subscription it is targeting by use of the `non-persistent` field in the token creation request.
-Like for the subscription, this field defaults to `false`, making the token target the persistent subscription. 
-Setting this field to `true` in the token creation request targets the non-persistent one.  
+When a consumer creates a token for either a persistent or non-persistent subscription, 
+it **must** distinguish which type of subscription it is targeting by use of the `non-persistent` body parameter in the token creation request.
+Like for the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
+Setting the body parameter to `true` in the token creation request targets a non-persistent one.  
 
 ### Shared tokens
 Shared tokens allow parallelization of the consumer client workload.
 This is useful if the notifications would otherwise arrive at a higher rate than the consuming client application can process them.
 It has no impact on the rate of notification throughput within, and thus their egress from, Cumulocity.
 
-When creating a token, an optional Boolean `shared` field can be added to the request body,
-and, if that field is set to the value `true`, the created token will be shared.
-If this field is not present or `false`, a token will be exclusive (not shared) by default.
+When creating a token, an optional Boolean `shared` body parameter can be added to the request,
+and, if that is set to the value `true`, the created token will be shared.
+If this body parameter is not present or `false`, a token will be exclusive (not shared) by default.
 
 If a consumer's token is *not* shared, the consumer is an **exclusive** consumer.
 Only one consumer client can connect using an exclusive token: attempts to connect further consumers with the same exclusive token will result in error.

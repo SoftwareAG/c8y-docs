@@ -6,7 +6,7 @@ outputs:
 - html
 - json
 helpcontent:
-- label: asset-types
+- label: dtm-introduction
   title: Digital Twin Manager
   content: "This application allows you to create and manage assets around your physical connected devices in Cumulocity IoT using a digital representation of a physical hierarchy of assets and devices. 
 

@@ -6,7 +6,7 @@ outputs:
 - html
 - json
 helpcontent:
-- label: asset-types
+- label: localization
   title: Localization
   content: "
   If you want to add translations for the custom properties or asset types created, or if you want to add custom translations for the existing static text in the DTM application, you can achieve it by using the Localization feature. 

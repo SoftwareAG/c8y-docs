@@ -120,9 +120,9 @@ Like for the subscription, this body parameter defaults to `false`, making the t
 Setting the body parameter to `true` in the token creation request targets a non-persistent one.  
 
 ### Shared tokens
-Shared tokens allow parallelization of the consumer client workload.
+Shared tokens allow parallelization of the consumer client workload for a notification subscription.
 This is useful if the notifications would otherwise arrive at a higher rate than the consuming client application can process them.
-It has no impact on the rate of notification throughput within, and thus their egress from, Cumulocity.
+It has no impact on the rate of notification throughput within, and thus their egress from, Cumulocity core.
 
 When creating a token, an optional Boolean `shared` body parameter can be added to the request,
 and, if that is set to the value `true`, the created token will be shared.

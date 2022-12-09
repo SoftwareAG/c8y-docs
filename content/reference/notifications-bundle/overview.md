@@ -121,31 +121,35 @@ Like for the subscription, this field defaults to `false`, making the token targ
 Setting this field to `true` in the token creation request targets the non-persistent one.  
 
 ### Shared tokens
+Shared tokens allow parallelization of the consumer client workload.
+This is useful if the notifications would otherwise arrive at a higher rate than the consuming client application can process them.
+It has no impact on the rate of notification throughput within, and thus their egress from, Cumulocity.
 
-Shared tokens allow parallelization of the consumer workload. 
-This is useful if the notifications would otherwise arrive at a higher rate than the consumer can process them.
-It has no impact on the rate of notification throughput through, and thus their egress from, Cumulocity. 
+When creating a token, an optional Boolean `shared` field can be added to the request body,
+and, if that field is set to the value `true`, the created token will be shared.
+If this field is not present or `false`, a token will be exclusive (not shared) by default.
 
-GAPA: IN PROGRESS here still ...
+If a consumer's token is *not* shared, the consumer is an **exclusive** consumer.
+Only one consumer client can connect using an exclusive token: attempts to connect further consumers with the same exclusive token will result in error.
+An exclusive consumer will receive all notifications from the subscription its token is for.
 
-There can be multiple subscriptions on a managed object, each receiving filtered notifications as specified by their individual subscription filters. A subscription name (or topic) can also be set up on many managed objects or child / parent hierarchies. These can easily lead to high volumes of notifications.
+If a consumer's token is shared, the consumer is a **shared** consumer. Additional consumer clients can connect using the same token.
+When only one shared consumer is connected, it receives all notifications from subscription.
+As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that 
+each consumer receives a non-overlapping subset (share) of the notifications from the subscription. 
+The collective ensemble of consumers sharing a token can be thought of as one logical consumer.
+Collectively, the ensemble will receive all notifications for the subscription. 
 
-In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber or parallelized application.
-This can be achieved by creating a token with a subscription and subscriber name for the scalable application with the optional boolean `shared` request parameter set to true in the token create request.
+The notification load is divided into shares dictated by a hash of the id of the source that generated the notification (typically a device id).
+This means there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
+Note that, as the shares are divided by a hash of the ids, it can result in an asymmetric balance of notification load across the shares if there are few source ids involved. This should even out for higher numbers of source ids.
 
-Notifications (messages) will be distributed among all connections to the Notification 2.0 WebSocket endpoint.
-They all use a token for the same subscription and the same subscriber, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens (for example if the tokens can not be shared over the network).
-The subscription name defines the topic messages are published on, while the subscriber identifies the backend (north side) application that will consume the notifications.
-The application can consist of more than one instances or "consumers" running in parallel in the shared use case.
+In order to help keep the messages from a given set of source ids sticky to consumer client shares in the face of client connection interruptions, the consumers can provide an 
+optional `consumer` parameter to their connection URL string, in addition to their usual `token` parameter. 
+For example: two consumers identifying themselves as *instance1* and *instance2* would connect using URL paths
+`notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
 
-Notifications will be delivered in order with respect to the notification generating device.
-The notifications will be delivered to the same application instance, except when a new instance or a failure changes the application topology.
-Then it is necessary to re-distribute the devices to currently running instances.
-In order to aid this assignment, the subscriber instance can specify a "consumer name" when connecting to the WebSocket endpoint.
-The same token, or one that was generated in a similar way from subscription name and subscriber, is used as the token query string argument.
-However, a different consumer name is passed as the `consumer` query string argument.
-For example, instance 1 of the subscriber microservice could pass in `notification2/consumer?token=xyz&consumer=instance1` while instance 2 could use `notification2/consumer?token=XYZ&consumer=instance2`.
-Currently, determining the instance ID of a microservice replica is not supported by the {{< product-c8y-iot >}} microservice API. An external application with named instances can be used instead.
+Subscriptions are always unaware of the nature of their consumers: any number of shared and exlusive tokens can created for the same subscription and they all operate independently, each recieving their own copy of the notificaitons. This means you can have multiple shared tokens for the same subscription and their load will only be divided up within the scope of each shared token.
 
 ### Deleting subscriptions and unsubscribing a subscriber
 

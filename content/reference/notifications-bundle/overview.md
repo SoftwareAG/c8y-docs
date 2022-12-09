@@ -99,7 +99,7 @@ They use replicated secondary storage to maintain large backlogs (within the con
 and to maintain the consumers' positions in subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,
 whether that is due to network issues or deliberate actions by the consumer,
-upon reconnection they will continue to receive notifications from position they were at before the outage 
+upon reconnection they will continue to receive notifications from the position they were at before the outage 
 (specifically, from the message after the last one they acknowledged successfully before the outage). 
 
 Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted (not durable).

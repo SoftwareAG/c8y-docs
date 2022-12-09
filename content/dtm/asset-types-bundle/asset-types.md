@@ -5,15 +5,15 @@ layout: redirect
 helpcontent:
 - label: asset-types
   title: Asset Types
-  content: "The asset type is a blueprint or template to create one or multiple assets. It defines how the asset will look like when created. An asset type consists of one or more custom properties and sub assets 
+  content: "An asset type is a blueprint or template to create one or multiple assets. It defines how the asset will look like when created. An asset type consists of one or more custom properties and sub assets.
  
 
-Click **Add asset type** in the top menu bar to add a new asset type or use the edit icon in actions to edit asset types 
+Click **Add asset type** in the top menu bar to add a new asset type or use the edit icon in actions to edit asset types. 
  
 
 Custom properties are the parameters that define an asset type.  
 
-To add your first custom property, navigate to Property Library and click **Add custom property** "
+To add your first custom property, navigate to Property Library and click **Add custom property**. "
 ---
 
 The asset type is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like when created. An asset type consists of one or more [custom properties](/dtm/asset-types/#property-library).

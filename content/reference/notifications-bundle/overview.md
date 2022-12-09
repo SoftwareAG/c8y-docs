@@ -95,7 +95,7 @@ and, if that field is set to the value `true`, the created subscription will be 
 If this field is not present or `false`, a subscription will be persistent by default.
 
 Persistent subscriptions ensure consumers never miss a message if their connection is interrupted.
-They use replicated secondary storage to maintain large backlogs (within the constraints of any maximum backlog sizes)
+They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
 and to maintain the consumers' positions in subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,
 whether that is due to network issues or deliberate actions by the consumer,

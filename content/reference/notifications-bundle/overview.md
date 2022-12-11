@@ -143,7 +143,7 @@ The notification load is divided into shares dictated by a hash of the id of the
 This means there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
 Note that, as the shares are divided by a hash of the ids, it can result in an asymmetric balance of notification load across the shares if there are few source ids involved. This should even out for higher numbers of source ids.
 
-In order to help keep the messages from a given set of source ids sticky to consumer client shares in the face of consumer client connection interruptions, the consumer clients can provide an 
+In order to help keep the messages from a given set of source ids "sticky" to shared consumers in the face of connection interruptions, the consumer clients can provide an 
 optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
 For example: two consumers identifying themselves as *instance1* and *instance2* would connect using URL paths
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.

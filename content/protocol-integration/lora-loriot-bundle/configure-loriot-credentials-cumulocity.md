@@ -63,13 +63,13 @@ If Loriot is not one of the available options, your tenant is not subscribed to 
 
 In the next window, fill in the required information:
 
-- **Title** Title of the device to be registered.
-- **Device EUI** This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
-- **Application EUI** This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number.
-- **Application key** This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
-- **Connection** Lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
-- **Application name** Select the appropriate application name under which the device must be registered in the Loriot provider.
-- **Device protocol** Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
+- **Title** - title of the device to be registered.
+- **Device EUI** - this is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
+- **Application EUI** - this is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number.
+- **Application key** - this is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
+- **Connection** - lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
+- **Application name** - select the appropriate application name under which the device must be registered in the Loriot provider.
+- **Device protocol** - select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-registration.png)
 

@@ -526,18 +526,12 @@ A status of PENDING means here that the device has not yet picked up the operati
 
 #### Listening for events
 
-Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time as described in [Real-time processing in {{< product-c8y-iot >}}](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](https://{{< domain-c8y >}}/guides/10.9.0/event-language/real-time-statements/)) to create a new rule module "myRule":
-
-```sql
-select *
-from EventCreated e
-where e.event.type = "c8y_LocationUpdate";
-```
+Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time. For example, assume that you would like to display real-time location updates on a map.
 
 If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) in the {{< openapi >}}. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the client supports for notifications and allocates a client ID to the client.
 
 ```http
-POST /cep/notifications
+POST /notification/realtime
 Content-Type: application/json
 ...
 [ {
@@ -560,16 +554,17 @@ HTTP/1.1 200 OK
 }]
 ```
 
-After the handshake, the client needs to subscribe to the output of the above rule. This is done using a POST request with the module name and the statement name as subscription channel. In our example, we used the module name "myRule" and did not give a name to the `select` statement ("@Name('')"), so the subscription channel is "/myRule/\*".
+After the handshake, the client needs to subscribe to the particular device channel or all devices channel (*). This is done using a POST request with the name of the channel. 
+Let's assume that in our example we want to receive notifications about events from the device with internal id 24800. In this case the subscription channel is "/events/24800".
 
 ```http
-POST /cep/notifications
+POST /notification/realtime
 Content-Type: application/json
 ...
 [ {
     "id": "2",
     "channel": "/meta/subscribe",
-    "subscription": "/myRule/*",
+    "subscription": "/events/24800",
     "clientId": "71fjkmy0495rxrkfcmp0mhcev1"
 }]
 
@@ -578,7 +573,7 @@ HTTP/1.1 200 OK
 [ {
     "id":"2",
     "channel": "/meta/subscribe",
-    "subscription": "/myRule/*",
+    "subscription": "/events/24800",
     "successful": true,
 } ]
 ```
@@ -586,7 +581,7 @@ HTTP/1.1 200 OK
 Finally, the client connects and waits for events to be sent to it.
 
 ```http
-POST /cep/notifications HTTP/1.1
+POST /notification/realtime HTTP/1.1
 Content-Type: application/json
 ...
 [ {
@@ -604,15 +599,15 @@ HTTP/1.1 200 OK
 ...
 [
     {
-        "id": "139",
+        "id": "3",
         "data": {
             "creationTime": "...",
             "id": "2481400",
             "self": "https://.../event/events/2481400",
             "source": {
-                "id": "2480700",
+                "id": "24800",
                 "name": "RaspPi BCM2708 0000000017b769d5 Gps eM9",
-                "self": "https://.../inventory/managedObjects/2480700"
+                "self": "https://.../inventory/managedObjects/24800"
             },
             "text": "Location updated",
             "time": "...",
@@ -622,9 +617,8 @@ HTTP/1.1 200 OK
                 "lng": 6.769717,
                 "lat": 51.267259
             },
-            "channel": "/myRule/*"
+            "channel": "/events/24800"
         },
-        "id": "3",
         "successful": true,
         "channel": "/meta/connect"
     }

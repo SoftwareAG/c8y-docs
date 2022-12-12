@@ -208,9 +208,7 @@ If selected, enter the allowed file types separated by a comma in the **Allowed 
 
 {{< c8y-admon-info>}}
 
-If there is a file size limit set for the tenat, you see the limit in the label.
-
-So if the maximum file size set for the tenant is 1 GB, the field **Max file size in MB** states the respective value, for example, 1024 MB.<br>
+If there is a file size limit set for the tenant, you see the limit in the label.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 
 

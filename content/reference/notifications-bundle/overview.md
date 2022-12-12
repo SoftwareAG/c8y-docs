@@ -142,7 +142,8 @@ Collectively, the ensemble will receive all notifications for the subscription.
 The notification load is spread across the shared consumers according to the id of the source that generated the notification, typically a device id.
 All notifications for a given id will be delivered to the same consumer, and each consumer may be receiving notifications for many different ids.
 This means there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
-Note that, as the shares are divided by a hash of the ids, it can result in an asymmetric balance of notification load across the shares if there are few source ids involved. This should even out for higher numbers of source ids.
+Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source ids in the subscription.
+Load should generally become more evenly distributed as the number of sources increases.
 
 In order to help keep the messages from a given set of source ids "sticky" to shared consumers in the face of connection interruptions, the consumer clients can provide an 
 optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 

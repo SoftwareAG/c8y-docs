@@ -2,6 +2,23 @@
 weight: 10
 layout: bundle
 title: Introduction
+outputs:
+- html
+- json
+helpcontent:
+- label: dtm-introduction
+  title: Digital Twin Manager
+  content: "This application allows you to create and manage assets around your physical connected devices in Cumulocity IoT using a digital representation of a physical hierarchy of assets and devices. 
+
+
+Assets are created using **asset types** as the blueprint and consists of one or more **custom properties** and **subassets**.  
+
+
+An **asset hierarchy** consists of the root asset types and all its subsequent child asset types. Each hierarchy level consists of custom properties for the asset, as well as its subassets and devices. 
+
+
+Get started by creating **asset types** and **custom properties** and once the template is ready, click  **Add Asset** on the top right corner of this page to define assets. "
+
 ---
 
 Welcome to the {{< product-c8y-iot >}} Digital Twin Manager (DTM) application.

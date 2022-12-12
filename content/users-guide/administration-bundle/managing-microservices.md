@@ -110,7 +110,7 @@ All applications listed here are of the type "Microservice".
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
 {{< c8y-admon-important >}}
-The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
+The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package. The name of the microservice is first taken from the microservice's manifest file. If the name is not provided there, then it's derived from the ZIP file name (after dropping a recognized version suffix).
 {{< /c8y-admon-important >}}
 
 <a name="microservice-properties"></a>

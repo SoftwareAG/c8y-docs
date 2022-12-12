@@ -4,8 +4,8 @@ title: Device registration via Cumulocity IoT
 layout: redirect
 ---
 
-<a name="cumulocity-loriot-connection-configuration">
-### Creation of Loriot LNS Connection in Cumulocity</a>
+<a name="cumulocity-loriot-connection-configuration"></a>
+### Creation of Loriot LNS Connection in Cumulocity
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 
@@ -84,5 +84,4 @@ In order to migrate the device from one LNS connection to another, the device mu
 1. Navigate to the **LPWAN** tab of the Device.
 2. Click the **Provider connection** dropdown.
 3. A prompt will appear stating that in order to migrate the device from one LNS connection to another, you must re-register the device. Click the **Re-Register** button.
-4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection. 
-
+4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection.

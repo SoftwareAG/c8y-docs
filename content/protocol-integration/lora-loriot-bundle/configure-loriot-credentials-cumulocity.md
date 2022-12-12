@@ -50,8 +50,8 @@ If there are devices associated with the connection, an error message appears, s
 
 ![Delete connection](/images/device-protocols/lora-loriot/loriot-admin-settings-delete.png)
 
-<a name="loriot-device-registration">
-### Loriot device registration</a>
+<a name="loriot-device-registration"></a>
+### Loriot device registration
 
 To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
 

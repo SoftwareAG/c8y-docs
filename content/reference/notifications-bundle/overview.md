@@ -150,7 +150,7 @@ optional `consumer` parameter in their connection URL string, in addition to the
 For example: two consumers identifying themselves as *instance1* and *instance2* would connect using URL paths
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
 
-Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens can created for the same subscription and they all operate independently, each receiving their own copy of the notifications. This means you can have multiple shared tokens for the same subscription and their load will only be divided up within the scope of each shared token.
+Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens can be created for the same subscription and they all operate independently, each receiving their own copy of the notifications. This means you can have multiple shared tokens for the same subscription and their load will only be divided up within the scope of each shared token.
 
 ### Deleting subscriptions and unsubscribing a subscriber
 

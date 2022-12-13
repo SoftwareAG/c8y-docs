@@ -208,7 +208,7 @@ If selected, enter the allowed file types separated by a comma in the **Allowed 
 
 {{< c8y-admon-info>}}
 
-If there is a file size limit set for the tenant, you see this limit in the field.<br>
+If there is a file size limit set for the tenant, the field name for **Max file size in MB** will change accordingly.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 
 

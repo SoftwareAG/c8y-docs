@@ -406,7 +406,7 @@ The steps for the proof of possession are as follows:
 
 ### Install and configure the MQTT client
 
-1. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
+1. Download and install the newest MQTT.fx client from: [softblade.de/en/download-2](https://softblade.de/en/download-2/)
 2. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**.
 3. Edit the connection profiles like so:
     - Insert the {{< company-c8y >}} URL in the **Broker address** line.

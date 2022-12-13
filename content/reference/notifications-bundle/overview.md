@@ -94,7 +94,7 @@ When you create a subscription, you can add the optional Boolean body parameter 
 If it is set to `true`, the created subscription is non-persistent. 
 If it is not present or `false`, the subscription will be persistent.
 
-Persistent subscriptions ensure consumers never miss a message if their connection is interrupted.
+Persistent subscriptions ensure that consumers never miss a message if their connection is interrupted.
 They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
 and to maintain the consumers' positions in subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,

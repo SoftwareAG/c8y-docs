@@ -554,8 +554,8 @@ HTTP/1.1 200 OK
 }]
 ```
 
-After the handshake, the client needs to subscribe to the particular device channel or all devices channel (*). This is done using a POST request with the name of the channel. 
-Let's assume that in our example we want to receive notifications about events from the device with internal id 24800. In this case the subscription channel is "/events/24800".
+After the handshake, the client must subscribe to the particular device channel or all devices channel (*). This is done using a POST request with the name of the channel.  
+For example, if you want to receive notifications about events from the device with internal ID "24800", the subscription channel is "/events/24800".
 
 ```http
 POST /notification/realtime

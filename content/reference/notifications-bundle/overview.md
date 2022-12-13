@@ -123,7 +123,7 @@ Setting the body parameter to `true` in the token creation request targets a non
 
 Shared tokens allow parallelization of the consumer client workload for a notification subscription.
 This is useful if the notifications would otherwise arrive at a higher rate than the consuming client application can process them.
-It has no impact on the rate of notification throughput within, and thus their egress from, Cumulocity core.
+It has no impact on the rate of notification throughput within, and thus their egress from, {{< product-c8y-iot >}} core.
 
 When creating a token, an optional Boolean `shared` body parameter can be added to the request,
 and, if that is set to the value `true`, the created token will be shared.

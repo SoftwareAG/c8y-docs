@@ -115,7 +115,7 @@ they are *separate*, independent subscriptions. Such subscriptions can vary by a
 persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.  
 
 When a consumer creates a token for either a persistent or non-persistent subscription, 
-it **must** distinguish which type of subscription it is targeting by use of the `non-persistent` body parameter in the token creation request.
+it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
 Like for the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
 Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.  
 

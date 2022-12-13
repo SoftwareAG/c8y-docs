@@ -116,7 +116,7 @@ persistent and non-persistent variations of the same notification data. However,
 
 When a consumer creates a token for either a persistent or non-persistent subscription, 
 it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
-Like for the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
+For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
 Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.  
 
 ### Shared tokens

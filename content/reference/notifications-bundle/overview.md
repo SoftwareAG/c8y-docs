@@ -145,7 +145,7 @@ This means there is no benefit using shared tokens unless the notifications feed
 Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription.
 The load should generally become more evenly distributed as the number of sources increases.
 
-In order to help keep the messages from a given set of source ids "sticky" to shared consumers in the face of connection interruptions, the consumer clients can provide an 
+In order to help keep the messages from a given set of source IDs stick to shared consumers in the face of connection interruptions, the consumer clients can provide an 
 optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
 For example: two consumers identifying themselves as *instance1* and *instance2* would connect using URL paths
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.

@@ -112,7 +112,7 @@ are still receiving older messages that occurred while it was not connected.
 
 When both a persistent and a non-persistent subscription are created with the same name, that is, with the same `subscription` body parameter value in the request, 
 they are *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters you choose. They do not have to be
-persistent and non-persistent variations of the same notification data, although to avoid confusion it is recommended to keep such subscriptions identical except for the `nonPersistent` parameter.  
+persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.  
 
 When a consumer creates a token for either a persistent or non-persistent subscription, 
 it **must** distinguish which type of subscription it is targeting by use of the `non-persistent` body parameter in the token creation request.

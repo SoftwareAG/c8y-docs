@@ -90,8 +90,8 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 
 ### Non-persistent subscriptions and their tokens
 
-When creating a subscription, an optional Boolean `nonPersistent` body parameter can be added to the request, 
-and, if that is set to the value `true`, the created subscription will be non-persistent. 
+When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.
+If it is set to `true`, the created subscription is non-persistent. 
 If this body parameter is not present or `false`, the subscription will be persistent by default.
 
 Persistent subscriptions ensure consumers never miss a message if their connection is interrupted.

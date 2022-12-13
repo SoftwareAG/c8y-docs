@@ -126,23 +126,23 @@ This is useful if the notifications would otherwise arrive at a higher rate than
 It has no impact on the rate of notification throughput within, and thus their egress from, {{< product-c8y-iot >}} core.
 
 When you create a token, you can add the optional Boolean body parameter `shared` to the request.
-and, if that is set to the value `true`, the created token will be shared.
-If this body parameter is not present or `false`, a token will be exclusive (not shared) by default.
+If it is set to `true`, the created token is shared.
+If it is not present or `false`, the token is exclusive (not shared).
 
-If a consumer's token is *not* shared, the consumer is an **exclusive** consumer.
-Only one consumer client can connect using an exclusive token: attempts to connect further consumers with the same exclusive token will result in error.
-An exclusive consumer will receive a copy of all notifications from the subscription its token is for.
+If a consumer's token is not shared, the consumer is an *exclusive* consumer.
+Only one consumer client can connect using an exclusive token. An attempt to connect further consumers with the same exclusive token results in an error.
+An exclusive consumer receives a copy of all notifications from the subscription its token is for.
 
-If a consumer's token is shared, the consumer is a **shared** consumer. Additional consumer clients can connect using the same token.
-When only one shared consumer is connected, it receives a copy of all notifications from subscription.
+If a consumer's token is shared, the consumer is a *shared consumer*. Additional consumer clients can connect using the same token.
+If only one shared consumer is connected, it receives a copy of all notifications from the subscription.
 As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that 
 each consumer receives a non-overlapping subset (share) of the notifications from the subscription. 
-The collective ensemble of consumers sharing a token can be thought of as one logical consumer.
-Collectively, the ensemble will receive all notifications for the subscription. 
+The set of consumers sharing a token can be thought of as a single logical consumer.
+Collectively, the set receives all notifications for the subscription. 
 
-The notification load is spread across the shared consumers according to the id of the source that generated the notification, typically a device id.
-All notifications for a given id will be delivered to the same consumer, and each consumer may be receiving notifications for many different ids.
-This means there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
+The notification load is spread across the shared consumers according to the ID of the source that generated the notification, typically a device ID.
+All notifications for a given ID will be delivered to the same consumer. Each consumer may receive notifications for many different IDs.
+This means that there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
 Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription.
 The load should generally become more evenly distributed as the number of sources increases.
 

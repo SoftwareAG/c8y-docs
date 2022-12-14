@@ -339,7 +339,7 @@ This alarm is raised for the input queues:
 - Alarm type: `input_queues_filling`
 - Alarm text: Correlator input queues are filling. If this alarm is being regularly raised, there is a chance that the correlator
   cannot process the requests at the rate at which they are arriving.
-  \- Slowest receiver name: &lt;name&gt;,
+  Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
   Slowest context queue size: &lt;size&gt;
@@ -350,7 +350,7 @@ This alarm is raised for the output queues:
 - Alarm type: `output_queues_filling`
 - Alarm text: Correlator output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
   is not able to process the requests at the rate the correlator is sending them.
-  \- Slowest receiver name: &lt;name&gt;,
+  Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
   Slowest context queue size: &lt;size&gt;
@@ -362,7 +362,7 @@ This alarm is raised for both the input and output queues:
 - Alarm text: Correlator input and output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
   is not able to process the requests at the rate the correlator is sending them, causing the slowest output queue to fill up.
   This might have also caused the slowest input queue to fill up.
-  \- Slowest receiver name: &lt;name&gt;,
+  Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
   Slowest context queue size: &lt;size&gt;

@@ -111,7 +111,7 @@ While standard columns can only be shown/hidden as required, custom columns may 
 
 1. Hover over the row of the device you want to delete.
 2. Click the delete icon at the right of the row.
-3. Confirm device removal. Optionally, select whether to delete child devices of the device or to delete the asociated device owner (selecting both options is not supported).
+3. Confirm the device removal. Optionally, select whether to delete child devices of the device or to delete the associated device owner. Note that it is not possible to select both options.
 
 The device will be permanently deleted from the platform.
 

@@ -70,7 +70,7 @@ In the **Protocol and encryption** field, select a protocol/encryption type from
 * SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
 * SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
 
-Provide the host, port, username, password and sender address for the email server. Empty password configuration is supported too.
+Provide the host, port, username, password, and sender address for the email server. The empty password configuration is supported for the {{< enterprise-tenant >}}.
 
 #### Data export
 

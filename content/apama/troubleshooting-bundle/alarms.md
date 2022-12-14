@@ -342,7 +342,7 @@ This alarm is raised for the input queues:
   Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
-  Slowest context queue size: &lt;size&gt;
+  Slowest context queue size: &lt;size&gt;.
 - Alarm severity: WARNING
 
 This alarm is raised for the output queues:
@@ -353,7 +353,7 @@ This alarm is raised for the output queues:
   Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
-  Slowest context queue size: &lt;size&gt;
+  Slowest context queue size: &lt;size&gt;.
 - Alarm severity: WARNING
 
 This alarm is raised for both the input and output queues:
@@ -365,7 +365,7 @@ This alarm is raised for both the input and output queues:
   Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
-  Slowest context queue size: &lt;size&gt;
+  Slowest context queue size: &lt;size&gt;.
 - Alarm severity: MAJOR
 
 See also [List of correlator status statistics]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DepAndManApaApp_list_of_correlator_status_statistics.html) in the Apama documentation.

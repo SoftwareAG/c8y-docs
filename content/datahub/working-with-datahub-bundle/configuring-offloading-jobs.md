@@ -167,6 +167,10 @@ The final step provides a summary of your settings, the configuration of additio
 
 In the offloading preview you can inspect how the actual data will be stored in the data lake. For this purpose, an offloading preview is executed, returning a sample of the resulting data. The header row of the sample data incorporates the column name as well as the column type. Use **Hide time columns** to either show the default columns with a temporal notion or not. Note that the preview does not persist data to the data lake.
 
+**Offloading frequency**
+
+Per default each active offloading pipeline is executed once an hour, at the same minute. You can adapt the offloading frequency by setting in the drop-down box the hours per day at which the offloading will to be executed. As with the default setting, the exact minute of the hour for the execution is selected by the system. The hours are defined with respect to UTC as timezone. You have to select at least one hour; otherwise the configuration cannot be saved.
+
 **Compaction strategy**
 
 In the additional settings, you can define the compaction strategy for the offloading pipeline. The compaction strategy refers to how {{< product-c8y-iot >}} DataHub automatically combines multiple smaller files in the data lake into one or more larger files. {{< product-c8y-iot >}} DataHub periodically executes the compaction for an offloading pipeline as a large number of small files may adversely affect the query performance. {{< product-c8y-iot >}} DataHub automatically sets the compaction strategy, but allows you to optionally change the strategy. Available compaction strategies are:
@@ -184,6 +188,56 @@ In the additional settings, you can enable/disable view materialization for an o
 {{< c8y-admon-info >}}
 When view materialization is activated, additional data is stored in the data lake, which might affect your storage costs.
 {{< /c8y-admon-info >}}
+
+**Duplicate column names**
+
+Another setting, which applies only for the measurements collection, is the handling of duplicate column names. Column names of measurement values are constructed by concatenating path and unit/value, which may lead to columns having the same name except for their case. Then the entries would all be offloaded into the same column. As this may be an unwanted behaviour or even imply mixed types in the offloading process, the names can be sanitized. When activated, for each generated column name, which would be equal to another column name in terms of case-insensitivity, a new column will be created, whose name includes the original name plus a unique suffix.
+
+The following example documents from two different offloading runs would be processed as follows.
+
+First document:
+````json
+{
+    "id": "4711",
+    ...
+    "time": {
+      "date": "2020-03-19T00:00:00.000Z",
+      "offset": 0
+    },
+    "type": "c8y_Temperature",
+    "_seriesValueFragments": [{
+      "unit": "C",
+      "value": 17.3,
+      "path": "c8y_TemperatureMeasurement.T"
+    }]
+}
+````
+
+Second document:
+````json
+{
+    "id": "4711",
+    ...
+    "time": {
+      "date": "2020-03-20T00:00:00.000Z",
+      "offset": 0
+    },
+    "type": "c8y_Temperature",
+    "_seriesValueFragments": [{
+      "unit": "C",
+      "value": "NaN",
+      "path": "c8y_temperaturemeasurement.T"
+    }]
+}
+````
+
+The two paths *c8y_TemperatureMeasurement.T* and *c8y_temperaturemeasurement.T* are equal in terms of case-insensitivity. Without name sanitization, one column *c8y_TemperatureMeasurement.T.unit* will be created, which stores all unit entries. Analoguously, one column *c8y_TemperatureMeasurement.T.value* will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR.
+
+With name sanitization, two columns *c8y_TemperatureMeasurement.T.unit* and *c8y_temperaturemeasurement.T.unit_6bfa* will be created for unit entries. Then the unit entries will be stored in the column with the associated path. Analoguously, two columns *c8y_TemperatureMeasurement.T.value* and *c8y_temperaturemeasurement.T.value_490d* will be created for value entries.
+
+In case one offloading run processes multiple fragments with corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
+
+**Completion of offloading configuration**
 
 Finally, click **Save** to save the offloading pipeline. Otherwise click **Cancel** to cancel the offloading configuration. You can also navigate back to adapt previous settings, using the **Previous** buttons.
 

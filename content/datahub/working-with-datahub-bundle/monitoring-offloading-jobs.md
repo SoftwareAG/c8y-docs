@@ -12,25 +12,6 @@ You can either examine the corresponding latest execution for all configured pip
 You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-info >}}
 
-### Status of all offloading jobs
-
-<a id="status-of-all-offloading-jobs"></a>
-
-In the navigator, select **Status** and then **Offloading** to get an overview of the latest status of all pipelines. The list shows the corresponding last execution for all pipelines. Each execution consists of the following details:
-
-| Component | Description |
-| ---         | --- |
-| Status icon | The status of the execution, which is either running, successful, or error
-| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
-| Records | The number of records which have been offloaded during this execution
-| Execution time | The point in time the execution was started
-| Runtime (s) | The runtime of the execution in seconds
-| Next execution time | The point in time for which the next execution is scheduled; for a manual execution it is empty
-
-Click **Reload** to refresh the status being shown.
-
-You can filter the entries by their task name or their status by using the filter buttons in the action bar.
-
 ### History per offloading job
 
 <a id="history-per-offloading-job"></a>
@@ -63,7 +44,7 @@ You can filter the entries by their status by using the filter button at the top
 For a given offloading job, you can examine additional details of its execution.
 
 {{< c8y-admon-info >}}
-You need administration permissions to access the job details.
+You need administration or management permissions to access the job details.
 {{< /c8y-admon-info >}}
 
 Select a job overview in the history per offloading job or in the status of all offloading jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:

@@ -37,6 +37,8 @@ For each ad-hoc query, the following information is provided:
 | Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an ad-hoc query will be billed as if they were 10 MB
 | Details | The link to the the internal Dremio job in an expandable box
 
+When expanding an entry, additional information for the query is shown. Besides the query string itself, a link to the Dremio job having executed this query is provided.
+
 ### System log
 
 In the navigator, select **Auditing** and then **System log** to view the system log.

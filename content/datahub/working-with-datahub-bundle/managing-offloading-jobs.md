@@ -30,13 +30,6 @@ The scheduler is configured to run the offloading pipeline once an hour. The pre
 
 Use the **Active**/**Inactive** toggle in an offloading configuration to stop the periodic offloading. Then the scheduler stops scheduling new jobs; active jobs will complete.
 
-##### Viewing the execution status
-
-Each offloading configuration shows the execution status:
-
-* **Last execution** is empty if the offloading has not been executed yet. If the offloading has been executed, **Last execution** shows the execution time and whether the execution was successful or not, indicated by a success or failure icon on the right next to the time. An additional icon on the left shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon.
-* **Next execution** shows the point in time for which the next execution is planned. It is only shown if the previous execution was a scheduled one.
-
 #### Managing an offloading pipeline
 
 In the context menu of each offloading pipeline, you will find actions for managing and monitoring the pipeline.

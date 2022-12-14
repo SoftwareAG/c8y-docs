@@ -16,7 +16,7 @@ You need administration permissions to access the compaction job histories. See 
 
 <a id="status-of-all-compaction-jobs"></a>
 
-In the navigator, select **Compaction** under **Status** to get an overview of the latest status of the compaction jobs for each pipeline. The list shows the corresponding last compaction job for all pipelines. Each compaction consists of the following details:
+In the navigator, select **Compaction status** under **Administration** to get an overview of the latest status of the compaction jobs for each pipeline. The list shows the corresponding last compaction job for all pipelines. Each compaction consists of the following details:
 
 | Component | Description |
 | ---         | --- |
@@ -80,6 +80,7 @@ Select a compaction job overview in the compaction history per offloading job or
 | Target folder | The path to the target table in the data lake
 | Daily run | Indicates whether the job is a daily execution job
 | Monthly run | Indicates whether the job is is a monthly execution job
+| Recovery executed | Indicates whether the job has run a recovery from a job that has previously failed
 
 **Daily compaction results**
 

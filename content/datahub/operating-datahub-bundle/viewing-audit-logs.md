@@ -26,6 +26,8 @@ For each offloading query, the following information is provided:
 | Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an offloading query will be billed as if they were 10 MB
 | Details | The internal task UUID in an expandable box
 
+When expanding an entry, the internal id of the offloading configuration is shown.
+
 For each ad-hoc query, the following information is provided:
 
 | Column name | Description

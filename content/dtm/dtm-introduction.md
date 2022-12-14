@@ -8,16 +8,16 @@ outputs:
 helpcontent:
 - label: dtm-introduction
   title: Digital Twin Manager
-  content: "This application allows you to create and manage assets around your physical connected devices in Cumulocity IoT using a digital representation of a physical hierarchy of assets and devices. 
+  content: "The DTM application allows you to create and manage assets around your physical connected devices in {{< product-c8y-iot >}} via the digital representation of a physical hierarchy of assets and devices.
 
 
-Assets are created using **asset types** as the blueprint and consists of one or more **custom properties** and **subassets**.  
+To create an asset, use **asset types** as the blueprint, which consist of one or more **custom properties** as well as one or more **subassets**.  
 
 
-An **asset hierarchy** consists of the root asset types and all its subsequent child asset types. Each hierarchy level consists of custom properties for the asset, as well as its subassets and devices. 
+An asset hierarchy consist of a root asset type and all its subsequent child asset types. Each hierarchy level consists of custom properties for the asset, as well as its subassets and devices. 
 
 
-Get started by creating **asset types** and **custom properties** and once the template is ready, click  **Add Asset** on the top right corner of this page to define assets. "
+To get started, open the **Digital twin library** in the **Configuration** menu in the navigator and create the asset types and custom properties. When you created your blueprints, navigate to **Assets** menu in the navigator and click **Add Asset** on the top right corner to define assets. "
 
 ---
 

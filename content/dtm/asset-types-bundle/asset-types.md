@@ -2,9 +2,21 @@
 weight: 20
 title: Asset types
 layout: redirect
+helpcontent:
+- label: asset-types
+  title: Asset Types
+  content: "An asset type is a blueprint or template to create one or multiple assets. It defines how an asset will look like after it is created. An asset type consist of one or more custom properties and subassets.
+ 
+
+Click **Add asset type** in the top menu bar to add a new asset type. To edit an existing asset type, click the edit icon on the right of the desired asset type.. 
+ 
+
+Custom properties are the parameters that define an asset type.  
+
+To add a new custom property, open the **Property library** tab and click **Add custom property**. "
 ---
 
-The asset type is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like when created. An asset type consists of one or more [custom properties](/dtm/asset-types/#property-library).
+The asset type is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset type consist of one or more [custom properties](/dtm/asset-types/#property-library) and subassets.
 
 To reach the **Asset types** page, navigate to **Configuration > Digital Twin Library > Asset types**.
 

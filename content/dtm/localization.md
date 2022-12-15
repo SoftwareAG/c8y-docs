@@ -2,6 +2,23 @@
 weight: 40
 layout: bundle
 title: Localization
+outputs:
+- html
+- json
+helpcontent:
+- label: localization
+  title: Localization
+  content: "
+  Use the **Localization** feature to add translations for custom properties or asset types, or to add custom translations for the existing static text in the DTM application. 
+
+
+  Once you created all custom properties and asset types, their names are added as keys in the **Localization** page. Add further translations as required.  
+
+
+  To add a new translation, click **Add term** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field. 
+  
+
+  Note that to use this feature, you must be subscribed to Feature-branding application in the Enterprise tenant.*"
 ---
 
 {{< c8y-admon-related >}}

@@ -11,7 +11,7 @@ helpcontent:
   content: "The DTM application allows you to create and manage assets around your physical connected devices in {{< product-c8y-iot >}} via the digital representation of a physical hierarchy of assets and devices.
 
 
-To create an asset, use **asset types** as the blueprint, which consist of one or more **custom properties** as well as one or more **subassets**.  
+To create an asset, use **asset types** as the blueprint, which consist of one or more **custom properties** as well as one or more child asset types.  
 
 
 An asset hierarchy consist of a root asset type and all its subsequent child asset types. Each hierarchy level consists of custom properties for the asset, as well as its subassets and devices. 

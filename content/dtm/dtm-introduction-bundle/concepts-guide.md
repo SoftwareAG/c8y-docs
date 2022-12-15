@@ -36,7 +36,7 @@ As an example, to create a digital twin of a Windmill,
 <img src="/images/dtm/digital-twin/dtm-digital-twin-windmill.png" alt="Windmill" />
 </p>
 
-1. Start by defining the scope of the hierarchy. Identify the key systems, processes, and components that need to be included.
+1. Start by defining the scope of the hierarchy. Identify the key systems, processes, and components to be included.
 
 2. Draft the hierarchy of the digital twins you need based on your definition.
 
@@ -48,7 +48,7 @@ As an example, to create a digital twin of a Windmill,
 
 4. Create all the properties you need in the **Digital twin library** so you can use it in asset types. 
 
-5. While creating the asset types, you need to work from inside to the outside. Following our example, start by creating the Blade asset type, then the Rotor asset type, follow the same process for the Rotor siblings (the Tower and the Nacelle) and finally the Windmill asset type.<br/>You must follow this process because for each asset type, you need to assign the required properties and set the allowed contained asset types (a Windmill requires a Rotor, which in turn requires Blades).
+5. While creating the asset types, you need to work from inside to the outside. Following our example, start by creating the Blade asset type, then the Rotor asset type, follow the same process for the Rotor siblings (the Tower and the Nacelle) and finally the Windmill asset type.<br/>You must follow this process because, for each asset type, you need to assign the required properties and set the allowed contained asset types (a Windmill requires a Rotor, which in turn requires Blades).
 
 6. Finally, after all required asset types are created, you can start adding asset instances.This process starts from the outer most level (the Windmill) and finishes at the deepest level (the Blades).
 

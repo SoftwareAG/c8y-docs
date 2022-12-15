@@ -88,38 +88,71 @@ As the token string is a JWT (JSON Web Token), it can be decoded to extract the 
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
 The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
 
-### Shared subscriptions
+### Non-persistent subscriptions and their tokens
 
-There can be multiple subscriptions on a managed object, each receiving filtered notifications as specified by their individual subscription filters. A subscription name (or topic) can also be set up on many managed objects or child / parent hierarchies. These can easily lead to high volumes of notifications.
+When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.
+If it is set to `true`, the created subscription is non-persistent. 
+If it is not present or `false`, the subscription will be persistent.
 
-In order to scale, shared subscriptions are required so that notifications are dispatched to one of a number of possible consumers that are part of the same logical subscriber or parallelized application.
-This can be achieved by creating a token with a subscription and subscriber name for the scalable application with the optional boolean `shared` request parameter set to true in the token create request.
+Persistent subscriptions ensure that consumers never miss a message if their connection is interrupted.
+They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
+and to maintain the consumers' positions in subscription notification streams.
+When a consumer of a persistent subscription has their connection interrupted,
+whether that is due to network issues or deliberate actions by the consumer,
+upon reconnection they will continue to receive notifications from the position they were at before the outage 
+(specifically, from the message after the last one they acknowledged successfully before the outage). 
 
-Notifications (messages) will be distributed among all connections to the Notification 2.0 WebSocket endpoint.
-They all use a token for the same subscription and the same subscriber, either by using the same shared token or using the same subscription name and subscriber when generating per instance tokens (for example if the tokens can not be shared over the network).
-The subscription name defines the topic messages are published on, while the subscriber identifies the backend (north side) application that will consume the notifications.
-The application can consist of more than one instances or "consumers" running in parallel in the shared use case.
+Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted across disconnections of the consumer.
+When a consumer of a non-persistent subscription has their connection interrupted,
+upon reconnection they will start receiving notifications from the most recent message of the subscription,
+missing all other notifications that occurred during the connection outage. 
+This will be the case for such temporarily disconnected consumers,
+even if other consumers of the same non-persistent subscription 
+are still receiving older messages that occurred while it was not connected. 
 
-Notifications will be delivered in order with respect to the notification generating device.
-The notifications will be delivered to the same application instance, except when a new instance or a failure changes the application topology.
-Then it is necessary to re-distribute the devices to currently running instances.
-In order to aid this assignment, the subscriber instance can specify a "consumer name" when connecting to the WebSocket endpoint.
-The same token, or one that was generated in a similar way from subscription name and subscriber, is used as the token query string argument.
-However, a different consumer name is passed as the `consumer` query string argument.
-For example, instance 1 of the subscriber microservice could pass in `notification2/consumer?token=xyz&consumer=instance1` while instance 2 could use `notification2/consumer?token=XYZ&consumer=instance2`.
-Currently, determining the instance ID of a microservice replica is not supported by the {{< product-c8y-iot >}} microservice API. An external application with named instances can be used instead.
+If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request, 
+they are *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters you choose. They do not have to be
+persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.  
 
-### Non-persistent subscriptions
+When a consumer creates a token for either a persistent or non-persistent subscription, 
+it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
+For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
+Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.  
 
-When subscribing, it is possible to pass in an optional boolean `nonPersistent` query parameter with a value of true.
-Note that there is no need to mark a subscription as shared - only the token is marked as shared. 
-Both the token and the subscriptions have `nonPersistent` but only the token has both `nonPersistent` and `shared`.
-This changes the subscription to not persist notifications on replicated secondary storage for the named subscription.
-They are effectively only buffered in memory and can be discarded if they are not consumed quickly enough or on node failure.
-Note that there can be both non-persistent and ordinary (that is persistent) subscriptions on a managed object with the same subscription name.
-These count as separate subscriptions and can be consumed by a subscriber using a token with the corresponding `nonPersistent` equal to true or false to select the non-persistent or (by default) the persistent topic.
+### Shared tokens
 
-The messaging service will keep non-persistent notifications in memory, but will drop notifications if more than a configurable limit is reached per subscriber/consumer (default is 1000).
+Shared tokens allow parallelization of the consumer client workload for a notification subscription.
+This is useful if the notifications would otherwise arrive at a higher rate than the consuming client application can process them.
+It has no impact on the rate of notification throughput within, and thus their egress from, {{< product-c8y-iot >}} core.
+
+When you create a token, you can add the optional Boolean body parameter `shared` to the request.
+If it is set to `true`, the created token is shared.
+If it is not present or `false`, the token is exclusive (not shared).
+
+If a consumer's token is not shared, the consumer is an *exclusive* consumer.
+Only one consumer client can connect using an exclusive token. An attempt to connect further consumers with the same exclusive token results in an error.
+An exclusive consumer receives a copy of all notifications from the subscription its token is for.
+
+If a consumer's token is shared, the consumer is a *shared consumer*. Additional consumer clients can connect using the same token.
+If only one shared consumer is connected, it receives a copy of all notifications from the subscription.
+As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that 
+each consumer receives a non-overlapping subset (share) of the notifications from the subscription. 
+The set of consumers sharing a token can be thought of as a single logical consumer.
+Collectively, the set receives all notifications for the subscription. 
+
+The notification load is spread across the shared consumers according to the ID of the source that generated the notification, typically a device ID.
+All notifications for a given ID will be delivered to the same consumer. Each consumer may receive notifications for many different IDs.
+This means that there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
+Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription.
+The load should generally become more evenly distributed as the number of sources increases.
+
+In order to help keep the messages from a given set of source IDs stick to shared consumers in the face of connection interruptions, the consumer clients can provide an 
+optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
+
+For example: two consumers identifying themselves as *instance1* and *instance2* connect using URL paths
+`notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
+
+Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens can be created for the same subscription and they all operate independently, each receiving their own copy of the notifications. This means you can have multiple shared tokens for the same subscription and their load is only divided within the scope of each shared token.
 
 ### Deleting subscriptions and unsubscribing a subscriber
 

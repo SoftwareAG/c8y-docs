@@ -9,16 +9,13 @@ helpcontent:
 - label: localization
   title: Localization
   content: "
-  Use the **Localization** feature to add translations for custom properties or asset types, or to add custom translations for the existing static text in the DTM application. 
+  Use the **Localization** feature to add translations for custom properties or asset types, as well as to add custom translations for the existing static text in the DTM application.
 
+  Once you created all custom properties and asset types, their names are added as keys in the **Localization** page. You can add further translations as required.  
 
-  Once you created all custom properties and asset types, their names are added as keys in the **Localization** page. Add further translations as required.  
+  To add a new translation, click **Add term** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field.
 
-
-  To add a new translation, click **Add term** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field. 
-  
-
-  Note that to use this feature, you must be subscribed to Feature-branding application in the Enterprise tenant.*"
+  Note that to use this feature, you must be subscribed to Branding feature application in the Enterprise tenant."
 ---
 
 {{< c8y-admon-related >}}
@@ -33,7 +30,7 @@ helpcontent:
 <a name=""></a>
 ### Localization feature
 
-The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page in the navigator.
+The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page in the navigator.
 
 Additionally, if you want to add translations for the [custom property](/dtm/asset-types/#property-library) or [asset types](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
 

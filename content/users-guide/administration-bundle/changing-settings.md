@@ -49,7 +49,7 @@ In the **Preferred login mode** field, you can select one of the following optio
 * Basic Auth - Should be selected only for specific compatibility reasons, since it only provides basic security.
 * Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
-This login mode will be used by the platform's web apps as the default method to authenticate users. Device authentication stays unchanged.
+This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
 {{< c8y-admon-important >}}
 Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
@@ -223,24 +223,24 @@ Users with a "devices" role are excluded from TFA and TOTP. This is also true wh
 {{< /c8y-admon-info >}}
 
 <a name="default-app"></a>
-### Changing web app settings
+### Changing application settings
 
-Click **Application** in the **Settings** menu to change web apps settings.
+Click **Application** in the **Settings** menu to change applications settings.
 
-![Default web app](/images/users-guide/Administration/admin-settings-application.png)
+![Default application](/images/users-guide/Administration/admin-settings-application.png)
 
-Under **Default web app**, you can select a default web app from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific web app, the web app selected as default web app is used as default landing page.
+Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
 {{< c8y-admon-info >}}
-All users must have access to this web app.
+All users must have access to this application.
 {{< /c8y-admon-info >}}
 
 Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the {{< product-c8y-iot >}} API.
 
-The **Allowed Domain** setting will enable your JavaScript web apps to directly communicate with REST APIs.
+The **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
 
 * Set it to "*" to allow communication from any host.
-* Set it to `http://my.host.com`, `http://myother.host.com` to allow web apps from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
+* Set it to `http://my.host.com`, `http://myother.host.com` to allow applications from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
@@ -255,7 +255,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 
 - Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
-- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit web app.
+- Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
 {{< c8y-admon-info >}}
 Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.

@@ -7,7 +7,7 @@ helpcontent:
   content: "Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings). You can however store measurements for 90 days for example, but delete alarms already after 10 days."
 - label: files
   title: Files repository
-  content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web apps uploaded from the **Own web apps** page."
+  content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page."
 ---
 
 <a name="retention-rules"></a>
@@ -17,7 +17,7 @@ Retention rules gives you control on how long data is stored in your account. By
 
 You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
 
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration web app.
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration application.
 
 Click **Retention rules** in the **Management** menu to view a list of retention rules configured for your account.
 
@@ -101,7 +101,7 @@ The file repository provides an overview of the files stored in your account.
 
 Click **Files repository** in the **Management** menu to see a list of files.
 
-The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web apps uploaded from the **All web apps** page.
+The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **All applications** page.
 
 For each file, the name of the file, its owner, the file type (for example, image/bmp, text/csv), its size and the date when it was last updated is provided.
 
@@ -126,5 +126,5 @@ Click the menu icon at the right of the respective row and then click **Download
 Click the menu icon at the right of the respective row and then click **Delete**.
 
 {{< c8y-admon-info >}}
-If the file corresponds to an active web app, it cannot be deleted. You must first remove or upgrade the web app to be able to delete it.
+If the file corresponds to an active application, it cannot be deleted. You must first remove or upgrade the application to be able to delete it.
 {{< /c8y-admon-info >}}

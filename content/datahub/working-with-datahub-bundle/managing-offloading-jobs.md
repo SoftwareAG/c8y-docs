@@ -34,8 +34,6 @@ Use the **Active**/**Inactive** toggle in an offloading configuration to stop th
 
 In the context menu of each offloading pipeline, you will find actions for managing and monitoring the pipeline.
 
-<img src="/images/datahub-guide/datahub-offloading-context-menu.png" alt="Context menu of an offloading configuration" style="max-width: 40%">
-
 ##### Editing/showing an offloading pipeline
 
 Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.

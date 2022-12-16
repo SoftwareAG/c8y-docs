@@ -25,6 +25,10 @@ The name is composed of two parts, with the first part being fixed:
 
 The password of the Dremio API user must have at least eight characters, including at least one character and one number.
 
+{{< c8y-admon-info >}}
+When using the proxy REST API, all queries are processed using the same Dremio API user. The queries are listed in the query log. Thus, the log shows all queries of all users having leveraged the proxy API.  
+{{< /c8y-admon-info >}}
+
 Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users).
 
 #### Data Lake

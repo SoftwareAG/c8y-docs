@@ -35,8 +35,6 @@ You can define multiple offloading pipelines for each {{< product-c8y-iot >}} co
 
 In the section [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
 
-<img src="/images/datahub-guide/datahub-define-an-offloading-task.png" alt="Define an offloading task" style="max-width: 100%">
-
 Click **Next** to proceed with the next configuration step. Click **Cancel** to cancel the offloading configuration.
 
 <a name="configure-target-table"></a>

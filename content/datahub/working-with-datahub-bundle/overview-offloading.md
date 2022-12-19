@@ -44,13 +44,13 @@ Below the action bar you find the current list of configurations.
 
 Each offloading configuration provides the following information:
 
-**Active/inactive**
+**Active**
 
 The toggle shows the current job state and can be used to activate or deactivate an offloading job.
 
 **Job name**
 
-The name of the job refers to the task name as defined in the configuration process. If the job is active, the next planned execution time for the job is also shown. The sort control allows for sorting by job name.
+The name of the job refers to the task name as defined in the configuration process. The sort control allows for sorting by job name.
 
 **Target table name**
 
@@ -58,7 +58,7 @@ The target table name refers to the target table in Dremio, with which the data 
 
 **Offloading status**
 
-The offloading status is empty if the offloading has not been executed yet. If the offloading has been executed, the status of the most recent run is shown. This includes the execution time and whether the execution was successful or not, indicated by a success or failure icon. An additional icon shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon. In case of a successful run, the number of offloading records and the runtime is shown as well. The sort control allows for sorting by successful/failed jobs. The filter control allows for filtering by execution status.
+The offloading status is empty if the offloading has not been executed yet. If the offloading has been executed, the status of the most recent run is shown. This includes the execution time and whether the execution was successful or not, indicated by a success or failure icon. An additional icon shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon. In case of a successful run, the number of offloaded records and the runtime is shown as well. The sort control allows for sorting by successful/failed jobs. The filter control allows for filtering by execution status.
 
 **Compaction status**
 
@@ -66,7 +66,7 @@ The compaction status is empty if the offloading has not been executed yet. If t
 
 **Additional information**
 
-When expanding a configuration, the additional columns and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once.
+When expanding a configuration, the job schedule, the additional columns, and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once.
 
 **Context menu**
 

@@ -118,20 +118,6 @@ In the context menu of an additional result column, select **Delete** to open th
 
 When deleting an additional result column, the data will no longer be included in the next offloading run. Data which has already been offloaded to the data lake is not affected by the deletion of the column.  
 
-**Migration of additional result columns**
-
-{{< product-c8y-iot >}} DataHub versions prior to version 10.10 offer a single text field for defining a comma-separated list of additional result columns. Offloading configurations defined with such an old version internally rely on a different format for managing additional result columns. {{< product-c8y-iot >}} DataHub version 10.10 and above includes an auto-migration procedure in its version upgrade process to automatically migrate an old configuration to the new additional result columns format. In rare cases this auto-migration might fail, for example, when the SQL expression is invalid. Such a configuration can still be scheduled, but its settings cannot be modified.
-
-To migrate to the new format manually, proceed as follows:
-
-1. In the context menu of the column click **Show** and navigate through the configuration.
-2. Copy the task name, the additional result columns definition, and the target table name to a text editor.
-3. Create a new configuration with an arbitrary target table name and an arbitrary task name.
-4. Navigate to the additional result columns step. Rebuild the additional result columns by manually adding the same columns as given in the old definition. For example, the expression "'Hello' AS Col1, 'World' AS Col2" results in two columns, one with name "Col1" and source definition "'Hello'" and one with name "Col2" and source definition "'World'". In case columns in the old definition were not named, Dremio has automatically assigned a column name like "EXPR$1". Use the preview of the old configuration to get the corresponding column names and use them when defining the new additional result columns. Complete the configuration.
-5. Delete the old configuration.
-6. Edit the new configuration and set the task name and the target table name of the old configuration.
-7. When activating the new configuration, you are prompted for either flushing or appending to the existing data. Use the latter option to base the new configuration on the data the old configuration has offloaded so far.
-
 Click **Next** to proceed with the next configuration step. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
 
 <a name="set-filter-predicate"></a>

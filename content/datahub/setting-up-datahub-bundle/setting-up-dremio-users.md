@@ -24,7 +24,7 @@ If the initial configuration has not been completed yet, no users are shown. If 
 #### Username
 The username is a mandatory setting. It must be a unique value, that is, no other Dremio user has the same username. It consists of the tenant ID plus forward slash and a string with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline. For example, the username may be *t47110815/myUser*.
 
-#### First name, last name and email
+#### First name, last name, and email
 The first name, last name, and email of a Dremio user are optional settings.
 
 #### Permissions for data lake and space
@@ -37,7 +37,7 @@ Having the corresponding permission assigned, the user can grant other Dremio us
 For example, IoT data has been offloaded to the data lake using {{< product-c8y-iot >}} DataHub. A data scientist from a different business unit now wants to access the data lake contents. A Dremio account needs to be created for the data scientist. Therefore, a Dremio user created by {{< product-c8y-iot >}} DataHub, having the data lake permission, grants read access on the data lake source to the Dremio account of the data scientist. 
 
 {{< c8y-admon-info >}}
-Dremio refers to the permissions as [privileges](https://docs.dremio.com/software/security/rbac/privileges/). Privileges include for example `Select`, `Alter Table`, `Create Table`, or `Drop table`. Given a Dremio user with the corresponding permissions, permissions to other users can be granted via the Dremio UI. In the UI, browse to the data lake or space and select **Edit details** in the context menu. In the editor, the list of privileges for all users is shown, with the option to update privileges and users. Alternatively, you can use the [Dremio SQL API](https://docs.dremio.com/software/sql-reference/sql-commands/rbac/) to modify privileges.
+Dremio refers to the permissions as [privileges](https://docs.dremio.com/software/security/rbac/privileges/). Privileges include for example `SELECT`, `ALTER`, `CREATE TABLE`, or `DROP`. Given a Dremio user with the corresponding permissions, permissions to other users can be granted via the Dremio UI. In the UI, browse to the data lake or space and select **Edit details** in the context menu. In the editor, the list of privileges for all users is shown, with the option to update privileges and users. Alternatively, you can use the [Dremio SQL API](https://docs.dremio.com/software/sql-reference/sql-commands/rbac/) to modify privileges.
 {{< /c8y-admon-info >}}
 
 For each user, including the Dremio API user, the `manage grants` permissions on data lake and space are initially not set.

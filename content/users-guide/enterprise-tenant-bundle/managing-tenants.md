@@ -28,10 +28,10 @@ If you would like to use this feature, please contact [product support](/welcome
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
-- READ: Browse and view tenants.
-- CREATE: Create new tenants.
-- UPDATE: Edit tenants (incl. subscriptions) and suspend or activate them.
-- CHANGE: Create, edit and delete tenants.
+- READ - browse and view tenants.
+- CREATE - create new tenants.
+- UPDATE - edit tenants (incl. subscriptions) and suspend or activate them.
+- CHANGE - create, edit and delete tenants.
 
 ### To view subtenants
 
@@ -227,11 +227,11 @@ You may view details on their status by expanding the respective entry.
 
 The following information is provided:
 
-* Active: The number of active microservice instances
-* Unhealthy: The number of inactive microservice instances
-* Desired: The number of desired microservice instances
-* Name: Microservice instance name
-* Restarts: The number of microservice instance restarts
+* Active - the number of active microservice instances
+* Unhealthy - the number of inactive microservice instances
+* Desired - the number of desired microservice instances
+* Name - microservice instance name
+* Restarts - the number of microservice instance restarts
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 

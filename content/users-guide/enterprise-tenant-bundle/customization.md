@@ -132,8 +132,8 @@ Under **General**, you can edit the title which will be used in the browser tab.
 
 Under **Main logo**, specify the following items:
 
-* The favicon, which will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
-* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
+* The favicon - will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
+* Your branding logo - will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
 * The brand logo height.
 
 **Navigator logo**
@@ -153,12 +153,12 @@ In the **Colors** section you specify the colors to be used in your branding ver
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
 * Main brand color.
-* Secondary brand color. The default value is "#07b91A".
-* Dark brand color. Mainly used for two-color icons. The default value is "#0B385B".
-* Light brand color. Mainly used for two-color icons. The default value is "#5FAEEC".
-* Text color. The default value is "#444".
-* Link color. The default value is the same as the main brand color.
-* Main background color. The default value for this item is "#FAFAFA".
+* Secondary brand color - the default value is "#07b91A".
+* Dark brand color - mainly used for two-color icons. The default value is "#0B385B".
+* Light brand color - mainly used for two-color icons. The default value is "#5FAEEC".
+* Text color - the default value is "#444".
+* Link color - the default value is the same as the main brand color.
+* Main background color - the default value for this item is "#FAFAFA".
 
 **Top bar**
 
@@ -166,9 +166,9 @@ In the **Top bar** section you specify the parameters for the top bar.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color. The default value is "#FFFFF".
-* Text color. The default value is "49595B".
-* Button hover text color. The default value is the main brand color.
+* Background color - the default value is "#FFFFF".
+* Text color - the default value is "49595B".
+* Button hover text color - the default value is the main brand color.
 
 **Navigator**
 
@@ -176,12 +176,12 @@ In the **Navigator** section you specify the parameters for the navigator.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color. The default value is "2c3637".
-* Logo wrapper background color. The default value is "Transparent".
-* Title color. The default value is "FFFFF".
-* Text and buttons color. The default value is "#FAFAFA".
-* Separator line color. The default value is "#FAFAFA".
-* Text color of the current item in the navigator. The default value is "#FAFAFA".
+* Background color - the default value is "2c3637".
+* Logo wrapper background color - the default value is "Transparent".
+* Title color - the default value is "FFFFF".
+* Text and buttons color - the default value is "#FAFAFA".
+* Separator line color - the default value is "#FAFAFA".
+* Text color of the current item in the navigator - the default value is "#FAFAFA".
 * Background color of the current item in the navigator with the main brand color as default.
 
 **Misc**

@@ -27,8 +27,8 @@ If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}
 For users created via an external authorization server, updating the following settings in {{< product-c8y-iot >}} will have no effect (will be reset on the next user re-login):
 
 * user info (login alias, email, first name, last name, telephone)
-* global roles → configurable via SSO access mapping
-* application access → configurable via SSO access mapping
+* global roles - configurable via SSO access mapping
+* application access - configurable via SSO access mapping
 
 Moreover, password reset in {{< product-c8y-iot >}} is disabled for users created through an external authentication server.
 
@@ -117,9 +117,9 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 	</table>
 
 3. Select the login options for the user.
-	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
-	* **User must reset password on next login**: If selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strenth.  
-	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
+	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
+	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strenth.  
+	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/users-guide/administration#managing-permissions).
 5. Click **Save** to save your settings.

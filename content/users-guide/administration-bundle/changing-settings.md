@@ -197,8 +197,8 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 You may select one of the following options:
 
 * **SMS-based**, supporting the following settings:
-	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
-   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
+	- **Limit token validity for** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
+   - **Limit verification code validity for** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
    <br><br>
 
 	{{< c8y-admon-info >}}
@@ -206,7 +206,7 @@ An SMS gateway microservice must be configured for the tenant. Naturally only us
   {{< /c8y-admon-info >}}
 
 * **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
-	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
+	 - **Enforce TOTP two-factor authentication on all users** - when enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
 {{< c8y-admon-info >}}
 The TOTP method is only available with the login mode "OAI-Secure".

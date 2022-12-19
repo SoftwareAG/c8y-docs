@@ -40,8 +40,8 @@ This feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag
 
 In the field **Activate support user**, specify if support user access is activated for subtenant users. Possible values you can enter here are:
 
-* *true*: Support user access is activated for all subtenants by default. A support user can log into any subtenant as any user. Note that subtenant users cannot disable access themselves.
-* *false*: Support user access is deactivated for all subtenants, but can be explicitly enabled for a subtenant. A support user can log in only to subtenants for which at least one user has explicitly enabled such access.
+* *true* - support user access is activated for all subtenants by default. A support user can log into any subtenant as any user. Note that subtenant users cannot disable access themselves.
+* *false* - support user access is deactivated for all subtenants, but can be explicitly enabled for a subtenant. A support user can log in only to subtenants for which at least one user has explicitly enabled such access.
 * An explicit date in date-time format, until when support user access should remain activated. If no date is specified the value is set to "No limit".
 
 In the **Validity limit** field, you can optionally specify the support duration, that means, for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.

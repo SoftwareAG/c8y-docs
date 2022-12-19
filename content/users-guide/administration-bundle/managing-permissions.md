@@ -18,8 +18,8 @@ Permissions define what a user is allowed to do in {{< product-c8y-iot >}} appli
 
 The following types of roles can be associated with users:
 
-- Global roles: Contain permissions that apply to all data within a tenant.
-- Inventory roles: Contain permissions that apply to groups of devices.
+- Global roles - contain permissions that apply to all data within a tenant.
+- Inventory roles - contain permissions that apply to groups of devices.
 
 Moreover, application access can be granted to enable a user to use an application.
 
@@ -126,10 +126,10 @@ Click **Add global role** in the **Global roles** tab. In the **New global role*
 
 For each type, you can select the following permission levels:
 
-- READ: Read the specified data.
-- CREATE: Create new data like users and inventory data and edit users within your hierarchy.
-- UPDATE: Change and delete the specified data (not including READ).
-- ADMIN: Create, update or delete the specified data.
+- READ - read the specified data.
+- CREATE - create new data like users and inventory data and edit users within your hierarchy.
+- UPDATE - change and delete the specified data (not including READ).
+- ADMIN - create, update or delete the specified data.
 
 {{< c8y-admon-info >}}
 CREATE permissions are related to the concept of ownership in {{< product-c8y-iot >}}. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  CREATE permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the UPDATE permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.

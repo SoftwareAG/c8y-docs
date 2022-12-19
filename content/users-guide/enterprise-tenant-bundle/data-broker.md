@@ -54,11 +54,11 @@ Click **Data connectors** in the navigator to see a list of all currently define
 
 For each data connector, the following information is provided:
 
-* The data connector's name.
-* Its destination tenant.
-* Description if provided, "None" displayed otherwise.
-* The status of the connector.
-* The number of filters set for the data connector.
+* The data connector's name
+* Its destination tenant
+* Description if provided, "None" displayed otherwise
+* The status of the connector
+* The number of filters set for the data connector
 
 Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 

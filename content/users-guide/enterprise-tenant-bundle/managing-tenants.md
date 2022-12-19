@@ -247,10 +247,10 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
 
-* Limit HTTP queue - limit of HTTP request queue for tenant.
-* Limit HTTP requests - limit of HTTP requests for tenant per second.
-* Limit stream queue - limit of MQTT request queue for tenant.
-* Limit stream requests - limit of MQTT requests for tenant per second.
+* Limit HTTP queue - limit of HTTP request queue for tenant
+* Limit HTTP requests - limit of HTTP requests for tenant per second
+* Limit stream queue - limit of MQTT request queue for tenant
+* Limit stream requests - limit of MQTT requests for tenant per second
 
 The request throttling mechanism is only enabled when both HTTP properties (limit HTTP queue and limit HTTP requests) are configured. If one of the values is omitted, it does not work.
 

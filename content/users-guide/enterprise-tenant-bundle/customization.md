@@ -196,9 +196,9 @@ Disabling the cookie banner, also disables the product experience tracking by Ga
 
 The following parameters can be specified:
 
-* Title - cookie banner title.
-* Text - cookie banner text with a general statement on the cookie usage and the use cases for it.
-* Link to privacy policy - a link to the page with the privacy policy.
+* Title - cookie banner title
+* Text - cookie banner text with a general statement on the cookie usage and the use cases for it
+* Link to privacy policy - a link to the page with the privacy policy
 
 <a name="domain-name"></a>
 ### Domain name

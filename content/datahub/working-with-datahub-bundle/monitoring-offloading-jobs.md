@@ -6,17 +6,15 @@ layout: redirect
 
 Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. {{< product-c8y-iot >}} DataHub provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected.
 
-You can either examine the corresponding latest execution for all configured pipelines or examine the execution history for a specific pipeline.
-
 {{< c8y-admon-info >}}
 You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-info >}}
 
-### History per offloading job
+### History per offloading pipeline
 
 <a id="history-per-offloading-job"></a>
 
-If you want to examine the execution history for a particular job, select **Offloading** in the navigation bar and select the offloading job you are interested in.
+If you want to examine the execution history for a particular pipeline, select **Offloading** in the navigation bar and select the one you are interested in.
 
 Click **Show offloading history** in the context menu of the offloading configuration to show the history of offloading executions.
 
@@ -35,7 +33,7 @@ The system is configured to keep a limited history of the last job executions.
 
 Click **Reload** to refresh the list.
 
-You can filter the entries by their status by using the filter button at the top. The pagination buttons can be used to traverse the history entries.
+You can filter the entries by their status or timestamp by using the filter controls at the top. The pagination buttons at the bottom can be used to traverse the history entries.
 
 ### Details of offloading job
 
@@ -47,7 +45,7 @@ For a given offloading job, you can examine additional details of its execution.
 You need administration or management permissions to access the job details.
 {{< /c8y-admon-info >}}
 
-Select a job overview in the history per offloading job or in the status of all offloading jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
+In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 
 **Execution schedule**
 
@@ -71,8 +69,8 @@ Select a job overview in the history per offloading job or in the status of all 
 | Component | Description |
 | ---         | --- |
 | Job name | The name of the pipeline
-| Job id | The internal ID of the job
-| Job execution id | The Dremio ID of this execution
+| Job ID | The internal ID of the job
+| Job execution ID | The Dremio ID of this execution
 | Source collection | The name of the {{< product-c8y-iot >}} base collection
 | Target table | The folder name in the data lake
 | Target folder | The path to the target table in the data lake

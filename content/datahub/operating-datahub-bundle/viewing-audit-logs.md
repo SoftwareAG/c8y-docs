@@ -26,8 +26,6 @@ For each offloading query, the following information is provided:
 | Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an offloading query will be billed as if they were 10 MB
 | Details | The internal task UUID in an expandable box
 
-When expanding an entry, the internal id of the offloading configuration is shown.
-
 For each ad-hoc query, the following information is provided:
 
 | Column name | Description
@@ -37,9 +35,7 @@ For each ad-hoc query, the following information is provided:
 | Runtime (s) | The runtime of the execution in seconds
 | Data scanned (MB) | The amount of data the ad-hoc query has read from the data lake
 | Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an ad-hoc query will be billed as if they were 10 MB
-| Details | The link to the the internal Dremio job in an expandable box
-
-When expanding an entry, additional information for the query is shown. Besides the query string itself, a link to the Dremio job having executed this query is provided.
+| Details | The query string as well as a link to the associated Dremio job in an expandable box
 
 ### System log
 

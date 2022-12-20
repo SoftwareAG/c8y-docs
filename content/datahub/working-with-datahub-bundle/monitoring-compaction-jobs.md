@@ -6,8 +6,6 @@ layout: redirect
 
 During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, {{< product-c8y-iot >}} DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
 
-You can examine the latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
-
 {{< c8y-admon-info >}}
 You need administration permissions to access the compaction job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-info >}}
@@ -27,7 +25,7 @@ In the navigator, select **Compaction status** under **Administration** to get a
 
 Click **Reload** to refresh the status being shown.
 
-You can filter the entries by their task name or their status by using the filter buttons in the action bar. The pagination buttons can be used to traverse the history entries.
+You can filter the entries by their status by using the filter buttons in the action bar. The pagination buttons can be used to traverse the history entries.
 
 ### History of compactions per offloading pipeline
 
@@ -50,7 +48,7 @@ The system is configured to keep a limited history of the last compaction jobs.
 
 Click **Reload** to refresh the list.
 
-You can filter the entries by their status by using the filter control at the top.
+You can filter the entries by their status or timestamp by using the filter controls at the top.
 
 ### Details of compaction job
 
@@ -58,7 +56,7 @@ You can filter the entries by their status by using the filter control at the to
 
 For a given compaction job, you can examine additional details of its execution.
 
-Select a compaction job overview in the compaction history per offloading job or in the status of all compaction jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
+In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 
 **Execution schedule**
 
@@ -76,7 +74,7 @@ Select a compaction job overview in the compaction history per offloading job or
 | Job name | The name of the pipeline
 | Job ID | The internal ID of the job
 | Job execution ID | The Dremio ID of this execution
-| Target table name | The folder name in the data lake
+| Target table | The folder name in the data lake
 | Target folder | The path to the target table in the data lake
 | Daily run | Indicates whether the job is a daily execution job
 | Monthly run | Indicates whether the job is is a monthly execution job

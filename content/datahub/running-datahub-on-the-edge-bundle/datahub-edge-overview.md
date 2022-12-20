@@ -36,7 +36,7 @@ For your convenience, here is an overview of the contents:
 
 {{< product-c8y-iot >}} DataHub Edge uses the same software as {{< product-c8y-iot >}} DataHub, though in the following aspects these two variants differ:
 
-| Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub |
+| Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub Cloud |
 | -----   | -----   | -----   |
 | High Availability | Depending on the underlying virtualization technology | Depending on the cloud deployment setup |
 | Vertical scalability | Yes | Yes |

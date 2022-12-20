@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Concepts Guide
+title: Concepts
 layout: redirect
 ---
 ### Digital Twin

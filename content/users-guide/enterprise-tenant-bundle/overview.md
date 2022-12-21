@@ -6,7 +6,7 @@ layout: redirect
 
 An {{< enterprise-tenant >}} offers additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being **multi-tenancy**.
 
-Using an {{< enterprise-tenant >}}, you can do the following:
+Using an {{< enterprise-tenant >}}, you can:
 
 * Create and manage subtenants.
 * Manage the subscribed applications/features of the subtenants.

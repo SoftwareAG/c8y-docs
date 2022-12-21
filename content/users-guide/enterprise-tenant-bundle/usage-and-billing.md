@@ -239,7 +239,7 @@ The information on the microservice usage is presented in the **Usage statistics
 
 ![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-For more details, refer to [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the *{{< openapi >}}*. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+For more details, refer to [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 #### Scaling
 
@@ -254,7 +254,7 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
-For more information, refer to [Audits](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in the *{{< openapi >}}*.
+For more information, refer to [Audits](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}}.
 
 
 ### Timezone handling

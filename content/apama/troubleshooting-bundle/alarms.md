@@ -45,6 +45,7 @@ The following is a list of the alarms. The information further down below explai
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
 - [Performance alarms](#performance_alarms)
+- [Parent tenant not subscribed](#parent_tenant_not_subscribed)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -390,3 +391,18 @@ To diagnose the cause, you can try the following. It may be that the Apama-ctrl 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to {{< product-c8y-iot >}}.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.
 - Else, the cause may be some issue with connectivity or in {{< product-c8y-iot >}} Core.
+
+
+<a name="parent_tenant_not_subscribed"></a>
+#### Parent tenant not subscribed
+
+This alarm is raised for a subtenant that was subscribed before the parent tenant was subscribed.
+
+- Alarm type: `parent_tenant_not_subscribed`
+- Alarm text: The microservice cannot function fully until the parent tenant is also subscribed to the microservice. Please contact the administrator.
+- Alarm severity: MAJOR
+
+The Apama-ctrl microservice allows you to subscribe to tenants in any order.
+However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the subtenant.
+
+This alarm is cleared once the parent tenant is subscribed.

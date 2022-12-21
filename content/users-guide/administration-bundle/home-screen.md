@@ -7,10 +7,10 @@ title: Home screen
 
 The Home screen of the Administration application provides the following features:
 
-* A welcome message.
-* Quick links to the main parts of the Administration application.
-* Your capacity usage for the current and for the last month.
-* The optional applications you are subscribed to.
+* A welcome message
+* Quick links to the main parts of the Administration application
+* Your capacity usage for the current and for the last month
+* The optional applications you are subscribed to
 
 <img src="/images/users-guide/Administration/admin-home.png" alt="Home screen">
 

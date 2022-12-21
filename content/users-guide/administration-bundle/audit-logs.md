@@ -59,7 +59,7 @@ The audit log list is not automatically refreshed after a realtime update for op
 
 ### Filtering logs
 
-In order to easily search through logs, you may filter logs by the following:
+In order to easily search through logs, you may filter logs for:
 
  - The type (alarm, operation, smart rule, etc.)
  - A date range providing a "From" and/or a "To" date

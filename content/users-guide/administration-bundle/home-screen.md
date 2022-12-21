@@ -5,7 +5,7 @@ title: Home screen
 ---
 
 
-The Home screen of the Administration application provides the following features:
+The Home screen of the Administration application provides the following content:
 
 * A welcome message
 * Quick links to the main parts of the Administration application

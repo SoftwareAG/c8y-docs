@@ -404,7 +404,7 @@ The steps for the proof of possession are as follows:
 ![Proof of possession completed](/images/mqtt/devmgmt-mqtt-cert-pop-completed.png)
 
 {{< c8y-admon-info >}}
-If it is not possible for the administrator to carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
+If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
 
 

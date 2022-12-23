@@ -277,16 +277,16 @@ By default it is not possible to change roles of SSO users (created automaticall
 ##### To assign global roles from the user list
 
 1. Click the **Global roles** column of a particular user to open a list of global roles.
-1. Select or clear the respective checkboxes.
-1. Click **Apply** to save your settings.
+2. Select or clear the respective checkboxes.
+3. Click **Apply** to save your settings.
 
 ![Apply global role](/images/users-guide/Administration/admin-global-roles-apply-1.png)
 
 ##### To assign global roles from the user page
 
 1. Click on the row of the respective user in the user list.
-1. In the user page, select or clear the checkboxes for the relevant global roles at the right.
-1. Click **Save** to save your settings.
+2. In the user page, select or clear the checkboxes for the relevant global roles at the right.
+3. Click **Save** to save your settings.
 
 ![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 

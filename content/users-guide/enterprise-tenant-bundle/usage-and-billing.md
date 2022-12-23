@@ -140,7 +140,7 @@ The following information is provided for each subtenant (not completely visible
 
 Moreover custom properties are displayed, if configured.
 
-Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
+Custom properties may be defined in the [Properties library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
@@ -175,9 +175,9 @@ The microservice usage feature gathers information on the resource usage per sub
 
 {{< product-c8y-iot >}} offers two billing modes:
 
-* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner.
+* **Subscription-based billing** - charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner.
 
-* **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing.
+* **Resource-based billing** - exposes the number of resources used by a microservice to calculate billing.
 
 The billing modes are specified per microservice in the [microservice manifest](/microservice-sdk/concept/#manifest) and are set in the field "billingMode".
 
@@ -193,8 +193,8 @@ In case of subscription-based billing, the entire resources usage is always assi
 
 In case of resources-based billing, charging depends on the isolation level:
 
-* Per-tenant - the subscriber tenant is charged for used resources
-* Multi-tenant - the owner of the microservice is charged for used resources
+* Per-tenant - the subscriber tenant is charged for used resources.
+* Multi-tenant - the owner of the microservice is charged for used resources.
 
 In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
 
@@ -235,7 +235,7 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
 }
 ```
 
-The information on the microservice usage is presented in the **Usage Statistics** page.
+The information on the microservice usage is presented in the **Usage statistics** page.
 
 ![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
@@ -247,8 +247,8 @@ Auto-scaling monitors your microservices and automatically adjusts capacity to m
 
 For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
-24/24 - one instance active for the whole day<br>
- 3/24 - second instance active only three hours
+* 24/24 - one instance active for the whole day
+* 3/24 - second instance active only three hours
 
 Note that an audit record is created for every change of the number of instances.
 
@@ -349,19 +349,19 @@ Usage statistics consist of values that are progressive like the request count a
 
 A {{< product-c8y-iot >}} platform tenant can have several states:
 
-  * Active - The common state when the tenant can interact with the platform. In that state all billing values are stored and updated.
-  * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is the existence of the tenant and the storage size. The microservice resource usage is billed as "used", that means, when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
-  * Deleted - This is the point of no return. The tenant is not billed for any resources but there is no way of restoring the data also.
+  * Active - the common state when the tenant can interact with the platform. In that state all billing values are stored and updated.
+  * Suspended - suspended tenants are not billed for request count and microservice resources, the only value that is still counted is the existence of the tenant and the storage size. The microservice resource usage is billed as "used", that means, when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
+  * Deleted - this is the point of no return. The tenant is not billed for any resources but there is no way of restoring the data also.
 
 
 **Microservice**
 
 Any extension deployed to the platform as a microservice is billed as "used" and the billing starts according to the begin of usage. After the application is subscribed to the tenant a process of application startup is triggered which will go through several high level phases:
 
-  * Pending - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
-  * Scheduled - The microservice has been assigned to a node, the Docker container initialization has been started. The resources for the microservice have already been allocated so billing is started.
-  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running.
-  * Ready - The microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
+  * Pending - the microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
+  * Scheduled - the microservice has been assigned to a node, the Docker container initialization has been started. The resources for the microservice have already been allocated so billing is started.
+  * Not ready - the microservice container is not ready yet to handle incoming traffic but the application is already running.
+  * Ready - the microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
@@ -369,10 +369,10 @@ A tenant that is billed for resources can view the point in time when the micros
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
-  * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant. This means that the resource allocation has been successful but the application is not running yet (maps to the state "Scheduled").
-  * `Pulling image "apama-ctrl-starter-scope-..."` - The microservice initialization process has been started and the Docker image download is already in progress (state "Scheduled").
-  * `Container created.` - The microservice container has been created but not started yet (state "Scheduled").
-  * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic (state "Not ready").
+  * `Pod "apama-ctrl-starter-scope-..." created.` - a new microservice instance has been scheduled to be started for the tenant. This means that the resource allocation has been successful but the application is not running yet (maps to the state "Scheduled").
+  * `Pulling image "apama-ctrl-starter-scope-..."` - the microservice initialization process has been started and the Docker image download is already in progress (state "Scheduled").
+  * `Container created.` - the microservice container has been created but not started yet (state "Scheduled").
+  * `Container started.` - the microservice container is started but not ready yet to handle incoming traffic (state "Not ready").
 
 {{< c8y-admon-info >}}
 There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.

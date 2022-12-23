@@ -26,12 +26,12 @@ There is a major difference between providing several tenants and providing seve
 If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
 {{< /c8y-admon-info >}}
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
-- READ: Browse and view tenants.
-- CREATE: Create new tenants.
-- UPDATE: Edit tenants (incl. subscriptions) and suspend or activate them.
-- CHANGE: Create, edit and delete tenants.
+- READ - browse and view tenants.
+- CREATE - create new tenants.
+- UPDATE - edit tenants (incl. subscriptions) and suspend or activate them.
+- CHANGE - create, edit and delete tenants.
 
 ### To view subtenants
 
@@ -92,7 +92,7 @@ In the {{< management-tenant >}}, you will also find information on the parent t
 	</tr>
 	<tr>
 	<td style="text-align:left">Send password reset link as email</td>
-	<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the {{< product-c8y-iot >}} platform &gt; To log into the platform</a> for more information on password strength).</td>
+	<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Tenant policy</td>
@@ -138,7 +138,7 @@ The following information is displayed here:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>- support user access has been activated globally in the {{< management-tenant >}} (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform configuration settings</a>),<br>- one or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>- support user access has been deactivated globally in the {{< management-tenant >}}, <br>- no subtenant user has currently any active support user access (that means, each support user request has either expired or has actively been deactivated).</td>
+<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>&nbsp;&nbsp;- Support user access has been activated globally in the {{< management-tenant >}} (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform &nbsp;&nbsp;configuration settings</a>).<br>&nbsp;&nbsp;- One or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>&nbsp;&nbsp;- Support user access has been deactivated globally in the {{< management-tenant >}}. <br>&nbsp;&nbsp;- No subtenant user has currently any active support user access (that means, each support user request has either expired or has actively been deactivated).</td>
 </tr>
 <tr>
 <td style="text-align:left">Active requests count</td>
@@ -227,11 +227,11 @@ You may view details on their status by expanding the respective entry.
 
 The following information is provided:
 
-* Active: The number of active microservice instances
-* Unhealthy: The number of inactive microservice instances
-* Desired: The number of desired microservice instances
-* Name: Microservice instance name
-* Restarts: The number of microservice instance restarts
+* Active - the number of active microservice instances
+* Unhealthy - the number of inactive microservice instances
+* Desired - the number of desired microservice instances
+* Name - microservice instance name
+* Restarts - the number of microservice instance restarts
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
@@ -247,10 +247,10 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
 
-* Limit HTTP queue - Limit of HTTP request queue for tenant
-* Limit HTTP requests - Limit of HTTP requests for tenant per second
-* Limit stream queue - Limit of MQTT request queue for tenant
-* Limit stream requests - Limit of MQTT requests for tenant per second
+* Limit HTTP queue - limit of HTTP request queue for tenant
+* Limit HTTP requests - limit of HTTP requests for tenant per second
+* Limit stream queue - limit of MQTT request queue for tenant
+* Limit stream requests - limit of MQTT requests for tenant per second
 
 The request throttling mechanism is only enabled when both HTTP properties (limit HTTP queue and limit HTTP requests) are configured. If one of the values is omitted, it does not work.
 
@@ -310,7 +310,7 @@ For each tenant policy, the name, an optional description and the number of opti
 1. Click **Add policy** in the top menu bar.
 <br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. In the resulting dialog box, enter a name and an optional description.
-3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data retention > Retention rules](/users-guide/administration#retention-rules).
+3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data > Retention rules](/users-guide/administration#retention-rules).
 4. Optionally, add a tenant option.
 5. Click **Save**.
 
@@ -343,19 +343,19 @@ In the {{< product-c8y-iot >}} platform, you can configure which applications an
 
 In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
-In the **Default subscriptions** page, you can configure two separate lists of applications which will be subscribed by default
+In the **Default subscriptions** page, you can configure two separate lists of applications. These will be subscribed by default to:
 
-- to every new tenant on its creation,
-- to every existing tenant on platform upgrade.
+- Every new tenant on its creation.
+- Every existing tenant on platform upgrade.
 
 {{< c8y-admon-info >}}
 These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
-On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of
+On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:
 
-- all own applications,
-- all subscribed applications which have different names than the own applications.
+- All own applications.
+- All subscribed applications which have different names than the own applications.
 
 {{< c8y-admon-info >}}
 In order to help you to distinguish which application is owned and which is subscribed, the tenant ID of the owner is displayed.
@@ -368,6 +368,7 @@ Initially, the lists show the default subscriptions inherited from the tenant hi
 <img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
 
 <br>
+
 You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
 
 Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed.
@@ -376,6 +377,7 @@ You may also deselect all of them if you don't want any subscriptions to be exec
 
 <img src="/images/users-guide/Administration/admin-default-subscriptions-overridden.png" alt="Default subscriptions - overriding settings from tenant hierarchy">
 <br>
+
 If you want to return to the settings inherited from the tenant hierarchy, just switch the corresponding toggle again.
 
 Save the settings by clicking **Save** at the bottom of the page.
@@ -389,27 +391,27 @@ Obsolete entries not matching any existing applications are removed on save. If 
 
 The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:
 
-* to define default web applications subscribed to new tenants on creation:
+* To define default web applications subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.applications
   * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
-* to define default microservices subscribed to new tenants on creation:
+* To define default microservices subscribed to new tenants on creation:
   * category: configuration
   * key: default.tenant.microservices
   * value: comma-separated list of microservice names, for example, device-simulator,report-agent,sms-gateway
-* to use a different list of web applications to be subscribed to existing tenants on platform upgrade:
+* To use a different list of web applications to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications.enabled
   * value: true/false (when false or not set, the same list from default.tenant.applications will be used)
-* to define default web applications subscribed to existing tenants on platform upgrade:
+* To define default web applications subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.applications
   * value: comma-separated list of application names, for example, administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
-* to use a different list of microservices to be subscribed to existing tenants on platform upgrade:
+* To use a different list of microservices to be subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.microservices.enabled
   * value: true/false (when false or not set, the same list from default.tenant.microservices will be used)
-* to define default microservices subscribed to existing tenants on platform upgrade:
+* To define default microservices subscribed to existing tenants on platform upgrade:
   * category: configuration
   * key: on-update.tenant.microservices
   * value: comma-separated list of microservice names, for example, device-simulator,report-agent,sms-gateway

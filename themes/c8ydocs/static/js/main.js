@@ -49,10 +49,10 @@ var main = (function ($) {
         if (true) {
           offset = 45;
           $('<div/>', {
-            id: 'preview-banner',
-            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #fff794; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+            id: 'construction-banner',
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #ff0000; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
           }).prependTo('body');
-          $('<p style="text-align: center; vertical-align: center;">This is a preview of the documentation for the Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
+          $('<p style="text-align: center; vertical-align: center;">This page is a copy of the documentation of the previous release and exists for technical reasons. It does not yet include any new content.</p>').appendTo('#construction-banner');
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);
           $('.dropdown.version').css('top', (offset + 10));

@@ -21,17 +21,21 @@ helpcontent:
 
 
   By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
-- label: operation-monitoring
-  title: Device control
-  content: "Operations are used to control devices remotely. You can find an overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of the device.
+  label: single-operations
+  title: Single operations
+  content: "Using operations, you can control devices remotely. **Single operations** show all operations executed on a single device.
+  
+
+  Single operations can have one of the following four statuses: PENDING, EXECUTED, SUCCESSFUL, FAILED. For each operation, the name, status, and device is provided. Clicking the device leads you to the detailed view of the particular device."
+  -label: bulk-operations
+  title: Bulk operations
+  content: "**Bulk operations** are single operations executed on a set of devices.
 
 
-  There are two types of operations, each represented by a tab:
+  Bulk operations have an operation type, for example "Software update" or "Firmware update", and one of the following statuses: SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY.
 
 
-  **Single operations** are executed on a single device.
-
-  **Bulk operations** are single operations executed on a set of devices."
+  You can filter the list of bulk operations for type, status or date. Click the arrow button at the right of a bulk operation to see its details."
 - label: events-all
   title: Events
   content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
@@ -42,7 +46,6 @@ helpcontent:
 
   Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left."
 ---
-
 
 <a name="map"></a>
 ### Locating devices

@@ -85,8 +85,7 @@ The columns shown in the device list may be configured to your needs.
 #### To show/hide standard columns
 
 1. In the table header, click **Configure columns**.
-2. In the resulting dropdown, select/clear the checkboxes for all columns as required. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
-   <br>
+2. In the resulting dropdown, select/clear the checkboxes for all columns as required. <br>
 
 The device list will reflect your changes and only show the selected columns.
 
@@ -126,8 +125,6 @@ Deleting a device means to remove the device from the {{< product-c8y-iot >}} da
 The device list offers a filtering functionality to filter devices in the list for specific criteria.
 
 Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for.
-
-![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
 Specify your filter options in the dropdown list.
 

@@ -19,9 +19,9 @@ The storage quota feature needs to be defined on the tenant and cannot be enable
 
 Let us assume that a tenant has a storage quota of 10 GB. Retention rules are 80 days for measurements, 90 days for all other data.
 
- - Day 1: In the nightly check, the total storage is calculated at 13 GB. An email is sent to all tenant administrators.
+ - Day 1 - in the nightly check, the total storage is calculated at 13 GB. An email is sent to all tenant administrators.
 
- - Day 2: the total storage is still at 13 GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
+ - Day 2 - the total storage is still at 13 GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.
 
 The total storage is now at 9.8 GB.
 

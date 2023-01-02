@@ -38,11 +38,11 @@ The following description is primarily based on Jasper, but the same configurati
 
 The following sections describe:
 
-* How to [set up your Jasper Control Center account](#link-account) (examplarily)
-* How to configure the [connectivity](#connectivity-configuration) to the SIM provider in your {{< product-c8y-iot >}} tenant
-* How to [link SIMs](#link-sims) and mobile devices
-* Which information is shown in the [Connectivity tab](#jasperinfo)
-* How to [manage connectivity](#managing) from Device Management
+* How to [set up your Jasper Control Center account](#link-account) (examplarily).
+* How to configure the [connectivity for the SIM provider](#connectivity-configuration) in your {{< product-c8y-iot >}} tenant.
+* How to [link SIMs and mobile devices](#link-sims).
+* Which information is shown in the [Connectivity tab](#jasperinfo).
+* How to [manage connectivity](#managing) from Device Management.
 
 <a name="link-account"></a>
 ### Setting up your Jasper Control Center account
@@ -78,24 +78,25 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
-1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
+1. Enter the credentials for the respective SIM provider account. If you do not have any credentials, ask your administrator.
 2. Set a **Cache duration** in seconds to determine how long information from the provider is cached. This will prevent timeout issues.
 3. Click **Save** to save your settings.
 
-The configuration of the Kite provider differs from other providers as it requires the upload of a valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kiteBaseUrl.
+Depending on the connectivity provider you choose you must provide parameters specific to the provider.
+The parameter **Cache duration** defines how long SIM data returned by the provider is cached before fresh data is requested again, in seconds.
+This reduces traffic and the number of requests to SIM providers for billing and reliability purposes.
+A longer cache duration means less traffic to your SIM provider while a shorter duration means that more recent data is displayed.
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
-
-The Connectivity agent is now set up.
 
 <a name="link-sims"></a>
 ### Linking SIMs and mobile devices
 
-Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown,
+Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
 
-* your user does not have permissions for Connectivity,
-* the device is not linked to a SIM card,
-* the device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
+* Your user does not have permissions for Connectivity.
+* The device is not linked to a SIM card.
+* The device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
 
 To assign permissions, navigate to the Administration application and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.
 
@@ -144,13 +145,13 @@ The second row shows further status information: The ICCID of the SIM card, the 
 
 At the bottom you will find usage information for the current month, that is, from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
 
-The **SMS** section shows the text messages sent to the device and received from the device, including information on
+The **SMS** section shows the text messages sent to the device and received from the device, including the following information:
 
-* when the message was sent or received
-* where it was sent from and where it was sent to
-* the delivery status of the message:
- * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
- * For messages from the device: "Received", if it was received by the SIM provider, or "Cancelled", if it was not yet received by the SIM provider.
+* When the message was sent or received.
+* Where it was sent from and where it was sent to.
+* The delivery status of the message:
+  * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
+  * For messages from the device: "Received", if it was received by the SIM provider, or "Canceled", if it was not yet received by the SIM provider.
 * What the direction of the message is: MT ("Mobile terminated"), if it went to the device, or MO ("Mobile originated") if it came from the device.
 
 Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking **Send SMS**.

@@ -44,8 +44,8 @@ The following is a list of the alarms. The information further down below explai
 - [Smart rule configuration failed](#smartrule_configuration_error)
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
-- [The correlator queue is full](#application_queue_full)
-- [The CEP queue is full](#cep_queue_full) (this alarm is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl)
+- [Performance alarms](#performance_alarms)
+- [Parent tenant not subscribed](#parent_tenant_not_subscribed)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -325,28 +325,60 @@ This alarm is raised in certain cases when the connection between the Apama-ctrl
 
 Apama-ctrl will automatically restart. Report this to [product support](/welcome/contacting-support) if this is happening frequently.
 
-<a name="application_queue_full"></a>
-#### The correlator queue is full
 
-This alarm is raised whenever the correlator queue is full, including both input and output queues.
+<a name="performance_alarms"></a>
+#### Performance alarms
 
-- Alarm type: `application_queue_full`
-- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, SlowestContext: &lt;name of context with maximum pending events&gt;, SlowestContextQueueSize: &lt;size of slowest context's queue&gt;
-- Alarm severity: CRITICAL
+Input or output queues that are filling up are a symptom of a serious performance degradation,
+suggesting that events or requests are being produced by Apama or {{< product-c8y-iot >}} faster than they can be processed by Apama or {{< product-c8y-iot >}}.
 
-The correlator's input and output queues are periodically monitored to check for building up of events. If the pending queue size grows above the normal threshold (20,000 for the input queue and 10,000 for the output queue), an alarm is raised. The alarm text contains a snapshot of the correlator status at the time of raising the alarm. A correlator with a full input or output queue can cause a serious performance degradation.
+The performance of the correlator's input and output queues is periodically monitored.
+Different types of alarms can be raised, where the alarm text contains a snapshot of the correlator status at the time of raising the alarm.
 
-The correlator queue size is based on the number of events, not raw bytes.
+This alarm is raised for the input queues:
 
-Check the alarm text to get an indication of which queue is blocking. This also contains information about the slowest receiver and the most backed-up context. To diagnose the cause, see the information given in [The CEP queue is full](#cep_queue_full). A problem is likely to trigger the "correlator queue is full" alarm followed by the "CEP queue is full" alarm.
+- Alarm type: `input_queues_filling`
+- Alarm text: Correlator input queues are filling. If this alarm is being regularly raised, there is a chance that the correlator
+  cannot process the requests at the rate at which they are arriving.
+  Slowest receiver name: &lt;name&gt;,
+  Slowest receiver queue size: &lt;size&gt;,
+  Slowest context name: &lt;name&gt;,
+  Slowest context queue size: &lt;size&gt;.
+- Alarm severity: WARNING
 
-<a name="cep_queue_full"></a>
-#### The CEP queue is full
+This alarm is raised for the output queues:
 
-This alarm is raised whenever the CEP queue for the respective tenant is full.
+- Alarm type: `output_queues_filling`
+- Alarm text: Correlator output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
+  is not able to process the requests at the rate the correlator is sending them.
+  Slowest receiver name: &lt;name&gt;,
+  Slowest receiver queue size: &lt;size&gt;,
+  Slowest context name: &lt;name&gt;,
+  Slowest context queue size: &lt;size&gt;.
+- Alarm severity: WARNING
+
+This alarm is raised for both the input and output queues:
+
+- Alarm type: `input_output_queues_filling`
+- Alarm text: Correlator input and output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
+  is not able to process the requests at the rate the correlator is sending them, causing the slowest output queue to fill up.
+  This might have also caused the slowest input queue to fill up.
+  Slowest receiver name: &lt;name&gt;,
+  Slowest receiver queue size: &lt;size&gt;,
+  Slowest context name: &lt;name&gt;,
+  Slowest context queue size: &lt;size&gt;.
+- Alarm severity: MAJOR
+
+See also [List of correlator status statistics]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DepAndManApaApp_list_of_correlator_status_statistics.html) in the Apama documentation.
+
+Check the text from the above alarms to get an indication of which queue is blocking.
+A problem is likely to trigger these alarms, followed by this alarm:
 
 - Alarm text: Real-time event processing is currently overloaded and may stop processing your events. Please contact support.
 - Alarm severity: CRITICAL
+
+This alarm is raised whenever the CEP queue for the respective tenant is full.
+It is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl.
 
 Karaf nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
 
@@ -354,8 +386,23 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming smart rules, analytic models or EPL apps, or the microservice is deprived of resources, or code is not optimized, and so on. Check the correlator input and output queues from the above alarms (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to {{< product-c8y-iot >}}.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.
 - Else, the cause may be some issue with connectivity or in {{< product-c8y-iot >}} Core.
+
+
+<a name="parent_tenant_not_subscribed"></a>
+#### Parent tenant not subscribed
+
+This alarm is raised for a subtenant that was subscribed before the parent tenant was subscribed.
+
+- Alarm type: `parent_tenant_not_subscribed`
+- Alarm text: The microservice cannot function fully until the parent tenant is also subscribed to the microservice. Please contact the administrator.
+- Alarm severity: MAJOR
+
+The Apama-ctrl microservice allows you to subscribe to tenants in any order.
+However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the subtenant.
+
+This alarm is cleared once the parent tenant is subscribed.

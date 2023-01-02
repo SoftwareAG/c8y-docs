@@ -90,7 +90,9 @@ If the asset is a group or a device with children, you see a folder icon next to
 
 If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** folder, located on the first level of the selected group.
 
->**Info:** You cannot select the **Unassigned devices** folder itself. However, each device inside this folder can be selected on the next level. Click **Unassigned devices** to open the next level with all unassigned devices. Click the desired device to select it.
+{{< c8y-admon-info >}}
+You cannot select the **Unassigned devices** folder itself. However, each device inside this folder can be selected on the next level. Click **Unassigned devices** to open the next level with all unassigned devices. Click the desired device to select it.
+{{< /c8y-admon-info >}}
 
 
 <a name="asset-search"></a>
@@ -112,7 +114,9 @@ Through the full text search you can find assets in the whole hierarchy, but it 
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
-> **Info:** The full text search is only available in the Home dashboard and the Report dashboards.
+{{< c8y-admon-info >}}
+The full text search is only available in the Home dashboard and the Report dashboards.
+{{< /c8y-admon-info >}}
 
 For details on the search functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
 
@@ -124,4 +128,3 @@ Filtering is another way to find assets. However, it only filters assets on the 
 ![Filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
 
 For details on the filter functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
-

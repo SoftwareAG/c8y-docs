@@ -6,18 +6,17 @@ layout: redirect
 
 An {{< enterprise-tenant >}} offers additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being **multi-tenancy**.
 
-Using an {{< enterprise-tenant >}}, you can
+Using an {{< enterprise-tenant >}}, you can:
 
-* create and manage subtenants
-* manage the subscribed applications/features of the subtenants
-* invoice subtenants based on usage statistics
+* Create and manage subtenants.
+* Manage the subscribed applications/features of the subtenants.
+* Invoice subtenants based on usage statistics.
 
 Moreover, an {{< enterprise-tenant >}} includes the following additional features:
 
-* **Branding** -  To configure an individual look & feel
-* **Domain name** - To provide an individual domain name
-* **Support user** - To support users of other tenants
-* **User hierarchy** - To reflect entities with limited permissions to subsets of shared data
+* **Branding** - to configure an individual look & feel.
+* **Domain name** - to provide an individual domain name.
+* **User hierarchy** - to reflect entities with limited permissions to subsets of shared data.
 
 For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierarchy](/concepts/tenant-hierarchy) in the *Concepts guide*.
 

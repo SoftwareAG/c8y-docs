@@ -13,7 +13,26 @@ helpcontent:
     **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
 
 
-    Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
+    Custom applications may be:
+
+
+    Web applications uploaded to the platform.
+
+    Links to external applications running elsewhere.
+
+    Packages deployed to the platform.
+
+    Duplicates of subscribed applications.
+
+
+    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
+    label: packages
+    title: Packages
+    content: "On the **Packages** tab, you will find a list of all packages available in your tenant. Packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new package, click **Add package** at the top right."
+    label: features
+    title: Features
+    content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
+
 ---
 
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications) in the *Concepts guide*.
@@ -319,7 +338,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Packages
 
-Packages are combinations of plugins and blueprints which can be packed together into a single package and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
+Packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
 
 Packages can contain two types of applications:
 

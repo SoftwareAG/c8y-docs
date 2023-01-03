@@ -49,8 +49,8 @@ The **Time range** filter can filter data for a specific time range. Select a ti
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 
 {{< c8y-admon-info >}}
- The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported. Additionally, when the result is truncated due to this limitation, an additional line with an indicator is added at the end of the file. The indicator row contains the statements "limit exceeded!" and "result truncated!" alternating every other column.
- {{< /c8y-admon-info >}}
+The maximum number of documents matching the defined filters that can be returned is 1 million. If the number of documents for the defined filters exceeds this limit, only the first 1 million documents will be exported. Additionally, when the result is truncated due to this limitation, an additional line with an indicator is added at the end of the file. The indicator row contains the statements "limit exceeded!" and "result truncated!" alternating every other column.
+{{< /c8y-admon-info >}}
 
 **Fields**
 
@@ -90,7 +90,7 @@ An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedM
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, for example: ['fragment.key.with.dot'].series.value
 
-In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points).
+In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [To add a data point](#add-data-points).
 
 JsonPath expressions added from data points will be stored in bracket notation in order to increase the flexibility in fragment and series naming (for example whitespaces will be supported):
 

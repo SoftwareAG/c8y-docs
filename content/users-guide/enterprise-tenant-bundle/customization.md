@@ -132,8 +132,8 @@ Under **General**, you can edit the title which will be used in the browser tab.
 
 Under **Main logo**, specify the following items:
 
-* The favicon, which will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
-* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
+* The favicon - will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
+* Your branding logo - will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
 * The brand logo height.
 
 **Navigator logo**
@@ -153,12 +153,12 @@ In the **Colors** section you specify the colors to be used in your branding ver
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
 * Main brand color.
-* Secondary brand color. The default value is "#07b91A".
-* Dark brand color. Mainly used for two-color icons. The default value is "#0B385B".
-* Light brand color. Mainly used for two-color icons. The default value is "#5FAEEC".
-* Text color. The default value is "#444".
-* Link color. The default value is the same as the main brand color.
-* Main background color. The default value for this item is "#FAFAFA".
+* Secondary brand color - the default value is "#07b91A".
+* Dark brand color - mainly used for two-color icons. The default value is "#0B385B".
+* Light brand color - mainly used for two-color icons. The default value is "#5FAEEC".
+* Text color - the default value is "#444".
+* Link color - the default value is the same as the main brand color.
+* Main background color - the default value for this item is "#FAFAFA".
 
 **Top bar**
 
@@ -166,9 +166,9 @@ In the **Top bar** section you specify the parameters for the top bar.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color. The default value is "#FFFFF".
-* Text color. The default value is "49595B".
-* Button hover text color. The default value is the main brand color.
+* Background color - the default value is "#FFFFF".
+* Text color - the default value is "49595B".
+* Button hover text color - the default value is the main brand color.
 
 **Navigator**
 
@@ -176,12 +176,12 @@ In the **Navigator** section you specify the parameters for the navigator.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color. The default value is "2c3637".
-* Logo wrapper background color. The default value is "Transparent".
-* Title color. The default value is "FFFFF".
-* Text and buttons color. The default value is "#FAFAFA".
-* Separator line color. The default value is "#FAFAFA".
-* Text color of the current item in the navigator. The default value is "#FAFAFA".
+* Background color - the default value is "2c3637".
+* Logo wrapper background color - the default value is "Transparent".
+* Title color - the default value is "FFFFF".
+* Text and buttons color - the default value is "#FAFAFA".
+* Separator line color - the default value is "#FAFAFA".
+* Text color of the current item in the navigator - the default value is "#FAFAFA".
 * Background color of the current item in the navigator with the main brand color as default.
 
 **Misc**
@@ -196,9 +196,9 @@ Disabling the cookie banner, also disables the product experience tracking by Ga
 
 The following parameters can be specified:
 
-* Title - Cookie banner title.
-* Text - Cookie banner text with a general statement on the cookie usage and the use cases for it.
-* Link to privacy policy - A link to the page with the privacy policy.
+* Title - cookie banner title
+* Text - cookie banner text with a general statement on the cookie usage and the use cases for it
+* Link to privacy policy - a link to the page with the privacy policy
 
 <a name="domain-name"></a>
 ### Domain name
@@ -301,11 +301,11 @@ After the activation is completed you will no longer be able to access your tena
 
 #### Updating your certificate
 
-When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that
+When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that the certificate meets the following requirements:
 
-* the certificate is valid, like when being uploaded for the first time,
-* the certificate is currently valid (validFrom in the past and validTo in the future),
-* the certificate has exactly the same common name (domain name) as the currently active certificate.
+* It is valid, like when being uploaded for the first time.
+* It is currently valid (validFrom in the past and validTo in the future).
+* It has exactly the same common name (domain name) as the currently active certificate.
 
 {{< c8y-admon-info >}}
 Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.

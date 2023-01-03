@@ -11,12 +11,12 @@ Here is an example manifest:
 
 ```json
 {
-    "apiVersion": "v1",
+    "apiVersion": "v2",
     "name": "my-microservice",
     "version": "1.0.0",
     "provider": {
         "name": "New Company Ltd.",
-        "domain": "http://new-company.com",
+        "domain": "https://new-company.com",
         "support": "support@new-company.com"
     },
     "isolation": "MULTI_TENANT",
@@ -82,7 +82,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">apiVersion</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Document type format discriminator, for future changes in format.</td>
+<td style="text-align:left">Document type format discriminator. The accepted values are positive integer numbers proceeded by an optional "v", such as "v2" and "2". Values which do not conform to this convention are considered "v1".</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
@@ -230,7 +230,8 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |key|String |Key of the option|Yes
 |defaultValue|String|Default value|Yes
 |editable|Boolean|Defines if the option can be changed by a subscribed tenant on runtime <br>Default: false |No
-
+|overwriteOnUpdate|Boolean|Defines if an editable option is reset upon microservice update <br>Default: true |No
+|inheritFromOwner|Boolean|Specifies if an option should be inherited from the owner <br>Default: true |No
 #### Probe
 
 |Name|Type|Description|Required|

@@ -28,7 +28,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''bash --login
-        python /previewScanner.py
+        python /stageScanner.py
         python /qa.py
           if [ -f "properties.json" ]
   then

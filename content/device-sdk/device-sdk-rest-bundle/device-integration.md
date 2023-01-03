@@ -282,15 +282,13 @@ This does not delete the device itself in the inventory, only the reference. To 
 
 This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to lose all historical information associated with the device.
 
-#### Working with operations
+#### Step 6: Complete operations and subscribe
 
 Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, that means, it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
-The benefit of this execution flow is that it support devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
-
-#### Step 6: Complete operations and subscribe
+The benefit of this execution flow is that it supports devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
 To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:
 
@@ -329,14 +327,12 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
     HTTP/1.1 200 OK
 
-Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time data in {{< product-c8y-iot >}} is described in [Real-time notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time operations in {{< product-c8y-iot >}} is described in the [Device control notification API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Device-control-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
-        "id": "1",
-        "supportedConnectionTypes": ["long-polling"],
         "channel": "/meta/handshake",
         "version": "1.0"
     } ]
@@ -344,14 +340,17 @@ Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism
     HTTP/1.1 200 OK
     ...
     [ {
-        "id": "1",
-        "supportedConnectionTypes": ["websocket","long-polling"],
+        "minimumVersion": "1.0",
+        "clientId": "139jhm07u1dlry92fdl63rmq2c",
+        "supportedConnectionTypes": [
+            "long-polling",
+            "smartrest-long-polling",
+            "websocket"
+        ],
         "channel": "/meta/handshake",
         "version": "1.0",
-        "clientId": "139jhm07u1dlry92fdl63rmq2c",
-        "minimumVersion": "1.0",
         "successful": true
-    }]
+    } ]
 
 Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
 
@@ -359,7 +358,6 @@ Afterwards, the device respectively the agent needs to subscribe to notification
     Content-Type: application/json
     ...
     [ {
-        "id": "2",
         "channel": "/meta/subscribe",
         "subscription": "/2480300",
         "clientId":"139jhm07u1dlry92fdl63rmq2c"
@@ -368,7 +366,6 @@ Afterwards, the device respectively the agent needs to subscribe to notification
     HTTP/1.1 200 OK
     ...
     [ {
-        "id":"2",
         "channel": "/meta/subscribe",
         "subscription": "/2480300",
         "successful": true
@@ -380,7 +377,6 @@ Finally, the device connects and waits for operations to be sent to it.
     Content-Type: application/json
     ...
     [ {
-        "id": "3",
         "connectionType": "long-polling",
         "channel": "/meta/connect",
         "clientId": "139jhm07u1dlry92fdl63rmq2c"
@@ -441,7 +437,7 @@ To create new measurements in {{< product-c8y-iot >}}, issue a POST request with
     {
         "source": { "id": "2480300" },
         "time": "2013-07-02T16:32:30.152+02:00",
-        "type": "huawei_E3131SignalStrength",
+        "type": "SignalStrength",
         "c8y_SignalStrength": {
             "rssi": { "value": -53, "unit": "dBm" },
             "ber": { "value": 0.14, "unit": "%" }
@@ -459,10 +455,10 @@ Similarly, use a POST request for events. The following example shows a location
     Content-Type: application/vnd.com.nsn.cumulocity.event+json
     ...
     {
-        "source": { "id": "1197500" },
+        "source": { "id": "2480300" },
         "text": "Location updated",
         "time": "2013-07-19T09:07:22.598+02:00",
-        "type": "queclink_GV200LocationUpdate",
+        "type": "LocationUpdate",
         "c8y_Position": {
             "alt": 73.9,
             "lng": 6.151782,
@@ -516,7 +512,7 @@ In contrast to events, alarms can be updated. If an issue is resolved (for examp
 
     HTTP/1.1 200 OK
 
-If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [CEP rule](/concepts/realtime) if they want to convert the event into an alarm.
+If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [Real-time rule](/concepts/realtime) if they want to convert the event into an alarm.
 
 ### Replacing a physical device
 
@@ -534,10 +530,10 @@ Do the following:
 
 The new physical device sends its data to the existing managed object.
 
-{{< c8y-admon-warning >}}
+{{< c8y-admon-caution >}}
 The above steps only work if the device is using standard device bootstrapping.
 Otherwise contact the device integrator or manufacturer.
-{{< /c8y-admon-warning >}}
+{{< /c8y-admon-caution >}}
 
 {{< c8y-admon-info >}}
 If the device has child devices, their owners must also be updated.

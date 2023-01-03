@@ -65,9 +65,9 @@ The containers are configured to store their application state on the data disk 
 * **/cdh-console/db**: the state of the {{< product-c8y-iot >}} DataHub Edge backend
 * **/cdh-master/datalake**: the data lake folder
 
-{{< c8y-admon-warning >}}
+{{< c8y-admon-caution >}}
 You must not modify the contents of these folders as this may corrupt your installation.
-{{< /c8y-admon-warning >}}
+{{< /c8y-admon-caution >}}
 
 ### Upgrading {{< product-c8y-iot >}} DataHub Edge
 An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you must copy the archive with the new version to {{< product-c8y-iot >}} Edge. Next, you must log in as admin. Then you must run the install script using the new version.
@@ -127,11 +127,11 @@ For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 31010
 
 ### Defining Cumulocity IoT DataHub permissions and roles
 
-The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See the section [Setting up Cumulocity IoT DataHub > Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
+The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
 
 ### Setting up Dremio account and data lake
 
-The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See the section [Setting up Dremio account and data lake](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
+The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See the section [Setting up {{< product-c8y-iot >}} DataHub](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
 
 {{< product-c8y-iot >}} DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.
 
@@ -139,8 +139,7 @@ The setup of the Dremio account and the data lake is done in the same way as in 
 
 Depending on the use case, it might be necessary to increase the memory available to Dremio, the internal engine of {{< product-c8y-iot >}} DataHub. By default, Dremio is configured to consume a maximum of 4 GB of RAM (2 GB assigned to both master node and executor node).
 
-Depending on the situation, one either needs to increase the memory of Dremio's master or executor node. In many cases, the master node’s memory is the limiting factor, but not always.
-Inspecting the Query Profile in Dremio helps to determine where the bottleneck occurs.
+Depending on the situation, one either needs to increase the memory of Dremio's master or executor node. In many cases, the master node’s memory is the limiting factor, but not always. Inspecting the query profiles in Dremio helps to determine where the bottleneck occurs.
 
 #### Master node memory configuration
 

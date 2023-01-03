@@ -25,20 +25,38 @@ OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 
 You will also need a Docker installation, and in case that you don't have it yet, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-{{< product-c8y-iot >}} hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
+{{< product-c8y-iot >}} microservices are Docker containers for the Linux/Amd64 platform. Other architectures are currently not supported. The Docker engine has to provide the API version 1.38 or newer. This is the case for Docker versions 18.06 and later. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
 Client: Docker Engine - Community
- Version:           19.03.2
- API version:       1.40
- OS/Arch:           darwin/amd64
+ Version:           20.10.14
+ API version:       1.41
+ Go version:        go1.16.15
+ Git commit:        a224086
+ Built:             Thu Mar 24 01:47:57 2022
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
 
 Server: Docker Engine - Community
  Engine:
-  Version:          19.03.2
-  API version:      1.40 (minimum version 1.12)
+  Version:          20.10.14
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.16.15
+  Git commit:       87a90dc
+  Built:            Thu Mar 24 01:45:46 2022
   OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.5.11
+  GitCommit:        3df54a852345ae127d1fa3092b95168e4a88e2f8
+ runc:
+  Version:          1.0.3
+  GitCommit:        v1.0.3-0-gf46b6ba
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
 ```
 
 ### Developing the "Hello world" microservice
@@ -112,13 +130,13 @@ Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elemen
     <repository>
         <id>cumulocity</id>
         <layout>default</layout>
-        <url>http://download.cumulocity.com/maven/repository</url>
+        <url>https://download.cumulocity.com/maven/repository</url>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
         <id>public</id>
-        <url>http://download.cumulocity.com/maven/repository</url>
+        <url>https://download.cumulocity.com/maven/repository</url>
     </pluginRepository>
 </pluginRepositories>
 ```

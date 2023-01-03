@@ -16,14 +16,14 @@ helpcontent:
   To create a new simulator, click **Add simulator** at the top right and follow the instructions in the *User guide*."
 ---
 
-With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, as
+With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, such as:
 
-* setting up a simulated device or a network of simulated devices
-* specifying the operations which a device can process
-* creating work instructions based on predefined message templates or user-defined templates and scheduling work steps
-* creating up to ten devices of a defined type
-* generating messages for measurements, alarms, events and inventory
-* viewing simulation problems as alarms
+* Setting up a simulated device or a network of simulated devices.
+* Specifying the operations which a device can process.
+* Creating work instructions based on predefined message templates or user-defined templates and scheduling work steps.
+* Creating up to ten devices of a defined type.
+* Generating messages for measurements, alarms, events and inventory.
+* Viewing simulation problems as alarms.
 
 ### About simulators
 

@@ -38,6 +38,11 @@ The devices may have one of the following status:
 * **Waiting for connection** - The device has been registered but no device with the specified ID has tried to connect.
 * **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device.
 * **Accepted** - The user has allowed the credentials to be send to the device.
+* **Blocked** - The device registration has been blocked due to the exceeded limit of failed attempts.
+
+{{< c8y-admon-info >}}
+If a device registration is **blocked**, you will need to delete it first and then create it again.
+{{< /c8y-admon-info >}}
 
 Devices can be connected to your {{< product-c8y-iot >}} account in different ways.
 
@@ -45,13 +50,14 @@ Devices can be connected to your {{< product-c8y-iot >}} account in different wa
 
 To register devices, you can select one of the following options:
 
-* **[General device registration](#device-registration-manually)** - to manually connect one or more devices
-* **[Bulk device registration](#creds-upload)** - to register larger amounts of devices in one step
+* Single **[General](#device-registration-manually)** device registration - to manually connect one or more devices
+* Bulk **[General](#creds-upload)** device registration - to register larger amounts of devices in one step
 
-If you are subscribed to the required applications you will see a third option
-**Custom device registration** for registering devices of specific types, for example, Actility LoRa or Sigfox, see the documentation for these services in the [Protocol integration guide](/protocol-integration/overview).
+If you are subscribed to the required applications you will see other options for registering devices of specific types (for example, Actility LoRa or Sigfox). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview).
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
+
+Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 
 <a name="device-registration-manually"></a>
 #### To connect a  device manually
@@ -60,26 +66,36 @@ If you are subscribed to the required applications you will see a third option
 Depending on the type of device you want to connect, not all steps of the following process may be relevant.
 {{< /c8y-admon-info >}}
 
-1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
-2. In the resulting **Register devices** dialog box, select **General device registration**.
+1. Click **Registration** in the **Devices** menu of the navigator.
+2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**.
+
+  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+
+The **Register devices** dialog box will be displayed.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
-5. Click **Add another device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
+5. Click **Add new device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s).
 
 {{< c8y-admon-info >}}
 In an {{< enterprise-tenant >}}, the {{< management-tenant >}} may also directly select a tenant to which the device will be added from here. Note that since the {{< management-tenant >}} does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both.
-{{< /c8y-admon-info >}}
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
+{{< /c8y-admon-info >}}
 
 After successful registration the device(s) will be listed in the [Device registration](#dev-registration) page with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
+
 Once a device is connected, its status will change to "Pending acceptance".
+
+{{< c8y-admon-info >}}
+The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
+{{< /c8y-admon-info >}}
+
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
 {{< c8y-admon-info >}}
@@ -87,6 +103,81 @@ In case of any issues, consult the documentation applicable for your device type
 {{< /c8y-admon-info >}}
 
 <a name="creds-upload"></a>
+
+#### Security token policy for device registration
+
+Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.
+
+{{< c8y-admon-info >}}
+The feature requires  READ permission for "Option management". If the permission is missing, the security token policy defaults to OPTIONAL.
+{{< /c8y-admon-info >}}
+
+{{< product-c8y-iot >}} supports the following values for the security token policy:
+
+* IGNORED - Even if a device requires secure registration, {{< product-c8y-iot >}} will ignore that requirement.
+* OPTIONAL - If a device requires secure registration, {{< product-c8y-iot >}} will request an additional security token from the user.
+* REQUIRED - All devices connected to {{< product-c8y-iot >}} must use a security token during registration.
+
+The policy can be configured by setting the following tenant option with one of the values listed above, for example:
+
+```json
+{
+  "category": "device-registration",
+  "key": "security-token.policy",
+  "value": "IGNORED"
+}
+```
+
+{{< c8y-admon-info >}}
+The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
+{{< /c8y-admon-info >}}
+
+##### Ignored security token policy
+
+With a value of IGNORED for the security token policy, a device connected to {{< product-c8y-iot >}} can be accepted without any token validation:
+
+![Accepting devices registrations under ignored security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
+
+##### Optional security token policy
+
+The list of device registrations is presented in the image below. Note that the input for security token is displayed for all devices.
+
+![Accepting devices registrations under optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png)
+
+**Registration without using a security token**
+
+When a device connected to {{< product-c8y-iot >}} doesn't use a security token, the registration can proceed without providing any value in the security token input.
+
+If a security token is provided for a device which is connected insecurely, it will be accepted and the token will be ignored.
+
+**Registration using a security token**
+
+When a device connected to {{< product-c8y-iot >}} does use a security token, the registration can be completed only if the user provides a token matching the one sent by the device on establishing the connection.
+
+![Providing a token for device registration request in optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png)
+
+In the case of providing an incorrect token, an error message will be displayed informing about a mismatch between the value used by the device and the value provided via the user interface.
+
+After a certain amount of failed attempts, the registration will reach the blocked state, indicated by a corresponding error message.
+The blocked registration must be removed before the next attempt to connect the device.
+
+**Limited  usage of "Accept all" feature**
+
+The **accept all** feature is supported for devices connected to {{< product-c8y-iot >}} without the usage of a security token.
+
+For any device which uses a security token, the **accept all** feature is not available and will display a warning message. The details of the warning message provide the list of devices which could not be accepted automatically.
+
+Such devices must be accepted manually by providing the correct **Security token** value and clicking **Accept**.
+
+
+##### Required security token policy
+
+In this mode any device connected to {{< product-c8y-iot >}} must use a security token on establishing the connection and the user must enter the same token when accepting the device.
+
+The procedure of accepting devices is the same as described in [Optional security token policy](#optional-security-token-policy).
+
+While in this mode, any devices connecting to {{< product-c8y-iot >}} without a security token will be blocked and it won't be possible to complete their registration.
+
 #### To bulk-register devices
 
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
@@ -95,12 +186,15 @@ To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option 
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
 
-1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
-2. In the resulting **Register devices** dialog box select **Bulk device registration**.
+1. Click **Registration** in the **Devices** menu of the navigator.
+
+2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**.
+
+  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+
+3. Click the Plus button to select or drag-and-drop the CSV file you want to upload.
 
   <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
-
-3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it in your file system.
 
 <br>
 Depending on the format of the uploaded CSV file, one of the following registration types will be processed:
@@ -116,10 +210,10 @@ Bulk registration creates an elementary representation of the device. Then, the 
 
 The CSV file contains two columns: ID;PATH, where ID is the device identifier, for example, serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).
 
-```asciidoc
-    ID;PATH
-    Device1;Group A
-    Device2;Group A/Group B			
+```
+ID;PATH
+Device1;Group A
+Device2;Group A/Group B			
 ```
 
 

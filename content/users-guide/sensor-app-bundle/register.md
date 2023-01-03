@@ -21,13 +21,13 @@ For earlier versions of {{< product-c8y-iot >}}, follow the steps in [Manual reg
 
 3.  From your smartphone, launch the app and tap **Connect** in the top right corner of the screen. 
 4.  Grant access to your camera if the app asks you for permission.
-5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual Registration** on your smartphone and fill in the details at the right side of the wizard screen.
+5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual registration** on your smartphone and fill in the details at the right side of the wizard screen.
 6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
 
 When using the **Connect Smartphone** wizard for device registration, your smartphone is automatically registered by {{< product-c8y-iot >}} and assigned to the "Phones" group. Tap **Done** on your smartphone to return to the main screen.
 
 {{< c8y-admon-info >}}
-QR codes not supported by the {{< sensor-app >}} are highlighted using a red region of interest in the Camera view. QR codes from older versions of {{< product-c8y-iot >}} will be scanned, but it is not possible to connect automatically. Instead, you are forwarded to the **Manual Registration** dialog with your tenant and instance pre-filled. From there you should continue with step 4 in [Manual registration](#manual-registration).
+QR codes not supported by the {{< sensor-app >}} are highlighted using a red region of interest in the Camera view. QR codes from older versions of {{< product-c8y-iot >}} will be scanned, but it is not possible to connect automatically. Instead, you are forwarded to the **Manual registration** dialog with your tenant and instance pre-filled. From there you should continue with step 4 in [Manual registration](#manual-registration).
 {{< /c8y-admon-info >}}
 
 ### Manual registration
@@ -36,7 +36,7 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
     ![Manual registration](/images/users-guide/csa/csa-device-registration.jpg)
 
-2.  From your smartphone, launch the app and tap **Connect** at the top right of the screen. When the camera opens, tap **Manual Registration**.
+2.  From your smartphone, launch the app and tap **Connect** at the top right of the screen. When the camera opens, tap **Manual registration**.
 
 3. Back in your web browser, click **Register device** and then **General device registration**. Select a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
 

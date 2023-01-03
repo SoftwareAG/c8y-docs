@@ -932,8 +932,8 @@ Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte i
 Bei Verwendung von Apama für Smart Rules (angezeigt durch ein Abonnement von Apama-ctrl in <b>Anwendungen</b> > <b>Abonnierte Anwendungen</b> in der "Administration"-Anwendung)
 können Variablen für Uhrzeiten eine Zeitzone und ein Zeitformat enthalten, in denen die Uhrzeit angezeigt werden soll.
 So zeigt zum Beispiel die Variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} die Uhrzeit entsprechend der Zeitzone für New York im Format HH:mm:ssZ an.
-Siehe auch [Unterstützte Zeitzonen]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
-und [Formatspezifikation für die TimeFormat-Funktionen]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
+Siehe auch [Unterstützte Zeitzonen]({{< link-apama-webhelp >}}/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
+und [Formatspezifikation für die TimeFormat-Funktionen]({{< link-apama-webhelp >}}/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
 in der Apama-Dokumentation.
 {{< /c8y-admon-info >}}
 

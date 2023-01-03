@@ -49,11 +49,11 @@ monitor LookForWifiAnomalies
 }
 ```
 
-You will need to replace the device identifier and the name of the Machine Learning model for your installation.
+You must replace the device identifier and the name of the Machine Learning model for your installation.
 
 ### Looking for events
 
-First we need to collect some data from measurements. This will use techniques which were previously introduced in this guide. In this case, we will be looking for measurements which arrive from a particular device, check whether they have a given key and if so query the Zementis microservice to decide how we should respond.
+First we must collect some data from measurements. This will use techniques which were previously introduced in this guide. In this case, we will be looking for measurements which arrive from a particular device, check whether they have a given key and if so query the Zementis microservice to decide how we should respond.
 
 ```java
 action listenForSignalStrength(string deviceId, string modelName)
@@ -72,7 +72,7 @@ action listenForSignalStrength(string deviceId, string modelName)
 
 ### Converting measurements to Zementis records
 
-In order to execute the Machine Learning model, we need to convert the {{< product-c8y-iot >}} request into a record suitable for passing to the Zementis microservice. This will consist of constructing a dictionary corresponding to a JSON object and then encoding it as a string with the JSON EPL plug-in.
+In order to execute the Machine Learning model, we must convert the {{< product-c8y-iot >}} request into a record suitable for passing to the Zementis microservice. This will consist of constructing a dictionary corresponding to a JSON object and then encoding it as a string with the JSON EPL plug-in.
 
 ```java
 action convertMeasurementToRecord(Measurement m) returns string

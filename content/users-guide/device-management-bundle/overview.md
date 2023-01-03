@@ -9,7 +9,7 @@ The following sections will walk you through all functionalities of the Device M
 |SECTION|CONTENT|
 |:---|:---|
 |[Connecting devices](#connecting-devices)|How to [register one or more devices manually](#device-registration-manually) and how to [bulk-register devices](#creds-upload) in order to connect devices to your account.
-|[Viewing devices](#viewing-devices)|What is displayed in the [device list](#device-list) and how to sort devices by [searching for devices](#searching-devices) and [filtering devices](#filtering-devices).
+|[Viewing devices](#viewing-devices)|What is displayed in the [device list](#device-list) and how to sort devices by [filtering devices](#filtering-devices).
 |[Grouping devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
 |[Device details](#device-details)|Detailed description of the various kind of  information available for various types of  devices.
 |[Monitoring and controlling devices](#monitoring-and-controlling-devices)|How to monitor the [connection quality](#connection-monitoring) and [availability status](#monitoring-availability) of devices, how to handle [alarms](#alarm-monitoring) from devices, how to [remote control](#operation-monitoring) and how to [troubleshoot](#events-all) devices.

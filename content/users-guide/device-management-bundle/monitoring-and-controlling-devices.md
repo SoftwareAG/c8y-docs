@@ -402,10 +402,6 @@ To clear the filter, click **Clear** right next to it.
 
 To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
 
-{{< c8y-admon-info >}}
-Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
-{{< /c8y-admon-info >}}
-
 >![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
 <a name="bulk-operations"></a>

@@ -27,7 +27,7 @@ The following common error response codes can be expected for all requests:
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 401  | Unauthorized.                                                |
-| 403  | Forbidden. EPL apps are not available with Apama Starter. |
+| 403  | Forbidden. EPL apps are not available with the Apama-ctrl-starter microservice. |
 
 Any other response codes that can be expected from a specific request are given below.
 
@@ -245,7 +245,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
-| id   | Identifier of the EPL file to be updated. The identifier has to be included in the path. This is a mandatory parameter. |
+| id   | Identifier of the EPL file to be updated. The identifier must be included in the path. This is a mandatory parameter. |
 
 #### Example request
 
@@ -321,7 +321,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
-| id   | Identifier of the EPL file to be deleted. The identifier has to be included in the path. This is a mandatory parameter. |
+| id   | Identifier of the EPL file to be deleted. The identifier must be included in the path. This is a mandatory parameter. |
 
 #### Example request
 

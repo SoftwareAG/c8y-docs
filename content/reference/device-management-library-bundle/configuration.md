@@ -125,6 +125,10 @@ Devices that want to manage configuration as files can achieve a basic form usin
 
 This approach stores and transfers configuration as binary files.
 
+{{< c8y-admon-info >}}
+This mechanism only works with the internal {{< product-c8y-iot >}} repository. Be aware that configurations with external URLs will not be supported if a device only supports legacy configuration. The ID which is stored in the device managed object (an example can be seen below) always refers to an internal binary saved in the inventory.
+{{< /c8y-admon-info >}}
+
 #### Upload current legacy configuration
 
 Devices may signal their support for uploading their current configuration to {{< product-c8y-iot >}} by adding ```c8y_UploadConfigFile``` to their ```c8y_SupportedOperations```. This enables a **Get snapshot from device** button in the **Configuration** tab. Clicking it generates a ```c8y_UploadConfigFile``` operation for the device.

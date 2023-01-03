@@ -174,7 +174,7 @@ with proper credentials (user from any subscribed tenant), returns a response as
     "microserviceIsolation": "MULTI_TENANT",
     "mqttPlatformUrl": "tcp://cumulocity:1881",
     "password": "...",
-    "platformUrl": "http://cumulocity:8111",
+    "platformUrl": "https://cumulocity:8111",
     "tenant": "mytenant",
     "user": "servicebootstrap_hello-microservice"
 }

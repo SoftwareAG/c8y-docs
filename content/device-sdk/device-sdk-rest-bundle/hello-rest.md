@@ -57,7 +57,7 @@ This call can be done by executing the following curl statement:
        -d '{"c8y_IsDevice":{},"name":"HelloWorldDevice"}' \
        https://<{{< product-c8y-iot >}} tenant domain>/inventory/managedObjects
 
-Replace `<username>`, `<password>` and `<tenant-name>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
+Replace `<username>`, `<password>` and `<tenant-ID>` with the appropriate credentials given to you when registering with {{< product-c8y-iot >}}.
 
 The same credentials used to access the {{< product-c8y-iot >}} Web GUI can be used to execute the REST calls.
 

@@ -140,7 +140,7 @@ curl --location --request GET '{{url}}/service/mlw/listDevices' \
 ```
 401 - Unauthorized
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/automl'
+curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/72c0673497344164a80e298f679b8139/automl'
 ```
 
 **Example Response**
@@ -252,7 +252,7 @@ Downloads the data in the data section from Cumulocity IoT inventory wih given a
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/importFromCumulocity/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/importFromCumulocity/data' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"fileName":"sensorData2","dateFrom":"2020-07-03T06:00:00.000Z","timeFromH":11,"timeFromM":30,"dateTo":"2020-09-28T07:00:10.509Z","timeToH":12,"timeToM":30,"source":"446","series":["sensor4","sensor2","sensor3","sensor1"]}'
@@ -264,7 +264,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 200 - OK
 
 {
-    "id": "1601287609_Tasks",
+    "id": "656ea4",
     "name": "sensorData2",
     "createdAt": "Mon Sep 28 10:06:49 2020",
     "type": "C8YDATA",
@@ -272,19 +272,19 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
     "status": "Not Scheduled",
     "individualTasks": [
         {
-            "id": "1601287609_0411_Cumulocity",
-            "tasksID": "1601287609_Tasks",
+            "id": "656ea5",
+            "tasksID": "656ea4",
             "taskName": "sensorData2",
             "type": "C8YDATA",
             "executedAt": "Mon Sep 28 10:06:49 2020",
             "deviceID": "446",
-            "projectID": "1601283001_Project",
-            "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+            "projectID": "0f981b26132d412097ee5e54a257ce9f",
+            "fileName": "./MLW/0f981b26132d412097ee5e54a257ce9f/Data/sensorData2.csv",
             "pID": "987",
             "status": "In Progress"
         }
     ],
-    "projectID": "1601283001_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "projectName": "ExampleProject",
     "properties": [
         {
@@ -331,7 +331,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/importFromCumulocity/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/importFromCumulocity/data' \
 --data-raw '{"fileName":"sensorData2","dateFrom":"2020-07-03T06:00:00.000Z","timeFromH":11,"timeFromM":30,"dateTo":"2020-09-28T07:00:10.509Z","timeToH":12,"timeToM":30,"source":"446","series":["sensor4","sensor2","sensor3","sensor1"]}'
 ```
 
@@ -352,7 +352,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/importFromCumulocity/data' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/importFromCumulocity/data' \
 --data-raw '{"fileName":"","dateFrom":"2020-07-03T06:00:00.000Z","timeFromH":11,"timeFromM":30,"dateTo":"2020-09-28T07:00:10.509Z","timeToH":12,"timeToM":30,"source":"446","series":["sensor4","sensor2","sensor3","sensor1"]}'
 ```
 

@@ -30,12 +30,15 @@ The table below shows the permissions for users with this role.
 
 #### Machine Learning Manager
 
-Users with the global role “Machine Learning Manager” have limited access to Machine Learning Workbench and can carry out all its operations except delete operations.
+Users with the global role “Machine Learning Manager” have limited access to Machine Learning Workbench and can carry out all its operations except privileged operations.
+
+The privileged operations are: executing Python scripts, running Python commands using Jupyter notebook, training workflows, training neural network models and all delete operations. 
 The table below shows the permissions for users with this role.
 
 |Type|READ|CREATE|UPDATE|ADMIN|
 |:---|:---|:---|:---|:---|
-|Machine learning |yes|yes|yes|no|
+|Machine learning |yes*|yes*|yes*|no|
+**(*) limited access**
 
 
 #### Machine Learning User

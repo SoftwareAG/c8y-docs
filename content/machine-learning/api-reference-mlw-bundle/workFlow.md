@@ -21,7 +21,7 @@ An active subscription of the MLW microservice is required to perform operations
 
 Trains the WorkFlow using the already created AutoML model, pre-processing script and the dataset.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

@@ -20,7 +20,7 @@ Neural network training.
 
 Train a neural network model using architecture file.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

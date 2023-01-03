@@ -20,7 +20,7 @@ Operations on MLW projects.
 
 Execute a python script.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_CREATE
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

@@ -1869,7 +1869,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 Gets the content of the notebook file.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

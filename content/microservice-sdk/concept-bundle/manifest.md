@@ -16,7 +16,7 @@ Here is an example manifest:
     "version": "1.0.0",
     "provider": {
         "name": "New Company Ltd.",
-        "domain": "http://new-company.com",
+        "domain": "https://new-company.com",
         "support": "support@new-company.com"
     },
     "isolation": "MULTI_TENANT",

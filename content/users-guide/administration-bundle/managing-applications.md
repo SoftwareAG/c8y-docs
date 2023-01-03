@@ -13,7 +13,26 @@ helpcontent:
     **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
 
 
-    Click on an application to view the application properties. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
+    Custom applications may be:
+
+
+    Web applications uploaded to the platform.
+
+    Links to external applications running elsewhere.
+
+    Packages deployed to the platform.
+
+    Duplicates of subscribed applications.
+
+
+    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
+    label: packages
+    title: Packages
+    content: "On the **Packages** tab, you will find a list of all packages available in your tenant. Packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new package, click **Add package** at the top right."
+    label: features
+    title: Features
+    content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
+
 ---
 
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications) in the *Concepts guide*.
@@ -114,11 +133,11 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 <a name="own-applications"></a>
 ### Custom applications
 
-Custom applications may be
+Custom applications may be:
 
-* web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard)
-* links to an application running elsewhere
-* duplicates of subscribed applications (in order to be able to customize them)
+* Web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard).
+* Links to an application running elsewhere.
+* Duplicates of subscribed applications (in order to be able to customize them).
 
 In the **All applications** tab, custom applications are labeled as "Custom".  
 
@@ -131,10 +150,10 @@ Click **Add application** at the top right of the **All applications** tab.
 
 In the resulting dialog box, select one of the following methods:
 
-* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it in your file system
-* [External application](#external-application) - by linking to an application running elsewhere
-* [Install from available packages](#blueprint-application) - by selecting a package blueprint
-* [Duplicate existing application](#clone-application) - by creating a copy of an existing application
+* [Upload web application](#uploading-zip-files) - drop a ZIP file or browse for it in your file system.
+* [External application](#external-application) - link to an application running elsewhere.
+* [Install from available packages](#blueprint-application) - select a package blueprint.
+* [Duplicate existing application](#clone-application) - create a copy of an existing application.
 
 <a name="uploading-zip-files"></a>
 ##### To upload a web application
@@ -169,7 +188,7 @@ For details on the fields, see also [Application properties](#application-proper
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. Select **Install from available packages**.
-3. Select the desired package. 
+3. Select the desired package.
 4. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
 5. Enter an application key, used to identify this application.
 6. Enter the path where the application can be reached.
@@ -319,7 +338,7 @@ The selected application will be reactivated by removing the respective files fr
 
 ### Packages
 
-Packages are combinations of plugins and blueprints which can be packed together into a single package and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge. 
+Packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
 
 Packages can contain two types of applications:
 

@@ -304,7 +304,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-
 {
     "owner": "admin",
     "id": "2549800",
-    "self": "http://.../inventory/managedObjects/2549800",
+    "self": "https://.../inventory/managedObjects/2549800",
     "type": "c8y_Building",
     "lastUpdated": "2018-09-05T16:38:31.250+02:00",
     "name": "Building 043",
@@ -336,7 +336,7 @@ POST /inventory/managedObjects/2549800/childAssets HTTP/1.1
 Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 {
     "managedObject" : {
-        "self" : "http://.../inventory/managedObjects/2549700"
+        "self" : "https://.../inventory/managedObjects/2549700"
     }
 }
 ```
@@ -356,7 +356,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF
 {
     "owner": "admin",
     "id": "2549800",
-    "self": "http://.../inventory/managedObjects/2549800",
+    "self": "https://.../inventory/managedObjects/2549800",
     ...
     "childAssets": {
         "references": [

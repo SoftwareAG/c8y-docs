@@ -45,9 +45,9 @@ To see the **Authentication** menu entry, you must have "Tenant management" ADMI
 
 In the **Preferred login mode** field, you can select one of the following options:
 
-* OAI-Secure - Recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
-* Basic Auth - Should be selected only for specific compatibility reasons, since it only provides basic security.
-* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
+* OAI-Secure - recommended, since it provides high security, using authorization tokens to prove the identity of the user. Default login mode on creating new tenants. This mode is an enhancement of the previous OAuth Internal authentication (available prior to 10.13.0).
+* Basic Auth - should be selected only for specific compatibility reasons, since it only provides basic security.
+* Single sign-on redirect - can be selected only if SSO is configured. If selected, will remove Basic Auth and OAI-Secure login options.
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
@@ -131,7 +131,7 @@ If the **Use session configuration** option is enabled, the following settings c
 </tr>
 <tr>
 <td style="text-align:left">Token lifespan</td>
-<td style="text-align:left">Defines the time for which a token is active. The user is only able to access {{< product-c8y-iot >}} with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token and cookie settings</a> below. </td>
+<td style="text-align:left">Defines the time for which a token is active. The user is only able to access {{< product-c8y-iot >}} with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token generation with OAI-Secure</a> below. </td>
 <td style="text-align:left">2 days</td>
 </tr>
 
@@ -197,16 +197,16 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 You may select one of the following options:
 
 * **SMS-based**, supporting the following settings:
-	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
-   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
-   <br><br>
+	- **Limit token validity for** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
+  - **Limit verification code validity for** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
+  
 
 	{{< c8y-admon-info >}}
 An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
   {{< /c8y-admon-info >}}
 
 * **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
-	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
+	 - **Enforce TOTP two-factor authentication on all users** - when enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
 {{< c8y-admon-info >}}
 The TOTP method is only available with the login mode "OAI-Secure".

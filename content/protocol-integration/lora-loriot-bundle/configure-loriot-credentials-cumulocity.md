@@ -4,8 +4,8 @@ title: Device registration via Cumulocity IoT
 layout: redirect
 ---
 
-<a name="cumulocity-loriot-connection-configuration">
-### Creation of Loriot LNS Connection in Cumulocity</a>
+<a name="cumulocity-loriot-connection-configuration"></a>
+### Creation of Loriot LNS Connection in Cumulocity IoT
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 
@@ -16,10 +16,10 @@ When you select **Connectivity** for the first time, you are asked to create a c
 
 Enter the following information:
 
-- **Name**: The name of the Loriot connection being created.
-- **Base URL**: The URL associated with the Loriot provider account.
-- **Username**: Your Loriot account username.
-- **Password**: Your Loriot account password.
+- **Name** - the name of the Loriot connection being created
+- **Base URL** - the URL associated with the Loriot provider account
+- **Username** - your Loriot account username
+- **Password** - your Loriot account password
 
 Click **Save**. If the information you have entered is correct, the message "Connection created" appears.
 
@@ -50,8 +50,8 @@ If there are devices associated with the connection, an error message appears, s
 
 ![Delete connection](/images/device-protocols/lora-loriot/loriot-admin-settings-delete.png)
 
-<a name="loriot-device-registration">
-### Loriot device registration</a>
+<a name="loriot-device-registration"></a>
+### Loriot device registration
 
 To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
 
@@ -63,13 +63,13 @@ If Loriot is not one of the available options, your tenant is not subscribed to 
 
 In the next window, fill in the required information:
 
-- **Title** Title of the device to be registered.
-- **Device EUI** This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
-- **Application EUI** This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number.
-- **Application key** This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
-- **Connection** Lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
-- **Application name** Select the appropriate application name under which the device must be registered in the Loriot provider.
-- **Device protocol** Select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
+- **Title** - title of the device to be registered.
+- **Device EUI** - this is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
+- **Application EUI** - this is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number.
+- **Application key** - this is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
+- **Connection** - lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
+- **Application name** - select the appropriate application name under which the device must be registered in the Loriot provider.
+- **Device protocol** - select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-registration.png)
 
@@ -84,5 +84,4 @@ In order to migrate the device from one LNS connection to another, the device mu
 1. Navigate to the **LPWAN** tab of the Device.
 2. Click the **Provider connection** dropdown.
 3. A prompt will appear stating that in order to migrate the device from one LNS connection to another, you must re-register the device. Click the **Re-Register** button.
-4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection. 
-
+4. You are directed to the device registration page where you can perform the re-registration following the steps above and selecting the desired LNS connection.

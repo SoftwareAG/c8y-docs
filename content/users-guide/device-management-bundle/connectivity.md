@@ -137,8 +137,6 @@ Some sections may not appear or may be empty. For example, if there have been no
 
 The **Status** section lists summary information for the SIM card.
 
-![Status section](/images/users-guide/connectivity/connectivity-status.png)
-
 The first row shows if the device is currently running a data session. If it is, the start of the session and the current WAN IP address of the device is displayed.
 
 The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the drop-down menu.
@@ -156,15 +154,9 @@ The **SMS** section shows the text messages sent to the device and received from
 
 Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking **Send SMS**.
 
-![SMS section](/images/users-guide/connectivity/connectivity-jaspersms.png)
-
 The **Sessions** section shows the log of data sessions carried out by the device. It lists when the session started, how long it took and how much data traffic was consumed.
 
-![Sessions section](/images/users-guide/connectivity/connectivity-sessions.png)
-
 The **Audit logs** section lists all changes to the SIM card and its tariff. It shows the type of change, old and new values when the change was carried out by whom, and if it was successful.
-
-![Audit logs section](/images/users-guide/connectivity/connectivity-jasperaudits.png)
 
 The **Connectivity** tab does not update in real-time. To show current data, click the **Reload** in the top menu bar.
 
@@ -176,7 +168,7 @@ If you suspect that a device is not correctly reporting to {{< product-c8y-iot >
 
 In the **Connectivity** tab, check if
 
-* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. <br> ![Activate SIM card](/images/users-guide/connectivity/connectivity-status-activate.png) <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
+* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
 
   * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters.

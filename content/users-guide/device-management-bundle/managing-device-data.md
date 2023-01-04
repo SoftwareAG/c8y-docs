@@ -214,10 +214,7 @@ The versions are ordered by their creation time (descending).
 
 The software object will be added to the software list or the software version will be added to the software details and the version count label will be updated accordingly.
 
-If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected.
-
-![Add software version](/images/users-guide/DeviceManagement/devmgmt-software-add-version.png)
-
+If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. You are expected to enter the new version number and upload a binary or provide a file path.
 
 #### To edit a software
 
@@ -256,11 +253,9 @@ The **Software** tab shows a list of all available software installed on the dev
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
 
-![Software operation details](/images/users-guide/DeviceManagement/devmgmt-software-operation-details.png)
-
 ##### To install software on a device
 
-1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
+1. In the **Software** tab, click **Install software**.
 
     {{< c8y-admon-info >}}
 The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
@@ -274,21 +269,15 @@ You can remove the already installed software item under **Software changes** or
 
 4. Under **Software changes** at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
 
-	 ![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
-
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
 Click on the operation to view its details. The status of the last operation is also shown on the **Software** tab.
-
-![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### To update software on a device
 
 Hover over the software item which you want to update and click **Update**.
 Select a version from the list and click **Update** again.
-
-![Update software](/images/users-guide/DeviceManagement/devmgmt-software-update.png)
 
 The software will be updated with the selected version.
 

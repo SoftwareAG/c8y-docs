@@ -186,8 +186,6 @@ Das Software-Objekt wird der Software-Liste bzw. die Software-Version den Softwa
 
 Wenn Sie in den Details einer bestimmten Software auf **Software hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Software bereits ausgewählt ist.
 
-![Add software version](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-add-version.png)
-
 
 #### So bearbeiten Sie eine Software
 
@@ -226,11 +224,9 @@ Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte So
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
 
-![Software operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-operation-details.png)
-
 ##### So installieren Sie Software auf einem Gerät
 
-1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-install.png)
+1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**
 
     {{< c8y-admon-info >}}
 Im Dialog **Software installieren** werden nur Software-Elemente angezeigt, die dem Gerätetyp entsprechen. Zudem gilt: Wenn für das Gerät `c8y_SupportedSoftwareTypes` deklariert wurden, werden in dem Dialog nur die Software-Elemente angezeigt, die den unterstützten Software-Typen entsprechen.
@@ -244,21 +240,15 @@ Sie können das bereits installierte Software-Element unter **Software-Änderung
 
 4. Überprüfen Sie Ihre geplanten Änderungen unter **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.
 
-	 ![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
-
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
-
-![Installed software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### So aktualisieren Sie Software auf einem Gerät
 
 Bewegen Sie den Mauszeiger über das Software-Element, das Sie aktualisieren möchten, und klicken Sie auf **Aktualisieren**.
 Wählen Sie eine Version aus der Liste und klicken Sie erneut auf **Aktualisieren**.
-
-![Update software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-update.png)
 
 Die Software wird mit der ausgewählten Version aktualisiert.
 

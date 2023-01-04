@@ -65,8 +65,6 @@ Das Firmware-Objekt wird der Firmware-Liste bzw. die Firmware-Version den Firmwa
 
 Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Firmware bereits ausgewählt ist.
 
-![Add firmware version](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add-version.png)
-
 
 ##### So fügen Sie einen neuen Firmware-Patch hinzu
 
@@ -80,8 +78,6 @@ Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** k
 Wie beim Hinzufügen von Versionen sieht der Dialog etwas anders aus, wenn Sie in den Details einer bestimmten Firmware auf **Firmware-Patch hinzufügen** klicken. Dies liegt daran, dass die Firmware bereits ausgewählt ist.
 
 Der Firmware-Patch wird den Versionsdetails innerhalb der Firmware-Details hinzugefügt.
-
-![Versions and patches](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
 
 #### So bearbeiten Sie eine Firmware
 
@@ -118,15 +114,11 @@ Die Registerkarte **Firmware** zeigt die aktuell auf dem Gerät installierte Fir
 ![Firmware tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-tab.png)
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
-![Firmware operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-operation-details.png)
-
 ##### So installieren/ersetzen Sie Firmware auf einem Gerät
 
 1. Klicken Sie auf der Registerkarte **Firmware** auf **Firmware installieren** (oder **Firmware ersetzen** wenn bereits Firmware auf dem Gerät installiert ist).
 2. Wählen Sie eine Firmware und die gewünschte Version aus der Liste. Diese enthält die gesamte Firmware, die für diesen Gerätetyp im Firmware-Repository bereitsteht.
 3. Klicken Sie auf **Installieren**.
-
-![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 

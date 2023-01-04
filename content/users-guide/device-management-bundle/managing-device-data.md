@@ -94,10 +94,7 @@ The list of versions and patches shows the version name and the name of the firm
 
 The firmware object will be added to the firmware list or the firmware version will be added to the firmware details and the version label will be updated accordingly.
 
-If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.
-
-![Add firmware version](/images/users-guide/DeviceManagement/devmgmt-firmware-add-version.png)
-
+If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. You are expected to enter the new version number and upload a binary or provide a file path.
 
 ##### To add a new firmware patch
 
@@ -111,8 +108,6 @@ If you click **Add firmware** from within the details of a specific firmware, th
 As with adding versions, if you click **Add firmware patch** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.
 
 The firmware patch will be added to the version details within the firmware details.
-
-![Versions and patches](/images/users-guide/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
 
 #### To edit a firmware
 
@@ -149,15 +144,11 @@ The **Firmware** tab shows the current firmware installed on the device.
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
-![Firmware operation details](/images/users-guide/DeviceManagement/devmgmt-firmware-operation-details.png)
-
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
 2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type in the firmware repository.
 3. Click **Install**.
-
-![Install firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-install.png)
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 

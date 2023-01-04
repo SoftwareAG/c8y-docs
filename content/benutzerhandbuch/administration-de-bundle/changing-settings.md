@@ -254,8 +254,6 @@ Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Chann
 
 Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
-![Custom basic configuration](/images/benutzerhandbuch/Administration/sso-custom-basic.png)
-
 |Feld|Beschreibung|
 |:---|:---|
 |Redirect-URI|Redirect-Parameter. Kann in Anfragedefinitionen als ${redirectUri}-Platzhalter verwendet werden.

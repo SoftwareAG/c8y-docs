@@ -526,11 +526,9 @@ Alle Zertifikate des Mandanten werden angezeigt.
 
 ![Trusted certificates List](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-Das Symbol links neben dem jeweiligen Eintrag zeigt, ob das Zertifikat aktiv (grün) oder inaktiv (rot) ist. Ein Mandant kann jederzeit über eine beliebige Anzahl von aktiven oder inaktiven Zertifikaten verfügen.
+Die **Status** Spalte zeigt, ob das Zertifikat aktiv oder inaktiv ist. Ein Mandant kann jederzeit über eine beliebige Anzahl von aktiven oder inaktiven Zertifikaten verfügen.
 
 Durch Klicken auf das Pfeilsymbol rechts neben einem Zertifikat können Sie weitere Details zu dem betreffenden Zertifikat aufklappen.
-
-![Trusted certificates Entry](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
 Die Information in der Tabelle rechts stammt von dem bereitgestellten Zertifikat. Der Inhalt ist schreibgeschützt und kann nicht geändert werden.
 
@@ -550,9 +548,6 @@ Bevor Sie ein neues vertrauenswürdiges Zertifikat hinzufügen, stellen Sie folg
 Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie auf **Vertrauenswürdiges Zertifikat hinzufügen** rechts in der oberen Menüleiste.
-
-	![Trusted certificate details](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-new.png)
-
 2. Geben Sie im nächsten Dialog die folgenden Informationen ein:
 
 | Feld             | Beschreibung                                                                                                                                |
@@ -577,7 +572,5 @@ Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung
 #### So löschen Sie ein vertrauenswürdiges Zertifikat
 
 Um ein Zertifikat dauerhaft aus der Liste der vertrauenswürdigen Zertifikate zu löschen, klicken Sie auf das Menüsymbol rechts neben dem betreffenden Eintrag und anschließend im Kontextmenu auf **Löschen**.
-
-![Trusted certificates delete](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-delete.png)
 
 Das Zertifikat wird dauerhaft gelöscht.

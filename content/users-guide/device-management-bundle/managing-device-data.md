@@ -551,11 +551,9 @@ All certificates owned by the tenant will be displayed.
 
 ![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-The icon on the left of each entry indicates if the certificate is active (green) or inactive (red). At any given time a tenant can have any number of active or inactive certificates.
+The **Status** column indicates if the certificate is enabled or disabled. At any given time a tenant can have any number of enabld or disabled certificates.
 
 Expand a certificate by clicking the arrow icon at the right to view more details.
-
-![Trusted certificates Entry](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
 The information in the table at the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
 
@@ -575,9 +573,6 @@ Before adding a new trusted certificate, make sure that:
 To add a certificate perform these steps:
 
 1. Click **Add trusted certificate** at the right of the top menu bar.
-
-	![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-new.png)
-
 2. In the resulting dialog box, provide the following information:
 
 | Field             | Description                                                                                                                                |
@@ -602,7 +597,5 @@ For details on the fields, see the description on adding certificates above.
 #### To delete a trusted certificate
 
 To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
-
-![Trusted certificates delete](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-delete.png)
 
 The certificate will be permanently deleted.

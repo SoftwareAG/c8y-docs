@@ -487,10 +487,6 @@ Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details d
 Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ `c8y_DeviceProfile` unterstützen.
 {{< /c8y-admon-info >}}
 
-Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
-
-![Device profile filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-filter.png)
-
 
 <a name="to-apply-profiles-to-single-devices"></a>
 #### So wenden Sie Geräteprofile auf ein einzelnes Gerät an
@@ -498,9 +494,6 @@ Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils 
 Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile auf einzelne Geräte anwenden.
 
 1. Wählen Sie auf der Registerkarte **Geräteprofil** ein Geräteprofil aus der Auswahlliste. Es werden nur die Profile angezeigt, die zu dem Gerätetypen passen (falls angegeben), oder für die kein Gerätetyp angegeben wurde.
-
-	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
-
 2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
 <a name="to-apply-profiles-to-multiple-devices"></a>

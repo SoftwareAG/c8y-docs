@@ -513,20 +513,12 @@ The **Device profile** tab of a particular device shows the details of the curre
 The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
 {{< /c8y-admon-info >}}
 
-Moreover, you can filter for devices in the devices list based on their applied profile name and whether the profile has been applied in the past.
-
-![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
-
-
 <a name="to-apply-profiles-to-single-devices"></a>
 #### To apply device profiles to a single device
 
 Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device.
 
 1. In the **Device profile** tab, select a device profile from the dropdown list. Only profiles that match the device type (if specified) or have no device type specified are displayed.
-
-	![Assign device profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-assign.png)
-
 2. Click **Assign device profile** to start the update operation.
 
 <a name="to-apply-profiles-to-multiple-devices"></a>

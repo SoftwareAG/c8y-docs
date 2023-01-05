@@ -324,8 +324,8 @@ Der geladene Snapshot wird im **Konfigurations-Repository** im Menü **Verwaltun
 So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
 
 1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
-2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
-3. Klicken Sie auf **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
+2. Wählen Sie unter **Verfügbare unterstützte Konfigurationen** eine Konfiguration aus der Auswahlliste.
+3. Klicken Sie auf **Konfiguration an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
 
 ![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
 

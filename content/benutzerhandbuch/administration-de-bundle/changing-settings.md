@@ -248,6 +248,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/sso-custom-basic.png)
 
+
 |Feld|Beschreibung|
 |:---|:---|
 |Redirect-URI|Redirect-Parameter. Kann in Anfragedefinitionen als ${redirectUri}-Platzhalter verwendet werden.

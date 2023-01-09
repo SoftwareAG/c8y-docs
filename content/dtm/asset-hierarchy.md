@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 layout: bundle
 title: Asset hierarchy
 ---

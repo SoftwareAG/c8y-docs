@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 50
 layout: bundle
 title: Localization
 outputs:
@@ -9,10 +9,10 @@ helpcontent:
 - label: localization
   title: Localization
   content: "
-  Use the **Localization** feature to add translations for custom properties or asset types, as well as to add custom translations for the existing static text in the DTM application.
+  Use the **Localization** feature to add translations for asset properties or asset models, as well as to add custom translations for the existing static text in the DTM application.
 
 
-  Once you created all custom properties and asset types, their names are added as keys in the **Localization** page. You can add further translations as required.  
+  Once you created all asset properties and asset models, their names are added as keys in the **Localization** page. You can add further translations as required.  
 
 
   To add a new translation, click **Add term** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field.
@@ -21,11 +21,6 @@ helpcontent:
   Note that to use this feature, you must be subscribed to Branding feature application in the Enterprise tenant."
 ---
 
-{{< c8y-admon-related >}}
-* [Subscribed applications](/users-guide/administration/#subscribed-applications) for more information on how to access the DTM application in your tenant.
-
-{{< /c8y-admon-related >}}
-
 {{< c8y-admon-req >}}
 * Subscribed to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
 {{< /c8y-admon-req >}}
@@ -33,15 +28,15 @@ helpcontent:
 <a name=""></a>
 ### Localization feature
 
-The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page in the navigator.
+The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page by navigating to **configuration > Localization**.
 
-Additionally, if you want to add translations for the [custom property](/dtm/asset-types/#property-library) or [asset types](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
+Additionally, if you want to add translations for the [asset property](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
 
 ![Main view localization page](/images/dtm/localization/dtm-localozation-main-page.png)
 
 Initially, the **Localization** page will show a row called **Group** as key. If necessary, add a translation for "Group" according to the explanation above.
 
-Once you create all custom properties and asset types, then all those names are added as keys in the **Localization** page. You can further add the translations as required.
+Once you create all asset properties and asset models, then all those names are added as keys in the **Localization** page. You can further add the translations as required.
 
 To add a new translation in the DTM application, you can add the text as key and add the translations as required.
 
@@ -87,5 +82,5 @@ To change the language for the DTM application click the **User settings** optio
 
 
 {{< c8y-admon-info>}}
-The added translations for asset type and custom property will only show up in the **Assets** page. Translations are currently available for English and German.
+The added translations for asset model and asset property will only show up in the **Assets** page. Translations are currently available for English and German.
 {{< /c8y-admon-info>}}

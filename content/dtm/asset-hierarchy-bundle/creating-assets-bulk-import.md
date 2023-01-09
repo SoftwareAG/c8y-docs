@@ -1,12 +1,12 @@
 ---
-weight: 20
+weight: 30
 title: Creating assets via bulk import
 layout: redirect
 ---
 
 To import the entire asset hierarchy with all assets at once, use the bulk import feature.
-For each [asset type](/dtm/asset-types/#asset-types), a CSV template is provided.
-Fill in the required details in this template and upload the file to create the assets in a bulk for the selected asset type.
+For each [asset model](/dtm/asset-types/#asset-types), a CSV template is provided.
+Fill in the required details in this template and upload the file to create the assets in bulk for the selected asset model.
 
 <a name=""></a>
 ### To create a role to use the bulk import feature
@@ -17,9 +17,11 @@ To use the Bulk import feature, you must provide permission for **Digital Twin**
 
 2. Under **Quick links** click **Roles**.
 
-3. In the **Global roles** tab, select the role which is already assigned for your username.
+3. In the **Global roles** tab, select the role to which permissions are to be provided.
 
-4. Set all available permissions for **Digital Twin** in the "Permissions" section by selecting the following checkboxes:
+4. Set all available permissions for **Digital Twin** in the "Permissions" section.
+
+5. Enable access to the DTM application by selecting the following checkboxes:
 
 	* Under **Application access**, select "Digital Twin".
 
@@ -43,20 +45,20 @@ Follow the steps below:
 
 1. Navigate to the **Assets** page and click **Import assets**.
 
-2. The **Import assets** dialog has a dropdown **Choose asset type**.
+2. The **Import assets** dialog has a dropdown **Choose asset model**.
 
-	* If no asset types are created yet, only the asset type "Group" is listed in the dropdown.
+	* If no asset models are created yet, only the asset model "Group" is listed in the dropdown.
 
-	* If you have added the asset types, all the root asset types are listed in the dropdown.
+	* If you have added the asset models, all the root asset models are listed in the dropdown.
 
-3. Select the asset type for which you want to create the asset hierarchy.
+3. Select the asset model for which you want to create the asset hierarchy.
 
 	![bulk-import-asset](/images/dtm/bulk-import/dtm-bulk-import-import-assets-window.png)
 
 4. On selection, two additional options appear:
 
 	* **Drop file here** - upload the CSV template as a file, for importing assets in bulk.
-	* **Download Template** - download the CSV template for the selected asset type.
+	* **Download Template** - download the CSV template for the selected asset model.
 
 	<br/>
 
@@ -81,8 +83,8 @@ The CSV template has the following fields:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><b>AssetType / DeviceType </b></td>
-<td style="text-align:left">Enter the key of the asset type.</td>
+<td style="text-align:left"><b>AssetModel / DeviceType </b></td>
+<td style="text-align:left">Enter the key of the asset model.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -94,7 +96,7 @@ The CSV template has the following fields:
 <td style="text-align:left"><b>Path</b></td>
 <td style="text-align:left">Remains blank when you create a root asset. For a child asset, provide a path up to the root asset.<br><br>
 <b>Example:</b><br>
-For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path value is "Building 1/Floor 1", where "Building 1" and "Floor 1" represent the respective asset types.</td>
+For an asset called "Room 1" in the hierarchy "Building > Floor > Room" the path value is "Building 1/Floor 1", where "Building 1" and "Floor 1" represent the respective asset models.</td>
 <td style="text-align:left">Mandatory (for child assets)</td>
 </tr>
 <tr>
@@ -108,9 +110,9 @@ For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path 
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left"><b>Custom properties for the asset type</b></td>
-<td style="text-align:left">6th column onwards (in the CSV template), all the custom properties for the root asset types and all its subsequent child asset types are listed.<br><br>
-<b>Info:</b><br>The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Custom property type</a> is also mentioned as a label, for better understanding.<br>
+<td style="text-align:left"><b>Asset properties for the asset model</b></td>
+<td style="text-align:left">6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br><br>
+<b>Info:</b><br>The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 </td>
 <td style="text-align:left">Mandatory</td>
@@ -124,20 +126,20 @@ During the bulk import, the file size validation is skipped as the file is alrea
 Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents an auto-correct of the date on input.
 {{< /c8y-admon-info>}}
 
-To provide a file input as a custom property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
+To provide a file input as a asset property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
 
 Refer to the [Binaries API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
 
-The binary ID in the API response must be provided as input for the custom property field with type "file" in the CSV template.
+The binary ID in the API response must be provided as input for the asset property field with type "file" in the CSV template.
 
 If the type is "Boolean", the input field must be either "true" or "false".
-If the type is "enumeration", then the input field must be in the list of values specified during creation of the custom property.
-If the type is "text" or "number" and custom criteria were provided during custom property creation, then the input value in CSV template must fulfill all the custom property criteria.
+If the type is "enumeration", then the input field must be in the list of values specified during creation of the asset property.
+If the type is "text" or "number" and custom criteria were provided during asset property creation, then the input value in CSV template must fulfill all the asset property criteria.
 
 Fill in details for all the assets which must be created as part of the asset hierarchy.
 
-Start with the asset details for root asset type.
-Then enter the asset details for child asset types under the root asset.
+Start with the asset details for root asset model.
+Then enter the asset details for child asset models under the root asset.
 Next, enter the details for the next level in the hierarchy of child assets and repeat until the details for all the assets are entered in the CSV template.
 Save the CSV template in your system.
 
@@ -149,7 +151,7 @@ To upload the CSV template follow the steps below:
 
 1. Click **Import assets** in the **Assets** page.
 
-2. Select the asset type in the **Import assets** dialog.
+2. Select the asset model in the **Import assets** dialog.
 
 3. Upload the previously filled and saved CSV template in the **Drop file here** section.
 

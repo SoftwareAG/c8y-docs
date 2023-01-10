@@ -20,7 +20,7 @@ Add a new validation rule by clicking on the desired resource and then click **A
 Validation rules can have the following types:
 
 - **Date:** Simply enter a date and select your desired rule.
-- **Number:** Only values of "Integer" or "Float" type are allowed depending on the resource.
+- **Number:** Only values of "integer" or "float" type are allowed depending on the resource.
 - **ObjectLink:** Reference to another object using the format "/Object/Instance/Resource".
 - **Regex:** Add a string which describes the validation pattern. For example, ".*dd" means that the string must end with "dd".
 - **String:** Enter a string value which can be either "True" or "False".

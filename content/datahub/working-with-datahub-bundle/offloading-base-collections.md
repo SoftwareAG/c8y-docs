@@ -14,50 +14,50 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 
 | Column name | Column type
 | ---         |  ---
-| id | VARCHAR |
-| count | INTEGER |
-| creationTime | TIMESTAMP |
-| creationTimeOffset | INTEGER |
-| creationTimeWithOffset | TIMESTAMP |
-| time | TIMESTAMP |
-| timeOffset | INTEGER |
-| timeWithOffset | TIMESTAMP |
-| lastUpdated | TIMESTAMP |
-| lastUpdatedOffset | INTEGER |
-| lastUpdatedWithOffset | TIMESTAMP |
-| year | VARCHAR |
-| month | VARCHAR |
-| day | VARCHAR |
-| severity | VARCHAR |
-| history | OTHER |
-| source | VARCHAR |
-| status | VARCHAR |
-| text | VARCHAR |
+| id | varchar |
+| count | integer |
+| creationTime | timestamp |
+| creationTimeOffset | integer |
+| creationTimeWithOffset | timestamp |
+| time | timestamp |
+| timeOffset | integer |
+| timeWithOffset | timestamp |
+| lastUpdated | timestamp |
+| lastUpdatedOffset | integer |
+| lastUpdatedWithOffset | timestamp |
+| year | varchar |
+| month | varchar |
+| day | varchar |
+| severity | varchar |
+| history | Other |
+| source | varchar |
+| status | varchar |
+| text | varchar |
 
 {{< c8y-admon-info >}}
-The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading, 
+The column `firstOccurrenceTime` is not included in the default schema. If you want to include it in the offloading,
 it must be added manually.
 {{< /c8y-admon-info >}}
 
-The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also 
-supports updates to incorporate these changes. Therefore an offloading pipeline for the alarms collection encompasses 
+The alarms collection keeps track of alarms. An alarm may change its status over time. The alarms collection also
+supports updates to incorporate these changes. Therefore an offloading pipeline for the alarms collection encompasses
 additional steps:
 
-1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded 
+1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded
 with the above mentioned standard schema into the target table of the data lake.
-2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as 
-follows: target table name plus *_all*, *_latest*, or *_c8y_cdh_latest_materialized* respectively. The following 
+2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as
+follows: target table name plus *_all*, *_latest*, or *_c8y_cdh_latest_materialized* respectively. The following
 examples use "alarms" as target table name:
-    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. 
-    For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status 
-    from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the 
-    latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and 
+    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates.
+    For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status
+    from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the
+    latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and
     thus is not seen by {{< product-c8y-iot >}} DataHub).
     * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded.
-    * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the 
+    * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the
     offloading configuration has view materialization enabled.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section 
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section
 [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
 #### Offloading the events collection
@@ -66,22 +66,22 @@ The events collection manages the events. During offloading, the data of the eve
 
 | Column name | Column type
 | ---         |  ---
-| id | VARCHAR |
-| creationTime | TIMESTAMP |
-| creationTimeOffset | INTEGER |
-| creationTimeWithOffset | TIMESTAMP |
-| time | TIMESTAMP |
-| timeOffset | INTEGER |
-| timeWithOffset | TIMESTAMP |
-| lastUpdated | TIMESTAMP |
-| lastUpdatedOffset | INTEGER |
-| lastUpdatedWithOffset | TIMESTAMP |
-| year | VARCHAR |
-| month | VARCHAR |
-| day | VARCHAR |
-| source | VARCHAR |
-| text | VARCHAR |
-| type | VARCHAR |
+| id | varchar |
+| creationTime | timestamp |
+| creationTimeOffset | integer |
+| creationTimeWithOffset | timestamp |
+| time | timestamp |
+| timeOffset | integer |
+| timeWithOffset | timestamp |
+| lastUpdated | timestamp |
+| lastUpdatedOffset | integer |
+| lastUpdatedWithOffset | timestamp |
+| year | varchar |
+| month | varchar |
+| day | varchar |
+| source | varchar |
+| text | varchar |
+| type | varchar |
 
 Events, just like alarms, are mutable, that is, they can be changed after their creation. Thus, the same logic as for alarms applies.
 
@@ -99,23 +99,23 @@ The inventory collection keeps track of managed objects. During offloading, the 
 
 | Column name | Column type
 | ---         |  ---
-| id | VARCHAR |
-| creationTime | TIMESTAMP |
-| creationTimeOffset | INTEGER |
-| creationTimeWithOffset | TIMESTAMP |
-| lastUpdated | TIMESTAMP |
-| lastUpdatedOffset | INTEGER |
-| lastUpdatedWithOffset | TIMESTAMP |
-| year | VARCHAR |
-| month | VARCHAR |
-| day | VARCHAR |
-| name | VARCHAR |
-| owner | VARCHAR |
-| type | VARCHAR |
-| c8y_IsDeviceGroup | BOOLEAN |
-| c8y_IsDevice | BOOLEAN |
-| childAssets | OTHER |
-| childDevices | OTHER |
+| id | varchar |
+| creationTime | timestamp |
+| creationTimeOffset | integer |
+| creationTimeWithOffset | timestamp |
+| lastUpdated | timestamp |
+| lastUpdatedOffset | integer |
+| lastUpdatedWithOffset | timestamp |
+| year | varchar |
+| month | varchar |
+| day | varchar |
+| name | varchar |
+| owner | varchar |
+| type | varchar |
+| c8y_IsDeviceGroup | Boolean |
+| c8y_IsDevice | Boolean |
+| childAssets | Other |
+| childDevices | Other |
 
 The inventory collection keeps track of managed objects. Note that {{< product-c8y-iot >}} DataHub automatically filters out internal objects of the {{< product-c8y-iot >}} platform. These internal objects are also not returned when using the {{< product-c8y-iot >}} REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. Therefore an offloading pipeline for the inventory encompasses additional steps:
 
@@ -137,23 +137,23 @@ When using the default layout, you must select a measurement type, so that all o
 
 | Column name | Column type |
 | -----       | -----       |
-| id | VARCHAR |
-| creationTime | TIMESTAMP |
-| creationTimeOffset | INTEGER |
-| creationTimeWithOffset | TIMESTAMP |
-| time | TIMESTAMP |
-| timeOffset | INTEGER |
-| timeWithOffset | TIMESTAMP |
-| year | VARCHAR |
-| month | VARCHAR |
-| day | VARCHAR |
-| source | VARCHAR |
-| type | VARCHAR |
-| fragment.attribute1.name.value | Depends on data type, often FLOAT |
-| fragment.attribute1.name.unit | String |
+| id | varchar |
+| creationTime | timestamp |
+| creationTimeOffset | integer |
+| creationTimeWithOffset | timestamp |
+| time | timestamp |
+| timeOffset | integer |
+| timeWithOffset | timestamp |
+| year | varchar |
+| month | varchar |
+| day | varchar |
+| source | varchar |
+| type | varchar |
+| fragment.attribute1.name.value | Depends on data type, often float |
+| fragment.attribute1.name.unit | string |
 | ... |  |
-| fragment.attributeN.name.value | Depends on data type, often FLOAT |
-| fragment.attributeN.name.unit | String |
+| fragment.attributeN.name.value | Depends on data type, often float |
+| fragment.attributeN.name.unit | string |
 | myCustomAttribute1 | Depends on data type |
 | ... |  |
 | myCustomAttributeN | Depends on data type |
@@ -186,9 +186,9 @@ The system uses the type attribute to determine *c8y_Temperature* as measurement
 | ... | C | 2.0791169082 | ... |
 
 {{< c8y-admon-info >}}
-You should try to ensure that the data you feed into the measurements base collection is consistent. If measurements of 
-the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common 
-problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. 
+You should try to ensure that the data you feed into the measurements base collection is consistent. If measurements of
+the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common
+problem, for example, are varying data types of the values like one value being 2.079 and another one NaN.
 {{< /c8y-admon-info >}}
 
 ##### Offloading measurements with the TrendMiner target table layout
@@ -199,18 +199,18 @@ The resulting schema is defined as follows:
 
 | Column name | Column type |
 | -----       | -----       |
-| id | VARCHAR |
-| creationTime | TIMESTAMP |
-| creationTimeOffset | INTEGER |
-| creationTimeWithOffset | TIMESTAMP |
-| time | TIMESTAMP |
-| timeOffset | INTEGER |
-| timeWithOffset | TIMESTAMP |
-| source | VARCHAR |
-| type | VARCHAR |
-| tagname | VARCHAR |
-| value | VARCHAR |
-| unit | VARCHAR |
+| id | varchar |
+| creationTime | timestamp |
+| creationTimeOffset | integer |
+| creationTimeWithOffset | timestamp |
+| time | timestamp |
+| timeOffset | integer |
+| timeWithOffset | timestamp |
+| source | varchar |
+| type | varchar |
+| tagname | varchar |
+| value | varchar |
+| unit | varchar |
 
 **Example mapping**
 
@@ -255,10 +255,10 @@ In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tag
 
 | Column name | Column type |
 | -----       | -----       |
-| source | VARCHAR |
-| tagname | VARCHAR |
-| unit | VARCHAR |
-| datatype | VARCHAR |
-| latestCreationTime | TIMESTAMP |
+| source | varchar |
+| tagname | varchar |
+| unit | varchar |
+| datatype | varchar |
+| latestCreationTime | timestamp |
 
 For more details on the interaction of TrendMiner and {{< product-c8y-iot >}} DataHub see also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-other-products/#integration-trendminer).

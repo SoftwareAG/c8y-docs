@@ -78,42 +78,42 @@ The fields below must be contained to be able to establish a connection:
 <tr>
 <td style="text-align:left">Endpoint client ID</td>
 <td style="text-align:left">endpoint id</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align:left">Indicates the LWM2M client's endpoint ID in order to allow the LWM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID. Registering a device using an endpoint ID already used will result in an error.</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left">Security mode</td>
 <td style="text-align:left">securityMode</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. If PSK is selected, devices need to connect to the LWM2M server using DTLS with the given pre-shared key (PSK). With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M PSK ID</td>
 <td style="text-align: left">lwm2m psk_id</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">The ID used by the device for server connections in PSK mode. The LWM2M PSK ID has be to be <b>unique</b> across all tenants. Registering a device using an LWM2M PSK ID already used will result in an error.</td>
 <td style="text-align: left">Mandatory for PSK. Don't set it for NO_SEC</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M PSK key</td>
 <td style="text-align: left">lwm2m psk_key</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">The hex-encoded pre-shared key used by the device for server connections in PSK mode.</td>
 <td style="text-align: left; height: 26px;">Mandatory for PSK. Don't set it for NO_SEC</td>
 </tr>
 <tr>
 <td style="text-align: left">Bootstrap PSK ID</td>
 <td style="text-align: left">bootstrap psk_id</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode. The bootstrap PSK ID has be to be <b>unique</b> across all tenants. Registering a device using an bootstrap PSK ID already used will result in an error.</td>
 <td style="text-align: left">Mandatory for PSK</td>
 </tr>
 <tr>
 <td style="text-align: left">Bootstrap PSK key</td>
 <td style="text-align: left">bootstrap psk_key</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">The hex-encoded key used by the device for bootstrap connections in PSK mode.</td>
 <td style="text-align: left">Mandatory for PSK</td>
 </tr>
@@ -164,7 +164,7 @@ See the table below for the full set of bootstrap fields you can add:
 <tr>
 <td style="text-align: left">LWM2M server URI</td>
 <td style="text-align: left">lwm2m server uri</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">The URI the server uses for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you use the {{< product-c8y-iot >}} service, the hostname of the LWM2M server is "lwm2m.{{< domain-c8y >}}". The bootstrap ports are "5683" for unsecure bootstrap connections and "5684" for secure bootstrap connections. The LWM2M server ports are "5783" for unsecure server connections and "5784" for secure server connections. Note that these values can be different for other services.</td>
 <td style="text-align: left">Mandatory for LWM2M bootstrap</td>
 </tr>
@@ -181,28 +181,28 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 <tr>
 <td style="text-align: left">LWM2M bootstrap short server ID</td>
 <td style="text-align: left">bootstrapShortServerId</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">The short server ID to be used for the bootstrap server. Default is "0".</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left; height: 13px;">Registration lifetime</td>
 <td style="text-align: left; height: 13px;">registrationLifetime</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration. The value must be specified in seconds.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">Default minimum period</td>
 <td style="text-align: left">defaultMinimumPeriod</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">The default minimum period to configure during bootstrap. See the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a> for explanation.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left; height: 13px;">Default maximum period</td>
 <td style="text-align: left; height: 13px;">defaultMaximumPeriod</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">The default max period to configure during bootstrap. See <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a> for explanation.</td>
 <td style="text-align: left">Optional</td>
 </tr>
@@ -237,7 +237,7 @@ See the table below for information on additional fields:
 <tr>
 <td style="text-align: left">LWM2M device type</td>
 <td style="text-align: left">type</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">Type to set for the device managed object on creation. Default is "c8y_lwm2m".
 </td>
 <td style="text-align: left">Optional</td>
@@ -245,28 +245,28 @@ See the table below for information on additional fields:
 <tr>
 <td style="text-align: left">Server public key</td>
 <td style="text-align: left">serverPublicKey</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">The public key of the server.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M short server ID</td>
 <td style="text-align: left">lwm2mShortServerId</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">The short server ID to be used for LWM2M server. Default is "1".</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">Security instance offset</td>
 <td style="text-align: left">securityInstanceOffset</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set, for example, to "3", the first instance will be three.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr style="height: 26px;">
 <td style="text-align: left">Binding mode</td>
 <td style="text-align: left">bindingMode</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">The LWM2M binding mode to be reported to the device. For LWM2M 1.0 devices the supported modes are "UQ" (default, queuing) and "U" (unqueued).
 Note that since {{< product-c8y-iot >}} LWM2M 1.1, the "Q" (queue) mode is not supported, and the default mode will be "U" (unqueued). {{< product-c8y-iot >}} will always queue operations, regardless of whether the device is connected or not. This means that the setting has no effect on the behavior of {{< product-c8y-iot >}}.</td>
 <td style="text-align: left">Optional</td>
@@ -274,7 +274,7 @@ Note that since {{< product-c8y-iot >}} LWM2M 1.1, the "Q" (queue) mode is not s
 <tr>
 <td style="text-align: left">Awake time registration parameter</td>
 <td style="text-align: left">awakeTimeRegistrationParameter</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">Specifies a time interval in milliseconds for which a device is awake and accepting network traffic after sending a LWM2M registration or a registration update to {{< product-c8y-iot >}}.
 If set to 0, the device will be considered as always online.
 If the value is not set, the awake time is determined by the LWM2M client's registration awake time attribute "at" or, if this attribute is also not found, then by the global setting that is defined in the LWM2M microservice.
@@ -298,7 +298,7 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <tr>
 <td style="text-align: left">LWM2M request timeout</td>
 <td style="text-align: left">lwm2mRequestTimeout</td>
-<td style="text-align: left">Integer</td>
+<td style="text-align: left">integer</td>
 <td style="text-align: left">The timeout used for shell operation requests such as read, write, execute done by the LWM2M microservice to the LWM2M device.
 The value is in milliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with the "C8Y.lwm2mRequestTimeout" property.
 The value must not exceed the maximum request timeout limit given in the LWM2M microservice property file with the "C8Y.lwm2mMaxRequestTimeout" property.
@@ -307,7 +307,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <tr>
 <td style="text-align: left">Binary delivery encoding</td>
 <td style="text-align: left">binaryDeliveryEncoding</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">Indicates the encoding format for writing binaries to a LWM2M device. The encoding format can be OPAQUE, TLV, JSON or TEXT. In case of empty or invalid entries, the default format is OPAQUE.
 <td style="text-align: left">Optional</td>
 </tr>
@@ -342,7 +342,7 @@ The following table explains several optional parameters related to firmware upd
 <tr>
 <td style="text-align: left">Firmware update delivery method</td>
 <td style="text-align: left">fwUpdateDeliveryMethod</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">Explains the firmware update delivery method.
 Allowed values are PUSH, PULL or BOTH.</td>
 <td style="text-align: left">Optional</td>
@@ -350,14 +350,14 @@ Allowed values are PUSH, PULL or BOTH.</td>
 <tr>
 <td style="text-align: left">Firmware update supported device protocol</td>
 <td style="text-align: left">fwUpdateSupportedDeviceProtocol</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">Indicates the device protocol to be used for the firmware update. Allowed values are COAP, COAPS, HTTP or HTTPS.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
 <td style="text-align: left">Firmware update reset mechanism</td>
 <td style="text-align: left">fwUpdateResetMechanism</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">Indicates the mechanism used to reset the firmware update state machine.
 Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('\0'). If this field is not used, the default reset state machine mechanism is used where a reset is done via package resource for PUSH and via package URI for PULL.</td>
 <td style="text-align: left">Optional</td>
@@ -365,7 +365,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <tr>
 <td style="text-align: left">Firmware update URL</td>
 <td style="text-align: left">fwUpdateURL</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">string</td>
 <td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 <td style="text-align: left">Optional</td>
 </tr>

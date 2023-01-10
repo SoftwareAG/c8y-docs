@@ -182,8 +182,8 @@ Create a new device for the serial number in the inventory if not yet existing. 
 
 |Position|Parameter  |Mandatory|Type  |Default value|
 |:-------|:----------|:--------|:-----|:------------|
-|1|device name|NO|String|MQTT Device &lt;serialNumber&gt;|
-|2|device type|NO|String|c8y_MQTTDevice|
+|1|device name|NO|string|MQTT Device &lt;serialNumber&gt;|
+|2|device type|NO|string|c8y_MQTTDevice|
 
 **Example**
 
@@ -198,9 +198,9 @@ Create a new child device for the current device. The newly created object will 
 
 |Position|Parameter|Mandatory|Type    |Default value|
 |:-------|:--------|:--------|:-------|:------------|
-|1|unique child ID|YES|String| &nbsp; |
-|2|device name|NO|String|MQTT Device &lt;serialNumber&gt;|
-|3|device type|NO|String|c8y_MQTTChildDevice|
+|1|unique child ID|YES|string| &nbsp; |
+|2|device name|NO|string|MQTT Device &lt;serialNumber&gt;|
+|3|device type|NO|string|c8y_MQTTChildDevice|
 
 **Example**
 
@@ -215,10 +215,10 @@ Create a new software service for given device.
 
 |Position|Parameter  |Mandatory|Type  |
 |:-------|:----------|:--------|:-----|
-|1|service unique external id|YES|String|
-|2|service type|YES|String|
-|3|service name|YES|String|
-|4|service status|YES|String|
+|1|service unique external id|YES|string|
+|2|service type|YES|string|
+|3|service name|YES|string|
+|4|service status|YES|string|
 
 **Example**
 
@@ -233,7 +233,7 @@ Set a status for given software service.
 
 |Position|Parameter  |Mandatory|Type  |
 |:-------|:----------|:--------|:-----|
-|1|service status|YES|String|
+|1|service status|YES|string|
 
 **Example**
 
@@ -259,7 +259,7 @@ Remove one or more fragments from a device.
 
 |Position|Parameter|Mandatory|Type |
 |:-------|:--------|:--------|:----|
-|1...|fragmentName|YES|String|
+|1...|fragmentName|YES|string|
 
 **Example**
 
@@ -274,9 +274,9 @@ Update the hardware properties of the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|serialNumber|NO|String|
-|2|model|NO|String|
-|3|revision|NO|String|
+|1|serialNumber|NO|string|
+|2|model|NO|string|
+|3|revision|NO|string|
 
 **Example**
 
@@ -291,13 +291,13 @@ Update the mobile properties of the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:----|
-|1|imei|NO|String|
-|2|iccid|NO|String|
-|3|imsi|NO|String|
-|4|mcc|NO|String|
-|5|mnc|NO|String|
-|6|lac|NO|String|
-|7|cellId|NO|String|
+|1|imei|NO|string|
+|2|iccid|NO|string|
+|3|imsi|NO|string|
+|4|mcc|NO|string|
+|5|mnc|NO|string|
+|6|lac|NO|string|
+|7|cellId|NO|string|
 
 **Example**
 
@@ -315,7 +315,7 @@ Update the position properties of the device.
 |1|latitude|NO|Number|
 |2|longitude|NO|Number|
 |3|altitude|NO|Number|
-|4|accuracy|NO|Integer|
+|4|accuracy|NO|integer|
 
 **Example**
 
@@ -330,7 +330,7 @@ Update the configuration properties of the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|configuration|NO|String|
+|1|configuration|NO|string|
 
 Example
 
@@ -345,7 +345,7 @@ Set the supported operations of the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1...|List of supported operations|NO|String|
+|1...|List of supported operations|NO|string|
 
 **Example**
 
@@ -364,9 +364,9 @@ Set the firmware installed on the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|name|NO|String|
-|2|version|NO|String|
-|3|url|NO|String|
+|1|name|NO|string|
+|2|version|NO|string|
+|3|url|NO|string|
 
 **Example**
 
@@ -382,9 +382,9 @@ Set the list of software installed on the device.
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
 |1...|List of 3 values per software|NO|(n/a)|
-|1.1|name|NO|String|
-|1.2|version|NO|String|
-|1.3|url|NO|String|
+|1.1|name|NO|string|
+|1.2|version|NO|string|
+|1.3|url|NO|string|
 
 **Example**
 
@@ -401,7 +401,7 @@ This will only set the value if it does not exist. Values entered, for example, 
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|Required interval|NO|Integer|
+|1|Required interval|NO|integer|
 
 **Example**
 
@@ -416,7 +416,7 @@ Set the supported logs of the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1...|List of supported logs|NO|String|
+|1...|List of supported logs|NO|string|
 
 **Example**
 
@@ -431,7 +431,7 @@ Set the supported configurations of the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1...|List of supported configurations|NO|String|
+|1...|List of supported configurations|NO|string|
 
 **Example**
 
@@ -446,10 +446,10 @@ Set currently installed configuration of the device.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|Configuration type|YES|String| &nbsp;|
-|2|Configuration file download URL|YES|String| &nbsp;|
-|3|File name|NO|String|Configuration type|
-|4|Date and time when the configuration was applied|NO|Date|Current date and time|
+|1|Configuration type|YES|string| &nbsp;|
+|2|Configuration file download URL|YES|string| &nbsp;|
+|3|File name|NO|string|Configuration type|
+|4|Date and time when the configuration was applied|NO|date|Current date and time|
 
 **Example**
 
@@ -464,8 +464,8 @@ Set device profile that is being applied to the device.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|Profile executed|YES|String| &nbsp;|
-|2|Profile ID|NO|String|Profile ID from the oldest EXECUTING device profile operation|
+|1|Profile executed|YES|string| &nbsp;|
+|2|Profile ID|NO|string|Profile ID from the oldest EXECUTING device profile operation|
 
 **Example**
 
@@ -480,10 +480,10 @@ Allows a device to provide information about the agent running on it.
 
 | Position | Parameter              | Mandatory | Type   | Default value |
 |:---------|:-----------------------|:----------|:-------|:--------------|
-| 1        | Name of the agent      | YES       | String |               |
-| 2        | Version of the agent   | YES       | String |               |
-| 3        | The agent URL          | NO        | String |               |
-| 4        | Maintainer of the agent| YES       | String |               |
+| 1        | Name of the agent      | YES       | string |               |
+| 2        | Version of the agent   | YES       | string |               |
+| 3        | The agent URL          | NO        | string |               |
+| 4        | Maintainer of the agent| YES       | string |               |
 
 **Example**
 
@@ -498,10 +498,10 @@ Sets the list of advanced software installed on the device. Any existing list wi
 
 | Position | Parameter               | Mandatory | Type   | Default value |
 |:---------|:------------------------|:----------|:-------|:--------------|
-| 1        | Name of the software    | YES       | String |               |
-| 2        | Version of the software | YES       | String |               |
-| 3        | Type of the software    | NO        | String |               |
-| 4        | URL of the software     | NO        | String |               |
+| 1        | Name of the software    | YES       | string |               |
+| 2        | Version of the software | YES       | string |               |
+| 3        | Type of the software    | NO        | string |               |
+| 4        | URL of the software     | NO        | string |               |
 
 **Example**
 
@@ -516,10 +516,10 @@ Appends advanced software items to the list that exists for the device.
 
 | Position | Parameter               | Mandatory | Type   | Default value |
 |:---------|:------------------------|:----------|:-------|:--------------|
-| 1        | Name of the software    | YES       | String |               |
-| 2        | Version of the software | YES       | String |               |
-| 3        | Type of the software    | NO        | String |               |
-| 4        | URL of the software     | NO        | String |               |
+| 1        | Name of the software    | YES       | string |               |
+| 2        | Version of the software | YES       | string |               |
+| 3        | Type of the software    | NO        | string |               |
+| 4        | URL of the software     | NO        | string |               |
 
 **Example**
 
@@ -534,8 +534,8 @@ Removes advanced software items from the list that exists for the device.
 
 | Position | Parameter               | Mandatory | Type   | Default value |
 |:---------|:------------------------|:----------|:-------|:--------------|
-| 1        | Name of the software    | YES       | String |               |
-| 2        | Version of the software | YES       | String |               |
+| 1        | Name of the software    | YES       | string |               |
+| 2        | Version of the software | YES       | string |               |
 
 **Example**
 
@@ -553,11 +553,11 @@ Create a measurement with a given fragment and series.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|fragment|YES|String| &nbsp;|
-|2|series|YES|String| &nbsp;|
-|3|value|YES|Number| &nbsp;|
-|4|unit|NO|String| &nbsp;|
-|5|time|NO|Date|Current server time|
+|1|fragment|YES|string| &nbsp;|
+|2|series|YES|string| &nbsp;|
+|3|value|YES|number| &nbsp;|
+|4|unit|NO|string| &nbsp;|
+|5|time|NO|date|Current server time|
 
 **Example**
 
@@ -572,9 +572,9 @@ Create a measurement of type `c8y_SignalStrength`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|rssi value|YES, if 2 not set|Number| &nbsp;|
-|2|ber value|YES, if 1 not set|Number| &nbsp;|
-|3|time|NO|Date|Current server time|
+|1|rssi value|YES, if 2 not set|number| &nbsp;|
+|2|ber value|YES, if 1 not set|number| &nbsp;|
+|3|time|NO|date|Current server time|
 
 **Example**
 
@@ -589,8 +589,8 @@ Create a measurement of type `c8y_TemperatureMeasurement`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|temperature value|YES|Number| &nbsp;|
-|2|time|NO|Date|Current server time|
+|1|temperature value|YES|number| &nbsp;|
+|2|time|NO|date|Current server time|
 
 **Example**
 
@@ -605,8 +605,8 @@ Create a measurement of type `c8y_Battery`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|battery value|YES|Number| &nbsp;|
-|2|time|NO|Date|Current server time|
+|1|battery value|YES|number| &nbsp;|
+|2|time|NO|date|Current server time|
 
 **Example**
 
@@ -624,9 +624,9 @@ Create a CRITICAL alarm.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|type|YES|String| &nbsp;|
-|2|text|NO|String|Alarm of type **alarmType** raised|
-|3|time|NO|Date|Current server time|
+|1|type|YES|string| &nbsp;|
+|2|text|NO|string|Alarm of type **alarmType** raised|
+|3|time|NO|date|Current server time|
 
 **Example**
 
@@ -641,9 +641,9 @@ Create a MAJOR alarm.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|type|YES|String| &nbsp;|
-|2|text|NO|String|Alarm of type **alarmType** raised|
-|3|time|NO|Date|Current server time|
+|1|type|YES|string| &nbsp;|
+|2|text|NO|string|Alarm of type **alarmType** raised|
+|3|time|NO|date|Current server time|
 
 **Example**
 
@@ -658,9 +658,9 @@ Create a MINOR alarm.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|type|YES|String| &nbsp;|
-|2|text|NO|String|Alarm of type **alarmType** raised|
-|3|time|NO|Date|Current server time|
+|1|type|YES|string| &nbsp;|
+|2|text|NO|string|Alarm of type **alarmType** raised|
+|3|time|NO|date|Current server time|
 
 **Example**
 
@@ -675,9 +675,9 @@ Create a WARNING alarm.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|type|YES|String| &nbsp;|
-|2|text|NO|String|Alarm of type **alarmType** raised|
-|3|time|NO|Date|Current server time|
+|1|type|YES|string| &nbsp;|
+|2|text|NO|string|Alarm of type **alarmType** raised|
+|3|time|NO|date|Current server time|
 
 **Example**
 
@@ -692,8 +692,8 @@ Change the severity of an existing alarm.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|type|YES|String|
-|2|severity|YES|String|
+|1|type|YES|string|
+|2|severity|YES|string|
 
 **Example**
 
@@ -708,7 +708,7 @@ Clear an existing alarm.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|type|YES|String|
+|1|type|YES|string|
 
 **Example**
 
@@ -723,8 +723,8 @@ Remove one or more fragments from an alarm of a specific type.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|alarmType|YES|String|
-|2...|fragmentName|YES|String|
+|1|alarmType|YES|string|
+|2...|fragmentName|YES|string|
 
 **Example**
 
@@ -742,9 +742,9 @@ Create an event of given type and text.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|type|YES|String|&nbsp;|
-|2|text|YES|String|&nbsp;|
-|3|time|NO|Date|Current server time|
+|1|type|YES|string|&nbsp;|
+|2|text|YES|string|&nbsp;|
+|3|time|NO|date|Current server time|
 
 **Example**
 
@@ -759,11 +759,11 @@ Create typical location update event containing `c8y_Position`.
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|latitude|NO|Number|&nbsp;|
-|2|longitude|NO|Number|&nbsp;|
-|3|altitude|NO|Number|&nbsp;|
-|4|accuracy|NO|Number|&nbsp;|
-|5|time|NO|Date|Current server time|
+|1|latitude|NO|number|&nbsp;|
+|2|longitude|NO|number|&nbsp;|
+|3|altitude|NO|number|&nbsp;|
+|4|accuracy|NO|number|&nbsp;|
+|5|time|NO|date|Current server time|
 
 **Example**
 
@@ -778,11 +778,11 @@ Create typical location update event containing `c8y_Position`. Additionally the
 
 |Position|Parameter|Mandatory|Type|Default value|
 |:-------|:-------|:-------|:-------|:---|
-|1|latitude|NO|Number|&nbsp;|
-|2|longitude|NO|Number|&nbsp;|
-|3|altitude|NO|Number|&nbsp;|
-|4|accuracy|NO|Number|&nbsp;|
-|5|time|NO|Date|Current server time|
+|1|latitude|NO|number|&nbsp;|
+|2|longitude|NO|number|&nbsp;|
+|3|altitude|NO|number|&nbsp;|
+|4|accuracy|NO|number|&nbsp;|
+|5|time|NO|date|Current server time|
 
 **Example**
 
@@ -797,8 +797,8 @@ Remove one or more fragments from an event of a specific type.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|eventType|YES|String|
-|2...|fragmentName|NO|String|
+|1|eventType|YES|string|
+|2...|fragmentName|NO|string|
 
 **Example**
 
@@ -827,7 +827,7 @@ Set the oldest PENDING operation with given fragment to EXECUTING.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|fragment|YES|String|
+|1|fragment|YES|string|
 
 **Example**
 
@@ -842,8 +842,8 @@ Set the oldest EXECUTING operation with given fragment to FAILED.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|fragment|YES|String|
-|2|failureReason|NO|String|
+|1|fragment|YES|string|
+|2|failureReason|NO|string|
 
 **Example**
 

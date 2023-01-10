@@ -81,25 +81,25 @@ See below for detailed information about available settings.
 <tbody>
 <tr>
 <td style="text-align:left">apiVersion</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">Document type format discriminator. The accepted values are positive integer numbers proceeded by an optional "v", such as "v2" and "2". Values which do not conform to this convention are considered "v1".</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
 <td style="text-align:left">name</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">Application name</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">contextPath</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">Microservice contextPath is used to define extension points. <br>Default: Microservice name </td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">version</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">Application version. Must be a correct <a href="https://semver.org" target="_blank">SemVer</a> value but the "+" sign is disallowed.</td>
 <td style="text-align:left">Yes</td>
 </tr>
@@ -112,25 +112,25 @@ See below for detailed information about available settings.
 <tr>
 <tr>
 <td style="text-align:left">billingMode</td>
-<td style="text-align:left">Enum</td>
+<td style="text-align:left">enum</td>
 <td style="text-align:left">Values: RESOURCES, SUBSCRIPTION<br>Default: RESOURCES<br><br> In case of RESOURCES, the number of resources used is exposed for billing calculation per usage. In case of SUBSCRIPTION, all resources usage is counted for the microservice owner and the subtenant is charged for subscription.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">isolation</td>
-<td style="text-align:left">Enum</td>
+<td style="text-align:left">enum</td>
 <td style="text-align:left">Values: MULTI_TENANT, PER_TENANT<br>Default: MULTI_TENANT<br><br>Deployment isolation. In case of PER_TENANT, there is a separate instance for each tenant; otherwise, there is one single instance for all subscribed tenants. Should be overridable on subscription and should affect billing.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">scale</td>
-<td style="text-align:left">Enum</td>
+<td style="text-align:left">enum</td>
 <td style="text-align:left">Values: AUTO, NONE<br>Default: NONE <br><br>Enables scaling policy. See <a href="#isolation-levels">Isolation and scaling</a> for more details.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">replicas</td>
-<td style="text-align:left">Integer</td>
+<td style="text-align:left">integer</td>
 <td style="text-align:left">Value range: 1 - 5<br><br>Defines the number of microservice instances. For auto-scaled microservices, the value represents the minimum number of microservices instances.</td>
 <td style="text-align:left">No</td>
 </tr>
@@ -154,7 +154,7 @@ See below for detailed information about available settings.
 </tr>
 <tr>
 <td style="text-align:left">settingsCategory</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">Allows to specify custom category for microservice settings. By default contextPath is used.</td>
 <td style="text-align:left">No</td>
 </tr>

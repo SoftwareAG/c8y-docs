@@ -49,4 +49,4 @@ For details on the schema of these views/tables, see the section [Offloading Cum
 
 In TrendMiner you must connect to these Dremio views using ODBC. For the ODBC connection settings, you must navigate to the **Home** page in the {{< product-c8y-iot >}} DataHub UI and click the ODBC icon to open the ODBC connection settings.
 
-For more details on the steps required in TrendMiner, see also the corresponding TrendMiner documentation of the [Generic ODBC Connector Configuration](https://documentation.trendminer.com/en/63081-connector-configuration.html).
+For more details on the steps required in TrendMiner, see also the corresponding TrendMiner documentation of the [connector configuration](https://documentation.trendminer.com/en/63081-connector-configuration.html).

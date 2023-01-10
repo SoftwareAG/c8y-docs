@@ -312,9 +312,9 @@ Update the position properties of the device.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|latitude|NO|Number|
-|2|longitude|NO|Number|
-|3|altitude|NO|Number|
+|1|latitude|NO|number|
+|2|longitude|NO|number|
+|3|altitude|NO|number|
 |4|accuracy|NO|integer|
 
 **Example**
@@ -860,8 +860,8 @@ It enables the device to send additional parameters that trigger additional step
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
-|1|fragment|YES|String|
-|2...|parameters|NO|String|
+|1|fragment|YES|string|
+|2...|parameters|NO|string|
 
 **Example**
 
@@ -881,7 +881,7 @@ List all children of the device.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1...|child|String|
+|1...|child|string|
 
 **Example**
 
@@ -912,7 +912,7 @@ Run the command being sent in the operation.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|Command text|String|
+|1|Command text|string|
 
 **Example**
 
@@ -927,7 +927,7 @@ Set the configuration being sent in the operation.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|configuration|String|
+|1|configuration|string|
 
 **Example**
 
@@ -942,9 +942,9 @@ Install the firmware from the url.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|firmware name|String|
-|2|firmware version|String|
-|3|url|String|
+|1|firmware name|string|
+|2|firmware version|string|
+|3|url|string|
 
 **Example**
 
@@ -960,9 +960,9 @@ Install the software sent in the operation.
 |Position|Parameter|Type|
 |:-------|:-------|:---|
 |1...|List of 3 values per software|(n/a)|
-|1.1|name|String|
-|1.2|version|String|
-|1.3|url|String|
+|1.1|name|string|
+|1.2|version|string|
+|1.3|url|string|
 
 **Example**
 
@@ -977,7 +977,7 @@ Send the measurements specified by the request name.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|request name|String|
+|1|request name|string|
 
 **Example**
 
@@ -992,7 +992,7 @@ Open or close the relay.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|Relay state|String|
+|1|Relay state|string|
 
 **Example**
 
@@ -1007,7 +1007,7 @@ Open or close the relays in the array.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1...|List of relay state|String|
+|1...|List of relay state|string|
 
 **Example**
 
@@ -1033,7 +1033,7 @@ Download a configuration file from the URL.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|url|String|
+|1|url|string|
 
 **Example**
 
@@ -1048,11 +1048,11 @@ Upload a log file for the given parameters.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|Log file name|String|
-|2|Start date|Date|
-|3|End date|Date|
-|4|Search text|String|
-|5|Maximum lines|Integer|
+|1|Log file name|string|
+|2|Start date|date|
+|3|End date|date|
+|4|Search text|string|
+|5|Maximum lines|integer|
 
 **Example**
 
@@ -1067,7 +1067,7 @@ Change the communication mode.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|mode|String|
+|1|mode|string|
 
 **Example**
 
@@ -1082,8 +1082,8 @@ Download a configuration file from the URL with type.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|URL|String|
-|2|configuration type|String|
+|1|URL|string|
+|2|configuration type|string|
 
 **Example**
 
@@ -1098,10 +1098,10 @@ Install the firmware from the patch.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|firmware name|String|
-|2|firmware version|String|
-|3|URL|String|
-|4|dependency|String|
+|1|firmware name|string|
+|2|firmware version|string|
+|3|URL|string|
+|4|dependency|string|
 
 **Example**
 
@@ -1116,7 +1116,7 @@ Configuration is uploaded from {{< product-c8y-iot >}} to the device with type.
 
 Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|configuration type|String|
+|1|configuration type|string|
 
 **Example**
 
@@ -1133,21 +1133,21 @@ Set the device profiles
 |:-------|:-------|:---|
 |1|firmware marker|(n/a)|
 |1...| 5 values of firmware|(n/a)|
-|1.1|firmware name|String|
-|1.2|firmware version|String|
-|1.3|firmware URL|String|
-|1.4|firmware isPatch|String|
-|1.5|firmware dependency|String|
+|1.1|firmware name|string|
+|1.2|firmware version|string|
+|1.3|firmware URL|string|
+|1.4|firmware isPatch|string|
+|1.5|firmware dependency|string|
 |2|software marker|(n/a)|
 |2...|List of 4 values per software|(n/a)|
-|2.1|software name|String|
-|2.2|software version|String|
-|2.3|software URL|String|
-|2.4|software action|String|
+|2.1|software name|string|
+|2.2|software version|string|
+|2.3|software URL|string|
+|2.4|software action|string|
 |3|configuration marker|(n/a)|
 |3...|List of 2 values per configuration|(n/a)|
-|3.1|configuration URL|String|
-|3.2|configuration type|String|
+|3.1|configuration URL|string|
+|3.2|configuration type|string|
 
 **Example**
 
@@ -1164,10 +1164,10 @@ Update the software installed on the device.
 |Position|Parameter|Type|
 |:-------|:-------|:---|
 |1...|List of 4 values per software|(n/a)|
-|1.1|name|String|
-|1.2|version|String|
-|1.3|URL|String|
-|1.4|action|String|
+|1.1|name|string|
+|1.2|version|string|
+|1.3|URL|string|
+|1.4|action|string|
 
 **Example**
 
@@ -1193,11 +1193,11 @@ Update the software installed on the device.
 | Position | Parameter                     | Type   |
 |:---------|:------------------------------|:-------|
 | 1...     | List of 5 values per software | (n/a)  |
-| 1.1      | name                          | String |
-| 1.2      | version                       | String |
-| 1.2      | type                          | String |
-| 1.3      | URL                           | String |
-| 1.4      | action to be performed        | String |
+| 1.1      | name                          | string |
+| 1.2      | version                       | string |
+| 1.2      | type                          | string |
+| 1.3      | URL                           | string |
+| 1.4      | action to be performed        | string |
 
 **Example**
 
@@ -1213,9 +1213,9 @@ Establish tunneling by Remote Access device agent.
 
 |Position|Parameter|Type|
 |:-------|:-------|:---|
-|1|hostname|String|
-|2|port|Integer|
-|3|connection key|String|
+|1|hostname|string|
+|2|port|integer|
+|3|connection key|string|
 
 **Example**
 

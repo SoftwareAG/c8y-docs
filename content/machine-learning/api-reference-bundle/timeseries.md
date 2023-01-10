@@ -26,7 +26,7 @@ An active subscription of the Nyoka microservice is required to leverage the tim
 |Name|Type|Description|
 |:-----|:-----|:-----|
 |timeUnit|ChronoUnit|The value must be a valid [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) – "SECONDS", "MINUTES", "HOURS", "DAYS", "MONTHS", "YEARS" etc.|
-|periodLength|Number|Length of the period.|
+|periodLength|number|Length of the period.|
 
 
 ### POST – Generate time series model using time series data

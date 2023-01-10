@@ -62,8 +62,8 @@ The availability information computed by {{< product-c8y-iot >}} is stored in th
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|lastMessage|Date|The date and time when the device sent the last message to {{< product-c8y-iot >}}.|
-|status|String|The current status, one of AVAILABLE, UNAVAILABLE, MAINTENANCE.|
+|lastMessage|date|The date and time when the device sent the last message to {{< product-c8y-iot >}}.|
+|status|string|The current status, one of AVAILABLE, UNAVAILABLE, MAINTENANCE.|
 
 
 The following requests are considered a device's heartbeat and will mark the device as available and update the last message timestamp of a device,as long as the `X-Cumulocity-Application-Key` header is not set:

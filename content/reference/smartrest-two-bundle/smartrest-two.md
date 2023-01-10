@@ -136,21 +136,21 @@ A request template contains the following basic fields:
 <tbody>
 <tr>
 <td style="text-align:left">messageId</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">&nbsp;</td>
 <td style="text-align:left">Y</td>
 <td style="text-align:left">Unique ID to reference the template within the collection</td>
 </tr>
 <tr>
 <td style="text-align:left">method</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">GET<br>PUT<br>POST</td>
 <td style="text-align:left">Y</td>
 <td style="text-align:left">Whether to get, update or create data</td>
 </tr>
 <tr>
 <td style="text-align:left">api</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION</td>
 <td style="text-align:left">Y</td>
 <td style="text-align:left">{{< product-c8y-iot >}} API to be used</td>
@@ -238,7 +238,7 @@ With SmartREST 2.0 you have the option to either get an object from inventory by
 </tr>
 <tr>
 <td style="text-align:left">externalIdType</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">&nbsp;</td>
 <td style="text-align:left">N</td>
 <td style="text-align:left">Sets a fixed externalIdType if the template calls by externalId</td>
@@ -410,9 +410,9 @@ The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.
 
 |Field|Data type|Mandatory|Description|
 |:-------|:-------|:-------|:-------|
-|messageId|String|Y|Unique ID to reference the template within the collection|
-|base|String|N|A JsonPath prefix that all patterns will use|
-|condition|String|N|A JsonPath that needs to exist in the object to use the  pattern|
+|messageId|string|Y|Unique ID to reference the template within the collection|
+|base|string|N|A JsonPath prefix that all patterns will use|
+|condition|string|N|A JsonPath that needs to exist in the object to use the  pattern|
 |pattern|List&lt;String&gt;|Y|A list of JsonPath that will be extracted from the object and returned to the device|
 
 Response templates will be used for every operation and for any request template that defines the response field with true. In each case, the server will try every registered response template, so there might be multiple response lines for a single operation or request.

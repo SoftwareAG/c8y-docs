@@ -17,10 +17,10 @@ Currently, jobs can be scheduled using PMML models and model groups only. Howeve
 #### JobConfiguration
 |Name|Type|Description|
 |:-----|:-----|:-----|
-|jobName|String|Name of the job.|
-|jobDescription|String|Description of the job.|
-|groupOrDeviceId|Number|ID of the device or device group whose measurements will be <br> processed when the job executes.|
-|modelOrGroup|String|Name of the model or model group which will be used to process the device measurements.|
+|jobName|string|Name of the job.|
+|jobDescription|string|Description of the job.|
+|groupOrDeviceId|number|ID of the device or device group whose measurements will be <br> processed when the job executes.|
+|modelOrGroup|string|Name of the model or model group which will be used to process the device measurements.|
 |applyAllModels|Boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
 |modelToDeviceMappings|Map|Map with the model's inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
 |jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
@@ -28,13 +28,13 @@ Currently, jobs can be scheduled using PMML models and model groups only. Howeve
 #### JobSchedule
 |Name|Type|Description|
 |:-----|:-----|:-----|
-|frequency|String|Frequency of job execution. Can be either `periodic` or `once`.|
-|cronExpression|String|CRON expression to specify the execution schedule for a periodic job. Follow <br> [http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) <br> for more info on CRON.|
-|dataFromPreviousNSeconds|Number| Number of seconds in the past from which <br> data should be fetched for processing. The value must not exceed 86400 i.e. 24 hours.|
-|timeZone|String|Time zone in which the periodic job should be scheduled.|
-|scheduleAt|String|Datetime string in the future when the job should be scheduled.|
-|dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
-|dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for processing.|
+|frequency|string|Frequency of job execution. Can be either `periodic` or `once`.|
+|cronExpression|string|CRON expression to specify the execution schedule for a periodic job. Follow <br> [http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) <br> for more info on CRON.|
+|dataFromPreviousNSeconds|number| Number of seconds in the past from which <br> data should be fetched for processing. The value must not exceed 86400 i.e. 24 hours.|
+|timeZone|string|Time zone in which the periodic job should be scheduled.|
+|scheduleAt|string|Datetime string in the future when the job should be scheduled.|
+|dataFrom|string|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
+|dataTo|string|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for processing.|
 
 {{< c8y-admon-info >}}
 1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
@@ -259,8 +259,8 @@ Retrieves all the available jobs. Use the `jobId` of these jobs as identifiers f
 |PARAMS||
 |:---|:---|
 |withTotalPages (Boolean)|optional request parameter for displaying total pages; default value is true.
-|currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
-|pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
+|currentPage (number)|optional request parameter for navigating to a particular page; default value is 1.
+|pageSize (number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
 
 
 **Example Request**
@@ -569,8 +569,8 @@ Get execution history of a particular job. Lists all executions of that specific
 |:---|:---|
 |jobId (string)|required path variable for job ID
 |withTotalPages (Boolean)|optional request paramter for displaying total pages; default value is false.
-|currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
-|pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
+|currentPage (number)|optional request parameter for navigating to a particular page; default value is 1.
+|pageSize (number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
 
 
 **Example Request**
@@ -755,7 +755,7 @@ Get the results/inferences generated in a single job execution. These inferences
 |jobId (string)|required path variable for job ID
 |executionId (string)|required path variable for execution ID
 |withTotalPages (Boolean)|optional request parameter for displaying total pages; default value is false.
-|currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
+|currentPage (number)|optional request parameter for navigating to a particular page; default value is 1.
 
 
 **Example Request**

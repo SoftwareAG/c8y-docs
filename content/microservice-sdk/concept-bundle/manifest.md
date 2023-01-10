@@ -205,30 +205,30 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|name|String |Company name of the provider|Yes
-|domain|String |Website of the provider |No
-|support|Email|Email of the support person|No
+|name|string |Company name of the provider|Yes
+|domain|string |Website of the provider |No
+|support|email|Email of the support person|No
 
 #### Resources
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1 <br>Default CPU time: 500m, min: 100m <br>A different default value may be configured by the system administrator.| No
-|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki <br>A different default value may be configured by the system administrator.|No
+|cpu|string |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1 <br>Default CPU time: 500m, min: 100m <br>A different default value may be configured by the system administrator.| No
+|memory|string |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki <br>A different default value may be configured by the system administrator.|No
 
 #### RequestedResources
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Intended minimal requirements for number of CPUs or CPU time  <br>The value may be over-written based on system settings. <br>Default: 250m<br>A different default value may be configured by the system administrator.|No
-|memory|String |Intended minimal requirements for microservice memory usage <br>The value may be over-written based on system settings. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki<br>A different default value may be configured by the system administrator.|No
+|cpu|string |Intended minimal requirements for number of CPUs or CPU time  <br>The value may be over-written based on system settings. <br>Default: 250m<br>A different default value may be configured by the system administrator.|No
+|memory|string |Intended minimal requirements for microservice memory usage <br>The value may be over-written based on system settings. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki<br>A different default value may be configured by the system administrator.|No
 
 #### Option
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|key|String |Key of the option|Yes
-|defaultValue|String|Default value|Yes
+|key|string |Key of the option|Yes
+|defaultValue|string|Default value|Yes
 |editable|Boolean|Defines if the option can be changed by a subscribed tenant on runtime <br>Default: false |No
 |overwriteOnUpdate|Boolean|Defines if an editable option is reset upon microservice update <br>Default: true |No
 |inheritFromOwner|Boolean|Specifies if an option should be inherited from the owner <br>Default: true |No
@@ -239,11 +239,11 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |exec | ExecAction | Commands to be executed on a container to probe the service | No
 |tcpSocket | TCPSocketAction | TCP socket connection attempt as a probe | No
 |httpGet | HTTPGetAction | HTTP request to be executed as a probe | No
-|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing <br>the first probe <br/>Default: 200 | No
-|periodSeconds|Number| Defines in which interval the probe should be executed<br/>Default: 10 | No
-|successThreshold|Number| Minimum consecutive successes for the probe to be considered <br>successful after having failed<br/> Default: 1 | No
-|timeoutSeconds|Number| Number of seconds after which the probe times out<br/> Default: 1 | No
-|failureThreshold|Number| Number of failed probes after which an action should be taken <br/>Default: 3 | No
+|initialDelaySeconds |number| Tells the platform for how long it should wait before performing <br>the first probe <br/>Default: 200 | No
+|periodSeconds|number| Defines in which interval the probe should be executed<br/>Default: 10 | No
+|successThreshold|number| Minimum consecutive successes for the probe to be considered <br>successful after having failed<br/> Default: 1 | No
+|timeoutSeconds|number| number of seconds after which the probe times out<br/> Default: 1 | No
+|failureThreshold|number| number of failed probes after which an action should be taken <br/>Default: 3 | No
 
 #### ExecAction
 
@@ -255,29 +255,29 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|host | String | Host to verify | Yes
-|port | Number | Port to verify <br/>Default:80 | Yes
+|host | string | Host to verify | Yes
+|port | number | Port to verify <br/>Default:80 | Yes
 
 #### HTTPGetAction
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|host | String | Host name to connect to | Yes
-|path | String | Path to access on the HTTP server | Yes
-|port | Number | Port to verify <br/>Default: 80 | No
-|scheme | String | Scheme to use for connecting to the host (HTTP or HTTPS)<br/> Default: HTTP | No
+|host | string | Host name to connect to | Yes
+|path | string | Path to access on the HTTP server | Yes
+|port | number | Port to verify <br/>Default: 80 | No
+|scheme | string | Scheme to use for connecting to the host (HTTP or HTTPS)<br/> Default: HTTP | No
 |headers | HttpHeader | HTTP headers to be added to a request | No
 
 #### HttpHeader
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|name | String | Header name | Yes
-|value | String | Header value | Yes
+|name | string | Header name | Yes
+|value | string | Header value | Yes
 
 #### Extension
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|type | String | Type ID of the extension | Yes
+|type | string | Type ID of the extension | Yes
 |* | any | Configuration parameters | No

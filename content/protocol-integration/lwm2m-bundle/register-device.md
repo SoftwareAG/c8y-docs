@@ -318,6 +318,18 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">If this device property is enabled {{< product-c8y-iot >}} uses time stamps reported by the device for constructing measurements, events and alarms. This is possible if the device reports multiple resources at the same time. For example, this may be done using observes on entire object instances or composite reads and observes. Time stamp data needs to be reported as part of the same object: Either via the common timestamp resources 5518 and 6050 or the specific timestamp resource for object 6. If this feature is disabled or no timestamp information is reported, {{< product-c8y-iot >}} will use its local date and time. Default: false</td>
 <td style="text-align: left">Optional, defaults to false</td>
 </tr>
+<tr>
+<td style="text-align: left">Keep old values in the objects tab if an operation fails </td>
+<td style="text-align: left">c8y_GenericUI_retainOldValuesIfError</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Controls if stale values are kept in the Objects tab. If this flag is set to <code>true</code> (default) the agent never removes a value. If set to <code>false</code> the agent will remove values in two cases:
+<ol>
+<li>A failed read or write operation will lead to removal if the device answers with one of the following CoAP response codes: <code>4.01 (Unauthorized)</code>, <code>4.03 (Forbidden)</code>, <code>4.04 (Not found)</code>, <code>5.00 (Internal Server Error)</code> and <code>5.01 (not implemented)</code>. </li>
+<li>Resources not contained in a discover response will be removed. This allows a discover operation to be used for purging resources that do not exist on the device any longer.</li>
+</ol>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
 </tbody>
 </table>
 

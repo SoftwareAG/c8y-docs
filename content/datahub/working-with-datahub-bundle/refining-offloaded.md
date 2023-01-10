@@ -72,7 +72,7 @@ Depending on your use cases, you will often find the need to provide a view on t
 In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely select a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Querying offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#querying-offloaded).
 
 {{< c8y-admon-info >}}
-Such a view is per default not materialized, that is, it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data. For the pre-defined alarms/events/inventory views, you can optionally activate view materialization during offloading configuration.
+Such a view is per default not materialized, that is, it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data. For the pre-defined alarms/events/inventory views, you can optionally activate view materialization during the offloading configuration.
 {{< /c8y-admon-info >}}
 
 #### Example

@@ -217,13 +217,13 @@ Second document:
 }
 ````
 
-The two paths *c8y_TemperatureMeasurement.T* and *c8y_temperaturemeasurement.T* are equal in terms of case-insensitivity. Without name sanitization, one column *c8y_TemperatureMeasurement.T.unit* will be created, which stores all unit entries. Analoguously, one column *c8y_TemperatureMeasurement.T.value* will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR.
+The two paths *c8y_TemperatureMeasurement.T* and *c8y_temperaturemeasurement.T* are equal in terms of case-insensitivity. Without name sanitization, only the column *c8y_TemperatureMeasurement.T.unit* will be created, which stores all unit entries. Analogously, one column *c8y_TemperatureMeasurement.T.value* will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR.
 
-With name sanitization, two columns *c8y_TemperatureMeasurement.T.unit* and *c8y_temperaturemeasurement.T.unit_6bfa* will be created for unit entries. Then the unit entries will be stored in the column with the associated path. Analoguously, two columns *c8y_TemperatureMeasurement.T.value* and *c8y_temperaturemeasurement.T.value_490d* will be created for value entries.
+With name sanitization, two columns *c8y_TemperatureMeasurement.T.unit* and *c8y_temperaturemeasurement.T.unit_6bfa* will be created for unit entries. The unit entries will then be stored in the column with the associated path. Analogously, two columns *c8y_TemperatureMeasurement.T.value* and *c8y_temperaturemeasurement.T.value_490d* will be created for value entries.
 
-In case one offloading run processes multiple fragments with corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
+In the first case an offloading run processes multiple fragments with the corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
 
-**Completion of offloading configuration**
+**Completing the offloading configuration**
 
 Finally, click **Save** to save the offloading pipeline. Otherwise click **Cancel** to cancel the offloading configuration. You can also navigate back to adapt previous settings, using the **Previous** buttons.
 

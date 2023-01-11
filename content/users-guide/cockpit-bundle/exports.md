@@ -38,7 +38,6 @@ In the **Export** page you will find a list displaying all exports with their na
 #### To add an export
 
 1. Click **Add export** in the top menu bar.<br>
-	![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
 
 2. Enter a name for the export and select the file type (CSV or XLSX) for the report output.
 
@@ -90,8 +89,6 @@ Click **Add** to add empty properties. To enter a label or path, click **Column*
 
 Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
 
-![Select properties](/images/users-guide/cockpit/cockpit-export-properties.png)
-
 If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you must set up at least one property for the custom values to appear in the export.
 
 Example:
@@ -109,8 +106,6 @@ JsonPath expressions added from data points will be stored in bracket notation i
 #### To schedule an export
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**.
-
-![Export details](/images/users-guide/cockpit/cockpit-export-add-schedule.png)
 
 In the resulting dialog box provide the following information to receive the scheduled export via email.
 
@@ -144,8 +139,6 @@ Note that the corresponding emails are send with "text/html" as content type.
 Click **Create** to create the new export schedule.
 
 The export schedule will be added to the export details.
-
-![Scheduled exports list](/images/users-guide/cockpit/cockpit-export-schedule-list.png)
 
 ##### Migration of scheduled exports
 

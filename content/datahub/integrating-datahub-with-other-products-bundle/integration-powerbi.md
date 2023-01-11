@@ -12,7 +12,7 @@ Before setting up the connection to Microsoft Power BI in {{< product-c8y-iot >}
 
 #### Accessing data lakes in Microsoft Power BI reports
 
-{{< product-c8y-iot >}} DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select Dremio as a database [(https://docs.dremio.com/client-applications/microsoft-power-bi/)](https://docs.dremio.com/client-applications/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
+{{< product-c8y-iot >}} DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select [Dremio as a database](https://docs.dremio.com/client-applications/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
 
 {{< c8y-admon-info >}}
 The Microsoft Power BI datasets should use the DirectQuery mode, which prevents replicating and caching the data from the data lake.
@@ -24,9 +24,9 @@ A report is typically published so that it is available to other users as well. 
 
 To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither must sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an Azure Active Directory service principal object with an application secret is used.
 
-The following configuration steps are required, as discussed in detail in the corresponding Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers).
+The following configuration steps are required, as discussed in detail in the corresponding [Microsoft documentation](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-sample-for-customers).
 
-As prerequisite you need an Azure Active Directory tenant. If you do not have an Azure Active Directory tenant, follow the instructions in the Microsoft documentation [(https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant)](https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant).
+As prerequisite you need an Azure Active Directory tenant. If you do not have an Azure Active Directory tenant, follow the instructions in the [Microsoft documentation](https://docs.microsoft.com/en-us/power-bi/developer/embedded/create-an-azure-active-directory-tenant).
 
 Next you must register an Azure Active Directory application, which serves as service principal. You must configure the service principal application to access the REST APIs of Microsoft Power BI, following the instructions on the [Microsoft Power BI website](https://app.powerbi.com/embedsetup):
 

@@ -153,7 +153,7 @@ In the offloading preview you can inspect how the actual data will be stored in 
 
 **Offloading frequency**
 
-Per default each active offloading pipeline is executed once an hour, at the same minute. You can adapt the offloading frequency by setting in the drop-down box the hours per day at which the offloading will to be executed. As with the default setting, the exact minute of the hour for the execution is selected by the system. The hours are defined with respect to UTC as timezone. You have to select at least one hour; otherwise the configuration cannot be saved.
+Per default each active offloading pipeline is executed once an hour, at the same minute. You can adapt the offloading frequency by setting in the dropdown box the hours per day at which the offloading will to be executed. As with the default setting, the exact minute of the hour for the execution is selected by the system. The hours are defined with respect to UTC as timezone. You have to select at least one hour; otherwise the configuration cannot be saved.
 
 **Compaction strategy**
 
@@ -177,7 +177,7 @@ When view materialization is activated, additional data is stored in the data la
 
 **Duplicate column names**
 
-Another setting, which applies only for the measurements collection, is the handling of duplicate column names. During offloading measurement values are transformed into a relational format. Corresponding column names of measurement values are constructed by concatenating path and unit/value. This may lead to columns having the same name except for their case. Then the entries would all be offloaded into the same column. As this may be an unwanted behaviour or even imply mixed types in the offloading process, the names can be sanitized. When activated, for each generated column name, which would be equal to another column name in terms of case-insensitivity, a new column will be created, whose name includes the originally derived name plus a unique suffix.
+Another setting, which applies only for the measurements collection, is the handling of duplicate column names. During offloading, measurement values are transformed into a relational format. Corresponding column names of measurement values are constructed by concatenating path and unit/value. This may lead to columns having the same name except for their case. Then the entries would all be offloaded into the same column. As this may be an unwanted behaviour or even imply mixed types in the offloading process, the names can be sanitized. When activated, for each generated column name, which would be equal to another column name in terms of case-insensitivity, a new column will be created, whose name includes the originally derived name plus a unique suffix.
 
 The following two example documents from two different offloading runs would be processed as follows.
 

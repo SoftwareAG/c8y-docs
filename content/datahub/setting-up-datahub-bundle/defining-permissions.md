@@ -17,7 +17,7 @@ When offloading the inventory/events/alarms/measurements collection, {{< product
 #### Cumulocity IoT DataHub administrator
 The administrator primarily sets up the data lake and Dremio account and conducts administrative tasks like inspecting audit logs or monitoring the system status. The administrator can also manage offloading pipelines, for example, defining and starting a pipeline.
 
-For those tasks the default role *DataHub Administrator* is created. The permissions for this role are defined as follows:
+For those tasks the default role DataHub Administrator is created. The permissions for this role are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
@@ -28,7 +28,7 @@ For those tasks the default role *DataHub Administrator* is created. The permiss
 While READ refers to reading the specific data, ADMIN refers to creating, updating, or deleting the specified data.
 
 #### Cumulocity IoT DataHub manager
-The manager manages offloading pipelines such as defining and starting a pipeline. For those tasks the default role *DataHub Manager* is created. The permissions for this role are defined as follows:
+The manager manages offloading pipelines such as defining and starting a pipeline. For those tasks the default role DataHub Manager is created. The permissions for this role are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
@@ -43,7 +43,7 @@ The user executes SQL queries against the data in the data lake. For details on 
 * Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for authenticating the requests against that API. {{< company-sag >}} does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
 * {{< product-c8y-iot >}} DataHub proxy API: {{< product-c8y-iot >}} DataHub provides an API which proxies requests to the Dremio API. The {{< product-c8y-iot >}} user needs the role DataHub Reader in order to execute queries using the proxy API. The authentication against Dremio is done behind the scenes.
 
-The permissions for the role "DataHub Reader" are defined as follows:
+The permissions for the role DataHub Reader are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|

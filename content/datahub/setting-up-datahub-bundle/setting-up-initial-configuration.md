@@ -44,10 +44,10 @@ The following types of data lakes are currently supported:
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
-|Azure Storage shared access key|The access key used for authentication if *Shared Access Key* is used as authentication type|
-|Application ID|The application ID used for authentication if *Azure Active Directory* is used as authentication type|
-|OAuth 2.0 Token Endpoint|The authentication endpoint if *Azure Active Directory* is used as authentication type|
-|Client Secret|The client secret if *Azure Active Directory* is used as authentication type|
+|Azure Storage shared access key|The access key used for authentication if "Shared Access Key" is used as authentication type|
+|Application ID|The application ID used for authentication if "Azure Active Directory" is used as authentication type|
+|OAuth 2.0 Token Endpoint|The authentication endpoint if "Azure Active Directory" is used as authentication type|
+|Client Secret|The client secret if "Azure Active Directory" is used as authentication type|
 
 While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old value.
 

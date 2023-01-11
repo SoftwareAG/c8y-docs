@@ -54,7 +54,7 @@ examples use "alarms" as target table name:
     latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and 
     thus is not seen by {{< product-c8y-iot >}} DataHub).
     * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded.
-    * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the 
+    * **alarms_c8y_cdh_latest_materialized** - An optional view which materializes the **alarms_latest** view if the 
     offloading configuration has view materialization enabled.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section 

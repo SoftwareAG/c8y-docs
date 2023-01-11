@@ -53,7 +53,7 @@ examples use "alarms" as target table name:
     from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the 
     latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and 
     thus is not seen by {{< product-c8y-iot >}} DataHub).
-    * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded.
+    * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded.
     * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the 
     offloading configuration has view materialization enabled.
 

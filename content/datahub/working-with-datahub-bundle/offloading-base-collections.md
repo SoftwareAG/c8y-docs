@@ -48,7 +48,7 @@ with the above mentioned standard schema into the target table of the data lake.
 2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as 
 follows: target table name plus *_all*, *_latest*, or *_c8y_cdh_latest_materialized* respectively. The following 
 examples use "alarms" as target table name:
-    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. 
+    * **alarms_all** - A view with the updates between two offloading executions, not including the intermediate updates. 
     For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status 
     from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the 
     latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and 

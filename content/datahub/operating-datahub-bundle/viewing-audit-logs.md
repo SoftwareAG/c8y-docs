@@ -35,7 +35,7 @@ For each ad-hoc query, the following information is provided:
 | Runtime (s) | The runtime of the execution in seconds
 | Data scanned (MB) | The amount of data the ad-hoc query has read from the data lake
 | Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an ad-hoc query will be billed as if they were 10 MB
-| Details | The link to the the internal Dremio job in an expandable box
+| Details | The query string as well as a link to the associated Dremio job in an expandable box
 
 ### System log
 

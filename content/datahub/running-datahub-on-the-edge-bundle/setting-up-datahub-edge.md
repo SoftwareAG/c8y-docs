@@ -100,7 +100,7 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 <tbody>
 <tr>
 <td>{{< product-c8y-iot >}} DataHub Edge UI</td>
-<td>The UI can be accessed in the <strong>application switcher</strong> after you have logged into the {{< product-c8y-iot >}} Edge UI. Alternatively you can access it directly under <em>http://edge_domain_name/apps/datahub-ui</em> or <em>https://edge_domain_name/apps/datahub-ui</em>, depending on whether TLS/SSL is used or not. A login is required as well.</td>
+<td>The UI can be accessed in the <strong>application switcher</strong> after you have logged into the {{< product-c8y-iot >}} Edge UI. Alternatively you can access it directly under <em>http://edge_domain_name/apps/datahub-ui</em> or <em>https://edge_domain_name/apps/datahub-ui</em>, depending on whether TLS/SSL is used or not. A login is required as well, with "edge" being used as tenant name.</td>
 </tr>
 <tr>
 <td>Dremio UI</td>

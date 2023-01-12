@@ -130,13 +130,13 @@ Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elemen
     <repository>
         <id>cumulocity</id>
         <layout>default</layout>
-        <url>http://download.cumulocity.com/maven/repository</url>
+        <url>https://download.cumulocity.com/maven/repository</url>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
         <id>public</id>
-        <url>http://download.cumulocity.com/maven/repository</url>
+        <url>https://download.cumulocity.com/maven/repository</url>
     </pluginRepository>
 </pluginRepositories>
 ```

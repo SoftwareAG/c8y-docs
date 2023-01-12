@@ -61,4 +61,4 @@ In cases where a device receives an operation that requests a state that is alre
 2. Execute the operation as normal including re-installing the package
 3. Fail the operation because the requested state may indicate that the command was created under false preconditions
 
-The ideal option depends on the use case and the concrete operation. Regardless of which option is selected the device must ensure that its local state and the on communicated to {{< product-c8y-iot >}} remains consistent.
+The ideal option depends on the use case and the concrete operation. Regardless of which option is selected the device must ensure that its local state and the one communicated to {{< product-c8y-iot >}} remains consistent.

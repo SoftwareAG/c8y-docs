@@ -64,10 +64,10 @@ Turn on **Send measurement** to specify a measurement.
 
 Turn on **Create alarm** if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):
 
-- Severity - one of CRITICAL, MAJOR, MINOR, WARNING.
-- Type.
-- Status - one of ACTIVE, ACKNOWLEDGED, CLEARED.
-- Text.
+- Severity: CRITICAL, MAJOR, MINOR, WARNING
+- Type
+- Status: ACTIVE, ACKNOWLEDGED, CLEARED
+- Text
 
 #### Send Event
 

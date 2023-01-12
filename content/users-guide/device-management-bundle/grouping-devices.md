@@ -8,7 +8,9 @@ helpcontent:
     content: "Devices can be grouped according to your requirements. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
 
 
-  You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
+    Select a group from the groups list or from the navigator to see its details. To add a group, click **Add group** at the top right.
+
+    You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
 ---
 
 Devices can be grouped according to a particular use case. A device can be located in multiple groups and groups themselves can again be part of multiple groups.

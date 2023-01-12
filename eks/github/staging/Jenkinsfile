@@ -28,7 +28,8 @@ pipeline {
     stage('Build') {
       steps {
         sh '''bash --login
-        python /stageScanner.py
+        python /previewScanner.py
+        python /qa.py
         echo \"Starting hugo with params ${HUGO_PARAMS}\"
         ls
         hugo ${HUGO_PARAMS}
@@ -39,7 +40,7 @@ pipeline {
       steps {
         sshagent(['jenkins-master']) {
           sh '''bash --login
-          python /docsRepoScannerForStaging.py ./
+          python /docsRepoScannerForPreview.py ./
           pwd
           ls
           cp output.json ./public/releases.json

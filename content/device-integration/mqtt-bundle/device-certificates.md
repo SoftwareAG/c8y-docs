@@ -403,10 +403,15 @@ The steps for the proof of possession are as follows:
 - The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform:
 ![Proof of possession completed](/images/mqtt/devmgmt-mqtt-cert-pop-completed.png)
 
+{{< c8y-admon-info >}}
+If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
+{{< /c8y-admon-info >}}
+
+
 
 ### Install and configure the MQTT client
 
-1. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
+1. Download and install the newest MQTT.fx client from: [softblade.de/en/download-2](https://softblade.de/en/download-2/)
 2. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**.
 3. Edit the connection profiles like so:
     - Insert the {{< company-c8y >}} URL in the **Broker address** line.

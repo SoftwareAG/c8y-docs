@@ -7,19 +7,22 @@ aliases:
 helpcontent:
   - label: data-broker
     title: Data broker
-    content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations.
-
-
-    Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant. For details, see the *User guide*."
+    content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations."
+    label: data-connector
+    title: Data connector
+    content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** at the top right."
+    label: data-subscriptions
+    title: Data subscriptions
+    content: "The **Data subscriptions** page shows a list of all currently defined data forwarded to your tenant. For each subscription, the name, target tenant and status (enabled or disabled) are provided on a card. Use the toggle to temporarily stop forwarding data to your tenant."
 ---
 
 Data broker lets you share data selectively with other tenants. You can share:
 
-- devices (and more generically, managed objects),
-- events,
-- alarms,
-- measurements,
-- operations.
+- Devices (and more generically, managed objects)
+- Events
+- Alarms
+- Measurements
+- Operations
 
 {{< c8y-admon-req >}}
 To be able to use this feature, your tenant must be subscribed to the application “feature-broker”.
@@ -54,11 +57,11 @@ Click **Data connectors** in the navigator to see a list of all currently define
 
 For each data connector, the following information is provided:
 
-* the data connector's name
-* its destination tenant
-* description if provided, "None" displayed otherwise
-* the status of the connector
-* the number of filters set for the data connector
+* The data connector's name
+* Its destination tenant
+* Description if provided, "None" displayed otherwise
+* The status of the connector
+* The number of filters set for the data connector
 
 Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
@@ -119,8 +122,7 @@ If the source tenant has been suspended all its data broker connectors will be s
 
 5. Click **Save** to save the configuration.
 
->**Warning on the usage of All objects**
-<br><br>
+{{< c8y-admon-important >}}
 The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option.
 <br><br>
 When selected, {{< product-c8y-iot >}} will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
@@ -128,13 +130,15 @@ When selected, {{< product-c8y-iot >}} will synchronize all types of objects, sy
 This concerns items such as SmartREST templates, device protocols, smart rule configurations and dashboards.
 <br><br>
 For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
+{{< /c8y-admon-important >}}
+
 
 If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, meaning it forwards the device or asset along with its first event/measurement/alarm.
 
 If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 
-* operation's device itself is a result of forwarding data;
-* operation matches other filter criteria.
+* The operation's device itself is a result of forwarding data.
+* The operation matches other filter criteria.
 
 Updates of the operation status coming from the source tenant will be forwarded to the destination tenant.
 

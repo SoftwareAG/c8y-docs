@@ -21,7 +21,7 @@ An active subscription of the MLW microservice is required to perform operations
 ```
 Gets the content of the Jupyter Notebook file and also creates a Jupyter session.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -114,7 +114,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/0f981b26132d412097ee
 
 Updates the contents of the Jupyter Notebook file.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_UPDATE
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|
@@ -220,7 +220,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/0f981b26132d412097ee
 
 Gets the list of created Jupyter sessions.
 
-**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_READ
+**ROLES & PERMISSIONS**: ROLE_MACHINE_LEARNING_ADMIN
 
 |HEADERS||
 |:---|:---|

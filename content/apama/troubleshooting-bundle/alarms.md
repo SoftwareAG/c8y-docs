@@ -45,6 +45,7 @@ The following is a list of the alarms. The information further down below explai
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
 - [Performance alarms](#performance_alarms)
+- [Parent tenant not subscribed](#parent_tenant_not_subscribed)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -339,10 +340,10 @@ This alarm is raised for the input queues:
 - Alarm type: `input_queues_filling`
 - Alarm text: Correlator input queues are filling. If this alarm is being regularly raised, there is a chance that the correlator
   cannot process the requests at the rate at which they are arriving.
-  \- Slowest receiver name: &lt;name&gt;,
+  Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
-  Slowest context queue size: &lt;size&gt;
+  Slowest context queue size: &lt;size&gt;.
 - Alarm severity: WARNING
 
 This alarm is raised for the output queues:
@@ -350,10 +351,10 @@ This alarm is raised for the output queues:
 - Alarm type: `output_queues_filling`
 - Alarm text: Correlator output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
   is not able to process the requests at the rate the correlator is sending them.
-  \- Slowest receiver name: &lt;name&gt;,
+  Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
-  Slowest context queue size: &lt;size&gt;
+  Slowest context queue size: &lt;size&gt;.
 - Alarm severity: WARNING
 
 This alarm is raised for both the input and output queues:
@@ -362,10 +363,10 @@ This alarm is raised for both the input and output queues:
 - Alarm text: Correlator input and output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
   is not able to process the requests at the rate the correlator is sending them, causing the slowest output queue to fill up.
   This might have also caused the slowest input queue to fill up.
-  \- Slowest receiver name: &lt;name&gt;,
+  Slowest receiver name: &lt;name&gt;,
   Slowest receiver queue size: &lt;size&gt;,
   Slowest context name: &lt;name&gt;,
-  Slowest context queue size: &lt;size&gt;
+  Slowest context queue size: &lt;size&gt;.
 - Alarm severity: MAJOR
 
 See also [List of correlator status statistics]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DepAndManApaApp_list_of_correlator_status_statistics.html) in the Apama documentation.
@@ -390,3 +391,18 @@ To diagnose the cause, you can try the following. It may be that the Apama-ctrl 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to {{< product-c8y-iot >}}.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.
 - Else, the cause may be some issue with connectivity or in {{< product-c8y-iot >}} Core.
+
+
+<a name="parent_tenant_not_subscribed"></a>
+#### Parent tenant not subscribed
+
+This alarm is raised for a subtenant that was subscribed before the parent tenant was subscribed.
+
+- Alarm type: `parent_tenant_not_subscribed`
+- Alarm text: The microservice cannot function fully until the parent tenant is also subscribed to the microservice. Please contact the administrator.
+- Alarm severity: MAJOR
+
+The Apama-ctrl microservice allows you to subscribe to tenants in any order.
+However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the subtenant.
+
+This alarm is cleared once the parent tenant is subscribed.

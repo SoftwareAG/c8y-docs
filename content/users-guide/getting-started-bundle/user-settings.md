@@ -48,7 +48,7 @@ Note that this option is only available if support user access is not set global
 </tr>
 <tr>
 <td style="text-align:left">Revoke tokens</td>
-<td style="text-align:left">Revoking tokens will log out all users logged with "OAI-Secure" or "Single sign-on redirect". Note that also JWT tokens retrieved by device will be revoked.<br>
+<td style="text-align:left">Revoking tokens will log out all users logged in with "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.<br>
 <br>
 To revoke tokens, the user must have the permission ROLE_USER_MANAGEMENT_ADMIN.
 </td>

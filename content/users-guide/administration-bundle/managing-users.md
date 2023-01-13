@@ -180,3 +180,11 @@ Click the menu icon at the right of the respective row and then click **Delete**
 {{< c8y-admon-info >}}
 You need a role with user management permission to perform this option.
 {{< /c8y-admon-info >}}
+
+### To revoke user tokens
+
+Click **Revoke tokens** button on the right of the top menu bar. Revoking tokens will log out all users logged with "OAI-Secure" or "Single sign-on redirect". All devices connected by JWT token will be disconnected.
+
+{{< c8y-admon-info >}}
+To revoke tokens, you must have the permission ROLE_USER_MANAGEMENT_ADMIN.
+{{< /c8y-admon-info >}}

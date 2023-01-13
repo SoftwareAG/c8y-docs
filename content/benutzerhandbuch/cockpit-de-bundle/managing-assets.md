@@ -81,7 +81,7 @@ Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gru
 <img src="/images/benutzerhandbuch/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
 {{< c8y-admon-info >}}
-Die Zahl oben in der Tabelle der Registerkarte **Kind-Assets** gibt die Gesamtanzahl der Kind-Assets an, die der aktuellen Gruppe zugewiesen sind. Jede Art von Objekt kann ein Kind-Asset sein. Weitere Informationen zum Zählen von Objekten finden Sie in der Beschreibung der Operation [Alle Kind-Assets für ein bestimmtes Objekt abrufen](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in der {{< openapi >}}.
+Die Zahl oben in der Tabelle der Registerkarte **Kind-Assets** gibt die Gesamtanzahl der Kind-Assets an, die der aktuellen Gruppe zugewiesen sind. Jede Art von Objekt kann ein Kind-Asset sein. Weitere Informationen zum Zählen von Objekten finden Sie in der Beschreibung der Operation [Alle Kind-Assets für ein bestimmtes Objekt abrufen](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in der {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}

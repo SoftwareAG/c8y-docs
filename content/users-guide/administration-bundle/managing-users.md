@@ -189,4 +189,4 @@ To revoke all session tokens click **Revoke tokens**  at the right of the top me
 
 {{< c8y-admon-req >}}
 To revoke tokens, the user must have ADMIN permission for the permission type "User management".
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}

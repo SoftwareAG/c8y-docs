@@ -10,9 +10,6 @@ layout: redirect
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups (that is, global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
-![User management](/images/concepts-guide/user-management.png)
-
-
 ### Permissions and ownership
 
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership.

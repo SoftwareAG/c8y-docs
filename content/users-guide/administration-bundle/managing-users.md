@@ -183,7 +183,9 @@ You need a role with user management permission to perform this option.
 
 ### To revoke user tokens
 
-Click **Revoke tokens** button on the right of the top menu bar. Revoking tokens will log out all users logged with "OAI-Secure" or "Single sign-on redirect". Note that also JWT tokens retrieved by device will be revoked.
+In the event of a security incident involving the session tokens of your tenant's users, you can invalidate any tokens currently in use.
+
+To revoke all session tokens click **Revoke tokens**  at the right of the top menu bar. Revoking all tokens logs out all users logged in with "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.
 
 {{< c8y-admon-info >}}
 To revoke tokens, you must have the permission ROLE_USER_MANAGEMENT_ADMIN.

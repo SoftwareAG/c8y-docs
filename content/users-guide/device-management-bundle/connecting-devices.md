@@ -76,6 +76,9 @@ Microservice developers can also use the [Extensible device registration](/conce
 
 <a name="device-registration-manually"></a>
 #### Single device registration
+
+{{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
+<br>
 ##### To connect a  device manually
 <br>
 {{< c8y-admon-info >}}
@@ -196,13 +199,15 @@ While in this mode, any devices connecting to {{< product-c8y-iot >}} without a 
 
 <a name="bulk-registration"></a>
 #### Bulk device registration
-##### To bulk-register devices
 
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
 
 {{< c8y-admon-info >}}
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
+
+##### To bulk-register devices
+
 
 1. Click **Registration** in the **Devices** menu of the navigator.
 

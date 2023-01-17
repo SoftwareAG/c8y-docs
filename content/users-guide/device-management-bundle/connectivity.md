@@ -168,7 +168,7 @@ If you suspect that a device is not correctly reporting to {{< product-c8y-iot >
 
 In the **Connectivity** tab, check the following conditions:
 
-* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
+* the SIM is activated. If the SIM card is not activated, you can activate it selecting "ACTIVE" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
 
   * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters.

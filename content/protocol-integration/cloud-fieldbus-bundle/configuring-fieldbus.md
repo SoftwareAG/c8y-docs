@@ -12,8 +12,6 @@ New fieldbus device protocols can be created in the **Device protocols** page wh
 3. Enter a name for your device and an optional description.
 4. Click **Create** to create the protocol.
 
-![Add device protocol](/images/device-protocols/cloud-fieldbus/fieldbus-add-device-protocol.png)
-
 The device protocol will be added to the device protocol list.
 
 ![Device protocol list](/images/device-protocols/cloud-fieldbus/fieldbus-deviceprotocols-modbus.png)

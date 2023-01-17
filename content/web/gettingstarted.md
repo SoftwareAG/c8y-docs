@@ -48,7 +48,7 @@ If you want to extend an existing application like Cockpit, you can spin up a hy
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getCurrentTenantResource).
+You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/getCurrentTenantResource).
 {{< /c8y-admon-info >}}
 
 ### First route & component

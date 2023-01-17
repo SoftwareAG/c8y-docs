@@ -94,7 +94,7 @@ The list of versions and patches shows the version name and the name of the firm
 
 The firmware object will be added to the firmware list or the firmware version will be added to the firmware details and the version label will be updated accordingly.
 
-If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. You are expected to enter the new version number and upload a binary or provide a file path.
+If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. Enter the new version number and upload a binary or provide a file path.
 
 ##### To add a new firmware patch
 
@@ -214,7 +214,7 @@ The versions are ordered by their creation time (descending).
 
 The software object will be added to the software list or the software version will be added to the software details and the version count label will be updated accordingly.
 
-If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. You are expected to enter the new version number and upload a binary or provide a file path.
+If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. Enter the new version number and upload a binary or provide a file path.
 
 #### To edit a software
 
@@ -551,8 +551,7 @@ All certificates owned by the tenant will be displayed.
 
 ![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-The **Status** column indicates if the certificate is enabled or disabled. At any given time a tenant can have any number of enabld or disabled certificates.
-
+The **Status** column indicates if the certificate is enabled or disabled. At any given time a tenant can have any number of enabled or disabled certificates.
 Expand a certificate by clicking the arrow icon at the right to view more details.
 
 The information in the table at the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
@@ -597,5 +596,4 @@ For details on the fields, see the description on adding certificates above.
 #### To delete a trusted certificate
 
 To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
-
 The certificate will be permanently deleted.

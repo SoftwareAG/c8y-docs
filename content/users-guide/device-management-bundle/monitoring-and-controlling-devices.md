@@ -245,7 +245,6 @@ Click the arrow on the right of a row to expand it and display further details o
 #### To change the status of an alarm
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and select the desired status.
-
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.
 
 <!-- Seems to be no longer relevant
@@ -442,7 +441,7 @@ You may only edit the schedule of bulk operations with status = SCHEDULED.
 3. In the resulting dialog box you may change the **Start date** and **Delay** values.
 5. Click **Reschedule** to apply your changes.
 
-The changes will be applied to the bulk operation accordingly.
+The changes are applied to the bulk operation accordingly.
 
 <a name="bulk-operations"></a>
 #### To cancel bulk operations

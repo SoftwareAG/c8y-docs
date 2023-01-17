@@ -166,7 +166,7 @@ The **Connectivity** tab does not update in real-time. To show current data, cli
 
 If you suspect that a device is not correctly reporting to {{< product-c8y-iot >}}, or it is not receiving commands, you can verify the connectivity status of the device.
 
-In the **Connectivity** tab, check if
+In the **Connectivity** tab, check the following conditions:
 
 * the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:

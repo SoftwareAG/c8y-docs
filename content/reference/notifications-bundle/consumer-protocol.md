@@ -15,7 +15,7 @@ The [URI scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is
 
 The fixed URL path is <kbd>/notification2/consumer/</kbd> and there are only two query string arguments:
 
-* `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
+* `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 
 * `consumer` (optional). Its value is a non blank unique name for the consumer. 
 

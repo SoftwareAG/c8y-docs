@@ -78,7 +78,8 @@ Die Spalten der Geräteliste können nach Bedarf angepasst werden.
 #### So blenden Sie Spalten ein/aus
 
 1. Klicken Sie in der Tabellenkopfzeile auf **Spalten konfigurieren**.
-2. Aktivieren/deaktivieren Sie in der darauf folgenden Auswahlliste die Checkboxen für die gewünschten/unerwünschten Spalten. <br>
+2. Aktivieren/deaktivieren Sie in der darauf folgenden Auswahlliste die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-configure-columns.png)
+   <br>
 
 Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalten.
 
@@ -117,6 +118,8 @@ Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenb
 Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestimmten Kriterien zu Filtern.
 
 Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten.
+
+![Device filtering](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-filter.png)
 
 Legen Sie in der Auswahlliste Ihre Filteroptionen fest.
 

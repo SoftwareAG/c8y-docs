@@ -392,7 +392,11 @@ In jeder Spalte können die Services anhand des jeweils angezeigten Wertes gefil
 ![Services overview](/images/benutzerhandbuch/DeviceManagement/devmgmt-services-overview.png)
 
 Die Plattform gibt drei Statusoptionen für Services vor: **In Betrieb**, **Außer Betrieb** und **Unbekannt**.
-Diese vordefinierten Status haben jeweils eine eigene grafische Darstellung und können direkt im Filter **Status** ausgewählt werden. Andere Statusoptionen sind ebenfalls zulässig und können frei definiert werden, siehe [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in der Web SDK-Dokumentation.
+Diese vordefinierten Status haben jeweils eine eigene grafische Darstellung und können direkt im Filter **Status** ausgewählt werden:
+
+![Status filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-services-status-filter.png)
+
+Andere Statusoptionen sind ebenfalls zulässig und können frei definiert werden, siehe [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in der Web SDK-Dokumentation.
 Sie verwenden alle das gleiche Symbol und müssen im Filter **Status** manuell eingegeben werden.
 Ein Tooltip am Statussymbol zeigt ihren tatsächlichen Wert an.
 
@@ -412,6 +416,8 @@ Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergew
 {{< /c8y-admon-important >}}
 
 {{< product-c8y-iot >}} stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie über dem Kommandozeilenbereich auf **Vordefinierte Kommandos**, um ein Fenster zu öffnen, das eine Liste von verfügbaren vordefinierten Kommandos enthält. Wählen Sie das gewünschte Kommando aus und klicken Sie auf **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen.
+
+![Device shell predefined](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 <a name="software"></a>
 ### Software

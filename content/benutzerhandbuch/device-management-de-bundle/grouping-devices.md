@@ -20,7 +20,9 @@ Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat 
 
 Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/benutzerhandbuch/device-management-de/#configuring-columns).
 
-Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol.
+Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol, siehe Screenshot unten. Filterung ist jedoch nicht für die Hauptgruppenspalte verfügbar. Die Filteroption ist nur in der Untergruppenspalte verfügbar.
+
+ ![Filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-filter.png)
 
 Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de/#filtering-devices).
 
@@ -31,9 +33,9 @@ Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 ![Subassets](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-details.png)
 
 <a name="subassets-tab"></a>
-**Seite "Untergeordnete Assets"**
+**Seite "Kind-Assets"**
 
-Oben auf der Seite **Untergeordnete Assets** werden Name und Beschreibung der Gruppe angezeigt (bearbeitbar), gefolgt von der Information, wann die Gruppe erstellt und zuletzt aktualisiert wurde.
+Oben auf der Seite **Kind-Assets** werden Name und Beschreibung der Gruppe angezeigt (bearbeitbar), gefolgt von der Information, wann die Gruppe erstellt und zuletzt aktualisiert wurde.
 
 Darunter werden alle der Gruppe zugewiesenen Assets aufgelistet. Zu jedem Asset werden verschiedene Informationen wie Typ und Name angezeigt. Wie bei der Liste der Top-Level-Gruppen können Sie auch hier Spalten hinzufügen oder entfernen und die Liste individuell anpassen oder Filter anwenden, um die Liste nach bestimmten Kriterien zu filtern.
 
@@ -54,12 +56,12 @@ Die neue Gruppe wird der Gruppenliste hinzugefügt.
 Eine Gruppe kann mit "0" Geräten erstellt werden.
 {{< /c8y-admon-info >}}
 
-Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Untergeordnete Assets**-Seite und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
+Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Seite und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 
 ### So bearbeiten Sie eine Gruppe
 
 1. Wählen Sie im Navigator eine Gruppe aus.
-2. Auf der Seite **Untergeordnete Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten.
+2. Auf der Seite **Kind-Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten.
 
 Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Abschnitt "Administration".
 
@@ -80,14 +82,14 @@ Durch Ziehen und Ablegen können Sie im Navigator auf schnelle Weise Geräte zu 
 
 Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 
-1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppen** und öffnen Sie dann die Seite **Untergeordnete Assets**.
+1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und öffnen Sie dann die Seite **Kind-Assets**.
 2. Klicken Sie auf **Geräte zuweisen** rechts in der oberen Menüleiste.
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
 ![Assign devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assign.png)
 
-Die Geräte werden der ausgewählten Gruppe zugewiesen und als Untergeordnete Assets auf der Seite **Untergeordnete Assets** angezeigt.
+Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
 
 **Aus der Geräteperspektive**
 
@@ -95,7 +97,11 @@ Die Geräte werden der ausgewählten Gruppe zugewiesen und als Untergeordnete As
 2. Scrollen Sie in der Registerkarte **Info** zur Karte **Gruppenzuweisung**. Wählen Sie im Auswahlfeld die Gruppe aus, der Sie das Gerät zuweisen möchten. Sie können hier auch direkt einen Gruppennamen eingeben oder nur Teile eines Namens eingeben, um die Liste danach zu filtern und nur die passenden Gruppennamen anzuzeigen.
 3. Klicken Sie auf **Zuweisen**.
 
-Das Gerät wird der ausgewählten Gruppe zugewiesen.
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
+
+<br>
+
+Das Geräte wird der ausgewählten Gruppe zugewiesen.
 
 Wenn Sie nach einer Gruppe anhand eines Namens suchen, der noch nicht existiert, wird die Schaltfläche **Neu** angezeigt, so dass Sie von hier aus eine neue Gruppe mit diesem Namen erstellen und ihr das Gerät zuweisen können.
 
@@ -159,6 +165,8 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie auf **Erstellen**.
 
 Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.
+
+![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-smartgroups-icon.png)
 
 Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die Filterkriterien, die beim Erstellen der dynamischen Gruppe angewendet wurden. Sie können die Filtereinstellungen hier ändern und Ihre Auswahl anpassen.
 

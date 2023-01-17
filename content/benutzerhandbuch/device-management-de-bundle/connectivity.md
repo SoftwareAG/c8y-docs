@@ -135,6 +135,8 @@ Einige Abschnitte werden eventuell nicht angezeigt oder sind leer. Wenn beispiel
 
 Im Abschnitt **Status** werden zusammenfassende Informationen zur SIM-Karte aufgeführt.
 
+![Status section](/images/benutzerhandbuch/connectivity/connectivity-status.png)
+
 Die erste Zeile gibt Auskunft darüber, ob das Gerät momentan eine Datensitzung durchführt. Ist dies der Fall, werden der Beginn der Sitzung und die aktuelle WAN-IP-Adresse des Geräts angezeigt.
 
 Die zweite Zeile zeigt weitere Statusinformationen an: die ICCID der SIM-Karte, den Aktivierungszustand der SIM-Karte und, sofern eingestellt, die festgelegte IP-Adresse der SIM-Karte. Sofern Sie über eine ADMIN-Berechtigung für Connectivity verfügen, können Sie den Aktivierungszustand über das Auswahlmenü ändern.
@@ -152,9 +154,15 @@ Der Abschnitt **SMS** zeigt die Textnachrichten an, die an das Gerät gesendet u
 
 Sofern Sie über eine ADMIN-Berechtigung für Connectivity verfügen, können Sie auch Textnachrichten an das Gerät senden, indem Sie den Text eingeben und auf **SMS senden** klicken.
 
+![SMS section](/images/benutzerhandbuch/connectivity/connectivity-jaspersms.png)
+
 Im Abschnitt **Sitzungen** werden die Logdaten der vom Gerät durchgeführten Datensitzungen angezeigt. Hier wird aufgeführt, wann die Sitzung begann, wie lange sie dauerte und wie viel Datenverkehr verbraucht wurde.
 
+![Sessions section](/images/benutzerhandbuch/connectivity/connectivity-sessions.png)
+
 Im Abschnitt **Audit-Logs** werden alle Änderungen an der SIM-Karte und ihrem Tarif aufgeführt. Angezeigt werden die Art der Änderung, alter und neuer Wert, wann die Änderung durch wen erfolgte und ob die Änderung erfolgreich war.
+
+![Audit logs section](/images/benutzerhandbuch/connectivity/connectivity-jasperaudits.png)
 
 Die Registerkarte **Connectivity** wird nicht in Echtzeit aktualisiert. Um aktuelle Daten anzuzeigen, klicken Sie in der oberen Menüleiste auf **Neu laden**.
 
@@ -166,7 +174,7 @@ Wenn Sie den Verdacht haben, dass ein Gerät nicht die korrekten Daten an {{< pr
 
 Prüfen Sie in der Registerkarte **Connectivity**, ob
 
-* die SIM aktiviert ist. Ist die SIM-Karte nicht aktiviert, können Sie sie aktivieren, indem Sie "AKTIV" aus dem "SIM-Status"-Auswahlmenü wählen. Es kann eine Weile dauern, bis die SIM-Karte im Netzwerk aktiviert ist. Unter Umständen ist ein Reset des Geräts notwendig, damit es sich wieder in das Netzwerk einwählt.
+* die SIM aktiviert ist. Ist die SIM-Karte nicht aktiviert, können Sie sie aktivieren, indem Sie "Aktiviert" aus dem Status-Auswahlmenü wählen. <br> ![Activate SIM card](/images/benutzerhandbuch/connectivity/connectivity-status-activate.png) <br> Es kann eine Weile dauern, bis die SIM-Karte im Netzwerk aktiviert ist. Unter Umständen ist ein Reset des Geräts notwendig, damit es sich wieder in das Netzwerk einwählt.
 * das Gerät mit dem Netzwerk verbunden ist. Falls sich das Gerät nicht mit dem Netzwerk verbindet, kann dies mehrere Ursachen haben:
 
   * Das Gerät befindet sich an einem Ort ohne Mobilfunkabdeckung. Falls das Gerät Netzwerk-Qualitätsparameter meldet, können Sie zur [Registerkarte **Messwerte**](/benutzerhandbuch/device-management-de#measurements) des Geräts navigieren und die zuletzt gemeldeten Signalstärke- und Fehlerraten-Parameter überprüfen.

@@ -65,6 +65,8 @@ Das Firmware-Objekt wird der Firmware-Liste bzw. die Firmware-Version den Firmwa
 
 Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Firmware bereits ausgewählt ist.
 
+![Add firmware version](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add-version.png)
+
 
 ##### So fügen Sie einen neuen Firmware-Patch hinzu
 
@@ -78,6 +80,8 @@ Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** k
 Wie beim Hinzufügen von Versionen sieht der Dialog etwas anders aus, wenn Sie in den Details einer bestimmten Firmware auf **Firmware-Patch hinzufügen** klicken. Dies liegt daran, dass die Firmware bereits ausgewählt ist.
 
 Der Firmware-Patch wird den Versionsdetails innerhalb der Firmware-Details hinzugefügt.
+
+![Versions and patches](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
 
 #### So bearbeiten Sie eine Firmware
 
@@ -114,11 +118,15 @@ Die Registerkarte **Firmware** zeigt die aktuell auf dem Gerät installierte Fir
 ![Firmware tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-tab.png)
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
+![Firmware operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-operation-details.png)
+
 ##### So installieren/ersetzen Sie Firmware auf einem Gerät
 
 1. Klicken Sie auf der Registerkarte **Firmware** auf **Firmware installieren** (oder **Firmware ersetzen** wenn bereits Firmware auf dem Gerät installiert ist).
 2. Wählen Sie eine Firmware und die gewünschte Version aus der Liste. Diese enthält die gesamte Firmware, die für diesen Gerätetyp im Firmware-Repository bereitsteht.
 3. Klicken Sie auf **Installieren**.
+
+![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
@@ -186,6 +194,8 @@ Das Software-Objekt wird der Software-Liste bzw. die Software-Version den Softwa
 
 Wenn Sie in den Details einer bestimmten Software auf **Software hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Software bereits ausgewählt ist.
 
+![Add software version](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-add-version.png)
+
 
 #### So bearbeiten Sie eine Software
 
@@ -224,9 +234,11 @@ Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte So
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
 
+![Software operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-operation-details.png)
+
 ##### So installieren Sie Software auf einem Gerät
 
-1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**
+1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-install.png)
 
     {{< c8y-admon-info >}}
 Im Dialog **Software installieren** werden nur Software-Elemente angezeigt, die dem Gerätetyp entsprechen. Zudem gilt: Wenn für das Gerät `c8y_SupportedSoftwareTypes` deklariert wurden, werden in dem Dialog nur die Software-Elemente angezeigt, die den unterstützten Software-Typen entsprechen.
@@ -240,15 +252,21 @@ Sie können das bereits installierte Software-Element unter **Software-Änderung
 
 4. Überprüfen Sie Ihre geplanten Änderungen unter **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.
 
+	 ![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
+
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
+
+![Installed software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### So aktualisieren Sie Software auf einem Gerät
 
 Bewegen Sie den Mauszeiger über das Software-Element, das Sie aktualisieren möchten, und klicken Sie auf **Aktualisieren**.
 Wählen Sie eine Version aus der Liste und klicken Sie erneut auf **Aktualisieren**.
+
+![Update software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-update.png)
 
 Die Software wird mit der ausgewählten Version aktualisiert.
 
@@ -324,8 +342,8 @@ Der geladene Snapshot wird im **Konfigurations-Repository** im Menü **Verwaltun
 So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
 
 1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
-2. Wählen Sie unter **Verfügbare unterstützte Konfigurationen** eine Konfiguration aus der Auswahlliste.
-3. Klicken Sie auf **Konfiguration an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
+2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
+3. Klicken Sie auf **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
 
 ![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
 
@@ -487,6 +505,10 @@ Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details d
 Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ `c8y_DeviceProfile` unterstützen.
 {{< /c8y-admon-info >}}
 
+Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
+
+![Device profile filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-filter.png)
+
 
 <a name="to-apply-profiles-to-single-devices"></a>
 #### So wenden Sie Geräteprofile auf ein einzelnes Gerät an
@@ -494,6 +516,9 @@ Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen
 Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile auf einzelne Geräte anwenden.
 
 1. Wählen Sie auf der Registerkarte **Geräteprofil** ein Geräteprofil aus der Auswahlliste. Es werden nur die Profile angezeigt, die zu dem Gerätetypen passen (falls angegeben), oder für die kein Gerätetyp angegeben wurde.
+
+	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
+
 2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
 <a name="to-apply-profiles-to-multiple-devices"></a>
@@ -526,9 +551,11 @@ Alle Zertifikate des Mandanten werden angezeigt.
 
 ![Trusted certificates List](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-Die **Status** Spalte zeigt, ob das Zertifikat aktiv oder inaktiv ist. Ein Mandant kann jederzeit über eine beliebige Anzahl von aktiven oder inaktiven Zertifikaten verfügen.
+Das Symbol links neben dem jeweiligen Eintrag zeigt, ob das Zertifikat aktiv (grün) oder inaktiv (rot) ist. Ein Mandant kann jederzeit über eine beliebige Anzahl von aktiven oder inaktiven Zertifikaten verfügen.
 
 Durch Klicken auf das Pfeilsymbol rechts neben einem Zertifikat können Sie weitere Details zu dem betreffenden Zertifikat aufklappen.
+
+![Trusted certificates Entry](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
 Die Information in der Tabelle rechts stammt von dem bereitgestellten Zertifikat. Der Inhalt ist schreibgeschützt und kann nicht geändert werden.
 
@@ -548,6 +575,9 @@ Bevor Sie ein neues vertrauenswürdiges Zertifikat hinzufügen, stellen Sie folg
 Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie auf **Vertrauenswürdiges Zertifikat hinzufügen** rechts in der oberen Menüleiste.
+
+	![Trusted certificate details](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-new.png)
+
 2. Geben Sie im nächsten Dialog die folgenden Informationen ein:
 
 | Feld             | Beschreibung                                                                                                                                |
@@ -572,5 +602,7 @@ Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung
 #### So löschen Sie ein vertrauenswürdiges Zertifikat
 
 Um ein Zertifikat dauerhaft aus der Liste der vertrauenswürdigen Zertifikate zu löschen, klicken Sie auf das Menüsymbol rechts neben dem betreffenden Eintrag und anschließend im Kontextmenu auf **Löschen**.
+
+![Trusted certificates delete](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-delete.png)
 
 Das Zertifikat wird dauerhaft gelöscht.

@@ -150,4 +150,6 @@ Um ein SmartREST-Template als CSV-Datei herunterzuladen, führen Sie folgende Sc
 2. Wählen Sie im darauf folgenden Dialog die bevorzugten Optionen für Feldtrennzeichen, Dezimaltrennzeichen und Zeichensatz.
 3. Klicken Sie in der Registerkarte auf **CSV-Vorschau**, die zusätzliche Informationen zu Nachrichten und Antworten enthält, **In die Zwischenablage kopieren**.
 
+![CSV preview tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
+
 Das SmartREST-Template wird in die CSV-Datei exportiert.

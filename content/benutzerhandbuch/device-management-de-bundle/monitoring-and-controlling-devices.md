@@ -88,6 +88,8 @@ Wenn ein Intervall angegeben ist, befindet sich darunter der Umschalter **Wartun
 
 Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt.
 
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
+
 <a name="monitoring-availability"></a>
 ### Verfügbarkeit
 
@@ -206,6 +208,8 @@ Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und
 
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger über die Zeile und klicken Sie auf die entsprechende Schaltfläche oder klicken Sie auf das Menüsymbol und wählen Sie den gewünschten Status.
 
+![Alarm change status](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms-status.png)
+
 Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" zu setzen. Klicken Sie auf **Alle aufheben** in der oberen Menüleiste, um alle Alarme der gewählten Schweregrade zu löschen.
 
 <!-- Seems to be no longer relevant
@@ -255,6 +259,9 @@ Durch Klicken auf eine Zeile wird diese aufgeklappt und es werden weitere Detail
 
 * **Details**: Nähere Beschreibung und Status der Operationen. Lautet der Status = FEHLGESCHLAGEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
 * **Änderungshistorie**: Informationen zu den letzten Änderungen der Operation.
+
+![Single operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
+
 
 Um die Liste der Einzel-Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
 Klicken Sie auf **Alle**, um den Filter wieder zurückzusetzen.
@@ -340,6 +347,10 @@ Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die 
 * **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von Einzel-Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden. Darüber hinaus können Sie entweder alle fehlgeschlagenen Operationen erneut ausführen, indem Sie rechts oben im Abschnitt **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen** klicken, oder einzelne Operationen erneut ausführen, indem Sie den Mauszeiger darüber bewegen und dann auf die Schaltfläche **Operation erneut ausführen** klicken, die direkt daneben erscheint. Siehe auch [So führen Sie fehlgeschlagene Operationen erneut aus](#to-retry-failed-operations).
 * **Änderungshistorie**: In einer zweiten Registerkarte werden Informationen zu den letzten Änderungen der Operation angezeigt.
 
+![Bulk operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
+
+![Bulk operation details, second tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
+
 Um die Liste der Bulk-Operationen nach Operationstyp zu filtern, klicken Sie auf die Auswahlliste in der Menüleiste, wählen Sie eine Reihe von Operationstypen und klicken Sie auf **Anwenden**.
 Um den Filter wieder zurückzusetzen, wählen Sie **Alle** in der Auswahlliste und klicken Sie erneut auf **Anwenden**.
 
@@ -350,6 +361,8 @@ Um die Liste der Bulk-Operationen nach Datum zu filtern, wählen Sie ein Datum i
 Um den Filter zurückzusetzen, klicken Sie direkt daneben auf **Löschen**.
 
 Um beide Filter zurücksetzen, klicken Sie auf **Filter zurücksetzen** am Ende der Liste (nur sichtbar, wenn Filter angewendet wurden).
+
+>![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
 
 <a name="bulk-operations"></a>
 <a name="to-add-a-bulk-operation"></a>
@@ -367,6 +380,7 @@ Führen Sie folgende Schritte aus:
 
 1. Klicken Sie in der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation**.
 2. Wählen Sie im nächsten Dialog einen Operationstyp.
+    ![Select a bulk operation type](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 3. Im darauf folgenden Assistenten gibt es vier Schritte. Je nach Operationstyp unterscheiden sich die ersten beiden Schritte:
   * **Konfigurationsaktualisierung**
       * Wählen Sie eine Konfiguration aus der Liste aus. Die Liste kann nach Konfigurationstyp oder Konfigurationsnamen gefiltert werden. Klicken Sie auf **Weiter**.
@@ -383,6 +397,7 @@ Führen Sie folgende Schritte aus:
 4. Wählen Sie Zielgeräte, indem Sie Filter auf die in Seiten aufgeteilte Liste aller Geräte anwenden. Sie können nach Status, Name, Typ, Modell, Gruppe, Registrierungsdatum und Alarmen filtern. Sie können mehrere Filter anwenden. Um einen Filter anzuwenden, klicken Sie auf die Spaltenüberschrift, wählen Sie Ihre Filteroptionen im Kontextmenü und klicken Sie auf **Anwenden**. Der Gruppenfilter ermöglicht auch das Filtern nach Untergruppen. Zum Auswählen einer ggf. vorhandenen Untergruppe klicken Sie auf die Pfeilschaltfläche rechts neben einer Gruppe und wählen Sie die gewünschten Untergruppen aus der Auswahlliste. Sie können alle Filter zurücksetzen, indem Sie oberhalb der Liste auf **Filter zurücksetzen** klicken. Für die Operationstypen "Konfigurationsaktualisierung", "Software Update" und "Geräteprofil anwenden" ist die Liste bereits nach dem entsprechenden Gerätetyp gefiltert. Klicken Sie auf **Weiter**.
     ![Bulk operation wizard, step 3](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
 5. Geben Sie einen neuen Titel ein oder verwenden Sie den vorgegebenen Titel. Geben Sie bei Bedarf eine Beschreibung ein. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den Einzel-Operationen der Bulk-Operation und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Operation planen**, um die Bulk-Operation anzulegen.
+    ![Bulk operation wizard, step 4](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
 <a name="to-schedule-a-single-operation-as-bulk-operation"></a>
 ##### So planen Sie eine Einzel-Operation als Bulk-Operation
@@ -403,6 +418,8 @@ Sie können nur den Zeitplan von Bulk-Operationen mit dem Status GEPLANT bearbei
 5. Klicken Sie auf **Neu planen**, um Ihre Einstellungen zu speichern.
 
 Die Änderungen werden entsprechend auf die Bulk-Operation angewendet.
+
+![Reschedule bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
 <a name="bulk-operations"></a>
 #### So brechen Sie Bulk-Operationen ab

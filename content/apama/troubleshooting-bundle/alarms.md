@@ -53,7 +53,7 @@ Once the cause of an alarm is resolved, you must acknowledge and clear the alarm
 <a name="tenant_option_change"></a>
 #### Change in tenant options and restart of Apama-ctrl
 
-This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 - Alarm type: `tenant_option_change`
 - Alarm text: Apama detected changes in tenant option. Apama will restart in order to use it.

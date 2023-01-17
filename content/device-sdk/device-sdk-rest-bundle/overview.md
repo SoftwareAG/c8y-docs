@@ -10,7 +10,7 @@ This section explains how to use {{< product-c8y-iot >}}'s REST interfaces to in
 
 The description is closely linked to the {{< openapi >}}, which describes each interface in detail, as well as the device and sensor libraries in the *Reference guide*:
 
--   [REST implementation](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
+-   [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
 -   [Device management library](/reference/device-management-library/) specifies the data model for device management.
 -   [Sensor library](/reference/sensor-library/) specifies the data model for sensors and controls.
 

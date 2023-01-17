@@ -16,7 +16,7 @@ The current compatibility statements are described as follows.
 
 {{< product-c8y-iot >}}'s REST, SmartREST and MQTT APIs as documented in the product documentation are backwards compatible. You can find such documentation in:
 
-* [{{< openapi >}}](https://cumulocity.com/api/)
+* [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/)
 * [Reference guide > SmartREST 2.0](/reference/smartrest-two/)
 * [Device SDK Guide > Device integration using MQTT](/device-integration/mqtt/)
 
@@ -35,7 +35,7 @@ If changes result in breaking backward compatibility, to provide our customers w
 
 #### Beta APIs
 
-To maintain API and product quality we may, from time to time, hold back new APIs in a beta state to make sure that they are robust, properly documented, and provide the capability required. These APIs may change without a prior announcement. Please keep this in mind if you start using APIs that are documented as beta on our [API documentation](https://cumulocity.com/api/).
+To maintain API and product quality we may, from time to time, hold back new APIs in a beta state to make sure that they are robust, properly documented, and provide the capability required. These APIs may change without a prior announcement. Please keep this in mind if you start using APIs that are documented as beta on our [API documentation](https://{{< domain-c8y >}}/api/core/).
 
 #### SDK and client library compatibility
 

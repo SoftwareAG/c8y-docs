@@ -48,13 +48,13 @@ with the above mentioned standard schema into the target table of the data lake.
 2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as 
 follows: target table name plus *_all*, *_latest*, or *_c8y_cdh_latest_materialized* respectively. The following 
 examples use "alarms" as target table name:
-    * **alarms_all**: A view with the updates between two offloading executions, not including the intermediate updates. 
+    * **alarms_all** - A view with the updates between two offloading executions, not including the intermediate updates. 
     For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status 
     from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the 
     latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and 
     thus is not seen by {{< product-c8y-iot >}} DataHub).
-    * **alarms_latest**: A view with the latest status of all alarms, with all previous transitions being discarded.
-    * **alarms_c8y_cdh_latest_materialized**: An optional view which materializes the **alarms_latest** view if the 
+    * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded.
+    * **alarms_c8y_cdh_latest_materialized** - An optional view which materializes the **alarms_latest** view if the 
     offloading configuration has view materialization enabled.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section 
@@ -126,6 +126,10 @@ The inventory collection keeps track of managed objects. Note that {{< product-c
     * **inventory_c8y_cdh_latest_materialized**: An optional view which materializes the **inventory_latest** view if the offloading configuration has view materialization enabled.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
+
+{{< c8y-admon-info >}}
+The fields **childDevices** and **childAssets** are not part of the default offloading columns. They were included in previous versions, but lead to problems for a high number of list items in those fields. In such a case, the columns were no more readable by Dremio. If they need to be included in the offloaded data, they can be defined as additional result columns. However, you have to ensure that the number of list items in those fields does not exceed the Dremio limit configured in your environment.
+{{< /c8y-admon-info >}}
 
 #### Offloading the measurements collection
 

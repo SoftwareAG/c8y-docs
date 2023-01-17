@@ -50,8 +50,8 @@ Devices can be connected to your {{< product-c8y-iot >}} account in different wa
 
 To register devices, you can select one of the following options:
 
-* Single **[General](#device-registration-manually)** device registration - to manually connect one or more devices
-* Bulk **[General](#creds-upload)** device registration - to register larger amounts of devices in one step
+* **[Single device registration](#device-registration-manually)** - to manually connect one or more devices.
+* **[Bulk device registration](#bulk-registration)** - to register larger amounts of devices in one step.
 
 If you are subscribed to the required applications you will see other options for registering devices of specific types (for example, Actility LoRa or Sigfox). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview).
 
@@ -60,8 +60,12 @@ If you are subscribed to the required applications you will see other options fo
 Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 
 <a name="device-registration-manually"></a>
-#### To connect a  device manually
+#### Single device registration
 
+{{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
+<br>
+##### To connect a  device manually
+<br>
 {{< c8y-admon-info >}}
 Depending on the type of device you want to connect, not all steps of the following process may be relevant.
 {{< /c8y-admon-info >}}
@@ -178,13 +182,17 @@ The procedure of accepting devices is the same as described in [Optional securit
 
 While in this mode, any devices connecting to {{< product-c8y-iot >}} without a security token will be blocked and it won't be possible to complete their registration.
 
-#### To bulk-register devices
+<a name="bulk-registration"></a>
+#### Bulk device registration
 
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
 
 {{< c8y-admon-info >}}
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
+
+##### To bulk-register devices
+
 
 1. Click **Registration** in the **Devices** menu of the navigator.
 
@@ -254,7 +262,7 @@ If the device with the given identifier already exists, it will be updated with 
 5. In Step 2 of the **Text Import Wizard**, select **Semicolon** as delimiter and click **Finish**.
 
 For further information on the file format and accepted CSV variants, also refer to
-[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}.
+[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}.
 
 {{< c8y-admon-info >}}
 In an {{< enterprise-tenant >}} you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the {{< management-tenant >}}.

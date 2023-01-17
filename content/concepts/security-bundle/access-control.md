@@ -10,9 +10,6 @@ layout: redirect
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups (that is, global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
-![User management](/images/concepts-guide/user-management.png)
-
-
 ### Permissions and ownership
 
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership.
@@ -57,7 +54,7 @@ Global roles and inventory roles are created and managed in the **Roles** page o
 
 A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the *User guide*.
 
-For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
+For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
 
 ### Globally accessible objects
 

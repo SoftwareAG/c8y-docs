@@ -18,9 +18,9 @@ You need a separate Dremio account to run SQL queries. The Dremio account is req
 
 When you have established a connection, you can run SQL queries against your tables in the data lake (to which new data is appended whenever the offloading pipeline has successfully run). The source you refer to in the query is defined by your tenant ID and the target table you have specified in the offloading configuration. The identifier to be used as the source in a SQL query is defined as follows for the different data lake providers:
 
-* **Azure Storage:** YourTenantIdDataLake.`FileSystem`.YourAccountName.TargetTable with `FileSystem` denoting the file system within your Azure Storage account
-* **Amazon S3:** YourTenantIdDataLake.`Bucket`.YourAccountName.TargetTable with `Bucket` denoting the bucket within your Amazon S3 account
-* **Others:** YourTenantIdDataLake.YourAccountName.TargetTable
+* **Azure Storage:** YourTenantIdDataLake.`FileSystem`.YourAccountName.TargetTableName with `FileSystem` denoting the file system within your Azure Storage account
+* **Amazon S3:** YourTenantIdDataLake.`Bucket`.YourAccountName.TargetTableName with `Bucket` denoting the bucket within your Amazon S3 account
+* **Others:** YourTenantIdDataLake.YourAccountName.TargetTableName
 
 For example, if your tenantId is `t47110815` and you have defined an offloading configuration to write the alarms collection to the target table `JohnsAlarms` in an Azure Storage account containing a file system named `Dremio`, then an example query would be:
 
@@ -41,8 +41,6 @@ You can use the Dremio UI to interactively run queries against the data lake. Se
 
 If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You must download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string and the required driver version from {{< product-c8y-iot >}} DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. When setting up your JDBC client, use as username and password the credentials from your Dremio account.
 
-For additional JDBC settings of Dremio see also the associated [Dremio documentation](https://docs.dremio.com/drivers/dremio-jdbc-driver.html).
-
 ### Connecting via ODBC
 
 If you want to use an ODBC client to run SQL queries against the data lake, you must configure the platform-specific driver, following the associated [Dremio installation instructions](https://docs.dremio.com/drivers/dremio-odbc-driver.html). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
@@ -55,7 +53,7 @@ Note that the API might change any time and {{< company-sag >}} does not provide
 
 ### Connecting via Cumulocity IoT DataHub REST API
 
-The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dremio query processing, serving as a proxy to Dremio. {{< product-c8y-iot >}} DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the DataHub REST API documentation on the [{{< product-c8y-iot >}} OpenAPI documentation page](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/) for details on the endpoints. When using this API, you authenticate with your {{< product-c8y-iot >}} account, not with your Dremio account.
+The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dremio query processing, serving as a proxy to Dremio. {{< product-c8y-iot >}} DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the DataHub REST API documentation on the [{{< product-c8y-iot >}} OpenAPI documentation page](https://{{< domain-c8y >}}/api/datahub/) for details on the endpoints. When using this API, you authenticate with your {{< product-c8y-iot >}} account, not with your Dremio account.
 
 ### Connecting other clients
 

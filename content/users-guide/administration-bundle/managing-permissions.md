@@ -18,8 +18,8 @@ Permissions define what a user is allowed to do in {{< product-c8y-iot >}} appli
 
 The following types of roles can be associated with users:
 
-- Global roles: Contain permissions that apply to all data within a tenant.
-- Inventory roles: Contain permissions that apply to groups of devices.
+- Global roles - contain permissions that apply to all data within a tenant.
+- Inventory roles - contain permissions that apply to groups of devices.
 
 Moreover, application access can be granted to enable a user to use an application.
 
@@ -118,11 +118,7 @@ You may also see the following legacy roles:
 <a name="create-edit-roles"></a>
 #### To add a global role
 
-Click **Add global role** in the **Global roles** tab.
-
-In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right.
-
-The following screenshot shows the settings for the "admins" role.
+Click **Add global role** in the **Global roles** tab. In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right. The following screenshot shows the settings for the "admins" role.
 
 ![Admin example](/images/users-guide/Administration/admin-global-role-admin.png)
 
@@ -130,10 +126,10 @@ The following screenshot shows the settings for the "admins" role.
 
 For each type, you can select the following permission levels:
 
-- READ: Read the specified data.
-- CREATE: Create new data like users and inventory data and edit users within your hierarchy.
-- UPDATE: Change and delete the specified data (not including READ).
-- ADMIN: Create, update or delete the specified data.
+- READ - read the specified data.
+- CREATE - create new data like users and inventory data and edit users within your hierarchy.
+- UPDATE - change and delete the specified data (not including READ).
+- ADMIN - create, update or delete the specified data.
 
 {{< c8y-admon-info >}}
 CREATE permissions are related to the concept of ownership in {{< product-c8y-iot >}}. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  CREATE permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the UPDATE permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
@@ -275,22 +271,22 @@ When new features with new permissions are added to {{< product-c8y-iot >}}, the
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
 
 {{< c8y-admon-important >}}
-By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Changing settings](/users-guide/administration/#custom-template) in the *User guide*.
+By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Configuration settings](/users-guide/administration/#custom-template) in the *User guide*.
 {{< /c8y-admon-important >}}
 
 ##### To assign global roles from the user list
 
 1. Click the **Global roles** column of a particular user to open a list of global roles.
-1. Select or clear the respective checkboxes.
-1. Click **Apply** to save your settings.
+2. Select or clear the respective checkboxes.
+3. Click **Apply** to save your settings.
 
 ![Apply global role](/images/users-guide/Administration/admin-global-roles-apply-1.png)
 
 ##### To assign global roles from the user page
 
-Click on the row of the respective user in the user list.
-In the user page, select or clear the checkboxes for the relevant global roles at the right.
-Click **Save** to save your settings.
+1. Click on the row of the respective user in the user list.
+2. In the user page, select or clear the checkboxes for the relevant global roles at the right.
+3. Click **Save** to save your settings.
 
 ![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
@@ -371,7 +367,7 @@ Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Inventory roles](#inventory).
 
 {{< c8y-admon-important >}}
 If a user already has a global role containing inventory permissions, the user will be
@@ -400,14 +396,14 @@ The {{< product-c8y-iot >}} platform provides optimized UI performance for users
 The performance of the following UI pages is improved:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
 * Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
-* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Overviews > Events](/users-guide/device-management/#to-view-events).
+* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
 * Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
 
-As an administrator, you can disable the performance feature:
-- on platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
-- on tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where OPTIMIZED is the global default.
+As an administrator, you can disable the performance feature by doing the following:
+- On platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
+- On tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where OPTIMIZED is the global default.
 
-The option looks like the following in the REST API (see also the [{{< openapi >}}](https://cumulocity.com/api/10.16.0/#operation/postOptionCollectionResource)):
+The option looks like the following in the REST API (see also the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postOptionCollectionResource)):
 
 `{"category": "configuration", "key": "acl.algorithm-version", "value": "LEGACY"}`
 

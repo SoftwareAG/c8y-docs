@@ -103,3 +103,18 @@ An alternative way to copy a dashboard is to use the
 ### To delete a dashboard
 
 To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Delete dashboard**.
+
+
+### Dashboard availability
+Dashboard availability adds the ability to control which users have access to certain dashboards based on global roles. The functionality is designed to improve dashboard management.
+
+A new section called **Availability** has been added to the edit/create dashboard view. By default, all available global roles are checked, which means that a user with at least one such role will have access to this dashboard.
+
+<img src="/images/users-guide/cockpit/cockpit-dashboard-availbility.png" name="Dashboard availability"/>
+
+{{< c8y-admon-important >}}
+Dashboard will always be visible to its owner or if the user has ADMIN permission for permission type "Inventory".
+{{< /c8y-admon-info >}}
+{{< c8y-admon-info >}}
+This functionality is based entirely on client-side solutions. If the user has an accurate link to the dashboard, he will still be able to access it.
+{{< /c8y-admon-info >}}

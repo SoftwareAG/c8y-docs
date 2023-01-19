@@ -9,7 +9,7 @@ The following monitoring endpoints are available for REST requests. These requir
 
 - `/service/cep/health`  
     GET only. JSON.  
-    Obtains information on whether apama-ctrl is up or not.
+    Obtains information on whether the Apama-ctrl microservice is up or not.
 
     {{< c8y-admon-info >}}
   For Apama-ctrl-smartrulesmt (that is, the multi-tenant variant of the Apama-ctrl-smartrules microservice), only basic microservice status values are provided.

@@ -53,6 +53,12 @@ aliases:
   - /device-sdk/cpp
   - /device-sdk/linux-agent-developer-guide
   - /device-sdk/linux-agent-user-guide
+  - /thin-edge/thin-edge-doc
+  - /thin-edge/overview
+  - /thin-edge/thin-edge-architecture
+  - /thin-edge/thin-edge-developer-tools
+  - /thin-edge/thin-edge-howto
+  - /thin-edge/thin-edge-tutorials
 ---
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.

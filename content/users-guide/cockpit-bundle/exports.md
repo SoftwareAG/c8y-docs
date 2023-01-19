@@ -105,7 +105,7 @@ JsonPath expressions added from data points will be stored in bracket notation i
 <a name="schedule-export"></a>
 #### To schedule an export
 
-To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**.
+To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.
 
 In the resulting dialog box provide the following information to receive the scheduled export via email.
 
@@ -145,8 +145,6 @@ The export schedule will be added to the export details.
 With version 10.6.2, a new report agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated.
 
 On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
-
-![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
 {{< c8y-admon-important >}}
 You must open each report manually, to migrate the export schedules included in the report.

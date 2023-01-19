@@ -52,8 +52,6 @@ To remove a widget from a dashboard or report, click the cogwheel icon at the to
 
 Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock it, use the toggle with the lock icon in the top menu bar.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
-
 {{< c8y-admon-info >}}
 On touch devices like smartphones or tablets some functions may not be supported.
 {{< /c8y-admon-info >}}

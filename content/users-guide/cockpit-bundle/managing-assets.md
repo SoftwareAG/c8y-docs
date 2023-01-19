@@ -94,6 +94,8 @@ In the navigator, top-level groups are shown in the **Groups** menu at top-level
 
 Moreover, subassets are shown in the **Subassets** tab of the particular group which is initially displayed when you click on the group in the navigator.
 
+<img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
+
 {{< c8y-admon-info >}}
 The count displayed on top of the table on the **Subassets** tab shows the total number of child assets assigned to the current group. Any type of managed object can be a child asset. For more details on the counting of objects refer to the operation [Retrieve all child assets of a specific managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}

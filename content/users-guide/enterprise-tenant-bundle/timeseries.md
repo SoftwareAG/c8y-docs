@@ -14,7 +14,7 @@ The enhanced time series support might be enabled for new tenants by default fro
 
 ### How to configure
 
-The feature can be configured via a REST API as a tenant configuration.
+The enhanced time series support can be configured via a REST API as a tenant configuration.
 The following example illustrates how to **enable** time series collections for a subtenant:
 
 ```http request

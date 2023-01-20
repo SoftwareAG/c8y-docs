@@ -62,7 +62,7 @@ The following API is partially supported:
 
 * `DEL /measurements/measurement/`
 
-In 10.16 The parameters `dateFrom` and `dateTo` are not supported. In 10.17+ the parameters `dateFrom` and `dateTo` must be truncated to full hours (for example, 2022-08-19T14:00:00.000Z), otherwise an error will be returned.
+In version 10.16 the parameters `dateFrom` and `dateTo` are not supported. In 10.17+ they must be truncated to full hours (for example, `2022-08-19T14:00:00.000Z`), otherwise an error is returned.
 Instead, in 10.16 retention rules can be used to remove expired measurements data from the Operational Store.
 
 ### How to check whether time series collections are enabled

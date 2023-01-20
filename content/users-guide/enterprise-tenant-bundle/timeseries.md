@@ -44,7 +44,7 @@ Content-Type: application/json
 The configuration affects the collection that stores measurement data.
 By enabling or disabling the property, the system switches collections in the background.
 This might lead to a situation where data resides in multiple collections.
-To prevent such situations, configure the property only at the beginning of tenant setup, ideally when no measurement data is stored yet.
+To prevent such situations, configure the property only at the beginning of a tenant setup, ideally when no measurement data is stored yet.
 Migration and seamless configuration will be part of future releases.
 
 {{< c8y-admon-info >}}

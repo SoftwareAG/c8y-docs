@@ -9,7 +9,7 @@ aliases:
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. The following section summarizes how to enable/disable this feature.
 
 {{< c8y-admon-info >}}
-The feature might be enabled for new tenants by default from a Cumulocity IoT administrator.
+The enhanced time series support might be enabled for new tenants by default from a {{< product-c8y-iot >}} administrator.
 {{< /c8y-admon-info >}}
 
 ### How to configure

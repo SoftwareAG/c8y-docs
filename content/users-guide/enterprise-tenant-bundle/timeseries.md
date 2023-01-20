@@ -47,7 +47,7 @@ This might lead to a situation where data resides in multiple collections.
 To prevent such situations, configure the property only at the beginning of a tenant setup, ideally when no measurement data is stored yet.
 Migration and seamless configuration will be part of future releases.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-caution >}}
 Once enabled, avoid switching the property back to `DISABLED` as this can lead to experience data loss. Do this only in case of an issue or emergency.
 {{< /c8y-admon-info >}}
 

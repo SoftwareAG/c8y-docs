@@ -3,7 +3,7 @@ weight: 120
 title: Enhanced time series support
 layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#timeseires
+  - /users-guide/enterprise-tenant/#timeseries
 ---
 
 Starting with 10.16, the Cumulocity IoT operational data store has the capability of an enhanced time series support (so-called time series collections) for measurements data. This chapter summarizes how to enable or disable the feature.

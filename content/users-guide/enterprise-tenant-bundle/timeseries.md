@@ -6,7 +6,7 @@ aliases:
   - /users-guide/enterprise-tenant/#timeseries
 ---
 
-Starting with 10.16, the Cumulocity IoT operational data store has the capability of an enhanced time series support (so-called time series collections) for measurements data. This chapter summarizes how to enable or disable the feature.
+The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. The following section summarizes how to enable/disable this feature.
 
 {{< c8y-admon-info >}}
 The feature might be enabled for new tenants by default from a Cumulocity IoT administrator.

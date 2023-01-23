@@ -22,7 +22,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices must trust the {{< product-c8y-iot >}} server certificate.
 * Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
-* Certificates used by devices must be signed either by the uploaded CA certificate or any intermediate certificate signed by the uploaded CA certificate.
+* Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates
 

@@ -37,9 +37,6 @@ ROLES & PERMISSIONS:
 
 1. Select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
-
-  <img src="/images/users-guide/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
-
 3. In the **Tab** section of the dashboard editor, provide the following information:
 
     * An icon which is shown next to the dashboard name in the navigator.
@@ -65,8 +62,6 @@ The widget titles will be translated only if a valid translation is available.
 8. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
 9. Click **Save** to create and open the dashboard.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
 
 <br>Next, widgets can be added to the report.
 

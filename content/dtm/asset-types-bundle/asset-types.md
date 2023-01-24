@@ -59,7 +59,9 @@ This name is used for the asset model throughout the application.</td>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset model in the DTM application.<br>
-{{< c8y-admon-info>}} You cannot edit the key field, once the asset model is created. {{< /c8y-admon-info>}}</td>
+{{< c8y-admon-info>}} You cannot edit the key field, once the asset model is created.
+Key is automatically generated based on the input given for label. You can edit the key during the creation of asset type.
+{{< /c8y-admon-info>}}</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>

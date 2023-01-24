@@ -45,6 +45,7 @@ As you define each hierarchy level of your new asset, you see a green check mark
 {{< c8y-admon-info>}}
 If there are validation errors on the page, they are indicated by red highlights.
 Correct the required information to continue.
+If you are leaving the page abruptly, a confirmation dialogue box is shown.
 {{< /c8y-admon-info>}}
 
 ![Adding a new asset](/images/dtm/assets/dtm-assets-create-text-type.png)

@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-**Version:** 1013.0.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1016.274.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 Unit testing is an essential part of every development process.
 Since version 10.13.0.0, all new `c8ycli` scaffolded applications include the unit test framework [Jest](https://jestjs.io/) by default.

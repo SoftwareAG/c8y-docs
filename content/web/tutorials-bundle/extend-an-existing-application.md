@@ -4,7 +4,7 @@ layout: redirect
 weight: 50
 ---
 
-**Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1016.274.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 It is a common use case to extend one of our existing applications like Cockpit or Device Management.
 
@@ -62,7 +62,7 @@ As a starting point, you need an application.
 For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
+c8ycli new my-cockpit cockpit -a @c8y/apps@1016.274.0
 ```
 
 Next, you must install all dependencies.
@@ -71,7 +71,7 @@ Switch to the new folder and run `npm install`.
 {{< c8y-admon-info >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `10.9.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1016.274.0` will scaffold an application with the version `10.16.274.0`
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
@@ -105,50 +105,61 @@ For more information on which components support content projection refer to the
 We can now bind this custom component to a route by changing the `app.module.ts` in the following way:
 
 ```js
-import {NgModule} from "@angular/core";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {RouterModule as NgRouterModule} from "@angular/router";
-import {UpgradeModule as NgUpgradeModule} from "@angular/upgrade/static";
-import {CoreModule, RouterModule} from "@c8y/ngx-components";
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from "@c8y/ngx-components/upgrade";
-import {AssetsNavigatorModule} from "@c8y/ngx-components/assets-navigator";
-import {CockpitDashboardModule, ReportDashboardModule} from "@c8y/ngx-components/context-dashboard";
-import {ReportsModule} from "@c8y/ngx-components/reports";
-import {SensorPhoneModule} from "@c8y/ngx-components/sensor-phone";
-import {BinaryFileDownloadModule} from "@c8y/ngx-components/binary-file-download";
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule as NgRouterModule } from '@angular/router';
+import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
+import { CoreModule, RouterModule } from '@c8y/ngx-components';
+import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
+import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
+import {CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { ReportsModule } from '@c8y/ngx-components/reports';
+import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
+import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { SearchModule } from '@c8y/ngx-components/search';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitConfigModule } from '@c8y/ngx-components/cockpit-config';
+import { DatapointLibraryModule } from '@c8y/ngx-components/datapoint-library';
+import { WidgetsModule } from '@c8y/ngx-components/widgets';
+import { PluginSetupStepperModule } from '@c8y/ngx-components/ecosystem/plugin-setup-stepper';
 
-// --- 8< changed part ----
+// --- 8< added part ----
 import { HelloComponent } from './hello.component';    // 1
 // --- >8 ----
 
 @NgModule({
 
-  // --- 8< changed part ----
+  // --- 8< added part ----
   declarations: [HelloComponent],                      // 2
   // --- >8 ----
-
   imports: [
     // Upgrade module must be the first
     UpgradeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot(
       // --- 8< changed part ----
-      { path: 'hello', component: HelloComponent},     // 3
+    NgRouterModule.forRoot([
+        { path: 'hello', component: HelloComponent},      // 3
+        ...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
       // --- >8 ----
-
-      ...UPGRADE_ROUTES
-    ], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
-    AssetsNavigatorModule,
     ReportsModule,
     NgUpgradeModule,
+    AssetsNavigatorModule,
     DashboardUpgradeModule,
     CockpitDashboardModule,
     SensorPhoneModule,
     ReportDashboardModule,
     BinaryFileDownloadModule,
-  ]
+    SearchModule,
+    SubAssetsModule,
+    ChildDevicesModule,
+    CockpitConfigModule,
+    DatapointLibraryModule.forRoot(),
+    WidgetsModule,
+    PluginSetupStepperModule
+  ],
 })
 export class AppModule extends HybridAppModule {
   constructor(protected upgrade: NgUpgradeModule) {
@@ -177,64 +188,71 @@ They all start with `HOOK_` followed by what they are used for.
 For example, to add a navigator node, use the `HOOK_NAVIGATOR_NODE`:
 
 ```js
-import {NgModule} from "@angular/core";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {RouterModule as NgRouterModule} from "@angular/router";
-import {UpgradeModule as NgUpgradeModule} from "@angular/upgrade/static";
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule as NgRouterModule } from '@angular/router';
+import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 // --- 8< changed part ----
-import {CoreModule, RouterModule, HOOK_NAVIGATOR_NODES, NavigatorNode} from "@c8y/ngx-components";
+import { CoreModule, RouterModule, HOOK_NAVIGATOR_NODES, NavigatorNode } from '@c8y/ngx-components';
 // --- >8 ----
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from "@c8y/ngx-components/upgrade";
-import {AssetsNavigatorModule} from "@c8y/ngx-components/assets-navigator";
-import {CockpitDashboardModule, ReportDashboardModule} from "@c8y/ngx-components/context-dashboard";
-import {ReportsModule} from "@c8y/ngx-components/reports";
-import {SensorPhoneModule} from "@c8y/ngx-components/sensor-phone";
-import {BinaryFileDownloadModule} from "@c8y/ngx-components/binary-file-download";
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
+import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
+import {CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { ReportsModule } from '@c8y/ngx-components/reports';
+import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
+import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { SearchModule } from '@c8y/ngx-components/search';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitConfigModule } from '@c8y/ngx-components/cockpit-config';
+import { DatapointLibraryModule } from '@c8y/ngx-components/datapoint-library';
+import { WidgetsModule } from '@c8y/ngx-components/widgets';
+import { PluginSetupStepperModule } from '@c8y/ngx-components/ecosystem/plugin-setup-stepper';
+import { HelloComponent } from './hello.component';
+
 
 @NgModule({
-  declarations: [HelloComponent],
+    declarations: [HelloComponent],
 
-  imports: [
+    imports: [
     // Upgrade module must be the first
     UpgradeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot(
-      [
-        {path: "hello", component: HelloComponent}, // 3
-        ...UPGRADE_ROUTES,
-      ],
-      {
-        enableTracing: false,
-        useHash: true,
-      }
-    ),
+    NgRouterModule.forRoot([
+        { path: 'hello', component: HelloComponent},
+        ...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
-    AssetsNavigatorModule,
     ReportsModule,
     NgUpgradeModule,
+    AssetsNavigatorModule,
     DashboardUpgradeModule,
     CockpitDashboardModule,
     SensorPhoneModule,
     ReportDashboardModule,
     BinaryFileDownloadModule,
+    SearchModule,
+    SubAssetsModule,
+    ChildDevicesModule,
+    CockpitConfigModule,
+    DatapointLibraryModule.forRoot(),
+    WidgetsModule,
+    PluginSetupStepperModule
   ],
-
-  // --- 8< changed part ----
-  providers: [
-    {
-      provide: HOOK_NAVIGATOR_NODES, // 1
-      useValue: [{                   // 2
-        label: 'Hello',              // 3
-        path: 'hello',
-        icon: 'rocket',
-        priority: 1000
-      }] as NavigatorNode[],         // 4
-      multi: true                    // 5
-    }
-  ]
-  // --- >8 ----
-
+    // --- 8< changed part ----
+    providers: [
+        {
+            provide: HOOK_NAVIGATOR_NODES, // 1
+            useValue: [{                   // 2
+                label: 'Hello',              // 3
+                path: 'hello',
+                icon: 'rocket',
+                priority: 1000
+            }] as NavigatorNode[],         // 4
+            multi: true                    // 5
+        }
+    ]
+    // --- >8 ----
 })
 export class AppModule extends HybridAppModule {
   constructor(protected upgrade: NgUpgradeModule) {
@@ -253,7 +271,7 @@ Explanation of the above comment numbers:
 
 After you implement this extension hook you get a new entry in the navigator which looks like this:
 
-![The extended Cockpit application](/images/web-sdk/route-extension-hook.png)
+![The extended Cockpit application](/images/web-sdk/route-extension-hook-upd.png)
 
 Note that the property `priority` of the `NavigatorNode` interface defines in which order the nodes are shown.
 

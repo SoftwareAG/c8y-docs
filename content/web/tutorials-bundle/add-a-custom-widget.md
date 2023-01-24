@@ -20,7 +20,7 @@ As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
+c8ycli new my-cockpit cockpit -a @c8y/apps@1016.274.0
 ```
 
 Next, you must install all dependencies. Switch to the new folder and run `npm install`.
@@ -28,7 +28,7 @@ Next, you must install all dependencies. Switch to the new folder and run `npm i
 {{< c8y-admon-info >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `10.9.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1016.274.0` will scaffold an application with the version `1016.274.0`
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
@@ -124,22 +124,30 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
-import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
 
 // --- 8< changed part ----
-import { CoreModule, RouterModule, HOOK_COMPONENTS } from '@c8y/ngx-components';
+import { CoreModule, RouterModule,HOOK_COMPONENTS } from '@c8y/ngx-components';
 // --- >8 ----
 
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
-import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
+import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
+import {CockpitDashboardModule,ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { SearchModule } from '@c8y/ngx-components/search';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitConfigModule } from '@c8y/ngx-components/cockpit-config';
+import { DatapointLibraryModule } from '@c8y/ngx-components/datapoint-library';
+import { WidgetsModule } from '@c8y/ngx-components/widgets';
+import { PluginSetupStepperModule } from '@c8y/ngx-components/ecosystem/plugin-setup-stepper';
 
 // --- 8< added part ----
 import { WidgetDemo } from './demo-widget.component';
 import { WidgetConfigDemo } from './demo-widget-config.component';
 // --- >8 ----
+
 
 @NgModule({
   imports: [
@@ -149,14 +157,21 @@ import { WidgetConfigDemo } from './demo-widget-config.component';
     RouterModule.forRoot(),
     NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
-    AssetsNavigatorModule,
     ReportsModule,
     NgUpgradeModule,
+    AssetsNavigatorModule,
     DashboardUpgradeModule,
     CockpitDashboardModule,
     SensorPhoneModule,
     ReportDashboardModule,
-    BinaryFileDownloadModule
+    BinaryFileDownloadModule,
+    SearchModule,
+    SubAssetsModule,
+    ChildDevicesModule,
+    CockpitConfigModule,
+    DatapointLibraryModule.forRoot(),
+    WidgetsModule,
+    PluginSetupStepperModule
   ],
 
   // --- 8< added part ----
@@ -183,7 +198,6 @@ export class AppModule extends HybridAppModule {
     super();
   }
 }
-
 ```
 
 Explanation of the numbers above:
@@ -197,4 +211,4 @@ If you now start your application with `npm start`, you should be able to add yo
 
 Once added to a dashboard, the widget looks similar to this:
 
-![A custom widget](/images/web-sdk/custom-widget.png)
+![A custom widget](/images/web-sdk/custom-widget-upd.png)

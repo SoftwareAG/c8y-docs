@@ -50,8 +50,6 @@ This concept helps to assign minimal permissions to devices.
 
 Global roles and inventory roles are created and managed in the **Roles** page of the Administration application in the UI.
 
-![Permission page](/images/users-guide/Administration/admin-global-roles.png)
-
 A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the *User guide*.
 
 For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.

@@ -27,7 +27,7 @@ Content-Type: application/json
 }
 ```
 
-The following example illustrates how to _**disable**_ time series collections for a sub-tenant:
+The following example illustrates how to **disable** time series collections for a subtenant:
 
 ```http request
 POST {sub-tenant-url}/tenant/options

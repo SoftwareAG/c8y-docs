@@ -69,8 +69,10 @@ Instead, use retention rules to remove expired measurements data from the Operat
 
 With the following request, you can check the value of the time series collections property:
 
+```http request
 GET /tenant/options/configuration/timeseries.mongodb.collections.mode
 Content-Type: application/json
+```
 
 An example response if the configuration is enabled:
 

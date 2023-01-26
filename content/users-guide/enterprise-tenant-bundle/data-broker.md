@@ -30,8 +30,6 @@ To be able to use this feature, your tenant must be subscribed to the applicatio
 
 Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
-<img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
-
 {{< c8y-admon-important >}}
 Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 {{< /c8y-admon-important >}}

@@ -365,8 +365,6 @@ Any extension deployed to the platform as a microservice is billed as "used" and
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
-  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
-
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
   * `Pod "apama-ctrl-starter-scope-..." created.` - a new microservice instance has been scheduled to be started for the tenant. This means that the resource allocation has been successful but the application is not running yet (maps to the state "Scheduled").

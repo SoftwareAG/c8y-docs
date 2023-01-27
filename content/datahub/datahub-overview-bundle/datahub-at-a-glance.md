@@ -4,7 +4,7 @@ title: Cumulocity IoT DataHub at a glance
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of {{< product-c8y-iot >}}, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, {{< product-c8y-iot >}} offers a [REST API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation).
+The {{< product-c8y-iot >}} platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of {{< product-c8y-iot >}}, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, {{< product-c8y-iot >}} offers a [REST API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation).
 
 In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. {{< product-c8y-iot >}} DataHub is the tool designed for this purpose.
 
@@ -14,7 +14,7 @@ With {{< product-c8y-iot >}} DataHub, you can connect existing tools and applica
 
 * Machine learning applications (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Web applications](/concepts/applications/#web-applications))
+* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [web applications](/concepts/applications/#web-applications))
 
 * Other {{< company-sag >}} products like TrendMiner or {{< product-c8y-iot >}} Machine Learning Workbench
 

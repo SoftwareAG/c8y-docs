@@ -25,6 +25,10 @@ The name is composed of two parts, with the first part being fixed:
 
 The password of the Dremio API user must have at least eight characters, including at least one character and one number.
 
+{{< c8y-admon-info >}}
+When using the proxy REST API, all queries are processed using the same Dremio API user. The queries are listed in the query log. Thus, the log shows all queries of all users having leveraged the proxy API.  
+{{< /c8y-admon-info >}}
+
 Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users).
 
 #### Data Lake
@@ -40,9 +44,12 @@ The following types of data lakes are currently supported:
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
-|Azure Storage shared access key|The access key used for authentication|
+|Azure Storage shared access key|The access key used for authentication if "Shared Access Key" is used as authentication type|
+|Application ID|The application ID used for authentication if "Azure Active Directory" is used as authentication type|
+|OAuth 2.0 Token Endpoint|The authentication endpoint if "Azure Active Directory" is used as authentication type|
+|Client Secret|The client secret if "Azure Active Directory" is used as authentication type|
 
-While the other settings are fixed once the initial configuration was saved, the **Azure Storage shared access key** can be changed afterwards. Click **Edit**, set a new value, and either click **Save credentials** to save the update or **Cancel** to keep the old value.
+While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old value.
 
 {{< c8y-admon-info >}}
 Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
@@ -119,4 +126,4 @@ To edit the Dremio API user, click **Edit** in the **Dremio API user** section o
 The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See the section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
 
 ### Deleting settings
-Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted, including the Dremio API user as well as additionally created Dremio users. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned in the previous section, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are *not* deleted, only the Dremio artefacts connecting to the data lake. To delete the data lake and its contents you must use the tooling of your data lake provider.
+Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted, including the Dremio API user as well as additionally created Dremio users. Also the artifacts created by a corresponding Dremio user, like views, are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned in the previous section, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are not deleted, only the Dremio artefacts connecting to the data lake. To delete the data lake and its contents you must use the tooling of your data lake provider.

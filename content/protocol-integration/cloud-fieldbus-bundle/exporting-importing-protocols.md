@@ -16,5 +16,3 @@ A file with the device protocol definition will be downloaded, named "&lt;device
 2. In the resulting dialog box, either select a pre-defined protocol or upload a file with a previously exported device protocol.
 3. You may enter a new name for the device protocol.
 4. Click **Import** to import the protocol.
-
-![Import device type](/images/device-protocols/cloud-fieldbus/fieldbus-import-protocol.png)

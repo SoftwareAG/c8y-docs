@@ -38,4 +38,37 @@ In the main panel of the **Offloading** page, you will find all pipelines as wel
 
 In the action bar you have a search field to search for all offloading configurations whose task name, description, filter predicate, additional columns, or UUID contain the search string. You can use the **Active**/**Inactive** filter to show/hide configurations being active or inactive respectively. The action bar also provides buttons for adding an offloading configuration, reloading the list of configurations and their status, and importing/exporting configurations.
 
-Below the action bar you find the current list of configurations. Each configuration provides the task name, the schedule with which this pipeline will be executed once it is started, and the target table name. In addition to that you find for active pipelines the time and status of their last execution and the planned next execution. When expanding a configuration, the additional columns and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once. In the context menu of the configuration you find controls for managing the offloading process.
+Below the action bar you find the current list of configurations. 
+
+#### Offloading list
+
+Each offloading configuration provides the following information:
+
+**Active**
+
+The toggle shows the current job state and can be used to activate or deactivate an offloading job.
+
+**Job name**
+
+The name of the job refers to the task name as defined in the configuration process. The sort control allows for sorting by job name.
+
+**Target table name**
+
+The target table name refers to the target table in Dremio, with which the data offloaded by this offloading pipeline can be queried. The sort control allows for sorting by target table name.
+
+**Offloading status**
+
+The offloading status is empty if the offloading has not been executed yet. If the offloading has been executed, the status of the most recent run is shown. This includes the execution time and whether the execution was successful or not, indicated by a success or failure icon. An additional icon shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon. In case of a successful run, the number of offloaded records and the runtime is shown as well. The sort control allows for sorting by successful/failed jobs. The filter control allows for filtering by execution status.
+
+**Compaction status**
+
+The compaction status is empty if the offloading has not been executed yet. If the compaction has been executed, the status of the most recent run is shown. This includes the execution time and whether the execution was successful or not, indicated by a success or failure icon. In case of a successful run, the runtime is shown as well. The sort control allows for sorting by successful/failed jobs. The filter control allows for filtering by execution status. The compaction status is only available for users with administration permissions.
+
+**Additional information**
+
+When expanding a configuration, the job schedule, the additional columns, and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once.
+
+**Context menu**
+
+In the context menu of a configuration you find controls for managing the offloading process as described in more detail in the next sections.
+

@@ -186,7 +186,24 @@ Refer to the [angular.io documentation](https://angular.io/guide/dependency-inje
 
 The injection tokens can be received from the `@c8y/ngx-components` package by importing it.
 They all start with `HOOK_` followed by what they are used for.
-For example, to add a navigator node, use the `HOOK_NAVIGATOR_NODE`:
+An example of such a hook can look like this:
+
+```js
+{
+      provide: HOOK_NAVIGATOR_NODES,
+      useValue: [{
+        label: 'Hello',  
+        path: 'hello',
+        icon: 'rocket',
+        priority: 1000
+      }] as NavigatorNode[],         // 1
+      multi: true
+}
+```
+
+As you see in (1) you need to take care of the typing on your own.
+To avoid it, you can also use the `hookX` function, which allow the same but without taking care of the boilerplate code. 
+The following example uses these functions, to add a navigator node, using `hookRoute` and `hookNavigatorNode`:
 
 ```js
 import { NgModule } from "@angular/core";

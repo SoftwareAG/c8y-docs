@@ -159,7 +159,6 @@ The date/time range used here might differ from your server time due to differen
 
 1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file.
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
-<br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Click **Download** to start the export.
 
 The CSV file will be downloaded to your file system.
@@ -251,8 +250,6 @@ For instance, when you have a microservice with scale policy set to AUTO and the
 * 3/24 - second instance active only three hours
 
 Note that an audit record is created for every change of the number of instances.
-
-![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
 For more information, refer to [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}}.
 
@@ -364,8 +361,6 @@ Any extension deployed to the platform as a microservice is billed as "used" and
   * Ready - the microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
-
-  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 

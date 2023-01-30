@@ -23,9 +23,6 @@ ROLLEN UND BERECHTIGUNGEN:
 
 1. Wählen Sie im Navigator das Objekt (Gruppe oder Gerät) aus, für welches Sie ein Dashboard erstellen möchten.
 2. Klicken Sie auf das Pluszeichen rechts neben den Registerkarten, um den Dashboard-Editor zu öffnen.
-
-  <img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
-
 3. Geben Sie im Abschnitt **Registerkarte** des Dashboard-Editors folgende Informationen ein:
 
     * ein Symbol, das neben dem Dashboard-Namen im Navigator erscheint.
@@ -42,8 +39,6 @@ Die Widget-Titel werden nur übersetzt, wenn eine gültige Übersetzung verfügb
 7. Im Abschnitt **Vorschau** wird sofort eine Vorschau der ausgewählten Layout-Einstellungen angezeigt, um Ihre Einstellungen zu visualisieren.
 
 8. Klicken Sie auf **Speichern** um das Dashboard zu erstellen und zu öffnen.
-
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
 
 <br>Als nächstes können Sie Widgets zu Ihrem Bericht hinzufügen.
 

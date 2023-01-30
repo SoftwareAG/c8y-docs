@@ -17,9 +17,6 @@ Mobile devices like smartphones or tablets are not supported.
 
 After the {{< product-c8y-iot >}} DataHub services have been subscribed for your tenant, you must log into your tenant. In the **application switcher** you will find the {{< product-c8y-iot >}} DataHub button. By clicking the button you will be taken to the home page of {{< product-c8y-iot >}} DataHub. The UI provides management and monitoring capabilities for {{< product-c8y-iot >}} DataHub. Alternatively your tenant administrator can give you the URL directly navigating to {{< product-c8y-iot >}} DataHub, which requires a login as well.
 
-<img src="/images/datahub-guide/datahub-app-switcher.png" alt="{{< product-c8y-iot >}} DataHub in application switcher"  style="max-width: 100%">
-
-
 As working with {{< product-c8y-iot >}} DataHub requires you to have corresponding [{{< product-c8y-iot >}} DataHub permissions](/datahub/setting-up-datahub/#defining-permissions), you will get a warning after login if you lack those permissions.
 
 When you want to log out, click the **User** button at the right of the top bar and select **Logout** from the context menu.

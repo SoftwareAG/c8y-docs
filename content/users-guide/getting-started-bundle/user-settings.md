@@ -47,6 +47,13 @@ The **User** menu contains the following items:
 Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
+<td style="text-align:left">Revoke tokens</td>
+<td style="text-align:left">Revoking tokens logs out all users currently logged in via "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.<br>
+<br>
+To revoke tokens, you must have ADMIN permission for the permission type "User management".  
+</td>
+</tr>
+<tr>
 <td style="text-align:left">Version information</td>
 <td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using (for example, 10.13.0.034) for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
 </tr>

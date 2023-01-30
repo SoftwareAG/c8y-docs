@@ -8,7 +8,10 @@ helpcontent:
     content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the *User guide* for details.
 
 
-    You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term."
+    You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term.
+
+
+    Click **Create smart group** at the top right to create a group which is built based on the filter criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version."
 ---
 
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
@@ -85,8 +88,7 @@ The columns shown in the device list may be configured to your needs.
 #### To show/hide standard columns
 
 1. In the table header, click **Configure columns**.
-2. In the resulting dropdown, select/clear the checkboxes for all columns as required. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
-   <br>
+2. In the resulting dropdown, select/clear the checkboxes for all columns as required.
 
 The device list will reflect your changes and only show the selected columns.
 
@@ -111,6 +113,7 @@ While standard columns can only be shown/hidden as required, custom columns may 
 
 1. Hover over the row of the device you want to delete.
 2. Click the delete icon at the right of the row.
+3. Confirm the device removal. Optionally, select whether to delete child devices of the device or to delete the associated device owner. Note that it is not possible to select both options.
 
 The device will be permanently deleted from the platform.
 
@@ -124,9 +127,7 @@ Deleting a device means to remove the device from the {{< product-c8y-iot >}} da
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria.
 
-Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for.
-
-![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
+Filtering is available on every column. Click the filter icon next to the name of the column you want to set a filter for.
 
 Specify your filter options in the dropdown list.
 

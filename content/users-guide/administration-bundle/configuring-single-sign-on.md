@@ -29,7 +29,7 @@ To enable the SSO feature, the administrator must configure a connection with th
 
 SSO configurations can be configured to be exclusively accessible by the {{< management-tenant >}}, thus preventing other tenants from accessing the configurations.
 Users of such tenants are unable to update the configuration. This removes the risk of an incorrectly configured SSO, which can prevent other users from logging in via SSO.
-The {{< management-tenant >}} can grant or restrict access to SSO configurations for specific tenants. For more information about configuration access, refer to the [Login options API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in the {{< openapi >}}.
+The {{< management-tenant >}} can grant or restrict access to SSO configurations for specific tenants. For more information about configuration access, refer to the [Login options API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in the {{< openapi >}}.
 
 #### Configuration view
 
@@ -120,13 +120,9 @@ This means that dynamic access mapping assigns user roles, based on the access t
 It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login.
 To change this behavior, select one of the following radio buttons at the bottom of the **Access mapping** section:
 
-* **Use dynamic access mapping only on user creation**
+* **Use dynamic access mapping only on user creation** - when selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
 
-  When selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
-
-* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged**
-
-  When selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
 
 ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
@@ -180,7 +176,12 @@ Inside some fields you can use placeholders that are resolved by {{< product-c8y
 |code|Code returned by the authorization server in response to authorization request
 |refreshToken| Refresh token returned by the authorization server after token request
 
-These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields: URL, body, headers and request parameters
+These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields:
+
+* URL
+* Body
+* Headers
+* Request parameters
 
 To use a placeholder in a field, put it inside two curly brackets preceded with a dollar sign:
 ![Placeholder standalone](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
@@ -188,7 +189,10 @@ To use a placeholder in a field, put it inside two curly brackets preceded with 
 Placeholders can also be used as a part of text:
 ![Placeholder text](/images/users-guide/Administration/admin-sso-placeholder-text.png)
 
+{{< c8y-admon-info >}}
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
+{{< /c8y-admon-info >}}
+
 
 ### Integration with Azure AD
 
@@ -197,7 +201,7 @@ The integration was successfully verified against Azure AD. The configuration st
 The following steps illustrate how to use Azure AD (Azure Active Directory) for SSO in {{< product-c8y-iot >}}.
 
 {{< c8y-admon-req >}}
-You nee administrative access to your Azure AD.
+You need administrative access to your Azure AD.
 {{< /c8y-admon-req >}}
 
 #### Configuring Azure AD

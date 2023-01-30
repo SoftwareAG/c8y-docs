@@ -14,9 +14,9 @@ Using an {{< enterprise-tenant >}}, you can:
 
 Moreover, an {{< enterprise-tenant >}} includes the following additional features:
 
-* **Branding** -  To configure an individual look & feel.
-* **Domain name** - To provide an individual domain name.
-* **User hierarchy** - To reflect entities with limited permissions to subsets of shared data.
+* **Branding** - to configure an individual look & feel.
+* **Domain name** - to provide an individual domain name.
+* **User hierarchy** - to reflect entities with limited permissions to subsets of shared data.
 
 For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierarchy](/concepts/tenant-hierarchy) in the *Concepts guide*.
 

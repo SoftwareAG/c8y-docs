@@ -98,10 +98,21 @@ In the next table you will see all available commands and a brief description of
 <td align="left">Writes value to a resource on the device.</td>
 </tr>
 <tr>
-<<td align="left">cwrite /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;]</td>
+<td align="left">cwrite /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;]</td>
 <td align="center">1.1</td>
 <td align="left">Composite writes of one or more values to a resource on the device. The data will be written to the listed resource paths in a single request</td>
 </tr>
+<tr>
+<td align="left">writeb /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;hexadecimal-string&gt; <br>
+<b>OR</b> <br>
+writeb /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; binary:&lt;binary-file-id&gt;</td>
+<td align="center">1.0,1.1</td>
+<td align="left">Writes binary data represented as a hex string to a resource on the device. The representation must be an even number of characters.
+For example: writeb /3442/0/150 010A0B020F.<br><br>
+Writes binary data to a resource on the device from a file uploaded to the {{< product-c8y-iot >}} platform. The 'binary-file-id' is the object ID that has already been uploaded to the {{< product-c8y-iot >}} platform.
+Adding the prefix 'binary:' lets the agent read the file's data and write it to the device.
+For example: writeb /3442/0/150 binary:12345.
+</td>
 <tr>
 <td align="left">cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [/&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;]</td>
 <td align="center">1.0, 1.1</td>

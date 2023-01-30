@@ -124,9 +124,9 @@ During the bulk import, the file size validation is skipped as the file is alrea
 Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents an auto-correct of the date on input.
 {{< /c8y-admon-info>}}
 
-To provide a file input as a custom property value, the file must first be uploaded to a Cumulocity IoT tenant using the {{< product-c8y-iot >}} API.
+To provide a file input as a custom property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
 
-Refer to the [Binaries API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
+Refer to the [Binaries API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
 
 The binary ID in the API response must be provided as input for the custom property field with type "file" in the CSV template.
 

@@ -555,7 +555,7 @@ Create a measurement with a given fragment and series.
 |:-------|:-------|:-------|:-------|:---|
 |1|fragment|YES|String| &nbsp;|
 |2|series|YES|String| &nbsp;|
-|3|value|YES|String| &nbsp;|
+|3|value|YES|Number| &nbsp;|
 |4|unit|NO|String| &nbsp;|
 |5|time|NO|Date|Current server time|
 

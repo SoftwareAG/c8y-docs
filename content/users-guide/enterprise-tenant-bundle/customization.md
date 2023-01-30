@@ -254,17 +254,17 @@ The DNS entries for your custom domain must be configured in a way that all requ
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
 domain from the certificate in the NAME field. The VALUE field of the CNAME entry must point to the hostname of {{< product-c8y-iot >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
-is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *{{< domain-c8y >}}*. Please also make sure to delete any
+is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *mytenant.{{< domain-c8y >}}*. Please also make sure to delete any
 conflicting A entries.
 
 **Example:**
 
-If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *{{< domain-c8y >}}*, the following CNAME entry must be added to your DNS zone:
+If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *mytenant.{{< domain-c8y >}}*, the following CNAME entry must be added to your DNS zone:
 
 ```shell
-NAME                  TYPE   VALUE
+NAME                   TYPE   VALUE
 ----------------------------------------------------
-*.iot.mycompany.com.   CNAME  {{< domain-c8y >}}.
+*.iot.mycompany.com.   CNAME  mytenant.{{< domain-c8y >}}.
 ```
 
 We highly discourage any use of alternative DNS configurations for the following reasons:

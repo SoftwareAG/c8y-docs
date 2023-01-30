@@ -83,7 +83,7 @@ The only difference is that it needs to be defined before the `UPGRADE_ROUTES` b
 Create the `hello.component.ts` file in our project with the following content:
 
 ```js
-import {Component} from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-hello",
@@ -110,10 +110,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { CoreModule, RouterModule } from '@c8y/ngx-components';
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
 import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
-import {CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
@@ -198,7 +198,7 @@ import { CoreModule, RouterModule, HOOK_NAVIGATOR_NODES, NavigatorNode } from '@
 import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
 import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
-import {CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
@@ -271,7 +271,7 @@ Explanation of the above comment numbers:
 
 After you implement this extension hook you get a new entry in the navigator which looks like this:
 
-![The extended Cockpit application](/images/web-sdk/route-extension-hook-upd.png)
+![The extended Cockpit application](/images/web-sdk/route-extension-hook.png)
 
 Note that the property `priority` of the `NavigatorNode` interface defines in which order the nodes are shown.
 

@@ -143,10 +143,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { CoreModule, RouterModule } from '@c8y/ngx-components';
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
 import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
-import {CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
@@ -209,7 +209,7 @@ export class AppModule extends HybridAppModule {
 
 When you run the application with `c8ycli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
 
-![Custom client service](/images/web-sdk/custom-client-service-upd.png)
+![Custom client service](/images/web-sdk/custom-client-service.png)
 
 The request fails as we don't have a microservice with this context path running.
 However, as you can see in the developer tools the request has an authorization cookie attached.

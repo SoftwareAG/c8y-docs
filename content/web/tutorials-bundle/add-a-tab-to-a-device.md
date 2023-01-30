@@ -10,7 +10,7 @@ It is a common use case that you want to show additional information to a user i
 
 This how-to recipe explains how to create a new tab in the device details view:
 
-![Device info with custom tab](/images/web-sdk/device-detail-custom-tab-upd.png)
+![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
 In Web SDK for Angular, this kind of view is called `ViewContext` as it provides a view for a certain context.
 There are a couple of context views, for example, `Device`, `Group`, `User`, `Application` and `Tenant`.
@@ -55,7 +55,7 @@ import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 // ---- 8< changed part ----
 import { CoreModule, RouterModule, HOOK_ROUTE, ViewContext } from '@c8y/ngx-components';
 // ---- >8 ----
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
@@ -160,7 +160,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { CoreModule, RouterModule, HOOK_ROUTE, ViewContext } from '@c8y/ngx-components';
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
@@ -215,7 +215,7 @@ export class AppModule extends HybridAppModule {
 
 When you now start your application with `npm start` and navigate to a details view of a device it should look like this:
 
-![Device info with custom tab](/images/web-sdk/device-detail-custom-tab-upd.png)
+![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
 You have now added a tab to a device.
 You can do the same for tenants, users or applications details views.
@@ -235,7 +235,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { CoreModule, RouterModule, HOOK_ROUTE, ViewContext } from '@c8y/ngx-components';
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
 import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
 import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';

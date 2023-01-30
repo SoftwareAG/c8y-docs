@@ -10,7 +10,7 @@ If the widgets that are provided by the platform do not meet your requirements, 
 
 A typical dashboard looks like this, showing various widgets:
 
-![A dashboard](/images/users-guide/cockpit/cockpit-dashboard-widgets-upd.png)
+![A dashboard](/images/users-guide/cockpit/cockpit-dashboard-widgets.png)
 
 This recipe will show how to archive a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
@@ -132,7 +132,7 @@ import { CoreModule, RouterModule,HOOK_COMPONENTS } from '@c8y/ngx-components';
 import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
 import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
-import {CockpitDashboardModule,ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { CockpitDashboardModule,ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
@@ -211,4 +211,4 @@ If you now start your application with `npm start`, you should be able to add yo
 
 Once added to a dashboard, the widget looks similar to this:
 
-![A custom widget](/images/web-sdk/custom-widget-upd.png)
+![A custom widget](/images/web-sdk/custom-widget.png)

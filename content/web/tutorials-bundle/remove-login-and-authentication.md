@@ -94,13 +94,13 @@ import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 
 // --- 8< changed part ----
-import {CoreModule, LoginService, RouterModule } from '@c8y/ngx-components';
+import { CoreModule, LoginService, RouterModule } from '@c8y/ngx-components';
 // --- >8 ----
 
-import {DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
 import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
-import {CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';

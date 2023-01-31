@@ -69,22 +69,26 @@ For details on the fields, see [To add a retention rule](#add-retention-rule).
 
 #### To delete a retention rule
 
-Hover over the rule you want to delete and click the delete icon at the right.
-
-<img src="/images/users-guide/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
+Hover over the row with the rule you want to delete and click the delete icon that appears on the right.
 
 {{< c8y-admon-info >}}
 All retention rules are executed sequentially and independent of each other. So if we have two retention rules, a more specific one with a greater maximum age that defines a subset of the documents that are defined by a more common rule with a lower maximum age, then effectively it will work as if we had a single, more common rule.
 
 For example given the two following rules:
 
-<img src="/images/users-guide/Administration/admin-retention-rules-commspec1.png" alt="Retention rules"/>
+| **Data type** | **Fragment type** | **Type**        | **Source** | **Maximum age** |
+|---------------|-------------------|-----------------|------------|-----------------|
+| MEASUREMENT   | *                 | c8y_Temperature | *          | 30 days         |
+| MEASUREMENT   | *                 | c8y_Temperature | 12345      | 60 days         |
 
 All measurements with the type `c8y_Temperature` which are older than 30 days will be removed, including those where the source equals `12345`.
 
 On the other hand when we have the following retention rules defined:
 
-<img src="/images/users-guide/Administration/admin-retention-rules-commspec2.png" alt="Retention rules"/>
+| **Data type** | **Fragment type** | **Type**        | **Source** | **Maximum age** |
+|---------------|-------------------|-----------------|------------|-----------------|
+| MEASUREMENT   | *                 | c8y_Temperature | *          | 30 days         |
+| MEASUREMENT   | *                 | *               | *          | 60 days         |
 
 The retention process removes the measurements with the type `c8y_Temperature` which are older than 30 days, all other measurements will be removed when they are older than 60 days.
 {{< /c8y-admon-info >}}
@@ -108,11 +112,7 @@ For each file, the name of the file, its owner, the file type (for example, imag
 
 #### To upload a file from your file system
 
-Click **Upload file** in the top menu bar.
-
-<img src="/images/users-guide/Administration/admin-files-repository-upload.png" alt="Files Repository download modal" style="max-width: 100%">
-
-In the resulting dialog box, select a file to be uploaded. If you want to upload more than one file, click **Add file** to select another file. You may also delete a file before uploading by clicking the delete icon at the right of the file field.
+Click **Upload file** in the top menu bar. In the resulting dialog box, select a file to be uploaded. If you want to upload more than one file, click **Add file** to select another file. You may also delete a file before uploading by clicking the delete icon on the right of the file field.
 
 
 #### To download a file from your account

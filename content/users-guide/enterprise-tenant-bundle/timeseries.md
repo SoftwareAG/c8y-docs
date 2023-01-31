@@ -38,6 +38,9 @@ Content-Type: application/json
     "value": "DISABLED"
 }
 ```
+{{< c8y-admon-info >}}
+Tenant options are not inheritable from the parent tenant, i.e. enabling the property on the enterprise tenant does not affect the sub tenants.
+{{< /c8y-admon-info >}}
 
 ### Implications of the configuration
 

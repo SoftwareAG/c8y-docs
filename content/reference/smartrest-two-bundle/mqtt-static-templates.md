@@ -49,6 +49,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
++ <a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,…</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
@@ -541,6 +542,21 @@ Removes advanced software items from the list that exists for the device.
 
 ```text
 142,docker,3.2.1,nginx,1.6
+```
+
+<a name="143"></a>
+##### Set supported software types (143)
+
+Set supported software types of the device. Ignores empty elements. Empty list removes c8y_SupportedSoftwareTypes fragment entirely.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1...|List of supported software types|NO|String|
+
+**Example**
+
+```text
+143,yum,docker
 ```
 
 <a name="measurement-templates"></a>

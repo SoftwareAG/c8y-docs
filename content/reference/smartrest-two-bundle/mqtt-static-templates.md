@@ -908,7 +908,7 @@ Set the operation with the given ID to FAILED. The operation must exist and must
 
 Set the operation with given ID to SUCCESSFUL. The operation must exist and must have the requesting device as the source.
 
-It enables the device to send additional parameters that trigger additional steps based on the type of the operation (see Section [Updating operations](#updating-operations)).
+This may let the device send additional parameters that trigger further steps based on the type of the operation, also see [Updating operations](#updating-operations).
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

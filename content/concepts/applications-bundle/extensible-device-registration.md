@@ -63,7 +63,7 @@ There are two types of extensions:
 
 ### Single device registration
 
-After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management application is being extended with an entry corresponding to the extension `name` property.
+After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management application is extended with an entry corresponding to the extension `name` property.
 
 From now on, everything will be rendered based on data provided via the custom microservice. The added menu entry opens a window which fetches the form definition using the following endpoint:
 

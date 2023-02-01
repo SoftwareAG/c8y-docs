@@ -547,7 +547,7 @@ Removes advanced software items from the list that exists for the device.
 <a name="143"></a>
 ##### Set supported software types (143)
 
-Set supported software types of the device. Ignores empty elements. Empty list removes c8y_SupportedSoftwareTypes fragment entirely.
+Set the supported software types of the device. Ignores empty elements. An empty list removes the `c8y_SupportedSoftwareTypes` fragment entirely.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

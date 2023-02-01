@@ -906,7 +906,7 @@ Set the operation with the given ID to FAILED. The operation must exist and must
 <a name="506"></a>
 ##### Set operation to SUCCESSFUL (506)
 
-Set the operation with given id to SUCCESSFUL. The operation must exist and must have requesting device as the source.
+Set the operation with given ID to SUCCESSFUL. The operation must exist and must have the requesting device as the source.
 
 It enables the device to send additional parameters that trigger additional steps based on the type of the operation (see Section [Updating operations](#updating-operations)).
 

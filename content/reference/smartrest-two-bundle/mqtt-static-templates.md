@@ -875,7 +875,7 @@ It enables the device to send additional parameters that trigger additional step
 <a name="504"></a>
 ##### Set operation to EXECUTING (504)
 
-Set the operation with given id to EXECUTING. The operation must exist and must have requesting device as the source.
+Set the operation with the given ID to EXECUTING. The operation must exist and must have the requesting device as the source.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

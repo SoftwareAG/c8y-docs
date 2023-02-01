@@ -21,8 +21,8 @@ Devices connecting to the platform with certificates do not need to provide the 
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices must trust the {{< product-c8y-iot >}} server certificate.
-* Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
-* Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
+* Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
+* Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates
 
@@ -391,7 +391,7 @@ To ensure verification of ownership by the uploader, a proof of possession is re
 The steps for the proof of possession are as follows:
 - Ensure that the certificate has been uploaded properly:
 ![Check certificate upload](/images/mqtt/devmgmt-mqtt-cert-pop-check.png)
- 
+
 - Download of the unsigned verification code:
 ![Download unsigned verification code](/images/mqtt/devmgmt-mqtt-cert-pop-downloadunsigned.png)
 

@@ -904,7 +904,7 @@ Set the operation with the given ID to FAILED. The operation must exist and must
 ```
 
 <a name="506"></a>
-##### Set operation to SUCCESSFUL by operation id (506)
+##### Set operation to SUCCESSFUL (506)
 
 Set the operation with given id to SUCCESSFUL. The operation must exist and must have requesting device as the source.
 

@@ -49,7 +49,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
-+ <a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,…</a>
++ <a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,...</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>

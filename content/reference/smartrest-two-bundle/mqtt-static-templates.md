@@ -512,7 +512,7 @@ Sets the list of advanced software installed on the device. Any existing list wi
 ```
 
 <a name="123"></a>
-##### Get device managed object id (123)
+##### Get the device managed object ID (123)
 
 Retrieve the ID of the device managed object.
 

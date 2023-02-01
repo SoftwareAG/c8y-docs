@@ -903,7 +903,7 @@ List all children of the device.
 ```
 
 <a name="124"></a>
-##### Get device managed object id (124)
+##### Get the device managed object ID (124)
 
 Gets the id of the device managed object.
 

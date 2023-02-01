@@ -890,7 +890,7 @@ Set the operation with the given ID to EXECUTING. The operation must exist and m
 <a name="505"></a>
 ##### Set operation to FAILED (505)
 
-Set the operation with given id to FAILED. The operation must exist and must have requesting device as the source.
+Set the operation with the given ID to FAILED. The operation must exist and must have the requesting device as the source.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

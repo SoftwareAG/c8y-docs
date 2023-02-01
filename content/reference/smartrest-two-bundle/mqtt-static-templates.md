@@ -514,7 +514,7 @@ Sets the list of advanced software installed on the device. Any existing list wi
 <a name="123"></a>
 ##### Get device managed object id (123)
 
-Trigger sending of the id of the device managed object.
+Retrieve the ID of the device managed object.
 
 **Example**
 

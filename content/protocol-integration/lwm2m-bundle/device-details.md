@@ -19,7 +19,7 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 In order to see resources in the **Objects** tab, the resources first must be added in the **Device Protocols** page.
 {{< /c8y-admon-info >}}
 
-The following operations may be available in each instance:
+The following operations may be available in each instance after clicking the "three dots" icon at the end of each object row:
 
 - Read Object: Reads all instances for the selected object and lists all available resources for each instance.
 - Read Instance: Reads the current instance of the given object and lists all available resources.
@@ -32,11 +32,11 @@ Some instances do not have all of the listed operations.
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation without parameters, click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
-More information can be acquired for each resource by hovering over the tooltip icon.
+More information can be acquired for each resource by hovering over the tooltip icon present on the right of field name.
 
-Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
+Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button.
 
-To view the history of all operations, simply click **View history**. Note, that you will be redirected to the **Control** tab.
+To view the history of all operations, click **View history**. Note, that you will be redirected to the **Control** tab.
 
 If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
 Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.

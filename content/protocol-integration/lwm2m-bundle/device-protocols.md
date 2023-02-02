@@ -16,16 +16,14 @@ To add a new LWM2M device protocol follow these steps:
 
 1. In the Device Management application, move to the **Device protocol** page.
 2. Click **Add device protocol** in the top menu bar.
-3. In the upcoming dialog select **LWM2M** as device protocol type. <br><br>
+3. In the upcoming dialog select **LWM2M** as device protocol type.
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found at [http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd). <br>
-If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior. <br><br>
-5. In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. <br><br>
+If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior.
+5. In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. 
 
-The device protocol will open in a new page.
+The device protocol will open in a new page. In this page, you will see the description at the top left and the ID, the creation date and the date of the last update at the top right.
 
-In the device protocol page, you will see the description at the top left and the ID, the creation date and date of the last update at the top right.
-
-Below, a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
+Below that, there is a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
 {{< c8y-admon-info >}}
 LWM2M protocol resources cannot be edited.
@@ -34,7 +32,7 @@ LWM2M protocol resources cannot be edited.
 <a name="resources"></a>
 ### Adding additional functionalities to a resource
 
-The functionalities that you may enable are the following:
+See below for the functionalities that you may enable:
 
 #### Send measurement
 
@@ -97,13 +95,15 @@ Actions that are relevant for connectivity monitoring (/4):
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
 
+![Auto-observe example](/images/device-protocols/lwm2m/lwm2m-autoobserve.png)
+
 {{< c8y-admon-info >}}
 At least one functionality must be set to enable "Auto observe".
 {{< /c8y-admon-info >}}
 
 ### Alarms on device protocol mapping failures
 
-There are 2 types of alarms raised related to device protocol mapping failures.
+There are 2 types of alarms raised related to device protocol mapping failures:
 
 - Alarm for no mapping known: This alarm is raised when value is read or observed but no mapping for this resource is found.
 This can be resolved by importing device protocol for this resource.

@@ -32,7 +32,7 @@ LWM2M protocol resources cannot be edited.
 <a name="resources"></a>
 ### Adding additional functionalities to a resource
 
-See below for the functionalities that you may enable:
+To access resource functionalities you need to proceed to the device protocol page and click on one of the resources instances. See below for the functionalities that you may enable:
 
 #### Send measurement
 

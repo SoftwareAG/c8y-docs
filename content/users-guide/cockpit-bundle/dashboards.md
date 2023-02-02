@@ -37,6 +37,7 @@ ROLES & PERMISSIONS:
 
 1. Select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
+
 3. In the **Tab** section of the dashboard editor, provide the following information:
 
     * An icon which is shown next to the dashboard name in the navigator.

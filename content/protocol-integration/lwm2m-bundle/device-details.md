@@ -34,7 +34,9 @@ Some object cards show additional operations which can be performed. These opera
 
 More information can be acquired for each resource by hovering over the tooltip icon present on the right of field name.
 
-Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button.
+Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there are two.
+
+![Operations view](/images/device-protocols/lwm2m/lwm2m-devices-operations.png)
 
 To view the history of all operations, click **View history**. Note, that you will be redirected to the **Control** tab.
 

@@ -177,8 +177,6 @@ To assign devices to a group, follow these steps:
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
 
-![Assign devices](/images/users-guide/cockpit/cockpit-group-assign.png)
-
 The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
 <a name="edit-group"></a>

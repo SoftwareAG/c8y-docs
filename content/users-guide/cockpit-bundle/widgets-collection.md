@@ -352,10 +352,6 @@ The "Info gauge" widget visualizes one data point in form of a radial gauge and 
 
 You can select one data point for the gauge, and multiple data points shown with labels at the left side.
 
-![Info gauge widget data point gauge](/images/users-guide/cockpit/cockpit-widget-data-gauge.png)
-
-![Info gauge widget data point label](/images/users-guide/cockpit/cockpit-widget-data-labels.png)
-
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
 

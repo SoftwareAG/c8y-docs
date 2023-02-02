@@ -78,7 +78,7 @@ All retention rules are executed sequentially and independent of each other. So 
 
 For example given the two following rules:
 
-<img src="/images/users-guide/Administration/admin-retention-rules-commspec1.PNG" alt="Retention rules"/>
+<img src="/images/users-guide/Administration/admin-retention-rules-commspec1.png" alt="Retention rules"/>
 
 All measurements with the type `c8y_Temperature` which are older than 30 days will be removed, including those where the source equals `12345`.
 

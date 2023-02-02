@@ -168,15 +168,11 @@ Below, you will additionally find information on the microservice version, as we
 
 At the top right of the **Properties** tab, you find a toggle to subscribe to or unsubcribe from a microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
-
 Changing the subscription is only possible for custom microservices, that is microservices being owned by you.
 
 ### Microservice permissions
 
 In the **Permissions** tab you can view the permissions required for the respective microservice, and the roles provided for it.
-
-<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
 
 ### Monitoring microservices
 
@@ -222,8 +218,6 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 {{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices.
 
 To view logs, open the **Logs** tab of the respective microservice.
-
-<img src="/images/users-guide/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 

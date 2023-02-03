@@ -47,7 +47,7 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Right drawer</b></td>
-<td style="text-align:left">Clicking the small arrow at the very right of the top bar will unhide/hide the right drawer, offering quick links to other applications and to relevant documentation. Per default, the right drawer is hidden.</td>
+<td style="text-align:left">Clicking the user icon at the very right of the top bar will unhide/hide the right drawer, offering access to the user settings, quick links to other applications and to relevant documentation. Per default, the right drawer is hidden.</td>
 </tr>
 </tbody>
 </table>

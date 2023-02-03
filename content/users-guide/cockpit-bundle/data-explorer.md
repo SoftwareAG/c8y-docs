@@ -117,9 +117,11 @@ To add a data point to the data explorer, click **Add data point** at the bottom
 
 ![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
-In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
+On the left hand side of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
 
-The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+The center of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+
+The right hand side shows all of the selected data points.
 
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
 
@@ -204,8 +206,6 @@ In this case, both data points share the same y-axis. This y-axis only shows the
 In addition to data points you can also add alarms or events to the data explorer.
 
 In the **Alarms/Events** card, click **Add alarm/event** to add an alarm or event.
-
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
 
 In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add** to add your selection.
 

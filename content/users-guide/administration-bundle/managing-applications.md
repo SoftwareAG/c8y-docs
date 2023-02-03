@@ -45,8 +45,6 @@ Both can be accessed via the **Ecosystem** menu in the navigator.
 
 Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, that means you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
 
-<img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
-
 <a name="applications"></a>
 ### Applications
 
@@ -115,6 +113,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+</tr>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
@@ -122,8 +121,6 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}} (limited version for Analytics Builder), {{< enterprise-tenant >}} (full version)</td>
-</tr>
-
 </tr>
 
 </tbody>
@@ -145,8 +142,6 @@ In the **All applications** tab, custom applications are labeled as "Custom".
 #### To add a custom application
 
 Click **Add application** at the top right of the **All applications** tab.
-
-<img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
 In the resulting dialog box, select one of the following methods:
 
@@ -173,9 +168,6 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. Select **External application**.
-<br><br>
-<img src="/images/users-guide/Administration/admin-application-external.png" alt="External application">
-<br><br>
 3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
 5. Enter an application key, used to identify this application.
 6. Enter the external URL where the application can be reached.
@@ -205,9 +197,6 @@ Duplicating an application might be useful if you want to customize a subscribed
 2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list, for example "Cockpit".
 4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.
-<br><br>
-<img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
-<br><br>
     {{< c8y-admon-info >}}
 The platform restricts the use of the prefix "feature-" in the **Name** field. You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
     {{< /c8y-admon-info >}}
@@ -332,9 +321,9 @@ Users can restore previous versions of an application from an archive.
 If a hosted application is not deployed correctly, users may reactivate it.
 
 1. Open the application properties for the respective application by clicking on it.
-3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate**.
+3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate archive**.
 
-The selected application will be reactivated by removing the respective files from the application directory and unpacking the host application package again.
+The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.
 
 ### Packages
 

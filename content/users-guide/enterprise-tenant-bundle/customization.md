@@ -271,7 +271,9 @@ We highly discourage any use of alternative DNS configurations for the following
 Once the DNS configuration is in place and if a certificate with the given requirements is available, it can be easily
 uploaded to the platform.
 
-Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
+In the **Domain name** tab under Enterprise Tenant, click **Upload certificate**. Then select the certificate from your file system and confirm upload by clicking on **Upload** button.
+
+Afterwards, you can activate the domain with a single click on its name. After the domain has been activated, you will be redirected
 to your {{< enterprise-tenant >}} using the new domain name. You will also receive an email with information about the
 activation. Note that your {{< management-tenant >}} domain name is static, for example, if your wildcard domain is "*
 .iot.mycompany.com" then your {{< management-tenant >}} domain will be "management.iot.mycompany.com".

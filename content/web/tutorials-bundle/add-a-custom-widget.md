@@ -10,7 +10,7 @@ If the widgets that are provided by the platform do not meet your requirements, 
 
 A typical dashboard looks like this, showing various widgets:
 
-![A dashboard](/images/users-guide/cockpit/cockpit-dashboard-widgets.png)
+![A dashboard](/images/web-sdk/cockpit-dashboard-widgets.png)
 
 This recipe will show how to archive a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 

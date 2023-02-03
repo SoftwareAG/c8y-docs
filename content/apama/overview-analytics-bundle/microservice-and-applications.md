@@ -19,8 +19,14 @@ See also the following sections in the *User guide*:
 
 If your tenant is subscribed to the Apama-ctrl-starter microservice, then the following applies:
 
-- Limited number of at most 3 active analytic models. Custom blocks written with the Analytics Builder Block SDK cannot be used. 
+- Limited number of at most 3 active analytic models. Custom blocks written with the Analytics Builder Block SDK cannot be used.
 - The **EPL Apps** page is not available in the Streaming Analytics application.
+- Unlimited number of smart rules.
+
+If your tenant is subscribed to the Apama-ctrl-mt-4c-16g microservice, then the following applies:
+- Multi-tenant support.
+- EPL apps are only enabled on the Management and Enterprise tenants that own the microservice, but disabled on the subtenants.
+- The **Analytics Builder** page is currently not available in the Streaming Analytics application.
 - Unlimited number of smart rules.
 
 If your tenant is subscribed to the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice, the **Analytics Builder** and **EPL Apps** pages are not available in the Streaming Analytics application.

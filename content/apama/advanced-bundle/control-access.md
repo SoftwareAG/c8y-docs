@@ -11,12 +11,14 @@ or modify the wording of the cards on the home screen (see also [Customizing the
 Which pages are available also depends on the variant of the Apama-ctrl microservice that is running.
 
 - If the microservice is not running, an error message is shown indicating that the microservice cannot be accessed,
-and only a card with information about smart rules is shown.
-- If the Apama-ctrl-starter microservice is running, the EPL Apps card is not shown (and cannot be enabled)
+and only a card with information about smart rules is shown on the home screen.
+- If the Apama-ctrl-starter microservice is running, the **EPL Apps** page is not shown (and cannot be enabled)
 as the EPL apps functionality is not available in Apama-ctrl-starter.
-- If the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice is running, neither the EPL Apps card nor the Analytics Builder card is shown (and cannot be enabled).
-In this case, only the card with information about the smart rules is shown.
-- For other variants of the Apama-ctrl microservice, both the Analytics Builder and EPL Apps cards are shown by default.
+- If the Apama-ctrl-mt-4c-16g microservice is running, the **Analytics Builder** page is not shown (and cannot be enabled).
+In this case, only the **EPL Apps** page is shown.
+- If the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice is running, neither the **Analytics Builder** nor the **EPL Apps** page is shown (and cannot be enabled).
+In this case, only the card with information about smart rules is shown on the home screen.
+- For other variants of the Apama-ctrl microservice, both the **Analytics Builder** and **EPL Apps** pages are shown by default.
 
 For an entire tenant, if a "feature application" named `feature-disable-analyticsbuilder` and/or `feature-disable-eplapps` is
 available within the tenant, then the relevant part is disabled. This can be done either within a tenant or by an {{< enterprise-tenant >}} or {{< management-tenant >}}

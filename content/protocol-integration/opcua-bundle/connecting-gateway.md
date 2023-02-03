@@ -14,7 +14,7 @@ Next, establish a connection between the gateway and the OPC UA server.
 5. Enter the **Status check interval** in seconds. The status check interval specifies how often the gateway actively checks if the server status has changed. These periodic checks are carried out by reading the *ServerStatus* variable on the OPC UA server.
 6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see [Security modes](#security-modes).
 7. Select the desired authentication method. For more info, see [Authentication](/protocol-integration/opcua/#authentication).
-8. Under Advanced Settings the mode of the OPC-UA Servers address scan can be configured. Is Auto Address Scan set to enabled the gateway will immediately start scanning after the new server connection is saved.
+8. You can configure  the mode of the OPC UA server address scan under **Advanced settings**. If automatic address scanning is enabled the gateway immediately starts the scan after the new server connection is saved.
 **Be cautious with the Address Scan Type**. If set to Full the gateway will scan the whole OPC-UA Servers address space. Depending on the Address Space size and the speed of the OPC-UA Server this can take from minutes to up to days. We highly recommend to set the Address Scan Type to Partial and configure only those Node Id's your really interested in for scanning.
 You can add further Node Id's later and do a rescan in the Address Space tab of the Server Object afterwards.
 9. Click **Save**.

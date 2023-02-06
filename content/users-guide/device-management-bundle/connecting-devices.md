@@ -71,7 +71,7 @@ To register devices, you can select one of the following options:
 Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 
 {{< c8y-admon-info >}}
-The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview/). There you will also find descriptions for the protocol specific registration processes.
+The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview/). It also contains descriptions for the protocol specific registration processes.
 {{< /c8y-admon-info >}}
 
 <a name="device-registration-manually"></a>

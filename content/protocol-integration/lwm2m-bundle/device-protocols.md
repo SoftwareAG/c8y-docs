@@ -68,7 +68,7 @@ Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using 
 
 There are several predefined custom actions which can be selected to apply actions to the relevant resources.
 
-Actions that are relevant for Device (/3):
+Actions that are relevant for device object (object id /3):
 - device:updateManufacturer
   - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
 - device:updateModelNumber
@@ -78,7 +78,7 @@ Actions that are relevant for Device (/3):
 - device:updateFirmwareVersion
   - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;revision&rdquo; property.
 
-Actions that are relevant for connectivity monitoring (/4):
+Actions that are relevant for connectivity monitoring (object id /4):
 - connectivity:updateCellId
   - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;cellId&rdquo; property.
 - connectiviy:updateSmnc
@@ -90,6 +90,10 @@ Actions that are relevant for connectivity monitoring (/4):
   - In the same measurement, stores resource path information in &ldquo;resourcePath&rdquo; fragment and also in &ldquo;objectResourcePath_&lt;resource path&gt;&rdquo; fragment name.
   - In the same measurement, stores device name information in &ldquo;device!Name&rdquo; fragment.
   - In the same measurement, stores device mobile information in &ldquo;device!c8y_Mobile&rdquo; fragment.
+
+Below is an example where the “connectivity:updateRssi” custom action is selected for the Connectivity monitoring (/4) radio signal strength in order to create the signal measurement for the device.
+
+![Custom action example](/images/device-protocols/lwm2m/lwm2m-custom-action-connectivity-signal.png)
 
 #### Auto observe
 

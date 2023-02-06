@@ -949,7 +949,7 @@ Install the firmware from the url.
 **Example**
 
 ```text
-515,DeviceSerial,myFimrware,1.0,http://www.my.url
+515,DeviceSerial,myFirmware,1.0,http://www.my.url
 ```
 
 <a name="516"></a>

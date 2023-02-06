@@ -46,7 +46,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#120">120,configType,url,filename[,time]</a>
 + <a href="#121">121,profileExecuted,profileID</a>
 + <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
-+ <a href="#123">123</a>
++ <a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a>
 + <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>

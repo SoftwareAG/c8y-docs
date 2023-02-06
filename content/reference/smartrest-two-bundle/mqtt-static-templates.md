@@ -914,7 +914,7 @@ Retrieve the ID of the device managed object.
 **Example**
 
 ```text
-106,id
+124,12345
 ```
 
 <a name="subscribe-operations"></a>

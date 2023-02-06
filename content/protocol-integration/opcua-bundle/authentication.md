@@ -63,7 +63,7 @@ The address space is automatically scanned when a connection between the gateway
 In case a node is found with a non-existing namespace entry the scan process skips this node and continues.
 An error entry will be written to the log file to provide information (more information available in debug level).
 
-To manually scan the address space (depending on the Address Scan Type Full / Partial) hit the rescan button. You can monitor the progress by checking the rescan operation under the control tab.
+To manually scan the address space hit the rescan button. You can monitor the progress by checking the rescan operation under the control tab.
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-address.png)
 

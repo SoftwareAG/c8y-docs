@@ -28,12 +28,12 @@ Zusammenfassung: Um mit dem Microservice-basierten Data Broker arbeiten zu könn
 <a name="enabling-ms-data-broker"></a>
 ###  So aktivieren Sie den Microservice-basierten Data Broker
 
-1. Navigieren Sie im {{< management-tenant >}} zu **Administration** > **Mandanten** > **Untermandanten** und wählen Sie den Mandanten, der als Quelle des Datenkonnektors dienen soll.
+1. Navigieren Sie im {{< management-tenant-de >}} zu **Administration** > **Mandanten** > **Untermandanten** und wählen Sie den Mandanten, der als Quelle des Datenkonnektors dienen soll.
 2. In der Registerkarte **Anwendungen**:
     * Abonnieren Sie für den Mandanten die Data-Broker-Funktion (Anwendung `feature-broker`), sofern diese noch nicht abonniert ist.
     * Abonnieren Sie für den Mandanten den Data Broker-Agenten (Anwendung `databroker-agent-server`).
 
-![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
+![Databroker-Agent-Server](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-agent.png)
 
 {{< c8y-admon-info >}}
 Mandanten, die einen Datenkonnektor abonnieren, benötigen kein Data Broker-Agent-Abonnement.
@@ -59,7 +59,7 @@ Nach dem Aktivieren des Microservice-basierten Data Brokers sollten Ihre vorhand
 
 #### Abonnement-Alarm
 
-Der {{< management-tenant >}} kann nicht als Data-Broker-Ursprungsmandant verwendet werden und dieser Alarm wird beim Versuch ausgelöst, den Data Broker-Agenten für einen {{< management-tenant >}} zu abonnieren.
+Der {{< management-tenant-de >}} kann nicht als Data-Broker-Ursprungsmandant verwendet werden und dieser Alarm wird beim Versuch ausgelöst, den Data Broker-Agenten für einen {{< management-tenant-de >}} zu abonnieren.
 
 #### Data Broker-Verbindungsfehler
 
@@ -79,7 +79,7 @@ Dieser Alarm wird ausgelöst, wenn die Latenz für die Nachrichtenübermittlung 
 
 Der Data Broker überwacht die Datenrate, mit der Ereignisse weitergeleitet werden. Liegt diese Rate unterhalb eines vorkonfigurierten Schwellenwerts, wird ein Alarm wegen langsamer Verarbeitung ausgelöst. Hierzu kann es aufgrund eines langsamen Netzwerks kommen.
 
-![New Data-Broker Alarms](/images/users-guide/enterprise-tenant/et-new-data-broker-alarms.png)
+![New Data-Broker Alarms](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-alarms.png)
 
 {{< c8y-admon-info >}}
 Näheres darüber, wie sich diese Parameter konfigurieren lassen, finden Sie im *Messaging Service Installation & Operations Guide*.

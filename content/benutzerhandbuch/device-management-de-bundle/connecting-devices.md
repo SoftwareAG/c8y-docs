@@ -10,7 +10,7 @@ weight: 11
 
 Auf der Seite **Geräteregistrierung** werden alle Geräte, die sich aktuell im Registrierungsprozess befinden, entweder als Liste oder als Raster angezeigt.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
 Die folgenden Informationen werden für jedes Gerät angezeigt:
 
@@ -41,7 +41,7 @@ Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 
 Wenn Sie die erforderlichen Anwendungen abonniert haben, sehen Sie andere Optionen zur Registrierung von Geräten bestimmter Typen (z. B. Actility LoRa oder Sigfox). Eine vollständige Liste der unterstützten Protokolle finden Sie im [Protocol Integration Guide](/protocol-integration/overview).
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 Microservice-Entwickler können auch die [Erweiterte Geräteregistrierung](/concepts/applications/#extensible-device-registration) verwenden und ein benutzerdefiniertes Registrierungsformular implementieren, das sich nahtlos in die Benutzeroberfläche einfügt.
 
@@ -55,11 +55,11 @@ Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte releva
 1. Klicken Sie auf **Registrierung** im Menü **Geräte** des Navigators.
 2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Einzelregistrierung** > **Generell**.
 
-  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
 
 Der Dialog **Geräte registrieren** wird angezeigt.
 
-  <img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 3. Geben Sie im Feld **Geräte-ID** die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist.
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten, siehe auch [Gruppieren von Geräten](#grouping-devices).
@@ -67,9 +67,9 @@ Der Dialog **Geräte registrieren** wird angezeigt.
 6. Klicken Sie auf **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
 {{< c8y-admon-info >}}
-In einem {{< enterprise-tenant >}} kann der {{< management-tenant >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
+In einem {{< enterprise-tenant-de >}} kann der {{< management-tenant-de >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant-de >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 {{< /c8y-admon-info >}}
 
 Nach erfolgreicher Registrierung werden die Geräte auf der Seite [Geräteregistrierung](#dev-registration) mit dem Status "Wartet auf Verbindung" angezeigt.
@@ -122,13 +122,13 @@ Die Anzeige **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](
 
 Mit dem Wert "IGNORED" für die Sicherheitstokenregel kann ein mit {{< product-c8y-iot >}} verbundenes Gerät ohne jede Token-Validierung akzeptiert werden:
 
-![Accepting devices registrations under ignored security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
+![Accepting devices registrations under ignored security token policy](/images/benutzerhandbuch/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
 
 ##### Optionale Sicherheitstokenregel
 
 Die Liste der Geräteregistrierungen wird im Bild unten präsentiert. Beachten Sie, dass die Eingabe für Sicherheitstokens für alle Geräte angezeigt wird.
 
-![Accepting devices registrations under optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png)
+![Accepting devices registrations under optional security token policy](/images/benutzerhandbuch/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png)
 
 **Registrierung ohne Verwendung eines Sicherheitstokens**
 
@@ -140,7 +140,7 @@ Wenn ein Sicherheitstoken für ein Gerät bereitgestellt wird, das unsicher verb
 
 Wenn ein mit {{< product-c8y-iot >}} verbundenes Gerät ein Sicherheitstoken verwendet, kann die Registrierung nur abgeschlossen werden, wenn der Benutzer ein Token bereitstellt, das mit demjenigen übereinstimmt, das vom Gerät beim Herstellen der Verbindung übereinstimmt.
 
-![Providing a token for device registration request in optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png)
+![Providing a token for device registration request in optional security token policy](/images/benutzerhandbuch/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png)
 
 Bei Bereitstellung eines falschen Tokens wird eine Fehlermeldung angezeigt, die über eine Nichtübereinstimmung zwischen dem vom Gerät verwendeten Wert und dem über die Benutzeroberfläche bereitgestellten Wert informiert.
 
@@ -176,11 +176,11 @@ Es gibt keine Einschränkung hinsichtlich der Anzahl der Geräte, die durch eine
 
 2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Bulk-Registrierung** > **Generell**.
 
-  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
 
 3. Klicken Sie auf die Plus-Schaltfläche, um die hochzuladende CSV-Datei auszuwählen, oder wählen Sie sie durch Ziehen und Ablegen aus.
 
-  <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
 <br>
 Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierungstypen verarbeitet:
@@ -243,5 +243,5 @@ Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie 
 [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
 
 {{< c8y-admon-info >}}
-Wenn Sie mit dem {{< enterprise-tenant >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant >}} aus importieren.
+Wenn Sie mit dem {{< enterprise-tenant-de >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant-de >}} aus importieren.
 {{< /c8y-admon-info >}}

@@ -17,7 +17,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 
 Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
-![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
+![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
 {{< c8y-admon-info >}}
 Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten-Management" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
@@ -43,7 +43,7 @@ Im Feld **Gültigkeitsdauer des Passworts** können Sie die Gültigkeit von Benu
 Die Begrenzung der Passwort-Gültigkeitsdauer gilt für Benutzer mit der Rolle "devices". Sie verhindert, dass Gerätepasswörter ablaufen.
 {{< /c8y-admon-info >}}
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/users-guide/getting-started/#change-password) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#change-password) beschrieben.
 
 {{< c8y-admon-info >}}
 Passwort-Gültigkeitsdauer und Passwortstärke sind möglicherweise nicht editierbar, falls dies vom Plattformadministrator so konfiguriert wurde.
@@ -169,7 +169,7 @@ Die Lebensdauer von JWT-Tokens, die im Antworttext erzeugt werden, wird mit den 
 Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in {{< openapi >}}.
 
 {{< c8y-admon-info >}}
-Falls die externe Kommunikation zum {{< management-tenant >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant >}} für das Blockieren der externen Kommunikation konfiguriert ist.
+Falls die externe Kommunikation zum {{< management-tenant-de >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant-de >}} für das Blockieren der externen Kommunikation konfiguriert ist.
 {{< /c8y-admon-info >}}
 
 #### TFA-Einstellungen
@@ -209,7 +209,7 @@ Benutzer mit der Rolle "devices" sind von TFA und TOTP ausgeschlossen. Dies gilt
 
 Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-![Default application](/images/users-guide/Administration/admin-settings-application.png)
+![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
 Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
 
@@ -231,7 +231,7 @@ Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-co
 
 Klicken Sie auf **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
-![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
+![Properties library](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
 
 Mit benutzerdefinierten Attributen können Sie das Datenmodell der in {{< product-c8y-iot >}} integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
@@ -248,7 +248,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 
 1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie auf **Attribut hinzufügen**.
 
-	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
+	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
 
 1. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
 
@@ -314,7 +314,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 <a name="sms-provider"></a>
 ### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/users-guide/administration#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
+SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
 
 Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 
@@ -322,7 +322,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
-    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
+    ![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
 
 	{{< c8y-admon-info >}}
 Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
@@ -348,9 +348,9 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/users-guide/device-management/#connectivity)
+- [SIM](/benutzerhandbuch/device-management-de/#connectivity)
 
-![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
+![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

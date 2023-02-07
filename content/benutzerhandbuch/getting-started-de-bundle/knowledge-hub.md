@@ -16,11 +16,11 @@ Der Knowledge Hub ist nur für Benutzer von kostenlosen Trial Tenants verfügbar
 
 Klicken Sie rechts unten in der Benutzeroberfläche der {{< product-c8y-iot >}}-Plattform auf die Schaltfläche **Knowledge Hub**, um den {{< product-c8y-iot >}} Knowledge Hub aufzurufen.
 
-![Knowledge Hub button](/images/users-guide/getting-started/getting-started-knowledge-hub-button.png)
+![Knowledge Hub button](/images/benutzerhandbuch/getting-started/getting-started-knowledge-hub-button.png)
 
 Der Dialog **Knowlegde Hub** wird geöffnet und zeigt eine Reihe von Optionen.
 
-![Knowledge Hub dialog](/images/users-guide/getting-started/getting-started-knowledge-hub-dialog.png)
+![Knowledge Hub dialog](/images/benutzerhandbuch/getting-started/getting-started-knowledge-hub-dialog.png)
 
 {{< c8y-admon-info >}}
 Die Optionen im Dialog **Knowlegde Hub** werden häufig aktualisiert, so dass die Sitzungen, Ressourcen und Kommunikationsoptionen, die Sie in der Plattform sehen, möglichweise nicht exakt mit den oben abgebildeten und unten beschriebenen Optionen übereinstimmen.
@@ -49,13 +49,13 @@ Nachdem Sie einem Element gefolgt und zum Knowledge Hub zurückgekehrt sind, fin
 
 Klicken Sie in der Knowledge Hub-Liste unter den Einführungssitzungen auf **Share feedback**, um uns Ihre Meinung mitzuteilen. Sie können Ihre Erfahrungen kurz bewerten (1-5 Sterne) und zusätzlich eine schriftliche Bewertung formulieren.
 
-![Knowledge Hub feedback](/images/users-guide/getting-started/getting-started-knowledge-hub-feedback.png)
+![Knowledge Hub feedback](/images/benutzerhandbuch/getting-started/getting-started-knowledge-hub-feedback.png)
 
 ### Ressourcen
 
 Klicken Sie auf **Resources**, um zur Liste **Resources** zu gelangen.
 
-![Knowledge Hub resources](/images/users-guide/getting-started/getting-started-knowledge-hub-resources.png)
+![Knowledge Hub resources](/images/benutzerhandbuch/getting-started/getting-started-knowledge-hub-resources.png)
 
 Hier finden Sie eine Reihe weiterer Ressourcen, wie Dokumentation, Trainings, Ressourcen für Entwickler sowie Versionshinweise.
 

@@ -8,7 +8,7 @@ Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators, um alle mi
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
+![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
 
 <a name="device-list"></a>
 
@@ -78,7 +78,7 @@ Die Spalten der Geräteliste können nach Bedarf angepasst werden.
 #### So blenden Sie Spalten ein/aus
 
 1. Klicken Sie in der Tabellenkopfzeile auf **Spalten konfigurieren**.
-2. Aktivieren/deaktivieren Sie in der darauf folgenden Auswahlliste die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
+2. Aktivieren/deaktivieren Sie in der darauf folgenden Auswahlliste die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-configure-columns.png)
    <br>
 
 Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalten.
@@ -88,7 +88,7 @@ Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalte
 Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zusätzliche Geräteattribute angezeigt werden.
 
 1. Klicken Sie in der Auswahlliste **Spalten konfigurieren** auf **Eigene Spalte hinzufügen**.<br>
-   ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+   ![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. Geben Sie im Feld **Kopfzeile** eine Kopfzeile für die neue benutzerdefinierte Spalte ein.
 3. Geben Sie im Feld **Fragmentpfad** das anzuzeigende Attribut des Geräts ein. Verschachtelte Attribute sind zulässig. Für verschachtelte Attribute können jedoch nur {{< product-c8y-iot >}}-Standardfragmente wie `c8y_Mobile.mcc` ausgewählt werden.
 4. Stellen Sie den Umschalter **Diese Spalte speichern, um eine weitere hinzuzufügen** auf aktiv, um direkt nach dem Speichern der aktuellen benutzerdefinierten Spalte eine weitere zu erstellen, ohne den Dialog zu verlassen.
@@ -120,7 +120,7 @@ Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestim
 
 Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten.
 
-![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
+![Device filtering](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-filter.png)
 
 Legen Sie in der Auswahlliste Ihre Filteroptionen fest.
 

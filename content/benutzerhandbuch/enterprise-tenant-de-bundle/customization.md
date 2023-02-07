@@ -6,13 +6,13 @@ aliases:
   - /users-guide/enterprise-edition/#customization
 ---
 
-Mit dem {{< enterprise-tenant >}} von {{< product-c8y-iot >}} können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
+Mit dem {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
 
 Neben verschiedenen [Konfigurationseinstellungen](#configuration) können Sie auch Ihr eigenes [Branding](#branding) und Ihren eigenen [Domain-Namen](#domain-name) verwenden.
 
-Klicken Sie auf **{{< enterprise-tenant >}}** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
+Klicken Sie auf **{{< enterprise-tenant-de >}}** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
 
-![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
+![Custom settings](/images/benutzerhandbuch/enterprise-tenant/et-custom-settings.png)
 
 <a name="configuration"></a>
 ### Konfiguration
@@ -26,7 +26,7 @@ Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 |Platzhalter|Beschreibung|
 |:---|:---|
 |{host}|Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.{{< domain-c8y >}}`.
-|{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.{{< domain-c8y >}}` sein. Bei einem {{< enterprise-tenant >}} können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
+|{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.{{< domain-c8y >}}` sein. Bei einem {{< enterprise-tenant-de >}} können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
 |{token}|Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
 |{email}|Dieser Platzhalter wird durch die E-Mail-Adresse des empfangenden Benutzer ersetzt, die in den Benutzereinstellungen gespeichert ist. Einige Ansichten der Benutzeroberfläche erkennen diesen Parameter und fügen den Wert vorab in das entsprechende Feld ein, z. B. beim Zurücksetzen des Passworts.
 
@@ -34,13 +34,13 @@ Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 
 Unter **Zwei-Faktor-Authentifizierung** können Sie das SMS-Template, das an die Benutzer geschickt wird, ändern.
 
-![TFA configuration](/images/users-guide/enterprise-tenant/et-configuration-tfa.png)
+![TFA configuration](/images/benutzerhandbuch/enterprise-tenant/et-configuration-tfa.png)
 
 #### Support-Link
 
 Im Bereich **Support-Link** können Sie eine URL eingeben, die als Link zu einer Support-Seite verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur {{< sag-dev-community >}}-Seite verwendet.
 
-![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
+![Support link configuration](/images/benutzerhandbuch/enterprise-tenant/et-configuration-support-link.png)
 
 Geben Sie "false" ein, um den Link zu verbergen.
 
@@ -48,7 +48,7 @@ Geben Sie "false" ein, um den Link zu verbergen.
 
 Im Bereich **Passwort zurücksetzen** können Sie alle Einstellungen im Zusammenhang mit E-Mail-Templates zum Zurücksetzen des Passworts ändern.
 
-![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
+![Configuration menu1](/images/benutzerhandbuch/Administration/admin-settings-configuration-password-reset.png)
 
 Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
 
@@ -62,7 +62,7 @@ Geben Sie in den folgenden beiden Feldern jeweils ein Template für die E-Mails 
 
 Im Bereich **E-Mail-Server** können Sie benutzerdefinierte E-Mail-Server-Einstellungen konfigurieren.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
 
 Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschlüsselungstyp aus der Auswahlliste. Hierbei kann es sich um einen der folgenden Typen handeln:
 
@@ -70,32 +70,32 @@ Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschl�
 * SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
 * SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
 
-Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an. Die leere Passwortkonfiguration wird für den {{< enterprise-tenant >}} unterstützt.
+Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an. Die leere Passwortkonfiguration wird für den {{< enterprise-tenant-de >}} unterstützt.
 
 #### Datenexport
 
 Im Bereich **Datenexport** können Sie den E-Mail-Betreff und das E-Mail-Template für den Datenexport angeben sowie die **Fehlermeldung, wenn Benutzer nicht autorisiert ist** definieren.
 
-![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
+![Data export settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-data-export.png)
 
 #### Speicherbegrenzung
 
 Im Bereich **Speicherbegrenzung** können Sie den E-Mail-Betreff und das E-Mail-Template für E-Mails festlegen, die gesendet werden, *bevor* Daten bei Überschreitung der Speicherbegrenzung gelöscht werden (Warnung) und *nachdem* Daten gelöscht wurden (Begrenzung überschritten).
 
-![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+![Storage limit settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-storage-limit.png)
 
 #### Mandanten werden gesperrt
 
 Im Bereich **Mandanten werden gesperrt** können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
+<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
 
 Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
 {{< c8y-admon-info >}}
-Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/users-guide/administration/#platform-configuration-settings).
+Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant-de >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 {{< /c8y-admon-info >}}
 
 <a name="branding"></a>
@@ -107,11 +107,11 @@ In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, 
 
 Die [Parameter](#configuration-parameters) werden auf der linken Seite der Registerkarte konfiguriert, während Sie auf der rechten Seite in einer Vorschau sehen können, wie sich Ihre Auswahl auswirkt.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 Für eine detailliertere Vorschau Ihrer Einstellungen klicken Sie in der oberen Menüleiste auf **Vorschau anzeigen**, um das Erscheinungsbild Ihrer Branding-Einstellungen in der gesamten Plattform zu überprüfen. In der Vorschau können Sie interagieren und sogar zwischen verschiedenen Anwendungen wechseln. Jede Änderung, die Sie in der Registerkarte **Branding** vornehmen, wird sofort auf die Seite **Vorschau** angewendet.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
 Wenn Sie fertig sind oder Ihre Einstellungen speichern möchten, klicken Sie am unteren Rand des Bereichs **Konfiguration** auf **Speichern**, um Ihre Branding-Einstellungen in Ihrem Mandanten zu speichern.
 
@@ -203,7 +203,7 @@ Folgende Parameter können festgelegt werden:
 <a name="domain-name"></a>
 ### Domain-Name
 
-Ein entscheidendes Merkmal des {{< enterprise-tenant >}} ist die Fähigkeit, die {{< product-c8y-iot >}}-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
+Ein entscheidendes Merkmal des {{< enterprise-tenant-de >}} ist die Fähigkeit, die {{< product-c8y-iot >}}-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
 bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
 mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.mycompany.com** als ihren Hostnamen.
 
@@ -222,14 +222,14 @@ Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen
 
 #### Anforderungen an das SSL-Zertifikat
 
-Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der {{< enterprise-tenant >}}-Funktion verwendet werden zu können:
+Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der {{< enterprise-tenant-de >}}-Funktion verwendet werden zu können:
 
 * Das Zertifikat ist aktuell gültig und ist nicht abgelaufen. Konkret muss "validFrom" auf einen Zeitpunkt in der
   Vergangenheit und "validTo" auf einen Zeitpunkt in der Zukunft verweisen.
 * Das Zertifikat wurde von einer anerkannten Zertifizierungsstelle (CA) herausgegeben. Selbstsignierte Zertifikate werden
   ausdrücklich nicht unterstützt.
 * Das Zertifikat ist ein für Ihre Domain *\*.iot.mycompany.com* herausgegebenes Wildcard-Zertifikat. Die Verwendung eines Wildcard-Zertifikats
-  ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren {{< enterprise-tenant >}} erstellt werden.
+  ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren {{< enterprise-tenant-de >}} erstellt werden.
 * Jedes einzelne Zertifikat in der Kette wird im X509-Format bereitgestellt.
 * Der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) enthält den Wert Ihres
   Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
@@ -287,13 +287,13 @@ Aus folgenden Gründen raten wir dringend von der Verwendung alternativer DNS-Ko
 Sobald die DNS-Konfiguration vorliegt und ein Zertifikat gemäß den entsprechenden Anforderungen verfügbar ist, kann dieses problemlos
 an die Plattform hochgeladen werden.
 
-<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
 
 Anschließend können Sie die Domain durch einen einzigen Mausklick aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
-über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
-Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
-.iot.mycompany.com" ist, lautet die Domain des {{< management-tenant >}} "management.iot.mycompany.com".
+über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant-de >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
+Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant-de >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
+.iot.mycompany.com" ist, lautet die Domain des {{< management-tenant-de >}} "management.iot.mycompany.com".
 
 {{< c8y-admon-info >}}
 Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.

@@ -81,15 +81,15 @@ In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen
 
 Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 **Parameter**
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm send SMS](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-sendsms.png)
+![On alarm send SMS](/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
 
 <table>
 <thead>
@@ -125,7 +125,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -137,11 +137,11 @@ Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht meh
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important >}}
 Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.
 {{< /c8y-admon-important >}}
 
@@ -160,7 +160,7 @@ Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" ge
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm send email](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-sendemail.png)
+![On alarm send email](/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
 
 <table>
 <thead>
@@ -196,7 +196,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -204,9 +204,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Sehen Sie in Ihr Spam-Verzeichnis.
 
@@ -217,11 +217,15 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 Sendet eine E-Mail oder SMS, wenn ein Alarm erzeugt wird.
 
+{{< c8y-admon-req >}}
+Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
+{{< /c8y-admon-req >}}
+
 **Parameter**
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm escalate](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-escalate.png)
+![On alarm escalate](/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
 
 <table>
 <thead>
@@ -257,7 +261,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -268,9 +272,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 
 <a name="alarm-severity"></a>
@@ -284,7 +288,7 @@ Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm increase severity](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-severity.png)
+![On alarm increase severity](/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
 
 <table>
 <thead>
@@ -320,7 +324,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -351,7 +355,7 @@ Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder f
 
 Die Regel verwendet die folgenden Parameter:
 
-![On geofence create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofencealarm.png)
+![On geofence create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |<table>
 <thead>
@@ -387,7 +391,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -401,9 +405,9 @@ Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstelle
 
 * Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 <a name="geofence-email"></a>
 ### Bei Geofence-Übertretung E-Mail senden
@@ -420,7 +424,7 @@ Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" ge
 
 Die Regel verwendet die folgenden Parameter:
 
-![On geofence send email](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofenceemail.png)
+![On geofence send email](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 <table>
 <thead>
@@ -456,7 +460,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -484,7 +488,7 @@ Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas- 
 
 Die Regel verwendet die folgenden Parameter:
 
-![Calculate energy consumption](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-energy.png)
+![Calculate energy consumption](/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
 
 <table>
 <thead>
@@ -520,7 +524,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -548,7 +552,7 @@ Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein A
 
 Die Regel verwendet die folgenden Parameter:
 
-![On missing measurements create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
+![On missing measurements create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
 <table>
 <thead>
@@ -584,7 +588,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -606,7 +610,7 @@ Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gese
 
 Die Regel verwendet die folgenden Parameter:
 
-![On alarm execute operation](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-operation.png)
+![On alarm execute operation](/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
 <colgroup>
@@ -642,7 +646,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -719,7 +723,7 @@ Durch diese Mechanismen können globale Schwellenwertbereiche in der Datenpunktb
 
 Die Regel verwendet die folgenden Parameter:
 
-![On measurement threshold create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
+![On measurement threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
 
 <table>
 <thead>
@@ -755,7 +759,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -773,8 +777,8 @@ Die Regel führt für jeden eingehenden Messwert folgende Schritte aus:
 
 * Die Daten für den roten und gelben Bereich stammen aus:
 
-- der Datenpunktbibliothek (Kontrollparameter).
-- dem Quellobjekt (Messwert). Werden Bereiche aus der Datenpunkt-Außerkraftsetzung des Quellobjekts gefunden, so werden sie zusammengeführt.
+    * der Datenpunktbibliothek (Kontrollparameter).
+    * dem Quellobjekt (Messwert). Werden Bereiche aus der Datenpunkt-Außerkraftsetzung des Quellobjekts gefunden, so werden sie zusammengeführt.
 
 Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
@@ -782,28 +786,26 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte aus der Datenpunktbibliothek. Sie können auch lediglich einen einzelnen Wert überschreiben (z. B. gelber Bereich max), indem Sie diesen im Quellobjekt setzen. Die anderen Werte werden dann aus der Datenpunktbibliothek übernommen.
 {{< /c8y-admon-info >}}
 
-* Eingehende Werte innerhalb des roten Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads KRITISCH des jeweiligen Typs für das Objekt vorliegt, KRITISCHEN Alarm erzeugen; andernfalls nichts tun.
+* Eingehende Werte innerhalb des roten Bereichs: Wenn kein aktiver Alarm des Schweregrads KRITISCH des jeweiligen Typs für das Objekt vorliegt, KRITISCHEN Alarm erzeugen; andernfalls nichts tun.
 
-* Eingehende Werte innerhalb des gelben Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
+* Eingehende Werte innerhalb des gelben Bereichs: Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
 
-* Messwert außerhalb des gelben und roten Bereichs: <br> Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
+* Messwert außerhalb des gelben und roten Bereichs: Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
 
 **Fehlerbehebung**
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
 {{< c8y-admon-info >}}
-Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
-{{< /c8y-admon-info >}}
+* Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
-{{< c8y-admon-info >}}
-Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
+* Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 {{< /c8y-admon-info >}}
 
 <a name="threshold-explicit"></a>
@@ -827,7 +829,7 @@ Die Regel ist ähnlich wie die Regel "Bei Schwellenwertüberschreitung Alarm erz
 
 Die Regel verwendet die folgenden Parameter:
 
-![On measurement explicit threshold create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
+![On measurement explicit threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 <table>
 <thead>
@@ -863,7 +865,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
 </td>
 </tr>
 </tbody>
@@ -873,18 +875,16 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/users-guide/device-management#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Alarmregeln](/users-guide/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
 {{< c8y-admon-info >}}
-Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
-{{< /c8y-admon-info >}}
+* Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
-{{< c8y-admon-info >}}
-​Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
+* Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 {{< /c8y-admon-info >}}
 
 <a name="smart-rule-variables"></a>
@@ -1085,6 +1085,6 @@ Hier lassen sich beispielsweise die folgenden Variablen definieren:
   </tr>  
 </table>
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important >}}
 Wenn die Variable nicht existiert oder falsch geschrieben wurde, erfolgt keine Ersetzung.
 {{< /c8y-admon-important >}}

@@ -6,7 +6,7 @@ layout: redirect
 
 Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Widgets sind nützlich zum Verfolgen von Informationen, etwa bei Alarmen, Assets oder Anwendungen, oder zum Bereitstellen von Karten, Quick Links und anderem in Dashboards oder Berichten.
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen von Widgets innerhalb von Dashboards: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
@@ -27,20 +27,20 @@ Einige Widgets erfordern zusätzliche Berechtigungen zum Visualisieren der in ih
 
 2. Wählen Sie im Dialog **Widget hinzufügen** einen Widget-Typ.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-widget-add.png" name="Add widget">
+<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
 
 3. Konfigurieren Sie als Nächstes das Widget. Je nach gewähltem Widget-Typ können unter **Konfiguration** verschiedene Parameter festgelegt werden. Nähere Informationen zu den einzelnen Widget-Typen finden Sie unter [Widgets-Sammlung](#widgets-collection).
 
 4. Auf der Registerkarte **Design** können Sie den Stil für den Inhalt und die Kopfzeile des Widgets individuell anpassen. Dies erfolgt in gleicher Weise wie das Festlegen eines [Dashboard](#creating-dashboards)-Layouts.
 
-        <img src="/images/benutzerhandbuch/cockpit/cockpit-widget-appearance.png" name="Add widget">
+        <img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
 
         {{< c8y-admon-info >}}
 
     Die Kopfzeilenstile "Standard" und "Rand" können für alle Widgets verwendet werden, während "Overlay" und "Hidden" die Kopfzeile entfernen und nur für Widgets verwendet werden sollten, die von einer Vollbildanzeige profitieren, z. B. "Image" oder "Map". Für andere Widgets, wie "Alarmliste" oder "Datenpunkttabelle", sollten diese Kopfzeilenstile nicht verwendet werden.
     {{< /c8y-admon-info >}}
 
-5. Klicken Sie auf **Speichern**, um das Widget zum Dashboard oder Bericht hinzuzufügen.
+5.  Klicken Sie auf **Speichern**, um das Widget zum Dashboard oder Bericht hinzuzufügen.
 
 <a name="modifying-widgets"></a>
 
@@ -48,19 +48,19 @@ Einige Widgets erfordern zusätzliche Berechtigungen zum Visualisieren der in ih
 
 Sie können die Anordnung von Widgets in einem Dashboard oder Bericht ändern. Durch Ziehen mit dem Mauszeiger können Sie ein Widget im Dashboard bewegen und an einer anderen Position ablegen.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
 
 Durch Ziehen der Pfeile in der unteren rechten Ecke des Widgets können Sie seine Größe verändern.
 
 Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü **Bearbeiten**, um die Eigenschaften eines Widgets zu bearbeiten.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
 
 Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü **Löschen**, um ein Widget aus einem Dashboard oder Bericht zu entfernen.
 
 Sie können Widgets nur bearbeiten, wenn das Dashboard bzw. der Bericht entsperrt ist. Verwenden Sie zum Sperren bzw. Entsperren den Umschalter mit dem Schloss-Symbol in der oberen Menüleiste.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 
 {{< c8y-admon-info >}}
 Auf Touch-Geräten wie Smartphones oder Tablets werden einige Funktionen nicht unterstützt.
@@ -86,13 +86,12 @@ Allgemeine Anweisungen zum Hinzufügen oder Ändern von Widgets finden Sie unter
 
 Wenn das Asset eine Gruppe oder ein Gerät mit Kindern ist, werden neben seinem Namen ein Ordnersymbol sowie ein Pfeil nach rechts angezeigt. Klicken Sie in der Liste auf die gewünschten Gruppe oder das gewünschte Gerät mit Kindern, um eine neue Ebene zu öffnen, auf der alle der Gruppe oder dem Gerät zugewiesenen Assets angezeigt werden. Wählen Sie das gewünschte Asset aus. Um zur vorherigen Ebene zurückzukehren, klicken Sie auf den Pfeil nach links.
 
-![Select assets](/images/benutzerhandbuch/cockpit/cockpit-asset-selection.png)
+![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
 
 Wenn Sie ein nicht zugewiesenes Gerät als Asset auswählen möchten, finden Sie die nicht zugewiesenen Geräte im Ordner **Nicht zugewiesene Geräte** auf der ersten Ebene der ausgewählten Gruppe.
 
 {{< c8y-admon-info >}}
 Sie können nicht den Ordner **Nicht zugewiesene Geräte** selbst auswählen. Jedes Gerät innerhalb dieses Ordners kann jedoch auf der nächsten Ebene ausgewählt werden. Klicken Sie auf **Nicht zugewiesene Geräte**, um die nächste Ebene mit allen nicht zugewiesenen Geräten zu öffnen. Klicken Sie auf das gewünschte Gerät, um es auszuwählen.
-
 {{< /c8y-admon-info >}}
 
 
@@ -111,25 +110,21 @@ Auf der Registerkarte **Konfiguration** des Widget-Editors können Sie das Vollt
 
 Über das Volltextsuche-Feld können Sie Assets in der gesamten Hierarchie finden, doch dies erfordert exakte Übereinstimmungen, z. B. den gesamten Namen eines Assets.
 
-![Full text search](/images/benutzerhandbuch/cockpit/cockpit-asset-global-search.png)
+![Full text search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
 
 Nachdem Sie das Asset ausgewählt haben, sehen Sie alle Kinder dieses Assets. Um zur übergeordneten Ebene zurückzukehren, klicken Sie auf das "X" im Suchfeld.
 
-
 {{< c8y-admon-info >}}
-
 Die Volltextsuche ist nur im Start-Dashboard und in den Bericht-Dashboards verfügbar.
-
 {{< /c8y-admon-info >}}
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/users-guide/getting-started/#searching-and-filtering).
 
 <a name="column-filter-asset"></a>
 ##### Filtern
 
 Filtern ist eine weitere Methode zum Auffinden von Assets. Dabei werden jedoch nur Assets auf der aktuellen Ebene unter **Asset-Auswahl** gefiltert.
 
-![Filtering](/images/benutzerhandbuch/cockpit/cockpit-asset-column-filter.png)
+![Filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
 
-Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
-
+Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/users-guide/getting-started/#searching-and-filtering).

@@ -8,7 +8,7 @@ Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators, um alle mi
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
+![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
 <a name="device-list"></a>
 
@@ -78,7 +78,7 @@ Die Spalten der Geräteliste können nach Bedarf angepasst werden.
 #### So blenden Sie Spalten ein/aus
 
 1. Klicken Sie in der Tabellenkopfzeile auf **Spalten konfigurieren**.
-2. Aktivieren/deaktivieren Sie in der darauf folgenden Auswahlliste die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-configure-columns.png)
+2. Aktivieren/deaktivieren Sie in der darauf folgenden Auswahlliste die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
    <br>
 
 Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalten.
@@ -88,7 +88,7 @@ Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalte
 Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zusätzliche Geräteattribute angezeigt werden.
 
 1. Klicken Sie in der Auswahlliste **Spalten konfigurieren** auf **Eigene Spalte hinzufügen**.<br>
-   ![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+   ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. Geben Sie im Feld **Kopfzeile** eine Kopfzeile für die neue benutzerdefinierte Spalte ein.
 3. Geben Sie im Feld **Fragmentpfad** das anzuzeigende Attribut des Geräts ein. Verschachtelte Attribute sind zulässig. Für verschachtelte Attribute können jedoch nur {{< product-c8y-iot >}}-Standardfragmente wie `c8y_Mobile.mcc` ausgewählt werden.
 4. Stellen Sie den Umschalter **Diese Spalte speichern, um eine weitere hinzuzufügen** auf aktiv, um direkt nach dem Speichern der aktuellen benutzerdefinierten Spalte eine weitere zu erstellen, ohne den Dialog zu verlassen.
@@ -104,22 +104,23 @@ Während Standardspalten lediglich nach Bedarf ein- oder ausgeblendet werden kö
 
 1. Bewegen Sie den Mauszeiger über die Zeile des zu löschenden Geräts.
 2. Klicken Sie auf das Löschen-Symbol rechts neben der Zeile.
+3. Bestätigen Sie das Entfernen des Geräts. Wählen Sie optional, ob Kindgeräte des Geräts oder der zugehörige Gerätebesitzer gelöscht werden sollen. Beachten Sie, dass nicht beide Optionen gewählt werden können.
 
 Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important >}}
 Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 {{< /c8y-admon-important >}}
 
 <a name="filtering-devices"></a>
 
-### Filtern von Geräten
+### So filtern Sie Geräte
 
 Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestimmten Kriterien zu Filtern.
 
 Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten.
 
-![Device filtering](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-filter.png)
+![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
 Legen Sie in der Auswahlliste Ihre Filteroptionen fest.
 

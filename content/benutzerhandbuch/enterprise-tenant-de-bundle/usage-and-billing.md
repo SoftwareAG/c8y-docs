@@ -1,6 +1,6 @@
 ---
 aliases:
-- /benutzerhandbuch/enterprise-edition-de/#usage-and-billing
+- /users-guide/enterprise-edition/#usage-and-billing
 layout: redirect
 title: Nutzungsstatistiken und Abrechnung
 weight: 70
@@ -11,7 +11,7 @@ weight: 70
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
-![Subtenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics.png)
+![Subtenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics.png)
 
 Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im Screenshot oben aus Platzgründen nicht vollständig zu sehen):
 
@@ -121,7 +121,7 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 </tr>
 <tr>
 <td align="left">Übergeordneter Mandant</td>
-<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den {{< management-tenant-de >}})</td>
+<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den {{< management-tenant >}})</td>
 </tr>
 <tr>
 <td align="left">Externe Referenz</td>
@@ -132,7 +132,7 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/users-guide/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Die Seite **Nutzungsstatistiken** zeigt die Zahlen für alle Untermandanten in diesem Zeitraum an.
 
@@ -140,9 +140,9 @@ Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum fil
 Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt, aber die Zahlen stehen auf "0".
 {{< /c8y-admon-info >}}
 
-Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
+Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important >}}
 Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
 {{< /c8y-admon-important >}}
 
@@ -151,6 +151,7 @@ Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher 
 
 1. Klicken Sie auf CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
 2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
+<br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Klicken Sie auf **Herunterladen**, um den Export zu starten.
 
 Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
@@ -159,16 +160,16 @@ Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
 <a name="microservice-usage"></a>
 ### Microservice-Nutzung
 
-Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können {{< enterprise-tenant-de >}}s und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
+Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können {{< enterprise-tenant >}}s und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
 
 
 #### Abrechnungsmodi
 
 {{< product-c8y-iot >}} bietet zwei Abrechnungsmodi:
 
-* **Abonnementbasierte Abrechnung**: Berechnet einen Festpreis, wenn ein Mandant einen Microservice abonniert hat, während die Ressourcennutzung dem Eigentümer zugewiesen wird.
+* **Abonnementbasierte Abrechnung** - berechnet einen Festpreis, wenn ein Mandant einen Microservice abonniert hat, während die Ressourcennutzung dem Eigentümer zugewiesen wird.
 
-* **Ressourcenbasierte Abrechnung**: Legt die Menge der von einem Microservice genutzten Ressourcen offen, um die Gebühr zu berechnen.
+* **Ressourcenbasierte Abrechnung** - legt die Menge der von einem Microservice genutzten Ressourcen offen, um die Gebühr zu berechnen.
 
 Die Abrechnungsmodi werden pro Microservice im [Microservice-Manifest](/microservice-sdk/concept/#manifest) angegeben und im Feld "billingMode" festgelegt.
 
@@ -187,7 +188,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant-de >}} eines {{< management-tenant-de >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant >}} eines {{< management-tenant >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 
@@ -228,9 +229,9 @@ Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache
 
 Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungsstatistiken** aufgeführt.
 
-![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
+![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 
@@ -238,17 +239,19 @@ Die automatische Skalierung überwacht Ihre Microservices und passt automatisch 
 
 Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AUTO gesetzt ist und der über die notwendigen CPU-Nutzungspunkte zum Starten einer neuen Microservice-Instanz für drei Stunden verfügt, wird Folgendes abgerechnet: (24/24 + 3/24) * verbrauchte Ressourcen.
 
-24/24 - eine Instanz den ganzen Tag aktiv<br>
- 3/24 - zweite Instanz nur drei Stunden aktiv
+* 24/24 - eine Instanz den ganzen Tag aktiv
+* 3/24 - zweite Instanz nur drei Stunden aktiv
 
 Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag vorgenommen wird.
 
-Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in der {{< openapi >}}.
+![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
+
+Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in der {{< openapi >}}.
 
 
 ### Handhabung von Zeitzonen
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important >}}
 Die Server der {{< product-c8y-iot >}}-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
 {{< /c8y-admon-important >}}
 
@@ -352,7 +355,9 @@ Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt 
   * Nicht bereit - Der Microservice-Container ist noch nicht bereit, eingehenden Datenverkehr zu verarbeiten, aber die Anwendung läuft bereits.
   * Bereit - Der Microservice-Container ist bereit, eingehenden Datenverkehr zu verarbeiten. Der Status wird ausgehend von Liveness- und Readiness-Proben, die im [Microservice-Manifest](/microservice-sdk/concept/#manifest) definiert sind, auf "Bereit" gestellt. Wenn keine Proben definiert wurden, ist der Microservice direkt bereit.
 
-Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
+Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/users-guide/administration/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
+
+  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
 Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer Anwendung in den Anwendungsdetails anzuzeigen. Auf der Registerkarte **Status** werden im Abschnitt **Ereignisse** sehr niedrigstufige Phasen des Anwendungsstarts angezeigt. Einige der wichtigsten sind:
 
@@ -365,7 +370,7 @@ Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer A
 Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
 {{< /c8y-admon-info >}}
 
-  <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
+  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 
 Audit-Logs und Ereignisse werden entsprechend der Isolationsstufe im Mandantenbereich gespeichert. Bei Microservices mit Isolation mehrerer Mandanten handelt es sich dabei um den Mandanten, der der Eigentümer des Microservice ist, und bei Isolation nach Mandant um den abonnierten Mandanten.
 
@@ -569,7 +574,7 @@ Die folgende Tabelle führt auf, welche Werte in welchem Modell zur Gebührenabr
 <td style="text-align:left">x</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API">DeviceStatistics</a></td>
+<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API">DeviceStatistics</a></td>
 <td style="text-align:left">Monatliche Messwerte, Ereignisse und Alarme, pro Gerät erstellt und aktualisiert.</td>
 <td style="text-align:left"></td>
 <td style="text-align:left">x</td>

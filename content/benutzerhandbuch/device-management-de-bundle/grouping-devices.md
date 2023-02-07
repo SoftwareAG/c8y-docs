@@ -16,21 +16,21 @@ Sie können Geräte nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in
 
 Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat anzuzeigen.
 
-![Groups list](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
+![Groups list](/images/users-guide/DeviceManagement/devmgmt-groups.png)
 
-Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/benutzerhandbuch/device-management-de/#configuring-columns).
+Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/users-guide/device-management/#configuring-columns).
 
 Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol, siehe Screenshot unten. Filterung ist jedoch nicht für die Hauptgruppenspalte verfügbar. Die Filteroption ist nur in der Untergruppenspalte verfügbar.
 
- ![Filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-filter.png)
+ ![Filter](/images/users-guide/DeviceManagement/devmgmt-group-filter.png)
 
-Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de/#filtering-devices).
+Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/users-guide/device-management/#filtering-devices).
 
 Beachten Sie, dass diese Funktion nur einen temporären Filter erzeugt. Für permanente Filter können Sie die Funktion [Dynamische Gruppe](#smart-groups) verwenden.  
 
 Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 
-![Subassets](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-details.png)
+![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
 
 <a name="subassets-tab"></a>
 **Seite "Kind-Assets"**
@@ -63,7 +63,7 @@ Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigiere
 1. Wählen Sie im Navigator eine Gruppe aus.
 2. Auf der Seite **Kind-Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten.
 
-Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Abschnitt "Administration".
+Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions) im Abschnitt "Administration".
 
 ### So löschen Sie eine Gruppe
 
@@ -87,7 +87,7 @@ Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
-![Assign devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assign.png)
+![Assign devices](/images/users-guide/DeviceManagement/devmgmt-group-assign.png)
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
 
@@ -97,7 +97,7 @@ Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf d
 2. Scrollen Sie in der Registerkarte **Info** zur Karte **Gruppenzuweisung**. Wählen Sie im Auswahlfeld die Gruppe aus, der Sie das Gerät zuweisen möchten. Sie können hier auch direkt einen Gruppennamen eingeben oder nur Teile eines Namens eingeben, um die Liste danach zu filtern und nur die passenden Gruppennamen anzuzeigen.
 3. Klicken Sie auf **Zuweisen**.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
+<img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
 
 <br>
 
@@ -160,23 +160,23 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 #### So erstellen Sie eine dynamische Gruppe
 
 1. Klicken Sie auf **Alle Geräte** im Navigator, um die Geräteliste anzuzeigen.
-2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > Filtern von Geräten](#filtering-devices).
+2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > So filtern Sie Geräte](#filtering-devices).
 3. Klicken Sie auf **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie auf **Erstellen**.
 
 Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.
 
-![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-smartgroups-icon.png)
+![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-smartgroups-icon.png)
 
 Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die Filterkriterien, die beim Erstellen der dynamischen Gruppe angewendet wurden. Sie können die Filtereinstellungen hier ändern und Ihre Auswahl anpassen.
 
-![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 
 #### So löschen Sie eine dynamische Gruppe
 
 Bewegen Sie den Mauszeiger über den Eintrag, den Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important >}}
 Das Löschen einer dynamischen Gruppe ist irreversibel.
 {{< /c8y-admon-important >}}

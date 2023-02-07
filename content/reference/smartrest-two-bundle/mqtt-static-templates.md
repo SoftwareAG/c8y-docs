@@ -96,7 +96,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#526">526,serial,configType</a>
 + <a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a>
 + <a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a>
-+ <a href="#589">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a>
++ <a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
 
 </td>
@@ -949,7 +949,7 @@ Install the firmware from the url.
 **Example**
 
 ```text
-515,DeviceSerial,myFimrware,1.0,http://www.my.url
+515,DeviceSerial,myFirmware,1.0,http://www.my.url
 ```
 
 <a name="516"></a>

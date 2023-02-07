@@ -201,9 +201,7 @@ Bewegen Sie den Mauszeiger über die unter **Abonnierte Anwendungen** auf der li
 
 #### Überwachen von Microservices
 
-Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
-
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-applications-status.png" alt="Application details">
+Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt.
 
 Der Microservice kann sich in einem der folgenden Status befinden:
 

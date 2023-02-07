@@ -22,7 +22,7 @@ helpcontent:
 
 ### Device registration
 
-In the **Device registration** page all devices which currently are in the registration process are displayed either in a list or in a grid.
+In the **Device registration** page all devices which are currently in the registration process are displayed.
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
@@ -50,14 +50,14 @@ Devices can be connected to your {{< product-c8y-iot >}} account in different wa
 
 To register devices, you can select one of the following options:
 
-* **[Single device registration](#device-registration-manually)** - to manually connect one or more devices.
+* **[Single device registration](#device-registration-manually)** - to manually connect one device or several devices one by one.
 * **[Bulk device registration](#bulk-registration)** - to register larger amounts of devices in one step.
 
-If you are subscribed to the required applications you will see other options for registering devices of specific types (for example, Actility LoRa or Sigfox). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview).
-
-<img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
-
 Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
+
+{{< c8y-admon-info >}}
+The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview/). It also contains descriptions for the protocol specific registration processes.
+{{< /c8y-admon-info >}}
 
 <a name="device-registration-manually"></a>
 #### Single device registration

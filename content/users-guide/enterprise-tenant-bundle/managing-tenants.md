@@ -234,7 +234,7 @@ The following information is provided:
 * Restarts - the number of microservice instance restarts. 
 
 {{< c8y-admon-info >}}
-Information about microservice instance name and number of restarts is displayed in case of at least one restart occurance.
+Information on the microservice instance name and the number of restarts is displayed in case of at least one restart.
 {{< /c8y-admon-info >}}
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).

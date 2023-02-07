@@ -72,7 +72,7 @@ layout: redirect
 #### Duration
 #### Extract Property
 #### Geofence
-#### Mising Data
+#### Missing Data
 #### Set Properties
 #### Text Substitution
 #### Toggle

@@ -567,7 +567,7 @@ Create a measurement with a given fragment and series.
 ```
 
 <a name="201"></a>
-##### Create custom measurement with multiple fragments and series (201)
+##### Create a custom measurement with multiple fragments and series (201)
 
 Create a measurement with multiple fragments and series.
 

@@ -231,7 +231,11 @@ The following information is provided:
 * Unhealthy - the number of inactive microservice instances
 * Desired - the number of desired microservice instances
 * Name - microservice instance name
-* Restarts - the number of microservice instance restarts. _Note: information shown only if at least one restart occured._
+* Restarts - the number of microservice instance restarts. 
+
+{{< c8y-admon-info >}}
+Information about microservice instance name and number of restarts is displayed in case of at least one restart occurance.
+{{< /c8y-admon-info >}}
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 

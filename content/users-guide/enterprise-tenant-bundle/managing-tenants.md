@@ -231,7 +231,7 @@ The following information is provided:
 * Unhealthy - the number of inactive microservice instances
 * Desired - the number of desired microservice instances
 * Name - microservice instance name
-* Restarts - the number of microservice instance restarts. _Note: information shown only if at least one restart occured._
+* Restarts - the number of microservice instance restarts. Note that this information is only shown if at least one restart occurred.
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 

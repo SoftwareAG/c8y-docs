@@ -39,7 +39,7 @@ If you want an owner to manage only their sub-users, make sure that the owner do
 
 **Example**
 
-A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. While trying to assign any other role except "business" for user B will be shown an exclamation icon for that role with a notification, that only the global role defined for the owner can be defined for owned user.
+A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon with a notification that this operation is not permitted.
 
 <a name="delegate"></a>
 ### Delegating user hierarchies to other users

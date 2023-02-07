@@ -32,7 +32,7 @@ Some instances do not have all of the listed operations.
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation without parameters, click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
-More information can be acquired for each resource by hovering over the tooltip icon present on the right of field name.
+More information can be acquired for each resource by hovering over the tooltip icon present on the right of the field name.
 
 Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there are two.
 

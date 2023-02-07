@@ -21,7 +21,7 @@ To add a new LWM2M device protocol follow these steps:
 If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior.
 5. In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. 
 
-The device protocol will open in a new page. In this page, you will see the description at the top left and the ID, the creation date and the date of the last update at the top right.
+The device protocol opens in a new page. You can the description at the top left while the ID, the creation date and the date of the last update are at the top right.
 
 Below that, there is a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
@@ -32,7 +32,7 @@ LWM2M protocol resources cannot be edited.
 <a name="resources"></a>
 ### Adding additional functionalities to a resource
 
-To access resource functionalities you need to proceed to the device protocol page and click on one of the resources instances. See below for the functionalities that you may enable:
+To access resource functionalities proceed to the device protocol page and click one of the resource instances. See below for the functionalities that you may enable:
 
 #### Send measurement
 
@@ -68,7 +68,7 @@ Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using 
 
 There are several predefined custom actions which can be selected to apply actions to the relevant resources.
 
-Actions that are relevant for device object (object id /3):
+Actions that are relevant for a device object (object ID /3):
 - device:updateManufacturer
   - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
 - device:updateModelNumber
@@ -78,7 +78,7 @@ Actions that are relevant for device object (object id /3):
 - device:updateFirmwareVersion
   - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;revision&rdquo; property.
 
-Actions that are relevant for connectivity monitoring (object id /4):
+Actions that are relevant for connectivity monitoring (object ID /4):
 - connectivity:updateCellId
   - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;cellId&rdquo; property.
 - connectiviy:updateSmnc

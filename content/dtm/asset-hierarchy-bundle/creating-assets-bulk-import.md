@@ -9,9 +9,9 @@ For each [asset model](/dtm/asset-types/#asset-types), a CSV template is provide
 Fill in the required details in this template and upload the file to create the assets in bulk for the selected asset model.
 
 <a name=""></a>
-### To create a role to use the bulk import feature
+### Pre-requisites to use the bulk import feature
 
-To use the Bulk import feature, you must provide permission for **Digital Twin** role, following these steps:
+To use the Bulk import feature, you must enable **Digital Twin** permission for the user's role, following these steps:
 
 1. Navigate to the [Administration application](/users-guide/administration/#overview) via the application switcher in the top right corner.
 
@@ -19,11 +19,11 @@ To use the Bulk import feature, you must provide permission for **Digital Twin**
 
 3. In the **Global roles** tab, select the role to which permissions are to be provided.
 
-4. Set all available permissions for **Digital Twin** in the "Permissions" section.
+4. Set "Admin" permission level for **Digital Twin** in the "Permissions" section.
 
 5. Enable access to the DTM application by selecting the following checkboxes:
 
-	* Under **Application access**, select "Digital Twin".
+	* Under **Application access**, select "Dtm-ms".
 
 	* Under **Custom applications**, select "Digital Twin Manager".
 
@@ -45,11 +45,7 @@ Follow the steps below:
 
 1. Navigate to the **Assets** page and click **Import assets**.
 
-2. The **Import assets** dialog has a dropdown **Choose asset model**.
-
-	* If no asset models are created yet, only the asset model "Group" is listed in the dropdown.
-
-	* If you have added the asset models, all the root asset models are listed in the dropdown.
+2. The **Import assets** dialog has a dropdown **Choose asset model**. If you have added the asset models, all the root asset models are listed in the dropdown.
 
 3. Select the asset model for which you want to create the asset hierarchy.
 
@@ -96,7 +92,7 @@ The CSV template has the following fields:
 <td style="text-align:left"><b>Path</b></td>
 <td style="text-align:left">Remains blank when you create a root asset. For a child asset, provide a path up to the root asset.<br><br>
 <b>Example:</b><br>
-For an asset called "Room 1" in the hierarchy "Building > Floor > Room" the path value is "Building 1/Floor 1", where "Building 1" and "Floor 1" represent the respective asset models.</td>
+For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > Blade" the path value is "SE-Turbine-101/SE-T101-Rotor", where "SE-Turbine-101" and "SE-T101-Rotor" represent the respective asset models.</td>
 <td style="text-align:left">Mandatory (for child assets)</td>
 </tr>
 <tr>
@@ -112,8 +108,9 @@ For an asset called "Room 1" in the hierarchy "Building > Floor > Room" the path
 <tr>
 <td style="text-align:left"><b>Asset properties for the asset model</b></td>
 <td style="text-align:left">6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br><br>
-<b>Info:</b><br>The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br>
-During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
+{{< c8y-admon-info>}}
+The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br>
+{{< /c8y-admon-info>}}
 </td>
 <td style="text-align:left">Mandatory</td>
 </tr>
@@ -123,14 +120,17 @@ During the bulk import, the file size validation is skipped as the file is alrea
 ![bulk-import-template](/images/dtm/bulk-import/dtm-bulk-import-template.png)
 
 {{< c8y-admon-info>}}
-Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents an auto-correct of the date on input.
+Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents auto-correction of the date on input.
 {{< /c8y-admon-info>}}
 
-To provide a file input as a asset property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
+To provide a file input as an asset property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
 
 Refer to the [Binaries API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
 
 The binary ID in the API response must be provided as input for the asset property field with type "file" in the CSV template.
+{{< c8y-admon-info>}}
+During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
+{{< /c8y-admon-info>}}
 
 If the type is "Boolean", the input field must be either "true" or "false".
 If the type is "enumeration", then the input field must be in the list of values specified during creation of the asset property.
@@ -153,7 +153,7 @@ To upload the CSV template follow the steps below:
 
 2. Select the asset model in the **Import assets** dialog.
 
-3. Upload the previously filled and saved CSV template in the **Drop file here** section.
+3. Upload the previously filled and saved CSV template in the **Drop file here** section and click **Import**.
 
 4. If all the inputs are provided correctly, the bulk import is successful, resulting in a success notification. The asset hierarchy and its assets are created successfully.
 
@@ -174,7 +174,7 @@ If the asset hierarchy already exists, and you want to import more assets, it ca
 
 To import a single child asset or the child asset hierarchy:
 
-1. Navigate to the child asset page and download the template using **Import assets**.
+1. Navigate to the **Asset tree** page of the child asset and download the template using **Import assets**.
 
 2. Fill in the details for the child asset hierarchy in the CSV template. See [CSV template parameters](#csv-template-parameters) for more details.
 
@@ -187,9 +187,9 @@ Assets must only be imported for the child hierarchy.
 
 4. Click **Import assets**.
 
-5. Upload the CSV template in the **Drop file here** section in the **Import assets** dialog.
+5. Upload the CSV template in the **Drop file here** section in the **Import assets** dialog and click **Import**.
 
 If all details are mentioned correctly in the CSV template, the child asset hierarchy is created successfully.
 
 An unsuccessful partial import will result in a **Failed asset imports** notification, showing the validation issues.
-Review the reported issuels and try again.
+Review the reported issues and try again.

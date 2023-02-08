@@ -19,13 +19,13 @@ Use the command shown below to start a multi-step process of creating a sample p
 c8ycli new
 ```
 
-Select the plugin name, for example, "widget-plugin":
+Select the plugin name, for example, `widget-plugin`:
 
 ```js
 ? Enter the name of the project:  (my-application) widget-plugin
 ```
 
-Select the version for which you want to create a sample application, for example, "1013.72.0 (next)":
+Select the version for which you want to create a sample application, for example, `1013.72.0 (next)`:
 
 ```console
 ? Which base version do you want to scaffold from? (Use arrow keys)
@@ -38,7 +38,7 @@ Select the version for which you want to create a sample application, for exampl
   other
 ```
 
-Select an application template as the basis for your plugin, for example, "widget-plugin":
+Select an application template as the basis for your plugin, in our case, `widget-plugin`:
 
 ```console
 ? Which base project do you want to scaffold from?
@@ -60,20 +60,20 @@ Application created. Go into the folder "widget-plugin" and run npm install
 Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are *package.json* and `README.md`.
+For this tutorial, the most important files are `package.json` and `README.md`.
 
 ```console
-app.module.spec.ts;
-jest.config.js;
-README.md;
-tsconfig.spec.json;
-app.module.ts;
-package.json;
-setup-jest.js;
-widget/;
-index.ts;
-polyfills.ts;
-tsconfig.json;
+app.module.spec.ts
+jest.config.js
+README.md
+tsconfig.spec.json
+app.module.ts
+package.json
+setup-jest.js
+widget/
+index.ts
+polyfills.ts
+tsconfig.json
 ```
 
 You have now created your first plugin that uses the micro frontend architecture.
@@ -82,12 +82,12 @@ You have now created your first plugin that uses the micro frontend architecture
 
 There are a couple of differences between a simple widget and one that is built according to the micro frontends architecture.
 
-The biggest difference is the *package.json* file, where fields such as `isPackage`, `package` and `exports` are located.
+The biggest difference is the `package.json` file, where fields such as `isPackage`, `package` and `exports` are located.
 The following list shows the fields and what they are responsible for:
 
 - `isPackage`: Indicates if the application is a package. In case of a widget that is added using micro frontends, set the value to `true`.
 - `package`: The type of package (for example, `plugin`).
-- `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the *README.md* file):
+- `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the `README.md` file):
   - `name`: The name of the exported module (that is, "Example widget plugin").
   - `module`: The name of the Angular module class (that is, "WidgetPluginModule").
   - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: <kbd>./widget/widget-plugin.module.ts</kbd>.
@@ -121,16 +121,14 @@ Shell application: cockpit
 http://localhost:9000/apps/cockpit/index.html?remotes=%7B%22widget-plugin%22%3A%5B%22WidgetPluginModule%22%5D%7D
 ```
 
-The link redirects you to the Cockpit login screen.
-Once logged in, add the `widget-plugin` to your dashboard in the **Add widget** dialogue window shown below:
-
-![Add widget](/images/web-sdk/module-federation-widget-plugin.png)
+This link redirects you to the Cockpit login screen.
+Once logged in, go to your dashboard and click **Add widget**, then select **Module Federation widget** from the list of available widgets.
 
 For the rest of the widget editing process follow the process for regular widgets. Refresh your browser to see your changes.
 
 #### Debugging
 
-Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remote`, see example below:
+Another difference in the `package.json` file between a regular widget and a widget modified for the micro frontend architecture is the field `remotes`, see example below:
 
 ```json
 ...
@@ -143,14 +141,14 @@ Another difference in the *package.json* file between a regular widget and a wid
 ```
 
 {{< c8y-admon-info >}}
-The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the `contextPath` field in *package.json*) followed by the name of the module class.
+The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the `contextPath` field in `package.json`) followed by the name of the module class.
 {{< /c8y-admon-info >}}
 
 The plugin imports itself via a field called `remotes`.
 We recommend this as the first step in verifying the correctness of the exported module. It facilitates the application debugging.
 After importing your own modules, execute `npm start` to see if the local server starts.
 
-To check the plugin at a later stage, we recommend you to control it locally with various shell applications, using `npm start -- --shell cockpit`.
+To check the plugin at a later stage, we recommend you to test it locally with various shell applications, using `npm start -- --shell cockpit`.
 
 #### Deployment
 

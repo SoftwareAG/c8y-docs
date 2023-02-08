@@ -11,7 +11,7 @@ An asset in the DTM application can contain subassets and devices.
 You also have the opportunity to define properties or parameters of an asset through [asset properties](/dtm/asset-types/#property-library).
 
 To work with assets in the DTM application, navigate to the **Assets** page using the navigator on the left.
-When you first start using the DTM application, no assets are displayed in the **Assets** page by default, instead you see a message is displayed prompting to create the assets.
+When you first start using the DTM application, no assets are displayed in the **Assets** page by default.
 
 If you already created assets, you find them listed with its hierarchy on this page (see image below).
 
@@ -26,17 +26,14 @@ The asset hierarchy is displayed in the **Assets** page. An asset hierarchy cons
 
 **Example:**
 
-If you create the root asset "Building" with the child asset "Floor", which has the child asset "Room", then the hierarchy would be displayed as follows:
+If you create the root asset "Wind turbine" with the child asset "Rotor",which has a child asset "Blade" then the hierarchy would be as follows:
 
-Building > Floor > Room
+Wind turbine > Rotor > Blade
 
-Initially, all the asset hierarchies are collapsed and you see only the root assets listed. You also see some of the asset details like, asset model and last modified date in the list. Click the expand icon to the left of each asset to view the next level of child assets.
-
-Use **Expand all** or **Collapse all** in the top bar to expand or collapse all asset hierarchy levels. 
-
-Select the checkbox next to the desired asset to perform desired actions on multiple assets at once.
+Initially, all the asset hierarchies are collapsed and you see only the root assets listed. You also see some of the asset details like, asset model and description in the list. Click the expand icon to the left of each asset to view the next level of child assets.
 
 Click on asset name to view the asset details.
 
+Hover over the desired asset and click the delete icon to delete an asset from the **Assets** page.
 
-
+![asset-hierarchy](/images/dtm/assets/dtm-assets-asset-hierarchy.png)

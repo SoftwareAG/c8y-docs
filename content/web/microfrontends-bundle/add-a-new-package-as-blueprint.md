@@ -16,13 +16,13 @@ Blueprints are combinations of multiple UI functionalities that can be hosted by
 c8ycli new
 ```
 
-2. Select the plugin name, for example, "package-blueprint":
+2. Select the plugin name, for example, `package-blueprint`:
 
 ```js
 ? Enter the name of the project:  (my-application) package-blueprint
 ```
 
-3. Select the version for which you want to create a sample application, for example, "1015.33.0 (next)":
+3. Select the version for which you want to create a sample application, for example, `1015.33.0 (next)`:
 
 ```console
 ? Which base version do you want to scaffold from? (Use arrow keys)
@@ -35,7 +35,7 @@ c8ycli new
   other
 ```
 
-4. Select an application template as the basis for your plugin, for example, "package-blueprint":
+4. Select an application template as the basis for your plugin, in our case, `package-blueprint`:
 
 ```console
 ? Which base project do you want to scaffold from?
@@ -51,25 +51,25 @@ c8ycli new
 After a few seconds, you should see the following message:
 
 ```console
-Application created. Go into the folder "app-blueprint" and run npm install
+Application created. Go into the folder "package-blueprint" and run npm install
 ```
 
 5. Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are *package.json* and *README.md*.
+For this tutorial, the most important files are `package.json` and `README.md`.
 
 ```console
-app.module.spec.ts;
-jest.config.js;
-README.md;
-tsconfig.spec.json;
-app.module.ts;
-package.json;
-setup-jest.js;
-index.ts;
-polyfills.ts;
-tsconfig.json;
+app.module.spec.ts
+jest.config.js
+README.md
+tsconfig.spec.json
+app.module.ts
+package.json
+setup-jest.js
+index.ts
+polyfills.ts
+tsconfig.json
 ```
 
 You have now created your first package blueprint that uses Module Federation.

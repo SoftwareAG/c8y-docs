@@ -18,8 +18,8 @@ $ c8ycli new myapp
 
 It asks a few questions:
 
-- base version: select the one corresponding to the backend version on the target environment
-- base project: select `application`
+- base version: select the one corresponding to the backend version on the target environment.
+- base project: select `application`.
 
 {{< c8y-admon-info >}}
 If you want to see the possibilities and implementation details of the Web SDK you should try out the tutorial application. You can install it by running `c8ycli new <<your-app-name>> tutorial` or selecting `tutorial` as the base project in the wizard.

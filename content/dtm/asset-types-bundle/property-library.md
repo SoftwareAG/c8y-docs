@@ -14,7 +14,7 @@ helpContent:
   
   To add a new asset property, click **Add asset property**."
 ---
-Asset properties are the parameters that define an [asset model](/dtm/asset-types/#asset-types). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties**.
+Asset properties are the parameters that define an [asset model](/dtm/asset-types/#asset-types). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
 
 <a name="create-custom-property"></a>
 ### To create an asset property
@@ -49,8 +49,8 @@ Asset properties have the following parameters:
 <tr>
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset property in the DTM application.<br>
-{{< c8y-admon-info>}} You cannot edit the key field once the property is created. 
-Key is automatically generated based on the input given for label. You can edit the key during the creation of asset type.
+{{< c8y-admon-info>}}  
+Key is automatically generated based on the label. You can modify the automatically generated key to suit to your needs only during asset property creation. You cannot edit the key after the asset property is created.
 {{< /c8y-admon-info>}} </td>
 <td style="text-align:left">Mandatory</td>
 </tr>
@@ -93,7 +93,7 @@ To further define the asset property you can select one of the six following opt
 <a name="custom-text"></a>
 #### Text
 
-Select **Text** if the asset property value is a string, for example, a building name. Enter a valid text.
+Select **Text** if the asset property value is a string, for example, a wind turbine manufacturer name. Enter a valid text.
 
  If you select **Text**, the following fields appear:
 
@@ -115,7 +115,7 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 **Example:**
 
-If the asset property is "Employee ID" with the regular expression "^SAGEMPID[a-zA-Z0-9]*$", all employee IDs have to start with the prefix “SAGEMPID”.
+If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator  codes have to start with the prefix “MCGEN”.
 
 
 <a name="default-value"></a>
@@ -124,18 +124,18 @@ If the asset property is "Employee ID" with the regular expression "^SAGEMPID[a-
 Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
-The default value has to adhere to all validations provided beforehand. If you have set the **Min length**, **Max length** and/or **RegExp**, the default value must fulfill all set validations.
+The default value has to adhere to all validations provided beforehand. For a property of type text, if you have set the **Min length**, **Max length** and/or **RegExp**, the default value must fulfil all set validations.
 {{< /c8y-admon-info>}}
 
 **Example:**
 
-If the asset property is "Employee ID" with a **Min length** of 5, a **Max length** of 20 and the **RegExp** defined as "^SAG[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the default value must fulfil all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
 
 <a name="custom-number"></a>
 #### Number
 
-For this type, you must provide a numeric value for the asset creation, for example, the height of a building.
+For this type, you must provide a numeric value for the asset creation, for example, the height of a wind turbine tower.
 
 The type **Number** contains the following fields for additional information:
 
@@ -172,7 +172,7 @@ If the **Minimum** and/or **Maximum** is checked, the given **Default value** is
 
 **Example:**
 
-If the asset property is "Building height" with a **Minimum** of 80 and a **Maximum** of 150, the **Default value** must be between 80 and 150.
+If the asset property is "Tower height" with a **Minimum** of 80 and a **Maximum** of 110, the **Default value** must be between 80 and 110.
 
 
 <a name="custom-date-picker"></a>
@@ -182,7 +182,7 @@ If selected, you must select a date from the calendar displayed in the dialog wi
 
 **Example:**
 
-If "Project start date" is a property of the "Building" asset, then you must select the start date of the project when creating the asset.
+If "Installation date" is a property of the "Wind turbine" asset, then you must select the installation date of the wind turbine when creating the asset.
 
 
 <a name="custom-enumeration"></a>
@@ -196,7 +196,7 @@ During asset creation, these values appear as options in the dropdown menu. Sele
 
 **Example:**
 
-If you create an asset property for "building color" and the color must be either black, white or grey, you have to provide these options separated by a comma when creating the asset property.
+If you create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you have to provide these options separated by a comma when creating the asset property.
 
 ![Asset property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
@@ -209,7 +209,7 @@ An asset with this asset property shows a checkbox. Selecting this checkbox sets
 
 **Example:**
 
-If you create an asset property called "Whiteboard" for a building which has rooms with a whiteboard and rooms without a whiteboard, then the asset property must be created with the type "Boolean". When you create an asset for a room with a whiteboard, it is then initialized to "true". If there is no whiteboard in the room, the asset is initialized to "false".
+If you create an asset property called "Yaw system" to identify wind turbines that rotate towards the wind direction during upwind conditions, the asset property must be created with the type "Boolean". When you create an asset for a wind turbine with a yaw system present, it is then initialized to "true". If there is no yaw system present, the asset is initialized to "false".
 
 <a name="custom-file-upload"></a>
 #### File upload
@@ -228,7 +228,7 @@ During the bulk import, the file size validation is skipped as the file is alrea
 
 **Example:**
 
-To upload the blueprint for a building, you name the asset property "Building blueprint" and specify the file type of the blueprint file. Then upload the respective file. Once the asset is created, you can view this file for future reference.
+To upload the schematic diagram for a wind turbine, you name the asset property "Wind turbine schematic" and specify the file type of the schematic file. Then upload the respective file. Once the asset is created, you can view this file for future reference.
 
 
 <a name=""></a>
@@ -267,7 +267,7 @@ If the asset property you want to delete is part of an existing asset, you see a
 <a name=""></a>
 ### Types of asset properties
 
-There are two types of asset properties, both fulfill different requirements:
+There are two types of asset properties, both fulfil different requirements:
 
 <a name=""></a>
 #### Simple asset property
@@ -278,7 +278,7 @@ In the **Asset properties** simple asset properties are listed with their type.
 
  **Example:**
 
- If the asset property is called "Building color", you use the key "building_color" with the Default value being "white" (see image below).
+ If the asset property is called "Tower height", you use the key "tower_height" with the Default value of "70" (see image below).
 
  ![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
 
@@ -289,8 +289,10 @@ A complex asset property consists of multiple key value pairs, meaning, it conta
 
 In the **Asset properties** complex asset properties are listed with the label "Object".
 
- **Example:**
+You see the preview of data model on the right side of Properties section.
 
-If the asset property is called "Building dimension" with the key "Building_dimension", then building area, height and width are the multiple key value pairs defining the parameter "Building dimension". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
+ **Example:**
+ 
+If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)

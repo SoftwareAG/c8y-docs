@@ -14,8 +14,6 @@ The asset model is a blueprint or template to create one or multiple [assets](/d
 
 To reach the **Asset models** page, navigate to **Configuration > Asset models**.
 
-By default only the asset model **Group** is available.
-
 When you create an asset model, you see the details of this asset model in the **Asset models** overview.
 
 ![Asset models overview](/images/dtm/asset-type/dtm-asset-type-view.png)
@@ -30,7 +28,7 @@ In the overview you see the following four categories:
 Click **Configure columns** to configure the displayed columns.
 
 Click **Reload** to reload the screen.
-The total number of asset models is displayed on the bottom left of the page. Use the **Items per page** dropdown option to change the number of entries per page.
+The total number of asset models is displayed on the bottom left of the page.
 
 <a name="create-asset-type"></a>
 ### To create an asset model
@@ -59,8 +57,7 @@ This name is used for the asset model throughout the application.</td>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
 <td style="text-align:left">Used to uniquely identify and store the asset model in the DTM application.<br>
-{{< c8y-admon-info>}} You cannot edit the key field, once the asset model is created.
-Key is automatically generated based on the input given for label. You can edit the key during the creation of asset type.
+{{< c8y-admon-info>}} Key is automatically generated based on the label. You can modify the automatically generated key to suit to your needs only asset model creation. You cannot edit the key after the asset model is created.
 {{< /c8y-admon-info>}}</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
@@ -97,7 +94,7 @@ Once all required asset models are created, you can start creating [assets](/dtm
 #### To select an icon
 
 1. Click the select icon on the left.
-2. In the following dialog window search or filter icons by type or select an icon from the predefined list.
+2. In the following dialog window, search or filter icons by type or select an icon from the predefined list.
 3. Select the desired icon.
 4. Click **Save**.
 
@@ -119,7 +116,7 @@ If one or more child asset models are checked as required, an asset created with
 
 **Example:**
 
-If the asset model is "Building" and you select "Floor" as an allowed child asset model, then the newly created asset "SAG Building" can only have "Floor" assets as child assets.
+If the asset model is "Rotor" and you select "Blade" as an allowed child asset model, then the newly created asset "AZ-43Y Rotor" can only have "Blade" assets as child assets.
 
 
 <a name=""></a>
@@ -135,7 +132,7 @@ If the asset model is "Building" and you select "Floor" as an allowed child asse
 6. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
-If there are any validation issues with a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
+If there are any validation errors with a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
 If there is no asset property meeting your requirements when you search, click **New asset property**. For more details on how to create a new asset property see [Asset property > To create an asset property](/dtm/asset-types/#create-custom-property).

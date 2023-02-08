@@ -23,36 +23,36 @@ helpcontent:
 
 {{< c8y-admon-req >}}
 * Subscribed to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
+* User's role has READ permission level to **Application management**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*
 {{< /c8y-admon-req >}}
 
 <a name=""></a>
-### Localization feature
+### Localization
 
-The **Localization** feature is provided in the DTM application. To use this feature, subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page by navigating to **configuration > Localization**.
+To use this feature, subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page by navigating to **Configuration > Localization**.
 
-Additionally, if you want to add translations for the [asset property](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
+If you want to add translations for the [asset properties](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
 
-![Main view localization page](/images/dtm/localization/dtm-localozation-main-page.png)
+![Main view localization page](/images/dtm/localization/dtm-localization-main-page.png)
 
-Initially, the **Localization** page will show a row called **Group** as key. If necessary, add a translation for "Group" according to the explanation above.
-
-Once you create all asset properties and asset models, then all those names are added as keys in the **Localization** page. You can further add the translations as required.
+Once you create an asset property or an asset model, their names are added as keys in the **Localization** page automatically. You can further add the translations as required.
 
 To add a new translation in the DTM application, you can add the text as key and add the translations as required.
 
+Click **Apply** to apply the changes.
 
 <a name=""></a>
 ### To add new keys for translations
 
 Add new keys and their respective translations using the **Add term** option on the top right.
 
+Fill all the mandatory fields in the **Add term and translations** dialog and click **Save**. The new key is saved including the added translations.
+
+Next, click **Apply** to apply the changes.
+
 
 ![localization-add-term](/images/dtm/localization/dtm-localization-add-term.png)
 
-
-Fill all the mandatory fields in the dialog window and click **Save**. The new key is saved including the added translations.
-
-Next, click **Apply** to apply the changes.
 
 
 <a name=""></a>
@@ -67,20 +67,19 @@ Next, click **Apply** to apply the changes.
 
 or:
 
-1. Click the edit icon in each row to open the dialog window **Edit term translations**.
+1. Click the edit icon in each row to open the **Edit term translation** dialog.
 2. Add or edit the translation for any language.
 3. Click **Save**.
 
 Add or modify the translation for any language in {{< product-c8y-iot >}}.
 
-Once all your translations are done, change the language under **User settings**. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
+Click **Apply** to apply the changes.
 
-
-The added translations are now displayed in the DTM application.
-
-To change the language for the DTM application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the dropdown menu. You need to refresh your screen for the application to display the newly selected language.
+Once all your translations are done, you can change the language under **User settings** to see the translations in action. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
 
 
 {{< c8y-admon-info>}}
-The added translations for asset model and asset property will only show up in the **Assets** page. Translations are currently available for English and German.
+The added translations for an asset model or an asset property is seen only in the **Assets** page. 
+
+Translations for other static text of the DTM application are currently available for English and German.
 {{< /c8y-admon-info>}}

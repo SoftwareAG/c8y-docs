@@ -13,11 +13,16 @@ $ npm install -g @c8y/cli
 Next, bootstrap a new blank application with the `new` command:
 
 ```
-$ c8ycli new myApp
+$ c8ycli new myapp
 ```
 
+It asks a few questions:
+
+- base version: select the one corresponding to the backend version on the target environment
+- base project: select `application`
+
 {{< c8y-admon-info >}}
-When you want to see the possibilities and implementation details of the Web SDK you should try the tutorial application. You can install it by running `c8ycli new <<your-app-name>> tutorial`.
+If you want to see the possibilities and implementation details of the Web SDK you should try out the tutorial application. You can install it by running `c8ycli new <<your-app-name>> tutorial` or selecting `tutorial` as the base project in the wizard.
 {{< /c8y-admon-info >}}
 
 Once the CLI installation is completed, change to the newly created folder and run `npm install`:
@@ -33,7 +38,7 @@ After all packages are installed you can start the application by running:
 $ npm start
 ```
 
-If you point your browser to `http://localhost:9000/apps/myapp/` you will get a login screen which proxies to the tenant defined in the start script. If you cannot log in, it might be pointing to the wrong instance. To change the proxy to your tenant URL change the `start` script in the script section of the newly created package.json:
+If you point your browser to `http://localhost:9000/apps/myapp/` you will get a login screen which proxies to the tenant defined in the start script. If you cannot log in, it might be pointing to the wrong instance. To change the proxy to your tenant URL change the `start` script in the script section of the newly created `package.json`:
 
 ```json
 {

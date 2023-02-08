@@ -201,9 +201,7 @@ Bewegen Sie den Mauszeiger über die unter **Abonnierte Anwendungen** auf der li
 
 #### Überwachen von Microservices
 
-Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
-
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-applications-status.png" alt="Application details">
+Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt.
 
 Der Microservice kann sich in einem der folgenden Status befinden:
 
@@ -230,8 +228,6 @@ Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden An
 ### Benutzerdefinierte Attribute
 
 Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usage-and-billing) angezeigt.
-
-![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
 
 #### Begrenzen der Anfragerate für Untermandanten
 
@@ -275,8 +271,6 @@ Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv da
 
 Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
-
 Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
 
 {{< c8y-admon-info >}}
@@ -290,8 +284,6 @@ In einer Mandantenregel angegebene Mandantenoptionen sind **nicht verschlüsselt
 #### So zeigen Sie Mandantenregeln an
 
 Klicken Sie auf **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Mandantenregeln anzuzeigen.
-
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 

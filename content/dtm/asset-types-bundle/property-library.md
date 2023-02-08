@@ -6,7 +6,7 @@ title: Asset properties
 helpContent: 
 - label: asset-properties
   title: Asset Properties
-  content: "Asset properties are the parameters that define an asset model. One or more asset properties are used to define an asset models.
+  content: "Asset properties are the parameters that define an asset model. One or more asset properties are used to define an asset model.
 
   
   Asset properties can be reused in multiple asset models. You can build your asset property library by adding asset properties which can be used to define any asset model.

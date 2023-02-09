@@ -19,13 +19,13 @@ Use the command shown below to start a multi-step process of creating a sample p
 c8ycli new
 ```
 
-Select the plugin name, for example, `widget-plugin`:
+Select the plugin name, for example, "widget-plugin":
 
 ```js
 ? Enter the name of the project:  (my-application) widget-plugin
 ```
 
-Select the version for which you want to create a sample application, for example, `1013.72.0 (next)`:
+Select the version for which you want to create a sample application, for example, "1013.72.0 (next)":
 
 ```console
 ? Which base version do you want to scaffold from? (Use arrow keys)
@@ -38,7 +38,7 @@ Select the version for which you want to create a sample application, for exampl
   other
 ```
 
-Select an application template as the basis for your plugin, in our case, `widget-plugin`:
+Select an application template as the basis for your plugin, in our case, "widget-plugin":
 
 ```console
 ? Which base project do you want to scaffold from?

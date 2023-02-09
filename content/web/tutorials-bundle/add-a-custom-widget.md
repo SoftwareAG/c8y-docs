@@ -42,7 +42,7 @@ Widgets usually consist of two parts:
 
 That is why you must create two components.
 
-First, create the `demo-widget.component.ts`:
+First, create the *demo-widget.component.ts*:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -60,7 +60,7 @@ export class WidgetDemo {
 The component will show a configured text which is vertically mirrored via CSS.
 You can do anything in it that you can also do in other Angular components.
 
-It must have the `config` input to pass the configuration from the `demo-widget-config.component.ts` which is defined as the following:
+It must have the `config` input to pass the configuration from the *demo-widget-config.component.ts* which is defined as follows:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -70,7 +70,7 @@ import { Component, Input } from '@angular/core';
   template: `<div class="form-group">
     <c8y-form-group>
       <label translate>Text</label>
-      <textarea name="text" style="width:100%" [(ngModel)]="config.text"></textarea>
+      <textarea name="text" [(ngModel)]="config.text" style="width:100%"></textarea>
     </c8y-form-group>
   </div>`
 })
@@ -92,7 +92,7 @@ import { ControlContainer, NgForm } from "@angular/forms";
 })
 ```
 
-Combined with the example above, the `demo-widget-config.component.ts` component with enabled configuration validation will be:
+Combined with the example above, the *demo-widget-config.component.ts* component with enabled configuration validation will be:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -103,7 +103,7 @@ import { ControlContainer, NgForm } from "@angular/forms";
   template: `<div class="form-group">
     <c8y-form-group>
       <label translate>Text</label>
-      <textarea style="width:100%" [(ngModel)]="config.text" name="text"></textarea>
+      <textarea name="text" [(ngModel)]="config.text" style="width:100%"></textarea>
     </c8y-form-group>
   </div>`,
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
@@ -115,9 +115,9 @@ export class WidgetConfigDemo {
 
 ### 3. Add the widget to your application
 
-To add the widget you must use the `HOOK_COMPONENTS` and define the created components as `entryComponent`.
+To add the widget you must use the `HOOK_COMPONENTS` and define the created components as `entryComponents`.
 
-To do so, add the following to your `app.module.ts`:
+To do so, add the following to your *app.module.ts*:
 
 ```js
 import { NgModule } from '@angular/core';

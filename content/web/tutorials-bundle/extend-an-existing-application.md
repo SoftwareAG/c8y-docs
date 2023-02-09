@@ -32,7 +32,7 @@ There are three possibilities in total to start with the Web SDK:
 
 * Extending an existing hybrid application.
 * Building a pure Angular application with Angular CLI.
-* Building it with @c8y/cli.
+* Building it with `@c8y/cli`.
 
 Which one to choose heavily depends on the application you want to build.
 For example, if you want an application that just follows the look and feel of the platform but want to use special dependencies for certain scenarios, for example, the Material framework, you are best set with the pure Angular CLI solution.
@@ -44,7 +44,7 @@ First, take a look at the limitations of that approach to understand why the con
 
 As we need to make sure that Angular and angularjs run side by side when running a hybrid application, there are some limitations:
 
- - It is not possible to access the `index.html`: The whole bootstrapping process needs to be handled by {{< product-c8y-iot >}} to make sure that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template and you can only add routes.
+ - It is not possible to access the *index.html*: The whole bootstrapping process needs to be handled by {{< product-c8y-iot >}} to make sure that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template and you can only add routes.
  - As the services need to be loaded first, you can also not inject any service in the root application module. You need to provide them on a route or as `providedIn: root` at the deceleration of the service.
  - Routes in the router must be defined before the `UPGRADED_ROUTES`. This is because the Angular router has a `**` path match for all angularjs routes which is defined in the `UPGRADED_ROUTES`. If you define a route after it, the `**` will match before your defined route.
  - Every extension needs to be done via a hook. This is because Angular and angularjs are needed in hybrid applications and the hooks can be used by both.
@@ -80,7 +80,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 
 Routes can be added the same way as in Angular.
 The only difference is that it needs to be defined before the `UPGRADE_ROUTES` because of the hybrid limitations.
-Create the `hello.component.ts` file in our project with the following content:
+Create the *hello.component.ts* file in our project with the following content:
 
 ```js
 import { Component } from "@angular/core";
@@ -102,7 +102,7 @@ Only the template uses a special feature called "content projection" to show a t
 Content projection is an Angular concept used to display content in other places than they are defined.
 For more information on which components support content projection refer to the [@c8y/ngx-components](/web/libraries/#component) documentation.
 
-We can now bind this custom component to a route by changing the `app.module.ts` in the following way:
+We can now bind this custom component to a route by changing the *app.module.ts* in the following way:
 
 ```js
 import { NgModule } from '@angular/core';
@@ -171,12 +171,12 @@ export class AppModule extends HybridAppModule {
 
 The changes here are straightforward.
 First, you import the component (1.). Then you add it to the declarations (2.). Last you need to bind it to a path, for this example, `hello` (3.).
-When you now spin up the application with the `c8ycli server` command and navigate to the URL by adding the right hash to it (`http://localhost:9000/apps/cockpit/#/hello`) you should see the custom component.
+When you now spin up the application with the `c8ycli server` command and navigate to the URL by adding the right hash to it (*http://localhost:9000/apps/cockpit/#/hello*) you should see the custom component.
 In the next step, you will hook the component in the navigator at the left.
 
 ### 3. Hooking a navigator node
 
-To allow the user to navigate to your newly created `hello.component.ts`, add some navigation to the navigator on the left.
+To allow the user to navigate to your newly created *hello.component.ts*, add some navigation to the navigator on the left.
 To do so, you will use a so-called hook.
 
 Hooks are providers that are bound to a certain injection token.
@@ -186,7 +186,7 @@ Refer to the [angular.io documentation](https://angular.io/guide/dependency-inje
 
 The injection tokens can be received from the `@c8y/ngx-components` package by importing it.
 They all start with `HOOK_` followed by what they are used for.
-For example, to add a navigator node, use the `HOOK_NAVIGATOR_NODE` in `app.module.ts` in the following way:
+For example, to add a navigator node, use the `HOOK_NAVIGATOR_NODE` in *app.module.ts* in the following way:
 
 ```js
 {
@@ -292,7 +292,7 @@ After you implement this extension hook you get a new entry in the navigator whi
 
 Note that the property `priority` of the `NavigatorNode` interface defines in which order the nodes are shown.
 
-The `hello.component.ts` is now like a blank canvas inside the Cockpit application.
+The *hello.component.ts* is now like a blank canvas inside the Cockpit application.
 You can implement any kind of feature you need, while the given functionality of the Cockpit is not affected.
 
 ### Conclusion

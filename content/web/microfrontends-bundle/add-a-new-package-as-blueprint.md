@@ -16,13 +16,13 @@ Blueprints are combinations of multiple UI functionalities that can be hosted by
 c8ycli new
 ```
 
-2. Select the plugin name, for example, `package-blueprint`:
+2. Select the plugin name, for example, "package-blueprint":
 
 ```js
 ? Enter the name of the project:  (my-application) package-blueprint
 ```
 
-3. Select the version for which you want to create a sample application, for example, `1015.33.0 (next)`:
+3. Select the version for which you want to create a sample application, for example, "1015.33.0 (next)":
 
 ```console
 ? Which base version do you want to scaffold from? (Use arrow keys)
@@ -35,7 +35,7 @@ c8ycli new
   other
 ```
 
-4. Select an application template as the basis for your plugin, in our case, `package-blueprint`:
+4. Select an application template as the basis for your plugin, in our case, "package-blueprint":
 
 ```console
 ? Which base project do you want to scaffold from?

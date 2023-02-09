@@ -57,7 +57,7 @@ Application created. Go into the folder "package-blueprint" and run npm install
 5. Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are `package.json` and `README.md`.
+For this tutorial, the most important files are *package.json* and *README.md*.
 
 ```console
 app.module.spec.ts
@@ -76,7 +76,7 @@ You have now created your first package blueprint that uses Module Federation.
 
 ### Stepper setup (optional)
 
-The HOOK_STEPPER can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
+The `HOOK_STEPPER` can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
 
 1. Create a new *setup-step1.component.ts* file with the following content:
 

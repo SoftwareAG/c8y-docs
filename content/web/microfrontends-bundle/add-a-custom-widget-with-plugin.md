@@ -60,7 +60,7 @@ Application created. Go into the folder "widget-plugin" and run npm install
 Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are `package.json` and `README.md`.
+For this tutorial, the most important files are *package.json* and *README.md*.
 
 ```console
 app.module.spec.ts
@@ -82,15 +82,15 @@ You have now created your first plugin that uses the micro frontend architecture
 
 There are a couple of differences between a simple widget and one that is built according to the micro frontends architecture.
 
-The biggest difference is the `package.json` file, where fields such as `isPackage`, `package` and `exports` are located.
+The biggest difference is the *package.json* file, where fields such as `isPackage`, `package` and `exports` are located.
 The following list shows the fields and what they are responsible for:
 
 - `isPackage`: Indicates if the application is a package. In case of a widget that is added using micro frontends, set the value to `true`.
 - `package`: The type of package (for example, `plugin`).
-- `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the `README.md` file):
+- `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the *README.md* file):
   - `name`: The name of the exported module (that is, "Example widget plugin").
   - `module`: The name of the Angular module class (that is, "WidgetPluginModule").
-  - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: <kbd>./widget/widget-plugin.module.ts</kbd>.
+  - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: *./widget/widget-plugin.module.ts*.
   - `description`: A brief description of what the module does.
 
 {{< c8y-admon-info >}}
@@ -128,7 +128,7 @@ For the rest of the widget editing process follow the process for regular widget
 
 #### Debugging
 
-Another difference in the `package.json` file between a regular widget and a widget modified for the micro frontend architecture is the field `remotes`, see example below:
+Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remotes`, see example below:
 
 ```json
 ...
@@ -141,7 +141,7 @@ Another difference in the `package.json` file between a regular widget and a wid
 ```
 
 {{< c8y-admon-info >}}
-The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the `contextPath` field in `package.json`) followed by the name of the module class.
+The `remotes` field is used to import modules. To properly import a module, specify the context path of the plugin (the `contextPath` field in *package.json*) followed by the name of the module class.
 {{< /c8y-admon-info >}}
 
 The plugin imports itself via a field called `remotes`.
@@ -171,11 +171,11 @@ Follow the console prompt to deploy the application to your tenant.
 
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 
-- Enable the beta flag in the Administration application: `https://<yourTenantUrl>/apps/administration?beta=true`.
+- Enable the beta flag in the Administration application: *https://<yourTenantUrl>/apps/administration?beta=true*.
 
 You should now be able to access the **Packages** tab in **Administration application > Ecosystem > applications > Packages**, where you can see the details of your plugin.
 
-- If you already have a custom Cockpit application, navigate to its **Details** page and then to the **Plugins** tab. Install the widget-plugin.
+- If you already have a custom Cockpit application, navigate to its **Details** page and then to the **Plugins** tab. Install the `widget-plugin`.
 
 - If you don't have your own version of the Cockpit application, navigate to **Administration application > Ecosystem > Applications** and click **Add application**. In the resulting dialog, select the option **Duplicate existing application**. From the list of applications select **Cockpit (Subscribed)**. Edit the available fields such as **Name**, **Application key**, and **Path**. Use the default values and proceed. Install the `widget-plugin` in the cloned application.
 

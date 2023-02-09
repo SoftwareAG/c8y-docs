@@ -221,7 +221,7 @@ In the example above, you have used the underlying `fetch` abstraction to direct
 You might want to achieve the same simplicity for the common service of the client. It handles the URL and the JSON parsing for you internally.
 To do so, extend the `Service` class returned by the `@c8y/client` and override the necessary methods or properties.
 
-Do this for the `acme` microservice example by creating a new file called `acme.service.ts`:
+Do this for the `acme` microservice example by creating a new file called *acme.service.ts*:
 
 ```js
 import { Injectable } from '@angular/core';

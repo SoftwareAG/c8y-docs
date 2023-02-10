@@ -30,13 +30,7 @@ With the above command, the key pass is set to the same value as the keystore pa
 
 ![terminal](/images/device-protocols/opcua/opcua-terminal.png)
 
-The keystore can then be verified by using a tool like KeystoreExplorer.
-
-![Keystore explorer](/images/device-protocols/opcua/opcua-keystore-explorer1.png)
-
-![Keystore explorer2](/images/device-protocols/opcua/opcua-keystore-explorer2.png)
-
-The keystore can then be uploaded as binary in {{< product-c8y-iot >}} and it can be used in the server configuration.
+The keystore can be verified by using a tool like KeystoreExplorer. It can then be uploaded to {{< product-c8y-iot >}} as a binary and used in the server configuration.
 
 ![Opcua Keystore](/images/device-protocols/opcua/opcua-keystore.png)
 

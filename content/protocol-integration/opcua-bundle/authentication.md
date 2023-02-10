@@ -60,8 +60,8 @@ When you navigate to the child device of the gateway, the **Address space** tab 
 
 The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, for example, the address space has not been scanned, another scan will be triggered without synchronizing data into {{< product-c8y-iot >}}. Performing another address space operation will update the address space information.
 
-In case a node is found with a non-existing namespace entry the scan process skips this node and continues.
-An error entry will be written to the log file to provide information (more information available in debug level).
+In case a node can not be read the scan process skips this node and continues.
+An error entry will be written to the opcua-device-gateway log file to provide information (more information available in debug level).
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-address.png)
 

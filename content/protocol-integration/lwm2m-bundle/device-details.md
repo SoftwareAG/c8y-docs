@@ -19,7 +19,7 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 In order to see resources in the **Objects** tab, the resources first must be added in the **Device Protocols** page.
 {{< /c8y-admon-info >}}
 
-The following operations may be available in each instance after clicking the "three dots" icon at the end of each object row:
+The following operations may be available in each instance after clicking the menu icon ( ⋮ ) at the end of each object row:
 
 - Read Object: Reads all instances for the selected object and lists all available resources for each instance.
 - Read Instance: Reads the current instance of the given object and lists all available resources.

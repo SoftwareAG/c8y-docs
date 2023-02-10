@@ -21,7 +21,7 @@ To add a new LWM2M device protocol follow these steps:
 If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior.
 5. In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. 
 
-The device protocol opens in a new page. You can the description at the top left while the ID, the creation date and the date of the last update are at the top right.
+The device protocol opens in a new page. You can find the description at the top left while the ID, the creation date and the date of the last update are at the top right.
 
 Below that, there is a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
@@ -107,7 +107,7 @@ At least one functionality must be set to enable "Auto observe".
 
 ### Alarms on device protocol mapping failures
 
-There are 2 types of alarms raised related to device protocol mapping failures:
+There are two types of alarms raised related to device protocol mapping failures:
 
 - Alarm for no mapping known: This alarm is raised when value is read or observed but no mapping for this resource is found.
 This can be resolved by importing device protocol for this resource.

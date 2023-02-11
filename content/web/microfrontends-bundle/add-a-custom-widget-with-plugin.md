@@ -128,7 +128,7 @@ For the rest of the widget editing process follow the process for regular widget
 
 #### Debugging
 
-Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remotes`, see example below:
+Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remotes`, see the example below:
 
 ```json
 ...

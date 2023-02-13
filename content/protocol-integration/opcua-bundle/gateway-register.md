@@ -213,7 +213,7 @@ gateway:
     # The OPC UA gateway periodically fetches the OPC UA device types. With the following settings, this
     # interval can be adjusted.
 
-    # Sync interval in milliseconds. The default is 43200000ms (12 hours)
+    # Sync interval in milliseconds. The default is 43200000ms (12 hours).
     syncInterval: 43200000
 
   # Cyclic-Reader specific settings

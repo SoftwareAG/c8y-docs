@@ -1,9 +1,9 @@
 ---
-weight: 20
-title: Verwalten von Benutzerhierarchien
-layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#user-hierarchies
+- /benutzerhandbuch/enterprise-edition-de/#user-hierarchies
+layout: redirect
+title: Verwalten von Benutzerhierarchien
+weight: 20
 ---
 
 Mit Benutzerhierarchien können Sie verschiedene Organisationen in {{< product-c8y-iot >}} verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.

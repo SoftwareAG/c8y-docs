@@ -1,6 +1,6 @@
 ---
 aliases:
-- /users-guide/enterprise-edition/#managing-tenants
+- /benutzerhandbuch/enterprise-edition-de/#managing-tenants
 layout: redirect
 title: Verwalten von Mandanten
 weight: 10

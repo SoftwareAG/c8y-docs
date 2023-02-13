@@ -4,13 +4,17 @@ layout: redirect
 weight: 10
 ---
 
+<<<<<<< HEAD
  **Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+=======
+ **Version:** 1016.274.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+>>>>>>> be34dec29... Merge pull request #804 from SoftwareAG/feature/MTM-50973-updated-outdated-info
 
 If the widgets that are provided by the platform do not meet your requirements, you might want to create a custom widget and add it to a dashboard.
 
 A typical dashboard looks like this, showing various widgets:
 
-![A dashboard](/images/users-guide/cockpit/cockpit-dashboard-widgets.png)
+![A dashboard](/images/web-sdk/cockpit-dashboard-widgets.png)
 
 This recipe will show how to add a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
@@ -124,22 +128,30 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
-import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
 
 // --- 8< changed part ----
-import { CoreModule, RouterModule, HOOK_COMPONENTS } from '@c8y/ngx-components';
+import { CoreModule, RouterModule,HOOK_COMPONENTS } from '@c8y/ngx-components';
 // --- >8 ----
 
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
-import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
+import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
+import { CockpitDashboardModule,ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { SearchModule } from '@c8y/ngx-components/search';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitConfigModule } from '@c8y/ngx-components/cockpit-config';
+import { DatapointLibraryModule } from '@c8y/ngx-components/datapoint-library';
+import { WidgetsModule } from '@c8y/ngx-components/widgets';
+import { PluginSetupStepperModule } from '@c8y/ngx-components/ecosystem/plugin-setup-stepper';
 
 // --- 8< added part ----
 import { WidgetDemo } from './demo-widget.component';
 import { WidgetConfigDemo } from './demo-widget-config.component';
 // --- >8 ----
+
 
 @NgModule({
   imports: [
@@ -149,14 +161,21 @@ import { WidgetConfigDemo } from './demo-widget-config.component';
     RouterModule.forRoot(),
     NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
-    AssetsNavigatorModule,
     ReportsModule,
     NgUpgradeModule,
+    AssetsNavigatorModule,
     DashboardUpgradeModule,
     CockpitDashboardModule,
     SensorPhoneModule,
     ReportDashboardModule,
-    BinaryFileDownloadModule
+    BinaryFileDownloadModule,
+    SearchModule,
+    SubAssetsModule,
+    ChildDevicesModule,
+    CockpitConfigModule,
+    DatapointLibraryModule.forRoot(),
+    WidgetsModule,
+    PluginSetupStepperModule
   ],
 
   // --- 8< added part ----
@@ -183,7 +202,6 @@ export class AppModule extends HybridAppModule {
     super();
   }
 }
-
 ```
 
 Explanation of the numbers above:

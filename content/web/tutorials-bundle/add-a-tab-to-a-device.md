@@ -53,32 +53,33 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 // ---- 8< changed part ----
-import { CoreModule, RouterModule, HOOK_ONCE_ROUTE, ViewContext } from '@c8y/ngx-components';
+import { CoreModule, RouterModule, HOOK_ROUTE, ViewContext } from '@c8y/ngx-components';
 // ---- >8 ----
-import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+
 
 @NgModule({
-  imports: [
-    // Upgrade module must be the first
-    UpgradeModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(),
-    NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
-    CoreModule.forRoot(),
-    AssetsNavigatorModule,
-    ReportsModule,
-    NgUpgradeModule,
-    DashboardUpgradeModule,
-    CockpitDashboardModule,
-    SensorPhoneModule,
-    ReportDashboardModule,
-    BinaryFileDownloadModule
-  ],
+    imports: [
+        // Upgrade module must be the first
+        UpgradeModule,
+        BrowserAnimationsModule,
+        RouterModule.forRoot(),
+        NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
+        CoreModule.forRoot(),
+        AssetsNavigatorModule,
+        ReportsModule,
+        NgUpgradeModule,
+        DashboardUpgradeModule,
+        CockpitDashboardModule,
+        SensorPhoneModule,
+        ReportDashboardModule,
+        BinaryFileDownloadModule
+    ],
 
     // ---- 8< added part ----
     providers: [{
@@ -97,15 +98,15 @@ import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-downlo
 
 })
 export class AppModule extends HybridAppModule {
-  constructor(protected upgrade: NgUpgradeModule) {
-    super();
-  }
+    constructor(protected upgrade: NgUpgradeModule) {
+        super();
+    }
 }
 ```
 
 Explanation of the numbers above:
 
- 1. Provides the multi-provider hook `HOOK_ROUTE_ONCE`. This tells the application to extend the current route configuration.
+ 1. Provides the multi-provider hook `HOOK_ROUTE`. This tells the application to extend the current route configuration.
  2. Specifies that we want to use a value to define the route hook. You can also use a class here, for example, if you want to resolve the routes asynchronously.
  3. Defines the context of the route. Use the `ViewContext` enum to define it. For this example you want to extend the context of a device.
  4. The path where it is going to be shown. It is added to the context path. For this example the complete path is: *device/:id/hello*.
@@ -154,18 +155,17 @@ This is the key point: as the parent context route already has resolved the data
 Adding it to the `entryComponents` in *app.module.ts* will allow you to compile the application:
 
 ```js
-
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
-import { CoreModule, RouterModule, HOOK_ONCE_ROUTE, ViewContext } from '@c8y/ngx-components';
-import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CoreModule, RouterModule, HOOK_ROUTE, ViewContext } from '@c8y/ngx-components';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
 // ---- 8< added part ----
 import { HelloComponent } from './hello.component';
 // ---- >8 ----
@@ -194,7 +194,7 @@ import { HelloComponent } from './hello.component';
   // ---- >8 ----
 
   providers: [{
-    provide: HOOK_ONCE_ROUTE,
+    provide: HOOK_ROUTE,
     useValue: [{
       context: ViewContext.Device,
       path: 'hello',
@@ -211,7 +211,6 @@ export class AppModule extends HybridAppModule {
     super();
   }
 }
-
 ```
 
 When you now start your application with `npm start` and navigate to a details view of a device it should look like this:
@@ -235,13 +234,20 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
-import { CoreModule, RouterModule, HOOK_ONCE_ROUTE, ViewContext } from '@c8y/ngx-components';
-import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CoreModule, RouterModule, HOOK_ROUTE, ViewContext } from '@c8y/ngx-components';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
+import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
 import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { SearchModule } from '@c8y/ngx-components/search';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitConfigModule } from '@c8y/ngx-components/cockpit-config';
+import { DatapointLibraryModule } from '@c8y/ngx-components/datapoint-library';
+import { WidgetsModule } from '@c8y/ngx-components/widgets';
+import { PluginSetupStepperModule } from '@c8y/ngx-components/ecosystem/plugin-setup-stepper';
 import { HelloComponent } from './hello.component';
 
 // ---- 8< added part ----
@@ -274,7 +280,7 @@ import { HelloGuard } from './hello.guard';
     // ---- >8 ----
 
     {
-    provide: HOOK_ONCE_ROUTE,
+    provide: HOOK_ROUTE,
     useValue: [{
       context: ViewContext.Device,
       path: 'hello',

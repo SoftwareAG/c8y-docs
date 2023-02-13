@@ -1547,6 +1547,23 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 ####
 
+
+#### Get a device type
+
+**Endpoint** 
+
+`GET /service/opcua-mgmt-service/deviceTypes/{deviceTypeId}`
+
+**Payload**
+
+A JSON representation of the device type with the given id if existing. If not, an error message is returned.
+
+**Response codes**
+
+`200 OK`
+
+`404 Not found`
+
 #### Updating a device type
 
 **Endpoint**
@@ -1566,3 +1583,14 @@ The payload of updating a device type is exactly the same as the payload of crea
 **Success response**
 
 `204 No Content`
+
+
+#### Get all OPC UA device types
+
+**Endpoint**
+
+`GET /service/opcua-mgmt-service/deviceTypes`
+
+**Payload**
+
+The endpoint returns a JSON array of all OPC UA device types.

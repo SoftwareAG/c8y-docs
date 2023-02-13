@@ -22,7 +22,7 @@ If you already created assets, you find them listed with its hierarchy on this p
 ### Asset hierarchy
 An asset hierarchy is a structure that organizes multiple assets and devices into a hierarchy, allowing for the visualization and management of complex systems.
 
-The asset hierarchy is displayed in the **Assets** page. An asset hierarchy consists of a root asset and all its subsequent child assets. Click **Add asset** to create the entire hierarchy of an asset in the **New asset** page. See next sections for more details.
+The asset hierarchy is displayed in the **Assets** page. An asset hierarchy consists of a root asset and all its subsequent child assets. Click **Add asset** to create the entire hierarchy of an asset in the **New asset** page. For details, see [To create an asset](/dtm/asset-hierarchy/#create-asset).
 
 **Example:**
 

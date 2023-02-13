@@ -1565,7 +1565,7 @@ The endpoint returns a JSON array of all OPC UA device types.
 
 **Payload**
 
-A JSON representation of the device type with the given id if existing. If not, an error message is returned.
+A JSON representation of the device type with the given ID if it exists. If not, an error message is returned.
 
 **Response codes**
 

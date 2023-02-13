@@ -177,8 +177,7 @@ gateway:
       # Max queue size of the HTTP POST actions queue
       maxQueueSize: 50000
       # Worker thread (which performs the actual HTTP request) pool size
-      threadPoolSize: 200
-
+      threadPoolSize: 200		  
     # The OPC UA gateway regularly fetches all device types ("mappings") from the server. The refreshInterval
     # configures how often this happens.
     refreshInterval: 60000
@@ -208,6 +207,11 @@ gateway:
       601: MAJOR
       401: MINOR
       1: WARNING
+
+  # Operation settings
+  operation:
+    # Controls if the OPC UA gateway performs an address space scan when it connects the first time to an OPC UA server
+    autoScanAddressSpace: true	  
 
   # Cyclic-Reader specific settings
   cyclicRead:

@@ -70,8 +70,7 @@ Click **Next** to continue until all assets are created.
 When you create a new asset you have the option of assigning one or more devices to this asset.
 
 1. Click **Assign devices** in the **New asset** page.
-2. The resulting dialog window lists all devices registered for the tenant. Select one or multiple devices and click **Assign**.
-3. To cancel your selection, click **Cancel** on the top bar, which removes all selected devices.
+2. The resulting dialog lists all devices registered for the tenant. Select one or multiple devices and click **Assign**.
 3. The dialog closes and you can continue creating the asset.
 
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)

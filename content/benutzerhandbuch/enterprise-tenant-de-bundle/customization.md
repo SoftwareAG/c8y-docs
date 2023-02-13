@@ -260,17 +260,17 @@ Die DNS-Einträge für Ihre benutzerdefinierte Domain müssen so konfiguriert we
 
 Wir **empfehlen dringend**, zu diesem Zweck den Wildcard-Eintrag CNAME zu verwenden. Der CNAME muss Ihre Wildcard-Domain
 aus dem Zertifikat im Feld NAME enthalten. Das Feld VALUE des CNAME-Eintrags muss auf den Hostnamen von {{< product-c8y-iot >}}verweisen. Dieser Ziel-Hostname lässt sich leicht anhand Ihrer aktuellen Mandanten-URL ermitteln. Wenn Ihre Mandanten-URL
-*http://mytenant.{{< domain-c8y >}}* lautet, ist der Ziel-Hostname *{{< domain-c8y >}}*. Achten Sie außerdem darauf, eventuell miteinander
+*http://mytenant.{{< domain-c8y >}}* lautet, ist der Ziel-Hostname *mytenant.{{< domain-c8y >}}*. Achten Sie außerdem darauf, eventuell miteinander
 in Konflikt stehende A-Einträge zu löschen.
 
 **Beispiel:**
 
-Wenn Sie **.iot.mycompany.com* für Ihre Enterprise-Untermandanten verwenden möchten und {{< product-c8y-iot >}} unter *{{< domain-c8y >}}* verwenden, muss der folgende CNAME-Eintrag zu Ihrer DNS-Zone hinzugefügt werden:
+Wenn Sie **.iot.mycompany.com* für Ihre Enterprise-Untermandanten verwenden möchten und {{< product-c8y-iot >}} unter *mytenant.{{< domain-c8y >}}* verwenden, muss der folgende CNAME-Eintrag zu Ihrer DNS-Zone hinzugefügt werden:
 
 ```shell
-NAME                  TYPE   VALUE
+NAME                   TYPE   VALUE
 ----------------------------------------------------
-*.iot.mycompany.com.   CNAME  {{< domain-c8y >}}.
+*.iot.mycompany.com.   CNAME  mytenant.{{< domain-c8y >}}.
 ```
 
 Aus folgenden Gründen raten wir dringend von der Verwendung alternativer DNS-Konfigurationen ab:

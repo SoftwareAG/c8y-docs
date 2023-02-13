@@ -12,8 +12,6 @@ Apart from various [configuration](#configuration) settings, you can use your in
 
 Click **{{< enterprise-tenant >}}** in the **Settings** menu to access these settings.
 
-![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
-
 <a name="configuration"></a>
 ### Configuration
 
@@ -34,21 +32,15 @@ The following placeholders can be found in the **Configuration** tab:
 
 Under **Two-factor authentication**, you can change the SMS template which is sent to the users.
 
-![TFA configuration](/images/users-guide/enterprise-tenant/et-configuration-tfa.png)
-
 #### Support link
 
 In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< sag-dev-community >}} page will be used.
-
-![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 
 Enter "false" to hide the link.
 
 #### Password reset
 
 In the **Password reset** section you can change all settings related to password reset email templates.
-
-![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
 
 At the top you can select if you want to allow sending emails to unknown email addresses.
 
@@ -62,8 +54,6 @@ In the following two fields provide an email template to be used on password cha
 
 In the **Email server** section, you can configure custom email server settings.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
-
 In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of:
 
 * SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
@@ -76,19 +66,13 @@ Provide the host, port, username, password, and sender address for the email ser
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
-![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
-
 #### Storage limit
 
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit (warning) and *after* data removal is performed (limit exceeded).
 
-![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
-
 #### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
-
-<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
 
@@ -260,17 +244,17 @@ The DNS entries for your custom domain must be configured in a way that all requ
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
 domain from the certificate in the NAME field. The VALUE field of the CNAME entry must point to the hostname of {{< product-c8y-iot >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
-is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *{{< domain-c8y >}}*. Please also make sure to delete any
+is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *mytenant.{{< domain-c8y >}}*. Please also make sure to delete any
 conflicting A entries.
 
 **Example:**
 
-If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *{{< domain-c8y >}}*, the following CNAME entry must be added to your DNS zone:
+If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *mytenant.{{< domain-c8y >}}*, the following CNAME entry must be added to your DNS zone:
 
 ```shell
-NAME                  TYPE   VALUE
+NAME                   TYPE   VALUE
 ----------------------------------------------------
-*.iot.mycompany.com.   CNAME  {{< domain-c8y >}}.
+*.iot.mycompany.com.   CNAME  mytenant.{{< domain-c8y >}}.
 ```
 
 We highly discourage any use of alternative DNS configurations for the following reasons:
@@ -287,10 +271,9 @@ We highly discourage any use of alternative DNS configurations for the following
 Once the DNS configuration is in place and if a certificate with the given requirements is available, it can be easily
 uploaded to the platform.
 
-<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+On the **Domain name** tab in the **Enterprise Tenant** page, click **Upload certificate**. Select the certificate from your file system and click **Upload**.
 
-
-Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
+Afterwards, you can activate the domain with a single click on its name. After the domain has been activated, you will be redirected
 to your {{< enterprise-tenant >}} using the new domain name. You will also receive an email with information about the
 activation. Note that your {{< management-tenant >}} domain name is static, for example, if your wildcard domain is "*
 .iot.mycompany.com" then your {{< management-tenant >}} domain will be "management.iot.mycompany.com".

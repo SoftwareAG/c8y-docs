@@ -215,11 +215,7 @@ Hover over the applications under **Subscribed applications** at the left and cl
 
 #### Monitoring microservices
 
-For all applications hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols:
-
-<img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
-
-The microservice may be in one of the following states:
+For all applications hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols and may be in one of the following states:
 
 * <img src="/images/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block;"> Microservice is up and running
 * <img src="/images/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block;">&nbsp; Microservice is unhealthy
@@ -235,7 +231,11 @@ The following information is provided:
 * Unhealthy - the number of inactive microservice instances
 * Desired - the number of desired microservice instances
 * Name - microservice instance name
-* Restarts - the number of microservice instance restarts
+* Restarts - the number of microservice instance restarts. 
+
+{{< c8y-admon-info >}}
+Information on the microservice instance name and the number of restarts is displayed in case of at least one restart.
+{{< /c8y-admon-info >}}
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
@@ -244,8 +244,6 @@ Further details are provided on the **Status** tab of the respective application
 ### Custom properties
 
 The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-tenant/#usage-and-billing) page.
-
-![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
 #### Limiting subtenant request rate
 
@@ -289,8 +287,6 @@ Even if tracking is enabled for a tenant, users must actively accept the trackin
 
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
-
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 {{< c8y-admon-info >}}
@@ -305,15 +301,13 @@ Tenant options specified in a tenant policy are **not encrypted**. You should no
 
 Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
-
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
 #### To create a tenant policy
 
 1. Click **Add policy** in the top menu bar.
-<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. In the resulting dialog box, enter a name and an optional description.
+<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data > Retention rules](/users-guide/administration#retention-rules).
 4. Optionally, add a tenant option.
 5. Click **Save**.

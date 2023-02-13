@@ -209,6 +209,13 @@ gateway:
       401: MINOR
       1: WARNING
 
+    # Mapping synchronization interval
+    # The OPC UA gateway periodically fetches the OPC UA device types. With the following settings, this
+    # interval can be adjusted.
+
+    # Sync interval in milliseconds. The default is 43200000ms (12 hours)
+    syncInterval: 43200000
+
   # Cyclic-Reader specific settings
   cyclicRead:
     # The cyclic readers use a dedicated threadpool to perform periodic read tasks.

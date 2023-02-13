@@ -57,9 +57,9 @@ Optionally select the checkbox in the dialog box to delete all subassets and dev
 ### To search for an asset
 
 You can search for assets through the **Search** button at the right of the top bar.
-Enter a search term into the textbox at the top of the **Search** window to see all assets matching the search criteria on the page **Search results**.
+Enter a search term into the textbox at the top of the **Search** window to see all assets matching the search criteria in the section **Search results**.
 
-Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the asset data table** at the bottom right. This will show the entire search results in a table format.
+To see more details click **Go to the asset data table** at the bottom. This will show the entire search results in a table format.
 
 The **Search** window only shows a limited number of matches. In case of more matches, switch to the asset data table to see the complete results.
 

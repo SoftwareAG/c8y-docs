@@ -9,7 +9,7 @@ Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by 
 <a name=""></a>
 ### To view an asset
 
-1. Select an asset from the hierarchy in **Assets** page.
+1. Select an asset from the hierarchy on the **Assets** page.
 
 2. The **Subassets** page contains the asset details, created and last updated time displayed at the top right.
 
@@ -57,16 +57,16 @@ Optionally select the checkbox in the dialog box to delete all subassets and dev
 ### To search for an asset
 
 You can search for assets through the **Search** button at the right of the top bar.
-On entering a search term into the textbox at the top of the Search window, the application returns all assets matching the search criteria.
+Enter a search term into the textbox at the top of the **Search** window to see all assets matching the search criteria on the page **Search results**.
 
 Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the asset data table** at the bottom right. This will show the entire search results in a table format.
 
-The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset data table.
+The **Search** window only shows a limited number of matches. In case of more matches, switch to the asset data table to see the complete results.
 
 ![assets-search](/images/dtm/assets/dtm-assets-search-assets.png)
 
 {{< c8y-admon-important >}}
-The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
+The search results include all assets containing the search term in any property (name, model or any fragment), that is, the search results do not only include assets matching the search criteria with their names.
 {{< /c8y-admon-important >}}
 
 The DTM application extends the full text search capability of {{< product-c8y-iot >}} for searching assets. See [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching) in *User guide* to know more about available search options.

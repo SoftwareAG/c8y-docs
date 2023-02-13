@@ -124,12 +124,12 @@ If the asset property is "Generator code" with the regular expression "^MCGEN[a-
 Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
-The default value has to adhere to all validations provided beforehand. For a property of type text, if you have set the **Min length**, **Max length** and/or **RegExp**, the default value must fulfil all set validations.
+The default value has to adhere to all validations provided beforehand. For a property of type text, if you have set the **Min length**, **Max length** and/or **RegExp**, the default value must fulfill all set validations.
 {{< /c8y-admon-info>}}
 
 **Example:**
 
-If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the default value must fulfil all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
 
 <a name="custom-number"></a>

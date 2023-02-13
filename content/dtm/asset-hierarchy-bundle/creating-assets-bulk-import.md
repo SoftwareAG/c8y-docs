@@ -11,7 +11,7 @@ Fill in the required details in this template and upload the file to create the 
 <a name=""></a>
 ### Pre-requisites to use the bulk import feature
 
-To use the Bulk import feature, you must enable **Digital Twin** permission for the user's role, following these steps:
+To use the Bulk import feature, you must enable the **Digital Twin** permission for the user's role, following these steps:
 
 1. Navigate to the [Administration application](/users-guide/administration/#overview) via the application switcher in the top right corner.
 
@@ -19,7 +19,7 @@ To use the Bulk import feature, you must enable **Digital Twin** permission for 
 
 3. In the **Global roles** tab, select the role to which permissions are to be provided.
 
-4. Set "Admin" permission level for **Digital Twin** in the "Permissions" section.
+4. Set the "Admin" permission level for **Digital Twin** in the "Permissions" section.
 
 5. Enable access to the DTM application by selecting the following checkboxes:
 
@@ -92,7 +92,7 @@ The CSV template has the following fields:
 <td style="text-align:left"><b>Path</b></td>
 <td style="text-align:left">Remains blank when you create a root asset. For a child asset, provide a path up to the root asset.<br><br>
 <b>Example:</b><br>
-For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > Blade" the path value is "SE-Turbine-101/SE-T101-Rotor", where "SE-Turbine-101" and "SE-T101-Rotor" represent the respective asset models.</td>
+For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > Blade" the path value is "SE-Turbine-101/SE-T101-Rotor", where "SE-Turbine-101" and "SE-T101-Rotor" each represent the respective asset models.</td>
 <td style="text-align:left">Mandatory (for child assets)</td>
 </tr>
 <tr>

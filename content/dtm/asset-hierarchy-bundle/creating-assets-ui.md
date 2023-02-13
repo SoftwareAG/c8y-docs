@@ -20,7 +20,7 @@ To add an asset via the UI:
     {{< c8y-admon-info>}}
 The asset models here are root asset models.
 They are labeled "START NODE" in the hierarchy.
-Root asset models are asset models which are at the top of hierarchy and don't have any parent asset model above it.
+Root asset models are asset models which are at the top of hierarchy and don't have any parent asset model above them.
     {{< /c8y-admon-info>}}
 
 3. The asset hierarchy is shown in the left section and the respective dialog window is shown on the right. Fill out the fields labeled "required".
@@ -137,34 +137,34 @@ Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 <a name=""></a>
 ### To view asset details
 
-Click any asset in the **Assets** page to view the asset details in **Subassets** page.
+Select any asset in the **Assets** page to view the asset details in **Subassets** page.
 It shows all the subassets, child devices and asset properties.
 
-In the top right corner in the **Subassets** page, you can [assign devices](#assign-devices-to-asset).
+In the top right corner of the **Subassets** page, you can [assign devices](#assign-devices-to-asset).
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-You can view the hierarchy of the asset in the **Asset tree** page. Initially the asset hierarchy is collapsed. Click expand icon to view the next level of subassets or click **Expand all** on the top right to view all hierarchy levels.
+You can view the hierarchy of the asset in the **Asset tree** page. Initially the asset hierarchy is collapsed. Click the expand icon to view the next level of subassets or click **Expand all** on the top right to view all hierarchy levels.
 
-Click **Add asset** to add more subassets or click **Import assets** to add [assets in bulk](/dtm/asset-hierarchy/#creating-assets-bulk-import)
+Click **Add asset** to add more subassets or click **Import assets** to add [assets in bulk](/dtm/asset-hierarchy/#creating-assets-bulk-import).
 
 ![Asset tree](/images/dtm/assets/dtm-assets-asset-tree-page.png)
 
 <a name="add-child-assets"></a>
 #### To add child assets
 
-You can add child assets to an asset in the **Asset tree** page.
+To add child assets to an asset open the **Asset tree** page.
 
 1. Click **Add asset** to load the **Asset hierarchy** for the selected asset.
 
-2. The root asset is displayed with the label "parent node". The asset hierarchy displayed here, is a subset of the root asset hierarchy.
+2. The root asset is displayed with the label "parent node". The asset hierarchy displayed below, is a subset of the root asset hierarchy.
 
     ![Child asset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
 **Example:**
 
 If "Wind turbine" is a root level asset, then "Rotor" is a child asset of "Wind turbine" and "Blade" is a child asset of "Rotor".
-If you navigate to the "Wind turbine" asset's **Asset tree** page, and click **Add asset**, the asset hierarchy loads for "Rotor" and "Blade".
+If you navigate to the **Asset tree** page of "Wind turbine" and click **Add asset**, the asset hierarchy loads for "Rotor" and "Blade".
 
 If you navigate to the existing "Rotor" asset and want to add a child asset, you can only add child assets for "Blade".
 

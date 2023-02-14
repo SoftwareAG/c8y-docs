@@ -179,10 +179,6 @@ gateway:
       # Worker thread (which performs the actual HTTP request) pool size
       threadPoolSize: 200
 
-    # The OPC UA gateway regularly fetches all device types ("mappings") from the server. The refreshInterval
-    # configures how often this happens.
-    refreshInterval: 60000
-
     # Threadpool configuration for the mapping execution
     # Each value arriving in the gateway will be handled by one or more action handlers defined in the device type. Each handler will be executed in one single thread.
     # Hence, this threadpool must be large enough to cope with the parallel processing needs of values
@@ -247,6 +243,12 @@ gateway:
     # server's address space yet. The default value is false.
     recreateFailedItems: false
   
+  # Subscription update settings
+  subscriptionUpdate:
+    # The subscription update interval controls how often the OPC UA gateway updates the subscription
+    # settings for connected OPC UA servers. Expects: Interval duration in milliseconds.
+    interval: 60000
+    
   # Server connectivity configuration
   connectivity:
     # If the autoReconnect in the server's client configuration is set to false, then the gateway tries to reconnect manually.

@@ -183,7 +183,7 @@ Queues are collections of failed custom actions, including the complete HTTP req
 
 A background scheduler task will retry each queue up to the number of _maxRetries_. If _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository.
 
-All elements of the queue will be retried after the retry delay has passed. In effect, the count of the elements in the queue will be decreasing with each successful retried custom action. 
+All elements of the queue are retried after the retry delay has passed. In effect, the count of the elements in the queue is decreases with each successful retried custom action. 
 
 In the gateway configuration (see also [Gateway Configuration: Additional customization](#additional-customizations)) the following parameters can be configured:
 

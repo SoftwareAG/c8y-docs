@@ -191,6 +191,6 @@ In the gateway configuration (see also [Gateway Configuration: Additional custom
 |<div style="width:200px">Setting</div>|Value format|Example |Description|																				
 |-----------|------------|--------|-----------|
 |enabled  | boolean (true/false) | true | Activate or deactivate the fail over for custom actions |
-|maxRetries| number | 5 | Number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default is 5.|
+|maxRetries| number | 5 | Number of retries for failed queues. If the maximum is reached the queue is saved as permanently failed and never tried again. Default is 5.|
 |noRetryHttpCodes| Comma-separated list of HTTP response codes | 400,500 |  If retries are enabled (failureHandling.enabled=true), this setting allows retries to be skipped for certain HTTP response codes. In the given example requests that have received a `400 Bad Request` or a `500 Internal server error` response will not be retried.
 |retryDelay|number| 120 | Minimum delay in seconds between two retries of the same request.|

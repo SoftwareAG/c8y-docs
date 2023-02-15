@@ -229,6 +229,8 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status.
 {{< /c8y-admon-info >}}
 
+A separator is automatically obtained from the CSV file. Valid separator values are: \t (tabulation mark), ; (semicolon) and , (comma).
+
 **Simple registration**
 
 The CSV file contains two columns: ID;PATH, where ID is the device identifier, for example, serial number, and PATH is a slash-separated list of group names (path to the group where the device should be assigned to after registration).

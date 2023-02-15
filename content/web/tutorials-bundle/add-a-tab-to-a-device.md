@@ -4,7 +4,7 @@ layout: redirect
 weight: 30
 ---
 
-**Version:** 1016.274.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 It is a common use case that you want to show additional information to a user in a details view, for example, for a device or a group.
 
@@ -15,12 +15,12 @@ This how-to recipe explains how to create a new tab in the device details view:
 In Web SDK for Angular, this kind of view is called `ViewContext` as it provides a view for a certain context.
 There are a couple of context views, for example, `Device`, `Group`, `User`, `Application` and `Tenant`.
 You can access them by navigating to a certain `Route` with the hash navigation.
-For example, if you go to the route `apps/cockpit/#/device/1234`, the application tries to resolve the device with the ID `1234`.
+For example, if you go to the route *apps/cockpit/#/device/1234*, the application tries to resolve the device with the ID `1234`.
 
 The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above.
-It is referenced by another route called `/info` but reuses the context of the device to show information about it.
+It is referenced by another route called */info* but reuses the context of the device to show information about it.
 
-In the following, we will guide you through the process of creating a new tab for this view that is accessible through the route `apps/cockpit/#/device/:id/hello`.
+In the following, we will guide you through the process of creating a new tab for this view that is accessible through the route *apps/cockpit/#/device/:id/hello*.
 
 ### 1. Initialize the example application
 
@@ -28,24 +28,24 @@ As a starting point, you need an application supporting context routes.
 For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit -a @c8y/apps@1016.274.0
+c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23
 ```
 
 Next, you must install all dependencies. Switch to the new folder and run `npm install`.
 
 {{< c8y-admon-info >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1016.274.0` will scaffold an application with the version `10.16.274.0`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23` will scaffold an application with the version `10.17.0.23`
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
-### 2. Add a new ROUTE&#95;HOOK
+### 2. Add a new HOOK_ROUTE
 
 The hook concept allows you to hook into the existing code.
-In this example we want to add a so-called ChildRoute (by Angular) on the existing route `device/:id`.
+In this example we want to add a so-called `ChildRoute` (by Angular) on the existing route *device/:id*.
 
-To achieve this, add the following code to the `app.module.ts`:
+To achieve this, add the following code to the *app.module.ts*:
 
 ```js
 import { NgModule } from '@angular/core';
@@ -83,8 +83,8 @@ import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
 
     // ---- 8< added part ----
     providers: [{
-        provide: HOOK_ROUTE,               // 1.
-        useValue: [{                       // 2.
+        provide: HOOK_ROUTE,                 // 1.
+        useValue: [{                         // 2.
             context: ViewContext.Device,     // 3.
             path: 'hello',                   // 4.
             component: HelloComponent,       // 5.
@@ -109,12 +109,12 @@ Explanation of the numbers above:
  1. Provides the multi-provider hook `HOOK_ROUTE`. This tells the application to extend the current route configuration.
  2. Specifies that we want to use a value to define the route hook. You can also use a class here, for example, if you want to resolve the routes asynchronously.
  3. Defines the context of the route. Use the `ViewContext` enum to define it. For this example you want to extend the context of a device.
- 4. The path where it is going to be shown. It is added to the context path. For this example the complete path is: `device/:id/hello`.
+ 4. The path where it is going to be shown. It is added to the context path. For this example the complete path is: *device/:id/hello*.
  5. Defines which component should be shown if the path is hit by a user.
  6. The properties `label` and `icon` define what the tab should look like. The `priority` defines in which position it should be shown.
 
 {{< c8y-admon-info >}}
-The HOOK_ROUTE inherits the Angular Route type. All of its properties can be reused here.
+The `HOOK_ROUTE` inherits the Angular `Route` type. All of its properties can be reused here.
 {{< /c8y-admon-info >}}
 
 After this alignment the route is registered but the application will fail to compile as the `HelloComponent` does not exist yet.
@@ -127,7 +127,7 @@ To do this, it needs information about the context it has been opened in.
 The context route resolves the device upfront.
 You can directly access it via the parent route.
 
-Create a new file called `hello.component.ts`:
+Create a new file called *hello.component.ts*:
 
 ```js
 import { Component } from '@angular/core';
@@ -152,7 +152,7 @@ export class HelloComponent {
 This component injects the `ActivatedRoute` and accesses its parent data.
 This is the key point: as the parent context route already has resolved the data of the device, this component will always show the detailed data of the current device.
 
-Adding it to the `entryComponents` in `app.module.ts` will allow you to compile the application:
+Adding it to the `entryComponents` in *app.module.ts* will allow you to compile the application:
 
 ```js
 import { NgModule } from '@angular/core';
@@ -306,7 +306,7 @@ export class AppModule extends HybridAppModule {
 
 Now you can write a guard which checks a certain condition. If it resolves to true, the tab will be shown, otherwise not.
 
-A guard to check for a certain fragment on a device can look like `hello.guard.ts`:
+A guard to check for a certain fragment on a device can look like *hello.guard.ts*:
 
 ```js
 import { Injectable } from '@angular/core';

@@ -178,7 +178,7 @@ gateway:
       maxQueueSize: 50000
       # Worker thread (which performs the actual HTTP request) pool size
       threadPoolSize: 200
-
+  
     # Threadpool configuration for the mapping execution
     # Each value arriving in the gateway will be handled by one or more action handlers defined in the device type. Each handler will be executed in one single thread.
     # Hence, this threadpool must be large enough to cope with the parallel processing needs of values
@@ -197,22 +197,29 @@ gateway:
 
   # Mapping-specific settings
   mappings:
-    # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
-    # allows to configure how OPC UA severity is mapped into {{< product-c8y-iot >}} severity levels.
-    alarmSeverityMap:
-      801: CRITICAL
-      601: MAJOR
-      401: MINOR
-      1: WARNING
+  
+  # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
+  # allows to configure how OPC UA severity is mapped into Cumulocity IoT severity levels. The following is the default mappings:
+  # alarmSeverityMap:
+    # 1001: CRITICAL
+    # 801: CRITICAL
+    # 601: MAJOR
+    # 401: MINOR
+    # 1: WARNING
 
     # Mapping synchronization interval
     # The OPC UA gateway periodically fetches the OPC UA device types. With the following settings, this
     # interval can be adjusted.
 
-    # Sync interval in milliseconds. The default is 43200000ms (12 hours).
+    # Sync interval in milliseconds. The default is 43200000ms (12 hours)
     syncInterval: 43200000
 
-  # Cyclic-Reader specific settings
+  # Operation settings
+  operation:
+    # Default behavior that controls if the OPC UA gateway performs an address space scan when it connects the first time to an OPC UA server. Can be overridden in the OPC UA Server config.
+    autoScanAddressSpace: true
+
+  # Cyclic-Reader settings
   cyclicRead:
     # The cyclic readers use a dedicated threadpool to perform periodic read tasks.
     threadpool:

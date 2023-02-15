@@ -6,7 +6,7 @@ layout: redirect
 
 Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. Widgets sind nützlich zum Verfolgen von Informationen, etwa bei Alarmen, Assets oder Anwendungen, oder zum Bereitstellen von Karten, Quick Links und anderem in Dashboards oder Berichten.
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-important title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen von Widgets innerhalb von Dashboards: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen

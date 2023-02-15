@@ -8,7 +8,7 @@ weight: 10
 
 Über den {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie die Mandantenfunktionalität nutzen, mit der sich Untermandanten erstellen und verwalten lassen.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten. Nähere Informationen zum Ansatz mit rollenbasiertem Zugriff im Unterschied zum Ansatz mit mehreren Mandanten finden Sie unter [Rollenbasierter Zugriff versus Mandantenfähigkeit](/concepts/tenant-hierarchy/#comparison).
 {{< /c8y-admon-important >}}
 
@@ -149,7 +149,7 @@ Die Daten des Mandanten bleiben in der Datenbank und können später durch Klick
 
 Näheres zur Abrechnungsperspektive von gesperrten Mandanten finden Sie unter [Nutzungsstatistiken und Abrechnung > Lebenszyklus](#lifecycle).
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Mandanten, die für alle {{< product-c8y-iot >}} Public-Cloud-Instanzen gesperrt sind, werden nach 60 Tagen automatisch gelöscht.
 {{< /c8y-admon-important>}}
 
@@ -173,7 +173,7 @@ Als Service Provider können Sie diese E-Mail unterdrücken.
 
 ### Löschen von Untermandanten
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im {{< management-tenant-de >}} verfügbar. Mandanten können ausschließlich vom {{< management-tenant-de >}} aus gelöscht werden.
 
 Administratoren in {{< enterprise-tenant-de >}}s dürfen aktive Untermandanten nur sperren, aber nicht löschen.
@@ -244,7 +244,7 @@ Plattformadministratoren können die Anfragerate jedes Untermandanten über die 
 
 Die Anfragen-Begrenzungsfunktion wird erst aktiviert, wenn beide HTTP-Attribute (HTTP-Queue begrenzen und HTTP-Anfragen begrenzen) konfiguriert sind. Wird einer der Werte weggelassen, funktioniert es nicht.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Eine Begrenzung der Rate kann eine wirksame Maßnahme gegen Bedrohungen wie Brute-Force-Anmeldeversuche, API-Missbrauch und Überflutung mit Anfragen sein und verringert somit die Menge des schädlichen/unerwünschten Datenverkehrs. Dies trägt zum Schutz vor DoS-Angriffen (Denial of Service) und zur Sicherstellung der für legitime Anfragen verfügbaren Bandbreite bei.
 {{< /c8y-admon-important >}}
 
@@ -283,7 +283,7 @@ Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit
 Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.
 {{< /c8y-admon-info >}}
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 In einer Mandantenregel angegebene Mandantenoptionen sind **nicht verschlüsselt**. Sie sollten hier keine Mandantenoptionen mit dem Präfix "credentials." angeben oder überschreiben, da die Plattform erwartet, dass diese Optionen bei Daten, die nach dem Erstellen des Mandaten erscheinen, verschlüsselt sind.
 {{< /c8y-admon-important >}}
 
@@ -306,7 +306,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 
 Die Mandantenregel wird der Mandantenregel-Liste hinzugefügt.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom {{< management-tenant-de >}} aus eine Aktualisierung starten.
 {{< /c8y-admon-important >}}
 

@@ -6,7 +6,7 @@ weight: 75
 
 Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute.
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-important title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Hinzufügen eines Datenpunkts: ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"

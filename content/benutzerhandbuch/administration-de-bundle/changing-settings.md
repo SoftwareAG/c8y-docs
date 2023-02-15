@@ -33,7 +33,7 @@ Im Feld **Bevorzugter Login-Modus** können Sie eine der folgenden Optionen wäh
 
 Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Immer wenn Sie den Anmeldemodus ändern, werden Sie gezwungen, sich abzumelden. Andere Benutzer müssen sich ab- und wieder anmelden, damit die Änderung angewendet wird.
 {{< /c8y-admon-important >}}
 
@@ -181,7 +181,7 @@ Sie können eine der folgenden Optionen wählen:
 * **SMS-basiert**: unterstützt die folgenden Einstellungen:
 	- **Token-Gültigkeit begrenzen für** - Dauer jeder Sitzung in Minuten. Wenn die Sitzung abgelaufen ist oder ein Benutzer sich abmeldet, muss der Benutzer einen neuen Bestätigungscode eingeben.
   - **Bestätigungscode-Gültigkeit begrenzen für** - Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn der Bestätigungscode abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode anfordern, um sich anmelden zu können.
-  
+
 
 	{{< c8y-admon-info >}}
 Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
@@ -196,7 +196,7 @@ Die TOTP-Methode ist nur im Anmeldemodus "OAI-Secure" verfügbar.
 
 Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. TFA-Einstellungen der Benutzer werden gelöscht und müssen erneut konfiguriert werden.
 {{< /c8y-admon-important >}}
 

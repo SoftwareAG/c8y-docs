@@ -108,7 +108,7 @@ Bei Gruppen werden die folgenden Registerkarten angezeigt:
 - **Smart Rules** - Zeigt für die Gruppe festgelegte Smart Rules, siehe auch [Smart Rules](#smart-rules).
 - **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-important title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN im Kontext von Gruppen:
 
 - Zum Anzeigen aller Gruppen: READ-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -128,7 +128,7 @@ Bei Geräten werden die folgenden Registerkarten angezeigt:
 - **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
 - **Standort** - Zeigt den aktuellen Standort des Geräts (nur verfügbar mit `c8y_Position`).
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-important title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN im Kontext von Geräten:
 
 - Zum Anzeigen aller Geräte innerhalb einer Gruppe: READ-Berechtigung für Berechtigungstyp "Stammdaten"

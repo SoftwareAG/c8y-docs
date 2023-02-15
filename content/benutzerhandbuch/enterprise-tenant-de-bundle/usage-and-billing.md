@@ -142,7 +142,7 @@ Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt,
 
 Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
 {{< /c8y-admon-important >}}
 
@@ -251,7 +251,7 @@ Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y
 
 ### Handhabung von Zeitzonen
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Die Server der {{< product-c8y-iot >}}-Plattform laufen standardmäßig in der UTC-Zeitzone. Andere Zeitzonen werden von der Plattform ebenfalls unterstützt und können vom Service Provider zum Zeitpunkt der Installation ausgewählt werden. Die allgemeine Messfunktion wird daher auch für Nicht-UTC-Zeitzonen der Server angeboten.
 {{< /c8y-admon-important >}}
 

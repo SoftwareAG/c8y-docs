@@ -80,7 +80,7 @@ Refer to [Device Management > Connecting devices > Device registration](/users-g
 
 {{< c8y-admon-info>}}
 Only select devices which are part of the current asset.
-If a device belongs to a child asset, then select it when you create the child asset.
+If a device belongs to a subasset, then select it when you create the subasset.
 {{< /c8y-admon-info>}}
 
 
@@ -150,25 +150,25 @@ Click **Add asset** to add more subassets or click **Import assets** to add [ass
 ![Asset tree](/images/dtm/assets/dtm-assets-asset-tree-page.png)
 
 <a name="add-child-assets"></a>
-#### To add child assets
+#### To add subassets
 
-To add child assets to an asset open the **Asset tree** tab.
+To add subassets to an asset open the **Asset tree** tab.
 
 1. Click **Add asset** to load the **Asset hierarchy** for the selected asset.
 
 2. The root asset is displayed with the label "parent node". The asset hierarchy displayed below, is a subset of the root asset hierarchy.
 
-    ![Child asset](/images/dtm/assets/dtm-assets-add-child-asset.png)
+    ![Subasset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
 **Example:**
 
-If "Wind turbine" is a root level asset, then "Rotor" is a child asset of "Wind turbine" and "Blade" is a child asset of "Rotor".
+If "Wind turbine" is a root level asset, then "Rotor" is a subasset of "Wind turbine" and "Blade" is a subasset of "Rotor".
 If you navigate to the **Asset tree** page of "Wind turbine" and click **Add asset**, the asset hierarchy loads for "Rotor" and "Blade".
 
-If you navigate to the existing "Rotor" asset and want to add a child asset, you can only add child assets for "Blade".
+If you navigate to the existing "Rotor" asset and want to add a subasset, you can only add subassets for "Blade".
 
 For details how to add assets in the asset hierarchy, see [To add assets](#create-asset).
 
 {{< c8y-admon-info>}}
-If you are at the end of the hierarchy, you see no further option to create child assets.
+If you are at the end of the hierarchy, you see no further option to create subassets.
 {{< /c8y-admon-info>}}

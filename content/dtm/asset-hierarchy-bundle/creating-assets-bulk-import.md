@@ -34,7 +34,7 @@ To use the Bulk import feature, you must enable the **Digital Twin** permission 
 Once the permissions are assigned, the bulk import feature can be used.
 
 {{< c8y-admon-info>}}
-If the permissions are not assigned, then the CSV template will not be downloaded correctly.
+If the permissions are not assigned, the CSV template will not be downloaded correctly.
 {{< /c8y-admon-info>}}
 
 
@@ -90,10 +90,10 @@ The CSV template has the following fields:
 </tr>
 <tr>
 <td style="text-align:left"><b>Path</b></td>
-<td style="text-align:left">Remains blank when you create a root asset. For a child asset, provide a path up to the root asset.<br><br>
+<td style="text-align:left">Remains blank when you create a root asset. For a subasset, provide a path up to the root asset.<br><br>
 <b>Example:</b><br>
 For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > Blade" the path value is "SE-Turbine-101/SE-T101-Rotor", where "SE-Turbine-101" and "SE-T101-Rotor" each represent the respective asset models.</td>
-<td style="text-align:left">Mandatory (for child assets)</td>
+<td style="text-align:left">Mandatory (for subassets)</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Device ID / External ID</b></td>
@@ -139,8 +139,8 @@ If the type is "text" or "number" and custom criteria were provided during asset
 Fill in details for all the assets which must be created as part of the asset hierarchy.
 
 Start with the asset details for root asset model.
-Then enter the asset details for child asset models under the root asset.
-Next, enter the details for the next level in the hierarchy of child assets and repeat until the details for all the assets are entered in the CSV template.
+Then enter the asset details for child a models under the root asset.
+Next, enter the details for the next level in the hierarchy of subassets and repeat until the details for all the assets are entered in the CSV template.
 Save the CSV template in your system.
 
 
@@ -172,24 +172,24 @@ If the bulk import fails, review the reported issues and try again.
 
 If the asset hierarchy already exists, and you want to import more assets, it can be achieved by a partial import.
 
-To import a single child asset or the child asset hierarchy:
+To import a single subasset or the subasset hierarchy:
 
-1. Navigate to the **Asset tree** page of the child asset and download the template using **Import assets**.
+1. Navigate to the **Asset tree** page of the subasset and download the template using **Import assets**.
 
-2. Fill in the details for the child asset hierarchy in the CSV template. See [CSV template parameters](#csv-template-parameters) for more details.
+2. Fill in the details for the subasset hierarchy in the CSV template. See [CSV template parameters](#csv-template-parameters) for more details.
 
 	{{< c8y-admon-info>}}
 From any hierarchy level, the template will be downloaded only for its child hierarchy.
 Assets must only be imported for the child hierarchy.
 	{{< /c8y-admon-info>}}
 
-3. Enter the details for the child assets in the CSV template.
+3. Enter the details for the subassets in the CSV template.
 
 4. Click **Import assets**.
 
 5. Upload the CSV template in the **Drop file here** section in the **Import assets** dialog and click **Import**.
 
-If all details are mentioned correctly in the CSV template, the child asset hierarchy is created successfully.
+If all details are mentioned correctly in the CSV template, the subasset hierarchy is created successfully.
 
 An unsuccessful partial import will result in a **Failed asset imports** notification, showing the validation issues.
 Review the reported issues and try again.

@@ -22,12 +22,12 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 
 6. In the **Asset tree** tab you see the asset hierarchy.
 
-7. Optionally [add child assets](/dtm/asset-hierarchy/#add-child-assets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
+7. Optionally [add subassets](/dtm/asset-hierarchy/#add-child-assets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
 
 8. Click **Expand all** to view all the assets in the asset hierarchy.
 
 {{< c8y-admon-info>}}
-The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add child assets](/dtm/asset-hierarchy/#add-child-assets) are not visible for the last hierarchical level.<br>
+The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add asset](/dtm/asset-hierarchy/#add-child-assets) are not visible for the last hierarchical level.<br>
 If you edit an asset property or an asset model associated with the selected asset, you see a warning icon next to the asset model name.<br>
 You see a warning message if one or more properties associated with the asset are not present.
 {{< /c8y-admon-info>}}

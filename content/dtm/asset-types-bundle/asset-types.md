@@ -75,7 +75,7 @@ By default, no icon is selected. </td>
 <tr>
 <td style="text-align:left"><b>Child asset models</b></td>
 <td style="text-align:left">Restricts the asset assignment to the defined models.<br>
-By default, no child assets are allowed if this field is not set.</td>
+By default, no subassets are allowed if this field is not set.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
@@ -109,14 +109,14 @@ Once all required asset models are created, you can start creating [assets](/dtm
 4. Click the remove icon next to the checkbox to remove the child asset model from the selected asset model.
 
 {{< c8y-admon-info>}}
-If you do not select and check a child asset model, then the asset cannot have any child assets.
+If you do not select and check a child asset model, then the asset cannot have any subassets.
 {{< /c8y-admon-info>}}
 
-If one or more child asset models are checked as required, an asset created with this asset model can have only child assets belonging to the selected child asset models.
+If one or more child asset models are checked as required, an asset created with this asset model can have only subassets belonging to the selected child asset models.
 
 **Example:**
 
-If the asset model is "Rotor" and you select "Blade" as an allowed child asset model, then the newly created asset "AZ-43Y Rotor" can only have "Blade" assets as child assets.
+If the asset model is "Rotor" and you select "Blade" as an allowed child asset model, then the newly created asset "AZ-43Y Rotor" can only have "Blade" assets as subassets.
 
 
 <a name=""></a>

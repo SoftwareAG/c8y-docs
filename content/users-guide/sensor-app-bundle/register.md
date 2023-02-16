@@ -38,7 +38,7 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
 2.  From your smartphone, launch the app and tap **Register** at the top right of the screen. When the camera opens, tap **REGISTER MANUALLY**.
 
-3. Back in your web browser, click **Register device** and then **General**. Select a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
+3. Back in your web browser, click **Register device** (in the top-right of the page) and then select **General**. Choose a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
 
 4. On your smartphone, fill in your tenant (for example "companytenant01"), select your instance (for example "{{< domain-c8y >}}"), and enter your selected device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Register** and your device will contact the server and ask to be accepted.
 

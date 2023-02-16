@@ -48,10 +48,9 @@ Asset properties have the following parameters:
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the asset property in the DTM application.<br>
-{{< c8y-admon-info>}}  
-Key is automatically generated based on the label. You can modify the automatically generated key to suit to your needs only during asset property creation. You cannot edit the key after the asset property is created.
-{{< /c8y-admon-info>}} </td>
+<td style="text-align:left">Used to uniquely identify and store the asset property in the DTM application.<br/><br/>
+Note that the key is automatically generated based on the label. You can modify the automatically generated key to suit to your needs only during asset property creation. You cannot edit the key after the asset property is created.
+</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>

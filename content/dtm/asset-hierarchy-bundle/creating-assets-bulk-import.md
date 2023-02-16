@@ -107,10 +107,8 @@ For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > B
 </tr>
 <tr>
 <td style="text-align:left"><b>Asset properties for the asset model</b></td>
-<td style="text-align:left">6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br><br>
-{{< c8y-admon-info>}}
-The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br>
-{{< /c8y-admon-info>}}
+<td style="text-align:left">6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br/><br/>
+Note that the <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br/>
 </td>
 <td style="text-align:left">Mandatory</td>
 </tr>

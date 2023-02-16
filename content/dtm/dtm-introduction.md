@@ -29,6 +29,6 @@ Once the asset hierarchy is created in the DTM application, the hierarchy can be
 The home screen of the DTM application gives an overview of the application. You can see the number of asset models, asset properties and assets available at a glance. You can add asset properties, asset models and assets using the quick links.
 
 {{< c8y-admon-related >}}
-* [Subscribed applications](/users-guide/administration/#subscribed-applications) for more information on how to access the DTM application in your tenant.
+* See [Subscribed applications](/users-guide/administration/#subscribed-applications) for more information on how to access the DTM application in your tenant.
 
 {{< /c8y-admon-related >}}

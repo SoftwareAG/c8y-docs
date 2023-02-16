@@ -14,7 +14,7 @@ The asset model is a blueprint or template to create one or multiple [assets](/d
 
 To reach the **Asset models** page, navigate to **Configuration > Asset models**.
 
-When you create an asset model, you see the details of this asset model in the **Asset models** overview.
+When you create an asset model, you see the details of this asset model in the overview.
 
 ![Asset models overview](/images/dtm/asset-type/dtm-asset-type-view.png)
 
@@ -132,7 +132,7 @@ If the asset model is "Rotor" and you select "Blade" as an allowed child asset m
 6. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
-If there are any validation errors with a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
+If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
 If there is no asset property meeting your requirements when you search, click **New asset property**. For more details on how to create a new asset property see [Asset property > To create an asset property](/dtm/asset-types/#create-custom-property).

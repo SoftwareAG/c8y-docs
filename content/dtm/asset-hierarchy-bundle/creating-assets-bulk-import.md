@@ -19,7 +19,7 @@ To use the Bulk import feature, you must enable the **Digital Twin** permission 
 
 3. In the **Global roles** tab, select the role to which permissions are to be provided.
 
-4. Set the "Admin" permission level for **Digital Twin** in the "Permissions" section.
+4. Select the "Admin" permission for "Digital Twin" in the "Permissions" section.
 
 5. Enable access to the DTM application by selecting the following checkboxes:
 

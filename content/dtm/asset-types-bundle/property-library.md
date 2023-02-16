@@ -135,7 +135,7 @@ If the asset property is "Generator code" with a **Min length** of 8, a **Max le
 <a name="custom-number"></a>
 #### Number
 
-For this type, you must provide a numeric value for the asset creation, for example, the height of a wind turbine tower.
+For this type you must provide a numeric value for the asset creation, for example, the height of a wind turbine tower.
 
 The type **Number** contains the following fields for additional information:
 
@@ -267,7 +267,7 @@ If the asset property you want to delete is part of an existing asset, you see a
 <a name=""></a>
 ### Types of asset properties
 
-There are two types of asset properties, both fulfil different requirements:
+There are two types of asset properties, both fulfill different requirements:
 
 <a name=""></a>
 #### Simple asset property
@@ -289,7 +289,7 @@ A complex asset property consists of multiple key value pairs, meaning, it conta
 
 In the **Asset properties** complex asset properties are listed with the label "Object".
 
-You see the preview of data model on the right side of Properties section.
+You see the preview of data model on the right side of properties section.
 
  **Example:**
  

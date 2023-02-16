@@ -20,9 +20,9 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 
 5. All the asset properties for this asset will be displayed on the right.
 
-6. The **Asset tree** page displays the asset hierarchy.
+6. In the **Asset tree** tab you see the asset hierarchy.
 
-7. Optionally [add child assets](/dtm/asset-hierarchy/#add-child-assets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) from the top bar.
+7. Optionally [add child assets](/dtm/asset-hierarchy/#add-child-assets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
 
 8. Click **Expand all** to view all the assets in the asset hierarchy.
 
@@ -61,7 +61,7 @@ Enter a search term into the textbox at the top of the **Search** window to see 
 
 To see more details click **Go to the asset data table** at the bottom. This will show the entire search results in a table format.
 
-The **Search** window only shows a limited number of matches. In case of more matches, switch to the asset data table to see the complete results.
+The **Search** page only shows a limited number of matches. In case of more matches, switch to the asset data table to see the complete results.
 
 ![assets-search](/images/dtm/assets/dtm-assets-search-assets.png)
 

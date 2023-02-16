@@ -31,11 +31,11 @@ helpcontent:
 
 To use this feature, subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page by navigating to **Configuration > Localization**.
 
-If you want to add translations for the [asset properties](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
+If you want to add translations for the created [asset properties](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types), or if you want to add custom translations for the existing static text in the DTM application, use the **Localization** feature.
 
 ![Main view localization page](/images/dtm/localization/dtm-localization-main-page.png)
 
-Once you create an asset property or an asset model, their names are added as keys in the **Localization** page automatically. You can further add the translations as required.
+Once you create an asset property or an asset model, their names are added automatically as keys in the **Localization** page. You can further add the translations as required.
 
 To add a new translation in the DTM application, you can add the text as key and add the translations as required.
 

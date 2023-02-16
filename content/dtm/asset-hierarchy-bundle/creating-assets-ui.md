@@ -70,7 +70,7 @@ Click **Next** to continue until all assets are created.
 When you create a new asset you have the option of assigning one or more devices to this asset.
 
 1. Click **Assign devices** in the **New asset** page.
-2. The resulting dialog lists all devices registered for the tenant. Select one or multiple devices and click **Assign**.
+2. The resulting dialog window lists all devices registered for the tenant. Select one or multiple devices and click **Assign**.
 3. The dialog closes and you can continue creating the asset.
 
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
@@ -136,14 +136,14 @@ Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 <a name=""></a>
 ### To view asset details
 
-Select any asset in the **Assets** page to view the asset details in **Subassets** page.
+Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
 It shows all the subassets, child devices and asset properties.
 
-In the top right corner of the **Subassets** page, you can [assign devices](#assign-devices-to-asset).
+In the top right corner of the **Subassets** tab, you can [assign devices](#assign-devices-to-asset).
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-You can view the hierarchy of the asset in the **Asset tree** page. Initially the asset hierarchy is collapsed. Click the expand icon to view the next level of subassets or click **Expand all** on the top right to view all hierarchy levels.
+You can view the hierarchy of the asset in the **Asset tree** tab. Initially the asset hierarchy is collapsed. Click the expand icon to view the next level of subassets or click **Expand all** on the top right to view all hierarchy levels.
 
 Click **Add asset** to add more subassets or click **Import assets** to add [assets in bulk](/dtm/asset-hierarchy/#creating-assets-bulk-import).
 
@@ -152,7 +152,7 @@ Click **Add asset** to add more subassets or click **Import assets** to add [ass
 <a name="add-child-assets"></a>
 #### To add child assets
 
-To add child assets to an asset open the **Asset tree** page.
+To add child assets to an asset open the **Asset tree** tab.
 
 1. Click **Add asset** to load the **Asset hierarchy** for the selected asset.
 
@@ -170,5 +170,5 @@ If you navigate to the existing "Rotor" asset and want to add a child asset, you
 For details how to add assets in the asset hierarchy, see [To add assets](#create-asset).
 
 {{< c8y-admon-info>}}
-If you are at the end of the hierarchy, you see no option to create child assets.
+If you are at the end of the hierarchy, you see no further option to create child assets.
 {{< /c8y-admon-info>}}

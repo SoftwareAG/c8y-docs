@@ -98,6 +98,8 @@ Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierun
 Durch Mehrfachregistrierung wird eine elementare Darstellung des Geräts erstellt. Danach muss das Gerät sie auf eine volle Darstellung mit eigenem Status aktualisieren.
 {{< /c8y-admon-info >}}
 
+Aus der CSV-Datei wird automatisch ein Trennzeichen bezogen. Gültige Werte für Trennzeichen sind: `\t` (Tabulatorzeichen), `;` (Semikolon) und `,` (Komma).
+
 **Einfache Registrierung**
 
 Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.

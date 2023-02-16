@@ -214,7 +214,7 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status.
 {{< /c8y-admon-info >}}
 
-A separator is automatically obtained from the CSV file. Valid separator values are: \t (tabulation mark), ; (semicolon) and , (comma).
+A separator is automatically obtained from the CSV file. Valid separator values are: `\t` (tabulation mark), `;` (semicolon) and `,` (comma).
 
 **Simple registration**
 

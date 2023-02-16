@@ -9,7 +9,7 @@ For each [asset model](/dtm/asset-types/#asset-types), a CSV template is provide
 Fill in the required details in this template and upload the file to create the assets in bulk for the selected asset model.
 
 <a name=""></a>
-### Pre-requisites to use the bulk import feature
+### To use the bulk import feature
 
 To use the Bulk import feature, you must enable the **Digital Twin** permission for the user's role, following these steps:
 

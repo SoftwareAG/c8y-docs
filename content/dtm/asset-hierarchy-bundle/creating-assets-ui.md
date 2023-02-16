@@ -85,7 +85,7 @@ If a device belongs to a subasset, then select it when you create the subasset.
 
 
 <a name=""></a>
-#### To filter devices for selection
+#### To filter and select devices
 
 You can view, search or filter devices easily with the following options:
 

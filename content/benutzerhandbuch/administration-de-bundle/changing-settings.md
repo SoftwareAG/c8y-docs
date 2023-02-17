@@ -117,7 +117,6 @@ Wenn die Option **Sitzungskonfiguration verwenden** aktiviert ist, können folge
 <td style="text-align:left">Definiert, wie lange ein Token aktiv ist. Der Benutzer kann nur mit einem gültigen Token auf {{< product-c8y-iot >}} zugreifen. Diese Konfigurationsoption ist stets verfügbar, unabhängig von der Sitzungskonfiguration. Siehe <a href="#token-settings" class="no-ajaxy">Token-Erzeugung mit OAI-Secure</a> weiter unten. </td>
 <td style="text-align:left">2 Tage</td>
 </tr>
-
 </tbody>
 </table>
 
@@ -138,7 +137,6 @@ Während der Erneuerung des Sitzungs-Tokens wird das vorherige Token zurückgese
 
 
 <a name="token-settings"></a>
-
 #### Token-Erzeugung mit OAI-Secure
 
 OAI-Secure basiert im Wesentlichen auf JWT, das in einem Browser-Cookie gespeichert wird. Außerdem kann OAI-Secure zum Erzeugen eines JWT im Antworttext verwendet werden.

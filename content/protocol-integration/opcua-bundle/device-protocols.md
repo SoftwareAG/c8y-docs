@@ -185,12 +185,12 @@ A background scheduler task will retry each queue up to the number of _maxRetrie
 
 All elements of the queue are retried after the retry delay has passed. In effect, the count of the elements in the queue is decreases with each successful retried custom action. 
 
-In the gateway configuration (see also [Gateway Configuration: Additional customization](#additional-customizations)) the following parameters can be configured:
+This mechanism can be configured in the configuration section `gateway.mappingExecution.http.failureHandling` (see also [Gateway Configuration: Additional customization](#additional-customizations)) using the following properties:
 
 
-|<div style="width:200px">Setting</div>|Value format|Example |Description|																				
-|-----------|------------|--------|-----------|
-|enabled  | boolean (true/false) | true | Activate or deactivate the fail over for custom actions |
-|maxRetries| number | 5 | Number of retries for failed queues. If the maximum is reached the queue is saved as permanently failed and never tried again. Default is 5.|
-|noRetryHttpCodes| Comma-separated list of HTTP response codes | 400,500 |  If retries are enabled (failureHandling.enabled=true), this setting allows retries to be skipped for certain HTTP response codes. In the given example requests that have received a `400 Bad Request` or a `500 Internal server error` response will not be retried.
-|retryDelay|number| 120 | Minimum delay in seconds between two retries of the same request.|
+|<div style="width:200px">Setting</div>|Default|Value format|Example |Description|																				
+|-----------|-----|-----------|--------|-----------|
+|enabled  | true | boolean (true/false) | true | Activate or deactivate the fail over for custom actions |
+|maxRetries| 5| number | 5 | Number of retries for failed queues. If the maximum is reached the queue is saved as permanently failed and never tried again. Default is 5.|
+|noRetryHttpCodes| empty | Comma-separated list of HTTP response codes | 400,500 |  If retries are enabled (failureHandling.enabled=true), this setting allows retries to be skipped for certain HTTP response codes. In the given example requests that have received a `400 Bad Request` or a `500 Internal server error` response will not be retried.
+|retryDelay|120| number| 120 | Minimum delay in seconds between two retries of the same request.|

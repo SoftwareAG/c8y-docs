@@ -24,12 +24,20 @@ Folgende Typen sind verfügbar:
 </thead>
 <tbody>
 <tr>
+<tr>
+<td align="left"><a href="#recent-alarms">Aktuelle Alarme</a></td>
+<td align="left">Zeigt alle Alarme aller Schweregrade, sortiert nach Zeit.</td>
+</tr>
 <td align="left"><a href="#alarm-list">Alarmliste</a></td>
 <td align="left">Zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus.</td>
 </tr>
 <tr>
 <td align="left"><a href="#all-alarms">Alle kritischen Alarme</a></td>
 <td align="left">Zeigt alle Objekte mit einem kritischen Alarm an.</td>
+</tr>
+<tr>
+<td align="left"><a href="#traffic-light">Ampel</a></td>
+<td align="left">Zeigt die Zustände eines Geräts in Form einer Ampel.</td>
 </tr>
 <tr>
 <td align="left"><a href="#applications">Anwendungen</a></td>
@@ -46,6 +54,10 @@ Folgende Typen sind verfügbar:
 <tr>
 <td align="left"><a href="#widget-asset-table">Asset-Tabelle</a></td>
 <td align="left">Zeigt eine Tabelle mit Details zu einem ausgewählten Asset und allen seinen Kindgeräten.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-image">Bild</a></td>
+<td align="left">Zeigt ein einzelnes Bild, das Sie aus Ihrem Dateisystem auswählen können.</td>
 </tr>
 <tr>
 <td align="left"><a href="#data-graph">Datenpunktgraph</a></td>
@@ -68,6 +80,10 @@ Folgende Typen sind verfügbar:
 <td align="left">Ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben.</td>
 </tr>
 <tr>
+<td align="left"><a href="#widget-message-sending">Gerätenachricht</a></td>
+<td align="left">Sendet eine Nachricht an ein Gerät.</td>
+</tr>
+<tr>
 <td align="left"><a href="#help-service">Hilfe und Service</a></td>
 <td align="left">Zeigt Links auf Hilfe- und Service-Dokumente an</td>
 </tr>
@@ -76,36 +92,20 @@ Folgende Typen sind verfügbar:
 <td align="left">Zeigt benutzerdefinierten Inhalt im HTML-Format.</td>
 </tr>
 <tr>
-<td align="left"><a href="#widget-image">Bild</a></td>
-<td align="left">Zeigt ein einzelnes Bild, das Sie aus Ihrem Dateisystem auswählen können.</td>
-</tr>
-<tr>
 <td align="left"><a href="#info-gauge">Infoanzeige</a></td>
 <td align="left">Visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.</td>
-</tr>
-<tr>
-<td align="left"><a href="#linear-gauge">Linearer Zeiger</a></td>
-<td align="left">Zeigt Datenpunkte in Form eines linearen Zeigers.</td>
 </tr>
 <tr>
 <td align="left"><a href="#widget-map">Karte</a></td>
 <td align="left">Zeigt den Standort eines Geräts oder aller Geräte einer Gruppe.</td>
 </tr>
 <tr>
-<td align="left"><a href="#widget-message-sending">Gerätenachricht</a></td>
-<td align="left">Sendet eine Nachricht an ein Gerät.</td>
-</tr>
-<tr>
 <td align="left"><a href="#pie-chart">Kuchendiagramm</a></td>
 <td align="left">Zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.</td>
 </tr>
 <tr>
-<td align="left"><a href="#radial-gauge">Tacho</a></td>
-<td align="left">Zeigt Datenpunkte in Form eines Tachos.</td>
-</tr>
-<tr>
-<td align="left"><a href="#recent-alarms">Aktuelle Alarme</a></td>
-<td align="left">Zeigt alle Alarme aller Schweregrade, sortiert nach Zeit.</td>
+<td align="left"><a href="#linear-gauge">Linearer Zeiger</a></td>
+<td align="left">Zeigt Datenpunkte in Form eines linearen Zeigers.</td>
 </tr>
 <tr>
 <td align="left"><a href="#relay-array-control">Relaisfeldsteuerung</a></td>
@@ -128,8 +128,8 @@ Folgende Typen sind verfügbar:
 <td align="left">Zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Silo-Darstellung an.</td>
 </tr>
 <tr>
-<td align="left"><a href="#traffic-light">Ampel</a></td>
-<td align="left">Zeigt die Zustände eines Geräts in Form einer Ampel.</td>
+<td align="left"><a href="#radial-gauge">Tacho</a></td>
+<td align="left">Zeigt Datenpunkte in Form eines Tachos.</td>
 </tr>
 </tbody>
 </table>

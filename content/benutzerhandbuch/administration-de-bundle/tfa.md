@@ -12,7 +12,7 @@ Ob TFA für einen bestimmten Benutzer aktiviert ist, können Sie überprüfen, i
 
 ### SMS
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Mobiltelefonnummer angegeben werden. Ohne gültige Telefonnummer ist eine Anmeldung nicht möglich.
 {{< /c8y-admon-req >}}
 
@@ -31,7 +31,7 @@ Dieser Prozess kann nur über die "Administration"-Anwendung ausgeführt werden 
 
 ### TOTP (Google Authenticator)
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Benutzer müssen auf ihrem Smartphone eine TOTP-Anwendung installieren (Google Authenticator wird empfohlen), die sowohl im App Store als auch im Play Store kostenlos erhältlich ist.
 {{< /c8y-admon-req >}}
 
@@ -53,7 +53,7 @@ Nach diesem Vorgang generiert die TOTP-App alle 30 Sekunden einen neuen Code, de
 Wenn ein Benutzer den Zugriff auf den TFA-Code verliert, z. B. wenn er sein Smartphone verliert oder die Anwendung deinstalliert, und den Code wiederherstellen will, muss das Secret zurückgesetzt werden.
 TOTP muss von jedem einzelnen Benutzer eingerichtet werden.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 
 Benutzer können ihr eigenes TOTP-Secret nicht zurücksetzen. Das Secret eines Benutzers wird nur von seinem jeweiligen übergeordneten Benutzer zurückgesetzt.
 Weitere Informationen zu Benutzerhierarchien finden Sie unter [{{< enterprise-tenant-de >}} > Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies) im *User Guide*.
@@ -76,7 +76,7 @@ ROLLEN UND BERECHTIGUNGEN:
 Wenn ein Benutzer die Verwendung von TOTP (und damit der TFA) vollständig ausschalten möchte, muss das Secret zurückgesetzt und die Erzwingung von TOTP deaktiviert werden.
 TOTP muss von jedem einzelnen Benutzer eingerichtet werden.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Zurücksetzen des Secrets: ADMIN- oder ERSTELLEN-Berechtigung für Berechtigungstyp "Benutzerverwaltung"

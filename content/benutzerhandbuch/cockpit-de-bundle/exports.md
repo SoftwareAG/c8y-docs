@@ -8,7 +8,7 @@ weight: 65
 
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen von Exporten: READ-Berechtigung für Berechtigungstyp "Stammdaten"

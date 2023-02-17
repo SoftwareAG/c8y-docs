@@ -14,7 +14,7 @@ Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt
 - Messwerte
 - Operationen
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Um diese Funktion verwenden zu können, muss Ihr Mandant die Anwendung "feature-broker" abonniert haben.
 {{< /c8y-admon-req >}}
 

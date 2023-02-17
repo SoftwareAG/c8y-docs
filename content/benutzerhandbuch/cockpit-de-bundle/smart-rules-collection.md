@@ -81,7 +81,7 @@ In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen
 
 Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
 {{< /c8y-admon-req >}}
 
@@ -217,7 +217,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gru
 
 Sendet eine E-Mail oder SMS, wenn ein Alarm erzeugt wird.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
 {{< /c8y-admon-req >}}
 

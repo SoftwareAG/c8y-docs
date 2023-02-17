@@ -6,7 +6,7 @@ weight: 30
 
 Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen und Auswählen aller verfügbaren Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen

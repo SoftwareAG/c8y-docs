@@ -8,7 +8,7 @@ weight: 90
 
 Der Microservice-basierte Data Broker nutzt den {{< product-c8y-iot >}} Messaging Service, der eine zuverlässige, skalierbare und hochleistungsfähige Bewegung von IoT-Daten ermöglicht. Der Microservice-basierte Data Broker ähnelt in seiner Funktionalität dem bisherigen Data Broker, außer dass zu seiner Nutzung ein Microservice, der `databroker-agent-server`, aktiviert werden muss.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Der {{< product-c8y-iot >}} Messaging Service ist eine optionale Komponente der {{< product-c8y-iot >}}-Plattform, die eventuell aktiviert werden muss, bevor der Microservice-basierte Data Broker verwendet werden kann.
 Der ursprüngliche Data Broker wird vorerst neben dem Microservice-basierten Data Broker weiter betriebsfähig bleiben, und die Benutzer können für jeden Mandanten individuell auswählen, welcher Data Broker verwendet werden soll.
 

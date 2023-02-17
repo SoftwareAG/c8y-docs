@@ -7,7 +7,7 @@ layout: redirect
 {{< product-c8y-iot >}} bietet Single-Sign-On-Funktionalität (SSO), die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, z. B. Azure Active Directory (ADD), anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Zur Verwendung der SSO-Funktion muss gewährleistet sein, dass:
 
 * der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt.
@@ -200,7 +200,7 @@ Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschri
 
 Die folgenden Schritte verdeutlichen, wie Azure AD (Azure Active Directory) für SSO in {{< product-c8y-iot >}} verwendet werden kann.
 
-{{< c8y-admon-important title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Sie benötigen Administrationszugriff auf Ihr Azure AD.
 {{< /c8y-admon-req >}}
 

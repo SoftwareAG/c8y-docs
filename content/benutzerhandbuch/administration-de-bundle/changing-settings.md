@@ -1,4 +1,3 @@
-
 ---
 layout: redirect
 title: Ändern von Einstellungen

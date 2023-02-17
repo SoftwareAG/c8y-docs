@@ -90,7 +90,7 @@ Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens
 #### So fügen Sie eine Anweisung hinzu
 
 1. Klicken Sie auf **Anweisung hinzufügen**, um dem Simulator eine neue Anweisung hinzuzufügen.
-2.  Wählen Sie im darauf folgenden Dialog eine Nachricht aus der Auswahlliste.
+2. Wählen Sie im darauf folgenden Dialog eine Nachricht aus der Auswahlliste.
 3. Legen Sie je nach Typ der Nachricht die erforderlichen Parameter fest.
 3. Klicken Sie auf **Speichern**.
 

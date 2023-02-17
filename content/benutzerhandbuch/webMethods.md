@@ -1,6 +1,6 @@
 ---
 aliases:
-- users-guide/optional-services/#webMethods
+- benutzerhandbuch/optional-services/#webMethods
 layout: bundle
 outputs:
 - html

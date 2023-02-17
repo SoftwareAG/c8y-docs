@@ -1,6 +1,6 @@
 ---
 aliases:
-- /benutzerhandbuch/overview-de/#user-settings
+ - /benutzerhandbuch/overview-de/#user-settings
 layout: redirect
 title: Benutzeroptionen und -einstellungen
 weight: 50

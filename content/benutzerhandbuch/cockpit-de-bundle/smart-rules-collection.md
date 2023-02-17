@@ -125,7 +125,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -196,7 +196,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -261,7 +261,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -324,7 +324,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -391,7 +391,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -460,7 +460,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -524,7 +524,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -588,7 +588,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -646,7 +646,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -759,7 +759,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -865,7 +865,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So schalten Sie eine Smart Rule ein/aus</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>

@@ -1,3 +1,4 @@
+
 ---
 layout: redirect
 title: Ändern von Einstellungen
@@ -250,9 +251,9 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 
 	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
 
-1. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
+2. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
 
-1. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:
+3. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:
 
 <table>
 <colgroup>

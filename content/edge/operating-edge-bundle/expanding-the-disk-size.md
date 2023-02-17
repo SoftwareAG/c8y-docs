@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 15
 title: Expanding the disk size
 layout: redirect
 ---

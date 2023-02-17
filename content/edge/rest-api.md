@@ -1,5 +1,5 @@
 ---
-weight: 35
+weight: 65
 title: REST APIs for Edge
 layout: bundle
 ---

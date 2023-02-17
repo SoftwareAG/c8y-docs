@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 30
 title: Updating Edge using the REST APIs
 layout: redirect
 ---

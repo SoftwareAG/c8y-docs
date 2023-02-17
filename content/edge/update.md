@@ -1,5 +1,5 @@
 ---
-weight: 45
+weight: 30
 title: Updating Cumulocity IoT Edge
 layout: bundle
 ---

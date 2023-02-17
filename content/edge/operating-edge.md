@@ -1,6 +1,6 @@
 ---
-weight: 40
-title: Diagnostics and support
+weight: 50
+title: Edge operations
 layout: bundle
 ---
 

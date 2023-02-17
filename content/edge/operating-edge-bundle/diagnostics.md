@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 25
 title: Diagnostics
 layout: redirect
 ---

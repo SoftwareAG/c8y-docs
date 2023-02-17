@@ -23,12 +23,12 @@ Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert
 #### Datentypen
 
 Die Datenhaltungsregeln erstrecken sich auf folgende Datentypen:
-+ Alarms
++ Alarme
 + Audits
-+ Bulk operations
-+ Events
-+ Measurements
-+ Operations
++ Bulk-Operationen
++ Ereignisse
++ Messungen
++ Operationen
 
 {{< c8y-admon-info >}}
 Datenhaltungsregeln gelten nicht für Dateien, die in der Dateiablage gespeichert sind.

@@ -164,14 +164,14 @@ Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Ger
 
 Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 
-1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und öffnen Sie dann die Seite **Kind-Assets**.
+1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und öffnen Sie dann die Registerkarte **Kind-Assets**.
 2. Klicken Sie auf **Geräte zuweisen** rechts in der oberen Menüleiste.
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
 ![Assign devices](/images/benutzerhandbuch/cockpit/cockpit-group-assign.png)
 
-Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
+Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Registerkarte **Kind-Assets** angezeigt.
 
 <a name="edit-group"></a>
 ### Bearbeiten einer Gruppe

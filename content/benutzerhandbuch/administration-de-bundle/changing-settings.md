@@ -195,7 +195,7 @@ Die TOTP-Methode ist nur im Anmeldemodus "OAI-Secure" verfügbar.
 
 Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig">}}
 Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. TFA-Einstellungen der Benutzer werden gelöscht und müssen erneut konfiguriert werden.
 {{< /c8y-admon-important >}}
 
@@ -336,7 +336,6 @@ Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berech
 {{< c8y-admon-info >}}
 OpenIT betreut keine neuen Kunden mehr und ist dabei, das Geschäft mit SMS-Anbietern einzustellen. Wir empfehlen Ihnen daher, einen der anderen SMS-Anbieter zu wählen.
 {{< /c8y-admon-info >}}
-
 
 <a name="connectivity"></a>
 ### Verwalten der Konnektivitätseinstellungen

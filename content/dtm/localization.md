@@ -11,6 +11,7 @@ title: Localization
 
 {{< c8y-admon-req >}}
 * Subscribed to [Feature branding](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
+* User's role has READ permission level to **Application management**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*
 {{< /c8y-admon-req >}}
 
 <a name=""></a>

@@ -36,11 +36,11 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
     ![Manual registration](/images/users-guide/csa/csa-device-registration.png)
 
-2.  From your smartphone, launch the app and tap **Register** at the top right of the screen. When the camera opens, tap **REGISTER MANUALLY**.
+2.  From your smartphone, launch the app and tap **Register** at the top right of the screen. When the camera opens, tap **Register manually**.
 
-3. Back in your web browser, click **Register device** (in the top-right of the page) and then select **General**. Choose a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
+3. Back in your web browser, click **Register device** at the top-right of the page and select **General**. Choose a meaningful and unique device ID for your smartphone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your smartphone to show up.
 
-4. On your smartphone, fill in your tenant (for example "companytenant01"), select your instance (for example "{{< domain-c8y >}}"), and enter your selected device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Register** and your device will contact the server and ask to be accepted.
+4. On your smartphone, fill in your tenant, for example, "companytenant01", select your instance, for example, "{{< domain-c8y >}}", and enter your selected device ID. If your instance is not available in the list, you can enter it manually if you click **Add other instance**. Click **Register** for your device to contact the server and ask to be accepted.
 
     ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
 
@@ -53,5 +53,5 @@ For further information about registering a device on the platform manually, ref
 If you want to deregister from {{< product-c8y-iot >}}, tap **Deregister** in the top right corner of the screen and approve the confirmation dialog. After that you can connect to the same or any other {{< product-c8y-iot >}} instance or tenant.
 
 {{< c8y-admon-info >}}
-Deregistering a device will automatically remove the device from {{< product-c8y-iot >}}.
+Deregistering a device automatically removes the device from {{< product-c8y-iot >}}.
 {{< /c8y-admon-info >}}

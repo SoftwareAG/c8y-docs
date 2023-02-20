@@ -25,8 +25,12 @@ Bring the device close to your smartphone, 30cm or less is ideal.
 When the Bluetooth device appears in the list, tap **Pair Device** to start pairing. The Bluetooth device will then be connected to your smartphone and start sending data to {{< product-c8y-iot >}} if you are currently connected.
 
 {{< c8y-admon-info >}}
-To try connecting Bluetooth sensor devices without a physical device, {{< sensor-app >}} supports Bluetooth simulation. {{< /c8y-admon-info >}}
+{{< sensor-app >}} supports Bluetooth simulation if you want to connect Bluetooth sensor devices without a physical device.
+{{< /c8y-admon-info >}}
 
-To enable or disable simulation in {{< sensor-app >}}, follow instructions at the beginning of the section to scan for connected Bluetooth devices. While scanning, an **ENABLE SIMULATION** button is be presented to enable the simulation mode. Once enabled, {{< sensor-app >}} will present devices supporting the simulation mode. Continue from here as with real physical devices.
+To enable or disable the simulation in {{< sensor-app >}}, follow the instructions at the beginning of the section to scan for connected Bluetooth devices. During the scan use the **Enable simulation** button to enable the simulation mode. Once enabled, {{< sensor-app >}} will present devices supporting the simulation mode. Continue from here as with real physical devices.
 
-To disable simulation, all simulated devices must be connected to get the **DISABLE SIMULATION** button. A second option is to disable via the {{< sensor-app >}} settings. In Android the settings are available via the main menu. On iOS, find {{< sensor-app >}} in the System Preferences app, select **Connectivity** and disable **Simulate Devices**. By disabling the simulation mode, all simulated devices will be disconnected and removed.
+There are two ways to disable the simulation:
+
+ * Click **Disable simulation** to end the simulation for all connected simulated devices. 
+ * End the simulation via the {{< sensor-app >}} settings. On Android the settings are available via the main menu. On iOS, find {{< sensor-app >}} in the System Preferences app, select **Connectivity** and disable **Simulate devices**. By disabling the simulation mode, you disconnect and remove all simulated devices.

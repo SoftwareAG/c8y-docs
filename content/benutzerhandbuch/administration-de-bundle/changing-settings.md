@@ -33,8 +33,9 @@ Im Feld **Bevorzugter Login-Modus** können Sie eine der folgenden Optionen wäh
 
 Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
 
-{{< c8y-admon-important >}}
-Immer wenn Sie den Anmeldemodus ändern, werden Sie gezwungen, sich abzumelden. Andere Benutzer müssen sich ab- und wieder anmelden, damit die Änderung angewendet wird.
+{{< c8y-admon-important title="Wichtig" >}}
+Immer wenn Sie den Anmeldemodus ändern, werden Sie gezwungen, sich abzumelden.
+Andere Benutzer müssen sich ab- und wieder anmelden, damit die Änderung angewendet wird.
 {{< /c8y-admon-important >}}
 
 Im Feld **Gültigkeitsdauer des Passworts** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, indem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
@@ -181,7 +182,7 @@ Sie können eine der folgenden Optionen wählen:
   - **Bestätigungscode-Gültigkeit begrenzen für** - Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn der Bestätigungscode abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode anfordern, um sich anmelden zu können.
 
 
-	{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
 {{< /c8y-admon-info >}}
 
@@ -194,7 +195,7 @@ Die TOTP-Methode ist nur im Anmeldemodus "OAI-Secure" verfügbar.
 
 Klicken Sie auf **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig">}}
 Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. TFA-Einstellungen der Benutzer werden gelöscht und müssen erneut konfiguriert werden.
 {{< /c8y-admon-important >}}
 

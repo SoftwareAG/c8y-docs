@@ -12,7 +12,7 @@ Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Mic
 
 Beides kann über das Menü **Ecosystem** im Navigator aufgerufen werden.
 
-Zudem gibt es in {{< enterprise-tenant-de >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
+Zudem gibt es in {{< enterprise-tenant-de >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
 
 <img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
@@ -104,7 +104,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 
 Benutzerdefinierte Anwendungen können sein:
 
-* webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind
+* webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind
 * Links zu einer Anwendung, die anderswo betrieben wird
 * Duplikate von abonnierten Anwendungen (um diese den eigenen Bedürfnissen anzupassen)
 
@@ -133,7 +133,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis enthalten, andernfalls funktioniert die Anwendung nicht.
 {{< /c8y-admon-important >}}
 
@@ -172,7 +172,7 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 
 1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
 2. Wählen Sie im folgenden Dialog **Vorhandene Anwendung duplizieren**.
-3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste, z. B. "Cockpit".
+3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste, z. B. "Cockpit".
 4. Geben Sie im nächsten Fenster den Namen für die Anwendung, einen Anwendungsschlüssel zur Identifizierung der Anwendung und einen Pfad als Bestandteil der URL ein, um die Anwendung aufzurufen. Standardmäßig werden die Werte der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie als Pfad den Pfad der abonnierten Originalanwendung verwenden, wird Ihre eigene Anwendung die abonnierte Anwendung überschreiben.
 <br><br>
 <img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
@@ -259,8 +259,8 @@ Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben eine
 
 In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung (siehe [Anwendungsattribute](#application-properties)).
 
-{{< c8y-admon-important title="Wichtig" >}}
-Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
+{{< c8y-admon-important title="Wichtig" >}}
+Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
 {{< /c8y-admon-important >}}
 
 ### So löschen Sie eine Anwendung

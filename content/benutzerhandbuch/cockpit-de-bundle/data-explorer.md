@@ -4,9 +4,9 @@ title: Daten-Explorer
 weight: 30
 ---
 
-Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
+Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
 
-{{< c8y-admon-req title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen und Auswählen aller verfügbaren Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
@@ -42,7 +42,7 @@ In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkt
 
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter [Anpassen von Datenpunktattributen](#customize-data-points).
 
-Klicken Sie auf **Als Standard speichern**, um die Datenpunkt-Einstellungen im vom Gerät verwalteten Objekt zu speichern. Diese Einstellungen haben dann Vorrang vor den Einstellungen aus der Datenpunktbibliothek, z. B. wenn dieser Datenpunkt von anderen Benutzern einem Daten-Explorer hinzugefügt wird oder wenn das Gerät und sein Datenpunkt durch eine Schwellenwert-Smart Rule verarbeitet werden. Wenn Sie die Standardeinstellungen der Datenpunktbibliothek wiederherstellen möchten, klicken Sie auf **Aus Bibliothek laden** und anschließend auf **Als Standard speichern**.
+Klicken Sie auf **Als Standard speichern**, um die Datenpunkt-Einstellungen im vom Gerät verwalteten Objekt zu speichern. Diese Einstellungen haben dann Vorrang vor den Einstellungen aus der Datenpunktbibliothek, z. B. wenn dieser Datenpunkt von anderen Benutzern einem Daten-Explorer hinzugefügt wird oder wenn das Gerät und sein Datenpunkt durch eine Schwellenwert-Smart Rule verarbeitet werden. Wenn Sie die Standardeinstellungen der Datenpunktbibliothek wiederherstellen möchten, klicken Sie auf **Aus Bibliothek laden** und anschließend auf **Als Standard speichern**.
 
 **Beispiel:**
 
@@ -239,9 +239,9 @@ Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten 
  - Zeitpunkt, an welchem der Wert gemessen wurde
  - Quelle des Messwerts
  - Name des verwendeten Geräts
- - Fragmenttyp (z. B. `c8y_SpeedMeasurement`)
+ - Fragmenttyp (z. B. `c8y_SpeedMeasurement`)
  - Messwert
- - Einheit, die für einen Messwert verwendet wird (z. B. "C", "km/h", "sec")
+ - Einheit, die für einen Messwert verwendet wird (z. B. "C", "km/h", "sec")
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie je nach Bedarf entweder **Als CSV herunterladen** oder **Als Excel herunterladen**.
 

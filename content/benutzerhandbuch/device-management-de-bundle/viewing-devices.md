@@ -108,7 +108,7 @@ Während Standardspalten lediglich nach Bedarf ein- oder ausgeblendet werden kö
 
 Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 {{< /c8y-admon-important >}}
 
@@ -128,7 +128,7 @@ Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie wie im S
 
 Abgesehen vom Filtern nach Text gibt es folgende weitere Optionen:
 
-- Bei Datumsfeldern (z. B. **Registrierungsdatum**) geben Sie ein Zeitintervall als Filter ein.
+- Bei Datumsfeldern (z. B. **Registrierungsdatum**) geben Sie ein Zeitintervall als Filter ein.
 - In der Spalte **Status** können Sie nach verschiedenen Kriterien filtern, die jeweils den Sende-, Push- oder Wartungsstatus des Geräts repräsentieren.
 - In der Spalte **Alarm** entsprechen die Filterkriterien den Alarmtypen (kritisch, wichtig, weniger wichtig, Warnung, keine Alarme).
 - Wählen Sie für benutzerdefinierte Spalten die Option **Nur Zeilen, in denen der Wert definiert ist**, um anhand dessen zu filtern, ob das Fragment existiert, oder legen Sie einen oder mehrere Filterbegriffe fest, denen der Eintrag entsprechen muss.
@@ -142,5 +142,5 @@ Die Sortierfunktion steht bei jeder Spalte zur Verfügung. Klicken Sie auf das S
 Klicken Sie auf **Filter zurücksetzen** in der Tabellenkopfzeile, wenn Sie alle Filter zurücksetzen und wieder alle Geräte anzeigen möchten.
 
 {{< c8y-admon-info >}}
-Wenn Sie die Liste anhand eines Textfelds, z. B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.
+Wenn Sie die Liste anhand eines Textfelds, z. B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.
 {{< /c8y-admon-info >}}

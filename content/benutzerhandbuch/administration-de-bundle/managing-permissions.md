@@ -25,7 +25,7 @@ In der Registerkarte **Globale Rollen** finden Sie die Rollen, die Berechtigunge
 {{< c8y-admon-info >}}
 Die vordefinierten Rollen sind als Muster für einen bestimmten Zweck konfiguriert. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
 
-Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die Sie diesem zuweisen, alle notwendigen Berechtigungen umfassen, die speziell für diesen Benutzer in beiden zugewiesenen Rollen relevant sind. Berechtigungen aus unterschiedlichen Rollen werden zusammengeführt, wenn sie demselben Benutzer zugewiesen werden. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen. Wenn Sie jedoch auch eine Stammdatenberechtigung über einige der verfügbaren Rollen zuweisen, erhält der Benutzer Zugriff auf die gesamten Stammdaten wie Geräte, Gruppen und Konfigurationen.
+Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die Sie diesem zuweisen, alle notwendigen Berechtigungen umfassen, die speziell für diesen Benutzer in beiden zugewiesenen Rollen relevant sind. Berechtigungen aus unterschiedlichen Rollen werden zusammengeführt, wenn sie demselben Benutzer zugewiesen werden. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen. Wenn Sie jedoch auch eine Stammdatenberechtigung über einige der verfügbaren Rollen zuweisen, erhält der Benutzer Zugriff auf die gesamten Stammdaten wie Geräte, Gruppen und Konfigurationen.
 {{< /c8y-admon-info >}}
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
@@ -42,7 +42,7 @@ Die Rollen "admins" und "devices" haben einen Sonderstatus:
 <tbody>
 <tr>
 <td align="left">admins</td>
-<td align="left">Administrative Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d. h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
+<td align="left">Administrative Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d. h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
 </tr>
 <tr>
 <td align="left">devices</td>
@@ -93,7 +93,7 @@ Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereit
 </tr>
 <tr>
 <td align="left">Mandantenmanager</td>
-<td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
+<td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
 </tr>
 </tbody>
 </table>
@@ -251,7 +251,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionalitäten in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionalitäten beschrieben.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Werden neue Funktionen mit neuen Berechtigungen zu {{< product-c8y-iot >}} hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 {{< /c8y-admon-important >}}
 
@@ -260,7 +260,7 @@ Werden neue Funktionen mit neuen Berechtigungen zu {{< product-c8y-iot >}} hinzu
 
 Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#custom-template) im *User Guide*.
 {{< /c8y-admon-important >}}
 
@@ -283,7 +283,7 @@ Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch er
 <a name="inventory"></a>
 ### Stammdatenrollen
 
-Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
+Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
 Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menü **Konten** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
@@ -296,7 +296,7 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 |Rolle|Beschreibung|
 |:---|:---|
 |Manager| Kann alle Daten des Assets lesen und alle Stammdaten verwalten, aber keine Operationen ausführen. Kann zusätzlich Stammdaten (einschließlich Dashboards) und Alarme verwalten.
-|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
+|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
 |Operationen: Gerät neustarten|Kann Geräte neustarten.
 |Leser|Kann alle Daten des Assets lesen.
 
@@ -342,7 +342,7 @@ Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahllist
 * ÄNDERN - zum Ändern von Objekten (schließt nicht die LESEN-Berechtigung ein)
 * ALL - zum Lesen UND Ändern von Objekten
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, "höhere" Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit "*" als Typen und "Alle" als Berechtigung gibt.
 {{< /c8y-admon-important >}}
 
@@ -359,7 +359,7 @@ Klicken Sie auf **Benutzer** im Menü **Konten**, wählen Sie einen Benutzer aus
 
 In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie auf **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Stammdatenrollen](#inventory).
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer
 alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
 {{< /c8y-admon-important >}}
@@ -385,9 +385,9 @@ Die {{< product-c8y-iot >}}-Plattform bietet optimierte UI-Leistung für Benutze
 
 Die Leistung der folgenden UI-Seiten wird verbessert:
 * Registerkarten **Info**, **Messwerte**, **Alarme**, **Ereignisse** und **Steuerung** in der [Gerätedetails-Ansicht](/benutzerhandbuch/device-management-de/#device-details)
-* Seiten mit aggregierten Alarmansichten von mehreren Geräten, wenn die Anzahl der Alarme im System gering ist, z. B. [Cockpit > Start-Dashboard](/benutzerhandbuch/cockpit-de/#home-dashboard), Cockpit > Alarme und Device Management > Startseite
-* Seiten mit aggregierten Ereignissen von mehreren Geräten, wenn die Anzahl der Ereignisse gering ist, z. B. [Device Management > Überwachen und Steuern von Geräten > So zeigen Sie Ereignisse an](/benutzerhandbuch/device-management-de/#to-view-events)
-* Seiten mit aggregierten Operationen von mehreren Geräten, wenn die Anzahl der Operationen gering ist, z. B. [Device Management > Übersichten > Gerätesteuerung](/benutzerhandbuch/device-management-de/#to-view-single-operations)
+* Seiten mit aggregierten Alarmansichten von mehreren Geräten, wenn die Anzahl der Alarme im System gering ist, z. B. [Cockpit > Start-Dashboard](/benutzerhandbuch/cockpit-de/#home-dashboard), Cockpit > Alarme und Device Management > Startseite
+* Seiten mit aggregierten Ereignissen von mehreren Geräten, wenn die Anzahl der Ereignisse gering ist, z. B. [Device Management > Überwachen und Steuern von Geräten > So zeigen Sie Ereignisse an](/benutzerhandbuch/device-management-de/#to-view-events)
+* Seiten mit aggregierten Operationen von mehreren Geräten, wenn die Anzahl der Operationen gering ist, z. B. [Device Management > Übersichten > Gerätesteuerung](/benutzerhandbuch/device-management-de/#to-view-single-operations)
 
 Als Administrator können Sie die Leistungsfunktion auf folgende Weise deaktivieren:
 - Auf Plattformebene über die Konfigurationsdatei (nur für Plattformadministratoren verfügbar, siehe *{{< product-c8y-iot >}} - Operations Guide*).

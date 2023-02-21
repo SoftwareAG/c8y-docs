@@ -16,9 +16,9 @@ Die folgenden Funktionen werden von diesen Anbietern bereitgestellt:
 |:------|:-----|:-------|:------|:------|
 |Status der SIM-Karte im Gerät prüfen|x|x|x|x|
 |Vom Netzwerk gemeldeten Online-Status der Geräte prüfen|x|x|x|x|
-|SIM-Karten-Status ändern, z. B. aktivieren oder deaktivieren|x|x|x|x|
+|SIM-Karten-Status ändern, z. B. aktivieren oder deaktivieren|x|x|x|x|
 |SIM-Karte von aktueller Sitzung trennen|x| | | |
-|Über Textnachrichten mit dem Gerät kommunizieren, z. B. um APN-Parameter festzulegen|x| |x|x|
+|Über Textnachrichten mit dem Gerät kommunizieren, z. B. um APN-Parameter festzulegen|x| |x|x|
 |Nutzungsübersicht über Datenverkehr, Textnachrichten und Sprachanrufe anzeigen|x|x|x|x|
 |Nutzungsdetails zu Datenverkehr, Textnachrichten und Sprachanrufen anzeigen| |x|x| |
 |Verlauf von Datensitzungen und etwaigen Änderungen an SIM-Karte oder Datenverkehr anzeigen|&nbsp;| |x| |
@@ -143,7 +143,7 @@ Die erste Zeile gibt Auskunft darüber, ob das Gerät momentan eine Datensitzung
 
 Die zweite Zeile zeigt weitere Statusinformationen an: die ICCID der SIM-Karte, den Aktivierungszustand der SIM-Karte und, sofern eingestellt, die festgelegte IP-Adresse der SIM-Karte. Sofern Sie über eine ADMIN-Berechtigung für Connectivity verfügen, können Sie den Aktivierungszustand über das Auswahlmenü ändern.
 
-Am unteren Ende finden Sie Nutzungsinformationen für den aktuellen Monat, d. h. vom ersten Tag des Monats bis heute. Durch Bewegen der Maus über den Tooltip wird der abgedeckte Zeitraum angezeigt, einschließlich der Nutzung im Vormonat.
+Am unteren Ende finden Sie Nutzungsinformationen für den aktuellen Monat, d. h. vom ersten Tag des Monats bis heute. Durch Bewegen der Maus über den Tooltip wird der abgedeckte Zeitraum angezeigt, einschließlich der Nutzung im Vormonat.
 
 Der Abschnitt **SMS** zeigt die Textnachrichten an, die an das Gerät gesendet und von diesem empfangen wurden, einschließlich der folgenden Informationen:
 

@@ -16,8 +16,8 @@ Die Startseite der "Administration"-Anwendung enthält Folgendes:
 
 Die Kapazitätsbereiche zeigen:
 
-* API-Anfragen - die Gesamtanzahl der API-Anfragen. Umfasst alle in {{< product-c8y-iot >}} aufgerufenen Funktionen, unabhängig davon, ob die Funktion von einem Gerät (z. B. Senden von Messdaten) oder von einer Anwendung (z. B. Abrufen der Geräteliste) aufgerufen wurde.
-* API-Anfragen von Geräten - umfasst nur die Aufrufe von Geräten, wie z. B. das Senden von Messdaten.
+* API-Anfragen - die Gesamtanzahl der API-Anfragen. Umfasst alle in {{< product-c8y-iot >}} aufgerufenen Funktionen, unabhängig davon, ob die Funktion von einem Gerät (z. B. Senden von Messdaten) oder von einer Anwendung (z. B. Abrufen der Geräteliste) aufgerufen wurde.
+* API-Anfragen von Geräten - umfasst nur die Aufrufe von Geräten, wie z. B. das Senden von Messdaten.
 * Speicherplatz - insgesamt gespeicherte Daten in Ihrem Konto. Die Datenmenge kann durch [Datenhaltungsregeln](/benutzerhandbuch/administration-de/#retention-rules) und durch die Menge und Größe [gespeicherter Daten](/benutzerhandbuch/administration-de#files) verändert werden.
 * Speicherkontingent - Wenn eine Speicherbegrenzung pro Gerät definiert wurde, ist der Benutzer auf eine [maximale Datennutzung](/benutzerhandbuch/enterprise-tenant-de/#storage-quota) beschränkt.
 * Hauptgeräte - die Anzahl der Hauptgeräte, die mit Ihrem Konto verbunden sind, ohne Kindgeräte.

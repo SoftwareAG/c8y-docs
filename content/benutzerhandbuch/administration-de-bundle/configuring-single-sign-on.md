@@ -4,10 +4,10 @@ title: Konfigurieren von Single Sign-On
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} bietet Single-Sign-On-Funktionalität (SSO), die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, z. B. Azure Active Directory (ADD), anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
+{{< product-c8y-iot >}} bietet Single-Sign-On-Funktionalität (SSO), die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, z. B. Azure Active Directory (ADD), anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
 
-{{< c8y-admon-req title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Zur Verwendung der SSO-Funktion muss gewährleistet sein, dass:
 
 * der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt.
@@ -163,7 +163,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
+{{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
 {{< /c8y-admon-info >}}
 
 #### Platzhalter
@@ -200,7 +200,7 @@ Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschri
 
 Die folgenden Schritte verdeutlichen, wie Azure AD (Azure Active Directory) für SSO in {{< product-c8y-iot >}} verwendet werden kann.
 
-{{< c8y-admon-req title="Anforderungen" >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Sie benötigen Administrationszugriff auf Ihr Azure AD.
 {{< /c8y-admon-req >}}
 
@@ -210,10 +210,10 @@ Um {{< product-c8y-iot >}} mit Azure AD zu verbinden, müssen Sie in Azure AD ei
 
 1. Wählen Sie links unter **Manage** die Option **App Registrations** und klicken Sie oben auf **New Registration**.
 3. Geben Sie im darauf folgenden Fenster einen Namen für die neue App-Registrierung ein.
-4. Wählen Sie unter **Redirect URI type** die Option "Web" und geben Sie die URL zum OAuth-Endpunkt Ihres Mandanten ein, z. B. "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". Sie können diesen Wert von Ihrem {{< product-c8y-iot >}}-Mandanten ableiten. Navigieren Sie zu **Administration** > **Einstellungen** > **Authentifizierung** > **Single-Sign-On**. Die Redirect-URL wird von der Plattform vorgegeben.
+4. Wählen Sie unter **Redirect URI type** die Option "Web" und geben Sie die URL zum OAuth-Endpunkt Ihres Mandanten ein, z. B. "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". Sie können diesen Wert von Ihrem {{< product-c8y-iot >}}-Mandanten ableiten. Navigieren Sie zu **Administration** > **Einstellungen** > **Authentifizierung** > **Single-Sign-On**. Die Redirect-URL wird von der Plattform vorgegeben.
 5. Klicken Sie auf **Register**, um die App-Registrierung zu erstellen.
 
-Die Übersicht auf der Detailseite Ihrer App-Registrierung enthält mehrere IDs und Endpunkte, die Sie später benötigen, z. B. die Anwendungs-ID (Client-ID) und die Verzeichnis-ID (Mandanten-ID) (für Ihren Mandanten in {{< product-c8y-iot >}}).
+Die Übersicht auf der Detailseite Ihrer App-Registrierung enthält mehrere IDs und Endpunkte, die Sie später benötigen, z. B. die Anwendungs-ID (Client-ID) und die Verzeichnis-ID (Mandanten-ID) (für Ihren Mandanten in {{< product-c8y-iot >}}).
 
 ![App registration overview](/images/benutzerhandbuch/Administration/admin-AAD-registration.png)
 
@@ -313,12 +313,12 @@ Geben Sie nun in der Konfiguration die folgenden Werte ein:
 
 |Azure|{{< product-c8y-iot >}} |Wert
 |:---|:---|:---|
-|Login URL; OpenID config; Beginning of token endpoint| Azure AD-Adresse|Adresse Ihres Azure AD-Mandanten, z. B. "https:&#47;/login.microsoftonline.com"  
-|Home > Overview > Primary Domain| Mandant| &lt;directoryName&gt;.onmicrosoft.com, z. B. "admtest.onmicrosoft.com"
+|Login URL; OpenID config; Beginning of token endpoint| Azure AD-Adresse|Adresse Ihres Azure AD-Mandanten, z. B. "https:&#47;/login.microsoftonline.com"  
+|Home > Overview > Primary Domain| Mandant| &lt;directoryName&gt;.onmicrosoft.com, z. B. "admtest.onmicrosoft.com"
 |OpenID config "issuer"| Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse: "https:&#47;/sts.windows.net/&lt;Verzeichnis-Mandanten-ID&gt;/". Beachten Sie, dass dies nur mit Schrägstich am Ende funktioniert.
-|App registration > &lt;app&gt; > Application (client) ID| Anwendungs-ID| z. B. "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
+|App registration > &lt;app&gt; > Application (client) ID| Anwendungs-ID| z. B. "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
 |Redirect-URI| Adresse Ihres {{< product-c8y-iot >}}-Mandanten, gefolgt von /tenant/oauth
-|App registration - &lt;app&gt; > Certificates & secrets > Value | Client-Secret| Azure AD-Client-Secret, z. B. "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
+|App registration - &lt;app&gt; > Certificates & secrets > Value | Client-Secret| Azure AD-Client-Secret, z. B. "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
 |Aus der OpenID-Konfiguration | URL für den öffentlichen Schlüssel|"https:&#47;/login.microsoftonline.com/common/discovery/keys" oder "https:&#47;/login.microsoftonline.com/<Verzeichnis-Mandanten-ID>/discovery/keys"
 
 Optional kann Single Logout konfiguriert werden:

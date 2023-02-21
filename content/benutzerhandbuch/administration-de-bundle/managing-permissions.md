@@ -25,7 +25,7 @@ In der Registerkarte **Globale Rollen** finden Sie die Rollen, die Berechtigunge
 {{< c8y-admon-info >}}
 Die vordefinierten Rollen sind als Muster für einen bestimmten Zweck konfiguriert. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
 
-Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die Sie diesem zuweisen, alle notwendigen Berechtigungen umfassen, die speziell für diesen Benutzer in beiden zugewiesenen Rollen relevant sind. Berechtigungen aus unterschiedlichen Rollen werden zusammengeführt, wenn sie demselben Benutzer zugewiesen werden. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen. Wenn Sie jedoch auch eine Stammdatenberechtigung über einige der verfügbaren Rollen zuweisen, erhält der Benutzer Zugriff auf die gesamten Stammdaten wie Geräte, Gruppen und Konfigurationen.
+Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die Sie diesem zuweisen, alle notwendigen Berechtigungen umfassen, die speziell für diesen Benutzer in beiden zugewiesenen Rollen relevant sind. Berechtigungen aus unterschiedlichen Rollen werden zusammengeführt, wenn sie demselben Benutzer zugewiesen werden. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen. Wenn Sie jedoch auch eine Stammdatenberechtigung über einige der verfügbaren Rollen zuweisen, erhält der Benutzer Zugriff auf die gesamten Stammdaten wie Geräte, Gruppen und Konfigurationen.
 {{< /c8y-admon-info >}}
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
@@ -42,7 +42,7 @@ Die Rollen "admins" und "devices" haben einen Sonderstatus:
 <tbody>
 <tr>
 <td align="left">admins</td>
-<td align="left">Administrative Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d. h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
+<td align="left">Administrative Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d. h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
 </tr>
 <tr>
 <td align="left">devices</td>
@@ -93,7 +93,7 @@ Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereit
 </tr>
 <tr>
 <td align="left">Mandantenmanager</td>
-<td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
+<td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
 </tr>
 </tbody>
 </table>
@@ -283,7 +283,7 @@ Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 <a name="inventory"></a>
 ### Stammdatenrollen
 
-Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
+Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. "Region Nord", und einem Benutzer, z. B. "Schmidt", zuweisen. Daraus resultiert, dass der Benutzer "Schmidt" alle Geräte, die in der Gruppe "Region Nord" oder einer Untergruppe enthalten sind, neu starten kann.
 
 Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menü **Konten** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
@@ -296,7 +296,7 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 |Rolle|Beschreibung|
 |:---|:---|
 |Manager| Kann alle Daten des Assets lesen und alle Stammdaten verwalten, aber keine Operationen ausführen. Kann zusätzlich Stammdaten (einschließlich Dashboards) und Alarme verwalten.
-|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
+|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
 |Operationen: Gerät neustarten|Kann Geräte neustarten.
 |Leser|Kann alle Daten des Assets lesen.
 

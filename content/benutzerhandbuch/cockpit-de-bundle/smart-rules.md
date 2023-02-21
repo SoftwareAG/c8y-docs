@@ -109,11 +109,11 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 <a name="toggle-rules"></a>
 ### So schalten Sie eine Smart Rule ein/aus
 
-Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
+Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
 
-Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
+Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
 
 Zusätzlich zum globalen Ein-/Ausschalten einer Smart Rule kann eine Smart Rule für konkrete Objekte (Gruppen oder Geräte) im **aktiven** oder **inaktiven** Zustand sein. Im **aktiven** Zustand verarbeitet die Regel Ereignisse für diese Gruppen und Geräte.
 

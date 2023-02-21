@@ -40,7 +40,7 @@ Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzug
 * *false*: Supportbenutzerzugriff ist für alle Untermandanten deaktiviert, kann aber für einen Untermandanten explizit aktiviert werden. Ein Supportbenutzer kann sich nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat.
 * Ein explizites Datum im Datum-Uhrzeit-Format, bis zu dem der Supportbenutzerzugriff aktiviert bleiben soll. Wenn kein Datum festgelegt wird, wird der Wert auf "Unbegrenzt" gesetzt.
 
-Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. h. um wie viele Stunden der Supportbenutzerzugriff nach einer Supportbenutzeranfrage verlängert wird. Geben Sie die Anzahl der Stunden ein. Der Standardwert ist 24 Stunden.
+Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. h. um wie viele Stunden der Supportbenutzerzugriff nach einer Supportbenutzeranfrage verlängert wird. Geben Sie die Anzahl der Stunden ein. Der Standardwert ist 24 Stunden.
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 

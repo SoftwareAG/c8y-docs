@@ -42,7 +42,7 @@ Wenn Sie den Mauszeiger über einen Pfeil bewegen, wird der Zeitstempel der letz
 
 Wenn ein Gerät als offline erkannt wird (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein "UnavailabilityAlarm" für das Gerät mit der folgenden Nachricht erzeugt: "Im erforderlichen Zeitraum wurden keine Daten vom Gerät empfangen."
 
-Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
+Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
 
 {{< c8y-admon-info >}}
 Durch PUT-Anfragen an das Objekt des Geräts werden Verbindungen ebenfalls aktualisiert. Solche Anfragen sind die empfohlene Methode zur Implementierung eines Heartbeat-Service, der den Serverstatus überwacht.
@@ -201,7 +201,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in [Administration > Verwalten von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in [Administration > Verwalten von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms

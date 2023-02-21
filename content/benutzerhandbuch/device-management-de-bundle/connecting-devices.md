@@ -39,7 +39,7 @@ Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 * **[Einzelregistrierung eines allgemeinen Geräts](#device-registration-manually)** - zum manuellen Herstellen einer Verbindung mit einem oder mehreren Geräten
 * **[Bulk-Registrierung für allgemeine Geräte](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
-Wenn Sie die erforderlichen Anwendungen abonniert haben, sehen Sie andere Optionen zur Registrierung von Geräten bestimmter Typen (z. B. Actility LoRa oder Sigfox). Eine vollständige Liste der unterstützten Protokolle finden Sie im [Protocol Integration Guide](/protocol-integration/overview).
+Wenn Sie die erforderlichen Anwendungen abonniert haben, sehen Sie andere Optionen zur Registrierung von Geräten bestimmter Typen (z. B. Actility LoRa oder Sigfox). Eine vollständige Liste der unterstützten Protokolle finden Sie im [Protocol Integration Guide](/protocol-integration/overview).
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
@@ -85,7 +85,7 @@ Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [{{< p
 
 #### Sicherheitstokenregel für die Geräteregistrierung
 
-Konfigurieren Sie die Sicherheitstokenregel, um das Risiko zu mindern, dass noch nicht registrierte Geräte durch Bedrohungsakteure übernommen werden, z. B. durch Erraten ihrer Seriennummer.
+Konfigurieren Sie die Sicherheitstokenregel, um das Risiko zu mindern, dass noch nicht registrierte Geräte durch Bedrohungsakteure übernommen werden, z. B. durch Erraten ihrer Seriennummer.
 
 {{< c8y-admon-info >}}
 Die Funktion erfordert eine LESEN-Berechtigung für "Optionen". Fehlt die Berechtigung, wird die Sicherheitstokenregel standardmäßig auf OPTIONAL gesetzt.
@@ -97,7 +97,7 @@ Die Funktion erfordert eine LESEN-Berechtigung für "Optionen". Fehlt die Berech
 * OPTIONAL - Wenn ein Gerät eine sichere Registrierung erfordert, fordert {{< product-c8y-iot >}} ein zusätzliches Sicherheitstoken vom Benutzer an.
 * ERFORDERLICH - Alle mit {{< product-c8y-iot >}} verbundenen Geräte müssen während der Registrierung ein Sicherheitstoken verwenden.
 
-Die Regel kann durch Festlegen der folgenden Mandantenoption mit einem der oben genannten Werte konfiguriert werden, z. B.:
+Die Regel kann durch Festlegen der folgenden Mandantenoption mit einem der oben genannten Werte konfiguriert werden, z. B.:
 
 ```json
 {
@@ -159,7 +159,7 @@ In diesem Modus werden alle Geräte, die sich ohne ein Sicherheitstoken mit {{< 
 
 #### So führen Sie eine Bulk-Registrierung von Geräten durch
 
-Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-iot >}} die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
+Um eine größere Anzahl von Geräten zu registrieren, bietet {{< product-c8y-iot >}} die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
 
 {{< c8y-admon-info >}}
 Es gibt keine Einschränkung hinsichtlich der Anzahl der Geräte, die durch eine Bulk-Registrierung registriert werden können. Je mehr Geräte Sie jedoch hinzufügen, desto langsamer erfolgen die Erstellung und die Operation.
@@ -182,7 +182,7 @@ Aus der CSV-Datei wird automatisch ein Trennzeichen bezogen. Gültige Werte für
 
 **Einfache Registrierung**
 
-Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
+Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
 
 ```
 ID;PATH

@@ -171,7 +171,7 @@ Ist kein Filter gesetzt, wird sie für alle Geräte angeboten.
 Der Software-Typ bewirkt, dass die Software nur auf Geräten installierbar ist, die den jeweiligen Software-Typ explizit unterstützen.
 
 {{< c8y-admon-info >}}
-Im Feld **Software-Typ** wird Ihnen eine Liste von Typen vorgeschlagen, die in Ihrem Software-Repository bereits verwendet werden. Bevor Sie das Definieren eines neuen Software-Typs in Betracht ziehen (das Feld akzeptiert neue Werte direkt), überprüfen Sie anhand der Vorschläge in der Auswahlliste, ob der gewünschte Typ bereits für eine andere Software definiert wurde. Auf diese Weise sorgen Sie für größere Konsistenz der Software-Typen innerhalb Ihres Unternehmens. Wenn Sie z. B. Container-Images verwenden, können Sie nach `container` oder `image` oder versuchsweise nach spezifischeren Typen wie `docker`, `lxc` usw. suchen. Dadurch können Sie verhindern, dass Ihre Software-Typen unübersichtlich werden und Sie verschiedene Namen für ein und denselben Software-Typ verwenden.
+Im Feld **Software-Typ** wird Ihnen eine Liste von Typen vorgeschlagen, die in Ihrem Software-Repository bereits verwendet werden. Bevor Sie das Definieren eines neuen Software-Typs in Betracht ziehen (das Feld akzeptiert neue Werte direkt), überprüfen Sie anhand der Vorschläge in der Auswahlliste, ob der gewünschte Typ bereits für eine andere Software definiert wurde. Auf diese Weise sorgen Sie für größere Konsistenz der Software-Typen innerhalb Ihres Unternehmens. Wenn Sie z. B. Container-Images verwenden, können Sie nach `container` oder `image` oder versuchsweise nach spezifischeren Typen wie `docker`, `lxc` usw. suchen. Dadurch können Sie verhindern, dass Ihre Software-Typen unübersichtlich werden und Sie verschiedene Namen für ein und denselben Software-Typ verwenden.
 {{< /c8y-admon-info >}}
 
 Die Liste der Versionen und Patches enthält den Versionsnamen und den Namen der Software-Binärdatei.
@@ -595,7 +595,7 @@ Aus Leistungsgründen sollten Sie nicht die Zertifikate von jedem Gerät, das Si
 
 #### So bearbeiten Sie ein vertrauenswürdiges Zertifikat
 
-In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
+In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
 
 Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung zum Hinzufügen von Zertifikaten.
 

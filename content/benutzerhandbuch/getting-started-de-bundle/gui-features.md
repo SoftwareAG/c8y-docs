@@ -35,7 +35,7 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Registerkarten</b></td>
-<td style="text-align:left">Einige Seiten, z. B. die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt und entweder horizontal oder vertikal dargestellt.</td>
+<td style="text-align:left">Einige Seiten, z. B. die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt und entweder horizontal oder vertikal dargestellt.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Leiste</b></td>
@@ -93,7 +93,7 @@ Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen en
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
 {{< c8y-admon-important title="Wichtig" >}}
-Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
+Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
 {{< /c8y-admon-important >}}
 
 ##### Exakte Übereinstimmung
@@ -116,7 +116,7 @@ Wenn Sie nach Objekten suchen möchten, die exakt eine bestimmte Phrase enthalte
 "Mein Demo Gerät"
 ```
 
-Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen, um z. B. die Stammdaten nach "Mein" und "Demo", aber ohne "Gerät" zu durchsuchen:
+Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen, um z. B. die Stammdaten nach "Mein" und "Demo", aber ohne "Gerät" zu durchsuchen:
 
 ```text
 Mein Demo Gerät
@@ -182,10 +182,10 @@ Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [D
 
 ### Echtzeitverhalten des Navigators
 
-Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h. neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
+Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h. neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
 
 Diese Änderungen werden nur im Navigator der Anwendung angezeigt, in der Sie die Änderungen vorgenommen haben.
 
 **Beispiel**
 
-Wenn Sie in der Device Management-Anwendung die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Gruppe entfernt. Wenn Sie jedoch ein weiteres Fenster mit einer weiteren Device Management-Anwendung geöffnet haben, werden die Änderungen erst nach einer Aktualisierung der Ansicht oder einer weiteren Anfrage (z. B. nach dem Ausklappen einer Gruppe im Navigator) sichtbar.
+Wenn Sie in der Device Management-Anwendung die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Gruppe entfernt. Wenn Sie jedoch ein weiteres Fenster mit einer weiteren Device Management-Anwendung geöffnet haben, werden die Änderungen erst nach einer Aktualisierung der Ansicht oder einer weiteren Anfrage (z. B. nach dem Ausklappen einer Gruppe im Navigator) sichtbar.

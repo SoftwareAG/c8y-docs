@@ -120,7 +120,7 @@ Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Ko
 <br><br>
 Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und alle Objekte synchronisieren, erstellt Data Broker ein Smart-Rule-Objekt auf dem Zielmandanten. Die Regel selbst wird nicht kopiert, da eine synchronisierte Smart Rule dieselbe Aktion auf demselben Gerät für dieselbe Konfiguration ausführen würde. Dadurch würden bei einem Alarm doppelte E-Mails für die jeweiligen Empfänger erstellt werden.
 
-Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
+Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
 
 Wenn der Datentyp Operation in Filtern ausgewählt ist, werden die Operationen, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Operationen zu, die die folgenden Bedingungen erfüllen:
 

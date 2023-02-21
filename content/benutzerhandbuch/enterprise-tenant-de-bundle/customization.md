@@ -28,7 +28,7 @@ Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 |{host}|Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.{{< domain-c8y >}}`.
 |{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.{{< domain-c8y >}}` sein. Bei einem {{< enterprise-tenant-de >}} können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
 |{token}|Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
-|{email}|Dieser Platzhalter wird durch die E-Mail-Adresse des empfangenden Benutzer ersetzt, die in den Benutzereinstellungen gespeichert ist. Einige Ansichten der Benutzeroberfläche erkennen diesen Parameter und fügen den Wert vorab in das entsprechende Feld ein, z. B. beim Zurücksetzen des Passworts.
+|{email}|Dieser Platzhalter wird durch die E-Mail-Adresse des empfangenden Benutzer ersetzt, die in den Benutzereinstellungen gespeichert ist. Einige Ansichten der Benutzeroberfläche erkennen diesen Parameter und fügen den Wert vorab in das entsprechende Feld ein, z. B. beim Zurücksetzen des Passworts.
 
 #### Zwei-Faktor-Authentifizierung
 
@@ -204,7 +204,7 @@ Folgende Parameter können festgelegt werden:
 ### Domain-Name
 
 Ein entscheidendes Merkmal des {{< enterprise-tenant-de >}} ist die Fähigkeit, die {{< product-c8y-iot >}}-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
-bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
+bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
 mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.mycompany.com** als ihren Hostnamen.
 
 {{< c8y-admon-info >}}
@@ -215,7 +215,7 @@ Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen
 
 1. Zum Aktivieren Ihrer Domain ist eine gültige Lizenz erforderlich, die Ihre Wildcard-Domain abdeckt.
    Bitte kontaktieren Sie den [Produkt-Support](/welcome/contacting-support/), um eine Lizenz für Ihre Domain zu installieren.
-2. Sie haben ein gültiges Wildcard-SSL-Zertifikat für Ihre IoT-Domain erhalten, z. B.
+2. Sie haben ein gültiges Wildcard-SSL-Zertifikat für Ihre IoT-Domain erhalten, z. B.
    ein Zertifikat für *\*.iot.mycompany.com*.
 3. Es gibt eine gültige DNS-Konfiguration für Ihre Domain, die dafür sorgt, dass alle Anfragen an *\*.iot.mycompany.com* an
    {{< product-c8y-iot >}} geleitet werden. (siehe unten).
@@ -232,7 +232,7 @@ Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der {{< enterp
   ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren {{< enterprise-tenant-de >}} erstellt werden.
 * Jedes einzelne Zertifikat in der Kette wird im X509-Format bereitgestellt.
 * Der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) enthält den Wert Ihres
-  Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
+  Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
 
 {{< product-c8y-iot >}} unterstützt ein Einzelzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das
 ein oder mehrere Zwischenzertifikate enthält.

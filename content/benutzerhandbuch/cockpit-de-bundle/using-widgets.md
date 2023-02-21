@@ -37,7 +37,7 @@ Einige Widgets erfordern zusätzliche Berechtigungen zum Visualisieren der in ih
 
         {{< c8y-admon-info >}}
 
-    Die Kopfzeilenstile "Standard" und "Rand" können für alle Widgets verwendet werden, während "Overlay" und "Hidden" die Kopfzeile entfernen und nur für Widgets verwendet werden sollten, die von einer Vollbildanzeige profitieren, z. B. "Image" oder "Map". Für andere Widgets, wie "Alarmliste" oder "Datenpunkttabelle", sollten diese Kopfzeilenstile nicht verwendet werden.
+    Die Kopfzeilenstile "Standard" und "Rand" können für alle Widgets verwendet werden, während "Overlay" und "Hidden" die Kopfzeile entfernen und nur für Widgets verwendet werden sollten, die von einer Vollbildanzeige profitieren, z. B. "Image" oder "Map". Für andere Widgets, wie "Alarmliste" oder "Datenpunkttabelle", sollten diese Kopfzeilenstile nicht verwendet werden.
     {{< /c8y-admon-info >}}
 
 5. Klicken Sie auf **Speichern**, um das Widget zum Dashboard oder Bericht hinzuzufügen.
@@ -109,7 +109,7 @@ Zum schnellen Auffinden von Assets gibt es zwei Methoden:
 
 Auf der Registerkarte **Konfiguration** des Widget-Editors können Sie das Volltextsuche-Feld unter **Asset-Auswahl** verwenden.
 
-Über das Volltextsuche-Feld können Sie Assets in der gesamten Hierarchie finden, doch dies erfordert exakte Übereinstimmungen, z. B. den gesamten Namen eines Assets.
+Über das Volltextsuche-Feld können Sie Assets in der gesamten Hierarchie finden, doch dies erfordert exakte Übereinstimmungen, z. B. den gesamten Namen eines Assets.
 
 ![Full text search](/images/benutzerhandbuch/cockpit/cockpit-asset-global-search.png)
 
@@ -122,7 +122,7 @@ Die Volltextsuche ist nur im Start-Dashboard und in den Bericht-Dashboards verf�
 
 {{< /c8y-admon-info >}}
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
 
 <a name="column-filter-asset"></a>
 ##### Filtern
@@ -131,5 +131,5 @@ Filtern ist eine weitere Methode zum Auffinden von Assets. Dabei werden jedoch n
 
 ![Filtering](/images/benutzerhandbuch/cockpit/cockpit-asset-column-filter.png)
 
-Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
+Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
 

@@ -107,7 +107,7 @@ Wenn die Option **Sitzungskonfiguration verwenden** aktiviert ist, können folge
 </tr>
 <tr>
 <td style="text-align:left">Maximale Anzahl der parallelen Sitzungen pro Benutzer</td>
-<td style="text-align:left">Definiert die maximale Anzahl der Sitzungen, die von einem Benutzer gestartet werden können (z. B. auf verschiedenen Maschinen oder Browsern). Wenn ein Benutzer dieses Limit überschreitet, wird die älteste Sitzung beendet und der Benutzer wird auf dem jeweiligen Gerät abgemeldet.</td>
+<td style="text-align:left">Definiert die maximale Anzahl der Sitzungen, die von einem Benutzer gestartet werden können (z. B. auf verschiedenen Maschinen oder Browsern). Wenn ein Benutzer dieses Limit überschreitet, wird die älteste Sitzung beendet und der Benutzer wird auf dem jeweiligen Gerät abgemeldet.</td>
 <td style="text-align:left">5 Sitzungen</td>
 </tr>
 <tr>
@@ -168,7 +168,7 @@ Die Lebensdauer von JWT-Tokens, die im Antworttext erzeugt werden, wird mit den 
 Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in {{< openapi >}}.
 
 {{< c8y-admon-info >}}
-Falls die externe Kommunikation zum {{< management-tenant-de >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant-de >}} für das Blockieren der externen Kommunikation konfiguriert ist.
+Falls die externe Kommunikation zum {{< management-tenant-de >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant-de >}} für das Blockieren der externen Kommunikation konfiguriert ist.
 {{< /c8y-admon-info >}}
 
 #### TFA-Einstellungen
@@ -354,7 +354,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
+{{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
 {{< /c8y-admon-info >}}
 
 ##### Platzhalter
@@ -480,7 +480,7 @@ Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
 ![Anwendungseinstellungen](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
-Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
+Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
 
 {{< c8y-admon-info >}}
 Alle Benutzer müssen Zugriff auf diese Anwendung haben.
@@ -535,7 +535,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 <tbody>
 <tr>
 <td style="text-align:left">Erforderlich</td>
-<td style="text-align:left">Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp "Boolean".</td>
+<td style="text-align:left">Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp "Boolean".</td>
 </tr>
 <tr>
 <td style="text-align:left">Standardwert</td>
@@ -581,7 +581,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 <a name="sms-provider"></a>
 ### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
+SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
 
 Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 

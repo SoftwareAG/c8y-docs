@@ -19,7 +19,7 @@ For earlier versions of {{< product-c8y-iot >}}, follow the steps in [Manual reg
 
     ![QR code](/images/users-guide/csa/csa-connect-smartphone-wizard-step3.png)
 
-3.  From your smartphone, launch the app and tap **Connect** in the top right corner of the screen. 
+3.  From your smartphone, launch the app and tap **Connect** in the top right corner of the screen. 
 4.  Grant access to your camera if the app asks you for permission.
 5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual registration** on your smartphone and fill in the details at the right side of the wizard screen.
 6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
@@ -42,7 +42,7 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
 4. On your smartphone, fill in your tenant (for example "companytenant01"), select your instance (for example "{{< domain-c8y >}}"), and enter your selected device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
 
-    ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
+    ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
 
 5.  Back on your web browser, your device's card now shows the options to accept or reject the connection. Accept the connection. Your device will be registered with the server and assigned to the selected group.
 

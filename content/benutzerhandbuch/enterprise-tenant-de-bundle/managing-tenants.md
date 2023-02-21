@@ -29,13 +29,13 @@ Klicken Sie auf **Untermandanten** im Menü **Mandanten**, um alle in Ihrem Kont
 
 Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandanten an:
 
-* Name des Untermandanten, z. B. Name des Unternehmens Ihres Kunden.
+* Name des Untermandanten, z. B. Name des Unternehmens Ihres Kunden.
 * ID und Domain.
 * Optional: Kontaktname und Telefonnummer.
 * Das Erstellungsdatum für den Mandanten.
 * Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).
 
-Im {{< management-tenant-de >}} finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
+Im {{< management-tenant-de >}} finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
 
 <a name="creating-tenants"></a>
 ### So erstellen Sie einen Untermandanten
@@ -62,7 +62,7 @@ Im {{< management-tenant-de >}} finden Sie zudem Informationen über den überge
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
-	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
+	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">E-Mail-Adresse des Administrators</td>
@@ -128,7 +128,7 @@ Hier werden die folgenden Informationen angezeigt:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h. jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>),<br>- ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global deaktiviert, <br>- kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h. jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzahl aktiver Anfragen</td>
@@ -263,7 +263,7 @@ Auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usag
 
 Auf Mandantenebene kann das Produkterfahrungs-Tracking von Gainsight durch Deaktivieren des Cookie-Banners auf der Seite **Branding** ausgeschaltet werden, siehe [Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 
-Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
+Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
 
 
 <a name="tenant-policies"></a>
@@ -331,7 +331,7 @@ Auf der Seite **Standardabonnements** können Sie zwei separate Listen von Anwen
 - für jeden bestehenden Mandanten bei einem Plattform-Upgrade.
 
 {{< c8y-admon-info >}}
-Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
+Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 Links wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst
@@ -374,11 +374,11 @@ Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, ind
 * zum Definieren von Web-Anwendungen, die für neue Mandanten bei deren Erstellung abonniert werden sollen:
   * category: configuration
   * key: default.tenant.applications
-  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * zum Definieren von Microservices, die für neue Mandanten bei deren Erstellung abonniert werden sollen:
   * category: configuration
   * key: default.tenant.microservices
-  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
+  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
 * zur Verwendung einer anderen Liste von Web-Anwendungen, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.applications.enabled
@@ -386,7 +386,7 @@ Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, ind
 * zum Definieren von Web-Anwendungen, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.applications
-  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * zur Verwendung einer anderen Liste von Microservices, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.microservices.enabled
@@ -394,4 +394,4 @@ Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, ind
 * zum Definieren von Microservices, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.microservices
-  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
+  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway

@@ -9,7 +9,7 @@ Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen
 
 ![Device info](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-info.png)
 
-Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d. h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind. Eine detaillierte Beschreibung der Operationen und Fragmente für die jeweilige Gerätedetail-Registerkarte finden Sie in der [Device Management Library](/reference/device-management-library/#overview) im *Reference Guide*.
+Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d. h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind. Eine detaillierte Beschreibung der Operationen und Fragmente für die jeweilige Gerätedetail-Registerkarte finden Sie in der [Device Management Library](/reference/device-management-library/#overview) im *Reference Guide*.
 
 Eingangs wird die Registerkarte **Info** angezeigt, die allgemeine Informationen zu einem Gerät enthält und bei allen Geräte vorhanden ist.
 
@@ -140,7 +140,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der {{< product-c8y-iot >}}-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Eine detaillierte Beschreibung der Registerkarte **Modbus** ist beispielsweise unter [Cloud Fieldbus](/protocol-integration/cloud-fieldbus) im *Protocol Integration Guide* zu finden.
 {{< /c8y-admon-info >}}
 
-Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
+Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 
 Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Aktionsmenü angezeigt werden, wenn Sie **Mehr...** rechts in der oberen Menüleiste klicken.
 
@@ -173,7 +173,7 @@ Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie
 
 {{< product-c8y-iot >}} kann Geräte und Assets mit mehreren externen Identifikatoren verknüpfen. Geräte werden beispielsweise oft durch die IMEI ihres Modems, eine Microcontroller-Seriennummer oder ein Asset-Tag identifiziert. Die Registerkarte **Identifikator** listet alle gespeicherten Identifikatoren für ein Gerät auf.
 
-Dies ist z. B. hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält.
+Dies ist z. B. hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält.
 
 <a name="info"></a>
 ### Info

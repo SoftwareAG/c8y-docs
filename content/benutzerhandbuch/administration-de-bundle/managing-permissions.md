@@ -393,7 +393,7 @@ Als Administrator können Sie die Leistungsfunktion auf folgende Weise deaktivie
 - Auf Plattformebene über die Konfigurationsdatei (nur für Plattformadministratoren verfügbar, siehe *{{< product-c8y-iot >}} - Operations Guide*).
 - Auf Mandantenebene über eine Mandantenoption. Die Mandantenoption hat zwei mögliche Werte: LEGACY/OPTIMIZED, wobei OPTIMIZED die globale Standardeinstellung ist.
 
-Die Option sieht in der REST API wie folgt aus (siehe auch [{{< openapi >}}](https://cumulocity.com/api/10.16.0/#operation/postOptionCollectionResource)):
+Die Option sieht in der REST API wie folgt aus (siehe auch [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postOptionCollectionResource)):
 
 `{"category": "configuration", "key": "acl.algorithm-version", "value": "LEGACY"}`
 

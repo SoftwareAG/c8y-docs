@@ -26,7 +26,7 @@ Aktivieren Sie die Checkbox **Nur starke "grüne" Passwörter für alle Benutzer
 
 * **Gültigkeitsdauer von Passwörtern in Tagen** - Anzahl der Tage, die ein Passwort gültig sein kann, bevor es zurückgesetzt werden muss; der Mindestwert ist "0", der Höchstwert "999999". Leer lassen, um den Wert aus den Mandantenoptionen zu übernehmen, die im {{< management-tenant-de >}}en konfiguriert sind, siehe *{{< product-c8y-iot >}} Core - Operations guide*.
 * **Größe der Passworthistorie** - Anzahl der Male, bis das aktuelle Passwort wiederverwendet werden kann.  Der Mindestwert beträgt "0", der voreingestellte Wert ist "10".  
-* **Minimale Länge für starke (grüne) Passwörter** - Mindestanzahl an Zeichen, die für ein sicheres Passwort erforderlich sind. Der Mindestwert (und der voreingestellte Wert) beträgt "8", der Höchstwert ist "32".  Leer lassen, um diese Bedingung zu überspringen.
+* **Minimale Länge für starke (grüne) Passwörter** - Mindestanzahl an Zeichen, die für ein sicheres Passwort erforderlich sind. Der Mindestwert (und der voreingestellte Wert) beträgt "8", der Höchstwert ist "32". Leer lassen, um diese Bedingung zu überspringen.
 
 
 <a name="config-support-users"></a>

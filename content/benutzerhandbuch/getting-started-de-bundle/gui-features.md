@@ -92,7 +92,7 @@ Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen en
 
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
 {{< /c8y-admon-important >}}
 
@@ -167,7 +167,7 @@ cl*
 
 Die Liste wird sofort auf die ausgewählten Objekte beschränkt.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Auf bestimmten Seiten durchsucht die Filterfunktion nur die auf der Seite angezeigten Elemente. Wenn also ein Element auf der betreffenden Seite nicht vorkommt, erscheint es auch nicht in den Ergebnissen. Sie müssen zuerst alle Ergebnisse laden, um alle Elemente durchsuchen zu können. Dieses Verhalten gilt für folgende Seiten:
 
 * Geräteprotokolle

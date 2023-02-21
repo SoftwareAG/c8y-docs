@@ -6,7 +6,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} bietet Ihnen die Möglichkeit, benutzerdefinierte Cockpit-Anwendungen nach Ihren eigenen Bedürfnissen zu konfigurieren.
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Zur Verwendung der Cockpit-Konfiguration-Funktionalität müssen die folgenden Anforderungen erfüllt sein:
 
 * Sie verfügen über eine ADMIN-Berechtigung für den Berechtigungstyp "Anwendungsverwaltung".

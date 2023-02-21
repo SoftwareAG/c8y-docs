@@ -99,7 +99,7 @@ Alle hier aufgelisteten Anwendungen sind vom Typ "Microservice".
 2. Legen Sie im darauf folgenden Dialog eine entsprechende ZIP-Datei ab oder navigieren Sie in Ihrem Dateisystem zu der Datei. Beachten Sie, dass die hochzuladende Datei nicht größer als 500 MB sein darf.
 3. Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [General aspects](/microservice-sdk/concept) im *Microservice SDK Guide*.
 {{< /c8y-admon-important >}}
 

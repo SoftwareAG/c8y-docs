@@ -29,7 +29,6 @@ To subscribe to webMethods.io Integration, perform the following steps:
 
 {{< c8y-admon-info >}}
 If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **{{< sag-cloud >}}** portal where you can subscribe for a free trial.
-<br><br>![webMethods.io App Switcher My Cloud](/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)
 {{< /c8y-admon-info >}}
 
 ### Examples

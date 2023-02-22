@@ -6,7 +6,7 @@ layout: redirect
 
 To get started with the {{< sensor-app >}}, download it from the Apple App Store, or Google Play Store as appropriate.
 
-The app is compatible with Android devices running Android 5.0 or higher, and iOS devices running iOS 11.0 or higher.
+The app is compatible with Android devices running Android 5.0 or higher, and iOS devices running iOS 13.0 or higher.
 
 Using these links from your smartphone takes you to the app's install page:
 

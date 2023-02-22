@@ -51,8 +51,6 @@ All simulators which you can access will be listed here.
 4. Select the number of instances for this simulator (up to ten).
 5. Click **Create**.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
-
 The simulator will be created and added to the list.
 
 ### To edit a simulator
@@ -96,8 +94,6 @@ The panel at the right changes according to the type of instruction selected at 
 The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](/reference/sensor-library/) in the *Reference guide*.
 
 The "Sleep" instruction requires one value for its duration in seconds.
-
-![Sleep](/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
 
 #### To add an instruction
 

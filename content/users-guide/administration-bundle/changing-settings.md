@@ -205,7 +205,7 @@ You may select one of the following options:
 An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
   {{< /c8y-admon-info >}}
 
-* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
+* **TOTP** (Time-based One-Time Password) supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users** - when enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
 {{< c8y-admon-info >}}

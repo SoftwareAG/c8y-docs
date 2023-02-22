@@ -261,7 +261,7 @@ Werden neue Funktionen mit neuen Berechtigungen zu {{< product-c8y-iot >}} hinzu
 Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
 {{< c8y-admon-important title="Wichtig" >}}
-Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#custom-template) im *User Guide*.
+Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Änderung von Einstellungen](/benutzerhandbuch/administration-de/#custom-template) im *User Guide*.
 {{< /c8y-admon-important >}}
 
 ##### So weisen Sie globale Rollen aus der Benutzerliste zu

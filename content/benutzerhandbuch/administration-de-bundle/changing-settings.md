@@ -34,8 +34,7 @@ Im Feld **Bevorzugter Login-Modus** können Sie eine der folgenden Optionen wäh
 Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
 
 {{< c8y-admon-important title="Wichtig" >}}
-Immer wenn Sie den Anmeldemodus ändern, werden Sie gezwungen, sich abzumelden.
-Andere Benutzer müssen sich ab- und wieder anmelden, damit die Änderung angewendet wird.
+Immer wenn Sie den Anmeldemodus ändern, werden Sie gezwungen, sich abzumelden. Andere Benutzer müssen sich ab- und wieder anmelden, damit die Änderung angewendet wird.
 {{< /c8y-admon-important >}}
 
 Im Feld **Gültigkeitsdauer des Passworts** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, indem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
@@ -202,6 +201,7 @@ Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. T
 {{< c8y-admon-info >}}
 Benutzer mit der Rolle "devices" sind von TFA und TOTP ausgeschlossen. Dies gilt auch dann, wenn TOTP für alle Benutzer erzwungen wird.
 {{< /c8y-admon-info >}}
+
 
 <a name="default-app"></a>
 ### Ändern von Anwendungseinstellungen

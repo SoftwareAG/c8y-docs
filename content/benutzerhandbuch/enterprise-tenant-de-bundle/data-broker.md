@@ -143,9 +143,6 @@ Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen
 
 Nach dem Speichern der Konfiguration wird ein Sicherheitscode unter der Konfiguration angezeigt. Dieser Sicherheitscode verhindert unbeabsichtigtes Weiterleiten von Daten. Sie müssen diesen Sicherheitscode getrennt einem Benutzer mit Administrationsrechten für den Zielmandanten mitteilen. Durch Klicken auf das Kopieren-Symbol neben dem Sicherheitscode können Sie diesen in Ihre Zwischenablage kopieren.
 
-![Security code](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-security-code.png)
-
-
 #### So bearbeiten Sie einen Datenkonnektor
 
 Klicken Sie auf den Konnektortitel oder klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und anschließend auf **Bearbeiten**.
@@ -177,8 +174,6 @@ Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Managem
 Auf der Seite **Datenabonnements** können Sie bestehende Datenabonnements verwalten und neue anlegen.
 
 Klicken Sie auf **Datenabonnements**, um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
-
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-subscriptions.png" alt="Data subscriptions">
 
 Für jedes Abonnement wird der Name, der Zielmandant und der Status (aktiviert oder deaktiviert) auf einer Karte bereitgestellt.
 

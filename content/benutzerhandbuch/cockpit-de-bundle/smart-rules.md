@@ -14,12 +14,12 @@ Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microse
 
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
-* **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einem Template bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
-* **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
+- **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einem Template bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
+- **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
 
 Es gibt zwei Typen von Smart Rules:
 
-* **Globale Smart Rules**
+- **Globale Smart Rules**
 
   Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer und mehr).
 
@@ -48,13 +48,13 @@ ROLLEN UND BERECHTIGUNGEN für lokale Smart Rules:
 
 Smart Rules sind an zwei Orten zu sehen:
 
-* Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
+- Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
 
   ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
 
   Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
 
-* In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
+- In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
 
   ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
 

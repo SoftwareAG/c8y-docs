@@ -20,11 +20,13 @@ Darüber hinaus können die folgenden Einstellungen nur im {{< management-tenant
 
 Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke, Länge oder Gültigkeit für die Benutzer in Ihrem Mandanten festlegen.
 
+![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
+
 Aktivieren Sie die Checkbox **Nur starke "grüne" Passwörter für alle Benutzer zulassen**, um die Benutzer in Ihrem Mandanten zur Verwendung von Passwörtern zu zwingen, die die Bedingungen für "grüne" Passwörter erfüllen, siehe auch [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
 
-* **Gültigkeitsdauer von Passwörtern in Tagen** - Die Anzahl der Tage, die ein Passwort gültig sein kann, bevor es zurückgesetzt werden muss; der Mindestwert ist "0", der Höchstwert "999999". Leer lassen, um den Wert aus den Mandantenoptionen zu übernehmen, die im {{< management-tenant-de >}}en konfiguriert sind, siehe *{{< product-c8y-iot >}} Core - Operations guide*.
+* **Gültigkeitsdauer von Passwörtern in Tagen** - Anzahl der Tage, die ein Passwort gültig sein kann, bevor es zurückgesetzt werden muss; der Mindestwert ist "0", der Höchstwert "999999". Leer lassen, um den Wert aus den Mandantenoptionen zu übernehmen, die im {{< management-tenant-de >}}en konfiguriert sind, siehe *{{< product-c8y-iot >}} Core - Operations guide*.
 * **Größe der Passworthistorie** - Anzahl der Male, bis das aktuelle Passwort wiederverwendet werden kann.  Der Mindestwert beträgt "0", der voreingestellte Wert ist "10".  
-* **Minimale Länge** - Die Mindestanzahl an Zeichen, die für ein sicheres Passwort erforderlich sind. Der Mindestwert (und der voreingestellte Wert) beträgt "8", der Höchstwert ist "32". Leer lassen, um diese Bedingung zu überspringen.
+* **Minimale Länge für starke (grüne) Passwörter** - Mindestanzahl an Zeichen, die für ein sicheres Passwort erforderlich sind. Der Mindestwert (und der voreingestellte Wert) beträgt "8", der Höchstwert ist "32". Leer lassen, um diese Bedingung zu überspringen.
 
 
 <a name="config-support-users"></a>
@@ -32,12 +34,14 @@ Aktivieren Sie die Checkbox **Nur starke "grüne" Passwörter für alle Benutzer
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für den Supportbenutzerzugriff für Untermandanten-Benutzer.
 
-Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant-de >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
+Diese Funktion gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und bei lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant-de >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen. Weitere Informationen finden Sie unter [Enterprise Tenant > Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
+
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
 
-* *true*: Supportbenutzerzugriff ist standardmäßig für alle Untermandanten aktiviert. Ein Supportbenutzer kann sich bei jedem Untermandanten als beliebiger Benutzer anmelden. Beachten Sie, dass Untermandanten-Benutzer den Zugriff nicht selbst deaktivieren können.
-* *false*: Supportbenutzerzugriff ist für alle Untermandanten deaktiviert, kann aber für einen Untermandanten explizit aktiviert werden. Ein Supportbenutzer kann sich nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat.
+* *true* - Supportbenutzerzugriff ist standardmäßig für alle Untermandanten aktiviert. Ein Supportbenutzer kann sich bei jedem Untermandanten als beliebiger Benutzer anmelden. Beachten Sie, dass Untermandanten-Benutzer den Zugriff nicht selbst deaktivieren können.
+* *false* - Supportbenutzerzugriff ist für alle Untermandanten deaktiviert, kann aber für einen Untermandanten explizit aktiviert werden. Ein Supportbenutzer kann sich nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat.
 * Ein explizites Datum im Datum-Uhrzeit-Format, bis zu dem der Supportbenutzerzugriff aktiviert bleiben soll. Wenn kein Datum festgelegt wird, wird der Wert auf "Unbegrenzt" gesetzt.
 
 Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. h. um wie viele Stunden der Supportbenutzerzugriff nach einer Supportbenutzeranfrage verlängert wird. Geben Sie die Anzahl der Stunden ein. Der Standardwert ist 24 Stunden.

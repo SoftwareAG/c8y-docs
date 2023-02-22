@@ -104,6 +104,7 @@ Während Standardspalten lediglich nach Bedarf ein- oder ausgeblendet werden kö
 
 1. Bewegen Sie den Mauszeiger über die Zeile des zu löschenden Geräts.
 2. Klicken Sie auf das Löschen-Symbol rechts neben der Zeile.
+3. Bestätigen Sie das Entfernen des Geräts. Wählen Sie optional, ob Kindgeräte des Geräts oder der zugehörige Gerätebesitzer gelöscht werden sollen. Beachten Sie, dass nicht beide Optionen gewählt werden können.
 
 Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
@@ -113,7 +114,7 @@ Wenn Sie ein Gerät löschen, wird dieses aus der {{< product-c8y-iot >}}-Datenb
 
 <a name="filtering-devices"></a>
 
-### Filtern von Geräten
+### So filtern Sie Geräte
 
 Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestimmten Kriterien zu Filtern.
 

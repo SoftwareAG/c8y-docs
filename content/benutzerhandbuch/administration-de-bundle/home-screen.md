@@ -7,7 +7,7 @@ title: Startseite
 
 Die Startseite der "Administration"-Anwendung enthält
 
-* eine Begrüßung,
+* Eine Begrüßung,
 * Quick Links zu wesentlichen Funktionen der Anwendung,
 * Ihre Kapazitätsnutzung im aktuellen und vergangenen Monat,
 * die von Ihnen abonnierten optionalen Anwendungen.

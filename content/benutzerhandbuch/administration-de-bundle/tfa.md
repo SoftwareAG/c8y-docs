@@ -1,5 +1,5 @@
 ---
-weight: 61
+weight: 71
 title: Zwei-Faktor-Authentifizierung
 ---
 Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine zusätzliche Sicherheitsebene, mit der eine Authentifizierung nur durch eine Kombination von zwei verschiedenen Faktoren möglich ist: etwas, was die Benutzer wissen (Benutzername und Passwort), und etwas, was sie haben (z. B. Smartphone) oder sind (z. B. Fingerabdruck). Näheres zum Konfigurieren der TFA erfahren Sie im Abschnitt zum Thema [Authentifizierungseinstellungen](/benutzerhandbuch/administration-de/#authentication).
@@ -54,14 +54,12 @@ Wenn ein Benutzer den Zugriff auf den TFA-Code verliert, z. B. wenn er sein Smar
 TOTP muss von jedem einzelnen Benutzer eingerichtet werden. 
 
 {{< c8y-admon-req title="Anforderungen" >}}
-
 Benutzer können ihr eigenes TOTP-Secret nicht zurücksetzen. Das Secret eines Benutzers wird nur von seinem jeweiligen übergeordneten Benutzer zurückgesetzt.
 Weitere Informationen zu Benutzerhierarchien finden Sie unter [{{< enterprise-tenant-de >}} > Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies) im *User Guide*.
 
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Zurücksetzen des Secrets: ADMIN- oder ERSTELLEN-Berechtigung für Berechtigungstyp "Benutzerverwaltung"
-
 {{< /c8y-admon-req >}}
 
 1. Navigieren Sie in der Anwendung "Administration" zu **Konten** > **Benutzer** und wählen Sie auf der Seite **Benutzer** einen Benutzer aus.

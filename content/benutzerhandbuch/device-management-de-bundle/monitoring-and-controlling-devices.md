@@ -56,7 +56,7 @@ Der untere Pfeil symbolisiert die Push-Verbindungen (von {{< product-c8y-iot >}}
 * Roter Pfeil - offline (Verbindung nicht hergestellt)
 * Grauer Pfeil - nicht überwacht
 
-Eine Push-Verbindung ist ein aktiver HTTPS-Long-Poll oder eine MQTT-Verbindung von {{< product-c8y-iot >}} zum API-Endpunkt <kbd>/notification/operations</kbd> (nicht zum Echtzeit-API-Endpunkt).
+Eine Push-Verbindung ist eine aktive HTTPS-Long-Poll-Verbindung zum API-Endpunkt <kbd>/notification/operations</kbd> oder eine aktive MQTT-Verbindung zum MQTT-Endpunkt von {{< product-c8y-iot >}}.
 Sie ist immer grün dargestellt, wenn das Gerät verbunden ist, auch wenn kein Datenverkehr stattfindet.
 
 {{< c8y-admon-info >}}

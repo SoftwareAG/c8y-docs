@@ -151,6 +151,7 @@ Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher 
 
 1. Klicken Sie auf CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
 2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
+<br> <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Klicken Sie auf **Herunterladen**, um den Export zu starten.
 
 Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
@@ -166,9 +167,9 @@ Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutz
 
 {{< product-c8y-iot >}} bietet zwei Abrechnungsmodi:
 
-* **Abonnementbasierte Abrechnung**: Berechnet einen Festpreis, wenn ein Mandant einen Microservice abonniert hat, während die Ressourcennutzung dem Eigentümer zugewiesen wird.
+* **Abonnementbasierte Abrechnung** - berechnet einen Festpreis, wenn ein Mandant einen Microservice abonniert hat, während die Ressourcennutzung dem Eigentümer zugewiesen wird.
 
-* **Ressourcenbasierte Abrechnung**: Legt die Menge der von einem Microservice genutzten Ressourcen offen, um die Gebühr zu berechnen.
+* **Ressourcenbasierte Abrechnung** - legt die Menge der von einem Microservice genutzten Ressourcen offen, um die Gebühr zu berechnen.
 
 Die Abrechnungsmodi werden pro Microservice im [Microservice-Manifest](/microservice-sdk/concept/#manifest) angegeben und im Feld "billingMode" festgelegt.
 
@@ -238,12 +239,14 @@ Die automatische Skalierung überwacht Ihre Microservices und passt automatisch 
 
 Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AUTO gesetzt ist und der über die notwendigen CPU-Nutzungspunkte zum Starten einer neuen Microservice-Instanz für drei Stunden verfügt, wird Folgendes abgerechnet: (24/24 + 3/24) * verbrauchte Ressourcen.
 
-24/24 - eine Instanz den ganzen Tag aktiv<br>
- 3/24 - zweite Instanz nur drei Stunden aktiv
+* 24/24 - eine Instanz den ganzen Tag aktiv
+* 3/24 - zweite Instanz nur drei Stunden aktiv
 
 Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag vorgenommen wird.
 
-Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in der {{< openapi >}}.
+![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
+
+Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in der {{< openapi >}}.
 
 
 ### Handhabung von Zeitzonen
@@ -353,6 +356,8 @@ Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt 
   * Bereit - Der Microservice-Container ist bereit, eingehenden Datenverkehr zu verarbeiten. Der Status wird ausgehend von Liveness- und Readiness-Proben, die im [Microservice-Manifest](/microservice-sdk/concept/#manifest) definiert sind, auf "Bereit" gestellt. Wenn keine Proben definiert wurden, ist der Microservice direkt bereit.
 
 Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
+
+  <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
 Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer Anwendung in den Anwendungsdetails anzuzeigen. Auf der Registerkarte **Status** werden im Abschnitt **Ereignisse** sehr niedrigstufige Phasen des Anwendungsstarts angezeigt. Einige der wichtigsten sind:
 

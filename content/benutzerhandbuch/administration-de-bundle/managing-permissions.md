@@ -8,8 +8,8 @@ Berechtigungen legen fest, welche Funktionen ein Benutzer in {{< product-c8y-iot
 
 Die folgenden Rollen können zugewiesen werden:
 
-- Globale Rollen: Enthalten Berechtigungen, die auf alle Daten innerhalb eines Mandanten zutreffen.
-- Stammdatenrollen: Enthalten Berechtigungen, die auf Gerätegruppen zutreffen.
+- Globale Rollen - enthalten Berechtigungen, die auf alle Daten innerhalb eines Mandanten zutreffen.
+- Stammdatenrollen - enthalten Berechtigungen, die auf Gerätegruppen zutreffen.
 
 Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
@@ -108,11 +108,7 @@ Unter Umständen werden auch die folgenden älteren Rollen angezeigt:
 <a name="create-edit-roles"></a>
 #### So fügen Sie eine globale Rolle hinzu
 
-Klicken Sie auf **Globale Rolle hinzufügen** in der Registerkarte **Globale Rollen**.
-
-Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigungstypen und rechts eine Liste der Anwendungen, auf die zugegriffen werden kann.
-
-Der folgende Screenshot zeigt die Einstellungen für die Rolle "admins".
+Klicken Sie auf **Globale Rolle hinzufügen** in der Registerkarte **Globale Rollen**. Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigungstypen und rechts eine Liste der Anwendungen, auf die zugegriffen werden kann. Der folgende Screenshot zeigt die Einstellungen für die Rolle "admins".
 
 ![Admin example](/images/benutzerhandbuch/Administration/admin-global-role-admin.png)
 
@@ -120,10 +116,10 @@ Der folgende Screenshot zeigt die Einstellungen für die Rolle "admins".
 
 Für jeden Typen können Sie die folgenden Berechtigungsebenen wählen:
 
-- LESEN: Einsehen der jeweiligen Daten.
-- ERSTELLEN: Erstellen neuer Daten wie Benutzer und Stammdaten sowie Bearbeiten von Benutzern innerhalb Ihrer Hierarchie.
-- AKTUALISIEREN: Ändern und Löschen der jeweiligen Daten (beinhaltet nicht LESEN).
-- ADMIN: Erstellen, Aktualisieren und Löschen der jeweiligen Daten.
+- LESEN - Einsehen der jeweiligen Daten.
+- ERSTELLEN - Erstellen neuer Daten wie Benutzer und Stammdaten sowie Bearbeiten von Benutzern innerhalb Ihrer Hierarchie.
+- AKTUALISIEREN - Ändern und Löschen der jeweiligen Daten (beinhaltet nicht LESEN).
+- ADMIN - Erstellen, Aktualisieren und Löschen der jeweiligen Daten.
 
 {{< c8y-admon-info >}}
 ERSTELLEN-Berechtigungen sind mit dem Eigentumskonzept in {{< product-c8y-iot >}} verbunden. Wenn Sie ein Objekt erstellt haben, sind Sie der Eigentümer und können das Objekt ohne weitere Berechtigungen verwalten. Wenn Sie beispielsweise die ERSTELLEN-Berechtigung für Stammdaten haben, können Sie Geräte und Gruppen erstellen und diese vollständig verwalten. Sie können jedoch keine Geräte und Gruppen, die Sie nicht selbst erstellt haben, verwalten, ohne dafür eine AKTUALISIEREN-Berechtigung oder eine zusätzliche Stammdatenrolle zu haben (siehe unten). Diese Konzept unterstützt es, Geräten minimale Berechtigungen zuzuweisen. Es ermöglicht Ihnen auch, Benutzerverwaltungsrechte auf untergeordnete Benutzer zu beschränken, wenn Sie Benutzerhierarchien abonniert haben.
@@ -271,14 +267,18 @@ Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch er
 ##### So weisen Sie globale Rollen aus der Benutzerliste zu
 
 1. Klicken Sie auf die Spalte **Globale Rollen** eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen.
-1. Aktivieren oder deaktivieren Sie die entsprechenden Checkboxen.
-1. Klicken Sie auf **Anwenden**, um Ihre Einstellungen zu speichern.
+2. Aktivieren oder deaktivieren Sie die entsprechenden Checkboxen.
+3. Klicken Sie auf **Anwenden**, um Ihre Einstellungen zu speichern.
+
+![Apply global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-1.png)
 
 ##### So weisen Sie globale Rollen aus der Benutzerseite zu
 
-Klicken Sie auf die Zeile des jeweiligen Benutzers in der Benutzerliste.
-Aktivieren oder deaktivieren Sie auf der Benutzerseite rechts die Checkboxen für die entsprechenden globalen Rollen.
-Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
+1. Klicken Sie auf die Zeile des jeweiligen Benutzers in der Benutzerliste.
+2. Aktivieren oder deaktivieren Sie auf der Benutzerseite rechts die Checkboxen für die entsprechenden globalen Rollen.
+3. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
+
+![Attach global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-2.png)
 
 <a name="inventory"></a>
 ### Stammdatenrollen
@@ -357,7 +357,7 @@ Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen.
 
 Klicken Sie auf **Benutzer** im Menü **Konten**, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
-In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie auf **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
+In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie auf **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Stammdatenrollen](#inventory).
 
 {{< c8y-admon-important title="Wichtig" >}}
 Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer
@@ -370,11 +370,36 @@ Wenn ein Benutzer Stammdatenzugriff für eine Gerätegruppe hat, hat er auch Zug
 
 Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie auf **Stammdatenrollen eines anderen Benutzers kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie auf **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.
 
+<img src="/images/benutzerhandbuch/Administration/admin-inventory-role-copy.png" alt="Copy roles">
+
+
 ### Fehlerbehebung bei Berechtigungen
 
 Wenn Sie Aktionen durchführen möchten für die Sie keine ausreichende Berechtigung haben, erhalten Sie eine Fehlermeldung.
 
 Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** (mit dem aktuellen Benutzernamen) in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Produkt-Support](/welcome/contacting-support/) können Ihnen helfen, die Berechtigungsprobleme zu beheben.
+
+### Verbesserung der Leistung
+
+Die {{< product-c8y-iot >}}-Plattform bietet optimierte UI-Leistung für Benutzer mit Zugriff über Stammdatenrollen. Insbesondere erfolgen Anfragen bei Mandanten mit großen Stammdatenhierarchien schneller.
+
+Die Leistung der folgenden UI-Seiten wird verbessert:
+* Registerkarten **Info**, **Messwerte**, **Alarme**, **Ereignisse** und **Steuerung** in der [Gerätedetails-Ansicht](/benutzerhandbuch/device-management-de/#device-details)
+* Seiten mit aggregierten Alarmansichten von mehreren Geräten, wenn die Anzahl der Alarme im System gering ist, z. B. [Cockpit > Start-Dashboard](/benutzerhandbuch/cockpit-de/#home-dashboard), Cockpit > Alarme und Device Management > Startseite
+* Seiten mit aggregierten Ereignissen von mehreren Geräten, wenn die Anzahl der Ereignisse gering ist, z. B. [Device Management > Überwachen und Steuern von Geräten > So zeigen Sie Ereignisse an](/benutzerhandbuch/device-management-de/#to-view-events)
+* Seiten mit aggregierten Operationen von mehreren Geräten, wenn die Anzahl der Operationen gering ist, z. B. [Device Management > Übersichten > Gerätesteuerung](/benutzerhandbuch/device-management-de/#to-view-single-operations)
+
+Als Administrator können Sie die Leistungsfunktion auf folgende Weise deaktivieren:
+- Auf Plattformebene über die Konfigurationsdatei (nur für Plattformadministratoren verfügbar, siehe *{{< product-c8y-iot >}} - Operations Guide*).
+- Auf Mandantenebene über eine Mandantenoption. Die Mandantenoption hat zwei mögliche Werte: LEGACY/OPTIMIZED, wobei OPTIMIZED die globale Standardeinstellung ist.
+
+Die Option sieht in der REST API wie folgt aus (siehe auch [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postOptionCollectionResource)):
+
+`{"category": "configuration", "key": "acl.algorithm-version", "value": "LEGACY"}`
+
+Die Einstellung auf Mandantenebene hat Vorrang vor der Einstellung auf Plattformebene.
+
+Diese Option ist standardmäßig aktiviert.
 
 <a name="app-access"></a>
 ### Gewähren von Anwendungszugriff
@@ -384,6 +409,8 @@ Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendunge
 Um dem Benutzer Anwendungen zuzuweisen, wählen Sie einfach die entsprechenden Anwendungen aus und klicken **Speichern**.
 
 Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
+
+![Application access](/images/benutzerhandbuch/Administration/admin-application-access.png)
 
 {{< c8y-admon-info >}}
 Wenn ein Benutzer die globale Berechtigung hat, alle Anwendungen einzusehen, wird eine entsprechende Information angezeigt.

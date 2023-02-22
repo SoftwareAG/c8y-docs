@@ -42,10 +42,11 @@ Wählen Sie rechts die Haupt- oder Untergruppen aus, die als oberste Knoten im N
 
 Im Abschnitt **Start-Dashboard** können Sie wählen, wie das Start-Dashboard, d. h. die Landing-Page für diese Anwendung, behandelt wird.
 
-Sie können auswählen, ob die Anpassung des Start-Dashboards
-* im gesamten Mandanten widergespiegelt werden soll (Standardwert)
-* nur in der aktuellen benutzerdefinierten Anwendung widergespiegelt werden soll
-* nur im aktuellen Benutzer widergespiegelt werden soll Beachten Sie, dass dieser Benutzer dann eine ERSTELLEN-Berechtigung für den Berechtigungstyp "Stammdaten" benötigt.
+Sie können eine der folgenden Optionen wählen, um das Start-Dashboard individuell anzupassen:
+
+* Es wird im gesamten Mandanten widergespiegelt (Standardwert).
+* Es wird nur in der aktuellen benutzerdefinierten Anwendung widergespiegelt.
+* Es wird nur im aktuellen Benutzer widergespiegelt. Beachten Sie, dass dieser Benutzer dann eine ERSTELLEN-Berechtigung für den Berechtigungstyp "Stammdaten" benötigt.
 
 #### Sonstiges
 

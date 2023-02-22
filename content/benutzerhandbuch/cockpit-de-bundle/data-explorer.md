@@ -22,7 +22,7 @@ Der Daten-Explorer ist sowohl für alle Assets auf einmal als auch für einzelne
 
 - Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
 
-Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
+Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Zum Hinzufügen eines Datenpunkts](#add-data-points).
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
@@ -61,12 +61,12 @@ Zum Ändern der Visualisierung im Daten-Explorer können Sie verschiedene Parame
 
 Sie können das angezeigte Zeitintervall ändern. Standardmäßig sehen Sie die Werte für die letzte Stunde.
 
-Um das Zeitintervall auf der x-Achse zu ändern,
+Das Zeitintervall auf der x-Achse ändern Sie mit einer der folgenden Optionen:
 
-* wählen Sie ein anderes Zeitintervall aus der Auswahlliste in der oberen Menüleiste,
-* geben Sie ein eigenes Zeitintervall in die Felder **Von** und **Bis** im Daten-Explorer ein,
-* bewegen Sie die x-Achse mit dem Mauszeiger nach links oder rechts, um das Zeitintervall zu verschieben,
-* zoomen Sie durch Doppelklicken in den Daten-Explorer.
+* Wählen Sie ein anderes Zeitintervall aus der Auswahlliste in der oberen Menüleiste.
+* Geben Sie ein eigenes Zeitintervall in die Felder **Von** und **Bis** im Daten-Explorer ein.
+* Bewegen Sie die x-Achse mit dem Mauszeiger nach links oder rechts, um das Zeitintervall zu verschieben.
+* Zoomen Sie durch Doppelklicken in den Daten-Explorer.
 
 {{< c8y-admon-info >}}
 Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
@@ -190,7 +190,7 @@ In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur
 
 Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hinzufügen.
 
-Klicken Sie auf **Alarm/Ereignis** hinzufügen in der Karte **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
+Klicken Sie in der Karte **Alarm/Ereignisse** auf **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
 ![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-eventsadd.png)
 
@@ -216,7 +216,7 @@ Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widg
 Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen.
 
 {{< c8y-admon-info >}}
-Um diese Funktion nutzen zu können, muss zunächst ein Dashboard erstellt werden. Weitere Informationen zu Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
+Um diese Funktion nutzen zu können, muss zunächst ein Dashboard erstellt werden. Weitere Informationen zu Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
 {{< /c8y-admon-info >}}
 
 **Als Widget einem Bericht hinzufügen**

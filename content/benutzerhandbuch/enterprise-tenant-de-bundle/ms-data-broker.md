@@ -1,9 +1,9 @@
 ---
-weight: 90
-title: Microservice-basierter Data Broker
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition-de/#ms-data-broker
+- /benutzerhandbuch/enterprise-edition-de/#ms-data-broker
+layout: redirect
+title: Microservice-basierter Data Broker
+weight: 90
 ---
 
 Der Microservice-basierte Data Broker nutzt den {{< product-c8y-iot >}} Messaging Service, der eine zuverlässige, skalierbare und hochleistungsfähige Bewegung von IoT-Daten ermöglicht. Der Microservice-basierte Data Broker ähnelt in seiner Funktionalität dem bisherigen Data Broker, außer dass zu seiner Nutzung ein Microservice, der `databroker-agent-server`, aktiviert werden muss.
@@ -17,6 +17,11 @@ Für dedizierte und selbst gehostete Instanzen sind der Messaging Service und de
 
 Bitte wenden Sie sich an den [Produkt-Support](/welcome/contacting-support/), um Näheres über die Verwendung von Messaging Service und Microservice-basiertem Data Broker in Ihrer {{< product-c8y-iot >}}-Umgebung zu erfahren.
 Im *Messaging Service - Installation & Operations Guide* finden Sie technische Details zur erforderlichen Konfiguration. Beachten Sie jedoch, dass diese Aufgaben nur von einem {{< product-c8y-iot >}}-Plattform-Administrator und nicht von einem normalen Benutzer ausgeführt werden können.
+
+Zusammenfassung: Um mit dem Microservice-basierten Data Broker arbeiten zu können, müssen die folgenden Anforderungen erfüllt sein:
+  * Der {{< product-c8y-iot >}} Messaging Service muss auf Ihrer {{< product-c8y-iot >}}-Plattform verfügbar sein.
+  * Ihr Mandant muss die Anwendung "feature-broker" abonniert haben.
+  * Ihr Mandant muss den Microservice "databroker-agent-server" abonniert haben.
 
 {{< /c8y-admon-req >}}
 

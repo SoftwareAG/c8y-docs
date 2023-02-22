@@ -46,16 +46,16 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
-<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
-<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu Fieldbus-Geräten. Weitere Informationen finden Sie unter <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#firmware">Firmware</a></td>
 <td align="left">Verwaltet die Firmware eines Geräts. Siehe <a href="#managing-firmware">Verwalten von Firmware auf einem Gerät</a>.</td>
+</tr>
+<tr>
+<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
+<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
 </tr>
 <tr>
 <td align="left"><a href="#identity">Identifikator</a></td>
@@ -424,6 +424,13 @@ Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergew
 
 Weitere Informationen zum Verwalten und Aktualisieren der auf einem Gerät installierten Software finden Sie unter [Verwalten von Software auf einem Gerät](#managing-software).
 
+<a name="control"></a>
+### Steuerung
+
+Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
+
+![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
+
 <a name="location"></a>
 ### Standort
 
@@ -432,13 +439,6 @@ Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts 
 ![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
 
 Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut `c8y_Position` enthält. Wenn Sie ein neues `c8y_Position`-Ereignis senden, können Sie das gleiche `c8y_Position`-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
-
-<a name="control"></a>
-### Steuerung
-
-Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
-
-![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
 <a name="tracking"></a>
 ### Tracking

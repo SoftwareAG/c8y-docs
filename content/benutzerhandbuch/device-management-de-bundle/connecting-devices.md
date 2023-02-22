@@ -53,10 +53,17 @@ Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte releva
 {{< /c8y-admon-info >}}
 
 1. Klicken Sie auf **Registrierung** im Menü **Geräte** des Navigators.
-2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Einzelregistrierung** > **Generell**. Der Dialog **Geräte registrieren** wird angezeigt.
+2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Einzelregistrierung** > **Generell**.
+
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+
+Der Dialog **Geräte registrieren** wird angezeigt.
+
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+
 3. Geben Sie im Feld **Geräte-ID** die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist.
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten, siehe auch [Gruppieren von Geräten](#grouping-devices).
-5. Klicken Sie auf **Neues Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
+5. Klicken Sie auf **Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
 6. Klicken Sie auf **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
 {{< c8y-admon-info >}}
@@ -108,7 +115,7 @@ Die Regel kann durch Festlegen der folgenden Mandantenoption mit einem der oben 
 ```
 
 {{< c8y-admon-info >}}
-Der Bildschirm **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](#security-token-policy-for-device-registration) unterscheiden.
+Die Anzeige **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](#security-token-policy-for-device-registration) unterscheiden.
 {{< /c8y-admon-info >}}
 
 ##### Ignorierte Sicherheitstokenregel
@@ -169,7 +176,14 @@ Es gibt keine Einschränkung hinsichtlich der Anzahl der Geräte, die durch eine
 
 2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Bulk-Registrierung** > **Generell**.
 
-3. Klicken Sie auf die Plus-Schaltfläche, um die hochzuladende CSV-Datei auszuwählen, oder wählen Sie sie durch Ziehen und Ablegen aus. Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierungstypen verarbeitet:
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+
+3. Klicken Sie auf die Plus-Schaltfläche, um die hochzuladende CSV-Datei auszuwählen, oder wählen Sie sie durch Ziehen und Ablegen aus.
+
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
+
+<br>
+Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierungstypen verarbeitet:
 
 * Einfache Registrierung
 * Vollständige Registrierung
@@ -197,7 +211,7 @@ Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen er
 
 Die CSV-Dateien müssen mindestens die IDs als Gerätebezeichnung und die Zugangsdaten der Geräte enthalten.
 
-Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYPE enthalten, wie im folgenden Beispiel gezeigt.
+Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYPE enthalten, wie im folgenden Beispiel gezeigt:
 
 ```
 ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE

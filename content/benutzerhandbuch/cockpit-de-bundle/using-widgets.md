@@ -92,7 +92,6 @@ Wenn Sie ein nicht zugewiesenes Gerät als Asset auswählen möchten, finden Sie
 
 {{< c8y-admon-info >}}
 Sie können nicht den Ordner **Nicht zugewiesene Geräte** selbst auswählen. Jedes Gerät innerhalb dieses Ordners kann jedoch auf der nächsten Ebene ausgewählt werden. Klicken Sie auf **Nicht zugewiesene Geräte**, um die nächste Ebene mit allen nicht zugewiesenen Geräten zu öffnen. Klicken Sie auf das gewünschte Gerät, um es auszuwählen.
-
 {{< /c8y-admon-info >}}
 
 
@@ -115,11 +114,8 @@ Auf der Registerkarte **Konfiguration** des Widget-Editors können Sie das Vollt
 
 Nachdem Sie das Asset ausgewählt haben, sehen Sie alle Kinder dieses Assets. Um zur übergeordneten Ebene zurückzukehren, klicken Sie auf das "X" im Suchfeld.
 
-
 {{< c8y-admon-info >}}
-
 Die Volltextsuche ist nur im Start-Dashboard und in den Bericht-Dashboards verfügbar.
-
 {{< /c8y-admon-info >}}
 
 Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
@@ -132,4 +128,3 @@ Filtern ist eine weitere Methode zum Auffinden von Assets. Dabei werden jedoch n
 ![Filtering](/images/benutzerhandbuch/cockpit/cockpit-asset-column-filter.png)
 
 Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
-

@@ -81,9 +81,9 @@ In bestimmten Regel-Parametern können verschiedene Auslösefelder als Variablen
 
 Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 **Parameter**
 
@@ -125,7 +125,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -196,7 +196,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -216,6 +216,10 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 **Funktionalität**
 
 Sendet eine E-Mail oder SMS, wenn ein Alarm erzeugt wird.
+
+{{< c8y-admon-req title="Anforderungen" >}}
+Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.
+{{< /c8y-admon-req >}}
 
 **Parameter**
 
@@ -257,7 +261,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -320,7 +324,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -387,7 +391,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -456,7 +460,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -520,7 +524,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -584,7 +588,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -642,7 +646,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -755,7 +759,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -773,8 +777,8 @@ Die Regel führt für jeden eingehenden Messwert folgende Schritte aus:
 
 * Die Daten für den roten und gelben Bereich stammen aus:
 
-- der Datenpunktbibliothek (Kontrollparameter).
-- dem Quellobjekt (Messwert). Werden Bereiche aus der Datenpunkt-Außerkraftsetzung des Quellobjekts gefunden, so werden sie zusammengeführt.
+    * der Datenpunktbibliothek (Kontrollparameter).
+    * dem Quellobjekt (Messwert). Werden Bereiche aus der Datenpunkt-Außerkraftsetzung des Quellobjekts gefunden, so werden sie zusammengeführt.
 
 Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
@@ -782,11 +786,11 @@ Sind in den zusammengeführten Parametern keine roten/gelben Bereiche definiert,
 Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte aus der Datenpunktbibliothek. Sie können auch lediglich einen einzelnen Wert überschreiben (z. B. gelber Bereich max), indem Sie diesen im Quellobjekt setzen. Die anderen Werte werden dann aus der Datenpunktbibliothek übernommen.
 {{< /c8y-admon-info >}}
 
-* Eingehende Werte innerhalb des roten Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads KRITISCH des jeweiligen Typs für das Objekt vorliegt, KRITISCHEN Alarm erzeugen; andernfalls nichts tun.
+* Eingehende Werte innerhalb des roten Bereichs: Wenn kein aktiver Alarm des Schweregrads KRITISCH des jeweiligen Typs für das Objekt vorliegt, KRITISCHEN Alarm erzeugen; andernfalls nichts tun.
 
-* Eingehende Werte innerhalb des gelben Bereichs: <br> Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
+* Eingehende Werte innerhalb des gelben Bereichs: Wenn kein aktiver Alarm des Schweregrads WENIGER WICHTIG des jeweiligen Typs für das Objekt vorliegt, WENIGER WICHTIGEN Alarm erzeugen; andernfalls nichts tun.
 
-* Messwert außerhalb des gelben und roten Bereichs: <br> Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
+* Messwert außerhalb des gelben und roten Bereichs: Wenn ein aktiver Alarm des jeweiligen Typs für das Objekt vorliegt, den KRITISCHEN und/oder den WENIGER WICHTIGEN Alarm löschen.
 
 **Fehlerbehebung**
 
@@ -799,11 +803,9 @@ Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
 {{< c8y-admon-info >}}
-Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
-{{< /c8y-admon-info >}}
+* Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
-{{< c8y-admon-info >}}
-Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
+* Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 {{< /c8y-admon-info >}}
 
 <a name="threshold-explicit"></a>
@@ -863,7 +865,7 @@ Die Regel verwendet die folgenden Parameter:
 <td align="left">Ziel-Assets oder -geräte</td>
 <td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
 Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
-Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule für eine Gruppe oder ein Gerät finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule</a>.
 </td>
 </tr>
 </tbody>
@@ -880,11 +882,9 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
 {{< c8y-admon-info >}}
-Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
-{{< /c8y-admon-info >}}
+* Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellenwert wieder überschreitet.
 
-{{< c8y-admon-info >}}
-​Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
+* Unter bestimmten Umständen, etwa wenn der zeitliche Abstand zwischen den Messungen sehr groß ist, kann diese Smart Rule einen falschen Alarmschweregrad hervorrufen. Wird beispielsweise der CEP/Apama-Pod neu gestartet, geht der interne Zustand verloren und es wird erneut ein Alarm ausgegeben, wenn dies nicht der Fall sein sollte, was zu einem falschen Alarmschweregrad führt.
 {{< /c8y-admon-info >}}
 
 <a name="smart-rule-variables"></a>

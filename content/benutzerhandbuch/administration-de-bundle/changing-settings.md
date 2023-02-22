@@ -17,7 +17,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 
 Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
-![Authentifizierungseinstellungen](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
+![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
 {{< c8y-admon-info >}}
 Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten-Management" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
@@ -27,9 +27,9 @@ Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die A
 
 Im Feld **Bevorzugter Login-Modus** können Sie eine der folgenden Optionen wählen:
 
-* OAI-Secure - Empfohlene Option, da sie durch Autorisierungs-Tokens als Identitätsnachweis des Benutzers ein hohes Maß an Sicherheit bietet. Standard-Anmeldemodus beim Anlegen neuer Mandanten. Dieser Modus ist eine Erweiterung der früheren Authentifizierung "OAuth Internal" (verfügbar vor 10.13.0).
-* Basic Auth - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden, da sie nur minimale Sicherheit bietet.
-* Single-Sign-On-Weiterleitung - Kann nur gewählt werden, wenn SSO konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen "Basic Auth" und "OAI-Secure" entfernt.
+* OAI-Secure - empfohlene Option, da sie durch Autorisierungs-Tokens als Identitätsnachweis des Benutzers ein hohes Maß an Sicherheit bietet. Standard-Anmeldemodus beim Anlegen neuer Mandanten. Dieser Modus ist eine Erweiterung der früheren Authentifizierung "OAuth Internal" (verfügbar vor 10.13.0).
+* Basic Auth - sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden, da diese Option nur minimale Sicherheit bietet.
+* Single-Sign-On-Weiterleitung - kann nur gewählt werden, wenn SSO konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen "Basic Auth" und "OAI-Secure" entfernt.
 
 Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
 
@@ -66,6 +66,7 @@ Wird der Benutzer-Agent in der Liste der vertrauenswürdigen oder verbotenen Ben
 #### OAI-Secure
 
 OAI-Secure ist eine sicherere Alternative zum Basic Auth-Modus, der auch die Anmeldung mittels Benutzername und Passwort unterstützt. Im OAI-Secure-Modus werden die Zugangsdaten bei der ersten Anfrage durch ein JWT-Token ersetzt, das als Cookie im Webbrowser gesetzt oder im Antworttext zurückgegeben wird. Je nach Konfiguration kann OAI-Secure volle Sitzungsverwaltung unterstützen oder aber als standardmäßige JWT-Authentifizierung fungieren, wenn die Lebensdauer der Benutzersitzung durch die Ablaufzeit des Tokens begrenzt ist.
+
 ##### OAI-Secure ohne Konfiguration für die Sitzungsverwaltung (Sitzungskonfiguration deaktiviert)
 
 Wenn keine sitzungsbezogene Konfiguration vorliegt, gibt OAI-Secure ein JWT-Token mit einer bestimmten Lebensdauer heraus. Wenn das Token abläuft, ist der Benutzer gezwungen, sich erneut anzumelden, da die Token-Aktualisierung nicht unterstützt wird. Bei kurzer Token-Lebensdauer ist dieses Verhalten für den Benutzer äußerst unpraktisch, da er sich häufig neu anmelden muss.  
@@ -74,7 +75,7 @@ Wenn keine sitzungsbezogene Konfiguration vorliegt, gibt OAI-Secure ein JWT-Toke
 
 Die Verwendung von OAI-Secure mit aktivierter Sitzungskonfiguration ist praktischer und sicherer. So erzielen Sie ein Verhalten, das der Authentifizierung auf Basis von HTTP-Sitzungen ähnelt.
 
-Das OAI-Secure-Token fungiert als Sitzungs-ID am Client-Standort (Webbrowser). Eine solche im Cookie gespeicherte Token-ID kann eine vorkonfigurierte kurze Lebensdauer haben. Die {{< product-c8y-iot >}}-Plattform ist dann dafür verantwortlich, die Sitzungs-ID ohne eine Benutzerinteraktion zu erneuern. Es reicht aus, dass die Benutzeraktion den Webbrowser dazu veranlasst, eine Anfrage an {{< product-c8y-iot >}} zu senden. {{< product-c8y-iot >}} kann dann prüfen, ob die Erneuerung der Sitzungs-ID erfolgen soll, und gegebenenfalls die Operation durchführen. {{< product-c8y-iot >}} bietet umfangreiche Konfigurationsmöglichkeiten für dieses Verhalten, so dass die Mandantenadministratoren die Konfiguration nach ihren Wünschen anpassen können.
+Das OAI-Secure-Token fungiert als Sitzungs-ID auf der Client-Seite (Webbrowser). Eine solche im Cookie gespeicherte Token-ID kann eine vorkonfigurierte kurze Lebensdauer haben. Die {{< product-c8y-iot >}}-Plattform ist dann dafür verantwortlich, die Sitzungs-ID ohne eine Benutzerinteraktion zu erneuern. Es reicht aus, dass die Benutzeraktion den Webbrowser dazu veranlasst, eine Anfrage an {{< product-c8y-iot >}} zu senden. {{< product-c8y-iot >}} kann dann prüfen, ob die Erneuerung der Sitzungs-ID erfolgen soll, und gegebenenfalls die Operation durchführen. {{< product-c8y-iot >}} bietet umfangreiche Konfigurationsmöglichkeiten für dieses Verhalten, so dass die Mandantenadministratoren die Konfiguration nach ihren Wünschen anpassen können.
 
 Wenn die Option **Sitzungskonfiguration verwenden** aktiviert ist, können folgende Einstellungen vom Mandantenadministrator auf Mandantenebene konfiguriert werden:
 
@@ -112,10 +113,9 @@ Wenn die Option **Sitzungskonfiguration verwenden** aktiviert ist, können folge
 </tr>
 <tr>
 <td style="text-align:left">Token-Laufzeit</td>
-<td style="text-align:left">Definiert, wie lange ein Token aktiv ist. Der Benutzer kann nur mit einem gültigen Token auf {{< product-c8y-iot >}} zugreifen. Diese Konfigurationsoption ist stets verfügbar, unabhängig von der Sitzungskonfiguration. Siehe <a href="#token-settings" class="no-ajaxy">Token- und Cookie-Einstellungen</a> unten. </td>
+<td style="text-align:left">Definiert, wie lange ein Token aktiv ist. Der Benutzer kann nur mit einem gültigen Token auf {{< product-c8y-iot >}} zugreifen. Diese Konfigurationsoption ist stets verfügbar, unabhängig von der Sitzungskonfiguration. Siehe <a href="#token-settings" class="no-ajaxy">Token-Erzeugung mit OAI-Secure</a> weiter unten. </td>
 <td style="text-align:left">2 Tage</td>
 </tr>
-
 </tbody>
 </table>
 
@@ -136,7 +136,6 @@ Während der Erneuerung des Sitzungs-Tokens wird das vorherige Token zurückgese
 
 
 <a name="token-settings"></a>
-
 #### Token-Erzeugung mit OAI-Secure
 
 OAI-Secure basiert im Wesentlichen auf JWT, das in einem Browser-Cookie gespeichert wird. Außerdem kann OAI-Secure zum Erzeugen eines JWT im Antworttext verwendet werden.
@@ -157,7 +156,7 @@ Cookies zum Speichern eines JWT-Tokens in einem Browser haben eine eigene Gülti
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
-Der Standardwert ist zwei Wochen. Es kann auch ein beliebiger negativer Wert eingestellt werden, so dass das Cookie gelöscht wird, wenn der Benutzer den Browser schließt.
+Der Standardwert ist zwei Wochen. Damit das Cookie gelöscht wird, wenn der Benutzer den Browser schließt, stellen Sie hier einen beliebigen negativen Wert ein.
 
 ##### Lebensdauerkonfiguration von JWT im Antworttext
 
@@ -178,16 +177,16 @@ Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung zulassen**, wenn TFA
 Sie können eine der folgenden Optionen wählen:
 
 * **SMS-basiert**: unterstützt die folgenden Einstellungen:
-	- **Token-Gültigkeit begrenzen für**: Dauer jeder Sitzung in Minuten. Wenn die Sitzung abgelaufen ist oder ein Benutzer sich abmeldet, muss der Benutzer einen neuen Bestätigungscode eingeben.
-   - **Bestätigungscode-Gültigkeit begrenzen für**: Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn der Bestätigungscode abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode anfordern, um sich anmelden zu können.
-   <br><br>
+	- **Token-Gültigkeit begrenzen für** - Dauer jeder Sitzung in Minuten. Wenn die Sitzung abgelaufen ist oder ein Benutzer sich abmeldet, muss der Benutzer einen neuen Bestätigungscode eingeben.
+  - **Bestätigungscode-Gültigkeit begrenzen für** - Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn der Bestätigungscode abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode anfordern, um sich anmelden zu können.
+
 
 {{< c8y-admon-info >}}
 Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
 {{< /c8y-admon-info >}}
 
 * **Google Authenticator** (zeitabhängiges Einmal-Passwort = TOTP) zur Unterstützung der folgenden Einstellung:
-	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen**: Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.
+	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen** - Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.
 
 {{< c8y-admon-info >}}
 Die TOTP-Methode ist nur im Anmeldemodus "OAI-Secure" verfügbar.
@@ -203,282 +202,13 @@ Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. T
 Benutzer mit der Rolle "devices" sind von TFA und TOTP ausgeschlossen. Dies gilt auch dann, wenn TOTP für alle Benutzer erzwungen wird.
 {{< /c8y-admon-info >}}
 
-<a name="configuring-single-sign-on"></a>
-### Konfigurieren von Single Sign-On
-
-{{< product-c8y-iot >}} bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
-
-{{< c8y-admon-info >}}
-Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien. Sie kann nur genutzt werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.
-{{< /c8y-admon-info >}}
-
-Die Single-Sign-On-Funktionalität wurde mit der {{< product-c8y-iot >}}-Version 10.4.6. aktiviert. Microservices müssen mit dem Microservice SDK der Version 10.4.6 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.
-
-Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
-
-* der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt.
-* das Access Token als JWT ausgegeben wird und Sie wissen, was der Token Content enthalten muss.
-* das JWT aus einer einzigartigen Benutzeridentifikation (unique user identifier) sowie aus den Feldern "iss" (issuer), "aud" (audience) und "exp" (expiration time) besteht.
-* {{< product-c8y-iot >}}-Plattform Version 10.4.6 oder vorzugsweise höher verwendet wird.
-* alle Microservices mit dem Microservice Java SDK 10.4.6 oder vorzugsweise höher erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im *Microservice SDK Guide*.
-* Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
-
-{{< c8y-admon-info >}}
-Um die Single-Sign-On-Funktion für {{< enterprise-tenant-de >}}s nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
-{{< /c8y-admon-info >}}
-
-#### Konfigurationseinstellungen
-
-Um die Single-Sign-On-Funktionalität zu aktivieren, muss der Administrator eine Verbindung zum Autorisierungsserver konfigurieren. Diese erfolgt in der "Administration"-Anwendung.
-
-Klicken Sie auf die Registerkarte **Single-Sign-On** auf der Seite **Authentifizierung**.
-
-Links oben können Sie eine Vorlage auswählen. Die gewählte Option wirkt sich auf das Layout der Seite aus. Die Standardvorlage "Benutzerdefiniert" ermöglicht eine sehr detaillierte Konfiguration mit nahezu jedem Autorisierungsserver, der die Vergabe von OAuth2-Autorisierungscodes unterstützt. Andere Vorlagen bieten vereinfachte Ansichten bekannter und unterstützter Autorisierungsserver. Im Folgenden wird erklärt, wie Sie die benutzerdefinierte Vorlage verwenden, sowie eine Vorlage für das Azure Active Directory vorgestellt.
-
-<a name="custom-template"></a>
-##### Benutzerdefinierte Vorlage
-
-![Custom authorization request](/images/benutzerhandbuch/Administration/sso-custom-authorization-request.png)
-
-Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt.
-
-Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird von POST-Anfragen als GET-, Token- und Refresh-Anfrage ausgeführt.
-
-{{< c8y-admon-info >}}
-Beachten Sie, dass das Text-Feld jeder Anfrage nach dem Ausfüllen der Platzhalter mit Werten in unveränderter Form in der Anfrage versendet wird. Es wird also nicht von {{< product-c8y-iot >}} kodiert. Viele Autorisierungsserver verlangen, dass Werte im Text URL-kodiert (x-form-urlencoded) sind. Dies kann dadurch erreicht werden, dass bereits kodierte Werte in ein Text-Feld eingegeben werden.
-{{< /c8y-admon-info >}}
-
-Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus {{< product-c8y-iot >}} zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
-
-![Custom logout request](/images/benutzerhandbuch/Administration/sso-custom-logout-request.png)
-
-Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
-
-![Custom basic configuration](/images/benutzerhandbuch/Administration/sso-custom-basic.png)
-
-
-|Feld|Beschreibung|
-|:---|:---|
-|Redirect-URI|Redirect-Parameter. Kann in Anfragedefinitionen als ${redirectUri}-Platzhalter verwendet werden.
-|Client-ID|Client-ID der OAuth-Verbindung. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.
-|Name der Schaltfläche|Name auf der Schaltfläche auf der Anmeldeseite
-|Issuer|OAuth-Token-Issuer
-|Anbietername|Name des Anbieters
-|Sichtbar auf der Anmeldeseite|Legt fest, ob die Anmeldeoption sichtbar sein soll
-|Audience|Erwarteter "aud"-Parameter des JWT
-
-Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur {{< product-c8y-iot >}}-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
-
- ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping.png)
-
- Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
-
-```json
-{
-...
-"user": "john.wick",
-...
-}
-```
-
-Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "cockpit" zugewiesen.
-
-Falls keine Rechtezuordnung dem Benutzerzugriff-Token entspricht, erhält der Benutzer beim Versuch sich anzumelden eine "Zugriff verweigert"-Meldung. Dies geschieht auch, wenn keine Rechtezuordnung definiert ist, was dazu führt, dass sich sämtliche Benutzer nicht über SSO anmelden können.
-
-Klicken Sie auf **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie auf **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie auf das Minus-Symbol, um eine Regel zu entfernen.
-
-Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen "business" und "admin".
-
-Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unterstützte Platzhalter ist das Sternsymbol (\*), das null oder mehr Zeichen entspricht. Wenn Sie beispielsweise "cur\*" eingeben, entspricht dies den Zeichenketten "cur", "curiosity", "cursor" und allen anderen, die mit "cur" beginnen. "f\*n" entspricht den Zeichenketten "fn", "fission", "falcon" und allen anderen, die mit "f" beginnen und mit "n" enden.
-
-Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
-
-
- ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-WHEN.png)
-
-In diesem Fall sieht der JWT-Claim folgendermaßen aus:
-
- ```json
- {
- ...
- "user": {
-    "type": "human"
- },
- "role": [
-    "ADMIN"
- ],
- ...
- }
- ```
-
-Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (".") im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.
-
-Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung standardmäßig Benutzerrollen anhand des Access Tokens zu. Somit ist es nicht möglich, die Benutzerrollen innerhalb von {{< product-c8y-iot >}} zu ändern, da diese bei der nächsten Anmeldung des Benutzers überschrieben würden. Um dieses Verhalten zu ändern, aktivieren Sie das Kontrollkästchen **Dynamische Zugriffszuordnung nur bei der Benutzererstellung verwenden** im unteren Teil des Abschnitts **Rechtezuordnung**.
-
-![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-2.png)
-
-Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert. Bei Aktivierung dieser Option können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#attach-global) im *User Guide*.
-
-Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
-Die Benutzer-ID kann auf ein beliebiges Top-Level-Feld der Autorisierungstoken-Nutzdaten gesetzt werden, die während des Anmeldeprozesses vom Autorisierungsserver an die Plattform gesendet werden. Wir empfehlen, das Autorisierungstoken in den Audit-Logs zu überprüfen und sicherzustellen, dass das richtige Feld verwendet wird (siehe [Fehlerbehebung](#troubleshooting)).
-
-![User ID configuration](/images/benutzerhandbuch/Administration/sso-custom-userid-config.png)
-
- Wenn das Kontrollkästchen **Konstanten Wert verwenden** aktiviert ist, wird eine konstante Benutzer-ID für alle Benutzer verwendet, die sich über SSO an der {{< product-c8y-iot >}}-Plattform anmelden. Dies bedeutet, dass alle Benutzer, die sich über SSO anmelden, dasselbe Benutzerkonto in der {{< product-c8y-iot >}}-Plattform nutzen. Die Verwendung dieser Option wird nicht empfohlen.
-
-Danach kann das **Benutzerdaten-Mapping** konfiguriert werden:
-
-![User data mappings](/images/benutzerhandbuch/Administration/sso-custom-userdata-mapping.png)
-
-Beim Benutzer-Login können Benutzerdaten wie Vorname, Nachname, E-Mail-Adresse und Telefonnummer auch von JWT-Claims abgeleitet werden. Jedes Feld repräsentiert den Claim-Namen, der zum Abrufen der Daten von JWT verwendet wird. Die Konfiguration des Benutzerdaten-Mappings ist optional und als Admin-Manager können Sie nur die erforderlichen Felder verwenden. Falls die Konfiguration leer ist oder der Claim-Name im JWT-Token nicht gefunden werden kann, werden die Werte in den Benutzerdaten als leer festgelegt.
-
-Mapping für Alias ist nicht verfügbar, da es im Kontext von Single-Sign-On nicht verwendet wird.
-
-Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren.
-
-1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats.
-
- ![Signature verification Azure](/images/benutzerhandbuch/Administration/sso-signature-verification-Azure-AD.png)
-
-2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0).
-
- ![Signature verification ADFS](/images/benutzerhandbuch/Administration/sso-signature-verification-ADFS-manifest.png)
-
-3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats für {{< product-c8y-iot >}}. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall.
-
- ![Signature verification Custom](/images/benutzerhandbuch/Administration/sso-signature-verification-custom.png)
-
-4. Durch Spezifizieren der JWKS (JSON Web Key Set)-URI. JWKS ist eine Gruppe von JWK-Objekten, die einen öffentlichen Schlüssel zum Verifizieren von Tokens enthalten, die vom Autorisierungsserver ausgegeben werden.
-
- ![Signature verification JWKS](/images/benutzerhandbuch/Administration/sso-signature-verification-JWKS.png)
-
-
-{{< c8y-admon-info >}}
-{{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
-{{< /c8y-admon-info >}}
-
-##### Platzhalter
-In einigen Feldern können Sie Platzhalter verwenden, die während der Laufzeit von {{< product-c8y-iot >}} aufgelöst werden. Folgende Platzhalter sind verfügbar:
-
-|Platzhalter|Beschreibung|
-|:---|:---|
-|clientId|Wert des Felds **Client-ID**
-|redirectUri| Wert des Felds **Redirect-URI**
-|code|Wert, der vom Autorisierungsserver als Antwort auf die Autorisierungsanfrage zurückgegeben wird
-|refreshToken| Refresh-Token, das vom Autorisierungsserver nach einer Token-Anfrage zurückgegeben wird
-
-Diese Platzhalter können in Autorisierungsanfragen, Token-Anfragen, Refresh-Anfragen und Abmeldeanfragen in folgenden Feldern verwendet werden: URL, Text, Kopfzeilen und Anfrageparameter
-
-Um in einem Feld einen Platzhalter zu verwenden, schließen Sie diesen mit vorangehendem Dollarzeichen in geschweifte Klammern ein:
-![Placeholder standalone](/images/benutzerhandbuch/Administration/admin-sso-placeholder-standalone.png)
-
-Platzhalter können auch als Textteile verwendet werden:
-![Placeholder text](/images/benutzerhandbuch/Administration/admin-sso-placeholder-text.png)
-
-Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder falsch geschriebene Platzhalter wird im Text unverarbeitet gelassen.
-
-#### Integration mit Azure AD
-
-##### Azure AD-Konfiguration
-
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
-
-Verwenden Sie beim Konfigurieren Ihres Azure AD Ihre vollständige Domain-Adresse als Redirect-URI. In diesem Dokument verwenden wir beispielhaft "http://documentation.{{< domain-c8y >}}/tenant/oauth". Die Redirect-URI muss für eine Webanwendung und nicht für eine Einzelseitenanwendung festgelegt sein. In Azure AD sind keine weiteren Schritte erforderlich.
-
-#### Integration mit Keycloak
-
-##### Globale Abmeldefunktion (verfügbar für Keycloak ab Version 12.0.0)
-
-Die Integration mit Keycloak gibt Administratoren die Möglichkeit, eine globale Abmeldefunktion auf Basis von OpenID Connect zu verwenden. Ein Ereignis vom Keycloak-Autorisierungsserver wird an alle Anwendungen (einschließlich der {{< product-c8y-iot >}}-Plattform) gesendet, und zwar mit einem Logout-Token, das in gleicher Weise verifiziert wird wie das Token im Anmeldeprozess. Diese Funktion ermöglicht die Beendigung von Sitzungen auf beiden Seiten - Anwendungen und Keycloak - für den jeweiligen Benutzer.
-
-So konfigurieren Sie die globale Abmeldefunktion:
-
-1. Gehen Sie zur Administratorkonsole.
-2. Wählen Sie das Realm aus, das in der SSO-Konfiguration für den Mandanten verwendet wird.
-3. Navigieren Sie im Abschnitt **Configure** zu **Clients**.
-4. Wählen Sie den Client aus, der in der SSO-Konfiguration verwendet wird.
-5. Setzen Sie das Feld **Backchannel Logout URL** auf "https://mytenant.{{< domain-c8y >}}/user/logout/oidc".
-
-So verwenden Sie die globale Abmeldefunktion:
-
-1. Gehen Sie zur Administratorkonsole.
-2. Wählen Sie das Realm aus, das in der SSO-Konfiguration für den Mandanten verwendet wird.
-3. Navigieren Sie im Abschnitt **Manage** zu **User**.
-4. Wählen Sie den jeweiligen Benutzer aus.
-5. Navigieren Sie im Abschnitt **Manage** zur Registerkarte **Sessions** und klicken Sie auf **Logout**.
-
-##### Funktion zum Abmelden aller Benutzer
-
-Keycloak bietet auch eine Funktion, mit der Administratoren sämtliche SSO-Benutzer abmelden können.
-
-So konfigurieren Sie die Funktion zum Abmelden aller Benutzer:
-
-1. Gehen Sie zur Administratorkonsole.
-2. Wählen Sie das Realm aus, das in der SSO-Konfiguration für den Mandanten verwendet wird.
-3. Navigieren Sie im Abschnitt **Configure** zu **Clients**.
-4. Wählen Sie den Client aus, der in der SSO-Konfiguration verwendet wird.
-5. Setzen Sie das Feld **Admin URL** auf "https://mytenant.{{< domain-c8y >}}/user/keycloak".
-
-So verwenden Sie die Funktion zum Abmelden aller Benutzer:
-
-1. Gehen Sie zur Administratorkonsole.
-2. Wählen Sie das Realm aus, das in der SSO-Konfiguration für den Mandanten verwendet wird.
-3. Navigieren Sie im Abschnitt **Manage** zur Registerkarte **Sessions** und klicken Sie auf **Logout all**.
-
-Beachten Sie, dass das Abmeldeereignis für alle Benutzer nur im Geltungsbereich eines einzigen Realms ausgeführt wird.
-Zudem wird es nur an die Mandanten gesendet, bei denen der Client, der als Konfiguration für die SSO-Funktion dient, den korrekten **Admin URL**-Wert aufweist.
-
-In der Registerkarte **Session** kann der Keycloak-Administrator auch überprüfen, wie viele aktive Sitzungen auf dem jeweiligen Client existieren, und abschätzen, wie viele Mandanten und Benutzer von dem Abmeldeereignis betroffen sind.
-
-Um festzustellen, ob das Abmeldeereignis für alle Benutzer oder einen einzelnen Benutzer vom Mandanten empfangen wurde, kann der {{< product-c8y-iot >}}-Administrator überprüfen, ob Informationen zum Abmeldeereignis in den Audit-Logs vorliegen. Die Audit-Logs sind in der Anwendung Administration unter **Accounts** in der Registerkarte **Audit-Logs** verfügbar.
-
-##### Cumulocity IoT-Konfiguration
-
-Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
-
- ![Azure Basic configuration](/images/benutzerhandbuch/Administration/sso-azure-basic.png)
- ![Azure access mapping](/images/benutzerhandbuch/Administration/sso-azure-access-mapping.png)
- ![Azure user data mapping](/images/benutzerhandbuch/Administration/sso-azure-userdata-mappings.png)
-
-|Feld|Beschreibung|
-|:---|:---|
-|Azure AD-Adresse| Adresse Ihres Azure AD-Mandanten
-|Mandant| Name des Azure AD-Mandanten
-|Anwendungs-ID| Anwendungs-ID
-|Redirect-URI| Adresse Ihres {{< product-c8y-iot >}}-Mandanten, gefolgt von /tenant/oauth
-|Client-Secret| Azure AD-Client-Secret, falls vorhanden
-|Name der Schaltfläche| Name der Schaltfläche
-|Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse
-
-Optional kann Single Logout konfiguriert werden:
-
- ![Azure logout request](/images/benutzerhandbuch/Administration/admin-sso-logout-azure.png)
-
-|Feld|Beschreibung|
-|:---|:---|
-|Nach Abmeldung weiterleiten| Aktiviert Single Logout, indem der Benutzer nach dem Abmelden zum Abmelde-Endpunkt des Autorisierungsservers weitergeleitet wird.
-|Redirect-URL| Adresse, an die der Benutzer weitergeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
-
-Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, des Benutzerdaten-Mappings, der Benutzer-ID und der Signaturverifizierung.
-
-
-##### Troubleshooting
-
-Es kann besonders hilfreich sein, den Inhalt des an die Plattform gesendeten Autorisierungs-Tokens zu überprüfen, da einige seiner Felder die Informationen enthalten, die für die oben beschriebene korrekte Konfiguration benötigt werden.
-
-In der "Administration-Anwendung" können Sie nach Klicken auf **Konten** > **Audit-Logs** nach der Kategorie "Single-Sign-On" filtern und nach den Einträgen "Json web token claims" suchen.
-
-Die Kontexte des Tokens werden im JSON-Format dargestellt.
-
-![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
-
 
 <a name="default-app"></a>
 ### Ändern von Anwendungseinstellungen
 
 Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-![Anwendungseinstellungen](/images/benutzerhandbuch/Administration/admin-settings-application.png)
+![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
 Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
 
@@ -500,7 +230,7 @@ Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-co
 
 Klicken Sie auf **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
-![Attributsbibliothek](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
+![Properties library](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
 
 Mit benutzerdefinierten Attributen können Sie das Datenmodell der in {{< product-c8y-iot >}} integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
@@ -516,6 +246,8 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 #### So fügen Sie ein benutzerdefiniertes Attribut hinzu
 
 1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie auf **Attribut hinzufügen**.
+
+	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
 
 2. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
 
@@ -589,7 +321,9 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
-{{< c8y-admon-info >}}
+    ![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
+
+	{{< c8y-admon-info >}}
 Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
 {{< /c8y-admon-info >}}
 
@@ -603,7 +337,6 @@ Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berech
 OpenIT betreut keine neuen Kunden mehr und ist dabei, das Geschäft mit SMS-Anbietern einzustellen. Wir empfehlen Ihnen daher, einen der anderen SMS-Anbieter zu wählen.
 {{< /c8y-admon-info >}}
 
-
 <a name="connectivity"></a>
 ### Verwalten der Konnektivitätseinstellungen
 
@@ -614,6 +347,8 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/benutzerhandbuch/device-management-de/#connectivity)
+
+![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

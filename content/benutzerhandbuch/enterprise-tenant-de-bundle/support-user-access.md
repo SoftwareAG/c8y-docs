@@ -1,9 +1,9 @@
 ---
-weight: 50
-title: Supportbenutzerzugriff
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition-de/#users-in-other-tenants
+- /benutzerhandbuch/enterprise-edition#users-in-other-tenants-de
+layout: redirect
+title: Supportbenutzerzugriff
+weight: 50
 ---
 
 Die Funktion "Supportbenutzerzugriff" gibt den Anbietern der {{< product-c8y-iot >}}-Plattform (im Falle von Public-Cloud-Instanzen die {{< company-sag >}} und im Falle von individuellen lokalen Installationen der jeweilige Service-Provider) die Möglichkeit, ihre Kunden zu unterstützen, indem sie über einen Supportbenutzer auf deren Benutzer zugreifen. Ein Supportbenutzer ist ein Benutzer im {{< management-tenant-de >}} mit spezifischen Berechtigungen, nämlich für den Zugriff auf Untermandanten-Benutzer im Falle von Problemen.
@@ -17,7 +17,7 @@ In den Public-Cloud-Instanzen von {{< product-c8y-iot >}} kann die Supportbenutz
 <a name="configuring-support-access"></a>
 ### Konfigurieren von Supportbenutzerzugriff
 
-Supportbenutzerzugriff kann entweder
+Supportbenutzerzugriff kann entweder:
 
 * standardmäßig für alle Untermandanten aktiviert sein oder
 * für alle Untermandanten deaktiviert, aber von einem Benutzer für seinen Mandanten explizit eingeschaltet sein.
@@ -32,10 +32,8 @@ Bei globaler Deaktivierung kann der Supportbenutzerzugriff bei Bedarf immer noch
 Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpunkt auf **Support deaktivieren**, so dass der Benutzer eine ausstehende Supportanfrage deaktivieren kann, die sich erübrigt hat, bevor sie abläuft.
 
 {{< c8y-admon-info >}}
-Wenn die Schaltfläche **Support aktivieren** oder **Support deaktivieren** im Menü **Benutzer** nicht zu sehen ist, wurde der Supportbenutzerzugriff global aktiviert. Weitere Details erfragen Sie bitte beim [Produkt-Support](/welcome/contacting-support/).
-{{< /c8y-admon-info >}}
+Wenn die Schaltfläche **Support aktivieren** oder **Support deaktivieren** im Menü **Benutzer** nicht zu sehen ist, wurde der Supportbenutzerzugriff global aktiviert. Weitere Details [erfragen Sie bitte beim Produkt-Support](/welcome/contacting-support/).
 
-{{< c8y-admon-info >}}
 Wenn ein Benutzer mit Mandanten-Admin-Berechtigungen die Supportanfrage deaktiviert, werden *alle* Supportanfragen für den Mandanten deaktiviert.
 {{< /c8y-admon-info >}}
 
@@ -49,9 +47,9 @@ Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Man
 
 Um sich vom {{< management-tenant-de >}} aus als Supportbenutzer anzumelden, müssen Sie im Login-Bildschirm folgende Informationen eingeben:
 
-* Mandanten-ID:  Die Mandanten-ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
-* Supportbenutzer: der Benutzername des {{< management-tenant-de >}}-Benutzers, der den Support leistet.
-* Benutzer: der Benutzername des zu unterstützenden Benutzers.
+* Mandanten-ID - die ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
+* Supportbenutzer - der Benutzername des {{< management-tenant-de >}}-Benutzers, der den Support leistet.
+* Benutzer - der Benutzername des zu unterstützenden Benutzers.
 
 "Supportbenutzer" und "Benutzer" sind in folgender Schreibweise in das Feld **Benutzername** einzugeben:
 

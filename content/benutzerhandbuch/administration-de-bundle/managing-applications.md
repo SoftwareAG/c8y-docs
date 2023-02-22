@@ -119,10 +119,10 @@ Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendun
 
 Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
-* [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
-* [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
-* [Aus verfügbaren Paketen installieren](#blueprint-application), um einen Paket-Blueprint auszuwählen
-* [Vorhandene Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
+* [Web-Anwendung hochladen](#uploading-zip-files) - eine ZIP-Datei ablegen oder das Dateisystem danach durchsuchen
+* [Externe Anwendung](#external-application) - auf eine Anwendung verweisen, die woanders betrieben wird
+* [Aus verfügbaren Paketen installieren](#blueprint-application) - ein Paket-Blueprint auswählen
+* [Vorhandene Anwendung duplizieren](#clone-application) - eine bestehende Anwendung duplizieren
 
 <a name="uploading-zip-files"></a>
 ##### So laden Sie eine Web-Anwendung hoch
@@ -148,6 +148,19 @@ Die ZIP-Datei muss *index.html* und *cumulocity.json* in ihrem Stammverzeichnis 
 3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
 6. Geben Sie die externe URL ein, unter welcher auf die Anwendung zugegriffen werden kann.
+7. Klicken Sie auf **Speichern**, um die Anwendung zu erstellen.
+
+Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
+
+<a name="blueprint-application"></a>
+##### So installieren Sie eine Anwendung anhand eines Blueprints
+
+1. Klicken Sie rechts oben in der Registerkarte **Alle Anwendungen** auf **Anwendung hinzufügen**.
+2. Wählen Sie **Verfügbare Pakete**.
+3. Wählen Sie das gewünschte Paket aus.
+4. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
+5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
+6. Geben Sie den Pfad ein, unter dem auf die Anwendung zugegriffen werden kann.
 7. Klicken Sie auf **Speichern**, um die Anwendung zu erstellen.
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
@@ -231,12 +244,20 @@ In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungs
 </tbody>
 </table>
 
+### Anwendungs-Plugins
+
+Wechseln Sie zur Registerkarte **Plugins**, um alle für eine Anwendung installierten Plugins anzuzeigen. Plugins können verwendet werden, um eine vorhandene Anwendung zu erweitern, ohne sie neu erstellen zu müssen.
+
+<img src="/images/benutzerhandbuch/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
+
+Auf der Registerkarte **Plugins** können Sie Plugins hinzufügen und entfernen. Darüber hinaus können Sie Plugins in einer Anwendung installieren.
+
 <a name="editing-and-removing"></a>
 ### So bearbeiten Sie eine Anwendung
 
 Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Bearbeiten**.
 
-In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
+In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung (siehe [Anwendungsattribute](#application-properties)).
 
 {{< c8y-admon-important title="Wichtig" >}}
 Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
@@ -283,6 +304,37 @@ Wurde eine gehostete Anwendung nicht korrekt gestartet, kann der Benutzer sie er
 3. Öffnen Sie im Abschnitt **Aktivitätslog** das Kontextmenü der gewünschten Version über das Menüsymbol und wählen Sie **Archiv erneut aktivieren**.
 
 Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien aus dem Anwendungsverzeichnis entfernt werden und das gehostete Anwendungspaket erneut entpackt wird.
+
+### Pakete
+
+Pakete sind Kombinationen von Plugins und Blueprints, die sich zu einer einzigen Datei zusammenpacken und dann für die Plattform bereitstellen lassen. Dadurch bieten Pakete eine bessere gemeinsame Nutzbarkeit und Wiederverwendbarkeit von UI-Funktionen in verschiedenen Anwendungen und ermöglichen das Hinzufügen von UI-Funktionen zu Anwendungen ohne Programmierkenntnisse.
+
+Pakete können zwei Arten von Anwendungen enthalten:
+
+- [**Plugins**](#application-plugins) können verwendet werden, um eine vorhandene Anwendung zu erweitern, ohne sie neu erstellen zu müssen.
+- **Blueprints** sind Kombinationen mehrerer UI-Funktionalitäten, die von der Plattform gehostet und zur Neuerstellung einer Anwendung verwendet werden können.
+
+Pakete sind in der Registerkarte **Pakete** auf der Seite **Anwendungen** zu finden.
+
+<img src="/images/benutzerhandbuch/Administration/admin-application-packages.png" alt="Packages view">
+
+Um ein neues Paket hinzuzufügen, klicken Sie oben rechts auf **Paket hinzufügen**.
+
+Wenn Sie auf ein Paket klicken, sehen Sie Paketdetails wie etwa die **Paketübersicht**, die eine Beschreibung und Bilder sowie einige Meta-Informationen enthält, die aus *package.json* stammen.
+
+Zudem können Sie rechts alle verfügbaren Plugins innerhalb des gewählten Pakets sehen. Um ein Plugin zu installieren, klicken Sie auf **Plugin installieren** und wählen Sie die gewünschte Anwendung aus.  
+
+<img src="/images/benutzerhandbuch/Administration/admin-application-packages-info.png" alt="Packages overview">
+
+In der Registerkarte **Archivdateien** sehen Sie alle bisher hochgeladenen Binärdateien im Zusammenhang mit dem aktuellen Paket. Die auf dieser Registerkarte angezeigten Binärdateien können über das Kontextmenü neben der jeweiligen Archivdatei heruntergeladen werden.
+
+<img src="/images/benutzerhandbuch/Administration/admin-application-packages-archives.png" alt="Archive view">
+
+In der Registerkarte **Versionen** des Pakets können Sie verschiedene Versionen auswählen oder hochladen. Die Versionen geben Auskunft über den Zustand des Pakets. Über sie kann überprüft werden, ob ein bestimmtes Paket veraltet ist und aktualisiert werden muss. Wenn Sie auf eine Version klicken, werden weitere Informationen wie Paketinhalt, Anwendungen oder Plugins angezeigt. Tags können verwendet werden, um Versionen mit aussagekräftigen Namen zu versehen. Das Tag "Aktuellste" dient zur Angabe der Standardversion, die ausgewählt wird, wenn kein Tag bereitgestellt wird. Das Tag "Aktuellste" wird standardmäßig auf die neueste Version gesetzt, wann immer eine Version ohne ein bestimmtes Tag hochgeladen wird.
+
+Um zu einer anderen Version zu wechseln, öffnen Sie das Kontextmenü der gewünschten Version und klicken Sie auf **Als letzte einstellen**. Um eine Version zu löschen, klicken Sie auf **Löschen**.
+
+<img src="/images/benutzerhandbuch/Administration/admin-application-packages-versions.png" alt="Archive view">
 
 ### Funktionen
 

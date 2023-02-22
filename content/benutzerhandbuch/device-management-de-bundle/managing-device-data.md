@@ -13,9 +13,9 @@ Die Device Management-Anwendung bietet verschiedene Funktionen, die Sie bei der 
 | [Verwalten von Geräte-Firmware](#firmware-repo)           | Wie Sie Firmware, Firmware-Versionen und -Patches im Firmware-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren. |
 | [Verwalten von Geräte-Software](#software-repo)           | Wie Sie Software, Software-Versionen und -Patches im Software-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren.          |
 | [Verwalten von Konfigurationen](#configuration-repository) | Wie Sie Konfigurationsdaten von einem Gerät abrufen und sie als Konfigurationssnapshot in einem Konfigurations-Repository speichern und verwalten.                         |
-| [Gerätezugangsdaten](#credentials)                   | Wie Sie die für Ihre verbundenen Geräte erstellten Zugangsdaten verwalten.                                                                         |
-| [Geräteprofile](#device-profiles)                  | Wie Sie Geräteprofile - eine Zusammenstellung von Firmware, Software und Konfiguration - verwalten und sie auf Geräte anwenden.                                 |
-| [Vertrauenswürdige Zertifikate](#trusted-certificates)        | Wie Sie vertrauenswürdige Zertifikate verwalten.                                                                                                         |
+| [Verwalten von Gerätezugangsdaten](#credentials)          | Wie Sie die für Ihre verbundenen Geräte erstellten Zugangsdaten verwalten.                                                                         |
+| [Verwalten von Geräteprofilen](#device-profiles)         | Wie Sie Geräteprofile - eine Zusammenstellung von Firmware, Software und Konfiguration - verwalten und sie auf Geräte anwenden.                                 |
+| [Verwalten von vertrauenswürdigen Zertifikaten](#trusted-certificates)| Wie Sie vertrauenswürdige Zertifikate verwalten.                                                                                                         |
 
 Sämtliche Funktionen können über das Menü **Verwaltung** im Navigator aufgerufen werden:
 
@@ -145,10 +145,6 @@ Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** un
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
-{{< c8y-admon-info >}}
-Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
-{{< /c8y-admon-info >}}
-
 <a name="software-repo"></a>
 ### Verwalten von Geräte-Software
 
@@ -175,7 +171,7 @@ Ist kein Filter gesetzt, wird sie für alle Geräte angeboten.
 Der Software-Typ bewirkt, dass die Software nur auf Geräten installierbar ist, die den jeweiligen Software-Typ explizit unterstützen.
 
 {{< c8y-admon-info >}}
-Im Feld **Software-Typ** wird Ihnen eine Liste von Typen vorgeschlagen, die in Ihrem Software-Repository bereits verwendet werden. Bevor Sie das Definieren eines neuen Software-Typs in Betracht ziehen (das Feld akzeptiert neue Werte direkt), überprüfen Sie anhand der Vorschläge in der Auswahlliste, ob der gewünschte Typ bereits für eine andere Software definiert wurde. Auf diese Weise sorgen Sie für größere Konsistenz der Software-Typen innerhalb Ihres Unternehmens. Wenn Sie z. B. Container-Images verwenden, können Sie nach `container` oder `image` oder versuchsweise nach spezifischeren Typen wie `docker`, `lxc` usw. suchen. Dadurch können Sie verhindern, dass Ihre Software-Typen unübersichtlich werden und Sie verschiedene Namen für ein und denselben Software-Typ verwenden.
+Im Feld **Software-Typ** wird Ihnen eine Liste von Typen vorgeschlagen, die in Ihrem Software-Repository bereits verwendet werden. Bevor Sie das Definieren eines neuen Software-Typs in Betracht ziehen (das Feld akzeptiert neue Werte direkt), überprüfen Sie anhand der Vorschläge in der Auswahlliste, ob der gewünschte Typ bereits für eine andere Software definiert wurde. Auf diese Weise sorgen Sie für größere Konsistenz der Software-Typen innerhalb Ihres Unternehmens. Wenn Sie z. B. Container-Images verwenden, können Sie nach `container` oder `image` oder versuchsweise nach spezifischeren Typen wie `docker`, `lxc` usw. suchen. Dadurch können Sie verhindern, dass Ihre Software-Typen unübersichtlich werden und Sie verschiedene Namen für ein und denselben Software-Typ verwenden.
 {{< /c8y-admon-info >}}
 
 Die Liste der Versionen und Patches enthält den Versionsnamen und den Namen der Software-Binärdatei.
@@ -290,10 +286,6 @@ Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bul
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
-{{< c8y-admon-info >}}
-Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
-{{< /c8y-admon-info >}}
-
 <a name="configuration-repository"></a>
 ### Verwalten von Konfigurationen
 
@@ -336,30 +328,15 @@ Der Konfigurationssnapshot wird aus dem Konfigurationssnapshot-Repository gelös
 
 #### So laden und wenden Sie einen Konfigurationssnapshot an
 
-{{< c8y-admon-info >}}
-Die folgenden Schritte gelten für Geräte, die nur einen Konfigurationstyp unterstützen. Informationen zu Geräten, die mehrere Konfigurationstypen unterstützen, finden Sie im nächsten Abschnitt.
-{{< /c8y-admon-info >}}
+Das Verwalten von Konfigurationen, also das Anfordern einer Konfiguration von einem Gerät, und das Senden einer Konfiguration an ein Gerät kann auf mehrere Arten erfolgen. Je nach Benutzerberechtigungen und Geräteeinstellungen können Sie mit textbasierter, typenbasierter oder dateibasierter Konfiguration arbeiten. Detailliertere und technische Informationen finden Sie unter [Device management library > Configuration](/reference/device-management-library/#configuration) im *Reference Guide*.
 
-1. Navigieren Sie unter **Geräte** > **Alle Geräte** zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
-2. Klicken Sie auf **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
+#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das die typenbasierte Konfiguration unterstützt
 
-Der geladene Snapshot wird im **Konfigurations-Repository** im Menü **Verwaltung** des Navigators angezeigt.
-
-![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
-
-So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
-
-1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
-2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
-3. Klicken Sie auf **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
-
-![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
-
-#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
+Wir empfehlen ihnen, die typenbasierte Konfiguration zu verwenden. Bei typenbasierter Konfiguration können Geräte mehrere Konfigurationen gleichzeitig verwalten. Sie können verschiedene Konfigurationen für verschiedene Typen hochladen oder abrufen. Dieser Ansatz ist flexibler, da die Konfigurationen nicht als Dateien, sondern als Ereignisse behandelt werden, was effizienter ist.
 
 1. Navigieren Sie unter **Geräte** > **Alle Geräte** zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 2. Wählen Sie den gewünschten Konfigurationstyp unter **Geräteunterstützte Konfigurationen** und klicken Sie auf
-**Snapshot vom Gerät abrufen** auf der rechten Seite.
+   **Snapshot vom Gerät abrufen** auf der rechten Seite.
 
 Sobald Sie den Snapshot geladen haben, können Sie ihn im Abschnitt **Vorschau** speichern oder herunterladen. Der Snapshot wird zum **Konfigurations-Repository** hinzugefügt, auf das Sie über das Menü **Verwaltung** im Navigator zugreifen können.
 
@@ -381,6 +358,18 @@ So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfig
 {{< c8y-admon-info >}}
 Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfigurationsdateien angezeigt, die über ein passendes Konfigurationstyp-Attribut verfügen oder für die kein Konfigurationstyp definiert wurde. Zudem werden Konfigurationsdateien basierend auf dem Gerätetypen gefiltert.
 {{< /c8y-admon-info >}}
+
+#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das dateibasierte Konfiguration unterstützt
+
+Geräte, die Konfigurationen als Dateien verwalten, können dies in grundlegender Form mithilfe einer dateibasierten Konfiguration tun. Bei dateibasierter Konfiguration kann pro Gerät nur eine einzige Konfiguration festgelegt werden.
+
+![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
+
+#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das textbasierte Konfiguration unterstützt
+
+Die grundlegendste Form der Konfiguration ist die textbasierte Konfiguration. Ein Textbefehl kann von einem Gerät gesendet oder empfangen werden. Wir empfehlen Ihnen, die textbasierte Konfiguration nur für kurze, menschenlesbare Konfigurationsdateien zu verwenden.
+
+![Send Text Configuration](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-text-getnewsnapshot.png)
 
 <a name="credentials"></a>
 ### Verwalten von Gerätezugangsdaten
@@ -466,7 +455,7 @@ Nähere Informationen zu Software finden Sie unter [Verwalten von Geräte-Softwa
 
 Klicken Sie auf **Konfiguration hinzufügen**, um dem Profil eine Software hinzuzufügen. Wählen Sie eine Konfigurationsdatei aus der Liste und klicken Sie auf **Speichern**, um die Auswahl zu dem Profil hinzuzufügen. Sie können mehrere Konfigurationsdateien zu einem Profil hinzufügen.
 
-Nähere Informationen zu Konfigurationssnapshots finden Sie unter [Verwalten von Konfigurationssnapshots](#configuration-repository).
+Nähere Informationen zu Konfigurationssnapshots finden Sie unter [Verwalten von Konfigurationen](#configuration-repository).
 
 #### So aktualisieren Sie Geräteprofile
 
@@ -603,7 +592,7 @@ Aus Leistungsgründen sollten Sie nicht die Zertifikate von jedem Gerät, das Si
 
 #### So bearbeiten Sie ein vertrauenswürdiges Zertifikat
 
-In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
+In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
 
 Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung zum Hinzufügen von Zertifikaten.
 

@@ -28,60 +28,21 @@ Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/devi
 
 Beachten Sie, dass diese Funktion nur einen temporären Filter erzeugt. Für permanente Filter können Sie die Funktion [Dynamische Gruppe](#smart-groups) verwenden.  
 
-Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen. Standardmäßig wird die Registerkarte **Kind-Assets** angezeigt.
+Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 
 ![Subassets](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-details.png)
 
 <a name="subassets-tab"></a>
-**Registerkarte "Kind-Assets"**
+**Seite "Kind-Assets"**
 
-Oben in der Registerkarte **Kind-Assets** werden Name und Beschreibung der Gruppe angezeigt (bearbeitbar), gefolgt von der Information, wann die Gruppe erstellt und zuletzt aktualisiert wurde.
+Oben auf der Seite **Kind-Assets** werden Name und Beschreibung der Gruppe angezeigt (bearbeitbar), gefolgt von der Information, wann die Gruppe erstellt und zuletzt aktualisiert wurde.
 
 Darunter werden alle der Gruppe zugewiesenen Assets aufgelistet. Zu jedem Asset werden verschiedene Informationen wie Typ und Name angezeigt. Wie bei der Liste der Top-Level-Gruppen können Sie auch hier Spalten hinzufügen oder entfernen und die Liste individuell anpassen oder Filter anwenden, um die Liste nach bestimmten Kriterien zu filtern.
 
 Darüber hinaus können Sie Geräte zuordnen, siehe [So ordnen Sie einer Gruppe ein Gerät zu](#assigning-devices).
 
-**Registerkarte Info**
-
-In der Registerkarte **Info** werden folgende Informationen angezeigt:
-
-<table>
-<thead>
-<colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
-</colgroup><thead>
-<tr>
-<th align="left">Karte</th>
-<th align="left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Anmerkungen</td>
-<td align="left">Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkung hinzuzufügen oder zu bearbeiten, klicken Sie auf <strong>Bearbeiten</strong>, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken.</td>
-</tr>
-<tr>
-<td align="left">Gruppendaten</td>
-<td align="left">Editierbare Informationen zur Gruppe (Name, Beschreibung).</td>
-</tr>
-<tr>
-<td align="left">Aktive kritische Alarme</td>
-<td align="left">Aktive kritische Alarme für die Geräte in der Gruppe.</td>
-</tr>
-</tbody>
-</table>
-
-
-**Bulk-Operationen**
-
-In der Registerkarte **Bulk-Operationen** können Bulk-Operationen, die für die Gruppe erstellt wurden, verwaltet werden. Mit Bulk-Operationen können Sie eine Operation in einem Schritt für jedes Gerät in einer Gruppe ausführen. Weitere Informationen finden Sie unter [Bulk-Operationen](#bulk-operations) in "Überwachen und Steuern von Geräten".
-
-{{< c8y-admon-info >}}
-Bulk-Operationen werden nach Datum geordnet, wobei die letzte Operation an erster Stelle erscheint.
-{{< /c8y-admon-info >}}
-
 <a name="add-group"></a>
+
 ### So fügen Sie eine Gruppe hinzu
 
 1. Klicken Sie auf **Gruppe hinzufügen** rechts in der oberen Menüleiste.
@@ -95,12 +56,12 @@ Die neue Gruppe wird der Gruppenliste hinzugefügt.
 Eine Gruppe kann mit "0" Geräten erstellt werden.
 {{< /c8y-admon-info >}}
 
-Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Registerkarte und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
+Um eine neue Gruppe als Kind einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Seite und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 
 ### So bearbeiten Sie eine Gruppe
 
 1. Wählen Sie im Navigator eine Gruppe aus.
-2. In der Registerkarte **Kind-Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten. Wechseln Sie zur Registerkarte **Info**, wenn Sie die Anmerkungen bearbeiten möchten.
+2. Auf der Seite **Kind-Assets** können Sie den Namen und die Beschreibung der Gruppe bearbeiten.
 
 Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Abschnitt "Administration".
 
@@ -121,15 +82,14 @@ Durch Ziehen und Ablegen können Sie im Navigator auf schnelle Weise Geräte zu 
 
 Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 
-1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und öffnen Sie dann die Registerkarte **Kind-Assets**.
+1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und öffnen Sie dann die Seite **Kind-Assets**.
 2. Klicken Sie auf **Geräte zuweisen** rechts in der oberen Menüleiste.
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
 ![Assign devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assign.png)
 
-Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets in der Registerkarte **Kind-Assets** angezeigt.
-
+Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
 
 **Aus der Geräteperspektive**
 

@@ -29,7 +29,7 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 This process can only be executed in the Administration application and is not available under **User settings**.
 {{< /c8y-admon-info >}}
 
-### TOTP (Google Authenticator)
+### TOTP
 
 {{< c8y-admon-req >}}
 Users must install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.

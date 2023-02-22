@@ -8,19 +8,21 @@ weight: 80
 
 Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgende Daten teilen:
 
-- Geräte (und Objekte im Allgemeinen),
-- Ereignisse,
-- Alarme,
-- Messwerte,
-- Operationen.
+- Geräte (und Objekte im Allgemeinen)
+- Ereignisse
+- Alarme
+- Messwerte
+- Operationen
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Um diese Funktion verwenden zu können, muss Ihr Mandant die Anwendung "feature-broker" abonniert haben.
 {{< /c8y-admon-req >}}
 
 Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
-{{< c8y-admon-important title="Wichtig">}}
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
+
+{{< c8y-admon-important title="Wichtig" >}}
 Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 {{< /c8y-admon-important >}}
 
@@ -110,8 +112,7 @@ Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konne
 
 5. Klicken Sie auf **Speichern**, um die Konfiguration zu speichern.
 
->**Warnung zur Verwendung von "Alle Objekte"**
-<br><br>
+{{< c8y-admon-important title="Wichtig" >}}
 Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
 <br><br>
 Wird sie gewählt, synchronisiert {{< product-c8y-iot >}} alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
@@ -119,13 +120,15 @@ Wird sie gewählt, synchronisiert {{< product-c8y-iot >}} alle Arten von Objekte
 Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
 <br><br>
 Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und alle Objekte synchronisieren, erstellt Data Broker ein Smart-Rule-Objekt auf dem Zielmandanten. Die Regel selbst wird nicht kopiert, da eine synchronisierte Smart Rule dieselbe Aktion auf demselben Gerät für dieselbe Konfiguration ausführen würde. Dadurch würden bei einem Alarm doppelte E-Mails für die jeweiligen Empfänger erstellt werden.
+{{< /c8y-admon-important >}}
 
-Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
+
+Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
 
 Wenn der Datentyp Operation in Filtern ausgewählt ist, werden die Operationen, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Operationen zu, die die folgenden Bedingungen erfüllen:
 
-* das Gerät der Operation selbst stammt aus weitergeleiteten Daten,
-* die Operation entspricht anderen Filterkriterien.
+* Das Gerät der Operation selbst stammt aus weitergeleiteten Daten.
+* Die Operation entspricht anderen Filterkriterien.
 
 Aktualisierungen des Operationsstatus vom Ursprungsmandanten werden an den Zielmandanten weitergeleitet.
 

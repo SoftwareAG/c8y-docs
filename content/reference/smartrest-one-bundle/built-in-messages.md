@@ -141,7 +141,7 @@ SmartREST has a variety of built-in messages.
 
 #### Error messages
 
-Message identifier | Error message
+Message identifier | Error message
 -------------------|-------------------------
 41 | Cannot create templates for already existing template object
 41 | Duplicate message identifiers are not allowed

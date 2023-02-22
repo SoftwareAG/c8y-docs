@@ -1,9 +1,9 @@
 ---
-weight: 40
-title: Anpassen der Plattform
-layout: redirect
 aliases:
-  - /benutzerhandbuch/enterprise-edition-de/#customization
+- /benutzerhandbuch/enterprise-edition-de/#customization
+layout: redirect
+title: Anpassen der Plattform
+weight: 40
 ---
 
 Mit dem {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
@@ -28,7 +28,7 @@ Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 |{host}|Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.{{< domain-c8y >}}`.
 |{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.{{< domain-c8y >}}` sein. Bei einem {{< enterprise-tenant-de >}} können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
 |{token}|Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
-|{email}|Dieser Platzhalter wird durch die E-Mail-Adresse des empfangenden Benutzer ersetzt, die in den Benutzereinstellungen gespeichert ist. Einige Ansichten der Benutzeroberfläche erkennen diesen Parameter und fügen den Wert vorab in das entsprechende Feld ein, z. B. beim Zurücksetzen des Passworts.
+|{email}|Dieser Platzhalter wird durch die E-Mail-Adresse des empfangenden Benutzer ersetzt, die in den Benutzereinstellungen gespeichert ist. Einige Ansichten der Benutzeroberfläche erkennen diesen Parameter und fügen den Wert vorab in das entsprechende Feld ein, z. B. beim Zurücksetzen des Passworts.
 
 #### Zwei-Faktor-Authentifizierung
 
@@ -70,7 +70,7 @@ Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschl�
 * SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
 * SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
 
-Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an.
+Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an. Die leere Passwortkonfiguration wird für den {{< enterprise-tenant-de >}} unterstützt.
 
 #### Datenexport
 
@@ -132,8 +132,8 @@ Im Bereich **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab ve
 
 Unter **Hauptlogo** können Sie die folgenden Elemente definieren:
 
-* Das "Favicon", das in der Adressleiste des Browsers angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei aus Ihrem Dateisystem auszuwählen. Das unterstütze Format für das Favicon ist "ico".
-* Ihr Markenlogo, das während des Ladens der Anwendung angezeigt wird. Klicken Sie auf **Datei wählen**, um eine Datei aus Ihrem Dateisystem auszuwählen. Die unterstützen Formate sind "png" und "svg".
+* Das "Favicon" - wird in der Adressleiste des Browsers angezeigt. Klicken Sie auf **Datei wählen**, um eine Datei aus Ihrem Dateisystem auszuwählen. Das unterstütze Format für das Favicon ist "ico".
+* Ihr Markenlogo - wird während des Ladens der Anwendung angezeigt. Klicken Sie auf **Datei wählen**, um eine Datei aus Ihrem Dateisystem auszuwählen. Die unterstützen Formate sind "png" und "svg".
 * Die Höhe des Markenlogos.
 
 **Navigatorlogo**
@@ -153,12 +153,12 @@ Im Bereich **Farben** definieren Sie die Farben für Ihre Branding-Version.
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 * Haupt-Branding-Farbe.
-* Neben-Branding-Farbe. Der Standardwert ist "#07b91A".
-* Dunkle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#0B385B".
-* Helle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#5FAEEC".
-* Textfarbe. Der Standardwert ist "#444".
-* Link-Farbe. Der Standardwert ist die Haupt-Branding-Farbe.
-* Haupt-Hintergrundfarbe. Der Standardwert für diese Element ist "#FAFAFA".
+* Sekundäre Markenfarbe - Der Standardwert ist "#07b91A".
+* Dunkle Branding-Farbe - wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#0B385B".
+* Helle Branding-Farbe - wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#5FAEEC".
+* Textfarbe - Der Standardwert ist "#444".
+* Link-Farbe - Der Standardwert ist die Haupt-Branding-Farbe.
+* Haupt-Hintergrundfarbe - Der Standardwert für diese Element ist "#FAFAFA".
 
 **Obere Leiste**
 
@@ -166,9 +166,9 @@ Unter **Obere Leiste** definieren Sie die Parameter für die obere Leiste.
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-* Hintergrundfarbe. Der Standardwert ist "#FFFFF".
-* Textfarbe. Der Standardwert ist "49595B".
-* Hover-Textfarbe für Schaltflächen. Der Standardwert ist die Haupt-Branding-Farbe.
+* Hintergrundfarbe - Der Standardwert ist "#FFFFF".
+* Textfarbe - Der Standardwert ist "49595B".
+* Hover-Textfarbe für Schaltflächen - Der Standardwert ist die Haupt-Branding-Farbe.
 
 **Navigator**
 
@@ -176,12 +176,12 @@ Unter **Navigator** definieren Sie die Parameter für den Navigator.
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
-* Hintergrundfarbe. Der Standardwert ist "2c3637".
-* Hintergrundfarbe der Logoumrandung. Der Standardwert ist "Transparent".
-* Titelfarbe. Der Standardwert ist "FFFFF".
-* Farbe für Texte und Schaltflächen. Der Standardwert ist "#FAFAFA".
-* Farbe für Trennlinien. Der Standardwert ist "#FAFAFA".
-* Textfarbe des aktuellen Elements im Navigator. Der Standardwert ist "#FAFAFA".
+* Hintergrundfarbe - Der Standardwert ist "2c3637".
+* Hintergrundfarbe der Logoumrandung - Der Standardwert ist "Transparent".
+* Titelfarbe - Der Standardwert ist "FFFFF".
+* Farbe für Texte und Schaltflächen - Der Standardwert ist "#FAFAFA".
+* Farbe für Trennlinien - Der Standardwert ist "#FAFAFA".
+* Textfarbe des aktuellen Elements im Navigator - Der Standardwert ist "#FAFAFA".
 * Hintergrundfarbe des aktuellen Elements im Navigator mit der Haupt-Branding-Farbe als Standard.
 
 **Sonstiges**
@@ -196,15 +196,15 @@ Durch Deaktivieren des Cookie-Banners wird auch das Produkterfahrungs-Tracking v
 
 Folgende Parameter können festgelegt werden:
 
-* Titel - Cookie-Banner-Titel.
-* Text - Cookie-Banner-Text mit allgemeiner Anweisung zur Cookie-Nutzung und den zugehörigen Anwendungsfällen.
-* Link zur Datenschutzerklärung - Ein Link zu der Seite mit der Datenschutzerklärung.
+* Titel - Cookie-Banner-Titel
+* Text - Cookie-Banner-Text mit allgemeiner Anweisung zur Cookie-Nutzung und den zugehörigen Anwendungsfällen
+* Link zur Datenschutzerklärung - ein Link zu der Seite mit der Datenschutzerklärung
 
 <a name="domain-name"></a>
 ### Domain-Name
 
 Ein entscheidendes Merkmal des {{< enterprise-tenant-de >}} ist die Fähigkeit, die {{< product-c8y-iot >}}-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
-bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
+bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
 mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.mycompany.com** als ihren Hostnamen.
 
 {{< c8y-admon-info >}}
@@ -215,7 +215,7 @@ Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen
 
 1. Zum Aktivieren Ihrer Domain ist eine gültige Lizenz erforderlich, die Ihre Wildcard-Domain abdeckt.
    Bitte kontaktieren Sie den [Produkt-Support](/welcome/contacting-support/), um eine Lizenz für Ihre Domain zu installieren.
-2. Sie haben ein gültiges Wildcard-SSL-Zertifikat für Ihre IoT-Domain erhalten, z. B.
+2. Sie haben ein gültiges Wildcard-SSL-Zertifikat für Ihre IoT-Domain erhalten, z. B.
    ein Zertifikat für *\*.iot.mycompany.com*.
 3. Es gibt eine gültige DNS-Konfiguration für Ihre Domain, die dafür sorgt, dass alle Anfragen an *\*.iot.mycompany.com* an
    {{< product-c8y-iot >}} geleitet werden. (siehe unten).
@@ -232,7 +232,7 @@ Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der {{< enterp
   ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren {{< enterprise-tenant-de >}} erstellt werden.
 * Jedes einzelne Zertifikat in der Kette wird im X509-Format bereitgestellt.
 * Der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) enthält den Wert Ihres
-  Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
+  Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
 
 {{< product-c8y-iot >}} unterstützt ein Einzelzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das
 ein oder mehrere Zwischenzertifikate enthält.
@@ -268,7 +268,7 @@ in Konflikt stehende A-Einträge zu löschen.
 Wenn Sie **.iot.mycompany.com* für Ihre Enterprise-Untermandanten verwenden möchten und {{< product-c8y-iot >}} unter *mytenant.{{< domain-c8y >}}* verwenden, muss der folgende CNAME-Eintrag zu Ihrer DNS-Zone hinzugefügt werden:
 
 ```shell
-NAME                   TYPE   VALUE
+NAME                  TYPE   VALUE
 ----------------------------------------------------
 *.iot.mycompany.com.   CNAME  mytenant.{{< domain-c8y >}}.
 ```
@@ -301,11 +301,11 @@ Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht 
 
 #### Aktualisieren des Zertifikats
 
-Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit einer längeren Gültigkeitsdauer aktualisieren. Wenn Sie das Zertifikat aktualisieren, stellen Sie sicher, dass
+Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit einer längeren Gültigkeitsdauer aktualisieren. Beim Aktualisieren eines Zertifikats ist darauf zu achten, dass das Zertifikat folgende Anforderungen erfüllt:
 
-* das Zertifikat gültig ist, (entsprechend der Gültigkeit beim initialen Hochladen),
-* das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
-* das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
+* Es ist gültig, entsprechend der Gültigkeit beim initialen Hochladen.
+* Es ist aktuell gültig (validFrom in der Vergangenheit und validTo in der Zukunft).
+* Es hat exakt denselben Common Name (Domain-Namen) wie das aktuell aktive Zertifikat.
 
 {{< c8y-admon-info >}}
 Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
@@ -316,7 +316,7 @@ Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten d
 
 Wenn Sie zu Ihrer alten Domain auf {{< product-c8y-iot >}} zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 {{< /c8y-admon-important >}}
 

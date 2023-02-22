@@ -18,6 +18,10 @@ Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely
 You can connect any device supporting LWM2M 1.1 or LWM2M 1.0 to {{< product-c8y-iot >}} without programming. {{< product-c8y-iot >}} expects the device and its capabilities (such as firmware update) to be compliant to the LWM2M specification. The device must support the UDP binding of the LWM2M standard.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-req >}}
+In order to use LWM2M, you must be subscribed to the LWM2M-agent application. If the LWM2M-agent is not available in your tenant, [contact product support](/welcome/contacting-support/).
+{{< /c8y-admon-req >}}
+
 Our LWM2M solution allows any LWM2M object to be easily interfaced with the platform. For the sake of convenience, we provide out-of-the-box integration for the following LWM2M objects:
 
 - Device (/3)

@@ -1,9 +1,9 @@
 ---
-weight: 100
-title: Connectivity
-layout: redirect
 aliases:
-  - users-guide/optional-services/#connectivity
+- users-guide/optional-services/#connectivity
+layout: redirect
+title: Connectivity
+weight: 100
 ---
 
 Der Connectivity-Agent, der von der Anwendung {{< product-c8y-iot >}} Device Management aus arbeitet, liefert grundlegende Informationen zu Mobilgeräten sowie zusätzliche Details zur Konnektivität.
@@ -16,9 +16,9 @@ Die folgenden Funktionen werden von diesen Anbietern bereitgestellt:
 |:------|:-----|:-------|:------|:------|
 |Status der SIM-Karte im Gerät prüfen|x|x|x|x|
 |Vom Netzwerk gemeldeten Online-Status der Geräte prüfen|x|x|x|x|
-|SIM-Karten-Status ändern, z. B. aktivieren oder deaktivieren|x|x|x|x|
+|SIM-Karten-Status ändern, z. B. aktivieren oder deaktivieren|x|x|x|x|
 |SIM-Karte von aktueller Sitzung trennen|x| | | |
-|Über Textnachrichten mit dem Gerät kommunizieren, z. B. um APN-Parameter festzulegen|x| |x|x|
+|Über Textnachrichten mit dem Gerät kommunizieren, z. B. um APN-Parameter festzulegen|x| |x|x|
 |Nutzungsübersicht über Datenverkehr, Textnachrichten und Sprachanrufe anzeigen|x|x|x|x|
 |Nutzungsdetails zu Datenverkehr, Textnachrichten und Sprachanrufen anzeigen| |x|x| |
 |Verlauf von Datensitzungen und etwaigen Änderungen an SIM-Karte oder Datenverkehr anzeigen|&nbsp;| |x| |
@@ -39,8 +39,8 @@ Die folgende Beschreibung basiert vornehmlich auf Jasper, doch dieselbe Konfigur
 In den nachstehenden Abschnitten wird Folgendes beschrieben:
 
 * [Einrichten Ihres Jasper Control Center-Kontos](#link-account) (beispielhaft)
-* Konfigurieren der [Konnektivität](#connectivity-configuration) zum SIM-Anbieter in Ihrem {{< product-c8y-iot >}}-Mandanten
-* [Verknüpfen von SIMs](#link-sims) und Mobilgeräten
+* Konfigurieren der [Konnektivität zum SIM-Anbieter](#connectivity-configuration) in Ihrem {{< product-c8y-iot >}}-Mandanten
+* [Verknüpfen von SIMs und Mobilgeräten](#link-sims)
 * In der [Registerkarte "Connectivity"](#jasperinfo) angezeigte Informationen
 * [Verwalten der Konnektivität](#managing) über Device Management
 
@@ -78,19 +78,21 @@ Führen Sie den folgenden Schritt aus, um die Konnektivität in {{< product-c8y-
 1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [READ- und ADMIN-Berechtigung für Connectivity](/benutzerhandbuch/administration-de#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
 2. Wechseln Sie zur Registerkarte **Mobilfunkanbieter-Einstellungen**.
 3. Wählen Sie einen Anbieter aus der Auswahlliste aus.
-1. Geben Sie die Zugangsdaten (URL, Schlüssel (im Falle von Jasper), Benutzername und Passwort) für das entsprechende SIM-Anbieter-Konto ein. Wenn Ihnen keine Zugangsdaten vorliegen, fragen Sie Ihren Administrator.
-2. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
+1. Geben Sie die Zugangsdaten für das entsprechende SIM-Anbieter-Konto ein. Wenn Ihnen keine Zugangsdaten vorliegen, fragen Sie Ihren Administrator.
+2. Legen Sie eine **Cache duration** (Cache-Dauer) in Sekunden fest um zu bestimmen, wie lange die vom Anbieter stammenden Informationen zwischengespeichert werden sollen. Dadurch werden Timeout-Probleme vermieden.
+3. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-Die Konfiguration des Anbieters Kite unterscheidet sich von anderen Anbietern dadurch, dass sie das Hochladen eines gültigen Zertifikats (trustStoreFileName) sowie von trustStorePassword, trustStoreType und kiteBaseUrl erfordert.
+Je nach gewähltem Konnektivitätsanbieter müssen Sie anbieterspezifische Parameter festlegen.
+Der Parameter **Cache duration** bestimmt, wie viele Sekunden lang die vom Anbieter zurückgegebenen SIM-Daten zwischengespeichert werden, bevor wieder frische Daten angefordert werden.
+Dies verringert den Datenverkehr und die Anzahl der Anfragen an die SIM-Anbieter im Hinblick auf Inrechnungstellung und Zuverlässigkeit.
+Eine längere Cache-Dauer bedeutet weniger Datenverkehr an Ihren SIM-Anbieter, eine kürzere Dauer bedeutet, dass aktuellere Daten angezeigt werden.
 
 ![Jasper settings](/images/benutzerhandbuch/connectivity/connectivity-item.png)
-
-Der Connectivity-Agent ist nun eingerichtet.
 
 <a name="link-sims"></a>
 ### Verknüpfen von SIMs und Mobilgeräten
 
-Wechseln Sie zur Anwendung Device Management und navigieren zu dem Gerät, das über eine SIM-Karte verbunden ist, die vom SIM-Anbieter Ihrer Wahl verwaltet wird. Das Gerät sollte eine Registerkarte namens **Connectivity** aufweisen. Wird diese Registerkarte nicht angezeigt, hat dies einen der folgende Gründe:
+Wechseln Sie zur Anwendung Device Management und navigieren zu dem Gerät, das über eine SIM-Karte verbunden ist, die vom SIM-Anbieter Ihrer Wahl verwaltet wird. Das Gerät sollte eine Registerkarte namens **Connectivity** aufweisen. Wird diese Registerkarte nicht angezeigt, hat dies einen der folgenden Gründe:
 
 * Ihr Benutzer hat keine Berechtigungen für Connectivity.
 * Das Gerät ist mit keiner SIM-Karte verknüpft.
@@ -141,15 +143,15 @@ Die erste Zeile gibt Auskunft darüber, ob das Gerät momentan eine Datensitzung
 
 Die zweite Zeile zeigt weitere Statusinformationen an: die ICCID der SIM-Karte, den Aktivierungszustand der SIM-Karte und, sofern eingestellt, die festgelegte IP-Adresse der SIM-Karte. Sofern Sie über eine ADMIN-Berechtigung für Connectivity verfügen, können Sie den Aktivierungszustand über das Auswahlmenü ändern.
 
-Am unteren Ende finden Sie Nutzungsinformationen für den aktuellen Monat, d. h. vom ersten Tag des Monats bis heute. Durch Bewegen der Maus über den Tooltip wird der abgedeckte Zeitraum angezeigt, einschließlich der Nutzung im Vormonat.
+Am unteren Ende finden Sie Nutzungsinformationen für den aktuellen Monat, d. h. vom ersten Tag des Monats bis heute. Durch Bewegen der Maus über den Tooltip wird der abgedeckte Zeitraum angezeigt, einschließlich der Nutzung im Vormonat.
 
-Der Abschnitt **SMS** zeigt die Textnachrichten an, die an das Gerät gesendet und von diesem empfangen wurden, einschließlich
+Der Abschnitt **SMS** zeigt die Textnachrichten an, die an das Gerät gesendet und von diesem empfangen wurden, einschließlich der folgenden Informationen:
 
 * Sende- bzw. Empfangszeitpunkt der Nachricht
 * Absender und Empfänger der Nachricht
 * Zustellungsstatus der Nachricht:
- * Für Nachrichten an das Gerät: "Ausstehend", wenn die Nachricht vom Gerät nicht empfangen wurde, oder "Übergeben", wenn sie vom Gerät empfangen wurde.
- * Für Nachrichten vom Gerät: "Empfangen", wenn die Nachricht vom SIM-Anbieter empfangen wurde, oder "Abgebrochen", wenn sie noch nicht vom SIM-Anbieter empfangen wurde.
+  * Für Nachrichten an das Gerät: "Ausstehend", wenn die Nachricht vom Gerät nicht empfangen wurde, oder "Übergeben", wenn sie vom Gerät empfangen wurde.
+  * Für Nachrichten vom Gerät: "Empfangen", wenn die Nachricht vom SIM-Anbieter empfangen wurde, oder "Abgebrochen", wenn sie noch nicht vom SIM-Anbieter empfangen wurde.
 * Senderichtung der Nachricht: MT ("Mobile terminated"), wenn sie an das Gerät gesendet wurde, oder MO ("Mobile originated"), wenn sie vom Gerät kam.
 
 Sofern Sie über eine ADMIN-Berechtigung für Connectivity verfügen, können Sie auch Textnachrichten an das Gerät senden, indem Sie den Text eingeben und auf **SMS senden** klicken.

@@ -7,7 +7,7 @@ layout: redirect
 
 Validation rules are used to verify that the data a user enters in a resource meets the constraints you specify before the user can save the resource.
 
-Validation rules can only be added to resources which have "write" permissions. Resources which can have validation rules are marked by the grey icon on the right side of resource. When hovering over the icon, you can see whether there are defined validation rules.
+Validation rules can only be added to resources which have "write" permissions. Resources which can have validation rules are marked by the following icon:
 
 ![Validation rule icon](/images/device-protocols/lwm2m/lwm2m-protocols-rules.png)
 

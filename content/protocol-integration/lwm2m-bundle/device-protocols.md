@@ -19,9 +19,9 @@ To add a new LWM2M device protocol follow these steps:
 3. In the upcoming dialog select **LWM2M** as device protocol type.
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found at [http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd). <br>
 If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior.
-5. In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. 
+In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. 
 
-The device protocol opens in a new page. You can find the description at the top left while the ID, the creation date and the date of the last update are at the top right.
+5. The device protocol opens in a new page that contains the object ID and description and the list of resources that belongs to this object. In this page additional functionalities to a resource can be added.
 
 Below that, there is a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 

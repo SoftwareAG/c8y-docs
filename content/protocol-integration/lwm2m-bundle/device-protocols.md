@@ -23,6 +23,8 @@ In the next dialog, you can see the name and description of the protocol. Click 
 
 5. The device protocol opens in a new page that contains the object ID and description and the list of resources that belongs to this object. In this page additional functionalities to a resource can be added.
 
+![Protocol example](/images/device-protocols/lwm2m/lwm2m-protocol-example.png)
+
 Below that, there is a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.
 
 {{< c8y-admon-info >}}

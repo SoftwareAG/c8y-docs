@@ -456,7 +456,7 @@ The "Markdown" widget can be used to display markdown content. Using the “Mark
 There are several ways to provide markdown content:
 
 * Upload a markdown file.
-* Provide URL from an external souce.
+* Provide a URL to an external source.
 * Add "/README.md" as a relative file path in order to provide the README file of the current application as source.
 
 <a name="widget-message-sending"></a>

@@ -172,14 +172,14 @@ Before adding a device to the asset hierarchy, it must be connected to {{< produ
 
 To assign devices to a group, follow these steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Subassets** page.
+1. In the navigator, select a group from the **Group** menu and then open the **Subassets** tab.
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
 
 ![Assign devices](/images/users-guide/cockpit/cockpit-group-assign.png)
 
-The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
+The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
 
 <a name="edit-group"></a>
 ### How to edit a group

@@ -449,7 +449,7 @@ If none of the target device(s) has a known location, then the widget shows a wo
 <a name="widget-markdown"></a>
 ### Markdown
 
-The "markdown" widget can be used to display markdown content.
+The "markdown" widget can be used to display markdown content. Using the “Markdown” widget you can inform users, for example, on new features.
 
 ![Markdown widget](/images/users-guide/cockpit/cockpit-widget-markdown.png)
 

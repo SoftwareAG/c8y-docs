@@ -55,7 +55,7 @@ Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte releva
 1. Klicken Sie auf **Registrierung** im Menü **Geräte** des Navigators.
 2. Klicken Sie auf der Seite **Geräteregistrierung** rechts in der oberen Leiste auf **Gerät registrieren** und wählen Sie aus dem Auswahlmenü die Option **Einzelregistrierung** > **Generell**.
 
-![Bulk registration](/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png)
+  <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
 
 Der Dialog **Geräte registrieren** wird angezeigt.
 

@@ -18,7 +18,7 @@ If you do not see the **EPL Apps** page in the Streaming Analytics application a
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-caution >}}
-An EPL app has the ability to make nearly arbitrary changes to the objects in a tenant, whether that's inventory, alarms or many other sorts of object. Because a user who has ADMIN permission for "CEP management" is able to create and active EPL apps, they also indirectly have nearly full control over the current tenant. Therefore you should be careful about which users on the tenant have this permissions.
+An EPL app has the ability to make nearly arbitrary changes to the objects in a tenant, whether that's inventory, alarms or many other sorts of object. Because a user who has ADMIN permission for "CEP management" is able to create and active EPL apps, they also indirectly have nearly full control over the current tenant. Therefore you should be careful about which users on the tenant have this permission.
 {{< /c8y-admon-caution >}}
 
 <a name="apama-epl-apps"></a>

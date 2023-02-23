@@ -192,6 +192,8 @@ Je nach Format der hochgeladenen CSV-Datei wird einer der folgenden Registrierun
 Durch Mehrfachregistrierung wird eine elementare Darstellung des Geräts erstellt. Danach muss das Gerät sie auf eine volle Darstellung mit eigenem Status aktualisieren.
 {{< /c8y-admon-info >}}
 
+Aus der CSV-Datei wird automatisch ein Trennzeichen bezogen. Gültige Werte für Trennzeichen sind: `\t` (Tabulatorzeichen), `;` (Semikolon) und `,` (Komma).
+
 **Einfache Registrierung**
 
 Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z. B. die Seriennummer, und PATH eine durch Schrägstriche getrennte Liste von Gruppennamen (Pfad zu der Gruppe, der das Gerät nach der Registrierung zugewiesen werden soll) ist.
@@ -240,7 +242,7 @@ Wenn das Gerät mit der jeweiligen Bezeichnung bereits existiert, wird es mit de
 5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie auf **Fertig stellen**.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
-[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
+[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in der {{< openapi >}}.
 
 {{< c8y-admon-info >}}
 Wenn Sie mit dem {{< enterprise-tenant-de >}} arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom {{< management-tenant-de >}} aus importieren.

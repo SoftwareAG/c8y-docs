@@ -172,7 +172,7 @@ The "Applications" widget shows a list of links to all available applications. A
 
 ![Applications widget](/images/users-guide/cockpit/cockpit-widget-applications.png)
 
-For details on applications, refer to [Administration > Managing Applications](/users-guide/administration#managing-applications).
+For details on applications, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications).
 
 
 <a name="asset-notes"></a>
@@ -199,7 +199,7 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 |:---|:---|
 |Title|Widget title. By default, the widget type is used as title.
 |Target assets or devices|Select groups or devices.
-|Properties|List of properties, see [Widget "Asset table"](#widget-asset-table).
+|Properties|List of properties, see [Asset table](#widget-asset-table).
 
 {{< c8y-admon-info >}}
 In the view mode, this widget only displays the properties which are not empty.
@@ -299,7 +299,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 </tr>
 <tr>
 <td align="left">Data point</td>
-<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; To add a data point</a>.</td>
 </tr>
 <tr>
 <td align="left">Column visibility</td>
@@ -333,7 +333,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) in the *Protocol integration guide*.
+For details on the "Fieldbus device" widget, refer to [Cloud Fieldbus > Monitoring the device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) in the *Protocol integration guide*.
 
 <a name="help-service"></a>
 ### Help and service
@@ -479,7 +479,7 @@ The "Pie chart" widget displays data points (measurements) with current values i
 </tr>
 <tr>
 <td align="left">Data point</td>
-<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; To add a data point</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -542,7 +542,7 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
+For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring the device status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
 
 {{< c8y-admon-info >}}
 All SVG files are sanitized in order to remove malicious code.
@@ -575,7 +575,7 @@ The "Silo" widget displays data points (measurements) with current values in a s
 </tr>
 <tr>
 <td align="left">Data point</td>
-<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; To add a data point</a>.</td>
 </tr>
 </tbody>
 </table>

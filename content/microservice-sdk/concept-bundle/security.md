@@ -43,7 +43,7 @@ You can see the credential validation flow on the sequence diagram below:
 The microservice can receive the HTTP requests with the following header (see example below). The authentication process is based on basic authentication and SMS based TFA.
 
 ```
-GET http://cumulocity.default.svc.cluster.local/test HTTP/1.1
+GET https://cumulocity.default.svc.cluster.local/test HTTP/1.1
 accept: */*
 authorization: Basic dGVuYW50X2lkL3VzZXJuYW1lOnBhc3N3b3JkCg==
 connection: close
@@ -57,10 +57,10 @@ x-forwarded-proto: http
 x-real-ip: 192.168.1.20
 ```
 
-The microservice sends the following requests to validate the credentials (provided that `c8y_baseurl` is equal to `http://cumulocity:8111`):
+The microservice sends the following requests to validate the credentials (provided that `c8y_baseurl` is equal to `https://cumulocity:8111`):
 
 ```
-GET http://cumulocity:8111/user/currentUser HTTP/1.1
+GET https://cumulocity:8111/user/currentUser HTTP/1.1
 Accept: text/plain, application/json, application/*+json, */*
 Authorization: Basic dGVuYW50X2lkL3VzZXJuYW1lOnBhc3N3b3JkCg==
 Content-Length: 0
@@ -70,7 +70,7 @@ tfatoken: 23b75292468e0ba7fe03245d502d9c29e21e8a997fc7dd7e1a1df7fe31cbfb17
 If the user is authenticated with OAI-Secure, the following REST request can reach the microservice:
 
 ```
-GET http://cumulocity.default.svc.cluster.local/test HTTP/1.1
+GET https://cumulocity.default.svc.cluster.local/test HTTP/1.1
 accept: */*
 authorization: Basic dGVuYW50X2lkL3VzZXJuYW1lOjxmYWtlIHBhc3N3b3JkPgo=
 connection: close
@@ -88,7 +88,7 @@ x-xsrf-token: GSIzTPxobPKQIBevRMRZ
 To verify the credentials from the request above, the microservice sends the following request:
 
 ```
-GET http://cumulocity:8111/user/currentUser HTTP/1.1
+GET https://cumulocity:8111/user/currentUser HTTP/1.1
 Accept: text/plain, application/json, application/*+json, */*
 Content-Length: 0
 Cookie: authorization=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0YzAwMGVlOC1hYjY5LTRiMzYtYWNhNC0xNzM4ZGYwZWNhZGIiLCJpc3MiOiJjdW11bG9jaXR5LmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJhdWQiOiJjdW11bG9jaXR5LmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJzdWIiOiJhZG1pbiIsInRjaSI6IjMxMWM3YjZiLWM1MmQtNGEzMC1iZDFlLWNiODdlMjNlODQyOSIsImlhdCI6MTY0NjkyODgxMywibmJmIjoxNjQ2OTI4ODEzLCJleHAiOjE2NDgxMzg0MTMsInRmYSI6ZmFsc2UsInRlbiI6Im1hbmFnZW1lbnQiLCJ4c3JmVG9rZW4iOiJHU0l6VFB4b2JQS1FJQmV2Uk1SWiJ9.NL5b9-iHSc3SLaPu87oazBd2_kjNiwO9tM_bXS3qCUd0_wTZ-BKc3q6sRHTKO_LNbtCQg3G6-7ZhD6TyvqjTLsyiZTsgMRtAE7ZiRPtXaFOA0_SDQ9kG_MztAZ3U9O008akgXcjEEAdphVv5eey_lADrg1BmIlqiBFoKts2JGSv1xFtXKIxpcVtRDGUkb-2qb8OhaHamT7b3HL628NSiH4VqfO38vkLLkimHEz-roqmbFGQ355TvA3-s_erO96j3rHbBPDsluFqFN0eOTCidBffKt6OvyKw-_64MaHHs6R9Ulsv-LuY-YAvlTZVxYwFAi3yn3mWlpXEAzvGYHMrx8A
@@ -157,7 +157,7 @@ You can add them to the [application manifest](#manifest) in the `roles` propert
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
-The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
+The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
 
 ### Microservice bootstrap
 
@@ -208,4 +208,4 @@ There is a mechanism to encrypt the tenant options that afterwards are automatic
 
 If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
 
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.

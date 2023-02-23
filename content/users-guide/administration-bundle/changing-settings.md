@@ -183,7 +183,7 @@ The lifespan of JWT tokens generated in the response body is configured with the
 - category: `oauth.internal`;
 - key: `body-token.lifespan.seconds`;
 
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 {{< c8y-admon-info >}}
 If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use single sign-on since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
@@ -249,7 +249,17 @@ In order to use the single sign-on feature for {{< enterprise-tenant >}}s, the e
 
 To enable the feature, the administrator must configure a connection with the authorization server. This is done in the Administration application.
 
+
+##### Configuration access
+
+SSO configurations can be configured to be exclusively accessible by the {{< management-tenant >}}, thus preventing other tenants from accessing the configurations.
+Users of such tenants are unable to update the configuration. This removes the risk of an incorrectly configured SSO, which can prevent other users from logging in via SSO.
+The {{< management-tenant >}} can grant or restrict access to SSO configurations for specific tenants. For more information about configuration access, refer to the [Login options API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in the {{< openapi >}}.
+
+##### Configuration view
+
 Click the **Single sign-on** tab in the **Authentication** page.
+Note that the tab is only visible for tenants which have access to the SSO configuration.
 
 At the top left, you can select a template. The selected option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 

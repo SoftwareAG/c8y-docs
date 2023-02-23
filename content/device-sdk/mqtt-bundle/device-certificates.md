@@ -21,8 +21,8 @@ Devices connecting to the platform with certificates do not need to provide the 
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices must trust the {{< product-c8y-iot >}} server certificate.
-* Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
-* Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
+* Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
+* Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates
 
@@ -39,7 +39,7 @@ To manage the auto registration field of uploaded certificates in the UI refer t
 
 The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device Management.
 
-The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
+The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
 
 **Single registration**
 
@@ -64,7 +64,7 @@ A device which is authenticated by certificates and connected to the {{< product
 A device token lifetime can be configured using tenant options with a category of `oauth.internal` and a key of `device-token.lifespan.seconds`.
 The default value is 1 hour.
 The minimum allowed value is 5 minutes.
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
 
@@ -266,8 +266,10 @@ The intermediate certificate is signed by the CA certificate, but will also be u
 This step is optional.
 If you are fine with signing all the device certificates with one common CA certificate, then you can skip this step.
 However, if you need some certificates between the CA certificate and the device certificate then it is the way to go.
-Keep in mind that in the {{< product-c8y-iot >}} cloud the maximum length of the chain of certificates is currently restricted to 2 for security reasons, so you cannot use any intermediate certificate between your CA certificate and the device certificate there.
-However, this behaviour can be changed for dedicated installations by changing a platform wide configuration setting and increasing the allowed maximum length of the chain of certificates to more than 2.
+Keep in mind that in the {{< product-c8y-iot >}} cloud the maximum length of the chain of certificates is currently restricted to 10.
+This behaviour can be changed for dedicated installations by changing a platform wide configuration setting and increasing (or decreasing) the allowed maximum length of the chain of certificates to more (or less) than 10.
+If you use a chain with a length greater than 2, we strongly recommend you to use the proof of possession feature to protect your service from DOS attacks.
+
 To create the intermediate certificate:
 
 1. Create a new directory for intermediate certificates inside the caCertificate path: `mkdir intermediateCertificate`
@@ -365,10 +367,42 @@ Then the added certificate should be visible:
     	"certInPemFormat" : "<CERT_PEM_VALUE>"
     }
 ```
+### Perform a proof of possession
+
+{{< product-c8y-iot >}} platform uses X.509 certificates to authenticate end devices.
+The certificates work with a chain of trust: you can create trustworthy subcertificates with a trusted certificate.
+Each certificate consists of a public and a private part.
+Also see [asymmetric encryption](https://en.wikipedia.org/wiki/Public-key_cryptography).
+
+{{< product-c8y-iot >}} platform receives the public part of each certificate that is to be used for device authentication.
+The assignment of the device to a tenant is also done by the certificate, since each certificate must be uniquely assigned.
+Performing the proof of possession steps filters out all certificates without prior proof of possession, giving preference to tenant mappings of certificates with a validated proof of possession.
+
+However, since the public part of a certificate (and the subcertificates) is not secret, anyone on the internet theoretically has access to it.
+A potential attacker could upload the public part of a certificate to {{< product-c8y-iot >}} platform even if he does not have access to the private part of the certificate (thus not being the owner of the certificate).
+In this case the {{< product-c8y-iot >}} platform cannot decide which uploader is the legitimate one, so the platform does not accept any reference to this certificate as valid, which would result in a DOS scenario.
+
+To ensure verification of ownership by the uploader, a proof of possession is required by the platform.
+
+The steps for the proof of possession are as follows:
+- Ensure that the certificate has been uploaded properly:
+![Check certificate upload](/images/mqtt/devmgmt-mqtt-cert-pop-check.png)
+
+- Download of the unsigned verification code:
+![Download unsigned verification code](/images/mqtt/devmgmt-mqtt-cert-pop-downloadunsigned.png)
+
+- Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
+
+- Upload of the signed verification code to the platform:
+![Upload signed verification code](/images/mqtt/devmgmt-mqtt-cert-pop-uploadsigned.png)
+
+- The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform:
+![Proof of possession completed](/images/mqtt/devmgmt-mqtt-cert-pop-completed.png)
+
 
 ### Install and configure the MQTT client
 
-1. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
+1. Download and install the newest MQTT.fx client from: [softblade.de/en/download-2](https://softblade.de/en/download-2/)
 2. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**.
 3. Edit the connection profiles like so:
     - Insert the {{< company-c8y >}} URL in the **Broker address** line.

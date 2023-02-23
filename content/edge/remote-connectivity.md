@@ -4,7 +4,7 @@ title: Connecting Cumulocity IoT Edge to the cloud
 layout: bundle
 ---
 
-This section describes configuring and managing your Edge appliance remotely.
+This section describes how to configure and manage your Edge appliance remotely.
 
 The {{< product-c8y-iot >}} tenant allows you to remotely manage your Edge appliance by registering the Edge appliance in the {{< product-c8y-iot >}} tenant account. To do so, you must first enable remote-connectivity in the Edge appliance and then register your Edge appliance in the {{< product-c8y-iot >}} tenant account. The {{< product-c8y-iot >}} tenant uses the SSH protocol to access the remote Edge appliance through a web browser.
 

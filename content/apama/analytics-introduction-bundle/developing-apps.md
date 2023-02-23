@@ -17,6 +17,10 @@ your tenant must be subscribed to the Apama-ctrl microservice that supports EPL 
 If you do not see the **EPL Apps** page in the Streaming Analytics application and you wish to use EPL apps, contact [product support](/welcome/contacting-support).
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-caution >}}
+An EPL app has the ability to make nearly arbitrary changes to the objects in a tenant, whether that's inventory, alarms or many other sorts of object. A user who has ADMIN permission for "CEP management" is able to create and activate EPL apps and thus also has almost full control over the current tenant. Therefore, you should be careful about which users on the tenant have this permission.
+{{< /c8y-admon-caution >}}
+
 <a name="apama-epl-apps"></a>
 ### Developing apps with the Streaming Analytics application
 
@@ -63,8 +67,6 @@ To help you get started, several samples are available. To see them, click **Sam
 Using the buttons in the top menu bar, you can undo/redo your last changes in the current session and you can save your changes.
 
 It is also possible to change the mode from **Inactive** to **Active** (or vice versa) in the EPL editor. Again, when there is an error in your EPL code, it is not possible to activate the app. The errors are highlighted within the code.
-
-Keep the following in mind while creating (or importing) an EPL app: When an EPL app is activated, it is possible that some EPL operations are performed that are not allowed for the user who created the app. For example, you may only have ADMIN permission for "CEP management" for injecting EPL and creating analytic models. However, when the app is activated, it is also possible that the injected EPL can create or clear an alarm and that an analytic model can create an operation.
 
 {{< c8y-admon-info >}}
 Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.

@@ -30,7 +30,7 @@ The following operations may be available in each instance after clicking the me
 Some instances do not have all of the listed operations.
 {{< /c8y-admon-info >}}
 
-Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. THe possible options are **Write**, **Execute** and **Execute with parameters**. For example, after reading device **Firmware update** in order to perform the operation **Execute** without parameters, find the **Update** section on the object card and click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
+Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. The possible options are **Write**, **Execute** and **Execute with parameters**. For example, after reading device **Firmware update** in order to perform the operation **Execute** without parameters, find the **Update** section on the object card and click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
 More information can be acquired for each resource by hovering over the tooltip icon (<img src="/images/device-protocols/lwm2m/lwm2m-tooltip-help-icon.png" alt="Tooltip icon" style="display: inline; width: 20px; margin-bottom: 3px;">) present on the right of the field name.
 
@@ -38,9 +38,7 @@ Additional information on recent operations can be viewed by clicking the operat
 
 ![Operations view](/images/device-protocols/lwm2m/lwm2m-devices-operations.png)
 
-If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
-Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.
-Platform administrators can configure how long such operations stay alive (described in the *LWM2M agent installation & operations guide*).
+To view the history of all operations, click **View history**. Note, that you will be redirected to the **Control** tab.
 
 #### Audit Configuration
 

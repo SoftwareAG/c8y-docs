@@ -43,4 +43,4 @@ WebMethods.io also provides pre-configured workflows which are called "recipes".
 
 ![webMethods.io Example Recipe](/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
 
-More examples and technical guides can be found on the [{{< sag-dev-community >}} website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html).
+More examples and technical guides can be found on the [{{< sag-dev-community >}} website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html). In particular, for more detailed information about the Cumulocity IoT triggers and connectors in webMethods.io please refer to [these articles]({{< link-sag-tech-forum >}}tag/webmethods-c8y-connector).

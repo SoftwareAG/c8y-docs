@@ -89,7 +89,7 @@ Depending on the type of device you want to connect, not all steps of the follow
 2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**. The **Register devices** dialog box will be displayed.
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
-5. Click **Add new device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
+5. Click **Add device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s).
 
 {{< c8y-admon-info >}}

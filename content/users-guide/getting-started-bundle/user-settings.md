@@ -63,7 +63,7 @@ Note that this option is only available if support user access is not set global
 In the **Platform info** section, you find information on the infrastructure of your platform:
 
 - The ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.
-- Release version information for both backend and the UI.
+- Release version information for both the backend and the UI.
 
 Moreover you can click **Detailed info** to download more detailed platform information.
 

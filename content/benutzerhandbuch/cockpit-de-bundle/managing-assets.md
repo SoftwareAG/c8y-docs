@@ -108,7 +108,7 @@ ROLLEN UND BERECHTIGUNGEN im Kontext von Gruppen:
 - Zum Löschen einer beliebigen Gruppe: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
 - Zum Umbenennen einer Gruppe oder zum Ändern der Gruppenbeschreibung: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
 - Zum Anzeigen spezifischer Gruppen: LESEN-Berechtigungen für "Stammdaten" in den Stammdatenrollen
-- Zum Verwalten oder Löschen spezifischer Gruppen: LESEN- und ÄNDERN-Berechtigungen für "Stammdaten" in den Stammdatenrollen 
+- Zum Verwalten oder Löschen spezifischer Gruppen: LESEN- und ÄNDERN-Berechtigungen für "Stammdaten" in den Stammdatenrollen
 
 Beachten Sie, dass globale Stammdatenberechtigungen die Berechtigungen für Stammdatenrollen überschreiben
 {{< /c8y-admon-req >}}
@@ -156,14 +156,14 @@ Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Ger
 
 Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 
-1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und öffnen Sie dann die Seite **Kind-Assets**.
+1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und öffnen Sie dann die Registerkarte **Kind-Assets**.
 2. Klicken Sie auf **Geräte zuweisen** rechts in der oberen Menüleiste.
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
 ![Assign devices](/images/benutzerhandbuch/cockpit/cockpit-group-assign.png)
 
-Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
+Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Registerkarte **Kind-Assets** angezeigt.
 
 <a name="edit-group"></a>
 ### Bearbeiten einer Gruppe

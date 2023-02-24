@@ -13,6 +13,7 @@ The manifest specifies CPU and memory resource usage. In some circumstances, the
 The manifest also specifies the permissions with which the microservice runs. This is the set of permissions that every request from EPL (or any other code running in the Apama-ctrl microservice) runs with. The Apama-ctrl microservice itself requires the following permissions:
 
 - ROLE_APPLICATION_MANAGEMENT_READ
+- ROLE_APPLICATION_MANAGEMENT_ADMIN
 - ROLE_INVENTORY_READ
 - ROLE_INVENTORY_ADMIN
 - ROLE_INVENTORY_CREATE
@@ -29,6 +30,7 @@ The manifest also specifies the permissions with which the microservice runs. Th
 - ROLE_CEP_MANAGEMENT_READ
 - ROLE_CEP_MANAGEMENT_ADMIN
 - ROLE_OPTION_MANAGEMENT_READ
+- ROLE_OPTION_MANAGEMENT_ADMIN
 - ROLE_SMS_ADMIN
 - ROLE_AUDIT_ADMIN
 - ROLE_AUDIT_READ

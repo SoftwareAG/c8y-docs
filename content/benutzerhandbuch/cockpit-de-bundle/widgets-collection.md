@@ -24,10 +24,10 @@ Folgende Typen sind verfügbar:
 </thead>
 <tbody>
 <tr>
+<tr>
 <td align="left"><a href="#recent-alarms">Aktuelle Alarme</a></td>
 <td align="left">Zeigt alle Alarme aller Schweregrade, sortiert nach Zeit.</td>
 </tr>
-<tr>
 <td align="left"><a href="#alarm-list">Alarmliste</a></td>
 <td align="left">Zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus.</td>
 </tr>
@@ -147,6 +147,7 @@ Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach
 
 Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
+
 <a name="alarm-list"></a>
 ### Alarmliste
 
@@ -186,6 +187,7 @@ Das "Ampel"-Widget visualisiert den Status eines Geräts in Form einer Ampel.
 |Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
 |Ziel-Assets oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
 |Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: true, 1, jede nicht-leere Zeichenkette, jede Zahl außer 0.
+
 
 <a name="applications"></a>
 ### Anwendungen
@@ -242,7 +244,7 @@ Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu einem ausgewählten
 
 **Beispiel**
 
-Im folgenden Screenshot sind 5 Spalten konfiguriert. Die drei Spalten "Meter", "Vendor" und "Owner" beziehen sich auf die Attribute "name", "type" und "owner". Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems.
+Im folgenden Screenshot sind 5 Spalten konfiguriert. Die drei Spalten "Name", "Owner" und "Type" beziehen sich auf die Attribute "name", "owner" und "type". Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems.
 
 ![Asset table widget](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table.png)
 
@@ -373,7 +375,6 @@ Das Widget "Gerätenachricht" sendet eine Nachricht an ein Gerät. Das Verhalten
 Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Help and service widget](/images/benutzerhandbuch/cockpit/cockpit-widget-help-service.png)
-
 
 <a name="widget-html"></a>
 ### HTML

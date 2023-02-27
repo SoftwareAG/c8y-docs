@@ -165,3 +165,10 @@ The handling of LWM2M shell commands follows the following lifecycle:
     - *Successful request*: In case the device signals a successful operation using a 2.XX CoAP response code, the operation result is updated and the operation status is turned to SUCCESSFUL.
     - *Failed requests*: If the CoAP request fails with a 4.XX or 5.XX error on the device, the operation is marked as FAILED. The operation result contains a possible response of the device.
     - *Not-responding*: When sending a LWM2M command to a device the {{< product-c8y-iot >}} platform is not precisely aware if the device can be reached using a UDP datagram. If the request times out {{< product-c8y-iot >}} assumes that there is no connectivity. It puts the operation back to PENDING. A redelivery of the operation is triggered as soon as the device sends a registration update or a new LWM2M registration request.
+4. To view the history of all operations, click the **Control** tab.
+
+{{< c8y-admon-info >}}
+If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
+Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.
+Platform administrators can configure how long such operations stay alive (described in the *LWM2M agent installation & operations guide*).
+{{< /c8y-admon-info >}}

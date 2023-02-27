@@ -47,11 +47,7 @@ The maximum size allowed for the CSV file is 10 MB.
 {{< /c8y-admon-info >}}
 
 
-When you upload the CSV file, the dialog will display a confirmation message that tells you where to find the result.
-
-![LWM2M bulk device registration form](/images/device-protocols/lwm2m/lwm2m-device-reg-bulk-dialog-result-message.png)
-
-The bulk device registration operation will be displayed in the [LWM2M connector device](#connector-device) object created for the tenant.
+When you upload the CSV file, the dialog will display a confirmation message that tells you where to find the result. The bulk device registration operation will be displayed in the [LWM2M connector device](#connector-device) object created for the tenant.
 
 ### Device registration settings
 

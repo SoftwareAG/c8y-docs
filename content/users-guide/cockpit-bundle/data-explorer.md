@@ -51,8 +51,6 @@ The data points properties are pre-filled as follows:
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
 
-![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
-
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
 Click **Save as default** to store the data point settings into the device's managed object. These settings will then take precedence over the settings from the data point library, for example, when this data point is added to a data explorer by other users, or when there is a threshold smart rule processing this device and its data point. If you want to restore the data point library default settings, click **Load from library** and then click **Save as default**.
@@ -124,8 +122,6 @@ The center of the dialog shows all data points of the selected object. Select th
 The right hand side shows all of the selected data points.
 
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
-
-![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
 For details on the data point library refer to [Data point library](#data-point-library).
 
@@ -223,8 +219,6 @@ If you want to keep your current configuration in the data explorer for later us
 **Send as widget to dashboard**
 
 To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
-
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 

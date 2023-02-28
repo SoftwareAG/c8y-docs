@@ -337,7 +337,7 @@ and your authorization header would look like `Authorization: Basic dDAwNzEyMzQv
 $ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
 ```
 
-Most tools should already support the Cumulocity IoT Authorization header out of the box. Simply use `<tenantId>/<username>` as username and `<password>` as password. In modern versions, for example, the above cURL command can also look like below, and the header will be generated automatically:
+Most tools should already support the {{< product-c8y-iot >}} Authorization header out of the box. Simply use `<tenantId>/<username>` as username and `<password>` as password. In modern versions, for example, the above cURL command can also look like below, and the header will be generated automatically:
 
 ```shell
 $ curl --user "<TENANTID>/<USERNAME>:<PASSWORD>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker

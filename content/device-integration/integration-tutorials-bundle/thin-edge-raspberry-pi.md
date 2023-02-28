@@ -23,7 +23,7 @@ This makes it ideal for testing and trying out as well as some production use ca
 
 To follow this tutorial, you need the following:
 
-* A [{{< product-c8y-iot >}}](https://www.softwareag.cloud/site/product/cumulocity-iot.html) trial tenant.
+* A [{{< product-c8y-iot >}}]({{< link-softwareag-cloud-product >}}) trial tenant.
 * A Raspberry Pi (3 or 4) with Raspian installed. For other boards and operating systems, refer to [thin-edge.io platform support](https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/supported-platforms.md) on *GitHub*.
 * An updated device. To update it, run:
   ```

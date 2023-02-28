@@ -89,15 +89,11 @@ You can only add widgets and data to the dashboard for the device itself. It is 
 
 To edit a dashboard, click **Edit** in the top menu bar.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
-
 The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#creating-dashboards).
 
 ### To copy a dashboard from one object to another
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
-
-  <img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 

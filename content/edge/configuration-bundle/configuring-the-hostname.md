@@ -16,10 +16,3 @@ You can change the hostname of your Edge appliance using the REST APIs. The defa
 3. Click **Edge** > **Hostname** in the navigator.
 4. Click **Edit** to change the hostname.
 5. Provide the new hostname and click **Save**.
-
-### Configuring the hostname using the REST APIs
-
-To configure the hostname of your Edge appliance, use the following endpoints:
-
-- [GET /edge/configuration/hostname](/edge/rest-api/#get-edgeconfigurationhostname)
-- [POST /edge/configuration/hostname](/edge/rest-api/#post-edgeconfigurationhostname)

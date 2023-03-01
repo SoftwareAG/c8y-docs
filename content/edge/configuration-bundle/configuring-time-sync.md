@@ -20,10 +20,3 @@ Once the time synchronization is enabled, you can specify the NTP servers and th
 3. Click **Edge** > **Time synchronization** in the navigator.
 4. Use the toggle button to enable the time synchronization.
 5. Click **Edit** to specify the NTP servers and the interval to trigger the time synchronization.
-
-### Configuring the time synchronization using the REST APIs
-
-To configure the time synchronization, use the following endpoints:
-
-- [POST /edge/configuration/time-sync](/edge/rest-api/#post-edgeconfigurationtime-sync)
-- [GET /edge/configuration/time-sync](/edge/rest-api/#get-edgeconfigurationtime-sync)

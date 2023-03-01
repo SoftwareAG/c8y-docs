@@ -26,10 +26,3 @@ You must always have an SSL certificate for your domain name that is configured.
    If you do not have an SSL certificate, select **Generate self-signed certificate** to generate one.
 
 5. Click **Save**.
-
-### Updating the SSL certificate using the REST APIs
-
-To upload the new SSL certificate and the key file, use the following endpoints:
-
-- [GET /edge/configuration/certificate](/edge/rest-api/#get-edgeconfigurationcertificate)
-- [POST /edge/configuration/certificate](/edge/rest-api/#post-edgeconfigurationcertificate)

@@ -9,7 +9,6 @@
   font-size: 11px;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 0.6rem 0 0 6rem;
 
   &.show {
     z-index: 2000;
@@ -19,24 +18,21 @@
       box-shadow: none;
     }
   }
-  @media (min-width: $grid-breakpoint) {
-    left: $main-nav-width;
-    margin-left: 4px;
-    padding: 0.9rem 0 0 2.5rem;
-  }
+  // @media (min-width: $grid-breakpoint) {
+  //   left: $main-nav-width;
+  //   margin-left: 4px;
+  //   padding: 0.9rem 0 0 2.5rem;
+  // }
 
   .dropdown-toggle.version {
     display: flex;
     align-items: center;
     padding: 6px 12px;
-    height: 24px;
+    height: 32px;
     position: relative;
     z-index: 11;
     line-height: 1;
-    background-color: $brand-primary;
-    color: white;
-    border-radius: 12px;
-    box-shadow: 0 0 0 3px #f8f8f8;
+    color: $gray-text;
     -webkit-appearance: none;
     .caret {
       margin-left: 6px;
@@ -47,6 +43,8 @@
     padding-bottom: 0;
     top: -35px !important;
     z-index: 10;
+    min-width: 0 !important;
+    width: 100%;
   }
   small {
     position: relative;
@@ -71,9 +69,12 @@
     max-height: 32px;
     width: auto;
   }
-
+  .dropdown-toggle > i{
+    font-size: 24px;
+  }
   > .d-flex {
     align-items: center;
+    gap: 16px
   }
 
   .nav {
@@ -91,11 +92,6 @@
         color: $brand-primary;
       }
     }
-    &.nav-left {
-      @media (max-width: $grid-breakpoint) {
-        margin-left: 30px;
-      }
-    }
     .open & {
       display: none;
     }
@@ -104,7 +100,7 @@
   .nav-right {
     width: 100%;
     margin-top: 2.5rem;
-
+    height: 32px;
     @media (min-width: $screen-sm-min) {
       width: 260px;
       margin-top: 0;

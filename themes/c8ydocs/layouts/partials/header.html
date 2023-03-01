@@ -14,22 +14,20 @@
     </a>
   </div>
   <nav class="d-flex m-l-auto">
-    <ul class="m-l-auto nav flex-end nav-right">
-      <li>
-            <script>
-              (function() {
-                var cx = '008969372384807682938:yeh7xt785g4';
-                var gcse = document.createElement('script');
-                gcse.type = 'text/javascript';
-                gcse.async = true;
-                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(gcse, s);
-              })();
-            </script>
-        <gcse:searchbox></gcse:searchbox>
-      </li>
-    </ul>
+    <div class="m-l-auto nav flex-end nav-right">
+      <script>
+        (function() {
+          var cx = '008969372384807682938:yeh7xt785g4';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:searchbox></gcse:searchbox>
+    </div>
     <div class="dropdown version">
       <a class="dropdown-toggle version"
         type="button"
@@ -55,7 +53,7 @@
         aria-expanded="false"
         aria-label="Resources"
       >
-        <i class="dlt-c8y-icon-ellipsis-v"></i>
+        <i class="dlt-c8y-icon-th icon-20"></i>
       </button>
       <ul class="dropdown-menu dropdown-menu-right"
         aria-labelledby="resourcesLinks"
@@ -64,10 +62,32 @@
         <li><a href="https://cumulocity.com/releasenotes/about/">Release notes</a></li>
         <li><a href="https://www.cumulocity.com/api/">REST API</a></li>
         <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">AngularJS API</a></li>
-      <li><a href="https://techcommunity.softwareag.com/en_en/cumulocity-iot.html">TECHcommunity</a></li>
-      <li><a href="https://empower.softwareag.com/">Empower Portal</a></li>
-    </ul>
-  </div>
+        <li><a href="https://techcommunity.softwareag.com/en_en/cumulocity-iot.html">TECHcommunity</a></li>
+        <li><a href="https://empower.softwareag.com/">Empower Portal</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-toggle btn-dot"
+        type="button"
+        id="resourcesLinks"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-label="Resources"
+      >
+        <i class="dlt-c8y-icon-ellipsis-v icon-20"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="resourcesLinks"
+      >
+        <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+        <li><a href="https://cumulocity.com/releasenotes/about/">Release notes</a></li>
+        <li><a href="https://www.cumulocity.com/api/">REST API</a></li>
+        <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">AngularJS API</a></li>
+        <li><a href="https://techcommunity.softwareag.com/en_en/cumulocity-iot.html">TECHcommunity</a></li>
+        <li><a href="https://empower.softwareag.com/">Empower Portal</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
 <gcse:searchresults ></gcse:searchresults>

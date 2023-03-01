@@ -23,7 +23,7 @@
   <article id="{{substr .Name 0 -3}}" class="page-section">
     <h2>
       <button class="btn-link bookmark" data-clipboard-text="#{{substr .Name 0 -3}}">
-        <span class="fa fa-link"></span>
+        <span class="fa dlt-c8y-icon-link"></span>
       </button>
       {{replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h2>
     {{ partial "headline-hash.html" .Content }}

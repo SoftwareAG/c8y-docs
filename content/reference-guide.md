@@ -1,7 +1,7 @@
 ---
 title: Reference guide
 bundle: reference
-icon: "fa fa-book"
+icon: "dlt-c8y-icon-book"
 type: root
 layout: root
 weight: 100

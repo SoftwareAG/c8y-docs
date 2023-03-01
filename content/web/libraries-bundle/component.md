@@ -57,7 +57,7 @@ A good example to use this concept is the `c8y-action-bar-item` which uses a `ro
 ```html
    <c8y-action-bar-item [placement]="'right'">
      <a class="btn btn-link" routerLink="add">
-       <i class="fa fa-plus-square"></i> {{'Add' | translate}}
+       <i class="dlt-c8y-icon-plus-square"></i> {{'Add' | translate}}
      </a>
    </c8y-action-bar-item>
 ```

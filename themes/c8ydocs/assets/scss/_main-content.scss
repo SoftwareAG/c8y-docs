@@ -108,11 +108,11 @@
 .section-header {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  background-color: $blue-primary;
-  color: white;
+  background-color: $brand-primary;
+  // color: white;
   margin: -20px -20px 40px;
   padding: 20px;
-  background-image: linear-gradient(to right, #1c8ce3 0, #5faeec 100%);
+  // background-image: linear-gradient(to right, #1c8ce3 0, #5faeec 100%);
 
   @media (min-width: $screen-sm-min) {
     margin: -40px -40px 40px;
@@ -164,7 +164,7 @@
     border-bottom: 1px dotted #d9d9d9;
     font-weight: 200;
     //letter-spacing: -0.03em;
-    color: $blue-35;
+    color: $gray-text;
 
     > small {
       align-self: center;
@@ -175,7 +175,7 @@
 
   > h3 {
     border-bottom: 0;
-    color: rgba($blue-35, .8);
+    color: $gray-text;
     font-weight: 300;
     margin-top: 4rem;
   }
@@ -183,7 +183,7 @@
   > h4 {
     display: flex;
     font-weight: bold;
-    color: $gray-40;
+    color: var(--c8y-palette-gray-40);
     margin-top: 3rem;
     > small {
       align-self: center;
@@ -193,7 +193,7 @@
   }
   > h5 {
     font-weight: bold;
-    color: $blue-35;
+    color: $gray-text;
   }
 
   img {

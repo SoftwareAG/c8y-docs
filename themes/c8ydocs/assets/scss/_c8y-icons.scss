@@ -95,19 +95,19 @@ body .fa{
 .c8y-icon{
   &.c8y-icon-white{
     &::before{
-      color:$blue-14;
+      color: var(--c8y-root-component-icon-dark-color-dark);
     }
     &::after{
-      color: $blue-65;
+      color: var( --c8y-root-component-icon-dark-color-light);
     }
   }
 
   &.c8y-icon-duocolor{
     &::before{
-      color:$blue-14;
+      color:var(--c8y-root-component-icon-white-color-dark);
     }
     &::after{
-      color: $blue-65;
+      color: var(--c8y-root-component-icon-white-color-dark);
     }
   }
 }

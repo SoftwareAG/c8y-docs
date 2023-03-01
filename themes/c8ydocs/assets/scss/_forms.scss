@@ -9,7 +9,7 @@
     font-size: 1.5rem;
     top: 50%;
     transform: translate(16px, -50%);
-    color: $blue-primary;
+    color: $brand-primary;
     opacity: .6;
 
     + .input-lg{
@@ -22,7 +22,7 @@
 .form-control{
   background-image: none;
   background: white;
-  border: 1px solid $gray-80;
+  border: 1px solid var(--c8y-palette-gray-80);
   padding: 6px 12px;
   width: 100%;
   min-height: 34px;
@@ -30,8 +30,8 @@
   transition: border .3s ease, box-shadow .3s ease;
   &:focus{
     outline:none;
-    border-color: $blue-primary;
-    box-shadow: inset 0 0 0 2px $blue-primary;
+    border-color: $brand-primary;
+    box-shadow: inset 0 0 0 2px $brand-primary;
   }
 }
 

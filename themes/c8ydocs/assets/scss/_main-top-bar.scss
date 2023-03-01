@@ -37,7 +37,7 @@
     position: relative;
     z-index: 11;
     line-height: 1;
-    background-color: $blue-primary;
+    background-color: $brand-primary;
     color: white;
     border-radius: 12px;
     box-shadow: 0 0 0 3px #f8f8f8;
@@ -90,7 +90,7 @@
       text-transform: uppercase;
       padding: 6px 6px;
       &:hover {
-        color: $blue-primary;
+        color: $brand-primary;
       }
     }
     &.nav-left {

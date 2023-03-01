@@ -20,22 +20,22 @@ $dropdown-fallback-border:       #ccc;
 $dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-$dropdown-link-color:            $gray-30;
+$dropdown-link-color:            var(--c8y-palette-gray-30);
 //** Hover color for dropdown links.
-$dropdown-link-hover-color:      $blue-primary;//darken($gray-dark, 5%);
+$dropdown-link-hover-color:      $link-color;
 //** Hover background for dropdown links.
 $dropdown-link-hover-bg:        transparent;
 
 //** Active dropdown menu item text color.
 $dropdown-link-active-color:     white;
 //** Active dropdown menu item background color.
-$dropdown-link-active-bg:        $blue-primary;
+$dropdown-link-active-bg:        $link-color;
 
 //** Disabled dropdown menu item background color.
-$dropdown-link-disabled-color:   $gray-80;
+$dropdown-link-disabled-color:   var(--c8y-palette-gray-60);
 
 //** Text color for headers within dropdown menus.
-$dropdown-header-color:          $gray-60;
+$dropdown-header-color:          var(--c8y-palette-gray-30);
 
 //** Deprecated `$dropdown-caret-color` as of v3.1.0
 $dropdown-caret-color:           #000;

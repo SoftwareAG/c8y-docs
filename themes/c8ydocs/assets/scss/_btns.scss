@@ -5,7 +5,7 @@
   background-image: none;
   box-shadow: none;
   border: 0;
-  color: $blue-primary;
+  color: $brand-primary;
   &:hover,
   &:focus {
     text-decoration: none;
@@ -24,7 +24,7 @@
   height: 50px;
   border: 0;
   border-radius: 2px;
-  background-color: $blue-primary;
+  background-color: $brand-primary;
   background-image: none;
   color: white;
   font-size: 10px;
@@ -60,10 +60,10 @@
   padding: 9px 16px;
   width: 50px;
   height: 50px;
-  border: 1px solid $gray-60;
+  border: 1px solid var(--c8y-palette-gray-60);
   border-radius: 50%;
   background-color: transparent;
-  color: $gray-60;
+  color: var(--c8y-palette-gray-60);
   text-align: center;
   opacity: 0.5;
   transition: all 0.4s ease;
@@ -71,7 +71,7 @@
   &:hover,
   &:focus {
     border-color: transparent;
-    background-color: $blue-primary;
+    background-color: $brand-primary;
     color: white;
     opacity: 1;
     outline: none;
@@ -112,7 +112,7 @@
       margin-left: 0;
       padding: 5px 3px 3px;
       border-radius: 3px;
-      background: rgba($blue-primary, 0.8);
+      background: rgba($brand-primary, 0.8);
       color: white;
       content: "Copied!";
       font-size: 12px;
@@ -126,7 +126,7 @@
       height: 0;
       border-width: 5px 5px 5px 5px;
       border-style: solid;
-      border-color: rgba($blue-primary, 0.8) transparent transparent;
+      border-color: rgba($brand-primary, 0.8) transparent transparent;
       content: "";
     }
   }

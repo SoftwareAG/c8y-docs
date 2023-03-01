@@ -46,9 +46,9 @@ body {
       padding: 0;
       width: 34px;
       height: 34px;
-      border-color: $blue-primary;
+      border-color: $brand-primary;
       border-radius: 50%;
-      background-color: $blue-primary;
+      background-color: $brand-primary;
     }
   }
   .gsc-adBlock {
@@ -65,7 +65,7 @@ body {
     top: 2px;
     right: 40px;
     .gsst_a .gscb_a {
-      color: $gray-90;
+      color: var(--c8y-palette-gray-90);
     }
   }
 }

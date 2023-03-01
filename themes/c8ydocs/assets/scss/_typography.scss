@@ -101,8 +101,8 @@ blockquote {
   margin: 22px 0 44px;
   padding: 22px 22px;
   border-radius: 3px;
-  background-color: #f2f8fd;
-  color: $blue-20;
+  background-color: var(--c8y-palette-gray-90);
+  color: var(--c8y-brand-primary);
   font-size: 16px;
   p:last-child, ul:last-child, ol:last-child {
     margin-bottom: 0;
@@ -113,15 +113,15 @@ code{
   padding: 2px 4px;
   border-radius: 3px;
   font-size: 90%;
-  background-color: #ddd;
-  color: #282c34;
+  background-color: var(--c8y-code-background);
+  color: var(--c8y-code-color);;
 }
 
 kbd{
   padding: 2px 4px;
   border-radius: 3px;
-  background-color: #d8edf1;
-  color: #017de9;
+  background-color: var(--c8y-palette-high);
+  color:var(--c8y-palette-low);
   font-size: 90%;
 }
 
@@ -171,15 +171,15 @@ pre .hljs{
 
 hr{
   margin: $size-2 0;
-  border-top: 1px solid $gray-90;
+  border-top: 1px solid var(--c8y-root-component-border-color);
   border-bottom: 0;
 }
 
 a{
-  color: $blue-primary;
+  color: var(--c8y-link-color);
   text-decoration: none;
   &:hover{
     text-decoration: underline;
-    color: darken($blue-primary, 15%);
+    color: var(--c8y-link-color-hover);
   }
 }

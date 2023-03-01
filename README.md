@@ -94,7 +94,6 @@ headless: true # states that all content inside this directory is just a resourc
 ---
 ```
 
-&nbsp;
 3. Add a Markdown file for each block of content with the following front matter:
 
 ```yaml
@@ -183,4 +182,4 @@ In that case you will have to take care of cherry-picking manually and resolve t
 This is not going to influence the other release branches as long as they do not have conflicts.
 
 ---
-© Cumulocity GmbH  2022 + All rights reserved.
+© Cumulocity GmbH  2023 + All rights reserved.

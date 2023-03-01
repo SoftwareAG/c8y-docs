@@ -34,12 +34,12 @@
     }
   }
   .dropdown-toggle {
-    border: 2px solid $blue-primary;
+    border: 2px solid $brand-primary;
     padding: 6px 16px;
     font-size: .885rem;
     border-radius: 20px;
     font-weight: bold;
-    color: $blue-primary;
+    color: $brand-primary;
     position: relative;
     z-index: 1001;
     display: block;
@@ -59,14 +59,14 @@
       padding: 0;
       border: 0;
       width: auto;
-      color: $gray-40;
+      color: var(--c8y-palette-gray-40);
       font-size: .775rem;
     }
   }
   .show .dropdown-toggle {
     border-color: transparent;
     &.version {
-      color: $blue-primary;
+      color: $brand-primary;
     }
   }
   .dropdown-menu {
@@ -102,11 +102,11 @@
     background: rgba(0, 0, 0, .2);
   }
   a {
-    color: $gray-40;
+    color: var(--c8y-palette-gray-40);
   }
   a:hover {
     text-decoration: none;
-    color: $blue-primary;
+    color: $brand-primary;
   }
   a.collapse-btn {
     position: absolute;
@@ -149,7 +149,7 @@
   .list-group.nav {
     padding-bottom: .3rem;
     .active {
-      color: $blue-65;
+      color: $brand-primary;
     }
   }
 
@@ -157,7 +157,7 @@
     background-color: rgba(white, .35);
   }
   .active {
-    color: $blue-primary;
+    color: $brand-primary;
     font-weight: bold;
   }
 }

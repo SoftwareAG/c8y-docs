@@ -42,7 +42,7 @@ relativeURLs = true
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true
 
-  logo = "images/cumulocity-iot.svg"
+  logo = "images/logo-platform.svg"
 
   guidesRedirect = "https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html"
 

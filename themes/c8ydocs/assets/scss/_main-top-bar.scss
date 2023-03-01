@@ -4,11 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  left: 0;
-  top: 10px;
   transition: left 0.35s $ease;
-  z-index: 2000;
   letter-spacing: 0.05em;
   font-size: 11px;
   text-decoration: none;
@@ -19,7 +15,7 @@
     z-index: 2000;
     .dropdown-toggle.version {
       background-color: transparent;
-      color: #333;
+      color: $gray-text;
       box-shadow: none;
     }
   }
@@ -62,20 +58,22 @@
 
 .main-top-bar {
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   left: 0;
-  transition: left 0.35s $ease;
   right: 0;
   top: 0;
-  padding-top: 1rem;
-  padding-left: 5.3rem;
-  @media (min-width: $grid-breakpoint) {
-    left: $main-nav-width;
-    padding-left: 10rem;
+  display: flex;
+  background-color: var(--c8y-palette-high);
+  padding: 16px;
+  align-items: center;
+  box-shadow: var(--c8y-elevation-md);
+  .brand-logo{
+    max-height: 32px;
+    width: auto;
   }
+
   > .d-flex {
     align-items: center;
-    max-width: 1078px;
   }
 
   .nav {

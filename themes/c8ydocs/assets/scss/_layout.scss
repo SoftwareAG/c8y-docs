@@ -24,16 +24,19 @@ body{
   flex-flow: row wrap;
 }
 
-.flex-start{
+.m-r-auto{
   margin-right: auto !important;
 }
 
-.flex-end{
+.m-l-auto{
   margin-left: auto!important;
 }
 
-.align-center{
+.a-i-center{
   align-items: center;
+}
+.flex-grow{
+  flex-grow: 1;
 }
 
 .container{

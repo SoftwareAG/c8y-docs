@@ -4,33 +4,17 @@
   <span class="icon-bar"></span>
   <span>MENU</span>
 </button>
-<div class="dropdown version">
-  <a class="dropdown-toggle version"
-    type="button"
-    id="dropdownVersionButton"
 
-    data-toggle="dropdown"
-    aria-haspopup="true"
-    aria-expanded="false">
-    <span id="current-dropdown-version-toggle" class="text-truncate">Release 10.5.0</span> <span class="caret"></span>
-  </a>
-  <div class="dropdown-menu"
-    aria-labelledby="dropdownVersionButton">
-    <!-- <a href="#" class="dropdown-menu-item">10.4.6</a>
-    <a href="#" class="dropdown-menu-item">10.4.0</a> -->
+<header class="main-top-bar" >
+  <div class="brand-logo">
+    <a href="/">
+      <img src="{{ with .Site.Params.logo }}{{ . | absURL }}{{ end }}"
+        class="no-zoom"
+        alt="Cumulocity IoT">
+    </a>
   </div>
-</div>
-<nav class="main-top-bar" >
-  <div class="d-flex container">
-    <ul class="nav d-flex flex-start hidden-xs hidden-sm nav-left">
-      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
-      <li><a href="https://cumulocity.com/releasenotes/about/">Release notes</a></li>
-      <li><a href="https://www.cumulocity.com/api/">REST API</a></li>
-      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">AngularJS API</a></li>
-      <li><a href="https://techcommunity.softwareag.com/en_en/cumulocity-iot.html">TECHcommunity</a></li>
-      <li><a href="https://empower.softwareag.com/">Empower Portal</a></li>
-    </ul>
-    <ul class="nav flex-end nav-right">
+  <nav class="d-flex m-l-auto">
+    <ul class="m-l-auto nav flex-end nav-right">
       <li>
             <script>
               (function() {
@@ -46,6 +30,44 @@
         <gcse:searchbox></gcse:searchbox>
       </li>
     </ul>
+    <div class="dropdown version">
+      <a class="dropdown-toggle version"
+        type="button"
+        id="dropdownVersionButton"
+
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-version-toggle" class="text-truncate">Release 10.5.0</span> <span class="caret"></span>
+      </a>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownVersionButton">
+        <!-- <a href="#" class="dropdown-menu-item">10.4.6</a>
+        <a href="#" class="dropdown-menu-item">10.4.0</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-toggle btn-dot"
+        type="button"
+        id="resourcesLinks"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-label="Resources"
+      >
+        <i class="dlt-c8y-icon-ellipsis-v"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="resourcesLinks"
+      >
+        <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+        <li><a href="https://cumulocity.com/releasenotes/about/">Release notes</a></li>
+        <li><a href="https://www.cumulocity.com/api/">REST API</a></li>
+        <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">AngularJS API</a></li>
+      <li><a href="https://techcommunity.softwareag.com/en_en/cumulocity-iot.html">TECHcommunity</a></li>
+      <li><a href="https://empower.softwareag.com/">Empower Portal</a></li>
+    </ul>
   </div>
-</nav>
+  </nav>
+</header>
 <gcse:searchresults ></gcse:searchresults>

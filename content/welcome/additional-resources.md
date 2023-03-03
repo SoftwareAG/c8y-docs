@@ -2,6 +2,8 @@
 weight: 50
 title: Additional resources
 layout: bundle
+section: 
+  - getting_started
 aliases:
   - /about-doc/online-information
 ---

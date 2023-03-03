@@ -1,0 +1,14 @@
+
+{{ $currentSection := "" }}
+{{ with .Params.section }}
+  {{ $currentSection = index . 0 }}
+{{ end }}
+{{ $sections := .Site.Taxonomies.section }}
+{{ $sortedsections := sort $sections ".Page.Params.weight" }}
+{{ range $sortedsections }}
+{{ $pages := where .Pages "Type" "!=" "page" }}
+{{ $page := index $pages 0 }}
+<li><a class='{{if eq $currentSection .Page.Data.Term }} active {{ end}}'
+  href='{{$page.Permalink}}'><i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i> {{.Page.Title}}</a></li>
+{{ end }}
+  

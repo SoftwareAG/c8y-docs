@@ -2,6 +2,8 @@
 weight: 10
 title: Introduction
 layout: bundle
+section: 
+  - getting_started
 aliases:
   - /about-doc/intro-documentation
   - /users-guide/enterprise-edition/#tenant-sla-monitoring

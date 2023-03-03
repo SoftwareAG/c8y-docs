@@ -2,6 +2,8 @@
 weight: 20
 title: Get started using the UI
 layout: bundle
+section: 
+  - getting_started
 ---
 
 Welcome to the {{< product-c8y-iot >}} user documentation!

@@ -47,7 +47,7 @@
     <div class="dropdown">
       <button class="dropdown-toggle btn-dot"
         type="button"
-        id="resourcesLinks"
+        id="sectionLinks"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
@@ -55,15 +55,10 @@
       >
         <i class="dlt-c8y-icon-th icon-20"></i>
       </button>
-      <ul class="dropdown-menu dropdown-menu-right"
-        aria-labelledby="resourcesLinks"
+      <ul class="dropdown-menu dropdown-menu-grid dropdown-menu-right"
+        aria-labelledby="sectionLinks"
       >
-        <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
-        <li><a href="https://cumulocity.com/releasenotes/about/">Release notes</a></li>
-        <li><a href="https://www.cumulocity.com/api/">REST API</a></li>
-        <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">AngularJS API</a></li>
-        <li><a href="https://techcommunity.softwareag.com/en_en/cumulocity-iot.html">TECHcommunity</a></li>
-        <li><a href="https://empower.softwareag.com/">Empower Portal</a></li>
+       {{- partial "sections-selector.html" . -}}
       </ul>
     </div>
     <div class="dropdown">

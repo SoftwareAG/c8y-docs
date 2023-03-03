@@ -2,6 +2,8 @@
 weight: 30
 title: Welcome developers
 layout: bundle
+section: 
+  - getting_started
 ---
 
 Welcome to the {{< product-c8y-iot >}} developer documentation!

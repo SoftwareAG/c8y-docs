@@ -96,8 +96,8 @@ var main = (function ($) {
     });
 
     // Set current Guide on navigator guides dropdown
-    $('#current-dropdown-toggle').text($('.current-app').text());
-
+    $('#current-dropdown-toggle').html($('.current-app').html()).attr('title', $('.current-app').text());
+    console.log('current app: ', $('.current-app').html());
     // scroll to the top of the page
     $('.to-the-top').click(function(e) {
       e.preventDefault();

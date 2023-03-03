@@ -1,13 +1,20 @@
 {{ define "main" }}
-<div class="main-content">
-  <article class="page-section">
-    <header class="section-header">
-      <h1 >{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
-    </header>
-    <section class="container">
+<main>
+
+  <h1 >{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+      <section class="container">
       {{.Content}}
 
     </section>
-  </article>
-</div>
+{{ $sections := .Site.Taxonomies.section }}
+{{ $sortedsections := sort $sections ".Page.Params.weight" }}
+{{ range $sortedsections }}
+ {{ $pages := where .Pages "Type" "!=" "page" }}
+  {{ $page := index $pages 0 }}
+<li><a
+href='{{$page.Permalink}}'><i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i> {{.Page.Title}}</a></li>
+{{ end }}
+  
+
+</main>
 {{ end }}

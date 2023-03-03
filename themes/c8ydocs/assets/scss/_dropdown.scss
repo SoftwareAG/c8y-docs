@@ -202,21 +202,37 @@
   }
 }
 
-
-// Component alignment
-//
-// Reiterate per navbar.less and the modified component alignment there.
-
-// @media (min-width: $grid-breakpoint) {
-//   .navbar-right {
-//     .dropdown-menu {
-//       .dropdown-menu-right();
-//     }
-//     // Necessary for overrides of the default right aligned menu.
-//     // Will remove come v4 in all likelihood.
-//     .dropdown-menu-left {
-//       .dropdown-menu-left();
-//     }
-//   }
-// }
-
+.open>.dropdown-menu-grid,
+.show>.dropdown-menu-grid{
+ width: 320px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 80px));
+  grid-auto-rows: auto;
+  gap: 2px;
+  padding: var(--c8y-unit-base);
+  li{
+    display: block;
+    >a{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--c8y-font-size-small);
+      white-space: normal;
+      text-align: center;
+      padding: var(--c8y-unit-base);
+      box-shadow: none;
+      i{
+        font-size: 36px;
+      }
+      &:hover{
+        box-shadow: inset 0 0 0 1px var(--brand-primary,var(--c8y-brand-primary));
+        text-decoration: none;
+      }
+      &.active{
+          box-shadow: inset 0 0 0 2px var(--brand-primary,var(--c8y-brand-primary));
+          text-decoration: none;
+      }
+    }
+  }
+}

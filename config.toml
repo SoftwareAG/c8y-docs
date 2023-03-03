@@ -13,8 +13,10 @@ paginate = 12
 # googleAnalytics = "UA-xxxxxxxx-x"
 summaryLength = 30
 buildFuture = true
-
 relativeURLs = true
+
+[taxonomies]
+  sections = "section"
 
 [markup]
   [markup.goldmark]

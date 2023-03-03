@@ -5,6 +5,7 @@ html {
 body{
   background-color: $body-bg-color;
   position: relative;
+  padding-top: 64px;
   &.open{
     overflow-x: hidden;
   }

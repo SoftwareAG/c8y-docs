@@ -2,6 +2,8 @@
 title: Contacting product support
 layout: bundle
 weight: 40
+section: 
+  - getting_started
 aliases:
   - /about-doc/contacting-support
 ---

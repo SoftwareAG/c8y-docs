@@ -149,8 +149,8 @@ When creating these branches follow the next steps:
 - Add the file `properties.json`, adding the name and the long name for the release version, for example:
     ```
     {
-      "name":"10.5.0",
-      "longname": "Release 10.5.0 (GA)"
+      "name":"10.15.0",
+      "longname": "Release 10.15.0"
     }
     ```
 - Execute the [Jenkins job](https://jenkins.dev.c8y.io/view/C8Y-DOCS/job/Deploy-c8y-docs-by-branch/) `Deploy-c8y-docs-by-branch` by clicking **Build with Parameters** in the left side navigation.

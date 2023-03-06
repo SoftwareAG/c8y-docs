@@ -6,11 +6,11 @@ aliases:
   - /users-guide/overview/#user-settings
 ---
 
-Clicking the **User** button at the top right will open a menu which provides access to various actions or information.
+Clicking the **User** button at the top right opens the right drawer which provides access to various actions and information.
 
 <img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
-The **User** menu contains the following items:
+At the top you find the following items:
 
 <table>
 <colgroup>
@@ -36,15 +36,6 @@ The **User** menu contains the following items:
 <td style="text-align:left">Logout</td>
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
-<tr>
-<td style="text-align:left">Request support</td>
-<td style="text-align:left">Redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a>. </td>
-</tr>
-<tr>
-<td style="text-align:left">Activate support</td>
-<td style="text-align:left">Allows support users to access your account.<br>
-<br>
-Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
 <td style="text-align:left">Revoke tokens</td>
@@ -54,11 +45,29 @@ To revoke tokens, you must have ADMIN permission for the permission type "User m
 </td>
 </tr>
 <tr>
+<td style="text-align:left">Request support</td>
+<td style="text-align:left">Redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a>. </td>
+</tr>
+<tr>
+<td style="text-align:left">Activate support</td>
+<td style="text-align:left">Allows support users to access your account.<br>
+<br>
+Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
+<tr>
 <td style="text-align:left">Version information</td>
 <td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using (for example, 10.13.0.034) for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
 </tr>
 </tbody>
 </table>
+
+In the **Platform info** section, you find information on the infrastructure of your platform:
+
+- The ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.
+- Release version information for both the backend and the UI.
+
+Moreover you can click **Detailed info** to download more detailed platform information.
+
+The **Quick links** section provides links to the most common pages and processes in the platform while the **Documentation** section provides links to the most relevant guides.
 
 <a name="change-user-settings"></a>
 ### To change user settings

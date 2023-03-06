@@ -575,7 +575,7 @@ Create a measurement with multiple fragments and series.
 |:-------|:-------|:-------|:-------|:---|
 |1|type|YES|String| &nbsp;|
 |2|time|NO|Date| &nbsp;|
-|3|List of 4 values per ???|YES|(n/a)| &nbsp;|
+|3|List of 4 values per fragment-series combination|YES|(n/a)| &nbsp;|
 |3.1|fragment|YES|String| &nbsp;|
 |3.2|series|YES|String| &nbsp;|
 |3.3|value|YES|Number| &nbsp;|
@@ -584,7 +584,7 @@ Create a measurement with multiple fragments and series.
 **Example**
 
 ```text
-201,c8y_DeviceStatisticsDaily,2022-03-19T12:03:27.845Z,c8y_DeviceStatistics,755379,2026,count,c8y_DeviceStatistics,409656,122,count
+201,KamstrupA220Reading,2022-03-19T12:03:27.845Z,c8y_SinglePhaseEnergyMeasurement,A+:1,1234,kWh,c8y_SinglePhaseEnergyMeasurement,A-:1,2345,kWh,c8y_ThreePhaseEnergyMeasurement,A+:1,123,kWh,c8y_ThreePhaseEnergyMeasurement,A+:2,234,kWh,c8y_ThreePhaseEnergyMeasurement,A+:3,345,kWh
 ```
 
 <a name="210"></a>

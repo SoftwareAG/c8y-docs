@@ -36,14 +36,6 @@ At the top you find the following items:
 <td style="text-align:left">Logout</td>
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
-</tr>
-<tr>
-<td style="text-align:left">Revoke tokens</td>
-<td style="text-align:left">Revoking tokens logs out all users currently logged in via "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.<br>
-<br>
-To revoke tokens, you must have ADMIN permission for the permission type "User management".  
-</td>
-</tr>
 <tr>
 <td style="text-align:left">Request support</td>
 <td style="text-align:left">Redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a>. </td>

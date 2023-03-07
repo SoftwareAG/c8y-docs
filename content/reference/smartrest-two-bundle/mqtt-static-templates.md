@@ -52,6 +52,7 @@ If a parameter is in square brackets, it is optional.
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
++ <a href="#201">201,type,[time],fragment1,series1,value1,[unit1],...</a>
 + <a href="#210">210,rssi,ber[,time]</a>
 + <a href="#211">211,temperature[,time]</a>
 + <a href="#212">212,battery[,time]</a>
@@ -563,6 +564,27 @@ Create a measurement with a given fragment and series.
 
 ```text
 200,c8y_Temperature,T,25
+```
+
+<a name="201"></a>
+##### Create a custom measurement with multiple fragments and series (201)
+
+Create a measurement with multiple fragments and series.
+
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String| &nbsp;|
+|2|time|NO|Date| &nbsp;|
+|3|List of 4 values per fragment-series combination|YES|(n/a)| &nbsp;|
+|3.1|fragment|YES|String| &nbsp;|
+|3.2|series|YES|String| &nbsp;|
+|3.3|value|YES|Number| &nbsp;|
+|3.4|unit|NO|String| &nbsp;|
+
+**Example**
+
+```text
+201,KamstrupA220Reading,2022-03-19T12:03:27.845Z,c8y_SinglePhaseEnergyMeasurement,A+:1,1234,kWh,c8y_SinglePhaseEnergyMeasurement,A-:1,2345,kWh,c8y_ThreePhaseEnergyMeasurement,A+:1,123,kWh,c8y_ThreePhaseEnergyMeasurement,A+:2,234,kWh,c8y_ThreePhaseEnergyMeasurement,A+:3,345,kWh
 ```
 
 <a name="210"></a>

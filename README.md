@@ -145,8 +145,8 @@ For that, you must create a release branch for every public release, for example
 When creating these branches follow the next steps:
 
 - Create the branch following the same pattern: `release/r[version number]`
-- Edit the `config.toml` file and append the version number to the base url, for example: `baseURL = "https://cumulocity.com/guides/10.15.0"`
-- Add the file `properties.json`, adding the name and the long name for the release version, for example:
+- Edit the *config.toml* file and append the version number to the base url, for example: `baseURL = "https://cumulocity.com/guides/10.15.0"`
+- Add the file *properties.json*, adding the name and the long name for the release version, for example:
     ```
     {
       "name":"10.15.0",
@@ -173,6 +173,7 @@ To cherry-pick changes from a PR that was merged to the develop branch:
 Note that members of the documentation team usually do this for PRs they review.
 You need WRITE access to the release branch to do this.
 If you don't have WRITE access or are unsure whether or not you do, the documentation team can and will do the cherry-picking for you.
+To let them know what the target release versions for the change are, use GitHub labels, for example "10.17.0" for release 10.17.0.
 
 ### Automatic cherry-picking and labels
 

@@ -1,11 +1,14 @@
 .toc{
+  display: none;
   margin: 0;
   padding: 2rem 0 0;
   font-size: 12px;
+  @media (min-width: $grid-breakpoint) {
+    display: block;
+  }
   [data-toc]{
-    opacity: .5;
+    display: none;
     &.current{
-      opacity: 1;
       display: block;
     }
   }

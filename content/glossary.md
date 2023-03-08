@@ -1,12 +1,12 @@
 ---
-weight: 80
 title: Glossary
 icon: "c8y-icon c8y-icon-book"
 bundle: "glossary"
 type: root
-layout: bundle
+layout: root
 section: 
   - getting_started
+weight: 20
 ---
 
 This glossary lists a variety of technical terms and concepts used in the {{< product-c8y-iot >}} products and documentation and provides explanations for its usage in the context of {{< product-c8y-iot >}}.

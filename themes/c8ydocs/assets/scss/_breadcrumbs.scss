@@ -1,0 +1,16 @@
+.breadcrumbs{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: var(--c8y-font-size-small);
+  background-color:  var(--c8y-body-background-color);
+  span{
+    display: flex;
+    align-items: center;
+    &:last-child{
+      i{
+        display: none;
+      }
+    }
+  }
+}

@@ -123,9 +123,10 @@ var main = (function ($) {
     });
 
     // set Table of contents
-    // var toc = document.getElementById('toc');
     buildToc();
 
+    // set Breadcrumbs
+    updateBreadcrumbs();
 
     // set zomm in every image without '.nozoom' class
     $('img:not(.no-zoom)').each(function(){
@@ -177,7 +178,7 @@ var main = (function ($) {
 
 main.init();
 
-
+// Builds the TOC by retrieving the H3 in the page
 function buildToc() {
   let h3s = document.getElementsByTagName('h3');
   // console.log('h3s length: ' + h3s.length);
@@ -252,12 +253,21 @@ function buildToc() {
     });
 
   });
+  // Hide and show the Toc sections according the current section
   window.addEventListener('scroll', () => {
     let activeNav = document.querySelectorAll('.nav-sections a.active');
-    let activeSec = document.querySelectorAll('.toc [data-toc]');
+    let tocSections = document.querySelectorAll('.toc [data-toc]');
+    let activeSec;
     activeNav.forEach(sec => {
-      activeSec.forEach(toc => {
-        if (toc.getAttribute('data-toc') === sec.getAttribute('href').substring(1)) {
+      let secPath = sec.getAttribute('href').split('/');
+      if (secPath[0].substring(0,4) === 'http') {
+        activeSec = secPath[secPath.length - 2];
+      } else {
+        activeSec = sec.getAttribute('href').substring(1);
+      }
+
+      tocSections.forEach(toc => {
+        if (toc.getAttribute('data-toc') === activeSec) {
           toc.classList.add('current');
         } else {
           toc.classList.remove('current');
@@ -266,3 +276,13 @@ function buildToc() {
     });
   });
 } 
+
+
+// Adds the section to the breadcrumbs
+
+function updateBreadcrumbs() {
+  const breadcrumb = $('#breadcrumbs span:nth-child(1)');
+  const section = $('#sections-selection').find('.active');
+  const breadsection = '<span class="added"><a href="' + section.attr('href') + '">' + section.text() + '</a><i class="dlt-c8y-icon-forward"></i></span>';
+  breadcrumb.after(breadsection);
+}

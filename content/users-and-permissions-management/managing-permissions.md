@@ -1,5 +1,5 @@
 ---
-weight: 13
+weight: 30
 title: Managing permissions
 layout: bundle
 section:

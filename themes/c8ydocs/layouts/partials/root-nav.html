@@ -6,8 +6,13 @@
 {{end}}
 <nav class="main-nav navbar">
   <header class="nav-header">
-    {{$currentSection}}
-    {{.Page.Params.icon}}
+    {{ $term := .Site.Taxonomies.section.Get $currentSection }}
+    {{ with $term }}
+      <div class="d-flex">
+        <i class="c8y-icon-duocolor {{ .Page.Params.icon }}"></i>
+        <strong>{{ .Page.Title }}</strong>
+      </div>
+    {{ end }}
     <div class="dropdown">
       <button class="dropdown-toggle"
         type="button"

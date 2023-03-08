@@ -20,7 +20,7 @@
 .main-content {
   position: relative;
   z-index: 30;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
   transition: transform .3s $ease;
   @media (max-width: $grid-breakpoint - 1) {
     .open & {
@@ -90,7 +90,13 @@
     grid-template-columns: minmax(320px, 9fr) minmax(0, 3fr);
     gap: 2rem;
     margin-left: 240px;
-    padding: 2rem;
+    padding: 0 2rem 2rem;
+    >.breadcrumbs{
+      grid-column: 1 / -1;
+      padding: 1rem 0;
+      position: sticky;
+      top: 64px;
+    }
   }
   .page-section{
     padding-top: 64px;

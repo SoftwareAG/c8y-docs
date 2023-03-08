@@ -12,7 +12,7 @@ Once you have defined an offloading configuration and saved it, you can start th
 
 ##### Starting periodic offloading
 
-Click the **Active**/**Inactive** toggle in an offloading configuration to activate the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of {{< product-c8y-iot >}} DataHub will then periodically trigger the pipeline.
+Click the **Active** toggle in an offloading configuration to activate the periodic execution of the offloading pipeline, if it was not already activated when configuring the pipeline. The scheduler component of {{< product-c8y-iot >}} DataHub will then periodically trigger the pipeline.
 
 The initial offload denotes the first execution of an offloading pipeline. While subsequent executions only offload data increments, the initial offload moves all collection data from the Operational Store of {{< product-c8y-iot >}} to the data lake. Thus, the initial offload may need to deal with vast amounts of data. For this reason, the initial offload does not process one big data set, but instead partitions the data into batches and processes the batches. If the initial offload fails, for example due to a data lake outage, the next offload checks which batches were already completed and continues with those not yet completed.
 
@@ -24,28 +24,19 @@ A previous offloading pipeline may have already written into the same target tab
 
 ##### Scheduling settings
 
-The scheduler is configured to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on the Operational Store of {{< product-c8y-iot >}}, that is, to avoid that all offloading jobs from different tenants run at the same time. The schedule settings cannot be modified.
+The scheduler is configured per default to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on the Operational Store of {{< product-c8y-iot >}}, that is, to avoid that all offloading jobs from different tenants run at the same time.
 
 ##### Stopping periodic offloading
 
-Use the **Active**/**Inactive** toggle in an offloading configuration to stop the periodic offloading. Then the scheduler stops scheduling new jobs; active jobs will complete.
-
-##### Viewing the execution status
-
-Each offloading configuration shows the execution status:
-
-* **Last execution** is empty if the offloading has not been executed yet. If the offloading has been executed, **Last execution** shows the execution time and whether the execution was successful or not, indicated by a success or failure icon on the right next to the time. An additional icon on the left shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon.
-* **Next execution** shows the point in time for which the next execution is planned. It is only shown if the previous execution was a scheduled one.
+Use the **Active** toggle in an offloading configuration to stop the periodic offloading. Then the scheduler stops scheduling new jobs; currently running jobs will complete.
 
 #### Managing an offloading pipeline
 
 In the context menu of each offloading pipeline, you will find actions for managing and monitoring the pipeline.
 
-<img src="/images/datahub-guide/datahub-offloading-context-menu.png" alt="Context menu of an offloading configuration" style="max-width: 40%">
-
 ##### Editing/showing an offloading pipeline
 
-Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in the future.
+Click **Edit** to edit the current settings. Only inactive pipelines can be edited. Note that you cannot change the {{< product-c8y-iot >}} base collection selected for this pipeline. For the measurements collection, the target table layout cannot be changed as well. Additional filter predicates and additional result columns can be changed. Note that these changes are not applied to already exported data. A change to the offloading pipeline only affects data to be exported in upcoming offloading runs.
 
 For active pipelines, click **Show** to browse through the configuration. You cannot edit the settings.
 
@@ -86,9 +77,7 @@ You must not modify the contents of the export file as this might corrupt the im
 
 The action bar provides an **Import** button, which imports offloading configurations from a file with previously exported configurations.
 
-Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the description, and the internal UUID of the original configuration. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported and therefore the checkbox is not shown for such an entry. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
-
-To change the import file, click the delete icon next to the file name and select a new file to import the configurations from.
+Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the internal UUID of the original configuration, the target table name, and the description. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
 
 To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 

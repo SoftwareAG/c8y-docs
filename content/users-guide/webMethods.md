@@ -11,12 +11,12 @@ aliases:
 
 webMethods.io Integration is {{< company-sag >}}'s cloud based integration solution. It enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.
 
-The complete webMethods.io Integration documentation is available at [https://docs.webmethods.io/](https://docs.webmethods.io/).
+The complete webMethods.io Integration documentation is available at [docs.webmethods.io](https://docs.webmethods.io/).
 
 ### Getting started
 
 {{< c8y-admon-info >}}
-If your tenant has been created outside of {{< sag-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-c8y-iot >}} with other applications, but you cannot use the app switcher and single sign-on login.
+If your tenant has been created outside of {{< sag-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-c8y-iot >}} with other applications, but you cannot use the application switcher and single sign-on login.
 {{< /c8y-admon-info >}}
 
 To subscribe to webMethods.io Integration, perform the following steps:
@@ -29,7 +29,6 @@ To subscribe to webMethods.io Integration, perform the following steps:
 
 {{< c8y-admon-info >}}
 If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **{{< sag-cloud >}}** portal where you can subscribe for a free trial.
-<br><br>![webMethods.io App Switcher My Cloud](/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)
 {{< /c8y-admon-info >}}
 
 ### Examples
@@ -44,4 +43,4 @@ WebMethods.io also provides pre-configured workflows which are called "recipes".
 
 ![webMethods.io Example Recipe](/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
 
-More examples and technical guides can be found on the [{{< sag-dev-community >}} website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html).
+More examples and technical guides can be found on the [{{< sag-dev-community >}} website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html). In particular, for more detailed information about the {{< product-c8y-iot >}} triggers and connectors in webMethods.io refer to [these articles]({{< link-sag-tech-forum >}}tag/webmethods-c8y-connector).

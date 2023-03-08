@@ -16,10 +16,10 @@ Verify that you have a recommended Java version installed together with Maven 3 
 
 ```shell
 $ mvn -v
-Apache Maven 3.6.0
-Maven home: /Library/Maven/apache-maven-3.6.0
-Java version: 13.0.1, vendor: Oracle Corporation
-Java home (runtime): /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home
+Apache Maven 3.8.5
+Maven home: /Library/Maven/apache-maven-3.8.5
+Java version: 17.0.6, vendor: Oracle Corporation
+Java home (runtime): /Library/Java/JavaVirtualMachines/jdk-17.0.6.jdk/Contents/Home
 OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 ```
 
@@ -64,7 +64,7 @@ Server: Docker Engine - Community
 You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
 {{< c8y-admon-important >}}
-This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 13, Maven 3.6.0, Docker 20.10.14; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
+This microservice example has been tested under macOS, Ubuntu and Windows 10 with Java 17, Maven 3.8.5, Docker 20.10.14; latest version of IntelliJ IDEA as IDE. Other tools or Java versions may require different configurations.
 {{< /c8y-admon-important >}}
 
 #### Create a Maven project
@@ -79,22 +79,20 @@ This will create a folder *hello-microservice-java* in the current directory wit
 
 #### Specify the properties
 
-You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 1.8. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
+You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 17. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
 
 ```xml
 <properties>
-    <java.version>13</java.version>
+    <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <spring-boot-dependencies.version>1.5.17.RELEASE</spring-boot-dependencies.version>
+    <spring-boot-dependencies.version>2.5.14</spring-boot-dependencies.version>
 </properties>
 ```
 
 #### Add the microservice library
 
 You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
-
-![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
 Alternatively, you can retrieve the backend version with a GET request to <kbd><URL>/tenant/system/options/system/version</kbd>.
 
@@ -103,17 +101,17 @@ The response looks like this:
 ```json
 {
     "category": "system",
-    "value": "1004.6.12",
+    "value": "1016.0.117",
     "key": "version"
 }
 ```
 
-See also [Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
+See also [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
 ```xml
-    <c8y.version>1004.6.12</c8y.version>
+    <c8y.version>1016.0.117</c8y.version>
     <microservice.name>hello-microservice-java</microservice.name>
 ```
 
@@ -130,13 +128,13 @@ Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elemen
     <repository>
         <id>cumulocity</id>
         <layout>default</layout>
-        <url>http://download.cumulocity.com/maven/repository</url>
+        <url>https://download.cumulocity.com/maven/repository</url>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
         <id>public</id>
-        <url>http://download.cumulocity.com/maven/repository</url>
+        <url>https://download.cumulocity.com/maven/repository</url>
     </pluginRepository>
 </pluginRepositories>
 ```
@@ -311,11 +309,7 @@ In the Administration application, navigate to **Ecosystem** > **Microservices**
 
 Upload the ZIP file for your microservice application and click **Subscribe** to subscribe the microservice to your tenant.
 
-![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
-
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
-
-![Deployed microservice](/images/microservices-sdk/admin-microservice-deployed.png)
 
 #### Test the deployed microservice
 
@@ -328,7 +322,7 @@ https://<yourTenantDomain>/service/hello-microservice-java/health
 You can also use third-party applications or commands to make a GET request to your microservice endpoint. To do so, you need:
 
 * A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
-* An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
+* A basic authorization header `"Authorization: Basic <Base64(<tenantID>/<username>:<password>)>"`.
 
 For instance, if your tenant ID, username and password are **t0071234**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
 
@@ -337,10 +331,16 @@ $ echo -n t0071234/testuser:secret123 | base64
 dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
 ```
 
-and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`. Employing the cURL command you can test your microservice as follows:
+and your authorization header would look like `Authorization: Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz`. Employing the cURL command you can test your microservice as follows:
 
 ```shell
 $ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
+```
+
+Most tools should already support the {{< product-c8y-iot >}} Authorization header out of the box. Simply use `<tenantId>/<username>` as username and `<password>` as password. In modern versions, for example, the above cURL command can also look like below, and the header will be generated automatically:
+
+```shell
+$ curl --user "<TENANTID>/<USERNAME>:<PASSWORD>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
 ```
 
 <a name="run-locally"></a>
@@ -446,7 +446,13 @@ The response looks like this:
 
 #### Run the Docker container
 
-The Docker image was built and added to the local Docker repository during the [Maven build](#build-the-microservice-application). You can list all the Docker images available with the following command:
+The Docker image was built using your local Docker repository during the [Maven build](#build-the-microservice-application). **Note, that by default the image is deleted to keep your registry clean during development**. You can change this by adding the property `microservice.package.deleteImage=false` to the maven command or *pom.xml*.
+
+```shell
+$ mvn clean install -Dmicroservice.package.deleteImage=false
+```
+
+You can list all the Docker images available with the following command:
 
 ```shell
 $ docker images
@@ -481,19 +487,17 @@ If your Docker image has run successfully, you shall see the output on the conso
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v1.5.7.RELEASE)
+ :: Spring Boot ::        (v2.5.14)
 
-2019-10-21 15:53:07.510  INFO 7 --- [main] c8y.example.App                          : Starting App on dff01acae6d8 with PID 7 (/data/hello-microservice-java.jar started by root in /)
+2022-10-21 15:53:07.510  INFO 7 --- [main] c8y.example.App                          : Starting App on dff01acae6d8 with PID 7 (/data/hello-microservice-java.jar started by root in /)
 ...
-2019-10-21 15:53:17.583  INFO 7 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
-2019-10-21 15:53:17.598  INFO 7 --- [main] c8y.example.App                          : Started App in 11.32 seconds (JVM running for 12.192)
+2022-10-21 15:53:17.583  INFO 7 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
+2022-10-21 15:53:17.598  INFO 7 --- [main] c8y.example.App                          : Started App in 11.32 seconds (JVM running for 12.192)
 ```
 
 #### Subscribe to the microservice
 
 In the Administration application, navigate to **Ecosystem** > **Microservices**. Locate your microservice application and click it to open its details. On the top right, click **Subscribe**.
-
-![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 
 At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 

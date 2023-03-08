@@ -14,13 +14,18 @@ The network configuration blue screen does not appear post installation. After t
     {{< /c8y-admon-info >}}
 
 2. Configure the network for your Edge appliance, see the sample screenshot.
-  <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+    <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
+    
+    {{< c8y-admon-important >}}
 
-  > **Important:** While configuring the network on VMware based hypervisors, do not us the IP addresses:
-  >
-  > - X.X.X.1 (used by VMnet8 network adapter on host)
-  > -  X.X.X.2 (used by VMnet8 network adapter's gateway)
-  > - X.X.X.254 (used by VMnet8 network adapter's DHCP server)
+While configuring the network on VMware based hypervisors, do not us the IP addresses:
+
+- X.X.X.1 (used by VMnet8 network adapter on host)
+- X.X.X.2 (used by VMnet8 network adapter's gateway)
+
+- X.X.X.254 (used by VMnet8 network adapter's DHCP server)
+
+{{< /c8y-admon-important >}}
 
 3. Press **Enter** to save the network configuration.
 <img src="/images/edge/edge-network-configurator-2.png" name="Network Configurator" style="width:75%;"/>
@@ -43,19 +48,19 @@ Do not use the root credentials to perform any task. The root credentials must b
 
 8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
 
-9. Provide a fully qualified domain name below **Register domain**.
+9. Provide a fully qualified domain name below **Domain name**.
 
    For example, "myown.iot.com". Here, you must have the {{< product-c8y-iot >}} Edge license for the domain name **iot.com** or **myown.iot.com**.
 
    The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
-10. Provide the {{< product-c8y-iot >}} Edge license file associated with your domain name below **Product licence**.
+10. Provide the {{< product-c8y-iot >}} Edge license file associated with your domain name below **Licence file**.
 
 11. Provide the SSL certificate file and the SSL certificate key file.
 
     If you do not have an SSL certificate, select **Generate self-signed certificate** to generate one.
 
-12. Click **Finish Installation**.
+12. Click **Install**.
 
 During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears.
 

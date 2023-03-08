@@ -55,9 +55,9 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-1c-4g</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-250mc-1g</a></td>
 <td style="text-align:left">Full Apama microservice. Runtime for Analytics Builder, EPL Apps, and smart rules</td>
-<td style="text-align:left">apama-ctrl-1c-4g</td>
+<td style="text-align:left">apama-ctrl-250mc-1g</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
@@ -69,9 +69,9 @@ Below you find a list of all microservices which are by default subscribed in a 
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrules</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrulesmt</a></td>
 <td style="text-align:left">Restricted version of the Apama microservice. Runtime for smart rules only, no Analytics Builder models or EPL apps available</td>
-<td style="text-align:left">apama-ctrl-smartrules</td>
+<td style="text-align:left">apama-ctrl-smartrulesmt</td>
 <td style="text-align:left">Only available for self-hosted installations</td>
 </tr>
 
@@ -121,7 +121,7 @@ All applications listed here are of the type "Microservice".
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
 {{< c8y-admon-important >}}
-The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package.
+The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package. You can provide the name of the microservice in its manifest file. If no name is provided in the file, the platform will derive it from the ZIP file name by removing the recognized version suffix. In any case the length of the resulting name must not exceed 23 characters.
 {{< /c8y-admon-important >}}
 
 <a name="microservice-properties"></a>
@@ -153,7 +153,7 @@ In the **Properties** tab, each microservice will show the following information
 <tr>
 <td style="text-align:left">Name</td>
 <td style="text-align:left">Application name; will be shown as title of the microservice application in the top bar</td>
-<td style="text-align:left">Automatically created, based on the ZIP file name</td>
+<td style="text-align:left">Automatically inferred from the ZIP file name (recognized version number is dropped), unless provided in the microservice's manifest file</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
@@ -179,15 +179,11 @@ Below, you will additionally find information on the microservice version, as we
 
 At the top right of the **Properties** tab, you find a toggle to subscribe to or unsubcribe from a microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
-
 Changing the subscription is only possible for custom microservices, that is microservices being owned by you.
 
 ### Microservice permissions
 
 In the **Permissions** tab you can view the permissions required for the respective microservice, and the roles provided for it.
-
-<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
 
 ### Monitoring microservices
 
@@ -234,8 +230,6 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 
 To view logs, open the **Logs** tab of the respective microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
-
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 
 {{< c8y-admon-info >}}
@@ -250,9 +244,9 @@ The time entered here may differ from the server time due to different time zone
 
 At the top right, additional functionality is provided:
 
-* **Download** - To download the log data for a specified time range.
-* **Dark theme** - To turn dark theme on or off.
-* **Auto refresh** - To activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
+* **Download** - to download the log data for a specified time range.
+* **Dark theme** - to turn dark theme on or off.
+* **Auto refresh** - to activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
 
 Initially, the **Logs** tab shows the latest logs of the microservice instance.
 

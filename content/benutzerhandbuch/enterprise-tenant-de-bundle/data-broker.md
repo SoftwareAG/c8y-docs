@@ -8,17 +8,23 @@ weight: 80
 
 Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgende Daten teilen:
 
-- Geräte (und Objekte im Allgemeinen),
-- Ereignisse,
-- Alarme,
-- Messwerte,
-- Operationen.
+- Geräte (und Objekte im Allgemeinen)
+- Ereignisse
+- Alarme
+- Messwerte
+- Operationen
+
+{{< c8y-admon-req title="Anforderungen" >}}
+Um diese Funktion verwenden zu können, muss Ihr Mandant die Anwendung "feature-broker" abonniert haben.
+{{< /c8y-admon-req >}}
 
 Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
->**Wichtig:** Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
+{{< c8y-admon-important title="Wichtig" >}}
+Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
+{{< /c8y-admon-important >}}
 
 Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
@@ -49,7 +55,9 @@ Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
 Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten zu aktivieren bzw. deaktivieren. Werden Daten weitergeleitet, steht der Umschalter auf "Aktiv". Werden keine Daten weitergeleitet, steht der Umschalter auf "Gesperrt" oder "Ausstehend". "Gesperrt" bedeutet, dass Sie das Weiterleiten deaktiviert haben. "Ausstehend" bedeutet, dass der Zielmandant das Weiterleiten deaktiviert hat.
 
-> **Info:** Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konnektoren gesperrt.
+{{< c8y-admon-info >}}
+Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konnektoren gesperrt.
+{{< /c8y-admon-info >}}
 
 <a name="data-broker-connector-edit"></a>
 #### So fügen Sie einen Datenkonnektor hinzu
@@ -104,8 +112,7 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 
 5. Klicken Sie auf **Speichern**, um die Konfiguration zu speichern.
 
->**Warnung zur Verwendung von "Alle Objekte"**
-<br><br>
+{{< c8y-admon-important title="Wichtig" >}}
 Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
 <br><br>
 Wird sie gewählt, synchronisiert {{< product-c8y-iot >}} alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
@@ -113,13 +120,15 @@ Wird sie gewählt, synchronisiert {{< product-c8y-iot >}} alle Arten von Objekte
 Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
 <br><br>
 Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und alle Objekte synchronisieren, erstellt Data Broker ein Smart-Rule-Objekt auf dem Zielmandanten. Die Regel selbst wird nicht kopiert, da eine synchronisierte Smart Rule dieselbe Aktion auf demselben Gerät für dieselbe Konfiguration ausführen würde. Dadurch würden bei einem Alarm doppelte E-Mails für die jeweiligen Empfänger erstellt werden.
+{{< /c8y-admon-important >}}
 
-Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
+
+Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
 
 Wenn der Datentyp Operation in Filtern ausgewählt ist, werden die Operationen, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Operationen zu, die die folgenden Bedingungen erfüllen:
 
-* das Gerät der Operation selbst stammt aus weitergeleiteten Daten,
-* die Operation entspricht anderen Filterkriterien.
+* Das Gerät der Operation selbst stammt aus weitergeleiteten Daten.
+* Die Operation entspricht anderen Filterkriterien.
 
 Aktualisierungen des Operationsstatus vom Ursprungsmandanten werden an den Zielmandanten weitergeleitet.
 
@@ -133,9 +142,6 @@ Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen
 * **Für aktualisierte Operationen**: status
 
 Nach dem Speichern der Konfiguration wird ein Sicherheitscode unter der Konfiguration angezeigt. Dieser Sicherheitscode verhindert unbeabsichtigtes Weiterleiten von Daten. Sie müssen diesen Sicherheitscode getrennt einem Benutzer mit Administrationsrechten für den Zielmandanten mitteilen. Durch Klicken auf das Kopieren-Symbol neben dem Sicherheitscode können Sie diesen in Ihre Zwischenablage kopieren.
-
-![Security code](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-security-code.png)
-
 
 #### So bearbeiten Sie einen Datenkonnektor
 
@@ -168,8 +174,6 @@ Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Managem
 Auf der Seite **Datenabonnements** können Sie bestehende Datenabonnements verwalten und neue anlegen.
 
 Klicken Sie auf **Datenabonnements**, um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
-
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-subscriptions.png" alt="Data subscriptions">
 
 Für jedes Abonnement wird der Name, der Zielmandant und der Status (aktiviert oder deaktiviert) auf einer Karte bereitgestellt.
 

@@ -34,7 +34,7 @@ The following is a list of the alarms. The information further down below explai
 
 - [Change in tenant options and restart of Apama-ctrl](#tenant_option_change)
 - [Safe mode on startup](#apama_safe_mode)
-- [Deactivating models in Apama Starter](#apama_ctrl_starter)
+- [Deactivating models in the Apama-ctrl-starter microservice](#apama_ctrl_starter)
 - [High memory usage](#apama_highmemoryusage)
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
@@ -44,8 +44,8 @@ The following is a list of the alarms. The information further down below explai
 - [Smart rule configuration failed](#smartrule_configuration_error)
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
-- [The correlator queue is full](#application_queue_full)
-- [The CEP queue is full](#cep_queue_full) (this alarm is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl)
+- [Performance alarms](#performance_alarms)
+- [Parent tenant not subscribed](#parent_tenant_not_subscribed)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -56,13 +56,13 @@ The alarm texts for the alarms below may undergo minor changes in the future.
 <a name="tenant_option_change"></a>
 #### Change in tenant options and restart of Apama-ctrl
 
-This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 - Alarm type: `tenant_option_change`
-- Alarm text: Apama detected changes in tenant option. Apama will restart in order to use it.
+- Alarm text: Detected changes in tenant option. Apama-ctrl will restart in order to use it.
 - Alarm severity: MAJOR
 
-Analytics Builder allows you to configure its settings by changing the tenant options, using key names such as `numWorkerThreads` or `status_device_name`. For example, if you want to process things in parallel, you can set `numWorkerThreads` to 3 by sending a REST request to {{< product-c8y-iot >}}, which will update the tenant option. Such a change automatically restarts the Apama-ctrl microservice. To notify the users about the restart, Apama-ctrl raises an alarm, saying that Apama has detected a change in a tenant option and will restart in order to use it.
+Analytics Builder allows you to configure its settings by changing the tenant options, using key names such as `numWorkerThreads` or `status_device_name`. For example, if you want to process things in parallel, you can set `numWorkerThreads` to 3 by sending a REST request to {{< product-c8y-iot >}}, which will update the tenant option. Such a change automatically restarts the Apama-ctrl microservice. To notify the users about the restart, Apama-ctrl raises an alarm, saying that changes have been detected in a tenant option and that Apama-ctrl will restart in order to use it.
 
 Once you see this alarm, you can be sure that your change is effective.
 
@@ -72,10 +72,10 @@ Once you see this alarm, you can be sure that your change is effective.
 This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 
 - Alarm type: `apama_safe_mode`
-- Alarm text: Apama appears to be repeatedly restarting. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
+- Alarm text: Apama-ctrl appears to be repeatedly restarting. As a precaution, user-provided EPL, analytic models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-Apama detects if it has been repeatedly restarting. If it looks like this has been caused by any kind of user asset (EPL, analytic models, extensions), Apama disables them all as a precaution. Potential causes are, for example, an EPL app that consumes more memory than is available or an extension containing bugs.
+Apama-ctrl detects if it has been repeatedly restarting and if user assets (EPL apps, analytic models, extensions) have been modified recently. Apama-ctrl disables all user assets as a precaution. Potential causes are, for example, an EPL app that consumes more memory than is available or an extension containing bugs.
 
 You can check the mode of the microservice (either normal or safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of EPL Apps 10.5.7 and Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 
@@ -94,39 +94,39 @@ To diagnose the cause of an unexpected restart, you can try the following:
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 
 <a name="apama_ctrl_starter"></a>
-#### Deactivating models in Apama Starter
+#### Deactivating models in the Apama-ctrl-starter microservice
 
-This alarm is raised when Apama-ctrl switches from the fully capable microservice to Apama Starter with more than 3 active models.
+This alarm is raised when Apama-ctrl switches from the fully capable microservice to the Apama-ctrl-starter microservice with more than 3 active models.
 
 - Alarm type: `apama_ctrl_starter`
-- Alarm text: The following models were de-activated as Apama Starter is restricted to 3 active models: (&lt;models&gt;).
+- Alarm text: The following models were de-activated as Analytics Builder is restricted to &lt;activate limit&gt; active models: (&lt;models&gt;).
 - Alarm severity: MINOR
 
-In Apama Starter, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama Starter. Since Apama Starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
+With the Apama-ctrl-starter microservice, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama-ctrl-starter. Since Apama-ctrl-starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
 
 <a name="apama_highmemoryusage"></a>
 #### High memory usage
 
-This alarm is raised whenever the correlator consumes 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
+This alarm is raised whenever the Apama-ctrl microservice consumes 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
 
 There are 3 variants of this alarm, depending on the time and count restrictions of the generated diagnostics overview ZIP file.
 
 First variant:
 
 - Alarm type: `apama_highmemoryusage`
-- Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Diagnostics file is located at &lt;URL-to-ZIP-file&gt; You can also download the file by navigating to Administration > Management > Files Repository
+- Alarm text: Streaming Analytics is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Diagnostics file is located at &lt;URL-to-ZIP-file&gt; You can also download the file by navigating to Administration > Management > Files Repository
 - Alarm severity: WARNING
 
 Second variant:
 
 - Alarm type: `apama_highmemoryusage`
-- Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have recently created diagnostics snapshot (within last hour).
+- Alarm text: Streaming Analytics is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have recently created diagnostics snapshot (within last hour).
 - Alarm severity: WARNING
 
 Third variant:
 
 - Alarm type: `apama_highmemoryusage`
-- Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have created 5 diagnostics snapshots, not creating any more, refer to past alarms.
+- Alarm text: Streaming Analytics is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have created 5 diagnostics snapshots, not creating any more, refer to past alarms.
 - Alarm severity: WARNING
 
 Running EPL apps (and to a lesser extent, smart rules and analytic models) consumes memory, the amount will depend a lot on the nature of the app running. The memory usage should be approximately constant for a given set of apps, but it is possible to create a "memory leak", particularly in an EPL file or a custom block. The Apama-ctrl microservice monitors memory and raises an alarm with WARNING severity if the 90% memory limit is reached along with the diagnostics overview ZIP file and saves it to the files repository (as mentioned in the alarm text).
@@ -160,7 +160,7 @@ See also [Diagnostic tools for Apama in Cumulocity IoT](https://techcommunity.so
 <a name="apama_ctrl_fatalcritwarn"></a>
 #### Warning or higher level logging from an EPL file
 
-This alarm is raised whenever messages are logged by Apama EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
+This alarm is raised whenever messages are logged by EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
 
 The Streaming Analytics application allows you to deploy EPL files to the correlator. The Apama-ctrl microservice analyzes logged content in the EPL files and raises an alarm for specific log levels with details such as monitor name, log text and alarm type (either of WARNING or MAJOR), based on the log level.
 
@@ -325,28 +325,60 @@ This alarm is raised in certain cases when the connection between the Apama-ctrl
 
 Apama-ctrl will automatically restart. Report this to [product support](/welcome/contacting-support) if this is happening frequently.
 
-<a name="application_queue_full"></a>
-#### The correlator queue is full
 
-This alarm is raised whenever the correlator queue is full, including both input and output queues.
+<a name="performance_alarms"></a>
+#### Performance alarms
 
-- Alarm type: `application_queue_full`
-- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, SlowestContext: &lt;name of context with maximum pending events&gt;, SlowestContextQueueSize: &lt;size of slowest context's queue&gt;
-- Alarm severity: CRITICAL
+Input or output queues that are filling up are a symptom of a serious performance degradation,
+suggesting that events or requests are being produced by Apama or {{< product-c8y-iot >}} faster than they can be processed by Apama or {{< product-c8y-iot >}}.
 
-The correlator's input and output queues are periodically monitored to check for building up of events. If the pending queue size grows above the normal threshold (20,000 for the input queue and 10,000 for the output queue), an alarm is raised. The alarm text contains a snapshot of the correlator status at the time of raising the alarm. A correlator with a full input or output queue can cause a serious performance degradation.
+The performance of the correlator's input and output queues is periodically monitored.
+Different types of alarms can be raised, where the alarm text contains a snapshot of the correlator status at the time of raising the alarm.
 
-The correlator queue size is based on the number of events, not raw bytes.
+This alarm is raised for the input queues:
 
-Check the alarm text to get an indication of which queue is blocking. This also contains information about the slowest receiver and the most backed-up context. To diagnose the cause, see the information given in [The CEP queue is full](#cep_queue_full). A problem is likely to trigger the "correlator queue is full" alarm followed by the "CEP queue is full" alarm.
+- Alarm type: `input_queues_filling`
+- Alarm text: Correlator input queues are filling. If this alarm is being regularly raised, there is a chance that the correlator
+  cannot process the requests at the rate at which they are arriving.
+  Slowest receiver name: &lt;name&gt;,
+  Slowest receiver queue size: &lt;size&gt;,
+  Slowest context name: &lt;name&gt;,
+  Slowest context queue size: &lt;size&gt;.
+- Alarm severity: WARNING
 
-<a name="cep_queue_full"></a>
-#### The CEP queue is full
+This alarm is raised for the output queues:
 
-This alarm is raised whenever the CEP queue for the respective tenant is full.
+- Alarm type: `output_queues_filling`
+- Alarm text: Correlator output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
+  is not able to process the requests at the rate the correlator is sending them.
+  Slowest receiver name: &lt;name&gt;,
+  Slowest receiver queue size: &lt;size&gt;,
+  Slowest context name: &lt;name&gt;,
+  Slowest context queue size: &lt;size&gt;.
+- Alarm severity: WARNING
+
+This alarm is raised for both the input and output queues:
+
+- Alarm type: `input_output_queues_filling`
+- Alarm text: Correlator input and output queues are filling. If this alarm is being regularly raised, there is a chance that Cumulocity IoT
+  is not able to process the requests at the rate the correlator is sending them, causing the slowest output queue to fill up.
+  This might have also caused the slowest input queue to fill up.
+  Slowest receiver name: &lt;name&gt;,
+  Slowest receiver queue size: &lt;size&gt;,
+  Slowest context name: &lt;name&gt;,
+  Slowest context queue size: &lt;size&gt;.
+- Alarm severity: MAJOR
+
+See also [List of correlator status statistics]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DepAndManApaApp_list_of_correlator_status_statistics.html) in the Apama documentation.
+
+Check the text from the above alarms to get an indication of which queue is blocking.
+A problem is likely to trigger these alarms, followed by this alarm:
 
 - Alarm text: Real-time event processing is currently overloaded and may stop processing your events. Please contact support.
 - Alarm severity: CRITICAL
+
+This alarm is raised whenever the CEP queue for the respective tenant is full.
+It is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl.
 
 Karaf nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
 
@@ -354,8 +386,23 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming smart rules, analytic models or EPL apps, or the microservice is deprived of resources, or code is not optimized, and so on. Check the correlator input and output queues from the above alarms (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*).
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to {{< product-c8y-iot >}}.
-- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.
+- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation.
 - Else, the cause may be some issue with connectivity or in {{< product-c8y-iot >}} Core.
+
+
+<a name="parent_tenant_not_subscribed"></a>
+#### Parent tenant not subscribed
+
+This alarm is raised for a subtenant that was subscribed before the parent tenant was subscribed.
+
+- Alarm type: `parent_tenant_not_subscribed`
+- Alarm text: The microservice cannot function fully until the parent tenant is also subscribed to the microservice. Please contact the administrator.
+- Alarm severity: MAJOR
+
+The Apama-ctrl microservice allows you to subscribe to tenants in any order.
+However, as long as the parent tenant is not subscribed, the microservice functionality will not work on the subtenant.
+
+This alarm is cleared once the parent tenant is subscribed.

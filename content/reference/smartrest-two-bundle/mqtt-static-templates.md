@@ -52,6 +52,7 @@ If a parameter is in square brackets, it is optional.
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
++ <a href="#201">201,type,[time],fragment1,series1,value1,[unit1],...</a>
 + <a href="#210">210,rssi,ber[,time]</a>
 + <a href="#211">211,temperature[,time]</a>
 + <a href="#212">212,battery[,time]</a>
@@ -96,7 +97,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#526">526,serial,configType</a>
 + <a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a>
 + <a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a>
-+ <a href="#589">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a>
++ <a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a>
 + <a href="#530">530,serial,hostname,port,connectionKey</a>
 
 </td>
@@ -215,9 +216,9 @@ Create a new software service for given device.
 
 |Position|Parameter  |Mandatory|Type  |
 |:-------|:----------|:--------|:-----|
-|1|service name|YES|String|
-|2|service unique external id|YES|String|
-|3|service type|YES|String|
+|1|service unique external id|YES|String|
+|2|service type|YES|String|
+|3|service name|YES|String|
 |4|service status|YES|String|
 
 **Example**
@@ -555,7 +556,7 @@ Create a measurement with a given fragment and series.
 |:-------|:-------|:-------|:-------|:---|
 |1|fragment|YES|String| &nbsp;|
 |2|series|YES|String| &nbsp;|
-|3|value|YES|String| &nbsp;|
+|3|value|YES|Number| &nbsp;|
 |4|unit|NO|String| &nbsp;|
 |5|time|NO|Date|Current server time|
 
@@ -563,6 +564,27 @@ Create a measurement with a given fragment and series.
 
 ```text
 200,c8y_Temperature,T,25
+```
+
+<a name="201"></a>
+##### Create a custom measurement with multiple fragments and series (201)
+
+Create a measurement with multiple fragments and series.
+
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String| &nbsp;|
+|2|time|NO|Date| &nbsp;|
+|3|List of 4 values per fragment-series combination|YES|(n/a)| &nbsp;|
+|3.1|fragment|YES|String| &nbsp;|
+|3.2|series|YES|String| &nbsp;|
+|3.3|value|YES|Number| &nbsp;|
+|3.4|unit|NO|String| &nbsp;|
+
+**Example**
+
+```text
+201,KamstrupA220Reading,2022-03-19T12:03:27.845Z,c8y_SinglePhaseEnergyMeasurement,A+:1,1234,kWh,c8y_SinglePhaseEnergyMeasurement,A-:1,2345,kWh,c8y_ThreePhaseEnergyMeasurement,A+:1,123,kWh,c8y_ThreePhaseEnergyMeasurement,A+:2,234,kWh,c8y_ThreePhaseEnergyMeasurement,A+:3,345,kWh
 ```
 
 <a name="210"></a>
@@ -949,7 +971,7 @@ Install the firmware from the url.
 **Example**
 
 ```text
-515,DeviceSerial,myFimrware,1.0,http://www.my.url
+515,DeviceSerial,myFirmware,1.0,http://www.my.url
 ```
 
 <a name="516"></a>

@@ -85,7 +85,9 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 </tbody>
 </table>
 
->**Info:** Alle hier aufgelisteten Anwendungen sind vom Typ "Microservice".
+{{< c8y-admon-info >}}
+Alle hier aufgelisteten Anwendungen sind vom Typ "Microservice".
+{{< /c8y-admon-info >}}
 
 <a name="custom-microservices"></a>
 ### Benutzerdefinierte Microservices
@@ -97,7 +99,9 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 2. Legen Sie im darauf folgenden Dialog eine entsprechende ZIP-Datei ab oder navigieren Sie in Ihrem Dateisystem zu der Datei. Beachten Sie, dass die hochzuladende Datei nicht größer als 500 MB sein darf.
 3. Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
->**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [General aspects](/microservice-sdk/concept) im *Microservice SDK Guide*.
+{{< c8y-admon-important title="Wichtig" >}}
+Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [General aspects](/microservice-sdk/concept) im *Microservice SDK Guide*.
+{{< /c8y-admon-important >}}
 
 <a name="microservice-properties"></a>
 ### Microservice-Attribute
@@ -128,7 +132,7 @@ In der Registerkarte **Attribute** werden für jeden Microservice folgende Infor
 <tr>
 <td style="text-align:left">Name</td>
 <td style="text-align:left">Anwendungsname; wird als Titel der Microservice-Anwendung in der oberen Leiste angezeigt</td>
-<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Wird automatisch vom Namen der ZIP-Datei abgeleitet (erkannte Versionsnummer wird weggelassen), es sei denn, er ist in der Manifestdatei des Microservice angegeben</td>
 </tr>
 <tr>
 <td style="text-align:left">Anwendungsschlüssel</td>
@@ -156,7 +160,7 @@ Rechts oben in der Registerkarte **Attribute** finden Sie einen Umschalter zum A
 
 <img src="/images/benutzerhandbuch/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
 
-Eine Änderung des Abonnements ist nur möglich bei benutzerdefinierten Microservices, d. h. bei Microservices, die Sie besitzen.
+Eine Änderung des Abonnements ist nur möglich bei benutzerdefinierten Microservices, d. h. bei Microservices, die Sie besitzen.
 
 ### Microservice-Berechtigungen
 
@@ -195,13 +199,13 @@ Es gibt zwei benutzerfreundliche Alarmtypen:
 * `c8y_Application_Down` - kritischer Alarm, der erzeugt wird, wenn keine Microservice-Instanz verfügbar ist.
 * `c8y_Application_Unhealthy` - weniger wichtiger Alarm, der erzeugt wird, wenn mindestens eine Microservice-Instanz korrekt funktioniert, aber nicht alle Instanzen vollständig in Betrieb sind.
 
-Benutzerfreundliche Alarme werden nur für den Microservice-Eigentümer-Mandanten erzeugt. Sie werden auch automatisch gelöscht, wenn der Normalzustand wiederhergestellt ist, d. h. wenn alle Microservice-Instanzen korrekt funktionieren.
+Benutzerfreundliche Alarme werden nur für den Microservice-Eigentümer-Mandanten erzeugt. Sie werden auch automatisch gelöscht, wenn der Normalzustand wiederhergestellt ist, d. h. wenn alle Microservice-Instanzen korrekt funktionieren.
 
 Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/benutzerhandbuch/cockpit-de/#smart-rules).
 
 Soll zum Beispiel eine E-Mail gesendet werden, wenn ein Microservice außer Betrieb ist, erstellen Sie eine Smart Rule "Bei Alarm E-Mail senden".
 
-Verwenden Sie im Bereich **Bei Alarm vom Typ** den Alarmtyp `c8y_Application_Down`. Wählen Sie als Ziel-Asset den Microservice, den Sie überwachen möchten, z. B. "echo-agent-server".
+Verwenden Sie im Bereich **Bei Alarm vom Typ** den Alarmtyp `c8y_Application_Down`. Wählen Sie als Ziel-Asset den Microservice, den Sie überwachen möchten, z. B. "echo-agent-server".
 
 #### Logdateien
 
@@ -213,11 +217,15 @@ Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweilige
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten.
 
-> **Info:** Falls Ihr Microservice in zwei Instanzen aufgeteilt wurde, können Sie zwar zwischen diesen wechseln, es ist jedoch nicht möglich, die Logdaten beider Instanzen gleichzeitig anzuzeigen.
+{{< c8y-admon-info >}}
+Falls Ihr Microservice in zwei Instanzen aufgeteilt wurde, können Sie zwar zwischen diesen wechseln, es ist jedoch nicht möglich, die Logdaten beider Instanzen gleichzeitig anzuzeigen.
+{{< /c8y-admon-info >}}
 
 Neben der Instanz-Auswahlliste können Sie das Zeitintervall wählen, in dem die Logeinträge angezeigt werden sollen, indem Sie ein Datum im Kalender auswählen und eine Uhrzeit eingeben.
 
-> **Info:** Die hier eingegebene Uhrzeit kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit des Servers unterscheiden.
+{{< c8y-admon-info >}}
+Die hier eingegebene Uhrzeit kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit des Servers unterscheiden.
+{{< /c8y-admon-info >}}
 
 Rechts oben stehen weitere Funktionalitäten zur Verfügung:
 
@@ -229,7 +237,7 @@ Anfänglich werden auf der Registerkarte **Logdaten** der ausgewählten Microser
 
 Rechts unten finden Sie die folgenden Navigationsschaltflächen:
 
-* **Zum Anfang** - führt direkt zu den ältesten verfügbaren Logeinträgen für den Microservice nach dessen Neustart (maximale Logkapazität: 350 MB).
+* **Zum Anfang** - führt direkt zu den ältesten verfügbaren Logeinträgen für den Microservice nach dessen Neustart (maximale Logkapazität: 35 MB).
 * **Zurück** - erhöht das Zeitintervall in Schritten von 10 Minuten.
 * **Vor** - verringert das Zeitintervall in Schritten von 10 Minuten.
 * **Zum Ende** - führt direkt zu den neuesten verfügbaren Logeinträgen.
@@ -238,6 +246,8 @@ Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine en
 
 <img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
+{{< c8y-admon-info >}}
+Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen oder die Logdaten aus den zuvor rotierten Protokollen mit über 35 MB anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
 
->Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
+Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
+{{< /c8y-admon-info >}}

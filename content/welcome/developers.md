@@ -41,8 +41,8 @@ Check out the following developer guides if you are looking for step-by-step ins
 </tr>
 
 <tr>
-<td align="left"><a href="/device-sdk/introduction/">Device SDK guide</a></td>
-<td align="left">How to integrate IoT data sources with the {{< product-c8y-iot >}} platform. The <i>Device SDK guide</i> provides detailed information on device integration using MQTT, REST and C++.</td>
+<td align="left"><a href="/device-integration/introduction/">Device Integration</a></td>
+<td align="left">How to integrate IoT data sources with the {{< product-c8y-iot >}} platform. <i>Device Integration</i> provides detailed information on device integration using MQTT, REST and C++.</td>
 </tr>
 
 </tbody>
@@ -53,7 +53,7 @@ Moreover, the <a href="/apama/overview-analytics/">Streaming Analytics guide</a>
 
 ### OpenAPI Specification
 
-A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}). The OpenAPI Specification describes the entire {{< product-c8y-iot >}} REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
+A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}). The OpenAPI Specification describes the entire {{< product-c8y-iot >}} REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 
 ### Developer community

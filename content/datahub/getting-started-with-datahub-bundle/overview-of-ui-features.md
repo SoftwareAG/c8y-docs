@@ -8,15 +8,14 @@ layout: redirect
 
 | Page | Description | Required role | Prerequisites
 | ---  | --- | --- | ---
-| Home | Get an introduction to {{< product-c8y-iot >}} DataHub and access quick links with related functionality | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | -
-| Settings / Dremio & Data Lake | Set up {{< product-c8y-iot >}} DataHub | DATAHUB_ADMINISTRATOR | -
-| Settings / Microsoft Power BI | Set up connection to Microsoft Power BI | DATAHUB_ADMINISTRATOR | -
-| Offloading | Configure and manage your offloading pipelines | DATAHUB_ADMINISTRATOR or DATAHUB_MANAGER | -
-| Microsoft Power BI | View Microsoft Power BI reports | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Connection to Microsoft Power BI has been set up
-| Auditing / Query log | View the query log | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics must be enabled
-| Auditing / System log | View the system log | DATAHUB_ADMINISTRATOR | -
-| Status | View the latest job status of your offloading pipelines | DATAHUB_ADMINISTRATOR or DATAHUB_MANAGER | -
-| Administration / Usage statistics | View usage statistics | DATAHUB_READER, DATAHUB_ADMINISTRATOR, or DATAHUB_MANAGER | Tracking of usage statistics must be enabled
-| Administration / System status | Check system status | DATAHUB_ADMINISTRATOR | -
-
-<img src="/images/datahub-guide/datahub-home-page.png" alt="{{< product-c8y-iot >}} DataHub homepage"  style="max-width: 100%">
+| Home | Get an introduction to {{< product-c8y-iot >}} DataHub and access quick links with related functionality | DataHub Reader, DataHub Administrator, or DataHub Manager | -
+| Offloading | Configure and manage your offloading pipelines | DataHub Administrator or DataHub Manager | -
+| Auditing / Query log | View the query log | DataHub Reader, DataHub Administrator, or DataHub Manager | Tracking of usage statistics must be enabled
+| Auditing / System log | View the system log | DataHub Administrator | -
+| Settings / Initial configuration | Set up {{< product-c8y-iot >}} DataHub | DataHub Administrator | -
+| Settings / Dremio users | Manage Dremio users | DataHub Administrator | -
+| Settings / Microsoft Power BI | Set up connection to Microsoft Power BI | DataHub Administrator | -
+| Microsoft Power BI | View Microsoft Power BI reports | DataHub Reader, DataHub Administrator, or DataHub Manager | Connection to Microsoft Power BI has been set up
+| Administration / Usage statistics | View usage statistics | DataHub Reader, DataHub Administrator, or DataHub Manager | Tracking of usage statistics must be enabled
+| Administration / Compaction status | View the latest compaction job status of your offloading pipelines | DataHub Administrator | -
+| Administration / System status | Check system status | DataHub Administrator | -

@@ -4,20 +4,29 @@ title: Daten-Explorer
 weight: 30
 ---
 
-Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
+Im Daten-Explorer können Datenpunkte (d. h. Messwerte oder Sensordaten) visualisiert werden.
 
+{{< c8y-admon-req title="Anforderungen" >}}
+ROLLEN UND BERECHTIGUNGEN:
 
-Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.
+- Zum Anzeigen und Auswählen aller verfügbaren Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
+- Zum Visualisieren bereits ausgewählter Datenpunkte: LESEN-Berechtigung für Berechtigungstyp "Messwerte" oder LESEN-Berechtigung für "Messwerte" in den Stammdatenrollen
+- Zum Senden als Widget an Berichte/Dashboards: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
 
-* Klicken Sie auf **Daten-Explorer** im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
+Beachten Sie, dass in der Datenpunktbibliothek vorhandene Datenpunkte für jeden sichtbar sind, ohne dass eine Berechtigung benötigt wird.
+{{< /c8y-admon-req >}}
 
-* Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
+Der Daten-Explorer ist sowohl für alle Assets auf einmal als auch für einzelne Assets verfügbar.
 
-Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
+- Klicken Sie auf **Daten-Explorer** im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.
+
+- Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte **Daten-Explorer**, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.
+
+Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Zum Hinzufügen eines Datenpunkts](#add-data-points).
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
-![data explorer](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer.png)
+![Data explorer](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer.png)
 
 Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 
@@ -33,13 +42,15 @@ In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkt
 
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter [Anpassen von Datenpunktattributen](#customize-data-points).
 
-Klicken Sie auf **Als Standard speichern**, um die Datenpunkt-Einstellungen im vom Gerät verwalteten Objekt zu speichern. Diese Einstellungen haben dann Vorrang vor den Einstellungen aus der Datenpunktbibliothek, z. B. wenn dieser Datenpunkt von anderen Benutzern einem Daten-Explorer hinzugefügt wird oder wenn das Gerät und sein Datenpunkt durch eine Schwellenwert-Smart Rule verarbeitet werden. Wenn Sie die Standardeinstellungen der Datenpunktbibliothek wiederherstellen möchten, klicken Sie auf **Aus Bibliothek laden** und anschließend auf **Als Standard speichern**.
+Klicken Sie auf **Als Standard speichern**, um die Datenpunkt-Einstellungen im vom Gerät verwalteten Objekt zu speichern. Diese Einstellungen haben dann Vorrang vor den Einstellungen aus der Datenpunktbibliothek, z. B. wenn dieser Datenpunkt von anderen Benutzern einem Daten-Explorer hinzugefügt wird oder wenn das Gerät und sein Datenpunkt durch eine Schwellenwert-Smart Rule verarbeitet werden. Wenn Sie die Standardeinstellungen der Datenpunktbibliothek wiederherstellen möchten, klicken Sie auf **Aus Bibliothek laden** und anschließend auf **Als Standard speichern**.
 
 **Beispiel:**
 
 Angenommen, Sie haben in der Bibliothek einen Temperaturdatenpunkt definiert und verwenden ein Gerät, das Temperaturmesswerte sendet (Übereinstimmung nach Fragment und Serie mit dem Datenpunkt in der Bibliothek). Wenn Sie eine Smart Rule des Typs "Bei Schwellenwert Alarm erzeugen" erstellen und den Datenpunkt aus der Bibliothek wählen, wird anhand der Einstellungen aus der Bibliothek entschieden, ob ein Alarm erzeugt werden soll. Wenn Sie jedoch die Einstellungen dieses Datenpunkts für Ihr Gerät im Daten-Explorer ändern und auf **Als Standard speichern** klicken, verwendet die Smart Rule diese überschriebenen Einstellungen anstelle derjenigen aus der Bibliothek. Für andere Geräte werden hingegen weiterhin die Einstellungen aus der Bibliothek verwendet.
 
->**Info:** Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
+{{< c8y-admon-info >}}
+Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
+{{< /c8y-admon-info >}}
 
 <a name="change-visualization"></a>
 ### Ändern der Daten-Explorer-Visualisierung
@@ -50,14 +61,16 @@ Zum Ändern der Visualisierung im Daten-Explorer können Sie verschiedene Parame
 
 Sie können das angezeigte Zeitintervall ändern. Standardmäßig sehen Sie die Werte für die letzte Stunde.
 
-Um das Zeitintervall auf der x-Achse zu ändern,
+Das Zeitintervall auf der x-Achse ändern Sie mit einer der folgenden Optionen:
 
-* wählen Sie ein anderes Zeitintervall aus der Auswahlliste in der oberen Menüleiste,
-* geben Sie ein eigenes Zeitintervall in die Felder **Von** und **Bis** im Daten-Explorer ein,
-* bewegen Sie die x-Achse mit dem Mauszeiger nach links oder rechts, um das Zeitintervall zu verschieben,
-* zoomen Sie durch Doppelklicken in den Daten-Explorer.
+* Wählen Sie ein anderes Zeitintervall aus der Auswahlliste in der oberen Menüleiste.
+* Geben Sie ein eigenes Zeitintervall in die Felder **Von** und **Bis** im Daten-Explorer ein.
+* Bewegen Sie die x-Achse mit dem Mauszeiger nach links oder rechts, um das Zeitintervall zu verschieben.
+* Zoomen Sie durch Doppelklicken in den Daten-Explorer.
 
->**Info:** Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
+{{< c8y-admon-info >}}
+Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
+{{< /c8y-admon-info >}}
 
 **Aggregation**
 
@@ -177,7 +190,7 @@ In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur
 
 Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hinzufügen.
 
-Klicken Sie auf **Alarm/Ereignis** hinzufügen in der Karte **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
+Klicken Sie in der Karte **Alarm/Ereignisse** auf **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
 ![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-eventsadd.png)
 
@@ -202,7 +215,9 @@ Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widg
 
 Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen.
 
-> **Info:** Um diese Funktion nutzen zu können, muss ein Dashboard vorhanden sein. Weitere Informationen zu Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
+{{< c8y-admon-info >}}
+Um diese Funktion nutzen zu können, muss zunächst ein Dashboard erstellt werden. Weitere Informationen zu Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
+{{< /c8y-admon-info >}}
 
 **Als Widget einem Bericht hinzufügen**
 
@@ -212,7 +227,9 @@ Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widg
 
 Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen.
 
-> **Info:** Um diese Funktion nutzen zu können, muss ein Bericht vorhanden sein. Weitere Informationen zu Dashboard-Berichten finden Sie unter [Verwenden von Berichten](#reports).
+{{< c8y-admon-info >}}
+Um diese Funktion nutzen zu können, muss zunächst ein Bericht erstellt werden. Weitere Informationen zu Dashboard-Berichten finden Sie unter [Verwenden von Berichten](#reports).
+{{< /c8y-admon-info >}}
 
 <a name="export-data"></a>
 ### Exportieren von Messwerten
@@ -222,9 +239,9 @@ Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten 
  - Zeitpunkt, an welchem der Wert gemessen wurde
  - Quelle des Messwerts
  - Name des verwendeten Geräts
- - Fragmenttyp (z. B. `c8y_SpeedMeasurement`)
+ - Fragmenttyp (z. B. `c8y_SpeedMeasurement`)
  - Messwert
- - Einheit, die für einen Messwert verwendet wird (z. B. "C", "km/h", "sec")
+ - Einheit, die für einen Messwert verwendet wird (z. B. "C", "km/h", "sec")
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie je nach Bedarf entweder **Als CSV herunterladen** oder **Als Excel herunterladen**.
 

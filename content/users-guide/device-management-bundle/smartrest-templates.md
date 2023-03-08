@@ -14,7 +14,7 @@ helpcontent:
     To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the *User guide*."
 ---
 
-SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
+SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
 To add a new template, either import an existing template or create a new one.
 To import a template, click **Import template** at the right of the top menu bar, select a file to be uploaded and provide a name and unique ID.
@@ -159,7 +159,5 @@ To export a SmartREST template as CSV file follow these steps:
 1. Open the template you want to export and select the **CSV preview** tab.
 2. In the resulting dialog box, specify the preferred options for the field separator, decimal separator and character set.
 3. In the **CSV preview** tab, which provides additional information on messages and responses, click **Copy to clipboard**.
-
-![CSV preview tab](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
 
 The SmartREST template will be exported as CSV file.

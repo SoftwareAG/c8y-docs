@@ -44,9 +44,9 @@ The Device Management application provides various features that support you in 
 | [Managing device firmware](#firmware-repo)           | How to retrieve and manage firmware, firmware versions, and patches in the firmware repository and how to install or update them on devices. |
 | [Managing device software](#software-repo)           | How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.          |
 | [Managing configurations](#configuration-repository) | How to retrieve configuration data, store and manage it in a configuration repository as configuration snapshot.                         |
-| [Device credentials](#credentials)                   | How to manage all credentials generated for your connected devices.                                                                         |
-| [Device profiles](#device-profiles)                  | How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.                                 |
-| [Trusted certificates](#trusted-certificates)        | How to manage trusted certificates.                                                                                                         |
+| [Managing device credentials](#credentials)          | How to manage all credentials generated for your connected devices.                                                                         |
+| [Managing device profiles](#device-profiles)         | How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.                                 |
+| [Managing trusted certificates](#trusted-certificates)| How to manage trusted certificates.                                                                                                         |
 
 All features are accessible through the **Management** menu in the navigator:
 
@@ -94,10 +94,7 @@ The list of versions and patches shows the version name and the name of the firm
 
 The firmware object will be added to the firmware list or the firmware version will be added to the firmware details and the version label will be updated accordingly.
 
-If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.
-
-![Add firmware version](/images/users-guide/DeviceManagement/devmgmt-firmware-add-version.png)
-
+If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. Enter the new version number and upload a binary or provide a file path.
 
 ##### To add a new firmware patch
 
@@ -111,8 +108,6 @@ If you click **Add firmware** from within the details of a specific firmware, th
 As with adding versions, if you click **Add firmware patch** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.
 
 The firmware patch will be added to the version details within the firmware details.
-
-![Versions and patches](/images/users-guide/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
 
 #### To edit a firmware
 
@@ -149,15 +144,11 @@ The **Firmware** tab shows the current firmware installed on the device.
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
-![Firmware operation details](/images/users-guide/DeviceManagement/devmgmt-firmware-operation-details.png)
-
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
 2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type in the firmware repository.
 3. Click **Install**.
-
-![Install firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-install.png)
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
@@ -175,10 +166,6 @@ Click on the operation to view its details. The status of the last operation is 
 The status of the bulk operation is shown in the **Bulk operations** tab under **Device control**.
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
-
-{{< c8y-admon-info >}}
-Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
-{{< /c8y-admon-info >}}
 
 <a name="software-repo"></a>
 ### Managing device software
@@ -227,10 +214,7 @@ The versions are ordered by their creation time (descending).
 
 The software object will be added to the software list or the software version will be added to the software details and the version count label will be updated accordingly.
 
-If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected.
-
-![Add software version](/images/users-guide/DeviceManagement/devmgmt-software-add-version.png)
-
+If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. Enter the new version number and upload a binary or provide a file path.
 
 #### To edit a software
 
@@ -269,11 +253,9 @@ The **Software** tab shows a list of all available software installed on the dev
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
 
-![Software operation details](/images/users-guide/DeviceManagement/devmgmt-software-operation-details.png)
-
 ##### To install software on a device
 
-1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
+1. In the **Software** tab, click **Install software**.
 
     {{< c8y-admon-info >}}
 The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
@@ -287,21 +269,15 @@ You can remove the already installed software item under **Software changes** or
 
 4. Under **Software changes** at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
 
-	 ![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
-
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
 Click on the operation to view its details. The status of the last operation is also shown on the **Software** tab.
-
-![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### To update software on a device
 
 Hover over the software item which you want to update and click **Update**.
 Select a version from the list and click **Update** again.
-
-![Update software](/images/users-guide/DeviceManagement/devmgmt-software-update.png)
 
 The software will be updated with the selected version.
 
@@ -320,10 +296,6 @@ Hover over the software item which you want to delete and click the delete icon.
 The status and details of the bulk operation are shown in the **Bulk operations** tab under **Device control**.
 
 Moreover, the operation details are shown in the **Control** tab of the selected devices.
-
-{{< c8y-admon-info >}}
-Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
-{{< /c8y-admon-info >}}
 
 <a name="configuration-repository"></a>
 ### Managing configurations
@@ -367,30 +339,15 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 #### To retrieve and apply a configuration snapshot
 
-{{< c8y-admon-info >}}
-The following steps apply to devices which do not support multiple configuration types. For information on devices that support multiple configuration types, see the section below.
-{{< /c8y-admon-info >}}
+Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Device management library > Configuration](/reference/device-management-library/#configuration) in the *Reference guide* for more detailed and technical information.
 
-1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
+#### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration
 
-The retrieved snapshot can be found in the **Configuration repository**, under **Management** menu in the navigator.
-
-![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
-
-To apply a configuration snapshot to a device:
-
-1. Navigate to the desired device and open its **Configuration** tab.
-2. Under **Configuration snapshot**, select a configuration from the dropdown field.
-3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
-
-![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
-
-#### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
+We recommend you to use typed file-based configuration. With typed file-based configuration, devices can manage multiple configurations at the same time. You can upload or retrieve different configurations for different types. Using this approach is more versatile because the configurations are handled as events rather than as files, which is more efficient.
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Device-supported configurations**, select the desired configuration type and click
-**Get snapshot from device** at the right.
+   **Get snapshot from device** at the right.
 
 Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
 
@@ -412,6 +369,18 @@ To apply a configuration snapshot to a device which supports multiple configurat
 {{< c8y-admon-info >}}
 Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
 {{< /c8y-admon-info >}}
+
+#### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration
+
+Devices managing configuration as files can do so in a basic form using legacy file-based configuration. Legacy file-based configuration only allows a single configuration to be set per a device.
+
+![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
+
+#### To retrieve and apply a configuration snapshot to a device which supports text-based configuration
+
+The most basic form of configuration is text-based configuration. A text command can be sent or received from a device. We recommend you to use text-based configuration for short human readable configuration files only.
+
+![Send Text Configuration](/images/users-guide/DeviceManagement/devmgmt-devices-config-text-getnewsnapshot.png)
 
 <a name="credentials"></a>
 ### Managing device credentials
@@ -497,7 +466,7 @@ For details on software, see [Managing device software](#software-repo).
 
 Click **Add configuration** to add a configuration file to the profile. Select a configuration file from the list and click **Save** to add the selection to the profile. You can add multiple configuration files to a profile.
 
-For details on configuration snapshots, see [Managing configuration snapshots](#configuration-repository).
+For details on configuration snapshots, see [Managing configurations](#configuration-repository).
 
 #### To update device profiles
 
@@ -531,10 +500,10 @@ Deleting a profile deletes the entry from the device profile repository. It has 
 <a name="applying-device-profiles"></a>
 ### Applying device profiles to devices
 
-Device profiles can be assigned to
+Device profiles can be assigned to:
 
-* [individual devices](#to-apply-profiles-to-single-devices)
-* [multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices)
+* [Individual devices](#to-apply-profiles-to-single-devices)
+* [Multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices)
 
 The **Device profile** tab of a particular device shows the details of the currently installed profile on a device.
 
@@ -544,20 +513,12 @@ The **Device profile** tab of a particular device shows the details of the curre
 The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
 {{< /c8y-admon-info >}}
 
-Moreover, you can filter for devices in the devices list based on their applied profile name and whether the profile has been applied in the past.
-
-![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
-
-
 <a name="to-apply-profiles-to-single-devices"></a>
 #### To apply device profiles to a single device
 
 Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device.
 
 1. In the **Device profile** tab, select a device profile from the dropdown list. Only profiles that match the device type (if specified) or have no device type specified are displayed.
-
-	![Assign device profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-assign.png)
-
 2. Click **Assign device profile** to start the update operation.
 
 <a name="to-apply-profiles-to-multiple-devices"></a>
@@ -581,7 +542,7 @@ When creating bulk operations, it is possible to use filters, and by this create
 {{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
 {{< c8y-admon-info >}}
-This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the *Device SDK guide*.
+This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-integration/mqtt#device-certificates) in *Device integration*.
 {{< /c8y-admon-info >}}
 
 Click **Trusted certificates** in the **Management** menu in the navigator.
@@ -590,11 +551,8 @@ All certificates owned by the tenant will be displayed.
 
 ![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-The icon on the left of each entry indicates if the certificate is active (green) or inactive (red). At any given time a tenant can have any number of active or inactive certificates.
-
+The **Status** column indicates if the certificate is enabled or disabled. At any given time a tenant can have any number of enabled or disabled certificates.
 Expand a certificate by clicking the arrow icon at the right to view more details.
-
-![Trusted certificates Entry](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
 The information in the table at the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
 
@@ -614,9 +572,6 @@ Before adding a new trusted certificate, make sure that:
 To add a certificate perform these steps:
 
 1. Click **Add trusted certificate** at the right of the top menu bar.
-
-	![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-new.png)
-
 2. In the resulting dialog box, provide the following information:
 
 | Field             | Description                                                                                                                                |
@@ -641,7 +596,4 @@ For details on the fields, see the description on adding certificates above.
 #### To delete a trusted certificate
 
 To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
-
-![Trusted certificates delete](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-delete.png)
-
 The certificate will be permanently deleted.

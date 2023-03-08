@@ -10,10 +10,11 @@ For your convenience, here is an overview of the contents of this document:
 
 | Section | Content |
 | -----   | -----   |
-| [Getting started](/datahub/getting-started-with-datahub) | Log into {{< product-c8y-iot >}} DataHub and get an overview of the UI features |
+| [Getting started with {{< product-c8y-iot >}} DataHub](/datahub/getting-started-with-datahub) | Log into {{< product-c8y-iot >}} DataHub and get an overview of the UI features |
 | [Setting up {{< product-c8y-iot >}} DataHub](/datahub/setting-up-datahub) | Set up {{< product-c8y-iot >}} DataHub and its components |
 | [Working with {{< product-c8y-iot >}} DataHub](/datahub/working-with-datahub) | Manage offloading pipelines and query the offloaded results |
 | [Operating {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub) | Run administrative tasks |
 | [Running {{< product-c8y-iot >}} DataHub on {{< product-c8y-iot >}} Edge](/datahub/running-datahub-on-the-edge) | Run the Edge edition of {{< product-c8y-iot >}} DataHub |
 | [Integrating {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products](/datahub/integrating-datahub-with-other-products) | Learn how to integrate {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products |
-| [Release notes](/datahub/datahub-release-notes) | Get news about the latest {{< product-c8y-iot >}} DataHub releases |
+
+The [release notes](https://{{< domain-c8y >}}/releasenotes/release-{{< c8y-current-version-hyphen >}}/datahub-{{< c8y-current-version-hyphen >}}/) provide an overview of features, known issues, and limitations per release.

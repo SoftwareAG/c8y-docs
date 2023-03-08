@@ -11,54 +11,64 @@ helpcontent:
   Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the *User guide* for details on each smart rule template and its configuration."
 ---
 
-
 {{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 
-{{< c8y-admon-info >}}
-The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice. To manage smart rules, the user must have CREATE permission for "Inventory" and ADMIN permission for either "Global smart rules" or "CEP management".
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
+{{< /c8y-admon-req >}}
 
 Smart rules are parameterized. There are two sources for parameters:
 
-* **Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
-* **Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
+- **Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
+- **Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
 
 There are two different types of smart rules:
 
-* **Global smart rules**
+- **Global smart rules**
 
   Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, and so on).
 
-  They are only visible to users with the relevant permissions. The permissions required in order to see the global smart rules are:
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS for global smart rules:
 
-  * Smartrule = READ permission
-  * Smartrule = ADMIN permission
-  * CEP management = ADMIN permission
-<br>
-<br>
-* **Local smart rules**
+- To view a global smart rules: READ permission for permission type "Global smart rules" or "CEP management" and READ permission for permission type "Inventory"
+- To edit global smart rules: ADMIN permission for permission type "Global smart rules" or "CEP management" and ADMIN permission for permission type "Inventory"
+- To create a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and CREATE or ADMIN permission for permission type "Inventory"
+- To duplicate a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and CREATE or ADMIN permission for permission type "Inventory"
+- To delete a global smart rule: ADMIN permission for permission type "Global smart rules" or "CEP management" and ADMIN permission for permission type "Inventory"
+{{< /c8y-admon-req >}}
+
+- **Local smart rules**
 
   Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS for local smart rules:
+
+- To view local smart rules: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
+- To edit local smart rules: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
+- To create a new local smart rule: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory"  in the inventory roles
+- To delete a local smart rule: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in the inventory roles
+{{< /c8y-admon-req >}}
 
 Smart rules can be seen in two places:
 
-* In the **Global smart rules** page accessible from the **Configuration** menu.
+- In the **Global smart rules** page accessible from the **Configuration** menu.
 
   ![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
 
   In the **Global smart rules** page, only the global smart rules are shown.
 
-* In the **Smart rules** tab of a device or group.
+- In the **Smart rules** tab of a device or group.
 
   ![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
 
-  In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.		
-
+  In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
 <a name="create-rules"></a>
+
 ### To create a smart rule
 
 Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
@@ -108,8 +118,6 @@ Click the menu icon at the right of an entry and then click **Inspect** to use t
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
 
-<img src="/images/users-guide/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
-
 If it is set to **Disabled** it is "turned off" (that means, its underlying module is not deployed).
 
 In addition to globally enabling/disabling a smart rule, a smart rule can be in **active** or **inactive** state for particular objects (groups or devices). If **active**, the rule will process events for these groups and devices.
@@ -119,8 +127,6 @@ On creating a smart rule in the **Global smart rules** page, it will be active b
 {{< /c8y-admon-info >}}
 
 To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.  
-
-<img src="/images/users-guide/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
 
 An example use case for deactivating a smart rule for a single object could be that a particular device is generating too many threshold alarms. The rule can be deactivated for this device only, but still be active for all other objects.
 

@@ -56,7 +56,7 @@ The group name in the screenshot below is only an example. It does not necessari
 
 ![API access page](/images/device-protocols/sigfox/sigfox-parentgroupid.png)
 
-![API access page](/images/device-protocols/sigfox/sigfox-connectivity.png)
+![API access page](/images/device-protocols/sigfox/sigfox-connectivity-update.png)
 
 Click **Save**. If you have entered the correct information, the message "Credentials successfully saved" will be displayed.
 
@@ -66,11 +66,18 @@ To add another connection, click **Add Connection** and follow the steps above.
 
 Select the connection to be updated, make your edits, and save the connection.
 
-If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
-
+If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Click the link to download the file with the details of the associated devices: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
+![Update connection information](/images/device-protocols/sigfox/sigfox-connectivity-update.png)
 
 ###  To delete a connection
 
 Select the connection to be deleted and click **Delete**.
 
-If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Visit the following URL to download the file: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
+If there are devices associated with the connection, an error message will appear, stating "Can not delete the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Click the link to download the file with the details of the associated devices: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
+![Delete connection information](/images/device-protocols/sigfox/sigfox-admin-settings-delete.png)
+
+#### Authentication to the Sigfox platform failed.
+
+Authentication to the Sigfox platform failed. Check if the Parent group ID and/or the credentials are correct.
+
+To resolve this, provide a correct baseUrl or parent group ID or username or password and try again.

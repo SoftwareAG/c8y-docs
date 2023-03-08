@@ -12,8 +12,6 @@ New fieldbus device protocols can be created in the **Device protocols** page wh
 3. Enter a name for your device and an optional description.
 4. Click **Create** to create the protocol.
 
-![Add device protocol](/images/device-protocols/cloud-fieldbus/fieldbus-add-device-protocol.png)
-
 The device protocol will be added to the device protocol list.
 
 ![Device protocol list](/images/device-protocols/cloud-fieldbus/fieldbus-deviceprotocols-modbus.png)
@@ -82,7 +80,7 @@ CAN bus device protocols can be configured in a very similar way as Modbus devic
 
 * Holding registers are used to describe the different pieces of data inside CAN messages.
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
-* Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
+* Conversion of values is extended by an offset parameter (for example, any positive or negative number). This is added or subtracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
 <a name="configureProfibus"></a>
 ### Configuring Profibus device protocols

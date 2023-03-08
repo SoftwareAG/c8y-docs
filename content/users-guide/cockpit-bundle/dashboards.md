@@ -17,37 +17,52 @@ helpcontent:
 weight: 40
 ---
 
-
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view dashboards: READ permission for permission type "Inventory" or READ permission for "Inventory" in inventory roles
+- To edit widgets within a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+- To create a dashboard: CREATE or ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+- To delete a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+- To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+  {{< /c8y-admon-req >}}
 
 {{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [Web SDK guide](/web/) for details.
 
 <a name="creating-dashboards"></a>
+
 ### To create a dashboard
 
 1. Select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
 
-  <img src="/images/users-guide/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
-
 3. In the **Tab** section of the dashboard editor, provide the following information:
 
     * An icon which is shown next to the dashboard name in the navigator.
     * A menu label to be used as the name of the dashboard.
-    * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last
+    * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last.
 <br><br>
+
 4. Enable the option **Apply dashboard to all devices of type <device type>** to share the dashboard with all devices of this type.
-5. In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
-6. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
+
+5. In the **Availability** section, specify which users have access to the dashboard based on global roles. By default, all available global roles are selected, which means that a user with at least one such role has access to the dashboard.
+
+   {{< c8y-admon-info >}}
+- Dashboard are always visible to its owner and to users with ADMIN permission for the permission type "Inventory".
+- This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
+    {{< /c8y-admon-info >}}
+
+6. In the **Layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+7. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
     {{< c8y-admon-info >}}
 The widget titles will be translated only if a valid translation is available.
     {{< /c8y-admon-info >}}
-7. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+8. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
-8. Click **Save** to create and open the dashboard.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
+9. Click **Save** to create and open the dashboard.
 
 <br>Next, widgets can be added to the report.
 
@@ -74,16 +89,11 @@ You can only add widgets and data to the dashboard for the device itself. It is 
 
 To edit a dashboard, click **Edit** in the top menu bar.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
-
 The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#creating-dashboards).
-
 
 ### To copy a dashboard from one object to another
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
-
-  <img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 

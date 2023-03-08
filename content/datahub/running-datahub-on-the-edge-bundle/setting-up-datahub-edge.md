@@ -31,7 +31,7 @@ Hardware requirements for the host OS are excluded.
 Copy the {{< product-c8y-iot >}} DataHub Edge archive to the {{< product-c8y-iot >}} Edge.
 
 ```shell
-scp datahub-<version>.tgz admin@<edge_ip_address>:/tmp
+scp datahub-edge.tar admin@<edge_ip_address>:/tmp
 ```
 
 Log in as admin into {{< product-c8y-iot >}} Edge.
@@ -43,7 +43,7 @@ ssh admin@<edge_ip_address>
 Run the install script.
 
 ```shell
-sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
+sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-edge.tar
 ```
 
 During script execution, you are prompted for the username and password of the administration user of the tenant <em>edge</em>. During installation, you are also prompted to set the new password of the Dremio <em>admin</em> account. It takes a few minutes to complete the installation. After completion you can delete the {{< product-c8y-iot >}} DataHub Edge archive.
@@ -100,7 +100,7 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 <tbody>
 <tr>
 <td>{{< product-c8y-iot >}} DataHub Edge UI</td>
-<td>The UI can be accessed in the <strong>application switcher</strong> after you have logged into the {{< product-c8y-iot >}} Edge UI. Alternatively you can access it directly under <em>http://edge_domain_name/apps/datahub-ui</em> or <em>https://edge_domain_name/apps/datahub-ui</em>, depending on whether TLS/SSL is used or not. A login is required as well.</td>
+<td>The UI can be accessed in the <strong>application switcher</strong> after you have logged into the {{< product-c8y-iot >}} Edge UI. Alternatively you can access it directly under <em>http://edge_domain_name/apps/datahub-ui</em> or <em>https://edge_domain_name/apps/datahub-ui</em>, depending on whether TLS/SSL is used or not. A login is required as well, with "edge" being used as tenant name.</td>
 </tr>
 <tr>
 <td>Dremio UI</td>
@@ -127,11 +127,11 @@ For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 31010
 
 ### Defining Cumulocity IoT DataHub permissions and roles
 
-The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See the section [Setting up Cumulocity IoT DataHub > Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
+The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
 
 ### Setting up Dremio account and data lake
 
-The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See the section [Setting up Dremio account and data lake](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
+The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See the section [Setting up {{< product-c8y-iot >}} DataHub](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
 
 {{< product-c8y-iot >}} DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.
 
@@ -139,8 +139,7 @@ The setup of the Dremio account and the data lake is done in the same way as in 
 
 Depending on the use case, it might be necessary to increase the memory available to Dremio, the internal engine of {{< product-c8y-iot >}} DataHub. By default, Dremio is configured to consume a maximum of 4 GB of RAM (2 GB assigned to both master node and executor node).
 
-Depending on the situation, one either needs to increase the memory of Dremio's master or executor node. In many cases, the master node’s memory is the limiting factor, but not always.
-Inspecting the Query Profile in Dremio helps to determine where the bottleneck occurs.
+Depending on the situation, one either needs to increase the memory of Dremio's master or executor node. In many cases, the master node’s memory is the limiting factor, but not always. Inspecting the query profiles in Dremio helps to determine where the bottleneck occurs.
 
 #### Master node memory configuration
 

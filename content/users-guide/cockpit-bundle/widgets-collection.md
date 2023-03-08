@@ -92,16 +92,16 @@ The following types are available:
 <td align="left">Shows the location of a device or all devices of a group.</td>
 </tr>
 <tr>
+<td align="left"><a href="#widget-markdown">Markdown</a></td>
+<td align="left">Displays markdown content either from a URL or from a file.</td>
+</tr>
+<tr>
 <td align="left"><a href="#widget-message-sending">Message sending</a></td>
 <td align="left">Sends a message to a device.</td>
 </tr>
 <tr>
 <td align="left"><a href="#pie-chart">Pie chart</a></td>
 <td align="left">Displays data points (measurements) with current values in a pie chart presentation.</td>
-</tr>
-<tr>
-<td align="left"><a href="#quick-links">Quick links</a></td>
-<td align="left">Provides several quick links to relevant operations.</td>
 </tr>
 <tr>
 <td align="left"><a href="#radial-gauge">Radial Gauge</a></td>
@@ -172,7 +172,7 @@ The "Applications" widget shows a list of links to all available applications. A
 
 ![Applications widget](/images/users-guide/cockpit/cockpit-widget-applications.png)
 
-For details on applications, refer to [Administration > Managing Applications](/users-guide/administration#managing-applications).
+For details on applications, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications).
 
 
 <a name="asset-notes"></a>
@@ -199,7 +199,7 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 |:---|:---|
 |Title|Widget title. By default, the widget type is used as title.
 |Target assets or devices|Select groups or devices.
-|Properties|List of properties, see [Widget "Asset table"](#widget-asset-table).
+|Properties|List of properties, see [Asset table](#widget-asset-table).
 
 {{< c8y-admon-info >}}
 In the view mode, this widget only displays the properties which are not empty.
@@ -299,7 +299,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 </tr>
 <tr>
 <td align="left">Data point</td>
-<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; To add a data point</a>.</td>
 </tr>
 <tr>
 <td align="left">Column visibility</td>
@@ -333,7 +333,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) in the *Protocol integration guide*.
+For details on the "Fieldbus device" widget, refer to [Cloud Fieldbus > Monitoring the device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) in the *Protocol integration guide*.
 
 <a name="help-service"></a>
 ### Help and service
@@ -355,10 +355,6 @@ The "Info gauge" widget visualizes one data point in form of a radial gauge and 
 ![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-info-gauge.png)
 
 You can select one data point for the gauge, and multiple data points shown with labels at the left side.
-
-![Info gauge widget data point gauge](/images/users-guide/cockpit/cockpit-widget-data-gauge.png)
-
-![Info gauge widget data point label](/images/users-guide/cockpit/cockpit-widget-data-labels.png)
 
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
@@ -392,6 +388,11 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
+
+The following code sanitization options can be selected:
+ - strict - Does not allow any JS or angularjs directives.
+ - lax (default) - Allows partly JS (events) and all angularjs directives.
+ - none - Allows everything.
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
@@ -445,6 +446,19 @@ Target assets or devices: Select which devices are shown on the map. If a group 
 If none of the target device(s) has a known location, then the widget shows a world map without icons.
 {{< /c8y-admon-info >}}
 
+<a name="widget-markdown"></a>
+### Markdown
+
+The "Markdown" widget can be used to display markdown content. Using the “Markdown” widget you can inform users, for example, on new features.
+
+![Markdown widget](/images/users-guide/cockpit/cockpit-widget-markdown.png)
+
+There are several ways to provide markdown content:
+
+* Upload a markdown file.
+* Provide a URL to an external source.
+* Add "/README.md" as a relative file path in order to provide the README file of the current application as source.
+
 <a name="widget-message-sending"></a>
 ### Message sending
 
@@ -479,17 +493,10 @@ The "Pie chart" widget displays data points (measurements) with current values i
 </tr>
 <tr>
 <td align="left">Data point</td>
-<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; To add a data point</a>.</td>
 </tr>
 </tbody>
 </table>
-
-<a name="quick-links"></a>
-### Quick links
-
-The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
-
-![Quick links widget](/images/users-guide/cockpit/cockpit-widget-quick-links.png)
 
 <a name="radial-gauge"></a>
 ### Radial Gauge
@@ -542,11 +549,12 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
+For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring the device status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
 
-{{< c8y-admon-info >}}
-All SVG files are sanitized in order to remove malicious code.
-{{< /c8y-admon-info >}}
+The following code sanitization options can be selected:
+ - strict - Does not allow any JS or angularjs directives.
+ - lax (default) - Allows partly JS (events) and all angularjs directives.
+ - none - Allows everything.
 
 ![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 
@@ -575,7 +583,7 @@ The "Silo" widget displays data points (measurements) with current values in a s
 </tr>
 <tr>
 <td align="left">Data point</td>
-<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; To add a data point</a>.</td>
 </tr>
 </tbody>
 </table>

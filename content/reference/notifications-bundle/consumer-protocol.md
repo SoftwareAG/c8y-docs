@@ -15,7 +15,7 @@ The [URI scheme](https://en.wikipedia.org/wiki/List_of_URI_schemes) therefore is
 
 The fixed URL path is <kbd>/notification2/consumer/</kbd> and there are only two query string arguments:
 
-* `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
+* `token` (required). Its value must be a valid token in the form of a JWT token string as returned by a create token request to the [Tokens methods](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API. Including the token as a query string parameter avoids having to set an HTTP header which can be an issue for some WebSocket clients or proxies.
 
 * `consumer` (optional). Its value is a non blank unique name for the consumer. 
 
@@ -101,7 +101,7 @@ Duplicates can also occur due to underlying network failures, consumer crashes o
 
 A duplicate can be delivered out of order if several notifications are unacknowledged but only after follow-on notifications so should be easy to deal with.
 
-For example, in the logical sequence 1,2,3,4, the notification number 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3..2.
+For example, in the logical sequence 1,2,3,4, the notification number 2 can be duplicated after 3 or even 4 as in 1,2,3,2,4 or even several times, as in 1,2,3,4,2,3,2.
 
 The notifications don't contain any unique identifier or timestamps to aid in de-duplication.
 Some events are easy to de-duplicate, such as inventory events where a unique source object is first CREATED and then DELETED.

@@ -43,11 +43,11 @@ The following description is primarily based on Jasper, but the same configurati
 
 The following sections describe:
 
-* How to [set up your Jasper Control Center account](#link-account) (examplarily)
-* How to configure the [connectivity](#connectivity-configuration) to the SIM provider in your {{< product-c8y-iot >}} tenant
-* How to [link SIMs](#link-sims) and mobile devices
-* Which information is shown in the [Connectivity tab](#jasperinfo)
-* How to [manage connectivity](#managing) from Device Management
+* How to [set up your Jasper Control Center account](#link-account) (examplarily).
+* How to configure the [connectivity for the SIM provider](#connectivity-configuration) in your {{< product-c8y-iot >}} tenant.
+* How to [link SIMs and mobile devices](#link-sims).
+* Which information is shown in the [Connectivity tab](#jasperinfo).
+* How to [manage connectivity](#managing) from Device Management.
 
 <a name="link-account"></a>
 ### Setting up your Jasper Control Center account
@@ -83,23 +83,25 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
-1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
-2. Click **Save** to save your settings.
+1. Enter the credentials for the respective SIM provider account. If you do not have any credentials, ask your administrator.
+2. Set a **Cache duration** in seconds to determine how long information from the provider is cached. This will prevent timeout issues.
+3. Click **Save** to save your settings.
 
-The configuration of the Kite provider differs from other providers as it requires the upload of a valid certificate(trustStoreFileName),trustStorePassword, trustStoreType and kiteBaseUrl.
+Depending on the connectivity provider you choose you must provide parameters specific to the provider.
+The parameter **Cache duration** defines how long SIM data returned by the provider is cached before fresh data is requested again, in seconds.
+This reduces traffic and the number of requests to SIM providers for billing and reliability purposes.
+A longer cache duration means less traffic to your SIM provider while a shorter duration means that more recent data is displayed.
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
-
-The Connectivity agent is now set up.
 
 <a name="link-sims"></a>
 ### Linking SIMs and mobile devices
 
-Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown,
+Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
 
-* your user does not have permissions for Connectivity,
-* the device is not linked to a SIM card,
-* the device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
+* Your user does not have permissions for Connectivity.
+* The device is not linked to a SIM card.
+* The device is linked to a SIM card, but the card is not managed by the respective SIM provider account.
 
 To assign permissions, navigate to the Administration application and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.
 
@@ -140,34 +142,26 @@ Some sections may not appear or may be empty. For example, if there have been no
 
 The **Status** section lists summary information for the SIM card.
 
-![Status section](/images/users-guide/connectivity/connectivity-status.png)
-
 The first row shows if the device is currently running a data session. If it is, the start of the session and the current WAN IP address of the device is displayed.
 
 The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the drop-down menu.
 
 At the bottom you will find usage information for the current month, that is, from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.
 
-The **SMS** section shows the text messages sent to the device and received from the device, including information on
+The **SMS** section shows the text messages sent to the device and received from the device, including the following information:
 
-* when the message was sent or received
-* where it was sent from and where it was sent to
-* the delivery status of the message:
- * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
- * For messages from the device: "Received", if it was received by the SIM provider, or "Cancelled", if it was not yet received by the SIM provider.
+* When the message was sent or received.
+* Where it was sent from and where it was sent to.
+* The delivery status of the message:
+  * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
+  * For messages from the device: "Received", if it was received by the SIM provider, or "Canceled", if it was not yet received by the SIM provider.
 * What the direction of the message is: MT ("Mobile terminated"), if it went to the device, or MO ("Mobile originated") if it came from the device.
 
 Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking **Send SMS**.
 
-![SMS section](/images/users-guide/connectivity/connectivity-jaspersms.png)
-
 The **Sessions** section shows the log of data sessions carried out by the device. It lists when the session started, how long it took and how much data traffic was consumed.
 
-![Sessions section](/images/users-guide/connectivity/connectivity-sessions.png)
-
 The **Audit logs** section lists all changes to the SIM card and its tariff. It shows the type of change, old and new values when the change was carried out by whom, and if it was successful.
-
-![Audit logs section](/images/users-guide/connectivity/connectivity-jasperaudits.png)
 
 The **Connectivity** tab does not update in real-time. To show current data, click the **Reload** in the top menu bar.
 
@@ -177,9 +171,9 @@ The **Connectivity** tab does not update in real-time. To show current data, cli
 
 If you suspect that a device is not correctly reporting to {{< product-c8y-iot >}}, or it is not receiving commands, you can verify the connectivity status of the device.
 
-In the **Connectivity** tab, check if
+In the **Connectivity** tab, check the following conditions:
 
-* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. <br> ![Activate SIM card](/images/users-guide/connectivity/connectivity-status-activate.png) <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
+* the SIM is activated. If the SIM card is not activated, you can activate it selecting "ACTIVE" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
 
   * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters.

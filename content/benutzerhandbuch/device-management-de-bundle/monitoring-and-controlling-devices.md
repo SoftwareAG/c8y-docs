@@ -42,9 +42,11 @@ Wenn Sie den Mauszeiger über einen Pfeil bewegen, wird der Zeitstempel der letz
 
 Wenn ein Gerät als offline erkannt wird (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein "UnavailabilityAlarm" für das Gerät mit der folgenden Nachricht erzeugt: "Im erforderlichen Zeitraum wurden keine Daten vom Gerät empfangen."
 
-Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
+Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
 
->**Info:** Durch PUT-Anfragen an das Objekt des Geräts werden Verbindungen ebenfalls aktualisiert. Solche Anfragen sind die empfohlene Methode zur Implementierung eines Heartbeat-Service, der den Serverstatus überwacht.
+{{< c8y-admon-info >}}
+Durch PUT-Anfragen an das Objekt des Geräts werden Verbindungen ebenfalls aktualisiert. Solche Anfragen sind die empfohlene Methode zur Implementierung eines Heartbeat-Service, der den Serverstatus überwacht.
+{{< /c8y-admon-info >}}
 
 **Push-Verbindungen**
 
@@ -54,11 +56,12 @@ Der untere Pfeil symbolisiert die Push-Verbindungen (von {{< product-c8y-iot >}}
 * Roter Pfeil - offline (Verbindung nicht hergestellt)
 * Grauer Pfeil - nicht überwacht
 
-Eine Push-Verbindung ist ein aktiver HTTPS-Long-Poll oder eine MQTT-Verbindung von {{< product-c8y-iot >}} zum API-Endpunkt <kbd>/notification/operations</kbd> (nicht zum Echtzeit-API-Endpunkt).
+Eine Push-Verbindung ist eine aktive HTTPS-Long-Poll-Verbindung zum API-Endpunkt <kbd>/notification/operations</kbd> oder eine aktive MQTT-Verbindung zum MQTT-Endpunkt von {{< product-c8y-iot >}}.
 Sie ist immer grün dargestellt, wenn das Gerät verbunden ist, auch wenn kein Datenverkehr stattfindet.
 
-
->**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
+{{< c8y-admon-info >}}
+Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
+{{< /c8y-admon-info >}}
 
 <a name="maintenance-mode"></a> **Wartungsmodus**
 
@@ -75,7 +78,9 @@ Navigieren Sie zur Registerkarte **Info** eines bestimmten Geräts, um dessen Ve
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt.
 
-> **Info:** "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.
+{{< c8y-admon-info >}}
+"Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.
+{{< /c8y-admon-info >}}
 
 Im Feld **Erwartetes Sendeintervall** können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunde mit {{< product-c8y-iot >}} kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt.
 
@@ -145,7 +150,11 @@ Alarme werden nach Schweregraden klassifiziert. {{< product-c8y-iot >}} enthält
 
 Die Registerkarte **Alarm** ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.
 
-Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Klicken Sie erneut darauf, um ihn wieder sichtbar zu machen.
+In der oberen Menüleiste sind Schaltflächen zum Filtern nach Schweregrad verfügbar. Wenn Sie auf eine Schaltfläche klicken, wird der entsprechende Bereich ausgeblendet. Klicken Sie erneut darauf, um ihn wieder sichtbar zu machen.
+
+{{< c8y-admon-info >}}
+Die an den Schaltflächen in der oberen Menüleiste angegebene Zahl bezieht sich auf die Anzahl der Alarme zum jeweiligen Schweregrad, im Gegensatz zu dem Zähler, der als roter Kreis neben einem aktiven Alarm erscheint und angibt, wie oft derselbe Alarm aufgetreten ist (siehe auch nachstehende Tabelle).
+{{< /c8y-admon-info >}}
 
 In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird.
 
@@ -168,7 +177,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 <td align="left">KRITISCH, WICHTIG, WENIGER WICHTIG oder WARNUNG (siehe oben).</td>
 </tr>
 <tr>
-<td align="left">Anzahl</td>
+<td align="left">Anzahl (angegeben als Zahl in einem roten Kreis) </td>
 <td align="left">Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.</td>
 </tr>
 <tr>
@@ -192,7 +201,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Anwenden von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de/#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in [Administration > Verwalten von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
@@ -260,7 +269,9 @@ Klicken Sie auf **Alle**, um den Filter wieder zurückzusetzen.
 Klicken Sie auf **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Operationen in Echtzeit anzuzeigen.
 Klicken Sie auf **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
->**Info:** Einzel-Operationen werden in absteigender Zeitfolge aufgelistet. Operationen werden streng nach dieser Reihenfolge ausgeführt.
+{{< c8y-admon-info >}}
+Einzel-Operationen werden in absteigender Zeitfolge aufgelistet. Operationen werden streng nach dieser Reihenfolge ausgeführt.
+{{< /c8y-admon-info >}}
 
 #### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
@@ -270,7 +281,9 @@ Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Op
 
 Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
->**Wichtig:** Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+{{< c8y-admon-important title="Wichtig" >}}
+Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+{{< /c8y-admon-important >}}
 
 #### So brechen Sie ausstehende Einzel-Operationen ab
 
@@ -349,8 +362,6 @@ Um den Filter zurückzusetzen, klicken Sie direkt daneben auf **Löschen**.
 
 Um beide Filter zurücksetzen, klicken Sie auf **Filter zurücksetzen** am Ende der Liste (nur sichtbar, wenn Filter angewendet wurden).
 
->**Info:** Bulk-Operationen, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Bulk-Operationen**.
-
 >![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
 
 <a name="bulk-operations"></a>
@@ -378,7 +389,7 @@ Führen Sie folgende Schritte aus:
       * Wählen Sie eine Firmware aus der Liste aus. Die Liste kann nach Firmware-Namen gefiltert werden. Klicken Sie auf **Weiter**.
       * Erweitern Sie einen Versionseintrag und wählen Sie einen Patch. Klicken Sie auf **Weiter**.
   * **Software Update**
-      * Erweitern Sie einen Softwareeintrag aus der Liste und wählen Sie eine Version, anschließend wählen Sie aus der Auswahlliste aus, ob Sie die Software installieren, aktualisieren oder entfernen möchten. Die Liste der verfügbaren Software kann nach Gerätetyp oder Softwarenamen gefiltert werden. Klicken Sie auf **Weiter**. Wenn Sie Software für mehrere Gerätetypen gewählt haben, informiert Sie ein Warndialog darüber, dass einige Operationen wegen nicht unterstützter Software fehlschlagen könnten, und fordert Sie zur Bestätigung auf.
+      * Erweitern Sie einen Softwareeintrag aus der Liste und wählen Sie eine Version, anschließend wählen Sie aus der Auswahlliste aus, ob Sie die Software installieren, aktualisieren oder entfernen möchten. Die Liste der verfügbaren Software kann nach Gerätetyp, nach Software-Typ oder nach Softwarename gefiltert werden. Klicken Sie auf **Weiter**. Wenn Sie Software für mehrere Gerätetypen gewählt haben, informiert Sie ein Warndialog darüber, dass einige Operationen wegen nicht unterstützter Software fehlschlagen könnten, und fordert Sie zur Bestätigung auf.
       * Bestätigen Sie die Auswahl und klicken Sie auf **Weiter**.
   * **Geräteprofil anwenden**
       * Wählen Sie ein Geräteprofil aus der Liste aus. Die Liste kann nach Gerätetyp oder Profilnamen gefiltert werden. Klicken Sie auf **Weiter**.

@@ -14,4 +14,4 @@ Furthermore it produces custom visualization, new control widgets and custom bus
 * Set up a graphical dashboard with your most important KPIs.
 * Subscribe to plugins that contribute new functionality to the {{< product-c8y-iot >}} application.
 
-![Rules](/images/users-guide/Administration/admin-event-processing.png)
+Customization concepts of {{< product-c8y-iot >}} are described in [Real-time processing](/concepts/realtime) and [Developing applications](/concepts/applications).

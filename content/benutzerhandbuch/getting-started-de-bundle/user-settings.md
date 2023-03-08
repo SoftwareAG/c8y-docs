@@ -1,6 +1,6 @@
 ---
 aliases:
-- /benutzerhandbuch/overview-de/#user-settings
+ - /benutzerhandbuch/overview-de/#user-settings
 layout: redirect
 title: Benutzeroptionen und -einstellungen
 weight: 50
@@ -48,7 +48,7 @@ Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< manageme
 </tr>
 <tr>
 <td style="text-align:left">Versionen</td>
-<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten {{< product-c8y-iot >}}-Version (z. B. 10.13.0.034) für Backend und Benutzeroberfläche an. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
+<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten {{< product-c8y-iot >}}-Version (z. B. 10.13.0.034) für Backend und Benutzeroberfläche an. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
 </tr>
 </tbody>
 </table>
@@ -61,7 +61,7 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 1. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und anschließend auf **Benutzereinstellungen**.  
 2. Nehmen Sie im Dialog **Benutzer bearbeiten** die gewünschten Änderungen vor.
 3. Zum Ändern der Sprache wählen Sie eine [Sprache](#languages) aus der Auswahlliste des Feldes **Sprache**.
-4. Verwenden Sie den Umschalter **Produkterfahrung**, um das Produkterfahrungs-Tracking von Gainsight abzuwählen, das standardmäßig aktiviert ist, wenn Sie funktionelle Cookies akzeptiert haben.
+4. Verwenden Sie den Umschalter **Produkterfahrung**, um das Produkterfahrungs-Tracking und den Knowledge Hub von Gainsight abzuwählen, die beide standardmäßig aktiviert sind, wenn Sie funktionelle Cookies akzeptiert haben.
 5. Klicken Sie auf **Passwort ändern**, um Ihr aktuelles Passwort zu ändern. Weitere Informationen finden Sie unter [So ändern Sie Ihr Passwort](#change-password).
 6. Klicken Sie auf **Speichern**, um Ihre Eingaben zu speichern.
 
@@ -111,4 +111,6 @@ Das Passwort muss standardmäßig folgende Bedingungen erfüllen:
 * Es muss aus mindestens acht Zeichen bestehen (dieser Parameter kann durch den {{< management-tenant-de >}}en konfiguriert werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).)
 * Es muss alle der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 
-> **Info:** Die Passwortregeln können vom Administrator konfiguriert werden, d. h. der Administrator kann die Einhaltung bestimmter Richtlinien für das Passwort Ihres Kontos erzwingen. So kann es etwa erforderlich sein, dass Sie ein starkes Passwort wählen oder Ihr Passwort regelmäßig ändern müssen.
+{{< c8y-admon-info >}}
+Die Passwortregeln können vom Administrator konfiguriert werden, d. h. der Administrator kann die Einhaltung bestimmter Richtlinien für das Passwort Ihres Kontos erzwingen. So kann es etwa erforderlich sein, dass Sie ein starkes Passwort wählen oder Ihr Passwort regelmäßig ändern müssen.
+{{< /c8y-admon-info >}}

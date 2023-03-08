@@ -21,17 +21,21 @@ helpcontent:
 
 
   By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
-- label: operation-monitoring
-  title: Device control
-  content: "Operations are used to control devices remotely. You can find an overview of the operations across all devices here. To view the operations of a particular device, switch to the **Control** tab in the details of the device.
+- label: single-operations
+  title: Single operations
+  content: "Using operations, you can control devices remotely. **Single operations** show all operations executed on a single device.
 
 
-  There are two types of operations, each represented by a tab:
+  Single operations can have one of the following four statuses: PENDING, EXECUTED, SUCCESSFUL, FAILED. For each operation, the name, status, and device is provided. Clicking the device leads you to the detailed view of the particular device."
+- label: bulk-operations
+  title: Bulk operations
+  content: "**Bulk operations** are single operations executed on a set of devices.
 
 
-  **Single operations** are executed on a single device.
+  Bulk operations have an operation type, for example 'Software update' or 'Firmware update', and one of the following statuses: SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY.
 
-  **Bulk operations** are single operations executed on a set of devices."
+
+  You can filter the list of bulk operations for type, status or date. Click the arrow button at the right of a bulk operation to see its details."
 - label: events-all
   title: Events
   content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
@@ -50,7 +54,6 @@ helpcontent:
 * The [operations API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Operations) for REST API methods concerning operations.
 * The [bulk operations API](https://cumulocity.com/api/{{< c8y-current-version >}}/#tag/Bulk-operations) for REST API methods concerning bulk operations.
 {{< /c8y-admon-related >}}
-
 
 <a name="map"></a>
 ### Locating devices
@@ -104,7 +107,7 @@ The bottom arrow represents the push connection (from {{< product-c8y-iot >}} to
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
-A push connection is an active HTTPS long poll or an MQTT connection from {{< product-c8y-iot >}} to the <kbd>/notification/operations</kbd> API endpoint (not the real time API endpoint).
+A push connection is an active HTTPS long poll connection to the <kbd>/notification/operations</kbd> API endpoint or an active MQTT connection to the MQTT endpoint of {{< product-c8y-iot >}}.
 It is always green if the device is connected, even without data.
 
 {{< c8y-admon-info >}}
@@ -135,8 +138,6 @@ In the  **Required interval** field you can specify an interval. This parameter 
 If an interval is set, you will find the **Maintenance** toggle below it.
 
 With the **Maintenance** toggle you can turn the maintenance mode for the device on or off which is immediately reflected in the connection status.
-
-<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
 <a name="monitoring-availability"></a>
 ### Availability
@@ -255,9 +256,6 @@ Click the arrow on the right of a row to expand it and display further details o
 #### To change the status of an alarm
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and select the desired status.
-
-![Alarm change status](/images/users-guide/DeviceManagement/devmgmt-alarms-status.png)
-
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.
 
 <!-- Seems to be no longer relevant
@@ -307,9 +305,6 @@ Clicking a row expands it and displays further details on the operation.
 
 * **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. In case the single operation is part of a [bulk operation](#to-view-bulk-operations), you can see the bulk operation details.
 * **History of Changes**: Providing information on the past changes of the operation.
-
-![Single operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
-
 
 To filter the list of single operations by status, click one of the status buttons in the top menu bar.
 Click **All** to clear the filter.
@@ -395,10 +390,6 @@ Clicking the arrow button at the right in a row expands the row and displays fur
 * **Operations**: Only present for executing or completed bulk operations. Providing information on the status and the device of single operations entailed in the bulk operation. Can be filtered by status. You may also either retry all failed operations by clicking **Retry failed operations** at the top right of the **Operations** section or retry single operations by hovering over them and then clicking the **Retry operation** button that appears right next to it. Also see [To retry failed operations](#to-retry-failed-operations).
 * **History of Changes**: In a second tab, providing information on the past changes of the bulk operation.
 
-![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
-
-![Bulk operation details, second tab](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
-
 To filter the list of bulk operations by operation type, click the dropdown list in the top menu bar and select a set of operation types, then click **Apply**.
 To clear the filter, select **All** in the dropdown list and click **Apply** once more.
 
@@ -409,12 +400,6 @@ To filter the list of bulk operations by date, select a date in both the **Date 
 To clear the filter, click **Clear** right next to it.
 
 To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
-
-{{< c8y-admon-info >}}
-Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
-{{< /c8y-admon-info >}}
-
->![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
 <a name="bulk-operations"></a>
 <a name="to-add-a-bulk-operation"></a>
@@ -432,7 +417,6 @@ Follow these steps:
 
 1. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar.
 2. In the resulting dialog, select an operation type.
-    ![Select a bulk operation type](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 3. The resulting wizard has four steps. The first two steps differ depending on the operation type:
   * **Configuration update**
       * Select a configuration from the list. The list can be filtered by configuration type or by configuration name. Click **Next**.
@@ -447,9 +431,7 @@ Follow these steps:
       * Select a device profile from the list. The list can be filtered by device type or by profile name. Click **Next**.
       * Confirm the selection and click **Next**.
 4. Select target devices by applying filters to the paginated list of all devices. You can filter by status, name, type, model, group, registration date and alarms. You may apply multiple filters. To apply a filter, click the column header, make your filter option choices in the context menu and click **Apply**. The group filter also allows filtering by subgroups. To select a subgroup, if there are any, click the arrow button at the right of a group and select the desired subgroups from the dropdown. You can clear all filters by clicking **Clear filters** above the list. For the operation types "configuration update", "software update" and "apply device profile", the list is already filtered by the according device type. Click **Next**.
-    ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
 5. Enter a new title or use the preset title. Optionally enter a description. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
-    ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
 <a name="to-schedule-a-single-operation-as-bulk-operation"></a>
 ##### To schedule a single operation as bulk operation
@@ -469,9 +451,7 @@ You may only edit the schedule of bulk operations with status = SCHEDULED.
 3. In the resulting dialog box you may change the **Start date** and **Delay** values.
 5. Click **Reschedule** to apply your changes.
 
-The changes will be applied to the bulk operation accordingly.
-
-![Reschedule bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
+The changes are applied to the bulk operation accordingly.
 
 <a name="bulk-operations"></a>
 #### To cancel bulk operations

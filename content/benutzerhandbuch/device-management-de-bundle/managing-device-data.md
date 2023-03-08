@@ -13,9 +13,9 @@ Die Device Management-Anwendung bietet verschiedene Funktionen, die Sie bei der 
 | [Verwalten von Geräte-Firmware](#firmware-repo)           | Wie Sie Firmware, Firmware-Versionen und -Patches im Firmware-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren. |
 | [Verwalten von Geräte-Software](#software-repo)           | Wie Sie Software, Software-Versionen und -Patches im Software-Repository abrufen und verwalten und sie auf Geräten installieren und aktualisieren.          |
 | [Verwalten von Konfigurationen](#configuration-repository) | Wie Sie Konfigurationsdaten von einem Gerät abrufen und sie als Konfigurationssnapshot in einem Konfigurations-Repository speichern und verwalten.                         |
-| [Gerätezugangsdaten](#credentials)                   | Wie Sie die für Ihre verbundenen Geräte erstellten Zugangsdaten verwalten.                                                                         |
-| [Geräteprofile](#device-profiles)                  | Wie Sie Geräteprofile - eine Zusammenstellung von Firmware, Software und Konfiguration - verwalten und sie auf Geräte anwenden.                                 |
-| [Vertrauenswürdige Zertifikate](#trusted-certificates)        | Wie Sie vertrauenswürdige Zertifikate verwalten.                                                                                                         |
+| [Verwalten von Gerätezugangsdaten](#credentials)          | Wie Sie die für Ihre verbundenen Geräte erstellten Zugangsdaten verwalten.                                                                         |
+| [Verwalten von Geräteprofilen](#device-profiles)         | Wie Sie Geräteprofile - eine Zusammenstellung von Firmware, Software und Konfiguration - verwalten und sie auf Geräte anwenden.                                 |
+| [Verwalten von vertrauenswürdigen Zertifikaten](#trusted-certificates)| Wie Sie vertrauenswürdige Zertifikate verwalten.                                                                                                         |
 
 Sämtliche Funktionen können über das Menü **Verwaltung** im Navigator aufgerufen werden:
 
@@ -107,7 +107,9 @@ Bewegen Sie den Mauszeiger in den Details einer bestimmten Firmware über den Ei
 
 Sie können die für ein Gerät installierte Firmware auf der Registerkarte **Firmware** dieses Geräts verwalten.
 
->**Info:** Die Registerkarte **Firmware** wird für Geräte angezeigt, die Operationen vom Typ `c8y_Firmware` unterstützen.
+{{< c8y-admon-info >}}
+Die Registerkarte **Firmware** wird für Geräte angezeigt, die Operationen vom Typ `c8y_Firmware` unterstützen.
+{{< /c8y-admon-info >}}
 
 Klicken Sie im Menü **Geräte** des Navigators auf **Alle Geräte**, wählen Sie das gewünschte Gerät aus der Geräteliste und öffnen Sie die dazugehörige Registerkarte **Firmware**.
 
@@ -143,8 +145,6 @@ Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** un
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
->**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
-
 <a name="software-repo"></a>
 ### Verwalten von Geräte-Software
 
@@ -158,14 +158,21 @@ Die verfügbaren Software-Objekte werden in Form einer Liste angezeigt.
 
 ![Software list](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-repository.png)
 
-Jeder Eintrag enthält den Namen der Software, den Gerätetypen, auf den sie anwendbar ist (falls angegeben) und eine Bezeichnung, die angibt, ob und wie viele Versionen für eine bestimmte Software verfügbar sind.
-Links in der oberen Menüleiste können Sie die Repository-Einträge nach Name, Beschreibung, Gerätetyp oder Konfigurationstyp filtern. Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
+Jeder Eintrag enthält den Namen der Software, den Gerätetyp, auf den sie anwendbar ist (falls angegeben), den Software-Typ (falls angegeben) sowie einen Sticker, der angibt, ob und wie viele Versionen für eine bestimmte Software verfügbar sind.
+Die Werte in jeder Spalte außer in der Spalte **Versionen** können durch Klicken auf das Filter- oder Sortiersymbol in der Spaltenüberschrift gefiltert bzw. sortiert werden.
 
 Wenn sie auf einen Eintrag klicken, werden die Details dieser Software sowie alle verfügbaren Versionen angezeigt.
 
 ![Software details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-details.png)
 
-Am Anfang der Liste stehen der Name der Software, eine Beschreibung und ein oder mehrere Gerätetypfilter (optional). Wenn ein Filter gesetzt ist, wird die Software nur für die entsprechenden Geräte zur Installation angeboten. Ist kein Filter gesetzt, wird sie für alle Geräte angeboten.
+Am Anfang der Liste stehen der Name der Software, eine Beschreibung, ein oder mehrere Gerätetypfilter (optional) und ein Software-Typ.
+Wenn ein Gerätetypfilter gesetzt ist, wird die Software nur für die entsprechenden Geräte zur Installation angeboten.
+Ist kein Filter gesetzt, wird sie für alle Geräte angeboten.
+Der Software-Typ bewirkt, dass die Software nur auf Geräten installierbar ist, die den jeweiligen Software-Typ explizit unterstützen.
+
+{{< c8y-admon-info >}}
+Im Feld **Software-Typ** wird Ihnen eine Liste von Typen vorgeschlagen, die in Ihrem Software-Repository bereits verwendet werden. Bevor Sie das Definieren eines neuen Software-Typs in Betracht ziehen (das Feld akzeptiert neue Werte direkt), überprüfen Sie anhand der Vorschläge in der Auswahlliste, ob der gewünschte Typ bereits für eine andere Software definiert wurde. Auf diese Weise sorgen Sie für größere Konsistenz der Software-Typen innerhalb Ihres Unternehmens. Wenn Sie z. B. Container-Images verwenden, können Sie nach `container` oder `image` oder versuchsweise nach spezifischeren Typen wie `docker`, `lxc` usw. suchen. Dadurch können Sie verhindern, dass Ihre Software-Typen unübersichtlich werden und Sie verschiedene Namen für ein und denselben Software-Typ verwenden.
+{{< /c8y-admon-info >}}
 
 Die Liste der Versionen und Patches enthält den Versionsnamen und den Namen der Software-Binärdatei.
 Die Versionen sind nach ihrem Erstellungszeitpunkt (absteigend) sortiert.
@@ -177,8 +184,9 @@ Die Versionen sind nach ihrem Erstellungszeitpunkt (absteigend) sortiert.
 	* eine neue Software hinzufügen, indem Sie einen Namen für die Software eingeben (im darauffolgenden Fenster durch Klicken auf **Hinzufügen** bestätigen) und eine Beschreibung sowie die Version hinzufügen (alle Angaben erforderlich).
 	* eine neue Version hinzufügen, indem Sie die Software, für die Sie die Version hinzufügen möchten, in der Auswahlliste im Feld **Software** auswählen und eine Version eingeben.
 3. Optional können Sie den Gerätetypfilter definieren, wenn Sie eine neue Software hinzufügen.
-3. Laden Sie entweder eine Binärdatei aus Ihrem Dateisystem hoch oder geben Sie eine URL an, unter der die Software heruntergeladen werden kann.
-4. Klicken Sie auf **Speichern**.
+4. Definieren Sie den Software-Typ. Dies bewirkt, dass die Software nur auf Geräten installierbar ist, die den jeweiligen Software-Typ erklärtermaßen unterstützen.
+5. Laden Sie entweder eine Binärdatei aus Ihrem Dateisystem hoch oder geben Sie eine URL an, unter der die Software heruntergeladen werden kann.
+6. Klicken Sie auf **Software hinzufügen**.
 
 ![Add software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-add.png)
 
@@ -191,17 +199,17 @@ Wenn Sie in den Details einer bestimmten Software auf **Software hinzufügen** k
 
 #### So bearbeiten Sie eine Software
 
-1. Klicken Sie auf das Menüsymbol rechts neben einem bestimmten Software-Eintrag und anschließend im Kontextmenü auf **Bearbeiten**.
-2. Bearbeiten Sie den Namen, die Beschreibung oder den Gerätetypfilter, indem Sie auf das daneben angezeigte Bleistiftsymbol klicken. Nehmen Sie die gewünschten Änderungen vor und klicken Sie auf **Speichern**.
+1. Klicken Sie auf das Menüsymbol rechts neben einem bestimmten Software-Element und anschließend im Kontextmenü auf **Bearbeiten**.
+2. Bearbeiten Sie den Namen, die Beschreibung, den Gerätetypfilter oder den Software-Typ, indem Sie auf das daneben angezeigte Bleistiftsymbol klicken. Nehmen Sie die gewünschten Änderungen vor und klicken Sie auf **Speichern**.
 
 Die Software wird entsprechend aktualisiert.
 
 
-#### Löschen von Software oder Software-Versionen
+#### Löschen von Software-Elementen oder Software-Versionen
 
 ##### So löschen Sie eine Software
 
-Klicken Sie auf das Menüsymbol rechts neben einem bestimmten Software-Eintrag und anschließend im Kontextmenü auf **Löschen**.
+Klicken Sie auf das Menüsymbol rechts neben einem bestimmten Software-Element und anschließend im Kontextmenü auf **Löschen**.
 
 Die Software wird mit sämtlichen Versionen aus dem Software-Repository gelöscht.
 
@@ -214,11 +222,13 @@ Bewegen Sie den Mauszeiger in den Details einer bestimmten Software über den Ei
 
 Sie können die Software eines Geräts auf der Registerkarte **Software** dieses Geräts verwalten.
 
->**Info:** Die Registerkarte **Software** wird für Gerate angezeigt, die eine der folgenden Operationen unterstützen: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
+{{< c8y-admon-info >}}
+Die Registerkarte **Software** wird für Gerate angezeigt, die eine der folgenden Operationen unterstützen: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
+{{< /c8y-admon-info >}}
 
 Klicken Sie im Menü **Geräte** des Navigators auf **Alle Geräte**, wählen Sie das gewünschte Gerät aus der Geräteliste und öffnen Sie die dazugehörige Registerkarte **Software**.
 
-Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte Software auf.
+Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte Software auf. Wenn eine bestimmte Software einen Typ hat, wird dieser neben ihrem Namen angezeigt. Sie können nach einer bestimmten Software anhand ihres Namens suchen oder die Liste anhand des Software-Typs filtern.
 
 ![Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-tab.png)
 
@@ -229,10 +239,20 @@ Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGR
 ##### So installieren Sie Software auf einem Gerät
 
 1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-install.png)
-2. Wählen Sie einen oder mehrere Software-Einträge, indem Sie die entsprechende Version in der Liste auswählen. Diese enthält die gesamte Software, die für diesen Gerätetyp im Software-Repository bereitsteht.
-4. Klicken Sie auf **Installieren**.
-5. Überprüfen Sie Ihre geplanten Änderungen im Bereich **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.<br><br>
-	![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
+
+    {{< c8y-admon-info >}}
+Im Dialog **Software installieren** werden nur Software-Elemente angezeigt, die dem Gerätetyp entsprechen. Zudem gilt: Wenn für das Gerät `c8y_SupportedSoftwareTypes` deklariert wurden, werden in dem Dialog nur die Software-Elemente angezeigt, die den unterstützten Software-Typen entsprechen.
+    {{< /c8y-admon-info >}}
+
+2. Wählen Sie einen oder mehrere Software-Einträge, indem Sie die entsprechende Version in der Liste auswählen. Diese enthält alle Software-Elemente, die für diesen Gerätetyp im Software-Repository bereitstehen.  
+Bei Geräten, die erweiterte Software-Management-Funktionen unterstützen, können bereits installierte Software-Elemente nicht in der Liste der verfügbaren Software-Elemente vorab gefiltert werden. Daher wird nach Auswahl der jeweiligen Software-Version überprüft, ob die ausgewählte Software bereits auf dem Gerät installiert ist. Ist dies der Fall, wird durch eine Warnung neben der ausgewählten Version darauf hingewiesen, dass die Software-Version bereits auf dem Gerät vorhanden ist.  
+Sie können das bereits installierte Software-Element unter **Software-Änderungen** entfernen oder aber beibehalten und im Rahmen der Änderungen anwenden. Wie mit einer solchen Aktualisierung umgegangen werden soll, bleibt dem Geräte-Agenten überlassen.
+
+3. Klicken Sie auf **Installieren**.
+
+4. Überprüfen Sie Ihre geplanten Änderungen unter **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.
+
+	 ![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
@@ -243,7 +263,7 @@ Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzte
 
 ##### So aktualisieren Sie Software auf einem Gerät
 
-Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie aktualisieren möchten, und klicken Sie auf **Aktualisieren**.
+Bewegen Sie den Mauszeiger über das Software-Element, das Sie aktualisieren möchten, und klicken Sie auf **Aktualisieren**.
 Wählen Sie eine Version aus der Liste und klicken Sie erneut auf **Aktualisieren**.
 
 ![Update software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-update.png)
@@ -252,7 +272,7 @@ Die Software wird mit der ausgewählten Version aktualisiert.
 
 ##### So löschen Sie Software von einem Gerät
 
-Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie löschen möchten und klicken Sie auf das Löschen-Symbol.
+Bewegen Sie den Mauszeiger über das Software-Element, das Sie löschen möchten, und klicken Sie auf das Löschen-Symbol.
 
 ##### So installieren Sie Software auf mehreren Geräten
 
@@ -265,8 +285,6 @@ Bewegen Sie den Mauszeiger über den Eintrag der Software, die Sie löschen möc
 Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
 Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
-
->**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
 <a name="configuration-repository"></a>
 ### Verwalten von Konfigurationen
@@ -310,34 +328,23 @@ Der Konfigurationssnapshot wird aus dem Konfigurationssnapshot-Repository gelös
 
 #### So laden und wenden Sie einen Konfigurationssnapshot an
 
->**Info:** Die folgenden Schritte gelten für Geräte, die nur einen Konfigurationstyp unterstützen. Informationen zu Geräten, die mehrere Konfigurationstypen unterstützen, finden Sie im nächsten Abschnitt.
+Das Verwalten von Konfigurationen, also das Anfordern einer Konfiguration von einem Gerät, und das Senden einer Konfiguration an ein Gerät kann auf mehrere Arten erfolgen. Je nach Benutzerberechtigungen und Geräteeinstellungen können Sie mit textbasierter, typenbasierter oder dateibasierter Konfiguration arbeiten. Detailliertere und technische Informationen finden Sie unter [Device management library > Configuration](/reference/device-management-library/#configuration) im *Reference Guide*.
 
-1. Navigieren Sie unter **Geräte** > **Alle Geräte** zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
-2. Klicken Sie auf **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
+#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das die typenbasierte Konfiguration unterstützt
 
-Der geladene Snapshot wird im **Konfigurations-Repository** im Menü **Verwaltung** des Navigators angezeigt.
-
-![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
-
-So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
-
-1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
-2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
-3. Klicken Sie auf **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
-
-![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
-
-#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
+Wir empfehlen ihnen, die typenbasierte Konfiguration zu verwenden. Bei typenbasierter Konfiguration können Geräte mehrere Konfigurationen gleichzeitig verwalten. Sie können verschiedene Konfigurationen für verschiedene Typen hochladen oder abrufen. Dieser Ansatz ist flexibler, da die Konfigurationen nicht als Dateien, sondern als Ereignisse behandelt werden, was effizienter ist.
 
 1. Navigieren Sie unter **Geräte** > **Alle Geräte** zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 2. Wählen Sie den gewünschten Konfigurationstyp unter **Geräteunterstützte Konfigurationen** und klicken Sie auf
-**Snapshot vom Gerät abrufen** auf der rechten Seite.
+   **Snapshot vom Gerät abrufen** auf der rechten Seite.
 
 Sobald Sie den Snapshot geladen haben, können Sie ihn im Abschnitt **Vorschau** speichern oder herunterladen. Der Snapshot wird zum **Konfigurations-Repository** hinzugefügt, auf das Sie über das Menü **Verwaltung** im Navigator zugreifen können.
 
 ![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-> **Info:** Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird eine neue Operation erstellt. Wenn sich die Operation im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um die Operation abzubrechen oder die Änderungshistorie der Operation anzuzeigen.
+{{< c8y-admon-info >}}
+Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird eine neue Operation erstellt. Wenn sich die Operation im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um die Operation abzubrechen oder die Änderungshistorie der Operation anzuzeigen.
+{{< /c8y-admon-info >}}
 
 So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
 
@@ -348,7 +355,21 @@ So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfig
 
 ![Apply new snapshot to a device](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-> **Info:** Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfigurationsdateien angezeigt, die über ein passendes Konfigurationstyp-Attribut verfügen oder für die kein Konfigurationstyp definiert wurde. Zudem werden Konfigurationsdateien basierend auf dem Gerätetypen gefiltert.
+{{< c8y-admon-info >}}
+Unter **Verfügbare unterstützte Konfigurationen** werden nur die Konfigurationsdateien angezeigt, die über ein passendes Konfigurationstyp-Attribut verfügen oder für die kein Konfigurationstyp definiert wurde. Zudem werden Konfigurationsdateien basierend auf dem Gerätetypen gefiltert.
+{{< /c8y-admon-info >}}
+
+#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das dateibasierte Konfiguration unterstützt
+
+Geräte, die Konfigurationen als Dateien verwalten, können dies in grundlegender Form mithilfe einer dateibasierten Konfiguration tun. Bei dateibasierter Konfiguration kann pro Gerät nur eine einzige Konfiguration festgelegt werden.
+
+![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
+
+#### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das textbasierte Konfiguration unterstützt
+
+Die grundlegendste Form der Konfiguration ist die textbasierte Konfiguration. Ein Textbefehl kann von einem Gerät gesendet oder empfangen werden. Wir empfehlen Ihnen, die textbasierte Konfiguration nur für kurze, menschenlesbare Konfigurationsdateien zu verwenden.
+
+![Send Text Configuration](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-text-getnewsnapshot.png)
 
 <a name="credentials"></a>
 ### Verwalten von Gerätezugangsdaten
@@ -434,7 +455,7 @@ Nähere Informationen zu Software finden Sie unter [Verwalten von Geräte-Softwa
 
 Klicken Sie auf **Konfiguration hinzufügen**, um dem Profil eine Software hinzuzufügen. Wählen Sie eine Konfigurationsdatei aus der Liste und klicken Sie auf **Speichern**, um die Auswahl zu dem Profil hinzuzufügen. Sie können mehrere Konfigurationsdateien zu einem Profil hinzufügen.
 
-Nähere Informationen zu Konfigurationssnapshots finden Sie unter [Verwalten von Konfigurationssnapshots](#configuration-repository).
+Nähere Informationen zu Konfigurationssnapshots finden Sie unter [Verwalten von Konfigurationen](#configuration-repository).
 
 #### So aktualisieren Sie Geräteprofile
 
@@ -461,7 +482,9 @@ Wenn Sie ein Profil duplizieren, wird eine weitere Instanz des Profils mit demse
 
 Zum Löschen eines Geräteprofils klicken Sie auf das Menüsymbol rechts neben dem jeweiligen Eintrag und anschließend auf **Löschen**.
 
-> **Info:** Wenn Sie ein Profil löschen, wird der Eintrag aus dem Geräteprofil-Repository gelöscht. Dies hat keine Auswirkungen auf die Geräte, die das Profil aktuell nutzen.
+{{< c8y-admon-info >}}
+Wenn Sie ein Profil löschen, wird der Eintrag aus dem Geräteprofil-Repository gelöscht. Dies hat keine Auswirkungen auf die Geräte, die das Profil aktuell nutzen.
+{{< /c8y-admon-info >}}
 
 <a name="applying-device-profiles"></a>
 ### Geräteprofile auf Geräte anwenden
@@ -475,7 +498,9 @@ Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details d
 
 ![Currently installed profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-tab.png)
 
->**Info:** Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ `c8y_DeviceProfile` unterstützen.
+{{< c8y-admon-info >}}
+Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ `c8y_DeviceProfile` unterstützen.
+{{< /c8y-admon-info >}}
 
 Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
 
@@ -504,15 +529,18 @@ Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet w
 
 Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status der Operation. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
 
->**Info:** Beim Anlegen von Bulk-Operationen können Filter verwendet werden, die es Ihnen ermöglichen, Bulk-Operationen nur für die Geräte anzulegen, auf die noch kein Profil angewendet wurde.
-
+{{< c8y-admon-info >}}
+Beim Anlegen von Bulk-Operationen können Filter verwendet werden, die es Ihnen ermöglichen, Bulk-Operationen nur für die Geräte anzulegen, auf die noch kein Profil angewendet wurde.
+{{< /c8y-admon-info >}}
 
 <a name="trusted-certificates"></a>
 ### Verwalten von vertrauenswürdigen Zertifikaten
 
 In {{< product-c8y-iot >}} können sich Geräte via MQTT-Protokoll und unter Verwendung eines X.509-Zertifikats zur Authentifizierung miteinander verbinden. Das Zertifikat muss dazu von {{< product-c8y-iot >}} als vertrauenswürdig eingestuft werden. Ein Zertifikat ist vertrauenswürdig, wenn es zu den vertrauenswürdigen Zertifikaten hinzugefügt wurde und aktiviert ist.
 
->**Info:** Dieser Abschnitt beschreibt, wie Sie vertrauenswürdige Zertifikate verwalten. Informationen zum Verbinden von Geräten mit Zertifikaten finden Sie unter [Geräteintegration mit MQTT > Gerätezertifikate](/device-sdk/mqtt#device-certificates) im *Device SDK Guide*.
+{{< c8y-admon-info >}}
+Dieser Abschnitt beschreibt, wie Sie vertrauenswürdige Zertifikate verwalten. Informationen zum Verbinden von Geräten mit Zertifikaten finden Sie unter [Geräteintegration mit MQTT > Gerätezertifikate](/device-integration/mqtt#device-certificates) in *Device Integration*.
+{{< /c8y-admon-info >}}
 
 Klicken Sie im Menü **Verwaltung** des Navigators auf **Vertrauenswürdige Zertifikate**.
 
@@ -552,17 +580,19 @@ Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 | Feld             | Beschreibung                                                                                                                                |
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | Zertifikatsname  | Vom Benutzer angegebener Name für das Zertifikat. Dieser Name wird nicht von {{< product-c8y-iot >}} verwendet und kann als Beschreibung des Zertifikats dienen.         |
-| Zertifikat       | Datei, die das Zertifikat im PEM-Format enthält. Fügen Sie die Datei durch Ablegen in dieses Feld oder Durchsuchen ihres Computers hinzu.            |
+| Zertifikat       | Datei, die das Zertifikat im PEM-Format enthält. Fügen Sie die Datei durch Ablegen in dieses Feld oder Durchsuchen ihres Dateisystems hinzu.            |
 | Auto-Registrierung | Bei Auswahl dieser Option werden neue Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, automatisch registriert. |
 | Eingeschaltet/Ausgeschaltet | In ausgeschaltetem Zustand können sich Geräte, die ein Zertifikat nutzen, das durch die ausgebende Zertifizierungsstelle signiert ist, nicht verbinden.               |
 
 3. Klicken Sie auf **Zertifikat hinzufügen**, um das Zertifikat zu validieren und zu speichern.
 
->**Info:** Aus Leistungsgründen sollten Sie nicht die Zertifikate von jedem Gerät, das Sie verbinden möchten, hinzufügen, sondern nur das Stammzertifikat oder eines der Zwischenzertifikate aus der Kette, die zum Signieren der von Geräten verwendeten Zertifikate genutzt wurde.
+{{< c8y-admon-info >}}
+Aus Leistungsgründen sollten Sie nicht die Zertifikate von jedem Gerät, das Sie verbinden möchten, hinzufügen, sondern nur das Stammzertifikat oder eines der Zwischenzertifikate aus der Kette, die zum Signieren der von Geräten verwendeten Zertifikate genutzt wurde.
+{{< /c8y-admon-info >}}
 
 #### So bearbeiten Sie ein vertrauenswürdiges Zertifikat
 
-In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
+In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
 
 Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung zum Hinzufügen von Zertifikaten.
 

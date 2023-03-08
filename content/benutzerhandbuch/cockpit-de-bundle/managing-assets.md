@@ -1,8 +1,16 @@
 ---
-weight: 20
-title: Verwalten von Assets
 layout: redirect
+title: Verwalten von Assets
+weight: 20
 ---
+
+Klicken Sie im Navigator auf **Gruppen**, um eine Liste aller Gruppen zu sehen. Um eine Gruppe hinzuzufügen, klicken Sie oben rechts auf **Gruppe hinzufügen**.
+
+
+Wählen Sie eine Gruppe aus der Gruppenliste oder aus dem Navigator, um deren Details anzuzeigen, insbesondere alle der Gruppe zugewiesenen Assets. Klicken Sie oben rechts auf **Geräte zuweisen**, um der Gruppe Geräte zuzuweisen.
+
+
+Durch Ziehen und Ablegen von Gruppen oder Geräten im Navigator können Sie Gruppen auf einfache Weise neu strukturieren oder ihnen Geräte zuordnen.
 
 <a name="assets"></a>
 ### Asset-Hierarchie
@@ -23,7 +31,9 @@ Im vorliegenden Beispiel repräsentieren die Gruppenobjekte einen Gebäudebestan
 
 Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gruppe zugewiesen werden (siehe unten).
 
-> **Info:** Einzelne Geräte werden nicht in der Cockpit-Anwendung verwaltet. Die Verwaltung erfolgt in der Device Management-Anwendung.
+{{< c8y-admon-info >}}
+Einzelne Geräte werden nicht in der Cockpit-Anwendung verwaltet. Die Verwaltung erfolgt in der Device Management-Anwendung.
+{{< /c8y-admon-info >}}
 
 <a name="hierarchies"></a>
 #### Asset-Hierarchie versus Gerätehierarchie
@@ -67,6 +77,7 @@ Wenn Sie LKWs innerhalb der {{< product-c8y-iot >}}-Plattform verwalten, wird je
 Beim Gebäudemanagement ist es häufig so, dass eine Gruppe von Sensoren in einem Gebäude als eine Gruppe darstellt wird, die mit der {{< product-c8y-iot >}}-Plattform kommuniziert.
 
 <a name="navigating"></a>
+
 ### Navigieren durch Assets
 
 In der Asset-Hierarchie unterscheidet {{< product-c8y-iot >}} zwischen Top-Level-Gruppen und untergeordneten Assets (Kind-Assets). Kind-Assets können entweder andere Gruppen oder Geräte sein.
@@ -77,7 +88,13 @@ Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gru
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
->**Info:** Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
+{{< c8y-admon-info >}}
+Die Zahl oben in der Tabelle der Registerkarte **Kind-Assets** gibt die Gesamtanzahl der Kind-Assets an, die der aktuellen Gruppe zugewiesen sind. Jede Art von Objekt kann ein Kind-Asset sein. Weitere Informationen zum Zählen von Objekten finden Sie in der Beschreibung der Operation [Alle Kind-Assets für ein bestimmtes Objekt abrufen](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in der {{< openapi >}}.
+{{< /c8y-admon-info >}}
+
+{{< c8y-admon-info >}}
+Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
+{{< /c8y-admon-info >}}
 
 Verwenden Sie den Navigator, um durch die Asset-Hierarchie zu navigieren.
 
@@ -87,22 +104,44 @@ Je nach Asset-Typ (Gruppe oder Gerät) sind verschiedene Registerkarten mit deta
 
 Bei Gruppen werden die folgenden Registerkarten angezeigt:
 
-* **Kind-Assets** - Zeigt Gruppendetails und alle Kind-Assets einer Gruppe, siehe auch [Device Management > Anzeigen von Geräten](/benutzerhandbuch/device-management-de/#viewing-devices).
-* **Smart Rules** - Zeigt für die Gruppe festgelegte Smart Rules, siehe auch [Smart Rules](#smart-rules).
-* **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
+- **Kind-Assets** - Zeigt Gruppendetails und alle Kind-Assets einer Gruppe, siehe auch [Device Management > Anzeigen von Geräten](/benutzerhandbuch/device-management-de/#viewing-devices).
+- **Smart Rules** - Zeigt für die Gruppe festgelegte Smart Rules, siehe auch [Smart Rules](#smart-rules).
+- **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
+
+{{< c8y-admon-req title="Anforderungen" >}}
+ROLLEN UND BERECHTIGUNGEN im Kontext von Gruppen:
+
+- Zum Anzeigen aller Gruppen: READ-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Hinzufügen neuer Gruppen: CREATE-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Löschen einer beliebigen Gruppe: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Umbenennen einer Gruppe oder zum Ändern der Gruppenbeschreibung: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Anzeigen spezifischer Gruppen: LESEN-Berechtigungen für "Stammdaten" in den Stammdatenrollen
+- Zum Verwalten oder Löschen spezifischer Gruppen: LESEN- und ÄNDERN-Berechtigungen für "Stammdaten" in den Stammdatenrollen
+
+Beachten Sie, dass globale Stammdatenberechtigungen die Berechtigungen für Stammdatenrollen überschreiben
+{{< /c8y-admon-req >}}
 
 Bei Geräten werden die folgenden Registerkarten angezeigt:
 
-* **Info** - Zeigt für das Gerät festgelegte Smart Rules, siehe auch [Smart Rules](#smart-rules).
-* **Alarme** - Zeigt Alarme für das Gerät an, siehe auch [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
-* **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
-* **Standort** - Zeigt den aktuellen Standort des Geräts (nur verfügbar mit `c8y_Position`).
+- **Smart Rules** - Zeigt für das Gerät festgelegte Smart Rules, siehe auch [Smart Rules](#smart-rules).
+- **Alarme** - Zeigt Alarme für das Gerät an, siehe auch [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
+- **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
+- **Standort** - Zeigt den aktuellen Standort des Geräts (nur verfügbar mit `c8y_Position`).
 
-Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Verwenden von Dashboards](#dashboards).
+{{< c8y-admon-req title="Anforderungen" >}}
+ROLLEN UND BERECHTIGUNGEN im Kontext von Geräten:
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit einer eigenen Web SDK-Extension erweitert wurde. Siehe auch [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) für Informationen zum Hinzufügen einer eigenen Registerkarte.
+- Zum Anzeigen aller Geräte innerhalb einer Gruppe: READ-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Zuweisen von Geräten innerhalb einer Gruppe oder zum Aufheben der Zuweisung: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+- Zum Löschen eines beliebigen Geräts innerhalb einer Gruppe: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
+{{< /c8y-admon-req >}}
+
+Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Arbeiten mit Dashboards](#dashboards).
+
+Darüber hinaus können hier zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit einer benutzerdefinierten Web SDK-Erweiterung versehen wurde. Wie Sie eine benutzerdefinierte Registerkarte hinzufügen können, erfahren Sie in unserem [Web SDK-Tutorial](/web/tutorials/#add-a-tab-to-a-device).
 
 <a name="creating-groups"></a>
+
 ### Hinzufügen einer Gruppe
 
 1. Klicken Sie auf **Gruppe hinzufügen** rechts in der oberen Menüleiste.
@@ -112,7 +151,9 @@ Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit
 
 Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
->**Info:** Eine Gruppe kann mit "0" Geräten erstellt werden.
+{{< c8y-admon-info >}}
+Eine Gruppe kann mit "0" Geräten erstellt werden.
+{{< /c8y-admon-info >}}
 
 Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden **Kind-Assets**-Registerkarte und klicken Sie auf **Gruppe hinzufügen** in der oberen Menüleiste.
 
@@ -130,7 +171,7 @@ Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 
 ![Assign devices](/images/benutzerhandbuch/cockpit/cockpit-group-assign.png)
 
-Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets in der Registerkarte **Kind-Assets** angezeigt.
+Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Registerkarte **Kind-Assets** angezeigt.
 
 <a name="edit-group"></a>
 ### Bearbeiten einer Gruppe

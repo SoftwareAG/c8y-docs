@@ -142,6 +142,13 @@ The Device Management application provides functionalities for connecting, manag
 
 For details see [Device Management](/users-guide/device-management) in the *User guide*.
 
+<a name="device-protocol"></a>
+### Device protocol
+A device protocol defines how data from a specific device type should be transferred into the {{< product-c8y-iot >}} platform. It contains protocol-specific information about where the data is obtained from, how to transform it, and how to store it in {{< product-c8y-iot >}}.
+The definition of the device protocol differs based on the underlying protocol used by the device (for example, Modbus, LoRa, OPC UA or LWM2M).
+
+For details see the [Protocol integration guide](/protocol-integration/overview).
+
 <a name="digital-twin"></a>
 ### Digital twin
 
@@ -268,7 +275,7 @@ The behavior of a block inside a model does not depend on other blocks. There ca
 ### MQTT
 {{< product-c8y-iot >}} supports MQTT, an OASIS standard messaging protocol, for device integration.
 
-For details see [Device integration using MQTT](/device-sdk/mqtt) in the *Device SDK guide*.
+For details see [Device integration using MQTT](/device-integration/mqtt) in *Device integration*.
 
 <a name=""></a>
 ### Multi-tenancy
@@ -324,7 +331,7 @@ In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for a
 ### REST API
 The {{< product-c8y-iot >}} REST API is an interface that allows for communication between the {{< product-c8y-iot >}} platform and other systems via HTTP and REST. It allows the user to perform operations and process data by issuing a simple request using any HTTP client such as a web browser.
 
-For details see the [{{< product-c8y-iot >}} OpenAPI Specification](https://{{< domain-c8y >}}/api/).
+For details see the [{{< product-c8y-iot >}} OpenAPI Specification](https://{{< domain-c8y >}}/api/core/).
 
 <a name="sensor-library"></a>
 ### Sensor library

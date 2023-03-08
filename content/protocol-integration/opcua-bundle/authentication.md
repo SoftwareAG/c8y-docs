@@ -30,13 +30,7 @@ With the above command, the key pass is set to the same value as the keystore pa
 
 ![terminal](/images/device-protocols/opcua/opcua-terminal.png)
 
-The keystore can then be verified by using a tool like KeystoreExplorer.
-
-![Keystore explorer](/images/device-protocols/opcua/opcua-keystore-explorer1.png)
-
-![Keystore explorer2](/images/device-protocols/opcua/opcua-keystore-explorer2.png)
-
-The keystore can then be uploaded as binary in {{< product-c8y-iot >}} and it can be used in the server configuration.
+The keystore can be verified by using a tool like KeystoreExplorer. It can then be uploaded to {{< product-c8y-iot >}} as a binary and used in the server configuration.
 
 ![Opcua Keystore](/images/device-protocols/opcua/opcua-keystore.png)
 
@@ -59,6 +53,9 @@ All server connections are listed as child devices even if the servers are disco
 When you navigate to the child device of the gateway, the **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find "nodeId", "browserName" or "displayName" of an attribute. In case of multiple "ancestorNodeIds", you can click on the desired node to be redirected.
 
 The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, for example, the address space has not been scanned, another scan will be triggered without synchronizing data into {{< product-c8y-iot >}}. Performing another address space operation will update the address space information.
+
+In case a node cannot be read, the scan process skips this node and continues.
+An error entry is written to the opcua-device-gateway log file to provide information (more information available in debug level).
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-address.png)
 

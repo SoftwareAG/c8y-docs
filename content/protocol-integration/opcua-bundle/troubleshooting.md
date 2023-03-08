@@ -38,14 +38,58 @@ For troubleshooting purposes, we recommend you to enable the DEBUG log level for
 For example:
 
 ```
-
     <logger name="com.cumulocity.opcua.client.gateway" level="DEBUG"/>
     <logger name="com.cumulocity" level="DEBUG"/>
     <logger name="c8y" level="DEBUG"/>
 
     <root level="DEBUG">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT"/>
+    </root>
+```
+
+If there is an unknown error during the address space scans, enable DEBUG or TRACE log level specifically for the scanners:
+
+```
+    <logger name="com.cumulocity.opcua.client.BaseAddressSpaceScanner" level="DEBUG" />
+    <logger name="com.cumulocity.opcua.client.OpcuaAddressSpaceFullScanner" level="DEBUG" />
+    <logger name="com.cumulocity.opcua.client.OpcuaAddressSpaceLightScanner" level="DEBUG" />
+    <logger name="com.cumulocity.opcua.client.OpcuaAddressSpaceReverseFullScanner" level="DEBUG" />
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
         <appender-ref ref="STDOUT"/>
     </root>
 ```
 
 For additional information about log levels, refer to the [Logback architecture documentation](http://logback.qos.ch/manual/architecture.html#effectiveLevel).
+
+### Java Management Extensions (JMX)
+
+For additional monitoring, the gateway component provides MBeans. These MBeans get exposed if the following configuration is set in the *application.yaml* file:
+
+```
+spring:
+     jmx:
+         enabled: true
+```
+
+Via jconsole the MBeans can be selected and the following attributes can be accessed:
+
+![jconsole MBeans](/images/device-protocols/opcua/opcua-jmx-mbeans.png)
+
+It can be useful to get some statistics for custom actions in particular. These attributes can be retrieved from the CustomActionMBean:
+
+1. Table of all called URLs seperated by HTTP return code and retry count.
+
+    ![jconsole MBeans CustomActionMBean CounterTable](/images/device-protocols/opcua/opcua-jmx-customActionMBean-CounterTable.png)
+
+    The key entry of the table consists of:
+
+    ```
+    {URL}_{HTTP Response Code}_{Retry Count}
+    ```
+
+2. If retry is enabled, the queue size of the retry queue can be monitored.
+
+    ![jconsole MBeans CustomActionMBean RetryQueueSize](/images/device-protocols/opcua/opcua-jmx-customActionMBean-RetryQueueSize.png)

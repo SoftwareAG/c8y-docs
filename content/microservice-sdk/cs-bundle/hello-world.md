@@ -20,7 +20,7 @@ The application created in this way uses the ASP.NET Web API framework to create
 In Windows systems, Powershell is installed by default. Download the script file to build a "Hello world" application. Manage the version of scripts and replace latest to the right version number.
 
 ```shell
-Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
+Invoke-WebRequest  https://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
 The latest can be replaced by the version number, for example, `microservicesdk-lin-dev-{X.X.X}.zip`.
@@ -252,7 +252,7 @@ It is possible to check if the application communicates with the platform by def
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:3288/",
+      "applicationUrl": "https://localhost:3288/",
       "sslPort": 0
     }
   },
@@ -288,7 +288,7 @@ It is possible to check if the application communicates with the platform by def
 {{< product-c8y-iot >}} provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
 
 ```shell
-Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
+Invoke-WebRequest  https://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
 To show all the functions are available, type
@@ -470,11 +470,11 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information, refer to the [Device SDK guide](/device-sdk/).
+For further information, refer to [Device integration](/device-integration/).
 
 #### C# MQTT SDK
 
-It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-sdk/mqtt-examples) in the *Device SDK guide*.
+It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-integration/mqtt-examples) in *Device integration*.
 
 
 ### Building and deploying on Linux
@@ -482,7 +482,7 @@ It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it
 use the wget command to download the script file to build a "Hello World" application.
 
 ```shell
-$ sudo wget  http://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
+$ sudo wget  https://resources.cumulocity.com/cssdk/releases/microservicesdk-lin-dev-latest.zip
 ```
 
 The "latest" can be replaced by the version number, for example, microservicesdk-lin-dev-<X.X.X>.zip.
@@ -535,7 +535,7 @@ $ docker run -p 8999:4700 <imagename>:latest
 Check the status of the application that is running inside the Docker container.
 
 ```shell
-$ curl http://localhost:8999/weatherforecast
+$ curl https://localhost:8999/weatherforecast
 ```
 
 In order to deploy the application, run the deploy script. You must provide the correct URL and credentials in this script.

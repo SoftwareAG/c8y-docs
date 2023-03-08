@@ -8,7 +8,9 @@ helpcontent:
     content: "Devices can be grouped according to your requirements. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
 
 
-  You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
+    Select a group from the groups list or from the navigator to see its details. To add a group, click **Add group** at the top right.
+
+    You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
 ---
 
 {{< c8y-admon-related >}}
@@ -35,68 +37,27 @@ Click **Groups** in the navigator to see all groups in a list format.
 
 For each group, various information is provided, for example the type and name. Click **Configure columns** at the right, to add or remove columns and customize the view to your preference. See also [Viewing devices > Configuring columns](/users-guide/device-management/#configuring-columns).
 
-To filter the groups for certain criteria, hover over the column headers and click the respective filter icon, see the screenshot below. However, filtering is not available for the main group column. The filtering option is only available in the subgroup column.
-
- ![Filter](/images/users-guide/DeviceManagement/devmgmt-group-filter.png)
+To filter the groups for certain criteria, hover over the column headers and click the respective filter icon.
 
 See also [Viewing devices > Filtering devices](/users-guide/device-management/#filtering-devices).
 
 Note that this function only creates a temporary filter. For permanent filters, you can use the [smart groups](#smart-groups) function.  
 
-Click a group to view its details. Per default, the **Subassets** tab is displayed.
+Click a group to view its details.
 
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
 
 <a name="subassets-tab"></a>
-**Subassets tab**
+**Subassets page**
 
-At the top of the **Subassets** tab, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
+At the top of the **Subassets** page, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.
 
 Below, all assets assigned to the group are listed. For each asset, various information is displayed, for example the type and name. As with the top-level groups list, you can add or remove columns and customize the list to your preference, or you can apply filters to filter the list for certain criteria.
 
 Morover, you can assign devices, see [To assign a device to a group](#assigning-devices).
 
-**Info Tab**
-
-In the **Info** tab, the following information is provided:
-
-<table>
-<thead>
-<colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
-</colgroup><thead>
-<tr>
-<th align="left">Card</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Notes</td>
-<td align="left">Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click <strong>Edit</strong>, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box.</td>
-</tr>
-<tr>
-<td align="left">Group data</td>
-<td align="left">Displays editable information on the group (name, description).</td>
-</tr>
-<tr>
-<td align="left">Active, critical alarms</td>
-<td align="left">Shows the active critical alarms for the devices in the group.</td>
-</tr>
-</tbody>
-</table>
-
-
-**Bulk operations**
-
-In the **Bulk operations** tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
-
-{{< c8y-admon-info >}}
-Bulk operations are ordered by date, showing the latest operation at the top.
-{{< /c8y-admon-info >}}
-
 <a name="add-group"></a>
+
 ### To add a group
 
 1. Click **Add group** at the right of the top menu bar.
@@ -110,12 +71,12 @@ The new group will be added to the groups list.
 A group can be created with "0" devices in it.
 {{< /c8y-admon-info >}}
 
-To add a new group as a child of an existing group, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
+To add a new group as a child of an existing group, navigate to its **Subassets** page and click **Add Group** in the top menu bar.
 
 ### To edit a group
 
 1. In the navigator, click a group to open it.
-2. In the **Subassets** tab, you can edit the name and description of the group. Switch to the **Info** tab, if you want to edit the notes.
+2. In the **Subassets** page, you can edit the name and description of the group.
 
 For further information on permissions, see [Managing permissions](/users-guide/administration#managing-permissions) in the Administration section.
 
@@ -136,25 +97,20 @@ You can quickly assign devices to groups by using the drag and drop functionalit
 
 Moreover, you can assign devices performing the following steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Subassets** tab.
+1. In the navigator, select a group from the **Group** menu and then open the **Subassets** page.
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
 
 ![Assign devices](/images/users-guide/DeviceManagement/devmgmt-group-assign.png)
 
-The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
-
+The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
 **From the device perspective**
 
 1. Select a device from the device list and open it.
 2. In the **Info** tab, scroll down to the **Groups assignment** card. From the dropdown field, select the group you want to assign the device to. You can also directly enter a group name here or you can enter just parts of a name to filter the list for it and only show the matching group names.
 3. Click **Assign**.
-
-<img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
-
-<br>
 
 The device will be assigned to the selected group.
 
@@ -221,11 +177,9 @@ Smart groups can be created from the device list.
 
 The new group will appear as a top-level group in the **Groups** menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon.
 
-![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-smartgroups-icon.png)
-
 Below the smart group name and description you can see the filter criteria which have been applied on building the smart group. You can edit the filter settings here and adjust your selection.
 
-![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 
 #### To delete a smart group

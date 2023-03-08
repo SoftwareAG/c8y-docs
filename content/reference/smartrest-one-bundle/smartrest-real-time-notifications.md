@@ -4,7 +4,8 @@ title: SmartREST Real-time Notifications
 layout: redirect
 ---
 
-All available real-time notification endpoints and channels of the {{< product-c8y-iot >}} platform are also available in a SmartREST syntax. Please have a look at the [Real-time notifications API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Real-time-notification-API) to understand the general functionality of the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) and get an overview of our available endpoints and channels fo  real-time notifications.
+All available real-time notification endpoints and channels of the {{< product-c8y-iot >}} platform are also available in a SmartREST syntax.
+See the [Real-time notification API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Real-time-notification-API) to understand the general functionality of the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) and to get an overview of our available endpoints and channels for real-time notifications.
 
 ### Using Real-time Notifications with SmartREST
 
@@ -12,7 +13,7 @@ To tell the {{< product-c8y-iot >}} platform that the real-time notifications sh
 
 #### Message identifiers
 
-Message identifier | Message parameters              | Description
+Message identifier | Message parameters              | Description
 -------------------|-------------------------|------------
 80 | *None* | Initial handshake that will return a unique bayeux clientId.
 81 | clientId,channel | Subscribe for the given channel.
@@ -106,7 +107,7 @@ Example request:
 
 	81,Un1q31d3nt1f13r,/mychannel,mytemplate2,mytemplate3
 
-In the case multiple templates are used the response will contain an additional line that indicates which lines are parsed with which templates:
+In this case multiple templates are used and the response will contain an additional line that indicates which lines are parsed with which templates:
 
 87,{number of  parsed rows},{X-Id used to parse the following rows}
 

@@ -59,10 +59,10 @@ The audit log list is not automatically refreshed after a realtime update for op
 
 ### Filtering logs
 
-In order to easily search through logs, you may filter logs for
+In order to easily search through logs, you can filter logs for:
 
- - the type, for example, alarm, operation, smart rule,
- - a date range providing a "From" and/or a "To" date,
- - the user.
+ - The type (alarm, operation, smart rule, and so on).
+ - A date range providing a "From" and/or a "To" date.
+ - The user.
 
 To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the X icon next to the **Apply** button (only visible if filters are set).

@@ -5,11 +5,20 @@ layout: redirect
 helpcontent:
   - label: managing-assets
     title: Managing assets
-    content: "The **Subassets** tab provides information on all subassets of the particular group which is selected in the navigator. Subassets can either be other groups or devices.
+    content: "Under **Subassets** all assets assigned to a particular group are listed. Subassets can either be other groups or devices.
 
 
-    Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group."
+    Click **Assign devices** at the top right to assign devices to the group. You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
+
 ---
+
+Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
+
+
+Select a group from the groups list or from the navigator to see its details, particularly all assets assigned to the group. Click **Assign devices** at the top right to assign devices to the group.
+
+
+You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator.
 
 <a name="assets"></a>
 ### Assets hierarchy
@@ -76,6 +85,7 @@ If you manage trucks within the {{< product-c8y-iot >}} platform, then each truc
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the {{< product-c8y-iot >}} platform.
 
 <a name="navigating"></a>
+
 ### How to navigate assets
 
 In the asset hierarchy, {{< product-c8y-iot >}} distinguishes between top-level groups and subassets. Subassets can either be other groups or devices.
@@ -85,6 +95,10 @@ In the navigator, top-level groups are shown in the **Groups** menu at top-level
 Moreover, subassets are shown in the **Subassets** tab of the particular group which is initially displayed when you click on the group in the navigator.
 
 <img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
+
+{{< c8y-admon-info >}}
+The count displayed on top of the table on the **Subassets** tab shows the total number of child assets assigned to the current group. Any type of managed object can be a child asset. For more details on the counting of objects refer to the operation [Retrieve all child assets of a specific managed object](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in the {{< openapi >}}.
+{{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
 If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
@@ -98,22 +112,44 @@ Depending on the asset type (group or device), various tabs are available with d
 
 Groups show the following tabs:
 
-* **Subassets** - Shows group details and all subassets of a group, see also [Device management > Viewing devices](/users-guide/device-management/#viewing-devices).
-* **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](#smart-rules).
-* **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+- **Subassets** - Shows group details and all subassets of a group, see also [Device management > Viewing devices](/users-guide/device-management/#viewing-devices).
+- **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](#smart-rules).
+- **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS in groups context:
+
+- To view all groups: READ permission for permission type "Inventory"
+- To add new groups: CREATE permission for permission type "Inventory"
+- To delete any group: ADMIN permission for permission type "Inventory"
+- To rename a group or change group description: ADMIN permission for permission type "Inventory"
+- To view specific groups: READ permissions for "Inventory" in the inventory roles
+- To manage or delete specific groups: READ and CHANGE permissions for "Inventory" in the inventory roles
+
+Note that global inventory permissions override inventory role permissions.
+{{< /c8y-admon-req >}}
 
 Devices show the following tabs:
 
-* **Info** - Shows smart rules specified for the device, see also [Smart rules](#smart-rules).
-* **Alarms** - Displays alarms for the device, see also [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
-* **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
-* **Location** - Shows the current location of a device (only available with `c8y_Position`).
+- **Smart rules** - Shows smart rules specified for the device, see also [Smart rules](#smart-rules).
+- **Alarms** - Displays alarms for the device, see also [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+- **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+- **Location** - Shows the current location of a device (only available with `c8y_Position`).
 
-If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS in devices context:
+
+- To view all devices within a group: READ permission for permission type "Inventory"
+- To assign or unassign devices within a group: ADMIN permission for permission type "Inventory"
+- To delete any device within a group: ADMIN permission for permission type "Inventory"
+{{< /c8y-admon-req >}}
+
+If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](#dashboards) for details.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 
 <a name="creating-groups"></a>
+
 ### How to add a group
 
 1. Click **Add group** at the right of the top menu bar.
@@ -136,14 +172,12 @@ Before adding a device to the asset hierarchy, it must be connected to {{< produ
 
 To assign devices to a group, follow these steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Subassets** tab.
+1. In the navigator, select a group from the **Group** menu and then open the **Subassets** page.
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
 
-![Assign devices](/images/users-guide/cockpit/cockpit-group-assign.png)
-
-The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
+The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
 <a name="edit-group"></a>
 ### How to edit a group

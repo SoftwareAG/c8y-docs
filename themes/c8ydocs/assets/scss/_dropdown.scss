@@ -13,6 +13,7 @@
   border-right: $caret-width-base solid transparent;
   border-left:  $caret-width-base solid transparent;
   vertical-align: middle;
+  color: $brand-primary;
 }
 
 // The dropdown wrapper (div)
@@ -206,12 +207,12 @@
 .show>.dropdown-menu-grid{
  width: 320px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(auto, 80px));
+  grid-template-columns: repeat(3, minmax(auto, 100px));
   grid-auto-rows: auto;
   gap: 2px;
   padding: var(--c8y-unit-base);
   li{
-    display: block;
+    display: flex;
     >a{
       display: flex;
       flex-direction: column;

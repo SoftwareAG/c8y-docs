@@ -2,6 +2,7 @@
 weight: 80
 title: Glossary
 icon: "c8y-icon c8y-icon-book"
+bundle: "glossary"
 type: root
 layout: bundle
 section: 

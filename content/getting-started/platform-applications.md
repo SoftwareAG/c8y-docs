@@ -2,6 +2,8 @@
 weight: 30
 title: Standard platform applications
 layout: bundle
+section: 
+  - getting_started
 aliases:
   - /users-guide/overview/#cumulocity-applications
   - /users-guide/getting-started/#cumulocity-applications

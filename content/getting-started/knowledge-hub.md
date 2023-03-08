@@ -2,6 +2,8 @@
 weight: 60
 title: Knowledge Hub
 layout: bundle
+section: 
+  - getting_started
 ---
 
 The Knowledge Hub provides you access to short videos, tours, articles, help and shortcuts, and thus serves as an entrance point to your {{< product-c8y-iot >}} platform experience.

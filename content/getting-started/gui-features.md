@@ -2,6 +2,10 @@
 weight: 40
 title: UI functionalities and features
 layout: bundle
+section: 
+  - getting_started
+section: 
+  - getting_started
 aliases:
   - /users-guide/overview/#gui-features
 ---

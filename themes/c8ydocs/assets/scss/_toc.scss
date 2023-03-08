@@ -1,0 +1,32 @@
+.toc{
+  margin: 0;
+  padding: 2rem 0 0;
+  font-size: 12px;
+  [data-toc]{
+    opacity: .5;
+    &.current{
+      opacity: 1;
+      display: block;
+    }
+  }
+  ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    padding: 0 .25rem;
+    margin: .15rem 0 ;
+    display: block;
+    color: $text-muted;
+    &.active{
+      font-weight: 600;
+      color: $gray-text;
+      box-shadow: -2px 0 0 $brand-primary;
+    }
+    &:not(.active):hover{
+      color: $brand-primary;
+    }
+  }
+}

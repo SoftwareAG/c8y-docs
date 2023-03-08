@@ -2,6 +2,8 @@
 weight: 50
 title: User options and settings
 layout: bundle
+section: 
+  - getting_started
 aliases:
   - /users-guide/overview/#user-settings
 ---

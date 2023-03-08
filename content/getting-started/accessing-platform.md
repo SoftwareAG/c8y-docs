@@ -2,6 +2,8 @@
 weight: 20
 title: Accessing and logging into the platform
 layout: bundle
+section: 
+  - getting_started
 aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
   - /users-guide/getting-started/#accessing-cumulocity-platform

@@ -24,10 +24,10 @@ Folgende Typen sind verfügbar:
 </thead>
 <tbody>
 <tr>
+<tr>
 <td align="left"><a href="#recent-alarms">Aktuelle Alarme</a></td>
 <td align="left">Zeigt alle Alarme aller Schweregrade, sortiert nach Zeit.</td>
 </tr>
-<tr>
 <td align="left"><a href="#alarm-list">Alarmliste</a></td>
 <td align="left">Zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus.</td>
 </tr>
@@ -106,10 +106,6 @@ Folgende Typen sind verfügbar:
 <tr>
 <td align="left"><a href="#linear-gauge">Linearer Zeiger</a></td>
 <td align="left">Zeigt Datenpunkte in Form eines linearen Zeigers.</td>
-</tr>
-<tr>
-<td align="left"><a href="#quick-links">Quick Links</a></td>
-<td align="left">Stellt mehrere Quick Links zu entsprechenden Operationen bereit.</td>
 </tr>
 <tr>
 <td align="left"><a href="#relay-array-control">Relaisfeldsteuerung</a></td>
@@ -194,7 +190,7 @@ Das Widget "Anwendungen" zeigt eine Liste mit Links zu allen verfügbaren Anwend
 
 ![Applications widget](/images/benutzerhandbuch/cockpit/cockpit-widget-applications.png)
 
-Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
+Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de/#managing-applications).
 
 
 <a name="asset-notes"></a>
@@ -221,7 +217,7 @@ Das Widget "Asset-Attribute" zeigt eine benutzerdefinierte Liste von Attributen 
 |:---|:---|
 |Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
 |Ziel-Assets oder -geräte|Gruppen oder Geräte, die ausgewertet werden.
-|Attribute|Liste von Attributen, siehe [Widget "Asset-Tabelle"](#widget-asset-table).
+|Attribute|Liste von Attributen, siehe [Asset-Tabelle](#widget-asset-table).
 
 {{< c8y-admon-info >}}
 Im Ansichtsmodus zeigt diese Widget nur Attribute an, die nicht leer sind.
@@ -242,7 +238,7 @@ Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu einem ausgewählten
 
 **Beispiel**
 
-Im folgenden Screenshot sind 5 Spalten konfiguriert. Die drei Spalten "Meter", "Vendor" und "Owner" beziehen sich auf die Attribute "name", "type" und "owner". Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems.
+Im folgenden Screenshot sind 5 Spalten konfiguriert. Die drei Spalten "Name", "Owner" und "Type" beziehen sich auf die Attribute "name", "owner" und "type". Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems.
 
 ![Asset table widget](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table.png)
 
@@ -326,7 +322,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 </tr>
 <tr>
 <td align="left">Datenpunkte</td>
-<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; Hinzufügen von Datenpunkten</a>.</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; So fügen Sie einen Datenpunkt hinzu</a>.</td>
 </tr>
 <tr>
 <td align="left">Sichtbare Tabellenspalten</td>
@@ -360,7 +356,7 @@ Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit �
 
 Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben.
 
-Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) im *Protocol Integration Guide*.
+Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Cloud Fieldbus > Monitoring the device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) im *Protocol Integration Guide*.
 
 <a name="widget-message-sending"></a>
 ### Gerätenachricht
@@ -374,6 +370,20 @@ Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es k�
 
 ![Help and service widget](/images/benutzerhandbuch/cockpit/cockpit-widget-help-service.png)
 
+<a name="info-gauge"></a>
+### Infoanzeige
+
+Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.
+
+![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
+
+Sie können einen Datenpunkt für den Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
+
+![Info gauge widget data point gauge](/images/benutzerhandbuch/cockpit/cockpit-widget-data-gauge.png)
+
+![Info gauge widget data point label](/images/benutzerhandbuch/cockpit/cockpit-widget-data-labels.png)
+
+Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
 
 <a name="widget-html"></a>
 ### HTML
@@ -405,6 +415,11 @@ Das Widget "HTML" zeigt benutzerdefinierten Inhalt. Die Inhalt kann mit HTML for
 "Device" bezieht sich auf das im Widget-Konfigurationsparameter ausgewählte Zielgerät.<br>
 "fragment.property" bezieht sich auf die Attribute des betreffenden Geräts. Um die verfügbaren Attributnamen anzuzeigen, können Sie in der Konfiguration des Widgets "Asset-Attribut" oder "Asset-Tabelle" auf **+Attribut hinzufügen** klicken. Daraufhin wird eine Tabelle der unterstützten Attribute angezeigt. Sie können die Werte aus der Spalte **Attribut** kopieren und einfügen. Generierte Attribute dieser Widgets sind nicht in den HTML-Widgets verfügbar.
 
+Folgende Codebereinigungsoptionen können ausgewählt werden:
+ - strict - erlaubt keine JS- oder angularjs-Richtlinien.
+ - lax (Standard) - erlaubt teilweise JS-Richtlinien (Ereignisse) und alle angularjs-Richtlinien.
+ - none - erlaubt alles.
+
 ![HTML widget](/images/benutzerhandbuch/cockpit/cockpit-widget-html.png)
 
 Wenn Sie im Feld **HTML-Code** einen Link verwenden möchten, etwa zu einem Dashboard, müssen Sie folgendes Format verwenden:
@@ -412,21 +427,6 @@ Wenn Sie im Feld **HTML-Code** einen Link verwenden möchten, etwa zu einem Dash
 ```html
   <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">Link zu einem anderen Dashboard</a><br />
 ```
-
-<a name="info-gauge"></a>
-### Infoanzeige
-
-Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.
-
-![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
-
-Sie können einen Datenpunkt für den Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
-
-![Info gauge widget data point gauge](/images/benutzerhandbuch/cockpit/cockpit-widget-data-gauge.png)
-
-![Info gauge widget data point label](/images/benutzerhandbuch/cockpit/cockpit-widget-data-labels.png)
-
-Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
 
 <a name="widget-map"></a>
 ### Karte
@@ -488,7 +488,7 @@ Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten i
 </tr>
 <tr>
 <td align="left">Datenpunkte</td>
-<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; Hinzufügen von Datenpunkten</a>.</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; So fügen Sie einen Datenpunkt hinzu</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -505,14 +505,6 @@ Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sic
 {{< /c8y-admon-info >}}
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
-
-<a name="quick-links"></a>
-### Quick Links
-
-Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Operationen an. Es können keinen zusätzlichen Parameter konfiguriert werden.
-
-![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
-
 
 <a name="relay-array-control"></a>
 ### Relaisfeldsteuerung
@@ -546,11 +538,12 @@ Im Rotation-Widget kann das Objekt durch Ziehen und Bewegen gedreht werden. Auß
 
 Das Widget "SCADA" bietet eine graphische Darstellung eines Gerätestatus.
 
-Weitere Informationen zum Widget "SCADA" finden Sie unter [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) im *Protocol Integration Guide*.
+Weitere Informationen zum Widget "SCADA" finden Sie unter [Cloud Fieldbus > Monitoring the device status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) im *Protocol Integration Guide*.
 
-{{< c8y-admon-info >}}
-Alle SVG-Dateien werden bereinigt, um schädlichen Code zu entfernen.
-{{< /c8y-admon-info >}}
+Folgende Codebereinigungsoptionen können ausgewählt werden:
+ - strict - erlaubt keine JS- oder angularjs-Richtlinien.
+ - lax (Standard) - erlaubt teilweise JS-Richtlinien (Ereignisse) und alle angularjs-Richtlinien.
+ - none - erlaubt alles.
 
 ![SCADA widget](/images/benutzerhandbuch/cockpit/cockpit-widget-scada.png)
 
@@ -579,7 +572,7 @@ Das "Silo"-Widget zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Si
 </tr>
 <tr>
 <td align="left">Datenpunkte</td>
-<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; Hinzufügen von Datenpunkten</a>.</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; So fügen Sie einen Datenpunkt hinzu</a>.</td>
 </tr>
 </tbody>
 </table>

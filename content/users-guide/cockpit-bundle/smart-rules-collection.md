@@ -87,15 +87,13 @@ In certain rule parameters, various trigger fields can be used as variables, see
 
 If an alarm is created, an SMS is sent.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 This rule is only available if your tenant has a configured SMS provider.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 **Parameters**
 
 The rule uses the following parameters:
-
-![On alarm send SMS](/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
 
 <table>
 <thead>
@@ -131,7 +129,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -165,8 +163,6 @@ Note that the corresponding emails are send with "text/html" as content type.
 **Parameters**
 
 The rule uses the following parameters:
-
-![On alarm send email](/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
 
 <table>
 <thead>
@@ -202,7 +198,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -223,11 +219,13 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 If an alarm is created, sends email or SMS.
 
+{{< c8y-admon-req >}}
+This rule is only available if your tenant has a configured SMS provider.
+{{< /c8y-admon-req >}}
+
 **Parameters**
 
 The rule uses the following parameters:
-
-![On alarm escalate](/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
 
 <table>
 <thead>
@@ -263,7 +261,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -289,8 +287,6 @@ If an alarm is active for a certain time, the severity is increased.
 **Parameters**
 
 The rule uses the following parameters:
-
-![On alarm increase severity](/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
 
 <table>
 <thead>
@@ -326,7 +322,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -356,8 +352,6 @@ The rule can be configured for entering or leaving the geofence, or both. Existi
 **Parameters**
 
 The rule uses the following parameters:
-
-![On geofence create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |<table>
 <thead>
@@ -393,7 +387,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -425,8 +419,6 @@ Note that the corresponding emails are send with "text/html" as content type.
 **Parameters**
 
 The rule uses the following parameters:
-
-![On geofence send email](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 <table>
 <thead>
@@ -462,7 +454,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -489,8 +481,6 @@ Creates consumption data point based on data from an electric, gas, or water met
 **Parameters**
 
 The rule uses the following parameters:
-
-![Calculate energy consumption](/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
 
 <table>
 <thead>
@@ -526,7 +516,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a>  for a group or device.
 </td>
 </tr>
 </tbody>
@@ -553,8 +543,6 @@ If no new measurement data has been received for a specified time, an alarm is c
 **Parameters**
 
 The rule uses the following parameters:
-
-![On missing measurements create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
 <table>
 <thead>
@@ -590,7 +578,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -611,8 +599,6 @@ If a certain alarm occurs, the specified operation will be send to the device.
 **Parameters**
 
 The rule uses the following parameters:
-
-![On alarm execute operation](/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
 <colgroup>
@@ -648,7 +634,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -725,8 +711,6 @@ Using these mechanisms, you can configure global threshold ranges in the data po
 
 The rule uses the following parameters:
 
-![On measurement threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
-
 <table>
 <thead>
 <colgroup>
@@ -761,7 +745,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -779,8 +763,8 @@ For each incoming measurement value, the rule performs the following steps:
 
 * The data of the red and yellow range is collected from either:
 
-- the data point library (control parameter).
-- the source object (the measurement). If found, ranges from the source object's data point override are merged.
+    * The data point library (control parameter).
+    * The source object (the measurement). If found, ranges from the source object's data point override are merged.
 
 If no red/yellow ranges are defined in the merged parameters, no alarms are generated.
 
@@ -788,11 +772,11 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 Range values defined in the source object have a higher priority than those defined in the data point library. You can also just overwrite a single value (for example yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 {{< /c8y-admon-info >}}
 
-* Incoming value inside the red range: <br> If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
+* Incoming value inside the red range: If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
 
-* Incoming value inside the yellow range: <br>If there is no active alarm of MINOR severity of given type for the object, create a MINOR alarm, else do nothing.
+* Incoming value inside the yellow range: If there is no active alarm of MINOR severity of given type for the object, create a MINOR alarm, else do nothing.
 
-* Measurement outside of yellow and red range: <br>If there is an active alarm of given type for the object, clear the CRITICAL and/or MINOR alarm.
+* Measurement outside of yellow and red range: If there is an active alarm of given type for the object, clear the CRITICAL and/or MINOR alarm.
 
 **Troubleshooting**
 
@@ -805,11 +789,9 @@ Range values defined in the source object have a higher priority than those defi
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
 {{< c8y-admon-info >}}
-If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
-{{< /c8y-admon-info >}}
+* If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-{{< c8y-admon-info >}}
-Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+* Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 {{< /c8y-admon-info >}}
 
 <a name="threshold-explicit"></a>
@@ -832,8 +814,6 @@ This rule is similar to the rule "On measurement threshold create alarm". Howeve
 **Parameters**
 
 The rule uses the following parameters:
-
-![On measurement explicit threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 <table>
 <thead>
@@ -869,7 +849,7 @@ The rule uses the following parameters:
 <td align="left">Target asset or devices</td>
 <td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
 If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
-For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>.
+For details on enabling/disabling a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To enable/disable a smart rule</a> for a group or device.
 </td>
 </tr>
 </tbody>
@@ -886,11 +866,9 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
 {{< c8y-admon-info >}}
-If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
-{{< /c8y-admon-info >}}
+* If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-{{< c8y-admon-info >}}
-​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
+* ​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 {{< /c8y-admon-info >}}
 
 <a name="smart-rule-variables"></a>
@@ -938,8 +916,8 @@ You can use this mechanism for example to insert device names or alarm text into
 If using Apama for smart rules (shown by a subscription to Apama-ctrl in <b>Applications</b> > <b>Subscribed Applications</b> in the Administration application),
 variables for times can include a time zone and time format to display the time in.
 The variable #{time:TZ=America/New_York,FORMAT="HH:mm:ssZ"} for example displays the time using the time zone for New York in the format HH:mm:ssZ.
-See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
-and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
+See also [Supported time zones]({{< link-apama-webhelp >}}/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html)
+and [Format specification for the TimeFormat functions]({{< link-apama-webhelp >}}/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html)
 in the Apama documentation.
 {{< /c8y-admon-info >}}
 

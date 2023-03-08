@@ -8,7 +8,10 @@ helpcontent:
     content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the *User guide* for details.
 
 
-    You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term."
+    You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term.
+
+
+    Click **Create smart group** at the top right to create a group which is built based on the filter criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version."
 ---
 
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
@@ -18,6 +21,7 @@ A detailed device list will be displayed.
 ![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
 <a name="device-list"></a>
+
 ### Device information
 
 For each device, the device list shows the following information provided in columns:
@@ -68,7 +72,7 @@ For each device, the device list shows the following information provided in col
 </tr>
 <tr>
 <td style="text-align:left">Alarms</td>
-<td style="text-align:left">The alarm status of the device, showing number and type of alarms currently unresolved for the device. See <a href="#alarm-monitoring" class="no-ajaxy">Working with alarms</a> for further information on working with alarms.</td>
+<td style="text-align:left">The alarm status of the device, showing number and type of alarms currently unresolved for the device. Only includes alarms for the parent device. See <a href="#alarm-monitoring" class="no-ajaxy">Working with alarms</a> for further information on working with alarms.</td>
 </tr>
 </tbody>
 </table>
@@ -76,6 +80,7 @@ For each device, the device list shows the following information provided in col
 For users with global roles the devices list displays the items in a paginated manner. You can select the number of items per page and directly jump to any page. Users with inventory roles see up to 50 items initially. If there are more than 50 devices available more devices are loaded as you scroll down the list.
 
 <a name="configuring-columns"></a>
+
 ### Configuring columns
 
 The columns shown in the device list may be configured to your needs.
@@ -83,8 +88,7 @@ The columns shown in the device list may be configured to your needs.
 #### To show/hide standard columns
 
 1. In the table header, click **Configure columns**.
-2. In the resulting dropdown, select/clear the checkboxes for all columns as required. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
-<br>
+2. In the resulting dropdown, select/clear the checkboxes for all columns as required.
 
 The device list will reflect your changes and only show the selected columns.
 
@@ -93,8 +97,8 @@ The device list will reflect your changes and only show the selected columns.
 Moreover, you can add custom columns to show additional device properties.
 
 1. In the **Configure columns** dropdown, click **Add custom column**.<br>
-![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
-2. In the **Header** field, enter a header for the new custom column.  
+   ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+2. In the **Header** field, enter a header for the new custom column.
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select {{< product-c8y-iot >}} standard fragments like `c8y_Mobile.mcc`.
 4. Switch the **Add another column after saving this one** toggle to active to create another custom column right after saving the current one without leaving the dialog.
 5. Click **Save**.
@@ -109,6 +113,7 @@ While standard columns can only be shown/hidden as required, custom columns may 
 
 1. Hover over the row of the device you want to delete.
 2. Click the delete icon at the right of the row.
+3. Confirm the device removal. Optionally, select whether to delete child devices of the device or to delete the associated device owner. Note that it is not possible to select both options.
 
 The device will be permanently deleted from the platform.
 
@@ -116,27 +121,13 @@ The device will be permanently deleted from the platform.
 Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 {{< /c8y-admon-important >}}
 
-<a name="searching-devices"></a>
-### To search for devices
-
-{{< product-c8y-iot >}} includes a full-text search for devices.
-
-Click the **Search** button at the top right and enter a search term into the textbox.
-
-For details on the search functionality, refer to [Getting Started > UI functionalities and features](/users-guide/getting-started#gui-features).
-
-Our example shows a search for "NTC".
-
-![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
-
 <a name="filtering-devices"></a>
+
 ### To filter devices
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria.
 
-Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for.
-
-![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
+Filtering is available on every column. Click the filter icon next to the name of the column you want to set a filter for.
 
 Specify your filter options in the dropdown list.
 
@@ -144,10 +135,10 @@ Most columns represent text fields. You can filter these columns by simply enter
 
 Apart from filtering for text there are several other options:
 
-* In case of date fields (for example **Registration date**), you specify a date range to filter for.
-* In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
-* In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
-* For custom columns, select **Only rows where value is defined** to filter based on whether the fragment exists,  or specify one or more filter terms the entry must match.
+- In case of date fields (for example **Registration date**), you specify a date range to filter for.
+- In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
+- In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+- For custom columns, select **Only rows where value is defined** to filter based on whether the fragment exists, or specify one or more filter terms the entry must match.
 
 Finally, click **Apply** to carry out the filtering.
 

@@ -16,11 +16,10 @@ alarms and events assigned.
 
 ### Installed software
 
-There are two ways in which a device managed object may represent its installed software packages. It may list them
-in `c8y_SoftwareList` fragment or as the child additions. The latter approach also requires the device to
-have `c8y_SupportedSoftwareTypes` fragment. Let's call the first approach *legacy* and the second *advanced*.
+The installed software packages are listed in the `c8y_SoftwareList` fragment which may be placed in the device managed object or in the single child addition of type `c8y_InstalledSoftwareList`.
+The first approach to managing software is referred to as "legacy" and the second as "advanced".
 
-A software package, represented as the list entry or as a child addition, must contain following properties:
+A software package list entry must contain the following properties:
 
 | Field | Mandatory | Details |
 |----|----|----|
@@ -125,7 +124,7 @@ The 516 static response template is available for dealing with software list ope
 116 template used for updating the device’s own managed object:
 
 1. Receive ```c8y_SoftwareList``` operation <br>
-   `516,deviceSerial,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
+   `516,DeviceSerial,software_a,4.0.0,http://example.com/software_a,software_b,3.0.0,http://example.com/software_b`
 2. Set operation status to EXECUTING <br>
    `501,c8y_SoftwareList`
 3. Uninstall and install software
@@ -181,7 +180,7 @@ The device is expected to perform the following actions:
 The 528 static response template is available for dealing with software update operations:
 
 1. Receive ```c8y_SoftwareUpdate``` operation <br>
-   `528,deviceSerial,software_a,4.0.0,http://example.com/software_a,install,software_b,3.0.0,http://example.com/software_b,delete`
+   `528,DeviceSerial,software_a,4.0.0,http://example.com/software_a,install,software_b,3.0.0,http://example.com/software_b,delete`
 2. Set operation status to EXECUTING <br>
    `501,c8y_SoftwareUpdate`
 3. Uninstall and install software
@@ -192,14 +191,10 @@ The 528 static response template is available for dealing with software update o
 
 ### Advanced Software Management
 
-In this approach software packages became separate entities and are represented as the device managed object child
-additions. To facilitate the management of them, the Advanced Software Management
-default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices)
-was introduced.
+Using the "advanced" approach, the `c8y_SoftwareList` fragment is no longer present in the device managed object. The data is separated from the device managed object which keeps the size of the device managed object low even for very large lists of installed software. All installed software for a device can be read and managed through the Advanced Software Management default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices).
 
-Devices may indicate their support for Advanced Software Management by including the ```c8y_SoftwareUpdate``` operation
-in their ```c8y_SupportedOperations``` fragment and additionally listing their supported software types in
-the ```c8y_SupportedSoftwareTypes``` fragment.
+Devices support Advanced Software Management when they include the `c8y_SoftwareUpdate` operation
+in their `c8y_SupportedOperations` fragment and list their supported software types in the `c8y_SupportedSoftwareTypes` fragment.
 
 ```json
 {
@@ -212,23 +207,6 @@ the ```c8y_SupportedSoftwareTypes``` fragment.
   ]
 }
 ```
-
-An example managed object for the software package:
-
-```json
-{
-  "type": "c8y_InstalledSoftware",
-  "name": "Software Name",
-  "id": "123",
-  "softwareType": "yum",
-  "version": "1.0",
-  "url": "www.example.com",
-  "owner": "service_advanced-software-mgmt"
-}
-```
-
-Notice that the owner field is required and must be set to `service_advanced-software-mgmt` for the microservice to
-detect the software package.
 
 Querying, adding and removing software packages can be done with the microservice REST endpoints or using SmartREST
 static templates.
@@ -258,9 +236,7 @@ GET /service/advanced-software-mgmt/software?deviceId=<deviceId>
   "statistics": {
     "currentPage": 1,
     "pageSize": 5
-  },
-  "self": ...,
-  "next": ...
+  }
 }
 ```
 
@@ -424,7 +400,7 @@ The 529 static response template is available for dealing with software update o
 Advanced Software Management:
 
 1. Receive ```c8y_SoftwareUpdate``` operation <br>
-   `529,deviceSerial,software_a,4.0.0,"type A",http://example.com/software_a,install,software_b,3.0.0,"type B",http://example.com/software_b,delete`
+   `529,DeviceSerial,software_a,4.0.0,"type A",http://example.com/software_a,install,software_b,3.0.0,"type B",http://example.com/software_b,delete`
 2. Set operation status to EXECUTING <br>
    `501,c8y_SoftwareUpdate`
 3. Uninstall and install software

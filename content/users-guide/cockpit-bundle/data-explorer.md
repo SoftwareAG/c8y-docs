@@ -29,17 +29,17 @@ ROLES & PERMISSIONS:
 Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
 {{< /c8y-admon-req >}}
 
-The data explorer is available for all assets or just for a particular asset.
+The data explorer is available for all assets at once or just for a particular asset.
 
 - Click **Data explorer** in the navigator to visualize all data points of all assets.
 
 - Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
-In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [Adding data points](#add-data-points).
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](#add-data-points).
 
 On the left, in the main card, you see its visualization.
 
-![data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
+![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
 The visualization is generated based on data point properties.
 
@@ -50,8 +50,6 @@ The data points properties are pre-filled as follows:
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
-
-![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
@@ -74,12 +72,12 @@ To change the visualization in the data explorer, you can modify several propert
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
-To change the time range on the x-axis,
+To change the time range on the x-axis, use one of the following options:
 
-* select a different time range from the dropdown list in the top menu bar,
-* enter a custom time range into the **From** and **To** fields in the data explorer,
-* drag the x-axis and move left or right to move the time period,
-* double-click into the data explorer to zoom out.
+* Select a different time range from the dropdown list in the top menu bar.
+* Enter a custom time range into the **From** and **To** fields in the data explorer.
+* Drag the x-axis and move left or right to move the time period.
+* Double-click into the data explorer to zoom out.
 
 {{< c8y-admon-info >}}
 Real-time updates will be switched off if you set a time range in the past.
@@ -117,13 +115,13 @@ To add a data point to the data explorer, click **Add data point** at the bottom
 
 ![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
-In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
+On the left hand side of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
 
-The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+The center of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+
+The right hand side shows all of the selected data points.
 
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
-
-![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
 For details on the data point library refer to [Data point library](#data-point-library).
 
@@ -134,7 +132,7 @@ To remove a data point from the data point list, click the menu icon and select 
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
 
-The following fields my be modified:
+The following fields may be modified:
 
 <table>
 <col style="width:15%">
@@ -203,9 +201,7 @@ In this case, both data points share the same y-axis. This y-axis only shows the
 
 In addition to data points you can also add alarms or events to the data explorer.
 
-In the **Alarms/ Events** card, click **Add alarm/ event** to add an alarm or event.
-
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
+In the **Alarms/Events** card, click **Add alarm/event** to add an alarm or event.
 
 In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add** to add your selection.
 
@@ -223,8 +219,6 @@ If you want to keep your current configuration in the data explorer for later us
 **Send as widget to dashboard**
 
 To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
-
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 

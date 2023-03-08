@@ -8,21 +8,36 @@ helpcontent:
     content: "To connect devices to Cumulocity IoT they must be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in the *User guide*.
 
 
-    All devices which are currently in the registration process are displayed with one of the following status:
+    All devices which are currently in the registration process are displayed with one of the following statuses:
 
 
-    **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect
+    **Waiting for connection** - The device has been registered but no device with the specified ID has tried to connect
 
-    **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
+    **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
 
-    **Accepted** - the user has allowed the credentials to be send to the device"
+    **Accepted** - The user has allowed the credentials to be send to the device
+
+    **Blocked** - The device registration has been blocked due to the exceeded limit of failed attempts.
+
+
+    To register devices, you can select one of the following options:
+
+    Single device registration - To manually connect one or more devices.
+
+    Bulk device registration - To register larger amounts of devices in one step.
+
+
+    Depending on the microservices subscribed to your tenant, you might see other device registration options for specific protocol types.
+
+
+    To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
 <a name="dev-registration"></a>
 
 ### Device registration
 
-In the **Device registration** page all devices which currently are in the registration process are displayed either in a list or in a grid.
+In the **Device registration** page all devices which are currently in the registration process are displayed.
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
@@ -50,32 +65,31 @@ Devices can be connected to your {{< product-c8y-iot >}} account in different wa
 
 To register devices, you can select one of the following options:
 
-* Single **[General](#device-registration-manually)** device registration - to manually connect one or more devices
-* Bulk **[General](#creds-upload)** device registration - to register larger amounts of devices in one step
+* **[Single device registration](#device-registration-manually)** - to manually connect one device or several devices one by one.
+* **[Bulk device registration](#bulk-registration)** - to register larger amounts of devices in one step.
 
-If you are subscribed to the required applications you will see other options for registering devices of specific types (for example, Actility LoRa or Sigfox). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview).
+Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
+{{< c8y-admon-info >}}
+The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview/). It also contains descriptions for the protocol specific registration processes.
+{{< /c8y-admon-info >}}
 
 <a name="device-registration-manually"></a>
-#### To connect a  device manually
+#### Single device registration
 
+{{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
+<br>
+##### To connect a  device manually
+<br>
 {{< c8y-admon-info >}}
 Depending on the type of device you want to connect, not all steps of the following process may be relevant.
 {{< /c8y-admon-info >}}
 
 1. Click **Registration** in the **Devices** menu of the navigator.
-2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**.
-
-  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
-
-The **Register devices** dialog box will be displayed.
-
-  <img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
-
+2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**. The **Register devices** dialog box will be displayed.
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
-5. Click **Add new device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
+5. Click **Add device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s).
 
 {{< c8y-admon-info >}}
@@ -146,7 +160,7 @@ The list of device registrations is presented in the image below. Note that the 
 
 When a device connected to {{< product-c8y-iot >}} doesn't use a security token, the registration can proceed without providing any value in the security token input.
 
-If a security token is provided for a device which is connected unsecurely, it will be accepted and the token will be ignored.
+If a security token is provided for a device which is connected insecurely, it will be accepted and the token will be ignored.
 
 **Registration using a security token**
 
@@ -176,7 +190,8 @@ The procedure of accepting devices is the same as described in [Optional securit
 
 While in this mode, any devices connecting to {{< product-c8y-iot >}} without a security token will be blocked and it won't be possible to complete their registration.
 
-#### To bulk-register devices
+<a name="bulk-registration"></a>
+#### Bulk device registration
 
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
 
@@ -184,17 +199,15 @@ To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option 
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
 
+##### To bulk-register devices
+
+
 1. Click **Registration** in the **Devices** menu of the navigator.
 
-2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**.
-
-  <img src="/images/users-guide/DeviceManagement/devmgmt-dropdown-menu.png" alt="Bulk registration" style="max-width: 100%">
+2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Bulk registration** > **General**. The **Bulk device registration** dialog box will be displayed.
 
 3. Click the Plus button to select or drag-and-drop the CSV file you want to upload.
 
-  <img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
-
-<br>
 Depending on the format of the uploaded CSV file, one of the following registration types will be processed:
 
 * Simple registration
@@ -203,6 +216,8 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 {{< c8y-admon-info >}}
 Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status.
 {{< /c8y-admon-info >}}
+
+A separator is automatically obtained from the CSV file. Valid separator values are: `\t` (tabulation mark), `;` (semicolon) and `,` (comma).
 
 **Simple registration**
 
@@ -221,7 +236,7 @@ After the file is uploaded, all required new groups will be created, new registr
 
 The CSV files must contain at least the IDs as device identifier and the credentials of the devices.
 
-In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in the follwoing example:
+In addition to these columns the file can also contain other columns like ICCID, NAME, TYPE as shown in the following example:
 
 ```
 ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE
@@ -252,7 +267,7 @@ If the device with the given identifier already exists, it will be updated with 
 5. In Step 2 of the **Text Import Wizard**, select **Semicolon** as delimiter and click **Finish**.
 
 For further information on the file format and accepted CSV variants, also refer to
-[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}.
+[Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}.
 
 {{< c8y-admon-info >}}
 In an {{< enterprise-tenant >}} you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the {{< management-tenant >}}.

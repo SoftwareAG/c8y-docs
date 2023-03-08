@@ -17,7 +17,7 @@ A request template contains the following information:
 * A unique unsigned integer as a message identifier
 * The request method, for example, `GET` or `POST`.
 * The resource URI, for instance `/inventory/managedObjects`
-* The `Content-TYpe` and `Accept` header values of the sent and received data
+* The `Content-Type` and `Accept` header values of the sent and received data
 * A placeholder such as `%%`
 * The expected request parameters such as `STRING`s, `NUMBER`s, `UNSIGNED` integers and `DATE`s
 * The template string with placeholders for each parameter

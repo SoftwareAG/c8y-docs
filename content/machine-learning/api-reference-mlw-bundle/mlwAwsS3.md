@@ -236,7 +236,7 @@ Downloads the file from AWS S3 bucket.
 ```
 200 - OK
 
-curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/resources/downloadFromS3/mlwbucket/download' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/downloadFromS3/mlwbucket/download' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'
@@ -248,23 +248,23 @@ curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/
 200 - OK
 
 {
-    "id": "161399268167_Tasks",
+    "id": "656ea4",
     "name": "anomalySampleData_1613992681",
     "createdAt": "Mon Feb 22 11:18:01 2021",
     "type": "S3",
     "cronExpression": "",
     "status": "RUNNING",
     "individualTasks": {
-        "161399268144_AwsS3": {
+        "656ea4": {
             "pID": "140239630587648",
             "status": "RUNNING",
             "type": "S3",
-            "id": "161399268144_AwsS3",
+            "id": "656ea4",
             "message": "Downloading Data from S3",
             "executedAt": "Mon Feb 22 11:18:01 2021"
         }
     },
-    "projectID": "1613979179_Project",
+    "projectID": "0f981b26132d412097ee5e54a257ce9f",
     "sortTime": 1613992681,
     "projectName": "DemoProject",
     "recurrence": "ONE_TIME",
@@ -286,7 +286,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/
 ```
 401 - Unauthorized
 
-curl --location --request POST '{{url}}/service/mlw/projects/1613979179_Project/resources/downloadFromS3/mlwbucket/download' \
+curl --location --request POST '{{url}}/service/mlw/projects/0f981b26132d412097ee5e54a257ce9f/resources/downloadFromS3/mlwbucket/download' \
 --header 'Content-Type: application/json' \
 --data-raw '{"name":"mlwfiles/anomalySampleData.csv"}'
 ```

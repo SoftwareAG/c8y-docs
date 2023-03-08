@@ -1,6 +1,6 @@
 ---
 aliases:
-- users-guide/optional-services/#webMethods
+- benutzerhandbuch/optional-services/#webMethods
 layout: bundle
 outputs:
 - html
@@ -11,7 +11,7 @@ weight: 90
 
 webMethods.io Integration ist die cloudbasierte Integrationslösung der {{< company-sag >}}. Sie ermöglicht Ihnen Aufgaben zu automatisieren, indem Sie Cloud-Anwendungen und -Dienste (wie Marketo, Salesforce, Evernote und Gmail) verknüpfen, ohne Code schreiben zu müssen.
 
-Die vollständige Dokumentation zur webMethods.io Integration finden Sie unter [https://docs.webmethods.io/](https://docs.webmethods.io/).
+Die vollständige Dokumentation zur webMethods.io Integration finden Sie unter [docs.webmethods.io](https://docs.webmethods.io/).
 
 ### Erste Schritte
 

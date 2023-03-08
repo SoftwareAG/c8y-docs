@@ -5,10 +5,11 @@ layout: redirect
 helpcontent:
   - label: managing-assets
     title: Managing assets
-    content: "The **Subassets** tab provides information on all subassets of the particular group which is selected in the navigator. Subassets can either be other groups or devices.
+    content: "Under **Subassets** all assets assigned to a particular group are listed. Subassets can either be other groups or devices.
 
 
-    Use the navigator, to navigate through the asset hierarchy. In the navigator, top-level groups are shown in the **Groups** menu at top-level. Subassets are shown under its higher-level group."
+    Click **Assign devices** at the top right to assign devices to the group. You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
+
 ---
 
 {{< c8y-admon-related >}}
@@ -17,6 +18,12 @@ helpcontent:
 - The [Protocol integration guide](/protocol-integration/#overview) for more information on using protocols in {{< product-c8y-iot >}}.
 - The [Web SDK guide](/web/#overview) for more information on working with the Web SDK in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
+
+Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
+
+Select a group from the groups list or from the navigator to see its details, particularly all assets assigned to the group. Click **Assign devices** at the top right to assign devices to the group.
+
+You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator.
 
 <a name="assets"></a>
 ### Assets hierarchy
@@ -95,7 +102,7 @@ Moreover, subassets are shown in the **Subassets** tab of the particular group w
 <img src="/images/users-guide/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
 {{< c8y-admon-info >}}
-The count displayed on top of the table on the **Subassets** tab shows the total number of child assets assigned to the current group. Any type of managed object can be a child asset. For more details on the counting of objects refer to the operation [Retrieve all child assets of a specific managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in the {{< openapi >}}.
+The count displayed on top of the table on the **Subassets** tab shows the total number of child assets assigned to the current group. Any type of managed object can be a child asset. For more details on the counting of objects refer to the operation [Retrieve all child assets of a specific managed object](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
@@ -142,7 +149,7 @@ ROLES & PERMISSIONS in devices context:
 - To delete any device within a group: ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-If dashboards have been created for a group or device, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
+If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](#dashboards) for details.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 
@@ -170,14 +177,12 @@ Before adding a device to the asset hierarchy, it must be connected to {{< produ
 
 To assign devices to a group, follow these steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Subassets** tab.
+1. In the navigator, select a group from the **Group** menu and then open the **Subassets** page.
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
 
-![Assign devices](/images/users-guide/cockpit/cockpit-group-assign.png)
-
-The devices will be assigned to the selected group and shown as subassets in the **Subassets** tab.
+The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
 <a name="edit-group"></a>
 ### How to edit a group

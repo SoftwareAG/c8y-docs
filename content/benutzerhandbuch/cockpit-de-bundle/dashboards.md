@@ -5,9 +5,20 @@ weight: 40
 
 Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen.
 
+{{< c8y-admon-req title="Anforderungen" >}}
+ROLLEN UND BERECHTIGUNGEN:
+
+- Zum Anzeigen von Dashboards: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in Stammdatenrollen
+- Zum Bearbeiten von Widgets innerhalb eines Dashboards: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in Stammdatenrollen
+- Zum Erstellen eines Dashboards: ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in Stammdatenrollen
+- Zum Löschen eines Dashboards: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in Stammdatenrollen
+- Zum Teilen/Kopieren eines Dashboards: CREATE-Berechtigung für Berechtigungstyp "Stammdaten" oder ÄNDERN-Berechtigung für "Stammdaten" in Stammdatenrollen
+  {{< /c8y-admon-req >}}
+
 {{< product-c8y-iot >}} bietet eine Reihe voreingestellter Widgets, Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets-collection). Sie können auch eigene Widgets entwickeln und Ihrem {{< product-c8y-iot >}}-Konto hinzufügen. Weitere Informationen finden Sie im [Web SDK Guide](/web/).
 
 <a name="creating-dashboards"></a>
+
 ### So erstellen Sie ein Dashboard
 
 1. Wählen Sie im Navigator das Objekt (Gruppe oder Gerät) aus, für welches Sie ein Dashboard erstellen möchten.
@@ -62,7 +73,6 @@ Klicken Sie auf **Bearbeiten** in der oberen Menüleiste, um ein Dashboard zu be
 <img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
 
 Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter [So erstellen Sie ein Dashboard](#creating-dashboards).
-
 
 ### So kopieren Sie ein Dashboard von einem Objekt in ein anderes
 

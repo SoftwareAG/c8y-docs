@@ -33,15 +33,15 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Registerkarten</b></td>
-<td style="text-align:left">Einige Seiten, z. B. die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt und entweder horizontal oder vertikal dargestellt.</td>
+<td style="text-align:left">Einige Seiten, z. B. die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt und entweder horizontal oder vertikal dargestellt.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Leiste</b></td>
-<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Klicken Sie auf die <b>Suche</b>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Rechts neben dem Application Switcher befindet sich die Schaltfläche <b>Benutzer</b> mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
+<td style="text-align:left"><b>Seitentitel</b><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden.<br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Klicken Sie auf die **Suche**-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Schaltfläche "Application Switcher"</b><br> Durch Klicken auf die Schaltfläche <b>Application Switcher</b> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Rechts neben dem Application Switcher befindet sich die Schaltfläche <b>Benutzer</b> mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Kommandos zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Menüleiste</b></td>
-<td style="text-align:left">Je nach aktiver Anwendung und Seite gibt es eine zweite Leiste unter der oberen Leiste mit weiteren Funktionalitäten wie einem <b>Neuladen</b>-Link zum neu Laden der Seite oder einem <b>Echtzeit</b>-Link zur Anzeige von Daten in Echtzeit. </td>
+<td style="text-align:left">Je nach aktiver Anwendung und Seite gibt es eine zweite Leiste unter der oberen Leiste mit weiteren Funktionalitäten wie einem <b>Neuladen</b>-Link zum erneuten Laden der Seite oder einem <b>Echtzeit</b>-Link zur Anzeige von Daten in Echtzeit. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Rechter Einschub</b></td>
@@ -91,7 +91,7 @@ Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen en
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
 {{< c8y-admon-important title="Wichtig" >}}
-Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
+Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
 {{< /c8y-admon-important >}}
 
 ##### Exakte Übereinstimmung
@@ -114,7 +114,7 @@ Wenn Sie nach Objekten suchen möchten, die exakt eine bestimmte Phrase enthalte
 "Mein Demo Gerät"
 ```
 
-Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen, um z. B. die Stammdaten nach "Mein" und "Demo", aber ohne "Gerät" zu durchsuchen:
+Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen, um z. B. die Stammdaten nach "Mein" und "Demo", aber ohne "Gerät" zu durchsuchen:
 
 ```text
 Mein Demo Gerät
@@ -180,10 +180,10 @@ Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [D
 
 ### Echtzeitverhalten des Navigators
 
-Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h. neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
+Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h. neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
 
 Diese Änderungen werden nur im Navigator der Anwendung angezeigt, in der Sie die Änderungen vorgenommen haben.
 
 **Beispiel**
 
-Wenn Sie in der Device Management-Anwendung die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Gruppe entfernt. Wenn Sie jedoch ein weiteres Fenster mit einer weiteren Device Management-Anwendung geöffnet haben, werden die Änderungen erst nach einer Aktualisierung der Ansicht oder einer weiteren Anfrage (z. B. nach dem Ausklappen einer Gruppe im Navigator) sichtbar.
+Wenn Sie in der Device Management-Anwendung die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Gruppe entfernt. Wenn Sie jedoch ein weiteres Fenster mit einer weiteren Device Management-Anwendung geöffnet haben, werden die Änderungen erst nach einer Aktualisierung der Ansicht oder einer weiteren Anfrage (z. B. nach dem Ausklappen einer Gruppe im Navigator) sichtbar.

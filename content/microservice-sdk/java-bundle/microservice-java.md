@@ -32,17 +32,17 @@ Your *pom.xml* file should contain a snippet similar to:
 <name>iptracker-microservice</name>
 <artifactId>iptracker-microservice</artifactId>
 <properties>
-    <java.version>13</java.version>
+    <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
-    <c8y.version>1004.6.12</c8y.version>
+    <spring-boot-dependencies.version>2.5.14</spring-boot-dependencies.version>
+    <c8y.version>1016.0.117</c8y.version>
     <microservice.name>iptracker-microservice</microservice.name>
 </properties>
 ```
 
 {{< c8y-admon-info >}}
-This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+This example was implemented using Java 17 and Spring Boot 2. You may [install the JDK 17](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 11. Note that since Java 13 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
 {{< /c8y-admon-info >}}
 
 Finally, add the following dependency:
@@ -112,7 +112,7 @@ Your manifest file should look similar to this:
 ### Creating a managed object
 
 An alarm must be associated with a source and it requires an ID.
-Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
+Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, for example, [My Current Location](https://mycurrentlocation.net).
@@ -374,7 +374,7 @@ public class App {
     }
 
     // Track client's approximate location
-    @RequestMapping("location/track")
+    @RequestMapping(value = "location/track", produces="application/json")
     public String trackLocation (HttpServletRequest request) {
         // Get the public IP address and create the event
         return createLocationUpdateEvent(request.getHeader("x-real-ip")).toJSON();
@@ -447,7 +447,7 @@ Refer to [Application library](/web/libraries/#application) in the *Web SDK guid
 
 #### Run the Docker container
 
-The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application).
+The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application) if the following property is set `microservice.package.deleteImage=false`.
 As you have learned in our [Hello world tutorial](/microservice-sdk/java/#java-microservice), you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
 Note that in this case the isolation was changed to `PER_TENANT`.
 You can also use your Docker image name and tag to run it as follows:

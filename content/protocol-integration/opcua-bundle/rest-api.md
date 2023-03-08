@@ -850,7 +850,7 @@ Full payload data structure explained:
 <td>processingMode</td>
 <td>string</td>
 <td>no</td>
-<td>Define the {{< product-c8y-iot >}} processing mode for incoming data. Refer to <a href="https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the {{< openapi >}} for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
+<td>Define the {{< product-c8y-iot >}} processing mode for incoming data. Refer to <a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the {{< openapi >}} for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
 </tr>
 <tr>
 <td>overiddenSubscriptions</td>
@@ -1547,6 +1547,32 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 ####
 
+#### Get all OPC UA device types
+
+**Endpoint**
+
+`GET /service/opcua-mgmt-service/device-types`
+
+**Payload**
+
+The endpoint returns a JSON array of all OPC UA device types.
+
+#### Get a single device type
+
+**Endpoint** 
+
+`GET /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+**Payload**
+
+A JSON representation of the device type with the given ID if it exists. If not, an error message is returned.
+
+**Response codes**
+
+`200 OK`
+
+`404 Not found`
+
 #### Updating a device type
 
 **Endpoint**
@@ -1566,3 +1592,4 @@ The payload of updating a device type is exactly the same as the payload of crea
 **Success response**
 
 `204 No Content`
+

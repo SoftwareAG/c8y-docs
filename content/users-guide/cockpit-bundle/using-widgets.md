@@ -27,13 +27,9 @@ Some of the widget require additional permissions in order to visualize the data
 
 2. In the **Add widget** dialog, select a widget type.
 
-<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
-
 3. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets-collection).
 
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](#creating-dashboards).
-
-        <img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
 
         {{< c8y-admon-info >}}
 
@@ -48,19 +44,13 @@ Some of the widget require additional permissions in order to visualize the data
 
 Widgets may be rearranged on the dashboard/report. By dragging and dropping you can move the widget to another position.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
-
 By dragging the arrows on the bottom right corner of a widget, you can resize it.
 
 To edit the properties of a widget, click the cogwheel icon at the top right corner of the widget and from the context menu select **Edit**.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
-
 To remove a widget from a dashboard or report, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
 
 Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock it, use the toggle with the lock icon in the top menu bar.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 
 {{< c8y-admon-info >}}
 On touch devices like smartphones or tablets some functions may not be supported.
@@ -90,7 +80,9 @@ If the asset is a group or a device with children, you see a folder icon next to
 
 If you want to select an unassigned device as an asset, you can find the unassigned devices in the **Unassigned Devices** folder, located on the first level of the selected group.
 
->**Info:** You cannot select the **Unassigned devices** folder itself. However, each device inside this folder can be selected on the next level. Click **Unassigned devices** to open the next level with all unassigned devices. Click the desired device to select it.
+{{< c8y-admon-info >}}
+You cannot select the **Unassigned devices** folder itself. However, each device inside this folder can be selected on the next level. Click **Unassigned devices** to open the next level with all unassigned devices. Click the desired device to select it.
+{{< /c8y-admon-info >}}
 
 
 <a name="asset-search"></a>
@@ -112,7 +104,9 @@ Through the full text search you can find assets in the whole hierarchy, but it 
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
-> **Info:** The full text search is only available in the Home dashboard and the Report dashboards.
+{{< c8y-admon-info >}}
+The full text search is only available in the Home dashboard and the Report dashboards.
+{{< /c8y-admon-info >}}
 
 For details on the search functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
 
@@ -124,4 +118,3 @@ Filtering is another way to find assets. However, it only filters assets on the 
 ![Filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
 
 For details on the filter functionality, see [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching-and-filtering).
-

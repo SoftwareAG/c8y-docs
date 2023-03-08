@@ -16,14 +16,14 @@ helpcontent:
   To create a new simulator, click **Add simulator** at the top right and follow the instructions in the *User guide*."
 ---
 
-With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, as
+With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, such as:
 
-* setting up a simulated device or a network of simulated devices
-* specifying the operations which a device can process
-* creating work instructions based on predefined message templates or user-defined templates and scheduling work steps
-* creating up to ten devices of a defined type
-* generating messages for measurements, alarms, events and inventory
-* viewing simulation problems as alarms
+* Setting up a simulated device or a network of simulated devices.
+* Specifying the operations which a device can process.
+* Creating work instructions based on predefined message templates or user-defined templates and scheduling work steps.
+* Creating up to ten devices of a defined type.
+* Generating messages for measurements, alarms, events and inventory.
+* Viewing simulation problems as alarms.
 
 ### About simulators
 
@@ -50,8 +50,6 @@ All simulators which you can access will be listed here.
 3. Enter a name for the simulator.
 4. Select the number of instances for this simulator (up to ten).
 5. Click **Create**.
-
-<img src="/images/users-guide/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
 
 The simulator will be created and added to the list.
 
@@ -96,8 +94,6 @@ The panel at the right changes according to the type of instruction selected at 
 The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](/reference/sensor-library/) in the *Reference guide*.
 
 The "Sleep" instruction requires one value for its duration in seconds.
-
-![Sleep](/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
 
 #### To add an instruction
 

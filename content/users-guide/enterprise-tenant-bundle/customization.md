@@ -12,8 +12,6 @@ Apart from various [configuration](#configuration) settings, you can use your in
 
 Click **{{< enterprise-tenant >}}** in the **Settings** menu to access these settings.
 
-![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
-
 <a name="configuration"></a>
 ### Configuration
 
@@ -34,21 +32,15 @@ The following placeholders can be found in the **Configuration** tab:
 
 Under **Two-factor authentication**, you can change the SMS template which is sent to the users.
 
-![TFA configuration](/images/users-guide/enterprise-tenant/et-configuration-tfa.png)
-
 #### Support link
 
 In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< sag-dev-community >}} page will be used.
-
-![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 
 Enter "false" to hide the link.
 
 #### Password reset
 
 In the **Password reset** section you can change all settings related to password reset email templates.
-
-![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
 
 At the top you can select if you want to allow sending emails to unknown email addresses.
 
@@ -62,33 +54,25 @@ In the following two fields provide an email template to be used on password cha
 
 In the **Email server** section, you can configure custom email server settings.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
-
 In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of:
 
 * SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
 * SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
 * SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
 
-Provide the host, port, username, password and sender address for the email server.
+Provide the host, port, username, password, and sender address for the email server. The empty password configuration is supported for the {{< enterprise-tenant >}}.
 
 #### Data export
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
-![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
-
 #### Storage limit
 
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit (warning) and *after* data removal is performed (limit exceeded).
 
-![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
-
 #### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
-
-<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
 
@@ -132,8 +116,8 @@ Under **General**, you can edit the title which will be used in the browser tab.
 
 Under **Main logo**, specify the following items:
 
-* The favicon, which will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
-* Your branding logo, which will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
+* The favicon - will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
+* Your branding logo - will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
 * The brand logo height.
 
 **Navigator logo**
@@ -153,12 +137,12 @@ In the **Colors** section you specify the colors to be used in your branding ver
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
 * Main brand color.
-* Secondary brand color. The default value is "#07b91A".
-* Dark brand color. Mainly used for two-color icons. The default value is "#0B385B".
-* Light brand color. Mainly used for two-color icons. The default value is "#5FAEEC".
-* Text color. The default value is "#444".
-* Link color. The default value is the same as the main brand color.
-* Main background color. The default value for this item is "#FAFAFA".
+* Secondary brand color - the default value is "#07b91A".
+* Dark brand color - mainly used for two-color icons. The default value is "#0B385B".
+* Light brand color - mainly used for two-color icons. The default value is "#5FAEEC".
+* Text color - the default value is "#444".
+* Link color - the default value is the same as the main brand color.
+* Main background color - the default value for this item is "#FAFAFA".
 
 **Top bar**
 
@@ -166,9 +150,9 @@ In the **Top bar** section you specify the parameters for the top bar.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color. The default value is "#FFFFF".
-* Text color. The default value is "49595B".
-* Button hover text color. The default value is the main brand color.
+* Background color - the default value is "#FFFFF".
+* Text color - the default value is "49595B".
+* Button hover text color - the default value is the main brand color.
 
 **Navigator**
 
@@ -176,12 +160,12 @@ In the **Navigator** section you specify the parameters for the navigator.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color. The default value is "2c3637".
-* Logo wrapper background color. The default value is "Transparent".
-* Title color. The default value is "FFFFF".
-* Text and buttons color. The default value is "#FAFAFA".
-* Separator line color. The default value is "#FAFAFA".
-* Text color of the current item in the navigator. The default value is "#FAFAFA".
+* Background color - the default value is "2c3637".
+* Logo wrapper background color - the default value is "Transparent".
+* Title color - the default value is "FFFFF".
+* Text and buttons color - the default value is "#FAFAFA".
+* Separator line color - the default value is "#FAFAFA".
+* Text color of the current item in the navigator - the default value is "#FAFAFA".
 * Background color of the current item in the navigator with the main brand color as default.
 
 **Misc**
@@ -196,9 +180,9 @@ Disabling the cookie banner, also disables the product experience tracking by Ga
 
 The following parameters can be specified:
 
-* Title - Cookie banner title.
-* Text - Cookie banner text with a general statement on the cookie usage and the use cases for it.
-* Link to privacy policy - A link to the page with the privacy policy.
+* Title - cookie banner title
+* Text - cookie banner text with a general statement on the cookie usage and the use cases for it
+* Link to privacy policy - a link to the page with the privacy policy
 
 <a name="domain-name"></a>
 ### Domain name
@@ -260,17 +244,17 @@ The DNS entries for your custom domain must be configured in a way that all requ
 
 We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
 domain from the certificate in the NAME field. The VALUE field of the CNAME entry must point to the hostname of {{< product-c8y-iot >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
-is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *{{< domain-c8y >}}*. Please also make sure to delete any
+is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *mytenant.{{< domain-c8y >}}*. Please also make sure to delete any
 conflicting A entries.
 
 **Example:**
 
-If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *{{< domain-c8y >}}*, the following CNAME entry must be added to your DNS zone:
+If you want to use **.iot.mycompany.com* for your enterprise subtenants and if you're using the {{< product-c8y-iot >}} at *mytenant.{{< domain-c8y >}}*, the following CNAME entry must be added to your DNS zone:
 
 ```shell
-NAME                  TYPE   VALUE
+NAME                   TYPE   VALUE
 ----------------------------------------------------
-*.iot.mycompany.com.   CNAME  {{< domain-c8y >}}.
+*.iot.mycompany.com.   CNAME  mytenant.{{< domain-c8y >}}.
 ```
 
 We highly discourage any use of alternative DNS configurations for the following reasons:
@@ -287,10 +271,9 @@ We highly discourage any use of alternative DNS configurations for the following
 Once the DNS configuration is in place and if a certificate with the given requirements is available, it can be easily
 uploaded to the platform.
 
-<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+On the **Domain name** tab in the **Enterprise Tenant** page, click **Upload certificate**. Select the certificate from your file system and click **Upload**.
 
-
-Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
+Afterwards, you can activate the domain with a single click on its name. After the domain has been activated, you will be redirected
 to your {{< enterprise-tenant >}} using the new domain name. You will also receive an email with information about the
 activation. Note that your {{< management-tenant >}} domain name is static, for example, if your wildcard domain is "*
 .iot.mycompany.com" then your {{< management-tenant >}} domain will be "management.iot.mycompany.com".
@@ -301,11 +284,11 @@ After the activation is completed you will no longer be able to access your tena
 
 #### Updating your certificate
 
-When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that
+When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that the certificate meets the following requirements:
 
-* the certificate is valid, like when being uploaded for the first time,
-* the certificate is currently valid (validFrom in the past and validTo in the future),
-* the certificate has exactly the same common name (domain name) as the currently active certificate.
+* It is valid, like when being uploaded for the first time.
+* It is currently valid (validFrom in the past and validTo in the future).
+* It has exactly the same common name (domain name) as the currently active certificate.
 
 {{< c8y-admon-info >}}
 Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.

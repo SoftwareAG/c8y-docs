@@ -25,22 +25,6 @@ If the command is sent without any parameters then all LWM2M devices that have n
 
 Example usages: `migrateLwm2mDevices 1122,3344` or `migrateLwm2mDevices`
 
-<a name="lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation"></a>
-### Cleanup cluster tenant objects for endpoint
-
-{{< c8y-admon-info >}}
-Endpoint refers to the endpoint client ID listed under [Registering LWM2M devices > Mandatory settings](#lwm2m-device-registration-mandatory-settings).
-{{< /c8y-admon-info >}}
-
-During LWM2M device registration the tenant route information is stored in the cluster tenant.
-If the LWM2M device is only deleted from the tenant, the tenant route information will not be deleted automatically.
-This operation can be used for triggering the cleanup of the managed objects in the cluster tenant associated with the device with the endpoint and has to be executed from the tenant that owned the device with the endpoint.
-
-Additionally, the operation can be executed regardless of the existence of the device in the tenant.
-Therefore, it is also possible to use it to remove the link between the device and the tenant but still keep the device's history.
-
-Example usage: `cleanupClusterTenantObjectsForEndpoint urn:imei:012345678901234`
-
 <a name="lwm2m-invalidate-lwm2m-registrations"></a>
 ## Invalidate registrations
 

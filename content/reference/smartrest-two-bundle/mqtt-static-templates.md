@@ -46,6 +46,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#120">120,configType,url,filename[,time]</a>
 + <a href="#121">121,profileExecuted,profileID</a>
 + <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
++ <a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a>
 + <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
@@ -118,6 +119,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 **[Inventory templates](#subscribe-inventory)**
 
 + [106,child1,child2,…](#106)
++ [124,id](#124)
 
 **[Operation templates](#subscribe-operations)**
 
@@ -508,6 +510,17 @@ Sets the list of advanced software installed on the device. Any existing list wi
 
 ```text
 140,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
+```
+
+<a name="123"></a>
+##### Get the device managed object ID (123)
+
+Retrieve the ID of the device managed object.
+
+**Example**
+
+```text
+123
 ```
 
 <a name="141"></a>
@@ -909,6 +922,21 @@ List all children of the device.
 
 ```text
 106,child1,child2,child3
+```
+
+<a name="124"></a>
+##### Get the device managed object ID (124)
+
+Retrieve the ID of the device managed object.
+
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|id|String|
+
+**Example**
+
+```text
+124,12345
 ```
 
 <a name="subscribe-operations"></a>

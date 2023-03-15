@@ -3,7 +3,7 @@ title: Overview
 layout: bundle
 section: 
   - platform_administration
-weight: 10
+weight: 1
 
 ---
 

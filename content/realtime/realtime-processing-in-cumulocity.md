@@ -3,7 +3,7 @@ title: What is real-time processing in our platform?
 layout: bundle
 section: 
   - data_analytics
-weight: 10
+weight: 1
 ---
 
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for immediate processing of incoming data from devices or other data sources. These user-defined operations can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices. The operation logic is implemented in Apama's Event Processing Language (EPL).

@@ -1,9 +1,9 @@
 ---
-weight: 10
 title: Overview
 layout: bundle
 section: 
   - device_management
+weight: 1
 ---
 
 

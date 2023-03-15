@@ -1,12 +1,12 @@
 ---
-title: Interfacing devices
+title: Concepts
 icon: "c8y-icon c8y-icon-device-protocols"
 type: root
 layout: redirect
 bundle: interfacing-devices
 section: 
   - device_management
-weight: 20
+weight: 10
 aliases:
   - /concepts-guide/interfacing-with-m2m-data-sources
   - /concepts-guide/interfacing-with-m2m-data-sources.html

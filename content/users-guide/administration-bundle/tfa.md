@@ -12,7 +12,7 @@ To check whether TFA is enabled for a certain user, go to the **Users** page and
 
 {{< c8y-admon-related >}}
 - [Changing settings > Changing authentication settings](/users-guide/administration/#authentication) for information on how to configure TFA and other authentication settings.
-- [Authentication](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
+- [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
 {{< /c8y-admon-related >}}
 
 

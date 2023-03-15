@@ -70,7 +70,7 @@ Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Defau
 - [Cockpit > Widgets collection > Application](/users-guide/cockpit/#applications) for information on the "Application" widget.
 - [Developing applications](/concepts/applications) in the *Concepts guide* for an overview on the basic concepts of applications in {{< product-c8y-iot >}}.
 - The [Web SDK guide](/web/overview) for information on how to develop web applications on top of {{< product-c8y-iot >}} and how to [customize](/web/application-configuration) or [extend](/web/tutorials/#extend-an-existing-application) existing applications using the Web SDK.
-- [Applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
+- [Applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
 {{< /c8y-admon-related >}}
 
 <a name="applications"></a>

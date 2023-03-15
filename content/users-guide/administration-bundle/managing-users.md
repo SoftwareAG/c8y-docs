@@ -54,7 +54,7 @@ Users which are using single sign-on cannot change the password of users which a
 {{< c8y-admon-related >}}
 - [Managing permissions](#managing-permissions) for details on assigning roles and permissions to users.
 - [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide* for information on the concept of multi-tenancy as opposed to user access control.
-- [Users](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
+- [Users](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
 {{< /c8y-admon-related >}}
 
 ### Viewing users

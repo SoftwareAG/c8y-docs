@@ -28,7 +28,7 @@ A microservice is a specific type of application, that is a server-side applicat
 - [Enterprise tenant > Usage statistics and billing](/users-guide/enterprise-tenant/#usage-and-billing) for information on the microservice usage feature.
 - [Developing applications > Microservices](/concepts/applications/#microservices) in the *Concepts guide* for an overview on the basic concepts of microservices in {{< product-c8y-iot >}}.
 - The [Microservice SDK guide](/microservice-sdk/introduction) for general aspects of using microservices on top of {{< product-c8y-iot >}} and information on developing and deploying microservices using our SDKs or the REST interface.
-- [Applications](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
+- [Applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
 {{< /c8y-admon-related >}}
 
 ### Subscribed microservices

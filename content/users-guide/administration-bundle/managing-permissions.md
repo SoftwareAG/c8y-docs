@@ -26,7 +26,7 @@ Moreover, application access can be granted to enable a user to use an applicati
 {{< c8y-admon-related >}}
 - [Managing users](#managing-users) for information on managing users in general.
 - [Managing applications](#managing-applications) for more information on managing applications.
-- [Roles](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
+- [Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
 - {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device management library](/reference/device-management-library/) for further information on fragment types.
 {{< /c8y-admon-related >}}
 

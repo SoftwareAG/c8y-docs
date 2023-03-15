@@ -29,8 +29,6 @@
       {{ if ne (substr .Params.target 0 1) "" }}
         <meta http-equiv="refresh" content='0; URL={{ printf "%s%s" .Site.BaseURL .Params.target }}'/>
       {{ end }}
-    <h1>{{ $scratch.Get "url"}}</h1>
-    <pre>{{.Params.bundle}} -  {{$current}} </pre>
     Redirecting…
   </body>
 </html>

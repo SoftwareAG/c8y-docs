@@ -209,7 +209,7 @@ function buildToc() {
     const targetId = link.getAttribute('href').substring(1);
     const targetElement = document.getElementById(targetId);
     link.addEventListener('click', event => {
-      let tempActive = document.querySelectorAll('.toc .active');
+      const tempActive = document.querySelectorAll('.toc .active');
       tempActive.forEach(temp => {
         temp.classList.remove('active');
       });
@@ -237,15 +237,15 @@ function buildToc() {
       if (rect.top <= halfViewportHeight && rect.bottom >= halfViewportHeight) {
         const currentLinkId = link.getAttribute('href').substring(1);
         if (currentLinkId !== lastLinkId) {
-          if (lastLinkId) {
-            const lastLink = document.querySelector(`.toc a[href="#${lastLinkId}"]`);
-            lastLink.classList.remove('active');
-          } else {
+          // if (lastLinkId) {
+          //   const lastLink = document.querySelector(`.toc a[href="#${lastLinkId}"]`);
+          //   lastLink.classList.remove('active');
+          // } else {
             let tempActive = document.querySelectorAll('.toc .active');
             tempActive.forEach(temp => {
               temp.classList.remove('active');
             });
-          }
+          // }
           link.classList.add('active');
           lastLinkId = currentLinkId;
         }

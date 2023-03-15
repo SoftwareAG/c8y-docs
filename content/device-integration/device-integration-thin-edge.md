@@ -3,6 +3,8 @@ weight: 15
 title: Device integration using thin-edge.io
 layout: bundle
 slug: thin-edge
+section: 
+  - device_management
 aliases:
   - /thin-edge/overview
   - /thin-edge/thin-edge-architecture

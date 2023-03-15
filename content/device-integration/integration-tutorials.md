@@ -2,6 +2,8 @@
 weight: 90
 title: Integration tutorials
 layout: bundle
+section: 
+  - device_management
 aliases:
   - /devices/overview
   - /devices/adeunis/#overview

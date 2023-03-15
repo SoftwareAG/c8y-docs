@@ -3,6 +3,8 @@ weight: 10
 title: Overview
 layout: bundle
 slug: introduction
+section: 
+  - device_management
 aliases:
   - /developers-guide
   - /developers-guide/installing-the-sdk

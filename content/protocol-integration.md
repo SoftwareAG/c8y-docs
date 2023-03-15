@@ -6,5 +6,5 @@ layout: redirect
 bundle: protocol-integration
 section: 
   - device_management
-weight: 50
+weight: 40
 ---

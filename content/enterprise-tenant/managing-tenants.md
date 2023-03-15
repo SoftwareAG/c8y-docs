@@ -1,11 +1,11 @@
 ---
+weight: 10
 title: Managing tenants
 layout: bundle
 section: 
   - platform_administration
 aliases:
   - /users-guide/enterprise-edition/#managing-tenants
-weight: 10
 helpcontent:
   - label: managing-tenants
     title: Subtenants

@@ -6,5 +6,5 @@ layout: redirect
 bundle: authentication
 section: 
   - platform_administration
-weight: 40
+weight: 50
 ---

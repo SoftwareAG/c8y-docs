@@ -1,10 +1,10 @@
 ---
-title: Tenant hierarchy
+title: Platform administration introduction
 icon: "c8y-icon c8y-icon-sub-tenants"
 type: root
 layout: redirect
-bundle: tenant-hierarchy
+bundle: platform-admin-intro
 section: 
   - platform_administration
-weight: 20
+weight: 10
 ---

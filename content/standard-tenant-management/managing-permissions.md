@@ -1,8 +1,8 @@
 ---
-weight: 30
+weight: 13
 title: Managing permissions
 layout: bundle
-section:
+section: 
   - platform_administration
 helpcontent:
 - label: managing-permissions

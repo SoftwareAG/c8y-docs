@@ -1,8 +1,8 @@
 ---
-weight: 20
+weight: 12
 title: Managing users
 layout: bundle
-section:
+section: 
   - platform_administration
 helpcontent:
   - label: managing-users

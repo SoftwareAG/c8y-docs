@@ -1,21 +1,20 @@
 {{ define "main" }}
-<article class="single">
-  <header class="page-header row">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2 text-primary text-center">
-          <h1>{{.Title}}</h1>
-        </div>
-      </div>
-    </div>
-  </header>
+{{- partial "root-nav.html" . -}}
 
-  <section class="container">
-    <div class="row margin-bottom-size-4">
-      <div class="col-lg-8 offset-lg-2">
-        {{.Content}}
-      </div>
+<main class="main-content">
+  {{- partial "breadcrumbs.html" . -}}
+  <div class="article-list">
+  <article id="{{substr .File.LogicalName 0 -3}}" class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+    </header>
+      {{.Content}}
+  </article>
+  </div>
+  <aside>
+    <div id="toc" class="toc">
     </div>
-  </section>
-</article>
+  </aside>
+</main>
+{{- partial "footer.html" . -}}
 {{ end }}

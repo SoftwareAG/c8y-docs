@@ -24,6 +24,12 @@ body{
   display: flex;
   flex-flow: row wrap;
 }
+.d-col{
+  flex-direction: column;
+}
+.flex-nowrap{
+  flex-wrap: nowrap!important;
+}
 
 .m-r-auto{
   margin-right: auto !important;

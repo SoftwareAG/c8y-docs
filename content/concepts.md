@@ -1,9 +1,9 @@
 ---
 title: Concepts guide
-bundle: concepts
-icon: "c8y-icon c8y-icon-c8y-data"
+icon: "dlt-c8y-icon-intelligence"
 type: root
-layout: root
+layout: redirect
+bundle: concepts
 section: 
   - getting_started
 weight: 20

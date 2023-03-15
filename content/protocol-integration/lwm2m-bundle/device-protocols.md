@@ -1,0 +1,115 @@
+---
+weight: 40
+title: LWM2M device protocols
+layout: redirect
+---
+
+To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
+Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types) in the *User guide*.
+
+<a name="creating_device_protocols"></a>
+### Creating LWM2M device protocols
+
+Once you have registered a device, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
+
+To add a new LWM2M device protocol follow these steps:
+
+1. In the Device Management application, move to the **Device protocol** page.
+2. Click **Add device protocol** in the top menu bar.
+3. In the upcoming dialog select **LWM2M** as device protocol type.
+4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found at [http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd). <br>
+If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior.
+In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. 
+
+5. The device protocol opens in a new page that contains the object ID and description and the list of resources that belongs to this object. In this page additional functionalities to a resource can be added.
+
+![Protocol example](/images/device-protocols/lwm2m/lwm2m-protocol-example.png)
+
+{{< c8y-admon-info >}}
+LWM2M protocol resources cannot be edited.
+{{< /c8y-admon-info >}}
+
+<a name="resources"></a>
+### Adding additional functionalities to a resource
+
+To access resource functionalities proceed to the device protocol page and click one of the resource instances. See below for the functionalities that you may enable:
+
+#### Send measurement
+
+Turn on **Send measurement** to specify a measurement.
+
+- Enter the type of the measurement. For example, "c8y_AccelerationMeasurement".
+- Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: "c8y_AccelerationMeasurement.acceleration".
+- The "Unit" field specifies the unit of the given measurement. For example, "m/s" for velocity.
+
+#### Create alarm
+
+Turn on **Create alarm** if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):
+
+- Severity: CRITICAL, MAJOR, MINOR, WARNING
+- Type
+- Status: ACTIVE, ACKNOWLEDGED, CLEARED
+- Text
+
+#### Send Event
+
+Turn on **Send event** to send an event each time you receive a resource value. Specify the following parameters:
+
+- Enter the type of the event. For example, "com_cumulocity_model_DoorSensorEvent".
+- Enter the text which will be sent. For example, "Door sensor was triggered".
+
+#### Custom Actions
+
+Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
+
+{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).
+
+##### Predefined custom actions
+
+There are several predefined custom actions which can be selected to apply actions to the relevant resources.
+
+Actions that are relevant for a device object (object ID /3):
+- device:updateManufacturer
+  - Adds manufacturer information to the name of the device in the following format &ldquo;LWM2M &lt;manufacturer&gt; &lt;registration endpoint&gt;&rdquo;
+- device:updateModelNumber
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;model&rdquo; property.
+- device:updateSerialNumber
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;serialNumber&rdquo; property.
+- device:updateFirmwareVersion
+  - Stores to the device managed object with the `c8y_Hardware` fragment &ldquo;revision&rdquo; property.
+
+Actions that are relevant for connectivity monitoring (object ID /4):
+- connectivity:updateCellId
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;cellId&rdquo; property.
+- connectiviy:updateSmnc
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;mnc&rdquo; property.
+- connectivity:updateSmcc
+  - Stores to the device managed object with the `c8y_Mobile` fragment &ldquo;mcc&rdquo; property.
+- connectivity:updateRssi
+  - Stores the value as device measurement with the `c8y_SignalStrength` type and fragment and &ldquo;rssi&rdquo; property.
+  - In the same measurement, stores resource path information in &ldquo;resourcePath&rdquo; fragment and also in &ldquo;objectResourcePath_&lt;resource path&gt;&rdquo; fragment name.
+  - In the same measurement, stores device name information in &ldquo;device!Name&rdquo; fragment.
+  - In the same measurement, stores device mobile information in &ldquo;device!c8y_Mobile&rdquo; fragment.
+
+Below is an example where the “connectivity:updateRssi” custom action is selected for the Connectivity monitoring (/4) radio signal strength in order to create the signal measurement for the device.
+
+![Custom action example](/images/device-protocols/lwm2m/lwm2m-custom-action-connectivity-signal.png)
+
+#### Auto observe
+
+If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
+
+![Auto-observe example](/images/device-protocols/lwm2m/lwm2m-autoobserve.png)
+
+{{< c8y-admon-info >}}
+At least one functionality must be set to enable "Auto observe".
+{{< /c8y-admon-info >}}
+
+### Alarms on device protocol mapping failures
+
+There are two types of alarms raised related to device protocol mapping failures:
+
+- Alarm for no mapping known: This alarm is raised when value is read or observed but no mapping for this resource is found.
+This can be resolved by importing device protocol for this resource.
+
+- Alarm due to non-numeric/non-Boolean value received for measurement mapping: This alarm is raised when the resource has a measurement mapping set up but measurement cannot be created because received value is a non-numeric/non-Boolean value.

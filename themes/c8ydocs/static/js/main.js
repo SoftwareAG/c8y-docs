@@ -97,7 +97,7 @@ var main = (function ($) {
 
     // Set current Guide on navigator guides dropdown
     $('#current-dropdown-toggle').html($('.current-app').html()).attr('title', $('.current-app').text());
-    // console.log('current app: ', $('.current-app').html());
+    console.log('current app: ', $('.current-app').html());
     
     
     

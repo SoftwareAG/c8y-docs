@@ -1,12 +1,12 @@
 ---
-weight: 30
 title: Interfacing devices
 icon: "c8y-icon c8y-icon-notification"
-bundle: interfacing-devices
 type: root
-layout: root
+layout: redirect
+bundle: interfacing-devices
 section: 
   - device_management
+weight: 20
 aliases:
   - /concepts-guide/interfacing-with-m2m-data-sources
   - /concepts-guide/interfacing-with-m2m-data-sources.html

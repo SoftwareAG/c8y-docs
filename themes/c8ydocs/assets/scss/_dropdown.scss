@@ -24,6 +24,7 @@
 .dropdown-toggle:focus {
   outline: 2px solid $brand-primary;
   border-radius: 2px;
+  outline-offset: -1px;
 }
 
 // The dropdown menu (ul)
@@ -135,6 +136,7 @@
   .dropdown-toggle{
     outline: 2px solid $brand-primary;
     border-radius: 2px;
+    outline-offset: -1px;
   }
 }
 

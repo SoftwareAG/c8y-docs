@@ -9,6 +9,6 @@
 {{ $pages := where .Pages "Type" "!=" "page" }}
 {{ $page := index $pages 0 }}
 <li><a class='{{if eq $currentSection .Page.Data.Term }} active {{ end}}'
-  href='{{$page.Permalink}}'><i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i> {{.Page.Title}}</a></li>
+  href='{{$page.Permalink}}'><i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>{{.Page.Title}}</a></li>
 {{ end }}
   

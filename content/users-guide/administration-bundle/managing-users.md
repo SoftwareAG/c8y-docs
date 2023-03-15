@@ -10,19 +10,21 @@ helpcontent:
     Moreover you can select the global roles for a user, see also *Administration > Managing permissions* in the *User guide*."
 ---
 
+The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.
+
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
 "User management" permission type:
 * To view users: READ permission
 * To manage (create, edit, delete, disable/enable, delegate, manage permissions) all existing users: ADMIN permission
-* To create users: CREATE permission 
+* To create users: CREATE permission
 
 "Own user management" permission type (has no influence on user management capabilities):
 * To view the own user: READ permission
 * To edit the own user: ADMIN permission
 
-Note that each user created on the platform can edit its own information by default, regardless of the "Own user management" permissions. The purpose of the "Own user management" permission is to manage specific users created for technical purposes, for example, by microservices, and determine whether such users can be managed by respective services. 
+Note that each user created on the platform can edit its own information by default, regardless of the "Own user management" permissions. The purpose of the "Own user management" permission is to manage specific users created for technical purposes, for example, by microservices, and determine whether such users can be managed by respective services.
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above mentioned permissions:
 * Global User Manager - Can access and modify the full user hierarchy
@@ -30,12 +32,6 @@ On tenant creation, there are default roles available that can be used as a samp
 
 Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies).
 {{< /c8y-admon-req >}}
-
-The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.
-
-{{< c8y-admon-info >}}
-The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
-{{< /c8y-admon-info >}}
 
 If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
 

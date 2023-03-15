@@ -37,12 +37,13 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 ![Authentication settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
 - [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
+- [Configuring single sign-on](/users-guide/administration/#configuring-single-sign-on) for details on configuring single sign-on in {{< product-c8y-iot >}}.
 - [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
 {{< /c8y-admon-related >}}
 
@@ -204,7 +205,7 @@ You may select one of the following options:
 * **SMS-based**, supporting the following settings:
 	- **Limit token validity for** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
   - **Limit verification code validity for** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
-  
+
 
 	{{< c8y-admon-info >}}
 An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.

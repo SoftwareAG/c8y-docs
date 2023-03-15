@@ -1,6 +1,6 @@
 ---
 title: Authentication
-icon: "c8y-icon c8y-icon-administration"
+icon: "dlt-c8y-icon-lock11"
 type: root
 layout: redirect
 bundle: authentication

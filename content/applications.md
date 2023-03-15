@@ -1,6 +1,6 @@
 ---
 title: Developing applications
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-atom"
 type: root
 layout: redirect
 bundle: applications

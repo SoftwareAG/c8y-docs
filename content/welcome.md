@@ -1,8 +1,8 @@
 ---
 title: Welcome!
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
-layout: root
+layout: redirect
 bundle: welcome
 section: 
   - getting_started

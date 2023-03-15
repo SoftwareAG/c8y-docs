@@ -1,6 +1,6 @@
 ---
 title: Billing and usage
-icon: "c8y-icon c8y-icon-administration"
+icon: "dlt-c8y-icon-bill"
 type: root
 layout: redirect
 bundle: billing-and-usage

@@ -1,6 +1,6 @@
 ---
 title: Cockpit
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-cockpit"
 type: root
 layout: redirect
 bundle: cockpit

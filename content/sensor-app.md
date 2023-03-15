@@ -1,10 +1,10 @@
 ---
-weight: 60
 title: Cumulocity IoT Sensor App
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-saas"
 type: root
 layout: redirect
 bundle: sensor-app
+weight: 100
 section: 
   - device_management
 aliases:

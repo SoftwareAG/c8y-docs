@@ -1,6 +1,6 @@
 ---
 title: Interfacing devices
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-device-protocols"
 type: root
 layout: redirect
 bundle: interfacing-devices

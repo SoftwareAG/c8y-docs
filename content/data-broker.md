@@ -1,6 +1,6 @@
 ---
 title: Data broker
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-data-broker"
 type: root
 layout: redirect
 bundle: data-broker

@@ -1,6 +1,6 @@
 ---
 title: Device Integration
-icon: "c8y-icon c8y-icon-tools"
+icon: "c8y-icon c8y-icon-device"
 type: root
 layout: redirect
 bundle: device-integration

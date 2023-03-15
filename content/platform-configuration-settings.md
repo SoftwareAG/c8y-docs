@@ -1,6 +1,6 @@
 ---
 title: Platform configuration settings
-icon: "c8y-icon c8y-icon-administration"
+icon: "dlt-c8y-icon-box-settings"
 type: root
 layout: redirect
 bundle: platform-configuration-settings

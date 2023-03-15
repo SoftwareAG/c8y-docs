@@ -1,12 +1,12 @@
 ---
 title: Real-time processing
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-realtime"
 type: root
 layout: redirect
 bundle: realtime
 section: 
   - data_analytics
-weight: 35
+weight: 10
 aliases:
   - /concepts-guide/real-time-processing-in-cumulocity
   - /concepts-guide/real-time-processing-in-cumulocity.html

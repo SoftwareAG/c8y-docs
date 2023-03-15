@@ -1,10 +1,10 @@
 ---
 title: Web SDK guide
-icon: "c8y-icon c8y-icon-smart-rest"
+icon: "c8y-icon c8y-icon-css"
 type: root
 layout: redirect
 section: 
   - app_development
 bundle: web
-weight: 90
+weight: 50
 ---

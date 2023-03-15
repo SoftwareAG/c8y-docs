@@ -1,8 +1,8 @@
 ---
 title: Security aspects
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-card-security"
 type: root
-layout: root
+layout: redirect
 bundle: security
 section: 
   - platform_administration

@@ -1,8 +1,8 @@
 ---
 title: License management
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-badge"
 type: root
-layout: root
+layout: redirect
 bundle: license-management
 section: 
   - platform_administration

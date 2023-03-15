@@ -1,7 +1,7 @@
 ---
-weight: 80
 title: "Appendix: Migration history"
 layout: bundle
+weight: 80
 section: 
   - app_development
 ---

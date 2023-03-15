@@ -14,7 +14,7 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 
 {{< c8y-admon-related >}}
 - [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the <i>User guide</i> for information on working with alarms in general.
-- [Alarms](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Alarms) in the {{< openapi >}} for details on managing alarms via REST.
+- [Alarms](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Alarms) in the {{< openapi >}} for details on managing alarms via REST.
 {{< /c8y-admon-related >}}
 
 <a name="view-alarm-mapping"></a>

@@ -1,10 +1,10 @@
 ---
-weight: 40
 title: Developing applications
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect
 bundle: applications
+weight: 10
 section: 
   - app_development
 aliases:

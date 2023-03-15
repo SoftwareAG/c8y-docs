@@ -1,9 +1,7 @@
 ---
 weight: 15
 title: Home screen
-layout: bundle
-section: 
-  - data_analytics
+layout: redirect
 ---
 
 You access the Streaming Analytics application using the [application switcher](/users-guide/getting-started/#app-switcher).

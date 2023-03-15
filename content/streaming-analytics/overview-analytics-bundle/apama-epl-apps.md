@@ -1,9 +1,7 @@
 ---
 weight: 30
 title: EPL Apps
-layout: bundle
-section: 
-  - data_analytics
+layout: redirect
 ---
 The **EPL Apps** page of the Streaming Analytics application allows you to develop EPL apps (that is, single \*.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing \*.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
 

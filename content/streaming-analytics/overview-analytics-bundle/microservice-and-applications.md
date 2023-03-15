@@ -1,9 +1,7 @@
 ---
 weight: 40
 title: Microservice runtime and applications
-layout: bundle
-section: 
-  - data_analytics
+layout: redirect
 ---
 Analytic models, EPL apps and smart rules are executed in an Apama-ctrl microservice. This has a per-tenant isolation scope, that is, each subscribed tenant has its own instance of an Apama container with dedicated resources (that is, memory and CPU usage). The container is isolated from other tenants, hence high CPU load or memory issues on other containers are tracked and resourced independently.
 

@@ -1,9 +1,7 @@
 ---
 weight: 10
 title: Streaming analytics with Apama EPL
-layout: bundle
-section: 
-  - data_analytics
+layout: redirect
 ---
 Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 

@@ -1,9 +1,7 @@
 ---
 weight: 20
 title: Analytics Builder
-layout: bundle
-section: 
-  - data_analytics
+layout: redirect
 ---
 The **Analytics Builder** page of the Streaming Analytics application allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 

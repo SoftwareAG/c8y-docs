@@ -21,7 +21,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 {{< c8y-admon-related >}}
 - [Enterprise tenant > Managing tenants > Tenant policies](/users-guide/enterprise-tenant/#tenant-policies) in the <i>User guide</i> for details on the creation of tenant policies and retention rules on tenant level.
-- [Retention rules](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Retention-rules) in the {{< openapi >}} for details on managing retention rules via REST.
+- [Retention rules](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Retention-rules) in the {{< openapi >}} for details on managing retention rules via REST.
 {{< /c8y-admon-related >}}
 
 

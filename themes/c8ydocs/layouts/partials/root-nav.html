@@ -8,7 +8,7 @@
   <header class="nav-header">
     {{ $term := .Site.Taxonomies.section.Get $currentSection }}
     {{ with $term }}
-      <div class="d-flex d-col a-i-center p-t-8 p-b-8" >
+      <div class="text-center p-t-8 p-b-8" >
         <i style="font-size:46px;" class="c8y-icon-duocolor {{ .Page.Params.icon }}"></i>
         <strong class="text-truncate" title="{{.Page.Title}}">{{ .Page.Title }}</strong>
       </div>

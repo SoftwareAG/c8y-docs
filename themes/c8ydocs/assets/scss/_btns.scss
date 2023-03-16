@@ -35,6 +35,59 @@
   }
 }
 
+.btn-copy-code{
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  border: 0;
+  color: white;
+  margin-left: auto;
+  font-family: var(--c8y-font-family-sans-serif);
+  font-size: 12px;
+  padding: .25rem .5rem;
+  opacity: .75;
+  i{
+    margin-right: .25rem;
+  }
+  &:hover{
+    opacity: 1;
+  }
+  &:focus{
+    outline: 2px solid $brand-primary;
+    outline-offset: -2px;
+  }
+  &.copied {
+    position: relative;
+    opacity: 1 !important;
+    &:before {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      margin-left: 0;
+      padding: 5px 3px 3px;
+      border-radius: 3px;
+      background: $brand-primary;
+      color: white;
+      content: "Copied!";
+      font-size: 12px;
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      margin-left: 0;
+      width: 0;
+      height: 0;
+      border-width: 5px 5px 5px 5px;
+      border-style: solid;
+      border-color: $brand-primary transparent transparent;
+      content: "";
+    }
+  }
+}
+
 .sidebar-toggle {
   position: fixed !important;
   top: 10px;
@@ -77,26 +130,31 @@
   bottom: 4rem;
   z-index: 38;
   font-size: 1rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 9px 16px;
-  width: 50px;
-  height: 50px;
-  border: 1px solid var(--c8y-palette-gray-60);
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--c8y-root-component-border-color);
   border-radius: 50%;
   background-color: transparent;
-  color: var(--c8y-palette-gray-60);
+  color: var(--c8y-palette-gray-10);
   text-align: center;
   opacity: 0.5;
   transition: all 0.4s ease;
   cursor: pointer;
-  &:hover,
-  &:focus {
+  &:hover{
     border-color: transparent;
     background-color: $brand-primary;
     color: white;
     opacity: 1;
     outline: none;
+  }
+  &:focus{
+    outline: 2px solid $brand-primary;
+    outline-offset: -2px;
   }
   @media print {
     display: none;
@@ -134,7 +192,7 @@
       margin-left: 0;
       padding: 5px 3px 3px;
       border-radius: 3px;
-      background: rgba($brand-primary, 0.8);
+      background: $brand-primary;
       color: white;
       content: "Copied!";
       font-size: 12px;
@@ -148,7 +206,7 @@
       height: 0;
       border-width: 5px 5px 5px 5px;
       border-style: solid;
-      border-color: rgba($brand-primary, 0.8) transparent transparent;
+      border-color: $brand-primary transparent transparent;
       content: "";
     }
   }

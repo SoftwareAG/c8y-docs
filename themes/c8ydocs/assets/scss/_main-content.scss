@@ -102,6 +102,9 @@
     padding-top: 0;
     margin-bottom: -130px;
   }
+  .article-list > .page-section:last-child{
+    margin-bottom: 0;
+  }
   .toc{
     position: sticky;
     top: 74px;

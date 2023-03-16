@@ -14,6 +14,7 @@ $screen-md-min:              $screen-md;
 // Large screen / wide desktop
 $screen-lg:                  1200px;
 $screen-lg-min:              $screen-lg;
+$screen-lg-max:                  1400px;
 
 $screen-xs-max:              ($screen-sm-min - 1);
 $screen-sm-max:              ($screen-md-min - 1);

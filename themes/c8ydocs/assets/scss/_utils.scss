@@ -86,3 +86,15 @@ $grid-breakpoints: (
 .separator-bottom{
   box-shadow: inset 0 -1px 0 0 var(--c8y-root-component-border-color);
 }
+
+.sr-only,
+.cdk-visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}

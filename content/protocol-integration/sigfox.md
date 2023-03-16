@@ -5,6 +5,6 @@ layout: bundle
 section: 
   - device_management
 aliases:
-  - /users-guide/optional-services/#sigfox
+  - /users-guide/optional-services
   - /devices/sigfox
 ---

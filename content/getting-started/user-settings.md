@@ -5,7 +5,7 @@ layout: bundle
 section: 
   - getting_started
 aliases:
-  - /users-guide/overview/#user-settings
+  - /users-guide/overview
 ---
 
 Clicking the **User** button at the top right will open a menu which provides access to various actions or information.

@@ -5,5 +5,5 @@ layout: bundle
 section: 
   - device_management
 aliases:
-  - /users-guide/optional-services/#snmp
+  - /users-guide/optional-services
 ---

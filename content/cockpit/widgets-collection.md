@@ -2,8 +2,8 @@
 weight: 55
 title: Widgets collection
 aliases:
-  - /users-guide/cockpit/#widgets
-  - /users-guide/cockpit/#widget
+  - /users-guide/cockpit
+  - /users-guide/cockpit
 layout: bundle
 section: 
   - app_development

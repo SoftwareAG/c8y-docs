@@ -3,7 +3,7 @@ weight: 30
 title: IP-tracker microservice
 layout: redirect
 aliases:
-  - /microservice-sdk/http/#microservice-java
+  - /microservice-sdk/http
 ---
 
 {{< c8y-admon-important >}}

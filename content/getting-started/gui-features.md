@@ -7,7 +7,7 @@ section:
 section: 
   - getting_started
 aliases:
-  - /users-guide/overview/#gui-features
+  - /users-guide/overview
 ---
 
 

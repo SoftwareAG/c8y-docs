@@ -5,8 +5,8 @@ layout: bundle
 section: 
   - getting_started
 aliases:
-  - /users-guide/overview/#accessing-cumulocity-platform
-  - /users-guide/getting-started/#accessing-cumulocity-platform
+  - /users-guide/overview
+  - /users-guide/getting-started
 ---
 
 You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.

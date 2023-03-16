@@ -2,7 +2,7 @@
 weight: 40
 title: Configuring fieldbus device protocols
 layout: redirect
-aliases: -/users-guide/optional-services/#configure
+aliases: -/users-guide/optional-services
 ---
 
 New fieldbus device protocols can be created in the **Device protocols** page which is opened from the **Device types** menu in the navigator.

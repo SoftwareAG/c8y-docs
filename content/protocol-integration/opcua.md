@@ -5,5 +5,5 @@ layout: bundle
 section: 
   - device_management
 aliases:
-  -/users-guide/optional-services/#opc-ua
+  -/users-guide/optional-services
 ---

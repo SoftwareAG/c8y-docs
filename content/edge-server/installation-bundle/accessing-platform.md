@@ -3,7 +3,7 @@ weight: 25
 title: Accessing the Edge appliance
 layout: redirect
 aliases:
-  - /edge/installation/#accessing-cumulocity
+  - /edge/installation
 
 ---
 

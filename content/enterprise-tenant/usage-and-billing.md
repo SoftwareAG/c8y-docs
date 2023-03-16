@@ -5,7 +5,7 @@ layout: bundle
 section: 
   - platform_administration
 aliases:
-  - /users-guide/enterprise-edition/#usage-and-billing
+  - /users-guide/enterprise-edition
 helpcontent:
   - label: usage-and-billing
     title: Usage statistics

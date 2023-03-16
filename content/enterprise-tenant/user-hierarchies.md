@@ -5,7 +5,7 @@ layout: bundle
 section: 
   - platform_administration
 aliases:
-  - /users-guide/enterprise-edition/#user-hierarchies
+  - /users-guide/enterprise-edition
 ---
 
 With user hierarchies you can reflect independent organizational entities in {{< product-c8y-iot >}} that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.

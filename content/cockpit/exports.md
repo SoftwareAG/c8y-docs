@@ -12,7 +12,7 @@ helpcontent:
 
     Click **Add export** at the top right to configure a new export, or use the menu icon to edit, duplicate or delete exports."
 aliases:
-  - /users-guide/cockpit/#export
+  - /users-guide/cockpit
 ---
 
 The export functionality lets you export specific data to either CSV or Excel files.

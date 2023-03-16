@@ -5,7 +5,7 @@ layout: bundle
 section: 
   - platform_administration
 aliases:
-  - /users-guide/enterprise-edition/#data-broker
+  - /users-guide/enterprise-edition
 helpcontent:
   - label: data-broker
     title: Data broker

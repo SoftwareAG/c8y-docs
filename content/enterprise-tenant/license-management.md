@@ -5,7 +5,7 @@ layout: bundle
 section: 
   - platform_administration
 aliases:
-  - /users-guide/enterprise-edition/#license-management
+  - /users-guide/enterprise-edition
 ---
 
 The {{< management-tenant >}} may manage the licenses for the domains of the {{< enterprise-tenant >}}s via the UI.

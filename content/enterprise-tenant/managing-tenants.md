@@ -5,7 +5,7 @@ layout: bundle
 section: 
   - platform_administration
 aliases:
-  - /users-guide/enterprise-edition/#managing-tenants
+  - /users-guide/enterprise-edition
 helpcontent:
   - label: managing-tenants
     title: Subtenants

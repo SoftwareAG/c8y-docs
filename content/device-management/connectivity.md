@@ -5,7 +5,7 @@ layout: bundle
 section: 
   - device_management
 aliases:
-  - users-guide/optional-services/#connectivity
+  - users-guide/optional-services/
 ---
 
 The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.

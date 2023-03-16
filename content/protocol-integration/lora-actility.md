@@ -5,6 +5,6 @@ layout: bundle
 section: 
   - device_management
 aliases:
-  - /users-guide/optional-services/#lora
+  - /users-guide/optional-services
   - /users-guide/LoRa
 ---

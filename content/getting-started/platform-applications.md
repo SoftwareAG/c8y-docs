@@ -5,8 +5,8 @@ layout: bundle
 section: 
   - getting_started
 aliases:
-  - /users-guide/overview/#cumulocity-applications
-  - /users-guide/getting-started/#cumulocity-applications
+  - /users-guide/overview
+  - /users-guide/getting-started
 ---
 
 Per default, {{< product-c8y-iot >}} comes with the following three standard applications:

@@ -6,7 +6,7 @@ section:
   - device_management
 aliases:
   - /users-guide/android-cloud-sensor-app
-  - /users-guide/optional-services/#cumulocity-sensor-app
+  - /users-guide/optional-services
 ---
 
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. It is the successor of the previous Cloud Sensor App.

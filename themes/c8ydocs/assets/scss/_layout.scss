@@ -82,7 +82,7 @@ body{
 .home-top{
   display: grid;
   grid-template-columns: 1fr;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
     gap: 1rem;
   svg{
     height: 100%;
@@ -90,12 +90,16 @@ body{
     max-height: 33vh;
   }
   @media(min-width: $screen-md-min){
-    padding: 2rem;
+    padding: 0 2rem 2rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: $screen-lg-max;
     margin: 0 auto;
     &__content{
-      padding-top: 4rem;
+      padding-top: 2rem;
+      h1{
+        font-size: 4rem;
+        margin: 2rem 0;
+      }
     }
   }
 }

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   {{- partial "head.html" . -}}
-  <body data-spy="scroll" data-target="#main-nav" >
+  <body data-spy="scroll" data-target="#main-nav" {{if .IsHome }} class="isHome" {{end}}>
     {{- partial "header.html" . -}}
     {{- partial "to-the-top.html" . -}}
     
     {{- block "main" . }}{{- end }}
-    
-   
   </body>
 </html>

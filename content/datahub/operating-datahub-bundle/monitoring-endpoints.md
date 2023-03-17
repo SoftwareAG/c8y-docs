@@ -39,3 +39,5 @@ The endpoint can be accessed by any logged in {{< product-c8y-iot >}} user who i
 {{< c8y-admon-info >}}
 The endpoint is released as a "beta" feature. It might change in future releases without prior notice.
 {{< /c8y-admon-info >}}
+
+Additionally, you can configure the offloading pipeline to [raise an alarm](/datahub/configuring-offloading-jobs/#raising-alarms) in the {{< product-c8y-iot >}} platform if an offloading or compaction run has failed. Then you can use the [alarm API](https://{{< domain-c8y >}}/api/core/#tag/Alarm-API) to monitor those failures.

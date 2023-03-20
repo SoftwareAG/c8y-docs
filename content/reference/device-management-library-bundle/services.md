@@ -16,7 +16,7 @@ Query, update, add and remove services using {{< product-c8y-iot >}} REST API fo
 
 #### Announcing a service to the platform
 
-Using Inventory REST API:
+Using the Inventory REST API:
 
 ```http
 POST /inventory/managedObjects/<deviceId>/childAdditions
@@ -26,7 +26,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 
 ```json
 {
-  "name": "MongoDB",
+  "name": "DatabaseService",
   "type": "c8y_Service",
   "serviceType": "systemd",
   "status": "up"
@@ -40,11 +40,13 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 |serviceType  | Yes       | An arbitrary string for organizing services|
 |status       | Yes       | 'up', 'down', 'unknown' or any custom service status|
 
-Or using SmartREST static template 102. The second parameter - the unique ID does not reference the internal numeric ID
-but a string based external ID which is defined by the device not by the platform. We recommend prefixing the unique ID
-with a device specific prefix to avoid clashes with other devices running the same service:
+Using SmartREST static template 102:
 
-`102,myDevice_MongoDb,systemd,MongoDb,up`
+The second parameter - the unique ID does not reference the internal numeric ID
+but a string-based external ID which is defined by the device instead of the platform.
+We recommend you to prefix the unique ID with a device-specific prefix to avoid clashes with other devices running the same service:
+
+`102,myDatabaseDevice,systemd,DatabaseService,up`
 
 #### Updating the status of a service
 

@@ -227,14 +227,11 @@ In the first case an offloading run processes multiple fragments with the corres
 
 <a id="raising-alarms"></a>
 
-Offloading as well as compaction runs may fail due to various reasons like network issues, timeouts etc. As described in [History per offloading pipeline](/datahub/working-with-datahub/#history-per-offloading-job) and [History of compactions per offloading pipeline](/datahub/working-with-datahub/#history-compaction-per-offloading-job), the offloading and compaction job histories provide details for successful and failed runs. Additionally, an alarm can be raised within the {{< product-c8y-iot >}} platform in case of a failure. Such an alarm is available in the {{< product-c8y-iot >}} [cockpit application](https:///{{< domain-c8y >}}/guides/users-guide/device-management/#alarm-monitoring) and can also be queried via the {{< product-c8y-iot >}} [alarm API](https://{{< domain-c8y >}}/api/core/#tag/Alarm-API). These alarms allow for monitoring and reacting on offloading and compaction failures.
+Offloading as well as compaction runs may fail due to various reasons like network issues, timeouts etc. As described in [History per offloading pipeline](/datahub/working-with-datahub/#history-per-offloading-job) and [History of compactions per offloading pipeline](/datahub/working-with-datahub/#history-compaction-per-offloading-job), the offloading and compaction job histories provide details for successful and failed runs. Additionally, an alarm can be raised within the {{< product-c8y-iot >}} platform in case of a failure. Such an alarm is available in the {{< product-c8y-iot >}} [cockpit application](https:///{{< domain-c8y >}}/guides/users-guide/device-management/#alarm-monitoring).
 
 Under **Create alarm on** you can activate raising alarms for offloading as well as compaction failures. Per default, the setting is activated for offloading and deactivated for compaction failures. When activated and an offloading run fails, an alarm is raised. If the offloading fails multiple times in a row, the associated alarm is updated with each new failure. The more successive runs fail, the higher the severity of the alarm will be, ranging from warning up to critical. Each alarm comprises information which offloading pipeline has failed and how often it has failed in a row. The same applies to alarms being raised for compaction failures.
 
 The alarm will be active until it is cleared. The latter is the case when either an offloading run completes successfully or the offloading configuration is deleted. The alarm remains active if the offloading is unscheduled or raising alarms is deactivated. Again, the same applies to alarms being raised for compaction failures.
-
-TODO:
-- HOW TO DEAL WITH TEDIOUS USE OF ALARMS API: DETERMINE MICROSERVICE ID --> CLICK ON ALARM NAME --> EXTRACT ID OF VIRTUAL ALARMS DEVICE FROM URL --> USE THAT AS SOURCE ID; SLIGHTLY DIFFERENT BEHAVIOR FOR EDGE
 
 **Completing the offloading configuration**
 

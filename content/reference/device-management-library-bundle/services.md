@@ -42,8 +42,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 
 Using SmartREST static template 102:
 
-The second parameter - the unique ID does not reference the internal numeric ID
-but a string-based external ID which is defined by the device instead of the platform.
+The second parameter, the unique ID, does not reference the internal numeric ID but a string-based external ID which is defined by the device instead of the platform.
 We recommend you to prefix the unique ID with a device-specific prefix to avoid clashes with other devices running the same service:
 
 `102,myDatabaseDevice,systemd,DatabaseService,up`

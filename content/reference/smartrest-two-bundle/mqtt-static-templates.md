@@ -223,7 +223,7 @@ Create a new software service for given device.
 **Example**
 
 ```text
-102,myDevice_MongoDb,systemd,MongoDb,up
+102,myDatabaseDevice,systemd,DatabaseService,up
 ```
 
 <a name="104"></a>

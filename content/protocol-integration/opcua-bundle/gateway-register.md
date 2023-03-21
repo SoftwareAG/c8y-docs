@@ -33,6 +33,29 @@ gateway:
 Windows OS is used for the example.
 {{< /c8y-admon-info >}}
 
+### Thin-Edge
+
+OPC UA Gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to standalone mode `thinEdge` configurations must be added to YAML file:
+
+```yaml
+C8Y:
+    baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: My Gateway
+    db:
+# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+    thinEdge:
+        enabled: true
+        mqttServerURL: tcp://<<thinEdge MQTT broker>>
+        deviceId: My Gateway
+```
+
+With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. Which means the authentication and registration to the platform will be done via thin-edge. The OPC UA gateway will automatically registered and created as sub-device under thin-edge device. The `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection informations for the mqtt client to connect to the local thin-edge MQTT broker. 
+
 ### Configuration profile location on the filesystem
 
 The configuration profile can be stored either in the *same directory as the JAR file* or in a *default configuration directory*.
@@ -113,7 +136,14 @@ gateway:
       # automatically when the legacyCleanup is set to true, which is the default setting.
       # If the legacy files wanted to be kept or if the mechanism for clearing is not needed, set legacyCleanup to false.
       legacyCleanup: true
-
+  # 
+  thinEdge:
+    # Enables thin-edge.io mode, if set to true authentication and registration will be done via thin-edge.
+    enabled: true
+    # MQTT client configuration, MQTT borker URL
+    mqttServerURL: tcp://<<thinEdge MQTT broker>>
+    # MQTT client configuration, client ID 
+    deviceId: My Gateway
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
   # Contact product support (https://{{< domain-c8y >}}/guides/<latest-release>/welcome/contacting-support/)

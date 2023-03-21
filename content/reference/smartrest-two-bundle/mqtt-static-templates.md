@@ -81,6 +81,9 @@ If a parameter is in square brackets, it is optional.
 + <a href="#501">501,typeToSetToExecuting</a>
 + <a href="#502">502,typeToSetToFailed,failureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
++ <a href="#504">504,operationId</a>
++ <a href="#505">505,operationId,failureReason</a>
++ <a href="#506">506,operationId,parameters</a>
 + <a href="#510">510,serial (restart)</a>
 + <a href="#511">511,serial,commandToExecute</a>
 + <a href="#513">513,serial,configurationText</a>
@@ -904,6 +907,54 @@ It enables the device to send additional parameters that trigger additional step
 503,c8y_Restart
 ```
 
+<a name="504"></a>
+##### Set operation to EXECUTING (504)
+
+Set the operation with the given ID to EXECUTING. The operation must exist and must have the requesting device as the source.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|operationId|YES|String|
+
+**Example**
+
+```text
+504,123
+```
+
+<a name="505"></a>
+##### Set operation to FAILED (505)
+
+Set the operation with the given ID to FAILED. The operation must exist and must have the requesting device as the source.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|operationId|YES|String|
+|2|failureReason|NO|String|
+
+**Example**
+
+```text
+505,123,"Could not restart"
+```
+
+<a name="506"></a>
+##### Set operation to SUCCESSFUL (506)
+
+Set the operation with given ID to SUCCESSFUL. The operation must exist and must have the requesting device as the source.
+
+This may let the device send additional parameters that trigger further steps based on the type of the operation, also see [Updating operations](#updating-operations).
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|operationId|YES|String|
+|2...|parameters|NO|String|
+
+**Example**
+
+```text
+506,c8y_Restart
+```
 
 ### Subscribe templates
 

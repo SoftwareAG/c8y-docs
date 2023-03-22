@@ -10,17 +10,28 @@ helpcontent:
     Moreover you can select the global roles for a user, see also *Administration > Managing permissions* in the *User guide*."
 ---
 
-The user management feature allows you to manage the users within your tenant. With this functionality you may:
+The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.
 
-- Create users.
-- Assign usernames and set passwords.
-- Store user details.
-- Specify login options.
-- Enable additional login security by using Two-Factor Authentication (TFA).
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
 
-{{< c8y-admon-info >}}
-The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
-{{< /c8y-admon-info >}}
+"User management" permission type:
+* To view users: READ permission
+* To manage (create, edit, delete, disable/enable, delegate, manage permissions) all existing users: ADMIN permission
+* To create users: CREATE permission
+
+"Own user management" permission type (has no influence on user management capabilities):
+* To view the own user: READ permission
+* To edit the own user: ADMIN permission
+
+Note that each user created on the platform can edit its own information by default, regardless of the "Own user management" permissions. The purpose of the "Own user management" permission is to manage specific users created for technical purposes, for example, by microservices, and determine whether such users can be managed by respective services.
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above mentioned permissions:
+* Global User Manager - Can access and modify the full user hierarchy
+* Shared User Manager - Can create new users as his own subusers and manage them ("feature-user-hierarchy" application subscription required)
+
+Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies).
+{{< /c8y-admon-req >}}
 
 If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
 
@@ -36,7 +47,13 @@ Moreover, password reset in {{< product-c8y-iot >}} is disabled for users create
 Users which are using single sign-on cannot change the password of users which are managed by the platform.
 {{< /c8y-admon-info >}}
 
-### Viewing users
+{{< c8y-admon-related >}}
+- [Managing permissions](#managing-permissions) for details on assigning roles and permissions to users.
+- [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide* for information on the concept of multi-tenancy as opposed to user access control.
+- [Users](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
+{{< /c8y-admon-related >}}
+
+### To view users
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 
@@ -127,7 +144,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 The new user will be added to the user list.
 
 {{< c8y-admon-info >}}
-By default, manually created users always have the "Own&#95;User&#95;Management" permissions set to active.
+By default, manually created users always have the "Own user management" permissions set to active.
 {{< /c8y-admon-info >}}
 
 ### To edit a user
@@ -136,9 +153,6 @@ By default, manually created users always have the "Own&#95;User&#95;Management"
 2. Click **Change password** to change the password.
 3. Click **Save** to apply your settings.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
 
 ### To copy inventory roles
 
@@ -149,10 +163,6 @@ You need a role with user management permission to perform this option.
 
 The inventory roles will be copied from the selected user.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
-
 ### To delegate/undelegate user hierarchies
 
 Click the menu icon at the right of the respective row and then click **Delegate** to delegate your user hierarchies and permissions to a user.
@@ -161,25 +171,13 @@ Click **Undelegate** to remove a delegation.
 
 Refer to [Managing user hierarchies](/users-guide/enterprise-tenant#user-hierarchies) for details on delegation.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
-
 ### To disable/enable a user
 
 Click the menu icon at the right of the respective row and then click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
-
 ### To delete a user
 
 Click the menu icon at the right of the respective row and then click **Delete**.
-
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
 
 ### To revoke user tokens
 

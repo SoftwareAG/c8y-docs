@@ -35,7 +35,7 @@ Windows OS is used for the example.
 
 ### Thin-Edge
 
-OPC UA Gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to standalone mode `thinEdge` configurations must be added to YAML file:
+The OPC UA Gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to standalone mode `thinEdge` configurations must be added to YAML file:
 
 ```yaml
 C8Y:
@@ -136,14 +136,18 @@ gateway:
       # automatically when the legacyCleanup is set to true, which is the default setting.
       # If the legacy files wanted to be kept or if the mechanism for clearing is not needed, set legacyCleanup to false.
       legacyCleanup: true
-  # 
+  # These settings configure and enable/disable thin-edge mode (registration and operating OPC UA Gateway via thin-edge)
   thinEdge:
-    # Enables thin-edge.io mode, if set to true authentication and registration will be done via thin-edge.
-    enabled: true
-    # MQTT client configuration, MQTT borker URL
-    mqttServerURL: tcp://<<thinEdge MQTT broker>>
-    # MQTT client configuration, client ID 
-    deviceId: My Gateway
+    # Enable thinEdge if OPC UA gateway is running next to thinEdge and should use thinEdge to connect to Cumulocity.
+    # set enabled to false if OPC UA gateway is running without thinEdge
+    enabled: false
+    # MQTT Server URL of thinEdge (localhost)
+    mqttServerURL: tcp://127.0.0.1:1883
+    # Enables if mqtt client will use a steady and single connection. Beware that mqtt is only used to retrieve JWT, which is done depending how long JWT is valid. This is configurable (https://cumulocity.com/guides/device-sdk/mqtt/#jwt-token-retrieval)
+    # It is recommended to use a steady connection only if the JWT is valid for a short time. Is the JWT for a longer time valid, standard 1h. It is not recommended to have a steady mqtt connection.
+    mqttSteadyConnection: false
+    # thinEdge deviceId must be changed, depends on the configured deviceId of the thin edge certificate, see https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/tutorials/connect-c8y.md#create-the-certificate
+    deviceId: my-thin-edge-device
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
   # Contact product support (https://{{< domain-c8y >}}/guides/<latest-release>/welcome/contacting-support/)

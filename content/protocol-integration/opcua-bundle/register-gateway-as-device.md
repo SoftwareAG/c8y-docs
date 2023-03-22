@@ -15,3 +15,7 @@ layout: redirect
 4. Click **Accept** to complete the registration.
 
 ![Device Registration Acceptance](/images/device-protocols/opcua/opcua-device-registration.png)
+
+{{< c8y-admon-info >}}
+If you run the OPC UA Gateway in thin-edge mode, manual registration is not needed. Thin-edge will automatically register OPC UA Gateway at Cumulocity as subdevice.
+{{< /c8y-admon-info >}}

@@ -17,6 +17,13 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
+{{< c8y-admon-related >}}
+
+- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
+
+{{< /c8y-admon-related >}}
+
+
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}

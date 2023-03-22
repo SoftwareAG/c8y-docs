@@ -13,8 +13,8 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-- The [Concepts guide](/concepts/domain-model#overview) for details on {{< product-c8y-iot >}}'s domain model.
-- [Device Management](/users-guide/device-management#overview) in the *User guide* for details on working with devices in {{< product-c8y-iot >}}.
+- [Cumulocity IoT´s domain model](/concepts/domain-model#overview) in the *Concepts guide* for details on {{< product-c8y-iot >}}'s domain model.
+- [Device Management](/users-guide/device-management#overview) for details on working with devices in {{< product-c8y-iot >}}.
 - The [Protocol integration guide](/protocol-integration/#overview) for more information on using protocols in {{< product-c8y-iot >}}.
 - The [Web SDK guide](/web/#overview) for more information on working with the Web SDK in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}

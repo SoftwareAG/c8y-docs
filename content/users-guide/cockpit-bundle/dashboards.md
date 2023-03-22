@@ -17,7 +17,7 @@ helpcontent:
 weight: 40
 ---
 {{< c8y-admon-related >}}
-- The [Web SDK guide > Tutorials > Add a custom widget to a dashboard](/guides/web/#add-a-custom-widget) for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
+- [Tutorials > Add a custom widget to a dashboard](/guides/web/#add-a-custom-widget) in the *Web SDK guide* for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
 - The [Web SDK guide > Application configuration] for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 

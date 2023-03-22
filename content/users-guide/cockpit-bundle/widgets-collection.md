@@ -10,8 +10,8 @@ layout: redirect
 {{< c8y-admon-related >}}
 - [Device Management](/users-guide/device-management#overview) in the *User guide* for details on working with devices.
 - [Administration](/users-guide/administration#managing-applications) in the *User guide* for details on managing applications.
-- The [Protocol integration guide](/protocol-integration/cloud-fieldbus/#overview) for more information on using Cloud Fieldbus in {{< product-c8y-iot >}}.
-- The [Web SDK guide > Tutorials > Add a custom widget to a dashboard](/users-guide/web/tutorials/#add-a-custom-widget) for further details for customized widgets in the {{< product-c8y-iot >}} environment.
+- [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/#overview) in the *Protocol integration guide* for more information on using Cloud Fieldbus in {{< product-c8y-iot >}}.
+- [Tutorials > Add a custom widget to a dashboard](/users-guide/web/tutorials/#add-a-custom-widget) in the *Web SDK guide* for further details on customized widgets in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 

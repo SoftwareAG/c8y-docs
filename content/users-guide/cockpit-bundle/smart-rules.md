@@ -12,7 +12,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-- [Administration > Managing business rues](/users-guide/administration#business-rules) in the *User guide* for details on managing smart rules for your devices.
+- [Administration > Managing business rules](/users-guide/administration#business-rules) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
 {{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).

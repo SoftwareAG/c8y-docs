@@ -15,7 +15,7 @@ aliases:
 
 
 {{< c8y-admon-related >}}
-- The [Streaming Analytics guide](/apama/#streaming-analytics) for details on customizing scheduled exports using Apama Streaming Analytics. 
+- The [Streaming Analytics guide](/apama/#streaming-analytics) for details on customizing scheduled exports using the Streaming Analytics application. 
 {{< /c8y-admon-related >}}
 
 The export functionality lets you export specific data to either CSV or Excel files.

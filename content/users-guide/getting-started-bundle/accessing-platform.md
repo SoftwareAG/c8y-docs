@@ -9,8 +9,8 @@ aliases:
 
 
 {{< c8y-admon-related >}}
-- [{{< openapi >}} > Tenants > Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) for details on tenant ID and tenant domain.
-- [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding) and [User options and settings](/users-guide/getting-started/#user-settings) for information on customizing the cookie banner.
+- [Tenants > Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for details on tenant ID and tenant domain.
+- [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding) and [Getting started > User options and settings](/users-guide/getting-started/#user-settings) for information on customizing the cookie banner.
 {{< /c8y-admon-related >}}
 
 

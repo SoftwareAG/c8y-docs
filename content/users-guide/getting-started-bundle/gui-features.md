@@ -9,7 +9,7 @@ aliases:
 {{< c8y-admon-related >}}
 - [Cockpit](/users-guide/cockpit/#overview) for more details on the {{< product-c8y-iot >}} UI.
 - [Administration > Managing applications](/users-guide/administration/#managing-applications) for more information on managing applications in {{< product-c8y-iot >}}.
-- [Web SDK guide](/web/#overview) for details on working with web applications.
+- [Web SDK guide](/web/#overview) for details on building web applications on top of {{< product-c8y-iot >}}.
 {{< /c8y-admon-related >}}
 
 <a name="screen"></a>

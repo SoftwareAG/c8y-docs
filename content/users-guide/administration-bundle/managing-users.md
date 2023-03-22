@@ -53,7 +53,7 @@ Users which are using single sign-on cannot change the password of users which a
 - [Users](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
 {{< /c8y-admon-related >}}
 
-### Viewing users
+### To view users
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 
@@ -144,7 +144,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 The new user will be added to the user list.
 
 {{< c8y-admon-info >}}
-By default, manually created users always have the "Own&#95;User&#95;Management" permissions set to active.
+By default, manually created users always have the "Own user management" permissions set to active.
 {{< /c8y-admon-info >}}
 
 ### To edit a user
@@ -153,9 +153,6 @@ By default, manually created users always have the "Own&#95;User&#95;Management"
 2. Click **Change password** to change the password.
 3. Click **Save** to apply your settings.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
 
 ### To copy inventory roles
 
@@ -166,10 +163,6 @@ You need a role with user management permission to perform this option.
 
 The inventory roles will be copied from the selected user.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
-
 ### To delegate/undelegate user hierarchies
 
 Click the menu icon at the right of the respective row and then click **Delegate** to delegate your user hierarchies and permissions to a user.
@@ -178,25 +171,13 @@ Click **Undelegate** to remove a delegation.
 
 Refer to [Managing user hierarchies](/users-guide/enterprise-tenant#user-hierarchies) for details on delegation.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
-
 ### To disable/enable a user
 
 Click the menu icon at the right of the respective row and then click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
 
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
-
 ### To delete a user
 
 Click the menu icon at the right of the respective row and then click **Delete**.
-
-{{< c8y-admon-info >}}
-You need a role with user management permission to perform this option.
-{{< /c8y-admon-info >}}
 
 ### To revoke user tokens
 

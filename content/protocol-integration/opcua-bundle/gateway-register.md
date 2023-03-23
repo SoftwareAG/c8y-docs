@@ -54,7 +54,7 @@ gateway:
         deviceId: My Gateway
 ```
 
-With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. Which means the authentication and registration to the platform will be done via thin-edge. The OPC UA gateway will automatically registered and created as sub-device under thin-edge device. The `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection informations for the mqtt client to connect to the local thin-edge MQTT broker. 
+With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker. 
 
 ### Configuration profile location on the filesystem
 

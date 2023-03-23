@@ -141,7 +141,7 @@ gateway:
     # Enable thinEdge if OPC UA gateway is running next to thinEdge and should use thinEdge to connect to Cumulocity.
     # set enabled to false if OPC UA gateway is running without thinEdge
     enabled: false
-    # MQTT Server URL of thinEdge (localhost)
+    # MQTT Server URL of Thin Edge (localhost).
     mqttServerURL: tcp://127.0.0.1:1883
     # Enables if mqtt client will use a steady and single connection. Beware that mqtt is only used to retrieve JWT, which is done depending how long JWT is valid. This is configurable (https://cumulocity.com/guides/device-sdk/mqtt/#jwt-token-retrieval)
     # It is recommended to use a steady connection only if the JWT is valid for a short time. Is the JWT for a longer time valid, standard 1h. It is not recommended to have a steady mqtt connection.

@@ -143,7 +143,7 @@ gateway:
     enabled: false
     # MQTT Server URL of Thin Edge (localhost).
     mqttServerURL: tcp://127.0.0.1:1883
-    # Enables if mqtt client will use a steady and single connection. Beware that mqtt is only used to retrieve JWT, which is done depending how long JWT is valid. This is configurable (https://cumulocity.com/guides/device-sdk/mqtt/#jwt-token-retrieval)
+    # Enable this if the MQTT client uses a single steady connection. Note that MQTT is only used to retrieve the JWT, which is dependent on how long the JWT is valid. See https://cumulocity.com/guides/device-integration/mqtt/#jwt-token-retrieval.
     # We recommend you to use a steady connection only if the JWT is valid for a short time. If the JWT is valid for a longer time, the standard is one hour. It is generally not recommended to have a steady MQTT connection.
     mqttSteadyConnection: false
     # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate, see https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/tutorials/connect-c8y.md#create-the-certificate.

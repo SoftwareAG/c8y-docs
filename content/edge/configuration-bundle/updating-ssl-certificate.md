@@ -1,10 +1,10 @@
 ---
-weight: 36
+weight: 35
 title: Updating the SSL certificate
 layout: redirect
 ---
 
-You must always have an SSL certificate for your domain name that is configured. If the validity of the certificate expires, you must upload a new certificate. You can upload the certificate using the GUI and REST APIs.
+You must always have a valid SSL certificate for your domain name that is configured. If the validity of the certificate expires or if you have changed your domain name, you must upload or generate a new SSL certificate. You can upload the certificate using the GUI and REST APIs.
 
 ### Updating the SSL certificate using the GUI
 

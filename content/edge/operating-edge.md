@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: Edge operations
+title: Cumulocity IoT Edge operations
 layout: bundle
 ---
 

@@ -1,10 +1,10 @@
 ---
-weight: 15
+weight: 5
 title: Configuring the network
 layout: redirect
 ---
 
-After a successful installation, you can reconfigure the network and also configure the network CIDR.
+Configuring the network enables you to access the Edge appliance using the domain name. If there are any changes in the network configuration due to an update or changes in the network protocols, you must reconfigure the network of your Edge appliance as described below. After reconfiguring the network, you must update the IP mapping for the domain name with the new IP address in the DNS servers, if you have added an entry in the DNS servers. If you are using an alias, you must update the IP address in the hosts file of your operating system.
 
 {{< c8y-admon-important >}}
 

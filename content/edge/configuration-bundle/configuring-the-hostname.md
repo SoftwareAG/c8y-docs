@@ -1,10 +1,10 @@
 ---
-weight: 45
+weight: 10
 title: Configuring the hostname
 layout: redirect
 ---
 
-You can change the hostname of your Edge appliance using the REST APIs. The default hostname of the Edge appliance is **iot-edge-server**.
+The default hostname of the Edge appliance is **iot-edge-server**. You can define a unique hostname for your Edge appliance as per your requirements. A unique hostname ensures seamless communication within the network, avoids any hostname conflicts with other network devices and improves the security of your Edge device.
 
 ### Configuring the hostname using the UI
 

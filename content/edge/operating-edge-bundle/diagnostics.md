@@ -1,6 +1,6 @@
 ---
-weight: 25
-title: Diagnostics
+weight: 30
+title: Diagnostic utility
 layout: redirect
 ---
 
@@ -87,14 +87,6 @@ Following are the supported command line arguments which can be used while invok
 * -sw or --software: Allows the script to collect only the software information
 * -c8y or --cumulocity: Allows the script to collect only the cumulocity information
 * -h: Displays the help message
-
-#### Monitor
-
-The monitor can be started by running the "run_monitor.py" script located under "/opt/c8y/utilities/diagnostic-utility/src/".
-
-The monitor script supports only one optional startup parameter:
-
-*  -s or --skipDataCollector: Allows the user to skip the data collection even if one or more monitored components is not working.
 
 ### Microservices log file locations
 

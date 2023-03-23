@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 5
 title: Updating Edge using the GUI
 layout: redirect
 ---

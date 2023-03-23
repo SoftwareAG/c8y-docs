@@ -23,7 +23,7 @@ gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
     identifier: Gateway_Device
-    name: My Gateway
+    name: Gateway_Device
     db:
 # The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
@@ -44,14 +44,14 @@ gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
     identifier: Gateway_Device
-    name: My Gateway
+    name: Gateway_Device
     db:
 # The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
     thinEdge:
         enabled: true
         mqttServerURL: tcp://<<thinEdge MQTT broker>>
-        deviceId: My Gateway
+        deviceId: Gateway_Device
 ```
 
 With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker. 
@@ -138,15 +138,15 @@ gateway:
       legacyCleanup: true
   # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA Gateway via thin-edge)
   thinEdge:
-    # Enable thinEdge if OPC UA gateway is running next to thinEdge and should use thinEdge to connect to Cumulocity.
-    # set enabled to false if OPC UA gateway is running without thinEdge
+    # Enable Thin Edge if OPC UA gateway is running next to Thin Edge and should use it to connect to Cumulocity.
+    # set enabled to false if OPC UA gateway is running without Thin Edge
     enabled: false
     # MQTT Server URL of Thin Edge (localhost).
     mqttServerURL: tcp://127.0.0.1:1883
-    # Enable this if the MQTT client uses a single steady connection. Note that MQTT is only used to retrieve the JWT, which is dependent on how long the JWT is valid. See https://cumulocity.com/guides/device-integration/mqtt/#jwt-token-retrieval.
+    # Enable this if the MQTT client uses a single steady connection. Note that MQTT is only used to retrieve the JWT, which is dependent on how long the JWT is valid. See https://{{< domain-c8y >}}/guides/device-integration/mqtt/#jwt-token-retrieval.
     # We recommend you to use a steady connection only if the JWT is valid for a short time. If the JWT is valid for a longer time, the standard is one hour. It is generally not recommended to have a steady MQTT connection.
     mqttSteadyConnection: false
-    # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate, see https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/tutorials/connect-c8y.md#create-the-certificate.
+    # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate.
     deviceId: my-thin-edge-device
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.

@@ -146,7 +146,7 @@ gateway:
     # Enables if mqtt client will use a steady and single connection. Beware that mqtt is only used to retrieve JWT, which is done depending how long JWT is valid. This is configurable (https://cumulocity.com/guides/device-sdk/mqtt/#jwt-token-retrieval)
     # We recommend you to use a steady connection only if the JWT is valid for a short time. If the JWT is valid for a longer time, the standard is one hour. It is generally not recommended to have a steady MQTT connection.
     mqttSteadyConnection: false
-    # thinEdge deviceId must be changed, depends on the configured deviceId of the thin edge certificate, see https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/tutorials/connect-c8y.md#create-the-certificate
+    # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate, see https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/tutorials/connect-c8y.md#create-the-certificate.
     deviceId: my-thin-edge-device
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.

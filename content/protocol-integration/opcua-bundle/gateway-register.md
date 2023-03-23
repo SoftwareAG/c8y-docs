@@ -35,7 +35,7 @@ Windows OS is used for the example.
 
 ### Thin-Edge
 
-The OPC UA Gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to standalone mode `thinEdge` configurations must be added to YAML file:
+The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
 
 ```yaml
 C8Y:

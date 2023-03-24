@@ -9,9 +9,9 @@ layout: redirect
 {{< product-c8y-iot >}} DataHub allows to offload data from the {{< product-c8y-iot >}} platform into a data lake and the subsequent analysis of the offloaded data using SQL. For that purpose, {{< product-c8y-iot >}} DataHub must transform the data from the document-based format into a relational format, which is then persisted as Parquet files in the data lake.
 
 When the offloading is configured, data from the documents in the operational database of the {{< product-c8y-iot >}} platform is transformed and stored in columns of the target table in the data lake. The system either automatically generates those transformations or proposes them to the user with the option to modify them. The user can also configure additional transformations. A configuration defining how a data field is transformed into a column comprises:
-- The expression how to retrieve the data from the source document
-- The name of the target column
-- The type of the target column
+- The expression how to retrieve the data from the source document.
+- The name of the target column.
+- The type of the target column.
 
 For built-in data fields specified by the platform, the type is fixed and known to {{< product-c8y-iot >}} DataHub. For other fields {{< product-c8y-iot >}} DataHub uses Dremio to determine the type by evaluating the expression on the data stored in the operational database. Dremio either does this based on the database state at configuration time or on metadata captured earlier. For performance reasons, the evaluation is based on a subset of data, namely the first 4095 documents of the collection. When evaluating the expression and the corresponding fields all have the same type, this type defines the column type. If fields have different types, then the target column will have a mixed type.
 

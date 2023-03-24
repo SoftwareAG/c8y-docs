@@ -4,7 +4,7 @@ title: Monitoring offloading jobs
 layout: redirect
 ---
 
-Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. {{< product-c8y-iot >}} DataHub UI provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected. For the case of offloading failures, you can also configure the offloading pipeline to raise an alarm as described in [Raising alarms](/datahub/configuring-offloading-jobs/#raising-alarms).
+Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The {{< product-c8y-iot >}} DataHub UI provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected. For the case of offloading failures, you can also configure the offloading pipeline to raise an alarm as described in [Raising alarms](/datahub/configuring-offloading-jobs/#raising-alarms).
 
 {{< c8y-admon-info >}}
 You need administration or management permissions to access the offloading job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
@@ -35,7 +35,7 @@ Click **Reload** to refresh the list.
 
 You can filter the entries by their status or timestamp by using the filter controls at the top. Click **Apply** to filter entries with the current filter settings. Click **Reset filter** to reset the current filter settings.
 
-The pagination buttons at the bottom can be used to traverse the history entries.
+The page navigation buttons at the bottom can be used to traverse the history entries.
 
 ### Details of offloading job
 

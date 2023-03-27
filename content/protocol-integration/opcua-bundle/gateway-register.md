@@ -136,7 +136,7 @@ gateway:
       # automatically when the legacyCleanup is set to true, which is the default setting.
       # If the legacy files wanted to be kept or if the mechanism for clearing is not needed, set legacyCleanup to false.
       legacyCleanup: true
-  # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA Gateway via thin-edge)
+  # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA gateway via Thin Edge).
   thinEdge:
     # Enable Thin Edge if OPC UA gateway is running next to Thin Edge and should use it to connect to Cumulocity.
     # set enabled to false if OPC UA gateway is running without Thin Edge

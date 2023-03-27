@@ -33,7 +33,7 @@ gateway:
 Windows OS is used for the example.
 {{< /c8y-admon-info >}}
 
-### Thin-Edge
+### Thin Edge
 
 The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
 

@@ -17,14 +17,13 @@
     {{ $pages := where .Pages "Type" "!=" "page" }}
     {{ $page := index $pages 0 }}
 
-    <div class="product-card">
+    <a href='{{.Page.Permalink}}' class="product-card">
       <div class="product-card__header">
         <i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>
         <h2>{{.Page.Title}}</h2>
       </div>
         {{.Page.Content}}
-      <a href='{{$page.Permalink}}'>Learn more</a>
-    </div>
+    </a>
   {{ end }}
 </div>
   

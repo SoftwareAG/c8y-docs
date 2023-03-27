@@ -37,6 +37,15 @@
     .caret {
       margin-left: 6px;
     }
+    &:hover{
+      text-decoration: none;
+      outline: 1px solid var(--c8y-brand-primary);
+    }
+    &:focus{
+      outline: 2px solid var(--c8y-brand-primary);
+      border-radius: 2px;
+      outline-offset: -1px;
+    }
   }
   .dropdown-menu {
     padding-top: 34px;
@@ -82,7 +91,7 @@
     margin: 0;
     list-style: none;
     a {
-      color: #333;
+      color: var(--navigator-text-color, var(--c8y-navigator-text-color-default));
       letter-spacing: 0.05em;
       font-size: 11px;
       text-decoration: none;
@@ -90,11 +99,19 @@
       padding: 6px 6px;
       &:hover {
         color: $brand-primary;
+        
       }
     }
     .open & {
       display: none;
     }
+  }
+  button.dropdown-toggle{
+    color: var(--navigator-text-color, var(--c8y-navigator-text-color-default));
+    letter-spacing: 0.05em;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   .nav-right {

@@ -79,7 +79,7 @@ var main = (function ($) {
       })
       .fail(function (resp) {
         console.error(resp.statusText);
-        $('#dropdownVersionButton').hide();
+        // $('#dropdownVersionButton').hide();
       });
 
 
@@ -161,13 +161,11 @@ main.init();
 // Builds the TOC by retrieving the H3 in the page
 function buildToc() {
   let h3s = document.getElementsByTagName('h3');
-  // console.log('h3s length: ' + h3s.length);
   let tocLinks = '';
   let currenth2 = '';
   for (let index = 0; index < h3s.length; index++) {
     if ($(h3s[index]).attr('id') && $(h3s[index]).text().length) {
       let activeh2 = $(h3s[index]).closest('article').attr('id');
-      // console.log(activeh2 + ' > ' + );
       if (activeh2 != currenth2) {
         tocLinks += tocLinks.length === 0 ? '<div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>' : '</div><div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>';
         currenth2 = activeh2;
@@ -288,13 +286,8 @@ function clipboardCode() {
   });
     
   let copyCode = new Clipboard('.btn-copy-code');
-  // , {
-  //   text: function (trigger) {
-  //     console.log(this.innerText);
-  //     return this.innerText;
-  //   }
-  // });
-  // // display clipboard success event
+ 
+  // display clipboard success event
   copyCode.on('success', function (e) {
     $(e.trigger).addClass('copied');
     setTimeout(function () {

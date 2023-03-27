@@ -20,6 +20,9 @@ body{
   box-sizing: border-box;
 }
 
+.d-block{
+  display: block;
+}
 .d-flex{
   display: flex;
   flex-flow: row wrap;
@@ -123,9 +126,9 @@ body{
   box-shadow: var(--c8y-elevation-sm);
   padding: 1rem;
   transition: all .25s ease;
-  &:hover{
-     box-shadow: var(--c8y-elevation-hover);
-  }
+  color: var(--c8y-text-color);
+  text-decoration: none;
+ 
   &__header{
     display: flex;
     gap: 1rem;
@@ -135,6 +138,13 @@ body{
   }
   p{
     font-size: 14px;
+  }
+   &:hover{
+    box-shadow: var(--c8y-elevation-hover);
+    text-decoration: none;
+    h2{
+      color: var(--c8y-brand-primary);
+    }
   }
 }
 

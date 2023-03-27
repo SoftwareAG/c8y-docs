@@ -138,7 +138,7 @@ gateway:
       legacyCleanup: true
   # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA gateway via Thin Edge).
   thinEdge:
-    # Enable Thin Edge if the OPC UA gateway is running next to Thin Edge and should use it to connect to Cumulocity.
+    # Enable Thin Edge if the OPC UA gateway is running next to Thin Edge and should use it to connect to {{< product-c8y-iot >}}.
     # Set enabled to false if the OPC UA gateway is running without Thin Edge.
     enabled: false
     # MQTT Server URL of Thin Edge (localhost).
@@ -233,7 +233,7 @@ gateway:
   mappings:
 
   # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
-  # allows to configure how OPC UA severity is mapped into Cumulocity IoT severity levels. The following is the default mappings:
+  # allows to configure how OPC UA severity is mapped into {{< product-c8y-iot >}} severity levels. The following is the default mappings:
   # alarmSeverityMap:
     # 1001: CRITICAL
     # 801: CRITICAL

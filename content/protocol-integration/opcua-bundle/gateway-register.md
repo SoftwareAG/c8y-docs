@@ -138,8 +138,8 @@ gateway:
       legacyCleanup: true
   # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA gateway via Thin Edge).
   thinEdge:
-    # Enable Thin Edge if OPC UA gateway is running next to Thin Edge and should use it to connect to Cumulocity.
-    # set enabled to false if OPC UA gateway is running without Thin Edge
+    # Enable Thin Edge if the OPC UA gateway is running next to Thin Edge and should use it to connect to Cumulocity.
+    # Set enabled to false the if OPC UA gateway is running without Thin Edge.
     enabled: false
     # MQTT Server URL of Thin Edge (localhost).
     mqttServerURL: tcp://127.0.0.1:1883

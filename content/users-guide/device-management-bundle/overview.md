@@ -34,4 +34,4 @@ The Home dashboard can be edited and designed individually according to your nee
 
 For details on editing a dashboard, refer to [Working with dashboards](#dashboards).
 
-To reset the Home dashboard to its original content, click **More...** at the right of the top menu bar and then click **Restore dashboard**.
+To reset the Home dashboard to its original content, click at the right of the top menu bar and then click **Restore dashboard**.

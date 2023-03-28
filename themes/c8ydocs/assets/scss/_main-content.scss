@@ -1,6 +1,7 @@
 .main-footer {
   transition: transform .3s $ease;
   -webkit-transition: transform .3s $ease;
+  text-align: center;
   @media (max-width: $grid-breakpoint - 1) {
     .open & {
       backface-visibility: hidden;
@@ -11,6 +12,9 @@
   }
   @media (min-width: $grid-breakpoint) {
     margin-left: 280px;
+    .isHome &{
+      margin-left: 0;
+    }
   }
   @media print {
     display: none !important;

@@ -91,8 +91,8 @@ body{
     max-height: 33vh;
   }
   @media(min-width: $screen-md-min){
-    padding: 0 2rem 2rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 2rem;
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
     max-width: $screen-lg-max;
     margin: 0 auto;
     &__content{
@@ -103,6 +103,12 @@ body{
       }
     }
   }
+}
+
+.breadcrumbs-container{
+    padding: .5rem 2rem;
+    max-width: $screen-lg-max;
+    margin: 0 auto;
 }
 
 .home-grid{

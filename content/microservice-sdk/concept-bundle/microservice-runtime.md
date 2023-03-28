@@ -185,3 +185,9 @@ A microservice does not have direct access to other microservices running on the
 {{< c8y-admon-important >}}
 `C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.
 {{< /c8y-admon-important >}}
+
+{{< c8y-admon-important >}}
+When accessing the REST endpoints the connections may timeout. This requires that the HTTP client of a microservice is prepared to have retries to re-establish a connection.
+
+The client used in the Microservice SDK performs the required retries. So using it avoids issues with timed-out connections.
+{{< /c8y-admon-important >}}

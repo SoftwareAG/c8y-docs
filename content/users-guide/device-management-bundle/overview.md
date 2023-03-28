@@ -18,3 +18,20 @@ The following sections will walk you through all functionalities of the Device M
 |[Managing device data](#managing-device-data)|How to manage [firmware](#firmware-repo) and [software](#software-repo) for devices, [configuration snapshots](#configuration-repository), [device credentials](#credentials), [trusted certificates](#trusted-certificates) and [device profiles](#device-profiles).
 |[SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#smartrest-templates), a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls.
 |[Working with simulators](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
+### Home dashboard
+
+The Home screen of the Device Management application is a dashboard which shows data for the general tenant.
+
+![Home dashboard](/images/users-guide/DeviceManagement/device-management-home-screen.png)
+
+The data shown on the Home dashboard is shared by all users of the tenant. By default, the Home dashboard includes recent alarms and quick links.
+
+{{< c8y-admon-info >}}
+For performance reasons, the map on the Home dashboard displays icons for maximum 100 devices. If there are more devices they will not be shown in the map. To see them, you must go to the dashboard on group level, and add the "Map" widget there to only see devices from this particular group, see [Widgets collection](#widgets-collection).
+{{< /c8y-admon-info >}}
+
+The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here.
+
+For details on editing a dashboard, refer to [Working with dashboards](#dashboards).
+
+To reset the Home dashboard to its original content, click **More...** at the right of the top menu bar and then click **Restore dashboard**.

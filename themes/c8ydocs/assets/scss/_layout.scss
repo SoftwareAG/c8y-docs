@@ -106,9 +106,14 @@ body{
 }
 
 .breadcrumbs-container{
-    padding: .5rem 2rem;
+    
     max-width: $screen-lg-max;
     margin: 0 auto;
+    position: sticky;
+    top: 64px;
+  .breadcrumbs{
+    padding: 1rem 2rem;
+  }
 }
 
 .home-grid{

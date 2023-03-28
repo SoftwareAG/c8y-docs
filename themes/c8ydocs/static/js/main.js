@@ -262,7 +262,10 @@ function updateBreadcrumbs() {
   const breadcrumb = $('#breadcrumbs span:nth-child(1)');
   const section = $('#sections-selection').find('.active');
   const breadsection = '<span class="added"><a href="' + section.attr('href') + '">' + section.text() + '</a><i class="dlt-c8y-icon-forward"></i></span>';
-  breadcrumb.after(breadsection);
+  // only adds if we are not in a section list
+  if (!$('.breadcrumbs-container').length) {
+    breadcrumb.after(breadsection);
+  }
 }
 
 // Copy code to clipboard

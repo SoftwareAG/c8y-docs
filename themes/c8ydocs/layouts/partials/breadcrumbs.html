@@ -7,11 +7,13 @@
       {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
     {{ end }}
     <span>
-      {{ if or (eq .p1 .p2) (eq .p1.Title .p2.Title) }}
+      {{ if and (eq .p1 .p2) (eq .p1.Title .p2.Title) }}
       {{ .p1.Title}}
       {{else}}
-      <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
-      <i class="dlt-c8y-icon-forward"></i>
+        {{ if ne .p1.Title .p2.Title }}
+          <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+          <i class="dlt-c8y-icon-forward"></i>
+        {{ end }}
       {{ end }}
     </span>
     {{ end }}

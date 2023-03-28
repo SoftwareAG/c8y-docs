@@ -8,7 +8,7 @@
         <h1>{{.Title}}</h1>
         {{.Content}}
     </section>
-    {{- partial "home-illustration.html" . -}}
+    {{.Params.svg | safeHTML}}
   </div>
 <div class="home-grid">
   {{ range where .Pages "Type" "root" }}

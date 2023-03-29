@@ -18,6 +18,7 @@ The following sections will walk you through all functionalities of the Device M
 |[Managing device data](#managing-device-data)|How to manage [firmware](#firmware-repo) and [software](#software-repo) for devices, [configuration snapshots](#configuration-repository), [device credentials](#credentials), [trusted certificates](#trusted-certificates) and [device profiles](#device-profiles).
 |[SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#smartrest-templates), a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls.
 |[Working with simulators](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
+
 ### Home dashboard
 
 The Home screen of the Device Management application is a dashboard which shows data for the tenant.

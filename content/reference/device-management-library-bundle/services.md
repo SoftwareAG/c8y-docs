@@ -40,7 +40,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 |serviceType  | Yes       | An arbitrary string for organizing services|
 |status       | Yes       | 'up', 'down', 'unknown' or any custom service status|
 
-Using SmartREST static template 102 sent to topic `s/us/<serviceId>`.
+Using [SmartREST static template 102](/reference/smartrest-two/#102) sent to topic `s/us/<serviceId>`:
 
 The second parameter, the unique ID, does not reference the internal numeric ID but a string-based external ID which is defined by the device instead of the platform.
 We recommend you to prefix the unique ID with a device-specific prefix to avoid clashes with other devices running the same service:

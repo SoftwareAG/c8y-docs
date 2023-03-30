@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Configuring the microservice hosting feature
+title: Enabling the microservice hosting feature
 layout: redirect
 ---
 

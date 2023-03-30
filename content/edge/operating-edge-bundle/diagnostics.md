@@ -4,7 +4,7 @@ title: Diagnostic utility
 layout: redirect
 ---
 
-The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below.
+The diagnostic utility is a script to collect the journal logs, performance metrics, etc. of various components running on the Edge appliance, which are essential for you and the {{< company-sag >}} support team to troubleshoot the problems. The diagnostic utility is enabled by default and is scheduled to run periodically. However, this can also be triggered manually on demand using the command line (below) and the [user interface](/edge/operating-edge/#diagnostic-report-through-ui).
 
 	cd /opt/c8y/utilities/diagnostic-utility
 	sudo ./run_data_collector.py

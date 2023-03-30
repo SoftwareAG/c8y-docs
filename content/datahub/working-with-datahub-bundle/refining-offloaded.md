@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 90
 title: Refining offloaded Cumulocity IoT data
 layout: redirect
 ---

@@ -67,7 +67,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 | ----  | ----      | ----    |
 |status | Yes       | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
 
-Or using SmartREST static template 104 sent to topic `s/us/<serviceId>`:
+Or using [SmartREST static template 104](/reference/smartrest-two/#104) sent to topic `s/us/<serviceId>`:
 
 `104,down`
 

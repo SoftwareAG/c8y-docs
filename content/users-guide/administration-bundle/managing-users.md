@@ -40,6 +40,7 @@ For users created via an external authorization server, updating the following s
 * user info (login alias, email, first name, last name, telephone)
 * global roles - configurable via SSO access mapping
 * application access - configurable via SSO access mapping
+* inventory roles assignments - configurable via SSO access mapping
 
 Moreover, password reset in {{< product-c8y-iot >}} is disabled for users created through an external authentication server.
 

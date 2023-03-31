@@ -34,8 +34,8 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <td align="left">The value to be written to the resource. Must be given using the type of the resource.</td>
 </tr>
 <tr>
-<td align="left">parameters</td>
-<td align="left">The optional parameters of the "execute" operation. Must be expressed in plain text and follow the ABNF grammar rule.</td>
+<td align="left">executeparameters</td>
+<td align="left">The execute parameters have to conform to <i>arglist</i> ANBF syntax as described in the OMA Lighweight M2M specification.</td>
 </tr>
 <tr>
 <td align="left">Firmware version</td>
@@ -48,6 +48,25 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <tr>
 <td align="left">SER</td>
 <td align="left">The supported data formats are TLV, TEXT, JSON and OPAQUE.</td>
+</tr>
+<tr>
+<td align="left">requestJson</td>
+<td align="left">The raw CoAP request can be specified using the following JSON syntax. 
+<pre>
+REQUEST_JSON = { 	
+	"method": ${METHOD},
+	"uri": ${URI}, 
+	"contentFormat" : ${CONTENTFORMAT}, 
+	"accept": ${ACCEPT}, 
+	"payloadHex": ${PAYLOADHEX}
+	} 
+METHOD = "get" | "post" | "put" | "delete" | "fetch" | "ipatch" | "patch"
+URI = "/" | "[A-Fa-f0-9]" | uri | null
+CONTENTFORMAT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>" 
+ACCEPT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>" 
+PAYLOADHEX = null | "^[A-Fa-f0-9]+$"
+</pre>
+</td>
 </tr>
 </tbody>
 </table>
@@ -91,6 +110,11 @@ In the next table you will see all available commands and a brief description of
 <td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;parameters&gt;]</td>
 <td align="center">1.0, 1.1</td>
 <td align="left">Executes a resource on the device with optional parameters.</td>
+</tr>
+<tr>
+<td align="left">executelegacy /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;executeparameters&gt;]</td>
+<td align="center">1.0, 1.1</td>
+<td align="left">Executes a resource on the device and sends the parameters as TEXT/PLAIN string. This used to be the behavior until version 10.15 and allows non-standard compliant execute parameters to be send to the device.</td>
 </tr>
 <tr>
 <td align="left">write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>
@@ -148,6 +172,12 @@ For example: writeb /3442/0/150 binary:12345.
 <td align="left">serialization &lt;SER&gt;</td>
 <td align="center">1.0, 1.1</td>
 <td align="left">Sets the data format.</td>
+</tr>
+<tr>
+<td align="left">coap &lt;requestJson&gt;</td>
+<td align="center">1.0, 1.1</td>
+<td align="left" width="50%">Allows a raw coap request to be sent to a LWM2M device. The command takes a request JSON string as as a single argument.
+</td>
 </tr>
 </tbody>
 </table>

@@ -35,7 +35,7 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 </tr>
 <tr>
 <td align="left">executeparameters</td>
-<td align="left">The execute parameters have to conform to <i>arglist</i> ANBF syntax as described in the OMA Lighweight M2M specification.</td>
+<td align="left">The execute parameters have to conform to <i>arglist</i> ANBF syntax as described in the OMA Lightweight M2M specification.</td>
 </tr>
 <tr>
 <td align="left">Firmware version</td>
@@ -75,9 +75,9 @@ PAYLOADHEX = null | "^[A-Fa-f0-9]+$"
 In the next table you will see all available commands and a brief description of their functionality.
 
 <table>
-<col style="width:60%">
-<col style="width:10%">
-<col style="width:30%">
+<col style="width:40%">
+<col style="width:5%">
+<col style="width:55%">
 <thead>
 <tr>
 <th align="left">Command</th>
@@ -107,14 +107,14 @@ In the next table you will see all available commands and a brief description of
 <td align="left">Enables composite observe functionality for one or more resource paths. The resource data from all listed resource paths will be sent to the {{< product-c8y-iot >}}'s LWM2M agent in a single client request.</td>
 </tr>
 <tr>
-<td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;parameters&gt;]</td>
+<td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;executeparameters&gt;]</td>
 <td align="center">1.0, 1.1</td>
 <td align="left">Executes a resource on the device with optional parameters.</td>
 </tr>
 <tr>
-<td align="left">executelegacy /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;executeparameters&gt;]</td>
+<td align="left">executelegacy /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;STRING&gt;]</td>
 <td align="center">1.0, 1.1</td>
-<td align="left">Executes a resource on the device and sends the parameters as TEXT/PLAIN string. This used to be the behavior until version 10.15 and allows non-standard compliant execute parameters to be send to the device.</td>
+<td align="left">Executes a resource on the device and sends the parameters as TEXT/PLAIN string. This was the behavior of the execute command in Cumulocity IoT until version 10.15. In contrast to the regular <code>execute</code> command, <code>executelegacy</code> allows execute parameters not in line with the Lightweight M2M standard to be sent to the device.</td>
 </tr>
 <tr>
 <td align="left">write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>
@@ -176,7 +176,12 @@ For example: writeb /3442/0/150 binary:12345.
 <tr>
 <td align="left">coap &lt;requestJson&gt;</td>
 <td align="center">1.0, 1.1</td>
-<td align="left" width="50%">Allows a raw coap request to be sent to a LWM2M device. The command takes a request JSON string as as a single argument.
+<td align="left">Allows a raw coap request to be sent to a LWM2M device. The command takes a request JSON string as a single argument. <br />
+	Example: <br/> 
+	<code>coap { "method":"get",
+		"uri":"/3/0",
+		"accept":"application/vnd.oma.lwm2m+json"}
+	</code>
 </td>
 </tr>
 </tbody>

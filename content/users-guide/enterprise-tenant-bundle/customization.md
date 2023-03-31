@@ -101,7 +101,7 @@ When you are done or want to store your settings, click **Save** at the bottom o
 
 Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
 
-Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
+Click **Remove branding** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
 <a name="configuration-parameters"></a>
 #### Configuration parameters
@@ -150,7 +150,7 @@ In the **Top bar** section you specify the parameters for the top bar.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color - the default value is "#FFFFF".
+* Background color - the default value is "#FFFFFF".
 * Text color - the default value is "49595B".
 * Button hover text color - the default value is the main brand color.
 
@@ -162,7 +162,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 * Background color - the default value is "2c3637".
 * Logo wrapper background color - the default value is "Transparent".
-* Title color - the default value is "FFFFF".
+* Title color - the default value is "FFFFFF".
 * Text and buttons color - the default value is "#FAFAFA".
 * Separator line color - the default value is "#FAFAFA".
 * Text color of the current item in the navigator - the default value is "#FAFAFA".

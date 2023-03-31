@@ -40,7 +40,7 @@ The following information is provided for each subtenant (not completely visible
 <td align="left">ID of the subtenant</td>
 </tr>
 <tr>
-<td align="left">Name</td>
+<td align="left">Tenant</td>
 <td align="left">Name of the subtenant</td>
 </tr>
 <tr>
@@ -142,7 +142,7 @@ Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Apply**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
 {{< c8y-admon-info >}}
 If a tenant was created after the selected time period, it will show up but the numbers are "0".
@@ -410,7 +410,7 @@ The table below presents which values are used in each model for billing purpose
 </tr>
 <tr>
 <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Name</td>
+<td style="text-align:left">Tenant</td>
 <td style="text-align:left">x</td>
 <td style="text-align:left">x</td>
 </tr>

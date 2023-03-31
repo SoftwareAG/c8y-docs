@@ -209,11 +209,11 @@ In the **Applications** tab you can view all subscribed applications, subscribe 
 
 #### To subscribe an application
 
-Hover over the applications under **Available applications** at the right and click **Subscribe** on the desired application.
+Hover over the application under **Available applications** at the right and click **Subscribe** on the desired application.
 
 #### To unsubscribe an application
 
-Hover over the applications under **Subscribed applications** at the left and click **Unsubscribe**.
+Hover over the application under **Subscribed applications** at the left and click **Unsubscribe**.
 
 #### Monitoring microservices
 
@@ -349,7 +349,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - Every existing tenant on platform upgrade.
 
 {{< c8y-admon-info >}}
-These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see the Default subscriptions screenshot below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:

@@ -13,7 +13,7 @@ The memory limit for OPCUA container is set to 2048 MB and the CPU limit is set 
 You can specify the CPU limit in `--cpu-shares` or `--cpus`.
 
 - `--cpu-shares`  specifies the share or percentage of the host machine’s CPU cycles allocated. For example, `--cpu-shares 256`  allocates a quarter of total CPUs available.
-- `--cpus` specifies how much of the available CPU resources the OPCUA container can use. For example, `--cpus 2`  allocates two CPUs out of the available CPUs from the host machine.
+- `--cpus` specifies how much of the available CPU resources the OPCUA container can use. For example, `--cpus 2`  allocates two CPUs out of the available CPUs from the host machine. 
 
 For more information about CPU limits, see Docker documentation.
 

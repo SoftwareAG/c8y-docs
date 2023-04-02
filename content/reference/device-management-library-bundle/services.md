@@ -52,7 +52,7 @@ We recommend you to prefix the unique ID with a device-specific prefix to avoid 
 Using Inventory REST API:
 
 ```http
-POST /inventory/managedObjects/<serviceId>
+PUT /inventory/managedObjects/<serviceId>
 
 Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 ```

@@ -223,7 +223,6 @@ Restoring the Streaming Analytics application completes the migration procedure.
 Next, configure the Edge 10.9 appliance. For example, if you enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 
 {{< c8y-admon-important >}} 
-
 To enable the microservice hosting feature, the {{< management-tenant >}} user must have the "Tenant Manager" role. Use the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 
 {{< /c8y-admon-important >}}

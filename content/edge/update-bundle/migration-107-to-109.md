@@ -4,7 +4,7 @@ title: Migrating Cumulocity IoT Edge 10.7 to 10.9
 layout: redirect
 ---
 
-This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier than {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7 and then migrate from {{< product-c8y-iot >}} Edge 10.7 to version 10.9.
+This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier than {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7.
 
 ### Before you begin
 
@@ -31,7 +31,7 @@ To migrate from Edge 10.7 to 10.9:
 
 In your Edge 10.7 setup, back up the data for each tenant and docker collection, and note down the device ID.
 
-{{< c8y-admon-important >}} Before the data back up, ensure that there is sufficient disk space to save the back up in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need an additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.  
+{{< c8y-admon-important >}} Before the data back up, ensure that there is sufficient disk space to save the back up in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You need an additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.  
 {{< /c8y-admon-important >}}
 
 1. Run the following command to stop monitoring all processes:
@@ -54,27 +54,25 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
    mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
    ```
 
-4. Note down the device ID of your Edge 10.7 appliance available at `/usr/edge/properties/edge-agent/device-id`.
+4. Note down the device ID of your Edge 10.7 appliance available at */usr/edge/properties/edge-agent/device-id*.
 
-5. Create a backup of the `/etc/opcua` directory.
+5. Create a backup of the */etc/opcua* directory.
 
-6. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
+6. Create a backup of the */var/lib/cumulocity-agent/credentials* file.
 
 ## Restoring the data on Edge 10.9
 
 To restore the data, you must first copy the MongoDB backup from the Edge 10.7 appliance to your Edge 10.9 appliance.
 
 {{< c8y-admon-important >}}
-
-Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
-
+Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to an additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
  {{< /c8y-admon-important >}}
 
 Perform the following steps as a root user in your Edge 10.9 appliance.
 
-1. Copy the backup folders from your Edge 10.7 appliance to the Edge 10.9 appliance using any file transfer tool, such as WINSCP, SCP, or FTP.
+1. Copy the backup folders from your Edge 10.7 appliance to the Edge 10.9 appliance using any file transfer tool such as WINSCP, SCP, or FTP.
 
-   Copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance.
+   Copy the backup folders to */home/admin/migration_data/* in your Edge 10.9 appliance.
 
 2. Backup the web applications in the Edge 10.9 appliance. To do this, first detect the IDs of the applications by using the following command:
 
@@ -128,7 +126,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analytics-app.zip
    ```
 
-   {{< c8y-admon-important >}} Create a backup of the streaming-analytics-app.zip file separately.{{< /c8y-admon-important >}}
+   {{< c8y-admon-important >}}Create a backup of the *streaming-analytics-app.zip* file separately.{{< /c8y-admon-important >}}
 
 4. Install the RPM package by using the following command:
 
@@ -145,7 +143,6 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 5. Prepare the applications for deployment by using the following commands:
 
    {{< c8y-admon-important >}}
-
    Do not include the *streaming-analytics-app.zip* file in the ZIP package.
 
    {{< /c8y-admon-important >}}

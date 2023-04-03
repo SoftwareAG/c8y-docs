@@ -299,7 +299,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
 
 3. Run the `restore.sh` script with the parameters:
 
-   - ARCHIVE_PATH: path to the ZIP with 10.7 migration data
+   - ARCHIVE_PATH: path to the ZIP with 10.7 migration data.
    - EXTRACTED_PATH: path to the folder with extracted migration data. It can also be an external drive.
 
     For example:

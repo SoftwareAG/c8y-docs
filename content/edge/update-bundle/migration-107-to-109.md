@@ -262,7 +262,7 @@ Before the data back up, ensure that there is sufficient disk space to save the 
 
 3. Copy the *backup.sh* script to your Edge 10.7 appliance.
 
-4. Run the `backup.sh` as a root user.
+4. Run the *backup.sh* as a root user.
 
    You can also run the script with the parameters:
 

@@ -13,7 +13,7 @@ The components for which log rotation is configured are as follows:
 |Access|${karaf.data}/log/access.log|Daily|50 MB|14|
 |DataBroker|${karaf.data}/log/databroker.log|Daily|50 MB|14|
 
-**Under /etc/ configured via logrotate.conf and configuration files under /etc/logrotate.d**
+Under */etc/* they are configured via *logrotate.conf* and the configuration files under */etc/logrotate.d*.
 
 The components for which log rotation is configured are as follows:
 

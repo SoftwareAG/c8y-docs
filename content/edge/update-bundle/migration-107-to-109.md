@@ -289,7 +289,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
 
 1. Log in as a root user.
 
-2. Copy the `restore.sh` and `restore_analytics.sh` scripts to your Edge 10.9 appliance.
+2. Copy the *restore.sh* and *restore_analytics.sh* scripts to your Edge 10.9 appliance.
 
 3. Run the `restore.sh` script with the parameters:
 

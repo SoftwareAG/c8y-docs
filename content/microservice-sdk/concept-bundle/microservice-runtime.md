@@ -189,5 +189,5 @@ A microservice does not have direct access to other microservices running on the
 {{< c8y-admon-important >}}
 When accessing the REST endpoints the connections may time out. This requires the HTTP client of a microservice to be prepared for retries to establish a connection.
 
-The client used in the Microservice SDK performs the required retries. Using it avoids issues with timed out connections.
+The client used in the Microservice SDK performs the required retries. Using it avoids issues with timed-out connections.
 {{< /c8y-admon-important >}}

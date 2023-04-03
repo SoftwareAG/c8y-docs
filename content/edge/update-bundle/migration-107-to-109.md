@@ -58,7 +58,7 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
 
 5. Create a backup of the */etc/opcua* directory.
 
-6. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
+6. Create a backup of the */var/lib/cumulocity-agent/credentials* file.
 
 ## Restoring the data on Edge 10.9
 

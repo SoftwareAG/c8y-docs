@@ -232,7 +232,7 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 ### Sample scripts to automate the migration
 
-{{< company-sag >}} provides the `backup.sh` and `restore.sh` scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available for reference at:
+{{< company-sag >}} provides the *backup.sh* and *restore.sh* scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available at:
 
 - [backup.sh](/files/edge/backup.sh)
 - [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.

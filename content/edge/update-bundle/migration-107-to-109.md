@@ -235,7 +235,7 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 {{< company-sag >}} provides the *backup.sh* and *restore.sh* scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available at:
 
 - [backup.sh](/files/edge/backup.sh)
-- [restore.sh](/files/edge/restore.sh) - you must run the restore.sh script as a **root** user.
+- [restore.sh](/files/edge/restore.sh) - you must run the *restore.sh* script as a root user.
 - [restore_analytics.sh](/files/edge/restore_analytics.sh) - restores the Streaming Analytics application.
 
 {{< c8y-admon-important >}} {{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.{{< /c8y-admon-important >}}

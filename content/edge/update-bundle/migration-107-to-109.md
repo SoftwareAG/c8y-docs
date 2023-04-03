@@ -80,9 +80,10 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
    ```shell
    mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq
-   
+   ```
    The command returns the name and ID of the application. For example:
    
+   ```shell
    {
      "metadata": {
        "id": "112",
@@ -109,17 +110,18 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    }
    ```
 
-3. Download the web applications using the ID of the application by using the following command:
+3. Download the web applications using the ID of the application by using the following commands:
 
    ```shell
    mkdir -p /tmp/apps/
    mongofiles -d management --prefix cmdata get  APP_ID -l /tmp/apps/APP_NAME.zip
-   
+   ```
    Here:
     - APP_ID refers to the ID of the application. For example, 112
     - APP_NAME refers to the name of the application. For example, devicemanagement.zip
    
    For example:
+   ```shell
    mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/cockpit.zip
    mongofiles -d management --prefix cmdata get  113 -l /tmp/apps/devicemanagement.zip
    mongofiles -d management --prefix cmdata get  114 -l /tmp/apps/administration.zip

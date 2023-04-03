@@ -144,7 +144,6 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
    {{< c8y-admon-important >}}
    Do not include the *streaming-analytics-app.zip* file in the ZIP package.
-
    {{< /c8y-admon-important >}}
 
     ```shell

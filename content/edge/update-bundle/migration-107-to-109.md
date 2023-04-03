@@ -269,7 +269,7 @@ Before the data back up, ensure that there is sufficient disk space to save the 
    - OUTPUT_DIRECTORY: (optional) path to save the backup archive on the same file system.
    - ARCHIVE_PATH: (optional) path to save the backup archive on an external file system.
 
-    {{< c8y-admon-info >}}If you do not specify any parameter, the backup archive is saved at */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system could become unstable.{{< /c8y-admon-info >}}
+    {{< c8y-admon-info >}}If you do not specify any parameter, the backup archive is saved to the */tmp* directory. The */tmp* directory is located on the installation disk. If the installation disk has no space, the system can become unstable.{{< /c8y-admon-info >}}
 
     For example:
 

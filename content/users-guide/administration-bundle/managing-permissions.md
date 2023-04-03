@@ -23,6 +23,13 @@ The following types of roles can be associated with users:
 
 Moreover, application access can be granted to enable a user to use an application.
 
+{{< c8y-admon-related >}}
+- [Managing users](#managing-users) for information on managing users in general.
+- [Managing applications](#managing-applications) for more information on managing applications.
+- [Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
+- {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device management library](/reference/device-management-library/) for further information on fragment types.
+{{< /c8y-admon-related >}}
+
 <a name="global"></a>
 ### Global roles
 
@@ -254,7 +261,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Own user management</td>
-<td align="left">View or edit your own user.</td>
+<td align="left">View or edit your own user. Note that this permission may only be applicable to technical users.</td>
 </tr>
 </tbody>
 </table>

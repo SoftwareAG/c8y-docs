@@ -10,7 +10,14 @@ helpcontent:
       In order to easily search through logs, specify filter criteria in the top bar for type, date range or user and apply them."
 ---
 
-Audit logs show the operations that users have carried out.
+**Audit logs** show security-relevant operations a user has processed. For example, an audit log is generated when a user logs into a gateway.
+
+{{< c8y-admon-related >}}
+- [Security aspects > Management security](/concepts/security/#management-security) in the <i>Concepts guide</i> for general aspects of audit logging.
+- [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}} for details on managing audit records via REST.
+{{< /c8y-admon-related >}}
+
+### To view audit logs
 
 To view the audit log list, click **Audit logs** in the **Accounts** menu. For each log entry, the following information is provided:
 

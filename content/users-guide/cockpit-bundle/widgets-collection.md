@@ -7,6 +7,14 @@ aliases:
 layout: redirect
 ---
 
+{{< c8y-admon-related >}}
+- [Cockpit > Data explorer](/users-guide/cockpit#data-explorer) in the *User guide* for details on visualizing your data when working with widgets.
+- [Administration](/users-guide/administration#managing-applications) in the *User guide* for details on managing applications.
+- [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/#overview) in the *Protocol integration guide* for more information on using Cloud Fieldbus in {{< product-c8y-iot >}}.
+- [Tutorials > Add a custom widget to a dashboard](/users-guide/web/tutorials/#add-a-custom-widget) in the *Web SDK guide* for details on customized widgets in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
+
 The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 The following types are available:
@@ -345,7 +353,9 @@ The "Help and service" widget displays links to help and service resources. Ther
 <a name="widget-image"></a>
 ### Image
 
-The "Image" widget lets you display a single image to be selected from your file system by browsing. There are no additional parameters to be configured.
+The "Image" widget lets you display a single image to be selected from your file system by browsing. When the image is uploaded, it is possible to change the image size and alignment.
+
+![Image widget](/images/users-guide/cockpit/cockpit-image-widget.png)
 
 <a name="info-gauge"></a>
 ### Info Gauge

@@ -310,7 +310,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
 
     The `restore.sh` script fails if your Edge appliance is not connected to the internet. In such cases, ensure that the RPM package is available locally, and replace the command `rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm` with `rpm -ivh zip-3.0-11.el7.x86_64.rpm` in the `restore.sh` script.
 
-4. Run the `restore_analytics.sh` script. This script restores the Streaming Analytics application.
+4. Run the *restore_analytics.sh* script. This script restores the Streaming Analytics application.
 
    ```shell
    ./restore_analytics.sh USERNAME PASSWORD /tmp/streaming-analytics-app.zip

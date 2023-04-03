@@ -142,9 +142,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
 5. Prepare the applications for deployment by using the following commands:
 
-   {{< c8y-admon-important >}}
-   Do not include the *streaming-analytics-app.zip* file in the ZIP package.
-   {{< /c8y-admon-important >}}
+   {{< c8y-admon-important >}}Do not include the *streaming-analytics-app.zip* file in the ZIP package.{{< /c8y-admon-important >}}
 
     ```shell
     UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
@@ -170,11 +168,12 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
    ```shell
    mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
-   
+   ```
    Here:
     - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your Edge 10.9 appliance.
    
    For example:
+   ```shell
    mongorestore --drop --db edge /home/admin/migration_data/edge/
    mongorestore --drop --db management /home/admin/migration_data/management/
    mongorestore --drop --db docker /home/admin/migration_data/docker/
@@ -186,9 +185,9 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    chown -R karaf:karaf /webapps/
    chown nginx:karaf /webapps
    cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
-   
-   Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
    ```
+   Wait for Karaf to install the applications. After the installation is complete, the *$UI_VERSION.zip.installed* file appears at */webapps/2Install*.
+   
 
 9. Copy the */etc/opcua* directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 

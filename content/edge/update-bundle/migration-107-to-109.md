@@ -307,10 +307,10 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
 
    ```shell
    ./restore_analytics.sh USERNAME PASSWORD /tmp/streaming-analytics-app.zip
-   
+   ```
    Here:
    - USERNAME and PASSWORD refers to the {{< management-tenant >}} user credentials.
-   ```
+   
 
    Running the *restore_analytics.sh* script completes the migration process.
 

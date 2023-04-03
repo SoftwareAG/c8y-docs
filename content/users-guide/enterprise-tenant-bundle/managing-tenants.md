@@ -50,7 +50,7 @@ The **Tenants** page provides the following information on each subtenant:
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
 {{< c8y-admon-info >}}
-In the {{< management-tenant >}}, you will also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed on the table.
+In the {{< management-tenant >}}, you will also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed in the table.
 {{< /c8y-admon-info >}}
 
 
@@ -70,32 +70,39 @@ In the {{< management-tenant >}}, you will also find a column with information o
 	<tr>
 	<th style="text-align:left">Field</th>
 	<th style="text-align:left">Description</th>
+  <th style="text-align:left">Required</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
 	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. (Required)</td>
+	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters.</td>
+  <td style="text-align:left">Yes</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
-	<td style="text-align:left">The name of the tenant, for example, the company's name. (Required)</td>
+	<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
+  <td style="text-align:left">Yes</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Administrator's email</td>
-	<td style="text-align:left">A valid email address to enable users to reset their password. (Required)</td>
+	<td style="text-align:left">A valid email address to enable users to reset their password.</td>
+  <td style="text-align:left">Yes</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Administrator's username</td>
-	<td style="text-align:left">Username for the administrator of this tenant. (Required)</td>
+	<td style="text-align:left">Username for the administrator of this tenant.</td>
+  <td style="text-align:left">Yes</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Contact name</td>
-	<td style="text-align:left">Name of the contact. (Optional)</td>
+	<td style="text-align:left">Name of the contact.</td>
+  <td style="text-align:left">No</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Contact phone</td>
-	<td style="text-align:left">Phone number of the contact. (Required)</td>
+	<td style="text-align:left">Phone number of the contact.</td>
+  <td style="text-align:left">Yes</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">Send password reset link as email</td>
@@ -103,10 +110,12 @@ In the {{< management-tenant >}}, you will also find a column with information o
 	</tr>
 	<tr>
 	<td style="text-align:left">Tenant policy</td>
-	<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list. (Optional)</td>
+	<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
+  <td style="text-align:left">No</td>
 	</tr>
 	</tbody>
 	</table>
+
 
 3. Click **Save** to apply your settings.
 
@@ -183,7 +192,7 @@ If data broker connectors are configured for a tenant, suspending this tenant re
 2. In the resulting dialog box confirm the suspension by clicking the confirmation button and then entering your password.
 
 {{< c8y-admon-info >}}
-* As part of suspending the tenant, an email is sent to the tenant administrator to the email adress that was configured for that administrator.
+* As part of suspending the tenant, an email is sent to the email address that was configured for the tenant administrator.
 * If you are a service provider, you can suppress this email.
 {{< /c8y-admon-info >}}
 

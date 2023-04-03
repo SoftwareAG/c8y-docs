@@ -47,7 +47,7 @@ Details on the status of support requests and support user access for a tenant c
 
 To log in as support user from the {{< management-tenant >}}, you must provide the following information in the Login screen:
 
-* Tenant ID - the ID of the tenant of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI.
+* Tenant ID - the ID of the tenant of the user to be supported. The tenant ID is shown in the user menu in the UI.
 * Support user - the username of the {{< management-tenant >}} user that executes the support.
 * User - the username of the user to be supported.
 

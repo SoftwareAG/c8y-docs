@@ -54,7 +54,7 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
    mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
    ```
 
-4. Note down the device ID of your Edge 10.7 appliance available at `/usr/edge/properties/edge-agent/device-id`.
+4. Note down the device ID of your Edge 10.7 appliance available at */usr/edge/properties/edge-agent/device-id*.
 
 5. Create a backup of the `/etc/opcua` directory.
 

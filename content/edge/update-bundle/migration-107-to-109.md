@@ -260,7 +260,7 @@ Before the data back up, ensure that there is sufficient disk space to save the 
    sudo service cumulocity-core-karaf stop
    ```
 
-3. Copy the `backup.sh` script to your Edge 10.7 appliance.
+3. Copy the *backup.sh* script to your Edge 10.7 appliance.
 
 4. Run the `backup.sh` as a root user.
 

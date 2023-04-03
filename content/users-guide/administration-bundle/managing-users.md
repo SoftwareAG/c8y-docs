@@ -179,12 +179,14 @@ Click the menu icon at the right of the respective row and then click **Disable*
 
 Click the menu icon at the right of the respective row and then click **Delete**.
 
-### To revoke user tokens
+### To log out all users
 
 In the event of a security incident involving the session tokens of your tenant's users, you can invalidate any tokens currently in use.
 
-To revoke all session tokens click **Revoke tokens**  at the right of the top menu bar. Revoking all tokens logs out all users logged in via "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.
+To log out all users click **Log out all users**  at the right of the top menu bar. This logs out all users currently logged in via OAI-Secure or single sign-on redirect. JWT tokens retrieved by all devices in the current tenant are also invalidated.
+
+Note that, if basic authentication is used, users logged in via base64 token are not logged out.
 
 {{< c8y-admon-req >}}
-To revoke tokens, you must have ADMIN permission for the permission type "User management".
+To log out all users, you must have ADMIN permission for the permission type "User management".
 {{< /c8y-admon-req >}}

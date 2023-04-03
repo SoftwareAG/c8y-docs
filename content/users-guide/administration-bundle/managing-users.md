@@ -183,9 +183,9 @@ Click the menu icon at the right of the respective row and then click **Delete**
 
 In the event of a security incident involving the session tokens of your tenant's users, you can invalidate any tokens currently in use.
 
-To log out all users click **Log out all users**  at the right of the top menu bar. This will log out all users logged with "OAI-Secure" or "Single sign-on redirect". JWT tokens retrieved by all devices in the current tenant will also be invalidated.
+To log out all users click **Log out all users**  at the right of the top menu bar. This logs out all users currently logged in via OAI-Secure or single sign-on redirect. JWT tokens retrieved by all devices in the current tenant are also invalidated.
 
-Note that, if the "Basic Authentication" is used, the users logged with base64 token will logged out.
+Note that, if basic authentication is used, users logged in via base64 token are not logged out.
 
 {{< c8y-admon-req >}}
 To log out all users, you must have ADMIN permission for the permission type "User management".

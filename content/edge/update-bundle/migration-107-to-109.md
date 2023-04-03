@@ -245,7 +245,6 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 #### In 10.7 appliance
 
 {{< c8y-admon-important >}}
-
 Before the data back up, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You would need additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
 
 {{< /c8y-admon-important >}}

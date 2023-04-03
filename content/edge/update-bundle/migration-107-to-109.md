@@ -56,7 +56,7 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
 
 4. Note down the device ID of your Edge 10.7 appliance available at */usr/edge/properties/edge-agent/device-id*.
 
-5. Create a backup of the `/etc/opcua` directory.
+5. Create a backup of the */etc/opcua* directory.
 
 6. Create a backup of the `/var/lib/cumulocity-agent/credentials` file.
 

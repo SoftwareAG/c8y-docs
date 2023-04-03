@@ -124,7 +124,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    mongofiles -d management --prefix cmdata get  122 -l /tmp/apps/streaming-analytics-app.zip
    ```
 
-   {{< c8y-admon-important >}} Create a backup of the streaming-analytics-app.zip file separately.{{< /c8y-admon-important >}}
+   {{< c8y-admon-important >}}Create a backup of the *streaming-analytics-app.zip* file separately.{{< /c8y-admon-important >}}
 
 4. Install the RPM package by using the following command:
 

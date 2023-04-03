@@ -319,7 +319,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
    - USERNAME and PASSWORD refers to the {{< management-tenant >}} user credentials.
    ```
 
-   Running the `restore_analytics.sh` script completes the migration process.
+   Running the *restore_analytics.sh* script completes the migration process.
 
 Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 

@@ -70,7 +70,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
 
 Perform the following steps as a root user in your Edge 10.9 appliance.
 
-1. Copy the backup folders from your Edge 10.7 appliance to the Edge 10.9 appliance using any file transfer tool, such as WINSCP, SCP, or FTP.
+1. Copy the backup folders from your Edge 10.7 appliance to the Edge 10.9 appliance using any file transfer tool such as WINSCP, SCP, or FTP.
 
    Copy the backup folders to `/home/admin/migration_data/` in your Edge 10.9 appliance.
 

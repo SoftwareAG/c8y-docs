@@ -291,7 +291,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
 
 2. Copy the *restore.sh* and *restore_analytics.sh* scripts to your Edge 10.9 appliance.
 
-3. Run the `restore.sh` script with the parameters:
+3. Run the *restore.sh* script with the parameters:
 
    - ARCHIVE_PATH: path to the ZIP with 10.7 migration data.
    - EXTRACTED_PATH: path to the folder with extracted migration data. It can also be an external drive.

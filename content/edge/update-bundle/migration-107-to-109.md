@@ -190,7 +190,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    Wait for Karaf to install the applications. After the installation is complete, the $UI_VERSION.zip.installed file appears at /webapps/2Install
    ```
 
-9. Copy the `/etc/opcua` directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+9. Copy the */etc/opcua* directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 
 10. Copy the */var/lib/cumulocity-agent/credentials* file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 

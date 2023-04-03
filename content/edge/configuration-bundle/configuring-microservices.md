@@ -43,7 +43,7 @@ The **Add microservice** button will not be available if you have not enabled th
 
 Upload the ZIP file for your microservice application. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
 
-After you enable the microservice hosting feature, ensure that the microservices are active and healthy before using the microservices. For more information about microservices runtime, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).
+After you have enabled the microservice hosting feature, ensure that the microservices are active and healthy before using them. For more information, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).
 
 Before disabling the microservice hosting feature, you should unsubscribe from all the microservices that have been uploaded.
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.

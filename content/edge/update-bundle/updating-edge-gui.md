@@ -12,7 +12,7 @@ When you update your Edge appliance, the update also applies operating system pa
 
 {{< c8y-admon-important >}}
 
-Before you update to {{< product-c8y-iot >}} Edge version 10.15, you must first upgrade to version 10.13 and then upgrade to version 10.15.
+Before you update to {{< product-c8y-iot >}} Edge version 10.15, you must first upgrade to version 10.13.
 
 {{< /c8y-admon-important >}}
 

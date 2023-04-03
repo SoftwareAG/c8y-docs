@@ -6,7 +6,7 @@ layout: redirect
 
 In case of any issues, {{< company-sag >}} recommends you to follow these steps:
 
-* Perform a health check, see the [Health check](/edge/operating-edge/#health-check) section.
+* Perform a health check, see the [Health check](/edge/operating-edge/#health-check).
 * Monitor the system processes, see the [Monitoring](/edge/operating-edge/#monitoring).
 * Check the log files, see the [Log files](/edge/operating-edge/#logs-files).
 

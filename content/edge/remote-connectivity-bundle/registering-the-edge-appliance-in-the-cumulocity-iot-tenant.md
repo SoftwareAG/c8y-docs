@@ -4,7 +4,7 @@ title: Registering the Edge appliance in the Cumulocity IoT tenant
 layout: redirect
 ---
 
-Before performing these steps, ensure that you have configured the URL for the {{< product-c8y-iot >}} tenant in the Edge appliance.   
+Before performing these steps, ensure that you have [configured the URL](/edge/remote-connectivity/#config-remote-connectivity) for the {{< product-c8y-iot >}} cloud tenant in the Edge appliance.   
 
 1. Log in to your {{< product-c8y-iot >}} tenant.
 

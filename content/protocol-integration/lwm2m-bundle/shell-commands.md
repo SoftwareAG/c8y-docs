@@ -176,7 +176,7 @@ For example: writeb /3442/0/150 binary:12345.
 <tr>
 <td align="left">coap &lt;requestJson&gt;</td>
 <td align="center">1.0, 1.1</td>
-<td align="left">Allows a raw coap request to be sent to a LWM2M device. The command takes a request JSON string as a single argument. <br />
+<td align="left">Allows a raw CoAP request to be sent to a LWM2M device. The command takes a request JSON string as a single argument. <br />
 <br />
 Example: <br/> 
 	

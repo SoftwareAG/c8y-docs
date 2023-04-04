@@ -47,7 +47,7 @@ Your user must have administrator access to the tenant.
 <a name=""></a>
 ### Localization
 
-To reach **Localization** page navigate to **Configuration > Localization**.
+To reach **Localization** page, navigate to **Configuration > Localization**.
 
 If you want to add translations for the created [asset properties](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types), or if you want to add custom translations for the existing static text in the DTM application, use the **Localization** feature.
 

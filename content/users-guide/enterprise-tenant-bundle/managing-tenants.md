@@ -11,7 +11,7 @@ helpcontent:
 
 
     To create a subtenant click **Create tenant** at the top right."
-    label: tenant-policies
+  - label: tenant-policies
     title: Tenant policies
     content: "During tenant creation, tenant options and retention rules may be specified. This can easily be done by using a tenant policy, which defines a set of tenant options and retention rules. Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 

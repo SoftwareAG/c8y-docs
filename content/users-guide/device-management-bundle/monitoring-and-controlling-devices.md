@@ -21,13 +21,13 @@ helpcontent:
 
 
   By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
-  label: single-operations
+- label: single-operations
   title: Single operations
   content: "Using operations, you can control devices remotely. **Single operations** show all operations executed on a single device.
 
 
   Single operations can have one of the following four statuses: PENDING, EXECUTED, SUCCESSFUL, FAILED. For each operation, the name, status, and device is provided. Clicking the device leads you to the detailed view of the particular device."
-  -label: bulk-operations
+- label: bulk-operations
   title: Bulk operations
   content: "**Bulk operations** are single operations executed on a set of devices.
 

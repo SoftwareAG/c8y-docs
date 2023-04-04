@@ -1,6 +1,6 @@
 ---
 weight: 65
-title: Connecting an OPCUA device
+title: Connecting an OPC UA device
 layout: redirect
 ---
 
@@ -48,6 +48,6 @@ Next, you must register a device in the Device Management application with the n
 
 Follow the description in [Device Management > Connecting devices](/users-guide/device-management#connecting-devices) in the *User guide* to register a device.
 
-In the Device Management application, click **All devices** in the navigator and find the OPCUA device in the device list.
+In the Device Management application, click **All devices** in the navigator and find the OPC UA device in the device list.
 
-For further information about managing and configuring OPCUA devices, see [OPC UA](/protocol-integration/opcua/) in the *Protocol integration guide*.
+For further information about managing and configuring OPC UA devices, see [OPC UA](/protocol-integration/opcua/) in the *Protocol integration guide*.

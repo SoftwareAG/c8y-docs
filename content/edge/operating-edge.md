@@ -1,6 +1,6 @@
 ---
-weight: 40
-title: Diagnostics and support
+weight: 50
+title: Cumulocity IoT Edge operations
 layout: bundle
 ---
 

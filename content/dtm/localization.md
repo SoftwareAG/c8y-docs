@@ -18,18 +18,36 @@ helpcontent:
   To add a new translation, click **Add term** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field.
 
 
-  Note that to use this feature, you must be subscribed to Branding feature application in the Enterprise tenant."
+  Note that to use this feature, your tenant must have **public-options** application installed."
 ---
 
 {{< c8y-admon-req >}}
-* You must be subscribed to the [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
 * Your user must have a role with READ permission for the permission type "Application management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+
+* Your tenant must have **public-options** application installed. Localization feature uses dynamically fetched application options. See [Application Configuration > Application options](/web/application-configuration/#application-options) in the *Web SDK guide* to know more.
 {{< /c8y-admon-req >}}
+
+### To use Localization feature
+To use Localization feature, your tenant must have **public-options** application installed. You can manually install the **public-options** application or use a workaround of applying branding setting which installs the **public-options** application behind the scenes.
+
+To manually install the **public-options** application, see [Branding and language customization](/web/application-configuration/#branding-and-languages) in the *Web SDK guide*.
+
+#### To apply branding setting
+To apply branding setting, you must first subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
+
+Complete the setup in Administration application following the steps below: 
+
+1. Navigate to **Settings > Branding**, click **Apply**. 
+2. Verify that **public-options** application is present in **Ecosystem > Applications**.
+
+{{<c8y-admon-info>}}
+Your user must have administrator access to the tenant.
+{{</c8y-admon-info>}}
 
 <a name=""></a>
 ### Localization
 
-To use this feature, subscribe to [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview). Once you have enabled it, open the **Localization** page by navigating to **Configuration > Localization**.
+To reach **Localization** page navigate to **Configuration > Localization**.
 
 If you want to add translations for the created [asset properties](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types), or if you want to add custom translations for the existing static text in the DTM application, use the **Localization** feature.
 

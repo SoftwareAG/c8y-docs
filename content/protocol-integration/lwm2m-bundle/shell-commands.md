@@ -114,7 +114,7 @@ In the next table you will see all available commands and a brief description of
 <tr>
 <td align="left">executelegacy /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;STRING&gt;]</td>
 <td align="center">1.0, 1.1</td>
-<td align="left">Executes a resource on the device and sends the parameters as TEXT/PLAIN string. This was the behavior of the execute command in Cumulocity IoT until version 10.15. In contrast to the regular <code>execute</code> command, <code>executelegacy</code> allows execute parameters not in line with the Lightweight M2M standard to be sent to the device.</td>
+<td align="left">Executes a resource on the device and sends the parameters as TEXT/PLAIN string. This was the behavior of the execute command in {{< product-c8y-iot >}} until version 10.15. In contrast to the regular <code>execute</code> command, <code>executelegacy</code> allows execute parameters not in line with the Lightweight M2M standard to be sent to the device.</td>
 </tr>
 <tr>
 <td align="left">write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>

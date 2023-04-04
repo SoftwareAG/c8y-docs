@@ -186,7 +186,7 @@ Example: <br/>
 		"accept" : "application/vnd.oma.lwm2m+json"}
 	
 <br />
-The CoAP response data is populated into the operation response. Please note that {{< product-c8y-iot >}} does not further process CoAP responses. We also recommend using raw CoAP requests for device interactions only in exceptional cases. Any interaction with an LWM2M device should be carried out using standard LWM2M operations.
+The CoAP response data is populated into the operation response. Note that {{< product-c8y-iot >}} does not further process CoAP responses. We also recommend you to use raw CoAP requests for device interactions only in exceptional cases. Any interaction with an LWM2M device should be carried out using standard LWM2M operations.
 </td>
 </tr>
 </tbody>

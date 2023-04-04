@@ -177,11 +177,16 @@ For example: writeb /3442/0/150 binary:12345.
 <td align="left">coap &lt;requestJson&gt;</td>
 <td align="center">1.0, 1.1</td>
 <td align="left">Allows a raw coap request to be sent to a LWM2M device. The command takes a request JSON string as a single argument. <br />
-	Example: <br/> 
-	<code>coap { "method":"get",
-		"uri":"/3/0",
-		"accept":"application/vnd.oma.lwm2m+json"}
-	</code>
+<br />
+Example: <br/> 
+	
+	coap { 
+		"method" : "get",
+		"uri" : "/3/0",
+		"accept" : "application/vnd.oma.lwm2m+json"}
+	
+<br />
+The CoAP response data is populated into the operation response. Please note that {{< product-c8y-iot >}} does not further process CoAP responses. We also recommend using raw CoAP requests for device interactions only in exceptional cases. Any interaction with an LWM2M device should be carried out using standard LWM2M operations.
 </td>
 </tr>
 </tbody>

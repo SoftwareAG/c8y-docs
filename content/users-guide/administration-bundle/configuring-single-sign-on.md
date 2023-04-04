@@ -126,7 +126,7 @@ To change this behavior, select one of the following radio buttons at the bottom
 
 * **Use dynamic access mapping only on user creation** - when selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
 
-* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the global roles, default applications, device groups that are listed in the defined access mapping rules will be overwritten.
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the global roles, default applications and device groups that are listed in the defined access mapping rules will be overwritten.
 
 ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 

@@ -84,7 +84,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 ```json
 {
   "source": {
-    "id": "<managedObjectId>"
+    "id": "<serviceManagedObjectId>"
   },
   "time": "2020-03-19T12:03:27.845Z",
   "type": "c8y_Memory",

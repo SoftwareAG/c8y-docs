@@ -87,11 +87,11 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global role "business" and the default application "cockpit".
+The user will be granted access to the global role "business", the default application "cockpit" and the inventory roles "Manager" and "Reader" for the device group named "region north".
 
 If no access mapping matches the user access token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
 
-New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
+New rules can be added by clicking **Add access mapping** or **Add inventory roles** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
 New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin"."
 
@@ -119,14 +119,13 @@ In this case the following claim will match the condition:
 
 There is an option to verify that a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
-By default, the configuration for dynamic access mapping is selected: **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**.
-This means that dynamic access mapping assigns user roles, based on the access token, on every user login.
-It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login.
-To change this behavior, select one of the following radio buttons at the bottom of the **Access mapping** section:
+The user access mapping configuration provides the following options:
 
 * **Use dynamic access mapping only on user creation** - when selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
 
-* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping is used on every login, but the roles not listed in the access mapping configuration are not updated. Only the global roles, default applications and device groups that are listed in the defined access mapping rules are overwritten.
+
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared** -The default. Dynamic access mapping assigns user roles, based on the access token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
 ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 

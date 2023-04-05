@@ -40,7 +40,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 |serviceType  | Yes       | An arbitrary string for organizing services|
 |status       | Yes       | 'up', 'down', 'unknown' or any custom service status|
 
-Using SmartREST static template 102 sent to topic `s/us/<serviceId>`.
+Using [SmartREST static template 102](/reference/smartrest-two/#102) sent to topic `s/us/<serviceId>`:
 
 The second parameter, the unique ID, does not reference the internal numeric ID but a string-based external ID which is defined by the device instead of the platform.
 We recommend you to prefix the unique ID with a device-specific prefix to avoid clashes with other devices running the same service:
@@ -52,7 +52,7 @@ We recommend you to prefix the unique ID with a device-specific prefix to avoid 
 Using Inventory REST API:
 
 ```http
-POST /inventory/managedObjects/<serviceId>
+PUT /inventory/managedObjects/<serviceId>
 
 Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 ```
@@ -67,7 +67,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 | ----  | ----      | ----    |
 |status | Yes       | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
 
-Or using SmartREST static template 104 sent to topic `s/us/<serviceId>`:
+Or using [SmartREST static template 104](/reference/smartrest-two/#104) sent to topic `s/us/<serviceId>`:
 
 `104,down`
 
@@ -84,7 +84,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 ```json
 {
   "source": {
-    "id": "<managedObjectId>"
+    "id": "<serviceManagedObjectId>"
   },
   "time": "2020-03-19T12:03:27.845Z",
   "type": "c8y_Memory",
@@ -97,9 +97,8 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 }
 ```
 
-(To find `<managedObjectId>` querying of the Identity REST API may be required).
 
-Or using SmartREST static template 200 sent to topic `s/us/<serviceId>`:
+Or using [SmartREST static template 200](/reference/smartrest-two/#200) sent to topic `s/us/<serviceId>`:
 
 `200,c8y_Memory,allocated,100,MB`
 

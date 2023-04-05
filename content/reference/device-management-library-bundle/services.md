@@ -97,8 +97,6 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 }
 ```
 
-To find the `<managedObjectId>`, query the Identity REST API.
-
 
 Or using [SmartREST static template 200](/reference/smartrest-two/#200) sent to topic `s/us/<serviceId>`:
 

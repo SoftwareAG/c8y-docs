@@ -94,8 +94,8 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Allows requesting log information for a device.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
-<td style="text-align:left">Provides details for devices connected via LORIOT LoRa. For details, see <a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a> for more details.</td>
+<td style="text-align:left"><a href="../../protocol-integration/lora-loriot">Loriot LoRa</a></td>
+<td style="text-align:left">Provides details for devices connected via Loriot LoRa. For details, see <a href="../../protocol-integration/lora-loriot">Loriot LoRa</a> for more details.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Measurements</a></td>
@@ -325,7 +325,7 @@ The screenshot below, for example, shows a chart for temperature measurement wit
 
 ![Measurements](/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
 
-If a chart contains measurements with different series, one Y-axis is rendered per series. In the example above, temperature data is recorded from two sensors namely "sensors-1" and "sensor-2" having the same unit as °C. Here measurements from different sensors are categorized 
+If a chart contains measurements with different series, one Y-axis is rendered per series. In the example above, temperature data is recorded from two sensors namely "sensors-1" and "sensor-2" having the same unit as °C. Here measurements from different sensors are categorized
 as separate "Series" data. The measurements from the respective sensors are stored using separate series names (same as the sensor names) and hence, two axes are rendered here.
 Only one Y-axis is rendered if the measurements belong to the same series.
 

@@ -23,6 +23,7 @@
     margin: .15rem 0 ;
     display: block;
     color: $text-muted;
+    transition: all .25s ease;
     &.active{
       font-weight: 500;
       color: $gray-text;

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT.
-On top of the standard SSO, {{< product-c8y-iot >}} also allows you to access the platform resources using access tokens from your authorization server directly as Bearer token. For details refer to [Configuring authentication with OAuth2 access token from IAM](/users-guide/administration/#configuring-authentication-with-oauth2-access-token-from-iam).
+On top of the standard SSO, {{< product-c8y-iot >}} also allows you to access the platform resources using access tokens from your authorization server directly as Bearer token. For details refer to [Configuring authentication with OAuth2 access tokens from authorization server](/users-guide/administration/#configuring-authentication-with-oauth2-access-token-from-iam).
 
 {{< c8y-admon-req >}}
 To use the SSO feature the following requirements must be met:
@@ -197,10 +197,10 @@ Placeholders can also be used as a part of text:
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 {{< /c8y-admon-info >}}
 
-### Configuring authentication with OAuth2 access token from IAM
+### Configuring authentication with OAuth2 access tokens from authorization servers
 
-You can directly request {{< product-c8y-iot >}} using access tokens from your authorization server.
-This is suited for you, if you want your applications or users to access our resources without necessarily to need to log in to the platform
+You can directly request {{< product-c8y-iot >}} to use access tokens from your authorization server.
+This way, your applications or users can access our resources without the need to log in to the platform
 or to use Basic authentication. With this, you can leverage your authorization server to get access tokens for your application which you will send in any subsequent request to
 {{< product-c8y-iot >}}. 
 
@@ -212,42 +212,42 @@ This feature requires the following on top of the above requirements:
 
 {{< /c8y-admon-req >}}
 
-You can choose to enable or disable this authentication at your convenience under the **External token configuration** section.
+You can enable or disable this authentication option in the **External token configuration** section.
 ![External token disabled](/images/users-guide/Administration/sso-access-token-external-iam-disabled.png)
  
-If enabled, this authentication will take precedence over the standard [JWT token authentication](https://{{< domain-c8y >}}/guides/{{< c8y-current-version >}}/reference/rest-implementation/#jwt-token-authentication), which means for example that any HTTP request to {{< product-c8y-iot >}} with header `Authentication: Bearer {{access token}}` will assume the provenance of access token to be your IAM and not a {{< product-c8y-iot >}} issued access token.
-You will have to configure the user ID or the Application ID to any top-level claim in the access token.  
+If enabled, this authentication will take precedence over the standard [JWT token authentication](https://{{< domain-c8y >}}/guides/{{< c8y-current-version >}}/reference/rest-implementation/#jwt-token-authentication), which means, for example, that any HTTP request to {{< product-c8y-iot >}} with the header `Authentication: Bearer {{access token}}` assumes that the provenance of the access token is your authorization server instead of a {{< product-c8y-iot >}} issued access token.
+You must configure the user ID or the application ID to any top-level claim in the access token.
 
 ![External token user id](/images/users-guide/Administration/sso-access-token-external-iam-user-id-config.png)
 
-{{< product-c8y-iot >}} will create a user assigning it your configure user or app ID. Additionally, the user will be granted the roles and granted access to the applications defined in the **Access mapping** section.
+{{< product-c8y-iot >}} creates a user wich gets assigned the configured user ID or application ID. Additionally, this user will be granted the roles and access to the applications defined in the **Access mapping** section.
 
 {{< c8y-admon-info >}}
-Notice that, in this configuration allows you to when set, to create a {{< product-c8y-iot >}} user representing your applications (the access tokens are obtained via the *client credentials flow*), 
-or your IAM users (the access tokens are obtained with the *password grant type*).
+When set, this configuration allows you to create a {{< product-c8y-iot >}} user representing your applications (the access tokens are obtained via the *client credentials flow*), 
+or the users of your authorization server (the access tokens are obtained with the *password grant type*).
 {{< /c8y-admon-info >}}
 
-By default, we verify that the token is not expired and its signature using the signature you have configured earlier.
-You can strengthen the validation of the token by configuring either and introspection or a user info validation with the necessary credentials.
-They allow us to know whether the access tokens was purposefully invalidated or expired. In that case, using an invalidated access token you will be unauthorized to access {{< product-c8y-iot >}} resources. 
+By default, {{< product-c8y-iot >}} verifies that the token is not expired and its signature matches the signature you have configured earlier.
+You can strengthen the validation of the token by configuring either an introspection or a user info validation with the necessary credentials.
+This way, the platform knows if the access tokens were intentionally invalidated or expired. If you use an invalidated access token you will not be able to access {{< product-c8y-iot >}} resources. 
 
 ##### Introspection endpoint
 
-We use token introspection, to verify the validity of the access tokens of your applications. In general, this endpoint can be used for access tokens obtained via the client credentials flow or any other OAUTH2 flow.
+{{< product-c8y-iot >}} uses token introspection to verify the validity of the access tokens of your applications. In general, this endpoint can be used for access tokens obtained via the client credentials flow or any other OAuth2 flow.
 
-To configure the introspection, you must provide an introspection endpoint and a URL-encoded (x-form-urlencoded) body containing the access token, the client id and client secret, and a "Authorization" request header.  
-{{< product-c8y-iot >}} makes a request to the introspection endpoint of your authorization server to enquire about the status of the access token.
+To configure the introspection you must provide an introspection endpoint and a URL-encoded (x-form-urlencoded) body containing the access token, the client ID and client secret, and a "Authorization" request header.  
+{{< product-c8y-iot >}} makes a request to the introspection endpoint of your authorization server to enquire the status of the access token.
 If the token is still active, then we proceed with verifying the token signature.
 
 ![External token introspection validation](/images/users-guide/Administration/sso-access-token-external-iam-introspection-validation.png)
 
-You can also decide to perform the introspection, for example every minute for the same access token by configuring the **Access token validation frequency** field.
-This is because it can be costly to always call the authorization server for the same access token. The default value is set to *1 minute*.
+By configuring the **Access token validation frequency** accordingly, you can choose how frequently the introspection is performed 
+as it may be costly to always call the authorization server for the same access token. The default value is set to *1 minute*.
 
 ##### User info endpoint
 
-The user info request can also be used to enquire on the validity of the access token of your users. 
-Unlike introspection, a user info request requires a user context. It means you cannot validate access tokens obtained with client credentials flow using this validation form, but instead you choose select the introspection validation.
+The user info request can also be used to enquire the validity of the access token of your users. 
+Unlike introspection, a user info request requires a user context. This means you cannot use this validation option to validate access tokens obtained with the client credentials flow, but must use the introspection validation instead.
 
 ![External token userinfo validation](/images/users-guide/Administration/sso-access-token-external-iam-userinfo-validation.png)
 

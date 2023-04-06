@@ -189,7 +189,7 @@ If data broker connectors are configured for a tenant, suspending this tenant re
 
 	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
 
-2. In the resulting dialog box confirm the suspension by clicking the confirmation button and then entering your password.
+2. In the resulting dialog box confirm the suspension by clicking **Suspend** and then entering your password.
 
 {{< c8y-admon-info >}}
 * As part of suspending the tenant, an email is sent to the email address that was configured for the tenant administrator.
@@ -326,7 +326,7 @@ For each tenant policy, the name, an optional description and the number of opti
 The tenant policy will be added to the tenant policies list.
 
 {{< c8y-admon-important >}}
-When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
+**Check this -->** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
 {{< /c8y-admon-important >}}
 
 #### To edit a tenant policy
@@ -358,7 +358,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - Every existing tenant on platform upgrade.
 
 {{< c8y-admon-info >}}
-These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see the Default subscriptions screenshot below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Overriding default subscriptions](#default-applications) below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:

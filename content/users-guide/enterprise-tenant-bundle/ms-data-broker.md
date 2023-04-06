@@ -82,5 +82,5 @@ The data broker monitors the data rate at which events are being forwarded. If t
 ![New Data-Broker Alarms](/images/users-guide/enterprise-tenant/et-new-data-broker-alarms.png)
 
 {{< c8y-admon-info >}}
-Refer to the *Messaging Service Installation & operations guide* to find out more about how these parameters can be configured.
+Refer to the *Messaging Service Installation & Operations Guide* to find out more about how these parameters can be configured.
 {{< /c8y-admon-info >}}

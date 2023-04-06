@@ -24,13 +24,13 @@ helpcontent:
 {{< c8y-admon-req >}}
 * Your user must have a role with READ permission for the permission type "Application management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-* Your tenant must have the Public-options application installed. The localization feature uses dynamically fetched application options. See [Application Configuration > Application options](/web/application-configuration/#application-options) in the *Web SDK guide* for more information.
+* Your tenant must have the Public-options application installed, see details below.
 {{< /c8y-admon-req >}}
 
 ### To use the localization feature
-To use the localization feature, your tenant must have the Public-options application installed. Install the Public-options application manually or use a workaround of applying the branding setting which installs the Public-options application behind the scenes.
+Since the localization feature uses dynamically fetched application options, your tenant must have the Public-options application installed. Install the Public-options application manually or, as a workaround, apply the branding setting which installs the Public-options application behind the scenes.
 
-To manually install the Public-options application, see [Branding and language customization](/web/application-configuration/#branding-and-languages) in the *Web SDK guide*.
+For details on how to manually install the Public-options application, see [Branding and language customization](/web/application-configuration/#branding-and-languages) in the *Web SDK guide*.
 
 #### To apply the branding setting
 To apply the branding setting, you must first subscribe to the [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
@@ -42,7 +42,7 @@ Complete the setup in the Administration application following the steps below:
 3. Navigate to **Ecosystem > Applications** to verify that the Public-options application is installed correctly.
 
 {{<c8y-admon-info>}}
-You must have administrator access to the tenant to install the Public-options application .
+You must have administrator access to the tenant to install the Public-options application.
 {{</c8y-admon-info>}}
 
 <a name=""></a>

@@ -72,7 +72,7 @@ Once registered, you can get the device ID by looking up your device on the **Al
 
 A script *AnomalySimulatorForDemoDevice.py* has been attached which simulates sending of alternate anomalous and non-anomalous readings to {{< product-c8y-iot >}} from our demo device. This script can be used to depict the generation of anomalies.
 
-All you need to do is to run the script as explained before.
+All you must do is to run the script as explained before.
 
 *AnomalySimulatorForDemoDevice.py*
 

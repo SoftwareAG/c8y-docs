@@ -10,7 +10,7 @@ There are two approaches to training deep neural networks using Neural Network (
 
 ### Transfer learning
 
-To begin the model training with transfer learning, you need to create a new neural network architecture file from an existing architecture.
+To begin the model training with transfer learning, you must create a new neural network architecture file from an existing architecture.
 
 The following steps illustrate how to train a deep neural network model using transfer learning.
 
@@ -56,7 +56,7 @@ Once the task is COMPLETED, the trained model will be saved in the **Model** fol
 
 ### Custom architecture
 
-To begin the model training with a custom architecture, you need to create a new neural network architecture file from scratch.
+To begin the model training with a custom architecture, you must create a new neural network architecture file from scratch.
 
 The following steps illustrate how to train a deep neural network model using custom architecture.
 

@@ -58,7 +58,7 @@ In the **Preferred login mode** field, you can select one of the following optio
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
 {{< c8y-admon-important >}}
-Each time you change the login mode you will be forced to log out. Other users will need to log out and log in again so that the change is applied.
+Each time you change the login mode you will be forced to log out. Other users must log out and log in again so that the change is applied.
 {{< /c8y-admon-important >}}
 
 In the field **Password validity limit**, you can limit the validity of user passwords by specifying the number of days after which users must change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).

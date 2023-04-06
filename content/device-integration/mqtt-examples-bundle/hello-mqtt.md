@@ -92,7 +92,7 @@ The temperature and battery measurement just take the value and time as paramete
 
 Passing timestamps in the {{< product-c8y-iot >}} MQTT implementation is always optional. If you don't pass them along, the server will automatically create a timestamp with the current server time.
 
-We will make use of this feature in this example. Also, if you don't set the last parameters, you do not need to enter the remaining commas.
+We will make use of this feature in this example. Also, if you do not set the last parameters, you do not need to enter the remaining commas.
 
 ```text
 210,-87

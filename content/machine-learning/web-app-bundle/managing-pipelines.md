@@ -9,7 +9,7 @@ aliases:
 
 The **Pipelines** page allows you to manage your ONNX pipelines.
 
-A pipeline represents an end-to-end workflow that encapsulates any pre-processing or post-processing steps that need to be performed in addition to invoking a machine learning model. A pipeline must include a machine learning model, whereas the inclusion of a pre-processing or post-processing step is optional. If an ONNX model requires pre-processing or post-processing steps, the corresponding pre-processing/post-processing resources must be uploaded via the **Resources** page. These pre-processing/post-processing resources are represented using python scripts which must follow the conventions defined below. A pipeline's end-to-end workflow can be depicted using the following sequence:
+A pipeline represents an end-to-end workflow that encapsulates any pre-processing or post-processing steps that must be performed in addition to invoking a machine learning model. A pipeline must include a machine learning model, whereas the inclusion of a pre-processing or post-processing step is optional. If an ONNX model requires pre-processing or post-processing steps, the corresponding pre-processing/post-processing resources must be uploaded via the **Resources** page. These pre-processing/post-processing resources are represented using python scripts which must follow the conventions defined below. A pipeline's end-to-end workflow can be depicted using the following sequence:
 
 Input data > Pre-processing > ONNX model > Post-processing > Output data
 

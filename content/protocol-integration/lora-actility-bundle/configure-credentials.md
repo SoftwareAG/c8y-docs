@@ -6,7 +6,7 @@ layout: redirect
 
 
 
-Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure your ThingPark account details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Actility connections.
+Before using LoRa devices with {{< product-c8y-iot >}}, you must configure your ThingPark account details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Actility connections.
 
 <a name="add-new-connection"></a>
 ### To add a new connection

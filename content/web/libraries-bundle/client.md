@@ -78,7 +78,7 @@ Use `client.<endpoint>.list()` to request listed data from the {{< product-c8y-i
 
 ### Accessing a microservice with the Fetch API
 
-The client internally uses the Fetch API. By accessing this core function, you can do any authenticated request to any resource. Standalone you can use `core.client.fetch(url, options)` and in `@c8y/ngx-components/data` for Angular you simply need to inject the `FetchClient`:
+The client internally uses the Fetch API. By accessing this core function, you can do any authenticated request to any resource. Standalone you can use `core.client.fetch(url, options)` and in `@c8y/ngx-components/data` for Angular you simply must inject the `FetchClient`:
 
 ```js
 constructor(private fetchClient: FetchClient) {} // di

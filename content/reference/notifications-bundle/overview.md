@@ -11,14 +11,14 @@ The Cumulocity Messaging Service is an optional component of the {{< product-c8y
 Changes to the configuration of the load balancer or ingress controller may also be required to allow access to the Websocket endpoint used by Notifications 2.0.
 
 For the shared public cloud instances of the {{< product-c8y-iot >}} platform, the Messaging Service is enabled by default on release 10.13 and above.
-For dedicated and self-hosted instances, the Messaging Service and Notifications 2.0 are available for release 10.11 and above, but will need to be explicitly enabled.
+For dedicated and self-hosted instances, the Messaging Service and Notifications 2.0 are available for release 10.11 and above, but must be explicitly enabled.
 
 Please contact [product support](/welcome/contacting-support/) to inquire about using the Messaging Service and Notifications 2.0 capabilities in your {{< product-c8y-iot >}} environment.
 See the *Messaging Service - Installation & operations guide* for further technical details of the configuration required, but note that these tasks can only be performed by a {{< product-c8y-iot >}} platform operator, not by a normal user.
 
 ROLES & PERMISSIONS:
 
-* To view and manage Notifications 2.0 subscriptions (read, create, delete): ADMIN permission for the permission type "Notification 2". 
+* To view and manage Notifications 2.0 subscriptions (read, create, delete): ADMIN permission for the permission type "Notification 2".
 
 {{< /c8y-admon-req >}}
 
@@ -91,7 +91,7 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 ### Non-persistent subscriptions and their tokens
 
 When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.
-If it is set to `true`, the created subscription is non-persistent. 
+If it is set to `true`, the created subscription is non-persistent.
 If it is not present or `false`, the subscription will be persistent.
 
 Persistent subscriptions ensure that consumers never miss a message if their connection is interrupted.
@@ -99,24 +99,24 @@ They use replicated secondary storage to maintain large backlogs (within the con
 and to maintain the consumers' positions in subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,
 whether that is due to network issues or deliberate actions by the consumer,
-upon reconnection they will continue to receive notifications from the position they were at before the outage 
-(specifically, from the message after the last one they acknowledged successfully before the outage). 
+upon reconnection they will continue to receive notifications from the position they were at before the outage
+(specifically, from the message after the last one they acknowledged successfully before the outage).
 
 Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted across disconnections of the consumer.
 When a consumer of a non-persistent subscription has their connection interrupted,
 upon reconnection they will start receiving notifications from the most recent message of the subscription,
-missing all other notifications that occurred during the connection outage. 
+missing all other notifications that occurred during the connection outage.
 This will be the case for such temporarily disconnected consumers,
-even if other consumers of the same non-persistent subscription 
-are still receiving older messages that occurred while it was not connected. 
+even if other consumers of the same non-persistent subscription
+are still receiving older messages that occurred while it was not connected.
 
-If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request, 
+If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request,
 they are *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters you choose. They do not have to be
 persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.  
 
-When a consumer creates a token for either a persistent or non-persistent subscription, 
+When a consumer creates a token for either a persistent or non-persistent subscription,
 it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
-For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
+For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription.
 Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.  
 
 ### Shared tokens
@@ -135,10 +135,10 @@ An exclusive consumer receives a copy of all notifications from the subscription
 
 If a consumer's token is shared, the consumer is a *shared consumer*. Additional consumer clients can connect using the same token.
 If only one shared consumer is connected, it receives a copy of all notifications from the subscription.
-As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that 
-each consumer receives a non-overlapping subset (share) of the notifications from the subscription. 
+As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that
+each consumer receives a non-overlapping subset (share) of the notifications from the subscription.
 The set of consumers sharing a token can be thought of as a single logical consumer.
-Collectively, the set receives all notifications for the subscription. 
+Collectively, the set receives all notifications for the subscription.
 
 The notification load is spread across the shared consumers according to the ID of the source that generated the notification, typically a device ID.
 All notifications for a given ID will be delivered to the same consumer. Each consumer may receive notifications for many different IDs.
@@ -146,8 +146,8 @@ This means that there is no benefit using shared tokens unless the notifications
 Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription.
 The load should generally become more evenly distributed as the number of sources increases.
 
-In order to help keep the messages from a given set of source IDs stick to shared consumers in the face of connection interruptions, the consumer clients can provide an 
-optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
+In order to help keep the messages from a given set of source IDs stick to shared consumers in the face of connection interruptions, the consumer clients can provide an
+optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter.
 
 For example: two consumers identifying themselves as *instance1* and *instance2* connect using URL paths
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
@@ -157,9 +157,9 @@ Subscriptions are always unaware of the nature and number of their consumers: an
 ### Deleting subscriptions and unsubscribing a subscriber
 
 Once a subscription is made, notifications will be retained until consumed by all subscribers who have previously connected to the subscription.
-The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber. 
+The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber.
 The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) is used to delete subscriptions.
-After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications 
+After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications
 and be removed when that is done.
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
@@ -183,5 +183,5 @@ To do so, send `unsubscribe_subscriber` instead of a message acknowledgement ide
 The service will then unsubscribe the subscriber and close the connection.
 It's not possible to check if the unsubscribe operation succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
 
-It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, 
+It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed,
 as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.

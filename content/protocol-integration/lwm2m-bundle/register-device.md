@@ -82,7 +82,7 @@ The fields below must be contained to be able to establish a connection:
 <td style="text-align:left">Security mode</td>
 <td style="text-align:left">securityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. If PSK is selected, devices need to connect to the LWM2M server using DTLS with the given pre-shared key (PSK). With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. If PSK is selected, devices must connect to the LWM2M server using DTLS with the given pre-shared key (PSK). With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>

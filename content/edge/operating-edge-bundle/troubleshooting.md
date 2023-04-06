@@ -10,4 +10,4 @@ In case of any issues, {{< company-sag >}} recommends you to follow these steps:
 * Monitor the system processes, see [Monitoring](/edge/operating-edge/#monitoring).
 * Check the log files, see [Log files](/edge/operating-edge/#logs-files).
 
-These steps help you analyze the issue and provide a fix. If you need to contact {{< company-sag >}} support, include the output of the diagnostics dump. For more information about using the diagnostics, see [Diagnostics](#diagnostics).
+These steps help you analyze the issue and provide a fix. If you must contact {{< company-sag >}} support, include the output of the diagnostics dump. For more information about using the diagnostics, see [Diagnostics](#diagnostics).

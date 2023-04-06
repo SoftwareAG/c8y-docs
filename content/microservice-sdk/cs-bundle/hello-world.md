@@ -6,7 +6,7 @@ title: Hello world tutorial
 
 This example provides a step-by-step guide to develop a simple microservice in {{< product-c8y-iot >}}. It uses Cake (C# Make), which is a cross-platform build automation system.
 
-To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 3.1.
+To start building .NET apps, you must download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 3.1.
 
 If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 6.8 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin). Note, that Mono-devel is required to compile code.
 

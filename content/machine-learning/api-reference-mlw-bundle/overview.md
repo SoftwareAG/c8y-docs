@@ -29,7 +29,7 @@ Query parameters are appended to the URI with a question mark followed by a list
 
 Header parameters are HTTP message metadata in the form of key/value pairs containing information about the message such as content type, message encoding type, authorization, etc.
 
-Body parameters appear only in POST or PUT requests and need to be encoded by the HTTP client.
+Body parameters appear only in POST or PUT requests and must be encoded by the HTTP client.
 
 In the following examples, `{{ auth }}` represents the base64-encoded `tenant/username:password` or `username:password` sent as Basic Authorization headers with HTTP requests.
 

@@ -25,7 +25,7 @@ The data type of the target column is shows in the *Column type* column in the *
 
 #### Mapping measurement fragments to relational data
 
-The offloading configuration mechanisms differ when dealing with series value fragments of measurements. As additional fragments are often added dynamically, {{< product-c8y-iot >}} DataHub automatically picks up each series at runtime without the need to reconfigure the offloading pipeline.
+The offloading configuration mechanisms differ when dealing with series value fragments of measurements. As additional fragments are often added dynamically, {{< product-c8y-iot >}} DataHub automatically picks up each series at runtime without reconfiguring the offloading pipeline.
 
 Each series must have a mandatory value of type Number and an optional unit of type String. If the value is not of type Number, {{< product-c8y-iot >}} DataHub determines a type for each series at runtime of the offloading. It evaluates the runtime type of each value and derives the column type for the corresponding offloading run. If all values for a series can be cast to BOOLEAN, FLOAT, STRUCT or LIST consistently, this will be the type of the resulting column. Otherwise, DataHub will use VARCHAR. If the use case mixes types for the same series, mixed types can appear in the data lake.
 

@@ -97,14 +97,14 @@ Use the **Apply across all models** toggle if you want the processing to happen 
 3. Each device can have various measurements which are persisted in {{< product-c8y-iot >}}. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
 ![Scheduled process 2](/images/zementis/zementis-jobconfig-mapping.png)
 <br>Click **Next** to proceed.
-4. Set the schedule of the job by selecting the frequency for the job followed by when it should run. You also need to specify the data range to be used for processing when the job is executed.
+4. Set the schedule of the job by selecting the frequency for the job followed by when it should run. You also must specify the data range to be used for processing when the job is executed.
 ![Scheduled process 3](/images/zementis/zementis-jobconfig-schedule.png)
 <br>Click **Finish** to schedule the job that you just configured.
 
 {{< c8y-admon-info >}}
 1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
 2. The data range selected for the schedule must not exceed 24 hours.
-3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.
+3. For a one-time job, you must select the date when the job should run. You also must specify the data range to be used for processing when the job is executed.
 {{< /c8y-admon-info >}}
 
 After the job is scheduled, you will see a corresponding notification.

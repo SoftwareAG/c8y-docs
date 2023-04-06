@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/anomaly-detection/#anomaly-detection-using-smartphone
 ---
 
-This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone.
+This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you must register your smartphone. Then follow the sections below for collecting data, training the model, and using the model to detect anomalies via the phone.
 
 {{< c8y-admon-info >}}
 The phone used for the entire workflow must be of the same type because the data and sensors may vary for different devices.
@@ -70,7 +70,7 @@ Follow the steps described in [Machine Learning Workbench > Automated ML > Model
 
 #### Create and upload Apama monitor file
 
-For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your logic to your IoT solution for the immediate processing of incoming data from devices or other data sources. This user-defined logic can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
+For this anomaly detection scenario, we must use Apama streaming analytics. With Apama streaming analytics, you can add your logic to your IoT solution for the immediate processing of incoming data from devices or other data sources. This user-defined logic can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice, and raising an alarm when an anomaly is reported by our machine learning model.
 

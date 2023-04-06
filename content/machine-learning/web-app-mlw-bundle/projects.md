@@ -59,7 +59,7 @@ To delete resource(s), click **Projects** in the navigator, select the project f
 
 To commit a project with its resources for versioning, click the plus icon <img src="/images/zementis/mlw-commit-add-icon.png" alt="Commit" style="display:inline-block; margin:0"> next to the project name at the top.
 
-You can select all or a subset of resource files that need to be committed to a version. And click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+You can select all or a subset of resource files that must be committed to a version. And click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 ![Commit version](/images/zementis/mlw-app-project-commit-select.png)
 
@@ -120,7 +120,7 @@ Once the task has reached **COMPLETED** status, the project would be successfull
 <a name="deleting-a-project-version"></a>
 ### Deleting a project version
 
-To delete a specific version of the project, click **Projects** in the navigator, select the version you want to delete in the project tile and click **Delete**. 
+To delete a specific version of the project, click **Projects** in the navigator, select the version you want to delete in the project tile and click **Delete**.
 
 ![Project version delete](/images/zementis/mlw-app-project-version-delete.png)
 
@@ -131,7 +131,7 @@ Once the task has reached **COMPLETED** status, the project version is successfu
 <a name="deleting-multiple-projects"></a>
 ### Deleting multiple projects
 
-To delete multiple projects, click **Projects** in the navigator, then click **Bulk Actions** <img src="/images/zementis/mlw-bulk-actions-icon.png" alt="Bulk Actions" style="display:inline-block; margin:0"> at the top right. Select the projects you want to delete and click **Delete**. 
+To delete multiple projects, click **Projects** in the navigator, then click **Bulk Actions** <img src="/images/zementis/mlw-bulk-actions-icon.png" alt="Bulk Actions" style="display:inline-block; margin:0"> at the top right. Select the projects you want to delete and click **Delete**.
 
 ![Project delete](/images/zementis/mlw-app-multi-project-delete.png)
 

@@ -188,7 +188,9 @@ Host: ...
 Authorization: Basic ...
 ```
 
-An example of a typical user switching in multi-tenant isolation is presented below, where – in a hypothetical scenario – there is a need to send an alarm to each tenant subscribed to a microservice.
+An example of a typical user switching in multi-tenant isolation is presented below, where – in a hypothetical scenario – an alarm must be sent to each tenant subscribed to a microservice.
+
+
 
 ![microservice_user_switch_example](/images/concepts-guide/microserviceusersexample.png)
 

@@ -15,7 +15,7 @@ The network configuration blue screen does not appear post installation. After t
 
 2. Configure the network for your Edge appliance, see the sample screenshot.
     <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
-    
+
     {{< c8y-admon-important >}}
 
 While configuring the network on VMware based hypervisors, do not us the IP addresses:
@@ -71,5 +71,5 @@ If you still see the installation in progress, refresh the browser.
 Next, click **Open {{< product-c8y-iot >}} Edge**.
 
 {{< c8y-admon-important >}}
-In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.
+In case you must reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.
 {{< /c8y-admon-important >}}

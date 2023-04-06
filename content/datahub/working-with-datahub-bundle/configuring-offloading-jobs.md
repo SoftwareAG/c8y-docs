@@ -49,7 +49,7 @@ Once you have selected a collection for offloading, you must specify the target 
 
 Each pipeline must have its own target table in the data lake. Thus, you must select distinct target table names for each offloading configuration.
 
-For the **alarms**, **events**, and **inventory** collections, you only need to specify the target table name in this step.
+For the **alarms**, **events**, and **inventory** collections, you must only specify the target table name in this step.
 
 For the **measurements** collection, additional settings are required. The **target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
 
@@ -157,7 +157,7 @@ Per default each active offloading pipeline is executed once an hour, at the sam
 
 **Compaction strategy**
 
-In the additional settings, you can define the compaction strategy for the offloading pipeline. The compaction strategy refers to how {{< product-c8y-iot >}} DataHub automatically combines multiple smaller files in the data lake into one or more larger files. {{< product-c8y-iot >}} DataHub periodically executes the compaction for an offloading pipeline as a large number of small files may adversely affect the query performance. The compaction is executed once per day; the compaction schedule cannot be modified. 
+In the additional settings, you can define the compaction strategy for the offloading pipeline. The compaction strategy refers to how {{< product-c8y-iot >}} DataHub automatically combines multiple smaller files in the data lake into one or more larger files. {{< product-c8y-iot >}} DataHub periodically executes the compaction for an offloading pipeline as a large number of small files may adversely affect the query performance. The compaction is executed once per day; the compaction schedule cannot be modified.
 
 {{< product-c8y-iot >}} DataHub automatically sets the compaction strategy, but allows you to optionally change the strategy. Available compaction strategies are:
 

@@ -16,7 +16,7 @@ If problems occur, you should follow these steps:
 - Check the log files, see the section on [Log files](#log-files)
 - Monitor the system processes, see the section on [Monitoring](#monitoring)
 
-If you still need to contact [product support](/welcome/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics](/edge/diagnostics-and-support/#diagnostics) for details of how to run it.
+If you still must contact [product support](/welcome/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics](/edge/diagnostics-and-support/#diagnostics) for details of how to run it.
 
 <a name="health-check"></a>
 #### Health check

@@ -113,7 +113,7 @@ If the source tenant has been suspended all its data broker connectors will be s
 	</tr>
 	<tr>
 	<td style="text-align:left">Type filter</td>
-	<td style="text-align:left">Forwarded data needs to have this value in its "type" property.</td>
+	<td style="text-align:left">Forwarded data must have this value in its "type" property.</td>
 	</tr>
 	</tbody>
 	</table>

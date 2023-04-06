@@ -3,15 +3,15 @@ weight: 20
 layout: redirect
 title: Asset properties
 
-helpContent: 
+helpContent:
 - label: asset-properties
   title: Asset Properties
   content: "Asset properties are the parameters that define an asset model. One or more asset properties are used to define an asset model.
 
-  
+
   Asset properties can be reused in multiple asset models. You can build your asset property library by adding asset properties which can be used to define any asset model.
-  
-  
+
+
   To add a new asset property, click **Add asset property**."
 ---
 Asset properties are the parameters that define an [asset model](/dtm/asset-types/#asset-types). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
@@ -144,7 +144,7 @@ If selected, enter a number in the field on the right. When you create the asset
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be greater than or equal to the minimum provided. By default, this box is not selected.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be greater than or equal to the minimum provided. By default, this box is not selected.
 
 {{< /c8y-admon-info>}}
 
@@ -155,7 +155,7 @@ If selected, enter a number in the field on the right. When you create the asset
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
 
 {{< /c8y-admon-info>}}
 
@@ -291,7 +291,7 @@ In the **Asset properties** complex asset properties are listed with the label "
 You see the preview of data model on the right side of properties section.
 
  **Example:**
- 
+
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)

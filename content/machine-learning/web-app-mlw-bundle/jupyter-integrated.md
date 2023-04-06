@@ -39,7 +39,7 @@ The Jupyter Notebook environment currently supports Python 3 kernel.
 <a name="Jupyter-Enterprise-Gateway-and-MLW-library"></a>
 ### Jupyter Enterprise Gateway and MLW library
 
-Jupyter Enterprise Gateway (JEG) is now integrated to use with MLW. To use JEG, credentials needs to be set first.
+Jupyter Enterprise Gateway (JEG) is now integrated to use with MLW. To use JEG, credentials must be set first.
 
 Click **Settings** in the navigator, switch to the **JEG** tab and enter the JEG credentials.
 

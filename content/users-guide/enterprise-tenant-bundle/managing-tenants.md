@@ -30,7 +30,7 @@ There is a major difference between providing several tenants and providing seve
 If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
 {{< /c8y-admon-info >}}
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - READ - browse and view tenants.
 - CREATE - create new tenants.
@@ -231,7 +231,7 @@ The following information is provided:
 * Unhealthy - the number of inactive microservice instances
 * Desired - the number of desired microservice instances
 * Name - microservice instance name
-* Restarts - the number of microservice instance restarts. 
+* Restarts - the number of microservice instance restarts.
 
 {{< c8y-admon-info >}}
 Information on the microservice instance name and the number of restarts is displayed in case of at least one restart.

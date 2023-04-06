@@ -26,7 +26,7 @@ For general information on SmartREST 1.0, refer to [Using the REST interface](/m
 
 Although you must send the IDs in the body of each message with SmartREST 1.0, it is still important to connect with the correct MQTT ClientId.
 
-The MQTT ClientId needs to match the externalId with type `c8y_Serial` of your device. It is used to assign the correct operations and responses.
+The MQTT ClientId must match the externalId with type `c8y_Serial` of your device. It is used to assign the correct operations and responses.
 
 ### Sending and receiving SmartREST 1.0
 
@@ -41,7 +41,7 @@ In general, the following holds for SmartREST requests and responses via MQTT:
 
 To send data to the server you can publish the same content as you would POST to the SmartREST endpoint <kbd>/s</kbd>.
 
-The X-ID header is part of the topic the client needs to publish on.
+The X-ID header is part of the topic the client must publish on.
 
 ```http
 s/ul/<X-ID>

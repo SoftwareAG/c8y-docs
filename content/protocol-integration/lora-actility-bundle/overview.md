@@ -30,4 +30,4 @@ Moreover you find details on:
 * Measurements and events created during [uplink message processing](#uplink-message).
 * [Troubleshooting](#troubleshooting) for warning messages.
 
-> Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact [product support](/welcome/contacting-support/).
+> Note that your subscription must include this feature. If you do not see the functionality described in this document, please contact [product support](/welcome/contacting-support/).

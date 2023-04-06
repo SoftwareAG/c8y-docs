@@ -24,7 +24,7 @@ To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 |               |              |
 | ------------- |:-------------|
 | Java version  | Java Runtime Environment 8 or newer version.|
-| Heap memory   | The agent Java application can run on as little as 200MB of heap space. <br>However, based on the number of devices and the load, this needs to be adjusted.   |
+| Heap memory   | The agent Java application can run on as little as 200MB of heap space. <br>However, based on the number of devices and the load, this must be adjusted.   |
 | Disk space    | The {{< product-c8y-iot >}} representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
 | Hardware and OS    | Linux environment, can run on laptops or industrial PCs.     |
 
@@ -34,7 +34,7 @@ To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 
 		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>-1.noarch.rpm
 
-	The `<ga-version>` needs to be provided in the format `1005.7.0`, `1006.0.0`, and so on. A sample command would look like this:
+	The `<ga-version>` must be provided in the format `1005.7.0`, `1006.0.0`, and so on. A sample command would look like this:
 
  		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-1006.0.0-1.noarch.rpm
 

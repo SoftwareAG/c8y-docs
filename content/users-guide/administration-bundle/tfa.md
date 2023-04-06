@@ -47,7 +47,7 @@ Users must install a TOTP application on their smartphone (Google Authenticator 
 Opposed to the SMS strategy TOTP must be set up by each user. By opening **User settings** in the top right corner and then clicking **Set up two-factor authentication** they can start the setup process.
 ![Trigger TOTP setup](/images/users-guide/Administration/admin-user-enable-tfa-2.png)
 
-IF TFA is enabled, the user will be presented a QR code at login, that needs to be scanned with the previously installed TOTP mobile application.
+IF TFA is enabled, the user will be presented a QR code at login, that must be scanned with the previously installed TOTP mobile application.
 
 Alternatively, the secret can also be inserted manually in case scanning the QR code is not an option.
 

@@ -42,7 +42,7 @@ Click **Next** to proceed with the next configuration step. Click **Cancel** to 
 
 Once you have selected a collection for offloading, you must specify the target table in the data lake. The **Target table name** denotes the folder name in the data lake. In this folder, which will be automatically created, the offloaded data will be stored. In Dremio a table is created with the same name, pointing to this data lake folder. This table is used when querying the corresponding data lake folder and thus the offloaded data. The target table name must follow these syntax rules:
 
-* It needs to start with an alphanumeric character (letters and numbers).
+* It must start with an alphanumeric character (letters and numbers).
 * It may contain alphanumeric characters, underscores (_) and dashes (-).
 * Each underscore or dash must be preceded by an alphanumeric character.
 * The name must be at least two characters long.
@@ -90,7 +90,7 @@ If you enter the additional result columns step for an active offloading pipelin
 
 **Add an additional result column**
 
-When adding an additional result column, a dialog box for defining the column opens. You must define a unique column name. Then the source definition needs to be specified. You can validate the source definition and preview its results by clicking **Validate and preview**.
+When adding an additional result column, a dialog box for defining the column opens. You must define a unique column name. Then the source definition must be specified. You can validate the source definition and preview its results by clicking **Validate and preview**.
 
 First step is to define a field from the base collection in the source definition. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting.
 

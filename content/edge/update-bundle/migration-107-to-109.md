@@ -51,7 +51,7 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
    ```shell
    mongodump --db=management --out OUTPUT_DIRECTORY # OUTPUT_DIRECTORY specifies the location of the backup.
    mongodump --db=edge --out OUTPUT_DIRECTORY
-   mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
+   mongodump --db=docker --out OUTPUT_DIRECTORY # This must only be done if microservices are enabled on 10.7.
    ```
 
 4. Note down the device ID of your Edge 10.7 appliance available at */usr/edge/properties/edge-agent/device-id*.
@@ -80,7 +80,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq
    ```
    The command returns the name and ID of the application. For example:
-   
+
    ```shell
    {
      "metadata": {
@@ -117,7 +117,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    Here:
     - APP_ID refers to the ID of the application. For example, 112
     - APP_NAME refers to the name of the application. For example, devicemanagement.zip
-   
+
    For example:
    ```shell
    mongofiles -d management --prefix cmdata get  112 -l /tmp/apps/cockpit.zip
@@ -157,10 +157,10 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
    ```shell
    DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
-   
+
    curl -v --header "Content-Type: application/json" --request POST --data
    '{"device_id":"'$DEVICE_ID'"}' 127.0.0.1:3032/configuration/edge-agent
-   
+
    systemctl restart edge-agent
    ```
 
@@ -171,7 +171,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    ```
    Here:
     - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your Edge 10.9 appliance.
-   
+
    For example:
    ```shell
    mongorestore --drop --db edge /home/admin/migration_data/edge/
@@ -187,7 +187,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    cp -a /tmp/apps/$UI_VERSION.zip /webapps/2Install/
    ```
    Wait for Karaf to install the applications. After the installation is complete, the *$UI_VERSION.zip.installed* file appears at */webapps/2Install*.
-   
+
 
 9. Copy the */etc/opcua* directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
 
@@ -221,7 +221,7 @@ Restoring the Streaming Analytics application completes the migration procedure.
 
 Next, configure the Edge 10.9 appliance. For example, if you enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
 
-{{< c8y-admon-important >}} 
+{{< c8y-admon-important >}}
 To enable the microservice hosting feature, the {{< management-tenant >}} user must have the "Tenant Manager" role. Use the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
 {{< /c8y-admon-important >}}
 
@@ -310,7 +310,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
    ```
    Here:
    - USERNAME and PASSWORD refers to the {{< management-tenant >}} user credentials.
-   
+
 
    Running the *restore_analytics.sh* script completes the migration process.
 

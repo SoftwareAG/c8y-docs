@@ -44,7 +44,7 @@ Click the save icon <img src="/images/zementis/mlw-save-icon.png" alt="Save" sty
 2. In the **Training Parameters** section at the right, select the appropriate data under **Data**.
 3. Specify the **Problem Type** which can either be "classification" or "regression".
 4. If the data needs pre-processing, specify the **Pre Processing Script**.
-5. The **Recurrence** parameter defines whether the training task needs to be executed one time or periodically. For this example, the training task will be one time.
+5. The **Recurrence** parameter defines whether the training task must be executed one time or periodically. For this example, the training task will be one time.
 6. Provide values for **Epoch**, **Learning Rate**, **Loss**, **Metrics**, **Optimizer**. Other parameters can be left as default.
 7. Once the training parameters are updated click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0"> which will trigger the training process.
 

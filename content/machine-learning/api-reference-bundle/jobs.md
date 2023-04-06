@@ -21,7 +21,7 @@ Currently, jobs can be scheduled using PMML models and model groups only. Howeve
 |jobDescription|String|Description of the job.|
 |groupOrDeviceId|Number|ID of the device or device group whose measurements will be <br> processed when the job executes.|
 |modelOrGroup|String|Name of the model or model group which will be used to process the device measurements.|
-|applyAllModels|Boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
+|applyAllModels|Boolean|Boolean value to specify if the data must be processed against all the models <br> in a model group.|
 |modelToDeviceMappings|Map|Map with the model's inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
 |jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
 

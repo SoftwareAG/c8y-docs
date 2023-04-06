@@ -301,7 +301,7 @@ Custom properties are visible to all authenticated users of the tenant, regardle
 <tbody>
 <tr>
 <td style="text-align:left">Required</td>
-<td style="text-align:left">If selected, the property needs to be provided, for example, during alarm creation. Not available if the property type is "Boolean".</td>
+<td style="text-align:left">If selected, the property must be provided, for example, during alarm creation. Not available if the property type is "Boolean".</td>
 </tr>
 <tr>
 <td style="text-align:left">Default Value</td>

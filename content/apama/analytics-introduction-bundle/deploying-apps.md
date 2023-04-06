@@ -43,9 +43,9 @@ This only applies if you are using Apama 10.3 or later.
 
 The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
 
-Apama can be used in either a single-tenant microservice or a multi-tenant microservice. 
+Apama can be used in either a single-tenant microservice or a multi-tenant microservice.
 Therefore, the microservice manifest must set the isolation level to either PER_TENANT or MULTI_TENANT.
-When Apama is used in a multi-tenant microservice, the Apama application must be written to be multi-tenant aware. 
+When Apama is used in a multi-tenant microservice, the Apama application must be written to be multi-tenant aware.
 For more information, see [Working with multi-tenant deployments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_working_with_multi_tenant_deployments.html) in the Apama documentation.
 
 The following permissions are required by the microservice in order to start up and use all features in the {{< product-c8y-iot >}} transport from EPL. These are set with requiredRoles in the microservice manifest.
@@ -96,23 +96,23 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
 
 {{< c8y-admon-info >}}
-After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains. 
+After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains.
 They are now available at *softwareag* instead of within the Docker Hub environment at *store/softwareag*.
 If you still use the images from the previous location, you must migrate them.
 See also [Apama Docker image availability on Docker Hub]({{< link-sag-tech-forum >}}/t/apama-docker-image-availability-on-docker-hub/260207).
 {{< /c8y-admon-info >}}
-  
+
 {{< c8y-admon-important >}}
 Apama 10.15.0 introduces several new container images provided via Docker Hub and some of the existing container images have changed content.
 When building images for use as a Cumulocity IoT microservice, this is now different to earlier releases.
-You must now use the 
+You must now use the
 [softwareag/apama-cumulocity-jre](https://hub.docker.com/r/softwareag/apama-cumulocity-jre) image with the
-[softwareag/apama-cumulocity-builder](https://hub.docker.com/r/softwareag/apama-cumulocity-builder) image as a builder image. 
-To do this with the default project Dockerfile created by Software AG Designer in 10.15.0 and previous versions, 
+[softwareag/apama-cumulocity-builder](https://hub.docker.com/r/softwareag/apama-cumulocity-builder) image as a builder image.
+To do this with the default project Dockerfile created by Software AG Designer in 10.15.0 and previous versions,
 you must either change the `FROM` lines in the Dockerfile appropriately
-(you only need to do this once) or build using the following flags (you have to do this every time):
+(you must do this only once) or build using the following flags (you have to do this every time):
 
 ```
 --build-arg APAMA_BUILDER=softwareag/apama-cumulocity-builder:10.15 --build-arg APAMA_IMAGE=softwareag/apama-cumulocity-jre:10.15
-``` 
+```
 {{< /c8y-admon-important >}}

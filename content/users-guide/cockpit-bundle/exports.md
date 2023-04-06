@@ -15,7 +15,7 @@ aliases:
 
 
 {{< c8y-admon-related >}}
-- The [Streaming Analytics guide](/apama/#streaming-analytics) for details on customizing scheduled exports using the Streaming Analytics application. 
+- The [Streaming Analytics guide](/apama/#streaming-analytics) for details on customizing scheduled exports using the Streaming Analytics application.
 {{< /c8y-admon-related >}}
 
 The export functionality lets you export specific data to either CSV or Excel files.
@@ -156,7 +156,7 @@ You must open each report manually, to migrate the export schedules included in 
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
+To use the new export schedule feature and for the migration to work, the report-agent microservice must be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 {{< /c8y-admon-info >}}
 
 #### To export data

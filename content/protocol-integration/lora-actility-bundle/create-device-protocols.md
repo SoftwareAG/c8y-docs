@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-To process data from LoRa devices, {{< product-c8y-iot >}} needs to understand the payload format of the devices. Mapping a payload data to {{< product-c8y-iot >}} data can be done by creating a LoRa device protocol.
+To process data from LoRa devices, {{< product-c8y-iot >}} must understand the payload format of the devices. Mapping a payload data to {{< product-c8y-iot >}} data can be done by creating a LoRa device protocol.
 
 During the [device registration](#register-device), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
@@ -69,7 +69,7 @@ In the upcoming window, configure the relevant values as shown in this example.
 
 The value configuration maps the value in the payload of a message type to the {{< product-c8y-iot >}} data.
 
-Under **Message type**, configure the **Message ID** according to your device message specification and map it to the {{< product-c8y-iot >}} data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (that is, Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification and map it to the {{< product-c8y-iot >}} data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (that is, Payload or FPort). The message ID must be entered in decimal numbers (not hex).
 
 In this example payload structure the message ID is "1".
 

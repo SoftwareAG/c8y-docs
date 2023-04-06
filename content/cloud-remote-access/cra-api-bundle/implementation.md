@@ -61,7 +61,7 @@ The following events are triggered when the device agent receives a `c8y_RemoteA
 
 ### Operating a connected endpoint
 
-When both connections are established and fully functional the agent simply needs to forward all binary packets between the TCP connection and the WebSocket in both directions.
+When both connections are established and fully functional the agent must simply forward all binary packets between the TCP connection and the WebSocket in both directions.
 
 ### Disconnecting an endpoint
 

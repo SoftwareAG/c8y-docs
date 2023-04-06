@@ -364,7 +364,7 @@ Updates the exiting project name and description with given new project name and
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project for which the name needs to be changed
+|projectID (string)| project ID of the project for which the name must be changed
 |name (string)|required name for the project as body parameter
 |description (string)|required description of the project as body parameter
 

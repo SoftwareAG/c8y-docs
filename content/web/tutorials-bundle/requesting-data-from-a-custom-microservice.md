@@ -252,7 +252,7 @@ Explanation of the numbers above:
 
 1. By extending the service you get the same capabilities as of all common services in `@c8y/client`. The generic type, in this case, is set to `any`, to keep the example as easy as possible. It is a common pattern to create an interface that reflects the data you are sending via this service and replace `any` by this interface.
 2. The URLs are the main entry points for this service. The pattern is always `<<url>>/<<baseUrl>>/<<listUrl>>/<id>`. If your microservice follows a different structure, you can override the `getUrl` method of the service class.
-3. The constructor needs the current `FetchClient` imported via dependency injection. It also needs to get it passed to the extended `Service` class via `super()`. If you want your endpoint to support real time, you also must inject the `RealTime` abstraction here and pass it.
+3. The constructor needs the current `FetchClient` imported via dependency injection. It also must get it passed to the extended `Service` class via `super()`. If you want your endpoint to support real time, you also must inject the `RealTime` abstraction here and pass it.
 4. You can now override the `detail()` or `list()` implementation. You can call the super method only, modify the result of the super call or write your own implementation. The choice depends on the implementation details of your microservice.
 
 Now you can reuse the `AcmeService` in the *acme.component.ts*:

@@ -130,7 +130,7 @@ The above example illustrated the handling of requests and request templates. Fo
 }
 ```
 
-On the client side, the device mainly needs to know the text to be shown. In JSONPath, the `"text"` property is extracted using the following syntax:
+On the client side, the device mainly must know the text to be shown. In JSONPath, the `"text"` property is extracted using the following syntax:
 
 ```javascript
 $.c8y_Message.text

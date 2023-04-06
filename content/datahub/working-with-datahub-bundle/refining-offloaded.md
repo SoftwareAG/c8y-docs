@@ -67,7 +67,7 @@ The job history only contains queries that you have actively triggered; the jobs
 
 With {{< product-c8y-iot >}} DataHub, you can replicate data from a {{< product-c8y-iot >}} collection to a data lake using a default transformation of the data. As requirements for subsequent data analysis of the offloaded device data may vary over time, you should configure your offloading pipeline so that all potentially relevant data is included.
 
-Depending on your use cases, you will often find the need to provide a view on the data, which limits, filters, or transforms the data, such as converting Celsius to Fahrenheit or extracting data from JSON fragments.
+Depending on your use cases, you will often find that you must provide a view on the data, which limits, filters, or transforms the data, such as converting Celsius to Fahrenheit or extracting data from JSON fragments.
 
 In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely select a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Querying offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#querying-offloaded).
 

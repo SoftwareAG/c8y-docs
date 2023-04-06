@@ -4,7 +4,7 @@ title: TRAP processing
 layout: redirect
 ---
 
-A TRAP is an urgent message sent from the SNMP device to the agent. The SNMP device must send the TRAPs to the agent at the port number defined in `snmp.trapListener.port` in the agent configuration file (default port number is 6671). For this, the SNMP device needs to be configured with the agent connectivity details.
+A TRAP is an urgent message sent from the SNMP device to the agent. The SNMP device must send the TRAPs to the agent at the port number defined in `snmp.trapListener.port` in the agent configuration file (default port number is 6671). For this, the SNMP device must be configured with the agent connectivity details.
 
 For SNMP v1 and v2c, the community target must be the same in the agent and in the SNMP device. At the agent side, this is configured in *snmp-agent-gateway.properties* and this should match with the SNMP device. In case of SNMP v3, the authentication and privacy details must be configured before the SNMP device can send the TRAP to agent.
 

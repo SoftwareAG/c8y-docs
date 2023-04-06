@@ -50,7 +50,7 @@ The **Tenants** page provides the following information on each subtenant:
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
 {{< c8y-admon-info >}}
-In the {{< management-tenant >}}, you will also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed in the table.
+In the {{< management-tenant >}}, you also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed in the table.
 {{< /c8y-admon-info >}}
 
 

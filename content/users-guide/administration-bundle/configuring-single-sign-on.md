@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT.
-On top of the standard SSO, {{< product-c8y-iot >}} also allows you to access the platform resources using access tokens from your authorization server directly as Bearer token. For details refer to [Configuring authentication with OAuth2 access tokens from authorization server](/users-guide/administration/#configuring-authentication-with-oauth2-access-token-from-iam).
+On top of standard SSO, {{< product-c8y-iot >}} also allows you to access the platform resources using access tokens from your authorization server directly as a Bearer token. For details refer to [Configuring authentication with OAuth2 access tokens from authorization servers](/users-guide/administration/#configuring-authentication-with-oauth2-access-token-from-iam).
 
 {{< c8y-admon-req >}}
 To use the SSO feature the following requirements must be met:

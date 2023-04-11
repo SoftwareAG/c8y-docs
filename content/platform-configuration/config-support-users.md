@@ -1,36 +1,11 @@
 ---
-title: Platform configuration settings
-weight: 80
+title: Configuring support users
+weight: 30
 layout: bundle
-section: 
+section:
   - platform_administration
 ---
 
-<a name="config-platform"></a>
-
-From the {{< management-tenant >}}, you can configure properties which apply globally to the whole {{< product-c8y-iot >}} deployment.
-
-Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
-
-![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
-
-Most of the settings you can configure here are also available in the {{< enterprise-tenant >}}. For details, refer to [{{< enterprise-tenant >}} > Customizing your platform](/users-guide/enterprise-tenant/#customization).
-
-In addition, the following settings can be configured in the {{< management-tenant >}} only.
-
-### Passwords
-
-In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
-
-Select the checkbox **Enforce "green" passwords for all users** to enforce the users in your tenant to use passwords that meet the conditions for "green" passwords, see also [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
-
-* **Password validity limit (days)** - the number of days a password may be valid before it must be reset; minimum value is  "0", maximum value is "999999". Leave empty to use the value from the tenant options configured in the {{< management-tenant >}}, see *{{< product-c8y-iot >}} Core - Operations guide*.
-* **Password history size** - the number of times before the current password can be reused.  Minimum value is "0", preset value is "10".  
-* **Minimum length of "green" password** - the minimum number of characters which are required for a safe password. Minimum (and preset) value is "8", maximum value is "32".  Leave empty to skip this constraint.
-
-
-<a name="config-support-users"></a>
-### Support user
 
 In the **Support user** section you can configure the parameters for the support user access for subtenant users.
 
@@ -49,7 +24,7 @@ The expiry date-time will be updated based on the duration specified in the **Va
 Details on the status of support requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [{{< enterprise-tenant >}} > Managing tenants](/users-guide/enterprise-tenant/#managing-tenants).
 
 <a name="configuring-support-users"></a>
-#### Configuring a support user
+### To configure a support user
 
 A support user is a user in the {{< management-tenant >}} with specific permissions. This user can log in to the target tenant and impersonate the target user.
 

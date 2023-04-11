@@ -1,13 +1,14 @@
 ---
-title: Enterprise tenant
+title: Enterprise tenant management
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
 bundle: enterprise-tenant
-section: 
+section:
   - platform_administration
-weight: 40
+weight: 20
 aliases:
   - /users-guide/enterprise-edition/
   - /users-guide/enterprise-tenant/
 ---
+Find details on the functionality available in {{< enterprise-tenant >}}s on top of {{< standard-tenant >}} functionalities, such as creating and managing subtenants, or configuring a customized branding.

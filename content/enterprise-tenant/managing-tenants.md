@@ -1,8 +1,8 @@
 ---
-weight: 10
+weight: 12
 title: Managing tenants
 layout: bundle
-section: 
+section:
   - platform_administration
 aliases:
   - /users-guide/enterprise-edition
@@ -157,7 +157,7 @@ The following information is displayed here:
 </tbody>
 </table>
 
-### Suspending subtenants
+### To suspend a subtenant
 
 Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. In addition all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
 
@@ -173,7 +173,7 @@ Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be
 If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 {{< /c8y-admon-info >}}
 
-#### To suspend a subtenant
+To suspend a subtenant perform the following steps:
 
 1. Click the menu icon at the right of the respective subtenant entry and then click **Suspend**.
 
@@ -187,7 +187,7 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 If you are a service provider, you can suppress this email.
 {{< /c8y-admon-info >}}
 
-### Deleting subtenants
+### To delete a subtenant
 
 {{< c8y-admon-important >}}
 Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}.
@@ -195,23 +195,18 @@ Deleting a subtenant cannot be reverted. For security reasons, it is therefore o
 Administrators in {{< enterprise-tenant >}}s are only allowed to suspend active subtenants, but not to delete them.
 {{< /c8y-admon-important >}}
 
-#### To delete a subtenant
-
 Click the menu icon at the right of the respective subtenant entry and then click **Delete** to finally delete a tenant and remove all the data of the tenant.
 
-
 <a name="subscribe"></a>
-### Applications
+### To subscribe an application
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} applications.
 
 <img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
-#### To subscribe an application
-
 Hover over the applications under **Available applications** at the right and click **Subscribe** on the desired application.
 
-#### To unsubscribe an application
+### To unsubscribe an application
 
 Hover over the applications under **Subscribed applications** at the left and click **Unsubscribe**.
 
@@ -233,7 +228,7 @@ The following information is provided:
 * Unhealthy - the number of inactive microservice instances
 * Desired - the number of desired microservice instances
 * Name - microservice instance name
-* Restarts - the number of microservice instance restarts. 
+* Restarts - the number of microservice instance restarts.
 
 {{< c8y-admon-info >}}
 Information on the microservice instance name and the number of restarts is displayed in case of at least one restart.

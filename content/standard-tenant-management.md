@@ -4,9 +4,9 @@ icon: "c8y-icon c8y-icon-administration"
 layout: redirect
 type: root
 bundle: standard-tenant-management
-section: 
+section:
   - platform_administration
-weight: 30
+weight: 10
 aliases:
   - /users-guide/user-and-permissions-management/
 ---

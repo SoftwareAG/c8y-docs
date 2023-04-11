@@ -326,7 +326,7 @@ For each tenant policy, the name, an optional description and the number of opti
 The tenant policy will be added to the tenant policies list.
 
 {{< c8y-admon-important >}}
-**Check this -->** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
+When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
 {{< /c8y-admon-important >}}
 
 #### To edit a tenant policy

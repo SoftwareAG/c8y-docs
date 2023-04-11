@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT.
-On top of standard SSO, {{< product-c8y-iot >}} also allows you to access the platform resources using access tokens from your authorization server directly as a Bearer token. For details refer to [Configuring authentication with OAuth2 access tokens from authorization servers](/users-guide/administration/#configuring-authentication-with-oauth2-access-token-from-iam).
+On top of standard SSO, {{< product-c8y-iot >}} also allows you to access the platform resources using access tokens from your authorization server directly as a Bearer token. For details refer to [Configuring authentication with OAuth2 access tokens from authorization servers](/users-guide/administration/#configuring-authentication-with-oauth2-access-tokens-from-authorization-servers).
 
 {{< c8y-admon-req >}}
 To use the SSO feature the following requirements must be met:
@@ -242,7 +242,11 @@ If the token is still active, then we proceed with verifying the token signature
 ![External token introspection validation](/images/users-guide/Administration/sso-access-token-external-iam-introspection-validation.png)
 
 By configuring the **Access token validation frequency** accordingly, you can choose how frequently the introspection is performed 
-as it may be costly to always call the authorization server for the same access token. The default value is set to *1 minute*.
+as it may be costly to always call the authorization server for the same access token. This implies that the validation status for this token is cached internally for that amount of time specified.
+If the token is revoked in the meantime, {{< product-c8y-iot >}} will only be aware during the next validation, i.e. the token will be considered still for the remaining of time until the next validation.
+For this reason, you should use a frequency. The default value is set to *1 minute*.
+
+![External token validation interval](/images/users-guide/Administration/sso-access-token-external-iam-validation-interval.png)
 
 ##### User info endpoint
 

@@ -168,9 +168,9 @@ In the **Navigator** section you specify the parameters for the navigator.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color - the default value is "2c3637".
+* Background color - the default value is "#2c3637".
 * Logo wrapper background color - the default value is "Transparent".
-* Title color - the default value is "FFFFFF".
+* Title color - the default value is "#FFFFFF".
 * Text and buttons color - the default value is "#FAFAFA".
 * Separator line color - the default value is "#FAFAFA".
 * Text color of the current item in the navigator - the default value is "#FAFAFA".

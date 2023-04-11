@@ -64,56 +64,57 @@ In the {{< management-tenant >}}, you also find a column with information on the
 2. Provide the following properties:
 
 	<table>
-	<col style="width:20%">
-	<col style="width:80%">
-	<thead>
-	<tr>
-	<th style="text-align:left">Field</th>
-	<th style="text-align:left">Description</th>
-  <th style="text-align:left">Required</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters.</td>
-  <td style="text-align:left">Yes</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Name</td>
-	<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
-  <td style="text-align:left">Yes</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Administrator's email</td>
-	<td style="text-align:left">A valid email address to enable users to reset their password.</td>
-  <td style="text-align:left">Yes</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Administrator's username</td>
-	<td style="text-align:left">Username for the administrator of this tenant.</td>
-  <td style="text-align:left">Yes</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Contact name</td>
-	<td style="text-align:left">Name of the contact.</td>
-  <td style="text-align:left">No</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Contact phone</td>
-	<td style="text-align:left">Phone number of the contact.</td>
-  <td style="text-align:left">Yes</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Send password reset link as email</td>
-	<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Tenant policy</td>
-	<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
-  <td style="text-align:left">No</td>
-	</tr>
-	</tbody>
+		<col style="width:20%">
+		<col style="width:80%">
+		<thead>
+			<tr>
+				<th style="text-align:left">Field</th>
+				<th style="text-align:left">Description</th>
+				<th style="text-align:left">Required</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="text-align:left">Domain/ URL</td>
+				<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Name</td>
+				<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Administrator's email</td>
+				<td style="text-align:left">A valid email address to enable users to reset their password.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Administrator's username</td>
+				<td style="text-align:left">Username for the administrator of this tenant.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Contact name</td>
+				<td style="text-align:left">Name of the contact.</td>
+				<td style="text-align:left">No</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Contact phone</td>
+				<td style="text-align:left">Phone number of the contact.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Send password reset link as email</td>
+				<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Tenant policy</td>
+				<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
+				<td style="text-align:left">No</td>
+			</tr>
+		</tbody>
 	</table>
 
 

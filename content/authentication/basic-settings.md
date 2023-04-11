@@ -1,8 +1,8 @@
 ---
-title: Changing settings
+title: Basic settings
 weight: 70
 layout: bundle
-section: 
+section:
   - platform_administration
 helpcontent:
 - label: authentication
@@ -24,17 +24,15 @@ helpcontent:
 ---
 
 
-### Changing authentication settings
-
-Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
+Click **Authentication** in the **Settings** menu if you want to view or change the authentication settings.
 
 ![Authentication settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
-#### Login settings
+### Login settings
 
 In the **Preferred login mode** field, you can select one of the following options:
 
@@ -61,7 +59,7 @@ The password validity limit and the password strength may not be editable, if co
 {{< /c8y-admon-info >}}
 
 <a name="basic-auth-restrictions"></a>
-#### Basic Auth restrictions
+### Basic Auth restrictions
 
 Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
 
@@ -74,15 +72,15 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 {{< /c8y-admon-info >}}
 
-#### OAI-Secure
+### OAI-Secure
 
 OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
 
-##### OAI-Secure without the configuration related to the session management (session configuration turned off)
+#### OAI-Secure without the configuration related to the session management (session configuration turned off)
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
-##### OAI-Secure with the configuration of the session management (session configuration turned on)
+#### OAI-Secure with the configuration of the session management (session configuration turned on)
 
 Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 
@@ -183,7 +181,7 @@ Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-ve
 If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use single sign-on since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
 {{< /c8y-admon-info >}}
 
-#### TFA settings
+### TFA settings
 
 Select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
 
@@ -192,7 +190,7 @@ You may select one of the following options:
 * **SMS-based**, supporting the following settings:
 	- **Limit token validity for** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
   - **Limit verification code validity for** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
-  
+
 
 	{{< c8y-admon-info >}}
 An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.

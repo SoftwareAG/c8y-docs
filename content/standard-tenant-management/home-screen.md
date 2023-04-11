@@ -1,9 +1,9 @@
 ---
 title: Home screen
 layout: bundle
-section: 
+section:
   - platform_administration
-weight: 20
+weight: 10
 
 ---
 

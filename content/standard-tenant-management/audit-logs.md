@@ -1,12 +1,12 @@
 ---
 weight: 20
-title: Viewing audit logs
+title: Audit logs
 layout: bundle
-section: 
+section:
   - platform_administration
 helpcontent:
   - label: audit-logs
-    title: Viewing audit logs
+    title: Audit logs
     content: "Audit logs show the operations that users have carried out.
 
 
@@ -14,6 +14,8 @@ helpcontent:
 ---
 
 Audit logs show the operations that users have carried out.
+
+### To view audit logs
 
 To view the audit log list, click **Audit logs** in the **Accounts** menu. For each log entry, the following information is provided:
 
@@ -60,7 +62,7 @@ Only the last 100 logs are visible. Scroll down the page to **Load more** to vie
 The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
 {{< /c8y-admon-info >}}
 
-### Filtering logs
+### To filter logs
 
 In order to easily search through logs, you can filter logs for:
 

@@ -2,7 +2,7 @@
 weight: 120
 title: Enhanced time series support
 layout: bundle
-section: 
+section:
   - platform_administration
 aliases:
   - /users-guide/enterprise-tenant
@@ -14,7 +14,7 @@ The {{< product-c8y-iot >}} Operational Store provides an enhanced time series s
 The enhanced time series support might be enabled for new tenants by default from a {{< product-c8y-iot >}} administrator.
 {{< /c8y-admon-info >}}
 
-### How to configure
+### To configure time series support
 
 The enhanced time series support can be configured via a REST API as a tenant configuration.
 The following example illustrates how to **enable** time series collections for a subtenant:
@@ -71,7 +71,7 @@ In release 10.16, the parameters `dateFrom` and `dateTo` are not supported. Inst
 
 In 10.17+ the parameters `dateFrom` and `dateTo` must be truncated to full hours (for example, `2022-08-19T14:00:00.000Z`), otherwise an error is returned.
 
-### How to check whether time series collections are enabled
+### To check whether time series collections are enabled
 
 With the following request, you can check the value of the time series collections property:
 

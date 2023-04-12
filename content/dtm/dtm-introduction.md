@@ -16,3 +16,12 @@ For more details on the Device Management application, see [Device Management > 
 Assets are created in the DTM application using asset types as the blueprint for assets. An asset type consists of one or more custom properties and subassets.
 
 The DTM application also provides a localization feature to customize the translation for certain content. See [Localization](/dtm/localization) for more information on this feature.
+
+{{< c8y-admon-req >}}
+* Your tenant must be subscribed to the Digital Twin Manager application and the Dtm-ms microservice.
+{{< /c8y-admon-req >}}
+
+{{< c8y-admon-related >}}
+* See [Subscribed applications](/users-guide/administration/#subscribed-applications) for more information on how to access the DTM application in your tenant.
+
+{{< /c8y-admon-related >}}

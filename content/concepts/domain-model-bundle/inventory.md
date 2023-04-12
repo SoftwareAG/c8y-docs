@@ -84,6 +84,42 @@ The approach also enables developing generic application components. For example
 
 For more information on fragments and how managed objects are structured, see the [Device management library](reference/device-management-library/) in the *Reference guide*.
 
+{{< c8y-admon-info >}}
+While designing the data model for the inventory Managed Object it's worth to keep in mind following:
+1. There is no size or length constrains for single fragment, but there is a limitation for overal json document size, which can not exceed 16MB for single Managed Object entry within inventory collection.
+2. Each consecutive fragment added to Managed Object at root level will impose certain delay on querying such an item. If performance of query matters, it's better to nest custom fragments with information within chosen single fragment effectively limiting root fragments number. For example:
+```json
+{
+    "id": "47035",
+    "type": "elstermetering_AS220",
+    "lastUpdated": "2010-11-13T18:28:36.000Z",
+    "c8y_ThreePhaseElectricitySensor": {},
+    "c8y_DeviceMetrics": {
+        "c8y_ConnectionMetrics": {
+            "failures": 0,
+            "successful": 1403,
+            "total": 1403
+        },
+        "c8y_Alarms": {
+            "requested": 100,
+            "successful": 100
+        },
+        "c8y_Measurements": {
+            "requested": 1303,
+            "successful": 1303
+        }
+    },
+    "c8y_DeviceMetricsConfiguration": {
+        "deviceRepresentationUpdateIntervalCron": "0 22 * * *",
+        "monitorApi": [
+            "measurements",
+            "alarms"
+        ]
+    }
+}
+```
+{{< /c8y-admon-info >}}
+
 #### Naming conventions of fragments
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.

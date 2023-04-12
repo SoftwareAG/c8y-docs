@@ -33,7 +33,7 @@ The following placeholders can be found in the **Configuration** tab:
 |{size}|Will be replaced with the storage usage percentage value.
 
 {{< c8y-admon-info >}}
-Note that above mentioned placeholders might not be applicable to certain templates. While preparing content, be adviced by contextual information provided within user interface.
+The above mentioned placeholders might not be applicable to certain templates. While preparing content, note the information provided in the UI.
 {{< /c8y-admon-info >}}
 
 #### Two-factor authentication

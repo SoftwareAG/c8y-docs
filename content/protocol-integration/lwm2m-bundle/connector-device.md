@@ -19,7 +19,7 @@ We recommend you to never delete the connector device.
 ### Migration of the LWM2M devices
 
 Starting from version 10.15.0, the new device registration for LWM2M is introduced.
-The LWM2M devices which were created earlier than v10.15, or if new LWM2M devices are created using the "General bulk registration" method, then those devices must be migrated
+LWM2M devices created earlier than version 10.15.0 and new LWM2M devices created via bulk registration must be migrated
 to the new structure using `migrateLwm2mDevices` command for the tenant. The migrate operation will try to migrate all devices and their existing client registration objects to 
 the new format in the database. It will be backwards compatible since it retains old fragments. 
 

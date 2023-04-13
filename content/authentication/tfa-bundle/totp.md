@@ -1,12 +1,10 @@
 ---
 title: TOTP
-layout: bundle
+layout: redirect
 section:
   - platform_administration
 weight: 30
 ---
-
-what happens if i add text there
 
 {{< c8y-admon-req >}}
 Users must install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.

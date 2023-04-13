@@ -1,10 +1,7 @@
 ---
 title: Tenant hierarchy
-icon: "c8y-icon c8y-icon-sub-tenants"
-type: root
-layout: redirect
-bundle: tenant-hierarchy
+layout: bundle
 section:
   - getting_started
-weight: 20
+weight: 60
 ---

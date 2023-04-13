@@ -2,7 +2,7 @@
 weight: 50
 title: Additional resources
 layout: bundle
-section: 
+section:
   - getting_started
 aliases:
   - /about-doc/online-information
@@ -14,7 +14,7 @@ The **Installation and Operations guides** for the {{< product-c8y-iot >}} platf
 
 ### Developer community
 
-You can find documentation and other technical information on the [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}) website.
+You can find a lot of documentation and other technical information on the [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}) website.
 
 On this community, you can:
 
@@ -46,6 +46,10 @@ If you have any questions, you can find a local or toll-free number for your cou
 
 For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
 
-### Releases delta training
+### eLearning
 
-To learn what's new in {{< product-c8y-iot >}} or in a particular area of the platform we offer various eLearning delta trainings on the [{{< company-sag >}} {{< learning-portal >}}]({{< link-sag-training-delta >}}) which cover the new and enhanced functionality available in a specific product release.
+Visit the [{{< learning-portal >}}]({{< link-sag-training >}}) where you can find helpful eLearning material, for example:
+
+- **{{< product-c8y-iot >}} Basic** - a self-paced training which provides a jump-start into the {{< product-c8y-iot >}} platform offering in the {{< company-sag >}} clouds. Short videos followed by hands-on labs on your free trial {{< product-c8y-iot >}} tenant provide fundamental knowledge on how you can connect and manage your remote assets, use powerful analytics to derive insights and incorporate them into your business processes using the {{< product-c8y-iot >}} platform.
+
+To learn what's new in {{< product-c8y-iot >}} or in a particular area of the platform we offer various **eLearning delta trainings** on the {{< learning-portal >}} which cover the new and enhanced functionality available in a specific product release.

@@ -1,8 +1,8 @@
 ---
-weight: 20
-title: Get started using the UI
+weight: 10
+title: Documentation for users
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
@@ -15,7 +15,7 @@ If you are new to {{< product-c8y-iot >}}, you might want to learn about the arc
 
 ### User guides
 
-Check out the following user guides which might serve as a starting point:
+Check out the following sections which might serve as a starting point:
 
 <table>
 <colgroup>
@@ -24,7 +24,7 @@ Check out the following user guides which might serve as a starting point:
 </colgroup>
 <thead>
 <tr>
-<th align="left">Guide</th>
+<th align="left">Section</th>
 <th align="left">Content</th>
 </tr>
 </thead>
@@ -49,14 +49,3 @@ Check out the following user guides which might serve as a starting point:
 </table>
 
 If you are looking for more detailed information on device integration using supported device protocols like LWM2M or OPC UA, refer to the <a href="/protocol-integration/overview">Protocol integration guide</a>.
-
-
-### eLearning
-
-Visit the [{{< company-sag >}} {{< learning-portal >}}]({{< link-sag-training >}}) where you can find helpful eLearning material to get started:
-
-[{{< product-c8y-iot >}} Basic]({{< link-sag-training-basic >}}) is a self-paced training which provides a jump-start into the {{< product-c8y-iot >}} platform offering in the {{< company-sag >}} clouds. Short videos followed by hands-on labs on your free trial {{< product-c8y-iot >}} tenant provide fundamental knowledge on how you can connect and manage your remote assets, use powerful analytics to derive insights and incorporate them into your business processes using the {{< product-c8y-iot >}} platform.
-
-### Additional resources
-
-For more information and resources, see also [Additional resources](/welcome/additional-resources/).

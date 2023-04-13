@@ -1,12 +1,12 @@
 ---
-title: Getting Started
+title: Using the UI
 icon: "c8y-icon c8y-icon-c8y-data"
 type: root
 layout: redirect
 bundle: getting-started
-section: 
+section:
   - getting_started
 weight: 30
 ---
 
-The Getting Started section describes how to access and log into the {{< product-c8y-iot >}} platform and will walk you through basic functionalities applying to all {{< product-c8y-iot >}} applications.
+Learn how to access the {{< product-c8y-iot >}} platform and how to configure your user settings, and read about the general functionalities applying to all {{< product-c8y-iot >}} applications.

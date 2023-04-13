@@ -1,6 +1,6 @@
 ---
 title: Introduction
-layout: bundle
+layout: redirect
 section:
   - platform_administration
 weight: 10

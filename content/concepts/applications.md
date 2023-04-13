@@ -1,12 +1,9 @@
 ---
 title: Developing applications
-icon: "c8y-icon c8y-icon-atom"
-type: root
-layout: redirect
-bundle: applications
-weight: 10
-section: 
-  - app_development
+layout: bundle
+weight: 40
+section:
+  - getting_started
 aliases:
   - /concepts-guide/developing-m2m-applications
   - /concepts-guide/developing-m2m-applications.html

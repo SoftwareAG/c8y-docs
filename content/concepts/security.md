@@ -1,9 +1,6 @@
 ---
 title: Security aspects
-icon: "dlt-c8y-icon-card-security"
-type: root
-layout: redirect
-bundle: security
+layout: bundle
 section:
   - getting_started
 weight: 90

@@ -1,5 +1,5 @@
 ---
-title: "Platform administration"
+title: "Platform management"
 icon: "c8y-icon c8y-icon-administration"
 weight: 20
 svg: '<svg
@@ -186,4 +186,4 @@ svg: '<svg
 '
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam non quas, voluptate nobis praesentium ab aut eius asperiores sint dolores dolore magnam nihil? Optio perspiciatis in, rerum minus ipsa aut.
+Find detailed information on the the administration of {{< standard-tenant >}}s and {{< enterprise-tenant >}}s, and on platform configuration and authentication settings.  

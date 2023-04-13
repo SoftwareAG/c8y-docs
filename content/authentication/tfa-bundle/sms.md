@@ -1,6 +1,6 @@
 ---
 title: SMS
-layout: bundle
+layout: redirect
 section:
   - platform_administration
 weight: 20
@@ -11,7 +11,7 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 {{< /c8y-admon-req >}}
 
 
-#### To enable a specific user
+### To enable a specific user
 
 1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
 2. Select the checkbox next to **Enable two-factor authentication**.

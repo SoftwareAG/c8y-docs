@@ -21,7 +21,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Threshold Value|This value is compared against the input value.|float|Default: 0.5|
 |Direction|The direction in which to check for a threshold crossing: whether to detect a crossing in the upwards direction, in the downwards direction, or in both directions.|Option - one of:<ul><li>Upwards</li><li>Downwards</li><li>Both</li></ul>|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
@@ -29,7 +29,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value for which to detect a crossing.|float|
 |Reset|Resets the count of crossings.|pulse|
 |Sample|Forces re-evaluation of the current value and sends the output.|boolean|
@@ -37,7 +37,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Crossing Count|The number of crossings.|float|
 |Crossing|Sends a pulse when a crossing is detected.|pulse|
 
@@ -54,14 +54,14 @@ The block generates an output after getting at least two input values.
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Value to calculate the delta.|float|
 |Reset|Resets the state of the block.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Delta Value|The delta value.|float|
 
 
@@ -77,14 +77,14 @@ Only generates an output if both inputs receive a value.
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value 1|First input to the block.|float|
 |Value 2|Second input to the block.|float|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Absolute Difference|The absolute difference of the inputs.|float|
 |Signed Difference|The signed difference of the inputs. Positive if the Value 1 input is larger than the Value 2 input.|float|
 
@@ -101,20 +101,20 @@ Outputs the change in direction and the last significant inflection point, ignor
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Hysteresis|Only counts a change in direction if the input value changes by the defined hysteresis value since the point of changing direction.<br><br>Must either be zero (meaning all changes of direction are counted) or a a positive number.|float|Default: 0.0|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Numeric value for which to detect the change in direction.|float|
 |Reset|Resets the state of the block.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Upward Direction|Is <tt>true</tt> if the input value changes towards the upward direction, else <tt>false</tt>.|boolean|
 |Inflection Point|The last inflection point detected by the block.|float|
 
@@ -129,7 +129,7 @@ Evaluates an expression to perform arithmetic or logical calculations or string 
 On change of input values (once all in-use inputs have been received), the expression specified in the parameter is re-calculated.
 
 
-The expression language is much like EPL (see <a target="_blank" rel="external noopener" href="https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html/#page/pam-webhelp%2Fco-ApaEplRef_how_this_book_is_organized.html%23">EPL reference</a>), but is restricted to <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types. All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision). Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\\"</tt></li> <li>Backslash - <tt>\\\\</tt></li> <li>Newline - <tt>\\</tt><tt>n</tt></li> <li>Tab - <tt>\\</tt><tt>t</tt></li> </ul>
+The expression language is much like EPL (see <a target="_blank" rel="external noopener" href="https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-ApaEplRef_how_this_book_is_organized.html%23">EPL reference</a>), but is restricted to <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types. All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision). Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\\"</tt></li> <li>Backslash - <tt>\\\\</tt></li> <li>Newline - <tt>\\</tt><tt>n</tt></li> <li>Tab - <tt>\\</tt><tt>t</tt></li> </ul>
 
 
 The values of the inputs are available as <tt>input1</tt>, <tt>input2</tt>, <tt>input3</tt>, <tt>input4</tt> and <tt>input5</tt>. The input values can be of type <tt>float</tt>, <tt>string</tt>, <tt>boolean</tt> and <tt>any</tt>. Logical, relational, numerical and equality operators can be used on the values of the supported types. Logical operators are case insensitive, so for example, <tt>AND</tt> and <tt>And</tt> are allowed. Built-in methods on the <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types can be called, including <tt>x.abs()</tt> (absolute value of <tt>x</tt>), <tt>x.pow(y)</tt> (raise <tt>x</tt> to the power <tt>y</tt>), <tt>x.sin()</tt> (sine of <tt>x</tt> in radians), <tt>x.round()</tt> (rounds <tt>x</tt> to the nearest integer), and <tt>s.ltrim()</tt> (remove whitespace from the start of the string <tt>s</tt>). Built-in static methods of the supported types can be called by specifying the type name, followed by a dot (<tt>.</tt>) and the method name, for example, <tt>float.max(input1, input2)</tt> (find the larger of two input values). Built-in constants on the supported types can be accessed by specifying the type name, followed by a dot (<tt>.</tt>) and the constant name, for example, <tt>float.E</tt> (Euler's constant). Values of type <tt>any</tt> are unpacked at runtime to evaluate the expression. After unpacking, the value must be of type <tt>float</tt>, <tt>string</tt> or <tt>boolean</tt>. The type checker tries to validate the expressions during the validation phase, but this is not always possible with the <tt>any</tt> type. So if an expression contains the <tt>any</tt> type, even if it passes the validation phase, it can still fail at runtime due to a wrong type of variable being passed or an unsupported operation being performed. For a full list of built-in methods and constants, consult the API <a target="_blank" rel="external noopener" href="https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-ApaDoc_apamadoc_documentation.html%23">Reference for EPL (ApamaDoc)</a>.
@@ -140,13 +140,13 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 ### Parameters
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Expression|An expression - a string representation of an EPL expression.<br><br>Similar to EPL expressions, but with the differences as described above.|string|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |input1|First input, to be used as <tt>input1</tt> in the expression.|any|
 |input2|Second input, to be used as <tt>input2</tt> in the expression.|any|
 |input3|Third input, to be used as <tt>input3</tt> in the expression.|any|
@@ -156,7 +156,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Result|Result of the expression.|any|
 
 
@@ -175,20 +175,20 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input Base|The number base of the input stream, in the range 2 to 36.|integer|Default: 16|
 |Radix Character|The character to use as the radix point. Expected to be a dot or a comma.|Option - one of:<ul><li>Dot</li><li>Comma</li></ul>|Default: Dot|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Base N|String input in base N.|string|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Float|Numeric output.|float|
 
 
@@ -207,7 +207,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input Source|The device or group of devices which contains a data point. If specified, then this device (typically the same device as the measurement source) is checked to see if it contains a data point for the specified fragment and series. If it contains a data point, the red and yellow range values from the source object are used in place of the KPI values. The model editor uses the current device or asset name. This is mapped internally to the inventory identifier.|string|Optional|
 |Data Point Fragment and Series|This parameter must be specified if the Input Source parameter is specified. It specifies a data point from the source object. This is typically the same as the fragment and series of the measurement source.<br><br>The data point fragment and series must be specified as <tt>fragment.series</tt>.|string|Optional|
 |Upper end of yellow range exclusive|If set, the upper end of the yellow range is treated as being exclusive.|boolean|Default: false|
@@ -216,14 +216,14 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Numeric value to compare with the defined ranges.|float|
 |KPI|Object containing the <tt>c8y_Kpi</tt> property.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Red|Is set to <tt>true</tt> when the value is in the red range (if a red range is defined).|boolean|
 |Yellow|Is set to <tt>true</tt> when the value is in the yellow range (if a yellow range is defined).|boolean|
 |Unit|The unit name from the data point.|string|
@@ -245,20 +245,20 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Upper Limit|Any input above this value results in the output being capped at this value.|float|Optional|
 |Lower Limit|Any input below this value results in the output being capped at this value.|float|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value.|float|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Output|The input value, if it is within the limits defined by the Lower Limit and Upper Limit parameters. If the input value exceeds one of the limit parameters, it is set to the value of that parameter.|float|
 
 
@@ -280,13 +280,13 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 ### Parameters
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Machine Learning Model|Name of the Machine Learning model.|string|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value 1|Input value 1.|any|
 |Value 2|Input value 2.|any|
 |Value 3|Input value 3.|any|
@@ -301,7 +301,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Output 1|Output value 1.|any|
 |Output 2|Output value 2.|any|
 |Output 3|Output value 3.|any|
@@ -329,7 +329,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Lower Range|The lower range value.|float|Optional|
 |Include Lower Range|If selected, an input value equal to the lower range is considered to identify whether it is within or out of the range. If not selected, an input value equal to the lower range is not considered.|boolean|Default: true|
 |Upper Range|The upper range value.|float|Optional|
@@ -338,14 +338,14 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value to validate against the defined range.|float|
 |Reset|Resets the state of the block.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Out of Range|Is set to <tt>true</tt> when the input value is not within the defined range.|boolean|
 |In Range|Is set to <tt>true</tt> when the input value is within the defined range.|boolean|
 |Crossed|Sends a pulse when the range is crossed.|pulse|
@@ -363,7 +363,7 @@ Ranges are defined using a list of unique upper bound values in increasing order
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Minimum Value|The lower bound of the first range (first row). If nothing is specified, negative infinity is taken as the minimum value.|float|Optional|
 |Ranges|A boundary and mapped value pair for the upper bound of a range for which to look up the input value and a mapped value that is to be used as the output value if the input value lies within the range.|List of Upper Bound value and Mapped Value|
 |Exclude Upper|If selected, an input value equal to the upper bound of a row is considered to be part of the range of the next row. If not selected, such an input value is considered to be part of the range of the current row.|boolean|Default: true|
@@ -372,13 +372,13 @@ Ranges are defined using a list of unique upper bound values in increasing order
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value for which the range is to be found.|float|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Mapped|The Mapped Value for the range that is matched.|any|
 |Failed|Is <tt>true</tt> when the input does not lie in any range. Otherwise it is <tt>false</tt>.|boolean|
 
@@ -401,20 +401,20 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Rule|The rounding rule to be applied.|Option - one of:<ul><li>Up</li><li>Down</li><li>Towards Zero</li><li>Nearest</li><li>Even or Nearest</li></ul>|
 |Number of Decimal Points|The number of decimal points the input is to be rounded to.|integer|Default: 0|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value which is to be rounded.|float|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Rounded Value|The input value rounded to a specified number of decimal points or to an integer.|float|
 
 
@@ -433,21 +433,21 @@ A pulse is sent when the defined threshold value is crossed from any direction.
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Threshold Value|This value is compared against the input value.|float|
 |Direction|The direction in which to look: whether the input value is above, below or equal to the defined threshold, or whether it crosses the defined threshold.|Option - one of:<ul><li>Above</li><li>Above or Equal</li><li>Below</li><li>Below or Equal</li><li>Crossing</li></ul>|Default: Above|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value to compare against the defined threshold value.|float|
 |Reset|Resets the state of the block.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Breached Threshold|Is set to <tt>true</tt> when the threshold is breached.|boolean|
 |Within Threshold|Is set to <tt>true</tt> when the threshold is not breached.|boolean|
 |Crossed Threshold|Sends a pulse when the threshold is crossed.|pulse|
@@ -468,20 +468,20 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Output Base|The number base of the output stream, in the range 2 to 36.|integer|Default: 16|
 |Radix Character|The character to use as the radix point. Expected to be a dot or a comma.|Option - one of:<ul><li>Dot</li><li>Comma</li></ul>|Default: Dot|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Float|Numeric input.|float|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Base N|String output in base N.|string|
 
 

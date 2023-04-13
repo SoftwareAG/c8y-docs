@@ -7,7 +7,7 @@ layout: redirect
 The following table gives a brief description of all blocks that can be selected from the palette of the model editor, sorted alphabetically (excluding custom blocks that you have created yourself).
 
 |Block Name|Description|
-|:----------|:----------|
+|:---|:---|
 |[Alarm Input](#alarm-input)|Receives <tt>Alarm</tt> objects from a device or devices in a group and reorders them based on the timestamp.|
 |[Alarm Output](#alarm-output)|Creates a new <tt>Alarm</tt> object for a specified device, asset or for the trigger device with a pre-configured alarm name and parameters.|
 |[AND](#and)|Performs a logical 'and' on the inputs.|

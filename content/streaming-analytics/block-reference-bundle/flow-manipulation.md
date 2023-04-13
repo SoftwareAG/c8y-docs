@@ -15,13 +15,13 @@ Available modes are: <ul> <li>Minimum: Outputs the minimum of the connected inpu
 ### Parameters
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Mode|The mode to be selected.|Option - one of:<ul><li>Minimum</li><li>Maximum</li><li>Average (Mean)</li><li>Latest Changed</li><li>Latest Input</li></ul>|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value 1|First input value to the block.|any|
 |Value 2|Second input value to the block.|any|
 |Value 3|Third input value to the block.|any|
@@ -31,7 +31,7 @@ Available modes are: <ul> <li>Minimum: Outputs the minimum of the connected inpu
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Combined Value|The calculated combined value.|sameAsAll(value1, value2, value3, value4, value5)|
 
 
@@ -47,7 +47,7 @@ The block will start disabled if the Enable input is connected, otherwise the bl
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Null Value|The value to use as output value when the gate is either disabled or closed.<br><br>The exact type of the value depends on the Null Value Type parameter. If the Null Value Type parameter is specified then the string value is parsed as the specified type. If the Null Value Type parameter is not specified, and the value is parsable into a float or a boolean value then it is parsed into the corresponding value type, otherwise it is used as a string value.|string|Optional|
 |Null Value Type|The type of the value specified by the Null Value parameter. If specified, the null value is parsed into the specified type.|Option - one of:<ul><li>Float</li><li>Boolean</li><li>String</li></ul>|Optional|
 |Close Duration (secs)|The amount of time (in seconds) the gate should be closed when a close signal is received.<br><br>If the parameter is not specified, then after a close signal is received, the gate remains closed until an open signal is received. If the parameter is specified, then the gate automatically opens after the specified number of seconds, unless another open or close signal is received before the time has elapsed. On opening, if the gate is also enabled, then the latest input value is sent out as output.
@@ -57,7 +57,7 @@ This must be a finite and positive number.|float|Optional|
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The value to pass to output.|any|
 |Enable|Enables the gate. If the gate is always to be enabled, then leave this port unconnected.|boolean|
 |Open|Opens the gate. If the gate is to be open at the start, then leave this port unconnected.|pulse|
@@ -66,7 +66,7 @@ This must be a finite and positive number.|float|Optional|
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Gated Value|Same as the input value when the gate is open and enabled. Otherwise the value specified by the Null Value parameter.|input(value)|
 |Activated|Output pulse. Generated when the gate becomes active. The gate is active when it is both open and enabled.|pulse|
 |Deactivated|Output pulse. Generated when the gate becomes inactive. The gate is inactive when it is either closed or disabled.|pulse|
@@ -84,14 +84,14 @@ Only generates an output if the input value changes and the block is enabled. Th
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value to be monitored.|any|
 |Enable|Enables the block. If the block is always to be enabled, then leave this unconnected.|boolean|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Latched Value|Same as the input value. Generated only if the input has changed while the block was enabled.|input(value)|
 |Changed|Output pulse. Generated only if the input has changed while the block was enabled.|pulse|
 |Enabled|Output pulse. Generated when the block is enabled but was previously disabled.|pulse|
@@ -113,19 +113,19 @@ For example, a numeric value passed to the OR block is treated as <tt>true</tt> 
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Mode|Controls when the block sends a pulse.|Option - one of:<ul><li>On value change</li><li>On every input</li><li>On non-zero values</li></ul>|Default: On value change|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input to treat as pulse.|any|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Pulse|The output pulse value converted from the input value.|pulse|
 
 
@@ -147,7 +147,7 @@ Example: Input 1 has "high", Input 2 has "medium", Input 3 has "low", and the No
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input 1|The output to be sent when the Input 1 port receives a <tt>true</tt> value.|string|
 |Input 2|The output to be sent when the Input 2 port receives a <tt>true</tt> value, but only if this is the port with the lowest number in its name.|string|Optional|
 |Input 3|The output to be sent when the Input 3 port receives a <tt>true</tt> value, but only if this is the port with the lowest number in its name.|string|Optional|
@@ -161,7 +161,7 @@ If the Type parameter remains unselected, the type of the output value is set ba
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Input 1|Causes the Input 1 parameter value to be sent if <tt>true</tt>.|boolean|
 |Input 2|Causes the Input 2 parameter value to be sent if <tt>true</tt> (and no lower numbered input is <tt>true</tt>).|boolean|
 |Input 3|Causes the Input 3 parameter value to be sent if <tt>true</tt> (and no lower numbered input is <tt>true</tt>).|boolean|
@@ -171,7 +171,7 @@ If the Type parameter remains unselected, the type of the output value is set ba
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Output|The output value from one of the parameters.|any|
 
 
@@ -196,7 +196,7 @@ The expected use case is that the Selected Input parameter is set to a template 
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Selected Input|To specify an output, specify one of the five input names. To act as a circuit breaker, leave this parameter empty.|string|Optional|
 |Name for input1|The name of the first input to the block.|string|Default: input1|
 |Name for input2|The name of the second input to the block.|string|Default: input2|
@@ -207,7 +207,7 @@ The expected use case is that the Selected Input parameter is set to a template 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |input1|The first input.|any|
 |input2|The second input.|any|
 |input3|The third input.|any|
@@ -217,7 +217,7 @@ The expected use case is that the Selected Input parameter is set to a template 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Switch|The value from the specified input, or no value (circuit breaker) if the Selected Input parameter is empty.|sameAsAll(input1, input2, input3, input4, input5)|
 
 
@@ -231,19 +231,19 @@ Delays the input by the specified amount of time.
 ### Parameters
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Delay (secs)|The amount of time (in seconds) by which the input will be delayed.<br><br>This must be a finite and positive number.|float|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value to be delayed.|any|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Delayed Value|The delayed output value.|input(value)|
 
 

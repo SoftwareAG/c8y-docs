@@ -18,20 +18,20 @@ The Value parameter can be treated as either a string, or as a JSON value.  For 
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Value|The value to output.|string|
 |Type|How to interpret the Value parameter.|Option - one of:<ul><li>string</li><li>JSON</li></ul>|Default: JSON|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Trigger|If connected, send output on this trigger.|boolean|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Output|The output value from the Value parameter.|any|
 
 
@@ -62,7 +62,7 @@ This block is not supported in simulation mode.
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Seconds|The seconds at which to trigger the signal. <p>Range: 0 to 59.</p>|string|Default: 0|
 |Minutes|The minutes at which to trigger the signal. <p>Range: 0 to 59.</p>|string|Default: *|
 |Hours|The hours at which to trigger the signal. <p>Range: 0 to 23.</p>|string|Default: *|
@@ -73,7 +73,7 @@ This block is not supported in simulation mode.
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Timer Tick|Sent at each trigger time based on the cron parameters.|pulse|
 
 
@@ -95,13 +95,13 @@ If multiple signals are received at the same time, they are processed in the ord
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Periodic Output (secs)|The amount of time (in seconds) between automatically generated outputs by an active block. If not set, then an output is only generated when a measure signal is received.<br><br>This must be a finite and positive number.|float|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Measure|Triggers an output of the duration (in seconds) since the block was activated. If the block is inactive, then 0.0 is output.|pulse|
 |Reset|Deactivates and resets the state of the block.|pulse|
 |Start|Activates the block.|pulse|
@@ -109,7 +109,7 @@ If multiple signals are received at the same time, they are processed in the ord
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Duration|The time in seconds since a start signal was received.|float|
 
 
@@ -146,7 +146,7 @@ In converting a string to a float, this block treats an empty string as a value 
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Property Path|The name or path of the property that is to be extracted from the input value. If not set, all of the properties are output.|string|Optional|
 |Property Type|The type to which the property value is to be converted. If set to Properties, a pulse is output with properties from the extracted value.|Option - one of:<ul><li>String</li><li>Boolean</li><li>Float</li><li>Properties</li></ul>|Default: String|
 |Clear On Missing|If selected, the default value of the specified type is output if the Property Path parameter was not specified or if the value cannot be converted into the specified type.|boolean|Default: false|
@@ -154,13 +154,13 @@ In converting a string to a float, this block treats an empty string as a value 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value from which the property is to be extracted.|any|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Extracted Value|The value that has been extracted from the input value.|any|
 
 
@@ -176,19 +176,19 @@ The boundary line itself is considered to be outside of the geofence area.
 ### Parameters
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Geofence|A polygon describing an area on the Earth's surface.<br><br>Note that crossing the international date line, namely the longitude of +/- 180 degrees, is not supported.|sequence<apama.analyticsbuilder.LngLat>|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Position|The input value from which the properties for the longitude (lng) and latitude (lat) are to be extracted.|any|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Within Geofence|Is set to <tt>true</tt> when the device is within the defined geofence.|boolean|
 |Entered Geofence|Sends a signal when the device enters the defined geofence.|pulse|
 |Exited Geofence|Sends a signal when the device leaves the defined geofence.|pulse|
@@ -206,21 +206,21 @@ The block can optionally detect an absence of changes in value if repeated same-
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Ignore Repeated Inputs|If selected, same-value inputs are ignored.|boolean|Default: false|
 |Duration (secs)|The amount of time (in seconds) the block waits for an input.<br><br>This must be a finite and positive number.|float|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The data whose presence or absence is being detected.|any|
 |Reset|Resets the state of the block - resets any timer and the previous value.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Missing Data|Absence of data, <tt>true</tt> if no input is received within the specified duration, else <tt>false</tt>.|boolean|
 
 
@@ -242,7 +242,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Property 1|A property to set in the output, using the value from input port 1.|string|Optional|
 |Property 2|A property to set in the output, using the value from input port 2.|string|Optional|
 |Property 3|A property to set in the output, using the value from input port 3.|string|Optional|
@@ -252,7 +252,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Input 1|Value to be added using the property name in parameter Property 1.|any|
 |Input 2|Value to be added using the property name in parameter Property 2.|any|
 |Input 3|Value to be added using the property name in parameter Property 3.|any|
@@ -263,7 +263,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Output|The output value with extra properties supplied.|pulse|
 
 
@@ -306,20 +306,20 @@ For more information, see the <a target="_blank" rel="external noopener" href="h
 ### Parameters
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Text Template|The text that is used to generate the output by substituting the identifiers in it, such as #{name}, with the values from the input ports.|string|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Object|Used to substitute identifiers that are not prefixed with <tt>source.</tt>. For example, <tt>#{name}</tt> or <tt>#{timestamp}</tt>.|any|
 |Source|Used to substitute identifiers that are prefixed with <tt>source.</tt>. For example, <tt>#{source.name}</tt>.|any|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Output|String containing the substitutions from the text template.|string|
 
 
@@ -341,7 +341,7 @@ The following exception applies if both signals are received at the same time: t
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Set Delay (secs)|The amount of time (in seconds) after which the set signal is processed.<br><br>If the parameter is not specified, then the signal is immediately processed.
 <br><br>
 This must be a finite and positive number.|float|Optional|
@@ -352,14 +352,14 @@ This must be a finite and positive number.|float|Optional|
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Set|Sets the output to <tt>true</tt>. Any pending delayed set or reset signals are cancelled on the new input.|pulse|
 |Reset|Sets the output to <tt>false</tt>. Any pending delayed set or reset signals are cancelled on the new input.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The output value generated from the input signals.|boolean|
 
 

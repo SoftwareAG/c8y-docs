@@ -21,7 +21,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Alarm Type|The alarm type for which the block will listen.|string|
 |Input Source|Defines the device or group of devices from which the alarm has been received.<br><br>This can be a single device, or an object that references or contains a group of devices.|string|
 |Severity|The severity of the alarm. If not specified, the block will listen for all alarm severities.|Option - one of:<ul><li>Critical</li><li>Major</li><li>Minor</li><li>Warning</li></ul>|Optional|
@@ -32,7 +32,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Alarms|Generates a pulse output for each <tt>Alarm</tt> object received, with extra properties.|pulse|
 
 
@@ -57,7 +57,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input Source|Defines the device or group of devices from which the event has been received.<br><br>This can be a single device, or an object that references or contains a group of devices.|string|
 |Event Type|The event type for which the block will listen.|string|
 |Notification Mode|Filters <tt>Event</tt> events such that only new events, updated events, or all events are processed. The default is that all events are processed.|Option - one of:<ul><li>All</li><li>Updates only</li><li>New events only</li></ul>|Default: All|
@@ -66,7 +66,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Events|Generates a pulse output for each <tt>Event</tt> object received, with extra properties.|pulse|
 
 
@@ -103,7 +103,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input Source|Defines the device or group of devices from which the managed object has been received.<br><br>This can be a single device, or an object that references or contains a group of devices.|string|
 |Property Name|The name of the property for which to listen.<br><br>The <tt>ManagedObject</tt> object must have a property of this name otherwise, it will be ignored. If not set, the objects are not filtered - every update will generate a pulse output with all of the properties from the <tt>ManagedObject</tt>.|string|Optional|
 |Capture Start Value|Outputs the initial value when the model is activated.|boolean|Default: false|
@@ -111,7 +111,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Generates an output for each <tt>ManagedObject</tt> object received.<br><br>All properties of the managed object are available as extra properties. You can use the Extract Property block to access their values.|any|
 
 
@@ -136,7 +136,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input Source|Defines the device or group of devices from which the measurement has been received.<br><br>This can be a single device, or an object that references or contains a group of devices.|string|
 |Fragment and Series|The fragment for which the block will listen.<br><br>This only shows fragments and series for measurements associated with the object (device or group) selected. Any measurements on a device within a group will only be shown when a device is selected (unless there are measurements with the group as the source). For example, if a temperature measurement is sent in Celsius, the fragment is <tt>T</tt> and the series is <tt>C(Celsius)</tt>. This means, that this parameter can be set as <tt>T.C</tt> or <tt>T=>C</tt>.|string|
 |Ignore Timestamp|If selected, the timestamp of the incoming measurement is ignored. Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.|boolean|Default: false|
@@ -144,7 +144,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The numeric value from the measurement object.|float|
 
 
@@ -178,7 +178,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input Source|Defines the device or group of devices from which the operation has been received.<br><br>This can be a single device, or an object that references or contains a group of devices.|string|
 |Operation Name|The name of the operation for which the block will listen.<br><br>If specified, the <tt>Operation</tt> object must have a property of this name otherwise, it will be ignored.|string|Optional|
 |Operation Status|The status for which to listen.<br><br>If not specified, the block will listen for operations with any status.|Option - one of:<ul><li>SUCCESSFUL</li><li>FAILED</li><li>EXECUTING</li><li>PENDING</li></ul>|Optional|
@@ -187,7 +187,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Operations|Generates a pulse output for each <tt>Operation</tt> object received.<br><br>All properties of the <tt>Operation</tt> object are available as extra properties. You can use the Extract Property block to access their values.|pulse|
 
 
@@ -218,7 +218,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Input Source|Defines the device or group of devices from which the position is received.<br><br>This can be a single device, or an object that references or contains a group of devices.|string|
 |Event Type|The event type for which the block listens. If left unset, then there is no filtering by type.<br><br>To consume events from another model, this property must be set.|string|Optional|
 |Notification Mode|Filters <tt>Event</tt> events such that only new events, updated events, or all events are processed.<br><br>The default is that all events are processed.|Option - one of:<ul><li>All</li><li>Updates only</li><li>New events only</li></ul>|Default: New events only|
@@ -228,7 +228,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Position|An object containing at least latitude and longitude.|any|
 
 

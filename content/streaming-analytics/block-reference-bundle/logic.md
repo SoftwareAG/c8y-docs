@@ -15,7 +15,7 @@ If all the connected inputs are <tt>true</tt>, then the output will be <tt>true<
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value 1|First input value to the block.|boolean|
 |Value 2|Second input value to the block.|boolean|
 |Value 3|Third input value to the block.|boolean|
@@ -25,7 +25,7 @@ If all the connected inputs are <tt>true</tt>, then the output will be <tt>true<
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |AND|The logical 'and' of the inputs.|pulseOrBoolean(value1, value2, value3, value4, value5)|
 
 
@@ -41,13 +41,13 @@ If the connected input is <tt>true</tt>, then the output will be <tt>false</tt>.
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Input value to the block.|boolean|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |NOT|The logical 'not' of the input.|boolean|
 
 
@@ -63,7 +63,7 @@ If any of the connected inputs is <tt>true</tt>, then the output will be <tt>tru
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value 1|First input value to the block.|boolean|
 |Value 2|Second input value to the block.|boolean|
 |Value 3|Third input value to the block.|boolean|
@@ -73,7 +73,7 @@ If any of the connected inputs is <tt>true</tt>, then the output will be <tt>tru
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |OR|The logical 'or' of the inputs.|sameAsAll(value1, value2, value3, value4, value5)|
 
 

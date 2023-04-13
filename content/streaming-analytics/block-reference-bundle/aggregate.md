@@ -30,14 +30,14 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 |Output Threshold|If present, the output to be sent at the point when it changes by at least this value.<br><br>This must be a finite and positive number.|float|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Input for which the mean is to be calculated.|float|
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current mean value and sends the output.|pulse|
@@ -45,7 +45,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Average|The sum of the value multiplied by how long it stays at that value divided by the total time.|float|
 
 
@@ -61,14 +61,14 @@ If two consecutive input values have different types, they will not be evaluated
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input to be counted.|any|
 |Reset|Reset the counters.|boolean|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Count|The total count of all the inputs.|float|
 |Number Same|The current count of repeated inputs with the same value.<br><br>On a change of value, this is reset to one.|float|
 
@@ -94,7 +94,7 @@ If reset and sample signals are received together, the reset is processed first.
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The current value.|float|
 |Sample|Use the current value in generating statistics. If left unconnected, all values are used.|pulse|
 |Reset|Reset the state of the block.|pulse|
@@ -102,7 +102,7 @@ If reset and sample signals are received together, the reset is processed first.
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Sum|Sum of the sampled input values, <tt>∑x</tt>.|float|
 |Count|Count of the number of sampled input values, <tt>N</tt>.|float|
 |Average|Average (mean) of the sampled input values, <tt>µ = ∑x / N</tt>.|float|
@@ -129,13 +129,13 @@ The Reset input clears the content of the window. Sample input can be used to fo
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The input value for which the gradient is to be calculated.|float|
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current value and sends the output.|pulse|
@@ -143,7 +143,7 @@ The Reset input clears the content of the window. Sample input can be used to fo
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Gradient|The gradient of the input values.|float|
 
 
@@ -168,20 +168,20 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 |Output Period (secs)|The amount of time (in seconds) between each output.<br><br>This must be a finite and positive number.|float|Default: 5.0|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Input value for which the aggregate values are to be calculated.|float|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Minimum|The smallest input value (closest to negative infinity) across all the devices in a group.|float|
 |Maximum|The largest input value (closest to positive infinity) across all the devices in a group.|float|
 |Device Count|The number of devices in a group for which input values have been received so far.|float|
@@ -208,14 +208,14 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 |Output Threshold|If present, the output to be sent at the point when it changes by at least this value.<br><br>This must be a finite and positive number.|float|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Input for which the integral is to be calculated.|float|
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current integral value and sends the output.|pulse|
@@ -223,7 +223,7 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Integral Value|The sum of the value multiplied by how long it stays at that value.|float|
 
 
@@ -248,20 +248,20 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Input for which the minimum and maximum is to be calculated.|float|
 |Reset|Clears the content of the window.|pulse|
 
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Minimum|The smallest value in the window (closest to negative infinity).|float|
 |Maximum|The largest value in the window (closest to positive infinity).|float|
 
@@ -290,13 +290,13 @@ Note:  The Standard Deviation block generates the standard deviation and varianc
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|Input for which the standard deviation and variance is to be calculated.|float|
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current value and sends the output.|pulse|
@@ -304,7 +304,7 @@ Note:  The Standard Deviation block generates the standard deviation and varianc
 ### Output Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Standard Deviation|The standard deviation of the input values.|float|
 |Variance|The variance of the input values.|float|
 

@@ -21,7 +21,7 @@ The default behavior of the Alarm Output block is to produce a synchronous outpu
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Output Destination|The device (or for models handling group of devices, trigger device or asset) that the alarm is associated with. Assets can be used only for sending cross-device aggregates.<br><br>The model editor uses the device name. This is mapped internally to the device identifier.|any|
 |Alarm Type|Identifies the type of this alarm, for example "com_cumulocity_events_TamperEvent".|string|
 |Message|The text that is displayed if the alarm is triggered. The message is set either by parameter or input. If both are not set, the model name is used. You cannot set both.|string|Optional|
@@ -34,7 +34,7 @@ Caution: The default behavior of the Alarm Output block is to produce a synchron
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Create Alarm|Creates an alarm when a signal is received and a severity value is set.|pulse|
 |Clear Alarm|Updates the status of an existing alarm to CLEARED when a signal is received.|pulse|
 |Severity|The severity of the alarm - should be one of the severity values (WARNING, MINOR, MAJOR, CRITICAL) or CLEARED.|string|
@@ -58,7 +58,7 @@ This block produces synchronous output. The parameters that define the output st
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Output Destination|The device (or for models handling group of devices, trigger device or asset) to which the event is to be sent. Assets can be used only for sending cross-device aggregates.<br><br>The model editor uses the current device name. This is mapped internally to the device identifier.|any|
 |Event Type|Identifies the type of this event.|string|
 |Message|The text that will be displayed when the event is created.<br><br>This requires that the Text Input input is not connected. If neither are set, the model name is used as the text.|string|Optional|
@@ -67,7 +67,7 @@ This block produces synchronous output. The parameters that define the output st
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Create Event|Creates an event when a signal is received.|pulse|
 |Text Input|Sets the text of the event. The Message parameter must not be set if this is used.|string|
 |Time|Sets the timestamp of the event. If not connected, the current model time is used.|float|
@@ -98,14 +98,14 @@ This block produces asynchronous output. The parameter that defines the output s
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Output Destination|The device (or for models handling group of devices, trigger device or asset) that the managed object is associated with. Assets can be used only for sending cross-device aggregates.<br><br>The model editor uses the current device name. This is mapped internally to the device identifier.|any|
 |Property Name|The name of the property to update.<br><br>If not set, then the properties from the Value input port are mapped to the top level properties of the managed object.|string|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The value of the property to set.|any|
 |Update Property|Signals that the property is to be updated. If not connected, every new value from the Value input port updates the property.|pulse|
 
@@ -128,7 +128,7 @@ Non-finite values are ignored.
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Output Destination|The device (or for models handling group of devices, trigger device or asset) to which the measurement is to be sent. Assets can be used only for sending cross-device aggregates.<br><br>The model editor uses the current device name. This is mapped internally to the device identifier.|any|
 |Fragment Name|The name of the fragment in the measurement.|string|
 |Series Name|The name of the series in the measurement.|string|
@@ -138,7 +138,7 @@ Non-finite values are ignored.
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Value|The measurement to be sent.|float|
 |Send|Signals that a new measurement is to be created. If not connected, every new Value input creates a measurement.|pulse|
 |Time|Sets the timestamp of the measurement. If not connected, the current model time is used.|float|
@@ -163,7 +163,7 @@ The block produces asynchronous output. The parameter that defines the output st
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Output Destination|The device (or for models handling group of devices, trigger device or asset) to which the operation is to be sent. Assets can be used only for sending cross-device aggregates.<br><br>The model editor uses the device name. This is mapped internally to the device identifier.|any|
 |Operation Name|The name of the property to create on the <tt>Operation</tt> object.|string|Optional|
 |Parameter Name|The name of the parameter for the operation.|string|Optional|
@@ -173,7 +173,7 @@ The block produces asynchronous output. The parameter that defines the output st
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Create Operation|Creates an operation when a signal is received.|pulse|
 |Properties|The properties to set on the operation.|any|
 
@@ -193,7 +193,7 @@ Note: When running in simulation or test mode, the block logs the output instead
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Subject|The subject of the email.|string|Optional|
 |Text|The text of the email.|string|Optional|
 |Reply to|The reply-to address for the email.|string|Optional|
@@ -204,7 +204,7 @@ Note: When running in simulation or test mode, the block logs the output instead
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Send|Sends an email when a signal is received.|pulse|
 |Subject|Subject of the email.|string|
 |Text|Text of the email.|string|
@@ -225,14 +225,14 @@ Note: When running in simulation or test mode, the block logs the output instead
 ### Parameters
 
 |Name|Description|Type|Notes|
-|:----------|:----------|:----------|:----------|
+|:---|:---|:---|:---|
 |Phone Number|The phone number to which the SMS is to be sent.|string|
 |Text|The content of the SMS. The maximum length is 160 characters. Do not specify this parameter if using the SMS Text input port.|string|Optional|
 
 ### Input Port Details
 
 |Name|Description|Type|
-|:----------|:----------|:----------|
+|:---|:---|:---|
 |Send SMS|Triggers sending an SMS.|pulse|
 |SMS Text|Content of the SMS. If not connected, specify the content in the Text parameter.|string|
 

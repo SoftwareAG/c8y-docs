@@ -40,7 +40,7 @@ The following table gives a brief description of all blocks that can be selected
 |[Managed Object Output](#managed-object-output)|Updates a <tt>ManagedObject</tt> object for a specified device, asset or for the trigger device.|
 |[Measurement Input](#measurement-input)|Receives <tt>Measurement</tt> objects from a device or devices in a group and reorders them based on the timestamp.|
 |[Measurement Output](#measurement-output)|Creates a new <tt>Measurement</tt> object for a specified device, asset or for the trigger device.|
-|[Minimum / Maximum](#minimum-/-maximum)|Calculates the minimum and maximum of a value over time.|
+|[Minimum / Maximum](#minimum--maximum)|Calculates the minimum and maximum of a value over time.|
 |[Missing Data](#missing-data)|Generates an output if the input has not occurred for a set amount of time.|
 |[NOT](#not)|Performs a logical 'not' on the input.|
 |[Operation Input](#operation-input)|Receives <tt>Operation</tt> objects from a device or devices in a group.|

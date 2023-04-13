@@ -4,7 +4,7 @@ title: Utility
 layout: redirect
 ---
 
-## Constant Value
+### Constant Value
 
 **apama.analyticsbuilder.blocks.ConstantValue**
 
@@ -15,20 +15,20 @@ The Trigger input port can be used to delay the output until a trigger input is 
 
 The Value parameter can be treated as either a string, or as a JSON value.  For JSON string, number or boolean, then that will be the type of the output. For JSON objects, the output will be a pulse with the properties from the object. JSON arrays are only permitted within an object.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Value|The value to output.|string|
 |Type|How to interpret the Value parameter.|Option - one of:<ul><li>string</li><li>JSON</li></ul>|Default: JSON|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Trigger|If connected, send output on this trigger.|boolean|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -36,7 +36,7 @@ The Value parameter can be treated as either a string, or as a JSON value.  For 
 
 
 
-## Cron Timer
+### Cron Timer
 
 **apama.analyticskit.blocks.core.CronTimer**
 
@@ -59,7 +59,7 @@ The Days of Month and Days of Week parameters operate together such that if both
 
 This block is not supported in simulation mode.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -70,7 +70,7 @@ This block is not supported in simulation mode.
 |Months|The months in which to trigger the signal. <p>Range: 1 to 12.</p>|string|Default: *|
 |Days of Week|The days of the week on which to trigger the signal. <p>Range: 0 (Sunday) to 6 (Saturday).</p>|string|Default: *|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -78,7 +78,7 @@ This block is not supported in simulation mode.
 
 
 
-## Duration
+### Duration
 
 **apama.analyticskit.blocks.core.Duration**
 
@@ -92,13 +92,13 @@ The block generates a float output of the time elapsed since the start signal, m
 
 If multiple signals are received at the same time, they are processed in the order of measure, reset and start. Thus, for example, if measure and reset signals are received together, the block first generates an output with the current duration and then resets its state. Processing the inputs in this order allows the current state of the block to be output and the block to be restarted within a single unit of time, if desired.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Periodic Output (secs)|The amount of time (in seconds) between automatically generated outputs by an active block. If not set, then an output is only generated when a measure signal is received.<br><br>This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -106,7 +106,7 @@ If multiple signals are received at the same time, they are processed in the ord
 |Reset|Deactivates and resets the state of the block.|pulse|
 |Start|Activates the block.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -114,7 +114,7 @@ If multiple signals are received at the same time, they are processed in the ord
 
 
 
-## Extract Property
+### Extract Property
 
 **apama.analyticskit.blocks.core.ExtractProperty**
 
@@ -143,7 +143,7 @@ The block does not support extracting entries from a dictionary whose key contai
 
 In converting a string to a float, this block treats an empty string as a value of 0.0, rather than as not parseable.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -151,13 +151,13 @@ In converting a string to a float, this block treats an empty string as a value 
 |Property Type|The type to which the property value is to be converted. If set to Properties, a pulse is output with properties from the extracted value.|Option - one of:<ul><li>String</li><li>Boolean</li><li>Float</li><li>Properties</li></ul>|Default: String|
 |Clear On Missing|If selected, the default value of the specified type is output if the Property Path parameter was not specified or if the value cannot be converted into the specified type.|boolean|Default: false|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value from which the property is to be extracted.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -165,7 +165,7 @@ In converting a string to a float, this block treats an empty string as a value 
 
 
 
-## Geofence
+### Geofence
 
 **apama.analyticsbuilder.blocks.Geofence**
 
@@ -173,19 +173,19 @@ Compares the input value against the defined geofence value to detect whether th
 
 The boundary line itself is considered to be outside of the geofence area.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Geofence|A polygon describing an area on the Earth's surface.<br><br>Note that crossing the international date line, namely the longitude of +/- 180 degrees, is not supported.|sequence<apama.analyticsbuilder.LngLat>|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Position|The input value from which the properties for the longitude (lng) and latitude (lat) are to be extracted.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -195,7 +195,7 @@ The boundary line itself is considered to be outside of the geofence area.
 
 
 
-## Missing Data
+### Missing Data
 
 **apama.analyticskit.blocks.core.MissingData**
 
@@ -203,21 +203,21 @@ Generates an output if the input has not occurred for a set amount of time.
 
 The block can optionally detect an absence of changes in value if repeated same-value inputs are not counted.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Ignore Repeated Inputs|If selected, same-value inputs are ignored.|boolean|Default: false|
 |Duration (secs)|The amount of time (in seconds) the block waits for an input.<br><br>This must be a finite and positive number.|float|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The data whose presence or absence is being detected.|any|
 |Reset|Resets the state of the block - resets any timer and the previous value.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -225,7 +225,7 @@ The block can optionally detect an absence of changes in value if repeated same-
 
 
 
-## Set Properties
+### Set Properties
 
 **apama.analyticsbuilder.blocks.SetProperties**
 
@@ -239,7 +239,7 @@ Properties are set on the output in the following order of precedence: <ol><li>A
 
 Thus, any properties set on an input are overwritten by those with the same name on a  higher precedence input, or when an input is configured for the specified property.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -249,7 +249,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 |Property 4|A property to set in the output, using the value from input port 4.|string|Optional|
 |Property 5|A property to set in the output, using the value from input port 5.|string|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -260,7 +260,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 |Input 5|Value to be added using the property name in parameter Property 5.|any|
 |Merge|Source to merge with the specified properties. Properties from here not replaced by an input value are passed through to the output.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -268,7 +268,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 
 
 
-## Text Substitution
+### Text Substitution
 
 **apama.analyticsbuilder.blocks.TextSubstitution**
 
@@ -303,20 +303,20 @@ A hash (#) can be specified in the text template by escaping it as follows: <tt>
 
 For more information, see the <a target="_blank" rel="external noopener" href="https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html">list of time zones</a> and the <a target="_blank" rel="external noopener" href="https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html">list of valid time format strings</a>.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Text Template|The text that is used to generate the output by substituting the identifiers in it, such as #{name}, with the values from the input ports.|string|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Object|Used to substitute identifiers that are not prefixed with <tt>source.</tt>. For example, <tt>#{name}</tt> or <tt>#{timestamp}</tt>.|any|
 |Source|Used to substitute identifiers that are prefixed with <tt>source.</tt>. For example, <tt>#{source.name}</tt>.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -324,7 +324,7 @@ For more information, see the <a target="_blank" rel="external noopener" href="h
 
 
 
-## Toggle
+### Toggle
 
 **apama.analyticskit.blocks.core.Toggle**
 
@@ -338,7 +338,7 @@ If delay times are specified, the output state is only changed to <tt>true</tt> 
 
 The following exception applies if both signals are received at the same time: the output state is only toggled if both delay times are the same, or have not been specified at all.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -349,14 +349,14 @@ This must be a finite and positive number.|float|Optional|
 <br><br>
 This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Set|Sets the output to <tt>true</tt>. Any pending delayed set or reset signals are cancelled on the new input.|pulse|
 |Reset|Sets the output to <tt>false</tt>. Any pending delayed set or reset signals are cancelled on the new input.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|

@@ -4,7 +4,7 @@ title: Input
 layout: redirect
 ---
 
-## Alarm Input
+### Alarm Input
 
 **apama.analyticskit.blocks.cumulocity.AlarmInput**
 
@@ -18,7 +18,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 
 Note: When running in simulation mode, because only the creation time of the alarm is stored, the alarm status must be Active.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -29,7 +29,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 |Notification Mode|Filters <tt>Alarm</tt> events such that only new alarms, updated alarms, or all alarms are processed. The default is that all alarms are processed.|Option - one of:<ul><li>All</li><li>Updates only</li><li>New alarms only</li></ul>|Default: All|
 |Ignore Timestamp|If selected, the timestamp of the incoming alarm is ignored. Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.|boolean|Default: false|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -37,7 +37,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 
 
 
-## Event Input
+### Event Input
 
 **apama.analyticskit.blocks.cumulocity.DeviceEventInput**
 
@@ -54,7 +54,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 
 Note: A history of changes is not maintained for <tt>Event</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -63,7 +63,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 |Notification Mode|Filters <tt>Event</tt> events such that only new events, updated events, or all events are processed. The default is that all events are processed.|Option - one of:<ul><li>All</li><li>Updates only</li><li>New events only</li></ul>|Default: All|
 |Ignore Timestamp|If selected, the timestamp of the incoming event is ignored. Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.|boolean|Default: false|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -71,7 +71,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 
 
 
-## Managed Object Input
+### Managed Object Input
 
 **apama.analyticskit.blocks.cumulocity.ManagedObjectInput**
 
@@ -100,7 +100,7 @@ If the value of the property specified by the Property Name parameter of this bl
 
 The parameters that define the input stream of the block are "Input Source" and "Property Name".
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -108,7 +108,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 |Property Name|The name of the property for which to listen.<br><br>The <tt>ManagedObject</tt> object must have a property of this name otherwise, it will be ignored. If not set, the objects are not filtered - every update will generate a pulse output with all of the properties from the <tt>ManagedObject</tt>.|string|Optional|
 |Capture Start Value|Outputs the initial value when the model is activated.|boolean|Default: false|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -116,7 +116,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 
 
 
-## Measurement Input
+### Measurement Input
 
 **apama.analyticskit.blocks.cumulocity.DeviceMeasurementInput**
 
@@ -133,7 +133,7 @@ The parameters that define the output stream of the block are "Input Source" and
 
 Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -141,7 +141,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 |Fragment and Series|The fragment for which the block will listen.<br><br>This only shows fragments and series for measurements associated with the object (device or group) selected. Any measurements on a device within a group will only be shown when a device is selected (unless there are measurements with the group as the source). For example, if a temperature measurement is sent in Celsius, the fragment is <tt>T</tt> and the series is <tt>C(Celsius)</tt>. This means, that this parameter can be set as <tt>T.C</tt> or <tt>T=>C</tt>.|string|
 |Ignore Timestamp|If selected, the timestamp of the incoming measurement is ignored. Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.|boolean|Default: false|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -149,7 +149,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 
 
 
-## Operation Input
+### Operation Input
 
 **apama.analyticskit.blocks.cumulocity.OperationInput**
 
@@ -175,7 +175,7 @@ The parameter that defines the input stream of the block is Input Source.
 
 Note: A history of changes is not maintained for <tt>Operation</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -184,7 +184,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 |Operation Status|The status for which to listen.<br><br>If not specified, the block will listen for operations with any status.|Option - one of:<ul><li>SUCCESSFUL</li><li>FAILED</li><li>EXECUTING</li><li>PENDING</li></ul>|Optional|
 |Notification Mode|Filters <tt>Operation</tt> events such that only new operations, updated operations, or all operations are processed. The default is that all operations are processed.|Option - one of:<ul><li>All</li><li>Updates only</li><li>New operations only</li></ul>|Default: All|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -192,7 +192,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 
 
 
-## Position Input
+### Position Input
 
 **apama.analyticsbuilder.blocks.PositionInput**
 
@@ -215,7 +215,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 
 Note: A history of changes is not maintained for <tt>Event</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -225,7 +225,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 |Ignore Timestamp|If selected, the timestamp of the incoming measurement is ignored. Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.|boolean|Default: false|
 |Primary Value|The primary value to be output by the block: latitude, longitude or altitude, or empty if not set.|Option - one of:<ul><li>Latitude</li><li>Longitude</li><li>Altitude</li></ul>|Optional|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|

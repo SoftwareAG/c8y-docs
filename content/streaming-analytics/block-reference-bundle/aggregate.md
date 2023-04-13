@@ -4,7 +4,7 @@ title: Aggregate
 layout: redirect
 ---
 
-## Average (Mean)
+### Average (Mean)
 
 **apama.analyticskit.blocks.core.Mean**
 
@@ -27,14 +27,14 @@ If a window is configured, the block uses a set of 20 buckets, so the expired va
 
 Note:The Average (Mean) block generates the mean for an individual device. If the input comes from a group of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 |Output Threshold|If present, the output to be sent at the point when it changes by at least this value.<br><br>This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -42,7 +42,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current mean value and sends the output.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -50,7 +50,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 
 
 
-## Counter
+### Counter
 
 **apama.analyticskit.blocks.core.Counter**
 
@@ -58,14 +58,14 @@ Gives a count of the total inputs and repeated inputs.
 
 If two consecutive input values have different types, they will not be evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input to be counted.|any|
 |Reset|Reset the counters.|boolean|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -74,7 +74,7 @@ If two consecutive input values have different types, they will not be evaluated
 
 
 
-## Discrete Statistics
+### Discrete Statistics
 
 **apama.analyticsbuilder.blocks.DiscreteStatistics**
 
@@ -91,7 +91,7 @@ If the Sample input port is connected, the block only samples the data when the 
 
 If reset and sample signals are received together, the reset is processed first.
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -99,7 +99,7 @@ If reset and sample signals are received together, the reset is processed first.
 |Sample|Use the current value in generating statistics. If left unconnected, all values are used.|pulse|
 |Reset|Reset the state of the block.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -112,7 +112,7 @@ If reset and sample signals are received together, the reset is processed first.
 
 
 
-## Gradient
+### Gradient
 
 **apama.analyticskit.blocks.core.Gradient**
 
@@ -126,13 +126,13 @@ The block can operate over a time-bounded window that is specified with the Wind
 
 The Reset input clears the content of the window. Sample input can be used to force re-evaluation and generate the latest value.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -140,7 +140,7 @@ The Reset input clears the content of the window. Sample input can be used to fo
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current value and sends the output.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -148,7 +148,7 @@ The Reset input clears the content of the window. Sample input can be used to fo
 
 
 
-## Group Statistics
+### Group Statistics
 
 **apama.analyticskit.blocks.core.GroupStatistics**
 
@@ -165,20 +165,20 @@ If a window is configured, the block uses a set of 20 buckets, so the expired va
 
 Note: The Group Statistics block calculates and generates aggregate values for the group as a whole (not for individual devices). To generate aggregates for an individual device in a group, use the Average (Mean), Standard Deviation, or Minimum/Maximum blocks. The Group Statistics block only considers devices from which it has received input values.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 |Output Period (secs)|The amount of time (in seconds) between each output.<br><br>This must be a finite and positive number.|float|Default: 5.0|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|Input value for which the aggregate values are to be calculated.|float|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -191,7 +191,7 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 
 
 
-## Integral
+### Integral
 
 **apama.analyticskit.blocks.core.Integral**
 
@@ -205,14 +205,14 @@ The block can operate over a time-bounded window that is specified with the Wind
 
 If a window is configured, the block will use a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 |Output Threshold|If present, the output to be sent at the point when it changes by at least this value.<br><br>This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -220,7 +220,7 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current integral value and sends the output.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -228,7 +228,7 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 
 
 
-## Minimum / Maximum
+### Minimum / Maximum
 
 **apama.analyticskit.blocks.core.MinMax**
 
@@ -245,20 +245,20 @@ If a window is configured, the block uses a set of 20 buckets, so the time of ex
 
 Note: The Minimum/Maximum block generates the minimum and maximum for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|Input for which the minimum and maximum is to be calculated.|float|
 |Reset|Clears the content of the window.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -267,7 +267,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 
 
 
-## Standard Deviation
+### Standard Deviation
 
 **apama.analyticskit.blocks.core.StandardDeviation**
 
@@ -287,13 +287,13 @@ If a window is configured, the block uses a set of 20 buckets, so the time of ex
 
 Note:  The Standard Deviation block generates the standard deviation and variance for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -301,7 +301,7 @@ Note:  The Standard Deviation block generates the standard deviation and varianc
 |Reset|Clears the content of the window.|pulse|
 |Sample|Forces re-evaluation of the current value and sends the output.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|

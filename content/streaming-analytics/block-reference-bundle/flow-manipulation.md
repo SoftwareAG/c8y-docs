@@ -4,7 +4,7 @@ title: Flow Manipulation
 layout: redirect
 ---
 
-## Combiner
+### Combiner
 
 **apama.analyticskit.blocks.core.Combiner**
 
@@ -12,13 +12,13 @@ Calculates the output based on the selected mode and the connected inputs.
 
 Available modes are: <ul> <li>Minimum: Outputs the minimum of the connected inputs which have received a value. All numeric literals are treated as <tt>float</tt> type.</li> <li>Maximum: Outputs the maximum of the connected inputs which have received a value. All numeric literals are treated as <tt>float</tt> type.</li> <li>Average (Mean): Outputs the average (mean) of the connected inputs for which a value has been received. All numeric literals are treated as <tt>float</tt> type.</li> <li>Latest Changed: Outputs the latest changed value. If multiple values change in a single activation, then the input port with the highest number is used. For example, if Value 1 and Value 2 get an updated value, Value 2 is selected for output. Inputs must be of the same type. When using the Latest Changed mode, a value is not considered changed if the actual value does not change. For example, when using the Latest Changed mode with temperature sensors, it outputs the sensor value whose temperature was most recently changed.</li> <li>Latest Input: Outputs the latest input value even if the actual value is unchanged. If multiple values update in a single activation, then the input port with the highest number is used. For example, if you have a number of sensors that measure the temperature periodically at different intervals and you want to get the latest temperature received by the block by all of those sensors, you can use the Combiner block with the Latest Input mode. This provides the latest published temperature, even if a sensor measures and publishes the same temperature.</li> </ul>
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Mode|The mode to be selected.|Option - one of:<ul><li>Minimum</li><li>Maximum</li><li>Average (Mean)</li><li>Latest Changed</li><li>Latest Input</li></ul>|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -28,7 +28,7 @@ Available modes are: <ul> <li>Minimum: Outputs the minimum of the connected inpu
 |Value 4|Fourth input value to the block.|any|
 |Value 5|Fifth input value to the block.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -36,7 +36,7 @@ Available modes are: <ul> <li>Minimum: Outputs the minimum of the connected inpu
 
 
 
-## Gate
+### Gate
 
 **apama.analyticskit.blocks.core.Gate**
 
@@ -44,7 +44,7 @@ Blocks the input from going to output unless the gate is open and enabled.
 
 The block will start disabled if the Enable input is connected, otherwise the block will always be enabled. The block will start closed if the Open input is connected, otherwise the block will start open.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -54,7 +54,7 @@ The block will start disabled if the Enable input is connected, otherwise the bl
 <br><br>
 This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -63,7 +63,7 @@ This must be a finite and positive number.|float|Optional|
 |Open|Opens the gate. If the gate is to be open at the start, then leave this port unconnected.|pulse|
 |Close|Closes the gate. If the Close Duration parameter is specified, then the gate is closed only for the specified number of seconds.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -73,7 +73,7 @@ This must be a finite and positive number.|float|Optional|
 
 
 
-## Latch Values
+### Latch Values
 
 **apama.analyticskit.blocks.core.Latch**
 
@@ -81,14 +81,14 @@ Latches the latest input value received while the block is enabled.
 
 Only generates an output if the input value changes and the block is enabled. The block will start disabled if the Enable input is connected, otherwise the block will always be enabled.
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value to be monitored.|any|
 |Enable|Enables the block. If the block is always to be enabled, then leave this unconnected.|boolean|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -99,7 +99,7 @@ Only generates an output if the input value changes and the block is enabled. Th
 
 
 
-## Pulse
+### Pulse
 
 **apama.analyticskit.blocks.core.Pulse**
 
@@ -110,19 +110,19 @@ This is useful with blocks which consume both pulse and non-pulse values, and wh
 
 For example, a numeric value passed to the OR block is treated as <tt>true</tt> if non-zero (as described in the "Type conversions" topic of the Analytics Builder documentation). However, when passing a numeric value to the Pulse block and then connecting the output of the Pulse block to the OR block, the numeric value is converted to a pulse so the OR block sends a pulse.  The block can be configured to send a pulse if the value changes (default pulse conversion behavior), on every input, or on every non-zero value.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Mode|Controls when the block sends a pulse.|Option - one of:<ul><li>On value change</li><li>On every input</li><li>On non-zero values</li></ul>|Default: On value change|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input to treat as pulse.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -130,7 +130,7 @@ For example, a numeric value passed to the OR block is treated as <tt>true</tt> 
 
 
 
-## Selector
+### Selector
 
 **apama.analyticsbuilder.blocks.Selector**
 
@@ -144,7 +144,7 @@ If all input values are <tt>false</tt>, then the value specified with the No Inp
 
 Example: Input 1 has "high", Input 2 has "medium", Input 3 has "low", and the No Input parameter has the value "off". If none of the input ports receives a <tt>true</tt> value, then "off" is sent as the output value. If both the Input 2 and Input 3 ports receive a <tt>true</tt> value and Input 1 receives a <tt>false</tt> value, then "medium" is sent as the output value. This is because Input 2 has a higher priority than Input 3.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -158,7 +158,7 @@ Example: Input 1 has "high", Input 2 has "medium", Input 3 has "low", and the No
 <br><br>
 If the Type parameter remains unselected, the type of the output value is set based on the types of all input parameter values. If all values are either <tt>true</tt> or <tt>false</tt>, the output is a boolean value. If all values are numbers, the output is a float value. In all other cases, the output is a string value.|Option - one of:<ul><li>Float</li><li>Boolean</li><li>String</li><li>JSON</li></ul>|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -168,7 +168,7 @@ If the Type parameter remains unselected, the type of the output value is set ba
 |Input 4|Causes the Input 4 parameter value to be sent if <tt>true</tt> (and no lower numbered input is <tt>true</tt>).|boolean|
 |Input 5|Causes the Input 5 parameter value to be sent if <tt>true</tt> (and no lower numbered input is <tt>true</tt>).|boolean|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -176,7 +176,7 @@ If the Type parameter remains unselected, the type of the output value is set ba
 
 
 
-## Switch
+### Switch
 
 **apama.analyticsbuilder.blocks.Switch**
 
@@ -193,7 +193,7 @@ You can use the initial default names for the inputs. However, you can also rena
 
 The expected use case is that the Selected Input parameter is set to a template parameter which can then be set individually for each model instance to decide which input is used.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -204,7 +204,7 @@ The expected use case is that the Selected Input parameter is set to a template 
 |Name for input4|The name of the fourth input to the block.|string|Default: input4|
 |Name for input5|The name of the fifth input to the block.|string|Default: input5|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -214,7 +214,7 @@ The expected use case is that the Selected Input parameter is set to a template 
 |input4|The fourth input.|any|
 |input5|The fifth input.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -222,25 +222,25 @@ The expected use case is that the Selected Input parameter is set to a template 
 
 
 
-## Time Delay
+### Time Delay
 
 **apama.analyticskit.blocks.core.TimeDelay**
 
 Delays the input by the specified amount of time.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Delay (secs)|The amount of time (in seconds) by which the input will be delayed.<br><br>This must be a finite and positive number.|float|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value to be delayed.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|

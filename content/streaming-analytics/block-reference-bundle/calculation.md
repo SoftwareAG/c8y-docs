@@ -4,7 +4,7 @@ title: Calculation
 layout: redirect
 ---
 
-## Crossing Counter
+### Crossing Counter
 
 **apama.analyticskit.blocks.core.CrossingCounter**
 
@@ -18,7 +18,7 @@ The block can operate over a time-bounded window that is specified with the Wind
 
 If a window is configured, the block will use a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -26,7 +26,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 |Direction|The direction in which to check for a threshold crossing: whether to detect a crossing in the upwards direction, in the downwards direction, or in both directions.|Option - one of:<ul><li>Upwards</li><li>Downwards</li><li>Both</li></ul>|
 |Window Duration (secs)|If present, the amount of time (in seconds) for which values are to be kept in the window.<br><br>This must be a finite and positive number.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -34,7 +34,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 |Reset|Resets the count of crossings.|pulse|
 |Sample|Forces re-evaluation of the current value and sends the output.|boolean|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -43,7 +43,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 
 
 
-## Delta
+### Delta
 
 **apama.analyticskit.blocks.core.Delta**
 
@@ -51,14 +51,14 @@ Calculates the difference between successive input values.
 
 The block generates an output after getting at least two input values.
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|Value to calculate the delta.|float|
 |Reset|Resets the state of the block.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -66,7 +66,7 @@ The block generates an output after getting at least two input values.
 
 
 
-## Difference
+### Difference
 
 **apama.analyticskit.blocks.core.Difference**
 
@@ -74,14 +74,14 @@ Calculates the absolute and signed differences between the connected inputs.
 
 Only generates an output if both inputs receive a value.
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value 1|First input to the block.|float|
 |Value 2|Second input to the block.|float|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -90,7 +90,7 @@ Only generates an output if both inputs receive a value.
 
 
 
-## Direction Detection
+### Direction Detection
 
 **apama.analyticskit.blocks.core.DirectionDetector**
 
@@ -98,20 +98,20 @@ Detects whether the input value changes direction.
 
 Outputs the change in direction and the last significant inflection point, ignoring minor variations if the changes are less than the defined hysteresis value. Repeated inputs of the same value are ignored.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Hysteresis|Only counts a change in direction if the input value changes by the defined hysteresis value since the point of changing direction.<br><br>Must either be zero (meaning all changes of direction are counted) or a a positive number.|float|Default: 0.0|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|Numeric value for which to detect the change in direction.|float|
 |Reset|Resets the state of the block.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -120,7 +120,7 @@ Outputs the change in direction and the last significant inflection point, ignor
 
 
 
-## Expression
+### Expression
 
 **apama.analyticskit.blocks.core.Expression**
 
@@ -137,13 +137,13 @@ The values of the inputs are available as <tt>input1</tt>, <tt>input2</tt>, <tt>
 
 Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 </tt></li> <li>Convert days to seconds: <tt>input1 * 86400 </tt></li> <li>Average of 4 inputs: <tt>(input1 + input2 + input3 + input4) / 4 </tt></li> <li>Threshold comparison: <tt>input1 &gt; 3.1412 </tt> (but also see the Threshold block)</li> <li>Pythagoras to compute the hypotenuse of a right-angled triangle: <tt>(input1.pow(2) + input2.pow(2)).sqrt() </tt></li> <li>Comparison to 3 decimal places: <tt>(input1 * 1000 - (input1 * 1000).fractionalPart()) = (input2 * 1000 - (input2 * 1000).fractionalPart()) </tt></li> <li>Range check: <tt>input1 &gt;= 1 and input1 &lt;= 10</tt></li> <li>String comparison: <tt>input1 = "my value"</tt></li> <li>Larger value: <tt>float.max(input1, float.PI)</tt></li> <li>Remainder of integer division: <tt>input1.round() % input2.round()</tt></li> </ul>
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Expression|An expression - a string representation of an EPL expression.<br><br>Similar to EPL expressions, but with the differences as described above.|string|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -153,7 +153,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 |input4|Fourth input, to be used as <tt>input4</tt> in the expression.|any|
 |input5|Fifth input, to be used as <tt>input5</tt> in the expression.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -161,7 +161,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 
 
 
-## From Base N
+### From Base N
 
 **apama.analyticsbuilder.blocks.FromBaseN**
 
@@ -172,20 +172,20 @@ The input string can be in any integer base from 2 to 36, where letters of the E
 
 Conversion between two arbitrary bases can be achieved by chaining this block with the To Base N block.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Input Base|The number base of the input stream, in the range 2 to 36.|integer|Default: 16|
 |Radix Character|The character to use as the radix point. Expected to be a dot or a comma.|Option - one of:<ul><li>Dot</li><li>Comma</li></ul>|Default: Dot|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Base N|String input in base N.|string|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -193,7 +193,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 
 
 
-## KPI
+### KPI
 
 **apama.analyticskit.blocks.cumulocity.KPI**
 
@@ -204,7 +204,7 @@ This block uses data from the KPI input port or from the device which contains d
 
 The KPI input can provide properties, typically from a KPI-managed object, which include the red and yellow ranges, the unit and the label. If the device contains a data point for the specified fragment and series, then the values from the data point override those from the KPI.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -213,14 +213,14 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 |Upper end of yellow range exclusive|If set, the upper end of the yellow range is treated as being exclusive.|boolean|Default: false|
 |Upper end of red range exclusive|If set, the upper end of the red range is treated as being exclusive.|boolean|Default: false|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|Numeric value to compare with the defined ranges.|float|
 |KPI|Object containing the <tt>c8y_Kpi</tt> property.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -231,7 +231,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 
 
 
-## Limit
+### Limit
 
 **apama.analyticsbuilder.blocks.Limit**
 
@@ -242,20 +242,20 @@ The input value is limited so that the output does not exceed the boundaries def
 
 It is only mandatory to provide one of the limits. If this is the case, then the input is only limited in the direction of the specified parameter.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Upper Limit|Any input above this value results in the output being capped at this value.|float|Optional|
 |Lower Limit|Any input below this value results in the output being capped at this value.|float|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value.|float|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -263,7 +263,7 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 
 
 
-## Machine Learning
+### Machine Learning
 
 **apama.analyticskit.blocks.core.Zementis**
 
@@ -277,13 +277,13 @@ If the Machine Learning model does not yet exist, use the Machine Learning appli
 
 Block inputs correspond to the Machine Learning model's inputs (that are marked Active) in the order specified by the Machine Learning model. All inputs used by the model must be connected. Outputs correspond to the outputs as specified by the Machine Learning model. If a PMML output is specified as "JSON", then the block outputs a string version of the JSON, but the properties of the object are also available as extra values which can be extracted using the Extract Property block, which is the recommended way of unpacking multiple values from such an output. Currently, timestamp inputs are not supported.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Machine Learning Model|Name of the Machine Learning model.|string|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -298,7 +298,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 |Value 9|Input value 9.|any|
 |Value 10|Input value 10.|any|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -315,7 +315,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 
 
 
-## Range
+### Range
 
 **apama.analyticsbuilder.blocks.Range**
 
@@ -326,7 +326,7 @@ By default, the range includes the value for the lower range but excludes the va
 
 A pulse is sent when the defined range is crossed. That is, when either the lower or upper range is crossed, or if the value goes from below the range to over the range (or vice versa) without ever being within the range.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -335,14 +335,14 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 |Upper Range|The upper range value.|float|Optional|
 |Exclude Upper Range|If selected, an input value equal to the upper range is not considered to identify whether it is within or out of the range. If not selected, such an input value is considered to identify whether it is within or out of the range.|boolean|Default: true|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value to validate against the defined range.|float|
 |Reset|Resets the state of the block.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -352,7 +352,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 
 
 
-## Range Lookup
+### Range Lookup
 
 **apama.analyticskit.blocks.core.RangeLookup**
 
@@ -360,7 +360,7 @@ Finds the range in which the input value lies.
 
 Ranges are defined using a list of unique upper bound values in increasing order. The lower bound of the first range depends on the value of the Minimum Value parameter. The lower bound of each subsequent range is defined by the upper bound of the previous range. The range to which an input value equal to a boundary value belongs depends on the Exclude Upper parameter. The block outputs the mapped value for the range the input lies within, or a failed flag if the input value is not within any of the ranges.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
@@ -369,13 +369,13 @@ Ranges are defined using a list of unique upper bound values in increasing order
 |Exclude Upper|If selected, an input value equal to the upper bound of a row is considered to be part of the range of the next row. If not selected, such an input value is considered to be part of the range of the current row.|boolean|Default: true|
 |Type|The type that is to be used for the output value.|Option - one of:<ul><li>Float</li><li>Boolean</li><li>String</li></ul>|Optional|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value for which the range is to be found.|float|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -384,7 +384,7 @@ Ranges are defined using a list of unique upper bound values in increasing order
 
 
 
-## Rounding
+### Rounding
 
 **apama.analyticskit.blocks.core.Rounding**
 
@@ -398,20 +398,20 @@ The rules available for use are: <ul> <li>Up (or take the ceiling, or round towa
 
 The value is rounded to the nearest 'target number' - this is a whole number (if the number of decimal points is zero), or rounded to the number of decimal points specified.  If the number of decimal points is negative, it is rounded to a power of 10. For example, if the number of decimal points is 2, it is rounded to the nearest 0.01 (that is, hundredths). If the number of decimal points is -3, it is rounded to the nearest 1000 (that is, thousands).
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Rule|The rounding rule to be applied.|Option - one of:<ul><li>Up</li><li>Down</li><li>Towards Zero</li><li>Nearest</li><li>Even or Nearest</li></ul>|
 |Number of Decimal Points|The number of decimal points the input is to be rounded to.|integer|Default: 0|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value which is to be rounded.|float|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -419,7 +419,7 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 
 
 
-## Threshold
+### Threshold
 
 **apama.analyticskit.blocks.core.Threshold**
 
@@ -430,21 +430,21 @@ A breach occurs when the direction has been set to 'Above' and the input value i
 
 A pulse is sent when the defined threshold value is crossed from any direction.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Threshold Value|This value is compared against the input value.|float|
 |Direction|The direction in which to look: whether the input value is above, below or equal to the defined threshold, or whether it crosses the defined threshold.|Option - one of:<ul><li>Above</li><li>Above or Equal</li><li>Below</li><li>Below or Equal</li><li>Crossing</li></ul>|Default: Above|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Value|The input value to compare against the defined threshold value.|float|
 |Reset|Resets the state of the block.|pulse|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
@@ -454,7 +454,7 @@ A pulse is sent when the defined threshold value is crossed from any direction.
 
 
 
-## To Base N
+### To Base N
 
 **apama.analyticsbuilder.blocks.ToBaseN**
 
@@ -465,20 +465,20 @@ The output string can be in any integer base from 2 to 36, where letters of the 
 
 Conversion between two arbitrary bases can be achieved by chaining this block with the From Base N block.
 
-### Parameters
+#### Parameters
 
 |Name|Description|Type|Notes|
 |:---|:---|:---|:---|
 |Output Base|The number base of the output stream, in the range 2 to 36.|integer|Default: 16|
 |Radix Character|The character to use as the radix point. Expected to be a dot or a comma.|Option - one of:<ul><li>Dot</li><li>Comma</li></ul>|Default: Dot|
 
-### Input Port Details
+#### Input Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|
 |Float|Numeric input.|float|
 
-### Output Port Details
+#### Output Port Details
 
 |Name|Description|Type|
 |:---|:---|:---|

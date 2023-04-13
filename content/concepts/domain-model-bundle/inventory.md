@@ -86,8 +86,9 @@ For more information on fragments and how managed objects are structured, see th
 
 {{< c8y-admon-info >}}
 While designing the data model for the inventory Managed Object it's worth to keep in mind following:
-1. There is no size or length constrains for single fragment, but there is a limitation for overal json document size, which can not exceed 16MB for single Managed Object entry within inventory collection.
-2. Each consecutive fragment added to Managed Object at root level will impose certain delay on querying such an item. If performance of query matters, it's better to nest custom fragments with information within chosen single fragment effectively limiting root fragments number. For example:
+1. There is no size or length constrains for single fragment, but there is a limitation for overal json document size, which can not exceed 16MiB for single Managed Object entry within inventory collection. Our recomendation is to try keeping it below 1 MiB.
+2. While including arrays of elements within fragments, be advised to keep length of such collections below 1k elements.
+3. Each consecutive fragment added to Managed Object at root level will impose certain delay on querying such an item. If performance of query matters, it's better to nest custom fragments with information within chosen single fragment effectively limiting root fragments number. For example:
 ```json
 {
     "id": "47035",

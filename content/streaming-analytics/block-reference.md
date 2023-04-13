@@ -1,7 +1,6 @@
 ---
-weight: 70
-title: Analytics Builder Block Reference
+weight: 60
+title: Analytics Builder block reference
 layout: bundle
-collection: 'apama/block-reference'
 ---
 

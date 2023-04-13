@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Documentation for users
+title: Introduction
 layout: bundle
 section:
   - getting_started

@@ -1,12 +1,12 @@
 ---
-title: Welcome!
+title: Quick start for developers
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
 bundle: welcome
 section:
   - getting_started
-weight: 10
+weight: 30
 ---
 
-Find an overview on the most relevant parts of the documentation from a user and from a developer perspective, including links to additional resources.
+For our developer community, we offer a variety of information and sources to quickly get started or to dig deeper into the matter.

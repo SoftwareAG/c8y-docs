@@ -1,5 +1,5 @@
 ---
-title: About this documentation
+title: About this website
 bundle: about-doc
 icon: "c8y-icon c8y-icon-notification"
 type: root

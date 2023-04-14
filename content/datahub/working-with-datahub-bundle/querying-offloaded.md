@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 80
 title: Querying offloaded Cumulocity IoT data
 layout: redirect
 ---
@@ -43,7 +43,7 @@ If you have a Java client, you can use JDBC to run SQL queries against the data 
 
 ### Connecting via ODBC
 
-If you want to use an ODBC client to run SQL queries against the data lake, you must configure the platform-specific driver, following the associated [Dremio installation instructions](https://docs.dremio.com/drivers/dremio-odbc-driver.html). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
+If you want to use an ODBC client to run SQL queries against the data lake, you must configure the platform-specific driver, following the associated [Dremio installation instructions](https://www.dremio.com/drivers/). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
 
 ### Connecting via Dremio REST API
 
@@ -53,7 +53,7 @@ Note that the API might change any time and {{< company-sag >}} does not provide
 
 ### Connecting via Cumulocity IoT DataHub REST API
 
-The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dremio query processing, serving as a proxy to Dremio. {{< product-c8y-iot >}} DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the DataHub REST API documentation on the [{{< product-c8y-iot >}} OpenAPI documentation page](https://{{< domain-c8y >}}/api/datahub/) for details on the endpoints. When using this API, you authenticate with your {{< product-c8y-iot >}} account, not with your Dremio account.
+The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dremio query processing, serving as a proxy to Dremio. {{< product-c8y-iot >}} DataHub offers two REST APIs for running queries against Dremio. The standard REST API for small to moderate query result sizes and a high-performance REST API for large query result sizes. See the [{{< product-c8y-iot >}} DataHub REST API documentation](https://{{< domain-c8y >}}/api/datahub/{{< c8y-current-version >}}/) for details on the endpoints. When using this API, you authenticate with your {{< product-c8y-iot >}} account, not with your Dremio account.
 
 ### Connecting other clients
 

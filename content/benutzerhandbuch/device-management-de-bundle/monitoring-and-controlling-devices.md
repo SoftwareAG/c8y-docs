@@ -42,7 +42,7 @@ Wenn Sie den Mauszeiger über einen Pfeil bewegen, wird der Zeitstempel der letz
 
 Wenn ein Gerät als offline erkannt wird (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein "UnavailabilityAlarm" für das Gerät mit der folgenden Nachricht erzeugt: "Im erforderlichen Zeitraum wurden keine Daten vom Gerät empfangen."
 
-Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
+Sendeverbindungen werden aktualisiert, wenn etwas an das Gerät gesendet wird, z. B. Alarme, Ereignisse, Messwerte oder aktualisierte Stammdaten.
 
 {{< c8y-admon-info >}}
 Durch PUT-Anfragen an das Objekt des Geräts werden Verbindungen ebenfalls aktualisiert. Solche Anfragen sind die empfohlene Methode zur Implementierung eines Heartbeat-Service, der den Serverstatus überwacht.
@@ -56,7 +56,7 @@ Der untere Pfeil symbolisiert die Push-Verbindungen (von {{< product-c8y-iot >}}
 * Roter Pfeil - offline (Verbindung nicht hergestellt)
 * Grauer Pfeil - nicht überwacht
 
-Eine Push-Verbindung ist ein aktiver HTTPS-Long-Poll oder eine MQTT-Verbindung von {{< product-c8y-iot >}} zum API-Endpunkt <kbd>/notification/operations</kbd> (nicht zum Echtzeit-API-Endpunkt).
+Eine Push-Verbindung ist eine aktive HTTPS-Long-Poll-Verbindung zum API-Endpunkt <kbd>/notification/operations</kbd> oder eine aktive MQTT-Verbindung zum MQTT-Endpunkt von {{< product-c8y-iot >}}.
 Sie ist immer grün dargestellt, wenn das Gerät verbunden ist, auch wenn kein Datenverkehr stattfindet.
 
 {{< c8y-admon-info >}}
@@ -201,7 +201,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in [Administration > Verwalten von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information dient zum Duplizieren von Alarmen und zum Konfigurieren der Priorität von Alarmen in [Administration > Verwalten von Geschäftsregeln > Alarmregeln](/benutzerhandbuch/administration-de#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
@@ -281,7 +281,7 @@ Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Op
 
 Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 {{< /c8y-admon-important >}}
 

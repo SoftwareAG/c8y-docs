@@ -35,11 +35,17 @@ From the **Settings** menu, administrators can manage various settings for the a
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
 
-![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
+![Authentication settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
+
+{{< c8y-admon-related >}}
+- [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
+- [Configuring single sign-on](/users-guide/administration/#configuring-single-sign-on) for details on configuring single sign-on in {{< product-c8y-iot >}}.
+- [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
+{{< /c8y-admon-related >}}
 
 #### Login settings
 
@@ -199,13 +205,13 @@ You may select one of the following options:
 * **SMS-based**, supporting the following settings:
 	- **Limit token validity for** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
   - **Limit verification code validity for** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
-  
+
 
 	{{< c8y-admon-info >}}
 An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
   {{< /c8y-admon-info >}}
 
-* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
+* **TOTP** (Time-based One-Time Password) supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users** - when enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
 {{< c8y-admon-info >}}
@@ -227,7 +233,7 @@ Users with a "devices" role are excluded from TFA and TOTP. This is also true wh
 
 Click **Application** in the **Settings** menu to change applications settings.
 
-![Default application](/images/users-guide/Administration/admin-settings-application.png)
+![Application settings](/images/users-guide/Administration/admin-settings-application.png)
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
@@ -244,6 +250,11 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
+{{< c8y-admon-related >}}
+- [Managing applications](#managing-applications) for general information on managing applications.
+- [Managing users](#managing-users) for general information on managing users.
+{{< /c8y-admon-related >}}
+
 <a name="properties"></a>
 ### Managing the properties library
 
@@ -253,7 +264,7 @@ Click **Properties library** in the **Settings** menu, to add custom properties 
 
 With custom properties, you can extend the data model of {{< product-c8y-iot >}} built-in objects. You may create the following custom values:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
+- Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/users-guide/cockpit/#widget-asset-table) and [Asset property widget](/users-guide/cockpit/#asset-property).
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
@@ -261,16 +272,20 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-related >}}
+- [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) for further information on the usage of properties in the "Asset table" and "Asset properties" widgets.
+- [Cockpit > Managing exports](/users-guide/cockpit/#exports) for further information on the usage of properties in reports and exports.
+- [Enterprise tenant > Managing tenants > To create a subtenant](/users-guide/enterprise-tenant/#creating-tenants) for further information on custom tenant properties.
+{{< /c8y-admon-related >}}
+
 <a name="add-property"></a>
 #### To add a custom property
 
 1. Select the tab for the desired property and click **Add property**.
 
-	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
+2. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list.
 
-1. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list.
-
-1. Additionally, select validation rules for the new property:
+3. Additionally, select validation rules for the new property:
 
 <table>
 <colgroup>
@@ -340,11 +355,9 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 1. Click **SMS provider** in the **Settings** menu.
 
-    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
-
-	{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
-  {{< /c8y-admon-info >}}
+{{< /c8y-admon-info >}}
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 
@@ -367,8 +380,6 @@ The following provider settings may currently be specified:
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/users-guide/device-management/#connectivity)
-
-![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
 #### To provide or replace credentials
 

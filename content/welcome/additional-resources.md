@@ -46,6 +46,4 @@ For {{< product-c8y-iot >}} cloud shared environments, information on known issu
 
 ### Releases delta training
 
-To learn what's new in {{< product-c8y-iot >}} or in a particular area of the platform we offer various eLearning delta trainings on the [{{< company-sag >}} {{< learning-portal >}}]({{< link-sag-training-delta >}}) which cover the new and enhanced functionality available in a specific product release:
-
-![Product training](/images/about/about-product-training.png)
+To learn what's new in {{< product-c8y-iot >}} or in a particular area of the platform we offer various eLearning delta trainings on the [{{< company-sag >}} {{< learning-portal >}}]({{< link-sag-training-delta >}}) which cover the new and enhanced functionality available in a specific product release.

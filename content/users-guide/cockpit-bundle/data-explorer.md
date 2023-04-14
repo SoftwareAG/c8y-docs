@@ -17,6 +17,13 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
+{{< c8y-admon-related >}}
+
+- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
+
+{{< /c8y-admon-related >}}
+
+
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
@@ -50,8 +57,6 @@ The data points properties are pre-filled as follows:
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
-
-![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
@@ -117,13 +122,13 @@ To add a data point to the data explorer, click **Add data point** at the bottom
 
 ![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
-In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
+On the left hand side of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
 
-The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+The center of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+
+The right hand side shows all of the selected data points.
 
 To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
-
-![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
 For details on the data point library refer to [Data point library](#data-point-library).
 
@@ -205,8 +210,6 @@ In addition to data points you can also add alarms or events to the data explore
 
 In the **Alarms/Events** card, click **Add alarm/event** to add an alarm or event.
 
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
-
 In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add** to add your selection.
 
 Expand an event, to modify its properties.
@@ -223,8 +226,6 @@ If you want to keep your current configuration in the data explorer for later us
 **Send as widget to dashboard**
 
 To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
-
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 

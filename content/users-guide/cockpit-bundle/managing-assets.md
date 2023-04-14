@@ -12,11 +12,15 @@ helpcontent:
 
 ---
 
+{{< c8y-admon-related >}}
+- [Cumulocity IoT´s domain model](/concepts/domain-model#overview) in the *Concepts guide* for details on {{< product-c8y-iot >}}'s domain model.
+- [Device Management](/users-guide/device-management#overview) for details on working with devices in {{< product-c8y-iot >}}.
+- [Tutorials > Add a Jest-based unit test](/guides/web/tutorials/#add-a-unit-test) in the *Web SDK guide* for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
 Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
 
-
 Select a group from the groups list or from the navigator to see its details, particularly all assets assigned to the group. Click **Assign devices** at the top right to assign devices to the group.
-
 
 You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator.
 
@@ -176,8 +180,6 @@ To assign devices to a group, follow these steps:
 2. Click **Assign devices** at the right of the top menu bar.
 3. In the list, select the devices you want to add. You may apply filters to reduce the number of displayed devices.
 4. Click **Assign** to assign the selected devices.
-
-![Assign devices](/images/users-guide/cockpit/cockpit-group-assign.png)
 
 The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 

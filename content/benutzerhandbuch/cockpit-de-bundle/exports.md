@@ -8,7 +8,7 @@ weight: 65
 
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen von Exporten: READ-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -90,11 +90,11 @@ Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde un
 Beispiel:
 Ein Export hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und c8y&#95;SpeedMeasurement.speed.value. Die ersten 3 sind vordefinierte Attribute, während es sich bei dem letzten um ein benutzerdefiniertes Attribut handelt. Wenn ein zu exportierender Messwert kein Attribut `c8y_SpeedMeasurement.speed.value` hat, wird er nicht in der Exportdatei erscheinen.
 
-Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
+Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
 
-Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
+Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Zum Hinzufügen eines Datenpunkts](#add-data-points).
 
-Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
+Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
 
 ![Measurement added from data point](/images/benutzerhandbuch/cockpit/cockpit-export-adddatapoint-measurement.png)
 
@@ -111,7 +111,7 @@ Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten 
 
 **1 - Häufigkeit**
 
-Wählen Sie die Frequenz für das Senden des Exports aus der Auswahlliste, d. h. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
+Wählen Sie die Frequenz für das Senden des Exports aus der Auswahlliste, d. h. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
 {{< c8y-admon-info >}}
 Intervalle müssen in Coordinated Universal Time (UTC) angegeben werden.
@@ -148,7 +148,7 @@ Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Ex
 
 ![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
 {{< /c8y-admon-important >}}
 

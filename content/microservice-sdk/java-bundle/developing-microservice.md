@@ -103,7 +103,7 @@ On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered fo
 
 To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
 10% is reserved for "system", but not less than 50 MB. <br>
-10% is taken for PermGen on JDK 7 or Metaspace on JDK 8, but not less than 64 MB and not more than 1024MB. <br>
+10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
 
 ### Platform API
@@ -114,7 +114,6 @@ The API provides the following services:
 
 * Alarm - AlarmApi
 * AuditRecord - AuditRecordApi
-* CepModule - CepApi
 * Operation - DeviceControlApi
 * Event - EventApi
 * ExternalID - IdentityApi
@@ -297,7 +296,7 @@ The package module provides a Maven plugin to prepare a ZIP file required by the
 <plugin>
     <groupId>com.nsn.cumulocity.clients-java</groupId>
     <artifactId>microservice-package-maven-plugin</artifactId>
-    <version>9.16.2</version>
+    <version>${c8y.version}</version>
     <executions>
         <execution>
             <id>package</id>
@@ -657,8 +656,8 @@ A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to
 A Spring Boot library was upgraded to 2.7.6, hence upgrading Microservice SDK to 10.17+ may require some additional development.
 
 There was a change in the internal microservice security configuration following
-the deprecation of `WebSecurityConfigurerAdapter` by Spring Security. The Microservice SDK does no longer use a direct
-declaration of the `SecurityFilterChain` bean in its internal configuration. At the same time, Spring Security
+the deprecation of `WebSecurityConfigurerAdapter` by Spring Security. The Microservice SDK now uses a direct
+declaration of the `SecurityFilterChain` bean in its internal configuration instead. At the same time, Spring Security
 only allows one of these configuration approaches in a single application. This means that if the old,
 adapter-based method has been used in your code before, you will have to migrate to the new, direct filters
 declaration for applications to start. Refer to the [Spring Security documentation](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#_stop_using_websecurityconfigureradapter) for more details.

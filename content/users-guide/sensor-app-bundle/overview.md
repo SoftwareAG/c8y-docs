@@ -21,7 +21,7 @@ Supported smartphone sensors include:
 *   Gyroscope
 *   Barometer
 *   Magnetometer and compass
-*   GPS location 
+*   GPS location 
 *   Microphone and voice
 *   WiFi strength (selected Android devices only)
 
@@ -35,6 +35,7 @@ The latest list of supported Bluetooth devices is provided in the app. A button 
 *   Acaia Lunar Scale
 *   Cinco Scale
 *   CirrusSense Pressure Sensor
+*   Blebricks
 
 More devices will be supported in the future and made available in the app.
 

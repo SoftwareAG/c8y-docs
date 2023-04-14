@@ -7,6 +7,11 @@ aliases:
   - /users-guide/getting-started/#cumulocity-applications
 ---
 
+{{< c8y-admon-related >}}
+- [Administration > Managing applications](/users-guide/administration/#managing-applications) for details on  other available applications and information on managing applications in {{< product-c8y-iot >}}.
+{{< /c8y-admon-related >}}
+
+
 Per default, {{< product-c8y-iot >}} comes with the following three standard applications:
 
 <table>

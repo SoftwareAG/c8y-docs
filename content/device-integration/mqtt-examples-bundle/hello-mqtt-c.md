@@ -125,14 +125,14 @@ Note that the subscription is established after the device creation, otherwise i
 To build the application, enter
 
 ```shell
-$ gcc hello_mqtt.c -o hello_mqtt -lpaho-mqtt3c
+$ gcc hello_mqtt.c -o hello_mqtt -lpaho-mqtt3c
 ```
 
 To run the application, enter
 
 ```shell
 $ ./hello_mqtt
-Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
+Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
 ...
 ```
 

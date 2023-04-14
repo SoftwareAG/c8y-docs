@@ -21,8 +21,8 @@ Devices connecting to the platform with certificates do not need to provide the 
 * Uploaded certificates must have set `BasicConstraints:[CA:true]`.
 * The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
 * Devices must trust the {{< product-c8y-iot >}} server certificate.
-* Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
-* Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
+* Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
+* Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates
 
@@ -339,20 +339,16 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. Open the Device Management application, then navigate to the **Management** tab and select **Trusted certificates**.
-2. Drop your caCert.pem (or intermediateCert.pem).
-3. Check the auto-registration field.
-4. Click on the certificate status to set it to **Enabled**.
-5. Insert some custom name.
+1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
+2. In the resulting dialog, enter a custom name for the new certificate.
+3. Drop your CA certificate (caCert.pem or intermediateCert.pem).
+4. Select the **Auto registration** check box.
+5. Set the toggle to **Enabled**.
 6. Click **Add certificate**.
 
-After completing all the steps except adding the certificate, the form should look like this:
+Then new certificate will be added to the trusted certificates list:
 
-![Trusted certificate addition](/images/mqtt/mqttTrustedCertificateAddition.png)
-
-Then the added certificate should be visible:
-
-![Trusted certificate added](/images/mqtt/mqttTrustedCertificateAdded.png)
+![Trusted certificate added](/images/mqtt/mqtt-certificate-added.png)
 
 **Via REST:**
 
@@ -389,19 +385,20 @@ In this case the {{< product-c8y-iot >}} platform cannot decide which uploader i
 To ensure verification of ownership by the uploader, a proof of possession is required by the platform.
 
 The steps for the proof of possession are as follows:
-- Ensure that the certificate has been uploaded properly:
-![Check certificate upload](/images/mqtt/devmgmt-mqtt-cert-pop-check.png)
- 
-- Download of the unsigned verification code:
-![Download unsigned verification code](/images/mqtt/devmgmt-mqtt-cert-pop-downloadunsigned.png)
 
-- Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
+1. Navigate to **Management** > **Trusted certificates** in the Device management application and verify that the certificate has been uploaded properly.
+<br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
 
-- Upload of the signed verification code to the platform:
-![Upload signed verification code](/images/mqtt/devmgmt-mqtt-cert-pop-uploadsigned.png)
+2. In the **Proof of Possession** section of the certificate details, download the unsigned verification code.
+<br>![Download unsigned verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
 
-- The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform:
-![Proof of possession completed](/images/mqtt/devmgmt-mqtt-cert-pop-completed.png)
+3. Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
+
+4. Upload the signed verification code to the platform.
+<br>![Upload signed verification code](/images/mqtt/mqtt-cert-upload-signed.png)
+
+The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform. This is indicated by switching the state from "Incomplete" to "Complete" in the **Proof of Possession** section.
+
 
 {{< c8y-admon-info >}}
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.

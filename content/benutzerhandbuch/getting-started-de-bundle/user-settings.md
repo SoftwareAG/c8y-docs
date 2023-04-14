@@ -1,9 +1,9 @@
 ---
-weight: 50
-title: Benutzeroptionen und -einstellungen
-layout: redirect
 aliases:
-  - /benutzerhandbuch/overview-de/#user-settings
+ - /benutzerhandbuch/overview-de/#user-settings
+layout: redirect
+title: Benutzeroptionen und -einstellungen
+weight: 50
 ---
 
 Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird ein Menü geöffnet, das Zugriff auf verschiedene Aktionen oder Informationen ermöglicht.
@@ -48,7 +48,7 @@ Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im {{< manageme
 </tr>
 <tr>
 <td style="text-align:left">Versionen</td>
-<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten {{< product-c8y-iot >}}-Version (z. B. 10.13.0.034) für Backend und Benutzeroberfläche an. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
+<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten {{< product-c8y-iot >}}-Version (z. B. 10.13.0.034) für Backend und Benutzeroberfläche an. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
 </tr>
 </tbody>
 </table>
@@ -112,5 +112,5 @@ Das Passwort muss standardmäßig folgende Bedingungen erfüllen:
 * Es muss alle der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 
 {{< c8y-admon-info >}}
-Die Passwortregeln können vom Administrator konfiguriert werden, d. h. der Administrator kann die Einhaltung bestimmter Richtlinien für das Passwort Ihres Kontos erzwingen. So kann es etwa erforderlich sein, dass Sie ein starkes Passwort wählen oder Ihr Passwort regelmäßig ändern müssen.
+Die Passwortregeln können vom Administrator konfiguriert werden, d. h. der Administrator kann die Einhaltung bestimmter Richtlinien für das Passwort Ihres Kontos erzwingen. So kann es etwa erforderlich sein, dass Sie ein starkes Passwort wählen oder Ihr Passwort regelmäßig ändern müssen.
 {{< /c8y-admon-info >}}

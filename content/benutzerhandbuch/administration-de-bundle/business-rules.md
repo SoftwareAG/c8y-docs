@@ -24,7 +24,7 @@ Zu jeder Alarmregel werden der Alarmschweregrad, der Alarmtyp und eine Beschreib
 5. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 {{< c8y-admon-info >}}
-Der als Alarmregel bereitgestellte Alarmtyp wird als Alarmtyp-Präfix interpretiert: &quot;&#60;type-prefix&#62;*&quot;. Wenn Sie z. B. eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren soll, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
+Der als Alarmregel bereitgestellte Alarmtyp wird als Alarmtyp-Präfix interpretiert: &quot;&#60;type-prefix&#62;*&quot;. Wenn Sie z. B. eine Alarmregel erstellen, die Alarme des Typs &quot;crit-alarm&quot; adressieren soll, gilt die Regel für jeden Alarmtyp, der mit diesem Wert beginnt, z. B. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot; oder &quot;crit-alarm-xyz&quot;.
 {{< /c8y-admon-info >}}
 
 #### So bearbeiten Sie eine Alarmregel

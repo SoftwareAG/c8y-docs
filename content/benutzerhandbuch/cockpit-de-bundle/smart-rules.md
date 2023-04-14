@@ -8,22 +8,22 @@ weight: 80
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Die Smart Rules-Funktionalität ist nur verfügbar, wenn der Mandant den Microservice "Smartrule" und den Microservice "Apama-ctrl" abonniert hat.
 {{< /c8y-admon-req >}}
 
 Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 
-* **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einem Template bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
-* **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
+- **Regelparameter** werden vom Benutzer beim Erstellen einer Smart Rule aus einem Template bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.
+- **Objektparameter** werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellenwerte.
 
 Es gibt zwei Typen von Smart Rules:
 
-* **Globale Smart Rules**
+- **Globale Smart Rules**
 
   Globale Smart Rules werden in einem globalen Kontext erstellt (**Smart Rules**-Seite, Alarme, Daten-Explorer und mehr).
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN für globale Smart Rules:
 
 - Zum Anzeigen einer globalen Smart Rule: LESEN-Berechtigung für Berechtigungstyp "Globale Smart Rules" oder "Regeln" und LESEN-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -37,7 +37,7 @@ ROLLEN UND BERECHTIGUNGEN für globale Smart Rules:
 
   Lokale Smart Rules werden entweder in einer Gruppe oder in einem Gerät erstellt. Sie sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN für lokale Smart Rules:
 
 - Zum Anzeigen von lokalen Smart Rules: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in den Stammdatenrollen
@@ -48,13 +48,13 @@ ROLLEN UND BERECHTIGUNGEN für lokale Smart Rules:
 
 Smart Rules sind an zwei Orten zu sehen:
 
-* Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
+- Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
 
   ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
 
   Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
 
-* In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
+- In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
 
   ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
 
@@ -109,11 +109,11 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 <a name="toggle-rules"></a>
 ### So schalten Sie eine Smart Rule ein/aus
 
-Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
+Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
 
-Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
+Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
 
 Zusätzlich zum globalen Ein-/Ausschalten einer Smart Rule kann eine Smart Rule für konkrete Objekte (Gruppen oder Geräte) im **aktiven** oder **inaktiven** Zustand sein. Im **aktiven** Zustand verarbeitet die Regel Ereignisse für diese Gruppen und Geräte.
 
@@ -131,7 +131,7 @@ Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschal
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
 {{< /c8y-admon-important >}}
 

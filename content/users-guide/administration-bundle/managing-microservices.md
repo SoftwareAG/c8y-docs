@@ -20,6 +20,17 @@ Click **Microservices** in the **Ecosystem** menu in the navigator to display a 
 
 A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications, see [Custom microservices](#custom-microservices).
 
+{{< c8y-admon-related >}}
+- [Managing applications](#managing-microservices) for information on managing web applications.
+- [Managing permissions](#managing-permissions) for details on assigning roles and permissions for the usage of {{< product-c8y-iot >}} applications.
+- [Changing application settings](/users-guide/administration/#default-app) for information on changing the application settings for your account.
+- [Enterprise tenant > Managing tenants > Applications](/users-guide/enterprise-tenant/#applications) for information on application subscriptions on tenant level.
+- [Enterprise tenant > Usage statistics and billing](/users-guide/enterprise-tenant/#usage-and-billing) for information on the microservice usage feature.
+- [Developing applications > Microservices](/concepts/applications/#microservices) in the *Concepts guide* for an overview on the basic concepts of microservices in {{< product-c8y-iot >}}.
+- The [Microservice SDK guide](/microservice-sdk/introduction) for general aspects of using microservices on top of {{< product-c8y-iot >}} and information on developing and deploying microservices using our SDKs or the REST interface.
+- [Applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
+{{< /c8y-admon-related >}}
+
 ### Subscribed microservices
 
 {{< product-c8y-iot >}} provides a variety of microservice applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
@@ -44,9 +55,9 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-1c-4g</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-250mc-1g</a></td>
 <td style="text-align:left">Full Apama microservice. Runtime for Analytics Builder, EPL Apps, and smart rules</td>
-<td style="text-align:left">apama-ctrl-1c-4g</td>
+<td style="text-align:left">apama-ctrl-250mc-1g</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
@@ -58,9 +69,9 @@ Below you find a list of all microservices which are by default subscribed in a 
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrules</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrulesmt</a></td>
 <td style="text-align:left">Restricted version of the Apama microservice. Runtime for smart rules only, no Analytics Builder models or EPL apps available</td>
-<td style="text-align:left">apama-ctrl-smartrules</td>
+<td style="text-align:left">apama-ctrl-smartrulesmt</td>
 <td style="text-align:left">Only available for self-hosted installations</td>
 </tr>
 
@@ -168,15 +179,11 @@ Below, you will additionally find information on the microservice version, as we
 
 At the top right of the **Properties** tab, you find a toggle to subscribe to or unsubcribe from a microservice.
 
-<img src="/images/users-guide/Administration/admin-microservice-subscribe.png" alt="Microservice subscription" style="max-width: 100%">
-
 Changing the subscription is only possible for custom microservices, that is microservices being owned by you.
 
 ### Microservice permissions
 
 In the **Permissions** tab you can view the permissions required for the respective microservice, and the roles provided for it.
-
-<img src="/images/users-guide/Administration/admin-microservice-permissions.png" alt="Microservice permissions" style="max-width: 100%">
 
 ### Monitoring microservices
 
@@ -222,8 +229,6 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 {{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices.
 
 To view logs, open the **Logs** tab of the respective microservice.
-
-<img src="/images/users-guide/Administration/admin-microservice-logs.png" alt="Microservice log" style="max-width: 100%">
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 

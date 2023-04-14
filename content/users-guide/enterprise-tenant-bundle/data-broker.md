@@ -8,10 +8,10 @@ helpcontent:
   - label: data-broker
     title: Data broker
     content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations."
-    label: data-connector
+  - label: data-connector
     title: Data connector
     content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** at the top right."
-    label: data-subscriptions
+  - label: data-subscriptions
     title: Data subscriptions
     content: "The **Data subscriptions** page shows a list of all currently defined data forwarded to your tenant. For each subscription, the name, target tenant and status (enabled or disabled) are provided on a card. Use the toggle to temporarily stop forwarding data to your tenant."
 ---
@@ -29,8 +29,6 @@ To be able to use this feature, your tenant must be subscribed to the applicatio
 {{< /c8y-admon-req >}}
 
 Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
-
-<img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
 {{< c8y-admon-important >}}
 Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
@@ -153,9 +151,6 @@ The heading of a data filter summarizes the configuration in one line. The stand
 
 After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You must communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
-![Security code](/images/users-guide/enterprise-tenant/et-data-broker-connector-security-code.png)
-
-
 #### To edit a data connector
 
 Click the connector title, or click the menu icon at the right of a data connector entry and then click **Edit**.
@@ -187,8 +182,6 @@ For details on alarms in general, see [Device Management > Monitoring and contro
 In the **Data subscriptions** page, you can manage existing data subscriptions or create new ones.
 
 Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant.
-
-<img src="/images/users-guide/enterprise-tenant/et-subscriptions.png" alt="Data subscriptions">
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 

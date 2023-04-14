@@ -121,7 +121,7 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 
 Die Antwort wird dem SmartREST-Template hinzugefügt.
 
-Weitere Informationen finden Sie unter [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
+Weitere Informationen finden Sie unter [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
 
 #### So löschen Sie eine Antwort
 

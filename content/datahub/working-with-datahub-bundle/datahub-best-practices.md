@@ -1,5 +1,5 @@
 ---
-weight: 90
+weight: 100
 title: Cumulocity IoT DataHub best practices
 layout: redirect
 ---

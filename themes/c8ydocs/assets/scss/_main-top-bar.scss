@@ -35,6 +35,8 @@
     color: $gray-text;
     -webkit-appearance: none;
     appearance: none;
+    background: transparent;
+    border:0;
     .caret {
       margin-left: 6px;
     }

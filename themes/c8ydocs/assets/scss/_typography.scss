@@ -84,13 +84,15 @@ h4 {font-size: 1.125rem;}
 h5 {font-size: 1rem;}
 
 
-.lead{
-  font-size: 1.2em;
-  font-weight: 300;
-  @media(min-width: $grid-breakpoint){
-    font-size: 1.4em;
-  }
-}
+// .lead{
+  // p:first-child{
+  //   font-size: 1.2em;
+  //   font-weight: 300;
+  //   @media(min-width: $grid-breakpoint){
+  //     font-size: 1.4em;
+  //   }
+  // }
+// }
 
 p {
   margin: 0 0 1.3em;

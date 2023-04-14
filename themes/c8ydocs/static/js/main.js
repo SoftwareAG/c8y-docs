@@ -176,6 +176,8 @@ function buildToc() {
   if (tocLinks.length) {
     tocLinks += '</div>';
     $('#toc').html(tocLinks);
+    let count = $('#toc').find('.list-group');
+    $(count[0]).addClass('current');
   } else {
     $('#toc').html('');
   }
@@ -215,15 +217,12 @@ function buildToc() {
       if (rect.top <= halfViewportHeight && rect.bottom >= halfViewportHeight) {
         const currentLinkId = link.getAttribute('href').substring(1);
         if (currentLinkId !== lastLinkId) {
-          // if (lastLinkId) {
-          //   const lastLink = document.querySelector(`.toc a[href="#${lastLinkId}"]`);
-          //   lastLink.classList.remove('active');
-          // } else {
+          
           let tempActive = document.querySelectorAll('.toc .active');
           tempActive.forEach(temp => {
             temp.classList.remove('active');
           });
-          // }
+          
           link.classList.add('active');
           lastLinkId = currentLinkId;
         }
@@ -243,7 +242,6 @@ function buildToc() {
       } else {
         activeSec = sec.getAttribute('href').substring(1);
       }
-
       tocSections.forEach(toc => {
         if (toc.getAttribute('data-toc') === activeSec) {
           toc.classList.add('current');

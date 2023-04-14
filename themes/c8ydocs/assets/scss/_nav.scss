@@ -45,8 +45,6 @@
   .dropdown-toggle {
     border: 1px solid var(--c8y-root-component-border-color);
     padding: 6px 16px;
-    // font-size: .885rem;
-    // border-radius: 20px;
     font-weight: bold;
     color: $gray-text;
     position: relative;
@@ -70,6 +68,7 @@
       width: auto;
       color: var(--c8y-palette-gray-40);
       font-size: .775rem;
+      background-image: none;
     }
   }
   .show .dropdown-toggle {

@@ -148,12 +148,16 @@ body{
   p{
     font-size: 14px;
   }
-   &:hover{
+   &:hover, &:focus{
     box-shadow: var(--c8y-elevation-hover);
     text-decoration: none;
     h2{
       color: var(--c8y-brand-primary);
     }
+  }
+  &:focus{
+    outline: 2px solid var(--c8y-brand-primary);
+    outline-offset: -2px;
   }
 }
 

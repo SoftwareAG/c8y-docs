@@ -19,11 +19,18 @@ We recommend you to never delete the connector device.
 ### Migration of the LWM2M devices
 
 Starting from version 10.15.0, the new device registration for LWM2M is introduced.
-If LWM2M devices were created earlier and were not already migrated or if they were created later but in a legacy way, use the `migrateLwm2mDevices` command for the tenant.
-The command can take comma-separated device managed object IDs as parameters. If IDs are specified, the migration will be done for the respective devices.
-If the command is sent without any parameters then all LWM2M devices that have not been migrated will be detected and migrated.
+LWM2M devices created earlier than version 10.15.0 and new LWM2M devices created via bulk registration must be migrated
+to the new structure using the `migrateLwm2mDevices` command for the tenant. It migrates all devices and their existing client registration objects to 
+the new format in the database. It is backwards compatible since it retains old fragments. 
 
-Example usages: `migrateLwm2mDevices 1122,3344` or `migrateLwm2mDevices`
+The argument `-d` or `--devices` followed by a list of managed object IDs can be used to migrate specific device managed objects. To skip the
+migration of their corresponding client registration objects, use the `-sr` or `--skipRegistrations` argument.
+
+Example usages:
+* `migrateLwm2mDevices`: to migrate all devices and client registration objects of the tenant
+* `migrateLwm2mDevices --skipRegistrations`: to migrate all devices without their client registration objects
+* `migrateLwm2mDevices --devices 1111 2222`: to migrate specific devices with their client registration objects
+* `migrateLwm2mDevices -sr -d 1111 2222`: to migrate specific devices without their client registration objects
 
 <a name="lwm2m-invalidate-lwm2m-registrations"></a>
 ## Invalidate registrations

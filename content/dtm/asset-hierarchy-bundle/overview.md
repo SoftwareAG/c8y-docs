@@ -30,10 +30,10 @@ If you create the root asset "Wind turbine" with the subasset "Rotor", which has
 
 Wind turbine > Rotor > Blade
 
-Initially, all the asset hierarchies are collapsed and it lists only the root assets. The lists also shows certain asset details, for example, asset model and description. Click the expand icon to the left of each asset to view the next level of subassets. Note that the devices assigned to an asset is not shown in the asset hierarchy.
+Initially, all the asset hierarchies are collapsed and it lists only the root assets. The list also shows certain asset details, for example, asset model and description. Click the expand icon to the left of each asset to view the next level of subassets. Note that the devices assigned to an asset is not shown in the asset hierarchy.
 
 Click the asset name to view the asset details and the devices assigned to it.
 
-Hover over the desired asset and click the delete icon to delete an asset from the **Assets** page.
+To edit or delete an asset from **Assets** page, click the menu icon at the right of the row and click either the edit or delete option.
 
 ![asset-hierarchy](/images/dtm/assets/dtm-assets-asset-hierarchy.png)

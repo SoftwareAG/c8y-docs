@@ -269,12 +269,12 @@ In the **Properties** tab, each application will show the following information,
 
 Click **Extensions** in the **Ecosystem** menu in the navigator to display all extensions in your account.
 
-Extensions provide better shareability and reusability of UI features across different applications. UI features can be developed as plugins and added to an application without coding knowledge. There are two types of extensions:
+Extensions make it easier to share and reuse UI features across different applications. UI features can be developed as plugins and added to an application without coding knowledge. There are two types of extensions:
 
 - Plugins
 - Blueprints
 
-Blueprint applications can be installed, while plugins can be added into any other application. This allows you to scaffold whole solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime and no re-building is needed.
+Blueprint applications can be installed, while plugins are added to other applications. This allows you to scaffold entire solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime without rebuilding.
 
 Switch to the **Plugins** tab of an application to view all plugins installed on an application.
 

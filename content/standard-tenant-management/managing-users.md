@@ -2,7 +2,7 @@
 weight: 12
 title: Managing users
 layout: bundle
-section: 
+section:
   - platform_administration
 helpcontent:
   - label: managing-users
@@ -39,7 +39,7 @@ Moreover, password reset in {{< product-c8y-iot >}} is disabled for users create
 Users which are using single sign-on cannot change the password of users which are managed by the platform.
 {{< /c8y-admon-info >}}
 
-### Viewing users
+### To view users
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 

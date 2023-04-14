@@ -4,7 +4,9 @@ icon: "dlt-c8y-icon-lock11"
 type: root
 layout: redirect
 bundle: authentication
-section: 
+section:
   - platform_administration
 weight: 50
 ---
+
+Learn how to modify the basic authentication settings and how to configure two-factor authentication and single sign-on.

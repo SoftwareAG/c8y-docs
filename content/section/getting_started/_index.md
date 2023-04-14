@@ -191,4 +191,4 @@ svg: '<svg
 '
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam non quas, voluptate nobis praesentium ab aut eius asperiores sint dolores dolore magnam nihil? Optio perspiciatis in, rerum minus ipsa aut.
+Get a first impression by reading about the concepts behind the {{< product-c8y-iot >}} platform. Or directly get started by following the quick start instructions.

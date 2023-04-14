@@ -2,7 +2,7 @@
 weight: 50
 title: Support user access
 layout: bundle
-section: 
+section:
   - platform_administration
 aliases:
   - /users-guide/enterprise-edition
@@ -17,7 +17,7 @@ On the {{< product-c8y-iot >}} public cloud instances, the support user function
 {{< /c8y-admon-info >}}
 
 <a name="configuring-support-access"></a>
-### Configuring support user access
+### To configure support user access
 
 Support user access can either be:
 
@@ -25,7 +25,6 @@ Support user access can either be:
 * Deactivated for all subtenants, but explicitly be enabled by a user for their tenant.
 
 This is configured globally in the *{{< management-tenant >}}*, see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
-
 
 If activated globally, the support user can log in to all allowed subtenants as any user without restriction.
 

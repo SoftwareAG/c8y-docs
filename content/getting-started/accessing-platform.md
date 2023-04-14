@@ -2,7 +2,7 @@
 weight: 25
 title: Accessing and logging into the platform
 layout: bundle
-section: 
+section:
   - getting_started
 aliases:
   - /users-guide/overview
@@ -63,7 +63,7 @@ Make sure that the address bar of your browser shows a lock icon. The lock icon 
 {{< /c8y-admon-important >}}
 
 <a name="login"></a>
-### How to log into the platform
+### To log into the platform
 
 On the Login screen, enter your username (case-sensitive) and password.
 
@@ -101,7 +101,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 {{< /c8y-admon-info >}}
 
 <a name="reset-password"></a>
-### How to reset your password
+### To reset your password
 
 1. Click the **Forgot password?** link on the Login screen.
 2. In the resulting dialog box, enter your email address and click **Reset password**.
@@ -119,7 +119,7 @@ The automated password reset will only work if your email address is stored with
 If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/welcome/contacting-support/).
 
 <a name="URLs"></a>
-### How to access pages using URLs
+### To access pages using URLs
 
 You can navigate straight to any place inside a {{< product-c8y-iot >}} application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 

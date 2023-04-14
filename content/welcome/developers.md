@@ -1,8 +1,8 @@
 ---
 weight: 30
-title: Welcome developers
+title: Documentation for developers
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 

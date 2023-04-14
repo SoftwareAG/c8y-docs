@@ -2,7 +2,7 @@
 weight: 50
 title: User options and settings
 layout: bundle
-section: 
+section:
   - getting_started
 aliases:
   - /users-guide/overview
@@ -104,7 +104,7 @@ The UI is available in the following languages:
 
 
 <a name="change-password"></a>
-#### To change your password
+### To change your password
 
 1. Click the **User** button at the right of the top bar and then click **User settings**.
 2. In the **Edit user** dialog box, click **Change Password**.

@@ -1,12 +1,12 @@
 ---
-weight: 25
+weight: 20
 title: Documentation versions and sources
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
-The {{< product-c8y-iot >}} documentation website provides the documentation for all GA releases under maintenance, i.e. for the current GA release and the previous two GA releases.
+The {{< product-c8y-iot >}} documentation website provides the documentation for all GA releases under maintenance, that is, for the current GA release and the previous two GA releases.
 
 You can switch between the versions by using the dropdown list at the top right.
 

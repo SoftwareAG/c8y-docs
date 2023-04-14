@@ -7,7 +7,7 @@ baseURL = "https://jocular-cucurucho-8ab98d.netlify.app/guides"
 
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "Cumulocity IoT Guides"
+title = "Cumulocity IoT documentation"
 theme = "c8ydocs"
 paginate = 12
 # canonifyurls = false

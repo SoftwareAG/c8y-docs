@@ -274,7 +274,7 @@ Extensions make it easier to share and reuse UI features across different applic
 - Plugins
 - Blueprints
 
-Blueprint applications can be installed, while plugins are added to other applications. This allows you to scaffold entire solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime without rebuilding.
+Blueprint applications must be deployed, while plugins are added to other applications. This allows you to scaffold entire solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime without rebuilding.
 
 Switch to the **Plugins** tab of an application to view all plugins installed on an application.
 

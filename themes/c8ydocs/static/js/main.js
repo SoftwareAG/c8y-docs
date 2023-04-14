@@ -163,14 +163,16 @@ function buildToc() {
   let h3s = document.getElementsByTagName('h3');
   let tocLinks = '';
   let currenth2 = '';
-  for (let index = 0; index < h3s.length; index++) {
-    if ($(h3s[index]).attr('id') && $(h3s[index]).text().length) {
-      let activeh2 = $(h3s[index]).closest('article').attr('id');
-      if (activeh2 != currenth2) {
-        tocLinks += tocLinks.length === 0 ? '<div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>' : '</div><div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>';
-        currenth2 = activeh2;
+  if (h3s.length > 1) {
+    for (let index = 0; index < h3s.length; index++) {
+      if ($(h3s[index]).attr('id') && $(h3s[index]).text().length) {
+        let activeh2 = $(h3s[index]).closest('article').attr('id');
+        if (activeh2 != currenth2) {
+          tocLinks += tocLinks.length === 0 ? '<div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>' : '</div><div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>';
+          currenth2 = activeh2;
+        }
+        tocLinks += '<div class="list-group-item"><a href="#' + $(h3s[index]).attr('id') + '" title="' + $(h3s[index]).text() + '">' + $(h3s[index]).text() + '</a></div>';
       }
-      tocLinks += '<div class="list-group-item"><a href="#' + $(h3s[index]).attr('id') + '" title="' + $(h3s[index]).text() + '">' + $(h3s[index]).text() + '</a></div>';
     }
   }
   if (tocLinks.length) {

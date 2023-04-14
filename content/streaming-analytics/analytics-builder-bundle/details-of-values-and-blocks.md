@@ -1,6 +1,6 @@
 ---
 weight: 70
-title: Details of blocks and wires
+title: Details of values and blocks
 layout: redirect
 ---
 

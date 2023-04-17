@@ -64,3 +64,11 @@ The following sections describe the following additional functionalities availab
 </tr>
 </tbody>
 </table>
+
+{{< c8y-admon-req >}}
+In order to make particular tenant to be **Enterprise tenant** you need to subscribe following 4 "applications" to the tenant (3 features and 1 microservice):
+* feature-branding
+* feature-broker
+* feature-user-hierarchy
+* sslmanagement
+{{< /c8y-admon-req >}}

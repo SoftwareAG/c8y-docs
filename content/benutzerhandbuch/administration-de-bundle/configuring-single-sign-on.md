@@ -4,10 +4,10 @@ title: Konfigurieren von Single Sign-On
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} bietet Single-Sign-On-Funktionalität (SSO), die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, z. B. Azure Active Directory (ADD), anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
+{{< product-c8y-iot >}} bietet Single-Sign-On-Funktionalität (SSO), die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, z. B. Azure Active Directory (AAD), anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
 
-{{< c8y-admon-req title="Anforderungen" >}}
+{{< c8y-admon-req >}}
 Zur Verwendung der SSO-Funktion muss gewährleistet sein, dass:
 
 * der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt.
@@ -16,9 +16,9 @@ Zur Verwendung der SSO-Funktion muss gewährleistet sein, dass:
 * {{< product-c8y-iot >}}-Plattform Version 10.4.6 oder vorzugsweise höher verwendet wird.
 * alle Microservices mit dem Microservice Java SDK, Version 10.4.6 oder vorzugsweise höher, erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im *Microservice SDK Guide*.
 * Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
-* Für {{< enterprise-tenant-de >}}s muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei SSO-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
-* Sie müssen dem Benutzer eine Rolle mit mindestens LESEN-Berechtigung für "Eigener Benutzer" zuweisen, andernfalls kann sich der Benutzer nicht anmelden.
-* Die Benutzer müssen in den Browsereinstellungen Cookies aktiviert haben, da die SSO-Funktion auf der Cookie-Technologie basiert.
+* Für {{< enterprise-tenant >}}s muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei SSO-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
+* Sie müssen dem Benutzer eine Rolle zuweisen, die für "Eigener Benutzer" mindestens die LESEN-Berechtigung besitzt, andernfalls kann sich der Benutzer nicht anmelden.
+* In den Browsereinstellungen der Benutzer müssen Cookies aktiviert sein, da die SSO-Funktion auf der Cookies-Technologie aufbaut.
 {{< /c8y-admon-req >}}
 
 ### Konfigurationseinstellungen
@@ -27,9 +27,9 @@ Um die SSO-Funktion zu aktivieren, muss der Administrator eine Verbindung zum Au
 
 #### Konfigurationszugriff
 
-SSO-Konfigurationen können so eingerichtet werden, dass ausschließlich der {{< management-tenant-de >}} darauf Zugriff hat. So wird verhindert, dass andere Mandanten auf die Konfigurationen zugreifen.
-Benutzer solcher Mandanten können die Konfiguration nicht aktualisieren. Dies beseitigt das Risiko einer falsch konfigurierten SSO-Funktion, durch die andere Benutzer daran gehindert werden können, sich über SSO anzumelden.
-Der {{< management-tenant-de >}} kann den Zugriff auf SSO-Konfigurationen für spezifische Mandanten gewähren oder einschränken. Weitere Informationen zum Konfigurationszugriff finden Sie unter [Login options API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in der {{< openapi >}}.
+SSO-Konfigurationen können so eingerichtet werden, dass sie ausschließlich vom {{< management-tenant >}}en aufrufbar sind, um zu verhindern, dass andere Mandanten auf sie zugreifen können.
+Benutzer solcher Mandanten können die Konfiguration nicht aktualisieren. Dies beseitigt die Gefahr, dass andere Benutzer sich wegen einer falsch konfigurierten SSO-Funktion nicht über SSO anmelden können.
+Der {{< management-tenant >}} kann den Zugriff auf SSO-Konfigurationen für bestimmte Mandanten gewähren oder einschränken. Weitere Informationen zum Konfigurationszugriff finden Sie unter [Login options API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in der {{< openapi >}}.
 
 #### Konfigurationsansicht
 
@@ -41,7 +41,7 @@ Links oben können Sie eine Vorlage auswählen. Die gewählte Option wirkt sich 
 <a name="custom-template"></a>
 #### Benutzerdefinierte Vorlage
 
-![Custom authorization request](/images/benutzerhandbuch/Administration/sso-custom-authorization-request.png)
+![Custom authorization request](/images/users-guide/Administration/sso-custom-authorization-request.png)
 
 Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt.
 
@@ -53,25 +53,25 @@ Beachten Sie, dass das Text-Feld jeder Anfrage nach dem Ausfüllen der Platzhalt
 
 Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus {{< product-c8y-iot >}} zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
-![Custom logout request](/images/benutzerhandbuch/Administration/sso-custom-logout-request.png)
+![Custom logout request](/images/users-guide/Administration/sso-custom-logout-request.png)
 
 Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
-![Custom basic configuration](/images/benutzerhandbuch/Administration/sso-custom-basic.png)
+![Custom basic configuration](/images/users-guide/Administration/sso-custom-basic.png)
 
 |Feld|Beschreibung|
 |:---|:---|
 |Redirect-URI|Redirect-Parameter. Kann in Anfragedefinitionen als ${redirectUri}-Platzhalter verwendet werden.
 |Client-ID|Client-ID der OAuth-Verbindung. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.
-|Name der Schaltfläche|Name auf der Schaltfläche auf der Anmeldeseite
-|Issuer|OAuth-Token-Issuer
+|Token-Issuer|OAuth-Token-Issuer
+|Schaltflächenname|Name auf der Schaltfläche auf der Anmeldeseite
 |Anbietername|Name des Anbieters
-|Sichtbar auf der Anmeldeseite|Legt fest, ob die Anmeldeoption sichtbar sein soll.
 |Audience|Erwarteter "aud"-Parameter des JWT
+|Sichtbar auf der Anmeldeseite|Legt fest, ob die Anmeldeoption sichtbar sein soll.
 
 Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur {{< product-c8y-iot >}}-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
- ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping.png)
+ ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping.png)
 
  Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
 
@@ -96,7 +96,7 @@ Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unt
 Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
 
 
- ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-WHEN.png)
+ ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-WHEN.png)
 
 In diesem Fall sieht der JWT-Claim folgendermaßen aus:
 
@@ -113,57 +113,57 @@ In diesem Fall sieht der JWT-Claim folgendermaßen aus:
  }
  ```
 
-Durch den "in"-Operator besteht die Möglichkeit zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (".") im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.
+Über den "in"-Operator besteht die Möglichkeit zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (".") im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.
 
-Standardmäßig ist die Konfiguration für die dynamische Rechtezuordnung ausgewählt: **Die Rollen, die in den Regeln oben ausgewählt wurden, werden dem Benutzer bei jedem Login wieder zugewiesen. Alle anderen Rollen werden entfernt.**.
-Somit weist die dynamische Rechtezuordnung bei jeder Anmeldung des Benutzers standardmäßig Benutzerrollen anhand des Access Tokens zu.
+Standardmäßig ist die Konfiguration für dynamische Rechtezuordnung ausgewählt: **Rollen, die in den obigen Regeln für einen Nutzer ausgewählt wurden, werden beim Login diesem Nutzer zugeteilt. Nicht gewählte Rollen werden gelöscht**.
+Dies bedeutet: Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung Benutzerrollen anhand des Access Tokens zu.
 Es ist nicht möglich, die Benutzerrollen innerhalb von {{< product-c8y-iot >}} zu ändern, da sie bei der nächsten Anmeldung des Benutzers überschrieben würden.
-Um dieses Verhalten zu ändern, wählen Sie unten im Abschnitt **Rechtezuordnung** eines der folgenden Optionsfelder:
+Um dieses Verhalten zu ändern, wählen Sie unten im Bereich **Rechtezuordnung** eine der folgenden Optionsschaltflächen:
 
 * **Dynamische Rechtezuordnung nur bei der Benutzererstellung verwenden** - Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert.
 
-* **Die Rollen, die in den Regeln oben ausgewählt wurden, werden dem Benutzer bei jedem Login wieder zugewiesen. Alle anderen Rollen bleiben unverändert.** - Wenn aktiviert, wird die dynamische Rechtezuordnung bei jeder Anmeldung verwendet, aber die in der Rechtezuordnungskonfiguration nicht aufgeführten Rollen werden nicht aktualisiert. Nur die Rollen, die in den definierten Rechtezuordnungsregeln aufgeführt sind, werden überschrieben.
+* **Rollen, die in den obigen Regeln für einen Nutzer ausgewählt wurden, werden beim Login diesem Nutzer zugeteilt. Nicht gewählte Rollen bleiben davon unberührt** - Wenn aktiviert, wird die dynamische Rechtezuordnung bei jeder Anmeldung verwendet, doch die Rollen, die in der Rechtezuordnungskonfiguration nicht aufgeführt sind, werden nicht aktualisiert. Nur die Rollen, die in den definierten Rechtezuordnungsregeln aufgeführt sind, werden überschrieben.
 
-![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-2.png)
+![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
-Durch die Auswahl einer der oben genannten beiden Optionen können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung bearbeiten. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#attach-global) im *User Guide*.
+Bei Aktivierung einer der oben genannten Optionen können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/users-guide/administration/#attach-global) im *User Guide*.
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 Die Benutzer-ID kann auf ein beliebiges Top-Level-Feld der Autorisierungstoken-Nutzdaten gesetzt werden, die während des Anmeldeprozesses vom Autorisierungsserver an die Plattform gesendet werden. Wir empfehlen, das Autorisierungstoken in den Audit-Logs zu überprüfen und sicherzustellen, dass das richtige Feld verwendet wird (siehe [Fehlerbehebung](#troubleshooting)).
 
-![User ID configuration](/images/benutzerhandbuch/Administration/sso-custom-userid-config.png)
+![User ID configuration](/images/users-guide/Administration/sso-custom-userid-config.png)
 
-Wenn das Kontrollkästchen **Konstanten Wert verwenden** aktiviert ist, wird eine konstante Benutzer-ID für alle Benutzer verwendet, die sich über SSO an der {{< product-c8y-iot >}}-Plattform anmelden. Dies bedeutet, dass alle Benutzer, die sich über SSO anmelden, dasselbe Benutzerkonto in der {{< product-c8y-iot >}}-Plattform nutzen. Die Verwendung dieser Option wird nicht empfohlen.
+ Wenn das Kontrollkästchen **Konstanten Wert verwenden** aktiviert ist, wird eine konstante Benutzer-ID für alle Benutzer verwendet, die sich über SSO an der {{< product-c8y-iot >}}-Plattform anmelden. Dies bedeutet, dass alle Benutzer, die sich über SSO anmelden, dasselbe Benutzerkonto in der {{< product-c8y-iot >}}-Plattform nutzen. Die Verwendung dieser Option wird nicht empfohlen.
 
 Danach kann das **Benutzerdaten-Mapping** konfiguriert werden:
 
-![User data mappings](/images/benutzerhandbuch/Administration/sso-custom-userdata-mapping.png)
+![User data mappings](/images/users-guide/Administration/sso-custom-userdata-mapping.png)
 
 Beim Benutzer-Login können Benutzerdaten wie Vorname, Nachname, E-Mail-Adresse und Telefonnummer auch von JWT-Claims abgeleitet werden. Jedes Feld repräsentiert den Claim-Namen, der zum Abrufen der Daten von JWT verwendet wird. Die Konfiguration des Benutzerdaten-Mappings ist optional und als Admin-Manager können Sie nur die erforderlichen Felder verwenden. Falls die Konfiguration leer ist oder der Claim-Name im JWT-Token nicht gefunden werden kann, werden die Werte in den Benutzerdaten als leer festgelegt.
 
-Mapping für Alias ist nicht verfügbar, da es im Kontext von SSO nicht verwendet wird.
+Mapping für Alias ist nicht verfügbar, da es im Kontext der SSO-Anmeldung nicht verwendet wird.
 
 Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren.
 
 1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats.
 
- ![Signature verification Azure](/images/benutzerhandbuch/Administration/sso-signature-verification-Azure-AD.png)
+ ![Signature verification Azure](/images/users-guide/Administration/sso-signature-verification-Azure-AD.png)
 
 2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0).
 
- ![Signature verification ADFS](/images/benutzerhandbuch/Administration/sso-signature-verification-ADFS-manifest.png)
+ ![Signature verification ADFS](/images/users-guide/Administration/sso-signature-verification-ADFS-manifest.png)
 
 3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats für {{< product-c8y-iot >}}. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall.
 
- ![Signature verification Custom](/images/benutzerhandbuch/Administration/sso-signature-verification-custom.png)
+ ![Signature verification Custom](/images/users-guide/Administration/sso-signature-verification-custom.png)
 
 4. Durch Spezifizieren der JWKS (JSON Web Key Set)-URI. JWKS ist eine Gruppe von JWK-Objekten, die einen öffentlichen Schlüssel zum Verifizieren von Tokens enthalten, die vom Autorisierungsserver ausgegeben werden.
 
- ![Signature verification JWKS](/images/benutzerhandbuch/Administration/sso-signature-verification-JWKS.png)
+ ![Signature verification JWKS](/images/users-guide/Administration/sso-signature-verification-JWKS.png)
 
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
+{{< product-c8y-iot >}} unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (z. B. Elliptic-Curves) werden nicht unterstützt.
 {{< /c8y-admon-info >}}
 
 #### Platzhalter
@@ -184,10 +184,10 @@ Diese Platzhalter können in Autorisierungsanfragen, Token-Anfragen, Refresh-Anf
 * Anfrageparameter
 
 Um in einem Feld einen Platzhalter zu verwenden, schließen Sie diesen mit vorangehendem Dollarzeichen in geschweifte Klammern ein:
-![Placeholder standalone](/images/benutzerhandbuch/Administration/admin-sso-placeholder-standalone.png)
+![Placeholder standalone](/images/users-guide/Administration/admin-sso-placeholder-standalone.png)
 
 Platzhalter können auch als Textteile verwendet werden:
-![Placeholder text](/images/benutzerhandbuch/Administration/admin-sso-placeholder-text.png)
+![Placeholder text](/images/users-guide/Administration/admin-sso-placeholder-text.png)
 
 {{< c8y-admon-info >}}
 Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder falsch geschriebene Platzhalter wird im Text unverarbeitet gelassen.
@@ -198,10 +198,10 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-Die folgenden Schritte verdeutlichen, wie Azure AD (Azure Active Directory) für SSO in {{< product-c8y-iot >}} verwendet werden kann.
+Die folgenden Schritte zeigen, wie Azure AD (Azure Active Directory) in {{< product-c8y-iot >}} für SSO verwendet werden kann.
 
-{{< c8y-admon-req title="Anforderungen" >}}
-Sie benötigen Administrationszugriff auf Ihr Azure AD.
+{{< c8y-admon-req >}}
+Sie benötigen Administratorzugriff auf Ihr Azure AD.
 {{< /c8y-admon-req >}}
 
 #### Konfigurieren von Azure AD
@@ -210,23 +210,23 @@ Um {{< product-c8y-iot >}} mit Azure AD zu verbinden, müssen Sie in Azure AD ei
 
 1. Wählen Sie links unter **Manage** die Option **App Registrations** und klicken Sie oben auf **New Registration**.
 3. Geben Sie im darauf folgenden Fenster einen Namen für die neue App-Registrierung ein.
-4. Wählen Sie unter **Redirect URI type** die Option "Web" und geben Sie die URL zum OAuth-Endpunkt Ihres Mandanten ein, z. B. "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". Sie können diesen Wert von Ihrem {{< product-c8y-iot >}}-Mandanten ableiten. Navigieren Sie zu **Administration** > **Einstellungen** > **Authentifizierung** > **Single-Sign-On**. Die Redirect-URL wird von der Plattform vorgegeben.
+4. Wählen Sie unter **Redirect URI type** die Option "Web" und geben Sie die URL zum OAuth-Endpunkt Ihres Mandanten ein, z. B. "https:&#47;/documentation.cumulocity.com/tenant/oauth"*". Sie können diesen Wert von Ihrem {{< product-c8y-iot >}}-Mandanten ableiten. Navigieren Sie zu **Administration** > **Einstellungen** > **Authentifizierung** > **Single-Sign-On**. Die Redirect-URL wird von der Plattform vorgegeben.
 5. Klicken Sie auf **Register**, um die App-Registrierung zu erstellen.
 
-Die Übersicht auf der Detailseite Ihrer App-Registrierung enthält mehrere IDs und Endpunkte, die Sie später benötigen, z. B. die Anwendungs-ID (Client-ID) und die Verzeichnis-ID (Mandanten-ID) (für Ihren Mandanten in {{< product-c8y-iot >}}).
+Die Übersicht auf der Detailseite Ihrer App-Registrierung enthält mehrere IDs und Endpunkte, die Sie später benötigen, z. B. die Anwendungs-ID (Client-ID) und die Verzeichnis-ID (Mandanten-ID) (für Ihren Mandanten in {{< product-c8y-iot >}}).
 
-![App registration overview](/images/benutzerhandbuch/Administration/admin-AAD-registration.png)
+![App registration overview](/images/users-guide/Administration/admin-AAD-registration.png)
 
 Darüber hinaus erfordert die App-Registrierung ein Secret, das von {{< product-c8y-iot >}} zur Authentifizierung verwendet wird.  
 
 1. Klicken Sie auf der Detailseite Ihrer App-Registrierung links unter **Manage** auf **Certificates & secrets**.
 2. Wählen Sie **New client secret**.
-3. Geben Sie eine Beschreibung ein und wählen Sie ein Ablaufdatum.
-4. Klicken Sie auf **Add**, um das Secret hinzuzufügen.  
+3. Geben Sie eine Beschreibung ein und wählen Sie einen Ablaufzeitpunkt.
+4. Klicken Sie auf **Hinzufügen**, um das Secret hinzuzufügen.  
 
 {{< c8y-admon-caution >}}
-- Kopieren Sie den Wert des neuen Secrets an einen anderen Ort. Sobald Sie die Seite verlassen haben, ist es nicht mehr sichtbar.
-- Die Secret-Zeichenkette darf nicht das Zeichen "=" enthalten, da dieses bei der späteren Verwendung in einer URL zu Konflikten führen kann. Erstellen Sie gegebenenfalls eine neue Secret-Zeichenkette.  
+- Kopieren Sie den Wert des neuen Secrets an einen anderen Ort. Sobald Sie die Seite verlassen, ist der Wert nicht mehr sichtbar.
+- Die Secret-Zeichenkette darf nicht das Zeichen "=" enthalten, da dieses bei der späteren Verwendung in einer URL zu Konflikten führen kann. Ist dies der Fall, erstellen Sie eine neue Zeichenkette.  
 {{< /c8y-admon-caution >}}
 
 Optional können Sie in Azure AD einen Benutzer erstellen, den Sie mit {{< product-c8y-iot >}} verwenden möchten.
@@ -235,7 +235,7 @@ Optional können Sie in Azure AD einen Benutzer erstellen, den Sie mit {{< produ
 
 Navigieren Sie in der Anwendung Administration zu **Einstellungen > Authentifizierung** und wechseln Sie zur Registerkarte **Single-Sign-On**.
 
-Senden Sie zum Abrufen der entsprechenden Informationen eine GET-Anfrage an:
+Senden Sie zum Abrufen der entsprechenden Informationen eine GET-Anfragen an:
 
 <code>https://login.microsoftonline.com/&lt;Directory tenant ID&gt;/.well-known/openid-configuration</code>
 
@@ -313,13 +313,13 @@ Geben Sie nun in der Konfiguration die folgenden Werte ein:
 
 |Azure|{{< product-c8y-iot >}} |Wert
 |:---|:---|:---|
-|Login URL; OpenID config; Beginning of token endpoint| Azure AD-Adresse|Adresse Ihres Azure AD-Mandanten, z. B. "https:&#47;/login.microsoftonline.com"  
-|Home > Overview > Primary Domain| Mandant| &lt;directoryName&gt;.onmicrosoft.com, z. B. "admtest.onmicrosoft.com"
-|OpenID config "issuer"| Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse: "https:&#47;/sts.windows.net/&lt;Verzeichnis-Mandanten-ID&gt;/". Beachten Sie, dass dies nur mit Schrägstich am Ende funktioniert.
-|App registration > &lt;app&gt; > Application (client) ID| Anwendungs-ID| z. B. "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
+|Login URL; OpenID config; Beginning of token endpoint| Azure AD-Adresse|Adresse Ihres Azure AD-Mandanten, z. B. "https:&#47;/login.microsoftonline.com"  
+|Home > Overview > Primary Domain| Mandant| &lt;directoryName&gt;.onmicrosoft.com, z. B. "admtest.onmicrosoft.com"
+|OpenID config “issuer”| Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse: "https:&#47;/sts.windows.net/&lt;Verzeichnis-Mandanten-ID&gt;/". Beachten Sie, dass dies nur mit dem Schrägstrich am Ende funktioniert.
+|App registration > &lt;app&gt; > Application (client) ID| Anwendungs-ID| z. B. "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
 |Redirect-URI| Adresse Ihres {{< product-c8y-iot >}}-Mandanten, gefolgt von /tenant/oauth
-|App registration - &lt;app&gt; > Certificates & secrets > Value | Client-Secret| Azure AD-Client-Secret, z. B. "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
-|Aus der OpenID-Konfiguration | URL für den öffentlichen Schlüssel|"https:&#47;/login.microsoftonline.com/common/discovery/keys" oder "https:&#47;/login.microsoftonline.com/<Verzeichnis-Mandanten-ID>/discovery/keys"
+|App registration - &lt;app&gt; > Certificates & secrets > Value | Client-Secret| Azure AD-Client-Secret, z. B. "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
+|Aus der OpenID-Konfiguration | URL für den öffentlichen Schlüssel|"https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Verzeichnis-Mandanten-ID>/discovery/keys"
 
 Optional kann Single Logout konfiguriert werden:
 
@@ -328,7 +328,7 @@ Optional kann Single Logout konfiguriert werden:
 |Nach Abmeldung weiterleiten| Aktiviert Single Logout, indem der Benutzer nach dem Abmelden zum Abmelde-Endpunkt des Autorisierungsservers weitergeleitet wird.
 |Redirect-URL| Adresse, an die der Benutzer weitergeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
 
-Nachdem Sie SSO in {{< product-c8y-iot >}} konfiguriert haben, können Sie versuchen, sich anzumelden. Wenn für den Benutzer noch keine Rechtezuordnung vorliegt, kann ein Fehler des Typs "Zugriff verweigert" gemeldet werden. In den Audit-Logs (**Administration** > **Konten** > **Audit-Logs**) sollten jedoch ein "Benutzer-Login"-Ereignis und ein JSON-Web-Token zu sehen sein.
+Nach dem Konfigurieren von SSO in {{< product-c8y-iot >}} können Sie versuchen, sich anzumelden. Wenn für den Benutzer noch keine Rechtezuordnung vorliegt, kann ein Fehler des Typs "Zugriff verweigert" gemeldet werden. In den Audit-Logs (**Administration** > **Konten** > **Audit-Logs**) sollten jedoch ein "Benutzer-Login"-Ereignis und ein JSON-Web-Token zu sehen sein.
 
 Der Inhalt sieht folgendermaßen aus:
 
@@ -428,4 +428,4 @@ In der "Administration-Anwendung" können Sie nach Klicken auf **Konten** > **Au
 
 Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
-![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
+![Audit token content](/images/users-guide/Administration/admin-sso-audit-token.png)

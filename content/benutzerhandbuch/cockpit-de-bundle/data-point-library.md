@@ -6,7 +6,7 @@ weight: 75
 
 Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute.
 
-{{< c8y-admon-req title="Anforderungen" >}}
+{{< c8y-admon-req >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Hinzufügen eines Datenpunkts: ERSTELLEN- oder ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -22,7 +22,7 @@ Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsrege
 
 Klicken Sie auf **Datenpunktbibliothek** im Menü **Konfiguration** im Navigator, um die Datenpunktbibliothek zu öffnen.
 
-![Data point library](/images/benutzerhandbuch/cockpit/cockpit-data-point-library.png)
+![Data point library](/images/users-guide/cockpit/cockpit-data-point-library.png)
 
 Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enthält die folgenden Informationen:
 

@@ -1,6 +1,6 @@
 ---
 aliases:
-- /benutzerhandbuch/enterprise-edition-de/#data-broker
+- /users-guide/enterprise-edition/#data-broker
 layout: redirect
 title: Data Broker
 weight: 80
@@ -14,22 +14,20 @@ Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt
 - Messwerte
 - Operationen
 
-{{< c8y-admon-req title="Anforderungen" >}}
+{{< c8y-admon-req >}}
 Um diese Funktion verwenden zu können, muss Ihr Mandant die Anwendung "feature-broker" abonniert haben.
 {{< /c8y-admon-req >}}
 
 Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
-
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important >}}
 Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 {{< /c8y-admon-important >}}
 
 Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
 * Cloud Remote Access kann beim Zielmandanten nicht verwendet werden.
-* Der {{< management-tenant-de >}} kann nicht als Data Broker-Ursprungsmandant verwendet werden.
+* Der {{< management-tenant >}} kann nicht als Data Broker-Ursprungsmandant verwendet werden.
 * Derzeit funktioniert das Fieldbus-Widget nicht bei Mandanten, die die Fieldbus-Geräte über Data Broker empfangen, da die entsprechenden Datenmodelle nicht synchronisiert sind.
 * Data Broker garantiert nicht, dass die Zielmandanten dieselbe Nachrichtenreihenfolge aufweisen wie der Ursprungsmandant.
 * Wenngleich wir für Rückwärtskompatibilität sorgen, können wir nicht sicherstellen, dass Data Broker Daten an {{< product-c8y-iot >}}-Mandanten senden kann, die in älteren {{< product-c8y-iot >}}-Versionen als der Ursprungsmandant ausgeführt werden.
@@ -43,7 +41,7 @@ Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden m
 
 Klicken Sie im Navigator auf **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
-![Data broker connectors list](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-list.png)
+![Data broker connectors list](/images/users-guide/enterprise-tenant/et-data-broker-connector-list.png)
 
 Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
@@ -74,7 +72,7 @@ Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konne
 
 3. Klicken Sie auf **Filter hinzufügen**, um einen neuen Filter zu konfigurieren.
 
-	![Data broker configure filter](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-filter.png)
+	![Data broker configure filter](/images/users-guide/enterprise-tenant/et-data-broker-connector-filter.png)
 
 4. Jeder Datenfilter enthält die folgenden Informationen:
 
@@ -112,7 +110,7 @@ Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konne
 
 5. Klicken Sie auf **Speichern**, um die Konfiguration zu speichern.
 
-{{< c8y-admon-important title="Wichtig" >}}
+{{< c8y-admon-important >}}
 Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
 <br><br>
 Wird sie gewählt, synchronisiert {{< product-c8y-iot >}} alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
@@ -123,7 +121,7 @@ Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und a
 {{< /c8y-admon-important >}}
 
 
-Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
+Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
 
 Wenn der Datentyp Operation in Filtern ausgewählt ist, werden die Operationen, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Operationen zu, die die folgenden Bedingungen erfüllen:
 
@@ -165,7 +163,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und an
 
 Weitere Informationen zu Data Broker-Alarmen finden Sie unter [Troubleshooting](#data-broker-troubleshooting) weiter unten.
 
-Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
+Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring).
 
 
 <a name="data-broker-subscriptions"></a>
@@ -188,7 +186,7 @@ Verwenden Sie den Umschalter, um zeitweilig das Weiterleiten von Daten in Ihren 
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Sie eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
-![Data broker group in cockpit app](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.png)
+![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
 
 #### So löschen Sie einen Datenkonnektor
 
@@ -203,7 +201,7 @@ Wenn der Data Broker die Verbindung zu einem Zielmandanten nicht herstellen kann
 
 Im Ursprungsmandanten reiht Data Broker die Daten, die nicht sofort an den Zielmandanten weitergeleitet werden können, in eine Wartschlange ein. Die Datenmenge, die in die Warteschlange eingereiht werden kann, ist begrenzt. Kann {{< product-c8y-iot >}} keine weiteren Daten in die Warteschlange einreihen, werden die ältesten Daten aus der Warteschlange entfernt. In diesem Fall wird im Mandanten ein WICHTIGER Alarm ausgelöst und dabei der betroffene Konnektor angezeigt.
 
-![Data broker alarms](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-alarm.png)
+![Data broker alarms](/images/users-guide/enterprise-tenant/et-data-broker-alarm.png)
 
 Ebenso wird bei einem Überlauf der Eingangswarteschlange ein Alarm ausgelöst.
 

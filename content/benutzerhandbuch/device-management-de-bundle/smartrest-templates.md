@@ -18,7 +18,7 @@ Um die Geräteintegration zu vereinfachen, stellt {{< product-c8y-iot >}} auch s
 
 Öffnen Sie die Seite **SmartREST-Template** im Menü **Gerätetypen** des Navigators.
 
-![template view](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest.png)
+![template view](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest.png)
 
 Für jedes Template werden folgende Informationen bereitgestellt:
 
@@ -64,7 +64,7 @@ Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine Sma
 |Integrierte REST API-Felder|Diese Felder sind optional und variieren je nach ausgewählter Ziel-REST API. Wenn kein Wert bereitgestellt wird, kann das Gerät diesen setzen, sobald die eigentliche Nachricht gesendet wird.
 |Benutzerdefinierte REST API-Felder|Durch Klicken von **Feld hinzufügen**, können zusätzliche eigene Felder hinzugefügt werden. Geben Sie den API-Schlüssel ein und wählen Sie den gewünschten Datentypen.
 
-	![Add message](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
+	![Add message](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
 
 	Unter **Vorschau** können Sie eine Vorschau Ihrer Anfragenachricht sehen.
 
@@ -115,13 +115,13 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 </tbody>
 </table>
 
-![Add template with filled out response](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
+![Add template with filled out response](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
 
 3. Klicken Sie auf **Speichern**.
 
 Die Antwort wird dem SmartREST-Template hinzugefügt.
 
-Weitere Informationen finden Sie unter [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
+Weitere Informationen finden Sie unter [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) im *Reference Guide*.
 
 #### So löschen Sie eine Antwort
 
@@ -149,7 +149,5 @@ Um ein SmartREST-Template als CSV-Datei herunterzuladen, führen Sie folgende Sc
 1. Öffnen Sie das Template, das Sie exportieren möchten, und wählen Sie die Registerkarte **CSV-Vorschau**.
 2. Wählen Sie im darauf folgenden Dialog die bevorzugten Optionen für Feldtrennzeichen, Dezimaltrennzeichen und Zeichensatz.
 3. Klicken Sie in der Registerkarte auf **CSV-Vorschau**, die zusätzliche Informationen zu Nachrichten und Antworten enthält, **In die Zwischenablage kopieren**.
-
-![CSV preview tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
 
 Das SmartREST-Template wird in die CSV-Datei exportiert.

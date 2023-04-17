@@ -27,12 +27,12 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit-Logs** im Menü **Ko
 
 <tr>
 <td align="left">Ereignis</td>
-<td align="left">Typ der Operationen, z. B. "Alarm erstellt", "Smart Rule gelöscht". Darunter wird der Benutzer angezeigt, der die Operation verarbeitet hat.</td>
+<td align="left">Typ der Operationen, z. B. "Alarm erstellt", "Smart Rule gelöscht". Darunter wird der Benutzer angezeigt, der die Operation verarbeitet hat.</td>
 </tr>
 
 <tr>
 <td align="left">Beschreibung</td>
-<td align="left">Liefert je nach Operation weitere Informationen, z. B. Gerätename, Alarmtext, Operationsstatus.</td>
+<td align="left">Liefert je nach Operation weitere Informationen, z. B. Gerätename, Alarmtext, Operationsstatus.</td>
 </tr>
 
 <tr>
@@ -44,7 +44,7 @@ Um die Audit-Logs-Liste anzuzeigen, klicken Sie auf **Audit-Logs** im Menü **Ko
 
 Es werden nur die letzten 100 Logeinträge angezeigt. Scrollen Sie herunter zu **Mehr laden**, um weitere Logeinträge anzuzeigen.
 
-![Audit logs](/images/benutzerhandbuch/Administration/admin-audit-logs.png)
+![Audit logs](/images/users-guide/Administration/admin-audit-logs.png)
 
 {{< c8y-admon-info >}}
 Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Operationen erfolgt ist. Klicken Sie auf **Neu laden** rechts oben in der Menüleiste, um die Liste der Operationen zu aktualisieren.
@@ -54,7 +54,7 @@ Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktu
 
 Um Logeinträge leichter durchsuchen zu können, können diese gefiltert werden nach:
 
- - Typ (Alarm, Operation, Smart Rule und mehr).
+ - Typ (Alarm, Operation, Smart Rule usw.).
  - Datumsbereich mit einem "Von"- und/oder einem "Bis"-Datum.
  - Benutzer.
 

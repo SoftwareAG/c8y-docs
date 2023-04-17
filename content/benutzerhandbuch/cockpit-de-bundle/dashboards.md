@@ -5,7 +5,7 @@ weight: 40
 
 Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen.
 
-{{< c8y-admon-req title="Anforderungen" >}}
+{{< c8y-admon-req >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen von Dashboards: LESEN-Berechtigung für Berechtigungstyp "Stammdaten" oder LESEN-Berechtigung für "Stammdaten" in Stammdatenrollen
@@ -24,26 +24,31 @@ ROLLEN UND BERECHTIGUNGEN:
 1. Wählen Sie im Navigator das Objekt (Gruppe oder Gerät) aus, für welches Sie ein Dashboard erstellen möchten.
 2. Klicken Sie auf das Pluszeichen rechts neben den Registerkarten, um den Dashboard-Editor zu öffnen.
 
-  <img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
-
 3. Geben Sie im Abschnitt **Registerkarte** des Dashboard-Editors folgende Informationen ein:
 
     * ein Symbol, das neben dem Dashboard-Namen im Navigator erscheint.
     * einen Namen für das Dashboard, der auch im Navigator angezeigt wird.
     * Die Position des Dashboards im Navigator. "10000" erscheint an oberster und "-10000" an unterster Position.
 <br><br>
+
 4. Aktivieren Sie die Option **Dashboard auf alle Geräte des Typs <Gerätetyp> anwenden**, um das Dashboard mit allen Geräten dieses Typs zu teilen.
-5. Im Abschnitt **Layout** können Sie ein Design für das Dashboard wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).
-6. Aktivieren Sie die Option **Widget-Titel übersetzen, wenn möglich**, um den Widget-Titel bei jeder Änderung der Sprache übersetzen zu lassen.
+
+5. Legen Sie im Abschnitt **Verfügbarkeit** auf Basis globaler Rollen fest, welche Benutzer Zugriff auf das Dashboard haben sollen. Standardmäßig sind alle globalen Rollen ausgewählt, d. h. ein Benutzer mit mindestens einer solchen Rolle hat Zugriff auf das Dashboard.
+
+   {{< c8y-admon-info >}}
+- Dashboards sind immer sichtbar für ihren Besitzer und für Benutzer mit ADMIN-Berechtigung für den Berechtigungstyp "Stammdaten".
+- Dies Funktionalität basiert vollständig auf Client-seitigen Lösungen. Wenn Benutzer einen korrekten Link zum Dashboard haben, können sie immer noch darauf zugreifen.
+    {{< /c8y-admon-info >}}
+
+6. Im Abschnitt **Layout** können Sie ein Design für das Dashboard wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).
+7. Aktivieren Sie die Option **Widget-Titel übersetzen, wenn möglich**, um den Widget-Titel bei jeder Änderung der Sprache übersetzen zu lassen.
 
     {{< c8y-admon-info >}}
 Die Widget-Titel werden nur übersetzt, wenn eine gültige Übersetzung verfügbar ist.
     {{< /c8y-admon-info >}}
-7. Im Abschnitt **Vorschau** wird sofort eine Vorschau der ausgewählten Layout-Einstellungen angezeigt, um Ihre Einstellungen zu visualisieren.
+8. Im Abschnitt **Vorschau** wird sofort eine Vorschau der ausgewählten Layout-Einstellungen angezeigt, um Ihre Einstellungen zu visualisieren.
 
-8. Klicken Sie auf **Speichern** um das Dashboard zu erstellen und zu öffnen.
-
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
+9. Klicken Sie auf **Speichern** um das Dashboard zu erstellen und zu öffnen.
 
 <br>Als nächstes können Sie Widgets zu Ihrem Bericht hinzufügen.
 
@@ -58,7 +63,7 @@ Wählen Sie dazu die Option **Dashboard auf alle Geräte des Typs [TYP] anwenden
 
 Im Editor wird eine entsprechende Nachricht angezeigt.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
 An diesem Dashboard vorgenommene Änderungen werden automatisch auf alle Dashboard-Instanzen angewendet.
 
@@ -70,20 +75,16 @@ Sie können nur für das Gerät selbst Widgets und Daten zum Dashboard hinzufüg
 
 Klicken Sie auf **Bearbeiten** in der oberen Menüleiste, um ein Dashboard zu bearbeiten.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
-
 Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter [So erstellen Sie ein Dashboard](#creating-dashboards).
 
 ### So kopieren Sie ein Dashboard von einem Objekt in ein anderes
 
 1. Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie im Kontextmenü **Dashboard kopieren**.
 
-  <img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
-
 2. Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü **Dashboard [NAME] einfügen**, um das Dashboard einzufügen.
 
 Eine alternative Methode zum Kopieren eines Dashboards ist das
-Konzept "Dashboard pro Typ". Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs, siehe [Teilen von Dashboards](#sharing-dashboards).
+Konzept "Dashboard pro Typ".  Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs, siehe [Teilen von Dashboards](#sharing-dashboards).
 
 
 ### So löschen Sie ein Dashboard

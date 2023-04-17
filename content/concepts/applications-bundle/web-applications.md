@@ -18,7 +18,7 @@ All subscribed web applications of a tenant appear in the application switcher o
 The {{< product-c8y-iot >}} UI itself is built around a framework based on Angular, AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the {{< product-c8y-iot >}} user interfaces. For more information on developing plugins, refer to [Web SDK for plugins](/web/overview).
 
 {{< c8y-admon-info >}}
-While designing a web application, data properties retrieved or persisted using API don't have hard limit on number of characters. Yet we recommend to use no more than 1000 characters limitation for persisted properties. From perspective of validation constrains, stored objects are limited by the size of the json document as mentioned [Cumulocity IoT's domain model](http://localhost:1313/guides/concepts/domain-model/#fragments).
+When designing a web application, data properties retrieved or persisted using the API don't have a limitation on the number of characters. Yet we recommend you to use no more than 1000 characters for persisted properties. From the perspective of validation constraints, stored objects are limited by the size of the JSON document, see [Cumulocity IoT's domain model](/concepts/domain-model/#fragments).
 {{< /c8y-admon-info >}}
 
 ### Deploying web applications

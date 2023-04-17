@@ -85,10 +85,10 @@ The approach also enables developing generic application components. For example
 For more information on fragments and how managed objects are structured, see the [Device management library](reference/device-management-library/) in the *Reference guide*.
 
 {{< c8y-admon-info >}}
-While designing the data model for the inventory Managed Object it's worth to keep in mind following:
-1. There is no size or length constrains for single fragment, but there is a limitation for overal json document size, which can not exceed 16MiB for single Managed Object entry within inventory collection. Our recomendation is to try keeping it below 1 MiB.
-2. While including arrays of elements within fragments, be advised to keep length of such collections below 1k elements.
-3. Each consecutive fragment added to Managed Object at root level will impose certain delay on querying such an item. If performance of query matters, it's better to nest custom fragments with information within chosen single fragment effectively limiting root fragments number. For example:
+While designing the data model for the inventory managed object consider the following:
+1. There is no size or length constraint for a single fragment, but there is a limitation for the overall JSON document size, which may not exceed 16MiB for single managed object entry within the inventory collection. We recommend you to keep it below 1 MiB.
+2. When you include arrays of elements within fragments, keep the length of such collections below 1k elements.
+3. Each consecutive fragment added to the managed object at root level will impose a certain delay on querying such an item. If the performance of a query matters, it is recommended to nest custom fragments with information within a chosen single fragment effectively limiting the root fragments number. For example:
 ```json
 {
     "id": "47035",

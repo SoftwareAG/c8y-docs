@@ -197,6 +197,7 @@ Placeholders can also be used as a part of text:
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 {{< /c8y-admon-info >}}
 
+<a name="configuring-authentication-with-oauth2-access-tokens-from-authorization-servers"></a>
 ### Configuring authentication with OAuth2 access tokens from authorization servers
 
 You can directly request {{< product-c8y-iot >}} to use access tokens from your authorization server.

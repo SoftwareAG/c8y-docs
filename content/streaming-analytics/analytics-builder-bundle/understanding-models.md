@@ -74,15 +74,15 @@ Two output ports cannot be connected to the same input port, whereas one output 
 
 An input block is a special type of block that receives data from an external source. It converts the data into a format understandable to wires and transfers the data to the connected blocks. For example, when an input block receives a `Measurement` event from Cumulocity IoT, it extracts the required information from the event and then transfers the information to the connected blocks for further processing.
 
-Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/model-execution-for-different-devices#).
+Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
-In addition, Analytics Builder supports input devices that are referred to as “broadcast devices”. Signals from these devices are available to all models across all devices. For detailed information, see [Broadcast devices](/streaming-analytics/analytics-builder/broadcast-devices#).
+In addition, Analytics Builder supports input devices that are referred to as "broadcast devices". Signals from these devices are available to all models across all devices. For detailed information, see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices).
 
 #### Output blocks
 
 An output block is a special type of block that receives data from a connected processing block. It converts the data into a format understandable to an external source and transfers the data to the external source. For example, when an output block receives data from a connected processing block, it packages the data into an `Operation` object and then sends the operation to Cumulocity IoT.
 
-You can specify a **Trigger Device** for an output block. This is a special device which can be used to send the output back to the device which triggered the output. Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/model-execution-for-different-devices#).
+You can specify a **Trigger Device** for an output block. This is a special device which can be used to send the output back to the device which triggered the output. Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
 Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages \(see also [Administration > Changing settings > Providing SMS provider credentials](/users-guide/administration/#sms-provider) in the *User guide*\). Unlike the other blocks, these are not associated with devices within the Cumulocity IoT platform.
 
@@ -138,10 +138,10 @@ The Apama-ctrl microservice is restarted after running the above command. The us
 
 ### Wires
 
-One block is connected to another block with the help of wires. All data transfer between the output port of one block and the input port of another block is done using wires. All connections must be made between compatible types. See [Wires and Blocks](/streaming-analytics/analytics-builder/wires-and-blocks#) for detailed information.
+One block is connected to another block with the help of wires. All data transfer between the output port of one block and the input port of another block is done using wires. All connections must be made between compatible types. See [Wires and blocks](/streaming-analytics/analytics-builder/#wires-and-blocks) for detailed information.
 
 {{< c8y-admon-info>}}
-The network of blocks in a model cannot contain any kind of cycles. See [Wire restrictions](/streaming-analytics/analytics-builder/wire-restrictions#) for more information.
+The network of blocks in a model cannot contain any kind of cycles. See [Wire restrictions](/streaming-analytics/analytics-builder/#wire-restrictions) for more information.
 {{< /c8y-admon-info>}}
 
 ### Sample use case
@@ -158,7 +158,7 @@ The model for this example has the following blocks:
 
 -   An input block which shows **Input Device** as the device name <br>
     The incoming data is in real time and continuous. The input block receives the data from the sensor. It passes the data to the **Average \(Mean\)**, **Delta** and **Threshold** blocks. The input ports of these blocks are connected to the output port of the input block.
-    
+
 -   An **Average \(Mean\)** block <br>
     This block finds the average \(or mean\) of the readings that it receives over a period of time and passes this to the connected output block.
 

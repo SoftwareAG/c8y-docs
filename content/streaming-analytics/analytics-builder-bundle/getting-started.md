@@ -8,13 +8,13 @@ layout: redirect
 
 Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 
-You build the models in a graphical environment by combining pre-built blocks into models. The blocks in a model package up small bits of logic, and have a number of inputs, outputs and parameters. Each block implements a specific piece of functionality, such as receiving data from a sensor, performing a calculation, detecting a condition, or generating an output signal. You define the configuration of the blocks and connect the blocks using wires. You can edit the models, simulate deployment with historic data, or run them against live systems. See [Understanding Models](/streaming-analytics/analytics-builder/understanding-models#) for more detailed information.
+You build the models in a graphical environment by combining pre-built blocks into models. The blocks in a model package up small bits of logic, and have a number of inputs, outputs and parameters. Each block implements a specific piece of functionality, such as receiving data from a sensor, performing a calculation, detecting a condition, or generating an output signal. You define the configuration of the blocks and connect the blocks using wires. You can edit the models, simulate deployment with historic data, or run them against live systems. See [Understanding models](/streaming-analytics/analytics-builder/#understanding-models) for more detailed information.
 
 Analytics Builder consists of the following tools:
 
--   Model manager. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or remove them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the Model Manager](/streaming-analytics/analytics-builder/using-the-model-manager#) for detailed information.
--   Model editor. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *Block Reference*\) is available in the model editor, describing the functionality of each block. See [Using the Model Editor](/streaming-analytics/analytics-builder/using-the-model-editor#) for detailed information.
--   Instance editor. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the Instance Editor](/streaming-analytics/analytics-builder/using-the-instance-editor#) for detailed information.
+-   Model manager. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or remove them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the model manager](/streaming-analytics/analytics-builder/#using-the-model-manager) for detailed information.
+-   Model editor. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *Block Reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
+-   Instance editor. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
 The blocks are implemented in the Event Processing Language \(EPL\) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later chapters.
 
@@ -24,13 +24,13 @@ Devices and sensors can be connected to Cumulocity IoT. See [Interfacing devices
 
 Sensors result in `Measurement` or `Event` objects in Cumulocity IoT, and devices can receive `Operation` objects created within the Cumulocity IoT platform. All of these objects \(`Measurement`, `Event`, `Operation`\) will be associated with a single device in the Cumulocity IoT platform. A device may have multiple types of measurement associated with it, and the types of measurements each device supports may be the same as other devices or different to other devices. Once devices are connected to Cumulocity IoT, information about these devices is stored in the Cumulocity IoT inventory. These are visible in the Device Management application, which can also be used to view `Measurement`, `Event` or `Operation` objects associated with that device. See [Device management](/users-guide/device-management/) in the *User guide* for more information.
 
-The Cumulocity IoT platform includes an Apama correlator component, which is managed by the Cumulocity IoT platform \(this is not manually started or stopped\) and is preconfigured to communicate to Cumulocity IoT. This correlator hosts the Analytics Builder runtime, and also executes any custom Apama rules added using EPL apps. 
+The Cumulocity IoT platform includes an Apama correlator component, which is managed by the Cumulocity IoT platform \(this is not manually started or stopped\) and is preconfigured to communicate to Cumulocity IoT. This correlator hosts the Analytics Builder runtime, and also executes any custom Apama rules added using EPL apps.
 
-Analytics Builder allows you to create models that interact with the devices and sensor measurements. Models can receive `Measurement` and `Event` objects from devices, which provide the inputs to calculations or pattern detection performed within a model. Models can create new `Measurement` objects which can represent derived values from sensors \(for example, an average temperature\) or the measurements can be used as an input to other analytic models \(see [Connections between models](/streaming-analytics/analytics-builder/connections-between-models#)\). Models can create new `Operation` objects which are sent to devices to control the devices \(for example, to sound an alarm bell, display a message on a screen, or switch a device off\). The models are also stored in the Cumulocity IoT inventory, but can be imported or exported via the model manager.
+Analytics Builder allows you to create models that interact with the devices and sensor measurements. Models can receive `Measurement` and `Event` objects from devices, which provide the inputs to calculations or pattern detection performed within a model. Models can create new `Measurement` objects which can represent derived values from sensors \(for example, an average temperature\) or the measurements can be used as an input to other analytic models \(see [Connections between models](/streaming-analytics/analytics-builder/#connections-between-models)\). Models can create new `Operation` objects which are sent to devices to control the devices \(for example, to sound an alarm bell, display a message on a screen, or switch a device off\). The models are also stored in the Cumulocity IoT inventory, but can be imported or exported via the model manager.
 
-Business logic can also be written in Apama’s Event Processing Language \(Apama EPL\) which gives more power and flexibility in a text-based programming language. This is an alternative if more complex logic is required or the logic does not fit into the pattern of an analytic model. EPL apps can be written directly in the Streaming Analytics application. See [EPL Apps](/streaming-analytics/epl-apps/) for more information, including examples. Alternatively, it is also possible to build custom blocks if none of the blocks delivered with Analytics Builder implement the logic required; see [Creating your own blocks](/streaming-analytics/analytics-builder/creating-your-own-blocks#).
+Business logic can also be written in Apama’s Event Processing Language \(Apama EPL\) which gives more power and flexibility in a text-based programming language. This is an alternative if more complex logic is required or the logic does not fit into the pattern of an analytic model. EPL apps can be written directly in the Streaming Analytics application. See [EPL Apps](/streaming-analytics/epl-apps/) for more information, including examples. Alternatively, it is also possible to build custom blocks if none of the blocks delivered with Analytics Builder implement the logic required; see [Creating your own blocks](/streaming-analytics/analytics-builder/#creating-your-own-blocks).
 
-Analytics Builder can be used with both Cumulocity IoT Core \(cloud\) and Cumulocity IoT Edge \(local installation\). You can customize several aspects of Analytics Builder by setting various tenant options. See [Configuration](/streaming-analytics/analytics-builder/configuration#) for detailed information.
+Analytics Builder can be used with both Cumulocity IoT Core \(cloud\) and Cumulocity IoT Edge \(local installation\). You can customize several aspects of Analytics Builder by setting various tenant options. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.
 
 
 ### Prerequisites
@@ -120,7 +120,7 @@ If you need detailed information on the currently selected block, view the block
 ![Document icon](/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png)
 
 
-#### Step 4: Add the block that calculates the mean of the measurement values 
+#### Step 4: Add the block that calculates the mean of the measurement values
 
 1.  In the palette, expand **Aggregate**.
 2.  Drag the **Average \(Mean\)** block onto the canvas.
@@ -184,7 +184,7 @@ The following image shows the blocks that are defined in the **On missing measur
 
 ![Blocks defined within the sample](/images/streaming-analytics/analytics-builder/first-steps-sample.png)
 
-The sample uses predefined template parameters. After you have created a model from the sample, you can create multiple instances of the model and you can specify different values for the template parameters. See also [Models](/streaming-analytics/analytics-builder/models#) which explains the difference between models without template parameters and models with template parameters.
+The sample uses predefined template parameters. After you have created a model from the sample, you can create multiple instances of the model and you can specify different values for the template parameters. See also [Models](/streaming-analytics/analytics-builder/#models) which explains the difference between models without template parameters and models with template parameters.
 
 The following is a brief description of the blocks that are defined within the sample:
 
@@ -192,7 +192,7 @@ The following is a brief description of the blocks that are defined within the s
 -   The output from the **Measurement Input** block is then passed to the **Missing Data** block which triggers an output if no input is received within the time defined with the **Duration \(seconds\)** template parameter.
 -   The output from the **Missing Data** block is used as the trigger for the **Create Alarm** input port of the **Alarm Output** block. The name of the **Alarm type** template parameter is the label that you can see on the output block.
 -   The output from the **Measurement Input** block is also passed as input to the **Object** input port of the **Text Substitution** block, along with the input from the **Managed Object Input** block which is passed to the **Source** input port of the **Text Substitution** block. The name of the **Device or group of devices** template parameter is the label that you can see on the input block.
--   The **Text Substitution** block supports replacement of placeholders. For example, if the input text is “Missing measurements of type: \#\{type\}”, then the `#{type}` value is replaced by the actual `type` of the measurement. See [Text Substitution](/streaming-analytics/block-reference/#text-substitution) for more details.
+-   The **Text Substitution** block supports replacement of placeholders. For example, if the input text is "Missing measurements of type: \#\{type\}", then the `#{type}` value is replaced by the actual `type` of the measurement. See [Text Substitution](/streaming-analytics/block-reference/#text-substitution) for more details.
 -   The **Text Substitution** block is configured to use the **Alarm text** template parameter as user input. It applies the required substitutions and then sends the string containing the substitutions from its **Output** output port to the **Message** input port of the **Alarm Output** block.
 -   The **Alarm Output** block requires the **Alarm type** and **Alarm severity** template parameters to be configured and creates an alarm whenever it is triggered by the **Missing Data** block.
 
@@ -241,7 +241,7 @@ Use the horizontal scroll bar below the instance table if not all template param
     {{< c8y-admon-tip>}}
 If you want to find out which fragments and series are available to your device, without changing the predefined template parameters of the **Measurement Input** block, go back to the model editor, drag the input block for your device from the palette onto the canvas and open the **Fragment and Series** drop-down list box. This lists all the values that you can use. However, instead of the `=>` that you can see in the drop-down list box, you have to use a dot \(.\) in this case. Don't forget to remove this block again after you have decided which value to use.
     {{< /c8y-admon-tip>}}
-3.  The fields below the **Duration \(seconds\)**, **Alarm type**, **Alarm text** and **Alarm severity** column headers already contain default values \(see also the above description of the blocks\). Adapt them to your requirements. For example, change the duration to 30 seconds, rename the alarm type to “MyAlarmType”, keep the predefined alarm text, and set the alarm severity to **Minor**.
+3.  The fields below the **Duration \(seconds\)**, **Alarm type**, **Alarm text** and **Alarm severity** column headers already contain default values \(see also the above description of the blocks\). Adapt them to your requirements. For example, change the duration to 30 seconds, rename the alarm type to "MyAlarmType", keep the predefined alarm text, and set the alarm severity to **Minor**.
 4.  In the toolbar of the instance editor, click **Save**.
 
 #### Step 4: Activate the instance
@@ -259,7 +259,7 @@ For our example case with the gyroscope measurements from a smartphone, it shoul
 
 #### Step 6: Go to the Device Management and view the alarms
 
-To view the alarms that are sent from your active instance, you have to switch to the Device Management application. 
+To view the alarms that are sent from your active instance, you have to switch to the Device Management application.
 See [Device Management](/users-guide/device-management/) in the *User guide* for detailed information.
 
 
@@ -268,4 +268,4 @@ See [Device Management](/users-guide/device-management/) in the *User guide* for
 2.  In the navigator on the left, click **Devices** and then **All devices**.
 3.  Locate your device and click its name to display the device details.
 4.  Click **Alarms** on the left.
-5.  On the resulting page, check the alarms that are sent from your device. If you have edited your instance as described above, you should see a MINOR alarm after 30 seconds, saying “Missing measurements of type: c8y\_Gyroscope”. See [Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the *User guide* for more information on the **Alarms** tab.
+5.  On the resulting page, check the alarms that are sent from your device. If you have edited your instance as described above, you should see a MINOR alarm after 30 seconds, saying "Missing measurements of type: c8y\_Gyroscope". See [Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the *User guide* for more information on the **Alarms** tab.

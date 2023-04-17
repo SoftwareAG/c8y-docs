@@ -24,125 +24,125 @@ The **Usage statistics** page provides statistical information on each subtenant
 The following information is provided for each subtenant (not completely visible in the screenshot above due to space restrictions):
 
 <table>
-<thead>
-<colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
-</colgroup>
-<tr>
-<th align="left">Field</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">ID</td>
-<td align="left">ID of the subtenant</td>
-</tr>
-<tr>
-<td align="left">Name</td>
-<td align="left">Name of the subtenant</td>
-</tr>
-<tr>
-<td align="left">API requests</td>
-<td align="left">Total number of API requests, including requests from  devices and applications</td>
-</tr>
-<tr>
-<td align="left">Device API requests</td>
-<td align="left">Number of API requests from devices</td>
-</tr>
-<tr>
-<td align="left">Storage (MB)</td>
-<td align="left">Amount of data stored in your account</td>
-</tr>
-<tr>
-<td align="left">Peak storage (MB)</td>
-<td align="left">Peak value of storage</td>
-</tr>
-<tr>
-<td align="left">Root devices</td>
-<td align="left">Number of root devices, excluding child devices</td>
-</tr>
-<tr>
-<td align="left">Peak root devices</td>
-<td align="left">Peak number of root devices, excluding child devices</td>
-</tr>
-<tr>
-<td align="left">Devices</td>
-<td align="left">Total number of devices connected to the subtenant, including child devices</td>
-</tr>
-<tr>
-<td align="left">Peak devices</td>
-<td align="left">Peak number of devices, including child devices</td>
-</tr>
-<tr>
-<td align="left">Endpoint devices</td>
-<td align="left">Leaf machines, without gateways and edges</td>
-</tr>
-<tr>
-<td align="left">Subscribed applications</td>
-<td align="left">Number of applications that the subtenant is subscribed to</td>
-</tr>
-<tr>
-<td align="left">Creation time</td>
-<td align="left">Date and time of the creation of the subtenant</td>
-</tr>
-<tr>
-<td align="left">Alarms created</td>
-<td align="left">Number of alarms created</td>
-</tr>
-<tr>
-<td align="left">Alarms updated</td>
-<td align="left">Number of updates on alarms</td>
-</tr>
-<tr>
-<td align="left">Inventories created</td>
-<td align="left">Number of managed objects created</td>
-</tr>
-<tr>
-<td align="left">Inventories updated</td>
-<td align="left">Number of updates on managed objects</td>
-</tr>
-<tr>
-<td align="left">Events created</td>
-<td align="left">Number of events created</td>
-</tr>
-<tr>
-<td align="left">Events updated</td>
-<td align="left">Number of updates on events</td>
-</tr>
-<tr>
-<td align="left">Measurements created</td>
-<td align="left">Number of measurements created</td>
-</tr>
-<tr>
-<td align="left">Total inbound transfer</td>
-<td align="left">Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)</td>
-</tr>
-<tr>
-<td align="left">CPU (M)</td>
-<td align="left">Microservice CPU usage, specified in CPU milliseconds, see <a href="#microservice-usage">Microservice usage</a> for details</td>
-</tr>
-<tr>
-<td align="left">Memory (MB)</td>
-<td align="left">Microservice memory usage, see <a href="#microservice-usage">Microservice usage</a> for details</td>
-</tr>
-<tr>
-<td align="left">Parent tenant</td>
-<td align="left">Name of the parent tenant (available only for {{< management-tenant >}})</td>
-</tr>
-<tr>
-<td align="left">External reference</td>
-<td align="left">This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number</td>
-</tr>
-</tbody>
+  <thead>
+    <colgroup>
+      <col style="width: 20%;">
+      <col style="width: 80%;">
+    </colgroup>
+    <tr>
+      <th align="left">Field</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">ID</td>
+      <td align="left">ID of the subtenant</td>
+    </tr>
+    <tr>
+      <td align="left">Tenant</td>
+      <td align="left">Name of the subtenant</td>
+    </tr>
+    <tr>
+      <td align="left">API requests</td>
+      <td align="left">Total number of API requests, including requests from  devices and applications</td>
+    </tr>
+    <tr>
+      <td align="left">Device API requests</td>
+      <td align="left">Number of API requests from devices</td>
+    </tr>
+    <tr>
+      <td align="left">Storage (MB)</td>
+      <td align="left">Amount of data stored in your account</td>
+    </tr>
+    <tr>
+      <td align="left">Peak storage (MB)</td>
+      <td align="left">Peak value of storage</td>
+    </tr>
+    <tr>
+      <td align="left">Root devices</td>
+      <td align="left">Number of root devices, excluding child devices</td>
+    </tr>
+    <tr>
+      <td align="left">Peak root devices</td>
+      <td align="left">Peak number of root devices, excluding child devices</td>
+    </tr>
+    <tr>
+      <td align="left">Devices</td>
+      <td align="left">Total number of devices connected to the subtenant, including child devices</td>
+    </tr>
+    <tr>
+      <td align="left">Peak devices</td>
+      <td align="left">Peak number of devices, including child devices</td>
+    </tr>
+    <tr>
+      <td align="left">Endpoint devices</td>
+      <td align="left">Leaf machines, without gateways and edges</td>
+    </tr>
+    <tr>
+      <td align="left">Subscribed applications</td>
+      <td align="left">Number of applications that the subtenant is subscribed to</td>
+    </tr>
+    <tr>
+      <td align="left">Creation time</td>
+      <td align="left">Date and time of the creation of the subtenant</td>
+    </tr>
+    <tr>
+      <td align="left">Alarms created</td>
+      <td align="left">Number of alarms created</td>
+    </tr>
+    <tr>
+      <td align="left">Alarms updated</td>
+      <td align="left">Number of updates on alarms</td>
+    </tr>
+    <tr>
+      <td align="left">Inventories created</td>
+      <td align="left">Number of managed objects created</td>
+    </tr>
+    <tr>
+      <td align="left">Inventories updated</td>
+      <td align="left">Number of updates on managed objects</td>
+    </tr>
+    <tr>
+      <td align="left">Events created</td>
+      <td align="left">Number of events created</td>
+    </tr>
+    <tr>
+      <td align="left">Events updated</td>
+      <td align="left">Number of updates on events</td>
+    </tr>
+    <tr>
+      <td align="left">Measurements created</td>
+      <td align="left">Number of measurements created</td>
+    </tr>
+    <tr>
+      <td align="left">Total inbound transfer</td>
+      <td align="left">Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)</td>
+    </tr>
+    <tr>
+      <td align="left">CPU (M)</td>
+      <td align="left">Microservice CPU usage, specified in CPU milliseconds, see <a href="#microservice-usage">Microservice usage</a> for details</td>
+    </tr>
+    <tr>
+      <td align="left">Memory (MB)</td>
+      <td align="left">Microservice memory usage, see <a href="#microservice-usage">Microservice usage</a> for details</td>
+    </tr>
+    <tr>
+      <td align="left">Parent tenant</td>
+      <td align="left">Name of the parent tenant (available only for {{< management-tenant >}})</td>
+    </tr>
+    <tr>
+      <td align="left">External reference</td>
+      <td align="left">This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number</td>
+    </tr>
+  </tbody>
 </table>
 
 Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Apply**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
 {{< c8y-admon-info >}}
 If a tenant was created after the selected time period, it will show up but the numbers are "0".
@@ -389,198 +389,198 @@ Based on the contract, there are two pricing models for billing:
 The table below presents which values are used in each model for billing purposes:
 
 <table>
-<col style="width:25%">
-<col style="width:25%">
-<col style="width:30%">
-<col style="width:20%">
-<thead>
-<tr>
-<th style="text-align:left">Source</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Tenant usage pricing model</th>
-<th style="text-align:left">Device pricing model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">ID</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Name</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">API requests</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Device API requests</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Storage</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Peak storage</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Root device</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Peak root device</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Devices</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Peak devices</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Endpoint devices</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Subscribed applications</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Creation time</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Alarms created</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Alarms updated</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Inventories created</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Inventories updated</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Events created</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Events updated</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Measurements created</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Total inbound transfer</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Parent tenant</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Tenant domain</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Can create subtenants</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">External reference</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Total microservice CPU usage</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
-<td style="text-align:left">Total microservice memory usage</td>
-<td style="text-align:left">x</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#microservice-usage">MicroserviceUsageStatistics</a></td>
-<td style="text-align:left">Per microservice CPU usage</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="#microservice-usage">MicroserviceUsageStatistics</a></td>
-<td style="text-align:left">Per microservice memory usage</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">x</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API">DeviceStatistics</a></td>
-<td style="text-align:left">Monthly measurements, events and alarms created and updated per device</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">x</td>
-</tr>
-</tbody>
+  <col style="width:25%">
+  <col style="width:25%">
+  <col style="width:30%">
+  <col style="width:20%">
+  <thead>
+    <tr>
+      <th style="text-align:left">Source</th>
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Tenant usage pricing model</th>
+      <th style="text-align:left">Device pricing model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">ID</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Tenant</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">API requests</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Device API requests</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Storage</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Peak storage</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Root device</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Peak root device</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Devices</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Peak devices</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Endpoint devices</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Subscribed applications</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Creation time</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Alarms created</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Alarms updated</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Inventories created</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Inventories updated</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Events created</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Events updated</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Measurements created</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Total inbound transfer</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Parent tenant</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Tenant domain</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Can create subtenants</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">External reference</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Total microservice CPU usage</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left">Total microservice memory usage</td>
+      <td style="text-align:left">x</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#microservice-usage">MicroserviceUsageStatistics</a></td>
+      <td style="text-align:left">Per microservice CPU usage</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="#microservice-usage">MicroserviceUsageStatistics</a></td>
+      <td style="text-align:left">Per microservice memory usage</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">x</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API">DeviceStatistics</a></td>
+      <td style="text-align:left">Monthly measurements, events and alarms created and updated per device</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">x</td>
+    </tr>
+  </tbody>
 </table>

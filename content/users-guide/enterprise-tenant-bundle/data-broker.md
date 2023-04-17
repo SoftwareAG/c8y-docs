@@ -167,6 +167,10 @@ Click the menu icon at the right of a data connector entry and then click **Dupl
 
 Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
+{{< c8y-admon-info >}}
+A data connector can also be deleted from the **Settings** tab of a connector configuration.
+{{< /c8y-admon-info >}}
+
 #### To view alarms for a data connector
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.

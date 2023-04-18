@@ -26,10 +26,12 @@ The scope of the template parameters is local to the model in which they are def
 
 There are two relevant roles for this type of model, this can be the same person or different persons:
 
--   **Model author** <br>
+-   **Model author**
+
     The model author creates the model and defines all of its blocks, parameters and wires. Most importantly, the model author creates the template parameters and binds them to the appropriate parameters in selected blocks.
 
--   **Instance maintainer** <br>
+-   **Instance maintainer**
+
     The instance maintainer creates the instances of the model and assigns values to the template parameters that are to be used by each instance.
 
 The model author has the following options to define a template parameter:
@@ -156,21 +158,26 @@ The model for this example has the following blocks:
 
 ![Example model with several blocks](/images/streaming-analytics/analytics-builder/sample-use-case.png)
 
--   An input block which shows **Input Device** as the device name <br>
+-   An input block which shows **Input Device** as the device name
+
     The incoming data is in real time and continuous. The input block receives the data from the sensor. It passes the data to the **Average \(Mean\)**, **Delta** and **Threshold** blocks. The input ports of these blocks are connected to the output port of the input block.
 
--   An **Average \(Mean\)** block <br>
+-   An **Average \(Mean\)** block
+
     This block finds the average \(or mean\) of the readings that it receives over a period of time and passes this to the connected output block.
 
--   A **Delta** block <br>
+-   A **Delta** block
+
     This block calculates the difference between successive input values and passes the calculated value to the connected **Threshold** block.
 
--   Two different instances of a **Threshold** block <br>
+-   Two different instances of a **Threshold** block
+
     A **Threshold** block compares the input value against the defined threshold value to detect whether the input breaches the threshold or not.
     The first instance is connected to the **Delta** block and reports a breach if the delta value goes beyond the threshold.
     The second instance is connected to the input block and reports a breach if the input value is not within the threshold.
 
--   Three instances of an output block which show **Output Device** as the device name <br>
+-   Three instances of an output block which show **Output Device** as the device name
+
     The first instance sends the average of the sensor reading.
     The second instance generates an output if the values of successive sensor readings change by more than the configured threshold.
     The third instance generates an output if the sensor value goes beyond the configured threshold.

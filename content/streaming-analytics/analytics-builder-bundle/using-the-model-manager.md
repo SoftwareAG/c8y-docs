@@ -72,19 +72,24 @@ Filtering also works in combination with a model or sample name that you specify
 
     On the **Models** tab, you can filter the models according to the following criteria:
 
-    -   **Mode** <br>
+    -   **Mode**
+
         You can show only the models that are in a specific mode. For example, if you only want to see the models that are in simulation and test mode, select the corresponding check boxes.
 
-    -   **Status** <br>
+    -   **Status**
+
         You can show only the models that are in either the Active or Inactive state. For example, if you only want to see active models, select the corresponding check box.
 
-    -   **Device, group or asset** <br>
+    -   **Device, group or asset**
+
         You can show only the models that use specific devices in their input blocks and output blocks, specific groups in their input blocks, or even specific assets. Open the **Filter by device, group or asset name** drop-down list box, select one or more items and click **Apply**.
 
-    -   **Data point** <br>
+    -   **Data point**
+
         You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one device has been selected in the **Filter by device, group or asset name** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
 
-    -   **Tags** <br>
+    -   **Tags**
+    
         You can show only the models for which specific tags have been defined in the **Model Configuration** dialog box, which is shown when you add a new model or when you invoke that dialog box from the model editor \(see also [Adding a new model](/streaming-analytics/analytics-builder#adding-a-new-model) and [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model)\). Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
 
     You can combine several types of filters, for example, to show only active models in production mode that use a specific device.

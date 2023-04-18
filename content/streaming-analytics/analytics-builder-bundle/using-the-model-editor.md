@@ -461,19 +461,225 @@ There may be performance issues if you copy many input blocks and output blocks.
 4.  When the model editor is shown, press Ctrl+V to paste the copied items into the model.
 
 ### Working with groups
+
 #### What is a group
+
+You can arrange blocks and their attached wires in a group. A group is a special type of block which can be collapsed and expanded. When a group is expanded, you can change its contents in the same way as you would on the canvas, for example, you can add wires or edit the block parameters. You can also add more blocks to the group or remove blocks from the group. When a group is collapsed, it occupies less space on the canvas, however, the blocks and wiring within the group are not visible in this case.
+
+Groups are helpful if commonly required functionality needs to be made available in multiple places. You can give each group a name by which it can be identified. You can copy a group and paste it in either the same model or in a different model.
+
+{{< c8y-admon-info>}}
+Do not confuse this type of group with a group of devices. Input sources may sometimes be a group of devices, which is different. See also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block).
+{{< /c8y-admon-info>}}
+
+![Example of a group containing several blocks](/images/streaming-analytics/analytics-builder/group-example.png)
+
+The size of the box that is shown for a group is determined by its contents. If you move a block within the group to a different position, the box size is automatically adapted \(that is, the box is made larger or smaller\). The same applies if you change the path that a wire takes to another block within the same group.
+
+You move a group on the canvas in the same way as you move a block \(see also [Moving a block](/streaming-analytics/analytics-builder/#moving-a-block)\). When you move a group, the group is always shown on top of all other items on the canvas. As the group box is transparent, you can easily see which blocks belong to the group and which are just overlayed by the box.
+
+It is not possible to nest groups.
+
+{{< c8y-admon-info>}}
+There is one exception when managing the contents of a group: When you duplicate one or more blocks that are contained in a group using Ctrl+C and Ctrl+V or if you use the **Duplicate** command in the block parameter editor, the duplicate is not added to the group. It is added to the canvas instead. However, when you press Ctrl and then drag the blocks to be duplicated, you can place the duplicate either within the group \(this can be the same or a different group\) or on the canvas. See also [Duplicating a block](/streaming-analytics/analytics-builder/#duplicating-a-block).
+{{< /c8y-admon-info>}}
+
 #### Adding a group
+
+You can add any blocks that are currently shown on the canvas \(including the wires between the blocks\) to a group.
+
+It is not possible to create an empty group. You first have to add a group as described below. Once the group exists, you can add more blocks to the group, either from the palette or from the canvas, as described in [Adding a block](/streaming-analytics/analytics-builder/#adding-a-block) and [Moving blocks into a group](/streaming-analytics/analytics-builder/#moving-blocks-into-a-group).
+
+**To add a group**
+
+1.  On the canvas of the model editor, select one or more blocks that you want to add to a group. You need not select wires; all existing wires are retained. See also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires).
+
+2.  In the toolbar of the model editor, click the following button:
+    ![Group icon](/images/streaming-analytics/analytics-builder/icon-group.png)
+
+    Or press Ctrl+G.
+
 #### Collapsing and expanding a group
+
+If you need more space on the canvas and do not need the group contents to be visible, you can collapse the group.
+
+When a group is collapsed, a number is shown on the collapsed group indicating the number of blocks in that group. For example:
+
+![Example of a collapsed group](/images/streaming-analytics/analytics-builder/collapsed-group-example.png)
+
+If you want to make the group contents visible again \(for example, to edit block parameters or to add wires\), you have to expand the group.
+
+When you save the model, the state of each group \(that is, whether it is currently collapsed or expanded\) is stored. The next time you edit the model, its contents will be shown as after the last save.
+
+**To collapse or expand a group**
+
+-   To collapse a group, click the following control which is shown next to the group name:
+    ![Collapse icon](/images/streaming-analytics/analytics-builder/icon-group-collapse.png)
+
+-   To expand a group, click the following control which is shown above the top right of the collapsed group:
+    ![Expand icon](/images/streaming-analytics/analytics-builder/icon-group-expand.png)
+
 #### Renaming a group
+
+When you add a group, its default name is "Group". You can rename each group and give it a unique name.
+
+If a group name is longer than can be shown in the group label, move the mouse pointer over the group name to view the entire name in a tooltip.
+
+It is not possible to have groups without names. If you delete a group name, the previous name is automatically used again.
+
+**To rename a group**
+
+1.  In the model editor, select the group and then click on the group name. You can either do this when the group is collapsed or expanded \(see also [Collapsing and expanding a group](/streaming-analytics/analytics-builder/#collapsing-and-expanding-a-group)\). This selects the entire name for editing.
+
+2.  Specify a new group name and press Enter.
+
 #### Moving blocks into a group
+
+You can move one or more blocks from the canvas into an existing group. All existing wires are retained.
+
+You can also drag a block from the palette into an existing group. See [Adding a block](/streaming-analytics/analytics-builder/#adding-a-block).
+
+You can only move/drag blocks into a group when its contents are visible, that is, when the group is currently expanded. See also [Collapsing and expanding a group](/streaming-analytics/analytics-builder/#collapsing-and-expanding-a-group).
+
+**To move blocks into a group**
+
+1.  Make sure that the group into which you want to move the blocks is not collapsed.
+
+2.  On the canvas of the model editor, select the blocks that you want to move into the group \(see also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires)\). You need not select the wires between the blocks; they are automatically moved together with the blocks.
+
+3.  Do one of the following:
+    -   Drag the selection into the group and drop it there.
+    -   Or select the group into which you want to move the blocks. Then click the following button in the toolbar of the model editor, or press Ctrl+G.
+        ![Group icon](/images/streaming-analytics/analytics-builder/icon-group.png)
+
 #### Moving blocks from a group to the canvas
+
+You can move a block from a group to the canvas. All existing wires are retained.
+
+When the last item of a group has been moved to the canvas, the group is automatically removed. If you want to move all items to the canvas at the same time, you can simply ungroup the entire group. See [Ungrouping a group](/streaming-analytics/analytics-builder/#ungrouping-a-group).
+
+**To move blocks from a group to the canvas**
+
+-   To move one or more blocks at the same time:
+
+    1.  In the expanded group, select the blocks that you want to move.
+    2.  In the toolbar of the model editor, click the following button:
+        ![Ungroup icon](/images/streaming-analytics/analytics-builder/icon-ungroup.png)
+        Or press Ctrl+Shift+G.
+
+-   Or to move a single block:
+
+    1.  In the expanded group, select the block that you want to move.
+    2.  Click the **Ungroup** command which is then shown at the bottom of the block parameter editor.
+
 #### Removing blocks and wires from a group
+
+You remove blocks wires from a group in the same way as removing them directly on the canvas. The only prerequisite is that the group is currently expanded. See [Removing a block or wire](/streaming-analytics/analytics-builder/#removing-a-block-or-wire).
+
+If the last item in a group is removed, the group is automatically removed.
+
 #### Duplicating a group
+
+You can duplicate each group that is currently shown on the canvas. The original group and its duplicate will then both have the same contents.
+
+Wires coming in from blocks outside of the group or going from the group to blocks outside of the group are not duplicated.
+
+You can also copy a group into a different model, see [Copying items to a different model](/streaming-analytics/analytics-builder/#copying-items-to-a-different-model).
+
+**To duplicate a group**
+
+-   On the canvas of the model editor, click the group that you want to duplicate \(it does not matter whether the group is currently collapsed or expanded\) and then do one of the following:
+
+    -   Press Ctrl+C to copy the group, and then press Ctrl+V to paste the group.
+    -   Or press Ctrl and drag the group to be duplicated to the position at which you want to place the duplicate.
+
 #### Ungrouping a group
+
+When you ungroup a group, the group is removed and all the blocks from that group are shown directly on the canvas. All attached wires are retained.
+
+You can ungroup several groups at the same time. In this case, it is important that no block or wire is selected either within or without the selected groups, otherwise ungrouping is not possible.
+
+**To ungroup a group**
+
+1.  On the canvas of the model editor, select one or more groups that you want to ungroup. It does not matter whether a group is currently collapsed or expanded.
+
+2.  In the toolbar of the model editor, click the following button:
+    ![Ungroup icon](/images/streaming-analytics/analytics-builder/icon-ungroup.png)
+    Or press Ctrl+Shift+G.
+
 #### Removing a group
 
+You can remove each group that is currently shown on the canvas. Wires to blocks outside of the group are removed.
+
+{{< c8y-admon-caution>}}
+When you remove a group, all blocks and wires within this group are removed from the model.
+{{< /c8y-admon-caution>}}
+
+**To remove a group**
+
+-   On the canvas of the model editor, click the group that you want to remove \(it does not matter whether it is currently collapsed or expanded\) and press Del.
+
 ### Managing the canvas
+
 #### Navigating large models
+
+If your model is too large to fit onto the visible part of the canvas, you can use the mouse to drag the parts of the model into view that are currently outside of the window. You can do this either directly on the canvas or in the overview area. The overview area always shows the entire model. If the overview area is currently not shown, see [Showing and hiding the overview](/streaming-analytics/analytics-builder/#showing-and-hiding-the-overview).
+
+**To navigate in a large model**
+
+1.  In the model editor, position the mouse over a free spot of the canvas \(which does not contain a block or wire\) or anywhere over the overview area.
+
+2.  Click and hold down the mouse button, and immediately drag the mouse into the desired direction. Release the mouse button when the required area is visible on the canvas.
+
+    {{< c8y-admon-info>}}
+When you hold down the mouse button for a longer time over a free spot of the canvas, the mouse pointer changes and you can select an area instead \(for example, several blocks and attached wires\). See also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires).
+    {{< /c8y-admon-info>}}
+
 #### Showing and hiding the overview
+
+The overview area, which shows the entire model, is shown at bottom right of the canvas. If you do not need the overview, you can hide it.
+
+**To show or hide the overview**
+
+-   To hide the overview, click the following control which is shown directly above the overview area:
+    ![Hide overview icon](/images/streaming-analytics/analytics-builder/icon-overview-hide.png)
+
+-   To show the overview, click the following control at the bottom right of the canvas:
+    ![Show overview icon](/images/streaming-analytics/analytics-builder/icon-overview-show.png)
+
 #### Zooming the canvas
+
+The toolbar of the model editor indicates the current zoom percentage for the canvas. The zoom buttons in the toolbar allow you to
+
+-   zoom out, which makes everything on the canvas smaller so that more items can be shown, and to
+-   zoom in, which makes everything on the canvas larger, but less items can then be shown.
+
+{{< c8y-admon-info>}}
+When you use the key combinations mentioned below, the currently selected area defines what is to be zoomed. When the canvas has the focus (for example, when you have just selected a block or wire), only the content of the canvas is zoomed. When the documentation pane or the palette currently has the focus, the browser's zoom functionality is used and all of the browser content is zoomed (and the zoom percentage in the toolbar remains unchanged).
+{{< /c8y-admon-info>}}
+
+**To zoom the canvas**
+
+-   To zoom out, click the following button in the toolbar of the model editor:
+    ![Zoom out icon](/images/streaming-analytics/analytics-builder/icon-zoomout.png)
+    Or press Ctrl and the minus key.
+
+-   To zoom in, click the following button in the toolbar of the model editor:
+    ![Zoom in icon](/images/streaming-analytics/analytics-builder/icon-zoomin.png)
+    Or press Ctrl and the plus key.
+
 #### Showing and hiding the grid
+
+The blocks, wires and groups on the canvas always snap to a grid. You can decide whether the grid is to be shown or not. The grid is not shown by default. When you zoom the canvas, the grid is zoomed accordingly.
+
+**To show or hide the grid**
+
+-   In the model editor, click the toolbar button for toggling the display of the grid.
+
+    When the grid is hidden, the button looks as follows:
+    ![Icon when grid is hidden](/images/streaming-analytics/analytics-builder/icon-grid-inactive.png)
+
+    When the grid is shown, the button looks as follows:
+    ![Icon when grid is shown](/images/streaming-analytics/analytics-builder/icon-grid-active.png)
+
+    If the model is in the Active state \(read-only mode\), it is not possible to toggle the display of the grid and this button is therefore disabled.

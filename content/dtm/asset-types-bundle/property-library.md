@@ -25,7 +25,7 @@ If you use a tenant which already has asset properties defined, you find the lis
 
 To create an asset property, click **Add asset property** on the bottom left. Enter the required data in the form (see description below) and click **Save**.
 
-You can transfer properties between tenants using the Export asset properties and Import asset properties feature. This is useful for replicating the asset properties in multiple tenants. By importing and exporting properties, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset properties](#to-export-asset-properties) and [To import asset properties](#to-import-asset-properties) on how to export or import asset properties.
+Use the Export asset properties and Import asset properties feature to transfer asset models between tenants. This is useful for replicating the asset properties in multiple tenants. By exporting and importing properties, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset properties](#to-export-asset-properties) and [To import asset properties](#to-import-asset-properties) on how to export or import asset properties.
 
 ![Create a new asset property](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
@@ -315,7 +315,7 @@ Use this downloaded file to import the asset properties into a DTM application o
 To import asset properties into the DTM application, follow the steps below:
 
 1. In the **Asset properties** page, click **Import asset properties**.
-2. Upload the JSON file in the **Drop file here** section. The JSON file is the file containing exported asset properties from a DTM application on another tenant. Hover over the file name and click the delete icon to remove the current file and upload a different one
+2. Upload the JSON file in the **Drop file here** section in the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant. Hover over the file name and click the delete icon to remove the current file and upload a different one.
 3. Click **Import** to import the asset properties.
 4. View newly imported asset properties in the **Asset properties** page.
 

@@ -12,7 +12,7 @@ Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Mic
 
 Beides kann über das Menü **Ecosystem** im Navigator aufgerufen werden.
 
-Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/users-guide/enterprise-tenant/#default-subscriptions).
+Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
 
 <a name="applications"></a>
 ### Anwendungen
@@ -61,7 +61,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Webanwendung</td>
@@ -69,7 +69,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Webanwendung</td>
@@ -77,7 +77,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Webanwendung</td>
@@ -344,21 +344,21 @@ Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Funktion-Branding</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#branding" class="no-ajaxy">Funktion-Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an</td>
 <td style="text-align:left">feature-branding</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Funktion-Broker</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#data-broker" class="no-ajaxy">Funktion-Broker</a></td>
 <td style="text-align:left">Teilen Sie Daten gezielt mit anderen Mandanten</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">Funktion-Benutzer-Hierarchie</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies" class="no-ajaxy">Funktion-Benutzer-Hierarchie</a></td>
 <td style="text-align:left">Hiermit können Sie in {{< product-c8y-iot >}} verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>

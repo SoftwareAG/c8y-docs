@@ -43,7 +43,7 @@ Im Feld **Gültigkeitsdauer des Passworts** können Sie die Gültigkeit von Benu
 Die Begrenzung der Passwort-Gültigkeitsdauer gilt für Benutzer mit der Rolle "devices". Sie verhindert, dass Gerätepasswörter ablaufen.
 {{< /c8y-admon-info >}}
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/users-guide/getting-started/#change-password) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Verwenden von starken (grünen) Passwörtern erzwingen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Benutzeroptionen und -einstellungen > So ändern Sie Ihr Passwort](/benutzerhandbuch/getting-started-de/#change-password) beschrieben.
 
 {{< c8y-admon-info >}}
 Passwort-Gültigkeitsdauer und Passwortstärke sind möglicherweise nicht editierbar, falls dies vom Plattformadministrator so konfiguriert wurde.
@@ -312,7 +312,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 <a name="sms-provider"></a>
 ### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/users-guide/administration#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
+SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
 
 Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 
@@ -344,7 +344,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/users-guide/device-management/#connectivity)
+- [SIM](/benutzerhandbuch/device-management-de/#connectivity)
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

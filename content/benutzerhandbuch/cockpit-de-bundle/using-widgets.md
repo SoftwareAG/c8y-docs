@@ -108,7 +108,7 @@ Nachdem Sie das Asset ausgewählt haben, sehen Sie alle Kinder dieses Assets. Um
 Die Volltextsuche ist nur im Start-Dashboard und in den Bericht-Dashboards verfügbar.
 {{< /c8y-admon-info >}}
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/users-guide/getting-started/#searching-and-filtering).
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).
 
 <a name="column-filter-asset"></a>
 ##### Filtern
@@ -117,4 +117,4 @@ Filtern ist eine weitere Methode zum Auffinden von Assets. Dabei werden jedoch n
 
 ![Filtering](/images/benutzerhandbuch/cockpit/cockpit-asset-column-filter.png)
 
-Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/users-guide/getting-started/#searching-and-filtering).
+Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/benutzerhandbuch/getting-started-de/#searching-and-filtering).

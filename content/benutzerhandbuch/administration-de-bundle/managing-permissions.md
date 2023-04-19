@@ -261,7 +261,7 @@ Werden neue Funktionen mit neuen Berechtigungen zu {{< product-c8y-iot >}} hinzu
 Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
 {{< c8y-admon-important >}}
-Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Konfigurationseinstellungen](/users-guide/administration/#custom-template) im *User Guide*.
+Standardmäßig ist es nicht möglich, die (bei der SSO-Anmeldung automatisch erstellten) Rollen von SSO-Benutzern zu ändern, da diese durch die dynamische Rechtezuordnung überschrieben würden. Dieses Verhalten kann jedoch geändert werden. Weitere Informationen finden Sie unter [Administration > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#custom-template) im *User Guide*.
 {{< /c8y-admon-important >}}
 
 ##### So weisen Sie globale Rollen aus der Benutzerliste zu
@@ -317,7 +317,7 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 |Voller Zugriff|Vollständiger Zugriff auf die verbundenen Geräte, hauptsächlich zur Vereinfachung der Konfiguration.
 
 {{< c8y-admon-info >}}
-Service Provider sehen eine weitere Berechtigung "Support" in ihrem {{< management-tenant >}}. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Supportbenutzerzugriff](/users-guide/enterprise-tenant/#support-user-access).
+Service Provider sehen eine weitere Berechtigung "Support" in ihrem {{< management-tenant >}}. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-tenant-de/#support-user-access).
 {{< /c8y-admon-info >}}
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
@@ -377,10 +377,10 @@ Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** (m
 Die {{< product-c8y-iot >}}-Plattform bietet optimierte UI-Leistung für Benutzer mit Zugriff über Stammdatenrollen. Insbesondere erfolgen Anfragen bei Mandanten mit großen Stammdatenhierarchien schneller.
 
 Die Leistung der folgenden UI-Seiten wird verbessert:
-* Registerkarten **Info**, **Messwerte**, **Alarme**, **Ereignisse** und **Steuerung** in der [Gerätedetails-Ansicht](/users-guide/device-management/#device-details)
-* Seiten mit aggregierten Alarmansichten von mehreren Geräten, wenn die Anzahl der Alarme im System gering ist, z. B. [Cockpit > Start-Dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarme und Device Management > Startseite
-* Seiten mit aggregierten Ereignissen von mehreren Geräten, wenn die Anzahl der Ereignisse gering ist, z. B. [Device Management > Überwachen und Steuern von Geräten > So zeigen Sie Ereignisse an](/users-guide/device-management/#to-view-events)
-* Seiten mit aggregierten Operationen von mehreren Geräten, wenn die Anzahl der Operationen gering ist, z. B. [Device Management > Übersichten > Gerätesteuerung](/users-guide/device-management/#to-view-single-operations)
+* Registerkarten **Info**, **Messwerte**, **Alarme**, **Ereignisse** und **Steuerung** in der [Gerätedetails-Ansicht](/benutzerhandbuch/device-management-de/#device-details)
+* Seiten mit aggregierten Alarmansichten von mehreren Geräten, wenn die Anzahl der Alarme im System gering ist, z. B. [Cockpit > Start-Dashboard](/benutzerhandbuch/cockpit-de/#home-dashboard), Cockpit > Alarme und Device Management > Startseite
+* Seiten mit aggregierten Ereignissen von mehreren Geräten, wenn die Anzahl der Ereignisse gering ist, z. B. [Device Management > Überwachen und Steuern von Geräten > So zeigen Sie Ereignisse an](/benutzerhandbuch/device-management-de/#to-view-events)
+* Seiten mit aggregierten Operationen von mehreren Geräten, wenn die Anzahl der Operationen gering ist, z. B. [Device Management > Übersichten > Gerätesteuerung](/benutzerhandbuch/device-management-de/#to-view-single-operations)
 
 Als Administrator können Sie die Leistungsfunktion auf folgende Weise deaktivieren:
 - Auf Plattformebene über die Konfigurationsdatei (nur für Plattformadministratoren verfügbar, siehe *{{< product-c8y-iot >}} - Operations Guide*).
@@ -401,7 +401,7 @@ Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendunge
 
 Um dem Benutzer Anwendungen zuzuweisen, wählen Sie einfach die entsprechenden Anwendungen aus und klicken **Speichern**.
 
-Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/users-guide/administration#managing-applications).
+Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
 {{< c8y-admon-info >}}
 Wenn ein Benutzer die globale Berechtigung hat, alle Anwendungen einzusehen, wird eine entsprechende Information angezeigt.

@@ -2,7 +2,7 @@
 weight: 71
 title: Zwei-Faktor-Authentifizierung
 ---
-Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine zusätzliche Sicherheitsebene, mit der eine Authentifizierung nur durch eine Kombination von zwei verschiedenen Faktoren möglich ist: etwas, was die Benutzer wissen (Benutzername und Passwort), und etwas, was sie haben (z. B. Smartphone) oder sind (z. B. Fingerabdruck). Näheres zum Konfigurieren der TFA erfahren Sie im Abschnitt zum Thema [Authentifizierungseinstellungen](/users-guide/administration/#authentication).
+Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine zusätzliche Sicherheitsebene, mit der eine Authentifizierung nur durch eine Kombination von zwei verschiedenen Faktoren möglich ist: etwas, was die Benutzer wissen (Benutzername und Passwort), und etwas, was sie haben (z. B. Smartphone) oder sind (z. B. Fingerabdruck). Näheres zum Konfigurieren der TFA erfahren Sie im Abschnitt zum Thema [Authentifizierungseinstellungen](/benutzerhandbuch/administration-de/#authentication).
 
 Es gibt zwei mögliche TFA-Strategien: SMS (Short Message Service) und TOTP (Time-based One-Time Password). Es kann immer nur eine von beiden aktiv sein.
 
@@ -56,7 +56,7 @@ TOTP muss von jedem einzelnen Benutzer eingerichtet werden.
 {{< c8y-admon-req >}}
 
 Benutzer können ihr eigenes TOTP-Secret nicht zurücksetzen. Das Secret eines Benutzers wird nur von seinem jeweiligen übergeordneten Benutzer zurückgesetzt.
-Weitere Informationen zu Benutzerhierarchien finden Sie unter [{{< enterprise-tenant >}} > Verwalten von Benutzerhierarchien](/users-guide/enterprise-tenant/#user-hierarchies) im *User Guide*.
+Weitere Informationen zu Benutzerhierarchien finden Sie unter [{{< enterprise-tenant >}} > Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies) im *User Guide*.
 
 ROLLEN UND BERECHTIGUNGEN:
 

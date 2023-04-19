@@ -3,7 +3,7 @@ weight: 120
 title: Erweiterter Support für Zeitreihen
 layout: redirect
 aliases:
-  - /users-guide/enterprise-tenant/#timeseries
+  - /benutzerhandbuch/enterprise-tenant-de/#timeseries
 ---
 
 Der {{< product-c8y-iot >}} Betriebsspeicher bietet erweiterten Support für Zeitreihen (sogenannte Zeitreihensammlungen) für Messdaten. Der folgende Abschnitt fasst zusammen, wie sich diese Funktion aktivieren/deaktivieren lässt.

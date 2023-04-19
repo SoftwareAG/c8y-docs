@@ -208,7 +208,7 @@ or using Basic authentication. This leverages your authorization server to get a
 This feature requires the following on top of the above requirements:
 
 * Your authorization server must support the OAuth2 client credentials grant type.
-* All microservices are built with Microservice Java SDK version 1017.227.0 or higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
+* All microservices are built with Microservice Java SDK version 1018.6.0 or higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
 
 {{< /c8y-admon-req >}}
 

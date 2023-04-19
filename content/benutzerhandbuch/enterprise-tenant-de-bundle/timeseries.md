@@ -50,7 +50,7 @@ Dies kann unter Umständen dazu führen, dass die Daten in mehreren Sammlungen g
 Um dies zu verhindern, konfigurieren Sie das Attribut nur zu Beginn einer Mandanten-Einstellung, idealerweise, wenn noch keine Messdaten gespeichert sind.
 Migration und nahtlose Konfiguration werden Bestandteile zukünftiger Versionen sein.
 
-{{< c8y-admon-caution >}}
+{{< c8y-admon-caution title="Vorsicht" >}}
 Nachdem Sie das Attribut aktiviert haben, sollten Sie vermeiden, es wieder auf `DEAKTIVIERT` zu setzen, da dies zu Datenverlusten führen kann. Tun Sie dies nur bei einem Problem oder Notfall.
 {{< /c8y-admon-caution >}}
 

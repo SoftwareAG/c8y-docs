@@ -224,7 +224,7 @@ Darüber hinaus erfordert die App-Registrierung ein Secret, das von {{< product-
 3. Geben Sie eine Beschreibung ein und wählen Sie einen Ablaufzeitpunkt.
 4. Klicken Sie auf **Hinzufügen**, um das Secret hinzuzufügen.  
 
-{{< c8y-admon-caution >}}
+{{< c8y-admon-caution title="Vorsicht" >}}
 - Kopieren Sie den Wert des neuen Secrets an einen anderen Ort. Sobald Sie die Seite verlassen, ist der Wert nicht mehr sichtbar.
 - Die Secret-Zeichenkette darf nicht das Zeichen "=" enthalten, da dieses bei der späteren Verwendung in einer URL zu Konflikten führen kann. Ist dies der Fall, erstellen Sie eine neue Zeichenkette.  
 {{< /c8y-admon-caution >}}

@@ -14,13 +14,13 @@ Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt
 - Messwerte
 - Operationen
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Um diese Funktion verwenden zu können, muss Ihr Mandant die Anwendung "feature-broker" abonniert haben.
 {{< /c8y-admon-req >}}
 
 Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 {{< /c8y-admon-important >}}
 
@@ -110,7 +110,7 @@ Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konne
 
 5. Klicken Sie auf **Speichern**, um die Konfiguration zu speichern.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
 <br><br>
 Wird sie gewählt, synchronisiert {{< product-c8y-iot >}} alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.

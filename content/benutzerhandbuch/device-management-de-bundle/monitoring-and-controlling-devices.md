@@ -273,7 +273,7 @@ Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die Einzel-Op
 
 Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remoteoperationen den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 {{< /c8y-admon-important >}}
 

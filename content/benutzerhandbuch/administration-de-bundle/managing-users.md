@@ -180,6 +180,6 @@ Im Falle eines Sicherheitsvorfalls, an dem die Sitzungs-Tokens der Benutzer Ihre
 
 Um alle Sitzungs-Tokens zurückzusetzen, klicken Sie auf **Tokens zurücksetzen** rechts oben in der Menüleiste. Beim Zurücksetzen aller Tokens werden alle Benutzer abgemeldet, die über "OAI-Secure" oder "Single-Sign-On-Weiterleitung" angemeldet sind. Beachten Sie, dass von Ihren Geräten abgerufene JWT-Tokens ebenfalls zurückgesetzt werden.
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 Um Tokens zurückzusetzen, müssen Sie über eine ADMIN-Berechtigung für den Berechtigungstyp "Benutzerverwaltung" verfügen.
 {{< /c8y-admon-req >}}

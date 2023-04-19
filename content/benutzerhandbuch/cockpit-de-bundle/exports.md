@@ -8,7 +8,7 @@ weight: 65
 
 Mit der Export-Funktionalität können Sie spezifische Daten entweder in CSV- oder in Excel-Dateien exportieren.
 
-{{< c8y-admon-req >}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen von Exporten: READ-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -139,7 +139,7 @@ In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Be
 
 Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
 {{< /c8y-admon-important >}}
 

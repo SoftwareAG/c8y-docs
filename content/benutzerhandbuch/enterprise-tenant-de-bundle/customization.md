@@ -299,7 +299,7 @@ Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten d
 
 Wenn Sie zu Ihrer alten Domain auf {{< product-c8y-iot >}} zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
-{{< c8y-admon-important >}}
+{{< c8y-admon-important title="Wichtig" >}}
 Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 {{< /c8y-admon-important >}}
 

@@ -18,7 +18,7 @@ Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
 Klicken Sie auf **Rollen** im Menü **Konten**, um die Liste der konfigurierten Rollen anzuzeigen.
 
-<img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
+<img src="/images/benutzerhandbuch/Administration/admin-global-roles.png" alt="Context menu">
 
 In der Registerkarte **Globale Rollen** finden Sie die Rollen, die Berechtigungen auf Systemebene erteilen. Es gibt verschiedene vordefinierte globale Rollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
 
@@ -110,7 +110,7 @@ Unter Umständen werden auch die folgenden älteren Rollen angezeigt:
 
 Klicken Sie auf **Globale Rolle hinzufügen** in der Registerkarte **Globale Rollen**. Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigungstypen und rechts eine Liste der Anwendungen, auf die zugegriffen werden kann. Der folgende Screenshot zeigt die Einstellungen für die Rolle "admins".
 
-![Admin example](/images/users-guide/Administration/admin-global-role-admin.png)
+![Admin example](/images/benutzerhandbuch/Administration/admin-global-role-admin.png)
 
 **Berechtigungsebenen**
 
@@ -283,7 +283,7 @@ Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen könn
 
 Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menü **Konten** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
-<img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
+<img src="/images/benutzerhandbuch/Administration/admin-roles-inventory.png" alt="Context menu">
 
 In der Registerkarte **Stammdatenrollen** können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen.
 
@@ -302,7 +302,7 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 Klicken Sie auf **Stammdatenrolle hinzufügen** in der Registerkarte **Stammdatenrollen**.
 Geben Sie auf der Seite "Stammdatenrolle" einen **Namen** und eine **Beschreibung** ein und weisen Sie die **Berechtigungen** für die neue Stammdatenrolle zu.
 
-![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
+![Role details](/images/benutzerhandbuch/Administration/admin-inventory-role-edit.png)
 
 Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
@@ -344,7 +344,7 @@ Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Au
 
 Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/reference/sensor-library/)). Erteilen Sie dem Benutzer eine LESEN-Berechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y&#95;Position", wie in der Abbildung unten dargestellt.
 
-<img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
+<img src="/images/benutzerhandbuch/Administration/admin-inventory-role-example.png" alt="Permission example">
 
 <a name="attach-inventory"></a>
 ### Zuweisen von Stammdatenrollen zu Benutzern

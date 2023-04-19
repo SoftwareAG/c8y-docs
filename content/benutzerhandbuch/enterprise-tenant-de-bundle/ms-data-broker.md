@@ -33,7 +33,7 @@ Zusammenfassung: Um mit dem Microservice-basierten Data Broker arbeiten zu könn
     * Abonnieren Sie für den Mandanten die Data-Broker-Funktion (Anwendung `feature-broker`), sofern diese noch nicht abonniert ist.
     * Abonnieren Sie für den Mandanten den Data Broker-Agenten (Anwendung `databroker-agent-server`).
 
-![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
+![Databroker-Agent-Server](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-agent.png)
 
 {{< c8y-admon-info >}}
 Mandanten, die einen Datenkonnektor abonnieren, benötigen kein Data Broker-Agent-Abonnement.
@@ -79,7 +79,7 @@ Dieser Alarm wird ausgelöst, wenn die Latenz für die Nachrichtenübermittlung 
 
 Der Data Broker überwacht die Datenrate, mit der Ereignisse weitergeleitet werden. Liegt diese Rate unterhalb eines vorkonfigurierten Schwellenwerts, wird ein Alarm wegen langsamer Verarbeitung ausgelöst. Hierzu kann es aufgrund eines langsamen Netzwerks kommen.
 
-![New Data-Broker Alarms](/images/users-guide/enterprise-tenant/et-new-data-broker-alarms.png)
+![New Data-Broker Alarms](/images/benutzerhandbuch/enterprise-tenant/et-new-data-broker-alarms.png)
 
 {{< c8y-admon-info >}}
 Näheres darüber, wie sich diese Parameter konfigurieren lassen, finden Sie im *Messaging Service Installation & Operations Guide*.

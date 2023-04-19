@@ -10,7 +10,7 @@ weight: 11
 
 Auf der Seite **Geräteregistrierung** werden alle Geräte angezeigt, die sich aktuell im Registrierungsprozess befinden.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
 Die folgenden Informationen werden für jedes Gerät angezeigt:
 
@@ -66,7 +66,7 @@ Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte releva
 {{< c8y-admon-info >}}
 In einem {{< enterprise-tenant >}} kann der {{< management-tenant >}} auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der {{< management-tenant >}} keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 {{< /c8y-admon-info >}}
 
 Nach erfolgreicher Registrierung werden die Geräte auf der Seite [Geräteregistrierung](#dev-registration) mit dem Status "Wartet auf Verbindung" angezeigt.
@@ -119,13 +119,13 @@ Die Anzeige **Bitte akzeptieren** kann sich je nach der [Sicherheitstokenregel](
 
 Mit dem Wert "IGNORED" für die Sicherheitstokenregel kann ein mit {{< product-c8y-iot >}} verbundenes Gerät ohne jede Token-Validierung akzeptiert werden:
 
-![Accepting devices registrations under ignored security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
+![Accepting devices registrations under ignored security token policy](/images/benutzerhandbuch/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
 
 ##### Optionale Sicherheitstokenregel
 
 Die Liste der Geräteregistrierungen wird im Bild unten präsentiert. Beachten Sie, dass die Eingabe für Sicherheitstokens für alle Geräte angezeigt wird.
 
-![Accepting devices registrations under optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png)
+![Accepting devices registrations under optional security token policy](/images/benutzerhandbuch/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security.png)
 
 **Registrierung ohne Verwendung eines Sicherheitstokens**
 
@@ -137,7 +137,7 @@ Wenn ein Sicherheitstoken für ein Gerät bereitgestellt wird, das unsicher verb
 
 Wenn ein mit {{< product-c8y-iot >}} verbundenes Gerät ein Sicherheitstoken verwendet, kann die Registrierung nur abgeschlossen werden, wenn der Benutzer ein Token bereitstellt, das mit demjenigen übereinstimmt, das vom Gerät beim Herstellen der Verbindung übereinstimmt.
 
-![Providing a token for device registration request in optional security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png)
+![Providing a token for device registration request in optional security token policy](/images/benutzerhandbuch/DeviceManagement/devmgmt-at-register-device-pending-acceptance-optional-security-enter-token.png)
 
 Bei Bereitstellung eines falschen Tokens wird eine Fehlermeldung angezeigt, die über eine Nichtübereinstimmung zwischen dem vom Gerät verwendeten Wert und dem über die Benutzeroberfläche bereitgestellten Wert informiert.
 

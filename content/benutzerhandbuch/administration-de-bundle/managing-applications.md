@@ -19,7 +19,7 @@ Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonneme
 
 Klicken Sie auf **Anwendungen** im Menü **Ecosystem** des Navigators, um eine Liste oder Tabelle aller Anwendungen in Ihrem Konto anzuzeigen.
 
-<img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
 
 In der Registerkarte **Alle Anwendungen** werden alle Anwendungen angezeigt, die in Ihrem Mandanten verfügbar sind. Es gibt zwei Arten von Anwendungen:
 
@@ -28,7 +28,7 @@ In der Registerkarte **Alle Anwendungen** werden alle Anwendungen angezeigt, die
 
 Ihre Anwendungen sind über den Application Switcher in der oberen Leiste verfügbar.
 
-<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
+<img src="/images/benutzerhandbuch/Administration/admin-app-switcher.png" alt="App switcher">
 
 
 <a name="subscribed-applications"></a>
@@ -172,7 +172,7 @@ Die Plattform schränkt die Verwendung des Präfixes "feature-" im Feld **Name**
 5. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
 
 {{< c8y-admon-info >}}
-Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, nämlich **Abonnierte Anwendungen überschreiben**, zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
+Falls die Anwendung für diesen Mandanten abonniert wurde, steht ein weiterer Umschalter, nämlich **Abonnierte Anwendungen überschreiben**, zur Verfügung. Wenn Sie diesen Umschalter aktivieren, werden die Werte für Name, Schlüssel und Pfad aus der Originalanwendung geerbt und Ihre duplizierte Anwendung überschreibt die abonnierte Anwendung. Deaktivieren Sie die Option, um die Werte zu ändern.<br><br><img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
@@ -182,7 +182,7 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 
 Um weitere Details zu einer Anwendung anzuzeigen, klicken Sie auf sie, um ihre Registerkarte **Attribute** zu öffnen.
 
-<img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
 In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungstyp (gehostet oder extern) folgende Informationen angezeigt:
 
@@ -237,7 +237,7 @@ In der Registerkarte **Attribute** werden bei jeder Anwendung je nach Anwendungs
 
 Wechseln Sie zur Registerkarte **Plugins**, um alle für eine Anwendung installierten Plugins anzuzeigen. Plugins können verwendet werden, um eine vorhandene Anwendung zu erweitern, ohne sie neu erstellen zu müssen.
 
-<img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
 
 Auf der Registerkarte **Plugins** können Sie Plugins hinzufügen und entfernen. Darüber hinaus können Sie Plugins in einer Anwendung installieren.
 
@@ -270,7 +270,7 @@ Bei benutzerdefinierten Anwendungen können mehrere Dateiversionen in {{< produc
 2. Klicken Sie unten im Abschnitt **Aktivitätslog** auf die Plus-Schaltfläche und navigieren Sie zu dem Archiv in Ihrem Dateisystem oder ziehen Sie einfach das Archiv auf das entsprechende Feld.
 3. Klicken Sie auf **Hochladen**, um das Archiv auf Ihr {{< product-c8y-iot >}}-Konto hochzuladen.
 
-<img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
+<img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
 
 Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 
@@ -305,7 +305,7 @@ Pakete können zwei Arten von Anwendungen enthalten:
 
 Pakete sind in der Registerkarte **Pakete** auf der Seite **Anwendungen** zu finden.
 
-<img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
+<img src="/images/benutzerhandbuch/Administration/admin-application-packages.png" alt="Packages view">
 
 Um ein neues Paket hinzuzufügen, klicken Sie oben rechts auf **Paket hinzufügen**.
 
@@ -313,11 +313,11 @@ Wenn Sie auf ein Paket klicken, sehen Sie Paketdetails wie etwa die **Paketüber
 
 Zudem können Sie rechts alle verfügbaren Plugins innerhalb des gewählten Pakets sehen. Um ein Plugin zu installieren, klicken Sie auf **Plugin installieren** und wählen Sie die gewünschte Anwendung aus.  
 
-<img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
+<img src="/images/benutzerhandbuch/Administration/admin-application-packages-info.png" alt="Packages overview">
 
 In der Registerkarte **Versionen** sehen Sie alle bisher hochgeladenen Binärdateien im Zusammenhang mit dem aktuellen Paket. Die auf dieser Registerkarte angezeigten Binärdateien können über das Kontextmenü neben dem jeweiligen Paketversionseintrag heruntergeladen werden.
 
-<img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Versions view">
+<img src="/images/benutzerhandbuch/Administration/admin-application-packages-versions.png" alt="Versions view">
 
 Sie können verschiedene Versionen auswählen oder hochladen. Die Versionen geben Auskunft über den Zustand des Pakets. Über sie kann überprüft werden, ob ein bestimmtes Paket veraltet ist und aktualisiert werden muss. Wenn Sie auf eine Version klicken, werden weitere Informationen wie Paketinhalt, Anwendungen oder Plugins angezeigt. Tags können verwendet werden, um Versionen mit aussagekräftigen Namen zu versehen. Das Tag "Aktuellste" dient zur Angabe der Standardversion, die ausgewählt wird, wenn kein Tag bereitgestellt wird. Das Tag "Aktuellste" wird standardmäßig auf die neueste Version gesetzt, wann immer eine Version ohne ein bestimmtes Tag hochgeladen wird.
 

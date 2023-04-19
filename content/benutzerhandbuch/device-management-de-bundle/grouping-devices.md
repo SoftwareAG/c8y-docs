@@ -16,7 +16,7 @@ Sie können Geräte nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in
 
 Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat anzuzeigen.
 
-![Groups list](/images/users-guide/DeviceManagement/devmgmt-groups.png)
+![Groups list](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
 
 Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/users-guide/device-management/#configuring-columns).
 
@@ -28,7 +28,7 @@ Beachten Sie, dass diese Funktion nur einen temporären Filter erzeugt. Für per
 
 Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 
-![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
+![Subassets](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-details.png)
 
 <a name="subassets-tab"></a>
 **Seite "Kind-Assets"**
@@ -85,7 +85,7 @@ Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
-![Assign devices](/images/users-guide/DeviceManagement/devmgmt-group-assign.png)
+![Assign devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assign.png)
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
 
@@ -162,7 +162,7 @@ Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator.
 
 Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die Filterkriterien, die beim Erstellen der dynamischen Gruppe angewendet wurden. Sie können die Filtereinstellungen hier ändern und Ihre Auswahl anpassen.
 
-![Smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 
 #### So löschen Sie eine dynamische Gruppe

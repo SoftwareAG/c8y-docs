@@ -76,7 +76,7 @@ Allgemeine Anweisungen zum Hinzufügen oder Ändern von Widgets finden Sie unter
 
 Wenn das Asset eine Gruppe oder ein Gerät mit Kindern ist, werden neben seinem Namen ein Ordnersymbol sowie ein Pfeil nach rechts angezeigt. Klicken Sie in der Liste auf die gewünschten Gruppe oder das gewünschte Gerät mit Kindern, um eine neue Ebene zu öffnen, auf der alle der Gruppe oder dem Gerät zugewiesenen Assets angezeigt werden. Wählen Sie das gewünschte Asset aus. Um zur vorherigen Ebene zurückzukehren, klicken Sie auf den Pfeil nach links.
 
-![Select assets](/images/users-guide/cockpit/cockpit-asset-selection.png)
+![Select assets](/images/benutzerhandbuch/cockpit/cockpit-asset-selection.png)
 
 Wenn Sie ein nicht zugewiesenes Gerät als Asset auswählen möchten, finden Sie die nicht zugewiesenen Geräte im Ordner **Nicht zugewiesene Geräte** auf der ersten Ebene der ausgewählten Gruppe.
 
@@ -100,7 +100,7 @@ Auf der Registerkarte **Konfiguration** des Widget-Editors können Sie das Vollt
 
 Über das Volltextsuche-Feld können Sie Assets in der gesamten Hierarchie finden, doch dies erfordert exakte Übereinstimmungen, z. B. den gesamten Namen eines Assets.
 
-![Full text search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
+![Full text search](/images/benutzerhandbuch/cockpit/cockpit-asset-global-search.png)
 
 Nachdem Sie das Asset ausgewählt haben, sehen Sie alle Kinder dieses Assets. Um zur übergeordneten Ebene zurückzukehren, klicken Sie auf das "X" im Suchfeld.
 
@@ -115,6 +115,6 @@ Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte 
 
 Filtern ist eine weitere Methode zum Auffinden von Assets. Dabei werden jedoch nur Assets auf der aktuellen Ebene unter **Asset-Auswahl** gefiltert.
 
-![Filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
+![Filtering](/images/benutzerhandbuch/cockpit/cockpit-asset-column-filter.png)
 
 Weitere Informationen zur Filterfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Such- und Filterfunktionalität](/users-guide/getting-started/#searching-and-filtering).

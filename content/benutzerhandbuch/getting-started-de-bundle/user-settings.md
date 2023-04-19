@@ -8,7 +8,7 @@ aliases:
 
 Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird der rechte Einschub geöffnet, der Zugriff auf verschiedene Aktionen und Informationen ermöglicht.
 
-<img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
 Im oberen Bereich finden Sie folgende Elemente:
 
@@ -120,7 +120,7 @@ Die Benutzeroberfläche ist in folgenden Sprachen verfügbar:
 
 Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei zu unterstützen, wird während der Passwortänderung ein Passwortstärke-Indikator angezeigt.
 
-<img src="/images/users-guide/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
 
 Das Passwort muss standardmäßig folgende Bedingungen erfüllen:
 

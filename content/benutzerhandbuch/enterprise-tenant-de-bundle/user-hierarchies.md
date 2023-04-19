@@ -18,7 +18,7 @@ Auf der Seite **Benutzer** werden Benutzerhierarchien durch einen Pfeil links vo
 
 Eine kleine Zahl neben dem Benutzernamen zeigt an, wieviele direkt untergeordnete Benutzer ein Benutzer hat. Untergeordnete Benutzer sind Benutzer, die von ihrem übergeordneten Benutzer verwaltet werden können und die maximal die Berechtigungen des übergeordneten Benutzers haben können. Im Beispiel unten hat der Benutzer "Demo user" zwei direkt untergeordnete Benutzer.
 
-![User hierarchies](/images/users-guide/enterprise-tenant/et-user-hierarchy.png)
+![User hierarchies](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy.png)
 
 <a name="sub-users"></a>
 ### So erstellen Sie einen untergeordneten Benutzer
@@ -29,7 +29,7 @@ Benutzerhierarchien werden erstellt, indem einem Benutzer ein "Besitzer" zugewie
 2. Wählen Sie im Feld **Besitzer** den Benutzer aus der Auswahlliste, den Sie als Besitzer zuweisen möchten.
 3. Klicken Sie zum Bestätigen auf **Fertig**.
 
-![Select owner](/images/users-guide/enterprise-tenant/et-user-hierarchy-assign-owner.png)
+![Select owner](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-assign-owner.png)
 
 {{< c8y-admon-info >}}
 Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist, sofern der angemeldete Benutzer nur die "Benutzerverwaltung"-Berechtigung ERSTELLEN hat. Der Besitzer kann später geändert werden, jedoch nur durch einen Benutzer mit der "Benutzerverwaltung"-Berechtigung ADMIN.
@@ -66,4 +66,4 @@ Die Delegierung funktioniert nur im Bereich Benutzerverwaltung und hat keine Aus
 
 Im folgenden Beispiel kann der Benutzer nicht den Zugriff auf die "Administration"-Anwendung ändern, da der Besitzer des Benutzers keine Berechtigung "Benutzerverwaltung" hat. Daher kann der Besitzer keinen Zugriff auf integrierte Anwendungen erteilen.
 
-![Warning message](/images/users-guide/enterprise-tenant/et-warning.png)
+![Warning message](/images/benutzerhandbuch/enterprise-tenant/et-warning.png)

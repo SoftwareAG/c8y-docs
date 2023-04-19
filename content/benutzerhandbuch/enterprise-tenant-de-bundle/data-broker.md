@@ -41,7 +41,7 @@ Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden m
 
 Klicken Sie im Navigator auf **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
-![Data broker connectors list](/images/users-guide/enterprise-tenant/et-data-broker-connector-list.png)
+![Data broker connectors list](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-list.png)
 
 Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
@@ -72,7 +72,7 @@ Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konne
 
 3. Klicken Sie auf **Filter hinzufügen**, um einen neuen Filter zu konfigurieren.
 
-	![Data broker configure filter](/images/users-guide/enterprise-tenant/et-data-broker-connector-filter.png)
+	![Data broker configure filter](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-filter.png)
 
 4. Jeder Datenfilter enthält die folgenden Informationen:
 
@@ -186,7 +186,7 @@ Verwenden Sie den Umschalter, um zeitweilig das Weiterleiten von Daten in Ihren 
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Sie eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
-![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
+![Data broker group in cockpit app](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.png)
 
 #### So löschen Sie einen Datenkonnektor
 
@@ -201,7 +201,7 @@ Wenn der Data Broker die Verbindung zu einem Zielmandanten nicht herstellen kann
 
 Im Ursprungsmandanten reiht Data Broker die Daten, die nicht sofort an den Zielmandanten weitergeleitet werden können, in eine Wartschlange ein. Die Datenmenge, die in die Warteschlange eingereiht werden kann, ist begrenzt. Kann {{< product-c8y-iot >}} keine weiteren Daten in die Warteschlange einreihen, werden die ältesten Daten aus der Warteschlange entfernt. In diesem Fall wird im Mandanten ein WICHTIGER Alarm ausgelöst und dabei der betroffene Konnektor angezeigt.
 
-![Data broker alarms](/images/users-guide/enterprise-tenant/et-data-broker-alarm.png)
+![Data broker alarms](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-alarm.png)
 
 Ebenso wird bei einem Überlauf der Eingangswarteschlange ein Alarm ausgelöst.
 

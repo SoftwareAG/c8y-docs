@@ -13,7 +13,7 @@ Klicken Sie auf **Karte** im Menü **Geräte** im Navigator, um eine Karte zu ö
 
 Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.
 
-![Device map](/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
+![Device map](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-map.png)
 
 <a name="connection-monitoring"></a>
 ### Verbindungsüberwachung
@@ -28,7 +28,7 @@ Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehre
 
 Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Geräteliste angezeigt.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
 
 **Sendeverbindungen**
 
@@ -74,7 +74,7 @@ In der Karte **Verbindungsüberwachung** in der Registerkarte **Info** eines Ger
 
 Navigieren Sie zur Registerkarte **Info** eines bestimmten Geräts, um dessen Verbindungen zu überwachen. Unter **Gerätestatus** wird der Verbindungsstatus für das Gerät angezeigt.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt.
 
@@ -114,7 +114,7 @@ Klicken Sie auf die Registerkarte **Verfügbarkeit** in den Details eines bestim
 
 Klicken Sie auf **Verfügbarkeit** im Menü **Geräte** des Navigators, um den Gesamtservice aller Geräte anzuzeigen.
 
-![Availability](/images/users-guide/DeviceManagement/devmgmt-devices-availability.png)
+![Availability](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-availability.png)
 
 Die Seite **Verfügbarkeit** zeigt die Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage in Prozent an.
 
@@ -130,7 +130,7 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 * Um die Alarme für alle Geräte zu überprüfen, klicken Sie auf **Alarme** im Menü **Übersichten** des Navigators.
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
 
-![Alarms page](/images/users-guide/DeviceManagement/devmgmt-alarms.png)
+![Alarms page](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms.png)
 
 Standardmäßig
 
@@ -231,7 +231,7 @@ In der **Gerätesteuerung** gibt es zwei Arten von Operationen, die jeweils auf 
 
 Sie finden die Liste der Einzel-Operationen auf der Registerkarte **Einzel-Operationen**.
 
-![Single operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
+![Single operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
 
 Einzel-Operationen können sich in einem der folgenden vier Status befinden:
 
@@ -297,7 +297,7 @@ Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Sma
 
 Sie finden die Liste der Bulk-Operationen in der Registerkarte **Bulk-Operationen**.
 
-![Bulk operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
+![Bulk operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
 
 Bulk-Operationen besitzen einen Operationstyp und einen Status.
 
@@ -442,7 +442,7 @@ Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Er
 * Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie auf **Ereignisse** im Menü **Übersichten** des Navigators.
 * Um die Ereignisse eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.
 
-![Events](/images/users-guide/DeviceManagement/devmgmt-events.png)
+![Events](/images/benutzerhandbuch/DeviceManagement/devmgmt-events.png)
 
 Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie auf **Echtzeit** rechts in der oberen Menüleiste.
 

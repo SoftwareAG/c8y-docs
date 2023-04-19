@@ -63,7 +63,7 @@ Wählen Sie dazu die Option **Dashboard auf alle Geräte des Typs [TYP] anwenden
 
 Im Editor wird eine entsprechende Nachricht angezeigt.
 
-<img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
 An diesem Dashboard vorgenommene Änderungen werden automatisch auf alle Dashboard-Instanzen angewendet.
 

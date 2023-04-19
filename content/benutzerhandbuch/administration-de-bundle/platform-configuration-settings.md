@@ -10,7 +10,7 @@ Vom {{< management-tenant >}} aus können Sie Attribute konfigurieren, die globa
 
 Klicken Sie auf **Konfiguration** im Menü **Einstellungen**, um die Seite **Konfiguration** aufzurufen.
 
-![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
+![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
 
 Die meisten Einstellungen, die Sie hier konfigurieren können, sind auch im {{< enterprise-tenant >}} verfügbar. Weitere Informationen finden Sie unter [{{< enterprise-tenant >}} > Anpassen der Plattform](/users-guide/enterprise-tenant/#customization).
 

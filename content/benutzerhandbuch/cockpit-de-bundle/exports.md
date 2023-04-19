@@ -25,7 +25,7 @@ Um alle Exporte anzuzeigen, klicken Sie auf **Exportieren** im Menü **Konfigura
 
 Die Seite **Exportieren** listet alle Exporte mit Namen, Dateityp und Zeitintervall auf.
 
-![Exports](/images/users-guide/cockpit/cockpit-exports.png)
+![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
 
 <a name="add-export"></a>
 #### So fügen Sie einen Export hinzu
@@ -64,7 +64,7 @@ Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach b
 
 Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
-![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
 
 {{< c8y-admon-info >}}
 Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
@@ -93,7 +93,7 @@ Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpun
 
 Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
 
-![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
+![Measurement added from data point](/images/benutzerhandbuch/cockpit/cockpit-export-adddatapoint-measurement.png)
 
 <a name="schedule-export"></a>
 #### So planen Sie einen Export
@@ -102,7 +102,7 @@ Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu 
 
 Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten Export per E-Mail zu erhalten.
 
-![Schedule export](/images/users-guide/cockpit/cockpit-export-new-schedule.png)
+![Schedule export](/images/benutzerhandbuch/cockpit/cockpit-export-new-schedule.png)
 
 **1 - Häufigkeit**
 

@@ -16,7 +16,7 @@ Der Knowledge Hub ist nur für Benutzer von kostenlosen Trial Tenants verfügbar
 
 Klicken Sie rechts unten in der Benutzeroberfläche der {{< product-c8y-iot >}}-Plattform auf die Schaltfläche **Knowledge Hub**, um den {{< product-c8y-iot >}} Knowledge Hub aufzurufen.
 
-![Knowledge Hub button](/images/users-guide/getting-started/getting-started-knowledge-hub-button.png)
+![Knowledge Hub button](/images/benutzerhandbuch/getting-started/getting-started-knowledge-hub-button.png)
 
 Der Dialog **Knowlegde Hub** wird geöffnet und zeigt eine Reihe von Optionen, einschließlich Zugriff auf verschiedene Sitzungen, Ressourcen und Kommunikationsoptionen.
 

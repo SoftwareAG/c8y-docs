@@ -25,7 +25,7 @@ Um die webMethods.io Integration zu abonnieren, gehen Sie folgendermaßen vor:
 
 2. Wählen Sie **webMethods.io Integration** im Application Switcher.
 
-![webMethods.io App Switcher Integration](/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
+![webMethods.io App Switcher Integration](/images/benutzerhandbuch/webMethods.io/wmio-appswitcher-integration.png)
 
 {{< c8y-admon-info >}}
 Wenn das Symbol nicht verfügbar ist, haben Sie die **webMethods.io Integration** möglicherweise nicht abonniert. Wenn Sie sie abonnieren möchten, öffnen Sie den Application Switcher und klicken Sie auf **MyCloud**. Sie werden zum **{{< sag-cloud >}}**-Portal weitergeleitet, wo sie eine kostenlose Testversion abonnieren können.
@@ -37,10 +37,10 @@ Integrationen in webMethods.io werden "Workflows" genannt. Ein Workflow ist eine
 
 Im folgenden Beispiel wird ein Workflow durch einen Alarm in {{< product-c8y-iot >}} ausgelöst, ein Ticket in Zendesk erstellt und eine SMS versandt.
 
-![webMethods.io Example Workflow](/images/users-guide/webMethods.io/wmio-example1.png)
+![webMethods.io Example Workflow](/images/benutzerhandbuch/webMethods.io/wmio-example1.png)
 
 webMethods.io stellt Ihnen auch vorkonfigurierte Workflows zur Verfügung, die sogenannten "Recipes".
 
-![webMethods.io Example Recipe](/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
+![webMethods.io Example Recipe](/images/benutzerhandbuch/webMethods.io/wmio-recipe-salesforce.png)
 
 Weitere Beispiele und technische Anleitungen finden Sie auf der [{{< sag-dev-community >}}-Website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html). Nähere Informationen zu den Auslösern und Konnektoren von {{< product-c8y-iot >}} in webMethods.io bieten insbesondere [diese Artikel]({{< link-sag-tech-forum >}}tag/webmethods-c8y-connector).

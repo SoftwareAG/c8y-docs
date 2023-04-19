@@ -14,7 +14,7 @@ Datenhaltungsregeln werden üblicherweise während der Nacht ausgeführt. Wenn S
 
 Klicken Sie auf **Datenhaltungsregeln** im Menü **Verwaltung**, um eine Liste aller Datenhaltungsregeln in Ihrem Konto anzuzeigen.
 
-<img src="/images/users-guide/Administration/admin-retention-rules.png" alt="Retention rules">
+<img src="/images/benutzerhandbuch/Administration/admin-retention-rules.png" alt="Retention rules">
 
 Für jede Regel wird der Name, Details zu den Daten, die gelöscht werden sollen (Fragmenttyp, Typ und Quelle, siehe unten) und die maximale Anzahl an Tagen angezeigt.
 
@@ -101,7 +101,7 @@ Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich 
 
 Für jede Datei werden der Name, der Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
 
-<img src="/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
 #### So laden Sie eine Datei aus Ihrem Dateisystem hoch
 

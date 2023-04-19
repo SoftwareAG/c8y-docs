@@ -50,13 +50,13 @@ Smart Rules sind an zwei Orten zu sehen:
 
 - Auf der Seite **Globale Smart Rules** im Menü **Konfiguration**.
 
-  ![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
+  ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
 
   Auf der Seite **Globale Smart Rules** werden nur die globalen Smart Rules angezeigt.
 
 - In der Registerkarte **Smart Rules** eines Geräts oder einer Gruppe.
 
-  ![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
+  ![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smartrule-info-tab.png)
 
   In einem lokalen Kontext (Gruppe oder Gerät) werden die lokalen Smart Rules angezeigt. Für Benutzer mit entsprechenden Berechtigungen werden sowohl lokale als auch globale Smart Rules angezeigt.
 
@@ -125,7 +125,7 @@ Ein Anwendungsbeispiel für das Deaktivieren einer Smart Rule für ein einzelnes
 
 Im Falle einer Gruppe aktivieren/deaktivieren Sie die Smart Rule mit dem Umschalter allein für die Gruppe. Sie können die Regel dann über das Auswahlfeld unterhalb des Umschalters separat für die Kinder der Gruppe aktivieren/deaktivieren.
 
-<img src="/images/users-guide/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
+<img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-children.png" name="Smart rule activate children" />
 
 {{< c8y-admon-important >}}
 Eine Regel, die für ein bestimmtes Objekt aktiviert ist, funktioniert nur, wenn sie auch global eingeschaltet ist.
@@ -138,7 +138,7 @@ Führen Sie folgende Schritte aus, um eine Schwellenwertregel zu definieren:
 1. Navigieren Sie im Menü Gruppen zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellenwert anwenden möchten.
 2. Wechseln Sie zur Registerkarte **Daten-Explorer**.
 3. Wenn der Datenpunkt, der den Schwellenwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und [fügen Sie einen Datenpunkt hinzu](#add-data-points).
-4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
+4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
 5. Wählen Sie die Smart Rule "Bei Schwellenwertüberschreitung Alarm erzeugen".
 6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/users-guide/cockpit#smart-rules-collection).

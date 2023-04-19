@@ -91,11 +91,11 @@ In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, 
 
 Die [Parameter](#configuration-parameters) werden auf der linken Seite der Registerkarte konfiguriert, während Sie auf der rechten Seite in einer Vorschau sehen können, wie sich Ihre Auswahl auswirkt.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 Für eine detailliertere Vorschau Ihrer Einstellungen klicken Sie in der oberen Menüleiste auf **Vorschau anzeigen**, um das Erscheinungsbild Ihrer Branding-Einstellungen in der gesamten Plattform zu überprüfen. In der Vorschau können Sie interagieren und sogar zwischen verschiedenen Anwendungen wechseln. Jede Änderung, die Sie in der Registerkarte **Branding** vornehmen, wird sofort auf die Seite **Vorschau** angewendet.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
 Wenn Sie fertig sind oder Ihre Einstellungen speichern möchten, klicken Sie am unteren Rand des Bereichs **Konfiguration** auf **Speichern**, um Ihre Branding-Einstellungen in Ihrem Mandanten zu speichern.
 

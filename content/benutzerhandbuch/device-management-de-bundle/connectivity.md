@@ -34,7 +34,7 @@ Für jeden Anbieter muss entweder ICCID oder MSISDN im Fragment [c8y_Mobile](/re
 
 Die folgende Beschreibung basiert vornehmlich auf Jasper, doch dieselbe Konfiguration und Nutzung gilt auch für die anderen Anbieter. Etwaige Unterschiede werden explizit angegeben.
 
-<img src="/images/users-guide/connectivity/connectivity-jasperarchitecture.png" alt="Jasper architecture">
+<img src="/images/benutzerhandbuch/connectivity/connectivity-jasperarchitecture.png" alt="Jasper architecture">
 
 In den nachstehenden Abschnitten wird Folgendes beschrieben:
 
@@ -64,7 +64,7 @@ Zum Erstellen eines Benutzers im Jasper Control Center führen Sie die folgenden
 1. Wenn Sie SIM-Karten über {{< product-c8y-iot >}} aktivieren und deaktivieren oder SMS von {{< product-c8y-iot >}} aus senden möchten, verwenden Sie die Rolle ACCOUNTUSER. Andernfalls verwenden Sie die Rolle ACCOUNTREADONLY.
 1. Klicken Sie auf **OK**, um den Benutzer zu erstellen, geben Sie dann Ihr Admin-Passwort ein und klicken Sie erneut auf **OK**.
 
-![Jasper user management](/images/users-guide/connectivity/connectivity-jasperadmin.png)
+![Jasper user management](/images/benutzerhandbuch/connectivity/connectivity-jasperadmin.png)
 
 Der Benutzer ist nun erstellt, aber hat noch kein Passwort. Folgen Sie den Anweisungen, die Ihnen das Control Center per E-Mail gesendet hat, um das Passwort festzulegen.
 
@@ -87,7 +87,7 @@ Der Parameter **Cache duration** bestimmt, wie viele Sekunden lang die vom Anbie
 Dies verringert den Datenverkehr und die Anzahl der Anfragen an die SIM-Anbieter im Hinblick auf Inrechnungstellung und Zuverlässigkeit.
 Eine längere Cache-Dauer bedeutet weniger Datenverkehr an Ihren SIM-Anbieter, eine kürzere Dauer bedeutet, dass aktuellere Daten angezeigt werden.
 
-![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
+![Jasper settings](/images/benutzerhandbuch/connectivity/connectivity-item.png)
 
 <a name="link-sims"></a>
 ### Verknüpfen von SIMs und Mobilgeräten
@@ -100,7 +100,7 @@ Wechseln Sie zur Anwendung Device Management und navigieren zu dem Gerät, das �
 
 Um Berechtigungen zuzuweisen, navigieren Sie zur Anwendung Administration und vergewissern Sie sich, dass Ihrem Benutzer eine Rolle mit LESEN- oder ADMIN-Berechtigung für Connectivity zugewiesen ist.
 
-<img src="/images/users-guide/connectivity/connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
+<img src="/images/benutzerhandbuch/connectivity/connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
 
 Jasper und Comarch identifizieren SIM-Karten über ihre ICCID (Integrated Circuit Card Identifier). Ericsson verwendet stattdessen eine MSISDN (Mobile Station International Subscriber Directory Number). In den meisten Fällen melden die Geräte die ICCID und die MSISDN Ihrer SIM-Karte automatisch an {{< product-c8y-iot >}}.
 
@@ -129,7 +129,7 @@ In der Registerkarte **Connectivity** finden Sie folgende Abschnitte:
 * Sitzungen
 * Audit-Logs
 
-![Connectivity tab](/images/users-guide/connectivity/connectivity-tab.png)
+![Connectivity tab](/images/benutzerhandbuch/connectivity/connectivity-tab.png)
 
 {{< c8y-admon-info >}}
 Einige Abschnitte werden eventuell nicht angezeigt oder sind leer. Wenn beispielsweise keine SMS gesendet wurden und Sie keine Berechtigung zum Senden von SMS haben, wird der SMS-Abschnitt nicht angezeigt.

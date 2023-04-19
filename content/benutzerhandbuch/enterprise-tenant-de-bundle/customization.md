@@ -1,9 +1,9 @@
 ---
-weight: 40
-title: Anpassen der Plattform
-layout: redirect
 aliases:
-  - /users-guide/enterprise-edition/#customization
+- /benutzerhandbuch/enterprise-edition-de/#customization
+layout: redirect
+title: Anpassen der Plattform
+weight: 40
 ---
 
 Mit dem {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.

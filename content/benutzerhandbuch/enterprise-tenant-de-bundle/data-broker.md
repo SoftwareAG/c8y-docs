@@ -1,6 +1,6 @@
 ---
 aliases:
-- /users-guide/enterprise-edition/#data-broker
+- /benutzerhandbuch/enterprise-edition-de/#data-broker
 layout: redirect
 title: Data Broker
 weight: 80

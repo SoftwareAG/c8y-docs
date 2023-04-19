@@ -70,3 +70,21 @@ The search results include all assets containing the search term in any property
 {{< /c8y-admon-important >}}
 
 The DTM application extends the full text search capability of {{< product-c8y-iot >}} for searching assets. See [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching) in *User guide* to know more about available search options.
+
+### To move assets
+
+Use the assets move feature to relocate assets within hierarchies. To move one or more assets, follow the steps below:
+
+1. Select the assets to move in the **Assets** page.
+2. Click **Move selected** in the top banner.
+3. In the resulting dialog, you see a list of assets to which the selected assets can be moved. These assets are of the same asset model as the parent of the selected assets. Click on the radio button to select the target.
+4. Click **Move** to complete the relocation.
+
+{{< c8y-admon-info >}}
+Only a maximum of 10 assets can be moved at a time.
+
+The **Move selected** option in the banner is disabled in the following scenarios:
+* One or more root assets are selected.
+* Assets of different asset models are selected. Only assets of same asset model can be moved.
+
+{{< /c8y-admon-info >}}

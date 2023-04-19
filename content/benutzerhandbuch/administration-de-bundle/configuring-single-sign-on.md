@@ -16,7 +16,7 @@ Zur Verwendung der SSO-Funktion muss gewährleistet sein, dass:
 * {{< product-c8y-iot >}}-Plattform Version 10.4.6 oder vorzugsweise höher verwendet wird.
 * alle Microservices mit dem Microservice Java SDK, Version 10.4.6 oder vorzugsweise höher, erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im *Microservice SDK Guide*.
 * Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
-* Für {{< enterprise-tenant >}}s muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei SSO-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
+* Für {{< enterprise-tenant-de >}}s muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei SSO-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
 * Sie müssen dem Benutzer eine Rolle zuweisen, die für "Eigener Benutzer" mindestens die LESEN-Berechtigung besitzt, andernfalls kann sich der Benutzer nicht anmelden.
 * In den Browsereinstellungen der Benutzer müssen Cookies aktiviert sein, da die SSO-Funktion auf der Cookies-Technologie aufbaut.
 {{< /c8y-admon-req >}}
@@ -27,9 +27,9 @@ Um die SSO-Funktion zu aktivieren, muss der Administrator eine Verbindung zum Au
 
 #### Konfigurationszugriff
 
-SSO-Konfigurationen können so eingerichtet werden, dass sie ausschließlich vom {{< management-tenant >}}en aufrufbar sind, um zu verhindern, dass andere Mandanten auf sie zugreifen können.
+SSO-Konfigurationen können so eingerichtet werden, dass sie ausschließlich vom {{< management-tenant-de >}}en aufrufbar sind, um zu verhindern, dass andere Mandanten auf sie zugreifen können.
 Benutzer solcher Mandanten können die Konfiguration nicht aktualisieren. Dies beseitigt die Gefahr, dass andere Benutzer sich wegen einer falsch konfigurierten SSO-Funktion nicht über SSO anmelden können.
-Der {{< management-tenant >}} kann den Zugriff auf SSO-Konfigurationen für bestimmte Mandanten gewähren oder einschränken. Weitere Informationen zum Konfigurationszugriff finden Sie unter [Login options API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in der {{< openapi >}}.
+Der {{< management-tenant-de >}} kann den Zugriff auf SSO-Konfigurationen für bestimmte Mandanten gewähren oder einschränken. Weitere Informationen zum Konfigurationszugriff finden Sie unter [Login options API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in der {{< openapi >}}.
 
 #### Konfigurationsansicht
 

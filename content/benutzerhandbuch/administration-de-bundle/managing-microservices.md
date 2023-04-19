@@ -14,7 +14,7 @@ Ein Microservice ist eine spezielle Art von Anwendung, und zwar eine serverseiti
 
 {{< product-c8y-iot >}} stellt vielerlei Microservice-Anwendungen für verschiedene Zwecke bereit. Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der potenziell verfügbaren Anwendungen an.
 
-Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard-tenant >}}en und/oder {{< enterprise-tenant >}}en standardmäßig abonniert sind. Darüber hinaus können zahlreiche optionale Microservices für Ihren Mandanten abonniert sein.
+Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard-tenant-de >}}en und/oder {{< enterprise-tenant-de >}}en standardmäßig abonniert sind. Darüber hinaus können zahlreiche optionale Microservices für Ihren Mandanten abonniert sein.
 
 #### Standardmäßig abonnierte Microservices
 
@@ -37,14 +37,14 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-250mc-1g</a></td>
 <td style="text-align:left">Vollversion des Microservice "Apama". Laufzeit für Analytics Builder, EPL Apps und Smart Rules</td>
 <td style="text-align:left">apama-ctrl-250mc-1g</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
 <td style="text-align:left">Eingeschränkte Version des Microservice "Apama". Laufzeit für eine unbeschränkte Anzahl von Smart Rules und eine beschränkte Anzahl von Analytics Builder-Modellen</td>
 <td style="text-align:left">apama-ctrl-starter</td>
-<td style="text-align:left">{{< standard-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}</td>
 </tr>
 
 <tr>
@@ -58,28 +58,28 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 <td style="text-align:left"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device-simulator</a></td>
 <td style="text-align:left">Simulation aller Aspekte von IoT-Geräten</td>
 <td style="text-align:left">device-simulator</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#reports" class="no-ajaxy">Report agent</a></td>
 <td style="text-align:left">Planen von Datenexporten aus der Cockpit-Anwendung heraus</td>
 <td style="text-align:left">report agent</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smartrule</a></td>
 <td style="text-align:left">Verwenden Sie die Smart Rules Engine und erstellen Sie Smart Rules, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert einen der folgenden Microservices: apama-ctrl-1c-4g, apama-ctrl-starter oder apama-ctrl-smartrules</td>
 <td style="text-align:left">smartrule</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de#customization" class="no-ajaxy">Sslmanagement</a></td>
 <td style="text-align:left">Aktivieren eines eigenen benutzerdefinierten Domain-Namens durch Verwendung eines SSL-Zertifikats</td>
 <td style="text-align:left">sslmanagement</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 </tr>
 
 </tbody>

@@ -12,7 +12,7 @@ Die {{< product-c8y-iot >}}-Plattform unterscheidet zwischen Anwendungen und Mic
 
 Beides kann über das Menü **Ecosystem** im Navigator aufgerufen werden.
 
-Zudem gibt es in {{< enterprise-tenant >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
+Zudem gibt es in {{< enterprise-tenant-de >}}s die Möglichkeit, **Standardabonnements** zu konfigurieren, d. h. eine Liste von Anwendungen festzulegen, die beim Anlegen standardmäßig für jeden neuen Mandanten und/oder bei einem Plattform-Upgrade für alle bestehenden Mandanten abonniert werden. Näheres dazu finden Sie unter [Enterprise Tenant > Standardabonnements](/benutzerhandbuch/enterprise-tenant-de/#default-subscriptions).
 
 <a name="applications"></a>
 ### Anwendungen
@@ -36,7 +36,7 @@ Ihre Anwendungen sind über den Application Switcher in der oberen Leiste verfü
 
 {{< product-c8y-iot >}} stellt vielerlei Anwendungen für verschiedene Zwecke bereit. Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der potenziell verfügbaren Anwendungen an.
 
-Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-tenant >}}en oder im {{< enterprise-tenant >}}en verfügbar sind. Darüber hinaus können zahlreiche optionale Anwendungen für Ihren Mandanten abonniert sein.
+Unten sind alle Anwendungen aufgelistet, die standardmäßig im {{< standard-tenant-de >}}en oder im {{< enterprise-tenant-de >}}en verfügbar sind. Darüber hinaus können zahlreiche optionale Anwendungen für Ihren Mandanten abonniert sein.
 
 {{< c8y-admon-info >}}
 In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonniert" gekennzeichnet. Abonnierte Anwendungen können nicht vom Benutzer hinzugefügt, geändert oder entfernt werden, sondern nur von einem Mandantenadministrator.
@@ -65,7 +65,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
@@ -73,7 +73,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
@@ -81,7 +81,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< standard-tenant-de >}}, {{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
@@ -89,7 +89,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 <td style="text-align:left">Analytics Builder-Modelle und EPL-Apps (sofern aktiviert) verwalten und bearbeiten</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Webanwendung</td>
-<td style="text-align:left">{{< standard-tenant >}} (eingeschränkte Version für Analytics Builder), {{< enterprise-tenant >}} (Vollversion)</td>
+<td style="text-align:left">{{< standard-tenant-de >}} (eingeschränkte Version für Analytics Builder), {{< enterprise-tenant-de >}} (Vollversion)</td>
 </tr>
 
 </tbody>
@@ -327,7 +327,7 @@ Um zu einer anderen Version zu wechseln, öffnen Sie das Kontextmenü der gewün
 
 Funktionen sind integrierte Anwendungen, die nicht durch ein spezielles Artefakt (Microservice oder Webanwendung) dargestellt werden.
 
-Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die in Ihrem Mandanten abonniert werden. In einem {{< enterprise-tenant >}}en sind folgende Funktionen standardmäßig verfügbar:
+Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die in Ihrem Mandanten abonniert werden. In einem {{< enterprise-tenant-de >}}en sind folgende Funktionen standardmäßig verfügbar:
 
 <table>
 <col width="200">
@@ -347,21 +347,21 @@ Auf der Registerkarte **Funktionen** finden Sie eine Liste aller Funktionen, die
 <td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#branding" class="no-ajaxy">Funktion-Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an</td>
 <td style="text-align:left">feature-branding</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 
 </tr>
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#data-broker" class="no-ajaxy">Funktion-Broker</a></td>
 <td style="text-align:left">Teilen Sie Daten gezielt mit anderen Mandanten</td>
 <td style="text-align:left">feature-broker</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/enterprise-tenant-de/#user-hierarchies" class="no-ajaxy">Funktion-Benutzer-Hierarchie</a></td>
 <td style="text-align:left">Hiermit können Sie in {{< product-c8y-iot >}} verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen</td>
 <td style="text-align:left">feature-user-hierarchy</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
+<td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 </tr>
 </tbody>
 </table>

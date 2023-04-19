@@ -6,11 +6,11 @@ aliases:
   - /users-guide/enterprise-edition/#customization
 ---
 
-Mit dem {{< enterprise-tenant >}} von {{< product-c8y-iot >}} können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
+Mit dem {{< enterprise-tenant-de >}} von {{< product-c8y-iot >}} können Sie verschiedene Aspekte Ihrer Plattform individuell nach Ihren Bedürfnissen anpassen.
 
 Neben verschiedenen [Konfigurationseinstellungen](#configuration) können Sie auch Ihr eigenes [Branding](#branding) und Ihren eigenen [Domain-Namen](#domain-name) verwenden.
 
-Klicken Sie auf **{{< enterprise-tenant >}}** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
+Klicken Sie auf **{{< enterprise-tenant-de >}}** im Menü **Einstellungen**, um zu diesen Einstellungen zu gelangen.
 
 <a name="configuration"></a>
 ### Konfiguration
@@ -24,7 +24,7 @@ Die folgenden Platzhalter sind in der Registerkarte **Konfiguration** zu finden:
 |Platzhalter|Beschreibung|
 |:---|:---|
 |{host}|Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.{{< domain-c8y >}}`.
-|{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.{{< domain-c8y >}}` sein. Bei einem {{< enterprise-tenant >}} können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
+|{tenant-domain}|Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.{{< domain-c8y >}}` sein. Bei einem {{< enterprise-tenant-de >}} können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
 |{token}|Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
 |{email}|Dieser Platzhalter wird durch die E-Mail-Adresse des empfangenden Benutzer ersetzt, die in den Benutzereinstellungen gespeichert ist. Einige Ansichten der Benutzeroberfläche erkennen diesen Parameter und fügen den Wert vorab in das entsprechende Feld ein, z. B. beim Zurücksetzen des Passworts.
 
@@ -60,7 +60,7 @@ Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschl�
 * SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
 * SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
 
-Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an. Die leere Passwortkonfiguration wird für den {{< enterprise-tenant >}} unterstützt.
+Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-Server an. Die leere Passwortkonfiguration wird für den {{< enterprise-tenant-de >}} unterstützt.
 
 #### Datenexport
 
@@ -79,7 +79,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 Klicken Sie unten auf **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
 {{< c8y-admon-info >}}
-Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
+Einige zusätzliche Konfigurationseinstellungen können global im {{< management-tenant-de >}} festgelegt werden, siehe [Administration > Plattform-Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#platform-configuration-settings).
 {{< /c8y-admon-info >}}
 
 <a name="branding"></a>
@@ -187,7 +187,7 @@ Folgende Parameter können festgelegt werden:
 <a name="domain-name"></a>
 ### Domain-Name
 
-Ein entscheidendes Merkmal des {{< enterprise-tenant >}} ist die Fähigkeit, die {{< product-c8y-iot >}}-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
+Ein entscheidendes Merkmal des {{< enterprise-tenant-de >}} ist die Fähigkeit, die {{< product-c8y-iot >}}-Plattform mit einem benutzerdefinierten Domain-Namen zu betreiben. Dies
 bedeutet, dass Sie die Plattform so konfigurieren können, dass sie Ihnen und Ihren Kunden mit einem Hostnamen Ihrer Wahl dient, z. B. mit *.iot.mycompany.com anstelle der Standard-URL von {{< product-c8y-iot >}}. Zudem haben Sie die Möglichkeit, Untermandanten
 mit Ihrer Domain zu erstellen. Diese verwenden dann **\<subtenantName\>.iot.mycompany.com** als ihren Hostnamen.
 
@@ -206,14 +206,14 @@ Für die Verwendung einer benutzerdefinierten Domain gelten drei Voraussetzungen
 
 #### Anforderungen an das SSL-Zertifikat
 
-Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der {{< enterprise-tenant >}}-Funktion verwendet werden zu können:
+Ein SSL-Zertifikat muss die folgenden Kriterien erfüllen, um mit der {{< enterprise-tenant-de >}}-Funktion verwendet werden zu können:
 
 * Das Zertifikat ist aktuell gültig und ist nicht abgelaufen. Konkret muss "validFrom" auf einen Zeitpunkt in der
   Vergangenheit und "validTo" auf einen Zeitpunkt in der Zukunft verweisen.
 * Das Zertifikat wurde von einer anerkannten Zertifizierungsstelle (CA) herausgegeben. Selbstsignierte Zertifikate werden
   ausdrücklich nicht unterstützt.
 * Das Zertifikat ist ein für Ihre Domain *\*.iot.mycompany.com* herausgegebenes Wildcard-Zertifikat. Die Verwendung eines Wildcard-Zertifikats
-  ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren {{< enterprise-tenant >}} erstellt werden.
+  ist obligatorisch, da es auch für Subdomains verwendet wird, die über Ihren {{< enterprise-tenant-de >}} erstellt werden.
 * Jedes einzelne Zertifikat in der Kette wird im X509-Format bereitgestellt.
 * Der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) enthält den Wert Ihres
   Wildcard-Domain-Namens, z. B. "CN=\*.iot.mycompany.com".
@@ -274,9 +274,9 @@ an die Plattform hochgeladen werden.
 Klicken Sie in der Registerkarte **Domain-Name** auf der Seite **Enterprise Tenant** auf **Zertifikat hochladen**. Wählen Sie das Zertifikat in Ihrem Dateisystem aus und klicken Sie auf **Hochladen**.
 
 Anschließend können Sie die Domain durch einen einzigen Mausklick auf ihren Namen aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
-über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
-Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
-.iot.mycompany.com" ist, lautet die Domain des {{< management-tenant >}} "management.iot.mycompany.com".
+über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant-de >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
+Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant-de >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
+.iot.mycompany.com" ist, lautet die Domain des {{< management-tenant-de >}} "management.iot.mycompany.com".
 
 {{< c8y-admon-info >}}
 Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der {{< product-c8y-iot >}}-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.

@@ -53,7 +53,7 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 
 
 {{< c8y-admon-info >}}
-Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant >}} nutzen. Die URL für die {{< enterprise-tenant >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
+Die oben angezeigte URL gilt nur, wenn Sie einen {{< product-c8y-iot >}} {{< standard-tenant-de >}} nutzen. Die URL für die {{< enterprise-tenant-de >}}s von {{< product-c8y-iot >}} ist individuell für Ihr Unternehmen.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-important >}}
@@ -71,7 +71,7 @@ Wenn Sie eine der Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform v
 <br>
 
 {{< c8y-admon-info >}}
-Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
+Das Cookie-Banner ist bei den Public-Cloud-Instanzen von {{< product-c8y-iot >}} standardmäßig eingeschaltet. Bei lokalen Instanzen kann diese Funktion konfiguriert werden, siehe [{{< enterprise-tenant-de >}} > Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 {{< /c8y-admon-info >}}
 
 * Klicken Sie auf **Akzeptieren und fortfahren**, um die Cookie-Standardeinstellungen (erforderliche und funktionelle Cookies aktiviert) zu akzeptieren.
@@ -95,7 +95,7 @@ Klicken Sie auf **Anmelden**, um zur {{< product-c8y-iot >}}-Plattform zu gelang
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie dann **Abmelden** im Kontextmenü.
 
 {{< c8y-admon-info >}}
-Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
+Die maximale Anzahl der erfolglosen Anmeldeversuche (aufgrund ungültiger Zugangsdaten), nach denen ein Benutzer gesperrt wird, kann vom {{< management-tenant-de >}}en auf der Plattform-Ebene eingestellt werden, siehe *{{< product-c8y-iot >}} Core - Operations guide*. Der Standardwert ist 100.
 {{< /c8y-admon-info >}}
 
 <a name="reset-password"></a>

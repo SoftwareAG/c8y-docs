@@ -28,7 +28,7 @@ Zusammenfassung: Um mit dem Microservice-basierten Data Broker arbeiten zu könn
 <a name="enabling-ms-data-broker"></a>
 ###  So aktivieren Sie den Microservice-basierten Data Broker
 
-1. Navigieren Sie im {{< management-tenant >}} zu **Administration** > **Mandanten** > **Untermandanten** und wählen Sie den Mandanten, der als Quelle des Datenkonnektors dienen soll.
+1. Navigieren Sie im {{< management-tenant-de >}} zu **Administration** > **Mandanten** > **Untermandanten** und wählen Sie den Mandanten, der als Quelle des Datenkonnektors dienen soll.
 2. In der Registerkarte **Anwendungen**:
     * Abonnieren Sie für den Mandanten die Data-Broker-Funktion (Anwendung `feature-broker`), sofern diese noch nicht abonniert ist.
     * Abonnieren Sie für den Mandanten den Data Broker-Agenten (Anwendung `databroker-agent-server`).
@@ -59,7 +59,7 @@ Nach dem Aktivieren des Microservice-basierten Data Brokers sollten Ihre vorhand
 
 #### Abonnement-Alarm
 
-Der {{< management-tenant >}} kann nicht als Data-Broker-Ursprungsmandant verwendet werden und dieser Alarm wird beim Versuch ausgelöst, den Data Broker-Agenten für einen {{< management-tenant >}} zu abonnieren.
+Der {{< management-tenant-de >}} kann nicht als Data-Broker-Ursprungsmandant verwendet werden und dieser Alarm wird beim Versuch ausgelöst, den Data Broker-Agenten für einen {{< management-tenant-de >}} zu abonnieren.
 
 #### Data Broker-Verbindungsfehler
 

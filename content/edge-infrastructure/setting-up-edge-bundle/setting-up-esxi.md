@@ -2,6 +2,8 @@
 weight: 60
 title: Example setup for VMware ESXi
 layout: redirect
+section:
+  - edge_server
 ---
 
 ### Setting up ESXi

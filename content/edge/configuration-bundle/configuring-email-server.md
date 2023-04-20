@@ -1,5 +1,5 @@
 ---
-weight: 75
+weight: 60
 title: Configuring the email server
 layout: redirect
 ---

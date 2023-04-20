@@ -4,7 +4,7 @@ title: Model simulation
 layout: redirect
 ---
 
-### About model simulation
+### About simulation mode
 
 ### Simulation parameters
 

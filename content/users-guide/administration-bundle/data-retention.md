@@ -113,13 +113,15 @@ Click **Files repository** in the **Management** menu to see a list of files.
 
 The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **All applications** page.
 
-For each file, the name of the file, its owner, the file type (for example, image/bmp, text/csv), its size and the date when it was last updated is provided.
+For each file, the name of the file, its owner, the file type (for example, image/bmp, text/csv), its size and the date when it was last updated is provided. When hover over particular file entry in the list, actions that can be performed are visible at the end of the row. You can also preview files by clicking magnification glass displayed next to file name supporting the feature.
+
+You can use filters or search input to look for particular file entry. By default files are sorted by file name, if another criteria should be applied, remove sorting by name applied to column and define own criteria for filtering the list.
 
 <img src="/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
 #### To upload a file from your file system
 
-Click **Upload file** in the top menu bar. In the resulting dialog box, select a file to be uploaded. If you want to upload more than one file, click **Add file** to select another file. You may also delete a file before uploading by clicking the delete icon on the right of the file field.
+Click **Upload file** in the top menu bar. In the resulting dialog box, select files to be uploaded. You can also drop files into the drop area displayed within upload modal dialog. Then you can review the files within the list displayed and confirm the upload by clicking **Upload** button.
 
 
 #### To download a file from your account
@@ -130,7 +132,9 @@ Click the menu icon at the right of the respective row and then click **Download
 #### To delete a file from your account
 
 Click the menu icon at the right of the respective row and then click **Delete**.
+You can also select multiple files for removal, by ticking checkbox against each file or select all currently displayed. Within appeared table header you can see the number of files selected with actions that can be performed on those files. Click **Delete** to confirm removal of selected files and confirm removal within confirmation dialog displayed.
 
 {{< c8y-admon-info >}}
-If the file corresponds to an active application, it cannot be deleted. You must first remove or upgrade the application to be able to delete it.
+* If the file corresponds to an application, it cannot be deleted from within file repository. You need to remove that file from application activity log view.
+* If you delete files in bulk and selection contains files illegible for removal, removal will proceed ignoring the files which can't be deleted.
 {{< /c8y-admon-info >}}

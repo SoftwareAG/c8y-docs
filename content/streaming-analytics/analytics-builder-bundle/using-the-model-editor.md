@@ -67,7 +67,7 @@ You can also add or remove tags. Tags are helpful in the model manager, to show 
 
 #### Saving a model
 
-When you save a model in the model editor, it is stored in the Cumulocity IoT inventory for your tenant, in JSON format.
+When you save a model in the model editor, it is stored in the {{< product-c8y-iot >}} inventory for your tenant, in JSON format.
 
 {{< c8y-admon-important>}}
 It may happen that you and another user are editing the same model at the same time. In this case, the changes that are saved last will be stored. So your changes might be overwritten by a later save by another user.
@@ -123,7 +123,7 @@ The block parameter editor is automatically shown when you add a block for which
 
 Most blocks \(but not all\) have parameters that you have to set according to your requirements.
 
-When "Missing" is shown on an input or output block on the canvas, this means that the defined device, group or asset cannot be found in the Cumulocity IoT inventory. You should then either go to the Cumulocity IoT inventory and make sure that this device is registered or that the group or asset exists, or you should select a different, existing device, group or asset in the block parameter editor \(see below\).
+When "Missing" is shown on an input or output block on the canvas, this means that the defined device, group or asset cannot be found in the {{< product-c8y-iot >}} inventory. You should then either go to the {{< product-c8y-iot >}} inventory and make sure that this device is registered or that the group or asset exists, or you should select a different, existing device, group or asset in the block parameter editor \(see below\).
 
 The labels of some blocks on the canvas show the value of the most important parameter. For example, the **Expression** block shows the defined expression, and the **Time Delay** block shows the defined delay in seconds.
 
@@ -139,11 +139,11 @@ For the input and output blocks, you can globally replace the devices, groups or
 
 2.  For the input and output blocks, you can select a different input source or output destination from the **Choose Device, Group or Asset** dialog box.
 
-    The tree in the dialog box reflects the parent/child hierarchy in the Cumulocity IoT inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes. For output blocks, you can also select the **Trigger Device**.
+    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes. For output blocks, you can also select the **Trigger Device**.
 
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
-    The search box can be used to show any managed objects in the Cumulocity IoT inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
+    The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
 
     Click the **Use** button \(this is shown when you move the mouse over an entry\) to select the device, group or asset that you want to use.
 
@@ -325,7 +325,7 @@ The above toolbar buttons are only enabled when there is an operation that can b
 
 #### Replacing devices, groups and assets
 
-You can find the devices, groups or assets that are used in the current model and replace them with other devices, groups or assets that are currently registered in the Cumulocity IoT inventory \(visualized in the Device Management application\).
+You can find the devices, groups or assets that are used in the current model and replace them with other devices, groups or assets that are currently registered in the {{< product-c8y-iot >}} inventory \(visualized in the Device Management application\).
 
 {{< c8y-admon-info>}}
 In the rules below, the term device refers to a device or other asset \(but not to a group\).
@@ -346,7 +346,7 @@ If you change more than one group to a device at a time, then only the first spe
         {{< /c8y-admon-info>}}
 -   An entry named "Trigger Device" is not available for selection in the dialog.
 
-After you have replaced the devices, you need to verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The Cumulocity IoT fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
+After you have replaced the devices, you need to verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The {{< product-c8y-iot >}} fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
 
 **To replace devices, groups and assets**
 
@@ -445,7 +445,7 @@ Keep in mind that your changes are only written to the inventory when you save t
 You can copy any items on the canvas \(blocks, groups, and attached wires\) and paste them in a different model. The prerequisite for this is that all is done in the same session. It will not work if you try to paste the items in a different tab or in a different browser.
 
 {{< c8y-admon-caution>}}
-There may be performance issues if you copy many input blocks and output blocks. This is because this operation requires access to the inventory service of Cumulocity IoT to get the information about the devices that are represented by these blocks.
+There may be performance issues if you copy many input blocks and output blocks. This is because this operation requires access to the inventory service of {{< product-c8y-iot >}} to get the information about the devices that are represented by these blocks.
 {{< /c8y-admon-caution>}}
 
 **To copy items to a different model**

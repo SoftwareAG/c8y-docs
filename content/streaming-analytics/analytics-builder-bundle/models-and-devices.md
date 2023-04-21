@@ -13,7 +13,7 @@ Each model must either:
 -   receive input from a set of specific devices and send output to a set of specific devices, or
 -   receive input from each device within a group of devices and send output to the trigger device or an asset. Note that asset output can only be used for sending cross-device aggregates.
 
-    A group of devices can include a Cumulocity IoT device group, a smart group, or an asset. When a model uses a group of devices, the model will act on all devices referred to by the group, either directly or indirectly through members of the group that are themselves groups and have device members \(or even “grand-children” group members\). A device can be a member of zero, one or many groups. For more information, see [Device Management > Grouping devices](/users-guide/device-management/#grouping-devices) and [Cockpit > Managing assets](/users-guide/cockpit/#managing-assets), both in the *User guide*.
+    A group of devices can include a {{< product-c8y-iot >}} device group, a smart group, or an asset. When a model uses a group of devices, the model will act on all devices referred to by the group, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Device Management > Grouping devices](/users-guide/device-management/#grouping-devices) and [Cockpit > Managing assets](/users-guide/cockpit/#managing-assets), both in the *User guide*.
 
     {{< c8y-admon-info>}}
 A model that acts on a group of devices only determines the group membership when the model is activated. If the membership of a group changes while a model is running, the model will not behave any differently for any new or removed members of the group. If a group membership is changed, then models that refer to that group should be de-activated and re-activated.
@@ -41,7 +41,7 @@ The test and simulation modes are only permitted for models using specific devic
 
 #### Configuring the concurrency level
 
-By default, the Analytics Builder runtime uses 1 CPU core to execute models. If you want to change the number of CPU cores, send a `POST` request to Cumulocity IoT that changes the value for the `numWorkerThreads` key. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.
+By default, the Analytics Builder runtime uses 1 CPU core to execute models. If you want to change the number of CPU cores, send a `POST` request to {{< product-c8y-iot >}} that changes the value for the `numWorkerThreads` key. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.
 
 Typically, this configuration value would be set to the number of CPU cores available for the system, but it may be useful to configure this either higher or lower according to what resources are available. It does not need to scale to the number of devices \(that is, it is quite reasonable to have 4 worker threads with hundreds of devices, assuming a moderate event rate per device\).
 
@@ -71,7 +71,7 @@ Broadcast devices are identified by the presence of a property on the device obj
 
 A virtual device is used when a model is deployed in test or simulation mode. See also [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
 
-Virtual devices are objects in the Cumulocity IoT inventory with a `c8y_VirtualDevice` property. This property refers to the identifier of the real device of which the virtual device is a copy.
+Virtual devices are objects in the {{< product-c8y-iot >}} inventory with a `c8y_VirtualDevice` property. This property refers to the identifier of the real device of which the virtual device is a copy.
 
 Use the `creationDate` to find out what `virtualDevice` was created for a model activation and which measurements have that device as their source.
 
@@ -91,7 +91,7 @@ Virtual devices are not shown in the Device Management application. Use REST ope
 
 ### Connections between models
 
-You can connect multiple models together using output blocks and input blocks. A model that contains an output block such as **Measurement Output** \(for `Measurement` objects of Cumulocity IoT\) will generate a series of events, and this can be consumed by a suitable input block \(such as **Measurement Input**\) in another model. For more details, see [Keys for identifying a series of events](/streaming-analytics/analytics-builder/#keys-for-identifying-a-series-of-events).
+You can connect multiple models together using output blocks and input blocks. A model that contains an output block such as **Measurement Output** \(for `Measurement` objects of {{< product-c8y-iot >}}\) will generate a series of events, and this can be consumed by a suitable input block \(such as **Measurement Input**\) in another model. For more details, see [Keys for identifying a series of events](/streaming-analytics/analytics-builder/#keys-for-identifying-a-series-of-events).
 
 When models are connected together using inputs and outputs for the same stream of events, the term “chain” is used to refer to all of the models that are connected to each other in this way. There may be multiple chains if there are separate groups of models that are connected to each other.
 
@@ -101,7 +101,7 @@ The events from one model can only be consumed by another model when all involve
 
 When one model has a synchronous output block generating a series of events for a given key and a second model has an input block consuming from that same series of events \(that is, with the same key parameters\), then this forms a connection from the first model to the second. When the first model triggers the output block, this causes the second model to be evaluated with a new input on its input block.
 
-It is also possible to form connections between models using the output from an asynchronous output block. In this case, when the first model triggers the asynchronous output block, the output is generated and sent to the external system \(such as Cumulocity IoT\). The data is received back from the external system at some later point in time and causes the evaluation of any other models consuming the data.
+It is also possible to form connections between models using the output from an asynchronous output block. In this case, when the first model triggers the asynchronous output block, the output is generated and sent to the external system \(such as {{< product-c8y-iot >}}\). The data is received back from the external system at some later point in time and causes the evaluation of any other models consuming the data.
 
 Similar to the processing order of wires within a model \(see also [Processing order of wires](/streaming-analytics/analytics-builder/#processing-order-of-wires)\), the following applies when an output block in one model generates a series of events that an input block in another model consumes:
 
@@ -162,7 +162,7 @@ By default, only devices, groups and assets are shown in the following cases:
 -   When you select a different item from the **Choose Device, Group or Asset** dialog box \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 -   When you replace devices or groups \(see [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets)\).
 
-However, when you use the search box in the above cases, all managed objects \(not just devices, groups and assets\) in the Cumulocity IoT inventory which match the search criteria are shown. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.
+However, when you use the search box in the above cases, all managed objects \(not just devices, groups and assets\) in the {{< product-c8y-iot >}} inventory which match the search criteria are shown. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.
 
 If you want to restrict the search to show only managed objects of a specific type \(for example, to show only devices\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://cumulocity.com/api/core/#tag/Options) in the {{< openapi >}}.
 
@@ -176,7 +176,7 @@ For example, specify the following if you only want to show devices:
 }
 ```
 
-The `c8y_IsDevice` in the value is a so-called fragment. You can specify any fragment that is known to Cumulocity IoT, including any fragments that you have created yourself.
+The `c8y_IsDevice` in the value is a so-called fragment. You can specify any fragment that is known to {{< product-c8y-iot >}}, including any fragments that you have created yourself.
 
 You can combine several values. For example, specify the following if you only want to show devices and device groups:
 

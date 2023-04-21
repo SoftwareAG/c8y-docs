@@ -17,7 +17,7 @@ See also [Reloading all models](/streaming-analytics/analytics-builder/#reloadin
 
 #### Monitoring periodic status
 
-In addition to the status that is shown on the card for a model, it is possible to enable generation of periodic status published as Cumulocity IoT operations or events. See [Configuration](/streaming-analytics/analytics-builder/#configuration) on setting the `status_device_name` and `status_period_secs` tenant options.
+In addition to the status that is shown on the card for a model, it is possible to enable generation of periodic status published as {{< product-c8y-iot >}} operations or events. See [Configuration](/streaming-analytics/analytics-builder/#configuration) on setting the `status_device_name` and `status_period_secs` tenant options.
 
 Each operation has the following parameters:
 
@@ -174,7 +174,7 @@ When chains of models with a high throughput are deployed across multiple worker
 "Analytics Builder chain of models "Model 1", "Model 2", "Model 3" is slow by 3 seconds."
 See [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log) for information on where to find the correlator log.
 
-The following information on the slowest chain is also available in the periodic status that is published as Cumulocity IoT operations or events, within the `apama_status` parameter:
+The following information on the slowest chain is also available in the periodic status that is published as {{< product-c8y-iot >}} operations or events, within the `apama_status` parameter:
 
 <table>
 <colgroup>
@@ -201,7 +201,7 @@ The following information on the slowest chain is also available in the periodic
 
 ##### Example
 
-The following is an example of the status operation data that is published by Cumulocity IoT:
+The following is an example of the status operation data that is published by {{< product-c8y-iot >}}:
 
 ```
 {
@@ -291,7 +291,7 @@ When a model receives an event, it may be dropped if the correlator delivers or 
 
 The total number of dropped events across all models is periodically published as part of the status operation. The count of the number of dropped events is available as a user-defined status value with the name `user-analytics-oldEventsDropped` in the `apama_status` parameter of the status operation. See also [Monitoring periodic status](/streaming-analytics/analytics-builder/#monitoring-periodic-status) for details about the operation.
 
-All dropped input events are also sent to channel `AnalyticsDroppedEvents`, allowing you to implement your own monitoring of the dropped events. A dropped input event sent to the channel `AnalyticsDroppedEvents` is packaged inside an event of type `apama.analyticsbuilder.DroppedEvent`. This allows you to extract the original dropped event and perform any analysis on it, for example, categorizing the number of dropped events per device. This can be achieved by writing EPL that listens for the `DroppedEvent` events, aggregates by device identifier and/or time, and sends measurements to Cumulocity IoT that can be monitored. See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
+All dropped input events are also sent to channel `AnalyticsDroppedEvents`, allowing you to implement your own monitoring of the dropped events. A dropped input event sent to the channel `AnalyticsDroppedEvents` is packaged inside an event of type `apama.analyticsbuilder.DroppedEvent`. This allows you to extract the original dropped event and perform any analysis on it, for example, categorizing the number of dropped events per device. This can be achieved by writing EPL that listens for the `DroppedEvent` events, aggregates by device identifier and/or time, and sends measurements to {{< product-c8y-iot >}} that can be monitored. See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 #### Monitoring the model life-cycle
 
@@ -359,7 +359,7 @@ See [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting/) for
 
 ### Configuration
 
-You can customize the settings of Analytics Builder, the so-called “tenant options”, by sending REST requests to Cumulocity IoT. The key names that you can use with the REST requests are listed in the topics below. A category name is needed along with the key name; this is always `analytics.builder`.
+You can customize the settings of Analytics Builder, the so-called “tenant options”, by sending REST requests to {{< product-c8y-iot >}}. The key names that you can use with the REST requests are listed in the topics below. A category name is needed along with the key name; this is always `analytics.builder`.
 
 You can find some concrete examples in [Using curl commands for setting various tenant options](/streaming-analytics/analytics-builder/#using-curl-commands-for-setting-various-tenant-options). However, you can use any tool you like.
 
@@ -385,7 +385,7 @@ After you have changed a tenant option using a REST request, the correlator will
 <tbody>
   <tr>
     <td><code>status_device_name</code></td>
-    <td>The name of the Cumulocity IoT device to which the status operations are to be published. The default name is <code>apama_status</code>.</td>
+    <td>The name of the {{< product-c8y-iot >}} device to which the status operations are to be published. The default name is <code>apama_status</code>.</td>
   </tr>
   <tr>
     <td><code>status_period_secs</code></td>
@@ -393,10 +393,10 @@ After you have changed a tenant option using a REST request, the correlator will
   </tr>
   <tr>
     <td><code>status_send_type</code></td>
-    <td>How the status is to be published. The default value is <code>OPERATION</code>, meaning that the status is published as a Cumulocity IoT operation. You can change this to one of the following values:
+    <td>How the status is to be published. The default value is <code>OPERATION</code>, meaning that the status is published as a {{< product-c8y-iot >}} operation. You can change this to one of the following values:
       <ul>
-         <li><code>EVENT</code> - Publish the status as a Cumulocity IoT event.</li>
-         <li><code>MEASUREMENT</code> - Publish the status as a Cumulocity IoT measurement.</li>
+         <li><code>EVENT</code> - Publish the status as a {{< product-c8y-iot >}} event.</li>
+         <li><code>MEASUREMENT</code> - Publish the status as a {{< product-c8y-iot >}} measurement.</li>
       </ul>
     </td>
   </tr>
@@ -407,11 +407,11 @@ After you have changed a tenant option using a REST request, the correlator will
   </tr>
   <tr>
     <td><code>status_event_type</code></td>
-    <td>The event type if the status is published as a Cumulocity IoT event, or the measurement type if the status is published as a Cumulocity IoT measurement. The default type is <code>apama_status</code>.</td>
+    <td>The event type if the status is published as a {{< product-c8y-iot >}} event, or the measurement type if the status is published as a {{< product-c8y-iot >}} measurement. The default type is <code>apama_status</code>.</td>
   </tr>
   <tr>
     <td ><code>status_event_text</code></td>
-    <td >The event text if the status is published as a Cumulocity IoT event. The default text is <code>Apama Status</code>.</td>
+    <td >The event text if the status is published as a {{< product-c8y-iot >}} event. The default text is <code>Apama Status</code>.</td>
   </tr>
 </tbody>
 </table>
@@ -518,7 +518,7 @@ If you want to find out which values are currently used for these tenant options
 
 #### Using curl commands for setting various tenant options
 
-You can set or change various tenant options by sending `POST` requests to Cumulocity IoT. This topic explains how you can do this using the curl command-line tool. See [https://curl.se/](https://curl.se/) for detailed information on curl. See also the information on the [tenant options](https://cumulocity.com/api/core/#tag/Options) in the {{< openapi >}}.
+You can set or change various tenant options by sending `POST` requests to {{< product-c8y-iot >}}. This topic explains how you can do this using the curl command-line tool. See [https://curl.se/](https://curl.se/) for detailed information on curl. See also the information on the [tenant options](https://cumulocity.com/api/core/#tag/Options) in the {{< openapi >}}.
 
 The syntax of the curl command depends on the environment in which you are working. The syntax for a Bash UNIX shell, for example, is as follows:
 
@@ -526,7 +526,7 @@ The syntax of the curl command depends on the environment in which you are worki
 
 where:
 
--   `username` is the name of a user who has ADMIN permission for "Option management" in Cumulocity IoT. curl will prompt for a password. Or you can provide a password in the `username` argument by appending it with a colon \(:\) and the password. For example:
+-   `username` is the name of a user who has ADMIN permission for "Option management" in {{< product-c8y-iot >}}. curl will prompt for a password. Or you can provide a password in the `username` argument by appending it with a colon \(:\) and the password. For example:
 
     `--user User123:secretpw`
 
@@ -551,10 +551,10 @@ For example \(Bash shell\):
 
 The location of the correlator log depends on the environment in which you are working:
 
--   Cumulocity IoT Core:
+-   {{< product-c8y-iot >}} Core:
 
     The correlator log is accessible via the Administration application. You can find it on the **Logs** tab of the Apama-ctrl microservice. You have to subscribe to the microservice so that you can see the logs. For more information on microservices and log files, see [Administration > Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide*.
 
--   Cumulocity IoT Edge:
+-   {{< product-c8y-iot >}} Edge:
 
-    See [Logging](/edge/operating-edge/#logs-files) in the *Cumulocity IoT Edge guide* for information on the log file location.
+    See [Logging](/edge/operating-edge/#logs-files) in the *{{< product-c8y-iot >}} Edge guide* for information on the log file location.

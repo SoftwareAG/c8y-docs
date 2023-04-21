@@ -10,7 +10,7 @@ The model manager contains two tabs: the **Models** tab which shows all currentl
 
 #### The Models tab
 
-The **Models** tab lists all available analytic models within the current Cumulocity IoT environment as cards. You add new models and manage the existing models from here.
+The **Models** tab lists all available analytic models within the current {{< product-c8y-iot >}} environment as cards. You add new models and manage the existing models from here.
 
 ![Models tab showing the defined models](/images/streaming-analytics/analytics-builder/model-manager.png)
 
@@ -238,7 +238,7 @@ The duplicated model gets the same name as the original model followed by the nu
 
 ### Exporting a model
 
-You can export each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current Cumulocity IoT tenant to a different tenant. The model is saved in JSON format.
+You can export each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current {{< product-c8y-iot >}} tenant to a different tenant. The model is saved in JSON format.
 
 **To export a model**
 
@@ -248,7 +248,7 @@ You can export each model that is currently listed in the model manager. This is
 
 ### Importing a model
 
-You can import a model that has previously been exported \(in JSON format\). This is helpful, for example, if you want to import a model from a different Cumulocity IoT tenant.
+You can import a model that has previously been exported \(in JSON format\). This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
 
 **To import a model**
 

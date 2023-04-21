@@ -18,30 +18,30 @@ Analytics Builder consists of the following tools:
 
 The blocks are implemented in the Event Processing Language \(EPL\) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later chapters.
 
-### Analytics Builder and Cumulocity IoT
+### Analytics Builder and {{< product-c8y-iot >}}
 
-Devices and sensors can be connected to Cumulocity IoT. See [Interfacing devices](/concepts/interfacing-devices/) in the *Concepts guide* and [Device integration using MQTT](/device-integration/mqtt/) in the *Device Integration* guide.
+Devices and sensors can be connected to {{< product-c8y-iot >}}. See [Interfacing devices](/concepts/interfacing-devices/) in the *Concepts guide* and [Device integration using MQTT](/device-integration/mqtt/) in the *Device Integration* guide.
 
-Sensors result in `Measurement` or `Event` objects in Cumulocity IoT, and devices can receive `Operation` objects created within the Cumulocity IoT platform. All of these objects \(`Measurement`, `Event`, `Operation`\) will be associated with a single device in the Cumulocity IoT platform. A device may have multiple types of measurement associated with it, and the types of measurements each device supports may be the same as other devices or different to other devices. Once devices are connected to Cumulocity IoT, information about these devices is stored in the Cumulocity IoT inventory. These are visible in the Device Management application, which can also be used to view `Measurement`, `Event` or `Operation` objects associated with that device. See [Device management](/users-guide/device-management/) in the *User guide* for more information.
+Sensors result in `Measurement` or `Event` objects in {{< product-c8y-iot >}}, and devices can receive `Operation` objects created within the {{< product-c8y-iot >}} platform. All of these objects \(`Measurement`, `Event`, `Operation`\) will be associated with a single device in the {{< product-c8y-iot >}} platform. A device may have multiple types of measurement associated with it, and the types of measurements each device supports may be the same as other devices or different to other devices. Once devices are connected to {{< product-c8y-iot >}}, information about these devices is stored in the {{< product-c8y-iot >}} inventory. These are visible in the Device Management application, which can also be used to view `Measurement`, `Event` or `Operation` objects associated with that device. See [Device management](/users-guide/device-management/) in the *User guide* for more information.
 
-The Cumulocity IoT platform includes an Apama correlator component, which is managed by the Cumulocity IoT platform \(this is not manually started or stopped\) and is preconfigured to communicate to Cumulocity IoT. This correlator hosts the Analytics Builder runtime, and also executes any custom Apama rules added using EPL apps.
+The {{< product-c8y-iot >}} platform includes an Apama correlator component, which is managed by the {{< product-c8y-iot >}} platform \(this is not manually started or stopped\) and is preconfigured to communicate to {{< product-c8y-iot >}}. This correlator hosts the Analytics Builder runtime, and also executes any custom Apama rules added using EPL apps.
 
-Analytics Builder allows you to create models that interact with the devices and sensor measurements. Models can receive `Measurement` and `Event` objects from devices, which provide the inputs to calculations or pattern detection performed within a model. Models can create new `Measurement` objects which can represent derived values from sensors \(for example, an average temperature\) or the measurements can be used as an input to other analytic models \(see [Connections between models](/streaming-analytics/analytics-builder/#connections-between-models)\). Models can create new `Operation` objects which are sent to devices to control the devices \(for example, to sound an alarm bell, display a message on a screen, or switch a device off\). The models are also stored in the Cumulocity IoT inventory, but can be imported or exported via the model manager.
+Analytics Builder allows you to create models that interact with the devices and sensor measurements. Models can receive `Measurement` and `Event` objects from devices, which provide the inputs to calculations or pattern detection performed within a model. Models can create new `Measurement` objects which can represent derived values from sensors \(for example, an average temperature\) or the measurements can be used as an input to other analytic models \(see [Connections between models](/streaming-analytics/analytics-builder/#connections-between-models)\). Models can create new `Operation` objects which are sent to devices to control the devices \(for example, to sound an alarm bell, display a message on a screen, or switch a device off\). The models are also stored in the {{< product-c8y-iot >}} inventory, but can be imported or exported via the model manager.
 
 Business logic can also be written in Apama’s Event Processing Language \(Apama EPL\) which gives more power and flexibility in a text-based programming language. This is an alternative if more complex logic is required or the logic does not fit into the pattern of an analytic model. EPL apps can be written directly in the Streaming Analytics application. See [EPL Apps](/streaming-analytics/epl-apps/) for more information, including examples. Alternatively, it is also possible to build custom blocks if none of the blocks delivered with Analytics Builder implement the logic required; see [Creating your own blocks](/streaming-analytics/analytics-builder/#creating-your-own-blocks).
 
-Analytics Builder can be used with both Cumulocity IoT Core \(cloud\) and Cumulocity IoT Edge \(local installation\). You can customize several aspects of Analytics Builder by setting various tenant options. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.
+Analytics Builder can be used with both {{< product-c8y-iot >}} Core \(cloud\) and {{< product-c8y-iot >}} Edge \(local installation\). You can customize several aspects of Analytics Builder by setting various tenant options. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.
 
 
 ### Prerequisites
 
 #### Browsers
 
-Analytics Builder supports the same browsers as Cumulocity IoT, with the following exception: browsers on smartphones and tablets are not supported.
+Analytics Builder supports the same browsers as {{< product-c8y-iot >}}, with the following exception: browsers on smartphones and tablets are not supported.
 
 #### Permissions
 
-To use Analytics Builder in Cumulocity IoT, you must at least have the following permissions:
+To use Analytics Builder in {{< product-c8y-iot >}}, you must at least have the following permissions:
 
 |Permission type|Permission level|
 |---------------|----------------|
@@ -53,7 +53,7 @@ This is typically achieved by using a global role which has those permissions, a
 
 #### Microservice
 
-To use Analytics Builder, you need the Apama-ctrl microservice in Cumulocity IoT.
+To use Analytics Builder, you need the Apama-ctrl microservice in {{< product-c8y-iot >}}.
 
 Your tenant may be subscribed to the Apama-ctrl-starter microservice, in which case you are limited to at most 3 active analytic models. Custom blocks written with the Analytics Builder Block SDK cannot be used with Apama-ctrl-starter. Contact Software AG support to discuss adding more capabilities.
 
@@ -61,21 +61,21 @@ If your tenant is subscribed to the Apama-ctrl-smartrules microservice, Analytic
 
 ### Language settings
 
-The language in which the user interface of Analytics Builder is shown depends on your user settings in Cumulocity IoT. See [Getting Started > User options and settings](/users-guide/getting-started/#user-settings) in the *User guide* for more information.
+The language in which the user interface of Analytics Builder is shown depends on your user settings in {{< product-c8y-iot >}}. See [Getting Started > User options and settings](/users-guide/getting-started/#user-settings) in the *User guide* for more information.
 
-If Cumulocity IoT or the browser is set to a language that is currently not supported by Analytics Builder, the user interface is shown with the default language, which is English.
+If {{< product-c8y-iot >}} or the browser is set to a language that is currently not supported by Analytics Builder, the user interface is shown with the default language, which is English.
 
 ### First Steps: Creating your first model
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in Cumulocity IoT. Preferably, this is a device which is already sending measurement values to Cumulocity IoT. This can be, for example, a smartphone on which the Cumulocity IoT Sensor App has been installed \(see [Cumulocity IoT Sensor App](/users-guide/sensor-app/) in the *User guide* for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< product-c8y-iot >}} Sensor App has been installed \(see [{{< product-c8y-iot >}} Sensor App](/users-guide/sensor-app/) in the *User guide* for detailed information\).
 
 The model that you add will contain three blocks:
 
 -   An input block which receives measurement values from a device.
 -   A block that calculates the mean of the measurement values over time.
--   An output block that sends the calculated mean values to Cumulocity IoT's Device Management application so that they can be viewed there.
+-   An output block that sends the calculated mean values to {{< product-c8y-iot >}}'s Device Management application so that they can be viewed there.
 
 When you have completed all steps below, your model will look similar to the following:
 
@@ -101,7 +101,7 @@ The first page that is shown when you invoke Analytics Builder is the model mana
 
 #### Step 3: Add the input block
 
-You design your model in the model editor. The model editor is shown after you have entered the model name. The palette which is shown on the left contains all blocks that can be added to a model. You add a block by dragging it from the palette onto the canvas. The blocks for the input devices that have been registered in Cumulocity IoT are shown under **Input**.
+You design your model in the model editor. The model editor is shown after you have entered the model name. The palette which is shown on the left contains all blocks that can be added to a model. You add a block by dragging it from the palette onto the canvas. The blocks for the input devices that have been registered in {{< product-c8y-iot >}} are shown under **Input**.
 
 1.  In the palette, expand **Input**.
 
@@ -117,7 +117,7 @@ If the block parameter editor is not shown (for example, because you clicked an 
 
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
 
-    If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the Cumulocity IoT Sensor App would be **c8y\_Gyroscope =\> gyroscopeY**.
+    If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< product-c8y-iot >}} Sensor App would be **c8y\_Gyroscope =\> gyroscopeY**.
 
 5.  Select the **Ignore Timestamp** check box.
 
@@ -198,7 +198,7 @@ This topic gives a brief overview of how to create a model from a sample. It is 
 
 This topic is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in Cumulocity IoT. Preferably, this is a device which is already sending measurement values to Cumulocity IoT. This can be, for example, a smartphone on which the Cumulocity IoT Sensor App has been installed \(see [Cumulocity IoT Sensor App](/users-guide/sensor-app/) in the *User guide* for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< product-c8y-iot >}} Sensor App has been installed \(see [{{< product-c8y-iot >}} Sensor App](/users-guide/sensor-app/) in the *User guide* for detailed information\).
 
 The following image shows the blocks that are defined in the **On missing measurements create alarm** sample.
 
@@ -286,7 +286,7 @@ You will now activate the instance in production mode. This deploys the instance
 
 Once the instance has been activated, send in the data from your device. The instance starts monitoring the device once measurement data starts arriving and creates an alarm if no data is received within the configured duration.
 
-For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the Cumulocity IoT Sensor App is still running.
+For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< product-c8y-iot >}} Sensor App is still running.
 
 #### Step 6: Go to the Device Management and view the alarms
 

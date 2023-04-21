@@ -54,8 +54,8 @@ Blocks are the basic processing units of the model. Each block has some predefin
 
 The palette of the model editor offers for selection the following types of blocks:
 
--   Input blocks, which receive data from external sources. An input block normally represents a device that has been registered in the Cumulocity IoT inventory, a device group, a smart group, or an asset. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
--   Output blocks, which send data to external sources. An output block normally represents a device that has been registered in the Cumulocity IoT inventory. But there are also blocks for sending an email or SMS to specified receivers. See also [Output blocks](/streaming-analytics/analytics-builder/#output-blocks).
+-   Input blocks, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a device group, a smart group, or an asset. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
+-   Output blocks, which send data to external sources. An output block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory. But there are also blocks for sending an email or SMS to specified receivers. See also [Output blocks](/streaming-analytics/analytics-builder/#output-blocks).
 -   Processing blocks, which receive data from the input blocks and send the resulting data to the output blocks. See also [Processing blocks](/streaming-analytics/analytics-builder/#processing-blocks).
 
 {{< c8y-admon-info>}}
@@ -74,7 +74,7 @@ Two output ports cannot be connected to the same input port, whereas one output 
 
 #### Input blocks
 
-An input block is a special type of block that receives data from an external source. It converts the data into a format understandable to wires and transfers the data to the connected blocks. For example, when an input block receives a `Measurement` event from Cumulocity IoT, it extracts the required information from the event and then transfers the information to the connected blocks for further processing.
+An input block is a special type of block that receives data from an external source. It converts the data into a format understandable to wires and transfers the data to the connected blocks. For example, when an input block receives a `Measurement` event from {{< product-c8y-iot >}}, it extracts the required information from the event and then transfers the information to the connected blocks for further processing.
 
 Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
@@ -82,11 +82,11 @@ In addition, Analytics Builder supports input devices that are referred to as "b
 
 #### Output blocks
 
-An output block is a special type of block that receives data from a connected processing block. It converts the data into a format understandable to an external source and transfers the data to the external source. For example, when an output block receives data from a connected processing block, it packages the data into an `Operation` object and then sends the operation to Cumulocity IoT.
+An output block is a special type of block that receives data from a connected processing block. It converts the data into a format understandable to an external source and transfers the data to the external source. For example, when an output block receives data from a connected processing block, it packages the data into an `Operation` object and then sends the operation to {{< product-c8y-iot >}}.
 
 You can specify a **Trigger Device** for an output block. This is a special device which can be used to send the output back to the device which triggered the output. Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
-Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages \(see also [Administration > Changing settings > Providing SMS provider credentials](/users-guide/administration/#sms-provider) in the *User guide*\). Unlike the other blocks, these are not associated with devices within the Cumulocity IoT platform.
+Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages \(see also [Administration > Changing settings > Providing SMS provider credentials](/users-guide/administration/#sms-provider) in the *User guide*\). Unlike the other blocks, these are not associated with devices within the {{< product-c8y-iot >}} platform.
 
 #### Processing blocks
 
@@ -134,7 +134,7 @@ You write the custom blocks in Apama's Event Processing Language \(EPL\). Once y
 analytics_builder build extension --input path --cumulocity_url $C8Y_URL --username $C8Y_USERNAME --password $C8Y_PASSWORD --name customBlocks --restart
 ```
 
-To upload an extension, the user specified in the `--username` argument must have CREATE permission for "Inventory" in Cumulocity IoT, in addition to the permissions listed in [Prerequisites](/streaming-analytics/analytics-builder/#prerequisites).
+To upload an extension, the user specified in the `--username` argument must have CREATE permission for "Inventory" in {{< product-c8y-iot >}}, in addition to the permissions listed in [Prerequisites](/streaming-analytics/analytics-builder/#prerequisites).
 
 The Apama-ctrl microservice is restarted after running the above command. The user must have the ADMIN permission for "CEP management" to request a restart.
 

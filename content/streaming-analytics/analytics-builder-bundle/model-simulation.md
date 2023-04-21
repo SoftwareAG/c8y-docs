@@ -6,7 +6,7 @@ layout: redirect
 
 ### About simulation mode
 
-You can deploy a model in simulation mode to run it against historical input data \(such as Cumulocity IoT measurements\). This allows testing the behavior of a newly developed model against historical data or fine-tuning an existing model. Or it allows testing a model against a set of historical data with known properties.
+You can deploy a model in simulation mode to run it against historical input data \(such as {{< product-c8y-iot >}} measurements\). This allows testing the behavior of a newly developed model against historical data or fine-tuning an existing model. Or it allows testing a model against a set of historical data with known properties.
 
 You use the model manager to deploy a model in simulation mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more details.
 
@@ -24,7 +24,7 @@ Events, alarms and operations are created with a timestamp. However, with time t
 Simulation mode is not permitted for models with **Managed Object Input** blocks.
 {{< /c8y-admon-info>}}
 
-When running a simulation, historical data is replayed into the Apama correlator from the Cumulocity IoT database. If there is a significant delay in the data being queried from the database or high load in the system, this can lead to dropping the input in exceptional circumstances. A simulated model processes input data at normal speed. For example, if the historical data entries are separated by one second, they are processed one second apart. This means that simulating a model with one hour of historical data will take approximately one hour of simulation time.
+When running a simulation, historical data is replayed into the Apama correlator from the {{< product-c8y-iot >}} database. If there is a significant delay in the data being queried from the database or high load in the system, this can lead to dropping the input in exceptional circumstances. A simulated model processes input data at normal speed. For example, if the historical data entries are separated by one second, they are processed one second apart. This means that simulating a model with one hour of historical data will take approximately one hour of simulation time.
 
 ### Simulation parameters
 
@@ -55,7 +55,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 ### Configuring an alternative data source for simulation
 
-By default, the platform database is used to retrieve the historical data for the simulation of an analytic model. You can configure an alternative data source for simulation, for example, if historical data is maintained separately. The data source must support HTTP `GET` operations for the required path and query parameters. The response to the `GET` operation must conform to the standard JSON format of Cumulocity IoT. Refer to the Cumulocity IoT documentation for the data and query parameter formats.
+By default, the platform database is used to retrieve the historical data for the simulation of an analytic model. You can configure an alternative data source for simulation, for example, if historical data is maintained separately. The data source must support HTTP `GET` operations for the required path and query parameters. The response to the `GET` operation must conform to the standard JSON format of {{< product-c8y-iot >}}. Refer to the {{< product-c8y-iot >}} documentation for the data and query parameter formats.
 
 If you want to use an alternative data source for simulation, you need to define the tenant options listed below. That is, you need to send 3 separate `POST /tenant/options` requests. For detailed information, see the information on the [tenant options](https://cumulocity.com/api/core/#tag/Options) in the {{< openapi >}}.
 

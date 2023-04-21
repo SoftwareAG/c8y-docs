@@ -1,6 +1,6 @@
 ---
-weight: 25
-title: Configuring the microservice hosting feature
+weight: 20
+title: Enabling the microservice hosting feature
 layout: redirect
 ---
 
@@ -38,17 +38,6 @@ The **Add microservice** button will not be available if you have not enabled th
 {{< /c8y-admon-info >}}
 
 Upload the ZIP file for your microservice application. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
-
-### Enabling or disabling the microservice hosting feature using the REST APIs
-
-To enable or disable the microservice hosting feature, use the following endpoints:
-
-{{< c8y-admon-important >}}
-To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
-{{< /c8y-admon-important >}}
-
-- [GET /edge/configuration/microservices](/edge/rest-api/#get-edgeconfigurationmicroservices)
-- [POST /edge/configuration/microservices](/edge/rest-api/#post-edgeconfigurationmicroservices)
 
 After you enable the microservice hosting feature, ensure that the microservices are active and healthy before using the microservices.
 For more information about microservices runtime, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).

@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 25
 title: Configuring security
 layout: redirect
 ---

@@ -1,5 +1,5 @@
 ---
-weight: 51
+weight: 50
 title: Configuring OPCUA
 layout: redirect
 ---

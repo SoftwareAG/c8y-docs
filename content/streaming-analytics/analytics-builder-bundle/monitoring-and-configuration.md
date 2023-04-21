@@ -321,7 +321,7 @@ See [Accessing the correlator log](/streaming-analytics/analytics-builder/#acces
 
 Model activations and deactivations are shown in the audit logs. The audit logs are accessible via the Administration application and the audit API.
 See [Administration > Viewing audit logs](/users-guide/administration/#audit-logs) in the *User guide* and [Audit API](https://cumulocity.com/api/core/#tag/Audit-API)
-in the OpenAPI documentation for details of accessing the audit logs.
+in the {{< openapi >}} for details of accessing the audit logs.
 
 Audit log entries include the name of the user performing the action and the current mode of the model. For test and simulation mode, the identifier of the virtual device and the mode properties are provided.
 
@@ -518,7 +518,7 @@ If you want to find out which values are currently used for these tenant options
 
 #### Using curl commands for setting various tenant options
 
-You can set or change various tenant options by sending `POST` requests to Cumulocity IoT. This topic explains how you can do this using the curl command-line tool. See [https://curl.se/](https://curl.se/) for detailed information on curl. See also the information on the [tenant options](https://cumulocity.com/api/core/#tag/Options) in the OpenAPI documentation.
+You can set or change various tenant options by sending `POST` requests to Cumulocity IoT. This topic explains how you can do this using the curl command-line tool. See [https://curl.se/](https://curl.se/) for detailed information on curl. See also the information on the [tenant options](https://cumulocity.com/api/core/#tag/Options) in the {{< openapi >}}.
 
 The syntax of the curl command depends on the environment in which you are working. The syntax for a Bash UNIX shell, for example, is as follows:
 

@@ -14,13 +14,40 @@ These block outputs and inputs are also called output ports and input ports. See
 
 Wires allow blocks to pass signals and values between blocks. The value sent on a wire is one of the following types, according to the block output from which it is connected:
 
-|Type       |Description|
-|-----------|-----------|
-|`boolean`  |A true or false value. A Boolean value stays true or false until changed.|
-|`float`    |A numeric value, which can be fractional \(and processed using fixed precision\). A float value maintains its current value until changed.|
-|`string`   |A textual value. A string value maintains its current value until changed.|
-|`pulse`    |A signal of a point in time. Pulses are only active momentarily. Unlike the above types, they only represent a single instance in time. See also [The pulse type](/streaming-analytics/analytics-builder/#the-pulse-type).|
-|`any`      |A value that may be any of the above types. See also [The any type](/streaming-analytics/analytics-builder/#the-any-type).|
+<table>
+<colgroup>
+    <col style="width: 20%;">
+    <col style="width: 80%;">
+</colgroup>
+<thead>
+  <tr>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>boolean</code></td>
+    <td>A true or false value. A Boolean value stays true or false until changed.</td>
+  </tr>
+  <tr>
+    <td><code>float</code></td>
+    <td>A numeric value, which can be fractional (and processed using fixed precision). A float value maintains its current value until changed.</td>
+  </tr>
+  <tr>
+    <td><code>string</code></td>
+    <td>A textual value. A string value maintains its current value until changed.</td>
+  </tr>
+  <tr>
+    <td><code>pulse</code></td>
+    <td>A signal of a point in time. Pulses are only active momentarily. Unlike the above types, they only represent a single instance in time. See also <a href="/streaming-analytics/analytics-builder/#the-pulse-type">The pulse type</a>.</td>
+  </tr>
+  <tr>
+    <td><code>any</code></td>
+    <td>A value that may be any of the above types. See also <a href="/streaming-analytics/analytics-builder/#the-any-type">The any type</a>.</td>
+  </tr>
+</tbody>
+</table>
 
 The type of a wire depends on the output to which it is connected. This can be viewed in the block reference. Similarly, the type \(or supported types\) of a block's input can be viewed in the block reference.
 
@@ -55,20 +82,107 @@ In general, blocks will not consider there to be any significance to a wire rece
 
 If a single block has a numeric value input and pulse signals such as reset, the absence of a new value when a pulse signal occurs means that the value is treated as having the same value still. Thus, when an **Average \(Mean\)** block is reset, its output will be equal to the most recently received input \(assuming it has received an input since the model has started\). In the example below, the **Average \(Mean\)** block's duration has not been set, while the output threshold is set to 0.05; this means the block will generate new output even if there is no new input \(see [Common block inputs and parameters](/streaming-analytics/analytics-builder/#common-block-inputs-and-parameters)\).
 
-|Time|Reset signal|Sensor 2|Average \(Mean\) block output|Notes|
-|----|:----------:|:------:|:---------------------------:|-----|
-|10:00:00|Reset|||No output. There has been no input value yet.|
-|10:00:03||22.0|22.00|With no history, the output value is the input value.|
-|10:00:23||22.5||All of the values up to this point have been 22, so the average value is still 22 \(thus, no new output is generated\).|
-|10:00:25.22|||22.05|Average of 20 seconds at value 22 and 2.22 seconds at value 22.5.|
-|10:00:28||23.0|22.10|Average of 20 seconds at value 22 and 5 seconds at value 22.5.|
-|10:00:30|Reset||23.00|The input is still 23 \(we just have not received a new event\), and reset only discards the history. With no history, the output value is the input value.|
-|10:00:35||23.5|||
-|10:00:35.56|||23.05|Average at various points in time, when the output changes by 0.05.|
-|10:00:36.25|||23.10|
-|10:00:37.14|||23.15|
-|10:00:38.33|||23.20|
-|10:00:40||24.0|23.25|Average of 5 seconds at value 23 \(from reset at :30 to :35\) and 5 seconds at value 23.5 \(from :35 to :40\).|
+<table>
+<colgroup>
+    <col style="width: 15%;">
+    <col style="width: 15%;">
+    <col style="width: 15%;">
+    <col style="width: 15%;">
+    <col style="width: 40%;">
+</colgroup>
+<thead>
+  <tr>
+    <th>Time</th>
+    <th>Reset signal</th>
+    <th>Sensor 2</th>
+    <th>Average (Mean) block output</th>
+    <th>Notes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>10:00:00</td>
+    <td>Reset</td>
+    <td></td>
+    <td></td>
+    <td>No output. There has been no input value yet.</td>
+  </tr>
+  <tr>
+    <td>10:00:03</td>
+    <td></td>
+    <td>22.0</td>
+    <td>22.00</td>
+    <td>With no history, the output value is the input value.</td>
+  </tr>
+  <tr>
+    <td>10:00:23</td>
+    <td></td>
+    <td>22.5</td>
+    <td></td>
+    <td>All of the values up to this point have been 22, so the average value is still 22 (thus, no new output is generated).</td>
+  </tr>
+  <tr>
+    <td>10:00:25.22</td>
+    <td></td>
+    <td></td>
+    <td>22.05</td>
+    <td>Average of 20 seconds at value 22 and 2.22 seconds at value 22.5.</td>
+  </tr>
+  <tr>
+    <td>10:00:28</td>
+    <td></td>
+    <td>23.0</td>
+    <td>22.10</td>
+    <td>Average of 20 seconds at value 22 and 5 seconds at value 22.5.</td>
+  </tr>
+  <tr>
+    <td>10:00:30</td>
+    <td>Reset</td>
+    <td></td>
+    <td>23.00</td>
+    <td>The input is still 23 (we just have not received a new event), and reset only discards the history. With no history, the output value is the input value.</td>
+  </tr>
+  <tr>
+    <td>10:00:35</td>
+    <td></td>
+    <td>23.5</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:35.56</td>
+    <td></td>
+    <td></td>
+    <td>23.05</td>
+    <td rowspan="4">Average at various points in time, when the output changes by 0.05.</td>
+  </tr>
+  <tr>
+    <td>10:00:36.25</td>
+    <td></td>
+    <td></td>
+    <td>23.10</td>
+  </tr>
+  <tr>
+    <td>10:00:37.14</td>
+    <td></td>
+    <td></td>
+    <td>23.15</td>
+  </tr>
+  <tr>
+    <td>10:00:38.33</td>
+    <td></td>
+    <td></td>
+    <td>23.20</td>
+  </tr>
+  <tr>
+    <td>10:00:40</td>
+    <td></td>
+    <td>24.0</td>
+    <td>23.25</td>
+    <td>Average of 5 seconds at value 23 (from reset at :30 to :35) and 5 seconds at value 23.5 (from :35 to :40).</td>
+  </tr>
+</tbody>
+</table>
 
 The following graph illustrates the inputs to the **Average \(Mean\)** block and the output of this block:
 
@@ -78,22 +192,156 @@ Note how the effective input value is unchanged until a new measurement input oc
 
 If the **Average \(Mean\)** block was configured with a window of 10 seconds, then the window would apply as illustrated below:
 
-|Time|Reset signal|Sensor 2|Effective input value|Average \(Mean\) block output|Values in window history|Notes|
-|----|:----------:|:------:|:-------------------:|:---------------------------:|:----------------------:|-----|
-|10:00:00|Reset||||||
-|10:00:03||22|22|22.00||First value after start: the window is empty, so the **Average \(Mean\)** block uses the input value for the output.|
-|10:00:23||22.5|22.5||22||
-|10:00:23 - 10:00:28|||22.5|increasing from 22.00 to 22.20|22, 22.5|Proportion of window that is 22 or 22.5 changes over time, thus the output changes.|
-|10:00:28||23|23|22.25|22, 22.5||
-|10:00:28 - 10:00:30|||23|increasing from 22.25 to 22.40|22, 22.5, 23||
-|10:00:30|Reset||23|23.00||Window is reset and thus now empty; the current \(effective\) input is 23, so the **Average \(Mean\)** block uses that for the output.|
-|10:00:35||23.5|23.5||23||
-|10:00:35 - 10:00:40|||23.5|increasing from 23.00 to 23.20|23, 23.5||
-|10:00:40||24|24|23.25|23, 23.5|Window is now full \(10 seconds since reset\).|
-|10:00:40 - 10:00:45|||24|increasing from 23.25 to 23.75|23, 23.5, 24||
-|10:00:45|||24|23.75|23.5, 24|Value 23 is now finally expired from the window \(this was the effective input until 10:00:35, which is 10 seconds ago\).|
-|10:00:45 - 10:00:50|||24|increasing from 23.75 to 24|23.5, 24||
-|10:00:50|||24|24|24|Value 23.5 is now finally expired from the window \(this was the effective input until 10:00:40, which is 10 seconds ago\). The window now contains 10 seconds worth of measurements, all with value 24.|
+<table>
+<colgroup>
+    <col style="width: 20%;">
+    <col style="width: 10%;">
+    <col style="width: 10%;">
+    <col style="width: 10%;">
+    <col style="width: 15%;">
+    <col style="width: 15%;">
+    <col style="width: 20%;">
+</colgroup>
+<thead>
+  <tr>
+    <th>Time</th>
+    <th>Reset signal</th>
+    <th>Sensor 2</th>
+    <th>Effective input value</th>
+    <th>Average (Mean) block output</th>
+    <th>Values in window history</th>
+    <th>Notes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>10:00:00</td>
+    <td>Reset</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:03</td>
+    <td></td>
+    <td>22</td>
+    <td>22</td>
+    <td>22.00</td>
+    <td></td>
+    <td>First value after start: the window is empty, so the <b>Average (Mean)</b> block uses the input value for the output.</td>
+  </tr>
+  <tr>
+    <td>10:00:23</td>
+    <td></td>
+    <td>22.5</td>
+    <td>22.5</td>
+    <td></td>
+    <td>22</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:23 - 10:00:28</td>
+    <td></td>
+    <td></td>
+    <td>22.5</td>
+    <td>increasing from 22.00 to 22.20</td>
+    <td>22, 22.5</td>
+    <td>Proportion of window that is 22 or 22.5 changes over time, thus the output changes.</td>
+  </tr>
+  <tr>
+    <td>10:00:28</td>
+    <td></td>
+    <td>23</td>
+    <td>23</td>
+    <td>22.25</td>
+    <td>22, 22.5</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:28 - 10:00:30</td>
+    <td></td>
+    <td></td>
+    <td>23</td>
+    <td>increasing from 22.25 to 22.40</td>
+    <td>22, 22.5, 23</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:30</td>
+    <td>Reset</td>
+    <td></td>
+    <td>23</td>
+    <td>23.00</td>
+    <td></td>
+    <td>Window is reset and thus now empty; the current (effective) input is 23, so the <b>Average (Mean)</b> block uses that for the output.</td>
+  </tr>
+  <tr>
+    <td>10:00:35</td>
+    <td></td>
+    <td>23.5</td>
+    <td>23.5</td>
+    <td></td>
+    <td>23</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:35 - 10:00:40</td>
+    <td></td>
+    <td></td>
+    <td>23.5</td>
+    <td>increasing from 23.00 to 23.20</td>
+    <td>23, 23.5</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:40</td>
+    <td></td>
+    <td>24</td>
+    <td>24</td>
+    <td>23.25</td>
+    <td>23, 23.5</td>
+    <td>Window is now full (10 seconds since reset).</td>
+  </tr>
+  <tr>
+    <td>10:00:40 - 10:00:45</td>
+    <td></td>
+    <td></td>
+    <td>24</td>
+    <td>increasing from 23.25 to 23.75</td>
+    <td>23, 23.5, 24</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:45</td>
+    <td></td>
+    <td></td>
+    <td>24</td>
+    <td>23.75</td>
+    <td>23.5, 24</td>
+    <td>Value 23 is now finally expired from the window (this was the effective input until 10:00:35, which is 10 seconds ago).</td>
+  </tr>
+  <tr>
+    <td>10:00:45 - 10:00:50</td>
+    <td></td>
+    <td></td>
+    <td>24</td>
+    <td>increasing from 23.75 to 24</td>
+    <td>23.5, 24</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>10:00:50</td>
+    <td></td>
+    <td></td>
+    <td>24</td>
+    <td>24</td>
+    <td>24</td>
+    <td>Value 23.5 is now finally expired from the window (this was the effective input until 10:00:40, which is 10 seconds ago). The window now contains 10 seconds worth of measurements, all with value 24.</td>
+  </tr>
+</tbody>
+</table>
 
 In the above, note how the current value only has any weighting in the window \(that is, contributing to the output value\) after the measurement is received. At the point the measurement is received, it has zero weighting compared to the previous history. As before, the sensor's value remains the effective input until it is replaced with a newer value \(note that this is different to aggregates with timed-based windows in Apama queries or stream queries\). For example, the block has an effective input value of 23.5 from 10:00:35 to 10:00:40, and the value 23.5 is thus only finally expired from the window at 10:00:50, 10 seconds after it ceased to be the current effective input value, rather than 10 seconds after it first entered the window. Finally, note that when the window is empty, the effective input is used as the output instead, as the window is zero-length.
 

@@ -87,9 +87,9 @@ When you have completed all steps below, your model will look similar to the fol
 
    Or click **Analytics Builder** in the navigator on the left.
 
-{{< c8y-admon-info>}}
+   {{< c8y-admon-info>}}
 If the navigator is currently hidden, click the small arrow at the very left of the top bar to toggle the display of the navigator.
-{{< /c8y-admon-info>}}
+   {{< /c8y-admon-info>}}
 
 #### Step 2: Add a new model
 
@@ -165,9 +165,9 @@ To pass the values from one block to another, you have to connect the blocks wit
 2.  In the toolbar of the model editor, click the following icon to leave the model editor and thus to return to the model manager:
     ![Close icon](/images/streaming-analytics/analytics-builder/icon-exit.png)
 
-{{< c8y-admon-info>}}
+    {{< c8y-admon-info>}}
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
-{{< /c8y-admon-info>}}
+    {{< /c8y-admon-info>}}
 
 #### Step 8: Activate the model in production mode
 
@@ -234,9 +234,9 @@ The **Samples** tab of the model manager lists all sample models that are provid
 5.  In the toolbar of the model editor, click the following icon to leave the model editor and thus to return to the model manager:
     ![Save icon](/images/streaming-analytics/analytics-builder/icon-exit.png)
 
-{{< c8y-admon-info>}}
+    {{< c8y-admon-info>}}
 Keep in mind that only saved models are listed on the **Models** tab of the model manager.
-{{< /c8y-admon-info>}}
+    {{< /c8y-admon-info>}}
 
 #### Step 2: Create a new instance of the model
 

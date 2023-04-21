@@ -89,7 +89,7 @@ Filtering also works in combination with a model or sample name that you specify
         You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one device has been selected in the **Filter by device, group or asset name** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
 
     -   **Tags**
-    
+
         You can show only the models for which specific tags have been defined in the **Model Configuration** dialog box, which is shown when you add a new model or when you invoke that dialog box from the model editor \(see also [Adding a new model](/streaming-analytics/analytics-builder#adding-a-new-model) and [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model)\). Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
 
     You can combine several types of filters, for example, to show only active models in production mode that use a specific device.
@@ -146,9 +146,9 @@ If a model is in the Active state, editing will set the model to read-only mode.
 
     See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
 
-{{< c8y-admon-info>}}
+    {{< c8y-admon-info>}}
 If you do not have sufficient permissions \(that is, you only have READ permission for "CEP management" instead of ADMIN permission\), the actions menu provides a **View** command instead of the **Edit** command.
-{{< /c8y-admon-info>}}
+    {{< /c8y-admon-info>}}
 
 ### Editing the instances of a model
 
@@ -169,9 +169,10 @@ The actions below are only available when template parameters have been defined 
     -   Click the actions menu of the card and then click **Instances**.
     -   Or click **Show instances summary** to flip the card and then click the **Edit Instances** button on the back of the card.
 
-    {{< c8y-admon-info>}}
+        {{< c8y-admon-info>}}
 **Show instances summary** is only visible \(and thus you can only get to the back of the card\) if there are any instances \(regardless of state\).
-    {{< /c8y-admon-info>}}
+        {{< /c8y-admon-info>}}
+        
     This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for further information.
 
 ### Deploying a model

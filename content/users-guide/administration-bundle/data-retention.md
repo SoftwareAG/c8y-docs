@@ -121,7 +121,7 @@ You can use filters or search input to look for particular file entry. By defaul
 
 #### To upload a file from your file system
 
-Click **Upload file** in the top menu bar. In the resulting dialog box, select files to be uploaded. You can also drop files into the drop area displayed within upload modal dialog. Then you can review the files within the list displayed and confirm the upload by clicking **Upload** button.
+Click **Upload files** in the top menu bar. In the resulting dialog box, select files to be uploaded by either browsing your computer or by dropping files onto the displayed drop area. Then you can review the files within the list displayed and confirm the upload by clicking **Upload** button.
 
 
 #### To download a file from your account
@@ -132,9 +132,9 @@ Click the menu icon at the right of the respective row and then click **Download
 #### To delete a file from your account
 
 Click the menu icon at the right of the respective row and then click **Delete**.
-You can also select multiple files for removal, by ticking checkbox against each file or select all currently displayed. Within appeared table header you can see the number of files selected with actions that can be performed on those files. Click **Delete** to confirm removal of selected files and confirm removal within confirmation dialog displayed.
+You can also select multiple files for deletion, by ticking checkbox next to each file or select all currently displayed ones. Within appeared table header you can see the number of files selected and actions that can be performed on those files. Click **Delete** and confirm the removal within confirmation dialog displayed.
 
 {{< c8y-admon-info >}}
-* If the file corresponds to an application, it cannot be deleted from within file repository. You need to remove that file from application activity log view.
+* If a file is an application archive, it cannot be deleted from within files repository. You need to remove that file from application activity log view.
 * If you delete files in bulk and selection contains files illegible for removal, removal will proceed ignoring the files which can't be deleted.
 {{< /c8y-admon-info >}}

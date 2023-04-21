@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 95
 title: Restarting the Edge appliance
 layout: redirect
 ---
@@ -24,9 +24,3 @@ To restart your Edge appliance:
 3. Click **Edge** > **Reboot** in the navigator.
 
 4. Click **Reboot**.
-
-### Restarting the Edge appliance using the REST APIs
-
-To restart your Edge appliance, use the following endpoint:
-
-- [POST /edge/reboot](/edge/rest-api/#working-with-rest-api)

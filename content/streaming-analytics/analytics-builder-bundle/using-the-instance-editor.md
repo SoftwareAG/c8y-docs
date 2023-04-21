@@ -104,7 +104,7 @@ Editing a value will not affect the display of rows in the instance editor table
 Adding a new instance will not affect the display of rows in the instance editor table. If you add a row after sorting, the row is always added at the bottom of the table, unless you reload the instances.
 
 {{< c8y-admon-info>}}
-You can also reorder the template parameters in the Template Parameters dialog box \(see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\). This affects the sequence in which they are shown in the instance editor.
+You can also reorder the template parameters in the **Template Parameters** dialog box \(see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\). This affects the sequence in which they are shown in the instance editor.
 {{< /c8y-admon-info>}}
 
 ### Duplicating an instance

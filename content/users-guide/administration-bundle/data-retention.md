@@ -113,7 +113,7 @@ Click **Files repository** in the **Management** menu to see a list of files.
 
 The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **All applications** page.
 
-For each file, the name of the file, its owner, the file type (for example, image/bmp, text/csv), its size and the date when it was last updated is provided. When hover over particular file entry in the list, actions that can be performed are visible at the end of the row. You can also preview files by clicking magnification glass displayed next to file name of the file supporting the feature.
+For each file, the name of the file, its owner, its type (for example, image/bmp, text/csv), its size and its last update date are displayed. If file type is supported, you can click a magnifier icon next to the file name to preview it. You can download or delete a file by clicking action buttons which appear when hovering mouse over the file row. Note that some files (for example, application archives) cannot be deleted from this page.
 
 You can use filters or search input to look for particular file entry. By default files are sorted by **File name**, if another criteria should be applied, remove default filter applied to **File name** column and define own criteria for filtering the list.
 

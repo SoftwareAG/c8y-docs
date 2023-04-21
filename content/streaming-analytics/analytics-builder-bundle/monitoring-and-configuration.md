@@ -320,7 +320,7 @@ See [Accessing the correlator log](/streaming-analytics/analytics-builder/#acces
 #### Viewing the audit logs
 
 Model activations and deactivations are shown in the audit logs. The audit logs are accessible via the Administration application and the audit API.
-See [Administration > Viewing audit logs](/users-guide/administration/#audit-logs) in the *User guide* and [Audit API](https://cumulocity.com/api/core/#tag/Audit-API)
+See [Administration > Viewing audit logs](/users-guide/administration/#audit-logs) in the *User guide* and [Audit API](https://{{< domain-c8y >}}/api/core/#tag/Audit-API)
 in the {{< openapi >}} for details of accessing the audit logs.
 
 Audit log entries include the name of the user performing the action and the current mode of the model. For test and simulation mode, the identifier of the virtual device and the mode properties are provided.

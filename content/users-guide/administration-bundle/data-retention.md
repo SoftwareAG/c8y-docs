@@ -131,7 +131,7 @@ Click the menu icon at the right of the respective row and then click **Download
 
 #### To delete a file from your account
 
-Click the menu icon at the right of the respective row and then click **Delete**.
+Hover over the row with file entry and click <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> to remove the file.
 You can also select multiple files for deletion, by ticking checkbox next to each file or select all currently displayed ones. Within appeared table header you can see the number of files selected and actions that can be performed on those files. Click **Delete** and confirm the removal within confirmation dialog displayed.
 
 {{< c8y-admon-info >}}

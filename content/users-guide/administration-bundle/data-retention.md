@@ -115,7 +115,7 @@ The files listed can come from various sources. They can be software images, con
 
 For each file, the name of the file, its owner, its type (for example, image/bmp, text/csv), its size and its last update date are displayed. If file type is supported, you can click a magnifier icon next to the file name to preview it. You can download or delete a file by clicking action buttons which appear when hovering mouse over the file row. Note that some files (for example, application archives) cannot be deleted from this page.
 
-You can use filters or search input to look for particular file entry. By default files are sorted by **File name**, if another criteria should be applied, remove default filter applied to **File name** column and define own criteria for filtering the list.
+You can use filters or search input to look for particular file entry, see: [Search and Filter](/users-guide/getting-started/#search-and-filter-functionality). By default, files are sorted by **File name**, if another criteria should be applied, remove default filter applied to **File name** column and define own criteria for filtering the list.
 
 <img src="/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 

@@ -1,6 +1,6 @@
 ---
-title: Cumulocity IoT Edge installation
-icon: "dlt-c8y-icon-book"
+title: Installation
+icon: "dlt-c8y-icon-box-settings"
 type: root
 layout: redirect
 bundle: edge-installation
@@ -9,5 +9,5 @@ section:
 weight: 12
 ---
 
-This section describes how to install {{< product-c8y-iot >}} Edge.
+Follow along this section to learn about the requirements and steps for installing {{< product-c8y-iot >}} Edge.
 

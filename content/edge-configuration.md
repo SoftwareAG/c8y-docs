@@ -1,6 +1,6 @@
 ---
-title: Cumulocity IoT Edge configuration
-icon: "dlt-c8y-icon-book"
+title: Configuration
+icon: "dlt-c8y-icon-settings"
 type: root
 layout: redirect
 bundle: edge-configuration
@@ -9,4 +9,4 @@ section:
 weight: 13
 ---
 
-Configure {{< product-c8y-iot >}} Edge.
+Learn how to configure many different aspects of {{< product-c8y-iot >}} Edge.

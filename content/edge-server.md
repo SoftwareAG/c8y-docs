@@ -1,6 +1,6 @@
 ---
 title: Cumulocity IoT Edge
-icon: "dlt-c8y-icon-book"
+icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
 bundle: edge-server

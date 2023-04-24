@@ -9,12 +9,11 @@ The following monitoring endpoints are available for REST requests. These requir
 
 - `/service/cep/health`  
     GET only. JSON.  
-    Obtains information on whether the microservice and correlator are up.
-    Also provides correlator and microservice status values. For details about the correlator status values, see "List of correlator status statistics" in the Apama documentation.  
+    Obtains information on whether the Apama-ctrl microservice is up or not.
 
     {{< c8y-admon-info >}}
   For Apama-ctrl-smartrulesmt (that is, the multi-tenant variant of the Apama-ctrl-smartrules microservice), only basic microservice status values are provided.
     {{< /c8y-admon-info >}}
 - `/service/cep/prometheus`  
     GET only. Plain text format.  
-    Prometheus metrics from the correlator and microservice. For details, see "Monitoring with Prometheus" in the Apama documentation.
+    Prometheus metrics from the correlator and microservice. For details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DepAndManApaApp_monitoring_with_prometheus.html) in the Apama documentation.

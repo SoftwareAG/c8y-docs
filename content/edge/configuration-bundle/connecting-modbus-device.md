@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 75
 title: Connecting a Modbus device
 layout: redirect
 ---

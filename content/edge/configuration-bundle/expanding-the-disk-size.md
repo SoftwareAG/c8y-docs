@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 90
 title: Expanding the disk size
 layout: redirect
 ---
@@ -24,12 +24,6 @@ You can expand the disk size of the installation disk and the data disk using th
 6. Click **Edge** > **Expand disk size** in the navigator.
 
 7. Click **Expand**.
-
-### Expanding the disk size using the REST APIs
-
-To expand the disk size of the installation disk and the data disk, use the following endpoint:
-
-- [POST /edge/expand-disk](/edge/rest-api/#post-edgeexpand-disk)
 
 {{< c8y-admon-info >}}
 If there is no disk space to expand, the task will be marked as success.

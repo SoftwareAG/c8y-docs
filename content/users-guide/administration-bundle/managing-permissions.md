@@ -14,18 +14,25 @@ helpcontent:
   In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device."
 ---
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+"User management" permission:
+* To view global roles, inventory roles, applications: READ access type.
+* To manage global roles (assign/unassign to users), to manage inventory roles, to manage application access: ADMIN access type.
+* To read owned permissions: CREATE access type. This permission is specific and is very useful in case when "User Hierarchy" feature is available but can be used even without it. In conjunction with ADMIN access type it allows to create roles based on permissions owned by current user, for example creating a role with subset of permissions that original user have.
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above mentioned permissions:
+* Global User Manager - Can access and modify the full user hierarchy
+* Shared User Manager - Can create new users as his own subusers and manage them ("feature-user-hierarchy" application subscription required)
+{{< /c8y-admon-req >}}
+
 Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
-
-The following types of roles can be associated with users:
-
-- Global roles - contain permissions that apply to all data within a tenant.
-- Inventory roles - contain permissions that apply to groups of devices.
-
-Moreover, application access can be granted to enable a user to use an application.
 
 {{< c8y-admon-related >}}
 - [Managing users](#managing-users) for information on managing users in general.
 - [Managing applications](#managing-applications) for more information on managing applications.
+- [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies) for more information on managing user hierarchies.
 - [Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
 - {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device management library](/reference/device-management-library/) for further information on fragment types.
 {{< /c8y-admon-related >}}

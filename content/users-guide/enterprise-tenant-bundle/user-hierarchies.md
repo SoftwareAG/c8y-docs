@@ -13,22 +13,22 @@ The tenant must be subscribed to the application "feature-user-hierachy".
 
 APPLICATION ACCESS:
 
-To access the feature, application access must be granted to the user for the Administration application.
+The user must have access to the Administration application.
 
 ROLES & PERMISSIONS:
 
-"User management" permission type:
+The user must have one or more of "User management" permissions:
 * To view all users: READ permission.
 * To manage all users: ADMIN permission.
 * To create users: CREATE permission. By assigning this permission you can create own sub-users and manage the underlying hierarchy of users.
 
 On tenant creation, default roles are available which can be used as a sample configuration for the above-mentioned permissions:
 * Global User Manager - Can access and modify the full user hierarchy (all users).
-* Shared User Manager - Can create new users as his own sub-users and manage the underlying user hierarchy.
+* Shared User Manager - Can create new own sub-users and manage the underlying user hierarchy.
 
 {{< /c8y-admon-req >}}
 
-With user hierarchies you can reflect independent organizational entities in {{< product-c8y-iot >}} that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
+With user hierarchies you can model the structure of organizational entities in your company which share the same database in {{< product-c8y-iot >}} platform. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
 
 ### Viewing user hierarchies
 

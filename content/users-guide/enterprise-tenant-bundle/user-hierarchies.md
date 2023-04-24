@@ -9,22 +9,22 @@ aliases:
 {{< c8y-admon-req >}}
 SUBSCRIPTIONS:
 
-Tenant must be subscribed to the application "feature-user-hierachy".
+The tenant must be subscribed to the application "feature-user-hierachy".
 
 APPLICATION ACCESS:
 
-To access the feature, application access should be granted for user for "Administration" application.
+To access the feature, application access must be granted to the user for the Administration application.
 
 ROLES & PERMISSIONS:
 
 "User management" permission type:
 * To view all users: READ permission.
 * To manage all users: ADMIN permission.
-* To create users: CREATE permission. By assigning this permission you can create own subusers and manage underlying hierarchy of users.
+* To create users: CREATE permission. By assigning this permission you can create own sub-users and manage the underlying hierarchy of users.
 
-On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
+On tenant creation, default roles are available which can be used as a sample configuration for the above-mentioned permissions:
 * Global User Manager - Can access and modify the full user hierarchy (all users).
-* Shared User Manager - Can create new users as his own subusers and manage underlying users' hierarchy.
+* Shared User Manager - Can create new users as his own sub-users and manage the underlying user hierarchy.
 
 {{< /c8y-admon-req >}}
 

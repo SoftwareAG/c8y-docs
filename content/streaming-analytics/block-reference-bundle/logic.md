@@ -3,77 +3,271 @@ weight: 48
 title: Logic
 layout: redirect
 ---
+<table>
+<colgroup>
+<col style="width: 30%; text-align: start;">
+<col style="width: 70%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Block Name</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#and">AND</a></td>
+<td><span>Performs a logical 'and' on the inputs.</span>
+</td>
+</tr>
+<tr>
+<td><a href="#not">NOT</a></td>
+<td><span>Performs a logical 'not' on the input.</span>
+</td>
+</tr>
+<tr>
+<td><a href="#or">OR</a></td>
+<td><span>Performs a logical 'or' on the inputs.</span>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### AND
 
 **apama.analyticskit.blocks.core.And**
 
-Performs a logical 'and' on the inputs.
+<p>Performs a logical 'and' on the inputs.</p>
+<p>If all the connected inputs are <tt>true</tt>, then the output will be <tt>true</tt>, else <tt>false</tt>. If any of the inputs is of type <tt>pulse</tt>, then the output will be a <tt>pulse</tt>. Any combination of <tt>pulse</tt> and <tt>boolean</tt> inputs is valid. The block functions even if some inputs are not connected.</p>
 
-If all the connected inputs are <tt>true</tt>, then the output will be <tt>true</tt>, else <tt>false</tt>. If any of the inputs is of type <tt>pulse</tt>, then the output will be a <tt>pulse</tt>. Any combination of <tt>pulse</tt> and <tt>boolean</tt> inputs is valid. The block functions even if some inputs are not connected.
 
 #### Input Port Details
 
-|Name|Description|Type|
-|:---|:---|:---|
-|Value 1|First input value to the block.|boolean|
-|Value 2|Second input value to the block.|boolean|
-|Value 3|Third input value to the block.|boolean|
-|Value 4|Fourth input value to the block.|boolean|
-|Value 5|Fifth input value to the block.|boolean|
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Value 1</th>
+<td><span>First input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 2</th>
+<td><span>Second input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 3</th>
+<td><span>Third input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 4</th>
+<td><span>Fourth input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 5</th>
+<td><span>Fifth input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+</tbody>
+</table>
 
 #### Output Port Details
 
-|Name|Description|Type|
-|:---|:---|:---|
-|AND|The logical 'and' of the inputs.|pulseOrBoolean(value1, value2, value3, value4, value5)|
-
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">AND</th>
+<td><span>The logical 'and' of the inputs.</span>
+</td>
+<td><span>pulseOrBoolean(value1, value2, value3, value4, value5)</span>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 ### NOT
 
 **apama.analyticskit.blocks.core.Not**
 
-Performs a logical 'not' on the input.
+<p>Performs a logical 'not' on the input.</p>
+<p>If the connected input is <tt>true</tt>, then the output will be <tt>false</tt>. If the connected input is <tt>false</tt>, then the output will be <tt>true</tt>.</p>
 
-If the connected input is <tt>true</tt>, then the output will be <tt>false</tt>. If the connected input is <tt>false</tt>, then the output will be <tt>true</tt>.
 
 #### Input Port Details
 
-|Name|Description|Type|
-|:---|:---|:---|
-|Value|Input value to the block.|boolean|
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Value</th>
+<td><span>Input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+</tbody>
+</table>
 
 #### Output Port Details
 
-|Name|Description|Type|
-|:---|:---|:---|
-|NOT|The logical 'not' of the input.|boolean|
-
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">NOT</th>
+<td><span>The logical 'not' of the input.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 ### OR
 
 **apama.analyticskit.blocks.core.Or**
 
-Performs a logical 'or' on the inputs.
+<p>Performs a logical 'or' on the inputs.</p>
+<p>If any of the connected inputs is <tt>true</tt>, then the output will be <tt>true</tt>, else <tt>false</tt>. If all the inputs are of type <tt>pulse</tt>, then the output will be a <tt>pulse</tt>. Inputs must be of the same type. The block functions even if some inputs are not connected.</p>
 
-If any of the connected inputs is <tt>true</tt>, then the output will be <tt>true</tt>, else <tt>false</tt>. If all the inputs are of type <tt>pulse</tt>, then the output will be a <tt>pulse</tt>. Inputs must be of the same type. The block functions even if some inputs are not connected.
 
 #### Input Port Details
 
-|Name|Description|Type|
-|:---|:---|:---|
-|Value 1|First input value to the block.|boolean|
-|Value 2|Second input value to the block.|boolean|
-|Value 3|Third input value to the block.|boolean|
-|Value 4|Fourth input value to the block.|boolean|
-|Value 5|Fifth input value to the block.|boolean|
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Value 1</th>
+<td><span>First input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 2</th>
+<td><span>Second input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 3</th>
+<td><span>Third input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 4</th>
+<td><span>Fourth input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Value 5</th>
+<td><span>Fifth input value to the block.</span>
+</td>
+<td><span>boolean</span>
+</td>
+</tr>
+</tbody>
+</table>
 
 #### Output Port Details
 
-|Name|Description|Type|
-|:---|:---|:---|
-|OR|The logical 'or' of the inputs.|sameAsAll(value1, value2, value3, value4, value5)|
-
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 60%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">OR</th>
+<td><span>The logical 'or' of the inputs.</span>
+</td>
+<td><span>sameAsAll(value1, value2, value3, value4, value5)</span>
+</td>
+</tr>
+</tbody>
+</table>
 

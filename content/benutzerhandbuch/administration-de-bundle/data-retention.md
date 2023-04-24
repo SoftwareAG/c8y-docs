@@ -23,12 +23,12 @@ Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert
 #### Datentypen
 
 Die Datenhaltungsregeln erstrecken sich auf folgende Datentypen:
-+ Alarms
++ Alarme
 + Audits
-+ Bulk operations
-+ Events
-+ Measurements
-+ Operations
++ Bulk-Operationen
++ Ereignisse
++ Messungen
++ Operationen
 
 {{< c8y-admon-info >}}
 Datenhaltungsregeln gelten nicht für Dateien, die in der Dateiablage gespeichert sind.
@@ -62,7 +62,7 @@ Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie eine Datenh
 
 #### So löschen Sie eine Datenhaltungsregel
 
-Bewegen Sie die Maus über die Zeile mit der Regel, die Sie löschen möchten, und klicken auf das rechts erscheinende Löschen-Symbol.
+Bewegen Sie die Maus über die Zeile mit der Regel, die Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
 
 {{< c8y-admon-info >}}
 Alle Datenhaltungsregeln werden sequenziell und unabhängig voneinander ausgeführt. Wenn es zwei Datenhaltungsregeln gibt, von denen eine spezifischere mit einem höheren maximalen Alter eine Untermenge von den Dokumenten definiert, die durch eine allgemeinere Regel mit einem niedrigeren maximalen Alter definiert werden, wird alles so abgearbeitet, als gäbe es nur eine einzige, allgemeinere Regel.

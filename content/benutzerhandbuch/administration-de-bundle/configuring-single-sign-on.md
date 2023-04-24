@@ -115,25 +115,25 @@ In diesem Fall sieht der JWT-Claim folgendermaßen aus:
 
 Über den "in"-Operator besteht die Möglichkeit zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (".") im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.
 
-Standardmäßig ist die Konfiguration für dynamische Rechtezuordnung ausgewählt: **Rollen, die in den obigen Regeln für einen Nutzer ausgewählt wurden, werden beim Login diesem Nutzer zugeteilt. Nicht gewählte Rollen werden gelöscht**.
+Standardmäßig ist die Konfiguration für dynamische Rechtezuordnung ausgewählt: **Die Rollen, die in den obigen Regeln für einen Benutzer ausgewählt wurden, werden diesem Benutzer bei jedem Login wieder zugewiesen. Nicht gewählte Rollen werden entfernt**.
 Dies bedeutet: Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung Benutzerrollen anhand des Access Tokens zu.
 Es ist nicht möglich, die Benutzerrollen innerhalb von {{< product-c8y-iot >}} zu ändern, da sie bei der nächsten Anmeldung des Benutzers überschrieben würden.
-Um dieses Verhalten zu ändern, wählen Sie unten im Bereich **Rechtezuordnung** eine der folgenden Optionsschaltflächen:
+Um dieses Verhalten zu ändern, wählen Sie unten im Abschnitt **Rechtezuordnung** eine der folgenden Optionsfelder:
 
 * **Dynamische Rechtezuordnung nur bei der Benutzererstellung verwenden** - Wenn aktiviert, wird die dynamische Rechtezuordnung nur verwendet, wenn sich ein neuer Benutzer anmeldet, um die anfänglichen Rollen auszufüllen. Wenn in {{< product-c8y-iot >}} bereits ein Benutzer existiert, werden die Rollen weder überschrieben noch aktualisiert.
 
-* **Rollen, die in den obigen Regeln für einen Nutzer ausgewählt wurden, werden beim Login diesem Nutzer zugeteilt. Nicht gewählte Rollen bleiben davon unberührt** - Wenn aktiviert, wird die dynamische Rechtezuordnung bei jeder Anmeldung verwendet, doch die Rollen, die in der Rechtezuordnungskonfiguration nicht aufgeführt sind, werden nicht aktualisiert. Nur die Rollen, die in den definierten Rechtezuordnungsregeln aufgeführt sind, werden überschrieben.
+* **Die Rollen, die in den obigen Regeln für einen Benutzer ausgewählt wurden, werden diesem Benutzer bei jedem Login wieder zugewiesen. Alle anderen Rollen bleiben unverändert** - Wenn aktiviert, wird die dynamische Rechtezuordnung bei jeder Anmeldung verwendet, aber die in der Rechtezuordnungskonfiguration nicht aufgeführten Rollen, werden nicht aktualisiert. Nur die Rollen, die in den definierten Rechtezuordnungsregeln aufgeführt sind, werden überschrieben.
 
 ![Custom access mapping](/images/benutzerhandbuch/Administration/sso-custom-access-mapping-2.png)
 
-Bei Aktivierung einer der oben genannten Optionen können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung ändern. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#attach-global) im *User Guide*.
+Durch die Auswahl einer der oben genannten Optionen können Administratoren auch die Rollen von SSO-Benutzern in der Benutzerverwaltung bearbeiten. Nähere Informationen finden Sie unter [Administration > Verwalten von Berechtigungen](/benutzerhandbuch/administration-de/#attach-global).
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 Die Benutzer-ID kann auf ein beliebiges Top-Level-Feld der Autorisierungstoken-Nutzdaten gesetzt werden, die während des Anmeldeprozesses vom Autorisierungsserver an die Plattform gesendet werden. Wir empfehlen, das Autorisierungstoken in den Audit-Logs zu überprüfen und sicherzustellen, dass das richtige Feld verwendet wird (siehe [Fehlerbehebung](#troubleshooting)).
 
 ![User ID configuration](/images/benutzerhandbuch/Administration/sso-custom-userid-config.png)
 
- Wenn das Kontrollkästchen **Konstanten Wert verwenden** aktiviert ist, wird eine konstante Benutzer-ID für alle Benutzer verwendet, die sich über SSO an der {{< product-c8y-iot >}}-Plattform anmelden. Dies bedeutet, dass alle Benutzer, die sich über SSO anmelden, dasselbe Benutzerkonto in der {{< product-c8y-iot >}}-Plattform nutzen. Die Verwendung dieser Option wird nicht empfohlen.
+Wenn das Kontrollkästchen **Konstanten Wert verwenden** aktiviert ist, wird eine konstante Benutzer-ID für alle Benutzer verwendet, die sich über SSO an der {{< product-c8y-iot >}}-Plattform anmelden. Dies bedeutet, dass alle Benutzer, die sich über SSO anmelden, dasselbe Benutzerkonto in der {{< product-c8y-iot >}}-Plattform nutzen. Die Verwendung dieser Option wird nicht empfohlen.
 
 Danach kann das **Benutzerdaten-Mapping** konfiguriert werden:
 
@@ -235,7 +235,7 @@ Optional können Sie in Azure AD einen Benutzer erstellen, den Sie mit {{< produ
 
 Navigieren Sie in der Anwendung Administration zu **Einstellungen > Authentifizierung** und wechseln Sie zur Registerkarte **Single-Sign-On**.
 
-Senden Sie zum Abrufen der entsprechenden Informationen eine GET-Anfragen an:
+Senden Sie zum Abrufen der entsprechenden Informationen eine GET-Anfrage an:
 
 <code>https://login.microsoftonline.com/&lt;Directory tenant ID&gt;/.well-known/openid-configuration</code>
 
@@ -315,11 +315,11 @@ Geben Sie nun in der Konfiguration die folgenden Werte ein:
 |:---|:---|:---|
 |Login URL; OpenID config; Beginning of token endpoint| Azure AD-Adresse|Adresse Ihres Azure AD-Mandanten, z. B. "https:&#47;/login.microsoftonline.com"  
 |Home > Overview > Primary Domain| Mandant| &lt;directoryName&gt;.onmicrosoft.com, z. B. "admtest.onmicrosoft.com"
-|OpenID config “issuer”| Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse: "https:&#47;/sts.windows.net/&lt;Verzeichnis-Mandanten-ID&gt;/". Beachten Sie, dass dies nur mit dem Schrägstrich am Ende funktioniert.
+|OpenID config "issuer"| Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse: "https:&#47;/sts.windows.net/&lt;Verzeichnis-Mandanten-ID&gt;/". Beachten Sie, dass dies nur mit einem Schrägstrich am Ende funktioniert.
 |App registration > &lt;app&gt; > Application (client) ID| Anwendungs-ID| z. B. "7fd1ed48-f4b6-4362-b0af-2b753bb1af2b"
 |Redirect-URI| Adresse Ihres {{< product-c8y-iot >}}-Mandanten, gefolgt von /tenant/oauth
 |App registration - &lt;app&gt; > Certificates & secrets > Value | Client-Secret| Azure AD-Client-Secret, z. B. "hE68Q~uC1.BlSzGJSDC3_UEFvvyIZvRcCxbvV345"
-|Aus der OpenID-Konfiguration | URL für den öffentlichen Schlüssel|"https:&#47;/login.microsoftonline.com/common/discovery/keys" or "https:&#47;/login.microsoftonline.com/<Verzeichnis-Mandanten-ID>/discovery/keys"
+|Aus der OpenID-Konfiguration | URL für den öffentlichen Schlüssel|"https:&#47;/login.microsoftonline.com/common/discovery/keys" oder "https:&#47;/login.microsoftonline.com/<Verzeichnis-Mandanten-ID>/discovery/keys"
 
 Optional kann Single Logout konfiguriert werden:
 
@@ -328,7 +328,7 @@ Optional kann Single Logout konfiguriert werden:
 |Nach Abmeldung weiterleiten| Aktiviert Single Logout, indem der Benutzer nach dem Abmelden zum Abmelde-Endpunkt des Autorisierungsservers weitergeleitet wird.
 |Redirect-URL| Adresse, an die der Benutzer weitergeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
 
-Nach dem Konfigurieren von SSO in {{< product-c8y-iot >}} können Sie versuchen, sich anzumelden. Wenn für den Benutzer noch keine Rechtezuordnung vorliegt, kann ein Fehler des Typs "Zugriff verweigert" gemeldet werden. In den Audit-Logs (**Administration** > **Konten** > **Audit-Logs**) sollten jedoch ein "Benutzer-Login"-Ereignis und ein JSON-Web-Token zu sehen sein.
+Nachdem Sie SSO in {{< product-c8y-iot >}} konfiguriert haben, können Sie versuchen, sich anzumelden. Wenn für den Benutzer noch keine Rechtezuordnung vorliegt, kann ein Fehler des Typs "Zugriff verweigert" gemeldet werden. In den Audit-Logs (**Administration** > **Konten** > **Audit-Logs**) sollten jedoch ein "Benutzer-Login"-Ereignis und ein JSON-Web-Token zu sehen sein.
 
 Der Inhalt sieht folgendermaßen aus:
 

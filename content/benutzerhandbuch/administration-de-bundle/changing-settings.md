@@ -158,7 +158,7 @@ Cookies zum Speichern eines JWT-Tokens in einem Browser haben eine eigene Gülti
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
-Der Standardwert ist zwei Wochen. Um das Cookie löschen zu lassen, wenn der Benutzer den Browser schließt, geben Sie hier einen beliebigen negativen Wert an.
+Der Standardwert ist zwei Wochen. Damit das Cookie gelöscht wird, wenn der Benutzer den Browser schließt, geben Sie hier einen beliebigen negativen Wert an.
 
 ##### Lebensdauerkonfiguration von JWT im Antworttext
 
@@ -183,9 +183,9 @@ Sie können eine der folgenden Optionen wählen:
   - **Bestätigungscode-Gültigkeit begrenzen für** - Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn der Bestätigungscode abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode anfordern, um sich anmelden zu können.
   
 
-	{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
-  {{< /c8y-admon-info >}}
+{{< /c8y-admon-info >}}
 
 * **Google Authenticator** (zeitabhängiges Einmal-Passwort = TOTP) zur Unterstützung der folgenden Einstellung:
 	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen** - Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.

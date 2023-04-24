@@ -12,6 +12,15 @@ helpcontent:
 
 **Audit logs** show security-relevant operations a user has processed. For example, an audit log is generated when a user logs into a gateway.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To use this feature the user must have one or more of "Audits" permissions:
+
+- **READ**: To view audit logs.
+- **ADMIN**: To manage audit logs (create, update, delete).
+{{< /c8y-admon-req >}}
+
 {{< c8y-admon-related >}}
 - [Security aspects > Management security](/concepts/security/#management-security) in the <i>Concepts guide</i> for general aspects of audit logging.
 - [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}} for details on managing audit records via REST.

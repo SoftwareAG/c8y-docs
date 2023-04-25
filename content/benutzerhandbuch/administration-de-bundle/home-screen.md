@@ -7,10 +7,10 @@ title: Startseite
 
 Die Startseite der "Administration"-Anwendung enthält Folgendes:
 
-* eine Begrüßung
+* Eine Begrüßung
 * Quick Links zu wesentlichen Funktionen der Anwendung
 * Ihre Kapazitätsnutzung im aktuellen und vergangenen Monat
-* die von Ihnen abonnierten optionalen Anwendungen
+* Die von Ihnen abonnierten optionalen Anwendungen
 
 <img src="/images/benutzerhandbuch/Administration/admin-home.png" alt="Home screen">
 

@@ -41,11 +41,9 @@ You can use the Dremio UI to interactively run queries against the data lake. Se
 
 If you have a Java client, you can use JDBC to run SQL queries against the data lake.  You must download the [Dremio JDBC driver](https://www.dremio.com/drivers/). You can obtain the JDBC connection string and the required driver version from {{< product-c8y-iot >}} DataHub by clicking the **JDBC** icon in the **Quick links** section of the **Home** page. When setting up your JDBC client, use as username and password the credentials from your Dremio account.
 
-For additional JDBC settings of Dremio see also the associated [Dremio documentation](https://docs.dremio.com/drivers/dremio-jdbc-driver.html).
-
 ### Connecting via ODBC
 
-If you want to use an ODBC client to run SQL queries against the data lake, you must configure the platform-specific driver, following the associated [Dremio installation instructions](https://docs.dremio.com/drivers/dremio-odbc-driver.html). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
+If you want to use an ODBC client to run SQL queries against the data lake, you must configure the platform-specific driver, following the associated [Dremio installation instructions](https://www.dremio.com/drivers/). To obtain the ODBC connection string, click the **ODBC** icon in the **Quick links** section of the **Home** page. When setting up your ODBC client use as username and password the credentials from your Dremio account.
 
 ### Connecting via Dremio REST API
 

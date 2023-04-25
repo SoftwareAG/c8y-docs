@@ -113,7 +113,7 @@ In diesem Fall sieht der JWT-Claim folgendermaßen aus:
  }
  ```
 
-Über den "in"-Operator besteht die Möglichkeit zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (".") im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.
+Durch den "in"-Operator besteht die Möglichkeit zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (".") im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.
 
 Standardmäßig ist die Konfiguration für dynamische Rechtezuordnung ausgewählt: **Die Rollen, die in den obigen Regeln für einen Benutzer ausgewählt wurden, werden diesem Benutzer bei jedem Login wieder zugewiesen. Nicht gewählte Rollen werden entfernt**.
 Dies bedeutet: Bei jeder Anmeldung des Benutzers weist die dynamische Rechtezuordnung Benutzerrollen anhand des Access Tokens zu.
@@ -198,7 +198,7 @@ Platzhalter werden nicht auf Korrektheit geprüft. Jeder nicht erkannte oder fal
 
 Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-Die folgenden Schritte zeigen, wie Azure AD (Azure Active Directory) in {{< product-c8y-iot >}} für SSO verwendet werden kann.
+Die folgenden Schritte verdeutlichen, wie Azure AD (Azure Active Directory) für SSO in {{< product-c8y-iot >}} verwendet werden kann.
 
 {{< c8y-admon-req title="Anforderungen" >}}
 Sie benötigen Administratorzugriff auf Ihr Azure AD.

@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 40
 title: Analytics Builder
 layout: redirect
 ---

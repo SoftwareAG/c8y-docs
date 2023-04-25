@@ -55,7 +55,7 @@ This is typically achieved by using a global role which has those permissions, a
 
 To use Analytics Builder, you need the Apama-ctrl microservice in {{< product-c8y-iot >}}.
 
-Your tenant may be subscribed to the Apama-ctrl-starter microservice, in which case you are limited to at most 3 active analytic models. Custom blocks written with the Analytics Builder Block SDK cannot be used with Apama-ctrl-starter. Contact Software AG support to discuss adding more capabilities.
+Your tenant may be subscribed to the Apama-ctrl-starter microservice, in which case you are limited to at most 3 active analytic models. Custom blocks written with the Analytics Builder Block SDK cannot be used with Apama-ctrl-starter. Contact [product support](/welcome/contacting-support) to discuss adding more capabilities.
 
 If your tenant is subscribed to the Apama-ctrl-smartrules microservice, Analytics Builder is not available.
 

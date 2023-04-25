@@ -67,7 +67,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 
 	* Apama Database Connector (ADBC).
 	* Correlator-integrated support for the Java Message Service (JMS).
-	* Software AG Digital Event Services.
+	* Digital Event Services.
 	* Distributed memory stores.
 	* Connections between correlators.
 

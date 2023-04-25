@@ -3,6 +3,8 @@ weight: 96
 title: Utility
 layout: redirect
 ---
+This category contains the following blocks:
+
 <table>
 <colgroup>
 <col style="width: 30%; text-align: start;">

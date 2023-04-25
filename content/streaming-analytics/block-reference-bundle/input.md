@@ -3,6 +3,8 @@ weight: 24
 title: Input
 layout: redirect
 ---
+This category contains the following blocks:
+
 <table>
 <colgroup>
 <col style="width: 30%; text-align: start;">

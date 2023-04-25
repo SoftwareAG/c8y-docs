@@ -3,6 +3,8 @@ weight: 72
 title: Aggregate
 layout: redirect
 ---
+This category contains the following blocks:
+
 <table>
 <colgroup>
 <col style="width: 30%; text-align: start;">

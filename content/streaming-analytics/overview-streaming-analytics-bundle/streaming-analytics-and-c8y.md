@@ -14,4 +14,6 @@ Analytics Builder allows you to create models that interact with the devices and
 
 Business logic can also be written in Apama’s Event Processing Language \(Apama EPL\) which gives more power and flexibility in a text-based programming language. This is an alternative if more complex logic is required or the logic does not fit into the pattern of an analytic model. EPL apps can be written directly in the Streaming Analytics application. See [EPL Apps](/streaming-analytics/epl-apps/) for more information, including examples. Alternatively, it is also possible to build custom blocks if none of the blocks delivered with Analytics Builder implement the logic required; see [Creating your own blocks](/streaming-analytics/analytics-builder/#creating-your-own-blocks).
 
-Analytics Builder can be used with both {{< product-c8y-iot >}} Core \(cloud\) and {{< product-c8y-iot >}} Edge \(local installation\). You can customize several aspects of Analytics Builder by setting various tenant options. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.
+The Streaming Analytics application can be used with both {{< product-c8y-iot >}} Core \(cloud\) and {{< product-c8y-iot >}} Edge \(local installation\).
+
+You can customize several aspects of Analytics Builder by setting various tenant options. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.

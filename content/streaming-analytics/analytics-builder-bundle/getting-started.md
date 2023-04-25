@@ -69,7 +69,7 @@ If {{< product-c8y-iot >}} or the browser is set to a language that is currently
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< product-c8y-iot >}} Sensor App has been installed \(see [{{< product-c8y-iot >}} Sensor App](/users-guide/sensor-app/) in the *User guide* for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed \(see [{{< sensor-app >}}](/users-guide/sensor-app/) in the *User guide* for detailed information\).
 
 The model that you add will contain three blocks:
 
@@ -117,7 +117,7 @@ If the block parameter editor is not shown (for example, because you clicked an 
 
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
 
-    If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< product-c8y-iot >}} Sensor App would be **c8y\_Gyroscope =\> gyroscopeY**.
+    If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< sensor-app >}} would be **c8y\_Gyroscope =\> gyroscopeY**.
 
 5.  Select the **Ignore Timestamp** check box.
 
@@ -198,7 +198,7 @@ This topic gives a brief overview of how to create a model from a sample. It is 
 
 This topic is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< product-c8y-iot >}} Sensor App has been installed \(see [{{< product-c8y-iot >}} Sensor App](/users-guide/sensor-app/) in the *User guide* for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed \(see [{{< sensor-app >}}](/users-guide/sensor-app/) in the *User guide* for detailed information\).
 
 The following image shows the blocks that are defined in the **On missing measurements create alarm** sample.
 
@@ -286,7 +286,7 @@ You will now activate the instance in production mode. This deploys the instance
 
 Once the instance has been activated, send in the data from your device. The instance starts monitoring the device once measurement data starts arriving and creates an alarm if no data is received within the configured duration.
 
-For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< product-c8y-iot >}} Sensor App is still running.
+For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< sensor-app >}} is still running.
 
 #### Step 6: Go to the Device Management and view the alarms
 

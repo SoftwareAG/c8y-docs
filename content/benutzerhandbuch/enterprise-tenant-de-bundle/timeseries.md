@@ -6,7 +6,7 @@ aliases:
   - /benutzerhandbuch/enterprise-tenant-de/#timeseries
 ---
 
-Der {{< product-c8y-iot >}} Betriebsspeicher bietet erweiterten Support für Zeitreihen (sogenannte Zeitreihensammlungen) für Messdaten. Der folgende Abschnitt fasst zusammen, wie sich diese Funktion aktivieren/deaktivieren lässt.
+Der {{< product-c8y-iot >}} Betriebsspeicher bietet erweiterten Support für Zeitreihen (sogenannte Zeitreihensammlungen) für Messdaten. Im Folgenden wird beschrieben, wie sich diese Funktion aktivieren/deaktivieren lässt.
 
 {{< c8y-admon-info >}}
 Der erweiterte Support für Zeitreihen kann bei neuen Mandanten eventuell standardmäßig durch einen {{< product-c8y-iot >}}-Administrator aktiviert sein.

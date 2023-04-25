@@ -331,7 +331,7 @@ Gehören die Messwerte derselben Series an, wird hingegen nur eine Y-Achse darge
 
 Bewegen Sie den Mauszeiger über den Graphen, um detaillierte Informationen zu den Messwerten anzuzeigen. Neben dem Mauszeiger wird ein Tooltip mit Details zum jeweiligen Messwert angezeigt (der Tooltip rastet bei dem am nächsten liegenden Messwert ein).
 
-> {{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 Wir empfehlen, maximal 20 Messwerte pro Messung zu verwenden, um optimale Leistung und Lesbarkeit eines einzelnen Graphen in Device Management zu erzielen (der Graph zeigt alle verfügbaren Series an). Wenn Sie nur einige wenige Messwerte aus der Messung anzeigen wollen, empfiehlt sich die Verwendung des Data-Explorers in Cockpit. Dort können Sie die Series auswählen, die im Graph angezeigt werden sollen.
 {{< /c8y-admon-info >}}
 

@@ -101,7 +101,7 @@ In der Registerkarte **Alle Anwendungen** sind abonnierte Anwendungen als "Abonn
 
 Benutzerdefinierte Anwendungen können sein:
 
-* webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind.
+* Webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind.
 * Links zu einer Anwendung, die anderswo betrieben wird.
 * Duplikate von abonnierten Anwendungen (um diese den eigenen Bedürfnissen anzupassen).
 
@@ -246,7 +246,7 @@ Auf der Registerkarte **Plugins** können Sie Plugins hinzufügen und entfernen.
 
 Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Bearbeiten**.
 
-In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
+In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung (siehe [Anwendungsattribute](#application-properties)).
 
 {{< c8y-admon-important title="Wichtig" >}}
 Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.

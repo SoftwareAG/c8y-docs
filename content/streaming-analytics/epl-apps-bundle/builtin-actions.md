@@ -10,7 +10,7 @@ With Apama EPL, it is possible to utilize functions, called "actions". Every mon
 
 See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}) for actions on the built-in types.
 
-### Querying Cumulocity IoT data
+### Querying {{< product-c8y-iot >}} data
 
 To interact with your historical data, you can use one of the following request-response event pairs to look up resources.
 
@@ -32,7 +32,7 @@ The events listed in the following table are part of the `com.apama.cumulocity` 
 |TenantOption|TenantOption <br/>FindTenantOptions  <br/>FindTenantOptionsResponse|[Documentation]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_finding_tenant_options.html)|
 
 
-### Invoking other parts of the Cumulocity IoT REST API
+### Invoking other parts of the {{< product-c8y-iot >}} REST API
 
 The {{< product-c8y-iot >}} REST API covers some extra functionality which is not covered with the individual event types. To invoke any other part of the REST API, a generic request-response API is provided which you can use to invoke any part of the {{< product-c8y-iot >}} API.
 

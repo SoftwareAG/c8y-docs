@@ -279,7 +279,7 @@ See also [Apama Docker image availability on Docker Hub]({{< link-sag-tech-forum
 
 {{< c8y-admon-important >}}
 Apama 10.15.0 introduces several new container images provided via Docker Hub and some of the existing container images have changed content.
-When building images for use as a Cumulocity IoT microservice, this is now different to earlier releases.
+When building images for use as a {{< product-c8y-iot >}} microservice, this is now different to earlier releases.
 You must now use the
 [softwareag/apama-cumulocity-jre](https://hub.docker.com/r/softwareag/apama-cumulocity-jre) image with the
 [softwareag/apama-cumulocity-builder](https://hub.docker.com/r/softwareag/apama-cumulocity-builder) image as a builder image.

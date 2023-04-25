@@ -41,7 +41,7 @@ action worker() {
 }  
 ```
 
-### Apama limitations in Cumulocity IoT
+### Apama limitations in {{< product-c8y-iot >}}
 
 Using Apama within the {{< product-c8y-iot >}} environment necessarily has some restrictions to the capabilities available when Apama is used standalone.
 

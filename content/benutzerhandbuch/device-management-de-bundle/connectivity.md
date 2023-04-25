@@ -78,7 +78,7 @@ Führen Sie den folgenden Schritt aus, um die Konnektivität in {{< product-c8y-
 1. Klicken Sie auf **Connectivity** im Menü **Einstellungen** des Navigators. Falls das Menüelement nicht angezeigt wird, vergewissern Sie sich, dass Ihr Benutzer über die [READ- und ADMIN-Berechtigung für Connectivity](/benutzerhandbuch/administration-de#managing-permissions) verfügt. Ist das Menüelement noch immer nicht verfügbar, wenden Sie sich bitte an den [Produkt-Support](/welcome/contacting-support/), um den Connectivity-Agenten in Ihrem Mandanten bereitzustellen.
 2. Wechseln Sie zur Registerkarte **Mobilfunkanbieter-Einstellungen**.
 3. Wählen Sie einen Anbieter aus der Auswahlliste aus.
-1. Geben Sie die Zugangsdaten für das jeweilige SIM-Anbieter-Konto ein. Wenn Ihnen keine Zugangsdaten vorliegen, fragen Sie Ihren Administrator.
+1. Geben Sie die Zugangsdaten für das entsprechende SIM-Anbieter-Konto ein. Wenn Ihnen keine Zugangsdaten vorliegen, fragen Sie Ihren Administrator.
 2. Legen Sie eine **Cache duration** (Cache-Dauer) in Sekunden fest um zu bestimmen, wie lange die vom Anbieter stammenden Informationen zwischengespeichert werden sollen. Dadurch werden Timeout-Probleme vermieden.
 3. Klicken Sie auf **Speichern**, um Ihre Einstellungen zu speichern.
 
@@ -92,7 +92,7 @@ Eine längere Cache-Dauer bedeutet weniger Datenverkehr an Ihren SIM-Anbieter, e
 <a name="link-sims"></a>
 ### Verknüpfen von SIMs und Mobilgeräten
 
-Wechseln Sie zur Anwendung Device Management und navigieren zu dem Gerät, das über eine SIM-Karte verbunden ist, die vom SIM-Anbieter Ihrer Wahl verwaltet wird. Das Gerät sollte eine Registerkarte namens **Connectivity** aufweisen. Wird diese Registerkarte nicht angezeigt, hat dies einen der folgende Gründe:
+Wechseln Sie zur Anwendung Device Management und navigieren zu dem Gerät, das über eine SIM-Karte verbunden ist, die vom SIM-Anbieter Ihrer Wahl verwaltet wird. Das Gerät sollte eine Registerkarte namens **Connectivity** aufweisen. Wird diese Registerkarte nicht angezeigt, hat dies einen der folgenden Gründe:
 
 * Ihr Benutzer hat keine Berechtigungen für Connectivity.
 * Das Gerät ist mit keiner SIM-Karte verknüpft.

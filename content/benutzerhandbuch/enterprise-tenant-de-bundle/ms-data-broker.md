@@ -15,7 +15,7 @@ Der ursprüngliche Data Broker wird vorerst neben dem Microservice-basierten Dat
 Für die gemeinsam genutzten Public-Cloud-Instanzen der {{< product-c8y-iot >}}-Plattform ist der Messaging Service ab Version 10.13 standardmäßig aktiviert, und der Microservice-basierte Data Broker kann auf Wunsch für einzelne Mandanten aktiviert werden, die bereits Zugriff auf den ursprünglichen Data Broker haben.
 Für dedizierte und selbst gehostete Instanzen sind der Messaging Service und der Microservice-basierte Data Broker für Version 10.10 und höher verfügbar, müssen aber explizit aktiviert werden.
 
-Bitte [wenden Sie sich an den Produkt-Support](/welcome/contacting-support/), um Näheres über die Verwendung von Messaging Service und Microservice-basiertem Data Broker in Ihrer {{< product-c8y-iot >}}-Umgebung zu erfahren.
+Bitte wenden Sie sich an den [Produkt-Support](/welcome/contacting-support/), um Näheres über die Verwendung von Messaging Service und Microservice-basiertem Data Broker in Ihrer {{< product-c8y-iot >}}-Umgebung zu erfahren.
 Im *Messaging Service - Installation & Operations Guide* finden Sie technische Details zur erforderlichen Konfiguration. Beachten Sie jedoch, dass diese Aufgaben nur von einem {{< product-c8y-iot >}}-Plattform-Administrator und nicht von einem normalen Benutzer ausgeführt werden können.
 
 Zusammenfassung: Um mit dem Microservice-basierten Data Broker arbeiten zu können, müssen die folgenden Anforderungen erfüllt sein:

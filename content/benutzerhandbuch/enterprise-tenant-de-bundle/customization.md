@@ -252,7 +252,7 @@ in Konflikt stehende A-Einträge zu löschen.
 Wenn Sie **.iot.mycompany.com* für Ihre Enterprise-Untermandanten verwenden möchten und {{< product-c8y-iot >}} unter *mytenant.{{< domain-c8y >}}* verwenden, muss der folgende CNAME-Eintrag zu Ihrer DNS-Zone hinzugefügt werden:
 
 ```shell
-NAME                   TYPE   VALUE
+NAME                  TYPE   VALUE
 ----------------------------------------------------
 *.iot.mycompany.com.   CNAME  mytenant.{{< domain-c8y >}}.
 ```
@@ -273,7 +273,7 @@ an die Plattform hochgeladen werden.
 
 Klicken Sie in der Registerkarte **Domain-Name** auf der Seite **Enterprise Tenant** auf **Zertifikat hochladen**. Wählen Sie das Zertifikat in Ihrem Dateisystem aus und klicken Sie auf **Hochladen**.
 
-Anschließend können Sie die Domain durch einen einzigen Mausklick auf ihren Namen aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
+Anschließend können Sie die Domain durch einen einzigen Mausklick auf den Domainnamen aktivieren. Nachdem die Domain aktiviert wurde, werden Sie
 über den neuen Domain-Namen zu Ihrem {{< enterprise-tenant-de >}} umgeleitet. Sie erhalten eine E-Mail mit Informationen über die
 Aktivierung. Beachten Sie, dass der Domain-Name Ihres {{< management-tenant-de >}} statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*
 .iot.mycompany.com" ist, lautet die Domain des {{< management-tenant-de >}} "management.iot.mycompany.com".

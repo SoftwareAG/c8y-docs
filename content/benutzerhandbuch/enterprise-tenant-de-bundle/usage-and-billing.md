@@ -230,7 +230,7 @@ Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungs
 
 ![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Näheres hierzu finden Sie unter [Mandanten](https://{{< domain-c8y >}}/api/core{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/core{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 

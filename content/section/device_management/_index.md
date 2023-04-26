@@ -325,4 +325,4 @@ svg: '<svg
 '
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam non quas, voluptate nobis praesentium ab aut eius asperiores sint dolores dolore magnam nihil? Optio perspiciatis in, rerum minus ipsa aut.
+Learn more about connecting, monitoring and controlling devices with Cumulocity IoT, be it via technical interfaces or via the Cumulocity IoT user interface. 

@@ -1,6 +1,6 @@
 ---
 layout: redirect
-title: Verwenden von Simulatoren
+title: Arbeiten mit Simulatoren
 weight: 90
 ---
 

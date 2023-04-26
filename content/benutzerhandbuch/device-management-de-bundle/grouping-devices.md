@@ -22,7 +22,7 @@ Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestell
 
 Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol.
 
-Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de/#filtering-devices).
+Siehe auch [Anzeigen von Geräten > So filtern Sie Geräte](/benutzerhandbuch/device-management-de/#filtering-devices).
 
 Beachten Sie, dass diese Funktion nur einen temporären Filter erzeugt. Für permanente Filter können Sie die Funktion [Dynamische Gruppe](#smart-groups) verwenden.  
 
@@ -37,7 +37,7 @@ Oben auf der Seite **Kind-Assets** werden Name und Beschreibung der Gruppe angez
 
 Darunter werden alle der Gruppe zugewiesenen Assets aufgelistet. Zu jedem Asset werden verschiedene Informationen wie Typ und Name angezeigt. Wie bei der Liste der Top-Level-Gruppen können Sie auch hier Spalten hinzufügen oder entfernen und die Liste individuell anpassen oder Filter anwenden, um die Liste nach bestimmten Kriterien zu filtern.
 
-Darüber hinaus können Sie Geräte zuordnen, siehe [So ordnen Sie einer Gruppe ein Gerät zu](#assigning-devices).
+Darüber hinaus können Sie Geräte zuordnen, siehe [So weisen Sie einer Gruppe Geräte zu](#assigning-devices).
 
 <a name="add-group"></a>
 

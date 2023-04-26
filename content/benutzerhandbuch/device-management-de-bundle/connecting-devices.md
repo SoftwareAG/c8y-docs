@@ -85,8 +85,7 @@ Klicken Sie auf **Akzeptieren**, um die Verbindung zu bestätigen. Der Status de
 Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
 {{< /c8y-admon-info >}}
 
-<a name="creds-upload"></a>
-
+<a name="security-token-policy-for-device-registration"></a>
 #### Sicherheitstokenregel für die Geräteregistrierung
 
 Konfigurieren Sie die Sicherheitstokenregel, um das Risiko zu mindern, dass noch nicht registrierte Geräte durch Bedrohungsakteure übernommen werden, z. B. durch Erraten ihrer Seriennummer.
@@ -121,6 +120,7 @@ Mit dem Wert "IGNORED" für die Sicherheitstokenregel kann ein mit {{< product-c
 
 ![Accepting devices registrations under ignored security token policy](/images/benutzerhandbuch/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
 
+<a name="optional-security-token-policy"></a>
 ##### Optionale Sicherheitstokenregel
 
 Die Liste der Geräteregistrierungen wird im Bild unten präsentiert. Beachten Sie, dass die Eingabe für Sicherheitstokens für alle Geräte angezeigt wird.

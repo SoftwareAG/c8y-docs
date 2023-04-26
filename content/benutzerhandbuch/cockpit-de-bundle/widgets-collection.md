@@ -299,7 +299,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 </tr>
 <tr>
 <td align="left">Datenpunkte</td>
-<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; Zum Hinzufügen eines Datenpunkts</a>.</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie auf <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; So fügen Sie einen Datenpunkt hinzu</a>.</td>
 </tr>
 <tr>
 <td align="left">Sichtbare Tabellenspalten</td>

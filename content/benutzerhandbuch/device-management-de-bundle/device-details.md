@@ -90,7 +90,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
 </tr>
 <tr>
-<td align="left"><a href="#logs">Logdateien</a></td>
+<td align="left"><a href="#logs">Logdaten</a></td>
 <td align="left">Ermöglicht das Abfragen von Loginformationen für das Gerät.</td>
 </tr>
 <tr>
@@ -106,8 +106,8 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Zeigt Netzwerkinformationen für das Gerät an.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/opcua">OPCUA-Server</a></td>
-<td style="text-align:left">Enthält nähere Informationen zu über einen OPCUA-Server verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/opcua">OPCUA</a>.</td>
+<td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA-Server</a></td>
+<td style="text-align:left">Enthält nähere Informationen zu über einen OPC UA-Server verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#services">Services</a></td>
@@ -325,7 +325,7 @@ So ist etwa im Screenshot unten ein Diagramm für Temperaturmesswerte mit zwei v
 
 ![Measurements](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-measurements.png)
 
-Wenn ein Diagramm Messwerte mit verschiedenen Series enthält, wird pro Series eine Y-Achse dargestellt. Im Beispiel oben werden die Temperaturdaten zweier Sensoren aufgezeichnet, nämlich "sensors-1" und "sensor-2" mit der gleichen Einheit wie °C. Hier werden Messwerte verschiedener Sensoren als 
+Wenn ein Diagramm Messwerte mit verschiedenen Series enthält, wird pro Series eine Y-Achse dargestellt. Im Beispiel oben werden die Temperaturdaten zweier Sensoren aufgezeichnet, nämlich "sensors-1" und "sensor-2" mit der gleichen Einheit wie °C. Hier werden Messwerte verschiedener Sensoren als
 separate "Series"-Daten kategorisiert. Die Messwerte der jeweiligen Sensoren werden unter verschiedenen Series-Namen gespeichert (identisch mit den Sensornamen), und somit werden hier zwei Achsen dargestellt.
 Gehören die Messwerte derselben Series an, wird hingegen nur eine Y-Achse dargestellt.
 
@@ -371,6 +371,7 @@ Beispiel:
 
 In der Registerkarte **Netzwerk** können Parameter für das mobile Netzwerk (WAN) und das lokale Netzwerk (LAN) angezeigt und konfiguriert werden.
 
+english image?
 ![Network tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-network.png)
 
 Die WAN-Parameter auf der Benutzeroberfläche entsprechen dem ersten im Router gespeicherten Profil. Diese Parameter können remote oder per SMS konfiguriert werden.

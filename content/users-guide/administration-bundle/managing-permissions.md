@@ -14,6 +14,8 @@ helpcontent:
   In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device."
 ---
 
+Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into global and inventory roles. Every user can be associated with a number of roles, adding up permissions of the user.
+
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -25,8 +27,6 @@ On tenant creation, there are default roles available that can be used as a samp
 * Global User Manager - Can access and modify the full user hierarchy
 * Shared User Manager - Can create new users as his own subusers and manage them ("feature-user-hierarchy" application subscription required)
 {{< /c8y-admon-req >}}
-
-Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
 
 {{< c8y-admon-related >}}
 - [Managing users](#managing-users) for information on managing users in general.

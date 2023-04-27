@@ -18,7 +18,7 @@ ROLES & PERMISSIONS:
 
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
-* Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules
+* Tenant Manager - Can manage tenant-wide configurations like applications, tenant options and retention rules
 
 {{< /c8y-admon-req >}}
 

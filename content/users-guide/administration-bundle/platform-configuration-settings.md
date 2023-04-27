@@ -13,9 +13,8 @@ The user must have access to the Administration application.
 
 ROLES & PERMISSIONS:
 
-"Options management" permission type:
-* To view settings: READ permission
-* To manage (create, edit, update) all existing users: ADMIN permission
+* To view settings: READ permission for "Options management" permission type.
+* To manage (create, edit, update) all existing users: ADMIN permission for "Options management" permission type.
 
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:

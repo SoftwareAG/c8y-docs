@@ -13,7 +13,7 @@ The user must have access to the Administration application.
 
 ROLES & PERMISSIONS:
 
-* To view settings: READ permission for "Options management" permission type.
+* To view settings: READ permission for the "Options management" permission type.
 * To manage (create, edit, update) all existing users: ADMIN permission for "Options management" permission type.
 
 

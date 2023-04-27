@@ -25,7 +25,7 @@ If your tenant is subscribed to the Apama-ctrl-starter microservice, then the fo
 
 If your tenant is subscribed to the Apama-ctrl-mt-4c-16g microservice, then the following applies:
 - Multi-tenant support.
-- EPL apps are only enabled on the Management and Enterprise tenants that own the microservice, but disabled on the subtenants.
+- EPL apps are only enabled on the {{< management-tenant >}} and {{< enterprise-tenant >}} that owns the microservice, but disabled on the subtenants.
 - The **Analytics Builder** page is currently not available in the Streaming Analytics application.
 - Unlimited number of smart rules.
 

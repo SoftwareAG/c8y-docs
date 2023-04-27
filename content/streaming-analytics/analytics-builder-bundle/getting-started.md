@@ -16,7 +16,7 @@ Analytics Builder consists of the following tools:
 -   Model editor. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *Block Reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
 -   Instance editor. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
-The blocks are implemented in the Event Processing Language \(EPL\) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later chapters.
+The blocks are implemented in the Event Processing Language \(EPL\) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
 
 ### First Steps: Creating your first model
 

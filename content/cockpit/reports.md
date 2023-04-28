@@ -2,7 +2,7 @@
 weight: 45
 title: Working with reports
 layout: bundle
-section: 
+section:
   - app_development
 helpcontent:
   - label: reports
@@ -29,6 +29,10 @@ ROLES & PERMISSIONS:
 - To delete a report: ADMIN permission for permission type "Inventory"
 
 {{< /c8y-admon-req >}}
+
+
+<a name=""></a>
+### To show all reports
 
 To show all reports, click **Reports** in the navigator.
 

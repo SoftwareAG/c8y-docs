@@ -1,7 +1,7 @@
 ---
 title: Working with dashboards
 layout: bundle
-section: 
+section:
   - app_development
 weight: 40
 helpcontent:
@@ -71,7 +71,7 @@ The widget titles will be translated only if a valid translation is available.
 Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
 
 <a name="sharing-dashboards"></a>
-### Sharing dashboards
+### To share a dashboard
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 

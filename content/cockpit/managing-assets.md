@@ -2,7 +2,7 @@
 weight: 20
 title: Managing assets
 layout: bundle
-section: 
+section:
   - app_development
 helpcontent:
   - label: managing-assets
@@ -61,7 +61,8 @@ In the Cockpit application, you construct your asset hierarchy by creating group
 
 * **Gateway devices** establish the communication from other devices to {{< product-c8y-iot >}} but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
-The following section explains how to work with smart devices and gateway devices in the Cockpit application.
+The following section explains
+ work with smart devices and gateway devices in the Cockpit application.
 
 The first example shows how smart devices are linked into the asset hierarchy:
 
@@ -88,7 +89,7 @@ For building management, it is most common that a group of sensors inside a buil
 
 <a name="navigating"></a>
 
-### How to navigate assets
+### To navigate assets
 
 In the asset hierarchy, {{< product-c8y-iot >}} distinguishes between top-level groups and subassets. Subassets can either be other groups or devices.
 
@@ -152,7 +153,7 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 <a name="creating-groups"></a>
 
-### How to add a group
+### To add a group
 
 1. Click **Add group** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique group name and an optional description and click **Next**.
@@ -168,7 +169,7 @@ A group can be created with "0" devices in it.
 To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
 <a name="assigning-devices"></a>
-### How to assign devices to a group
+### To assign devices to a group
 
 Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/users-guide/device-management).
 
@@ -182,20 +183,20 @@ To assign devices to a group, follow these steps:
 The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
 <a name="edit-group"></a>
-### How to edit a group
+### To edit a group
 
 1. In the navigator, click a group to open it.
 2. In the **Subassets** tab, you can edit the name and description of the group.
 
 <a name="delete-group"></a>
-### How to delete a group
+### To delete a group
 
 To delete a group either on top-level from the **Groups** page or from the **Subassets** tab of another group, hover over the respective entry you want to delete and click the delete icon at the right.
 
 In the resulting dialog box, you can select to also delete all devices inside the selected asset and all its subassets.
 
 <a name="remove-device"></a>
-### How to remove a device from a group
+### To remove a device from a group
 
 1. Navigate to the **Subassets** tab of the group.
 2. Hover over the respective device you want to remove and click the remove icon at the right.

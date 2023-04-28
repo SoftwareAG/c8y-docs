@@ -21,7 +21,7 @@ ROLES & PERMISSIONS:
 
 * To view global roles, inventory roles, applications: READ permission for the "User management" permission type.
 * To manage global roles (assign to users, unassign from users), to manage inventory roles, to manage application access: ADMIN permission for the "User management" permission type.
-* To read owned permissions: CREATE permission for the "User management" permission type. This permission is, for example, useful if the user hierarchy feature is available but can also be used without it. In combination with the ADMIN permission it allows to create roles based on permissions owned by the current user, for example, a role with a subset of the permissions that the original user has.
+* To read owned permissions: CREATE permission for the "User management" permission type. This permission is  useful, for example, if the user hierarchy feature is available but can also be used without it. In combination with the ADMIN permission it allows to create roles based on permissions owned by the current user, for example, a role with a subset of the permissions that the original user has.
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above mentioned permissions:
 * Global User Manager - Can access and modify the full user hierarchy

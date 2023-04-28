@@ -113,15 +113,15 @@ Click **Files repository** in the **Management** menu to see a list of files.
 
 The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **All applications** page.
 
-For each file, the name of the file, its owner, its type (for example, image/bmp, text/csv), its size and its last update date are displayed. If file type is supported, you can click a magnifier icon next to the file name to preview it. You can download or delete a file by clicking action buttons which appear when hovering mouse over the file row. Note that some files (for example, application archives) cannot be deleted from this page.
+For each file, the name of the file, its owner, its type (for example, image/bmp, text/csv), its size and its last update date are displayed. If file type is supported, you can click a magnifier icon next to the file name to preview it. You can download or delete a file by clicking action buttons which appear when hovering over the file row. Note that some files (for example, application archives) cannot be deleted from this page.
 
-You can use filters or search input to look for particular file entry, see: [Search and Filter](/users-guide/getting-started/#search-and-filter-functionality). By default, files are sorted by **File name**, if another criteria should be applied, remove default filter applied to **File name** column and define own criteria for filtering the list.
+You can use filters or search input to look for particular files, see [Getting started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#search-and-filter-functionality) for details. By default, files are sorted by **File name**. To change the sorting, remove the default filter and define your own criteria for filtering the list.
 
 <img src="/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
 #### To upload a file from your file system
 
-Click **Upload files** in the top menu bar. In the resulting dialog box, select files to be uploaded by either browsing your computer or by dropping files onto the displayed drop area. Then you can review the files within the list displayed and confirm the upload by clicking **Upload** button.
+Click **Upload files** in the top menu bar. In the resulting dialog box, select the files to be uploaded by browsing your file system or dropping the files. You can review the selected files in the displayed list and confirm the upload by clicking **Upload**.
 
 
 #### To download a file from your account

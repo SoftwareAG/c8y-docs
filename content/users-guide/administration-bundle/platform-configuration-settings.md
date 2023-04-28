@@ -9,7 +9,7 @@ layout: redirect
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-The user must have access to the Administration application.
+The user must have access to the Administration application on management tenant.
 
 ROLES & PERMISSIONS:
 

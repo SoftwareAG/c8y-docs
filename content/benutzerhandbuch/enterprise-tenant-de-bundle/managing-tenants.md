@@ -237,7 +237,7 @@ Plattformadministratoren können die Anfragerate jedes Untermandanten über die 
 
 * HTTP-Queue begrenzen - Begrenzung des HTTP-Anfragenpuffers für den Mandanten
 * HTTP-Anfragen begrenzen - Begrenzung der HTTP-Anfragen für den Mandanten pro Sekunde
-* Stream-Puffer begrenzen - Begrenzung des MQTT-Anfragenpuffers für den Mandanten
+* Stream-Queue begrenzen - Begrenzung des MQTT-Anfragenpuffers für den Mandanten
 * Stream-Anfragen begrenzen - Begrenzung der MQTT-Anfragen für den Mandanten pro Sekunde
 
 Die Anfragen-Begrenzungsfunktion wird erst aktiviert, wenn beide HTTP-Attribute (HTTP-Queue begrenzen und HTTP-Anfragen begrenzen) konfiguriert sind. Wird einer der Werte weggelassen, funktioniert es nicht.

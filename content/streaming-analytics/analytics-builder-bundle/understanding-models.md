@@ -100,7 +100,7 @@ There are different types of processing blocks. They are grouped into different 
 |**Flow Manipulation**|manipulate the flow of the data. Blocks such as **Time Delay**, **Gate**, **Pulse** and **Latch Values** are in this category.|
 |**Utility**          |provide miscellaneous utility functions. Blocks such as **Toggle** and **Missing Data** are in this category.|
 
-##### Example of a processing block - the Threshold block
+**Example of a processing block - the Threshold block**
 
 The following example shows what a block looks like in the model editor, together with the block parameter editor. It shows the **Threshold** block, which detects whether the input value breaches the threshold or whether it crosses the threshold.
 

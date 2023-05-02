@@ -144,11 +144,9 @@ Alternatively, click the actions menu of the card and then click **Edit**.
 
 If the model is in the "Active" state, a dialog appears informing you that you can only view the model. When you click **Continue**, the model editor appears and you can view the model, but you cannot change it. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
 
-    See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
-
-    {{< c8y-admon-info>}}
+{{< c8y-admon-info>}}
 If you do not have sufficient permissions \(that is, you only have READ permission for "CEP management" instead of ADMIN permission\), the actions menu provides a **View** command instead of the **Edit** command.
-    {{< /c8y-admon-info>}}
+{{< /c8y-admon-info>}}
 
 ### Editing the instances of a model
 
@@ -169,11 +167,11 @@ Alternatively, you can also do one the following:
 - Click the actions menu of the card and then click **Instances**.
 - Or click **Show instances summary** to flip the card and then click the **Edit Instances** button on the back of the card.
 
-        {{< c8y-admon-info>}}
+{{< c8y-admon-info>}}
 **Show instances summary** is only visible \(and thus you can only get to the back of the card\) if there are any instances \(regardless of state\).
-        {{< /c8y-admon-info>}}
-        
-    This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for further information.
+{{< /c8y-admon-info>}}
+
+This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for further information.
 
 ### Deploying a model
 
@@ -298,7 +296,7 @@ You can create a new model from each sample that is currently listed in the mode
 You must save the new model so that it is listed in the model manager. If a model with that name already exists, you are prompted to save the new model with a different name.
 {{< /c8y-admon-info>}}
 
-**To create a model from a sample**
+#### To create a model from a sample
 
 On the **Samples** tab of the model manager, click the actions menu of the sample from which you want to create a new model and then click **Create model from sample**.
 

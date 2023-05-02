@@ -37,7 +37,7 @@ When you open the instance editor, it may happen that template parameters have b
 
 When you add a new instance, a new row is added to the instance editor table. You can then either immediately fill in the required values, or you can first add all required rows and then fill the rows one after the other.
 
-**To add an instance**
+#### To add an instance
 
 1.  In the toolbar of the instance editor, click **New Instance**.
 
@@ -70,7 +70,7 @@ When an instance is activated, the template parameter values, where supplied, ar
 
 Once an instance is active, you cannot modify the template parameter values or mode without deactivating the instance first. If any instances are active, then the model is read-only and cannot be modified until all instances are deactivated.
 
-**To deploy an instance**
+#### To deploy an instance
 
 1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
 
@@ -89,9 +89,9 @@ You can deactivate \(that is, undeploy\) each instance that is currently in prod
 
 When you undeploy an instance, the instance is stopped and no longer processes incoming data. Any state built up in the instance is lost. For simulation mode, this means that the instance is stopped before all historical data from the specified time range has been replayed.
 
-**To undeploy an instance**
+#### To undeploy an instance
 
--   In the **Status** column of the instance editor, click the toggle button for the instance that you want to undeploy so that **Inactive** is then shown on the button.
+In the **Status** column of the instance editor, click the toggle button for the instance that you want to undeploy so that **Inactive** is then shown on the button.
 
 ### Filtering and sorting the instances
 
@@ -111,17 +111,17 @@ You can also reorder the template parameters in the **Template Parameters** dial
 
 You can duplicate each instance \(row\) that is currently listed in the instance editor. The original instance and its duplicate will then both have the same template parameter values and the same mode. However, the duplicated instance is always inactive even if the original instance is active.
 
-**To duplicate an instance**
+#### To duplicate an instance
 
--   In the instance editor, click the actions menu of the instance that you want to duplicate and then click **Duplicate**.
+In the instance editor, click the actions menu of the instance that you want to duplicate and then click **Duplicate**.
 
-    A new row for the duplicated instance is immediately shown at the bottom of the instance editor table.
+A new row for the duplicated instance is immediately shown at the bottom of the instance editor table.
 
 ### Removing an instance
 
 You can remove each instance that is currently listed in the instance editor. When you remove an instance that is currently deployed, it is first undeployed and then removed.
 
-**To remove an instance**
+#### To remove an instance
 
 1.  In the instance editor, click the actions menu of the instance that you want to remove and then click **Remove**.
 
@@ -135,28 +135,28 @@ You can save the instances even if there are still rows in which required inform
 When you activate an instance, all of your recent changes are automatically saved. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).
 {{< /c8y-admon-info>}}
 
-**To save the instances**
+#### To save the instances
 
--   In the toolbar of the instance editor, click **Save**.
+In the toolbar of the instance editor, click **Save**.
 
-    This command is only enabled when changes have been applied to the instances. It saves only those instances where the rows that are highlighted with a background color.
+This command is only enabled when changes have been applied to the instances. It saves only those instances where the rows that are highlighted with a background color.
 
 ### Reloading the instances
 
 You can refresh the display to show the latest state of all instances, or to see whether deployed instances have entered a failed state.
 
-**To reload the instances**
+#### To reload the instances
 
--   In the toolbar of the instance editor, click **Reload**.
+In the toolbar of the instance editor, click **Reload**.
 
-    If there are unsaved changes when reloading, you are prompted to save these changes first.
+If there are unsaved changes when reloading, you are prompted to save these changes first.
 
 ### Leaving the instance editor
 
 When you leave the instance editor using the corresponding toolbar button, you are returned to the model manager.
 
-**To leave the instance editor**
+#### To leave the instance editor
 
--   In the toolbar of the instance editor, click X.
+In the toolbar of the instance editor, click X.
 
-    If there are unsaved changes when leaving, you are prompted to save these changes first.
+If there are unsaved changes when leaving, you are prompted to save these changes first.

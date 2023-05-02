@@ -56,7 +56,7 @@ You can rename each model that you are currently editing in the model editor, an
 
 You can also add or remove tags. Tags are helpful in the model manager, to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\).
 
-**To change the name, description, and tags of a model**
+##### To change the name, description, and tags of a model
 
 1.  In the model editor, click on the model name which is shown at the left of the toolbar.
 2.  In the resulting **Model Configuration** dialog box, specify a new unique name for the model, change the description, and/or change the tags.
@@ -73,12 +73,12 @@ When you save a model in the model editor, it is stored in the {{< product-c8y-i
 It may happen that you and another user are editing the same model at the same time. In this case, the changes that are saved last will be stored. So your changes might be overwritten by a later save by another user.
 {{< /c8y-admon-important>}}
 
-**To save a model**
+##### To save a model
 
--   In the toolbar of the model editor, click the following button:
-    ![Save icon](/images/streaming-analytics/analytics-builder/icon-save.png)
+In the toolbar of the model editor, click the following button:
+![Save icon](/images/streaming-analytics/analytics-builder/icon-save.png)
 
-    This toolbar button is only enabled when changes have been applied to the model and the model has been given a name.
+This toolbar button is only enabled when changes have been applied to the model and the model has been given a name.
 
 #### Leaving the model editor
 
@@ -88,12 +88,12 @@ When you leave the model editor using the corresponding toolbar button, you are 
 All unsaved changes are lost when you navigate to a different URL or close the browser window.
 {{< /c8y-admon-caution>}}
 
-**To leave the model editor**
+##### To leave the model editor
 
--   In the toolbar of the model editor, click the following button:
-    ![Close icon](/images/streaming-analytics/analytics-builder/icon-exit.png)
+In the toolbar of the model editor, click the following button:
+![Close icon](/images/streaming-analytics/analytics-builder/icon-exit.png)
 
-    In case there are still unsaved changes, you are asked whether to save or discard them.
+In case there are still unsaved changes, you are asked whether to save or discard them.
 
 ###  Working with blocks and wires
 
@@ -103,7 +103,7 @@ The blocks in the palette are grouped into different categories. When you move t
 
 Detailed information for each block is available in the block reference, which is shown in the documentation pane. See also [Viewing the documentation for a block](/streaming-analytics/analytics-builder/#viewing-the-documentation-for-a-block).
 
-**To add a block**
+##### To add a block
 
 1.  In the palette of the model editor, expand the category which contains the block that you want to add.
 
@@ -131,7 +131,7 @@ The block parameter editor also contains commands for duplicating and removing t
 
 For the input and output blocks, you can globally replace the devices, groups or assets that are used. See [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets) for detailed information.
 
-**To edit the parameters of a block**
+##### To edit the parameters of a block
 
 1.  On the canvas of the model editor, click the block that you want to edit using the left mouse button.
 
@@ -199,7 +199,7 @@ The documentation pane allows you to view detailed information for the currently
 You can also view the block reference directly in this documentation. See [Analytics Builder block reference](/streaming-analytics/block-reference/).
 {{< /c8y-admon-info>}}
 
-**To view the documentation for a block**
+##### To view the documentation for a block
 
 1.  In the model editor, click the block for which you want to view the documentation. You can do this in the palette or on the canvas.
 
@@ -236,11 +236,11 @@ To deselect your selection:
 
 You can move each block that is currently shown on the canvas to different location. When one or more wires are attached to a block that is moved, the wires are also moved.
 
-**To move a block**
+##### To move a block
 
--   On the canvas of the model editor, click the block that you want to move, hold down the mouse button and drag the block to the new location.
+On the canvas of the model editor, click the block that you want to move, hold down the mouse button and drag the block to the new location.
 
--   Or to move several blocks at the same time, select them as described in [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires). Then click and hold down the mouse button and immediately drag the blocks to the new location \(do not wait until the mouse pointer changes\).
+Alternatively, to move several blocks at the same time, select them as described in [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires). Then click and hold down the mouse button and immediately drag the blocks to the new location \(do not wait until the mouse pointer changes\).
 
 #### Duplicating a block
 
@@ -248,7 +248,7 @@ You can duplicate each block that is currently shown on the canvas. The original
 
 When you duplicate a single block, the attached wires are not automatically duplicated. When you duplicate several blocks at the same time, however, the attached wires between the selected blocks are automatically duplicated.
 
-**To duplicate a block**
+##### To duplicate a block
 
 -   On the canvas of the model editor, click the block that you want to duplicate and then do one of the following:
     -   Click the **Duplicate** command which is shown at the bottom of the block parameter editor.
@@ -272,7 +272,7 @@ See [Wires and blocks](/streaming-analytics/analytics-builder/#wires-and-blocks)
 
 ##### To add a wire between two blocks
 
--   On the canvas of the model editor, click the output port of the block that you want to connect and drag the mouse to the input port of another block.
+On the canvas of the model editor, click the output port of the block that you want to connect and drag the mouse to the input port of another block.
 
 #### Changing a wire
 
@@ -588,10 +588,10 @@ You can also copy a group into a different model, see [Copying items to a differ
 
 ##### To duplicate a group
 
--   On the canvas of the model editor, click the group that you want to duplicate \(it does not matter whether the group is currently collapsed or expanded\) and then do one of the following:
+On the canvas of the model editor, click the group that you want to duplicate \(it does not matter whether the group is currently collapsed or expanded\) and then do one of the following:
 
-    -   Press Ctrl+C to copy the group, and then press Ctrl+V to paste the group.
-    -   Or press Ctrl and drag the group to be duplicated to the position at which you want to place the duplicate.
+-   Press Ctrl+C to copy the group, and then press Ctrl+V to paste the group.
+-   Or press Ctrl and drag the group to be duplicated to the position at which you want to place the duplicate.
 
 #### Ungrouping a group
 
@@ -617,7 +617,7 @@ When you remove a group, all blocks and wires within this group are removed from
 
 ##### To remove a group
 
--   On the canvas of the model editor, click the group that you want to remove \(it does not matter whether it is currently collapsed or expanded\) and press Del.
+On the canvas of the model editor, click the group that you want to remove \(it does not matter whether it is currently collapsed or expanded\) and press Del.
 
 ### Managing the canvas
 

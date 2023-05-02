@@ -543,7 +543,7 @@ where:
 -   `hostname` is the host name of your tenant where your user application is deployed.
 -   The `category` is always `analytics.builder`.
 
-For example \(Bash shell\):
+**Example (Bash shell):**
 
 `curl --user User123 -X POST -H 'Content-Type: application/json' -d '{"category": "analytics.builder", "key": "numWorkerThreads", "value": "4"}' -k https://mytenant/tenant/options`
 

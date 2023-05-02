@@ -1,10 +1,10 @@
 ---
-title: Infrastructure
+title: Setting up the infrastructure
 icon: "dlt-c8y-icon-server"
 type: root
 layout: redirect
 bundle: edge-infrastructure
-section: 
+section:
   - edge_server
 weight: 11
 ---

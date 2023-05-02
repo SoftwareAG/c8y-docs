@@ -1,5 +1,5 @@
 ---
-title: "Edge"
+title: "Cumulocity IoT Edge"
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 weight: 60
 svg: '<svg
@@ -255,4 +255,4 @@ svg: '<svg
 '
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam non quas, voluptate nobis praesentium ab aut eius asperiores sint dolores dolore magnam nihil? Optio perspiciatis in, rerum minus ipsa aut.
+Cumulocity IoT Edge is the single-server variant of the Cumulocity IoT platform, designed to run in factories on industrial PC’s or local servers, that is, in the same site (“onsite”) in which the IoT assets are located.

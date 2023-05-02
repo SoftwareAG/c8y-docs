@@ -64,7 +64,7 @@ The model manager offers several ways to reduce the number of cards that are sho
 
 Filtering also works in combination with a model or sample name that you specify in the **Model name** or **Sample name** search box which is explained in [The model manager user interface](/streaming-analytics/analytics-builder/#the-model-manager-user-interface).
 
-**To filter the models or samples**
+#### To filter the models or samples
 
 1.  On the **Models** or **Samples** tab of the model manager, click **More filters** in the toolbar.
 
@@ -116,7 +116,7 @@ The new model will only be listed in the model manager, when you save the model 
 
 You can also create a new model from a sample. See [Creating a model from a sample](/streaming-analytics/analytics-builder/#creating-a-model-from-a-sample) for more information.
 
-**To add a new model**
+#### To add a new model
 
 1.  On the **Models** tab of the model manager, click **New model** in the toolbar.
 
@@ -136,13 +136,13 @@ You can edit \(or view\) each model that is currently listed in the model manage
 
 If a model is in the Active state, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save button in the model editor is therefore disabled.
 
-**To edit a model**
+#### To edit a model
 
--   On the **Models** tab of the model manager, simply click the card that is shown for the model \(but not on the toggle button for changing the state or the drop-down menu for changing the mode\).
+On the **Models** tab of the model manager, simply click the card that is shown for the model \(but not on the toggle button for changing the state or the drop-down menu for changing the mode\).
 
-    Or click the actions menu of the card and then click **Edit**.
+Alternatively, click the actions menu of the card and then click **Edit**.
 
-    If the model is in the Active state, a dialog appears informing you that you can only view the model. When you click **Continue**, the model editor appears and you can view the model, but you cannot change it.
+If the model is in the "Active" state, a dialog appears informing you that you can only view the model. When you click **Continue**, the model editor appears and you can view the model, but you cannot change it. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
 
     See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
 
@@ -160,14 +160,14 @@ Each instance can then use different values for the template parameters and can 
 The actions below are only available when template parameters have been defined for the model, that is, when the card for the model shows the number of defined instances.
 {{< /c8y-admon-info>}}
 
-**To edit the instances of a model**
+#### To edit the instances of a model
 
--   On the **Models** tab of the model manager, click the total number of instances on the front of the card.
+On the **Models** tab of the model manager, click the total number of instances on the front of the card.
 
-    Alternatively, you can also do one the following:
+Alternatively, you can also do one the following:
 
-    -   Click the actions menu of the card and then click **Instances**.
-    -   Or click **Show instances summary** to flip the card and then click the **Edit Instances** button on the back of the card.
+- Click the actions menu of the card and then click **Instances**.
+- Or click **Show instances summary** to flip the card and then click the **Edit Instances** button on the back of the card.
 
         {{< c8y-admon-info>}}
 **Show instances summary** is only visible \(and thus you can only get to the back of the card\) if there are any instances \(regardless of state\).
@@ -202,7 +202,7 @@ The above information on the different states and modes similarly applies for th
 
 When a model is imported by loading a JSON file, it is always imported as an inactive model.
 
-**To deploy a model**
+#### To deploy a model
 
 1.  On the **Models** tab of the model manager, click the drop-down menu on the card for the model that you want to deploy and select one of **Production**, **Test** or **Simulation**.
 
@@ -220,9 +220,9 @@ When you undeploy a model, the model is stopped and no longer processes incoming
 If you want to undeploy the instances of a template model, see [Undeploying an instance](/streaming-analytics/analytics-builder/#undeploying-an-instance).
 {{< /c8y-admon-info>}}
 
-**To undeploy a model**
+#### To undeploy a model
 
--   On the **Models** tab of the model manager, click the toggle button on the card for the model that you want to undeploy so that **Inactive** is then shown on the button.
+In the **Models** tab of the model manager, click the toggle button on the card for the model that you want to undeploy so that **Inactive** is then shown on the button.
 
 ### Duplicating a model
 
@@ -230,27 +230,27 @@ You can duplicate each model that is currently listed in the model manager.
 
 The duplicated model gets the same name as the original model followed by the number sign \(\#\) and a number. For example, when the name of the original model is "My Model", the name of the first duplicate is "My Model \#1". The number in the model name is increased by one with each subsequent duplicate that you create. The duplicated model gets the same description as the original model. It is recommended that you edit the duplicate and give the model a meaningful name and description.
 
-**To duplicate a model**
+#### To duplicate a model
 
--   On the **Models** tab of the model manager, click the actions menu of the model that you want to duplicate and then click **Duplicate**.
+On the **Models** tab of the model manager, click the actions menu of the model that you want to duplicate and then click **Duplicate**.
 
-    A card for the duplicated model is immediately shown in the model manager.
+A card for the duplicated model is immediately shown in the model manager.
 
 ### Exporting a model
 
 You can export each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current {{< product-c8y-iot >}} tenant to a different tenant. The model is saved in JSON format.
 
-**To export a model**
+#### To export a model
 
--   On the **Models** tab of the model manager, click the actions menu of the model that you want to export and then click **Export**.
+On the **Models** tab of the model manager, click the actions menu of the model that you want to export and then click **Export**.
 
-    The resulting behavior depends on your browser. The model is usually exported to the download location of your browser.
+The resulting behavior depends on your browser. The model is usually exported to the download location of your browser.
 
 ### Importing a model
 
 You can import a model that has previously been exported \(in JSON format\). This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
 
-**To import a model**
+#### To import a model
 
 1.  On the **Models** tab of the model manager, click **Import model** in the toolbar.
 
@@ -258,13 +258,13 @@ You can import a model that has previously been exported \(in JSON format\). Thi
 
 3.  Select the model and click **Open**.
 
-    A card for the imported model is shown in the model manager.
+A card for the imported model is shown in the model manager.
 
 ### Removing a model
 
 You can remove each model that is currently listed in the model manager. When you remove a model that is currently deployed, it is first undeployed and then removed.
 
-**To remove a model**
+#### To remove a model
 
 1.  On the **Models** tab of the model manager, click the actions menu of the model that you want to remove and then click **Remove**.
 
@@ -274,9 +274,9 @@ You can remove each model that is currently listed in the model manager. When yo
 
 You can refresh the display to show any changes other users have made since the page loaded, or to see whether deployed models have entered a failed state.
 
-**To reload all models**
+#### To reload all models
 
--   On the **Models** tab of the model manager, click **Reload** in the toolbar.
+On the **Models** tab of the model manager, click **Reload** in the toolbar.
 
 ### Viewing a sample
 
@@ -284,11 +284,11 @@ The samples are always in read-only mode. You can view the contents of each samp
 
 For example, you can look at the block parameters and view the documentation for each block that is used in the sample. You can navigate and zoom the sample in the same way as a regular model, but you cannot add or edit anything. However, you can create a new model from a sample \(see also [Creating a model from a sample](/streaming-analytics/analytics-builder/#creating-a-model-from-a-sample)\).
 
-**To view a sample**
+#### To view a sample
 
--   On the **Samples** tab of the model manager, simply click the card that is shown for the sample.
+On the **Samples** tab of the model manager, simply click the card that is shown for the sample.
 
-    Or click the actions menu of the card and then click **View**.
+Alternatively, click the actions menu of the card and then click **View**.
 
 ### Creating a model from a sample
 
@@ -300,8 +300,8 @@ You must save the new model so that it is listed in the model manager. If a mode
 
 **To create a model from a sample**
 
--   On the **Samples** tab of the model manager, click the actions menu of the sample from which you want to create a new model and then click **Create model from sample**.
+On the **Samples** tab of the model manager, click the actions menu of the sample from which you want to create a new model and then click **Create model from sample**.
 
-    Or, when the sample is currently shown in the model editor, click **Create model from sample** in the toolbar.
+Alternatively, when the sample is currently shown in the model editor, click **Create model from sample** in the toolbar.
 
-    The new model is immediately shown in the model editor and you can now change each aspect of the model.
+The new model is immediately shown in the model editor and you can now change each aspect of the model.

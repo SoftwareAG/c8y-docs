@@ -270,7 +270,7 @@ To see the names of the ports, click the block to select it. Or move the mouse p
 
 See [Wires and blocks](/streaming-analytics/analytics-builder/#wires-and-blocks) for detailed information on the types of values that can be sent between two blocks, the processing order of wires, restrictions, and more.
 
-**To add a wire between two blocks**
+##### To add a wire between two blocks
 
 -   On the canvas of the model editor, click the output port of the block that you want to connect and drag the mouse to the input port of another block.
 
@@ -280,7 +280,7 @@ You can change the path that a wire takes to the block to which it is currently 
 
 Wires cannot create cycles. See [Wire restrictions](/streaming-analytics/analytics-builder/#wire-restrictions) for detailed information.
 
-**To change a wire**
+##### To change a wire
 
 1.  On the canvas of the model editor, click the wire that you want to change.
 
@@ -296,7 +296,7 @@ Wires cannot create cycles. See [Wire restrictions](/streaming-analytics/analyti
 
 You can remove each block or wire that is currently shown on the canvas. When you remove a block, all wires that are attached to this block are automatically removed.
 
-**To remove a block or wire**
+##### To remove a block or wire
 
 -   On the canvas of the model editor, click the block or wire that you want to remove and press Del.
 
@@ -314,7 +314,7 @@ It is not possible to undo/redo the change to a model name or its description.
 To use the key combinations mentioned below, the canvas must have the focus. When the documentation pane or the palette currently has the focus, the change on the canvas is not undone/redone.
 {{< /c8y-admon-info>}}
 
-**To undo or redo an operation**
+##### To undo or redo an operation
 -   To undo the last operation, click the following button in the toolbar of the model editor or press Ctrl+Z.
     ![Undo icon](/images/streaming-analytics/analytics-builder/icon-undo.png)
 
@@ -348,7 +348,7 @@ If you change more than one group to a device at a time, then only the first spe
 
 After you have replaced the devices, you need to verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The {{< product-c8y-iot >}} fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
 
-**To replace devices, groups and assets**
+##### To replace devices, groups and assets
 
 1.  In the toolbar of the model editor, click the following button:
     ![Replace icon](/images/streaming-analytics/analytics-builder/icon-replace.png)
@@ -386,7 +386,7 @@ It is also possible to define template parameters directly in the block paramete
 
 Models with no template parameters can be directly activated in the model manager, with a single instance of the model running. This is different when you save the model after you have assigned at least one template parameter to one or more block parameters, you can no longer activate the model directly in the model manager. Instead, you must create at least one instance of the model, and you then activate that instance using the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
-**To define the template parameters for the instances of the current model**
+##### To define the template parameters for the instances of the current model
 
 1.  In the toolbar of the model editor, click the following button to invoke the **Template Parameters** dialog box.
     ![Template parameters icon](/images/streaming-analytics/analytics-builder/icon-model-parameters.png)
@@ -416,7 +416,7 @@ Models with no template parameters can be directly activated in the model manage
     -   **Optional**. An optional value can remain blank or can be set later by the instance maintainer. When you select this check box, it is not possible to specify a default value.
     -   **Default Value**. You can only specify a default value when the **Optional** check box is not selected.
 
-        Exception: Boolean types always have a value and cannot be optional. They are “false” by default \(that is, the check box for the default value is not selected\).
+        **Exception**: Boolean types always have a value and cannot be optional. They are “false” by default \(that is, the check box for the default value is not selected\).
 
         If you specify a default value, this default value will be provided in the instance editor when the instance maintainer creates a new instance. The instance maintainer can then either leave this default value unmodified or change it as required for that instance.
 
@@ -448,7 +448,7 @@ You can copy any items on the canvas \(blocks, groups, and attached wires\) and 
 There may be performance issues if you copy many input blocks and output blocks. This is because this operation requires access to the inventory service of {{< product-c8y-iot >}} to get the information about the devices that are represented by these blocks.
 {{< /c8y-admon-caution>}}
 
-**To copy items to a different model**
+##### To copy items to a different model
 
 1.  On the canvas of the model editor, select all items that you want to copy and press Ctrl+C.
 
@@ -490,7 +490,7 @@ You can add any blocks that are currently shown on the canvas \(including the wi
 
 It is not possible to create an empty group. You first have to add a group as described below. Once the group exists, you can add more blocks to the group, either from the palette or from the canvas, as described in [Adding a block](/streaming-analytics/analytics-builder/#adding-a-block) and [Moving blocks into a group](/streaming-analytics/analytics-builder/#moving-blocks-into-a-group).
 
-**To add a group**
+##### To add a group
 
 1.  On the canvas of the model editor, select one or more blocks that you want to add to a group. You need not select wires; all existing wires are retained. See also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires).
 
@@ -511,7 +511,7 @@ If you want to make the group contents visible again \(for example, to edit bloc
 
 When you save the model, the state of each group \(that is, whether it is currently collapsed or expanded\) is stored. The next time you edit the model, its contents will be shown as after the last save.
 
-**To collapse or expand a group**
+##### To collapse or expand a group
 
 -   To collapse a group, click the following control which is shown next to the group name:
     ![Collapse icon](/images/streaming-analytics/analytics-builder/icon-group-collapse.png)
@@ -527,7 +527,7 @@ If a group name is longer than can be shown in the group label, move the mouse p
 
 It is not possible to have groups without names. If you delete a group name, the previous name is automatically used again.
 
-**To rename a group**
+##### To rename a group
 
 1.  In the model editor, select the group and then click on the group name. You can either do this when the group is collapsed or expanded \(see also [Collapsing and expanding a group](/streaming-analytics/analytics-builder/#collapsing-and-expanding-a-group)\). This selects the entire name for editing.
 
@@ -541,7 +541,7 @@ You can also drag a block from the palette into an existing group. See [Adding a
 
 You can only move/drag blocks into a group when its contents are visible, that is, when the group is currently expanded. See also [Collapsing and expanding a group](/streaming-analytics/analytics-builder/#collapsing-and-expanding-a-group).
 
-**To move blocks into a group**
+##### To move blocks into a group
 
 1.  Make sure that the group into which you want to move the blocks is not collapsed.
 
@@ -558,7 +558,7 @@ You can move a block from a group to the canvas. All existing wires are retained
 
 When the last item of a group has been moved to the canvas, the group is automatically removed. If you want to move all items to the canvas at the same time, you can simply ungroup the entire group. See [Ungrouping a group](/streaming-analytics/analytics-builder/#ungrouping-a-group).
 
-**To move blocks from a group to the canvas**
+##### To move blocks from a group to the canvas
 
 -   To move one or more blocks at the same time:
 
@@ -586,7 +586,7 @@ Wires coming in from blocks outside of the group or going from the group to bloc
 
 You can also copy a group into a different model, see [Copying items to a different model](/streaming-analytics/analytics-builder/#copying-items-to-a-different-model).
 
-**To duplicate a group**
+##### To duplicate a group
 
 -   On the canvas of the model editor, click the group that you want to duplicate \(it does not matter whether the group is currently collapsed or expanded\) and then do one of the following:
 
@@ -599,7 +599,7 @@ When you ungroup a group, the group is removed and all the blocks from that grou
 
 You can ungroup several groups at the same time. In this case, it is important that no block or wire is selected either within or without the selected groups, otherwise ungrouping is not possible.
 
-**To ungroup a group**
+##### To ungroup a group
 
 1.  On the canvas of the model editor, select one or more groups that you want to ungroup. It does not matter whether a group is currently collapsed or expanded.
 
@@ -615,7 +615,7 @@ You can remove each group that is currently shown on the canvas. Wires to blocks
 When you remove a group, all blocks and wires within this group are removed from the model.
 {{< /c8y-admon-caution>}}
 
-**To remove a group**
+##### To remove a group
 
 -   On the canvas of the model editor, click the group that you want to remove \(it does not matter whether it is currently collapsed or expanded\) and press Del.
 
@@ -625,7 +625,7 @@ When you remove a group, all blocks and wires within this group are removed from
 
 If your model is too large to fit onto the visible part of the canvas, you can use the mouse to drag the parts of the model into view that are currently outside of the window. You can do this either directly on the canvas or in the overview area. The overview area always shows the entire model. If the overview area is currently not shown, see [Showing and hiding the overview](/streaming-analytics/analytics-builder/#showing-and-hiding-the-overview).
 
-**To navigate in a large model**
+##### To navigate in a large model
 
 1.  In the model editor, position the mouse over a free spot of the canvas \(which does not contain a block or wire\) or anywhere over the overview area.
 
@@ -639,7 +639,7 @@ When you hold down the mouse button for a longer time over a free spot of the ca
 
 The overview area, which shows the entire model, is shown at bottom right of the canvas. If you do not need the overview, you can hide it.
 
-**To show or hide the overview**
+##### To show or hide the overview
 
 -   To hide the overview, click the following control which is shown directly above the overview area:
     ![Hide overview icon](/images/streaming-analytics/analytics-builder/icon-overview-hide.png)
@@ -658,7 +658,7 @@ The toolbar of the model editor indicates the current zoom percentage for the ca
 When you use the key combinations mentioned below, the currently selected area defines what is to be zoomed. When the canvas has the focus (for example, when you have just selected a block or wire), only the content of the canvas is zoomed. When the documentation pane or the palette currently has the focus, the browser's zoom functionality is used and all of the browser content is zoomed (and the zoom percentage in the toolbar remains unchanged).
 {{< /c8y-admon-info>}}
 
-**To zoom the canvas**
+##### To zoom the canvas
 
 -   To zoom out, click the following button in the toolbar of the model editor:
     ![Zoom out icon](/images/streaming-analytics/analytics-builder/icon-zoomout.png)
@@ -672,7 +672,7 @@ When you use the key combinations mentioned below, the currently selected area d
 
 The blocks, wires and groups on the canvas always snap to a grid. You can decide whether the grid is to be shown or not. The grid is not shown by default. When you zoom the canvas, the grid is zoomed accordingly.
 
-**To show or hide the grid**
+##### To show or hide the grid
 
 -   In the model editor, click the toolbar button for toggling the display of the grid.
 

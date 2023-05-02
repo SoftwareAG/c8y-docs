@@ -15,7 +15,7 @@ send Event(..., {"fragment":<any>"value"}) to Event.SEND_CHANNEL;
 
 The `MeasurementValue` type is provided for the measurements in the `Measurement` type. `MeasurementValue` has `value` and `unit` fields and `params` for other fragments.
 
-Example 1:
+**Example 1**:
 
 ```java
 send Measurement("", "c8y_TemperatureMeasurement", "12345", currentTime, {

@@ -641,11 +641,11 @@ The overview area, which shows the entire model, is shown at bottom right of the
 
 ##### To show or hide the overview
 
--   To hide the overview, click the following control which is shown directly above the overview area:
-    ![Hide overview icon](/images/streaming-analytics/analytics-builder/icon-overview-hide.png)
+To hide the overview, click the following control which is shown directly above the overview area:
+![Hide overview icon](/images/streaming-analytics/analytics-builder/icon-overview-hide.png)
 
--   To show the overview, click the following control at the bottom right of the canvas:
-    ![Show overview icon](/images/streaming-analytics/analytics-builder/icon-overview-show.png)
+To show the overview, click the following control at the bottom right of the canvas:
+![Show overview icon](/images/streaming-analytics/analytics-builder/icon-overview-show.png)
 
 #### Zooming the canvas
 
@@ -660,13 +660,13 @@ When you use the key combinations mentioned below, the currently selected area d
 
 ##### To zoom the canvas
 
--   To zoom out, click the following button in the toolbar of the model editor:
-    ![Zoom out icon](/images/streaming-analytics/analytics-builder/icon-zoomout.png)
-    Or press Ctrl and the minus key.
+To zoom out, click the following button in the toolbar of the model editor:
+![Zoom out icon](/images/streaming-analytics/analytics-builder/icon-zoomout.png)
+Alternatively, press Ctrl and the minus key.
 
--   To zoom in, click the following button in the toolbar of the model editor:
-    ![Zoom in icon](/images/streaming-analytics/analytics-builder/icon-zoomin.png)
-    Or press Ctrl and the plus key.
+To zoom in, click the following button in the toolbar of the model editor:
+![Zoom in icon](/images/streaming-analytics/analytics-builder/icon-zoomin.png)
+Alternatively, press Ctrl and the plus key.
 
 #### Showing and hiding the grid
 
@@ -674,12 +674,12 @@ The blocks, wires and groups on the canvas always snap to a grid. You can decide
 
 ##### To show or hide the grid
 
--   In the model editor, click the toolbar button for toggling the display of the grid.
+In the model editor, click the toolbar button for toggling the display of the grid.
 
-    When the grid is hidden, the button looks as follows:
-    ![Icon when grid is hidden](/images/streaming-analytics/analytics-builder/icon-grid-inactive.png)
+When the grid is hidden, the button looks as follows:
+![Icon when grid is hidden](/images/streaming-analytics/analytics-builder/icon-grid-inactive.png)
 
-    When the grid is shown, the button looks as follows:
-    ![Icon when grid is shown](/images/streaming-analytics/analytics-builder/icon-grid-active.png)
+When the grid is shown, the button looks as follows:
+![Icon when grid is shown](/images/streaming-analytics/analytics-builder/icon-grid-active.png)
 
-    If the model is in the Active state \(read-only mode\), it is not possible to toggle the display of the grid and this button is therefore disabled.
+If the model is in the Active state \(read-only mode\), it is not possible to toggle the display of the grid and this button is therefore disabled.

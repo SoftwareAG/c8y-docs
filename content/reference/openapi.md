@@ -35,4 +35,4 @@ Our API reference has moved:
 We now use the [OpenAPI Specification](https://swagger.io/specification) to maintain our API documentation. Visit our new [OpenAPI documentation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}) and have a look.
 
 [Link](/reference/link-test/link-test)
-![Image](/images/image-test/image-test.png)
+![Image](/images/rest/image-test.png)

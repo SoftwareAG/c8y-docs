@@ -132,7 +132,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 **SmartREST example**
 
-Upload agent details using the [122](guides/reference/smartrest-two/#122) static template:
+Upload agent details using the [122](/reference/smartrest-two/#122) static template:
 
 `122,thin-edge.io,0.6,https://thin-edge.io/,Software AG`
 

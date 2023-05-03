@@ -371,7 +371,6 @@ Beispiel:
 
 In der Registerkarte **Netzwerk** können Parameter für das mobile Netzwerk (WAN) und das lokale Netzwerk (LAN) angezeigt und konfiguriert werden.
 
-english image?
 ![Network tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-network.png)
 
 Die WAN-Parameter auf der Benutzeroberfläche entsprechen dem ersten im Router gespeicherten Profil. Diese Parameter können remote oder per SMS konfiguriert werden.

@@ -64,7 +64,6 @@ Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach b
 
 Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
-missing image?
 ![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
 
 {{< c8y-admon-info >}}

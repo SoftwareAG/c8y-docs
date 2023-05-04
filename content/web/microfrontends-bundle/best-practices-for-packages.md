@@ -38,11 +38,11 @@ However, if one of the available blueprints (Administration -> Ecosystem -> Exte
 This section is about explaining the developer story of blueprints and plugins and will explain those details as well as the best practices to apply.
 
 #### Where do I start the developer journey for plugins or blueprints?
-Basically all developer stories start with our CLI tool. You can scaffold a new application and decide, which demo you want to use. E.g. for a plugin you can try the `widget-plugin` demo. This chapter will not go into details on how to do this (it ws already explained in earlier chapters). Instead it will explain, what makes a application a plugin or a blueprint and what exactly is the difference.
+Basically all developer stories start with our CLI tool. You can scaffold a new application and decide, which demo you want to use. E.g. for a plugin you can try the `widget-plugin` demo. This chapter will not go into details on how to do this (it was already explained in earlier chapters). Instead it will explain, what makes an application a plugin or a blueprint and what exactly is the difference.
 
 First of all, there is no big different in between usual applications, blueprints and plugins. They are all build, tested and deployed to the application API. However plugins and blueprints have some detail information in their *manifest file*.
 
- > The *manifest file* contains all the options that are stored in the `package.json` `c8y.application` property. On build it will be compiled to a cumulocity.json file. When you upload a archive containing a cumulocity.json file, it's information is additionally added to the application API and therefore the information can be requested by any application.
+ > The *manifest file* contains all the options that are stored in the `package.json` `c8y.application` property. On build it will be compiled to a cumulocity.json file. When you upload an archive containing a cumulocity.json file, it's information is additionally added to the application API and therefore the information can be requested by any application.
 
 There are basically 2 important properties to tell, that the application is a plugin and which type it is. Additional there are some more properties, that are either used for plugins or blueprints. The following list are the properties that are relevant in a manifest file for a micro frontend:
 
@@ -73,7 +73,7 @@ There are basically 2 important properties to tell, that the application is a pl
 The properties are already in detail explained in the step-by-step scaffolding of a [micro frontend](#2-differences-in-approach-to-creating-custom-widgets). However, there are some more properties that might be from interest for creating a meaningful plugin or blueprint:
 
  - `c8y.application.noAppSwitcher`: This should always be set to `true`, as you don't want to show a blueprint or a plugin in the app-switcher (UI component in the upper right corner, to switch between your installed applications)
- - `version`: This is the version that is used and displayed to the end-user. This version will be pinned if a plugin is installed and you cannot upload the same version twice. Therefore you should use some versioning schema like semver or similar.
+ - `version`: This is the version that is used and displayed to the end-user. This version will be pinned if a plugin is installed and you cannot upload the same version twice. You should use semver to allow the platform to verify the version correctly.
  - `description`: This is the first sentence the user will read about you application: Describe your application in one sentence to encourage the user to open the detail view.
  - `keywords`: Can be used to furthermore classify your application.
  - `author`: Informs the user who created the plugin/blueprint.

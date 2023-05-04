@@ -217,7 +217,7 @@ Folgende Informationen werden angezeigt:
 * Gestört - Anzahl der inaktiven Microservice-Instanzen
 * Erwartet - Anzahl der erwarteten Microservice-Instanzen
 * Name - Name der Microservice-Instanz
-* Neustarts - Anzahl der Neustarts von Microservice-Instanzen 
+* Neustarts - Anzahl der Neustarts von Microservice-Instanzen
 
 {{< c8y-admon-info >}}
 Bei mindestens einem Neustart wird über den Microservice-Instanznamen und die Anzahl der Neustarts informiert.
@@ -294,7 +294,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 1. Klicken Sie auf **Regel hinzufügen** in der oberen Menüleiste.
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
 <br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
-3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
+3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten von Daten > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
 4. Geben Sie optional eine Mandantenoption ein.
 5. Klicken Sie auf **Speichern**.
 

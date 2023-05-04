@@ -1,5 +1,5 @@
 ---
-title: Anwenden von Geschäftsregeln
+title: Verwalten von Geschäftsregeln
 weight: 50
 ---
 

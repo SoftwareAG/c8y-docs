@@ -143,7 +143,7 @@ In the top right corner of the **Subassets** tab, you can [assign devices](#assi
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
-You can view the hierarchy of the asset in the **Asset tree** tab. Initially the asset hierarchy is collapsed. Click the expand icon to view the next level of subassets or click **Expand all** on the top right to view all hierarchy levels.
+You can view the hierarchy of the asset in the **Asset tree** tab. Initially the asset hierarchy is collapsed. Click the expand icon to view the next level of subassets.
 
 Click **Add asset** to add more subassets or click **Import assets** to add [assets in bulk](/dtm/asset-hierarchy/#creating-assets-bulk-import).
 

@@ -13,7 +13,7 @@ You also have the opportunity to define properties or parameters of an asset thr
 To work with assets in the DTM application, navigate to the **Assets** page using the navigator menu on the left.
 When you first start using the DTM application, no assets are displayed in the **Assets** page by default.
 
-If you already created assets, you find them listed with its hierarchy on this page (see image below).
+If you already created assets, you find them listed in a hierarchical view on this page.
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
@@ -35,7 +35,7 @@ Initially, all the asset hierarchies are collapsed and it lists only the root as
 Click the asset name to view the asset details and the devices assigned to it.
 
 To edit or delete an asset from **Assets** page, click the menu icon at the right of the row and click either the edit or delete option.
-Select one or more assets and click **Delete** in the top banner to delete multiple assets at once.
+To delete multiple assets at once, select one or more assets and click **Delete** in the top banner.
 
 Select one or more assets to move from its current hierarchy to another. For steps to move assets between hierarchies, see [To move assets](/dtm/asset-hierarchy/#to-move-assets).
 

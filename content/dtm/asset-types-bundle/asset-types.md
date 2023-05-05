@@ -25,8 +25,8 @@ In the overview you see the following four categories:
 *	**Model name**: Name of the asset model
 *	**Key**: Unique identifier for the asset model
 *	**Description**: Brief description of the asset model
-*	**Child asset models**: Comma separated list of child asset models
-*  **Asset properties**: Comma separated list of asset properties
+*	**Child asset models**: List of child asset models
+*  **Asset properties**: List of asset properties
 
 Click **Configure columns** to configure the displayed columns.
 
@@ -210,10 +210,10 @@ To export asset models to add in another tenant, follow the steps below:
 1. In the **Asset models** page, click **Export asset models**. 
 2. In the resulting dialog, you see the list of asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
 3. Select one or more desired asset models.
-4. Click **Export** to export the selected asset models.
+4. Click **Export** to export the selection.
 5. The dialog closes and a JSON file named 'Export-asset-models.json' downloads.
 
-Use this downloaded file to import the asset models into a DTM application on another tenant.
+Use this downloaded file to import these asset models into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
 You can select a maximum of 20 asset models to export at one time.
@@ -231,10 +231,10 @@ You can select a child asset asset model to export without selecting its parent.
 To import asset models, follow the steps below:
 
 1. In the **Asset models** page, click **Import asset models**.
-2. Upload the JSON file in the **Drop file here** section in the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant. 
+2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant. 
 3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
-4. Click **Back** to go to previous step. Hover over the file name and click the delete icon to remove the current file and upload a different one.
 3. Click **Import** to import the asset models.
+4. Or, click **Back** to go to previous step. Hover over the file name and click the delete icon to remove the current file and upload a different one.
 4. View newly imported asset models in the **Asset models** page.
 
 ![Import asset models](/images/dtm/asset-type/dtm-asset-type-import.png)

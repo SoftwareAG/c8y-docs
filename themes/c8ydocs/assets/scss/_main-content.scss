@@ -178,6 +178,7 @@
     color: rgba($blue-35, .8);
     font-weight: 300;
     margin-top: 4rem;
+    padding-top: 45px;
   }
 
   > h4 {
@@ -185,6 +186,7 @@
     font-weight: bold;
     color: $gray-40;
     margin-top: 3rem;
+    padding-top: 45px;
     > small {
       align-self: center;
       order: 8;
@@ -205,12 +207,6 @@
     border-radius: 4px;
     overflow: auto;
     margin: 1.5rem;
-  }
-
-  &:nth-child(2) {
-    > h2 {
-      padding-top: 0;
-    }
   }
 }
 

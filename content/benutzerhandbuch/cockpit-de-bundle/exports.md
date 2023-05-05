@@ -65,8 +65,6 @@ Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach b
 
 Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
-
 {{< c8y-admon-info >}}
 Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
 {{< /c8y-admon-info >}}
@@ -82,8 +80,6 @@ Dokumente, bei denen keinerlei Werte für die ausgewählten Felder definiert sin
 Klicken Sie auf **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie auf **Spalte** oder **Pfad**, um eine Spalte und einen Pfad einzugeben. Wenn Sie beispielsweise das Feld **Alarme** aktivieren, können Sie etwa "Schweregrad" als Spalte und "severity" als Pfad eingeben, um Daten zu Alarm-Schweregraden zu erhalten.
 
 Klicken Sie auf **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie auf **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
-
-![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
 
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
 
@@ -102,8 +98,6 @@ Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise
 #### So planen Sie einen Export
 
 Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**.
-
-![Export details](/images/benutzerhandbuch/cockpit/cockpit-export-add-schedule.png)
 
 Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten Export per E-Mail zu erhalten.
 
@@ -138,15 +132,11 @@ Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
 
 Der Exportplan wird zu den Exportdetails hinzugefügt.
 
-![Scheduled exports list](/images/benutzerhandbuch/cockpit/cockpit-export-schedule-list.png)
-
 ##### Migration geplanter Exports
 
 In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in [Apama Streaming Analytics](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt.
 
 Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert.
-
-![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
 
 {{< c8y-admon-important title="Wichtig">}}
 Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.

@@ -15,10 +15,8 @@ helpcontent:
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-To use this feature the user must have one or more of "Audits" permissions:
-
-- **READ**: To view audit logs.
-- **ADMIN**: To manage audit logs (create, update, delete).
+- To view audit logs: READ permission for permission type “Audit”
+- To create audit logs: Admin permission for permission type "Audit"
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}

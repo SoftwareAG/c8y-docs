@@ -9,6 +9,13 @@
 - Clone the repository
 - Install hugo by using snap `snap install hugo --channel=extended`
 - Open a terminal window on project directory and type `hugo server`
+- Open a browser and enter the following URL:
+  http://localhost:1313/guides/<content-sub-directory>
+
+**Important:** Make sure to specify the `content` folder sub-directory that contains your guide,
+for example http://localhost:1313/guides/welcome/.
+Specifying only http://localhost:1313/guides results in a redirect
+defined by `guidesRedirect` configuration parameter.
 
 ## Structure
 

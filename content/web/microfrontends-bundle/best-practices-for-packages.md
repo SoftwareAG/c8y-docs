@@ -53,14 +53,20 @@ Plugins are easy to implement and can extend every part of the existing applicat
 
 This section is about explaining the developer story of blueprints and plugins and will explain those details as well as the best practices to apply.
 
-#### Where do I start the developer journey for plugins or blueprints?
-Basically all developer stories start with our CLI tool. You can scaffold a new application and decide, which demo you want to use. E.g. for a plugin you can try the `widget-plugin` demo. This chapter will not go into details on how to do this (it was already explained in earlier chapters). Instead it will explain, what makes an application a plugin or a blueprint and what exactly is the difference.
+#### Starting the developer journey for plugins and blueprints
+All developer stories start with our CLI tool.
+You can scaffold a new application and decide which demo you want to use.
+For example, for a plugin you can try the `widget-plugin` demo.
+This section does not go into details on how to do this (it was already explained in earlier sections).
+Instead it explains what makes an application a plugin or a blueprint and what the difference is.
 
 First of all, there is no big difference between usual applications, blueprints and plugins.
 They are all built, tested and deployed via the application API.
 However, plugins and blueprints have some detail information in their manifest file.
 
- > The *manifest file* contains all the options that are stored in the `package.json` `c8y.application` property. On build it will be compiled to a cumulocity.json file. When you upload an archive containing a cumulocity.json file, it's information is additionally added to the application API and therefore the information can be requested by any application.
+The manifest file contains all options that are stored in the `c8y.application` property in the *package.json* file.
+At build time, it is compiled to the *cumulocity.json* file.
+When you upload an archive containing a *cumulocity.json* file, its information is also accessible to the application API which makes the information available via request for other applications.
 
 There are two important properties that indicate if the application is a plugin and which type it is.
 There are additional properties that are either used for plugins or blueprints.
@@ -151,7 +157,7 @@ If required, verify your application with method 3.
 Avoid method 1 if you can, as you could run into common pitfalls explained in the next section.
 
 
-#### What are common developer pitfalls when developing a plugin?
+#### Common developer pitfalls when developing a plugin
  
 There are several issues to avoid:
 1. Routing: avoid commonly named routes. Don't use routes like `/home` instead, use `/<<my-unique-prefix>>/home`. Commonly named routes can be overwritten by other plugins. Do the same for any identifier you use in your development process.

@@ -121,7 +121,7 @@ By default, the password must meet the following conditions:
   * uppercase letters: `[A-Z]`, for example `ABCDEF`.
   * lowercase letters: `[a-z]`, for example `abcdef`.
   * numbers: `[0-9]`, for example: `123456`.
-  * platform accepts any other symbol as special character: `[^0-9a-zA-Z]`, for example `!@#$%^`.
+  * any other symbol as special character: `[^0-9a-zA-Z]`, for example `!@#$%^`.
 
 {{< c8y-admon-info >}}
 The password rules can be configured by the administrator, that means, your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.

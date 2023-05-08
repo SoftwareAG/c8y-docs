@@ -24,12 +24,20 @@ Folgende Typen sind verfügbar:
 </thead>
 <tbody>
 <tr>
+<td align="left"><a href="#recent-alarms">Aktuelle Alarme</a></td>
+<td align="left">Zeigt alle Alarme aller Schweregrade, sortiert nach Zeit.</td>
+</tr>
+<tr>
 <td align="left"><a href="#alarm-list">Alarmliste</a></td>
 <td align="left">Zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus.</td>
 </tr>
 <tr>
 <td align="left"><a href="#all-alarms">Alle kritischen Alarme</a></td>
 <td align="left">Zeigt alle Objekte mit einem kritischen Alarm an.</td>
+</tr>
+<tr>
+<td align="left"><a href="#traffic-light">Ampel</a></td>
+<td align="left">Zeigt die Zustände eines Geräts in Form einer Ampel.</td>
 </tr>
 <tr>
 <td align="left"><a href="#applications">Anwendungen</a></td>
@@ -46,6 +54,10 @@ Folgende Typen sind verfügbar:
 <tr>
 <td align="left"><a href="#widget-asset-table">Asset-Tabelle</a></td>
 <td align="left">Zeigt eine Tabelle mit Details zu einem ausgewählten Asset und allen seinen Kindgeräten.</td>
+</tr>
+<tr>
+<td align="left"><a href="#widget-image">Bild</a></td>
+<td align="left">Zeigt ein einzelnes Bild, das Sie aus Ihrem Dateisystem auswählen können.</td>
 </tr>
 <tr>
 <td align="left"><a href="#data-graph">Datenpunktgraph</a></td>
@@ -68,6 +80,10 @@ Folgende Typen sind verfügbar:
 <td align="left">Ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben.</td>
 </tr>
 <tr>
+<td align="left"><a href="#widget-message-sending">Gerätenachricht</a></td>
+<td align="left">Sendet eine Nachricht an ein Gerät.</td>
+</tr>
+<tr>
 <td align="left"><a href="#help-service">Hilfe und Service</a></td>
 <td align="left">Zeigt Links auf Hilfe- und Service-Dokumente an</td>
 </tr>
@@ -75,41 +91,23 @@ Folgende Typen sind verfügbar:
 <td align="left"><a href="#widget-html">HTML</a></td>
 <td align="left">Zeigt benutzerdefinierten Inhalt im HTML-Format.</td>
 </tr>
-<tr>
-<td align="left"><a href="#widget-image">Bild</a></td>
-<td align="left">Zeigt ein einzelnes Bild, das Sie aus Ihrem Dateisystem auswählen können.</td>
-</tr>
-<tr>
 <td align="left"><a href="#info-gauge">Infoanzeige</a></td>
 <td align="left">Visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.</td>
-</tr>
-<tr>
-<td align="left"><a href="#linear-gauge">Linearer Zeiger</a></td>
-<td align="left">Zeigt Datenpunkte in Form eines linearen Zeigers.</td>
 </tr>
 <tr>
 <td align="left"><a href="#widget-map">Karte</a></td>
 <td align="left">Zeigt den Standort eines Geräts oder aller Geräte einer Gruppe.</td>
 </tr>
 <tr>
-<td align="left"><a href="#widget-markdown">Markdown</a></td>
-<td align="left">Zeigt Markdown-Inhalte entweder von einer URL oder aus einer Datei an.</td>
-</tr>
-<tr>
-<td align="left"><a href="#widget-message-sending">Gerätenachricht</a></td>
-<td align="left">Sendet eine Nachricht an ein Gerät.</td>
-</tr>
-<tr>
 <td align="left"><a href="#pie-chart">Kuchendiagramm</a></td>
 <td align="left">Zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.</td>
 </tr>
 <tr>
-<td align="left"><a href="#radial-gauge">Tacho</a></td>
-<td align="left">Zeigt Datenpunkte in Form eines Tachos.</td>
+<td align="left"><a href="#linear-gauge">Linearer Zeiger</a></td>
+<td align="left">Zeigt Datenpunkte in Form eines linearen Zeigers.</td>
 </tr>
-<tr>
-<td align="left"><a href="#recent-alarms">Aktuelle Alarme</a></td>
-<td align="left">Zeigt alle Alarme aller Schweregrade, sortiert nach Zeit.</td>
+<td align="left"><a href="#widget-markdown">Markdown</a></td>
+<td align="left">Zeigt Markdown-Inhalte entweder von einer URL oder aus einer Datei an.</td>
 </tr>
 <tr>
 <td align="left"><a href="#relay-array-control">Relaisfeldsteuerung</a></td>
@@ -132,11 +130,21 @@ Folgende Typen sind verfügbar:
 <td align="left">Zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Silo-Darstellung an.</td>
 </tr>
 <tr>
-<td align="left"><a href="#traffic-light">Ampel</a></td>
-<td align="left">Zeigt die Zustände eines Geräts in Form einer Ampel.</td>
+<td align="left"><a href="#radial-gauge">Tacho</a></td>
+<td align="left">Zeigt Datenpunkte in Form eines Tachos.</td>
 </tr>
 </tbody>
 </table>
+
+
+<a name="recent-alarms"></a>
+### Aktuelle Alarme
+
+Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
+![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
+
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 <a name="alarm-list"></a>
 ### Alarmliste
@@ -164,6 +172,20 @@ Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alar
 ![Critical alarms](/images/benutzerhandbuch/cockpit/cockpit-widget-critical-alarms.png)
 
 Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
+
+<a name="traffic-light"></a>
+### Ampel
+
+Das "Ampel"-Widget visualisiert den Status eines Geräts in Form einer Ampel.
+
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Ziel-Assets oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
+|Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: true, 1, jede nicht-leere Zeichenkette, jede Zahl außer 0.
+
 
 <a name="applications"></a>
 ### Anwendungen
@@ -256,6 +278,13 @@ Sie können die Spalten umsortieren, in dem Sie auf das Symbol ganz links in ein
 
 Um ein Attribut oder eine Aktion zu löschen, fahren Sie mit dem Mauszeiger über die entsprechende Zeile und klicken Sie auf **Löschen** auf der rechten Seite.
 
+
+<a name="widget-image"></a>
+### Bild
+
+Das Widget "Bild" ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie aus Ihrem Dateisystem hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
+
 <a name="data-graph"></a>
 ### Datenpunktgraph
 
@@ -335,28 +364,19 @@ Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anz
 
 Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Cloud Fieldbus > Monitoring the device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) im *Protocol Integration Guide*.
 
+
+<a name="widget-message-sending"></a>
+### Gerätenachricht
+
+Das Widget "Gerätenachricht" sendet eine Nachricht an ein Gerät. Das Verhalten des Geräts selbst ist geräteunabhängig. Nur verfügbar für Geräte, die die Operation `c8y_Message` unterstützen.
+
+
 <a name="help-service"></a>
 ### Hilfe und Service
 
 Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Help and service widget](/images/benutzerhandbuch/cockpit/cockpit-widget-help-service.png)
-
-<a name="widget-image"></a>
-### Bild
-
-Das Widget "Bild" ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie aus Ihrem Dateisystem hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.
-
-<a name="info-gauge"></a>
-### Infoanzeige
-
-Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.
-
-![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
-
-Sie können einen Datenpunkt für den Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
-
-Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
 
 
 <a name="widget-html"></a>
@@ -402,18 +422,18 @@ Wenn Sie im Feld **HTML-Code** einen Link verwenden möchten, etwa zu einem Dash
   <a style="cursor:pointer;" onclick="location.hash = '#/group/<<group-id>>/dashboard/<<dashboard-id>>'">Link zu einem anderen Dashboard</a><br />
 ```
 
-<a name="linear-gauge"></a>
-### Linearer Zeiger
 
-Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Messgeräts. Minimale und maximale Zielwerte werden ebenfalls angezeigt.
+<a name="info-gauge"></a>
+### Infoanzeige
 
-![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-linear-gauge.png)
+Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.
 
-{{< c8y-admon-info >}}
-Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben.
-{{< /c8y-admon-info >}}
+![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-info-gauge.png)
 
-Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
+Sie können einen Datenpunkt für den Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.
+
+Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
+
 
 <a name="widget-map"></a>
 ### Karte
@@ -446,23 +466,6 @@ Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle
 Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbol.
 {{< /c8y-admon-info >}}
 
-<a name="widget-markdown"></a>
-### Markdown
-
-Das Widget "Markdown" kann zum Anzeigen von Markdown-Inhalten verwendet werden. Mithilfe des Widgets "Markdown" können Sie z. B. Benutzer über neue Funktionen informieren.
-
-![Markdown widget](/images/benutzerhandbuch/cockpit/cockpit-widget-markdown.png)
-
-Zum Bereitstellen von Markdown-Inhalten gibt es mehrere Möglichkeiten:
-
-* Hochladen einer Markdown-Datei.
-* Bereitstellen einer URL für eine externe Quelle.
-* Hinzufügen von "/README.md" als relativen Dateipfad, um die README-Datei der aktuellen Anwendung als Quelle bereitzustellen.
-
-<a name="widget-message-sending"></a>
-### Gerätenachricht
-
-Das Widget "Gerätenachricht" sendet eine Nachricht an ein Gerät. Das Verhalten des Geräts selbst ist geräteunabhängig. Nur verfügbar für Geräte, die die Operation `c8y_Message` unterstützen.
 
 <a name="pie-chart"></a>
 ### Kuchendiagramm
@@ -498,24 +501,34 @@ Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten i
 </tbody>
 </table>
 
-<a name="radial-gauge"></a>
-### Tacho
 
-Das Widget "Tacho" visualisiert Datenpunkte in Form eines Tachos.
+<a name="linear-gauge"></a>
+### Linearer Zeiger
 
-![Radial gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-radial-gauge.png)
+Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Messgeräts. Minimale und maximale Zielwerte werden ebenfalls angezeigt.
 
-Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Tacho" zu erstellen.
+![Info gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-linear-gauge.png)
+
+{{< c8y-admon-info >}}
+Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben.
+{{< /c8y-admon-info >}}
+
+Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
 
 
-<a name="recent-alarms"></a>
-### Aktuelle Alarme
+<a name="widget-markdown"></a>
+### Markdown
 
-Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
+Das Widget "Markdown" kann zum Anzeigen von Markdown-Inhalten verwendet werden. Mithilfe des Widgets "Markdown" können Sie z. B. Benutzer über neue Funktionen informieren.
 
-![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
+![Markdown widget](/images/benutzerhandbuch/cockpit/cockpit-widget-markdown.png)
 
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
+Zum Bereitstellen von Markdown-Inhalten gibt es mehrere Möglichkeiten:
+
+* Hochladen einer Markdown-Datei.
+* Bereitstellen einer URL für eine externe Quelle.
+* Hinzufügen von "/README.md" als relativen Dateipfad, um die README-Datei der aktuellen Anwendung als Quelle bereitzustellen.
+
 
 <a name="relay-array-control"></a>
 ### Relaisfeldsteuerung
@@ -588,15 +601,12 @@ Das "Silo"-Widget zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Si
 </tbody>
 </table>
 
-<a name="traffic-light"></a>
-### Ampel
 
-Das "Ampel"-Widget visualisiert den Status eines Geräts in Form einer Ampel.
+<a name="radial-gauge"></a>
+### Tacho
 
-**Konfigurierbare Parameter**
+Das Widget "Tacho" visualisiert Datenpunkte in Form eines Tachos.
 
-|Feld|Beschreibung|
-|:---|:---|
-|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
-|Ziel-Assets oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
-|Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: true, 1, jede nicht-leere Zeichenkette, jede Zahl außer 0.
+![Radial gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-radial-gauge.png)
+
+Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Tacho" zu erstellen.

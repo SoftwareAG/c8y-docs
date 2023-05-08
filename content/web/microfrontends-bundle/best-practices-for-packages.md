@@ -141,14 +141,14 @@ Therefore you can use the default Angular modules and verify them with the defau
 {{< product-c8y-iot >}} provides two more verification methods, so there are three ways of verifying and debugging your application:
  1. Classic: Run your application and import your module into the AppModule. Then start your application by running `c8ycli serve`.
  2. Lazy loading: Run your application but don't import the module. Instead, point the remote to your module (this is basically a self imported plugin). Point the `c8y.application.remotes` option to your module:
- ```
- "remotes": {
-    "<<contex-path>>": [
-      "<<module-name>>"
-     ]
-  }
- ```
- This has the benefit that your application acts as a shell and you can see where you might have issues with lazy loading.
+    ```
+    "remotes": {
+      "<<contex-path>>": [
+        "<<module-name>>"
+      ]
+    }
+    ```
+    This has the benefit that your application acts as a shell and you can see where you might have issues with lazy loading.
 
  3. Shell: Run the application and point it to any shell by running `c8ycli serve --shell cockpit`. This has the benefit of testing it in a real application. But as the shell application is already deployed, you might be getting unhelpful error-stacks.
 
@@ -165,26 +165,26 @@ There are several issues to avoid:
 2. Lazy loading: remember that every plugin is imported lazily. This means that the rules of lazily loaded modules apply to those modules.  Don't use `forRoot` on the ngx-components `CoreModule` or the `RoutingModule`. Use `forRoot` for any newly introduced dependency. 
 
 3. Injectors: With the lazy loading approach, injectors are sometimes an issue. Usually you have a new injector per plugin. This is done automatically as long as you use the hooks without a factory function. If you use a factory function, you must provide the injector:
-``` 
-import { Injectable, Injector } from '@angular/core';
-import { ActionBarItem, EmptyComponent } from '@c8y/ngx-components';
+    ``` 
+    import { Injectable, Injector } from '@angular/core';
+    import { ActionBarItem, EmptyComponent } from '@c8y/ngx-components';
 
-@Injectable()
-export class MyActionBarFactory {
-  constructor(private injector: Injector) {}
+    @Injectable()
+    export class MyActionBarFactory {
+      constructor(private injector: Injector) {}
 
-  get() {
-    const actionBarItem: ActionBarItem = {
-      component: EmptyComponent,
-      injector: this.injector, // (1)
-      placement: 'left'
-    };
-    return actionBarItem;
-  }
-}
-``` 
+      get() {
+        const actionBarItem: ActionBarItem = {
+          component: EmptyComponent,
+          injector: this.injector, // (1)
+          placement: 'left'
+        };
+        return actionBarItem;
+      }
+    }
+    ```
 
-`(1)`: This is important if the component you provided wants to use a service that is only available in your plugin. If you don't define the injector, it will use the root injector and therefore will lead to injector issues.
+    `(1)`: This is important if the component you provided wants to use a service that is only available in your plugin. If you don't define the injector, it will use the root injector and therefore will lead to injector issues.
 
 
 #### How to bundle assets in a package

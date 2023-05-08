@@ -22,9 +22,6 @@ Select a group from the groups list or from the navigator to see its details, pa
 
 You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator.
 
-<a name="assets"></a>
-### Assets hierarchy
-
 Assets represent business objects in general like buildings, machines, production units or cars.
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
@@ -46,7 +43,7 @@ Single devices are not managed in the Cockpit application. They are managed in t
 {{< /c8y-admon-info >}}
 
 <a name="hierarchies"></a>
-#### Asset hierarchy versus device hierarchy
+### Asset hierarchy versus device hierarchy
 
 {{< product-c8y-iot >}} supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
@@ -79,7 +76,7 @@ Gateway devices are as well represented as top level devices in the Device Manag
 As you can see from the example, devices can have completely different hierarchies in the Device Management application and in the Cockpit application:
 While inside Device Management all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
 
-#### Cockpit assets versus business assets
+### Cockpit assets versus business assets
 
 The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy.
 

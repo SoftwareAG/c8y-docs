@@ -4,14 +4,6 @@ title: Working with assets
 layout: bundle
 section:
   - app_development
-helpcontent:
-  - label: managing-assets
-    title: Managing assets
-    content: "Under **Subassets** all assets assigned to a particular group are listed. Subassets can either be other groups or devices.
-
-
-    Click **Assign devices** at the top right to assign devices to the group. You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
-
 ---
 
 <a name="navigating"></a>

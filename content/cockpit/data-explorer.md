@@ -2,7 +2,7 @@
 weight: 30
 title: Data explorer
 layout: bundle
-section: 
+section:
   - app_development
 helpcontent:
   - label: data-explorer
@@ -19,8 +19,6 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-In the data explorer, data points (that is measurements or sensor data) can be visualized.
-
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -31,7 +29,9 @@ ROLES & PERMISSIONS:
 Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
 {{< /c8y-admon-req >}}
 
-The data explorer is available for all assets at once or just for a particular asset.
+In the data explorer, data points (that is measurements or sensor data) can be visualized.
+
+The data explorer is available for all assets at once or just for a particular asset. To access the data explorer:
 
 - Click **Data explorer** in the navigator to visualize all data points of all assets.
 

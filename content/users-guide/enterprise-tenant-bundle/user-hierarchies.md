@@ -62,7 +62,7 @@ A user A has the role "business". User A becomes the owner of a new user B. User
 <a name="delegate"></a>
 ### Delegating user hierarchies to other users
 
-In {{< product-c8y-iot >}}, users can delegate their user hierarchies and permissions to another user (both users must be within the same hierarchy). The delegated user then has the same user management permissions as the user who activated the delegation. To do user management the delegated user must have the permission USER_MANAGEMENT_CREATE or use one of the predefined roles: "Shared User Management", "User Management".
+In {{< product-c8y-iot >}}, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation. To do user management, the delegated user must have CREATE permission for the "User management" permission type, which can be granted by assigning a predefined global role "Shared User Manager" or by assigning a custom global role with this permission.
 
 You may of course also delegate on a temporary basis, for example if you are temporarily unavailable.
 

@@ -54,7 +54,7 @@ Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktu
 
 Um Logeinträge leichter durchsuchen zu können, können diese gefiltert werden nach:
 
- - Typ (Alarm, Operation, Smart Rule und mehr.).
+ - Typ (Alarm, Operation, Smart Rule und mehr).
  - Datumsbereich mit einem "Von"- und/oder einem "Bis"-Datum.
  - Benutzer.
 

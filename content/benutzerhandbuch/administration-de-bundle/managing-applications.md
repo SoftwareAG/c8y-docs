@@ -296,7 +296,7 @@ Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien 
 
 ### Pakete
 
-Pakete sind Kombinationen von Plugins und Blueprints, die sich zu einer einzigen Datei zusammenfassen und dann für die Plattform bereitstellen lassen. Dadurch bieten Pakete eine bessere gemeinsame Nutzbarkeit und Wiederverwendbarkeit von UI-Funktionen in verschiedenen Anwendungen und ermöglichen das Hinzufügen von UI-Funktionen zu Anwendungen ohne Programmierkenntnisse.
+Pakete sind Kombinationen von Plugins und Blueprints, die sich zu einer einzigen Datei zusammenpacken und dann für die Plattform bereitstellen lassen. Dadurch bieten Pakete eine bessere gemeinsame Nutzbarkeit und Wiederverwendbarkeit von UI-Funktionen in verschiedenen Anwendungen und ermöglichen das Hinzufügen von UI-Funktionen zu Anwendungen ohne Programmierkenntnisse.
 
 Pakete können zwei Arten von Anwendungen enthalten:
 

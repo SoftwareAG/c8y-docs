@@ -46,10 +46,10 @@ The decision tree can be read from top (most effort, highest customization) to b
 For example, if you choose to do everything on your own, you must write your own login logic and cannot use our pre-built components like data-grid, dashboard or asset-selector.
 The development effort is very high.
 If you instead use the Web SDK you get a lot of functionality out of the box and by branding the application, you are able to make it look and feel like a product of your own development.
-Furthermore you can provide it as an application blueprint to your customers enabling them to brand it to according to their needs. 
+Furthermore you can provide it as an application blueprint to your customers enabling them to brand it to according to their needs.
 
 However, if one of the available blueprints (**Administration** > **Ecosystem** > **Extensions**) or the default applications (Cockpit, Device management or Administration) already mostly fit your case, but misses, for example, an extension, instead implement a plugin.
-Plugins are easy to implement and can extend every part of the existing applications. Furthermore, if you intend to provide those extensions to your customers you can do so and share any plugin. 
+Plugins are easy to implement and can extend every part of the existing applications. Furthermore, if you intend to provide those extensions to your customers you can do so and share any plugin.
 
 This section is about explaining the developer story of blueprints and plugins and will explain those details as well as the best practices to apply.
 
@@ -158,14 +158,14 @@ Avoid method 1 if you can, as you could run into common pitfalls explained in th
 
 
 #### Common developer pitfalls when developing a plugin
- 
+
 There are several issues to avoid:
 1. Routing: avoid commonly named routes. Don't use routes like `/home` instead, use `/<<my-unique-prefix>>/home`. Commonly named routes can be overwritten by other plugins. Do the same for any identifier you use in your development process.
 
-2. Lazy loading: remember that every plugin is imported lazily. This means that the rules of lazily loaded modules apply to those modules.  Don't use `forRoot` on the ngx-components `CoreModule` or the `RoutingModule`. Use `forRoot` for any newly introduced dependency. 
+2. Lazy loading: remember that every plugin is imported lazily. This means that the rules of lazily loaded modules apply to those modules.  Don't use `forRoot` on the ngx-components `CoreModule` or the `RoutingModule`. Use `forRoot` for any newly introduced dependency.
 
 3. Injectors: With the lazy loading approach, injectors are sometimes an issue. Usually you have a new injector per plugin. This is done automatically as long as you use the hooks without a factory function. If you use a factory function, you must provide the injector:
-    ``` 
+    ```
     import { Injectable, Injector } from '@angular/core';
     import { ActionBarItem, EmptyComponent } from '@c8y/ngx-components';
 
@@ -205,7 +205,7 @@ Typescript will throw an error, as the it does not know how to handle PNG files.
 Tell typescript to accept such files by declaring them as a module in the * assets/index.d.ts* file:
 ```
 declare module '*.png';
-``` 
+```
 
 Now import the asset somewhere in your plugin or blueprint and use the path to display the image:
 
@@ -233,7 +233,7 @@ We recommend you to use component-based styling for your applications.
 However you can also add custom global CSS styling by importing it.
 ```
 import './example.css';
-``` 
+```
 Again an example is created if you scaffold the *widget-plugin* with `c8ycli new`.
 
 #### How to ensure application compatibility
@@ -251,7 +251,7 @@ For blueprints, you will get a notification that suggests to update the applicat
 
 From version 10.19.0. we also provide an additional version matrix showing exactly which version of a plugin is compatible with which version of the Web SDK.
 
-For plugin developers who want to always provide the most compatible version of their plugin, we recommend to have a look at our [community plugin Github project](https://github.com/SoftwareAG/cumulocity-community-plugins), which includes some CI/CD workflows to test and verify that the newest version of a plugin still works. 
+For plugin developers who want to always provide the most compatible version of their plugin, we recommend our [community plugin Github project]({{< link-sag-community-plugins >}}), which includes some CI/CD workflows to test and verify that the newest version of a plugin still works.
 
 #### How to use repository connect
 
@@ -259,10 +259,10 @@ Repository connect is a microservice which synchronizes plugins or blueprints wi
 It must be installed on the management tenant and you can connect multiple repositories.
 Currently, only our Software AG public GitHub is connected.
 You can participate and share blueprints or plugins in multiple ways:
- 1. Contribute to our open source plugins. A list can be found in our [{{< product-c8y-iot >}} GitHub packages](https://github.com/topics/cumulocity-package). There is an [official repository](https://github.com/SoftwareAG/cumulocity-community-plugins) which is managed by the internal R&D team of {{< product-c8y-iot >}}.
+ 1. Contribute to our open source plugins. A list can be found in our [{{< product-c8y-iot >}} GitHub packages](https://github.com/topics/cumulocity-package). There is an [official repository]({{< link-sag-community-plugins >}}) which is managed by the internal R&D team of {{< product-c8y-iot >}}.
  2. Configure repository connect on your on-prem instance and point it to your organization.
  3. Ask our product manager to add your repository as a partner repository.
- 
+
 {{< c8y-admon-info >}}
 This is only needed if you want to share an application with every {{< product-c8y-iot >}} customer. If you want to share a package with your customers (for example on an enterprise tenant) you can simply upload them in the Packages view and set the availability to 'shared'.
 {{< /c8y-admon-info >}}
@@ -274,4 +274,3 @@ This is to avoid that any synced package can overwrite a default application lik
 Prefix the `key` and `contextPath` with the configured prefix (for {{< company-sag >}} it's `sag-pkg`).
 
 All applications that are uploaded via repository connect are labeled `community` plugins and the user is informed of the license and maintenance agreements on installation (from version 10.18.0).
-

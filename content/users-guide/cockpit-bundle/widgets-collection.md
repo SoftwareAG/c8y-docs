@@ -100,10 +100,6 @@ The following types are available:
 <td align="left">Displays data points (measurements) with current values in a pie chart presentation.</td>
 </tr>
 <tr>
-<td align="left"><a href="#quick-links">Quick links</a></td>
-<td align="left">Provides several quick links to relevant operations (deprecated).</td>
-</tr>
-<tr>
 <td align="left"><a href="#radial-gauge">Radial Gauge</a></td>
 <td align="left">Displays data points in form of a radial gauge.</td>
 </tr>
@@ -393,6 +389,11 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 
+The following code sanitization options can be selected:
+ - strict - Does not allow any JS or angularjs directives.
+ - lax (default) - Allows partly JS (events) and all angularjs directives.
+ - none - Allows everything.
+
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
 If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:
@@ -484,13 +485,6 @@ The "Pie chart" widget displays data points (measurements) with current values i
 </tbody>
 </table>
 
-<a name="quick-links"></a>
-### Quick links
-
-The "Quick links" widget is deprecated and can no longer be found in the widgets list, thus it can no longer be added to a dashboard. Instead, we recommend you to use the "<a href='#help-service'>Help and service</a>" widget.
-
-![Quick links widget](/images/users-guide/cockpit/cockpit-widget-quick-links.png)
-
 <a name="radial-gauge"></a>
 ### Radial Gauge
 
@@ -544,9 +538,10 @@ The "SCADA" widget provides a graphic representation of the status of a device.
 
 For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring the device status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
 
-{{< c8y-admon-info >}}
-All SVG files are sanitized in order to remove malicious code.
-{{< /c8y-admon-info >}}
+The following code sanitization options can be selected:
+ - strict - Does not allow any JS or angularjs directives.
+ - lax (default) - Allows partly JS (events) and all angularjs directives.
+ - none - Allows everything.
 
 ![SCADA widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 

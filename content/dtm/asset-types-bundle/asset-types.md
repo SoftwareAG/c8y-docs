@@ -2,9 +2,19 @@
 weight: 20
 title: Asset types
 layout: redirect
+helpcontent:
+- label: asset-types
+  title: Asset Types
+  content: "An asset type is a blueprint or template to create one or multiple assets. It defines how an asset will look like after it is created. An asset type consists of one or more custom properties or child asset types.
+
+
+  Click **Add asset type** in the top menu bar to add a new asset type. To edit an existing asset type, click the edit icon on the right of the desired asset type.
+
+
+  Custom properties are the parameters that define an asset type. To add a new custom property, open the **Property library** tab and click **Add custom property**. "
 ---
 
-The asset type is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like when created. An asset type consists of one or more [custom properties](/dtm/asset-types/#property-library).
+The asset type is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset type consists of one or more [custom properties](/dtm/asset-types/#property-library) and/or child asset types.
 
 To reach the **Asset types** page, navigate to **Configuration > Digital Twin Library > Asset types**.
 
@@ -52,7 +62,8 @@ This name is used for the asset type throughout the application.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.</td>
+<td style="text-align:left">Used to uniquely identify and store the asset type in the DTM application.<br>
+{{< c8y-admon-info>}} You cannot edit the key field, once the asset type is created. {{< /c8y-admon-info>}}</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -133,7 +144,6 @@ If there are any validation issues with a field, it is highlighted in red with a
 
 If there is no custom property meeting your requirements, click **New custom property**. For more details on how to create a new custom property see [Property Library > To create a custom property](/dtm/asset-types/#create-custom-property).
 
-
 <a name=""></a>
 ### Root asset type
 
@@ -160,6 +170,7 @@ This approach, allows you to create the desired hierarchy including all asset ty
 1. Click the edit icon on the right side of each asset type.
 2. Make your changes in the editor.
 3. Click **Save**.
+4. If this asset type is used by any asset, select **Confirm** in the resulting confirmation dialog to continue saving your changes.
 
 
 <a name=""></a>

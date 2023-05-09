@@ -110,7 +110,8 @@ For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path 
 <tr>
 <td style="text-align:left"><b>Custom properties for the asset type</b></td>
 <td style="text-align:left">6th column onwards (in the CSV template), all the custom properties for the root asset types and all its subsequent child asset types are listed.<br><br>
-<b>Info:</b><br>The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Custom property type</a> is also mentioned as a label, for better understanding.
+<b>Info:</b><br>The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Custom property type</a> is also mentioned as a label, for better understanding.<br>
+During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 </td>
 <td style="text-align:left">Mandatory</td>
 </tr>
@@ -123,7 +124,7 @@ For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path 
 Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents an auto-correct of the date on input.
 {{< /c8y-admon-info>}}
 
-To provide a file input as a custom property value, the file must first be uploaded to a Cumulocity IoT tenant using the {{< product-c8y-iot >}} API.
+To provide a file input as a custom property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
 
 Refer to the [Binaries API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
 

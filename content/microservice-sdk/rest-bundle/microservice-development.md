@@ -388,9 +388,14 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 }
 ```
 
+{{< c8y-admon-info >}}
+You can link multiple child assets or multiple child devices to the same parent in a single request. 
+Refer to inventory child operations in the [Inventory API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Child-operations) in the {{< openapi >}} for more details.
+{{< /c8y-admon-info >}}
+
 #### Synchronizing assets with external systems
 
-Often, {{< product-c8y-iot >}} will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-sdk/rest#device-integration):
+Often, {{< product-c8y-iot >}} will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-integration/rest#device-integration):
 
 - Use the Identity API to link the asset ID of the external IT system to the asset ID of {{< product-c8y-iot >}}.
 - Use the Inventory API to create or update the assets in {{< product-c8y-iot >}}'s inventory based on the external system's data.
@@ -438,7 +443,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 
 Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](/reference/device-management-library/) and in the [Sensor library](/reference/sensor-library/).
 
-Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-sdk/rest) in the *Device SDK guide*).
+Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/rest) in *Device integration*).
 
 Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
@@ -481,7 +486,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; cha
 
 #### Sending operations to devices
 
-To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in the section [Device integration](/device-sdk/rest#device-integration) of the *Device SDK guide*.
+To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/rest#device-integration) in *Device integration*.
 
 ```http
 POST /devicecontrol/operations
@@ -624,3 +629,8 @@ HTTP/1.1 200 OK
     }
 ]
 ```
+
+{{< c8y-admon-info >}}
+A channel for all devices (*) is deprecated and should be avoided. Subscription on this channel may cause performance issues
+on both the client and the server side, and this option may be removed in future versions of {{< product-c8y-iot >}}.
+{{< /c8y-admon-info >}} 

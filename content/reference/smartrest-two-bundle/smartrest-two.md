@@ -542,7 +542,7 @@ If anyway the device uses mostly (or completely) a single collection, it makes s
 
 With a default collection specified, the client can use special topics which do not require the X-ID, and instead the server will use the X-ID previously specified. The topics are <kbd>s/ud</kbd> for publishing and <kbd>s/dd</kbd> for subscribing.
 
-You can specify one X-ID within your MQTT ClientId (see [MQTT implementation](/device-sdk/mqtt#mqtt-clientid)).
+You can specify one X-ID within your MQTT ClientId (see [MQTT implementation](/device-integration/mqtt#mqtt-clientid)).
 
 Your MQTT ClientId could look like this:
 

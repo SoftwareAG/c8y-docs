@@ -17,15 +17,23 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
+In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
-In the data explorer, data points (that is, measurements or sensor data) can be visualized.
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
 
+- To view and select all available data points: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
+- To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for "Measurements" in the inventory roles
+- To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
+
+Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
+{{< /c8y-admon-req >}}
 
 The data explorer is available for all assets at once or just for a particular asset.
 
-* Click **Data explorer** in the navigator to visualize all data points of all assets.
+- Click **Data explorer** in the navigator to visualize all data points of all assets.
 
-* Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
+- Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
 In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](#add-data-points).
 

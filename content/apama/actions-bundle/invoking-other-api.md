@@ -8,9 +8,9 @@ The {{< product-c8y-iot >}} REST API covers some extra functionality which is no
 
 You can use the following request-response events:
 
-* GenericRequest
-* GenericResponse
-* GenericResponseComplete
+* com.apama.cumulocity.GenericRequest
+* com.apama.cumulocity.GenericResponse
+* com.apama.cumulocity.GenericResponseComplete
 
 {{< c8y-admon-info >}}
 The Apama-ctrl microservice, and thus all EPL apps code within it, runs with a number of permissions which permit the EPL to access all objects in the inventory and also read user details.  

@@ -23,7 +23,7 @@ For your convenience, here is an overview of the contents:
 
 {{< product-c8y-iot >}} DataHub Edge offers the same functionality as the cloud-variant of {{< product-c8y-iot >}} DataHub, but stores the data locally. You can define offloading pipelines, which regularly move data from the Operational Store of {{< product-c8y-iot >}} into a data lake. In the Edge setup, a NAS is used as data lake. Dremio, the internal engine of {{< product-c8y-iot >}} DataHub, can access the data lake and run analytical queries against its contents, using SQL as the query interface.
 
-<img src="/images/datahub-guide/datahub-edge-overview.png" alt="Overview of {{< product-c8y-iot >}} DataHub Edge" style="max-width: 70%">
+<img src="/images/datahub-guide/datahub-edge-overview.png" alt="Overview of {{< product-c8y-iot >}} DataHub Edge" style="max-width: 100%">
 
 {{< product-c8y-iot >}} DataHub Edge consists of the following building blocks:
 
@@ -36,7 +36,7 @@ For your convenience, here is an overview of the contents:
 
 {{< product-c8y-iot >}} DataHub Edge uses the same software as {{< product-c8y-iot >}} DataHub, though in the following aspects these two variants differ:
 
-| Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub |
+| Area | {{< product-c8y-iot >}} DataHub Edge | {{< product-c8y-iot >}} DataHub Cloud |
 | -----   | -----   | -----   |
 | High Availability | Depending on the underlying virtualization technology | Depending on the cloud deployment setup |
 | Vertical scalability | Yes | Yes |

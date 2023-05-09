@@ -17,12 +17,22 @@ helpcontent:
 weight: 40
 ---
 
-
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view dashboards: READ permission for permission type "Inventory" or READ permission for "Inventory" in inventory roles
+- To edit widgets within a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+- To create a dashboard: CREATE or ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+- To delete a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+- To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
+  {{< /c8y-admon-req >}}
 
 {{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [Web SDK guide](/web/) for details.
 
 <a name="creating-dashboards"></a>
+
 ### To create a dashboard
 
 1. Select the group or the device in the navigator for which to create a dashboard.
@@ -77,7 +87,6 @@ To edit a dashboard, click **Edit** in the top menu bar.
 <img src="/images/users-guide/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
 
 The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#creating-dashboards).
-
 
 ### To copy a dashboard from one object to another
 

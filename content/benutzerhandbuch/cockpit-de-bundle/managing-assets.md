@@ -4,6 +4,14 @@ title: Verwalten von Assets
 weight: 20
 ---
 
+Klicken Sie im Navigator auf **Gruppen**, um eine Liste aller Gruppen zu sehen. Um eine Gruppe hinzuzufügen, klicken Sie oben rechts auf **Gruppe hinzufügen**.
+
+
+Wählen Sie eine Gruppe aus der Gruppenliste oder aus dem Navigator, um deren Details anzuzeigen, insbesondere alle der Gruppe zugewiesenen Assets. Klicken Sie oben rechts auf **Geräte zuweisen**, um der Gruppe Geräte zuzuweisen.
+
+
+Durch Ziehen und Ablegen von Gruppen oder Geräten im Navigator können Sie Gruppen auf einfache Weise neu strukturieren oder ihnen Geräte zuordnen.
+
 <a name="assets"></a>
 ### Asset-Hierarchie
 
@@ -81,7 +89,7 @@ Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gru
 <img src="/images/benutzerhandbuch/cockpit/cockpit-groups-subassets.png" name="Subassets"/>
 
 {{< c8y-admon-info >}}
-Die Zahl oben in der Tabelle der Registerkarte **Kind-Assets** gibt die Gesamtanzahl der Kind-Assets an, die der aktuellen Gruppe zugewiesen sind. Jede Art von Objekt kann ein Kind-Asset sein. Weitere Informationen zum Zählen von Objekten finden Sie in der Beschreibung der Operation [Alle Kind-Assets für ein bestimmtes Objekt abrufen](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in der {{< openapi >}}.
+Die Zahl oben in der Tabelle der Registerkarte **Kind-Assets** gibt die Gesamtanzahl der Kind-Assets an, die der aktuellen Gruppe zugewiesen sind. Jede Art von Objekt kann ein Kind-Asset sein. Weitere Informationen zum Zählen von Objekten finden Sie in der Beschreibung der Operation [Alle Kind-Assets für ein bestimmtes Objekt abrufen](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/getManagedObjectChildAssetsResource) in der {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
@@ -100,7 +108,7 @@ Bei Gruppen werden die folgenden Registerkarten angezeigt:
 - **Smart Rules** - Zeigt für die Gruppe festgelegte Smart Rules, siehe auch [Smart Rules](#smart-rules).
 - **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN im Kontext von Gruppen:
 
 - Zum Anzeigen aller Gruppen: READ-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -120,7 +128,7 @@ Bei Geräten werden die folgenden Registerkarten angezeigt:
 - **Daten-Explorer** - Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
 - **Standort** - Zeigt den aktuellen Standort des Geräts (nur verfügbar mit `c8y_Position`).
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN im Kontext von Geräten:
 
 - Zum Anzeigen aller Geräte innerhalb einer Gruppe: READ-Berechtigung für Berechtigungstyp "Stammdaten"
@@ -128,7 +136,7 @@ ROLLEN UND BERECHTIGUNGEN im Kontext von Geräten:
 - Zum Löschen eines beliebigen Geräts innerhalb einer Gruppe: ADMIN-Berechtigung für Berechtigungstyp "Stammdaten"
 {{< /c8y-admon-req >}}
 
-Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Verwenden von Dashboards](#dashboards).
+Wenn für eine Gruppe oder ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Arbeiten mit Dashboards](#dashboards).
 
 Darüber hinaus können hier zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit einer benutzerdefinierten Web SDK-Erweiterung versehen wurde. Wie Sie eine benutzerdefinierte Registerkarte hinzufügen können, erfahren Sie in unserem [Web SDK-Tutorial](/web/tutorials/#add-a-tab-to-a-device).
 

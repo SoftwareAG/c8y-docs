@@ -160,7 +160,7 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 #### So erstellen Sie eine dynamische Gruppe
 
 1. Klicken Sie auf **Alle Geräte** im Navigator, um die Geräteliste anzuzeigen.
-2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > Filtern von Geräten](#filtering-devices).
+2. Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter [Anzeigen von Geräten > So filtern Sie Geräte](#filtering-devices).
 3. Klicken Sie auf **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie auf **Erstellen**.
 
@@ -177,6 +177,6 @@ Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die F
 
 Bewegen Sie den Mauszeiger über den Eintrag, den Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
 
-{{< c8y-admon-important title="Wichtig">}}
+{{< c8y-admon-important title="Wichtig" >}}
 Das Löschen einer dynamischen Gruppe ist irreversibel.
 {{< /c8y-admon-important >}}

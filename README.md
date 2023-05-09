@@ -24,7 +24,7 @@ The architecture is built with a mix of front matter and directory structure
 
 ### 1. Add a new section
 
-Before adding a new section, check if the content fit in any of the available sections:
+Before adding a new section, check if the content fits in any of the available sections:
 
 - Release notes
 - Concepts guide
@@ -153,4 +153,4 @@ Cumulocity provides documentation for multiple releases, for that you'll have to
 - Deploy the `default` branch using the Jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
 
 ---
-© Cumulocity GmbH  2019 + All rights reserved.
+© Cumulocity GmbH  2022 + All rights reserved.

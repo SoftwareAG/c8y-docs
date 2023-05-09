@@ -8,7 +8,10 @@ helpcontent:
     content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the *User guide* for details.
 
 
-    You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term."
+    You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term.
+
+
+    Click **Create smart group** at the top right to create a group which is built based on the filter criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version."
 ---
 
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
@@ -111,6 +114,7 @@ While standard columns can only be shown/hidden as required, custom columns may 
 
 1. Hover over the row of the device you want to delete.
 2. Click the delete icon at the right of the row.
+3. Confirm the device removal. Optionally, select whether to delete child devices of the device or to delete the associated device owner. Note that it is not possible to select both options.
 
 The device will be permanently deleted from the platform.
 

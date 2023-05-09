@@ -4,11 +4,9 @@ title: Verwenden von Berichten
 weight: 45
 ---
 
-<!-- -->
-
 Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
 
-{{< c8y-admon-req title="Anforderungen">}}
+{{< c8y-admon-req title="Anforderungen" >}}
 ROLLEN UND BERECHTIGUNGEN:
 
 - Zum Anzeigen von Berichten: READ-Berechtigung für Berechtigungstyp "Stammdaten"

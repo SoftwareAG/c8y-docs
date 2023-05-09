@@ -8,14 +8,29 @@ helpcontent:
     content: "To connect devices to Cumulocity IoT they must be registered. To register one or more devices, click **Register device** and follow the instructions in the wizard or in the *User guide*.
 
 
-    All devices which are currently in the registration process are displayed with one of the following status:
+    All devices which are currently in the registration process are displayed with one of the following statuses:
 
 
-    **Waiting for connection** - the device has been registered but no device with the specified ID has tried to connect
+    **Waiting for connection** - The device has been registered but no device with the specified ID has tried to connect
 
-    **Pending acceptance** - there is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
+    **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept it so that the credentials are sent to the device
 
-    **Accepted** - the user has allowed the credentials to be send to the device"
+    **Accepted** - The user has allowed the credentials to be send to the device
+
+    **Blocked** - The device registration has been blocked due to the exceeded limit of failed attempts.
+
+
+    To register devices, you can select one of the following options:
+
+    Single device registration - To manually connect one or more devices.
+
+    Bulk device registration - To register larger amounts of devices in one step.
+
+
+    Depending on the microservices subscribed to your tenant, you might see other device registration options for specific protocol types.
+
+
+    To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
 <a name="dev-registration"></a>
@@ -81,7 +96,7 @@ The **Register devices** dialog box will be displayed.
 
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
-5. Click **Add new device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
+5. Click **Add device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s).
 
 {{< c8y-admon-info >}}

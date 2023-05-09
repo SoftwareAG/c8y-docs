@@ -18,9 +18,9 @@ You need a separate Dremio account to run SQL queries. The Dremio account is req
 
 When you have established a connection, you can run SQL queries against your tables in the data lake (to which new data is appended whenever the offloading pipeline has successfully run). The source you refer to in the query is defined by your tenant ID and the target table you have specified in the offloading configuration. The identifier to be used as the source in a SQL query is defined as follows for the different data lake providers:
 
-* **Azure Storage:** YourTenantIdDataLake.`FileSystem`.YourAccountName.TargetTable with `FileSystem` denoting the file system within your Azure Storage account
-* **Amazon S3:** YourTenantIdDataLake.`Bucket`.YourAccountName.TargetTable with `Bucket` denoting the bucket within your Amazon S3 account
-* **Others:** YourTenantIdDataLake.YourAccountName.TargetTable
+* **Azure Storage:** YourTenantIdDataLake.`FileSystem`.YourAccountName.TargetTableName with `FileSystem` denoting the file system within your Azure Storage account
+* **Amazon S3:** YourTenantIdDataLake.`Bucket`.YourAccountName.TargetTableName with `Bucket` denoting the bucket within your Amazon S3 account
+* **Others:** YourTenantIdDataLake.YourAccountName.TargetTableName
 
 For example, if your tenantId is `t47110815` and you have defined an offloading configuration to write the alarms collection to the target table `JohnsAlarms` in an Azure Storage account containing a file system named `Dremio`, then an example query would be:
 

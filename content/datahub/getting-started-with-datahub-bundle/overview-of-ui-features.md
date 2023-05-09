@@ -10,7 +10,6 @@ layout: redirect
 | ---  | --- | --- | ---
 | Home | Get an introduction to {{< product-c8y-iot >}} DataHub and access quick links with related functionality | DataHub Reader, DataHub Administrator, or DataHub Manager | -
 | Offloading | Configure and manage your offloading pipelines | DataHub Administrator or DataHub Manager | -
-| Status | View the latest job status of your offloading pipelines | DataHub Administrator or DataHub Manager | -
 | Auditing / Query log | View the query log | DataHub Reader, DataHub Administrator, or DataHub Manager | Tracking of usage statistics must be enabled
 | Auditing / System log | View the system log | DataHub Administrator | -
 | Settings / Initial configuration | Set up {{< product-c8y-iot >}} DataHub | DataHub Administrator | -
@@ -18,6 +17,5 @@ layout: redirect
 | Settings / Microsoft Power BI | Set up connection to Microsoft Power BI | DataHub Administrator | -
 | Microsoft Power BI | View Microsoft Power BI reports | DataHub Reader, DataHub Administrator, or DataHub Manager | Connection to Microsoft Power BI has been set up
 | Administration / Usage statistics | View usage statistics | DataHub Reader, DataHub Administrator, or DataHub Manager | Tracking of usage statistics must be enabled
+| Administration / Compaction status | View the latest compaction job status of your offloading pipelines | DataHub Administrator | -
 | Administration / System status | Check system status | DataHub Administrator | -
-
-<img src="/images/datahub-guide/datahub-home-page.png" alt="{{< product-c8y-iot >}} DataHub homepage"  style="max-width: 100%">

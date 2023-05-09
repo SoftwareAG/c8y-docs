@@ -169,7 +169,7 @@ Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
 
-Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Seite **Kind-Assets** angezeigt.
+Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Registerkarte **Kind-Assets** angezeigt.
 
 <a name="edit-group"></a>
 ### Bearbeiten einer Gruppe

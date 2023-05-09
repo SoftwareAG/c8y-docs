@@ -22,7 +22,7 @@ c8ycli new
 ? Enter the name of the project:  (my-application) package-blueprint
 ```
 
-3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontend are supported with version higher then 10.16.0.0:
+3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontends are supported with version higher then 10.16.0.0:
 
 ````console
 ? Which base version do you want to scaffold from?
@@ -244,7 +244,7 @@ The following list shows the fields and what they are responsible for:
   - `module`: The name of the Angular module class.
   - `path`: The path to the TypeScript file with the module.
   - `description`: A brief description of what the module does.
-- `contextPath`: The context path tells on which URL your blueprint can be loaded. As this is also used to generate a global variable, you need to choose a valid JavaScript variable. For example your `contextPath` should not start with a number. To avoid conflicts it is good practice to add some prefix to your context path, e.g. the acronym of your company like `acme-`.
+- `contextPath`: The context path tells on which URL your blueprint can be loaded. As this is also used to generate a global variable, choose a valid JavaScript variable. For example your `contextPath` should not start with a number. To avoid conflicts it is good practice to add a prefix to your context path, for example, the acronym of your company: `acme-`.
 
 {{< c8y-admon-info >}}
 A blueprint can also include plugins, which can later be used to extend other applications.

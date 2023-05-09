@@ -25,7 +25,7 @@ Select the plugin name, for example, "widget-plugin":
 ? Enter the name of the project:  (my-application) widget-plugin
 ```
 
-3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontend are supported with version higher then 10.16.0.0:
+3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontends are supported with version higher then 10.16.0.0:
 
 ````console
 ? Which base version do you want to scaffold from?
@@ -92,7 +92,7 @@ The following list shows the fields and what they are responsible for:
   - `module`: The name of the Angular module class (that is, "WidgetPluginModule").
   - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: *./widget/widget-plugin.module.ts*.
   - `description`: A brief description of what the module does.
-- `contextPath`: The context path tells on which URL your plugin can be loaded. As this is also used to generate a global variable, you need to choose a valid JavaScript variable. For example your `contextPath` should not start with a number. To avoid conflicts it is good practice to add some prefix to your context path, e.g. the acronym of your company like `acme-`.
+- `contextPath`: The context path tells on which URL your plugin can be loaded. As this is also used to generate a global variable, choose a valid JavaScript variable. For example, your `contextPath` should not start with a number. To avoid conflicts it is a good practice to add a prefix to your context path, for example, the acronym of your company: `acme-`.
 
 {{< c8y-admon-info >}}
 When creating plugins, the custom modules are the backbone of this approach. The exported module is treated as the entry point that links the plugin with the application, which is referred to as the shell. You can create and export several modules, which have to contain ready-made functionality.

@@ -25,6 +25,8 @@ If you use a tenant which already has asset properties defined, you find the lis
 
 To create an asset property, click **Add asset property** on the bottom left. Enter the required data in the form (see description below) and click **Save**.
 
+Use the Export asset properties and Import asset properties feature to transfer asset properties between tenants. This is useful for replicating the asset properties in multiple tenants. By exporting and importing properties, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset properties](#to-export-asset-properties) and [To import asset properties](#to-import-asset-properties) on how to export or import asset properties.
+
 ![Create a new asset property](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
 Asset properties have the following parameters:
@@ -295,3 +297,42 @@ You see the preview of data model on the right side of properties section.
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)
+
+### To export asset properties
+
+Follow the steps below:
+
+1. In the **Asset properties** page, click **Export asset properties**. In the resulting dialog, you see the list of asset properties along with their description and type.
+2. Select one or more desired asset properties and click **Export**.
+3. The dialog closes and a JSON file named 'Export-asset-properties.json' downloads.
+
+Use the downloaded file to import the asset properties into a DTM application on another tenant.
+
+{{< c8y-admon-info>}}
+You can export a maximum of 500 asset properties at a time.
+{{< /c8y-admon-info>}}
+
+![Export asset properties](/images/dtm/custom-property/dtm-property-library-export.png)
+
+### To import asset properties
+
+To import asset properties into the DTM application, follow the steps below:
+
+1. In the **Asset properties** page, click **Import asset properties**.
+2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant. 
+3. Click **Next** to preview the asset properties before importing them.
+4. Click **Import** to import the asset properties.
+4. Or, Click **Back** to go to previous step. Hover over the file name and click the delete icon to remove the current file and upload a different one.
+5. View newly imported asset properties in the **Asset properties** page.
+
+
+
+![Import asset properties](/images/dtm/custom-property/dtm-property-library-import.png)
+
+{{< c8y-admon-info>}}
+When you upload the JSON file, it undergoes validation. If the validation fails, you see a corresponding message in the dialog. Click **Download log file** to view the errors.
+Review the errors that are reported, and attempt the upload again after addressing the errors.
+
+You can import a maximum of 500 asset properties at a time.
+{{</ c8y-admon-info>}}
+

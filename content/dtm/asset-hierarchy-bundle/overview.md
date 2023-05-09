@@ -13,7 +13,7 @@ You also have the opportunity to define properties or parameters of an asset thr
 To work with assets in the DTM application, navigate to the **Assets** page using the navigator menu on the left.
 When you first start using the DTM application, no assets are displayed in the **Assets** page by default.
 
-If you already created assets, you find them listed with its hierarchy on this page (see image below).
+If you already created assets, you find them listed in a hierarchical view on this page.
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
@@ -30,10 +30,13 @@ If you create the root asset "Wind turbine" with the subasset "Rotor", which has
 
 Wind turbine > Rotor > Blade
 
-Initially, all the asset hierarchies are collapsed and it lists only the root assets. The lists also shows certain asset details, for example, asset model and description. Click the expand icon to the left of each asset to view the next level of subassets. Note that the devices assigned to an asset is not shown in the asset hierarchy.
+Initially, all the asset hierarchies are collapsed and it lists only the root assets. The list also shows certain asset details, for example, asset model and description. Click the expand icon to the left of each asset to view the next level of subassets. Note that the devices assigned to an asset is not shown in the asset hierarchy.
 
 Click the asset name to view the asset details and the devices assigned to it.
 
-Hover over the desired asset and click the delete icon to delete an asset from the **Assets** page.
+To edit or delete an asset from **Assets** page, click the menu icon at the right of the row and click either the edit or delete option.
+To delete multiple assets at once, select one or more assets and click **Delete** in the top banner.
+
+Select one or more assets of same type to relocate from its current hierarchy to another. For steps to move assets between hierarchies, see [To move assets](/dtm/asset-hierarchy/#to-move-assets).
 
 ![asset-hierarchy](/images/dtm/assets/dtm-assets-asset-hierarchy.png)

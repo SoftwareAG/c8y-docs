@@ -292,7 +292,7 @@ Wurde eine gehostete Anwendung nicht korrekt gestartet, kann der Benutzer sie er
 1. Öffnen Sie die Anwendungsattribute für die entsprechende Anwendung, indem Sie darauf klicken.
 3. Öffnen Sie im Abschnitt **Aktivitätslog** das Kontextmenü der gewünschten Version über das Menüsymbol und wählen Sie **Archiv erneut aktivieren**.
 
-Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien aus dem Anwendungsverzeichnis entfernt werden und das gehostete Anwendungspacket erneut entpackt wird.
+Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien aus dem Anwendungsverzeichnis entfernt werden und das gehostete Anwendungspaket erneut entpackt wird.
 
 ### Pakete
 

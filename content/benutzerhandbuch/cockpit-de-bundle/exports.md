@@ -64,8 +64,6 @@ Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach b
 
 Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
-
 {{< c8y-admon-info >}}
 Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
 {{< /c8y-admon-info >}}

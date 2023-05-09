@@ -87,11 +87,11 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Global Manager</td>
-<td align="left">Can read and write all devices.</td>
+<td align="left">Can read and write all data from all devices.</td>
 </tr>
 <tr>
 <td align="left">Global Reader</td>
-<td align="left">Can read all devices.</td>
+<td align="left">Can read all data from all devices.</td>
 </tr>
 <tr>
 <td align="left">Global User Manager</td>

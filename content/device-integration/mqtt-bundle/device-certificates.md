@@ -389,10 +389,13 @@ The steps for the proof of possession are as follows:
 1. Navigate to **Management** > **Trusted certificates** in the Device management application and verify that the certificate has been uploaded properly.
 <br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
 
-2. In the **Proof of Possession** section of the certificate details, download the unsigned verification code.
-<br>![Download unsigned verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
+2. In the **Proof of Possession** section of the certificate details, download the verification code.
+<br>![Download verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
 
-3. Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
+3. Encrypt the verification code using the private key of the certificate to produce the signed verification code.
+Use the following openssl command:
+
+    `openssl dgst -sha256 -sign <private.key> <verification_code.txt> | openssl base64 -A`
 
 4. Upload the signed verification code to the platform.
 <br>![Upload signed verification code](/images/mqtt/mqtt-cert-upload-signed.png)

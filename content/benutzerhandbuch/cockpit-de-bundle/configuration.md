@@ -38,7 +38,7 @@ Unter **Oberste Knoten** können Sie wählen, welche Gruppen auf der obersten Eb
 
 Wählen Sie rechts die Haupt- oder Untergruppen aus, die als oberste Knoten im Navigator angezeigt werden sollen. Sobald eine Gruppe ausgewählt wurde, wird sie der benutzerdefinierten Liste der obersten Knoten hinzugefügt. Darüber hinaus können Sie die Knoten weiter konfigurieren, indem Sie die Anzeige der Geräte für eine bestimmte Gruppe aktivieren/deaktivieren. Bei Deaktivierung werden alle Geräte für diese Gruppe ausgeblendet, d. h. nicht im Navigator angezeigt.
 
-#### Startseite
+#### Start-Dashboard
 
 Im Abschnitt **Start-Dashboard** können Sie wählen, wie das Start-Dashboard, d. h. die Landing-Page für diese Anwendung, behandelt wird.
 

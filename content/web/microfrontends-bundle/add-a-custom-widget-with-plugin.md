@@ -25,7 +25,7 @@ Select the plugin name, for example, "widget-plugin":
 ? Enter the name of the project:  (my-application) widget-plugin
 ```
 
-3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontend are supported with version higher then 10.16.0.0:
+Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontend are supported with version higher then 10.16.0.0:
 
 ````console
 ? Which base version do you want to scaffold from?
@@ -172,7 +172,7 @@ Follow the console prompt to deploy the application to your tenant.
 
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 
-You should access the **Packages** tab in **Administration application > Ecosystem > applications > Packages**, where you can see the details of your plugin.
+- Access the **Packages** tab in **Administration application > Ecosystem > applications > Packages**, where you can see the details of your plugin.
 
 - If you already have a custom Cockpit application, navigate to its **Details** page and then to the **Plugins** tab. Install the `widget-plugin`.
 

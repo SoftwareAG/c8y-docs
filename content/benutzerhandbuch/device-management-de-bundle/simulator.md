@@ -1,6 +1,6 @@
 ---
 layout: redirect
-title: Verwenden von Simulatoren
+title: Arbeiten mit Simulatoren
 weight: 90
 ---
 
@@ -21,7 +21,7 @@ Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das G
 
 Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten.
 
-Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden einer Temperatur) und Bereitstellen des entsprechenden Werts (z. B. 23,0 Grad) definiert. Es gibt viele vordefinierte Nachricht-Templates, z. B. für das Senden eines Messwerts oder das Erstellen oder Aufheben eines Alarms. Diese Templates basieren auf statischen MQTT-Templates. Darüber hinaus können mit dem [SmartREST-Template-Editor](#smartrest-templates) eigene Nachricht-Templates erstellt werden.
+Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden einer Temperatur) und Bereitstellen des entsprechenden Werts (z. B. 23,0 Grad) definiert. Es gibt viele vordefinierte Nachricht-Templates, z. B. für das Senden eines Messwerts oder das Erstellen oder Aufheben eines Alarms. Diese Templates basieren auf statischen MQTT-Templates. Darüber hinaus können mit dem [SmartREST-Template-Editor](#smartrest-templates) eigene Nachricht-Templates erstellt werden.
 
 ### So zeigen Sie Simulatoren an
 
@@ -38,8 +38,6 @@ Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt.
 3. Geben Sie einen Namen für den Simulator ein.
 4. Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).
 5. Klicken Sie auf **Erstellen**.
-
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
 
 Der Simulator wird erstellt und der Liste hinzugefügt.
 
@@ -85,8 +83,6 @@ Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwend
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.
 
-![Sleep](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-sleep.png)
-
 #### So fügen Sie eine Anweisung hinzu
 
 1. Klicken Sie auf **Anweisung hinzufügen**, um dem Simulator eine neue Anweisung hinzuzufügen.
@@ -128,6 +124,6 @@ Die benutzerdefinierte Operation wird der Operationsliste hinzugefügt.
 
 ### Alarme für den Simulator
 
-Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
+Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
 
 ![Alarms](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-alarm.png)

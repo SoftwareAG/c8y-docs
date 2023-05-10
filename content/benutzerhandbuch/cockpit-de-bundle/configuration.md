@@ -11,7 +11,7 @@ Zur Verwendung der Cockpit-Konfiguration-Funktionalität müssen die folgenden A
 
 * Sie verfügen über eine ADMIN-Berechtigung für den Berechtigungstyp "Anwendungsverwaltung".
 
-* Die Cockpit-Anwendung kann nur konfiguriert werden, wenn Sie im Besitz des Mandanten ist. Sie müssen also zuerst eine eigene Cockpit-Anwendung erstellen, indem Sie die vorhandene Cockpit-Anwendung duplizieren. Nähere Informationen zur Duplizierung einer Anwendung finden Sie unter [Verwalten von Anwendungen > Benutzerdefinierte Anwendung > So fügen Sie eine benutzerdefinierte Anwendung hinzu](/benutzerhandbuch/administration-de/#adding-applications).
+* Die Cockpit-Anwendung kann nur konfiguriert werden, wenn Sie im Besitz des Mandanten ist. Sie müssen also zuerst eine eigene Cockpit-Anwendung erstellen, indem Sie die vorhandene Cockpit-Anwendung duplizieren. Nähere Informationen zur Duplizierung einer Anwendung finden Sie unter [Verwalten von Anwendungen > Benutzerdefinierte Anwendung > So fügen Sie eine benutzerdefinierte Anwendung hinzu](/benutzerhandbuch/administration-de/#adding-applications).
 
 Wenn diese Anforderungen erfüllt sind, wird im Menü **Konfiguration** des Navigators der benutzerdefinierten Cockpit-Anwendung der Eintrag **App-Konfiguration** angezeigt.
 {{< /c8y-admon-req >}}
@@ -36,13 +36,13 @@ Unter **Oberste Knoten** können Sie wählen, welche Gruppen auf der obersten Eb
 
 ![Nodes configuration](/images/benutzerhandbuch/cockpit/cockpit-configuration-nodes.png)
 
-Wählen Sie rechts die Haupt- oder Untergruppen aus, die als oberste Knoten im Navigator angezeigt werden sollen. Sobald eine Gruppe ausgewählt wurde, wird sie der benutzerdefinierten Liste der obersten Knoten hinzugefügt. Darüber hinaus können Sie die Knoten weiter konfigurieren, indem Sie die Anzeige der Geräte für eine bestimmte Gruppe aktivieren/deaktivieren. Bei Deaktivierung werden alle Geräte für diese Gruppe ausgeblendet, d. h. nicht im Navigator angezeigt.
+Wählen Sie rechts die Haupt- oder Untergruppen aus, die als oberste Knoten im Navigator angezeigt werden sollen. Sobald eine Gruppe ausgewählt wurde, wird sie der benutzerdefinierten Liste der obersten Knoten hinzugefügt. Darüber hinaus können Sie die Knoten weiter konfigurieren, indem Sie die Anzeige der Geräte für eine bestimmte Gruppe aktivieren/deaktivieren. Bei Deaktivierung werden alle Geräte für diese Gruppe ausgeblendet, d. h. nicht im Navigator angezeigt.
 
-#### Startseite
+#### Start-Dashboard
 
-Im Abschnitt **Start-Dashboard** können Sie wählen, wie das Start-Dashboard, d. h. die Landing-Page für diese Anwendung, behandelt wird.
+Im Abschnitt **Start-Dashboard** können Sie wählen, wie das Start-Dashboard, d. h. die Landing-Page für diese Anwendung, behandelt wird.
 
-Sie können eine der folgenden Optionen wählen, um das Start-Dashboard individuell anzupassen:
+Zur individuellen Anpassung des Start-Dashboards können Sie eine der folgenden Optionen wählen:
 
 * Es wird im gesamten Mandanten widergespiegelt (Standardwert).
 * Es wird nur in der aktuellen benutzerdefinierten Anwendung widergespiegelt.

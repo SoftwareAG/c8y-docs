@@ -29,13 +29,13 @@ Klicken Sie auf **Untermandanten** im Menü **Mandanten**, um alle in Ihrem Kont
 
 Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandanten an:
 
-* Name des Untermandanten, z. B. Name des Unternehmens Ihres Kunden.
+* Name des Untermandanten, z. B. Name des Unternehmens Ihres Kunden.
 * ID und Domain.
 * Optional: Kontaktname und Telefonnummer.
 * Das Erstellungsdatum für den Mandanten.
 * Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).
 
-Im {{< management-tenant-de >}} finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
+Im {{< management-tenant-de >}} finden Sie zudem Informationen über den übergeordneten Mandanten, d. h. den Mandanten, der den aufgeführten Mandanten erstellt hat.
 
 <a name="creating-tenants"></a>
 ### So erstellen Sie einen Untermandanten
@@ -62,7 +62,7 @@ Im {{< management-tenant-de >}} finden Sie zudem Informationen über den überge
 	</tr>
 	<tr>
 	<td style="text-align:left">Name</td>
-	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
+	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
 	</tr>
 	<tr>
 	<td style="text-align:left">E-Mail-Adresse des Administrators</td>
@@ -128,7 +128,7 @@ Hier werden die folgenden Informationen angezeigt:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>&nbsp;&nbsp;- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>).&nbsp;&nbsp;<br>&nbsp;&nbsp;- Ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>&nbsp;&nbsp;- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global deaktiviert. <br>&nbsp;&nbsp;- Kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h. jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
+<td style="text-align:left">Kann entweder "Eingeschaltet" oder "Ausgeschaltet" sein. <br>"Eingeschaltet" bedeutet: <br>&nbsp;&nbsp;- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global aktiviert (siehe <a href="../../benutzerhandbuch/administration-de/#platform-configuration-settings">Administration &gt; Plattform-Konfigurationseinstellungen</a>).&nbsp;&nbsp;<br>&nbsp;&nbsp;- Ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert.<br>"Ausgeschaltet" bedeutet: <br>&nbsp;&nbsp;- Supportbenutzerzugriff wurde im {{< management-tenant-de >}} global deaktiviert. <br>&nbsp;&nbsp;- Kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h. jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).</td>
 </tr>
 <tr>
 <td style="text-align:left">Anzahl aktiver Anfragen</td>
@@ -201,9 +201,7 @@ Bewegen Sie den Mauszeiger über die unter **Abonnierte Anwendungen** auf der li
 
 #### Überwachen von Microservices
 
-Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt.
-
-Der Microservice kann sich in einem der folgenden Status befinden:
+Für alle Anwendungen, die als Microservices von {{< product-c8y-iot >}} gehostet werden, wird neben dem Namen einer der folgenden Microservice-Status als Symbol angezeigt:
 
 * <img src="/images/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block;"> Microservice ist in Betrieb
 * <img src="/images/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block;">&nbsp; Microservice ist gestört
@@ -220,6 +218,10 @@ Folgende Informationen werden angezeigt:
 * Erwartet - Anzahl der erwarteten Microservice-Instanzen
 * Name - Name der Microservice-Instanz
 * Neustarts - Anzahl der Neustarts von Microservice-Instanzen
+
+{{< c8y-admon-info >}}
+Bei mindestens einem Neustart wird über den Microservice-Instanznamen und die Anzahl der Neustarts informiert.
+{{< /c8y-admon-info >}}
 
 Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
@@ -263,7 +265,7 @@ Auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-tenant-de/#usag
 
 Auf Mandantenebene kann das Produkterfahrungs-Tracking von Gainsight durch Deaktivieren des Cookie-Banners auf der Seite **Branding** ausgeschaltet werden, siehe [Anpassen der Plattform > Branding](/benutzerhandbuch/enterprise-tenant-de/#branding).
 
-Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
+Auch wenn Tracking für einen Mandanten aktiviert ist, müssen Benutzer aktiv das Tracking von funktionellen Cookies akzeptieren, damit funktionelle Daten zur Nutzung der Plattform verfolgt werden können, siehe [Erste Schritte > Aufrufen und Anmelden an der Plattform](/benutzerhandbuch/getting-started-de/#accessing-platform).
 
 
 <a name="tenant-policies"></a>
@@ -290,8 +292,8 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 #### So erstellen Sie eine Mandantenregel
 
 1. Klicken Sie auf **Regel hinzufügen** in der oberen Menüleiste.
-<br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
+<br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten von Daten > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
 4. Geben Sie optional eine Mandantenoption ein.
 5. Klicken Sie auf **Speichern**.
@@ -331,7 +333,7 @@ Auf der Seite **Standardabonnements** können Sie zwei separate Listen von Anwen
 - jeden bestehenden Mandanten bei einem Plattform-Upgrade.
 
 {{< c8y-admon-info >}}
-Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
+Diese Standardlisten können Sie für bestimmte Untermandanten außer Kraft setzen, indem Sie zusätzliche Mandantenoptionen festlegen, z. B. über eine Mandantenregel. Näheres hierzu siehe [Standardabonnements](#default-subscriptions) unten oder die [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in der {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 Links wird die Liste der abonnierbaren Anwendungen (Web-Anwendungen und Microservices) angezeigt. Sie umfasst:
@@ -376,29 +378,24 @@ Die Standardabonnements können Sie für Untermandanten außer Kraft setzen, ind
 * Zum Definieren von Web-Anwendungen, die für neue Mandanten bei deren Erstellung abonniert werden sollen:
   * category: configuration
   * key: default.tenant.applications
-  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
 * Zum Definieren von Microservices, die für neue Mandanten bei deren Erstellung abonniert werden sollen:
   * category: configuration
   * key: default.tenant.microservices
-  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
+  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
 * Zur Verwendung einer anderen Liste von Web-Anwendungen, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
-* zum Definieren von Microservices, die für neue Mandanten bei deren Erstellung abonniert werden sollen:
-  * category: configuration
-  * key: default.tenant.microservices
-  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
-* zur Verwendung einer anderen Liste von Web-Anwendungen, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.applications.enabled
   * value: true/false (wenn "false" oder nicht festgelegt, wird dieselbe Liste wie bei default.tenant.applications verwendet)
 * Zum Definieren von Web-Anwendungen, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.applications
-  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
-* zur Verwendung einer anderen Liste von Microservices, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
+  * value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+* Zur Verwendung einer anderen Liste von Microservices, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.microservices.enabled
   * value: true/false (wenn "false" oder nicht festgelegt, wird dieselbe Liste wie bei default.tenant.microservices verwendet)
 * Zum Definieren von Microservices, die für bestehende Mandanten bei einem Plattform-Upgrade abonniert werden sollen:
   * category: configuration
   * key: on-update.tenant.microservices
-  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway
+  * value: kommaseparierte Liste von Microservice-Namen, z. B. device-simulator,report-agent,sms-gateway

@@ -4,6 +4,7 @@ title: Verwenden von Berichten
 weight: 45
 ---
 
+
 Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets und anderen Daten in einem Dashboard-Layout. Bei Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.
 
 {{< c8y-admon-req title="Anforderungen" >}}
@@ -54,8 +55,6 @@ Nähere Informationen zum Hinzufügen, Ändern oder Entfernen von Widgets finden
 Klicken Sie in der Berichtsliste auf den Namen eines Berichts, um seine Details zu öffnen.
 
 Um den Bericht zu bearbeiten, klicken Sie in der oberen Menüleiste auf **Bearbeiten**.
-
-<img src="/images/benutzerhandbuch/cockpit/cockpit-report-edit.png" name="Edit report"/>
 
 Der Bericht-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter [So erstellen Sie einen Bericht](#create-report).
 

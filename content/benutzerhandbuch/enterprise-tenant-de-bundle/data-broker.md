@@ -20,8 +20,6 @@ Um diese Funktion verwenden zu können, muss Ihr Mandant die Anwendung "feature-
 
 Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
-
 {{< c8y-admon-important title="Wichtig" >}}
 Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 {{< /c8y-admon-important >}}
@@ -123,7 +121,7 @@ Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und a
 {{< /c8y-admon-important >}}
 
 
-Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
+Wenn das Feld **Gruppe oder Gerät** ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld **Gruppe oder Gerät** leer ist oder "Alle" enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im "Lazy Mode", d. h. das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.
 
 Wenn der Datentyp Operation in Filtern ausgewählt ist, werden die Operationen, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Operationen zu, die die folgenden Bedingungen erfüllen:
 

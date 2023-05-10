@@ -173,3 +173,13 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 {{< c8y-admon-info >}}
 Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 {{< /c8y-admon-info >}}
+
+### So setzen Sie Benutzer-Tokens zurück
+
+Im Falle eines Sicherheitsvorfalls, an dem die Sitzungs-Tokens der Benutzer Ihres Mandanten beteiligt sind, können Sie alle derzeit verwendeten Tokens außer Kraft setzen.
+
+Um alle Sitzungs-Tokens zurückzusetzen, klicken Sie auf **Tokens zurücksetzen** rechts oben in der Menüleiste. Beim Zurücksetzen aller Tokens werden alle Benutzer abgemeldet, die über "OAI-Secure" oder "Single-Sign-On-Weiterleitung" angemeldet sind. Beachten Sie, dass von Ihren Geräten abgerufene JWT-Tokens ebenfalls zurückgesetzt werden.
+
+{{< c8y-admon-req title="Anforderungen" >}}
+Um Tokens zurückzusetzen, müssen Sie über eine ADMIN-Berechtigung für den Berechtigungstyp "Benutzerverwaltung" verfügen.
+{{< /c8y-admon-req >}}

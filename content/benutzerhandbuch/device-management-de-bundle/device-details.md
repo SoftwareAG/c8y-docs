@@ -9,7 +9,7 @@ Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen
 
 ![Device info](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-info.png)
 
-Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d. h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind. Eine detaillierte Beschreibung der Operationen und Fragmente für die jeweilige Gerätedetail-Registerkarte finden Sie in der [Device Management Library](/reference/device-management-library/#overview) im *Reference Guide*.
+Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d. h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind. Eine detaillierte Beschreibung der Operationen und Fragmente für die jeweilige Gerätedetail-Registerkarte finden Sie in der [Device Management Library](/reference/device-management-library/#overview) im *Reference Guide*.
 
 Eingangs wird die Registerkarte **Info** angezeigt, die allgemeine Informationen zu einem Gerät enthält und bei allen Geräte vorhanden ist.
 
@@ -46,16 +46,16 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
+<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
+<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Fieldbus</a></td>
 <td style="text-align:left">Enthält nähere Informationen zu Fieldbus-Geräten. Weitere Informationen finden Sie unter <a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#firmware">Firmware</a></td>
 <td align="left">Verwaltet die Firmware eines Geräts. Siehe <a href="#managing-firmware">Verwalten von Firmware auf einem Gerät</a>.</td>
-</tr>
-<tr>
-<td align="left"><a href="#dev-profile">Geräteprofil</a></td>
-<td align="left">Zeigt die Details des aktuell auf dem Gerät installierten Profils an.</td>
 </tr>
 <tr>
 <td align="left"><a href="#identity">Identifikator</a></td>
@@ -74,7 +74,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Nähere Informationen zu binärer Konfiguration finden Sie unter <a href="#configuration-repository">Verwalten von Konfigurationen</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#logs">Logdateien</a></td>
+<td align="left"><a href="#logs">Logdaten</a></td>
 <td align="left">Ermöglicht das Abfragen von Loginformationen für das Gerät.</td>
 </tr>
 <tr>
@@ -94,8 +94,8 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 <td align="left">Zeigt Netzwerkinformationen für das Gerät an.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/opcua">OPCUA-Server</a></td>
-<td style="text-align:left">Enthält nähere Informationen zu über einen OPCUA-Server verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/opcua">OPCUA</a>.</td>
+<td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA-Server</a></td>
+<td style="text-align:left">Enthält nähere Informationen zu über einen OPC UA-Server verbundenen Geräten. Näheres dazu finden Sie unter <a href="../../protocol-integration/opcua">OPC UA</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#services">Services</a></td>
@@ -140,7 +140,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der {{< product-c8y-iot >}}-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Eine detaillierte Beschreibung der Registerkarte **Modbus** ist beispielsweise unter [Cloud Fieldbus](/protocol-integration/cloud-fieldbus) im *Protocol Integration Guide* zu finden.
 {{< /c8y-admon-info >}}
 
-Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
+Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 
 Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Aktionsmenü angezeigt werden, wenn Sie **Mehr...** rechts in der oberen Menüleiste klicken.
 
@@ -153,27 +153,31 @@ Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant s
 
 Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Verwenden von Alarmen](#alarm-monitoring).
 
+
 <a name="events"></a>
 ### Ereignisse
 
 Die Registerkarte **Ereignisse** zeigt die mit dem Gerät verbundenen Ereignisse an. Dies ermöglicht unter anderem eine Fehlersuche. Weitere Informationen finden Sie unter [Fehlerbehebung von Geräten](#events-all).
+
 
 <a name="firmware"></a>
 ### Firmware
 
 Weitere Informationen zum Verwalten und Aktualisieren von Firmware auf einem Gerät finden Sie unter [Verwalten von Firmware auf einem Gerät](#managing-firmware).
 
+
 <a name="dev-profile"></a>
 ### Geräteprofil
 
 Weitere Informationen zum Anwenden von Geräteprofilen auf ein Gerät finden Sie unter [Geräteprofile auf Geräte anwenden](#applying-device-profiles).
+
 
 <a name="identity"></a>
 ### Identifikator
 
 {{< product-c8y-iot >}} kann Geräte und Assets mit mehreren externen Identifikatoren verknüpfen. Geräte werden beispielsweise oft durch die IMEI ihres Modems, eine Microcontroller-Seriennummer oder ein Asset-Tag identifiziert. Die Registerkarte **Identifikator** listet alle gespeicherten Identifikatoren für ein Gerät auf.
 
-Dies ist z. B. hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält.
+Dies ist z. B. hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält.
 
 <a name="info"></a>
 ### Info
@@ -228,6 +232,7 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 </tbody>
 </table>
 
+
 <a name="child-devices"></a>
 ### Kindgeräte
 
@@ -260,6 +265,7 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 {{< c8y-admon-info >}}
 Wenn ein Gerät sowohl die textbasierte als auch die binärbasierte Konfiguration unterstützt, zeigt die Registerkarte **Konfiguration** für jeden Konfigurationstyp eine untergeordnete Registerkarte an.
 {{< /c8y-admon-info >}}
+
 
 <a name="logs"></a>
 ### Logdaten
@@ -392,11 +398,7 @@ In jeder Spalte können die Services anhand des jeweils angezeigten Wertes gefil
 ![Services overview](/images/benutzerhandbuch/DeviceManagement/devmgmt-services-overview.png)
 
 Die Plattform gibt drei Statusoptionen für Services vor: **In Betrieb**, **Außer Betrieb** und **Unbekannt**.
-Diese vordefinierten Status haben jeweils eine eigene grafische Darstellung und können direkt im Filter **Status** ausgewählt werden:
-
-![Status filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-services-status-filter.png)
-
-Andere Statusoptionen sind ebenfalls zulässig und können frei definiert werden, siehe [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in der Web SDK-Dokumentation.
+Diese vordefinierten Status haben jeweils eine eigene grafische Darstellung und können direkt im Filter **Status** ausgewählt werden. Andere Statusoptionen sind ebenfalls zulässig und können frei definiert werden, siehe [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in der Web SDK-Dokumentation.
 Sie verwenden alle das gleiche Symbol und müssen im Filter **Status** manuell eingegeben werden.
 Ein Tooltip am Statussymbol zeigt ihren tatsächlichen Wert an.
 
@@ -417,19 +419,11 @@ Wenn Sie {{< product-c8y-iot >}} zum Fernsteuern von Maschinen verwenden, vergew
 
 {{< product-c8y-iot >}} stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie über dem Kommandozeilenbereich auf **Vordefinierte Kommandos**, um ein Fenster zu öffnen, das eine Liste von verfügbaren vordefinierten Kommandos enthält. Wählen Sie das gewünschte Kommando aus und klicken Sie auf **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen.
 
-![Device shell predefined](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
-
 <a name="software"></a>
 ### Software
 
 Weitere Informationen zum Verwalten und Aktualisieren der auf einem Gerät installierten Software finden Sie unter [Verwalten von Software auf einem Gerät](#managing-software).
 
-<a name="control"></a>
-### Steuerung
-
-Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
-
-![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
 <a name="location"></a>
 ### Standort
@@ -439,6 +433,15 @@ Die Registerkarte **Standort** zeigt standardmäßig den Standort eines Geräts 
 ![Location tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-location.png)
 
 Die Registerkarte **Standort** zeigt außerdem, wenn ein Gerät das Attribut `c8y_Position` enthält. Wenn Sie ein neues `c8y_Position`-Ereignis senden, können Sie das gleiche `c8y_Position`-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.
+
+
+<a name="control"></a>
+### Steuerung
+
+Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
+
+![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
+
 
 <a name="tracking"></a>
 ### Tracking
@@ -456,6 +459,7 @@ In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder e
 Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Standortaktualisierungsereignisse"). Wenn Sie auf einen Eintrag klicken, zeigt ein "Pin" auf der Karte den Standort zu diesem Zeitpunkt an.
 
 Abhängig vom Gerätetypen und der Integration in {{< product-c8y-iot >}} können Sie geräteseitiges Geofencing und Bewegungserfassung konfigurieren.
+
 
 <a name="availability"></a>
 ### Verfügbarkeit

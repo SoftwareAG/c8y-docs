@@ -1,7 +1,9 @@
 ---
 weight: 20
 title: Versions
-layout: redirect
+layout: bundle
+section:
+  - edge_server
 ---
 
 {{< product-c8y-iot >}} Edge {{< c8y-current-version >}} uses the following versions:

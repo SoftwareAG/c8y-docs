@@ -1,10 +1,10 @@
 ---
-title: Configuration
+title: Configuring Edge
 icon: "dlt-c8y-icon-settings"
 type: root
 layout: redirect
 bundle: edge-configuration
-section: 
+section:
   - edge_server
 weight: 13
 ---

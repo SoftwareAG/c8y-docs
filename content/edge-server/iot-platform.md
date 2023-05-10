@@ -1,7 +1,9 @@
 ---
 weight: 40
 title: Edge functionalities
-layout: redirect
+layout: bundle
+section:
+  - edge_server
 ---
 
 Since {{< product-c8y-iot >}} Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included applications are the same in both versions, with minor restrictions.

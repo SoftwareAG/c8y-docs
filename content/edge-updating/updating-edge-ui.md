@@ -1,7 +1,9 @@
 ---
 weight: 10
-title: Updating Edge using the GUI
-layout: redirect
+title: Updating Edge using the UI
+layout: bundle
+section:
+  - edge_server
 ---
 
 You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing installation using the Administration application in the {{< management-tenant >}}.

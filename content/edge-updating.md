@@ -1,5 +1,5 @@
 ---
-title: Updating Cumulocity IoT Edge
+title: Updating Edge
 icon: "dlt-c8y-icon-installing-updates"
 type: root
 layout: redirect

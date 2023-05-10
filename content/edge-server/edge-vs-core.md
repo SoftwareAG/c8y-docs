@@ -1,7 +1,9 @@
 ---
 weight: 30
 title: Cumulocity IoT Edge versus other Cumulocity IoT deployments
-layout: redirect
+layout: bundle
+section:
+  - edge_server
 ---
 
 {{< product-c8y-iot >}} Edge uses the same software as {{< product-c8y-iot >}} platform.

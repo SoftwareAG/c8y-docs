@@ -1,7 +1,9 @@
 ---
 weight: 10
 title: Overview
-layout: redirect
+layout: bundle
+section:
+  - edge_server
 ---
 
 {{< product-c8y-iot >}} Edge is delivered as a software appliance designed to run on industrial PC's or local servers.

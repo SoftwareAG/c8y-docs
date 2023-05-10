@@ -95,7 +95,7 @@ You can only add widgets and data to the dashboard for the device itself. It is 
 
 Global time context allows users to set a time range for their dashboards and align all data to that range. Widget developers can set the global time for the entire dashboard or particular widgets. This ensures that all data presented in the dashboard is aligned with the same time context, regardless of the widget being used.
 
-The global time range can be set to any duration, from the last hour to the last month, depending on the monitoring needs. The time range is displayed at the top of the dashboard, so you can quickly see the context in which the data is being presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL.
+The global time range can be set to any time span, from the last minute to the last month (or more, using custom dates picker), depending on the monitoring needs. The time range is displayed at the top of the dashboard, so you can quickly see the context in which the data is being presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when user sets global date context with picker.
 
 {{< c8y-admon-info >}}
 This feature is currently available for the following widgets: Event list, Data points graph, and Data points table.

@@ -203,7 +203,7 @@ The following information is provided on the **Status** tab:
 * Subscriptions - number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice.
 * Alarms - alarms for given application, provided in realtime.
 * Events - events for given application, provided in realtime.
-* Smart rules - list of applicable smartrules.
+* Smart rules - list of applicable smart rules.
 
 ##### Alarms and events
 
@@ -224,7 +224,7 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 
 #### Log files
 
-{{< product-c8y-iot >}} offers viewing logs which provide more details on the status of owned by tenant microservices.
+{{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices owned by the tenant.
 
 To view logs, open the **Logs** tab of the respective microservice.
 

@@ -82,7 +82,7 @@ Using this approach, the modeling devices can make a difference between modeling
 
 The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment (`c8y_Position`), it can be placed on a map. As soon as it has a relay (`c8y_Relay`), it can be switched on and off using the respective device control command as described below.
 
-For more information on fragments and how managed objects are structured, see the [Device management library](reference/device-management-library/) in the *Reference guide*.
+For more information on fragments and how managed objects are structured, see the [Device management library](/reference/device-management-library/) in the *Reference guide*.
 
 #### Naming conventions of fragments
 

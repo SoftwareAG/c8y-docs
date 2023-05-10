@@ -93,7 +93,7 @@ You can only add widgets and data to the dashboard for the device itself. It is 
 <a name="global-time-context"></a>
 ### Global time context
 
-Global time context allows users to set a time range for their dashboards and align all data to that range. Widget developers can set the global time for the entire dashboard or particular widgets. This ensures that all data presented in the dashboard is aligned with the same time context, regardless of the widget being used.
+Global time context allows users to set a time range for their dashboards and align all data to that range. Widget developers can set widget config to use global date context which will be created with the first widget configured to use it. This shared context can then be used by other widgets that also have been configured to be bound to the global date context.
 
 The global time range can be set to any time span, from the last minute to the last month (or more, using custom dates picker), depending on the monitoring needs. The time range is displayed at the top of the dashboard, so you can quickly see the context in which the data is being presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when user sets global date context with picker.
 

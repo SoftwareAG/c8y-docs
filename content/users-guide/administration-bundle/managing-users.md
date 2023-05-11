@@ -83,8 +83,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
                </tr>
                <tr>
                    <td align="left">Login alias</td>
-                   <td align="left">In addition to the username, an optional alias can be provided to be used to log on. In contrast to username, this alias may be changed if required. User alias is not supported for devices.
-	  					{{<c8y-admon-info>}} Login alias can not be same as username {{</c8y-admon-info>}}
+                   <td align="left">In addition to the username, an optional alias can be provided to be used to log on. In contrast to the username, this alias may be changed if required. The login alias cannot be the same as the username. Note that the login alias is not supported for devices.
                    </td>
                </tr>
                <tr>
@@ -123,7 +122,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 3. Select the login options for the user.
 	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
 	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strength.  
-	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option only available during user creation.
+	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/users-guide/administration#managing-permissions).
 5. Click **Save** to save your settings.

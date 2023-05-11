@@ -6,10 +6,12 @@ layout: redirect
 
 <a name="config-platform"></a>
 
+From the {{< management-tenant >}}, you can configure properties which apply globally to the whole {{< product-c8y-iot >}} deployment.
+
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-The user must have access to the Administration application on management tenant.
+The user must have access to the Administration application on a {{< management-tenant >}}.
 
 ROLES & PERMISSIONS:
 
@@ -21,8 +23,6 @@ On tenant creation, there are default roles available that can be used as a samp
 * Tenant Manager - Can manage tenant-wide configurations like applications, tenant options and retention rules
 
 {{< /c8y-admon-req >}}
-
-From the {{< management-tenant >}}, you can configure properties which apply globally to the whole {{< product-c8y-iot >}} deployment.
 
 Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
 

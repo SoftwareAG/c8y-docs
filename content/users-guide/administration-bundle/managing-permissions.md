@@ -370,7 +370,7 @@ Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For detailed `description` on the roles hover over the info icon next to it or refer to [Inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For a detailed description of a role hover over the info icon next to it or refer to [Inventory roles](#inventory).
 
 {{< c8y-admon-important >}}
 If a user already has a global role containing inventory permissions, the user will be

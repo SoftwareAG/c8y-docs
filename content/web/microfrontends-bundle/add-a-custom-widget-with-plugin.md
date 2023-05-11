@@ -25,11 +25,8 @@ Select the plugin name, for example, "widget-plugin":
 ? Enter the name of the project:  (my-application) widget-plugin
 ```
 
-<<<<<<< HEAD
+
 Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontend are supported with version higher then 10.16.0.0:
-=======
-3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontends are supported with version higher then 10.16.0.0:
->>>>>>> 9031baef2458e2fac6c53e8f9602d8f8d8e62164
 
 ````console
 ? Which base version do you want to scaffold from?

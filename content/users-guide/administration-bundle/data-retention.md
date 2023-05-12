@@ -15,15 +15,26 @@ helpcontent:
 
 **Retention rules** give you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings by the platform administrator). You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
 
-{{< c8y-admon-info >}}
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration application.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view retention rules: READ permission for the permission type "Retention rules"
+- To manage retention rules (create, update, delete): ADMIN permission for the permission type "Retention rules"
+
+The above permissions can be used to create roles for robust user management. Every new tenant have specified typical roles by default:
+- Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules.
+
+{{< /c8y-admon-req >}}
+
 
 {{< c8y-admon-related >}}
 - [Enterprise tenant > Managing tenants > Tenant policies](/users-guide/enterprise-tenant/#tenant-policies) in the <i>User guide</i> for details on the creation of tenant policies and retention rules on tenant level.
 - [Retention rules](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Retention-rules) in the {{< openapi >}} for details on managing retention rules via REST.
 {{< /c8y-admon-related >}}
 
+{{< c8y-admon-info >}}
+Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration application.
+{{< /c8y-admon-info >}}
 
 <a name="view-retention-rule"></a>
 #### To view retention rules
@@ -108,6 +119,20 @@ The source parameter is the ID of the device. When it is defined, the retention 
 ### Managing files in the file repository
 
 The file repository provides an overview of the files stored in your account.
+
+{{< c8y-admon-req >}} 
+ROLES & PERMISSIONS:
+
+- To view files in the files repository: READ permission for the permission type "Inventory" . You can remove owned files with this permission, but you can not remove files of other users.
+- To upload and manage files of all owners in the files repository: ADMIN permission for the permission type "Inventory".
+- To upload files to the files repository: CREATE permission for the permission type "Inventory".
+
+The above permissions can be used to create roles for robust user management. Every new tenant have specified typical roles by default:
+- Global Manager - Can read and write all data from all devices
+- Global Reader - Can read all data from all devices
+
+{{< /c8y-admon-req >}}
+
 
 Click **Files repository** in the **Management** menu to see a list of files.
 

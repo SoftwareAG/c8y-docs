@@ -12,6 +12,14 @@ helpcontent:
 
 Alarm mapping enables you to change the severity and text of alarms to adapt them to your business priorities. For example, a loss of the connection to a device is by default a MAJOR alarm but may be critical to you. To change this, add an alarm mapping to change alarms related to connection losses to CRITICAL.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To view alarm mappings: READ permission for the permission type "Alarms".
+
+To manage alarm mappings (add, edit, or delete): ADMIN permission for the permission type "Alarms".
+{{< /c8y-admon-req >}}
+
 {{< c8y-admon-related >}}
 - [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the <i>User guide</i> for information on working with alarms in general.
 - [Alarms](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Alarms) in the {{< openapi >}} for details on managing alarms via REST.

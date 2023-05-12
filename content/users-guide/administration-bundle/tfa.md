@@ -23,7 +23,7 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 {{< /c8y-admon-req >}}
 
 
-#### How to enable for a specific user
+#### How to enable TFA for a specific user
 
 1. In the Administration application, navigate to **Accounts** > **Users** and select a user in the **Users** page.
 2. Select the checkbox next to **Two-factor authentication**.

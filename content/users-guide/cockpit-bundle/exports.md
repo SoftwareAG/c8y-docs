@@ -71,8 +71,6 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the toggle to enable/disable a field.
 
-![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
-
 {{< c8y-admon-info >}}
 The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
 {{< /c8y-admon-info >}}

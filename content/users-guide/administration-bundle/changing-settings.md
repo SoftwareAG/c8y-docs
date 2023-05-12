@@ -33,7 +33,7 @@ From the **Settings** menu, administrators can manage various settings for the a
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-To see the **Authentication** menu item, you must have ADMIN permission for the "Tenant management" permission type.
+To see the **Authentication** menu item, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
 {{< /c8y-admon-req >}}
 
 <a name="authentication"></a>

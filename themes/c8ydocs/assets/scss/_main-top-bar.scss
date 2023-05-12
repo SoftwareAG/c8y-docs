@@ -8,113 +8,129 @@
   left: 0;
   top: 10px;
   transition: left 0.35s $ease;
-  z-index: 2000;
+  z-index: 20;
   letter-spacing: 0.05em;
   font-size: 11px;
   text-decoration: none;
   text-transform: uppercase;
   padding: 0.6rem 0 0 6rem;
+  
+  @media(min-width: $grid-breakpoint) {
+    z-index: 200;
+  }
 
-  &.show {
-    z-index: 2000;
+    &.show {
+      z-index: 2000;
+
+      .dropdown-toggle.version {
+        background-color: transparent;
+        color: #333;
+        box-shadow: none;
+      }
+    }
+
+    @media (min-width: $grid-breakpoint) {
+      left: $main-nav-width;
+      margin-left: 4px;
+      padding: 0.9rem 0 0 2.5rem;
+    }
+
     .dropdown-toggle.version {
-      background-color: transparent;
-      color: #333;
-      box-shadow: none;
+      display: flex;
+      align-items: center;
+      padding: 6px 12px;
+      height: 24px;
+      position: relative;
+      z-index: 11;
+      line-height: 1;
+      background-color: $blue-primary;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 0 3px #f8f8f8;
+      -webkit-appearance: none;
+
+      .caret {
+        margin-left: 6px;
+      }
     }
-  }
-  @media (min-width: $grid-breakpoint) {
-    left: $main-nav-width;
-    margin-left: 4px;
-    padding: 0.9rem 0 0 2.5rem;
+
+    .dropdown-menu {
+      padding-top: 34px;
+      padding-bottom: 0;
+      top: -35px !important;
+      z-index: 10;
+    }
+
+    small {
+      position: relative;
+      z-index: 1010;
+      font-weight: bold;
+      opacity: 0.5;
+    }
   }
 
-  .dropdown-toggle.version {
-    display: flex;
-    align-items: center;
-    padding: 6px 12px;
-    height: 24px;
-    position: relative;
-    z-index: 11;
-    line-height: 1;
-    background-color: $blue-primary;
-    color: white;
-    border-radius: 12px;
-    box-shadow: 0 0 0 3px #f8f8f8;
-    -webkit-appearance: none;
-    .caret {
-      margin-left: 6px;
-    }
-  }
-  .dropdown-menu {
-    padding-top: 34px;
-    padding-bottom: 0;
-    top: -35px !important;
+  .main-top-bar {
+    position: sticky;
     z-index: 10;
-  }
-  small {
-    position: relative;
-    z-index: 1010;
-    font-weight: bold;
-    opacity: 0.5;
-  }
-}
+    left: 0;
+    transition: left 0.35s $ease;
+    right: 0;
+    top: 0;
+    padding-top: 1rem;
+    padding-left: 5.3rem;
 
-.main-top-bar {
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  transition: left 0.35s $ease;
-  right: 0;
-  top: 0;
-  padding-top: 1rem;
-  padding-left: 5.3rem;
-  @media (min-width: $grid-breakpoint) {
-    left: $main-nav-width;
-    padding-left: 10rem;
-  }
-  > .d-flex {
-    align-items: center;
-    max-width: 1078px;
-  }
+    @media (min-width: $grid-breakpoint) {
+      left: $main-nav-width;
+      padding-left: 25rem;
+    }
 
-  .nav {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    a {
-      color: #333;
-      letter-spacing: 0.05em;
-      font-size: 11px;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 6px 6px;
-      &:hover {
-        color: $blue-primary;
+    >.d-flex {
+      align-items: center;
+      max-width: 1078px;
+    }
+
+    .nav {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      a {
+        color: #333;
+        letter-spacing: 0.05em;
+        font-size: 11px;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 6px 6px;
+
+        &:hover {
+          color: $blue-primary;
+        }
+      }
+
+      &.nav-left {
+        @media (max-width: $grid-breakpoint) {
+          margin-left: 30px;
+        }
+      }
+
+      .open & {
+        display: none;
       }
     }
-    &.nav-left {
-      @media (max-width: $grid-breakpoint) {
-        margin-left: 30px;
+
+    .nav-right {
+      width: 65%;
+      // margin-top: 2.5rem;
+
+      @media (min-width: $screen-sm-min) {
+        width: 260px;
+        margin-top: 0;
+        margin-left: auto !important;
+        margin-right: 0;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        margin-right: 56px;
       }
     }
-    .open & {
-      display: none;
-    }
   }
-
-  .nav-right {
-    width: 100%;
-    margin-top: 2.5rem;
-
-    @media (min-width: $screen-sm-min) {
-      width: 260px;
-      margin-top: 0;
-      margin-left: auto !important;
-      margin-right: 0;
-    }
-    @media (min-width: $screen-lg-min) {
-      margin-right: 56px;
-    }
-  }
-}

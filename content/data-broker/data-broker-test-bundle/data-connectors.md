@@ -10,7 +10,7 @@ section:
 A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
 
 <a name="data-broker-connectors-list"></a>
-### Viewing data connectors
+### To view data connectors
 
 Click **Data connectors** in the navigator to see a list of all currently defined data connectors with their status.
 

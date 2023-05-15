@@ -24,7 +24,7 @@ c8ycli new
 
 3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontends are supported with version higher then 10.16.0.0:
 
-````console
+```console
 ? Which base version do you want to scaffold from?
   1015.0.372 (latest)
   1018.106.0 (next)
@@ -33,6 +33,7 @@ c8ycli new
 ❯ 1016.0.233
   1014.0.359
   other
+```
 
 4. Select an application template as the basis for your plugin, in our case, "package-blueprint":
 
@@ -45,7 +46,7 @@ c8ycli new
   tutorial
   widget-plugin
   administration
-````
+```
 
 After a few seconds, you should see the following message:
 

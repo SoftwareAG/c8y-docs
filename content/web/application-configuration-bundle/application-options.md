@@ -55,7 +55,7 @@ As this property is defined statically at build time, it is possible for the app
 These can just be appended to the URL of the application as query parameters.
 
 ```sh
-https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/options.json&rightDrawer:false
+https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/options.json&rightDrawer=false
 ```
 
 ### Built-in Options

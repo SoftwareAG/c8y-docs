@@ -38,7 +38,7 @@ Users which are using single sign-on cannot change the password of users which a
 
 ### Viewing users
 
-To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
+To view all users in your tenant, click **Users** in the **Accounts** menu in the navigator.
 
 ![Expanded view](/images/users-guide/Administration/admin-users-list.png)
 
@@ -63,63 +63,66 @@ Initially, the **User** page only shows the top-level users. To see all users in
 If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
   {{< /c8y-admon-info >}}
 
-2. At the left of the **New user** window, provide the following information to identify the user:
+   2. At the left of the **New user** window, provide the following information to identify the user:
 
-	<table>
-	<thead>
-	<colgroup>
-	<col style="width: 20%;">
-	<col style="width: 80%;">
-	</colgroup>
-	<tr>
-	<th align="left">Field</th>
-	<th align="left">Description</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td align="left">Username</td>
-	<td align="left">Serves as a unique user ID to identify the user at the system. Note that the username cannot be changed once the user has been created. This field is mandatory.</td>
-	</tr>
-	<tr>
-	<td align="left">Login alias</td>
-	<td align="left">In addition to the username, an optional alias can be provided to be used to log on. In contrast to username, this alias may be changed if required. User alias is not supported for devices.</td>
-	</tr>
-	<tr>
-	<td align="left">Status</td>
-	<td align="left">Enable/disable the user account here. If the user account is disabled the user cannot login.</td>
-	</tr>
-	<tr>
-	<td align="left">Email</td>
-	<td align="left">A valid email address. This field is mandatory.</td>
-	</tr>
-	<tr>
-	<td align="left">First name</td>
-	<td align="left">First name of the user. When the user is logged in, this name appears at the right of the top bar on the <strong>User</strong> button.</td>
-	</tr>
-	<tr>
-	<td align="left">Last name</td>
-	<td align="left">Last name of the user.</td>
-	</tr>
-	<tr>
-	<td align="left">Telephone</td>
-	<td align="left">A valid phone number. The phone number is required if the user is configured to use two-factor authentication.</td>
-	</tr>
-	<tr>
-	<td align="left">Owner</td>
-	<td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
-	</tr>
-	<tr>
-	<td align="left">Delegated by</td>
-	<td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
-	</tr>
-	</tbody>
-	</table>
+       <table>
+           <thead>
+               <colgroup>
+                   <col style="width: 20%;">
+                   <col style="width: 80%;">
+               </colgroup>
+               <tr>
+                   <th align="left">Field</th>
+                   <th align="left">Description</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td align="left">Username</td>
+                   <td align="left">Serves as a unique user ID to identify the user at the system. Note that the username cannot be changed once the user has been created. This field is mandatory.</td>
+               </tr>
+               <tr>
+                   <td align="left">Login alias</td>
+                   <td align="left">In addition to the username, an optional alias can be provided to be used to log on. In contrast to the username, this alias may be changed if required. The login alias cannot be the same as the username. Note that the login alias is not supported for devices.
+                   </td>
+               </tr>
+               <tr>
+                   <td align="left">Status</td>
+                   <td align="left">Enable/disable the user account here. If the user account is disabled the user cannot login.</td>
+               </tr>
+               <tr>
+                   <td align="left">Email</td>
+                   <td align="left">A valid email address. This field is mandatory.</td>
+               </tr>
+               <tr>
+                   <td align="left">First name</td>
+                   <td align="left">First name of the user.</td>
+               </tr>
+               <tr>
+                   <td align="left">Last name</td>
+                   <td align="left">Last name of the user.</td>
+               </tr>
+               <tr>
+                   <td align="left">Telephone</td>
+                   <td align="left">A valid phone number. The phone number is required if the user is configured to use two-factor authentication.</td>
+               </tr>
+               <tr>
+                   <td align="left">Owner</td>
+                   <td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
+               </tr>
+               <tr>
+                   <td align="left">Delegated by</td>
+                   <td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
+               </tr>
+           </tbody>
+       </table>
 
+       {{<c8y-admon-related>}} For additional information see  [User options and settings](/users-guide/getting-started/#user-settings).
+       {{</c8y-admon-related>}}
 3. Select the login options for the user.
 	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
-	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strenth.  
-	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
+	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strength.  
+	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/users-guide/administration#managing-permissions).
 5. Click **Save** to save your settings.

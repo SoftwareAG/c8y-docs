@@ -7,17 +7,17 @@ weight: 40
 It can be overwhemling to decide which approach to use and how to start your development journey.
 If you are a partner or a customer we recommend you join the micro frontend journey.
 It allows to extend and use the ecosystem instead of building silo solutions.
-This chapter explains our vision of this journey and describes our best practices regarding development.
+This section explains our vision of this journey and describes our best practices regarding development.
 
 #### The user journey - blueprint or plugin
 To develop the right thing it is very important to understand what kind of user you want to target with your application.
-For the micro frontend story the target audience are solution architects with little developer experience.
+For the micro frontend story, the target audience are solution architects with little developer experience.
 The idea is simple: Any IoT solution can be set up by a user in a few steps - without coding.
 The building blocks of this are developed by the ecosystem.
 The steps are the following:
 
 1. A solution architect selects the **blueprint** to use. This is the foundation application of the solution.
-2. The blueprint should guides through the configuration of the application. One step is, for example, the installation of the required **microservices or plugins**.
+2. The blueprint guides through the configuration of the application. One step is, for example, the installation of the required **microservices or plugins**.
 3. After setup, the solution is ready to use. The solution architect can now test it with other users. There may be additional requirements which can be accounted for with the option to **add or remove additional plugins**.
 
 The user journey for the micro frontend story is a a self-service approach.
@@ -45,8 +45,8 @@ Consider a micro frontend plugin.
 The decision tree can be read from top (most effort, highest customization) to bottom (lowest effort, limited customization).
 For example, if you choose to do everything on your own, you must write your own login logic and cannot use our pre-built components like data-grid, dashboard or asset-selector.
 The development effort is very high.
-If you instead use the Web SDK you get a lot of functionality out of the box and by branding the application, you are able to make it look and feel like a product of your own development.
-Furthermore you can provide it as an application blueprint to your customers enabling them to brand it to according to their needs.
+If you use the Web SDK instead, you get a lot of functionality out of the box and by branding the application, you are able to make it look and feel like a product of your own development.
+Furthermore, you can provide it as an application blueprint to your customers, enabling them to brand it according to their needs.
 
 However, if one of the available blueprints (**Administration** > **Ecosystem** > **Extensions**) or the default applications (Cockpit, Device management or Administration) already mostly fit your case, but misses, for example, an extension, instead implement a plugin.
 Plugins are easy to implement and can extend every part of the existing applications. Furthermore, if you intend to provide those extensions to your customers you can do so and share any plugin.

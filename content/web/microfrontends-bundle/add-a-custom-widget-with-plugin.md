@@ -28,7 +28,7 @@ Select the plugin name, for example, "widget-plugin":
 
 Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontend are supported with version higher then 10.16.0.0:
 
-````console
+```console
 ? Which base version do you want to scaffold from?
   1015.0.372 (latest)
   1018.106.0 (next)
@@ -37,6 +37,7 @@ Select the version for which you want to create a sample application, for exampl
 ❯ 1016.0.233
   1014.0.359
   other
+```
 
 
 Select an application template as the basis for your plugin, in our case, "widget-plugin":

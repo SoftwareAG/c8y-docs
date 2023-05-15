@@ -30,7 +30,7 @@ c8ycli new
   1018.106.0 (next)
   1018.0.47
   1017.0.151
-> 1016.0.233
+❯ 1016.0.233
   1014.0.359
   other
 ```
@@ -42,7 +42,7 @@ c8ycli new
   cockpit
   devicemanagement
   hybrid
-> package-blueprint
+❯ package-blueprint
   tutorial
   widget-plugin
   administration

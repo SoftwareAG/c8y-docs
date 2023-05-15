@@ -33,7 +33,7 @@ The above permissions can be used to create roles for robust user management. Ev
 {{< /c8y-admon-related >}}
 
 {{< c8y-admon-info >}}
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration application.
+Retention rules are usually run during the night. When you edit a retention rule you don´t see an immediate effect in the **Usage** section on the Home screen of the Administration application.
 {{< /c8y-admon-info >}}
 
 <a name="view-retention-rule"></a>
@@ -123,9 +123,9 @@ The file repository provides an overview of the files stored in your account.
 {{< c8y-admon-req >}} 
 ROLES & PERMISSIONS:
 
-- To view files in the files repository: READ permission for the permission type "Inventory" . You can remove owned files with this permission, but you can not remove files of other users.
-- To upload and manage files of all owners in the files repository: ADMIN permission for the permission type "Inventory".
+- To view files in the files repository: READ permission for the permission type "Inventory". You can remove owned files with this permission but you cannot remove files of other users.
 - To upload files to the files repository: CREATE permission for the permission type "Inventory".
+- To upload and manage files of all owners in the files repository: ADMIN permission for the permission type "Inventory".
 
 The above permissions can be used to create roles for robust user management. Every new tenant have specified typical roles by default:
 - Global Manager - Can read and write all data from all devices

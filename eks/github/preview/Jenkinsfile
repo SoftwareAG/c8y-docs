@@ -28,6 +28,28 @@ pipeline {
     stage('Build') {
       steps {
         sh '''bash --login
+        echo "starting linkchecker..."
+        linkchecker \
+        https://cumulocity.com/guides/images/ \
+        https://cumulocity.com/guides/welcome/ \
+        https://cumulocity.com/guides/concepts/ \
+        https://cumulocity.com/guides/users-guide/ \
+        https://cumulocity.com/guides/benutzerhandbuch/ \
+        https://cumulocity.com/guides/protocol-integration/ \
+        https://cumulocity.com/guides/device-tutorials/ \
+        https://cumulocity.com/guides/edge/ \
+        https://cumulocity.com/guides/thin-edge/ \
+        https://cumulocity.com/guides/cloud-remote-access/ \
+        https://cumulocity.com/guides/oee/ \
+        https://cumulocity.com/guides/device-sdk/ \
+        https://cumulocity.com/guides/microservice-sdk/ \
+        https://cumulocity.com/guides/web/ \
+        https://cumulocity.com/guides/reference/ \
+        https://cumulocity.com/guides/apama/ \
+        https://cumulocity.com/guides/machine-learning/ \
+        https://cumulocity.com/guides/datahub/ \
+        https://cumulocity.com/guides/dtm/ \
+        https://cumulocity.com/guides/about-doc/
         python /previewScanner.py
         python /qa.py
         echo \"Starting hugo with params ${HUGO_PARAMS}\"

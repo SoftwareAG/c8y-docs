@@ -302,7 +302,7 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 Follow the steps below:
 
-1. In the **Asset properties** page, click **Export asset properties**. In the resulting dialog, you see the list of asset properties along with their description and type.
+1. On the **Asset properties** page, click **Export asset properties**. In the resulting dialog box, you see the list of asset properties along with their description and type.
 2. Select one or more desired asset properties and click **Export**.
 3. The dialog closes and a JSON file named 'Export-asset-properties.json' downloads.
 
@@ -318,11 +318,11 @@ You can export a maximum of 500 asset properties at a time.
 
 To import asset properties into the DTM application, follow the steps below:
 
-1. In the **Asset properties** page, click **Import asset properties**.
+1. On the **Asset properties** page, click **Import asset properties**.
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant. 
 3. Click **Next** to preview the asset properties before importing them.
 4. Click **Import** to import the asset properties.
-4. Or, Click **Back** to go to previous step. Hover over the file name and click the delete icon to remove the current file and upload a different one.
+4. Alternatively, Click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
 5. View newly imported asset properties in the **Asset properties** page.
 
 
@@ -331,7 +331,7 @@ To import asset properties into the DTM application, follow the steps below:
 
 {{< c8y-admon-info>}}
 When you upload the JSON file, it undergoes validation. If the validation fails, you see a corresponding message in the dialog. Click **Download log file** to view the errors.
-Review the errors that are reported, and attempt the upload again after addressing the errors.
+Review the errors that are reported, resolve them, and attempt the upload again.
 
 You can import a maximum of 500 asset properties at a time.
 {{</ c8y-admon-info>}}

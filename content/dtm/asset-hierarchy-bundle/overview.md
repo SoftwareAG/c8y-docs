@@ -34,9 +34,9 @@ Initially, all the asset hierarchies are collapsed and it lists only the root as
 
 Click the asset name to view the asset details and the devices assigned to it.
 
-To edit or delete an asset from **Assets** page, click the menu icon at the right of the row and click either the edit or delete option.
+To edit or delete an asset from the **Assets** page, click the menu icon at the right of the row and click either **Edit** or **Delete**.
 To delete multiple assets at once, select one or more assets and click **Delete** in the top banner.
 
-Select one or more assets of same type to relocate from its current hierarchy to another. For steps to move assets between hierarchies, see [To move assets](/dtm/asset-hierarchy/#to-move-assets).
+Select one or more assets of same type to relocate from its current hierarchy to another. For more information on how to move assets between hierarchies, see [To move assets](/dtm/asset-hierarchy/#to-move-assets).
 
 ![asset-hierarchy](/images/dtm/assets/dtm-assets-asset-hierarchy.png)

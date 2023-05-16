@@ -33,7 +33,7 @@ Click **Configure columns** to configure the displayed columns.
 Click **Reload** to reload the screen.
 The total number of asset models is displayed on the bottom left of the page.
 
-Use the Export asset models and Import asset models feature to transfer asset models between tenants. This is useful for replicating the asset models in multiple tenants. By exporting and importing asset models, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset models](#to-export-asset-models) and [To import asset models](#to-import-asset-models) on how to export or import asset models.
+Use the **Export asset models** and **Import asset models** feature to transfer asset models between tenants. This is useful for replicating the asset models in multiple tenants. By exporting and importing asset models, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset models](#to-export-asset-models) and [To import asset models](#to-import-asset-models) on how to export or import asset models.
 
 <a name="create-asset-type"></a>
 ### To create an asset model
@@ -207,13 +207,13 @@ To sort columns, hover over the respective column header and click the sort icon
 
 To export asset models to add in another tenant, follow the steps below:
 
-1. In the **Asset models** page, click **Export asset models**. 
+1. On the **Asset models** page, click **Export asset models**. 
 2. In the resulting dialog, you see the list of asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
 3. Select one or more desired asset models.
 4. Click **Export** to export the selection.
-5. The dialog closes and a JSON file named 'Export-asset-models.json' downloads.
+5. The dialog window closes and a JSON file named 'Export-asset-models.json' downloads.
 
-Use the downloaded file to import the asset models into DTM application on another tenant.
+Use the downloaded file to import the asset models into the DTM application on another tenant.
 
 {{< c8y-admon-info>}}
 You can select a maximum of 30 asset models to export at one time.
@@ -231,32 +231,32 @@ You can select a child asset asset model to export without selecting its parent.
 
 To import asset models, follow the steps below:
 
-1. In the **Asset models** page, click **Import asset models**.
+1. On the **Asset models** page, click **Import asset models**.
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant. 
 3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
 3. Click **Import** to import the asset models.
-4. Or, click **Back** to go to previous step. Hover over the file name and click the delete icon to remove the current file and upload a different one.
-4. View newly imported asset models in the **Asset models** page.
+4. Alternatively, click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
+4. The newly imported asset models are listed on the **Asset models** page.
 
 ![Import asset models](/images/dtm/asset-type/dtm-asset-type-import.png)
 {{< c8y-admon-info>}}
-When you upload the JSON file, it undergoes validation. If the validation fails, you see a corresponding message in the dialog. Click **Download log file** to view the errors.
-Review the errors that are reported, and attempt the import again after addressing the errors.
+When you upload the JSON file, it undergoes a validation process. If the validation fails, you see a corresponding message in the resulting dialog box. Click **Download log file** to view the errors.
+Review the errors that are reported, resolve them, and attempt the import again.
 
 You can import a maximum of 250 asset models and 500 associated properties at one time.
 {{< /c8y-admon-info>}}
 
 ### To import asset model samples
 
-When you navigate to **Asset model samples** page following **Configuration > Asset models > Asset model samples**, you see a list of samples with name, description and tags associated with it. 
+When you navigate to the **Asset model samples** page following **Configuration > Asset models > Asset model samples**, you see a list of samples with name, description and tags associated with it. 
 
-To view the sample, click the menu icon to the right of sample name and click the View option. 
+To view the sample, click the menu icon to the right of sample name and click **View**. 
 In the resulting dialog, you see a list of asset models. Initially, the asset models in the list are collapsed. Click the expand icon to the left of each asset model to view the complete hierarchy.
 Click **Import** to import the asset models in the sample.
 
-Alternatively, to import the asset models in the sample without a preview, click the menu icon to the right of sample name and click the Convert to asset model option.
+Alternatively, to import the asset models in the sample without a preview, click the menu icon to the right of sample name and then click **Convert to asset model**.
 
 {{< c8y-admon-info>}}
-When you choose View or Convert to asset model option, the asset model sample undergoes validation. If the validation fails, you see a corresponding message in the dialog. Click **Download log file** to view the errors.
-Review the errors that are reported, and attempt the action again after addressing the errors.
+When you choose **View** or **Convert to asset model**, the asset model sample undergoes a validation process. If the validation fails, you see a corresponding message in the resulting dialog box. Click **Download log file** to view the errors.
+Review the errors that are reported, resolve them and attempt the action again.
 {{< /c8y-admon-info>}}

@@ -15,9 +15,8 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
-To view alarm mappings: READ permission for the permission type "Alarms".
-
-To manage alarm mappings (add, edit, or delete): ADMIN permission for the permission type "Alarms".
+- To view alarm mappings: READ permission for the permission type "Alarms".
+- To manage (add, edit, or delete) alarm mappings: ADMIN permission for the permission type "Alarms" .
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}

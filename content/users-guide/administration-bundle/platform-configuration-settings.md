@@ -8,6 +8,22 @@ layout: redirect
 
 From the {{< management-tenant >}}, you can configure properties which apply globally to the whole {{< product-c8y-iot >}} deployment.
 
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The user must have access to the Administration application on the {{< management-tenant >}}.
+
+ROLES & PERMISSIONS:
+
+* To view settings: READ permission for the "Options management" permission type.
+* To manage (create, edit, update) all existing settings: ADMIN permission for the "Options management" permission type.
+
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
+* Tenant Manager - Can manage tenant-wide configurations like applications, tenant options and retention rules
+
+{{< /c8y-admon-req >}}
+
 Click **Configuration** in the **Settings** menu, to access the **Configuration** page.
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)

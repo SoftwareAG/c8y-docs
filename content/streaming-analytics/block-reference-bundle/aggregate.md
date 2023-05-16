@@ -63,7 +63,7 @@ This category contains the following blocks:
 
 ### Average (Mean)
 
-**apama.analyticskit.blocks.core.Mean**
+`apama.analyticskit.blocks.core.Mean`
 
 <p>Calculates the mean of the values over time.</p>
 <p>This block is suitable for continuous values, even if they are irregularly sampled. The time between inputs or samples is significant, while the number of samples is not. Use this block, for example, if the input is a physical property, such as temperature, that is sampled either regularly or irregularly (for example, only generating measurement values on a change in temperature).  Use the Discrete Statistics block instead of the Average (Mean) block for independent measurements, such as ticket sales, where the number of measurements is significant, but the time between measurements is not.
@@ -189,7 +189,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 
 ### Counter
 
-**apama.analyticskit.blocks.core.Counter**
+`apama.analyticskit.blocks.core.Counter`
 
 <p>Gives a count of the total inputs and repeated inputs.</p>
 <p>If two consecutive input values have different types, they will not be evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.</p>
@@ -265,7 +265,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 
 ### Discrete Statistics
 
-**apama.analyticsbuilder.blocks.DiscreteStatistics**
+`apama.analyticsbuilder.blocks.DiscreteStatistics`
 
 <p>Generates statistics of sum, count, average (mean), standard deviation, minimum and maximum for discrete input values.</p>
 <p>This block is suitable for discrete time inputs, where the number of samples (or inputs) is significant, while the time between them is not. The Average (Mean) and Standard Deviation blocks are more suitable for continuous values that may be irregularly sampled, such as temperature readings. Use this block, for example, if each sample represents a transaction such as a ticket being sold.
@@ -381,7 +381,7 @@ If reset and sample signals are received together, the reset is processed first.
 
 ### Gradient
 
-**apama.analyticskit.blocks.core.Gradient**
+`apama.analyticskit.blocks.core.Gradient`
 
 <p>Calculates the weighted linear regression gradient for the values.</p>
 <p>A gradient measures the rate of change of a value over time. A positive gradient indicates an increase of the input values, and a negative gradient indicates a decrease of the input values. The magnitude of the gradient signifies the scale of change.
@@ -491,7 +491,7 @@ The Reset input clears the content of the window. Sample input can be used to fo
 
 ### Group Statistics
 
-**apama.analyticskit.blocks.core.GroupStatistics**
+`apama.analyticskit.blocks.core.GroupStatistics`
 
 <p>Generates periodic aggregate values across all the devices in a group for which the block has received input values.</p>
 <p>This block generates the following aggregate values: <ul> <li>Minimum</li> <li>Maximum</li> <li>Device Count</li> <li>Average </li> <li>Standard Deviation</li> <li>Variance</li> </ul>
@@ -633,7 +633,7 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 
 ### Integral
 
-**apama.analyticskit.blocks.core.Integral**
+`apama.analyticskit.blocks.core.Integral`
 
 <p>Calculates the integral of the input value over time.</p>
 <p>Integral is defined as the sum of the input's value multiplied by how long the input has stayed at that value, within an optional window, since the block was started or last reset.
@@ -753,7 +753,7 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 
 ### Minimum / Maximum
 
-**apama.analyticskit.blocks.core.MinMax**
+`apama.analyticskit.blocks.core.MinMax`
 
 <p>Calculates the minimum and maximum of a value over time.</p>
 <p>The minimum is defined as the smallest value (closest to negative infinity) of  the input values in the window, and the maximum is defined as the largest value (closest to positive infinity) of the input values in the window.
@@ -865,7 +865,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 
 ### Standard Deviation
 
-**apama.analyticskit.blocks.core.StandardDeviation**
+`apama.analyticskit.blocks.core.StandardDeviation`
 
 <p>Calculates the standard deviation and variance of the values over time.</p>
 <p>This block is suitable for continuous values, even if they are irregularly sampled. The time between inputs or samples is significant, while the number of samples is not. Use this block, for example, if the input is a physical property, such as temperature, that is sampled either regularly or irregularly (for example, only generating measurement values on a change in temperature).  Use the Discrete Statistics block instead of the Standard Deviation block for independent measurements, such as ticket sales, where the number of measurements is significant, but the time between measurements is not.

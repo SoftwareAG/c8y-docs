@@ -93,7 +93,7 @@ If no access mapping matches the user access token, the user will get an "access
 
 New rules can be added by clicking **Add access mapping** or **Add inventory roles** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
-New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin"."
+New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin".
 
 When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with "cur". "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
@@ -146,7 +146,7 @@ On user login, user data like first name, last name, email and phone number can 
 
 Mapping for alias is not available because it is not used in the context of SSO login.
 
-Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
+Each access token is signed by a signing certificate. The following options are available to configure the signing certificates.
 
 1. By specifying the Azure AD certificate discovery address.
 

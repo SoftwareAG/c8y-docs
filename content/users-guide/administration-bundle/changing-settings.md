@@ -203,8 +203,8 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 You may select one of the following options:
 
 * **SMS-based**, supporting the following settings:
-	- **Limit token validity for** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
-  - **Limit verification code validity for** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
+  - **Token validity limit** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
+  - **Verification code validity limit** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
 
 
 	{{< c8y-admon-info >}}

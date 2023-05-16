@@ -1,5 +1,5 @@
 ---
-title: Microservice SDK guide
+title: Developing microservices with Microservice SDK
 bundle: microservice-sdk
 icon: "c8y-icon c8y-icon-tools"
 type: root

@@ -268,7 +268,7 @@ When new features with new permissions are added to {{< product-c8y-iot >}}, the
 <a name="attach-global"></a>
 #### Assigning global roles
 
-You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
+You can assign global roles to users either directly in the user list, or by opening the details page for a particular user and adding them there.
 
 {{< c8y-admon-important >}}
 By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Configuration settings](/users-guide/administration/#custom-template) in the *User guide*.
@@ -363,7 +363,7 @@ Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, open the dropdown at the right of the group row. Select the relevant roles and click **Apply**. For a detailed description of a role click the info icon next to it or refer to [Inventory roles](#inventory).
 
 {{< c8y-admon-important >}}
 If a user already has a global role containing inventory permissions, the user will be

@@ -28,6 +28,9 @@ pipeline {
     stage('Build') {
       steps {
         sh '''bash --login
+        linkchecker \
+        https://cumulocity.com/guides/images/ \
+        https://cumulocity.com/guides/welcome/ 
         python /previewScanner.py
         python /qa.py
         echo \"Starting hugo with params ${HUGO_PARAMS}\"

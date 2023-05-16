@@ -1,6 +1,5 @@
 ---
-weight: 60
+weight: 30
 title: Analytics Builder block reference
 layout: bundle
 ---
-

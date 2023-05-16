@@ -53,7 +53,7 @@ This category contains the following blocks:
 
 ### Alarm Input
 
-**apama.analyticskit.blocks.cumulocity.AlarmInput**
+`apama.analyticskit.blocks.cumulocity.AlarmInput`
 
 <p>Receives <tt>Alarm</tt> objects from a device or devices in a group and reorders them based on the timestamp.</p>
 <p>If the Alarm Status parameter is Active, then the alarms are reordered based on the timestamp (and dropped if they are too old), unless the Ignore Timestamp parameter is set. Otherwise, data is processed as it is received.
@@ -94,7 +94,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 <td><span>Defines the device or group of devices from which the alarm has been received.</span>
 <p>This can be a single device, or an object that references or contains a group of devices.</p>
 </td>
-<td><span>string</span>
+<td><span>any</span>
 </td>
 <td></td>
 </tr>
@@ -180,7 +180,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 
 ### Event Input
 
-**apama.analyticskit.blocks.cumulocity.DeviceEventInput**
+`apama.analyticskit.blocks.cumulocity.DeviceEventInput`
 
 <p>Receives <tt>Event</tt> objects from a device or devices in a group and reorders them based on the timestamp.</p>
 <p>If the Ignore Timestamp parameter is set, the block ignores the timestamp of the event and processes the events as they are received, otherwise it drops old events.
@@ -215,7 +215,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 <td><span>Defines the device or group of devices from which the event has been received.</span>
 <p>This can be a single device, or an object that references or contains a group of devices.</p>
 </td>
-<td><span>string</span>
+<td><span>any</span>
 </td>
 <td></td>
 </tr>
@@ -280,7 +280,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 
 ### Managed Object Input
 
-**apama.analyticskit.blocks.cumulocity.ManagedObjectInput**
+`apama.analyticskit.blocks.cumulocity.ManagedObjectInput`
 
 <p>Receives <tt>ManagedObject</tt> objects from a device or devices in a group.</p>
 <p>The block does not reorder the received <tt>ManagedObject</tt> objects and processes them as they are received. If the Property Name parameter is supplied, then the block does not produce new output if the value of the specified property has not changed since the last output, even if other properties on the same <tt>ManagedObject</tt> object have changed.
@@ -323,7 +323,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 <td><span>Defines the device or group of devices from which the managed object has been received.</span>
 <p>This can be a single device, or an object that references or contains a group of devices.</p>
 </td>
-<td><span>string</span>
+<td><span>any</span>
 </td>
 <td></td>
 </tr>
@@ -378,7 +378,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 
 ### Measurement Input
 
-**apama.analyticskit.blocks.cumulocity.DeviceMeasurementInput**
+`apama.analyticskit.blocks.cumulocity.DeviceMeasurementInput`
 
 <p>Receives <tt>Measurement</tt> objects from a device or devices in a group and reorders them based on the timestamp.</p>
 <p>If the Ignore Timestamp parameter is set, the block ignores the timestamp of the measurement and processes the measurements as they are received, otherwise it drops old measurements.
@@ -413,7 +413,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 <td><span>Defines the device or group of devices from which the measurement has been received.</span>
 <p>This can be a single device, or an object that references or contains a group of devices.</p>
 </td>
-<td><span>string</span>
+<td><span>any</span>
 </td>
 <td></td>
 </tr>
@@ -466,7 +466,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 
 ### Operation Input
 
-**apama.analyticskit.blocks.cumulocity.OperationInput**
+`apama.analyticskit.blocks.cumulocity.OperationInput`
 
 <p>Receives <tt>Operation</tt> objects from a device or devices in a group.</p>
 <p>The block does not reorder the received <tt>Operation</tt> objects and processes the operations as they are received. The block can be optionally configured to only process operations having a specified status or property.
@@ -507,7 +507,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 <td><span>Defines the device or group of devices from which the operation has been received.</span>
 <p>This can be a single device, or an object that references or contains a group of devices.</p>
 </td>
-<td><span>string</span>
+<td><span>any</span>
 </td>
 <td></td>
 </tr>
@@ -583,7 +583,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 
 ### Position Input
 
-**apama.analyticsbuilder.blocks.PositionInput**
+`apama.analyticsbuilder.blocks.PositionInput`
 
 <p>Receives <tt>Event</tt> objects from a device or devices in a group and extracts the <tt>c8y_Position</tt> fragment into a <tt>Value</tt> object.</p>
 <p>If no <tt>c8y_Position</tt> fragment is present, the event is ignored. If the fragment does not contain at least a valid latitude and valid longitude, the event is ignored. If the Primary Value parameter is set to Altitude and the fragment does not contain an altitude, the event is ignored. Latitudes must be between -90 and 90 degrees inclusive. Longitudes must be between -180 and 180 degrees inclusive.
@@ -622,7 +622,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 <td><span>Defines the device or group of devices from which the position is received.</span>
 <p>This can be a single device, or an object that references or contains a group of devices.</p>
 </td>
-<td><span>string</span>
+<td><span>any</span>
 </td>
 <td></td>
 </tr>

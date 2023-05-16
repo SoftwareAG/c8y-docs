@@ -68,7 +68,7 @@ This category contains the following blocks:
 
 ### Constant Value
 
-**apama.analyticsbuilder.blocks.ConstantValue**
+`apama.analyticsbuilder.blocks.ConstantValue`
 
 <p>Outputs a value, either when the Trigger input port receives a signal or at startup.</p>
 <p>The Trigger input port can be used to delay the output until a trigger input is received. If the Trigger input port is not connected, then the block outputs a value when the model is activated, which may trigger further processing.
@@ -172,16 +172,18 @@ The Value parameter can be treated as either a string, or as a JSON value.  For 
 
 ### Cron Timer
 
-**apama.analyticskit.blocks.core.CronTimer**
+`apama.analyticskit.blocks.core.CronTimer`
 
 <p>Sends a signal output based on cron-like periodic timer syntax.</p>
-<p>The timer tick output is sent every time the time matches the pattern.  Each parameter can be set to an asterisk (*) to match all times, a list of comma-separated numbers to fire at those specific times, or "* / number" to fire on every multiple of the number.
+<p>The timer tick output is sent every time the time matches the pattern. The Time Zone parameter is a case-sensitive string that can be set to any supported time zone. The other parameters can be set to an asterisk (*) to match all times, a list of comma-separated numbers to fire at those specific times, or "* / number" to fire on every multiple of the number.
 <p></p>
 For example:
 <p></p>
 To send a signal every Wednesday at 20:30: <ul> <li>Day of Week: 4</li> <li>Hour: 20</li> <li>Minute: 30</li> </ul>
 <p></p>
 To send a signal every 5 seconds: <ul> <li>Seconds: * / 5</li> </ul>
+<p></p>
+To send a signal on Europe/Berlin time zone: <ul> <li>Time Zone: Europe/Berlin</li> </ul>
 <p></p>
 The Days of Month and Days of Week parameters operate together such that if both are specified, then any match in either parameter triggers an output. For example, if Days of Month is set to 15 and Days of Week is set to 1, then there is an output on every Monday of the month and the 15th regardless of which day that is.
 <p></p>
@@ -254,6 +256,14 @@ This block is not supported in simulation mode.</p>
 </td>
 <td><span>Default: *</span></td>
 </tr>
+<tr>
+<th scope="row">Time Zone</th>
+<td><span>The time zone to be used. <p> Example: Europe/Berlin. For a full list, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html%23">Supported time zones</a>.</p> <p> The default value is empty which means that the platform's time zone is used.</p></span>
+</td>
+<td><span>string</span>
+</td>
+<td><span>Default: </span></td>
+</tr>
 </tbody>
 </table>
 
@@ -286,7 +296,7 @@ This block is not supported in simulation mode.</p>
 
 ### Duration
 
-**apama.analyticskit.blocks.core.Duration**
+`apama.analyticskit.blocks.core.Duration`
 
 <p>Measures the time elapsed from a set start time.</p>
 <p>The start time is set by a start signal which activates the block. If the block is already active, then a start signal is ignored and the existing measurement remains unaffected. The block is deactivated with a reset signal which also disables any periodic outputs.
@@ -396,7 +406,7 @@ If multiple signals are received at the same time, they are processed in the ord
 
 ### Extract Property
 
-**apama.analyticskit.blocks.core.ExtractProperty**
+`apama.analyticskit.blocks.core.ExtractProperty`
 
 <p>Extracts the specified property from the input value and converts it to the specified type.</p>
 <p>The value in the Value input named by the Property Path parameter should be a string, number or boolean.
@@ -523,7 +533,7 @@ In converting a string to a float, this block treats an empty string as a value 
 
 ### Geofence
 
-**apama.analyticsbuilder.blocks.Geofence**
+`apama.analyticsbuilder.blocks.Geofence`
 
 <p>Compares the input value against the defined geofence value to detect whether the device is within the geofence, and whether the device entered or exited the geofence.</p>
 <p>The boundary line itself is considered to be outside of the geofence area.</p>
@@ -628,7 +638,7 @@ In converting a string to a float, this block treats an empty string as a value 
 
 ### Missing Data
 
-**apama.analyticskit.blocks.core.MissingData**
+`apama.analyticskit.blocks.core.MissingData`
 
 <p>Generates an output if the input has not occurred for a set amount of time.</p>
 <p>The block can optionally detect an absence of changes in value if repeated same-value inputs are not counted.</p>
@@ -734,7 +744,7 @@ In converting a string to a float, this block treats an empty string as a value 
 
 ### Set Properties
 
-**apama.analyticsbuilder.blocks.SetProperties**
+`apama.analyticsbuilder.blocks.SetProperties`
 
 <p>Outputs a pulse with properties set from values on the input ports.</p>
 <p>The property names are taken from the parameters and the values from the input ports. New properties are only output if they have been received. An output is sent as soon as at least one of the inputs is provided.
@@ -900,7 +910,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 
 ### Text Substitution
 
-**apama.analyticsbuilder.blocks.TextSubstitution**
+`apama.analyticsbuilder.blocks.TextSubstitution`
 
 <p>Substitutes identifiers marked with a hash and braces (for example, <tt>#{name}</tt>) in the text template with corresponding entries from the input values.</p>
 <p>At least one of the Object or Source input ports must be connected. Identifiers that cannot be resolved are not substituted.
@@ -1015,7 +1025,7 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 
 ### Toggle
 
-**apama.analyticskit.blocks.core.Toggle**
+`apama.analyticskit.blocks.core.Toggle`
 
 <p>Converts two pulse inputs to a boolean output based on the set and reset signals, with optional delays.</p>
 <p>Without delays, the output state is changed to <tt>true</tt> on a set signal, and changed to <tt>false</tt> on a reset signal. If both signals are received at the same time, the output state is toggled (to <tt>true</tt> if signals are received for the first time).

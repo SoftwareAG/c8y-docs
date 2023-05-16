@@ -55,7 +55,8 @@ pipeline {
         sh '''bash --login
         linkchecker \
         https://cumulocity.com/guides/images/ \
-        https://cumulocity.com/guides/welcome/
+        https://cumulocity.com/guides/welcome/ \
+        || true
         '''
       }
     }

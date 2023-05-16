@@ -11,7 +11,7 @@ From the {{< management-tenant >}}, you can configure properties which apply glo
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-The user must have access to the Administration application on a {{< management-tenant >}}.
+The user must have access to the Administration application on the {{< management-tenant >}}.
 
 ROLES & PERMISSIONS:
 

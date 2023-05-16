@@ -625,6 +625,5 @@ Input and output blocks identify a series of events by specifying a key for the 
 
 #### Restrictions for output blocks
 
-In Analytics Builder, for synchronous output types such as measurements, events and alarms \(see also [Output blocks and event timing](/streaming-analytics/analytics-builder/#output-blocks-and-event-timing)\), it is not allowed to have more than one output block which generates events with any given key.
-
-As there can be connections between the models, the main reason for this restriction is to avoid ambiguities or errors that may occur while processing events in the input blocks if there are multiple output blocks \(in different models\) generating the same output stream at the same point in time.
+In Analytics Builder, for synchronous output types such as measurements, events and alarms \(see also [Output blocks and event timing](/streaming-analytics/analytics-builder/#output-blocks-and-event-timing)\), it is not allowed to have more than one output block that generates events with any given key.
+Since there may be connections between models, ambiguities may occur when processing events in the input blocks if there are multiple output blocks (in different models) generating the same output stream at the same time. When using output blocks, care must be taken to ensure that no two blocks generate output of the same stream type at the same time.

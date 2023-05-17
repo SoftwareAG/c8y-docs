@@ -1,5 +1,5 @@
 ---
-title: Using the data broker
+title: Data broker
 layout: bundle
 weight: 20
 section:

@@ -102,7 +102,7 @@ The "/health" endpoint completes the request path for this example, but could be
 
 Here is the defined action that we used when sending the request. This action is called on response to the sent request and is provided with the Response object.
 
-For this example we simply check the health request was successful and log the health of the microservice.
+For this example we simply log the health of the microservice if it was successful.
 
 ```java
 action responseHandler(Response healthResponse)
@@ -110,9 +110,7 @@ action responseHandler(Response healthResponse)
 	integer statusCode:= healthResponse.statusCode;
 	if (statusCode = 200)
 	{
-		log "Health response received: " + "status code: " + 
-			statusCode.toString() + ": " + healthResponse.payload.data.toString()
-			at INFO;
+		log "Health response received: " + healthResponse.payload.data.toString() at INFO;
 	}
 }
 ```

@@ -1,10 +1,10 @@
 ---
-title: Application and microservice management
+title: Managing the Ecosystem
 icon: "c8y-icon c8y-icon-component"
 type: root
 layout: redirect
 bundle: application-and-microservice-management
-section: 
+section:
   - app_development
 weight: 30
 ---

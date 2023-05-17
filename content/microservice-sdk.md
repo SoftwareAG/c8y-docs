@@ -8,3 +8,5 @@ section:
   - app_development
 weight: 60
 ---
+
+Learn how to extend your custom application using microservices.

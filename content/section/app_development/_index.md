@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam non quas, voluptate nobis praesentium ab aut eius asperiores sint dolores dolore magnam nihil? Optio perspiciatis in, rerum minus ipsa aut.
+Find out more about the Cumulocity IoT core platform, working in the Cumulocity IoT ecosystem, working and developing applications and adding solutions to your Cumulocity IoT.

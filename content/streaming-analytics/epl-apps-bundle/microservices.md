@@ -95,8 +95,8 @@ action sendHealthRequest()
 }
 ```
 
-We use an Apama-ctrl microservice for this example, which has the context path of */cep*. To modify this for another microservice substitute */cep* with the context path as defined in the manifest for your microservice.
-The */health* endpoint completes the request path for this example, but could be replaced with any valid endpoint of the microservice.
+We use an Apama-ctrl microservice for this example, which has the context path of `/cep`. To modify this for another microservice substitute `/cep` with the context path as defined in the manifest for your microservice.
+The `/health` endpoint completes the request path for this example, but could be replaced with any valid endpoint of the microservice.
 
 #### Receiving the response
 

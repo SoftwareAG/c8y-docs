@@ -61,7 +61,7 @@ The response will also be decoded from JSON and the response payload uses the `A
 
 ### Example request to a microservice endpoint
 
-The following is a very simple application that shows how to query another microserivce using the microservices's health endpoint as an example.
+The following is a very simple application that shows how to query another microservice using the microservices's health endpoint as an example.
 
 We will start with EPL which connects to {{< product-c8y-iot >}} and calls an action to send the request.
 
@@ -83,7 +83,7 @@ monitor CallAnotherMicroservice {
 #### Sending the request
 
 First we create the Request specifying the type of request, the request path and as this is a simple query we use any() for the payload, as we have nothing to add in this case.
-We will use an Apama microservice for this example, which has the context path of "/cep". To modify this for another microservice substitute "/cep" with the context path as defined in the manifest for your microservice. The "/health" endpoint completes the request path for this example, but could be replaced with any valid endpoint of the microservice.
+
 We then use execute to send the request and provide an action to be called with the response.
 
 ```java
@@ -95,9 +95,13 @@ action sendHealthRequest()
 }
 ```
 
+We use an Apama microservice for this example, which has the context path of "/cep". To modify this for another microservice substitute "/cep" with the context path as defined in the manifest for your microservice.
+The "/health" endpoint completes the request path for this example, but could be replaced with any valid endpoint of the microservice.
+
 #### Receiving the response
 
 Here is the defined action that we used when sending the request. This action is called on response to the sent request and is provided with the Response object.
+
 For this example we simply check the health request was successful and log the health of the microservice.
 
 ```java

@@ -6,7 +6,7 @@ layout: redirect
 
 ### Overview
 
-Streaming analytics applications using Apama can make use of applications running in other microservices. This section uses the `health` endpoint of an Apama-ctrl microservice, but the steps apply to connecting to any other microservice running inside {{< product-c8y-iot >}}. This section is going to show you how to create a connection to the {{< product-c8y-iot >}} platform from within Apama EPL which can be used to invoke other microservices directly. It will then show you how to make a request and decode the result.
+Streaming analytics applications using Apama can make use of applications running in other microservices. This section uses the `/health` endpoint of an Apama-ctrl microservice, but the steps apply to connecting to any other microservice running inside {{< product-c8y-iot >}}. This section is going to show you how to create a connection to the {{< product-c8y-iot >}} platform from within Apama EPL which can be used to invoke other microservices directly. It will then show you how to make a request and decode the result.
 
 We will assume that you are developing an EPL app using the EPL editor that is part of the Streaming Analytics application and demonstrate a request to a microservice. The steps in this guide will also work with any other way you could be creating an Apama application and can be used to interact with any microservice.
 
@@ -61,7 +61,7 @@ The response will also be decoded from JSON and the response payload uses the `A
 
 ### Example request to a microservice endpoint
 
-The following is a very simple application that shows how to query another microservice. We will be using the `health` endpoint of an Apama-ctrl microservice as an example.
+The following is a very simple application that shows how to query another microservice. We will be using the `/health` endpoint of an Apama-ctrl microservice as an example.
 
 We will start with EPL which connects to {{< product-c8y-iot >}} and calls an action to send the request.
 

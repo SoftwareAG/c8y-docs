@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Managing applications
+title:
 layout: bundle
 section:
   - app_development
@@ -36,20 +36,6 @@ helpcontent:
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
 
 ---
-
-The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications) in the *Concepts guide*.
-
-* [Applications](#applications) -  all web applications either subscribed to the tenant or owned by the tenant.
-
-* [Microservices](#managing-microservices) - server-side applications used to develop further functionality on top of {{< product-c8y-iot >}}.
-
-Both can be accessed via the **Ecosystem** menu in the navigator.
-
-Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, that means you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
-
-<a name="applications"></a>
-### Applications
-
 Click **Applications** in the **Ecosystem** menu in the navigator to display a list or grid of all applications in your account.
 
 <img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">

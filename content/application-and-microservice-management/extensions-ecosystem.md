@@ -1,7 +1,7 @@
 ---
-title: Applications
+title: Ecosystem
 layout: bundle
-weight: 20
+weight: 40
 section:
   - app_development
 ---

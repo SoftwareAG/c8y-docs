@@ -1,7 +1,7 @@
 ---
-title: Applications
+title: Default subscriptions
 layout: bundle
-weight: 20
+weight: 60
 section:
   - app_development
 ---

@@ -322,7 +322,7 @@ Never change the system application names (such as "Device Management", "Cockpit
 
 ### To delete an application
 
-Click the menu icon at the right of an entry and then click **Delete**.
+Click the menu icon at the right of an entry and then click **Delete**. You can also delete an application directly from the **Properties** tab in the application details.
 
 If you delete an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 

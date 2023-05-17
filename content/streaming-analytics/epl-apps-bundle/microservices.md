@@ -82,7 +82,7 @@ monitor CallAnotherMicroservice {
 
 #### Sending the request
 
-First we create the Request specifying the type of request, the request path and as this is a simple query we use any() for the payload, as we have nothing to add in this case.
+First we create the `Request` with: the type of request, the request path and the payload `any()` because we do not need to put anything in the payload in this example.
 
 We then use execute to send the request and provide an action to be called with the response.
 

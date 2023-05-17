@@ -84,7 +84,7 @@ monitor CallAnotherMicroservice {
 
 First we create the `Request` with: the type of request, the request path and the payload `any()` because we do not need to put anything in the payload in this example.
 
-We then use execute to send the request and provide an action to be called with the response.
+We then use `execute` to send the request and provide an action to be called with the response.
 
 ```java
 action sendHealthRequest()

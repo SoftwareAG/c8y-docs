@@ -33,7 +33,7 @@ The above permissions can be used to create roles for robust user management. Ev
 {{< /c8y-admon-related >}}
 
 {{< c8y-admon-info >}}
-Retention rules are usually run during the night. When you edit a retention rule you don´t see an immediate effect in the **Usage** section on the Home screen of the Administration application.
+Retention rules are usually run once per calendar day.  When you edit a retention rule you don´t see an immediate effect in the **Usage** section on the Home screen of the Administration application.
 {{< /c8y-admon-info >}}
 
 <a name="view-retention-rule"></a>

@@ -175,7 +175,7 @@ The Value parameter can be treated as either a string, or as a JSON value.  For 
 `apama.analyticskit.blocks.core.CronTimer`
 
 <p>Sends a signal output based on cron-like periodic timer syntax.</p>
-<p>The timer tick output is sent every time the time matches the pattern. The "Time Zone" parameter is a case-sensitive string that can be set to any supported time zone. The other parameters can be set to an asterisk (\*) to match all times, a list of comma-separated numbers to fire at those specific times, or "* / number" to fire on every multiple of the number.
+<p>The timer tick output is sent every time the time matches the pattern. The "Time Zone" parameter is a case-sensitive string that can be set to any supported time zone. The other parameters can be set to an asterisk (*) to match all times, a list of comma-separated numbers to fire at those specific times, or "* / number" to fire on every multiple of the number.
 <p></p>
 For example:
 <p></p>

@@ -18,7 +18,7 @@ ROLES & PERMISSIONS:
 - To view alarm mappings: READ permission for the permission type "Option management".
 - To manage (create, edit, or delete) alarm mappings: ADMIN permission for the permission type "Option management".
 
-The above permissions can be used to display Alarm mapping in Business rules. Every new tenant have specified typical roles by default:
+For easier user access management, the above permissions are included in the global role created by default in every new tenant:
 - Tenant Manager - Can manage tenant wide configurations like applications, tenant options and Business rules.
 {{< /c8y-admon-req >}}
 

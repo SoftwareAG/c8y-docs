@@ -19,7 +19,7 @@ ROLES & PERMISSIONS:
 - To manage (create, edit, or delete) alarm mappings: ADMIN permission for the permission type "Option management".
 
 For easier user access management, the above permissions are included in the global role created by default in every new tenant:
-- Tenant Manager - Can manage tenant wide configurations like applications, tenant options and Business rules.
+- Tenant Manager - Can manage tenant-wide configurations like applications, tenant options and business rules.
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}

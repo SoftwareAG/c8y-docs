@@ -35,7 +35,7 @@ ROLES & PERMISSIONS:
 
 To see the **Authentication** menu item, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
 
-The above permissions can be used to create roles for robust user management. Every new tenant have specified typical roles by default:
+The above permissions can be used to create roles for robust user management. Every new tenant has specific roles by default:
 - Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
 {{< /c8y-admon-req >}}
 

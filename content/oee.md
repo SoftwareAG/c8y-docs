@@ -9,4 +9,4 @@ section:
 weight: 80
 ---
 
-Use the Cumulocity IoT OEE application to measure the efficiency and effectiveness of your production processes, to create calculation configurations and to receive and store data through our API.
+Use the OEE application to measure the efficiency and effectiveness of your production processes, to create calculation configurations and to receive and store data through our API.

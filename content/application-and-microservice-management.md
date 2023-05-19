@@ -8,4 +8,4 @@ section:
   - app_development
 weight: 30
 ---
-The Cumulocity IoT Ecosystem allows you to manage your applications, microservices as well as your default and individual subscriptions.
+In the ecosystem of your account, you can manage subscribed and custom applications, extensions, and microservices.

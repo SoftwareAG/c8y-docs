@@ -1,5 +1,5 @@
 ---
-title: Developing applications with Web SDK
+title: Developing applications with the Web SDK
 icon: "c8y-icon c8y-icon-css"
 type: root
 layout: redirect
@@ -9,4 +9,4 @@ bundle: web
 weight: 50
 ---
 
-Find out more on how to develop web applications for your Cumulocity IoT platform, connect and communicate with our API as well as integrate UI components into your custom application.
+Discover how to develop web applications with the Web SDK and integrate default or branded UI components into your custom application.

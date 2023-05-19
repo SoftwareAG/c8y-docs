@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find out more about the Cumulocity IoT core platform, working in the Cumulocity IoT ecosystem, working and developing applications and adding solutions to your Cumulocity IoT.
+Find out more about using the Cockpit of Cumulocity IoT, managing applications and microservices, and developing your own web applications on top of Cumulocity IoT.

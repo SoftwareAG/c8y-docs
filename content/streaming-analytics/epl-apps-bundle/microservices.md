@@ -61,7 +61,7 @@ The response will also be decoded from JSON and the response payload uses the `A
 
 ### Example request to a microservice endpoint
 
-The following is a very simple application that shows how to query another microservice. We will be using the `/health` endpoint of an Apama-ctrl microservice as an example.
+The following is a very simple application that shows how to query another microservice. We are using the `/health` endpoint of an Apama-ctrl microservice as an example.
 
 We will start with EPL which connects to {{< product-c8y-iot >}} and calls an action to send the request.
 

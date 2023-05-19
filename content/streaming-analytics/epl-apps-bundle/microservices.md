@@ -100,7 +100,7 @@ The `/health` endpoint completes the request path for this example, but could be
 
 #### Receiving the response
 
-Here is the defined action that we used when sending the request. This action is called on response to the sent request and is provided with the `Response` object.
+Here is the defined action that we used when sending the request. This action is called in response to the sent request and is provided with the `Response` object.
 
 For this example we simply log the status code and the body, of the response.
 

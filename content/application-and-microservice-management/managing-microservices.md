@@ -1,6 +1,6 @@
 ---
 weight: 35
-title: Microservices
+title: Managing microservices
 layout: bundle
 section:
   - app_development

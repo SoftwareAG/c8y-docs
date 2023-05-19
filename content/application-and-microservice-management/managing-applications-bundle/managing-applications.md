@@ -1,6 +1,6 @@
 ---
 weight: 10
-title:
+title: Using applications
 layout: bundle
 section:
   - app_development

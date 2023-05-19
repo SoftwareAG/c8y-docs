@@ -1,5 +1,5 @@
 ---
-title: Applications
+title: Managing applications
 layout: bundle
 weight: 20
 section:

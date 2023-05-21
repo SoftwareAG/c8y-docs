@@ -85,6 +85,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#504">504,operationId</a>
 + <a href="#505">505,operationId,failureReason</a>
 + <a href="#506">506,operationId,parameters</a>
++ <a href="#507">507,typeToSetToExecuting,failureReason</a>
 + <a href="#510">510,serial (restart)</a>
 + <a href="#511">511,serial,commandToExecute</a>
 + <a href="#513">513,serial,configurationText</a>
@@ -970,6 +971,22 @@ This may let the device send additional parameters that trigger further steps ba
 
 ```text
 506,c8y_Restart
+```
+
+<a name="507"></a>
+##### Set EXECUTING operations to FAILED (507)
+
+Set EXECUTING operations with given fragment or all of them to FAILED.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|fragment|NO|String|
+|2|failureReason|NO|String|
+
+**Example**
+
+```text
+507,c8y_Restart,"Unexpected device restart"
 ```
 
 ### Subscribe templates

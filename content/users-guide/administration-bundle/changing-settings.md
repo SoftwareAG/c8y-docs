@@ -30,16 +30,21 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Provide [SMS provider credentials](#sms-provider).
 - Manage the [connectivity settings](#connectivity).
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To see the **Authentication** menu item, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
+
+For easier user access management, the above permission(s) are/is included in the global role(s) created by default in every new tenant:
+- Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
+{{< /c8y-admon-req >}}
+
 <a name="authentication"></a>
 ### Changing authentication settings
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
 
 ![Authentication settings](/images/users-guide/Administration/admin-settings-authentication.png)
-
-{{< c8y-admon-req >}}
-To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
-{{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
 - [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.

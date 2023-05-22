@@ -92,14 +92,22 @@ The CSV template has the following fields:
 </tr>
 <tr>
 <td style="text-align:left"><b>Path</b></td>
-<td style="text-align:left">Remains blank when you create a root asset. For a child asset, provide a path up to the root asset.<br><br>
+<td style="text-align:left">Path denotes the location of the asset within the asset hierarchy.<br>
+For a root asset, it remains blank. For a subasset, provide a path up to the root asset.<br><br>
 <b>Example:</b><br>
-For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path value is "Building 1/Floor 1", where "Building 1" and "Floor 1" represent the respective asset types.</td>
-<td style="text-align:left">Mandatory (for child assets)</td>
+For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path value is "Building 1/Floor 1", where "Building 1" and "Floor 1" represent the respective asset types.<br><br>
+In case of partial import, the path is defined in relation to the asset from which the file is imported. For the immediate children of the asset, the path remains blank.<br/><br/>
+
+<b>Example:</b><br/>
+In the hierarchy, "Building > Floor > Room", to import a new Floor, "Floor 2," and a Room, "Conference Room", under the existing Building "Building 1", the path value for the Floor remains blank, and the path value for the Room is "Floor 2".
+</td>
+<td style="text-align:left">Mandatory (for child assets)<br><br>
+Mandatory (for child assets except immediate children in the context of partial import)<br><br></td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Device ID / External ID</b></td>
-<td style="text-align:left">If the asset being created has a device associated with it, then provide the Device ID of the device here</td>
+<td style="text-align:left">If the asset being created has a device associated with it, then provide the Device ID of the device here.<br><br>
+Note that you can use a list of semi-colon separated Device IDs or External IDs to associate multiple devices to the asset.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
@@ -110,10 +118,10 @@ For an asset called "Room1" in the hierarchy "Building > Floor > Room" the path 
 <tr>
 <td style="text-align:left"><b>Custom properties for the asset type</b></td>
 <td style="text-align:left">6th column onwards (in the CSV template), all the custom properties for the root asset types and all its subsequent child asset types are listed.<br><br>
-<b>Info:</b><br>The <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Custom property type</a> is also mentioned as a label, for better understanding.<br>
+Note that the <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Custom property type</a> is also mentioned as a label, for better understanding.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 </td>
-<td style="text-align:left">Mandatory</td>
+<td style="text-align:left">Mandatory (If the custom property is set as required in the asset type. For details, see <a href="/dtm/asset-types/#to-add-a-custom-property-to-an-asset-type">To add a custom property to an asset type</a>).</td>
 </tr>
 </tbody>
 </table>
@@ -121,6 +129,8 @@ During the bulk import, the file size validation is skipped as the file is alrea
 ![bulk-import-template](/images/dtm/bulk-import/dtm-bulk-import-template.png)
 
 {{< c8y-admon-info>}}
+Use only comma (,) as a separator when entering values in the CSV template.
+
 Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents an auto-correct of the date on input.
 {{< /c8y-admon-info>}}
 
@@ -170,7 +180,7 @@ If the bulk import fails, review the reported issues and try again.
 
 If the asset hierarchy already exists, and you want to import more assets, it can be achieved by a partial import.
 
-To import a single child asset or the child asset hierarchy:
+To import child assets or the child asset hierarchy:
 
 1. Navigate to the child asset page and download the template using **Import assets**.
 
@@ -181,11 +191,9 @@ From any hierarchy level, the template will be downloaded only for its child hie
 Assets must only be imported for the child hierarchy.
 	{{< /c8y-admon-info>}}
 
-3. Enter the details for the child assets in the CSV template.
+3. Click **Import assets**.
 
-4. Click **Import assets**.
-
-5. Upload the CSV template in the **Drop file here** section in the **Import assets** dialog.
+4. Upload the CSV template in the **Drop file here** section in the **Import assets** dialog.
 
 If all details are mentioned correctly in the CSV template, the child asset hierarchy is created successfully.
 

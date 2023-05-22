@@ -108,7 +108,6 @@ If not selected, no minimum length criteria is set for this asset property durin
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-If the entered text exceeds the maximum length, you get notified of the incidence and the asset creation is cancelled.
 
 * **RegExp**:
 
@@ -260,7 +259,7 @@ In the resulting confirmation dialog, click **Confirm** to continue.
 
 {{< c8y-admon-info>}}
 
-If the asset property you want to delete is part of an existing asset, you see an error notification and the asset property is not deleted.
+If the asset property you want to delete is part of an existing asset or an asset model, you see an error notification and the asset property is not deleted.
 
 {{< /c8y-admon-info>}}
 

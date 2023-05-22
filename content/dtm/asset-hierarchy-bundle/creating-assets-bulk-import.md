@@ -198,4 +198,4 @@ Assets must only be imported for the child hierarchy.
 If all details are mentioned correctly in the CSV template, the child asset hierarchy is created successfully.
 
 An unsuccessful partial import will result in a **Failed asset imports** notification, showing the validation issues.
-Review the reported issuels and try again.
+Review the reported issues and try again.

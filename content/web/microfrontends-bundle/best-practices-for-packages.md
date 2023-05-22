@@ -162,7 +162,7 @@ Avoid method 1 if you can, as you could run into common pitfalls explained in th
 There are several issues to avoid:
 1. Routing: avoid commonly named routes. Don't use routes like `/home` instead, use `/<<my-unique-prefix>>/home`. Commonly named routes can be overwritten by other plugins. Do the same for any identifier you use in your development process.
 
-2. Lazy loading: remember that every plugin is imported lazily. This means that the rules of lazily loaded modules apply to those modules.  Don't use `forRoot` on the ngx-components `CoreModule` or the `RoutingModule`. Use `forRoot` for any newly introduced dependency.
+2. Lazy loading: Remember that every plugin is imported lazily. This means that the rules of lazily loaded modules apply to those modules.  Don't use `forRoot` on the ngx-components `CoreModule` or the `RoutingModule`. Use `forRoot` for any newly introduced dependency.
 
 3. Injectors: With the lazy loading approach, injectors are sometimes an issue. Usually you have a new injector per plugin. This is done automatically as long as you use the hooks without a factory function. If you use a factory function, you must provide the injector:
     ```

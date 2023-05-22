@@ -51,7 +51,7 @@ Furthermore, you can provide it as an application blueprint to your customers, e
 However, if one of the available blueprints (**Administration** > **Ecosystem** > **Extensions**) or the default applications (Cockpit, Device management or Administration) already mostly fit your case, but misses, for example, an extension, instead implement a plugin.
 Plugins are easy to implement and can extend every part of the existing applications. Furthermore, if you intend to provide those extensions to your customers you can do so and share any plugin.
 
-This section is about explaining the developer story of blueprints and plugins and will explain those details as well as the best practices to apply.
+The next section explains the developer story of blueprints and plugins in detail and provides best practices.
 
 #### Starting the developer journey for plugins and blueprints
 All developer stories start with our CLI tool.

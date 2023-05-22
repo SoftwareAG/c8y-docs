@@ -106,7 +106,7 @@ Mandatory (for subassets except immediate children in the context of partial imp
 <tr>
 <td style="text-align:left"><b>Device ID / External ID</b></td>
 <td style="text-align:left">If the asset being created has a device associated with it, then provide the Device ID of the device here.<br><br>
-<b>Info:</b><br>Use a list of semi-colon separated Device IDs/ External IDs to associate multiple devices to the asset.</td>
+Note that you can use a list of semi-colon separated Device IDs or External IDs to associate multiple devices to the asset.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>

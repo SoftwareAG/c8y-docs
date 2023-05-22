@@ -127,7 +127,7 @@ Note that the <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy"
 ![bulk-import-template](/images/dtm/bulk-import/dtm-bulk-import-template.png)
 
 {{< c8y-admon-info>}}
-Use only comma(,) as a separator when entering values in the CSV template.
+Use only comma (,) as a separator when entering values in the CSV template.
 
 Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents auto-correction of the date on input.
 {{< /c8y-admon-info>}}

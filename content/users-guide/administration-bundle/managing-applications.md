@@ -52,7 +52,7 @@ ROLES & PERMISSIONS:
 * To manage applications and microservices (create, update, copy, delete): ADMIN permission for the "Application management" permission type
 
 On tenant creation there are default roles available that can be used as sample configuration for the above mentioned permissions:
-* Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules.
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and business rules.
 
 Note that for complete application management some additional permission types with different permission levels might be required per feature, for example:
 * [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Option management" permission type.

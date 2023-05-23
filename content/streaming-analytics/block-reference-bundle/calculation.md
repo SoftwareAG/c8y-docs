@@ -2,6 +2,8 @@ new in calc blk added
 
 TEXAS INSTRUMENTS CALC
 
+CASIO CALC
+
 ---
 weight: 60
 title: Calculation

@@ -1,3 +1,7 @@
+new in calc blk added
+
+TEXAS INSTRUMENTS CALC
+
 ---
 weight: 60
 title: Calculation

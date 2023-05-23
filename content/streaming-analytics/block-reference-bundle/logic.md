@@ -1,3 +1,7 @@
+Some logical changes are made as a part of 10.18
+
+
+cho
 ---
 weight: 48
 title: Logic

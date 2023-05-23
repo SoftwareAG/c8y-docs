@@ -106,7 +106,6 @@ If not selected, no minimum length criteria is set for this asset property durin
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-
 * **RegExp**:
 
 Enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.

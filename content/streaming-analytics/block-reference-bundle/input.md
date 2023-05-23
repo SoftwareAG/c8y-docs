@@ -1,3 +1,5 @@
+new inputs
+
 ---
 weight: 24
 title: Input

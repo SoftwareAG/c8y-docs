@@ -247,7 +247,7 @@ In the resulting confirmation dialog, click **Confirm** to continue.
 
 {{< c8y-admon-info>}}
 
-If the custom property you want to delete is part of an existing asset, you see an error notification and the custom property is not deleted.
+If the custom property you want to delete is part of an existing asset or an asset type, you see an error notification and the custom property is not deleted.
 
 {{< /c8y-admon-info>}}
 

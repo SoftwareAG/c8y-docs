@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam non quas, voluptate nobis praesentium ab aut eius asperiores sint dolores dolore magnam nihil? Optio perspiciatis in, rerum minus ipsa aut.
+Find out more about using the Cockpit of Cumulocity IoT, managing applications and microservices, and developing your own web applications on top of Cumulocity IoT.

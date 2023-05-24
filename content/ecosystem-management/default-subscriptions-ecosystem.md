@@ -1,13 +1,10 @@
 ---
-title: Using widgets in dashboards and reports
+title: Default subscriptions
 layout: bundle
-weight: 50
+weight: 60
 section:
   - app_development
 ---
-
-<a name="subscribed-applications"></a>
-### Subscribed applications
 
 {{< product-c8y-iot >}} provides a variety of applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
@@ -17,7 +14,7 @@ Below all applications are listed which are by default available in the {{< stan
 In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
 {{< /c8y-admon-info >}}
 
-#### Applications subscribed by default
+### Applications subscribed by default
 
 <table>
 <col width="150">

@@ -195,4 +195,4 @@ svg: '<svg
 '
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam non quas, voluptate nobis praesentium ab aut eius asperiores sint dolores dolore magnam nihil? Optio perspiciatis in, rerum minus ipsa aut.
+Learn more about Streaming analytics with Apama EPL for customized and immediate data processing and Cumulocity IoT Datahub for connecting custom tools and applications to the platform.

@@ -1,8 +1,7 @@
 ---
-title: Data explorer
+title: Managing applications
 layout: bundle
-weight: 30
+weight: 20
 section:
   - app_development
-aliases:
 ---

@@ -2,7 +2,7 @@
 weight: 65
 title: Managing exports
 layout: bundle
-section: 
+section:
   - app_development
 helpcontent:
   - label: export
@@ -30,6 +30,9 @@ ROLES & PERMISSIONS:
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
+<a name=""></a>
+### To show all export
+
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
 
 In the **Export** page you will find a list displaying all exports with their names, file type and time range.
@@ -37,7 +40,7 @@ In the **Export** page you will find a list displaying all exports with their na
 ![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
 <a name="add-export"></a>
-#### To add an export
+### To add an export
 
 1. Click **Add export** in the top menu bar.<br>
 
@@ -105,7 +108,7 @@ JsonPath expressions added from data points will be stored in bracket notation i
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
 <a name="schedule-export"></a>
-#### To schedule an export
+### To schedule an export
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.
 
@@ -156,7 +159,7 @@ You must open each report manually, to migrate the export schedules included in 
 To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 {{< /c8y-admon-info >}}
 
-#### To export data
+### To export data
 
 To export data to a CSV or XLSX file, select the checkbox in front of the respective row in the list and at the left of the top menu bar click **Export**.
 
@@ -174,19 +177,19 @@ Time,Device name,Creation time,Device name,ID,Source,Text,Time,Type
 [...]
 limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!
 
-#### To edit an export
+### To edit an export
 
 Just click the respective row or click the menu icon at the end of the row and then click **Edit**.
 
 For details on the fields see [To add an export](#add-export).
 
 
-#### To duplicate an export
+### To duplicate an export
 
 1. Click the menu icon at the end of the row and then click **Duplicate**.
 2. Modify at least the name.
 3. Click **Save & close** to save the export and return to the export list.
 
-#### To delete an export
+### To delete an export
 
 Click the menu icon at the end of the row and then click **Delete**.

@@ -1,8 +1,8 @@
 ---
 weight: 35
-title: Managing and monitoring microservices
+title: Managing microservices
 layout: bundle
-section: 
+section:
   - app_development
 helpcontent:
   - label: microservices

@@ -2,75 +2,13 @@
 weight: 90
 title: Smart rules collection
 layout: bundle
-section: 
+section:
   - app_development
 ---
 
 <a name="business"></a>
 
 {{< product-c8y-iot >}} includes preset global smart rule types. Each global smart rule type provides different parameters to configure.
-
-The following types are available:
-
-
-<table>
-<thead>
-<colgroup>
-       <col style="width: 30%;">
-       <col style="width: 70%;">
-    </colgroup><thead>
-<tr>
-<th align="left">Smart rule</th>
-<th align="left">Functionality</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="#alarm-sms">On alarm send SMS</a></td>
-<td align="left">If an alarm is created, an SMS is sent.</td>
-</tr>
-<tr>
-<td align="left"><a href="#alarm-email">On alarm send email</a></td>
-<td align="left">If an alarm is created, an email is sent.</td>
-</tr>
-<tr>
-<td align="left"><a href="#alarm-escalate">On alarm escalate it</a></td>
-<td align="left">If an alarm is created, an email or SMS is sent.</td>
-</tr>
-<tr>
-<td align="left"><a href="#alarm-severity">On alarm duration increase severity</a></td>
-<td align="left">If an alarm is active for a certain time, the severity is increased.</td>
-</tr>
-<tr>
-<td align="left"><a href="#geofence-alarm">On geofence create alarm</a></td>
-<td align="left">If a geofence border is crossed, an alarm is created.</td>
-</tr>
-<tr>
-<td align="left"><a href="#geofence-email">On geofence send email</a></td>
-<td align="left">If a geofence border is crossed, an email is sent.</td>
-</tr>
-<tr>
-<td align="left"><a href="#calculate-energy">Calculate energy consumption</a></td>
-<td align="left">Creates consumption data points based on data from an electric, gas, or water meter.</td>
-</tr>
-<tr>
-<td align="left"><a href="#missing-measurements">On missing measurements create alarm</a></td>
-<td align="left">If no new measurement data has been received for a specified time, an alarm is created.</td>
-</tr>
-<tr>
-<td align="left"><a href="#alarm-operation">On alarm execute operation</a></td>
-<td align="left">If a certain alarm occurs, the specified operation will be sent to the device.</td>
-</tr>
-<tr>
-<td align="left"><a href="#threshold-explicit">On measurement explicit threshold create alarm</a></td>
-<td align="left">If the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared. This rule is similar to the rule "On measurement threshold create alarm". However, it provides the red threshold value explicitly.</td>
-</tr>
-<tr>
-<td align="left"><a href="#threshold-alarm">On measurement threshold create alarm</a></td>
-<td align="left">If the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared. This rule extracts the thresholds values from the device or data point library.</td>
-</tr>
-</tbody>
-</table>
 
 {{< c8y-admon-info >}}
 In certain rule parameters, various trigger fields can be used as variables, see [Smart rule variables](#smart-rule-variables) at the end of this section.  

@@ -1,0 +1,185 @@
+---
+weight: 10
+title: Working with data explorer
+layout: bundle
+section:
+  - app_development
+helpcontent:
+  - label: data-explorer
+    title: Data explorer
+    content: "In the data explorer, data points, (that is, measurements or sensor data) can be visualized. On the right, you see a list of available data points. On the left, you see its visualization.
+
+
+    Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
+
+
+    You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods.
+
+
+    The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
+---
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view and select all available data points: READ permission for permission type "Inventory" or READ permission for "Inventory" in the inventory roles
+- To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for "Measurements" in the inventory roles
+- To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
+
+Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
+{{< /c8y-admon-req >}}
+
+In the data explorer, data points (that is measurements or sensor data) can be visualized.
+
+The data explorer is available for all assets at once or just for a particular asset. To access the data explorer:
+
+- Click **Data explorer** in the navigator to visualize all data points of all assets.
+
+- Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
+
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](#add-data-points).
+
+On the left, in the main card, you see its visualization.
+
+![Data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
+
+The visualization is generated based on data point properties.
+
+The data points properties are pre-filled as follows:
+
+* If these properties have been customized previously, these values are used, see [To customize data point properties](#customize-data-points).
+
+* If the data points have a matching definition in the data point library, the values from the data point library are used.
+
+There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
+
+For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#customize-data-points).
+
+Click **Save as default** to store the data point settings into the device's managed object. These settings will then take precedence over the settings from the data point library, for example, when this data point is added to a data explorer by other users, or when there is a threshold smart rule processing this device and its data point. If you want to restore the data point library default settings, click **Load from library** and then click **Save as default**.
+
+**Example:**
+
+Let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an "On measurement threshold create alarm" smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm. However, if you change this data point's settings for your device in the data explorer and click **Save as default**, then the smart rule will use these overridden settings instead of the ones from the library. For other devices though, it will still use the settings from the library.
+
+{{< c8y-admon-info >}}
+Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+{{< /c8y-admon-info >}}
+
+<a name="add-data-points"></a>
+### To add a data point
+
+To add a data point to the data explorer, click **Add data point** at the bottom of the **Data points** card.
+
+![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
+
+On the left hand side of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
+
+The center of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+
+The right hand side shows all of the selected data points.
+
+To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
+
+For details on the data point library refer to [Data point library](#data-point-library).
+
+To remove a data point from the data point list, click the menu icon and select **Remove from list**.
+
+<a name="customize-data-points"></a>
+### To customize data point properties
+
+You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
+
+The following fields may be modified:
+
+<table>
+<col style="width:15%">
+<col style="width:85%">
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Label</td>
+<td style="text-align:left">Name of the data point, displayed on the y-axis to identify the data point. Below the label, the target is displayed, showing the name of the asset and the internal name of the data point (measurement fragment and series). This information is not editable.</td>
+</tr>
+<tr>
+<td style="text-align:left">Unit</td>
+<td style="text-align:left">Unit used on the y-axis. </td>
+</tr>
+<tr>
+<td style="text-align:left">Min/Max</td>
+<td style="text-align:left">Range shown on the y-axis. If not specified, the y-axis is scaled based on measurement values retrieved per specified time range.</td>
+</tr>
+<tr>
+<td style="text-align:left">Target</td>
+<td style="text-align:left">The target value is currently not shown in the diagram. The value is used in the "Data point list" widget.</td>
+</tr>
+<tr>
+<td style="text-align:left">Yellow range min/max</td>
+<td style="text-align:left">Defines the range when MINOR alarms should be raised by threshold rule.  </td>
+</tr>
+<tr>
+<td style="text-align:left">Red range min/max</td>
+<td style="text-align:left">Defines the range when CRITICAL alarms should be raised by threshold rule.</td>
+</tr>
+<tr>
+<td style="text-align:left">Display</td>
+<td style="text-align:left">Value displayed when data is aggregated. May be "Minimum", Maximum", Minimum and maximum".</td>
+</tr>
+<tr>
+<td style="text-align:left">Chart type</td>
+<td style="text-align:left">The type of chart used for the visualization. May be one of "Line", "Points", "Line and points", "Bars", "Step before" (alternating between vertical and horizontal segments, as in a step function) or "Step after" (alternating between horizontal and vertical segments). Default value is "line".</td>
+</tr>
+<tr>
+<td style="text-align:left">Y axis</td>
+<td style="text-align:left">Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". </td>
+</tr>
+</tbody>
+</table>
+
+After customizing the properties of a data point, you can save the modified settings to the data point library. Click the menu icon and from the context menu select **Update [NAME] to library**.
+
+To return to the properties stored in the data point library to a data point, select **Load [NAME] from library**.
+
+### Y-axis behaviour
+
+Per default, the first data point is positioned to the left y-axis and the remaining data points to the right. This behavior can be changed by modifying the respective value "Y-axis" for a particular data point (to "Left" or "Right", see above).
+
+Each data point is shown on its own y-axis, unless the following condition is met:
+
+* Two data points having the same minimum and the same maximum value.
+
+In this case, both data points share the same y-axis. This y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
+
+### To add alarms or events
+
+In addition to data points you can also add alarms or events to the data explorer.
+
+In the **Alarms/Events** card, click **Add alarm/event** to add an alarm or event.
+
+In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add** to add your selection.
+
+Expand an event, to modify its properties.
+
+Click the menu icon and in the context menu select **Remove**, to remove the entry from the list.
+
+As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
+
+<a name="export-data"></a>
+### To export measurement data
+
+You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
+
+ - Time when the specific measurement was taken
+ - Source of the measurement
+ - Name of the device being used
+ - Fragment series (for example `c8y_SpeedMeasurement`)
+ - Value of the measurement
+ - Unit used for a particular measurement (for example "C", "km/h", "sec")
+
+To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
+
+The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.

@@ -976,7 +976,8 @@ This may let the device send additional parameters that trigger further steps ba
 <a name="507"></a>
 ##### Set EXECUTING operations to FAILED (507)
 
-Set EXECUTING operations with given fragment or all of them to FAILED.
+Set EXECUTING operations with a given fragment to FAILED.
+If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|

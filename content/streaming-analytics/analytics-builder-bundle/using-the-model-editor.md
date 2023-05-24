@@ -139,16 +139,28 @@ For the input and output blocks, you can globally replace the devices, groups or
 
 2.  For the input and output blocks, you can select a different input source or output destination from the **Choose Device, Group or Asset** dialog box.
 
-    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes. For output blocks, you can also select the **Trigger Device**.
+    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
 
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
     The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
 
-    Click the **Use** button \(this is shown when you move the mouse over an entry\) to select the device, group or asset that you want to use.
+    Click the button which is shown when you hover over an entry to select the device, group or asset that you want to use.
+    The name of that button depends on the type of source that is currently selected:
+
+    | Button name | Shown for | Description |
+    | ----------- | --------- | ----------- |
+    | **Choose device** | Devices in input and output blocks | Data is received from the device or output is sent to the device. |
+    | **Choose group's devices** | Groups in input blocks | Data is received from all devices within the group hierarchy. You cannot directly receive data from a group. |
+    | **Choose asset** | Assets in input blocks | Data is received from the asset itself. The devices of the assets are ignored. |
+    | **Choose asset's devices** | Assets in input blocks | Data is received from all devices within the asset hierarchy. The block does not receive data from the asset itself. |
+    | **Choose asset** | Assets in output blocks | Output is sent to the asset itself. |
+
+    For the output blocks, you can also select a trigger device. This sends the output to the device which triggered the output.
 
     {{< c8y-admon-info>}}
-For output blocks, you cannot select a group, but you can select any device within that group.
+For output blocks, you cannot select a group. A button is not provided in this case.
+Select the trigger device instead to send the output to the device which triggered the output.  
     {{< /c8y-admon-info>}}
 
     The maximum number of shown devices, groups and/or assets depends on a tenant option. For more information, see [Configuring the number of shown devices, groups and/or assets](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets).
@@ -356,7 +368,7 @@ After you have replaced the devices, you need to verify that the measurements th
 
 2.  In the **Current device, group or asset** drop-down list box of the resulting dialog box, select the device, group or asset that you want to replace. All devices, groups and assets that are used in the model are available for selection.
 
-3.  Click the **Replace with** box to display a dialog box. The dialog box is the same as when selecting a different device, group or asset in the block parameter editor. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box. Click the **Use** button \(this is shown when you move the mouse over an entry\) to select the device, group or asset that you want to use instead.
+3.  Click the **Replace with** box to display a dialog box. The dialog box is the same as when selecting a different device, group or asset in the block parameter editor. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box. Click the button which is shown when you hover over an entry to select the device, group or asset that you want to use instead.
 
     The maximum number of shown devices, groups and/or assets depends on a tenant option. For more information, see [Configuring the number of shown devices, groups and/or assets](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets).
 
@@ -420,7 +432,7 @@ Models with no template parameters can be directly activated in the model manage
 
         If you specify a default value, this default value will be provided in the instance editor when the instance maintainer creates a new instance. The instance maintainer can then either leave this default value unmodified or change it as required for that instance.
 
-        When setting the default value for a device, an additional dialog box appears when you click the **Default Value** field. The dialog box is the same as when selecting a different device, group or asset in the block parameter editor \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box\). Click the **Use** button \(this is shown when you move the mouse over an entry\) to select the device that you want to use.
+        When setting the default value for a device, an additional dialog box appears when you click the **Default Value** field. The dialog box is the same as when selecting a different device, group or asset in the block parameter editor \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box\). Click the button which is shown when you hover over an entry to select the device, group or asset that you want to use.
 
     {{< c8y-admon-info>}}
 If there is a block parameter for which a required value has not been specified, then the instance cannot be activated. Attempting to do so will report an error.

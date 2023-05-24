@@ -140,6 +140,8 @@ Führen Sie folgende Schritte aus, um eine Schwellenwertregel zu definieren:
 3. Wenn der Datenpunkt, der den Schwellenwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und [fügen Sie einen Datenpunkt hinzu](#add-data-points).
 4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**.
 
+vvvAsk team if they still need this screenshot, as it is also missing in the English versionvvv
+
 missing image?
 <br><br> <img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>

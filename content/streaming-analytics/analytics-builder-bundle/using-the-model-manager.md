@@ -50,7 +50,7 @@ The **Samples** tab lists all sample models that are provided with Analytics Bui
 
 ![Samples tab showing the provided samples](/images/streaming-analytics/analytics-builder/model-manager-samples.png)
 
-If the name of a sample or its description is not fully shown on the card, you can move the mouse over the name or description to see the full name or description in a tooltip.
+If the name of a sample or its description is not fully shown on the card, you can hover over the name or description to see the full name or description in a tooltip.
 
 You can view the samples, but you cannot edit or deploy them. To view a sample, you can simply click on the card that is shown for the sample. The model editor is then invoked in read-only mode. See [Viewing a sample](/streaming-analytics/analytics-builder/#viewing-a-sample) for more information.
 

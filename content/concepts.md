@@ -1,5 +1,5 @@
 ---
-title: Concepts
+title: Technical concepts
 icon: "dlt-c8y-icon-intelligence"
 type: root
 layout: redirect

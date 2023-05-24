@@ -100,6 +100,8 @@ Auf der Registerkarte **Konfiguration** des Widget-Editors können Sie das Vollt
 
 Über das Volltextsuche-Feld können Sie Assets in der gesamten Hierarchie finden, doch dies erfordert exakte Übereinstimmungen, z. B. den gesamten Namen eines Assets.
 
+vvvThis was left here from the review I did last time?vvv
+
 missing image?
 ![Full text search](/images/benutzerhandbuch/cockpit/cockpit-asset-global-search.png)
 

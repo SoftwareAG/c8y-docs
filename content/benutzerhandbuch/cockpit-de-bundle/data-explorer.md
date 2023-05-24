@@ -217,11 +217,6 @@ Um diese Funktion nutzen zu können, muss zunächst ein Dashboard erstellt werde
 
 Klicken Sie auf **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Bericht hinzufügen**, um ein Widget aus dem Daten-Explorer des Navigators zu erstellen.
 
-vvvAsk team if they still need this screenshot, as it is also missing in the English versionvvv
-
-missing image?
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-sendwidget.png)
-
 Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie auf **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen.
 
 {{< c8y-admon-info >}}

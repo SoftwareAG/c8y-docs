@@ -146,10 +146,6 @@ To define a threshold rule follow these steps:
 2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](#add-data-points).
 4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**.
-
-missing image?
-<br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
-<br>
 5. Select the smart rule "On measurement explicit threshold create alarm".
 6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/users-guide/cockpit#smart-rules-collection).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.

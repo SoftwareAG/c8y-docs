@@ -6,6 +6,8 @@ CASIO CALC
 
 latest in calc op
 
+new things
+
 ---
 weight: 60
 title: Calculation

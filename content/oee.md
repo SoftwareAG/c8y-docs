@@ -6,7 +6,7 @@ layout: redirect
 bundle: oee
 section:
   - app_development
-weight: 80
+weight: 100
 ---
 
 Use the OEE application to measure the efficiency and effectiveness of your production processes, to create calculation configurations and to receive and store data through our API.

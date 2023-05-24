@@ -6,7 +6,7 @@ layout: redirect
 bundle: data-broker
 section:
   - app_development
-weight: 40
+weight: 60
 ---
 
 Use the data broker to share and edit data and subscriptions with other tenants or use our microservice-based data broker for more flexibiliy.

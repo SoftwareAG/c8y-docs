@@ -6,7 +6,7 @@ type: root
 layout: redirect
 section:
   - app_development
-weight: 60
+weight: 50
 ---
 
 Learn how to extend your platform with customer-specific functionality by developing and deploying microservices.

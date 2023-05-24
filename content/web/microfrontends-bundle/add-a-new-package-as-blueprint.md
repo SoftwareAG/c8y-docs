@@ -246,6 +246,7 @@ The following list shows the fields and what they are responsible for:
   - `path`: The path to the TypeScript file with the module.
   - `description`: A brief description of what the module does.
 - `contextPath`: The context path tells on which URL your blueprint can be loaded. As this is also used to generate a global variable, choose a valid JavaScript variable. For example your `contextPath` should not start with a number. To avoid conflicts it is good practice to add a prefix to your context path, for example, the acronym of your company: `acme-`.
+- `versioningMatrix`: Optional field which indicates the supported package versions and the recommended frontend and backend platform versions. If the package is not compatible with any of the recommended platform versions a warning will be shown. The matrix must have the following format and all versions must be SemVer. For example: `versioningMatrix: [{"1.0.0": {"api": ">1016.0.0", "sdk": ">1016.0.0"}}, {"2.0.0": {"api": ">1017.0.0", "sdk":">1017.0.0"}}]`. In case of repository-connect, versions existing in the platform, but not included in the versioning matrix will be removed during sync.
 
 {{< c8y-admon-info >}}
 A blueprint can also include plugins, which can later be used to extend other applications.

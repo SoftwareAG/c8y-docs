@@ -1,3 +1,9 @@
+new inputs
+
+Some alarms new feature is added
+
+new in measuremant inputs
+
 ---
 weight: 24
 title: Input

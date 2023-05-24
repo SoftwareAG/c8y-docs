@@ -1,3 +1,13 @@
+changes in aggregate
+
+new new new in agg
+
+new changes like topic, index
+
+
+some new data, manifest, pm's
+
+
 ---
 weight: 72
 title: Aggregate

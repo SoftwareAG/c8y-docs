@@ -1,3 +1,11 @@
+new in calc blk added
+
+TEXAS INSTRUMENTS CALC
+
+CASIO CALC
+
+latest in calc op
+
 ---
 weight: 60
 title: Calculation

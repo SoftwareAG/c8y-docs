@@ -15,7 +15,7 @@ helpcontent:
 - [Administration > Managing business rules](/users-guide/administration#business-rules) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
-{{< product-c8y-iot >}} includes Streaming Analytics which can analyze data in realtime and perform actions based on data.
+{{< product-c8y-iot >}} includes the Streaming Analytics application which can analyze data in realtime and perform actions based on data.
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 

@@ -219,6 +219,10 @@ The `assetPaths.previewImage` can now be used in any component or in a hook.
 You can see a full example when you scaffold the *widget-plugin* with `c8ycli new`.
 Note that the feature and example was added with version 10.17.0.
 
+{{< c8y-admon-tip >}}
+The recommended size for preview images used for widgets is 340 x 340 pixels.
+{{< /c8y-admon-tip >}}
+
 #### Translations
 
 Translations should work out of the box as for standard custom application.

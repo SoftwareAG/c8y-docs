@@ -393,7 +393,7 @@ The steps for the proof of possession are as follows:
 <br>![Download verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
 
 3. Encrypt the verification code using the private key of the certificate to produce the signed verification code.
-Use the following openssl command:
+Use the following OpenSSL command:
 
     `openssl dgst -sha256 -sign <private.key> <verification_code.txt> | openssl base64 -A`
 

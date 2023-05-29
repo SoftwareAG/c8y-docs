@@ -81,7 +81,7 @@ This means that the process 12985 is using the 8080 port and it can be killed if
 
 ##### When trying to build an application I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error
 
-This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, for example, 10.4.0, the version of Spring Boot must be 1.5.17 or later.
+This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, for example, 1016.0.0, the version of Spring Boot must be compatible or equal to version 2.5.4.
 
 ##### Missing Docker permissions in Linux
 

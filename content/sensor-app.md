@@ -4,9 +4,9 @@ icon: "c8y-icon c8y-icon-saas"
 type: root
 layout: redirect
 bundle: sensor-app
-weight: 100
+weight: 50
 section:
-  - device_management
+  - getting_started
 aliases:
   - /users-guide/android-cloud-sensor-app
   - /users-guide/optional-services/

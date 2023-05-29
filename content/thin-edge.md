@@ -1,0 +1,12 @@
+---
+title: thin-edge.io
+icon: "c8y-icon c8y-icon-device"
+type: root
+layout: redirect
+bundle: thin-edge
+section:
+  - device_management
+weight: 60
+---
+
+Supported devices.

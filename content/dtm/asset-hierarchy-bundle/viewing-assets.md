@@ -84,6 +84,9 @@ Only a maximum of 10 assets can be moved at a time.
 The **Move selected** option in the banner is disabled in the following scenarios:
 * One or more root assets are selected.
 * Assets of different asset models are selected. Only assets of same asset model can be moved.
+* The selected asset's asset model is no longer a child of its parent asset model.
+* One or more assets with same name are selected.
 
 {{< /c8y-admon-info >}}
-[Asset movement](/images/dtm/assets/dtm-assets-move-assets.png)
+
+![Asset movement](/images/dtm/assets/dtm-assets-move-assets.png)

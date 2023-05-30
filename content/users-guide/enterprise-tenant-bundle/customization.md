@@ -18,16 +18,16 @@ Click **{{< enterprise-tenant >}}** in the **Settings** menu to access these set
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-User must have access to administration application of {{<enterprise-tenant>}}. For details on how to enable {{<enterprise-tenant>}} see {{< product-c8y-iot >}} Core-Operations guide.
+Users must have access to the Administration application of the {{<enterprise-tenant>}}.
 
 ROLES & PERMISSIONS:
 
-* To view settings: READ permission for the "Options management" permission type.
-* To manage (create, edit, update) all existing settings: ADMIN permission for the "Options management" permission type.
+* To view settings: READ permission for the "Options management" permission type
+* To manage (create, edit, update) all existing settings: ADMIN permission for the "Options management" permission type
 
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
-* Tenant Manager - Can manage tenant-wide configurations like applications, tenant options and retention rules
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
 
 {{< /c8y-admon-req >}}
 
@@ -114,19 +114,19 @@ With the Branding feature, you can fully customize the look of your tenant to yo
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-Branding feature comes as default with {{<enterprise-tenant>}} and is available from within Administration application.
+The Branding feature comes as default with the {{<enterprise-tenant>}} and is available in the Administration application.
 
-Branding functionality is enabled by subscribing to the "feature-branding" application.
+The branding functionality is enabled by subscribing to the "feature-branding" application.
 
 ROLES & PERMISSIONS:
 
-* To manage branding configuration: 
-  * READ, ADMIN, CREATE for "Inventory" permission type;
-  * READ, ADMIN for "Options management" permission type;
-* To apply branding configuration: READ, ADMIN for "Application management" permission type.
+* To manage the branding configuration: 
+  * READ, ADMIN, CREATE permission for the "Inventory" permission type
+  * READ, ADMIN permission for the "Options management" permission type
+* To apply the branding configuration: READ, ADMIN permission for the "Application management" permission type
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
-* Tenant Manager - Can manage tenant-wide configurations like applications, tenant options and retention rules
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
 
 {{< /c8y-admon-req >}}
 
@@ -233,19 +233,19 @@ The following parameters can be specified:
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-Domain management feature comes as default with {{<enterprise-tenant>}} tenant and is available from within Administration application.
+The domain management feature comes as default with the {{<enterprise-tenant>}} tenant and is available in the Administration application.
 
-Domain management feature is enabled by subscribing to the "sslmanagement" microservice.
+The domain management functionality is enabled by subscribing to the "sslmanagement" microservice.
 
 ROLES & PERMISSIONS:
 
 * To upload certificate:
-    * READ, ADMIN for "Inventory" permission type;
-    * READ, ADMIN for "Options management" permission type;
-    * READ, ADMIN for "Application management" permission type;
+    * READ, ADMIN permission for the "Inventory" permission type;
+    * READ, ADMIN permission for the "Options management" permission type;
+    * READ, ADMIN permission for the "Application management" permission type;
 
 On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
-* Tenant Manager - Can manage tenant-wide configurations like applications, tenant options and retention rules
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
 
 {{< /c8y-admon-req >}}
 

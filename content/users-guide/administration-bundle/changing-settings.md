@@ -30,6 +30,10 @@ From the **Settings** menu, administrators can manage various settings for the a
 - Provide [SMS provider credentials](#sms-provider).
 - Manage the [connectivity settings](#connectivity).
 
+
+<a name="authentication"></a>
+### Changing authentication settings
+
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -39,8 +43,6 @@ For easier user access management, the above permission(s) are/is included in th
 - Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
 {{< /c8y-admon-req >}}
 
-<a name="authentication"></a>
-### Changing authentication settings
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
 
@@ -263,6 +265,13 @@ For further information, see [http://enable-cors.org](http://enable-cors.org).
 <a name="properties"></a>
 ### Managing the properties library
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+
+{{< /c8y-admon-req >}}
+
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
 
 ![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
@@ -272,10 +281,6 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 - Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/users-guide/cockpit/#widget-asset-table) and [Asset property widget](/users-guide/cockpit/#asset-property).
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
-
-{{< c8y-admon-info >}}
-Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
-{{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
 - [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) for further information on the usage of properties in the "Asset table" and "Asset properties" widgets.
@@ -352,6 +357,14 @@ Custom properties are visible to all authenticated users of the tenant, regardle
 <a name="sms-provider"></a>
 ### Providing SMS provider credentials
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To view SMS provider configurations: READ permission for the permission type "SMS"
+To modify SMS provider configurations: ADMIN permission for the permission type "SMS"
+
+{{< /c8y-admon-req >}}
+
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, for example, on alarms.
 
 By providing your credentials you enable platform features that utilize SMS services.
@@ -359,10 +372,6 @@ By providing your credentials you enable platform features that utilize SMS serv
 #### To enter SMS provider credentials
 
 1. Click **SMS provider** in the **Settings** menu.
-
-{{< c8y-admon-info >}}
-To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
-{{< /c8y-admon-info >}}
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 
@@ -378,7 +387,18 @@ OpenIT does not serve new customers anymore and is in the process of shutting do
 <a name="connectivity"></a>
 ### Managing the connectivity settings
 
-In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials ADMIN permissions are required.
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+The **Connectivity** menu item is only available if you are logged in to the {{< product-c8y-iot >}} platform as administrator and if you have READ or ADMIN permission for the permission type "Connectivity".
+
+To view connectivity settings: READ permission for the permission type "Connectivity"
+To add or replace credentials: ADMIN permission for the permission type "Connectivity"
+
+{{< /c8y-admon-req >}}
+
+
+In the **Connectivity** page, you can manage credentials for different providers.
 
 The following provider settings may currently be specified:
 

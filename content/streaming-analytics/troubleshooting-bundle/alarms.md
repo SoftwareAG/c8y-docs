@@ -38,7 +38,7 @@ The following is a list of the alarms. The information further down below explai
 - [High memory usage](#apama_highmemoryusage)
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
-- [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
+- [An EPL app is running in an infinite loop](#apama_ctrl_warn)
 - [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout)
 - [Multiple extensions with the same name](#extension_error)
 - [Smart rule configuration failed](#smartrule_configuration_error)
@@ -225,7 +225,7 @@ You can diagnose the issue by the monitor name and line number given in the alar
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly.
 
 <a name="apama_ctrl_warn"></a>
-#### An EPL file blocks the correlator context for too long
+#### An EPL app is running in an infinite loop
 
 If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem.
 
@@ -248,7 +248,7 @@ monitor Sample{
 Apama-ctrl generates the following alarm for the above example:
 
 - Alarm type: `APAMA_CTRL_WARN_<HASHCODE>`
-- Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - context '&lt;contextName&gt;' has been processing a single event for a long time.
+- Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - This EPL app is running in an infinite loop and impedes the operation of your other apps. It is recommended that you deactivate and diagnose this app.
 - Alarm severity: WARNING
 
 You can diagnose the issue by the monitor name and context name given in the alarm.

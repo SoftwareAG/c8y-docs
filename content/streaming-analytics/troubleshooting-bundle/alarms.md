@@ -251,9 +251,9 @@ Apama-ctrl generates the following alarm for the above example:
 - Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - This EPL app is running in an infinite loop and impedes the operation of your other apps. It is recommended that you deactivate and diagnose this app.
 - Alarm severity: WARNING
 
-You can diagnose the issue by the monitor name and context name given in the alarm.
+You can diagnose the issue by the monitor name given in the alarm.
 
-For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
+For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory. See also [Log files of the Apama-ctrl microservice](#logfiles).
 
 <a name="eplapp_restore_timeout"></a>
 #### EPL app restore timeout on restart of Apama-ctrl

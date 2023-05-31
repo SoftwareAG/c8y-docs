@@ -6,6 +6,11 @@ aliases:
   - users-guide/optional-services/#connectivity
 ---
 
+{{< c8y-admon-related >}}
+* [Device management library > Connectivity](/reference/device-management-library/#connectivity) in the *Reference guide* for details on the `c8y_Mobile` fragment used in managed objects.
+* [Administration > Changing settings > Managing the connectivity settings](/users-guide/administration/#connectivity) in the *User guide* for information on how to change the connectivity settings via the UI.
+{{< /c8y-admon-related >}}
+
 The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
 
 The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platforms Comarch, Ericsson, Jasper and Kite.

@@ -3,6 +3,11 @@ weight: 31
 title: Device details
 layout: redirect
 ---
+
+{{< c8y-admon-related >}}
+References to related content in the documentation are mentioned in the details descriptions below.
+{{< /c8y-admon-related >}}
+
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface.
 
 To view detailed information on the device, click a device in the device list.

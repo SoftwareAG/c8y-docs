@@ -248,7 +248,7 @@ monitor Sample{
 Apama-ctrl generates the following alarm for the above example:
 
 - Alarm type: `APAMA_CTRL_WARN_<HASHCODE>`
-- Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - This EPL app is running in an infinite loop and impedes the operation of your other apps. It is recommended that you deactivate and diagnose this app.
+- Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - This EPL app is probably in an infinite or long-running loop and impedes the operation of your other apps. It is recommended that you deactivate and diagnose this app.
 - Alarm severity: WARNING
 
 You can diagnose the issue by the monitor name given in the alarm.

@@ -13,9 +13,8 @@ helpcontent:
 
 {{< c8y-admon-related >}}
 * [Interfacing devices](/concepts/interfacing-devices/) in the *Concepts guide* for information on the concepts relevant for interfacing IoT devices and other IoT-related data sources with {{< product-c8y-iot >}}.
-* [LPWAN Custom device protocols](/protocol-integration/lpwan-custom-codec/) in the *Protocol integration guide* for details on custom device protocols for LPWAN devices.
+* The [Protocol integration guide](/protocol-integration/overview/) for a list of protocols, parameters and network connectivity options for devices.
 {{< /c8y-admon-related >}}
-
 
 To process data from various device types, {{< product-c8y-iot >}} uses device protocols which are stored in a database.
 

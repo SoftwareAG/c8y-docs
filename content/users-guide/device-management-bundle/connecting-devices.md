@@ -36,7 +36,7 @@ helpcontent:
 {{< c8y-admon-related >}}
 * [Device integration > Integration tutorials](/device-integration/integration-tutorials) for step-by-step instructions on registering devices.
 * [Device integration using REST](/device-integration/rest/) for a detailed descriptions on device integration via REST.
-* The [New device requests API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
+* The [New device requests API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
 * The [Protocol integration guide](/protocol-integration/overview) for details on registering devices using various standard protocol types.
 {{< /c8y-admon-related >}}
 

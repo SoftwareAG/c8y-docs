@@ -114,7 +114,7 @@ With the Branding feature, you can fully customize the look of your tenant to yo
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-The Branding feature comes as default with the {{<enterprise-tenant>}} and is available in the Administration application.
+The branding feature comes as default with the {{<enterprise-tenant>}} and is available in the Administration application.
 
 The branding functionality is enabled by subscribing to the "feature-branding" application.
 

@@ -694,4 +694,4 @@ When the grid is hidden, the button looks as follows:
 When the grid is shown, the button looks as follows:
 ![Icon when grid is shown](/images/streaming-analytics/analytics-builder/icon-grid-active.png)
 
-If the model is in the Active state \(read-only mode\), it is not possible to toggle the display of the grid and this button is therefore disabled.
+When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this button is therefore disabled.

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 ### Monitoring
-You can monitor the current status of each model in the model manager. The card for a model shows the current mode for this model \(such as production mode\) and whether it is in the Active \(deployed\) or Inactive state.
+You can monitor the current status of each model in the model manager. The card for a model shows the current mode for this model \(such as production mode\) and whether it is active \(deployed\) or inactive.
 
 ![Card for a model](/images/streaming-analytics/analytics-builder/card-with-runtime-error.png)
 

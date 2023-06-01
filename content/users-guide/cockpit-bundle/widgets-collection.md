@@ -404,6 +404,10 @@ The following code sanitization options can be selected:
  - lax (default) - Allows partly JS (events) and all angularjs directives.
  - none - Allows everything.
 
+{{< c8y-admon-info >}}
+The sanitization option "lax" includes a defined list of directives that are excluded from sanitization. For more examples on how to customize the sanitization options, see the help text toggle in the **HTML code** section.
+{{< /c8y-admon-info >}}
+
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
 If you want to use a link in the **HTML code** field, for example a link to a dashboard, you must use the following format:

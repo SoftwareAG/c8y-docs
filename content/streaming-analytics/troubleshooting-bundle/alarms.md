@@ -38,7 +38,7 @@ The following is a list of the alarms. The information further down below explai
 - [High memory usage](#apama_highmemoryusage)
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
-- [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
+- [An EPL app is running in an infinite or long-running loop](#apama_ctrl_warn)
 - [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout)
 - [Multiple extensions with the same name](#extension_error)
 - [Smart rule configuration failed](#smartrule_configuration_error)
@@ -222,12 +222,12 @@ Apama-ctrl generates the following alarm for the above example:
 
 You can diagnose the issue by the monitor name and line number given in the alarm.
 
-For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly.
+For more details, you can also check the log files of the Apama-ctrl microservice if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly. See also [Log files of the Apama-ctrl microservice](#logfiles).
 
 <a name="apama_ctrl_warn"></a>
-#### An EPL file blocks the correlator context for too long
+#### An EPL app is running in an infinite or long-running loop
 
-If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem.
+If an EPL app has an infinite or long-running loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem.
 
 For example, the following monitor blocks the correlator main context:
 
@@ -248,12 +248,12 @@ monitor Sample{
 Apama-ctrl generates the following alarm for the above example:
 
 - Alarm type: `APAMA_CTRL_WARN_<HASHCODE>`
-- Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - context '&lt;contextName&gt;' has been processing a single event for a long time.
+- Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - This EPL app is probably in an infinite or long-running loop and impedes the operation of your other apps. It is recommended that you deactivate and diagnose this app.
 - Alarm severity: WARNING
 
-You can diagnose the issue by the monitor name and context name given in the alarm.
+You can diagnose the issue by the monitor name given in the alarm.
 
-For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
+For more details, you can also check the log files of the Apama-ctrl microservice if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory. See also [Log files of the Apama-ctrl microservice](#logfiles).
 
 <a name="eplapp_restore_timeout"></a>
 #### EPL app restore timeout on restart of Apama-ctrl

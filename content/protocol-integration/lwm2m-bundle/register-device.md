@@ -60,11 +60,11 @@ The bulk device registration operation will be displayed in the [LWM2M connector
 
 The fields below must be contained to be able to establish a connection:
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -146,11 +146,11 @@ PSK registration requires additional fields to be filled.
 See the table below for the full set of bootstrap fields you can add:
 
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align: left">Field</th>
@@ -219,11 +219,11 @@ After creation, you can view and change the bootstrap parameters in the **LWM2M 
 See the table below for information on additional fields:
 
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align: left">Field</th>
@@ -336,11 +336,11 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 The following table explains several optional parameters related to firmware updates which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align: left">Field</th>
@@ -372,6 +372,13 @@ Allowed values are PUSH, PULL or BOTH.</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the mechanism used to reset the firmware update state machine.
 Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL ('\0'). If this field is not used, the default reset state machine mechanism is used where a reset is done via package resource for PUSH and via package URI for PULL.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left">Initial State Machine Reset</td>
+<td style="text-align: left">fwResetStateMachineOnStart</td>
+<td style="text-align: left">boolean</td>
+<td style="text-align: left">Controls if the LWM2M agent performs an initial state machine reset before it starts a firmware update. Default is <code>TRUE</code>.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

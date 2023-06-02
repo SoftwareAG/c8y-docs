@@ -78,7 +78,7 @@ The second example shows how gateway devices can be used in the Cockpit applicat
 Gateway devices are as well represented as top level devices in the Device Management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 
 As you can see from the example, devices can have completely different hierarchies in the Device Management application and in the Cockpit application:
-While inside Device Management all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
+While inside the Device Management application all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
 
 #### Cockpit assets versus business assets
 

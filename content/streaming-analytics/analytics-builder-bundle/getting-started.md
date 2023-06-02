@@ -241,7 +241,7 @@ Once the instance has been activated, send in the data from your device. The ins
 
 For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< sensor-app >}} is still running.
 
-#### Step 6: Go to the Device Management and view the alarms
+#### Step 6: Go to the Device Management application and view the alarms
 
 To view the alarms that are sent from your active instance, you have to switch to the Device Management application.
 See [Device Management](/users-guide/device-management/) in the *User guide* for detailed information.

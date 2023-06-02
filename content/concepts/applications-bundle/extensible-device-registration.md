@@ -21,7 +21,7 @@ Extensible device registration requires [application extensions](/concepts/appli
 
 The extended device registration provides the following advantages:
 
-- **Extensibility of the device registration wizard**: You can easily add own forms to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
+- **Extensibility of the device registration wizard**: You can easily add own forms to the device registration wizard in the Device Management application UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
 
 - **Support for bulk registration using custom CSV**: You can customize the bulk registration and hence implement support for CSV files of a different format.
 

@@ -393,7 +393,7 @@ For more information on how to develop your own plugins, refer to [Developer Doc
 
 #### Step 6 Manage configuration files
 
-With thin-edge.io you can manage configuration files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device Management.
+With thin-edge.io you can manage configuration files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device Management application.
 
 This functionality is installed with the initial script.
 However, you must configure it in */etc/tedge/c8y/c8y-configuration-plugin.toml* and add the entries for the configuration files to be managed.
@@ -461,7 +461,7 @@ To change the `collectd` metrics of the devices which are displayed in {{< produ
 
 #### Step 7 Manage log files
 
-With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as part of Device Management.
+With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as part of Device Management application.
 
 This functionality is directly installed with the initial script.
 However, you must configure it in */etc/tedge/c8y/c8y-log-plugin.toml* and add the entries for the configuration files to be managed.

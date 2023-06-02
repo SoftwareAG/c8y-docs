@@ -37,7 +37,7 @@ To manage the auto registration field of uploaded certificates in the UI refer t
 
 **Bulk registration**
 
-The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device Management.
+The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device Management application.
 
 The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
 

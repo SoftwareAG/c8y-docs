@@ -47,7 +47,7 @@ The following sections describe:
 * How to configure the [connectivity for the SIM provider](#connectivity-configuration) in your {{< product-c8y-iot >}} tenant.
 * How to [link SIMs and mobile devices](#link-sims).
 * Which information is shown in the [Connectivity tab](#jasperinfo).
-* How to [manage connectivity](#managing) from Device Management.
+* How to [manage connectivity](#managing) from the Device Management application.
 
 <a name="link-account"></a>
 ### Setting up your Jasper Control Center account

@@ -104,9 +104,7 @@ To apply a filter, click the **Apply** button next to the respective filter fiel
 <li>Application rescaled</li>
 <li>Application deleted</li>
 </ul>
-{{< c8y-admon-info >}}
 This type of audit logs may be created for both hosted applications and microservices.
-{{< /c8y-admon-info >}}
 </td>
 </tr>
 
@@ -272,9 +270,7 @@ This type of audit logs may be created for both hosted applications and microser
 <li>User login</li>
 <li>User logout</li>
 </ul>
-{{< c8y-admon-info >}}
-Entries of this type are only created for OAuth authentication, not for Basic.
-{{< /c8y-admon-info >}}
+Note that entries of this type are not created when using Basic authentication.
 </td>
 </tr>
 

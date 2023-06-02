@@ -19,9 +19,8 @@ Typical real-time analytics use cases include:
 * Notifications: Send me an email if there is a power outage in one of my machines.
 * Compression: Store location updates of all cars only once every five minutes (but still send real-time data for the car that I am looking at to the user interface).
 
+The {{< product-c8y-iot >}} platform includes an Apama correlator component, which is managed by the {{< product-c8y-iot >}} platform \(this is not manually started or stopped\) and is preconfigured to communicate to {{< product-c8y-iot >}}. This correlator hosts the Analytics Builder runtime, and also executes any operation logic added using EPL apps.
 The operation logic is based on Apama's Event Processing Language (Apama EPL).
-
-The {{< product-c8y-iot >}} platform includes an Apama correlator component, which is managed by the {{< product-c8y-iot >}} platform \(this is not manually started or stopped\) and is preconfigured to communicate to {{< product-c8y-iot >}}. This correlator hosts the Analytics Builder runtime, and also executes any custom Apama rules added using EPL apps.
 
 {{< c8y-admon-info >}}
 This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation]({{< link-apama-webhelp >}}) for further details.

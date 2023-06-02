@@ -8,8 +8,6 @@ Devices and sensors can be connected to {{< product-c8y-iot >}}. See [Interfacin
 
 Sensors result in `Measurement` or `Event` objects in {{< product-c8y-iot >}}, and devices can receive `Operation` objects created within the {{< product-c8y-iot >}} platform. All of these objects \(`Measurement`, `Event`, `Operation`\) will be associated with a single device in the {{< product-c8y-iot >}} platform. A device may have multiple types of measurement associated with it, and the types of measurements each device supports may be the same as other devices or different to other devices. Once devices are connected to {{< product-c8y-iot >}}, information about these devices is stored in the {{< product-c8y-iot >}} inventory. These are visible in the Device Management application, which can also be used to view `Measurement`, `Event` or `Operation` objects associated with that device. See [Device Management](/users-guide/device-management/) in the *User guide* for more information.
 
-The {{< product-c8y-iot >}} platform includes an Apama correlator component, which is managed by the {{< product-c8y-iot >}} platform \(this is not manually started or stopped\) and is preconfigured to communicate to {{< product-c8y-iot >}}. This correlator hosts the Analytics Builder runtime, and also executes any custom Apama rules added using EPL apps.
-
 Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 Typical real-time analytics use cases include:
@@ -22,6 +20,8 @@ Typical real-time analytics use cases include:
 * Compression: Store location updates of all cars only once every five minutes (but still send real-time data for the car that I am looking at to the user interface).
 
 The operation logic is based on Apama's Event Processing Language (Apama EPL).
+
+The {{< product-c8y-iot >}} platform includes an Apama correlator component, which is managed by the {{< product-c8y-iot >}} platform \(this is not manually started or stopped\) and is preconfigured to communicate to {{< product-c8y-iot >}}. This correlator hosts the Analytics Builder runtime, and also executes any custom Apama rules added using EPL apps.
 
 {{< c8y-admon-info >}}
 This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation]({{< link-apama-webhelp >}}) for further details.

@@ -47,6 +47,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#121">121,profileExecuted,profileID</a>
 + <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
 + <a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a>
++ <a href="#125">125</a>
 + <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
@@ -496,6 +497,17 @@ Allows a device to provide information about the agent running on it.
 
 ```text
 122,thin-edge.io,0.6,https://thin-edge.io,Software AG
+```
+
+<a name="125"></a>
+##### Send heartbeat (125)
+
+Sends a heartbeat from the device to update its availability status.
+
+**Example**
+
+```text
+125
 ```
 
 <a name="140"></a>

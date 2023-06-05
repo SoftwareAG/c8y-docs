@@ -377,7 +377,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <tr>
 <td style="text-align: left">Initial State Machine Reset</td>
 <td style="text-align: left">fwResetStateMachineOnStart</td>
-<td style="text-align: left">boolean</td>
+<td style="text-align: left">Boolean</td>
 <td style="text-align: left">Controls if the LWM2M agent performs an initial state machine reset before it starts a firmware update. Default is TRUE.</td>
 <td style="text-align: left">Optional</td>
 </tr>

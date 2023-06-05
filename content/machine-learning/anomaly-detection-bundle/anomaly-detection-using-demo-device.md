@@ -59,7 +59,7 @@ response = requests.request("POST", url, data=json.dumps(payload), headers=heade
 print("The device id is:" , json.loads(response.text)['id'])
 ```
 
-Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
+Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
 
 #### Upload the model and Apama monitor file
 
@@ -130,4 +130,4 @@ response = requests.request("POST", url, data=json.dumps(payload2),
 
 This should send alternate anomalous and non-anomalous measurements to {{< product-c8y-iot >}} on behalf of your demo device.
 
-You should notice anomaly detection alarms for every anomalous measurement that it sends. These alarms generated from your device will be visible under the **Alarms** page of the Device Management application.
+You should notice anomaly detection alarms for every anomalous measurement that it sends. These alarms generated from your device will be visible under the **Alarms** page of the Device management application.

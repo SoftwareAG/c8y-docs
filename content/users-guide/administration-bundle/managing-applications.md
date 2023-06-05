@@ -135,7 +135,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
@@ -317,7 +317,7 @@ Simply click the application or click the menu icon at the right of an entry and
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 {{< c8y-admon-important >}}
-Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
+Never change the system application names (such as "Device management", "Cockpit"). Otherwise, tenant initialization will fail.
 {{< /c8y-admon-important >}}
 
 ### To delete an application

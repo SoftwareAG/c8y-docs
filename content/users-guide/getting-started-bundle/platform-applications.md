@@ -37,8 +37,8 @@ Per default, {{< product-c8y-iot >}} comes with the following three standard app
 </tr>
 <tr>
 <td style="text-align:center"><i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i></td>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
-<td style="text-align:left">The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  </td>
+<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device management</a></td>
+<td style="text-align:left">The Device management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  </td>
 </tr>
 
 </tbody>

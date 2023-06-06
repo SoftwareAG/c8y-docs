@@ -14,17 +14,10 @@ helpcontent:
     To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the *User guide*."
 ---
 
-
 {{< c8y-admon-related >}}
 * [SmartREST 2.0](/reference/smartrest-two/) in the *Reference guide* for details on the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
 * [Device integration using MQTT](/device-integration/mqtt/) in *Device integration* for information on integrating devices via MQTT.
 {{< /c8y-admon-related >}}
-
-SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
-
-To add a new template, either import an existing template or create a new one.
-To import a template, click **Import template** at the right of the top menu bar, select a file to be uploaded and provide a name and unique ID.
-To create a new template, click **Create template** at the right of the top menu bar, provide a name and unique ID and add the required messages or responses as described in the *Device management > SmartREST templates* section in the *User guide*.
 
 ### Introduction
 

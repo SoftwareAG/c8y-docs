@@ -210,7 +210,7 @@ In case of multi-tenant isolation level, the owner of a microservice (for exampl
 
 The following values are collected on a daily base for each tenant:
 
-* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
+* CPU usage, specified in CPU millicores (1000m = 1 CPU)
 * Memory usage, specified in MB
 
 Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day.

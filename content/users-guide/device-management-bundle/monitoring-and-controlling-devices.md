@@ -69,7 +69,7 @@ Devices are represented as "pins". Click a pin to see the name of the respective
 <a name="connection-monitoring"></a>
 ### Connection monitoring
 
-In the Device Management application you can monitor the connections to your devices.
+In the Device management application you can monitor the connections to your devices.
 
 This can be done at the level of individual devices (see below) or across multiple devices in a list.
 

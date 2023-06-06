@@ -28,7 +28,7 @@ The model that you add will contain three blocks:
 
 -   An input block which receives measurement values from a device.
 -   A block that calculates the mean of the measurement values over time.
--   An output block that sends the calculated mean values to {{< product-c8y-iot >}}'s Device Management application so that they can be viewed there.
+-   An output block that sends the calculated mean values to {{< product-c8y-iot >}}'s Device management application so that they can be viewed there.
 
 When you have completed all steps below, your model will look similar to the following:
 
@@ -130,11 +130,11 @@ A card for the newly added model is shown on the **Models** tab of the model man
 
 2.  Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
 
-#### Step 9: Go to the Device Management and view the measurements
+#### Step 9: Go to the Device management and view the measurements
 
-To view the measurements that are sent from your active model, you have to switch to the Device Management application. See [Device Management](/users-guide/device-management/) in the *User guide* for detailed information.
+To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management](/users-guide/device-management/) in the *User guide* for detailed information.
 
-1.  Go to the Device Management application.
+1.  Go to the Device management application.
 
 2.  In the navigator on the left, click **Devices** and then **All devices**.
 
@@ -142,7 +142,7 @@ To view the measurements that are sent from your active model, you have to switc
 
 4.  Click **Measurements** on the left. This is a dynamic tab which is only shown when measurements are available for the device.
 
-    The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Device Management > Device details > Measurements](/users-guide/device-management/#measurements) in the *User guide* for more information on the **Measurements** tab.
+    The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Device management > Device details > Measurements](/users-guide/device-management/#measurements) in the *User guide* for more information on the **Measurements** tab.
 
 
 ### First Steps: Creating a model from a sample
@@ -241,12 +241,12 @@ Once the instance has been activated, send in the data from your device. The ins
 
 For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< sensor-app >}} is still running.
 
-#### Step 6: Go to the Device Management and view the alarms
+#### Step 6: Go to the Device management application and view the alarms
 
-To view the alarms that are sent from your active instance, you have to switch to the Device Management application.
-See [Device Management](/users-guide/device-management/) in the *User guide* for detailed information.
+To view the alarms that are sent from your active instance, you have to switch to the Device management application.
+See [Device management](/users-guide/device-management/) in the *User guide* for detailed information.
 
-1.  Go to the Device Management application.
+1.  Go to the Device management application.
 
 2.  In the navigator on the left, click **Devices** and then **All devices**.
 

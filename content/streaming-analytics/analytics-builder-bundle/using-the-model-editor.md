@@ -337,7 +337,7 @@ The above toolbar buttons are only enabled when there is an operation that can b
 
 #### Replacing devices, groups and assets
 
-You can find the devices, groups or assets that are used in the current model and replace them with other devices, groups or assets that are currently registered in the {{< product-c8y-iot >}} inventory \(visualized in the Device Management application\).
+You can find the devices, groups or assets that are used in the current model and replace them with other devices, groups or assets that are currently registered in the {{< product-c8y-iot >}} inventory \(visualized in the Device management application\).
 
 {{< c8y-admon-info>}}
 In the rules below, the term device refers to a device or other asset \(but not to a group\).

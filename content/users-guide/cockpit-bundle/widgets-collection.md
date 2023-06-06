@@ -149,7 +149,7 @@ The following types are available:
 <a name="alarm-list"></a>
 ### Alarm list
 
-The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 ![Alarm list widget](/images/users-guide/cockpit/cockpit-widget-alarm-list.png)
 
@@ -171,7 +171,7 @@ The "All critical alarms" widget shows all objects with a critical alarm. Apart 
 
 ![Critical alarms](/images/users-guide/cockpit/cockpit-widget-critical-alarms.png)
 
-For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms, refer to [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 <a name="applications"></a>
 ### Applications
@@ -252,7 +252,7 @@ The property "Active alarm status" shows active alarms as icons in the table. If
 ![Reboot device button configuration](/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
 {{< c8y-admon-info >}}
-The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Device details > Shell](/users-guide/device-management/#shell).<br>
+The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device management > Device details > Shell](/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
 {{< /c8y-admon-info >}}
 
@@ -529,7 +529,7 @@ The "Recent alarms" widget shows all alarms of all severity sorted by time. Ther
 
 ![Recent alarms widget](/images/users-guide/cockpit/cockpit-widget-recent-alarms.png)
 
-For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms, refer to [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 <a name="relay-array-control"></a>
 ### Relay array control

@@ -24,7 +24,7 @@ SmartREST templates are a collection of request and response templates used to c
 
 To add a new template, either import an existing template or create a new one.
 To import a template, click **Import template** at the right of the top menu bar, select a file to be uploaded and provide a name and unique ID.
-To create a new template, click **Create template** at the right of the top menu bar, provide a name and unique ID and add the required messages or responses as described in the *Device Management > SmartREST templates* section in the *User guide*.
+To create a new template, click **Create template** at the right of the top menu bar, provide a name and unique ID and add the required messages or responses as described in the *Device management > SmartREST templates* section in the *User guide*.
 
 ### Introduction
 

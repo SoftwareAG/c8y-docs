@@ -46,7 +46,7 @@ helpcontent:
 
 ### Overview
 
-The Device Management application provides various features that support you in efficiently managing your devices:
+The Device management application provides various features that support you in efficiently managing your devices:
 
 | Feature                                              | Description                                                                                                                                 |
 |:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|

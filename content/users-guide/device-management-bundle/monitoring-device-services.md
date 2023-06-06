@@ -12,7 +12,7 @@ layout: redirect
 * [Device management library > Measurements](/reference/device-management-library/#measurements) in the *Reference guide* for details on measurements.
 {{< /c8y-admon-related >}}
 
-The Device Management application lets you monitor the data that your devices send about the services they are running.
+The Device management application lets you monitor the data that your devices send about the services they are running.
 
 The [Services](/users-guide/device-management/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.
 There you can see detailed information about measurements, events and alarms sent for every service.

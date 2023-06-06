@@ -135,7 +135,7 @@ sudo tedge config set c8y.url {{YOUR_C8Y_URL}}
 thin-edge.io connects via MQTT protocol using an X.509 certificate for authentication.
 To do so, a certificate must be trusted by {{< product-c8y-iot >}}.
 A certificate is trusted when it is added to the trusted certificates and is in an activated state.
-See also [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management/#trusted-certificates) in the *User guide*.
+See also [Device management > Managing device data > Managing trusted certificates](/users-guide/device-management/#trusted-certificates) in the *User guide*.
 
 First, create the device certificate locally:
 
@@ -171,7 +171,7 @@ sudo tedge connect c8y
 ```
 
 When the connection is established, the device will be created in {{< product-c8y-iot >}}.
-If you navigate to **Device Management** > **Devices** > **All** devices, the device is visible in the list.
+If you navigate to **Device management** > **Devices** > **All** devices, the device is visible in the list.
 
 #### Step 3 Sending device data
 
@@ -371,11 +371,11 @@ sudo tedge connect C8Y
 
 4. Click **Add Software**.
 
-See also [Device Management > Managing device data > Managing device software > To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version) in the *User guide**.
+See also [Device management > Managing device data > Managing device software > To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version) in the *User guide**.
 
 ##### Installing software on a device
 
-1. In {{< product-c8y-iot >}}, click **All devices** in the Device Management application.
+1. In {{< product-c8y-iot >}}, click **All devices** in the Device management application.
 
 2. Select the desired device from the device list and open its **Software** tab.
   The **Software** tab shows a list of all available software installed on the device. If a given software has a type, it is displayed next to its name. It is possible to search for a particular software by its name or filter the list by software type.
@@ -387,13 +387,13 @@ See also [Device Management > Managing device data > Managing device software > 
 
 When a different version of the already installed software needs to be installed, choose in step 4 the installed software from the list and in step 5 the right version.
 
-For more information on how to manage the software, refer to [Device Management > Managing device data > Managing device software > Managing software on a device](/users-guide/device-management/#managing-software-on-a-device) in the *User guide*.
+For more information on how to manage the software, refer to [Device management > Managing device data > Managing device software > Managing software on a device](/users-guide/device-management/#managing-software-on-a-device) in the *User guide*.
 
 For more information on how to develop your own plugins, refer to [Developer Documentation > Write my own software management plugin](https://thin-edge.github.io/thin-edge.io/html/tutorials/write-my-software-management-plugin.html) in the *thin-edge.io docs*.
 
 #### Step 6 Manage configuration files
 
-With thin-edge.io you can manage configuration files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device Management.
+With thin-edge.io you can manage configuration files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device management application.
 
 This functionality is installed with the initial script.
 However, you must configure it in */etc/tedge/c8y/c8y-configuration-plugin.toml* and add the entries for the configuration files to be managed.
@@ -421,7 +421,7 @@ sudo systemctl enable c8y-configuration-plugin.service
 ```
 Finally, do the following:
 
-1. Navigate to the Device Management application and to the desired device and click the **Configuration** tab.
+1. Navigate to the Device management application and to the desired device and click the **Configuration** tab.
 2. Select the c8y-configuration-plugin from the list of supported configuration types, as declared in the plugin configuration file.
 3. Save the configuration files in the repository or download them.
 
@@ -434,7 +434,7 @@ If you want to change one or more configuration files, there are several options
 
 This tutorial makes use of the second option.
 
-1. In the Device Management application, select a device from **All devices**, then select a configuration file from the list in the **Configuration** tab. Save the configuration file to the repository by clicking **Save to repository**.
+1. In the Device management application, select a device from **All devices**, then select a configuration file from the list in the **Configuration** tab. Save the configuration file to the repository by clicking **Save to repository**.
 2. From the left side navigation, select **Management** > **Configuration repository**.
 3. Download the configuration file from the list by clicking the three dots at the end of the row and then **Download**.
 4. Edit the file as needed.
@@ -444,7 +444,7 @@ This tutorial makes use of the second option.
 8. Click **Send configuration to device** to upload it to the device.
 9. Click **Get snapshot from device** to verify the change of the configuration file.
 
-Also see [Device Management > Managing device data > Managing configurations](/users-guide/device-management/#managing-configurations) in the *User guide*.
+Also see [Device management > Managing device data > Managing configurations](/users-guide/device-management/#managing-configurations) in the *User guide*.
 
 ##### Change collectd configuration file via the platform
 
@@ -461,7 +461,7 @@ To change the `collectd` metrics of the devices which are displayed in {{< produ
 
 #### Step 7 Manage log files
 
-With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as part of Device Management.
+With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as part of Device management application.
 
 This functionality is directly installed with the initial script.
 However, you must configure it in */etc/tedge/c8y/c8y-log-plugin.toml* and add the entries for the configuration files to be managed.
@@ -488,7 +488,7 @@ sudo systemctl start c8y-log-plugin
 sudo systemctl enable c8y-log-plugin
 ```
 
-To see the content of the log files in {{< product-c8y-iot >}}, follow the steps in [Device Management > Device details > Logs > To request log information](/users-guide/device-management/#to-request-log-information).
+To see the content of the log files in {{< product-c8y-iot >}}, follow the steps in [Device management > Device details > Logs > To request log information](/users-guide/device-management/#to-request-log-information).
 
 If `c8y-log-plugin.toml` is added to the *c8y-configuration-plugin.toml* file it is possible to do the administration from there.
 However, keep in mind that the daemon must be restarted if the */etc/tedge/c8y/c8y-log-plugin.toml* file is touched via the command line.

@@ -21,7 +21,7 @@ Follow the steps described in [{{< sensor-app >}}](/users-guide/sensor-app) and 
 Set "1 sec" as **INTERVAL (secs)** for *Acceleration* and *Gyroscope* sensors in the {{< sensor-app >}}.
 {{< /c8y-admon-info >}}
 
-Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application.
+Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device management application.
 
 #### Data collection
 
@@ -283,4 +283,4 @@ monitor RecognizeActivities {
 
 Now that you have all the pieces together, you can try to recognize change in activity patterns with your phone. You could sit down, start jumping or running along with your mobile phone.
 
-You should be able to see alarms being generated from your device which will be visible under the **Alarms** tab of your device in the Device Management application.
+You should be able to see alarms being generated from your device which will be visible under the **Alarms** tab of your device in the Device management application.

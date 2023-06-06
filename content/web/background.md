@@ -166,7 +166,7 @@ The table can be understood as follows:
 
  * The old tooling called "cumulocity-node-tools" only supports AngularJS builds until version 9.25.x
  * The new tooling called "@c8y/cli" can be used to build AngularJS applications until 9.25.x
- * Angular-only applications (= applications that are not extending our default applications: Cockpit, Device Management and Administration) can be built since 9.16.x as beta (yellow). The beta ended at 9.25.x.
+ * Angular-only applications (= applications that are not extending our default applications: Cockpit, Device management and Administration) can be built since 9.16.x as beta (yellow). The beta ended at 9.25.x.
  * Hybrid applications are applications that run with Angular and AngularJS at the same time and enable the use of existing AngularJS plugins in a modern Angular application.
 
 {{< c8y-admon-info >}}

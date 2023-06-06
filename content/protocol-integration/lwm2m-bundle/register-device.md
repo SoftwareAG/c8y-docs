@@ -18,7 +18,7 @@ You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
 <a name="lwm2m-single-device-registration"></a>
 ### Single device registration
 
-To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
+To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
 
 The LWM2M device registration wizard has three steps:
 * Required settings for establishing a connection.
@@ -37,7 +37,7 @@ The UI will display a confirmation message.
 
 If there is a number of devices to be registered at the same time, it is more convenient to use bulk device registration.
 
-To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
+To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
 Refer to [Required settings](#lwm2m-device-registration-required-settings), [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) and [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
@@ -381,7 +381,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 </table>
 
 {{< c8y-admon-info >}}
-Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Device management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 {{< /c8y-admon-info >}}
 
 <a name="duplicate-device"></a>
@@ -395,5 +395,5 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 ### Device deletion
 
 During LWM2M device registration the tenant route information is also stored in the cluster tenant.
-In order to remove the device, besides deleting the device from the list in [Device Management > All Devices](/users-guide/device-management/#viewing-devices) in the *User Guide*, a connector operation also needs to be executed to remove tenant route information from the cluster tenant.
+In order to remove the device, besides deleting the device from the list in [Device management > All Devices](/users-guide/device-management/#viewing-devices) in the *User Guide*, a connector operation also needs to be executed to remove tenant route information from the cluster tenant.
 See [cleanup cluster tenant objects for endpoint](#lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation) for more information.

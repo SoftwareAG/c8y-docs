@@ -121,7 +121,7 @@ The following information is provided for each subtenant (not completely visible
     </tr>
     <tr>
       <td align="left">CPU (M)</td>
-      <td align="left">Microservice CPU usage, specified in CPU milliseconds, see <a href="#microservice-usage">Microservice usage</a> for details</td>
+      <td align="left">Microservice CPU usage, specified in CPU millicores, see <a href="#microservice-usage">Microservice usage</a> for details</td>
     </tr>
     <tr>
       <td align="left">Memory (MB)</td>
@@ -210,12 +210,12 @@ In case of multi-tenant isolation level, the owner of a microservice (for exampl
 
 The following values are collected on a daily base for each tenant:
 
-* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
+* CPU usage, specified in CPU millicores (1000m = 1 CPU)
 * Memory usage, specified in MB
 
 Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day.
 
-**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 4 CPU and 4 GB of memory it should be counted as 2000 CPU milliseconds and 2048 MB of memory.
+**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 4 CPU and 4 GB of memory it should be counted as 2000 CPU millicores and 2048 MB of memory.
 
 For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (for example owner, subscription for tenant):
 

@@ -9,4 +9,4 @@ section:
 weight: 60
 ---
 
-Supported devices.
+Learn more about device integration using thin-edge.io.

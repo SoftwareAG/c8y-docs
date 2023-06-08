@@ -2,7 +2,7 @@
 weight: 60
 title: Managing device data
 layout: bundle
-section: 
+section:
   - device_management
 helpcontent:
 - label: firmware-repo
@@ -37,20 +37,8 @@ helpcontent:
   content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates."
 ---
 
-### Overview
-
-The Device Management application provides various features that support you in efficiently managing your devices:
-
-| Feature                                              | Description                                                                                                                                 |
-|:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| [Managing device firmware](#firmware-repo)           | How to retrieve and manage firmware, firmware versions, and patches in the firmware repository and how to install or update them on devices. |
-| [Managing device software](#software-repo)           | How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.          |
-| [Managing configurations](#configuration-repository) | How to retrieve configuration data, store and manage it in a configuration repository as configuration snapshot.                         |
-| [Managing device credentials](#credentials)          | How to manage all credentials generated for your connected devices.                                                                         |
-| [Managing device profiles](#device-profiles)         | How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.                                 |
-| [Managing trusted certificates](#trusted-certificates)| How to manage trusted certificates.                                                                                                         |
-
-All features are accessible through the **Management** menu in the navigator:
+The Device Management application provides features that support you in efficiently managing your devices.
+They are accessible through the **Management** menu in the navigator:
 
 ![Management menu](/images/users-guide/DeviceManagement/devmgmt-management-menu.png)
 

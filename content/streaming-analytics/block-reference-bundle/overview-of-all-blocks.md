@@ -20,7 +20,7 @@ The following table gives a brief description of all blocks that can be selected
 <tbody>
 <tr>
 <td><a href="#alarm-input">Alarm Input</a></td>
-<td><span>Receives <tt>Alarm</tt> objects from a device or devices in a group and reorders them based on the timestamp.</span>
+<td><span>Receives <tt>Alarm</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</span>
 </td>
 </tr>
 <tr>
@@ -90,7 +90,7 @@ The following table gives a brief description of all blocks that can be selected
 </tr>
 <tr>
 <td><a href="#event-input">Event Input</a></td>
-<td><span>Receives <tt>Event</tt> objects from a device or devices in a group and reorders them based on the timestamp.</span>
+<td><span>Receives <tt>Event</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</span>
 </td>
 </tr>
 <tr>
@@ -140,7 +140,7 @@ The following table gives a brief description of all blocks that can be selected
 </tr>
 <tr>
 <td><a href="#kpi">KPI</a></td>
-<td><span>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device.</span>
+<td><span>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device, asset or group of devices.</span>
 </td>
 </tr>
 <tr>
@@ -160,7 +160,7 @@ The following table gives a brief description of all blocks that can be selected
 </tr>
 <tr>
 <td><a href="#managed-object-input">Managed Object Input</a></td>
-<td><span>Receives <tt>ManagedObject</tt> objects from a device or devices in a group.</span>
+<td><span>Receives <tt>ManagedObject</tt> objects from a device, asset, or devices in a group.</span>
 </td>
 </tr>
 <tr>
@@ -170,7 +170,7 @@ The following table gives a brief description of all blocks that can be selected
 </tr>
 <tr>
 <td><a href="#measurement-input">Measurement Input</a></td>
-<td><span>Receives <tt>Measurement</tt> objects from a device or devices in a group and reorders them based on the timestamp.</span>
+<td><span>Receives <tt>Measurement</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</span>
 </td>
 </tr>
 <tr>
@@ -195,7 +195,7 @@ The following table gives a brief description of all blocks that can be selected
 </tr>
 <tr>
 <td><a href="#operation-input">Operation Input</a></td>
-<td><span>Receives <tt>Operation</tt> objects from a device or devices in a group.</span>
+<td><span>Receives <tt>Operation</tt> objects from a device, asset, or devices in a group.</span>
 </td>
 </tr>
 <tr>
@@ -210,7 +210,7 @@ The following table gives a brief description of all blocks that can be selected
 </tr>
 <tr>
 <td><a href="#position-input">Position Input</a></td>
-<td><span>Receives <tt>Event</tt> objects from a device or devices in a group and extracts the <tt>c8y_Position</tt> fragment into a <tt>Value</tt> object.</span>
+<td><span>Receives <tt>Event</tt> objects from a device, asset, or devices in a group and extracts the <tt>c8y_Position</tt> fragment into a <tt>Value</tt> object.</span>
 </td>
 </tr>
 <tr>

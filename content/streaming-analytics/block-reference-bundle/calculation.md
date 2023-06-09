@@ -50,7 +50,7 @@ This category contains the following blocks:
 </tr>
 <tr>
 <td><a href="#kpi">KPI</a></td>
-<td><span>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device.</span>
+<td><span>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device, asset or group of devices.</span>
 </td>
 </tr>
 <tr>
@@ -710,7 +710,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 
 `apama.analyticskit.blocks.cumulocity.KPI`
 
-<p>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device.</p>
+<p>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device, asset or group of devices.</p>
 <p>This block uses data from the KPI input port or from the device which contains data points. It extracts the units, label, and the red and yellow ranges. The output indicates whether the value is within the red or yellow range specified by the KPI or data point.
 <p></p>
 The KPI input can provide properties, typically from a KPI-managed object, which include the red and yellow ranges, the unit and the label. If the device contains a data point for the specified fragment and series, then the values from the data point override those from the KPI.</p>
@@ -736,7 +736,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 <tbody>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>The device or group of devices which contains a data point. If specified, then this device (typically the same device as the measurement source) is checked to see if it contains a data point for the specified fragment and series. If it contains a data point, the red and yellow range values from the source object are used in place of the KPI values. The model editor uses the current device or asset name. This is mapped internally to the inventory identifier.</span>
+<td><span>The device, group, or asset which contains a data point. If specified, then this source (typically the same as the measurement source) is checked to see if it contains a data point for the specified fragment and series. If it contains a data point, the red and yellow range values from the source object are used in place of the KPI values.</span>
 </td>
 <td><span>any</span>
 </td>

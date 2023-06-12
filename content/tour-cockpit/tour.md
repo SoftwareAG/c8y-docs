@@ -33,27 +33,27 @@ To reset the Home dashboard to its original content, click **More...** at the ri
 
 The navigator on the left side is your main access to the different functionalities of the {{< product-c8y-iot >}} Cockpit. From here you can access:
 
-* The Home dashboard.
+* The **Home** dashboard.
 * The **Groups** menu, to sort your assets and devices into different groups.
 * The **Alarms** menu, to keep a pulse on your devices and access your alarms in one place.
-* The **Data explorer**, to visualize the data points, and measurements or to get the sensor data access across your devices and assets.
+* The **Data explorer**, to visualize data points and measurements or to get sensor data access across your devices and assets.
 * The **Reports** menu, to keep you informed by exporting and sharing reports on your assets and devices.
 * The **Configuration** menu, to view and update your data point library and smart alarms.
 
 
-Each menu contains the main screen elements described in [Quick start for users > UI functionalities and features > Main screen elements](/getting-started/gui-features/#screen) in the *Getting started* section.
+For details on all screen elements refer to [Quick start for users > UI functionalities and features > Main screen elements](/getting-started/gui-features/#screen).
 
 
 ### Application switcher
 
-To navigate between the different {{< product-c8y-iot >}} applications, use the application switcher. From here you can go to device management, analytics, the cloud,  your admin center and many more applications. When you click the application switcher icon, it shows all your subscribed applications.
+To navigate between the different {{< product-c8y-iot >}} applications, use the application switcher at the top right. From here you can go to the Device management application, the Administration application, and all other subscribed applications.
 
 <img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
 
 ### Connecting devices
 
-The quickest way to get started with the {{< product-c8y-iot >}} Cockpit application is with the  {{< sensor-app >}}. The {{< sensor-app >}} allows you to view and analyze, for example, your smartphone's sensor data or any other data of a device you connect.
+The quickest way to get started with the {{< product-c8y-iot >}} Cockpit application is with the {{< sensor-app >}}. The {{< sensor-app >}} allows you to view and analyze, for example, your smartphone's sensor data or any other data of a device you connect.
 
 For more information see [Sensor App](guides/sensor-app) in the *Device management* section.
 
@@ -65,14 +65,14 @@ These dashboards give you the opportunity to:
 
 - Visualize live data, alarms, events and trigger remote actions from your devices.
 - Provide visibility of important data.
-- Allow for insight in key performance indicators for your company.
-- Shut of your devices remotely in case of anomalies or unwanted behavior.
+- Gain insight in key performance indicators of your company.
+- Shut off your devices remotely in case of anomalies or unwanted behavior.
 
 {{< c8y-admon-info >}}
 {{< product-c8y-iot >}} automatically creates a dashboard for each device.
 {{< /c8y-admon-info >}}
 
-To create an individualized dashboard for a device, select the desired device in the **Groups** menu. Click the plus icon on the top to open the **Add dashboard** window. here customize the information according to your needs.
+To create an individualized dashboard for a device, select the desired device in the **Groups** menu. Click the plus icon on the top to open the **Add dashboard** window. Customize the information according to your needs.
 
 {{< c8y-admon-info >}}
 You can apply a dashboard to all devices of a device type, if you need more dashboards with the same information.

@@ -389,19 +389,22 @@ In this case the {{< product-c8y-iot >}} platform cannot decide which uploader i
 To ensure verification of ownership by the uploader, a proof of possession is required by the platform.
 
 The steps for the proof of possession are as follows:
-- Ensure that the certificate has been uploaded properly:
-![Check certificate upload](/images/mqtt/devmgmt-mqtt-cert-pop-check.png)
 
-- Download of the unsigned verification code:
-![Download unsigned verification code](/images/mqtt/devmgmt-mqtt-cert-pop-downloadunsigned.png)
+1. Navigate to **Management** > **Trusted certificates** in the Device management application and verify that the certificate has been uploaded properly.
+<br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
 
-- Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
+2. In the **Proof of Possession** section of the certificate details, download the verification code.
+<br>![Download verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
 
-- Upload of the signed verification code to the platform:
-![Upload signed verification code](/images/mqtt/devmgmt-mqtt-cert-pop-uploadsigned.png)
+3. Encrypt the verification code using the private key of the certificate to produce the signed verification code.
+Use the following OpenSSL command:
 
-- The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform:
-![Proof of possession completed](/images/mqtt/devmgmt-mqtt-cert-pop-completed.png)
+    `openssl dgst -sha256 -sign <private.key> <verification_code.txt> | openssl base64 -A`
+
+4. Upload the signed verification code to the platform.
+<br>![Upload signed verification code](/images/mqtt/mqtt-cert-upload-signed.png)
+
+The proof of possession is confirmed if the uploaded signed verification code matches the signed verification code expected by the platform. This is indicated by switching the state from "Incomplete" to "Complete" in the **Proof of Possession** section.
 
 {{< c8y-admon-info >}}
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.

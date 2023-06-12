@@ -7,4 +7,4 @@ section:
   - device_management
 ---
 
-A reference for *fragments* used in managed objects (devices) as well as for predefined sensor and control capabilities of devices.
+A reference for fragments used in managed objects (devices) as well as for predefined sensor and control capabilities of devices.

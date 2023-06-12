@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 50
 title: Managing device credentials
 layout: redirect
 ---

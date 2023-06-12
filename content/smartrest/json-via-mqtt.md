@@ -1,8 +1,8 @@
 ---
-weight: 60
+weight: 50
 title: JSON via MQTT
 layout: bundle
-section: 
+section:
   - device_management
 ---
 

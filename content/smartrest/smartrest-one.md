@@ -1,8 +1,8 @@
 ---
-weight: 30
-title: SmartREST 1.0
+weight: 20
+title: SmartREST 2.0
 layout: bundle
-section:
+section: 
   - device_management
 ---
 

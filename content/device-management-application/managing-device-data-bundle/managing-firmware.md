@@ -74,7 +74,7 @@ The object will be deleted from the firmware repository.
 In the details of a specific firmware, hover over the version or patch entry you want to delete and click the delete icon. The firmware version or patch will be deleted from the firmware details.
 
 <a name="managing-firmware"></a>
-### Managing firmware on a device
+### To manage firmware on a device
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
 
@@ -89,6 +89,7 @@ The **Firmware** tab shows the current firmware installed on the device.
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
+
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
@@ -98,7 +99,6 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
 Click on the operation to view its details. The status of the last operation is also shown on the **Firmware** tab.
-
 
 ##### To install/update firmware on multiple devices
 

@@ -1,5 +1,5 @@
 ---
-weight: 90
+weight: 40
 title: Managing trusted certificates
 layout: redirect
 ---

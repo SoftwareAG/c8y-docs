@@ -1,9 +1,9 @@
 ---
 title: MQTT Static templates
 layout: bundle
-section: 
+section:
   - device_management
-weight: 50
+weight: 60
 ---
 
 ### Overview

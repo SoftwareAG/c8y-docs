@@ -9,4 +9,4 @@ section:
 weight: 50
 ---
 
-Learn how to set up Mbed u-blox, Raspberry Pi and Tinkerforge as demo devices for proof-of-concept purposes in your Cumulocity IoT environment.
+Set up a Raspberry Pi and Tinkerforge as demo devices in Cumulocity IoT or browse references for fragments  used in managed objects (devices) or for device sensors.

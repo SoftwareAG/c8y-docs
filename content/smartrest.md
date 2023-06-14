@@ -1,5 +1,5 @@
 ---
-title: SmartREST 2.0
+title: SmartREST
 icon: "c8y-icon c8y-icon-smart-rest"
 type: root
 layout: redirect
@@ -12,4 +12,4 @@ aliases:
   - /reference/smartrest
 ---
 
-Learn about the SmartREST protocol, its data format and the anatomy and registration of SmartREST templates. 
+Learn about the SmartREST protocol, its data format and the anatomy and registration of SmartREST templates.

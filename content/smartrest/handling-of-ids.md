@@ -1,9 +1,9 @@
 ---
 title: Handling of IDs
 layout: bundle
-section: 
+section:
   - device_management
-weight: 30
+weight: 40
 ---
 
 ### Concept of ID-less communication

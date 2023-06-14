@@ -38,7 +38,7 @@ To create an asset hierarchy, execute the following steps. The example is based 
 
 3. Determine the level of detail needed for each system, process, and component in the hierarchy. This helps to determine the level of accuracy and complexity required for each asset type. For a windmill this includes, for example, the tower's height, the length of the blade and so on.
 
-4. To portray the correct structure, first create a custom property for each component in the **Digital twin library**, see [Asset types > Property library > Custom property types](/asset-types/#property-library) for details. The custom properties are later used in creating the individual asset types.
+4. To portray the correct structure, first create a custom property for each component in the **Digital twin library**, see [Asset types > Property library > Custom property types](/dtm/asset-types/#custom-property-types) for details. The custom properties are later used in creating the individual asset types.
 
 5. To create an asset type work from the smallest component to the largest. For a windmill that means to start with the asset type "blade", followed by "rotor", "tower", and "nacelle" and finally "windmill". Assign the required custom property to each asset type as well as the allowed contained asset types (for example, a windmill requires a rotor, which in turn requires rotor blades).
 

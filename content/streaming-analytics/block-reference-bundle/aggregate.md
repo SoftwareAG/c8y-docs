@@ -1,6 +1,3 @@
-This is a test for automation task
-
-
 ---
 weight: 72
 title: Aggregate

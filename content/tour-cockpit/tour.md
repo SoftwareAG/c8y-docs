@@ -72,13 +72,13 @@ These dashboards give you the opportunity to:
 {{< product-c8y-iot >}} automatically creates a dashboard for each device.
 {{< /c8y-admon-info >}}
 
-To create an individualized dashboard for a device, select the desired device in the **Groups** menu. Click the plus icon on the top to open the **Add dashboard** window. Customize the information according to your needs.
+To create an individualized dashboard for a device, select the desired device in the **Groups** menu. Click the plus icon on the top to open the **Add dashboard** window. Customize the information as necessary.
 
 {{< c8y-admon-info >}}
-You can apply a dashboard to all devices of a device type, if you need more dashboards with the same information.
+You can apply a dashboard to all devices of a device type, if you require more dashboards with the same information.
 {{< /c8y-admon-info >}}
 
-Once you created your dashboard you can add widgets to it in order to display more detailed data. Click **Add widget** to select the different widgets you need for your dashboard. You can customize the information shown in the widget as needed.
+Once you created your dashboard you can add widgets to it in order to display more detailed data. Click **Add widget** to select the different widgets you want for your dashboard. You can customize the information shown in the widget as necessary.
 For more information on the different widgets see [Cockpit > Widgets collection](/guides/cockpit/widgets-collection) in the *Application development & solutions enablement* section.
 Once you selected and customized the widget, click **Save** to add the widget to your dashboard. Repeat this process with any widget you need for your device.
 
@@ -118,6 +118,6 @@ In order to add a new data point template, see [Cockpit > Data point library > T
 
 #### Global smart rules
 
-Smart rules are a useful means to analyze data in realtime and to perform actions based on data. Global smart rules apply to a global context (in contrast to local ones for specific groups or devices).
+Smart rules are a useful means to analyze data in realtime and to perform actions based on said data. Global smart rules apply to a global context (in contrast to local ones for specific groups or devices).
 
 For more information on how to add, edit and work with global smart rules see [Cockpit > Smart rules](/guides/cockpit/smart-rules) in the *Application development & solutions enablement* section.

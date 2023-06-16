@@ -27,7 +27,7 @@ Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](#
 
 See also [EPL Apps](#epl-apps).
 
-For details see [Overview > Analytics Builder](/apama/overview-analytics/#analytics-builder) in the *Streaming Analytics guide*.
+For details see [Overview > Analytics Builder](/streaming-analytics/overview-streaming-analytics/#analytics-builder) in the *Streaming Analytics guide*.
 
 <a name="application"></a>
 ### Application
@@ -105,7 +105,7 @@ Using the Streaming Analytics application, you can add your own logic to your Io
 
 See also [Analytics Builder](#analytics-builder) and [EPL Apps](#epl-apps).
 
-For details see the [Streaming Analytics guide](/apama/overview-analytics/).
+For details see the [Streaming Analytics guide](/streaming-analytics/overview-streaming-analytics/).
 
 <a name="data-broker"></a>
 ### Data broker
@@ -175,7 +175,7 @@ EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-strea
 
 See also [Event Processing Language (EPL)](#epl) and [Analytics Builder](#analytics-builder).
 
-For more details see [Overview > EPL apps](/apama/overview-analytics/#apama-epl-apps) in the *Streaming Analytics guide*.
+For more details see [Overview > EPL apps](/streaming-analytics/overview-streaming-analytics/#epl-apps) in the *Streaming Analytics guide*.
 
 <a name="event"></a>
 ### Events

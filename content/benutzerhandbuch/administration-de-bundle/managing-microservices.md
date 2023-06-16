@@ -34,21 +34,21 @@ Nachstehend finden Sie eine Liste aller Microservices, die in einem {{< standard
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-250mc-1g</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-250mc-1g</a></td>
 <td style="text-align:left">Vollversion des Microservice "Apama". Laufzeit für Analytics Builder, EPL Apps und Smart Rules</td>
 <td style="text-align:left">apama-ctrl-250mc-1g</td>
 <td style="text-align:left">{{< enterprise-tenant-de >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
 <td style="text-align:left">Eingeschränkte Version des Microservice "Apama". Laufzeit für eine unbeschränkte Anzahl von Smart Rules und eine beschränkte Anzahl von Analytics Builder-Modellen</td>
 <td style="text-align:left">apama-ctrl-starter</td>
 <td style="text-align:left">{{< standard-tenant-de >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrulesmt</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrulesmt</a></td>
 <td style="text-align:left">Eingeschränkte Version des Microservice "Apama". Laufzeit nur für Smart Rules, keine Analytics Builder-Modelle oder EPL-Apps verfügbar</td>
 <td style="text-align:left">apama-ctrl-smartrulesmt</td>
 <td style="text-align:left">Nur für selbst gehostete Installationen verfügbar</td>

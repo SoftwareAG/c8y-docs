@@ -37,7 +37,7 @@ The limitations could be the following:
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
+* The [Streaming Analytics application](/streaming-analytics/overview-streaming-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
 <a name="url"></a>

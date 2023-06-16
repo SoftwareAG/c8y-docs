@@ -2,7 +2,7 @@
 weight: 100
 title: Configuring Cockpit applications
 layout: bundle
-section: 
+section:
   - app_development
 ---
 
@@ -49,6 +49,33 @@ You can select one of the following options for the customization of the home da
 * It is reflected throughout the entire tenant (the default).
 * It is only reflected in the current custom application.
 * It is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory".
+
+### Creating a personalized device dashboard
+
+{{< product-c8y-iot >}} allows you to create individualized dashboards for all your devices.
+
+These dashboards give you the opportunity to:
+
+- Visualize live data, alarms, events and trigger remote actions from your devices.
+- Provide visibility of important data.
+- Gain insight in key performance indicators of your company.
+- Shut off your devices remotely in case of anomalies or unwanted behavior.
+
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} automatically creates a dashboard for each device.
+{{< /c8y-admon-info >}}
+
+To create an individualized dashboard for a device, select the desired device in the **Groups** menu. Click the plus icon on the top to open the **Add dashboard** window. Customize the information as necessary.
+
+{{< c8y-admon-info >}}
+You can apply a dashboard to all devices of a device type, if you require more dashboards with the same information.
+{{< /c8y-admon-info >}}
+
+Once you created your dashboard you can add widgets to it in order to display more detailed data. Click **Add widget** to select the different widgets you want for your dashboard. You can customize the information shown in the widget as necessary.
+For more information on the different widgets see [Cockpit > Widgets collection](/guides/cockpit/widgets-collection) in the *Application development & solutions enablement* section.
+Once you selected and customized the widget, click **Save** to add the widget to your dashboard. Repeat this process with any widget you need for your device.
+
+You can reorganize and resize the different widgets in your dashboard. To resize a widget, click the bottom right corner and drag it to the desired size. To reorganize the widgets on the dashboard, click the desired widget and drag it to the desired location on the dashboard.
 
 #### Misc
 

@@ -38,7 +38,7 @@ This feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag
 
 <img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
-In the field **Activate support user**, specify if support user access is activated for subtenant users. Possible values you can enter here are:
+In the field **Enable support user**, specify if support user access is activated for subtenant users. Possible values you can enter here are:
 
 * *true*: Support user access is activated for all subtenants by default. A support user can log into any subtenant as any user. Note that subtenant users cannot disable access themselves.
 * *false*: Support user access is deactivated for all subtenants, but can be explicitly enabled for a subtenant. A support user can log in only to subtenants for which at least one user has explicitly enabled such access.

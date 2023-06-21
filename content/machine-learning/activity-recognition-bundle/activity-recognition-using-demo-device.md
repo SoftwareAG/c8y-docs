@@ -36,7 +36,7 @@ This device is capable of simulating readings of water flow to {{< product-c8y-i
 
 2. Download the *RecognizeActivitiesDemoDevice.mon* file. Open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above.
 
-3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
+3. Save your changes and upload this monitor file to your tenant. See [Deploying EPL apps as single \*.mon files with the Streaming Analytics application](/streaming-analytics/epl-apps/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 
 #### Classify activities by simulating measurements for the demo device
 

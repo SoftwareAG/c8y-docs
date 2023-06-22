@@ -16,7 +16,7 @@ With {{< product-c8y-iot >}} DataHub, you can connect existing tools and applica
 
 * Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [web applications](/concepts/applications/#web-applications))
 
-* Other {{< company-sag >}} products like TrendMiner or {{< product-c8y-iot >}} Machine Learning Workbench
+* Other {{< company-sag >}} products like TrendMiner
 
 The main features of the {{< product-c8y-iot >}} DataHub application are:
 

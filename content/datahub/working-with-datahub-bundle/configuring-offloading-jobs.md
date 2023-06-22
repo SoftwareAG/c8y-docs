@@ -92,7 +92,7 @@ If you enter the additional result columns step for an active offloading pipelin
 
 When adding an additional result column, a dialog box for defining the column opens. You must define a unique column name. Then the source definition needs to be specified. You can validate the source definition and preview its results by clicking **Validate and preview**.
 
-First step is to define a field from the base collection in the source definition. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting.
+First step is to define a field from the base collection in the source definition. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting. The **Change data type** controls helps you to define a function which changes the data type of the source definition. For example, the source definition is of type VARCHAR and corresponding values are always either true or false. Then you can select Boolean in the **Change data type** dropdown box to define a function which casts the VARCHAR values to BOOLEAN. Different target data types are available in the control, with some of them having options for dealing with non-matching values. For example, if you want to cast all values to type INTEGER and the non-matching literal N/A is processed, you can configure the casting function to use value 0 instead. If you have selected a data type, click **Apply** to apply or **Cancel** to revert that type change. Note that functions you can apply to the source definition are not limited to the data type change functions provided under **Change data type**. In the source definition editor you can apply all SQL functions supported by Dremio, as listed under [SQL Function categories](https://docs.dremio.com/software/sql-reference/sql-functions/).
 
 If you want to derive additional result columns from nested content, you can specify the nested fields using the prefix "src." and the path to the nested field. For example, if you have a top-level field "someField" with a nested field "someSubField", add "src.someField.someSubField" as additional result column. In the same way you can access nested arrays. If you have a top-level field "someField" with a nested array field "someArraySubField", add "src.someField.someArraySubField[0]" as additional result column to access the first array entry.
 
@@ -108,9 +108,11 @@ For auto-detected columns the source definition cannot be modified. If you want 
 
 **Duplicate an additional result column**
 
-In the context menu of an additional result column, select **Duplicate** to open the dialog for duplicating the column. The source definition of the duplicate column is the same as of the original column and can be adapted to your needs. The column name uses the original column name plus a counter as suffix to make the name unique. You can adapt the name to your needs, provided the name is unique.
+In the context menu of an additional result column, select **Duplicate** to open the dialog for duplicating the column. The source definition of the duplicate column is the same as of the original column and can be adapted to your needs. The new column name initially uses the original column name plus a counter suffix to make the name unique. You can change the name as required. You can also rename the original column. New as well as original column name must be unique.
 
 Click **Apply** to complete and **Cancel** to quit duplicating the column.
+
+A common use-case for duplication is to change the data type of an auto-detected column. For example, duplicate the column "statusOrdinal" and apply the corresponding casting function in the source definition editor. Use as new column name "statusOrdinal" and rename the original column to "statusOrdinal_Old". In the additional columns list select "statusOrdinal" and deselect "statusOrdinal_Old". 
 
 **Delete an additional result column**
 
@@ -177,7 +179,7 @@ When view materialization is activated, additional data is stored in the data la
 
 **Duplicate column names**
 
-Another setting, which applies only for the measurements collection, is the handling of duplicate column names. During offloading, measurement values are transformed into a relational format. Corresponding column names of measurement values are constructed by concatenating path and unit/value. This may lead to columns having the same name except for their case. Then the entries would all be offloaded into the same column. As this may be an unwanted behaviour or even imply mixed types in the offloading process, the names can be sanitized. When activated, for each generated column name, which would be equal to another column name in terms of case-insensitivity, a new column will be created, whose name includes the originally derived name plus a unique suffix.
+Another setting, which applies only for the measurements collection, is the handling of duplicate column names. During offloading, measurement values are transformed into a relational format. Corresponding column names of measurement values are constructed by concatenating path and unit/value. This may lead to columns having the same name except for their case. Then the entries would all be offloaded into the same column. As this may be an unwanted behaviour in the offloading process, the names can be sanitized. When activated, for each generated column name, which would be equal to another column name in terms of case-insensitivity, a new column will be created, whose name includes the originally derived name plus a unique suffix.
 
 The following two example documents from two different offloading runs would be processed as follows.
 
@@ -217,7 +219,7 @@ Second document:
 }
 ````
 
-The two paths *c8y_TemperatureMeasurement.T* and *c8y_temperaturemeasurement.T* are equal in terms of case-insensitivity. Without name sanitization, only the column *c8y_TemperatureMeasurement.T.unit* will be created, which stores all unit entries. Analogously, one column *c8y_TemperatureMeasurement.T.value* will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR.
+The two paths *c8y_TemperatureMeasurement.T* and *c8y_temperaturemeasurement.T* are equal in terms of case-insensitivity. Without name sanitization, only the column *c8y_TemperatureMeasurement.T.unit* will be created, which stores all unit entries. Analogously, one column *c8y_TemperatureMeasurement.T.value* will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR, which Dremio would then coerce to type VARCHAR for the column.
 
 With name sanitization, two columns *c8y_TemperatureMeasurement.T.unit* and *c8y_temperaturemeasurement.T.unit_6bfa* will be created for unit entries. The unit entries will then be stored in the column with the associated path. Analogously, two columns *c8y_TemperatureMeasurement.T.value* and *c8y_temperaturemeasurement.T.value_490d* will be created for value entries.
 
@@ -232,6 +234,19 @@ Offloading as well as compaction runs may fail due to various reasons such as ne
 Under **Create alarm on** you can activate raising alarms for offloading as well as compaction failures. Per default, the setting is activated for offloading and deactivated for compaction failures. When activated and an offloading run fails, an alarm is raised. If the offloading fails multiple times in a row, the associated alarm is updated with each new failure. The more successive runs fail, the higher the severity of the alarm will be, ranging from warning up to critical. Each alarm comprises information which offloading pipeline has failed and how often it has failed in a row. The same applies to alarms being raised for compaction failures.
 
 The alarm will be active until it is cleared. The latter is the case when either an offloading run completes successfully, or the offloading configuration is deleted. Then, the active alarm is cleared, no matter if the alarms setting is activated or not. The alarm remains active if the offloading is unscheduled or raising alarms is deactivated. Again, the same applies to alarms being raised for compaction failures.
+
+**Dealing with mixed types**
+<a id="mixed-types"></a>
+
+Each offloading pipeline must ensure that the columns of the result table in the data lake have a unique data type each. A mixed type situation occurs if an offloading run detects a data type not matching the expected column data type. For example, the type of a column is INTEGER. Then, the offloading processes the literal N/A, which is of type VARCHAR. To resolve such a mixed type constellation, you can either use the **Automatically evolve schema** or the **Stop pipeline** strategy.
+
+**Automatically evolve schema**: This is the default strategy. The system automatically evolves the schema by introducing a new column for the data with a new type. The name of that column is the original column name plus the new data type as suffix. Each new value will from now on be stored in the new column, having the new type. In the job history of the pipeline the job having detected the mixed type is marked as successful.
+
+**Stop pipeline**: The system stops the pipeline in order to allow for corrective actions like modifying the data or adapting the additional result columns. After those corrections you must manually re-activate the pipeline. In the job history of the pipeline the job having detected the mixed type is marked as errorneous.
+
+When a mixed type constellation has been detected, an alarm will be additionally raised in the {{< product-c8y-iot >}} platform with further details like involved column and types. When schema evolution is selected, an alarm of type WARNING is raised. When pipeline stop is selected, an alarm of type CRITICAL is raised. Such an alarm is always raised, independent of the configuration for raising alarms as described in the previous section. The alarm must be manually cleared. It is only automatically cleared if the offloading pipeline is deleted.
+
+For more details on data modeling and mixed types see also section [Aligning data modeling and offloading](/datahub/working-with-datahub/#aligning-data-modeling-and-offloading).
 
 **Completing the offloading configuration**
 

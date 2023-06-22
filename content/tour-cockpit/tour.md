@@ -53,7 +53,7 @@ To navigate between the different {{< product-c8y-iot >}} applications, use the 
 
 ### Connecting devices
 
-To get started with the {{< product-c8y-iot >}} Cockpit application you must first register your device. The quickest way to do so is to register a smartphone with the {{< sensor-app >}}. After you registered the smartphone, you can view and analyze your smartphone's data, for example, your the sensor data or any other data of a device you connect.
+To get started with the {{< product-c8y-iot >}} Cockpit application you must first register your device. The quickest way to do so is to register a smartphone with the {{< sensor-app >}}. After you registered the smartphone, you can view and analyze your smartphone's data, for example, your sensor data or any other data of a device you connect.
 
 For more information see [Sensor App](guides/sensor-app) in the *Device management* section.
 

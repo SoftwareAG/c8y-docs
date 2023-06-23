@@ -331,9 +331,6 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">serializationFormat</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the preferred content format for {{< product-c8y-iot >}} to communicate with the device. The allowed content formats are: TLV, JSON, CBOR, TEXT, OPAQUE or SENML_JSON and SENML_CBOR. In case of an empty or invalid entry, {{< product-c8y-iot >}} automatically selects the serialization format which the device sends during device registration.</td>
-
-is the serialization format the same as the content format?
-not sure if my suggestion respects the intended sense.
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>

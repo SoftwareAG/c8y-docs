@@ -95,6 +95,14 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 <td>Restarts a device</td>
 </tr>
 <tr>
+<td><a href="../../reference/device-management-library/#relay">c8y_Relay</a></td>
+<td>Enables switching device relay</td>
+</tr>
+<tr>
+<td><a href="../../reference/device-management-library/#relay-array">c8y_RelayArray</a></td>
+<td>Enables switching device relays in the array</td>
+</tr>
+<tr>
 <td><a href="../../reference/device-management-library/#upload-current-text-configuration">c8y_SendConfiguration</a></td>
 <td>Allows reloading a configuration through the user interface</td>
 </tr>

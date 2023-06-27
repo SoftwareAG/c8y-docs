@@ -34,7 +34,7 @@ The above permissions can be used to create roles for robust user management. Ev
 - [Managing applications](#managing-applications) for more information on managing applications.
 - [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies) for more information on managing user hierarchies.
 - [Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
-- {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device management library](/reference/device-management-library/) for further information on fragment types.
+- {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device integrator library](/reference/device-integrator-library/) for further information on fragment types.
 {{< /c8y-admon-related >}}
 
 <a name="global"></a>
@@ -353,7 +353,7 @@ For example, assume that your device sends measurements related to device manage
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
 {{< c8y-admon-info >}}
-For further information on possible types, check your device documentation or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+For further information on possible types, check your device documentation or the [device integrator library](/reference/device-integrator-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 {{< /c8y-admon-info >}}
 
 In the **Permission** field, select a permission level from the dropdown list:

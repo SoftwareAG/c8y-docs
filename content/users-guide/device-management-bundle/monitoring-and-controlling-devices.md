@@ -48,9 +48,9 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* [Device management library > Device availability](/reference/device-management-library/#device-availability) in the *Reference guide* for details on the `c8y_RequiredAvailability`, `c8y_UnavailabilityAlarm`, `c8y_Availability` and `c8y_Connection` fragments used in managed objects.
+* [Device integrator library > Device availability](/reference/device-integrator-library/#device-availability) in the *Reference guide* for details on the `c8y_RequiredAvailability`, `c8y_UnavailabilityAlarm`, `c8y_Availability` and `c8y_Connection` fragments used in managed objects.
 * The [alarms API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms.
-* [Device management library > Alarms](/reference/device-management-library/#alarms) in the *Reference guide* for details on how to raise and clear alarms.
+* [Device integrator library > Alarms](/reference/device-integrator-library/#alarms) in the *Reference guide* for details on how to raise and clear alarms.
 * The [operations API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Operations) for REST API methods concerning operations.
 * The [bulk operations API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Bulk-operations) for REST API methods concerning bulk operations.
 {{< /c8y-admon-related >}}
@@ -93,7 +93,7 @@ Hovering over the arrow displays the timestamp of the last request from the devi
 
 When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device: "No data received from device within required interval".
 
-Send connections are updated when something is sent from the device, such as alarms, events, measurements or if a blank update is sent to the device itself. For details see [Device management library > Device availability > Availability monitoring](/reference/device-management-library/#device-availability) in the *Reference guide*.
+Send connections are updated when something is sent from the device, such as alarms, events, measurements or if a blank update is sent to the device itself. For details see [Device integrator library > Device availability > Availability monitoring](/reference/device-integrator-library/#device-availability) in the *Reference guide*.
 
 {{< c8y-admon-info >}}
 Empty PUT requests to the managed object of the device will also update a send connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.

@@ -1,5 +1,5 @@
 ---
 weight: 30
-title: Device management library
+title: Device integrator library
 layout: bundle
 ---

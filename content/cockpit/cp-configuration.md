@@ -77,6 +77,35 @@ Once you selected and customized the widget, click **Save** to add the widget to
 
 You can reorganize and resize the different widgets in your dashboard. To resize a widget, click the bottom right corner and drag it to the desired size. To reorganize the widgets on the dashboard, click the desired widget and drag it to the desired location on the dashboard.
 
-#### Misc
+#### To hide the navigator
 
 Finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.
+
+<a name="">config-cockpit</a>
+### To configure different aspects in the Cockpit
+
+You can configure the {{< product-c8y-iot >}} Cockpit application
+
+The **Configuration** menu contains the following menus:
+
+* **Exports**
+* **Data point library**
+* **Global smart rules**
+
+#### Exports
+
+The export functionality lets you export specific data to files. In each export, you can specify the output file type (Excel or CSV), schedule the export and specify the target email address(es), and optionally select filters for specific devices, time ranges or fields.
+
+To add an export to your dashboard follow the steps described in [Cockpit > Managing exports > To add an export](/guides/cockpit/exports/#add-export) in the *Application development & solutions enablement* section.
+
+#### Data point library
+
+The data point library provides a collection of data points with default values for data point properties, which serve as templates that can be easily applied to your data points from different devices.
+
+In order to add a new data point template, see [Cockpit > Data point library > To add a data point to the library](/guides/cockpit/data-point-library/) in the *Application development & solutions enablement* section for more information.
+
+#### Global smart rules
+
+Smart rules are a useful means to analyze data in realtime and to perform actions based on said data. Global smart rules apply to a global context (in contrast to local ones for specific groups or devices).
+
+For more information on how to add, edit and work with global smart rules see [Cockpit > Smart rules](/guides/cockpit/smart-rules) in the *Application development & solutions enablement* section.

@@ -16,17 +16,20 @@ When you log into your {{< product-c8y-iot >}} tenant you are greeted with the {
 
 ![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)
 
-The data shown on the Home dashboard is shared by all users of the tenant. By default, the Home dashboard includes a welcome message, the active critical alarms, recent alarms and a map of all objects.
+It shows a number of pre-installed widgets that give you an introduction to the different options how to individualize your home dashboard.
+At the top you see the **Welcome to Cockpit** widget, which works as an entryway to the most important functions of the {{< product-c8y-iot >}} Cockpit, such as connecting and registering devices, adding groups, reports and exports as well as smart rules.
 
-{{< c8y-admon-info >}}
-For performance reasons, the map on the Home dashboard displays icons for maximum 100 devices. If there are more devices they will not be shown in the map. To see them, you must go to the dashboard on group level, and add the "Map" widget there to only see devices from this particular group, see [Widgets collection](#widgets-collection).
-{{< /c8y-admon-info >}}
+Below this widget you find a number of other widgets like the **Map** widget or an **Alarms** widget.
 
-You can edit and individually design the Home dashboard according to your needs, for example, by adding, removing or changing the widgets being displayed here.
+All widgets can be changed to fit your needs. For more information on the different widgets available see the [Widgets collection](/guides/cockpit/widgets-collection).
 
-For details on editing a dashboard, refer to [Working with dashboards](#dashboards).
 
-To reset the Home dashboard to its original content, click **More...** at the right of the top menu bar and then click **Restore dashboard**.
+In the top right of the Home dashboard, you see a number of different buttons. Here you can add a widget or edit the existing widgets. Furthermore, you can expand the screen to full view using the **Full screen** icon.
+The **Lock/Unlock** toggle allows you to lock the dashboard. Locking the dashboard stops the user from editing the individual widgets displayed in the Cockpit. To lock the dashboard, click the toggle. You see a notification at the top right confirming the action. To unlock the dashboard once more, click the toggle again.
+
+If you want to undo any changes to your Home dashboard, use the **Reset dashboard** icon. This reverts all changes to the dashboard and returns it to the initial state.
+
+At the very top right you can find additional information about working with dashboards. Click the questionmark icon to display the **Working with Dashboards** dialog window.,
 
 
 ### Navigator
@@ -42,6 +45,20 @@ The navigator on the left side is your main access to the different functionalit
 
 
 For details on all screen elements refer to [Quick start for users > UI functionalities and features > Main screen elements](/getting-started/gui-features/#screen).
+
+
+### Configuring the Cockpit
+
+You can configure the {{< product-c8y-iot >}} Cockpit application according to your individual needs.
+
+This includes (among others):
+
+* The home dashboard
+* **Exports**
+* **Data point library**
+* **Global smart rules**
+
+For more information on configuring these parts, see [Configuring Cockpit application > ](/guides/cockpit/cp-configuration/#config-cockpit)
 
 
 ### Application switcher
@@ -60,6 +77,10 @@ For more information see [Sensor App](guides/sensor-app) in the *Device manageme
 
 ### Creating smart rules
 
+Smart rules enable you to define and automate actions based on real-time data and events. It allows you to create logical conditions and triggers that activate specific actions or workflows when certain events or conditions occur.
+
+They are used to monitor, analyze, and respond to data coming from various devices connected to the platform. They provide a way to implement business logic and automate processes without requiring manual intervention.
+
 To create a smart rule for your device in the **Data explorer** see [Cockpit > Smart rules > To create a smart rule](/guides/cockpit/smart-rules/#create-rules) in the *Application development & solutions enablement* section.
 
 
@@ -68,29 +89,3 @@ To create a smart rule for your device in the **Data explorer** see [Cockpit > S
 Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
 
 To create a report for your device in the **Reports** menu, see [Cockpit > Working with reports > To create a report](/guides/cockpit/reports/#create-report) in the *Application development & solutions enablement* section.
-
-### Configuring the Cockpit application
-
-The **Configuration** menu contains the following menus:
-
-* **Exports**
-* **Data point library**
-* **Global smart rules**
-
-#### Exports
-
-The export functionality lets you export specific data to files. In each export, you can specify the output file type (Excel or CSV), schedule the export and specify the target email address(es), and optionally select filters for specific devices, time ranges or fields.
-
-To add an export to your dashboard follow the steps described in [Cockpit > Managing exports > To add an export](/guides/cockpit/exports/#add-export) in the *Application development & solutions enablement* section.
-
-#### Data point library
-
-The data point library provides a collection of data points with default values for data point properties, which serve as templates that can be easily applied to your data points from different devices.
-
-In order to add a new data point template, see [Cockpit > Data point library > To add a data point to the library](/guides/cockpit/data-point-library/) in the *Application development & solutions enablement* section for more information.
-
-#### Global smart rules
-
-Smart rules are a useful means to analyze data in realtime and to perform actions based on said data. Global smart rules apply to a global context (in contrast to local ones for specific groups or devices).
-
-For more information on how to add, edit and work with global smart rules see [Cockpit > Smart rules](/guides/cockpit/smart-rules) in the *Application development & solutions enablement* section.

@@ -21,9 +21,9 @@ For those tasks the default role DataHub Administrator is created. The permissio
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
-|Datahub administration|yes|yes|
-|Datahub management|yes|yes|
-|Datahub query|yes|no|
+|DataHub administration|yes|yes|
+|DataHub management|yes|yes|
+|DataHub query|yes|no|
 
 While READ refers to reading the specific data, ADMIN refers to creating, updating, or deleting the specified data.
 
@@ -32,9 +32,9 @@ The manager manages offloading pipelines such as defining and starting a pipelin
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
-|Datahub administration|no|no|
-|Datahub management|yes|yes|
-|Datahub query|yes|no|
+|DataHub administration|no|no|
+|DataHub management|yes|yes|
+|DataHub query|yes|no|
 
 #### Cumulocity IoT DataHub user
 The user executes SQL queries against the data in the data lake. For details on querying the data lake see the section [Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub#querying-offloaded). To execute queries the following approaches can be used:
@@ -47,9 +47,9 @@ The permissions for the role DataHub Reader are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
-|Datahub administration|no|no|
-|Datahub management|no|no|
-|Datahub query|yes|no|
+|DataHub administration|no|no|
+|DataHub management|no|no|
+|DataHub query|yes|no|
 
 ### Assignment of Cumulocity IoT DataHub roles and permissions
 The roles DataHub Administrator, DataHub Manager, and DataHub Reader must be assigned to the respective users of your tenant. For assigning roles to users see the section [Managing permissions](/users-guide/administration/#managing-permissions). You need at least one user with the DataHub Administrator role to complete the {{< product-c8y-iot >}} DataHub configuration.

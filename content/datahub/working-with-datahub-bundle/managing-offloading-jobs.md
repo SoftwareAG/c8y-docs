@@ -24,7 +24,7 @@ A previous offloading pipeline may have already written into the same target tab
 
 ##### Scheduling settings
 
-The scheduler is configured per default to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on the Operational Store of {{< product-c8y-iot >}}, that is, to avoid that all offloading jobs from different tenants run at the same time.
+The scheduler is configured per default to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is assigned by the system to balance the load on the Operational Store of {{< product-c8y-iot >}}, that is, to avoid that all offloading jobs from different tenants run at the same time.
 
 ##### Stopping periodic offloading
 

@@ -49,7 +49,7 @@ The following types of data lakes are currently supported:
 |OAuth 2.0 Token Endpoint|The authentication endpoint if "Azure Active Directory" is used as authentication type|
 |Client Secret|The client secret if "Azure Active Directory" is used as authentication type|
 
-While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old value.
+While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
 {{< c8y-admon-info >}}
 Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**. Also note that in case IP white-listing is activated, {{< product-c8y-iot >}} DataHub might not be able to access the data lake if the data lake and {{< product-c8y-iot >}} DataHub reside in the same Azure region. See also the corresponding [documentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-an-internet-ip-range).
@@ -87,7 +87,7 @@ Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a8
 **SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.**
 
 ##### NAS
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings must be defined for this data lake:
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations. The following settings must be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|

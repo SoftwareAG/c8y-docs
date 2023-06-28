@@ -51,7 +51,7 @@ Each pipeline must have its own target table in the data lake. Thus, you must se
 
 For the **alarms**, **events**, and **inventory** collections, you only need to specify the target table name in this step.
 
-For the **measurements** collection, additional settings are required. The **target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
+For the **measurements** collection, additional settings are required. The **Target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
 
 The layout **One table for one measurement type (Default)** creates a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click **Refresh** next to the dropdown box to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
 
@@ -90,19 +90,19 @@ If you enter the additional result columns step for an active offloading pipelin
 
 **Add an additional result column**
 
-When adding an additional result column, a dialog box for defining the column opens. You must define a unique column name. Then the source definition needs to be specified. You can validate the source definition and preview its results by clicking **Validate and preview**.
+When adding an additional result column, a dialog box for defining the column opens. You need to define a unique column name as well as a source definition. You can validate the source definition and preview its results by clicking **Validate and preview**.
 
-First step is to define a field from the base collection in the source definition. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting. The **Change data type** controls helps you to define a function which changes the data type of the source definition. For example, the source definition is of type VARCHAR and corresponding values are always either true or false. Then you can select Boolean in the **Change data type** dropdown box to define a function which casts the VARCHAR values to BOOLEAN. Different target data types are available in the control, with some of them having options for dealing with non-matching values. For example, if you want to cast all values to type INTEGER and the non-matching literal N/A is processed, you can configure the casting function to use value 0 instead. If you have selected a data type, click **Apply** to apply or **Cancel** to revert that type change. Note that functions you can apply to the source definition are not limited to the data type change functions provided under **Change data type**. In the source definition editor you can apply all SQL functions supported by Dremio, as listed under [SQL Function categories](https://docs.dremio.com/software/sql-reference/sql-functions/).
+Regarding the source definition, the first step is to specify a field from the base collection in the source definition editor. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting. The **Change data type** controls helps you to define a function which changes the data type of the source definition. For example, the source definition is of type VARCHAR and corresponding values are always either true or false. Then you can select Boolean in the **Change data type** dropdown box to define a function which casts the VARCHAR values to BOOLEAN. Different target data types are available in the control, with some of them having options for dealing with non-matching values. For example, if you want to cast all values to type INTEGER and the non-matching literal N/A is processed, you can configure the casting function to use value 0 instead. If you have selected a data type you want to change to, click **Apply** to apply or **Cancel** to revert that type change. Note that functions you can apply to the source definition are not limited to the data type change functions provided under **Change data type**. In the source definition editor you can apply all SQL functions supported by Dremio, as listed under [SQL Function categories](https://docs.dremio.com/software/sql-reference/sql-functions/).
 
 If you want to derive additional result columns from nested content, you can specify the nested fields using the prefix "src." and the path to the nested field. For example, if you have a top-level field "someField" with a nested field "someSubField", add "src.someField.someSubField" as additional result column. In the same way you can access nested arrays. If you have a top-level field "someField" with a nested array field "someArraySubField", add "src.someField.someArraySubField[0]" as additional result column to access the first array entry.
 
 <img src="/images/datahub-guide/datahub-add-addtl-col.png" alt="Add additional result column" style="max-width: 100%">
 
-Click **Apply** to add the column, which will be selected for offloading by default. If the source definition is invalid, for example when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You must fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
+Click **Save** to add the column, which will be selected for offloading by default. If the source definition is invalid, for example when accessing an unknown column, you get an error message like *Column "UnknownColumn" not found in any table*. You must fix the source definition before you can proceed. Click **Cancel** to cancel the configuration of the additional result column.
 
 **Edit an additional result column**
 
-In the context menu of an additional result column, select **Edit** to open the dialog for editing the column name and the source definition. Click **Apply** to update the column with the new settings. The new column name must be unique and the source definition must be valid in order to proceed. Click **Cancel** to quit editing the column.
+In the context menu of an additional result column, select **Edit** to open the dialog for editing the column name and the source definition. Click **Save** to update the column with the new settings. The column name must be unique and the source definition must be valid in order to proceed. Click **Cancel** to quit editing the column.
 
 For auto-detected columns the source definition cannot be modified. If you want to modify the source definition, you must duplicate the auto-detected column and modify the source definition as required.
 
@@ -110,7 +110,7 @@ For auto-detected columns the source definition cannot be modified. If you want 
 
 In the context menu of an additional result column, select **Duplicate** to open the dialog for duplicating the column. The source definition of the duplicate column is the same as of the original column and can be adapted to your needs. The new column name initially uses the original column name plus a counter suffix to make the name unique. You can change the name as required. You can also rename the original column. New as well as original column name must be unique.
 
-Click **Apply** to complete and **Cancel** to quit duplicating the column.
+Click **Save** to complete and **Cancel** to quit duplicating the column.
 
 A common use-case for duplication is to change the data type of an auto-detected column. For example, duplicate the column "statusOrdinal" and apply the corresponding casting function in the source definition editor. Use as new column name "statusOrdinal" and rename the original column to "statusOrdinal_Old". In the additional columns list select "statusOrdinal" and deselect "statusOrdinal_Old". 
 
@@ -118,14 +118,14 @@ A common use-case for duplication is to change the data type of an auto-detected
 
 In the context menu of an additional result column, select **Delete** to open the dialog for deleting the column. Click **Confirm** to proceed or **Cancel** to cancel the deletion. Auto-detected columns cannot be deleted.
 
-When deleting an additional result column, the data will no longer be included in the next offloading run. Data which has already been offloaded to the data lake is not affected by the deletion of the column.  
+When deleting an additional result column, the data will no longer be included in the next offloading run. Data which has already been offloaded to the data lake is not affected by the deletion of the column. Thus, the column itself will still be present in the data lake, but will have value NULL once the additional result column has been deleted.
 
 Click **Next** to proceed with the next configuration step. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
 
 <a name="set-filter-predicate"></a>
 ##### Set filter predicate
 
-Optionally you can define a filter predicate. Per default, all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be "status='ACTIVE' AND severity='WARNING'" to only persist active alarms with a severe warning. The filter predicate functionality supports complex SQL statements, that is, a combination of AND/OR, clauses like "IN(...)" / "NOT IN(...)", and functions such as "REGEXP_LIKE(text, 'MyText\S+')".
+Optionally you can define a filter predicate. Per default, all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be "status='ACTIVE' AND severity='WARNING'" to only persist active alarms with a severe warning. The filter predicate functionality supports complex SQL statements, that is, a combination of "AND/OR", clauses like "IN(...)" / "NOT IN(...)", and functions such as "REGEXP_LIKE(text, 'MyText\S+')".
 
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You must use the source definition as defined in the corresponding column instead.
 
@@ -133,7 +133,7 @@ In the filter predicate you can query all standard attributes of the base collec
 For querying the attribute "id", you must use "&#95;id". For examples on querying different attributes, see also [DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices).
 {{< /c8y-admon-info >}}
 
-When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. For example, if you want to apply the trim function to a numeric value "TRIM(numeric_value)", you get an error message that the trim function cannot be applied in that case. You must fix these errors before you can proceed.
+When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. You must fix these errors before you can proceed.
 
 Click **Next** to proceed with the next configuration step. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
 
@@ -167,7 +167,7 @@ In the additional settings, you can define the compaction strategy for the offlo
 - **Daily compaction:** {{< product-c8y-iot >}} DataHub selects for each day all files in the data lake which contain data from that day. These files will be combined into one or more larger files containing all data for this day. This results in summary files for each day, while the original files are deleted.
 - **No compaction:** Compaction is disabled. This setting is not recommended and must be used with caution as it has most likely negative impact on the query performance.
 
-You can change the compaction strategy of an already running offloading pipeline by deactivating the pipeline, editing it, and reactivating it. If a compaction was already executed in the past, disabling the compaction strategy does not revert the previous compaction results.
+You can change the compaction strategy of an already running offloading pipeline by deactivating the pipeline, editing the compaction strategy, and reactivating the pipeline. If a compaction was already executed in the past, changing the compaction strategy does not revert the previous compaction results.
 
 **View materialization**
 
@@ -223,7 +223,7 @@ The two paths *c8y_TemperatureMeasurement.T* and *c8y_temperaturemeasurement.T* 
 
 With name sanitization, two columns *c8y_TemperatureMeasurement.T.unit* and *c8y_temperaturemeasurement.T.unit_6bfa* will be created for unit entries. The unit entries will then be stored in the column with the associated path. Analogously, two columns *c8y_TemperatureMeasurement.T.value* and *c8y_temperaturemeasurement.T.value_490d* will be created for value entries.
 
-In the first case an offloading run processes multiple fragments with the corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
+The first time an offloading run processes multiple fragments with the corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
 
 **Raising alarms**
 

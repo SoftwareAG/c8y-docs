@@ -27,7 +27,7 @@ Even though the system can resolve mixed types, it is strongly advised to avoid 
 
 The offloading configuration mechanisms differ when dealing with series-value fragments of measurements. As additional fragments are often added dynamically, {{< product-c8y-iot >}} DataHub automatically picks up each series at runtime without the need to reconfigure the offloading pipeline.
 
-Each series must have a mandatory value of type Number and an optional unit of type String. If the value is not of type Number, {{< product-c8y-iot >}} DataHub determines a type for each series at runtime of the offloading. It evaluates the runtime type of each value and derives the column type for the corresponding offloading run. If all values for a series can be cast to BOOLEAN, FLOAT, STRUCT or LIST consistently, this will be the type of the resulting column. Otherwise, DataHub will use VARCHAR. If the use case mixes types for the same series, the aforementioned mixed type handling applies.
+Each series must have a mandatory value of type NUMBER and an optional unit of type STRING. If the value is not of type NUMBER, {{< product-c8y-iot >}} DataHub determines a type for each series at runtime of the offloading. It evaluates the runtime type of each value and derives the column type for the corresponding offloading run. If all values for a series can be cast to BOOLEAN, FLOAT, STRUCT or LIST consistently, this will be the type of the resulting column. Otherwise, DataHub will use VARCHAR. If the use case mixes types for the same series, the aforementioned mixed type handling applies.
 
 {{< c8y-admon-info >}}
 The {{< product-c8y-iot >}} platform supports since version 10.16+ the **time series model**, which is a new internal data model for the measurements collection. For details on how to activate that model see section [Enhanced time series support](/users-guide/enterprise-tenant/#timeseries). {{< product-c8y-iot >}} DataHub supports that data model as well when offloading the measurements collection. However, the specific case of measurements offloading in the TrendMiner mode is not supported when the time series model is used. When you switch from the default data model to the time series model, measurements offloadings will still continue to work. The switch from the time series model to the default model is not supported. In that case the offloading cannot guarantee that the complete data is offloaded into the target table. To ensure completeness, you have to re-configure the offloading to use a different target table when switching to the default data model.
@@ -35,17 +35,17 @@ The {{< product-c8y-iot >}} platform supports since version 10.16+ the **time se
 
 #### Guidelines
 
-When modeling your data, you should generally take the following guidelines into account:
+When modelling your data, you should generally take the following guidelines into account:
 
 |<div style="width:250px">Description</div>
 |:---
 |The data type of an attribute should be fix as otherwise mixed type constellations may occur.|
-|When modeling measurements and large volumes of them are likely to be generated, you should leverage the time series data model. When using this model, the offloading and query performance is typically better compared to the default data model.|
-|When modeling measurements you should separate the measurements by specifying measurement types. Then each measurement type can be modelled within a separate offloading pipeline, which in turn leads to a cleaner data architecture in the data lake as well as better query performance.|
+|When modelling measurements and large volumes of them are likely to be generated, you should leverage the time series data model. When using this model, the offloading and query performance is typically better compared to the default data model.|
+|When modelling measurements you should separate the measurements by specifying measurement types. Then each measurement type can be modelled within a separate offloading pipeline, which in turn leads to a cleaner data architecture in the data lake as well as better query performance.|
 |You should avoid offloading lists with many entries as this leads to broad tables in the data lake.|
 |You should avoid having a large number of columns in the data lake as this adversely affects query performance and complicates data access in follow-up applications.|
 |When defining attribute names in your data model, you should not use special characters in attribute names. The attribute names are used as column names in the resulting offloading table and special characters may hinder working with those columns in follow-up applications.|
-|When modelling data within arrays, you must ensure that the position of the values within the array is fix throughout the documents fed into the platform as otherwise further processing might run into problems.|
+|When modelling data within arrays, you must ensure that the position of the values within the array is fix throughout the documents being fed into the platform. Otherwise further processing might run into problems.|
 
 #### Limitations
 

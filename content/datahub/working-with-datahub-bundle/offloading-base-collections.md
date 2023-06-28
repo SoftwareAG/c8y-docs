@@ -32,7 +32,6 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 | time | TIMESTAMP |
 | timeOffset | INTEGER |
 | timeWithOffset | TIMESTAMP |
-| history | LIST |
 | severity | VARCHAR |
 | source | VARCHAR |
 | status | VARCHAR |
@@ -205,6 +204,9 @@ The resulting schema is defined as follows:
 | time | TIMESTAMP |
 | timeOffset | INTEGER |
 | timeWithOffset | TIMESTAMP |
+| YEAR | VARCHAR |
+| MONTH | VARCHAR |
+| DAY | VARCHAR |
 | source | VARCHAR |
 | type | VARCHAR |
 | tagname | VARCHAR |
@@ -250,7 +252,7 @@ is represented in the target table in the data lake as
 | ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
 | ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
 
-In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tags** is created. This table stores the tag names and the source IDs, which connect the tagname used in TrendMiner with a device and its id as managed in the {{< product-c8y-iot >}} platform. The schema of the **c8y_cdh_tm_tags** table is defined as:
+In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tags** is created. This table stores the tag names and the source IDs, which connect the tagname used in TrendMiner with a device and its ID as managed in the {{< product-c8y-iot >}} platform. The schema of the **c8y_cdh_tm_tags** table is defined as:
 
 | Column name | Column type |
 | -----       | -----       |

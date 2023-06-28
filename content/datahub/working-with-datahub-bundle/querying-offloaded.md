@@ -22,7 +22,7 @@ When you have established a connection, you can run SQL queries against your tab
 * **Amazon S3:** YourTenantIdDataLake.`Bucket`.YourAccountName.TargetTableName with `Bucket` denoting the bucket within your Amazon S3 account
 * **Others:** YourTenantIdDataLake.YourAccountName.TargetTableName
 
-For example, if your tenantId is `t47110815` and you have defined an offloading configuration to write the alarms collection to the target table `JohnsAlarms` in an Azure Storage account containing a file system named `Dremio`, then an example query would be:
+For example, if your tenant ID is `t47110815` and you have defined an offloading configuration to write the alarms collection to the target table `JohnsAlarms` in an Azure Storage account containing a file system named `Dremio`, then an example query would be:
 
 ```
 SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms;

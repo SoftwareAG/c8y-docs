@@ -23,7 +23,7 @@ If you still need to contact [product support](/welcome/contacting-support), inc
 
 ##### Check Cumulocity IoT DataHub Edge backend status
 
-You can check the status of the backend in the Administration page of the {{< product-c8y-iot >}} DataHub UI. Alternatively you can query the *isalive* endpoint, which should produce an output similar to:
+You can check the status of the backend in the **Administration** page of the {{< product-c8y-iot >}} DataHub UI. Alternatively you can query the *isalive* endpoint, which should produce an output similar to:
 
 ```shell
 curl --user admin:your_password https://edge_domain_name/service/datahub/isalive
@@ -79,7 +79,7 @@ The data disk is used for storing the state of {{< product-c8y-iot >}} DataHub a
 
 #### Cleanup of Dremio job history
 
-Dremio maintains a history of job details and profiles, which can be inspected in Dremio's job log, that is, the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
+Dremio maintains a history of job details and profiles, which can be inspected in Dremio's job log, that is, the **Jobs** page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
 
 Dremio is configured to perform the cleanup of job results automatically without downtime. The default value for the maximum age of stored job results is seven days. To change that value, a Dremio administrator must modify the support key *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio. See the corresponding [Dremio documentation](https://docs.dremio.com/advanced-administration/support-settings/) for more details on support keys.
 

@@ -23,7 +23,7 @@ The list shows the execution history, with each execution consisting of the foll
 | Component | Description |
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
-| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
+| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (user icon)
 | Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
@@ -42,10 +42,6 @@ The page navigation buttons at the bottom can be used to traverse the history en
 <a id="details-offloading-job"></a>
 
 For a given offloading job, you can examine additional details of its execution.
-
-{{< c8y-admon-info >}}
-You need administration or management permissions to access the job details.
-{{< /c8y-admon-info >}}
 
 In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 

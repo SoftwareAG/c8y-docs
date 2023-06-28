@@ -122,7 +122,7 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 </table>
 
 {{< c8y-admon-info >}}
-For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see the section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
+For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 32010 can be accessed from the host system. For instructions on port forwarding see the section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 {{< /c8y-admon-info >}}
 
 ### Defining Cumulocity IoT DataHub permissions and roles

@@ -8,9 +8,9 @@ In the [initial configuration](/datahub/setting-up-datahub/#setting-up-initial-c
 
 Some use cases might require more than one Dremio user for the interaction with Dremio. For that purpose, additional Dremio users can be added.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 You need administration permissions to configure Dremio users. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 ### Overview of Dremio users
 In the navigator, select **Dremio users** under **Settings** to get an overview of all Dremio users created by an administrator of your {{< product-c8y-iot >}} DataHub tenant.

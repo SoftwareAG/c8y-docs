@@ -19,9 +19,9 @@ For built-in data attributes specified by the platform, the type is fixed and kn
 
 If instances of the attribute have diverging types, then the system can apply a type coercion mechanism to resolve such a mixed type constellation. That coercion mechanism derives a single, suitable type from the diverging types. For example, INTEGER and FLOAT are coerced to FLOAT while TIMESTAMP and VARCHAR are coerced to VARCHAR. You can configure for each offloading pipeline how to deal with mixed types. Per default the system automatically resolves the mixed type by evolving the schema. That schema evolution uses the type coercion to introduce a new column having the coerced type. Alternatively the system stops the pipeline to allow for corrective actions. Section [Dealing with mixed types](/datahub/working-with-datahub/#mixed-types) describes how to configure those strategies. 
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-important >}}
 Even though the system can resolve mixed types, it is strongly advised to avoid them as they may introduce additional adaptation effort. You should take care that your data model does not mix up types and that you feed only type-consistent data into the {{< product-c8y-iot >}} platform.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-important >}}
 
 #### Mapping measurement fragments to relational data
 

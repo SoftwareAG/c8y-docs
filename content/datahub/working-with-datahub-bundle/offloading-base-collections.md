@@ -185,9 +185,9 @@ The system uses the type attribute to determine *c8y_Temperature* as measurement
 | ---- | ---- | ---- | ---- |
 | ... | C | 2.0791169082 | ... |
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-important >}}
 Try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. 
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-important >}}
 
 ##### Offloading measurements with the TrendMiner target table layout
 

@@ -6,9 +6,9 @@ layout: redirect
 
 The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio API user and access to a data lake. In the navigator, select **Initial configuration** under **Settings** to define those settings.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 You need administration permissions to define the settings. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 ### Defining the initial configuration
 
@@ -51,9 +51,9 @@ The following types of data lakes are currently supported:
 
 While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**. Also note that in case IP white-listing is activated, {{< product-c8y-iot >}} DataHub might not be able to access the data lake if the data lake and {{< product-c8y-iot >}} DataHub reside in the same Azure region. See also the corresponding [documentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-an-internet-ip-range).
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 ##### Amazon S3
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings must be defined for this data lake:
@@ -67,9 +67,9 @@ Note that the account type must be **StorageV2**, and the **Hierarchical namespa
 
 While the other settings are fixed once the initial configuration was saved, the **AWS access key** and the **Access secret** can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
 

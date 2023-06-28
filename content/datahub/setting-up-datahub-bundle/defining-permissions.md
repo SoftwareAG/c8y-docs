@@ -8,9 +8,9 @@ Dedicated permissions define what a user is allowed to do in {{< product-c8y-iot
 
 If you do not have corresponding {{< product-c8y-iot >}} DataHub permissions, you will get a warning after login.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-important >}}
 When offloading the inventory/events/alarms/measurements collection, {{< product-c8y-iot >}} DataHub does not incorporate access limitations for these collections as set in the {{< product-c8y-iot >}} platform. In particular, [inventory roles](/users-guide/administration/#inventory) defining permissions to device groups are not incorporated in the offloading process. As a consequence, a user with {{< product-c8y-iot >}} DataHub permissions can access all data in the data lake irrespective of access restrictions the user has on the base collections.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-important >}}
 
 ### Cumulocity IoT DataHub roles and permissions
 

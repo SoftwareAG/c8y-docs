@@ -57,7 +57,7 @@ It is up to the device and its use case whether it should roll back any local st
 
 ### Recovering after agent crash
 
-After unexpected restart device must set status to FAILED for operations which processing was interrupted. First it needs to learn the operations ids:
+After an unexpected restart a device must set the status to FAILED for operations for which processing was interrupted. First it must learn the operation IDs:
 
 ```http
 GET /devicecontrol/operations?deviceId=<deviceId>&status=EXECUTING

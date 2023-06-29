@@ -177,7 +177,7 @@ Open a data connector and switch to the **Alarms** tab to display current alarms
 
 For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
 
-For details on alarms in general, see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms in general, see [Device management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 
 <a name="data-broker-subscriptions"></a>
@@ -198,7 +198,7 @@ Use the toggle to temporarily stop forwarding data into your tenant.
 3. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
 4. You can use the toggle in the card to temporarily stop forwarding data into your tenant.
 
-You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
+You can now navigate to the Device management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
 

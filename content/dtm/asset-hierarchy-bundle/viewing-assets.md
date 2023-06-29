@@ -24,8 +24,6 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 
 7. Optionally [add subassets](/dtm/asset-hierarchy/#add-child-assets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
 
-8. Click **Expand all** to view all the assets in the asset hierarchy.
-
 {{< c8y-admon-info>}}
 The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add asset](/dtm/asset-hierarchy/#add-child-assets) are not visible for the last hierarchical level.<br>
 If you edit an asset property or an asset model associated with the selected asset, you see a warning icon next to the asset model name.<br>
@@ -70,3 +68,25 @@ The search results include all assets containing the search term in any property
 {{< /c8y-admon-important >}}
 
 The DTM application extends the full text search capability of {{< product-c8y-iot >}} for searching assets. See [Getting Started > UI functionalities and features > Search and filter functionality](/users-guide/getting-started/#searching) in *User guide* to know more about available search options.
+
+### To move assets
+
+Use the assets move feature to relocate assets within hierarchies. To move one or more assets, follow the steps below:
+
+1. Select one or more assets of same type in the **Assets** page to move.
+2. Click **Move selected** in the top banner.
+3. In the resulting dialog, you see a list of assets which allow selected assets as its children. Click the radio button to the left of each asset to select it.
+4. Click **Move** to complete the relocation.
+
+{{< c8y-admon-info >}}
+Only a maximum of 10 assets can be moved at a time.
+
+The **Move selected** option in the banner is disabled in the following scenarios:
+* One or more root assets are selected.
+* Assets of different asset models are selected. Only assets of same asset model can be moved.
+* The selected asset's asset model is no longer a child of its parent asset model.
+* One or more assets with the same name are selected.
+
+{{< /c8y-admon-info >}}
+
+![Asset movement](/images/dtm/assets/dtm-assets-move-assets.png)

@@ -50,7 +50,7 @@ This category contains the following blocks:
 </tr>
 <tr>
 <td><a href="#kpi">KPI</a></td>
-<td><span>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device.</span>
+<td><span>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device, asset or group of devices.</span>
 </td>
 </tr>
 <tr>
@@ -60,7 +60,7 @@ This category contains the following blocks:
 </tr>
 <tr>
 <td><a href="#machine-learning">Machine Learning</a></td>
-<td><span>Invokes the specified Machine Learning model that scores the input data.</span>
+<td><span>(Deprecated) Invokes the specified Machine Learning model that scores the input data.</span>
 </td>
 </tr>
 <tr>
@@ -93,7 +93,7 @@ This category contains the following blocks:
 
 ### Crossing Counter
 
-**apama.analyticskit.blocks.core.CrossingCounter**
+`apama.analyticskit.blocks.core.CrossingCounter`
 
 <p>Detects and counts the number of threshold crossings in the specified direction.</p>
 <p>Crossing is defined as a change in the input value from one side of the threshold to the other side of the threshold (that is, from less than to greater than or vice versa).
@@ -231,7 +231,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 
 ### Delta
 
-**apama.analyticskit.blocks.core.Delta**
+`apama.analyticskit.blocks.core.Delta`
 
 <p>Calculates the difference between successive input values.</p>
 <p>The block generates an output after getting at least two input values.</p>
@@ -299,7 +299,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 
 ### Difference
 
-**apama.analyticskit.blocks.core.Difference**
+`apama.analyticskit.blocks.core.Difference`
 
 <p>Calculates the absolute and signed differences between the connected inputs.</p>
 <p>Only generates an output if both inputs receive a value.</p>
@@ -374,7 +374,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 
 ### Direction Detection
 
-**apama.analyticskit.blocks.core.DirectionDetector**
+`apama.analyticskit.blocks.core.DirectionDetector`
 
 <p>Detects whether the input value changes direction.</p>
 <p>Outputs the change in direction and the last significant inflection point, ignoring minor variations if the changes are less than the defined hysteresis value. Repeated inputs of the same value are ignored.</p>
@@ -479,7 +479,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 
 ### Expression
 
-**apama.analyticskit.blocks.core.Expression**
+`apama.analyticskit.blocks.core.Expression`
 
 <p>Evaluates an expression to perform arithmetic or logical calculations or string operations.</p>
 <p>On change of input values (once all in-use inputs have been received), the expression specified in the parameter is re-calculated.
@@ -604,7 +604,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 
 ### From Base N
 
-**apama.analyticsbuilder.blocks.FromBaseN**
+`apama.analyticsbuilder.blocks.FromBaseN`
 
 <p>Converts a base N string to a float.</p>
 <p>The input string can be in any integer base from 2 to 36, where letters of the English alphabet are used as digits for bases above 10. Common bases are 2 (binary), 8 (octal), 10 (decimal) and 16 (hexadecimal). The number being converted can contain a radix point.
@@ -708,9 +708,9 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 
 ### KPI
 
-**apama.analyticskit.blocks.cumulocity.KPI**
+`apama.analyticskit.blocks.cumulocity.KPI`
 
-<p>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device.</p>
+<p>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device, asset or group of devices.</p>
 <p>This block uses data from the KPI input port or from the device which contains data points. It extracts the units, label, and the red and yellow ranges. The output indicates whether the value is within the red or yellow range specified by the KPI or data point.
 <p></p>
 The KPI input can provide properties, typically from a KPI-managed object, which include the red and yellow ranges, the unit and the label. If the device contains a data point for the specified fragment and series, then the values from the data point override those from the KPI.</p>
@@ -736,9 +736,9 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 <tbody>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>The device or group of devices which contains a data point. If specified, then this device (typically the same device as the measurement source) is checked to see if it contains a data point for the specified fragment and series. If it contains a data point, the red and yellow range values from the source object are used in place of the KPI values. The model editor uses the current device or asset name. This is mapped internally to the inventory identifier.</span>
+<td><span>The device, group, or asset which contains a data point. If specified, then this source (typically the same as the measurement source) is checked to see if it contains a data point for the specified fragment and series. If it contains a data point, the red and yellow range values from the source object are used in place of the KPI values.</span>
 </td>
-<td><span>string</span>
+<td><span>any</span>
 </td>
 <td><span>Optional</span>
 </td>
@@ -855,7 +855,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 
 ### Limit
 
-**apama.analyticsbuilder.blocks.Limit**
+`apama.analyticsbuilder.blocks.Limit`
 
 <p>Outputs a value that is kept within the defined upper and lower limits.</p>
 <p>The input value is limited so that the output does not exceed the boundaries defined by the Lower Limit and Upper Limit parameters. If the input violates either limit, then the output is set to the parameter value, otherwise the value is passed through unchanged.
@@ -957,9 +957,9 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 
 ### Machine Learning
 
-**apama.analyticskit.blocks.core.Zementis**
+`apama.analyticskit.blocks.core.Zementis`
 
-<p>Invokes the specified Machine Learning model that scores the input data.</p>
+<p>(Deprecated) Invokes the specified Machine Learning model that scores the input data.</p>
 <p>To use this block, the Machine Learning application needs to be available with the respective Machine Learning models in the tenant.
 <p></p>
 If the Machine Learning model does not yet exist, use the Machine Learning application to add it. If you have added the Machine Learning model while your Analytics Builder model was still in edit mode, exit the model editor and then edit your Analytics Builder model once more. This refreshes the list of available Machine Learning models and you can then select the newly added model.
@@ -1177,7 +1177,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 
 ### Range
 
-**apama.analyticsbuilder.blocks.Range**
+`apama.analyticsbuilder.blocks.Range`
 
 <p>Compares the input value against the defined lower and upper range values to detect whether the input is within or out of the range, or whether it crosses the range.</p>
 <p>By default, the range includes the value for the lower range but excludes the value for the upper range. For example, if the lower range is 100 and the upper range is 200, then all values from 100 to 199 are within the range. 200 is considered to be out of the range.
@@ -1316,7 +1316,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 
 ### Range Lookup
 
-**apama.analyticskit.blocks.core.RangeLookup**
+`apama.analyticskit.blocks.core.RangeLookup`
 
 <p>Finds the range in which the input value lies.</p>
 <p>Ranges are defined using a list of unique upper bound values in increasing order. The lower bound of the first range depends on the value of the Minimum Value parameter. The lower bound of each subsequent range is defined by the upper bound of the previous range. The range to which an input value equal to a boundary value belongs depends on the Exclude Upper parameter. The block outputs the mapped value for the range the input lies within, or a failed flag if the input value is not within any of the ranges.</p>
@@ -1444,7 +1444,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 
 ### Rounding
 
-**apama.analyticskit.blocks.core.Rounding**
+`apama.analyticskit.blocks.core.Rounding`
 
 <p>Rounds the input to a specified number of decimal points or to an integer, using a selectable rule.</p>
 <p>Rounding a numerical value means replacing it by another value that is approximately equal but has a shorter and simpler representation.
@@ -1553,7 +1553,7 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 
 ### Threshold
 
-**apama.analyticskit.blocks.core.Threshold**
+`apama.analyticskit.blocks.core.Threshold`
 
 <p>Compares the input value against the defined threshold value to detect whether the input breaches the threshold or whether it crosses the threshold.</p>
 <p>A breach occurs when the direction has been set to 'Above' and the input value is greater than the defined threshold value, or when the direction has been set to 'Below' and the input value is less than the defined threshold, or when the direction has been set to 'Above or Equal' and the input value is greater than or equal to the defined threshold value, or when the direction has been set to 'Below or Equal' and the input value is less than or equal to the defined threshold value.
@@ -1681,7 +1681,7 @@ A pulse is sent when the defined threshold value is crossed from any direction.<
 
 ### To Base N
 
-**apama.analyticsbuilder.blocks.ToBaseN**
+`apama.analyticsbuilder.blocks.ToBaseN`
 
 <p>Converts a float to a base N string.</p>
 <p>The output string can be in any integer base from 2 to 36, where letters of the English alphabet are used as digits for bases above 10. Common bases are 2 (binary), 8 (octal), 10 (decimal) and 16 (hexadecimal). The number being converted can contain a radix point. The output is calculated to a maximum precision of 16 radix places.

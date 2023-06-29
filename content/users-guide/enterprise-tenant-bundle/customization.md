@@ -15,6 +15,22 @@ Click **{{< enterprise-tenant >}}** in the **Settings** menu to access these set
 <a name="configuration"></a>
 ### Configuration
 
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+Users must have access to the Administration application of the {{<enterprise-tenant>}}.
+
+ROLES & PERMISSIONS:
+
+* To view settings: READ permission for the "Options management" permission type
+* To manage (create, edit, update) all existing settings: ADMIN permission for the "Options management" permission type
+
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
+
+{{< /c8y-admon-req >}}
+
 {{< c8y-admon-info >}}
 In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
 {{< /c8y-admon-info >}}
@@ -23,14 +39,14 @@ The following placeholders can be found in the **Configuration** tab:
 
 |Placeholder|Description|
 |:---|:---|
-|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< domain-c8y >}}`.
-|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< domain-c8y >}}`. In case of an {{< enterprise-tenant >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
-|{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
-|{email}|Will be replaced with the email address of the recipient user as stored in the user settings. Some views in the UI recognize this parameter and prefill the respective field with this value, for example, during the process of password reset.
-|{username}|Will be replaced with the value of the username property specified in the user configuration, see [User options and settings](/users-guide/getting-started/#user-settings).
-|{binaryId}|Will be replaced with the respective `binaryId` for the binary artefact to be used in the download link.
-|{exportApi}|Will be replaced with the respective API in which the error occurred.
-|{size}|Will be replaced with the storage usage percentage value.
+|{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< domain-c8y >}}`.|
+|{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< domain-c8y >}}`. In case of an {{< enterprise-tenant >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.|
+|{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".|
+|{email}|Will be replaced with the email address of the recipient user as stored in the user settings. Some views in the UI recognize this parameter and prefill the respective field with this value, for example, during the process of password reset.|
+|{username}|Will be replaced with the value of the username property specified in the user configuration, see [User options and settings](/users-guide/getting-started/#user-settings).|
+|{binaryId}|Will be replaced with the respective `binaryId` for the binary artefact to be used in the download link.|
+|{exportApi}|Will be replaced with the respective API in which the error occurred.|
+|{size}|Will be replaced with the storage usage percentage value.|
 
 {{< c8y-admon-info >}}
 The above mentioned placeholders might not be applicable to certain templates. While preparing content, note the information provided in the UI.
@@ -94,6 +110,25 @@ Some additional configuration settings can be specified globally in the {{< mana
 ### Branding
 
 With the Branding feature, you can fully customize the look of your tenant to your own preferences.
+
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The branding feature comes as default with the {{<enterprise-tenant>}} and is available in the Administration application.
+
+The branding functionality is enabled by subscribing to the "feature-branding" application.
+
+ROLES & PERMISSIONS:
+
+* To manage the branding configuration: 
+  * READ, ADMIN, CREATE permission for the "Inventory" permission type
+  * READ, ADMIN permission for the "Options management" permission type
+* To apply the branding configuration: READ, ADMIN permission for the "Application management" permission type
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
+
+{{< /c8y-admon-req >}}
 
 In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform.
 
@@ -194,6 +229,25 @@ The following parameters can be specified:
 
 <a name="domain-name"></a>
 ### Domain name
+
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The domain management feature comes as default with the {{<enterprise-tenant>}} tenant and is available in the Administration application.
+
+The domain management functionality is enabled by subscribing to the "sslmanagement" microservice.
+
+ROLES & PERMISSIONS:
+
+* To upload certificate:
+    * READ, ADMIN permission for the "Inventory" permission type;
+    * READ, ADMIN permission for the "Options management" permission type;
+    * READ, ADMIN permission for the "Application management" permission type;
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
+
+{{< /c8y-admon-req >}}
 
 A key feature of the {{< enterprise-tenant >}} is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This
 means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}}. In addition you'll be able to create subtenants

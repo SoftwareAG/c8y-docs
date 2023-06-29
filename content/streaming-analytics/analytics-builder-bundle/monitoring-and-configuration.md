@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 ### Monitoring
-You can monitor the current status of each model in the model manager. The card for a model shows the current mode for this model \(such as production mode\) and whether it is in the Active \(deployed\) or Inactive state.
+You can monitor the current status of each model in the model manager. The card for a model shows the current mode for this model \(such as production mode\) and whether it is active \(deployed\) or inactive.
 
 ![Card for a model](/images/streaming-analytics/analytics-builder/card-with-runtime-error.png)
 
@@ -366,7 +366,7 @@ You can find some concrete examples in [Using curl commands for setting various 
 To change the tenant options, you need ADMIN permission for "Option management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide* for more information.
 
 {{< c8y-admon-caution>}}
-After you have changed a tenant option using a REST request, the correlator will automatically restart. An alarm with a MAJOR severity will be created in this case; you can view it on the **Alarms** page of the Cockpit application \(see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the *User guide* for more information\).
+After you have changed a tenant option using a REST request, the correlator will automatically restart. An alarm with a MAJOR severity will be created in this case; you can view it on the **Alarms** page of the Cockpit application \(see [Device management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the *User guide* for more information\).
 {{< /c8y-admon-caution>}}
 
 #### Keys for status reporting

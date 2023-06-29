@@ -33,11 +33,11 @@ Devices connecting to the platform with certificates do not need to provide the 
 The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
 Auto-registration needs to be activated for the uploaded certificate.
 If auto-registration is not activated it is required to use the bulk registration (see below).
-To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
+To manage the auto registration field of uploaded certificates in the UI refer to [Device management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
 
 **Bulk registration**
 
-The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device Management.
+The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device management application.
 
 The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
 
@@ -339,7 +339,7 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
+1. In the Device management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
 2. In the resulting dialog, enter a custom name for the new certificate.
 3. Drop your CA certificate (caCert.pem or intermediateCert.pem).
 4. Select the **Auto registration** check box.
@@ -389,10 +389,13 @@ The steps for the proof of possession are as follows:
 1. Navigate to **Management** > **Trusted certificates** in the Device management application and verify that the certificate has been uploaded properly.
 <br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
 
-2. In the **Proof of Possession** section of the certificate details, download the unsigned verification code.
-<br>![Download unsigned verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
+2. In the **Proof of Possession** section of the certificate details, download the verification code.
+<br>![Download verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
 
-3. Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
+3. Encrypt the verification code using the private key of the certificate to produce the signed verification code.
+Use the following OpenSSL command:
+
+    `openssl dgst -sha256 -sign <private.key> <verification_code.txt> | openssl base64 -A`
 
 4. Upload the signed verification code to the platform.
 <br>![Upload signed verification code](/images/mqtt/mqtt-cert-upload-signed.png)

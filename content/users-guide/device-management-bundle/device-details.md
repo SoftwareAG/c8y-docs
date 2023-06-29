@@ -3,6 +3,11 @@ weight: 31
 title: Device details
 layout: redirect
 ---
+
+{{< c8y-admon-related >}}
+References to related content in the documentation are mentioned in the details descriptions below.
+{{< /c8y-admon-related >}}
+
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface.
 
 To view detailed information on the device, click a device in the device list.
@@ -331,7 +336,9 @@ Only one Y-axis is rendered if the measurements belong to the same series.
 
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
 
-> **Info:** We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device Management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
+{{< c8y-admon-info >}}
+We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
+{{< /c8y-admon-info >}}
 
 **Time range and aggregation**
 

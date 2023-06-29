@@ -26,9 +26,9 @@ helpcontent:
 
 
     Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
-  - label: packages
-    title: Packages
-    content: "On the **Packages** tab, you will find a list of all packages available in your tenant. Packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new package, click **Add package** at the top right."
+  - label: extensions
+    title: Extensions
+    content: "On the **Extensions** page, you find a list of all extension packages available in your tenant. Extension packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new extension package, click **Add extension package** at the top right."
   - label: features
     title: Features
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
@@ -52,7 +52,7 @@ ROLES & PERMISSIONS:
 * To manage applications and microservices (create, update, copy, delete): ADMIN permission for the "Application management" permission type
 
 On tenant creation there are default roles available that can be used as sample configuration for the above mentioned permissions:
-* Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules.
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and business rules.
 
 Note that for complete application management some additional permission types with different permission levels might be required per feature, for example:
 * [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Option management" permission type.
@@ -135,7 +135,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
@@ -143,7 +143,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled)</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web application</td>
@@ -317,12 +317,12 @@ Simply click the application or click the menu icon at the right of an entry and
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 {{< c8y-admon-important >}}
-Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
+Never change the system application names (such as "Device management", "Cockpit"). Otherwise, tenant initialization will fail.
 {{< /c8y-admon-important >}}
 
 ### To delete an application
 
-Click the menu icon at the right of an entry and then click **Delete**.
+Click the menu icon at the right of an entry and then click **Delete**. You can also delete an application directly from the **Properties** tab in the application details.
 
 If you delete an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 

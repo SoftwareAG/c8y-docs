@@ -15,7 +15,7 @@ aliases:
 
 
 {{< c8y-admon-related >}}
-- The [Streaming Analytics guide](/apama/#streaming-analytics) for details on customizing scheduled exports using the Streaming Analytics application. 
+- The [Streaming Analytics guide](/streaming-analytics/overview-streaming-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
 {{< /c8y-admon-related >}}
 
 The export functionality lets you export specific data to either CSV or Excel files.
@@ -75,8 +75,6 @@ Apart from object- and time-specific filtering you may filter data for specific 
 - Measurements
 
 Use the toggle to enable/disable a field.
-
-![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
 {{< c8y-admon-info >}}
 The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
@@ -147,7 +145,7 @@ The export schedule will be added to the export details.
 
 ##### Migration of scheduled exports
 
-With version 10.6.2, a new report agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated.
+With version 10.6.2, a new report agent has been implemented to allow scheduled reports with the [Streaming Analytics](/streaming-analytics/overview-streaming-analytics/) application. The export schedules functionality based on smart rules has been deprecated.
 
 On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
 

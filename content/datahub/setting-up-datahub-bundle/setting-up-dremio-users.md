@@ -22,7 +22,7 @@ If the initial configuration has not been completed yet, no users are shown. If 
 ### Properties of a Dremio user
 
 #### Username
-The username is a mandatory setting. It must be a unique value, that is, no other Dremio user has the same username. It consists of the tenant ID plus forward slash and a string with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline. For example, the username may be *t47110815/myUser*.
+The username is a mandatory setting. It must be a unique value, that is, no other Dremio user has the same username. It consists of the tenant ID plus forward slash and a string with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline. For example, the username may be `t47110815/myUser`.
 
 #### First name, last name, and email
 The first name, last name, and email of a Dremio user are optional settings.

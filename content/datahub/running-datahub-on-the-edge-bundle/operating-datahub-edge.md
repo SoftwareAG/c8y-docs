@@ -23,7 +23,7 @@ If you still need to contact [product support](/welcome/contacting-support), inc
 
 ##### Check Cumulocity IoT DataHub Edge backend status
 
-You can check the status of the backend in the **Administration** page of the {{< product-c8y-iot >}} DataHub UI. Alternatively you can query the *isalive* endpoint, which should produce an output similar to:
+You can check the status of the backend in the **Administration** page of the {{< product-c8y-iot >}} DataHub UI. Alternatively you can query the `isalive` endpoint, which should produce an output similar to:
 
 ```shell
 curl --user admin:your_password https://edge_domain_name/service/datahub/isalive
@@ -42,7 +42,7 @@ If the backend cannot be reached, you will get an error response.
 
 ##### Check Dremio backend status
 
-You can check the status of Dremio using the *server_status* endpoint:
+You can check the status of Dremio using the `server_status` endpoint:
 
 ```shell
 curl http://datahub.edge_domain_name/apiv2/server_status
@@ -55,7 +55,7 @@ Dremio is running if *OK* is returned. No response will be returned if it is not
 
 The installation log file is stored at */var/log/cdh*.
 
-In order to access the logs of the {{< product-c8y-iot >}} DataHub and Dremio containers, you must use the Docker *logs* command. To follow the logs of cdh-master you must run:
+In order to access the logs of the {{< product-c8y-iot >}} DataHub and Dremio containers, you must use the Docker `logs` command. To follow the logs of cdh-master you must run:
 
 ```shell
 docker logs -f cdh-master
@@ -71,7 +71,7 @@ The containers are configured to rotate log files with rotation settings of two 
 
 <a name="monitoring"></a>
 #### Monitoring
-{{< product-c8y-iot >}} Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Diagnostics and support > Monitoring](/edge/diagnostics-and-support/#monitoring) in the *{{< product-c8y-iot >}} Edge guide* for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See the section on [Diagnostics and support > Monitoring](/edge/diagnostics-and-support/#monitoring) in the *{{< product-c8y-iot >}} Edge guide* for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 

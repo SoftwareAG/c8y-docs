@@ -6,7 +6,7 @@ layout: redirect
 
 ### Offloading the base collections
 
-The following tables summarize the resulting schemas for each of the {{< product-c8y-iot >}} base collections. These schemas additionally include the virtual columns *dir0*, ..., *dir3*, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of {{< product-c8y-iot >}}, nor are they persisted in the data lake. Do not use *dir0*, ..., *dir3* as additional columns or rename them accordingly in your offloading configuration.
+The following tables summarize the resulting schemas for each of the {{< product-c8y-iot >}} base collections. These schemas additionally include the virtual columns `dir0`, ..., `dir3`, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of {{< product-c8y-iot >}}, nor are they persisted in the data lake. Do not use `dir0`, ..., `dir3` as additional columns or rename them accordingly in your offloading configuration.
 
 {{< c8y-admon-info >}}
 For each offloading run, the current data in the collection is considered. If data has been modified multiple times or deleted between two successful offloading runs, these changes will not be captured in the offloading process and will not be reflected in the data lake. Relevant for the offloading is the current snapshot of the collection when starting an offloading run. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE, because it happened between two offloading runs.
@@ -179,7 +179,7 @@ The following excerpt of a measurement document in the base collection is proces
 }
 ````
 
-The system uses the type attribute to determine *c8y_Temperature* as measurement type. Next it determines the measurement fragment *c8y_Temperature*, which comprises measurement type *T*, measurement value *2.079*, and measurement unit *C* as properties. This fragment is flattened and represented in the target table in the data lake as
+The system uses the type attribute to determine `c8y_Temperature` as measurement type. Next it determines the measurement fragment `c8y_Temperature`, which comprises measurement type `T`, measurement value 2.079, and measurement unit `C` as properties. This fragment is flattened and represented in the target table in the data lake as
 
 | ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |... |
 | ---- | ---- | ---- | ---- |

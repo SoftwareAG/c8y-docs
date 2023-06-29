@@ -43,7 +43,7 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
+|Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container `myContainer` and subfolder `mySubFolder`, use `/myContainer/mySubFolder` as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
 |Azure Storage shared access key|The access key used for authentication if "Shared Access Key" is used as authentication type|
 |Application ID|The application ID used for authentication if "Azure Active Directory" is used as authentication type|
 |OAuth 2.0 Token Endpoint|The authentication endpoint if "Azure Active Directory" is used as authentication type|
@@ -73,11 +73,11 @@ An S3 bucket with default settings works. If specific security policies are appl
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
 
-**SSE-S3**: An AES256 key is generated in S3 and saved alongside the data. Enabling SSE-S3 requires to add the following key-value pair to the *Additional Properties* section:\
+**SSE-S3**: An AES256 key is generated in S3 and saved alongside the data. Enabling SSE-S3 requires to add the following key-value pair to the **Additional Properties** section:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `AES256`
 
-**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by {{< product-c8y-iot >}} DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the *Additional Properties* section:\
+**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by {{< product-c8y-iot >}} DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the **Additional Properties** section:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `SSE-KMS`
 

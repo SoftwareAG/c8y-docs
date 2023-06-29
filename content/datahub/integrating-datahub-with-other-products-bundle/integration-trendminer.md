@@ -23,7 +23,7 @@ The following diagram illustrates the high-level concepts of the integration bet
 
 Providing TrendMiner access to {{< product-c8y-iot >}} data requires you solely to define an offloading pipeline using the TrendMiner data layout. When the offloading pipeline is in place, {{< product-c8y-iot >}} data is regularly extracted from the Operational Store, flattened, and exported into a data lake. In addition, Dremio is configured to access recent data from the Operational Store, using the same schema as for the historical data.
 
-In Dremio a new view is provided, which combines the historical data in the data lake with recent data from the Operational Store, effectively providing a unified view over *hot* data in the Operational Store and *cold* data in the data lake. {{< product-c8y-iot >}} DataHub takes care that the combined data in that view is lossless and does not introduce duplicates. This view is the single connection point to provide TrendMiner access to historical and live data of the {{< product-c8y-iot >}} platform.
+In Dremio a new view is provided, which combines the historical data in the data lake with recent data from the Operational Store, effectively providing a unified view over hot data in the Operational Store and cold data in the data lake. {{< product-c8y-iot >}} DataHub takes care that the combined data in that view is lossless and does not introduce duplicates. This view is the single connection point to provide TrendMiner access to historical and live data of the {{< product-c8y-iot >}} platform.
 
 {{< c8y-admon-info >}}
 So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measurements collection. Other base collections are not yet supported.

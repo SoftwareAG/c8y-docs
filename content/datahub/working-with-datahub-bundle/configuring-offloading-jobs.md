@@ -125,12 +125,12 @@ Click **Next** to proceed with the next configuration step. Click **Previous** t
 <a name="set-filter-predicate"></a>
 ##### Set filter predicate
 
-Optionally you can define a filter predicate. Per default, all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be "status='ACTIVE' AND severity='WARNING'" to only persist active alarms with a severe warning. The filter predicate functionality supports complex SQL statements, that is, a combination of "AND/OR", clauses like "IN(...)" / "NOT IN(...)", and functions such as "REGEXP_LIKE(text, 'MyText\S+')".
+Optionally you can define a filter predicate. Per default, all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be `status='ACTIVE' AND severity='WARNING'` to only persist active alarms with a severe warning. The filter predicate functionality supports complex SQL statements, that is, a combination of `AND/OR`, clauses like `IN(...)` / `NOT IN(...)`, and functions such as `REGEXP_LIKE(text, 'MyText\S+')`.
 
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You must use the source definition as defined in the corresponding column instead.
 
 {{< c8y-admon-info >}}
-For querying the attribute "id", you must use "&#95;id". For examples on querying different attributes, see also [DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices).
+For querying the attribute `id`, you must use `_id`. For examples on querying different attributes, see also [DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices).
 {{< /c8y-admon-info >}}
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. You must fix these errors before you can proceed.
@@ -219,9 +219,8 @@ Second document:
 }
 ````
 
-The two paths *c8y_TemperatureMeasurement.T* and *c8y_temperaturemeasurement.T* are equal in terms of case-insensitivity. Without name sanitization, only the column *c8y_TemperatureMeasurement.T.unit* will be created, which stores all unit entries. Analogously, one column *c8y_TemperatureMeasurement.T.value* will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR, which Dremio would then coerce to type VARCHAR for the column.
+The two paths `c8y_TemperatureMeasurement.T` and `c8y_temperaturemeasurement.T` are equal in terms of case-insensitivity. Without name sanitization, only the column `c8y_TemperatureMeasurement.T.unit` will be created, which stores all unit entries. Analogously, one column `c8y_TemperatureMeasurement.T.value` will be created, which stores all value entries. In the latter case, the column would have a mixed type of DOUBLE and VARCHAR, which Dremio would then coerce to type VARCHAR for the column.
 
-With name sanitization, two columns *c8y_TemperatureMeasurement.T.unit* and *c8y_temperaturemeasurement.T.unit_6bfa* will be created for unit entries. The unit entries will then be stored in the column with the associated path. Analogously, two columns *c8y_TemperatureMeasurement.T.value* and *c8y_temperaturemeasurement.T.value_490d* will be created for value entries.
 
 The first time an offloading run processes multiple fragments with the corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
 

@@ -45,7 +45,7 @@ Operations are always created with status PENDING. Devices are responsible for m
 
 **SmartREST 2.0**
 
-{{< product-c8y-iot >}} provides the static templates 501, 502, and 503 to manipulate the operation status. These templates take the operation type as input parameter and always update the oldest operation in the preceding status. We recommend handling all operations sequentially in the order they arrive at the device 
+{{< product-c8y-iot >}} provides the static templates 501, 502, and 503 to manipulate the operation status. These templates take the operation type as input parameter and always update the oldest operation in the preceding status. We recommend you to let all operations be handled sequentially in the order they arrive at the device.
 
 Devices can find their operations IDs by querying the Device Control API, by subscribing to the operation JSON topic, or by using a custom response template which includes the IDs, that is, template 504, 505, or 506, which enable setting the status of operations with a known ID.
 

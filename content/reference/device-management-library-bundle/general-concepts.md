@@ -84,7 +84,7 @@ GET /devicecontrol/operations?deviceId=<deviceId>&status=EXECUTING
 }
 ```
 
-Then one by one change the statuses:
+Then it must change the statuses one by one:
 
 ```http
 PUT /devicecontrol/operations/<operationId>

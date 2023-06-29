@@ -35,7 +35,3 @@ The response body indicates the jobs to be checked by an administrator:
 ```
 
 The endpoint can be accessed by any logged in {{< product-c8y-iot >}} user who is authorized to access the {{< product-c8y-iot >}} DataHub microservice.
-
-{{< c8y-admon-info >}}
-The endpoint is released as a "beta" feature. It might change in future releases without prior notice.
-{{< /c8y-admon-info >}}

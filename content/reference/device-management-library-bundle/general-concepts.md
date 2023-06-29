@@ -98,7 +98,7 @@ PUT /devicecontrol/operations/<operationId>
 
 **SmartREST 2.0**
 
-Alternatively the static template 507 may be used. The template changes status from EXECUTING to FAILED for all operations of given type or of any type.
+Alternatively the static template 507 may be used. The template changes the status from EXECUTING to FAILED for all operations of the given type or for all types.
 
 ### Idempotent cases
 

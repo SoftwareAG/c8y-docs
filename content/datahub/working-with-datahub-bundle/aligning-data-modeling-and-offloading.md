@@ -53,6 +53,6 @@ When modeling your data, you have to be aware of the following limitations:
 
 |<div style="width:250px">Description</div>
 |:---
-|Mixed usage of uppercase and lowercase characters for attribute names in the documents is not supported.|
+|If two attribute names in a document only differ by case, only one of the values will be used.|
 |If the collection to be offloaded has JSON attributes consisting of more than 32,000 characters, its data cannot be offloaded. One specific case where this limitation applies is the {{< product-c8y-iot >}} application builder, which stores its assets in the inventory collection when being used.|
 |If the collection to be offloaded has more than 800 JSON attributes, its data cannot be offloaded. This limitation also includes nested JSON content, which will be expanded into columns during offloading. Therefore, measurements documents with more than 800 series/series value fragments are not supported.|

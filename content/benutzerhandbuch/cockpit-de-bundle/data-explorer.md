@@ -114,6 +114,8 @@ Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibli
 
 Klicken Sie im Kontextmenü auf **Von der Liste löschen**, um einen Datenpunkt aus der Datenpunktliste zu löschen.
 
+![Remove data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-removedatapoint.png)
+
 <a name="customize-data-points"></a>
 ### Anpassen von Datenpunktattributen
 

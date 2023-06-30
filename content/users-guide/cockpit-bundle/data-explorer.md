@@ -117,6 +117,8 @@ For further information on the data point library refer to [Data point library](
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
+![Remove data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-removedatapoint.png)
+
 <a name="customize-data-points"></a>
 ### Customizing data point properties
 

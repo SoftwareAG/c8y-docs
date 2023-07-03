@@ -39,7 +39,7 @@ The operation representation is the same as the inventory representation:
    `518,OPEN`
 2. Device sets operation status to EXECUTING <br>
    `501,c8y_Relay`
-3. Device confirms successful execution by setting operation status to SUCCESSFUL <br>
+3. The device confirms successful execution by setting the operation status to SUCCESSFUL<br>
    `503,c8y_Relay`
 
 ### Relay array

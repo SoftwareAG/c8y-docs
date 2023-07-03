@@ -52,6 +52,8 @@ and [Invoking other parts of the Cumulocity IoT REST API]({{< link-apama-webhelp
 
 ### Invoking HTTP services
 
+The following guide is for interacting with external HTTP services. For making requests to other parts of the Cumulocity IoT REST API, see [Invoking other parts of the {{< product-c8y-iot >}} REST API](/streaming-analytics/epl-apps/#invoking-other-api). For making requests to anything else on the platform, including other microservices, see [Connecting Apama to other microservices](/streaming-analytics/epl-apps/#microservices) for a guide on how to do so (and the accompanying Apama documentation: [Invoking microservices]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_microservices.html%23)). 
+
 To interact with HTTP services using REST and JSON, create a `com.softwareag.connectivity.httpclient.HttpTransport` instance using one of the factory methods:
 
 * HttpTransport.getOrCreate(string host, integer port) returns HttpTransport

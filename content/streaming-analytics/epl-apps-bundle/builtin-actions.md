@@ -52,6 +52,11 @@ and [Invoking other parts of the Cumulocity IoT REST API]({{< link-apama-webhelp
 
 ### Invoking HTTP services
 
+{{< c8y-admon-info >}}
+The information below is for interacting with *external* HTTP services. For making requests to other parts of the {{< product-c8y-iot >}} REST API, see the information above.
+For making requests to anything else on the platform, including other microservices, see [Connecting Apama to other microservices](/streaming-analytics/epl-apps/#microservices).
+{{< /c8y-admon-info >}}
+
 To interact with HTTP services using REST and JSON, create a `com.softwareag.connectivity.httpclient.HttpTransport` instance using one of the factory methods:
 
 * HttpTransport.getOrCreate(string host, integer port) returns HttpTransport

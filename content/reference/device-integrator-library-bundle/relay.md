@@ -15,7 +15,7 @@ In a managed object, a relay control model includes the state of the control. Wh
 }
 ```
 
-For devices with `c8y_Relay` fragment [relay control widget](/users-guide/cockpit#relay-control) can be used.
+For devices with the `c8y_Relay` fragment the [Relay control widget](/users-guide/cockpit#relay-control) can be used.
 
 #### Operations
 

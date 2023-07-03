@@ -18,6 +18,21 @@ It is called a subscription as internally the topic is subscribing to a selectio
 This may be revised in a future releases to avoid potential confusion.
 {{< /c8y-admon-caution >}}
 
+The diagram 'Notifcation 2.0 topics and subscriptions' immediately following shows 
+three subscriptions that have been created in Cumulocity IoT that are forwarding notification messages into two topics in the messaging service.
+
+The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions. Both of these are in the `managed-object` context 
+and they both include measurements only. A subscription in the `managed-object` context can only forward messages from a specific managed-object (such as a device) 
+and the managed-object's source id must be provided as the `id` field.  
+Here the leftmost subscription is forwarding measurements from device with source id '12345' and the centrally depicted one the same but from device '67890'.
+
+The 'alarms' topic is in the `tenant` context and therefore will receive all alarms this tenant, regardless of how they are generated 
+(finer grained `tenant` context topics can be created using filters).
+This will include those raised by Cumulocity IoT itself, and those published via REST or MQTT from other components in, or attached to,
+the platform, including any alarms raised by the depicted devices.
+
+![Notification 2.0 topics and subscriptions diagram](/images/reference-guide/notification2/notification2-subscriptions.png)
+
 ### Consumers and tokens
 A topic's notification messages can be received by WebSocket based consumers that have a valid authorizing
 [token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for that specific topic. 
@@ -26,14 +41,15 @@ In typical usage, multiple consumers of a given topic receive and acknowledge pa
 [Shared consumer tokens](../TODO/#shared-tokens) can be used to support cases where a topic's message rate is higher than the rate a single consumer can process them. 
 
 {{< c8y-admon-caution >}}
-A consumer is created in the messaging-service when a client bearing a token with a given 'subscriber' name connects for the first time.
+It is important to manage consumers carefully, only creating (connecting) them if they are to be active,
+and unsubscribing them if they are no longer needed or not needed for long periods.
+
+A consumer resource is created in the messaging-service when a client bearing a token with a given 'subscriber' name connects for the first time.
 That consumer will exist indefinitely or until explicitly 
 [unsubscribed](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenUnsubscribeResource).
-While they exist, consumers each have a backlog of the topic messages that they haven't consumed.
-If a consumer is not connected and receiving notification messages as they are generated, that backlog will grow, costing storage resource. 
+While they exist, consumers each have a backlog of the topic messages that they have not yet consumed.
+If a consumer is not consuming a topic's notification messages promptly as they are generated, that consumer's backlog will grow, costing storage resource. 
 The higher the topic's notification rate is, the quicker those costs will increase. 
-It is therefore important to manage consumers carefully, only creating (connecting) them if they are to be active,
-and unsubscribing them if they are no longer needed or not needed for long periods.
 {{< /c8y-admon-caution >}}
 
 

@@ -37,7 +37,7 @@ The operation representation is the same as the inventory representation:
 
 1. The device receives the command via the 518 static response template<br>
    `518,OPEN`
-2. Device sets operation status to EXECUTING <br>
+2. The device sets the operation status to EXECUTING<br>
    `501,c8y_Relay`
 3. The device confirms successful execution by setting the operation status to SUCCESSFUL<br>
    `503,c8y_Relay`

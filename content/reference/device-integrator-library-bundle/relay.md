@@ -56,7 +56,7 @@ In a managed object, the control model of an array of relays includes the state 
 ]
 ```
 
-For devices with `c8y_Relay` fragment [relay array control widget](/users-guide/cockpit#relay-array-control) can be used.
+For devices with the `c8y_Relay` fragment the [Relay array control widget](/users-guide/cockpit#relay-array-control) can be used.
 
 #### Operations
 

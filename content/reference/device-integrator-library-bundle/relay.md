@@ -77,7 +77,7 @@ The operation representation is the same as the inventory representation:
 
 1. The device receives the command via the 519 static response template<br>
    `519,OPEN,CLOSED,CLOSED,OPEN`
-2. Device sets operation status to EXECUTING <br>
+2. The device sets the operation status to EXECUTING<br>
    `501,c8y_RelayArray`
 3. Device confirms successful execution by setting operation status to SUCCESSFUL <br>
    `503,c8y_RelayArray`

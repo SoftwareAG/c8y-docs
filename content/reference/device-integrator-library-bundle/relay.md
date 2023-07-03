@@ -75,7 +75,7 @@ The operation representation is the same as the inventory representation:
 
 {{< product-c8y-iot >}} provides the 519 static response template:
 
-1. Device receives command via 518 static response template <br>
+1. The device receives the command via the 519 static response template<br>
    `519,OPEN,CLOSED,CLOSED,OPEN`
 2. Device sets operation status to EXECUTING <br>
    `501,c8y_RelayArray`

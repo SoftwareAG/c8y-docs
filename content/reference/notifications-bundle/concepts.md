@@ -8,7 +8,7 @@ layout: redirect
 Internally, Notifications 2.0 uses a [publish-subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) 
 system; organising selected measurement, event, alarms and/or inventory messages into topics according to their area of interest.
 Creating a Notification 2.0 [subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) creates
-a publisher, within Cumulocity IoT, that will forward messages that it matches (based on message qualities such as its source,
+a publisher, within Cumulocity IoT, that will forward Cumulocity IoT messages that it matches (based on message qualities such as its source,
 type or even content, for example) to a specific topic. A single subscription can only forward messages to one topic, 
 multiple subscriptions can forward messages to the same or different topics.  
 
@@ -21,10 +21,11 @@ This may be revised in a future releases to avoid potential confusion.
 The diagram 'Notifcation 2.0 topics and subscriptions' immediately following shows 
 three subscriptions that have been created in Cumulocity IoT that are forwarding notification messages into two topics in the messaging service.
 
-The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions. Both of these are in the `managed-object` context 
-and they both include measurements only. A subscription in the `managed-object` context can only forward messages from a specific managed-object (such as a device) 
-and the managed-object's source id must be provided as the `id` field.  
-Here the leftmost subscription is forwarding measurements from device with source id '12345' and the centrally depicted one the same but from device '67890'.
+The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions. 
+Both of these are in the `managed-object` context and they both include measurements only. 
+A subscription in the `managed-object` context can only forward messages from a specific managed-object (such as a device).  
+Here the leftmost subscription is forwarding measurements from a device with source id '12345' and 
+the centrally depicted one the same but from device '67890'.
 
 The 'alarms' topic is in the `tenant` context and therefore will receive all alarms this tenant, regardless of how they are generated 
 (finer grained `tenant` context topics can be created using filters).
@@ -34,11 +35,12 @@ the platform, including any alarms raised by the depicted devices.
 ![Notification 2.0 topics and subscriptions diagram](/images/reference-guide/notification2/notification2-subscriptions.png)
 
 ### Consumers and tokens
-A topic's notification messages can be received by WebSocket based consumers that have a valid authorizing
-[token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for that specific topic. 
+A topic's notification messages can be received by WebSocket based consumers that present a valid authorizing
+[token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for that specific topic when connecting to 
+the Notification 2.0 WebSocket endpoint. 
 Consumers receive the messages reliably in order and must acknowledge each message in turn. 
-In typical usage, multiple consumers of a given topic receive and acknowledge parallel ordered copies its messages.
-[Shared consumer tokens](../TODO/#shared-tokens) can be used to support cases where a topic's message rate is higher than the rate a single consumer can process them. 
+In typical usage, multiple consumers of a given topic operate independently in parallel, each receiving and acknowledging 
+separate copies of the topic's ordered messages. 
 
 {{< c8y-admon-caution >}}
 It is important to manage consumers carefully, only creating (connecting) them if they are to be active,

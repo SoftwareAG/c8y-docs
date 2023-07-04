@@ -108,13 +108,9 @@ In der Mitte des Dialogs werden alle Datenpunkte des ausgewählten Objekts angez
 
 Auf der rechten Seite werden alle ausgewählten Datenpunkte angezeigt.
 
-Um einen Datenpunkt in der Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie **In Bibliothek speichern**.
-
 Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibliothek](#data-point-library).
 
 Klicken Sie im Kontextmenü auf **Von der Liste löschen**, um einen Datenpunkt aus der Datenpunktliste zu löschen.
-
-![Remove data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-removedatapoint.png)
 
 <a name="customize-data-points"></a>
 ### Anpassen von Datenpunktattributen

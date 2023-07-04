@@ -121,13 +121,9 @@ The center of the dialog shows all data points of the selected object. Select th
 
 The right hand side shows all of the selected data points.
 
-To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
-
 For details on the data point library refer to [Data point library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
-
-![Remove data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-removedatapoint.png)
 
 <a name="customize-data-points"></a>
 ### Customizing data point properties

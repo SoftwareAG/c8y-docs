@@ -51,8 +51,8 @@ A subscription in the `managed-object` context can only forward messages from a 
 Here the leftmost subscription is forwarding measurements from a device with source id '12345' and
 the centrally depicted one the same but from device '67890'.
 
-The 'alarms' topic is in the `tenant` context and therefore will receive all alarms this tenant, regardless of how they are generated
-(finer grained `tenant` context topics can be created using filters).
+The 'alarms' topic is in the `tenant` context and therefore will receive all alarms within the tenant that creates the subscription, 
+regardless of how they are generated (finer grained `tenant` context topics can be created using filters).
 This will include those raised by Cumulocity IoT itself, and those published via REST or MQTT from other components in, or attached to,
 the platform, including any alarms raised by the depicted devices.
 

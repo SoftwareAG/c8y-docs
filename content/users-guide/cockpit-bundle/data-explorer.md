@@ -113,13 +113,11 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
-To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
-
-![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
-
-For details on the data point library refer to [Data point library](#data-point-library).
+For further information on the data point library refer to [Data point library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
+
+![Remove data point](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-removedatapoint.png)
 
 <a name="customize-data-points"></a>
 ### Customizing data point properties

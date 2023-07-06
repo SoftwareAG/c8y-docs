@@ -8,7 +8,7 @@ aliases:
 
 Clicking the **User** button at the top right opens the right drawer which provides access to various actions and information.
 
-<img src="/images/users-guide/getting-started/getting-started-user-account-menus.png" alt="User account menu"  style="max-width: 60%">
+<img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
 At the top you find the following items:
 

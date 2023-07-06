@@ -63,6 +63,12 @@ Initially, the **Localization** page will show a row called **Group** as key. If
 
 Once you create all custom properties and asset types, then all those names are added as keys in the **Localization** page. You can further add the translations as required.
 
+{{< c8y-admon-info>}}
+Note that if an asset property or asset model is present, the corresponding entry on the **Localization** page cannot be deleted. However, if no translation exists for the asset property or asset model, deleting the asset property or asset model will automatically remove the corresponding entry.
+
+On the other hand, if a translation exists for the asset property or asset model, deleting it will not automatically remove the corresponding entry. In such cases, a delete option will be available for that specific translation, allowing you to manually delete the entry.
+{{< /c8y-admon-info>}}
+
 To add a new translation in the DTM application, you can add the text as key and add the translations as required.
 
 
@@ -96,9 +102,9 @@ or:
 2. Add or edit the translation for any language.
 3. Click **Save**.
 
-Add or modify the translation for any language in {{< product-c8y-iot >}}.
+Click **Apply** to apply the changes.
 
-Once all your translations are done, change the language under **User settings**. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
+Once all your translations are done, you can change the language under **User settings** to see the translations in action. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
 
 
 The added translations are now displayed in the DTM application.

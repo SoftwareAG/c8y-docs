@@ -6,6 +6,7 @@ on:
       - opened
       - synchronize
       - reopened
+      - labeled
 
 permissions:
   contents: read

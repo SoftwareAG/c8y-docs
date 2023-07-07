@@ -7,6 +7,7 @@ on:
       - synchronize
       - reopened
       - labeled
+      - closed
 
 permissions:
   contents: read
@@ -28,24 +29,29 @@ jobs:
       HUGO_VERSION: 0.100.1
     steps:
     - name: Install Hugo CLI
+      if: ${{ github.event_name != 'closed' }}
       run: |
         wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
         && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
     - name: Setup base URL env var
+      if: ${{ github.event_name != 'closed' }}
       run: |
         echo BASEURL="https://${{ github.repository_owner }}-${{ github.event.repository.name }}-${{ github.job }}-pr-${{ github.event.number }}.surge.sh/" >> $GITHUB_ENV
 
     - name: Report base URL env var
+      if: ${{ github.event_name != 'closed' }}
       run: echo "${{ env.BASEURL }}"
 
     - name: Checkout
+      if: ${{ github.event_name != 'closed' }}
       uses: actions/checkout@v3
       with:
         submodules: recursive
         fetch-depth: 0
 
     - name: Build with Hugo
+      if: ${{ github.event_name != 'closed' }}
       env:
         # For maximum backward compatibility with Hugo modules
         HUGO_ENVIRONMENT: production

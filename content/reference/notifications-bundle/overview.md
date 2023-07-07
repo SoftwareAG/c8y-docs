@@ -202,11 +202,11 @@ limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_P
 
 `TODO` how should quotes be used below
 
-For example, to include messages of **type** "temperature" and messages of **type** "pressure":
+For example, to include messages with **type** "temperature" and messages with **type** "pressure":
 ```json
 {
   "context": "mo",
-  "subscription": "north-system",
+  "subscription": "subscription01",
   "source": 2468,
   "filter": {
     "type": "'temperature' or 'pressure'"
@@ -217,7 +217,7 @@ To include messages of **type** "temperature" only:
 ```json
 {
   "context": "mo",
-  "subscription": "north-system",
+  "subscription": "subscription01",
   "source": 2468,
   "filter": {
     "type": "temperature"
@@ -225,50 +225,24 @@ To include messages of **type** "temperature" only:
 }
 ```
 
-
-
-### TODO somewhere
-This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
-
-Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context. 
-This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
-It is also possible to subscribe to all alarms or events that are generated in the tenant context.
-
-For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
-There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
-
-
-### Subscription topics TODO
-
-It forms part of the
-topic name.
-Topic names take the form "<TENANT>/relnotif/<SUBSCRIPTION>", where "<TENANT>" is the tenant's id and
-"<SUBCRIPTION>" the value of the **subscription** field. The **nonPersistent** field, following, also can affect an implicit
-default part of the topic name.
-
-Within the messaging service, topic names derived from the **subscription** field, as above, are prefixed with a
-[scheme](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax) that identifies whether a topic is persistent
-or non-persistent. The **nonPersistent** field determines which of these two schemes is applied, defaulting to persistent.  
-Therefore, for example, the topic "t1234/relnotif/temperature" is the same topic as "persistent://t1234/relnotif/temperature".
-Non-persistent topics can only be identified by their complete name including the scheme, for example "non-persistent://t1234/relnotif/temperature"
-
-
 <a name="non-persistent-topics">&nbsp;</a>
-### Non-persistent subscriptions 
+### Persistent and non-persistent subscriptions 
+A subscription can be persistent or non-persistent, implying that the messaging service topic for it is either persistent
+or non-persistent, respectively.
+These have different qualities which can be useful to satisfy the varying needs of differing use-cases. 
 
-When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.
-If it is set to `true`, the created subscription is non-persistent.
-If it is not present or `false`, the subscription will be persistent.
 
-Persistent subscriptions ensure that consumers never miss a message if their connection is interrupted.
-They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
-and to maintain the consumers' positions in subscription notification streams.
+Persistent subscriptions are the default. They are used for reliable messaging, ensuring that consumers never miss a 
+message if their connection is interrupted.
+They use replicated secondary storage to maintain backlogs (within the constraints of any configured storage limits)
+and to maintain the consumers' positions in the subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,
 whether that is due to network issues or deliberate actions by the consumer,
 upon reconnection they will continue to receive notifications from the position they were at before the outage
 (specifically, from the message after the last one they acknowledged successfully before the outage).
 
-Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted across disconnections of the consumer.
+Non-persistent subscriptions are only buffered in memory. A client consumer's position is not persisted across
+interruptions of the client connection.
 When a consumer of a non-persistent subscription has their connection interrupted,
 upon reconnection they will start receiving notifications from the most recent message of the subscription,
 missing all other notifications that occurred during the connection outage.
@@ -276,27 +250,109 @@ This will be the case for such temporarily disconnected consumers,
 even if other consumers of the same non-persistent subscription
 are still receiving older messages that occurred while it was not connected.
 
-If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request,
-they are *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters you choose. They do not have to be
-persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.
+If you create both a persistent and a non-persistent subscription with the same **subscription** field,
+they are *separate*, independent subscriptions, backed by separate topics.
+Such subscriptions can vary by any other body parameters you choose; they do not have to be
+persistent and non-persistent variations of the same notification data. 
 
-When a consumer creates a token for either a persistent or non-persistent subscription,
-it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
-For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription.
-Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.
+When creating a token for a non-persistent subscription topic, the token's **nonPersistent** field must be set to `true`.
+As is the case for the subscription, this field defaults to `false`, meaning the token will be for a persistent subscription topic.
 
-### Receiving subscribed notifications
 
-In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications.
 
-This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
+### TODO somewhere
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for both the Notification 2.0 Subscription and Token API.
+Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context.
+This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
+It is also possible to subscribe to all alarms or events that are generated in the tenant context.
+
+For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
+There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
+
+
+### Creating Tokens 
+The JSON fields sent in a [create token request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenResource)
+determine which subscription topic a consumer can receive messages from, the token's duration, 
+the [shared](../notifications/#shared-tokens) nature of the consumer, and an identifier for the consumer.
+
+The **subscription** field aligns with the same field in the subscription object, so broadly specifies the subscription
+topic the consumer will receive notifications from. The **nonPersistent** field is also a factor in identifying the topic.
+
+The **nonPersistent** field aligns with the same field in the subscription object so identifies whether the subscription topic
+is [persistent or nonPersistent](../notifications/#non-persistent-topics) and therefore is a factor in identifying the topic only. 
+There is no such thing as a peristent or non-peristent consumer 
+and tokens cannot affect the nature they experience of topics using this field. 
+
+The **subscriber** field provides a unique (within the scope of this topic) identity for the consumer, allowing 
+it to be recognised across connection interruptions, so allowing message delivery to be reliable.
+
+The **shared** field determines if multiple clients can connect in parallel as the consumer identified in the 
+**subscriber** field, acting collectively to share the notification message processing load.
+
+The **expiresInMinutes** field is the period that this token will remain valid for, defaulting to "1440" minutes (1 day).
+
+The following summarizes the token fields.
+<table>
+<thead>
+<tr>
+<th nowrap="nowrap">Field Name&nbsp;</th>
+<th>Value</th>
+<th>Required/Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td nowrap="nowrap">subscription</td>
+<td>string</td>
+<td>Required</td>
+<td>Identifies topic</td>
+</tr>
+<tr>
+<td nowrap="nowrap">nonPersistent</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Must be true to identify a nonPersistent topic</td>
+</tr>
+<tr>
+<td nowrap="nowrap">subscriber</td>
+<td>String</td>
+<td>Required</td>
+<td>Identifies the consumer bearing this token</td>
+</tr>
+<tr>
+<td nowrap="nowrap">shared</td>
+<td>Boolean</td>
+<td>false</td>
+<td>True if multiple clients can act collectively as this consumer.</td>
+</tr>
+<tr>
+<td nowrap="nowrap">expiresInMinutes</td>
+<td>Integer</td>
+<td>1440</td>
+<td>The token duration</td>
+</tr>
+</tbody>
+</table>
+
+
+
+`OLD BELOW (for harvesting bits)`
+In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization 
+token that provides proof that the holder is allowed to receive subscribed notifications.
+
+This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from 
+the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
+
+This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
+
+
 
 Once subscribed, notifications are persisted and available to be consumed using a new WebSocket-based protocol.
 This protocol implements a reliable delivery with at-least-once semantics.
-The underlying Messaging Service will repeatedly attempt to deliver a notification until that notification is acknowledged as being received and processed by the consuming application or microservice.
+The underlying Messaging Service will repeatedly attempt to deliver a notification until that notification is acknowledged 
+as being received and processed by the consuming application or microservice.
 Notification order is preserved from the point of view of a device sending in REST and MQTT API requests.
 The protocol is text-based and described in detail in the next section.
 
@@ -312,6 +368,7 @@ As the token string is a JWT (JSON Web Token), it can be decoded to extract the 
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
 The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
 
+<a name="shared-tokens">&nbsp;</a>
 ### Shared tokens
 
 Shared tokens allow parallelization of the consumer client workload for a notification subscription.

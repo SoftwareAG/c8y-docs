@@ -32,8 +32,12 @@ jobs:
         wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
         && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-    # - name: Install Dart Sass
-    #   run: sudo snap install dart-sass
+    - name: Setup base URL env var
+      run: |
+        echo BASEURL="https://${{ github.event.repository.name }}-${{ github.repository_owner }}-build-preview-pr-${{ github.event.number }}.surge.sh/" >> $GITHUB_ENV
+
+    - name: Report base URL env var
+      run: echo "${{ env.BASEURL }}"
 
     - name: Checkout
       uses: actions/checkout@v3
@@ -50,9 +54,21 @@ jobs:
         hugo \
           --gc \
           --minify \
-          --baseURL "/"
+          --baseURL "${{ env.BASEURL }}"
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
+
+    - name: Deploy to surge                            
+      uses: afc163/surge-preview@v1
+      id: preview_step
+      with:
+        surge_token: ${{ secrets.SURGE_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        dist: public
+        failOnError: false
+        teardown: true
+        build: |
+          echo Deploying to surge.sh

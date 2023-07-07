@@ -327,7 +327,7 @@ If you are using multiple intermediate certificates between the CA certificate a
     * If your keystore is in the JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
 6. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
 
-### How to test created certificates with MQTT.fx client
+### How to test created certificates with MQTT client
 
 ### Keystore and truststore
 
@@ -406,36 +406,6 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 {{< c8y-admon-info >}}
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
-
-
-
-### Install and configure the MQTT client
-
-1. Download and install the newest MQTT.fx client from: [softblade.de/en/download-2](https://softblade.de/en/download-2/)
-2. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**.
-3. Edit the connection profiles like so:
-    - Insert the {{< company-c8y >}} URL in the **Broker address** line.
-    - Insert the SSL port in the **Broker port** line.
-    - In the **Client ID** field, insert the common name of your device certificate.
-    - Select SSL/TLS as the authentication type.
-    - Click **Enable SSL/TLS**.
-    - Select **TSL v1.2** or **TSL v1.3**.
-    - Select **Self signed certificates in keystores**
-    - In **Keystore File** insert the path to your deviceTruststore file with either JKS or PKCS12 format.
-    - In **Trusted Keystore Alias** insert **servercertificate** or a different value if you provided a different alias in step 3 above.
-    - In **Trusted Keystore Password** insert the password, which you created during the deviceTruststore file creation.
-    - In **Client Keystore** insert the path to your deviceKeystore file with either JKS or PKCS12 format.
-    - In **Client Keystore Password** insert the password you created during the deviceKeystore creation.
-    - In **Client KeyPair Alias** insert **devicekeyentry** or a different value if you provided a different alias in the "-name" parameter during the step about keystore creation in [Generating and signing certificates](#generating-and-signing-certificates).
-    - In **Client KeyPair Password** insert the password, which you created during the deviceKey.pem creation.
-    - The **PEM formatted** field should be checked.
-4. Save and close the settings.
-5. Select the edited profile and click connect.
-6. You should be succesfully connected and the buttons **Disconnect**, **Publish** and **Subscribe** should be active now. This means that your connection with the certificates work correctly.
-
-The connection settings should look like this:
-
-![MQTT.fx configuration](/images/mqtt/mqttFxConfig.png)
 
 ### MQTT example client
 

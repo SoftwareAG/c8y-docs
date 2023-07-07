@@ -50,6 +50,7 @@ jobs:
         hugo \
           --gc \
           --minify \
+          --baseURL "/"
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1

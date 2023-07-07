@@ -253,7 +253,7 @@ Therefore, for example, the topic "t1234/relnotif/temperature" is the same topic
 Non-persistent topics can only be identified by their complete name including the scheme, for example "non-persistent://t1234/relnotif/temperature"
 
 
-<a name="non-persistent-topics"/>"
+<a name="non-persistent-topics">&nbsp;</a>
 ### Non-persistent subscriptions 
 
 When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.

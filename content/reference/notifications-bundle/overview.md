@@ -30,41 +30,43 @@ See the rest of this section and the detailed API documentation for full details
 
 ### Topics and subscriptions
 Internally, Notifications 2.0 uses a [publish-subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
-system; organising selected measurement, event, alarms and/or inventory messages into topics according to their area of interest.
-Creating a Notification 2.0 [subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) creates
-a publisher, within Cumulocity IoT, that will forward Cumulocity IoT messages that it matches (based on message qualities such as its source,
-type or even content, for example) to a specific topic. A single subscription can only forward messages to one topic,
-multiple subscriptions can forward messages to the same or different topics.
+system, allowing use-cases to organise their desired selections of measurement, event, alarm and/or inventory messages 
+into topics according to functional interest.
+Creating a Notification 2.0 [subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions)
+within {{< product-c8y-iot >}} creates a publisher (internally), that will forward {{< product-c8y-iot >}} messages that it matches (based 
+on message qualities such as its source, type or even content, for example) to a specific topic. 
+A single subscription can only forward messages to one topic, multiple subscriptions can forward messages to the same or different topics.
 
 {{< c8y-admon-caution >}}
 The term 'subscription' is overloaded and can be confusing here.
-It is called a subscription as internally the topic is subscribing to a selection of Cumulocity IoT messages - it does not relate to a Notification 2.0 end consumer.
-This may be revised in a future releases to avoid potential confusion.
+It is called a subscription as internally the topic is subscribing to a selection of {{< product-c8y-iot >}} messages - it does not relate to a Notification 2.0 end consumer.
+This may be revised in a future release to avoid potential confusion.
 {{< /c8y-admon-caution >}}
 
-The diagram 'Notifcation 2.0 topics and subscriptions' immediately following shows
-three subscriptions that have been created in Cumulocity IoT that are forwarding notification messages into two topics in the messaging service.
+The diagram 'Notification 2.0 topics and subscriptions' immediately following shows
+three subscriptions that have been created in {{< product-c8y-iot >}} that are forwarding notification messages into two topics in the messaging service.
 
 The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions.
-Both of these are in the `managed-object` context and they both include measurements only.
-A subscription in the `managed-object` context can only forward messages from a specific managed-object (such as a device).  
-Here the leftmost subscription is forwarding measurements from a device with source id '12345' and
+Both of these have a managed-object context and they both include messages from the measurement api only.
+A subscription with a managed-object context can only forward messages from a specific managed-object (such as a device).
+The leftmost subscription is forwarding measurements from a device with source id '12345' and
 the centrally depicted one the same but from device '67890'.
 
-The 'alarms' topic is in the `tenant` context and therefore will receive all alarms within the tenant that creates the subscription, 
-regardless of how they are generated (finer grained `tenant` context topics can be created using filters).
-This will include those raised by Cumulocity IoT itself, and those published via REST or MQTT from other components in, or attached to,
+The 'alarms' topic is receiving alarms from the rightmost subscription. It has a tenant context and includes messages from 
+the alarm api. It will forward all alarms within the tenant that creates the subscription, regardless of how they are generated 
+(finer grained topics can be created using filters).
+The forwarded alarms will include those raised by {{< product-c8y-iot >}} itself, and those published via REST or MQTT from other components in, or attached to,
 the platform, including any alarms raised by the depicted devices.
 
-![Notification 2.0 topics and subscriptions diagram](/images/reference-guide/notification2/notification2-subscriptions.png)
+![Notification 2.0 topics and subscriptions diagram](/images/reference-guide/notification2/notification2-subscriptions.svg)
 
 ### Consumers and tokens
 A topic's notification messages can be received by WebSocket based consumers that present a valid authorizing
-[token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for that specific topic when connecting to
-the Notification 2.0 WebSocket endpoint.
-Consumers receive the messages reliably in order and must acknowledge each message in turn.
+token for that specific topic when connecting to the Notification 2.0 WebSocket endpoint. Tokens can be obtained from the
+{{< product-c8y-iot >}}  [token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) REST API by authenticated users.
+Consumers receive the topic messages reliably in order and must acknowledge each message in turn.
 In typical usage, multiple consumers of a given topic operate independently in parallel, each receiving and acknowledging
-separate copies of the topic's ordered messages.
+separate copies of those messages.
 
 {{< c8y-admon-caution >}}
 It is important to manage consumers carefully, only creating (connecting) them if they are to be active,
@@ -78,19 +80,198 @@ If a consumer is not consuming a topic's notification messages promptly as they 
 The higher the topic's notification rate is, the quicker those costs will increase.
 {{< /c8y-admon-caution >}}
 
-### Managed object context
+![Notification 2.0 consumers and consumer clients diagram](/images/reference-guide/notification2/notification2-consumers.svg)
 
-For managed objects, an object's global identifier must be used to subscribe in the managed object context ("mo") in order to receive notifications.
-There can be multiple subscriptions for the same subscribed object, with different filters or just to fan out to multiple interested consumer parties.
+### Creating subscriptions
+The JSON fields sent in a [create subscription request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource)
+determine which {{< product-c8y-iot >}} messages are forwarded to a topic, and the forwarded message content.
 
-This subscribed object is known as the source object for the <kdb>notification/event</kdb> and it is referenced in the notifications delivered to subscribers.
-Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
+The **context** field broadly determines the type of {{< product-c8y-iot >}} message a subscription might match and forward.
+There are two valid **context** values: "mo" (managed-object) and "tenant" and each only supports a subset of the available JSON fields, as follows:
+
+The **source** fields can only be used if the **context** is "mo". It must be the value of a managed-object's global identifier 
+(sometimes referred to as a 'device id' or 'source id'). This is used to target inclusion of messages from the given managed-object.
+
+**subscription** is the first of two fields that identify which topic this subscription will forward messages to.
+Multiple subscriptions can contribute a single topic if they have they same values for both topic identifying fields.
+
+The **nonPersistent** field determines if the topic is [persistent or nonPersistent](../notifications/#non-persistent-topics).
+Subscriptions with the same **subscription** field value, but different **nonPersistent** values forward to two different topics.
+It is, therefore, the second of the two fields that identify the subscription topic. 
+
+The **filter** fields can provide a [subscription filter](../notifications/#subscription-filter), allowing more finely 
+grained selection of the included messages, based upon the message's type and its API (is it a measurement or alarm, for example). 
+
+The **fragmentsToCopy** field allows the forwarded messages to be transformed so that they contain only a specific subset
+of the fragments present in the original {{< product-c8y-iot >}} messages they are generated from. This can be useful, for example,
+for security, bandwidth saving or functionality scoping reasons. 
+
+The following summarizes the subscription fields.
+<table>
+<thead>
+<tr>
+<th nowrap="nowrap">Field Name&nbsp;</th>
+<th>Value</th>
+<th>Required/Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td nowrap="nowrap">context</td>
+<td>"mo" or "tenant"</td>
+<td>Required</td>
+<td>Only values "mo" and "tenant" are supported</td>
+</tr>
+<tr>
+<td nowrap="nowrap">source</td>
+<td>A managed object global identifier</td>
+<td>Required if context is "mo"</td>
+<td></td>
+</tr>
+<tr>
+<td nowrap="nowrap">subscription</td>
+<td>String</td>
+<td>Required</td>
+<td>Determines messaging-service topic used</td>
+</tr>
+<tr>
+<td nowrap="nowrap">nonPersistent</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Determines if a persistent or non-persistent topic is used</td>
+</tr>
+<tr>
+<td nowrap="nowrap">filter</td>
+<td>JSON object</td>
+<td>All messages</td>
+<td>Includes messages based on message values</td>
+</tr>
+<tr>
+<td nowrap="nowrap">fragmentsToCopy</td>
+<td>JSON list of strings</td>
+<td>All fragments</td>
+<td>Determines which fragments are included in forwarded messages.</td>
+</tr>
+</tbody>
+</table>
+
+<a name="subscription-filter">&nbsp;</a>
+### Subscription filters
+Subscription filters provide fine-grained selection of the {{< product-c8y-iot >}} messages a subscription will forward.
+Filters can be provided as the **subscriptionFilter** field in a subscription's JSON object at creation time. 
+It is a JSON object with **apis** and **typeFilter** fields.  
+Filters specified by subscriptions with "tenant" **context** *must* provide a **typeFilter** value.
+Filters specified by those with "mo" **context** can provide either or both filter fields.
+
+The **apis** field is a JSON array that specifies which {{< product-c8y-iot >}} API messages to include.
+To include messages from all APIs use an array containing just the wildcard value, "*". 
+To include messages from a selection of the APIs only use an array containing any single or multiple selection from 
+"alarms", "alarms with children", "events", "events with children", "measurements", "managed objects" and "operations".
+
+For example, to include only measurements and alarms:
+```json
+{
+  "context": "mo",
+  "subscription": "north-system",
+  "source": 2468,
+  "filter": {
+    "apis": ["measurement", "alarm"]
+  }
+}
+```
+
+The "alarms with children" and "events with children" **api** values allow subscriptions with managed-object **context**
+to filter in, respectively, alarms or events for all recursively descendant child managed-objects of the **source**
+managed-object in addition to inclusion of those from the **source** managed-object itself.
+
+The **typeFilter** string field is matched against the original message's **type** field. It can be a single value, or a
+limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) expression.
+
+`TODO` how should quotes be used below
+
+For example, to include messages of **type** "temperature" and messages of **type** "pressure":
+```json
+{
+  "context": "mo",
+  "subscription": "north-system",
+  "source": 2468,
+  "filter": {
+    "type": "'temperature' or 'pressure'"
+  }
+}
+```
+To include messages of **type** "temperature" only:
+```json
+{
+  "context": "mo",
+  "subscription": "north-system",
+  "source": 2468,
+  "filter": {
+    "type": "temperature"
+  }
+}
+```
+
+
+
+### TODO somewhere
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations, or any combination of these) to filter by. The alarms with children and events with children enable users to create explicit subscriptions that allow the delivery of child as well as parent managed object events and alarms.
-It is also possible to filter by the presence of a specific value of a JSON "type" attribute using an OData expression, at the moment only the "or" operator is supported which allows filtering of multiple types with the use of an expression `'type1' or 'type2' [or 'typeN']` (as the type attribute is assumed, it is equivalent to a `type eq 'type1' or type eq 'type2' [or type eq 'typeN']` expression).
-When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
-For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
+Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context. 
+This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
+It is also possible to subscribe to all alarms or events that are generated in the tenant context.
+
+For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
+There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
+
+
+### Subscription topics TODO
+
+It forms part of the
+topic name.
+Topic names take the form "<TENANT>/relnotif/<SUBSCRIPTION>", where "<TENANT>" is the tenant's id and
+"<SUBCRIPTION>" the value of the **subscription** field. The **nonPersistent** field, following, also can affect an implicit
+default part of the topic name.
+
+Within the messaging service, topic names derived from the **subscription** field, as above, are prefixed with a
+[scheme](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax) that identifies whether a topic is persistent
+or non-persistent. The **nonPersistent** field determines which of these two schemes is applied, defaulting to persistent.  
+Therefore, for example, the topic "t1234/relnotif/temperature" is the same topic as "persistent://t1234/relnotif/temperature".
+Non-persistent topics can only be identified by their complete name including the scheme, for example "non-persistent://t1234/relnotif/temperature"
+
+
+<a name="non-persistent-topics"/>"
+### Non-persistent subscriptions 
+
+When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.
+If it is set to `true`, the created subscription is non-persistent.
+If it is not present or `false`, the subscription will be persistent.
+
+Persistent subscriptions ensure that consumers never miss a message if their connection is interrupted.
+They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
+and to maintain the consumers' positions in subscription notification streams.
+When a consumer of a persistent subscription has their connection interrupted,
+whether that is due to network issues or deliberate actions by the consumer,
+upon reconnection they will continue to receive notifications from the position they were at before the outage
+(specifically, from the message after the last one they acknowledged successfully before the outage).
+
+Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted across disconnections of the consumer.
+When a consumer of a non-persistent subscription has their connection interrupted,
+upon reconnection they will start receiving notifications from the most recent message of the subscription,
+missing all other notifications that occurred during the connection outage.
+This will be the case for such temporarily disconnected consumers,
+even if other consumers of the same non-persistent subscription
+are still receiving older messages that occurred while it was not connected.
+
+If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request,
+they are *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters you choose. They do not have to be
+persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.
+
+When a consumer creates a token for either a persistent or non-persistent subscription,
+it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
+For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription.
+Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.
 
 ### Receiving subscribed notifications
 
@@ -107,23 +288,6 @@ The underlying Messaging Service will repeatedly attempt to deliver a notificati
 Notification order is preserved from the point of view of a device sending in REST and MQTT API requests.
 The protocol is text-based and described in detail in the next section.
 
-### Tenant context
-
-The tenant context ("tenant") is used for subscribing to and receiving notifications, in addition to the managed object context ("mo") mentioned above.
-Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context.
-This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
-It is also possible to subscribe to all alarms or events that are generated in the tenant context.
-
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
-
-For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
-There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
-
-### Building consuming microservices and applications
-
-For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application. Any WebSocket library or programming language can be used as the protocol is text-based and relatively simple. Consumer can be either microservices or applications running externally from {{< product-c8y-iot >}} and require only a JWT string when connecting.
-
-There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice), so Java developers do not need to code to the protocol specification directly.
 
 ### Token expiration
 
@@ -135,37 +299,6 @@ If the parameters used are not available they can be extracted from the token.
 As the token string is a JWT (JSON Web Token), it can be decoded to extract the original information used to create the token by splitting it into 3 parts (on ".") and doing a base64 decode on the first substring.
 This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
 The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
-
-### Non-persistent subscriptions and their tokens
-
-When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.
-If it is set to `true`, the created subscription is non-persistent. 
-If it is not present or `false`, the subscription will be persistent.
-
-Persistent subscriptions ensure that consumers never miss a message if their connection is interrupted.
-They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
-and to maintain the consumers' positions in subscription notification streams.
-When a consumer of a persistent subscription has their connection interrupted,
-whether that is due to network issues or deliberate actions by the consumer,
-upon reconnection they will continue to receive notifications from the position they were at before the outage 
-(specifically, from the message after the last one they acknowledged successfully before the outage). 
-
-Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted across disconnections of the consumer.
-When a consumer of a non-persistent subscription has their connection interrupted,
-upon reconnection they will start receiving notifications from the most recent message of the subscription,
-missing all other notifications that occurred during the connection outage. 
-This will be the case for such temporarily disconnected consumers,
-even if other consumers of the same non-persistent subscription 
-are still receiving older messages that occurred while it was not connected. 
-
-If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request, 
-they are *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters you choose. They do not have to be
-persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.  
-
-When a consumer creates a token for either a persistent or non-persistent subscription, 
-it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
-For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
-Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.  
 
 ### Shared tokens
 
@@ -233,3 +366,9 @@ It's not possible to check if the unsubscribe operation succeeded as the connect
 
 It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, 
 as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.
+
+### Building consuming microservices and applications
+
+For Java developers, the API and the protocol have been wrapped up as an open Java API and a sample WebSocket client application. Any WebSocket library or programming language can be used as the protocol is text-based and relatively simple. Consumer can be either microservices or applications running externally from {{< product-c8y-iot >}} and require only a JWT string when connecting.
+
+There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice), so Java developers do not need to code to the protocol specification directly.

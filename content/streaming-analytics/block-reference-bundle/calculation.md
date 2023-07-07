@@ -711,7 +711,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 `apama.analyticskit.blocks.cumulocity.KPI`
 
 <p>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device, asset or group of devices.</p>
-<p>This block uses data from the KPI input port or from the device which contains data points. It extracts the units, label, and the red and yellow ranges. The output indicates whether the value is within the red or yellow range specified by the KPI or data point.
+<p>This block uses data from the KPI input port or from the device, asset or group of devices which contains data points. It extracts the units, label, and the red and yellow ranges. The output indicates whether the value is within the red or yellow range specified by the KPI or data point.
 <p></p>
 The KPI input can provide properties, typically from a KPI-managed object, which include the red and yellow ranges, the unit and the label. If the device contains a data point for the specified fragment and series, then the values from the data point override those from the KPI.</p>
 

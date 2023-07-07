@@ -165,11 +165,23 @@ Filters specified by subscriptions with "tenant" **context** *must* provide a **
 Filters specified by those with "mo" **context** can provide either or both filter fields.
 
 The **apis** field is a JSON array that specifies which {{< product-c8y-iot >}} API messages to include.
-To include messages from all APIs use an array containing just the wildcard value, "*". 
-To include messages from a selection of the APIs only use an array containing any single or multiple selection from 
+Use an array containing just the wildcard value, "*", to include messages from all APIs. 
+To include messages from a selection of the APIs, only use an array containing any single or multiple selection from 
 "alarms", "alarms with children", "events", "events with children", "measurements", "managed objects" and "operations".
 
-For example, to include only measurements and alarms:
+For example, to messages from all APIs:
+```json
+{
+  "context": "mo",
+  "subscription": "north-system",
+  "source": 2468,
+  "filter": {
+    "apis": ["*"]
+  }
+}
+```
+
+To include only messages from the measurements and alarms APIs:
 ```json
 {
   "context": "mo",
@@ -181,7 +193,7 @@ For example, to include only measurements and alarms:
 }
 ```
 
-The "alarms with children" and "events with children" **api** values allow subscriptions with managed-object **context**
+The "alarms with children" and "events with children" **apis** values allow subscriptions with managed-object **context**
 to filter in, respectively, alarms or events for all recursively descendant child managed-objects of the **source**
 managed-object in addition to inclusion of those from the **source** managed-object itself.
 

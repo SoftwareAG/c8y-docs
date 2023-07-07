@@ -54,11 +54,6 @@ jobs:
         hugo \
           --baseURL "${{ env.BASEURL }}"
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: ./public
-
     - name: Deploy to surge                            
       uses: afc163/surge-preview@v1
       id: preview_step

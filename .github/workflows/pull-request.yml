@@ -7,6 +7,7 @@ on:
       - synchronize
       - reopened
       - labeled
+      - closed
 
 permissions:
   contents: read
@@ -28,6 +29,7 @@ jobs:
       HUGO_VERSION: 0.100.1
     steps:
     - name: Install Hugo CLI
+      if: ${{ github.event.pull_request.state != 'closed' }}
       run: |
         wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
         && sudo dpkg -i ${{ runner.temp }}/hugo.deb
@@ -40,12 +42,14 @@ jobs:
       run: echo "${{ env.BASEURL }}"
 
     - name: Checkout
+      if: ${{ github.event.pull_request.state != 'closed' }}
       uses: actions/checkout@v3
       with:
         submodules: recursive
         fetch-depth: 0
 
     - name: Build with Hugo
+      if: ${{ github.event.pull_request.state != 'closed' }}
       env:
         # For maximum backward compatibility with Hugo modules
         HUGO_ENVIRONMENT: production
@@ -60,6 +64,12 @@ jobs:
 
     - run: npm install -g surge
 
-    - name: Deploy to surge                            
+    - name: Deploy to surge
+      if: ${{ github.event.pull_request.state != 'closed' }}
       run: |
         surge ./public ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+
+    - name: Remove from surge
+      if: ${{ github.event.pull_request.state == 'closed' }}
+      run: |
+        surge teardown ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}

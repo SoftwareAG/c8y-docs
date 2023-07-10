@@ -17,6 +17,7 @@ When you log into your {{< product-c8y-iot >}} tenant you are greeted with the {
 ![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 It shows a number of pre-installed widgets that give you an introduction to the different options how to individualize your home dashboard.
+
 At the top you see the **Welcome to Cockpit** widget, which works as an entryway to the most important functions of the {{< product-c8y-iot >}} Cockpit, such as connecting and registering devices, adding groups, reports and exports as well as smart rules.
 
 Below this widget you find a number of other widgets like the **Map** widget or an **Alarms** widget.
@@ -29,7 +30,7 @@ The **Lock/Unlock** toggle allows you to lock the dashboard. Locking the dashboa
 
 If you want to undo any changes to your Home dashboard, use the **Reset dashboard** icon. This reverts all changes to the dashboard and returns it to the initial state.
 
-At the very top right you can find additional information about working with dashboards. Click the questionmark icon to display the **Working with Dashboards** dialog window.,
+At the very top right you can find additional information about working with dashboards. Click the question mark icon to display the **Working with Dashboards** dialog window.
 
 
 ### Navigator

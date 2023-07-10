@@ -73,3 +73,7 @@ jobs:
       if: ${{ github.event.pull_request.state == 'closed' }}
       run: |
         surge teardown ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+        
+    - name: Run Summary
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      run: echo "Preview available **[here](${{ env.BASEURL }}/welcome)**" >> $GITHUB_STEP_SUMMARY

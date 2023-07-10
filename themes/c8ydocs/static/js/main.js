@@ -12,6 +12,12 @@ var main = (function ($) {
         vmenu.find('.dropdown-menu').html('');
         $('#current-dropdown-version-toggle').text('');
 
+        if (!loc.href.includes("/guides/")) {
+          console.warn(`Expected to be hosted from guides subfolder. Hiding version dropdown.`);
+          $('#dropdownVersionButton').hide();
+          return;
+        }
+        
         vs = []
         for (var i = 0; i < urls.length; i++) {
           vs.push(urls[i].label);

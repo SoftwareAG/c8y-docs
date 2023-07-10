@@ -80,7 +80,7 @@ jobs:
       run: echo "Preview available **[here](${{ env.BASEURL }}/welcome)**" >> $GITHUB_STEP_SUMMARY
       
     - name: Add Comment to PR
-      if: ${{ github.event.pull_request.state != 'closed' }}
+      if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
       uses: actions/github-script@v6
       with:
         script: |

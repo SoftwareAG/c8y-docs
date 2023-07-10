@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -77,3 +78,15 @@ jobs:
     - name: Run Summary
       if: ${{ github.event.pull_request.state != 'closed' }}
       run: echo "Preview available **[here](${{ env.BASEURL }}/welcome)**" >> $GITHUB_STEP_SUMMARY
+      
+    - name: Add Comment to PR
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Preview available **[here](${{ env.BASEURL }}/welcome)**'
+          })

@@ -4,6 +4,8 @@ title: Working with shift plans
 layout: redirect
 ---
 
+![Shift Plans](/images/oee/administration/admin-shift-plans.png)
+
 Each known location can have a shift plan which consists of one or more shifts. You create a location by assigning it to a machine profile. A shift defines the time when all machines in this location are in a specific mode, i.e. in production or non-production mode.
 
 If a machine is in production mode, it is running and produces goods. If it is non-production mode, it might be in maintenance and no goods should be produced.

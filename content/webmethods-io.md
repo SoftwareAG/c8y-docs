@@ -9,4 +9,4 @@ section:
 weight: 110
 ---
 
-webMethods.io Integration is Software AG’s cloud based integration solution. It enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.
+webMethods.io Integration is {{< company-sag >}}'s cloud based integration solution. It enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.

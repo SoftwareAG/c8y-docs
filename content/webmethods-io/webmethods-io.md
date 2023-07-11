@@ -34,7 +34,7 @@ If the icon is unavailable you might not be subscribed to **webMethods.io Integr
 
 Integrations in webmethods.io are called "workflows". A workflow is a connection between two or more web apps or services. It's like a set of steps required to perform a task.
 
-The example workflow below is triggered by an alarm in {{< product-c8y-iot >}} and creates a ticket in Zendesk and sends an SMS message.
+The example workflow below is triggered by an alarm in {{< product-c8y-iot >}}, creates a ticket in Zendesk and sends an SMS message.
 
 ![webMethods.io Example Workflow](/images/users-guide/webMethods.io/wmio-example1.png)
 

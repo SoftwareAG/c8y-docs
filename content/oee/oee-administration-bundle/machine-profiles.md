@@ -96,7 +96,7 @@ Once you have saved a profile, the selected machine cannot be changed.
 
 #### Location
 
-The location indicates where the machine is located. It is used to apply a shift plan to this profile. See the [Shift Plans](/oee/oee-administration/#shiftplan) section for more details regarding shift plans and the calculation implications.
+The location indicates where the machine is located. It is used to apply a shift plan to this profile. See [Working with shift plans](/oee/oee-administration/#shiftplan) for more details regarding shift plans and the calculation implications.
 
 
 ### Workpiece

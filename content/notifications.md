@@ -1,5 +1,5 @@
 ---
-title: Notifications 2.0
+title: Notifications
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect

@@ -1,5 +1,5 @@
 ---
-title: "Application development & solutions enablement"
+title: "Application enablement & solutions"
 icon: "c8y-icon c8y-icon-tools"
 weight: 40
 svg: '<svg

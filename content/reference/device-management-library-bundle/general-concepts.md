@@ -100,6 +100,7 @@ PUT /devicecontrol/operations/<operationId>
 
 Alternatively the static template 507 may be used. The template changes the status from EXECUTING to FAILED for all operations of the given type or for all types.
 
+`507,,"Unexpected device restart"`
 ### Idempotent cases
 
 In cases where a device receives an operation that requests a state that is already present, it is up to the device how the operation should be handled. This may for example be the case when a device is requested to install a software package that is already present in the requested version. Typically there are three different ways of handling such cases in device agents: skip, execute, or fail. In case of the mentioned software package that is already installed the following options could be selected:

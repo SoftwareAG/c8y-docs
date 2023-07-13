@@ -38,7 +38,7 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
-        run: sudo snap install dart-sass
+        run: sudo snap install dart-sass-embedded
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -67,7 +67,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, my-edge-runner]
     needs: build
     steps:
       - name: Deploy to GitHub Pages

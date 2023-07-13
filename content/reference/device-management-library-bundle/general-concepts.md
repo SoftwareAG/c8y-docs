@@ -57,7 +57,7 @@ It is up to the device and its use case whether it should roll back any local st
 
 ### Recovering after agent crash
 
-After an unexpected restart a device must cleanly recover its status. This includes all status parameters communicated with the platform and all ongoing operations. Recovering status can be done by updating all values in the cloud with the current truth from the device. Recovering ongoing operations is more difficult. Devices are expected to keep track of all operations they moved to status EXECUTING. Typically devices keep information of longer running operations in a persistent storage so that they can be resumed. In unexpected shutdowns or crash scenarios this may not always be possible. In this case the device may cancel all ongoing operations to reset its own status.
+After an unexpected restart a device must cleanly recover its status. This includes all status parameters communicated with the platform and all ongoing operations. Recovering the status can be done by updating all values in the cloud with the current values on the device. Recovering ongoing operations is more difficult. Devices are expected to keep track of all operations they moved to status EXECUTING. Typically devices keep information of longer-running operations in a persistent storage so that they can be resumed. In unexpected shutdown or crash scenarios this may not always be possible. In this case the device may cancel all ongoing operations to reset its own status.
 
 ```http
 GET /devicecontrol/operations?deviceId=<deviceId>&status=EXECUTING

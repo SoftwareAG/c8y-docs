@@ -191,4 +191,4 @@ svg: '<svg
 '
 ---
 
-Get a first impression by reading about the concepts behind the {{< product-c8y-iot >}} platform. Or directly get started by following the quick start instructions.
+Read about the concepts behind the {{< product-c8y-iot >}} platform. Or directly get started by connecting your phone.

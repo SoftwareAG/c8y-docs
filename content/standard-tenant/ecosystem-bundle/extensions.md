@@ -3,7 +3,7 @@ title: Extensions
 layout: bundle
 weight: 40
 section:
-  - app_development
+  - platform_administration
 ---
 
 <!--- <a name="extensions"></a> --->

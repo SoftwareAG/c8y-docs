@@ -1,9 +1,9 @@
 ---
 weight: 10
-title: Using applications
+title: Managing applications
 layout: bundle
 section:
-  - app_development
+  - platform_administration
 helpcontent:
   - label: applications
     title: Applications
@@ -36,6 +36,8 @@ helpcontent:
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
 
 ---
+### To view applications
+
 Click **Applications** in the **Ecosystem** menu in the navigator to display a list or grid of all applications in your account.
 
 <img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
@@ -49,7 +51,24 @@ Your applications are available through the application switcher in the top bar.
 
 <img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
+<a name="editing-and-removing"></a>
+### To edit an application
 
+Simply click the application or click the menu icon at the right of an entry and then click **Edit**.
+
+In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
+
+{{< c8y-admon-important >}}
+Never change the system application names (such as "Device management", "Cockpit"). Otherwise, tenant initialization will fail.
+{{< /c8y-admon-important >}}
+
+### To delete an application
+
+Click the menu icon at the right of an entry and then click **Delete**. You can also delete an application directly from the **Properties** tab in the application details.
+
+If you delete an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
+
+It is not possible to delete subscribed applications. This can only be done by the owner of the subscribed application.
 
 <a name="application-properties"></a>
 ### Application properties
@@ -107,32 +126,13 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
-### Application plugins
+### Plugins
 
 Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
 
 <img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
 
 In the **Plugins** tab you can add and remove plugins. Additionally, you can install plugins to an application.
-
-<a name="editing-and-removing"></a>
-### To edit an application
-
-Simply click the application or click the menu icon at the right of an entry and then click **Edit**.
-
-In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
-
-{{< c8y-admon-important >}}
-Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
-{{< /c8y-admon-important >}}
-
-### To delete an application
-
-Click the menu icon at the right of an entry and then click **Delete**.
-
-If you delete an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
-
-It is not possible to delete subscribed applications. This can only be done by the owner of the subscribed application.
 
 ### Packages
 
@@ -162,6 +162,41 @@ In the **Versions** tab, you see all previously uploaded binaries related to the
 You can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
 To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
+
+### Uploading archives
+
+For custom applications, multiple file versions can be stored in {{< product-c8y-iot >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
+
+#### To upload an archive
+
+1. Open the application properties for the respective application by clicking on it.
+2. Click the plus button at the bottom of the **Activity log** section and browse for the archive in your file system or simply drop the archive file.
+3. Click **Upload** to upload the archive to your {{< product-c8y-iot >}} account.
+
+<img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
+
+Once uploaded, the recently uploaded version is automatically the active version, that is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+
+{{< c8y-admon-info >}}
+The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
+{{< /c8y-admon-info >}}
+
+#### To restore an older application version
+
+Users can restore previous versions of an application from an archive.
+
+1. Open the application properties for the respective application by clicking on it.
+2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
+
+#### To reactivate a single application
+
+If a hosted application is not deployed correctly, users may reactivate it.
+
+1. Open the application properties for the respective application by clicking on it.
+3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate archive**.
+
+The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.
+
 
 ### Features
 

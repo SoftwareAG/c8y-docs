@@ -1,21 +1,10 @@
 ---
 weight: 30
-title: Custom applications
+title: Adding custom applications
 layout: bundle
 section:
-  - app_development
+  - platform_administration
 ---
-
-Custom applications may be:
-
-* Web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard).
-* Links to an application running elsewhere.
-* Duplicates of subscribed applications (in order to be able to customize them).
-
-In the **All applications** tab, custom applications are labeled as "Custom".  
-
-<a name="adding-applications"></a>
-### To add a custom application
 
 Click **Add application** at the top right of the **All applications** tab.
 

@@ -1,5 +1,5 @@
 ---
-weight: 12
+weight: 10
 title: Managing users
 layout: bundle
 section:

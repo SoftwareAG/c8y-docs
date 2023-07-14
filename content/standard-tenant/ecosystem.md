@@ -1,9 +1,10 @@
 ---
-title: Introduction
+title: Managing the ecosystem
 layout: bundle
-weight: 10
+bundle: ecosystem
 section:
-  - app_development
+  - platform_administration
+weight: 30
 ---
 
 The {{< product-c8y-iot >}} platform distinguishes between applications and microservices, see also [Developing applications](/concepts/applications) in the *Concepts guide*.

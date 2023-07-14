@@ -3,7 +3,7 @@ title: Default subscriptions
 layout: bundle
 weight: 60
 section:
-  - app_development
+  - platform_administration
 ---
 
 {{< product-c8y-iot >}} provides a variety of applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.

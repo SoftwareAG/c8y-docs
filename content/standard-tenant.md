@@ -3,7 +3,7 @@ title: Standard tenant administration
 icon: "c8y-icon c8y-icon-administration"
 layout: redirect
 type: root
-bundle: standard-tenant-management
+bundle: standard-tenant
 section:
   - platform_administration
 weight: 10

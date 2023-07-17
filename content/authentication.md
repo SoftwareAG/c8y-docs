@@ -6,7 +6,7 @@ layout: redirect
 bundle: authentication
 section:
   - platform_administration
-weight: 50
+weight: 30
 ---
 
 Learn how to modify the basic authentication settings and how to configure two-factor authentication and single sign-on.

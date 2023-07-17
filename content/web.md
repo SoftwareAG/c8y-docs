@@ -6,7 +6,7 @@ layout: redirect
 section:
   - app_development
 bundle: web
-weight: 40
+weight: 20
 ---
 
 Discover how to develop web applications with the Web SDK and integrate default or branded UI components into your custom application.

@@ -11,4 +11,4 @@ outputs:
 - html
 ---
 
-The Device management application lets you manage, monitor and remotely control and troubleshoot devices.
+The Device management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.

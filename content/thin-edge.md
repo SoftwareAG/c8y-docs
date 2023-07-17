@@ -9,4 +9,4 @@ section:
 weight: 60
 ---
 
-Learn more about device integration using thin-edge.io, the open edge framework for lightweight IoT devices.
+Learn more about device integration using thin-edge.io, the open-source, cloud-agnostic framework for lightweight IoT devices.

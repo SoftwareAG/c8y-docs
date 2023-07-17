@@ -9,4 +9,4 @@ section:
 weight: 50
 ---
 
-Set up a Raspberry Pi and Tinkerforge as demo devices in Cumulocity IoT or browse references for fragments  used in managed objects (devices) or for device sensors.
+Read about device integration options like REST or MQTT, or browse reference libraries for fragments used in managed objects (devices) or for device sensors.

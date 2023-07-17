@@ -12,4 +12,4 @@ aliases:
   - /reference/smartrest
 ---
 
-Learn about the SmartREST protocol, its data format and the anatomy and registration of SmartREST templates.
+Learn about the SmartREST protocol and its data format, and find a huge number of static SmartREST templates supported by Cumulocity IoT. 

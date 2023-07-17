@@ -9,4 +9,4 @@ section:
 weight: 70
 ---
 
-Browse Cumulocity IoT supported devices in the Device Catalog of the Cumulocity IoT Connect Device Partner Portal.
+Browse Cumulocity IoT supported and certified IoT devices in the Device Catalog of the Cumulocity IoT Connect Device Partner Portal.

@@ -195,4 +195,4 @@ svg: '<svg
 '
 ---
 
-Learn more about Streaming analytics with Apama EPL for customized and immediate data processing and Cumulocity IoT Datahub for connecting custom tools and applications to the platform.
+Find out about customizing immediate processing of incoming data from devices with Streaming Analytics, and about advanced analytical querying over device data with Cumulocity IoT Datahub.

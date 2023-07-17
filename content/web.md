@@ -1,5 +1,5 @@
 ---
-title: Developing applications with the Web SDK
+title: Developing applications
 icon: "c8y-icon c8y-icon-css"
 type: root
 layout: redirect
@@ -9,4 +9,4 @@ bundle: web
 weight: 20
 ---
 
-Discover how to develop web applications with the Web SDK and integrate default or branded UI components into your custom application.
+Discover how to develop web applications using the Web SDK and integrate default or branded UI components into your custom application.

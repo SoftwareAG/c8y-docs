@@ -2,8 +2,8 @@
 weight: 30
 title: Registering the Sensor App in the platform
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 
@@ -44,7 +44,7 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
 4. On your smartphone, fill in your tenant, for example, "companytenant01", select your instance, for example, "{{< domain-c8y >}}", and enter your selected device ID. If your instance is not available in the list, you can enter it manually if you click **Add other instance**. Click **Register** for your device to contact the server and ask to be accepted.
 
-    ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
+    ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png)
 
 5.  Back on your web browser, your device's card now shows the options to accept or reject the connection. Accept the connection. Your device will be registered with the server and assigned to the selected group.
 

@@ -9,4 +9,4 @@ section:
 weight: 15
 ---
 
-Find information about the installation of the Messaging Service and the microservice-based data broker on {{< product-c8y-iot >}} Edge.
+Find out about the installation of the Messaging Service and the microservice-based data broker on {{< product-c8y-iot >}} Edge.

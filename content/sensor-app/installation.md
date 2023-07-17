@@ -2,8 +2,8 @@
 weight: 20
 title: Installing the Sensor App
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 To get started with the {{< sensor-app >}}, download it from the Apple App Store, or Google Play Store as appropriate.

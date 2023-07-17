@@ -2,8 +2,8 @@
 weight: 80
 title: Controlling devices
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 The {{< sensor-app >}} can receive real-time control commands from {{< product-c8y-iot >}}.

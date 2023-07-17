@@ -2,8 +2,8 @@
 weight: 50
 title: Viewing sensor data
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 

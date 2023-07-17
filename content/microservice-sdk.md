@@ -1,5 +1,5 @@
 ---
-title: Developing and deploying microservices
+title: Developing microservices
 bundle: microservice-sdk
 icon: "c8y-icon c8y-icon-tools"
 type: root
@@ -9,4 +9,4 @@ section:
 weight: 30
 ---
 
-Learn how to extend your platform with customer-specific functionality by developing and deploying microservices.
+Learn how to extend your platform with customer-specific functionality by developing and deploying microservices using the Microservice SDK.

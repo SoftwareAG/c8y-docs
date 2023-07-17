@@ -2,8 +2,8 @@
 weight: 60
 title: Connecting new Bluetooth devices to the Sensor App
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 The {{< sensor-app >}} connects to a range of Bluetooth sensor devices.
@@ -34,5 +34,5 @@ To enable or disable the simulation in {{< sensor-app >}}, follow the instructio
 
 There are two ways to disable the simulation:
 
- * Click **Disable simulation** to end the simulation for all connected simulated devices. 
+ * Click **Disable simulation** to end the simulation for all connected simulated devices.
  * End the simulation via the {{< sensor-app >}} settings. On Android the settings are available via the main menu. On iOS, find {{< sensor-app >}} in the System Preferences app, select **Connectivity** and disable **Simulate devices**. By disabling the simulation mode, you disconnect and remove all simulated devices.

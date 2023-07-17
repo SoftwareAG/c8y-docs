@@ -9,4 +9,4 @@ section:
 weight: 16
 ---
 
-Find out how to update {{< product-c8y-iot >}} Edge using the UI.
+Find out how to update {{< product-c8y-iot >}} Edge using the user interface.

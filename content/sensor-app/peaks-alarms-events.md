@@ -2,8 +2,8 @@
 weight: 77
 title: Simulating peaks and sending alarms and events
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 ![Sensor buttons](/images/users-guide/csa/csa-sensor-buttons.png)

@@ -1,5 +1,5 @@
 ---
-title: Quick start for users
+title: Get familiar with the UI
 icon: "c8y-icon c8y-icon-c8y-data"
 type: root
 layout: redirect
@@ -9,4 +9,4 @@ section:
 weight: 20
 ---
 
-Learn how to access the platform and get familiar with the general UI functionalities applying to all {{< product-c8y-iot >}} applications.
+Access the platform, get introduced to the general functionalities applying to all {{< product-c8y-iot >}} applications, and customize your user settings.

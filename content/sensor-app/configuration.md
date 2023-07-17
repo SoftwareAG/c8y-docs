@@ -2,12 +2,12 @@
 weight: 70
 title: Configuring, disabling or removing devices
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 
-If you want to make changes to the settings of the smartphone or a connected Bluetooth device, simply tap the 3 dots at the top right of the card for this device. Various options will be displayed at bottom of the screen. For Bluetooth devices, the options **Disconnect**, **Disable** and **Edit** are available. The smartphone itself only has the **Disable** and **Edit** options. 
+If you want to make changes to the settings of the smartphone or a connected Bluetooth device, simply tap the 3 dots at the top right of the card for this device. Various options will be displayed at bottom of the screen. For Bluetooth devices, the options **Disconnect**, **Disable** and **Edit** are available. The smartphone itself only has the **Disable** and **Edit** options.
 
 ![Device configuration](/images/users-guide/csa/csa-device-options.png)
 

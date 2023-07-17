@@ -186,4 +186,4 @@ svg: '<svg
 '
 ---
 
-Find detailed information on the the administration of {{< standard-tenant >}}s and {{< enterprise-tenant >}}s, and on platform configuration and authentication settings.  
+Find detailed information on the administration of {{< standard-tenant >}}s and {{< enterprise-tenant >}}s and on basic and advanced authentication settings.  

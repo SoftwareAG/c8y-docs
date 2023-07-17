@@ -6,7 +6,7 @@ layout: redirect
 bundle: dtm
 section:
   - app_development
-weight: 30
+weight: 40
 ---
 
 Use the Digital twin manager application as a customizable solution to create and manage assets through a digital representation in the Cumulocity IoT platform.

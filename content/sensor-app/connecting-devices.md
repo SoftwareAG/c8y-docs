@@ -2,8 +2,8 @@
 weight: 65
 title: Connecting new OBD devices to the Sensor App
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 Connections to OBD devices work in a slightly different way than normal Bluetooth sensors. They must be connected to the phone directly before the device can be added to the Sensor App.

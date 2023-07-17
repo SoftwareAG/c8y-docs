@@ -2,8 +2,8 @@
 weight: 75
 title: Adjusting sensor properties
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 When editing sensor properties, it is possible to change the following settings:
@@ -18,7 +18,7 @@ Minimum and maximum thresholds affect the handling of the incoming data. By defa
 
 To return to unlimited values, simply drag the slider all the way to the end of the range again.
 
-With non-infinite minimum or maximum threshold values configured, measurements sent to {{< product-c8y-iot >}} will be capped to the minimum and maximum threshold values. No measurement values outside the threshold will be sent to {{< product-c8y-iot >}}. 
+With non-infinite minimum or maximum threshold values configured, measurements sent to {{< product-c8y-iot >}} will be capped to the minimum and maximum threshold values. No measurement values outside the threshold will be sent to {{< product-c8y-iot >}}.
 
 Simulated peaks can be useful for sending data values outside of the expected range on demand. These can be used for testing rules, alarms and other such functionality in a controlled and repeatable manner. The application allows you to specify the peak value to be used, as well as the number of times the sensor will be simulated at that value.
 

@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find out more about using the Cockpit of Cumulocity IoT, managing applications and microservices, and developing your own web applications on top of Cumulocity IoT.
+Find out about managing and monitoring assets using the Cockpit, developing your own web applications, and explore customizable solutions like Digital twin manager.

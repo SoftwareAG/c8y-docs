@@ -9,4 +9,4 @@ section:
 weight: 100
 ---
 
-Use the OEE application to measure the efficiency and effectiveness of your production processes, to create calculation configurations and to receive and store data through our API.
+Use the OEE application to measure the efficiency, effectiveness and performance of your production processesby creating OEE configuration calculations for machines and machine lines.

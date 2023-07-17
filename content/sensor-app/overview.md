@@ -2,8 +2,8 @@
 weight: 10
 title: Overview
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 aliases:
   - /users-guide/android-cloud-sensor-app
   - /users-guide/optional-services
@@ -23,7 +23,7 @@ Supported smartphone sensors include:
 *   Gyroscope
 *   Barometer
 *   Magnetometer and compass
-*   GPS location 
+*   GPS location
 *   Microphone and voice
 *   WiFi strength (selected Android devices only)
 

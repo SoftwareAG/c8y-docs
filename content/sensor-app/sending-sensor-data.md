@@ -2,8 +2,8 @@
 weight: 40
 title: Sending sensor data to the platform
 layout: bundle
-section: 
-  - device_management
+section:
+  - getting_started
 ---
 
 

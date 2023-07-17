@@ -49,9 +49,10 @@ If you have selected the section view and a shift is selected (see below), the *
 <a name="data"></a>
 ### Data
 
+<span style="color:red"> TODO: Check section view. Probably gone now? </span>
 In the **Data** section, two types of data charts are available, the *single view* and the *section view*, which can be selected at the top.
 
-In each view, the components being displayed in the chart, like for example OEE, Availability, Performance, and Quality, can be selected at the right by activating/deactivating the respective toggles.
+In each view, the components being displayed in the chart, like for example OEE, Availability, Performance, and Quality, can be selected at the right by activating/deactivating the respective toggles. A toggle also exists to overlay alarms on the graph. In this way, it is possible to correlate the alarm event with other measurements.
 
 #### Single view
 

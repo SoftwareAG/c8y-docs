@@ -79,10 +79,12 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 
 <img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
 
-In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
+In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications' availability:
 
 - [Subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or a service provider.
 - [Custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+
+Applications can be filtered by name or by availability.
 
 Your applications are available through the application switcher in the top bar.
 
@@ -366,7 +368,7 @@ The selected application will be reactivated by removing the respective files fr
 
 Packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
 
-Packages can contain two types of applications:
+Packages can contain two types of contents:
 
 - [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
@@ -374,6 +376,8 @@ Packages can contain two types of applications:
 Packages can be located on the **Packages** tab in the **Applications** page.
 
 <img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
+
+Packages can be filtered by name, creator type, availability and type of content.
 
 To add a new package click **Add package** at the top right.
 

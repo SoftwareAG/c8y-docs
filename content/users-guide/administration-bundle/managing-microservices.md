@@ -18,6 +18,8 @@ Click **Microservices** in the **Ecosystem** menu in the navigator to display a 
 
 <img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
 
+Microservices can be filtered by name and availability.
+
 A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications, see [Custom microservices](#custom-microservices).
 
 {{< c8y-admon-related >}}

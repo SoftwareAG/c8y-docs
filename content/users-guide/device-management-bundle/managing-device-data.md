@@ -154,7 +154,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
-2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type in the firmware repository.
+2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type (or the ones that have no device type) in the firmware repository.
 3. Click **Install**.
 
 ![Install firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-install.png)
@@ -272,7 +272,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
 
     {{< c8y-admon-info >}}
-The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
+The **Install software** dialog will only display software items matching the device type or have no device type specified. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
     {{< /c8y-admon-info >}}
 
 2. Select one or multiple software items by selecting the respective version from the list which contains all software items for the particular device type available in the software repository.  
@@ -387,7 +387,7 @@ To apply a configuration snapshot to a device which supports multiple configurat
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 {{< c8y-admon-info >}}
-Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
+Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type (ones that match the device type or have no device type specified).
 {{< /c8y-admon-info >}}
 
 #### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration

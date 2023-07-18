@@ -258,7 +258,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 1. In the **Software** tab, click **Install software**.
 
     {{< c8y-admon-info >}}
-The **Install software** dialog will only display software items matching the device type or have no device type specified. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
+The **Install software** dialog will only display software items which match the device type or have no device type specified. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
     {{< /c8y-admon-info >}}
 
 2. Select one or multiple software items by selecting the respective version from the list which contains all software items for the particular device type available in the software repository.  

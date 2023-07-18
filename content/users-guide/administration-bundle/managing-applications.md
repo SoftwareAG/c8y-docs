@@ -79,7 +79,7 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 
 <img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
 
-In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications' availability:
+In the **All applications** tab, you can see all applications available in your tenant. There are two types of availability for applications:
 
 - [Subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or a service provider.
 - [Custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.

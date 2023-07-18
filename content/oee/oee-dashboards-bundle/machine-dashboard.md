@@ -42,44 +42,19 @@ In the **OEE status** section, the values for OEE, Availability, Performance and
 
 Below these values the losses caused by Availability, Performance and Quality are displayed in terms of time and amount.
 
-{{< c8y-admon-info >}}
-If you have selected the section view and a shift is selected (see below), the **OEE status** section displays the OEE and the losses for the entire shift.
-{{< /c8y-admon-info >}}
-
 <a name="data"></a>
 ### Data
 
-<span style="color:red"> TODO: Check section view. Probably gone now? </span>
-In the **Data** section, two types of data charts are available, the *single view* and the *section view*, which can be selected at the top.
+In the **Data** section, a chart is available to display the current values of selected components over the specified time frame. Each of the specific items, such as OEE, Availability, Performance, and Quality, can be selected at the right by activating/deactivating the respective toggles. A toggle also exists to overlay alarms on the graph. In this way, it is possible to correlate the alarm event with other measurements.
 
-In each view, the components being displayed in the chart, like for example OEE, Availability, Performance, and Quality, can be selected at the right by activating/deactivating the respective toggles. A toggle also exists to overlay alarms on the graph. In this way, it is possible to correlate the alarm event with other measurements.
-
-#### Single view
-
-The single view chart shows the current values of the selected components for the specified time frame. The resolution interval equals the Potential Production Time.
-
-![Single view](/images/oee/dashboards/dashboard-single-view.png)
+![Chart view](/images/oee/dashboards/dashboard-single-view.png)
 
 {{< c8y-admon-info >}}
 The time frame does not influence the direct calculation of the OEE. It only defines the time period for which the OEE is displayed here.
 {{< /c8y-admon-info >}}
 
-#### Section view
-
-The section view chart shows the development of the OEE variables over a certain time period.
-
-![Section view ](/images/oee/dashboards/dashboard-section-view.png)
-
-Here, the Potential Production Time is no longer a fixed period, specified by the user, but a growing period, which is always extended by a certain interval, the resolution interval. If the Potential Production Time is as long as the specified time frame, it does no longer grow, but shifts forward by the interval (if auto-refresh is activated).
-
-The following example shows the development of the section view during major Quality Losses. The drop in OEE (purple line) during the loss phase is clearly visible.
-
-![Section view chart 2](/images/oee/dashboards/dashboard-section-view-chart-2.png)
-
-![Section view chart 3](/images/oee/dashboards/dashboard-section-view-chart-3.png)
-
 {{< c8y-admon-info >}}
-Implausible values are taken into consideration for the section view calculation. Most implausible values are caused by a too low Ideal Cycle Amount. Even if implausible conductivity values arise over short periods of time, this will pay off over a longer interval. In order to obtain meaningful values for a shift, it is therefore useful to calculate with implausible values.
+Implausible values are taken into consideration for shift calculations. Most implausible values are caused by a too low Ideal Cycle Amount. Even if implausible conductivity values arise over short periods of time, this will pay off over a longer interval. In order to obtain meaningful values for a shift, it is therefore useful to calculate with implausible values.
 {{< /c8y-admon-info >}}
 
 ### Pareto chart
@@ -148,31 +123,3 @@ Click **Export as CSV** at the right. The **Export** page in the Cockpit applica
 An email will be sent to the user email address containing a link to the export file.
 
 See also [Cockpit > Managing exports](/users-guide/cockpit/#exports) for details on the export functionality.
-
-
-<!--
-#### Shifts
-
-If shifts are stored in the xHub Shift Plan Service, they can be selected here. By switching to the section view the OEE of the shift is calculated, therefore only OEE values calculated during the phase "PRODUCTION" are taken into account. Values during the Phase "NON-PRODUCTION" or "BREAK" will be ignored.
-
-Exercise: Creating a shift.
-<br>
-Shifts can be created using [Swagger documentation](https://services.adamos-hub.dev/shift-service/swagger-ui.html#/shift/searchShiftsUsingGET).
-
-Please note: Shifts of one location can't overlap, that means you are not able to enter this:
-
-"Shift 1 End: 2019-08-05T12:00:00
-<br> Shift 2 Start: 2019-08-05T12:00:00" ... instead you must enter this:
-
-"Shift 1 End: 2019-08-05T11:59:59" &nbsp;or "Shift 2 Start: 2019-08-05T12:00:01"
-
-#### Shifts
-
-Shift phases are visible in the OEE chart, the correct phase name will be displayed when pointing on the regarding values (1st picture).<br>
-Different phases are represented by different connecting lines in the graph (2nd picture).
-
-![Shift in graph](/images/oee/dashboards/dashboard-shift-in-graph-1.png)
-
-![Shift in graph](/images/oee/dashboards/dashboard-shift-in-graph-2.png)
-
--->

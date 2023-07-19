@@ -106,10 +106,10 @@ The operation representation is the same as the inventory representation:
 
 On receiving the operation the device is expected to perform the following actions:
 
-1. Set operation status to EXECUTING
+1. Set the operation status to EXECUTING.
 2. Set the relays states to the respective values.
-3. Set new relays states to its managed object
-4. Set operation status to SUCCESSFUL
+3. Set the new relays states in its managed object.
+4. Set the operation status to SUCCESSFUL.
 
 **SmartREST example**
 

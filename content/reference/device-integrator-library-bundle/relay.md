@@ -49,7 +49,7 @@ The operation representation is the same as the inventory representation:
 On receiving the operation the device is expected to perform the following actions:
 
 1. Set the operation status to EXECUTING.
-2. Set relay state.
+2. Set the relay state.
 3. Set new relay state to its managed object
 4. Set operation status to SUCCESSFUL
 

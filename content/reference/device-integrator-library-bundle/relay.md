@@ -15,7 +15,7 @@ To manage and monitor a single relay {{< product-c8y-iot >}} offers the [Relay c
 
 ##### Relay state
 
-Device may announce their relay state by updating the `c8y_Relay` fragment in their managed object.
+Devices may announce their relay state by updating the `c8y_Relay` fragment in their managed object.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>

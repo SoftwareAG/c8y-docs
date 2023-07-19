@@ -72,7 +72,7 @@ To manage and monitor a multiple relays {{< product-c8y-iot >}} offers the [Rela
 
 #### Multiple relays state
 
-Device may announce their multiple relays state by updating the `c8y_RelayArray` fragment in their managed object.
+Devices may announce their multiple relays state by updating the `c8y_RelayArray` fragment in their managed object.
 
 ```http
 PUT /inventory/managedObjects/<deviceId>

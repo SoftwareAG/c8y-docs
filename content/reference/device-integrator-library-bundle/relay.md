@@ -119,6 +119,5 @@ On receiving the operation the device is expected to perform the following actio
    `519,OPEN,CLOSED,CLOSED,OPEN`
 2. The device sets the operation status to EXECUTING<br>
    `501,c8y_RelayArray`
-3. The device sets its relays states.
-4. The device confirms successful execution by setting the operation status to SUCCESSFUL<br>
-   `503,c8y_RelayArray`
+3. The device confirms successful execution by setting the operation status to SUCCESSFUL and sets the relay array state with the implicit parameters in the 503 static template<br>
+   `503,c8y_RelayArray,OPEN,CLOSED,CLOSED,OPEN`

@@ -54,7 +54,7 @@ The time frame does not influence the direct calculation of the OEE. It only def
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-Implausible values are taken into consideration for shift calculations. Most implausible values are caused by a too low Ideal Cycle Amount. Even if implausible conductivity values arise over short periods of time, this will pay off over a longer interval. In order to obtain meaningful values for a shift, it is therefore useful to calculate with implausible values.
+Implausible values are taken into consideration for shift calculations. Most implausible values are caused by a too low Ideal Cycle Amount. Even if implausible productivity values arise over short periods of time, this will pay off over a longer interval. In order to obtain meaningful values for a shift, it is therefore useful to calculate with implausible values.
 {{< /c8y-admon-info >}}
 
 ### Pareto chart

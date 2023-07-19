@@ -10,15 +10,14 @@ Shift plans are optional and control the way the OEE calculation is performed. T
 
 Each known location can have a shift plan which consists of one or more shifts. You create a location by assigning it to a machine profile. A shift defines the time when all machines in this location are in a specific mode, i.e. in production or non-production mode.
 
-If a machine is in production mode, it is running and produces goods. If it is non-production mode, it might be in maintenance and no goods should be produced.
+If a machine is in production mode, it is running and produces goods. If it is non-production mode, it might be in maintenance or there might be a staff break. During non-production mode no goods are being produced.
 
 The OEE application takes these shift definitions into account when calculating the OEE values, especially the Availability and the Ideal Production Time.
 
 A shift can be defined to be an one-off event for a specific date/time (e.g. for a public holiday) or a recurring instance. The recurring shifts are typically used to define morning or evening shifts that are scheduled every working day in every week.
 
 If there are overlapping shifts defined, the shifts are handled in the following decreasing priority:
--	non-recurring
--	non-production
+-	non-recurring non-production
 -	non-recurring production
 -	recurring non-production
 -	recurring production

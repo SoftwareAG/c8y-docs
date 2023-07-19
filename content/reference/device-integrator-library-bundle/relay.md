@@ -67,7 +67,7 @@ On receiving the operation the device is expected to perform the following actio
 
 #### Multiple relays
 
-To manage and monitor a multiple relays {{< product-c8y-iot >}} offers the [Relay array control widget](/users-guide/cockpit#relay-array-control).
+To manage and monitor multiple relays {{< product-c8y-iot >}} offers the [Relay array control widget](/users-guide/cockpit#relay-array-control).
 
 
 #### Multiple relays state

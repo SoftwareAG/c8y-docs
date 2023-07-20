@@ -1,8 +1,8 @@
 ---
-weight: 70
+weight: 10
 title: OPC UA
 layout: bundle
-section: 
+section:
   - device_management
 aliases:
   -/users-guide/optional-services

@@ -1,7 +1,7 @@
 ---
-weight: 61
+weight: 50
 title: LPWAN Custom device protocols
 layout: bundle
-section: 
+section:
   - device_management
 ---

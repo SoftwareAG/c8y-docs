@@ -1,8 +1,8 @@
 ---
-weight: 20
+weight: 70
 title: Cloud Fieldbus
 layout: bundle
-section: 
+section:
   - device_management
 aliases:
     - /users-guide/optional-services

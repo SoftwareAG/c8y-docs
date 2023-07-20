@@ -1,8 +1,8 @@
 ---
-weight: 15
+weight: 40
 title: Actility LoRa
 layout: bundle
-section: 
+section:
   - device_management
 aliases:
   - /users-guide/optional-services

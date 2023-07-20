@@ -1,8 +1,8 @@
 ---
-weight: 60
+weight: 20
 title: LWM2M
 layout: bundle
-section: 
+section:
   - device_management
 aliases:
   - /users-guide/optional-services

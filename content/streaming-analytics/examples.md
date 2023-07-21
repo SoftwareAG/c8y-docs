@@ -1,7 +1,7 @@
 ---
 title: Examples
 layout: bundle
-section: 
-  - data_analytics
+section:
+  - streaming_analytics
 weight: 60
 ---

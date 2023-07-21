@@ -2,8 +2,8 @@
 title: Cumulocity IoT DataHub overview
 weight: 10
 layout: bundle
-section: 
-  - data_analytics
+section:
+  - datahub
 aliases:
  - /datahub/integrating-datahub-with-sag-products-bundle
 ---

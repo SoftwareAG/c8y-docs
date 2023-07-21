@@ -1,8 +1,6 @@
 ---
 title: Using the Apama Event Processing Language (EPL)
 layout: bundle
-section: 
-  - data_analytics
 weight: 30
 ---
 

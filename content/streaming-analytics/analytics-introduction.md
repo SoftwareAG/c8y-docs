@@ -1,8 +1,7 @@
 ---
 title: Basic functionality
 layout: bundle
-section: 
-  - data_analytics
+section:
+  - streaming_analytics
 weight: 15
 ---
-

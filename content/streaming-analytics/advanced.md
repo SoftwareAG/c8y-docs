@@ -1,7 +1,7 @@
 ---
 title: Advanced features
 layout: bundle
-section: 
-  - data_analytics
+section:
+  - streaming_analytics
 weight: 40
 ---

@@ -1,7 +1,7 @@
 ---
 title: Built-in actions
 layout: bundle
-section: 
-  - data_analytics
+section:
+  - streaming_analytics
 weight: 30
 ---

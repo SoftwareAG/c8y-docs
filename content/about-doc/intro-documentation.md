@@ -1,9 +1,9 @@
 ---
 weight: 10
-title: Introduction
+title: Overview
 layout: bundle
-section: 
-  - getting_started
+section:
+  - about_website
 aliases:
   - /about-doc/intro-documentation
   - /users-guide/enterprise-edition

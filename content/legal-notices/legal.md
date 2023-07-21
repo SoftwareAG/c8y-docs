@@ -1,12 +1,10 @@
 ---
 weight: 50
-title: Legal notices
+title: Copyright
 layout: bundle
 section:
   - about_website
 ---
-
-### Copyright
 
 This content applies to {{< product-c8y-iot >}} {{< c8y-current-version >}} and to all subsequent releases.
 

@@ -1,16 +1,24 @@
 ---
 weight: 20
-title: Documentation versions and sources
+title: Documentation sources
 layout: bundle
 section:
-  - getting_started
+  - about_website
+aliases:
+  - /about-doc/intro-documentation
+  - /users-guide/enterprise-edition
+  - /users-guide/enterprise-tenant
+  - /benutzerhandbuch/enterprise-edition-de
+  - /benutzerhandbuch/enterprise-tenant-de
+  - /release-notes
+  - /apama/apama-release-notes
+  - /datahub/datahub-release-notes
+  - /edge/edge-release-notes
+  - /machine-learning/release-notes
+  - /web-sdk-for-plugins
+  - /event-language
 ---
 
-The {{< product-c8y-iot >}} documentation website provides the documentation for all GA releases under maintenance, that is, for the current GA release and the previous two GA releases.
-
-You can switch between the versions by using the dropdown list at the top right.
-
-### Documentation sources
 
 The {{< product-c8y-iot >}} documentation sources are located in a Git repository called "c8y-docs" in GitHub. The c8y-docs repository is public which means that no credentials are required to view or copy it.
 
@@ -28,7 +36,7 @@ The actual content of the documentation is stored in source files in Markdown fo
 
 For further details on the architecture of the {{< product-c8y-iot >}} documentation website refer to the [README](https://github.com/SoftwareAG/c8y-docs/blob/develop/README.md) at the top level of the repository.
 
-#### Viewing documentation in HTML format
+### Viewing documentation in HTML format
 
 To view the documentation in HTML format you need to be a bit familiar with working in a version control system like Git.
 
@@ -36,7 +44,7 @@ First you must make a copy of the repository (called a "clone") on your local ma
 
 Switch to the branch of your choice.
 
-##### To convert the sources to HTML format
+#### To convert the sources to HTML format
 
 The Markdown files are converted to HTML files by an application called "Hugo".
 

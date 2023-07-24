@@ -1,7 +1,7 @@
 ---
 title: Connecting Apama to Zementis and other microservices
 layout: bundle
-section:
-  - streaming_analytics
+section: 
+  - data_analytics
 weight: 90
 ---

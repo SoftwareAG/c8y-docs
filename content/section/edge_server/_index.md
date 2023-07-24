@@ -1,7 +1,7 @@
 ---
-title: "Edge"
+title: "Cumulocity IoT Edge"
 icon: "c8y-icon c8y-icon-cumulocity-iot"
-weight: 70
+weight: 60
 svg: '<svg
   viewBox="0 0 712 670"
   fill="none"

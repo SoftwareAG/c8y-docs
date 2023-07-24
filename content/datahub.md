@@ -5,7 +5,7 @@ type: root
 layout: redirect
 bundle: datahub
 section:
-  - datahub
+  - data_analytics
 weight: 20
 ---
 

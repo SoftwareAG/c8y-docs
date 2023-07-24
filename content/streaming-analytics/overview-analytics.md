@@ -1,8 +1,8 @@
 ---
 title: Overview
 layout: bundle
-section:
-  - streaming_analytics
+section: 
+  - data_analytics
 weight: 10
 aliases:
   - "/apama/introduction"

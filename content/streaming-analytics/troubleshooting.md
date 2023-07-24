@@ -1,8 +1,8 @@
 ---
 title: Troubleshooting and diagnostics
 layout: bundle
-section:
-  - streaming_analytics
+section: 
+  - data_analytics
 weight: 35
 ---
 

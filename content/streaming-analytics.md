@@ -6,7 +6,7 @@ layout: redirect
 bundle: streaming-analytics
 weight: 10
 section:
-  - streaming_analytics
+  - data_analytics
 
 aliases:
   - "/apama/introduction"

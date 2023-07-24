@@ -1,7 +1,8 @@
 ---
 title: "Study: Circular geofence alarms"
 layout: bundle
-section:
-  - streaming_analytics
+section: 
+  - data_analytics
 weight: 80
 ---
+

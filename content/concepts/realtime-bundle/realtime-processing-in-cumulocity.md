@@ -1,6 +1,8 @@
 ---
 title: What is real-time processing in our platform?
 layout: bundle
+section: 
+  - data_analytics
 weight: 1
 ---
 

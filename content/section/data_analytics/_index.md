@@ -1,5 +1,5 @@
 ---
-title: "Data & analytics"
+title: "Analytics"
 icon: "c8y-icon c8y-icon-data-explorer"
 weight: 50
 svg: '<svg
@@ -195,4 +195,4 @@ svg: '<svg
 '
 ---
 
-Find out about customizing immediate processing of incoming data from devices with Streaming Analytics, and about advanced analytical querying over device data with Cumulocity IoT Datahub.
+Find out about customizing immediate processing of incoming data from devices with Streaming Analytics, and about advanced analytical querying over device data with Cumulocity IoT DataHub.

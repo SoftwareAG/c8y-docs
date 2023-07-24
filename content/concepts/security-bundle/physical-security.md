@@ -2,8 +2,7 @@
 weight: 20
 title: Physical security
 layout: bundle
-section:
-  - platform_administration
+
 ---
 
 Physical security of IT systems prevents unauthorized physical access to servers, storage, and network devices.

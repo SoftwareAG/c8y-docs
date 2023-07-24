@@ -2,8 +2,7 @@
 weight: 10
 title: Overview
 layout: bundle
-section:
-  - platform_administration
+
 ---
 
 This section will show security concepts and aspects of {{< product-c8y-iot >}}, structured into physical security, network security, application security and access control. Finally, it shows how {{< product-c8y-iot >}} helps in managing the security of your IoT solution.

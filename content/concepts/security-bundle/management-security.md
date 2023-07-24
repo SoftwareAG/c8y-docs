@@ -2,8 +2,7 @@
 weight: 60
 title: Management security
 layout: bundle
-section:
-  - platform_administration
+
 aliases:
   - /concepts/security
 ---

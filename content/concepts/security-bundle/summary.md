@@ -2,8 +2,6 @@
 weight: 70
 title: Summary
 layout: bundle
-section:
-  - platform_administration
 ---
 
 {{< product-c8y-iot >}} addresses security on various levels.

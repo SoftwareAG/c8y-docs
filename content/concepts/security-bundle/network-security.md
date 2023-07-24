@@ -2,8 +2,7 @@
 weight: 30
 title: Network security
 layout: bundle
-section:
-  - platform_administration
+
 ---
 
 Network security prevents unauthorized access to data transmitted over the network and tampering with or unauthorized modification of data. It also ensures that network services are available.

@@ -2,8 +2,7 @@
 weight: 50
 title: Access control
 layout: bundle
-section:
-  - platform_administration
+
 ---
 
 {{< product-c8y-iot >}} uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside {{< product-c8y-iot >}}.

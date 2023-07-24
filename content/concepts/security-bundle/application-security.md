@@ -2,8 +2,7 @@
 weight: 40
 title: Application security
 layout: bundle
-section:
-  - platform_administration
+
 ---
 
 Application security addresses security at the software level.

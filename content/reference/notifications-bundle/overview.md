@@ -107,17 +107,17 @@ The backlog is created when the consumer first connects to the Messaging Service
 The consumer's backlog is maintained, even if its client connection is interrupted. This is needed for reliable messaging, 
 allowing the consumer to not miss messages during connection outages, but comes at a cost of explicit lifecycle management.
 
+![Notification 2.0 consumer backlog lifecycle](/images/reference-guide/notification2/notifications2-backlog-lifecycle.svg)
+
 There are two ways unsubscribe a consumer:
 * Pass the token as the **token** parameter to the
   [/notification2/unsubscribe](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenUnsubscribeResource) REST endpoint.
 * Send the message `unsubscribe_subscriber` from the consumer's connected WebSocket client.
-  This will unsubscribe the consumer and close the connection (as shown in the diagram below). If the client experiences
+  This will unsubscribe the consumer and close the connection (as shown in the diagram above). If the client experiences
   a connection failure while unsubscribing in this manner, there is no way to be certain the unsubscribe message was 
   successfully received and processed by the Messaging Service.
   Therefore, under such circumstances, the client should always reconnect and send the message again to be sure the
   unsubscribe action has taken effect.
-
-![Notification 2.0 consumer backlog lifecycle](/images/reference-guide/notification2/notifications2-backlog-lifecycle.svg)
 
 
 ### Creating subscriptions
@@ -309,8 +309,9 @@ Even though the topic will no longer accumulate new messages, there may still be
 the last of the messages from it. When all messages are consumed by all consumers, the topic will be empty and consume 
 negligible space in the Messaging Service.
 
-Subscriptions can be deleted by sending an HTTP DELETE message to the (/notification2/subscriptions/)[] REST ENDPOINT using 
-the subscription's id as the URL filename. For example to delete subscription with id 8765:
+Subscriptions can be deleted by sending an HTTP DELETE message to the 
+(/notification2/subscriptions/)[https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/deleteNotificationSubscriptionResource] 
+REST ENDPOINT using the subscription's id as the URL filename. For example to delete subscription with id 8765:
 
 ```text
  DELETE /notification2/subscriptions/8765 HTTP/1.1
@@ -422,19 +423,31 @@ The protocol is text-based and described in detail in the next section.
 
 ### Token expiration
 
-When creating a token, an expiration time must be given in minutes of validity from when the token was created.
-This security feature limits the potential damage due to leaking of a token.
-It requires tokens to be re-created or refreshed periodically.
-This can be done by calling the token create request with the same parameters as originally.
-If the parameters used are not available they can be extracted from the token.
-As the token string is a JWT (JSON Web Token), it can be decoded to extract the original information used to create the token by splitting it into 3 parts (on ".") and doing a base64 decode on the first substring.
-This way, information like the subscription name can be extracted and the create token REST point can be called again, all on the client side.
-The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) class contains a public refresh method which is implemented purely on the client side.
+A token's lifetime is determined at creation time by the optional **expiresInMinutes** field, which defaults to "1440" (one day, expressed in minutes).
+This can be used to limit exposure to potential security issues related to them being leaked to parties that should not be authorized to the access the system.
+Consequently, tokens may need to be re-created or refreshed periodically.
+
+Tokens can be refreshed calling the token create request with the same parameters as originally 
+(a different **expiresInMinutes** value can be given if a different duration is desired). 
+The token string is a JWT (JSON Web Token) token so if the parameters used are not easily kept available, 
+they can be extracted from the token string as outlined in Java code below:
+```java
+// The token string's sections are delimited by dots.
+String[] tokenParts = token.split("\\.");
+// Base64 decode the second section
+// byte[] decoded = Base64.getDecoder().decode(tokenParts[1]);
+// Create a string from the decoded bytes to get a JSON string of the token fields
+String tokenJson = new String(decoded);
+// ... optionally create an Object from the string or bytes using a JSON  parser
+```
+
+If you are using the {{< product-c8y-iot >}} Java SDK[TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) 
+class, it has a public refresh method which does the above for you (internally on the client side).
 
 <a name="shared-tokens">&nbsp;</a>
 ### Shared tokens
 
-Shared tokens allow parallelization of the consumer client workload for a notification subscription.
+Shared tokens allow parallelization of the consumer client workload.
 This is useful if the notifications would otherwise arrive at a higher rate than the consuming client application can process them.
 It has no impact on the rate of notification throughput within, and thus their egress from, {{< product-c8y-iot >}} core.
 
@@ -444,14 +457,14 @@ If it is not present or `false`, the token is exclusive (not shared).
 
 If a consumer's token is not shared, the consumer is an *exclusive* consumer.
 Only one consumer client can connect using an exclusive token. An attempt to connect further consumers with the same exclusive token results in an error.
-An exclusive consumer receives a copy of all notifications from the subscription its token is for.
+An exclusive consumer receives a copy of all notifications from subscription topic its token is for.
 
 If a consumer's token is shared, the consumer is a *shared consumer*. Additional consumer clients can connect using the same token.
-If only one shared consumer is connected, it receives a copy of all notifications from the subscription.
+If only one shared consumer is connected, it receives a copy of all notifications from the subscription topic.
 As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that 
-each consumer receives a non-overlapping subset (share) of the notifications from the subscription. 
+each consumer receives a non-overlapping subset (share) of the notifications from the subscription topic. 
 The set of consumers sharing a token can be thought of as a single logical consumer.
-Collectively, the set receives all notifications for the subscription. 
+Collectively, the set receives all notifications for the subscription topic. 
 
 The notification load is spread across the shared consumers according to the ID of the source that generated the notification, typically a device ID.
 All notifications for a given ID will be delivered to the same consumer. Each consumer may receive notifications for many different IDs.
@@ -459,13 +472,16 @@ This means that there is no benefit using shared tokens unless the notifications
 Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription.
 The load should generally become more evenly distributed as the number of sources increases.
 
-In order to help keep the messages from a given set of source IDs stick to shared consumers in the face of connection interruptions, the consumer clients can provide an 
-optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
+In order to help keep the messages from a given set of source IDs 'sticky' to a specific consumer in the share in the face of connection interruptions,
+the consumer clients can provide an optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
 
 For example: two consumers identifying themselves as *instance1* and *instance2* connect using URL paths
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
 
-Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens can be created for the same subscription and they all operate independently, each receiving their own copy of the notifications. This means you can have multiple shared tokens for the same subscription and their load is only divided within the scope of each shared token.
+Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens 
+can be created for the same subscription and they all operate independently, 
+each receiving their own copy of the notifications.
+This means you can have multiple shared tokens for the same subscription topic and their load is only divided within the scope of each shared token.
 
 ### Building consuming microservices and applications
 

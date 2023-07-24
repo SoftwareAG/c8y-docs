@@ -130,6 +130,7 @@ There are two ways unsubscribe a consumer:
 ### Creating subscriptions
 The JSON fields sent in a [create subscription request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource)
 determine which {{< product-c8y-iot >}} messages are forwarded to a topic, and the forwarded message content.
+This request must be made by an authenticated Cumulocity IoT user with the ROLE_NOTIFICATION_2_ADMIN role.
 
 The **context** field broadly determines the type of {{< product-c8y-iot >}} message a subscription might match and forward.
 There are two valid **context** values: "mo" (managed-object) and "tenant" and each only supports a subset of the available JSON fields, as follows:
@@ -201,6 +202,15 @@ The following summarizes the subscription fields.
 </tbody>
 </table>
 
+Notifications for new managed-objects creations can never be forwarded by subscriptions with an "mo" **context** as the 
+managed-object is only given an id when it is created and that id is needed as a field to create the subscription.
+Therefore, to receive notifications informing of new managed-object creations, a subscription with "tenant" **context** 
+must be created to listen for them.
+An application can use this to discover new managed-objects.
+It can then choose to create subscriptions with "mo" **context** for those managed-objects.
+It is also possible to subscribe to all alarms or events that are generated in a tenant using "tenant" **context**.
+
+
 <a name="subscription-filter">&nbsp;</a>
 ### Subscription filters
 Subscription filters provide fine-grained selection of the {{< product-c8y-iot >}} messages a subscription will forward.
@@ -244,8 +254,6 @@ managed-object in addition to inclusion of those from the **source** managed-obj
 
 The **typeFilter** string field is matched against the original message's **type** field. It can be a single value, or a
 limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) expression.
-
-`TODO` how should quotes be used below (technically)
 
 For example, to include messages with **type** "temperature" and messages with **type** "pressure":
 ```json
@@ -329,27 +337,11 @@ REST ENDPOINT using the subscription's id as the URL filename. For example to de
 When a tenant is deleted from Cumulocity IoT, all its subscriptions will be deleted. However, topics and consumers may 
 still be active in the Messaging Service until all messages are consumed.
 
-
-
-### TODO somewhere
-This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
-
-Creations of managed objects, which generate a new object identifier that can act as a source for notifications are reported in the tenant context.
-This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
-It is also possible to subscribe to all alarms or events that are generated in the tenant context.
-
-For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
-There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
-
-Within the scope of the topic, which is determined by the **subscription** field of a client token, a consumer's uniqueness (identity) is
-detemined by its **subscriber**. The unique identity allows the Messaging Service to manage the consumers position in the
-backlog so it may resume from the next message when it reconnects after a connection outage.
-
-
 ### Creating Tokens 
 The JSON fields sent in a [create token request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenResource)
 determine which subscription topic a consumer can receive messages from, the token's duration, 
 the [shared](../notifications/#shared-tokens) nature of the consumer, and an identifier for the consumer.
+This request must be made by an authenticated Cumulocity IoT user with the ROLE_NOTIFICATION_2_ADMIN role.
 
 The **subscription** field aligns with the same field in the subscription object, so broadly specifies the subscription
 topic the consumer will receive notifications from. The **nonPersistent** field is also a factor in identifying the topic.

@@ -1,5 +1,5 @@
 ---
-title: Streaming analytics
+title: Streaming Analytics
 icon: "c8y-icon c8y-icon-streaming-analytics"
 type: root
 layout: redirect

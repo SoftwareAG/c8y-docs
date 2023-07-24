@@ -69,37 +69,44 @@ In typical usage, multiple consumers of a given topic operate independently in p
 separate copies of those messages.
 
 {{< c8y-admon-caution >}}
-It is important to manage consumers carefully, only creating (connecting) them if they are to be active,
-and unsubscribing them if they are no longer needed or not needed for long periods.
-
-A consumer resource is created in the messaging-service when a client bearing a token with a given 'subscriber' name connects for the first time.
-That consumer will exist indefinitely or until explicitly
-[unsubscribed](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenUnsubscribeResource).
-While they exist, consumers each have a backlog of the topic messages that they have not yet consumed.
-If a consumer is not consuming a topic's notification messages promptly as they are generated, that consumer's backlog will grow, costing storage resource.
-The higher the topic's notification rate is, the quicker those costs will increase.
+It is important to manage consumers carefully as they can place significant storage resource demands on a system.
+Consumers should only be created (connected) if they are to be active, 
+and should be unsubscribed if they are no longer needed or not needed for long periods.
+See the [Consumer lifecycle](../notifications/#consumer-ilfecycle) section for more details.
 {{< /c8y-admon-caution >}}
+
+The diagram below shows 3 consumer (backlogs) have been created in the Messaging Service by four consumer clients.
+
+The rightmost client identifies its consumer as 'alarmmonitor" and that consumer (backlog) receives messages from the "alarms" subscription topic. 
+
+The second to right client identifies its consumer as 'tempaudit" and that consumer receives messages from the "temperature" subscription topic.
+
+The leftmost two consumer clients are two shares of a (logically single) [shared consumer](../notifications/#shared-tokens),
+and so share the same backlog. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
+of the messages in the "temperature" topic, collectively they receive all messages. 
+
 
 ![Notification 2.0 consumers and consumer clients diagram](/images/reference-guide/notification2/notification2-consumers.svg)
 
+<a name="consumer-ilfecycle">&nbsp;</a>
 ### Consumer lifecycle
 
 When a subscription is created, Cumulocity IoT starts to create and forward notifications within the subscription's scope 
 to the Messaging Service subsystem. The Message Service does not necessarily retain these messages; it only retains a 
-subscription's messages if the subscription is persistent and there is at least one known consumer of it.
+subscription's messages if the subscription is persistent and there is at least one known consumer of its topic.
 
 {{< c8y-admon-info >}}
-Only consumers of persistent subscription have backlogs that are maintained across client reconnections.
+Only consumers of persistent subscription topics have backlogs that are maintained across client reconnections.
 
-Consumers of non-persistent subscriptions get a new backlog pointing only to the next (latest) message when they
-connect/reconnect and any previous backlog is discarded, removing any message references. They can only cause
+Consumers of non-persistent subscription topics get a new backlog pointing only to the next (latest) topic message when 
+they connect/reconnect and any previous backlog is discarded, removing any message references. They can only cause
 backlog size problems if they remain connected but continually consume at a rate lower than the rate that new messages arrive.
 {{< /c8y-admon-info >}}
 
 Persistent subscription topic messages are only stored once in the Messaging Service, but all associated consumers' backlogs, 
 whether the consumer is connected or not, reference each message until they have received and acknowledged it. 
 Therefore, all consumer backlogs should be considered to have a storage cost from when they first connect until 
-they explicitly express no further interest in the subscription by unsubscribing.
+they explicitly express no further interest in the topic by unsubscribing.
 The Messaging Service stops retaining (storing) a given message when there are no backlogs that reference it anymore.
 
 The following diagram shows the lifecycle of a consumer backlog in relation to it associated client connection(s).
@@ -334,6 +341,10 @@ It is also possible to subscribe to all alarms or events that are generated in t
 For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
 There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
 
+Within the scope of the topic, which is determined by the **subscription** field of a client token, a consumer's uniqueness (identity) is
+detemined by its **subscriber**. The unique identity allows the Messaging Service to manage the consumers position in the
+backlog so it may resume from the next message when it reconnects after a connection outage.
+
 
 ### Creating Tokens 
 The JSON fields sent in a [create token request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenResource)
@@ -445,10 +456,10 @@ If you are using the {{< product-c8y-iot >}} Java SDK[TokenApi](https://github.c
 class, it has a public refresh method which does the above for you (internally on the client side).
 
 <a name="shared-tokens">&nbsp;</a>
-### Shared tokens
+### Shared consumer tokens
 
-Shared tokens allow parallelization of the consumer client workload.
-This is useful if the notifications would otherwise arrive at a higher rate than the consuming client application can process them.
+Shared consumer tokens allow parallelization of the consumer client workload.
+This is useful if the notifications would otherwise arrive at a higher rate than a single consuming client application can process them.
 It has no impact on the rate of notification throughput within, and thus their egress from, {{< product-c8y-iot >}} core.
 
 When you create a token, you can add the optional Boolean body parameter `shared` to the request.
@@ -457,7 +468,7 @@ If it is not present or `false`, the token is exclusive (not shared).
 
 If a consumer's token is not shared, the consumer is an *exclusive* consumer.
 Only one consumer client can connect using an exclusive token. An attempt to connect further consumers with the same exclusive token results in an error.
-An exclusive consumer receives a copy of all notifications from subscription topic its token is for.
+An exclusive consumer receives a copy of all notifications from the subscription topic its token is for.
 
 If a consumer's token is shared, the consumer is a *shared consumer*. Additional consumer clients can connect using the same token.
 If only one shared consumer is connected, it receives a copy of all notifications from the subscription topic.

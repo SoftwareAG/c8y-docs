@@ -82,6 +82,44 @@ The higher the topic's notification rate is, the quicker those costs will increa
 
 ![Notification 2.0 consumers and consumer clients diagram](/images/reference-guide/notification2/notification2-consumers.svg)
 
+### Consumer lifecycle
+
+When a subscription is created, Cumulocity IoT starts to create and forward notifications within the subscription's scope 
+to the Messaging Service subsystem. The Message Service does not necessarily retain these messages; it only retains a 
+subscription's messages if the subscription is persistent and there is at least one known consumer of it.
+
+{{< c8y-admon-info >}}
+Only consumers of persistent subscription have backlogs that are maintained across client reconnections.
+
+Consumers of non-persistent subscriptions get a new backlog pointing only to the next (latest) message when they
+connect/reconnect and any previous backlog is discarded, removing any message references. They can only cause
+backlog size problems if they remain connected but continually consume at a rate lower than the rate that new messages arrive.
+{{< /c8y-admon-info >}}
+
+Persistent subscription topic messages are only stored once in the Messaging Service, but all associated consumers' backlogs, 
+whether the consumer is connected or not, reference each message until they have received and acknowledged it. 
+Therefore, all consumer backlogs should be considered to have a storage cost from when they first connect until 
+they explicitly express no further interest in the subscription by unsubscribing.
+The Messaging Service stops retaining (storing) a given message when there are no backlogs that reference it anymore.
+
+The following diagram shows the lifecycle of a consumer backlog in relation to it associated client connection(s).
+The backlog is created when the consumer first connects to the Messaging Service and is only destroyed when it is explicitly unsubscribed.
+The consumer's backlog is maintained, even if its client connection is interrupted. This is needed for reliable messaging, 
+allowing the consumer to not miss messages during connection outages, but comes at a cost of explicit lifecycle management.
+
+There are two ways unsubscribe a consumer:
+* Pass the token as the **token** parameter to the
+  [/notification2/unsubscribe](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenUnsubscribeResource) REST endpoint.
+* Send the message `unsubscribe_subscriber` from the consumer's connected WebSocket client.
+  This will unsubscribe the consumer and close the connection (as shown in the diagram below). If the client experiences
+  a connection failure while unsubscribing in this manner, there is no way to be certain the unsubscribe message was 
+  successfully received and processed by the Messaging Service.
+  Therefore, under such circumstances, the client should always reconnect and send the message again to be sure the
+  unsubscribe action has taken effect.
+
+![Notification 2.0 consumer backlog lifecycle](/images/reference-guide/notification2/notifications2-backlog-lifecycle.svg)
+
+
 ### Creating subscriptions
 The JSON fields sent in a [create subscription request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource)
 determine which {{< product-c8y-iot >}} messages are forwarded to a topic, and the forwarded message content.
@@ -166,14 +204,14 @@ Filters specified by those with "mo" **context** can provide either or both filt
 
 The **apis** field is a JSON array that specifies which {{< product-c8y-iot >}} API messages to include.
 Use an array containing just the wildcard value, "*", to include messages from all APIs. 
-To include messages from a selection of the APIs, only use an array containing any single or multiple selection from 
+To include messages from a subset of the APIs, use an array containing any single or multiple selection from 
 "alarms", "alarms with children", "events", "events with children", "measurements", "managed objects" and "operations".
 
-For example, to messages from all APIs:
+For example, to include messages from all APIs:
 ```json
 {
   "context": "mo",
-  "subscription": "north-system",
+  "subscription": "subscription01",
   "source": 2468,
   "filter": {
     "apis": ["*"]
@@ -185,7 +223,7 @@ To include only messages from the measurements and alarms APIs:
 ```json
 {
   "context": "mo",
-  "subscription": "north-system",
+  "subscription": "subscription02",
   "source": 2468,
   "filter": {
     "apis": ["measurement", "alarm"]
@@ -200,13 +238,13 @@ managed-object in addition to inclusion of those from the **source** managed-obj
 The **typeFilter** string field is matched against the original message's **type** field. It can be a single value, or a
 limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) expression.
 
-`TODO` how should quotes be used below
+`TODO` how should quotes be used below (technically)
 
 For example, to include messages with **type** "temperature" and messages with **type** "pressure":
 ```json
 {
   "context": "mo",
-  "subscription": "subscription01",
+  "subscription": "subscription03",
   "source": 2468,
   "filter": {
     "type": "'temperature' or 'pressure'"
@@ -217,7 +255,7 @@ To include messages of **type** "temperature" only:
 ```json
 {
   "context": "mo",
-  "subscription": "subscription01",
+  "subscription": "subscription04",
   "source": 2468,
   "filter": {
     "type": "temperature"
@@ -235,10 +273,10 @@ These have different qualities which can be useful to satisfy the varying needs 
 Persistent subscriptions are the default. They are used for reliable messaging, ensuring that consumers never miss a 
 message if their connection is interrupted.
 They use replicated secondary storage to maintain backlogs (within the constraints of any configured storage limits)
-and to maintain the consumers' positions in the subscription notification streams.
+and to maintain the consumers' positions in their topics.
 When a consumer of a persistent subscription has their connection interrupted,
 whether that is due to network issues or deliberate actions by the consumer,
-upon reconnection they will continue to receive notifications from the position they were at before the outage
+upon reconnection they will continue to receive notifications from the topic position they were at before the outage
 (specifically, from the message after the last one they acknowledged successfully before the outage).
 
 Non-persistent subscriptions are only buffered in memory. A client consumer's position is not persisted across
@@ -246,17 +284,42 @@ interruptions of the client connection.
 When a consumer of a non-persistent subscription has their connection interrupted,
 upon reconnection they will start receiving notifications from the most recent message of the subscription,
 missing all other notifications that occurred during the connection outage.
-This will be the case for such temporarily disconnected consumers,
+This will be the case for all such temporarily disconnected consumers,
 even if other consumers of the same non-persistent subscription
 are still receiving older messages that occurred while it was not connected.
 
+{{< c8y-admon-info >}}
 If you create both a persistent and a non-persistent subscription with the same **subscription** field,
 they are *separate*, independent subscriptions, backed by separate topics.
-Such subscriptions can vary by any other body parameters you choose; they do not have to be
-persistent and non-persistent variations of the same notification data. 
 
-When creating a token for a non-persistent subscription topic, the token's **nonPersistent** field must be set to `true`.
-As is the case for the subscription, this field defaults to `false`, meaning the token will be for a persistent subscription topic.
+When creating a token for a non-persistent subscription topic, to access notifications from the correct topic, 
+the token's **nonPersistent** field must be set to `true`.
+As is the case for the subscription, this field defaults to `false`, meaning the token will be for a persistent 
+subscription topic by default.
+{{< /c8y-admon-info >}}
+
+### Deleting subscriptions
+
+Deleting a subscription will prevent it adding further notification messages to its associated topic. Many subscriptions 
+can contribute notifications to a given topic so this does not control the topic lifecycle.
+Deleting all the subscriptions associated with a topic will ensure no more notifications are added to it. This does not 
+delete the topic either.
+
+Even though the topic will no longer accumulate new messages, there may still be consumers draining 
+the last of the messages from it. When all messages are consumed by all consumers, the topic will be empty and consume 
+negligible space in the Messaging Service.
+
+Subscriptions can be deleted by sending an HTTP DELETE message to the (/notification2/subscriptions/)[] REST ENDPOINT using 
+the subscription's id as the URL filename. For example to delete subscription with id 8765:
+
+```text
+ DELETE /notification2/subscriptions/8765 HTTP/1.1
+ Host: <HOST>
+ Authentication: Basic: <AUTHENTICATION>
+```
+
+When a tenant is deleted from Cumulocity IoT, all its subscriptions will be deleted. However, topics and consumers may 
+still be active in the Messaging Service until all messages are consumed.
 
 
 
@@ -403,38 +466,6 @@ For example: two consumers identifying themselves as *instance1* and *instance2*
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
 
 Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens can be created for the same subscription and they all operate independently, each receiving their own copy of the notifications. This means you can have multiple shared tokens for the same subscription and their load is only divided within the scope of each shared token.
-
-### Deleting subscriptions and unsubscribing a subscriber
-
-Once a subscription is made, notifications will be retained until consumed by all subscribers who have previously connected to the subscription.
-The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber. 
-The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) is used to delete subscriptions.
-After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications 
-and be removed when that is done.
-
-Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
-For persistent subscriptions, this can result in notifications remaining in storage if never consumed by the application.
-However, unconsumed persistent notifications will be retained, and for high throughput scenarios this can result in notifications remaining in storage if never consumed by the application.
-
-They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
-It is therefore advisable to unsubscribe a subscriber that will never run again (and so will not drain down persisted notifications).
-A separate REST endpoint is available for this: <kbd>/notification2/unsubscribe</kbd>.
-It has a mandatory query parameter `token`.
-The token is the same as you would use to connect to the WebSocket endpoint to consume notifications.
-Note that there is no explicit "subscribe a subscriber" operation using a token.
-Instead this happens when you first connect a WebSocket with a token for the subscription name and subscriber.
-However, unsubscribing a microservice or an application is an explicit act using the original or a similar token.
-Unsubscribing should be infrequent, for example when deleting an application or during development when testing completes,
-as typically one wants messages to persist even when no consumer is running.
-Only if no consumer will ever run again to drain notifications should unsubscribing a subscriber be necessary.
-
-It is also possible to unsubscribe a subscriber on an open consumer WebSocket connection.
-To do so, send `unsubscribe_subscriber` instead of a message acknowledgement identifier from your WebSocket client to the service.
-The service will then unsubscribe the subscriber and close the connection.
-It's not possible to check if the unsubscribe operation succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
-
-It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, 
-as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.
 
 ### Building consuming microservices and applications
 

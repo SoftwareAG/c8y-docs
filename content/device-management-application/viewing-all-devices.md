@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: All devices list
+title: Viewing all devices
 layout: bundle
 section:
   - device_management

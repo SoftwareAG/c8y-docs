@@ -326,7 +326,7 @@ negligible space in the Messaging Service.
 
 Subscriptions can be deleted by sending an HTTP DELETE message to the 
 [/notification2/subscriptions/](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/deleteNotificationSubscriptionResource) 
-REST ENDPOINT using the subscription's id as the URL filename. For example to delete subscription with id 8765:
+REST endpoint using the subscription's id as the URL filename. For example to delete subscription with id 8765:
 
 ```text
  DELETE /notification2/subscriptions/8765 HTTP/1.1

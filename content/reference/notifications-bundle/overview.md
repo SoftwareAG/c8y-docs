@@ -424,7 +424,7 @@ they can be extracted from the token string as outlined in Java code below:
 // The token string's sections are delimited by dots.
 String[] tokenParts = token.split("\\.");
 // Base64 decode the second section
-// byte[] decoded = Base64.getDecoder().decode(tokenParts[1]);
+byte[] decoded = Base64.getDecoder().decode(tokenParts[1]);
 // Create a string from the decoded bytes to get a JSON string of the token fields
 String tokenJson = new String(decoded);
 // ... optionally create an Object from the string or bytes using a JSON  parser
@@ -457,8 +457,8 @@ Collectively, the set receives all notifications for the subscription topic.
 
 The notification load is spread across the shared consumers according to the ID of the source that generated the notification, typically a device ID.
 All notifications for a given ID will be delivered to the same consumer. Each consumer may receive notifications for many different IDs.
-This means that there is no benefit using shared tokens unless the notifications feeding the subscription are coming from multiple sources.
-Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription.
+This means that there is no benefit using shared tokens unless the notifications feeding the subscription topic are coming from multiple sources.
+Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription topic.
 The load should generally become more evenly distributed as the number of sources increases.
 
 In order to help keep the messages from a given set of source IDs 'sticky' to a specific consumer in the share in the face of connection interruptions,
@@ -468,7 +468,7 @@ For example: two consumers identifying themselves as *instance1* and *instance2*
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
 
 Subscriptions are always unaware of the nature and number of their consumers: any number of shared and exclusive tokens 
-can be created for the same subscription and they all operate independently, 
+can be created for the same subscription topic and they all operate independently, 
 each receiving their own copy of the notifications.
 This means you can have multiple shared tokens for the same subscription topic and their load is only divided within the scope of each shared token.
 

@@ -81,12 +81,12 @@ See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for m
 
 The diagram below shows 3 consumer (backlogs) have been created in the Messaging Service by four consumer clients.
 
-The rightmost client identifies its consumer as 'alarmmonitor" and that consumer (backlog) receives messages from the "alarms" subscription topic. 
+The rightmost client identifies its consumer as 'alarmmonitor" and that consumer receives messages from the "alarms" subscription topic. 
 
 The second to right client identifies its consumer as 'tempaudit" and that consumer receives messages from the "temperature" subscription topic.
 
 The leftmost two consumer clients are two shares of a (logically single) [shared consumer](../notifications/#shared-tokens),
-and so share the same backlog. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
+and so share the same consumer backlog. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
 of the messages in the "temperature" topic, collectively they receive all messages. 
 
 
@@ -113,7 +113,7 @@ Therefore, all consumer backlogs should be considered to have a storage cost fro
 they explicitly express no further interest in the topic by unsubscribing.
 The Messaging Service stops retaining (storing) a given message when there are no backlogs that reference it anymore.
 
-The following diagram shows the lifecycle of a consumer backlog in relation to it associated client connection(s).
+The following diagram shows the lifecycle of a consumer backlog in relation to its associated client connection(s).
 The backlog is created when the consumer first connects to the Messaging Service and is only destroyed when it is explicitly unsubscribed.
 The consumer's backlog is maintained, even if its client connection is interrupted. This is needed for reliable messaging, 
 allowing the consumer to not miss messages during connection outages, but comes at a cost of explicit lifecycle management.
@@ -137,7 +137,9 @@ determine which {{< product-c8y-iot >}} messages are forwarded to a topic, and t
 This request must be made by an authenticated Cumulocity IoT user with the ROLE_NOTIFICATION_2_ADMIN role.
 
 The **context** field broadly determines the type of {{< product-c8y-iot >}} message a subscription might match and forward.
-There are two valid **context** values: "mo" (managed-object) and "tenant" and each only supports a subset of the available JSON fields, as follows:
+There are two valid **context** values: "mo" (managed-object) and "tenant". Some subscription fields have 
+constraints that vary according to the value of the **context** field. Where this is the case, it is pointed out in that field's 
+documentation in the [Notification 2.0 OpenAPI](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Notification-2.0-API).
 
 The **source** fields can only be used if the **context** is "mo". It must be the value of a managed-object's global identifier 
 (sometimes referred to as a 'device id' or 'source id'). This is used to target inclusion of messages from the given managed-object.

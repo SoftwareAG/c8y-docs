@@ -30,12 +30,12 @@ See the rest of this section and the detailed API documentation for full details
 
 ### Topics and subscriptions
 Internally, Notifications 2.0 uses a [publish-subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
-system, allowing use-cases to organise their desired selections of measurement, event, alarm and/or inventory messages 
+pattern, allowing use-cases to organise their desired selections of measurement, event, alarm and/or inventory messages 
 into topics according to functional interest.
 Creating a Notification 2.0 [subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions)
 within {{< product-c8y-iot >}} creates a publisher (internally), that will forward {{< product-c8y-iot >}} messages that it matches (based 
 on message qualities such as its source, type or even content, for example) to a specific topic. 
-A single subscription can only forward messages to one topic, multiple subscriptions can forward messages to the same or different topics.
+Each subscription can only forward messages to one topic, but multiple subscriptions can forward messages to the same topic.
 
 {{< c8y-admon-caution >}}
 The term 'subscription' is overloaded and can be confusing here.
@@ -47,7 +47,7 @@ The diagram 'Notification 2.0 topics and subscriptions' immediately following sh
 three subscriptions that have been created in {{< product-c8y-iot >}} that are forwarding notification messages into two topics in the messaging service.
 
 The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions.
-Both of these have a managed-object context and they both include messages from the measurement api only.
+Both of these have a managed-object context and they both include messages from the measurement API only.
 A subscription with a managed-object context can only forward messages from a specific managed-object (such as a device).
 The leftmost subscription is forwarding measurements from a device with source id '12345' and
 the centrally depicted one the same but from device '67890'.
@@ -79,7 +79,7 @@ and should be unsubscribed if they are no longer needed or not needed for long p
 See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for more details.
 {{< /c8y-admon-caution >}}
 
-The diagram below shows 3 consumer (backlogs) have been created in the Messaging Service by four consumer clients.
+The diagram below shows 3 consumers (backlogs) that have been created in the Messaging Service by four consumer clients.
 
 The rightmost client identifies its consumer as 'alarmmonitor" and that consumer receives messages from the "alarms" subscription topic. 
 
@@ -87,8 +87,8 @@ The second to right client identifies its consumer as 'tempaudit" and that consu
 
 The leftmost two consumer clients are two shares of a (logically single) [shared consumer](../notifications/#shared-tokens),
 and so share the same consumer backlog. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
-of the messages in the "temperature" topic, collectively they receive all messages. 
-
+of the messages in the "temperature" topic.
+Collectively, they receive all of the messages in the topic.
 
 ![Notification 2.0 consumers and consumer clients diagram](/images/reference-guide/notification2/notification2-consumers.svg)
 
@@ -111,7 +111,7 @@ Persistent subscription topic messages are only stored once in the Messaging Ser
 whether the consumer is connected or not, reference each message until they have received and acknowledged it. 
 Therefore, all consumer backlogs should be considered to have a storage cost from when they first connect until 
 they explicitly express no further interest in the topic by unsubscribing.
-The Messaging Service stops retaining (storing) a given message when there are no backlogs that reference it anymore.
+The Messaging Service discards a given message only when there are no backlogs that reference it anymore.
 
 The following diagram shows the lifecycle of a consumer backlog in relation to its associated client connection(s).
 The backlog is created when the consumer first connects to the Messaging Service and is only destroyed when it is explicitly unsubscribed.
@@ -145,7 +145,7 @@ The **source** fields can only be used if the **context** is "mo". It must be th
 (sometimes referred to as a 'device id' or 'source id'). This is used to target inclusion of messages from the given managed-object.
 
 **subscription** is the first of two fields that identify which topic this subscription will forward messages to.
-Multiple subscriptions can contribute a single topic if they have they same values for both topic identifying fields.
+Multiple subscriptions will contribute to a single topic if they have they same values for both the **subscription** and **nonPersistent** fields.
 
 The **nonPersistent** field determines if the topic is [persistent or nonPersistent](../notifications/#non-persistent-topics).
 Subscriptions with the same **subscription** field value, but different **nonPersistent** values forward to two different topics.
@@ -216,7 +216,6 @@ An application can use this to discover new managed-objects.
 It can then choose to create subscriptions with "mo" **context** for those managed-objects.
 It is also possible to subscribe to all alarms or events that are generated in a tenant using "tenant" **context**.
 
-
 <a name="subscription-filter">&nbsp;</a>
 ### Subscription filters
 Subscription filters provide fine-grained selection of the {{< product-c8y-iot >}} messages a subscription will forward.
@@ -249,7 +248,7 @@ To include only messages from the measurements and alarms APIs:
   "subscription": "subscription02",
   "source": 2468,
   "filter": {
-    "apis": ["measurement", "alarm"]
+    "apis": ["measurements", "alarms"]
   }
 }
 ```
@@ -430,8 +429,8 @@ String tokenJson = new String(decoded);
 // ... optionally create an Object from the string or bytes using a JSON  parser
 ```
 
-If you are using the {{< product-c8y-iot >}} Java SDK[TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) 
-class, it has a public refresh method which does the above for you (internally on the client side).
+If you are using the {{< product-c8y-iot >}} Java SDK [TokenApi](https://github.com/SoftwareAG/cumulocity-clients-java/blob/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications/TokenApi.java) 
+class, it has a public refresh method which does the above for you, internally on the client side.
 
 <a name="shared-tokens">&nbsp;</a>
 ### Shared consumer tokens

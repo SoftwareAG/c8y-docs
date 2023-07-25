@@ -47,8 +47,8 @@ The diagram 'Notification 2.0 topics and subscriptions' immediately following sh
 three subscriptions that have been created in {{< product-c8y-iot >}} that are forwarding notification messages into two topics in the messaging service.
 
 The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions.
-Both of these have a managed-object context and they both include messages from the measurement API only.
-A subscription with a managed-object context can only forward messages from a specific managed-object (such as a device).
+Both of these have a managed object context and they both include messages from the measurement API only.
+A subscription with a managed object context can only forward messages from a specific managed object (such as a device).
 The leftmost subscription is forwarding measurements from a device with source id '12345' and
 the centrally depicted one the same but from device '67890'.
 
@@ -79,7 +79,7 @@ and should be unsubscribed if they are no longer needed or not needed for long p
 See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for more details.
 {{< /c8y-admon-caution >}}
 
-The diagram below shows 3 consumers (backlogs) that have been created in the Messaging Service by four consumer clients.
+The diagram below shows 3 consumers that have been created in the Messaging Service by four consumer clients.
 
 The rightmost client identifies its consumer as 'alarmmonitor" and that consumer receives messages from the "alarms" subscription topic. 
 
@@ -97,7 +97,7 @@ Collectively, they receive all of the messages in the topic.
 
 When a subscription is created, Cumulocity IoT starts to create and forward notifications within the subscription's scope 
 to the Messaging Service subsystem. The Message Service does not necessarily retain these messages; it only retains a 
-subscription's messages if the subscription is persistent and there is at least one known consumer of its topic.
+subscription topic's messages if the topic is persistent and it has at least one known consumer.
 
 {{< c8y-admon-info >}}
 Only consumers of persistent subscription topics have backlogs that are maintained across client reconnections.
@@ -137,12 +137,12 @@ determine which {{< product-c8y-iot >}} messages are forwarded to a topic, and t
 This request must be made by an authenticated Cumulocity IoT user with the ROLE_NOTIFICATION_2_ADMIN role.
 
 The **context** field broadly determines the type of {{< product-c8y-iot >}} message a subscription might match and forward.
-There are two valid **context** values: "mo" (managed-object) and "tenant". Some subscription fields have 
+There are two valid **context** values: "mo" (managed object) and "tenant". Some subscription fields have 
 constraints that vary according to the value of the **context** field. Where this is the case, it is pointed out in that field's 
 documentation in the [Notification 2.0 OpenAPI](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Notification-2.0-API).
 
-The **source** fields can only be used if the **context** is "mo". It must be the value of a managed-object's global identifier 
-(sometimes referred to as a 'device id' or 'source id'). This is used to target inclusion of messages from the given managed-object.
+The **source** fields can only be used if the **context** is "mo". It must be the value of a managed object's global identifier 
+(sometimes referred to as a 'device id' or 'source id'). This is used to target inclusion of messages from the given managed object.
 
 **subscription** is the first of two fields that identify which topic this subscription will forward messages to.
 Multiple subscriptions will contribute to a single topic if they have they same values for both the **subscription** and **nonPersistent** fields.
@@ -208,13 +208,16 @@ The following summarizes the subscription fields.
 </tbody>
 </table>
 
-Notifications for new managed-objects creations can never be forwarded by subscriptions with an "mo" **context** as the 
-managed-object is only given an id when it is created and that id is needed as a field to create the subscription.
-Therefore, to receive notifications informing of new managed-object creations, a subscription with "tenant" **context** 
+Notifications for new managed objects creations can never be forwarded by subscriptions with an "mo" **context** as the 
+managed object is only given an id when it is created and that id is needed as a field to create the subscription.
+Therefore, to receive notifications informing of new managed object creations, a subscription with "tenant" **context** 
 must be created to listen for them.
-An application can use this to discover new managed-objects.
-It can then choose to create subscriptions with "mo" **context** for those managed-objects.
+An application can use this to discover new managed objects.
+It can then choose to create subscriptions with "mo" **context** for those managed objects.
 It is also possible to subscribe to all alarms or events that are generated in a tenant using "tenant" **context**.
+
+Notifications for managed object deletions will be forwarded to topics by subscriptions with "mo" (managed object) context 
+that include the "managedobjects" API, and by subscriptions with "tenant" context that include the "managedobjects" API.
 
 <a name="subscription-filter">&nbsp;</a>
 ### Subscription filters
@@ -227,7 +230,7 @@ Filters specified by those with "mo" **context** can provide either or both filt
 The **apis** field is a JSON array that specifies which {{< product-c8y-iot >}} API messages to include.
 Use an array containing just the wildcard value, "*", to include messages from all APIs. 
 To include messages from a subset of the APIs, use an array containing any single or multiple selection from 
-"alarms", "alarms with children", "events", "events with children", "measurements", "managed objects" and "operations".
+"alarms", "alarmsWithChildren", "events", "eventsWithChildren", "measurements", "managedobjects" and "operations".
 
 For example, to include messages from all APIs:
 ```json
@@ -253,9 +256,9 @@ To include only messages from the measurements and alarms APIs:
 }
 ```
 
-The "alarms with children" and "events with children" **apis** values allow subscriptions with managed-object **context**
-to filter in, respectively, alarms or events for all recursively descendant child managed-objects of the **source**
-managed-object in addition to inclusion of those from the **source** managed-object itself.
+The "alarms with children" and "events with children" **apis** values allow subscriptions with managed object **context**
+to filter in, respectively, alarms or events for all recursively descendant child managed objects of the **source**
+managed object in addition to inclusion of those from the **source** managed object itself.
 
 The **typeFilter** string field is matched against the original message's **type** field. It can be a single value, or a
 limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) expression.
@@ -329,9 +332,8 @@ Even though the topic will no longer accumulate new messages, there may still be
 the last of the messages from it. When all messages are consumed by all consumers, the topic will be empty and consume 
 negligible space in the Messaging Service.
 
-Subscriptions can be deleted by sending an HTTP DELETE message to the 
-[/notification2/subscriptions/](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/deleteNotificationSubscriptionResource) 
-REST endpoint using the subscription's id as the URL filename. For example to delete subscription with id 8765:
+Subscriptions can be deleted by sending a [delete subscription request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/deleteNotificationSubscriptionResource), 
+using the subscription's id as the URL filename. For example to delete subscription with id 8765:
 
 ```text
  DELETE /notification2/subscriptions/8765 HTTP/1.1

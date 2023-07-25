@@ -141,7 +141,8 @@ There are two valid **context** values: "mo" (managed object) and "tenant". Some
 constraints that vary according to the value of the **context** field. Where this is the case, it is pointed out in that field's 
 documentation in the [Notification 2.0 OpenAPI](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Notification-2.0-API).
 
-The **source** fields can only be used if the **context** is "mo". It must be the value of a managed object's global identifier 
+The **source** fields can only be used if the **context** is "mo". It must have a nested **id** field containing the 
+value of a managed object's global identifier 
 (sometimes referred to as a 'device id' or 'source id'). This is used to target inclusion of messages from the given managed object.
 
 **subscription** is the first of two fields that identify which topic this subscription will forward messages to.
@@ -179,7 +180,7 @@ The following summarizes the subscription fields.
 <td nowrap="nowrap">source</td>
 <td>A managed object global identifier</td>
 <td>Required if context is "mo"</td>
-<td></td>
+<td>Mandatory child <b>id</b> field</td>
 </tr>
 <tr>
 <td nowrap="nowrap">subscription</td>
@@ -237,7 +238,9 @@ For example, to include messages from all APIs:
 {
   "context": "mo",
   "subscription": "subscription01",
-  "source": 2468,
+  "source": {
+    "id": 2468
+  },
   "filter": {
     "apis": ["*"]
   }
@@ -249,7 +252,9 @@ To include only messages from the measurements and alarms APIs:
 {
   "context": "mo",
   "subscription": "subscription02",
-  "source": 2468,
+  "source": {
+    "id": 2468
+  },
   "filter": {
     "apis": ["measurements", "alarms"]
   }
@@ -257,8 +262,8 @@ To include only messages from the measurements and alarms APIs:
 ```
 
 The "alarms with children" and "events with children" **apis** values allow subscriptions with managed object **context**
-to filter in, respectively, alarms or events for all recursively descendant child managed objects of the **source**
-managed object in addition to inclusion of those from the **source** managed object itself.
+to filter in, respectively, alarms or events for all recursively descendant child managed objects of the **source.id**
+managed object in addition to inclusion of those from the **source.id** managed object itself.
 
 The **typeFilter** string field is matched against the original message's **type** field. It can be a single value, or a
 limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) expression.
@@ -268,7 +273,9 @@ For example, to include messages with **type** "temperature" and messages with *
 {
   "context": "mo",
   "subscription": "subscription03",
-  "source": 2468,
+  "source": {
+    "id": 2468
+  },
   "filter": {
     "type": "'temperature' or 'pressure'"
   }
@@ -279,7 +286,9 @@ To include messages of **type** "temperature" only:
 {
   "context": "mo",
   "subscription": "subscription04",
-  "source": 2468,
+  "source": {
+    "id": 2468
+  },
   "filter": {
     "type": "temperature"
   }

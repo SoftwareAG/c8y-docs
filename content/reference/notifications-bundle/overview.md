@@ -62,9 +62,13 @@ the platform, including any alarms raised by the depicted devices.
 
 ### Consumers and tokens
 A topic's notification messages can be received by WebSocket based consumers that present a valid authorizing
-token for that specific topic when connecting to the Notification 2.0 WebSocket endpoint. Tokens can be obtained from the
+token for that specific topic when connecting to the Notification 2.0 WebSocket endpoint.
+This token is in the form of a string conforming to the JWT (JSON Web Token) standard. Tokens can be obtained from the
 {{< product-c8y-iot >}}  [token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) REST API by authenticated users.
-Consumers receive the topic messages reliably in order and must acknowledge each message in turn.
+
+Consumers receive the topic messages reliably, with at-least-once semantics, in order and must acknowledge each message in turn.
+Notification order is preserved from the point of view of any given device sending in REST and MQTT API requests.
+The protocol is text-based and described in detail in the [Consumer protocol](../notifications/#consumer-protocol) section.
 In typical usage, multiple consumers of a given topic operate independently in parallel, each receiving and acknowledging
 separate copies of those messages.
 
@@ -72,7 +76,7 @@ separate copies of those messages.
 It is important to manage consumers carefully as they can place significant storage resource demands on a system.
 Consumers should only be created (connected) if they are to be active, 
 and should be unsubscribed if they are no longer needed or not needed for long periods.
-See the [Consumer lifecycle](../notifications/#consumer-ilfecycle) section for more details.
+See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for more details.
 {{< /c8y-admon-caution >}}
 
 The diagram below shows 3 consumer (backlogs) have been created in the Messaging Service by four consumer clients.
@@ -88,7 +92,7 @@ of the messages in the "temperature" topic, collectively they receive all messag
 
 ![Notification 2.0 consumers and consumer clients diagram](/images/reference-guide/notification2/notification2-consumers.svg)
 
-<a name="consumer-ilfecycle">&nbsp;</a>
+<a name="consumer-lifecycle">&nbsp;</a>
 ### Consumer lifecycle
 
 When a subscription is created, Cumulocity IoT starts to create and forward notifications within the subscription's scope 
@@ -352,7 +356,8 @@ There is no such thing as a peristent or non-peristent consumer
 and tokens cannot affect the nature they experience of topics using this field. 
 
 The **subscriber** field provides a unique (within the scope of this topic) identity for the consumer, allowing 
-it to be recognised across connection interruptions, so allowing message delivery to be reliable.
+it to be recognised across connection interruptions, so allowing message delivery to be resumed after such interruptions
+and thus reliable.
 
 The **shared** field determines if multiple clients can connect in parallel as the consumer identified in the 
 **subscriber** field, acting collectively to share the notification message processing load.
@@ -402,27 +407,6 @@ The following summarizes the token fields.
 </tr>
 </tbody>
 </table>
-
-
-
-`OLD BELOW (for harvesting bits)`
-In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization 
-token that provides proof that the holder is allowed to receive subscribed notifications.
-
-This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from 
-the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
-
-This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
-
-
-
-Once subscribed, notifications are persisted and available to be consumed using a new WebSocket-based protocol.
-This protocol implements a reliable delivery with at-least-once semantics.
-The underlying Messaging Service will repeatedly attempt to deliver a notification until that notification is acknowledged 
-as being received and processed by the consuming application or microservice.
-Notification order is preserved from the point of view of a device sending in REST and MQTT API requests.
-The protocol is text-based and described in detail in the next section.
-
 
 ### Token expiration
 

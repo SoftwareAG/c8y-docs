@@ -141,17 +141,17 @@ Apama-ctrl generates the diagnostics overview ZIP files with the following condi
 
 To diagnose high-memory-consuming models and EPL apps, you can try the following (it could be listener leaks, excessive state being stored or spawned monitors leaking, and so on):
 
-- Download the automatically generated diagnostics overview ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners (this number may be large in the case of a listener leak). Note that this is only an overview, but it includes the EPL memory profiler snapshots.
+- Download the automatically generated diagnostics overview ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners (this number may be large in the case of a listener leak). Note that this ZIP file includes the EPL memory profiler snapshots.
 
-- Download diagnostics information from the Streaming Analytics application using the **Diagnostics** link (as described in [Downloading diagnostics and logs](#diagnostics-download)). When using the **Enhanced** link, the diagnostics information includes (in addition to the information that you get with the **Diagnostics** link) requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues, but excludes EPL memory profiler snapshots. So when diagnosing the cause for the first time, it is recommended to use the overview ZIP file from the **Diagnostics** link, unless additional information is required.
-
-- The EPL memory profiler from the above **Diagnostics** link in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
+- Download diagnostics information from the Streaming Analytics application using the **Diagnostics** link (as described in [Downloading diagnostics and logs](#diagnostics-download)). The EPL memory profiler from the **Diagnostics** link in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
 
     | Monitor | Monitor instances | EPL objects | Listeners | Bytes   | Overhead bytes |
     | ------- | ----------------- | ----------- | --------- | ------- | -------------- |
     | mon1    | 1                 | 5384        | 4         | 1073908 | 383240         |
     | mon2    | 1                 | 2           | 2         | 696     | 2280           |
     | mon3    | 1                 | 4           | 1         | 840     | 752            |
+
+- When using the **Enhanced** link in the Streaming Analytics application, the diagnostics information includes (in addition to the information that you get with the **Diagnostics** link) requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues. So when diagnosing the cause for the first time, it is recommended to use the overview ZIP file from the **Diagnostics** link, unless additional information is required.
 
 - Also check for memory usage on all the input and output queues available from the **Enhanced** link in */diagnostics/toStringQueues.txt*.
 

@@ -325,7 +325,7 @@ the last of the messages from it. When all messages are consumed by all consumer
 negligible space in the Messaging Service.
 
 Subscriptions can be deleted by sending an HTTP DELETE message to the 
-(/notification2/subscriptions/)[https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/deleteNotificationSubscriptionResource] 
+[/notification2/subscriptions/](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/deleteNotificationSubscriptionResource) 
 REST ENDPOINT using the subscription's id as the URL filename. For example to delete subscription with id 8765:
 
 ```text

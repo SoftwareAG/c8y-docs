@@ -25,5 +25,5 @@ See the section [Enterprise tenant > Managing tenants](/users-guide/enterprise-t
 For the offloading of {{< product-c8y-iot >}} data, you need the connection settings and credentials for a cloud data lake service. During offloading, the data will be written into a data lake folder named after the tenant name.
 
 {{< c8y-admon-info >}}
-Instructions on how to configure the data lake so that it is accessible via Dremio are available in [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake). More details can be found in the [Dremio data source documentation](https://docs.dremio.com/data-sources/). Note that you must not create the target table, which connects to the data lake, in Dremio; this is done by {{< product-c8y-iot >}} DataHub.
+This section provides instructions on how to configure the data lake so that it is accessible via Dremio. More details can be found in the [Dremio data source documentation](https://docs.dremio.com/current/sonar/data-sources/). Note that you must not create the target table, which connects to the data lake, in Dremio; this is done by {{< product-c8y-iot >}} DataHub.
 {{< /c8y-admon-info >}}

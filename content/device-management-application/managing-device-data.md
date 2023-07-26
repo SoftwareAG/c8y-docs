@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Managing device repositories
+title: Managing device data
 layout: bundle
 section:
   - device_management

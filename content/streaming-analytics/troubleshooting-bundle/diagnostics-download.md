@@ -38,7 +38,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enhanced&lt;timestamp&gt;.zip* and includes the following information:
 
 - Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file.
-- In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator. These include the contents of the queues.
+- In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator. These include the contents of the queues, CPU usage, and so on.
 
 What a user can see or do depends on the permissions:
 

@@ -141,7 +141,7 @@ Apama-ctrl generates the diagnostics overview ZIP files with the following condi
 
 To diagnose high-memory-consuming models and EPL apps, you can try the following (it could be listener leaks, excessive state being stored or spawned monitors leaking, and so on):
 
-- Download the automatically generated diagnostics overview ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners (this number may be large in the case of a listener leak). Note that this ZIP file includes the EPL memory profiler snapshots.
+- Download the automatically generated diagnostics overview ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners. This number may be large in the case of a listener leak. Note that this ZIP file includes the EPL memory profiler snapshots.
 
 - Download the diagnostics information from the Streaming Analytics application using the **Diagnostics** link (as described in [Downloading diagnostics and logs](#diagnostics-download)). The EPL memory profiler from the **Diagnostics** link in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
 

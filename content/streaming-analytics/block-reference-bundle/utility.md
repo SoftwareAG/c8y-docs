@@ -105,7 +105,7 @@ The Value parameter can be treated as a string, boolean, float or JSON value. If
 <tr>
 <th scope="row">Type</th>
 <td><span>How to interpret the Value parameter and set the output type. If JSON is selected as the type, the Value parameter must be a valid JSON value.</span>
-<p>If the Type parameter remains unselected, the type of the output value is set based on the type of the input parameter value.</p>
+<p>If the Type parameter remains unselected, the type of the output value is set based on the type of the input parameter value. If the value is either <tt>true</tt> or <tt>false</tt>, the output is a boolean value. If the value is a number, the output is a float value. If the value is a valid JSON, the output is a pulse with the properties from the object. In all other cases, the output is a string value.</p>
 </td>
 <td><span><p>Option - one of:</p>
 <ul>

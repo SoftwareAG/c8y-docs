@@ -87,7 +87,7 @@ The rightmost client identifies its consumer as 'alarmmonitor" and that consumer
 The second to right client identifies its consumer as 'tempaudit" and that consumer receives messages from the "temperature" subscription topic.
 
 The leftmost two consumer clients are two shares of a (logically single) [shared consumer](../notifications/#shared-tokens),
-and so share the same consumer backlog. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
+and so share the same copy of topic messages. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
 of the messages in the "temperature" topic.
 Collectively, they receive all of the messages in the topic.
 

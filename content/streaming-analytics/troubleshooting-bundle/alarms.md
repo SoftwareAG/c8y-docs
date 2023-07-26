@@ -151,7 +151,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
     | mon2    | 1                 | 2           | 2         | 696     | 2280           |
     | mon3    | 1                 | 4           | 1         | 840     | 752            |
 
-- When using the **Enhanced** link in the Streaming Analytics application, the diagnostics information includes (in addition to the information that you get with the **Diagnostics** link) requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues. So when diagnosing the cause for the first time, it is recommended to use the overview ZIP file from the **Diagnostics** link, unless additional information is required.
+- When using the **Enhanced** link in the Streaming Analytics application, the diagnostics information includes, in addition to the information that you get with the **Diagnostics** link, requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues. So when diagnosing the cause for the first time, it is recommended to use the overview ZIP file from the **Diagnostics** link, unless additional information is required.
 
 - Also check for memory usage on all the input and output queues available from the **Enhanced** link in */diagnostics/toStringQueues.txt*.
 

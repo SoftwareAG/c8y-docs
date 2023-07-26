@@ -18,12 +18,6 @@ helpcontent:
 - [Tutorials > Add a Jest-based unit test](/guides/web/tutorials/#add-a-unit-test) in the *Web SDK guide* for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
-Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
-
-Select a group from the groups list or from the navigator to see its details, particularly all assets assigned to the group. Click **Assign devices** at the top right to assign devices to the group.
-
-You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator.
-
 <a name="assets"></a>
 ### Assets hierarchy
 

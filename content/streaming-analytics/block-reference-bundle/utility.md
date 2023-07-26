@@ -73,7 +73,7 @@ This category contains the following blocks:
 <p>Outputs a value, either when the Trigger input port receives a signal or at startup.</p>
 <p>The Trigger input port can be used to delay the output until a trigger input is received. If the Trigger input port is not connected, then the block outputs a value when the model is activated, which may trigger further processing.
 <p></p>
-The Value parameter can be treated as either a string, or as a JSON value.  For JSON string, number or boolean, then that will be the type of the output. For JSON objects, the output will be a pulse with the properties from the object. JSON arrays are only permitted within an object.</p>
+The Value parameter can be treated as a string, boolean, float or JSON value. If treated as a JSON string, number or boolean, then the output is of this type. If treated as a JSON object, the output is a pulse with the properties from the object. JSON arrays are only permitted within an object.</p>
 
 
 #### Parameters {#constant-value-parameters}
@@ -104,15 +104,19 @@ The Value parameter can be treated as either a string, or as a JSON value.  For 
 </tr>
 <tr>
 <th scope="row">Type</th>
-<td><span>How to interpret the Value parameter.</span>
+<td><span>How to interpret the Value parameter and set the output type. If JSON is selected as the type, the Value parameter must be a valid JSON value.</span>
+<p>If the Type parameter remains unselected, the type of the output value is set based on the type of the input parameter value.</p>
 </td>
 <td><span><p>Option - one of:</p>
 <ul>
-<li>string</li>
+<li>Float</li>
+<li>Boolean</li>
+<li>String</li>
 <li>JSON</li></ul>
 </span>
 </td>
-<td><span>Default: JSON</span></td>
+<td><span>Optional</span>
+</td>
 </tr>
 </tbody>
 </table>

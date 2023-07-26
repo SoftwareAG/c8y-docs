@@ -47,7 +47,7 @@ The diagram 'Notification 2.0 topics and subscriptions' immediately following sh
 three subscriptions that have been created in {{< product-c8y-iot >}} that are forwarding notification messages into two topics in the Messaging Service.
 
 The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions.
-Both of these have a managed object context and they both include messages from the measurement API only.
+Both of these have a "mo" (managed object) context and they both include messages from the measurement API only.
 A subscription with a managed object context can only forward messages from a specific managed object (such as a device).
 The leftmost subscription is forwarding measurements from a device with source id '12345' and
 the centrally depicted one the same but from device '67890'.

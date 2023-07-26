@@ -96,7 +96,7 @@ Collectively, they receive all of the messages in the topic.
 <a name="consumer-lifecycle">&nbsp;</a>
 ### Consumer lifecycle
 
-When a subscription is created, Cumulocity IoT starts to create and forward notifications within the subscription's scope 
+When a subscription is created, {{< product-c8y-iot >}} starts to create and forward notifications within the subscription's scope 
 to the Messaging Service subsystem. The Message Service does not necessarily retain these messages; it only retains a 
 subscription topic's messages if the topic is persistent and it has at least one known consumer.
 
@@ -135,7 +135,7 @@ There are two ways unsubscribe a consumer:
 ### Creating subscriptions
 The JSON fields sent in a [create subscription request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource)
 determine which {{< product-c8y-iot >}} messages are forwarded to a topic, and the forwarded message content.
-This request must be made by an authenticated Cumulocity IoT user with the `ROLE_NOTIFICATION_2_ADMIN` role.
+This request must be made by an authenticated {{< product-c8y-iot >}} user with the `ROLE_NOTIFICATION_2_ADMIN` role.
 
 The **context** field broadly determines the type of {{< product-c8y-iot >}} message a subscription might match and forward.
 There are two valid **context** values: "mo" (managed object) and "tenant". Some subscription fields have 
@@ -351,14 +351,14 @@ using the subscription's **id** as the URL filename. For example to delete subsc
  Authentication: Basic: <AUTHENTICATION>
 ```
 
-When a tenant is deleted from Cumulocity IoT, all its subscriptions will be deleted. However, topics and consumers may 
+When a tenant is deleted from {{< product-c8y-iot >}}, all its subscriptions will be deleted. However, topics and consumers may 
 still be active in the Messaging Service until all messages are consumed.
 
 ### Creating Tokens 
 The JSON fields sent in a [create token request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenResource)
 determine which subscription topic a consumer can receive messages from, the token's duration, 
 the [shared](../notifications/#shared-tokens) nature of the consumer, and an identifier for the consumer.
-This request must be made by an authenticated Cumulocity IoT user with the `ROLE_NOTIFICATION_2_ADMIN` role.
+This request must be made by an authenticated {{< product-c8y-iot >}} user with the `ROLE_NOTIFICATION_2_ADMIN` role.
 
 The **subscription** field aligns with the same field in the subscription object, so broadly specifies the subscription
 topic the consumer will receive notifications from. The **nonPersistent** field is also a factor in identifying the topic.

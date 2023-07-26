@@ -30,10 +30,10 @@ See the rest of this section and the detailed API documentation for full details
 
 ### Topics and subscriptions
 Internally, Notifications 2.0 uses a [publish-subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
-pattern, allowing use-cases to organise their desired selections of measurement, event, alarm and/or inventory messages 
+pattern, allowing use-cases to organise their desired selections of measurement, event, alarm, operations and/or inventory messages 
 into topics according to functional interest.
 Creating a Notification 2.0 [subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions)
-within {{< product-c8y-iot >}} creates a publisher (internally), that will forward {{< product-c8y-iot >}} messages that it matches (based 
+in {{< product-c8y-iot >}} creates a publisher (internally), that will forward {{< product-c8y-iot >}} messages that it matches (based
 on message qualities such as its source, type or even content, for example) to a specific topic. 
 Each subscription can only forward messages to one topic, but multiple subscriptions can forward messages to the same topic.
 

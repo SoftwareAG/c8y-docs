@@ -52,7 +52,7 @@ The following types of data lakes are currently supported:
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from {{< product-c8y-iot >}} DataHub|
 
->**Info:** An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
+>**Info:** An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/current/sonar/data-sources/object/s3](https://docs.dremio.com/current/sonar/data-sources/object/s3) are satisfied.
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
 

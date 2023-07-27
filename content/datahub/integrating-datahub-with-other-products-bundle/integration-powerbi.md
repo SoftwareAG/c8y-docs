@@ -4,19 +4,19 @@ title: Integrating Cumulocity IoT DataHub with Microsoft Power BI
 helpcontent:
   - label: configuring-powerbi-access
     title: Configuring access to Microsoft Power BI reports
-    content: "**Microsoft Power BI** is a business intelligence tool which allows you to create and use interactive reports for data from various sources. In particular, the reports can consume your IoT data stored in a data lake using Dremio as query and data access layer.
+    content: "Microsoft Power BI is a business intelligence tool which allows you to create and use interactive reports for data from various sources. In particular, the reports can consume your IoT data stored in a data lake using Dremio as query and data access layer.
     
 
-    To view those reports in Cumulocity IoT DataHub, you need an **Azure Active Directory tenant** with an application that can interact with Microsoft Power BI. You neither must sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an **Azure Active Directory service principal** object with an application secret is used.
+    To view those reports in Cumulocity IoT DataHub, you need an **Azure Active Directory tenant** with an application that can interact with Microsoft Power BI. You neither must sign in to Microsoft Power BI nor do you need a Microsoft Power BI license to access the reports. For access authentication an **Azure Active Directory service principal** object with an application secret is used.
     
 
-    Once you have configured the Microsoft Power BI connection, you can access corresponding workspaces and published reports under *Microsoft Power BI* in the *Navigator*."
+    Once you have configured the Microsoft Power BI connection, you can access corresponding workspaces and published reports under **Microsoft Power BI** in the **Navigator**."
   - label: working-with-reports
     title: Working with reports
     content: "Once the Microsoft Power BI settings have been defined, you can work with published reports.
     
     
-    Click **Add report** to list all available workspaces and reports. All workspaces which grant member or admin access to the service principal are listed. Select a workspace and then a report from that workspace. You can open multiple reports. A report is closed by clicking **Remove report**. 
+    Click **Add report** to list all available workspaces and reports. All workspaces which grant member or admin access to the service principal are listed. Select a workspace and then a report from that workspace. You can open multiple reports. To close a report click **Remove report**. 
     
     
     The list of currently opened reports is not stored. It will be flushed when closing the browser or deleting the settings."

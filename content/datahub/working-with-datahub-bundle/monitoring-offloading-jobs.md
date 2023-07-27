@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: monitoring-offloading-jobs
     title: Monitoring offloading jobs
-    content: "Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The execution status of each pipeline run is monitored and provides details on execution schedule, number of offloaded records, runtime etc. In case an offloading has failed, e.g. due to data lake connectivity issues, failure details are provided as well.
+    content: "Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The execution status of each pipeline run is monitored and provides details on execution schedule, number of offloaded records, runtime and so on. In case an offloading has failed, for example, due to data lake connectivity issues, failure details are provided as well.
 
     The **job history** list shows an overview of the last runs for the selected offloading pipeline with options to filter the list by different criteria. To get more details for a specific run like the generated files in the data lake, click on the corresponding entry in the list.
 

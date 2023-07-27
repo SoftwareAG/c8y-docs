@@ -98,9 +98,12 @@ Collectively, they receive all of the messages in the topic.
 
 When a subscription is created, {{< product-c8y-iot >}} starts to create and forward notifications within the subscription's scope 
 to the Messaging Service subsystem. The Message Service does not necessarily retain these messages; it only retains a 
-subscription topic's messages if the topic is persistent and it has at least one known consumer.
+subscription topic's messages if the topic is persistent, and it has at least one consumer for the topic that is or has been connected.
+
 
 {{< c8y-admon-info >}}
+The set of retained topic messages that have not been received and acknowledged by a given consumer are known as the consumer's *backlog*.
+
 Only consumers of persistent subscription topics have backlogs that are maintained across client reconnections.
 
 Consumers of non-persistent subscription topics get a new backlog pointing only to the next (latest) topic message when 
@@ -426,6 +429,13 @@ The following summarizes the token fields.
 A token's lifetime is determined at creation time by the optional **expiresInMinutes** field, which defaults to "1440" (one day, expressed in minutes).
 This can be used to limit exposure to potential security issues related to them being leaked to parties that should not be authorized to the access the system.
 Consequently, tokens may need to be re-created or refreshed periodically.
+
+{{< c8y-admon-info >}}
+Tokens *only* allows a consumer to connect to the Messaging Service. If a token expires while its consumer is connected, 
+the consumer is not automatically logged out or disconnected.
+
+If a consumer disconnects, and their token has expired, the token will have to be recreated or refreshed in order that the consumer can reconnect. 
+{{< /c8y-admon-info >}}
 
 Tokens can be refreshed by calling the token create request with the same parameters as originally 
 (a different **expiresInMinutes** value can be given if a different duration is desired). 

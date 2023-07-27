@@ -431,7 +431,7 @@ This can be used to limit exposure to potential security issues related to them 
 Consequently, tokens may need to be re-created or refreshed periodically.
 
 {{< c8y-admon-info >}}
-Tokens *only* allows a consumer to connect to the Messaging Service. If a token expires while its consumer is connected, 
+Tokens *only* allow a consumer to connect to the Messaging Service. If a token expires while its consumer is connected, 
 the consumer is not automatically logged out or disconnected.
 
 If a consumer disconnects, and their token has expired, the token will have to be recreated or refreshed in order that the consumer can reconnect. 

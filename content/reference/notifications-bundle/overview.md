@@ -124,15 +124,7 @@ allowing the consumer to not miss messages during connection outages, but comes 
 
 ![Notification 2.0 consumer backlog lifecycle](/images/reference-guide/notification2/notifications2-backlog-lifecycle.svg)
 
-There are two ways unsubscribe a consumer:
-* Pass the token as the **token** parameter to the
-  [/notification2/unsubscribe](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenUnsubscribeResource) REST endpoint.
-* Send the message `unsubscribe_subscriber` from the consumer's connected WebSocket client.
-  This will unsubscribe the consumer and close the connection (as shown in the diagram above). If the client experiences
-  a connection failure while unsubscribing in this manner, there is no way to be certain the unsubscribe message was 
-  successfully received and processed by the Messaging Service.
-  Therefore, under such circumstances, the client should always reconnect and send the message again to be sure the
-  unsubscribe action has taken effect.
+To unsubscribe its consumer, pass its token as the **token** parameter to the [/notification2/unsubscribe](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenUnsubscribeResource) REST endpoint.
 
 
 ### Creating subscriptions

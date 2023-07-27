@@ -72,13 +72,13 @@ The protocol is text-based and described in detail in the [Consumer protocol](..
 In typical usage, multiple consumers of a given topic operate independently in parallel, each receiving and acknowledging
 separate copies of those messages.
 
-{{< c8y-admon-caution >}}
+{{< c8y-admon-important >}}
 It is important to manage consumers carefully as they can place significant storage resource demands on a system.
 Consumers should only be created (connected) if they are to be active, 
 and should be unsubscribed if they are no longer needed or not needed for long periods.
 Unsubscribing is an explicit action - disconnecting a consumer client does *not* unsubscribe it.
 See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for more details.
-{{< /c8y-admon-caution >}}
+{{< /c8y-admon-important >}}
 
 The diagram below shows 3 consumers that have been created in the Messaging Service by four consumer clients.
 

@@ -57,7 +57,7 @@ Note that the account type must be **StorageV2**, and the **Hierarchical namespa
 |Root path in bucket|The root path within the S3 bucket; default root path is /; setting a subfolder allows you to hide other data in the bucket from {{< product-c8y-iot >}} DataHub|
 
 {{< c8y-admon-info >}}
-An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
+An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/current/sonar/data-sources/object/s3](https://docs.dremio.com/current/sonar/data-sources/object/s3) are satisfied.
 {{< /c8y-admon-info >}}
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:

@@ -12,13 +12,13 @@ Before setting up the connection to Microsoft Power BI in {{< product-c8y-iot >}
 
 #### Accessing data lakes in Microsoft Power BI reports
 
-{{< product-c8y-iot >}} DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select Dremio as a database [(https://docs.dremio.com/client-applications/microsoft-power-bi/)](https://docs.dremio.com/client-applications/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
+{{< product-c8y-iot >}} DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select Dremio as a database [(https://docs.dremio.com/current/sonar/client-applications/clients/microsoft-power-bi/)](https://docs.dremio.com/current/sonar/client-applications/clients/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
 
 {{< c8y-admon-info >}}
 The Microsoft Power BI datasets should use the DirectQuery mode, which prevents replicating and caching the data from the data lake.
 {{< /c8y-admon-info >}}
 
-A report is typically published so that it is available to other users as well. For a published report, it is currently required to deploy a Microsoft Power BI gateway which establishes the connection between Microsoft Power BI and Dremio. See the tutorial on the Dremio website [(https://docs.dremio.com/software/client-applications/microsoft-power-bi/publishing-reports/)](https://docs.dremio.com/software/client-applications/microsoft-power-bi/publishing-reports/) for detailed instructions.
+A report is typically published so that it is available to other users as well.
 
 #### Configuring access to Microsoft Power BI reports
 

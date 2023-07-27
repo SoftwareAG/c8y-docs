@@ -45,7 +45,7 @@ If you want to use an ODBC client to run SQL queries against the data lake, you 
 
 ### Connecting via Dremio REST API
 
-Dremio offers an [SQL REST API](https://docs.dremio.com/rest-api/sql/) which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
+Dremio offers an SQL REST API which you can use to run SQL queries against tables in the data lake. You need to authenticate with your Dremio account against Dremio in order to use the API.
 
 Note that the API might change any time and {{< company-sag >}} does not provide any guarantees. Dremio does not send any CORS headers, so direct access from a browser-based application is not possible. It is highly recommended to use {{< product-c8y-iot >}} DataHub's REST API, see below.
 
@@ -55,6 +55,6 @@ The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dre
 
 ### Connecting other clients
 
-Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/client-applications/clients.html) discusses how to connect these clients to Dremio and leverage its query capabilities.
+Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/current/sonar/client-applications/clients/) discusses how to connect these clients to Dremio and leverage its query capabilities.
 
 See also [Integrating {{< product-c8y-iot >}} DataHub with other products](/datahub/integrating-datahub-with-other-products) to learn how other products can connect to {{< product-c8y-iot >}} DataHub and leverage its query capabilities.

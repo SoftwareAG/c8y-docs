@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Device information
+title: Default columns
 layout: redirect
 ---
 

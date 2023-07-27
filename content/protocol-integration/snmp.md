@@ -1,8 +1,8 @@
 ---
-weight: 90
+weight: 60
 title: SNMP
 layout: bundle
-section: 
+section:
   - device_management
 aliases:
   - /users-guide/optional-services

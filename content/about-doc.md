@@ -9,4 +9,4 @@ section:
 weight: 10
 ---
 
-Find information on the {{< product-c8y-iot >}} user and developer documentation.
+Find technical information on the {{< product-c8y-iot >}} user and developer documentation.

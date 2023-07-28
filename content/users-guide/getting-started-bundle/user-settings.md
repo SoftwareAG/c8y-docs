@@ -106,7 +106,7 @@ Make sure to select a strong password. To support you in doing so, a password st
 
 By default, the password must meet the following conditions:
 
-* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).)
+* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}. Contact your Operations team on configuring this setting towards your needs.
 * Include each of the following character types:
   * uppercase letters: `[A-Z]`, for example `ABCDEF`.
   * lowercase letters: `[a-z]`, for example `abcdef`.

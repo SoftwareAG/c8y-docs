@@ -53,10 +53,6 @@ In the **Data** section, a chart is available to display the current values of s
 The time frame does not influence the direct calculation of the OEE. It only defines the time period for which the OEE is displayed here.
 {{< /c8y-admon-info >}}
 
-{{< c8y-admon-info >}}
-Implausible values are taken into consideration for shift calculations. Most implausible values are caused by a too low Ideal Cycle Amount. Even if implausible productivity values arise over short periods of time, this will pay off over a longer interval. In order to obtain meaningful values for a shift, it is therefore useful to calculate with implausible values.
-{{< /c8y-admon-info >}}
-
 ### Pareto chart
 
 The **Pareto** chart shows the loss ranking according to Pareto. The Pareto principle assumes that 80 % of the losses can be attributed to 20 % of the causes of defects.

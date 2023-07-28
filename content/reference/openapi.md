@@ -12,7 +12,7 @@ aliases:
   - /reference/identity
   - /reference/users
   - /reference-guide/users
-  - /reference/device-management-library
+  - /reference/device-integrator-library
   - /reference-guide/device-management.html
   - /reference/sensor-library
   - /reference-guide/sensor-library

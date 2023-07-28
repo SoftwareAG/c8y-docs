@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-The device management library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example, software management and configuration management. The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) in the *Concepts guide*.
+The device integrator library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example, software management and configuration management. The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) in the *Concepts guide*.
 
 In the following section you will find descriptions of the most important functionalities of a device, its managed objects and all its corresponding fragments to them. We will explain the relationship between the {{< product-c8y-iot >}} UI, the device object managed in our databases and what is being communicated to and from the device itself.
 
@@ -39,15 +39,15 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 </thead>
 <tbody>
 <tr>
-<td><a href="../../reference/device-management-library/#device-info">c8y_Availability</a></td>
+<td><a href="../../reference/device-integrator-library/#device-info">c8y_Availability</a></td>
 <td>Holds information about the device's status and its availability</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#reference">c8y_Command</a></td>
+<td><a href="../../reference/device-integrator-library/#reference">c8y_Command</a></td>
 <td>Allows the user to carry out interactive sessions with a device</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#configuration">c8y_Configuration</a></td>
+<td><a href="../../reference/device-integrator-library/#configuration">c8y_Configuration</a></td>
 <td>Contains the complete configuration state of the device including all control characters</td>
 </tr>
 <tr>
@@ -93,6 +93,14 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 <tr>
 <td><a href="../../reference/device-management-library/#device-restart">c8y_Restart</a></td>
 <td>Restarts a device</td>
+</tr>
+<tr>
+<td><a href="../../reference/device-management-library/#relay">c8y_Relay</a></td>
+<td>Enables switching device relay</td>
+</tr>
+<tr>
+<td><a href="../../reference/device-management-library/#relay-array">c8y_RelayArray</a></td>
+<td>Enables switching device relays in the array</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#upload-current-text-configuration">c8y_SendConfiguration</a></td>

@@ -7,7 +7,7 @@ aliases:
 ---
 
 {{< c8y-admon-related >}}
-* [Device management library > Connectivity](/reference/device-management-library/#connectivity) in the *Reference guide* for details on the `c8y_Mobile` fragment used in managed objects.
+* [Device integrator library > Connectivity](/reference/device-integrator-library/#connectivity) in the *Reference guide* for details on the `c8y_Mobile` fragment used in managed objects.
 * [Administration > Changing settings > Managing the connectivity settings](/users-guide/administration/#connectivity) in the *User guide* for information on how to change the connectivity settings via the UI.
 {{< /c8y-admon-related >}}
 
@@ -30,7 +30,7 @@ The following features are supported by these providers:
 
 As you can see, Jasper currently is the most feature-rich provider.
 
-Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](/reference/device-management-library/#connectivity) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
+Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](/reference/device-integrator-library/#connectivity) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
 
 |Requires|Comarch|Ericsson|Jasper|Kite|
 |:------|:-----|:-------|:------|:------|

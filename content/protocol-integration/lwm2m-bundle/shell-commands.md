@@ -51,19 +51,19 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 </tr>
 <tr>
 <td align="left">requestJson</td>
-<td align="left">The raw CoAP request can be specified using the following JSON syntax. 
+<td align="left">The raw CoAP request can be specified using the following JSON syntax.
 <pre>
 REQUEST_JSON = { 	
 	"method": ${METHOD},
-	"uri": ${URI}, 
-	"contentFormat" : ${CONTENTFORMAT}, 
-	"accept": ${ACCEPT}, 
+	"uri": ${URI},
+	"contentFormat" : ${CONTENTFORMAT},
+	"accept": ${ACCEPT},
 	"payloadHex": ${PAYLOADHEX}
-	} 
+	}
 METHOD = "get" | "post" | "put" | "delete" | "fetch" | "ipatch" | "patch"
 URI = "/" | "[A-Fa-f0-9]" | uri | null
-CONTENTFORMAT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>" 
-ACCEPT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>" 
+CONTENTFORMAT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>"
+ACCEPT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>"
 PAYLOADHEX = null | "^[A-Fa-f0-9]+$"
 </pre>
 </td>
@@ -178,13 +178,13 @@ For example: writeb /3442/0/150 binary:12345.
 <td align="center">1.0, 1.1</td>
 <td align="left">Allows a raw CoAP request to be sent to a LWM2M device. The command takes a request JSON string as a single argument. <br />
 <br />
-Example: <br/> 
-	
-	coap { 
+Example: <br/>
+
+	coap {
 		"method" : "get",
 		"uri" : "/3/0",
 		"accept" : "application/vnd.oma.lwm2m+json"}
-	
+
 <br />
 The CoAP response data is populated into the operation response. Note that {{< product-c8y-iot >}} does not further process CoAP responses. We also recommend you to use raw CoAP requests for device interactions only in exceptional cases. Any interaction with an LWM2M device should be carried out using standard LWM2M operations.
 </td>
@@ -210,5 +210,5 @@ The handling of LWM2M shell commands follows the following lifecycle:
 {{< c8y-admon-info >}}
 If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
 Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.
-Platform administrators can configure how long such operations stay alive (described in the *LWM2M agent installation & operations guide*).
+Platform administrators can configure how long such operations stay alive (as described in the *LWM2M agent installation & operations guide*). Find more information in [Additional resources > Installation and operations documentation](/welcome/additional-resources/#installation-and-operations).
 {{< /c8y-admon-info >}}

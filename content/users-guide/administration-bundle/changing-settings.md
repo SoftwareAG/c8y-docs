@@ -361,7 +361,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 ROLES & PERMISSIONS:
 
 To view SMS provider configurations: READ permission for the permission type "SMS"
-To modify SMS provider configurations: ADMIN permission for the permission type "SMS"
+To set or remove SMS provider configurations: ADMIN permission for the permission type "SMS"
 
 {{< /c8y-admon-req >}}
 

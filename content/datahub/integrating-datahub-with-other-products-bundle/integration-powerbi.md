@@ -19,7 +19,7 @@ helpcontent:
     Click **Add report** to list all available workspaces and reports. All workspaces which grant member or admin access to the service principal are listed. Select a workspace and then a report from that workspace. You can open multiple reports. To close a report click **Remove report**. 
     
     
-    The list of currently opened reports is not stored. It will be flushed when closing the browser or deleting the settings."
+    The list of currently opened reports is not stored. It will be flushed when the browser is closed or settings are deleted."
 ---
 
 Microsoft Power BI is a business intelligence tool which allows you to create and use interactive reports for data from various sources. These reports can also be built on your IoT data. Given your devices are connected with the {{< product-c8y-iot >}} platform, you can utilize {{< product-c8y-iot >}} DataHub to offload the data into a data lake of your choice. Then you can create a Microsoft Power BI report which is based on the data in the data lake. {{< product-c8y-iot >}} DataHub allows you to access and work with these reports from within the {{< product-c8y-iot >}} DataHub web frontend.

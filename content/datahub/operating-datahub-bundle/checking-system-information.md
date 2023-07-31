@@ -2,6 +2,16 @@
 weight: 10
 title: Checking system information
 layout: redirect
+helpcontent:
+  - label: checking-system-information
+    title: Checking system information
+    content: "Under **Microservice** you find the status of the microservice, indicating via green or red icon whether the web application can access the microservice.
+    
+    Under **Web application** you find the version of the web application.
+    
+    Under **Dremio** you find the status of Dremio, indicating via green or red whether the microservice can access Dremio.
+    
+    Under **Management** you find the setup of the system. Click the arrow to the right to expand the box. Here all relevant system properties and their values are listed."
 ---
 
 {{< c8y-admon-info >}}

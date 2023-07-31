@@ -393,7 +393,7 @@ ROLES & PERMISSIONS:
 The **Connectivity** menu item is only available if you are logged in to the {{< product-c8y-iot >}} platform as administrator and if you have READ or ADMIN permission for the permission type "Connectivity".
 
 To view connectivity settings: READ permission for the permission type "Connectivity"
-To set or remove connectivity provider configuration: ADMIN permission for the permission type "Connectivity"
+To set or remove connectivity provider configurations: ADMIN permission for the permission type "Connectivity"
 
 {{< /c8y-admon-req >}}
 

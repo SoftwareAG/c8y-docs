@@ -6,6 +6,10 @@ layout: redirect
 
 The following sections will walk you through all functionalities of the Cockpit application in detail.
 
+{{< c8y-admon-related >}}
+- [Getting Started](/users-guide/getting-started/#overview) for more information on the {{< product-c8y-iot >}} UI.
+{{< /c8y-admon-related >}}
+
 For your convenience find an overview on the content of this document below.
 
 <table>

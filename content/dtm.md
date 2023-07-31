@@ -1,5 +1,5 @@
 ---
-title: Digital Twin Manager guide
+title: Digital twin manager guide
 bundle: dtm
 icon: "c8y-icon c8y-icon-tools"
 type: root

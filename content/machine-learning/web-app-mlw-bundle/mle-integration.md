@@ -4,7 +4,7 @@ layout: redirect
 weight: 80
 ---
 
-ONNX models typically require a pre-processing step that converts raw input data into tensors and a post-processing step that converts tensors into output values. Inference pipelines define a sequence of pre-processing steps, ONNX model, and post-processing step. Machine Learning Workbench (MLW) can deploy inference pipelines to [Machine Learning Engine](machine-learning/web-app/).
+ONNX models typically require a pre-processing step that converts raw input data into tensors and a post-processing step that converts tensors into output values. Inference pipelines define a sequence of pre-processing steps, ONNX model, and post-processing step. Machine Learning Workbench (MLW) can deploy inference pipelines to [Machine Learning Engine](/machine-learning/web-app/).
 
 {{< c8y-admon-info >}}
 To proceed, you will require a trained model in ONNX format created from the [Neural Network Designer](/machine-learning/web-app-mlw/#nn-designer) or [Jupyter Notebooks](/machine-learning/web-app-mlw/#jupyter-integrated) along with pre-processing and post-processing Python scripts.

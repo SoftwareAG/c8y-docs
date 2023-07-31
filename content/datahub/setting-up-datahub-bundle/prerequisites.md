@@ -13,17 +13,17 @@ The {{< product-c8y-iot >}} DataHub microservice and web application must be ava
 
 If you have an {{< enterprise-tenant >}}, you can also subscribe your subtenants to both applications so that the subtenants can use {{< product-c8y-iot >}} DataHub as well.
 
-See the section [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for details on managing {{< product-c8y-iot >}} applications in general, including instructions for adding applications to a tenant.
+See the section [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *{{< product-c8y-iot >}} User guide* for details on managing {{< product-c8y-iot >}} applications in general, including instructions for adding applications to a tenant.
 
-See the section [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide* for details on {{< product-c8y-iot >}} microservices, including instructions for:
+See the section [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *{{< product-c8y-iot >}} User guide* for details on {{< product-c8y-iot >}} microservices, including instructions for:
 
 * Adding microservices to a tenant
 * Checking the status, permissions, and log files of a microservice
 
-See the section [Enterprise tenant > Managing tenants](/users-guide/enterprise-tenant/#managing-tenants) in the *User guide* for details on subscribing applications or microservices to a tenant or subtenant.
+See the section [Enterprise tenant > Managing tenants](/users-guide/enterprise-tenant/#managing-tenants) in the *{{< product-c8y-iot >}} User guide* for details on subscribing applications or microservices to a tenant or subtenant.
 
 For the offloading of {{< product-c8y-iot >}} data, you need the connection settings and credentials for a cloud data lake service. During offloading, the data will be written into a data lake folder named after the tenant name.
 
 {{< c8y-admon-info >}}
-This section provides instructions on how to configure the data lake so that it is accessible via Dremio. More details can be found in the [Dremio data source documentation](https://docs.dremio.com/data-sources/). Note that you must not create the target table, which connects to the data lake, in Dremio; this is done by {{< product-c8y-iot >}} DataHub.
+This section provides instructions on how to configure the data lake so that it is accessible via Dremio. More details can be found in the [Dremio data source documentation](https://docs.dremio.com/current/sonar/data-sources/). Note that you must not create the target table, which connects to the data lake, in Dremio; this is done by {{< product-c8y-iot >}} DataHub.
 {{< /c8y-admon-info >}}

@@ -22,16 +22,16 @@ c8ycli new
 ? Enter the name of the project:  (my-application) package-blueprint
 ```
 
-3. Select the version for which you want to create a sample application, for example, "1015.33.0 (next)":
+3. Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontends are supported with version higher then 10.16.0.0:
 
 ```console
-? Which base version do you want to scaffold from? (Use arrow keys)
-  1011.0.30 (latest)
-> 1015.33.0 (next)
-  1015.0.39
-  1014.0.104
-  1013.0.193
-  1010.0.38
+? Which base version do you want to scaffold from?
+  1015.0.372 (latest)
+  1018.106.0 (next)
+  1018.0.47
+  1017.0.151
+❯ 1016.0.233
+  1014.0.359
   other
 ```
 
@@ -57,7 +57,7 @@ Application created. Go into the folder "package-blueprint" and run npm install
 5. Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are *package.json* and *README.md*.
+For this tutorial, the most important files are _package.json_ and _README.md_.
 
 ```console
 app.module.spec.ts
@@ -78,22 +78,22 @@ You have now created your first package blueprint that uses Module Federation.
 
 The `HOOK_STEPPER` can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
 
-1. Create a new *setup-step1.component.ts* file with the following content:
+1. Create a new _setup-step1.component.ts_ file with the following content:
 
 ```typescript
-import {CdkStep} from "@angular/cdk/stepper";
-import {Component} from "@angular/core";
+import { CdkStep } from "@angular/cdk/stepper";
+import { Component } from "@angular/core";
 import {
   AlertService,
   AppStateService,
   C8yStepper,
-  SetupComponent
+  SetupComponent,
 } from "@c8y/ngx-components";
 
 @Component({
   selector: "c8y-cockpit-setup-step1",
   templateUrl: "./setup-step1.component.html",
-  host: {class: "d-contents"}
+  host: { class: "d-contents" },
 })
 export class SetupStep1Component {
   config = {
@@ -101,10 +101,10 @@ export class SetupStep1Component {
     features: {
       alarms: true,
       dataExplorer: true,
-      groups: true
+      groups: true,
     },
     hideNavigator: false,
-    userSpecificHomeDashboard: false
+    userSpecificHomeDashboard: false,
   };
   pending = false;
 
@@ -119,7 +119,7 @@ export class SetupStep1Component {
   async next() {
     this.pending = true;
     try {
-      const newConfig = {...this.setup.data$.value, ...this.config};
+      const newConfig = { ...this.setup.data$.value, ...this.config };
       await this.appState.updateApplicationConfig(newConfig);
       this.setup.stepCompleted(this.stepper.selectedIndex);
       this.setup.data$.next(newConfig);
@@ -137,7 +137,7 @@ export class SetupStep1Component {
 }
 ```
 
-2. Create a *setup-step1.component.html* template:
+2. Create a _setup-step1.component.html_ template:
 
 ```html
 <form #stepForm="ngForm" name="form" class="d-contents">
@@ -182,10 +182,10 @@ export class SetupStep1Component {
 3. Finally we extend the _app.module.ts_ file to include the new stepper components:
 
 ```typescript
-import {NgModule} from "@angular/core";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {AssetsNavigatorModule} from "@c8y/ngx-components/assets-navigator";
-import {RouterModule as ngRouterModule} from "@angular/router";
+import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AssetsNavigatorModule } from "@c8y/ngx-components/assets-navigator";
+import { RouterModule as ngRouterModule } from "@angular/router";
 import {
   CoreModule,
   BootstrapComponent,
@@ -193,21 +193,21 @@ import {
   SetupStep,
   HOOK_STEPPER,
   Steppers,
-  gettext
+  gettext,
 } from "@c8y/ngx-components";
-import {SetupStep1Component} from "./setup-step1.component";
-import {DatapointLibraryModule} from "@c8y/ngx-components/datapoint-library";
-import {MiscConfigComponent} from "./misc-config.component";
+import { SetupStep1Component } from "./setup-step1.component";
+import { DatapointLibraryModule } from "@c8y/ngx-components/datapoint-library";
+import { MiscConfigComponent } from "./misc-config.component";
 
 @NgModule({
   declarations: [SetupStep1Component, MiscConfigComponent],
   imports: [
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-    ngRouterModule.forRoot([], {enableTracing: false, useHash: true}),
+    ngRouterModule.forRoot([], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
     DatapointLibraryModule.forRoot(),
-    AssetsNavigatorModule
+    AssetsNavigatorModule,
   ],
   providers: [
     {
@@ -218,13 +218,13 @@ import {MiscConfigComponent} from "./misc-config.component";
           component: SetupStep1Component,
           label: gettext("Step 1"),
           setupId: "exampleId",
-          priority: 0
-        }
+          priority: 0,
+        },
       ] as SetupStep[],
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  bootstrap: [BootstrapComponent]
+  bootstrap: [BootstrapComponent],
 })
 export class AppModule {}
 ```
@@ -245,6 +245,8 @@ The following list shows the fields and what they are responsible for:
   - `module`: The name of the Angular module class.
   - `path`: The path to the TypeScript file with the module.
   - `description`: A brief description of what the module does.
+- `contextPath`: The context path tells on which URL your blueprint can be loaded. As this is also used to generate a global variable, choose a valid JavaScript variable. For example your `contextPath` should not start with a number. To avoid conflicts it is good practice to add a prefix to your context path, for example, the acronym of your company: `acme-`.
+- `versioningMatrix`: Optional field which indicates the supported package versions and the recommended frontend and backend platform versions. If the package is not compatible with any of the recommended platform versions a warning is shown. The matrix must have the following format and all versions must be [SemVer](https://semver.org/). For example: `versioningMatrix: [{"1.0.0": {"api": ">1016.0.0", "sdk": ">1016.0.0"}}, {"2.0.0": {"api": ">1017.0.0", "sdk":">1017.0.0"}}]`. In case of repository-connect, versions which exist in the platform but are not included in the versioning matrix are removed during sync.
 
 {{< c8y-admon-info >}}
 A blueprint can also include plugins, which can later be used to extend other applications.

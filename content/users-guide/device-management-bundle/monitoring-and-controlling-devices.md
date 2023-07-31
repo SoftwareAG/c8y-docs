@@ -21,13 +21,13 @@ helpcontent:
 
 
   By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
-  label: single-operations
+- label: single-operations
   title: Single operations
   content: "Using operations, you can control devices remotely. **Single operations** show all operations executed on a single device.
 
 
   Single operations can have one of the following four statuses: PENDING, EXECUTED, SUCCESSFUL, FAILED. For each operation, the name, status, and device is provided. Clicking the device leads you to the detailed view of the particular device."
-  -label: bulk-operations
+- label: bulk-operations
   title: Bulk operations
   content: "**Bulk operations** are single operations executed on a set of devices.
 
@@ -47,6 +47,14 @@ helpcontent:
   Since devices may send large amounts of event data, you can filter the data to be displayed by date or type, using the fields at the top left."
 ---
 
+{{< c8y-admon-related >}}
+* [Device integrator library > Device availability](/reference/device-integrator-library/#device-availability) in the *Reference guide* for details on the `c8y_RequiredAvailability`, `c8y_UnavailabilityAlarm`, `c8y_Availability` and `c8y_Connection` fragments used in managed objects.
+* The [alarms API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms.
+* [Device integrator library > Alarms](/reference/device-integrator-library/#alarms) in the *Reference guide* for details on how to raise and clear alarms.
+* The [operations API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Operations) for REST API methods concerning operations.
+* The [bulk operations API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Bulk-operations) for REST API methods concerning bulk operations.
+{{< /c8y-admon-related >}}
+
 <a name="map"></a>
 ### Locating devices
 
@@ -61,7 +69,7 @@ Devices are represented as "pins". Click a pin to see the name of the respective
 <a name="connection-monitoring"></a>
 ### Connection monitoring
 
-In the Device Management application you can monitor the connections to your devices.
+In the Device management application you can monitor the connections to your devices.
 
 This can be done at the level of individual devices (see below) or across multiple devices in a list.
 
@@ -85,10 +93,10 @@ Hovering over the arrow displays the timestamp of the last request from the devi
 
 When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device: "No data received from device within required interval".
 
-Send connections are updated when something is sent to the device, such as alarms, events, measurements or inventory updates.
+Send connections are updated when something is sent from the device, such as alarms, events, measurements or if a blank update is sent to the device itself. For details see [Device integrator library > Device availability > Availability monitoring](/reference/device-integrator-library/#device-availability) in the *Reference guide*.
 
 {{< c8y-admon-info >}}
-PUT requests to the managed object of the device will also update a connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.
+Empty PUT requests to the managed object of the device will also update a send connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.
 {{< /c8y-admon-info >}}
 
 **Push connections**

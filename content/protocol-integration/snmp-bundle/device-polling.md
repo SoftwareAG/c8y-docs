@@ -9,7 +9,7 @@ The SNMP agent provides the capability to poll for SNMP device data by the OID. 
 
 ### To enable polling from the UI
 
-1. In the Device Management application, click **All devices** in the **Devices** menu in the navigator.
+1. In the Device management application, click **All devices** in the **Devices** menu in the navigator.
 2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.
 3. In the **SNMP communication** section, provide the polling interval in the field **Polling rate**. For example: If the value is set to "5", the agent polls the SNMP devices OID(s) data every 5 seconds. To stop the polling, set the polling interval to 0 or an empty value.
 4. Click **Save**.

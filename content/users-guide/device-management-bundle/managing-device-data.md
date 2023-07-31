@@ -35,9 +35,18 @@ helpcontent:
   content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates."
 ---
 
+{{< c8y-admon-related >}}
+* [Device integrator library > Firmware](/reference/device-integrator-library/#firmware) in the *Reference guide* for details on the `c8y_Firmware` fragment used in managed objects.
+* [Device integrator library > Software](/reference/device-integrator-library/#software) in the *Reference guide* for details on legacy software management via the `c8y_SoftwareList` fragment, software updates via the `c8y_SoftwareUpdate` fragment and advanced software management via the `c8y_SupportedOperations` and `c8y_SupportedSoftwareTypes` fragments used in managed objects.
+* [Device integrator library > Configuration](/reference/device-integrator-library/#configuration) in the *Reference guide* for details on text-based configuration, file-based configuration and typed file-based configuration.
+* The [device credentials API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Device-credentials) for REST API methods concerning device credentials.
+* [Device integrator library > Device profile](/reference/device-integrator-library/#device-profile) in the *Reference guide* for details on the `c8y_DeviceProfile` fragment used in managed objects.
+* [Device integration using MQTT > Device certificates](/device-integration/mqtt/#device-certificates) in *Device integration* for information on device certificates in the context of MQTT.
+{{< /c8y-admon-related >}}
+
 ### Overview
 
-The Device Management application provides various features that support you in efficiently managing your devices:
+The Device management application provides various features that support you in efficiently managing your devices:
 
 | Feature                                              | Description                                                                                                                                 |
 |:-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -147,7 +156,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
-2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type in the firmware repository.
+2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type (or the ones that have no device type) in the firmware repository.
 3. Click **Install**.
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
@@ -258,7 +267,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 1. In the **Software** tab, click **Install software**.
 
     {{< c8y-admon-info >}}
-The **Install software** dialog will only display software items matching the device type. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
+The **Install software** dialog will only display software items which match the device type or have no device type specified. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
     {{< /c8y-admon-info >}}
 
 2. Select one or multiple software items by selecting the respective version from the list which contains all software items for the particular device type available in the software repository.  
@@ -339,7 +348,7 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 #### To retrieve and apply a configuration snapshot
 
-Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Device management library > Configuration](/reference/device-management-library/#configuration) in the *Reference guide* for more detailed and technical information.
+Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Device integrator library > Configuration](/reference/device-integrator-library/#configuration) in the *Reference guide* for more detailed and technical information.
 
 #### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration
 
@@ -367,7 +376,7 @@ To apply a configuration snapshot to a device which supports multiple configurat
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 {{< c8y-admon-info >}}
-Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
+Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type (ones that match the device type or have no device type specified).
 {{< /c8y-admon-info >}}
 
 #### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration

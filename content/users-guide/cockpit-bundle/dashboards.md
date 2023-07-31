@@ -16,6 +16,11 @@ helpcontent:
     Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
 weight: 40
 ---
+{{< c8y-admon-related >}}
+- [Tutorials > Add a custom widget to a dashboard](/guides/web/#add-a-custom-widget) in the *Web SDK guide* for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
+- [Application configuration](/guides/web/#application-configuration) in the *Web SDK guide* for further information on how to customize the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
 
 Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
@@ -85,19 +90,30 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 {{< /c8y-admon-info >}}
 
+<a name="global-time-context"></a>
+### Global time context
+
+In the widget configuration, you can specify a global time range for your dashboards. When using a global time range, all data in a dashboard will be aligned to this range. After setting the global time range in a first widget, this shared context can then be used by other widgets that are configured to use the global date context.
+
+The global time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the global time context with the picker.
+
+{{< c8y-admon-info >}}
+This feature is currently available for the following widgets: Event list, Data points graph, and Data points table.
+{{< /c8y-admon-info >}}
+
+<img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>
+
+Widgets synchronized with the dashboard time range are indicated by a respective icon at the top right of the widget.
+
 ### To edit a dashboard
 
 To edit a dashboard, click **Edit** in the top menu bar.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
 
 The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#creating-dashboards).
 
 ### To copy a dashboard from one object to another
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
-
-  <img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 

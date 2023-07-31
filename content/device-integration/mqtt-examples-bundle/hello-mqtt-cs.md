@@ -268,7 +268,7 @@ and this command to run it:
 $ dotnet run
 ```
 
-After starting the application, you should see a new registered device in the Device Management application listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+After starting the application, you should see a new registered device in the Device management application listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), the information about it will be printed to the console.
 

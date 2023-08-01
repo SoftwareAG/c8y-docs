@@ -200,7 +200,7 @@ The following summarizes the subscription fields.
 <td nowrap="nowrap">fragmentsToCopy</td>
 <td>JSON list of strings</td>
 <td>All fragments</td>
-<td>Determines which fragments are included in forwarded messages.</td>
+<td>Determines which fragments are included in forwarded messages</td>
 </tr>
 </tbody>
 </table>
@@ -405,7 +405,7 @@ The following summarizes the token fields.
 <td nowrap="nowrap">shared</td>
 <td>Boolean</td>
 <td>false</td>
-<td>True if multiple clients can act collectively as this consumer.</td>
+<td>True if multiple clients can act collectively as this consumer</td>
 </tr>
 <tr>
 <td nowrap="nowrap">expiresInMinutes</td>
@@ -434,7 +434,7 @@ Tokens can be refreshed by calling the token create request with the same parame
 The token string is a JWT (JSON Web Token) token so if the parameters used are not easily kept available, 
 they can be extracted from the token string as outlined in the Java code below:
 ```java
-// The token string's sections are delimited by dots.
+// The token string's sections are delimited by dots
 String[] tokenParts = token.split("\\.");
 // Base64 decode the second section
 byte[] decoded = Base64.getDecoder().decode(tokenParts[1]);
@@ -494,4 +494,4 @@ The implementation can be a microservice running internally to, or an applicatio
 Java developers do not need to code to the protocol specification directly. 
 The API and the protocol have been implemented in the [Cumulocity Clients Java API](https://github.com/SoftwareAG/cumulocity-clients-java/tree/develop/java-client/src/main/java/com/cumulocity/sdk/client/messaging/notifications)
 . Examples using that can be found
-in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/notification2-examples),
+in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/notification2-examples).

@@ -418,7 +418,7 @@ The following summarizes the token fields.
 
 ### Token expiration
 
-A token's lifetime is determined at creation time by the optional **expiresInMinutes** field, which defaults to "1440" (one day, expressed in minutes).
+The period a token remains valid for (its lifetime) is determined at creation time by the optional **expiresInMinutes** field, which defaults to 1440 minutes (one day).
 This can be used to limit exposure to potential security issues related to them being leaked to parties that are not authorized to access the system.
 Consequently, tokens may need to be re-created or refreshed periodically.
 

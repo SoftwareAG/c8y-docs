@@ -2,6 +2,13 @@
 weight: 30
 title: Setting up the initial configuration
 layout: redirect
+helpcontent:
+  - label: setting-up-initial-configuration
+    title: Setting up the initial configuration
+    content: "The setup of Cumulocity IoT DataHub requires you to configure a **Dremio API user** and access to a **data lake**. The Dremio API user is required for connecting to Dremio and letting you run queries against the data lake contents via JDBC, ODBC, or REST API.
+    
+    
+    A data lake is required to store the data being offloaded from a Cumulocity IoT base collection. You have to specify the location in the data lake under which the offloaded data will reside."
 ---
 
 The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio API user and access to a data lake. In the navigator, select **Initial configuration** under **Settings** to define those settings.
@@ -68,7 +75,7 @@ Note that the account type must be **StorageV2**, and the **Hierarchical namespa
 While the other settings are fixed once the initial configuration was saved, the **AWS access key** and the **Access secret** can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
 {{< c8y-admon-req >}}
-An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/data-sources/s3/](https://docs.dremio.com/data-sources/s3/) are satisfied.
+An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/current/sonar/data-sources/object/s3](https://docs.dremio.com/current/sonar/data-sources/object/s3) are satisfied.
 {{< /c8y-admon-req >}}
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:

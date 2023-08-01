@@ -30,32 +30,32 @@ See the rest of this section and the detailed API documentation for full details
 
 ### Topics and subscriptions
 Internally, Notifications 2.0 uses a [publish-subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
-pattern, allowing use-cases to organise their desired selections of measurement, event, alarm, operation and/or inventory messages 
+pattern, allowing use-cases to organize their desired selections of measurement, event, alarm, operation and/or inventory messages 
 into topics according to functional interest.
 Creating a Notification 2.0 [subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions)
-in {{< product-c8y-iot >}} creates a publisher (internally), that will forward {{< product-c8y-iot >}} messages that it matches (based
+in {{< product-c8y-iot >}} creates a publisher (internally), that forwards {{< product-c8y-iot >}} messages that it matches (based
 on message qualities such as its source, type or even content, for example) to a specific topic. 
 Each subscription can only forward messages to one topic, but multiple subscriptions can forward messages to the same topic.
 
 {{< c8y-admon-caution >}}
 The term 'subscription' is overloaded and can be confusing here.
-It is called a subscription as internally the topic is subscribing to a selection of {{< product-c8y-iot >}} messages - it does not relate to a Notification 2.0 end consumer.
+It is called a subscription because internally the topic subscribes to a selection of {{< product-c8y-iot >}} messages - it does not relate to a Notification 2.0 end consumer.
 This may be revised in a future release to avoid potential confusion.
 {{< /c8y-admon-caution >}}
 
-The diagram 'Notification 2.0 topics and subscriptions' immediately following shows
-three subscriptions that have been created in {{< product-c8y-iot >}} that are forwarding notification messages into two topics in the Messaging Service.
+The diagram 'Notification 2.0 topics and subscriptions' below shows
+three subscriptions that have been created in {{< product-c8y-iot >}} and are forwarding notification messages into two topics in the Messaging Service.
 
 The 'temperature' topic is receiving measurements from the leftmost and centrally depicted subscriptions.
 Both of these have a "mo" (managed object) context and they both include messages from the measurement API only.
 A subscription with a managed object context can only forward messages from a specific managed object (such as a device).
-The leftmost subscription is forwarding measurements from a device with source id '12345' and
-the centrally depicted one the same but from device '67890'.
+The leftmost subscription is forwarding measurements from a device with source ID '12345' and
+the centrally depicted subscription does the same but from device '67890'.
 
 The 'alarms' topic is receiving alarms from the rightmost subscription. It has a tenant context and includes messages from 
-the alarm api. It will forward all alarms within the tenant that creates the subscription, regardless of how they are generated 
-(finer grained topics can be created using filters).
-The forwarded alarms will include those raised by {{< product-c8y-iot >}} itself, and those published via REST or MQTT from other components in, or attached to,
+the alarm API. It forwards all alarms within the tenant that creates the subscription, regardless of how they are generated 
+(you can create finer grained topics by using filters).
+The forwarded alarms include those raised by {{< product-c8y-iot >}} itself, and those published via REST or MQTT from other components in, or attached to,
 the platform, including any alarms raised by the depicted devices.
 
 ![Notification 2.0 topics and subscriptions diagram](/images/reference-guide/notification2/notification2-subscriptions.svg)
@@ -64,7 +64,7 @@ the platform, including any alarms raised by the depicted devices.
 A topic's notification messages can be received by WebSocket based consumers that present a valid authorizing
 token for that specific topic when connecting to the Notification 2.0 WebSocket endpoint.
 This token is in the form of a string conforming to the JWT (JSON Web Token) standard. Tokens can be obtained from the
-{{< product-c8y-iot >}}  [token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) REST API by authenticated users.
+{{< product-c8y-iot >}} [token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) REST API by authenticated users.
 
 Consumers receive the topic messages reliably, with at-least-once semantics, in order and must acknowledge each message in turn.
 Notification order is preserved from the point of view of any given device sending in REST and MQTT API requests.
@@ -74,17 +74,17 @@ separate copies of those messages.
 
 {{< c8y-admon-important >}}
 It is important to manage consumers carefully as they can place significant storage resource demands on a system.
-Consumers should only be created (connected) if they are to be active, 
-and should be unsubscribed if they are no longer needed or not needed for long periods.
-Unsubscribing is an explicit action - disconnecting a consumer client does *not* unsubscribe it.
+Only create (connect) consumers they are to be active, 
+and unsubscribe them if they are no longer needed or not needed for long periods.
+Unsubscribing is an explicit action - disconnecting a consumer client does not unsubscribe it.
 See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for more details.
 {{< /c8y-admon-important >}}
 
-The diagram below shows 3 consumers that have been created in the Messaging Service by four consumer clients.
+The diagram below shows three consumers that have been created in the Messaging Service by four consumer clients.
 
-The rightmost client identifies its consumer as 'alarmmonitor" and that consumer receives messages from the "alarms" subscription topic. 
+The rightmost client identifies its consumer as "alarmmonitor" and that consumer receives messages from the "alarms" subscription topic. 
 
-The second to right client identifies its consumer as 'tempaudit" and that consumer receives messages from the "temperature" subscription topic.
+The second to right client identifies its consumer as "tempaudit" and that consumer receives messages from the "temperature" subscription topic.
 
 The leftmost two consumer clients are two shares of a (logically single) [shared consumer](../notifications/#shared-tokens),
 and so share the same copy of topic messages. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
@@ -108,7 +108,7 @@ Only consumers of persistent subscription topics have backlogs that are maintain
 
 Consumers of non-persistent subscription topics get a new backlog pointing only to the next (latest) topic message when 
 they connect/reconnect and any previous backlog is discarded, removing any message references. They can only cause
-backlog size problems if they remain connected but continually consume at a rate lower than the rate that new messages arrive.
+backlog size problems if they remain connected but continually consume at a rate lower than the rate at which new messages arrive.
 {{< /c8y-admon-info >}}
 
 Persistent subscription topic messages are only stored once in the Messaging Service, but all associated consumers' backlogs, 
@@ -120,7 +120,7 @@ The Messaging Service discards a given message only when there are no backlogs t
 The following diagram shows the lifecycle of a consumer backlog in relation to its associated client connection(s).
 The backlog is created when the consumer first connects to the Messaging Service and is only destroyed when it is explicitly unsubscribed.
 The consumer's backlog is maintained, even if its client connection is interrupted. This is needed for reliable messaging, 
-allowing the consumer to not miss messages during connection outages, but comes at a cost of explicit lifecycle management.
+allowing the consumer to not miss messages during connection outages, but comes at the cost of explicit lifecycle management.
 
 ![Notification 2.0 consumer backlog lifecycle](/images/reference-guide/notification2/notifications2-backlog-lifecycle.svg)
 
@@ -138,18 +138,18 @@ constraints that vary according to the value of the **context** field. Where thi
 documentation in the [create subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource) documentation.
 
 The **source** field can only be used if the **context** is "mo". It must have a nested **id** field containing the 
-value of a managed object's global identifier (sometimes referred to as a 'device id' or 'source id').
+value of a managed object's global identifier (sometimes referred to as a "device ID" or "source ID").
 This is used to target inclusion of messages from the given managed object.
 
 **subscription** is the first of two fields that identify which topic this subscription will forward messages to.
-Multiple subscriptions will contribute to a single topic if they have they same values for both the **subscription** and **nonPersistent** fields.
+Multiple subscriptions contribute to a single topic if they have the same values for both the **subscription** and **nonPersistent** fields.
 
-The **nonPersistent** field determines if the topic is [persistent or nonPersistent](../notifications/#non-persistent-topics).
+The **nonPersistent** field determines if the topic is [persistent or non-persistent](../notifications/#non-persistent-topics).
 Subscriptions with the same **subscription** field value, but different **nonPersistent** values forward to two different topics.
-It is, therefore, the second of the two fields that identify the subscription topic. 
+It is, therefore, the second of the two fields that identifies the subscription topic. 
 
 The **filter** field can provide a [subscription filter](../notifications/#subscription-filter), allowing more finely 
-grained selection of the included messages, based upon the message **type** and API (is it a measurement or alarm, for example). 
+grained selection of the included messages, based on the message **type** and API (is it a measurement or alarm, for example). 
 
 The **fragmentsToCopy** field allows the forwarded messages to be transformed so that they contain only a specific subset
 of the fragments present in the original {{< product-c8y-iot >}} messages they are generated from. This can be useful, for example,
@@ -206,14 +206,14 @@ The following summarizes the subscription fields.
 </table>
 
 Notifications for new managed objects creations can never be forwarded by subscriptions with an "mo" **context** as the 
-managed object is only given an id when it is created and that id is needed as a field to create the subscription.
-Therefore, to receive notifications informing of new managed object creations, a subscription with "tenant" **context** 
-must be created to listen for them.
+managed object is only given an ID when it is created and that ID is needed as a field to create the subscription.
+Therefore, to receive notifications informing of new managed object creations, create a subscription with "tenant" **context** 
+to listen for them.
 An application can use this to discover new managed objects.
 It can then choose to create subscriptions with "mo" **context** for those managed objects.
 It is also possible to subscribe to all alarms or events that are generated in a tenant using "tenant" **context**.
 
-Notifications for managed object deletions will be forwarded to topics by subscriptions with "mo" (managed object) **context** 
+Notifications for managed object deletions are forwarded to topics by subscriptions with "mo" (managed object) **context** 
 that include the "managedobjects" API, and by subscriptions with "tenant" **context** that include the "managedobjects" API.
 
 <a name="subscription-filter">&nbsp;</a>
@@ -221,7 +221,7 @@ that include the "managedobjects" API, and by subscriptions with "tenant" **cont
 Subscription filters provide fine-grained selection of the {{< product-c8y-iot >}} messages a subscription will forward.
 Filters can be provided as the **subscriptionFilter** field in a subscription's JSON object at creation time. 
 It is a JSON object with **apis** and **typeFilter** fields.  
-Filters specified by subscriptions with "tenant" **context** *must* provide a **typeFilter** value.
+Filters specified by subscriptions with "tenant" **context** must provide a **typeFilter** value.
 Filters specified by those with "mo" **context** can provide either or both filter fields.
 
 The **apis** field is a JSON array that specifies which {{< product-c8y-iot >}} API messages to include.
@@ -259,7 +259,7 @@ To include only messages from the measurements and alarms APIs:
 
 The "alarmsWithChildren" and "eventsWithChildren" **apis** values allow subscriptions with managed object **context**
 to filter in, respectively, alarms or events for all recursively descendant child managed objects of the **source.id**
-managed object in addition to inclusion of those from the **source.id** managed object itself.
+managed object in addition to those from the **source.id** managed object itself.
 
 The **typeFilter** string field is matched against the original message's **type** field. It can be a single value, or a
 limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) expression.
@@ -312,13 +312,13 @@ interruptions of the client connection.
 When a consumer of a non-persistent subscription has their connection interrupted,
 upon reconnection they will start receiving notifications from the most recent message of the subscription,
 missing all other notifications that occurred during the connection outage.
-This will be the case for all such temporarily disconnected consumers,
+This is the case for all such temporarily disconnected consumers,
 even if other consumers of the same non-persistent subscription
 are still receiving older messages that occurred while it was not connected.
 
 {{< c8y-admon-info >}}
 If you create both a persistent and a non-persistent subscription with the same **subscription** field,
-they are *separate*, independent subscriptions, backed by separate topics.
+they are separate, independent subscriptions, backed by separate topics.
 
 When creating a token for a non-persistent subscription topic, to access notifications from the correct topic, 
 the token's **nonPersistent** field must be set to `true`.
@@ -328,17 +328,17 @@ subscription topic by default.
 
 ### Deleting subscriptions
 
-Deleting a subscription will prevent it adding further notification messages to its associated topic. Many subscriptions 
+Deleting a subscription prevents it from adding further notification messages to its associated topic. Many subscriptions 
 can contribute notifications to a given topic so this does not control the topic lifecycle.
-Deleting all the subscriptions associated with a topic will ensure no more notifications are added to it. This does not 
+Deleting all the subscriptions associated with a topic ensures no more notifications are added to it. This does not 
 delete the topic either.
 
-Even though the topic will no longer accumulate new messages, there may still be consumers draining 
-the last of the messages from it. When all messages are consumed by all consumers, the topic will be empty and consume 
+Even though the topic no longer accumulates new messages, there may still be consumers draining 
+the last of the messages from it. When all messages are consumed by all consumers, the topic is empty and consumes
 negligible space in the Messaging Service.
 
 Subscriptions can be deleted by sending a [delete subscription request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/deleteNotificationSubscriptionResource), 
-using the subscription's **id** as the URL filename. For example to delete subscription with id 8765:
+using the subscription's **id** as the URL filename. For example, to delete the subscription with ID 8765:
 
 ```text
  DELETE /notification2/subscriptions/8765 HTTP/1.1
@@ -346,7 +346,7 @@ using the subscription's **id** as the URL filename. For example to delete subsc
  Authentication: Basic: <AUTHENTICATION>
 ```
 
-When a tenant is deleted from {{< product-c8y-iot >}}, all its subscriptions will be deleted. However, topics and consumers may 
+When a tenant is deleted from {{< product-c8y-iot >}}, all its subscriptions are deleted. However, topics and consumers may 
 still be active in the Messaging Service until all messages are consumed.
 
 ### Creating Tokens 
@@ -359,18 +359,18 @@ The **subscription** field aligns with the same field in the subscription object
 topic the consumer will receive notifications from. The **nonPersistent** field is also a factor in identifying the topic.
 
 The **nonPersistent** field aligns with the same field in the subscription object so identifies whether the subscription topic
-is [persistent or nonPersistent](../notifications/#non-persistent-topics) and therefore is a factor in identifying the topic only. 
+is [persistent or non-persistent](../notifications/#non-persistent-topics) and therefore is a factor in identifying the topic only. 
 There is no such thing as a peristent or non-peristent consumer 
 and tokens cannot affect the nature they experience of topics using this field. 
 
 The **subscriber** field provides a unique (within the scope of this topic) identity for the consumer, allowing 
-it to be recognised across connection interruptions, so allowing message delivery to be resumed after such interruptions
-and thus reliable.
+it to be recognized across connection interruptions, so allowing message delivery to be resumed after such interruptions
+and thus be reliable.
 
 The **shared** field determines if multiple clients can connect in parallel as the consumer identified in the 
 **subscriber** field, acting collectively to share the notification message processing load.
 
-The **expiresInMinutes** field is the period that this token will remain valid for, defaulting to "1440" minutes (1 day).
+The **expiresInMinutes** field is the period that this token remains valid for, defaulting to 1440 minutes (1 day).
 
 The following summarizes the token fields.
 <table>
@@ -393,7 +393,7 @@ The following summarizes the token fields.
 <td nowrap="nowrap">nonPersistent</td>
 <td>Boolean</td>
 <td>false</td>
-<td>Must be true to identify a nonPersistent topic</td>
+<td>Must be true to identify a non-persistent topic</td>
 </tr>
 <tr>
 <td nowrap="nowrap">subscriber</td>
@@ -419,20 +419,20 @@ The following summarizes the token fields.
 ### Token expiration
 
 A token's lifetime is determined at creation time by the optional **expiresInMinutes** field, which defaults to "1440" (one day, expressed in minutes).
-This can be used to limit exposure to potential security issues related to them being leaked to parties that should not be authorized to the access the system.
+This can be used to limit exposure to potential security issues related to them being leaked to parties that are not authorized to access the system.
 Consequently, tokens may need to be re-created or refreshed periodically.
 
 {{< c8y-admon-info >}}
-Tokens *only* allow a consumer to connect to the Messaging Service. If a token expires while its consumer is connected, 
+Tokens only allow a consumer to connect to the Messaging Service. If a token expires while its consumer is connected, 
 the consumer is not automatically logged out or disconnected.
 
-If a consumer disconnects, and their token has expired, the token will have to be recreated or refreshed in order that the consumer can reconnect. 
+If a consumer disconnects, and their token has expired, the token must be recreated or refreshed in order that the consumer can reconnect. 
 {{< /c8y-admon-info >}}
 
 Tokens can be refreshed by calling the token create request with the same parameters as originally 
 (a different **expiresInMinutes** value can be given if a different duration is desired). 
 The token string is a JWT (JSON Web Token) token so if the parameters used are not easily kept available, 
-they can be extracted from the token string as outlined in Java code below:
+they can be extracted from the token string as outlined in the Java code below:
 ```java
 // The token string's sections are delimited by dots.
 String[] tokenParts = token.split("\\.");
@@ -469,12 +469,12 @@ The set of consumer clients sharing a token can be thought of as a single logica
 Collectively, the set receives all notifications for the subscription topic. 
 
 The notification load is spread across the shared consumer clients according to the **id** of the source that generated the notification, typically a device **id**.
-All notifications for a given **id** will be delivered to the same consumer. Each consumer may receive notifications for many different **id**s.
+All notifications for a given **id** are delivered to the same consumer. Each consumer may receive notifications for many different **id**s.
 This means that there is no benefit using shared tokens unless the notifications feeding the subscription topic are coming from multiple sources.
 Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source **id**s in the subscription topic.
 The load should generally become more evenly distributed as the number of sources increases.
 
-In order to help keep the messages from a given set of source **id**s 'sticky' to a specific consumer client in the share in the face of connection interruptions,
+To keep the messages from a given set of source **id**s 'sticky' to a specific consumer client in the share in the face of connection interruptions,
 the consumer clients can provide an optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
 
 For example: two consumers identifying themselves as *instance1* and *instance2* connect using URL paths

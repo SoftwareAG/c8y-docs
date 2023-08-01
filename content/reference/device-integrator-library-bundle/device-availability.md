@@ -81,7 +81,7 @@ Keep in mind that after updating the last message it may take some minutes until
 
 A monitored device has one of the following statuses for `c8y_Connection`:
 
-| Status (String) | Description                                                                            |
+| Status (string) | Description                                                                            |
 |:----------------|:---------------------------------------------------------------------------------------|
 | CONNECTED       | A device push connection is established.                                               |
 | DISCONNECTED    | `responseInterval` is larger than 0 and the device is neither AVAILABLE nor CONNECTED. |

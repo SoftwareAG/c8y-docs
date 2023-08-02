@@ -133,7 +133,7 @@ For details, see the [Rest API documentation](https://{{< domain-c8y >}}/api/oee
 
 ### Resolution
 
-Next, define the resolution intervals. The default interval is mandatory and will define the interval that is used for this machine in the Organization Overview. It will also influence OEE calculation intervals for Sites and Lines that do not have a dedicated profile.
+Next, define the resolution intervals. The default interval is mandatory and will define the interval that is used for this machine in the **Overview**. It will also influence OEE calculation intervals for sites and lines that do not have a dedicated profile.
 
 ![Resolution tab](/images/oee/administration/profile-resolution.png)
 

@@ -25,9 +25,9 @@ To access the OEE dashboards, the permission "Oeeconfigurator" with type READ or
 
 #### Time period and resolution
 
-In the **Time range** field you can select a time range for which the OEE values will be displayed in the [**OEE status**](#oee-status) and [**OEE data**](#data) sections. By default, this will select a 24-hour period based on the current date. The back and forward arrows will move the time range based on the difference betwen the start and end time, i.e. if the difference between the two times is 4 hours, then the arrows will use steps of 4 hours. 
+In the **Time range** field you can select a time range for which the OEE values will be displayed in the [**OEE status**](#oee-status) and [**OEE data**](#data) sections. By default, this will select a 24-hour period based on the current date. The back and forward arrows will move the time range based on the difference betwen the start and end time, that is, if the difference between the two times is 4 hours, then the arrows will use steps of 4 hours. 
 
-In the **Resolution/Shift** dropdown field you can select the resolution for the selected time period. The available resolutions as well as the default (up to 4; for example 1 minute, 10 minutes, 1 hour, 8 hours) are configured during the profile creation, see [Creating machine profiles](/oee/oee-administration/#machine-profiles). It is also possible to directly select shifts for that machine's location as the resolution.
+In the **Resolution/Shift** dropdown menu you can select the resolution for the selected time period. The available resolutions as well as up to four default periods (for example, 1 minute, 10 minutes, 1 hour, and 8 hours) are configured during the profile creation. For more information see [Creating machine profiles](/oee/oee-administration/#machine-profiles). It is also possible to directly select shifts for that machine's location as the resolution.
 
 {{< c8y-admon-info >}}
 If the selected time frame is "last hour" you can set the resolution to 1 minute and 10 minutes, but other resolutions that are equal or longer than 1 hour, won't be offered.

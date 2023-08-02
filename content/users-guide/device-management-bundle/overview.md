@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-The following sections will walk you through all functionalities of the Device Management application in detail. For your convenience find an overview on the content of this document below.
+The following sections will walk you through all functionalities of the Device management application in detail. For your convenience find an overview on the content of this document below.
 
 |SECTION|CONTENT|
 |:---|:---|
@@ -18,3 +18,17 @@ The following sections will walk you through all functionalities of the Device M
 |[Managing device data](#managing-device-data)|How to manage [firmware](#firmware-repo) and [software](#software-repo) for devices, [configuration snapshots](#configuration-repository), [device credentials](#credentials), [trusted certificates](#trusted-certificates) and [device profiles](#device-profiles).
 |[SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#smartrest-templates), a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls.
 |[Working with simulators](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
+
+### Home dashboard
+
+The Home screen of the Device management application is a dashboard which shows data for the tenant.
+
+![Home dashboard](/images/users-guide/DeviceManagement/device-management-home-screen.png)
+
+The data shown on the Home dashboard is shared by all users of the tenant. By default, the Home dashboard includes recent alarms and quick links.
+The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets which are displayed here.
+
+For details on editing a dashboard, refer to [Cockpit > Working with dashboards](/users-guide/cockpit/#dashboards).
+The Device management application dashboard works just like the Cockpit dashboard.
+
+To reset the Home dashboard to its default, click **Restore dashboard** at the right of the top menu bar.

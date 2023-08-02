@@ -26,10 +26,10 @@ helpcontent:
 
 
     Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
-    label: packages
-    title: Packages
-    content: "On the **Packages** tab, you will find a list of all packages available in your tenant. Packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new package, click **Add package** at the top right."
-    label: features
+  - label: extensions
+    title: Extensions
+    content: "On the **Extensions** page, you find a list of all extension packages available in your tenant. Extension packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new extension package, click **Add extension package** at the top right."
+  - label: features
     title: Features
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
 
@@ -45,6 +45,33 @@ Both can be accessed via the **Ecosystem** menu in the navigator.
 
 Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, that means you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+* To view applications and microservices: READ permission for the "Application management" permission type
+* To manage applications and microservices (create, update, copy, delete): ADMIN permission for the "Application management" permission type
+
+On tenant creation there are default roles available that can be used as sample configuration for the above mentioned permissions:
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and business rules.
+
+Note that for complete application management some additional permission types with different permission levels might be required per feature, for example:
+* [Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Option management" permission type.
+* [Managing subscriptions](/users-guide/enterprise-tenant/#applications) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Tenant management" permission type.
+
+{{< /c8y-admon-req >}}
+
+
+{{< c8y-admon-related >}}
+- [Managing and monitoring microservices](#managing-microservices) for information on applications of the type microservice.
+- [Managing permissions](#managing-permissions) for details on assigning roles and permissions for the usage of {{< product-c8y-iot >}} applications.
+- [Changing application settings](/users-guide/administration/#default-app) for information on changing the application settings for your account.
+- [Enterprise tenant > Managing tenants > Applications](/users-guide/enterprise-tenant/#applications) for information on application subscriptions on tenant level.
+- [Cockpit > Widgets collection > Application](/users-guide/cockpit/#applications) for information on the "Application" widget.
+- [Developing applications](/concepts/applications) in the *Concepts guide* for an overview on the basic concepts of applications in {{< product-c8y-iot >}}.
+- The [Web SDK guide](/web/overview) for information on how to develop web applications on top of {{< product-c8y-iot >}} and how to [customize](/web/application-configuration) or [extend](/web/tutorials/#extend-an-existing-application) existing applications using the Web SDK.
+- [Applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
+{{< /c8y-admon-related >}}
+
 <a name="applications"></a>
 ### Applications
 
@@ -52,10 +79,12 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 
 <img src="/images/users-guide/Administration/admin-all-applications.png" alt="All applications" style="max-width: 100%">
 
-In the **All applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
+In the **All applications** tab, you can see all applications available in your tenant. There are two types of availability for applications:
 
-- [Subscribed applications](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or a service provider.
-- [Custom applications](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+- [Subscribed](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or a service provider.
+- [Custom](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+
+Applications can be filtered by name or by availability.
 
 Your applications are available through the application switcher in the top bar.
 
@@ -108,7 +137,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
@@ -116,7 +145,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled)</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web application</td>
@@ -264,9 +293,19 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
-### Application plugins
+<a name="extensions"></a>
+### Extensions
 
-Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
+Click **Extensions** in the **Ecosystem** menu in the navigator to display all extensions in your account.
+
+Extensions make it easier to share and reuse UI features across different applications. UI features can be developed as plugins and added to an application without coding knowledge. There are two types of extensions:
+
+- Plugins
+- Blueprints
+
+Blueprint applications must be deployed, while plugins are added to other applications. This allows you to scaffold entire solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime without rebuilding.
+
+Switch to the **Plugins** tab of an application to view all plugins installed on an application.
 
 <img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
 
@@ -280,12 +319,12 @@ Simply click the application or click the menu icon at the right of an entry and
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 {{< c8y-admon-important >}}
-Never change the system application names (such as "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
+Never change the system application names (such as "Device management", "Cockpit"). Otherwise, tenant initialization will fail.
 {{< /c8y-admon-important >}}
 
 ### To delete an application
 
-Click the menu icon at the right of an entry and then click **Delete**.
+Click the menu icon at the right of an entry and then click **Delete**. You can also delete an application directly from the **Properties** tab in the application details.
 
 If you delete an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
@@ -329,7 +368,7 @@ The selected application will be reactivated by removing the respective files fr
 
 Packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
 
-Packages can contain two types of applications:
+Packages can contain two types of content:
 
 - [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
@@ -337,6 +376,8 @@ Packages can contain two types of applications:
 Packages can be located on the **Packages** tab in the **Applications** page.
 
 <img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
+
+Packages can be filtered by name, creator type, availability and type of content.
 
 To add a new package click **Add package** at the top right.
 

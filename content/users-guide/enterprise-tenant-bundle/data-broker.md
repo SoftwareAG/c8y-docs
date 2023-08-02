@@ -8,10 +8,10 @@ helpcontent:
   - label: data-broker
     title: Data broker
     content: "Data broker lets you share data selectively with other tenants such as devices (and more generically, managed objects), events, alarms, measurements, or operations."
-    label: data-connector
+  - label: data-connector
     title: Data connector
     content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** at the top right."
-    label: data-subscriptions
+  - label: data-subscriptions
     title: Data subscriptions
     content: "The **Data subscriptions** page shows a list of all currently defined data forwarded to your tenant. For each subscription, the name, target tenant and status (enabled or disabled) are provided on a card. Use the toggle to temporarily stop forwarding data to your tenant."
 ---
@@ -167,13 +167,17 @@ Click the menu icon at the right of a data connector entry and then click **Dupl
 
 Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
+{{< c8y-admon-info >}}
+A data connector can also be deleted from the **Settings** tab of a connector configuration.
+{{< /c8y-admon-info >}}
+
 #### To view alarms for a data connector
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
 For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
 
-For details on alarms in general, see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms in general, see [Device management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 
 <a name="data-broker-subscriptions"></a>
@@ -194,7 +198,7 @@ Use the toggle to temporarily stop forwarding data into your tenant.
 3. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
 4. You can use the toggle in the card to temporarily stop forwarding data into your tenant.
 
-You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
+You can now navigate to the Device management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
 

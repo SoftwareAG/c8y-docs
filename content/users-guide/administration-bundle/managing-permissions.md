@@ -14,14 +14,28 @@ helpcontent:
   In the **Inventory roles** tab you can manage user permissions for particular groups of devices and/or its children. For example, an inventory role can contain the permission to restart a particular device."
 ---
 
-Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
+Permissions define what a user is allowed to do in {{< product-c8y-iot >}} applications. To manage permissions more easily, they are grouped into global and inventory roles. Every user can be associated with a number of roles, adding up permissions of the user.
 
-The following types of roles can be associated with users:
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
 
-- Global roles - contain permissions that apply to all data within a tenant.
-- Inventory roles - contain permissions that apply to groups of devices.
+* To view global roles, inventory roles, applications: READ permission for the "User management" permission type.
+* To manage global roles (assign to users, unassign from users), to manage inventory roles, to manage application access: ADMIN permission for the "User management" permission type.
+* To assign owned roles to users ("feature-user-hierarchy" application subscription required): CREATE permission for the "User management" permission type.
+* To create new roles with available (owned) permissions: CREATE and ADMIN permission.
 
-Moreover, application access can be granted to enable a user to use an application.
+The above permissions can be used to create roles for robust user management. Every new tenant have specified typical roles by default:
+* Global User Manager - Can access and modify the full user hierarchy
+* Shared User Manager - Can create new own sub-users and manage them ("feature-user-hierarchy" application subscription required)
+{{< /c8y-admon-req >}}
+
+{{< c8y-admon-related >}}
+- [Managing users](#managing-users) for information on managing users in general.
+- [Managing applications](#managing-applications) for more information on managing applications.
+- [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies) for more information on managing user hierarchies.
+- [Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
+- {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device integrator library](/reference/device-integrator-library/) for further information on fragment types.
+{{< /c8y-admon-related >}}
 
 <a name="global"></a>
 ### Global roles
@@ -83,15 +97,15 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Devicemanagement User</td>
-<td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
+<td align="left">Can access the Device management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
 <td align="left">Global Manager</td>
-<td align="left">Can read and write all devices.</td>
+<td align="left">Can read and write all data from all devices.</td>
 </tr>
 <tr>
 <td align="left">Global Reader</td>
-<td align="left">Can read all devices.</td>
+<td align="left">Can read all data from all devices.</td>
 </tr>
 <tr>
 <td align="left">Global User Manager</td>
@@ -254,7 +268,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Own user management</td>
-<td align="left">View or edit your own user.</td>
+<td align="left">View or edit your own user. Note that this permission may only be applicable to technical users.</td>
 </tr>
 </tbody>
 </table>
@@ -268,7 +282,7 @@ When new features with new permissions are added to {{< product-c8y-iot >}}, the
 <a name="attach-global"></a>
 #### Assigning global roles
 
-You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
+You can assign global roles to users either directly in the user list, or by opening the details page for a particular user and adding them there.
 
 {{< c8y-admon-important >}}
 By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Configuration settings](/users-guide/administration/#custom-template) in the *User guide*.
@@ -339,7 +353,7 @@ For example, assume that your device sends measurements related to device manage
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
 {{< c8y-admon-info >}}
-For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+For further information on possible types, check your device documentation or the [device integrator library](/reference/device-integrator-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 {{< /c8y-admon-info >}}
 
 In the **Permission** field, select a permission level from the dropdown list:
@@ -363,7 +377,7 @@ Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, open the dropdown at the right of the group row. Select the relevant roles and click **Apply**. For a detailed description of a role click the info icon next to it or refer to [Inventory roles](#inventory).
 
 {{< c8y-admon-important >}}
 If a user already has a global role containing inventory permissions, the user will be
@@ -388,9 +402,9 @@ The {{< product-c8y-iot >}} platform provides optimized UI performance for users
 
 The performance of the following UI pages is improved:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
-* Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
-* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
-* Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
+* Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device management > Home.
+* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
+* Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
 
 As an administrator, you can disable the performance feature by doing the following:
 - On platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).

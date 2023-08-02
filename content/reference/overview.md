@@ -10,5 +10,5 @@ The *Reference guide* contains the following topics:
 
 * [SmartREST](/reference/smartrest-two)
 * [Notifications 2.0](/reference/notifications)
-* [Device management library](/reference/device-management-library)
+* [Device integrator library](/reference/device-integrator-library)
 * [Sensor library](/reference/sensor-library)

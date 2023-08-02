@@ -33,6 +33,13 @@ helpcontent:
     To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
+{{< c8y-admon-related >}}
+* The [Protocol integration guide](/protocol-integration/overview) for details on registering devices using various standard protocol types.
+* [Device integration > Integration tutorials](/device-integration/integration-tutorials) for step-by-step instructions on registering devices.
+* [Device integration using REST](/device-integration/rest/) for a detailed descriptions on device integration via REST.
+* The [New device requests API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
+{{< /c8y-admon-related >}}
+
 <a name="dev-registration"></a>
 
 ### Device registration
@@ -89,7 +96,7 @@ Depending on the type of device you want to connect, not all steps of the follow
 2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**. The **Register devices** dialog box will be displayed.
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
-5. Click **Add new device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
+5. Click **Add device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s).
 
 {{< c8y-admon-info >}}
@@ -216,6 +223,8 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 {{< c8y-admon-info >}}
 Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status.
 {{< /c8y-admon-info >}}
+
+A separator is automatically obtained from the CSV file. Valid separator values are: `\t` (tabulation mark), `;` (semicolon) and `,` (comma).
 
 **Simple registration**
 

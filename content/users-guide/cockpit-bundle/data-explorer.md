@@ -17,6 +17,13 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
+{{< c8y-admon-related >}}
+
+- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
+
+{{< /c8y-admon-related >}}
+
+
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
@@ -49,17 +56,13 @@ The data points properties are pre-filled as follows:
 
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
-There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
-
-![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
+There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
-Click **Save as default** to store the data point settings into the device's managed object. These settings will then take precedence over the settings from the data point library, for example, when this data point is added to a data explorer by other users, or when there is a threshold smart rule processing this device and its data point. If you want to restore the data point library default settings, click **Load from library** and then click **Save as default**.
-
 **Example:**
 
-Let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an "On measurement threshold create alarm" smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm. However, if you change this data point's settings for your device in the data explorer and click **Save as default**, then the smart rule will use these overridden settings instead of the ones from the library. For other devices though, it will still use the settings from the library.
+Let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an "On measurement threshold create alarm" smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm.
 
 {{< c8y-admon-info >}}
 Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
@@ -123,11 +126,7 @@ The center of the dialog shows all data points of the selected object. Select th
 
 The right hand side shows all of the selected data points.
 
-To save the data point to the data point library, click the menu icon of the data point and from the context menu select **Save to library**.
-
-![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
-
-For details on the data point library refer to [Data point library](#data-point-library).
+For further information on the data point library refer to [Data point library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
@@ -187,10 +186,6 @@ The following fields may be modified:
 </tbody>
 </table>
 
-After customizing the properties of a data point, you can save the modified settings to the data point library. Click the menu icon and from the context menu select **Update [NAME] to library**.
-
-To return to the properties stored in the data point library to a data point, select **Load [NAME] from library**.
-
 ### Y-axis behaviour
 
 Per default, the first data point is positioned to the left y-axis and the remaining data points to the right. This behavior can be changed by modifying the respective value "Y-axis" for a particular data point (to "Left" or "Right", see above).
@@ -223,8 +218,6 @@ If you want to keep your current configuration in the data explorer for later us
 **Send as widget to dashboard**
 
 To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
-
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 

@@ -1,10 +1,10 @@
 ---
-weight: 35
+weight: 65
 title: REST APIs for Edge
 layout: bundle
 ---
 
-This section describes the REST APIs for {{< product-c8y-iot >}} Edge.
+For information about the REST APIs for {{< product-c8y-iot >}} Edge, see the [{{< openapi >}}](https://cumulocity.com/api/edge/).
 
 {{< c8y-admon-important >}}
 

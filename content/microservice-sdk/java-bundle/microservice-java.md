@@ -32,17 +32,17 @@ Your *pom.xml* file should contain a snippet similar to:
 <name>iptracker-microservice</name>
 <artifactId>iptracker-microservice</artifactId>
 <properties>
-    <java.version>13</java.version>
+    <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
-    <c8y.version>1004.6.12</c8y.version>
+    <spring-boot-dependencies.version>2.5.14</spring-boot-dependencies.version>
+    <c8y.version>1016.0.117</c8y.version>
     <microservice.name>iptracker-microservice</microservice.name>
 </properties>
 ```
 
 {{< c8y-admon-info >}}
-This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+This example was implemented using Java 17 and Spring Boot 2. You may [install the JDK 17](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, for example, JDK 11. Note that since Java 13 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
 {{< /c8y-admon-info >}}
 
 Finally, add the following dependency:
@@ -141,7 +141,7 @@ BODY:
 You will get the ID of your managed object in the response.
 Assign this ID to the `"tracker.id"` key in your _cumulocity.json_ file.
 
-On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
+On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices** in the Device management application to verify that your device has been created and its location is displayed on the map.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-newdevice.png)
 
@@ -374,7 +374,7 @@ public class App {
     }
 
     // Track client's approximate location
-    @RequestMapping("location/track")
+    @RequestMapping(value = "location/track", produces="application/json")
     public String trackLocation (HttpServletRequest request) {
         // Get the public IP address and create the event
         return createLocationUpdateEvent(request.getHeader("x-real-ip")).toJSON();
@@ -438,7 +438,7 @@ The response will be similar to:
 Using the endpoint <kbd>location/locations</kbd> will return five stored events by default.
 You can use the `max` parameter to specify a higher number.
 
-In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
+In the Device management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
 Under **Tracking** you will see a map with the tracked locations.
 You can also develop your own web application and customize a map widget.
 Refer to [Application library](/web/libraries/#application) in the *Web SDK guide*.
@@ -447,7 +447,7 @@ Refer to [Application library](/web/libraries/#application) in the *Web SDK guid
 
 #### Run the Docker container
 
-The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application).
+The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application) if the following property is set `microservice.package.deleteImage=false`.
 As you have learned in our [Hello world tutorial](/microservice-sdk/java/#java-microservice), you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
 Note that in this case the isolation was changed to `PER_TENANT`.
 You can also use your Docker image name and tag to run it as follows:

@@ -1,6 +1,9 @@
 ---
 title: Setting up Cumulocity IoT DataHub
 weight: 30
+outputs:
+- html
+- json
 layout: bundle
 ---
 

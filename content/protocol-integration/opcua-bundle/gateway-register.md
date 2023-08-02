@@ -297,7 +297,7 @@ gateway:
     triggerManualReconnectOnConnectionDrop: true
 
     # As a default, the OPC UA stack validates the endpoints returned by the OPC UA server. With this
-    # setting, this default can be toggled.
+    # setting, the default can be toggled.
     # This global setting can be individually overridden for each OPC UA server using the
     # "validateDiscoveredEndpoints" configuration fragment.
     # validateDiscoveredEndpoints: true

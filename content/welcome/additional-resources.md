@@ -6,6 +6,7 @@ aliases:
   - /about-doc/online-information
 ---
 
+<a name="installation-and-operations"></a>
 ### Installation and operations documentation
 
 The **Installation and Operations guides** for the {{< product-c8y-iot >}} platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}). Search for "{{< product-c8y-iot >}} Platform" as product. To view the Installation and Operations guides select the version of your choice from the selection field above the table and click the PDF icon on the far right.

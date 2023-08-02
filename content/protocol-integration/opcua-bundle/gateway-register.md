@@ -255,17 +255,18 @@ gateway:
     # The subscription update interval controls how often the OPC UA gateway updates the subscription
     # settings for connected OPC UA servers. Expects: Interval duration in milliseconds.
     interval: 60000
-    
-  # Server connectivity configuration
+
+ # Server connectivity configuration
   connectivity:
-    # If the autoReconnect in the server's client configuration is set to false, then the gateway tries to reconnect manually.
+    # If the autoReconnect in client config is set to false, then the gateway tries to reconnect manually.
     # triggerManualReconnectOnConnectionDrop can be used to stop the manual reconnect as well if set to false. The default value is true.
     triggerManualReconnectOnConnectionDrop: true
-	
-    # The OPC UA agent validates the endpoints returned by the OPC UA server. This setting allows to globally
-    # disable this behavior. Default is true.
-    validateDiscoveredEndpoints: true
-	
+
+    # As a default, the OPC UA stack validates the endpoints returned by the OPC UA server. With this
+    # setting, this default can be toggled.
+    # This global setting can be individually overridden for each OPC UA server using the
+    # "validateDiscoveredEndpoints" configuration fragment.
+    # validateDiscoveredEndpoints: true
     
   # Internal repository configurations
   repositories:

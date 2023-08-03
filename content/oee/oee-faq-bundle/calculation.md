@@ -41,7 +41,7 @@ If the connection is interrupted and no machine data is received for an interval
 
 **Example:**
 
-The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 08:01:14-08:02:14 no machine data was send to the application. Therefore, no calculation was triggered. These intervals are thus ignored in the section view, as you can easily deduce from the values of Availability and Actual Production Time. The red bars in the image indicate that a new calculation is triggered.
+The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 08:01:14-08:02:14 no machine data was send to the application. Therefore, no calculation was triggered. These intervals are thus ignored in the graph, as you can easily deduce from the values of Availability and Actual Production Time. The red bars in the image indicate that a new calculation is triggered.
 
 ![Loss of connection](/images/oee/faq/faq-loss-of-connection.png)
 
@@ -84,7 +84,7 @@ After entering a profile (via the profile modificator), all OEE machine statuses
 
 ### What happens if the machine reports a produced part although its status is "not producing"?
 
-If the information of a produced workpiece comes in while the machine is online, it will be split, see the image below (colored lines and arrows). If the machine is not producing and you receive a workpiece (WP) event, the first event is still split to the "machine on" time (pink), but the following events (black lines) are not split and just counted into the interval, in which they appear. Since it is not reasonable, that workpieces are produced while the machine is offline, alarms for the regarding interval will be raised. The produced amounts are still displayed in the machine dashboard and are still taken into account for the section view.
+If the information of a produced workpiece comes in while the machine is online, it will be split, see the image below (colored lines and arrows). If the machine is not producing and you receive a workpiece (WP) event, the first event is still split to the "machine on" time (pink), but the following events (black lines) are not split and just counted into the interval, in which they appear. Since it is not reasonable, that workpieces are produced while the machine is offline, alarms for the regarding interval will be raised. The produced amounts are still displayed in the machine dashboard and are still taken into account for the graph.
 
 ![Status report](/images/oee/faq/faq-status-report.png)
 

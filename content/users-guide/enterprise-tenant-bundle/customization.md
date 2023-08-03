@@ -103,7 +103,7 @@ At the top you can select if you want to send the email to the suspended tenant'
 Click **Save configuration** at the bottom to save your settings.
 
 {{< c8y-admon-info >}}
-Some additional configuration settings can be specified globally in the {{< management-tenant >}}. Contact your Operations team on further details. 
+Some additional configuration settings can be specified globally in the {{< management-tenant >}}. Contact your Operations team for further details. 
 {{< /c8y-admon-info >}}
 
 <a name="branding"></a>

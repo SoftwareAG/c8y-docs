@@ -9,7 +9,7 @@ aliases:
 The support user access feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances) or service providers in case of individual on-prem installations to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, that is, to access subtenant users in case of any issues.
 
 {{< c8y-admon-req >}}
-To use this feature, support user access must be configured and the required support users must be created in the {{< management-tenant >}}. Contact your Operations team on configuring this feature towards your needs.
+To use this feature, support user access must be configured and the required support users must be created in the {{< management-tenant >}}. Contact your Operations team on how to configure this feature according to your needs.
 
 On the {{< product-c8y-iot >}} public cloud instances, the support user functionality can only be used by the [{{< sag-support >}}](/welcome/contacting-support/) team for providing customer support. It is not available for {{< enterprise-tenant >}} customers to support their customers/subtenants.
 {{< /c8y-admon-req >}}
@@ -22,7 +22,7 @@ Support user access can either be:
 * Activated for all subtenants by default.
 * Deactivated for all subtenants, but explicitly be enabled by a user for their tenant.
 
-This is configured globally in the *{{< management-tenant >}}*. Contact your Operations team on configuring the settings towards your needs.
+This is configured globally in the *{{< management-tenant >}}*. Contact your Operations team on how to configure the settings according to your needs.
 
 If activated globally, the support user can log in to all allowed subtenants as any user without restriction.
 
@@ -36,7 +36,7 @@ If you don't see either the **Enable support** or **Disable support** button in 
 If a user with tenant management admin permission disables the support request, *all* support requests for the tenant will be disabled.
 {{< /c8y-admon-info >}}
 
-The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours). Contact your Operations team on configuring this setting towards your needs.
+The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours). Contact your Operations team on how to configure this setting according to your needs.
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not activated globally).
 

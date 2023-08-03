@@ -35,7 +35,7 @@ Click the pencil icon next to the entity name to open the entity editor and edit
 
 ### To assign an entity
 
-Click the **Add** button to add an entity (line, area, or machine) to another entity.
+Click the **Add** button to add an entity (line, area, or machine) to another entity. You can assign one or more machines to multiple lines. This allows for modelling of setups where lines can split, join, or share equipment between them.
 
 #### Example: To attach a line to a site
 
@@ -56,4 +56,4 @@ Deleting an entity will result in unassigning all entities previously assigned t
 
 ### To rearrange entities
 
-By activating the **Enable drag and drop** toggle in the top menu bar, you can rearrange the entities under **Organization structure** and **Unassigned entities** by dragging and dropping them freely, thus modifying the **Machine park Overview**.
+Entities can be easily re-organized under **Organization structure** and **Unassigned entities** by drag-and-drop. Any changes here are reflected in the **Machine park Overview**. Note that entities may only be re-organized by drag-and-drop within their parent entity. If you want to change an entity's parent, this must be done using the assignment. That is, it must be unassigned from the old parent, and then re-assigned elsewhere.

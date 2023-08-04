@@ -292,9 +292,15 @@ gateway:
 
   # Server connectivity configuration
   connectivity:
-    # If the autoReconnect in the server's client configuration is set to false, then the gateway tries to reconnect manually.
+    # If autoReconnect in the client configuration is set to false, the gateway tries to reconnect manually.
     # triggerManualReconnectOnConnectionDrop can be used to stop the manual reconnect as well if set to false. The default value is true.
     triggerManualReconnectOnConnectionDrop: true
+
+    # As a default, the OPC UA stack validates the endpoints returned by the OPC UA server. With this
+    # setting, the default can be toggled.
+    # This global setting can be individually overridden for each OPC UA server using the
+    # "validateDiscoveredEndpoints" configuration fragment.
+    # validateDiscoveredEndpoints: true
 
   # Internal repository configurations
   repositories:

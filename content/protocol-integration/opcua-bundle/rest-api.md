@@ -234,9 +234,9 @@ This property must be explicitly set to "true" to detect and persist the address
 <td>Boolean</td>
 <td>no</td>
 <td>
-Enabling this feature allows the protocol stack of the OPC UA gateway to validate whether the endpoint it is connecting to is present in the list of endpoints returned by the OPC UA server. By default, this validation is enabled (true). However, a setting in the server configuration can override the global gateway configuration setting using <code>gateway.connectivity.validateDiscoveredEndpoints</code>.
+The protocol stack of the OPC UA gateway validates whether the endpoint it is connecting to is present in the list of endpoints returned by the OPC UA server. By default, this validation is enabled (true). However, a setting in the server configuration can override the global gateway configuration setting using <code>gateway.connectivity.validateDiscoveredEndpoints</code>.
 
-We strongly recommend keeping this validation enabled unless there are compelling security reasons to disable it. Disabling the endpoint validation should only be done when absolutely necessary for security purposes.
+We strongly recommend keeping this validation enabled unless there are compelling reasons to disable it. Disabling the endpoint validation should only be done when absolutely necessary for security purposes.
 </td>
 </tr>
 </tbody>

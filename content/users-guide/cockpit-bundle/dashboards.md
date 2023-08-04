@@ -40,7 +40,11 @@ ROLES & PERMISSIONS:
 
 ### To create a dashboard
 
-1. Select the group or the device in the navigator for which to create a dashboard.
+An individual device or group dashboard provides you with an overview of important data for this group or device. It allows you to visualize data, alarms, events and trigger remote actions from your devices as well as gaining insight in key performance indicators of your company. An individualized dashboard gives you the opportunity to shut off your devices remotely in case of anomalies or unwanted behavior.
+
+To create your individualized dashboard, follow the steps below:
+
+1. In the **Groups** menu select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
 
 3. In the **Tab** section of the dashboard editor, provide the following information:

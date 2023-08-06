@@ -40,9 +40,11 @@ ROLES & PERMISSIONS:
 
 ### To create a dashboard
 
-An individual device or group dashboard provides you with an overview of important data for this group or device. It allows you to visualize data, alarms, events and trigger remote actions from your devices as well as gaining insight in key performance indicators of your company. An individualized dashboard gives you the opportunity to shut off your devices remotely in case of anomalies or unwanted behavior.
+{{< product-c8y-iot >}} allows you to create individualized dashboards for all your devices.
 
-To create your individualized dashboard, follow the steps below:
+An individual device or group dashboard provides you with an overview of important data for this group or device. It allows you to visualize data, alarms, events and trigger remote actions from your devices as well as gaining insight in key performance indicators of your company. It also gives you the opportunity to shut off your devices remotely in case of anomalies or unwanted behavior.
+
+To create your individualized dashboard, execute the following steps:
 
 1. In the **Groups** menu select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
@@ -73,7 +75,7 @@ The widget titles will be translated only if a valid translation is available.
 
 9. Click **Save** to create and open the dashboard.
 
-<br>Next, widgets can be added to the report.
+<br>Next, widgets can be added to the report. They allow you to display more detailed data in your dashboard.
 
 Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
 

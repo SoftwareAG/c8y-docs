@@ -48,6 +48,7 @@ You can select one of the following options for the customization of the home da
 * It is only reflected in the current custom application.
 * It is only reflected in the current user. Note that this user then needs CREATE permission for the permission type "Inventory".
 
-#### Misc
+
+#### To hide the navigator
 
 Finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.

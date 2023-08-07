@@ -21,8 +21,7 @@ weight: 40
 - [Application configuration](/guides/web/#application-configuration) in the *Web SDK guide* for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
-
-Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
+{{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices. They provide you with a customized visualization of your data, for example, visualizing data, alarms, events and triggering remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data. Individual dashboards also give you the opportunity to shut off your devices remotely in case of anomalies or unwanted behavior.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
@@ -39,10 +38,6 @@ ROLES & PERMISSIONS:
 <a name="creating-dashboards"></a>
 
 ### To create a dashboard
-
-{{< product-c8y-iot >}} allows you to create individualized dashboards for all your devices.
-
-An individual device or group dashboard provides you with an overview of important data for this group or device. It allows you to visualize data, alarms, events and trigger remote actions from your devices as well as gaining insight in key performance indicators of your company. It also gives you the opportunity to shut off your devices remotely in case of anomalies or unwanted behavior.
 
 To create your individualized dashboard, execute the following steps:
 

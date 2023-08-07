@@ -52,7 +52,7 @@ You can select one of the following options for the customization of the home da
 The initial home dashboard shows a number of pre-installed widgets. These widgets can be changed according to your needs.
 {{< /c8y-admon-info >}}
 
-Click **Reset dashboard** to undo any changes to your Home dashboard. This reverts all changes to the dashboard and returns it to the initial state.
+Click **Reset dashboard** to undo any changes to your home dashboard. This reverts all changes to the dashboard and returns it to the initial state.
 
 #### To hide the navigator
 

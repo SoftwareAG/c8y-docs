@@ -6,7 +6,7 @@ type: root
 layout: redirect
 section:
   - about_website
-weight: 30
+weight: 50
 ---
 
 Read our copyright information.

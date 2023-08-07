@@ -6,7 +6,7 @@ type: root
 layout: redirect
 section:
   - about_website
-weight: 20
+weight: 40
 ---
 
 Find technical details on the versions and sources of the {{< product-c8y-iot >}} documentation.

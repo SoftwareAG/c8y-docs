@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find technical details on the versions and sources of the {{< product-c8y-iot >}} documentation, and on legal information.
+Find details on the versions and sources of the {{< product-c8y-iot >}} documentation and on legal information.

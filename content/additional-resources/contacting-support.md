@@ -1,7 +1,7 @@
 ---
 title: Contacting product support
 layout: bundle
-weight: 60
+weight: 20
 section:
   - getting_started
 aliases:

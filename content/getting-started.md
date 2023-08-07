@@ -6,7 +6,7 @@ layout: redirect
 bundle: getting-started
 section:
   - getting_started
-weight: 20
+weight: 10
 ---
 
-Access the platform, get introduced to the general functionalities applying to all {{< product-c8y-iot >}} applications, and customize your user settings.
+Get introduced to the general functionalities applying to all {{< product-c8y-iot >}} applications. This section serves as a starting point for all UI users.

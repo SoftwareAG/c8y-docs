@@ -1,6 +1,6 @@
 ---
-weight: 50
-title: Additional resources
+weight: 10
+title: Overview
 layout: bundle
 section:
   - getting_started

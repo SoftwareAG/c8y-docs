@@ -55,24 +55,10 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-250mc-1g</a></td>
-<td style="text-align:left">Full Apama microservice. Runtime for Analytics Builder, EPL Apps, and smart rules</td>
-<td style="text-align:left">apama-ctrl-250mc-1g</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
-</tr>
-
-<tr>
-<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
-<td style="text-align:left">Restricted version of the Apama microservice. Runtime for an unlimited number of smart rules and a limited number of Analytics Builder models</td>
-<td style="text-align:left">apama-ctrl-starter</td>
-<td style="text-align:left">{{< standard-tenant >}}</td>
-</tr>
-
-<tr>
-<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrulesmt</a></td>
-<td style="text-align:left">Restricted version of the Apama microservice. Runtime for smart rules only, no Analytics Builder models or EPL apps available</td>
-<td style="text-align:left">apama-ctrl-smartrulesmt</td>
-<td style="text-align:left">Only available for self-hosted installations</td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
+<td style="text-align:left">Streaming Analytics microservices, including runtime for Analytics Builder, EPL apps and smart rules. Capabilities and resources vary depending on the microservice variant used</td>
+<td style="text-align:left">apama-ctrl-*</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
@@ -91,7 +77,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
-<td style="text-align:left">Use the smart rules engine and create smart rules to perform actions based on realtime data. Requires one of the following microservices: apama-ctrl-1c-4g, apama-ctrl-starter, or apama-ctrl-smartrules</td>
+<td style="text-align:left">Use the smart rules engine and create smart rules to perform actions based on realtime data. Requires a variant of the Apama-ctrl microservice</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>

@@ -2,6 +2,14 @@
 weight: 50
 title: Monitoring offloading jobs
 layout: redirect
+helpcontent:
+  - label: monitoring-offloading-jobs
+    title: Monitoring offloading jobs
+    content: "Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The execution status of each pipeline run is monitored and provides details on execution schedule, number of offloaded records, runtime and so on. In case an offloading has failed, for example, due to data lake connectivity issues, failure details are provided as well. Also an alarm will be raised.
+
+    The **job history** list shows an overview of the last runs for the selected offloading pipeline with options to filter the list by different criteria. To get more details for a specific run like the generated files in the data lake, click on the corresponding entry in the list.
+
+    For each offloading pipeline the system keeps a limited history of the last executions."
 ---
 
 Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. {{< product-c8y-iot >}} DataHub provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected.

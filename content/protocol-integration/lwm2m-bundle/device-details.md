@@ -53,9 +53,11 @@ To view the history of all operations, simply click **View history**. Note, that
 
 ![View History control tab](/images/device-protocols/lwm2m/lwm2m-devices-control.png)
 
+{{< c8y-admon-info >}}
 If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
 Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.
-Platform administrators can configure how long such operations stay alive (described in the *LWM2M agent installation & operations guide*).
+Platform administrators can configure how long such operations stay alive. This is described in the *LWM2M agent installation & operations guide*, see also [Additional resources > Installation and operations documentation](/welcome/additional-resources/#installation-and-operations). Contact your Operations team for further details. 
+{{< /c8y-admon-info >}}
 
 #### Audit Configuration
 

@@ -6,7 +6,7 @@ section:
   - getting_started
 ---
 
-Welcome to the {{< product-c8y-iot >}} user interface!
+Welcome to the {{< product-c8y-iot >}} platform user interface!
 
 Learn how to access the platform, get introduced to the general functionalities applying to all {{< product-c8y-iot >}} applications, and customize your user settings according to your needs.
 

@@ -103,7 +103,7 @@ At the top you can select if you want to send the email to the suspended tenant'
 Click **Save configuration** at the bottom to save your settings.
 
 {{< c8y-admon-info >}}
-Some additional configuration settings can be specified globally in the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+Some additional configuration settings can be specified globally in the {{< management-tenant >}}. Contact your Operations team for further details. 
 {{< /c8y-admon-info >}}
 
 <a name="branding"></a>
@@ -120,7 +120,7 @@ The branding functionality is enabled by subscribing to the "feature-branding" a
 
 ROLES & PERMISSIONS:
 
-* To manage the branding configuration: 
+* To manage the branding configuration:
   * READ, ADMIN, CREATE permission for the "Inventory" permission type
   * READ, ADMIN permission for the "Options management" permission type
 * To apply the branding configuration: READ, ADMIN permission for the "Application management" permission type

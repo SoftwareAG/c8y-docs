@@ -195,7 +195,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources.
 * Multi-tenant - the owner of the microservice is charged for used resources.
 
-In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< management-tenant >}} or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< enterprise-tenant >}} or a service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 

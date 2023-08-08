@@ -22,7 +22,7 @@ weight: 40
 {{< /c8y-admon-related >}}
 
 {{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices. 
-Dashboards provide you with a customized visualization of your data, for example, alarms and events, and allow you to trigger remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.```
+Dashboards provide you with a customized visualization of your data, for example, alarms and events, and allow you to trigger remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:

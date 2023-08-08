@@ -21,7 +21,7 @@ On this community, you can:
 * Use the online discussion forums, moderated by {{< company-sag >}} professionals, to ask questions, discuss best practices, and learn how other customers are using {{< company-sag >}} technology.
 * Link to external websites that discuss open standards and web technology.
 
-### {{< product-c8y-iot >}} Youtube channel
+### Cumulocity IoT YouTube channel
 
 Visit the  [{{< product-c8y-iot >}} Youtube channel](https://www.youtube.com/@CumulocityIoT) for more content about the platform. Here you have access to:
 

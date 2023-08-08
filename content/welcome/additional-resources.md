@@ -23,7 +23,7 @@ On this community, you can:
 
 ### Cumulocity IoT YouTube channel
 
-Visit the  [{{< product-c8y-iot >}} Youtube channel](https://www.youtube.com/@CumulocityIoT) for more content about the platform. Here you have access to:
+Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@CumulocityIoT) for more content about the platform. Here you have access to:
 
 * A tour of the platform.
 * Getting started with {{< product-c8y-iot >}}.

@@ -229,7 +229,16 @@ There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOW
 which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of {{< product-c8y-iot >}}.
 This property must be explicitly set to "true" to detect and persist the address space changes on runtime. </td>
 </tr>
+<tr>
+<td>validateDiscoveredEndpoints</td>
+<td>Boolean</td>
+<td>no</td>
+<td>
+The protocol stack of the OPC UA gateway validates whether the endpoint it is connecting to is present in the list of endpoints returned by the OPC UA server. By default, this validation is enabled (true). However, a setting in the server configuration can override the global gateway configuration setting, which can be configured using <code>gateway.connectivity.validateDiscoveredEndpoints</code>.
 
+We strongly recommend you to keep this validation enabled unless there are compelling reasons to disable it. Disabling the endpoint validation should only be done when absolutely necessary.
+</td>
+</tr>
 </tbody>
 </table>
 

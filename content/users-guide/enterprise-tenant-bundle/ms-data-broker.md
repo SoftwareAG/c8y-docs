@@ -28,16 +28,7 @@ In summary, to work with the microservice-based data broker, the following requi
 <a name="enabling-ms-data-broker"></a>
 ###  To enable the microservice-based data broker
 
-1. In the {{< management-tenant >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
-2. In the **Applications** tab:
-    * Subscribe the tenant to the data broker feature (`feature-broker` application), if it is not already subscribed.
-    * Subscribe the tenant to the data broker agent (`databroker-agent-server` application).
-
-![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
-
-{{< c8y-admon-info >}}
-Tenants subscribing to a data connector don't need the data broker agent subscription.
-{{< /c8y-admon-info >}}
+The microservice-based data broker must be enabled from the {{< management-tenant >}}. Contact your Operations team for further support.
 
 <a name="ms-data-broker-connectors"></a>
 ###  Data connectors

@@ -17,7 +17,8 @@ helpcontent:
 weight: 40
 ---
 
-Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
+{{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
+Dashboards provide you with a customized visualization of your data, for example, alarms and events, and allow you to trigger remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
@@ -35,7 +36,9 @@ ROLES & PERMISSIONS:
 
 ### To create a dashboard
 
-1. Select the group or the device in the navigator for which to create a dashboard.
+To create your individualized dashboard, execute the following steps:
+
+1. In the **Groups** menu select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
 
   <img src="/images/users-guide/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
@@ -59,7 +62,7 @@ The widget titles will be translated only if a valid translation is available.
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
 
-<br>Next, widgets can be added to the report.
+<br>Next, widgets can be added to the report. They allow you to display more detailed data in your dashboard.
 
 Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
 

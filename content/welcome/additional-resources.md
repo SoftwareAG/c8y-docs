@@ -30,7 +30,7 @@ Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@Cum
 * The IoT Developer Event Series.
 * Product demos, additional resources, and more.
 
-To learn about [what's new in {{< product-c8y-iot >}}](https://www.youtube.com/@CumulocityIoT/playlists?view=50&sort=dd&shelf_id=6), our YouTube channel also offers content which cover the new and enhanced functionality available in a specific product release.
+To learn about [what's new in {{< product-c8y-iot >}}](https://www.youtube.com/@CumulocityIoT/playlists?view=50&sort=dd&shelf_id=6), our YouTube channel also offers content which covers the new and enhanced functionality available in a specific product release.
 
 ### Product support website
 

@@ -61,4 +61,4 @@ jobs:
 
     - name: Upload documentation
       run: |
-        rsync -e 'ssh -A ${{ secrets.SSH_USER }}@${{ secrets.JUMP_HOST }} ssh' -avh ./public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DESTINATION_PATH }} --delete
+        rsync -e 'ssh -A ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }} ssh' -avh ./public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DESTINATION_PATH }} --delete

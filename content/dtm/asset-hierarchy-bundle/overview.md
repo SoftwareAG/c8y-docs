@@ -17,6 +17,16 @@ If you already created assets, you find them listed in a hierarchical view on th
 
 ![assets-view](/images/dtm/assets/dtm-assets-view-assets.png)
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS in assets context:
+
+- To view all assets: READ permission for permission type "Inventory"
+- To add/update/delete assets: CREATE/ADMIN permission for permission type "Inventory"
+- To view specific assets: READ permissions for "Inventory" in the inventory roles
+- To manage or delete specific assets: READ and CHANGE permissions for "Inventory" in the inventory roles
+
+Note that global inventory permissions override inventory role permissions.
+{{< /c8y-admon-req >}}
 
 <a name=""></a>
 ### Asset hierarchy

@@ -22,9 +22,9 @@ helpcontent:
 ---
 
 {{< c8y-admon-req >}}
-* To view Localization page: READ permission for permission type "Application management"
+* To view the **Localization** page: READ permission for permission type "Application management"
 
-* To add/update/delete Localization identifiers: ADMIN permission for permission type "Application management"
+* To add/update/delete localization identifiers: ADMIN permission for permission type "Application management"
 
 * Your user must have a role with READ permission for the permission type "Application management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 

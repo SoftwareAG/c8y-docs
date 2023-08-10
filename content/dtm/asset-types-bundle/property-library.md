@@ -16,6 +16,12 @@ helpContent:
 ---
 Asset properties are the parameters that define an [asset model](/dtm/asset-types/#asset-types). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS
+
+- To add/update/delete/import asset properties: CREATE/ADMIN permission for permission type "Inventory"
+{{< /c8y-admon-req >}}
+
 <a name="create-custom-property"></a>
 ### To create an asset property
 

@@ -36,7 +36,7 @@ The total number of asset models is displayed on the bottom left of the page.
 Use the **Export asset models** and **Import asset models** feature to transfer asset models between tenants. This is useful for replicating the asset models in multiple tenants. By exporting and importing asset models, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset models](#to-export-asset-models) and [To import asset models](#to-import-asset-models) on how to export or import asset models.
 
 {{< c8y-admon-req >}}
-ROLES & PERMISSIONS for asset models:
+ROLES & PERMISSIONS
 
 - To add/update/delete/import asset models: CREATE/ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}

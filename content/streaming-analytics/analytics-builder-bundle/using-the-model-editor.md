@@ -444,7 +444,8 @@ If there is a block parameter for which a required value has not been specified,
     ![Drag icon](/images/streaming-analytics/analytics-builder/icon-move-row.png)
     See also [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances).
 
-6.  You can only remove a template parameter if it is not used in any block of the model. To remove a template parameter, click the actions menu \(the three vertical dots at the end of a row\) and then click **Remove**.
+6.  You can only remove a template parameter if it is not used in any block of the model. To remove a template parameter, click the following control which is shown next to the row.
+    ![Remove icon](/images/streaming-analytics/analytics-builder/icon-remove-template-parameter.png)  
 
 7.  Click **OK** to store the changes in memory and to close the dialog.
 

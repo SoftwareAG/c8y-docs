@@ -43,7 +43,7 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 ### To retrieve and apply a configuration snapshot
 
-Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Device management library > Configuration](/reference/device-management-library/#configuration) in the *Reference guide* for more detailed and technical information.
+Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Device integrator library > Configuration](/reference/device-integrator-library/#configuration) in the *Reference guide* for more detailed and technical information.
 
 ### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration
 
@@ -71,7 +71,7 @@ To apply a configuration snapshot to a device which supports multiple configurat
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 {{< c8y-admon-info >}}
-Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
+Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type (ones that match the device type or have no device type specified).
 {{< /c8y-admon-info >}}
 
 ### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration

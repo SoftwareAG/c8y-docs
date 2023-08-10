@@ -6,13 +6,17 @@ section:
   - device_management
 ---
 
+{{< c8y-admon-related >}}
+References to related content in the documentation are mentioned in the details descriptions below.
+{{< /c8y-admon-related >}}
+
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface.
 
 To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device integrator library](/reference/device-integrator-library/#overview) in the *Reference guide*.
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
@@ -184,10 +188,9 @@ The log information will be requested from the device.
 
 ![Logs tab](/images/users-guide/DeviceManagement/devmgmt-devices-logs.png)
 
-{{< c8y-admon-info >}}
-Requesting a log from a device may take some time.
+>Requesting a log from a device may take some time.
+
 After the log has been transferred from the device to {{< product-c8y-iot >}}, it will be listed in the **Logs** tab. The row in the list shows the requested log time range.
-{{< /c8y-admon-info >}}
 
 Click on the entry in the list to show the entire log information.
 
@@ -215,7 +218,7 @@ Only one Y-axis is rendered if the measurements belong to the same series.
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
 
 {{< c8y-admon-info >}}
-We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device Management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
+We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
 {{< /c8y-admon-info >}}
 
 **Time range and aggregation**

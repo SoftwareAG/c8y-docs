@@ -2,7 +2,7 @@
 weight: 50
 title: Managing device types
 layout: bundle
-section: 
+section:
   - device_management
 helpcontent:
   - label: managing-device-types
@@ -12,6 +12,11 @@ helpcontent:
 
   To add a new device protocol, click **Add device protocol** at the top right, select a device protocol type and configure it following the instructions for the particular type in the *Protocol integration guide*."
 ---
+
+{{< c8y-admon-related >}}
+* [Interfacing devices](/concepts/interfacing-devices/) in the *Concepts guide* for information on the concepts relevant for interfacing IoT devices and other IoT-related data sources with {{< product-c8y-iot >}}.
+* The [Protocol integration guide](/protocol-integration/overview/) for a list of protocols, parameters and network connectivity options for devices.
+{{< /c8y-admon-related >}}
 
 To process data from various device types, {{< product-c8y-iot >}} uses device protocols which are stored in a database.
 

@@ -93,7 +93,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
-2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type in the firmware repository.
+2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type (or the ones that have no device type) in the firmware repository.
 3. Click **Install**.
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.

@@ -25,7 +25,7 @@ ROLES & PERMISSIONS
 - To view specific assets: READ permissions for "Inventory" in the inventory roles
 - To manage or delete specific assets: READ and CHANGE permissions for "Inventory" in the inventory roles
 
-Note that global inventory permissions override inventory role permissions. By default, the user has full access to assets created by them regardless of permissions granted to them. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the _User guide_.
+Note that global inventory permissions override inventory role permissions. By default, the user has full access to assets created by them regardless of the permissions granted to them. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the _User guide_.
 {{< /c8y-admon-req >}}
 
 <a name=""></a>

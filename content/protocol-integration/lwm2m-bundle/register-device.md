@@ -129,7 +129,7 @@ openssl pkcs8 -topk8 -inform PEM -outform DER -in myDevice.key -out myDevice.der
 ```
 
 ##### Trusting CA in {{< product-c8y-iot >}}
-Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](../../users-guide/device-management-bundle/managing-device-data.md) on how to add and trust CA certificate.
+Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/users-guide/device-management/#trusted-certificates) on how to add and trust CA certificate.
 
 ##### All security fields details
 The fields below must be contained to configure security modes for bootstrap and regular server connection:

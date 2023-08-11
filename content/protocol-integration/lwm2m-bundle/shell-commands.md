@@ -34,8 +34,8 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <td align="left">The value to be written to the resource. Must be given using the type of the resource.</td>
 </tr>
 <tr>
-<td align="left">parameters</td>
-<td align="left">The optional parameters of the "execute" operation. Must be expressed in plain text and follow the ABNF grammar rule.</td>
+<td align="left">executeparameters</td>
+<td align="left">The execute parameters have to conform to <i>arglist</i> ANBF syntax as described in the <a href="https://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.pdf">OMA Lightweight M2M specification (Section 6.3.5).</a></td>
 </tr>
 <tr>
 <td align="left">Firmware version</td>
@@ -49,6 +49,25 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <td align="left">SER</td>
 <td align="left">The supported data formats are TLV, TEXT, JSON and OPAQUE.</td>
 </tr>
+<tr>
+<td align="left">requestJson</td>
+<td align="left">The raw CoAP request can be specified using the following JSON syntax.
+<pre>
+REQUEST_JSON = { 	
+	"method": ${METHOD},
+	"uri": ${URI},
+	"contentFormat" : ${CONTENTFORMAT},
+	"accept": ${ACCEPT},
+	"payloadHex": ${PAYLOADHEX}
+	}
+METHOD = "get" | "post" | "put" | "delete" | "fetch" | "ipatch" | "patch"
+URI = "/" | "[A-Fa-f0-9]" | uri | null
+CONTENTFORMAT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>"
+ACCEPT = null | "<a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA Content Type</a>"
+PAYLOADHEX = null | "^[A-Fa-f0-9]+$"
+</pre>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -56,9 +75,9 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 In the next table you will see all available commands and a brief description of their functionality.
 
 <table>
-<col style="width:60%">
-<col style="width:10%">
-<col style="width:30%">
+<col style="width:40%">
+<col style="width:5%">
+<col style="width:55%">
 <thead>
 <tr>
 <th align="left">Command</th>
@@ -88,9 +107,14 @@ In the next table you will see all available commands and a brief description of
 <td align="left">Enables composite observe functionality for one or more resource paths. The resource data from all listed resource paths will be sent to the {{< product-c8y-iot >}}'s LWM2M agent in a single client request.</td>
 </tr>
 <tr>
-<td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;parameters&gt;]</td>
+<td align="left">execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;executeparameters&gt;]</td>
 <td align="center">1.0, 1.1</td>
 <td align="left">Executes a resource on the device with optional parameters.</td>
+</tr>
+<tr>
+<td align="left">executelegacy /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; [&lt;STRING&gt;]</td>
+<td align="center">1.0, 1.1</td>
+<td align="left">Executes a resource on the device and sends the parameters as TEXT/PLAIN string. This was the behavior of the execute command in {{< product-c8y-iot >}} until version 10.15. In contrast to the regular <code>execute</code> command, <code>executelegacy</code> allows execute parameters not in line with the Lightweight M2M standard to be sent to the device.</td>
 </tr>
 <tr>
 <td align="left">write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;</td>
@@ -149,6 +173,22 @@ For example: writeb /3442/0/150 binary:12345.
 <td align="center">1.0, 1.1</td>
 <td align="left">Sets the data format.</td>
 </tr>
+<tr>
+<td align="left">coap &lt;requestJson&gt;</td>
+<td align="center">1.0, 1.1</td>
+<td align="left">Allows a raw CoAP request to be sent to a LWM2M device. The command takes a request JSON string as a single argument. <br />
+<br />
+Example: <br/>
+
+	coap {
+		"method" : "get",
+		"uri" : "/3/0",
+		"accept" : "application/vnd.oma.lwm2m+json"}
+
+<br />
+The CoAP response data is populated into the operation response. Note that {{< product-c8y-iot >}} does not further process CoAP responses. We also recommend you to use raw CoAP requests for device interactions only in exceptional cases. Any interaction with an LWM2M device should be carried out using standard LWM2M operations.
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -170,5 +210,5 @@ The handling of LWM2M shell commands follows the following lifecycle:
 {{< c8y-admon-info >}}
 If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
 Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.
-Platform administrators can configure how long such operations stay alive (described in the *LWM2M agent installation & operations guide*).
+Platform administrators can configure how long such operations stay alive. This is described in the *LWM2M agent installation & operations guide*, see also [Additional resources > Installation and operations documentation](/welcome/additional-resources/#installation-and-operations). Contact your Operations team for further details.
 {{< /c8y-admon-info >}}

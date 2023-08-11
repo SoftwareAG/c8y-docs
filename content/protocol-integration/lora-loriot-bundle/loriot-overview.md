@@ -33,4 +33,6 @@ Moreover, check out
 * [Troubleshooting](#sigfox-troubleshooting) in case of any issues.
 
 
-> Note that your subscription needs to include this feature to be able to use it. If you do not see the functionality described in this document, please contact [product support](/welcome/contacting-support/).
+{{< c8y-admon-info >}}
+Your subscription must include this feature to be able to use it. If you do not see the functionality described in this document, contact [product support](/welcome/contacting-support/).
+{{< /c8y-admon-info >}}

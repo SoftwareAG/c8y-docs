@@ -18,7 +18,7 @@ You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
 <a name="lwm2m-single-device-registration"></a>
 ### Single device registration
 
-To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
+To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
 
 The LWM2M device registration wizard has three steps:
 * Required settings for establishing a connection.
@@ -37,7 +37,7 @@ The UI will display a confirmation message.
 
 If there is a number of devices to be registered at the same time, it is more convenient to use bulk device registration.
 
-To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
+To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
 Refer to [Required settings](#lwm2m-device-registration-required-settings), [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) and [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
@@ -56,11 +56,11 @@ When you upload the CSV file, the dialog will display a confirmation message tha
 
 The fields below must be contained to be able to establish a connection:
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -142,11 +142,11 @@ PSK registration requires additional fields to be filled.
 See the table below for the full set of bootstrap fields you can add:
 
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align: left">Field</th>
@@ -215,11 +215,11 @@ After creation, you can view and change the bootstrap parameters in the **LWM2M 
 See the table below for information on additional fields:
 
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align: left">Field</th>
@@ -326,17 +326,24 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
+<tr>
+<td style="text-align: left">Device protocol serialization format</td>
+<td style="text-align: left">serializationFormat</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Indicates the preferred content format for {{< product-c8y-iot >}} to communicate with the device. The allowed content formats are: TLV, JSON, CBOR, TEXT, OPAQUE or SENML_JSON and SENML_CBOR. In case of an empty or invalid entry, {{< product-c8y-iot >}} automatically selects the serialization format which the device sends during device registration.</td>
+<td style="text-align: left">Optional</td>
+</tr>
 </tbody>
 </table>
 
 The following table explains several optional parameters related to firmware updates which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 
 <table>
-<col style="width:15%">
-<col style="width:15%">
-<col style="width:10%">
-<col style="width:50%">
-<col style="width:10%">
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
 <thead>
 <tr>
 <th style="text-align: left">Field</th>
@@ -371,6 +378,13 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
+<td style="text-align: left">Initial State Machine Reset</td>
+<td style="text-align: left">fwResetStateMachineOnStart</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Controls if the LWM2M agent performs an initial state machine reset before it starts a firmware update. Default is TRUE.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
 <td style="text-align: left">Firmware update URL</td>
 <td style="text-align: left">fwUpdateURL</td>
 <td style="text-align: left">String</td>
@@ -381,7 +395,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 </table>
 
 {{< c8y-admon-info >}}
-Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Device management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 {{< /c8y-admon-info >}}
 
 <a name="duplicate-device"></a>
@@ -395,5 +409,5 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 ### Device deletion
 
 During LWM2M device registration the tenant route information is also stored in the cluster tenant.
-In order to remove the device, besides deleting the device from the list in [Device Management > All Devices](/users-guide/device-management/#viewing-devices) in the *User Guide*, a connector operation also needs to be executed to remove tenant route information from the cluster tenant.
+In order to remove the device, besides deleting the device from the list in [Device management > All Devices](/users-guide/device-management/#viewing-devices) in the *User Guide*, a connector operation also needs to be executed to remove tenant route information from the cluster tenant.
 See [cleanup cluster tenant objects for endpoint](#lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation) for more information.

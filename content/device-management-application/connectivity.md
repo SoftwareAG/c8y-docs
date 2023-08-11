@@ -4,8 +4,6 @@ title: Connectivity
 layout: bundle
 section:
   - device_management
-aliases:
-  - users-guide/optional-services/
 ---
 
 {{< c8y-admon-related >}}

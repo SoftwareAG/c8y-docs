@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Integration with Azure AD
 layout: bundle
 section:
@@ -42,15 +42,9 @@ Moreover, the App registration requires a secret which is used by {{< product-c8
 
 Optionally, create a user in Azure AD that you would like to use with {{< product-c8y-iot >}}.
 
-#### To configure SSO for Azure AD in Cumulocity IoT
+### To configure SSO for Azure AD in Cumulocity IoT
 
-Click the **Single sign-on** tab in the **Authentication** page.
-
-{{< c8y-admon-info >}}
-Note that the tab is only visible for tenants which have access to the SSO configuration.
-{{< /c8y-admon-info >}}
-
-At the top left, select "Azure ID". 
+Navigate to **Settings > Authentication** in the Administration application and switch to the **Single sign-on** tab.
 
 Retrieve the relevant information by a GET request to:
 

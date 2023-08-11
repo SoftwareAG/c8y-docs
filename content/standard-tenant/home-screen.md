@@ -7,7 +7,6 @@ weight: 5
 
 ---
 
-
 The Home screen of the Administration application provides the following content:
 
 * A welcome message
@@ -24,5 +23,5 @@ The capacity sections show:
 * Storage - the total amount of data stored in your account. This amount can be changed by [retention rules](/users-guide/administration/#retention-rules) and by the amount and size of [stored files](/users-guide/administration#files).
 * Storage quota - if the storage limit per device is set, the user is restricted to a [maximum data usage](/users-guide/enterprise-tenant/#storage-quota).
 * Root devices - the number of root devices connected to your account, excluding child devices.
-* Devices - the total number of devices connected to your account. This is the sum of the devices listed in the [All devices](/users-guide/device-management#viewing-devices) page of the Device Management application and their direct and indirect child devices.
+* Devices - the total number of devices connected to your account. This is the sum of the devices listed in the [All devices](/users-guide/device-management#viewing-devices) page of the Device management application and their direct and indirect child devices.
 * Users - the sum of all users configured in this account, active and inactive.

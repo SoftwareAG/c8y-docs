@@ -10,9 +10,9 @@ The {{< product-c8y-iot >}} platform provides optimized UI performance for users
 
 The performance of the following UI pages is improved:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
-* Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
-* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
-* Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
+* Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device management > Home.
+* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
+* Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
 
 As an administrator, you can disable the performance feature by doing the following:
 - On platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).

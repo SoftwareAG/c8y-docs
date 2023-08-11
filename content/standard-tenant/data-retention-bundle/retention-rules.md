@@ -11,12 +11,30 @@ helpcontent:
 ---
 
 
-Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings).
+**Retention rules** give you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings by the platform administrator). You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
 
-You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
 
-Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration application.
+- To view retention rules: READ permission for the permission type "Retention rules"
+- To manage retention rules (create, update, delete): ADMIN permission for the permission type "Retention rules"
 
+The above permissions can be used to create roles for robust user management. Every new tenant have specified typical roles by default:
+- Tenant Manager - Can manage tenant wide configurations like applications, tenant options and retention rules.
+
+{{< /c8y-admon-req >}}
+
+
+{{< c8y-admon-related >}}
+- [Enterprise tenant > Managing tenants > Tenant policies](/users-guide/enterprise-tenant/#tenant-policies) in the <i>User guide</i> for details on the creation of tenant policies and retention rules on tenant level.
+- [Retention rules](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Retention-rules) in the {{< openapi >}} for details on managing retention rules via REST.
+{{< /c8y-admon-related >}}
+
+{{< c8y-admon-info >}}
+Retention rules are usually run once per calendar day.  When you edit a retention rule you don´t see an immediate effect in the **Usage** section on the Home screen of the Administration application.
+{{< /c8y-admon-info >}}
+
+<a name="view-retention-rule"></a>
 ### To view retention rules
 
 Click **Retention rules** in the **Management** menu to view a list of retention rules configured for your account.
@@ -64,6 +82,7 @@ Alarms are only removed if they have a status of CLEARED.
 Simply click the row of the rule you want to edit.
 
 For details on the fields, see [To add a retention rule](#add-retention-rule).
+
 
 ### To delete a retention rule
 

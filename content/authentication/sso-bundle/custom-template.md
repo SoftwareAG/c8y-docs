@@ -1,40 +1,30 @@
 ---
-weight: 20
-title: Custom configuration
+weight: 30
+title: Custom template configuration
 layout: redirect
 section:
   - platform_administration
 ---
 
-Click the **Single sign-on** tab in the **Authentication** page.
-
-{{< c8y-admon-info >}}
-Note that the tab is only visible for tenants which have access to the SSO configuration.
-{{< /c8y-admon-info >}}
-
-At the top left, select "Custom". This is the default template which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant.
-
-![Custom authorization request](/images/users-guide/Administration/sso-custom-authorization-request.png)
+On the **Single sign-on** tab in the **Authentication** page, select "custom" (the default) as template to configure a connection with any authorization server using OAuth2 authorization code grant.
 
 As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided.
 
-### Request configuration
+![Custom authorization request](/images/users-guide/Administration/sso-custom-authorization-request.png)
 
-The first parts of the **Single sign-on** tab consist of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
+### To configure a connection
+
+The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
 
 {{< c8y-admon-info >}}
 Be aware that the body field of each request, after filling placeholders with values, is sent in the request 'as is'. This means it is not encoded by {{< product-c8y-iot >}}. Many authorization servers require values inside the body to be URL-encoded (x-form-urlencoded). This can be achieved by entering already encoded values in a body field.
 {{< /c8y-admon-info >}}
 
-### Logout request
-
 Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from {{< product-c8y-iot >}}.
 
 ![Custom logout request](/images/users-guide/Administration/sso-custom-logout-request.png)
 
-### Basic
-
-The **Basic** section consists of the following configuration settings:
+The **Basic** section of the **Single sign-on** page consists of the following configuration settings:
 
 ![Custom basic configuration](/images/users-guide/Administration/sso-custom-basic.png)
 
@@ -47,8 +37,6 @@ The **Basic** section consists of the following configuration settings:
 |Provider name|Name of the provider
 |Audience|Expected aud parameter of JWT
 |Visible on Login page|Indicates whether the login option is enabled or not
-
-### Access mapping
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
@@ -64,13 +52,13 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global role "business" and the default application "cockpit".
+The user will be granted access to the global role "business", the default application "cockpit" and the inventory roles "Manager" and "Reader" for the device group named "region north".
 
 If no access mapping matches the user access token, the user will get an "access denied" message when trying to log in. This will also happen if there is no access mapping defined causing all users to be unable to log in using SSO.
 
-New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
+New rules can be added by clicking **Add access mapping** or **Add inventory roles** at the bottom. An access mapping statement can consist of multiple checks like in the image below. You can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
-New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin"."
+New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles "business" and "admin".
 
 When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with "cur". "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
@@ -96,14 +84,13 @@ In this case the following claim will match the condition:
 
 There is an option to verify that a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
-By default, the configuration for dynamic access mapping is selected: **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**.
-This means that dynamic access mapping assigns user roles, based on the access token, on every user login.
-It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login.
-To change this behavior, select one of the following radio buttons at the bottom of the **Access mapping** section:
+The user access mapping configuration provides the following options:
 
 * **Use dynamic access mapping only on user creation** - when selected, dynamic access mapping will be used only when a new user logs in to fill in the initial roles. When a user already exists in {{< product-c8y-iot >}}, the roles will not be overwritten nor updated.
 
-* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping will be used on every login, but the roles not listed in the access mapping configuration will not be updated. Only the roles that are listed in the defined access mapping rules will be overwritten.
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be unchanged** - when selected, dynamic access mapping is used on every login, but the roles not listed in the access mapping configuration are not updated. Only the global roles, default applications and device groups that are listed in the defined access mapping rules are overwritten.
+
+* **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared** -The default. Dynamic access mapping assigns user roles, based on the access token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
 ![Custom access mapping](/images/users-guide/Administration/sso-custom-access-mapping-2.png)
 
@@ -116,8 +103,6 @@ The user ID can be set to any top-level field of the authorization token payload
 
  If the **Use constant value** checkbox is selected, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. Usage of this option is not recommended.
 
-### User data mappings
-
 Next, the **User data mappings** can be configured:
 
 ![User data mappings](/images/users-guide/Administration/sso-custom-userdata-mapping.png)
@@ -126,9 +111,7 @@ On user login, user data like first name, last name, email and phone number can 
 
 Mapping for alias is not available because it is not used in the context of SSO login.
 
-### Signature verification
-
-Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
+Each access token is signed by a signing certificate. The following options are available to configure the signing certificates.
 
 1. By specifying the Azure AD certificate discovery address.
 

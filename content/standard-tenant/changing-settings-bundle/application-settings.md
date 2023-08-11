@@ -28,3 +28,8 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 * Set it to `http://my.host.com`, `http://myother.host.com` to allow applications from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
+
+{{< c8y-admon-related >}}
+- [Managing applications](#managing-applications) for general information on managing applications.
+- [Managing users](#managing-users) for general information on managing users.
+{{< /c8y-admon-related >}}

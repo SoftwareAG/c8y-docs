@@ -8,6 +8,8 @@ section:
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
+### To view inventory roles
+
 To view the currently configured inventory roles, click **Roles** in the **Accounts** menu and switch to the **Inventory roles** tab.
 
 <img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
@@ -43,10 +45,6 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-{{< c8y-admon-info >}}
-Service providers will see an additional permission "Support" in their {{< management-tenant >}}. This permission lets users of the service provider give support to their customer's users, see [Support user access](/users-guide/enterprise-tenant/#support-user-access).
-{{< /c8y-admon-info >}}
-
 Add a permission to the role by clicking the plus icon next to the desired category.
 
 In the **Type** field, specify a type to further restrict the type of data that this permission applies to. Access will be only granted to objects that contain the specified **Type**.
@@ -56,7 +54,7 @@ For example, assume that your device sends measurements related to device manage
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
 {{< c8y-admon-info >}}
-For further information on possible types, check your device documentation, the {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or the [device management library](/reference/device-management-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+For further information on possible types, check your device documentation or the [device integrator library](/reference/device-integrator-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 {{< /c8y-admon-info >}}
 
 In the **Permission** field, select a permission level from the dropdown list:
@@ -80,7 +78,7 @@ Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, open the dropdown at the right of the group row. Select the relevant roles and click **Apply**. For a detailed description of a role click the info icon next to it or refer to [Inventory roles](#inventory).
 
 {{< c8y-admon-important >}}
 If a user already has a global role containing inventory permissions, the user will be

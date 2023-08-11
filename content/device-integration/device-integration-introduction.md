@@ -3,7 +3,7 @@ weight: 10
 title: Overview
 layout: bundle
 slug: introduction
-section: 
+section:
   - device_management
 aliases:
   - /developers-guide
@@ -34,6 +34,12 @@ aliases:
   - /device-sdk/java/introduction
   - /device-sdk/hello-mqtt-cs-0
   - /device-sdk/device-sdk-cs
+  - /device-sdk/device-sdk-cs/#introduction
+  - /device-sdk/device-sdk-cs/#hello-world-basic
+  - /device-sdk/device-sdk-cs/#developing-cs-clients
+  - /device-sdk/device-sdk-cs/#prerequisites-mqtt
+  - /device-sdk/device-sdk-cs/#developing-the-client-mqtt
+  - /device-sdk/device-sdk-cs/#cs-static-templates-mqtt
   - /cs
   - /cs/introduction
   - /cs/hello-world-basic

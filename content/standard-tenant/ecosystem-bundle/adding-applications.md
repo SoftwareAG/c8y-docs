@@ -6,7 +6,17 @@ section:
   - platform_administration
 ---
 
-Click **Add application** at the top right of the **All applications** tab.
+Click **Add application** at the top right of the **All applications** tab to add a custom application.
+
+Custom applications may be:
+
+* Web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard).
+* Links to an application running elsewhere.
+* Duplicates of subscribed applications (in order to be able to customize them).
+
+{{< c8y-admon-info >}}
+In the **All applications** tab, custom applications are labeled as "Custom".
+{{< /c8y-admon-info >}}
 
 In the resulting dialog box, select one of the following methods:
 
@@ -14,6 +24,7 @@ In the resulting dialog box, select one of the following methods:
 * [External application](#external-application) - link to an application running elsewhere.
 * [Install from available packages](#blueprint-application) - select a package blueprint.
 * [Duplicate existing application](#clone-application) - create a copy of an existing application.
+
 
 <a name="uploading-zip-files"></a>
 ### To upload a web application

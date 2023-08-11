@@ -6,8 +6,13 @@ section:
   - platform_administration
 ---
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
 
-<a name="sms-provider"></a>
+To view SMS provider configurations: READ permission for the permission type "SMS"
+To set or remove SMS provider configurations: ADMIN permission for the permission type "SMS"
+
+{{< /c8y-admon-req >}}
 
 SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, for example, on alarms.
 
@@ -16,10 +21,6 @@ By providing your credentials you enable platform features that utilize SMS serv
 ### To enter SMS provider credentials
 
 1. Click **SMS provider** in the **Settings** menu.
-
-{{< c8y-admon-info >}}
-To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
-{{< /c8y-admon-info >}}
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 

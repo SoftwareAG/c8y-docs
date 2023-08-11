@@ -4,9 +4,11 @@ layout: bundle
 weight: 40
 section:
   - platform_administration
+helpcontent:
+  - label: extensions
+    title: Extensions
+    content: "On the **Extensions** page, you find a list of all extension packages available in your tenant. Extension packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new extension package, click **Add extension package** at the top right."
 ---
-
-<!--- <a name="extensions"></a> --->
 
 Click **Extensions** in the **Ecosystem** menu in the navigator to display all extensions in your account.
 

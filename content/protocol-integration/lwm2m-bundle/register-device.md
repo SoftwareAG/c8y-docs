@@ -20,10 +20,11 @@ You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
 
 To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
 
-The LWM2M device registration wizard has three steps:
-* Required settings for establishing a connection.
+The LWM2M device registration wizard has four steps:
+* Required - configuration of globally unique device identifier.
 Refer to [Required settings](#lwm2m-device-registration-required-settings) below for details about the fields.
-If PSK security mode is selected, additional settings are required.
+* Security - configuration of LWM2M security modes, separate for bootstrap server ("Bootstrap Security Mode") and regular server ("Server Security Mode") connections.
+Refer to [Security modes](#lwm2m-device-registration-security-modes) below for details about the fields.
 * Bootstrap settings for enabling the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.
 Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) below for details about the fields.
 * Advanced setting for further optional configurations.
@@ -40,7 +41,7 @@ If there is a number of devices to be registered at the same time, it is more co
 To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
-Refer to [Required settings](#lwm2m-device-registration-required-settings), [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) and [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
+Refer to [Required settings](#lwm2m-device-registration-required-settings), [Security modes](#lwm2m-device-registration-security-modes), [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) and [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
 
 {{< c8y-admon-info >}}
 The maximum size allowed for the CSV file is 10 MB.
@@ -78,11 +79,88 @@ The fields below must be contained to be able to establish a connection:
 <td style="text-align:left">Indicates the LWM2M client's endpoint ID in order to allow the LWM2M bootstrap to provision the bootstrap information for the LWM2M client. The endpoint ID has be to be <b>unique</b> across all tenants and must have the same value as the ID. Registering a device using an endpoint ID already used will result in an error.</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
+</tbody>
+</table>
+
+<a name="lwm2m-device-registration-security-modes"></a>
+#### Security modes
+
+We can distinguish 2 types of connectivity:
+* **bootstrap** - connection established to bootstrap server in order to provision device with server configuration.
+* **server** - connection established to regular server to exchange data. 
+
+{{< product-c8y-iot >}} supports different security modes for both connections so device can connect to boostrap server and regular server using different security modes. 
+
+Currently {{< product-c8y-iot >}} supports 3 security modes:
+* **NO_SEC** - Device connects to the platform without any security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided.
+* **PSK** - Device connects to the platform using DTLS with the given pre-shared ID and KEY (PSK). 
+  * **bootstrap connectivity** - PSK ID and KEY must be preconfigured on the device by manufacturer and the same credentials must be provided during device registration.
+  * **server connectivity** - PSK ID and KEY must be provided during device registration. The device is expected to use these credentials during regular server connection. Bootstrap server will write these credentials to the device during a LWM2M bootstrap session. There are 2 ways to provide PSK ID and KEY:
+    * **manual (PSK)** - Manually enter both ID and KEY values (useful when device is preconfigured, and it won't use bootstrap server).
+    * **generated (PSK_GENERATED)** - Server will assume PSK ID is equal to the endpoint ID of the device, and it will generate random secure PSK KEY. This scenario is useful when you want to secure server connectivity without preconfiguring PSK keys on the device. Device can bootstrap with NO_SEC/X509, and it will be provisioned with auto-generated PSK credentials for server connectivity.
+* **X509** - Device connects to the platform using X.509 certificate.
+  * **bootstrap connectivity** - device must be preconfigured by manufacturer with X.509 certificate, private key and trust store/server certificate. There are no additional settings to provide during device registration.
+  * **server connectivity** - here we can distinguish 2 scenarios:
+    * **device has all X.509 credentials pre-configured by manufacturer** - no additional data is required during device registration.
+    * **device expects bootstrap server to provision certificates** - in this case it's possible (but not mandatory, when empty it won't be written to device by bootstrap server) to provide:
+      * X.509 Certificate and Private Key in PEM format. Private key will be stored as encrypted data on the platform. 
+      * Server certificate to use (more on this below).
+      * Certificate usage (as defined in LWM2M specification)
+      * SNI - not used yet in this version, planned for the future releases. 
+      
+##### More details on X.509 security
+Client X.509 certificate must meet the requirements specified in [LWM2M specification](https://www.openmobilealliance.org/release/LightweightM2M/V1_1-20180612-C/OMA-TS-LightweightM2M_Transport-V1_1-20180612-C.html#5-2-8-3-0-5283-X509-Certificates).
+For testing purposes, certificate can be generated by a self-signed CA in the following way:
+* Creation of self-signed CA:
+```shell
+openssl ecparam -name prime256v1 -genkey -noout -out myCA.key
+openssl req -x509 -new -nodes -key myCA.key -days 36500 -out myCA.pem 
+```
+* Creation of device certificate signed by our CA:
+```shell
+# create and sign certificate
+openssl ecparam -name prime256v1 -genkey -noout -out myDevice.key
+openssl req -new -key myDevice.key -out myDevice.csr 
+openssl x509 -req -in myDevice.csr -CA path/to/myCa.pem -CAkey path/to/myCa.key -CAcreateserial -out myDevice.crt -days 36500
+# export to PKCS8 PEM format
+openssl pkcs8 -topk8 -inform PEM -outform PEM -in myDevice.key -out myDevice.key.pem -nocrypt
+# optionally export to DER format if your device needs it
+openssl pkcs8 -topk8 -inform PEM -outform DER -in myDevice.key -out myDevice.der -nocrypt
+```
+
+##### Trusting CA in {{< product-c8y-iot >}}
+Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](../../users-guide/device-management-bundle/managing-device-data.md) on how to add and trust CA certificate.
+
+##### All security fields details
+The fields below must be contained to configure security modes for bootstrap and regular server connection:
+<table>
+<col>
+<col style="width:30%">
+<col style="width:11%">
+<col style="width:30%">
+<col>
+<thead>
 <tr>
-<td style="text-align:left">Security mode</td>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">CSV field name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align: left">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Server security mode</td>
 <td style="text-align:left">securityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align:left">Determines the type of connection used by the LWM2M device. "NO_SEC" is used for unsecure connections which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. "PSK" is used for secure connections. If PSK is selected, devices need to connect to the LWM2M server using DTLS with the given pre-shared key (PSK). With "PSK", the client and server have a common secret symmetric cryptography. Currently {{< product-c8y-iot >}} supports only "NO_SEC" and "PSK".</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device when it connects to {{< product-c8y-iot >}} LWM2M server. Possible values are: "NO_SEC", "PSK" and "X509".</td>
+<td style="text-align: left">Mandatory</td>
+</tr>
+<tr>
+<td style="text-align:left">Bootstrap security mode</td>
+<td style="text-align:left">bootstrapSecurityMode</td>
+<td style="text-align: left">String</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device when it connects to {{< product-c8y-iot >}} LWM2M bootstrap server. Possible values are: "NO_SEC", "PSK", "PSK_GENERATED" and "X509".</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>
@@ -90,31 +168,67 @@ The fields below must be contained to be able to establish a connection:
 <td style="text-align: left">lwm2m psk_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The ID used by the device for server connections in PSK mode. The LWM2M PSK ID has be to be <b>unique</b> across all tenants. Registering a device using an LWM2M PSK ID already used will result in an error.</td>
-<td style="text-align: left">Mandatory for PSK. Don't set it for NO_SEC</td>
+<td style="text-align: left">Mandatory for PSK security mode.</td>
 </tr>
 <tr>
 <td style="text-align: left">LWM2M PSK key</td>
 <td style="text-align: left">lwm2m psk_key</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The hex-encoded pre-shared key used by the device for server connections in PSK mode.</td>
-<td style="text-align: left; height: 26px;">Mandatory for PSK. Don't set it for NO_SEC</td>
+<td style="text-align: left; height: 26px;">Mandatory for PSK security mode.</td>
 </tr>
 <tr>
 <td style="text-align: left">Bootstrap PSK ID</td>
 <td style="text-align: left">bootstrap psk_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The ID used by the device for bootstrap connections in PSK mode. The bootstrap PSK ID has be to be <b>unique</b> across all tenants. Registering a device using an bootstrap PSK ID already used will result in an error.</td>
-<td style="text-align: left">Mandatory for PSK</td>
+<td style="text-align: left">Mandatory for PSK security mode.</td>
 </tr>
 <tr>
 <td style="text-align: left">Bootstrap PSK key</td>
 <td style="text-align: left">bootstrap psk_key</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The hex-encoded key used by the device for bootstrap connections in PSK mode.</td>
-<td style="text-align: left">Mandatory for PSK</td>
+<td style="text-align: left">Mandatory for PSK security mode.</td>
+</tr>
+<tr>
+<td style="text-align: left">X.509 certificate</td>
+<td style="text-align: left">x509ClientCertificate</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">X.509 device certificate written to device during bootstrap phase. PEM format.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left">X.509 private key</td>
+<td style="text-align: left">x509ClientPrivateKey</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">X.509 device private key written to device during bootstrap phase. PEM format.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left">X.509 certificate usage</td>
+<td style="text-align: left">x509CertificateUsage</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">One of: DEFAULT, CA_CONSTRAINT, SERVICE_CERTIFICATE_CONSTRAINT, TRUST_ANCHOR_ASSERTION, DOMAIN_ISSUER_CERTIFICATE. Defaults to DOMAIN_ISSUER_CERTIFICATE</td>
+<td style="text-align: left">Mandatory for X509 security mode</td>
+</tr>
+<tr>
+<td style="text-align: left">Server certificate</td>
+<td style="text-align: left">serverPublicKey</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Name of the server certificate to use. Server certificates are preconfigured in "management" tenant.</td>
+<td style="text-align: left">Mandatory for X509 security mode</td>
+</tr>
+<tr>
+<td style="text-align: left">SNI</td>
+<td style="text-align: left">sni</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Server Name Indicator written to device during bootstrap phase. Not supported yet, but planned for future releases.</td>
+<td style="text-align: left">Optional for X509 security mode</td>
 </tr>
 </tbody>
 </table>
+
 
 <a name="lwm2m-device-registration-bootstrap-settings"></a>
 #### Bootstrap settings
@@ -182,6 +296,20 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
+<td style="text-align: left">LWM2M short server ID</td>
+<td style="text-align: left">lwm2mShortServerId</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The short server ID to be used for LWM2M server. Default is "1".</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left">Security instance offset</td>
+<td style="text-align: left">securityInstanceOffset</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set, for example, to "3", the first instance will be three.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
 <td style="text-align: left; height: 13px;">Registration lifetime</td>
 <td style="text-align: left; height: 13px;">registrationLifetime</td>
 <td style="text-align: left">Integer</td>
@@ -206,7 +334,7 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 </table>
 
 {{< c8y-admon-info >}}
-After creation, you can view and change the bootstrap parameters in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
+After creation, you can view and change device parameters in the **LWM2M configuration** tab in the **Device details** page, see [LWM2M configuration](#lwm2m-configuration).
 {{< /c8y-admon-info >}}
 
 <a name="lwm2m-device-registration-advanced-settings"></a>
@@ -243,20 +371,6 @@ See the table below for information on additional fields:
 <td style="text-align: left">serverPublicKey</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The public key of the server.</td>
-<td style="text-align: left">Optional</td>
-</tr>
-<tr>
-<td style="text-align: left">LWM2M short server ID</td>
-<td style="text-align: left">lwm2mShortServerId</td>
-<td style="text-align: left">Integer</td>
-<td style="text-align: left">The short server ID to be used for LWM2M server. Default is "1".</td>
-<td style="text-align: left">Optional</td>
-</tr>
-<tr>
-<td style="text-align: left">Security instance offset</td>
-<td style="text-align: left">securityInstanceOffset</td>
-<td style="text-align: left">Integer</td>
-<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set, for example, to "3", the first instance will be three.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr style="height: 26px;">

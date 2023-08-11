@@ -2,11 +2,11 @@
 weight: 10
 title: Overview
 layout: bundle
-section: 
+section:
   - device_management
 ---
 
-The device management library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example, software management and configuration management. The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) in the *Concepts guide*.
+The device integrator library defines the data structures that are used in {{< product-c8y-iot >}} for device management activities like, for example, software management and configuration management. The data structures are expressed as fragments that can be used inside managed objects, operations and other resources. More information on the fragment concept can be found in the [{{< product-c8y-iot >}} domain model](/concepts/domain-model/) in the *Concepts guide*.
 
 In the following section you will find descriptions of the most important functionalities of a device, its managed objects and all its corresponding fragments to them. We will explain the relationship between the {{< product-c8y-iot >}} UI, the device object managed in our databases and what is being communicated to and from the device itself.
 
@@ -14,10 +14,10 @@ If you are interested in details on exposing the {{< product-c8y-iot >}}´s func
 
 Moreover, see [SmartREST](/reference/smartrest-two) for more information on SmartREST and a complete list of all SmartREST templates mentioned throughout the following sections.
 
-To start with device management, open the **All devices** tab in the **Devices** menu of the Device Management application. Click on a device in the list to open the device details of this particular device. You will see various tabs and particular information on each of them.
+To start with device management, open the **All devices** tab in the **Devices** menu of the Device management application. Click on a device in the list to open the device details of this particular device. You will see various tabs and particular information on each of them.
 
 {{< c8y-admon-info >}}
-For a detailed explanation of each tab and its related configuration via the UI, see also [Device Management > Device details](/users-guide/device-management/#device-details) in the *User guide*.
+For a detailed explanation of each tab and its related configuration via the UI, see also [Device management > Device details](/users-guide/device-management/#device-details) in the *User guide*.
 {{< /c8y-admon-info >}}
 
 ![Device details](/images/reference-guide/device-details.png)
@@ -41,15 +41,15 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 </thead>
 <tbody>
 <tr>
-<td><a href="../../reference/device-management-library/#device-info">c8y_Availability</a></td>
+<td><a href="../../reference/device-integrator-library/#device-info">c8y_Availability</a></td>
 <td>Holds information about the device's status and its availability</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#reference">c8y_Command</a></td>
+<td><a href="../../reference/device-integrator-library/#reference">c8y_Command</a></td>
 <td>Allows the user to carry out interactive sessions with a device</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#configuration">c8y_Configuration</a></td>
+<td><a href="../../reference/device-integrator-library/#configuration">c8y_Configuration</a></td>
 <td>Contains the complete configuration state of the device including all control characters</td>
 </tr>
 <tr>
@@ -82,7 +82,7 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#network">c8y_Network</a></td>
-<td>Sends data to the <strong>Network</strong> tab in the Device Management application and displays the network information</td>
+<td>Sends data to the <strong>Network</strong> tab in the Device management application and displays the network information</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#tracking">c8y_Position</a></td>
@@ -95,6 +95,14 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 <tr>
 <td><a href="../../reference/device-management-library/#device-restart">c8y_Restart</a></td>
 <td>Restarts a device</td>
+</tr>
+<tr>
+<td><a href="../../reference/device-management-library/#relay">c8y_Relay</a></td>
+<td>Enables switching device relay</td>
+</tr>
+<tr>
+<td><a href="../../reference/device-management-library/#relay-array">c8y_RelayArray</a></td>
+<td>Enables switching device relays in the array</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#upload-current-text-configuration">c8y_SendConfiguration</a></td>

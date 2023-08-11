@@ -18,7 +18,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.
 
     {{< c8y-admon-info >}}
-  In case of {{< product-c8y-iot >}} Edge, since Apama-ctrl is not deployed as a microservice in Edge, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](/edge/diagnostics-and-support/#apama-log-file-locations) and [Diagnostics](/edge/diagnostics-and-support/#diagnostics) both in the *{{< product-c8y-iot >}} Edge guide*.
+  In case of {{< product-c8y-iot >}} Edge, since Apama-ctrl is not deployed as a microservice in Edge, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](/edge/operating-edge/#apama-log-file-locations) and [Diagnostic utility](/edge/operating-edge/#diagnostics) both in the *{{< product-c8y-iot >}} Edge guide*.
     {{< /c8y-admon-info >}}
 
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
@@ -29,6 +29,8 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 
 - CPU profiling (over a duration of 5 seconds).
 
+- EPL memory profiler snapshots.
+
 - Some information from the environment (tenant details, environment variables).
 
 - Version numbers of the components.
@@ -36,7 +38,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enhanced&lt;timestamp&gt;.zip* and includes the following information:
 
 - Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file.
-- In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator, including EPL memory profiler snapshots and contents of queues.
+- In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator. These include the contents of the queues, CPU usage, and so on.
 
 What a user can see or do depends on the permissions:
 

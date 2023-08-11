@@ -1,7 +1,7 @@
 ---
 title: Overview
 layout: bundle
-section: 
+section:
   - data_analytics
 weight: 10
 aliases:

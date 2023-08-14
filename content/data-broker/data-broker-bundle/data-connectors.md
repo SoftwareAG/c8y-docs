@@ -3,7 +3,11 @@ weight: 20
 title: Data connectors
 layout: bundle
 section:
-  - app_development
+  - platform_administration
+helpcontent:
+  - label: data-connector
+    title: Data connector
+    content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** at the top right."
 ---
 
 
@@ -130,10 +134,14 @@ Click the menu icon at the right of a data connector entry and then click **Dupl
 
 Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
+{{< c8y-admon-info >}}
+A data connector can also be deleted from the **Settings** tab of a connector configuration.
+{{< /c8y-admon-info >}}
+
 ### To view alarms for a data connector
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
 For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
 
-For details on alarms in general, see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms in general, see [Device management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).

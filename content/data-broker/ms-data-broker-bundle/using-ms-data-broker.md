@@ -1,11 +1,9 @@
 ---
 weight: 10
-title: Microservice-based data broker
+title: Using the microservice-based data broker
 layout: bundle
 section:
-  - app_development
-aliases:
-  - /users-guide/enterprise-edition/
+  - platform_administration
 ---
 
 The microservice-based data broker is powered by the {{< product-c8y-iot >}} Messaging Service that enables reliable, scalable and high-performance movement of IoT data. The microservice-based data broker is similar to the existing data broker in its functionality, except that a microservice, the `databroker-agent-server`, must be enabled to make use of it.
@@ -28,18 +26,9 @@ In summary, to work with the microservice-based data broker, the following requi
 {{< /c8y-admon-req >}}
 
 <a name="enabling-ms-data-broker"></a>
-###  To enable the microservice-based data broker
+### To enable the microservice-based data broker
 
-1. In the {{< management-tenant >}}, navigate to **Administration** > **Tenants** > **Subtenants**, and select the tenant that will serve as the source of the data connector.
-2. In the **Applications** tab:
-    * Subscribe the tenant to the data broker feature (`feature-broker` application), if it is not already subscribed.
-    * Subscribe the tenant to the data broker agent (`databroker-agent-server` application).
-
-![Databroker-Agent-Server](/images/users-guide/enterprise-tenant/et-new-data-broker-agent.png)
-
-{{< c8y-admon-info >}}
-Tenants subscribing to a data connector don't need the data broker agent subscription.
-{{< /c8y-admon-info >}}
+The microservice-based data broker must be enabled from the {{< management-tenant >}}. Contact your Operations team for further support.
 
 <a name="ms-data-broker-connectors"></a>
 ###  Data connectors

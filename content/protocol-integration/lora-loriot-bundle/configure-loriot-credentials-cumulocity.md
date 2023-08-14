@@ -4,12 +4,10 @@ title: Device registration via Cumulocity IoT
 layout: redirect
 ---
 
-<a name="cumulocity-loriot-connection-configuration"></a>
 ### Creation of Loriot LNS Connection in Cumulocity IoT
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 
-<a name="add-new-connection"></a>
 #### To add a new connection
 
 When you select **Connectivity** for the first time, you are asked to create a connection. Click **Add Connection**.
@@ -31,7 +29,6 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 
 ![Enable gateway information option](/images/device-protocols/lora-loriot/loriot-gateway-option-enabled.png)
 
-<a name="update-credentials-in-a-connection"></a>
 #### To update a connection
 
 Select the connection to be updated, make your edits, and save the connection.
@@ -41,7 +38,6 @@ If there are devices associated with the connection, an error message appears, s
 
 ![Update connection information](/images/device-protocols/lora-loriot/loriot-admin-settings-update.png)
 
-<a name="delete-connection"></a>
 #### To delete a connection
 
 Select the connection to be deleted and click **Delete**.
@@ -50,7 +46,6 @@ If there are devices associated with the connection, an error message appears, s
 
 ![Delete connection](/images/device-protocols/lora-loriot/loriot-admin-settings-delete.png)
 
-<a name="loriot-device-registration"></a>
 ### Loriot device registration
 
 To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
@@ -77,7 +72,7 @@ Click **Register** to submit the device registration request and create the devi
 
 You can verify that the device is connected by incoming events. Click on a device and open its **Events** tab. All events related to this device are listed.
 
-For more information on viewing and managing your connected devices, also refer to [Device management](/users-guide/device-management/) in the *User guide*.
+For more information on viewing and managing your connected devices, also refer to the [Device management application](/device-management-application/).
 
 In order to migrate the device from one LNS connection to another, the device must be re-registered:
 

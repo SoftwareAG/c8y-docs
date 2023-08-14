@@ -7,7 +7,7 @@ layout: redirect
 
 To process data from LoRa devices, {{< product-c8y-iot >}} needs to understand the payload format of the devices. Mapping payload data to {{< product-c8y-iot >}} data can be done by creating a LoRa device protocol.
 
-During the [device registration](#register-loriot-device), you can associate this device protocol. The received uplink message for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
+During the [device registration](#loriot-device-registration), you can associate this device protocol. The received uplink message for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
 {{< c8y-admon-info >}}
 Device protocol mapping only supports decoding for fixed byte positions based on the message type.
@@ -16,7 +16,6 @@ The length for the device payload parts, which is set in the **Number of bits** 
 
 In order to create a device protocol, navigate to the Device management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
 
-<a name="import-device-type"></a>
 ### Importing a predefined device protocol
 
 1. In the **Device protocols** page, click **Import**.
@@ -27,7 +26,6 @@ In order to create a device protocol, navigate to the Device management applicat
 
 Alternatively, you may also load the device protocol from a file and import it.
 
-<a name="create-new-device-type"></a>
 ### Creating a new device protocol
 
 In the **Device protocols** page, click **New device protocol** in the top menu bar. The following window will open:
@@ -109,7 +107,7 @@ Under **Functionalities**, specify how this device protocol should behave:
 - **Send event** - creates an event with the decoded value.
 - **Update managed object** - updates a fragment in a managed object with the decoded value.
 
-You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device protocol below.
+You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#example-with-nested-structure) of a nested structure for a "Position" device protocol below.
 
 Click **OK** to add the values to your device protocol.
 
@@ -128,7 +126,6 @@ The following image shows an example for a message which sends a measurement whe
 <br><br>
 ![Battery level changes example](/images/device-protocols/lora-actility/lora-protocols-battery2.png)
 
-<a name="nested-structure-example"></a>
 #### Example with nested structure
 
 The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The display category is named "Position" and contains values for longitude and latitude.

@@ -32,7 +32,6 @@ Example usages:
 * `migrateLwm2mDevices --devices 1111 2222`: to migrate specific devices with their client registration objects
 * `migrateLwm2mDevices -sr -d 1111 2222`: to migrate specific devices without their client registration objects
 
-<a name="lwm2m-invalidate-lwm2m-registrations"></a>
 ## Invalidate registrations
 
 The LWM2M connector device may be used to invalidate LWM2M registrations. This is sometimes helpful to force a LWM2M device to re-register.

@@ -6,8 +6,7 @@ layout: redirect
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in LORIOT Network Server.
 
-<a name="map-loriot-endpoint-with-credentials">
-### Configuring the Loriot endpoint using basic authentication</a>
+### Configuring the Loriot endpoint using basic authentication
 
 In LORIOT Network Server you can create multiple applications. Each application allows you to configure LoRa devices.
 
@@ -27,8 +26,7 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 
 The Loriot devices can now be registered in {{< product-c8y-iot >}} when uplink messages are received.
 
-<a name="uplink-message-device-creation">
-### Device creation via Loriot uplink message</a>
+### Device creation via Loriot uplink message
 
 While processing the Loriot LoRa device request, the Loriot agent automatically creates the device in the {{< product-c8y-iot >}} platform, if it does not yet exist.
 This means that you do not need to register the Loriot LoRa device explicitly.
@@ -38,7 +36,7 @@ LORIOT Network Server forwards two types of messages to the Loriot agent: "rx" (
 The Loriot LoRa agent only processes "gw" messages to avoid duplicate measurements or events in {{< product-c8y-iot >}}, because most of the information matches with "gw" message whereas "gw" message also carries all gateway information.
 
 {{< c8y-admon-info >}}
-You must enable the "gw" message option on LORIOT Network Server while connecting to the Loriot LoRa agent, see [Configuring the Loriot agent endpoint credentials](#configure-loriot-credentials).
+You must enable the "gw" message option on LORIOT Network Server while connecting to the Loriot LoRa agent, see [Device registration via Cumulocity IoT](#configure-loriot-credentials-cumulocity).
 {{< /c8y-admon-info >}}
 
 In the Loriot LoRa device message below, `gws` represents a list of gateways involved in the network:

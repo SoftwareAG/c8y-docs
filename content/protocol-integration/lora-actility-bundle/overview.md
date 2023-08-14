@@ -16,20 +16,6 @@ The following illustration gives an overview of the {{< product-c8y-iot >}} Acti
 
 ![{{< product-c8y-iot >}} Actility LoRa integration](/images/device-protocols/lora-actility/lora-cumulocity-integration.png)
 
-The following sections describe how to:
-
-* [Configure your ThingPark account credentials](#configure-credentials) in {{< product-c8y-iot >}}.
-* [Create device protocols](#create-device-protocols) for all devices.
-* [Register devices](#register-device) and visualize Actility payload using {{< product-c8y-iot >}}.
-* [Deprovision a device](#deprovision-device) in ThingPark.
-* [Send operations](#configurable-port) to a device.
-
-Moreover you find details on:
-
-* [ThingPark Api availability monitoring](#thingpark-monitoring) in {{< product-c8y-iot >}}.
-* Measurements and events created during [uplink message processing](#uplink-message).
-* [Troubleshooting](#troubleshooting) for warning messages.
-
 {{< c8y-admon-info >}}
 Your subscription must include this feature. If you do not see the functionality described in this document, contact [product support](/welcome/contacting-support/).
 {{< /c8y-admon-info >}}

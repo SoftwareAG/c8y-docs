@@ -12,27 +12,25 @@ The client-initiated bootstrap mode requires a LWM2M bootstrap server account pr
 
 You can register a LWM2M device in {{< product-c8y-iot >}} in two ways:
 
-* [Single device registration](#lwm2m-single-device-registration)
-* [Bulk device registration](#lwm2m-bulk-device-registration)
+* [Single device registration](#single-device-registration)
+* [Bulk device registration](#bulk-device-registration)
 
-<a name="lwm2m-single-device-registration"></a>
 ### Single device registration
 
 To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LWM2M** from the dropdown.
 
 The LWM2M device registration wizard has three steps:
 * Required settings for establishing a connection.
-Refer to [Required settings](#lwm2m-device-registration-required-settings) below for details about the fields.
+Refer to [Required settings](#required-settings) below for details about the fields.
 If PSK security mode is selected, additional settings are required.
 * Bootstrap settings for enabling the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.
-Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) below for details about the fields.
+Refer to [Bootstrap settings](#bootstrap-settings) below for details about the fields.
 * Advanced setting for further optional configurations.
-Refer to [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
+Refer to [Advanced settings](#advanced-settings) below for details about the fields.
 
 After filling all applicable information for the device, click **Register**.
 The UI will display a confirmation message.
 
-<a name="lwm2m-bulk-device-registration"></a>
 ### Bulk device registration
 
 If there is a number of devices to be registered at the same time, it is more convenient to use bulk device registration.
@@ -40,7 +38,7 @@ If there is a number of devices to be registered at the same time, it is more co
 To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Bulk device registration** > **LWM2M** from the dropdown.
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
-Refer to [Required settings](#lwm2m-device-registration-required-settings), [Bootstrap settings](#lwm2m-device-registration-bootstrap-settings) and [Advanced settings](#lwm2m-device-registration-advanced-settings) below for details about the fields.
+Refer to [Required settings](#required-settings), [Bootstrap settings](#bootstrap-settings) and [Advanced settings](#advanced-settings) below for details about the fields.
 
 {{< c8y-admon-info >}}
 The maximum size allowed for the CSV file is 10 MB.
@@ -51,7 +49,7 @@ When you upload the CSV file, the dialog will display a confirmation message tha
 
 ### Device registration settings
 
-<a name="lwm2m-device-registration-required-settings"></a>
+
 #### Required settings
 
 The fields below must be contained to be able to establish a connection:
@@ -116,10 +114,8 @@ The fields below must be contained to be able to establish a connection:
 </tbody>
 </table>
 
-<a name="lwm2m-device-registration-bootstrap-settings"></a>
 #### Bootstrap settings
 
-<a name="registration-of-no-sec-device"></a>
 ##### Registration of NO_SEC devices
 
 Unsecured devices connect during bootstrap connection and server connection through unsecured ports:
@@ -127,7 +123,6 @@ Unsecured devices connect during bootstrap connection and server connection thro
 * **5683**: unsecure bootstrap connection
 * **5783**: unsecure direct server connection
 
-<a name="registration-of-psk-secured-device"></a>
 ##### Registration of PSK-secured devices
 
 PSK-secured devices connect during a bootstrap connection and a server connection using a pre-shared key through secured ports:
@@ -136,7 +131,7 @@ PSK-secured devices connect during a bootstrap connection and a server connectio
 * **5784**: PSK direct server connection
 
 PSK keys must be provided during the device registration.
-The file must contain the fields defined in [Required settings](#lwm2m-device-registration-required-settings).
+The file must contain the fields defined in [Required settings](#required-settings).
 PSK registration requires additional fields to be filled.
 
 See the table below for the full set of bootstrap fields you can add:
@@ -206,10 +201,9 @@ Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V
 </table>
 
 {{< c8y-admon-info >}}
-After creation, you can view and change the bootstrap parameters in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
+After creation, you can view and change the bootstrap parameters in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap-parameters).
 {{< /c8y-admon-info >}}
 
-<a name="lwm2m-device-registration-advanced-settings"></a>
 #### Advanced settings
 
 See the table below for information on additional fields:
@@ -395,10 +389,9 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 </table>
 
 {{< c8y-admon-info >}}
-Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Device management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Managing device data > Managing firmware](/device-management-application/managing-device-data/#managing-firmware) in the *Device management application*.
 {{< /c8y-admon-info >}}
 
-<a name="duplicate-device"></a>
 ### Duplicate LWM2M devices
 
 If a LWM2M device has been registered with the same endpoint ID before, the device registration will not register the device, neither for single nor for bulk device registrations.
@@ -409,5 +402,4 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 ### Device deletion
 
 During LWM2M device registration the tenant route information is also stored in the cluster tenant.
-In order to remove the device, besides deleting the device from the list in [Device management > All Devices](/users-guide/device-management/#viewing-devices) in the *User Guide*, a connector operation also needs to be executed to remove tenant route information from the cluster tenant.
-See [cleanup cluster tenant objects for endpoint](#lwm2m-cleanup-cluster-tenant-objects-for-endpoint-connector-operation) for more information.
+In order to remove the device, delete it from the list in [Viewing all Devices](/device-management-application/viewing-all-devices) in the *Device management application*.

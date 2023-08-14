@@ -4,10 +4,9 @@ title: Troubleshooting
 layout: redirect
 ---
 
-<a name="lora-loriot-registration-troubleshooting"></a>
 ### Device registration
 
-#### No LoRa device registered in {{< product-c8y-iot >}} after configuring the Loriot agent endpoint in the LORIOT Network Server account.
+#### No LoRa device registered in Cumulocity IoT after configuring the Loriot agent endpoint in the LORIOT Network Server account
 
 Check whether the user configured in LORIOT Network Server has assigned the Loriot admin role since the Loriot agent verifies if the user has appropriate permissions.
 

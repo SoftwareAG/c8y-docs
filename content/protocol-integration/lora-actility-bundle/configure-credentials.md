@@ -8,7 +8,6 @@ layout: redirect
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you need to configure your ThingPark account details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Actility connections.
 
-<a name="add-new-connection"></a>
 ### To add a new connection
 
 If you select **Connectivity** for the first time, you are asked to create a connection. Click **Add Connection**.
@@ -38,7 +37,6 @@ Click **Save**. If you have entered the correct information, you see the message
 
 To add another connection, click **Add Connection** and follow the steps above.
 
-<a name="update-credentials-in-a-connection"></a>
 ### To update a connection
 
 Select the connection to be updated, make your edits, and save the connection.
@@ -48,7 +46,6 @@ If there are devices associated with the connection, an error message will appea
 
 ![Update connection information](/images/device-protocols/lora-actility/lora-admin-settings-update.png)
 
-<a name="delete-connection"></a>
 ### To delete a connection
 
 Select the connection to be deleted and click **Delete**.

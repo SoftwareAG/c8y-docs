@@ -2,11 +2,8 @@
 weight: 30
 title: Standard platform applications
 layout: bundle
-section: 
+section:
   - getting_started
-aliases:
-  - /users-guide/overview
-  - /users-guide/getting-started
 ---
 
 Per default, {{< product-c8y-iot >}} comes with the following three standard applications:
@@ -34,8 +31,8 @@ Per default, {{< product-c8y-iot >}} comes with the following three standard app
 </tr>
 <tr>
 <td style="text-align:center"><i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i></td>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
-<td style="text-align:left">The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  </td>
+<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device management</a></td>
+<td style="text-align:left">The Device management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  </td>
 </tr>
 
 </tbody>
@@ -53,3 +50,7 @@ The content of the {{< product-c8y-iot >}} platform therefore is entirely dynami
 * The applications that your organization has configured or developed itself for {{< product-c8y-iot >}}.
 * The functionality that your user is permitted to see.
 * The configuration of the user interface, such as groups and reports.
+
+{{< c8y-admon-related >}}
+- [Administration > Managing applications](/users-guide/administration/#managing-applications) for details on  other available applications and information on managing applications in {{< product-c8y-iot >}}.
+{{< /c8y-admon-related >}}

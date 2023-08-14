@@ -4,8 +4,6 @@ title: Overview
 layout: bundle
 section:
   - getting_started
-aliases:
-  - /about-doc/online-information
 ---
 
 ### Installation and operations documentation

@@ -4,19 +4,6 @@ title: Documentation sources
 layout: bundle
 section:
   - about_website
-aliases:
-  - /about-doc/intro-documentation
-  - /users-guide/enterprise-edition
-  - /users-guide/enterprise-tenant
-  - /benutzerhandbuch/enterprise-edition-de
-  - /benutzerhandbuch/enterprise-tenant-de
-  - /release-notes
-  - /apama/apama-release-notes
-  - /datahub/datahub-release-notes
-  - /edge/edge-release-notes
-  - /machine-learning/release-notes
-  - /web-sdk-for-plugins
-  - /event-language
 ---
 
 

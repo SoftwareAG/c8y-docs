@@ -23,7 +23,7 @@ SmartREST templates are a collection of request and response templates used to c
 To ease the device integration, {{< product-c8y-iot >}} supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [Reference guide](/reference/smartrest-two#mqtt-static-templates).
 
 {{< c8y-admon-related >}}
-* [SmartREST 2.0](/reference/smartrest-two/) in the *Reference guide* for details on the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
+* [SmartREST 2.0](/smartrest/smartrest-two/) in the *Reference guide* for details on the SmartREST protocol, the data format used, as well as the anatomy and registration of SmartREST templates.
 * [Device integration using MQTT](/device-integration/mqtt/) in *Device integration* for information on integrating devices via MQTT.
 {{< /c8y-admon-related >}}
 
@@ -132,7 +132,7 @@ A response template contains the necessary information to extract data values fr
 
 The response will be added to the SmartREST template.
 
-For further information see [SmartREST 1.0 > Templates > Response templates](/reference/smartrest-one/#response-templates) in the *Reference guide*.
+For further information see [SmartREST > SmartREST 1.0 > Templates > Response templates](/smartrest/smartrest-one/#response-templates) in the *Reference guide*.
 
 #### To remove a response
 

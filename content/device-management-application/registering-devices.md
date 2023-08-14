@@ -68,8 +68,8 @@ Devices can be connected to your {{< product-c8y-iot >}} account in different wa
 
 To register devices, you can select one of the following options:
 
-* **[Single device registration](#device-registration-manually)** - to manually connect one device or several devices one by one.
-* **[Bulk device registration](#bulk-registration)** - to register larger amounts of devices in one step.
+* **[Single device registration](#single-device-registration)** - to manually connect one device or several devices one by one.
+* **[Bulk device registration](#bulk-device-registration)** - to register larger amounts of devices in one step.
 
 Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 

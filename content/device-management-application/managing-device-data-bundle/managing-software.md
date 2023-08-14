@@ -122,7 +122,7 @@ Hover over the software item which you want to delete and click the delete icon.
 
 1. Execute the software operation (install or update) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
-3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/device-management-application/#monitoring-and-controlling-devices).
+3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/device-management-application/monitoring-and-controlling-devices).
 
 The status and details of the bulk operation are shown in the **Bulk operations** tab under **Device control**.
 

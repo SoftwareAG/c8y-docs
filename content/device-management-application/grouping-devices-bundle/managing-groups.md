@@ -4,7 +4,6 @@ title: Managing groups
 layout: redirect
 ---
 
-<a name="viewing-groups"></a>
 ### To view groups
 
 Click **Groups** in the navigator to see all groups in a list format.
@@ -30,9 +29,7 @@ At the top of the **Subassets** page, the name and the description of the group 
 
 Below, all assets assigned to the group are listed. For each asset, various information is displayed, for example the type and name. As with the top-level groups list, you can add or remove columns and customize the list to your preference, or you can apply filters to filter the list for certain criteria.
 
-Morover, you can assign devices, see [To assign a device to a group](#to-assign-devices-to-a-group).
-
-<a name="add-group"></a>
+Morover, you can assign devices, see [To assign devices to a group](#to-assign-devices-to-a-group).
 
 ### To add a group
 

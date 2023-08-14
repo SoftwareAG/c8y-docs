@@ -4,7 +4,6 @@ title: Managing devices in groups
 layout: redirect
 ---
 
-<a name="assigning-devices"></a>
 ### To assign devices to a group
 
 You can assign devices to groups in several ways.

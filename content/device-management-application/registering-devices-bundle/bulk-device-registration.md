@@ -4,8 +4,6 @@ title: Bulk device registration
 layout: redirect
 ---
 
-<a name="bulk-registration"></a>
-
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
 
 {{< c8y-admon-info >}}

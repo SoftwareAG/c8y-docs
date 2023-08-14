@@ -3,7 +3,6 @@ weight: 10
 title: Single device registration
 layout: redirect
 ---
-<a name="device-registration-manually"></a>
 
 {{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
 
@@ -33,7 +32,7 @@ Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to "Pending acceptance".
 
 {{< c8y-admon-info >}}
-The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
+The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy).
 {{< /c8y-admon-info >}}
 
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
@@ -42,7 +41,6 @@ Click **Accept** to confirm the connection. The status of the device will change
 In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) or look up the manual of your device.
 {{< /c8y-admon-info >}}
 
-<a name="security-token-policy-for-device-registration"></a>
 ### Security token policy
 
 Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.
@@ -68,7 +66,7 @@ The policy can be configured by setting the following tenant option with one of 
 ```
 
 {{< c8y-admon-info >}}
-The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy-for-device-registration).
+The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy).
 {{< /c8y-admon-info >}}
 
 #### Ignored security token policy

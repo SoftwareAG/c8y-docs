@@ -73,7 +73,6 @@ The object will be deleted from the firmware repository.
 
 In the details of a specific firmware, hover over the version or patch entry you want to delete and click the delete icon. The firmware version or patch will be deleted from the firmware details.
 
-<a name="managing-firmware"></a>
 ### To manage firmware on a device
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
@@ -106,7 +105,7 @@ Click on the operation to view its details. The status of the last operation is 
 
 1. Execute the firmware operation (install or replace) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
-3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/device-management-application/#monitoring-and-controlling-devices).
+3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/device-management-application/monitoring-and-controlling-devices).
 
 The status of the bulk operation is shown in the **Bulk operations** tab under **Device control**.
 

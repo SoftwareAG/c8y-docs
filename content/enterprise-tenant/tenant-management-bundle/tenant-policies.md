@@ -1,5 +1,5 @@
 ---
-weight: 12
+weight: 40
 title: Tenant policies
 layout: redirect
 helpcontent:

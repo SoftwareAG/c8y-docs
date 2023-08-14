@@ -2,8 +2,6 @@
 weight: 10
 title: Managing subtenants
 layout: redirect
-aliases:
-  - /users-guide/enterprise-edition
 helpcontent:
   - label: managing-tenants
     title: Subtenants
@@ -11,13 +9,6 @@ helpcontent:
 
 
     To create a subtenant click **Create tenant** at the top right."
-  - label: tenant-policies
-    title: Tenant policies
-    content: "During tenant creation, tenant options and retention rules may be specified. This can easily be done by using a tenant policy, which defines a set of tenant options and retention rules. Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
-
-
-    Click **Tenant policies** in the **Tenants** menu to view all available tenant policies. To create a tenant policy, click **Add policy** at the top right."
-
 ---
 
 Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
@@ -26,30 +17,40 @@ Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use
 There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
 {{< /c8y-admon-important >}}
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
+APPLICATION ACCESS
+
 If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
-{{< /c8y-admon-info >}}
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+PERMISIIONS & ROLES
 
-- READ - browse and view tenants.
-- CREATE - create new tenants.
-- UPDATE - edit tenants (incl. subscriptions) and suspend or activate them.
-- CHANGE - create, edit and delete tenants.
+To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+
+- READ - Browse and view tenants.
+- CREATE - Create new tenants.
+- UPDATE - Edit tenants (incl. subscriptions) and suspend or activate them.
+- CHANGE - Create, edit and delete tenants.
+
+
+{{< /c8y-admon-req >}}
+
 
 ### To view subtenants
 
-Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account, either in a grid or a list.
+Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account.
 
 The **Tenants** page provides the following information on each subtenant:
 
 * The name of the subtenant, for example, company name of your customer.
 * The ID and domain.
-* Optionally, a contact name and phone number.
+* Optionally, a contact name.
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-In the {{< management-tenant >}}, you will also find information on the parent tenant, that is, the tenant that created the listed tenant.
+{{< c8y-admon-info >}}
+In the {{< management-tenant >}}, you also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed in the table.
+{{< /c8y-admon-info >}}
+
 
 <a name="creating-tenants"></a>
 ### To create a subtenant
@@ -61,55 +62,65 @@ In the {{< management-tenant >}}, you will also find information on the parent t
 2. Provide the following properties:
 
 	<table>
-	<col style="width:20%">
-	<col style="width:80%">
-	<thead>
-	<tr>
-	<th style="text-align:left">Field</th>
-	<th style="text-align:left">Description</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. </td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Name</td>
-	<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Administrator's email</td>
-	<td style="text-align:left">You must provide a valid email address to enable users to reset their password.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Administrator's username</td>
-	<td style="text-align:left">Username for the administrator of this tenant.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Contact name</td>
-	<td style="text-align:left">Optional name of the contact.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Contact phone</td>
-	<td style="text-align:left">Optional phone number of the contact.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Send password reset link as email</td>
-	<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Tenant policy</td>
-	<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
-	</tr>
-	</tbody>
+		<col style="width:20%">
+		<col style="width:80%">
+		<thead>
+			<tr>
+				<th style="text-align:left">Field</th>
+				<th style="text-align:left">Description</th>
+				<th style="text-align:left">Required</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="text-align:left">Domain/ URL</td>
+				<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Name</td>
+				<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Administrator's email</td>
+				<td style="text-align:left">A valid email address to enable users to reset their password.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Administrator's username</td>
+				<td style="text-align:left">Username for the administrator of this tenant.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Contact name</td>
+				<td style="text-align:left">Name of the contact.</td>
+				<td style="text-align:left">No</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Contact phone</td>
+				<td style="text-align:left">Phone number of the contact.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Send password reset link as email</td>
+				<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Tenant policy</td>
+				<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
+				<td style="text-align:left">No</td>
+			</tr>
+		</tbody>
 	</table>
+
 
 3. Click **Save** to apply your settings.
 
 When the subtenant is created, it gets an auto-generated ID, which cannot be changed. Also, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
-From the {{< management-tenant >}}, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
+From the {{< management-tenant >}}, you can enable other tenants to create subtenants. Contact your Operations team on how to configure this setting according to your needs.
 
 ### To view or edit subtenant properties
 
@@ -171,24 +182,22 @@ Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be
 If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 {{< /c8y-admon-info >}}
 
-To suspend a subtenant perform the following steps:
-
 1. Click the menu icon at the right of the respective subtenant entry and then click **Suspend**.
 
 	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
 
-2. In the resulting dialog box confirm the suspension by clicking **OK** and entering your password.
-
-As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
+2. In the resulting dialog box confirm the suspension by clicking **Suspend** and then entering your password.
 
 {{< c8y-admon-info >}}
-If you are a service provider, you can suppress this email.
+* As part of suspending the tenant, an email is sent to the email address that was configured for the tenant administrator.
+* If you are a service provider, you can suppress this email.
 {{< /c8y-admon-info >}}
+
 
 ### To delete a subtenant
 
 {{< c8y-admon-important >}}
-Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}.
+Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}. Contact your Operations team for further support.
 
 Administrators in {{< enterprise-tenant >}}s are only allowed to suspend active subtenants, but not to delete them.
 {{< /c8y-admon-important >}}

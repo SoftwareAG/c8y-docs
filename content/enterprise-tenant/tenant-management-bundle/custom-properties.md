@@ -1,5 +1,5 @@
 ---
-weight: 13
+weight: 30
 title: Custom properties
 layout: redirect
 ---
@@ -8,7 +8,7 @@ layout: redirect
 
 The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-tenant/#usage-and-billing) page.
 
-### To limit the subtenant request rate
+### To limit subtenant request rate
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
 
@@ -23,14 +23,9 @@ The request throttling mechanism is only enabled when both HTTP properties (limi
 Rate limiting can be an effective countermeasure against threats like brute force login attempts, API abuse and request flooding thus reducing the number of malicious/unwanted traffic. This helps in protecting against DoS (Denial of Service) attacks and saving the available bandwidth for legitimate requests.
 {{< /c8y-admon-important >}}
 
-It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}} by using the following subtenant custom fragments:
+It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}}. Contact your Operations team on how to configure this setting according to your needs.
 
-* cep.queue.limit
-* data-broker.queue.limit
-
-When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
-
-### To limit the subtenant device number
+### To limit subtenant device number
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the custom property "Limit number of devices".
 

@@ -4,15 +4,31 @@ title: Managing user hierarchies
 layout: bundle
 section:
   - platform_administration
-aliases:
-  - /users-guide/enterprise-edition
 ---
 
-With user hierarchies you can reflect independent organizational entities in {{< product-c8y-iot >}} that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
+With user hierarchies you can model the structure of organizational entities in your company which share the same database in {{< product-c8y-iot >}} platform. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
 
-{{< c8y-admon-info >}}
-To be able to use this feature, your tenant must be subscribed to the application "feature-user-hierachy".
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+SUBSCRIPTIONS:
+
+The tenant must be subscribed to the application "feature-user-hierachy".
+
+APPLICATION ACCESS:
+
+The user must have access to the Administration application.
+
+ROLES & PERMISSIONS:
+
+The user must have one or more of "User management" permissions:
+* To view all users: READ permission.
+* To manage all users: ADMIN permission.
+* To create users: CREATE permission. By assigning this permission you can create own sub-users and manage the underlying hierarchy of users.
+
+On tenant creation, default roles are available which can be used as a sample configuration for the above-mentioned permissions:
+* Global User Manager - Can access and modify the full user hierarchy (all users).
+* Shared User Manager - Can create new own sub-users and manage the underlying user hierarchy.
+
+{{< /c8y-admon-req >}}
 
 ### To view user hierarchies
 
@@ -44,24 +60,27 @@ If you want an owner to manage only their sub-users, make sure that the owner do
 A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon with a notification that this operation is not permitted.
 
 <a name="delegate"></a>
-### To delegate permissions to a user
+### To delegate user hierarchies to other users
 
-In {{< product-c8y-iot >}}, users can delegate their user hierarchies and permissions to another user (both users must be within the same hierarchy). The delegated user then has the same user management permissions as the user who activated the delegation.
+In {{< product-c8y-iot >}}, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation. To do user management, the delegated user must have CREATE permission for the "User management" permission type, which can be granted by assigning a predefined global role "Shared User Manager" or by assigning a custom global role with this permission.
 
-To be able to do user management, the delegated user must have the permission USER_MANAGEMENT_CREATE or use one of the predefined roles: "Shared User Management", "User Management".
+You may of course also delegate on a temporary basis, for example if you are temporarily unavailable.
 
-To delegate permissions to a user, either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
+#### To delegate permissions to a user
+
+Either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
 
 #### To undelegate permissions
 
 Remove the delegation in the **Delegate by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Undelegate**.
 
+If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
+
 {{< c8y-admon-info >}}
-- If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
-- Delegation works only inside user management and does not have any implication to other places.
+Delegation works only inside user management and does not have any implication to other places.
 {{< /c8y-admon-info >}}
 
-### To troubleshoot sub-users
+### Troubleshooting sub-users
 
 In the example below the user cannot change the access to the Administration application, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them).
 

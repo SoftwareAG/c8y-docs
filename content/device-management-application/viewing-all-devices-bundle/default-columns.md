@@ -20,7 +20,7 @@ For each device, the device list shows the following information provided in col
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">An icon representing the connection status. For details, see <a href="#connection-monitoring" class="no-ajaxy">Connection monitoring</a>.</td>
+<td style="text-align:left">An icon representing the connection status. For details, see <a href="/device-management-application/monitoring-and-controlling-devices/#connection-monitoring" class="no-ajaxy">Connection monitoring</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
@@ -52,7 +52,7 @@ For each device, the device list shows the following information provided in col
 </tr>
 <tr>
 <td style="text-align:left">Alarms</td>
-<td style="text-align:left">The alarm status of the device, showing number and type of alarms currently unresolved for the device. Only includes alarms for the parent device. See <a href="#alarm-monitoring" class="no-ajaxy">Working with alarms</a> for further information on working with alarms.</td>
+<td style="text-align:left">The alarm status of the device, showing number and type of alarms currently unresolved for the device. Only includes alarms for the parent device. See <a href="/device-management-application/monitoring-and-controlling-devices/#working-with-alarms" class="no-ajaxy">Working with alarms</a> for further information on working with alarms.</td>
 </tr>
 </tbody>
 </table>

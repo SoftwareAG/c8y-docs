@@ -37,7 +37,7 @@ Details on these additional menu items are provided where required.
 <a name="alarms"></a>
 ### Alarms
 
-The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
+The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-applicatio/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
 <a name="availability"></a>
 ### Availability
@@ -50,7 +50,7 @@ The Availability tab offers availability monitoring for machines, see [Monitorin
 
 The **Child devices** tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
 
-For details provided in the child device list, see [Viewing devices](#viewing-devices).
+For details provided in the child device list, see [Viewing all devices](device-management-application/viewing-all-devices).
 
 <a name="config"></a>
 ### Configuration
@@ -132,7 +132,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device status</td>
-<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="#connection-monitoring" class="no-ajaxy">Connection monitoring</a>. </td>
+<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="/device-management-application/monitoring-and-controlling-devices/#connection-monitoring" class="no-ajaxy">Connection monitoring</a>. </td>
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
@@ -151,7 +151,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Groups assignment</td>
-<td style="text-align:left">Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups, see <a href="#grouping-devices" class="no-ajaxy">Grouping devices</a>.</td>
+<td style="text-align:left">Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups, see <a href="/device-management-application/grouping-devices" class="no-ajaxy">Grouping devices</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Location</td>

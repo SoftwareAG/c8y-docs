@@ -3,6 +3,7 @@ weight: 10
 title: Single device registration
 layout: redirect
 ---
+<a name="device-registration-manually"></a>
 
 {{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
 
@@ -15,7 +16,7 @@ Depending on the type of device you want to connect, not all steps of the follow
 1. Click **Registration** in the **Devices** menu of the navigator.
 2. In the **Device registration** page, click **Register device** at the right of the top bar and from the dropdown menu select **Single registration** > **General**. The **Register devices** dialog box will be displayed.
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
-4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
+4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](/device-management-application/grouping-devices).
 5. Click **Add device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s).
 
@@ -25,7 +26,7 @@ In an {{< enterprise-tenant >}}, the {{< management-tenant >}} may also directly
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 {{< /c8y-admon-info >}}
 
-After successful registration the device(s) will be listed in the [Device registration](#dev-registration) page with the status "Waiting for connection".
+After successful registration the device(s) will be listed in the [Device registration](device-management-application/registering-devices) page with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
 
@@ -41,10 +42,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) or look up the manual of your device.
 {{< /c8y-admon-info >}}
 
-<a name="creds-upload"></a>
-
-
-
+<a name="security-token-policy-for-device-registration"></a>
 ### Security token policy
 
 Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.

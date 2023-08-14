@@ -106,7 +106,7 @@ Click on the operation to view its details. The status of the last operation is 
 
 1. Execute the firmware operation (install or replace) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
-3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/users-guide/device-management/#monitoring-and-controlling-devices).
+3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/device-management-application/#monitoring-and-controlling-devices).
 
 The status of the bulk operation is shown in the **Bulk operations** tab under **Device control**.
 

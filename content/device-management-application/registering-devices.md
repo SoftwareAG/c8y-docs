@@ -36,7 +36,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* The [Protocol integration guide](/protocol-integration/overview) for details on registering devices using various standard protocol types.
+* [Protocol integration](/protocol-integration/) for details on registering devices using various standard protocol types.
 * [Device integration > Integration tutorials](/device-integration/integration-tutorials) for step-by-step instructions on registering devices.
 * [Device integration using REST](/device-integration/rest/) for a detailed descriptions on device integration via REST.
 * The [New device requests API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
@@ -74,5 +74,5 @@ To register devices, you can select one of the following options:
 Microservice developers can also use the [Extensible device registration](/concepts/applications/#extensible-device-registration) and implement a custom registration form that blends seamlessly into the UI.
 
 {{< c8y-admon-info >}}
-The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in the [Protocol integration guide](/protocol-integration/overview/). It also contains descriptions for the protocol specific registration processes.
+The following descriptions apply to the general device registration processes. If you subscribe to specific protocol integrations, you will see additional protocol-specific options (for example, for LWM2M or OPC UA). A full list of supported protocols can be found in [Protocol integration](/protocol-integration/). It also contains descriptions for the protocol specific registration processes.
 {{< /c8y-admon-info >}}

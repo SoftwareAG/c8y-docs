@@ -1,10 +1,10 @@
 ---
 weight: 60
-title: The sensor library
+title: Sensor library
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} includes a [sensor library](/reference/sensor-library/) to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library enables applications to answer questions such as:
+{{< product-c8y-iot >}} includes a sensor library to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library enables applications to answer questions such as:
 
 -   What devices are installed that measure energy?
 -   What are the energy readings?
@@ -24,7 +24,5 @@ Technically, the sensor library defines standard fragments for inventory, measur
     }
 }
 ```
-
-More examples and details can be found in [Sensor library](/reference/sensor-library/) in the *Reference guide*.
 
 The {{< company-c8y >}} team welcomes contributions to the sensor library. If you integrate any devices, controls, sensors or other objects and find that your model fragments have a more general usability beyond your own case or your device, we encourage you to contribute them for inclusion into {{< product-c8y-iot >}} by contacting our [product support](/welcome/contacting-support/).

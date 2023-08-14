@@ -1,9 +1,7 @@
 ---
+weight: 1
 title: Overview
 layout: bundle
-section:
-- app_development
-weight: 1
 ---
 
  {{< product-c8y-iot >}} applications can have two forms:

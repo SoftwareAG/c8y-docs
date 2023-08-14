@@ -2,8 +2,6 @@
 weight: 30
 title: Microservices
 layout: bundle
-section: 
-  - app_development
 ---
 
 Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of {{< product-c8y-iot >}}:

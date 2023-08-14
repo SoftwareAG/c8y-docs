@@ -2,8 +2,6 @@
 weight: 40
 title: Subscribing applications
 layout: bundle
-section: 
-  - app_development
 ---
 
 The application concept of {{< product-c8y-iot >}} includes a basic application marketplace.

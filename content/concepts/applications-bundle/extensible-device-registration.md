@@ -2,10 +2,7 @@
 weight: 50
 title: Extensible device registration
 layout: bundle
-section: 
-  - app_development
 ---
-### Introduction
 
 To address the growing number of IoT protocols and certain restrictions in the general single or bulk device registration, an extensible device registration is available with release 10.15.
 
@@ -23,7 +20,7 @@ Extensible device registration requires [application extensions](/concepts/appli
 
 The extended device registration provides the following advantages:
 
-- **Extensibility of the device registration wizard**: You can easily add own forms to the device registration wizard in the device management UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
+- **Extensibility of the device registration wizard**: You can easily add own forms to the device registration wizard in the Device management application UI. The values to be entered in the user-specified forms can be freely customized by the device integration developers.
 
 - **Support for bulk registration using custom CSV**: You can customize the bulk registration and hence implement support for CSV files of a different format.
 
@@ -65,7 +62,7 @@ There are two types of extensions:
 
 ### Single device registration
 
-After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management application is extended with an entry corresponding to the extension `name` property.
+After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device management application is extended with an entry corresponding to the extension `name` property.
 
 From now on, everything will be rendered based on data provided via the custom microservice. The added menu entry opens a window which fetches the form definition using the following endpoint:
 

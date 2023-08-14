@@ -246,7 +246,7 @@ When new features with new permissions are added to {{< product-c8y-iot >}}, the
 {{< /c8y-admon-important >}}
 
 <a name="attach-global"></a>
-### Assigning global roles
+### To assign global roles
 
 You can assign global roles to users either directly in the user list, or by opening the details page for a particular user and adding them there.
 

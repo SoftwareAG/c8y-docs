@@ -1,7 +1,7 @@
 ---
 title: Default subscriptions
 layout: bundle
-weight: 40
+weight: 70
 section:
   - platform_administration
 ---

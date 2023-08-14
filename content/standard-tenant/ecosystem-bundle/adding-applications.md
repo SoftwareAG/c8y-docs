@@ -6,7 +6,7 @@ section:
   - platform_administration
 ---
 
-Click **Add application** at the top right of the **All applications** tab to add a custom application.
+Click **Add application** at the top right of the **Applications** tab to add a custom application.
 
 Custom applications may be:
 
@@ -15,7 +15,7 @@ Custom applications may be:
 * Duplicates of subscribed applications (in order to be able to customize them).
 
 {{< c8y-admon-info >}}
-In the **All applications** tab, custom applications are labeled as "Custom".
+In the **Applications** tab, custom applications are labeled as "Custom".
 {{< /c8y-admon-info >}}
 
 In the resulting dialog box, select one of the following methods:
@@ -29,7 +29,7 @@ In the resulting dialog box, select one of the following methods:
 <a name="uploading-zip-files"></a>
 ### To upload a web application
 
-1. Click **Add application** at the top right of the **All applications** tab.
+1. Click **Add application** at the top right of the **Applications** tab.
 2. Select **Upload web application**.
 3. In the resulting dialog box, drop a ZIP file or browse for it in your file system.
 
@@ -42,7 +42,7 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 <a name="external-application"></a>
 ### To link to an external application
 
-1. Click **Add application** at the top right of the **All applications** tab.
+1. Click **Add application** at the top right of the **Applications** tab.
 2. Select **External application**.
 3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
 5. Enter an application key, used to identify this application.
@@ -54,7 +54,7 @@ For details on the fields, see also [Application properties](#application-proper
 <a name="blueprint-application"></a>
 ### To install an application from a blueprint
 
-1. Click **Add application** at the top right of the **All applications** tab.
+1. Click **Add application** at the top right of the **Applications** tab.
 2. Select **Install from available packages**.
 3. Select the desired package.
 4. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
@@ -69,7 +69,7 @@ For details on the fields, see also [Application properties](#application-proper
 
 Duplicating an application might be useful if you want to customize a subscribed application according to your needs. Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
-1. Click **Add application** at the top right of the **All applications** tab.
+1. Click **Add application** at the top right of the **Applications** tab.
 2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list, for example "Cockpit".
 4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.

@@ -128,6 +128,41 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
+### Uploading archives
+
+For custom applications, multiple file versions can be stored in {{< product-c8y-iot >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
+
+#### To upload an archive
+
+1. Open the application properties for the respective application by clicking on it.
+2. Click the plus button at the bottom of the **Activity log** section and browse for the archive in your file system or simply drop the archive file.
+3. Click **Upload** to upload the archive to your {{< product-c8y-iot >}} account.
+
+<img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
+
+Once uploaded, the recently uploaded version is automatically the active version, that is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
+
+{{< c8y-admon-info >}}
+The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
+{{< /c8y-admon-info >}}
+
+#### To restore an older application version
+
+Users can restore previous versions of an application from an archive.
+
+1. Open the application properties for the respective application by clicking on it.
+2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
+
+#### To reactivate a single application
+
+If a hosted application is not deployed correctly, users may reactivate it.
+
+1. Open the application properties for the respective application by clicking on it.
+3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate archive**.
+
+The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.
+
+
 ### Plugins
 
 Switch to the **Plugins** tab to view all plugins installed on an application. Plugins can be used to extend existing applications without the need of re-building the application.
@@ -166,42 +201,6 @@ In the **Versions** tab, you see all previously uploaded binaries related to the
 You can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
 To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
-
-
-### Uploading archives
-
-For custom applications, multiple file versions can be stored in {{< product-c8y-iot >}} when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
-
-#### To upload an archive
-
-1. Open the application properties for the respective application by clicking on it.
-2. Click the plus button at the bottom of the **Activity log** section and browse for the archive in your file system or simply drop the archive file.
-3. Click **Upload** to upload the archive to your {{< product-c8y-iot >}} account.
-
-<img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
-
-Once uploaded, the recently uploaded version is automatically the active version, that is the version of the application that is currently being served to the users of your account. This version cannot be deleted.
-
-{{< c8y-admon-info >}}
-The archive functionality is not available for subscribed applications, as only the owner of the application can perform these actions.
-{{< /c8y-admon-info >}}
-
-#### To restore an older application version
-
-Users can restore previous versions of an application from an archive.
-
-1. Open the application properties for the respective application by clicking on it.
-2. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
-
-#### To reactivate a single application
-
-If a hosted application is not deployed correctly, users may reactivate it.
-
-1. Open the application properties for the respective application by clicking on it.
-3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate archive**.
-
-The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.
-
 
 ### Features
 

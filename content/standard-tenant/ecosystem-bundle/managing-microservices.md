@@ -1,5 +1,5 @@
 ---
-weight: 35
+weight: 50
 title: Managing microservices
 layout: bundle
 section:
@@ -20,7 +20,20 @@ Click **Microservices** in the **Ecosystem** menu in the navigator to display a 
 
 <img src="/images/users-guide/Administration/admin-microservices.png" alt="Microservices list">
 
+Microservices can be filtered by name and availability.
+
 A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications, see [Custom microservices](#custom-microservices).
+
+{{< c8y-admon-related >}}
+- [Managing applications](#managing-microservices) for information on managing web applications.
+- [Managing permissions](#managing-permissions) for details on assigning roles and permissions for the usage of {{< product-c8y-iot >}} applications.
+- [Changing application settings](/users-guide/administration/#default-app) for information on changing the application settings for your account.
+- [Enterprise tenant > Managing tenants > Applications](/users-guide/enterprise-tenant/#applications) for information on application subscriptions on tenant level.
+- [Enterprise tenant > Usage statistics and billing](/users-guide/enterprise-tenant/#usage-and-billing) for information on the microservice usage feature.
+- [Developing applications > Microservices](/concepts/applications/#microservices) in the *Concepts guide* for an overview on the basic concepts of microservices in {{< product-c8y-iot >}}.
+- The [Microservice SDK guide](/microservice-sdk/introduction) for general aspects of using microservices on top of {{< product-c8y-iot >}} and information on developing and deploying microservices using our SDKs or the REST interface.
+- [Applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
+{{< /c8y-admon-related >}}
 
 ### Subscribed microservices
 
@@ -46,24 +59,10 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-250mc-1g</a></td>
-<td style="text-align:left">Full Apama microservice. Runtime for Analytics Builder, EPL Apps, and smart rules</td>
-<td style="text-align:left">apama-ctrl-250mc-1g</td>
-<td style="text-align:left">{{< enterprise-tenant >}}</td>
-</tr>
-
-<tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-starter</a></td>
-<td style="text-align:left">Restricted version of the Apama microservice. Runtime for an unlimited number of smart rules and a limited number of Analytics Builder models</td>
-<td style="text-align:left">apama-ctrl-starter</td>
-<td style="text-align:left">{{< standard-tenant >}}</td>
-</tr>
-
-<tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-smartrulesmt</a></td>
-<td style="text-align:left">Restricted version of the Apama microservice. Runtime for smart rules only, no Analytics Builder models or EPL apps available</td>
-<td style="text-align:left">apama-ctrl-smartrulesmt</td>
-<td style="text-align:left">Only available for self-hosted installations</td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
+<td style="text-align:left">Streaming Analytics microservices, including runtime for Analytics Builder, EPL apps and smart rules. Capabilities and resources vary depending on the microservice variant used</td>
+<td style="text-align:left">apama-ctrl-*</td>
+<td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
@@ -82,7 +81,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 
 <tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
-<td style="text-align:left">Use the smart rules engine and create smart rules to perform actions based on realtime data. Requires one of the following microservices: apama-ctrl-1c-4g, apama-ctrl-starter, or apama-ctrl-smartrules</td>
+<td style="text-align:left">Use the smart rules engine and create smart rules to perform actions based on realtime data. Requires a variant of the Apama-ctrl microservice</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
@@ -159,7 +158,7 @@ In the **Properties** tab, each microservice will show the following information
 <tr>
 <td style="text-align:left">Path</td>
 <td style="text-align:left">Part of the URL invoking the application</td>
-<td style="text-align:left">Automatically created as .../service/<microservice-name></td>
+<td style="text-align:left">Automatically created as /service/&lt;microservice-name&gt;</td>
 </tr>
 </tbody>
 </table>
@@ -168,7 +167,7 @@ Below, you will additionally find information on the microservice version, as we
 
 #### Microservice subscription
 
-At the top right of the **Properties** tab, you find a toggle to subscribe to or unsubscribe from a microservice.
+At the top right of the **Properties** tab, you find a toggle to subscribe to or unsubcribe from a microservice.
 
 Changing the subscription is only possible for custom microservices, that is microservices being owned by you.
 

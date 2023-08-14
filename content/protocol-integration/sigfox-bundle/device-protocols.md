@@ -20,14 +20,12 @@ The length for the device payload parts, which is set in the **Number of bits** 
 
 To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device management application. You can either import an existing device protocol or create a new one.
 
-<a name="import-device-type"></a>
 ### Importing a device protocol
 
 In the **Device protocols** page, click **Import**.
 
 Select the desired predefined device type or upload it from a file. When ready, click **Import** again.
 
-<a name="create-new-device-type"></a>
 ### Creating a new device protocol
 
 In the **Device protocols** page, click **New device protocol** and select **Sigfox** from the options list.
@@ -141,6 +139,6 @@ This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/sigfox/sigfox-protocols-gpsexample.png)
 
-### Using Custom decoding/encoding
+### Using custom decoding/encoding
 
 The Sigfox agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](../lpwan-custom-codec) for further details.

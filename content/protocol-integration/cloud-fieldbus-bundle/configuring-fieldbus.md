@@ -21,10 +21,8 @@ If you edit a device protocol that is currently in use, you may need to
 * restart the terminals that use the device protocol,
 * reconfigure dashboards and widgets that use the device protocol.
 
-<a name="configureModbus"></a>
 ### Configuring Modbus device protocols
 
-<a name="addCoil"></a>
 #### To add a coil definition (discrete outputs)
 
 Click **Add Coil** in the **Coils (discrete output)** section, to add a coil definition.
@@ -41,12 +39,10 @@ Click **Add Coil** in the **Coils (discrete output)** section, to add a coil def
 
 ![Add coil](/images/device-protocols/cloud-fieldbus/fieldbus-deviceprotocols-newcoil.png)
 
-<a name="addCoil"></a>
 #### To add a discrete inputs definition
 
 The same settings can be specified for discrete inputs. However, it is not possible to update the status of a discrete input.
 
-<a name="addRegister"></a>
 #### To add a register definition
 
 Click **Add holding register** under **Holding registers** or **Add input register** under **Input registers** to add a register definition.
@@ -75,23 +71,21 @@ Finally, click **Save** to save the device protocol.
 <a name="configureCAN"></a>
 ### Configuring CAN bus device protocols
 
-CAN bus device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus device protocols](#configureModbus) above. The differences are:
+CAN bus device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus device protocols](#configuring-modbus-device-protocols) above. The differences are:
 
 * Holding registers are used to describe the different pieces of data inside CAN messages.
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
 * Conversion of values is extended by an offset parameter (for example, any positive or negative number). This is added or subtracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
-<a name="configureProfibus"></a>
 ### Configuring Profibus device protocols
 
 Profibus device protocols can be configured in the following way:
 
-1. In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [To add a register definition](#addRegister) above.
+1. In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [To add a register definition](#to-add-a-register-definition) above.
 1. In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you must support buffering of data on the terminal, leave this checkbox clear.
 1. Finally, click **Save** to save your settings.
 
 
-<a name="configure-canopen"></a>
 ### Configuring CANopen device protocols
 
 CANopen device protocols can be configured in the following way:
@@ -151,4 +145,6 @@ In the **CANopen** section, up to 127 CANopen devices can be added to the gatewa
 - **Device type:** The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.
 - **Node ID:** The CANopen node ID of the device. It is used for addressing the device inside the CANopen network.
 
-> The device type and node ID must match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
+{{< c8y-admon-info >}}
+The device type and node ID must match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
+{{< /c8y-admon-info >}}

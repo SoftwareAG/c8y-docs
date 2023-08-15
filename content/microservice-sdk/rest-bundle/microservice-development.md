@@ -388,6 +388,11 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 }
 ```
 
+{{< c8y-admon-info >}}
+You can link multiple child assets or multiple child devices to the same parent in a single request.
+Refer to inventory child operations in the [Inventory API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Child-operations) in the {{< openapi >}} for more details.
+{{< /c8y-admon-info >}}
+
 #### Synchronizing assets with external systems
 
 Often, {{< product-c8y-iot >}} will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-integration/rest#device-integration):
@@ -436,7 +441,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 }
 ```
 
-Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](/reference/device-management-library/) and in the [Sensor library](/reference/sensor-library/).
+Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device integrator library](/reference/device-integrator-library/) and in the [Sensor library](/reference/sensor-library/).
 
 Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/rest) in *Device integration*).
 
@@ -624,3 +629,8 @@ HTTP/1.1 200 OK
     }
 ]
 ```
+
+{{< c8y-admon-info >}}
+A channel for all devices (*) is deprecated and should be avoided. Subscription on this channel may cause performance issues
+on both the client and the server side, and this option may be removed in future versions of {{< product-c8y-iot >}}.
+{{< /c8y-admon-info >}}

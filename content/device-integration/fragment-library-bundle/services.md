@@ -42,7 +42,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 |serviceType  | Yes       | An arbitrary string for organizing services|
 |status       | Yes       | 'up', 'down', 'unknown' or any custom service status|
 
-Using [SmartREST static template 102](/reference/smartrest-two/#102) sent to topic `s/us/<serviceId>`:
+Using [SmartREST static template 102](/smartrest/mqtt-static-templates/#102) sent to topic `s/us/<serviceId>`:
 
 The second parameter, the unique ID, does not reference the internal numeric ID but a string-based external ID which is defined by the device instead of the platform.
 We recommend you to prefix the unique ID with a device-specific prefix to avoid clashes with other devices running the same service:
@@ -69,7 +69,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 | ----  | ----      | ----    |
 |status | Yes       | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
 
-Or using [SmartREST static template 104](/reference/smartrest-two/#104) sent to topic `s/us/<serviceId>`:
+Or using [SmartREST static template 104](/smartrest/mqtt-static-templates/#104) sent to topic `s/us/<serviceId>`:
 
 `104,down`
 
@@ -100,7 +100,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 ```
 
 
-Or using [SmartREST static template 200](/reference/smartrest-two/#200) sent to topic `s/us/<serviceId>`:
+Or using [SmartREST static template 200](/smartrest/mqtt-static-templates/#200) sent to topic `s/us/<serviceId>`:
 
 `200,c8y_Memory,allocated,100,MB`
 

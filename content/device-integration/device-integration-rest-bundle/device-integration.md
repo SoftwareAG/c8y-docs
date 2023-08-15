@@ -28,7 +28,7 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 
 ![Cycle phase](/images/rest/cyclephase.png)
 
-Reference models for the data can be found in the [Device integrator library](/reference/device-integrator-library/) and in the [Sensor library](/reference/sensor-library/) in the *Reference guide*.
+Reference models for the data can be found in [Device integration > Fragment library](/device-integration/fragment-library/).
 
 
 ### Startup Phase
@@ -197,7 +197,7 @@ The example above contains a number of metadata items for the device:
 -   "com\_cumulocity\_model\_Agent" marks devices running a {{< product-c8y-iot >}} agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
-For more information, refer to the [Device integrator library](/reference/device-integrator-library/) in the *Reference guide*.
+For more information, refer to [Device integration > Fragment library](/device-integration/fragment-library/).
 
 If the device could be successfully created, a status code of 201 is returned. If the original request contains an "Accept" header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).
 
@@ -520,9 +520,9 @@ You can replace a physical device that is already connected to the {{< product-c
 Do the following:
 
 1. Turn off the old physical device.
-2. [Register and bootstrap](/users-guide/device-management/#device-registration) the new device just like a regular device.
+2. [Register and bootstrap](/device-management-application/registering-devices) the new device just like a regular device.
 3. After the device has created its new managed object, turn the new physical device off.
-4. Open the new device object in [{{< product-c8y-iot >}}'s Device management](/users-guide/device-management/#info) application and look up the device owner and the device's external IDs.
+4. Open the new device object in [{{< product-c8y-iot >}}'s Device management application](/device-management-application/viewing-device-details/#info) and look up the device owner and the device's external IDs.
 5. Remove the external IDs from the device.
 6. Open the old device in {{< product-c8y-iot >}}'s Device management application and change its owner to the one you looked up, and also add the external IDs you removed from the new device.
 7. Remove the new device object that was created earlier but keep the device user.

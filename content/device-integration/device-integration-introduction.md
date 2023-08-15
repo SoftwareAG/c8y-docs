@@ -11,7 +11,7 @@ section:
 
 We recommend you to can integrate devices via [thin-edge.io](https://thin-edge.io/). See the tutorial for [thin-edge.io on a Raspberry Pi](/device-integration/integration-tutorials/#thin-edge-raspberry-pi) for an easy-to-follow and hands-on example.
 
-You can also use [MQTT](/device-integration/mqtt) and [SmartREST](/reference/smartrest-two/) to integrate devices, which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
+You can also use [MQTT](/device-integration/mqtt) and [SmartREST](/smartrest/smartrest-two/) to integrate devices, which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
 
 Refer to [Device integration using REST](/device-integration/rest) for detailed information on integrating via REST.
 

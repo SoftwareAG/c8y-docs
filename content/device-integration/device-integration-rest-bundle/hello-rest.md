@@ -148,8 +148,8 @@ If you do not see data, you might need to change the filter setting to, for exam
 
 #### Go further
 
-The sequence of REST calls demonstrated here is just a shortened procedure of those described in [Device integration](/device-integration/rest#device-integration).
+The sequence of REST calls demonstrated here is just a shortened procedure of those described in [Device integration](/device-integration/rest/#device-integration).
 The first step (creating a new device) is part of the 'startup phase', whereas step two (sending measurements) references to the 'cycle phase'.
 
-Refer to the section on [Device integration](/device-integration/rest#device-integration) to get the necessary information required for implementing
+Refer to the section on [Device integration](/device-integration/rest/#device-integration) to get the necessary information required for implementing
 real-world agents.

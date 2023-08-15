@@ -6,7 +6,7 @@ section:
   - device_management
 ---
 
-The **Device information** tab is a predefined dashboard with several widgets that combine default device information. The status widget, for example, will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. For details see [Device management > Monitoring and controlling devices > Availability](/users-guide/device-management/#monitoring-availability) in the *User guide*.
+The **Device information** tab is a predefined dashboard with several widgets that combine default device information. The status widget, for example, will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. For details see [Device management application > Monitoring and controlling devices > Availability](/device-management-application/monitoring-and-controlling-devices/#availability).
 
 ### Device marker
 
@@ -134,7 +134,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 **SmartREST example**
 
-Upload agent details using the [122](/reference/smartrest-two/#122) static template:
+Upload agent details using the [122](/smartrest/mqtt-static-templates/#122) static template:
 
 `122,thin-edge.io,0.6,https://thin-edge.io/,Software AG`
 

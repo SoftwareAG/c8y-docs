@@ -33,11 +33,11 @@ Devices connecting to the platform with certificates do not need to provide the 
 The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
 Auto-registration needs to be activated for the uploaded certificate.
 If auto-registration is not activated it is required to use the bulk registration (see below).
-To manage the auto registration field of uploaded certificates in the UI refer to [Device management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
+To manage the auto registration field of uploaded certificates in the UI refer to [Device management application > Managing device data > Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
 
 **Bulk registration**
 
-The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device management application.
+The user for the device can also be created via the standard [bulk registration](/device-management-application/registering-devices/#to-bulk-register-devices) in the Device management application.
 
 The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
 
@@ -292,7 +292,7 @@ To create the intermediate certificate:
 1. Go to the directory of your caCertificate or intermediateCertificate depending on which one is used to sign the device certificate.
 2. Generate the private key for the new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
 3. Generate the certificate signing request (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl req -config caConfig.cnf -new -sha256 -key deviceCertificates/deviceKey.pem -out deviceCertificates/deviceCsr.pem`
-   Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, must match the [ClientId](/device-integration/mqtt/#MQTT-ClientId) of the device during the connection.
+   Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, must match the [ClientId](/device-integration/mqtt/#mqtt-clientid) of the device during the connection.
 4. Generate the certificate signed by the CA or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
 5. Verify if the generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
 

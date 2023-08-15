@@ -59,7 +59,7 @@ After receiving the credentials, the device can close the MQTT connection and cr
 
 As MQTT supports an automatic device creation if the client sends data and there is no device present, this step is only required if you want to create the device manually.
 
-The device creation can be achieved by employing the [static template 100](/reference/smartrest-two/#100). This template can be blindly used on every boot of the device as it will only create the device if it is not already present.
+The device creation can be achieved by employing the [static template 100](/smartrest/mqtt-static-templates/#100). This template can be blindly used on every boot of the device as it will only create the device if it is not already present.
 
 The device will be linked automatically to the ID the client uses with its MQTT ClientId.
 
@@ -74,7 +74,7 @@ The topic used for {{< product-c8y-iot >}}'s pre-provided static templates is <k
 
 Like the root device, also its children are covered by the automatic device creation.
 
-To handle this step manually you can send the [static template 101](/reference/smartrest-two/#101) for creating a child device. The template will only create the child if it does not already exist.
+To handle this step manually you can send the [static template 101](/smartrest/mqtt-static-templates/#101) for creating a child device. The template will only create the child if it does not already exist.
 
 ```text
 101,Unique Child ID,Child Name,Child Type
@@ -92,7 +92,7 @@ While the device holds an active MQTT connection, it can publish either on the t
 
 Based on the MQTT ClientId, the physical device is directly connected to the device object in {{< product-c8y-iot >}}. Therefore, the data you send is automatically connected to the device.
 
-To send data to a child device, publish the data to the topics described in [Device hierarchies](/device-integration/mqtt#device-hierarchies).
+To send data to a child device, publish the data to the topics described in [Device hierarchies](/device-integration/mqtt/#device-hierarchies).
 
 #### Step B: Receive CSV operations
 

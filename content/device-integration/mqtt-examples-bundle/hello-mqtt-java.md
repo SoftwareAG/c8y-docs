@@ -210,4 +210,4 @@ Additionally, if there will be a new operation created for this device (for exam
 
 ### Improving the agent
 
-Now that you have done your first step, check out the Section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the Section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

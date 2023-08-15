@@ -135,7 +135,7 @@ sudo tedge config set c8y.url {{YOUR_C8Y_URL}}
 thin-edge.io connects via MQTT protocol using an X.509 certificate for authentication.
 To do so, a certificate must be trusted by {{< product-c8y-iot >}}.
 A certificate is trusted when it is added to the trusted certificates and is in an activated state.
-See also [Device management > Managing device data > Managing trusted certificates](/users-guide/device-management/#trusted-certificates) in the *User guide*.
+See also [Device management application > Managing device data > Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
 
 First, create the device certificate locally:
 
@@ -371,7 +371,7 @@ sudo tedge connect C8Y
 
 4. Click **Add Software**.
 
-See also [Device management > Managing device data > Managing device software > To add a new software or software version](/users-guide/device-management/#to-add-a-new-software-or-software-version) in the *User guide**.
+See also [Device management application > Managing device data > Managing software > To add a new software or software version](/device-management-application/managing-device-data/#to-add-a-new-software-or-software-version).
 
 ##### Installing software on a device
 
@@ -387,7 +387,7 @@ See also [Device management > Managing device data > Managing device software > 
 
 When a different version of the already installed software needs to be installed, choose in step 4 the installed software from the list and in step 5 the right version.
 
-For more information on how to manage the software, refer to [Device management > Managing device data > Managing device software > Managing software on a device](/users-guide/device-management/#managing-software-on-a-device) in the *User guide*.
+For more information on how to manage the software, refer to [Device management application > Managing device data > Managing software > Managing software on a device](/device-management-application/managing-device-data/#to-manage-software-on-a-device).
 
 For more information on how to develop your own plugins, refer to [Developer Documentation > Write my own software management plugin](https://thin-edge.github.io/thin-edge.io/html/tutorials/write-my-software-management-plugin.html) in the *thin-edge.io docs*.
 
@@ -444,7 +444,7 @@ This tutorial makes use of the second option.
 8. Click **Send configuration to device** to upload it to the device.
 9. Click **Get snapshot from device** to verify the change of the configuration file.
 
-Also see [Device management > Managing device data > Managing configurations](/users-guide/device-management/#managing-configurations) in the *User guide*.
+Also see [Device management application > Managing device data > Managing configurations](/device-management-application/managing-device-data/#managing-configurations).
 
 ##### Change collectd configuration file via the platform
 
@@ -488,7 +488,7 @@ sudo systemctl start c8y-log-plugin
 sudo systemctl enable c8y-log-plugin
 ```
 
-To see the content of the log files in {{< product-c8y-iot >}}, follow the steps in [Device management > Device details > Logs > To request log information](/users-guide/device-management/#to-request-log-information).
+To see the content of the log files in {{< product-c8y-iot >}}, follow the steps in [Device management application > Viewing device details > Logs > To request log information](/device-management-application/viewing-device-details/#to-request-log-information).
 
 If `c8y-log-plugin.toml` is added to the *c8y-configuration-plugin.toml* file it is possible to do the administration from there.
 However, keep in mind that the daemon must be restarted if the */etc/tedge/c8y/c8y-log-plugin.toml* file is touched via the command line.

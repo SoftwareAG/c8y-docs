@@ -12,12 +12,12 @@ In the following section you will find descriptions of the most important functi
 
 If you are interested in details on exposing the {{< product-c8y-iot >}}´s functionalities through our Rest API, see the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/) for further information.
 
-Moreover, see [SmartREST](/reference/smartrest-two) for more information on SmartREST and a complete list of all SmartREST templates mentioned throughout the following sections.
+Moreover, see [SmartREST](/smartrest/smartrest-two) for more information on SmartREST and a complete list of all SmartREST templates mentioned throughout the following sections.
 
 To start with device management, open the **All devices** tab in the **Devices** menu of the Device management application. Click on a device in the list to open the device details of this particular device. You will see various tabs and particular information on each of them.
 
 {{< c8y-admon-info >}}
-For a detailed explanation of each tab and its related configuration via the UI, see also [Device management > Device details](/users-guide/device-management/#device-details) in the *User guide*.
+For a detailed explanation of each tab and its related configuration via the UI, see also [Device management application > Viewing device details](/device-management-application/viewing-device-details).
 {{< /c8y-admon-info >}}
 
 ![Device details](/images/reference-guide/device-details.png)
@@ -41,83 +41,83 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 </thead>
 <tbody>
 <tr>
-<td><a href="../../reference/device-integrator-library/#device-info">c8y_Availability</a></td>
+<td><a href="#device-info">c8y_Availability</a></td>
 <td>Holds information about the device's status and its availability</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-integrator-library/#reference">c8y_Command</a></td>
+<td><a href="#reference">c8y_Command</a></td>
 <td>Allows the user to carry out interactive sessions with a device</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-integrator-library/#configuration">c8y_Configuration</a></td>
+<td><a href="#configuration">c8y_Configuration</a></td>
 <td>Contains the complete configuration state of the device including all control characters</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#legacy-file-based-configuration">c8y_ConfigurationDump</a></td>
+<td><a href="#legacy-file-based-configuration">c8y_ConfigurationDump</a></td>
 <td>Permits managing binary configuration files of the device</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#device-profile">c8y_DeviceProfile</a></td>
+<td><a href="#device-profile">c8y_DeviceProfile</a></td>
 <td>Enables device profile functionality for a device</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#install-legacy-configuration">c8y_DownloadConfigFile</a></td>
+<td><a href="#install-legacy-configuration">c8y_DownloadConfigFile</a></td>
 <td>Permits the download of configuration files as binaries</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#firmware">c8y_Firmware</a></td>
+<td><a href="#firmware">c8y_Firmware</a></td>
 <td>Contains information about a device's firmware</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#hardware-information">c8y_Hardware</a></td>
+<td><a href="#hardware-information">c8y_Hardware</a></td>
 <td>Contains basic hardware information for a device, such as make and serial number</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#logs">c8y_LogfileRequest</a></td>
+<td><a href="#logs">c8y_LogfileRequest</a></td>
 <td>Requests a device to send a log file and view the log file in the log viewer</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#connectivity">c8y_Mobile</a></td>
+<td><a href="#connectivity">c8y_Mobile</a></td>
 <td>Holds basic connectivity-related information, such as the equipment identifier of the modem (IMEI) in the device or the SIM card (for example ICCID)</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#network">c8y_Network</a></td>
+<td><a href="#network">c8y_Network</a></td>
 <td>Sends data to the <strong>Network</strong> tab in the Device management application and displays the network information</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#tracking">c8y_Position</a></td>
+<td><a href="#tracking">c8y_Position</a></td>
 <td>Reports the geographical location of an asset in terms of latitude, longitude and altitude</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#device-profile">c8y_Profile</a></td>
+<td><a href="#device-profile">c8y_Profile</a></td>
 <td>Announces the target profile</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#device-restart">c8y_Restart</a></td>
+<td><a href="#device-restart">c8y_Restart</a></td>
 <td>Restarts a device</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#relay">c8y_Relay</a></td>
+<td><a href="#relay">c8y_Relay</a></td>
 <td>Enables switching device relay</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#relay-array">c8y_RelayArray</a></td>
+<td><a href="#relay-array">c8y_RelayArray</a></td>
 <td>Enables switching device relays in the array</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#upload-current-text-configuration">c8y_SendConfiguration</a></td>
+<td><a href="#upload-current-text-configuration">c8y_SendConfiguration</a></td>
 <td>Allows reloading a configuration through the user interface</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#installed-software">c8y_SoftwareList</a></td>
+<td><a href="#installed-software">c8y_SoftwareList</a></td>
 <td>Contains the entire list of software that is installed on the device</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#software-update">c8y_SoftwareUpdate</a></td>
+<td><a href="#software-update">c8y_SoftwareUpdate</a></td>
 <td>Contains a list of software to be installed or uninstalled</td>
 </tr>
 <tr>
-<td><a href="../../reference/device-management-library/#upload-current-legacy-configuration">c8y_UploadConfigFile</a></td>
+<td><a href="#upload-current-legacy-configuration">c8y_UploadConfigFile</a></td>
 <td>Permits the upload of configuration files as binaries</td>
 </tr>
 </tbody>

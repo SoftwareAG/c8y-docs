@@ -25,7 +25,7 @@ In an {{< enterprise-tenant >}}, the {{< management-tenant >}} may also directly
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 {{< /c8y-admon-info >}}
 
-After successful registration the device(s) will be listed in the [Device registration](device-management-application/registering-devices) page with the status "Waiting for connection".
+After successful registration the device(s) will be listed in the [Device registration](/device-management-application/registering-devices) page with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
 

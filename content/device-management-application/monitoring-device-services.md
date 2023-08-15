@@ -60,7 +60,7 @@ The service details **Alarms** tab displays only alarms which have the particula
 ### Events
 
 The **Events** tab displays events related to a service.
-See [Monitoring and controlling devices > Troubleshooting devices](device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
+See [Monitoring and controlling devices > Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
 
 {{< c8y-admon-info >}}
 The service details **Events** tab displays only events which have the particular service as a source. It does not display any events sourced by the device itself.

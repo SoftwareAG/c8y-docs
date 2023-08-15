@@ -193,5 +193,5 @@ The **SIM details** menu item requires you to have a login for Jasper Control Ce
 
 If the device is still not reporting to {{< product-c8y-iot >}}, there may be a configuration or software problem on the device.
 
-* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/device-management-application/connecting-devices).
+* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/device-management-application/registering-devices).
 * There may be a configuration or software problem with the device, which must be analyzed in a device-specific way.

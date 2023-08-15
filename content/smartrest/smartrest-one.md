@@ -12,7 +12,7 @@ section:
 
   <p class="lead" style="font-size:22px">SmartREST 1.0 has been superseded by SmartREST 2.0.
 
-  <p style="font-size:16px">SmartREST 1.0 will be maintained by Cumulocity but no longer actively developed. We highly recommend you to use <a href="../smartrest">SmartREST 2.0</a> for new device integrations.</p>
+  <p style="font-size:16px">SmartREST 1.0 will be maintained by Cumulocity but no longer actively developed. We highly recommend you to use <a href="/smartrest/smartrest-two">SmartREST 2.0</a> for new device integrations.</p>
 
 </div>
 

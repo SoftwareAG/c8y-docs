@@ -132,7 +132,7 @@ import { HelloComponent } from './hello.component';    // 1
     UpgradeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(),
-    NgRouterModule.forRoot(
+    NgRouterModule.forRoot([
       // --- 8< changed part ----
       { path: 'hello', component: HelloComponent},     // 3
       // --- >8 ----

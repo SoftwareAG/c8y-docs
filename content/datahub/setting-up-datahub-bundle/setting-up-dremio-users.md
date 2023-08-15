@@ -2,15 +2,25 @@
 weight: 40
 title: Setting up Dremio users
 layout: redirect
+helpcontent:
+  - label: setting-up-dremio-users
+    title: Managing users
+    content: "In the initial configuration the **Dremio API user** is configured, which is required to interact with Dremio. This user can also be used to directly interact with Dremio in applications, using the credentials in combination with JDBC, ODBC, or REST API.
+
+
+    Some use cases might require more than one Dremio user for the interaction with Dremio. For that purpose, **additional Dremio users** can be added. You can optionally assign each user permissions for the data lake source and the space, so that the user can manage grants on source and space for other users as well. In Dremio the source connects to the data lake while the space provides artifacts like views.
+
+
+    Click **Add user** to create a new Dremio user. The user list comprises all configured Dremio users with options to edit or delete them."
 ---
 
 In the [initial configuration](/datahub/setting-up-datahub/#setting-up-initial-configuration) of {{< product-c8y-iot >}} DataHub, the Dremio API user is configured. This user is required for the proxy REST API, which allows you to interact with Dremio using {{< product-c8y-iot >}} DataHub. This user can also be used to directly interact with Dremio in applications, using JDBC, ODBC, or REST API.
 
 Some use cases might require more than one Dremio user for the interaction with Dremio. For that purpose, additional Dremio users can be added.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 You need administration permissions to configure Dremio users. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 ### Overview of Dremio users
 In the navigator, select **Dremio users** under **Settings** to get an overview of all Dremio users created by an administrator of your {{< product-c8y-iot >}} DataHub tenant.
@@ -22,7 +32,7 @@ If the initial configuration has not been completed yet, no users are shown. If 
 ### Properties of a Dremio user
 
 #### Username
-The username is a mandatory setting. It must be a unique value, that is, no other Dremio user has the same username. It consists of the tenant ID plus forward slash and a string with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline. For example, the username may be *t47110815/myUser*.
+The username is a mandatory setting. It must be a unique value, that is, no other Dremio user has the same username. It consists of the tenant ID plus forward slash and a string with a minimum length of three, starting with a character, and consisting of numbers, characters, dash, or underline. For example, the username may be `t47110815/myUser`.
 
 #### First name, last name, and email
 The first name, last name, and email of a Dremio user are optional settings.
@@ -32,18 +42,22 @@ During the initial configuration of {{< product-c8y-iot >}} DataHub, a so-called
 
 The Dremio user can be assigned additional permissions for the data lake source and the space. If the user has the permission for the data lake source assigned, the user can manage grants on that source for other users as well. The same applies to the space permission. Data lake permission and space permission are independent of each other; the setting of one permission does not affect the setting of the other.
 
-Having the corresponding permission assigned, the user can grant other Dremio users, which do not necessarily relate to {{< product-c8y-iot >}} DataHub, different permissions on the data lake source or the space, for example, for reading data from the data lake or creating a table in the data lake. Granting permissions to other users should be done carefully in order to avoid that sensitive information is exposed to the wrong users. 
+Having the corresponding permission assigned, the user can grant other Dremio users, which do not necessarily relate to {{< product-c8y-iot >}} DataHub, different permissions on the data lake source or the space, for example, for reading data from the data lake or creating a table in the data lake.
 
-For example, IoT data has been offloaded to the data lake using {{< product-c8y-iot >}} DataHub. A data scientist from a different business unit now wants to access the data lake contents. A Dremio account needs to be created for the data scientist. Therefore, a Dremio user created by {{< product-c8y-iot >}} DataHub, having the data lake permission, grants read access on the data lake source to the Dremio account of the data scientist. 
+{{< c8y-admon-caution >}}
+Granting permissions to other users should be done very carefully in order to avoid that sensitive information is exposed to the wrong users. In particular, permissions should never be granted to all users as in that case all Dremio users of the {{< product-c8y-iot >}} instance can access the data lake source or space respectively.
+{{< /c8y-admon-caution >}}
+
+For example, IoT data has been offloaded to the data lake using {{< product-c8y-iot >}} DataHub. A data scientist from a different business unit now wants to access the data lake contents. A Dremio account needs to be created for the data scientist. Then, a Dremio user created by {{< product-c8y-iot >}} DataHub, having the data lake permission, grants read access on the data lake source to the Dremio account of the data scientist.
 
 {{< c8y-admon-info >}}
-Dremio refers to the permissions as [privileges](https://docs.dremio.com/software/security/rbac/privileges/). Privileges include for example SELECT, ALTER, CREATE TABLE, or DROP. A Dremio user with the corresponding permissions can grant permissions to other users via the Dremio UI. In the UI, browse to the data lake or space and select **Edit details** in the context menu. In the editor, the list of privileges for all users is shown, with the option to update privileges and users. Alternatively, you can use the [Dremio SQL API](https://docs.dremio.com/software/sql-reference/sql-commands/rbac/) to modify privileges.
+Dremio refers to the permissions as [privileges](https://docs.dremio.com/current/sonar/security/rbac/privileges/). Privileges include for example SELECT, ALTER, CREATE TABLE, or DROP. A Dremio user with the corresponding permissions can grant permissions to other users via the Dremio UI. In the UI, browse to the data lake or space and select **Edit details** in the context menu. In the editor, the list of privileges for all users is shown, with the option to update privileges and users. Alternatively, you can use the [Dremio SQL API](https://docs.dremio.com/current/reference/sql/commands/rbac) to modify privileges.
 {{< /c8y-admon-info >}}
 
 For each user, including the Dremio API user, the `manage grants` permissions on data lake and space are initially not set.
 
 #### Password
-The password must have at least 8 characters with at least one letter and one number. 
+The password must have at least 8 characters with at least one letter and one number.
 
 ### Adding a Dremio user
 To add a Dremio user, select **Dremio users** under **Settings** and click **Add user** at the right of the top menu bar. In the editor, provide the corresponding Dremio user properties.

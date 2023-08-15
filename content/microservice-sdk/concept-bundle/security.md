@@ -112,18 +112,18 @@ In general, microservices use the standard {{< product-c8y-iot >}} authenticatio
 1. The microservice can be created in any tenant that has **feature-microservice-hosting** enabled.
 2. The microservices access the tenant API.
 
-At the installation time of the microservice, an application is created in the {{< management-tenant >}} reflecting the new microservice. In addition, a service user is created in the {{< management-tenant >}} that allows the microservice to retrieve subscriptions.
+At the installation time of the microservice, an application is created in the owner tenant (usually a {{< management-tenant >}} or {{< enterprise-tenant >}}) reflecting the new microservice. In addition, a bootstrap user is created in the owner tenant that allows the microservice to retrieve subscriptions.
 Whenever required, a platform administrator will subscribe a customer to the new microservice. As part of the subscription, a service user in the customer tenant is created using random credentials.
 
 #### Microservice authorization
 
 Authorization is relevant on two levels:
 
-1. On the {{< management-tenant >}} level, the only authorization of a microservice is to access its own subscriptions.
+1. On the owner tenant level, the only authorization of a microservice is to access its own subscriptions.
 2. For accessing customer tenants, the microservice installs a set of required permissions for being able to operate.
 
-A microservice is associated with a service user in the {{< management-tenant >}}, which will make sure that only its subscriptions are returned. A microservice is also associated with a set of permissions that it requires for carrying out its function on a customer tenant.
-These permissions are visualized in the Administration application. The permissions are associated with the service user that is created when a platform administration associates a microservice with a tenant.
+A microservice is associated with a bootstrap user in the owner tenant, which will make sure that only its subscriptions are returned. A microservice is also associated with a set of permissions that it requires for carrying out its function on a customer tenant.
+These permissions are visualized in the Administration application. The permissions are associated with the service user that is created when a platform administration associates a microservice with a tenant (subscribes to it). The owner tenant must also be subscribed to if you intend to use microservice features on it.
 
 
 ### Users and roles
@@ -208,4 +208,4 @@ There is a mechanism to encrypt the tenant options that afterwards are automatic
 
 If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
 
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+Refer to tenant options in the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}} for more details.

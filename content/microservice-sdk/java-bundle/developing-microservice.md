@@ -114,7 +114,6 @@ The API provides the following services:
 
 * Alarm - AlarmApi
 * AuditRecord - AuditRecordApi
-* CepModule - CepApi
 * Operation - DeviceControlApi
 * Event - EventApi
 * ExternalID - IdentityApi
@@ -336,7 +335,7 @@ It can be configured with the following parameters:
 
 * name (alias package.name) - defaults to project.artifactId
 * description (alias package.description) - defaults to project.description
-* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". It will be overwritten if other options are provided
+* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseG1GC -XX:+UseStringDeduplication -XX:MinHeapFreeRatio=25 -XX:MaxHeapFreeRatio=75`. It will be overwritten if other options are provided
 * arguments (alias agent-package.arguments) - arguments passed during application startup
 * encoding (alias project.build.sourceEncoding) - defaults to UTF-8
 * heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
@@ -600,7 +599,7 @@ For external/legacy deployment, the following paths will be searched in order to
 #### Logging
 
 For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
-The following locations are searched for log-back file:
+The following locations are searched for the Logback configuration file:
 
 * {UPPERCASE(application_name)}_CONF_DIR/.{application_name}/logging.xml
 * {UPPERCASE(application_name)}_CONF_DIR/{application_name}/logging.xml

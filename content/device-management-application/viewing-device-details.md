@@ -216,7 +216,7 @@ This enables you to get an efficient overview over larger time periods. A graph 
 
 Clicking **Realtime** will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices.
 
-You can influence the graphical display and axes limits by setting up so-called "KPIs", see [Standard tenant administration](standard-tenant/).
+You can influence the graphical display and axes limits by setting up so-called "KPIs", see [Standard tenant administration](/standard-tenant/).
 
 **Measurement format**
 

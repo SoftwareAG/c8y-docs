@@ -4,7 +4,6 @@ title: Inventory
 layout: redirect
 ---
 
-
 ### Managed objects
 
 The inventory stores devices and other assets relevant to your IoT solution. We refer to them as *managed objects*.
@@ -82,13 +81,51 @@ Using this approach, the modeling devices can make a difference between modeling
 
 The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment (`c8y_Position`), it can be placed on a map. As soon as it has a relay (`c8y_Relay`), it can be switched on and off using the respective device control command as described below.
 
-For more information on fragments and how managed objects are structured, see the [Device management library](reference/device-management-library/) in the *Reference guide*.
+For more information on fragments and how managed objects are structured, see the [Device integrator library](/reference/device-integrator-library/) in the *Reference guide*.
+
+{{< c8y-admon-info >}}
+While designing the data model for the inventory managed object consider the following:
+1. There is no size or length constraint for a single fragment, but there is a limitation for the overall JSON document size, which may not exceed 16MiB for a single managed object entry within the inventory collection. We recommend you to keep it below 1 MiB.
+2. When designing asset hierarchies, use small groups with less than 1000 subassets. Each subitem in the asset hierarchy creates a reference record in the parent item. Therefore keep in mind the first recommendation regarding the JSON document size.
+3. When you include arrays of elements within fragments, keep the length of such collections below 1k elements.
+4. Each consecutive fragment added to the managed object at root level imposes a certain delay on querying such an item. If the performance of a query matters, it is recommended to nest custom fragments with information within a chosen single fragment effectively limiting the root fragments number. For example:
+```json
+{
+    "id": "47035",
+    "type": "elstermetering_AS220",
+    "lastUpdated": "2010-11-13T18:28:36.000Z",
+    "c8y_ThreePhaseElectricitySensor": {},
+    "c8y_DeviceMetrics": {
+        "c8y_ConnectionMetrics": {
+            "failures": 0,
+            "successful": 1403,
+            "total": 1403
+        },
+        "c8y_Alarms": {
+            "requested": 100,
+            "successful": 100
+        },
+        "c8y_Measurements": {
+            "requested": 1303,
+            "successful": 1303
+        }
+    },
+    "c8y_DeviceMetricsConfiguration": {
+        "deviceRepresentationUpdateIntervalCron": "0 22 * * *",
+        "monitorApi": [
+            "measurements",
+            "alarms"
+        ]
+    }
+}
+```
+{{< /c8y-admon-info >}}
 
 #### Naming conventions of fragments
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
-In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device management library](/reference/device-management-library/) in the *Reference guide*.
+In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device integrator library](/reference/device-integrator-library/) in the *Reference guide*.
 
 {{< c8y-admon-important >}}
 Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.

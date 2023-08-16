@@ -4,10 +4,13 @@ title: Accessing and logging into the platform
 layout: bundle
 section:
   - getting_started
-aliases:
-  - /users-guide/overview
-  - /users-guide/getting-started
 ---
+
+{{< c8y-admon-related >}}
+- [Tenants > Tenants](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for details on tenant ID and tenant domain.
+- [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding) and [Getting started > User options and settings](/users-guide/getting-started/#user-settings) for information on customizing the cookie banner.
+{{< /c8y-admon-related >}}
+
 
 You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.
 
@@ -39,7 +42,7 @@ The limitations could be the following:
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* The [Streaming Analytics application](/apama/overview-analytics/) does not support mobile or touch devices.
+* The [Streaming Analytics application](/streaming-analytics/overview-streaming-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
 <a name="url"></a>

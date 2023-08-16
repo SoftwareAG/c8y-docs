@@ -4,9 +4,9 @@ layout: bundle
 weight: 20
 section:
   - getting_started
-aliases:
-  - /about-doc/contacting-support
 ---
+
+<!-- content to be reworked -->
 
 Product support for {{< product-c8y-iot >}} is provided to licensed customers by the {{< sag-support >}} team, who you can access on the {{< company-sag >}} {{< sag-portal >}} at [{{< link-sag-portal >}}]({{< link-sag-portal >}}). There you will find information about how to contact us via email or phone. Some services on this site may require credentials.
 

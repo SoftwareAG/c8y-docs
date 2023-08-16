@@ -94,19 +94,9 @@ Next, select a machine to be connected with the profile.
 Once you have saved a profile, the selected machine cannot be changed.
 {{< /c8y-admon-info >}}
 
-#### Using a shift plan
+#### Location
 
-Shift plans are optional and control the way the OEE calculation is performed. The shift plan tells the OEE application when production is planned to happen as opposed to breaks, refitting times, and non-production times (for example weekends). It provides the baseline for the Availability calculation. If no shift plan is provided, it is assumed the machine is running 24/7 for 100% Availability.
-
-The OEE application provides a REST API to push the shift plans to the application. This REST API can either be invoked from Postman, the {{< product-c8y-iot >}} UI, or any other system that can access the {{< product-c8y-iot >}} tenant.
-
-The REST API can be reached at https://[server]/service/oee-bundle/mes/shiftplan and offers two methods:
-
-* GET: Retrieve the shift plan for the given location. The response might be empty if no shift plan was supplied before via the PUT method.
-
-* PUT: Add or update the shift plan for the location defined in the body. If a shift plan exists for the given tenant and location, the new shift plan will be merged internally and obsolete timeslots will be removed. The resulting shift plan will then be sent to the Apama service.
-
-For details, see the [REST API documentation](https://{{< domain-c8y >}}/api/oee/10.10.0/#tag/Shiftplan).
+The location indicates where the machine is located. It is used to apply a shift plan to this profile. See [Working with shift plans](/oee/oee-administration/#shiftplan) for more details regarding shift plans and the calculation implications.
 
 
 ### Workpiece
@@ -143,7 +133,7 @@ For details, see the [Rest API documentation](https://{{< domain-c8y >}}/api/oee
 
 ### Resolution
 
-Next, define the resolution intervals.
+Next, define the resolution intervals. The default interval is mandatory and will define the interval that is used for this machine in the **Overview**. It will also influence OEE calculation intervals for sites and lines that do not have a dedicated profile.
 
 ![Resolution tab](/images/oee/administration/profile-resolution.png)
 

@@ -32,9 +32,9 @@ The above permissions can be used to create roles for robust user management. Ev
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- [Managing users](#managing-users) for information on managing users in general.
-- [Managing applications](#managing-applications) for more information on managing applications.
-- [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies) for more information on managing user hierarchies.
+- [Managing users](/standard-tenant/managing-users) for information on managing users in general.
+- [Managing applications](/standard-tenant/managing-applications) for more information on managing applications.
+- [Enterprise tenant administration > Managing user hierarchies](/enterprise-tenant/#user-hierarchies) for more information on managing user hierarchies.
 - [Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
-- {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device integrator library](/reference/device-integrator-library/) for further information on fragment types.
+- {{< product-c8y-iot >}} [sensor library](/device-integration/sensor-library/) or [device integrator library](/reference/device-integrator-library/) for further information on fragment types.
 {{< /c8y-admon-related >}}

@@ -24,7 +24,7 @@ ROLES & PERMISSIONS:
 
 
 {{< c8y-admon-related >}}
-- [Security aspects > Management security](/concepts/security/#management-security) in the <i>Concepts guide</i> for general aspects of audit logging.
+- [Getting started > Technical concepts > Security aspects > Management security](/concepts/security/#management-security) for general aspects of audit logging.
 - [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}} for details on managing audit records via REST.
 {{< /c8y-admon-related >}}
 

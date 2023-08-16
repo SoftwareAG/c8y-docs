@@ -1,13 +1,10 @@
 ---
 weight: 10
-title: Overview
+title: Home dashboard
 layout: bundle
 section:
   - app_development
 ---
-
-<a name="home"></a>
-### Home dashboard
 
 The Home screen of the Cockpit application is a dashboard which shows data for the general tenant.
 

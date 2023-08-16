@@ -24,13 +24,25 @@ helpcontent:
 ---
 
 
-Click **Authentication** in the **Settings** menu if you want to view or change the authentication settings.
+Click **Authentication** in the **Settings** menu if you want to view or change the basic authentication settings.
 
 ![Authentication settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
 {{< c8y-admon-req >}}
-To see the **Authentication** menu entry, you must have "Tenant management" ADMIN permission (`ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`).
+ROLES & PERMISSIONS:
+
+To see the **Authentication** menu item, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
+
+For easier user access management, the above permission(s) are/is included in the global role(s) created by default in every new tenant:
+- Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
 {{< /c8y-admon-req >}}
+
+{{< c8y-admon-related >}}
+- [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
+- [Configuring single sign-on](/users-guide/administration/#configuring-single-sign-on) for details on configuring single sign-on in {{< product-c8y-iot >}}.
+- [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
+{{< /c8y-admon-related >}}
+
 
 ### Login settings
 
@@ -72,7 +84,8 @@ Use the **Forbidden for web browsers** toggle to disallow the usage of basic aut
 If the user agent is not found in the list of trusted or forbidden user agents then {{< product-c8y-iot >}} will try to verify if it is a web browser using an external library.
 {{< /c8y-admon-info >}}
 
-### OAI-Secure
+
+### OAI-Secure session configuration
 
 OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
 
@@ -147,12 +160,12 @@ During the session token renewal the previous token is revoked and a new one is 
 
 <a name="token-settings"></a>
 
-#### Token generation with OAI-Secure
+### Token generation with OAI-Secure
 
 OAI-Secure is primarily based on JWT stored in a browser cookie. It can be also used to generate JWT in the response body.
 The lifespan of the tokens and the cookie is configurable by tenant options belonging to the category `oauth.internal`.
 
-##### Lifespan configuration of JWT stored in the cookie
+#### Lifespan configuration of JWT stored in the cookie
 
 JWT tokens stored in the browser cookie have a default validity time of two weeks.
 This can be changed with tenant options:
@@ -161,7 +174,7 @@ This can be changed with tenant options:
 
 The minimum allowed value is 5 minutes.
 
-##### Lifespan configuration of cookies
+#### Lifespan configuration of cookies
 
 Cookies used to store a JWT token in a browser have their own validity time that can be changed with tenant options:
 - category: `oauth.internal`;
@@ -169,7 +182,7 @@ Cookies used to store a JWT token in a browser have their own validity time that
 
 The default value is two weeks. To have the cookie deleted when the user closes the browser, set it to any negative value.
 
-##### Lifespan configuration of JWT in response body
+#### Lifespan configuration of JWT in response body
 
 The lifespan of JWT tokens generated in the response body is configured with the following tenant options:
 - category: `oauth.internal`;
@@ -188,27 +201,19 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 You may select one of the following options:
 
 * **SMS-based**, supporting the following settings:
-	- **Limit token validity for** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
-  - **Limit verification code validity for** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
+  - **Token validity limit** - lifetime of each session in minutes. When the session expires or a user logs out, the user must enter a new verification code.
+  - **Verification code validity limit** - here you can set the lifetime of each verification code sent via SMS. When the verification code expires, the user must request a new verification code in order to login.
 
-
-	{{< c8y-admon-info >}}
-An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
-  {{< /c8y-admon-info >}}
+  <br>Note that an SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
 
 * **TOTP** (Time-based One-Time Password) supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users** - when enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
-{{< c8y-admon-info >}}
-The TOTP method is only available with the login mode "OAI-Secure".
-{{< /c8y-admon-info >}}
+   <br>Note that the TOTP method is only available with the login mode "OAI-Secure".
 
 Click **Save TFA settings** to apply your settings.
 
 {{< c8y-admon-important >}}
-Each time you change the TFA method you will be forced to log out. User TFA settings are cleared and must be configured again.
+- Each time you change the TFA method you will be forced to log out. User TFA settings are cleared and must be configured again.
+- Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
 {{< /c8y-admon-important >}}
-
-{{< c8y-admon-info >}}
-Users with a "devices" role are excluded from TFA and TOTP. This is also true when TOTP is enforced for all users.
-{{< /c8y-admon-info >}}

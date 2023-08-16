@@ -7,19 +7,28 @@ section:
 ---
 
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+
+{{< /c8y-admon-req >}}
+
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
 
 ![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
 
 With custom properties, you can extend the data model of {{< product-c8y-iot >}} built-in objects. You may create the following custom values:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
+- Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/users-guide/cockpit/#widget-asset-table) and [Asset property widget](/users-guide/cockpit/#asset-property).
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
-{{< c8y-admon-info >}}
-Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-related >}}
+- [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) for further information on the usage of properties in the "Asset table" and "Asset properties" widgets.
+- [Cockpit > Managing exports](/users-guide/cockpit/#exports) for further information on the usage of properties in reports and exports.
+- [Enterprise tenant > Managing tenants > To create a subtenant](/users-guide/enterprise-tenant/#creating-tenants) for further information on custom tenant properties.
+{{< /c8y-admon-related >}}
 
 <a name="add-property"></a>
 ### To add a custom property

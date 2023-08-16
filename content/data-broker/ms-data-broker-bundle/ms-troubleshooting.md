@@ -1,11 +1,9 @@
 ---
-weight: 10
+weight: 20
 title: Troubleshooting
 layout: bundle
 section:
-  - app_development
-aliases:
-  - /users-guide/enterprise-edition/
+  - platform_administration
 ---
 
 ### Subscription alert

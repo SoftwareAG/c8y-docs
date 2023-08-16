@@ -8,6 +8,16 @@ section:
 
 In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials ADMIN permissions are required.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+The **Connectivity** menu item is only available if you are logged in to the {{< product-c8y-iot >}} platform as administrator and if you have READ or ADMIN permission for the permission type "Connectivity".
+
+To view connectivity settings: READ permission for the permission type "Connectivity"
+To set or remove connectivity provider configurations: ADMIN permission for the permission type "Connectivity"
+
+{{< /c8y-admon-req >}}
+
 The following provider settings may currently be specified:
 
 - [Actility LoRa](/protocol-integration/lora-actility)

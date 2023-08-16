@@ -63,15 +63,15 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Devicemanagement User</td>
-<td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
+<td align="left">Can access the Device management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
 <td align="left">Global Manager</td>
-<td align="left">Can read and write all devices.</td>
+<td align="left">Can read and write all data from all devices.</td>
 </tr>
 <tr>
 <td align="left">Global Reader</td>
-<td align="left">Can read all devices.</td>
+<td align="left">Can read all data from all devices.</td>
 </tr>
 <tr>
 <td align="left">Global User Manager</td>
@@ -234,7 +234,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Own user management</td>
-<td align="left">View or edit your own user.</td>
+<td align="left">View or edit your own user. Note that this permission may only be applicable to technical users.</td>
 </tr>
 </tbody>
 </table>
@@ -248,7 +248,7 @@ When new features with new permissions are added to {{< product-c8y-iot >}}, the
 <a name="attach-global"></a>
 ### To assign global roles
 
-You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
+You can assign global roles to users either directly in the user list, or by opening the details page for a particular user and adding them there.
 
 {{< c8y-admon-important >}}
 By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Administration > Configuration settings](/users-guide/administration/#custom-template) in the *User guide*.

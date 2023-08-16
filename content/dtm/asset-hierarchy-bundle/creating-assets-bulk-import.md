@@ -25,7 +25,7 @@ To use the Bulk import feature, you must enable the **Digital Twin** permission 
 
 	* Under **Application access**, select "Dtm-ms".
 
-	* Under **Custom applications**, select "Digital Twin Manager".
+	* Under **Custom applications**, select "Digital twin Manager".
 
 5. Click **Save**.
 
@@ -45,15 +45,15 @@ Follow the steps below:
 
 1. Navigate to the **Assets** page and click **Import assets**.
 
-2. The **Import assets** dialog has a dropdown **Choose asset model**. If you have added the asset models, all the root asset models are listed in the dropdown.
+2. The **Import assets** dialog has a dropdown **Select asset model**. If you have added the asset models, all the root asset models are listed in the dropdown.
 
 3. Select the asset model for which you want to create the asset hierarchy.
 
 	![bulk-import-asset](/images/dtm/bulk-import/dtm-bulk-import-import-assets-window.png)
 
-4. On selection, two additional options appear:
+4. On selection, the following options become available:
 
-	* **Drop file here** - upload the CSV template as a file, for importing assets in bulk.
+	* **Drop CSV file here or click to browse** - upload the CSV template as a file, for importing assets in bulk.
 	* **Download Template** - download the CSV template for the selected asset model.
 
 	<br/>
@@ -90,14 +90,23 @@ The CSV template has the following fields:
 </tr>
 <tr>
 <td style="text-align:left"><b>Path</b></td>
-<td style="text-align:left">Remains blank when you create a root asset. For a subasset, provide a path up to the root asset.<br><br>
+<td style="text-align:left">
+Path denotes the location of the asset within the asset hierarchy.<br>
+For a root asset, it remains blank. For a subasset, provide a path up to the root asset.<br><br>
 <b>Example:</b><br>
-For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > Blade" the path value is "SE-Turbine-101/SE-T101-Rotor", where "SE-Turbine-101" and "SE-T101-Rotor" each represent the respective asset models.</td>
-<td style="text-align:left">Mandatory (for subassets)</td>
+For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > Blade" the path value is "SE-Turbine-101/SE-T101-Rotor", where "SE-Turbine-101" and "SE-T101-Rotor" each represent the respective asset models.<br><br>
+In case of partial import, the path is defined in relation to the asset from which the file is imported. For the immediate children of the asset, the path remains blank.<br/><br/>
+<b>Example:</b><br/>
+In the hierarchy, "Wind turbine > Rotor > Blade", to import a new Rotor, "SE-T102-Rotor," and a Blade, "SE-T101-Blade2," under the existing Turbine "SE-Turbine-101", the path value for the Rotor remains blank, and the path value for the Blade is "SE-T102-Rotor."
+</td>
+<td style="text-align:left">Mandatory (for all subassets)<br><br>
+Mandatory (for subassets except immediate children in the context of partial import)<br><br>
+</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Device ID / External ID</b></td>
-<td style="text-align:left">If the asset being created has a device associated with it, then provide the Device ID of the device here</td>
+<td style="text-align:left">If the asset being created has a device associated with it, then provide the Device ID of the device here.<br><br>
+Note that you can use a list of semi-colon separated Device IDs or External IDs to associate multiple devices to the asset.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
@@ -110,7 +119,7 @@ For an asset called "SE-T101-Blade 1" in the hierarchy "Wind turbine > Rotor > B
 <td style="text-align:left">6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br/><br/>
 Note that the <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br/>
 </td>
-<td style="text-align:left">Mandatory</td>
+<td style="text-align:left">Mandatory (If the property is set as required in the asset model. For details, see <a href="/dtm/asset-types/#to-add-an-asset-property-to-an-asset-model">To add an asset property to an asset model</a>).</td>
 </tr>
 </tbody>
 </table>
@@ -118,6 +127,8 @@ Note that the <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy"
 ![bulk-import-template](/images/dtm/bulk-import/dtm-bulk-import-template.png)
 
 {{< c8y-admon-info>}}
+Use only comma (,) as a separator when entering values in the CSV template.
+
 Modify the excel settings to provide the date in a YYYY-MM-DD format. This prevents auto-correction of the date on input.
 {{< /c8y-admon-info>}}
 
@@ -141,6 +152,9 @@ Then enter the asset details for child a models under the root asset.
 Next, enter the details for the next level in the hierarchy of subassets and repeat until the details for all the assets are entered in the CSV template.
 Save the CSV template in your system.
 
+{{< c8y-admon-info>}}
+It is recommended to import a maximum of 5000 assets at a time for a better user experience.
+{{< /c8y-admon-info>}}
 
 <a name=""></a>
 ### To upload a CSV template
@@ -170,7 +184,7 @@ If the bulk import fails, review the reported issues and try again.
 
 If the asset hierarchy already exists, and you want to import more assets, it can be achieved by a partial import.
 
-To import a single subasset or the subasset hierarchy:
+To import subassets or the subasset hierarchy:
 
 1. Navigate to the **Asset tree** page of the subasset and download the template using **Import assets**.
 
@@ -180,8 +194,6 @@ To import a single subasset or the subasset hierarchy:
 From any hierarchy level, the template will be downloaded only for its child hierarchy.
 Assets must only be imported for the child hierarchy.
 	{{< /c8y-admon-info>}}
-
-3. Enter the details for the subassets in the CSV template.
 
 4. Click **Import assets**.
 

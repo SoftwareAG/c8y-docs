@@ -4,7 +4,7 @@ title: Aligning data modeling and offloading
 layout: redirect
 ---
 
-#### Mapping document data to relational data
+### Mapping document data to relational data
 
 {{< product-c8y-iot >}} DataHub allows to offload data from the {{< product-c8y-iot >}} platform into a data lake and the subsequent analysis of the offloaded data using SQL. For that purpose, {{< product-c8y-iot >}} DataHub must transform the data from the document-based format into a relational format, which is then persisted as Parquet files in the data lake.
 
@@ -15,7 +15,7 @@ When the offloading is configured, data from the documents in the operational da
 
 For built-in data attributes specified by the platform, the type is fixed and known to {{< product-c8y-iot >}} DataHub. For other attributes {{< product-c8y-iot >}} DataHub determines the type by evaluating the aforementioned expression on the data stored in the operational database. Dremio either does this based on the database state at configuration time or on metadata captured earlier. For performance reasons, the evaluation is based on a subset of data, namely the first 4095 documents of the collection. When evaluating the expression and all instances of the attributes have the same type, this type defines the column type.
 
-#### Managing mixed types
+### Managing mixed types
 
 If instances of the attribute have diverging types, then the system can apply a type coercion mechanism to resolve such a mixed type constellation. The coercion mechanism derives a single, suitable type from the diverging types. For example, INTEGER and FLOAT are coerced to FLOAT while TIMESTAMP and VARCHAR are coerced to VARCHAR. You can configure how to deal with mixed types for each offloading pipeline. By default the system automatically resolves the mixed type by evolving the schema. That schema evolution uses the type coercion to introduce a new column with the coerced type. Alternatively the system stops the pipeline to allow for corrections. Section [Dealing with mixed types](/datahub/working-with-datahub/#mixed-types) describes how to configure those strategies.
 
@@ -23,17 +23,17 @@ If instances of the attribute have diverging types, then the system can apply a 
 Even though the system can resolve mixed types, it is strongly advised to avoid them as they may introduce additional adaptation effort. Take care that your data model does not mix up types and that you feed only type-consistent data into the {{< product-c8y-iot >}} platform.
 {{< /c8y-admon-important >}}
 
-#### Mapping measurement fragments to relational data
+### Mapping measurement fragments to relational data
 
 The offloading configuration mechanisms differ when dealing with series-value fragments of measurements. As additional fragments are often added dynamically, {{< product-c8y-iot >}} DataHub automatically picks up each series at runtime without the need to reconfigure the offloading pipeline.
 
 Each series must have a mandatory value of type NUMBER and an optional unit of type STRING. If the value is not of type NUMBER, {{< product-c8y-iot >}} DataHub determines a type for each series at offloading runtime. It evaluates the runtime type of each value and derives the column type for the corresponding offloading run. If all values for a series can be cast to BOOLEAN, FLOAT, STRUCT or LIST consistently, this will be the type of the resulting column. Otherwise, DataHub will use VARCHAR. If the use case mixes types for the same series, the aforementioned mixed type handling applies.
 
 {{< c8y-admon-info >}}
-Since version 10.16, the {{< product-c8y-iot >}} platform supports the time series model, which is a new internal data model for the measurements collection. For details on how to activate that model see section [Enterprise tenant > Enhanced time series support](/users-guide/enterprise-tenant/#timeseries) in the in the *{{< product-c8y-iot >}} User guide*. {{< product-c8y-iot >}} DataHub supports that data model when offloading the measurements collection. However, the specific case of measurements offloading in the TrendMiner mode is not supported when the time series model is used. When you switch from the default data model to the time series model, measurements offloadings still work. The switch back from the time series model to the default model is not supported. In that case the offloading cannot guarantee that all data is offloaded into the target table. To ensure completeness, re-configure the offloading to use a different target table when switching to the default data model.
+Since version 10.16, the {{< product-c8y-iot >}} platform supports the time series model, which is a new internal data model for the measurements collection. For details on how to activate that model see section [Enhanced time series support](/users-guide/enterprise-tenant/#timeseries) in the in the *{{< product-c8y-iot >}} User guide*. {{< product-c8y-iot >}} DataHub supports that data model when offloading the measurements collection. However, the specific case of measurements offloading in the TrendMiner mode is not supported when the time series model is used. When you switch from the default data model to the time series model, measurements offloadings still work. The switch back from the time series model to the default model is not supported. In that case the offloading cannot guarantee that all data is offloaded into the target table. To ensure completeness, re-configure the offloading to use a different target table when switching to the default data model.
 {{< /c8y-admon-info >}}
 
-#### Guidelines
+### Guidelines
 
 When modelling your data, take the following guidelines into account:
 
@@ -47,7 +47,7 @@ When modelling your data, take the following guidelines into account:
 |When defining attribute names in your data model, avoid special characters in attribute names. The attribute names are used as column names in the resulting offloading table and special characters may hinder working with those columns in follow-up applications.|
 |When modelling data within arrays, ensure that the position of the values within the array is fix throughout the documents being fed into the platform. Otherwise further processing might run into problems.|
 
-#### Limitations
+### Limitations
 
 When modeling your data, you have to be aware of the following limitations:
 

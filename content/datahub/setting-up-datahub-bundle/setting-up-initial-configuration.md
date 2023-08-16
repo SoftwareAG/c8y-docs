@@ -21,7 +21,7 @@ You need administration permissions to define the settings. See the section on [
 
 #### Dremio API user
 
-In order to access the data lake contents, you can use ODBC, JDBC, Dremio REST API, or a proxy REST API. See section [Working with {{< product-c8y-iot >}} DataHub > Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#querying-offloaded) for more details. The proxy REST API is served by the {{< product-c8y-iot >}} DataHub server, which acts as a proxy to Dremio. The proxy API requires a Dremio user for the interaction of {{< product-c8y-iot >}} DataHub server and Dremio. This Dremio API user can then also be used for data lake querying based on JDBC, ODBC, or Dremio REST API.
+In order to access the data lake contents, you can use ODBC, JDBC, Dremio REST API, or a proxy REST API. See section [Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#querying-offloaded) for more details. The proxy REST API is served by the {{< product-c8y-iot >}} DataHub server, which acts as a proxy to Dremio. The proxy API requires a Dremio user for the interaction of {{< product-c8y-iot >}} DataHub server and Dremio. This Dremio API user can then also be used for data lake querying based on JDBC, ODBC, or Dremio REST API.
 
 Therefore, you have to configure in the initial configuration under **Dremio API user** the name and the password of that Dremio API user.
 
@@ -36,7 +36,7 @@ The password of the Dremio API user must have at least eight characters, includi
 When using the proxy REST API, all queries are processed using the same Dremio API user. The queries are listed in the query log. Thus, the log shows all queries of all users having leveraged the proxy API.  
 {{< /c8y-admon-info >}}
 
-Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users).
+Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in section [Adding a Dremio user](/datahub/setting-up-datahub/#adding-a-dremio-user).
 
 #### Data Lake
 Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
@@ -128,9 +128,9 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A space in Dremio is created which you can use to organize your custom Dremio entities such as views. The name of the space is your tenant ID concatenated with 'Space', for example, t12345Space.
 
 ### Editing settings
-To edit the Dremio API user, click **Edit** in the **Dremio API user** section of the **Initial configuration** page. In the editor you can edit all user details, except for the username, which is fixed. In section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users), all user details are described.
+To edit the Dremio API user, click **Edit** in the **Dremio API user** section of the **Initial configuration** page. In the editor you can edit all user details, except for the username, which is fixed. In section [Editing a Dremio user](/datahub/setting-up-datahub/#editing-a-dremio-user), all user details are described.
 
-The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See the section [Working with {{< product-c8y-iot >}} DataHub > Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
+The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See the section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#importingexporting-offloading-configurations) for details on import/export.
 
 ### Deleting settings
 Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted, including the Dremio API user as well as additionally created Dremio users. Also the artifacts created by a corresponding Dremio user, like views, are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned in the previous section, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are not deleted, only the Dremio artefacts connecting to the data lake. To delete the data lake and its contents you must use the tooling of your data lake provider.

@@ -29,7 +29,7 @@ In Dremio a new view is provided, which combines the historical data in the data
 So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measurements collection. Other base collections are not yet supported.
 {{< /c8y-admon-info >}}
 
-You must follow the instructions in [Working with {{< product-c8y-iot >}} DataHub > Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
+You must follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
 
 ### Accessing Cumulocity IoT data in TrendMiner
 
@@ -45,7 +45,7 @@ The offloading pipeline must be active. If the pipeline is deactivated, you can 
 * **c8y_cdh_tm_measurements_live** is the live view combining **c8y_cdh_tm_measurements** with recent data from the Operational Store. Both views have the same schema.
 * **c8y_cdh_tm_tags** is the view over the table in the data lake, which stores the tag names and the source IDs. The source ID identifies the device managed in the {{< product-c8y-iot >}} platform. The tagname combines the source ID with the path in the measurements documents to the values establishing the time series. In TrendMiner you use the tagnames to select the time series you want to investigate. With this view you can map this series to the device in the platform.
 
-For details on the schema of these views/tables, see the section [Working with {{< product-c8y-iot >}} DataHub > Offloading Cumulocity IoT base collections](/datahub/working-with-datahub/#offloading-base-collections).
+For details on the schema of these views/tables, see the section [Offloading Cumulocity IoT base collections](/datahub/working-with-datahub/#offloading-base-collections).
 
 In TrendMiner you must connect to these Dremio views using ODBC. For the ODBC connection settings, you must navigate to the **Home** page in the {{< product-c8y-iot >}} DataHub UI and click the ODBC icon to open the ODBC connection settings.
 

@@ -6,7 +6,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} DataHub provides functionality to configure, manage, and execute offloading pipelines that extract and transform data from the Operational Store of {{< product-c8y-iot >}} and offload it to a data lake.
 
-You need configuration or administration permissions to work with offloading pipelines. See the section [Setting up {{< product-c8y-iot >}} DataHub > Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+You need configuration or administration permissions to work with offloading pipelines. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 | Section | Content |
 | -----   | -----   |

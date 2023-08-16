@@ -279,16 +279,6 @@ See the table below for the full set of bootstrap fields you can add:
 <td style="text-align: left">Mandatory for LWM2M bootstrap</td>
 </tr>
 <tr>
-<td style="text-align: left">Generate bootstrap server config</td>
-<td style="text-align: left">generateBootstrapServerConfig</td>
-<td style="text-align: left">Boolean</td>
-<td style="text-align: left">In order to establish a connection between the LWM2M client and the LWM2M bootstrap server on the bootstrap interface, the client requires a pre-loaded LWM2M bootstrap server account.
-This property enables {{< product-c8y-iot >}} to generate a bootstrap server configuration (for example, the security information like server URI, server ID, or security mode) for the LWM2M bootstrap server and writes it back to the client during bootstrap. Default is false.
-Refer to the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">OMA LWM2M 1.0 technical specification</a> for more details.
-</td>
-<td style="text-align: left">Optional</td>
-</tr>
-<tr>
 <td style="text-align: left">LWM2M bootstrap short server ID</td>
 <td style="text-align: left">bootstrapShortServerId</td>
 <td style="text-align: left">Integer</td>

@@ -21,7 +21,7 @@ helpcontent:
 
 {{< c8y-admon-related >}}
 - [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
-- [Web SDK > Application configuration](/guides/web/#application-configuration) for further information on how to customize the {{< product-c8y-iot >}} environment.
+- [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 {{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
@@ -37,7 +37,7 @@ ROLES & PERMISSIONS:
 - To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
   {{< /c8y-admon-req >}}
 
-{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](#widgets-collection) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [Web SDK guide](/web/) for details.
+{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](/cockpit/widgets-collection/) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [Web SDK](/web/) for details.
 
 <a name="creating-dashboards"></a>
 
@@ -77,7 +77,7 @@ The widget titles will be translated only if a valid translation is available.
 
 <br>Next, widgets can be added to the report. They allow you to display more detailed data in your dashboard.
 
-Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
+Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
 <a name="sharing-dashboards"></a>
 ### To share a dashboard
@@ -124,7 +124,7 @@ The dashboard editor will open up. For details on the fields, refer to [To creat
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the
-"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [Sharing dashboards](#sharing-dashboards).
+"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#sharing-dashboards).
 
 
 ### To delete a dashboard

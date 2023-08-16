@@ -18,6 +18,6 @@ For performance reasons, the map on the Home dashboard displays icons for a maxi
 
 The Home dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here.
 
-For details on editing a dashboard, refer to [Working with dashboards](#dashboards).
+For details on editing a dashboard, refer to [Working with dashboards](/cockpit/dashboards/).
 
 To reset the Home dashboard to its original content, click **More...** at the right of the top menu bar and then click **Restore dashboard**.

@@ -35,7 +35,7 @@ Packages are combinations of plugins and blueprints which can be packed together
 
 Packages can contain two types of content:
 
-- [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
+- [**Plugins**](#plugins) can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
 
 Packages can be located on the **Packages** tab in the **Applications** page.

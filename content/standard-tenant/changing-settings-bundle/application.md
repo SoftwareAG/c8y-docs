@@ -6,8 +6,6 @@ section:
   - platform_administration
 ---
 
-<a name="default-app"></a>
-
 Click **Application** in the **Settings** menu to change applications settings.
 
 ![Application settings](/images/users-guide/Administration/admin-settings-application.png)
@@ -30,6 +28,6 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
 {{< c8y-admon-related >}}
-- [Managing applications](#managing-applications) for general information on managing applications.
-- [Managing users](#managing-users) for general information on managing users.
+- [Platform administration > Standard tenant administration > Managing applications](/standard-tenant/ecosystem/#managing-applications/) for general information on managing applications.
+- [Platform administration > Standard tenant administration > Managing users](/standard-tenant/managing-users/) for general information on managing users.
 {{< /c8y-admon-related >}}

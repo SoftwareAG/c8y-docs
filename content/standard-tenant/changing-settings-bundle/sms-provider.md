@@ -14,7 +14,7 @@ To set or remove SMS provider configurations: ADMIN permission for the permissio
 
 {{< /c8y-admon-req >}}
 
-SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, for example, on alarms.
+SMS are used throughout the platform for various features like [two-factor authentication](/authentication/tfa) and user notifications, for example, on alarms.
 
 By providing your credentials you enable platform features that utilize SMS services.
 

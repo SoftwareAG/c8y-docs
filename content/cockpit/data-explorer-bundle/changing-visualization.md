@@ -19,6 +19,15 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
+{{< c8y-admon-related >}}
+
+- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
+
+{{< /c8y-admon-related >}}
+
+
+In the data explorer, data points (that is measurements or sensor data) can be visualized.
+
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -26,12 +35,10 @@ ROLES & PERMISSIONS:
 - To visualize already selected data points: READ permission for permission type "Measurements" or READ permission for "Measurements" in the inventory roles
 - To send as widget to report/dashboard: ADMIN permission for permission type "Inventory"
 
-Note that datapoints existing in the data point library are visible by anyone without the need of any permission.
+Note that data points existing in the data point library are visible by anyone without the need of any permission.
 {{< /c8y-admon-req >}}
 
-In the data explorer, data points (that is measurements or sensor data) can be visualized.
-
-The data explorer is available for all assets at once or just for a particular asset. To access the data explorer:
+The data explorer is available for all assets at once or just for a particular asset.
 
 - Click **Data explorer** in the navigator to visualize all data points of all assets.
 
@@ -51,23 +58,24 @@ The data points properties are pre-filled as follows:
 
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
-There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from library**.
+There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
-Click **Save as default** to store the data point settings into the device's managed object. These settings will then take precedence over the settings from the data point library, for example, when this data point is added to a data explorer by other users, or when there is a threshold smart rule processing this device and its data point. If you want to restore the data point library default settings, click **Load from library** and then click **Save as default**.
-
 **Example:**
 
-Let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an "On measurement threshold create alarm" smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm. However, if you change this data point's settings for your device in the data explorer and click **Save as default**, then the smart rule will use these overridden settings instead of the ones from the library. For other devices though, it will still use the settings from the library.
+Let's assume you have a temperature data point defined in the library and a device which sends temperature measurements (matching by fragment and series with the data point in the library). If you create an "On measurement threshold create alarm" smart rule and select the data point from the library, then it will use the settings from the library to decide whether to create an alarm.
 
 {{< c8y-admon-info >}}
 Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 {{< /c8y-admon-info >}}
 
+<a name="change-visualization"></a>
+### Changing data explorer visualization
+
 To change the visualization in the data explorer, you can modify several properties.
 
-### Time range
+#### Time range
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
@@ -82,7 +90,7 @@ To change the time range on the x-axis, use one of the following options:
 Real-time updates will be switched off if you set a time range in the past.
 {{< /c8y-admon-info >}}
 
-### Aggregation
+#### Aggregation
 
 You may aggregate the data being displayed to get an efficient overview over larger time periods.
 
@@ -96,13 +104,13 @@ When aggregation is activated, the timestamp which is displayed in data point gr
 * If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
 
 
-### Realtime updating
+#### Realtime updating
 
 By default, realtime updating is enabled which means that the data being shown is updated as new data flows into the system from the connected devices.
 
 To turn realtime updating on or off, click **Realtime** in the top menu bar. A green light indicates, that realtime updating is enabled.
 
 
-### Data point visibility
+#### Data point visibility
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.

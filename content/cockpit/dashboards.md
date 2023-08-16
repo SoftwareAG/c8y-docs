@@ -19,7 +19,13 @@ helpcontent:
     Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
 ---
 
-Dashboards provide you with a customized visualization of your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
+{{< c8y-admon-related >}}
+- [Tutorials > Add a custom widget to a dashboard](/guides/web/#add-a-custom-widget) in the *Web SDK guide* for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
+- [Application configuration](/guides/web/#application-configuration) in the *Web SDK guide* for further information on how to customize the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
+{{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
+Dashboards provide you with a customized visualization of your data, for example, alarms and events, and allow you to trigger remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
@@ -35,9 +41,12 @@ ROLES & PERMISSIONS:
 
 <a name="creating-dashboards"></a>
 
+
 ### To create a dashboard
 
-1. Select the group or the device in the navigator for which to create a dashboard.
+To create your individualized dashboard, execute the following steps:
+
+1. In the **Groups** menu select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
 
 3. In the **Tab** section of the dashboard editor, provide the following information:
@@ -66,7 +75,7 @@ The widget titles will be translated only if a valid translation is available.
 
 9. Click **Save** to create and open the dashboard.
 
-<br>Next, widgets can be added to the report.
+<br>Next, widgets can be added to the report. They allow you to display more detailed data in your dashboard.
 
 Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
 
@@ -86,6 +95,21 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 {{< c8y-admon-info >}}
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 {{< /c8y-admon-info >}}
+
+<a name="global-time-context"></a>
+### Global time context
+
+In the widget configuration, you can specify a global time range for your dashboards. When using a global time range, all data in a dashboard will be aligned to this range. After setting the global time range in a first widget, this shared context can then be used by other widgets that are configured to use the global date context.
+
+The global time range can be set to any time span, depending on the monitoring needs, by using a custom date picker. The time range is displayed at the top of the dashboard, so you can immediately see the context for which the data is presented. Additionally, you can share dashboards with a specific time context by including the time context parameters in a URL. URL parameters will be set automatically when users set the global time context with the picker.
+
+{{< c8y-admon-info >}}
+This feature is currently available for the following widgets: Event list, Data points graph, and Data points table.
+{{< /c8y-admon-info >}}
+
+<img src="/images/users-guide/cockpit/cockpit-dashboard-global-time.png" name="Global time context"/>
+
+Widgets synchronized with the dashboard time range are indicated by a respective icon at the top right of the widget.
 
 ### To edit a dashboard
 

@@ -2,12 +2,18 @@
 weight: 55
 title: Widgets collection
 aliases:
-  - /users-guide/cockpit
-  - /users-guide/cockpit
 layout: bundle
-section: 
+section:
   - app_development
 ---
+
+{{< c8y-admon-related >}}
+- [Cockpit > Data explorer](/users-guide/cockpit#data-explorer) in the *User guide* for details on visualizing your data when working with widgets.
+- [Administration](/users-guide/administration#managing-applications) in the *User guide* for details on managing applications.
+- [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/#overview) in the *Protocol integration guide* for more information on using Cloud Fieldbus in {{< product-c8y-iot >}}.
+- [Tutorials > Add a custom widget to a dashboard](/users-guide/web/tutorials/#add-a-custom-widget) in the *Web SDK guide* for details on customized widgets in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
 
 The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
@@ -143,7 +149,7 @@ The following types are available:
 <a name="alarm-list"></a>
 ### Alarm list
 
-The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 ![Alarm list widget](/images/users-guide/cockpit/cockpit-widget-alarm-list.png)
 
@@ -165,7 +171,7 @@ The "All critical alarms" widget shows all objects with a critical alarm. Apart 
 
 ![Critical alarms](/images/users-guide/cockpit/cockpit-widget-critical-alarms.png)
 
-For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms, refer to [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 <a name="applications"></a>
 ### Applications
@@ -246,7 +252,7 @@ The property "Active alarm status" shows active alarms as icons in the table. If
 ![Reboot device button configuration](/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
 {{< c8y-admon-info >}}
-The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Device details > Shell](/users-guide/device-management/#shell).<br>
+The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device management > Device details > Shell](/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
 {{< /c8y-admon-info >}}
 
@@ -347,7 +353,9 @@ The "Help and service" widget displays links to help and service resources. Ther
 <a name="widget-image"></a>
 ### Image
 
-The "Image" widget lets you display a single image to be selected from your file system by browsing. There are no additional parameters to be configured.
+The "Image" widget lets you display a single image to be selected from your file system by browsing. When the image is uploaded, it is possible to change the image size and alignment.
+
+![Image widget](/images/users-guide/cockpit/cockpit-image-widget.png)
 
 <a name="info-gauge"></a>
 ### Info Gauge
@@ -395,6 +403,10 @@ The following code sanitization options can be selected:
  - strict - Does not allow any JS or angularjs directives.
  - lax (default) - Allows partly JS (events) and all angularjs directives.
  - none - Allows everything.
+
+{{< c8y-admon-info >}}
+The sanitization option "lax" includes a defined list of directives that are excluded from sanitization. For more examples on how to customize the sanitization options, see the help text toggle in the **HTML code** section.
+{{< /c8y-admon-info >}}
 
 ![HTML widget](/images/users-guide/cockpit/cockpit-widget-html.png)
 
@@ -517,7 +529,7 @@ The "Recent alarms" widget shows all alarms of all severity sorted by time. Ther
 
 ![Recent alarms widget](/images/users-guide/cockpit/cockpit-widget-recent-alarms.png)
 
-For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms, refer to [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 <a name="relay-array-control"></a>
 ### Relay array control

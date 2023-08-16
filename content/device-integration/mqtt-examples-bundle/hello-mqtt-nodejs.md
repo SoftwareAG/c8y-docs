@@ -127,10 +127,10 @@ Installation needs to be done only once. Afterwards, you only need to execute th
 $ npm start
 ```
 
-You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+You should see a new registered device in the Device management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information about it will be printed to the console.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

@@ -37,7 +37,7 @@ Subscribe
 
 where:
 
-* `<protocol>` can be <kbd>s</kbd> (persistent), <kbd>t</kbd> (transient), <kbd>q</kbd> (quiescent) and <kbd>c</kbd> (CEP), see [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) for more information.
+* `<protocol>` can be <kbd>s</kbd> (persistent), <kbd>t</kbd> (transient), <kbd>q</kbd> (quiescent) and <kbd>c</kbd> (CEP), see [SmartREST 1.0 > The protocol > Processing mode](/smartrest/smartrest-one/#processing-mode) for more information.
 * `<direction>` can be <kbd>u</kbd> (upstream from the device), <kbd>d</kbd> (downstream to the device) or <kbd>e</kbd> (error).
 * `<type>` can be <kbd>s</kbd> (static), <kbd>c</kbd> (custom, device-defined), <kbd>d</kbd> (default), <kbd>t</kbd> (template) or <kbd>cr</kbd> (credentials).
 
@@ -58,4 +58,4 @@ where:
 
 #### Templates
 
-See the [templates quick reference](#templates-quick-reference) for an overview of the available MQTT static templates.
+See the [templates quick reference](/smartrest/mqtt-static-templates) for an overview of the available MQTT static templates.

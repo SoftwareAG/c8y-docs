@@ -1,10 +1,7 @@
 ---
 title: Examples
 layout: bundle
-section: 
+section:
   - app_development
 weight: 70
-aliases:
-  - /http
-  - /hello-microservice-python
 ---

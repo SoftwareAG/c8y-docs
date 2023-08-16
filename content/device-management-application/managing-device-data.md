@@ -37,6 +37,15 @@ helpcontent:
   content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates."
 ---
 
+{{< c8y-admon-related >}}
+* [Device integration > Fragment library > Firmware](/device-integration/fragment-library/#firmware) in the *Reference guide* for details on the `c8y_Firmware` fragment used in managed objects.
+* [Device integration > Fragment library > Software](/device-integration/fragment-library/#software) in the *Reference guide* for details on legacy software management via the `c8y_SoftwareList` fragment, software updates via the `c8y_SoftwareUpdate` fragment and advanced software management via the `c8y_SupportedOperations` and `c8y_SupportedSoftwareTypes` fragments used in managed objects.
+* [Device integration > Fragment library > Configuration](/device-integration/fragment-library/#configuration) in the *Reference guide* for details on text-based configuration, file-based configuration and typed file-based configuration.
+* The [device credentials API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Device-credentials) for REST API methods concerning device credentials.
+* [Device integration > Fragment library > Device profile](/device-integration/fragment-library/#device-profile) in the *Reference guide* for details on the `c8y_DeviceProfile` fragment used in managed objects.
+* [Device integration using MQTT > Device certificates](/device-integration/mqtt/#device-certificates) in *Device integration* for information on device certificates in the context of MQTT.
+{{< /c8y-admon-related >}}
+
 The Device Management application provides features that support you in efficiently managing your devices.
 They are accessible through the **Management** menu in the navigator:
 

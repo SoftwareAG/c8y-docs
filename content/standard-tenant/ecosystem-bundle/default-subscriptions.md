@@ -1,7 +1,7 @@
 ---
 title: Default subscriptions
 layout: bundle
-weight: 60
+weight: 70
 section:
   - platform_administration
 ---
@@ -49,7 +49,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
@@ -57,7 +57,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled)</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web application</td>

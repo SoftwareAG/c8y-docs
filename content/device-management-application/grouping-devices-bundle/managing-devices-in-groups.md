@@ -4,14 +4,13 @@ title: Managing devices in groups
 layout: redirect
 ---
 
-<a name="assigning-devices"></a>
 ### To assign devices to a group
 
 You can assign devices to groups in several ways.
 
 **From the group perspective**
 
-You can quickly assign devices to groups by using the drag and drop functionality in the navigator, see [Restructuring groups and devices](#restructuring-groups).  
+You can quickly assign devices to groups by using the drag and drop functionality in the navigator, see [Restructuring groups and devices](#restructuring-groups-and-devices).  
 
 Moreover, you can assign devices performing the following steps:
 

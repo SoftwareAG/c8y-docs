@@ -4,15 +4,13 @@ title: User options and settings
 layout: bundle
 section:
   - getting_started
-aliases:
-  - /users-guide/overview
 ---
 
-Clicking the **User** button at the top right will open a menu which provides access to various actions or information.
+Clicking the **User** button at the top right opens the right drawer which provides access to various actions and information.
 
 <img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
-The **User** menu contains the following items:
+At the top you find the following items:
 
 <table>
 <colgroup>
@@ -39,28 +37,26 @@ The **User** menu contains the following items:
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
 <tr>
-<td style="text-align:left">Request support</td>
-<td style="text-align:left">Redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a>. </td>
-</tr>
-<tr>
 <td style="text-align:left">Activate support</td>
 <td style="text-align:left">Allows support users to access your account.<br>
 <br>
 Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
-</tr>
-<tr>
-<td style="text-align:left">Revoke tokens</td>
-<td style="text-align:left">Revoking tokens logs out all users currently logged in via "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.<br>
-<br>
-To revoke tokens, you must have ADMIN permission for the permission type "User management".  
-</td>
-</tr>
-<tr>
-<td style="text-align:left">Version information</td>
-<td style="text-align:left">Shows release information on the {{< product-c8y-iot >}} version you are using (for example, 10.13.0.034) for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
-</tr>
 </tbody>
 </table>
+
+In the **UI settings** section change the language of the UI, see [To change the language of the UI](#change-language).
+
+In the **Platform info** section, you find information on the infrastructure of your platform:
+
+- The ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.
+- Release version information for both the backend and the UI.
+
+Moreover you can click **Detailed info** to download more detailed platform information.
+
+The **Bookmarks** section provides links to the most common pages and processes in the platform.
+
+In the **Support** section, the request support item redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a> while the **Documentation** section provides links to the most relevant guides.
+
 
 <a name="change-user-settings"></a>
 ### To change user settings
@@ -69,21 +65,48 @@ Several account settings can be changed by the user.
 
 1. Click the **User** button at the right of the top bar and then click **User Settings**.  
 2. In the **Edit user** dialog box, make the relevant changes.
-3. To change the language, select a [language](#languages) from the dropdown list in the  **Language** field.
-4. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies.
-5. Use the **In-product information** toggle to opt-out from the Knowledge Hub which is enabled by default.
-6. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
-7. Click **Set up two-factor authentication** to set up two-factor authentication and increase tenant security.
-8. Click **Save** to apply your settings.
+3. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies.
+4. Use the **In-product information** toggle to opt-out from the Knowledge Hub which is enabled by default.
+5. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
+6. Click **Set up two-factor authentication** to set up two-factor authentication and increase tenant security.
+7. Click **Save** to apply your settings.
 
-The user interface language will be selected along the following criteria, in the order listed below:
 
-*  The language selected in the {{< product-c8y-iot >}} user settings.
-*  The language selected in the browser preferences.
-* 	The operating system language.
+<a name="change-password"></a>
+### To change your password
 
-<a name="languages"></a>
-#### Available languages
+1. Click the **User** button at the right of the top bar and then click **User settings**.
+2. In the **Edit user** dialog box, click **Change Password**.
+3. Enter a password and confirm it.
+4. Click **Save** to apply your settings.
+
+Make sure to select a strong password. To support you in doing so, a password strength indicator is displayed along with a password change.
+
+<img src="/images/users-guide/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
+
+By default, the password must meet the following conditions:
+
+* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}. Contact your Operations team on how to configure this setting according to your needs.
+* Include each of the following character types:
+  * uppercase letters: `[A-Z]`, for example `ABCDEF`.
+  * lowercase letters: `[a-z]`, for example `abcdef`.
+  * numbers: `[0-9]`, for example: `123456`.
+  * any other symbol from following list `` `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/`` as a special character, for example `!@#$%^`.
+
+{{< c8y-admon-info >}}
+The password rules can be configured by the administrator, that means, your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
+{{< /c8y-admon-info >}}
+
+<a name="change-language"></a>
+### To change the language of the UI
+
+The user interface language is selected along the following criteria, in the order listed below:
+
+* The language selected in the UI settings.
+* The language selected in the browser preferences.
+* The operating system language.
+
+Change the language in the **UI settings** section by selecting a language from the dropdown list. Reload the page to apply the new language setting.
 
 The UI is available in the following languages:
 
@@ -101,25 +124,3 @@ The UI is available in the following languages:
 |Polish|pl|
 |Russian|ru|
 |Spanish|es|
-
-
-<a name="change-password"></a>
-### To change your password
-
-1. Click the **User** button at the right of the top bar and then click **User settings**.
-2. In the **Edit user** dialog box, click **Change Password**.
-3. Enter a password and confirm it.
-4. Click **Save** to apply your settings.
-
-Make sure to select a strong password. To support you in doing so, a password strength indicator is displayed along with a password change.
-
-<img src="/images/users-guide/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
-
-By default, the password must meet the following conditions:
-
-* Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}, see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).)
-* Include each of the following character types: uppercase letters, lowercase letters, numbers and symbols.
-
-{{< c8y-admon-info >}}
-The password rules can be configured by the administrator, that means, your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
-{{< /c8y-admon-info >}}

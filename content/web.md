@@ -1,5 +1,5 @@
 ---
-title: Developing applications
+title: Web SDK
 icon: "c8y-icon c8y-icon-css"
 type: root
 layout: redirect

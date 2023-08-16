@@ -209,7 +209,7 @@ Note that the subscription is established after the device creation, otherwise i
 
 #### Create new event with JSON via MQTT
 
-The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/device-integration/rest#step-0-request-device-credentials) step.
+The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/device-integration/rest/#step-0-request-device-credentials) step.
 
 {{< c8y-admon-important >}}
 Do not use new line characters  \r\n and escaping characters specific for Windows OS.
@@ -251,7 +251,7 @@ await client.SubscribeAsync(new MqttMessageRequest() { TopicName = "error" });
 await client.PublishAsync(messageJson);
 ```
 
-For specific procedural details review [JSON via MQTT](/reference/smartrest-two/#json-via-mqtt).
+For specific procedural details review [JSON via MQTT](/smartrest/json-via-mqtt).
 
 #### Building and running the application
 
@@ -268,7 +268,7 @@ and this command to run it:
 $ dotnet run
 ```
 
-After starting the application, you should see a new registered device in the Device Management application listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+After starting the application, you should see a new registered device in the Device management application listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), the information about it will be printed to the console.
 

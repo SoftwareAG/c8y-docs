@@ -20,13 +20,7 @@ The MQTT implementation of {{< product-c8y-iot >}} provides the following benefi
 * TLS support.
 * Full horizontal scalability.
 
-The MQTT section is structured as follows:
-
-* [MQTT implementation](/device-integration/mqtt#implementation) gives a detailed reference of protocol-level aspects in the {{< product-c8y-iot >}} implementation of MQTT.
-* [Device integration](/device-integration/mqtt#device-integration) walks you through the process of interfacing devices with {{< product-c8y-iot >}} through MQTT.
-* [Device certificates](/device-integration/mqtt#device-certificates) describes how devices can connect via MQTT with certificates.
-
-Also see our [SmartREST documentation](/reference/smartrest-two).
+Also see our [SmartREST documentation](/smartrest/smartrest-two).
 
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend you to consult one of the numerous introductions in the Internet. Some references can be found on the [MQTT website](https://mqtt.org/mqtt-specification/).
 

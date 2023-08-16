@@ -2,7 +2,7 @@
 weight: 75
 title: Data point library
 layout: bundle
-section: 
+section:
   - app_development
 helpcontent:
   - label: data-point-library
@@ -57,6 +57,10 @@ A list of available data points will be opened. For each data point, the followi
 |Maximum|Minimum value shown on the y-axis
 |Yellow range|Min/max values for the yellow range (MINOR alarms)
 |Red range|Min/max values for the red range (CRITICAL alarms)
+
+{{< c8y-admon-info >}}
+With the button next to the fragment and series fields you can pick the values for fragment and series from an existing data point using the data point selector.
+{{< /c8y-admon-info >}}
 
 3. Click **Save** to add the data point to the library.
 

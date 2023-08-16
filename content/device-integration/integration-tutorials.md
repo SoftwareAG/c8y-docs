@@ -2,6 +2,6 @@
 weight: 90
 title: Integration tutorials
 layout: bundle
-section: 
+section:
   - device_management
 ---

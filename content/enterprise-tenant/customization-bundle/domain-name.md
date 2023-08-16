@@ -4,30 +4,40 @@ title: Domain name
 layout: redirect
 section:
   - platform_administration
-aliases:
-  - /users-guide/enterprise-edition
 ---
 
 A key feature of the {{< enterprise-tenant >}} is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}}. In addition you'll be able to create subtenants
 using your domain. These will be using **\<subtenantName\>.iot.mycompany.com** as their host names.
 
-{{< c8y-admon-info >}}
-The custom domain name functionality is only available for {{< product-c8y-iot >}} cloud installations or on-prem installations which don't use a custom load balancer.
-{{< /c8y-admon-info >}}
-
 {{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The domain management feature comes as default with the {{<enterprise-tenant>}} tenant and is available in the Administration application.
+
+The domain management functionality is enabled by subscribing to the "sslmanagement" microservice.
+
+ROLES & PERMISSIONS:
+
+* To upload certificate:
+    * READ, ADMIN permission for the "Inventory" permission type;
+    * READ, ADMIN permission for the "Options management" permission type;
+    * READ, ADMIN permission for the "Application management" permission type;
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
+
+PREREQUISITES
 
 There are three prerequisites for using a custom domain:
 
-- To activate your domain, a valid license that covers your wildcard domain is required.
+1. To activate your domain, a valid license that covers your wildcard domain is required.
    Please contact [product support](/welcome/contacting-support/) to install a license for your domain.
-- You've obtained a valid wildcard SSL certificate for your IoT domain, for
+2. You've obtained a valid wildcard SSL certificate for your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
-- There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
+3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are
    routed to {{< product-c8y-iot >}}. (see below).
-   {{< /c8y-admon-req >}}
 
-### SSL certificate requirements
+SSL CERTIFICATE REQUIREMENTS
 
 The following criteria must be met by any SSL certificate to be used with the {{< enterprise-tenant >}} feature:
 
@@ -44,10 +54,17 @@ The following criteria must be met by any SSL certificate to be used with the {{
 {{< product-c8y-iot >}} supports a single certificate that is signed by the root CA, as well as a full chain certificate which
 contains one or more intermediate certificates.
 
-### To package the SSL certificate in PKCS #12 format
+{{< /c8y-admon-req >}}
 
-In order to use an SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key must be uploaded to
-the platform in a single file, using the PKCS #12 file format.
+
+{{< c8y-admon-info >}}
+The custom domain name functionality is only available for {{< product-c8y-iot >}} cloud installations or on-prem installations which don't use a custom load balancer.
+{{< /c8y-admon-info >}}
+
+
+### To package the SSL certificate in PKCS #12
+
+In order to use an SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key must be uploaded to the platform in a single file, using the PKCS #12 file format.
 
 Most certificate authorities deliver their certificates and corresponding private keys in the PEM file format, using two
 separate text files for the certificate chain and the private key. Make sure that the private key is not

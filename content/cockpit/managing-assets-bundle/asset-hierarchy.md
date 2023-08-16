@@ -14,6 +14,13 @@ helpcontent:
 
 ---
 
+{{< c8y-admon-related >}}
+- [Cumulocity IoT´s domain model](/concepts/domain-model#overview) in the *Concepts guide* for details on {{< product-c8y-iot >}}'s domain model.
+- [Device management](/users-guide/device-management#overview) for details on working with devices in {{< product-c8y-iot >}}.
+- [Tutorials > Add a Jest-based unit test](/guides/web/tutorials/#add-a-unit-test) in the *Web SDK guide* for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
+
 Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
 
 
@@ -30,16 +37,16 @@ Assets are organized in hierarchies. For example, an energy monitoring applicati
 
 The asset hierarchy is composed of two types of objects:
 
-* **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
+* **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device management section.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
 To position a device in the asset hierarchy, you must "assign" the device to the respective group (see below).
 
 {{< c8y-admon-info >}}
-Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
+Single devices are not managed in the Cockpit application. They are managed in the Device management application.
 {{< /c8y-admon-info >}}
 
 <a name="hierarchies"></a>
@@ -58,8 +65,7 @@ In the Cockpit application, you construct your asset hierarchy by creating group
 
 * **Gateway devices** establish the communication from other devices to {{< product-c8y-iot >}} but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
-The following section explains
- work with smart devices and gateway devices in the Cockpit application.
+The following section explains how to work with smart devices and gateway devices in the Cockpit application.
 
 The first example shows how smart devices are linked into the asset hierarchy:
 
@@ -71,10 +77,10 @@ The second example shows how gateway devices can be used in the Cockpit applicat
 
 ![image alt text](/images/users-guide/cockpit/cockpit-groups-image3.png)
 
-Gateway devices are as well represented as top level devices in the Device Management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
+Gateway devices are as well represented as top level devices in the Device management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 
-As you can see from the example, devices can have completely different hierarchies in the Device Management application and in the Cockpit application:
-While inside Device Management all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
+As you can see from the example, devices can have completely different hierarchies in the Device management application and in the Cockpit application:
+While inside the Device management application all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
 
 ### Cockpit assets versus business assets
 

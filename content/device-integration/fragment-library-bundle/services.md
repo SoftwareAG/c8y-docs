@@ -2,7 +2,7 @@
 weight: 180
 title: Services
 layout: bundle
-section: 
+section:
   - device_management
 ---
 
@@ -18,7 +18,7 @@ Query, update, add and remove services using {{< product-c8y-iot >}} REST API fo
 
 #### Announcing a service to the platform
 
-Using Inventory REST API:
+Using the Inventory REST API:
 
 ```http
 POST /inventory/managedObjects/<deviceId>/childAdditions
@@ -28,7 +28,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 
 ```json
 {
-  "name": "MongoDB",
+  "name": "DatabaseService",
   "type": "c8y_Service",
   "serviceType": "systemd",
   "status": "up"
@@ -42,18 +42,19 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 |serviceType  | Yes       | An arbitrary string for organizing services|
 |status       | Yes       | 'up', 'down', 'unknown' or any custom service status|
 
-Or using SmartREST static template 102. The second parameter - the unique ID does not reference the internal numeric ID
-but a string based external ID which is defined by the device not by the platform. We recommend prefixing the unique ID
-with a device specific prefix to avoid clashes with other devices running the same service:
+Using [SmartREST static template 102](/smartrest/mqtt-static-templates/#102) sent to topic `s/us/<serviceId>`:
 
-`102,myDevice_MongoDb,systemd,MongoDb,up`
+The second parameter, the unique ID, does not reference the internal numeric ID but a string-based external ID which is defined by the device instead of the platform.
+We recommend you to prefix the unique ID with a device-specific prefix to avoid clashes with other devices running the same service:
+
+`102,myDatabaseDevice,systemd,DatabaseService,up`
 
 #### Updating the status of a service
 
 Using Inventory REST API:
 
 ```http
-POST /inventory/managedObjects/<serviceId>
+PUT /inventory/managedObjects/<serviceId>
 
 Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 ```
@@ -68,7 +69,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.managedObject+json"
 | ----  | ----      | ----    |
 |status | Yes       | 'up', 'down', 'unknown' or any arbitrary string specifying the service status|
 
-Or using SmartREST static template 104 (remember to target the service in the MQTT topic using its unique ID):
+Or using [SmartREST static template 104](/smartrest/mqtt-static-templates/#104) sent to topic `s/us/<serviceId>`:
 
 `104,down`
 
@@ -77,7 +78,7 @@ Or using SmartREST static template 104 (remember to target the service in the MQ
 Measurement REST API:
 
 ```http
-POST /device/<serviceId>/measurements
+POST /measurement/measurements
 
 Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 ```
@@ -85,7 +86,7 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 ```json
 {
   "source": {
-    "id": "123"
+    "id": "<serviceManagedObjectId>"
   },
   "time": "2020-03-19T12:03:27.845Z",
   "type": "c8y_Memory",
@@ -98,7 +99,8 @@ Content-Type: "application/vnd.com.nsn.cumulocity.measurement+json"
 }
 ```
 
-Or using SmartREST static template 200 sent to topic `s/us/<serviceUniqueId>`:
+
+Or using [SmartREST static template 200](/smartrest/mqtt-static-templates/#200) sent to topic `s/us/<serviceId>`:
 
 `200,c8y_Memory,allocated,100,MB`
 

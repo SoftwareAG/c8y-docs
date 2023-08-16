@@ -1,10 +1,11 @@
 ---
-weight: 35
+weight: 60
 title: Monitoring microservices
 layout: bundle
 section:
   - platform_administration
 ---
+
 
 You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
@@ -22,9 +23,7 @@ The following information is provided on the **Status** tab:
 * Subscriptions - number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice.
 * Alarms - alarms for given application, provided in realtime.
 * Events - events for given application, provided in realtime.
-* Smart rules - alarms for given application.
-
-The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner.
+* Smart rules - list of applicable smart rules.
 
 #### Alarms and events
 
@@ -33,7 +32,7 @@ Most of the alarms and events visible in the **Status** tab are strictly technic
 There are two user-friendly alarm types:
 
 * `c8y_Application_Down` - critical alarm which is created when no microservice instance is available.
-* `c8y_Application_Unhealthy` - minor alarm which is created when there is at least one microservice instance working properly, but not all of them are fully operating.
+* `c8y_Application_Unhealthy` - major alarm which is created when there is at least one microservice instance working properly, but not all of them are fully operating.
 
 User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, that is all the microservice instances are working properly.
 
@@ -45,7 +44,7 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 
 ### Log files
 
-{{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices.
+{{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices owned by the tenant.
 
 To view logs, open the **Logs** tab of the respective microservice.
 

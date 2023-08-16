@@ -13,7 +13,20 @@ helpcontent:
       In order to easily search through logs, specify filter criteria in the top bar for type, date range or user and apply them."
 ---
 
-Audit logs show the operations that users have carried out.
+**Audit logs** show security-relevant operations a user has processed. For example, an audit log is generated when a user logs into a gateway.
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view audit logs: READ permission for permission type "Audit"
+- To create audit logs you need Admin permission for the permission type "Audit". Note however, that you cannot create audit logs from the UI. For details on how to create audit logs via REST refer to [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}}.
+{{< /c8y-admon-req >}}
+
+
+{{< c8y-admon-related >}}
+- [Getting started > Technical concepts > Security aspects > Management security](/concepts/security/#management-security) for general aspects of audit logging.
+- [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}} for details on managing audit records via REST.
+{{< /c8y-admon-related >}}
 
 ### To view audit logs
 
@@ -71,3 +84,213 @@ In order to easily search through logs, you can filter logs for:
  - The user.
 
 To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the X icon next to the **Apply** button (only visible if filters are set).
+
+### Audit log types
+
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+
+<thead>
+<tr>
+<th align="left">Audit type</th>
+<th align="left">Actions</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td align="left">Alarm</td>
+<td align="left"><ul>
+<li>Alarm created</li>
+<li>Alarm updated</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Application</td>
+<td align="left"><ul>
+<li>Application activated</li>
+<li>Application subscribed</li>
+<li>Application unsubscribed</li>
+<li>Application deployed</li>
+<li>Application deployment failure</li>
+<li>Application undeployed</li>
+<li>Application rescaled</li>
+<li>Application deleted</li>
+</ul>
+This type of audit logs may be created for both hosted applications and microservices.
+</td>
+</tr>
+
+<tr>
+<td align="left">Bulk operation</td>
+<td align="left"><ul>
+<li>Bulk operation created</li>
+<li>Bulk operation updated</li>
+<li>Bulk operation deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Data broker connector</td>
+<td align="left"><ul>
+<li>Connector created</li>
+<li>Connector updated</li>
+<li>Connector deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Devices availability monitoring</td>
+<td align="left"><ul>
+<li>Device availability enabled</li>
+<li>Device availability disabled</li>
+<li>Device availability interval updated</li>
+<li>Device put into maintenance state</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Global role</td>
+<td align="left"><ul>
+<li>Global role updated</li>
+<li>Global role authorities updated</li>
+<li>Global role device permissions updated</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Inventory</td>
+<td align="left"><ul>
+<li>Managed object deleted</li>
+<li>Device registration failed due to missing token</li>
+<li>Device registration failed due to invalid token</li>
+<li>Device registration max number of failed attempts reached</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Inventory role</td>
+<td align="left"><ul>
+<li>Inventory role created</li>
+<li>Inventory role updated</li>
+<li>Inventory role deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Operation</td>
+<td align="left"><ul>
+<li>Operation created</li>
+<li>Operation updated</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Option</td>
+<td align="left"><ul>
+<li>Option created</li>
+<li>Option updated</li>
+<li>Option deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Reliable notification</td>
+<td align="left"><ul>
+<li>Reliable notification token created</li>
+<li>Reliable notification subscription created</li>
+<li>Reliable notification subscription deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Report</td>
+<td align="left"><ul>
+<li>Test tenant statistics accessed</li>
+<li>Real tenant statistics accessed</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Single sign-on</td>
+<td align="left"><ul>
+<li>SSO login</li>
+<li>SSO logout</li>
+<li>SSO logout failed</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Smart rule</td>
+<td align="left"><ul>
+<li>Smart rule created</li>
+<li>Smart rule updated</li>
+<li>Smart rule enabled</li>
+<li>Smart rule disabled</li>
+<li>Smart rule deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Tenant</td>
+<td align="left"><ul>
+<li>Tenant created</li>
+<li>Tenant updated</li>
+<li>Tenant suspended</li>
+<li>Tenant activated</li>
+<li>Tenant deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Tenant auth configuration</td>
+<td align="left"><ul>
+<li>Authentication configuration added</li>
+<li>Authentication configuration updated</li>
+<li>Authentication configuration deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">Trusted certificate</td>
+<td align="left"><ul>
+<li>Trusted certificate uploaded</li>
+<li>Trusted certificate updated</li>
+<li>Trusted certificate deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">User</td>
+<td align="left"><ul>
+<li>User created</li>
+<li>User updated</li>
+<li>User username updated</li>
+<li>User password updated</li>
+<li>User roles updated</li>
+<li>User groups updated</li>
+<li>User delegation updated</li>
+<li>User owner updated</li>
+<li>User inventory assignment updated</li>
+<li>User device permissions updated</li>
+<li>User deleted</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="left">User login</td>
+<td align="left"><ul>
+<li>User login</li>
+<li>User logout</li>
+</ul>
+Note that entries of this type are not created when using Basic authentication.
+</td>
+</tr>
+
+</tbody>
+</table>

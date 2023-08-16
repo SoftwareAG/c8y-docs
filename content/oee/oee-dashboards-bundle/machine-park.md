@@ -8,9 +8,9 @@ The **Overview** page is the landing page of the OEE application. Here you can f
 
 ![Machine park overview](/images/oee/dashboards/dashboard-machine-park-overview.png)
 
-Depending on the defined target value, the OEE box for an entity is either displayed in green (above threshold) or in red (below threshold). The particular value and the threshold are also shown in the OEE box.
+Depending on the defined target value, the OEE box for an entity is either displayed in green (above threshold) or in red (below threshold). The particular value and the threshold are also shown in the OEE box. An arrow on the right of the OEE value indicates the current trend - OEE increasing (the arrow points upwards), decreasing (the arrow points downwards), or no change (the arrow points to the right).
 
-Every 10 minutes a new value is calculated. The precise timestamp is shown in the latest update information.
+New values are calculated at regular intervals. This interval is influenced by the default value set in the machine, line and site profiles. The latest update information shows the precise timestamp. If a machine is not currently in an active production shift, this will also be indicated there.
 
 In the upper section, the average OEE for the entire machine park is shown, that means, the average OEE value of all sites for which OEE values are listed in the **Machine Park Dashboard**.
 

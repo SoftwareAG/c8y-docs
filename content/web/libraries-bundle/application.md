@@ -51,7 +51,7 @@ The following table provides an overview on the currently supported applications
 </tr>
 <tr>
 <td>devicemanagement</td>
-<td>The <a href="/users-guide/device-management/">Device Management</a> default application. Use this to extend the existing Device Management application.</td>
+<td>The <a href="/users-guide/device-management/">Device management</a> default application. Use this to extend the existing Device management application.</td>
 </tr>
 <tr>
 <td>administration</td>

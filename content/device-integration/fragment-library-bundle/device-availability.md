@@ -2,7 +2,7 @@
 weight: 70
 title: Device availability
 layout: bundle
-section: 
+section:
   - device_management
 ---
 
@@ -83,11 +83,11 @@ Keep in mind that after updating the last message it may take some minutes until
 
 A monitored device has one of the following statuses for `c8y_Connection`:
 
-|Name| Description                                                                            |
-|:---|:---------------------------------------------------------------------------------------|
-|CONNECTED| A device push connection is established.                                               |
-|DISCONNECTED| `responseInterval` is larger than 0 and the device is neither AVAILABLE nor CONNECTED. |
-|MAINTENANCE| `responseInterval` is smaller or equal to 0; the device is under maintenance.          |
+| Status (string) | Description                                                                            |
+|:----------------|:---------------------------------------------------------------------------------------|
+| CONNECTED       | A device push connection is established.                                               |
+| DISCONNECTED    | `responseInterval` is larger than 0 and the device is neither AVAILABLE nor CONNECTED. |
+| MAINTENANCE     | `responseInterval` is smaller or equal to 0; the device is under maintenance.          |
 
 {{< c8y-admon-info >}}
 If a device is not connected via device push, but a message was sent within the required response interval, `c8y_Availability` can still have the status AVAILABLE, even if `c8y_Connection` does not have the status CONNECTED.

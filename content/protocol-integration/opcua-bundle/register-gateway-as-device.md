@@ -15,3 +15,7 @@ layout: redirect
 4. Click **Accept** to complete the registration.
 
 ![Device Registration Acceptance](/images/device-protocols/opcua/opcua-device-registration.png)
+
+{{< c8y-admon-info >}}
+If you run the OPC UA Gateway in Thin Edge mode, manual registration is not needed. Thin Edge automatically registers the OPC UA Gateway at {{< product-c8y-iot >}} as a sub-device of its device.
+{{< /c8y-admon-info >}}

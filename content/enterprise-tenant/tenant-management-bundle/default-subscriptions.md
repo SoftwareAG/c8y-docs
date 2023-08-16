@@ -1,5 +1,5 @@
 ---
-weight: 14
+weight: 50
 title: Default subscriptions
 layout: redirect
 ---
@@ -8,13 +8,15 @@ In the {{< product-c8y-iot >}} platform, you can configure which applications an
 
 In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
+### To view default subscriptions
+
 In the **Default subscriptions** page, you can configure two separate lists of applications. These will be subscribed by default to:
 
 - Every new tenant on its creation.
 - Every existing tenant on platform upgrade.
 
 {{< c8y-admon-info >}}
-These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Overriding default subscriptions](#default-applications) below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:
@@ -31,7 +33,6 @@ On the right, you see the **Subscribed on tenant creation** and the **Subscribed
 Initially, the lists show the default subscriptions inherited from the tenant hierarchy.
 
 <img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
-<br>
 
 ### To configure default subscriptions
 

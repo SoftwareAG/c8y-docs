@@ -4,14 +4,12 @@ title: Enhanced time series support
 layout: bundle
 section:
   - platform_administration
-aliases:
-  - /users-guide/enterprise-tenant
 ---
 
 The {{< product-c8y-iot >}} Operational Store provides an enhanced time series support (so-called time series collections) for measurements data. The following section summarizes how to enable/disable this feature.
 
 {{< c8y-admon-info >}}
-The enhanced time series support might be enabled for new tenants by default from a {{< product-c8y-iot >}} administrator.
+The enhanced time series support might be enabled for new tenants by default from a platform administrator.
 {{< /c8y-admon-info >}}
 
 ### To configure time series support
@@ -41,7 +39,7 @@ Content-Type: application/json
 }
 ```
 {{< c8y-admon-info >}}
-Tenant options are not inheritable from the parent tenant, i.e. enabling the property on the enterprise tenant does not affect the sub tenants.
+Tenant options are not inheritable from the parent tenant, that is, enabling the property on the Enterprise tenant does not affect the subtenants.
 {{< /c8y-admon-info >}}
 
 ### Implications of the configuration
@@ -52,9 +50,9 @@ This might lead to a situation where data resides in multiple collections.
 To prevent such situations, configure the property only at the beginning of a tenant setup, ideally when no measurement data is stored yet.
 Migration and seamless configuration will be part of future releases.
 
-{{< c8y-admon-caution >}}
+{{< c8y-admon-important >}}
 Once enabled, avoid switching the property back to `DISABLED` as this can lead to experience data loss. Do this only in case of an issue or emergency.
-{{< /c8y-admon-caution >}}
+{{< /c8y-admon-important >}}
 
 ### Unsupported APIs
 

@@ -179,11 +179,11 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 If a custom action fails, a retry mechanism will be processed. This is configured in the application YAML file, and the queues will be stored in the event repository.
 
-Queues are collections of failed custom actions, including the complete HTTP request of this custom action. Each entry of the queue is one failed custom action. 
+Queues are collections of failed custom actions, including the complete HTTP request of this custom action. Each entry of the queue is one failed custom action.
 
 A background scheduler task will retry each queue up to the number of _maxRetries_. If _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository.
 
-All elements of the queue are retried after the retry delay has passed. In effect, the count of the elements in the queue is decreases with each successful retried custom action. 
+All elements of the queue are retried after the retry delay has passed. In effect, the count of the elements in the queue is decreases with each successful retried custom action.
 
 This mechanism can be configured in the configuration section `gateway.mappingExecution.http.failureHandling` (see also [Gateway Configuration: Additional customization](#additional-customizations)) using the following properties:
 

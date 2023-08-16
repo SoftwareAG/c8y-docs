@@ -28,22 +28,21 @@ Click **Add device profile** at the right of the top menu bar, to add a new devi
 
 In the **Add device profile** window, provide a name for the profile and optionally enter one or more device types. If a device type is provided, the device profile can only be assigned to devices of the specified type. If left empty, it will be available for all device types.
 
-<a name="to-add-items"></a>
 ### To add items to a device profile
 
 In the device profile details, you can add firmware versions, software packages, and configuration files.
 
 Click **Add firmware** to add a firmware version to the profile. Select a firmware and a version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those firmware versions can be selected that match the device type. Only one firmware version can be added to a profile.
 
-For details on firmware, see [Managing device firmware](#firmware-repo).
+For details on firmware, see [Managing firmware](#managing-firmware).
 
 Click **Add software** to add a software package to the profile. Select a software and a software version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those software versions can be selected that match the device type. You can add multiple software packages to a profile.
 
-For details on software, see [Managing device software](#software-repo).
+For details on software, see [Managing software](#managing-software).
 
 Click **Add configuration** to add a configuration file to the profile. Select a configuration file from the list and click **Save** to add the selection to the profile. You can add multiple configuration files to a profile.
 
-For details on configuration snapshots, see [Managing configurations](#configuration-repository).
+For details on configuration snapshots, see [Managing configurations](#managing-configurations).
 
 ### To update device profiles
 
@@ -55,7 +54,7 @@ Moreover, you can delete firmware, software or configuration items or add new on
 
 To delete an item, hover over it and click the delete icon.
 
-See [To add items to a device profile](#to-add-items) for details on how to add firmware, software or configuration items.
+See [To add items to a device profile](#to-add-items-to-a-device-profile) for details on how to add firmware, software or configuration items.
 
 Note that in case of firmware, only one item is allowed in a profile at a time.
 
@@ -78,8 +77,8 @@ Deleting a profile deletes the entry from the device profile repository. It has 
 
 Device profiles can be assigned to:
 
-* [Individual devices](#to-apply-profiles-to-single-devices)
-* [Multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices)
+* [Individual devices](#to-apply-device-profiles-to-a-single-device)
+* [Multiple devices through bulk operations](#to-apply-device-profiles-to-multiple-devices)
 
 The **Device profile** tab of a particular device shows the details of the currently installed profile on a device.
 
@@ -89,7 +88,6 @@ The **Device profile** tab of a particular device shows the details of the curre
 The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
 {{< /c8y-admon-info >}}
 
-<a name="to-apply-profiles-to-single-devices"></a>
 #### To apply device profiles to a single device
 
 Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device.
@@ -97,14 +95,13 @@ Device profiles can be applied to individual devices in the **Device Profile** t
 1. In the **Device profile** tab, select a device profile from the dropdown list. Only profiles that match the device type (if specified) or have no device type specified are displayed.
 2. Click **Assign device profile** to start the update operation.
 
-<a name="to-apply-profiles-to-multiple-devices"></a>
 #### To apply device profiles to multiple devices
 
 Device profiles can be applied to multiple devices by using bulk operations.
 
 1. Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
 2. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**.
-3. Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
+3. Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/device-management-application/monitoring-and-controlling-devices/#to-add-a-bulk-operation) to schedule a bulk operation which applies a device profile.
 
 The devices will install the firmware, software, and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.
 

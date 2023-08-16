@@ -150,10 +150,10 @@ Note that the subscription is established after the device creation, otherwise i
 
 #### Running the application
 
-Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information will be displayed in the browser page.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

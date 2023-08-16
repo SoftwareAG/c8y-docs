@@ -4,11 +4,28 @@ title: Branding
 layout: redirect
 section:
   - platform_administration
-aliases:
-  - /users-guide/enterprise-edition
 ---
 
 With the Branding feature, you can fully customize the look of your tenant to your own preferences.
+
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The branding feature comes as default with the {{<enterprise-tenant>}} and is available in the Administration application.
+
+The branding functionality is enabled by subscribing to the "feature-branding" application.
+
+ROLES & PERMISSIONS:
+
+* To manage the branding configuration:
+  * READ, ADMIN, CREATE permission for the "Inventory" permission type
+  * READ, ADMIN permission for the "Options management" permission type
+* To apply the branding configuration: READ, ADMIN permission for the "Application management" permission type
+
+On tenant creation, there are default roles available that can be used as a sample configuration for the above-mentioned permissions:
+* Tenant Manager - manages tenant-wide configurations like applications, tenant options and retention rules
+
+{{< /c8y-admon-req >}}
 
 ### To configure branding settings
 
@@ -26,18 +43,18 @@ When you are done or want to store your settings, click **Save** at the bottom o
 
 Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
 
-Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
+Click **Remove branding** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
 <a name="configuration-parameters"></a>
-### Configuration parameters
+#### Configuration parameters
 
 In the Configuration section, the following branding parameters can be configured.
 
-#### General
+**General**
 
 Under **General**, you can edit the title which will be used in the browser tab.
 
-#### Main logo
+**Main logo**
 
 Under **Main logo**, specify the following items:
 
@@ -45,17 +62,17 @@ Under **Main logo**, specify the following items:
 * Your branding logo - will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
 * The brand logo height.
 
-#### Navigator logo
+**Navigator logo**
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
-#### Font
+**Font**
 
 In the **Font** section you specify the font settings for your branded version.
 
 You can select your base and headings font stack, and select an option for the navigator font stack (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
-#### Colors
+**Colors**
 
 In the **Colors** section you specify the colors to be used in your branding version.
 
@@ -69,35 +86,35 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 * Link color - the default value is the same as the main brand color.
 * Main background color - the default value for this item is "#FAFAFA".
 
-#### Top bar
+**Top bar**
 
 In the **Top bar** section you specify the parameters for the top bar.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color - the default value is "#FFFFF".
+* Background color - the default value is "#FFFFFF".
 * Text color - the default value is "49595B".
 * Button hover text color - the default value is the main brand color.
 
-#### Navigator
+**Navigator**
 
 In the **Navigator** section you specify the parameters for the navigator.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color - the default value is "2c3637".
+* Background color - the default value is "#2c3637".
 * Logo wrapper background color - the default value is "Transparent".
-* Title color - the default value is "FFFFF".
+* Title color - the default value is "#FFFFFF".
 * Text and buttons color - the default value is "#FAFAFA".
 * Separator line color - the default value is "#FAFAFA".
 * Text color of the current item in the navigator - the default value is "#FAFAFA".
 * Background color of the current item in the navigator with the main brand color as default.
 
-#### Misc
+**Misc**
 
 In the **Misc** section you specify the "Button Border-Radius" by providing a value in pixel (px).
 
-#### Cookie banner
+**Cookie banner**
 
 In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. If not disabled here, the banner is shown for all users of the current tenant and all subtenants until a user clicks **Agree and proceed**.
 

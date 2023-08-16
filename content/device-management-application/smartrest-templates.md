@@ -13,7 +13,7 @@ helpcontent:
     To import a template, click **Import template** at the top right, select a file to be uploaded and provide a name and unique ID.
 
 
-    To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the *User guide*."
+    To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the *User documentation*."
 ---
 
 ### Introduction

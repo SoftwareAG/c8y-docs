@@ -15,7 +15,7 @@ helpcontent:
   An instruction can either send a message (measurements, alarms, events, and inventory) or wait for a specified time (sleep). For each simulator, you can create instructions specifying what the simulator is supposed to do.
 
 
-  To create a new simulator, click **Add simulator** at the top right and follow the instructions in the *User guide*."
+  To create a new simulator, click **Add simulator** at the top right and follow the instructions in the *User documentation*."
 ---
 
 With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, such as:

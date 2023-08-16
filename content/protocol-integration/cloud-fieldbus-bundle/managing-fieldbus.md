@@ -36,7 +36,7 @@ Similar to alarms, changes in fieldbus devices can be monitored and logged as ev
 
 ### Monitoring the device status
 
-The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the *User guide*.
+The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit](/cockpit/).
 
 ### Monitoring the device status using the Fieldbus device widget
 

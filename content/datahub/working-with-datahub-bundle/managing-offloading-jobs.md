@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 50
 title: Managing offloading jobs
 layout: redirect
 ---
@@ -24,7 +24,7 @@ A previous offloading pipeline may have already written into the same target tab
 
 ##### Scheduling settings
 
-The scheduler is configured per default to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on the Operational Store of {{< product-c8y-iot >}}, that is, to avoid that all offloading jobs from different tenants run at the same time.
+The scheduler is configured per default to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is assigned by the system to balance the load on the Operational Store of {{< product-c8y-iot >}}, that is, to avoid that all offloading jobs from different tenants run at the same time.
 
 ##### Stopping periodic offloading
 
@@ -77,7 +77,7 @@ You must not modify the contents of the export file as this might corrupt the im
 
 The action bar provides an **Import** button, which imports offloading configurations from a file with previously exported configurations.
 
-Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the internal UUID of the original configuration, the target table name, and the description. The **Import** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported. An entry to import is a duplicate if an already existing configuration has the same target table name or the same internal UUID.
+Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your file system to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the internal ID of the original configuration, the target table name, and the description. The **Status** column indicates whether an offloading configuration can be imported. If it is green, the configuration is valid and can be imported. If it is yellow, the configuration can be imported, but some of its settings are ignored as they are not supported by the tenant. If it is red, the configuration duplicates an existing configuration and therefore cannot be imported. It is a duplicate if an existing configuration has the same target table name or the same internal ID. The **Import** column provides checkboxes to select the configurations which are to be imported.
 
 To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 

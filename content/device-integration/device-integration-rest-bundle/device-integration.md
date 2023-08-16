@@ -4,7 +4,7 @@ title: Device integration
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/concepts/interfacing-devices) in the *Concepts guide*. In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase.
+The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/concepts/interfacing-devices). In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase.
 
 The startup phase connects the device to {{< product-c8y-iot >}} and updates the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:
 
@@ -28,7 +28,7 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 
 ![Cycle phase](/images/rest/cyclephase.png)
 
-Reference models for the data can be found in [Device integration > Fragment library](/device-integration/fragment-library/).
+Reference models for the data can be found in the [Fragment library](/device-integration/fragment-library/).
 
 
 ### Startup Phase
@@ -197,7 +197,7 @@ The example above contains a number of metadata items for the device:
 -   "com\_cumulocity\_model\_Agent" marks devices running a {{< product-c8y-iot >}} agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
-For more information, refer to [Device integration > Fragment library](/device-integration/fragment-library/).
+For more information, refer to the [Fragment library](/device-integration/fragment-library/).
 
 If the device could be successfully created, a status code of 201 is returned. If the original request contains an "Accept" header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).
 
@@ -233,7 +233,7 @@ Continuing the above example, we would associate the newly created device "24803
 
 #### Step 4: Update the device in the inventory
 
-If Step 1 above returned that the device was previously registered already, we must make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide* for more information on fragments.)
+If Step 1 above returned that the device was previously registered already, we must make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) for more information on fragments.)
 
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 
@@ -249,7 +249,9 @@ For example, the hardware information of a device will usually not change, but t
 
     HTTP/1.1 200 OK
 
-> Do not update the name of a device from an agent! An agent creates a default name for a device so that it can be identified in the inventory, but users should be able to edit this name or update it with information from their asset management.
+{{< c8y-admon-caution >}}
+Do not update the name of a device from an agent! An agent creates a default name for a device so that it can be identified in the inventory, but users should be able to edit this name or update it with information from their asset management.
+{{< /c8y-admon-caution >}}
 
 
 #### Step 5: Discover child devices and create or update them in the inventory

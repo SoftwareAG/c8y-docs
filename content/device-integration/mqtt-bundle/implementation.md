@@ -115,7 +115,7 @@ The MQTT ClientId is a field to uniquely identify each connected client. The {{<
 |:-------|:--------|:--------|
 |connectionType|NO|Indication of connection type <br>default: d (device)|
 |deviceIdentifier|YES|A unique identifier for your device, for example, IMEI, Serial number|
-|defaultTemplateIdentifier|NO|Check [SmartREST 2.0 > MQTT static templates](/reference/smartrest-two#mqtt-static-templates) for more information about template identifiers|
+|defaultTemplateIdentifier|NO|Check [MQTT static templates](/smartrest/mqtt-static-templates) for more information about template identifiers|
 
 For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.
 

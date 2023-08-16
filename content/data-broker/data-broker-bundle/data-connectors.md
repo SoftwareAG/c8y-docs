@@ -144,4 +144,4 @@ Open a data connector and switch to the **Alarms** tab to display current alarms
 
 For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
 
-For details on alarms in general, see [Device management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms in general, see [Working with alarms](/device-management-application/working-with-alarms/).

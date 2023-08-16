@@ -2,21 +2,8 @@
 weight: 10
 title: Overview
 layout: bundle
-section: 
+section:
   - app_development
-aliases:
-  - /web/introduction
-  - /web/angular/
-  - /developers-guide/developing-web-clients
-  - /developers-guide/developing-web-clients.html
-  - /web/smart-toolkit
-  - /web/reference
-  - /http
-  - /web/jsdoc
-  - /web/branding-plugin
-  - /web/tab-plugin
-  - /web/widget-plugin
-  - /web/web-sdk-for-plugins/
 ---
 
 

@@ -3,18 +3,24 @@ weight: 20
 layout: redirect
 title: Asset properties
 
-helpContent: 
+helpContent:
 - label: asset-properties
   title: Asset Properties
   content: "Asset properties are the parameters that define an asset model. One or more asset properties are used to define an asset model.
 
-  
+
   Asset properties can be reused in multiple asset models. You can build your asset property library by adding asset properties which can be used to define any asset model.
-  
-  
+
+
   To add a new asset property, click **Add asset property**."
 ---
 Asset properties are the parameters that define an [asset model](/dtm/asset-types/#asset-types). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS
+
+- To add/update/delete/import asset properties: CREATE/ADMIN permission for permission type "Inventory"
+{{< /c8y-admon-req >}}
 
 <a name="create-custom-property"></a>
 ### To create an asset property
@@ -24,6 +30,8 @@ When you navigate to the **Asset properties** page following **Configuration > A
 If you use a tenant which already has asset properties defined, you find the list of defined asset properties on the left. You see the selected asset property definition on the right.
 
 To create an asset property, click **Add asset property** on the bottom left. Enter the required data in the form (see description below) and click **Save**.
+
+Use the Export asset properties and Import asset properties feature to transfer asset properties between tenants. This is useful for replicating the asset properties in multiple tenants. By exporting and importing properties, you can ensure consistency and reduce the time and effort required for manual configuration. See [To export asset properties](#to-export-asset-properties) and [To import asset properties](#to-import-asset-properties) on how to export or import asset properties.
 
 ![Create a new asset property](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
@@ -106,7 +114,6 @@ If not selected, no minimum length criteria is set for this asset property durin
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-If the entered text exceeds the maximum length, you get notified of the incidence and the asset creation is cancelled.
 
 * **RegExp**:
 
@@ -258,7 +265,7 @@ In the resulting confirmation dialog, click **Confirm** to continue.
 
 {{< c8y-admon-info>}}
 
-If the asset property you want to delete is part of an existing asset, you see an error notification and the asset property is not deleted.
+If the asset property you want to delete is part of an existing asset or an asset model, you see an error notification and the asset property is not deleted.
 
 {{< /c8y-admon-info>}}
 
@@ -291,7 +298,45 @@ In the **Asset properties** complex asset properties are listed with the label "
 You see the preview of data model on the right side of properties section.
 
  **Example:**
- 
+
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)
+
+### To export asset properties
+
+Follow the steps below:
+
+1. On the **Asset properties** page, click **Export asset properties**. In the resulting dialog box, you see the list of asset properties along with their description and type.
+2. Select one or more desired asset properties and click **Export**.
+3. The dialog closes and a JSON file named 'Export-asset-properties.json' downloads.
+
+Use the downloaded file to import the asset properties into a DTM application on another tenant.
+
+{{< c8y-admon-info>}}
+You can export a maximum of 500 asset properties at a time.
+{{< /c8y-admon-info>}}
+
+![Export asset properties](/images/dtm/custom-property/dtm-property-library-export.png)
+
+### To import asset properties
+
+To import asset properties into the DTM application, follow the steps below:
+
+1. On the **Asset properties** page, click **Import asset properties**.
+2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant.
+3. Click **Next** to preview the asset properties before importing them.
+4. Click **Import** to import the asset properties.
+4. Alternatively, Click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
+5. View newly imported asset properties in the **Asset properties** page.
+
+
+
+![Import asset properties](/images/dtm/custom-property/dtm-property-library-import.png)
+
+{{< c8y-admon-info>}}
+When you upload the JSON file, it undergoes validation. If the validation fails, you see a corresponding message in the dialog. Click **Download log file** to view the errors.
+Review the errors that are reported, resolve them, and attempt the upload again.
+
+You can import a maximum of 500 asset properties at a time.
+{{</ c8y-admon-info>}}

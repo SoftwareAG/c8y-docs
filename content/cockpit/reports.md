@@ -16,8 +16,6 @@ helpcontent:
     Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
 ---
 
-<!-- -->
-
 Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the asset hierarchy.
 
 {{< c8y-admon-req >}}

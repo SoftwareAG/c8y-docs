@@ -2,7 +2,7 @@
 weight: 80
 title: Smart rules
 layout: bundle
-section: 
+section:
   - app_development
 helpcontent:
 - label: smart-rules
@@ -13,12 +13,18 @@ helpcontent:
   Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the *User guide* for details on each smart rule template and its configuration."
 ---
 
-{{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).
+{{< c8y-admon-related >}}
+- [Administration > Managing business rules](/users-guide/administration#business-rules) for details on managing smart rules for your devices.
+{{< /c8y-admon-related >}}
+
+{{< product-c8y-iot >}} includes the Streaming Analytics application which can analyze data in realtime and perform actions based on data.
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
 
-{{< c8y-admon-req >}}
 The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
+
+{{< c8y-admon-req >}}
+* To use the smart rules functionality, you have to be subscribed to the Smartrule and Apama-ctrl microservice.
 {{< /c8y-admon-req >}}
 
 Smart rules are parameterized. There are two sources for parameters:

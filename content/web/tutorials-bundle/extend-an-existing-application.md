@@ -6,7 +6,7 @@ weight: 50
 
 **Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-It is a common use case to extend one of our existing applications like Cockpit or Device Management.
+It is a common use case to extend one of our existing applications like Cockpit or Device managament.
 
 This recipe explains step by step, how you can extend the Cockpit application with a custom route and hook this route into the navigator.
 First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application) npm package contains.
@@ -202,7 +202,7 @@ For example, to add a navigator node, use the `HOOK_NAVIGATOR_NODE` in *app.modu
 ```
 
 As you see in (1) you need to take care of the typing on your own.
-To avoid it, you can also use the `hookX` function, which allow the same but without taking care of the boilerplate code. 
+To avoid it, you can also use the `hookX` function, which allow the same but without taking care of the boilerplate code.
 The following example uses these functions, to add a navigator node, using `hookRoute` and `hookNavigatorNode`:
 
 ```js

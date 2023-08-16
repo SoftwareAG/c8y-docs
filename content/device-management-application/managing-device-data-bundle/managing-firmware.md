@@ -17,7 +17,7 @@ The available firmware objects will be displayed as a list.
 ![Firmware list](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
 Each entry shows the firmware name, the device type it is applicable for (if set), and a label indicating if and how many versions are available for a particular firmware.
-At the left in the top menu bar, you can filter the repository entries by name, description or device type. For details on the filtering functionality, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+At the left in the top menu bar, you can filter the repository entries by name, description or device type. For details on the filtering functionality, see [Search and filter functionality](/getting-started/gui-features/#search-and-filter-functionality).
 
 When clicking on an entry, the details for this firmware are displayed along with all available versions and patches.
 

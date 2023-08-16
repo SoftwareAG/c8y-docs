@@ -14,7 +14,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* [Interfacing devices](/concepts/interfacing-devices/) in the *Concepts guide* for information on the concepts relevant for interfacing IoT devices and other IoT-related data sources with {{< product-c8y-iot >}}.
+* [Technical concepts > Interfacing devices](/concepts/interfacing-devices/) for information on the concepts relevant for interfacing IoT devices and other IoT-related data sources with {{< product-c8y-iot >}}.
 * [Protocol integration](/protocol-integration/) for a list of protocols, parameters and network connectivity options for devices.
 {{< /c8y-admon-related >}}
 

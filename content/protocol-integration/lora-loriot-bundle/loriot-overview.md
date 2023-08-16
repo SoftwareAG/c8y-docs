@@ -20,5 +20,5 @@ The following illustration gives an overview of the {{< product-c8y-iot >}} Lori
 
 
 {{< c8y-admon-info >}}
-Your subscription must include this feature to be able to use it. If you do not see the functionality described in this document, contact [product support](/welcome/contacting-support/).
+Your subscription must include this feature to be able to use it. If you do not see the functionality described in this document, contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}

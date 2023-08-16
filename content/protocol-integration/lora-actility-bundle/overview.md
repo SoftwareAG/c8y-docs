@@ -17,5 +17,5 @@ The following illustration gives an overview of the {{< product-c8y-iot >}} Acti
 ![{{< product-c8y-iot >}} Actility LoRa integration](/images/device-protocols/lora-actility/lora-cumulocity-integration.png)
 
 {{< c8y-admon-info >}}
-Your subscription must include this feature. If you do not see the functionality described in this document, contact [product support](/welcome/contacting-support/).
+Your subscription must include this feature. If you do not see the functionality described in this document, contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}

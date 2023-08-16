@@ -16,7 +16,7 @@ Depending on the capabilities of the device and its configuration in {{< product
 
 ### Collecting measurements
 
-If the device protocol of the fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data explorer](/users-guide/cockpit/#data-explorer) and in [dashboard widgets](/users-guide/cockpit#dashboards).
+If the device protocol of the fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data explorer](/cockpit/data-explorer) and in [Working with dashboards](/cockpit/dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data which is exactly the same as collected previously may not be sent again.
 

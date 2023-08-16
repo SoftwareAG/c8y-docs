@@ -15,5 +15,5 @@ With {{< product-c8y-iot >}} Cloud Fieldbus you can collect data from fieldbus d
 Cloud Fieldbus is supported out of the box by several devices. For information on supported devices, refer to the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) which allows to filter for all devices which offer full functional support with Cloud Fieldbus.
 
 {{< c8y-admon-info >}}
-To support Cloud Fieldbus with your terminal, please contact [product support](/welcome/contacting-support/).
+To support Cloud Fieldbus with your terminal, contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}

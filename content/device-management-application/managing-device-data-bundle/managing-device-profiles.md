@@ -101,7 +101,7 @@ Device profiles can be applied to multiple devices by using bulk operations.
 
 1. Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
 2. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**.
-3. Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/device-management-application/monitoring-and-controlling-devices/#to-add-a-bulk-operation) to schedule a bulk operation which applies a device profile.
+3. Follow the steps described in [To add a bulk operation](/device-management-application/monitoring-and-controlling-devices/#to-add-a-bulk-operation) to schedule a bulk operation which applies a device profile.
 
 The devices will install the firmware, software, and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.
 

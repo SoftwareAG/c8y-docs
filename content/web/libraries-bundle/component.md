@@ -57,7 +57,7 @@ A good example to use this concept is the `c8y-action-bar-item` which uses a `ro
 ```html
    <c8y-action-bar-item [placement]="'right'">
      <a class="btn btn-link" routerLink="add">
-       <i class="dlt-c8y-icon-plus-square"></i> {{'Add' | translate}}
+       <i class="fa fa-plus-square"></i> {{'Add' | translate}}
      </a>
    </c8y-action-bar-item>
 ```
@@ -142,7 +142,7 @@ A service is defined for most components of ngx-components. They can be used via
 
 #### Legacy plugins
 
-If you are extending a default application (Cockpit, Device Management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the application appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
+If you are extending a default application (Cockpit, Device management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the application appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
 
 ```json
     {

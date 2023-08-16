@@ -25,18 +25,20 @@ Select the plugin name, for example, "widget-plugin":
 ? Enter the name of the project:  (my-application) widget-plugin
 ```
 
-Select the version for which you want to create a sample application, for example, "1013.72.0 (next)":
+
+Select the version for which you want to create a sample application, for example, "1016.0.233", as micro frontend are supported with version higher then 10.16.0.0:
 
 ```console
-? Which base version do you want to scaffold from? (Use arrow keys)
-  1011.0.18 (latest)
-❯ 1013.72.0 (next)
-  1013.0.63
-  1010.0.29
-  1009.0.33
-  1007.0.47
+? Which base version do you want to scaffold from?
+  1015.0.372 (latest)
+  1018.106.0 (next)
+  1018.0.47
+  1017.0.151
+❯ 1016.0.233
+  1014.0.359
   other
 ```
+
 
 Select an application template as the basis for your plugin, in our case, "widget-plugin":
 
@@ -92,6 +94,8 @@ The following list shows the fields and what they are responsible for:
   - `module`: The name of the Angular module class (that is, "WidgetPluginModule").
   - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: *./widget/widget-plugin.module.ts*.
   - `description`: A brief description of what the module does.
+- `contextPath`: The context path tells on which URL your plugin can be loaded. As this is also used to generate a global variable, choose a valid JavaScript variable. For example, your `contextPath` should not start with a number. To avoid conflicts it is a good practice to add a prefix to your context path, for example, the acronym of your company: `acme-`.
+- `versioningMatrix`: Optional field which indicates the supported package versions and the recommended frontend and backend platform versions. If the package is not compatible with any of the recommended platform versions a warning is shown. The matrix must have the following format and all versions must be [SemVer](https://semver.org/). For example: `versioningMatrix: [{"1.0.0": {"api": ">1016.0.0", "sdk": ">1016.0.0"}}, {"2.0.0": {"api": ">1017.0.0", "sdk":">1017.0.0"}}]`. In case of repository-connect, versions which exist in the platform but are not included in the versioning matrix are removed during sync.
 
 {{< c8y-admon-info >}}
 When creating plugins, the custom modules are the backbone of this approach. The exported module is treated as the entry point that links the plugin with the application, which is referred to as the shell. You can create and export several modules, which have to contain ready-made functionality.
@@ -171,9 +175,7 @@ Follow the console prompt to deploy the application to your tenant.
 
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 
-- Enable the beta flag in the Administration application: *https://<yourTenantUrl>/apps/administration?beta=true*.
-
-You should now be able to access the **Packages** tab in **Administration application > Ecosystem > applications > Packages**, where you can see the details of your plugin.
+- Access the **Packages** tab in **Administration application > Ecosystem > applications > Packages**, where you can see the details of your plugin.
 
 - If you already have a custom Cockpit application, navigate to its **Details** page and then to the **Plugins** tab. Install the `widget-plugin`.
 

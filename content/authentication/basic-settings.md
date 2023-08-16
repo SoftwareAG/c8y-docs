@@ -38,8 +38,8 @@ For easier user access management, the above permission(s) are/is included in th
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
-- [Configuring single sign-on](/users-guide/administration/#configuring-single-sign-on) for details on configuring single sign-on in {{< product-c8y-iot >}}.
+- [Two-factor authentication](/authentication/tfa/) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
+- [Configuring single sign-on](/authentication/sso/) for details on configuring single sign-on in {{< product-c8y-iot >}}.
 - [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
 {{< /c8y-admon-related >}}
 
@@ -64,7 +64,7 @@ In the field **Password validity limit**, you can limit the validity of user pas
 The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
 {{< /c8y-admon-info >}}
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [Getting Started > User options and settings > To change your password](/users-guide/getting-started/#change-password).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [To change your password](/getting-started/user-settings/#change-password).
 
 {{< c8y-admon-info >}}
 The password validity limit and the password strength may not be editable, if configured by the platform administrator.

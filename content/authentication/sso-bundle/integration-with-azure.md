@@ -180,4 +180,4 @@ The content looks like this:
 ]
 ```
 
-You can now use the claims to map user attributes and give permissions in the same way as described in the section on the [custom template](#custom-template).
+You can now use the claims to map user attributes and give permissions in the same way as described in [Custom template configuration](#custom-template).

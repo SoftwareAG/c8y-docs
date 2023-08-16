@@ -150,4 +150,4 @@ This will be the result:
 
 ### Using Custom decoding/encoding
 
-The Actility agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](../lpwan-custom-codec) for further details.
+The Actility agent also supports the decoding/encoding functionality by plugging in Custom microservice. Refer [LPWAN custom codec](/protocol-integration/lpwan-custom-codec) for further details.

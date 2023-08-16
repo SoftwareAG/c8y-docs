@@ -210,5 +210,5 @@ The handling of LWM2M shell commands follows the following lifecycle:
 {{< c8y-admon-info >}}
 If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
 Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.
-Platform administrators can configure how long such operations stay alive. This is described in the *LWM2M agent installation & operations guide*, see also [Additional resources > Installation and operations documentation](/welcome/additional-resources/#installation-and-operations). Contact your Operations team for further details.
+Platform administrators can configure how long such operations stay alive. This is described in the *LWM2M agent installation & operations guide*, see also [Additional resources > Installation and operations documentation](/additional-resources/additional-resources/#installation-and-operations-documentation). Contact your Operations team for further details.
 {{< /c8y-admon-info >}}

@@ -389,7 +389,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 </table>
 
 {{< c8y-admon-info >}}
-Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Managing device data > Managing firmware](/device-management-application/managing-device-data/#managing-firmware) in the *Device management application*.
+Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware) in the *Device management application*.
 {{< /c8y-admon-info >}}
 
 ### Duplicate LWM2M devices

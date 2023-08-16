@@ -51,7 +51,7 @@ The user is directed to the device registration page where he can perform the re
 
 A device is created based on the above workflow.
 
-First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the {{< product-c8y-iot >}} platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in {{< product-c8y-iot >}} with a link to the device in the ThingPark platform. If the validation fails, a failure message will be shown (see the [device registration subsection of the troubleshooting section](#lora-device-registration-troubleshooting) and the device is not created in {{< product-c8y-iot >}}.
+First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the {{< product-c8y-iot >}} platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in {{< product-c8y-iot >}} with a link to the device in the ThingPark platform. If the validation fails, a failure message is shown and the device is not created in {{< product-c8y-iot >}}.
 
 ### LoRa device registration with Activation by Personalization (ABP)
 

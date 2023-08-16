@@ -10,7 +10,7 @@ weight: 60
 
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
-To use the templates listed below, you must publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for further information.
+To use the templates listed below, you must publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST 1.0 > The protocol > Processing mode](/smartrest/smartrest-one/#processing-mode) in the *Reference guide* for further information.
 
 You must subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
@@ -48,12 +48,16 @@ If a parameter is in square brackets, it is optional.
 + <a href="#120">120,configType,url,filename[,time]</a>
 + <a href="#121">121,profileExecuted,profileID</a>
 + <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
++ <a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a>
++ <a href="#125">125 (send heartbeat)</a>
 + <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
 + <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
++ <a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,...</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
 + <a href="#200">200,fragment,series,value[,unit,time]</a>
++ <a href="#201">201,type,[time],fragment1,series1,value1,[unit1],...</a>
 + <a href="#210">210,rssi,ber[,time]</a>
 + <a href="#211">211,temperature[,time]</a>
 + <a href="#212">212,battery[,time]</a>
@@ -81,6 +85,10 @@ If a parameter is in square brackets, it is optional.
 + <a href="#501">501,typeToSetToExecuting</a>
 + <a href="#502">502,typeToSetToFailed,failureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
++ <a href="#504">504,operationId</a>
++ <a href="#505">505,operationId,failureReason</a>
++ <a href="#506">506,operationId,parameters</a>
++ <a href="#507">507,typeToSetToExecuting,failureReason</a>
 + <a href="#510">510,serial (restart)</a>
 + <a href="#511">511,serial,commandToExecute</a>
 + <a href="#513">513,serial,configurationText</a>
@@ -119,6 +127,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 **[Inventory templates](#subscribe-inventory)**
 
 + [106,child1,child2,…](#106)
++ [124,id](#124)
 
 **[Operation templates](#subscribe-operations)**
 
@@ -172,7 +181,7 @@ Tailing commas is not required. The two lines below result in the same message.
 
 ### Publish templates
 
-The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartREST 1.0 > The protocol > Processing mode](/reference/smartrest-one#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
+The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartREST 1.0 > The protocol > Processing mode](/smartrest/smartrest-one/#processing-mode) in the *Reference guide* for more information about the <kbd>t/</kbd> topic for transient data processing.
 
 <a name="inventory-templates"></a>
 #### Inventory templates (1xx)
@@ -225,7 +234,7 @@ Create a new software service for given device.
 **Example**
 
 ```text
-102,myDevice_MongoDb,systemd,MongoDb,up
+102,myDatabaseDevice,systemd,DatabaseService,up
 ```
 
 <a name="104"></a>
@@ -398,7 +407,7 @@ Set the list of software installed on the device.
 ##### Set required availability (117)
 
 Set the required interval for availability monitoring as an integer value representing minutes.
-For more information, see *c8y_RequiredAvailability* in [Device management library > Device availability](/reference/device-management-library/device-availability) in the *Reference guide*.
+For more information, see *c8y_RequiredAvailability* in [Device integration > Fragment library > Device availability](/device-integration/fragment-library/#device-availability).
 This will only set the value if it does not exist. Values entered, for example, through the UI, are not overwritten.
 
 |Position|Parameter|Mandatory|Type|
@@ -493,6 +502,17 @@ Allows a device to provide information about the agent running on it.
 122,thin-edge.io,0.6,https://thin-edge.io,Software AG
 ```
 
+<a name="125"></a>
+##### Send heartbeat (125)
+
+Sends a heartbeat from the device to update its availability status.
+
+**Example**
+
+```text
+125
+```
+
 <a name="140"></a>
 ##### Set advanced software list (140)
 
@@ -509,6 +529,17 @@ Sets the list of advanced software installed on the device. Any existing list wi
 
 ```text
 140,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
+```
+
+<a name="123"></a>
+##### Get the device managed object ID (123)
+
+Retrieve the ID of the device managed object.
+
+**Example**
+
+```text
+123
 ```
 
 <a name="141"></a>
@@ -545,6 +576,21 @@ Removes advanced software items from the list that exists for the device.
 142,docker,3.2.1,nginx,1.6
 ```
 
+<a name="143"></a>
+##### Set supported software types (143)
+
+Set the supported software types of the device. Ignores empty elements. An empty list removes the `c8y_SupportedSoftwareTypes` fragment entirely.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1...|List of supported software types|NO|String|
+
+**Example**
+
+```text
+143,yum,docker
+```
+
 <a name="measurement-templates"></a>
 #### Measurement templates (2xx)
 
@@ -565,6 +611,27 @@ Create a measurement with a given fragment and series.
 
 ```text
 200,c8y_Temperature,T,25
+```
+
+<a name="201"></a>
+##### Create a custom measurement with multiple fragments and series (201)
+
+Create a measurement with multiple fragments and series.
+
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|type|YES|String| &nbsp;|
+|2|time|NO|Date| &nbsp;|
+|3|List of 4 values per fragment-series combination|YES|(n/a)| &nbsp;|
+|3.1|fragment|YES|String| &nbsp;|
+|3.2|series|YES|String| &nbsp;|
+|3.3|value|YES|Number| &nbsp;|
+|3.4|unit|NO|String| &nbsp;|
+
+**Example**
+
+```text
+201,KamstrupA220Reading,2022-03-19T12:03:27.845Z,c8y_SinglePhaseEnergyMeasurement,A+:1,1234,kWh,c8y_SinglePhaseEnergyMeasurement,A-:1,2345,kWh,c8y_ThreePhaseEnergyMeasurement,A+:1,123,kWh,c8y_ThreePhaseEnergyMeasurement,A+:2,234,kWh,c8y_ThreePhaseEnergyMeasurement,A+:3,345,kWh
 ```
 
 <a name="210"></a>
@@ -871,6 +938,71 @@ It enables the device to send additional parameters that trigger additional step
 503,c8y_Restart
 ```
 
+<a name="504"></a>
+##### Set operation to EXECUTING (504)
+
+Set the operation with the given ID to EXECUTING. The operation must exist and must have the requesting device as the source.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|operationId|YES|String|
+
+**Example**
+
+```text
+504,123
+```
+
+<a name="505"></a>
+##### Set operation to FAILED (505)
+
+Set the operation with the given ID to FAILED. The operation must exist and must have the requesting device as the source.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|operationId|YES|String|
+|2|failureReason|NO|String|
+
+**Example**
+
+```text
+505,123,"Could not restart"
+```
+
+<a name="506"></a>
+##### Set operation to SUCCESSFUL (506)
+
+Set the operation with given ID to SUCCESSFUL. The operation must exist and must have the requesting device as the source.
+
+This may let the device send additional parameters that trigger further steps based on the type of the operation, also see [Updating operations](#updating-operations).
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|operationId|YES|String|
+|2...|parameters|NO|String|
+
+**Example**
+
+```text
+506,c8y_Restart
+```
+
+<a name="507"></a>
+##### Set EXECUTING operations to FAILED (507)
+
+Set EXECUTING operations with a given fragment to FAILED.
+If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
+
+|Position|Parameter|Mandatory|Type|
+|:-------|:-------|:-------|:---|
+|1|fragment|NO|String|
+|2|failureReason|NO|String|
+
+**Example**
+
+```text
+507,c8y_Restart,"Unexpected device restart"
+```
 
 ### Subscribe templates
 
@@ -889,6 +1021,21 @@ List all children of the device.
 
 ```text
 106,child1,child2,child3
+```
+
+<a name="124"></a>
+##### Get the device managed object ID (124)
+
+Retrieve the ID of the device managed object.
+
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|id|String|
+
+**Example**
+
+```text
+124,12345
 ```
 
 <a name="subscribe-operations"></a>

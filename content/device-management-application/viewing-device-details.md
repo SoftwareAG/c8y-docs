@@ -6,13 +6,17 @@ section:
   - device_management
 ---
 
+{{< c8y-admon-related >}}
+References to related content in the documentation are mentioned in the details descriptions below.
+{{< /c8y-admon-related >}}
+
 For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface.
 
 To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device management library](/reference/device-management-library/#overview) in the *Reference guide*.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device integration > Fragment library](/device-integration/fragment-library/#overview) in the *Reference guide*.
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
@@ -30,32 +34,27 @@ Depending of the type and usage of a device, further actions are provided in an 
 
 Details on these additional menu items are provided where required.
 
-<a name="alarms"></a>
 ### Alarms
 
-The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](#alarm-monitoring) for detailed information on alarms.
+The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
-<a name="availability"></a>
 ### Availability
 
-The Availability tab offers availability monitoring for machines, see [Monitoring and controlling devices > Availability](#monitoring-availability) for more information.
+The Availability tab offers availability monitoring for machines, see [Monitoring and controlling devices > Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
 
-
-<a name="child-devices"></a>
 ### Child devices
 
 The **Child devices** tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
 
-For details provided in the child device list, see [Viewing devices](#viewing-devices).
+For details provided in the child device list, see [Viewing all devices](/device-management-application/viewing-all-devices).
 
-<a name="config"></a>
 ### Configuration
 
 The **Configuration** tab allows you to configure the parameters and initial settings of your device. Depending on the device, possible configurations are:
  - Text-based configurations
  - Binary-based configuration snapshots
 
-For more details on managing binary-based configuration snapshots, see [Managing device data > Managing configurations](#configuration-repository).
+For more details on managing binary-based configuration snapshots, see [Managing device data > Managing configurations](/device-management-application/managing-device-data/#managing-configurations).
 
 #### To request the current text-based configuration snapshot
 
@@ -74,36 +73,30 @@ For more details on managing binary-based configuration snapshots, see [Managing
 If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
 {{< /c8y-admon-info >}}
 
-<a name="control"></a>
 ### Control
 
-The **Control** tab lists the operations being sent to a device. See [Working with operations](#operation-monitoring) for detailed information on operations.
+The **Control** tab lists the operations being sent to a device. See [Monitoring and controlling devices > Working with operations](/device-management-application/monitoring-and-controlling-devices/#working-with-operations) for detailed information on operations.
 
 ![Operations](/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
 
-<a name="dev-profile"></a>
 ### Device profile
 
-See [Applying device profiles to devices](#applying-device-profiles) for more information on how to apply device profiles to a device.
+See [Managing device data > Applying device profiles to devices](/device-management-application/managing-device-data/#to-apply-device-profiles-to-devices) for more information on how to apply device profiles to a device.
 
-<a name="events"></a>
 ### Events
 
-The **Events** tab displays events related to a device. This enables low-level troubleshooting of a device. See [Troubleshooting devices](#events-all) for detailed information.
+The **Events** tab displays events related to a device. This enables low-level troubleshooting of a device. See [Monitoring and controlling devices > Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
 
-<a name="firmware"></a>
 ### Firmware
 
-See [Managing firmware on a device](#managing-firmware) for more information on how to manage and update the firmware on a device.
+See [Managing device data > Managing firmware](/device-management-application/managing-device-data/#to-manage-firmware-on-a-device) for more information on how to manage and update the firmware on a device.
 
-<a name="identity"></a>
 ### Identity
 
 {{< product-c8y-iot >}} can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
 
 This is useful, for example, when you have non-functional hardware and must replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
 
-<a name="info"></a>
 ### Info
 
 The **Info** tab summarizes management-relevant device information in a dashboard.
@@ -128,7 +121,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device status</td>
-<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="#connection-monitoring" class="no-ajaxy">Connection monitoring</a>. </td>
+<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="/device-management-application/monitoring-and-controlling-devices/#connection-monitoring" class="no-ajaxy">Connection monitoring</a>. </td>
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
@@ -147,7 +140,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Groups assignment</td>
-<td style="text-align:left">Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups, see <a href="#grouping-devices" class="no-ajaxy">Grouping devices</a>.</td>
+<td style="text-align:left">Displays the groups the device belongs to. Moreover you can add the device to groups here or unassign it from groups, see <a href="/device-management-application/grouping-devices" class="no-ajaxy">Grouping devices</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Location</td>
@@ -156,7 +149,6 @@ The information is provided on the following cards:
 </tbody>
 </table>
 
-<a name="location"></a>
 ### Location
 
 The **Location** tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
@@ -165,8 +157,6 @@ The **Location** tab by default shows the location of a device on a map and as c
 
 The **Location** tab also shows when a device contains `c8y_Position` property. When you send a new `c8y_Position` event, you can set the same `c8y_Position` fragment on the device and it will automatically mark its position on the map.
 
-
-<a name="logs"></a>
 ### Logs
 
 In the **Logs** tab you can manage log information from devices.
@@ -184,10 +174,9 @@ The log information will be requested from the device.
 
 ![Logs tab](/images/users-guide/DeviceManagement/devmgmt-devices-logs.png)
 
-{{< c8y-admon-info >}}
-Requesting a log from a device may take some time.
+>Requesting a log from a device may take some time.
+
 After the log has been transferred from the device to {{< product-c8y-iot >}}, it will be listed in the **Logs** tab. The row in the list shows the requested log time range.
-{{< /c8y-admon-info >}}
 
 Click on the entry in the list to show the entire log information.
 
@@ -199,7 +188,6 @@ Hover over a row and click the download icon, to download the log excerpt to you
 
 Hover over a row and click the delete icon, to delete the log information.
 
-<a name="measurements"></a>
 ### Measurements
 
 The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series".
@@ -215,7 +203,7 @@ Only one Y-axis is rendered if the measurements belong to the same series.
 To see detailed information about the measured values, hover over the chart. A tooltip will be displayed with detailed information on the measurement next to your cursor (the tooltip will "snap" to the closest measurement).
 
 {{< c8y-admon-info >}}
-We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device Management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
+We recommend you to have max. 20 series per measurement for optimal performance and readability of a single graph in Device management (the graph displays all available series). If you need to display only a few series from the measurement, we advise you to use Data explorer in Cockpit where you can select series to be shown in the graph.
 {{< /c8y-admon-info >}}
 
 **Time range and aggregation**
@@ -249,7 +237,6 @@ Example:
 
 `"Fragment_name"` and `"series_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure must be exactly as above, two-level deep JSON object.
 
-<a name="network"></a>
 ### Network
 
 In the **Network** tab, mobile network (WAN) and local area network (LAN) parameters can be viewed and configured.
@@ -289,7 +276,6 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
 {{< /c8y-admon-info >}}
 
-<a name="services"></a>
 ### Services
 
 The **Services tab** provides a list of all services running on a device with their status, name, type and date of the last update.
@@ -302,7 +288,6 @@ These predefined statuses have their own graphical representation and can be sel
 They all share the same icon and must be entered manually in the **Status** filter.
 A tooltip on the status icon displays their actual value.
 
-<a name="shell"></a>
 ### Shell
 
 The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
@@ -319,12 +304,10 @@ When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that
 
 For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **Predefined commands** above the command prompt area to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt. You may also add new commands here for re-use.
 
-<a name="software"></a>
 ### Software
 
-See [Managing software on a device](#managing-software) for more information on how to manage and update the software installed on a device.
+See [Managing device data > Managing software on a device](/device-management-application/managing-device-data/#managing-software) for more information on how to manage and update the software installed on a device.
 
-<a name="tracking"></a>
 ### Tracking
 
 Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.

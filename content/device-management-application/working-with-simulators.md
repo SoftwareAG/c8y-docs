@@ -2,7 +2,7 @@
 weight: 90
 title: Working with simulators
 layout: bundle
-section: 
+section:
   - device_management
 helpcontent:
   - label: simulator
@@ -35,7 +35,7 @@ A simulator uses a playlist to simulate messages that the device sends to the {{
 
 An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep).
 
-A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (for example 23.0 degrees). Many predefined message templates are provided, for example, for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates).
+A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (for example 23.0 degrees). Many predefined message templates are provided, for example, for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](/device-management-application/smartrest-templates).
 
 ### To view simulators
 
@@ -93,7 +93,7 @@ The panel at the right changes according to the type of instruction selected at 
 
 ![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
-The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](/reference/sensor-library/) in the *Reference guide*.
+The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in the [Fragment library](/device-integration/fragment-library/) in *Device integration*.
 
 The "Sleep" instruction requires one value for its duration in seconds.
 
@@ -138,6 +138,6 @@ The custom operation will be added to the operation list.
 
 ### Alarms (simulator)
 
-The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, that is, if the simulator itself does not work correctly. See [Working with alarms](/users-guide/device-management/#alarm-monitoring) for information on alarms.
+The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, that is, if the simulator itself does not work correctly. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for information on alarms.
 
 ![Alarms](/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)

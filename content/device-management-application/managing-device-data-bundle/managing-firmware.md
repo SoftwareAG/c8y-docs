@@ -73,7 +73,6 @@ The object will be deleted from the firmware repository.
 
 In the details of a specific firmware, hover over the version or patch entry you want to delete and click the delete icon. The firmware version or patch will be deleted from the firmware details.
 
-<a name="managing-firmware"></a>
 ### To manage firmware on a device
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
@@ -93,7 +92,7 @@ Additionally, it shows the operation status for the last operation (one of SUCCE
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
-2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type in the firmware repository.
+2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type (or the ones that have no device type) in the firmware repository.
 3. Click **Install**.
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
@@ -106,7 +105,7 @@ Click on the operation to view its details. The status of the last operation is 
 
 1. Execute the firmware operation (install or replace) on a single device to test that the new version works.
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**.
-3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/users-guide/device-management/#monitoring-and-controlling-devices).
+3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/device-management-application/monitoring-and-controlling-devices).
 
 The status of the bulk operation is shown in the **Bulk operations** tab under **Device control**.
 

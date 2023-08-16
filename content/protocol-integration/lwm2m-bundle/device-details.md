@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-info >}}
-In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
+In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Viewing device details](/device-management-application/viewing-device-details) in the Device management section.
 {{< /c8y-admon-info >}}
 
 <a name="objects"></a>
@@ -52,7 +52,6 @@ To sync properties, select the desired reference device from the dropdown list. 
 The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 {{< /c8y-admon-info >}}
 
-<a name="lwm2m-bootstrap"></a>
 ### LWM2M bootstrap parameters
 
 In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click **Save.**
@@ -65,7 +64,6 @@ Currently only the "NO_SEC" and "PSK" security modes are supported.
 
 For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register-device).
 
-<a name="lwm2m-client-awake-time"></a>
 ### LWM2M client awake time
 
 LWM2M client awake time specifies how long a device can be expected to be listening for incoming traffic before it goes back to sleep. The LWM2M server uses the client awake time to determine if the operations are passed down to a device.
@@ -78,7 +76,7 @@ LWM2M client awake time is determined based on the following priority:
 2. (If provided) Registration awake time attribute &ldquo;at&rdquo; in the registration request by the LWM2M client.
 3. Global setting of the LWM2M microservice.
 
-Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m#register-device) or set with the managed object update request as in the example:
+Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m/#register-device) or set with the managed object update request as in the example:
 ```
 PUT /inventory/managedObjects/<device-managed-object-id>
 

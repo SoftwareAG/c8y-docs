@@ -141,15 +141,15 @@ The response to that request will look like this:
 
 If you like to, you can repeat sending measurements. Before sending the request again, you should update the timestamp (value of attribute 'time') in order to create a time series.
 
-Now you are done. Enter the Device Management application in the {{< product-c8y-iot >}} UI, select your device on the "All devices" page and switch to the "Measurements" tab. Here you can see your measurement data.
+Now you are done. Enter the Device management application in the {{< product-c8y-iot >}} UI, select your device on the "All devices" page and switch to the "Measurements" tab. Here you can see your measurement data.
 
 If you do not see data, you might need to change the filter setting to, for example, "last week" to include the timestamp you used in your submitted measurement.
 
 
 #### Go further
 
-The sequence of REST calls demonstrated here is just a shortened procedure of those described in [Device integration](/device-integration/rest#device-integration).
+The sequence of REST calls demonstrated here is just a shortened procedure of those described in [Device integration](/device-integration/rest/#device-integration).
 The first step (creating a new device) is part of the 'startup phase', whereas step two (sending measurements) references to the 'cycle phase'.
 
-Refer to the section on [Device integration](/device-integration/rest#device-integration) to get the necessary information required for implementing
+Refer to the section on [Device integration](/device-integration/rest/#device-integration) to get the necessary information required for implementing
 real-world agents.

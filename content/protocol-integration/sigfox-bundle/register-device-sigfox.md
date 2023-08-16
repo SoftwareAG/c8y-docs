@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-To register a Sigfox device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Sigfox** from the dropdown.
+To register a Sigfox device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **Sigfox** from the dropdown.
 
 ![Register devices](/images/device-protocols/sigfox/sigfox-registration.png)
 
@@ -38,7 +38,7 @@ Click **Register** to submit the device registration request and create the devi
 
 You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening its **Events** tab. All events related to this device are listed here.
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management/).
+For more information on viewing and managing your connected devices, also refer to the [Device management application](/device-management-application/).
 
 In order to migrate the device from one LNS connection to another, the device needs to be re-registered.
 Navigate to the **LPWAN** tab of the Device.
@@ -46,4 +46,4 @@ Click on the **Provider connection** dropdown.
 A prompt will appear stating that in order to migrate the device from one LNS connection to another, you need to re-register the device.
 Click on the **Re-Register** button.
 
-The user is directed to the device registration page where he can perform the re-registration following the steps above and selecting the desired LNS connection. 
+The user is directed to the device registration page where he can perform the re-registration following the steps above and selecting the desired LNS connection.

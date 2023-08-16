@@ -5,21 +5,20 @@ layout: redirect
 ---
 
 To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
-Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types) in the *User guide*.
+Device protocols are accessible through the **Devices Types** menu in the Device management application. For details on the general usage, see [Device management application > Managing device types](/device-management-application/managing-device-types).
 
-<a name="creating_device_protocols"></a>
 ### Creating LWM2M device protocols
 
 Once you have registered a device, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
 
 To add a new LWM2M device protocol follow these steps:
 
-1. In the Device Management application, move to the **Device protocol** page.
+1. In the Device management application, move to the **Device protocol** page.
 2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming dialog select **LWM2M** as device protocol type.
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found at [http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd](http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd). <br>
 If the DDF files for the default mappings are uploaded in the {{< management-tenant >}}, all subscribed user tenants will inherit this behavior.
-In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol. 
+In the next dialog, you can see the name and description of the protocol. Click **Complete** to create the new device protocol.
 
 5. The device protocol opens in a new page that contains the object ID and description and the list of resources that belongs to this object. In this page additional functionalities to a resource can be added.
 
@@ -29,7 +28,6 @@ In the next dialog, you can see the name and description of the protocol. Click 
 LWM2M protocol resources cannot be edited.
 {{< /c8y-admon-info >}}
 
-<a name="resources"></a>
 ### Adding additional functionalities to a resource
 
 To access resource functionalities proceed to the device protocol page and click one of the resource instances. See below for the functionalities that you may enable:

@@ -24,7 +24,7 @@ To resolve this, refer to [Configure Sigfox credentials](#connectivity-sigfox).
 
 This warning message shows up when no Sigfox device protocol exists to be used for device registration.
 
-To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
+To resolve this, configure at least one device protocol in the [Device database](/device-management-application/managing-device-types).
 
 ### Connectivity
 

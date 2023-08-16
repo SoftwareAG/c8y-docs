@@ -5,12 +5,12 @@ layout: redirect
 ---
 
 
-To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa** from the dropdown.
+To register a LoRa device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **Actility LoRa** from the dropdown.
 
 ![Register devices](/images/device-protocols/lora-actility/lora-selection.png)
 
 {{< product-c8y-iot >}} fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
-If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
+If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#lora-device-registration-with-activation-by-personalization-abp) section.
 
 In the next window fill in the required information:
 - **Connection**: Lists all configured Actility connections in the tenant. The following device profile and connectivity plan option is populated based on the selected Actility connection.
@@ -34,7 +34,7 @@ The provision status is shown under **Device data** in the **Info** tab of the d
 
 ![Device data](/images/device-protocols/lora-actility/lora-devices-devicedata.png)
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management).
+For more information on viewing and managing your connected devices, also refer to the [Device management application](/device-management-application).
 
 In order to migrate the device from one LNS Connection to another, the device needs to be re-registered.
 Navigate to the **LPWAN** tab of the Device.
@@ -42,10 +42,10 @@ Click on the **Provider connection** dropdown.
 A prompt will appear stating that in order to migrate the device from one LNS connection to another, you need to re-register the device.
 Click on the **Re-Register** button.
 
-The user is directed to the device registration page where he can perform the re-registration by following the steps above and selecting the desired LNS connection. 
+The user is directed to the device registration page where he can perform the re-registration by following the steps above and selecting the desired LNS connection.
 
 
-### <a name="device-registration-process">LoRa device registration process</a>
+### LoRa device registration process
 
 <img src="/images/device-protocols/lora-actility/lora-device-registration-process.png" style="max-width: 60%">
 
@@ -53,13 +53,13 @@ A device is created based on the above workflow.
 
 First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the {{< product-c8y-iot >}} platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in {{< product-c8y-iot >}} with a link to the device in the ThingPark platform. If the validation fails, a failure message will be shown (see the [device registration subsection of the troubleshooting section](#lora-device-registration-troubleshooting) and the device is not created in {{< product-c8y-iot >}}.
 
-### <a name="device-registration-with-abp-activation">LoRa device registration with Activation by Personalization (ABP)</a>
+### LoRa device registration with Activation by Personalization (ABP)
 
 Activating the device by personalization is not recommended and not fully supported in {{< product-c8y-iot >}} LoRa device registration.
 
 However, if you would like to create a device with this activation type in {{< product-c8y-iot >}} and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you must create "AS Routing Profile" for {{< product-c8y-iot >}} using the destination `http://actility-server.{{< domain-c8y >}}` as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
 
-### <a name="legacy-LoRa-devices">Limitations for LoRa devices created with general device registration</a>
+### Limitations for LoRa devices created with general device registration
 
 The general device registration for LoRa devices is no longer supported.
 

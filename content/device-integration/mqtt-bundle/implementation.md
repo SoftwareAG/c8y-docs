@@ -4,7 +4,7 @@ title: MQTT implementation
 layout: redirect
 ---
 
-This section will list the implementation details for the MQTT protocol. The {{< product-c8y-iot >}} implementation supports MQTT Version 3.1.1.
+This section lists the implementation details for the MQTT protocol. The {{< product-c8y-iot >}} implementation supports MQTT Version 3.1.1.
 
 ### Connecting via MQTT
 
@@ -105,7 +105,6 @@ If that is not possible, to make the connection work, check the following:
 * In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/welcome/contacting-support/).
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
-<a name="MQTT-ClientId"></a>
 #### MQTT ClientId
 
 The MQTT ClientId is a field to uniquely identify each connected client. The {{< product-c8y-iot >}} implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:

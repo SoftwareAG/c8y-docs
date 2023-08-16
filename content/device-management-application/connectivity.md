@@ -2,13 +2,16 @@
 weight: 100
 title: Connectivity
 layout: bundle
-section: 
+section:
   - device_management
-aliases:
-  - users-guide/optional-services/
 ---
 
-The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
+{{< c8y-admon-related >}}
+* [Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) in the *Reference guide* for details on the `c8y_Mobile` fragment used in managed objects.
+* [Administration > Changing settings > Managing the connectivity settings](/users-guide/administration/#connectivity) in the *User guide* for information on how to change the connectivity settings via the UI.
+{{< /c8y-admon-related >}}
+
+The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device management application, provides basic information on mobile devices and additional connectivity details.
 
 The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platforms Comarch, Ericsson, Jasper and Kite.
 
@@ -27,7 +30,7 @@ The following features are supported by these providers:
 
 As you can see, Jasper currently is the most feature-rich provider.
 
-Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](/reference/device-management-library/#connectivity) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
+Each provider requires either ICCID or MSISDN to be set in the [c8y_Mobile](/device-integration/fragment-library/#connectivity) fragment of the managed object. This is used to properly map the managed object in {{< product-c8y-iot >}} to the associated SIM on the respective provider's platform.
 
 |Requires|Comarch|Ericsson|Jasper|Kite|
 |:------|:-----|:-------|:------|:------|
@@ -40,13 +43,12 @@ The following description is primarily based on Jasper, but the same configurati
 
 The following sections describe:
 
-* How to [set up your Jasper Control Center account](#link-account) (examplarily).
-* How to configure the [connectivity for the SIM provider](#connectivity-configuration) in your {{< product-c8y-iot >}} tenant.
-* How to [link SIMs and mobile devices](#link-sims).
-* Which information is shown in the [Connectivity tab](#jasperinfo).
-* How to [manage connectivity](#managing) from Device Management.
+* How to [set up your Jasper Control Center account](#setting-up-your-jasper-contro-center-account) (examplarily).
+* How to configure the [connectivity for the SIM provider](#configuring-the-connectivity-for-the-sim-provider) in your {{< product-c8y-iot >}} tenant.
+* How to [link SIMs and mobile devices](#linking-sims-and-mobile-devices).
+* Which information is shown in the [Connectivity tab](#connectivity-tab).
+* How to [manage connectivity](#checking-connectivity) from the Device management application.
 
-<a name="link-account"></a>
 ### Setting up your Jasper Control Center account
 
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from {{< product-c8y-iot >}} to Jasper Control Center, so the permissions of the user have influence on functionalities available in {{< product-c8y-iot >}}.
@@ -70,7 +72,6 @@ To create a user in Jasper Control Center perform the following steps:
 
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.
 
-<a name="connectivity-configuration"></a>
 ### Configuring the connectivity for the SIM provider
 
 Process the following step to configure the connectivity in {{< product-c8y-iot >}}:
@@ -91,10 +92,9 @@ A longer cache duration means less traffic to your SIM provider while a shorter 
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
 
-<a name="link-sims"></a>
 ### Linking SIMs and mobile devices
 
-Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
+Switch to the Device management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
 
 * Your user does not have permissions for Connectivity.
 * The device is not linked to a SIM card.
@@ -120,8 +120,6 @@ Note that it may take a few seconds until the tab appears for the first time on 
 
 The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
-
-<a name="jasperinfo"></a>
 ### Connectivity tab
 
 In the **Connectivity** tab you will find the following sections:
@@ -162,8 +160,6 @@ The **Audit logs** section lists all changes to the SIM card and its tariff. It 
 
 The **Connectivity** tab does not update in real-time. To show current data, click the **Reload** in the top menu bar.
 
-
-<a name="managing"></a>
 ### Checking connectivity
 
 If you suspect that a device is not correctly reporting to {{< product-c8y-iot >}}, or it is not receiving commands, you can verify the connectivity status of the device.
@@ -185,7 +181,7 @@ In the **Connectivity** tab, check the following conditions:
 Data connectivity can be analyzed in various places:
 
 * If the device reports its network configuration, navigate to the **Network** tab and verify, potentially edit, APN settings.
-* If the device supports shell, navigate to the [**Shell** tab](/users-guide/device-management/#shell) and verify, potentially edit, APN settings and roaming configuration.
+* If the device supports shell, navigate to the [**Shell** tab](/device-management-application/viewing-device-details/#shell) and verify, potentially edit, APN settings and roaming configuration.
 * Check the **Sessions** section on the **Connectivity** tab to see if the device has been communicating earlier and how much traffic it used.
 * Check the **Audit logs** section on the **Connectivity** tab to see if there were any recent changes to the SIM card.
 * Finally, click the cogwheel on the top right and select **SIM details** to navigate to the SIM configuration in Jasper Control Center.
@@ -197,5 +193,5 @@ The **SIM details** menu item requires you to have a login for Jasper Control Ce
 
 If the device is still not reporting to {{< product-c8y-iot >}}, there may be a configuration or software problem on the device.
 
-* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/users-guide/device-management/#connecting-devices).
+* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/device-management-application/registering-devices).
 * There may be a configuration or software problem with the device, which must be analyzed in a device-specific way.

@@ -136,10 +136,10 @@ Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
 ...
 ```
 
-After starting the application, you should see a new device in the Device Management application, listed in **All devices**.
+After starting the application, you should see a new device in the Device management application, listed in **All devices**.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

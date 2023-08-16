@@ -16,7 +16,6 @@ There are two types of operations in **Device control**, each represented by a t
 * **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations).
 * **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations).
 
-<a name="to-view-single-operations"></a>
 ### To view single operations
 
 See the list of single operations in the **Single operations** tab.
@@ -57,11 +56,11 @@ Single operations are listed in descending time order. Operations are executed s
 
 ### To add and execute a single operation
 
-Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#firmware-repo), [software](/users-guide/device-management/#software-repo), [configurations](/users-guide/device-management/#configuration-repository) and more.
+Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/device-management-application/managing-device-data/#to-manage-firmware-on-a-device), [software](/device-management-application/managing-device-data/#managing-software), [configurations](/device-management-application/managing-device-data/#managing-configurations) and more.
 
-When you create a [bulk operation](#bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
+When you create a [bulk operation](#to-view-bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
 
-Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
+Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Viewing device details > Shell](/device-management-application/viewing-device-details/#shell).
 
 {{< c8y-admon-important >}}
 When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
@@ -82,7 +81,6 @@ Click the menu icon at the right of the single operation that you want to create
 
 See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
 
-<a name="to-view-bulk-operations"></a>
 ### To view bulk operations
 
 See the list of bulk operations in the **Bulk operations** tab.
@@ -91,7 +89,7 @@ See the list of bulk operations in the **Bulk operations** tab.
 
 Bulk operations have an operation type and status.
 
-You can add bulk operations of the following operation types with the [bulk operation wizard](#bulk-operation-wizard):
+You can add bulk operations of the following operation types with the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard):
 
 | Operation type          | Description |
 | :---------------------- | :---------- |
@@ -140,17 +138,14 @@ To clear the filter, click **Clear** right next to it.
 
 To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
 
-<a name="bulk-operations"></a>
-<a name="to-add-a-bulk-operation"></a>
 ### To add a bulk operation
 
 There are two ways of creating a bulk operation:
 
-* Use the [bulk operation wizard](#bulk-operation-wizard)
+* Use the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard)
 * [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-<a name="bulk-operation-wizard"></a>
-#### To add a a bulk operation using the wizard
+#### To add a bulk operation using the wizard
 
 Follow these steps:
 
@@ -172,16 +167,15 @@ Follow these steps:
 4. Select target devices by applying filters to the paginated list of all devices. You can filter by status, name, type, model, group, registration date and alarms. You may apply multiple filters. To apply a filter, click the column header, make your filter option choices in the context menu and click **Apply**. The group filter also allows filtering by subgroups. To select a subgroup, if there are any, click the arrow button at the right of a group and select the desired subgroups from the dropdown. You can clear all filters by clicking **Clear filters** above the list. For the operation types "configuration update", "software update" and "apply device profile", the list is already filtered by the according device type. Click **Next**.
 5. Enter a new title or use the preset title. Optionally enter a description. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
 
-<a name="to-schedule-a-single-operation-as-bulk-operation"></a>
+
 #### To schedule a single operation as bulk operation
 
 You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:
 
 1. Click the menu icon at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
-2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#bulk-operation-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#bulk-operation-wizard) and follow it.
+2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#to-add-a-bulk-operation-using-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-add-a-bulk-operation-using-the-wizard) and follow it.
 
-<a name="bulk-operations"></a>
 ### To edit the schedule of bulk operations
 
 You may only edit the schedule of bulk operations with status = SCHEDULED.
@@ -192,7 +186,6 @@ You may only edit the schedule of bulk operations with status = SCHEDULED.
 
 The changes are applied to the bulk operation accordingly.
 
-<a name="bulk-operations"></a>
 ### To cancel bulk operations
 
 You may only cancel bulk operations with status = SCHEDULED or EXECUTING.
@@ -201,7 +194,6 @@ This way, you can cancel the creation of the remaining single operations.
 
 Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
 
-<a name="to-retry-failed-operations"></a>
 ### To retry failed operations
 
 You may retry the failed operations of a bulk operation that is either executing or completed with failures.

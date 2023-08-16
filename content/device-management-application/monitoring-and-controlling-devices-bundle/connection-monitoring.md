@@ -28,10 +28,10 @@ Hovering over the arrow displays the timestamp of the last request from the devi
 
 When a device is detected to be offline (stops sending data within required interval and top arrow changes to red color), an unavailability alarm is created for the device: "No data received from device within required interval".
 
-Send connections are updated when something is sent to the device, such as alarms, events, measurements or inventory updates.
+Send connections are updated when something is sent from the device, such as alarms, events, measurements or if a blank update is sent to the device itself. For details see [Device integration > Fragment library > Device availability > Availability monitoring](/device-integration/fragment-library/#device-availability) in the *Reference guide*.
 
 {{< c8y-admon-info >}}
-PUT requests to the managed object of the device will also update a connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.
+Empty PUT requests to the managed object of the device will also update a send connection. Such requests are the recommended way of implementing a heartbeat service that monitors the server status.
 {{< /c8y-admon-info >}}
 
 **Push connections**

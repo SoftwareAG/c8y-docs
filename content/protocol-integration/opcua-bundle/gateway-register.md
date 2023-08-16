@@ -23,7 +23,7 @@ gateway:
     bootstrap:
         tenantId: <<yourTenantId>>
     identifier: Gateway_Device
-    name: My Gateway
+    name: Gateway_Device
     db:
 # The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
@@ -32,6 +32,29 @@ gateway:
 {{< c8y-admon-info >}}
 Windows OS is used for the example.
 {{< /c8y-admon-info >}}
+
+### Thin Edge
+
+The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
+
+```yaml
+C8Y:
+    baseUrl: https://<<yourTenant>>.{{< domain-c8y >}}
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: Gateway_Device
+    db:
+# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+    thinEdge:
+        enabled: true
+        mqttServerURL: tcp://<<thinEdge MQTT broker>>
+        deviceId: Thin-Edge_Device
+```
+
+With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
 
 ### Configuration profile location on the filesystem
 
@@ -113,10 +136,21 @@ gateway:
       # automatically when the legacyCleanup is set to true, which is the default setting.
       # If the legacy files wanted to be kept or if the mechanism for clearing is not needed, set legacyCleanup to false.
       legacyCleanup: true
-
+  # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA gateway via Thin Edge).
+  thinEdge:
+    # Enable Thin Edge if the OPC UA gateway is running next to Thin Edge and should use it to connect to {{< product-c8y-iot >}}.
+    # Set enabled to false if the OPC UA gateway is running without Thin Edge.
+    enabled: false
+    # MQTT Server URL of Thin Edge (localhost).
+    mqttServerURL: tcp://127.0.0.1:1883
+    # Enable this if the MQTT client uses a single steady connection. Note that MQTT is only used to retrieve the JWT, which is dependent on how long the JWT is valid. See https://{{< domain-c8y >}}/guides/device-integration/mqtt/#jwt-token-retrieval.
+    # We recommend you to use a steady connection only if the JWT is valid for a short time. If the JWT is valid for a longer time, the standard is one hour. It is generally not recommended to have a steady MQTT connection.
+    mqttSteadyConnection: false
+    # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate.
+    deviceId: my-thin-edge-device
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
-  # Contact product support (https://{{< domain-c8y >}}/guides/<latest-release>/welcome/contacting-support/)
+  # Contact product support (https://{{< domain-c8y >}}/guides/<latest-release>/welcome/contacting-support/).
   # in case the bootstrap credentials are different.
   bootstrap:
     # Tenant ID to be used for device bootstrap
@@ -178,7 +212,7 @@ gateway:
       maxQueueSize: 50000
       # Worker thread (which performs the actual HTTP request) pool size
       threadPoolSize: 200
-  
+
     # Threadpool configuration for the mapping execution
     # Each value arriving in the gateway will be handled by one or more action handlers defined in the device type. Each handler will be executed in one single thread.
     # Hence, this threadpool must be large enough to cope with the parallel processing needs of values
@@ -197,9 +231,9 @@ gateway:
 
   # Mapping-specific settings
   mappings:
-  
+
   # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
-  # allows to configure how OPC UA severity is mapped into Cumulocity IoT severity levels. The following is the default mappings:
+  # allows to configure how OPC UA severity is mapped into {{< product-c8y-iot >}} severity levels. The following is the default mappings:
   # alarmSeverityMap:
     # 1001: CRITICAL
     # 801: CRITICAL
@@ -249,19 +283,25 @@ gateway:
     # if they fail due to error code Bad_NodeIdUnknown. It assumes that the NodeIds are correct, but it hasn't been added to the
     # server's address space yet. The default value is false.
     recreateFailedItems: false
-  
+
   # Subscription update settings
   subscriptionUpdate:
     # The subscription update interval controls how often the OPC UA gateway updates the subscription
     # settings for connected OPC UA servers. Expects: Interval duration in milliseconds.
     interval: 60000
-    
+
   # Server connectivity configuration
   connectivity:
-    # If the autoReconnect in the server's client configuration is set to false, then the gateway tries to reconnect manually.
+    # If autoReconnect in the client configuration is set to false, the gateway tries to reconnect manually.
     # triggerManualReconnectOnConnectionDrop can be used to stop the manual reconnect as well if set to false. The default value is true.
     triggerManualReconnectOnConnectionDrop: true
-    
+
+    # As a default, the OPC UA stack validates the endpoints returned by the OPC UA server. With this
+    # setting, the default can be toggled.
+    # This global setting can be individually overridden for each OPC UA server using the
+    # "validateDiscoveredEndpoints" configuration fragment.
+    # validateDiscoveredEndpoints: true
+
   # Internal repository configurations
   repositories:
     # Interval in milliseconds describing how often the repositories are flushed to the platform

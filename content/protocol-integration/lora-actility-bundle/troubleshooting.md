@@ -32,8 +32,9 @@ This issue can be solved by reconfiguring the Actility ThingPark credentials to 
 
 This warning message shows up when no LoRa device protocol exists to be used for device registration. To resolve this, click  **Device protocols** to navigate to the **Device protocols** page where the protocols are configured.
 
-<img src="/images/device-protocols/lora-actility/lora-registration-no-devicetype.png" alt="No device protocol given for LoRa" style="max-width: 100%">
-To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
+<img src="/images/device-protocols/lora-actility/lora-registration-no-devicetype.png" alt="No device protocol given for LoRa" style="max-width: 100%"/>
+
+To resolve this, configure at least one device protocol in the [Device database](/device-management-application/managing-device-types).
 
 #### No connectivity plans with free slots available
 
@@ -41,15 +42,12 @@ This warning message shows up when the connectivity plan in Actility ThingPark h
 
 To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in {{< product-c8y-iot >}}.
 
-<a name="lora-connectivity-troubleshooting"></a>
 ### Connectivity
 
 #### Authorization to the LoRa platform failed
 
 This warning message shows up if a provided profile ID, username or password is invalid.
 
-<img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
-<br>
 To resolve this, provide correct credentials and try again.
 #### Authentication to the Actility platform failed. Check if the base URL is correct.
 

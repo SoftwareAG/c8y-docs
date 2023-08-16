@@ -33,11 +33,11 @@ Devices connecting to the platform with certificates do not need to provide the 
 The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
 Auto-registration needs to be activated for the uploaded certificate.
 If auto-registration is not activated it is required to use the bulk registration (see below).
-To manage the auto registration field of uploaded certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates).
+To manage the auto registration field of uploaded certificates in the UI refer to [Device management application > Managing device data > Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
 
 **Bulk registration**
 
-The user for the device can also be created via the standard [bulk registration](/users-guide/device-management/#to-bulk-register-devices) in Device Management.
+The user for the device can also be created via the standard [bulk registration](/device-management-application/registering-devices/#to-bulk-register-devices) in the Device management application.
 
 The CSV file used in bulk registration should meet the requirements described in [Create a bulk device credentials request](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBulkNewDeviceRequestCollectionResource) in the {{< openapi >}}. Moreover, it is required that the CSV file has an additional column AUTH_TYPE with value CERTIFICATES, and that the column CREDENTIALS is either not present or has an empty value.
 
@@ -292,7 +292,7 @@ To create the intermediate certificate:
 1. Go to the directory of your caCertificate or intermediateCertificate depending on which one is used to sign the device certificate.
 2. Generate the private key for the new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
 3. Generate the certificate signing request (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl req -config caConfig.cnf -new -sha256 -key deviceCertificates/deviceKey.pem -out deviceCertificates/deviceCsr.pem`
-   Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, must match the [ClientId](/device-integration/mqtt/#MQTT-ClientId) of the device during the connection.
+   Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, must match the [ClientId](/device-integration/mqtt/#mqtt-clientid) of the device during the connection.
 4. Generate the certificate signed by the CA or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
 5. Verify if the generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
 
@@ -327,7 +327,7 @@ If you are using multiple intermediate certificates between the CA certificate a
     * If your keystore is in the JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
 6. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
 
-### How to test created certificates with MQTT.fx client
+### How to test created certificates with MQTT client
 
 ### Keystore and truststore
 
@@ -339,7 +339,7 @@ Upload your CA (or intermediate) certificate to the platform. This operation wil
 
 **Via UI:**
 
-1. In the Device Management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
+1. In the Device management application, navigate to the **Management** menu in the navigator and select **Trusted certificates**.
 2. In the resulting dialog, enter a custom name for the new certificate.
 3. Drop your CA certificate (caCert.pem or intermediateCert.pem).
 4. Select the **Auto registration** check box.
@@ -389,10 +389,13 @@ The steps for the proof of possession are as follows:
 1. Navigate to **Management** > **Trusted certificates** in the Device management application and verify that the certificate has been uploaded properly.
 <br>![Verify certificate](/images/mqtt/mqtt-cert-check.png)
 
-2. In the **Proof of Possession** section of the certificate details, download the unsigned verification code.
-<br>![Download unsigned verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
+2. In the **Proof of Possession** section of the certificate details, download the verification code.
+<br>![Download verification code](/images/mqtt/mqtt-cert-download-unsigned.png)
 
-3. Encrypt the unsigned verification code using the private key of the certificate to produce the signed verification code.
+3. Encrypt the verification code using the private key of the certificate to produce the signed verification code.
+Use the following OpenSSL command:
+
+    `openssl dgst -sha256 -sign <private.key> <verification_code.txt> | openssl base64 -A`
 
 4. Upload the signed verification code to the platform.
 <br>![Upload signed verification code](/images/mqtt/mqtt-cert-upload-signed.png)
@@ -403,36 +406,6 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 {{< c8y-admon-info >}}
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
-
-
-
-### Install and configure the MQTT client
-
-1. Download and install the newest MQTT.fx client from: [softblade.de/en/download-2](https://softblade.de/en/download-2/)
-2. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**.
-3. Edit the connection profiles like so:
-    - Insert the {{< company-c8y >}} URL in the **Broker address** line.
-    - Insert the SSL port in the **Broker port** line.
-    - In the **Client ID** field, insert the common name of your device certificate.
-    - Select SSL/TLS as the authentication type.
-    - Click **Enable SSL/TLS**.
-    - Select **TSL v1.2** or **TSL v1.3**.
-    - Select **Self signed certificates in keystores**
-    - In **Keystore File** insert the path to your deviceTruststore file with either JKS or PKCS12 format.
-    - In **Trusted Keystore Alias** insert **servercertificate** or a different value if you provided a different alias in step 3 above.
-    - In **Trusted Keystore Password** insert the password, which you created during the deviceTruststore file creation.
-    - In **Client Keystore** insert the path to your deviceKeystore file with either JKS or PKCS12 format.
-    - In **Client Keystore Password** insert the password you created during the deviceKeystore creation.
-    - In **Client KeyPair Alias** insert **devicekeyentry** or a different value if you provided a different alias in the "-name" parameter during the step about keystore creation in [Generating and signing certificates](#generating-and-signing-certificates).
-    - In **Client KeyPair Password** insert the password, which you created during the deviceKey.pem creation.
-    - The **PEM formatted** field should be checked.
-4. Save and close the settings.
-5. Select the edited profile and click connect.
-6. You should be succesfully connected and the buttons **Disconnect**, **Publish** and **Subscribe** should be active now. This means that your connection with the certificates work correctly.
-
-The connection settings should look like this:
-
-![MQTT.fx configuration](/images/mqtt/mqttFxConfig.png)
 
 ### MQTT example client
 

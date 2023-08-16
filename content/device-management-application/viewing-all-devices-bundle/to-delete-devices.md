@@ -11,7 +11,5 @@ layout: redirect
 The device will be permanently deleted from the platform.
 
 {{< c8y-admon-important >}}
-Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+Deleting a device means to remove the device from the {{< product-c8y-iot >}} database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](/device-management-application/grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](/device-management-application/monitoring-and-controlling-devices/#connection-monitoring). Deleting a device does not delete the data of its child devices.
 {{< /c8y-admon-important >}}
-
-<a name="filtering-devices"></a>

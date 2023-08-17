@@ -16,13 +16,8 @@ helpcontent:
     On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
-    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* in the *User guide* for details on each widget type and its configuration."
+    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Cockpit > Widgets collection* for details on each widget type and its configuration."
 ---
-
-{{< c8y-admon-related >}}
-- [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
-- [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
-{{< /c8y-admon-related >}}
 
 {{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
 Dashboards provide you with a customized visualization of your data, for example, alarms and events, and allow you to trigger remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
@@ -37,10 +32,14 @@ ROLES & PERMISSIONS:
 - To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
   {{< /c8y-admon-req >}}
 
-{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](/cockpit/widgets-collection/) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to the [Web SDK](/web/) for details.
+{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](/cockpit/widgets-collection/) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to [Web SDK](/web/) for details.
 
 <a name="creating-dashboards"></a>
 
+{{< c8y-admon-related >}}
+- [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
+- [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
 
 ### To create a dashboard
 

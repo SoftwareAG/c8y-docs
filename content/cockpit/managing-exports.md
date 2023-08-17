@@ -14,10 +14,6 @@ helpcontent:
 
 ---
 
-{{< c8y-admon-related >}}
-- The [Streaming Analytics guide](/streaming-analytics/overview-streaming-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
-{{< /c8y-admon-related >}}
-
 The export functionality lets you export specific data to either CSV or Excel files.
 
 {{< c8y-admon-req >}}
@@ -32,6 +28,10 @@ ROLES & PERMISSIONS:
   {{< /c8y-admon-req >}}
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
+
+{{< c8y-admon-related >}}
+- The [Streaming Analytics guide](/streaming-analytics/overview-streaming-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
+{{< /c8y-admon-related >}}
 
 <a name=""></a>
 ### To show all exports
@@ -102,7 +102,7 @@ An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedM
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, for example: ['fragment.key.with.dot'].series.value
 
-In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [To add a data point](#add-data-points).
+In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [To add a data point](/cockpit/data-explorer/#to-add-a-data-point).
 
 JsonPath expressions added from data points will be stored in bracket notation in order to increase the flexibility in fragment and series naming (for example whitespaces will be supported):
 
@@ -148,7 +148,7 @@ The export schedule will be added to the export details.
 
 #### Migration of scheduled exports
 
-With version 10.6.2, a new report agent has been implemented to allow scheduled reports with the [Streaming Analytics](/streaming-analytics/overview-streaming-analytics/) application. The export schedules functionality based on smart rules has been deprecated.
+With version 10.6.2, a new report agent has been implemented to allow scheduled reports with the [Streaming Analytics](/streaming-analytics/overview-analytics/) application. The export schedules functionality based on smart rules has been deprecated.
 
 On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
 
@@ -182,7 +182,7 @@ limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceed
 
 Just click the respective row or click the menu icon at the end of the row and then click **Edit**.
 
-For details on the fields see [To add an export](#add-export).
+For details on the fields see [To add an export](/cockpit/managing-exports/#to-add-an-export).
 
 
 ### To duplicate an export

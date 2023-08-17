@@ -63,7 +63,7 @@ In the **Preview** section at the right, a preview of the selected layout settin
 
 Next, widgets can be added to the report.
 
-Refer to [Using widgets in dashboards and reports](#using-widgets) for details on how to add, modify or remove widgets.
+Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
 ### To edit a report
 

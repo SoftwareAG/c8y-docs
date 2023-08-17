@@ -95,7 +95,6 @@ You may also see the following legacy roles:
 |business|Can access all devices and their data but has no management permission in the tenant.
 |readers|Can read all data (including users, in contrast to "Global Readers").
 
-<a name="add-global-role"></a>
 ### To add a global role
 
 Click **Add global role** in the **Global roles** tab. In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right. The following screenshot shows the settings for the "admins" role.
@@ -245,7 +244,6 @@ There may be additional permissions visible depending on the features in your su
 When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
 {{< /c8y-admon-important >}}
 
-<a name="assign-global-roles"></a>
 ### To assign global roles
 
 You can assign global roles to users either directly in the user list, or by opening the details page for a particular user and adding them there.

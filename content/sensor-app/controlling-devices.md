@@ -8,9 +8,9 @@ section:
 
 The {{< sensor-app >}} can receive real-time control commands from {{< product-c8y-iot >}}.
 
-You can create a dashboard for your smartphone device as described in [Cockpit > Working with dashboards](/users-guide/cockpit/#dashboards).
+You can create a dashboard for your smartphone device as described in [Working with dashboards](/cockpit/dashboards).
 
-For details on how to add new widgets to the dashboard, see [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection).
+For details on how to add new widgets to the dashboard, see [Widgets collection](/cockpit/widgets-collection).
 
 The "Message sending" widget can be used to send simple text notifications to a smartphone. Simply enter the required text into the widget and click **Send**. The message will appear as a pop-up alert on the device.
 

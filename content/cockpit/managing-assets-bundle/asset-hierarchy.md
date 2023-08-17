@@ -65,7 +65,7 @@ In the Cockpit application, you construct your asset hierarchy by creating group
 
 * **Gateway devices** establish the communication from other devices to {{< product-c8y-iot >}} but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
-The following section explains how to work with smart devices and gateway devices in the Cockpit application.
+The following documentation explains how to work with smart devices and gateway devices in the Cockpit application.
 
 The first example shows how smart devices are linked into the asset hierarchy:
 

@@ -28,7 +28,7 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 
 ![Cycle phase](/images/rest/cyclephase.png)
 
-Reference models for the data can be found in the [Fragment library](/device-integration/fragment-library/).
+Reference models for the data can be found in the [fragment library](/device-integration/fragment-library/).
 
 
 ### Startup Phase
@@ -197,7 +197,7 @@ The example above contains a number of metadata items for the device:
 -   "com\_cumulocity\_model\_Agent" marks devices running a {{< product-c8y-iot >}} agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
-For more information, refer to the [Fragment library](/device-integration/fragment-library/).
+For more information, refer to the [fragment library](/device-integration/fragment-library/).
 
 If the device could be successfully created, a status code of 201 is returned. If the original request contains an "Accept" header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).
 
@@ -249,9 +249,9 @@ For example, the hardware information of a device will usually not change, but t
 
     HTTP/1.1 200 OK
 
-{{< c8y-admon-caution >}}
+{{< c8y-admon-important >}}
 Do not update the name of a device from an agent! An agent creates a default name for a device so that it can be identified in the inventory, but users should be able to edit this name or update it with information from their asset management.
-{{< /c8y-admon-caution >}}
+{{< /c8y-admon-important >}}
 
 
 #### Step 5: Discover child devices and create or update them in the inventory

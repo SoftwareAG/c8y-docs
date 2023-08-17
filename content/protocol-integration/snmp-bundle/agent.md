@@ -14,7 +14,7 @@ If you are using one of the {{< company-sag >}} public cloud instances, you must
 To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 
 * download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/).
-* Upload this ZIP file as a microservice into the platform. Refer to [Managing and monitoring microservices](/standard-tenant/ecosystem/#managing-microservices) for details on how to upload microservices into {{< product-c8y-iot >}}.
+* Upload this ZIP file as a microservice into the platform. Refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) for details on how to upload microservices into {{< product-c8y-iot >}}.
 {{< /c8y-admon-info >}}
 
 ### Installation

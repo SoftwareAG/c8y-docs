@@ -10,7 +10,7 @@ This section gives a very basic example how to create a device representation in
 
 All steps are performed by calling REST interfaces. Those REST calls are demonstrated by CURL statements that can be executed on command line.
 
-Refer to the [Using the REST interface](/microservice-sdk/rest) for a short introduction to CURL.
+Refer to [Using the REST interface](/microservice-sdk/rest) for a short introduction to CURL.
 
 
 ### Prerequisites

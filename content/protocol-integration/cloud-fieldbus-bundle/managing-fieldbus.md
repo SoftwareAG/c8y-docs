@@ -16,7 +16,7 @@ Depending on the capabilities of the device and its configuration in {{< product
 
 ### Collecting measurements
 
-If the device protocol of the fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data explorer](/cockpit/data-explorer) and in [Working with dashboards](/cockpit/dashboards).
+If the device protocol of the fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data explorer](/cockpit/data-explorer) and in [dashboards](/cockpit/dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data which is exactly the same as collected previously may not be sent again.
 
@@ -36,7 +36,7 @@ Similar to alarms, changes in fieldbus devices can be monitored and logged as ev
 
 ### Monitoring the device status
 
-The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit](/cockpit/).
+The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in [Cockpit](/cockpit/).
 
 ### Monitoring the device status using the Fieldbus device widget
 

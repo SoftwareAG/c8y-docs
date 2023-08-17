@@ -78,7 +78,7 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 
 1. Use a {{< product-c8y-iot >}} administrator user to log into the {{< product-c8y-iot >}} platform.
 1. Switch to the Administration application.
-1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/standard-tenant/managing-permissions/). If the menu item is still not available, please contact [product support](/additional-resources/contacting-support/) to make the Connectivity agent available in your tenant.
+1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/standard-tenant/managing-permissions/). If the menu item is still not available, contact [product support](/additional-resources/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
 1. Enter the credentials for the respective SIM provider account. If you do not have any credentials, ask your administrator.

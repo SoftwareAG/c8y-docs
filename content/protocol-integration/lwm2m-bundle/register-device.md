@@ -402,4 +402,4 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 ### Device deletion
 
 During LWM2M device registration the tenant route information is also stored in the cluster tenant.
-In order to remove the device, delete it from the list in [Viewing all Devices](/device-management-application/viewing-all-devices).
+To remove the device, delete it from the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list.

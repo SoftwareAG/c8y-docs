@@ -2,11 +2,9 @@
 weight: 30
 title: B
 layout: bundle
-section: 
+section:
   - getting_started
 ---
-
-<a name="blocks"></a>
 
 ### Blocks
 

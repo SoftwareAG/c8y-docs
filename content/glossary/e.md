@@ -2,12 +2,10 @@
 weight: 60
 title: E
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
-
-<a name="ent-tenant"></a>
 
 ### Enterprise tenant
 
@@ -15,18 +13,17 @@ A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/concepts/tenant
 
 Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, such as Branding for the creation of an individual look & feel.
 
-See also [Standard tenant](#standard-tenant) and [Management tenant](#mgm-tenant).
+See also [Standard tenant](#standard-tenant) and [Management tenant](#management-tenant).
+
 
 <a name="epl"></a>
-
 ### Event Processing Language (EPL)
 
 On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engine to define business operations for real-time processing. The operation logic is implemented in Apama’s Event Processing Language (EPL).
 EPL covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-streaming-analytics) application. Alternatively, you can install Apama on your local machine and develop your applications in an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}.
 
-For details see [Real-time processing > Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
+For details see [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
 
-<a name="epl-apps"></a>
 
 ### EPL Apps
 
@@ -34,11 +31,10 @@ EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](#c8y-strea
 
 See also [Event Processing Language (EPL)](#epl) and [Analytics Builder](#analytics-builder).
 
-For more details see [Overview > EPL apps](/apama/overview-analytics/#apama-epl-apps) in the *Streaming Analytics guide*.
+For more details see [EPL Apps](/apama/overview-analytics/#apama-epl-apps).
 
-<a name="event"></a>
 
-### Events
+### Event
 
 In the context of {{< product-c8y-iot >}}:
 

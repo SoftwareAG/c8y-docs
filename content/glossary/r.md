@@ -2,12 +2,10 @@
 weight: 140
 title: R
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
-
-<a name=""></a>
 
 ### Real-time processing
 
@@ -15,13 +13,11 @@ section:
 
 For details see [Real-time processing](/concepts/realtime/).
 
-<a name="rest"></a>
 
 ### REST
 
 In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
 
-<a name="rest-api"></a>
 
 ### REST API
 

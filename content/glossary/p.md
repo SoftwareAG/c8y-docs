@@ -2,12 +2,10 @@
 weight: 130
 title: P
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
-
-<a name="permissions"></a>
 
 ### Permissions
 

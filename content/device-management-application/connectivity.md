@@ -7,8 +7,8 @@ section:
 ---
 
 {{< c8y-admon-related >}}
-* [Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
-* [Standard tenant administration > Changing settings > Connectivity](/standard-tenant/changing-settings/#connectivity) for information on how to change the connectivity settings via the UI.
+* [Device management > Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
+* [Platform administration > Standard tenant administration > Changing settings > Connectivity](/standard-tenant/changing-settings/#connectivity) for information on how to change the connectivity settings via the UI.
 {{< /c8y-admon-related >}}
 
 The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device management application, provides basic information on mobile devices and additional connectivity details.

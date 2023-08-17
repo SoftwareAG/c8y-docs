@@ -23,7 +23,7 @@ When designing a web application, data properties retrieved or persisted using t
 
 For an application to be available it must be deployed on the {{< product-c8y-iot >}} platform.
 
-For details on how to deploy an application to {{< product-c8y-iot >}}, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
+For details on how to deploy an application to {{< product-c8y-iot >}}, refer to [Adding custom applications](/standard-tenant/ecosystem/#adding-applications).
 
 {{< c8y-admon-info >}}
 In case of a web application, the application is active for you as owner without subscribing to it.
@@ -33,4 +33,4 @@ In case of a web application, the application is active for you as owner without
 
 You can host your own HTML5 and JavaScript web applications through {{< product-c8y-iot >}} by using the application manager under **Ecosystem** > **Applications** in the {{< product-c8y-iot >}} Administration application.
 
-For details refer to  [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
+For details refer to [Managing applications](/standard-tenant/ecosystem/#managing-applications).

@@ -17,8 +17,8 @@ The current compatibility statements are described as follows.
 {{< product-c8y-iot >}}'s REST, SmartREST and MQTT APIs as documented in the product documentation are backwards compatible. You can find such documentation in:
 
 * [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/)
-* [Reference guide > SmartREST 2.0](/reference/smartrest-two/)
-* [Device Integration > Device integration using MQTT](/device-integration/mqtt/)
+* [SmartREST 2.0](/smartrest/smartrest-two/)
+* [Device integration using MQTT](/device-integration/mqtt/)
 
 
 However, {{< product-c8y-iot >}} is continually improving the user experience and product capabilities and may improve the API from time-to-time. Therefore, applications shall always obey a few basic rules:

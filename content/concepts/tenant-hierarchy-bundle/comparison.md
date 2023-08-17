@@ -2,7 +2,7 @@
 title: RBAC versus multi-tenancy approach
 layout: bundle
 weight: 100
-section: 
+section:
   - platform_administration
 ---
 
@@ -42,11 +42,6 @@ The customer tenant is not different from your tenant unless you restrict your c
 
 The following tasks should be covered by a platform solution:
 
-- [Introduction](#introduction)
-- [General setup](#general-setup)
-  - [Role-Based Access Control (RBAC)](#role-based-access-control-rbac)
-  - [Multi-tenancy](#multi-tenancy)
-- [Comparison of various use cases](#comparison-of-various-use-cases)
   - [Customer onboarding](#customer-onboarding)
   - [Device registration](#device-registration)
   - [Access Rights](#access-rights)
@@ -54,11 +49,10 @@ The following tasks should be covered by a platform solution:
   - [Application management](#application-management)
   - [Invoicing and usage data](#invoicing-and-usage-data)
   - [Analytics](#analytics)
-    - [{{\< product-c8y-iot \>}} DataHub](#-product-c8y-iot--datahub)
+  - [{{< product-c8y-iot >}} DataHub](#cumulocity-iot-datahub)
 
 The following sections discuss how these tasks are handled in both approaches.
 
-<a name="customer-onboarding"></a>
 #### Customer onboarding
 
 <table>
@@ -84,7 +78,6 @@ The following sections discuss how these tasks are handled in both approaches.
 
 The creation of a new customer is equally simple. However, you must consider that in the multi-tenant approach you create a new empty tenant with nothing in it but the standard applications. You still might need to subscribe additional applications, create default dashboards, configure retention and others. These are already present in the RBAC approach as they are set up only once for everyone. On the other hand, this also means that you cannot have different setups for different customers, as certain settings (like retention) are configured at tenant level.
 
-<a name="device-registration"></a>
 #### Device registration
 
 <table>
@@ -110,8 +103,8 @@ The creation of a new customer is equally simple. However, you must consider tha
 
 There is no technical limitation on who registers the device on the platform. However, care should be taken with the RBAC approach since customers can more easily make an incorrect configuration which registers the device without the customers being able to see it.
 
-<a name="access-rights"></a>
-#### Access Rights
+
+#### Access rights
 
 <table>
 <thead>
@@ -139,7 +132,6 @@ In the RBAC approach, managing access is the most complicated part as a misconfi
 For security aspects on access control see [Security aspects > Access control](/concepts/security/#access-control).
 
 
-<a name="user-management"></a>
 #### User management
 
 <table>
@@ -165,7 +157,6 @@ For security aspects on access control see [Security aspects > Access control](/
 
 Having a separate tenant for each customer they will not be limited with respect to user management and can fully utilize all management functionality. In the RBAC approach you can delegate certain management functionality and the platform will make sure that users can never overstep their boundaries. However, certain functionality like creating roles will only be available to full user management admins.
 
-<a name="application management"></a>
 #### Application management
 
 <table>
@@ -191,7 +182,7 @@ Having a separate tenant for each customer they will not be limited with respect
 
 Application management is only available on tenant level. If you want to give customers the ability to extend the platform on their own you will need to go for a separate customer tenant. In the RBAC approach you need to take care of the application management but it is still possible to have different applications for different customers. This is easily doable for UI applications however if you add microservices you need to manage it via access rights as the microservice is generally available for the whole tenant.
 
-<a name="usage-data"></a>
+
 #### Invoicing and usage data
 
 <table>
@@ -218,7 +209,7 @@ Application management is only available on tenant level. If you want to give cu
 
 Choosing the RBAC approach limits you in the options for your business model as it will be impossible to get accurate usage data for the customers. A license based business model (for example per device) is far more feasible in the RBAC setup. Dealing with a multi-tenant setup gives you the option to select typical Cloud-based business models where you charge per API call and storage.
 
-<a name="analytics"></a>
+
 #### Analytics
 
 <table>
@@ -245,6 +236,6 @@ Choosing the RBAC approach limits you in the options for your business model as 
 
 If you are dealing with a single tenant it will be easier to do analytics across all devices of all customers but it might be more complicated to do separate analytics for just one customer. Having the data spread across multiple tenants will take additional effort to collect the data in one place for such use cases. However, it will ease deployment of custom analytics solutions per customer.
 
-##### {{< product-c8y-iot >}} DataHub
+##### Cumulocity IoT DataHub
 
 {{< product-c8y-iot >}} DataHub currently does not support RBAC. Users who have access to DataHub on the tenant can offload any measurements, events, alarms, and inventory details into the same data lake regardless of the permission in use. Although it might be possible to restrict the offloading job to just data for a user this would require careful and manual configuration. DataHub currently only supports one data lake folder connection per tenant. Also note that only one user is created to access the data lake from analytical tools, therefore enforcing security on the data in the data lake is also currently not possible.

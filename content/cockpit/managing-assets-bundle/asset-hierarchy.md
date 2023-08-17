@@ -14,13 +14,6 @@ helpcontent:
 
 ---
 
-{{< c8y-admon-related >}}
-- [Getting started > Technical concept > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview) for details on {{< product-c8y-iot >}}'s domain model.
-- [Device management > Device management application](/device-management-application/registering-devices/) for details on working with devices in {{< product-c8y-iot >}}.
-- [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-a-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
-{{< /c8y-admon-related >}}
-
-
 Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
 
 
@@ -48,6 +41,13 @@ To position a device in the asset hierarchy, you must "assign" the device to the
 {{< c8y-admon-info >}}
 Single devices are not managed in the Cockpit application. They are managed in the Device management application.
 {{< /c8y-admon-info >}}
+
+{{< c8y-admon-related >}}
+- [Getting started > Technical concept > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview) for details on {{< product-c8y-iot >}}'s domain model.
+- [Device management > Device management application](/device-management-application/registering-devices/) for details on working with devices in {{< product-c8y-iot >}}.
+- [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-a-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
 
 <a name="hierarchies"></a>
 ### Asset hierarchy versus device hierarchy

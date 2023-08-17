@@ -31,9 +31,9 @@ Depending on the asset type (group or device), various tabs are available with d
 
 Groups show the following tabs:
 
-- **Subassets** - Shows group details and all subassets of a group, see also [Device management > Viewing devices](/users-guide/device-management/#viewing-devices).
-- **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](#smart-rules).
-- **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+- **Subassets** - Shows group details and all subassets of a group, see also [Viewing all devices](/device-management-application/viewing-all-devices/).
+- **Smart rules** - Shows smart rules specified for the group, see also [Smart rules](/cockpit/smart-rules/).
+- **Data explorer** - Shows all data points of the children. For details refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization).
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS in groups context:
@@ -50,9 +50,9 @@ Note that global inventory permissions override inventory role permissions.
 
 Devices show the following tabs:
 
-- **Smart rules** - Shows smart rules specified for the device, see also [Smart rules](#smart-rules).
-- **Alarms** - Displays alarms for the device, see also [Device management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
-- **Data explorer** - Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).
+- **Smart rules** - Shows smart rules specified for the device, see also [Smart rules](/cockpit/smart-rules/).
+- **Alarms** - Displays alarms for the device, see also [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms).
+- **Data explorer** - Shows all data points of the children. For details refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization).
 - **Location** - Shows the current location of a device (only available with `c8y_Position`).
 
 {{< c8y-admon-req >}}
@@ -63,9 +63,9 @@ ROLES & PERMISSIONS in devices context:
 - To delete any device within a group: ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](#dashboards) for details.
+If dashboards have been created for a group or device, they will also be added as a tab. See [Working with dashboards](/cockpit/working-with-dashboards/) for details.
 
-Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
+Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/) to see how to add a custom tab.
 
 <a name="creating-groups"></a>
 ### To add a group
@@ -99,7 +99,7 @@ In the resulting dialog box, you can select to also delete all devices inside th
 <a name="assigning-devices"></a>
 ### To assign devices to a group
 
-Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device management application. For details on connecting devices refer to [Device management](/users-guide/device-management).
+Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device management application. For details on connecting devices refer to [Device management application](/device-management-application/registering-devices/).
 
 To assign devices to a group, follow these steps:
 

@@ -30,7 +30,7 @@ ROLES & PERMISSIONS:
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
 {{< c8y-admon-related >}}
-- The [Streaming Analytics guide](/streaming-analytics/overview-streaming-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
+- [Analytics > Streaming Analytics](/streaming-analytics/overview-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
 {{< /c8y-admon-related >}}
 
 <a name=""></a>

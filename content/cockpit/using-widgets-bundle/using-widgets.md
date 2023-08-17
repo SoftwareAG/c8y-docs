@@ -19,7 +19,7 @@ ROLES & PERMISSIONS:
 Some of the widget require additional permissions in order to visualize the data which they display. For example, the alarms widget requires READ permission for permission type "Alarms" in order to view all alarms.
 {{< /c8y-admon-req >}}
 
-{{< product-c8y-iot >}} provides preset widget types, for details see the [Widgets collection](#widgets-collection).
+{{< product-c8y-iot >}} provides preset widget types, for details see the [Widgets collection](/cockpit/widgets-collection/).
 
 <a name="adding-widgets"></a>
 
@@ -29,9 +29,9 @@ Some of the widget require additional permissions in order to visualize the data
 
 2. In the **Add widget** dialog, select a widget type.
 
-3. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets-collection).
+3. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
 
-4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](#creating-dashboards).
+4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](/cockpit/working-with-dashboards/#to-create-a-dashboard).
 
         {{< c8y-admon-info >}}
 

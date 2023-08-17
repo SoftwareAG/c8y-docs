@@ -33,7 +33,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/standard-tenant/home-screen/" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web application</td>
@@ -41,7 +41,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left"><a href="/cockpit/overview/" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web application</td>
@@ -49,7 +49,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management" class="no-ajaxy">Device management</a></td>
+<td style="text-align:left"><a href="/device-management-application/" class="no-ajaxy">Device management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
@@ -57,7 +57,7 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled)</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web application</td>

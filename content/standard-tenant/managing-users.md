@@ -33,7 +33,7 @@ On tenant creation, there are default roles available that can be used as a samp
 * Global User Manager - Can access and modify the full user hierarchy
 * Shared User Manager - Can create new users as his own subusers and manage them ("feature-user-hierarchy" application subscription required)
 
-Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Enterprise tenant administration > Managing user hierarchies](/enterprise-tenant/user-hierarchies).
+Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Managing user hierarchies](/enterprise-tenant/user-hierarchies).
 {{< /c8y-admon-req >}}
 
 If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
@@ -52,8 +52,8 @@ Users which are using single sign-on cannot change the password of users which a
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
-- [Managing permissions](#managing-permissions) for details on assigning roles and permissions to users.
-- [Tenant hierachy](/concepts/tenant-hierarchy) in the *Concepts guide* for information on the concept of multi-tenancy as opposed to user access control.
+- [Platform administration > Standard tenant management > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions to users.
+- [Getting started > Technical concepts > Tenant hierachy](/concepts/tenant-hierarchy) for information on the concept of multi-tenancy as opposed to user access control.
 - [Users](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
 {{< /c8y-admon-related >}}
 
@@ -68,13 +68,13 @@ A user list will be displayed, providing the following information for each user
 * The username that is used to access the tenant.
 * The name and email of the user (if set).
 * The global roles assigned to the user.
-* The [strength](/users-guide/getting-started/#change-password) of the password set for the user
+* The [strength](/getting-started/user-settings/#change-password) of the password set for the user
 
-To filter the list by username, you can use the filter field at the left of the top menu bar. With the dropdown list you can filter by global roles. For details on filtering, see [Getting started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+To filter the list by username, you can use the filter field at the left of the top menu bar. With the dropdown list you can filter by global roles. For details on filtering, see [Filtering](/getting-started/gui-features/#filtering).
 
 In order to apply the selected filters click **Apply**.
 
-Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-tenant/#user-hierarchies).
+Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/enterprise-tenant/user-hierarchies).
 
 <a name="creating-users"></a>
 ### To add a user
@@ -129,24 +129,24 @@ If single sign-on is enabled for your tenant, a message will show up which remin
           </tr>
           <tr>
              <td align="left">Owner</td>
-             <td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
+             <td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="/enterprise-tenant/user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
           </tr>
           <tr>
              <td align="left">Delegated by</td>
-             <td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="../../users-guide/enterprise-tenant#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
+             <td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="/enterprise-tenant/user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
           </tr>
       </tbody>
       </table>
 
-      For additional information see [User options and settings](/users-guide/getting-started/#user-settings).
+      For additional information see [User options and settings](/getting-started/user-settings).
 
 
 3. Select the login options for the user.
-	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
-	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/users-guide/getting-started/#change-password) for further information on password reset and strength.  
+	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/authentication/tfa/).
+	* **User must reset password on next login** - if selected, you must provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To change your password](/getting-started/user-settings/#change-password) for further information on password reset and strength.  
 	* **Send password reset link as email** - if selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above. This option is only available during user creation.
 <br><br>
-4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/users-guide/administration#managing-permissions).
+4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/standard-tenant/managing-permissions).
 5. Click **Save** to save your settings.
 
 The new user will be added to the user list.
@@ -177,7 +177,7 @@ Click the menu icon at the right of the respective row and then click **Delegate
 
 Click **Undelegate** to remove a delegation.
 
-Refer to [Managing user hierarchies](/users-guide/enterprise-tenant#user-hierarchies) for details on delegation.
+Refer to [Managing user hierarchies](/enterprise-tenant/user-hierarchies) for details on delegation.
 
 ### To disable/enable a user
 

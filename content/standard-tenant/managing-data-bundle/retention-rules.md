@@ -26,7 +26,7 @@ The above permissions can be used to create roles for robust user management. Ev
 
 
 {{< c8y-admon-related >}}
-- [Enterprise tenant > Managing tenants > Tenant policies](/users-guide/enterprise-tenant/#tenant-policies) in the <i>User guide</i> for details on the creation of tenant policies and retention rules on tenant level.
+- [Platform administration > Enterprise tenant administration > Managing tenants > Tenant policies](/enterprise-tenant/managing-tenants/#tenant-policies) for details on the creation of tenant policies and retention rules on tenant level.
 - [Retention rules](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Retention-rules) in the {{< openapi >}} for details on managing retention rules via REST.
 {{< /c8y-admon-related >}}
 
@@ -72,7 +72,7 @@ Retention rules do not apply to files stored in the files repository.
 The retention rule will be added to the list.
 
 {{< c8y-admon-info >}}
-Per default, an asterisk ("*") is set in all fields except the **Maximum age** field, to include all values.
+Per default, an asterisk * is set in all fields except the **Maximum age** field, to include all values.
 Alarms are only removed if they have a status of CLEARED.
 {{< /c8y-admon-info >}}
 

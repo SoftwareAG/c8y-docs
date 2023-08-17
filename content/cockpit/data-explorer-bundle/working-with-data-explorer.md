@@ -19,13 +19,6 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-{{< c8y-admon-related >}}
-
-- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
-
-{{< /c8y-admon-related >}}
-
-
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
@@ -46,7 +39,7 @@ The data explorer is available for all assets at once or just for a particular a
 
 - Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
-In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](#add-data-points).
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](#to-add-a-data-point).
 
 On the left, in the main card, you see its visualization.
 
@@ -72,6 +65,12 @@ Let's assume you have a temperature data point defined in the library and a devi
 Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-related >}}
+
+- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
+
+{{< /c8y-admon-related >}}
+
 <a name="add-data-points"></a>
 ### To add a data point
 
@@ -85,7 +84,7 @@ The center of the dialog shows all data points of the selected object. Select th
 
 The right hand side shows all of the selected data points.
 
-For further information on the data point library refer to [Data point library](#data-point-library).
+For further information on the data point library refer to the [Data point library](/cockpit/data-point-library/).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 

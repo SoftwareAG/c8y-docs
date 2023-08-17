@@ -19,13 +19,6 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-{{< c8y-admon-related >}}
-
-- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
-
-{{< /c8y-admon-related >}}
-
-
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
@@ -44,7 +37,7 @@ The data explorer is available for all assets at once or just for a particular a
 
 - Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its subassets.
 
-In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](#add-data-points).
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [To add a data point](/cockpit/data-explorer/#to-add-a-data-point).
 
 On the left, in the main card, you see its visualization.
 
@@ -54,13 +47,13 @@ The visualization is generated based on data point properties.
 
 The data points properties are pre-filled as follows:
 
-* If these properties have been customized previously, these values are used, see [Customizing data point properties](#customize-data-points).
+* If these properties have been customized previously, these values are used, see [To customize data point properties](#customize-data-points).
 
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
-For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
+For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#customize-data-points).
 
 **Example:**
 
@@ -69,6 +62,12 @@ Let's assume you have a temperature data point defined in the library and a devi
 {{< c8y-admon-info >}}
 Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 {{< /c8y-admon-info >}}
+
+{{< c8y-admon-related >}}
+
+- [Measurements](https://{{< domain-c8y >}}/api/core/#tag/Measurements) in the *{{< openapi >}}* for further details on uploading data to {{< product-c8y-iot >}}.
+
+{{< /c8y-admon-related >}}
 
 <a name="change-visualization"></a>
 ### Changing data explorer visualization

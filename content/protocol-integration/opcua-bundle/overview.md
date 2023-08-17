@@ -16,7 +16,7 @@ The OPC UA device gateway is a stand-alone Java program that communicates with O
 The gateway must be registered as {{< product-c8y-iot >}} device in a specific tenant and the opcua-device-gateway must run in the users' environment.
 
 {{< c8y-admon-important >}}
-In order to use OPC UA, you must be subscribed to the "opcua-mgmt-service" microservice. If the "opcua-mgmt-service" microservice is not available in your tenant, contact [product support](/additional-resources/contacting-support/).
+In order to use OPC UA, you must be subscribed to the "opcua-mgmt-service" microservice. If the "opcua-mgmt-service" microservice is not available in your tenant please contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-important >}}
 
 To download the gateway navigate to [{{< product-c8y-iot >}} resources](http://resources.{{< domain-c8y >}}/examples/opc-ua/).

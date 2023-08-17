@@ -19,7 +19,7 @@ You can connect any device supporting LWM2M 1.1 or LWM2M 1.0 to {{< product-c8y-
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-req >}}
-In order to use LWM2M, you must be subscribed to the LWM2M-agent application. If the LWM2M-agent is not available in your tenant, contact [product support](/additional-resources/contacting-support/).
+In order to use LWM2M, you must be subscribed to the LWM2M-agent application. If the LWM2M-agent is not available in your tenant please contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-req >}}
 
 Our LWM2M solution allows any LWM2M object to be easily interfaced with the platform. For the sake of convenience, we provide out-of-the-box integration for the following LWM2M objects:

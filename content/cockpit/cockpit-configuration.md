@@ -20,7 +20,7 @@ If these requirements are met, an **App configuration** entry is visible in the 
 
 ### To configure a custom Cockpit application
 
-In the navigator, click **App configuration** in the **Configuration** menu.
+In the navigator, click **Application configuration** in the **Configuration** menu.
 
 ![App configuration](/images/users-guide/cockpit/cockpit-app-configuration.png)
 
@@ -28,7 +28,7 @@ In the **App configuration** page, you can customize your Cockpit application in
 
 #### Features
 
-In the **Features** section, you can disable certain features like for example, the global search, alarms, or the data explorer.
+Under **Features** you can disable certain features like for example, the global search, alarms, or the data explorer.
 
 By default, all features are enabled. Use the toggle next to a feature to disable it. The respective menu item in the navigator (or the respective button as in case of the global search button) will immediately be removed and the functionality will no longer be available, until enabled again.
 

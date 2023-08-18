@@ -127,7 +127,7 @@ Packages allow you to bundle multiple plugins and/or a blueprint into one packag
 The idea of a package is to bundle multiple belonging plugins together that can be managed by a blueprint application. So a good use case could be a smart-city management app that exposes multiple widgets to display the information (for example a "free parking spots"-widget) to the cockpit application.
 
 #### Where can I extend existing applications with an plugin?
-The extension ways did not change. You can use any of our HOOK_ interfaces as defined in our [ngx-components](https://cumulocity.com/guides/web/libraries/#extension-points) library. Usual things to hook are a NavigatorNode, a ActionBarItem or a Route.
+The extension ways did not change. You can use any of our HOOK_ interfaces as defined in our [ngx-components](/web/libraries/#extension-points) library. Usual things to hook are a NavigatorNode, a ActionBarItem or a Route.
 
 {{< c8y-admon-tip >}}
 From version 10.17.0, there is a typed helper function called `hook<<Name>>`.

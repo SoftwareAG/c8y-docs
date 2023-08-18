@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-See [Add a custom widget to a dashboard > Create the widget components](#2-create-the-widget-components) on how to create a simple widget, what its structure looks like and how to add it to your application.
+See [Create the widget components](/web/tutorials/#2-create-the-widget-components) on how to create a simple widget, what its structure looks like and how to add it to your application.
 The following tutorial focuses on how you can add this widget to an application using the micro frontend architecture and how this process differs from the previous one.
 
 {{< c8y-admon-info >}}
@@ -101,7 +101,7 @@ The following list shows the fields and what they are responsible for:
 When creating plugins, the custom modules are the backbone of this approach. The exported module is treated as the entry point that links the plugin with the application, which is referred to as the shell. You can create and export several modules, which have to contain ready-made functionality.
 
 Furthermore, these modules behave like lazy loading modules. They are not loaded upfront as one big package, but instead like a collection of smaller packages loaded on demand.
-You can extend each module with additional features through the HOOK concept, see [Extend an existing application and use hooks](#extend-an-existing-application) for more information. For example, a plugin can add another entry to the navigation menu using HOOK_NAVIGATOR_NODES, see [Hooking a navigator node](#3-hooking-a-navigator-node) for more information.
+You can extend each module with additional features through the HOOK concept, see [Extend an existing application and use hooks](/web/tutorials/#extend-an-existing-application) for more information. For example, a plugin can add another entry to the navigation menu using HOOK_NAVIGATOR_NODES, see [Hooking a navigator node](/web/tutorials/#3-hooking-a-navigator-node) for more information.
 {{< /c8y-admon-info >}}
 
 There is also a difference in how to start the local development server, see the following step for more information on the server's role.

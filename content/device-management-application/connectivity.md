@@ -7,8 +7,8 @@ section:
 ---
 
 {{< c8y-admon-related >}}
-* [Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) in the *Reference guide* for details on the `c8y_Mobile` fragment used in managed objects.
-* [Administration > Changing settings > Managing the connectivity settings](/users-guide/administration/#connectivity) in the *User guide* for information on how to change the connectivity settings via the UI.
+* [Device management > Device integration > Fragment library > Connectivity](/device-integration/fragment-library/#connectivity) for details on the `c8y_Mobile` fragment used in managed objects.
+* [Platform administration > Standard tenant administration > Changing settings > Connectivity](/standard-tenant/changing-settings/#connectivity) for information on how to change the connectivity settings via the UI.
 {{< /c8y-admon-related >}}
 
 The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device management application, provides basic information on mobile devices and additional connectivity details.
@@ -54,7 +54,7 @@ The following sections describe:
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from {{< product-c8y-iot >}} to Jasper Control Center, so the permissions of the user have influence on functionalities available in {{< product-c8y-iot >}}.
 
 {{< c8y-admon-info >}}
-In a similar way, we recommend you to set up a dedicated user for Comarch, Ericsson or Kite to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/welcome/contacting-support) for further information.
+In a similar way, we recommend you to set up a dedicated user for Comarch, Ericsson or Kite to get the credentials required to connect to {{< product-c8y-iot >}}. Ask your administrator or our [product support](/additional-resources/contacting-support/) for further information.
 {{< /c8y-admon-info >}}
 
 Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click **API integration** on the Control Center home page.
@@ -78,7 +78,7 @@ Process the following step to configure the connectivity in {{< product-c8y-iot 
 
 1. Use a {{< product-c8y-iot >}} administrator user to log into the {{< product-c8y-iot >}} platform.
 1. Switch to the Administration application.
-1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, please contact [product support](/welcome/contacting-support/) to make the Connectivity agent available in your tenant.
+1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [READ and ADMIN permissions for Connectivity](/standard-tenant/managing-permissions/). If the menu item is still not available, please contact [product support](/additional-resources/contacting-support/) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
 1. Enter the credentials for the respective SIM provider account. If you do not have any credentials, ask your administrator.
@@ -169,7 +169,7 @@ In the **Connectivity** tab, check the following conditions:
 * the SIM is activated. If the SIM card is not activated, you can activate it selecting "ACTIVE" from the "SIM status" drop-down menu. It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
 
-  * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters.
+  * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/device-management-application/viewing-device-details/#measurements) of the device and verify the last reported signal strength and error rate parameters.
   * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
   * The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
   * The APN settings are incorrectly configured in the device.

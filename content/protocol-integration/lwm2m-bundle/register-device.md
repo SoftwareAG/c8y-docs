@@ -389,7 +389,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 </table>
 
 {{< c8y-admon-info >}}
-Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Managing device data > Managing firmware](/device-management-application/managing-device-data/#managing-firmware) in the *Device management application*.
+Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).
 {{< /c8y-admon-info >}}
 
 ### Duplicate LWM2M devices
@@ -402,4 +402,4 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 ### Device deletion
 
 During LWM2M device registration the tenant route information is also stored in the cluster tenant.
-In order to remove the device, delete it from the list in [Viewing all Devices](/device-management-application/viewing-all-devices) in the *Device management application*.
+To remove the device, delete it from the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list.

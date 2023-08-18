@@ -8,10 +8,10 @@ section:
 
 {{< c8y-admon-related >}}
 * The [alarms API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Alarms) for REST API methods concerning alarms.
-* [Device integration > Fragment library > Alarms](/device-integration/fragment-library/#alarms) in the *Reference guide* for details on how to raise and clear alarms.
+* [Device management > Device integration > Fragment library > Alarms](/device-integration/fragment-library/#alarms) for details on how to raise and clear alarms.
 * The [events API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Events) for REST API methods concerning events.
 * The [measurements API](https://cumulocity.com/api/core/{{< c8y-current-version >}}/#tag/Measurements) for REST API methods concerning measurements.
-* [Device integration > Fragment library > Measurements](/device-integration/fragment-library/#measurements) in the *Reference guide* for details on measurements.
+* [Device management > Device integration > Fragment library > Measurements](/device-integration/fragment-library/#measurements) for details on measurements.
 {{< /c8y-admon-related >}}
 
 The Device Management application lets you monitor the data that your devices send about the services they are running.
@@ -60,7 +60,7 @@ The service details **Alarms** tab displays only alarms which have the particula
 ### Events
 
 The **Events** tab displays events related to a service.
-See [Monitoring and controlling devices > Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
+See [Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
 
 {{< c8y-admon-info >}}
 The service details **Events** tab displays only events which have the particular service as a source. It does not display any events sourced by the device itself.

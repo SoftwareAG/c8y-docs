@@ -9,8 +9,7 @@ This section targets developers who have either already developed a plugin with 
 
 You should have read and understood the following concepts:
 
-* [Appendix: Migration history](/web/appendix-migration-history/), explaining when to use which SDK.
-* [Migration history](/web/background), explaining which versions you can use with the new SDK.
+* [Appendix: Migration history](/web/appendix-migration-history/), explaining when to use which SDK and which versions you can use with the new SDK.
 * [c8y Command Line Tool (CLI)](/web/development-tools/#c8y-cli), enabling you to install the new tooling.
 
 

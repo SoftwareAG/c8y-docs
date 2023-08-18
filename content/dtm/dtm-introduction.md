@@ -32,6 +32,6 @@ The home screen of the DTM application gives an overview of the application. You
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-* See [Subscribed applications](/users-guide/administration/#subscribed-applications) for more information on how to access the DTM application in your tenant.
+* See [Subscribing  applications](/enterprise-tenant/managing-tenants/#subscribing-applications) for more information on how to access the DTM application in your tenant.
 
 {{< /c8y-admon-related >}}

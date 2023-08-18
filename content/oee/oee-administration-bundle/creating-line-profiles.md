@@ -22,7 +22,7 @@ Next, create a new line in a similar way, this time selecting "Line" as entity t
 1. Click the **Add** button on the site to which you want to attach a line (entity).
 2. Select your desired line and click **Add**.
 
-The line will be added to the site in the **Organization structure** and get represented in the [**Machine Park Overview**](/oee/oee-dashboards/#machine-park).
+The line will be added to the site in the **Organization structure** and get represented in the [**Machine Park Overview**](/oee/oee-dashboards/#machine-park-overview).
 
 ### Step 4 Add machines to the line
 

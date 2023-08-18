@@ -9,7 +9,7 @@ weight: 50
 It is a common use case to extend one of our existing applications like Cockpit or Device managament.
 
 This recipe explains step by step, how you can extend the Cockpit application with a custom route and hook this route into the navigator.
-First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application) npm package contains.
+First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application-library) npm package contains.
 
 ### Brief background
 

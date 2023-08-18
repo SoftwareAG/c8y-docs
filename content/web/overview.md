@@ -33,9 +33,9 @@ The goal of these splittings is to provide the right package for every use case,
 
 The following is a list which explains the use cases of each package.
 
- - [@c8y/client](/web/libraries/#client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
+ - [@c8y/client](/web/libraries/#client-library): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
  - [@c8y/ngx-components](/web/libraries/#component-library-ngx): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
  - [@c8y/styles](/web/application-configuration#branding): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
- - [@c8y/apps](/web/libraries/#application): Example and bootstrapping applications to easily let you start with the Web SDK.
+ - [@c8y/apps](/web/libraries/#applicationlibrary): Example and bootstrapping applications to easily let you start with the Web SDK.
 
 You can find all our packages on npm [here](https://www.npmjs.com/~c8y). To quickly get you bootstrapped with these packages we have built an CLI tool called `@c8y/cli`. Next, we will showcase how to get started with the `@c8y/cli` command line tool.

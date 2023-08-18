@@ -1,6 +1,6 @@
 ---
 title: Upgrading from Angular 11 to Angular 12
-# layout: redirect
+layout: redirect
 weight: 6
 ---
 

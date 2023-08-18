@@ -48,7 +48,7 @@ If you point your browser to *http://localhost:9000/apps/myapp/* you will get a 
 }
 ```
 
-After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/web/libraries/#application). If you want to build and deploy your application read more about the necessary commands of the [c8y command line tool](/web/development-tools/#c8y-cli).
+After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/web/libraries/#application-library). If you want to build and deploy your application read more about the necessary commands of the [c8y command line tool](/web/development-tools/#c8y-cli).
 
 {{< c8y-admon-info >}}
 If you want to extend an existing application like Cockpit, you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migrating applications](/web/upgrade/#migrating-applications).

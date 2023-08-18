@@ -38,8 +38,8 @@ For easier user access management, the above permission(s) are/is included in th
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- [Two-factor authentication](/authentication/tfa/) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
-- [Configuring single sign-on](/authentication/sso/) for details on configuring single sign-on in {{< product-c8y-iot >}}.
+- [Platform administration > Authentication > Two-factor authentication](/authentication/tfa/) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
+- [Platform administration > Authentication > Configuring single sign-on](/authentication/sso/) for details on configuring single sign-on in {{< product-c8y-iot >}}.
 - [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
 {{< /c8y-admon-related >}}
 

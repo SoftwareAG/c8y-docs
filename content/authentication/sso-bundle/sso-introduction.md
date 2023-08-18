@@ -23,6 +23,6 @@ To use the SSO feature the following requirements must be met:
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
-- [Basic settings](/authentication/basic-settings/) for information on how to configure basic authentication settings.
+- [Platform administration > Authentication > Basic settings](/authentication/basic-settings/) for information on how to configure basic authentication settings.
 - [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
 {{< /c8y-admon-related >}}

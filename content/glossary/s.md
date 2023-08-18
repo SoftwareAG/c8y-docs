@@ -24,10 +24,12 @@ For details see [Smart rules](/cockpit/smart-rules).
 
 ### Standard tenant
 
-At the bottom of the [{{< product-c8y-iot >}} tenant hierarchy](/concepts/tenant-hierarchy/#hierarchy-levels) you can find single tenants which are represented by the concept of {{< standard-tenant >}}.
+A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
+
+At the bottom of the tenant hierarchy you can find single tenants which are represented by the concept of {{< standard-tenant >}}.
 A {{< standard-tenant >}} offers most of the device management and monitoring functionality of the {{< product-c8y-iot >}} platform, but has certain limitations when it comes to administrative aspects.
 
-See also [{{< enterprise-tenant >}}](#enterprise-tenant) and [{{< management-tenant >}}](#management-tenant).
+See also [{{< enterprise-tenant >}}](/glossary/e/#enterprise-tenant) and [{{< management-tenant >}}](/glossary/m/#management-tenant).
 
 
 ### Subscription

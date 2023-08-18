@@ -39,6 +39,6 @@ For details see [Widgets collection](/cockpit/widgets-collection) and [Using wid
 
 ### Wires
 
-Used in the context of [Analytics Builder](#analytics-builder).
+Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
 
-Wires are used to connect two or more [blocks](#blocks) with each other.  They are used for all data transfer between the output port of one block and the input port of another block.
+Wires are used to connect two or more [blocks](/glossary/b/#blocks) with each other. They are used for all data transfer between the output port of one block and the input port of another block.

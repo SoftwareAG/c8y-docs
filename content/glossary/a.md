@@ -30,12 +30,12 @@ Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](/
 
 See also [EPL Apps](/glossary/e/#epl-apps).
 
-For details see [Analytics Builder](/apama/overview-analytics/#analytics-builder).
+For details see [Analytics Builder](/streaming-analytics/analytics-builder).
 
 
 ### Application
 
-The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three main default applications: [Administration](#administration-app), [Cockpit](#cockpit-application) and [Device Management](#device-management-application).
+The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three main default applications: [Administration](#administration-application), [Cockpit](/glossary/c/#cockpit-application) and [Device Management](/glossary/d/#device-management-application).
 
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. These applications can have two forms:
 

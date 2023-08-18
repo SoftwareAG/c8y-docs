@@ -15,7 +15,7 @@ For details see [Cockpit](/cockpit/).
 
 ### Cumulocity IoT Core
 
-{{< product-c8y-iot >}} is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](#application) (Administration, Cockpit and Device Management), the [{{< product-c8y-iot >}} operational store](#c8y-operational-store), [microservices](#microservices), [REST API](#rest-api), [MQTT API](#mqtt), and [smart rules](#smart-rules).
+{{< product-c8y-iot >}} is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](/glossary/a/#application) (Administration, Cockpit and Device Management), the [{{< product-c8y-iot >}} operational store](/glossary/c/#c8y-operational-store), [microservices](/glossary/m/#microservices), [REST API](/glossary/r/#rest-api), [MQTT API](/glossary/m/#mqtt), and [smart rules](/glossary/s/#smart-rules).
 
 
 ### Cumulocity IoT DataHub
@@ -35,7 +35,7 @@ For details see the [Edge](/edge/introduction/).
 <a name="c8y-operational-store"></a>
 ### Cumulocity IoT operational store
 
-Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](#alarm), [events](#event), [inventory](#inventory), and [measurements](#measurement)) are stored in so-called base collections.
+Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](/glossary/a/#alarm), [events](/glossary/e/#event), [inventory](/glossary/i/#inventory), and [measurements](/glossary/m/#measurement)) are stored in so-called base collections.
 
 <a name="c8y-sensor-app"></a>
 ### Cumulocity IoT Sensor App
@@ -47,8 +47,8 @@ For details see [{{< sensor-app >}}](/sensor-app).
 <a name="c8y-streaming-analytics"></a>
 ### Cumulocity IoT Streaming Analytics
 
-Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices. The operation logic is based on [Apama’s Event Processing Language (EPL)](#epl).
+Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices. The operation logic is based on [Apama’s Event Processing Language (EPL)](/glossary/e/#epl).
 
-See also [Analytics Builder](#analytics-builder) and [EPL Apps](#epl-apps).
+See also [Analytics Builder](/glossary/a/#analytics-builder) and [EPL Apps](/glossary/e/#epl-apps).
 
-For details see [Streaming Analytics](/apama/overview-analytics/).
+For details see [Streaming Analytics](/streaming-analytics/overview-analytics/).

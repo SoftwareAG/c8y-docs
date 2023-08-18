@@ -13,8 +13,8 @@ A GA release is a release with general availability (GA). GA releases are typica
 
 ### Global roles
 
-Role type in {{< product-c8y-iot >}}'s' permission concept. Global roles contain permissions that apply to all data within a tenant.
+Role type in the permission concept of {{< product-c8y-iot >}}. Global roles contain permissions that apply to all data within a tenant.
 
-See also [Inventory roles](#inventory-roles) and [Permissions](#permissions).
+See also [Inventory roles](/glossary/i/#inventory-roles) and [Permissions](/glossary/p/#permissions).
 
-For details see [Access control](/concepts/security/#access-control) and [Global roles](/standard-tenant/permission/#global-roles).
+For details see [Access control](/concepts/security/#access-control) and [Global roles](/standard-tenant/managing-permissions/#global-roles).

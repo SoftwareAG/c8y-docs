@@ -13,17 +13,19 @@ section:
 
 ### Managed objects
 
-In {{< product-c8y-iot >}}, all [assets](#asset) are represented as managed objects. {{< product-c8y-iot >}} comes with a predefined set of types, for example [devices](#device), groups, and [agents](#agent).
+In {{< product-c8y-iot >}}, all [assets](/glossary/a/#asset) are represented as managed objects. {{< product-c8y-iot >}} comes with a predefined set of types, for example [devices](/glossary/d/#device), groups, and [agents](/glossary/a/#agent).
 
-Hierarchical structures of managed objects allow for the implementation of complex structures like a factory with many machines which consist of devices and sensors which can report [events](#event), [alarms](#alarm), and [measurements](#measurement).
+Hierarchical structures of managed objects allow for the implementation of complex structures like a factory with many machines which consist of devices and sensors which can report [events](/glossary/e/#event), [alarms](/glossary/a/#alarm), and [measurements](#measurement).
 
 
 ### Management tenant
 
-The {{< management-tenant >}} builds the highest level of the [{{< product-c8y-iot >}} tenant hierarchy](/concepts/tenant-hierarchy/#tenant-levels).
+A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
+
+The {{< management-tenant >}} builds the highest level of the tenant hierarchy.
 Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tenant >}}. The {{< management-tenant >}} is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 
-See also [{{< standard-tenant >}}](#standard-tenant) and [{{< enterprise-tenant >}}](#enterprise-tenant).
+See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< enterprise-tenant >}}](/glossary/e/#enterprise-tenant).
 
 
 ### Measurement
@@ -47,9 +49,9 @@ For details see [Microservices](/concepts/applications/#microservices).
 
 ### Model
 
-Used in the context of [Analytics Builder](#analytics-builder).
+Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
 
-A model is a container which can have a network of [Blocks](#blocks) connected to each other with wires.
+A model is a container which can have a network of [Blocks](/glossary/b/#blocks) connected to each other with wires.
 The behavior of a block inside a model does not depend on other blocks. There can be multiple instances of the same block in a model where each instance may behave differently, depending on the configurable parameters or the inputs connected to the block.
 
 

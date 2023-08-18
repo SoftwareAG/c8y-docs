@@ -25,13 +25,13 @@ For details see [Customizing your platform](/enterprise-tenant/customization).
 
 The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including the following levels from bottom to top:
 
-* [{{< standard-tenant >}}](#standard-tenant)
-* [{{< enterprise-tenant >}}](#enterprise-tenant)
-* [{{< management-tenant >}}](#management-tenant)
+* [{{< standard-tenant >}}](/glossary/s/#standard-tenant)
+* [{{< enterprise-tenant >}}](/glossary/e/#enterprise-tenant)
+* [{{< management-tenant >}}](/glossary/m/#management-tenant)
 
 These three levels differ in their scope, particularly with regards to administration.
 
-See also [Tenant hierarchy](/concepts/tenant-hierarchy), [{{< standard-tenant >}}](#standard-tenant), [{{< enterprise-tenant >}}](#enterprise-tenant) and [{{< management-tenant >}}](#management-tenant).
+See also [Tenant hierarchy](/concepts/tenant-hierarchy).
 
 
 ### Tenant ID

@@ -15,14 +15,14 @@ For details see [Using the data broker](/data-broker/data-broker).
 
 ### Data explorer
 
-Part of the [Cockpit application](#cockpit-application). The data explorer visualizes all data points (that is, measurements or sensor data) of either a particular asset or of all assets.
+Part of the [Cockpit application](/glossary/c/#cockpit-application). The data explorer visualizes all data points (that is, measurements or sensor data) of either a particular asset or of all assets.
 
 For details see [Data explorer](/cockpit/data-explorer).
 
 
 ### Data lake
 
-Used in the context of [DataHub](#c8y-datahub).
+Used in the context of [DataHub](/glossary/c/#c8y-datahub).
 
 A data lake serves as a storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
 
@@ -31,12 +31,12 @@ A data lake serves as a storage container for offloaded data either on the basis
 
 The Data point library provides a collection of data points with default values for data point properties which serve as templates that can be applied easily to your data points from different devices.
 
-For details see [Data point library](/cockpit/#ata-point-library).
+For details see [Data point library](/cockpit/data-point-library).
 
 
 ### Device
 
-Devices are a special type of [asset](#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](#inventory) their [digital twins](#digital-twin) are represented as [managed objects](#managed-object).
+Devices are a special type of [asset](/glossary/a/#asset). They can constitute a hierarchy of devices. In the {{< product-c8y-iot >}} [inventory](/glossary/i/#inventory) their [digital twins](#digital-twin) are represented as [managed objects](/glossary/m/#managed-object).
 
 
 ### Device Management application
@@ -44,7 +44,7 @@ Devices are a special type of [asset](#asset). They can constitute a hierarchy o
 The Device Management application is one of the default applications of {{< product-c8y-iot >}}.
 The Device Management application provides functionalities for connecting, managing and monitoring devices and allows to control and troubleshoot devices remotely.
 
-For details see [Device management](/device-management/).
+For details see [Device management application](/device-management-application/).
 
 
 ### Device protocol
@@ -57,4 +57,4 @@ For details see [Protocol integration](/protocol-integration/).
 
 ### Digital twin
 
-A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](#managed-object).
+A digital twin is a digital representation of physical or virtual assets. Devices, sensors and tools are examples of physical assets, virtual assets can for example be processes or rules. In {{< product-c8y-iot >}} they are represented as [managed objects](/glossary/m/#managed-object).

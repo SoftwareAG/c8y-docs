@@ -9,7 +9,7 @@ The following section walks you through the steps required to create a new line 
 
 Since lines are attached to a site or an area, you must first have such an entity available.
 
-Switch to the [Organization](/oee/oee-administration/#organization) page under **Administration** and create a new site as described in [Organization > To create a new entity](/oee/oee-administration/#create-entity).
+Switch to the [Organization](/oee/oee-administration/#organization) page under **Administration** and create a new site as described in [To create a new entity](/oee/oee-administration/#create-entity).
 
 You can skip this step if you have already a site or area available to which you want to attach the new line profile.
 
@@ -42,7 +42,7 @@ Switch to the **Profile** Page under **Administration**. Click **Create a line p
 
 3. Continue with the line mapping. You can now use the data of the machines you have previously assigned to the line.
 
-For details on all steps of the profile configuration refer to [**Creating machine profiles**](#machine-profiles).
+For details on all steps of the profile configuration refer to [Creating machine profiles](#creating-machine-profiles).
 
 
 ### Step 6 - Activate the line profile

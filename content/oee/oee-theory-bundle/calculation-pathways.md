@@ -4,7 +4,7 @@ title: Calculation pathways
 layout: redirect
 ---
 
-The following image explains the naming conventions of the pathways. The same terminology is used in the Computation section when creating a new profile, see [Administration > Creating machine profiles > Computation](/oee/oee-administration/#computation).
+The following image explains the naming conventions of the pathways. The same terminology is used in the Computation section when creating a new profile, see [Computation](/oee/oee-administration/#computation).
 
 ![Naming convention of the pathways](/images/oee/theory/theory-naming-convention.png)
 

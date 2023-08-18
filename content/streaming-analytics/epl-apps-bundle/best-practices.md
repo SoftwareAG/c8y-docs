@@ -48,13 +48,13 @@ Using Apama within the {{< product-c8y-iot >}} environment necessarily has some 
 There are a number of ways that assets may be deployed to Apama within {{< product-c8y-iot >}} and the restrictions vary according to those mechanisms:
 
 * EPL apps - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
-* Custom microservice – where more complex Apama projects can be built using {{< product-c8y-iot >}}'s Microservice SDK, see [Developing applications > Microservices](/concepts/applications#microservices) in the *Concepts guide*.
+* Custom microservice – where more complex Apama projects can be built using {{< product-c8y-iot >}}'s Microservice SDK, see [Microservices](/concepts/applications#microservices).
 
 When designing an Apama solution to be deployed within any form of {{< product-c8y-iot >}} environment, consider the following points.
 
 #### General Apama limitations when using EPL apps or a custom microservice
 
-* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Developing applications > Microservices](/concepts/applications#microservices) in the *Concepts guide*.
+* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Microservices](/concepts/applications#microservices).
 
 	The Apama features affected by this include:
 
@@ -71,7 +71,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Distributed memory stores.
 	* Connections between correlators.
 
-* For security and implementing user access control, {{< product-c8y-iot >}} does not make the correlator port available to external processes – see [Developing applications > Microservices](/concepts/applications#microservices) in the *Concepts guide*.
+* For security and implementing user access control, {{< product-c8y-iot >}} does not make the correlator port available to external processes – see [Microservices](/concepts/applications#microservices).
 
 	The following capabilities require access to the correlator port and hence are not compatible with this access control:
 

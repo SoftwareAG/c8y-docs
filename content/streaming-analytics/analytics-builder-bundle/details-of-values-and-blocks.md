@@ -191,7 +191,7 @@ A pulse is used to signal a point in time or a change of state. Examples of use 
 -   A machine goes into a new state \(for example, a gateway is reset or powered on\).
 -   A device has made a connection to the network.
 
-In {{< product-c8y-iot >}}, events, alarms and operations are used as the sources of pulses. See also the following topics in the {{< product-c8y-iot >}} documentation: [Events](/concepts/domain-model/#events), [Operations](/concepts/domain-model/#operations) and [Alarms](/reference/device-integrator-library/#alarms).
+In {{< product-c8y-iot >}}, events, alarms and operations are used as the sources of pulses. See also the following topics in the {{< product-c8y-iot >}} documentation: [Events](/concepts/domain-model/#events), [Operations](/concepts/domain-model/#operations) and [Alarms](/device-integration/fragment-library/#alarms).
 
 A pulse may be merely a point in time, but it can also convey extra information, for example, the version number of the software or which network node it has connected to. These can be obtained using the **Extract Property** block. If you are writing your own custom blocks, these are accessible if the input is declared as a `Value` type, which has a properties field. This can be used with numeric value types as well. See the documentation for the Analytics Builder Block SDK for more information on the `Value` type.
 

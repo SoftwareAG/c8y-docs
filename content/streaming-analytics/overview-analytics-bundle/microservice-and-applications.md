@@ -12,7 +12,7 @@ Analytic models, EPL apps and smart rules are executed in an Apama-ctrl microser
 | Develop EPL apps            | Apama-ctrl microservice and Streaming Analytics application |
 | Use smart rules             | Apama-ctrl microservice and Smartrule microservice (included in {{< product-c8y-iot >}}'s {{< standard-tenant >}}) |
 
-See also the following sections in the *User guide*:
+See also the following sections:
 * [Default subscriptions](/standard-tenant/ecosystem/#default-subscriptions)
 * [Subscribed microservices](/standard-tenant/ecosystem/#subscribed-microservices)
 * [Smart rules](/cockpit/smart-rules/)

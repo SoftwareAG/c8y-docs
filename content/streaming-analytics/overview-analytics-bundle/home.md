@@ -15,7 +15,7 @@ You can access these pages using the corresponding **Open** button on the home s
 If you need more space for a page, you can hide the navigator. Click the small arrow at the very left of the top bar to toggle the display of the navigator.
 
 The home screen also provides information on smart rules. You create and maintain them with the Cockpit application.
-See [Smart rules](/cockpit/smart-rules/) in the *User guide* for detailed information.
+See [Smart rules](/cockpit/smart-rules/) for detailed information.
 
 The home screen and navigator only show entries for the items that you are allowed to use,
 depending on the version of the Apama-ctrl microservice to which your tenant is subscribed.

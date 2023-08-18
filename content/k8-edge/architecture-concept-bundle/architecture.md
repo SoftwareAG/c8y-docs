@@ -1,11 +1,17 @@
 ---
 weight: 15
-title: Architecture
+title: Deployment architecture
 layout: bundle
 ---
 
-The Edge Kubernetes Operator has a custom controller (written in Go) that manages the lifecycle and the state of an Edge deployment. It does so by managing a CRD to extend the Kubernetes API for Edge deployment. Management and maintenance of the Edge deployment can be performed by updating the Edge CR.
+The Edge Kubernetes Operator incorporates a custom controller developed in the Go programming language. This controller oversees the lifecycle and status of the Edge deployment. It achieves this by managing a Custom Resource Definition (CRD) that enhances the Kubernetes API to accommodate  Edge deployment. Regular maintenance of the Edge deployment and management can be performed by updating the Edge Custom Resource (CR). 
 
-The Operator is deployed in the namespace specified during the installation or by default, created in the `edge-k8s-operator-system` namespace. As part of the Edge deployment, the Operator creates multiple Kubernetes resources in various namespaces and watches them. These namespace names are prefixed with the Edge CR name. e.g. `<EDGE-CR-NAME>`, `<EDGE-CR-NAME>-microservices`, `<EDGE-CR-NAME>-logging`, `<EDGE-CR-NAME>-mongodb` and `<EDGE-CR-NAME>-microservices-registry`.
+Operational within the edge-k8s-operator-system namespace, the Edge Kubernetes Operator creates multiple Kubernetes resources across different namespaces, which it continuously monitors. These namespaces are named with prefixes based on the Edge CR name. For example, `<EDGE-CR-NAME>-logging`, `<EDGE-CR-NAME>-mongodb`, `<EDGE-CR-NAME>-microservices-registry`, `<EDGE-CR-NAME>-microservices`, `<EDGE-CR-NAME>-core`, and `<EDGE-CR-NAME>-thin-edge`. 
+
+Edge on Kubernetes can be deployed in two modes: one includes MongoDB, which is both deployed and monitored by the Edge Operator; the other involves connecting to an externally deployed MongoDB.
 
 ![operator-architecture](/images/k8-edge/edge-k8s-operator.png)
+
+### With the Edge Operator managed MongoDB
+
+### With self-managed MongoDB 

@@ -142,6 +142,6 @@ A data connector can also be deleted from the **Settings** tab of a connector co
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
-For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
+For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting).
 
-For details on alarms in general, see [Device management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms in general, see [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms).

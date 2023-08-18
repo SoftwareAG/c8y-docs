@@ -26,7 +26,7 @@ As an example, the following statement listens for new temperature sensor readin
 		}
 	}
 
-Here, `Measurement` is a pre-defined event containing the measurements. In this example, `m` is the `Measurement` event, the listener is filtering for measurements which are `c8y_TemperatureMeasurement` and the property is `c8y_TemperatureMeasurement.T.value` which is in degrees Celsius of a temperature sensor (see [Sensor library](/reference/sensor-library/)).
+Here, `Measurement` is a pre-defined event containing the measurements. In this example, `m` is the `Measurement` event, the listener is filtering for measurements which are `c8y_TemperatureMeasurement` and the property is `c8y_TemperatureMeasurement.T.value` which is in degrees Celsius of a temperature sensor (see [Fragment library](/device-integration/fragment-library/)).
 
 Listeners such as the above should be placed in a monitor in the `onload` statement, and the file must contain `using` statements for the types used by the listener - for most of the {{< product-c8y-iot >}} events, these are in the package *com.apama.cumulocity*. The full list is provided below - for the sake of brevity, we will omit these from further examples:
 

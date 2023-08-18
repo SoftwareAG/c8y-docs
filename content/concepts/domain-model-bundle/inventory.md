@@ -81,7 +81,7 @@ Using this approach, the modeling devices can make a difference between modeling
 
 The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment (`c8y_Position`), it can be placed on a map. As soon as it has a relay (`c8y_Relay`), it can be switched on and off using the respective device control command as described below.
 
-For more information on fragments and how managed objects are structured, see the [Device integrator library](/reference/device-integrator-library/) in the *Reference guide*.
+For more information on fragments and how managed objects are structured, see [Fragment library](/device-integration/fragment-library/).
 
 {{< c8y-admon-info >}}
 While designing the data model for the inventory managed object consider the following:
@@ -125,7 +125,7 @@ While designing the data model for the inventory managed object consider the fol
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
-In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library/) and in the [Device integrator library](/reference/device-integrator-library/) in the *Reference guide*.
+In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [fragment library](/device-integration/fragment-library/).
 
 {{< c8y-admon-important >}}
 Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.

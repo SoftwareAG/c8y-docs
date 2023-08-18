@@ -2,7 +2,7 @@
 title: Hierarchy levels
 layout: bundle
 weight: 30
-section: 
+section:
   - platform_administration
 ---
 
@@ -34,7 +34,7 @@ In a {{< standard-tenant >}}, multiple parties are reflected by separate users. 
 
 {{< standard-tenant >}}s, as direct subtenants of the {{< management-tenant >}}, provide fully standardized functionality.
 
-Details on the administration of {{< standard-tenant >}}s are described in the [Administration](/users-guide/administration/) section in the *User guide*.
+Details on the administration of {{< standard-tenant >}}s are described in [Standard tenant administration](/standard-tenant/).
 
 <a name="enterprise-tenant"></a>
 ### Enterprise tenant
@@ -47,7 +47,7 @@ Using an {{< enterprise-tenant >}}, you can
 * manage the subscribed applications/features of the subtenants
 * invoice subtenants based on usage statistics
 
-See also [multi-tenancy approach](/concepts/tenant-hierarchy/#multi-tenancy).
+See also [Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy).
 
 Moreover, an {{< enterprise-tenant >}} includes the following additional features:
 
@@ -58,7 +58,7 @@ Moreover, an {{< enterprise-tenant >}} includes the following additional feature
 
 {{< enterprise-tenant >}}s offer standardized functionality combined with some individual customization.
 
-Details on the usage of this additional features and on the additional administration options of the {{< enterprise-tenant >}} can be found in the [{{< enterprise-tenant >}}](/users-guide/enterprise-tenant/) section in the *User guide*.
+Details on the usage of this additional features and on the additional administration options of the {{< enterprise-tenant >}} can be found in [{{< enterprise-tenant >}}](/enterprise-tenant/).
 
 <a name="management-tenant"></a>
 ### Management tenant

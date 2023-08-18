@@ -248,4 +248,4 @@ export class AlarmComponent {
 2. Dependency inject that service.
 3. Use that service to request data from the platform.
 
-> For detailed information on all available services and on how to filter and select data refer to [@c8y/client](/web/libraries/#client-library).
+For detailed information on all available services and on how to filter and select data refer to [@c8y/client](/web/libraries/#client-library).

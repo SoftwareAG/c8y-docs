@@ -18,7 +18,7 @@ npm install @c8y/client
 Use `client.<endpoint>.list()` to request listed data from the {{< product-c8y-iot >}} REST API and
 `client.<endpoint>.detail(<id>)` to request detail information. These methods always return a promise. To get an observable use `list$` or `detail$`.
 
-> In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/)).
+In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/).
 
 
 ### Get detail and list data with promises (pull)

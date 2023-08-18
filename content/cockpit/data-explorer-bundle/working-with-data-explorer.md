@@ -84,7 +84,7 @@ The center of the dialog shows all data points of the selected object. Select th
 
 The right hand side shows all of the selected data points.
 
-For further information on the data point library refer to the [Data point library](/cockpit/data-point-library/).
+For further information on the data point library refer to [Data point library](/cockpit/data-point-library/).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 

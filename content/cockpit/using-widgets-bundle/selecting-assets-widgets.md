@@ -6,7 +6,7 @@ section:
   - app_development
 ---
 
-The following documentation describes how [to select one top-level asset](#add-asset), how [to select child devices as asset](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
+The following section describes how [to select one top-level asset](#add-asset), how [to select child devices as asset](#asset-groups) and how [to search or filter for assets](#asset-search) in the widgets configuration.
 
 <a name="add-asset"></a>
 ### To add an asset to a new or existing widget

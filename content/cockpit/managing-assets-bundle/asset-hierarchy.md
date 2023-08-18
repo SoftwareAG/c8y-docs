@@ -43,8 +43,8 @@ Single devices are not managed in the Cockpit application. They are managed in t
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
-- [Getting started > Technical concept > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview) for details on {{< product-c8y-iot >}}'s domain model.
-- [Device management > Device management application](/device-management-application/registering-devices/) for details on working with devices in {{< product-c8y-iot >}}.
+- [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview) for details on {{< product-c8y-iot >}}'s domain model.
+- [Device management > Device management application](/device-management-application/) for details on working with devices in {{< product-c8y-iot >}}.
 - [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-a-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
@@ -65,7 +65,7 @@ In the Cockpit application, you construct your asset hierarchy by creating group
 
 * **Gateway devices** establish the communication from other devices to {{< product-c8y-iot >}} but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
-The following documentation explains how to work with smart devices and gateway devices in the Cockpit application.
+The following section explains how to work with smart devices and gateway devices in the Cockpit application.
 
 The first example shows how smart devices are linked into the asset hierarchy:
 

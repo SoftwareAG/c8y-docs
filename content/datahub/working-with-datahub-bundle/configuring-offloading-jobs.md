@@ -43,7 +43,7 @@ In the dropdown box select one of the {{< product-c8y-iot >}} base collections, 
 You can define multiple offloading pipelines for each {{< product-c8y-iot >}} collection, except for the case of a TrendMiner offloading configuration, which must be singleton. As an example for multiple pipelines, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline.
 {{< /c8y-admon-info >}}
 
-In the section [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
+In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find a summary of the default attributes being offloaded per base collection.
 
 Click **Next** to proceed with the next configuration step. Click **Cancel** to cancel the offloading configuration.
 
@@ -65,7 +65,7 @@ For the **measurements** collection, additional settings are required. The **Tar
 
 The layout **One table for one measurement type (Default)** creates a table containing only measurements of one specific type; measurements of other types are not included. When selecting this layout, you must additionally specify the **measurement type** to which the offloaded measurements are restricted. To identify existing measurement types, {{< product-c8y-iot >}} DataHub automatically inspects a subset of the data, including initial as well as latest data. In the measurement type dropdown box, these auto-detected types are listed. If a specific type you are looking for has not been detected, you can manually enter it in this box. Alternatively you can click **Refresh** next to the dropdown box to manually re-trigger the detection of measurement types. As this might be a performance-intensive process, you should trigger it only if you know that the expected measurement type is present in data recently inserted into the collection. You can trigger such a refresh only every five minutes for performance reasons.  
 
-The layout **All measurement types in one table (TrendMiner)** creates a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed in section [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections). This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and {{< product-c8y-iot >}} DataHub, see [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-other-products/#integration-trendminer).
+The layout **All measurement types in one table (TrendMiner)** creates a table containing measurements of all types. To distinguish the measurements, the table has a column which lists for each measurement its corresponding type. The specific table schema for this layout is listed in [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections). This layout is only for use cases where you want to offload the data into the data lake, so that TrendMiner can consume the data for its time-series analytics. When this layout is selected, the target table name is set to a fixed, non-editable name, which TrendMiner expects for its data import. To learn more about the interaction between TrendMiner and {{< product-c8y-iot >}} DataHub, see [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-other-products/#integration-trendminer).
 
 For each base collection, a default set of data fields is derived. This set defines the default schema of the target table with the columns capturing the data fields. The set is fix for each collection and cannot be modified. Select **Show default schema** to show the columns of the default schema with their corresponding name and type.
 
@@ -254,7 +254,7 @@ Each offloading pipeline must ensure that the columns of the result table in the
 
 When a mixed type constellation has been detected, an alarm will be additionally raised in the {{< product-c8y-iot >}} platform with further details like involved column and types. When schema evolution is selected, an alarm of type WARNING is raised. When pipeline stop is selected, an alarm of type CRITICAL is raised. Such an alarm is always raised, independent of the configuration for raising alarms as described in the previous section. The alarm must be manually cleared. It is only automatically cleared if the offloading pipeline is deleted.
 
-For more details on data modeling and mixed types see also section [Aligning data modeling and offloading](/datahub/working-with-datahub/#aligning-data-modeling-and-offloading).
+For more details on data modeling and mixed types see also [Aligning data modeling and offloading](/datahub/working-with-datahub/#aligning-data-modeling-and-offloading).
 
 **Completing the offloading configuration**
 

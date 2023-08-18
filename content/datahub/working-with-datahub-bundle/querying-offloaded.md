@@ -35,7 +35,7 @@ The offloading pipeline must be executed at least once with corresponding data b
 
 ### Using the Dremio UI
 
-You can use the Dremio UI to interactively run queries against the data lake. See the section [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) for more details.
+You can use the Dremio UI to interactively run queries against the data lake. See [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) for more details.
 
 ### Connecting via JDBC
 

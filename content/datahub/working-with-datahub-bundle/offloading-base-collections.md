@@ -56,7 +56,7 @@ examples use "alarms" as target table name:
     * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded.
     * **alarms_c8y_cdh_latest_materialized** - An optional view which materializes the **alarms_latest** view if the offloading configuration has the view materialization enabled.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see
 [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded).
 
 #### Offloading the events collection

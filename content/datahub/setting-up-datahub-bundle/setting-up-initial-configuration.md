@@ -14,7 +14,7 @@ helpcontent:
 The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio API user and access to a data lake. In the navigator, select **Initial configuration** under **Settings** to define those settings.
 
 {{< c8y-admon-req >}}
-You need administration permissions to define the settings. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+You need administration permissions to define the settings. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-req >}}
 
 ### Defining the initial configuration

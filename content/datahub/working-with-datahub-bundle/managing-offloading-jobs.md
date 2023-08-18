@@ -58,7 +58,7 @@ However, we recommend you to rely on the periodic offloading instead of triggeri
 
 ##### Monitoring an offloading pipeline
 
-Click **Show offloading history** to examine the execution history of a pipeline. See the section [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) for details.
+Click **Show offloading history** to examine the execution history of a pipeline. See [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) for details.
 
 <a name="import-export"></a>
 ### Importing/exporting offloading configurations

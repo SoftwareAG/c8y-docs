@@ -43,7 +43,7 @@ The following table provides an overview on the currently supported applications
 </tr>
 <tr>
 <td>tutorial</td>
-<td>An application that already assembles most of the concepts of the <a href="/web/libraries/#component">@c8y/ngx-components</a>. Use this to get real code examples.</td>
+<td>An application that already assembles most of the concepts of the <a href="/web/libraries/#component-library-ngx">@c8y/ngx-components</a>. Use this to get real code examples.</td>
 </tr>
 <tr>
 <td>cockpit</td>

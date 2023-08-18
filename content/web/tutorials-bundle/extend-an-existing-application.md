@@ -100,7 +100,7 @@ export class HelloComponent {
 This is a basic component.
 Only the template uses a special feature called "content projection" to show a title.
 Content projection is an Angular concept used to display content in other places than they are defined.
-For more information on which components support content projection refer to the [@c8y/ngx-components](/web/libraries/#component) documentation.
+For more information on which components support content projection refer to the [@c8y/ngx-components](/web/libraries/#component-library-ngx) documentation.
 
 We can now bind this custom component to a route by changing the *app.module.ts* in the following way:
 

@@ -32,7 +32,7 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#property-library) assigned to the asset model that you create.
 
     {{< c8y-admon-info>}}
- The asset properties are defined when [creating the asset model](/dtm/asset-types/#create-asset-type).
+ The asset properties are defined when [creating the asset model](#create-asset-model).
  When creating an asset you must provide the values for all asset properties.
     {{< /c8y-admon-info>}}
 

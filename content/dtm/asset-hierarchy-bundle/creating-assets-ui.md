@@ -29,10 +29,10 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 
 5. To add more than one root asset, click **Add**.
 
-6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#property-library) assigned to the asset model that you create.
+6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
 
     {{< c8y-admon-info>}}
- The asset properties are defined when [creating the asset model](#create-asset-model).
+ The asset properties are defined when [creating the asset model](/dtm/asset-types/#create-asset-model).
  When creating an asset you must provide the values for all asset properties.
     {{< /c8y-admon-info>}}
 
@@ -76,7 +76,7 @@ When you create a new asset you have the option of assigning one or more devices
 ![Assigning devices to an asset](/images/dtm/assets/dtm-assets-assign-devices.png)
 
 To add a new device, add it through the Device management application.
-Refer to [Device management > Connecting devices > Device registration](/users-guide/device-management/#connecting-devices) in the *User guide*.
+Refer to [Registering devices](/device-management-application/registering-devices/) for further information.
 
 {{< c8y-admon-info>}}
 Only select devices which are part of the current asset.
@@ -97,11 +97,8 @@ You can view, search or filter devices easily with the following options:
 
 4. To filter devices based on text, use the **Filter** option in the applicable columns. If you apply a filter, you see a notification at the top.
 
-5. To clear the filters, click **Clear all filters**.
+5. To clear the filters, click **Clear all filters**. To see the sort icon and the filter icons hover over each column.
 
-    {{< c8y-admon-info>}}
-The sort icon and the filter icons appear on hover over each column.
-    {{< /c8y-admon-info>}}
 
 <a name=""></a>
 ### To add multiple instances of an asset
@@ -117,10 +114,6 @@ For a wind turbine rotor with three blades, you first create the asset hierarchy
     ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
 2. To delete an added asset template, click the delete icon at the top right.
-
-    {{< c8y-admon-info>}}
-The delete icon appears on hover.
-    {{< /c8y-admon-info>}}
 
 3. Modify the assets by navigating the asset pages using the **Previous** and **Next** buttons. You can track your progress via the green check marks in the asset hierarchy on the left.
 
@@ -167,7 +160,7 @@ If you navigate to the **Asset tree** page of "Wind turbine" and click **Add ass
 
 If you navigate to the existing "Rotor" asset and want to add a subasset, you can only add subassets for "Blade".
 
-For details how to add assets in the asset hierarchy, see [To add assets](#create-asset).
+For details how to add assets in the asset hierarchy, see [To create an asset](#create-asset).
 
 {{< c8y-admon-info>}}
 If you are at the end of the hierarchy, you see no further option to create subassets.

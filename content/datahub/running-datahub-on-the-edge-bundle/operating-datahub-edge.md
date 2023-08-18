@@ -71,7 +71,7 @@ The containers are configured to rotate log files with rotation settings of two 
 
 <a name="monitoring"></a>
 #### Monitoring
-{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See the section on [Monitoring](/edge-support/monitoring/) in the *{{< product-c8y-iot >}} Edge guide* for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](/edge-support/monitoring/) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 
@@ -99,4 +99,4 @@ Data being deleted from the data lake cannot be recovered anymore.
 
 #### Backup and Restore
 
-{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described in section [Backup and restore](/edge-backup-and-restore/backup_restore_vm_player/) in the *{{< product-c8y-iot >}} Edge guide*.
+{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described [Backup and restore](/edge-backup-and-restore/backup_restore_vm_player/).

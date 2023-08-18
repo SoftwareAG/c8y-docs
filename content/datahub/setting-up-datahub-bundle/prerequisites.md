@@ -13,14 +13,14 @@ The {{< product-c8y-iot >}} DataHub microservice and web application must be ava
 
 If you have an {{< enterprise-tenant >}}, you can also subscribe your subtenants to both applications so that the subtenants can use {{< product-c8y-iot >}} DataHub as well.
 
-See the section [Managing applications](/standard-tenant/ecosystem/#managing-applications) in the *{{< product-c8y-iot >}} User guide* for details on managing {{< product-c8y-iot >}} applications in general, including instructions for adding applications to a tenant.
+See [Managing applications](/standard-tenant/ecosystem/#managing-applications) for details on managing {{< product-c8y-iot >}} applications in general, including instructions for adding applications to a tenant.
 
-See the sections [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices) in the *{{< product-c8y-iot >}} User guide* for details on {{< product-c8y-iot >}} microservices, including instructions for:
+See [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices) for details on {{< product-c8y-iot >}} microservices, including instructions for:
 
 * Adding microservices to a tenant
 * Checking the status, permissions, and log files of a microservice
 
-See the section [Tenant management](/enterprise-tenant/tenant-management) in the *{{< product-c8y-iot >}} User guide* for details on subscribing applications or microservices to a tenant or subtenant.
+See [Tenant management](/enterprise-tenant/tenant-management) for details on subscribing applications or microservices to a tenant or subtenant.
 
 For the offloading of {{< product-c8y-iot >}} data, you need the connection settings and credentials for a cloud data lake service. During offloading, the data will be written into a data lake folder named after the tenant name.
 

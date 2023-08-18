@@ -37,10 +37,10 @@ The manager manages offloading pipelines such as defining and starting a pipelin
 |DataHub query|yes|no|
 
 #### Cumulocity IoT DataHub user
-The user executes SQL queries against the data in the data lake. For details on querying the data lake see the section [Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub#querying-offloaded). To execute queries the following approaches can be used:
+The user executes SQL queries against the data in the data lake. For details on querying the data lake see [Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub#querying-offloaded). To execute queries the following approaches can be used:
 
-* Dremio UI: The Dremio account defined in section [Setting up Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users) is used for logging into the Dremio UI and executing queries within that UI.
-* Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in section [Setting up Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users) is used for authenticating the requests against that API. {{< company-sag >}} does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
+* Dremio UI: The Dremio account defined in [Setting up Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users) is used for logging into the Dremio UI and executing queries within that UI.
+* Dremio API: Queries can also be executed using the Dremio REST API. The Dremio account defined in [Setting up Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users) is used for authenticating the requests against that API. {{< company-sag >}} does not recommend directly invoking Dremio APIs; they might be removed or changed at any time without prior notice.
 * {{< product-c8y-iot >}} DataHub proxy API: {{< product-c8y-iot >}} DataHub provides an API which proxies requests to the Dremio API. The {{< product-c8y-iot >}} user needs the role DataHub Reader in order to execute queries using the proxy API. The authentication against Dremio is done behind the scenes.
 
 The permissions for the role DataHub Reader are defined as follows:
@@ -52,7 +52,7 @@ The permissions for the role DataHub Reader are defined as follows:
 |DataHub query|yes|no|
 
 ### Assignment of Cumulocity IoT DataHub roles and permissions
-The roles DataHub Administrator, DataHub Manager, and DataHub Reader must be assigned to the respective users of your tenant. For assigning roles to users see the section [Managing permissions](/standard-tenant/managing-permissions/) in the  in the *{{< product-c8y-iot >}} User guide*. You need at least one user with the DataHub Administrator role to complete the {{< product-c8y-iot >}} DataHub configuration.
+The roles DataHub Administrator, DataHub Manager, and DataHub Reader must be assigned to the respective users of your tenant. For assigning roles to users see [Managing permissions](/standard-tenant/managing-permissions/). You need at least one user with the DataHub Administrator role to complete the {{< product-c8y-iot >}} DataHub configuration.
 
 {{< c8y-admon-info >}}
 You do not necessarily need to use the predefined roles to enable {{< product-c8y-iot >}} users to work with {{< product-c8y-iot >}} DataHub. Alternatively, you can modify other roles the users are associated with and add the corresponding permissions to those roles. In that case you also must add the DataHub application to the user's applications.

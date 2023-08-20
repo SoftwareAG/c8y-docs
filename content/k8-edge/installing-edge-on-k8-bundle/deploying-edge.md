@@ -23,12 +23,12 @@ Ensure that the [Reclaim](https://kubernetes.io/docs/concepts/storage/persistent
 
 Use the sample `cumulocity-iot-edge.yaml` manifest file with the Edge Custom Resource (CR) definition and Secrets necessary to deploy {{< product-c8y-iot >}} Edge.
 
-For example, you can deploy [Sample Cumulocity IoT Edge Manifest](https://raw.githubusercontent.com/SoftwareAG/edge-k8s-operator-docs/main/samples/cr/v1/cumulocity-iot-edge-manifest.yaml) file using the command:
+For example, you can deploy the sample `cumulocity-iot-edge.yml`file using the command:
 
 ```bash
 kubectl apply -f cumulocity-iot-edge.yaml
 ```
-For more information about the structure and configuration options available in the Edge Custom Resource (CR), see [Edge Custom Resource Definition](bookmark://_Edge_Custom_Resource)
+For more information about the structure and configuration options available in the Edge Custom Resource (CR), see [Edge Custom Resource Definition](/k8-edge/edge-custom-resource-definition/).
 
 The CR defined in the sample manifest file deploys the Edge version 1017.0.0 named  "cumulocity-iot-edge", with the details below:
 - myown.iot.com domain with self-signed tls certificates

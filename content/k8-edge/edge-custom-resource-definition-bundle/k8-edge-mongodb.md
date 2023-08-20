@@ -1,17 +1,15 @@
 ---
-weight: 55
+weight: 36
 title: MongoDB
 layout: redirect
 ---
 
-This field is necessary when this Edge deployment needs to be configured to use an externally hosted MongoDB server or to specify resource limits for the MongoDB server containers deployed by the Operator.
+This field is necessary to specify the MongoDB admin credentials or to configure an externally hosted MongoDB server or to specify resource limits for the MongoDB server containers deployed by the operator.
 
-Field | Required | Type | Default | Description
------ | -------- | ---- | ------- | -----------
-mongosHost | No | String | The Operator deploys a MongoDB server. | Hostname to reach an externally hosted Mongos server.
-connectionString | No | String | | Connection string of externally hosted MongoDB shards.
-credentialsSecretName | No | String |  | Name of the Kubernetes Secret containing the credentials and sharded key to connect to an externally hosted MongoDB server. See [MongoDB Credentials Secret](#mongodb-credentials-secret) for details. <p>**Note:** The Operator fetches this secret from the namespace with the name of the Edge CR. Create this secret before deploying or updating the Edge.
-mongosResources | No | Structure | Defaults to CPU Limit: 500m, Memory Limit: 1G, CPU Requests: 100m, Memory Requests: 100M | Specify resource limits for the mongos container. See [Resource Limits Spec](#resource-limits-spec) for details.
-configSvrResources | No | Structure | Defaults to CPU Limit: 2, Memory Limit: 1G, CPU Requests: 100m, Memory Requests: 100M | Specify resource limits for the config server container. See [Resource Limits Spec](#resource-limits-spec) for details.
-shardSvrResources | No | Structure | Defaults to CPU Limit: 2, Memory Limit: 1G, CPU Requests: 100m, Memory Requests: 100M | Specify resource limits for the shard server container. See [Resource Limits Spec](#resource-limits-spec) for details.
-arbiterResources | No | Structure | Defaults to CPU Limit: 250m, Memory Limit: 250M, CPU Requests: 100m, Memory Requests: 100M | Limits the Specify resource limits for the arbiter container. See [Resource Limits Spec](#resource-limits-spec) for details.
+|<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
+|:---|:---|:---|:---|:---|
+|credentialsSecretName|Yes|String||Name of the Kubernetes Secret containing the admin credentials with which the operator managed MongoDB must be configured or the admin credentials of the externally hosted MongoDB server. For more information, see [MongoDB Credentials Secret](/k8-edge/edge-custom-resource-definition/#k8-edge-mongodb-cred-secret). <p>**Note:** The operator fetches this secret from the namespace with the name of the Edge CR. Create this secret before deploying or updating the Edge.
+|connectionString|No|String|If not provided, the operator installs a single node MongoDB server and configures it with the admin credentials provided in `spec.mongodb.credentialsSecretName`|Connection string of the externally hosted MongoDB server. URI Format: `mongodb://host1[:port1][,...hostN[:portN]]`
+|tlsSecretName|No|String||Secret for supplying the Certificate Authority (CA) certificate to trust. For more information, [External hosted MongoDB TLS Secret](/k8-edge/edge-custom-resource-definition/#k8-edge-external-hosted-mongodb-tl-secret).<br>**Note:** The Operator fetches this secret from the namespace with the name of the Edge CR. Create this secret before deploying or updating the Edge.
+|resources.limits|Yes|Structure|Defaults to CPU Limit: 3000m<br>Memory Limit: 6GB|Specify resource limits for the {{< product-c8y-iot >}} Core container. For more information, see [Resource Limits Spec](/k8-edge/edge-custom-resource-definition/#k8-edge-resources-limits-spec).
+|resources.requests|No|Structure|Defaults to 75 GB|Specify the size of the Persistent Volume Claim (PVC) named `mongod-data-edge-db-rs0-0` made by MongoDB server for persisting application data. For more information, see [MongoDB storage size](/k8-edge/edge-custom-resource-definition/#k8-edge-mongodb-storage-size).

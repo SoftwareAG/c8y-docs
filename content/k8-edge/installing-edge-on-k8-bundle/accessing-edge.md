@@ -3,39 +3,154 @@ weight: 25
 title: Accessing Edge
 layout: redirect
 ---
+After the installation, you can access the Edge appliance using a [domain name](#domain) in a web browser.
 
-Kubernetes Ingress is an API object that manages external access to the services in a cluster, typically HTTP. You must have an Ingress controller to satisfy an Ingress. Only creating an Ingress resource has no effect. K3s and K3d installations by default deploy [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) ingress controller.
+## Supported browsers
 
-To connect to Edge, you need to find the IP address on which Ingress is reachable. Use `kubectl get service traefik -n kube-system` to find the external IP address of the traefik service. 
+* Microsoft Edge (latest Chromium-based version)
+* Mozilla Firefox (latest Extended Support Release [1])
+* Google Chrome [2]
+* Internet Explorer 11 [3]
 
-Below is the sample output of the `kubectl get service` command.
+[1] Only the latest Extended Support Release of Mozilla Firefox is explicitly supported. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of the Edge appliance with other versions of Mozilla Firefox cannot be guaranteed.
 
+[2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of the Edge appliance with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
+
+{{< c8y-admon-important >}}
+[3] Though the Edge appliance is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} Edge 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
+{{< /c8y-admon-important >}}
+
+You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
+
+* Chrome on Android (latest version) on Galaxy smartphones and tablets
+* Safari on iOS (latest version) on Apple iPhone and iPad
+
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} Edge on mobile devices shows some limitations.
+The limitations could be the following:
+
+* The usage may be constrained by the memory and the processing power available on the devices. <br>  
+For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+* Using the private mode on browsers may not work.
+* The [Streaming Analytics application](/streaming-analytics/overview-streaming-analytics/) does not support mobile or touch devices.
+{{< /c8y-admon-info >}}
+
+<a name="domain"></a>
+## Accessing the Edge appliance using the domain name
+
+Access the Edge appliance using the domain name configured as part of the installation. There are two ways to configure the accessibility with the domain names:
+
+* Add an entry of the domain name and IP mapping in the DNS servers. <br>
+OR
+* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This needs to be performed on each client host on which the Edge appliance is accessed.
+
+{{< c8y-admon-info >}}
+The first option is always preferable so that the Edge appliance is accessible over LAN.
+{{< /c8y-admon-info >}}
+
+Use the command follwoing command to get the external IP address to access  {{< product-c8y-iot >}} Edge.
+
+```shell
+kubectl get service cumulocity-core --namespace <EDGE-CR-NAME>-core
 ```
-NAME      TYPE           CLUSTER-IP           EXTERNAL-IP             PORT(S)                      AGE
-traefik   LoadBalancer   X.X.X.X **REDACTED   X.X.X.X **REDACTED      80:31640/TCP,443:30351/TCP   16h
+Sample output of the `kubectl get service command`:
+
+```shell
+NAME             TYPE           CLUSTER-IP          EXTERNAL-IP        PORT(S)                                      AGE 
+
+cumulocity-core  LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED 443:31342/TCP,1883:32751/TCP,8883:32270/TCP  12m
 ```
 
-You can connect to the Edge on this EXTERNAL-IP address.
+{{< c8y-admon-important >}}
+{{< product-c8y-iot >}} Edge is installed with the admin user **admin** and password **admin-pass**. You must change the password on first login.
+{{< /c8y-admon-important >}}
 
-### Configuring access through domain name
+<a name="add-alias"></a>
+### Adding the alias
 
-The Cumulocity IoT Edge is accessible using the domain name configured as part of the deployment in the Edge CR. In the [Sample Cumulocity IoT Edge Manifest](https://raw.githubusercontent.com/SoftwareAG/edge-k8s-operator-docs/main/samples/cr/v1/cumulocity-iot-edge-manifest.yaml), we used `myown.iot.com`.
+On Linux machines, add the following entry to */etc/hosts*:
 
-There are two ways to configure the accessibility with the domain names
+```text
+<IP address> <domain_name>
+```
 
-1. Add an entry of the domain name and IP mapping in the DNS servers.
-2. Add the host name alias in `/etc/hosts` or `C:\Windows\System32\drivers\etc\hosts` to access Edge through the domain name. This needs to be performed on each client host from which the Edge is accessed.
+Use the IP address provided during the network configuration. For example, the default value for Hyper-V is 192.168.66.10.
 
-> **INFO**
-> 
-> The first option is always preferable so that the Edge is accessible over LAN.
+On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
 
-### Accessing through domain name
+Ping the &#60;domain_name> to verify it.
 
-Enter the URL `https://myown.iot.com` in the browser.
+```shell
+[admin@iot-edge-server ~]$ ping <domain_name>
+```
 
-The Edge login screen appears. Log in with your credentials provided during the installation in the `admin-credentials-secret` of the [Sample Cumulocity IoT Edge Manifest](https://raw.githubusercontent.com/SoftwareAG/edge-k8s-operator-docs/main/samples/cr/v1/cumulocity-iot-edge-manifest.yaml).
+If the ping is successful, the DNS resolution is working properly.
 
-> **INFO**
-> 
-> Please refer to [Device integration using MQTT](https://cumulocity.com/guides/10.14.0/device-sdk/mqtt/) for connecting your devices over MQTT.
+Using &#60;domain_name>, the Edge appliance can be connected from the host operating system (operating system which is hosting the Edge appliance). If you want to connect the Edge appliance within your LAN, which is outside of the host operating system, you must do the following:
+
+* On VMware platforms, port forwarding must be enabled as mentioned in [Port forwarding on a VMware platform](/edge/setting-up-edge/#vmware-port-forwarding).
+* The DNS entry must be added in your LAN's DNS server/Name server. The DNS entry must have the domain name and the IP address of the host operating system. Note that this is not the Edge appliance IP.
+
+### To access the Edge appliance
+
+Enter the URL in the browser:
+
+```http
+https://<domain_name>
+```
+
+The Edge appliance login screen appears. Log in with your credentials created during the installation.
+
+- To log in to the {{< management-tenant >}}, prefix the username with *management*:
+  - Username: management/<*Edge admin username*>
+  - Password: password provided during the installation
+
+- To log in to the edge tenant, use the Edge admin credentials or prefix the Edge admin username with *edge*:
+  - Username: edge/<*Edge admin username*>
+  - Password: password provided during the installation
+
+{{< c8y-admon-important >}}
+Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Edge appliance.
+{{< /c8y-admon-important >}}
+
+If you are logging in for the first time, you will see a cookie banner at the bottom:
+
+<img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
+<br>
+
+{{< c8y-admon-info >}}
+The cookie banner is turned on by default on the Edge appliance instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+{{< /c8y-admon-info >}}
+
+* Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
+* Click **Reject all** to reject all of the default cookie settings.
+* Click **Preferences** to select your individual cookie preferences:
+	* **Required** - Required to enable core site functionality. They perform a task or operation without which a site's functionality would not be possible. Required cookies cannot be disabled.
+	* **Functional** - Used to track site usage and to process personal data to measure and improve usability and performance. Functional cookies must be actively enabled.
+* Click **See also our Privacy Notice** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
+
+{{< c8y-admon-info >}}
+If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
+{{< /c8y-admon-info >}}
+
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as the Edge appliance requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
+
+Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
+
+![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+
+To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
+
+{{< c8y-admon-info >}}
+The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
+{{< /c8y-admon-info >}}
+
+## How to reset your password
+
+To reset your password, you must first configure the “reset password” template and email server settings in the Edge appliance. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
+
+For information about resetting the password, see [How to reset your password](/users-guide/getting-started/#how-to-reset-your-password) in the *User guide*.
+
+## How to access pages using URLs
+
+For information about accessing pages using the URLs, see [How to access pages using URLs](/users-guide/getting-started/#how-to-access-pages-using-urls) in the *User guide*.

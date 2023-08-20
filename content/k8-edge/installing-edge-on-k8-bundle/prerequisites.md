@@ -12,7 +12,7 @@ layout: redirect
 |**TLS/SSL key and TLS/SSL certificate**|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<br>**Info:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
 |**Edge cloud remote access**|To connect and manage one (or multiple) Edge appliances to your {{< product-c8y-iot >}} cloud tenant, you need an active {{< product-c8y-iot >}} {{< standard-tenant >}} with the Data Broker and Cloud Remote Access extensions.<br>**Info:** The Edge cloud remote access is an optional feature in {{< product-c8y-iot >}} Edge.|
 
-### Hardware requirements
+## Hardware requirements
 |Hardware|Configuration|
 |:---|:---|
 |Kubernetes Node|Single node with:<br>- CPU: 4 cores<br>- RAM: 8GB|

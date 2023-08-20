@@ -1,13 +1,12 @@
 ---
-weight: 45
+weight: 41
 title: Microservices
 layout: redirect
 ---
 
-Microservices spec allows specifying resources to allocate to a Cumulocity microservice and skip deploying the Device Simulator and/or OPCUA Management Server. If not specified, the Operator deploys all the default Cumulocity microservices, which include the Apama, Smart Rules, SSL Management Server, Device Simulator and OPCUA Management Server microservices.
+Microservices spec allows specifying resources to allocate to a default microservices, which include the Apama, Smart Rules, OPCUA Management Server and Device Simulator microservices.
 
-Field | Required | Type | Default | Description
------ | -------- | ---- | ------- | -----------
-name | Yes | String |  | Name of the Cumulocity microservice. Allowed values are apama-ctrl, smartrule, ssl-management-server, device-simulator and opcua-mgmt-service
-disable | No | boolean | false | Specify 'true' to not deploy or undeploy the microservice. <p>**Note:** You can configure to not deploy or undeploy (if already deployed) the device-simulator and opcua-mgmt-service services only, as the rest of the services are essential for the functioning of the Cumulocity IoT Platform.
-resources | No | Structure | | Specify resource limits for the microservice container. See [Resource Limits Spec](#resource-limits-spec) for details.
+|<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
+|:---|:---|:---|:---|:---|
+|name|Yes|String||Name of the Cumulocity microservice. Allowed values are apama-ctrl, smartrule, ssl-management-server, device-simulator and opcua-mgmt-service
+|resources.limits|No|Structure|Defaults to CPU Limit: 1000m<br>Memory Limit: 1 GB|Specify resource limits for the {{< product-c8y-iot >}} microservice container. For more information, see [Resource Limits Spec](/k8-edge/edge-custom-resource-definition/#k8-edge-resources-limits-spec).

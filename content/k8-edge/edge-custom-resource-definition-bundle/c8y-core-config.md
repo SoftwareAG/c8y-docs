@@ -1,12 +1,11 @@
 ---
 weight: 35
-title: Cumulocity IoT Core configurations
+title: Cumulocity IoT Core
 layout: redirect
 ---
 
-The core spec specifies the fields for configuring the Cumulocity IoT Core node and its resource limits.
+The core specification specifies the fields for configuring the {{< product-c8y-iot >}} Core node and its resource limits.
 
-Field | Required | Type | Default | Description
------ | -------- | ---- | ------- | -----------
-coreValues | No | Structure |  | Cumulocity IoT Core node configurations. See [Cumulocity IoT Core values](#cumulocity-iot-core-values) for details
-resources | No | Structure | Defaults to CPU Limit: 4000m, Memory Limit: 6G, CPU Requests: 1000m, Memory Requests: 1G | Specify resource limits for the Cumulocity IoT Core node container. See [Resource Limits Spec](#resource-limits-spec) for details.
+|<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
+|:---|:---|:---|:---|:---|
+|resources.limits|Yes|Structure|Defaults to CPU Limit: 3000m<br>Memory Limit: 6GB|Specify resource limits for the {{< product-c8y-iot >}} Core container. For more information, see [Resource Limits Spec](/k8-edge/edge-custom-resource-definition/#k8-edge-resources-limits-spec).

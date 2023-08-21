@@ -183,11 +183,9 @@ Tailing commas is not required. The two lines below result in the same message.
 
 The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [Processing mode](/smartrest/smartrest-one/#processing-mode) for more information about the <kbd>t/</kbd> topic for transient data processing.
 
-<a name="inventory-templates"></a>
-#### Inventory templates (1xx)
+#### Inventory templates (1xx) {#inventory-templates}
 
-<a name="100"></a>
-##### Device creation (100)
+##### Device creation (100) {#100}
 
 Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type `c8y_Serial` and the device identifier of the MQTT clientId as value will be created.
 
@@ -202,8 +200,7 @@ Create a new device for the serial number in the inventory if not yet existing. 
 100,myDevice,myType
 ```
 
-<a name="101"></a>
-##### Child device creation (101)
+##### Child device creation (101) {#101}
 
 Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type `c8y_Serial` and the value a combination of the serial of the root device and the unique child ID.
 
@@ -219,8 +216,7 @@ Create a new child device for the current device. The newly created object will 
 101,uniqueChildId,myChildDevice,myChildType
 ```
 
-<a name="102"></a>
-##### Service creation (102)
+##### Service creation (102) {#102}
 
 Create a new software service for given device.
 
@@ -237,8 +233,7 @@ Create a new software service for given device.
 102,myDatabaseDevice,systemd,DatabaseService,up
 ```
 
-<a name="104"></a>
-##### Service status update (104)
+##### Service status update (104) {#104}
 
 Set a status for given software service.
 
@@ -252,8 +247,7 @@ Set a status for given software service.
 104,up
 ```
 
-<a name="105"></a>
-##### Get child devices (105)
+##### Get child devices (105) {#105}
 
 Trigger the sending of child devices of the device.
 
@@ -263,8 +257,7 @@ Trigger the sending of child devices of the device.
 105
 ```
 
-<a name="107"></a>
-##### Clear device's fragment (107)
+##### Clear device's fragment (107) {#107}
 
 Remove one or more fragments from a device.
 
@@ -278,8 +271,7 @@ Remove one or more fragments from a device.
 107,c8y_Position,c8y_Configuration
 ```
 
-<a name="110"></a>
-##### Configure Hardware (110)
+##### Configure Hardware (110) {#110}
 
 Update the hardware properties of the device.
 
@@ -295,8 +287,7 @@ Update the hardware properties of the device.
 110,1234567890,myModel,1.2.3
 ```
 
-<a name="111"></a>
-##### Configure Mobile (111)
+##### Configure Mobile (111) {#111}
 
 Update the mobile properties of the device.
 
@@ -316,8 +307,7 @@ Update the mobile properties of the device.
 111,1234567890,,54353
 ```
 
-<a name="112"></a>
-##### Configure Position (112)
+##### Configure Position (112) {#112}
 
 Update the position properties of the device.
 
@@ -334,8 +324,7 @@ Update the position properties of the device.
 112,50.323423,6.423423
 ```
 
-<a name="113"></a>
-##### Set Configuration (113)
+##### Set Configuration (113) {#113}
 
 Update the configuration properties of the device.
 
@@ -349,8 +338,7 @@ Example
 113,"val1=1\nval2=2"
 ```
 
-<a name="114"></a>
-##### Set supported operations (114)
+##### Set supported operations (114) {#114}
 
 Set the supported operations of the device.
 
@@ -368,8 +356,7 @@ Set the supported operations of the device.
 If you want to remove an item from the supported operations list, send a new 114 request with the updated list, for example, `114, c8y_Restart,c8y_Configuration` in order to remove `c8y_SoftwareList` after the request from the example above.
 {{< /c8y-admon-info >}}
 
-<a name="115"></a>
-##### Set firmware (115)
+##### Set firmware (115) {#115}
 
 Set the firmware installed on the device.
 
@@ -385,8 +372,7 @@ Set the firmware installed on the device.
 115,firmwareName,firmwareVersion,firmwareUrl
 ```
 
-<a name="116"></a>
-##### Set software list (116)
+##### Set software list (116) {#116}
 
 Set the list of software installed on the device.
 
@@ -403,8 +389,7 @@ Set the list of software installed on the device.
 116,software1,version1,url1,software2,,url2,software3,version3
 ```
 
-<a name="117"></a>
-##### Set required availability (117)
+##### Set required availability (117) {#117}
 
 Set the required interval for availability monitoring as an integer value representing minutes.
 For more information, see *c8y_RequiredAvailability* in [Device availability](/device-integration/fragment-library/#device-availability).
@@ -420,8 +405,7 @@ This will only set the value if it does not exist. Values entered, for example, 
 117,60
 ```
 
-<a name="118"></a>
-##### Set supported logs (118)
+##### Set supported logs (118) {#118}
 
 Set the supported logs of the device.
 
@@ -435,8 +419,7 @@ Set the supported logs of the device.
 118,ntcagent,dmesg,logread
 ```
 
-<a name="119"></a>
-##### Set supported configurations (119)
+##### Set supported configurations (119) {#119}
 
 Set the supported configurations of the device.
 
@@ -450,8 +433,7 @@ Set the supported configurations of the device.
 119,modbus,system
 ```
 
-<a name="120"></a>
-##### Set currently installed configuration (120)
+##### Set currently installed configuration (120) {#120}
 
 Set currently installed configuration of the device.
 
@@ -468,8 +450,7 @@ Set currently installed configuration of the device.
 120,myType,http://www.my.url,config.bin,2020-07-22T17:03:14.000+02:00
 ```
 
-<a name="121"></a>
-##### Set device profile that is being applied (121)
+##### Set device profile that is being applied (121) {#121}
 
 Set device profile that is being applied to the device.
 
@@ -484,8 +465,7 @@ Set device profile that is being applied to the device.
 121,true,8473
 ```
 
-<a name="122"></a>
-##### Set device agent information (122)
+##### Set device agent information (122) {#122}
 
 Allows a device to provide information about the agent running on it.
 
@@ -502,8 +482,7 @@ Allows a device to provide information about the agent running on it.
 122,thin-edge.io,0.6,https://thin-edge.io,Software AG
 ```
 
-<a name="125"></a>
-##### Send heartbeat (125)
+##### Send heartbeat (125) {#125}
 
 Sends a heartbeat from the device to update its availability status.
 
@@ -513,8 +492,7 @@ Sends a heartbeat from the device to update its availability status.
 125
 ```
 
-<a name="140"></a>
-##### Set advanced software list (140)
+##### Set advanced software list (140) {#140}
 
 Sets the list of advanced software installed on the device. Any existing list will be overwritten.
 
@@ -531,8 +509,7 @@ Sets the list of advanced software installed on the device. Any existing list wi
 140,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
 ```
 
-<a name="123"></a>
-##### Get the device managed object ID (123)
+##### Get the device managed object ID (123) {#123}
 
 Retrieve the ID of the device managed object.
 
@@ -542,8 +519,7 @@ Retrieve the ID of the device managed object.
 123
 ```
 
-<a name="141"></a>
-##### Append advanced software items (141)
+##### Append advanced software items (141) {#141}
 
 Appends advanced software items to the list that exists for the device.
 
@@ -560,8 +536,7 @@ Appends advanced software items to the list that exists for the device.
 141,docker,3.2.1,systemd,https://www.docker.com/,nginx,1.6,container,https://www.nginx.com/
 ```
 
-<a name="142"></a>
-##### Remove advanced software items (142)
+##### Remove advanced software items (142) {#142}
 
 Removes advanced software items from the list that exists for the device.
 
@@ -576,8 +551,7 @@ Removes advanced software items from the list that exists for the device.
 142,docker,3.2.1,nginx,1.6
 ```
 
-<a name="143"></a>
-##### Set supported software types (143)
+##### Set supported software types (143) {#143}
 
 Set the supported software types of the device. Ignores empty elements. An empty list removes the `c8y_SupportedSoftwareTypes` fragment entirely.
 
@@ -591,11 +565,9 @@ Set the supported software types of the device. Ignores empty elements. An empty
 143,yum,docker
 ```
 
-<a name="measurement-templates"></a>
-#### Measurement templates (2xx)
+#### Measurement templates (2xx) {#measurement-templates}
 
-<a name="200"></a>
-##### Create custom measurement (200)
+##### Create custom measurement (200) {#200}
 
 Create a measurement with a given fragment and series.
 
@@ -613,8 +585,7 @@ Create a measurement with a given fragment and series.
 200,c8y_Temperature,T,25
 ```
 
-<a name="201"></a>
-##### Create a custom measurement with multiple fragments and series (201)
+##### Create a custom measurement with multiple fragments and series (201) {#201}
 
 Create a measurement with multiple fragments and series.
 
@@ -634,8 +605,7 @@ Create a measurement with multiple fragments and series.
 201,KamstrupA220Reading,2022-03-19T12:03:27.845Z,c8y_SinglePhaseEnergyMeasurement,A+:1,1234,kWh,c8y_SinglePhaseEnergyMeasurement,A-:1,2345,kWh,c8y_ThreePhaseEnergyMeasurement,A+:1,123,kWh,c8y_ThreePhaseEnergyMeasurement,A+:2,234,kWh,c8y_ThreePhaseEnergyMeasurement,A+:3,345,kWh
 ```
 
-<a name="210"></a>
-##### Create signal strength measurement (210)
+##### Create signal strength measurement (210) {#210}
 
 Create a measurement of type `c8y_SignalStrength`.
 
@@ -651,8 +621,7 @@ Create a measurement of type `c8y_SignalStrength`.
 210,-90,23,2016-06-22T17:03:14.000+02:00
 ```
 
-<a name="211"></a>
-##### Create temperature measurement (211)
+##### Create temperature measurement (211) {#211}
 
 Create a measurement of type `c8y_TemperatureMeasurement`.
 
@@ -667,8 +636,7 @@ Create a measurement of type `c8y_TemperatureMeasurement`.
 211,25,2016-06-22T17:03:14.000+02:00
 ```
 
-<a name="212"></a>
-##### Create battery measurement (212)
+##### Create battery measurement (212) {#212}
 
 Create a measurement of type `c8y_Battery`.
 
@@ -683,11 +651,9 @@ Create a measurement of type `c8y_Battery`.
 212,95,2016-06-22T17:03:14.000+02:00
 ```
 
-<a name="alarm-templates"></a>
-#### Alarm templates (3xx)
+#### Alarm templates (3xx) {#alarm-templates}
 
-<a name="301"></a>
-##### Create CRITICAL alarm (301)
+##### Create CRITICAL alarm (301) {#301}
 
 Create a CRITICAL alarm.
 
@@ -703,8 +669,7 @@ Create a CRITICAL alarm.
 301,c8y_TemperatureAlarm
 ```
 
-<a name="302"></a>
-##### Create MAJOR alarm (302)
+##### Create MAJOR alarm (302) {#302}
 
 Create a MAJOR alarm.
 
@@ -720,8 +685,7 @@ Create a MAJOR alarm.
 302,c8y_TemperatureAlarm,"This is an alarm"
 ```
 
-<a name="303"></a>
-##### Create MINOR alarm (303)
+##### Create MINOR alarm (303) {#303}
 
 Create a MINOR alarm.
 
@@ -737,8 +701,7 @@ Create a MINOR alarm.
 303,c8y_TemperatureAlarm
 ```
 
-<a name="304"></a>
-##### Create WARNING alarm (304)
+##### Create WARNING alarm (304) {#304}
 
 Create a WARNING alarm.
 
@@ -754,8 +717,7 @@ Create a WARNING alarm.
 304,c8y_TemperatureAlarm,,2013-06-22T17:03:14.000+02:00
 ```
 
-<a name="305"></a>
-##### Update severity of existing alarm (305)
+##### Update severity of existing alarm (305) {#305}
 
 Change the severity of an existing alarm.
 
@@ -770,8 +732,7 @@ Change the severity of an existing alarm.
 305,c8y_TemperatureAlarm,CRITICAL
 ```
 
-<a name="306"></a>
-##### Clear existing alarm (306)
+##### Clear existing alarm (306) {#306}
 
 Clear an existing alarm.
 
@@ -785,8 +746,7 @@ Clear an existing alarm.
 306,c8y_TemperatureAlarm
 ```
 
-<a name="307"></a>
-##### Clear alarm's fragment (307)
+##### Clear alarm's fragment (307) {#307}
 
 Remove one or more fragments from an alarm of a specific type.
 
@@ -801,11 +761,9 @@ Remove one or more fragments from an alarm of a specific type.
 307,c8y_TemperatureAlarm,c8y_Position,c8y_Configuration
 ```
 
-<a name="event-templates"></a>
-#### Event templates (4xx)
+#### Event templates (4xx) {#event-templates}
 
-<a name="400"></a>
-##### Create basic event (400)
+##### Create basic event (400) {#400}
 
 Create an event of given type and text.
 
@@ -821,8 +779,7 @@ Create an event of given type and text.
 400,c8y_MyEvent,"Something was triggered"
 ```
 
-<a name="401"></a>
-##### Create location update event (401)
+##### Create location update event (401) {#401}
 
 Create typical location update event containing `c8y_Position`.
 
@@ -840,8 +797,7 @@ Create typical location update event containing `c8y_Position`.
 401,51.151977,6.95173,67
 ```
 
-<a name="402"></a>
-##### Create location update event with device update (402)
+##### Create location update event with device update (402) {#402}
 
 Create typical location update event containing `c8y_Position`. Additionally the device will be updated with the same `c8y_Position` fragment.
 
@@ -859,8 +815,7 @@ Create typical location update event containing `c8y_Position`. Additionally the
 402,51.151977,6.95173,67
 ```
 
-<a name="407"></a>
-##### Clear event's fragment (407)
+##### Clear event's fragment (407) {#407}
 
 Remove one or more fragments from an event of a specific type.
 
@@ -875,11 +830,9 @@ Remove one or more fragments from an event of a specific type.
 407,c8y_MyEvent,c8y_Position,c8y_Configuration
 ```
 
-<a name="operation-templates"></a>
-#### Operation templates (5xx)
+#### Operation templates (5xx) {#operation-templates}
 
-<a name="500"></a>
-##### Get PENDING operations (500)
+##### Get PENDING operations (500) {#500}
 
 Trigger the sending of all PENDING operations for the agent.
 
@@ -889,8 +842,7 @@ Trigger the sending of all PENDING operations for the agent.
 500
 ```
 
-<a name="501"></a>
-##### Set operation to EXECUTING (501)
+##### Set operation to EXECUTING (501) {#501}
 
 Set the oldest PENDING operation with given fragment to EXECUTING.
 
@@ -904,8 +856,7 @@ Set the oldest PENDING operation with given fragment to EXECUTING.
 501,c8y_Restart
 ```
 
-<a name="502"></a>
-##### Set operation to FAILED (502)
+##### Set operation to FAILED (502) {#502}
 
 Set the oldest EXECUTING operation with given fragment to FAILED.
 
@@ -920,8 +871,7 @@ Set the oldest EXECUTING operation with given fragment to FAILED.
 502,c8y_Restart,"Could not restart"
 ```
 
-<a name="503"></a>
-##### Set operation to SUCCESSFUL (503)
+##### Set operation to SUCCESSFUL (503) {#503}
 
 Set the oldest EXECUTING operation with given fragment to SUCCESSFUL.
 
@@ -938,8 +888,7 @@ It enables the device to send additional parameters that trigger additional step
 503,c8y_Restart
 ```
 
-<a name="504"></a>
-##### Set operation to EXECUTING (504)
+##### Set operation to EXECUTING (504) {#504}
 
 Set the operation with the given ID to EXECUTING. The operation must exist and must have the requesting device as the source.
 
@@ -953,8 +902,7 @@ Set the operation with the given ID to EXECUTING. The operation must exist and m
 504,123
 ```
 
-<a name="505"></a>
-##### Set operation to FAILED (505)
+##### Set operation to FAILED (505) {#505}
 
 Set the operation with the given ID to FAILED. The operation must exist and must have the requesting device as the source.
 
@@ -969,8 +917,7 @@ Set the operation with the given ID to FAILED. The operation must exist and must
 505,123,"Could not restart"
 ```
 
-<a name="506"></a>
-##### Set operation to SUCCESSFUL (506)
+##### Set operation to SUCCESSFUL (506) {#506}
 
 Set the operation with given ID to SUCCESSFUL. The operation must exist and must have the requesting device as the source.
 
@@ -987,8 +934,7 @@ This may let the device send additional parameters that trigger further steps ba
 506,c8y_Restart
 ```
 
-<a name="507"></a>
-##### Set EXECUTING operations to FAILED (507)
+##### Set EXECUTING operations to FAILED (507) {#507}
 
 Set EXECUTING operations with a given fragment to FAILED.
 If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
@@ -1008,8 +954,7 @@ If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 
 #### Inventory templates (1xx)
 
-<a name="106"></a>
-##### Get children of device (106)
+##### Get children of device (106) {#106}
 
 List all children of the device.
 
@@ -1023,8 +968,7 @@ List all children of the device.
 106,child1,child2,child3
 ```
 
-<a name="124"></a>
-##### Get the device managed object ID (124)
+##### Get the device managed object ID (124) {#124}
 
 Retrieve the ID of the device managed object.
 
@@ -1038,13 +982,11 @@ Retrieve the ID of the device managed object.
 124,12345
 ```
 
-<a name="subscribe-operations"></a>
-#### Operation templates (5xx)
+#### Operation templates (5xx) {#subscribe-operations}
 
 All operation responses have the same base structure, leading with the message ID and followed by the ID of either the root device or a child which should handle the operation.
 
-<a name="510"></a>
-##### Restart (510)
+##### Restart (510) {#510}
 
 Restart a device.
 
@@ -1054,8 +996,7 @@ Restart a device.
 510,DeviceSerial
 ```
 
-<a name="511"></a>
-##### Command (511)
+##### Command (511) {#511}
 
 Run the command being sent in the operation.
 
@@ -1069,8 +1010,7 @@ Run the command being sent in the operation.
 511,DeviceSerial,execute this
 ```
 
-<a name="513"></a>
-##### Configuration (513)
+##### Configuration (513) {#513}
 
 Set the configuration being sent in the operation.
 
@@ -1084,8 +1024,7 @@ Set the configuration being sent in the operation.
 513,DeviceSerial,"val1=1\nval2=2"
 ```
 
-<a name="515"></a>
-##### Firmware (515)
+##### Firmware (515) {#515}
 
 Install the firmware from the url.
 
@@ -1101,8 +1040,7 @@ Install the firmware from the url.
 515,DeviceSerial,myFirmware,1.0,http://www.my.url
 ```
 
-<a name="516"></a>
-##### Software list (516)
+##### Software list (516) {#516}
 
 Install the software sent in the operation.
 
@@ -1119,8 +1057,7 @@ Install the software sent in the operation.
 516,DeviceSerial,softwareA,1.0,url1,softwareB,2.0,url2
 ```
 
-<a name="517"></a>
-##### Measurement request operation (517)
+##### Measurement request operation (517) {#517}
 
 Send the measurements specified by the request name.
 
@@ -1134,8 +1071,7 @@ Send the measurements specified by the request name.
 517,DeviceSerial,LOGA
 ```
 
-<a name="518"></a>
-##### Relay (518)
+##### Relay (518) {#518}
 
 Open or close the relay.
 
@@ -1149,8 +1085,7 @@ Open or close the relay.
 518,DeviceSerial,OPEN
 ```
 
-<a name="519"></a>
-##### RelayArray (519)
+##### RelayArray (519) {#519}
 
 Open or close the relays in the array.
 
@@ -1164,8 +1099,7 @@ Open or close the relays in the array.
 519,DeviceSerial,OPEN,CLOSE,CLOSE,OPEN
 ```
 
-<a name="520"></a>
-##### Upload configuration file (520)
+##### Upload configuration file (520) {#520}
 
 The current configuration is uploaded from {{< product-c8y-iot >}} to the device.
 
@@ -1175,8 +1109,7 @@ The current configuration is uploaded from {{< product-c8y-iot >}} to the device
 520,DeviceSerial
 ```
 
-<a name="521"></a>
-##### Download configuration file (521)
+##### Download configuration file (521) {#521}
 
 Download a configuration file from the URL.
 
@@ -1190,8 +1123,7 @@ Download a configuration file from the URL.
 521,DeviceSerial,http://www.my.url
 ```
 
-<a name="522"></a>
-##### Logfile request (522)
+##### Logfile request (522) {#522}
 
 Upload a log file for the given parameters.
 
@@ -1209,8 +1141,7 @@ Upload a log file for the given parameters.
 522,DeviceSerial,logfileA,2013-06-22T17:03:14.000+02:00,2013-06-22T18:03:14.000+02:00,ERROR,1000
 ```
 
-<a name="523"></a>
-##### Communication mode (523)
+##### Communication mode (523) {#523}
 
 Change the communication mode.
 
@@ -1224,8 +1155,7 @@ Change the communication mode.
 523,DeviceSerial,SMS
 ```
 
-<a name="524"></a>
-##### Download configuration file with type (524)
+##### Download configuration file with type (524) {#524}
 
 Download a configuration file from the URL with type.
 
@@ -1240,8 +1170,7 @@ Download a configuration file from the URL with type.
 524,DeviceSerial,http://www.my.url,type
 ```
 
-<a name="525"></a>
-##### Firmware from patch (525)
+##### Firmware from patch (525) {#525}
 
 Install the firmware from the patch.
 
@@ -1258,8 +1187,7 @@ Install the firmware from the patch.
 525,DeviceSerial,firmwareName,1.0,http://www.my.url,dependency
 ```
 
-<a name="526"></a>
-##### Upload configuration file with type (526)
+##### Upload configuration file with type (526) {#526}
 
 Configuration is uploaded from {{< product-c8y-iot >}} to the device with type.
 
@@ -1273,8 +1201,7 @@ Position|Parameter|Type|
 526,DeviceSerial,type
 ```
 
-<a name="527"></a>
-##### Set device profiles (527)
+##### Set device profiles (527) {#527}
 
 Set the device profiles
 
@@ -1304,8 +1231,7 @@ Set the device profiles
 527,DeviceSerial,$FW,firmwareName,1.0,http://www.my.url,true,dependency,$SW,softwareA,1.0,http://www.my.url1,action1,softwareB,2.0,http://www.my.url2,action2,$CONF,http://www.my.url1,type1,http://www.my.url2,type2
 ```
 
-<a name="528"></a>
-##### Update software (528)
+##### Update software (528) {#528}
 
 Update the software installed on the device.
 
@@ -1333,8 +1259,7 @@ The agent will also determine if there is a previous version of the software and
 When the `delete` action is received, the device agent ensures that the software will no longer appear in the `c8y_SoftwareList` fragment of the device after the software update operation has completed.
 {{< /c8y-admon-info >}}
 
-<a name="529"></a>
-##### Update advanced software (529)
+##### Update advanced software (529) {#529}
 
 Update the software installed on the device.
 
@@ -1355,8 +1280,7 @@ Update the software installed on the device.
 ```
 
 
-<a name="530"></a>
-##### Cloud Remote Access connect (530)
+##### Cloud Remote Access connect (530) {#530}
 
 Establish tunneling by Remote Access device agent.
 

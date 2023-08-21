@@ -81,7 +81,6 @@ Additionally, you can create templates to return certain values from responses a
 
 A template collection is a set of request and response templates that specifies a device communication protocol. Each collection is referenced by a unique ID (called X-ID).
 
-<a name="creating-templates-via-mqtt"></a>
 #### Creating templates via MQTT
 
 Like in SmartREST 1.0, you must pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.

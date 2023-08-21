@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 To import the entire asset hierarchy with all assets at once, use the bulk import feature.
-For each [asset model](/dtm/asset-types/#asset-types), a CSV template is provided.
+For each [asset model](/dtm/asset-types/#asset-models), a CSV template is provided.
 Fill in the required details in this template and upload the file to create the assets in bulk for the selected asset model.
 
 <a name=""></a>
@@ -13,7 +13,7 @@ Fill in the required details in this template and upload the file to create the 
 
 To use the Bulk import feature, you must enable the **Digital Twin** permission for the user's role, following these steps:
 
-1. Navigate to the [Administration application](/users-guide/administration/#overview) via the application switcher in the top right corner.
+1. Navigate to the [Administration application](/standard-tenant/home-screen/) via the application switcher in the top right corner.
 
 2. Under **Quick links** click **Roles**.
 

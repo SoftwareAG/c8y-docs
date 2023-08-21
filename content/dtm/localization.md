@@ -25,7 +25,7 @@ helpcontent:
 
 * To add/update/delete localization identifiers: ADMIN permission for permission type "Application management"
 
-* Your user must have a role with READ permission for the permission type "Application management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+* Your user must have a role with READ permission for the permission type "Application management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
 
 * Your tenant must have the Public-options application installed, see details below.
 {{< /c8y-admon-req >}}
@@ -33,10 +33,10 @@ helpcontent:
 ### To use the localization feature
 Since the localization feature uses dynamically fetched application options, your tenant must have the Public-options application installed. Install the Public-options application manually or, as a workaround, apply the branding setting which installs the Public-options application behind the scenes.
 
-For details on how to manually install the Public-options application, see [Branding and language customization](/web/application-configuration/#branding-and-languages) in the *Web SDK guide*.
+For details on how to manually install the Public-options application, see [Branding and language customization](/web/application-configuration/#branding-languages-customization).
 
 #### To apply the branding setting
-To apply the branding setting, you must first subscribe to the [Branding feature](/users-guide/enterprise-tenant/#branding) in the [Enterprise tenant](/users-guide/enterprise-tenant/#overview).
+To apply the branding setting, you must first subscribe to the [Branding feature](/enterprise-tenant/customization/#branding) in the [{{< enterprise-tenant >}} ](/enterprise-tenant/overview/).
 
 Complete the setup in the Administration application following the steps below:
 
@@ -99,7 +99,7 @@ or:
 
 Click **Apply** to apply the changes.
 
-Once all your translations are done, you can change the language under **User settings** to see the translations in action. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
+Once all your translations are done, you can change the language under **User settings** to see the translations in action. For more information see [To change user settings](/getting-started/user-settings/#to-change-user-settings).
 
 
 {{< c8y-admon-info>}}

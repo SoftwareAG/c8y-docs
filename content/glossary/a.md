@@ -11,7 +11,7 @@ section:
 The Administration application is one of the default applications of {{< product-c8y-iot >}}.
 The Administration application enables administrators to manage their tenants, users, roles and applications. It also allows them to configure various settings for their accounts.
 
-For details see [Platform administraion > Standard tenant administration](/standard-tenant/).
+For details see [Platform administration > Standard tenant administration](/standard-tenant/).
 
 
 ### Agent

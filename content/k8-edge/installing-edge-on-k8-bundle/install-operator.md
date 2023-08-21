@@ -10,7 +10,12 @@ A Helm chart is available for installing the Edge Kubernetes operator. To begin,
 To use the Helm charts, you need to install Helm v3. Refer to [Installing Heml](https://helm.sh/docs/intro/install/) for the installation instructions.
 {{< /c8y-admon-info >}}
 
-Run the `cumulocity-iot-edge-operator-install.sh` script to install the operator.
+{{< product-c8y-iot >}} Edge provides a script to install the Edge Operator. This script is located at [cumulocity-iot-edge-operator-install.sh](/files/k8-edge/cumulocity-iot-edge-operator-install.sh).
+
+To install the Edge operator, run the command:
+```shell
+curl -sfL https://cumulocity.com/?? | bash -s
+```
 
 The operator is deployed in the `cumulocityiotedge-operator-system` namespace. Run the following command to follow the logs for the operator pod:
 ```bash

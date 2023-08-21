@@ -24,12 +24,12 @@ Ensure that the [Reclaim](https://kubernetes.io/docs/concepts/storage/persistent
 
 ### Deploy Edge
 
-Use the sample `cumulocity-iot-edge.yaml` manifest file with the Edge Custom Resource (CR) definition and Secrets necessary to deploy {{< product-c8y-iot >}} Edge.
+Use the sample `cumulocity-iot-edge-manifest.yaml` manifest file with the Edge Custom Resource (CR) definition and Secrets necessary to deploy {{< product-c8y-iot >}} Edge.
 
-For example, you can deploy the sample `cumulocity-iot-edge.yml`file using the command:
+For example, you can deploy the sample `cumulocity-iot-edge-manifest.yml`file using the command:
 
 ```bash
-kubectl apply -f cumulocity-iot-edge.yaml
+kubectl apply -f cumulocity-iot-edge-manifest.yaml
 ```
 For more information about the structure and configuration options available in the Edge Custom Resource (CR), see [Edge Custom Resource Definition](/k8-edge/edge-custom-resource-definition/).
 

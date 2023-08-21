@@ -3,7 +3,7 @@
 ########################################################################################################################
 ---
 #
-# Creates 'cumulocity-iot-edge' namespace
+# Creates 'cumulocity-iot-edge' namespac, same as the name of this Cumulocity IoT Edge deployment 
 #
 
 apiVersion: v1
@@ -17,200 +17,149 @@ metadata:
 ########################################################################################################################
 ---
 #
-# This CR deploys Edge version 1014.0.0 named 'cumulocity-iot-edge', with the below details
+# This Custom Resource deploys Cumulocity IoT Edge version 1017.0.0 named 'cumulocity-iot-edge', with the below details
 #  - myown.iot.com domain with self-signed tls certificates
-#  - Cumulocity IoT Core and related pods in 'cumulocity-iot-edge' namespace
-#  - MongoDB in the 'cumulocity-iot-edge-mongodb' namespace
-#  - Docker Registry in the 'cumulocity-iot-edge-microservices-registry' namespace
-#  - Logging components in the 'cumulocity-iot-edge-logging' namespace
-#  - Apama and Smart Rules microservices in the 'cumulocity-iot-edge-microservices' namespace
+#  - Cumulocity IoT Core and related pods in 'cumulocity-iot-edge-core' namespace
+#  - thin-edge for connecting Edge to Cumulocity IoT cloud for remote management in 'cumulocity-iot-edge-thin-edge' namespace
+#  - MongoDB server in the 'cumulocity-iot-edge-mongodb' namespace
+#  - Private registry in the 'cumulocity-iot-edge-microservices-registry' namespace
+#  - Apama and Smart Rules and other microservices in the 'cumulocity-iot-edge-microservices' namespace
 #  - Administration, Cockpit, Device Management and Apama Streaming Analytics applications
+#  - Logging components in the 'cumulocity-iot-edge-logging' namespace
 #
 
 apiVersion: edge.cumulocity.com/v1
-kind: Edge
+kind: CumulocityIoTEdge
 metadata:
-  name: cumulocity-iot-edge
+  name: cumulocity-iot-edge						          # Name this Cumulocity IoT Edge deployment
 spec:
-  version: 1014.0.0
-  licenseSecretName: license-secret
-  company: IoT Company                                  # Replace with the company name
-  domain: myown.iot.com                                 # Replace with the domain of your choice
-  adminCredentialsSecretName: admin-credentials-secret
-#  tlsSecretName: tls-secret                            # Uncomment to supply the TLS Key/Certificates
+  version: 1017.0.0                                     
+  licenseKey:  <EDGE-LICENSE-KEY>               # Replace with the Edge license key you received
 
-# Uncomment below lines to skip or undeploy Device Simulator and OPCUA Management Server services
+  company: IoT Company                          # Replace with the company name
+  domain: myown.iot.com                         # Replace with the domain of your choice
+#  tlsSecretName: myown-iot-com-tls-secret      # Uncomment to supply the TLS Key/Certificates for Edge doamin
+  email: myown@iot.com                          # Replace with a valid email, used for admin account
+
+#  Uncomment the below 'cloudTenant' field to connect Cumulocity IoT Edge to a Cumulocity Cloud tenant to manage Edge remotely 
+#  cloudTenant:
+#    domain: <CLOUD-TENANT-DOMAIN>               # Cumulocity IoT cloud tenant domain e.g. <tenantid>.cumulocity.com
+#    tlsSecretName: edge-device-tls-secret       # Secret for supplying the TLS Key/Certificates for Cumulocity IoT Edge to authenticate with Cumulocity cloud tenant as a device 
+
+#  storageClassName: <STORAGE-CLASS-NAME>        # Provide the storage class your Kubernetes administrator provisioned for this deployment
+
+#  Uncomment the below 'core' field to specify resource limits for the Cumulocity IoT core pod
+#  core:
+#    resources:                                                     
+#      limits:
+#        cpu: 3000m
+#        memory: 6144M
+
+  mongodb:
+    credentialsSecretName: mongodb-credentials-secret                # Secret for supplying admin credentials of MongoDB server
+
+#    Uncomment below two fields ('connectionString' and 'tlsSecretName') and provide the necessary details to configure the Cumulocity IoT Edge 
+#    with an externally hosted MongoDB server, reachable at <CONNECTION-STRING-URI>     
+#    connectionString: <CONNECTION-STRING-URI>                      # URI Format: mongodb://host1[:port1][,...hostN[:portN]] 
+#    tlsSecretName: external-mongodb-tls-secret                     # Secret for supplying the Certificate Authority (CA) certificate to trust
+
+#    Uncomment the below 'reseources' field to specify resource limits for the MongoDB server pod
+#    resources:                                                     
+#      limits:
+#        cpu: 3000m
+#        memory: 6144M
+#      requests:
+#        storage: 75G                            # Specify the storage to be reserved by MongoDB server to persist data. If not provided, 75 GB storage is reserved.
+
+#  Uncomment below 'microservices' field to specify resource limits for the apama-ctrl, smartrule, opcua-mgmt-service and device-simulator microservices 
 #  microservices:
-#    - name: device-simulator
-#      disable: true
+#    - name: smartrule
+#      resources:
+#        limits:
+#          cpu: 1000m
+#          memory: 1024M
 #    - name: opcua-mgmt-service
-#      disable: true
-
-# Uncomment below lines to skip or undeploy Apama Streaming Analytics
-#  applications:
-#    - name: streaming-analytics
-#      disable: true
-
-# Uncomment below lines and provide the necessary details to configure the Cumulocity IoT Platform
-# with an externally hosted MongoDB server, reachable at <EXTERNAL-MONGODB-HOST>
-# External MongoDB server's credentials and shardedKey specified in the 'mongodb-credentials-secret secret'
-#  mongoDb:
-#    mongosHost: <EXTERNAL-MONGODB-HOST>                     # Replace with externally hosted MongoDB server host
-#    connectionString: <EXTERNAL-MONGODB-CONNECTION-STRING>  # Replace with externally hosted MongoDB server connection string
-#    credentialsSecretName: mongodb-credentials-secret
-
-# Uncomment below lines and provide the necessary details to configure the Cumulocity IoT Platform
-# with an externally hosted Docker Registry, reachable at <EXTERNAL-DOCKER-REGISTRY-URL>
-# External externally Docker Registry server's credentials and server certificate specified
-# in the 'microservices-registry-credentials-secret' and 'microservices-registry-tls-secret' secrets
-#  microservicesRegistry:
-#    url: <EXTERNAL-DOCKER-REGISTRY-URL>                              # Replace with the externally hosted Docker Registry URL
-#    credentialsSecretName: microservices-registry-credentials-secret
-#    tlsSecretName: microservices-registry-tls-secret
-
+#      resources:
+#        limits:
+#          cpu: 1000m
+#          memory: 1024M
+#    - name: device-simulator
+#      resources:
+#        limits:
+#          cpu: 1000m
+#          memory: 1024M
+#    - name: apama-ctrl
+#      resources:
+#        limits:
+#          cpu: 1000m
+#          memory: 1024M
 
 ########################################################################################################################
 #                                         Defines Kubernetes Secrets                                                   #
 ########################################################################################################################
 ---
 #
-# Secret for supplying the Software AG Registry (registry.c8y.io) credentials to the Cumulocity IoT Edge Operator.
-# Name of this secret is fixed "sag-registry-credentials"
-#
-
-apiVersion: v1
-kind: Secret
-metadata:
-  name: sag-registry-credentials          # Name of this secret should not change.
-  namespace: cumulocity-iot-edge          # Replace with the Edge CR name you used
-type: Opaque
-stringData:
-  username: <EDGE-REPO-USERNAME>         # Edge Repo username you received
-  password: <EDGE-REPO-PASSWORD>         # Edge Repo password you received
-
----
-#
-# Secret for supplying the Edge license key to the Cumulocity IoT Edge Operator.
-# This secret is mandatory and its name be supplied to "spec.licenseSecretName" field of Edge CR.
-#
-
-apiVersion: v1
-kind: Secret
-metadata:
-  name: license-secret               # Name of the secret. Same value should be supplied to "spec.licenseSecretName" field of Edge CR
-  namespace: cumulocity-iot-edge     # Replace with the Edge CR name you used
-type: Opaque
-stringData:
-  license: <EDGE-LICENSE-KEY>        # Replace with the Edge license key you received
-
----
-#
-# Secret for supplying the management/edge tenant's admin credentials to the Cumulocity IoT Edge Operator.
-# This secret is mandatory and its name be supplied to "spec.adminCredentialsSecretName" field of Edge CR.
-#
-
-apiVersion: v1
-kind: Secret
-metadata:
-  name: admin-credentials-secret            # Name of the secret. Same value should be supplied to "spec.adminCredentialsSecretName" field of Edge CR
-  namespace: cumulocity-iot-edge			# Replace with the Edge CR name you used
-type: Opaque
-stringData:
-  username: admin                           # Replace with admin username of the management and edge tenants
-  password: Ch@nge_me_n0w    			    # Replace with the admin password
-  email: admin@iot.com          		    # Replace with admin user's email
-
----
-#
-# Secret for supplying the TLS Key/Certificates to the Cumulocity IoT Edge Operator.
-# This secret is optional. If not provided the Operator will generate self signed certificates.
-# Name of this secret can be supplied to "spec.tlsSecretName" field of Edge CR
+# Secret for supplying the TLS Key/Certificates for Edge domain. Accepts only PEM format.
+# This secret is optional. If not provided the Operator will generate self-signed certificates.
+# Name of this secret can be supplied in "spec.tlsSecretName" field of Edge CR
 #
 
 #apiVersion: v1
 #kind: Secret
 #metadata:
-#  name: tls-secret                        # Name of the secret. Same value should be supplied to "spec.tlsSecretName" field of Edge CR
+#  name: myown-iot-com-tls-secret          # Name of the secret. Same value should be supplied to "spec.tlsSecretName" field of Edge CR
 #  namespace: cumulocity-iot-edge          # Replace with the Edge CR name you used
 #type: Opaque
 #stringData:
-#  key: <PRIVATE-KEY>                      # Replace with the private key for the domain
-#  certificateChain: <CERTIFICATE-CHAIN>   # Replace with the certificate chain of the private key for the domain
-
+#  tls.key: <PRIVATE-KEY>                  # Replace with the tls private key for the domain. In PEM format.
+#  tls.crt: <CERTIFICATE-CHAIN>            # Replace with the tls certificate chain of the private key for the domain. In PEM format.
 
 ---
 #
-# Secret for supplying credentials to connect to an externally hosted MongoDB server, to the Cumulocity IoT Edge Operator.
-# This secret is optional. Only required if you want this Edge deployment to use an externally hosted MongoDB server.
-# Name of this secret can be supplied to "mongoDb.credentialsSecretName" field of Edge CR
+# Secret for supplying the TLS Key/Certificates for Cumulocity IoT Edge to authenticate with Cumulocity cloud tenant as a device. Accepts only PEM format.
+# This secret is optional. If not provided the Operator will generate self-signed certificates.
+# Name of this secret can be supplied in "spec.cloud.tlsSecretName" field of Edge CR
 #
 
 #apiVersion: v1
 #kind: Secret
 #metadata:
-#  name: mongodb-credentials-secret    # Name of the secret. Same value should be supplied to "mongoDb.credentialsSecretName" field of Edge CR
-#  namespace: cumulocity-iot-edge      # Replace with the Edge CR name you used
+#  name: edge-device-tls-secret            # Name of the secret. Same value should be supplied to "spec.cloud.tlsSecretName" field of Edge CR
+#  namespace: cumulocity-iot-edge          # Replace with the Edge CR name you used
 #type: Opaque
 #stringData:
-#  username: <MONGODB-USERNAME>        # Replace with externally hosted MongoDB's username
-#  password: <MONGODB-PASSWORD>        # Replace with an externally hosted MongoDB's password
-#  shardedKey: <MONGODB-SHARDED-KEY>   # Replace with an externally hosted MongoDB's sharded key
+#  tls.key: <PRIVATE-KEY>                  # Replace with the tls private key. In PEM format.
+#  tls.crt: <CERTIFICATE-CHAIN>            # Replace with the tls certificate chain of the private key. In PEM format.
 
 ---
 #
-# Secret for supplying credentials to connect to an externally hosted Docker Registry (used to store Cumulocity microservice images)
-# to the Cumulocity IoT Edge Operator.
-# This secret is optional. Only required if you want this Edge deployment to use an externally hosted Docker Registry.
-# Name of this secret can be supplied to "microservicesRegistry.credentialsSecretName" field of Edge CR
+# Secret for supplying admin credentials of MongoDB server (both operator managed and externally hosted), to the Cumulocity IoT Edge Operator.
+# Name of this secret can be supplied to "spec.mongodb.credentialsSecretName" field of Edge CR
 #
 
-#apiVersion: v1
-#kind: Secret
-#metadata:
-#  name: microservices-registry-credentials-secret   # Name of the secret. Same value should be supplied to "microservicesRegistry.credentialsSecretName" field of Edge CR
-#  namespace: cumulocity-iot-edge                    # Replace with the Edge CR name you used
-#type: Opaque
-#stringData:
-#  username: <REGISTRY-USERNAME>                     # Replace with externally hosted Docker Registry's username
-#  password: <REGISTRY-PASSWORD>                     # Replace with externally hosted Docker Registry's password
-
----
-#
-# Secret for supplying server certificate of an externally hosted Docker Registry (used to store Cumulocity microservice images)
-# to the Cumulocity IoT Edge Operator.
-# Name of this secret can be supplied to "microservicesRegistry.tlsSecretName" field of Edge CR
-#
-
-#apiVersion: v1
-#kind: Secret
-#metadata:
-#  name: microservices-registry-tls-secret   # Name of the secret. Same value should be supplied to "microservicesRegistry.tlsSecretName" field of Edge CR
-#  namespace: cumulocity-iot-edge            # Replace with the Edge CR name you used
-#type: Opaque
-#stringData:
-#  certificate: <REGISTRY-CERTIFICATE>       # Replace with externally hosted Docker Registry's server certificate
-
-
-########################################################################################################################
-#                                           Defines Ingress (traefik)                                                  #
-########################################################################################################################
----
-#
-# Traefik IngressRouteTCP to access Cumulocity IoT application running on Pods labeled "cumulocity-core" over HTTP.
-#
-
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRouteTCP
+apiVersion: v1
+kind: Secret
 metadata:
-  namespace: cumulocity-iot-edge          # Replace with the Edge CR name you used
-  name: http-ingress-traefik
-spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: "HostSNI(`*`)"
-      services:
-        - name: cumulocity-iot-edge-service-http     # Replace 'cumulocity-iot-edge' with the Edge CR name you used. Name of the HTTP service for exposing the "cumulocity-core" pods
-          port: 443
-  tls:
-    passthrough: true
+ name: mongodb-credentials-secret    # Name of the secret. Same value should be supplied to "spec.mongodb.credentialsSecretName" field of Edge CR
+ namespace: cumulocity-iot-edge      # Replace with the Edge CR name you used
+type: Opaque
+stringData:
+ username: <MONGODB-USERNAME>        # Replace with externally hosted MongoDB's username
+ password: <MONGODB-PASSWORD>        # Replace with an externally hosted MongoDB's password
+
+---
+#
+# Secret for supplying the Certificate Authority (CA) certificate issuing the tls key and certificates 
+# with which the tls of externally hosted MongoDB server is configured. Accepts only PEM format.
+# Not needed if the server certificates are issued by a trusted public CA and not self-signed.
+# Name of this secret can be supplied in "spec.mongodb.tlsSecretName" field of Edge CR
+#
+
+#apiVersion: v1
+#kind: Secret
+#metadata:
+#  name: external-mongodb-tls-secret       # Name of the secret. Same value should be supplied to "spec.mongodb.tlsSecretName" field of Edge CR
+#  namespace: cumulocity-iot-edge          # Replace with the Edge CR name you used
+#type: Opaque
+#stringData:
+#  ca.crt: <CA-CERTIFICATE>                # Replace with the Certificate Authority (CA) certificate in PEM format

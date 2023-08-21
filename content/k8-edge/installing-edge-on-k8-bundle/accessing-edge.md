@@ -40,7 +40,8 @@ For example, loading graphs with large amounts of data points may make the mobil
 
 Access the Edge appliance using the domain name configured as part of the installation. There are two ways to configure the accessibility with the domain names:
 
-* Add an entry of the domain name and IP mapping in the DNS servers. <br>
+* Add an entry of the domain name and IP mapping in the DNS servers.
+<br>For example, if your domain name is **myown.iot.com**, you must add an entry for both **myown.iot.com** and **management.myown.iot.com**.<br>
 OR
 * [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This needs to be performed on each client host on which the Edge appliance is accessed.
 
@@ -48,7 +49,7 @@ OR
 The first option is always preferable so that the Edge appliance is accessible over LAN.
 {{< /c8y-admon-info >}}
 
-Use the command follwoing command to get the external IP address to access  {{< product-c8y-iot >}} Edge.
+Use the following command to get the external IP address to access  {{< product-c8y-iot >}} Edge.
 
 ```shell
 kubectl get service cumulocity-core --namespace <EDGE-CR-NAME>-core
@@ -72,6 +73,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 
 ```text
 <IP address> <domain_name>
+<IP address> management.<domain_name>
 ```
 
 Use the IP address provided during the network configuration. For example, the default value for Hyper-V is 192.168.66.10.
@@ -82,6 +84,7 @@ Ping the &#60;domain_name> to verify it.
 
 ```shell
 [admin@iot-edge-server ~]$ ping <domain_name>
+[admin@iot-edge-server ~]$ ping management.<domain_name>
 ```
 
 If the ping is successful, the DNS resolution is working properly.
@@ -98,16 +101,21 @@ Enter the URL in the browser:
 ```http
 https://<domain_name>
 ```
+Or
 
-The Edge appliance login screen appears. Log in with your credentials created during the installation.
+```http
+https://management.<domain_name>
+```
 
-- To log in to the {{< management-tenant >}}, prefix the username with *management*:
-  - Username: management/<*Edge admin username*>
-  - Password: password provided during the installation
+The Edge appliance login screen appears. If this is your first login, log in with user **admin** and password **admin-pass**, and change the password.
 
-- To log in to the edge tenant, use the Edge admin credentials or prefix the Edge admin username with *edge*:
-  - Username: edge/<*Edge admin username*>
-  - Password: password provided during the installation
+{{< c8y-admon-important >}}
+After a successful deployment, you must access both the management and edge tenants and change the admin credentials.
+{{< /c8y-admon-important >}}
+
+- To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
+
+- To log in to the edge tenant, use the URL `https://edge.<domain_name>`.
 
 {{< c8y-admon-important >}}
 Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Edge appliance.

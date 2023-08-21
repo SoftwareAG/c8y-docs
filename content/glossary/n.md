@@ -2,11 +2,9 @@
 weight: 110
 title: "N"
 layout: bundle
-section: 
+section:
   - getting_started
 ---
-
-<a name="navigator"></a>
 
 ### Navigator
 

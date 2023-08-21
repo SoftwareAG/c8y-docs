@@ -2,12 +2,9 @@
 weight: 170
 title: W
 layout: bundle
-section: 
+section:
   - getting_started
 ---
-
-
-<a name="web-applications"></a>
 
 ### Web applications
 
@@ -18,9 +15,8 @@ A {{< product-c8y-iot >}} web application can be:
 
 All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL like this: <tenant>.cumulocity.com/apps/<application>.
 
-For details see [Developing applications > Web applications](/concepts/applications/#web-applications).
+For details see [Getting started > Technical concepts > Developing applications > Web applications](/concepts/applications/#web-applications).
 
-<a name="web-sdk"></a>
 
 ### Web SDK
 
@@ -31,20 +27,18 @@ The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that
 * apply default or
 * branded UI components to your custom application.
 
-For details see the [Web SDK guide](/web/overview/).
+For details see the [Application enablement & solutions > Web SDK](/web/overview/).
 
-<a name="widgets"></a>
 
 ### Widgets
 
 Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes.
 
-For details see [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) and [Cockpit > Using widgets in dashboards and reports](/users-guide/cockpit/#using-widgets) in the *User guide*.
+For details see [Application enablement & solutions > Cockpit > Widgets collection](/cockpit/widgets-collection) and [Application enablement & solutions > Cockpit > Using widgets in dashboards and reports](/cockpit/using-widgets).
 
-<a name=""></a>
 
 ### Wires
 
-Used in the context of [Analytics Builder](#analytics-builder).
+Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
 
-Wires are used to connect two or more [blocks](#blocks) with each other.  They are used for all data transfer between the output port of one block and the input port of another block.
+Wires are used to connect two or more [blocks](/glossary/b/#blocks) with each other. They are used for all data transfer between the output port of one block and the input port of another block.

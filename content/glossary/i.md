@@ -2,22 +2,19 @@
 weight: 80
 title: I
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
-<a name="inventory"></a>
-
 ### Inventory
 
-The inventory is a collection of all stored [managed objects](#managed-object) in a tenant.
+The inventory is a collection of all stored [managed objects](/glossary/m/#managed-object) in a tenant.
 
-<a name="inventory-roles"></a>
 
 ### Inventory roles
 
-Role type in {{< product-c8y-iot >}}'s' permission concept.  Inventory roles contain permissions that apply to [managed objects](#managed-object).
+Role type in the permission concept of {{< product-c8y-iot >}}. Inventory roles contain permissions that apply to [managed objects](/glossary/m/#managed-object).
 
-See also [Global roles](#global-roles) and [Permissions](#permissions).
+See also [Global roles](/glossary/g/#global-roles) and [Permissions](/glossary/p/#permissions).
 
-For details see [Administration > Managing permissions > Inventory roles](/users-guide/administration/#inventory) in the *User guide*.
+For details see [Platform administration > Standard tenant administration > Managing permissions > Inventory roles](/standard-tenant/managing-permissions/#inventory-roles).

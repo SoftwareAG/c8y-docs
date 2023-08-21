@@ -2,12 +2,10 @@
 weight: 130
 title: P
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
-
-<a name="permissions"></a>
 
 ### Permissions
 
@@ -15,4 +13,4 @@ The ability to execute certain functionality in the {{< product-c8y-iot >}} plat
 
 To manage permissions more easily, they are grouped into roles. Every user can be associated with a number of roles, adding up permissions of the user.
 
-See also [Global roles](#global-roles) and [Inventory roles](#inventory-roles).
+See also [Global roles](/glossary/g/#global-roles) and [Inventory roles](/glossary/i/#inventory-roles).

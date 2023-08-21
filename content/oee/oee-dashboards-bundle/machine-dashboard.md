@@ -115,4 +115,4 @@ Click **Export as CSV** at the right. The **Export** page in the Cockpit applica
 
 An email will be sent to the user email address containing a link to the export file.
 
-See also [Cockpit > Managing exports](/users-guide/cockpit/#exports) for details on the export functionality.
+See also [Managing exports](/cockpit/managing-exports/) for details on the export functionality.

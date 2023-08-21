@@ -121,7 +121,7 @@ The following images show an example for a message which sends a measurement whe
 ![Battery level changes example](/images/device-protocols/sigfox/sigfox-protocols-battery2.png)
 
 
-**<a name="nested-structure-example"></a>Example with nested structure**
+<a name="nested-structure-example"></a>**Example with nested structure**
 
 The following images show an example of a nested structure for a device protocol, reporting the current position of a GPS device. The device protocol is named "Position" and contains values for longitude and latitude.
 

@@ -20,7 +20,6 @@ Next, establish a connection between the gateway and the OPC UA server.
 Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space.
 {{< /c8y-admon-info >}}
 
-<a name="security-modes"></a>
 ### Security modes
 
 The security mode settings tell the gateway how it should secure the connection between itself and the OPC UA server. When a mode other than NONE is selected, the gateway will auto-generate a self-signed application instance certificate and will use it to connect to the server. Possible security mode options are:

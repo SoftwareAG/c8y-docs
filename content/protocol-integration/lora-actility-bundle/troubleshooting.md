@@ -4,7 +4,6 @@ title: Troubleshooting
 layout: redirect
 ---
 
-<a name="lora-device-registration-troubleshooting"></a>
 ### Device registration
 
 #### Access to device denied

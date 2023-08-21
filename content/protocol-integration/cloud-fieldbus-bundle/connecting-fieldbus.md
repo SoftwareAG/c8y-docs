@@ -77,7 +77,6 @@ To connect a CAN device, follow these steps:
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added fieldbus devices to the terminal, you may have to reload your browser window to make the **Child devices** tab visible.
 
-<a name="connect-profibus"></a>
 ### Connecting Profibus devices
 
 Connecting Profibus devices slightly differs from the regular plug & play approach of other Cloud Fieldbus protocols. The gateway acts as a device on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus device address.

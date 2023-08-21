@@ -8,7 +8,6 @@ layout: redirect
 In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Viewing device details](/device-management-application/viewing-device-details) in the Device management section.
 {{< /c8y-admon-info >}}
 
-<a name="objects"></a>
 ### Objects
 
 In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.

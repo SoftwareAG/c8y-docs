@@ -5,7 +5,7 @@ layout: redirect
 
 ---
 
-The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the token must be read from the request cookie header. Refer to [General aspects > Security](/microservice-sdk/concept/#security) for more details.
+The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the token must be read from the request cookie header. Refer to [Security](/microservice-sdk/concept/#security) for more details.
 
 You can find a [microservice example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth) in our GitHub repository to learn how to use OAuth tokens. The microservice configures REST endpoints (GET, PUT, POST, DELETE) using basic and OAuth authentication schemes, but it does not add any business logic as it is just for demonstration. The configuration is done by runtime and adds the authentication. Finally, a web port is created and starts listening on the specified port in the *Properties/launchSettings.json* file.
 

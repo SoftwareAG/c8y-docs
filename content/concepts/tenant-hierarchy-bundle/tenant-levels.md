@@ -8,9 +8,9 @@ section:
 
 The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including the following levels from bottom to top:
 
-- [Standard tenant](#standard-tenant)
-- [Enterprise tenant](#enterprise-tenant)
-- [Management tenant](#management-tenant)
+- [{{< standard-tenant >}}](#standard-tenant)
+- [{{< enterprise-tenant >}}](#enterprise-tenant)
+- [{{< management-tenant >}} tenant](#management-tenant)
 
 
 ![3-level hierarchy](/images/concepts-guide/tenant-hierarchy.png)

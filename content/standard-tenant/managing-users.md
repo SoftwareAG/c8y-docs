@@ -33,7 +33,7 @@ On tenant creation, there are default roles available that can be used as a samp
 * Global User Manager - Can access and modify the full user hierarchy
 * Shared User Manager - Can create new users as his own subusers and manage them ("feature-user-hierarchy" application subscription required)
 
-Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Managing user hierarchies](/enterprise-tenant/user-hierarchies).
+Note that when subscribed to the "feature-user-hierachy" application, the CREATE permission allows to manage (display, create, edit, delete, disable/enable, delegate, manage permissions) underlying users. For details see [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies).
 {{< /c8y-admon-req >}}
 
 If your tenant is configured for using single sign-on (SSO) in {{< sag-cloud >}}, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
@@ -52,7 +52,7 @@ Users which are using single sign-on cannot change the password of users which a
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
-- [Platform administration > Standard tenant management > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions to users.
+- [Platform administration > {{< standard-tenant >}} management > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions to users.
 - [Getting started > Technical concepts > Tenant hierachy](/concepts/tenant-hierarchy) for information on the concept of multi-tenancy as opposed to user access control.
 - [Users](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
 {{< /c8y-admon-related >}}
@@ -74,7 +74,7 @@ To filter the list by username, you can use the filter field at the left of the 
 
 In order to apply the selected filters click **Apply**.
 
-Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/enterprise-tenant/user-hierarchies).
+Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies).
 
 <a name="creating-users"></a>
 ### To add a user
@@ -129,11 +129,11 @@ If single sign-on is enabled for your tenant, a message will show up which remin
           </tr>
           <tr>
              <td align="left">Owner</td>
-             <td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="/enterprise-tenant/user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
+             <td align="left">Another user that manages ("owns") the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="/enterprise-tenant/managing-user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
           </tr>
           <tr>
              <td align="left">Delegated by</td>
-             <td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="/enterprise-tenant/user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
+             <td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="/enterprise-tenant/managing-user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
           </tr>
       </tbody>
       </table>
@@ -177,7 +177,7 @@ Click the menu icon at the right of the respective row and then click **Delegate
 
 Click **Undelegate** to remove a delegation.
 
-Refer to [Managing user hierarchies](/enterprise-tenant/user-hierarchies) for details on delegation.
+Refer to [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies) for details on delegation.
 
 ### To disable/enable a user
 

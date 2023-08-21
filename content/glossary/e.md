@@ -11,9 +11,9 @@ section:
 
 A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
 
-Enterprise tenants offer additional administrative functionality compared to a Standard tenant, the major difference being multi-tenancy. Using an Enterprise tenant, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, Enterprise tenants offer individual customization features, such as Branding for the creation of an individual look & feel.
+{{< enterprise-tenant >}}s offer additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being multi-tenancy. Using an {{< enterprise-tenant >}}, you can create and manage subtenants, manage the subscribed applications/features of the subtenants, and invoice subtenants based on usage statistics. Moreover, {{< enterprise-tenant >}}s offer individual customization features, such as Branding for the creation of an individual look & feel.
 
-See also [Standard tenant](/glossary/s/#standard-tenant) and [Management tenant](/glossary/m/#management-tenant).
+See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< management-tenant >}}](/glossary/m/#management-tenant).
 
 
 <a name="epl"></a>

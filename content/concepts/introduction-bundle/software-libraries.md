@@ -3,8 +3,6 @@ title: Software libraries
 weight: 20
 slug: software-libraries
 layout: redirect
-aliases:
-  - /concepts/introduction
 ---
 
 {{< product-c8y-iot >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.

@@ -35,7 +35,7 @@ For each tenant policy, the name, an optional description and the number of opti
 1. Click **Add policy** in the top menu bar.
 2. In the resulting dialog box, enter a name and an optional description.
 <br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
-3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data > Retention rules](/users-guide/administration#retention-rules).
+3. Add at least one retention rule. For details on creating retention rules, see [Retention rules](/standard-tenant/managing-data/#retention-rules).
 4. Optionally, add a tenant option.
 5. Click **Save**.
 

@@ -26,7 +26,7 @@ The above permissions can be used to create roles for robust user management. Ev
 
 
 {{< c8y-admon-related >}}
-- [Platform administration > Enterprise tenant administration > Managing tenants > Tenant policies](/enterprise-tenant/managing-tenants/#tenant-policies) for details on the creation of tenant policies and retention rules on tenant level.
+- [Platform administration > {{< enterprise-tenant >}} administration > Managing tenants > Tenant policies](/enterprise-tenant/managing-tenants/#tenant-policies) for details on the creation of tenant policies and retention rules on tenant level.
 - [Retention rules](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Retention-rules) in the {{< openapi >}} for details on managing retention rules via REST.
 {{< /c8y-admon-related >}}
 

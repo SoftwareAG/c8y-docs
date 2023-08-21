@@ -43,19 +43,19 @@ The following table provides an overview on the currently supported applications
 </tr>
 <tr>
 <td>tutorial</td>
-<td>An application that already assembles most of the concepts of the <a href="/web/libraries/#component">@c8y/ngx-components</a>. Use this to get real code examples.</td>
+<td>An application that already assembles most of the concepts of the <a href="/web/libraries/#component-library-ngx">@c8y/ngx-components</a>. Use this to get real code examples.</td>
 </tr>
 <tr>
 <td>cockpit</td>
-<td>The <a href="/users-guide/cockpit/">Cockpit</a> default application. Use this to extend the existing Cockpit application.</td>
+<td>The <a href="/cockpit/overview/">Cockpit</a> default application. Use this to extend the existing Cockpit application.</td>
 </tr>
 <tr>
 <td>devicemanagement</td>
-<td>The <a href="/users-guide/device-management/">Device management</a> default application. Use this to extend the existing Device management application.</td>
+<td>The <a href="/device-management-application/home-dashboard/">Device management</a> default application. Use this to extend the existing Device management application.</td>
 </tr>
 <tr>
 <td>administration</td>
-<td>The <a href="/users-guide/administration/">Administration</a> default application. Use this to extend the existing Administration application.</td>
+<td>The <a href="/standard-tenant/home-screen/">Administration</a> default application. Use this to extend the existing Administration application.</td>
 </tr>
 </tbody>
 </table>

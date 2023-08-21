@@ -9,7 +9,7 @@ weight: 50
 It is a common use case to extend one of our existing applications like Cockpit or Device managament.
 
 This recipe explains step by step, how you can extend the Cockpit application with a custom route and hook this route into the navigator.
-First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application) npm package contains.
+First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application-library) npm package contains.
 
 ### Brief background
 
@@ -100,7 +100,7 @@ export class HelloComponent {
 This is a basic component.
 Only the template uses a special feature called "content projection" to show a title.
 Content projection is an Angular concept used to display content in other places than they are defined.
-For more information on which components support content projection refer to the [@c8y/ngx-components](/web/libraries/#component) documentation.
+For more information on which components support content projection refer to the [@c8y/ngx-components](/web/libraries/#component-library-ngx) documentation.
 
 We can now bind this custom component to a route by changing the *app.module.ts* in the following way:
 

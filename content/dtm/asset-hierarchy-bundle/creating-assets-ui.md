@@ -160,7 +160,7 @@ If you navigate to the **Asset tree** page of "Wind turbine" and click **Add ass
 
 If you navigate to the existing "Rotor" asset and want to add a subasset, you can only add subassets for "Blade".
 
-For details how to add assets in the asset hierarchy, see [To create an asset](#create-asset).
+For details on how to add assets in the asset hierarchy, see [To create an asset](#create-asset).
 
 {{< c8y-admon-info>}}
 If you are at the end of the hierarchy, you see no further option to create subassets.

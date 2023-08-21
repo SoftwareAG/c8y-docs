@@ -8,7 +8,7 @@ layout: redirect
 
 ### Overview
 
-As described in section [{{< product-c8y-iot >}} DataHub overview > {{< product-c8y-iot >}} DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), {{< product-c8y-iot >}} DataHub manages offloading pipelines which periodically extract data from the Operational Store of {{< product-c8y-iot >}}, transform the data into a relational format, and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
+As described in [{{< product-c8y-iot >}} DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), {{< product-c8y-iot >}} DataHub manages offloading pipelines which periodically extract data from the Operational Store of {{< product-c8y-iot >}}, transform the data into a relational format, and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
 
 Different standard interfaces exist for that purpose, namely JDBC, ODBC, and REST. You can also use the Dremio UI. In order to work with one of those interfaces, select **Home** in the navigation bar. Under **Quick links** you will find starting points for the different interfaces.
 
@@ -35,7 +35,7 @@ The offloading pipeline must be executed at least once with corresponding data b
 
 ### Using the Dremio UI
 
-You can use the Dremio UI to interactively run queries against the data lake. See the section [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) for more details.
+You can use the Dremio UI to interactively run queries against the data lake. See [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) for more details.
 
 ### Connecting via JDBC
 

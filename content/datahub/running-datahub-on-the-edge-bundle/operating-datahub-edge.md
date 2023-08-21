@@ -4,7 +4,7 @@ title: Operating Cumulocity IoT DataHub Edge
 layout: redirect
 ---
 
-Similar to the cloud variant, {{< product-c8y-iot >}} DataHub Edge UI allows you to check system information and view audit logs. See the section on [Operating {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub) for details.
+Similar to the cloud variant, {{< product-c8y-iot >}} DataHub Edge UI allows you to check system information and view audit logs. See [Operating {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub) for details.
 
 When managing {{< product-c8y-iot >}} DataHub Edge, the following standard tasks are additionally relevant.
 
@@ -12,11 +12,11 @@ When managing {{< product-c8y-iot >}} DataHub Edge, the following standard tasks
 
 If problems occur, you should follow these steps:
 
-- Perform a health check, see the section on [Health check](#health-check)
-- Check the log files, see the section on [Log files](#log-files)
-- Monitor the system processes, see the section on [Monitoring](#monitoring)
+- Perform a health check, see [Health check](#health-check)
+- Check the log files, see [Log files](#log-files)
+- Monitor the system processes, see [Monitoring](#monitoring)
 
-If you need to contact [product support](/welcome/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics and support > Diagnostics](/edge/diagnostics-and-support/#diagnostics) in the *{{< product-c8y-iot >}} Edge guide* for details of how to run it.
+If you need to contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics script. See [Diagnostics](/edge-support/diagnostics/) for details of how to run it.
 
 <a name="health-check"></a>
 #### Health check
@@ -71,7 +71,7 @@ The containers are configured to rotate log files with rotation settings of two 
 
 <a name="monitoring"></a>
 #### Monitoring
-{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See the section on [Diagnostics and support > Monitoring](/edge/diagnostics-and-support/#monitoring) in the *{{< product-c8y-iot >}} Edge guide* for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](/edge-support/monitoring/) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 
@@ -99,4 +99,4 @@ Data being deleted from the data lake cannot be recovered anymore.
 
 #### Backup and Restore
 
-{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described in section [Backup and restore](/edge/backup-and-restore/) in the *{{< product-c8y-iot >}} Edge guide*.
+{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described [Backup and restore](/edge-backup-and-restore/backup_restore_vm_player/).

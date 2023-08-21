@@ -10,13 +10,13 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge, you must check the follo
 
 | Item | Details |
 | -----   | -----   |
-| {{< product-c8y-iot >}} Edge | The local version of {{< product-c8y-iot >}} is set up on a Virtual Machine (VM). See also section [Setting up {{< product-c8y-iot >}} Edge](/edge/installation) in the *{{< product-c8y-iot >}} Edge guide*. |
+| {{< product-c8y-iot >}} Edge | The local version of {{< product-c8y-iot >}} is set up on a Virtual Machine (VM). See also [Installing {{< product-c8y-iot >}} Edge](/edge-installation/prerequisites/). |
 | {{< product-c8y-iot >}} DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is not required. |
 
 #### Hardware requirements
 
-The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in section [Installing {{< product-c8y-iot >}} Edge > Requirements](/edge/installation#prerequisites) in the *{{< product-c8y-iot >}} Edge guide*. When {{< product-c8y-iot >}} DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
+The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in [Requirements](/edge-installation/prerequisites/). When {{< product-c8y-iot >}} DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
 
 * 100 GB of free disk space plus sufficient free disk space for the data lake contents
 * Intel x86 CPU
@@ -122,16 +122,16 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 </table>
 
 {{< c8y-admon-req >}}
-For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 32010 can be accessed from the host system. For instructions on port forwarding see the corresponding section under [Installing {{< product-c8y-iot >}} Edge](/edge/installation/#setting-up-the-environment).
+For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 32010 can be accessed from the host system. For instructions on port forwarding see [Installing {{< product-c8y-iot >}} Edge](/edge-installation/prerequisites/).
 {{< /c8y-admon-req >}}
 
 ### Defining Cumulocity IoT DataHub permissions and roles
 
-The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See the section [Setting up {{< product-c8y-iot >}} DataHub > Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
+The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
 
 ### Setting up Dremio account and data lake
 
-The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See the section [Setting up {{< product-c8y-iot >}} DataHub](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
+The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See [Setting up {{< product-c8y-iot >}} DataHub](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
 
 {{< product-c8y-iot >}} DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.
 

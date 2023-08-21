@@ -6,7 +6,7 @@ layout: redirect
 
 The following steps describe how to start and manage an offloading pipeline.
 
-#### Scheduling an offloading job
+### Scheduling an offloading job
 
 Once you have defined an offloading configuration and saved it, you can start the offloading pipeline.
 
@@ -30,7 +30,7 @@ The scheduler is configured per default to run the offloading pipeline once an h
 
 Use the **Active** toggle in an offloading configuration to stop the periodic offloading. Then the scheduler stops scheduling new jobs; currently running jobs will complete.
 
-#### Managing an offloading pipeline
+### Managing an offloading pipeline
 
 In the context menu of each offloading pipeline, you will find actions for managing and monitoring the pipeline.
 
@@ -58,10 +58,10 @@ However, we recommend you to rely on the periodic offloading instead of triggeri
 
 ##### Monitoring an offloading pipeline
 
-Click **Show offloading history** to examine the execution history of a pipeline. See the section [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) for details.
+Click **Show offloading history** to examine the execution history of a pipeline. See [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) for details.
 
 <a name="import-export"></a>
-#### Importing/exporting offloading configurations
+### Importing/exporting offloading configurations
 
 The import/export functionality allows you to backup your offloading configurations to a file. You can use the backup when editing the data lake settings or to copy offloading configurations from one {{< product-c8y-iot >}} DataHub instance to another. Import/export solely includes the configuration of a pipeline; it includes neither the runtime status of a pipeline nor already exported data.
 

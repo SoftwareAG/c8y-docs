@@ -12,10 +12,10 @@ helpcontent:
     For each offloading pipeline the system keeps a limited history of the last executions."
 ---
 
-Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The {{< product-c8y-iot >}} DataHub UI provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected. For the case of offloading failures, you can also configure the offloading pipeline to raise an alarm as described in [Configuring offloading jobs > Raising alarms](/datahub/configuring-offloading-jobs/#raising-alarms).
+Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The {{< product-c8y-iot >}} DataHub UI provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected. For the case of offloading failures, you can also configure the offloading pipeline to raise an alarm as described in [Raising alarms](#raising-alarms).
 
 {{< c8y-admon-req >}}
-You need administration or management permissions to access the offloading job histories. See the section [Setting up {{< product-c8y-iot >}} DataHub > Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+You need administration or management permissions to access the offloading job histories. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-req >}}
 
 ### History per offloading pipeline

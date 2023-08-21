@@ -13,7 +13,7 @@ This guide provides information on the Web SDK which enables you to
 * communicate authenticated with our API,
 * apply default or branded UI components to your custom application.
 
-If you have previously been working with older versions you might be interested in some short information on the evolution of the UI stack  ([Migration history](/web/appendix-migration-history)) to better understand how and why it is now designed the way it is.
+If you have previously been working with older versions you might be interested in some short information on the evolution of the UI stack ([Migration history](/web/appendix-migration-history)) to better understand how and why it is now designed the way it is.
 
 {{< c8y-admon-important >}}
  Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all {{< product-c8y-iot >}} REST APIs are backward compatible, Angular JS applications will still continue to work.

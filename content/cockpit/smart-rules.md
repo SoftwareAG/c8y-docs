@@ -10,12 +10,8 @@ helpcontent:
   content: "Smart rules are a useful means to analyze data in realtime and to perform actions based on data. The global smart rules displayed here apply to a global context (in contrast to local ones for specific groups or devices). Note that you need specific permissions to see and manage smart rules.
 
 
-  Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the *User guide* for details on each smart rule template and its configuration."
+  Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See **Smart rules** for details on each smart rule template and its configuration."
 ---
-
-{{< c8y-admon-related >}}
-- [Administration > Managing business rules](/users-guide/administration#business-rules) for details on managing smart rules for your devices.
-{{< /c8y-admon-related >}}
 
 {{< product-c8y-iot >}} includes the Streaming Analytics application which can analyze data in realtime and perform actions based on data.
 
@@ -75,6 +71,10 @@ Smart rules can be seen in two places:
 
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
+{{< c8y-admon-related >}}
+- [Platform administration > Standard tenant management > Alarm mapping](/standard-tenant/business-rules/#alarm-mapping) for details on managing smart rules for your devices.
+{{< /c8y-admon-related >}}
+
 <a name="create-rules"></a>
 
 ### To create a smart rule
@@ -84,7 +84,7 @@ Smart rules can both be created in the **Global smart rules** page (global smart
 1. Click **Add smart rule** in the top menu bar. <br>
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
 3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules) for details.
-4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see the individual rule descriptions in [Smart rules collection](#smart-rules-collection).
+4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see the individual rule descriptions in [Smart rules collection](/cockpit/smart-rules-collection/).
 6. Click **Create** to create the smart rule.
 
 {{< c8y-admon-info >}}
@@ -152,11 +152,11 @@ To define a threshold rule follow these steps:
 
 1. In the navigator, select the desired group or device to apply a threshold to.
 2. Switch to the **Data explorer** tab.
-3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](#add-data-points).
+3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](/cockpit/data-point-library/#to-add-a-data-point-to-the-library).
 4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
 5. Select the smart rule "On measurement explicit threshold create alarm".
-6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/users-guide/cockpit#smart-rules-collection).
+6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/cockpit/smart-rules-collection/).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.
 8. Under **Target assets or devices** you can select the object this rule will be applied to.
 9. Click **Create** to create the smart rule.

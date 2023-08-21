@@ -13,22 +13,22 @@ To use the Cockpit configuration functionality, the following requirements have 
 
 * You must have ADMIN permission for the permission type "Application management".
 
-* The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to clone an application see [Managing applications > Custom application > To add a custom application](/users-guide/administration/#adding-applications).
+* The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to duplicate an application see [Adding custom applications](/standard-tenant/ecosystem/#adding-applications).
 
-If these requirements are met, an **App configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
+If these requirements are met, an **Application configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
 {{< /c8y-admon-req >}}
 
 ### To configure a custom Cockpit application
 
-In the navigator, click **App configuration** in the **Configuration** menu.
+In the navigator, click **Application configuration** in the **Configuration** menu.
 
 ![App configuration](/images/users-guide/cockpit/cockpit-app-configuration.png)
 
-In the **App configuration** page, you can customize your Cockpit application in various aspects.
+In the **Application configuration** page, you can customize your Cockpit application in various aspects.
 
 #### Features
 
-In the **Features** section, you can disable certain features like for example, the global search, alarms, or the data explorer.
+Under **Features** you can disable certain features like for example, the global search, alarms, or the data explorer.
 
 By default, all features are enabled. Use the toggle next to a feature to disable it. The respective menu item in the navigator (or the respective button as in case of the global search button) will immediately be removed and the functionality will no longer be available, until enabled again.
 

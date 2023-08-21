@@ -29,7 +29,7 @@ To create a widget from the data explorer of a particular asset, click **More...
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
 {{< c8y-admon-info >}}
-To use this function, first a dashboard must be created. For details on dashboards, refer to [Working with dashboards](#dashboards).
+To use this function, first a dashboard must be created. For details on dashboards, refer to [Working with dashboards](/cockpit/working-with-dashboards/).
 {{< /c8y-admon-info >}}
 
 ### To send as widget to report
@@ -41,5 +41,5 @@ To create a widget from the data explorer of in the navigator, click **More...**
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 
 {{< c8y-admon-info >}}
-To use this function, first a report must be created. For details on reports, refer to [Working with reports](#reports).
+To use this function, first a report must be created. For details on reports, refer to [Working with reports](/cockpit/working-with-reports/).
 {{< /c8y-admon-info >}}

@@ -2,26 +2,22 @@
 weight: 140
 title: R
 layout: bundle
-section: 
+section:
   - getting_started
 ---
 
-
-<a name=""></a>
 
 ### Real-time processing
 
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, that is, Apama’s Event Processing Language (EPL).
 
-For details see [Real-time processing](/concepts/realtime/).
+For details see [Getting started > Technical concepts > Real-time processing](/concepts/realtime/).
 
-<a name="rest"></a>
 
 ### REST
 
 In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
 
-<a name="rest-api"></a>
 
 ### REST API
 

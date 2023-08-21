@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Subscribing applications
+title: Application subscription
 layout: bundle
 ---
 

@@ -123,7 +123,7 @@ The successful execution will create an application on the {{< product-c8y-iot >
 
 If the name of the microservice application is not provided in the manifest file, it will be automatically inferred from the ZIP file name without the version number.
 
-For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
+For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
 
 ### Subscribing
 
@@ -145,4 +145,4 @@ $ ./microservice pack deploy subscribe -n hello-world -d <URL> -u <username> -p 
 
 ### Operating microservices
 
-{{< product-c8y-iot >}} manages microservices by monitoring the microservice instance and storing the metrics. In case a microservice exceeds the memory limit, it is restarted automatically. Also, microservices can be auto-scaled in case of high CPU usage. For more information, review the [scaling](#isolation-levels) details above.
+{{< product-c8y-iot >}} manages microservices by monitoring the microservice instance and storing the metrics. In case a microservice exceeds the memory limit, it is restarted automatically. Also, microservices can be auto-scaled in case of high CPU usage. For more information, review the [scaling](#isolation-scaling) details above.

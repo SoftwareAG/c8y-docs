@@ -146,7 +146,7 @@ Custom roles must adhere to this name format in order to be shown in the UI:
 
 ROLE_<NAME>_(READ|ADMIN|CREATE)
 
-You can add them to the [application manifest](#manifest) in the `roles` properties as follows:
+You can add them to the [application manifest](#microservice-manifest) in the `roles` properties as follows:
 
 ```json
 "roles": [
@@ -157,7 +157,7 @@ You can add them to the [application manifest](#manifest) in the `roles` propert
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
-The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
+The roles are set in the [Microservice manifest](#microservice-manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
 
 ### Microservice bootstrap
 

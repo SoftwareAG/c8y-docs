@@ -1,8 +1,8 @@
 ---
 title: Getting started
-slug: introduction
+slug: microservice-getting-started
 layout: bundle
-section: 
+section:
   - app_development
 weight: 10
 ---

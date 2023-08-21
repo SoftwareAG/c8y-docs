@@ -14,7 +14,7 @@ helpcontent:
 
 ---
 
-<a name="usage-stats"></a>
+
 ### To view usage statistics
 
 The **Usage statistics** page provides statistical information on each subtenant.
@@ -140,7 +140,7 @@ The following information is provided for each subtenant (not completely visible
 
 Moreover custom properties are displayed, if configured.
 
-Custom properties may be defined in the [Properties library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
+Custom properties may be defined in the [Properties library](/standard-tenant/changing-settings/#properties-library) and then set their values in the [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties) tab of the tenant.
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Apply**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
@@ -148,7 +148,7 @@ You can filter the usage statistics list for a time period by adding the start a
 If a tenant was created after the selected time period, it will show up but the numbers are "0".
 {{< /c8y-admon-info >}}
 
-You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Filtering](/getting-started/gui-features/#filtering).
 
 {{< c8y-admon-important >}}
 The date/time range used here might differ from your server time due to different time zones.
@@ -163,7 +163,6 @@ The date/time range used here might differ from your server time due to differen
 The CSV file will be downloaded to your file system.
 
 
-<a name="microservice-usage"></a>
 ### Microservice usage
 
 The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables {{< enterprise-tenant >}}s and service providers to charge tenants not only based on subscriptions but also based on resources usage.
@@ -340,7 +339,7 @@ Usage statistics consist of values that are progressive like the request count a
 |Subscribed applications | 9, 17 and EOD|
 |Microservice resources | 9, 17 and EOD|
 
-<a name="lifecycle"></a>
+
 ### Lifecycle
 
 **Tenant**
@@ -361,7 +360,7 @@ Any extension deployed to the platform as a microservice is billed as "used" and
   * Not ready - the microservice container is not ready yet to handle incoming traffic but the application is already running.
   * Ready - the microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
-A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
+A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/standard-tenant/audit-logs/). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
@@ -404,163 +403,163 @@ The table below presents which values are used in each model for billing purpose
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">ID</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Tenant</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">API requests</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Device API requests</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Storage</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Peak storage</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Root device</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Peak root device</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Devices</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Peak devices</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Endpoint devices</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Subscribed applications</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Creation time</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Alarms created</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Alarms updated</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Inventories created</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Inventories updated</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Events created</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Events updated</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Measurements created</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Total inbound transfer</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Parent tenant</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Tenant domain</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Can create subtenants</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">External reference</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Total microservice CPU usage</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+      <td style="text-align:left"><a href="#to-view-usage-statistics">TenantUsageStatistics</a></td>
       <td style="text-align:left">Total microservice memory usage</td>
       <td style="text-align:left">x</td>
       <td style="text-align:left"></td>

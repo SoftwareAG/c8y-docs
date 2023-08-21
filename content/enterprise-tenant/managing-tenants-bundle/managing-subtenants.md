@@ -20,11 +20,11 @@ There is a major difference between providing several tenants and providing seve
 {{< c8y-admon-req >}}
 APPLICATION ACCESS
 
-If you would like to use this feature, please contact [product support](/welcome/contacting-support/).
+If you would like to use this feature, please contact [product support](/additional-resources/contacting-support/).
 
 PERMISIIONS & ROLES
 
-To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - READ - Browse and view tenants.
 - CREATE - Create new tenants.
@@ -103,7 +103,7 @@ In the {{< management-tenant >}}, you also find a column with information on the
 			</tr>
 			<tr>
 				<td style="text-align:left">Send password reset link as email</td>
-				<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
+				<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/getting-started/user-settings/#to-change-your-password" class="no-ajaxy">To change your password</a> for more information on password strength).</td>
 				<td>No</td>
 			</tr>
 			<tr>
@@ -125,11 +125,10 @@ From the {{< management-tenant >}}, you can enable other tenants to create subte
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
-In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [To create a subtenant](#creating-tenants).
+In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [To create a subtenant](#to-create-a-subtenant).
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
-<a name="user-access"></a>
 #### Support user access information
 
 At the right of the **Properties** tab, you can find information on the support user requests/access for the subtenants.
@@ -152,7 +151,7 @@ The following information is displayed here:
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>&nbsp;&nbsp;- Support user access has been activated globally in the {{< management-tenant >}} (see <a href="../../users-guide/administration/#platform-configuration-settings">Administration &gt; Platform &nbsp;&nbsp;configuration settings</a>).<br>&nbsp;&nbsp;- One or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>&nbsp;&nbsp;- Support user access has been deactivated globally in the {{< management-tenant >}}. <br>&nbsp;&nbsp;- No subtenant user has currently any active support user access (that means, each support user request has either expired or has actively been deactivated).</td>
+<td style="text-align:left">May be either "Enabled" or "Disabled". <br>"Enabled" indicates that: <br>&nbsp;&nbsp;- Support user access has been activated globally in the {{< management-tenant >}}.<br>&nbsp;&nbsp;- One or more subtenant users have activated support user access.<br>"Disabled" indicates that: <br>&nbsp;&nbsp;- Support user access has been deactivated globally in the {{< management-tenant >}}. <br>&nbsp;&nbsp;- No subtenant user has currently any active support user access (that means, each support user request has either expired or has actively been deactivated).</td>
 </tr>
 <tr>
 <td style="text-align:left">Active requests count</td>
@@ -171,7 +170,7 @@ Suspending a tenant blocks any access to this tenant, regardless whether the acc
 
 The tenant's data remains in the database and can be made available later by clicking **Activate**.
 
-Refer to [Usage statistics and billing > Lifecycle](#lifecycle) for details on the billing perspective of suspended tenants.
+Refer to [Lifecycle](/enterprise-tenant/usage-and-billing/#lifecycle) for details on the billing perspective of suspended tenants.
 
 {{< c8y-admon-important >}}
 Suspended tenants for all {{< product-c8y-iot >}} public cloud instances will be automatically deleted after 60 days.

@@ -14,13 +14,6 @@ helpcontent:
 
 ---
 
-{{< c8y-admon-related >}}
-- [Cumulocity IoT´s domain model](/concepts/domain-model#overview) in the *Concepts guide* for details on {{< product-c8y-iot >}}'s domain model.
-- [Device management](/users-guide/device-management#overview) for details on working with devices in {{< product-c8y-iot >}}.
-- [Tutorials > Add a Jest-based unit test](/guides/web/tutorials/#add-a-unit-test) in the *Web SDK guide* for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
-{{< /c8y-admon-related >}}
-
-
 Click **Groups** in the navigator to see a list of all groups. To add a group, click **Add group** at the top right.
 
 
@@ -39,7 +32,7 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device management section.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device management application. For details on connecting devices refer to [Registering devices](/device-management-application/registering-devices/).
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
@@ -49,6 +42,13 @@ To position a device in the asset hierarchy, you must "assign" the device to the
 Single devices are not managed in the Cockpit application. They are managed in the Device management application.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-related >}}
+- [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview) for details on {{< product-c8y-iot >}}'s domain model.
+- [Device management > Device management application](/device-management-application/) for details on working with devices in {{< product-c8y-iot >}}.
+- [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-a-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
+
 <a name="hierarchies"></a>
 ### Asset hierarchy versus device hierarchy
 
@@ -56,7 +56,7 @@ Single devices are not managed in the Cockpit application. They are managed in t
 asset hierarchy.
 
 
-The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) in the *Concepts guide*.
+The device hierarchy tracks how devices are linked to {{< product-c8y-iot >}} from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the IoT devices. For details, refer to [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview).
 
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:

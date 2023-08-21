@@ -12,6 +12,7 @@ helpcontent:
 ---
 The asset model is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset model consists of one or more [asset properties](/dtm/asset-types/#asset-properties) and/or child asset models.
 
+
 To get a quick start to use the DTM application, import pre-defined asset models from **Asset model samples** page. These asset models and associated properties are defined based on best practices. For details about how to import asset models from samples, see [To import asset model samples](#to-import-asset-model-samples).
 
 To reach the **Asset models** page, navigate to **Configuration > Asset models**.
@@ -160,6 +161,7 @@ As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} app
 
 <a name=""></a>
 ### To create an asset model for the entire hierarchy
+
 
 1. Create all required [asset properties](#asset-properties).
 2. Then [create the asset models](#create-asset-model) in a bottom-up approach, that is, all the child asset models are created first, followed by the root asset model at the end.

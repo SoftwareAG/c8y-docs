@@ -1,7 +1,8 @@
 ---
 weight: 40
-layout: redirect
 title: Developing microservices
+layout: redirect
+
 ---
 
 See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.

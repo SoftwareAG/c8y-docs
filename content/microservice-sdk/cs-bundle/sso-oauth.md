@@ -1,7 +1,8 @@
 ---
 weight: 40
-layout: redirect
 title: Authentication
+layout: redirect
+
 ---
 
 The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the token must be read from the request cookie header. Refer to [General aspects > Security](/microservice-sdk/concept/#security) for more details.

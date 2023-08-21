@@ -1,7 +1,6 @@
 ---
 weight: 55
 title: Widgets collection
-aliases:
 layout: bundle
 section:
   - app_development

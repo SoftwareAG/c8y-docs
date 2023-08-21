@@ -15,7 +15,7 @@ While a machine is offline, {{< product-c8y-iot >}} assumes by default
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
-There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
+There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/standard-tenant/business-rules/#alarms) which have CRITICAL severity instead of MAJOR severity.
 
 {{< product-c8y-iot >}} displays service availability at the level of individual devices and across all devices.
 

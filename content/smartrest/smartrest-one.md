@@ -22,4 +22,4 @@ Note that SmartREST 1.0 was designed for HTTP request/response and does not supp
 
 The support for SmartREST 1.0 was added to ease transition if you have an existing implementation using it.
 
-For general information on SmartREST 1.0, refer to [Using the REST interface](/microservice-sdk/rest#smartrest) in the *Microservice SDK guide*.
+For general information on SmartREST 1.0, refer to [Using the REST interface](/microservice-sdk/rest/).

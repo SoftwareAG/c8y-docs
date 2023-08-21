@@ -17,7 +17,7 @@ or using Basic authentication. This leverages your authorization server to get a
 This feature requires the following on top of the general requirements:
 
 * Your authorization server must support the OAuth2 client credentials grant type.
-* All microservices are built with Microservice Java SDK version 1018.6.0 or higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the *Microservice SDK guide*.
+* All microservices are built with Microservice Java SDK version 1018.6.0 or higher. For custom-built microservices, refer to [Security](/microservice-sdk/concept/#security).
 
 {{< /c8y-admon-req >}}
 
@@ -26,7 +26,7 @@ This feature requires the following on top of the general requirements:
 Enable or disable this authentication option in the **External token configuration** section.
 ![External token disabled](/images/users-guide/Administration/sso-access-token-external-iam-disabled.png)
 
-If enabled, this authentication takes precedence over the standard [JWT token authentication](https://{{< domain-c8y >}}/guides/{{< c8y-current-version >}}/reference/rest-implementation/#jwt-token-authentication), which means, for example, that an HTTP request to {{< product-c8y-iot >}} with the header `Authentication: Bearer {{access token}}` assumes that the source of the access token is your authorization server instead of the token being issued by {{< product-c8y-iot >}}.
+If enabled, this authentication takes precedence over the standard [JWT token authentication](https://cumulocity.com/api/core/#section/Authentication/JWT), which means, for example, that an HTTP request to {{< product-c8y-iot >}} with the header `Authentication: Bearer {{access token}}` assumes that the source of the access token is your authorization server instead of the token being issued by {{< product-c8y-iot >}}.
 Configure the user ID or the application ID to any top-level claim in the access token.
 
 ![External token user id](/images/users-guide/Administration/sso-access-token-external-iam-user-id-config.png)
@@ -59,7 +59,7 @@ To avoid this, use a frequency. The default value is one minute.
 
 ![External token validation interval](/images/users-guide/Administration/sso-access-token-external-iam-validation-interval.png)
 
-###User info endpoint
+### User info endpoint
 
 The user info request can also be used to check the validity of the access token of your users.
 Unlike introspection, a user info request requires a user context. This means you cannot use it to validate access tokens obtained with the client credentials flow.

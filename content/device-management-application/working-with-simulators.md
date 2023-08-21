@@ -15,7 +15,7 @@ helpcontent:
   An instruction can either send a message (measurements, alarms, events, and inventory) or wait for a specified time (sleep). For each simulator, you can create instructions specifying what the simulator is supposed to do.
 
 
-  To create a new simulator, click **Add simulator** at the top right and follow the instructions in the *User guide*."
+  To create a new simulator, click **Add simulator** at the top right and follow the instructions in the user documentation."
 ---
 
 With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be simulated, such as:
@@ -93,7 +93,7 @@ The panel at the right changes according to the type of instruction selected at 
 
 ![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
-The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in the [Fragment library](/device-integration/fragment-library/) in *Device integration*.
+The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in the [fragment library](/device-integration/fragment-library/).
 
 The "Sleep" instruction requires one value for its duration in seconds.
 

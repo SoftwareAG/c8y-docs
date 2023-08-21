@@ -53,7 +53,7 @@ You might also see a folder named *c8y_cdh_temp*. The folder is used for {{< pro
 
 #### Spaces
 
-A space in Dremio helps in organizing your data sets. {{< product-c8y-iot >}} DataHub auto-configures a space which is named `YourTenantIdSpace`, for example, `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Working with {{< product-c8y-iot >}} DataHub > Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections), for the inventory, events, and alarms collections there are preconfigured views providing either all or latest data.
+A space in Dremio helps in organizing your data sets. {{< product-c8y-iot >}} DataHub auto-configures a space which is named `YourTenantIdSpace`, for example, `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections), for the inventory, events, and alarms collections there are preconfigured views providing either all or latest data.
 
 #### Job history
 
@@ -69,7 +69,7 @@ With {{< product-c8y-iot >}} DataHub, you can replicate data from a {{< product-
 
 Depending on your use cases, you will often find the need to provide a view on the data, which limits, filters, or transforms the data, such as converting Celsius to Fahrenheit or extracting data from JSON fragments.
 
-In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely select a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Working with {{< product-c8y-iot >}} DataHub > Querying offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#querying-offloaded).
+In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely select a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded).
 
 {{< c8y-admon-info >}}
 Such a view is per default not materialized, that is, it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data. For the pre-defined alarms/events/inventory views, you can optionally activate view materialization during the offloading configuration.

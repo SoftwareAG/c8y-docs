@@ -146,4 +146,4 @@ This will be the result:
 
 ### Using Custom decoding
 
-The Loriot agent also supports the decoding functionality by plugging in the custom microservice. Refer to [LPWAN custom codec](../lpwan-custom-codec) for further details.
+The Loriot agent also supports the decoding functionality by plugging in the custom microservice. Refer to [LPWAN custom codec](/protocol-integration/lpwan-custom-codec) for further details.

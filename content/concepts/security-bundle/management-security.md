@@ -13,4 +13,4 @@ To capture security-relevant events, {{< product-c8y-iot >}} offers an [auditing
 
 To receive security-related reports about the {{< product-c8y-iot >}} platform, interested parties with a maintenance contract can subscribe to Early Warnings in the [Knowledge Center of the {{< company-sag >}} {{< sag-portal >}}](https://empower.softwareag.com/KnowledgeCenter/EarlyWarningsCriticalAlerts/default.aspx).
 
-To report security incidents, please contact [product support](/welcome/contacting-support).
+To report security incidents, please contact [product support](/additional-resources/contacting-support).

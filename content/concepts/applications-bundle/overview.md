@@ -4,7 +4,7 @@ title: Overview
 layout: bundle
 ---
 
- {{< product-c8y-iot >}} applications can have two forms:
+ There are two types of {{< product-c8y-iot >}} applications:
 
  * [web applications](#web-applications) -  web-based user interface applications
  * [microservices](#microservices) - server-side business logic

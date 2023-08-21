@@ -67,4 +67,4 @@ The status column shows the current status of the profile. To switch a completed
 
 In the context menu of an entry, click **Delete** to delete a profile.
 
-For further information on the OEE dashboard, see [Dashboards > Machine dashboards](/oee/oee-dashboards/#machine-dashboard).
+For further information on the OEE dashboard, see [Machine dashboards](/oee/oee-dashboards/#machine-dashboard).

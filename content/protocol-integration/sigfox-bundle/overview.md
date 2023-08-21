@@ -17,5 +17,5 @@ The following illustration grants you a quick overview of the {{< product-c8y-io
 ![{{< product-c8y-iot >}} Sigfox integration](/images/device-protocols/sigfox/sigfox-cumulocity-integration.png)
 
 {{< c8y-admon-info >}}
-To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues, please contact [product support](/welcome/contacting-support/).
+To be able to use the Sigfox agent, your tenant needs to be subscribed to the application sigfox-agent. In case of any issues please contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}

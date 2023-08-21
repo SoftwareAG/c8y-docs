@@ -10,7 +10,8 @@ helpcontent:
 
   Click **Add asset model** in the top menu bar to add a new asset model. To edit an existing asset model, click the edit icon on the right of the desired asset model."
 ---
-The asset model is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset model consists of one or more [asset properties](/dtm/asset-types/#property-library) and/or child asset models.
+The asset model is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset model consists of one or more [asset properties](/dtm/asset-types/#asset-properties) and/or child asset models.
+
 
 To get a quick start to use the DTM application, import pre-defined asset models from **Asset model samples** page. These asset models and associated properties are defined based on best practices. For details about how to import asset models from samples, see [To import asset model samples](#to-import-asset-model-samples).
 
@@ -41,7 +42,7 @@ ROLES & PERMISSIONS
 - To add/update/delete/import asset models: CREATE/ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-<a name="create-asset-type"></a>
+<a name="create-asset-model"></a>
 ### To create an asset model
 
 Click **Add asset model** on the top right to create a new asset model. This opens the **New Asset model** page.
@@ -146,7 +147,7 @@ If the asset model is "Rotor" and you select "Blade" as an allowed child asset m
 If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
-If there is no asset property meeting your requirements when you search, click **New asset property**. For more details on how to create a new asset property see [Asset property > To create an asset property](/dtm/asset-types/#create-custom-property).
+If there is no asset property meeting your requirements when you search, click **New asset property**. For more details on how to create a new asset property see [To create an asset property](#create-custom-property).
 
 <a name=""></a>
 ### Root asset model
@@ -161,8 +162,9 @@ As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} app
 <a name=""></a>
 ### To create an asset model for the entire hierarchy
 
-1. Create all required [asset properties](/dtm/asset-types/#property-library).
-2. Then [create the asset models](#create-asset-type) in a bottom-up approach, that is, all the child asset models are created first, followed by the root asset model at the end.
+
+1. Create all required [asset properties](#asset-properties).
+2. Then [create the asset models](#create-asset-model) in a bottom-up approach, that is, all the child asset models are created first, followed by the root asset model at the end.
 3. [Create assets](/dtm/asset-hierarchy/#create-asset) for the new asset hierarchy.
 
 This approach, allows you to create the desired hierarchy including all asset models, child asset models and asset properties in one process.

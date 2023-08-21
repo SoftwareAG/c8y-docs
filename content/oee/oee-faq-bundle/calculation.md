@@ -70,7 +70,7 @@ If the Performance is determined on the basis of the two machines working in par
 
 * The Performance is determined on the first machine, if possible.
 * The smallest of the four defined intervals of a profile is x times larger than the machining time of a workpiece. This way the values average again. However, this means that the 10 minutes interval display in the Machine Park Overview most of the time shows incorrect values.
-* The {{< product-c8y-iot >}} OEE application created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also [Administration > Calculation example of a line profile](/oee/oee-administration#calculation-example).
+* The {{< product-c8y-iot >}} OEE application created a line profile and used machine profiles, whose calculated values are then used in the line calculation see also [Calculation example of a line profile](/oee/oee-administration#calculation-example).
 
 Alternative starting situation:
 
@@ -105,4 +105,4 @@ You have entered "1.1 pcs/minute" in the Workpiece section, while setting up the
 
 ### Can the calculated OEE values be used in a Cockpit widget?
 
-For more information on how to use calculated OEE values in {{< product-c8y-iot >}} Cockpit widgets see [FAQ > Cumulocity IoT](/oee/oee-faq/#platform)
+For more information on how to use calculated OEE values in {{< product-c8y-iot >}} Cockpit widgets see [Cumulocity IoT](/oee/oee-faq/#platform)

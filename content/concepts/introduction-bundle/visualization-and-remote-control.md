@@ -9,4 +9,4 @@ The user interface automatically adapts itself to the devices you connect -- no 
 
 It also adapts itself to the web browser that you use. For example, if you use a mobile phone or tablet with limited screen size, it will change user interface controls to use less screen estate.
 
-Through the [Sensor library](/reference/sensor-library/), common sensor and control types are rendered  correctly regardless of the device that produces the sensor data.
+Through the [fragment library](/device-integration/fragment-library/), common sensor and control types are rendered  correctly regardless of the device that produces the sensor data.

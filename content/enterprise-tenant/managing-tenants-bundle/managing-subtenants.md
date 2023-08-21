@@ -3,7 +3,7 @@ weight: 10
 title: Managing subtenants
 layout: redirect
 helpcontent:
-  - label: managing-tenants
+  - label: managing-subtenants
     title: Subtenants
     content: "Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account. The **Tenants** page provides information on each subtenant such as the name of the subtenant, its ID and domain, and the status of the tenant (either active, indicated by a green checkmark icon, or suspended, indicated by a red cross icon).
 
@@ -52,7 +52,6 @@ In the {{< management-tenant >}}, you also find a column with information on the
 {{< /c8y-admon-info >}}
 
 
-<a name="creating-tenants"></a>
 ### To create a subtenant
 
 1. Click **Create tenant** at the right of the top menu bar.

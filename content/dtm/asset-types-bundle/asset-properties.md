@@ -14,7 +14,9 @@ helpContent:
 
   To add a new asset property, click **Add asset property**."
 ---
-Asset properties are the parameters that define an [asset model](/dtm/asset-types/#asset-types). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
+
+Asset properties are the parameters that define an [asset model](#asset-models). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
+
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
@@ -88,7 +90,8 @@ Note that the key is automatically generated based on the label. You can modify 
 The **Default value** field is only shown if the selected **Type** is either "Text" or "Number".
 {{< /c8y-admon-info>}}
 
-Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-types).
+Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-models).
+
 
 
 <a name="custom-property-types"></a>

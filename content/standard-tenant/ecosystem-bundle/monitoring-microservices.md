@@ -6,7 +6,6 @@ section:
   - platform_administration
 ---
 
-
 You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
 ### Status information
@@ -36,7 +35,7 @@ There are two user-friendly alarm types:
 
 User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, that is all the microservice instances are working properly.
 
-User-friendly alarms can be used to create smart rules. For details on creating smart rules of various types, see [Smart rules](/users-guide/cockpit/#smart-rules).
+User-friendly alarms can be used to create smart rules. For details on creating smart rules of various types, see [Smart rules](/cockpit/smart-rules/).
 
 For example, to send an email, if a microservice is down, create an "On alarm send email" smart rule.
 

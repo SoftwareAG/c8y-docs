@@ -18,7 +18,7 @@ An offloading configuration allows you to specify additional columns to be offlo
 
 ### Decomposition of complex additional columns
 
-You may have stored complex data using JSON fragments as an additional column in a {{< product-c8y-iot >}} collection. As described in section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs), you can add additional columns so that they are included in the offloading process. Within these additional columns, you can apply functions to decompose the fragments into flat data.
+You may have stored complex data using JSON fragments as an additional column in a {{< product-c8y-iot >}} collection. As described in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs), you can add additional columns so that they are included in the offloading process. Within these additional columns, you can apply functions to decompose the fragments into flat data.
 
 Writing these functions is often an iterative process that requires multiple adaptations of the underlying logic. Leverage the Dremio SQL editor and define a dummy offloading configuration which moves a small portion of the data into the data lake for testing purposes. You can use the filter predicate to retrieve such a portion of the data; see below for time filter examples. Then you can open the table created by the offloading configuration with Dremio; using Dremio's SQL editor, you can develop the extraction logic. When your decomposition logic for your additional columns is complete, you can copy the column transformations and use them to define a corresponding offloading configuration in {{< product-c8y-iot >}} DataHub. Once that is done, the dummy offloading pipeline can be deleted.
 

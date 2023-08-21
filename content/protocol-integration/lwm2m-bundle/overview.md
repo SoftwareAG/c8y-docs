@@ -19,7 +19,7 @@ You can connect any device supporting LWM2M 1.1 or LWM2M 1.0 to {{< product-c8y-
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-req >}}
-In order to use LWM2M, you must be subscribed to the LWM2M-agent application. If the LWM2M-agent is not available in your tenant, [contact product support](/welcome/contacting-support/).
+In order to use LWM2M, you must be subscribed to the LWM2M-agent application. If the LWM2M-agent is not available in your tenant please contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-req >}}
 
 Our LWM2M solution allows any LWM2M object to be easily interfaced with the platform. For the sake of convenience, we provide out-of-the-box integration for the following LWM2M objects:
@@ -46,6 +46,6 @@ If a string is mapped into a measurement and the string value does not follow an
 {{< /c8y-admon-important >}}
 
 To use these integrations, upload the corresponding DDF XML to your tenant.
-For arbitrary protocols, you can configure how LWM2M devices are mapped to {{< product-c8y-iot >}} using device protocols. See [Cloud Fieldbus > Configuring fieldbus device protocols](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) for more information.
+For arbitrary protocols, you can configure how LWM2M devices are mapped to {{< product-c8y-iot >}} using device protocols. See [Configuring fieldbus device protocols](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) for more information.
 
 ![Device protocols](/images/device-protocols/lwm2m/lwm2m-deviceprotocol.png)

@@ -185,7 +185,7 @@ A background scheduler task will retry each queue up to the number of _maxRetrie
 
 All elements of the queue are retried after the retry delay has passed. In effect, the count of the elements in the queue is decreases with each successful retried custom action.
 
-This mechanism can be configured in the configuration section `gateway.mappingExecution.http.failureHandling` (see also [Gateway Configuration: Additional customization](#additional-customizations)) using the following properties:
+This mechanism can be configured in the configuration section `gateway.mappingExecution.http.failureHandling` (see also [Additional customization](#additional-customizations)) using the following properties:
 
 
 |<div style="width:200px">Setting</div>|Default|Value format|Example |Description|																				

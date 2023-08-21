@@ -801,7 +801,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/#alarm-mapping)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 

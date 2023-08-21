@@ -13,7 +13,7 @@ To use the Cockpit configuration functionality, the following requirements have 
 
 * You must have ADMIN permission for the permission type "Application management".
 
-* The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to clone an application see [Adding custom applications](/standard-tenant/ecosystem/#adding-applications).
+* The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to duplicate an application see [Adding custom applications](/standard-tenant/ecosystem/#adding-applications).
 
 If these requirements are met, an **Application configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
 {{< /c8y-admon-req >}}

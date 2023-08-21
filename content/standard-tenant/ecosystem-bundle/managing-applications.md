@@ -33,6 +33,15 @@ helpcontent:
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
 ---
 
+There are two types of availability for applications:
+
+- [Subscribed](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or by a service provider.
+- Custom - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+
+Your applications are available through the application switcher in the top bar.
+
+<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
+
 ### To view applications
 
 Click **Applications** in the **Ecosystem** menu in the navigator to display a list or grid of all applications in your account.
@@ -42,15 +51,6 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 In the **Applications** tab, you can see all applications available in your tenant.
 
 Applications can be filtered by name or by availability.
-
-There are two types of availability for applications:
-
-- Subscribed - applications subscribed to the tenant, either provided by the platform (as [default applications](#default-subscriptions)) or a service provider.
-- Custom - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
-
-Your applications are available through the application switcher in the top bar.
-
-<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
 <a name="editing-and-removing"></a>
 ### To edit an application

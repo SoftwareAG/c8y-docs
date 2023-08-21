@@ -1,5 +1,5 @@
 ---
-title: Default subscriptions
+title: Subscribed applications
 layout: bundle
 weight: 70
 section:
@@ -8,11 +8,11 @@ section:
 
 {{< product-c8y-iot >}} provides a variety of applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
-Below all applications are listed which are by default available in the {{< standard-tenant >}} or {{< enterprise-tenant >}}. In addition, numerous optional applications might be subscribed to your tenant.
-
 {{< c8y-admon-info >}}
-In the **All applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
+In the **Applications** tab, subscribed applications are labeled as "Subscribed". Subscribed applications may not be added, modified or removed by the user but only by a tenant administrator.
 {{< /c8y-admon-info >}}
+
+Below all applications are listed which are by default available in the {{< standard-tenant >}} or {{< enterprise-tenant >}}. In addition, numerous optional applications might be subscribed to your tenant.
 
 ### Applications subscribed by default
 

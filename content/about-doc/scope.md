@@ -21,5 +21,5 @@ Please refer to the [{{< c8y-pricing >}}]({{< link-c8y-pricing >}}) for details 
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-The **Installation and Operations guides** for the {{< product-c8y-iot >}} platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}), see [Additional resources](/welcome/additional-resources/).
+The **Installation and Operations guides** for the {{< product-c8y-iot >}} platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}), see [Additional resources](/additional-resources/).
 {{< /c8y-admon-info >}}

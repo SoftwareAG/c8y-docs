@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-important >}}
-Visit our [Hello world tutorial](/microservice-sdk/java/#java-microservice) and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
+Visit our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial) and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
 {{< /c8y-admon-important >}}
 
 ### Developing the IP-tracker microservice
@@ -22,7 +22,7 @@ It also uses the {{< product-c8y-iot >}} UI to display the tracked locations on 
 
 #### Update the Project Object Model
 
-Assuming that you have the base code presented in our [Hello world tutorial](/microservice-sdk/java/#java-microservice), edit your *pom.xml* file changing the `artifactId` and `microservice.name` of your microservice to `iptracker-microservice`.
+Assuming that you have the base code presented in our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial), edit your *pom.xml* file changing the `artifactId` and `microservice.name` of your microservice to `iptracker-microservice`.
 Also add a child element `<java.version>` to the `<properties>` element to specify the Java version you want to use.
 Your *pom.xml* file should contain a snippet similar to:
 
@@ -60,7 +60,7 @@ In your _cumulocity.json_ file:
 1. Add the required roles to be able to create events and alarms.
 2. Add the readiness and liveness probes.
 3. Add two keys for the microservice settings: `"ipstack.key"` and `"tracker.id"`.
-4. Set the isolation level to `"PER_TENANT"`. This means that there will be a separate instance for each tenant. For more details see the Settings section in [General aspects > Microservice manifest](/microservice-sdk/concept/#manifest).
+4. Set the isolation level to `"PER_TENANT"`. This means that there will be a separate instance for each tenant. For more details see the Settings section in [Microservice manifest](/microservice-sdk/concept/#microservice-manifest).
 
 Your manifest file should look similar to this:
 
@@ -402,7 +402,7 @@ public class App {
 
 ### Building and deploying the application
 
-Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/microservice-sdk/java/#java-microservice) to deploy your microservice.
+Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial) to deploy your microservice.
 You may also employ the cURL command to deploy the microservice.
 
 ```shell

@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Hello world tutorial
+title: Hello world tutorial for C#
 layout: redirect
 
 ---

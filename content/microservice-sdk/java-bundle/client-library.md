@@ -24,7 +24,7 @@ As an example:
 Platform platform = new PlatformImpl("https://demos.cumulocity.com", new CumulocityCredentials("myuser", "mypassword"));
 ```
 
-If you use the Java client for developing an application, you must register an application key (through [Ecosysystem > Applications](/users-guide/administration#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Application-API)).
+If you use the Java client for developing an application, you must register an application key (through [Managing applications](/standard-tenant/ecosystem/#managing-applications) in the {{< product-c8y-iot >}} Administration application, or through the [Application API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Application-API)).
 
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for `PlatformImpl` also allows you to specify the default number of objects returned from the server in one reply with the parameter `pageSize`.
 

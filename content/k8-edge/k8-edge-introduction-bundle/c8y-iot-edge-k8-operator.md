@@ -4,11 +4,11 @@ title: Overview
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge can be deployed on a single node Kubernetes cluster and managed using {{< product-c8y-iot >}} Edge Kubernetes Operator. 
+{{< product-c8y-iot >}} Edge can be deployed on a single node Kubernetes cluster and managed using {{< product-c8y-iot >}} Edge Kubernetes operator. 
 
-The {{< product-c8y-iot >}} Edge Kubernetes Operator automates the deployment and management of {{< product-c8y-iot >}} Edge on Kubernetes. The operator manages a [Custom Resource Definition (CRD)](https://raw.githubusercontent.com/SoftwareAG/edge-k8s-operator-docs/main/crd/v1/edge.cumulocity.com_edges.yaml) to extend the Kubernetes API for {{< product-c8y-iot >}} Edge. You can deploy and manage {{< product-c8y-iot >}} Edge on a Kubernetes cluster by updating {{< product-c8y-iot >}} Edge Custom Resource (CR). You can specify the changes in the {{< product-c8y-iot >}} Edge CR file and use `kubectl apply -f` to deploy the changes.
+The {{< product-c8y-iot >}} Edge Kubernetes operator automates the deployment and management of {{< product-c8y-iot >}} Edge on Kubernetes. The operator manages a [Custom Resource Definition (CRD)](/files/edge/edge.cumulocity.com_edges.yaml) to extend the Kubernetes API for {{< product-c8y-iot >}} Edge. You can deploy and manage {{< product-c8y-iot >}} Edge on a Kubernetes cluster by updating {{< product-c8y-iot >}} Edge Custom Resource (CR). Specify the changes in the {{< product-c8y-iot >}} Edge CR file and use `kubectl apply -f` to apply the changes. The operator uses the CR file to deploy these changes.
 
-This documentation includes a sample manifest [Cumulocity IoT Edge Manifest](https://raw.githubusercontent.com/SoftwareAG/edge-k8s-operator-docs/main/samples/cr/v1/cumulocity-iot-edge-manifest.yaml) you can use to deploy Edge on Kubernetes.
+This documentation includes a sample manifest [Cumulocity IoT Edge Manifest](/files/edge/cumulocity-iot-edge-manifest.yaml) you can use to deploy Edge on Kubernetes.
 
 In contrast to {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure or other data centers), {{< product-c8y-iot >}} Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.    
 

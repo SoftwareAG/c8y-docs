@@ -1,0 +1,241 @@
+---
+#
+# Custom Resource Definition (CRD) of "Edge" Resource.
+# API Version: v1
+#
+
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.1
+  creationTimestamp: null
+  name: edges.edge.cumulocity.com
+spec:
+  group: edge.cumulocity.com
+  names:
+    kind: Edge
+    listKind: EdgeList
+    plural: edges
+    singular: edge
+  scope: Cluster
+  versions:
+    - name: v1
+      schema:
+        openAPIV3Schema:
+          description: Edge is the Schema for the edges API
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+              type: string
+            kind:
+              description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+              type: string
+            metadata:
+              type: object
+            spec:
+              description: EdgeSpec defines the desired state of Edge
+              properties:
+                adminCredentialsSecretName:
+                  type: string
+                applications:
+                  items:
+                    properties:
+                      disabled:
+                        type: boolean
+                      name:
+                        type: string
+                      resources:
+                        properties:
+                          limitCpu:
+                            type: string
+                          limitMemory:
+                            type: string
+                          requestsCpu:
+                            type: string
+                          requestsMemory:
+                            type: string
+                        type: object
+                    required:
+                      - name
+                    type: object
+                  type: array
+                company:
+                  type: string
+                core:
+                  properties:
+                    coreValues:
+                      description: CoreValues corespond to helm chart values.yaml fields.
+                        This is the correct place to externalize fields from values.yaml
+                      properties:
+                        edgeTenantAllowedIPBlocks:
+                          items:
+                            type: string
+                          type: array
+                        managementTenantAllowedIPBlocks:
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    resources:
+                      properties:
+                        limitCpu:
+                          type: string
+                        limitMemory:
+                          type: string
+                        requestsCpu:
+                          type: string
+                        requestsMemory:
+                          type: string
+                      type: object
+                  type: object
+                domain:
+                  type: string
+                licenseSecretName:
+                  type: string
+                microservices:
+                  items:
+                    properties:
+                      disabled:
+                        type: boolean
+                      name:
+                        type: string
+                      resources:
+                        properties:
+                          limitCpu:
+                            type: string
+                          limitMemory:
+                            type: string
+                          requestsCpu:
+                            type: string
+                          requestsMemory:
+                            type: string
+                        type: object
+                    required:
+                      - name
+                    type: object
+                  type: array
+                microservicesRegistry:
+                  properties:
+                    credentialsSecretName:
+                      type: string
+                    resources:
+                      properties:
+                        limitCpu:
+                          type: string
+                        limitMemory:
+                          type: string
+                        requestsCpu:
+                          type: string
+                        requestsMemory:
+                          type: string
+                      type: object
+                    tlsSecretName:
+                      type: string
+                    url:
+                      type: string
+                  type: object
+                mongoDb:
+                  properties:
+                    arbiterResources:
+                      properties:
+                        limitCpu:
+                          type: string
+                        limitMemory:
+                          type: string
+                        requestsCpu:
+                          type: string
+                        requestsMemory:
+                          type: string
+                      type: object
+                    configSvrResources:
+                      properties:
+                        limitCpu:
+                          type: string
+                        limitMemory:
+                          type: string
+                        requestsCpu:
+                          type: string
+                        requestsMemory:
+                          type: string
+                      type: object
+                    connectionString:
+                      type: string
+                    credentialsSecretName:
+                      type: string
+                    mongosHost:
+                      type: string
+                    mongosResources:
+                      properties:
+                        limitCpu:
+                          type: string
+                        limitMemory:
+                          type: string
+                        requestsCpu:
+                          type: string
+                        requestsMemory:
+                          type: string
+                      type: object
+                    shardSvrResources:
+                      properties:
+                        limitCpu:
+                          type: string
+                        limitMemory:
+                          type: string
+                        requestsCpu:
+                          type: string
+                        requestsMemory:
+                          type: string
+                      type: object
+                  type: object
+                tlsSecretName:
+                  type: string
+                version:
+                  type: string
+              required:
+                - adminCredentialsSecretName
+                - company
+                - domain
+                - licenseSecretName
+                - version
+              type: object
+            status:
+              description: EdgeStatus defines the observed state of Edge
+              properties:
+                applicationsStatus:
+                  type: string
+                coreStatus:
+                  type: string
+                loggingStatus:
+                  type: string
+                microserviceRegistryStatus:
+                  type: string
+                mongoDbStatus:
+                  type: string
+                namespaceStatus:
+                  type: string
+                secretsStatus:
+                  type: string
+                serviceAccountsStatus:
+                  type: string
+                tenantsStatus:
+                  type: string
+              type: object
+          required:
+            - metadata
+            - spec
+          type: object
+      served: true
+      storage: true
+      subresources:
+        status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

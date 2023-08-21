@@ -8,4 +8,4 @@ The core specification specifies the fields for configuring the {{< product-c8y-
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|
-|resources.limits|Yes|Structure|Defaults to CPU Limit: 3000m<br>Memory Limit: 6GB|Specify resource limits for the {{< product-c8y-iot >}} Core container. For more information, see [Resource Limits Spec](/k8-edge/edge-custom-resource-definition/#k8-edge-resources-limits-spec).
+|resources.limits|Yes|Structure|Defaults to CPU Limit: 3000m<br>Memory Limit: 6GB|Specify resource limits for the {{< product-c8y-iot >}} Core container. For more information, see [Resource Limits Specification](/k8-edge/edge-custom-resource-definition/#k8-edge-resources-limits-spec).

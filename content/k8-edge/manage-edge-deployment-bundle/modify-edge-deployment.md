@@ -4,18 +4,18 @@ title: Modify Edge deployment
 layout: redirect
 ---
 
-The Edge Kubernetes Operator makes it easier for you to use Edge on Kubernetes. Instead of making changes to the Edge deployment by hand, you specify changes to the Edge CR in the manifest file, then use `kubectl apply` to apply these changes. The Operator picks up on the changes and does what it needs to do in order to make them happen.
+The {{< product-c8y-iot >}} Edge Kubernetes operator automates the deployment and management of {{< product-c8y-iot >}} Edge on Kubernetes. You can deploy and manage {{< product-c8y-iot >}} Edge on a Kubernetes cluster by updating {{< product-c8y-iot >}} Edge Custom Resource (CR). Specify the changes in the {{< product-c8y-iot >}} Edge CR file and use `kubectl apply -f` to apply the changes. The operator uses the CR file to deploy these changes. 
 
-For this example, assume that the Edge is deployed using the [Sample Cumulocity IoT Edge Manifest](https://raw.githubusercontent.com/SoftwareAG/edge-k8s-operator-docs/main/samples/cr/v1/cumulocity-iot-edge-manifest.yaml) file.
+For this example, assume that the Edge is deployed using the [Sample Cumulocity IoT Edge Manifest](/files/edge/cumulocity-iot-edge-manifest.yaml) file.
 
 ### Example Configuration Change
 
-Change the `spec.domain` field to `edge.myown.iot.com` and if required update the `license-secret` accordingly.
+Change the `spec.domain` field to `sample.myown.iot.com` and if required update the `licenseKey` accordingly.
 
-Save the manifest file, then use `kubectl` to apply the change.
+Save the manifest file, then use the command below to apply the change.
 
 ```bash
 kubectl apply -f cumulocity-iot-edge-manifest-UPDATED.yaml
 ```
 
-Post this, follow the steps in [Verify Edge deployment](03-getting-started#verify-edge-deployment) to verify the Edge deployment.
+To verify the Edge deployment, see [Verify Edge deployment](/k8-edge/installing-edge-on-k8/#verify-edge-deployment).

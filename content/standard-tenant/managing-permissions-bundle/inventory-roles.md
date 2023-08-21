@@ -71,7 +71,6 @@ As another example, assume that you are using tracking devices. You want to allo
 
 <img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
-<a name="attach-inventory"></a>
 ### To assign inventory roles to users
 
 Inventory roles are assigned to a user and a group of devices.

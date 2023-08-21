@@ -1,7 +1,8 @@
 ---
 weight: 20
-layout: redirect
 title: Hello world tutorial
+layout: redirect
+
 ---
 
 Here you will learn how to create your first microservice that can be deployed on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}) using the Microservice SDK for Java.

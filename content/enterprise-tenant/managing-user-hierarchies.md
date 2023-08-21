@@ -38,7 +38,7 @@ A small number next to the user name shows how many direct sub-users a user has.
 
 ![User hierarchies](/images/users-guide/enterprise-tenant/et-user-hierarchy.png)
 
-<a name="sub-users"></a>
+
 ### To create a sub-user
 
 User hierarchies are created by assigning an "owner" to a user. The owner can manage the user. The user can have at most the same permissions as the owner.
@@ -59,7 +59,7 @@ If you want an owner to manage only their sub-users, make sure that the owner do
 
 A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon with a notification that this operation is not permitted.
 
-<a name="delegate"></a>
+
 ### To delegate user hierarchies to other users
 
 In {{< product-c8y-iot >}}, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation. To do user management, the delegated user must have CREATE permission for the "User management" permission type, which can be granted by assigning a predefined global role "Shared User Manager" or by assigning a custom global role with this permission.
@@ -74,7 +74,7 @@ Either open the user and click the delegate icon in the **Delegated by** field, 
 
 Remove the delegation in the **Delegate by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Undelegate**.
 
-If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
+If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Assigning inventory roles to users](/standard-tenant/managing-permissions/#to-assign-inventory-roles-to-users).
 
 {{< c8y-admon-info >}}
 Delegation works only inside user management and does not have any implication to other places.

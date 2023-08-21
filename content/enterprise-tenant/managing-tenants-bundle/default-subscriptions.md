@@ -16,7 +16,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - Every existing tenant on platform upgrade.
 
 {{< c8y-admon-info >}}
-These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Overriding default subscriptions](#default-applications) below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Overriding default subscriptions](#to-override-default-subscriptions) or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:
@@ -53,7 +53,7 @@ Save the settings by clicking **Save** at the bottom of the page.
 Obsolete entries not matching any existing applications are removed on save. If an application selected in one of the lists has been removed, it will be silently ignored during tenant creation and/or platform upgrade. If another application with the same name is created afterwards (but before the settings on this page are saved again, which will remove the obsolete entry), the new application will be subscribed instead of the previous one.
 {{< /c8y-admon-info >}}
 
-<a name="default-applications"></a>
+
 ### To override default subscriptions
 
 The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:

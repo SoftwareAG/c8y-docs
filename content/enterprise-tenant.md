@@ -7,8 +7,5 @@ bundle: enterprise-tenant
 section:
   - platform_administration
 weight: 20
-aliases:
-  - /users-guide/enterprise-edition/
-  - /users-guide/enterprise-tenant/
 ---
 Various features are available in {{< enterprise-tenant >}}s on top of {{< standard-tenant >}} functionalities, such as creating and managing subtenants, or configuring a customized branding.

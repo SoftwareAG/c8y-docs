@@ -31,7 +31,7 @@ PREREQUISITES
 There are three prerequisites for using a custom domain:
 
 1. To activate your domain, a valid license that covers your wildcard domain is required.
-   Please contact [product support](/welcome/contacting-support/) to install a license for your domain.
+   Please contact [product support](/additional-resources/contacting-support/) to install a license for your domain.
 2. You've obtained a valid wildcard SSL certificate for your IoT domain, for
    example a certificate for *\*.iot.mycompany.com*.
 3. There is a valid DNS configuration for your domain which ensures that all requests to *\*.iot.mycompany.com* are

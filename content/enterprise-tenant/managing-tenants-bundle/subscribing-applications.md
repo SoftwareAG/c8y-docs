@@ -4,7 +4,6 @@ title: Subscribing applications
 layout: redirect
 ---
 
-<a name="subscribe"></a>
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard {{< product-c8y-iot >}} applications.
 
@@ -42,4 +41,4 @@ The following information is provided:
 Information on the microservice instance name and the number of restarts is displayed in case of at least one restart.
 {{< /c8y-admon-info >}}
 
-Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
+Further details are provided on the **Status** tab of the respective application, see [Managing applications](/standard-tenant/ecosystem/#managing-applications).

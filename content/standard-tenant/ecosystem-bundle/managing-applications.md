@@ -107,7 +107,7 @@ In the **Features** tab, you will find a list of all features subscribed in your
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/enterprise-tenant/user-hierarchies/" class="no-ajaxy">Feature-user-hierarchy</a></td>
+<td style="text-align:left"><a href="/enterprise-tenant/managing-user-hierarchies/" class="no-ajaxy">Feature-user-hierarchy</a></td>
 <td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>

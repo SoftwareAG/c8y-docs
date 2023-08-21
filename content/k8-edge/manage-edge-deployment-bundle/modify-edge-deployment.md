@@ -6,7 +6,7 @@ layout: redirect
 
 The {{< product-c8y-iot >}} Edge Kubernetes operator automates the deployment and management of {{< product-c8y-iot >}} Edge on Kubernetes. You can deploy and manage {{< product-c8y-iot >}} Edge on a Kubernetes cluster by updating {{< product-c8y-iot >}} Edge Custom Resource (CR). Specify the changes in the {{< product-c8y-iot >}} Edge CR file and use `kubectl apply -f` to apply the changes. The operator uses the CR file to deploy these changes. 
 
-For this example, assume that the Edge is deployed using the [Sample Cumulocity IoT Edge Manifest](/files/edge/cumulocity-iot-edge-manifest.yaml) file.
+For this example, assume that the Edge is deployed using the [Sample Cumulocity IoT Edge Manifest](/files/k8-edge/cumulocity-iot-edge-manifest.yaml) file.
 
 ### Example Configuration Change
 

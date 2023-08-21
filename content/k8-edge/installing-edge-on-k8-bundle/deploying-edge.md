@@ -8,15 +8,18 @@ To use the Edge Kubernetes operator to deploy Edge, create a Kubernetes manifest
 
 ### Configuring storage
 
-Before applying the manifest, ensure that the static [Persistent Volumes (PV)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) satisfy the Persistent Volume Claims (PVC) made by {{< product-c8y-iot >}} Edge are provisioned by your Kubernetes Cluster administrator or the Kubernetes cluster is configured with a Storage Class for dynamic provisioning to occur. You can specify the Storage Class in the `spec.storageClassName` field of the Edge CR. 
+Before applying the manifest, ensure that the static [Persistent Volumes (PVs)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) fulfill the requirements of the Persistent Volume Claims (PVCs) made by Cumulocity IoT Edge. These PVs should either be provisioned by the Kubernetes Cluster administrator or, in the case of dynamic provisioning, ensure that your Kubernetes cluster is configured with an appropriate Storage Class. To define the desired Storage Class, utilize the `spec.storageClassName` field within the Edge Custom Resource (CR). 
 
-Persistent Volumes required for satisfying the below three PVCs:
-- 75 GB, PVC named `mongod-data-edge-db-rs0-0` made by MongoDB server for persisting application data. 75 GB is default, and its value can be configured through the Edge CR field `spec.mongodb.resources.requests.storage`.
-- 10 GB, PVC named `microservices-registry-data` made by the private registry for persisting microservice images.
-- 5 GB, PVC named `edge-logs` made by the Edge logging component for persisting application and system logs.
+PVs required to satisfy the PVCs mentioned in the table below:
+
+|<div style="width:120px">Persistent volume</div>|<div style="width:250px">Persistent Volume Claim</div>|Description
+|:---|:---|:---
+|75 GB|`mongod-data-edge-db-rs0-0`|Claimed by the MongoDB server to retain application data. The default size is 75 GB, but this value can be adjusted using the `spec.mongodb.resources.requests.storage` field in the Edge CR.
+|10 GB|`microservices-registry-data`|Claimed by the private registry to store microservice images.
+|5 GB|`edge-logs`|Claimed by the Edge logging component for the storage of application and system logs.
 
 {{< c8y-admon-info >}}
-Ensure that the [Reclaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaiming) policy is set to [Retain](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#retain) to ensure that the associated storage asset in external infrastructure is not deleted when the PV is deleted.
+Ensure that the [Reclaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaiming) policy is set to [Retain](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#retain) to ensure that the associated storage asset within the external infrastructure remains intact even when the corresponding PV is deleted.
 {{< /c8y-admon-info >}}
 
 ### Deploy Edge

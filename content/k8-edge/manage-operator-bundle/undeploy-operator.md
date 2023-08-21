@@ -4,12 +4,9 @@ title: Undeploy operator
 layout: redirect
 ---
 
-Run this command for removing the Operator from your Kubernetes cluster.
+Run this command for removing the operator from your Kubernetes cluster.
 
 ```bash
-#
-# Undeploy the Cumulocity IoT Edge Kubernetes Operator.
-#
-helm uninstall edge-k8s-operator
+helm uninstall cumulocity-iot-edge-operator
 ```
 

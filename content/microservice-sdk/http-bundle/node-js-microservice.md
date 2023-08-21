@@ -300,7 +300,7 @@ $ zip node-microservice cumulocity.json image.tar
 The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the {{< product-c8y-iot >}} platform.
 Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Ecosystem** > **Microservices** and click **Add microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
-For more details about uploading a microservice ZIP file, refer to [Administration > Managing and monitoring microservices > Custom microservices](/users-guide/administration/#custom-microservices) in the *User guide*.
+For more details about uploading a microservice ZIP file, refer to [Custom microservices](/standard-tenant/ecosystem/#custom-microservices).
 
 ### Testing the microservice
 

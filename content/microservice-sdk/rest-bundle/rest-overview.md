@@ -15,11 +15,11 @@ With this API description you will learn how to use {{< product-c8y-iot >}}'s RE
 The description is closely linked to the {{< openapi >}}, which describes each interface in detail. Relevant secions in the {{< openapi >}} are in particular:
 
 - [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
-- [Device integrator library](/reference/device-integrator-library/) specifies the data model for device management.
-- [Sensor library](/reference/sensor-library/) specifies the data model for sensors and controls.
+- [Fragment library](/device-integration/fragment-library/) specifies the data model for device management.
+- [Sensor library](/concepts/domain-model/#sensor-library) specifies the data model for sensors and controls.
 
 If you develop applications using Java or C#, check these relevant sections for even more convenient access to {{< product-c8y-iot >}}'s functionality.
-For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-integration/rest) in *Device integration*.
+For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-integration/rest).
 
 
 ### Using the REST interfaces

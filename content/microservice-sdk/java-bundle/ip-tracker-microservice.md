@@ -446,7 +446,7 @@ Refer to [Application library](/web/libraries/#application-library).
 #### Run the Docker container
 
 The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application) if the following property is set `microservice.package.deleteImage=false`.
-As you have learned in our [Hello world tutorial](/microservice-sdk/java/#java-microservice), you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
+As you have learned in our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial), you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
 Note that in this case the isolation was changed to `PER_TENANT`.
 You can also use your Docker image name and tag to run it as follows:
 

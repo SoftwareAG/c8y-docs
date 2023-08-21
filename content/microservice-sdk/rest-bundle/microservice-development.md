@@ -441,9 +441,9 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 }
 ```
 
-Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device integrator library](/reference/device-integrator-library/) and in the [Sensor library](/reference/sensor-library/).
+Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [fragment library](/device-integration/fragment-library/) and in the [sensor library](/concepts/domain-model/#sensor-library).
 
-Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/rest) in *Device integration*).
+Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/rest)).
 
 Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
@@ -486,7 +486,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; cha
 
 #### Sending operations to devices
 
-To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/rest#device-integration) in *Device integration*.
+To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/rest#device-integration).
 
 ```http
 POST /devicecontrol/operations

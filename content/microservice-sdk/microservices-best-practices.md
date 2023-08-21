@@ -1,7 +1,7 @@
 ---
 title: Best practices
 layout: bundle
-section: 
+section:
   - app_development
 weight: 80
 ---
@@ -11,7 +11,7 @@ The following list is a collection of best practices you should take into consid
 
 #### Microservice SDK
 
-Whenever possible, use the {{< product-c8y-iot >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The {{< product-c8y-iot >}} Microservice SDK can be found [here](https://github.com/SoftwareAG/cumulocity-clients-java/tree/develop/microservice). See the relevant chapters of this guide for further instructions on the [SDK for Java](/microservice-sdk/java/) and the [SDK for C#](/microservice-sdk/cs/).
+Whenever possible, use the {{< product-c8y-iot >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The {{< product-c8y-iot >}} Microservice SDK can be found [here](https://github.com/SoftwareAG/cumulocity-clients-java/tree/develop/microservice). See the relevant chapters of this guide for further instructions on the [Microservice SDK for Java](/microservice-sdk/java/) and the [Microservice SDK for C#](/microservice-sdk/cs/).
 
 
 #### Disk I/O and local disk
@@ -31,22 +31,22 @@ It is not recommended to build a microservice that loads most of the functionali
 
 #### Resource consumption
 
-Resource consumption should be defined as necessary in the [microservice manifest](/microservice-sdk/concept/#manifest). Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started.
+Resource consumption should be defined as necessary in the [microservice manifest](/microservice-sdk/concept/#microservice-manifest). Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started.
 
 
 #### Scaling
 
-There is currently no way to influence load balancer behaviour for scaled microservices (for details on scaling see [General aspects > Isolation and scaling](/microservice-sdk/concept/#isolation-levels)). The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/concept/#manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
+There is currently no way to influence load balancer behaviour for scaled microservices, for details on scaling see [Isolation and scaling](/microservice-sdk/concept/#isolation-scaling). The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/concept/#microservice-manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
 
 
 #### Shared microservices
 
-When building microservices for multiple tenants, try to build them in the multi-tenant isolation level, see [General aspects > Isolation and scaling](/microservice-sdk/concept/#isolation-levels).
+When building microservices for multiple tenants, try to build them in the multi-tenant isolation level, see [Isolation and scaling](/microservice-sdk/concept/#isolation-scaling).
 
 
 #### Statefulness
 
-Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness as one of the requirements listed under [General concepts > Requirements and interactions](/microservice-sdk/concept/#requirements).
+Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness as one of the requirements listed under [Requirements and interactions](/microservice-sdk/concept/#requirements-interactions).
 
 
 #### Testing of microservices

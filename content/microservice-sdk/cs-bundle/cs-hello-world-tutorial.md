@@ -298,7 +298,7 @@ To show all the functions are available, type
 ./microservice.ps1 --help
 ```
 
-For further information refer to [General aspects > Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) in this guide.
+For further information refer to [Microservice utility tool](/microservice-sdk/concept/#microservice-utility-tool).
 
 **Deployment**
 
@@ -474,7 +474,7 @@ For further information, refer to [Device integration](/device-integration/).
 
 #### C# MQTT SDK
 
-It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-integration/mqtt-examples) in *Device integration*.
+It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-integration/mqtt-examples).
 
 
 ### Building and deploying on Linux
@@ -557,7 +557,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [General aspects > Packing](/microservice-sdk/concept/#packing) in this guide.
+For further information, refer to [Packing](/microservice-sdk/concept/#packing).
 
 **Deployment**
 

@@ -7,12 +7,12 @@ layout: redirect
 This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for C#, and it contains:
 
 *   [Prerequisites](#general-prerequisites) – Development and runtime requirements you must develop and run C# microservices.
-*   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
+*   [Hello world tutorial for C#](#cs-hello-world-tutorial) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
+*   [Troubleshooting](#cs-troubleshooting) – Some identified common problems and their solutions.
 <!-- *   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens. -->
-*   [Troubleshooting](#troubleshooting) – Some identified common problems and their solutions.
 
-To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial](#hello-world).
+To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial for C#](#cs-hello-world-tutorial).
 
 {{< c8y-admon-info >}}
 You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.

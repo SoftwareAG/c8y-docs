@@ -260,7 +260,7 @@ subscriber.disconnect();
 ### Subscribing to Notifications 2.0
 
 The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory).
-See [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details about the API.
+See [Notifications 2.0](https://cumulocity.com/guides/10.17.0/reference/notifications/) for more details about the API.
 
 The following snippet shows how users can create, query and delete notification subscriptions. It also shows how a token string can be obtained.
 
@@ -300,7 +300,7 @@ final NotificationTokenRequestRepresentation tokenRequestRepresentation = new No
         1440,                       // The token expiration duration in minutes.
         false);
 
-// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](/reference/notifications) in the *Reference guide* for more details.
+// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](https://cumulocity.com/guides/10.17.0/reference/notifications/) in the *Reference guide* for more details.
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
 
 // Query all subscriptions

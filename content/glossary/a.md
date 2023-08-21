@@ -11,7 +11,7 @@ section:
 The Administration application is one of the default applications of {{< product-c8y-iot >}}.
 The Administration application enables administrators to manage their tenants, users, roles and applications. It also allows them to configure various settings for their accounts.
 
-For details see [Standard tenant administration](/standard-tenant/).
+For details see [Platform administraion > Standard tenant administration](/standard-tenant/).
 
 
 ### Agent
@@ -30,19 +30,19 @@ Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](/
 
 See also [EPL Apps](/glossary/e/#epl-apps).
 
-For details see [Analytics Builder](/streaming-analytics/analytics-builder).
+For details see [Analytics > Streaming analytics > Analytics Builder](/streaming-analytics/analytics-builder).
 
 
 ### Application
 
-The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three main default applications: [Administration](#administration-application), [Cockpit](/glossary/c/#cockpit-application) and [Device Management](/glossary/d/#device-management-application).
+The {{< product-c8y-iot >}} User Interface (UI) is based on applications. By default, the {{< product-c8y-iot >}} UI consists of three main default applications: [Administration](/glossary/a/#administration-application), [Cockpit](/glossary/c/#cockpit-application) and [Device Management](/glossary/d/#device-management-application).
 
 {{< product-c8y-iot >}} is designed to accommodate arbitrary vertical IoT applications in addition to its generic functionality. These applications can have two forms:
 
 * web-based user interface applications (web applications)
 * server-side business logic through microservices (microservices)
 
-For details see [Developing applications](/concepts/applications/).
+For details see [Getting started > Technical concepts > Developing applications](/concepts/applications/).
 
 
 ### Application switcher
@@ -58,4 +58,4 @@ In {{< product-c8y-iot >}}, assets are organized in hierarchies which are compos
 * Groups: Objects which group single devices or other groups.
 * Devices: Devices which can be linked into the asset hierarchy, after being connected to {{< product-c8y-iot >}}.
 
-For details see [Managing assets](/cockpit/managing-assets).
+For details see [Application enablement & solutions > Cockpit > Managing assets](/cockpit/managing-assets).

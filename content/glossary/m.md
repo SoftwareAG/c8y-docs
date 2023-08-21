@@ -44,7 +44,7 @@ Microservices are server-side applications. Microservices can be used to develop
 
 Microservices are deployed as Container images to {{< product-c8y-iot >}}, and follow specific conventions. They typically provide one REST API, which is available under /service/<microservice-name> and access {{< product-c8y-iot >}} using this REST API.
 
-For details see [Microservices](/concepts/applications/#microservices).
+For details see [Getting started > Technical concepts > Developing applications > Microservices](/concepts/applications/#microservices).
 
 
 ### Model
@@ -59,11 +59,11 @@ The behavior of a block inside a model does not depend on other blocks. There ca
 
 {{< product-c8y-iot >}} supports MQTT, an OASIS standard messaging protocol, for device integration.
 
-For details see [Device integration using MQTT](/device-integration/mqtt).
+For details see [Device management > Device integration > Device integration using MQTT](/device-integration/mqtt).
 
 
 ### Multi-tenancy
 
 With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
-For details see [Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy).
+For details see [Getting started > Technical concepts > Tenant hierarchy > Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy).

@@ -10,7 +10,7 @@ section:
 
 The Cockpit application is one of the default applications of {{< product-c8y-iot >}}. It provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.
 
-For details see [Cockpit](/cockpit/).
+For details see [Application enablement & solutions > Cockpit](/cockpit/).
 
 
 ### Cumulocity IoT Core
@@ -22,7 +22,7 @@ For details see [Cockpit](/cockpit/).
 
 {{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} application for offloading data from the operational store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents.
 
-For details see [DataHub](/datahub/datahub-overview/).
+For details see [Analytics > DataHub](/datahub/datahub-overview/).
 
 <a name="c8y-edge"></a>
 ### Cumulocity IoT Edge
@@ -51,4 +51,4 @@ Using the Streaming Analytics application, you can add your own logic to your Io
 
 See also [Analytics Builder](/glossary/a/#analytics-builder) and [EPL Apps](/glossary/e/#epl-apps).
 
-For details see [Streaming Analytics](/streaming-analytics/overview-analytics/).
+For details see [Analytics > Streaming Analytics](/streaming-analytics/overview-analytics/).

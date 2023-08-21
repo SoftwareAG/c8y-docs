@@ -15,7 +15,7 @@ A {{< product-c8y-iot >}} web application can be:
 
 All subscribed web applications are hosted by {{< product-c8y-iot >}} and the application will be made available through a URL like this: <tenant>.cumulocity.com/apps/<application>.
 
-For details see [Web applications](/concepts/applications/#web-applications).
+For details see [Getting started > Technical concepts > Developing applications > Web applications](/concepts/applications/#web-applications).
 
 
 ### Web SDK
@@ -27,14 +27,14 @@ The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that
 * apply default or
 * branded UI components to your custom application.
 
-For details see the [Web SDK](/web/overview/).
+For details see the [Application enablement & solutions > Web SDK](/web/overview/).
 
 
 ### Widgets
 
 Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes.
 
-For details see [Widgets collection](/cockpit/widgets-collection) and [Using widgets in dashboards and reports](/cockpit/using-widgets).
+For details see [Application enablement & solutions > Cockpit > Widgets collection](/cockpit/widgets-collection) and [Application enablement & solutions > Cockpit > Using widgets in dashboards and reports](/cockpit/using-widgets).
 
 
 ### Wires

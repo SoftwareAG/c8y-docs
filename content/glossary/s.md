@@ -12,14 +12,14 @@ section:
 {{< product-c8y-iot >}} includes a sensor library to model specific sensing and controlling skills across device products. A single device can have many sensor and control characteristics. The sensor library covers basic sensors and controls, and is supported by the {{< product-c8y-iot >}} client libraries. It also enables writing powerful generic IoT software plugins.
 Technically, the sensor library defines standard fragments for inventory, measurements, events and device control, following the naming convention.
 
-For details see [Sensor library](/concepts/domain-model/#sensor-library) and [Inventory](/concepts/domain-model/#inventory).
+For details see [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model > Sensor library](/concepts/domain-model/#sensor-library) and [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model > Inventory](/concepts/domain-model/#inventory).
 
 
 ### Smart rules
 
 {{< product-c8y-iot >}} includes a rule engine to analyze data in realtime and to perform actions based on data. To easily create rules, the Cockpit application includes a “smart rules” builder which allows you to create rules from templates (so-called smart rule templates).
 
-For details see [Smart rules](/cockpit/smart-rules).
+For details see [Application enablement & solutions > Cockpit > Smart rules](/cockpit/smart-rules).
 
 
 ### Standard tenant
@@ -38,4 +38,4 @@ The application concept of {{< product-c8y-iot >}} includes a basic application 
 Tenants can be subscribed to applications which have been deployed by their superior tenant ({{< management-tenant >}} or {{< enterprise-tenant >}}).
 Granting access to subtenants and subscribing to applications is done in the Administration application.
 
-For details see [Application subscription](/concepts/applications/#subscription) and [Administration > Managing applications](/standard-tenant/ecosystem/#managing-applications).
+For details see [Getting started > Technical concepts > Developing applications > Application subscription](/concepts/applications/#subscription) and [Platform administration > Standard tenant administration > Managing the ecosystem > Managing applications](/standard-tenant/ecosystem/#managing-applications).

@@ -17,4 +17,4 @@ Role type in the permission concept of {{< product-c8y-iot >}}. Inventory roles 
 
 See also [Global roles](/glossary/g/#global-roles) and [Permissions](/glossary/p/#permissions).
 
-For details see [Inventory roles](/standard-tenant/managing-permissions/#inventory-roles).
+For details see [Platform administration > Standard tenant administration > Managing permissions > Inventory roles](/standard-tenant/managing-permissions/#inventory-roles).

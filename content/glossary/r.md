@@ -11,7 +11,7 @@ section:
 
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, that is, Apama’s Event Processing Language (EPL).
 
-For details see [Real-time processing](/concepts/realtime/).
+For details see [Getting started > Technical concepts > Real-time processing](/concepts/realtime/).
 
 
 ### REST

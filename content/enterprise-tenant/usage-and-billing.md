@@ -140,7 +140,7 @@ The following information is provided for each subtenant (not completely visible
 
 Moreover custom properties are displayed, if configured.
 
-Custom properties may be defined in the [Properties library](/standard-tenant/changing-settings/#properties-library) and then set their values in the [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties) tab of the tenant.
+Custom properties may be defined in the [properties library](/standard-tenant/changing-settings/#properties-library) and then set their values in the [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties) tab of the tenant.
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Apply**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 

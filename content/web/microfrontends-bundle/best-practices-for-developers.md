@@ -260,7 +260,7 @@ For plugin developers who want to always provide the most compatible version of 
 #### How to use repository connect
 
 Repository connect is a microservice which synchronizes plugins or blueprints with an instance of the {{< product-c8y-iot >}} platform.
-It must be installed on the management tenant and you can connect multiple repositories.
+It must be installed on the {{< management-tenant >}} and you can connect multiple repositories.
 Currently, only our Software AG public GitHub is connected.
 You can participate and share blueprints or plugins in multiple ways:
  1. Contribute to our open source plugins. A list can be found in our [{{< product-c8y-iot >}} GitHub packages](https://github.com/topics/cumulocity-package). There is an [official repository]({{< link-sag-community-plugins >}}) which is managed by the internal R&D team of {{< product-c8y-iot >}}.
@@ -268,7 +268,7 @@ You can participate and share blueprints or plugins in multiple ways:
  3. Ask our product manager to add your repository as a partner repository.
 
 {{< c8y-admon-info >}}
-This is only needed if you want to share an application with every {{< product-c8y-iot >}} customer. If you want to share a package with your customers (for example on an enterprise tenant) you can simply upload them in the Packages view and set the availability to 'shared'.
+This is only needed if you want to share an application with every {{< product-c8y-iot >}} customer. If you want to share a package with your customers (for example on an {{< enterprise-tenant >}}) you can simply upload them in the Packages view and set the availability to 'shared'.
 {{< /c8y-admon-info >}}
 
 For synchronization the micro services searches for all repositories with a certain topic and a release (for {{< company-sag >}} it's `cumulocity-package`).

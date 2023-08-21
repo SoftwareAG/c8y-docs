@@ -27,16 +27,16 @@ On tenant creation there are default roles available that can be used as sample 
 * Tenant Manager - manages tenant-wide configurations like applications, tenant options and business rules.
 
 Note that for complete application management some additional permission types with different permission levels might be required per feature, for example:
-* [Default subscriptions](/enterprise-tenant/managing-tenants/#default-subscriptions) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Option management" permission type.
-* [Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) for the Enterprise tenant additionally requires READ and ADMIN permissions for the "Tenant management" permission type.
+* [Default subscriptions](/enterprise-tenant/managing-tenants/#default-subscriptions) for the {{< enterprise-tenant >}} additionally requires READ and ADMIN permissions for the "Option management" permission type.
+* [Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) for the {{< enterprise-tenant >}} additionally requires READ and ADMIN permissions for the "Tenant management" permission type.
 
 {{< /c8y-admon-req >}}
 
 
 {{< c8y-admon-related >}}
-- [Platform administration > Standard tenant administration > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions for the usage of {{< product-c8y-iot >}} applications.
-- [Platform administration > Standard tenant administration > Changing settings > Application](/standard-tenant/changing-settings/#application-settings) for information on changing the application settings for your account.
-- [Platform administration > Enterprise tenant administration > Managing tenants > Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) for information on application subscriptions on tenant level.
+- [Platform administration > {{< standard-tenant >}} administration > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions for the usage of {{< product-c8y-iot >}} applications.
+- [Platform administration > {{< standard-tenant >}} administration > Changing settings > Application](/standard-tenant/changing-settings/#application-settings) for information on changing the application settings for your account.
+- [Platform administration > {{< enterprise-tenant >}} administration > Managing tenants > Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) for information on application subscriptions on tenant level.
 - [Application enablement & solutions > Cockpit > Widgets collection > Applications](/cockpit/widgets-collection/#applications) for information on the "Applications" widget.
 - [Getting started > Technical concepts > Developing applications](/concepts/applications) for an overview on the basic concepts of applications in {{< product-c8y-iot >}}.
 - [Application enablement & solutions > Web SDK](/web/overview) for information on how to develop web applications on top of {{< product-c8y-iot >}} and how to [customize](/web/application-configuration) or [extend](/web/tutorials/#extend-an-existing-application) existing applications using the Web SDK.

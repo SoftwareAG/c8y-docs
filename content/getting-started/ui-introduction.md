@@ -14,6 +14,6 @@ In the entire documentation you find detailed description on the usage of the re
 
 If you are specifically interested in the usage of the standard platform applications, refer to:
 
-- [Platform administration > Standard tenant administration](/standard-tenant/) and [Platform administration > Enterprise tenant administration](/enterprise-tenant/) for details an the Administration application.
+- [Platform administration > {{< standard-tenant >}} administration](/standard-tenant/) and [Platform administration > {{< enterprise-tenant >}} administration](/enterprise-tenant/) for details an the Administration application.
 - [Device management > Device management application](/device-management-application/) for details an the Device management application.
 - [Application enablement & solutions > Cockpit](/cockpit/) for details on the Cockpit application.

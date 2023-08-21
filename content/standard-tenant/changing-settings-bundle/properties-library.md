@@ -27,7 +27,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 {{< c8y-admon-related >}}
 - [Application enablement & solutions > Cockpit > Widgets collection](/cockpit/widgets-collection) for further information on the usage of properties in the "Asset table" and "Asset properties" widgets.
 - [Application enablement & solutions > Cockpit > Managing exports](/cockpit/exports) for further information on the usage of properties in reports and exports.
-- [Platform administration > Enterprise tenant administration > Managing tenants > To create a subtenant](/enterprise-tenant/managing-tenants/#to-create-a-subtenant) for further information on custom tenant properties.
+- [Platform administration > {{< enterprise-tenant >}} administration > Managing tenants > To create a subtenant](/enterprise-tenant/managing-tenants/#to-create-a-subtenant) for further information on custom tenant properties.
 {{< /c8y-admon-related >}}
 
 <a name="add-property"></a>

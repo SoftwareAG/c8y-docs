@@ -6,7 +6,7 @@ section:
   - getting_started
 ---
 
-{{< product-c8y-iot >}} comes with several [applications subscribed per default](/standard-tenant/ecosystem/#applications-subscribed-by-default).
+{{< product-c8y-iot >}} comes with several [applications subscribed by default](/standard-tenant/ecosystem/#applications-subscribed-by-default).
 
 Apart from the applications that initially come with {{< product-c8y-iot >}}, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the tenant you are using and the applications your organization is subscribed to.
 

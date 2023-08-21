@@ -6,9 +6,7 @@ section:
   - platform_administration
 ---
 
-Click **Add application** at the top right of the **Applications** tab to add a custom application.
-
-Custom applications may be:
+**Custom applications** may be:
 
 * Web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard).
 * Links to an application running elsewhere.
@@ -17,6 +15,8 @@ Custom applications may be:
 {{< c8y-admon-info >}}
 In the **Applications** tab, custom applications are labeled as "Custom".
 {{< /c8y-admon-info >}}
+
+Click **Add application** at the top right of the **Applications** tab to add a custom application.
 
 In the resulting dialog box, select one of the following methods:
 

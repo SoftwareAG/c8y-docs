@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 90
 title: Monitoring the Edge metrics
 layout: bundle
 section:

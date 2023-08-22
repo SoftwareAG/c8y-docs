@@ -1,5 +1,5 @@
 ---
-weight: 52
+weight: 60
 title: Configuring Apama
 layout: bundle
 section:

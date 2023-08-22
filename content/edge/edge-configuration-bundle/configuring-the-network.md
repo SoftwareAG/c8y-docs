@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 10
 title: Configuring the network
 layout: bundle
 section:

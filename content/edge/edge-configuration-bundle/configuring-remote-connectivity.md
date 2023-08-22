@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 45
 title: Configuring remote connectivity
 layout: bundle
 section:

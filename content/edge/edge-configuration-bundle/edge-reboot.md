@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 95
 title: Restarting the Edge appliance
 layout: bundle
 section:

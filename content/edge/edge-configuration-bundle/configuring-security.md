@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 30
 title: Configuring security
 layout: bundle
 section:

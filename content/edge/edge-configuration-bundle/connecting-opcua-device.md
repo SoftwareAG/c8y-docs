@@ -1,5 +1,5 @@
 ---
-weight: 65
+weight: 75
 title: Connecting an OPCUA device
 layout: bundle
 section:

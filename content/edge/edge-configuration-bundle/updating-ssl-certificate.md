@@ -1,5 +1,5 @@
 ---
-weight: 36
+weight: 40
 title: Updating the SSL certificate
 layout: bundle
 section:

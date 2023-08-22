@@ -1,6 +1,6 @@
 ---
 title: Diagnostics and support
-weight: 90
+weight: 60
 layout: bundle
 section:
   - edge_server

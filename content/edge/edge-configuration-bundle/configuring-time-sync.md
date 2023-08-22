@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 20
 title: Configuring the time synchronization
 layout: bundle
 section:

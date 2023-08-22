@@ -1,5 +1,5 @@
 ---
-weight: 55
+weight: 70
 title: Branding
 layout: bundle
 section:

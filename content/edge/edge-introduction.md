@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT Edge introduction
+title: Introduction
 weight: 10
 layout: bundle
 section:

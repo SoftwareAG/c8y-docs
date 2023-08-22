@@ -1,5 +1,5 @@
 ---
-title: Configuring Edge
+title: Configuring Cumulocity IoT Edge
 weight: 40
 layout: bundle
 section:

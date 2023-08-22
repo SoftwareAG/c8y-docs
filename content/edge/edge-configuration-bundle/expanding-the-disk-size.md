@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 92
 title: Expanding the disk size
 layout: bundle
 section:

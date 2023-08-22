@@ -1,5 +1,5 @@
 ---
-weight: 51
+weight: 55
 title: Configuring OPCUA
 layout: bundle
 section:

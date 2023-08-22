@@ -1,5 +1,5 @@
 ---
-weight: 45
+weight: 15
 title: Configuring the hostname
 layout: bundle
 section:

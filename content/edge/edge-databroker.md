@@ -1,6 +1,6 @@
 ---
 title: Data broker
-weight: 60
+weight: 70
 layout: bundle
 section:
   - edge_server

@@ -1,5 +1,5 @@
 ---
-title: Remote connectivity
+title: Connecting Cumulocity IoT Edge to the cloud
 weight: 50
 layout: bundle
 section:

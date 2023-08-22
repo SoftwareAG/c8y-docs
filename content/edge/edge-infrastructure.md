@@ -1,5 +1,5 @@
 ---
-title: Setting up the infraestructure
+title: Configuring the Edge infrastructure
 weight: 20
 layout: bundle
 section:

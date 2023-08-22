@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 65
 title: Updating Edge using the UI
 layout: bundle
 section:

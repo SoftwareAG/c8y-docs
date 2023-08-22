@@ -8,7 +8,7 @@ To use the Edge Kubernetes operator to deploy Edge, create a Kubernetes manifest
 
 ### Configuring storage
 
-Before applying the manifest, ensure that the static [Persistent Volumes (PVs)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) fulfill the requirements of the Persistent Volume Claims (PVCs) made by Cumulocity IoT Edge. These PVs should either be provisioned by the Kubernetes Cluster administrator or, in the case of dynamic provisioning, ensure that your Kubernetes cluster is configured with an appropriate Storage Class. To define the desired Storage Class, utilize the `spec.storageClassName` field within the Edge Custom Resource (CR). 
+Before applying the manifest, ensure that the static [Persistent Volumes (PVs)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) fulfill the requirements of the Persistent Volume Claims (PVCs) made by Cumulocity IoT Edge. These PVs should either be provisioned by the Kubernetes Cluster administrator or, in the case of dynamic provisioning, ensure that your Kubernetes cluster is configured with an appropriate Storage Class. You can specify the StorageClass to the Edge Operator by configuring the `spec.storageClassName` field in the Edge Custom Resource (CR) 
 
 PVs required to satisfy the PVCs mentioned in the table below:
 

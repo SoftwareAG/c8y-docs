@@ -17,7 +17,7 @@ To upgrade the Edge deployment, change the `sepc.version` field in the Edge CR f
 Save the manifest file, then use `kubectl` to apply the change.
 
 ```bash
-kubectl apply -f cumulocity-iot-edge-manifest-UPDATED.yaml
+kubectl patch -f cumulocity-iot-edge-manifest-UPDATED.yaml
 ```
 
 To verify the Edge deployment, see [Verify Edge deployment](/k8-edge/installing-edge-on-k8/#verify-edge-deployment).

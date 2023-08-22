@@ -1,12 +1,9 @@
 ---
 title: Data broker
-icon: "dlt-c8y-icon-box-settings"
-type: root
-layout: redirect
-bundle: edge-databroker
+weight: 60
+layout: bundle
 section:
   - edge_server
-weight: 15
 ---
 
 Find out about the installation of the Messaging Service and the microservice-based data broker on {{< product-c8y-iot >}} Edge.

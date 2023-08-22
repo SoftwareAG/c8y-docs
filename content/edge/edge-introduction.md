@@ -1,12 +1,9 @@
 ---
-title: Introduction
-icon: "c8y-icon c8y-icon-cumulocity-iot"
-type: root
-layout: redirect
-bundle: edge-server
+title: Cumulocity IoT Edge introduction
+weight: 10
+layout: bundle
 section:
   - edge_server
-weight: 10
 ---
 
 Learn about the conceptual aspects of {{< product-c8y-iot >}} Edge, the single-server variant of the {{< product-c8y-iot >}} platform.

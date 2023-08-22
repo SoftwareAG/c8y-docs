@@ -1,12 +1,9 @@
 ---
 title: Configuring Edge
-icon: "dlt-c8y-icon-settings"
-type: root
-layout: redirect
-bundle: edge-configuration
+weight: 40
+layout: bundle
 section:
   - edge_server
-weight: 13
 ---
 
 Learn how to configure many different aspects of {{< product-c8y-iot >}} Edge.

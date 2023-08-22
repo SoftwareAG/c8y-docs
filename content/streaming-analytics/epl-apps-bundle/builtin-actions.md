@@ -31,7 +31,7 @@ The events listed in the following table are part of the `com.apama.cumulocity` 
 |CurrentUser|CurrentUser <br/>GetCurrentUser <br/>GetCurrentUserResponse|[Example]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_getting_user_details.html)|
 |TenantOption|TenantOption <br/>FindTenantOptions  <br/>FindTenantOptionsResponse|[Documentation]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_finding_tenant_options.html)|
 
-<a name="other-parts"></a>
+<a id="other-parts"></a>
 ### Invoking other parts of the {{< product-c8y-iot >}} REST API
 
 The {{< product-c8y-iot >}} REST API covers some extra functionality which is not covered with the individual event types. To invoke any other part of the REST API, a generic request-response API is provided which you can use to invoke any part of the {{< product-c8y-iot >}} API.

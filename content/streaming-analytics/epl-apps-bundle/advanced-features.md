@@ -63,7 +63,7 @@ This will result in the following JSON structure:
 }
 ```
 
-<a name="measurement_fragments_advanced"></a>
+<a id="measurement-fragments-advanced"></a>
 ### Measurement fragments
 
 A measurement can be broken into individual measurement fragments. This can be done for each fragment and series present in the measurement.

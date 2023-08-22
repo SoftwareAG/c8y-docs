@@ -23,7 +23,7 @@ If you do not see the **EPL Apps** page in the Streaming Analytics application a
 An EPL app has the ability to make nearly arbitrary changes to the objects in a tenant, whether that's inventory, alarms or many other sorts of object. A user who has ADMIN permission for "CEP management" is able to create and activate EPL apps and thus also has almost full control over the current tenant. Therefore, you should be careful about which users on the tenant have this permission.
 {{< /c8y-admon-caution >}}
 
-<a name="epl-apps"></a>
+<a id="epl-apps"></a>
 #### Developing apps with the Streaming Analytics application
 
 The **EPL Apps** page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
@@ -86,7 +86,7 @@ Once your app is activated, you should be able to see the results of it running.
 
 See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
-<a name="sag-designer"></a>
+<a id="sag-designer"></a>
 #### Developing apps with {{< sag-designer >}}
 
 {{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
@@ -188,7 +188,7 @@ You can deploy the following to {{< product-c8y-iot >}}:
 In the Streaming Analytics application, the term "activate" is used for deploying an app.
 {{< /c8y-admon-info >}}
 
-<a name="single-mon-file"></a>
+<a id="single-mon-file"></a>
 #### Deploying EPL apps as single \*.mon files with the Streaming Analytics application
 
 When an EPL app (that is, a \*.mon file) is activated in {{< product-c8y-iot >}}, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you must share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
@@ -199,7 +199,7 @@ When any EPL app signals a runtime error, this will be raised as an alarm. Runti
 
 For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the Apama-ctrl microservice. See [Monitoring microservices](/standard-tenant/ecosystem/#log-files) for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
-<a name="deploying-as-microservice"></a>
+<a id="deploying-as-microservice"></a>
 #### Deploying Apama applications as microservices
 
 Using {{< sag-designer >}}, you can also develop more complex projects which:
@@ -633,7 +633,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 | 200  | Successfully deleted.                                        |
 | 404  | File with identifier not found. See also the [example value for this response code](#example-404) at the end of this section. |
 
-<a name="example-404"></a>
+<a id="example-404"></a>
 #### Example value for response code 404
 The response code 404 indicates that a file with a specific identifier was not found.
 
@@ -719,9 +719,9 @@ on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_spe
 }
 ```
 
-See also [Measurement fragments](/streaming-analytics/epl-apps/#measurement_fragments_advanced).
+See also [Measurement fragments](/streaming-analytics/epl-apps/#measurement-fragments-advanced).
 
-<a name="notifications"></a>
+<a id="notifications"></a>
 #### Distinguishing between create and update notifications
 
 When listening for `Alarm`, `Event`, `ManagedObject` or `Operation` events from {{< product-c8y-iot >}}, you may want to to distinguish between create and update operations. Each of these event types have actions named `isCreate()` and `isUpdate()` for this purpose.

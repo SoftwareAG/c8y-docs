@@ -14,7 +14,7 @@ In case you let the {{< product-c8y-iot >}} Edge use the internally generated TL
 kubectl --namespace cumulocityiotedge-operator-system get secrets internal-generated-tls-certificates --output jsonpath='{ .data.ca\.crt }' | base64 -d
 ```
 
-Once registered, you can access your Edge remotely, monitor its metrics and collect diagnostic data remotely.
+Once registered, you can access your Edge remotely as a device, monitor its metrics, upgrade its version and collect diagnostic data remotely.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

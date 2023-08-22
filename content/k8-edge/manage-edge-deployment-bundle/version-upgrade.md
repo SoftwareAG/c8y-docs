@@ -21,3 +21,7 @@ kubectl patch -f cumulocity-iot-edge-manifest-UPDATED.yaml
 ```
 
 To verify the Edge deployment, see [Verify Edge deployment](/k8-edge/installing-edge-on-k8/#verify-edge-deployment).
+
+### Upgrade Edge remotely
+
+For information about updating Edge remotely, see [Upgrading Edge remotely](/k8-edge/k8-edge-connecting-edge-to-cloud/#k8-edge-upgrading-edge-remotely).

@@ -14,10 +14,6 @@ aliases:
 ---
 
 
-{{< c8y-admon-related >}}
-- The [Streaming Analytics guide](/streaming-analytics/overview-streaming-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
-{{< /c8y-admon-related >}}
-
 The export functionality lets you export specific data to either CSV or Excel files.
 
 {{< c8y-admon-req >}}
@@ -145,7 +141,7 @@ The export schedule will be added to the export details.
 
 ##### Migration of scheduled exports
 
-With version 10.6.2, a new report agent has been implemented to allow scheduled reports with the [Streaming Analytics](/streaming-analytics/overview-streaming-analytics/) application. The export schedules functionality based on smart rules has been deprecated.
+With version 10.6.2, a new report agent has been implemented to allow scheduled exports. The export schedules functionality based on smart rules has been deprecated.
 
 On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
 

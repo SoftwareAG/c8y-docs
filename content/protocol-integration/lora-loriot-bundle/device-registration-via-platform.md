@@ -64,7 +64,7 @@ In the next window, fill in the required information:
 - **Application key** - this is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 - **Connection** - lists all configured Loriot connections in the tenant. The **Application name** option (see below) is populated based on the selected Loriot connection.
 - **Application name** - select the appropriate application name under which the device must be registered in the Loriot provider.
-- **Device protocol** - select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#create-loriot-device-protocols).
+- **Device protocol** - select the appropriate device protocol from the dropdown list. For more information on how to create a device protocol refer to [Creating device protocols](#loriot-creating-device-protocols).
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-registration.png)
 

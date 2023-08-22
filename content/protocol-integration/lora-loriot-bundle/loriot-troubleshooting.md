@@ -15,4 +15,4 @@ Make sure that the **Gateway Information** is enabled in LORIOT Network Server s
 #### Device type error warning
 
 The warning message "Device type error" shows up in the log if no device protocol has been assigned to the device.
-To assign a device protocol refer to the section [Assign the Loriot LoRa device protocol](#assign-loriot-device-protocol).
+To assign a device protocol refer to the section [Assign the Loriot LoRa device protocol](#assigning-loriot-device-protocol).

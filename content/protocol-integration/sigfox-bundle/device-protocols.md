@@ -7,7 +7,7 @@ layout: redirect
 
 To process data from Sigfox devices, {{< product-c8y-iot >}} needs to understand the payload format of the devices. Mapping payload data to {{< product-c8y-iot >}} data can be done by creating a Sigfox device protocol.
 
-During the [device registration](#register-device-sigfox), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
+During the [device registration](#registering-sigfox-devices), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
 The device protocol assigned during Sigfox device registration can be changed from the **LPWAN** tab in the device details page.
 

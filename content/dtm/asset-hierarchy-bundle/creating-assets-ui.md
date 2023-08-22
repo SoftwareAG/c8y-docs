@@ -8,7 +8,6 @@ You have two options for creating assets in the DTM application.
 The following section describes how to create an asset via the UI.
 Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.
 
-<a name="create-asset"></a>
 ### To create an asset
 
 To add an asset via the UI:
@@ -25,14 +24,14 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 
 3. The asset hierarchy is shown in the left section and the respective dialog window is shown on the right. Fill out the fields labeled "required".
 
-4. Optionally, add a description or [assign devices](#assign-devices-to-asset) to your root asset.
+4. Optionally, add a description or [assign devices](#to-assign-devices-to-an-asset) to your root asset.
 
 5. To add more than one root asset, click **Add**.
 
 6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
 
     {{< c8y-admon-info>}}
- The asset properties are defined when [creating the asset model](/dtm/asset-types/#create-asset-model).
+ The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
  When creating an asset you must provide the values for all asset properties.
     {{< /c8y-admon-info>}}
 
@@ -64,7 +63,6 @@ Fill out all required fields.
 You have the option to add more assets on this level.
 Click **Next** to continue until all assets are created.
 
-<a name="assign-devices-to-asset"></a>
 ### To assign devices to an asset
 
 When you create a new asset you have the option of assigning one or more devices to this asset.
@@ -83,8 +81,6 @@ Only select devices which are part of the current asset.
 If a device belongs to a subasset, then select it when you create the subasset.
 {{< /c8y-admon-info>}}
 
-
-<a name=""></a>
 #### To filter and select devices
 
 You can view, search or filter devices easily with the following options:
@@ -99,8 +95,6 @@ You can view, search or filter devices easily with the following options:
 
 5. To clear the filters, click **Clear all filters**. To see the sort icon and the filter icons hover over each column.
 
-
-<a name=""></a>
 ### To add multiple instances of an asset
 
 At each hierarchy level, you can create multiple assets from a single asset model.
@@ -125,14 +119,12 @@ On successful asset hierarchy creation, you see a pop-up notification in the top
 You can view the newly created asset hierarchy in the **Assets** page.
 Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 
-
-<a name=""></a>
 ### To view asset details
 
 Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
 It shows all the subassets, child devices and asset properties.
 
-In the top right corner of the **Subassets** tab, you can [assign devices](#assign-devices-to-asset).
+In the top right corner of the **Subassets** tab, you can [assign devices](#to-assign-devices-to-an-asset).
 
 ![Subassets](/images/dtm/assets/dtm-assets-subassets-page.png)
 
@@ -142,7 +134,6 @@ Click **Add asset** to add more subassets or click **Import assets** to add [ass
 
 ![Asset tree](/images/dtm/assets/dtm-assets-asset-tree-page.png)
 
-<a name="add-child-assets"></a>
 #### To add subassets
 
 To add subassets to an asset open the **Asset tree** tab.
@@ -160,7 +151,7 @@ If you navigate to the **Asset tree** page of "Wind turbine" and click **Add ass
 
 If you navigate to the existing "Rotor" asset and want to add a subasset, you can only add subassets for "Blade".
 
-For details on how to add assets in the asset hierarchy, see [To create an asset](#create-asset).
+For details on how to add assets in the asset hierarchy, see [To create an asset](#to-create-an-asset).
 
 {{< c8y-admon-info>}}
 If you are at the end of the hierarchy, you see no further option to create subassets.

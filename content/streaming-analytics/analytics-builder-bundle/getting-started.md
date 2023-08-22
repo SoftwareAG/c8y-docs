@@ -16,13 +16,13 @@ Analytics Builder consists of the following tools:
 -   Model editor. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *Block Reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
 -   Instance editor. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
-The blocks are implemented in the Event Processing Language \(EPL\) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
+The blocks are implemented in the Event Processing Language (EPL) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
 
 ### First Steps: Creating your first model
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed \(see [{{< sensor-app >}}](/sensor-app/overview/) for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
 
 The model that you add will contain three blocks:
 
@@ -132,7 +132,7 @@ A card for the newly added model is shown on the **Models** tab of the model man
 
 #### Step 9: Go to the Device management and view the measurements
 
-To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management](/section/device_management/) for detailed information.
+To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management](/device-management-application/) for detailed information.
 
 1.  Go to the Device management application.
 
@@ -151,7 +151,7 @@ This topic gives a brief overview of how to create a model from a sample. It is 
 
 This topic is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed \(see [{{< sensor-app >}}](/sensor-app/overview/) for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
 
 The following image shows the blocks that are defined in the **On missing measurements create alarm** sample.
 
@@ -244,7 +244,7 @@ For our example case with the gyroscope measurements from a smartphone, it shoul
 #### Step 6: Go to the Device management application and view the alarms
 
 To view the alarms that are sent from your active instance, you have to switch to the Device management application.
-See [Device management](/section/device_management/) for detailed information.
+See [Device management](/device-management-application/) for detailed information.
 
 1.  Go to the Device management application.
 

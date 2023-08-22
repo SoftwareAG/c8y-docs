@@ -82,7 +82,7 @@ All unsaved changes are lost when you navigate to a different URL or close the b
 
 ##### Step 3 - Test the EPL app
 
-Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
+Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
 
 See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
@@ -147,7 +147,7 @@ CUMULOCITY_APPKEY=apamaAppKey
 ```
 
 {{< c8y-admon-info >}}
-You must [create an application](/standard-tenant/ecosystem/#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
+You must [create an application](/standard-tenant/ecosystem/#adding-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
 {{< /c8y-admon-info >}}
 
 Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:
@@ -268,7 +268,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
     You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< sag-designer >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
 
-5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
+5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
 {{< c8y-admon-info >}}
 After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains.

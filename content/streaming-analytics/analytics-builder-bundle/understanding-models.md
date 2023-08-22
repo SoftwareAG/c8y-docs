@@ -86,7 +86,7 @@ An output block is a special type of block that receives data from a connected p
 
 You can specify a **Trigger Device** for an output block. This is a special device which can be used to send the output back to the device which triggered the output. Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
-Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages \(see also [SMS provider](/standard-tenant/changing-settings/#sms-provider)\). Unlike the other blocks, these are not associated with devices within the {{< product-c8y-iot >}} platform.
+Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages, see also [SMS provider](/standard-tenant/changing-settings/#sms-provider). Unlike the other blocks, these are not associated with devices within the {{< product-c8y-iot >}} platform.
 
 #### Processing blocks
 

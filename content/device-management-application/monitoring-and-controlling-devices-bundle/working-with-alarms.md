@@ -82,7 +82,7 @@ In each row, the following information for an alarm is provided:
 
 Click the arrow on the right of a row to expand it and display further details on the alarm.
 
-* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Alarm mapping](/standard-tenant/business-rules/#alarms).
+* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Alarm mapping](/standard-tenant/alarm-mapping/).
 * **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
 
 ### To change the status of an alarm

@@ -18,7 +18,7 @@ After you have made all required changes, package the modified copies into a ZIP
 - *files/support/cumulocity/EN/documentation.json*
 - *cumulocity.json*
 
-where the *cumulocity.json* file contains the following:
+The *cumulocity.json* file contains the following:
 
 ```
 {

@@ -63,8 +63,8 @@ This will result in the following JSON structure:
 }
 ```
 
-<a id="measurement-fragments-advanced"></a>
-### Measurement fragments
+
+### Measurement fragments {#measurement-fragments-advanced}
 
 A measurement can be broken into individual measurement fragments. This can be done for each fragment and series present in the measurement.
 See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/) for more information on measurement fragments.

@@ -53,8 +53,8 @@ Once the cause of an alarm is resolved, you must acknowledge and clear the alarm
 The alarm texts for the alarms below may undergo minor changes in the future.
 {{< /c8y-admon-info >}}
 
-<a id="tenant_option_change"></a>
-#### Change in tenant options and restart of Apama-ctrl
+
+#### Change in tenant options and restart of Apama-ctrl {#tenant_option_change}
 
 This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
@@ -66,8 +66,8 @@ Analytics Builder allows you to configure its settings by changing the tenant op
 
 Once you see this alarm, you can be sure that your change is effective.
 
-<a id="apama_safe_mode"></a>
-#### Safe mode on startup
+
+#### Safe mode on startup {#apama_safe_mode}
 
 This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 
@@ -95,8 +95,8 @@ See [Audit logs](/standard-tenant/audit-logs) and
 
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 
-<a id="apama_ctrl_starter"></a>
-#### Deactivating models in the Apama-ctrl-starter microservice
+
+#### Deactivating models in the Apama-ctrl-starter microservice {#apama_ctrl_starter}
 
 This alarm is raised when Apama-ctrl switches from the fully capable microservice to the Apama-ctrl-starter microservice with more than 3 active models.
 
@@ -159,8 +159,8 @@ If the memory continues to grow, then when it reaches the limit, the correlator 
 
 See also [Diagnostic tools for Apama in Cumulocity IoT](https://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in {{< company-sag >}}'s {{< sag-dev-community >}}.
 
-<a id="apama_ctrl_fatalcritwarn"></a>
-#### Warning or higher level logging from an EPL file
+
+#### Warning or higher level logging from an EPL file {#apama_ctrl_fatalcritwarn}
 
 This alarm is raised whenever messages are logged by EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
 
@@ -199,8 +199,8 @@ Third alarm:
 - Alarm text: &lt;Monitor name&gt;-Warning.
 - Alarm severity: WARNING
 
-<a id="apama_ctrl_error"></a>
-#### An EPL file throws an uncaught exception
+
+#### An EPL file throws an uncaught exception {#apama_ctrl_error}
 
 You have seen that the Apama-ctrl microservice raises alarms for logged messages. In addition, there can also be uncaught exceptions (during runtime). Apama-ctrl identifies such exceptions and raises alarms so that you can identify and fix the problem.
 
@@ -226,8 +226,8 @@ You can diagnose the issue by the monitor name and line number given in the alar
 
 For more details, you can also check the log files of the Apama-ctrl microservice if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly. See also [Log files of the Apama-ctrl microservice](#logfiles).
 
-<a id="apama_ctrl_warn"></a>
-#### An EPL app is running in an infinite or long-running loop
+
+#### An EPL app is running in an infinite or long-running loop {#apama_ctrl_warn}
 
 If an EPL app has an infinite or long-running loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem.
 
@@ -257,8 +257,8 @@ You can diagnose the issue by the monitor name given in the alarm.
 
 For more details, you can also check the log files of the Apama-ctrl microservice if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory. See also [Log files of the Apama-ctrl microservice](#logfiles).
 
-<a id="eplapp_restore_timeout"></a>
-#### EPL app restore timeout on restart of Apama-ctrl
+
+#### EPL app restore timeout on restart of Apama-ctrl {#eplapp_restore_timeout}
 
 If restoring an EPL app on a restart of the Apama-ctrl microservice takes a long time and exceeds the time limit
 specified by the `recovery.timeoutSecs` tenant option (in the `streaminganalytics` category) or a default of 60 seconds,
@@ -277,8 +277,7 @@ The following information is only included in the alarm text if the Apama-ctrl m
 If no such apps are detected, this information is omitted from the alarm text.
 
 
-<a id="extension_error"></a>
-#### Multiple extensions with the same name
+#### Multiple extensions with the same name {#extension_error}
 
 This alarm is raised when the Apama-ctrl microservice tries to activate the deployed extensions during its startup process and there are multiple extensions with the same name.
 

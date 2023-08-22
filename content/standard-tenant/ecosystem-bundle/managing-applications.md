@@ -52,7 +52,7 @@ In the **Applications** tab, you can see all applications available in your tena
 
 Applications can be filtered by name or by availability.
 
-<a name="editing-and-removing"></a>
+
 ### To edit an application
 
 Click the application or click the menu icon at the right of an entry and then click **Edit**.

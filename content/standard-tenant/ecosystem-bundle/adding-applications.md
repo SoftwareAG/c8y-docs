@@ -20,13 +20,13 @@ Click **Add application** at the top right of the **Applications** tab to add a 
 
 In the resulting dialog box, select one of the following methods:
 
-* [Upload web application](#upload-web-application) - drop a ZIP file or browse for it in your file system.
-* [External application](#external-application) - link to an application running elsewhere.
-* [Install from available packages](#blueprint-application) - select a package blueprint.
-* [Duplicate existing application](#duplicate-application) - create a copy of an existing application.
+* [Upload web application](#to-upload-a-web-application) - drop a ZIP file or browse for it in your file system.
+* [External application](#to-link-to-an-external-application) - link to an application running elsewhere.
+* [Install from available packages](#to-install-an-application-from-a-blueprint) - select a package blueprint.
+* [Duplicate existing application](#to-duplicate-an-application) - create a copy of an existing application.
 
 
-<a name="upload-web-application"></a>
+
 ### To upload a web application
 
 1. Click **Add application** at the top right of the **Applications** tab.
@@ -39,7 +39,7 @@ The application is created once the ZIP file has been successfully uploaded.
 The ZIP file must contain the *index.html* and *cumulocity.json* in its root directory, otherwise the application will not work.
 {{< /c8y-admon-important >}}
 
-<a name="external-application"></a>
+
 ### To link to an external application
 
 1. Click **Add application** at the top right of the **Applications** tab.
@@ -51,7 +51,7 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 
 For details on the fields, see also [Application properties](/standard-tenant/ecosystem/#application-properties) below.
 
-<a name="blueprint-application"></a>
+
 ### To install an application from a blueprint
 
 1. Click **Add application** at the top right of the **Applications** tab.
@@ -64,7 +64,7 @@ For details on the fields, see also [Application properties](/standard-tenant/ec
 
 For details on the fields, see also [Application properties](/standard-tenant/ecosystem/#application-properties) below.
 
-<a name="duplicate-application"></a>
+
 ### To duplicate an application
 
 Duplicating an application might be useful if you want to customize a subscribed application according to your needs. Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.

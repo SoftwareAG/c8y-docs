@@ -46,7 +46,6 @@ Visit the [{{< learning-portal >}}]({{< link-sag-training >}}) where you can fin
 For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
 
 
-<a name="installation-and-operations"></a>
 ### Installation and operations documentation
 
 The **Installation and Operations guides** for the {{< product-c8y-iot >}} platform are not publicly available. They are provided on the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-documentation >}}).

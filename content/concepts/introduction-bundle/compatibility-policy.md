@@ -11,7 +11,6 @@ For details on the release types (such as GA release or Maintenance release) and
 
 The current compatibility statements are described as follows.
 
-<a name="api-compatibility"></a>
 #### API compatibility
 
 {{< product-c8y-iot >}}'s REST, SmartREST and MQTT APIs as documented in the product documentation are backwards compatible. You can find such documentation in:

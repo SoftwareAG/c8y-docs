@@ -13,7 +13,7 @@ helpcontent:
 
 A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
 
-<a name="data-broker-connectors-list"></a>
+
 ### To view data connectors
 
 Click **Data connectors** in the navigator to see a list of all currently defined data connectors with their status.
@@ -34,7 +34,6 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 If the source tenant has been suspended all its data broker connectors will be suspended as well.
 {{< /c8y-admon-info >}}
 
-<a name="data-broker-connector-edit"></a>
 ### To add a data connector
 
 1. Click **Add data connector** in the top menu bar.
@@ -124,7 +123,7 @@ Click the connector title, or click the menu icon at the right of a data connect
 
 In the **Settings** tab, edit the data connector configuration.
 
-See [To add a data connector](#data-broker-connector-edit) for details on the settings.
+See [To add a data connector](#to-add-a-data-connector) for details on the settings.
 
 ### To duplicate a data connector
 

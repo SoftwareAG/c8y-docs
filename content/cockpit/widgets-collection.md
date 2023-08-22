@@ -12,7 +12,6 @@ The Cockpit application includes preset widget types. Each widget type provides 
 {{< c8y-admon-related >}}
 - [Application enablement & solutions > Cockpit > Data explorer](/cockpit/data-explorer/) for details on visualizing your data when working with widgets.
 - [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem > Managing applications](/standard-tenant/ecosystem/#managing-applications) for details on managing applications.
-- [Device management > Protocol integration > Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) for more information on using Cloud Fieldbus in {{< product-c8y-iot >}}.
 - [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) for details on customized widgets in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 

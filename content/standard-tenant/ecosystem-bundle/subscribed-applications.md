@@ -1,7 +1,7 @@
 ---
 title: Subscribed applications
 layout: bundle
-weight: 70
+weight: 15
 section:
   - platform_administration
 ---

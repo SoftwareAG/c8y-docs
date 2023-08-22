@@ -74,7 +74,7 @@ The application switcher allows you to quickly switch between applications. Clic
 
 <img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/standard-tenant/ecosystem/#subscribed-applications) or [custom applications](/standard-tenant/ecosystem/#adding-applications). Just click the icon for the desired application to open it as active application.
+The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/standard-tenant/ecosystem/#subscribed-applications) or [custom applications](/standard-tenant/ecosystem/custom-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications.
 

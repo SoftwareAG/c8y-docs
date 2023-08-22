@@ -24,28 +24,27 @@ For details see [Application enablement & solutions > Cockpit](/cockpit/).
 
 For details see [Analytics > DataHub](/datahub/datahub-overview/).
 
-<a name="c8y-edge"></a>
-### Cumulocity IoT Edge
+
+### Cumulocity IoT Edge {#c8y-edge}
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
 For details see the [Edge](/edge/introduction/).
 
 
-<a name="c8y-operational-store"></a>
-### Cumulocity IoT operational store
+### Cumulocity IoT operational store {#c8y-operational-store}
 
 Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](/glossary/a/#alarm), [events](/glossary/e/#event), [inventory](/glossary/i/#inventory), and [measurements](/glossary/m/#measurement)) are stored in so-called base collections.
 
-<a name="c8y-sensor-app"></a>
-### Cumulocity IoT Sensor App
+
+### Cumulocity IoT Sensor App {#c8y-sensor-app}
 
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 
 For details see [{{< sensor-app >}}](/sensor-app).
 
-<a name="c8y-streaming-analytics"></a>
-### Cumulocity IoT Streaming Analytics
+
+### Cumulocity IoT Streaming Analytics {#c8y-streaming-analytics}
 
 Using the Streaming Analytics application, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. These user-defined operations can, for example, alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices. The operation logic is based on [Apama’s Event Processing Language (EPL)](/glossary/e/#epl).
 

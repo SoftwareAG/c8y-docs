@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Adding custom applications
+title: Custom applications
 layout: bundle
 section:
   - platform_administration

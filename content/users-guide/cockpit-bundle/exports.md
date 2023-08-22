@@ -14,10 +14,6 @@ aliases:
 ---
 
 
-{{< c8y-admon-related >}}
-- The [Streaming Analytics guide](/streaming-analytics/overview-streaming-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
-{{< /c8y-admon-related >}}
-
 The export functionality lets you export specific data to either CSV or Excel files.
 
 {{< c8y-admon-req >}}

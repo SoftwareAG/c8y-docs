@@ -19,4 +19,4 @@ Kubernetes is the container orchestration engine for automating deployment, scal
 
 Docker is the most common container runtime used in a Kubernetes Pod. Moreover, Kubernetes is used to orchestrate Docker containers and it provides many enterprise-grade features for hosting Docker containers such as auto-scaling and load balancing. Refer to the [Kubernetes documentation](https://kubernetes.io/docs/home/) for more information about Kubernetes.
 
-When Docker faces some issues, for example, a Pod synchronization error, an alarm is created and can be seen in **Alarms** in the Cockpit application. Refer to [Troubleshooting](#troubleshooting) in this section to learn about common issues.
+When Docker faces some issues, for example, a Pod synchronization error, an alarm is created and can be seen in **Alarms** in the Cockpit application. Refer to [Troubleshooting](#ga-troubleshooting) in this section to learn about common issues.

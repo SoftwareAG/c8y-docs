@@ -1,7 +1,8 @@
 ---
 weight: 20
+title: Hello world tutorial for Java
 layout: redirect
-title: Hello world tutorial
+
 ---
 
 Here you will learn how to create your first microservice that can be deployed on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}) using the Microservice SDK for Java.
@@ -69,7 +70,7 @@ This microservice example has been tested under macOS, Ubuntu and Windows 10 wit
 
 #### Create a Maven project
 
-Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/microservice-sdk/concept/#manifest).
+Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/microservice-sdk/concept/#microservice-manifest).
 
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-microservice-java -Dversion=1.0.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -79,7 +80,7 @@ This will create a folder *hello-microservice-java* in the current directory wit
 
 #### Specify the properties
 
-You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 17. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
+You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to set the `-source` and `-target` of the [Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 17. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
 
 ```xml
 <properties>
@@ -215,7 +216,7 @@ Your microservice application must be packed as a Docker image in a ZIP file inc
 
 The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
 
-<a name="java-example"></a>
+
 #### Create a Java application
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
@@ -343,7 +344,7 @@ Most tools should already support the {{< product-c8y-iot >}} Authorization head
 $ curl --user "<TENANTID>/<USERNAME>:<PASSWORD>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
 ```
 
-<a name="run-locally"></a>
+
 ### Running the microservice locally
 
 You can run the Docker container locally in order to test the REST calls from the microservice to {{< product-c8y-iot >}}.

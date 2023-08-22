@@ -33,7 +33,7 @@ Using this handle, you can send and retrieve the SMS messages from Java by calli
 ### Assigning required roles
 
 To use the SMS messaging API, the user must have the required roles SMS_ADMIN and SMS_READ for sending and receiving messages respectively.
-Refer to [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the *User guide*.
+Refer to [Managing permissions](/standard-tenant/managing-permissions/) for more information.
 
 ### Sending a message
 

@@ -1,7 +1,8 @@
 ---
 weight: 40
-layout: redirect
 title: Developing microservices
+layout: redirect
+
 ---
 
 See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
@@ -101,7 +102,7 @@ On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered fo
 
 ### Heap and perm/metadata
 
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
+To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#microservice-manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
 10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
@@ -448,7 +449,7 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 #### Hosted deployment
 
 {{< c8y-admon-info >}}
-For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
+For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/concept/#microservice-utility-tool) for easy packaging, deployment and subscription.
 {{< /c8y-admon-info >}}
 
 To deploy an application on an environment you need the following:

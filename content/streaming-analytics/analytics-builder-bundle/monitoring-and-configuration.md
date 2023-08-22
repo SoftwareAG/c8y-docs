@@ -320,7 +320,7 @@ See [Accessing the correlator log](/streaming-analytics/analytics-builder/#acces
 #### Viewing the audit logs
 
 Model activations and deactivations are shown in the audit logs. The audit logs are accessible via the Administration application and the audit API.
-See [Administration > Viewing audit logs](/users-guide/administration/#audit-logs) in the *User guide* and [Audit API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audit-API)
+See [Audit logs](/standard-tenant/audit-logs/) and [Audit API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audit-API)
 in the {{< openapi >}} for details of accessing the audit logs.
 
 Audit log entries include the name of the user performing the action and the current mode of the model. For test and simulation mode, the identifier of the virtual device and the mode properties are provided.
@@ -345,7 +345,7 @@ The following is an example of an audit log entry \(with additional line breaks 
 
 #### Viewing diagnostics information
 
-To view diagnostics information, you need READ permission for "CEP management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide* for more information.
+To view diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
 
 {{< c8y-admon-info>}}
 ADMIN permission for "CEP management" do not include READ permission.
@@ -363,10 +363,10 @@ You can customize the settings of Analytics Builder, the so-called “tenant opt
 
 You can find some concrete examples in [Using curl commands for setting various tenant options](/streaming-analytics/analytics-builder/#using-curl-commands-for-setting-various-tenant-options). However, you can use any tool you like.
 
-To change the tenant options, you need ADMIN permission for "Option management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide* for more information.
+To change the tenant options, you need ADMIN permission for "Option management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
 
 {{< c8y-admon-caution>}}
-After you have changed a tenant option using a REST request, the correlator will automatically restart. An alarm with a MAJOR severity will be created in this case; you can view it on the **Alarms** page of the Cockpit application \(see [Device management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the *User guide* for more information\).
+After you have changed a tenant option using a REST request, the correlator will automatically restart. An alarm with a MAJOR severity will be created in this case; you can view it on the **Alarms** page of the Cockpit application \(see [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for more information\).
 {{< /c8y-admon-caution>}}
 
 #### Keys for status reporting
@@ -553,8 +553,8 @@ The location of the correlator log depends on the environment in which you are w
 
 -   {{< product-c8y-iot >}} Core:
 
-    The correlator log is accessible via the Administration application. You can find it on the **Logs** tab of the Apama-ctrl microservice. You have to subscribe to the microservice so that you can see the logs. For more information on microservices and log files, see [Administration > Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide*.
+    The correlator log is accessible via the Administration application. You can find it on the **Logs** tab of the Apama-ctrl microservice. You have to subscribe to the microservice so that you can see the logs. For more information on microservices and log files, see [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
 
 -   {{< product-c8y-iot >}} Edge:
 
-    See [Logging](/edge/operating-edge/#logs-files) in the *{{< product-c8y-iot >}} Edge guide* for information on the log file location.
+    See [Logging](/edge/operating-edge/#logs-files) for information on the log file location.

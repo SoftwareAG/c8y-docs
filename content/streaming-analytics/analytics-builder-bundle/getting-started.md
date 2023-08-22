@@ -16,13 +16,13 @@ Analytics Builder consists of the following tools:
 -   Model editor. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *Block Reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
 -   Instance editor. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
-The blocks are implemented in the Event Processing Language \(EPL\) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
+The blocks are implemented in the Event Processing Language (EPL) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
 
 ### First Steps: Creating your first model
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed \(see [{{< sensor-app >}}](/users-guide/sensor-app/) in the *User guide* for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
 
 The model that you add will contain three blocks:
 
@@ -132,7 +132,7 @@ A card for the newly added model is shown on the **Models** tab of the model man
 
 #### Step 9: Go to the Device management and view the measurements
 
-To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management](/users-guide/device-management/) in the *User guide* for detailed information.
+To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management application](/device-management-application/) for detailed information.
 
 1.  Go to the Device management application.
 
@@ -142,7 +142,7 @@ To view the measurements that are sent from your active model, you have to switc
 
 4.  Click **Measurements** on the left. This is a dynamic tab which is only shown when measurements are available for the device.
 
-    The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Device management > Device details > Measurements](/users-guide/device-management/#measurements) in the *User guide* for more information on the **Measurements** tab.
+    The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Measurements](/device-management-application/viewing-device-details/#measurements) for more information on the **Measurements** tab.
 
 
 ### First Steps: Creating a model from a sample
@@ -151,7 +151,7 @@ This topic gives a brief overview of how to create a model from a sample. It is 
 
 This topic is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed \(see [{{< sensor-app >}}](/users-guide/sensor-app/) in the *User guide* for detailed information\).
+The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
 
 The following image shows the blocks that are defined in the **On missing measurements create alarm** sample.
 
@@ -244,7 +244,7 @@ For our example case with the gyroscope measurements from a smartphone, it shoul
 #### Step 6: Go to the Device management application and view the alarms
 
 To view the alarms that are sent from your active instance, you have to switch to the Device management application.
-See [Device management](/users-guide/device-management/) in the *User guide* for detailed information.
+See [Device management application](/device-management-application/) for detailed information.
 
 1.  Go to the Device management application.
 
@@ -254,4 +254,4 @@ See [Device management](/users-guide/device-management/) in the *User guide* for
 
 4.  Click **Alarms** on the left.
 
-5.  On the resulting page, check the alarms that are sent from your device. If you have edited your instance as described above, you should see a MINOR alarm after 30 seconds, saying "Missing measurements of type: c8y\_Gyroscope". See [Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring) in the *User guide* for more information on the **Alarms** tab.
+5.  On the resulting page, check the alarms that are sent from your device. If you have edited your instance as described above, you should see a MINOR alarm after 30 seconds, saying "Missing measurements of type: c8y\_Gyroscope". See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for more information on the **Alarms** tab.

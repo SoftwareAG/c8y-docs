@@ -2,9 +2,6 @@
 weight: 60
 title: Management security
 layout: bundle
-
-aliases:
-  - /concepts/security
 ---
 
 Whenever a security-relevant event occurs, it needs to be logged for potential auditing. Security-relevant events may happen both on application level as well as in the IoT network. A simple example of a security-relevant event on application level is a login to the application. An example of a security-relevant event on the network level is using a local software or local control on a device to manipulate the device.
@@ -13,4 +10,4 @@ To capture security-relevant events, {{< product-c8y-iot >}} offers an [auditing
 
 To receive security-related reports about the {{< product-c8y-iot >}} platform, interested parties with a maintenance contract can subscribe to Early Warnings in the [Knowledge Center of the {{< company-sag >}} {{< sag-portal >}}](https://empower.softwareag.com/KnowledgeCenter/EarlyWarningsCriticalAlerts/default.aspx).
 
-To report security incidents, please contact [product support](/welcome/contacting-support).
+To report security incidents, please contact [product support](/additional-resources/contacting-support).

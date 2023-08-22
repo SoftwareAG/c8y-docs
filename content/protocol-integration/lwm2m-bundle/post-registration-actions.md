@@ -10,7 +10,7 @@ This can be done in the **LWM2M post-operations** page accessible from the **Dev
 ![Post operations example](/images/device-protocols/lwm2m/lwm2m-post-operations.png)
 
 The above image shows the **LWM2M post-operations** page with a set of sample shell commands.
-More information on shell commands can be found in [LightweightM2M > Handling LWM2M shell commands](/protocol-integration/lwm2m/#shell-commands) in the <em>Protocols integration guide</em>.
+More information on shell commands can be found in [Handling LWM2M shell commands](/protocol-integration/lwm2m/#shell-commands).
 
 ### Device operations handling
 
@@ -18,5 +18,5 @@ If the operations are created while the device is offline, all the operations wi
 A configurable property can limit the number of operations to be executed as part of the post-registration process, for example, the operations which were already delivered to the device once via the real-time channel, but they still have a status of PENDING.
 
 {{< c8y-admon-info >}}
-The default maximum limit of the pending operations is 10, which is a configurable value for the agent. In case this limit is not sufficient for your use case please contact [product support](/welcome/contacting-support/).
+The default maximum limit of the pending operations is 10, which is a configurable value for the agent. In case this limit is not sufficient for your use case please contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}

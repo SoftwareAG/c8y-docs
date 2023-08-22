@@ -24,17 +24,6 @@ Microservices can be filtered by name and availability.
 
 A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications, see [Custom microservices](#custom-microservices).
 
-{{< c8y-admon-related >}}
-- [Managing applications](#managing-microservices) for information on managing web applications.
-- [Managing permissions](#managing-permissions) for details on assigning roles and permissions for the usage of {{< product-c8y-iot >}} applications.
-- [Changing application settings](/users-guide/administration/#default-app) for information on changing the application settings for your account.
-- [Enterprise tenant > Managing tenants > Applications](/users-guide/enterprise-tenant/#applications) for information on application subscriptions on tenant level.
-- [Enterprise tenant > Usage statistics and billing](/users-guide/enterprise-tenant/#usage-and-billing) for information on the microservice usage feature.
-- [Developing applications > Microservices](/concepts/applications/#microservices) in the *Concepts guide* for an overview on the basic concepts of microservices in {{< product-c8y-iot >}}.
-- The [Microservice SDK guide](/microservice-sdk/introduction) for general aspects of using microservices on top of {{< product-c8y-iot >}} and information on developing and deploying microservices using our SDKs or the REST interface.
-- [Applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Applications) in the {{< openapi >}} for managing applications via REST.
-{{< /c8y-admon-related >}}
-
 ### Subscribed microservices
 
 {{< product-c8y-iot >}} provides a variety of microservice applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
@@ -59,35 +48,35 @@ Below you find a list of all microservices which are by default subscribed in a 
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-analytics/#microservice-and-applications" class="no-ajaxy">Apama-ctrl-*</a></td>
 <td style="text-align:left">Streaming Analytics microservices, including runtime for Analytics Builder, EPL apps and smart rules. Capabilities and resources vary depending on the microservice variant used</td>
 <td style="text-align:left">apama-ctrl-*</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/device-management#simulator" class="no-ajaxy">Device-simulator</a></td>
+<td style="text-align:left"><a href="/device-management-application/working-with-simulators/" class="no-ajaxy">Device-simulator</a></td>
 <td style="text-align:left">Simulate all aspects of IoT devices</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">Report agent</a></td>
+<td style="text-align:left"><a href="/cockpit/reports" class="no-ajaxy">Report agent</a></td>
 <td style="text-align:left">Schedule data exports from within the Cockpit application</td>
 <td style="text-align:left">report agent</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smartrule</a></td>
+<td style="text-align:left"><a href="/cockpit/smart-rules" class="no-ajaxy">Smartrule</a></td>
 <td style="text-align:left">Use the smart rules engine and create smart rules to perform actions based on realtime data. Requires a variant of the Apama-ctrl microservice</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant#customization" class="no-ajaxy">Sslmanagement</a></td>
+<td style="text-align:left"><a href="/enterprise-tenant/customization" class="no-ajaxy">Sslmanagement</a></td>
 <td style="text-align:left">Activate your own custom domain name by using an SSL certificate</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
@@ -111,7 +100,7 @@ All applications listed here are of the type "Microservice".
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
 {{< c8y-admon-important >}}
-The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) in the *Microservice SDK guide* for information on preparing and deploying the microservice package. You can provide the name of the microservice in its manifest file. If no name is provided in the file, the platform will derive it from the ZIP file name by removing the recognized version suffix. In any case the length of the resulting name must not exceed 23 characters.
+The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) for information on preparing and deploying the microservice package. You can provide the name of the microservice in its manifest file. If no name is provided in the file, the platform will derive it from the ZIP file name by removing the recognized version suffix. In any case the length of the resulting name must not exceed 23 characters.
 {{< /c8y-admon-important >}}
 
 <a name="microservice-properties"></a>
@@ -147,7 +136,7 @@ In the **Properties** tab, each microservice will show the following information
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the microservice application and to make it available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts guide</a></td>
+<td style="text-align:left">Used to identify the microservice application and to make it available for subscription, see <a href="/concepts/applications" class="no-ajaxy">Developing applications</a></td>
 <td style="text-align:left">Automatically created, based on the ZIP file name</td>
 </tr>
 <tr>
@@ -163,7 +152,7 @@ In the **Properties** tab, each microservice will show the following information
 </tbody>
 </table>
 
-Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Enterprise tenant > Usage statistics and billing > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage ) for details on these parameters.
+Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Microservice usage](/enterprise-tenant/usage-and-billing/#microservice-usage) for details on these parameters.
 
 #### Microservice subscription
 

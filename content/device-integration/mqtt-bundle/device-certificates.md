@@ -33,7 +33,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
 Auto-registration needs to be activated for the uploaded certificate.
 If auto-registration is not activated it is required to use the bulk registration (see below).
-To manage the auto registration field of uploaded certificates in the UI refer to [Device management application > Managing device data > Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
+To manage the auto registration field of uploaded certificates in the UI refer to [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
 
 **Bulk registration**
 

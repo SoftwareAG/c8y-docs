@@ -31,8 +31,16 @@ helpcontent:
   - label: features
     title: Features
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
-
 ---
+
+There are two types of availability for applications:
+
+- [Subscribed](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or by a service provider.
+- Custom - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+
+Your applications are available through the application switcher in the top bar.
+
+<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
 ### To view applications
 
@@ -43,15 +51,6 @@ Click **Applications** in the **Ecosystem** menu in the navigator to display a l
 In the **Applications** tab, you can see all applications available in your tenant.
 
 Applications can be filtered by name or by availability.
-
-There are two types of availability for applications:
-
-- [Subscribed](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or a service provider.
-- [Custom](#own-applications) - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
-
-Your applications are available through the application switcher in the top bar.
-
-<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
 <a name="editing-and-removing"></a>
 ### To edit an application
@@ -94,21 +93,21 @@ In the **Features** tab, you will find a list of all features subscribed in your
 <tbody>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#branding" class="no-ajaxy">Feature-branding</a></td>
+<td style="text-align:left"><a href="/enterprise-tenant/customization/#branding" class="no-ajaxy">Feature-branding</a></td>
 <td style="text-align:left">Customize the look of your tenants to your own preferences</td>
 <td style="text-align:left">feature-branding</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#data-broker" class="no-ajaxy">Feature-broker</a></td>
+<td style="text-align:left"><a href="/data-broker/" class="no-ajaxy">Feature-broker</a></td>
 <td style="text-align:left">Share data selectively with other tenants</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-tenant/#user-hierarchies" class="no-ajaxy">Feature-user-hierarchy</a></td>
+<td style="text-align:left"><a href="/enterprise-tenant/managing-user-hierarchies/" class="no-ajaxy">Feature-user-hierarchy</a></td>
 <td style="text-align:left">Reflect independent organizational entities in {{< product-c8y-iot >}} that share the same database</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">{{< enterprise-tenant >}}</td>

@@ -20,4 +20,4 @@ To get started with the OEE application, you must create a profile to start the 
 * **Short stoppages**: We recommend to disable the tracking of short stoppages. For this example the tracking is disabled.
 * **Goals**:  Define the goal value in percent.
 
-For details see [Administration > Creating machine profiles](/oee/oee-administration/#machine-profiles).
+For details see [Machine profiles](/oee/oee-administration/#machine-profiles).

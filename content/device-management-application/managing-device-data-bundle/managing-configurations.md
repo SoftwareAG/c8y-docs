@@ -42,7 +42,7 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 ### To retrieve and apply a configuration snapshot
 
-Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Device integration > Fragment library > Configuration](/device-integration/fragment-library/#configuration) in the *Reference guide* for more detailed and technical information.
+Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Configuration](/device-integration/fragment-library/#configuration) for more detailed and technical information.
 
 ### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration
 

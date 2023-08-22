@@ -54,7 +54,7 @@ For example, assume that your device sends measurements related to device manage
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
 {{< c8y-admon-info >}}
-For further information on possible types, check your device documentation or the [device integrator library](/reference/device-integrator-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+For further information on possible types, check your device documentation or the [fragment library](/device-integration/fragment-library/). The type being used here is the so-called "fragment type", not the "type" property. You must enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 {{< /c8y-admon-info >}}
 
 In the **Permission** field, select a permission level from the dropdown list:
@@ -67,18 +67,17 @@ In the **Permission** field, select a permission level from the dropdown list:
 When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
 {{< /c8y-admon-important >}}
 
-As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/reference/sensor-library/)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
+As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position", see [fragment library](/device-integration/fragment-library/). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
 <img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
-<a name="attach-inventory"></a>
 ### To assign inventory roles to users
 
 Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **Users** in the **Accounts** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, open the dropdown at the right of the group row. Select the relevant roles and click **Apply**. For a detailed description of a role click the info icon next to it or refer to [Inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, open the dropdown at the right of the group row. Select the relevant roles and click **Apply**. For a detailed description of a role click the info icon next to it.
 
 {{< c8y-admon-important >}}
 If a user already has a global role containing inventory permissions, the user will be

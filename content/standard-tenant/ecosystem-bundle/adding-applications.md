@@ -6,9 +6,7 @@ section:
   - platform_administration
 ---
 
-Click **Add application** at the top right of the **Applications** tab to add a custom application.
-
-Custom applications may be:
+**Custom applications** may be:
 
 * Web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (for example, a widget to the Cockpit dashboard).
 * Links to an application running elsewhere.
@@ -18,15 +16,17 @@ Custom applications may be:
 In the **Applications** tab, custom applications are labeled as "Custom".
 {{< /c8y-admon-info >}}
 
+Click **Add application** at the top right of the **Applications** tab to add a custom application.
+
 In the resulting dialog box, select one of the following methods:
 
-* [Upload web application](#uploading-zip-files) - drop a ZIP file or browse for it in your file system.
+* [Upload web application](#upload-web-application) - drop a ZIP file or browse for it in your file system.
 * [External application](#external-application) - link to an application running elsewhere.
 * [Install from available packages](#blueprint-application) - select a package blueprint.
-* [Duplicate existing application](#clone-application) - create a copy of an existing application.
+* [Duplicate existing application](#duplicate-application) - create a copy of an existing application.
 
 
-<a name="uploading-zip-files"></a>
+<a name="upload-web-application"></a>
 ### To upload a web application
 
 1. Click **Add application** at the top right of the **Applications** tab.
@@ -49,7 +49,7 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 6. Enter the external URL where the application can be reached.
 7. Click **Save** to create the application.
 
-For details on the fields, see also [Application properties](#application-properties) below.
+For details on the fields, see also [Application properties](/standard-tenant/ecosystem/#application-properties) below.
 
 <a name="blueprint-application"></a>
 ### To install an application from a blueprint
@@ -62,9 +62,9 @@ For details on the fields, see also [Application properties](#application-proper
 6. Enter the path where the application can be reached.
 7. Click **Save** to create the application.
 
-For details on the fields, see also [Application properties](#application-properties) below.
+For details on the fields, see also [Application properties](/standard-tenant/ecosystem/#application-properties) below.
 
-<a name="clone-application"></a>
+<a name="duplicate-application"></a>
 ### To duplicate an application
 
 Duplicating an application might be useful if you want to customize a subscribed application according to your needs. Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
@@ -82,4 +82,4 @@ The platform restricts the use of the prefix "feature-" in the **Name** field. Y
 In case the application has been subscribed to the tenant, there is an additional toggle **Overrule subscribed application**. If you turn this toggle on, the values for name, key and path will be inherited from the original application and your duplicated application will overrule the subscribed application. Turn it off, to modify the values.<br><br><img src="/images/users-guide/Administration/admin-application-duplicate-3.png" alt="Duplicate application">
 {{< /c8y-admon-info >}}
 
-For details on the fields, see also [Application properties](#application-properties) below.
+For details on the fields, see also [Application properties](/standard-tenant/ecosystem/#application-properties) below.

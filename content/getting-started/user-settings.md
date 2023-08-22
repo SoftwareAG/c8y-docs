@@ -40,11 +40,11 @@ At the top you find the following items:
 <td style="text-align:left">Activate support</td>
 <td style="text-align:left">Allows support users to access your account.<br>
 <br>
-Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
+Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours by default) you can actively disable an active support user request here.</td>
 </tbody>
 </table>
 
-In the **UI settings** section change the language of the UI, see [To change the language of the UI](#change-language).
+In the **UI settings** section change the language of the UI, see [To change the language of the UI](/getting-started/user-settings/#to-change-the-language-of-the-UI).
 
 In the **Platform info** section, you find information on the infrastructure of your platform:
 
@@ -67,12 +67,11 @@ Several account settings can be changed by the user.
 2. In the **Edit user** dialog box, make the relevant changes.
 3. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies.
 4. Use the **In-product information** toggle to opt-out from the Knowledge Hub which is enabled by default.
-5. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
+5. Click **Change password** to change your current password, see [To change your password](#to-change-your-password) for details.
 6. Click **Set up two-factor authentication** to set up two-factor authentication and increase tenant security.
 7. Click **Save** to apply your settings.
 
 
-<a name="change-password"></a>
 ### To change your password
 
 1. Click the **User** button at the right of the top bar and then click **User settings**.
@@ -97,7 +96,7 @@ By default, the password must meet the following conditions:
 The password rules can be configured by the administrator, that means, your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.
 {{< /c8y-admon-info >}}
 
-<a name="change-language"></a>
+
 ### To change the language of the UI
 
 The user interface language is selected along the following criteria, in the order listed below:

@@ -60,7 +60,7 @@ Single operations can be created either from bulk operations or via the differen
 
 When you create a [bulk operation](#to-view-bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
 
-Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Viewing device details > Shell](/device-management-application/viewing-device-details/#shell).
+Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Shell](/device-management-application/viewing-device-details/#shell).
 
 {{< c8y-admon-important >}}
 When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
@@ -79,7 +79,7 @@ Alternatively, filter the list of single operations to show only single operatio
 
 Click the menu icon at the right of the single operation that you want to create a smart rule for, and select **Create smart rule**.
 
-See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
+See [To create a smart rule](/cockpit/smart-rules/#to-create-a-smart-rule) for further steps.
 
 ### To view bulk operations
 

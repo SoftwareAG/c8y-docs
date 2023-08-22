@@ -33,7 +33,7 @@ If this error appears, a Java process is running in the background. To fix this 
 
 ### Changing the log level for troubleshooting
 
-For troubleshooting purposes, we recommend you to enable the DEBUG log level for subpackages and root if required, and send the log file to [product support](/welcome/contacting-support/).
+For troubleshooting purposes, we recommend you to enable the DEBUG log level for subpackages and root if required, and send the log file to [product support](/additional-resources/contacting-support/).
 
 For example:
 

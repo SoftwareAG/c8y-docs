@@ -16,14 +16,14 @@ To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [Device integration > Fragment library](/device-integration/fragment-library/#overview) in the *Reference guide*.
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, that means, tabs are only displayed if the kind of information is available for the particular device. For a detailed description of the operations and fragments related to each device detail tab see the [fragment library](/device-integration/fragment-library/#overview).
 
 Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
 Each device at least shows the following tabs: **Info**, **Alarms**, **Control**, **Events**, **Availability**, **Identity**.
 
 {{< c8y-admon-info >}}
-Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-c8y-iot >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
+Several individual tabs, which you do not find listed here, may be described in a different context in another section of the {{< product-c8y-iot >}} documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus).
 {{< /c8y-admon-info >}}
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
@@ -40,7 +40,7 @@ The **Alarms** tab provides information on the alarms of a device. See [Working 
 
 ### Availability
 
-The Availability tab offers availability monitoring for machines, see [Monitoring and controlling devices > Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
+The Availability tab offers availability monitoring for machines, see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
 
 ### Child devices
 
@@ -54,7 +54,7 @@ The **Configuration** tab allows you to configure the parameters and initial set
  - Text-based configurations
  - Binary-based configuration snapshots
 
-For more details on managing binary-based configuration snapshots, see [Managing device data > Managing configurations](/device-management-application/managing-device-data/#managing-configurations).
+For more details on managing binary-based configuration snapshots, see [Managing configurations](/device-management-application/managing-device-data/#managing-configurations).
 
 #### To request the current text-based configuration snapshot
 
@@ -75,21 +75,21 @@ If a device supports both text-based and binary-based configuration the **Config
 
 ### Control
 
-The **Control** tab lists the operations being sent to a device. See [Monitoring and controlling devices > Working with operations](/device-management-application/monitoring-and-controlling-devices/#working-with-operations) for detailed information on operations.
+The **Control** tab lists the operations being sent to a device. See [Working with operations](/device-management-application/monitoring-and-controlling-devices/#working-with-operations) for detailed information on operations.
 
 ![Operations](/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
 
 ### Device profile
 
-See [Managing device data > Applying device profiles to devices](/device-management-application/managing-device-data/#to-apply-device-profiles-to-devices) for more information on how to apply device profiles to a device.
+See [Applying device profiles to devices](/device-management-application/managing-device-data/#to-apply-device-profiles-to-devices) for more information on how to apply device profiles to a device.
 
 ### Events
 
-The **Events** tab displays events related to a device. This enables low-level troubleshooting of a device. See [Monitoring and controlling devices > Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
+The **Events** tab displays events related to a device. This enables low-level troubleshooting of a device. See [Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
 
 ### Firmware
 
-See [Managing device data > Managing firmware](/device-management-application/managing-device-data/#to-manage-firmware-on-a-device) for more information on how to manage and update the firmware on a device.
+See [Managing firmware](/device-management-application/managing-device-data/#to-manage-firmware-on-a-device) for more information on how to manage and update the firmware on a device.
 
 ### Identity
 
@@ -121,11 +121,11 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device status</td>
-<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="/device-management-application/monitoring-and-controlling-devices/#connection-monitoring" class="no-ajaxy">Connection monitoring</a>. </td>
+<td style="text-align:left">Displays connection-relevant information, as described in detail in <a href="/device-management-application/monitoring-and-controlling-devices/#connection-monitoring" class="no-ajaxy">Connection monitoring</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
-<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. Drag the x-axis to move the data point time measurement. To zoom in select a time period, double click to zoom out of the graph. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation.<br> The following measurements may be shown here: <br>
+<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. Drag the x-axis to move the data point time measurement. To zoom in select a time period, double click to zoom out of the graph. For details on data point graphs, refer to <a href="/cockpit/data-explorer/#working-with-data-explorer" class="no-ajaxy">Working with data explorer</a>.<br> The following measurements may be shown here: <br>
 <strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Events</strong>: c8y_LocationUpdate</td>
@@ -216,8 +216,6 @@ This enables you to get an efficient overview over larger time periods. A graph 
 
 Clicking **Realtime** will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices.
 
-You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/users-guide/administration).
-
 **Measurement format**
 
 In order to see measurement graphs, the device must send measurements in a specified fragment format.
@@ -306,7 +304,7 @@ For your convenience, {{< product-c8y-iot >}} provides several frequently used c
 
 ### Software
 
-See [Managing device data > Managing software on a device](/device-management-application/managing-device-data/#managing-software) for more information on how to manage and update the software installed on a device.
+See [Managing software on a device](/device-management-application/managing-device-data/#managing-software) for more information on how to manage and update the software installed on a device.
 
 ### Tracking
 

@@ -35,10 +35,6 @@ helpcontent:
     To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
-{{< c8y-admon-preview title="Public preview for Feature MTM-99999" >}}
-This is a very new feature just for you to review, dear user.
-{{< /c8y-admon-preview >}}
-
 {{< c8y-admon-related >}}
 * [Protocol integration](/protocol-integration/) for details on registering devices using various standard protocol types.
 * [Device integration > Integration tutorials](/device-integration/integration-tutorials) for step-by-step instructions on registering devices.

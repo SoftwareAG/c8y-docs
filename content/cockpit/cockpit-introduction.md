@@ -1,0 +1,16 @@
+---
+weight: 5
+title: Introduction
+layout: bundle
+section:
+  - app_development
+---
+
+The Cockpit application provides you with options to manage and monitor IoT assets and data from a business perspective, including visualizing data in dashboards and managing reports.
+
+The following sections walk you through all functionalities of the Cockpit application in detail.
+
+{{< c8y-admon-related >}}
+- [Getting started > Getting familiar with the UI](/getting-started/getting-familiar-with-the-UI/) for general aspects of the {{< product-c8y-iot >}} UI and its applications.
+- [Application enablement & solutions > Web SDK](/web/) for details on developing own web applications which can be deployed on top of {{< product-c8y-iot >}}.
+{{< /c8y-admon-related >}}

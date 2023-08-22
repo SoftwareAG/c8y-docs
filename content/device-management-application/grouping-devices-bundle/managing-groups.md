@@ -22,7 +22,6 @@ Click a group to view its details.
 
 ![Subassets](/images/users-guide/DeviceManagement/devmgmt-group-details.png)
 
-<a name="subassets-tab"></a>
 **Subassets page**
 
 At the top of the **Subassets** page, the name and the description of the group is displayed (editable), followed by the information when the group was created and last updated.

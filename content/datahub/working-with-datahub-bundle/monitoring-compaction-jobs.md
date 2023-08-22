@@ -20,8 +20,6 @@ You need administration permissions to access the compaction job histories. See 
 
 ### Status of all compaction jobs
 
-<a id="status-of-all-compaction-jobs"></a>
-
 In the navigator, select **Compaction status** under **Administration** to get an overview of the latest status of the compaction jobs for each pipeline. The list shows the corresponding last compaction job for all pipelines. Each compaction consists of the following details:
 
 | Component | Description |
@@ -59,8 +57,6 @@ Click **Reload** to refresh the list.
 You can filter the entries by their status or timestamp by using the filter controls at the top.
 
 ### Details of compaction job
-
-<a id="details-compaction-job"></a>
 
 For a given compaction job, you can examine additional details of its execution.
 

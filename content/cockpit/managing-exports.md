@@ -148,7 +148,7 @@ The export schedule will be added to the export details.
 
 #### Migration of scheduled exports
 
-With version 10.6.2, a new report agent has been implemented to allow scheduled reports with the [Streaming Analytics](/streaming-analytics/overview-analytics/) application. The export schedules functionality based on smart rules has been deprecated.
+With version 10.6.2, a new report agent has been implemented to allow scheduled exports. The export schedules functionality based on smart rules has been deprecated.
 
 On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
 

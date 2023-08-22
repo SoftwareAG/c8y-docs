@@ -6,7 +6,7 @@ layout: redirect
 
 This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the {{< product-c8y-iot >}} REST APIs can be employed to develop microservice applications.
 
-<a name="creating-application"></a>
+
 ### Creating applications
 
 In order to start working with microservices, an instance of an application must be created on the platform beforehand. It can be done using the following endpoint:
@@ -112,7 +112,7 @@ The ZIP file must consist of:
 * _image.tar_ - An executable Docker image
 
 
-<a name="acquiring-microservice-credentials"></a>
+
 ### Acquiring microservice credentials
 
 The following section is a wrap up for user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.

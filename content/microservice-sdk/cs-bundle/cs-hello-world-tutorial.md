@@ -64,7 +64,7 @@ Execute the bootstrapper script to build the application and an image from a Doc
 
 After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the {{< product-c8y-iot >}} platform as described in the Deployment section.
 
-<a name="run-locally"></a>
+
 ### Running the microservice locally
 
 In order to test the microservice calls to {{< product-c8y-iot >}}, you can run the Docker container locally.

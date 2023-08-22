@@ -216,7 +216,7 @@ Your microservice application must be packed as a Docker image in a ZIP file inc
 
 The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
 
-<a name="java-example"></a>
+
 #### Create a Java application
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
@@ -344,7 +344,7 @@ Most tools should already support the {{< product-c8y-iot >}} Authorization head
 $ curl --user "<TENANTID>/<USERNAME>:<PASSWORD>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
 ```
 
-<a name="run-locally"></a>
+
 ### Running the microservice locally
 
 You can run the Docker container locally in order to test the REST calls from the microservice to {{< product-c8y-iot >}}.

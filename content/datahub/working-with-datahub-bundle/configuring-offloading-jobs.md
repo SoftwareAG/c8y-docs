@@ -230,8 +230,7 @@ The two paths `c8y_TemperatureMeasurement.T` and `c8y_temperaturemeasurement.T` 
 
 The first time an offloading run processes multiple fragments with the corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
 
-<a id="raising-alarms"></a>
-**Raising alarms**
+##### Raising alarms {#raising-alarms}
 
 Offloading as well as compaction runs may fail due to various reasons such as network issues, timeouts etc. As described in [History per offloading pipeline](/datahub/working-with-datahub/#history-per-offloading-job) and [History of compactions per offloading pipeline](/datahub/working-with-datahub/#history-compaction-per-offloading-job), the offloading and compaction job histories provide details for successful and failed runs. Additionally, an alarm can be raised within the {{< product-c8y-iot >}} platform in case of a failure. Such an alarm is available in the {{< product-c8y-iot >}} [Device management application](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms).
 
@@ -239,8 +238,7 @@ Under **Create alarm on** you can activate raising alarms for offloading as well
 
 The alarm will be active until it is cleared. The latter is the case when either an offloading run completes successfully, or the offloading configuration is deleted. Then, the active alarm is cleared, no matter if the alarms setting is activated or not. The alarm remains active if the offloading is unscheduled or raising alarms is deactivated. Again, the same applies to alarms being raised for compaction failures.
 
-**Dealing with mixed types**
-<a id="mixed-types"></a>
+##### Dealing with mixed types {#mixed-types}
 
 Each offloading pipeline must ensure that the columns of the result table in the data lake have a unique data type each. A mixed type situation occurs if an offloading run detects a data type not matching the expected column data type. For example, the type of a column is INTEGER. Then, the offloading processes the literal N/A, which is of type VARCHAR. To resolve such a mixed type constellation, you can either use the **Automatically evolve schema** or the **Stop pipeline** strategy.
 

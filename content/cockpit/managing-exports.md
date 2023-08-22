@@ -29,10 +29,6 @@ ROLES & PERMISSIONS:
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
-{{< c8y-admon-related >}}
-- [Analytics > Streaming Analytics](/streaming-analytics/overview-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
-{{< /c8y-admon-related >}}
-
 <a name=""></a>
 ### To show all exports
 
@@ -148,7 +144,7 @@ The export schedule will be added to the export details.
 
 #### Migration of scheduled exports
 
-With version 10.6.2, a new report agent has been implemented to allow scheduled reports with the [Streaming Analytics](/streaming-analytics/overview-analytics/) application. The export schedules functionality based on smart rules has been deprecated.
+With version 10.6.2, a new report agent has been implemented to allow scheduled exports. The export schedules functionality based on smart rules has been deprecated.
 
 On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
 

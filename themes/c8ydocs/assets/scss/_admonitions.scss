@@ -115,3 +115,16 @@
     content: $dlt-c8y-icon-exclamation-circle;
   }
 }
+
+.preview {
+  border-color: var(--c8y-palette-status-preview);
+  background-color: var(--c8y-palette-status-preview-high);
+}
+
+.preview .title {
+  color: var(--c8y-palette-status-preview);
+  border-color: var(--c8y-palette-status-preview);
+  &:before {
+    content: $dlt-c8y-icon-preview;
+  }
+}

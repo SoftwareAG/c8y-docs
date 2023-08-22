@@ -11,7 +11,7 @@ An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different
 * You can use the [Streaming Analytics application](#epl-apps) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
 
-See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
+See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/using-epl).
 
 {{< c8y-admon-info >}}
 To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}},
@@ -147,7 +147,7 @@ CUMULOCITY_APPKEY=apamaAppKey
 ```
 
 {{< c8y-admon-info >}}
-You must [create an application](/standard-tenant/ecosystem/#adding-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
+You must [create an application](/standard-tenant/ecosystem/#custom-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
 {{< /c8y-admon-info >}}
 
 Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:

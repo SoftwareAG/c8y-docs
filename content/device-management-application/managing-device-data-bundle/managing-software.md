@@ -6,7 +6,7 @@ layout: redirect
 
 In the software repository, {{< product-c8y-iot >}} offers to collect reference software for devices. Multiple software packages can be installed on a device.
 
-### To view software
+### To view software {#to-view-software}
 
 Click **Software repository** in the **Management** menu in the navigator.
 
@@ -33,7 +33,7 @@ The **Software type** field suggests you a list of types already used in your so
 The list of versions shows the version name and the name of the software binary.
 The versions are ordered by their creation time (descending).
 
-### To add a new software or software version
+### To add a new software or software version {#to-add-a-new-software-or-software-version}
 
 1. In the **Software repository** page, click **Add software** at the right of the top menu bar.
 2. In the resulting dialog box,
@@ -50,7 +50,7 @@ The software object will be added to the software list or the software version w
 
 If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. Enter the new version number and upload a binary or provide a file path.
 
-### To edit a software
+### To edit a software {#to-edit-a-software}
 
 1. Click the menu icon at the right of a specific software item and in the context menu click **Edit**.
 2. Update the name, description, device type filter or software type by clicking the pencil icon next to it. Make the desired changes and click **Save**.
@@ -58,17 +58,17 @@ If you click **Add software** from within the details of a specific software, th
 The software will be updated accordingly.
 
 
-### To delete a software
+### To delete a software {#to-delete-a-software}
 
 Click the menu icon at the right of a specific software item and in the context menu click **Delete**.
 
 The software and all its versions will be deleted from the software repository.
 
-### To delete a software version
+### To delete a software version {#to-delete-a-software-version}
 
 In the details of a specific software, hover over the version entry you want to delete and click the delete icon. The software version will be deleted from the software details.
 
-### To manage software on a device
+### To manage software on a device {#to-manage-software-on-a-device}
 
 In the **Software** tab of a device you can manage the software for the particular device.
 
@@ -84,7 +84,7 @@ The **Software** tab shows a list of all available software installed on the dev
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
 
-#### To install software on a device
+#### To install software on a device {#to-install-software-on-a-device}
 
 1. In the **Software** tab, click **Install software**.
 
@@ -105,18 +105,18 @@ The install operation to be executed by the device will be created. The software
 Click on the operation to view its details. The status of the last operation is also shown on the **Software** tab.
 
 
-#### To update software on a device
+#### To update software on a device {#to-update-software-on-a-device}
 
 Hover over the software item which you want to update and click **Update**.
 Select a version from the list and click **Update** again.
 
 The software will be updated with the selected version.
 
-#### To delete software from a device
+#### To delete software from a device {#to-delete-software-from-a-device}
 
 Hover over the software item which you want to delete and click the delete icon.
 
-#### To install software on multiple devices
+#### To install software on multiple devices {#to-install-software-on-multiple-devices}
 
 {{< product-c8y-iot >}} offers the option to execute software updates for multiple devices at once.
 

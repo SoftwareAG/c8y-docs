@@ -34,21 +34,21 @@ Depending of the type and usage of a device, further actions are provided in an 
 
 Details on these additional menu items are provided where required.
 
-### Alarms
+### Alarms {#alarms}
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
-### Availability
+### Availability {#availability}
 
 The Availability tab offers availability monitoring for machines, see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
 
-### Child devices
+### Child devices {#child-devices}
 
 The **Child devices** tab shows a list of devices connected to the currently displayed device. For example, if you look at a gateway, the tab lists all machines connected to the gateway.
 
 For details provided in the child device list, see [Viewing all devices](/device-management-application/viewing-all-devices).
 
-### Configuration
+### Configuration {#configuration}
 
 The **Configuration** tab allows you to configure the parameters and initial settings of your device. Depending on the device, possible configurations are:
  - Text-based configurations
@@ -56,13 +56,13 @@ The **Configuration** tab allows you to configure the parameters and initial set
 
 For more details on managing binary-based configuration snapshots, see [Managing configurations](/device-management-application/managing-device-data/#managing-configurations).
 
-#### To request the current text-based configuration snapshot
+#### To request the current text-based configuration snapshot {#to-request-the-current-textbased-configuration-snapshot}
 
 1. Navigate to the **Configuration** tab.
 2. Select one of the device-supported configurations in the list.
 3. Click **Get snapshot from device**.
 
-#### To add or edit a text-based configuration snapshot
+#### To add or edit a text-based configuration snapshot {#to-add-or-edit-a-textbased-configuration-snapshot}
 
 1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
 2. Click **Send configuration to device** to save your edits.
@@ -73,31 +73,31 @@ For more details on managing binary-based configuration snapshots, see [Managing
 If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
 {{< /c8y-admon-info >}}
 
-### Control
+### Control {#control}
 
 The **Control** tab lists the operations being sent to a device. See [Working with operations](/device-management-application/monitoring-and-controlling-devices/#working-with-operations) for detailed information on operations.
 
 ![Operations](/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
 
-### Device profile
+### Device profile {#device-profile}
 
 See [Applying device profiles to devices](/device-management-application/managing-device-data/#to-apply-device-profiles-to-devices) for more information on how to apply device profiles to a device.
 
-### Events
+### Events {#events}
 
 The **Events** tab displays events related to a device. This enables low-level troubleshooting of a device. See [Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
 
-### Firmware
+### Firmware {#firmware}
 
 See [Managing firmware](/device-management-application/managing-device-data/#to-manage-firmware-on-a-device) for more information on how to manage and update the firmware on a device.
 
-### Identity
+### Identity {#identity}
 
 {{< product-c8y-iot >}} can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
 
 This is useful, for example, when you have non-functional hardware and must replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
 
-### Info
+### Info {#info}
 
 The **Info** tab summarizes management-relevant device information in a dashboard.
 
@@ -149,7 +149,7 @@ The information is provided on the following cards:
 </tbody>
 </table>
 
-### Location
+### Location {#location}
 
 The **Location** tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
 
@@ -157,11 +157,11 @@ The **Location** tab by default shows the location of a device on a map and as c
 
 The **Location** tab also shows when a device contains `c8y_Position` property. When you send a new `c8y_Position` event, you can set the same `c8y_Position` fragment on the device and it will automatically mark its position on the map.
 
-### Logs
+### Logs {#logs}
 
 In the **Logs** tab you can manage log information from devices.
 
-#### To request log information
+#### To request log information {#to-request-log-information}
 
 1. In the **Logs** tab, click **Request log file** at the right of the top menu bar.
 2. In the resulting dialog box, specify a date and time range for the log information.
@@ -180,15 +180,15 @@ After the log has been transferred from the device to {{< product-c8y-iot >}}, i
 
 Click on the entry in the list to show the entire log information.
 
-#### To download a log
+#### To download a log {#to-download-a-log}
 
 Hover over a row and click the download icon, to download the log excerpt to your file system.
 
-#### To delete a log
+#### To delete a log {#to-delete-a-log}
 
 Hover over a row and click the delete icon, to delete the log information.
 
-### Measurements
+### Measurements {#measurements}
 
 The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series".
 
@@ -235,7 +235,7 @@ Example:
 
 `"Fragment_name"` and `"series_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure must be exactly as above, two-level deep JSON object.
 
-### Network
+### Network {#network}
 
 In the **Network** tab, mobile network (WAN) and local area network (LAN) parameters can be viewed and configured.
 
@@ -247,14 +247,14 @@ The WAN parameters in the user interface correspond to the first profile stored 
 For SMS configuration, the router needs to be configured to accept SMS commands.
 {{< /c8y-admon-info >}}
 
-#### To configure WAN parameters
+#### To configure WAN parameters {#to-configure-wan-parameters}
 
 1. Enter the Access Point Name (APN).
 2. Enter the username and the password of your account in the platform to which you wish to establish a connection.
 3. Select the authentication type.
 4. Click **Save** to save your settings.
 
-#### To configure LAN parameters
+#### To configure LAN parameters {#to-configure-lan-parameters}
 
 To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
@@ -262,7 +262,7 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 **Name** and **Mac address** fields are not configurable.
 {{< /c8y-admon-info >}}
 
-#### To configure DHCP parameters
+#### To configure DHCP parameters {#to-configure-dhcp-parameters}
 
 1. Enter the address range in which the connection can be established.
 2. Enter the DNS.
@@ -274,7 +274,7 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 If the LAN configuration is disabled, the DHCP configuration is automatically disabled as well.
 {{< /c8y-admon-info >}}
 
-### Services
+### Services {#services}
 
 The **Services tab** provides a list of all services running on a device with their status, name, type and date of the last update.
 Every column allows services to be filtered and/or sorted by the respective value displayed.
@@ -286,7 +286,7 @@ These predefined statuses have their own graphical representation and can be sel
 They all share the same icon and must be entered manually in the **Status** filter.
 A tooltip on the status icon displays their actual value.
 
-### Shell
+### Shell {#shell}
 
 The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
 
@@ -302,11 +302,11 @@ When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that
 
 For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **Predefined commands** above the command prompt area to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt. You may also add new commands here for re-use.
 
-### Software
+### Software {#software}
 
 See [Managing software on a device](/device-management-application/managing-device-data/#managing-software) for more information on how to manage and update the software installed on a device.
 
-### Tracking
+### Tracking {#tracking}
 
 Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.
 

@@ -4,7 +4,7 @@ title: Managing groups
 layout: redirect
 ---
 
-### To view groups
+### To view groups {#to-view-groups}
 
 Click **Groups** in the navigator to see all groups in a list format.
 
@@ -30,7 +30,7 @@ Below, all assets assigned to the group are listed. For each asset, various info
 
 Morover, you can assign devices, see [To assign devices to a group](#to-assign-devices-to-a-group).
 
-### To add a group
+### To add a group {#to-add-a-group}
 
 1. Click **Add group** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique group name and an optional description and click **Next**.
@@ -45,13 +45,13 @@ A group can be created with "0" devices in it.
 
 To add a new group as a child of an existing group, navigate to its **Subassets** page and click **Add Group** in the top menu bar.
 
-### To edit a group
+### To edit a group {#to-edit-a-group}
 
 1. In the navigator, click a group to open it.
 2. In the **Subassets** page, you can edit the name and description of the group.
 
 For further information on permissions, see [Managing permissions](/standard-tenant/managing-permissions/).
 
-### To delete a group
+### To delete a group {#to-delete-a-group}
 
 Hover over the respective entry you want to delete and click the delete icon at the right.

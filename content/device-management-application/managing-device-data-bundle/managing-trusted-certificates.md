@@ -24,7 +24,7 @@ The information in the table at the right side is extracted from the provided ce
 ![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-details.png)
 
 
-### To add a certificate
+### To add a certificate {#to-add-a-certificate}
 
 Before adding a new trusted certificate, make sure that:
 
@@ -52,13 +52,13 @@ To add a certificate perform these steps:
 For performance reasons, you shouldn't add the certificates of each device you want to connect, but only add the root certificate or one of the intermediate certificates from the chain which has been used to sign certificates used by devices.
 {{< /c8y-admon-info >}}
 
-### To edit a trusted certificate
+### To edit a trusted certificate {#to-edit-a-trusted-certificate}
 
 In the detail view of a certificate you may change the parameters on the left, that is, the certificate name, and the settings for the auto registration and enabled/disabled option.
 
 For details on the fields, see the description on adding certificates above.
 
-### To delete a trusted certificate
+### To delete a trusted certificate {#to-delete-a-trusted-certificate}
 
 To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
 The certificate will be permanently deleted.

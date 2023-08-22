@@ -6,7 +6,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
 
-### To connect a device manually
+### To connect a device manually {#to-connect-a-device-manually}
 
 {{< c8y-admon-info >}}
 Depending on the type of device you want to connect, not all steps of the following process may be relevant.
@@ -41,7 +41,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) or look up the manual of your device.
 {{< /c8y-admon-info >}}
 
-### Security token policy
+### Security token policy {#security-token-policy}
 
 Configure the security token policy to reduce the risk of devices which are not yet registered being taken over by threat actors, for example, by guessing their serial numbers.
 
@@ -69,13 +69,13 @@ The policy can be configured by setting the following tenant option with one of 
 The **Pending acceptance** screen might differ depending on the [security token policy](#security-token-policy).
 {{< /c8y-admon-info >}}
 
-#### Ignored security token policy
+#### Ignored security token policy {#ignored-security-token-policy}
 
 With a value of IGNORED for the security token policy, a device connected to {{< product-c8y-iot >}} can be accepted without any token validation:
 
 ![Accepting devices registrations under ignored security token policy](/images/users-guide/DeviceManagement/devmgmt-at-register-device-pending-acceptance-ignored-security.png)
 
-#### Optional security token policy
+#### Optional security token policy {#optional-security-token-policy}
 
 The list of device registrations is presented in the image below. Note that the input for security token is displayed for all devices.
 
@@ -107,7 +107,7 @@ For any device which uses a security token, the **accept all** feature is not av
 Such devices must be accepted manually by providing the correct **Security token** value and clicking **Accept**.
 
 
-#### Required security token policy
+#### Required security token policy {#required-security-token-policy}
 
 In this mode any device connected to {{< product-c8y-iot >}} must use a security token on establishing the connection and the user must enter the same token when accepting the device.
 

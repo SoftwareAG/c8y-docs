@@ -6,7 +6,6 @@ section:
   - app_development
 ---
 
-<a name="navigating"></a>
 ### To navigate assets
 
 In the asset hierarchy, {{< product-c8y-iot >}} distinguishes between top-level groups and subassets. Subassets can either be other groups or devices.
@@ -67,8 +66,7 @@ If dashboards have been created for a group or device, they will also be added a
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 
-<a name="creating-groups"></a>
-### To add a group
+### To add a group {#creating-groups}
 
 1. Click **Add group** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique group name and an optional description and click **Next**.
@@ -83,7 +81,6 @@ A group can be created with "0" devices in it.
 
 To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
-<a name="edit-group"></a>
 ### To edit a group
 
 1. In the navigator, click a group to open it.

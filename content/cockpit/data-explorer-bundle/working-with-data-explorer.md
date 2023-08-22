@@ -71,8 +71,7 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 
 {{< /c8y-admon-related >}}
 
-<a name="add-data-points"></a>
-### To add a data point
+### To add a data point {#add-data-points}
 
 To add a data point to the data explorer, click **Add data point** at the bottom of the **Data points** card.
 
@@ -88,8 +87,7 @@ For further information on the data point library refer to [Data point library](
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
-<a name="customize-data-points"></a>
-### To customize data point properties
+### To customize data point properties {# customize-data-points}
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
 
@@ -169,8 +167,7 @@ Click the menu icon and in the context menu select **Remove**, to remove the ent
 
 As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 
-<a name="export-data"></a>
-### To export measurement data
+### To export measurement data {#export-data}
 
 You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
 

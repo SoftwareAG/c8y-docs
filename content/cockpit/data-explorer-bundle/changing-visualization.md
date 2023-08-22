@@ -69,8 +69,7 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 
 {{< /c8y-admon-related >}}
 
-<a name="change-visualization"></a>
-### Changing data explorer visualization
+### Changing data explorer visualization {# change-visualization}
 
 To change the visualization in the data explorer, you can modify several properties.
 

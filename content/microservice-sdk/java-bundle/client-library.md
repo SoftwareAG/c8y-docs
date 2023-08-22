@@ -300,7 +300,7 @@ final NotificationTokenRequestRepresentation tokenRequestRepresentation = new No
         1440,                       // The token expiration duration in minutes.
         false);
 
-// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](https://cumulocity.com/guides/10.17.0/reference/notifications/) in the *Reference guide* for more details.
+// The obtained token is required for establishing a WebSocket connection. Refer to [Notifications 2.0](https://cumulocity.com/guides/10.17.0/reference/notifications/) for more details.
 final String token = tokenApi.create(tokenRequestRepresentation).getTokenString();
 
 // Query all subscriptions

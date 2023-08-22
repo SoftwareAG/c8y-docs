@@ -1,6 +1,5 @@
 ---
-title: Getting started
-slug: microservice-getting-started
+title: Introduction
 layout: bundle
 section:
   - app_development

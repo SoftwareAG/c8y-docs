@@ -10,7 +10,7 @@ This section describes how to develop and deploy microservices on top of {{< pro
 *   [Hello world tutorial for C#](#cs-hello-world-tutorial) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
 *   [Troubleshooting](#cs-troubleshooting) – Some identified common problems and their solutions.
-<!-- *   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens. -->
+<!-- *   [Authentication](#microservice-cs-authentication) – Information about authentication employing OAuth tokens. -->
 
 To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial for C#](#cs-hello-world-tutorial).
 

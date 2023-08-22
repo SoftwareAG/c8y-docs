@@ -441,7 +441,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; c
 }
 ```
 
-Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [fragment library](/device-integration/fragment-library/) and in the [sensor library](/concepts/domain-model/#sensor-library).
+Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [fragment library](/device-integration/fragment-library/).
 
 Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/rest)).
 

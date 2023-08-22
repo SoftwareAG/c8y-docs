@@ -123,7 +123,7 @@ The successful execution will create an application on the {{< product-c8y-iot >
 
 If the name of the microservice application is not provided in the manifest file, it will be automatically inferred from the ZIP file name without the version number.
 
-For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
+For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
 ### Subscribing
 

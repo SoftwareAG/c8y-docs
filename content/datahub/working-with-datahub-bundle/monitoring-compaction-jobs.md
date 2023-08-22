@@ -33,9 +33,8 @@ Click **Reload** to refresh the status being shown.
 
 You can filter the entries by their status by using the filter buttons in the action bar. The pagination buttons can be used to traverse the history entries.
 
-### History of compactions per offloading pipeline
+### History of compactions per offloading pipeline {#history-compaction-per-offloading-job}
 
-<a id="history-compaction-per-offloading-job"></a>
 
 If you want to examine the compaction history for a particular offloading pipeline, select **Offloading** in the navigation bar and select the offloading job you are interested in.
 

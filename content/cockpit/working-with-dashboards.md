@@ -32,18 +32,14 @@ ROLES & PERMISSIONS:
 - To create a dashboard: CREATE or ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
 - To delete a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
 - To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
-  {{< /c8y-admon-req >}}
-
-
-
-<a name="creating-dashboards"></a>
+{{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
 - [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
-### To create a dashboard
+### To create a dashboard {#creating-dashboards}
 
 To create your individualized dashboard, execute the following steps:
 
@@ -80,8 +76,7 @@ The widget titles will be translated only if a valid translation is available.
 
 Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
-<a name="sharing-dashboards"></a>
-### To share a dashboard
+### To share a dashboard {#sharing-dashboards}
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
@@ -97,7 +92,6 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 {{< /c8y-admon-info >}}
 
-<a name="global-time-context"></a>
 ### Global time context
 
 In the widget configuration, you can specify a global time range for your dashboards. When using a global time range, all data in a dashboard will be aligned to this range. After setting the global time range in a first widget, this shared context can then be used by other widgets that are configured to use the global date context.

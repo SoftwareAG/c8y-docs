@@ -72,7 +72,7 @@ Smart rules can be seen in two places:
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
 {{< c8y-admon-related >}}
-- [Platform administration > {{< standard-tenant >}} management > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
+- [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
 <a name="create-rules"></a>

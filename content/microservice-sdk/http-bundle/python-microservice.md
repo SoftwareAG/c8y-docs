@@ -47,7 +47,7 @@ This example uses Python 3 with a Flask microframework which enables simple expo
 Start by creating the _application.py_ script with the following content:
 
 ```python
-#
+#!flask/bin/python
 from flask import Flask, jsonify
 import os
 

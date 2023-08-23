@@ -25,7 +25,7 @@ gateway:
     identifier: Gateway_Device
     name: Gateway_Device
     db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored. {#the-gateway-uses-the-local-database-to-store-platform-credentials-and-local-cache-this-parameter-shows-the-location-in-which-the-local-data-should-be-stored}
+# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
 ```
 
@@ -46,7 +46,7 @@ gateway:
     identifier: Gateway_Device
     name: Gateway_Device
     db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored. {#the-gateway-uses-the-local-database-to-store-platform-credentials-and-local-cache-this-parameter-shows-the-location-in-which-the-local-data-should-be-stored}
+# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
     thinEdge:
         enabled: true
@@ -103,9 +103,9 @@ Deletion of the legacy files can be turned off by setting the "gateway.db.addres
 The following properties can be manually configured in the YAML file:
 
 ```yaml
-# Name of the application - this should not change {#name-of-the-application--this-should-not-change}
+# Name of the application - this should not change
 name: opcua-device-gateway
-# Platform location and configuration {#platform-location-and-configuration}
+# Platform location and configuration
 C8Y:
   # This is the base URL pointing to the {{< product-c8y-iot >}} platform. This must always be customized in an application profile.
   baseUrl: http://localhost
@@ -116,9 +116,9 @@ C8Y:
   # reachable only with an IP address.
   forceInitialHost: true
 
-#  {#}
-# Gateway-specific settings {#gatewayspecific-settings}
-#  {#}
+#
+# Gateway-specific settings
+# 
 gateway:
   # The version of the gateway - this is filled automatically during the build process - do not change this property
   version: ${project.version}

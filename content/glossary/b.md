@@ -6,7 +6,7 @@ section:
   - getting_started
 ---
 
-### Blocks
+### Blocks {#blocks}
 
 Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
 

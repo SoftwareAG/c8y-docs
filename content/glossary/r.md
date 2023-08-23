@@ -7,19 +7,19 @@ section:
 ---
 
 
-### Real-time processing
+### Real-time processing {#realtime-processing}
 
 {{< product-c8y-iot >}} allows developers and power users to run real-time IoT business logic inside {{< product-c8y-iot >}} based on a high-level real-time processing language, that is, Apama’s Event Processing Language (EPL).
 
 For details see [Getting started > Technical concepts > Real-time processing](/concepts/realtime/).
 
 
-### REST
+### REST {#rest}
 
 In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for all external communication with IoT devices, other web applications or back-office IT systems.
 
 
-### REST API
+### REST API {#rest-api}
 
 The {{< product-c8y-iot >}} REST API is an interface that allows for communication between the {{< product-c8y-iot >}} platform and other systems via HTTP and REST. It allows the user to perform operations and process data by issuing a simple request using any HTTP client such as a web browser.
 

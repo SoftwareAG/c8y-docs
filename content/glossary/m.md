@@ -6,19 +6,19 @@ section:
   - getting_started
 ---
 
-### Maintenance release
+### Maintenance release {#maintenance-release}
 
 {{< company-c8y >}} provides Maintenance releases for supported {{< product-c8y-iot >}} GA releases. A Maintenance release contains fixes and improvements for a GA release but no new features.
 
 
-### Managed objects
+### Managed objects {#managed-objects}
 
 In {{< product-c8y-iot >}}, all [assets](/glossary/a/#asset) are represented as managed objects. {{< product-c8y-iot >}} comes with a predefined set of types, for example [devices](/glossary/d/#device), groups, and [agents](/glossary/a/#agent).
 
 Hierarchical structures of managed objects allow for the implementation of complex structures like a factory with many machines which consist of devices and sensors which can report [events](/glossary/e/#event), [alarms](/glossary/a/#alarm), and [measurements](#measurement).
 
 
-### Management tenant
+### Management tenant {#management-tenant}
 
 A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
 
@@ -28,12 +28,12 @@ Every {{< product-c8y-iot >}} deployment is delivered with a {{< management-tena
 See also [{{< standard-tenant >}}](/glossary/s/#standard-tenant) and [{{< enterprise-tenant >}}](/glossary/e/#enterprise-tenant).
 
 
-### Measurement
+### Measurement {#measurement}
 
 A measurement contains one or multiple numerical values taken at a single point in time for a single asset. A sequence of measurements forms a time series.
 
 
-### Microservices
+### Microservices {#microservices}
 
 Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of {{< product-c8y-iot >}}:
 
@@ -47,7 +47,7 @@ Microservices are deployed as Container images to {{< product-c8y-iot >}}, and f
 For details see [Getting started > Technical concepts > Developing applications > Microservices](/concepts/applications/#microservices).
 
 
-### Model
+### Model {#model}
 
 Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
 
@@ -55,14 +55,14 @@ A model is a container which can have a network of [Blocks](/glossary/b/#blocks)
 The behavior of a block inside a model does not depend on other blocks. There can be multiple instances of the same block in a model where each instance may behave differently, depending on the configurable parameters or the inputs connected to the block.
 
 
-### MQTT
+### MQTT {#mqtt}
 
 {{< product-c8y-iot >}} supports MQTT, an OASIS standard messaging protocol, for device integration.
 
 For details see [Device management > Device integration > Device integration using MQTT](/device-integration/mqtt).
 
 
-### Multi-tenancy
+### Multi-tenancy {#multitenancy}
 
 With the {{< enterprise-tenant >}} concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 

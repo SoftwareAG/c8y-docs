@@ -7,7 +7,7 @@ section:
 ---
 
 
-### Enterprise tenant
+### Enterprise tenant {#enterprise-tenant}
 
 A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
 
@@ -24,7 +24,7 @@ EPL covers statements, which are organized into actions and monitors. Monitor fi
 For details see [Getting started > Technical concepts > Real-time processing > Using the Apama Event Processing Language (EPL)](/concepts/realtime/using-epl).
 
 
-### EPL Apps
+### EPL Apps {#epl-apps}
 
 EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#c8y-streaming-analytics) application. It allows you to develop EPL apps (that is, single *.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing*.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
 
@@ -33,7 +33,7 @@ See also [Event Processing Language (EPL)](/glossary/e/#epl) and [Analytics Buil
 For more details see [Analytics > Streaming Analytics > EPL Apps](/streaming-analytics/epl-apps).
 
 
-### Event
+### Event {#event}
 
 In the context of {{< product-c8y-iot >}}:
 

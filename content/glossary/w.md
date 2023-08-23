@@ -6,7 +6,7 @@ section:
   - getting_started
 ---
 
-### Web applications
+### Web applications {#web-applications}
 
 A {{< product-c8y-iot >}} web application can be:
 
@@ -18,7 +18,7 @@ All subscribed web applications are hosted by {{< product-c8y-iot >}} and the ap
 For details see [Getting started > Technical concepts > Developing applications > Web applications](/concepts/applications/#web-applications).
 
 
-### Web SDK
+### Web SDK {#web-sdk}
 
 The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that can be:
 
@@ -30,14 +30,14 @@ The {{< product-c8y-iot >}} Web SDK enables you to develop web applications that
 For details see the [Application enablement & solutions > Web SDK](/web/overview/).
 
 
-### Widgets
+### Widgets {#widgets}
 
 Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports. {{< product-c8y-iot >}} provides preset widget types for various purposes.
 
 For details see [Application enablement & solutions > Cockpit > Widgets collection](/cockpit/widgets-collection) and [Application enablement & solutions > Cockpit > Using widgets in dashboards and reports](/cockpit/using-widgets).
 
 
-### Wires
+### Wires {#wires}
 
 Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
 

@@ -1,12 +1,10 @@
 ---
 weight: 60
-title: Working with DataHub
+title: Analytical querying with DataHub Edge
 layout: bundle
 section:
   - edge_server
 ---
-
-### Analytical querying with DataHub Edge
 
 DataHub Edge is an optional component of {{< product-c8y-iot >}} Edge. DataHub Edge complements the ad-hoc querying of recent device data with analytical querying over long periods of time. For that purpose, data is moved from the Operational Store of {{< product-c8y-iot >}} Edge to a local data lake, with the data being stored in a concise and query-efficient format. DataHub Edge allows you to run SQL queries against the data lake contents so that you can gain more insights into your device data.
 

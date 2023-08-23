@@ -18,9 +18,7 @@ Once you have configured and started your offloading pipelines, they regularly o
 You need administration or management permissions to access the offloading job histories. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-req >}}
 
-### History per offloading pipeline
-
-<a id="history-per-offloading-job"></a>
+### History per offloading pipeline {#history-per-offloading-job}
 
 If you want to examine the execution history for a particular pipeline, select **Offloading** in the navigation bar and select the one you are interested in.
 
@@ -46,8 +44,6 @@ You can filter the entries by their status or timestamp by using the filter cont
 The page navigation buttons at the bottom can be used to traverse the history entries.
 
 ### Details of offloading job
-
-<a id="details-offloading-job"></a>
 
 For a given offloading job, you can examine additional details of its execution.
 

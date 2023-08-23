@@ -15,7 +15,7 @@ You can select a single device or a whole group of devices, indicated by a folde
 
 If you want to edit an asset of a widget, open the widget editor and click **Clear**. This clears the previous asset collection. Select the new desired asset and click **Save**.  
 
-For general instructions on how to add or modify widgets, see [To add a widget to a dashboard or a report](#adding-widgets) or [Modifying widgets](#modifying-widgets).
+For general instructions on how to add or modify widgets, see [To add a widget to a dashboard or a report](#to-add-a-widget-to-a-dashboard-or-a-report) or [Modifying widgets](#modifying-widgets).
 
 ### To select child devices as asset
 

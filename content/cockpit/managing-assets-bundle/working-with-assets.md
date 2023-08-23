@@ -66,7 +66,7 @@ If dashboards have been created for a group or device, they will also be added a
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 
-### To add a group {#creating-groups}
+### To add a group
 
 1. Click **Add group** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique group name and an optional description and click **Next**.
@@ -92,7 +92,7 @@ To delete a group either on top-level from the **Groups** page or from the **Sub
 
 In the resulting dialog box, you can select to also delete all devices inside the selected asset and all its subassets.
 
-### To assign devices to a group {#assigning-devices}
+### To assign devices to a group
 
 Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device management application. For details on connecting devices refer to [Device management application](/device-management-application/registering-devices/).
 

@@ -75,7 +75,7 @@ Smart rules can be seen in two places:
 - [Platform administration > {{< standard-tenant >}} management > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
-### To create a smart rule {#create-rules}
+### To create a smart rule
 
 Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
 
@@ -96,7 +96,7 @@ Smart rules can be instantiated multiple times.
 
 Click the menu icon at the right of an entry and then click **Edit**.
 
-For details on the fields see [To create a smart rule](#create-rules).
+For details on the fields see [To create a smart rule](#to-create-a-smart-rule).
 
 
 ### To duplicate a smart rule

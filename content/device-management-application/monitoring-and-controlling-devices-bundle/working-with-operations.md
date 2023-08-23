@@ -79,7 +79,7 @@ Alternatively, filter the list of single operations to show only single operatio
 
 Click the menu icon at the right of the single operation that you want to create a smart rule for, and select **Create smart rule**.
 
-See [To create a smart rule](/cockpit/smart-rules/#create-rules) for further steps.
+See [To create a smart rule](/cockpit/smart-rules/#to-create-a-smart-rule) for further steps.
 
 ### To view bulk operations
 

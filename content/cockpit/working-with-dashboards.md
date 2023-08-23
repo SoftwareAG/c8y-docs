@@ -39,7 +39,7 @@ ROLES & PERMISSIONS:
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
-### To create a dashboard {#creating-dashboards}
+### To create a dashboard
 
 To create your individualized dashboard, execute the following steps:
 
@@ -76,7 +76,7 @@ The widget titles will be translated only if a valid translation is available.
 
 Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
-### To share a dashboard {#sharing-dashboards}
+### To share a dashboard
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
@@ -110,7 +110,7 @@ Widgets synchronized with the dashboard time range are indicated by a respective
 
 To edit a dashboard, click **Edit** in the top menu bar.
 
-The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#creating-dashboards).
+The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#to-create-a-dashboard).
 
 ### To copy a dashboard from one object to another
 
@@ -119,7 +119,7 @@ The dashboard editor will open up. For details on the fields, refer to [To creat
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the
-"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#sharing-dashboards).
+"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#to-share-a-dashboard).
 
 
 ### To delete a dashboard

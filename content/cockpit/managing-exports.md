@@ -106,7 +106,7 @@ JsonPath expressions added from data points will be stored in bracket notation i
 
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
-### To schedule an export {#schedule-export}
+### To schedule an export
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.
 

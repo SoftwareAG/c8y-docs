@@ -21,7 +21,7 @@ Some of the widget require additional permissions in order to visualize the data
 
 {{< product-c8y-iot >}} provides preset widget types, for details see the [Widgets collection](/cockpit/widgets-collection/).
 
-### To add a widget to a dashboard or a report {#adding-widgets}
+### To add a widget to a dashboard or a report
 
 1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
 

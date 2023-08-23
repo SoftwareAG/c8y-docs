@@ -8,7 +8,7 @@ In the {{< product-c8y-iot >}} platform, you can configure which applications an
 
 In addition, you can specify which applications and microservices are subscribed to a tenant when the system is upgraded. This list might differ from the default subscriptions on tenant creation. For example, certain default applications might have been unsubscribed from a tenant after creation and you may not want these applications to be subscribed to it again or you may want to subscribe different ones to it.
 
-### To view default subscriptions
+### To view default subscriptions {#to-view-default-subscriptions}
 
 In the **Default subscriptions** page, you can configure two separate lists of applications. These will be subscribed by default to:
 
@@ -34,7 +34,7 @@ Initially, the lists show the default subscriptions inherited from the tenant hi
 
 <img src="/images/users-guide/Administration/admin-default-subscriptions-inherited.png" alt="Default subscriptions - inherited from tenant hierarchy">
 
-### To configure default subscriptions
+### To configure default subscriptions {#to-configure-default-subscriptions}
 
 You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
 
@@ -54,7 +54,7 @@ Obsolete entries not matching any existing applications are removed on save. If 
 {{< /c8y-admon-info >}}
 
 
-### To override default subscriptions
+### To override default subscriptions {#to-override-default-subscriptions}
 
 The default subscriptions can be overridden for subtenants by setting up a tenant policy with the following options:
 

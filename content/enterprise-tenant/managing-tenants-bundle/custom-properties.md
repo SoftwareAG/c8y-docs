@@ -7,7 +7,7 @@ layout: redirect
 
 The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [properties library](/standard-tenant/changing-settings/#properties-library). Such properties are also displayed as columns in the [Usage statistics](/enterprise-tenant/usage-and-billing/) page.
 
-### To limit subtenant request rate
+### To limit subtenant request rate {#to-limit-subtenant-request-rate}
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
 
@@ -24,13 +24,13 @@ Rate limiting can be an effective countermeasure against threats like brute forc
 
 It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the {{< management-tenant >}}. Contact your Operations team on how to configure this setting according to your needs.
 
-### To limit subtenant device number
+### To limit subtenant device number {#to-limit-subtenant-device-number}
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including child devices) via the custom property "Limit number of devices".
 
 They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the [Usage statistics](/enterprise-tenant/usage-and-billing/) page.
 
-### Product experience tracking
+### Product experience tracking {#product-experience-tracking}
 
 Using the checkbox **Enable Gainsight product experience tracking** a parent tenant can enable/disable the product experience tracking through the [Gainsight PX](https://www.gainsight.com/product-experience/) product experience software for the given child tenant.
 

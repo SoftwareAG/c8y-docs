@@ -28,7 +28,7 @@ On tenant creation, there are default roles available that can be used as a samp
 In some of the properties you can configure email templates for various purposes. Be aware that the corresponding emails are send with "text/html" as content type.
 {{< /c8y-admon-info >}}
 
-### Placeholders
+### Placeholders {#placeholders}
 
 The following placeholders can be found in the **Configuration** tab:
 
@@ -47,17 +47,17 @@ The following placeholders can be found in the **Configuration** tab:
 The above mentioned placeholders might not be applicable to certain templates. While preparing content, note the information provided in the UI.
 {{< /c8y-admon-info >}}
 
-### Two-factor authentication
+### Two-factor authentication {#twofactor-authentication}
 
 Under **Two-factor authentication**, you can change the SMS template which is sent to the users.
 
-### Support link
+### Support link {#support-link}
 
 In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< sag-dev-community >}} page will be used.
 
 Enter "false" to hide the link.
 
-### Password reset
+### Password reset {#password-reset}
 
 In the **Password reset** section you can change all settings related to password reset email templates.
 
@@ -69,7 +69,7 @@ In the **Email subject** field, provide a subject for all password reset related
 
 In the following two fields provide an email template to be used on password change confirmation and a template for the invitation email.
 
-### Email server
+### Email server {#email-server}
 
 In the **Email server** section, you can configure custom email server settings.
 
@@ -81,15 +81,15 @@ In the **Protocol and encryption** field, select a protocol/encryption type from
 
 Provide the host, port, username, password, and sender address for the email server. The empty password configuration is supported for the {{< enterprise-tenant >}}.
 
-### Data export
+### Data export {#data-export}
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
-### Storage limit
+### Storage limit {#storage-limit}
 
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit (warning) and *after* data removal is performed (limit exceeded).
 
-### Suspending tenants
+### Suspending tenants {#suspending-tenants}
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
 

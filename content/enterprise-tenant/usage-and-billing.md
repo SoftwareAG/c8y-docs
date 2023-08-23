@@ -15,7 +15,7 @@ helpcontent:
 ---
 
 
-### To view usage statistics
+### To view usage statistics {#to-view-usage-statistics}
 
 The **Usage statistics** page provides statistical information on each subtenant.
 
@@ -154,7 +154,7 @@ You can also filter and sort the list on any column by clicking the filter icon 
 The date/time range used here might differ from your server time due to different time zones.
 {{< /c8y-admon-important >}}
 
-### To export the usage statistics table
+### To export the usage statistics table {#to-export-the-usage-statistics-table}
 
 1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file.
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
@@ -163,12 +163,12 @@ The date/time range used here might differ from your server time due to differen
 The CSV file will be downloaded to your file system.
 
 
-### Microservice usage
+### Microservice usage {#microservice-usage}
 
 The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables {{< enterprise-tenant >}}s and service providers to charge tenants not only based on subscriptions but also based on resources usage.
 
 
-#### Billing modes
+#### Billing modes {#billing-modes}
 
 {{< product-c8y-iot >}} offers two billing modes:
 
@@ -182,7 +182,7 @@ RESOURCES: Sets the billing mode to resources-based. This is the default mode an
 
 SUBSCRIPTION: Sets the billing mode to subscription-based.
 
-#### Isolation level
+#### Isolation level {#isolation-level}
 
 Two isolation levels are distinguished for microservices: per-tenant isolation and multi-tenant isolation.
 
@@ -195,7 +195,7 @@ In case of resources-based billing, charging depends on the isolation level:
 
 In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< enterprise-tenant >}} or a service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
 
-#### Resources usage assignment for billing mode and isolation level
+#### Resources usage assignment for billing mode and isolation level {#resources-usage-assignment-for-billing-mode-and-isolation-level}
 
 |Billing mode|Microservice Isolation|Resources usage assigned to
 |:--------|:-----|:-----
@@ -204,7 +204,7 @@ In case of multi-tenant isolation level, the owner of a microservice (for exampl
 |Resources-based|Per-tenant|Subscriber
 |Resources-based|Multi-tenant|Owner
 
-#### Collected values
+#### Collected values {#collected-values}
 
 The following values are collected on a daily base for each tenant:
 
@@ -240,7 +240,7 @@ The information on the microservice usage is presented in the **Usage statistics
 
 For more details, refer to [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
-#### Scaling
+#### Scaling {#scaling}
 
 Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](/microservice-sdk/concept/#manifest).
 
@@ -254,7 +254,7 @@ Note that an audit record is created for every change of the number of instances
 For more information, refer to [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}}.
 
 
-### Timezone handling
+### Timezone handling {#timezone-handling}
 
 {{< c8y-admon-important >}}
 {{< product-c8y-iot >}} platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
@@ -262,9 +262,9 @@ For more information, refer to [Audits](https://{{< domain-c8y >}}/api/core/{{< 
 
 The tenant usage statistics are collected on a daily base according to the beginning of day (`BOD`) and the end of day (`EOD`), which are defined by the server timezone. As a result, if the local time zone of a user is different from the server timezone, an operation triggered by the user may be assigned to a different day according to the server time.
 
-#### Examples
+#### Examples {#examples}
 
-##### Request counting - Example 1
+##### Request counting - Example 1 {#request-counting--example-1}
 
 ||Device| Server|
 |:---|:----|:-----|
@@ -276,7 +276,7 @@ The tenant usage statistics are collected on a daily base according to the begin
 The request will be billed to the day 25.08.2020 as this is the server time of the request handing.
 <br><br>
 
-##### Request counting - Example 2
+##### Request counting - Example 2 {#request-counting--example-2}
 
 ||Device| Server|
 |:---|:----|:-----|
@@ -288,7 +288,7 @@ The request will be billed to the day 25.08.2020 as this is the server time of t
 The request will be billed to the day 26.08.2020 as the server time is the same as the device time.
 <br><br>
 
-##### Microservice resource billing - Example 1
+##### Microservice resource billing - Example 1 {#microservice-resource-billing--example-1}
 
 ||User| Server|
 |:---|:----|:-----|
@@ -301,7 +301,7 @@ The request will be billed to the day 26.08.2020 as the server time is the same 
 The resources will be assigned mainly to the day 26.08.2020 as according to the UTC time zone the microservice was active for 14 hours that day and for 10 hours the next day. This might be a bit different from what a user expects as from his perspective the microservice was active for 12 hours each day.
 <br><br>
 
-##### Microservice resource billing - Example 2
+##### Microservice resource billing - Example 2 {#microservice-resource-billing--example-2}
 
 ||User| Server|
 |:---|:----|:-----|
@@ -314,7 +314,7 @@ The resources will be assigned mainly to the day 26.08.2020 as according to the 
 From the user perspective the microservice was subscribed for 8 hours at 26.08.2020 but at server time it was 2 hours before EOD of 25.08.2020 and 6 hours after BOD at 26.08.2020.
 <br><br>
 
-##### Microservice resource billing - Example 3
+##### Microservice resource billing - Example 3 {#microservice-resource-billing--example-3}
 
 ||User| Server|
 |:---|:----|:-----|
@@ -327,7 +327,7 @@ From the user perspective the microservice was subscribed for 8 hours at 26.08.2
 In this case we have a big time shift between the server and the user time. All resources will be billed to the day 25.08.2020 according to the server time.
 
 
-### Daily routine
+### Daily routine {#daily-routine}
 
 Usage statistics consist of values that are progressive like the request count and values that are snapshots of a state at a given time period. In case of the second type of data, values are refreshed several times each day but the value from EOD is the value that is assigned for the given day.
 
@@ -340,7 +340,7 @@ Usage statistics consist of values that are progressive like the request count a
 |Microservice resources | 9, 17 and EOD|
 
 
-### Lifecycle
+### Lifecycle {#lifecycle}
 
 **Tenant**
 
@@ -377,7 +377,7 @@ There is no event in the **Events** section when the microservice has reached th
 
 Audit logs and events are stored at tenant space according to the isolation level. For multi-tenant isolated microservices this is the tenant that is the owner of the microservice and in case of per-tenant isolation level it is the subscribed tenant.
 
-### Billing pricing models
+### Billing pricing models {#billing-pricing-models}
 
 The {{< product-c8y-iot >}} platform collects a lot of different usage statistics data which is used for billing customers.
 

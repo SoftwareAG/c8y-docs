@@ -6,7 +6,7 @@ title: Troubleshooting
 
 Some common problems and their solutions have been identified and documented below.
 
-##### SSL or certificate errors
+##### SSL or certificate errors {#ssl-or-certificate-errors}
 
 You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the {{< product-c8y-iot >}} production certificate into your Java Runtime Environment. Download the certificate with the following command:
 
@@ -38,15 +38,15 @@ $ keytool -import -v -trustcacerts -alias root -file gd_bundle.crt -keystore $JA
 
 The *gd\_bundle.crt* certificate can be downloaded directly from the [GoDaddy repository](https://certs.godaddy.com/anonymous/repository.pki).
 
-##### When I install the SDK, Eclipse complains about compatibility problems
+##### When I install the SDK, Eclipse complains about compatibility problems {#when-i-install-the-sdk-eclipse-complains-about-compatibility-problems}
 
 Make sure that you use the **Target Platform** preferences page to install the SDK as described in the instructions. **Install New Software** installs software into your running Eclipse IDE, but you must install the SDK as a separate server software.
 
-##### I get "Expected to find an object at table index" when running a microservice or application
+##### I get "Expected to find an object at table index" when running a microservice or application {#i-get-expected-to-find-an-object-at-table-index-when-running-a-microservice-or-application}
 
 This error occurs due to a bug in particular Eclipse versions. As a workaround, select **Run** from the main menu and then **Run Configurations ...**. On the left, select the launch configuration that you have been using, for example, **OSGi Framework**. On the right, click the **Arguments** tab. Append a " -clean" to the **Program Arguments** and click **Apply**.
 
-##### The microservice or application won't start
+##### The microservice or application won't start {#the-microservice-or-application-wont-start}
 
 Verify that all required plug-ins are checked in your launch configuration. Go to **Run** > **Run Configurations** and select the **OSGi Framework** launch configuration. Click **Select All** and try running it again.
 
@@ -54,13 +54,13 @@ Check if the required plug-ins are started. While the application or microservic
 
 Check if you are using the correct target platform. Go to the **Target Platform** page in the preferences and check if "{{< company-c8y >}} runtime" is checked.
 
-##### The microservice application does not compile. I get "Access Restriction" messages
+##### The microservice application does not compile. I get "Access Restriction" messages {#the-microservice-application-does-not-compile-i-get-access-restriction-messages}
 
 This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restriction is present in the Import-Package section.
 
 You can find the package by opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
 
-##### When starting an application I get "address already in use" messages
+##### When starting an application I get "address already in use" messages {#when-starting-an-application-i-get-address-already-in-use-messages}
 
 Check if you are running another instance of the application. Click on the **Display Selected Console** icon in the console toolbar (the terminal icon) to browse through your consoles. Terminate other running instances by clicking the red **Stop** icon in the toolbar.
 
@@ -79,11 +79,11 @@ java     12985   neo  45u  IPv6  0x077c76d0       0t0   TCP  *:8080 (LISTEN)
 
 This means that the process 12985 is using the 8080 port and it can be killed if necessary.
 
-##### When trying to build an application I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error
+##### When trying to build an application I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error {#when-trying-to-build-an-application-i-get-a-beancreationexception-error-creating-bean-with-name-methodsecurityinterceptor-error}
 
 This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, for example, 1016.0.0, the version of Spring Boot must be compatible or equal to version 2.5.4.
 
-##### Missing Docker permissions in Linux
+##### Missing Docker permissions in Linux {#missing-docker-permissions-in-linux}
 
 When you build a microservice application via `mvn`, you might get this error:
 

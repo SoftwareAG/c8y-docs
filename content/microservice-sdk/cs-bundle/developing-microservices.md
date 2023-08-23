@@ -13,7 +13,7 @@ There are two possible deployment types on the platform:
 
 For development and testing purposes, you can deploy a microservice on a local Docker container. The process is described below.
 
-### Microservice security
+### Microservice security {#microservice-security}
 
 The `Configure` method is used to specify how the application responds to HTTP requests. The request pipeline is configured by adding middleware components to an `IApplicationBuilder` instance.
 
@@ -36,7 +36,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### Platform
+### Platform {#platform}
 
 The root interface for connecting to {{< product-c8y-iot >}} from C# is called `Platform`. It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
 
@@ -78,7 +78,7 @@ C8Y_BOOTSTRAP_TENANT | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_USERNAME | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_PASSWORD | Bootstrap user to get platform subscriptions
 
-### Role-based authorization
+### Role-based authorization {#rolebased-authorization}
 
 Once a user has been authenticated, the next step is to check if the user is authorized to do what they are trying to do.
 
@@ -105,7 +105,7 @@ public class HomeController : Controller
 }
 ```
 
-### Accessing HTTPContext in ASP.net Core
+### Accessing HTTPContext in ASP.net Core {#accessing-httpcontext-in-aspnet-core}
 
 In earlier versions of .Net Core, `IHttpContextAccessor` was automatically registered. This was removed. You must register it manually if you intend to use it inside services. `IHttpContextAccessor` is only intended for accessing the `HttpContext` in locations where it is not directly available.
 
@@ -117,7 +117,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### Building a scheduled task
+### Building a scheduled task {#building-a-scheduled-task}
 
 In order to add a new scheduled task, add it as shown in the example below. All scheduled tasks should look similar to:
 
@@ -147,7 +147,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 
-### Microservice subscription
+### Microservice subscription {#microservice-subscription}
 
 The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
 
@@ -196,13 +196,13 @@ public class HomeController : Controller
 }
 ```
 
-### Program class
+### Program class {#program-class}
 
 In ASP.NET Core 3.1, the Program class is used to setup the `IWebHost`. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
 
 There are multiple ways to configure the application.
 
-#### Simplified configuration
+#### Simplified configuration {#simplified-configuration}
 
 By using the extension to `IWebHost` - `UseMicroserviceApplication` the configuration with `Startup` can be simplified.
 
@@ -258,7 +258,7 @@ public class Startup
 }
 ```
 
-#### Advanced configuration
+#### Advanced configuration {#advanced-configuration}
 
 In this case, the entire configuration must be carried out manually:
 
@@ -349,7 +349,7 @@ public class Startup
 }
 ```
 
-### Health check
+### Health check {#health-check}
 
 Health monitoring can allow near-real-time information about the state of your containers and microservices. Health monitoring is critical to multiple aspects of operating microservices and is especially important when orchestrators perform partial application upgrades in phases.
 
@@ -379,7 +379,7 @@ The `UseHealthChecks` method expects a port or a path. That port or path is the 
 
 The basic flow is that you register your health checks in your IoC container. You register these health checks via a fluent HealthCheckBuilder API in your Startup's `ConfigureServices` method. This HealthCheckBuilder will build a `HealthCheckService` and register it as an `IHealthCheckService` in your IoC container.
 
-#### Built-in platform health checks
+#### Built-in platform health checks {#builtin-platform-health-checks}
 
 The microservice is healthy if the platform is accessible via HTTP from the application. To check it, it is possible to use an action that is built-in.
 
@@ -389,7 +389,7 @@ The microservice is healthy if the platform is accessible via HTTP from the appl
 
 After that, you add the health check actions that you want to perform in that microservice. These actions are basically dependencies on other microservices (HttpUrlCheck) or databases (currently SqlCheck* for SQL Server databases). You add the action within the Startup class of each ASP.NET microservice or ASP.NET web application.
 
-#### Custom health check
+#### Custom health check {#custom-health-check}
 
 It is also possible to make your own custom health check. However, to do that, derive from IHealthCheck and implement the interface. Below is an example of one that checks to make sure the C drive has at least 1 GB of free space.
 
@@ -474,7 +474,7 @@ public class Startup
 }
 ```
 
-### Cake
+### Cake {#cake}
 
 Cake is a cross platform build automation system, and it is built on top of Roslyn and the Mono Compiler which uses C# as the scripting language to do things like compiling code, copy files/folders, running unit tests, compress files and build NuGet packages.
 

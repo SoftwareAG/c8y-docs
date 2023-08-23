@@ -12,7 +12,7 @@ In this tutorial, you will learn how to create and run a microservice written in
 * Instructions for building and packaging a ZIP file containing the full application (ready to upload into the platform).
 * Instructions for uploading and subscribing to the packaged microservice.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 Create an account on [{{< domain-c8y >}}](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
@@ -31,7 +31,7 @@ $ docker version
      OS/Arch:         linux/amd64
 ```
 
-### Developing the "Hello world" microservice
+### Developing the "Hello world" microservice {#developing-the-hello-world-microservice}
 
 To develop a simple "Hello world" microservice in Python, you must:
 
@@ -40,14 +40,14 @@ To develop a simple "Hello world" microservice in Python, you must:
 * Add the microservice manifest.
 * Build and run the application.
 
-#### Create a Python web application
+#### Create a Python web application {#create-a-python-web-application}
 
 This example uses Python 3 with a Flask microframework which enables simple exposing of endpoints and an embedded HTTP server.
 
 Start by creating the _application.py_ script with the following content:
 
 ```python
-#!flask/bin/python
+#
 from flask import Flask, jsonify
 import os
 
@@ -86,7 +86,7 @@ The application is configured to run on port 80 – which is required for micros
 - <kbd>/health</kbd> is the common endpoint to verify if a microservice is up and running.
 - <kbd>/environment</kbd> reads some standard variables provided to the environment by the platform during the microservice installation and returns their values in JSON format.
 
-#### Create the Dockerfile
+#### Create the Dockerfile {#create-the-dockerfile}
 
 You must create a Dockerfile in order to build a Docker image with your application. For this example, it shall be in the same directory as the _application.py_ script and with the following content:
 
@@ -102,7 +102,7 @@ CMD ["-u", "application.py"]
 
 This build uses Alpine Linux with the Python SDK inside. It is a very thin distribution and the resulting Docker image is small (about 100 MB). The instruction `RUN pip install flask` installs the required Python library using the `pip` installer.
 
-#### Add the application manifest
+#### Add the application manifest {#add-the-application-manifest}
 
 The microservice manifest file _cumulocity.json_ is required for the application. Create that file with the following content:
 
@@ -121,7 +121,7 @@ The microservice manifest file _cumulocity.json_ is required for the application
 }
 ```
 
-#### Build the application
+#### Build the application {#build-the-application}
 
 Execute the following Docker commands to build the Docker image and save it as _image.tar_:
 
@@ -138,13 +138,13 @@ $ zip hello-microservice cumulocity.json image.tar
 
 The resulting _hello-microservice.zip_ file contains your microservice and it is ready to be uploaded to the {{< product-c8y-iot >}} platform.
 
-#### Run the example
+#### Run the example {#run-the-example}
 
 Uploading the _hello-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Ecosystem** > **Microservices** and click **Add microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
 For more details about uploading a microservice ZIP file, refer to [Custom microservices](/standard-tenant/ecosystem/#custom-microservices).
 
-### Using the microservice utility tool
+### Using the microservice utility tool {#using-the-microservice-utility-tool}
 
 You can also build, upload and subscribe the application using the [microservice utility tool](/microservice-sdk/concept/#microservice-utility-tool). In this case, the files must follow the directory structure required by the script.
 
@@ -156,7 +156,7 @@ For this particular microservice example, the structure shall be:
 /cumulocity.json <br>
 
 
-### Execution
+### Execution {#execution}
 
 After the microservice has been successfully uploaded and subscribed by your tenant, it will run in a Docker container. A request similar to:
 
@@ -189,6 +189,6 @@ dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
 
 and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`.
 
-### Source code
+### Source code {#source-code}
 
 The source code of this Hello world microservice can be found in our [GitHub repository](https://github.com/SoftwareAG/c8y_microservice-python). Moreover, in our GitHub repository you can find a more comprehensive [Python microservice application](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices/sample-python-microservice) which uses the {{< product-c8y-iot >}} REST API and exposes endpoints to verify if the microservice is up and running, create a device and random measurements for it, and to get the current application subscriptions for a particular tenant.

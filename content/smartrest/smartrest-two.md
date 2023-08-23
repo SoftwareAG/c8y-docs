@@ -6,7 +6,7 @@ section:
   - device_management
 ---
 
-### Overview
+### Overview {#overview}
 
 This section describes the SmartREST 2.0 payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 
@@ -49,7 +49,7 @@ s/dc/<X-ID>
 The topics for creating templates are described in [Creating templates via MQTT](#creating-templates-via-mqtt).
 
 
-### Changes from SmartREST 1.0
+### Changes from SmartREST 1.0 {#changes-from-smartrest-10}
 
 In its base, SmartREST 2.0 is like the previous version: a CSV-like payload format that is backed by previously created templates to finally create the targeted JSON structure.
 
@@ -63,7 +63,7 @@ Several changes in the functionality have been made:
 * Declaring a default X-ID for the connection
 
 
-### Supported templates
+### Supported templates {#supported-templates}
 
 SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
@@ -77,11 +77,11 @@ SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
 Additionally, you can create templates to return certain values from responses and operations.
 
-### Template collections
+### Template collections {#template-collections}
 
 A template collection is a set of request and response templates that specifies a device communication protocol. Each collection is referenced by a unique ID (called X-ID).
 
-#### Creating templates via MQTT
+#### Creating templates via MQTT {#creating-templates-via-mqtt}
 
 Like in SmartREST 1.0, you must pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.
 
@@ -113,7 +113,7 @@ Empty publish to <kbd>s/ut/myNotExistingTemplateCollection</kbd>
 41,myNotExistingTemplateCollection
 ```
 
-#### Request templates
+#### Request templates {#request-templates}
 
 A request template contains the following basic fields:
 
@@ -192,7 +192,7 @@ If the message rate limit per second is exceeded, the requests are delayed and k
 We create a template to create a measurement like this (measurements have two mandatory values: type and time)
 
 ```bash
-# 10,msgId,method,api,response,type,time,custom1.path,custom1.type,custom1.value
+# 10,msgId,method,api,response,type,time,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsetypetimecustom1pathcustom1typecustom1value}
 10,999,POST,MEASUREMENT,,c8y_MyMeasurement,,c8y_MyMeasurement.M.value,NUMBER,
 ```
 
@@ -200,13 +200,13 @@ This template defines one additional custom property for the measurement. It lea
 
 ```bash
 999,2016-06-22T17:03:14.000+02:00,25
-# We can also use server time by leaving the time empty
+# We can also use server time by leaving the time empty {#we-can-also-use-server-time-by-leaving-the-time-empty}
 999,,25
 ```
 
 The following sections will get into more detail of how to create and use different templates.
 
-##### GET templates
+##### GET templates {#get-templates}
 
 GET templates for the inventory do not need any mandatory or custom values. Instead, they use two different fields.
 
@@ -252,31 +252,31 @@ This enables you to query inventory in three different ways:
 **By {{< product-c8y-iot >}} ID**
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,999,GET,INVENTORY,,true
-# Usage:
+# Usage: {#usage}
 999,123456
 ```
 
 **By external ID with a fixed type in the template**
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,999,GET,INVENTORY,,false,c8y_Serial
-# Usage:
+# Usage: {#usage}
 999,myDeviceImei
 ```
 
 **By external ID without fixed type in the template**
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,999,GET,INVENTORY,,false
-# Usage:
+# Usage: {#usage}
 999,c8y_Serial,myDeviceImei
 ```
 
-##### POST templates
+##### POST templates {#post-templates}
 
 POST templates require a different set of mandatory values based on the API:
 
@@ -290,12 +290,12 @@ POST templates require a different set of mandatory values based on the API:
 This results in the following minimal template creations:
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,100,POST,MEASUREMENT,false,c8y_MyMeasurement,,c8y_MyMeasurement.M.value,NUMBER,
 10,101,POST,EVENT,,c8y_CustomEvent,mytext,,
 10,102,POST,ALARM,,c8y_CustomAlarm,mytext,ACTIVE,MAJOR,
 
-# Usage:
+# Usage: {#usage}
 100
 101
 102
@@ -309,50 +309,50 @@ POST Inventory templates start with the value of the externalId after the msgId.
 {{< /c8y-admon-important >}}
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,100,POST,INVENTORY,,c8y_MySerial
-# Usage:
-# Create object with externalId c8y_MySerial/myImei
+# Usage: {#usage}
+# Create object with externalId c8y_MySerial/myImei {#create-object-with-externalid-c8ymyserialmyimei}
 100,myImei
-# Create object with externalId c8y_MySerial/myImei
+# Create object with externalId c8y_MySerial/myImei {#create-object-with-externalid-c8ymyserialmyimei}
 101,myImei,c8y_MySerial
-# This message will result in not creating an external ID
+# This message will result in not creating an external ID {#this-message-will-result-in-not-creating-an-external-id}
 101,,c8y_MySerial
 ```
 
-##### PUT templates
+##### PUT templates {#put-templates}
 
 PUT templates for inventory follow the same logic as the GET templates, and with the addition that you can also use custom values for PUT.
 
 ```bash
-# Creation:
-# 10,msgId,method,api,response,byId,externalIdTyoe,custom1.path,custom1.type,custom1.value
+# Creation: {#creation}
+# 10,msgId,method,api,response,byId,externalIdTyoe,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsebyidexternalidtyoecustom1pathcustom1typecustom1value}
 10,999,PUT,INVENTORY,,false,c8y_Serial,c8y_MyCustomValue,STRING,
-# Usage:
+# Usage: {#usage}
 999,myDeviceImei,myValue
 ```
 
 The PUT template for alarms uses the type of the alarm to find the alarm to update. It will first check the ACTIVE alarms and, if there is no ACTIVE alarm, it will check the ACKNOWLEDGED alarms.
 
 ```bash
-# Creation:
-# 10,msgId,method,api,response,type,custom1.path,custom1.type,custom1.value
+# Creation: {#creation}
+# 10,msgId,method,api,response,type,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsetypecustom1pathcustom1typecustom1value}
 10,999,PUT,ALARM,,c8y_MyCustomAlarm,status,ALARMSTATUS
-# Usage:
+# Usage: {#usage}
 999,CLEARED
 ```
 
 PUT templates for operations use the fragment of the operation to find the operation. It will first check the EXECUTING operations and, if there is no EXECUTING operation, it will check the PENDING operations.
 
 ```bash
-# Creation:
-# 10,msgId,method,api,response,fragment,custom1.path,custom1.type,custom1.value
+# Creation: {#creation}
+# 10,msgId,method,api,response,fragment,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsefragmentcustom1pathcustom1typecustom1value}
 10,999,PUT,OPERATION,,c8y_MyOperation,status,OPERATIONSTATUS,SUCCESSFUL,c8y_Fragment.val,NUMBER,
-# Usage:
+# Usage: {#usage}
 999,24
 ```
 
-##### Adding custom properties
+##### Adding custom properties {#adding-custom-properties}
 
 All POST and PUT values enable you to add custom properties to the results of the templates.
 
@@ -376,36 +376,36 @@ A single custom property requires you to add the following three values to your 
 |ALARMSTATUS|A status of an alarm. Used to update the status field of alarms|
 |OPERATIONSTATUS|A status of an operation. Used to update the status field of operations|
 
-##### Examples
+##### Examples {#examples}
 
 Template for clearing an alarm with an additional custom property
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,999,PUT,ALARM,,c8y_MyCustomALarm,status,ALARMSTATUS,CLEARED,c8y_CustomFragment.reason,STRING,
-# Usage:
+# Usage: {#usage}
 999,Device resolved alarm on its own
 ```
 
 Template for creating a custom measurement
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,999,POST,MEASUREMENT,,c8y_CustomMeasurement,,c8y_CustomMeasurement.custom.value,NUMBER,,c8y_CustomMeasurement.custom.unit,STRING,X
-# Usage:
+# Usage: {#usage}
 999,30.6
 ```
 
 Template for updating a property in the device
 
 ```bash
-# Creation:
+# Creation: {#creation}
 10,999,PUT,INVENTORY,,false,c8y_Serial,c8y_MyCustomValue,STRING,
-# Usage:
+# Usage: {#usage}
 999,myDeviceImei,updatedValue
 ```
 
-#### Response templates
+#### Response templates {#response-templates}
 
 The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.
 
@@ -424,7 +424,7 @@ You should make use of the condition field to control when response templates sh
 
 In the examples below, you can see how to query data and parse custom operations.
 
-##### Querying data from the device object
+##### Querying data from the device object {#querying-data-from-the-device-object}
 
 Device object:
 
@@ -456,7 +456,7 @@ Client receives:
 888,myMqttDevice,,"val1=1\nval2=2"
 ```
 
-##### Parsing custom operations
+##### Parsing custom operations {#parsing-custom-operations}
 
 Operation object:
 
@@ -494,7 +494,7 @@ Client receives (assuming the ClientId is "myMqttTestDevice"):
 
 The template 444 is not returned as the condition does not match the operation.
 
-##### Querying data from the device object containing key with multiple objects
+##### Querying data from the device object containing key with multiple objects {#querying-data-from-the-device-object-containing-key-with-multiple-objects}
 
 Device object:
 
@@ -536,7 +536,7 @@ Client receives:
 888,test,test2
 ```
 
-### Using a default collection
+### Using a default collection {#using-a-default-collection}
 
 Having the X-ID as part of the topic gives you the freedom to easily use multiple template collections, but adds additional bytes for every message.
 If anyway the device uses mostly (or completely) a single collection, it makes sense to specify this collection as your default collection.

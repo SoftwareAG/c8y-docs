@@ -16,7 +16,7 @@ Compared to SmartREST 2.0 – which only works with fixed templates – JSON's s
 
 The SmartREST way should still be the preferred way if it is important to reduce your payload to the minimum (mobile traffic, low capability device).
 
-### Topic structure
+### Topic structure {#topic-structure}
 
 The topic structure in JSON MQTT is quite similar to the REST endpoints. The main difference is in the additional action part which is included in the topic.
 
@@ -53,7 +53,7 @@ c/<api>/<resource>/<action>/<resource_id>
 
 Refer to [Processing mode](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/HTTP-usage) for more information about transient, quiescent and CEP data processing.
 
-#### Topic actions
+#### Topic actions {#topic-actions}
 
 The action in the topic corresponds to the HTTP methods combined with the content-type header.
 
@@ -65,7 +65,7 @@ The following actions are available:
 - delete - corresponds to HTTP DELETE
 
 
-### Supported endpoint
+### Supported endpoint {#supported-endpoint}
 
 The current JSON MQTT implementation does not cover all SmartREST 2.0 operations, so for example the whole [device bootstrap process](/device-integration/mqtt/#device-integration) must be done using SmartREST 2.0.
 
@@ -84,9 +84,9 @@ If the operation is not supported, a proper error message will be sent to the <k
 For all of the above endpoints, you can use the same payload like in the REST API. The only difference is in the "source" field - in REST this field is mandatory while for JSON MQTT there is no need to set the device ID here.
 The source device ID will automatically be resolved based on the MQTT client ID. This value will always be used no matter if something is already defined there.
 
-### Examples
+### Examples {#examples}
 
-#### Create new event
+#### Create new event {#create-new-event}
 
 Publish a message on topic <kbd>/event/events/create</kbd> with payload:
 
@@ -98,7 +98,7 @@ Publish a message on topic <kbd>/event/events/create</kbd> with payload:
 }
 ```
 
-#### Create many events
+#### Create many events {#create-many-events}
 
 Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:
 
@@ -119,7 +119,7 @@ Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:
 }
 ```
 
-#### Update event
+#### Update event {#update-event}
 
 Publish a message on topic <kbd>/event/events/update/&lt;event_id&gt;</kbd> with payload:
 
@@ -129,11 +129,11 @@ Publish a message on topic <kbd>/event/events/update/&lt;event_id&gt;</kbd> with
 }
 ```
 
-#### Delete event
+#### Delete event {#delete-event}
 
 Publish a message on topic <kbd>/event/events/delete/&lt;event_id&gt;</kbd> with empty payload.
 
-#### Create a measurement data point
+#### Create a measurement data point {#create-a-measurement-data-point}
 
 Publish a message on topic <kbd>measurement/measurements/create</kbd> with payload:
 
@@ -151,7 +151,7 @@ Publish a message on topic <kbd>measurement/measurements/create</kbd> with paylo
 ```
 
 
-### Error handling
+### Error handling {#error-handling}
 
 Use the <kbd>error</kbd> topic to subscribe for errors related to the JSON MQTT implementation. In case of invalid payload, wrong topic or any other exception, a notification will be published on this topic. The payload is in JSON format. Besides a standard error message, it also contains a message ID which helps the client in finding out which exact message was failing.
 
@@ -165,7 +165,7 @@ Example payload:
 }
 ```
 
-### Receiving operations
+### Receiving operations {#receiving-operations}
 
 A notification client can subscribe to the <kbd>devicecontrol/notifications</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
 

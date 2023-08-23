@@ -311,7 +311,7 @@ POST Inventory templates start with the value of the externalId after the msgId.
 ```bash
 # Creation:
 10,100,POST,INVENTORY,,c8y_MySerial
-# Usage: {#usage}
+# Usage:
 # Create object with externalId c8y_MySerial/myImei
 100,myImei
 # Create object with externalId c8y_MySerial/myImei

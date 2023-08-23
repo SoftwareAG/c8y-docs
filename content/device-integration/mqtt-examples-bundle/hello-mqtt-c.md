@@ -37,13 +37,13 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 Create a source file (for example *hello_mqtt.c*) with the following content:
 
 ```cpp
-# nclude "stdlib.h" {#nclude-stdlibh}
-# nclude "string.h" {#nclude-stringh}
-# nclude "unistd.h" {#nclude-unistdh}
-# nclude "MQTTClient.h" {#nclude-mqttclienth}
+# nclude "stdlib.h"
+# nclude "string.h"
+# nclude "unistd.h"
+# nclude "MQTTClient.h"
 
-# efine ADDRESS     "<<serverUrl>>" {#efine-address-----serverurl}
-# efine CLIENTID    "<<clientId>>" {#efine-clientid----clientid}
+# efine ADDRESS     "<<serverUrl>>"
+# efine CLIENTID    "<<clientId>>"
 
 void publish(MQTTClient client, char* topic, char* payload) {
     MQTTClient_message pubmsg = MQTTClient_message_initializer;

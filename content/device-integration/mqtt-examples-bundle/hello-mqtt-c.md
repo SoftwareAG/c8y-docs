@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use MQTT client in C with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -25,25 +25,25 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 * Download, compile and install the MQTT C Paho Client. You will find more details about Paho on the [Paho website](http://www.eclipse.org/paho/clients/c/).
 
 
-### Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create the application,
 * build and run the application.
 
-#### Creating the application
+#### Creating the application {#creating-the-application}
 
 Create a source file (for example *hello_mqtt.c*) with the following content:
 
 ```cpp
-#include "stdlib.h"
-#include "string.h"
-#include "unistd.h"
-#include "MQTTClient.h"
+# nclude "stdlib.h" {#nclude-stdlibh}
+# nclude "string.h" {#nclude-stringh}
+# nclude "unistd.h" {#nclude-unistdh}
+# nclude "MQTTClient.h" {#nclude-mqttclienth}
 
-#define ADDRESS     "<<serverUrl>>"
-#define CLIENTID    "<<clientId>>"
+# efine ADDRESS     "<<serverUrl>>" {#efine-address-----serverurl}
+# efine CLIENTID    "<<clientId>>" {#efine-clientid----clientid}
 
 void publish(MQTTClient client, char* topic, char* payload) {
     MQTTClient_message pubmsg = MQTTClient_message_initializer;
@@ -120,7 +120,7 @@ What does the code in `publish` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId`` the server will not accept it.
 
-#### Building and running the application
+#### Building and running the application {#building-and-running-the-application}
 
 To build the application, enter
 
@@ -140,6 +140,6 @@ After starting the application, you should see a new device in the Device manage
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
-### Improving the agent
+### Improving the agent {#improving-the-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

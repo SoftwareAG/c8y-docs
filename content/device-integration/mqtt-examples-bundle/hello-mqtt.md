@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use MQTT with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -21,9 +21,9 @@ The screenshots in the tutorial use MQTTBox. Other tools may look different.
 If you are using a trial tenant, the default user will not work with this tutorial. Create an additional user instead. The tenant ID and URL data will also differ from trial tenant information.
 {{< /c8y-admon-info >}}
 
-### Talking MQTT
+### Talking MQTT {#talking-mqtt}
 
-#### Configuring the MQTT connection
+#### Configuring the MQTT connection {#configuring-the-mqtt-connection}
 
 To configure the MQTT connection, you must pass the following connection parameters (see the screenshot below).
 
@@ -48,13 +48,13 @@ Other configurations like "clean session" are not important for this example. Yo
 
 If there is a blue button on the top bar with a label **Not Connected**, verify your configuration (especially username and password). If the button is green, you successfully established an MQTT connection to {{< product-c8y-iot >}}.
 
-#### Sending data
+#### Sending data {#sending-data}
 
 All MQTT publish messages in this tutorial will be sent to the topic <kbd>s/us</kbd>. This is the topic used for {{< product-c8y-iot >}}'s pre-provided static templates.
 
 ![MQTTBox Publish Message](/images/mqtt/mqttBoxPublish.png)
 
-##### Creating the device
+##### Creating the device {#creating-the-device}
 
 The first message sent will create our device. Although the static templates support automatic device creation, in this example we will create the device manually. The template `100` will create a new device. It can be used with two optional parameters (deviceName, deviceType).
 
@@ -79,7 +79,7 @@ The required interval can be set with the template `117` and just takes a single
 
 After a reload of the **Info** page of your device in the Device management application, you should see the information we just added.
 
-##### Creating measurements
+##### Creating measurements {#creating-measurements}
 
 Now the device has some master data and we can start sending some measurements.
 There are a couple of measurements that can be created directly by using a static template:
@@ -108,7 +108,7 @@ Besides the measurements above, we can also use the template `200` to create a m
 
 After a reload in the Device management application, you should see 4 graphs with the newly added measurements in the **Measurements** tab of your device.
 
-##### Creating alarms
+##### Creating alarms {#creating-alarms}
 
 Now we will create some alarms for this device. There are templates to create alarms for the 4 alarm severities:
 
@@ -138,7 +138,7 @@ The critical alarm should be cleared afterwards.
 
 Note that you did not have to handle any alarm IDs with the MQTT implementation. {{< product-c8y-iot >}} will take over this part so that the device communication can be as easy as possible.
 
-##### Creating events
+##### Creating events {#creating-events}
 
 Next, we will create some location events for the device. If you wish, you may use the [LatLong website](https://www.latlong.net/) to get the latitude and longitude of your city.
 
@@ -157,7 +157,7 @@ In the Device management application, you can see one event in the event list bu
 Now you should see both the **Location** and the **Tracking** tab in the device with the **Location** tab having the same latitude and longitude as the last location event.
 
 
-#### Receiving data
+#### Receiving data {#receiving-data}
 
 So far we have only used MQTT to send data from the client to the server. Now we will send data from the server to the client.
 
@@ -172,7 +172,7 @@ Afterwards, your MQTTBox should look like this:
 
 ![MQTTBox Subscribed Topics](/images/mqtt/mqttBoxAfterSubscribe.png)
 
-##### Receiving operations
+##### Receiving operations {#receiving-operations}
 
 At the current state, the UI does not show any tabs for operations. Up to this point, it was unknown what exactly the device supports, but the list of supported operations can be modified with the template `114`. A list of supported operations can be added here.
 
@@ -206,7 +206,7 @@ Besides the operation type, this operation can also take additional parameters b
 503,c8y_Command,Everything went fine
 ```
 
-##### Learning from errors
+##### Learning from errors {#learning-from-errors}
 
 The topic <kbd>s/e</kbd> can help you debugging in case something went wrong.
 For instance, if we try to send

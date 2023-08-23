@@ -16,7 +16,7 @@ and/or `c8y_SoftwareUpdate` in their `c8y_SupportedOperations` fragment in their
 a **Services** tab for devices that have at least one software service running. The service can have measurements,
 alarms and events assigned.
 
-### Installed software
+### Installed software {#installed-software}
 
 The installed software packages are listed in the `c8y_SoftwareList` fragment which may be placed in the device managed object or in the single child addition of type `c8y_InstalledSoftwareList`.
 The first approach to managing software is referred to as "legacy" and the second as "advanced".
@@ -33,7 +33,7 @@ A software package list entry must contain the following properties:
 The name and the version are used to identify the package. Already mentioned `c8y_SupportedSoftwareTypes` fragment
 restricts possible software types that can be installed on the device.
 
-#### Legacy Software Management
+#### Legacy Software Management {#legacy-software-management}
 
 A device may update its software list by updating its managed object `c8y_SoftwareList` fragment.
 
@@ -72,13 +72,13 @@ version, and URL property of an individual package:
 
 `116,software_a,3.0.0,http://example.com/software_a,software_b,2.0.0,http://example.com/software_b`
 
-#### Changing installed software
+#### Changing installed software {#changing-installed-software}
 
 Within the **Software** tab users can select software to install, to update, and to uninstall for a device. After
 confirming, the desired software configuration is sent to the device as an operation. The operation format depends on
 the device's ```c8y_SupportedOperations``` fragment.
 
-##### Software list
+##### Software list {#software-list}
 
 If the device only supports the ```c8y_SoftwareList``` operation and the ```c8y_SupportedOperations``` fragment does not
 contain ```c8y_SoftwareUpdate```, a ```c8y_SoftwareList``` operation is sent to the device. This operation contains a
@@ -135,7 +135,7 @@ The 516 static response template is available for dealing with software list ope
 5. Set operation status to SUCCESSFUL <br>
    `503,c8y_SoftwareList`
 
-##### Software update
+##### Software update {#software-update}
 
 If a device supports the ```c8y_SoftwareUpdate``` operation in its ```c8y_SupportedOperations``` fragment the **
 Software** tab will create ```c8y_SoftwareUpdate``` operations for the device. Conceptually the software update is very
@@ -191,7 +191,7 @@ The 528 static response template is available for dealing with software update o
 5. Set operation status to SUCCESSFUL <br>
    `503,c8y_SoftwareUpdate`
 
-### Advanced Software Management
+### Advanced Software Management {#advanced-software-management}
 
 Using the "advanced" approach, the `c8y_SoftwareList` fragment is no longer present in the device managed object. The data is separated from the device managed object which keeps the size of the device managed object low even for very large lists of installed software. All installed software for a device can be read and managed through the Advanced Software Management default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices).
 
@@ -213,7 +213,7 @@ in their `c8y_SupportedOperations` fragment and list their supported software ty
 Querying, adding and removing software packages can be done with the microservice REST endpoints or using SmartREST
 static templates.
 
-#### Querying the software packages:
+#### Querying the software packages: {#querying-the-software-packages}
 
 ```http
 GET /service/advanced-software-mgmt/software?deviceId=<deviceId>
@@ -252,7 +252,7 @@ GET /service/advanced-software-mgmt/software?deviceId=<deviceId>
 | currentPage     | No        | The current page of the paginated result |
 | withTotalPages  | No        | When set to `true`, the returned result will contain the total number of the pages in the statistics object |
 
-#### Setting software packages
+#### Setting software packages {#setting-software-packages}
 
 Advanced Software Management allows devices to set their installed software, similarly to legacy software management. In
 this case any software communicated to the platform before is overwritten entirely with then new packages.
@@ -278,14 +278,14 @@ POST /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-##### SmartREST example
+##### SmartREST example {#smartrest-example}
 
 Devices may also use the SmartREST static template 140 instead. It takes a list of software packages of dynamic length,
 where each package is represented by its name, version, software type and URL:
 
 `140,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
 
-#### Adding software packages
+#### Adding software packages {#adding-software-packages}
 
 With Advanced Software Management devices may also append packages to their installed software without having to
 announce the entire list.
@@ -311,14 +311,14 @@ PUT /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-##### SmartREST example
+##### SmartREST example {#smartrest-example}
 
 Devices also use the SmartREST static template 141 instead. Similarly to 140, it takes a list of software packages of
 dynamic
 
 `141,software_a,3.0.0,"type A",http://example.com/software_a,software_b,2.0.0,"type B",http://example.com/software_b`
 
-#### Removing software
+#### Removing software {#removing-software}
 
 In order to complete partial updates of installed software Advanced Software Management offers an interface to remove
 individual packages from a device's installed software.
@@ -340,21 +340,21 @@ DELETE /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-##### SmartREST example
+##### SmartREST example {#smartrest-example}
 
 Devices may also use the SmartREST static template 142 instead. It takes a list of software packages of dynamic length,
 where each package is represented by its name and version, as URL and software type are not used to identify a package:
 
 `142,software_a,3.0.0,software_b,2.0.0`
 
-#### Changing installed software
+#### Changing installed software {#changing-installed-software}
 
 Similarly, in the Advanced Software Management approach updating software packages requires sending to the device one of
 the operations: `c8y_SoftwareUpdate` or `c8y_SoftwareList`, depending on which are specified
 in `c8y_SupportedOperations` fragment. The only difference is that now software type property is required for software
 packages.
 
-##### Software update
+##### Software update {#software-update}
 
 The `c8y_SoftwareUpdate` operation contains also partial list of software packages, each with an instruction whether it
 should be installed or uninstalled. This is very similar to legacy software management, however an additional parameter

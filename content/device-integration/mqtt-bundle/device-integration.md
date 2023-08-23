@@ -4,7 +4,7 @@ title: Device integration
 layout: redirect
 ---
 
-### Overview
+### Overview {#overview}
 
 The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/concepts/interfacing-devices).
 
@@ -27,9 +27,9 @@ The cycle phase consists of two kinds of actions:
 ![MQTT phases](/images/mqtt/mqttDeviceIntegration.png)
 
 
-### Startup phase
+### Startup phase {#startup-phase}
 
-#### Step 0: Request device credentials
+#### Step 0: Request device credentials {#step-0-request-device-credentials}
 
 In {{< product-c8y-iot >}}, every MQTT connection needs to be authenticated. You can use the device credentials topics in the MQTT implementation to generate new credentials for a device.
 
@@ -55,7 +55,7 @@ The process works as follows:
 
 After receiving the credentials, the device can close the MQTT connection and create a new one with the received credentials.
 
-#### Step 1: Verify device
+#### Step 1: Verify device {#step-1-verify-device}
 
 As MQTT supports an automatic device creation if the client sends data and there is no device present, this step is only required if you want to create the device manually.
 
@@ -70,7 +70,7 @@ The device will be linked automatically to the ID the client uses with its MQTT 
 The topic used for {{< product-c8y-iot >}}'s pre-provided static templates is <kbd>s/us</kbd>.
 {{< /c8y-admon-info >}}
 
-#### Step 2: Verify children
+#### Step 2: Verify children {#step-2-verify-children}
 
 Like the root device, also its children are covered by the automatic device creation.
 
@@ -80,13 +80,13 @@ To handle this step manually you can send the [static template 101](/smartrest/m
 101,Unique Child ID,Child Name,Child Type
 ```
 
-#### Step 3: Subscribe topics
+#### Step 3: Subscribe topics {#step-3-subscribe-topics}
 
 If the device supports operations, it should subscribe to all required topics (static templates and SmartREST 2.0).
 
-### Cycle phase
+### Cycle phase {#cycle-phase}
 
-#### Step A: Send CSV data
+#### Step A: Send CSV data {#step-a-send-csv-data}
 
 While the device holds an active MQTT connection, it can publish either on the topics for static templates or on the topics for a SmartREST template to send data to the server.
 
@@ -94,6 +94,6 @@ Based on the MQTT ClientId, the physical device is directly connected to the dev
 
 To send data to a child device, publish the data to the topics described in [Device hierarchies](/device-integration/mqtt/#device-hierarchies).
 
-#### Step B: Receive CSV operations
+#### Step B: Receive CSV operations {#step-b-receive-csv-operations}
 
 By subscribing to a topic the device automatically tells {{< product-c8y-iot >}} that it wants to receive operations. Any operation created will be automatically parsed using either the static templates or the templates the device defines.

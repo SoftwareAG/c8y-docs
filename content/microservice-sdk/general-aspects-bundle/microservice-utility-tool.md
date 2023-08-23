@@ -60,11 +60,11 @@ $ chsh -s /usr/local/bin/bash
 If your Bash version has not changed while executing `bash --version`, you may need to restart your system. Note that the updated interpreter gets installed at */usr/local/bin/bash* and you must modify the first line of the microservice utility tool (script) as follows:
 
 ```bash
-# /usr/local/bin/bash
+#!/usr/local/bin/bash
 
 or
 
-# 
+#!
 ```
 
 ### Configure the microservice utility tool {#configure-the-microservice-utility-tool}

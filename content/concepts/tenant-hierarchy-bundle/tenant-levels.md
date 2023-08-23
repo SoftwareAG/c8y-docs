@@ -34,7 +34,7 @@ In a {{< standard-tenant >}}, multiple parties are reflected by separate users. 
 
 {{< standard-tenant >}}s, as direct subtenants of the {{< management-tenant >}}, provide fully standardized functionality.
 
-Details on the administration of {{< standard-tenant >}}s are described in [Standard tenant administration](/standard-tenant/).
+Details on the administration of {{< standard-tenant >}}s are described in [{{< standard-tenant >}} administration](/standard-tenant/).
 
 
 ### Enterprise tenant

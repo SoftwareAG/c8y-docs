@@ -38,7 +38,6 @@ The Microsoft Power BI datasets should use the DirectQuery mode, which prevents 
 
 In contrast to versions prior to 10.18, it is no longer required to deploy a Microsoft Power BI gateway. A native connector from Power BI Web to Dremio is available now.
 
-<a name="configuring-powerbi-access"></a>
 #### Configuring access to Microsoft Power BI reports
 
 To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither must sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an Azure Active Directory service principal object with an application secret is used.
@@ -87,7 +86,6 @@ Once all settings are completed, click **Save** on the action bar to save the se
 
 If you want to delete the settings, click **Delete** on the action bar. You cannot access reports afterwards.
 
-<a name="working-with-reports"></a>
 ### Working with reports
 
 Once the settings are defined, you can access and work with the reports.

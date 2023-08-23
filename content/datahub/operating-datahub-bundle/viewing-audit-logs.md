@@ -19,7 +19,6 @@ helpcontent:
 
 Auditing shows in the query log the queries being executed and in the system log the operations that users have carried out.
 
-<a name="query-log"></a>
 ### Query log
 
 In the navigator, select **Auditing** and then **Query log** to view the query log.
@@ -51,7 +50,6 @@ For each ad-hoc query, the following information is provided:
 | Data billed (MB) | The amount of data being billed (depending also on your contract); amounts of data less than 10 MB in an ad-hoc query will be billed as if they were 10 MB
 | Details | The query string as well as a link to the associated Dremio job in an expandable box
 
-<a name="system-log"></a>
 ### System log
 
 In the navigator, select **Auditing** and then **System log** to view the system log.

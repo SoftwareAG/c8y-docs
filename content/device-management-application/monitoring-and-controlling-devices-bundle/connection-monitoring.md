@@ -8,7 +8,7 @@ In the Device Management application you can monitor the connections to your dev
 
 This can be done at the level of individual devices (see below) or across multiple devices in a list.
 
-### To monitor the connection for multiple devices
+### To monitor the connection for multiple devices {#to-monitor-the-connection-for-multiple-devices}
 
 Open a device list to monitor the connections for multiple devices.
 
@@ -49,14 +49,14 @@ It is always green if the device is connected, even without data.
 Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 {{< /c8y-admon-info >}}
 
-<a name="maintenance-mode"></a> **Maintenance mode**
+**Maintenance mode**
 
 Moreover, the device may be in "Maintenance" mode, indicated by the tool icon in the **Status** column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised.
 
 You can turn the maintenance mode on or off for a device through a toggle in the **Connection monitoring** card in its **Info** tab, see below.
 
 
-### To monitor the connection of a particular device
+### To monitor the connection of a particular device {#to-monitor-the-connection-of-a-particular-device}
 
 Navigate to the **Info** tab of a particular device to monitor the connections of this device. Under **Device status**, the connection status for the device is displayed.
 

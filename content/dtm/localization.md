@@ -48,7 +48,6 @@ Complete the setup in the Administration application following the steps below:
 You must have administrator access to the tenant to install the Public-options application.
 {{</c8y-admon-info>}}
 
-<a name=""></a>
 ### Localization
 
 To open the **Localization** page, navigate to **Configuration > Localization**.
@@ -69,7 +68,6 @@ To add a new translation in the DTM application, you can add the text as key and
 
 Click **Apply** to apply the changes.
 
-<a name=""></a>
 ### To add new keys for translations
 
 Add new keys and their respective translations using the **Add term** option on the top right.
@@ -81,7 +79,6 @@ Next, click **Apply** to apply the changes.
 
 ![localization-add-term](/images/dtm/localization/dtm-localization-add-term.png)
 
-<a name=""></a>
 ### To add and edit translations
 
  You can add or edit translations for all the keys in two ways:

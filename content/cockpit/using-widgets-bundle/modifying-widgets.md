@@ -10,6 +10,8 @@ section:
 
 Widgets can only be modified if the dashboard/report is unlocked. To lock/unlock it, use the toggle with the lock icon in the top menu bar.
 
+By dragging the arrows on the bottom right corner of a widget, you can resize a widget.
+
 {{< c8y-admon-info >}}
 On touch devices like smartphones or tablets some functions may not be supported.
 {{< /c8y-admon-info >}}
@@ -18,7 +20,7 @@ On touch devices like smartphones or tablets some functions may not be supported
 
 Widgets may be rearranged on the dashboard/report. By dragging and dropping you can move the widget to another position.
 
-By dragging the arrows on the bottom right corner of a widget, you can resize it.
+
 
 ### To edit the widget properties
 

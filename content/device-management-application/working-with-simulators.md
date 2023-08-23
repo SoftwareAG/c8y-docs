@@ -27,7 +27,7 @@ With the {{< product-c8y-iot >}} simulator all aspects of IoT devices can be sim
 * Generating messages for measurements, alarms, events and inventory.
 * Viewing simulation problems as alarms.
 
-### About simulators
+### About simulators {#about-simulators}
 
 With the simulator you can create devices that simulate the same level of functionality as connected hardware devices.
 
@@ -37,7 +37,7 @@ An instruction can either send a message (measurements, alarms, events and inven
 
 A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (for example 23.0 degrees). Many predefined message templates are provided, for example, for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](/device-management-application/smartrest-templates).
 
-### To view simulators
+### To view simulators {#to-view-simulators}
 
 Click **Simulators** in the **Devices** menu in the navigator to open the **Simulators** page.
 
@@ -45,7 +45,7 @@ Click **Simulators** in the **Devices** menu in the navigator to open the **Simu
 
 All simulators which you can access will be listed here.
 
-### To create a simulator
+### To create a simulator {#to-create-a-simulator}
 
 1. Click **Add simulator** at the right of the top menu bar.
 2. In the resulting dialog box, select a simulator type from the dropdown list in the **Presets** field. Select "Empty simulator" to create a simulator from scratch or select one of the sample simulators.
@@ -55,13 +55,13 @@ All simulators which you can access will be listed here.
 
 The simulator will be created and added to the list.
 
-### To edit a simulator
+### To edit a simulator {#to-edit-a-simulator}
 
 1. Click the menu icon at the top right of a simulator card and then click **Edit**, or simply click the simulator card.
 2. In the resulting dialog box, make the relevant changes.
 3. Click **Save** to apply your changes.
 
-### To duplicate a simulator
+### To duplicate a simulator {#to-duplicate-a-simulator}
 
 1. Click the menu icon at the top right of a simulator card and then click **Duplicate**.
 2. In the resulting dialog box, provide a name for the new simulator.
@@ -69,7 +69,7 @@ The simulator will be created and added to the list.
 
 The new simulator will be added to the list.
 
-### To remove a simulator
+### To remove a simulator {#to-remove-a-simulator}
 
 1. Click the menu icon at the top right of a simulator card and then click **Remove**.
 2. In the resulting dialog box, confirm to remove the simulator.
@@ -77,7 +77,7 @@ The new simulator will be added to the list.
 
 The simulator will be removed from the list.
 
-### Instructions
+### Instructions {#instructions}
 
 For each simulator, you can create instructions specifying what the simulator is supposed to do. Instructions are single tasks added to a playlist through which the simulator will work.
 
@@ -97,7 +97,7 @@ The measurement instruction refers to a fragment. Fragments are used to identify
 
 The "Sleep" instruction requires one value for its duration in seconds.
 
-#### To add an instruction
+#### To add an instruction {#to-add-an-instruction}
 
 1. Click **Add instruction** to add a new instruction to the simulator.
 2.  In the resulting dialog box, select a message from the dropdown list.
@@ -106,7 +106,7 @@ The "Sleep" instruction requires one value for its duration in seconds.
 
 The new instruction will be added to the simulator.
 
-#### To add a sleep
+#### To add a sleep {#to-add-a-sleep}
 
 1. Click **Add sleep** to add a new instruction to the simulator.
 3. In the resulting dialog box, specify the duration.
@@ -114,13 +114,13 @@ The new instruction will be added to the simulator.
 
 The new sleep instruction will be added to the simulator.
 
-#### To remove an instruction
+#### To remove an instruction {#to-remove-an-instruction}
 
 Hover over the instruction or the sleep you want to remove and click the remove icon.
 
 The instruction will be removed from the simulator.
 
-### Supported operations
+### Supported operations {#supported-operations}
 
 In the **Supported operations** tab of a simulator you can find specific operations like configurations or software/firmware updates.
 
@@ -128,7 +128,7 @@ In the **Supported operations** tab of a simulator you can find specific operati
 
 Click the toggle to turn the respective operation on or off.
 
-#### To add a custom operation
+#### To add a custom operation {#to-add-a-custom-operation}
 
 1. Click **Add custom operation** to specify a customized operation.
 2. In the resulting dialog box, Enter the custom operation type to be supported by the simulator.
@@ -136,7 +136,7 @@ Click the toggle to turn the respective operation on or off.
 
 The custom operation will be added to the operation list.
 
-### Alarms (simulator)
+### Alarms (simulator) {#alarms-simulator}
 
 The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, that is, if the simulator itself does not work correctly. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for information on alarms.
 

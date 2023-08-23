@@ -10,7 +10,7 @@ To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option 
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
 
-### To bulk-register devices
+### To bulk-register devices {#to-bulkregister-devices}
 
 1. Click **Registration** in the **Devices** menu of the navigator.
 
@@ -68,7 +68,7 @@ For your convenience, we provide CSV template files for both bulk registration t
 If the device with the given identifier already exists, it will be updated with the data from the CSV file.
 {{< /c8y-admon-info >}}
 
-### To import CSV data in Microsoft Excel
+### To import CSV data in Microsoft Excel {#to-import-csv-data-in-microsoft-excel}
 
 1. In Microsoft Excel, switch to the **Data** tab.
 2. In the **Data** tab, select **From Text** in the top menu bar.

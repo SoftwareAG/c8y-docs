@@ -1,6 +1,8 @@
 import os
 import pathlib
 import frontmatter
+import re
+import string
 
 class TranslationTool():
     def __init__(self):
@@ -16,6 +18,10 @@ class TranslationTool():
             {
                 "description" : "Replace english aliases with german ones in the german files",
                 "call" : self.replace_aliases
+            },
+            {
+                "description" : "Generate heading labels for headings that don't have them yet",
+                "call" : self.generate_heading_labels
             },
         ]
 
@@ -130,6 +136,50 @@ class TranslationTool():
                    fm["aliases"] = unique_aliases
                    file = open(path_string, 'w+', encoding='utf8')
                    file.write(frontmatter.dumps(fm))
+
+    def generate_heading_labels(self):
+        content_section = "device-management-application"
+        print("adding heading labels to " + content_section)
+        dirpath = os.path.join("..", "content", content_section)
+        pathlist = pathlib.Path(dirpath).rglob('*.md')
+        #dirpath = os.path.join("..", "content", "device-management-application", "grouping-devices-bundle", "managing-devices-in-groups.md")
+        #self.process_headings(dirpath, dir)
+        for path in pathlist:
+             path_string = str(path)
+             self.crosses()
+             print("looking at file:", path)
+             self.process_headings(path_string, dir)
+             self.crosses()
+
+    def process_headings(self, path_string, dir):
+       file = open(path_string, 'r')
+       file_name = os.path.basename(file.name).split(".")[0]
+       md = file.read()
+       md = re.sub(r'(\[[^][]*]\([^()]*\))|^(#+)(.*)', lambda x: x.group(1) if x.group(1) else x.group(2) + self.format_heading(x.group(3)), md, flags=re.M)
+       print(md)
+       file = open(path_string, 'w')
+       file.write(md)
+
+    def format_heading(self, heading):
+        if "{#" in heading:
+            print(heading, "contains a label")
+            return heading
+        else:
+            heading = heading[1:]
+            lowercase_heading = heading.lower()
+            print(lowercase_heading)
+            cleaned_heading = lowercase_heading
+            bad_characters = list(string.punctuation)
+            for j in bad_characters:
+                cleaned_heading = cleaned_heading.replace(j, '')
+            print(cleaned_heading)
+            hyphencase_heading = cleaned_heading
+            for i in string.whitespace:
+                hyphencase_heading = hyphencase_heading.replace(i, '-')
+            print(hyphencase_heading)
+            return_heading = heading + " {#" + hyphencase_heading + "}"
+            print(return_heading)
+            return " " + return_heading
 
     def unique_list(self, list):
         output = []

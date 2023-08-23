@@ -16,7 +16,7 @@ There are two types of operations in **Device control**, each represented by a t
 * **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations).
 * **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations).
 
-### To view single operations
+### To view single operations {#to-view-single-operations}
 
 See the list of single operations in the **Single operations** tab.
 
@@ -54,7 +54,7 @@ Click **Reload** to update the list once manually.
 Single operations are listed in descending time order. Operations are executed strictly according to this order.
 {{< /c8y-admon-info >}}
 
-### To add and execute a single operation
+### To add and execute a single operation {#to-add-and-execute-a-single-operation}
 
 Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/device-management-application/managing-device-data/#to-manage-firmware-on-a-device), [software](/device-management-application/managing-device-data/#managing-software), [configurations](/device-management-application/managing-device-data/#managing-configurations) and more.
 
@@ -66,7 +66,7 @@ Operations for a specific device can also be created and executed in the **Shell
 When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 {{< /c8y-admon-important >}}
 
-### To cancel pending single operations
+### To cancel pending single operations {#to-cancel-pending-single-operations}
 
 You can cancel particular pending single operations or all pending single operations at once.
 
@@ -75,13 +75,13 @@ To cancel a particular pending single operation, click the menu icon at the righ
 To cancel all pending operations at once, click **More...** at the right of the top menu bar and select **Cancel all pending operations**.
 Alternatively, filter the list of single operations to show only single operations with status PENDING, then click **Cancel all** at the right of the top menu bar.
 
-### To create a smart rule from a single operation
+### To create a smart rule from a single operation {#to-create-a-smart-rule-from-a-single-operation}
 
 Click the menu icon at the right of the single operation that you want to create a smart rule for, and select **Create smart rule**.
 
 See [To create a smart rule](/cockpit/smart-rules/#to-create-a-smart-rule) for further steps.
 
-### To view bulk operations
+### To view bulk operations {#to-view-bulk-operations}
 
 See the list of bulk operations in the **Bulk operations** tab.
 
@@ -138,14 +138,14 @@ To clear the filter, click **Clear** right next to it.
 
 To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
 
-### To add a bulk operation
+### To add a bulk operation {#to-add-a-bulk-operation}
 
 There are two ways of creating a bulk operation:
 
 * Use the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard)
 * [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-#### To add a bulk operation using the wizard
+#### To add a bulk operation using the wizard {#to-add-a-bulk-operation-using-the-wizard}
 
 Follow these steps:
 
@@ -168,7 +168,7 @@ Follow these steps:
 5. Enter a new title or use the preset title. Optionally enter a description. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
 
 
-#### To schedule a single operation as bulk operation
+#### To schedule a single operation as bulk operation {#to-schedule-a-single-operation-as-bulk-operation}
 
 You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:
@@ -176,7 +176,7 @@ Follow these steps:
 1. Click the menu icon at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
 2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#to-add-a-bulk-operation-using-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-add-a-bulk-operation-using-the-wizard) and follow it.
 
-### To edit the schedule of bulk operations
+### To edit the schedule of bulk operations {#to-edit-the-schedule-of-bulk-operations}
 
 You may only edit the schedule of bulk operations with status = SCHEDULED.
 
@@ -186,7 +186,7 @@ You may only edit the schedule of bulk operations with status = SCHEDULED.
 
 The changes are applied to the bulk operation accordingly.
 
-### To cancel bulk operations
+### To cancel bulk operations {#to-cancel-bulk-operations}
 
 You may only cancel bulk operations with status = SCHEDULED or EXECUTING.
 If it is executing, you may only cancel the operation until all of its single operations are created.
@@ -194,7 +194,7 @@ This way, you can cancel the creation of the remaining single operations.
 
 Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
 
-### To retry failed operations
+### To retry failed operations {#to-retry-failed-operations}
 
 You may retry the failed operations of a bulk operation that is either executing or completed with failures.
 
@@ -204,7 +204,7 @@ This will create a new single operation.
 
 For a bulk operation that completed with failures, you may also click the menu icon to the right of the operation, then click **Retry failed operations**.
 
-### To manually set failed bulk operations to successful
+### To manually set failed bulk operations to successful {#to-manually-set-failed-bulk-operations-to-successful}
 
 You may manually set a failed bulk operation to the status SUCCESSFUL.
 

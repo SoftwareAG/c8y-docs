@@ -60,7 +60,7 @@ However, we recommend you to rely on the periodic offloading instead of triggeri
 
 Click **Show offloading history** to examine the execution history of a pipeline. See [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) for details.
 
-<a name="import-export"></a>
+
 ### Importing/exporting offloading configurations
 
 The import/export functionality allows you to backup your offloading configurations to a file. You can use the backup when editing the data lake settings or to copy offloading configurations from one {{< product-c8y-iot >}} DataHub instance to another. Import/export solely includes the configuration of a pipeline; it includes neither the runtime status of a pipeline nor already exported data.

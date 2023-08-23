@@ -37,7 +37,7 @@ Single devices are not managed in the Cockpit application. They are managed in t
 {{< c8y-admon-related >}}
 - [Getting started > Technical concepts > {{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#overview) for details on {{< product-c8y-iot >}}'s domain model.
 - [Device management > Device management application](/device-management-application/) for details on working with devices in {{< product-c8y-iot >}}.
-- [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-a-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
+- [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-jest-based-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
 ### Asset hierarchy versus device hierarchy

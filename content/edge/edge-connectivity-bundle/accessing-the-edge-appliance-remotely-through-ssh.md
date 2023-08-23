@@ -14,4 +14,4 @@ To access and connect to the Edge appliance:
 
 1. In the {{< product-c8y-iot >}} tenant for your registered Edge appliance, add a remote access endpoint. See [Adding remote access endpoints](/cloud-remote-access/using-cloud-remote-access/#to-add-a-remote-access-endpoint-via-ssh). If you select the **Sign-in method** as **Username and password**, you must enter the operating system's administrator credentials. By default, the port number should always be 22.
 
-2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#connecting-to-endpoints).
+2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#to-connect-to-an-endpoint).

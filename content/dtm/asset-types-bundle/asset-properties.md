@@ -24,7 +24,6 @@ ROLES & PERMISSIONS
 - To add/update/delete/import asset properties: CREATE/ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-<a name="create-custom-property"></a>
 ### To create an asset property
 
 When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system.
@@ -75,7 +74,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </tr>
 <tr>
 <td style="text-align:left"><b>Type</b></td>
-<td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#custom-text" class="no-ajaxy">Text</a>, <a href="#custom-number" class="no-ajaxy">Number</a>, <a href="#custom-file-upload" class="no-ajaxy">File upload</a>, <a href="#custom-date-picker" class="no-ajaxy">Date picker</a>, <a href="#custom-enumeration" class="no-ajaxy">Enumeration</a>, or <a href="#custom-boolean" class="no-ajaxy">Boolean</a>.</td>
+<td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#file-upload" class="no-ajaxy">File upload</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, or <a href="#boolean" class="no-ajaxy">Boolean</a>.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -92,15 +91,10 @@ The **Default value** field is only shown if the selected **Type** is either "Te
 
 Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-models).
 
-
-
-<a name="custom-property-types"></a>
 ### Asset property types
 
 To further define the asset property you can select one of the six following options listed under **Type**:
 
-
-<a name="custom-text"></a>
 #### Text
 
 Select **Text** if the asset property value is a string, for example, a wind turbine manufacturer name. Enter a valid text.
@@ -126,8 +120,6 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator  codes have to start with the prefix “MCGEN”.
 
-
-<a name="default-value"></a>
 #### Default value
 
 Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
@@ -140,8 +132,6 @@ The default value has to adhere to all validations provided beforehand. If you s
 
 If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
-
-<a name="custom-number"></a>
 #### Number
 
 For this type you must provide a numeric value for the asset creation, for example, the height of a wind turbine tower.
@@ -183,8 +173,6 @@ If the **Minimum** and/or **Maximum** is checked, the given **Default value** is
 
 If the asset property is "Tower height" with a **Minimum** of 80 and a **Maximum** of 110, the **Default value** must be between 80 and 110.
 
-
-<a name="custom-date-picker"></a>
 #### Date Picker
 
 If selected, you must select a date from the calendar displayed in the dialog window during the asset creation.
@@ -193,8 +181,6 @@ If selected, you must select a date from the calendar displayed in the dialog wi
 
 If "Installation date" is a property of the "Wind turbine" asset, then you must select the installation date of the wind turbine when creating the asset.
 
-
-<a name="custom-enumeration"></a>
 #### Enumeration
 
 Select **Enumeration** to list several values that apply to this asset property.
@@ -209,7 +195,6 @@ If you create an asset property for a wind turbine "drivetrain type" and the typ
 
 ![Asset property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
-<a name="custom-boolean"></a>
 #### Boolean
 
 If selected, the presence of the asset property can either be true or false during the asset creation.
@@ -220,7 +205,6 @@ An asset with this asset property shows a checkbox. Selecting this checkbox sets
 
 If you create an asset property called "Yaw system" to identify wind turbines that rotate towards the wind direction during upwind conditions, the asset property must be created with the type "Boolean". When you create an asset for a wind turbine with a yaw system present, it is then initialized to "true". If there is no yaw system present, the asset is initialized to "false".
 
-<a name="custom-file-upload"></a>
 #### File upload
 
 This option allows you to upload a file during the asset creation.
@@ -239,8 +223,6 @@ During the bulk import, the file size validation is skipped as the file is alrea
 
 To upload the schematic diagram for a wind turbine, you name the asset property "Wind turbine schematic" and specify the file type of the schematic file. Then upload the respective file. Once the asset is created, you can view this file for future reference.
 
-
-<a name=""></a>
 ### To edit an asset property
 
 1. Select the desired asset property in the **Asset properties** to see all the details on the right of the screen.
@@ -248,8 +230,6 @@ To upload the schematic diagram for a wind turbine, you name the asset property 
 3. Click **Save** to save your changes.
 4. If this property is used by any asset model, in the resulting confirmation dialog, select **Confirm** to continue to save your changes.
 
-
-<a name=""></a>
 ### To search and filter asset properties
 
 1. Navigate to the **Asset properties** page.
@@ -258,8 +238,6 @@ To upload the schematic diagram for a wind turbine, you name the asset property 
 
 All asset properties matching the search values are displayed on the screen on the left. If the search entry does not match with any asset properties, you see a notification.
 
-
-<a name=""></a>
 ### To delete an asset property
 
 Select the respective asset property in the **Asset properties** and click **Delete** on the bottom right.
@@ -272,13 +250,10 @@ If the asset property you want to delete is part of an existing asset or an asse
 
 {{< /c8y-admon-info>}}
 
-
-<a name=""></a>
 ### Types of asset properties
 
 There are two types of asset properties, both fulfill different requirements:
 
-<a name=""></a>
 #### Simple asset property
 
 A simple asset property consists of a single key value pair. This option is set by default when creating new asset properties.
@@ -291,7 +266,6 @@ In the **Asset properties** simple asset properties are listed with their type.
 
  ![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
 
-<a name=""></a>
 #### Complex asset property
 
 A complex asset property consists of multiple key value pairs, meaning, it contains a root object followed by one or more key value pairs. You can select the complex asset property option by switching on the toggle. If you switch on the toggle, you must define each key value pair as well as providing a Type for each pair.

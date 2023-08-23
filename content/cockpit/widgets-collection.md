@@ -353,7 +353,7 @@ The "Pie chart" widget displays data points (measurements) with current values i
 </tr>
 <tr>
 <td align="left">Data point</td>
-<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#to-add-a-data-point">Data explorer &gt; To add a data point</a>.</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="/cockpit/data-explorer/#to-add-a-data-point">To add a data point</a>.</td>
 </tr>
 </tbody>
 </table>

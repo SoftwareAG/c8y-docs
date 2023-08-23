@@ -8,7 +8,7 @@ In the firmware repository, {{< product-c8y-iot >}} offers to collect reference 
 
 Only one firmware package version can be applied per device.
 
-### To view firmware
+### To view firmware {#to-view-firmware}
 
 Click **Firmware repository** in the **Management** menu in the navigator.
 
@@ -27,7 +27,7 @@ At the top, the firmware name, a description, and optional device type filter(s)
 
 The list of versions and patches shows the version name and the name of the firmware binary. Moreover, the list indicates if a firmware version has patches, which can be viewed by expanding the version entry. The versions and patches are ordered by their creation time (descending).
 
-### To add a new firmware or firmware version
+### To add a new firmware or firmware version {#to-add-a-new-firmware-or-firmware-version}
 
 1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar.
 2. In the resulting dialog box,
@@ -43,7 +43,7 @@ The firmware object will be added to the firmware list or the firmware version w
 
 If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. Enter the new version number and upload a binary or provide a file path.
 
-### To add a new firmware patch
+### To add a new firmware patch {#to-add-a-new-firmware-patch}
 
 1. In the **Firmware repository** page, click **Add firmware patch** at the right of the top menu bar.
 2. In the resulting dialog box, select the firmware, for which you want to add a patch, from the dropdown list in the **Firmware** field.
@@ -56,24 +56,24 @@ As with adding versions, if you click **Add firmware patch** from within the det
 
 The firmware patch will be added to the version details within the firmware details.
 
-### To edit a firmware
+### To edit a firmware {#to-edit-a-firmware}
 
 1. Click the menu icon at the right of a specific firmware entry and in the context menu click **Edit**.
 2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**.
 
 The firmware will be updated accordingly.
 
-### To delete a firmware
+### To delete a firmware {#to-delete-a-firmware}
 
 Click the menu icon at the right of a specific firmware entry and in the context menu click **Delete**.
 
 The object will be deleted from the firmware repository.
 
-### To delete a firmware version or patch
+### To delete a firmware version or patch {#to-delete-a-firmware-version-or-patch}
 
 In the details of a specific firmware, hover over the version or patch entry you want to delete and click the delete icon. The firmware version or patch will be deleted from the firmware details.
 
-### To manage firmware on a device
+### To manage firmware on a device {#to-manage-firmware-on-a-device}
 
 In the **Firmware** tab of a device you can manage the installed firmware for the device.
 
@@ -89,7 +89,7 @@ The **Firmware** tab shows the current firmware installed on the device.
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
 
-##### To install/replace firmware on a device
+##### To install/replace firmware on a device {#to-installreplace-firmware-on-a-device}
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
 2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type (or the ones that have no device type) in the firmware repository.
@@ -99,7 +99,7 @@ The install operation to be executed by the device will be created. The firmware
 
 Click on the operation to view its details. The status of the last operation is also shown on the **Firmware** tab.
 
-##### To install/update firmware on multiple devices
+##### To install/update firmware on multiple devices {#to-installupdate-firmware-on-multiple-devices}
 
 {{< product-c8y-iot >}} offers the option to execute firmware updates for multiple devices at once.
 

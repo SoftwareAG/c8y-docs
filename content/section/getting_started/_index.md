@@ -191,4 +191,4 @@ svg: '<svg
 '
 ---
 
-Read about the concepts behind the {{< product-c8y-iot >}} platform. Or directly get started by taking a tour through the Cockpit or by connecting your phone.
+Read about the concepts behind the {{< product-c8y-iot >}} platform. Get familiar with the platform UI or directly get started by connecting your phone.

@@ -8,7 +8,7 @@ The **Device credentials** page lists all credentials that have been generated f
 
 ![Device credentials](/images/users-guide/DeviceManagement/devmgmt-device-credentials.png)
 
-### To manage permissions for a device
+### To manage permissions for a device {#to-manage-permissions-for-a-device}
 
 1. Click the arrow in the **Global roles** column of a device to open a list with available global roles.
 2. Assign or remove permissions for an individual device by selecting/deselecting roles.
@@ -16,7 +16,7 @@ The **Device credentials** page lists all credentials that have been generated f
 
 The roles for the device will be updated accordingly.
 
-### To edit device credentials
+### To edit device credentials {#to-edit-device-credentials}
 
 1. Click the menu icon at the right of a device credentials entry and then click **Edit** to open the device details.
 
@@ -28,13 +28,13 @@ The roles for the device will be updated accordingly.
 
 The device credentials will be updated accordingly.
 
-### To disable device credentials
+### To disable device credentials {#to-disable-device-credentials}
 
 Click the menu icon at the right of a device credentials entry and then click **Disable**.
 
 The device credentials will be temporarily disabled.
 
-### To delete device credentials
+### To delete device credentials {#to-delete-device-credentials}
 
 Click the menu icon at the right of a device credentials entry and then click **Delete**.
 

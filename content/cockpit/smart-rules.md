@@ -72,7 +72,7 @@ Smart rules can be seen in two places:
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
 {{< c8y-admon-related >}}
-- [Platform administration > {{< standard-tenant >}} management > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
+- [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
 ### To create a smart rule
@@ -150,8 +150,7 @@ To define a threshold rule follow these steps:
 1. In the navigator, select the desired group or device to apply a threshold to.
 2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](/cockpit/data-point-library/#to-add-a-data-point-to-the-library).
-4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
-<br>
+4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**.
 5. Select the smart rule "On measurement explicit threshold create alarm".
 6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/cockpit/smart-rules-collection/).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.

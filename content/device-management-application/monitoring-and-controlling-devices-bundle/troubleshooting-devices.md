@@ -6,7 +6,7 @@ layout: redirect
 
 Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
 
-### To view events
+### To view events {#to-view-events}
 
 {{< product-c8y-iot >}} displays events at the level of individual devices and across all devices:
 

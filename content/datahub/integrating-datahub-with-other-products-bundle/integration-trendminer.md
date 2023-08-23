@@ -19,7 +19,7 @@ The following diagram illustrates the high-level concepts of the integration bet
 
 <img src="/images/datahub-guide/trendminer-highlevel-concept.png" alt="Integration of {{< product-c8y-iot >}} DataHub and TrendMiner" style="max-width: 100%">
 
-### Design of a TrendMiner offloading pipeline
+### Design of a TrendMiner offloading pipeline {#design-of-a-trendminer-offloading-pipeline}
 
 Providing TrendMiner access to {{< product-c8y-iot >}} data requires you solely to define an offloading pipeline using the TrendMiner data layout. When the offloading pipeline is in place, {{< product-c8y-iot >}} data is regularly extracted from the Operational Store, flattened, and exported into a data lake. In addition, Dremio is configured to access recent data from the Operational Store, using the same schema as for the historical data.
 
@@ -31,7 +31,7 @@ So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measur
 
 You must follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
 
-### Accessing Cumulocity IoT data in TrendMiner
+### Accessing Cumulocity IoT data in TrendMiner {#accessing-cumulocity-iot-data-in-trendminer}
 
 Once you have defined and activated a TrendMiner offloading pipeline, the initial offload must be completed before you can start querying the data in TrendMiner.
 

@@ -17,9 +17,9 @@ The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio 
 You need administration permissions to define the settings. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-req >}}
 
-### Defining the initial configuration
+### Defining the initial configuration {#defining-the-initial-configuration}
 
-#### Dremio API user
+#### Dremio API user {#dremio-api-user}
 
 In order to access the data lake contents, you can use ODBC, JDBC, Dremio REST API, or a proxy REST API. See [Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#querying-offloaded) for more details. The proxy REST API is served by the {{< product-c8y-iot >}} DataHub server, which acts as a proxy to Dremio. The proxy API requires a Dremio user for the interaction of {{< product-c8y-iot >}} DataHub server and Dremio. This Dremio API user can then also be used for data lake querying based on JDBC, ODBC, or Dremio REST API.
 
@@ -38,12 +38,12 @@ When using the proxy REST API, all queries are processed using the same Dremio A
 
 Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in [Adding a Dremio user](/datahub/setting-up-datahub/#adding-a-dremio-user).
 
-#### Data Lake
+#### Data Lake {#data-lake}
 Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
 
 The following types of data lakes are currently supported:
 
-##### Azure Storage
+##### Azure Storage {#azure-storage}
 **Azure Storage** is a set of cloud storage services offered by Microsoft. {{< product-c8y-iot >}} DataHub supports Azure Data Lake Storage Gen2, which is part of these services. The following settings must be defined for this data lake:
 
 |Settings|Description|
@@ -62,7 +62,7 @@ While the other settings are fixed once the initial configuration was saved, the
 Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**. Also note that in case IP white-listing is activated, {{< product-c8y-iot >}} DataHub might not be able to access the data lake if the data lake and {{< product-c8y-iot >}} DataHub reside in the same Azure region. See also the corresponding [documentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-an-internet-ip-range).
 {{< /c8y-admon-req >}}
 
-##### Amazon S3
+##### Amazon S3 {#amazon-s3}
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings must be defined for this data lake:
 
 |Settings|Description|
@@ -93,14 +93,14 @@ Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a8
 
 **SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.**
 
-##### NAS
+##### NAS {#nas}
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations. The following settings must be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
 |Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of {{< product-c8y-iot >}} Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, for example, to /datalake inside the containers.|
 
-##### HDFS
+##### HDFS {#hdfs}
 **HDFS** is the Hadoop Distributed File System, which is a distributed, scalable file system designed for running on commodity hardware. The following settings must be defined for this data lake:
 
 |Settings|Description|
@@ -119,7 +119,7 @@ Impersonation is supported and may be used. However, when impersonation is enabl
 
 For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 
-#### Saving settings
+#### Saving settings {#saving-settings}
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 
 * A Dremio API user is created; the user has standard Dremio user privileges, not admin privileges.
@@ -127,10 +127,10 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A source in Dremio is created which connects to the Operational Store of {{< product-c8y-iot >}}. That source is not visible to the Dremio API user.
 * A space in Dremio is created which you can use to organize your custom Dremio entities such as views. The name of the space is your tenant ID concatenated with 'Space', for example, t12345Space.
 
-### Editing settings
+### Editing settings {#editing-settings}
 To edit the Dremio API user, click **Edit** in the **Dremio API user** section of the **Initial configuration** page. In the editor you can edit all user details, except for the username, which is fixed. In [Editing a Dremio user](/datahub/setting-up-datahub/#editing-a-dremio-user), all user details are described.
 
 The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See [Importing/exporting offloading configurations](/datahub/working-with-datahub/#importingexporting-offloading-configurations) for details on import/export.
 
-### Deleting settings
+### Deleting settings {#deleting-settings}
 Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted, including the Dremio API user as well as additionally created Dremio users. Also the artifacts created by a corresponding Dremio user, like views, are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned in the previous section, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are not deleted, only the Dremio artefacts connecting to the data lake. To delete the data lake and its contents you must use the tooling of your data lake provider.

@@ -8,7 +8,7 @@ In addition to SQL querying using standard interfaces, you can utilize Dremio fu
 
 For a detailed description of all functionalities Dremio provides you can consult the [Dremio documentation](https://docs.dremio.com/).
 
-### Accessing and logging into Dremio
+### Accessing and logging into Dremio {#accessing-and-logging-into-dremio}
 
 You access Dremio via a web browser. It has been tested with the following web browsers:
 
@@ -25,7 +25,7 @@ To access Dremio, navigate to the home page. Under **Quick links** click on the 
 Your Dremio user does not have administration rights in Dremio.
 {{< /c8y-admon-info >}}
 
-#### How to log into Dremio
+#### How to log into Dremio {#how-to-log-into-dremio}
 
 On the **Login** screen, enter your Dremio account credentials. Click **Login** to enter Dremio.
 
@@ -33,11 +33,11 @@ When you log in successfully, you will be taken to the home page of Dremio.
 
 When you want to log out, click on your username and select **Log out**.
 
-### Sources and spaces
+### Sources and spaces {#sources-and-spaces}
 
 On the home page of Dremio you will find at the left under **Datasets** two panels called **Spaces** and **Sources**.
 
-#### Sources
+#### Sources {#sources}
 
 In the **Sources** panel there is the data source `YourTenantIdDataLake`, for example, `t47110815DataLake`. This source has been auto-configured for you and points to your data lake.
 
@@ -51,11 +51,11 @@ When you click on your data source it will be shown in the main panel. Clicking 
 You might also see a folder named *c8y_cdh_temp*. The folder is used for {{< product-c8y-iot >}} DataHub internal purposes and must not be deleted or altered.
 {{< /c8y-admon-info >}}
 
-#### Spaces
+#### Spaces {#spaces}
 
 A space in Dremio helps in organizing your data sets. {{< product-c8y-iot >}} DataHub auto-configures a space which is named `YourTenantIdSpace`, for example, `t47110815Space`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections), for the inventory, events, and alarms collections there are preconfigured views providing either all or latest data.
 
-#### Job history
+#### Job history {#job-history}
 
 The **Job History** tab displays jobs/queries you have executed. It allows you to view details of a job and offers filter capabilities (time range, job status, query type, and queue). The **Profile** view inside the job detail view is very useful to investigate optimization potentials in your queries.
 
@@ -63,7 +63,7 @@ The **Job History** tab displays jobs/queries you have executed. It allows you t
 The job history only contains queries that you have actively triggered; the jobs related to the data extraction are hidden.
 {{< /c8y-admon-info >}}
 
-### Creating views
+### Creating views {#creating-views}
 
 With {{< product-c8y-iot >}} DataHub, you can replicate data from a {{< product-c8y-iot >}} collection to a data lake using a default transformation of the data. As requirements for subsequent data analysis of the offloaded device data may vary over time, you should configure your offloading pipeline so that all potentially relevant data is included.
 
@@ -75,7 +75,7 @@ In Dremio, you can create such a view by defining a corresponding query and savi
 Such a view is per default not materialized, that is, it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data. For the pre-defined alarms/events/inventory views, you can optionally activate view materialization during the offloading configuration.
 {{< /c8y-admon-info >}}
 
-#### Example
+#### Example {#example}
 Consider the case that you want to visualize data in a reporting tool. The raw data volume is too high, so you want to instead show the hourly average of the column *myValue*. You can easily do that by creating a view with the following SQL statement and saving it as a view/virtual data set:
 
 ```sql
@@ -93,7 +93,7 @@ CREATE OR REPLACE VDS YourTenantIdSpace.YourDesiredViewName AS
   GROUP BY DATE_TRUNC('HOUR', "time")
 ```
 
-### Joining tables/views
+### Joining tables/views {#joining-tablesviews}
 
 Views you have defined and target tables from your data lake can be joined as well. In Dremio you can either define joins using the SQL editor or a graphical interface.
 

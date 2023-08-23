@@ -19,7 +19,7 @@ You need configuration or administration permissions to work with offloading pip
 | [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded) | Use Dremio to refine offloaded {{< product-c8y-iot >}} data |
 | [{{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices) | Learn more about best practices when working with {{< product-c8y-iot >}} DataHub |
 
-### Basic functionality
+### Basic functionality {#basic-functionality}
 
 On the **Offloading** page you do the offloading management and monitoring tasks:
 
@@ -32,7 +32,7 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 
 <img src="/images/datahub-guide/datahub-configure-offloading-tasks.png" alt="Configuration of offloading tasks"  style="max-width: 100%">
 
-### Offloading overview
+### Offloading overview {#offloading-overview}
 
 In the main panel of the **Offloading** page, you will find all pipelines as well as their current status.
 
@@ -40,7 +40,7 @@ In the action bar you have a search field to search for all offloading configura
 
 Below the action bar you find the current list of configurations.
 
-#### Offloading list
+#### Offloading list {#offloading-list}
 
 Each offloading configuration provides the following information:
 

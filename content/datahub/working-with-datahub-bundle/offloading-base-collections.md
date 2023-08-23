@@ -4,7 +4,7 @@ title: Offloading Cumulocity IoT base collections
 layout: redirect
 ---
 
-### Offloading the base collections
+### Offloading the base collections {#offloading-the-base-collections}
 
 The following tables summarize the resulting schemas for each of the {{< product-c8y-iot >}} base collections. These schemas additionally include the virtual columns `dir0`, ..., `dir3`, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of {{< product-c8y-iot >}}, nor are they persisted in the data lake. Do not use `dir0`, ..., `dir3` as additional columns or rename them accordingly in your offloading configuration.
 
@@ -12,7 +12,7 @@ The following tables summarize the resulting schemas for each of the {{< product
 For each offloading run, the current data in the collection is considered. If data has been modified multiple times or deleted between two successful offloading runs, these changes will not be captured in the offloading process and will not be reflected in the data lake. Relevant for the offloading is the current snapshot of the collection when starting an offloading run. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE, because it happened between two offloading runs.
 {{< /c8y-admon-info >}}
 
-#### Offloading the alarms collection
+#### Offloading the alarms collection {#offloading-the-alarms-collection}
 
 The alarm collection keeps track of alarms which have been raised. During offloading, the data of the alarm collection is flattened, with the resulting schema being defined as follows:
 
@@ -59,7 +59,7 @@ examples use "alarms" as target table name:
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see
 [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded).
 
-#### Offloading the events collection
+#### Offloading the events collection {#offloading-the-events-collection}
 
 The events collection manages the events. During offloading, the data of the events collection is flattened, with the resulting schema being defined as follows:
 
@@ -91,7 +91,7 @@ Additional views over the target table are defined in the tenant's space in Drem
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded Cumulocity IoT data](/datahub/working-with-datahub/#refining-offloaded).
 
-#### Offloading the inventory collection
+#### Offloading the inventory collection {#offloading-the-inventory-collection}
 
 The inventory collection keeps track of managed objects. During offloading, the data of the inventory collection is flattened, with the resulting schema being defined as follows:
 
@@ -127,11 +127,11 @@ The views are provided in your Dremio space. For details on views and spaces in 
 The fields **childDevices** and **childAssets** are not part of the default offloading columns. They were included in previous versions, but lead to problems for a high number of list items in those fields. In such a case, the columns were no more readable by Dremio. If they need to be included in the offloaded data, they can be defined as additional result columns. However, you have to ensure that the number of list items in those fields does not exceed the Dremio limit configured in your environment.
 {{< /c8y-admon-info >}}
 
-#### Offloading the measurements collection
+#### Offloading the measurements collection {#offloading-the-measurements-collection}
 
 The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or, for the TrendMiner case, one table with measurements of all types.
 
-##### Offloading measurements with the default target table layout
+##### Offloading measurements with the default target table layout {#offloading-measurements-with-the-default-target-table-layout}
 
 When using the default layout, you must select a measurement type, so that all offloaded data is of the same type. During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
 
@@ -189,7 +189,7 @@ The system uses the type attribute to determine `c8y_Temperature` as measurement
 Try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN.
 {{< /c8y-admon-important >}}
 
-##### Offloading measurements with the TrendMiner target table layout
+##### Offloading measurements with the TrendMiner target table layout {#offloading-measurements-with-the-trendminer-target-table-layout}
 
 When using the TrendMiner layout, all measurements are offloaded into one table **c8y_cdh_tm_measurements**. Their corresponding type is stored in column **type**. The column **unit** defines the unit, while the column **value** defines the value of the measurement. The column **tagname** is used by TrendMiner to search for specific series. It is composed of the source, the fragment, and the series as stored in the measurements collection.
 

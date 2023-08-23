@@ -24,11 +24,11 @@ helpcontent:
 
 Microsoft Power BI is a business intelligence tool which allows you to create and use interactive reports for data from various sources. These reports can also be built on your IoT data. Given your devices are connected with the {{< product-c8y-iot >}} platform, you can utilize {{< product-c8y-iot >}} DataHub to offload the data into a data lake of your choice. Then you can create a Microsoft Power BI report which is based on the data in the data lake. {{< product-c8y-iot >}} DataHub allows you to access and work with these reports from within the {{< product-c8y-iot >}} DataHub web frontend.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 Before setting up the connection to Microsoft Power BI in {{< product-c8y-iot >}} DataHub, conduct the following steps.
 
-#### Accessing data lakes in Microsoft Power BI reports
+#### Accessing data lakes in Microsoft Power BI reports {#accessing-data-lakes-in-microsoft-power-bi-reports}
 
 {{< product-c8y-iot >}} DataHub leverages the native interaction between Microsoft Power BI and Dremio. Microsoft Power BI reports can consume data from data lakes using Dremio as query and data access layer. When creating a new report in Microsoft Power BI desktop, you can select [Dremio as a database](https://docs.dremio.com/current/sonar/client-applications/clients/microsoft-power-bi/) and establish a connection to the Dremio cluster. With this connection you have access to the data lakes connected to Dremio.
 
@@ -38,7 +38,7 @@ The Microsoft Power BI datasets should use the DirectQuery mode, which prevents 
 
 In contrast to versions prior to 10.18, it is no longer required to deploy a Microsoft Power BI gateway. A native connector from Power BI Web to Dremio is available now.
 
-#### Configuring access to Microsoft Power BI reports
+#### Configuring access to Microsoft Power BI reports {#configuring-access-to-microsoft-power-bi-reports}
 
 To make reports available in its web frontend, {{< product-c8y-iot >}} DataHub embeds Microsoft Power BI content. Users neither must sign in to Microsoft Power BI nor need a Microsoft Power BI license to access the reports. For access authentication an Azure Active Directory service principal object with an application secret is used.
 
@@ -72,7 +72,7 @@ Next you can define a workspace to organize your reports. By adding the service 
 
 Only workspaces granting access to the service principal application can be browsed from within {{< product-c8y-iot >}} DataHub. Once the workspace is available, you can publish reports to it and access it in {{< product-c8y-iot >}} DataHub.
 
-### Setting up the connection in Cumulocity IoT DataHub
+### Setting up the connection in Cumulocity IoT DataHub {#setting-up-the-connection-in-cumulocity-iot-datahub}
 
 In the navigator, select **Settings** and then **Microsoft Power BI** to define the connection settings.
 
@@ -86,7 +86,7 @@ Once all settings are completed, click **Save** on the action bar to save the se
 
 If you want to delete the settings, click **Delete** on the action bar. You cannot access reports afterwards.
 
-### Working with reports
+### Working with reports {#working-with-reports}
 
 Once the settings are defined, you can access and work with the reports.
 

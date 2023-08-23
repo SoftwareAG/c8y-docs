@@ -6,7 +6,7 @@ layout: redirect
 
 Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by adding assets, they can be viewed in the **Assets** page.
 
-### To view an asset
+### To view an asset {#to-view-an-asset}
 
 1. Select an asset from the hierarchy on the **Assets** page.
 
@@ -29,12 +29,12 @@ If you edit an asset property or an asset model associated with the selected ass
 You see a warning message if one or more properties associated with the asset are not present.
 {{< /c8y-admon-info>}}
 
-### To modify an asset
+### To modify an asset {#to-modify-an-asset}
 
 Fields are marked editable by an edit icon.
 To modify any of the asset details, click the edit icon, enter new details and save.
 
-### To delete an asset
+### To delete an asset {#to-delete-an-asset}
 
 To delete a subasset or device in the hierarchy:
 
@@ -47,7 +47,7 @@ The delete icon appears on hover of each row under the subassets section.
 In the following dialog box, click **Confirm** to continue.
 Optionally select the checkbox in the dialog box to delete all subassets and devices for the selected asset.
 
-### To search for an asset
+### To search for an asset {#to-search-for-an-asset}
 
 You can search for assets through the **Search** button at the right of the top bar.
 Enter a search term into the textbox at the top of the **Search** window to see all assets matching the search criteria in the section **Search results**.
@@ -64,7 +64,7 @@ The search results include all assets containing the search term in any property
 
 The DTM application extends the full text search capability of {{< product-c8y-iot >}} for searching assets. See [Search and filter functionality](/getting-started/gui-features/#search-and-filter-functionality) to know more about available search options.
 
-### To move assets
+### To move assets {#to-move-assets}
 
 Use the assets move feature to relocate assets within hierarchies. To move one or more assets, follow the steps below:
 

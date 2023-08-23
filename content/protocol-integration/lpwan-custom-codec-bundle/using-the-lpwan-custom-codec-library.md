@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 For convenience, {{< product-c8y-iot >}} provides the Java library `com.nsn.cumulocity.clients-java:lpwan-custom-codec` to develop the custom codec microservice in Java as a SpringBoot application.
-When subscribed, such a custom codec microservice automatically creates the required device protocols and predefined command templates as described in [Implementing a custom codec microservice](#implement-codec-microservice).
+When subscribed, such a custom codec microservice automatically creates the required device protocols and predefined command templates as described in [Implementing a custom codec microservice](#implementing-custom-codec-microservice).
 
 To create a custom codec microservice using this library, do the following:
 

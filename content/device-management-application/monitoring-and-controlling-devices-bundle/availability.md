@@ -19,11 +19,11 @@ There may be exceptions from this rule. If your vending machines rely exclusivel
 
 {{< product-c8y-iot >}} displays service availability at the level of individual devices and across all devices.
 
-### To view the availability of a particular device
+### To view the availability of a particular device {#to-view-the-availability-of-a-particular-device}
 
 Click the **Availability** tab in the details of a particular device to check the availability of this device.
 
-### To view the availability across all devices
+### To view the availability across all devices {#to-view-the-availability-across-all-devices}
 
 Click **Availability** in the **Device** menu in the navigator to display the overall service across all devices.
 

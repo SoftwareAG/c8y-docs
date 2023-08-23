@@ -68,7 +68,6 @@ In the **Options** section, select the checkbox **Use server time** to create th
 
 Finally, click **Save** to save the device protocol.
 
-<a name="configureCAN"></a>
 ### Configuring CAN bus device protocols
 
 CAN bus device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus device protocols](#configuring-modbus-device-protocols) above. The differences are:

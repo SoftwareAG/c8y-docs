@@ -4,7 +4,7 @@ title: Managing devices in groups
 layout: redirect
 ---
 
-### To assign devices to a group
+### To assign devices to a group {#to-assign-devices-to-a-group}
 
 You can assign devices to groups in several ways.
 
@@ -38,19 +38,19 @@ In order to create a new group, the user must have the permissions ROLE&#95;INVE
 {{< /c8y-admon-info >}}
 
 
-### To unassign a device
+### To unassign a device {#to-unassign-a-device}
 
 Hover over the respective device you want to unassign and click the unassign icon at the right.
 
 Unassigning a device does not delete the device, subdevices or any associated data. The device is only removed from this group.
 
-### To delete a device
+### To delete a device {#to-delete-a-device}
 
 Hover over the respective device you want to delete and click the delete icon at the right.
 
 The device will be permanently deleted.
 
-### To view the device details
+### To view the device details {#to-view-the-device-details}
 
 To display the details of a particular device, click its name.
 

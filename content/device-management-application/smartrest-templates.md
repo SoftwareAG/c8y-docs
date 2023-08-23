@@ -16,7 +16,7 @@ helpcontent:
     To create a new template, click **Create template** at the top right, provide a name and unique ID and add the required messages or responses as described in the user documentation."
 ---
 
-### Introduction
+### Introduction {#introduction}
 
 SmartREST templates are a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
@@ -43,21 +43,21 @@ There are two ways to add a SmartRest template:
 - Import an already existing template
 - Create a new template
 
-### To import an existing SmartREST template
+### To import an existing SmartREST template {#to-import-an-existing-smartrest-template}
 
 1. Click **Import template** at the right of the top menu bar.
 2. In the resulting dialog box, select a file to upload by browsing for it.
 3. Enter a template name and a unique template ID (both mandatory fields).
 4. Click **Import** to import the template.
 
-### To create a new SmartREST template
+### To create a new SmartREST template {#to-create-a-new-smartrest-template}
 
 1. Click **Create template** at the right of the top menu bar.
 2. In the resulting dialog box, enter a template name and a unique template ID (both mandatory fields).
 3. Click **Continue** to proceed adding messages or responses.
 
 
-#### To add a message
+#### To add a message {#to-add-a-message}
 
 The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
 
@@ -83,13 +83,13 @@ The message template contains all necessary information to convert the SmartRest
 
 The message will be added to the SmartREST template.
 
-#### To remove a message
+#### To remove a message {#to-remove-a-message}
 
 To remove a message, open it and click **Remove** at the bottom.
 
 The message will be removed from the SmartREST template.
 
-#### To add a response
+#### To add a response {#to-add-a-response}
 
 A response template contains the necessary information to extract data values from a platform REST API call response, which is then sent back to the client in a CSV data format.
 
@@ -134,22 +134,22 @@ The response will be added to the SmartREST template.
 
 For further information see [Response templates](/smartrest/smartrest-one/#response-templates).
 
-#### To remove a response
+#### To remove a response {#to-remove-a-response}
 
 To remove a response, open it and click **Remove** at the bottom.
 
-### To edit a SmartREST template
+### To edit a SmartREST template {#to-edit-a-smartrest-template}
 
 Either click the desired template or click the menu icon at the top right of the respective template card and then click **Edit**.
 
 After editing the template, click **Save** to save your settings.
 
-### To delete a SmartREST template
+### To delete a SmartREST template {#to-delete-a-smartrest-template}
 
 Click the menu icon at the top right of the respective template card and then click **Remove**.
 
 
-### To export a SmartREST template
+### To export a SmartREST template {#to-export-a-smartrest-template}
 
 Click the menu icon at the top right of the respective template card and then click **Export**.
 

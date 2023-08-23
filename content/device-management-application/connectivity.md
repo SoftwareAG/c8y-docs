@@ -49,7 +49,7 @@ The following sections describe:
 * Which information is shown in the [Connectivity tab](#connectivity-tab).
 * How to [manage connectivity](#checking-connectivity) from the Device management application.
 
-### Setting up your Jasper Control Center account
+### Setting up your Jasper Control Center account {#setting-up-your-jasper-control-center-account}
 
 The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from {{< product-c8y-iot >}} to Jasper Control Center, so the permissions of the user have influence on functionalities available in {{< product-c8y-iot >}}.
 
@@ -72,7 +72,7 @@ To create a user in Jasper Control Center perform the following steps:
 
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.
 
-### Configuring the connectivity for the SIM provider
+### Configuring the connectivity for the SIM provider {#configuring-the-connectivity-for-the-sim-provider}
 
 Process the following step to configure the connectivity in {{< product-c8y-iot >}}:
 
@@ -92,7 +92,7 @@ A longer cache duration means less traffic to your SIM provider while a shorter 
 
 ![Jasper settings](/images/users-guide/connectivity/connectivity-item.png)
 
-### Linking SIMs and mobile devices
+### Linking SIMs and mobile devices {#linking-sims-and-mobile-devices}
 
 Switch to the Device management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
 
@@ -120,7 +120,7 @@ Note that it may take a few seconds until the tab appears for the first time on 
 
 The Kite provider requires the following device configuration: ICCID (Integrated Circuit Card Identifier) and MSISDN (Mobile Station International Subscriber Directory Number).
 
-### Connectivity tab
+### Connectivity tab {#connectivity-tab}
 
 In the **Connectivity** tab you will find the following sections:
 
@@ -160,7 +160,7 @@ The **Audit logs** section lists all changes to the SIM card and its tariff. It 
 
 The **Connectivity** tab does not update in real-time. To show current data, click the **Reload** in the top menu bar.
 
-### Checking connectivity
+### Checking connectivity {#checking-connectivity}
 
 If you suspect that a device is not correctly reporting to {{< product-c8y-iot >}}, or it is not receiving commands, you can verify the connectivity status of the device.
 

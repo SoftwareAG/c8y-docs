@@ -8,7 +8,6 @@ layout: redirect
 In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Viewing device details](/device-management-application/viewing-device-details) in the Device management section.
 {{< /c8y-admon-info >}}
 
-<a name="objects"></a>
 ### Objects
 
 In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
@@ -62,7 +61,7 @@ In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current d
 Currently only the "NO_SEC" and "PSK" security modes are supported.
 {{< /c8y-admon-important >}}
 
-For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#register-device).
+For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#registering-devices).
 
 ### LWM2M client awake time
 
@@ -76,7 +75,7 @@ LWM2M client awake time is determined based on the following priority:
 2. (If provided) Registration awake time attribute &ldquo;at&rdquo; in the registration request by the LWM2M client.
 3. Global setting of the LWM2M microservice.
 
-Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m/#register-device) or set with the managed object update request as in the example:
+Device managed object &ldquo;awakeTimeRegistrationParameter&rdquo; fragment can be provided during the device registration as explained in [Registering LWM2M devices](/protocol-integration/lwm2m/#registering-lwm2m-devices) or set with the managed object update request as in the example:
 ```
 PUT /inventory/managedObjects/<device-managed-object-id>
 

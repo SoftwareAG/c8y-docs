@@ -6,7 +6,7 @@ layout: redirect
 
 Devices can raise alarms to indicate that there is a problem requiring an intervention.
 
-### To view alarms
+### To view alarms {#to-view-alarms}
 
 {{< product-c8y-iot >}} displays alarms at the level of individual devices and across all devices:
 
@@ -85,7 +85,7 @@ Click the arrow on the right of a row to expand it and display further details o
 * **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in [Alarm mapping](/standard-tenant/alarm-mapping/).
 * **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
 
-### To change the status of an alarm
+### To change the status of an alarm {#to-change-the-status-of-an-alarm}
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and select the desired status.
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.

@@ -12,7 +12,7 @@ Smart groups are only available in the Device management application and not vis
 
 Smart groups can be created from the device list.
 
-### To create a smart group
+### To create a smart group {#to-create-a-smart-group}
 
 1. To open the device list, click **All devices** in the navigator.
 2. Filter the devices in the list to select the desired devices. See [To filter devices](/device-management-application/viewing-all-devices/#to-filter-devices) for details on filtering.
@@ -26,7 +26,7 @@ Below the smart group name and description you can see the filter criteria which
 ![Smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 
-### To delete a smart group
+### To delete a smart group {#to-delete-a-smart-group}
 
 Hover over the respective entry you want to delete and click the delete icon at the right.
 

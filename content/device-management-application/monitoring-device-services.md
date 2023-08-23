@@ -48,7 +48,7 @@ The following tabs make up the service details view, each described in detail in
 </tbody>
 </table>
 
-### Alarms
+### Alarms {#alarms}
 
 The **Alarms** tab provides information on the alarms of a service.
 See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
@@ -57,7 +57,7 @@ See [Working with alarms](/device-management-application/monitoring-and-controll
 The service details **Alarms** tab displays only alarms which have the particular service as a source. It does not display any alarms sourced by the device itself.
 {{< /c8y-admon-info >}}
 
-### Events
+### Events {#events}
 
 The **Events** tab displays events related to a service.
 See [Troubleshooting devices](/device-management-application/monitoring-and-controlling-devices/#troubleshooting-devices) for detailed information.
@@ -66,7 +66,7 @@ See [Troubleshooting devices](/device-management-application/monitoring-and-cont
 The service details **Events** tab displays only events which have the particular service as a source. It does not display any events sourced by the device itself.
 {{< /c8y-admon-info >}}
 
-### Measurements
+### Measurements {#measurements}
 
 The **Measurements** tab provides a default visualization of numeric data for the service in the form of charts.
 

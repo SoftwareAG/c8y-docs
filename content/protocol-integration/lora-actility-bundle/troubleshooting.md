@@ -4,14 +4,13 @@ title: Troubleshooting
 layout: redirect
 ---
 
-<a name="lora-device-registration-troubleshooting"></a>
 ### Device registration
 
 #### Access to device denied
 
 This warning message shows up when there already exists a provisioned device in ThingPark with the same device EUI used for device registration and the validation comparing those devices based on application EUI (for OTAA activation) and device profile has failed.
 
-To resolve this, provide the correct application EUI from [Connectivity](#configure-credentials) application and device profile and try again.
+To resolve this, provide the correct application EUI from [Connectivity](#configuring-credentials) application and device profile and try again.
 
 #### No LoRa provider settings found
 
@@ -20,13 +19,13 @@ This warning message shows up when there are no credentials set up for the Thing
 <img src="/images/device-protocols/lora-actility/lora-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%">
 <br>
 
-To resolve this, refer to [Configure ThingPark credentials](#configure-credentials).
+To resolve this, refer to [Configure ThingPark credentials](#configuring-credentials).
 
 #### Getting device profiles from provider failed
 
 This warning message shows up when the tenant's access token to Thingpark becomes invalid. Invalidation of the token might happen when the same ThingPark credentials are used for another tenant.
 
-This issue can be solved by reconfiguring the Actility ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
+This issue can be solved by reconfiguring the Actility ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configuring-credentials) for reconfiguration of the credentials.
 
 #### No device protocols configured
 

@@ -6,14 +6,14 @@ layout: redirect
 
 The columns shown in the device list may be configured to your needs.
 
-### To show/hide standard columns
+### To show/hide standard columns {#to-showhide-standard-columns}
 
 1. In the table header, click **Configure columns**.
 2. In the resulting dropdown, select/clear the checkboxes for all columns as required.
 
 The device list will reflect your changes and only show the selected columns.
 
-### To add custom columns
+### To add custom columns {#to-add-custom-columns}
 
 Moreover, you can add custom columns to show additional device properties.
 

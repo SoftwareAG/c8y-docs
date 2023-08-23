@@ -15,7 +15,7 @@ section:
 - [Web SDK guide](/web/#overview) for details on building web applications on top of {{< product-c8y-iot >}}.
 {{< /c8y-admon-related >}}
 
-<a name="screen"></a>
+
 ### Main screen elements
 
 The general structure common to all {{< product-c8y-iot >}} applications includes the following screen elements:
@@ -46,7 +46,7 @@ The general structure common to all {{< product-c8y-iot >}} applications include
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
-<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/getting-started/gui-features/#search-and-filter-functionality" class="no-ajaxy">Search and filter functionality</a>. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/getting-started/gui-features/#search-and-filter-functionality" class="no-ajaxy">Search and filter functionality</a>. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#application-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
@@ -67,21 +67,21 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 {{< product-c8y-iot >}} applications provide tooltips when you hover over a particular screen element. When you use {{< product-c8y-iot >}} applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 {{< /c8y-admon-info >}}
 
-<a name="app-switcher"></a>
+
 ### Application switcher
 
 The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications.
 
 <img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/standard-tenant/ecosystem/#default-subscriptions) or [custom applications](/standard-tenant/ecosystem/#adding-applications). Just click the icon for the desired application to open it as active application.
+The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/standard-tenant/ecosystem/#subscribed-applications) or [custom applications](/standard-tenant/ecosystem/custom-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications.
 
-<a name="searching-and-filtering"></a>
+
 ### Search and filter functionality
 
-<a name="searching"></a>
+
 #### Full text search
 
 {{< product-c8y-iot >}} provides a full text search, available through the **Search** button <img src="/images/icons/search-icon.png" alt="Search" style="display:inline-block; margin:0"> at the right of the top bar in the UI.
@@ -143,7 +143,7 @@ Instead, you can switch the search option by clicking one of the following butto
 
 This will search for assets starting with, containing or ending with the search term, respectively.
 
-<a name="filtering"></a>
+
 #### Filtering
 
 Some pages offer a filtering functionality to filter objects in a list.

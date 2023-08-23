@@ -1,8 +1,7 @@
 ---
-title: Getting started
-slug: introduction
+title: Introduction
 layout: bundle
-section: 
+section:
   - app_development
 weight: 10
 ---

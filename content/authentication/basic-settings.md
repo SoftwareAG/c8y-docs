@@ -70,7 +70,7 @@ By default, users can use any password with eight characters or more. If you sel
 The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 {{< /c8y-admon-info >}}
 
-<a name="basic-auth-restrictions"></a>
+
 ### Basic Auth restrictions
 
 Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
@@ -135,7 +135,7 @@ If the **Use session configuration** option is enabled, the following settings c
 </tr>
 <tr>
 <td style="text-align:left">Token lifespan</td>
-<td style="text-align:left">Defines the time for which a token is active. The user is only able to access {{< product-c8y-iot >}} with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-settings" class="no-ajaxy">Token generation with OAI-Secure</a> below. </td>
+<td style="text-align:left">Defines the time for which a token is active. The user is only able to access {{< product-c8y-iot >}} with a valid token. This configuration option is always available, it does not depend on session configuration. See <a href="#token-generation-with-oai-secure" class="no-ajaxy">Token generation with OAI-Secure</a> below. </td>
 <td style="text-align:left">2 days</td>
 </tr>
 
@@ -157,8 +157,6 @@ In such configurations, the idle timeout is in the range of 45 to 90 minutes, de
 
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 
-
-<a name="token-settings"></a>
 
 ### Token generation with OAI-Secure
 

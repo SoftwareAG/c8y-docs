@@ -11,12 +11,12 @@ An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different
 * You can use the [Streaming Analytics application](#epl-apps) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
 
-See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
+See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/using-epl).
 
 {{< c8y-admon-info >}}
 To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}},
 your tenant must be subscribed to the Apama-ctrl microservice that supports EPL apps.
-If you do not see the **EPL Apps** page in the Streaming Analytics application and you wish to use EPL apps, contact [product support](/welcome/contacting-support).
+If you do not see the **EPL Apps** page in the Streaming Analytics application and you wish to use EPL apps, contact [product support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-caution >}}
@@ -28,7 +28,7 @@ An EPL app has the ability to make nearly arbitrary changes to the objects in a 
 
 The **EPL Apps** page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
 
-Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Managing permissions](/standard-tenant/managing-permissions/).
 
 ##### Step 1 - Invoke the Streaming Analytics application
 
@@ -82,7 +82,7 @@ All unsaved changes are lost when you navigate to a different URL or close the b
 
 ##### Step 3 - Test the EPL app
 
-Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Administration > Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide*.
+Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
 
 See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
@@ -147,7 +147,7 @@ CUMULOCITY_APPKEY=apamaAppKey
 ```
 
 {{< c8y-admon-info >}}
-You must [create an application](/users-guide/administration#managing-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
+You must [create an application](/standard-tenant/ecosystem/#custom-applications) in {{< product-c8y-iot >}} to get a value for `CUMULOCITY_APPKEY`.
 {{< /c8y-admon-info >}}
 
 Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file:
@@ -197,7 +197,7 @@ There is a restricted set of utilities and base events available for your EPL ap
 
 When any EPL app signals a runtime error, this will be raised as an alarm. Runtime errors include uncaught exceptions, as well as any explicit logging of warnings and errors that your EPL app wants to do. Health issues that relate to the Apama runtime in general will also be raised as alarms.
 
-For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the Apama-ctrl microservice. See [Administration > Managing and monitoring microservices](/users-guide/administration/#managing-microservices) in the *User guide* for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
+For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the Apama-ctrl microservice. See [Monitoring microservices](/standard-tenant/ecosystem/#log-files) for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
 <a name="deploying-as-microservice"></a>
 #### Deploying Apama applications as microservices
@@ -216,7 +216,7 @@ This only applies if you are using Apama 10.3 or later.
 
 ##### Required settings in the microservice manifest
 
-The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
+The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest).
 
 Apama can be used in either a single-tenant microservice or a multi-tenant microservice.
 Therefore, the microservice manifest must set the isolation level to either PER_TENANT or MULTI_TENANT.
@@ -256,7 +256,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
 3. Add any custom steps to the Dockerfile that might be necessary, for example, building a custom plug-in, or copying your license file into the image.
 
-4. Use the {{< product-c8y-iot >}} microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) in the *Microservice SDK guide*. When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
+4. Use the {{< product-c8y-iot >}} microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool). When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
 
     *docker/monitors/*<br>
     *docker/eventdefinitions/*<br>
@@ -268,7 +268,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
     You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of {{< product-c8y-iot >}} (from {{< sag-designer >}} or your test environment) will be near-identical to its behavior inside {{< product-c8y-iot >}}. When deployed as a microservice doing requests to the {{< product-c8y-iot >}} API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you must have valid credentials specified in the project configuration as you do when connecting to {{< product-c8y-iot >}} from an external Apama environment.
 
-5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Administration > Managing and monitoring microservices](/users-guide/administration#managing-microservices) in the *User guide*.
+5. When you are ready to deploy to {{< product-c8y-iot >}}, upload the application as a microservice. For details, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
 {{< c8y-admon-info >}}
 After February 2022, the location of the Docker images on Docker Hub has changed for all supported release trains.
@@ -305,7 +305,7 @@ For more information on PySys, see the [API Reference for Python]({{< link-apama
 
 EPL apps are designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
 
-To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
+To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/standard-tenant/managing-permissions/)).
 
 {{< c8y-admon-info >}}
 This API requires version 10.6.0 or above of the Apama-ctrl microservice.

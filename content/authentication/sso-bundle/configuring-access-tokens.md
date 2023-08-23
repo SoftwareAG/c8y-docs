@@ -6,8 +6,6 @@ section:
   - platform_administration
 ---
 
-<a name="configuring-authentication-with-oauth2-access-tokens-from-authorization-servers"></a>
-
 You can directly request {{< product-c8y-iot >}} to use OAuth2 access tokens from your authorization server.
 This way, your applications or users can access resources without logging in to the platform
 or using Basic authentication. This leverages your authorization server to get access tokens for your applications which you can send in subsequent request to

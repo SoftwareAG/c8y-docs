@@ -22,6 +22,8 @@ helpcontent:
 {{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
 Dashboards provide you with a customized visualization of your data, for example, alarms and events, and allow you to trigger remote actions, by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 
+{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](/cockpit/widgets-collection/) for details.
+
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
 
@@ -32,12 +34,12 @@ ROLES & PERMISSIONS:
 - To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
   {{< /c8y-admon-req >}}
 
-{{< product-c8y-iot >}} comes with a number of preset widgets, see [Widgets collection](/cockpit/widgets-collection/) for details. You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. Refer to [Web SDK](/web/) for details.
+
 
 <a name="creating-dashboards"></a>
 
 {{< c8y-admon-related >}}
-- [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) for more information on working with custom widgets in the {{< product-c8y-iot >}} environment.
+- [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 

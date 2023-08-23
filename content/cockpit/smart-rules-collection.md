@@ -83,7 +83,7 @@ You can select a single group or a single device (just one, not multiple). To en
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/#alarm-mapping)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
 {{< c8y-admon-important >}}
 There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
@@ -148,7 +148,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/#alarm-mapping)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check your spam folder.
 
@@ -214,7 +214,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/#alarm-mapping)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 <a name="alarm-severity"></a>
@@ -343,7 +343,7 @@ In order to raise an alarm the device had to be inside the geofence at least onc
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). No new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/#alarm-mapping)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
 <a name="geofence-email"></a>
 ### On geofence send email
@@ -724,7 +724,7 @@ Range values defined in the source object have a higher priority than those defi
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/#alarm-mapping)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
@@ -801,7 +801,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 * Check if the device is in [maintenance mode](/device-management-application/monitoring-and-controlling-devices/#to-monitor-the-connection-for-multiple-devices). In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/business-rules/#alarm-mapping)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 

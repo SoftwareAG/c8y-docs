@@ -10,7 +10,7 @@ Tenants can be subscribed to applications which have been deployed by their supe
 
 [Granting access to subtenants](/standard-tenant/managing-permissions/#application-access) and [subscribing to applications](/enterprise-tenant/managing-tenant/#subscribing-applications) is done in the Administration application.
 
-Tenants can also have their own applications which can also be subscribed to subtenants. See [Adding custom applications](/standard-tenant/ecosystem/#adding-applications)for details on how to add custom applications.
+Tenants can also have their own applications which can also be subscribed to subtenants. See [Custom applications](/standard-tenant/ecosystem/#custom-applications)for details on how to add custom applications.
 
 ### Service discovery
 

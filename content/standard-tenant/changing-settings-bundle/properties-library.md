@@ -27,10 +27,10 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 {{< c8y-admon-related >}}
 - [Application enablement & solutions > Cockpit > Widgets collection](/cockpit/widgets-collection) for further information on the usage of properties in the "Asset table" and "Asset properties" widgets.
 - [Application enablement & solutions > Cockpit > Managing exports](/cockpit/exports) for further information on the usage of properties in reports and exports.
-- [Platform administration > Enterprise tenant administration > Managing tenants > To create a subtenant](/enterprise-tenant/managing-tenants/#to-create-a-subtenant) for further information on custom tenant properties.
+- [Platform administration > {{< enterprise-tenant >}} administration > Managing tenants > To create a subtenant](/enterprise-tenant/managing-tenants/#to-create-a-subtenant) for further information on custom tenant properties.
 {{< /c8y-admon-related >}}
 
-<a name="add-property"></a>
+
 ### To add a custom property
 
 1. Select the tab for the desired property and click **Add property**.
@@ -87,7 +87,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 ### To edit a custom property
 
 1. Click on the name of a property in the list to open it.
-2. Do your edits. For details on the fields see [To add a custom property](#add-property).
+2. Do your edits. For details on the fields see [To add a custom property](#to-add-a-custom-property).
 3. Click **Save** to save your settings.
 
 

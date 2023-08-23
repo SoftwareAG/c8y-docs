@@ -25,6 +25,10 @@
   --c8y-palette-status-warning-light: #ECBE23;
   --c8y-palette-status-warning-dark: #806A00;
   --c8y-palette-status-warning: #E07800;
+  --c8y-palette-status-preview-high: #F1E7FE;
+  --c8y-palette-status-preview-light: #DABFFC;
+  --c8y-palette-status-preview-dark: #8E3CF7;
+  --c8y-palette-status-preview: #A96CF9;
   --c8y-palette-purple-80: #F1E7FE;
   --c8y-palette-purple-70: #DABFFC;
   --c8y-palette-purple-60: #C69DFB;
@@ -245,6 +249,7 @@
   --c8y-form-validation-color-info: var(--c8y-palette-status-info);
   --c8y-form-validation-color-success: var(--c8y-palette-status-success);
   --c8y-form-validation-color-warning: var(--c8y-palette-status-warning);
+  --c8y-form-validation-color-preview: var(--c8y-palette-status-preview);
   --c8y-form-validation-color-error: var(--c8y-palette-status-danger);
   --c8y-form-control-disabled-opacity: var(--c8y-global-disabled-opacity);
   --c8y-form-control-background-disabled: var(--c8y-component-background-disabled, var(--c8y-root-component-background-disabled));
@@ -284,6 +289,7 @@
   --c8y-alert-status-success: var(--c8y-palette-status-success);
   --c8y-alert-status-danger: var(--c8y-palette-status-danger);
   --c8y-alert-status-warning: var(--c8y-palette-status-warning);
+  --c8y-alert-status-preview: var(--c8y-palette-status-preview);
   --c8y-action-bar-icon-color: var(--c8y-root-component-icon-color);
   --c8y-action-bar-disabled-opacity: var(--c8y-root-component-disabled-opacity);
   --c8y-action-bar-actions-opacity: var(--c8y-root-component-actions-opacity);

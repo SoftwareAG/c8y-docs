@@ -8,9 +8,9 @@ section:
 
 The {{< product-c8y-iot >}} tenant concept builds a 3-level hierarchy, including the following levels from bottom to top:
 
-- [Standard tenant](#standard-tenant)
-- [Enterprise tenant](#enterprise-tenant)
-- [Management tenant](#management-tenant)
+- [{{< standard-tenant >}}](#standard-tenant)
+- [{{< enterprise-tenant >}}](#enterprise-tenant)
+- [{{< management-tenant >}} tenant](#management-tenant)
 
 
 ![3-level hierarchy](/images/concepts-guide/tenant-hierarchy.png)
@@ -23,7 +23,7 @@ Refer to the [{{< c8y-pricing >}}]({{< link-c8y-pricing >}}) for details on our 
 Refer to your contract for details on your individual subscriptions.
 {{< /c8y-admon-info >}}
 
-<a name="standard-tenant"></a>
+
 ### Standard tenant
 
 At the bottom of the hierarchy you can find single tenants which are represented by the concept of {{< standard-tenant >}}s in {{< product-c8y-iot >}}.
@@ -36,7 +36,7 @@ In a {{< standard-tenant >}}, multiple parties are reflected by separate users. 
 
 Details on the administration of {{< standard-tenant >}}s are described in [Standard tenant administration](/standard-tenant/).
 
-<a name="enterprise-tenant"></a>
+
 ### Enterprise tenant
 
 An {{< enterprise-tenant >}} offers additional administrative functionality compared to a {{< standard-tenant >}}, the major difference being **multi-tenancy**.
@@ -60,7 +60,7 @@ Moreover, an {{< enterprise-tenant >}} includes the following additional feature
 
 Details on the usage of this additional features and on the additional administration options of the {{< enterprise-tenant >}} can be found in [{{< enterprise-tenant >}}](/enterprise-tenant/).
 
-<a name="management-tenant"></a>
+
 ### Management tenant
 
 The {{< management-tenant >}} builds the highest level of the {{< product-c8y-iot >}} tenant hierarchy.

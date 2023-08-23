@@ -22,7 +22,7 @@ APPLICATION ACCESS
 
 If you would like to use this feature, please contact [product support](/additional-resources/contacting-support/).
 
-PERMISIIONS & ROLES
+PERMISSIONS & ROLES
 
 To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 

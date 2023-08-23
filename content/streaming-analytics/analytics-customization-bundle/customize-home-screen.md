@@ -18,7 +18,7 @@ After you have made all required changes, package the modified copies into a ZIP
 - *files/support/cumulocity/EN/documentation.json*
 - *cumulocity.json*
 
-where the *cumulocity.json* file contains the following:
+The *cumulocity.json* file contains the following:
 
 ```
 {
@@ -32,7 +32,7 @@ where the *cumulocity.json* file contains the following:
 ```
 
 Then upload the ZIP file using the Administration application: go to **Ecosystem** > **Applications**, click **Add application**, and select the method **Upload web application**.
-See [Administration > Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for detailed information.
+See [Managing applications](/standard-tenant/ecosystem/#managing-applications) for detailed information.
 
 You may need to clear your browser cache for the changes to take effect.
 

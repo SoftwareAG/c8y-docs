@@ -64,6 +64,6 @@ For details see [Device management > Device integration > Device integration usi
 
 ### Multi-tenancy
 
-With the Enterprise tenant concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
+With the {{< enterprise-tenant >}} concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 
 For details see [Getting started > Technical concepts > Tenant hierarchy > Multi-tenancy](/concepts/tenant-hierarchy/#multi-tenancy).

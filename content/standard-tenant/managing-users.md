@@ -52,7 +52,7 @@ Users which are using single sign-on cannot change the password of users which a
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-related >}}
-- [Platform administration > Standard tenant management > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions to users.
+- [Platform administration > {{< standard-tenant >}} management > Managing permissions](/standard-tenant/managing-permissions) for details on assigning roles and permissions to users.
 - [Getting started > Technical concepts > Tenant hierachy](/concepts/tenant-hierarchy) for information on the concept of multi-tenancy as opposed to user access control.
 - [Users](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
 {{< /c8y-admon-related >}}
@@ -76,7 +76,7 @@ In order to apply the selected filters click **Apply**.
 
 Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies).
 
-<a name="creating-users"></a>
+
 ### To add a user
 
 1. Click **Add user** at the right of the top menu bar.  
@@ -157,7 +157,7 @@ By default, manually created users always have the "Own user management" permiss
 
 ### To edit a user
 
-1. Click the menu icon at the right of the respective row and then click **Edit**. All fields except **Username** and **Send password reset link as email** can be changed. For details on the fields, see [To add a user](#creating-users).
+1. Click the menu icon at the right of the respective row and then click **Edit**. All fields except **Username** and **Send password reset link as email** can be changed. For details on the fields, see [To add a user](#to-add-a-user).
 2. Click **Change password** to change the password.
 3. Click **Save** to apply your settings.
 

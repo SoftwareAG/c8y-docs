@@ -16,9 +16,9 @@ See also [Tenant hierarchy](#tenant-hierarchy).
 
 ### Tenant domain
 
-A key feature of the Enterprise tenant is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice.
+A key feature of the {{< enterprise-tenant >}} is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the platform to serve you and your customers using a host name of choice.
 
-For details see [Platform administration > Enterprise tenant administration > Customizing your platform](/enterprise-tenant/customization).
+For details see [Platform administration > {{< enterprise-tenant >}} administration > Customizing your platform](/enterprise-tenant/customization).
 
 
 ### Tenant hierarchy

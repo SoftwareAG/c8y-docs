@@ -111,7 +111,7 @@ We highly discourage any use of alternative DNS configurations for the following
 Once the DNS configuration is in place and if a certificate with the given requirements is available, it can be easily
 uploaded to the platform.
 
-On the **Domain name** tab in the **Enterprise Tenant** page, click **Upload certificate**. Select the certificate from your file system and click **Upload**.
+On the **Domain name** tab in the **{{< enterprise-tenant >}}** page, click **Upload certificate**. Select the certificate from your file system and click **Upload**.
 
 Afterwards, you can activate the domain with a single click on its name. After the domain has been activated, you will be redirected
 to your {{< enterprise-tenant >}} using the new domain name. You will also receive an email with information about the

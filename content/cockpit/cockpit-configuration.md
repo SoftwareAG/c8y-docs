@@ -18,7 +18,7 @@ To use the Cockpit configuration functionality, the following requirements have 
 If these requirements are met, an **Application configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
 {{< /c8y-admon-req >}}
 
-### To configure a custom Cockpit application
+### To configure a custom Cockpit application {#to-configure-a-custom-cockpit-application}
 
 In the navigator, click **Application configuration** in the **Configuration** menu.
 
@@ -26,13 +26,13 @@ In the navigator, click **Application configuration** in the **Configuration** m
 
 In the **Application configuration** page, you can customize your Cockpit application in various aspects.
 
-#### Features
+#### Features {#features}
 
 Under **Features** you can disable certain features like for example, the global search, alarms, or the data explorer.
 
 By default, all features are enabled. Use the toggle next to a feature to disable it. The respective menu item in the navigator (or the respective button as in case of the global search button) will immediately be removed and the functionality will no longer be available, until enabled again.
 
-#### Top level nodes
+#### Top level nodes {#top-level-nodes}
 
 Under **Top level nodes** you can select which groups to display on top level in the navigator. By default, only the **Groups** entry is shown (if not disabled in the **Features** section).
 
@@ -40,7 +40,7 @@ Under **Top level nodes** you can select which groups to display on top level in
 
 On the right, select the root groups or subgroups to be displayed as top level nodes in the navigator. Once selected, the group will be added to the custom top level nodes list. Moreover, you can further configure the nodes by enabling/disabling the display of devices for a certain group. If disabled, all devices for this group will be hidden, that is, not shown in the navigator.
 
-#### Home dashboard
+#### Home dashboard {#home-dashboard}
 
 In the **Home dashboard** section, you can select how the home dashboard, that is, the landing page for this application, is treated.
 
@@ -56,6 +56,6 @@ The initial home dashboard shows a number of pre-installed widgets. These widget
 
 Click **Reset dashboard** to undo any changes to your home dashboard. This reverts all changes to the dashboard and returns it to the initial state.
 
-#### To hide the navigator
+#### To hide the navigator {#to-hide-the-navigator}
 
 Finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.

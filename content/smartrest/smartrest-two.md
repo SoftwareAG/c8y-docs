@@ -192,7 +192,7 @@ If the message rate limit per second is exceeded, the requests are delayed and k
 We create a template to create a measurement like this (measurements have two mandatory values: type and time)
 
 ```bash
-# 10,msgId,method,api,response,type,time,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsetypetimecustom1pathcustom1typecustom1value}
+# 10,msgId,method,api,response,type,time,custom1.path,custom1.type,custom1.value
 10,999,POST,MEASUREMENT,,c8y_MyMeasurement,,c8y_MyMeasurement.M.value,NUMBER,
 ```
 
@@ -200,7 +200,7 @@ This template defines one additional custom property for the measurement. It lea
 
 ```bash
 999,2016-06-22T17:03:14.000+02:00,25
-# We can also use server time by leaving the time empty {#we-can-also-use-server-time-by-leaving-the-time-empty}
+# We can also use server time by leaving the time empty
 999,,25
 ```
 
@@ -252,27 +252,27 @@ This enables you to query inventory in three different ways:
 **By {{< product-c8y-iot >}} ID**
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,999,GET,INVENTORY,,true
-# Usage: {#usage}
+# Usage:
 999,123456
 ```
 
 **By external ID with a fixed type in the template**
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,999,GET,INVENTORY,,false,c8y_Serial
-# Usage: {#usage}
+# Usage:
 999,myDeviceImei
 ```
 
 **By external ID without fixed type in the template**
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,999,GET,INVENTORY,,false
-# Usage: {#usage}
+# Usage:
 999,c8y_Serial,myDeviceImei
 ```
 
@@ -290,12 +290,12 @@ POST templates require a different set of mandatory values based on the API:
 This results in the following minimal template creations:
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,100,POST,MEASUREMENT,false,c8y_MyMeasurement,,c8y_MyMeasurement.M.value,NUMBER,
 10,101,POST,EVENT,,c8y_CustomEvent,mytext,,
 10,102,POST,ALARM,,c8y_CustomAlarm,mytext,ACTIVE,MAJOR,
 
-# Usage: {#usage}
+# Usage:
 100
 101
 102
@@ -309,14 +309,14 @@ POST Inventory templates start with the value of the externalId after the msgId.
 {{< /c8y-admon-important >}}
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,100,POST,INVENTORY,,c8y_MySerial
 # Usage: {#usage}
-# Create object with externalId c8y_MySerial/myImei {#create-object-with-externalid-c8ymyserialmyimei}
+# Create object with externalId c8y_MySerial/myImei
 100,myImei
-# Create object with externalId c8y_MySerial/myImei {#create-object-with-externalid-c8ymyserialmyimei}
+# Create object with externalId c8y_MySerial/myImei
 101,myImei,c8y_MySerial
-# This message will result in not creating an external ID {#this-message-will-result-in-not-creating-an-external-id}
+# This message will result in not creating an external ID
 101,,c8y_MySerial
 ```
 
@@ -325,30 +325,30 @@ POST Inventory templates start with the value of the externalId after the msgId.
 PUT templates for inventory follow the same logic as the GET templates, and with the addition that you can also use custom values for PUT.
 
 ```bash
-# Creation: {#creation}
-# 10,msgId,method,api,response,byId,externalIdTyoe,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsebyidexternalidtyoecustom1pathcustom1typecustom1value}
+# Creation:
+# 10,msgId,method,api,response,byId,externalIdTyoe,custom1.path,custom1.type,custom1.value
 10,999,PUT,INVENTORY,,false,c8y_Serial,c8y_MyCustomValue,STRING,
-# Usage: {#usage}
+# Usage:
 999,myDeviceImei,myValue
 ```
 
 The PUT template for alarms uses the type of the alarm to find the alarm to update. It will first check the ACTIVE alarms and, if there is no ACTIVE alarm, it will check the ACKNOWLEDGED alarms.
 
 ```bash
-# Creation: {#creation}
-# 10,msgId,method,api,response,type,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsetypecustom1pathcustom1typecustom1value}
+# Creation:
+# 10,msgId,method,api,response,type,custom1.path,custom1.type,custom1.value
 10,999,PUT,ALARM,,c8y_MyCustomAlarm,status,ALARMSTATUS
-# Usage: {#usage}
+# Usage:
 999,CLEARED
 ```
 
 PUT templates for operations use the fragment of the operation to find the operation. It will first check the EXECUTING operations and, if there is no EXECUTING operation, it will check the PENDING operations.
 
 ```bash
-# Creation: {#creation}
-# 10,msgId,method,api,response,fragment,custom1.path,custom1.type,custom1.value {#10msgidmethodapiresponsefragmentcustom1pathcustom1typecustom1value}
+# Creation:
+# 10,msgId,method,api,response,fragment,custom1.path,custom1.type,custom1.value
 10,999,PUT,OPERATION,,c8y_MyOperation,status,OPERATIONSTATUS,SUCCESSFUL,c8y_Fragment.val,NUMBER,
-# Usage: {#usage}
+# Usage:
 999,24
 ```
 
@@ -381,27 +381,27 @@ A single custom property requires you to add the following three values to your 
 Template for clearing an alarm with an additional custom property
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,999,PUT,ALARM,,c8y_MyCustomALarm,status,ALARMSTATUS,CLEARED,c8y_CustomFragment.reason,STRING,
-# Usage: {#usage}
+# Usage:
 999,Device resolved alarm on its own
 ```
 
 Template for creating a custom measurement
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,999,POST,MEASUREMENT,,c8y_CustomMeasurement,,c8y_CustomMeasurement.custom.value,NUMBER,,c8y_CustomMeasurement.custom.unit,STRING,X
-# Usage: {#usage}
+# Usage:
 999,30.6
 ```
 
 Template for updating a property in the device
 
 ```bash
-# Creation: {#creation}
+# Creation:
 10,999,PUT,INVENTORY,,false,c8y_Serial,c8y_MyCustomValue,STRING,
-# Usage: {#usage}
+# Usage:
 999,myDeviceImei,updatedValue
 ```
 

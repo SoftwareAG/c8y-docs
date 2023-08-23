@@ -33,7 +33,6 @@ With this feature, you can request data for the whole tenant. Additionally, you 
 - [Analytics > Streaming Analytics](/streaming-analytics/overview-analytics/) for details on customizing scheduled exports using the Streaming Analytics application.
 {{< /c8y-admon-related >}}
 
-<a name=""></a>
 ### To show all exports
 
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
@@ -42,7 +41,6 @@ In the **Export** page you will find a list displaying all exports with their na
 
 ![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
-<a name="add-export"></a>
 ### To add an export
 
 1. Click **Add export** in the top menu bar.<br>
@@ -108,8 +106,7 @@ JsonPath expressions added from data points will be stored in bracket notation i
 
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
-<a name="schedule-export"></a>
-### To schedule an export
+### To schedule an export {#schedule-export}
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.
 

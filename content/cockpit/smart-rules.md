@@ -75,20 +75,18 @@ Smart rules can be seen in two places:
 - [Platform administration > {{< standard-tenant >}} management > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
-<a name="create-rules"></a>
-
 ### To create a smart rule
 
 Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
 
 1. Click **Add smart rule** in the top menu bar. <br>
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
-3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules) for details.
+3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#to-enabledisable-a-smart-rule) for details.
 4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see the individual rule descriptions in [Smart rules collection](/cockpit/smart-rules-collection/).
 6. Click **Create** to create the smart rule.
 
 {{< c8y-admon-info >}}
-When you create a smart rule in the **Global smart rules** page, it will be active for all assets by default, unless you select target asset(s) in step 4 of the dialog box, see also [To enable/disable a smart rule](#toggle-rules).
+When you create a smart rule in the **Global smart rules** page, it will be active for all assets by default, unless you select target asset(s) in step 4 of the dialog box, see also [To enable/disable a smart rule](#to-enabledisable-a-smart-rule).
 {{< /c8y-admon-info >}}
 
 Smart rules can be instantiated multiple times.
@@ -98,7 +96,7 @@ Smart rules can be instantiated multiple times.
 
 Click the menu icon at the right of an entry and then click **Edit**.
 
-For details on the fields see [To create a smart rule](#create-rules).
+For details on the fields see [To create a smart rule](#to-create-a-smart-rule).
 
 
 ### To duplicate a smart rule
@@ -121,7 +119,6 @@ For easier debugging, there is a direct link from a smart rule to the correspond
 
 Click the menu icon at the right of an entry and then click **Inspect** to use this link.
 
-<a name="toggle-rules"></a>
 ### To enable/disable a smart rule
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.

@@ -5,7 +5,7 @@ layout: redirect
 ---
 The following section walks you through the steps required to create a new line profile.
 
-### Step 1 - Create a new site {#step-1--create-a-new-site}
+### Step 1 - Create a new site {#step-1---create-a-new-site}
 
 Since lines are attached to a site or an area, you must first have such an entity available.
 
@@ -13,11 +13,11 @@ Switch to the [Organization](/oee/oee-administration/#organization) page under *
 
 You can skip this step if you have already a site or area available to which you want to attach the new line profile.
 
-### Step 2 - Create a new line {#step-2--create-a-new-line}
+### Step 2 - Create a new line {#step-2---create-a-new-line}
 
 Next, create a new line in a similar way, this time selecting "Line" as entity type.
 
-### Step 3 - Attach the line to a site {#step-3--attach-the-line-to-a-site}
+### Step 3 - Attach the line to a site {#step-3---attach-the-line-to-a-site}
 
 1. Click the **Add** button on the site to which you want to attach a line (entity).
 2. Select your desired line and click **Add**.
@@ -30,7 +30,7 @@ The line will be added to the site in the **Organization structure** and get rep
 2. Select the machines you want to assign to the line and click **Add**.
 
 
-### Step 5 - Create a line profile {#step-5--create-a-line-profile}
+### Step 5 - Create a line profile {#step-5---create-a-line-profile}
 
 Switch to the **Profile** Page under **Administration**. Click **Create a line profile** at the right of the top menu bar to start the configuration of a new line profile in the profile configurator.  
 
@@ -45,7 +45,7 @@ Switch to the **Profile** Page under **Administration**. Click **Create a line p
 For details on all steps of the profile configuration refer to [Creating machine profiles](#creating-machine-profiles).
 
 
-### Step 6 - Activate the line profile {#step-6--activate-the-line-profile}
+### Step 6 - Activate the line profile {#step-6---activate-the-line-profile}
 
 To complete the creation of a new line profile, activate it in the **Profile settings** page. For more information see also [Managing profiles](#managing-profiles).
 

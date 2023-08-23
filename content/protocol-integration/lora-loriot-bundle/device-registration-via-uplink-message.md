@@ -6,7 +6,7 @@ layout: redirect
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in LORIOT Network Server.
 
-### Configuring the Loriot endpoint using basic authentication
+### Configuring the Loriot endpoint using basic authentication {#configuring-the-loriot-endpoint-using-basic-authentication}
 
 In LORIOT Network Server you can create multiple applications. Each application allows you to configure LoRa devices.
 
@@ -26,7 +26,7 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 
 The Loriot devices can now be registered in {{< product-c8y-iot >}} when uplink messages are received.
 
-### Device creation via Loriot uplink message
+### Device creation via Loriot uplink message {#device-creation-via-loriot-uplink-message}
 
 While processing the Loriot LoRa device request, the Loriot agent automatically creates the device in the {{< product-c8y-iot >}} platform, if it does not yet exist.
 This means that you do not need to register the Loriot LoRa device explicitly.

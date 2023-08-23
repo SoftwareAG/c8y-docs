@@ -45,7 +45,7 @@ Click on the **Re-Register** button.
 The user is directed to the device registration page where he can perform the re-registration by following the steps above and selecting the desired LNS connection.
 
 
-### LoRa device registration process
+### LoRa device registration process {#lora-device-registration-process}
 
 <img src="/images/device-protocols/lora-actility/lora-device-registration-process.png" style="max-width: 60%">
 
@@ -53,13 +53,13 @@ A device is created based on the above workflow.
 
 First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the {{< product-c8y-iot >}} platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in {{< product-c8y-iot >}} with a link to the device in the ThingPark platform. If the validation fails, a failure message is shown and the device is not created in {{< product-c8y-iot >}}.
 
-### LoRa device registration with Activation by Personalization (ABP)
+### LoRa device registration with Activation by Personalization (ABP) {#lora-device-registration-with-activation-by-personalization-abp}
 
 Activating the device by personalization is not recommended and not fully supported in {{< product-c8y-iot >}} LoRa device registration.
 
 However, if you would like to create a device with this activation type in {{< product-c8y-iot >}} and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you must create "AS Routing Profile" for {{< product-c8y-iot >}} using the destination `http://actility-server.{{< domain-c8y >}}` as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
 
-### Limitations for LoRa devices created with general device registration
+### Limitations for LoRa devices created with general device registration {#limitations-for-lora-devices-created-with-general-device-registration}
 
 The general device registration for LoRa devices is no longer supported.
 

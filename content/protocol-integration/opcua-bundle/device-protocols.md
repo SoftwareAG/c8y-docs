@@ -4,7 +4,7 @@ title: Device protocols
 layout: redirect
 ---
 
-### Adding a new device protocol
+### Adding a new device protocol {#adding-a-new-device-protocol}
 
 1. In the Device protocols page, click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
 
@@ -21,7 +21,7 @@ Selecting a reference server will require you to select a reference node.
 
 Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**.
 
-### Adding a new variable
+### Adding a new variable {#adding-a-new-variable}
 
 1. Click **Add variable** under the **Variables** section.
 2. Enter the path and the name of the variable. The path can be the exact browse path or a regular expression of the browse path. If it is a regular expression, it must be wrapped inside *regex(...)*. For example: `regex(2:Objects)` or `regex(urn:test.namespace:Objects\\d)`. Note that the namespace index and the namespace URI are not part of the regular expression itself but they will be quoted as literal strings.
@@ -152,11 +152,11 @@ Below there is an example of a full device protocol that configures a custom act
 }
 ```
 
-### Monitoring events for device protocol application
+### Monitoring events for device protocol application {#monitoring-events-for-device-protocol-application}
 
 When a device protocol has been applied to or un-applied from a node, a monitoring event is generated as the following:
 
-#### Device type has been applied
+#### Device type has been applied {#device-type-has-been-applied}
 
 - Event type - c8y_ua_DeviceTypeApplied
 - Event text - *Device type: {device type ID} is applied to root node: {root node ID} of server: {server ID}*
@@ -164,7 +164,7 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 ![OPC UA device protocol applied](/images/device-protocols/opcua/opcua-device-protocol-applied.png)
 
-#### Device type has been un-applied
+#### Device type has been un-applied {#device-type-has-been-unapplied}
 
 - Event type - c8y_ua_DeviceTypeUnapplied
 - Event text -
@@ -175,7 +175,7 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 ![OPC UA device protocol un-applied](/images/device-protocols/opcua/opcua-device-protocol-unapplied.png)
 
-#### Custom action retry mechanism on external server failure
+#### Custom action retry mechanism on external server failure {#custom-action-retry-mechanism-on-external-server-failure}
 
 If a custom action fails, a retry mechanism will be processed. This is configured in the application YAML file, and the queues will be stored in the event repository.
 

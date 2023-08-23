@@ -12,7 +12,7 @@ This can be done in the **LWM2M post-operations** page accessible from the **Dev
 The above image shows the **LWM2M post-operations** page with a set of sample shell commands.
 More information on shell commands can be found in [Handling LWM2M shell commands](/protocol-integration/lwm2m/#handling-shell-commands).
 
-### Device operations handling
+### Device operations handling {#device-operations-handling}
 
 If the operations are created while the device is offline, all the operations will be executed when the device comes online as those operations will be delivered through the real-time channel.
 A configurable property can limit the number of operations to be executed as part of the post-registration process, for example, the operations which were already delivered to the device once via the real-time channel, but they still have a status of PENDING.

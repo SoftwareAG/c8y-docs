@@ -15,7 +15,7 @@ Assuming that you have already registered and connected your device, go to the d
 This document is not supposed to cover every detail of firmware update process because they are already specified in the LWM2M specification. This instead summaries the process, highlights the key points and possible customizations of the firmware update process in {{< product-c8y-iot >}} LWM2M.
 {{< /c8y-admon-info >}}
 
-### Firmware update state machine
+### Firmware update state machine {#firmware-update-state-machine}
 
 The firmware update procedure is well standardized within the LWM2M specification, and a standard Firmware Update Object (&#47;5) is used to perform the process.
 Let's have a quick glance at the firmware update state machine as defined by the LWM2M specification:
@@ -27,7 +27,7 @@ Basically the whole update process contains different phases of interactions bet
 
 If the device goes offline or is considered offline by the LWM2M agent, the firmware update operation is left IN_PROGRESS and the agent will try to resume the firmware update process if possible when the device connects again via a registration or registration update.
 
-### Resetting the state machine
+### Resetting the state machine {#resetting-the-state-machine}
 
 When the firmware operation is being executed, the LWM2M agent first of all tries to reset the firmware state machine to the original state to avoid any leftover downloaded firmware that has not been installed or failures of the previous firmware update attempts on the device.
 {{< product-c8y-iot >}} LWM2M agent supports the following mechanisms of resetting the firmware update state machine:
@@ -40,7 +40,7 @@ When the firmware operation is being executed, the LWM2M agent first of all trie
  If resetting the state machine has failed because the device is not reachable, the firmware update operation stays in PENDING status and will be executed when the device connects. If it's failed by any other reason, the firmware update operation set to FAILED.
  If the state machine is reset successfully, the firmware update operation is marked as IN_PROGRESS and the process continues to the next steps.
 
-### Querying the device configuration
+### Querying the device configuration {#querying-the-device-configuration}
 
 In order to determine what is the best way to deliver the firmware to the device, the LWM2M agent tries to read the device configuration by executing a read request on the firmware update object on the device: read &#47;5&#47;0.
 In this step, the agent will learn:
@@ -55,7 +55,7 @@ Supported firmware delivery methods and delivery protocols can also be specified
 If they are specified in the device managed object, the values sent by the device are ignored.
 
 
-### Firmware delivery
+### Firmware delivery {#firmware-delivery}
 
 As the first step of the delivery, the agent tries to establish the observations on two resources to monitor the firmware delivery transitions on the device:
 * **observe &#47;5&#47;0&#47;3**: Observe the firmware update state
@@ -71,16 +71,16 @@ In both cases, if the firmware binary cannot be delivered as one single message,
 
 When the delivery is completed on the device (no matter if it's successful or failed, for example, because the device runs out of storage, or due to network issues) the device must inform the agent by updating the value of the firmware update state (&#47;5&#47;0&#47;3) and/or firmware update result (&#47;5&#47;0&#47;5). Practically, the device can keep sending the value periodically for the firmware update state resource even if the firmware is still being transferred, with the value 1 (Downloading) or 2 (Downloaded).
 
-### Triggering the firmware update on the device
+### Triggering the firmware update on the device {#triggering-the-firmware-update-on-the-device}
 
 When the firmware delivery is completed successfully and the agent is informed, it will trigger the firmware update on the device by sending an execute request to the update resource: execute *&#47;5&#47;0&#47;2*. Note that the observations on the update state and update result are still being maintained. When the update process is completed on the device, it must communicate to the agent by updating the value of firmware update result (and firmware update state).
 
-### Completing of the firmware update process
+### Completing of the firmware update process {#completing-of-the-firmware-update-process}
 When the firmware update is completed (no matter if it's successful or failed) on the device and the agent is informed, the agent completes the firmware update process.
 * If the firmware update is successful on the device, the agent sets the firmware information to the device managed object and marks the firmware update operation as completed successfully.
 * If the firmware update has failed on the device, the agent marks the firmware update operation as failed.
 
-### Canceling the firmware update process
+### Canceling the firmware update process {#canceling-the-firmware-update-process}
 In practice, the communications between the device and the agent are not always smooth, for example in the case of network failures or the device is not able to report to the agent about its status, or in case of other failures, you might want to cancel the firmware update process entirely and start a new one. To do that, send an HTTP request as the following:
 ```PUT .../service/lwm2m-agent/shell/{tenantId}/{deviceId}/cancelFirmwareUpdate```
 in which **tenantId** is the ID of your tenant, **deviceId** is your device managed object ID. The ongoing firmware update process will be canceled by the agent.

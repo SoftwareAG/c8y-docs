@@ -21,9 +21,9 @@ If you edit a device protocol that is currently in use, you may need to
 * restart the terminals that use the device protocol,
 * reconfigure dashboards and widgets that use the device protocol.
 
-### Configuring Modbus device protocols
+### Configuring Modbus device protocols {#configuring-modbus-device-protocols}
 
-#### To add a coil definition (discrete outputs)
+#### To add a coil definition (discrete outputs) {#to-add-a-coil-definition-discrete-outputs}
 
 Click **Add Coil** in the **Coils (discrete output)** section, to add a coil definition.
 
@@ -39,11 +39,11 @@ Click **Add Coil** in the **Coils (discrete output)** section, to add a coil def
 
 ![Add coil](/images/device-protocols/cloud-fieldbus/fieldbus-deviceprotocols-newcoil.png)
 
-#### To add a discrete inputs definition
+#### To add a discrete inputs definition {#to-add-a-discrete-inputs-definition}
 
 The same settings can be specified for discrete inputs. However, it is not possible to update the status of a discrete input.
 
-#### To add a register definition
+#### To add a register definition {#to-add-a-register-definition}
 
 Click **Add holding register** under **Holding registers** or **Add input register** under **Input registers** to add a register definition.
 
@@ -68,7 +68,7 @@ In the **Options** section, select the checkbox **Use server time** to create th
 
 Finally, click **Save** to save the device protocol.
 
-### Configuring CAN bus device protocols
+### Configuring CAN bus device protocols {#configuring-can-bus-device-protocols}
 
 CAN bus device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus device protocols](#configuring-modbus-device-protocols) above. The differences are:
 
@@ -76,7 +76,7 @@ CAN bus device protocols can be configured in a very similar way as Modbus devic
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
 * Conversion of values is extended by an offset parameter (for example, any positive or negative number). This is added or subtracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
-### Configuring Profibus device protocols
+### Configuring Profibus device protocols {#configuring-profibus-device-protocols}
 
 Profibus device protocols can be configured in the following way:
 
@@ -85,7 +85,7 @@ Profibus device protocols can be configured in the following way:
 1. Finally, click **Save** to save your settings.
 
 
-### Configuring CANopen device protocols
+### Configuring CANopen device protocols {#configuring-canopen-device-protocols}
 
 CANopen device protocols can be configured in the following way:
 
@@ -97,7 +97,7 @@ Click **Add variable** to configure a new variable.
 
 ![New variable](/images/device-protocols/cloud-fieldbus/fieldbus-new-variable.png)
 
-#### To configure a variable
+#### To configure a variable {#to-configure-a-variable}
 
 1. In the **General** section, specify a name for the variable and a display category. Display categories are used to group variables into sections in the visualization.
 2. In the **Value selection** section, specify from where the value should be extracted:
@@ -120,7 +120,7 @@ The variable will be listed in the **Variables** section of the device protocol.
 
 After completing your configuration, click **Save** to save the device protocol configuration.
 
-#### Importing a CANopen device protocol
+#### Importing a CANopen device protocol {#importing-a-canopen-device-protocol}
 
 See [Exporting and importing device protocols](#exporting-importing-protocols) for general information on how to import a device protocol.
 
@@ -128,7 +128,7 @@ After importing the EDS file, all variables defined in the file are listed in th
 
 The user can then enrich the imported variable configurations manually, for example by adding the missing display category.
 
-#### Configuring CANopen device data
+#### Configuring CANopen device data {#configuring-canopen-device-data}
 
 To configure CANopen device data navigate to the desired device and switch to the **CANopen** tab.
 

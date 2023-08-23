@@ -8,9 +8,9 @@ While the {{< product-c8y-iot >}} user interface for OPC UA provides an easy and
 
 The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui.html*.
 
-### OPC UA server resources
+### OPC UA server resources {#opc-ua-server-resources}
 
-#### Connect a new OPC UA server to the gateway
+#### Connect a new OPC UA server to the gateway {#connect-a-new-opc-ua-server-to-the-gateway}
 
 **Endpoint**
 
@@ -279,7 +279,7 @@ It's used to calculate the local file size bound to the entry size.
     maxBloatFactor: 5.0
   ```
 
-#### Get all servers of a gateway device
+#### Get all servers of a gateway device {#get-all-servers-of-a-gateway-device}
 
 **Method**
 
@@ -346,7 +346,7 @@ It's used to calculate the local file size bound to the entry size.
 ]
 ```
 
-#### Delete and disconnect an OPC UA server
+#### Delete and disconnect an OPC UA server {#delete-and-disconnect-an-opc-ua-server}
 
 **Endpoint**
 
@@ -385,9 +385,9 @@ The service will retain all the child devices of the server, and their correspon
 
 `200 OK`
 
-### Address space resources
+### Address space resources {#address-space-resources}
 
-#### Get an address space node by ID
+#### Get an address space node by ID {#get-an-address-space-node-by-id}
 
 **Endpoint**
 
@@ -478,7 +478,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=
 }
 ```
 
-#### Get children of a given node
+#### Get children of a given node {#get-children-of-a-given-node}
 
 **Endpoint**
 
@@ -574,7 +574,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 ]
 ```
 
-#### Browse a node
+#### Browse a node {#browse-a-node}
 
 **Endpoint**
 
@@ -675,11 +675,11 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/browse?node
 ]
 ```
 
-### Device type resources
+### Device type resources {#device-type-resources}
 
 These resources provide the APIs for manipulating device types.
 
-#### Creating a new device type
+#### Creating a new device type {#creating-a-new-device-type}
 
 **Endpoint**
 
@@ -1554,9 +1554,9 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 </tbody>
 </table>
 
-####
+####  {#}
 
-#### Get all OPC UA device types
+#### Get all OPC UA device types {#get-all-opc-ua-device-types}
 
 **Endpoint**
 
@@ -1566,7 +1566,7 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 The endpoint returns a JSON array of all OPC UA device types.
 
-#### Get a single device type
+#### Get a single device type {#get-a-single-device-type}
 
 **Endpoint**
 
@@ -1582,7 +1582,7 @@ A JSON representation of the device type with the given ID if it exists. If not,
 
 `404 Not found`
 
-#### Updating a device type
+#### Updating a device type {#updating-a-device-type}
 
 **Endpoint**
 
@@ -1592,7 +1592,7 @@ A JSON representation of the device type with the given ID if it exists. If not,
 
 The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will completely override the existing device type.
 
-#### Deleting a device type
+#### Deleting a device type {#deleting-a-device-type}
 
 **Endpoint**
 

@@ -6,7 +6,7 @@ layout: redirect
 
 Before any SNMP device can connect to the {{< product-c8y-iot >}} platform, first the SNMP agent needs to be registered in the platform.
 
-### To register the agent from the UI
+### To register the agent from the UI {#to-register-the-agent-from-the-ui}
 
 1. In the Device management application, click **Registration** in the **Devices** menu in the navigator.
 2. Click **Register device** and then select **General device registration**.
@@ -18,7 +18,7 @@ After successful registration, the agent device will be added to the device list
 
 ![Device list](/images/device-protocols/snmp/snmp-devices-list.png)
 
-### To register the agent via REST API
+### To register the agent via REST API {#to-register-the-agent-via-rest-api}
 
 **Step-1:** Create a new device request:
 

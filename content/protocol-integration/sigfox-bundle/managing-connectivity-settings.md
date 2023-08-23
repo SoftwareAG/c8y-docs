@@ -16,7 +16,7 @@ Before you create API access to {{< product-c8y-iot >}}, you must have an "Assoc
 Without the profiles described below, the required Sigfox API access can not be set up.
 {{< /c8y-admon-important >}}
 
-### Step 1
+### Step 1 {#step-1}
 
 If you already have an associated user make sure it has the profiles mentioned below and proceed to step 2.
 
@@ -26,7 +26,7 @@ First, enter into your Sigfox Cloud account and create a new user. Add the user 
 
 ![New user](/images/device-protocols/sigfox/sigfox-newuser.png)
 
-### Step 2
+### Step 2 {#step-2}
 
 After creating an "Associated user" with the proper group and profiles navigate to the **Groups** page. In the **API access** tab, create a new entry and add the following profiles:
 
@@ -35,7 +35,7 @@ After creating an "Associated user" with the proper group and profiles navigate 
 
 ![API access page](/images/device-protocols/sigfox/sigfox-api-access.png)
 
-### Step 3
+### Step 3 {#step-3}
 
 After the API access entry has been created, you can connect your Sigfox Cloud account to {{< product-c8y-iot >}} via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
 
@@ -62,21 +62,21 @@ Click **Save**. If you have entered the correct information, the message "Creden
 
 To add another connection, click **Add Connection** and follow the steps above.
 
-### To update a connection
+### To update a connection {#to-update-a-connection}
 
 Select the connection to be updated, make your edits, and save the connection.
 
 If there are devices associated with the connection, an error message will appear, stating "Can not update the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Click the link to download the file with the details of the associated devices: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
 ![Update connection information](/images/device-protocols/sigfox/sigfox-connectivity-update.png)
 
-###  To delete a connection
+###  To delete a connection {#-to-delete-a-connection}
 
 Select the connection to be deleted and click **Delete**.
 
 If there are devices associated with the connection, an error message will appear, stating "Can not delete the LNS Connection with `<name of LNS Connection>` as it's associated with `<number of devices>`. Click the link to download the file with the details of the associated devices: `/service/<agent-context-path>/lns-connection/<lns-connection-name>/device`".
 ![Delete connection information](/images/device-protocols/sigfox/sigfox-admin-settings-delete.png)
 
-#### Authentication to the Sigfox platform failed
+#### Authentication to the Sigfox platform failed {#authentication-to-the-sigfox-platform-failed}
 
 Authentication to the Sigfox platform failed. Check if the Parent group ID and/or the credentials are correct.
 

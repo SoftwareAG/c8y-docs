@@ -8,7 +8,7 @@ layout: redirect
 In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Viewing device details](/device-management-application/viewing-device-details) in the Device management section.
 {{< /c8y-admon-info >}}
 
-### Objects
+### Objects {#objects}
 
 In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
 
@@ -39,7 +39,7 @@ Additional information on recent operations can be viewed by clicking the operat
 
 To view the history of all operations, click **View history**. Note, that you will be redirected to the **Control** tab.
 
-#### Audit Configuration
+#### Audit Configuration {#audit-configuration}
 
 In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.
 
@@ -51,7 +51,7 @@ To sync properties, select the desired reference device from the dropdown list. 
 The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 {{< /c8y-admon-info >}}
 
-### LWM2M bootstrap parameters
+### LWM2M bootstrap parameters {#lwm2m-bootstrap-parameters}
 
 In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click **Save.**
 
@@ -63,7 +63,7 @@ Currently only the "NO_SEC" and "PSK" security modes are supported.
 
 For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#registering-devices).
 
-### LWM2M client awake time
+### LWM2M client awake time {#lwm2m-client-awake-time}
 
 LWM2M client awake time specifies how long a device can be expected to be listening for incoming traffic before it goes back to sleep. The LWM2M server uses the client awake time to determine if the operations are passed down to a device.
 The operations are sent during the awake time after the registration or after the registration update request is received by the LWM2M server.

@@ -59,7 +59,7 @@ tenant      = "<<tenant_ID>>"
 username    = "<<username>>"
 password    = "<<password>>"
 
-# task queue to overcome issue with paho when using multiple threads: {#task-queue-to-overcome-issue-with-paho-when-using-multiple-threads}
+# task queue to overcome issue with paho when using multiple threads:
 #   https://github.com/eclipse/paho.mqtt.python/issues/354
 task_queue = mp.Queue()
 

@@ -9,7 +9,7 @@ If you are a partner or a customer we recommend you join the micro frontend jour
 It allows to extend and use the ecosystem instead of building silo solutions.
 This section explains our vision of this journey and describes our best practices regarding development.
 
-#### The user journey - blueprint or plugin
+#### The user journey - blueprint or plugin {#the-user-journey--blueprint-or-plugin}
 To develop the right thing it is very important to understand what kind of user you want to target with your application.
 For the micro frontend story, the target audience are solution architects with little developer experience.
 The idea is simple: Any IoT solution can be set up by a user in a few steps - without coding.
@@ -53,7 +53,7 @@ Plugins are easy to implement and can extend every part of the existing applicat
 
 The next section explains the developer story of blueprints and plugins in detail and provides best practices.
 
-#### Starting the developer journey for plugins and blueprints
+#### Starting the developer journey for plugins and blueprints {#starting-the-developer-journey-for-plugins-and-blueprints}
 All developer stories start with our CLI tool.
 You can scaffold a new application and decide which demo you want to use.
 For example, for a plugin you can try the `widget-plugin` demo.
@@ -114,7 +114,7 @@ Those packages are the released artifact.
 When you are ready, deploy a package to the platform which everyone can use to extend an existing application ( with a plugin) or install a new application (with a blueprint).
 The next section explains what a package is and what it contains.
 
-#### Packages and their content
+#### Packages and their content {#packages-and-their-content}
 
 As pointed out in the user-stories, you can develop two kinds of micro frontends: Blueprints and plugins.
 Both are applications that are uploaded to the application API and hosted by it.
@@ -126,7 +126,7 @@ Packages allow you to bundle multiple plugins and/or a blueprint into one packag
 
 The idea of a package is to bundle multiple belonging plugins together that can be managed by a blueprint application. So a good use case could be a smart-city management app that exposes multiple widgets to display the information (for example a "free parking spots"-widget) to the cockpit application.
 
-#### Where can I extend existing applications with an plugin?
+#### Where can I extend existing applications with an plugin? {#where-can-i-extend-existing-applications-with-an-plugin}
 The extension ways did not change. You can use any of our HOOK_ interfaces as defined in our [ngx-components](/web/libraries/#extension-points) library. Usual things to hook are a NavigatorNode, a ActionBarItem or a Route.
 
 {{< c8y-admon-tip >}}
@@ -135,7 +135,7 @@ For example, you can use `hookNavigator()` in a provider to hook a node into the
 {{< /c8y-admon-tip >}}
 
 
-#### Debugging an application
+#### Debugging an application {#debugging-an-application}
 A plugin is a lazily loaded Angular module.
 Therefore you can use the default Angular modules and verify them with the default developer story.
 {{< product-c8y-iot >}} provides two more verification methods, so there are three ways of verifying and debugging your application:
@@ -157,7 +157,7 @@ If required, verify your application with method 3.
 Avoid method 1 if you can, as you could run into common pitfalls explained in the next section.
 
 
-#### Common developer pitfalls when developing a plugin
+#### Common developer pitfalls when developing a plugin {#common-developer-pitfalls-when-developing-a-plugin}
 
 There are several issues to avoid:
 1. Routing: avoid commonly named routes. Don't use routes like `/home` instead, use `/<<my-unique-prefix>>/home`. Commonly named routes can be overwritten by other plugins. Do the same for any identifier you use in your development process.
@@ -187,7 +187,7 @@ There are several issues to avoid:
     `(1)`: This is important if the component you provided wants to use a service that is only available in your plugin. If you don't define the injector, it will use the root injector and therefore will lead to injector issues.
 
 
-#### How to bundle assets in a package
+#### How to bundle assets in a package {#how-to-bundle-assets-in-a-package}
 Bundling assets is not as easy as only copying them over. The path must be correctly reflected. E.g. if you import an image, the path to the image is something like:
 `http://<<instance>>/apps/<<context-path>>@<<version>>/my-image.png`.
 You may not want to change the version on each deployment.
@@ -223,7 +223,7 @@ Note that the feature and example was added with version 10.17.0.
 The recommended size for preview images used for widgets is 340 x 340 pixels.
 {{< /c8y-admon-tip >}}
 
-#### Translations
+#### Translations {#translations}
 
 Translations should work out of the box as for standard custom application.
 Add a `.po` file to your repository and import it into your *index.ts* file.
@@ -231,7 +231,7 @@ The translation of a plugin might overwrite existing translations, as they are m
 An example is created when you scaffold the *widget-plugin* with `c8ycli new`.
 Note that there is a limitation: A plugin cannot add a new language. It can only extend the translated strings in the existing application.
 
-#### Styling and branding
+#### Styling and branding {#styling-and-branding}
 Branding is fully supported.
 We recommend you to use component-based styling for your applications.
 However you can also add custom global CSS styling by importing it.
@@ -240,7 +240,7 @@ import './example.css';
 ```
 Again an example is created if you scaffold the *widget-plugin* with `c8ycli new`.
 
-#### How to ensure application compatibility
+#### How to ensure application compatibility {#how-to-ensure-application-compatibility}
 
 There is no way of ensuring general compatibility.
 Every major Web SDK version may contain a new Angular version.
@@ -257,7 +257,7 @@ From version 10.19.0. we also provide an additional version matrix showing exact
 
 For plugin developers who want to always provide the most compatible version of their plugin, we recommend our [community plugin Github project]({{< link-sag-community-plugins >}}), which includes some CI/CD workflows to test and verify that the newest version of a plugin still works.
 
-#### How to use repository connect
+#### How to use repository connect {#how-to-use-repository-connect}
 
 Repository connect is a microservice which synchronizes plugins or blueprints with an instance of the {{< product-c8y-iot >}} platform.
 It must be installed on the {{< management-tenant >}} and you can connect multiple repositories.

@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-### Branding
+### Branding {#branding}
 For styling the application global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on Bootstrap 3, and the original LESS source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
 By extending these styles it is possible to change any detail of the application but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
 
@@ -12,7 +12,7 @@ To override the variables it is possible to use:
 - LESS variables at build time
 - Custom CSS properties (at build time or configurable at runtime)
 
-### CSS custom properties
+### CSS custom properties {#css-custom-properties}
 
 Exposed via CSS custom properties there is only a subset of the LESS variables available.
 Here is a list of the available variables.
@@ -55,9 +55,9 @@ Here is a list of the available variables.
 Note that these can be customized at runtime using [application options](/web/application-configuration/#application-options) using the property `brandingCssVars`.
 The option is only available after version 9.22.0.
 
-### Using LESS
+### Using LESS {#using-less}
 
-#### Prerequisites
+#### Prerequisites {#prerequisites}
 
 If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) make sure that you install the base styles from npm with:
 
@@ -90,7 +90,7 @@ The first line of code within the ```branding.less``` must be:
  @import '~@c8y/style/extend.less';
  ```
 
-#### Example customizations
+#### Example customizations {#example-customizations}
 
 At this point we are able to change the desired variables according to our needs.
 
@@ -123,11 +123,11 @@ You can also take a look at our tutorial application which has an example brandi
  c8ycli new <appName> tutorial
  ```
 
-#### More branding details
+#### More branding details {#more-branding-details}
 
 There are three main areas of a branding that you can easily control.
 
-##### Colors
+##### Colors {#colors}
 
 The colors that may be edited are separated in multiple categories, like:
 
@@ -198,7 +198,7 @@ Two components are always visible to the user, the header and the navigator. The
 
 As you can see, some variables re-use others. Be careful that these variables are all defined to avoid build errors.
 
-##### Logos
+##### Logos {#logos}
 
 There is no branding without logos.
 
@@ -225,7 +225,7 @@ To change the tenant brand logo inside the navigator, enter:
 @navigator-platform-logo-height: 100px;
 ```
 
-##### Typography
+##### Typography {#typography}
 
 The look and feel of an application is also driven by its typography. Of course you can change the font as well.
 
@@ -234,7 +234,7 @@ The look and feel of an application is also driven by its typography. Of course 
 @font-family-base:            @font-family-sans-serif; @headings-font-family:        "Roboto",Arial, Verdana, sans-serif;
 ```
 
-#### Example Branding
+#### Example Branding {#example-branding}
 
 Above we described the possible options for creating your custom branding in detail. If you do not want to start from scratch in every application use the following example branding as snippet. It defines the most important variables.
 
@@ -322,7 +322,7 @@ Above we described the possible options for creating your custom branding in det
 // @image-path:                  'img/';
 ```
 
-### Branding and language customization
+### Branding and language customization {#branding-and-language-customization}
 
 Using [application options](/web/application-configuration/#application-options), each tenant can customize the look and feel of built-in applications and add or replace the languages available in the applications. As described in [application options](/web/application-configuration/#application-options), the underlying mechanism is static hosted web application.
 
@@ -337,7 +337,7 @@ For deploying we use the nodejs `@c8y/cli` that can be installed with the comman
 npm install -g @c8y/cli
 ```
 
-#### Downloading or cloning the initial repository
+#### Downloading or cloning the initial repository {#downloading-or-cloning-the-initial-repository}
 
 For your convenience you can download or clone the repository available at [https://github.com/Cumulocity/ui-customization](https://github.com/Cumulocity/ui-customization), in which you can find an example for branding and for adding a new language.
 
@@ -352,7 +352,7 @@ public-options
 ui-assets
 ```
 
-#### Branding options
+#### Branding options {#branding-options}
 
 Edit the file *public-options/options.json* and change the subproperties of `brandingCssVars`. These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
 
@@ -372,13 +372,13 @@ If these configurations are not enough you can still add a list of URLs to the p
 }
 ```
 
-#### Languages
+#### Languages {#languages}
 
 The platform UI strings used for internationalization are stored in [gettext](https://en.wikipedia.org/wiki/Gettext). If you want to add a new language to the platform you need a software to edit these files, for example [Poedit](https://poedit.net/).
 
 Each translated catalog is loaded at runtime in a JSON format. To convert .po (gettext) files into .json files we rely on `@c8y/cli` installed during the first step.
 
-##### How to add your own translations at build time
+##### How to add your own translations at build time {#how-to-add-your-own-translations-at-build-time}
 
 1. Download the string catalog from [@c8y/ngx-components@1004.0.6/locales/locales.pot](https://unpkg.com/@c8y/ngx-components@latest/locales/locales.pot) (starting from version 1004.0.6,`latest` can be replaced by your current used version).
 2. Load the downloaded locales.pot template file in your preferred .pot file editor and create a new translation from it. Select the target language of the translation, for example Afrikaans, and translate each string. Repeat the process for as many languages as you like.
@@ -416,7 +416,7 @@ In the example provided in the repository to be downloaded you can find an examp
 
 The imported language can be changed in the UI after login. To do so, click the User icon at the top right, select User settings from the menu and in the upcoming window select the language of your choice.
 
-##### How to add your own translations at runtime
+##### How to add your own translations at runtime {#how-to-add-your-own-translations-at-runtime}
 You can translate certain strings at runtime, which means they don't need to be included in the build and can simply be added to the [application options](/web/application-configuration/#application-options). However, this concept doesn't allow to add new languages. You can only add new strings to existing languages or align certain translations on existing ones. To translate a certain key you need to add the following structure to the application options:
 
 ```typescript
@@ -438,7 +438,7 @@ For example, the following will translate a custom cookie banner:
    }
 ```
 
-#### Deploying
+#### Deploying {#deploying}
 
 Inside the folder `ui-customization` that contains both `public-options`and `ui-assets` run the command:
 

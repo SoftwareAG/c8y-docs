@@ -6,14 +6,14 @@ weight: 20
 
 The @c8y/client is an isomorphic (node and browser) Javascript client library for the [{{< product-c8y-iot >}}](http://www.{{< domain-c8y >}}) platform API.
 
-### Installation
+### Installation {#installation}
 
 ```
 npm install @c8y/client
 ```
 
 
-### Usage
+### Usage {#usage}
 
 Use `client.<endpoint>.list()` to request listed data from the {{< product-c8y-iot >}} REST API and
 `client.<endpoint>.detail(<id>)` to request detail information. These methods always return a promise. To get an observable use `list$` or `detail$`.
@@ -21,7 +21,7 @@ Use `client.<endpoint>.list()` to request listed data from the {{< product-c8y-i
 In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/).
 
 
-### Get detail and list data with promises (pull)
+### Get detail and list data with promises (pull) {#get-detail-and-list-data-with-promises-pull}
 
 <table>
 <col style="width:20%">
@@ -76,7 +76,7 @@ In the following sections, the default signature of these functions is described
     })();
    ```
 
-### Accessing a microservice with the Fetch API
+### Accessing a microservice with the Fetch API {#accessing-a-microservice-with-the-fetch-api}
 
 The client internally uses the Fetch API. By accessing this core function, you can do any authenticated request to any resource. Standalone you can use `core.client.fetch(url, options)` and in `@c8y/ngx-components/data` for Angular you simply need to inject the `FetchClient`:
 
@@ -94,7 +94,7 @@ async getData() {
 
 All fetch responses can be parsed to JSON if the content type is set correctly. Find more information on handling fetch responses in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
-### Authentication strategy
+### Authentication strategy {#authentication-strategy}
 
 In the {{< product-c8y-iot >}} platform we currently allow two ways to authenticate:
 
@@ -121,7 +121,7 @@ It internally creates a client instance and tries to contact the API to verify i
 ```
 
 
-### Subscribe to detail and list data with observables (push)
+### Subscribe to detail and list data with observables (push) {#subscribe-to-detail-and-list-data-with-observables-push}
 
 The `detail$` and `list$` functions allow to subscribe to realtime channels that omit data on each change:
 
@@ -185,12 +185,12 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
    ```
 ---
 
-### Examples
+### Examples {#examples}
 
 Below some examples are provided which may help you to get started. To see a complex and full implementation of the client into Angular, have a look at [@c8y/cli](/web/development-tools/#c8y-cli) and the `new` command to spin up a example application for Angular.
 
 
-#### Requesting list data from the inventory:
+#### Requesting list data from the inventory: {#requesting-list-data-from-the-inventory}
 
 ```js
 import { Client } from '@c8y/client';
@@ -213,7 +213,7 @@ const password = 'pw';
 })();
 ```
 
-#### Getting an observable of the inventory endpoint:
+#### Getting an observable of the inventory endpoint: {#getting-an-observable-of-the-inventory-endpoint}
 
 ```js
 import { Client } from '@c8y/client';
@@ -236,7 +236,7 @@ const password = 'pw';
 })();
 ```
 
-#### Using realtime:
+#### Using realtime: {#using-realtime}
 
 ```js
 // realtime event
@@ -253,7 +253,7 @@ const observableSubscription = observable$.subscribe((data) => {
 observableSubscription.unsubscribe();
 ```
 
-#### Authenticate in node.js
+#### Authenticate in node.js {#authenticate-in-nodejs}
 
 The constructor `new Client([...])` initializes a new client which allows to request data from the API. Unlike to `Client.authenticate([...])` it needs a tenant given and does not verify if the login is correct. This is useful if you are developing a node.js microservice.
 

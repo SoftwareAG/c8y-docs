@@ -8,7 +8,7 @@ With micro frontends it is possible to add new functionality while the applicati
 
 Blueprints are combinations of multiple UI functionalities that can be hosted by the platform (static files) and can be used to scaffold a new solution from scratch. On the other hand, a package is the composition of plugins and blueprints. As a blueprint can export plugins as well, they can be packed together into one package and deployed to the platform.
 
-### Initialize the blueprint example
+### Initialize the blueprint example {#initialize-the-blueprint-example}
 
 1. Use the command shown below to start a multi-step process of creating a sample blueprint:
 
@@ -74,7 +74,7 @@ tsconfig.json
 
 You have now created your first package blueprint that uses Module Federation.
 
-### Stepper setup (optional)
+### Stepper setup (optional) {#stepper-setup-optional}
 
 The `HOOK_STEPPER` can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
 
@@ -231,7 +231,7 @@ export class AppModule {}
 
 Now on the first application start, users will have to complete the single step wizard above.
 
-### Differences in approach to creating custom applications
+### Differences in approach to creating custom applications {#differences-in-approach-to-creating-custom-applications}
 
 There are a couple of differences between a simple widget and one that is built according to the micro frontend guidelines.
 
@@ -252,7 +252,7 @@ The following list shows the fields and what they are responsible for:
 A blueprint can also include plugins, which can later be used to extend other applications.
 {{< /c8y-admon-info >}}
 
-### Deployment
+### Deployment {#deployment}
 
 Uploading the package is the same as for regular widgets.
 Execute the following commands sequentially:

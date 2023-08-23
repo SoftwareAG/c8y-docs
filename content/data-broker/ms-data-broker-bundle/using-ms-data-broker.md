@@ -31,12 +31,12 @@ In summary, to work with the microservice-based data broker, the following requi
 The microservice-based data broker must be enabled from the {{< management-tenant >}}. Contact your Operations team for further support.
 
 
-###  Data connectors {#-data-connectors}
+### Data connectors {#data-connectors}
 
 See [Data connectors](/data-broker/data-broker-application/#data-connectors) for details on how to manage data connectors.
 
 
-###  Data subscriptions {#-data-subscriptions}
+### Data subscriptions {#data-subscriptions}
 
 See [Data subscriptions](/data-broker/data-broker-application/#data-subscriptions) for details on how to manage data subscriptions.
 

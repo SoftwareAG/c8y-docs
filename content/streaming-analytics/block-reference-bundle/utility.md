@@ -66,7 +66,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Constant Value
+### Constant Value {#constant-value}
 
 `apama.analyticsbuilder.blocks.ConstantValue`
 
@@ -174,7 +174,7 @@ The Value parameter can be treated as a string, boolean, float or JSON value. If
 </table>
 
 
-### Cron Timer
+### Cron Timer {#cron-timer}
 
 `apama.analyticskit.blocks.core.CronTimer`
 
@@ -298,7 +298,7 @@ This block is not supported in simulation mode.</p>
 </table>
 
 
-### Duration
+### Duration {#duration}
 
 `apama.analyticskit.blocks.core.Duration`
 
@@ -408,7 +408,7 @@ If multiple signals are received at the same time, they are processed in the ord
 </table>
 
 
-### Extract Property
+### Extract Property {#extract-property}
 
 `apama.analyticskit.blocks.core.ExtractProperty`
 
@@ -535,7 +535,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </table>
 
 
-### Geofence
+### Geofence {#geofence}
 
 `apama.analyticsbuilder.blocks.Geofence`
 
@@ -640,7 +640,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </table>
 
 
-### Missing Data
+### Missing Data {#missing-data}
 
 `apama.analyticskit.blocks.core.MissingData`
 
@@ -746,7 +746,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </table>
 
 
-### Set Properties
+### Set Properties {#set-properties}
 
 `apama.analyticsbuilder.blocks.SetProperties`
 
@@ -912,7 +912,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 </table>
 
 
-### Text Substitution
+### Text Substitution {#text-substitution}
 
 `apama.analyticsbuilder.blocks.TextSubstitution`
 
@@ -1027,7 +1027,7 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 </table>
 
 
-### Toggle
+### Toggle {#toggle}
 
 `apama.analyticskit.blocks.core.Toggle`
 

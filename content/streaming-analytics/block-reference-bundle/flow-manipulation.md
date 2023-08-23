@@ -56,7 +56,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Combiner
+### Combiner {#combiner}
 
 `apama.analyticskit.blocks.core.Combiner`
 
@@ -181,7 +181,7 @@ This category contains the following blocks:
 </table>
 
 
-### Gate
+### Gate {#gate}
 
 `apama.analyticskit.blocks.core.Gate`
 
@@ -334,7 +334,7 @@ This must be a finite and positive number.</p>
 </table>
 
 
-### Latch Values
+### Latch Values {#latch-values}
 
 `apama.analyticskit.blocks.core.Latch`
 
@@ -423,7 +423,7 @@ This must be a finite and positive number.</p>
 </table>
 
 
-### Pulse
+### Pulse {#pulse}
 
 `apama.analyticskit.blocks.core.Pulse`
 
@@ -520,7 +520,7 @@ For example, a numeric value passed to the OR block is treated as <tt>true</tt> 
 </table>
 
 
-### Selector
+### Selector {#selector}
 
 `apama.analyticsbuilder.blocks.Selector`
 
@@ -704,7 +704,7 @@ If the Type parameter remains unselected, the type of the output value is set ba
 </table>
 
 
-### Switch
+### Switch {#switch}
 
 `apama.analyticsbuilder.blocks.Switch`
 
@@ -869,7 +869,7 @@ The expected use case is that the Selected Input parameter is set to a template 
 </table>
 
 
-### Time Delay
+### Time Delay {#time-delay}
 
 `apama.analyticskit.blocks.core.TimeDelay`
 

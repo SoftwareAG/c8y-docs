@@ -51,7 +51,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Alarm Input
+### Alarm Input {#alarm-input}
 
 `apama.analyticskit.blocks.cumulocity.AlarmInput`
 
@@ -178,7 +178,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 </table>
 
 
-### Event Input
+### Event Input {#event-input}
 
 `apama.analyticskit.blocks.cumulocity.DeviceEventInput`
 
@@ -278,7 +278,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </table>
 
 
-### Managed Object Input
+### Managed Object Input {#managed-object-input}
 
 `apama.analyticskit.blocks.cumulocity.ManagedObjectInput`
 
@@ -376,7 +376,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 </table>
 
 
-### Measurement Input
+### Measurement Input {#measurement-input}
 
 `apama.analyticskit.blocks.cumulocity.DeviceMeasurementInput`
 
@@ -464,7 +464,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 </table>
 
 
-### Operation Input
+### Operation Input {#operation-input}
 
 `apama.analyticskit.blocks.cumulocity.OperationInput`
 
@@ -581,7 +581,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 </table>
 
 
-### Position Input
+### Position Input {#position-input}
 
 `apama.analyticsbuilder.blocks.PositionInput`
 

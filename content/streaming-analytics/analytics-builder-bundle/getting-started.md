@@ -4,7 +4,7 @@ title: Getting started with Analytics Builder
 layout: redirect
 ---
 
-### What is Analytics Builder
+### What is Analytics Builder {#what-is-analytics-builder}
 
 Analytics Builder allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 
@@ -18,7 +18,7 @@ Analytics Builder consists of the following tools:
 
 The blocks are implemented in the Event Processing Language (EPL) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
 
-### First Steps: Creating your first model
+### First Steps: Creating your first model {#first-steps-creating-your-first-model}
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
@@ -34,7 +34,7 @@ When you have completed all steps below, your model will look similar to the fol
 
 ![Completed model with three blocks](/images/streaming-analytics/analytics-builder/first-steps.png)
 
-#### Step 1: Switch to Analytics Builder
+#### Step 1: Switch to Analytics Builder {#step-1-switch-to-analytics-builder}
 
 On the home screen of the Streaming Analytics application, click the **Open** button that is shown below the Analytics Builder heading.
 
@@ -44,7 +44,7 @@ Alternatively, click **Analytics Builder** in the navigator on the left.
 If the navigator is currently hidden, click the small arrow at the very left of the top bar to toggle the display of the navigator.
 {{< /c8y-admon-info>}}
 
-#### Step 2: Add a new model
+#### Step 2: Add a new model {#step-2-add-a-new-model}
 
 The first page that is shown when you invoke Analytics Builder is the model manager.
 
@@ -52,7 +52,7 @@ The first page that is shown when you invoke Analytics Builder is the model mana
 
 2.  In the resulting dialog box, enter a model name and click **OK**.
 
-#### Step 3: Add the input block
+#### Step 3: Add the input block {#step-3-add-the-input-block}
 
 You design your model in the model editor. The model editor is shown after you have entered the model name. The palette which is shown on the left contains all blocks that can be added to a model. You add a block by dragging it from the palette onto the canvas. The blocks for the input devices that have been registered in {{< product-c8y-iot >}} are shown under **Input**.
 
@@ -81,7 +81,7 @@ If you need detailed information on the currently selected block, view the block
 ![Document icon](/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png)
 
 
-#### Step 4: Add the block that calculates the mean of the measurement values
+#### Step 4: Add the block that calculates the mean of the measurement values {#step-4-add-the-block-that-calculates-the-mean-of-the-measurement-values}
 
 1.  In the palette, expand **Aggregate**.
 2.  Drag the **Average \(Mean\)** block onto the canvas.
@@ -90,7 +90,7 @@ If you need detailed information on the currently selected block, view the block
     The specified number of seconds will be used to control what duration the measurement is averaged over. Smaller values will react quicker to changes in values, larger values will give more smoothing of the value.
 
 
-#### Step 5: Add the output block
+#### Step 5: Add the output block {#step-5-add-the-output-block}
 
 1.  In the palette, expand **Output**.
 
@@ -102,7 +102,7 @@ If you need detailed information on the currently selected block, view the block
 
 5.  Specify "value" as the series name.
 
-#### Step 6: Connect the blocks
+#### Step 6: Connect the blocks {#step-6-connect-the-blocks}
 
 To pass the values from one block to another, you have to connect the blocks with wires. You attach the wires to the ports, that is, to the small circles that are shown to the left and/or right of a block.
 
@@ -110,7 +110,7 @@ To pass the values from one block to another, you have to connect the blocks wit
 
 2.  Click the **Average** output port of the **Average \(Mean\)** block and drag the mouse to the **Value** input port of the output block.
 
-#### Step 7: Save the model and go back to the model manager
+#### Step 7: Save the model and go back to the model manager {#step-7-save-the-model-and-go-back-to-the-model-manager}
 
 1.  In the toolbar of the model editor, click the following icon to save your newly created model:
     ![Save icon](/images/streaming-analytics/analytics-builder/icon-save.png)
@@ -122,7 +122,7 @@ To pass the values from one block to another, you have to connect the blocks wit
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
 {{< /c8y-admon-info>}}
 
-#### Step 8: Activate the model in production mode
+#### Step 8: Activate the model in production mode {#step-8-activate-the-model-in-production-mode}
 
 A card for the newly added model is shown on the **Models** tab of the model manager. A new model is automatically set to draft mode and inactive state. You will now activate your new model in production mode. This deploys the model so that the measurements from your device are processed.
 
@@ -130,7 +130,7 @@ A card for the newly added model is shown on the **Models** tab of the model man
 
 2.  Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
 
-#### Step 9: Go to the Device management and view the measurements
+#### Step 9: Go to the Device management and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
 
 To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management](/device-management-application/) for detailed information.
 
@@ -145,7 +145,7 @@ To view the measurements that are sent from your active model, you have to switc
     The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Measurements](/device-management-application/viewing-device-details/#measurements) for more information on the **Measurements** tab.
 
 
-### First Steps: Creating a model from a sample
+### First Steps: Creating a model from a sample {#first-steps-creating-a-model-from-a-sample}
 
 This topic gives a brief overview of how to create a model from a sample. It is based on the **On missing measurements create alarm** sample. Your new model will create an alarm if no new measurement data has been received for a specified time period.
 
@@ -169,7 +169,7 @@ The following is a brief description of the blocks that are defined within the s
 -   The **Text Substitution** block is configured to use the **Alarm text** template parameter as user input. It applies the required substitutions and then sends the string containing the substitutions from its **Output** output port to the **Message** input port of the **Alarm Output** block.
 -   The **Alarm Output** block requires the **Alarm type** and **Alarm severity** template parameters to be configured and creates an alarm whenever it is triggered by the **Missing Data** block.
 
-#### Step 1: Create a new model from a sample
+#### Step 1: Create a new model from a sample {#step-1-create-a-new-model-from-a-sample}
 
 The **Samples** tab of the model manager lists all sample models that are provided with Analytics Builder. You can view a sample by simply clicking on its card, but you cannot edit or deploy it. However, you can use the samples as a basis for developing your own models, by creating a model from a sample.
 
@@ -191,7 +191,7 @@ The **Samples** tab of the model manager lists all sample models that are provid
 Keep in mind that only saved models are listed on the **Models** tab of the model manager.
     {{< /c8y-admon-info>}}
 
-#### Step 2: Create a new instance of the model
+#### Step 2: Create a new instance of the model {#step-2-create-a-new-instance-of-the-model}
 
 The sample model uses template parameters. So when you turn the sample into a model, you create a so-called template model. You cannot activate a template model directly in the model manager. Instead, you must create at least one instance of the model, and you can then activate that instance using the instance editor.
 
@@ -201,7 +201,7 @@ The sample model uses template parameters. So when you turn the sample into a mo
 
 3.  Click **New Instance** to create the first instance of your new model.
 
-#### Step 3: Fill in the template parameter values
+#### Step 3: Fill in the template parameter values {#step-3-fill-in-the-template-parameter-values}
 
 In the instance editor, a row is shown for each instance that you create. A column is provided for each template parameter that is defined in the template model, with the name of the template parameter being the column header. As long as an instance is not active, you can adjust the values for that instance.
 
@@ -227,7 +227,7 @@ If you want to find out which fragments and series are available to your device,
 
 4.  In the toolbar of the instance editor, click **Save**.
 
-#### Step 4: Activate the instance
+#### Step 4: Activate the instance {#step-4-activate-the-instance}
 
 You will now activate the instance in production mode. This deploys the instance so that the measurements from your device are processed.
 
@@ -235,13 +235,13 @@ You will now activate the instance in production mode. This deploys the instance
 
 2.  In the **Status** column of the instance editor, click the button which currently shows **Inactive** to change the status to **Active**.
 
-#### Step 5: Send in the data from your device
+#### Step 5: Send in the data from your device {#step-5-send-in-the-data-from-your-device}
 
 Once the instance has been activated, send in the data from your device. The instance starts monitoring the device once measurement data starts arriving and creates an alarm if no data is received within the configured duration.
 
 For our example case with the gyroscope measurements from a smartphone, it should be sufficient that you simply turn off the smartphone display while the {{< sensor-app >}} is still running.
 
-#### Step 6: Go to the Device management application and view the alarms
+#### Step 6: Go to the Device management application and view the alarms {#step-6-go-to-the-device-management-application-and-view-the-alarms}
 
 To view the alarms that are sent from your active instance, you have to switch to the Device management application.
 See [Device management](/device-management-application/) for detailed information.

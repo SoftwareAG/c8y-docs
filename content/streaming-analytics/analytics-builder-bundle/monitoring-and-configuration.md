@@ -4,7 +4,7 @@ title: Monitoring and configuration
 layout: redirect
 ---
 
-### Monitoring
+### Monitoring {#monitoring}
 You can monitor the current status of each model in the model manager. The card for a model shows the current mode for this model \(such as production mode\) and whether it is active \(deployed\) or inactive.
 
 ![Card for a model](/images/streaming-analytics/analytics-builder/card-with-runtime-error.png)
@@ -15,7 +15,7 @@ If a model failed to deploy or failed while running, the following is shown on t
 To find out whether a model has failed while processing data, reload all models in the model manager to show their latest states.
 See also [Reloading all models](/streaming-analytics/analytics-builder/#reloading-all-models).
 
-#### Monitoring periodic status
+#### Monitoring periodic status {#monitoring-periodic-status}
 
 In addition to the status that is shown on the card for a model, it is possible to enable generation of periodic status published as {{< product-c8y-iot >}} operations or events. See [Configuration](/streaming-analytics/analytics-builder/#configuration) on setting the `status_device_name` and `status_period_secs` tenant options.
 
@@ -52,7 +52,7 @@ Each operation has the following parameters:
 </tbody>
 </table>
 
-##### Model status
+##### Model status {#model-status}
 
 The following information is published for each deployed model that is currently running or has failed:
 
@@ -102,7 +102,7 @@ You can monitor the status using the Apama REST API or the Management interface 
 - [Managing and Monitoring over REST]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DepAndManApaApp_managing_and_monitoring_over_rest.html)
 - [Using the Management interface]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_using_the_management_interface.html)
 
-##### Chain diagnostics
+##### Chain diagnostics {#chain-diagnostics}
 
 The following information is published for all chains that are present:
 
@@ -168,7 +168,7 @@ The following information is published for all chains that are present:
 
 For more information on `timedelay_secs`, see [Keys for model timeouts](/streaming-analytics/analytics-builder/#keys-for-model-timeouts).
 
-##### Slowest chain status
+##### Slowest chain status {#slowest-chain-status}
 
 When chains of models with a high throughput are deployed across multiple workers, it may happen that the chain falls behind in processing input events, creating a backlog of input events that are still to be processed. These chains are referred to as “slow chains”. A message is written to the correlator log if the slowest chain is delayed by more than 1 second. For example:
 "Analytics Builder chain of models "Model 1", "Model 2", "Model 3" is slow by 3 seconds."
@@ -199,7 +199,7 @@ The following information on the slowest chain is also available in the periodic
 </tbody>
 </table>
 
-##### Example
+##### Example {#example}
 
 The following is an example of the status operation data that is published by {{< product-c8y-iot >}}:
 
@@ -285,7 +285,7 @@ The following is an example of the status operation data that is published by {{
 }
 ```
 
-#### Monitoring dropped events
+#### Monitoring dropped events {#monitoring-dropped-events}
 
 When a model receives an event, it may be dropped if the correlator delivers or processes it too late. See [Input blocks and event timing](/streaming-analytics/analytics-builder/#input-blocks-and-event-timing).
 
@@ -293,7 +293,7 @@ The total number of dropped events across all models is periodically published a
 
 All dropped input events are also sent to channel `AnalyticsDroppedEvents`, allowing you to implement your own monitoring of the dropped events. A dropped input event sent to the channel `AnalyticsDroppedEvents` is packaged inside an event of type `apama.analyticsbuilder.DroppedEvent`. This allows you to extract the original dropped event and perform any analysis on it, for example, categorizing the number of dropped events per device. This can be achieved by writing EPL that listens for the `DroppedEvent` events, aggregates by device identifier and/or time, and sends measurements to {{< product-c8y-iot >}} that can be monitored. See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
-#### Monitoring the model life-cycle
+#### Monitoring the model life-cycle {#monitoring-the-model-lifecycle}
 
 Life-cycle messages are written to the correlator log whenever a model is created or removed, or when it fails. The log messages may look as follows:
 
@@ -317,7 +317,7 @@ Analytics Builder chain of models "Model 1", "Model 2", "Model 3" has been activ
 
 See [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log) for information on where to find the correlator log.
 
-#### Viewing the audit logs
+#### Viewing the audit logs {#viewing-the-audit-logs}
 
 Model activations and deactivations are shown in the audit logs. The audit logs are accessible via the Administration application and the audit API.
 See [Audit logs](/standard-tenant/audit-logs/) and [Audit API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audit-API)
@@ -343,7 +343,7 @@ The following is an example of an audit log entry \(with additional line breaks 
 }
 ```
 
-#### Viewing diagnostics information
+#### Viewing diagnostics information {#viewing-diagnostics-information}
 
 To view diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
 
@@ -357,7 +357,7 @@ It may be useful to capture this diagnostics information when experiencing probl
 
 See [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting/) for detailed information on the available diagnostics. This also includes information on additional endpoints that are available for REST requests.
 
-### Configuration
+### Configuration {#configuration}
 
 You can customize the settings of Analytics Builder, the so-called “tenant options”, by sending REST requests to {{< product-c8y-iot >}}. The key names that you can use with the REST requests are listed in the topics below. A category name is needed along with the key name; this is always `analytics.builder`.
 
@@ -369,7 +369,7 @@ To change the tenant options, you need ADMIN permission for "Option management".
 After you have changed a tenant option using a REST request, the correlator will automatically restart. An alarm with a MAJOR severity will be created in this case; you can view it on the **Alarms** page of the Cockpit application \(see [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for more information\).
 {{< /c8y-admon-caution>}}
 
-#### Keys for status reporting
+#### Keys for status reporting {#keys-for-status-reporting}
 
 <table>
 <colgroup>
@@ -416,7 +416,7 @@ After you have changed a tenant option using a REST request, the correlator will
 </tbody>
 </table>
 
-#### Keys for model timeouts
+#### Keys for model timeouts {#keys-for-model-timeouts}
 
 <table>
 <colgroup>
@@ -445,7 +445,7 @@ After you have changed a tenant option using a REST request, the correlator will
 </tbody>
 </table>
 
-#### Keys for simulation mode
+#### Keys for simulation mode {#keys-for-simulation-mode}
 
 <table>
 <colgroup>
@@ -472,7 +472,7 @@ After you have changed a tenant option using a REST request, the correlator will
 </tbody>
 </table>
 
-#### Other keys
+#### Other keys {#other-keys}
 
 <table>
 <colgroup>
@@ -505,7 +505,7 @@ After you have changed a tenant option using a REST request, the correlator will
 </tbody>
 </table>
 
-#### Logged tenant options
+#### Logged tenant options {#logged-tenant-options}
 
 The values for some of the tenant options are logged. These are the following:
 
@@ -516,7 +516,7 @@ The values for some of the tenant options are logged. These are the following:
 
 If you want to find out which values are currently used for these tenant options, you can look them up in the correlator log. See also [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log).
 
-#### Using curl commands for setting various tenant options
+#### Using curl commands for setting various tenant options {#using-curl-commands-for-setting-various-tenant-options}
 
 You can set or change various tenant options by sending `POST` requests to {{< product-c8y-iot >}}. This topic explains how you can do this using the curl command-line tool. See [https://curl.se/](https://curl.se/) for detailed information on curl. See also the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
 
@@ -547,7 +547,7 @@ where:
 
 `curl --user User123 -X POST -H 'Content-Type: application/json' -d '{"category": "analytics.builder", "key": "numWorkerThreads", "value": "4"}' -k https://mytenant/tenant/options`
 
-### Accessing the correlator log
+### Accessing the correlator log {#accessing-the-correlator-log}
 
 The location of the correlator log depends on the environment in which you are working:
 

@@ -4,7 +4,7 @@ title: Understanding models
 layout: redirect
 ---
 
-### Models
+### Models {#models}
 
 A model is a container which can have a network of blocks connected to each other with wires.
 
@@ -12,11 +12,11 @@ The behavior of a block inside a model does not depend on other blocks. There ca
 
 You can create two different types of models: models without template parameters and models with template parameters.
 
-#### Models without template parameters
+#### Models without template parameters {#models-without-template-parameters}
 
 All blocks in the model use defined input devices or groups of devices and contain defined parameter values. Such a model can be activated immediately in the model manager.
 
-#### Models with template parameters
+#### Models with template parameters {#models-with-template-parameters}
 
 A model in which one or more template parameters are defined is called a "template model". Template parameters can be bound to any number of block parameters, provided that the type of the block parameter is the same as that of the template parameter.
 
@@ -40,7 +40,7 @@ The model author has the following options to define a template parameter:
 -   It can be optional. The instance maintainer then has the possibility to either provide a value or leave it blank.
 -   It can be required. The instance maintainer must then provide a value. A required value is one that is not optional and has no default value.
 
-### Template model instances
+### Template model instances {#template-model-instances}
 
 Template model instances hold the values to be used in models with template parameters.
 
@@ -48,7 +48,7 @@ For example, two devices may have similar checks on data from the devices, but u
 
 Each instance can be activated, deactivated, or use different run modes, independently.
 
-### Blocks
+### Blocks {#blocks}
 
 Blocks are the basic processing units of the model. Each block has some predefined functionality and processes data accordingly. A block can have a set of parameters and a set of input ports and output ports.
 
@@ -72,7 +72,7 @@ When using the same block multiple times, you can specify different values for t
 Two output ports cannot be connected to the same input port, whereas one output port can be connected to multiple input ports.
 {{< /c8y-admon-info>}}
 
-#### Input blocks
+#### Input blocks {#input-blocks}
 
 An input block is a special type of block that receives data from an external source. It converts the data into a format understandable to wires and transfers the data to the connected blocks. For example, when an input block receives a `Measurement` event from {{< product-c8y-iot >}}, it extracts the required information from the event and then transfers the information to the connected blocks for further processing.
 
@@ -80,7 +80,7 @@ Models can process data from multiple devices, and scale up \(using multiple cor
 
 In addition, Analytics Builder supports input devices that are referred to as "broadcast devices". Signals from these devices are available to all models across all devices. For detailed information, see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices).
 
-#### Output blocks
+#### Output blocks {#output-blocks}
 
 An output block is a special type of block that receives data from a connected processing block. It converts the data into a format understandable to an external source and transfers the data to the external source. For example, when an output block receives data from a connected processing block, it packages the data into an `Operation` object and then sends the operation to {{< product-c8y-iot >}}.
 
@@ -88,7 +88,7 @@ You can specify a **Trigger Device** for an output block. This is a special devi
 
 Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages, see also [SMS provider](/standard-tenant/changing-settings/#sms-provider). Unlike the other blocks, these are not associated with devices within the {{< product-c8y-iot >}} platform.
 
-#### Processing blocks
+#### Processing blocks {#processing-blocks}
 
 There are different types of processing blocks. They are grouped into different categories in the palette in the model editor, depending on their functionality.
 
@@ -122,7 +122,7 @@ The output ports are:
 -   **Within Threshold**. `boolean` type. Is set to `true` when the threshold has not been breached. That is, the input value is within the range of the defined threshold value.
 -   **Crossed Threshold**. `pulse` type. Sends a signal when the input value crosses the threshold, going from one side of the threshold to the other.
 
-#### Creating your own blocks
+#### Creating your own blocks {#creating-your-own-blocks}
 
 You can use the Analytics Builder Block SDK to write, test, and package custom blocks and to upload these blocks into Analytics Builder.
 
@@ -138,7 +138,7 @@ To upload an extension, the user specified in the `--username` argument must hav
 
 The Apama-ctrl microservice is restarted after running the above command. The user must have the ADMIN permission for "CEP management" to request a restart.
 
-### Wires
+### Wires {#wires}
 
 One block is connected to another block with the help of wires. All data transfer between the output port of one block and the input port of another block is done using wires. All connections must be made between compatible types. See [Wires and blocks](/streaming-analytics/analytics-builder/#wires-and-blocks) for detailed information.
 
@@ -146,7 +146,7 @@ One block is connected to another block with the help of wires. All data transfe
 The network of blocks in a model cannot contain any kind of cycles. See [Wire restrictions](/streaming-analytics/analytics-builder/#wire-restrictions) for more information.
 {{< /c8y-admon-info>}}
 
-### Sample use case
+### Sample use case {#sample-use-case}
 
 Consider a situation where you are getting real-time sensor data and you want to analyze this data. For the sake of simplicity, let us assume that there is only one sensor and that you are interested in the following:
 

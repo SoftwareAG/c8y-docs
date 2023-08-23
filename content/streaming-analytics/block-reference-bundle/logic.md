@@ -36,7 +36,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### AND
+### AND {#and}
 
 `apama.analyticskit.blocks.core.And`
 
@@ -125,7 +125,7 @@ This category contains the following blocks:
 </table>
 
 
-### NOT
+### NOT {#not}
 
 `apama.analyticskit.blocks.core.Not`
 
@@ -186,7 +186,7 @@ This category contains the following blocks:
 </table>
 
 
-### OR
+### OR {#or}
 
 `apama.analyticskit.blocks.core.Or`
 

@@ -56,7 +56,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Alarm Output
+### Alarm Output {#alarm-output}
 
 `apama.analyticskit.blocks.cumulocity.CreateAlarm`
 
@@ -222,7 +222,7 @@ Caution: The default behavior of the Alarm Output block is to produce a synchron
 </table>
 
 
-### Event Output
+### Event Output {#event-output}
 
 `apama.analyticskit.blocks.cumulocity.CreateEvent`
 
@@ -337,7 +337,7 @@ This block produces synchronous output. The parameters that define the output st
 </table>
 
 
-### Managed Object Output
+### Managed Object Output {#managed-object-output}
 
 `apama.analyticskit.blocks.cumulocity.ManagedObjectOutput`
 
@@ -427,7 +427,7 @@ This block produces asynchronous output. The parameter that defines the output s
 </table>
 
 
-### Measurement Output
+### Measurement Output {#measurement-output}
 
 `apama.analyticskit.blocks.cumulocity.CreateMeasurement`
 
@@ -551,7 +551,7 @@ Non-finite values are ignored.</p>
 </table>
 
 
-### Operation Output
+### Operation Output {#operation-output}
 
 `apama.analyticskit.blocks.cumulocity.CreateOperationStaticValue`
 
@@ -663,7 +663,7 @@ The block produces asynchronous output. The parameter that defines the output st
 </table>
 
 
-### Send Email
+### Send Email {#send-email}
 
 `apama.analyticskit.blocks.cumulocity.Send_Email`
 
@@ -789,7 +789,7 @@ Note: When running in simulation or test mode, the block logs the output instead
 </table>
 
 
-### Send SMS
+### Send SMS {#send-sms}
 
 `apama.analyticskit.blocks.cumulocity.Send_SMS`
 

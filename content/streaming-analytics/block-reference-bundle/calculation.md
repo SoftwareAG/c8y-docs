@@ -91,7 +91,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Crossing Counter
+### Crossing Counter {#crossing-counter}
 
 `apama.analyticskit.blocks.core.CrossingCounter`
 
@@ -229,7 +229,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </table>
 
 
-### Delta
+### Delta {#delta}
 
 `apama.analyticskit.blocks.core.Delta`
 
@@ -297,7 +297,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </table>
 
 
-### Difference
+### Difference {#difference}
 
 `apama.analyticskit.blocks.core.Difference`
 
@@ -372,7 +372,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </table>
 
 
-### Direction Detection
+### Direction Detection {#direction-detection}
 
 `apama.analyticskit.blocks.core.DirectionDetector`
 
@@ -477,7 +477,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </table>
 
 
-### Expression
+### Expression {#expression}
 
 `apama.analyticskit.blocks.core.Expression`
 
@@ -602,7 +602,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 </table>
 
 
-### From Base N
+### From Base N {#from-base-n}
 
 `apama.analyticsbuilder.blocks.FromBaseN`
 
@@ -706,7 +706,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 </table>
 
 
-### KPI
+### KPI {#kpi}
 
 `apama.analyticskit.blocks.cumulocity.KPI`
 
@@ -853,7 +853,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 </table>
 
 
-### Limit
+### Limit {#limit}
 
 `apama.analyticsbuilder.blocks.Limit`
 
@@ -955,7 +955,7 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 </table>
 
 
-### Machine Learning
+### Machine Learning {#machine-learning}
 
 `apama.analyticskit.blocks.core.Zementis`
 
@@ -1175,7 +1175,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 </table>
 
 
-### Range
+### Range {#range}
 
 `apama.analyticsbuilder.blocks.Range`
 
@@ -1314,7 +1314,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 </table>
 
 
-### Range Lookup
+### Range Lookup {#range-lookup}
 
 `apama.analyticskit.blocks.core.RangeLookup`
 
@@ -1442,7 +1442,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 </table>
 
 
-### Rounding
+### Rounding {#rounding}
 
 `apama.analyticskit.blocks.core.Rounding`
 
@@ -1551,7 +1551,7 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 </table>
 
 
-### Threshold
+### Threshold {#threshold}
 
 `apama.analyticskit.blocks.core.Threshold`
 
@@ -1679,7 +1679,7 @@ A pulse is sent when the defined threshold value is crossed from any direction.<
 </table>
 
 
-### To Base N
+### To Base N {#to-base-n}
 
 `apama.analyticsbuilder.blocks.ToBaseN`
 

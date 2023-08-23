@@ -4,7 +4,7 @@ title: Advanced features
 layout: redirect
 ---
 
-### Custom fragments
+### Custom fragments {#custom-fragments}
 
 {{< product-c8y-iot >}} APIs let you structure your data freely. In Apama EPL, this is done by adding entries to `params`, which is of the type `dictionary<string, any>`. Each {{< product-c8y-iot >}} event in the `com.apama.cumulocity` package (such as `Alarm`, `Event`, `Measurement` or `Operation`) has a `params` field, which is translated to fragments or optional fields. Thus, when receiving events, your code must look up entries in the `params` field. When sending events, this can be done by defining event types, or you can use the `dictionary<string, any>` type. When receiving events, the EPL type is `dictionary<any, any>`. Note that EPL is strongly typed, so if you are creating an event with no fragments, a `new dictionary<string, any>` expression is required. If you are providing entries inline with a dictionary literal, then EPL determines the type based on the type of the first key-value pair - thus, for `dictionary<string, any>`, cast the first value to an `any` type with the `<any>` cast operator:
 
@@ -73,11 +73,11 @@ Listen for events of type `com.apama.cumulocity.MeasurementFragment` when you re
 instead of listening for `com.apama.cumulocity.Measurement` events and looking inside the `measurements` dictionary.
 For more information, see [Using measurement fragments]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_using_measurement_fragments.html) in the Apama documentation.
 
-### Listeners
+### Listeners {#listeners}
 
 Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to [Defining Event Listeners]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) in the Apama documentation for full details.
 
-#### Filters
+#### Filters {#filters}
 
 Filters enable you to trigger by combinations or sequences of other triggers. If you have a trigger like this
 
@@ -103,7 +103,7 @@ on all (Event() as e -> Alarm() as a) { ... }
 ```
 This will trigger for every pair "Event followed by Alarm". On receiving an event, it will stop listening for further events and start listening for alarms instead. Once an alarm is received, it will start listening for events again.
 
-#### Timers
+#### Timers {#timers}
 
 You can also trigger listeners based on time. You can either trigger in a certain interval, for example, fire every 5 minutes (300 seconds):
 
@@ -153,7 +153,7 @@ This tenant option is only read when the microservice starts.
 If the tenant option is changed, the microservice only picks this up on the next microservice subscription.
 {{< /c8y-admon-info >}}
 
-#### Streams - windows
+#### Streams - windows {#streams--windows}
 
 Streams give you the possibility to operate on windows of events. Streams use the `from` keyword instead of `on ` and define a window to operate over, and select what output they want from that window using aggregates. Windows can be restricted by two means:
 
@@ -169,7 +169,7 @@ Streams give you the possibility to operate on windows of events. Streams use th
 	from m in all Measurement(type="c8y_TemperatureMeasurement") retain 100 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }
     ```
 
-#### Streams - outputting periodically
+#### Streams - outputting periodically {#streams--outputting-periodically}
 
 Streams can also control how frequently they evaluate, using the `every` specifier.
 
@@ -187,7 +187,7 @@ from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 
 See the Apama documentation for [built-in aggregate functions]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).
 
 
-### Creating own event types
+### Creating own event types {#creating-own-event-types}
 
 As well as the predefined event types, you can define your own event types. These can be useful to detect patterns of events occurring which trigger other parts of the same module.
 
@@ -209,7 +209,7 @@ on Measurement() as m1 -> Measurement() as m2 {
 {{< /c8y-admon-info >}}
 
 
-### Creating own actions
+### Creating own actions {#creating-own-actions}
 
 Typically, you will structure a monitor using actions (much like functions in Java), as shown in the following examples.
 
@@ -240,7 +240,7 @@ action distance(float lat1, float lon1, float lat2, float lon2) returns float {
 }
 ```
 
-### Variables
+### Variables {#variables}
 
 You can define variables in your modules.
 
@@ -281,7 +281,7 @@ monitor MyMonitor {
 }
 ```
 
-### Spawning monitor instances and contexts
+### Spawning monitor instances and contexts {#spawning-monitor-instances-and-contexts}
 
 While it is possible to handle multiple devices in a single monitor (for example, using `group by` and `partition by` in streams, or maintaining a dictionary keyed on the device ID for other state), it is often useful to separate processing of different devices into separate monitor instances.
 

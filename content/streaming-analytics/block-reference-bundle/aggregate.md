@@ -61,7 +61,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Average (Mean)
+### Average (Mean) {#average-mean}
 
 `apama.analyticskit.blocks.core.Mean`
 
@@ -187,7 +187,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 </table>
 
 
-### Counter
+### Counter {#counter}
 
 `apama.analyticskit.blocks.core.Counter`
 
@@ -263,7 +263,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 </table>
 
 
-### Discrete Statistics
+### Discrete Statistics {#discrete-statistics}
 
 `apama.analyticsbuilder.blocks.DiscreteStatistics`
 
@@ -379,7 +379,7 @@ If reset and sample signals are received together, the reset is processed first.
 </table>
 
 
-### Gradient
+### Gradient {#gradient}
 
 `apama.analyticskit.blocks.core.Gradient`
 
@@ -489,7 +489,7 @@ The Reset input clears the content of the window. Sample input can be used to fo
 </table>
 
 
-### Group Statistics
+### Group Statistics {#group-statistics}
 
 `apama.analyticskit.blocks.core.GroupStatistics`
 
@@ -631,7 +631,7 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 </table>
 
 
-### Integral
+### Integral {#integral}
 
 `apama.analyticskit.blocks.core.Integral`
 
@@ -751,7 +751,7 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 </table>
 
 
-### Minimum / Maximum
+### Minimum / Maximum {#minimum--maximum}
 
 `apama.analyticskit.blocks.core.MinMax`
 
@@ -863,7 +863,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 </table>
 
 
-### Standard Deviation
+### Standard Deviation {#standard-deviation}
 
 `apama.analyticskit.blocks.core.StandardDeviation`
 

@@ -4,11 +4,11 @@ title: Details of values and blocks
 layout: redirect
 ---
 
-### Introduction
+### Introduction {#introduction}
 
 Analytics Builder provides an environment for connecting blocks together to form models that can process and react to inputs. Analytics Builder uses a few types of values internally, and it is important to understand the differences between these. The following topics cover the distinctions between value types representing continuous-time and discrete-time values, and the `pulse` type. They also cover some of the details of block implementations around windowing and when blocks generate output.
 
-#### Summary
+#### Summary {#summary}
 
 In Analytics Builder, the value types `float`, `boolean`, and `string` are used to represent continuous-time values. They have the following properties, which you should consider when writing models or creating custom blocks:
 
@@ -24,7 +24,7 @@ Contrast these to the `pulse` type, which represents discrete events and has the
 
 These properties and the rationale behind them are explored and explained in the following topics. These topics also explain how to handle cases that do not fit into these distinctions, such as discrete numeric measurements.
 
-### Values as representations of continuous-time physical quantities
+### Values as representations of continuous-time physical quantities {#values-as-representations-of-continuoustime-physical-quantities}
 
 A continuous-time value type, especially of the `float` \(that is, numeric\) type, is typically used to represent the measurement of some continuous physical quantity or property by a sensor. For example, a value may represent one of the following:
 
@@ -63,7 +63,7 @@ While an on-change sensor would generate inputs only when a value changes:
 
 The grey line shows how a real-time processing system such as Apama interprets such values. A value is assumed to maintain the latest value until it is replaced by a newer value. It is also common to draw lines between measurements. So there is a straight line decreasing from value 11 at 00:01 to value 9 at 00:19. However, a real-time system cannot do this. It does not know what the next value is, whereby viewing historic data can interpolate between values. At time 00:19.5, the only information it has is that the value was 11 and then 9. It does not yet know that the value will be 8 at time 00:20. Note that there is no difference between the interpreted grey line in the regularly sampled and on-change-only case. Note that in the middle of the graph, there is a significant quantization error \(the `true` value of 10.6 is read as 11\), and the sampling frequency of only once a second means that the minimum point of 7.4 at 00:19.5 seconds is lost.
 
-#### Input values at different times
+#### Input values at different times {#input-values-at-different-times}
 
 Consider two position sensors which give the position of two robot arms, and both are on-change sensors. If the two arms move together in unison in the same direction and speed, then the position sensors should update to new values at the same time such that they are a constant distance apart \(or at least, close to a constant distance\). If the **Difference** block has inputs connected to both sensors, then even if the robot arms move, the output of the **Difference** block should be approximately constant. Analytics Builder evaluates all values with the same timestamp, so even though there may be a small delay in receiving the values from the two sensors, provided they supply timestamps from the same clock \(and the **Ignore Timestamp** parameter of the **Measurement Input** block is not set\), then the **Difference** block will always generate a synchronized output, as shown in the table below:
 
@@ -86,7 +86,7 @@ By contrast, consider if the two robot arms do not move in unison - one moves, t
 
 The bold numbers indicate the effective value. The last value latches if it has not been replaced by a more up-to-date value.
 
-#### On-change inputs and time windows
+#### On-change inputs and time windows {#onchange-inputs-and-time-windows}
 
 If an on-change input is connected to an aggregate block such as the **Average \(Mean\)** block, then the block should treat the input as continuously having the most recent value it received. This is significant for blocks that maintain a time window. Even if the block last received an input \(and thus had its `$process` action called\) more than the time window ago, the contents of the window will contain the most recent value. For example, consider the **Average \(Mean\)** and **Integral** blocks with window duration set to 10 seconds, and input as so:
 
@@ -137,7 +137,7 @@ If the **Average \(Mean\)** and **Integral** blocks receive a regular input from
 
 Note that the highlighted lines are the same as without the repeated measurements. Repeated measurements of the same value received by these blocks make no difference to what the block would calculate if re-evaluated.
 
-### Window block output timings
+### Window block output timings {#window-block-output-timings}
 
 For aggregate blocks such as the **Average \(Mean\)** block, the effect of a change of input value means that, if regularly re-evaluated, the output of the block will change, approaching the new value. If there have been different input values received by the block in the past, then a re-evaluation of the block at any point in time is possible, and each may generate a different output.
 
@@ -165,7 +165,7 @@ The **Average \(Mean\)** block \(and others\) provide an **Output Threshold** pa
 
 As models may wish to perform a calculation with the output of the **Average \(Mean\)** block at any point in time \(for example, to compare to another measurement\), a **Sample** input port is also provided, to force a re-evaluation and generate an output value.
 
-#### Windows and buckets
+#### Windows and buckets {#windows-and-buckets}
 
 A number of blocks, primarily those in the **Aggregate** category, maintain a time-based window of input values received in the past. Their output is a calculation based on values within this window. Typically, such blocks offer two distinct ways of managing this window:
 
@@ -182,7 +182,7 @@ To illustrate this, we exaggerate the effect by simulating an **Average \(Mean\)
 
 Note that not only is the timing of the expiry of the anomalous values less precise, the exact shape of the output is lost. The bucketed average changes uniformly between time 00:13 and 00:14. Remember, the product blocks use 20 buckets, so the effect would be less pronounced in this case.
 
-### Pulse signals
+### Pulse signals {#pulse-signals}
 
 A pulse is used to signal a point in time or a change of state. Examples of use cases for pulses are:
 
@@ -206,7 +206,7 @@ It is still valid and sensible to combine multiple pulses, for example, with an 
 
 ![Example model with an AND block](/images/streaming-analytics/analytics-builder/pulse-example.png)
 
-### Discrete-time measurements
+### Discrete-time measurements {#discretetime-measurements}
 
 There are some cases where a measurement would be used where a numeric measurement value does not represent a continuous-time property. For example:
 

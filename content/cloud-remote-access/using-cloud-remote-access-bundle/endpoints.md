@@ -95,7 +95,7 @@ The connection to the configured remote device is established and the VNC, SSH o
 To terminate the connection, click **Disconnect**.
 
 
-#### Auto-saving host key functionality {#autosaving-host-key-functionality}
+#### Auto-saving host key functionality {#auto-saving-host-key-functionality}
 
 A host key is a public key of the server which is generated when an SSH server is installed. It is used to verify the identity of the server.
 

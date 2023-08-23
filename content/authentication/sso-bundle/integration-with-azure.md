@@ -15,7 +15,7 @@ The following steps illustrate how to use Azure AD (Azure Active Directory) for 
 You need administrative access to your Azure AD.
 {{< /c8y-admon-req >}}
 
-### To configure Azure AD
+### To configure Azure AD {#to-configure-azure-ad}
 
 To connect {{< product-c8y-iot >}} to Azure AD, you must create an App registration in Azure AD.  
 
@@ -42,7 +42,7 @@ Moreover, the App registration requires a secret which is used by {{< product-c8
 
 Optionally, create a user in Azure AD that you would like to use with {{< product-c8y-iot >}}.
 
-### To configure SSO for Azure AD in Cumulocity IoT
+### To configure SSO for Azure AD in Cumulocity IoT {#to-configure-sso-for-azure-ad-in-cumulocity-iot}
 
 Navigate to **Settings > Authentication** in the Administration application and switch to the **Single sign-on** tab.
 

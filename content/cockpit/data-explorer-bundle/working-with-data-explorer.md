@@ -55,7 +55,7 @@ The data points properties are pre-filled as follows:
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
-For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#customize-data-points).
+For details on modifying the visualization in general, see [Changing data explorer visualization](#changing-data-explorer-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#customize-data-points).
 
 **Example:**
 
@@ -87,7 +87,7 @@ For further information on the data point library refer to [Data point library](
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
-### To customize data point properties {# customize-data-points}
+### To customize data point properties {#customize-data-points}
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
 

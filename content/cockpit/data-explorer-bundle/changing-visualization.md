@@ -53,7 +53,7 @@ The data points properties are pre-filled as follows:
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
-For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#customize-data-points).
+For details on modifying the visualization in general, see [Changing data explorer visualization](#changing-data-explorer-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#customize-data-points).
 
 **Example:**
 
@@ -69,7 +69,7 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 
 {{< /c8y-admon-related >}}
 
-### Changing data explorer visualization {# change-visualization}
+### Changing data explorer visualization {#changing-data-explorer-visualization}
 
 To change the visualization in the data explorer, you can modify several properties.
 

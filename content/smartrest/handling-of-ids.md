@@ -6,7 +6,7 @@ section:
 weight: 40
 ---
 
-### Concept of ID-less communication {#concept-of-idless-communication}
+### Concept of ID-less communication {#concept-of-id-less-communication}
 
 The MQTT implementation of {{< product-c8y-iot >}} is specifically designed for device communication. Therefore, it tries to remove as much unnecessary logic from the client side as possible.
 

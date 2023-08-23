@@ -22,7 +22,7 @@ The example below shows an exemplary URL with the placement of both device ID an
 
 `https://<<tenant>>/apps/oee/index.html#/machine_dashboard/<<device ID>>/<<profile ID>>
 `
-###  Why does a measurement/event/alarm in the OEE application have multiple timestamps? {#-why-does-a-measurementeventalarm-in-the-oee-application-have-multiple-timestamps}
+### Why does a measurement/event/alarm in the OEE application have multiple timestamps? {#why-does-a-measurementeventalarm-in-the-oee-application-have-multiple-timestamps}
 
 The first timestamp describes the creation time. It is the time when the specific measurement/event/alarm has been created for the first time.
 

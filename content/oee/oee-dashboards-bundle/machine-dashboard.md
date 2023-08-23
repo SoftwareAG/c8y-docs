@@ -30,7 +30,6 @@ In the **Resolution/Shift** dropdown menu you can select the resolution for the 
 If the selected time frame is "last hour" you can set the resolution to 1 minute and 10 minutes, but other resolutions that are equal or longer than 1 hour, won't be offered.
 {{< /c8y-admon-info >}}
 
-<a name="oee-status"></a>
 ### OEE status
 
 In the **OEE status** section, the values for OEE, Availability, Performance and Quality according to the selected time frame and resolution are shown.
@@ -39,7 +38,6 @@ In the **OEE status** section, the values for OEE, Availability, Performance and
 
 Below these values the losses caused by Availability, Performance and Quality are displayed in terms of time and amount.
 
-<a name="data"></a>
 ### Data
 
 In the **Data** section, a chart is available to display the current values of selected components over the specified time frame. Each of the specific items, such as OEE, Availability, Performance, and Quality, can be selected at the right by activating/deactivating the respective toggles. A toggle also exists to overlay alarms on the graph. In this way, it is possible to correlate the alarm event with other measurements.

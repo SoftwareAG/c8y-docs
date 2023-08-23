@@ -105,4 +105,4 @@ You have entered "1.1 pcs/minute" in the Workpiece section, while setting up the
 
 ### Can the calculated OEE values be used in a Cockpit widget?
 
-For more information on how to use calculated OEE values in {{< product-c8y-iot >}} Cockpit widgets see [Cumulocity IoT](/oee/oee-faq/#platform)
+For more information on how to use calculated OEE values in {{< product-c8y-iot >}} Cockpit widgets see [Frequently Asked Questions > {{< product-c8y-iot >}}](/oee/oee-faq/#platform).

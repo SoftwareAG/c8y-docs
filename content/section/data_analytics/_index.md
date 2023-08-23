@@ -195,4 +195,4 @@ svg: '<svg
 '
 ---
 
-Find out about customizing immediate processing of incoming data from devices with Streaming Analytics, and about advanced analytical querying over device data with Cumulocity IoT DataHub.
+Find out about customizing immediate processing of incoming data from devices with Streaming Analytics, and about advanced analytical querying over device data with {{< product-c8y-iot >}} DataHub.

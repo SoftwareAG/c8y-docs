@@ -25,10 +25,10 @@ POST /devicecontrol/operations/
 
 The twinned address space information is persisted in the {{< product-c8y-iot >}} inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
-Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server's address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
+Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in {{< product-c8y-iot >}}, you might want the device gateway to learn one more time about server's address space without synchronizing data into {{< product-c8y-iot >}}. To achieve that, provide `"skipSync": true`.
 
 When you would like to scan partial address space, you can provide the `nodeId` property which is used as a start node for the scan operation.
-The subaddress space starting from this node as well as the ancestor nodes will be persisted in the Cumulocity IoT inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
+The subaddress space starting from this node as well as the ancestor nodes will be persisted in the {{< product-c8y-iot >}} inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
 
 ```
 POST /devicecontrol/operations/
@@ -69,13 +69,13 @@ Available arguments for `c8y_ua_command_ScanAddressSpace`:
 <td>skipSync</td>
 <td>Boolean</td>
 <td>no</td>
-<td>If set to true, the address space nodes will not be synchronized to Cumulocity IoT Inventory API. Default is false.</td>
+<td>If set to true, the address space nodes will not be synchronized to {{< product-c8y-iot >}} Inventory API. Default is false.</td>
 </tr>
 </tbody>
 </table>
 
 {{< c8y-admon-info >}}
-We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+We do not recommend you to directly work with the persisted address space data structures in the {{< product-c8y-iot >}} inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 {{< /c8y-admon-info >}}
 
 ### Reading the value of a node/nodes

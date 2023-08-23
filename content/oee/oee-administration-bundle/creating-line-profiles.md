@@ -9,7 +9,7 @@ The following section walks you through the steps required to create a new line 
 
 Since lines are attached to a site or an area, you must first have such an entity available.
 
-Switch to the [Organization](/oee/oee-administration/#organization) page under **Administration** and create a new site as described in [To create a new entity](/oee/oee-administration/#create-entity).
+Switch to the [Organization](/oee/oee-administration/#organization) page under **Administration** and create a new site as described in [To create a new entity](/oee/oee-administration/#to-create-a-new-entity).
 
 You can skip this step if you have already a site or area available to which you want to attach the new line profile.
 

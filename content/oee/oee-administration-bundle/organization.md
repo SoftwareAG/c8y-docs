@@ -14,7 +14,6 @@ The entities listed in the **Unassigned entities** area, are not shown in the **
 
 Click the arrow icon at the right to expand or collapse the entity and show or hide its details.
 
-<a name="create-entity"></a>
 ### To create a new entity
 
 1. Click **Add a new entity** at the right of the top menu bar to create a new entity.

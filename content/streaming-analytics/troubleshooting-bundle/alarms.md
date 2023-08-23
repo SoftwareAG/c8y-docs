@@ -35,17 +35,17 @@ The following is a list of the alarms. The information further down below explai
 - [Change in tenant options and restart of Apama-ctrl](#tenant_option_change)
 - [Safe mode on startup](#apama_safe_mode)
 - [Deactivating models in the Apama-ctrl-starter microservice](#apama_ctrl_starter)
-- [High memory usage](#apama_highmemoryusage)
+- [High memory usage](#high-memory-usage)
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL app is running in an infinite or long-running loop](#apama_ctrl_warn)
 - [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout)
 - [Multiple extensions with the same name](#extension_error)
-- [Smart rule configuration failed](#smartrule_configuration_error)
-- [Smart rule restore failed](#smartrule_restore_failed)
-- [Connection to correlator lost](#lost_correlator_connection)
-- [Performance alarms](#performance_alarms)
-- [Parent tenant not subscribed](#parent_tenant_not_subscribed)
+- [Smart rule configuration failed](#smart-rule-configuration-failed)
+- [Smart rule restore failed](#smart-rule-restore-failed)
+- [Connection to correlator lost](#connection-to-correlator-lost)
+- [Performance alarms](#performance-alarms)
+- [Parent tenant not subscribed](#parent-tenant-not-subscribed)
 
 Once the cause of an alarm is resolved, you must acknowledge and clear the alarm in the {{< product-c8y-iot >}} tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
@@ -53,8 +53,8 @@ Once the cause of an alarm is resolved, you must acknowledge and clear the alarm
 The alarm texts for the alarms below may undergo minor changes in the future.
 {{< /c8y-admon-info >}}
 
-<a name="tenant_option_change"></a>
-#### Change in tenant options and restart of Apama-ctrl
+
+#### Change in tenant options and restart of Apama-ctrl {#tenant_option_change}
 
 This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
@@ -66,8 +66,8 @@ Analytics Builder allows you to configure its settings by changing the tenant op
 
 Once you see this alarm, you can be sure that your change is effective.
 
-<a name="apama_safe_mode"></a>
-#### Safe mode on startup
+
+#### Safe mode on startup {#apama_safe_mode}
 
 This alarm is raised whenever the Apama-ctrl microservice switches to safe mode.
 
@@ -95,8 +95,8 @@ See [Audit logs](/standard-tenant/audit-logs) and
 
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 
-<a name="apama_ctrl_starter"></a>
-#### Deactivating models in the Apama-ctrl-starter microservice
+
+#### Deactivating models in the Apama-ctrl-starter microservice {#apama_ctrl_starter}
 
 This alarm is raised when Apama-ctrl switches from the fully capable microservice to the Apama-ctrl-starter microservice with more than 3 active models.
 
@@ -106,7 +106,7 @@ This alarm is raised when Apama-ctrl switches from the fully capable microservic
 
 With the Apama-ctrl-starter microservice, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama-ctrl-starter. Since Apama-ctrl-starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
 
-<a name="apama_highmemoryusage"></a>
+
 #### High memory usage
 
 This alarm is raised whenever the Apama-ctrl microservice consumes 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
@@ -159,8 +159,8 @@ If the memory continues to grow, then when it reaches the limit, the correlator 
 
 See also [Diagnostic tools for Apama in Cumulocity IoT](https://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot) in {{< company-sag >}}'s {{< sag-dev-community >}}.
 
-<a name="apama_ctrl_fatalcritwarn"></a>
-#### Warning or higher level logging from an EPL file
+
+#### Warning or higher level logging from an EPL file {#apama_ctrl_fatalcritwarn}
 
 This alarm is raised whenever messages are logged by EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
 
@@ -199,8 +199,8 @@ Third alarm:
 - Alarm text: &lt;Monitor name&gt;-Warning.
 - Alarm severity: WARNING
 
-<a name="apama_ctrl_error"></a>
-#### An EPL file throws an uncaught exception
+
+#### An EPL file throws an uncaught exception {#apama_ctrl_error}
 
 You have seen that the Apama-ctrl microservice raises alarms for logged messages. In addition, there can also be uncaught exceptions (during runtime). Apama-ctrl identifies such exceptions and raises alarms so that you can identify and fix the problem.
 
@@ -226,8 +226,8 @@ You can diagnose the issue by the monitor name and line number given in the alar
 
 For more details, you can also check the log files of the Apama-ctrl microservice if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly. See also [Log files of the Apama-ctrl microservice](#logfiles).
 
-<a name="apama_ctrl_warn"></a>
-#### An EPL app is running in an infinite or long-running loop
+
+#### An EPL app is running in an infinite or long-running loop {#apama_ctrl_warn}
 
 If an EPL app has an infinite or long-running loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem.
 
@@ -257,8 +257,8 @@ You can diagnose the issue by the monitor name given in the alarm.
 
 For more details, you can also check the log files of the Apama-ctrl microservice if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory. See also [Log files of the Apama-ctrl microservice](#logfiles).
 
-<a name="eplapp_restore_timeout"></a>
-#### EPL app restore timeout on restart of Apama-ctrl
+
+#### EPL app restore timeout on restart of Apama-ctrl {#eplapp_restore_timeout}
 
 If restoring an EPL app on a restart of the Apama-ctrl microservice takes a long time and exceeds the time limit
 specified by the `recovery.timeoutSecs` tenant option (in the `streaminganalytics` category) or a default of 60 seconds,
@@ -277,8 +277,7 @@ The following information is only included in the alarm text if the Apama-ctrl m
 If no such apps are detected, this information is omitted from the alarm text.
 
 
-<a name="extension_error"></a>
-#### Multiple extensions with the same name
+#### Multiple extensions with the same name {#extension_error}
 
 This alarm is raised when the Apama-ctrl microservice tries to activate the deployed extensions during its startup process and there are multiple extensions with the same name.
 
@@ -292,7 +291,7 @@ This disables all extensions that were deployed to Apama-ctrl. In order to use t
 In case of multiple duplicates, this alarm is only listed once.
 {{< /c8y-admon-info >}}
 
-<a name="smartrule_configuration_error"></a>
+
 #### Smart rule configuration failed
 
 This alarm is raised if a smart rule contains an invalid configuration.
@@ -305,7 +304,6 @@ To diagnose the cause, download the diagnostics overview ZIP file as described i
 
 The Apama microservice log contains more details on the reason for the smart rule configuration failure. For example, it is invalid to configure an "On measurement threshold create alarm" smart rule with a data point that does not exist.
 
-<a name="smartrule_restore_failed"></a>
 #### Smart rule restore failed
 
 This alarm is raised if a corrupt smart rule is present in the inventory and the correlator therefore fails to recover it correctly during startup.
@@ -316,7 +314,6 @@ This alarm is raised if a corrupt smart rule is present in the inventory and the
 
 To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules may need to be deleted or corrected.
 
-<a name="lost_correlator_connection"></a>
 #### Connection to correlator lost
 
 This alarm is raised in certain cases when the connection between the Apama-ctrl microservice and the correlator is lost. This should not happen, but can be triggered by high load situations.
@@ -328,7 +325,6 @@ This alarm is raised in certain cases when the connection between the Apama-ctrl
 Apama-ctrl will automatically restart. Report this to [product support](/additional-resources/contacting-support/) if this is happening frequently.
 
 
-<a name="performance_alarms"></a>
 #### Performance alarms
 
 Input or output queues that are filling up are a symptom of a serious performance degradation,
@@ -395,7 +391,6 @@ To diagnose the cause, you can try the following. It may be that the Apama-ctrl 
 - Else, the cause may be some issue with connectivity or in {{< product-c8y-iot >}} Core.
 
 
-<a name="parent_tenant_not_subscribed"></a>
 #### Parent tenant not subscribed
 
 This alarm is raised for a subtenant that was subscribed before the parent tenant was subscribed.

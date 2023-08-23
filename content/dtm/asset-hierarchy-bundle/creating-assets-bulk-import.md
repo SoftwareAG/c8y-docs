@@ -8,7 +8,6 @@ To import the entire asset hierarchy with all assets at once, use the bulk impor
 For each [asset model](/dtm/asset-types/#asset-models), a CSV template is provided.
 Fill in the required details in this template and upload the file to create the assets in bulk for the selected asset model.
 
-<a name=""></a>
 ### To use the bulk import feature
 
 To use the Bulk import feature, you must enable the **Digital Twin** permission for the user's role, following these steps:
@@ -38,7 +37,6 @@ If the permissions are not assigned, the CSV template will not be downloaded cor
 {{< /c8y-admon-info>}}
 
 
-<a name=""></a>
 ### To download a CSV template for bulk import
 
 Follow the steps below:
@@ -60,8 +58,6 @@ Follow the steps below:
 
 5. Click **Download Template** to download the CSV template.
 
-
-<a name="csv-template-parameters"></a>
 ### CSV template parameters
 
 The CSV template has the following fields:
@@ -117,7 +113,7 @@ Note that you can use a list of semi-colon separated Device IDs or External IDs 
 <tr>
 <td style="text-align:left"><b>Asset properties for the asset model</b></td>
 <td style="text-align:left">6th column onwards (in the CSV template), all the asset properties for the root asset models and all its subsequent child asset models are listed.<br/><br/>
-Note that the <a href="/dtm/asset-types/#custom-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br/>
+Note that the <a href="/dtm/asset-types/#asset-property-types" class="no-ajaxy">Asset property type</a> is also mentioned as a label, for better understanding.<br/>
 </td>
 <td style="text-align:left">Mandatory (If the property is set as required in the asset model. For details, see <a href="/dtm/asset-types/#to-add-an-asset-property-to-an-asset-model">To add an asset property to an asset model</a>).</td>
 </tr>
@@ -156,7 +152,6 @@ Save the CSV template in your system.
 It is recommended to import a maximum of 5000 assets at a time for a better user experience.
 {{< /c8y-admon-info>}}
 
-<a name=""></a>
 ### To upload a CSV template
 
 To upload the CSV template follow the steps below:
@@ -178,8 +173,6 @@ No assets are created.
 
 If the bulk import fails, review the reported issues and try again.
 
-
-<a name=""></a>
 ### Partial import
 
 If the asset hierarchy already exists, and you want to import more assets, it can be achieved by a partial import.

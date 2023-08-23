@@ -36,7 +36,7 @@ helpcontent:
 There are two types of availability for applications:
 
 - [Subscribed](#subscribed-applications) - applications subscribed to the tenant, either provided by the platform (as default applications) or by a service provider.
-- Custom - applications owned by the tenant. You can [add custom applications](#adding-applications) in various ways as own applications.
+- [Custom](#custom-applications) - applications owned by the tenant. You can [add custom applications](#custom-applications) in various ways as own applications.
 
 Your applications are available through the application switcher in the top bar.
 
@@ -52,7 +52,7 @@ In the **Applications** tab, you can see all applications available in your tena
 
 Applications can be filtered by name or by availability.
 
-<a name="editing-and-removing"></a>
+
 ### To edit an application
 
 Click the application or click the menu icon at the right of an entry and then click **Edit**.

@@ -26,7 +26,7 @@ At the top you find the following items:
 <tbody>
 <tr>
 <td style="text-align:left">User settings</td>
-<td style="text-align:left">Provides access to the user settings, see <a href="#change-user-settings" class="no-ajaxy">To change user settings</a> for more details. </td>
+<td style="text-align:left">Provides access to the user settings, see <a href="#to-change-user-settings" class="no-ajaxy">To change user settings</a> for more details. </td>
 </tr>
 <tr>
 <td style="text-align:left">Access denied requests</td>
@@ -44,7 +44,7 @@ Note that this option is only available if support user access is not set global
 </tbody>
 </table>
 
-In the **UI settings** section change the language of the UI, see [To change the language of the UI](/getting-started/user-settings/#to-change-the-language-of-the-UI).
+In the **UI settings** section change the language of the UI, see [To change the language of the UI](#to-change-the-language-of-the-UI).
 
 In the **Platform info** section, you find information on the infrastructure of your platform:
 
@@ -58,7 +58,6 @@ The **Bookmarks** section provides links to the most common pages and processes 
 In the **Support** section, the request support item redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a> while the **Documentation** section provides links to the most relevant guides.
 
 
-<a name="change-user-settings"></a>
 ### To change user settings
 
 Several account settings can be changed by the user.

@@ -59,7 +59,7 @@ The above URL is only valid for {{< product-c8y-iot >}} {{< standard-tenant >}} 
 Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the {{< product-c8y-iot >}} platform.
 {{< /c8y-admon-important >}}
 
-<a name="login"></a>
+
 ### To log into the platform
 
 On the Login screen, enter your username (case-sensitive) and password.
@@ -97,7 +97,7 @@ To explicitly logout, click the **User** button at the right of the top bar, the
 The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level. The default value is 100.
 {{< /c8y-admon-info >}}
 
-<a name="reset-password"></a>
+
 ### To reset your password
 
 1. Click the **Forgot password?** link on the Login screen.
@@ -112,7 +112,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/additional-resources/contacting-support/).
 
-<a name="URLs"></a>
+
 ### To access pages using URLs
 
 You can navigate straight to any place inside a {{< product-c8y-iot >}} application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:

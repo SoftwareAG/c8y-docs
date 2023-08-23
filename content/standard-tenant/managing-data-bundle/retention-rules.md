@@ -34,7 +34,7 @@ The above permissions can be used to create roles for robust user management. Ev
 Retention rules are usually run once per calendar day.  When you edit a retention rule you don´t see an immediate effect in the **Usage** section on the Home screen of the Administration application.
 {{< /c8y-admon-info >}}
 
-<a name="view-retention-rule"></a>
+
 ### To view retention rules
 
 Click **Retention rules** in the **Management** menu to view a list of retention rules configured for your account.
@@ -59,7 +59,7 @@ The following data types are covered under retention rules:
 Retention rules do not apply to files stored in the files repository.
 {{< /c8y-admon-info >}}
 
-<a name="add-retention-rule"></a>
+
 ### To add a retention rule
 
 1. Click **Add rule** in the top menu bar.

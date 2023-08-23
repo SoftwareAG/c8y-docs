@@ -4,7 +4,7 @@ title: Alarms
 layout: redirect
 ---
 
-### What raises the "implausible calculation" alarm?
+### What raises the "implausible calculation" alarm? {#what-raises-the-implausible-calculation-alarm}
 
 The "implausible calculation" alarm can be caused by many reasons. The most common one is a partly inconsistent mapping.
 

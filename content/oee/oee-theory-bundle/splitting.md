@@ -6,7 +6,7 @@ layout: redirect
 
 The term "Splitting" describes the allocation of machine data to the OEE input parameters. This sections shows examples which explain the methodology used.
 
-### Input variable calculation - Example 1
+### Input variable calculation - Example 1 {#input-variable-calculation--example-1}
 
 It is crucial for the OEE application to correctly allocate the input data to the corresponding intervals of the Possible Production Time or resolution time. This allocation is explained below using an example with reference to the data in the Machine dashboard. Within three intervals of the Possible Production Time, the machine sends four measured values (shown in blue), which indicate the number of products since the last measured value, that is, the actual production quantity.
 
@@ -14,13 +14,13 @@ The first measured value is 20 pieces. The previous measured value was 16 second
 
 ![Splitting example 1](/images/oee/theory/theory-splitting-example-1.png)
 
-### Input variable calculation - Example 2
+### Input variable calculation - Example 2 {#input-variable-calculation--example-2}
 
 If no measurement is received within an interval the next measurement will be calculated proportionally. The Actual Production Amount for the second interval will therefore be 35 pieces even if there was no measurement received.
 
 ![Splitting example 2](/images/oee/theory/theory-splitting-example-2.png)
 
-### Input variable calculation - Example 3
+### Input variable calculation - Example 3 {#input-variable-calculation--example-3}
 
 The calculation of the quality looks more complex, since the quality data does not necessarily come to the same point as the corresponding measured value. Quality data or quality data derived from measurements can occur irregularly.
 

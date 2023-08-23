@@ -6,7 +6,7 @@ layout: redirect
 
 In the Matching section of a profile configuration, you define rules to determine which machine data is used for the OEE input variables.
 
-### Overview
+### Overview {#overview}
 
 The following image provides an overview on the matching capabilities.
 
@@ -14,7 +14,7 @@ The following image provides an overview on the matching capabilities.
 
 You can either define a single calculation rule or use categories to define at least two separate calculation rules for an input variable. The categories must be created under **Calculation categories** first, see [Calculation categories](/oee/oee-administration/#calculation-categories). Using categories to define multiple calculation rules can for example be used to define different rules for different kinds of losses (planned vs. unplanned) or to distinguish multiple sources of amounts. The different categories are calculated individually and then aggregated to the final input variable. In the chart of the **Machine Dashboard** it is possible to not only show the aggregated input variable but also the graphs for the individual categories.
 
-#### Calculation rules
+#### Calculation rules {#calculation-rules}
 
 Calculation rules can be defined as
 
@@ -23,7 +23,7 @@ Calculation rules can be defined as
 * Machine status events ("Define quality status event" or "Define machine status event" is activated): The result machine status events is a Boolean. Here you can specify, for example, that all parts of the Actual Production Amount are counted towards the Actual Quality Amount while the machine has sent the status "Quality OK". In contrast to the other calculated values, which have a retroactive effect, this will count for upcoming measurements, events. Machine status is possible for the input variables: Actual Production Time, Availability Losses, Actual Quality Amount and Quality Losses. See the example mappings below.
 
 
-#### Calculation reset
+#### Calculation reset {#calculation-reset}
 
 You can keep input values valid as long as a new value arrives, that replaces the old one, (*false*) or you can delete the value after using it *once* and stop the calculation until a new value arrives, which replaces the old one (*true*).
 
@@ -33,7 +33,7 @@ measurement(564135,Drill machine 500,ActCycle,ActCycle,*false*)
 
 If the value is *false*, the calculation can be continued with an old value for the Quality, whereas if the value is *true*, the calculation is performed only once, if the Quality value was the last missing part for the calculation.
 
-#### Providing fixed values for inputs & KPIs
+#### Providing fixed values for inputs & KPIs {#providing-fixed-values-for-inputs--kpis}
 
 If you want to have fixed KPIs or inputs follow these instructions:
 
@@ -52,7 +52,7 @@ If you want to have fixed KPIs or inputs follow these instructions:
 
 ![Matching](/images/oee/administration/matching-general.png)
 
-### Conditional splitting
+### Conditional splitting {#conditional-splitting}
 
 The Actual Production Amount can be determined, among other methods, with an IF-THEN rule.
 
@@ -72,19 +72,19 @@ Of course, all three input parameters can also be derived directly from MEAs, or
 
 ![Mapping view for splitting](/images/oee/administration/mapping-view-for-splitting-3.png)
 
-### Measurements
+### Measurements {#measurements}
 
 The following image provides an overview on the matching capabilities for measurements.
 
 ![Measurement](/images/oee/administration/matching-measurements.png)
 
-### Events & alarms
+### Events & alarms {#events--alarms}
 
 The following image provides an overview on the matching capabilities for events and alarms.
 
 ![Events & alarms](/images/oee/administration/matching-events-alarms.png)
 
-### Events with path
+### Events with path {#events-with-path}
 
 There is no limit on the number of event types, but for each type there is a limit (150) to the number of unique paths that are stored.
 
@@ -94,7 +94,7 @@ Is it also possible to manually address events with path through the text editor
 
 <!-- This feature won’t be available in this version but it will be added back at a later date.
 
-### Correlation
+### Correlation {#correlation}
 
 It is possible to define correlations for the matching parameters.
 
@@ -121,9 +121,9 @@ You must define an identifier which can either be a transformation or a machine 
 
 -->
 
-### Example matching
+### Example matching {#example-matching}
 
-#### Machine status events for the Actual Quality Amount
+#### Machine status events for the Actual Quality Amount {#machine-status-events-for-the-actual-quality-amount}
 
 This is an example of the case "Define quality status event" for the Actual Quality Amount:
 
@@ -131,7 +131,7 @@ If the measurement “torque” is below 100, the condition evaluates to “true
 
 ![Example matching](/images/oee/administration/example-matching.png)
 
-####  Using IF-THEN in a machine status
+####  Using IF-THEN in a machine status {#-using-ifthen-in-a-machine-status}
 
 Assume for example, that there is an event that is telling what is being produced (=flowing through a pipe) and besides that there is a measurement that represents the pressure on a sensor. The threshold pressure signalling that the machine is producing or that the quality is OK might be dependent on the product that is being produced. This can be captured by this:
 ```

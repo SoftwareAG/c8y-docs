@@ -20,7 +20,7 @@ See [Managing microservices](/standard-tenant/ecosystem/#managing-microservices)
 * Adding microservices to a tenant
 * Checking the status, permissions, and log files of a microservice
 
-See [Tenant management](/enterprise-tenant/tenant-management) for details on subscribing applications or microservices to a tenant or subtenant.
+See [Managing tenants](/enterprise-tenant/managing-tenants/) for details on subscribing applications or microservices to a tenant or subtenant.
 
 For the offloading of {{< product-c8y-iot >}} data, you need the connection settings and credentials for a cloud data lake service. During offloading, the data will be written into a data lake folder named after the tenant name.
 

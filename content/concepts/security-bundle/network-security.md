@@ -15,7 +15,7 @@ This communication architecture is illustrated below. Inside the sensor networks
 
 As mentioned above, {{< product-c8y-iot >}} does not require any device that might expose ports or services on the internet. This is an important feature: it not only simplifies the connection of devices to {{< product-c8y-iot >}}, but also simplifies the safety backup of these devices drastically. When deploying an IoT solution, check other services that might make a device available on the internet or expose it, such as web-based device managers or SMS-based configuration options.
 
-### Unencrypted communications
+### Unencrypted communications {#unencrypted-communications}
 
 The {{< product-c8y-iot >}} platform allows old or low-power devices to connect to it over unencrypted protocols like HTTP since such devices are not capable of doing encryption or only provide weak encryption methods (for example TLSv1.0). Using old devices and unencrypted communications is discretionary and considering the risk that such communications are prone to attacks. For instance, an attacker suitably positioned to view a legitimate device's network traffic could record and monitor their interactions with the platform and obtain any information the device supplies. Note that using a mixture of encrypted and unencrypted communications is an ineffective defense against active attackers, because they can easily remove references to encrypted resources when these references are transmitted over an unencrypted connection.
 

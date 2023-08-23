@@ -19,7 +19,7 @@ The {{< product-c8y-iot >}} UI itself is built around a framework based on Angul
 When designing a web application, data properties retrieved or persisted using the API don't have a limitation on the number of characters. Yet we recommend you to use no more than 1000 characters for persisted properties. From the perspective of validation constraints, stored objects are limited by the size of the JSON document, see [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model/#fragments).
 {{< /c8y-admon-info >}}
 
-### Deploying web applications
+### Deploying web applications {#deploying-web-applications}
 
 For an application to be available it must be deployed on the {{< product-c8y-iot >}} platform.
 
@@ -29,7 +29,7 @@ For details on how to deploy an application to {{< product-c8y-iot >}}, refer to
 In case of a web application, the application is active for you as owner without subscribing to it.
 {{< /c8y-admon-info >}}
 
-### Web application hosting
+### Web application hosting {#web-application-hosting}
 
 You can host your own HTML5 and JavaScript web applications through {{< product-c8y-iot >}} by using the application manager under **Ecosystem** > **Applications** in the {{< product-c8y-iot >}} Administration application.
 

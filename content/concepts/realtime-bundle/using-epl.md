@@ -4,7 +4,7 @@ layout: bundle
 weight: 30
 ---
 
-### Overview
+### Overview {#overview}
 
 The Apama Event Processing Language has a syntax similar to Java. In addition to simple flow control statements such as `if`, `while`, `for`, users can write listeners with the `on` keyword to react to events.
 
@@ -71,7 +71,7 @@ Listeners such as the above should be placed in a monitor in the `onload` statem
 		}
 	}
 
-### How can I create derived data from EPL?
+### How can I create derived data from EPL? {#how-can-i-create-derived-data-from-epl}
 
 To create a new alarm or operation, create an instance of the relevant event type and use the `send` statement to send it to the relevant channel (defined with a constant on the event type). Assume that an alarm should be generated immediately if the temperature of a sensor exceeds a defined value. This is done with the following statement:
 
@@ -83,7 +83,7 @@ To create a new alarm or operation, create an instance of the relevant event typ
 
 Technically, this statement produces a new alarm event each time a temperature sensor reads more than 100 degrees Celsius and sends it to {{< product-c8y-iot >}}.
 
-### How can I control devices from EPL?
+### How can I control devices from EPL? {#how-can-i-control-devices-from-epl}
 
 Remote control with EPL is done by sending an operation event. Remote operations are targeted to a specific device. The following example illustrates switching a relay based on temperature readings:
 
@@ -98,7 +98,7 @@ Remote control with EPL is done by sending an operation event. Remote operations
 
 * The *params* field (the last field) defines the nested content of the operation. In this example we create a `c8y_Relay` operation and set the `relayState` to CLOSED. Note that the top-level fields must be `dictionary<string, any>`, thus the use of the `<any>` cast operation.
 
-### How can I query data from EPL?
+### How can I query data from EPL? {#how-can-i-query-data-from-epl}
 
 It may be required to query information from the {{< product-c8y-iot >}} database as part of the ongoing event processing. This is supported by sending events and using listeners to wait for responses. Here is an example that shows how to summarize total sales for vending machines every hour. The sales report data created after a purchase is retrieved from the {{< product-c8y-iot >}} database.
 

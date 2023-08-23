@@ -19,7 +19,7 @@ Extensions make it easier to share and reuse UI features across different applic
 
 Blueprint applications must be deployed, while plugins are added to other applications. This allows you to scaffold entire solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime without rebuilding.
 
-### Plugins
+### Plugins {#plugins}
 
 Switch to the **Plugins** tab of an application to view all plugins installed on an application.
 
@@ -29,7 +29,7 @@ In the **Plugins** tab you can add and remove plugins. Additionally, you can ins
 
 
 
-### Packages
+### Packages {#packages}
 
 Packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
 

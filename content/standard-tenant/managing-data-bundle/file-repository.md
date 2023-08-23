@@ -37,17 +37,17 @@ You can use filters or search input to look for particular files, see [Search an
 
 <img src="/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
-### To upload a file from your file system
+### To upload a file from your file system {#to-upload-a-file-from-your-file-system}
 
 Click **Upload files** in the top menu bar. In the resulting dialog box, select the files to be uploaded by browsing your file system or dropping the files. You can review the selected files in the displayed list and confirm the upload by clicking **Upload**.
 
 
-### To download a file from your account
+### To download a file from your account {#to-download-a-file-from-your-account}
 
 Click the menu icon at the right of the respective row and then click **Download**.
 
 
-### To delete a file from your account
+### To delete a file from your account {#to-delete-a-file-from-your-account}
 
 Hover over the row with file entry and click the <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> to remove the file.
 You can also select multiple files for deletion, by ticking checkbox next to each file or select all currently displayed ones. Within appeared table header you can see the number of files selected and actions that can be performed on those files. Click **Delete** and confirm the removal within confirmation dialog displayed.

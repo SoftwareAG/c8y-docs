@@ -1,5 +1,5 @@
 ---
-title: Data broker
+title: Data broker application
 layout: bundle
 weight: 20
 section:

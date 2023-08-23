@@ -33,12 +33,12 @@ The microservice-based data broker must be enabled from the {{< management-tenan
 
 ###  Data connectors
 
-See [Data connectors](/data-broker/data-broker/#data-connectors) for details on how to manage data connectors.
+See [Data connectors](/data-broker/data-broker-application/#data-connectors) for details on how to manage data connectors.
 
 
 ###  Data subscriptions
 
-See [Data subscriptions](/data-broker/data-broker/#data-subscriptions) for details on how to manage data subscriptions.
+See [Data subscriptions](/data-broker/data-broker-application/#data-subscriptions) for details on how to manage data subscriptions.
 
 
 ###  Migrating existing data connectors to the microservice-based data broker

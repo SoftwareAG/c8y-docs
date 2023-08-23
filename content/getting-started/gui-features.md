@@ -181,7 +181,7 @@ On certain pages, the filter mechanism only searches through items shown on a pa
 
 For details on the filtering mechanism in the devices list refer to [To filter devices](/device-management-application/viewing-all-devices/#to-filter-devices).
 
-### Real-time behavior of the navigator {#realtime-behavior-of-the-navigator}
+### Real-time behavior of the navigator {#real-time-behavior-of-the-navigator}
 
 In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups will not be updated immediately.
 

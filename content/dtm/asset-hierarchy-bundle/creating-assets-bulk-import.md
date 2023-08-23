@@ -12,7 +12,7 @@ Fill in the required details in this template and upload the file to create the 
 
 To use the Bulk import feature, you must enable the **Digital Twin** permission for the user's role, following these steps:
 
-1. Navigate to the [Administration application](/standard-tenant/home-screen/) via the application switcher in the top right corner.
+1. Navigate to the [Administration application](/standard-tenant/) via the application switcher in the top right corner.
 
 2. Under **Quick links** click **Roles**.
 

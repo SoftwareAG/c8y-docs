@@ -55,7 +55,7 @@ The following table provides an overview on the currently supported applications
 </tr>
 <tr>
 <td>administration</td>
-<td>The <a href="/standard-tenant/home-screen/">Administration</a> default application. Use this to extend the existing Administration application.</td>
+<td>The <a href="/standard-tenant/">Administration</a> default application. Use this to extend the existing Administration application.</td>
 </tr>
 </tbody>
 </table>

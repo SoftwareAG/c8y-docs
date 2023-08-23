@@ -33,7 +33,7 @@ Below all applications are listed which are by default available in the {{< stan
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/standard-tenant/home-screen/" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/standard-tenant/" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web application</td>

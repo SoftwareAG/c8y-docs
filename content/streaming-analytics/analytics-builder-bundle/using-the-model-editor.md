@@ -16,7 +16,7 @@ The model editor is also invoked when you view a sample. In this case, the model
 
 The palette on the left contains the blocks that you can add to your model. It has several expandable/collapsible categories for the different types of blocks.
 
-The canvas in the middle is the area in which you "draw" your model. You drag the blocks from the palette onto the canvas, specify the parameters for the blocks, and wire the blocks together. The content of the canvas is aligned to a grid \(see also [Showing and hiding the grid](/streaming-analytics/analytics-builder/#showing-and-hiding-the-grid)\).
+The canvas in the middle is the area in which you "draw" your model. You drag the blocks from the palette onto the canvas, specify the parameters for the blocks, and wire the blocks together. The content of the canvas is aligned to a grid, see also [Showing and hiding the grid](/streaming-analytics/analytics-builder/#showing-and-hiding-the-grid).
 
 The overview area at bottom right of the canvas shows the entire model. This is helpful if your model is too large to fit on the currently visible area of the canvas. See also [Navigating large models](/streaming-analytics/analytics-builder/#navigating-large-models).
 
@@ -54,7 +54,7 @@ For detailed background information, including restrictions, see [Wires and bloc
 
 You can rename each model that you are currently editing in the model editor, and you can also change the description of each model.
 
-You can also add or remove tags. Tags are helpful in the model manager, to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\).
+You can also add or remove tags. Tags are helpful in the model manager, to show only the models for which a specific tag has been defined, see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples).
 
 ##### To change the name, description, and tags of a model
 

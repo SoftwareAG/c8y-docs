@@ -132,7 +132,7 @@ A card for the newly added model is shown on the **Models** tab of the model man
 
 #### Step 9: Go to the Device management and view the measurements
 
-To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management](/device-management-application/) for detailed information.
+To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management application](/device-management-application/) for detailed information.
 
 1.  Go to the Device management application.
 
@@ -244,7 +244,7 @@ For our example case with the gyroscope measurements from a smartphone, it shoul
 #### Step 6: Go to the Device management application and view the alarms
 
 To view the alarms that are sent from your active instance, you have to switch to the Device management application.
-See [Device management](/device-management-application/) for detailed information.
+See [Device management application](/device-management-application/) for detailed information.
 
 1.  Go to the Device management application.
 

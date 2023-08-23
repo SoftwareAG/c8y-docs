@@ -1,6 +1,6 @@
 ---
 title: User & developer documentation
-bundle: about-doc
+bundle: user-documentation
 icon: "c8y-icon c8y-icon-notification"
 type: root
 layout: redirect

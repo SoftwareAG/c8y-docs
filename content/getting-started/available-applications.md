@@ -10,7 +10,7 @@ section:
 
 Apart from the applications that initially come with {{< product-c8y-iot >}}, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the tenant you are using and the applications your organization is subscribed to.
 
-On top of this, the {{< product-c8y-iot >}} platform provides broad functionality to add your own applications to be used in your {{< product-c8y-iot >}} account, see [Adding custom applications](/standard-tenant/ecosystem/#adding-applications) for details.
+On top of this, the {{< product-c8y-iot >}} platform provides broad functionality to add your own applications to be used in your {{< product-c8y-iot >}} account, see [Custom applications](/standard-tenant/ecosystem/#custom-applications) for details.
 
 The content of the {{< product-c8y-iot >}} platform therefore is entirely dynamic and is generated based on various criteria:
 

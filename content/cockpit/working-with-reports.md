@@ -25,11 +25,8 @@ ROLES & PERMISSIONS:
 - To edit a report: ADMIN permission for permission type "Inventory"
 - To add a new report: CREATE permission for permission type "Inventory"
 - To delete a report: ADMIN permission for permission type "Inventory"
-
 {{< /c8y-admon-req >}}
 
-
-<a name=""></a>
 ### To show all reports
 
 To show all reports, click **Reports** in the navigator.
@@ -44,9 +41,8 @@ Use the toggle in the **Show in navigator** column, if you want to show the repo
 
 ![Report in navigator](/images/users-guide/cockpit/cockpit-reports-navigator.png)
 
-See [To create a report](#create-report) below for details on how to configure the position in the navigator.
+See [To create a report](#to-create-a-report) below for details on how to configure the position in the navigator.
 
-<a name="create-report"></a>
 ### To create a report
 
 1. Click **Add report** in the top menu bar to open the **Add report** dialog.
@@ -71,7 +67,7 @@ Click on a report name in the report list to open its details.
 
 To edit the report, click **Edit** in the top menu bar.
 
-The report editor will open up. For details on the fields, refer to [To create a report](#create-report).
+The report editor will open up. For details on the fields, refer to [To create a report](#to-create-a-report).
 
 
 ### To delete a report

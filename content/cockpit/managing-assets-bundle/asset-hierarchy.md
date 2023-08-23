@@ -40,8 +40,6 @@ Single devices are not managed in the Cockpit application. They are managed in t
 - [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-jest-based-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
-
-<a name="hierarchies"></a>
 ### Asset hierarchy versus device hierarchy
 
 {{< product-c8y-iot >}} supports two types of hierarchies: a device hierarchy and an

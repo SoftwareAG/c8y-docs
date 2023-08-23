@@ -14,7 +14,7 @@ helpcontent:
 A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.
 
 
-### To view data connectors
+### To view data connectors {#to-view-data-connectors}
 
 Click **Data connectors** in the navigator to see a list of all currently defined data connectors with their status.
 
@@ -34,7 +34,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 If the source tenant has been suspended all its data broker connectors will be suspended as well.
 {{< /c8y-admon-info >}}
 
-### To add a data connector
+### To add a data connector {#to-add-a-data-connector}
 
 1. Click **Add data connector** in the top menu bar.
 2. In the **Settings** tab, provide the following information to create a new data connector:
@@ -117,7 +117,7 @@ The heading of a data filter summarizes the configuration in one line. The stand
 
 After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You must communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
-### To edit a data connector
+### To edit a data connector {#to-edit-a-data-connector}
 
 Click the connector title, or click the menu icon at the right of a data connector entry and then click **Edit**.
 
@@ -125,11 +125,11 @@ In the **Settings** tab, edit the data connector configuration.
 
 See [To add a data connector](#to-add-a-data-connector) for details on the settings.
 
-### To duplicate a data connector
+### To duplicate a data connector {#to-duplicate-a-data-connector}
 
 Click the menu icon at the right of a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
 
-### To delete a data connector
+### To delete a data connector {#to-delete-a-data-connector}
 
 Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
@@ -137,7 +137,7 @@ Click the menu icon at the right of a data connector entry and then click **Dele
 A data connector can also be deleted from the **Settings** tab of a connector configuration.
 {{< /c8y-admon-info >}}
 
-### To view alarms for a data connector
+### To view alarms for a data connector {#to-view-alarms-for-a-data-connector}
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 

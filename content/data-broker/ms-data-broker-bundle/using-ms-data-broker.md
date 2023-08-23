@@ -26,21 +26,21 @@ In summary, to work with the microservice-based data broker, the following requi
 {{< /c8y-admon-req >}}
 
 
-### To enable the microservice-based data broker
+### To enable the microservice-based data broker {#to-enable-the-microservicebased-data-broker}
 
 The microservice-based data broker must be enabled from the {{< management-tenant >}}. Contact your Operations team for further support.
 
 
-###  Data connectors
+###  Data connectors {#-data-connectors}
 
 See [Data connectors](/data-broker/data-broker-application/#data-connectors) for details on how to manage data connectors.
 
 
-###  Data subscriptions
+###  Data subscriptions {#-data-subscriptions}
 
 See [Data subscriptions](/data-broker/data-broker-application/#data-subscriptions) for details on how to manage data subscriptions.
 
 
-###  Migrating existing data connectors to the microservice-based data broker
+###  Migrating existing data connectors to the microservice-based data broker {#-migrating-existing-data-connectors-to-the-microservicebased-data-broker}
 
 After enabling the microservice-based data broker, your existing data connectors should continue to work without any additional configuration.

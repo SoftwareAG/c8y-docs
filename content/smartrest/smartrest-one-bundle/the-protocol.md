@@ -34,7 +34,7 @@ If the response from {{< product-c8y-iot >}} REST API was empty (for example lik
 Inventory access via SmartREST is limited to inventory objects which are global or for which the client is the owner. Role assignments are not evaluated.
 {{< /c8y-admon-info >}}
 
-### Data format
+### Data format {#data-format}
 
 The CSV (comma-separated values) format is used for communication with the SmartREST endpoint. The following rules must be followed to ensure a frictionless communication.
 
@@ -56,7 +56,7 @@ The following examples illustrate the rules stated above:
 	104,"I have ""quotes""!"
 	105,I also have 'quotes'!
 
-### Processing mode
+### Processing mode {#processing-mode}
 
 Similar to [{{< product-c8y-iot >}} REST implementation](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#section/REST-implementation) every communication in SmartREST which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, PERSISTENT, TRANSIENT, QUIESCENT or CEP.
 

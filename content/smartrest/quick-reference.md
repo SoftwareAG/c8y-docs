@@ -6,14 +6,14 @@ section:
 weight: 70
 ---
 
-### Quick reference
+### Quick reference {#quick-reference}
 
-#### Connection
+#### Connection {#connection}
 
 * <kbd>CONNECT d:1234:myDevice_10 acme/device_1234</kbd> \
   Connect the device with serial "1234" and default template myDevice_10 to tenant "acme" and user "device_1234".
 
-#### Topics
+#### Topics {#topics}
 
 Publish
 
@@ -31,7 +31,7 @@ Subscribe
 * <kbd>SUBSCRIBE s/dc/myCommon_10</kbd> - Receive commands using the myCommon_10 template.
 * <kbd>SUBSCRIBE s/e</kbd> - Receive error messages.
 
-#### Topic format
+#### Topic format {#topic-format}
 
 `<protocol>/<direction><type>[/<template>][/<child_id>]`
 
@@ -41,7 +41,7 @@ where:
 * `<direction>` can be <kbd>u</kbd> (upstream from the device), <kbd>d</kbd> (downstream to the device) or <kbd>e</kbd> (error).
 * `<type>` can be <kbd>s</kbd> (static), <kbd>c</kbd> (custom, device-defined), <kbd>d</kbd> (default), <kbd>t</kbd> (template) or <kbd>cr</kbd> (credentials).
 
-#### Device registration
+#### Device registration {#device-registration}
 
 * <kbd>CONNECT 1234 management/devicebootstrap</kbd>
 * <kbd>SUBSCRIBE s/dcr</kbd>
@@ -50,12 +50,12 @@ where:
 * <kbd>...</kbd>
 * <kbd>70,tenant,username,password<kbd>
 
-#### Template registration
+#### Template registration {#template-registration}
 
 * <kbd>PUBLISH s/ut/myCommon_10</kbd>
 * <kbd>10,999,POST,MEASUREMENT,,c8y_MyMeasurement;;c8y_MyMeasurement.M.value,NUMBER,...</kbd>
   10,msgId,api,method,response,type,time,custom1.path,custom1,type,custom1.value
 
-#### Templates
+#### Templates {#templates}
 
 See the [templates quick reference](/smartrest/mqtt-static-templates) for an overview of the available MQTT static templates.

@@ -48,11 +48,11 @@ If the template registration is successful, a response like below will be return
 
 	20,12345
 
-### Syntax
+### Syntax {#syntax}
 
 Each request and response template is contained within one row of the template data. Request templates are indicated by the message identifier `10` and response templates by the identifier `11`. Should one of those message identifiers occour in a SmartREST request, the entire request is treated as a template. Thus any other message identifier besides `10` and `11` will yield an error.
 
-#### Request templates
+#### Request templates {#request-templates}
 
 Request templates have the following syntax:
 
@@ -92,7 +92,7 @@ The example requests are also included in our Postman collection.
 See [Using Postman](/microservice-sdk/rest/#using-postman) to learn how to import the collection into Postman.
 In the Postman collection, the set of requests is located in **SmartREST > Register Request Templates**.
 
-##### Example
+##### Example {#example}
 
 Create a device:
 
@@ -113,7 +113,7 @@ Update operation to EXECUTING:
 
 	10,101,PUT,/devicecontrol/operations/%%, application/vnd.com.nsn.cumulocity.operation+json, application/vnd.com.nsn.cumulocity.operation+json,%%,INTEGER,"{""status"":""EXECUTING""}"
 
-#### Response templates
+#### Response templates {#response-templates}
 
 Response templates have the following syntax:
 
@@ -126,7 +126,7 @@ Where:
 * `<COND>` is a conditional JSON path which gets checked for existance. Only if the path exists, values are extracted.
 * `<VALUE>` is a JSON path pointing to a value to extract within the base object or object in the base object list. An unlimited number of `<VALUE>`s can be specified.
 
-##### Example
+##### Example {#example}
 
 	11,201,,"$.c8y_IsDevice","$.id"
 

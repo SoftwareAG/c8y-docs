@@ -23,7 +23,7 @@ For these environments, {{< product-c8y-iot >}} offers the so-called SmartREST p
 
 In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST.
 
-### How does SmartREST work?
+### How does SmartREST work? {#how-does-smartrest-work}
 
 The image below illustrates how SmartREST works. Devices and other clients connect to a dedicated SmartREST endpoint on {{< product-c8y-iot >}} and send their data in rows of comma-separated values. These rows are expanded by {{< product-c8y-iot >}}'s SmartREST proxy into standard {{< product-c8y-iot >}} REST API requests. In the same way, responses from {{< product-c8y-iot >}} are compressed by the proxy from their original JSON format into comma-separated values before sending them back to the device.
 
@@ -46,7 +46,7 @@ The example also roughly illustrates the translation process. In "Template 1", `
 * `20.5` refers to the second free placeholder in the template, here the value of the temperature measurement.
 
 
-### The basic SmartREST protocol
+### The basic SmartREST protocol {#the-basic-smartrest-protocol}
 
 The basic structure of all SmartREST requests is as follows:
 
@@ -79,7 +79,7 @@ Transfer-Encoding: chunked
 To match the requests and responses, a response line contains – next to the error code – the line of the request that the response answers. In this example, `20` indicates "OK" and `0` refers to the first line of the request.
 
 
-### How are templates registered?
+### How are templates registered? {#how-are-templates-registered}
 
 As described above, a client using SmartREST will first ask if its SmartREST templates are already known to the server. This is done with an empty SmartREST request:
 
@@ -117,7 +117,7 @@ X-Id: Device_1.0
 
 In this example, `10` refers to a request template (whereas "11" would refer to a response template). The template is number `1`, so SmartREST requests using this template have a "1" in their first column. The template refers to a `POST` request to the endpoint <kbd>/measurement/measurements</kbd> with a content type of `application/vnd.com.nsn.cumulocity.measurement+json`. The placeholder used in the template is `%%`. The placeholders are a time stamp (`NOW`), an unsigned number and a general number. Finally, the last column contains the body of the template to be filled in a POST request.
 
-### How are responses handled?
+### How are responses handled? {#how-are-responses-handled}
 
 The above example illustrated the handling of requests and request templates. For responses, [JSONPath](http://goessner.net/articles/JsonPath/) expressions translate {{< product-c8y-iot >}} REST responses into CSV. Assume, for example, that a device has a display and can show a message on it. An operation to update the message would look like:
 

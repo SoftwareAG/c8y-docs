@@ -6,7 +6,7 @@ layout: redirect
 
 SmartREST has a variety of built-in messages.
 
-### Request messages
+### Request messages {#request-messages}
 
 <table>
 <colgroup>
@@ -70,7 +70,7 @@ SmartREST has a variety of built-in messages.
 </tbody>
 </table>
 
-### Response messages
+### Response messages {#response-messages}
 
 <table>
 <colgroup>
@@ -139,7 +139,7 @@ SmartREST has a variety of built-in messages.
 </tbody>
 </table>
 
-#### Error messages
+#### Error messages {#error-messages}
 
 Message identifier | Error message
 -------------------|-------------------------

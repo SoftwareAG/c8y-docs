@@ -10,7 +10,7 @@ Unit testing is an essential part of every development process.
 Since version 10.13.0.0, all new `c8ycli` scaffolded applications include the unit test framework [Jest](https://jestjs.io/) by default.
 This tutorial shows you how to write and verify your first unit test.
 
-### 1. Initialize the example application
+### 1. Initialize the example application {#1-initialize-the-example-application}
 
 You need an application, for example, the empty default application:
 
@@ -29,7 +29,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
  - `c8ycli new my-app application -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
-### 2. Add a component
+### 2. Add a component {#2-add-a-component}
 
 To test something, you first need a component that you can verify.
 Therefore, add a new file called `test.component.ts`:
@@ -81,7 +81,7 @@ export class AppModule {}
 
 After the example component is added to the module, the component is ready for testing.
 
-### 2. Add a unit test for the test component
+### 2. Add a unit test for the test component {#2-add-a-unit-test-for-the-test-component}
 
 Test files have the file extension `.spec.ts`.
 There is an example spec file in the repository called `app.module.spec.ts`.
@@ -130,7 +130,7 @@ Time:        32.858 s
 If the test says `PASS`, everything went well and your first component test was successful.
 Now, you can add more detailed test cases to verify your component works as intended.
 
-### 3. Use a snapshot test to verify the component template
+### 3. Use a snapshot test to verify the component template {#3-use-a-snapshot-test-to-verify-the-component-template}
 
 This section provides you with additional information on other ways to verify the component template.
 
@@ -172,7 +172,7 @@ You can test this behavior by changing your template in the `test.component.ts` 
 It is common practice to commit these snapshots with your code.
 {{< /c8y-admon-info >}}
 
-### Conclusion
+### Conclusion {#conclusion}
 
 This tutorial showed you how to add tests to newly scaffolded applications via the `c8ycli` command.
 The advanced snapshot testing has the option to verify templates quickly.

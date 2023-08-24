@@ -11,7 +11,7 @@ It is a common use case to extend one of our existing applications like Cockpit 
 This recipe explains step by step, how you can extend the Cockpit application with a custom route and hook this route into the navigator.
 First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application-library) npm package contains.
 
-### Brief background
+### Brief background {#brief-background}
 
 The default applications consist of three applications which are shipped with our platform by default.
 As these applications are a result of several years of development, the code is mainly based on angularjs.
@@ -40,7 +40,7 @@ For example, if you want an application that just follows the look and feel of t
 The most common use case is the extension of a hybrid application, which we will cover in this recipe.
 First, take a look at the limitations of that approach to understand why the concepts are designed the way they are.
 
-### Hybrid mode limitations
+### Hybrid mode limitations {#hybrid-mode-limitations}
 
 As we need to make sure that Angular and angularjs run side by side when running a hybrid application, there are some limitations:
 
@@ -56,7 +56,7 @@ To do so, you must scaffold a hybrid application.
 The `c8ycli` uses this package every time you initialize an application with the `new` command.
 The next section will explain the scaffolding process and how to extend a hybrid application step by step.
 
-### 1. Initialize the example application
+### 1. Initialize the example application {#1-initialize-the-example-application}
 
 As a starting point, you need an application.
 For this purpose, create a new Cockpit application using the `c8ycli`:
@@ -76,7 +76,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
-### 2. Bind a custom component to a route
+### 2. Bind a custom component to a route {#2-bind-a-custom-component-to-a-route}
 
 Routes can be added the same way as in Angular.
 The only difference is that it needs to be defined before the `UPGRADE_ROUTES` because of the hybrid limitations.
@@ -174,7 +174,7 @@ First, you import the component (1.). Then you add it to the declarations (2.). 
 When you now spin up the application with the `c8ycli server` command and navigate to the URL by adding the right hash to it (*http://localhost:9000/apps/cockpit/#/hello*) you should see the custom component.
 In the next step, you will hook the component in the navigator at the left.
 
-### 3. Hooking a navigator node
+### 3. Hooking a navigator node {#3-hooking-a-navigator-node}
 
 To allow the user to navigate to your newly created *hello.component.ts*, add some navigation to the navigator on the left.
 To do so, you will use a so-called hook.
@@ -295,7 +295,7 @@ Note that the property `priority` of the `NavigatorNode` interface defines in wh
 The *hello.component.ts* is now like a blank canvas inside the Cockpit application.
 You can implement any kind of feature you need, while the given functionality of the Cockpit is not affected.
 
-### Conclusion
+### Conclusion {#conclusion}
 
 A hybrid application is limited because of its angularjs and Angular integration.
 However, the hook concept and a custom route allow for additions to existing hybrid applications.

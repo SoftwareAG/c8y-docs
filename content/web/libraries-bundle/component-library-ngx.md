@@ -11,7 +11,7 @@ ngx-components is a components collection and data access layer for Angular appl
 
 The full documentation of all modules and components can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-components/).
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) to bootstrap a new application you must first install the package:
 
@@ -44,11 +44,11 @@ export class AppModule {}
 2. Import the `CoreModule` to allow the use of the `c8y-` prefixed components.
 3. Bootstrap your application with the `BootstrapComponent` which will use the `<c8y-bootstrap>` component to initialize the root application. Alternatively, you can bootstrap a component of your choice and include that tag into its template or only reuse the given components.
 
-### Extension points
+### Extension points {#extension-points}
 
 To extend and compose an application, ngx-components provide four core architecture concepts called *Extensions points*:
 
-#### Content Projection (CP)
+#### Content Projection (CP) {#content-projection-cp}
 
 This concept allows to project content from one component to another. For example, you can configure the title of a page by setting a `<c8y-title>` in any other component. The content of the `<c8y-title>` tag is then projected to an outlet component, which is placed in the header bar. The benefit of this concept is that you can place anything into the projected content, for example you can project another custom component into the title.<br>
 
@@ -64,7 +64,7 @@ A good example to use this concept is the `c8y-action-bar-item` which uses a `ro
 
 The above example gives you an action bar item in the header bar, regardless in which component you define it. If the component is initialized the item is shown and it is removed on destroy.
 
-#### Multi Provider (MP)
+#### Multi Provider (MP) {#multi-provider-mp}
 The Multi Provider extension allows a declarative approach to extend the application. Instead of defining it in the template, you extend an already defined factory via a `HOOK`. This hook gets executed if the application state changes. The return values are then injected into the page. You can use the normal dependency injection system of Angular and as a result you can usually return an Observable, Promise or Array of a certain type. As an example we can define the tabs of certain routes by hooking into the `HOOK_TABS` provider:
 
 ```js
@@ -122,7 +122,7 @@ Usually you use Content Projection within a route and Multi Provider if the cont
    * `HOOK_ONCE_ROUTE`: Allows to define a route. Use this if you want to use a context route, for example, add a new tab to the device details view. For all other routes you should use the default Angular router.
    * `HOOK_COMPONENTS`: Allows to define a dynamic component to display any kind of component dynamically by referencing its id. To use the component you can use the `c8y-dynamic-component`. The most common use case is registration of dashboard widgets.
 
-#### Services
+#### Services {#services}
 
 A service is defined for most components of ngx-components. They can be used via the dependency injection concept of Angular, that means that these services can be injected in the constructor of a component and then add or remove certain UI elements. The following example shows how to use that concept with an alert:
 
@@ -140,7 +140,7 @@ A service is defined for most components of ngx-components. They can be used via
    }
 ```
 
-#### Legacy plugins
+#### Legacy plugins {#legacy-plugins}
 
 If you are extending a default application (Cockpit, Device management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the application appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
 
@@ -225,7 +225,7 @@ That will let your app start in a hybrid mode, which allows to use angular.js an
 
 To determine which extension points are supported and which concept should be used for certain scenarios the following section gives an overview on all supported components and explains in which case they should be used.
 
-### Data access to the platform
+### Data access to the platform {#data-access-to-the-platform}
 
 The `CommonModule` exports the `DataModule`, an abstraction of the [@c8y/client](/web/libraries/#client-library) which allows to use the services of the client with the dependency injection system of Angular. So in any module in which the `CommonModule` or `DataModule` is imported you can use simple injection to access data of the platform:
 

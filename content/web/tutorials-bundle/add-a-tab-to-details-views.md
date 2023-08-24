@@ -22,7 +22,7 @@ It is referenced by another route called */info* but reuses the context of the d
 
 In the following, we will guide you through the process of creating a new tab for this view that is accessible through the route *apps/cockpit/#/device/:id/hello*.
 
-### 1. Initialize the example application
+### 1. Initialize the example application {#1-initialize-the-example-application}
 
 As a starting point, you need an application supporting context routes.
 For this purpose, create a new Cockpit application using the `c8ycli`:
@@ -40,7 +40,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
-### 2. Add a new HOOK_ROUTE
+### 2. Add a new HOOK_ROUTE {#2-add-a-new-hookroute}
 
 The hook concept allows you to hook into the existing code.
 In this example we want to add a so-called `ChildRoute` (by Angular) on the existing route *device/:id*.
@@ -120,7 +120,7 @@ The `HOOK_ROUTE` inherits the Angular `Route` type. All of its properties can be
 After this alignment the route is registered but the application will fail to compile as the `HelloComponent` does not exist yet.
 You will create it in the next section.
 
-### 3. Add a component to display context data
+### 3. Add a component to display context data {#3-add-a-component-to-display-context-data}
 
 The `HelloComponent` might want to display details about the device.
 To do this, it needs information about the context it has been opened in.
@@ -222,7 +222,7 @@ You can do the same for tenants, users or applications details views.
 
 Next you will learn how to show this tab only if a condition is met.
 
-### (Bonus) 4. Show the tab only if a condition is met
+### (Bonus) 4. Show the tab only if a condition is met {#bonus-4-show-the-tab-only-if-a-condition-is-met}
 
 In some cases, additional information is available only if a condition is met. For example, it only makes sense to show a location if the device has a location fragment associated.
 To add such a condition, the context routes inherit the [guard concept of Angular](https://angular.io/guide/router#milestone-5-route-guards).
@@ -331,7 +331,7 @@ Explanation of the above numbers:
 
 If you now post a device with the fragment `"acme_HelloWorld": {}` to the API, the **Hello** tab will only be shown for that device and not for others.
 
-### Conclusion
+### Conclusion {#conclusion}
 
 Context routes help you to extend existing routes with further information.
 

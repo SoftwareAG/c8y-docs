@@ -21,7 +21,7 @@ If you have previously been working with older versions you might be interested 
 Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. You can import plugins to Angular as described in [Extension points](/web/libraries/#extension-points).
 {{< /c8y-admon-important >}}
 
-### Packages
+### Packages {#packages}
 
 The Web SDK consists of the following packages deployed to npm in the scope `@c8y` and available under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) license:
 

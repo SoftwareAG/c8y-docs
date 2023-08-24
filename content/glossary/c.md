@@ -6,19 +6,19 @@ section:
   - getting_started
 ---
 
-### Cockpit application
+### Cockpit application {#cockpit-application}
 
 The Cockpit application is one of the default applications of {{< product-c8y-iot >}}. It provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.
 
 For details see [Application enablement & solutions > Cockpit](/cockpit/).
 
 
-### Cumulocity IoT Core
+### Cumulocity IoT Core {#cumulocity-iot-core}
 
 {{< product-c8y-iot >}} is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](/glossary/a/#application) (Administration, Cockpit and Device Management), the [{{< product-c8y-iot >}} operational store](/glossary/c/#c8y-operational-store), [microservices](/glossary/m/#microservices), [REST API](/glossary/r/#rest-api), [MQTT API](/glossary/m/#mqtt), and [smart rules](/glossary/s/#smart-rules).
 
 
-### Cumulocity IoT DataHub
+### Cumulocity IoT DataHub {#cumulocity-iot-datahub}
 
 {{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} application for offloading data from the operational store of {{< product-c8y-iot >}} to a data lake and querying the data lake contents.
 

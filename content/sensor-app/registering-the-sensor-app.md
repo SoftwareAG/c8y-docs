@@ -11,7 +11,7 @@ There are two ways of connecting your smartphone to {{< product-c8y-iot >}}, dep
 For {{< product-c8y-iot >}} versions starting with release 10.6.6, you can connect your smartphone via [QR code](#registration-using-qr-code).
 For earlier versions of {{< product-c8y-iot >}}, follow the steps in [Manual registration](#manual-registration).
 
-### Registration using QR code
+### Registration using QR code {#registration-using-qr-code}
 
 1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
 
@@ -32,7 +32,7 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 QR codes not supported by the {{< sensor-app >}} are highlighted using a red region of interest in the Camera view. QR codes from older versions of {{< product-c8y-iot >}} will be scanned, but it is not possible to connect automatically. Instead, you are forwarded to the **Manual registration** dialog with your tenant and instance pre-filled. From there you should continue with step 4 in [Manual registration](#manual-registration).
 {{< /c8y-admon-info >}}
 
-### Manual registration
+### Manual registration {#manual-registration}
 
 1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. In the Device management application, select **Devices > Registration** from the navigator.
 

@@ -4,16 +4,16 @@ title: Relay
 layout: redirect
 ---
 
-### Relays
+### Relays {#relays}
 
 A relay is a kind of binary state switch which can be in the states OPEN or CLOSED. Relays can be used for many purposes, for example to connect or disconnect the consumer power supply through a smart energy meter.
 In a managed object, a relay control model includes the state of the control. When the control state changes, the inventory model should be updated to include the new state.
 
-#### Single Relay
+#### Single Relay {#single-relay}
 
 To manage and monitor a single relay {{< product-c8y-iot >}} offers the [Relay control widget](/users-guide/cockpit#relay-control).
 
-##### Relay state
+##### Relay state {#relay-state}
 
 Devices may announce their relay state by updating the `c8y_Relay` fragment in their managed object.
 
@@ -30,7 +30,7 @@ PUT /inventory/managedObjects/<deviceId>
 |:---|:---|:--------|:----------|
 |c8y_Relay.relayState|string|Yes|The relay state: "OPEN" or "CLOSED".|
 
-##### Setting relay state
+##### Setting relay state {#setting-relay-state}
 
 Devices that support changing the relay position remotely may add the `c8y_Relay` operation to `c8y_SupportedOperations`. Then users can request an update to the relay position in the [Relay control widget](/users-guide/cockpit#relay-control). This creates an operation of fragment type `c8y_Relay` for the device.
 
@@ -65,12 +65,12 @@ On receiving the operation the device is expected to perform the following actio
 4. The device confirms successful execution by setting the operation status to SUCCESSFUL<br>
    `503,c8y_Relay`
 
-#### Multiple relays
+#### Multiple relays {#multiple-relays}
 
 To manage and monitor multiple relays {{< product-c8y-iot >}} offers the [Relay array control widget](/users-guide/cockpit#relay-array-control).
 
 
-#### Multiple relays state
+#### Multiple relays state {#multiple-relays-state}
 
 Devices may announce their multiple relays state by updating the `c8y_RelayArray` fragment in their managed object.
 
@@ -89,7 +89,7 @@ PUT /inventory/managedObjects/<deviceId>
 |:---|:---|:--------|:----------|
 |c8y_RelayArray|array|Yes|Array of strings of relays states.|
 
-#### Setting multiple relays states
+#### Setting multiple relays states {#setting-multiple-relays-states}
 
 Devices that support changing their relays positions remotely may add the `c8y_RelayArray` operation to `c8y_SupportedOperations`. Then users can request an update to the relay position in the [Relay array control widget](/users-guide/cockpit#relay-array-control). This creates an operation of fragment type `c8y_RelayArray` for the device.
 

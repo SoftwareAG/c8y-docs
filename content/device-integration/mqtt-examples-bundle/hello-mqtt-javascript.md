@@ -6,13 +6,13 @@ layout: redirect
 
 In this tutorial, you will learn how to use the browser-based MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, a user, and a password in order to access {{< product-c8y-iot >}}.
 
-### Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -20,7 +20,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 * create a JavaScript application,
 * run the application.
 
-#### Creating a JavaScript application
+#### Creating a JavaScript application {#creating-a-javascript-application}
 
 Create an HTML file (for example *hello_mqtt_js.html*) with the following content:
 
@@ -148,12 +148,12 @@ What does the code do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Running the application
+#### Running the application {#running-the-application}
 
 Open the *hello_mqtt_js.html* file in a browser. You should see a new registered device in the Device management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information will be displayed in the browser page.
 
-### Improving the agent
+### Improving the agent {#improving-the-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

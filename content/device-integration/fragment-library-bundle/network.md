@@ -8,7 +8,7 @@ section:
 
 The **Network** tab displays network information. It is shown if the ```c8y_Network``` fragment is present in the device managed object. There are three subsections: WAN, LAN and DHCP. Each of these can be activated by the nested fragments ```c8y_ WAN```, ```c8y_LAN```, and ```c8y_DHCP``` respectively.
 
-#### Network status
+#### Network status {#network-status}
 
 Devices may announce their current local network status and configuration to the platform using the ```c8y_Network``` fragment in the device's own managed object.
 
@@ -180,7 +180,7 @@ PUT /inventory/managedObjects/<deviceId>
 </table>
 
 
-### Setting network configuration
+### Setting network configuration {#setting-network-configuration}
 
 If the device contains the ```c8y_Network``` operation in its ```c8y_SupportedOperations``` users may also update a device's network configuration in the **Network** tab. The changed configuration is sent as ```c8y_Network``` operation with a very similar fragment as also present in the device managed object. The ```c8y_Network``` fragment within this operation may contain one or more of its nested fragments.
 

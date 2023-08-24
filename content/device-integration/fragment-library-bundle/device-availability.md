@@ -53,7 +53,7 @@ The static template 117 is provided to set the required availability for SmartRE
 
 `117,15`
 
-### Availability monitoring
+### Availability monitoring {#availability-monitoring}
 
 The response interval set in the ```c8y_RequiredAvailability``` fragment is used as interval in which the platform expects to receive data from the device. If no data is received in this interval the device will be marked as offline and an alarm of type ```c8y_UnavailabilityAlarm``` will be raised automatically. This alarm will also be cleared automatically when the device sends data again. No further action from the device is necessary.
 
@@ -77,7 +77,7 @@ The following requests are considered a device's heartbeat and will mark the dev
 Keep in mind that after updating the last message it may take some minutes until the new status has been saved in a database.
 {{< /c8y-admon-info >}}
 
-### Connection monitoring
+### Connection monitoring {#connection-monitoring}
 
 {{< product-c8y-iot >}} also provides connection monitoring for devices. When the device establishes a connection where it is able to receive operations the platform considers this device as connected. This applies to HTTP longpolling connection or a MQTT session equally.
 

@@ -6,14 +6,14 @@ layout: redirect
 
 In this tutorial, you will learn how to use the Node.js MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
 * You have Node.js and the package manager (npm) installed.
 * You have a valid tenant, a user, and a password in order to access {{< product-c8y-iot >}}.
 
-### Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -21,7 +21,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 * install the MQTT middleware (in this example we will use the library [MQTT.js](https://github.com/mqttjs/MQTT.js)),
 * run the application.
 
-#### Creating a Node.js application
+#### Creating a Node.js application {#creating-a-nodejs-application}
 
 Create the _package.json_ file to list down the dependencies and other basic information about your application.
 
@@ -113,7 +113,7 @@ What does the code do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given `clientId`, the server will not accept it.
 
-#### Running the application
+#### Running the application {#running-the-application}
 
 Before running the application, the MQTT middleware must be installed. To achieve this, execute the following command:
 
@@ -131,6 +131,6 @@ You should see a new registered device in the Device management application, lis
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information about it will be printed to the console.
 
-### Improving the agent
+### Improving the agent {#improving-the-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

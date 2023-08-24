@@ -24,7 +24,7 @@ For a detailed explanation of each tab and its related configuration via the UI,
 
 This list can be manipulated through the device fragments, that means, which tabs are shown depends on the capability the device supports. This is mainly operated by one fragment called ```c8y_SupportedOperations```. Based on what is put in the array of this fragment, functionality such as tabs, buttons, and so on are enabled. For example if the ```c8y_SupportedOperations``` fragment contains ```c8y_Firmware```, the firmware tab will be visible in the **Device details** page and the device can manage firmware objects.
 
-#### c8y_SupportedOperations fragments
+#### c8y_SupportedOperations fragments {#c8ysupportedoperations-fragments}
 
 The following fragments can be added to the ```c8y_SupportedOperations``` fragment:
 

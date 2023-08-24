@@ -8,7 +8,7 @@ section:
 
 The **Shell** tab allows to send arbitrary device-specific commands to the device. It is shown if the ```c8y_Command``` operation is present in the device's ```c8y_SupportedOperations```.
 
-### Send a command to a device
+### Send a command to a device {#send-a-command-to-a-device}
 
 You may enter an arbitrary string into the command text. The format and its interpretation is up to the device integration. Click the **Execute** button to create a ```c8y_Command``` operation.
 

@@ -6,7 +6,7 @@ section:
   - device_management
 ---
 
-### Announcing capabilities
+### Announcing capabilities {#announcing-capabilities}
 
 Devices may announce their supported capabilities using the ```c8y_SupportedOperations``` fragment in their own managed object. The fragment itself is an array of strings. It may contain built-in operations with their meaning or custom operations for specific use cases, which are described in the following sections.
 
@@ -35,13 +35,13 @@ The 114 static template is available for devices to announce their supported ope
 `114,c8y_Restart,c8y_Configuration,c8y_SoftwareList`
 
 
-### Communicating current status
+### Communicating current status {#communicating-current-status}
 
 Devices are responsible for communicating their current status to {{< product-c8y-iot >}}. The status is usually communicated in the device's own managed object. {{< product-c8y-iot >}} provide specific fragments for each capability. The device must update this data whenever it detects a change to its local state.
 
 In practice this usually means that a device should publish its local state concerning all of its supported capabilities during startup, when requested to change its local state, and whenever any external change has been detected.
 
-### Operation handling
+### Operation handling {#operation-handling}
 
 Operations are always created with status PENDING. Devices are responsible for moving operations along into different statuses in their lifecycle. Before beginning to process an operation the device agent must update its status to EXECUTING. After processing is completed the device must set the operation status to SUCCESSFUL or FAILED depending on the outcome.
 
@@ -51,13 +51,13 @@ Operations are always created with status PENDING. Devices are responsible for m
 
 Devices can find their operation IDs by querying the Device Control API, by subscribing to the operation JSON topic, or by using a custom response template which includes the IDs, that is, template 504, 505, or 506, which enable setting the status of operations with a known ID.
 
-### Error handling during operation processing
+### Error handling during operation processing {#error-handling-during-operation-processing}
 
 If any error occurs during the processing of an operation the device must set the operation status to FAILED and provide a failure reason as descriptive as possible. This includes any unexpected or expected error conditions that prevent the operation to be fully completed and as expected. Even if only one step in an operation with multiple distinct steps fails, the entire operation must be considered as FAILED.
 
 It is up to the device and its use case whether it should roll back any local state changes that happened before the error occurred. If any change of state remains after an operation failed the device must communicate this changed state with {{< product-c8y-iot >}}.
 
-### Recovering after agent crash
+### Recovering after agent crash {#recovering-after-agent-crash}
 
 After an unexpected restart a device must cleanly recover its status. This includes all status parameters communicated with the platform and all ongoing operations. Recovering the status can be done by updating all values in the cloud with the current values on the device. Recovering ongoing operations is more difficult. Devices are expected to keep track of all operations they moved to status EXECUTING. Typically devices keep information of longer-running operations in a persistent storage so that they can be resumed. In unexpected shutdown or crash scenarios this may not always be possible. In this case the device may cancel all ongoing operations to reset its own status.
 
@@ -102,7 +102,7 @@ PUT /devicecontrol/operations/<operationId>
 
 Alternatively the static template 507 may be used. The template changes the status from EXECUTING to FAILED for all operations of the given type or for all types.
 
-### Idempotent cases
+### Idempotent cases {#idempotent-cases}
 
 In cases where a device receives an operation that requests a state that is already present, it is up to the device how the operation should be handled. This may for example be the case when a device is requested to install a software package that is already present in the requested version. Typically there are three different ways of handling such cases in device agents: skip, execute, or fail. In case of the mentioned software package that is already installed the following options could be selected:
 

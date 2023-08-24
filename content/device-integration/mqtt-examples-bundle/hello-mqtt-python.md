@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use the Python MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -32,19 +32,19 @@ The above command installs Paho on your system. You may want to use [virtualenv]
 On macOS you may need to execute `sudo easy_install pip` in case the `pip` command is not found.
 {{< /c8y-admon-info >}}
 
-### Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
 * create a Python script,
 * run the script.
 
-#### Create a Python script
+#### Create a Python script {#create-a-python-script}
 
 Create a script file (for example *hello_mqtt.py*) with the following content:
 
 ```python
-#!/usr/bin/env python3
+# /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import paho.mqtt.client as mqtt
@@ -161,7 +161,7 @@ What does the ``publish`` message do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Run the script
+#### Run the script {#run-the-script}
 
 To run the script just use the command:
 
@@ -174,6 +174,6 @@ After starting the application you should see a new registered device in the Dev
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
 
-### Improving the agent
+### Improving the agent {#improving-the-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

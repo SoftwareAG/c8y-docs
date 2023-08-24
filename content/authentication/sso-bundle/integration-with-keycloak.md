@@ -6,7 +6,7 @@ section:
   - platform_administration
 ---
 
-### Global logout feature (available for Keycloak in version 12.0.0 and higher)
+### Global logout feature (available for Keycloak in version 12.0.0 and higher) {#global-logout-feature-available-for-keycloak-in-version-1200-and-higher}
 
 Integration with Keycloak allows administrators to use a global logout feature based on OpenId Connect. An event from the Keycloak authorization server is sent to all applications (including the {{< product-c8y-iot >}} platform) with a logout token that is verified in the same way as the token used in the login process. This feature allows ending sessions on both sides, applications and Keycloak, for the particular user.
 
@@ -26,7 +26,7 @@ To use the global logout feature follow these steps:
 4. Select the particular user.
 5. Navigate to the **Sessions** tab in the **Manage** section and click **Logout**.
 
-### Logout all users feature
+### Logout all users feature {#logout-all-users-feature}
 
 Keycloak also provides a feature which allows administrators to logout all SSO users.
 
@@ -51,7 +51,7 @@ In the **Session** tab, the Keycloak administrator can also check how many activ
 
 To confirm if the logout event for all users or a single user has been received by the tenant, the {{< product-c8y-iot >}} administrator can verify if there is information about the logout event in the audit logs. The audit logs are available in the Administration application under **Accounts** in the **Audit Logs** tab.
 
-### Troubleshooting
+### Troubleshooting {#troubleshooting}
 
 It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its fields contain the information required for the correct configuration described above.
 

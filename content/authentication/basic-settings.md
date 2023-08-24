@@ -44,7 +44,7 @@ For easier user access management, the above permission(s) are/is included in th
 {{< /c8y-admon-related >}}
 
 
-### Login settings
+### Login settings {#login-settings}
 
 In the **Preferred login mode** field, you can select one of the following options:
 
@@ -71,7 +71,7 @@ The password validity limit and the password strength may not be editable, if co
 {{< /c8y-admon-info >}}
 
 
-### Basic Auth restrictions
+### Basic Auth restrictions {#basic-auth-restrictions}
 
 Even if OAI-Secure authentication is configured for users, basic authentication remains available for devices and microservices using the platform. To provide a higher security level the basic authentication can be restricted.
 
@@ -85,15 +85,15 @@ If the user agent is not found in the list of trusted or forbidden user agents t
 {{< /c8y-admon-info >}}
 
 
-### OAI-Secure session configuration
+### OAI-Secure session configuration {#oai-secure-session-configuration}
 
 OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
 
-#### OAI-Secure without the configuration related to the session management (session configuration turned off)
+#### OAI-Secure without the configuration related to the session management (session configuration turned off) {#oai-secure-without-the-configuration-related-to-the-session-management-session-configuration-turned-off}
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
-#### OAI-Secure with the configuration of the session management (session configuration turned on)
+#### OAI-Secure with the configuration of the session management (session configuration turned on) {#oai-secure-with-the-configuration-of-the-session-management-session-configuration-turned-on}
 
 Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 
@@ -158,12 +158,12 @@ In such configurations, the idle timeout is in the range of 45 to 90 minutes, de
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 
 
-### Token generation with OAI-Secure
+### Token generation with OAI-Secure {#token-generation-with-oai-secure}
 
 OAI-Secure is primarily based on JWT stored in a browser cookie. It can be also used to generate JWT in the response body.
 The lifespan of the tokens and the cookie is configurable by tenant options belonging to the category `oauth.internal`.
 
-#### Lifespan configuration of JWT stored in the cookie
+#### Lifespan configuration of JWT stored in the cookie {#lifespan-configuration-of-jwt-stored-in-the-cookie}
 
 JWT tokens stored in the browser cookie have a default validity time of two weeks.
 This can be changed with tenant options:
@@ -172,7 +172,7 @@ This can be changed with tenant options:
 
 The minimum allowed value is 5 minutes.
 
-#### Lifespan configuration of cookies
+#### Lifespan configuration of cookies {#lifespan-configuration-of-cookies}
 
 Cookies used to store a JWT token in a browser have their own validity time that can be changed with tenant options:
 - category: `oauth.internal`;
@@ -180,7 +180,7 @@ Cookies used to store a JWT token in a browser have their own validity time that
 
 The default value is two weeks. To have the cookie deleted when the user closes the browser, set it to any negative value.
 
-#### Lifespan configuration of JWT in response body
+#### Lifespan configuration of JWT in response body {#lifespan-configuration-of-jwt-in-response-body}
 
 The lifespan of JWT tokens generated in the response body is configured with the following tenant options:
 - category: `oauth.internal`;
@@ -192,7 +192,7 @@ Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-ve
 If external communication to the {{< management-tenant >}} has been blocked, then it is only possible to access the tenant in a secure way (for example via SSH tunnel). This means that you can just as well use basic authentication. Additionally, it is not possible to use single sign-on since the communication from the external authorization server is also blocked. Therefore, the authentication method is automatically set to "Basic authentication" if the {{< management-tenant >}} is configured to block external communication.
 {{< /c8y-admon-info >}}
 
-### TFA settings
+### TFA settings {#tfa-settings}
 
 Select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
 

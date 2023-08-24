@@ -10,7 +10,7 @@ weight: 30
 Users must install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.
 {{< /c8y-admon-req >}}
 
-### To set up TOTP
+### To set up TOTP {#to-set-up-totp}
 
 Opposed to the SMS strategy TOTP must be set up by each user. By opening **User settings** in the top right corner and then clicking **Set up two-factor authentication** they can start the setup process.
 
@@ -24,7 +24,7 @@ Alternatively, the secret can also be inserted manually in case scanning the QR 
 
 After this process the mobile application will generate a new code every 30 seconds that can be used to complete the authentication process.
 
-### To revoke the secret
+### To revoke the secret {#to-revoke-the-secret}
 
 If a user loses access to the TFA code, for example, if a user loses the phone or uninstalls the application, and needs to set it up again, the secret must be revoked.
 TOTP must be set up by each user individually.
@@ -47,7 +47,7 @@ ROLES & PERMISSIONS:
 
 ![TOTP secret revoke](/images/users-guide/Administration/admin-user-totp-revoke.png)
 
-### To disable TOTP for a user
+### To disable TOTP for a user {#to-disable-totp-for-a-user}
 
 If a user wants to turn off the use of TOTP (and thus TFA) completely, the secret must be revoked and TOTP enforcement must be disabled.
 TOTP must be set up by each user individually.

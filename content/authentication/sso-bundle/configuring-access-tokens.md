@@ -19,7 +19,7 @@ This feature requires the following on top of the general requirements:
 
 {{< /c8y-admon-req >}}
 
-### To configure authentication with access tokens from authorization servers
+### To configure authentication with access tokens from authorization servers {#to-configure-authentication-with-access-tokens-from-authorization-servers}
 
 Enable or disable this authentication option in the **External token configuration** section.
 ![External token disabled](/images/users-guide/Administration/sso-access-token-external-iam-disabled.png)
@@ -40,7 +40,7 @@ By default, {{< product-c8y-iot >}} verifies that the token is not expired and i
 You can strengthen the validation of the token by configuring either an introspection or a user info validation with the necessary credentials.
 This way, the platform knows if the access tokens were intentionally invalidated or expired. You cannot access {{< product-c8y-iot >}} resources with an invalidated access token.
 
-### Introspection endpoint
+### Introspection endpoint {#introspection-endpoint}
 
 {{< product-c8y-iot >}} uses token introspection to verify the validity of the access tokens of your applications. In general, this endpoint can be used for access tokens obtained via the client credentials flow or any other OAuth2 flow.
 
@@ -57,7 +57,7 @@ To avoid this, use a frequency. The default value is one minute.
 
 ![External token validation interval](/images/users-guide/Administration/sso-access-token-external-iam-validation-interval.png)
 
-### User info endpoint
+### User info endpoint {#user-info-endpoint}
 
 The user info request can also be used to check the validity of the access token of your users.
 Unlike introspection, a user info request requires a user context. This means you cannot use it to validate access tokens obtained with the client credentials flow.

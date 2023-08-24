@@ -16,7 +16,7 @@ The initial script was used to create a demo, which makes it easier to create an
 The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated web server called Kestrel and as a foreground job, which makes it work really well with Docker.
 
 
-### Building and deploying on Windows
+### Building and deploying on Windows {#building-and-deploying-on-windows}
 
 In Windows systems, Powershell is installed by default. Download the script file to build a "Hello world" application. Manage the version of scripts and replace latest to the right version number.
 
@@ -65,7 +65,7 @@ Execute the bootstrapper script to build the application and an image from a Doc
 After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the {{< product-c8y-iot >}} platform as described in the Deployment section.
 
 
-### Running the microservice locally
+### Running the microservice locally {#running-the-microservice-locally}
 
 In order to test the microservice calls to {{< product-c8y-iot >}}, you can run the Docker container locally.
 
@@ -243,7 +243,7 @@ The expected result is like:
 ]
 ```
 
-### Running the application within the IDE
+### Running the application within the IDE {#running-the-application-within-the-ide}
 
 It is possible to check if the application communicates with the platform by defining relevant environmental variables in *launchSettings.json*. This file sets up the different launch environments that Visual Studio can launch automatically. Here is a snippet of the default *launchSettings.json*.
 
@@ -284,7 +284,7 @@ It is possible to check if the application communicates with the platform by def
 }
 ```
 
-### Microservice package and deploy
+### Microservice package and deploy {#microservice-package-and-deploy}
 
 {{< product-c8y-iot >}} provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
 
@@ -349,7 +349,7 @@ appname=sample_application
 ./deploy.ps1 -s <siteurl> -u <username> -p <password>  -an hello-world -f settings.ini
 ```
 
-### Improving the microservice
+### Improving the microservice {#improving-the-microservice}
 
 The application starts executing from the entry point `public static void Main()` in Program class where the host for the application is created. The following shows an example of a program created by *create.sh*.
 
@@ -455,7 +455,7 @@ It also defines what goes on in the environment inside a container:
 * Sets the environment variable, in this case SERVER_PORT
 * Specifies what executable to run when the container starts
 
-#### Platform API
+#### Platform API {#platform-api}
 
 It is possible to use the C# REST SDK as an extension.  A developer can use it to perform basic operations against the platform. For hosted deployment, most of the properties are provided by the platform.
 
@@ -472,12 +472,12 @@ The API provides the following services:
 
 For further information, refer to [Device integration](/device-integration/).
 
-#### C# MQTT SDK
+#### C# MQTT SDK {#c-mqtt-sdk}
 
 It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](/device-integration/mqtt-examples).
 
 
-### Building and deploying on Linux
+### Building and deploying on Linux {#building-and-deploying-on-linux}
 
 use the wget command to download the script file to build a "Hello World" application.
 
@@ -541,7 +541,7 @@ $ curl https://localhost:8999/weatherforecast
 In order to deploy the application, run the deploy script. You must provide the correct URL and credentials in this script.
 
 
-#### Microservice package and deploy
+#### Microservice package and deploy {#microservice-package-and-deploy}
 
 {{< product-c8y-iot >}} provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/blob/develop/microservices/scripts/microservice):
 
@@ -603,6 +603,6 @@ $ ./deploy.sh -f settings.ini
 $ ./deploy.sh -s <URL> -u <username> -p <password> -an hello-world -f settings.ini
 ```
 
-### Improving the microservice
+### Improving the microservice {#improving-the-microservice}
 
 Now that you have done your first steps, check out the section [Developing microservices](#developing-microservices) to find out what else can be implemented. Review also the [extended example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/Hello-World-Extension-Microservice) in the GitHub repository to learn more features of the microservice SDK and REST API.

@@ -22,7 +22,7 @@ If you develop applications using Java or C#, check these relevant sections for 
 For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-integration/rest).
 
 
-### Using the REST interfaces
+### Using the REST interfaces {#using-the-rest-interfaces}
 
 Nowadays, most programming environments have particular support for REST-based communication. For experimentation and for understanding {{< product-c8y-iot >}}'s REST interfaces, it is helpful to use one of the numerous available command line tools or browser extensions.
 
@@ -65,7 +65,7 @@ $ curl -u <username>:<password> https://<yourTenant>.{{< domain-c8y >}}/inventor
 
 You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}.
 
-### Using Postman
+### Using Postman {#using-postman}
 
 Graphical REST clients such as [Postman](https://www.getpostman.com/) are a convenient way to explore REST interfaces and the {{< product-c8y-iot >}} database content.
 

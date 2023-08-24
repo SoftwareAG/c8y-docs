@@ -63,7 +63,7 @@ public class ValuesController : Controller
 
 Refer to [Authorize with a specific scheme in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/limitingidentitybyscheme?view=aspnetcore-3.1&tabs=aspnetcore2x) for more details.
 
-### Testing the microservice with OAuth tokens
+### Testing the microservice with OAuth tokens {#testing-the-microservice-with-oauth-tokens}
 
 Third-party tools such as Postman can be used to test your REST API. You need the cookie and X-XSRF-TOKEN headers which must be captured from the platform (for example by watching network requests in the browser). Note that the token expires within few minutes as configured by the administrator. Make sure you test this feature before the token expires. The cURL equivalent to test the [microservice example](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth) is as follows:
 

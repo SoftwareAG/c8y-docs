@@ -6,9 +6,9 @@ layout: redirect
 
 {{< product-c8y-iot >}} provides you a utility tool for easy microservice packaging, deployment and subscription. The script requires a local installation of Docker and jq, which is a lightweight and flexible JSON processor.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
-#### Docker
+#### Docker {#docker}
 
 Verify that you have a Docker installation. The Docker version must be >= 1.2.6
 
@@ -25,7 +25,7 @@ Server:
  OS/Arch:         linux/amd64
 ```
 
-#### JSON processor
+#### JSON processor {#json-processor}
 
 Execute the following command to install the JSON processor on Linux systems:
 
@@ -39,7 +39,7 @@ For macOS, use the following command:
 $ brew install jq
 ```
 
-#### Bash
+#### Bash {#bash}
 
 The microservice utility tool (script) needs Bash version 4+ to run. Verify your Bash version with the following command:
 
@@ -67,7 +67,7 @@ or
 #!
 ```
 
-### Configure the microservice utility tool
+### Configure the microservice utility tool {#configure-the-microservice-utility-tool}
 
 The script can be found in the GitHub repository: [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/blob/develop/microservices/scripts/microservice).
 
@@ -83,7 +83,7 @@ Use the help option to see all the available functions (goals) and options:
 $ ./microservice help
 ```
 
-### Packing
+### Packing {#packing}
 
 A microservice must be packed as a Docker image in order to be deployed.
 It requires a Docker _image.tar_ and _cumulocity.json_ files packed into a ZIP file.
@@ -108,7 +108,7 @@ It will create a ZIP file named _hello-world.zip_ and an intermediate _image.tar
 When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 {{< /c8y-admon-important >}}
 
-### Deploying
+### Deploying {#deploying}
 
 A microservice becomes available once it has been successfully deployed on the {{< product-c8y-iot >}} platform. This is done by uploading a ZIP file with the microservice packed as specified above. A user cannot directly push an image to the Docker registry.
 
@@ -125,7 +125,7 @@ If the name of the microservice application is not provided in the manifest file
 
 For further information on deploying microservices to {{< product-c8y-iot >}}, refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices).
 
-### Subscribing
+### Subscribing {#subscribing}
 
 You must subscribe to the application in order to use it. Execute the following command to subscribe your tenant to the deployed microservice:
 
@@ -135,7 +135,7 @@ $ ./microservice subscribe -n hello-world -d <URL> -u <username> -p <password> -
 
 It will result in tenant subscription to an application specified by the ID parameter. If the user has already been subscribed, a warning message will be displayed.
 
-### Multiple goals
+### Multiple goals {#multiple-goals}
 
 Goals can be executed together to pack, deploy and subscribe the application in a single line. In this case, the application ID will be automatically pulled by the script.
 
@@ -143,6 +143,6 @@ Goals can be executed together to pack, deploy and subscribe the application in 
 $ ./microservice pack deploy subscribe -n hello-world -d <URL> -u <username> -p <password> -te <tenant>
 ```
 
-### Operating microservices
+### Operating microservices {#operating-microservices}
 
 {{< product-c8y-iot >}} manages microservices by monitoring the microservice instance and storing the metrics. In case a microservice exceeds the memory limit, it is restarted automatically. Also, microservices can be auto-scaled in case of high CPU usage. For more information, review the [scaling](#isolation-scaling) details above.

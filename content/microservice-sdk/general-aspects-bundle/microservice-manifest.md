@@ -61,7 +61,7 @@ Here is an example manifest:
 
 See below for detailed information about available settings.
 
-### Settings
+### Settings {#settings}
 
 <table>
 <colgroup>
@@ -192,7 +192,7 @@ See below for detailed information about available settings.
 </table>
 
 
-#### Version
+#### Version {#version}
 
 The version has an impact on the microservice upload behavior:
 
@@ -201,7 +201,7 @@ The version has an impact on the microservice upload behavior:
 
 The snapshot postfix means that the image build is a snapshot of your application at a given time and it is still under development. When your microservice is ready for production release, you can remove the postfix and just use the final version of your application.
 
-#### Provider
+#### Provider {#provider}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
@@ -209,21 +209,21 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |domain|String |Website of the provider |No
 |support|Email|Email of the support person|No
 
-#### Resources
+#### Resources {#resources}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1 <br>Default CPU time: 500m, min: 100m <br>A different default value may be configured by the system administrator.| No
 |memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki <br>A different default value may be configured by the system administrator.|No
 
-#### RequestedResources
+#### RequestedResources {#requestedresources}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |cpu|String |Intended minimal requirements for number of CPUs or CPU time  <br>The value may be over-written based on system settings. <br>Default: 250m<br>A different default value may be configured by the system administrator.|No
 |memory|String |Intended minimal requirements for microservice memory usage <br>The value may be over-written based on system settings. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki<br>A different default value may be configured by the system administrator.|No
 
-#### Option
+#### Option {#option}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
@@ -232,7 +232,7 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |editable|Boolean|Defines if the option can be changed by a subscribed tenant on runtime <br>Default: false |No
 |overwriteOnUpdate|Boolean|Defines if an editable option is reset upon microservice update <br>Default: true |No
 |inheritFromOwner|Boolean|Specifies if an option should be inherited from the owner <br>Default: true |No
-#### Probe
+#### Probe {#probe}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
@@ -245,20 +245,20 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |timeoutSeconds|Number| Number of seconds after which the probe times out<br/> Default: 1 | No
 |failureThreshold|Number| Number of failed probes after which an action should be taken <br/>Default: 3 | No
 
-#### ExecAction
+#### ExecAction {#execaction}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |command | String[ ] | Commands to be executed on a container to probe the service | Yes
 
-#### TCPSocketAction
+#### TCPSocketAction {#tcpsocketaction}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |host | String | Host to verify | Yes
 |port | Number | Port to verify <br/>Default:80 | Yes
 
-#### HTTPGetAction
+#### HTTPGetAction {#httpgetaction}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
@@ -268,14 +268,14 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |scheme | String | Scheme to use for connecting to the host (HTTP or HTTPS)<br/> Default: HTTP | No
 |headers | HttpHeader | HTTP headers to be added to a request | No
 
-#### HttpHeader
+#### HttpHeader {#httpheader}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |name | String | Header name | Yes
 |value | String | Header value | Yes
 
-#### Extension
+#### Extension {#extension}
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|

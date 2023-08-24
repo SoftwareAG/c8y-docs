@@ -10,7 +10,7 @@ This section provides an overview on how to access {{< product-c8y-iot >}} from 
 The client library is tightly linked to the design of the REST interfaces, which are described in [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) in the {{< openapi >}}.
 
 
-### Connecting to the platform
+### Connecting to the platform {#connecting-to-the-platform}
 
 The root interface for connecting to {{< product-c8y-iot >}} from Java is called Platform (see Root interface in [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) in the {{< openapi >}}). It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows:
 
@@ -32,7 +32,7 @@ For testing purposes, every tenant is subscribed to the demo application key "uL
 new CumulocityCredentials("<TENANT_ID>", "<USERNAME>", "<PASSWORD>", "<APPLICATION_KEY>")
 ```
 
-### Accessing the inventory
+### Accessing the inventory {#accessing-the-inventory}
 
 The following code snippet shows how to obtain a handle to the inventory:
 
@@ -111,7 +111,7 @@ Tariff tariff = new Tariff();
 mo.set(tariff);
 ```
 
-### Accessing the identity service
+### Accessing the identity service {#accessing-the-identity-service}
 
 A device typically has a technical identifier that an agent needs to know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of {{< product-c8y-iot >}}, agents can use the identity service. Again, to create the association, create an object of type `ExternalIDRepresentation` and send it to the platform.
 
@@ -142,7 +142,7 @@ externalIDGid = identityApi.getExternalId(id);
 The returned object will contain the unique identifier and a link to the managed object.
 
 
-### Accessing events and measurements
+### Accessing events and measurements {#accessing-events-and-measurements}
 
 Events and measurements can be accessed in a very similar manner as described above for the inventory. The following example queries the signal strength of the mobile connection of devices in the past two weeks and prints the device ID, the time of the measurement, the received signal strength and the bit error rate.
 
@@ -169,7 +169,7 @@ for (; measurements != null; measurements = mc.getNextPage(measurements)) {
 }
 ```
 
-### Controlling devices
+### Controlling devices {#controlling-devices}
 
 The `DeviceControlResource` enables you to manipulate devices remotely. It has two sides: You can create operations in applications to be sent to devices, and you can query operations from agents.
 
@@ -223,7 +223,7 @@ for (opCollectionRepresentation = oc.get(); opCollectionRepresentation != null; 
 }
 ```
 
-### Realtime features
+### Realtime features {#realtime-features}
 
 The Java client libraries fully support the real-time APIs of {{< product-c8y-iot >}}. For example, to get immediately notified when someone sends an operation to your agent, use the following code:
 
@@ -257,7 +257,7 @@ If you wish to disconnect, the following code must be used:
 subscriber.disconnect();
 ```
 
-### Subscribing to Notifications 2.0
+### Subscribing to Notifications 2.0 {#subscribing-to-notifications-20}
 
 The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory).
 See [Notifications 2.0](https://cumulocity.com/api/core/#tag/Notification-2.0-API) for more details about the API.
@@ -329,7 +329,7 @@ subscriptionApi.deleteBySource(mo.getId().getValue());
 
 There is a sample microservice available in the [cumulocity-examples repository](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-notification-microservice) with more details on the API usage.
 
-### Reliability features
+### Reliability features {#reliability-features}
 
 In particular on mobile devices, Internet connectivity might be unreliable. To support such environments, the Java client libraries support local buffering. This means that you can pass data to the client libraries regardless of an Internet connection being available or not. If a connection is available, the data will be sent immediately. If not, the data will be buffered until the connection is back again. For this, asynchronous variants of the API calls are offered. For example, to send an alarm:
 
@@ -340,7 +340,7 @@ Future future = alarmApi.createAsync(anAlarm);
 
 The `createAsync` method returns immediately. The `Future` object can be used to determine the result of the request whenever it was actually carried out.
 
-### Logging configuration
+### Logging configuration {#logging-configuration}
 
 Logging in the Java client SDK is handled through [slf4j](http://www.slf4j.org/) with a [logback](http://logback.qos.ch) backend. For a detailed description on how to use and configure logging, see the [logback documentation](http://logback.qos.ch/documentation.html).
 

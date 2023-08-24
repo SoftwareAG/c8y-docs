@@ -10,7 +10,7 @@ In this example you will learn how to create and deploy a Node.js-based microser
 
 It uses the {{< product-c8y-iot >}} [@c8y/client JavaScript library](https://www.npmjs.com/package/@c8y/client) to subscribe to alarms. When a new alarm is created, a Slack channel gets notified.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 - {{< product-c8y-iot >}} credentials (tenant, user and password).
 - Slack channel to post messages to, [Slack app and OAuth token](https://slack.dev/node-slack-sdk/getting-started).
@@ -23,9 +23,9 @@ SLACK_OAUTH_TOKEN=<YOUR-TOKEN-GOES-HERE>
 SLACK_CHANNEL_ID=<YOUR-CHANNEL_ID-GOES-HERE>
 ```
 
-### Developing the microservice
+### Developing the microservice {#developing-the-microservice}
 
-#### Configure a Node.js application
+#### Configure a Node.js application {#configure-a-nodejs-application}
 
 Start by creating a folder *node-microservice* to contain your files. Inside your folder, use the following command to initialize your project:
 
@@ -62,7 +62,7 @@ Eventually, your *package.json* file should look similar to:
 }
 ```
 
-#### Add the source code
+#### Add the source code {#add-the-source-code}
 
 Now create a file *app.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the {{< product-c8y-iot >}} and Slack APIs.
 
@@ -246,7 +246,7 @@ A message is formatted using the colors of the different alarm severities that y
 
 The second part uses basic authentication to the {{< product-c8y-iot >}} platform, it gets all active alarms and posts alarm messages to the Slack channel. After that, it subscribes to alarms and notifies the Slack channel each time a new alarm is created in the subscribed tenants.
 
-#### Dockerfile and application manifest
+#### Dockerfile and application manifest {#dockerfile-and-application-manifest}
 
 Create a microservice manifest *cumulocity.json* with the following content:
 
@@ -281,7 +281,7 @@ COPY ./ ./
 CMD ["npm", "start"]
 ```
 
-### Deploying the microservice
+### Deploying the microservice {#deploying-the-microservice}
 
 Once you have all the required files, building and deploying the microservice application is fairly simple.
 Execute the following Docker commands to build the Docker image and save it as _image.tar_:
@@ -302,7 +302,7 @@ Uploading the _node-microservice.zip_ into the platform can be done via the UI. 
 
 For more details about uploading a microservice ZIP file, refer to [Custom microservices](/standard-tenant/ecosystem/#custom-microservices).
 
-### Testing the microservice
+### Testing the microservice {#testing-the-microservice}
 
 After the microservice has been successfully uploaded and subscribed to your tenant, it will run in a Docker container. A request similar to:
 
@@ -339,6 +339,6 @@ If there are active alarms on your tenant, your Slack channel will get notified.
 
 ![Slack app posting alarms](/images/microservices-sdk/microservice-slack-alarms.png)
 
-### Source code
+### Source code {#source-code}
 
 The code of this [node-microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices/node-microservice) can be found in our public GitHub repositories.

@@ -11,7 +11,7 @@ Microservices typically provide a REST API and {{< product-c8y-iot >}} provides 
 * Metering: The API calls are metered in the API calls tenant statistics.
 * Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers. If `contextPath` is defined in the application manifest, the API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
 
-### Authentication and authorization
+### Authentication and authorization {#authentication-and-authorization}
 
 A request to a microservice can be authenticated using various authentication mechanisms supported by {{< product-c8y-iot >}} such as:
 1. Basic authentication
@@ -105,7 +105,7 @@ Thus, the microservice must only include `X-Cumulocity-Application-Key` if the m
 
 If the microservice includes the header `X-Cumulocity-Application-Key`, the header must contain the correct application key. Then, the microservice retrieves the application key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request must contain  the credentials for basic authentication in the following format: `tenantId/username:password`. The tenant ID, username and password are read by the microservice from the following operating system environment variables: C8Y_BOOTSTRAP_TENANT, C8Y_BOOTSTRAP_USER, and C8Y_BOOTSTRAP_PASSWORD. In order to increase the performance, the microservice has to implement a caching mechanism related to the user credentials.
 
-#### Microservice authentication and multi-tenancy
+#### Microservice authentication and multi-tenancy {#microservice-authentication-and-multi-tenancy}
 
 In general, microservices use the standard {{< product-c8y-iot >}} authentication mechanisms. This is executed in two steps:
 
@@ -115,7 +115,7 @@ In general, microservices use the standard {{< product-c8y-iot >}} authenticatio
 At the installation time of the microservice, an application is created in the owner tenant (usually a {{< management-tenant >}} or {{< enterprise-tenant >}}) reflecting the new microservice. In addition, a bootstrap user is created in the owner tenant that allows the microservice to retrieve subscriptions.
 Whenever required, a platform administrator will subscribe a customer to the new microservice. As part of the subscription, a service user in the customer tenant is created using random credentials.
 
-#### Microservice authorization
+#### Microservice authorization {#microservice-authorization}
 
 Authorization is relevant on two levels:
 
@@ -126,7 +126,7 @@ A microservice is associated with a bootstrap user in the owner tenant, which wi
 These permissions are visualized in the Administration application. The permissions are associated with the service user that is created when a platform administration associates a microservice with a tenant (subscribes to it). The owner tenant must also be subscribed to if you intend to use microservice features on it.
 
 
-### Users and roles
+### Users and roles {#users-and-roles}
 
 There are three types of users:
 
@@ -159,7 +159,7 @@ You can add them to the [application manifest](#microservice-manifest) in the `r
 
 The roles are set in the [Microservice manifest](#microservice-manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
 
-### Microservice bootstrap
+### Microservice bootstrap {#microservice-bootstrap}
 
 Each microservice receives a dedicated bootstrap user which ensures that a microservice can be identified by the platform and can have access only to the allowed resources. A microservice runtime provides bootstrap user and service user credentials as environment variables which can also be acquired via platform API. Note that depending on the isolation level, the environment variables differ.
 
@@ -202,7 +202,7 @@ Steps:
 4. The microservice iterates over the service user credentials and uses them to create alarms to each tenant.
 5. The microservice returns the result to the platform, and the platform to the invoking user.
 
-### Encryption
+### Encryption {#encryption}
 
 There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests.
 

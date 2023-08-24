@@ -12,7 +12,7 @@ webMethods.io Integration is {{< company-sag >}}'s cloud based integration solut
 
 The complete webMethods.io Integration documentation is available at [docs.webmethods.io](https://docs.webmethods.io/).
 
-### Getting started
+### Getting started {#getting-started}
 
 {{< c8y-admon-info >}}
 If your tenant has been created outside of {{< sag-cloud >}} you will not benefit from the user experience described below. You can still use webMethods.io to integrate {{< product-c8y-iot >}} with other applications, but you cannot use the application switcher and single sign-on login.
@@ -30,7 +30,7 @@ To subscribe to webMethods.io Integration, perform the following steps:
 If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **{{< sag-cloud >}}** portal where you can subscribe for a free trial.
 {{< /c8y-admon-info >}}
 
-### Examples
+### Examples {#examples}
 
 Integrations in webmethods.io are called "workflows". A workflow is a connection between two or more web apps or services. It's like a set of steps required to perform a task.
 

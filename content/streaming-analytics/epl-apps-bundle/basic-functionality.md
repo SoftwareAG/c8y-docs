@@ -11,7 +11,7 @@ An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different
 * You can use the [Streaming Analytics application](#epl-apps) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
 
-See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/using-epl).
+See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
 
 {{< c8y-admon-info >}}
 To be able to develop and deploy EPL apps with the Streaming Analytics application and/or to import monitor files from {{< sag-designer >}} into {{< product-c8y-iot >}},
@@ -213,7 +213,7 @@ This only applies if you are using Apama 10.3 or later.
 
 ##### Required settings in the microservice manifest
 
-The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest).
+The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
 
 Apama can be used in either a single-tenant microservice or a multi-tenant microservice.
 Therefore, the microservice manifest must set the isolation level to either PER_TENANT or MULTI_TENANT.
@@ -253,7 +253,7 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 
 3. Add any custom steps to the Dockerfile that might be necessary, for example, building a custom plug-in, or copying your license file into the image.
 
-4. Use the {{< product-c8y-iot >}} microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool). When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
+4. Use the {{< product-c8y-iot >}} microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/microservice-sdk/general-aspects/#microservice-utility-tool). When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
 
     *docker/monitors/*<br>
     *docker/eventdefinitions/*<br>

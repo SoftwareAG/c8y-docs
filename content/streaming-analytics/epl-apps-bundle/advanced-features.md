@@ -145,7 +145,7 @@ For example:
 }
 ```
 
-See also [Timezone variable](/microservice-sdk/concept/#timezone-variable) and [Supported time zones]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
+See also [Timezone variable](/microservice-sdk/general-aspects/#timezone-variable) and [Supported time zones]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html) in the Apama documentation.
 
 
 {{< c8y-admon-info >}}

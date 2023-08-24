@@ -54,7 +54,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 
 #### General Apama limitations when using EPL apps or a custom microservice
 
-* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Microservices](/concepts/applications#microservices).
+* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless, see [Microservices](/concepts/applications#microservices).
 
 	The Apama features affected by this include:
 
@@ -71,7 +71,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
 	* Distributed memory stores.
 	* Connections between correlators.
 
-* For security and implementing user access control, {{< product-c8y-iot >}} does not make the correlator port available to external processes – see [Microservices](/concepts/applications#microservices).
+* For security and implementing user access control, {{< product-c8y-iot >}} does not make the correlator port available to external processes, see [Microservices](/concepts/applications#microservices).
 
 	The following capabilities require access to the correlator port and hence are not compatible with this access control:
 

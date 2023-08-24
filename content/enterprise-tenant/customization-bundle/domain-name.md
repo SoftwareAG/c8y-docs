@@ -62,7 +62,7 @@ The custom domain name functionality is only available for {{< product-c8y-iot >
 {{< /c8y-admon-info >}}
 
 
-### To package the SSL certificate in PKCS #12
+### To package the SSL certificate in PKCS #12 {#to-package-the-ssl-certificate-in-pkcs-12}
 
 In order to use an SSL certificate with {{< product-c8y-iot >}}, the certificate together with its private key must be uploaded to the platform in a single file, using the PKCS #12 file format.
 
@@ -78,7 +78,7 @@ PKCS #12 keystore file (*out_keystore.p12*) that can be used with {{< product-c8
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
 ```
 
-### DNS requirements for enterprise domains
+### DNS requirements for enterprise domains {#dns-requirements-for-enterprise-domains}
 
 The DNS entries for your custom domain must be configured in a way that all requests are routed to the {{< product-c8y-iot >}} platform.
 
@@ -106,7 +106,7 @@ We highly discourage any use of alternative DNS configurations for the following
   enterprise domain being created. This is very error prone and prevents the creation of subtenants without always
   tampering with DNS settings.
 
-### To upload the certificate and activate your domain
+### To upload the certificate and activate your domain {#to-upload-the-certificate-and-activate-your-domain}
 
 Once the DNS configuration is in place and if a certificate with the given requirements is available, it can be easily
 uploaded to the platform.
@@ -122,7 +122,7 @@ activation. Note that your {{< management-tenant >}} domain name is static, for 
 After the activation is completed you will no longer be able to access your tenant with the {{< product-c8y-iot >}} domain name. Instead, use your custom domain name.
 {{< /c8y-admon-info >}}
 
-### To update your certificate
+### To update your certificate {#to-update-your-certificate}
 
 When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you must make sure that the certificate meets the following requirements:
 
@@ -135,7 +135,7 @@ Keep in mind that after replacing the certificate it may take some minutes until
 {{< /c8y-admon-info >}}
 
 
-### To deactivate your certificate
+### To deactivate your certificate {#to-deactivate-your-certificate}
 
 If you wish to return to your old domain at {{< product-c8y-iot >}}, you can simply deactivate you certificate.
 
@@ -143,7 +143,7 @@ If you wish to return to your old domain at {{< product-c8y-iot >}}, you can sim
 Use with care. Your customers will not be able to access their subtenants anymore.
 {{< /c8y-admon-important >}}
 
-### Troubleshooting
+### Troubleshooting {#troubleshooting}
 
 In case you cannot reach {{< product-c8y-iot >}} using your custom domain, we recommend you to perform the following checks to verify your DNS setup.
 

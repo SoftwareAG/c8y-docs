@@ -9,7 +9,7 @@ If you are a partner or a customer we recommend you join the micro frontend jour
 It allows to extend and use the ecosystem instead of building silo solutions.
 This section explains our vision of this journey and describes our best practices regarding development.
 
-#### The user journey - blueprint or plugin {#the-user-journey--blueprint-or-plugin}
+#### The user journey - blueprint or plugin {#the-user-journey---blueprint-or-plugin}
 To develop the right thing it is very important to understand what kind of user you want to target with your application.
 For the micro frontend story, the target audience are solution architects with little developer experience.
 The idea is simple: Any IoT solution can be set up by a user in a few steps - without coding.

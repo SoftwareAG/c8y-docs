@@ -464,7 +464,7 @@ this.translateService.onLangChange.subscribe(() => {
 All subscriptions must be unsubscribed in order to prevent memory leaks. This can be avoided by using Angular's `async` pipe on observables instead.
 {{< /c8y-admon-important >}}
 
-#### Extracting strings for translation using the locale-extract tool {#extracting-strings-for-translation-using-the-localeextract-tool}
+#### Extracting strings for translation using the locale-extract tool {#extracting-strings-for-translation-using-the-locale-extract-tool}
 
 You can use the `c8ycli locale-extract` command to extract strings from:
 

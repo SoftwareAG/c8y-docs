@@ -23,7 +23,7 @@ ng new my-first-iot-project
 cd my-first-iot-project
 ```
 
-### Add {{< product-c8y-iot >}} CLI {#add--productc8yiot--cli}
+### Add {{< product-c8y-iot >}} CLI {#add-platform-cli}
 
 ```sh
 ng add @c8y/cli

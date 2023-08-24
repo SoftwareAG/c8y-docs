@@ -26,7 +26,7 @@ The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instan
 
 Hardware requirements for the host OS are excluded.
 
-### Setting up {{< product-c8y-iot >}} DataHub Edge {#setting-up-platform-datahub-edge}
+### Setting up {{< product-c8y-iot >}} DataHub Edge {#setting-up-cumulocity-iot-datahub-edge}
 
 Copy the {{< product-c8y-iot >}} DataHub Edge archive to the {{< product-c8y-iot >}} Edge.
 
@@ -69,7 +69,7 @@ The containers are configured to store their application state on the data disk 
 You must not modify the contents of these folders as this may corrupt your installation.
 {{< /c8y-admon-caution >}}
 
-### Upgrading {{< product-c8y-iot >}} DataHub Edge {#upgrading-platform-datahub-edge}
+### Upgrading {{< product-c8y-iot >}} DataHub Edge {#upgrading-cumulocity-iot-datahub-edge}
 An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you must copy the archive with the new version to {{< product-c8y-iot >}} Edge. Next, you must log in as admin. Then you must run the install script using the new version.
 
 ```shell
@@ -82,7 +82,7 @@ During script execution, the already installed version is detected and the scrip
 
 There might be cases where you must change the network setup of your Edge installation, for example by setting the IP range used by Edge internally or changing the domain name. The network configuration of {{< product-c8y-iot >}} DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts {{< product-c8y-iot >}} DataHub with parameters aligned with the new network configuration.
 
-### Accessing {{< product-c8y-iot >}} DataHub Edge {#accessing-platform-datahub-edge}
+### Accessing {{< product-c8y-iot >}} DataHub Edge {#accessing-cumulocity-iot-datahub-edge}
 
 The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in the same way as in a cloud deployment of {{< product-c8y-iot >}} DataHub.
 

@@ -31,7 +31,7 @@ So far {{< product-c8y-iot >}} DataHub provides TrendMiner acccess to the measur
 
 You must follow the instructions in [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) on how to configure an offloading pipeline for the measurements collection, so that TrendMiner can access the data.
 
-### Accessing Cumulocity IoT data in TrendMiner {#accessing-cumulocity-iot-data-in-trendminer}
+### Accessing Cumulocity IoT data in TrendMiner {#accessing-platform-data-in-trendminer}
 
 Once you have defined and activated a TrendMiner offloading pipeline, the initial offload must be completed before you can start querying the data in TrendMiner.
 

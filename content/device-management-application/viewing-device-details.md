@@ -56,13 +56,13 @@ The **Configuration** tab allows you to configure the parameters and initial set
 
 For more details on managing binary-based configuration snapshots, see [Managing configurations](/device-management-application/managing-device-data/#managing-configurations).
 
-#### To request the current text-based configuration snapshot {#to-request-the-current-textbased-configuration-snapshot}
+#### To request the current text-based configuration snapshot {#to-request-the-current-text-based-configuration-snapshot}
 
 1. Navigate to the **Configuration** tab.
 2. Select one of the device-supported configurations in the list.
 3. Click **Get snapshot from device**.
 
-#### To add or edit a text-based configuration snapshot {#to-add-or-edit-a-textbased-configuration-snapshot}
+#### To add or edit a text-based configuration snapshot {#to-add-or-edit-a-text-based-configuration-snapshot}
 
 1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
 2. Click **Send configuration to device** to save your edits.

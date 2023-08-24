@@ -44,7 +44,7 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 Managing configurations, that is requesting a configuration from a device and sending a configuration to a device, can be done in multiple ways. Depending on user permissions and device settings, you can work with text based, typed file-based or legacy file-based configuration. Refer to [Configuration](/device-integration/fragment-library/#configuration) for more detailed and technical information.
 
-### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration {#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-typed-filebased-configuration}
+### To retrieve and apply a configuration snapshot to a device which supports typed file-based configuration {#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-typed-file-based-configuration}
 
 We recommend you to use typed file-based configuration. With typed file-based configuration, devices can manage multiple configurations at the same time. You can upload or retrieve different configurations for different types. Using this approach is more versatile because the configurations are handled as events rather than as files, which is more efficient.
 
@@ -73,13 +73,13 @@ To apply a configuration snapshot to a device which supports multiple configurat
 Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type (ones that match the device type or have no device type specified).
 {{< /c8y-admon-info >}}
 
-### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration {#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-legacy-filebased-configuration}
+### To retrieve and apply a configuration snapshot to a device which supports legacy file-based configuration {#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-legacy-file-based-configuration}
 
 Devices managing configuration as files can do so in a basic form using legacy file-based configuration. Legacy file-based configuration only allows a single configuration to be set per a device.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
 
-### To retrieve and apply a configuration snapshot to a device which supports text-based configuration {#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-textbased-configuration}
+### To retrieve and apply a configuration snapshot to a device which supports text-based configuration {#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-text-based-configuration}
 
 The most basic form of configuration is text-based configuration. A text command can be sent or received from a device. We recommend you to use text-based configuration for short human readable configuration files only.
 

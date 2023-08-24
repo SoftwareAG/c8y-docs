@@ -30,12 +30,12 @@ helpcontent:
 * Your tenant must have the Public-options application installed, see details below.
 {{< /c8y-admon-req >}}
 
-### To use the localization feature
+### To use the localization feature {#to-use-the-localization-feature}
 Since the localization feature uses dynamically fetched application options, your tenant must have the Public-options application installed. Install the Public-options application manually or, as a workaround, apply the branding setting which installs the Public-options application behind the scenes.
 
 For details on how to manually install the Public-options application, see [Branding and language customization](/web/application-configuration/#branding-languages-customization).
 
-#### To apply the branding setting
+#### To apply the branding setting {#to-apply-the-branding-setting}
 To apply the branding setting, you must first subscribe to the [Branding feature](/enterprise-tenant/customization/#branding) in the [{{< enterprise-tenant >}} ](/enterprise-tenant/overview/).
 
 Complete the setup in the Administration application following the steps below:
@@ -48,7 +48,7 @@ Complete the setup in the Administration application following the steps below:
 You must have administrator access to the tenant to install the Public-options application.
 {{</c8y-admon-info>}}
 
-### Localization
+### Localization {#localization}
 
 To open the **Localization** page, navigate to **Configuration > Localization**.
 
@@ -68,7 +68,7 @@ To add a new translation in the DTM application, you can add the text as key and
 
 Click **Apply** to apply the changes.
 
-### To add new keys for translations
+### To add new keys for translations {#to-add-new-keys-for-translations}
 
 Add new keys and their respective translations using the **Add term** option on the top right.
 
@@ -79,7 +79,7 @@ Next, click **Apply** to apply the changes.
 
 ![localization-add-term](/images/dtm/localization/dtm-localization-add-term.png)
 
-### To add and edit translations
+### To add and edit translations {#to-add-and-edit-translations}
 
  You can add or edit translations for all the keys in two ways:
 

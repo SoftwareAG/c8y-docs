@@ -8,7 +8,7 @@ To import the entire asset hierarchy with all assets at once, use the bulk impor
 For each [asset model](/dtm/asset-types/#asset-models), a CSV template is provided.
 Fill in the required details in this template and upload the file to create the assets in bulk for the selected asset model.
 
-### To use the bulk import feature
+### To use the bulk import feature {#to-use-the-bulk-import-feature}
 
 To use the Bulk import feature, you must enable the **Digital Twin** permission for the user's role, following these steps:
 
@@ -37,7 +37,7 @@ If the permissions are not assigned, the CSV template will not be downloaded cor
 {{< /c8y-admon-info>}}
 
 
-### To download a CSV template for bulk import
+### To download a CSV template for bulk import {#to-download-a-csv-template-for-bulk-import}
 
 Follow the steps below:
 
@@ -58,7 +58,7 @@ Follow the steps below:
 
 5. Click **Download Template** to download the CSV template.
 
-### CSV template parameters
+### CSV template parameters {#csv-template-parameters}
 
 The CSV template has the following fields:
 
@@ -152,7 +152,7 @@ Save the CSV template in your system.
 It is recommended to import a maximum of 5000 assets at a time for a better user experience.
 {{< /c8y-admon-info>}}
 
-### To upload a CSV template
+### To upload a CSV template {#to-upload-a-csv-template}
 
 To upload the CSV template follow the steps below:
 
@@ -173,7 +173,7 @@ No assets are created.
 
 If the bulk import fails, review the reported issues and try again.
 
-### Partial import
+### Partial import {#partial-import}
 
 If the asset hierarchy already exists, and you want to import more assets, it can be achieved by a partial import.
 

@@ -3,7 +3,7 @@ weight: 10
 title: Concepts
 layout: redirect
 ---
-### Digital Twin
+### Digital Twin {#digital-twin}
 
 A digital twin is a virtual representation of a physical object or system. It is typically used in the context of the Internet of Things (IoT) to help visualize and analyze how a physical object is performing, or to predict how it might behave in the future.
 
@@ -11,7 +11,7 @@ You can use digital twins to simulate and test the performance of complex system
 
 In the Digital twin manager application, one asset represents one digital twin.
 
-### Digital twin attributes
+### Digital twin attributes {#digital-twin-attributes}
 
 A digital twin contains a number of attributes:
 
@@ -22,7 +22,7 @@ A digital twin contains a number of attributes:
 * It provides value through visualization, analysis, prediction, and optimization
 
 
-### Asset Hierarchy
+### Asset Hierarchy {#asset-hierarchy}
 
 An asset hierarchy is a structure that organizes multiple assets and devices into a hierarchy, allowing for the visualization and management of complex systems.
 

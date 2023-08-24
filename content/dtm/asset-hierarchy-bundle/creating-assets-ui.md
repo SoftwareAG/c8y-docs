@@ -8,7 +8,7 @@ You have two options for creating assets in the DTM application.
 The following section describes how to create an asset via the UI.
 Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creating-assets-bulk-import) on how to import assets in bulk into the DTM application.
 
-### To create an asset
+### To create an asset {#to-create-an-asset}
 
 To add an asset via the UI:
 
@@ -63,7 +63,7 @@ Fill out all required fields.
 You have the option to add more assets on this level.
 Click **Next** to continue until all assets are created.
 
-### To assign devices to an asset
+### To assign devices to an asset {#to-assign-devices-to-an-asset}
 
 When you create a new asset you have the option of assigning one or more devices to this asset.
 
@@ -81,7 +81,7 @@ Only select devices which are part of the current asset.
 If a device belongs to a subasset, then select it when you create the subasset.
 {{< /c8y-admon-info>}}
 
-#### To filter and select devices
+#### To filter and select devices {#to-filter-and-select-devices}
 
 You can view, search or filter devices easily with the following options:
 
@@ -95,7 +95,7 @@ You can view, search or filter devices easily with the following options:
 
 5. To clear the filters, click **Clear all filters**. To see the sort icon and the filter icons hover over each column.
 
-### To add multiple instances of an asset
+### To add multiple instances of an asset {#to-add-multiple-instances-of-an-asset}
 
 At each hierarchy level, you can create multiple assets from a single asset model.
 
@@ -119,7 +119,7 @@ On successful asset hierarchy creation, you see a pop-up notification in the top
 You can view the newly created asset hierarchy in the **Assets** page.
 Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 
-### To view asset details
+### To view asset details {#to-view-asset-details}
 
 Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
 It shows all the subassets, child devices and asset properties.
@@ -134,7 +134,7 @@ Click **Add asset** to add more subassets or click **Import assets** to add [ass
 
 ![Asset tree](/images/dtm/assets/dtm-assets-asset-tree-page.png)
 
-#### To add subassets
+#### To add subassets {#to-add-subassets}
 
 To add subassets to an asset open the **Asset tree** tab.
 

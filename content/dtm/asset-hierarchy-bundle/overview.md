@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-### Assets
+### Assets {#assets}
 
 In the DTM application assets are the digital representation of physical assets.
 An asset in the DTM application can contain subassets and devices.
@@ -28,7 +28,7 @@ ROLES & PERMISSIONS
 Note that global inventory permissions override inventory role permissions. By default, the user has full access to assets created by them regardless of permissions granted to them. See [Managing permissions](/standard-tenant/managing-permissions/) for further information.
 {{< /c8y-admon-req >}}
 
-### Asset hierarchy
+### Asset hierarchy {#asset-hierarchy}
 
 An asset hierarchy is a structure that organizes multiple assets and devices into a hierarchy, allowing for the visualization and management of complex systems.
 

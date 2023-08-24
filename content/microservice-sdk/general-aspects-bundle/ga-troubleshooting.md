@@ -22,6 +22,6 @@ This may happen occasionally when pulling large Docker images for containers wit
 
 This may happen when Kubernetes is performing the auto-scaling and is trying to restart the pods.
 
-##### An alarm was created with the message "No nodes are available that match all of the predicates: [Insufficient cpu ...]" {#an-alarm-was-created-with-the-message-no-nodes-are-available-that-match-all-of-the-predicates-insufficient-cpu-}
+##### An alarm was created with the message "No nodes are available that match all of the predicates: [Insufficient cpu ...]" {#an-alarm-was-created-with-the-message-no-nodes-are-available-that-match-all-of-the-predicates-insufficient-cpu}
 
 There are additional containers running besides yours and they are provisioned by default with Kubernetes. These additional containers might be taking up of the CPU quota of the single node. Kubernetes will manage this and change the pod status from Pending to Running.

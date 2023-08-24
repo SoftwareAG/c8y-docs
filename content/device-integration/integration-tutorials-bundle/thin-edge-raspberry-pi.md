@@ -51,7 +51,7 @@ The last three are optional but needed to get a good overview of the capabilitie
 [Step 7 Manage log files](#step-7-manage-log-files)
 
 
-#### Step 1 Install thin-edge.io {#step-1-install-thinedgeio}
+#### Step 1 Install thin-edge.io {#step-1-install-thin-edgeio}
 
 There are two ways of installing thin-edge.io:
 

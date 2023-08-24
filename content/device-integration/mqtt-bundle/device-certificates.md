@@ -151,7 +151,7 @@ The most popular formats for these files are:
 
 To generate certificates we use the OpenSSL toolkit. If you do not have it already installed, then you can download if from the website: https://www.openssl.org/source/
 
-#### Creating a self-signed CA certificate {#creating-a-selfsigned-ca-certificate}
+#### Creating a self-signed CA certificate {#creating-a-self-signed-ca-certificate}
 
 1. Create a directory for the root certificate and the signing configuration, for example:
 

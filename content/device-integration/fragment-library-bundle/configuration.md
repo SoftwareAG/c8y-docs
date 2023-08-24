@@ -15,7 +15,7 @@ The **Configuration** tab allows three different formats for device configuratio
 They all follow a similar concept where the device may upload its current configuration to the platform and users may install a new configuration on the device.
 This tab appears for devices when they announce support for any of the available formats.
 
-### Text-based configuration {#textbased-configuration}
+### Text-based configuration {#text-based-configuration}
 
 The most basic form of configuration is a simple text-based configuration. Here the configuration is stored and transferred directly as string. We recommend you to use this form for small human readable configuration files only, for example, for microcontroller-based devices.
 
@@ -121,7 +121,7 @@ The 513 static response template is available to receive ```c8y_Configuration```
 5. Set operation status to SUCCESSFUL<br>
   `503,c8y_Configuration`
 
-### Legacy file-based configuration {#legacy-filebased-configuration}
+### Legacy file-based configuration {#legacy-file-based-configuration}
 
 Devices that want to manage configuration as files can achieve a basic form using legacy file-based configuration. For new device integrations we recommend you to implement typed file-based configuration instead because it is more versatile.
 
@@ -291,7 +291,7 @@ The 521 static response template is available for this functionality:
 5. Set operation status to SUCCESSFUL and set the currently installed ```c8y_ConfigurationDump``` fragment implicitly <br>
   `503,c8y_DownloadConfigFile`
 
-### Typed file-based configuration {#typed-filebased-configuration}
+### Typed file-based configuration {#typed-file-based-configuration}
 
 The most versatile way of managing device configuration is typed file-based configuration. Here a device can manage multiple configuration files at the same time. Typed file configuration is activated for a device by adding the ```c8y_SupportedConfiguration``` fragment to the device's own managed object.
 

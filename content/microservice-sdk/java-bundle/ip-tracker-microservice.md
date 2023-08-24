@@ -8,7 +8,7 @@ layout: redirect
 Visit our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial) and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
 {{< /c8y-admon-important >}}
 
-### Developing the IP-tracker microservice {#developing-the-iptracker-microservice}
+### Developing the IP-tracker microservice {#developing-the-ip-tracker-microservice}
 
 This microservice application creates a warning alarm message (for demonstration purposes) and it exposes endpoints to:
 

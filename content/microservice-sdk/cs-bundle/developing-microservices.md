@@ -78,7 +78,7 @@ C8Y_BOOTSTRAP_TENANT | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_USERNAME | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_PASSWORD | Bootstrap user to get platform subscriptions
 
-### Role-based authorization {#rolebased-authorization}
+### Role-based authorization {#role-based-authorization}
 
 Once a user has been authenticated, the next step is to check if the user is authorized to do what they are trying to do.
 
@@ -379,7 +379,7 @@ The `UseHealthChecks` method expects a port or a path. That port or path is the 
 
 The basic flow is that you register your health checks in your IoC container. You register these health checks via a fluent HealthCheckBuilder API in your Startup's `ConfigureServices` method. This HealthCheckBuilder will build a `HealthCheckService` and register it as an `IHealthCheckService` in your IoC container.
 
-#### Built-in platform health checks {#builtin-platform-health-checks}
+#### Built-in platform health checks {#built-in-platform-health-checks}
 
 The microservice is healthy if the platform is accessible via HTTP from the application. To check it, it is possible to use an action that is built-in.
 

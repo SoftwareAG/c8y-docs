@@ -460,7 +460,7 @@ To deploy an application on an environment you need the following:
 * ZIP build from previous steps
 
 
-##### Step 1 - Create the application {#step-1--create-the-application}
+##### Step 1 - Create the application {#step-1---create-the-application}
 
 If the application does not exist, create a new application on the platform:
 
@@ -504,7 +504,7 @@ $ curl -H "Authorization:<AUTHORIZATION>" \
      <URL>/application/applicationsByName/hello-world
 ```
 
-##### Step 2 - Upload the ZIP file {#step-2--upload-the-zip-file}
+##### Step 2 - Upload the ZIP file {#step-2---upload-the-zip-file}
 
 ```http
 POST /application/applications/<APPLICATION_ID>/binaries
@@ -521,7 +521,7 @@ $ curl -F "data=@<PATH_TO_ZIP>" \
 	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-##### Step 3 - Subscribe to the microservice {#step-3--subscribe-to-the-microservice}
+##### Step 3 - Subscribe to the microservice {#step-3---subscribe-to-the-microservice}
 
 ```http
 POST /tenant/tenants/<TENANT_ID>/applications

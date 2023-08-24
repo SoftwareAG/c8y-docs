@@ -105,7 +105,7 @@ Thus, the microservice must only include `X-Cumulocity-Application-Key` if the m
 
 If the microservice includes the header `X-Cumulocity-Application-Key`, the header must contain the correct application key. Then, the microservice retrieves the application key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request must contain  the credentials for basic authentication in the following format: `tenantId/username:password`. The tenant ID, username and password are read by the microservice from the following operating system environment variables: C8Y_BOOTSTRAP_TENANT, C8Y_BOOTSTRAP_USER, and C8Y_BOOTSTRAP_PASSWORD. In order to increase the performance, the microservice has to implement a caching mechanism related to the user credentials.
 
-#### Microservice authentication and multi-tenancy {#microservice-authentication-and-multitenancy}
+#### Microservice authentication and multi-tenancy {#microservice-authentication-and-multi-tenancy}
 
 In general, microservices use the standard {{< product-c8y-iot >}} authentication mechanisms. This is executed in two steps:
 

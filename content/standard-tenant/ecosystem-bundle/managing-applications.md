@@ -27,7 +27,7 @@ helpcontent:
     Duplicates of subscribed applications.
 
 
-    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
+    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the user documentation."
   - label: features
     title: Features
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."

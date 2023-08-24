@@ -20,7 +20,7 @@ helpcontent:
 	Under **TFA settings**, select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
 
 
-	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Administration > Configuring single-sign on* in the *User guide*."
+	Switch to the **Single sign-on** tab to configure single sign-on. For details, see *Configuring single sign-on* in the user documentation."
 ---
 
 

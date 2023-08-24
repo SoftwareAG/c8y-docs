@@ -2,6 +2,19 @@
 weight: 40
 title: Working with alarms
 layout: redirect
+helpcontent:
+- label: alarm-monitoring
+  title: Alarms
+  content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of the device.
+
+
+  By default, only unresolved alarms are shown. If you turn on **Show cleared alarms** at the top right, you will see the entire alarm history.
+
+
+  Alarms are classified according to their severity: CRITICAL, MAJOR, MINOR, WARNING.
+
+
+  By clicking one of the buttons at the top, the corresponding section will be hidden. Click it once more to make the section visible again. Within each section, the alarms are sorted by their occurrence, displaying the most recent alarm first."
 ---
 
 Devices can raise alarms to indicate that there is a problem requiring an intervention.

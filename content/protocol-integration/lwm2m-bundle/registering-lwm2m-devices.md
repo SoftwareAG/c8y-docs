@@ -123,7 +123,7 @@ Unsecured devices connect during bootstrap connection and server connection thro
 * **5683**: unsecure bootstrap connection
 * **5783**: unsecure direct server connection
 
-##### Registration of PSK-secured devices {#registration-of-psksecured-devices}
+##### Registration of PSK-secured devices {#registration-of-psk-secured-devices}
 
 PSK-secured devices connect during a bootstrap connection and a server connection using a pre-shared key through secured ports:
 

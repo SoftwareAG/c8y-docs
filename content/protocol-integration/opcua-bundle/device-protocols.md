@@ -164,7 +164,7 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 ![OPC UA device protocol applied](/images/device-protocols/opcua/opcua-device-protocol-applied.png)
 
-#### Device type has been un-applied {#device-type-has-been-unapplied}
+#### Device type has been un-applied {#device-type-has-been-un-applied}
 
 - Event type - c8y_ua_DeviceTypeUnapplied
 - Event text -

@@ -107,7 +107,7 @@ Edit the following startup file and change the heap memory settings (-Xms128m -X
 In the installation procedure, many of the agent configurations are defaulted to some value. These default values are set based on testing, common usage assumptions and ease of installation. However, you can change the default value to a value suitable for your environment and usage. To do so, uncomment the property and change the value of the property in `$HOME/.snmp/snmp-agent-gateway.properties`.
 On saving the changes, restart the agent service for the changes to take effect.
 
-#### Which {{< product-c8y-iot >}} services does the agent use? {#which--productc8yiot--services-does-the-agent-use}
+#### Which {{< product-c8y-iot >}} services does the agent use? {#which-platform-services-does-the-agent-use}
 
 The agent makes use of c8y core APIs (most notably inventory, identity, device control, alarm/measurement/event) of the platform.
 

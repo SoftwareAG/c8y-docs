@@ -143,7 +143,7 @@ The following fields may be modified:
 </table>
 
 
-### Y-axis behaviour {#yaxis-behaviour}
+### Y-axis behaviour {#y-axis-behaviour}
 
 Per default, the first data point is positioned to the left y-axis and the remaining data points to the right. This behavior can be changed by modifying the respective value "Y-axis" for a particular data point (to "Left" or "Right", see above).
 

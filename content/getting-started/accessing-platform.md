@@ -8,7 +8,7 @@ section:
 
 You access the {{< product-c8y-iot >}} platform via a [URL](#url) in a web browser.
 
-### Supported browsers
+### Supported browsers {#supported-browsers}
 
 Supported browsers in this version are:
 
@@ -40,7 +40,7 @@ For example, loading graphs with large amounts of data points may make the mobil
 {{< /c8y-admon-info >}}
 
 
-### URL
+### URL {#url}
 
 To access the applications for your {{< product-c8y-iot >}} tenant, use the following URL:
 
@@ -60,7 +60,7 @@ Make sure that the address bar of your browser shows a lock icon. The lock icon 
 {{< /c8y-admon-important >}}
 
 
-### To log into the platform
+### To log into the platform {#to-log-into-the-platform}
 
 On the Login screen, enter your username (case-sensitive) and password.
 
@@ -98,7 +98,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 {{< /c8y-admon-info >}}
 
 
-### To reset your password
+### To reset your password {#to-reset-your-password}
 
 1. Click the **Forgot password?** link on the Login screen.
 2. In the resulting dialog box, enter your email address and click **Reset password**.
@@ -113,7 +113,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please contact [product support](/additional-resources/contacting-support/).
 
 
-### To access pages using URLs
+### To access pages using URLs {#to-access-pages-using-urls}
 
 You can navigate straight to any place inside a {{< product-c8y-iot >}} application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 

@@ -16,7 +16,7 @@ section:
 {{< /c8y-admon-related >}}
 
 
-### Main screen elements
+### Main screen elements {#main-screen-elements}
 
 The general structure common to all {{< product-c8y-iot >}} applications includes the following screen elements:
 
@@ -68,7 +68,7 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 {{< /c8y-admon-info >}}
 
 
-### Application switcher
+### Application switcher {#application-switcher}
 
 The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications.
 
@@ -79,10 +79,10 @@ The application switcher shows all {{< product-c8y-iot >}} applications you curr
 If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications.
 
 
-### Search and filter functionality
+### Search and filter functionality {#search-and-filter-functionality}
 
 
-#### Full text search
+#### Full text search {#full-text-search}
 
 {{< product-c8y-iot >}} provides a full text search, available through the **Search** button <img src="/images/icons/search-icon.png" alt="Search" style="display:inline-block; margin:0"> at the right of the top bar in the UI.
 
@@ -98,7 +98,7 @@ The Search window only lists a limited number of matches. In case of more matche
 The search results include all assets containing the search term in any property (name, model or any fragment), that means, the search results do not only include assets matching the search criteria with their names.
 {{< /c8y-admon-important >}}
 
-##### Exact match
+##### Exact match {#exact-match}
 
 By default, the search option **Exact match** is applied.
 
@@ -131,7 +131,7 @@ My Demo Device
 my demo device
 ```
 
-##### Alternative search options
+##### Alternative search options {#alternative-search-options}
 
 Other than with filtering, using wildcards in a search is not supported.
 
@@ -144,7 +144,7 @@ Instead, you can switch the search option by clicking one of the following butto
 This will search for assets starting with, containing or ending with the search term, respectively.
 
 
-#### Filtering
+#### Filtering {#filtering}
 
 Some pages offer a filtering functionality to filter objects in a list.
 
@@ -181,7 +181,7 @@ On certain pages, the filter mechanism only searches through items shown on a pa
 
 For details on the filtering mechanism in the devices list refer to [To filter devices](/device-management-application/viewing-all-devices/#to-filter-devices).
 
-### Real-time behavior of the navigator
+### Real-time behavior of the navigator {#real-time-behavior-of-the-navigator}
 
 In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups will not be updated immediately.
 

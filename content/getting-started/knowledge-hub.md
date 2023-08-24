@@ -14,7 +14,7 @@ The Knowledge Hub is only available for users of free trial tenants.
 {{< /c8y-admon-info >}}
 
 
-### To access the Knowledge Hub
+### To access the Knowledge Hub {#to-access-the-knowledge-hub}
 
 At the bottom right of the {{< product-c8y-iot >}} platform UI, click the **Knowledge Hub** button to access the {{< product-c8y-iot >}} Knowledge Hub.
 
@@ -26,7 +26,7 @@ The **Knowlegde Hub** dialog opens, presenting a couple of options in a list, in
 The options provided in the **Knowlegde Hub** dialog are frequently updated so that the sessions, resources and communication options you see in the platform might not match exactly those described here.
 {{< /c8y-admon-info >}}
 
-### Sessions
+### Sessions {#sessions}
 
 The first items of the list guide you in a step-by-step manner through the major topics of {{< product-c8y-iot >}}:
 
@@ -45,17 +45,17 @@ The first items of the list guide you in a step-by-step manner through the major
 After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched. Note that these sessions may vary from time to time.
 {{< /c8y-admon-info >}}
 
-### Feedback
+### Feedback {#feedback}
 
 Below the introductory sessions in the Knowledge Hub list, click **Share feedback** to leave your feedback. You can quickly rate your experience (1-5 stars) and provide further written feedback.
 
-### Resources
+### Resources {#resources}
 
 Click **Resources** to switch to the **Resources** list.
 
 Here you can find links to various additional resources like documentation, trainings, developer resources, and release notes.
 
-### Communication
+### Communication {#communication}
 
 At the bottom of the list in the **Knowledge Hub** dialog, you can find several options to get in contact with us as required, for instance:
 

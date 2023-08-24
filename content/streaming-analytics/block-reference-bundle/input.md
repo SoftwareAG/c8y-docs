@@ -63,7 +63,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 Note: When running in simulation mode, because only the creation time of the alarm is stored, the alarm status must be Active.</p>
 
 
-#### Parameters
+#### Parameters {#alarm-input-parameters}
 
 <table>
 <colgroup>
@@ -151,7 +151,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#alarm-input-outputs}
 
 <table>
 <colgroup>
@@ -192,7 +192,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 Note: A history of changes is not maintained for <tt>Event</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.</p>
 
 
-#### Parameters
+#### Parameters {#event-input-parameters}
 
 <table>
 <colgroup>
@@ -251,7 +251,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#event-input-outputs}
 
 <table>
 <colgroup>
@@ -300,7 +300,7 @@ If the value of the property specified by the Property Name parameter of this bl
 The parameters that define the input stream of the block are "Input Source" and "Property Name".</p>
 
 
-#### Parameters
+#### Parameters {#managed-object-input-parameters}
 
 <table>
 <colgroup>
@@ -348,7 +348,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#managed-object-input-outputs}
 
 <table>
 <colgroup>
@@ -390,7 +390,7 @@ The parameters that define the output stream of the block are "Input Source" and
 Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.</p>
 
 
-#### Parameters
+#### Parameters {#measurement-input-parameters}
 
 <table>
 <colgroup>
@@ -437,7 +437,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#measurement-input-outputs}
 
 <table>
 <colgroup>
@@ -484,7 +484,7 @@ The parameter that defines the input stream of the block is Input Source.
 Note: A history of changes is not maintained for <tt>Operation</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.</p>
 
 
-#### Parameters
+#### Parameters {#operation-input-parameters}
 
 <table>
 <colgroup>
@@ -553,7 +553,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#operation-input-outputs}
 
 <table>
 <colgroup>
@@ -599,7 +599,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 Note: A history of changes is not maintained for <tt>Event</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.</p>
 
 
-#### Parameters
+#### Parameters {#position-input-parameters}
 
 <table>
 <colgroup>
@@ -675,7 +675,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#position-input-outputs}
 
 <table>
 <colgroup>

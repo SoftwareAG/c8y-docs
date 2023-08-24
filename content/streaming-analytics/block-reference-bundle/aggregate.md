@@ -79,7 +79,7 @@ If a window is configured, the block uses a set of 20 buckets, so the expired va
 Note:The Average (Mean) block generates the mean for an individual device. If the input comes from a group of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
-#### Parameters
+#### Parameters {#average-mean-parameters}
 
 <table>
 <colgroup>
@@ -120,7 +120,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#average-mean-inputs}
 
 <table>
 <colgroup>
@@ -160,7 +160,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#average-mean-outputs}
 
 <table>
 <colgroup>
@@ -195,7 +195,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 <p>If two consecutive input values have different types, they will not be evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.</p>
 
 
-#### Input Port Details
+#### Input Port Details {#counter-inputs}
 
 <table>
 <colgroup>
@@ -228,7 +228,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#counter-outputs}
 
 <table>
 <colgroup>
@@ -277,7 +277,7 @@ If the Sample input port is connected, the block only samples the data when the 
 If reset and sample signals are received together, the reset is processed first.</p>
 
 
-#### Input Port Details
+#### Input Port Details {#discrete-statistics-inputs}
 
 <table>
 <colgroup>
@@ -317,7 +317,7 @@ If reset and sample signals are received together, the reset is processed first.
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#discrete-statistics-outputs}
 
 <table>
 <colgroup>
@@ -391,7 +391,7 @@ The block can operate over a time-bounded window that is specified with the Wind
 The Reset input clears the content of the window. Sample input can be used to force re-evaluation and generate the latest value.</p>
 
 
-#### Parameters
+#### Parameters {#gradient-parameters}
 
 <table>
 <colgroup>
@@ -422,7 +422,7 @@ The Reset input clears the content of the window. Sample input can be used to fo
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#gradient-inputs}
 
 <table>
 <colgroup>
@@ -462,7 +462,7 @@ The Reset input clears the content of the window. Sample input can be used to fo
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#gradient-outputs}
 
 <table>
 <colgroup>
@@ -503,7 +503,7 @@ If a window is configured, the block uses a set of 20 buckets, so the expired va
 Note: The Group Statistics block calculates and generates aggregate values for the group as a whole (not for individual devices). To generate aggregates for an individual device in a group, use the Average (Mean), Standard Deviation, or Minimum/Maximum blocks. The Group Statistics block only considers devices from which it has received input values.</p>
 
 
-#### Parameters
+#### Parameters {#group-statistics-parameters}
 
 <table>
 <colgroup>
@@ -543,7 +543,7 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#group-statistics-inputs}
 
 <table>
 <colgroup>
@@ -569,7 +569,7 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#group-statistics-outputs}
 
 <table>
 <colgroup>
@@ -643,7 +643,7 @@ The block can operate over a time-bounded window that is specified with the Wind
 If a window is configured, the block will use a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.</p>
 
 
-#### Parameters
+#### Parameters {#integral-parameters}
 
 <table>
 <colgroup>
@@ -684,7 +684,7 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#integral-inputs}
 
 <table>
 <colgroup>
@@ -724,7 +724,7 @@ If a window is configured, the block will use a set of 20 buckets, so the expire
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#integral-outputs}
 
 <table>
 <colgroup>
@@ -765,7 +765,7 @@ If a window is configured, the block uses a set of 20 buckets, so the time of ex
 Note: The Minimum/Maximum block generates the minimum and maximum for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
-#### Parameters
+#### Parameters {#minimum--maximum-parameters}
 
 <table>
 <colgroup>
@@ -796,7 +796,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#minimum--maximum-inputs}
 
 <table>
 <colgroup>
@@ -829,7 +829,7 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#minimum--maximum-outputs}
 
 <table>
 <colgroup>
@@ -879,7 +879,7 @@ If a window is configured, the block uses a set of 20 buckets, so the time of ex
 Note:  The Standard Deviation block generates the standard deviation and variance for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
-#### Parameters
+#### Parameters {#standard-deviation-parameters}
 
 <table>
 <colgroup>
@@ -910,7 +910,7 @@ Note:  The Standard Deviation block generates the standard deviation and varianc
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#standard-deviation-inputs}
 
 <table>
 <colgroup>
@@ -950,7 +950,7 @@ Note:  The Standard Deviation block generates the standard deviation and varianc
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#standard-deviation-outputs}
 
 <table>
 <colgroup>

@@ -103,7 +103,7 @@ The block can operate over a time-bounded window that is specified with the Wind
 If a window is configured, the block will use a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.</p>
 
 
-#### Parameters
+#### Parameters {#crossing-counter-parameters}
 
 <table>
 <colgroup>
@@ -155,7 +155,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#crossing-counter-inputs}
 
 <table>
 <colgroup>
@@ -195,7 +195,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#crossing-counter-outputs}
 
 <table>
 <colgroup>
@@ -237,7 +237,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 <p>The block generates an output after getting at least two input values.</p>
 
 
-#### Input Port Details
+#### Input Port Details {#delta-inputs}
 
 <table>
 <colgroup>
@@ -270,7 +270,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#delta-outputs}
 
 <table>
 <colgroup>
@@ -305,7 +305,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 <p>Only generates an output if both inputs receive a value.</p>
 
 
-#### Input Port Details
+#### Input Port Details {#difference-inputs}
 
 <table>
 <colgroup>
@@ -338,7 +338,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#difference-outputs}
 
 <table>
 <colgroup>
@@ -380,7 +380,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 <p>Outputs the change in direction and the last significant inflection point, ignoring minor variations if the changes are less than the defined hysteresis value. Repeated inputs of the same value are ignored.</p>
 
 
-#### Parameters
+#### Parameters {#direction-detection-parameters}
 
 <table>
 <colgroup>
@@ -410,7 +410,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#direction-detection-inputs}
 
 <table>
 <colgroup>
@@ -443,7 +443,7 @@ If a window is configured, the block will use a set of 20 buckets, so the time o
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#direction-detection-outputs}
 
 <table>
 <colgroup>
@@ -491,7 +491,7 @@ The values of the inputs are available as <tt>input1</tt>, <tt>input2</tt>, <tt>
 Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 </tt></li> <li>Convert days to seconds: <tt>input1 * 86400 </tt></li> <li>Average of 4 inputs: <tt>(input1 + input2 + input3 + input4) / 4 </tt></li> <li>Threshold comparison: <tt>input1 &gt; 3.1412 </tt> (but also see the Threshold block)</li> <li>Pythagoras to compute the hypotenuse of a right-angled triangle: <tt>(input1.pow(2) + input2.pow(2)).sqrt() </tt></li> <li>Comparison to 3 decimal places: <tt>(input1 * 1000 - (input1 * 1000).fractionalPart()) = (input2 * 1000 - (input2 * 1000).fractionalPart()) </tt></li> <li>Range check: <tt>input1 &gt;= 1 and input1 &lt;= 10</tt></li> <li>String comparison: <tt>input1 = "my value"</tt></li> <li>Larger value: <tt>float.max(input1, float.PI)</tt></li> <li>Remainder of integer division: <tt>input1.round() % input2.round()</tt></li> </ul></p>
 
 
-#### Parameters
+#### Parameters {#expression-parameters}
 
 <table>
 <colgroup>
@@ -521,7 +521,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#expression-inputs}
 
 <table>
 <colgroup>
@@ -575,7 +575,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#expression-outputs}
 
 <table>
 <colgroup>
@@ -612,7 +612,7 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 Conversion between two arbitrary bases can be achieved by chaining this block with the To Base N block.</p>
 
 
-#### Parameters
+#### Parameters {#from-base-n-parameters}
 
 <table>
 <colgroup>
@@ -653,7 +653,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#from-base-n-inputs}
 
 <table>
 <colgroup>
@@ -679,7 +679,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#from-base-n-outputs}
 
 <table>
 <colgroup>
@@ -716,7 +716,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 The KPI input can provide properties, typically from a KPI-managed object, which include the red and yellow ranges, the unit and the label. If the device contains a data point for the specified fragment and series, then the values from the data point override those from the KPI.</p>
 
 
-#### Parameters
+#### Parameters {#kpi-parameters}
 
 <table>
 <colgroup>
@@ -772,7 +772,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#kpi-inputs}
 
 <table>
 <colgroup>
@@ -805,7 +805,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#kpi-outputs}
 
 <table>
 <colgroup>
@@ -863,7 +863,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 It is only mandatory to provide one of the limits. If this is the case, then the input is only limited in the direction of the specified parameter.</p>
 
 
-#### Parameters
+#### Parameters {#limit-parameters}
 
 <table>
 <colgroup>
@@ -902,7 +902,7 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#limit-inputs}
 
 <table>
 <colgroup>
@@ -928,7 +928,7 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#limit-outputs}
 
 <table>
 <colgroup>
@@ -967,7 +967,7 @@ If the Machine Learning model does not yet exist, use the Machine Learning appli
 Block inputs correspond to the Machine Learning model's inputs (that are marked Active) in the order specified by the Machine Learning model. All inputs used by the model must be connected. Outputs correspond to the outputs as specified by the Machine Learning model. If a PMML output is specified as "JSON", then the block outputs a string version of the JSON, but the properties of the object are also available as extra values which can be extracted using the Extract Property block, which is the recommended way of unpacking multiple values from such an output. Currently, timestamp inputs are not supported.</p>
 
 
-#### Parameters
+#### Parameters {#machine-learning-parameters}
 
 <table>
 <colgroup>
@@ -996,7 +996,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#machine-learning-inputs}
 
 <table>
 <colgroup>
@@ -1085,7 +1085,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#machine-learning-outputs}
 
 <table>
 <colgroup>
@@ -1185,7 +1185,7 @@ Block inputs correspond to the Machine Learning model's inputs (that are marked 
 A pulse is sent when the defined range is crossed. That is, when either the lower or upper range is crossed, or if the value goes from below the range to over the range (or vice versa) without ever being within the range.</p>
 
 
-#### Parameters
+#### Parameters {#range-parameters}
 
 <table>
 <colgroup>
@@ -1240,7 +1240,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#range-inputs}
 
 <table>
 <colgroup>
@@ -1273,7 +1273,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#range-outputs}
 
 <table>
 <colgroup>
@@ -1322,7 +1322,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 <p>Ranges are defined using a list of unique upper bound values in increasing order. The lower bound of the first range depends on the value of the Minimum Value parameter. The lower bound of each subsequent range is defined by the upper bound of the previous range. The range to which an input value equal to a boundary value belongs depends on the Exclude Upper parameter. The block outputs the mapped value for the range the input lies within, or a failed flag if the input value is not within any of the ranges.</p>
 
 
-#### Parameters
+#### Parameters {#range-lookup-parameters}
 
 <table>
 <colgroup>
@@ -1382,7 +1382,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#range-lookup-inputs}
 
 <table>
 <colgroup>
@@ -1408,7 +1408,7 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#range-lookup-outputs}
 
 <table>
 <colgroup>
@@ -1454,7 +1454,7 @@ The rules available for use are: <ul> <li>Up (or take the ceiling, or round towa
 The value is rounded to the nearest 'target number' - this is a whole number (if the number of decimal points is zero), or rounded to the number of decimal points specified.  If the number of decimal points is negative, it is rounded to a power of 10. For example, if the number of decimal points is 2, it is rounded to the nearest 0.01 (that is, hundredths). If the number of decimal points is -3, it is rounded to the nearest 1000 (that is, thousands).</p>
 
 
-#### Parameters
+#### Parameters {#rounding-parameters}
 
 <table>
 <colgroup>
@@ -1498,7 +1498,7 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#rounding-inputs}
 
 <table>
 <colgroup>
@@ -1524,7 +1524,7 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#rounding-outputs}
 
 <table>
 <colgroup>
@@ -1561,7 +1561,7 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 A pulse is sent when the defined threshold value is crossed from any direction.</p>
 
 
-#### Parameters
+#### Parameters {#threshold-parameters}
 
 <table>
 <colgroup>
@@ -1605,7 +1605,7 @@ A pulse is sent when the defined threshold value is crossed from any direction.<
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#threshold-inputs}
 
 <table>
 <colgroup>
@@ -1638,7 +1638,7 @@ A pulse is sent when the defined threshold value is crossed from any direction.<
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#threshold-outputs}
 
 <table>
 <colgroup>
@@ -1689,7 +1689,7 @@ A pulse is sent when the defined threshold value is crossed from any direction.<
 Conversion between two arbitrary bases can be achieved by chaining this block with the From Base N block.</p>
 
 
-#### Parameters
+#### Parameters {#to-base-n-parameters}
 
 <table>
 <colgroup>
@@ -1730,7 +1730,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 </tbody>
 </table>
 
-#### Input Port Details
+#### Input Port Details {#to-base-n-inputs}
 
 <table>
 <colgroup>
@@ -1756,7 +1756,7 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 </tbody>
 </table>
 
-#### Output Port Details
+#### Output Port Details {#to-base-n-outputs}
 
 <table>
 <colgroup>

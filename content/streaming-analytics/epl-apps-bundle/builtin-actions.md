@@ -10,7 +10,7 @@ With Apama EPL, it is possible to utilize functions, called "actions". Every mon
 
 See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}) for actions on the built-in types.
 
-### Querying {{< product-c8y-iot >}} data {#querying--productc8yiot--data}
+### Querying {{< product-c8y-iot >}} data {#querying-platform-data}
 
 To interact with your historical data, you can use one of the following request-response event pairs to look up resources.
 

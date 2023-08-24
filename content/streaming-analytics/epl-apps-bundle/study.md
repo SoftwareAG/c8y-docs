@@ -16,7 +16,7 @@ If you are just starting with Apama EPL, take a look at [Examples](/streaming-an
 
 We want our tracking devices that are continuously sending location events to automatically generate alarms if they move outside a geofence. This geofence will be a circle and should be configurable for each device separately. The alarm will be created at the moment the device moves outside the geofence. While it is moving outside, it should not create new alarms because the first one will remain active. As soon as the device moves back into the geofence, the alarm will be cleared.
 
-#### {{< product-c8y-iot >}} data model {#-productc8yiot--data-model}
+#### {{< product-c8y-iot >}} data model {#platform-data-model}
 
 Location event structure (the part we need):
 

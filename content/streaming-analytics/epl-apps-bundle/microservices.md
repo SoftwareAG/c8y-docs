@@ -16,7 +16,7 @@ We will be making use of the `CumulocityRequestInterface` API. For more technica
 
 Click the Streaming Analytics icon in the application switcher. On the resulting home screen, navigate to the **EPL Apps** page and then click **New EPL app**. You will now see an EPL editor window in which to create the app which interacts with another microservice.
 
-### Connecting to the {{< product-c8y-iot >}} platform {#connecting-to-the--productc8yiot--platform}
+### Connecting to the {{< product-c8y-iot >}} platform {#connecting-to-the-platform}
 
 To support making these requests, we provide a helper event with actions to automatically connect to the {{< product-c8y-iot >}} platform and then create requests which can be used to call other microservices. This helper event is called `CumulocityRequestInterface` and is within the `com.apama.cumulocity` package. This helper event provides a static action which will connect to {{< product-c8y-iot >}} and return an instance of the event. It can automatically connect either from within a microservice or the {{< product-c8y-iot >}} platform itself, or from a remote correlator. That instance has an action which will create a request to call a specific microservice.
 

@@ -153,7 +153,7 @@ This tenant option is only read when the microservice starts.
 If the tenant option is changed, the microservice only picks this up on the next microservice subscription.
 {{< /c8y-admon-info >}}
 
-#### Streams - windows {#streams--windows}
+#### Streams - windows {#streams---windows}
 
 Streams give you the possibility to operate on windows of events. Streams use the `from` keyword instead of `on ` and define a window to operate over, and select what output they want from that window using aggregates. Windows can be restricted by two means:
 
@@ -169,7 +169,7 @@ Streams give you the possibility to operate on windows of events. Streams use th
 	from m in all Measurement(type="c8y_TemperatureMeasurement") retain 100 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }
     ```
 
-#### Streams - outputting periodically {#streams--outputting-periodically}
+#### Streams - outputting periodically {#streams---outputting-periodically}
 
 Streams can also control how frequently they evaluate, using the `every` specifier.
 

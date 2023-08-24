@@ -293,7 +293,7 @@ The total number of dropped events across all models is periodically published a
 
 All dropped input events are also sent to channel `AnalyticsDroppedEvents`, allowing you to implement your own monitoring of the dropped events. A dropped input event sent to the channel `AnalyticsDroppedEvents` is packaged inside an event of type `apama.analyticsbuilder.DroppedEvent`. This allows you to extract the original dropped event and perform any analysis on it, for example, categorizing the number of dropped events per device. This can be achieved by writing EPL that listens for the `DroppedEvent` events, aggregates by device identifier and/or time, and sends measurements to {{< product-c8y-iot >}} that can be monitored. See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
-#### Monitoring the model life-cycle {#monitoring-the-model-lifecycle}
+#### Monitoring the model life-cycle {#monitoring-the-model-life-cycle}
 
 Life-cycle messages are written to the correlator log whenever a model is created or removed, or when it fails. The log messages may look as follows:
 

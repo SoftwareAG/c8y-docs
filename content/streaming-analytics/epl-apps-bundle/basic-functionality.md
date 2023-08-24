@@ -55,7 +55,7 @@ From this page, you can:
 
 * Reload all EPL apps. Click **Reload** in the top menu bar to refresh the display to show any changes other users have made since the page loaded, including any errors that have been introduced in the meantime.
 
-##### Step 2 - Create an EPL app {#step-2--create-an-epl-app}
+##### Step 2 - Create an EPL app {#step-2---create-an-epl-app}
 
 Click **New EPL app** in the top menu bar. Give the app a unique name. You can also enter a description which will be shown on the card that is created for the new app.
 
@@ -79,7 +79,7 @@ Click **X** in the top menu bar to leave the EPL editor and thus to return to th
 All unsaved changes are lost when you navigate to a different URL or close the browser window.
 {{< /c8y-admon-caution >}}
 
-##### Step 3 - Test the EPL app {#step-3--test-the-epl-app}
+##### Step 3 - Test the EPL app {#step-3---test-the-epl-app}
 
 Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
 
@@ -89,7 +89,7 @@ See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 {{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
 
-##### Step 1 - Install Apama {#step-1--install-apama}
+##### Step 1 - Install Apama {#step-1---install-apama}
 
 If you have licensed Apama, install it using {{< sag-installer >}}.
 
@@ -97,11 +97,11 @@ You can also use a freemium version of Apama which runs with reduced capabilitie
 
 Both versions, the licensed version and the freemium version, include {{< sag-designer >}}.
 
-##### Step 2 - Create a project {#step-2--create-a-project}
+##### Step 2 - Create a project {#step-2---create-a-project}
 
 Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-c8y-iot >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
 
-##### Step 3 - Add Apama bundles to the project {#step-3--add-apama-bundles-to-the-project}
+##### Step 3 - Add Apama bundles to the project {#step-3---add-apama-bundles-to-the-project}
 
 Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
@@ -125,7 +125,7 @@ Exposes the {{< product-c8y-iot >}} client to EPL apps.
 
 The bundles above are the only ones that are permissible in an EPL app, so be careful not to add any other bundles or your app may not work when activated in {{< product-c8y-iot >}}.
 
-##### Step 4 - Create a monitor file {#step-4--create-a-monitor-file}
+##### Step 4 - Create a monitor file {#step-4---create-a-monitor-file}
 
 To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
 
@@ -133,7 +133,7 @@ Before you import the newly created monitor file as an EPL app into {{< product-
 
 For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
-##### Step 5 - Run and test the monitor file {#step-5--run-and-test-the-monitor-file}
+##### Step 5 - Run and test the monitor file {#step-5---run-and-test-the-monitor-file}
 
 When running the project locally, you must provide your {{< product-c8y-iot >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client. For example:
 
@@ -342,7 +342,7 @@ The following common fields are available with the responses, depending on the o
 | state          | Whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`. |
 | warnings       | A list of all compilation warnings in the file, if any, with line numbers and text. |
 
-#### GET - Retrieve all available EPL files {#get--retrieve-all-available-epl-files}
+#### GET - Retrieve all available EPL files {#get---retrieve-all-available-epl-files}
 
 Endpoint: `/service/cep/eplfiles`
 
@@ -379,7 +379,7 @@ Example value for response code 200:
 }
 ```
 
-#### GET - Retrieve all available EPL files with their contents {#get--retrieve-all-available-epl-files-with-their-contents}
+#### GET - Retrieve all available EPL files with their contents {#get---retrieve-all-available-epl-files-with-their-contents}
 
 Endpoint: `/service/cep/eplfiles`
 
@@ -420,7 +420,7 @@ Example value for response code 200:
 }
 ```
 
-#### GET - Retrieve EPL file by identifier {#get--retrieve-epl-file-by-identifier}
+#### GET - Retrieve EPL file by identifier {#get---retrieve-epl-file-by-identifier}
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
@@ -458,7 +458,7 @@ Example value for response code 200:
 }
 ```
 
-#### POST - Create a new EPL application {#post--create-a-new-epl-application}
+#### POST - Create a new EPL application {#post---create-a-new-epl-application}
 
 Endpoint: `/service/cep/eplfiles`
 
@@ -533,7 +533,7 @@ Example for response code 201 when created with warnings or errors:
 }
 ```
 
-#### PUT - Update EPL file by identifier {#put--update-epl-file-by-identifier}
+#### PUT - Update EPL file by identifier {#put---update-epl-file-by-identifier}
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
@@ -609,7 +609,7 @@ Example value for response code 200 when updated with errors or warnings:
 }
 ```
 
-#### DELETE - Delete EPL file by identifier {#delete--delete-epl-file-by-identifier}
+#### DELETE - Delete EPL file by identifier {#delete---delete-epl-file-by-identifier}
 
 Endpoint: `/service/cep/eplfiles/{id}`
 

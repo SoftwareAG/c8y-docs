@@ -24,7 +24,7 @@ Contrast these to the `pulse` type, which represents discrete events and has the
 
 These properties and the rationale behind them are explored and explained in the following topics. These topics also explain how to handle cases that do not fit into these distinctions, such as discrete numeric measurements.
 
-### Values as representations of continuous-time physical quantities {#values-as-representations-of-continuoustime-physical-quantities}
+### Values as representations of continuous-time physical quantities {#values-as-representations-of-continuous-time-physical-quantities}
 
 A continuous-time value type, especially of the `float` \(that is, numeric\) type, is typically used to represent the measurement of some continuous physical quantity or property by a sensor. For example, a value may represent one of the following:
 
@@ -86,7 +86,7 @@ By contrast, consider if the two robot arms do not move in unison - one moves, t
 
 The bold numbers indicate the effective value. The last value latches if it has not been replaced by a more up-to-date value.
 
-#### On-change inputs and time windows {#onchange-inputs-and-time-windows}
+#### On-change inputs and time windows {#on-change-inputs-and-time-windows}
 
 If an on-change input is connected to an aggregate block such as the **Average \(Mean\)** block, then the block should treat the input as continuously having the most recent value it received. This is significant for blocks that maintain a time window. Even if the block last received an input \(and thus had its `$process` action called\) more than the time window ago, the contents of the window will contain the most recent value. For example, consider the **Average \(Mean\)** and **Integral** blocks with window duration set to 10 seconds, and input as so:
 
@@ -206,7 +206,7 @@ It is still valid and sensible to combine multiple pulses, for example, with an 
 
 ![Example model with an AND block](/images/streaming-analytics/analytics-builder/pulse-example.png)
 
-### Discrete-time measurements {#discretetime-measurements}
+### Discrete-time measurements {#discrete-time-measurements}
 
 There are some cases where a measurement would be used where a numeric measurement value does not represent a continuous-time property. For example:
 

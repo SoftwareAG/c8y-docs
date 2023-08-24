@@ -41,7 +41,7 @@ action worker() {
 }  
 ```
 
-### Apama limitations in {{< product-c8y-iot >}} {#apama-limitations-in--productc8yiot-}
+### Apama limitations in {{< product-c8y-iot >}} {#apama-limitations-in-platform}
 
 Using Apama within the {{< product-c8y-iot >}} environment necessarily has some restrictions to the capabilities available when Apama is used standalone.
 

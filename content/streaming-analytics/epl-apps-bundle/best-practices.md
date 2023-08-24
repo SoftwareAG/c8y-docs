@@ -4,7 +4,7 @@ title: Best practices and guidelines
 layout: redirect
 ---
 
-### EPL monitors
+### EPL monitors {#epl-monitors}
 
 **Symptom: Your event processing rules are disabled automatically**
 
@@ -16,11 +16,11 @@ Similarly, if a monitor completes processing an event and has no listeners left 
 
 Make sure that your event processing rules do not leak listeners. For example, when doing request-response operations, ensure that no listeners are left active after the response is processed, or if a timeout occurs and there is no response.
 
-### Number formats
+### Number formats {#number-formats}
 
 {{< product-c8y-iot >}} measurements use the float type. Note that the timestamps are stored as floats (seconds since 1 Jan 1970, 00:00 UTC).
 
-### Subscribing to channels and contexts
+### Subscribing to channels and contexts {#subscribing-to-channels-and-contexts}
 
 A context is a parallel processing unit within Apama. Monitor instances can be deployed to multiple contexts using the `spawn...to` syntax. When subscribing to a channel, all monitor instances within a context will receive events for that subscription. So it is recommended practice to put different subscriptions in different contexts. The use of contexts can prevent part of the application being overloaded from affecting other parts of the application.
 
@@ -41,7 +41,7 @@ action worker() {
 }  
 ```
 
-### Apama limitations in {{< product-c8y-iot >}}
+### Apama limitations in {{< product-c8y-iot >}} {#apama-limitations-in-platform}
 
 Using Apama within the {{< product-c8y-iot >}} environment necessarily has some restrictions to the capabilities available when Apama is used standalone.
 
@@ -52,7 +52,7 @@ There are a number of ways that assets may be deployed to Apama within {{< produ
 
 When designing an Apama solution to be deployed within any form of {{< product-c8y-iot >}} environment, consider the following points.
 
-#### General Apama limitations when using EPL apps or a custom microservice
+#### General Apama limitations when using EPL apps or a custom microservice {#general-apama-limitations-when-using-epl-apps-or-a-custom-microservice}
 
 * For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard {{< product-c8y-iot >}} constraint that all microservices (either provided by the platform, or custom) must be stateless, see [Microservices](/concepts/applications#microservices).
 
@@ -86,7 +86,7 @@ When designing an Apama solution to be deployed within any form of {{< product-c
   ensure the application is completely initialized before injecting monitors that automatically unload,
   and before running time-consuming queries.
 
-#### Specific Apama limitations when using EPL apps
+#### Specific Apama limitations when using EPL apps {#specific-apama-limitations-when-using-epl-apps}
 
 * For ease of use, the correlator startup is controlled by {{< product-c8y-iot >}}. Thus, features that require you to change configuration files or command line options are not accessible.
 

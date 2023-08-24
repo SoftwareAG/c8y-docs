@@ -4,7 +4,7 @@ title: Connecting Apama to other microservices
 layout: redirect
 ---
 
-### Overview
+### Overview {#overview}
 
 Streaming analytics applications using Apama can make use of applications running in other microservices. This section uses the `/health` endpoint of an Apama-ctrl microservice, but the steps apply to connecting to any other microservice running inside {{< product-c8y-iot >}}. This section is going to show you how to create a connection to the {{< product-c8y-iot >}} platform from within Apama EPL which can be used to invoke other microservices directly. It will then show you how to make a request and decode the result.
 
@@ -12,11 +12,11 @@ We will assume that you are developing an EPL app using the EPL editor that is p
 
 We will be making use of the `CumulocityRequestInterface` API. For more technical information about this API, see [Invoking microservices]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_microservices.html) in the Apama documentation.
 
-### Creating an EPL app
+### Creating an EPL app {#creating-an-epl-app}
 
 Click the Streaming Analytics icon in the application switcher. On the resulting home screen, navigate to the **EPL Apps** page and then click **New EPL app**. You will now see an EPL editor window in which to create the app which interacts with another microservice.
 
-### Connecting to the {{< product-c8y-iot >}} platform
+### Connecting to the {{< product-c8y-iot >}} platform {#connecting-to-the-platform}
 
 To support making these requests, we provide a helper event with actions to automatically connect to the {{< product-c8y-iot >}} platform and then create requests which can be used to call other microservices. This helper event is called `CumulocityRequestInterface` and is within the `com.apama.cumulocity` package. This helper event provides a static action which will connect to {{< product-c8y-iot >}} and return an instance of the event. It can automatically connect either from within a microservice or the {{< product-c8y-iot >}} platform itself, or from a remote correlator. That instance has an action which will create a request to call a specific microservice.
 
@@ -28,7 +28,7 @@ CumulocityRequestInterface cumulocity := CumulocityRequestInterface.connectToCum
 
 This will automatically create a connection using the credentials and connection details provided to your microservice, or using the configuration for the {{< product-c8y-iot >}} transport when connecting from an external Apama instance.
 
-### Making microservice requests
+### Making microservice requests {#making-microservice-requests}
 
 The `CumulocityRequestInterface` instance has an action on it to create a request:
 
@@ -61,7 +61,7 @@ req.execute(responseCallback);
 
 The response will also be decoded from JSON and the response payload uses the `AnyExtractor` pattern which you can find linked from the `Response` event in the HTTP Client transport documentation. The above example will be equivalent to the REST request `GET http://cumulocity/service/otherService/data?type=object`.
 
-### Example request to a microservice endpoint
+### Example request to a microservice endpoint {#example-request-to-a-microservice-endpoint}
 
 The following is a very simple application that shows how to query another microservice. We are using the `/health` endpoint of an Apama-ctrl microservice as an example.
 
@@ -82,7 +82,7 @@ monitor CallAnotherMicroservice {
 	}
 ```
 
-#### Sending the request
+#### Sending the request {#sending-the-request}
 
 First, we create the `Request` with: the request type, the request path, and the payload `any()` because in this example we do not need to put anything in the payload.
 
@@ -100,7 +100,7 @@ action sendHealthRequest()
 We use an Apama-ctrl microservice for this example, which has the context path of `/cep`. To modify this for another microservice, substitute `/cep` with the context path as defined in the manifest for your microservice.
 The `/health` endpoint completes the request path for this example, but could be replaced with any valid endpoint of the microservice.
 
-#### Receiving the response
+#### Receiving the response {#receiving-the-response}
 
 Here is the defined action that we used when sending the request. This action is called in response to the sent request and is provided with the `Response` object.
 
@@ -116,6 +116,6 @@ action responseHandler(Response healthResponse)
 }
 ```
 
-### Other microservices
+### Other microservices {#other-microservices}
 
 This section was demonstrating talking to an Apama-ctrl microservice. However, you can also access any other microservice through {{< product-c8y-iot >}} as long as it uses standard REST requests with JSON payloads. You must simply construct the appropriate `/service` URL using the name of your microservice followed by the path of the request within your microservice.

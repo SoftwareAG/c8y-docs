@@ -4,7 +4,7 @@ title: Basic functionality
 layout: redirect
 ---
 
-### Developing apps
+### Developing apps {#developing-apps}
 
 An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different ways:
 
@@ -29,7 +29,7 @@ The **EPL Apps** page of the Streaming Analytics application provides an interfa
 
 Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Managing permissions](/standard-tenant/managing-permissions/).
 
-##### Step 1 - Invoke the Streaming Analytics application
+##### Step 1 - Invoke the Streaming Analytics application {#step-1---invoke-the-streaming-analytics-application}
 
 Open the application switcher and click the icon for the **Streaming Analytics** application. Then navigate to the **EPL Apps** page.
 
@@ -55,7 +55,7 @@ From this page, you can:
 
 * Reload all EPL apps. Click **Reload** in the top menu bar to refresh the display to show any changes other users have made since the page loaded, including any errors that have been introduced in the meantime.
 
-##### Step 2 - Create an EPL app
+##### Step 2 - Create an EPL app {#step-2---create-an-epl-app}
 
 Click **New EPL app** in the top menu bar. Give the app a unique name. You can also enter a description which will be shown on the card that is created for the new app.
 
@@ -79,7 +79,7 @@ Click **X** in the top menu bar to leave the EPL editor and thus to return to th
 All unsaved changes are lost when you navigate to a different URL or close the browser window.
 {{< /c8y-admon-caution >}}
 
-##### Step 3 - Test the EPL app
+##### Step 3 - Test the EPL app {#step-3---test-the-epl-app}
 
 Once your app is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
 
@@ -89,7 +89,7 @@ See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
 {{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
 
-##### Step 1 - Install Apama
+##### Step 1 - Install Apama {#step-1---install-apama}
 
 If you have licensed Apama, install it using {{< sag-installer >}}.
 
@@ -97,11 +97,11 @@ You can also use a freemium version of Apama which runs with reduced capabilitie
 
 Both versions, the licensed version and the freemium version, include {{< sag-designer >}}.
 
-##### Step 2 - Create a project
+##### Step 2 - Create a project {#step-2---create-a-project}
 
 Once installed, create an Apama project in {{< sag-designer >}} and enable it for {{< product-c8y-iot >}} connectivity. For instructions on how to create an Apama project, refer to [Creating Apama projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_APAMA_PROJECT.html) in the Apama documentation.
 
-##### Step 3 - Add Apama bundles to the project
+##### Step 3 - Add Apama bundles to the project {#step-3---add-apama-bundles-to-the-project}
 
 Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
@@ -125,7 +125,7 @@ Exposes the {{< product-c8y-iot >}} client to EPL apps.
 
 The bundles above are the only ones that are permissible in an EPL app, so be careful not to add any other bundles or your app may not work when activated in {{< product-c8y-iot >}}.
 
-##### Step 4 - Create a monitor file
+##### Step 4 - Create a monitor file {#step-4---create-a-monitor-file}
 
 To create a new Apama monitor file, refer to [Creating new monitor files for EPL applications]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
 
@@ -133,7 +133,7 @@ Before you import the newly created monitor file as an EPL app into {{< product-
 
 For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
-##### Step 5 - Run and test the monitor file
+##### Step 5 - Run and test the monitor file {#step-5---run-and-test-the-monitor-file}
 
 When running the project locally, you must provide your {{< product-c8y-iot >}} credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the {{< product-c8y-iot >}} client. For example:
 
@@ -175,7 +175,7 @@ You can now proceed with testing your EPL in {{< sag-designer >}}.
 
 Once the EPL app is ready, refer to [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps) to find out how to deploy it to {{< product-c8y-iot >}}.
 
-### Deploying apps
+### Deploying apps {#deploying-apps}
 
 You can deploy the following to {{< product-c8y-iot >}}:
 
@@ -211,7 +211,7 @@ These kinds of applications should be deployed as microservices to {{< product-c
 This only applies if you are using Apama 10.3 or later.
 {{< /c8y-admon-info >}}
 
-##### Required settings in the microservice manifest
+##### Required settings in the microservice manifest {#required-settings-in-the-microservice-manifest}
 
 The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
 
@@ -243,7 +243,7 @@ The following permissions are required by the microservice in order to start up 
 The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest.
 {{< /c8y-admon-info >}}
 
-##### To deploy an Apama application as a microservice
+##### To deploy an Apama application as a microservice {#to-deploy-an-apama-application-as-a-microservice}
 
 1. Develop your application in {{< sag-designer >}} in the usual way.
 
@@ -290,7 +290,7 @@ you must either change the `FROM` lines in the Dockerfile appropriately
 {{< /c8y-admon-important >}}
 
 
-### Testing apps
+### Testing apps {#testing-apps}
 
 You can use the Apama EPL Apps Tools on GitHub to script uploads of your EPL apps and manage them for  CI/CD (continuous integration and continuous delivery) use cases. This tooling also provides extensions to the PySys test framework to allow you to simply write tests for your EPL apps and to run them automatically.
 
@@ -298,7 +298,7 @@ Apama EPL Apps Tools is available from [https://github.com/SoftwareAG/apama-epla
 
 For more information on PySys, see the [API Reference for Python]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaDoc_pydoc_documentation.html) that you can access from the Apama documentation.
 
-### Supported REST services
+### Supported REST services {#supported-rest-services}
 
 EPL apps are designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
 
@@ -308,7 +308,7 @@ To perform these operations, you must have READ and ADMIN permissions for "CEP m
 This API requires version 10.6.0 or above of the Apama-ctrl microservice.
 {{< /c8y-admon-info >}}
 
-#### Request headers for all operations
+#### Request headers for all operations {#request-headers-for-all-operations}
 
 Each request must be authenticated to {{< product-c8y-iot >}}.
 
@@ -316,7 +316,7 @@ Each request must be authenticated to {{< product-c8y-iot >}}.
 | ------ | -------------------------------------------------- |
 | Accept | "application/json". This is a mandatory parameter. |
 
-#### Common response codes
+#### Common response codes {#common-response-codes}
 
 The following common error response codes can be expected for all requests:
 
@@ -327,7 +327,7 @@ The following common error response codes can be expected for all requests:
 
 Any other response codes that can be expected from a specific request are given below.
 
-#### Common field descriptions
+#### Common field descriptions {#common-field-descriptions}
 
 The following common fields are available with the responses, depending on the operation:
 
@@ -342,15 +342,15 @@ The following common fields are available with the responses, depending on the o
 | state          | Whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`. |
 | warnings       | A list of all compilation warnings in the file, if any, with line numbers and text. |
 
-#### GET - Retrieve all available EPL files
+#### GET - Retrieve all available EPL files {#get---retrieve-all-available-epl-files}
 
 Endpoint: `/service/cep/eplfiles`
 
-##### Example request
+##### Example request {#example-request}
 
 `GET /service/cep/eplfiles`
 
-##### Responses
+##### Responses {#responses}
 
 | Code | Description                                             |
 | ---- | ------------------------------------------------------- |
@@ -379,21 +379,21 @@ Example value for response code 200:
 }
 ```
 
-#### GET - Retrieve all available EPL files with their contents
+#### GET - Retrieve all available EPL files with their contents {#get---retrieve-all-available-epl-files-with-their-contents}
 
 Endpoint: `/service/cep/eplfiles`
 
-##### Request parameters
+##### Request parameters {#request-parameters}
 
 | Name     | Description                                                  |
 | -------- | ------------------------------------------------------------ |
 | contents | Boolean type. Fetches the EPL files with their contents. This is an optional query parameter. |
 
-##### Example request
+##### Example request {#example-request}
 
 `GET /service/cep/eplfiles?contents=true`
 
-##### Responses
+##### Responses {#responses}
 
 | Code | Description                                             |
 | ---- | ------------------------------------------------------- |
@@ -420,21 +420,21 @@ Example value for response code 200:
 }
 ```
 
-#### GET - Retrieve EPL file by identifier
+#### GET - Retrieve EPL file by identifier {#get---retrieve-epl-file-by-identifier}
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
-##### Request parameters
+##### Request parameters {#request-parameters}
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | id   | Identifier of the EPL file to be fetched. This is a mandatory parameter. |
 
-##### Example request
+##### Example request {#example-request}
 
 `GET /service/cep/eplfiles/{{id}}`
 
-##### Responses
+##### Responses {#responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
@@ -458,11 +458,11 @@ Example value for response code 200:
 }
 ```
 
-#### POST - Create a new EPL application
+#### POST - Create a new EPL application {#post---create-a-new-epl-application}
 
 Endpoint: `/service/cep/eplfiles`
 
-##### Example request
+##### Example request {#example-request}
 
 `POST /service/cep/eplfiles`
 
@@ -484,7 +484,7 @@ Note the following:
 - `description` is optional and can be empty.
 
 
-##### Responses
+##### Responses {#responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
@@ -533,17 +533,17 @@ Example for response code 201 when created with warnings or errors:
 }
 ```
 
-#### PUT - Update EPL file by identifier
+#### PUT - Update EPL file by identifier {#put---update-epl-file-by-identifier}
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
-##### Request parameters
+##### Request parameters {#request-parameters}
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | id   | Identifier of the EPL file to be updated. The identifier must be included in the path. This is a mandatory parameter. |
 
-##### Example request
+##### Example request {#example-request}
 
 `PUT /service/cep/eplfiles/{id}`
 
@@ -560,7 +560,7 @@ The following is an example of a request body:
 
 See also the information given for the POST request.
 
-##### Responses
+##### Responses {#responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
@@ -609,21 +609,21 @@ Example value for response code 200 when updated with errors or warnings:
 }
 ```
 
-#### DELETE - Delete EPL file by identifier
+#### DELETE - Delete EPL file by identifier {#delete---delete-epl-file-by-identifier}
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
-##### Request parameters
+##### Request parameters {#request-parameters}
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | id   | Identifier of the EPL file to be deleted. The identifier must be included in the path. This is a mandatory parameter. |
 
-##### Example request
+##### Example request {#example-request}
 
 `DELETE /service/cep/eplfiles/{{id}}`
 
-##### Responses
+##### Responses {#responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
@@ -655,7 +655,7 @@ where
 - `timestamp` is the timestamp in ISO format.
 
 
-### Events and channels
+### Events and channels {#events-and-channels}
 
 In Apama EPL, interactions with the rest of the {{< product-c8y-iot >}} ecosystem are done via events. A number of event definitions is provided for accessing {{< product-c8y-iot >}} data.
 
@@ -663,17 +663,17 @@ In Apama EPL, interactions with the rest of the {{< product-c8y-iot >}} ecosyste
 Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events. For more information on Apama events, see [Defining event types]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-c8y-iot >}} events, see [Events](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Events) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
-#### Predefined event types
+#### Predefined event types {#predefined-event-types}
 
 There are some predefined event types to interact with several {{< product-c8y-iot >}} APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the {{< product-c8y-iot >}} backend, you can create an event and send it to the relevant channel. {{< product-c8y-iot >}} will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
 
 Look at the [data model]({{< link-apamadoc-api >}}com/apama/cumulocity/package-summary.html) in the API Reference for EPL (ApamaDoc) to see how the events for each stream are structured.
 
-#### Sending events to a channel
+#### Sending events to a channel {#sending-events-to-a-channel}
 
 Sending an event is done by constructing the event, either with `new <type>` followed by assignments to the fields, or with a constructor specifying all of the fields. The `send` statement is then used to send the event to {{< product-c8y-iot >}}. The `send` statement requires a channel - this is the `SEND_CHANNEL` constant on the event type.
 
-#### Listening to events
+#### Listening to events {#listening-to-events}
 
 You can trigger your EPL by listening to events on channels. You can subscribe to channels with the `monitor.subscribe("string name")` method. This can be done in the startup of your monitor, or if you only need to receive events some of the time, called as needed, followed by `monitor.unsubscribe("string name")`.
 
@@ -681,11 +681,11 @@ Listen for events using the `on` statement, followed by the event type that you 
 
 By default, a listener will fire once; to make it repeat for all events, use the `all` keyword before the event type.
 
-#### Filters
+#### Filters {#filters}
 
 Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on subproperties of events (for example, in dictionaries).
 
-#### Standard event types and channels
+#### Standard event types and channels {#standard-event-types-and-channels}
 
 For the standard {{< product-c8y-iot >}} events, there are constants that contain the channels for sending and receiving events, for example:
 
@@ -705,7 +705,7 @@ The events listed in the following table are part of the `com.apama.cumulocity` 
 | ManagedObject       | ManagedObject.SEND_CHANNEL       | ManagedObject.SUBSCRIBE_CHANNEL       |
 | MeasurementFragment | MeasurementFragment.SEND_CHANNEL | MeasurementFragment.SUBSCRIBE_CHANNEL |
 
-#### Measurement fragments
+#### Measurement fragments {#measurement-fragments}
 
 `Measurement` and `MeasurementFragment` events are always published.
 
@@ -752,7 +752,7 @@ For more information, including examples for the different types of objects, see
 See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.
 
 
-### Example
+### Example {#example}
 
 This example listens for new measurements using the `com.apama.cumulocity.MeasurementFragment` API. It filters incoming measurements to find speed values above a given maximum speed and raises an alarm if the limit is breached.
 

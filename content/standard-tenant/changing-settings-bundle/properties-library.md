@@ -31,7 +31,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 {{< /c8y-admon-related >}}
 
 
-### To add a custom property
+### To add a custom property {#to-add-a-custom-property}
 
 1. Select the tab for the desired property and click **Add property**.
 
@@ -84,14 +84,14 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 
 4. Click **Save** to create the new property.
 
-### To edit a custom property
+### To edit a custom property {#to-edit-a-custom-property}
 
 1. Click on the name of a property in the list to open it.
 2. Do your edits. For details on the fields see [To add a custom property](#to-add-a-custom-property).
 3. Click **Save** to save your settings.
 
 
-### To remove a custom property
+### To remove a custom property {#to-remove-a-custom-property}
 
 1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.

@@ -18,7 +18,7 @@ SMS are used throughout the platform for various features like [two-factor authe
 
 By providing your credentials you enable platform features that utilize SMS services.
 
-### To enter SMS provider credentials
+### To enter SMS provider credentials {#to-enter-sms-provider-credentials}
 
 1. Click **SMS provider** in the **Settings** menu.
 

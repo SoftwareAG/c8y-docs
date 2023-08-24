@@ -24,13 +24,13 @@ Microservices can be filtered by name and availability.
 
 A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of {{< product-c8y-iot >}}. As web applications, microservices can either be subscribed to your tenant by the platform or by a service provider, or they can be owned by you as custom applications, see [Custom microservices](#custom-microservices).
 
-### Subscribed microservices
+### Subscribed microservices {#subscribed-microservices}
 
 {{< product-c8y-iot >}} provides a variety of microservice applications for different purposes. Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications.
 
 Below you find a list of all microservices which are by default subscribed in a {{< standard-tenant >}} and/or {{< enterprise-tenant >}}. In addition, numerous optional microservices might be subscribed to your tenant.
 
-#### Microservices subscribed by default
+#### Microservices subscribed by default {#microservices-subscribed-by-default}
 
 <table>
 <col width="200">
@@ -90,9 +90,9 @@ All applications listed here are of the type "Microservice".
 {{< /c8y-admon-info >}}
 
 
-### Custom microservices
+### Custom microservices {#custom-microservices}
 
-#### To add a microservice as custom application
+#### To add a microservice as custom application {#to-add-a-microservice-as-custom-application}
 
 1. Click **Add microservice** at the top right.
 2. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
@@ -103,7 +103,7 @@ The ZIP file must contain the application manifest and the Docker image of the m
 {{< /c8y-admon-important >}}
 
 
-### Microservice properties
+### Microservice properties {#microservice-properties}
 
 To display further details on a microservice, click it to open its **Properties** tab.
 
@@ -153,12 +153,12 @@ In the **Properties** tab, each microservice will show the following information
 
 Below, you will additionally find information on the microservice version, as well as on its isolation level and billing mode, see [Microservice usage](/enterprise-tenant/usage-and-billing/#microservice-usage) for details on these parameters.
 
-#### Microservice subscription
+#### Microservice subscription {#microservice-subscription}
 
 At the top right of the **Properties** tab, you find a toggle to subscribe to or unsubcribe from a microservice.
 
 Changing the subscription is only possible for custom microservices, that is microservices being owned by you.
 
-### Microservice permissions
+### Microservice permissions {#microservice-permissions}
 
 In the **Permissions** tab you can view the permissions required for the respective microservice, and the roles provided for it.

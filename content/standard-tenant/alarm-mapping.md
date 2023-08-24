@@ -28,7 +28,7 @@ For easier user access management, the above permissions are included in the glo
 {{< /c8y-admon-related >}}
 
 
-### To view alarm mappings
+### To view alarm mappings {#to-view-alarm-mappings}
 
 Click **Alarm mapping** in the **Business Rules** menu to see a list of all alarm mappings.
 
@@ -37,7 +37,7 @@ Click **Alarm mapping** in the **Business Rules** menu to see a list of all alar
 For each alarm mapping, the alarm severity, the alarm type and a description (optional) are shown.
 
 
-### To add alarm mapping
+### To add alarm mapping {#to-add-alarm-mapping}
 
 1. Click **Add alarm mapping** in the top menu bar.
 2. Enter the alarm type to be modified.
@@ -49,7 +49,7 @@ For each alarm mapping, the alarm severity, the alarm type and a description (op
 The alarm type provided as an alarm mapping is interpreted as alarm type prefix: &quot;&#60;type-prefix&#62;*&quot;. If you create, for example, an alarm mapping to address alarms of type &quot;crit-alarm&quot;, the mapping is effective for any type of alarm that starts with this value e.g. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot;, or &quot;crit-alarm-xyz&quot;.
 {{< /c8y-admon-info >}}
 
-### To edit an alarm mapping
+### To edit an alarm mapping {#to-edit-an-alarm-mapping}
 
 Expand an alarm mapping to edit it. You may modify the description and the alarm severity. The alarm type is not editable.
 
@@ -57,6 +57,6 @@ Expand an alarm mapping to edit it. You may modify the description and the alarm
 Refresh the list to discard any changes without saving.
 {{< /c8y-admon-info >}}
 
-### To delete an alarm mapping
+### To delete an alarm mapping {#to-delete-an-alarm-mapping}
 
 To delete an alarm mapping, hover over it and click the delete icon which appears on hovering over the row.

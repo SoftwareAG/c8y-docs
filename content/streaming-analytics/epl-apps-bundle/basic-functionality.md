@@ -29,7 +29,7 @@ The **EPL Apps** page of the Streaming Analytics application provides an interfa
 
 Any user on the tenant wishing to use the **EPL Apps** page must be a **CEP Manager**. See [Managing permissions](/standard-tenant/managing-permissions/).
 
-##### Step 1 - Invoke the Streaming Analytics application {#step-1--invoke-the-streaming-analytics-application}
+##### Step 1 - Invoke the Streaming Analytics application {#step-1---invoke-the-streaming-analytics-application}
 
 Open the application switcher and click the icon for the **Streaming Analytics** application. Then navigate to the **EPL Apps** page.
 

@@ -4,7 +4,7 @@ title: Supported protocols and gateways
 layout: redirect
 ---
 
-### Supported protocols
+### Supported protocols {#supported-protocols}
 
 Cloud Remote Access supports the following protocols:
 
@@ -23,7 +23,7 @@ Cloud Remote Access supports the following protocols:
 Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
 {{< /c8y-admon-important >}}
 
-### Supported gateways
+### Supported gateways {#supported-gateways}
 
 Cloud Remote Access supports the following gateways:
 

@@ -6,7 +6,7 @@ section:
   - device_management
 ---
 
-### System integration
+### System integration {#system-integration}
 
 Enterprises offering IoT-enabled services typically run other IT systems that supply important information on IoT assets and devices. Examples of those systems are:
 

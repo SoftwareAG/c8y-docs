@@ -16,23 +16,23 @@ To shield machine-to-machine applications from this numbers of access options, {
 
 ![Agent architecture](/images/concepts-guide/agents.png)
 
-#### Protocol translation
+#### Protocol translation {#protocol-translation}
 
 The configuration of parameters, readings, events and other information is either send to an agent ("push") or queried by an agent ("pull") through a device-specific protocol on one side. The agent will convert these messages into the protocol that {{< product-c8y-iot >}} requires. It will also receive device control commands from {{< product-c8y-iot >}} ("switch off that relay") and translate these into a kind of protocol the device requires.
 
 {{< product-c8y-iot >}} uses a simple and secure reference protocol based on REST (that is, HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a "push" model, that is, data is sent as soon as it is available.
 
-#### Model transformation
+#### Model transformation {#model-transformation}
 
 The configuration parameters, readings, events, they all have their device-specific name (and possibly units). An agent for a particular device will transform this device-specific model to the {{< product-c8y-iot >}} reference model. For example, an electricity meter provides the main reading as a parameter "Received Wh", so the agent will transform this reading into a reference "Total active energy" in kWh.
 
-#### Secure remote communication
+#### Secure remote communication {#secure-remote-communication}
 
 Devices can provide a protocol that is unsuitable for secure remote communication, in particular in public cloud environments. The protocol only supports local networking and does not pass through firewalls and proxies and it can contain sensitive data in clear text form. To avoid security issues like these, an agent can be co-located to the device and provide a secure, internet-enabled link to the remote device via {{< product-c8y-iot >}}.
 
 To summarize the benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the applications from the variety of IoT devices and protocols.
 
-### What agent architecture is supported?
+### What agent architecture is supported? {#what-agent-architecture-is-supported}
 
 Agents can be deployed in various ways, as illustrated in the picture below. We distinguish two main variants: **server-side agents** and **device-side agents**.
 

@@ -29,7 +29,7 @@ Just like other types of data, operations are also standardized through the sens
 
 Operations are modeled just like fragments in the inventory model (see above). The same extensibility concept applies. Random vendor-proprietary extensions to the standard operations are possible. These are not denied or modified by {{< product-c8y-iot >}}.
 
-### Sending operations to devices
+### Sending operations to devices {#sending-operations-to-devices}
 
 {{< product-c8y-iot >}} delivers operations to devices over any network using a reliable queueing routine. This queueing routine respects the limitations and security requirements of IoT networks:
 
@@ -53,7 +53,7 @@ If there are communication issues while delivering an operation to a device, an 
 
 Sometimes there are delays between sending an operation to a device and retrieving a response. The system assumes a delivery unless an error is reported to maintain functionality.
 
-### Designing operations for reliability
+### Designing operations for reliability {#designing-operations-for-reliability}
 
 Operations should always be idempotent. Idempotent means that no matter how often you run the operation, the outcome is always the same.
 

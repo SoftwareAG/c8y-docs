@@ -51,7 +51,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Alarm Input {#alarm-input}
+### Alarm Input
 
 `apama.analyticskit.blocks.cumulocity.AlarmInput`
 
@@ -63,7 +63,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 Note: When running in simulation mode, because only the creation time of the alarm is stored, the alarm status must be Active.</p>
 
 
-#### Parameters {#alarm-input-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -151,7 +151,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 </tbody>
 </table>
 
-#### Output Port Details {#alarm-input-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -178,7 +178,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 </table>
 
 
-### Event Input {#event-input}
+### Event Input
 
 `apama.analyticskit.blocks.cumulocity.DeviceEventInput`
 
@@ -192,7 +192,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 Note: A history of changes is not maintained for <tt>Event</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.</p>
 
 
-#### Parameters {#event-input-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -251,7 +251,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </tbody>
 </table>
 
-#### Output Port Details {#event-input-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -278,7 +278,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </table>
 
 
-### Managed Object Input {#managed-object-input}
+### Managed Object Input
 
 `apama.analyticskit.blocks.cumulocity.ManagedObjectInput`
 
@@ -300,7 +300,7 @@ If the value of the property specified by the Property Name parameter of this bl
 The parameters that define the input stream of the block are "Input Source" and "Property Name".</p>
 
 
-#### Parameters {#managed-object-input-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -348,7 +348,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 </tbody>
 </table>
 
-#### Output Port Details {#managed-object-input-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -376,7 +376,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 </table>
 
 
-### Measurement Input {#measurement-input}
+### Measurement Input
 
 `apama.analyticskit.blocks.cumulocity.DeviceMeasurementInput`
 
@@ -390,7 +390,7 @@ The parameters that define the output stream of the block are "Input Source" and
 Note: When running in simulation mode, because historical input data is used, timestamps are not ignored.</p>
 
 
-#### Parameters {#measurement-input-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -437,7 +437,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 </tbody>
 </table>
 
-#### Output Port Details {#measurement-input-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -464,7 +464,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 </table>
 
 
-### Operation Input {#operation-input}
+### Operation Input
 
 `apama.analyticskit.blocks.cumulocity.OperationInput`
 
@@ -484,7 +484,7 @@ The parameter that defines the input stream of the block is Input Source.
 Note: A history of changes is not maintained for <tt>Operation</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.</p>
 
 
-#### Parameters {#operation-input-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -553,7 +553,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 </tbody>
 </table>
 
-#### Output Port Details {#operation-input-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -581,7 +581,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 </table>
 
 
-### Position Input {#position-input}
+### Position Input
 
 `apama.analyticsbuilder.blocks.PositionInput`
 
@@ -599,7 +599,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 Note: A history of changes is not maintained for <tt>Event</tt> objects, and it is thus not possible to retrieve the original objects from the inventory. For this reason, a model which contains this input block type may behave differently in simulation mode than it would in production mode.</p>
 
 
-#### Parameters {#position-input-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -675,7 +675,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </tbody>
 </table>
 
-#### Output Port Details {#position-input-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>

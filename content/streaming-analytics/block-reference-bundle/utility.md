@@ -66,7 +66,7 @@ This category contains the following blocks:
 </tbody>
 </table>
 
-### Constant Value {#constant-value}
+### Constant Value
 
 `apama.analyticsbuilder.blocks.ConstantValue`
 
@@ -76,7 +76,7 @@ This category contains the following blocks:
 The Value parameter can be treated as a string, boolean, float or JSON value. If treated as a JSON string, number or boolean, then the output is of this type. If treated as a JSON object, the output is a pulse with the properties from the object. JSON arrays are only permitted within an object.</p>
 
 
-#### Parameters {#constant-value-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -121,7 +121,7 @@ The Value parameter can be treated as a string, boolean, float or JSON value. If
 </tbody>
 </table>
 
-#### Input Port Details {#constant-value-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -147,7 +147,7 @@ The Value parameter can be treated as a string, boolean, float or JSON value. If
 </tbody>
 </table>
 
-#### Output Port Details {#constant-value-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -174,7 +174,7 @@ The Value parameter can be treated as a string, boolean, float or JSON value. If
 </table>
 
 
-### Cron Timer {#cron-timer}
+### Cron Timer
 
 `apama.analyticskit.blocks.core.CronTimer`
 
@@ -194,7 +194,7 @@ The Days of Month and Days of Week parameters operate together such that if both
 This block is not supported in simulation mode.</p>
 
 
-#### Parameters {#cron-timer-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -271,7 +271,7 @@ This block is not supported in simulation mode.</p>
 </tbody>
 </table>
 
-#### Output Port Details {#cron-timer-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -298,7 +298,7 @@ This block is not supported in simulation mode.</p>
 </table>
 
 
-### Duration {#duration}
+### Duration
 
 `apama.analyticskit.blocks.core.Duration`
 
@@ -310,7 +310,7 @@ The block generates a float output of the time elapsed since the start signal, m
 If multiple signals are received at the same time, they are processed in the order of measure, reset and start. Thus, for example, if measure and reset signals are received together, the block first generates an output with the current duration and then resets its state. Processing the inputs in this order allows the current state of the block to be output and the block to be restarted within a single unit of time, if desired.</p>
 
 
-#### Parameters {#duration-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -341,7 +341,7 @@ If multiple signals are received at the same time, they are processed in the ord
 </tbody>
 </table>
 
-#### Input Port Details {#duration-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -381,7 +381,7 @@ If multiple signals are received at the same time, they are processed in the ord
 </tbody>
 </table>
 
-#### Output Port Details {#duration-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -408,7 +408,7 @@ If multiple signals are received at the same time, they are processed in the ord
 </table>
 
 
-### Extract Property {#extract-property}
+### Extract Property
 
 `apama.analyticskit.blocks.core.ExtractProperty`
 
@@ -430,7 +430,7 @@ The block does not support extracting entries from a dictionary whose key contai
 In converting a string to a float, this block treats an empty string as a value of 0.0, rather than as not parseable.</p>
 
 
-#### Parameters {#extract-property-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -482,7 +482,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </tbody>
 </table>
 
-#### Input Port Details {#extract-property-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -508,7 +508,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </tbody>
 </table>
 
-#### Output Port Details {#extract-property-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -535,7 +535,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </table>
 
 
-### Geofence {#geofence}
+### Geofence
 
 `apama.analyticsbuilder.blocks.Geofence`
 
@@ -543,7 +543,7 @@ In converting a string to a float, this block treats an empty string as a value 
 <p>The boundary line itself is considered to be outside of the geofence area.</p>
 
 
-#### Parameters {#geofence-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -573,7 +573,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </tbody>
 </table>
 
-#### Input Port Details {#geofence-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -599,7 +599,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </tbody>
 </table>
 
-#### Output Port Details {#geofence-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -640,7 +640,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </table>
 
 
-### Missing Data {#missing-data}
+### Missing Data
 
 `apama.analyticskit.blocks.core.MissingData`
 
@@ -648,7 +648,7 @@ In converting a string to a float, this block treats an empty string as a value 
 <p>The block can optionally detect an absence of changes in value if repeated same-value inputs are not counted.</p>
 
 
-#### Parameters {#missing-data-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -686,7 +686,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </tbody>
 </table>
 
-#### Input Port Details {#missing-data-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -719,7 +719,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </tbody>
 </table>
 
-#### Output Port Details {#missing-data-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -746,7 +746,7 @@ In converting a string to a float, this block treats an empty string as a value 
 </table>
 
 
-### Set Properties {#set-properties}
+### Set Properties
 
 `apama.analyticsbuilder.blocks.SetProperties`
 
@@ -758,7 +758,7 @@ Properties are set on the output in the following order of precedence: <ol><li>A
 Thus, any properties set on an input are overwritten by those with the same name on a  higher precedence input, or when an input is configured for the specified property.</p>
 
 
-#### Parameters {#set-properties-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -824,7 +824,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 </tbody>
 </table>
 
-#### Input Port Details {#set-properties-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -885,7 +885,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 </tbody>
 </table>
 
-#### Output Port Details {#set-properties-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -912,7 +912,7 @@ Thus, any properties set on an input are overwritten by those with the same name
 </table>
 
 
-### Text Substitution {#text-substitution}
+### Text Substitution
 
 `apama.analyticsbuilder.blocks.TextSubstitution`
 
@@ -938,7 +938,7 @@ A hash (#) can be specified in the text template by escaping it as follows: <tt>
 For more information, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_supported_time_zones.html">list of time zones</a> and the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-DevApaAppInEpl_format_specification_for_the_time_format_plug_in_functions.html">list of valid time format strings</a>.</p>
 
 
-#### Parameters {#text-substitution-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -967,7 +967,7 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 </tbody>
 </table>
 
-#### Input Port Details {#text-substitution-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -1000,7 +1000,7 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 </tbody>
 </table>
 
-#### Output Port Details {#text-substitution-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>
@@ -1027,7 +1027,7 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 </table>
 
 
-### Toggle {#toggle}
+### Toggle
 
 `apama.analyticskit.blocks.core.Toggle`
 
@@ -1039,7 +1039,7 @@ If delay times are specified, the output state is only changed to <tt>true</tt> 
 The following exception applies if both signals are received at the same time: the output state is only toggled if both delay times are the same, or have not been specified at all.</p>
 
 
-#### Parameters {#toggle-parameters}
+#### Parameters
 
 <table>
 <colgroup>
@@ -1084,7 +1084,7 @@ This must be a finite and positive number.</p>
 </tbody>
 </table>
 
-#### Input Port Details {#toggle-inputs}
+#### Input Port Details
 
 <table>
 <colgroup>
@@ -1117,7 +1117,7 @@ This must be a finite and positive number.</p>
 </tbody>
 </table>
 
-#### Output Port Details {#toggle-outputs}
+#### Output Port Details
 
 <table>
 <colgroup>

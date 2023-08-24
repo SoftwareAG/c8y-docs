@@ -69,11 +69,11 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 
 {{< /c8y-admon-related >}}
 
-### Changing data explorer visualization
+### Changing data explorer visualization {#changing-data-explorer-visualization}
 
 To change the visualization in the data explorer, you can modify several properties.
 
-#### Time range
+#### Time range {#time-range}
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
@@ -88,7 +88,7 @@ To change the time range on the x-axis, use one of the following options:
 Real-time updates will be switched off if you set a time range in the past.
 {{< /c8y-admon-info >}}
 
-#### Aggregation
+#### Aggregation {#aggregation}
 
 You may aggregate the data being displayed to get an efficient overview over larger time periods.
 
@@ -102,13 +102,13 @@ When aggregation is activated, the timestamp which is displayed in data point gr
 * If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
 
 
-#### Realtime updating
+#### Realtime updating {#realtime-updating}
 
 By default, realtime updating is enabled which means that the data being shown is updated as new data flows into the system from the connected devices.
 
 To turn realtime updating on or off, click **Realtime** in the top menu bar. A green light indicates, that realtime updating is enabled.
 
 
-#### Data point visibility
+#### Data point visibility {#data-point-visibility}
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.

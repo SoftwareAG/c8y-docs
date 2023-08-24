@@ -40,7 +40,7 @@ A list of available data points will be opened. For each data point, the followi
 * Measurement unit
 * Values (minimum, maximum, red/yellow ranges)
 
-### To add a data point to the library
+### To add a data point to the library {#to-add-a-data-point-to-the-library}
 
 1. Click **Add data point** in the top menu bar.
 2. Provide the following information:
@@ -64,11 +64,11 @@ With the button next to the fragment and series fields you can pick the values f
 
 3. Click **Save** to add the data point to the library.
 
-### To edit a data point
+### To edit a data point {#to-edit-a-data-point}
 
 Simply click the respective entry in the list or click the menu icon at the right of an entry and then click **Edit**.
 
 
-### To delete a data point
+### To delete a data point {#to-delete-a-data-point}
 
 Click the menu icon at the right of an entry and then click **Delete**.

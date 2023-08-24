@@ -71,7 +71,7 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 
 {{< /c8y-admon-related >}}
 
-### To add a data point
+### To add a data point {#to-add-a-data-point}
 
 To add a data point to the data explorer, click **Add data point** at the bottom of the **Data points** card.
 
@@ -87,7 +87,7 @@ For further information on the data point library refer to [Data point library](
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
 
-### To customize data point properties
+### To customize data point properties {#to-customize-data-point-properties}
 
 You can customize the visualization of a particular data point to your preferences. To do so, expand the data point entry in the data point list.
 
@@ -143,7 +143,7 @@ The following fields may be modified:
 </table>
 
 
-### Y-axis behaviour
+### Y-axis behaviour {#y-axis-behaviour}
 
 Per default, the first data point is positioned to the left y-axis and the remaining data points to the right. This behavior can be changed by modifying the respective value "Y-axis" for a particular data point (to "Left" or "Right", see above).
 
@@ -153,7 +153,7 @@ Each data point is shown on its own y-axis, unless the following condition is me
 
 In this case, both data points share the same y-axis. This y-axis only shows the unit (or multiple units, in case they are different). The label is not shown.
 
-### To add alarms or events
+### To add alarms or events {#to-add-alarms-or-events}
 
 In addition to data points you can also add alarms or events to the data explorer.
 
@@ -167,7 +167,7 @@ Click the menu icon and in the context menu select **Remove**, to remove the ent
 
 As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 
-### To export measurement data
+### To export measurement data {#to-export-measurement-data}
 
 You may download measurement data as CSV or Excel files. The exported data shows the following information, divided into columns:
 

@@ -75,7 +75,7 @@ Smart rules can be seen in two places:
 - [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
-### To create a smart rule
+### To create a smart rule {#to-create-a-smart-rule}
 
 Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
 
@@ -92,24 +92,24 @@ When you create a smart rule in the **Global smart rules** page, it will be acti
 Smart rules can be instantiated multiple times.
 
 
-### To edit a smart rule
+### To edit a smart rule {#to-edit-a-smart-rule}
 
 Click the menu icon at the right of an entry and then click **Edit**.
 
 For details on the fields see [To create a smart rule](#to-create-a-smart-rule).
 
 
-### To duplicate a smart rule
+### To duplicate a smart rule {#to-duplicate-a-smart-rule}
 
 1. Click the menu icon at the right of an entry and then click **Duplicate**.
 2. Modify at least the name.
 3. Click **Save & close** to save the smart rule and return to the smart rule list.
 
-### To delete a smart rule
+### To delete a smart rule {#to-delete-a-smart-rule}
 
 Click the menu icon at the right of an entry and then click **Delete**.
 
-### To debug a smart rule
+### To debug a smart rule {#to-debug-a-smart-rule}
 
 {{< c8y-admon-info >}}
 This feature is not available with Apama.
@@ -119,7 +119,7 @@ For easier debugging, there is a direct link from a smart rule to the correspond
 
 Click the menu icon at the right of an entry and then click **Inspect** to use this link.
 
-### To enable/disable a smart rule
+### To enable/disable a smart rule {#to-enabledisable-a-smart-rule}
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
 
@@ -143,7 +143,7 @@ In case of a group, you activate/deactivate the smart rule with the toggle for t
 A rule which is activated for a particular object only works if the rule is also globally enabled.
 {{< /c8y-admon-important >}}
 
-### Example: Defining explicit thresholds
+### Example: Defining explicit thresholds {#example-defining-explicit-thresholds}
 
 To define a threshold rule follow these steps:
 
@@ -159,7 +159,7 @@ To define a threshold rule follow these steps:
 
 The rule will automatically be set to active and alarms appear if they arise.
 
-### Chain rule execution
+### Chain rule execution {#chain-rule-execution}
 
 Smart rules can create a new data item on the platform. For example, the threshold rule creates new alarms. This new data can be handled further by selected smart rules, for example, by an "On alarm send e-mail" rule.
 

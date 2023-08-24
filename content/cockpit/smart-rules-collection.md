@@ -18,7 +18,7 @@ In certain rule parameters, various trigger fields can be used as variables, see
 - [Alarms](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Alarms) in the {{< openapi >}} for details on managing alarms via REST.
 {{< /c8y-admon-related >}}
 
-### On alarm send SMS
+### On alarm send SMS {#on-alarm-send-sms}
 
 **Functionality**
 
@@ -86,7 +86,7 @@ You can select a single group or a single device (just one, not multiple). To en
 There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 {{< /c8y-admon-important >}}
 
-### On alarm send email
+### On alarm send email {#on-alarm-send-email}
 
 **Functionality**
 
@@ -148,7 +148,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 * Check your spam folder.
 
-### On alarm escalate it
+### On alarm escalate it {#on-alarm-escalate-it}
 
 **Functionality**
 
@@ -211,7 +211,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 
 * If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
-### On alarm duration increase severity
+### On alarm duration increase severity {#on-alarm-duration-increase-severity}
 
 **Functionality**
 
@@ -273,7 +273,7 @@ If the alarm has reached CRITICAL, it will stop monitoring because there is no f
 The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
 {{< /c8y-admon-info >}}
 
-### On geofence create alarm
+### On geofence create alarm {#on-geofence-create-alarm}
 
 **Functionality**
 
@@ -337,7 +337,7 @@ In order to raise an alarm the device had to be inside the geofence at least onc
 
 * If you have configured an alarm mapping rule (see [Alarm mapping](/standard-tenant/alarm-mapping/)) which changes the alarm severity, the alarm may have different severity than expected.
 
-### On geofence send email
+### On geofence send email {#on-geofence-send-email}
 
 **Functionality**
 
@@ -401,7 +401,7 @@ In order to perform the rule the device had to be inside the geofence at least o
 
 * Check your spam folder.
 
-### Calculate energy consumption
+### Calculate energy consumption {#calculate-energy-consumption}
 
 **Functionality**
 
@@ -462,7 +462,7 @@ The rule is configured to calculate every 20 minutes. The following measurements
 At 12:20 the rule is triggered, taking the last two measurements. It calculates value and time difference. The consumption measurement created at 12:20 will therefore be 400 kg/h.
 If no new measurement was created in the last period a measurement with consumption 0 will be created.
 
-### On missing measurements create alarm
+### On missing measurements create alarm {#on-missing-measurements-create-alarm}
 
 **Functionality**
 
@@ -516,7 +516,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
 {{< /c8y-admon-info >}}
 
-### On alarm execute operation
+### On alarm execute operation {#on-alarm-execute-operation}
 
 **Functionality**
 
@@ -567,7 +567,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 </tbody>
 </table>
 
-### On measurement threshold create alarm
+### On measurement threshold create alarm {#on-measurement-threshold-create-alarm}
 
 **Functionality**
 
@@ -587,7 +587,7 @@ The rule uses the following parameters from the device object or data point libr
 
 * Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the data explorer for each data point. Note that these are half-open intervals ([yellow min : yellow max)) that contain the lowest accepted value but not the highest accepted value, see also examples below.
 
-#### Examples
+#### Examples {#examples}
 
 **Example 1 - Red range:**
 
@@ -720,7 +720,7 @@ Range values defined in the source object have a higher priority than those defi
 * Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 {{< /c8y-admon-info >}}
 
-### On measurement explicit threshold create alarm
+### On measurement explicit threshold create alarm {#on-measurement-explicit-threshold-create-alarm}
 
 **Functionality**
 
@@ -796,7 +796,7 @@ For details on enabling/disabling a smart rule, see <a href="/cockpit/smart-rule
 * ​Under certain circumstances, that means, if the time gap between measurements is quite large, this smart rule may raise a wrong alarm severity. If, for example, the CEP/Apama pod is restarted, the internal state is lost and therefore an alarm is raised again when it should not, resulting in a different alarm severity.
 {{< /c8y-admon-info >}}
 
-### Smart rule variables
+### Smart rule variables {#smart-rule-variables}
 
 In certain rule parameters, various trigger fields can be used as variables. When a rule is triggered, the variables are replaced by the actual values of these trigger fields.
 
@@ -935,7 +935,7 @@ Moreover, the following pattern is supported:
   </tr>  
 </table>
 
-#### Example
+#### Example {#example}
 
 **{{< product-c8y-iot >}} trigger**
 

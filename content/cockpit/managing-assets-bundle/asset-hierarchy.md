@@ -40,7 +40,7 @@ Single devices are not managed in the Cockpit application. They are managed in t
 - [Web SDK > Tutorials > Add a Jest-based unit test](/web/tutorials/#add-jest-based-unit-test) for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
-### Asset hierarchy versus device hierarchy
+### Asset hierarchy versus device hierarchy {#asset-hierarchy-versus-device-hierarchy}
 
 {{< product-c8y-iot >}} supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
@@ -72,7 +72,7 @@ Gateway devices are as well represented as top level devices in the Device manag
 As you can see from the example, devices can have completely different hierarchies in the Device management application and in the Cockpit application:
 While inside the Device management application all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
 
-### Cockpit assets versus business assets
+### Cockpit assets versus business assets {#cockpit-assets-versus-business-assets}
 
 The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy.
 

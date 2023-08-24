@@ -27,7 +27,7 @@ ROLES & PERMISSIONS:
 - To delete a report: ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-### To show all reports
+### To show all reports {#to-show-all-reports}
 
 To show all reports, click **Reports** in the navigator.
 
@@ -43,7 +43,7 @@ Use the toggle in the **Show in navigator** column, if you want to show the repo
 
 See [To create a report](#to-create-a-report) below for details on how to configure the position in the navigator.
 
-### To create a report
+### To create a report {#to-create-a-report}
 
 1. Click **Add report** in the top menu bar to open the **Add report** dialog.
   <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
@@ -61,7 +61,7 @@ Next, widgets can be added to the report.
 
 Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
-### To edit a report
+### To edit a report {#to-edit-a-report}
 
 Click on a report name in the report list to open its details.
 
@@ -70,7 +70,7 @@ To edit the report, click **Edit** in the top menu bar.
 The report editor will open up. For details on the fields, refer to [To create a report](#to-create-a-report).
 
 
-### To delete a report
+### To delete a report {#to-delete-a-report}
 
 1. In the **Reports** page, hover over the report item you want to delete and click the delete icon showing up at the right.
 2. Confirm to delete the report.

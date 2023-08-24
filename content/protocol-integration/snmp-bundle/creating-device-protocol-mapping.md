@@ -7,7 +7,7 @@ layout: redirect
 
 The device protocol mapping helps the agent to know how to deal with incoming data from the SNMP-enabled devices. It basically allows users to configure an OID with a corresponding {{< product-c8y-iot >}} object such as an alarm, event or measurement. This information is later used by the agent to convert incoming data (say TRAP) to corresponding {{< product-c8y-iot >}} object/s that are defined in the mapping.
 
-### To create mapping from the UI
+### To create mapping from the UI {#to-create-mapping-from-the-ui}
 
 1. In the Device management application, click **Device protocols** in the **Device types** menu in the navigator.
 2. Open the desired device protocol (for example snmp-device-protocol). It shows a list of components representing the OIDs.
@@ -21,7 +21,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 
 5. Click **Save** in the **Device protocol** page to finally save the changes.
 
-### To create mapping via REST API
+### To create mapping via REST API {#to-create-mapping-via-rest-api}
 
 	PUT /inventory/managedObjects/{{device.protocol.id}}
 	Authorization: Basic ...

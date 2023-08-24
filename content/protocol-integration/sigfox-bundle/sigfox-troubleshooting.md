@@ -4,31 +4,31 @@ title: Troubleshooting
 layout: redirect
 ---
 
-### Sigfox callbacks in backend.sigfox.com are not created correctly
+### Sigfox callbacks in backend.sigfox.com are not created correctly {#sigfox-callbacks-in-backendsigfoxcom-are-not-created-correctly}
 
-### Device registration
+### Device registration {#device-registration}
 
-#### No active contracts with free slots available.
+#### No active contracts with free slots available. {#no-active-contracts-with-free-slots-available}
 
 Active contracts with free slots are filtered based on the activation end time and tokens in use. Contracts in which the activation end time is higher than the current time or the activation end time is unlimited, and contracts in which the max tokens are higher than the tokens in use or the max tokens are unlimited will be considered.
 
 In order to resolve this error, please contact support.sigfox.com to create a contract for your Sigfox account.
 
-#### No Sigfox provider settings are found.
+#### No Sigfox provider settings are found. {#no-sigfox-provider-settings-are-found}
 
 This warning message shows up  when there are no connections set up for the sigfox connectivity.
 
 To resolve this, refer to [Configure Sigfox credentials](#managing-connectivity-settings).
 
-#### No Sigfox device type configured.
+#### No Sigfox device type configured. {#no-sigfox-device-type-configured}
 
 This warning message shows up when no Sigfox device protocol exists to be used for device registration.
 
 To resolve this, configure at least one device protocol in the [Device database](/device-management-application/managing-device-types).
 
-### Connectivity
+### Connectivity {#connectivity}
 
-#### Sigfox callbacks in backend.sigfox.com are not created correctly
+#### Sigfox callbacks in backend.sigfox.com are not created correctly {#sigfox-callbacks-in-backendsigfoxcom-are-not-created-correctly}
 
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-callbacks.png" alt="Sigfox callbacks error" style="max-width: 100%">
 <br>
@@ -51,20 +51,20 @@ This warning message shows up when there are no connections set up for the Sigfo
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-registration.png" alt="Device registration failure without connections" style="max-width: 100%">
 <br>
 
-#### No device protocols configured
+#### No device protocols configured {#no-device-protocols-configured}
 
 This warning message shows up when no Sigfox device protocol exists to be used for device registration. To resolve this, click **Device protocols** to navigate to the **Device protocols** page where the protocols are configured.
 
 <img src="/images/device-protocols/sigfox/sigfox-troubleshooting-device-type-error.png" alt="No device protocol given for Sigfox" style="max-width: 100%">
 
-### Issues with alarm provisioning
-#### Issues with alarm provisioning
+### Issues with alarm provisioning {#issues-with-alarm-provisioning}
+#### Issues with alarm provisioning {#issues-with-alarm-provisioning}
 
 ![!Failed operation](/images/device-protocols/sigfox/sigfox-troubleshooting-failedoperation.png)
 
 If the "transfer operation failed" alarm is triggered, the device is already provisioned in the Sigfox platform and changing the device type in the Sigfox platform failed. In order to fix this issue, you must manually change the device type in the Sigfox platform to the intended one.
 
-#### Provisioned status is set to false
+#### Provisioned status is set to false {#provisioned-status-is-set-to-false}
 
 ![!False provision](/images/device-protocols/sigfox/sigfox-troubleshooting-falseprovision.png)
 
@@ -80,7 +80,7 @@ The **Provisioned** status is set to true when the device provisioning process i
 The status is updated asynchronously which means that sometimes you might have to wait a bit until it is set to true.
 {{< /c8y-admon-info >}}
 
-#### Callback creation failed
+#### Callback creation failed {#callback-creation-failed}
 
 ![Callback creation failed](/images/device-protocols/sigfox/sigfox-troubleshooting-callback.png)
 

@@ -30,7 +30,7 @@ For example, using the profile from the previous section we are going to registe
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
-### Adjusting gateway memory settings
+### Adjusting gateway memory settings {#adjusting-gateway-memory-settings}
 
 In certain scenarios it is required to adjust the memory settings of the gateway application. Examples for such scenarios are the integration of servers with very large address spaces or obtaining large amounts of data from servers using high sampling rates.
 
@@ -46,7 +46,7 @@ You can adjust the memory settings of the gateway like with any other Java progr
 Please adjust the memory settings according to the physical memory available on the gateway host. The maximum heap size must be set in a way that it doesn't consume more RAM than physically available to the gateway. Otherwise, the virtual memory management of the host operating system might start paging, resulting in reduced gateway performance.
 {{< /c8y-admon-important >}}
 
-### Performance tuning for large setups
+### Performance tuning for large setups {#performance-tuning-for-large-setups}
 
 If you're running your setup with a large number of connected OPC UA servers the scan of these nodes can take a long time and may fail with the default settings. There are a lot of other problems like data collection and synchronisation, subscriptions, cyclic reads and flushing data.
 We recommend you to tune the following settings in the configuration YAML file (values are just examples of a known large setup):  

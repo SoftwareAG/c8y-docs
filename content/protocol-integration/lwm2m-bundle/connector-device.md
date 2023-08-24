@@ -16,7 +16,7 @@ Additionally, the bulk device registration status and result are shown under thi
 We recommend you to never delete the connector device.
 {{< /c8y-admon-caution >}}
 
-### Migration of the LWM2M devices
+### Migration of the LWM2M devices {#migration-of-the-lwm2m-devices}
 
 Starting from version 10.15.0, the new device registration for LWM2M is introduced.
 LWM2M devices created earlier than version 10.15.0 and new LWM2M devices created via bulk registration must be migrated
@@ -32,11 +32,11 @@ Example usages:
 * `migrateLwm2mDevices --devices 1111 2222`: to migrate specific devices with their client registration objects
 * `migrateLwm2mDevices -sr -d 1111 2222`: to migrate specific devices without their client registration objects
 
-## Invalidate registrations
+## Invalidate registrations {#invalidate-registrations}
 
 The LWM2M connector device may be used to invalidate LWM2M registrations. This is sometimes helpful to force a LWM2M device to re-register.
 
-### Invalidate registrations by endpoint
+### Invalidate registrations by endpoint {#invalidate-registrations-by-endpoint}
 
 This command removes the LWM2M registrations using an endpoint ID.
 
@@ -46,7 +46,7 @@ Example usage: `invalidateRegistrationsForEndpoint urn:imei:012345678901234`
 
 This command invalidates all known LWM2M registrations for the endpoint `urn:imei:012345678901234`.
 
-### Invalidate registrations by LWM2M registration ID
+### Invalidate registrations by LWM2M registration ID {#invalidate-registrations-by-lwm2m-registration-id}
 
 Alternatively an LWM2M registration may be invalidated using its ID, using the following command:
 

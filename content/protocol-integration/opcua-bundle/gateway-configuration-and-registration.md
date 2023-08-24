@@ -33,7 +33,7 @@ gateway:
 Windows OS is used for the example.
 {{< /c8y-admon-info >}}
 
-### Thin Edge
+### Thin Edge {#thin-edge}
 
 The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
 
@@ -56,7 +56,7 @@ gateway:
 
 With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
 
-### Configuration profile location on the filesystem
+### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
 The configuration profile can be stored either in the *same directory as the JAR file* or in a *default configuration directory*.
 Depending on the operating system, the following default configuration directories can be used:
@@ -88,7 +88,7 @@ java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<l
 
 If both arguments "--spring.config.location" and "--spring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
 
-### Additional customizations
+### Additional customizations {#additional-customizations}
 
 {{< c8y-admon-info >}}
 If no additional customizations are required, you can skip this section.
@@ -118,7 +118,7 @@ C8Y:
 
 #
 # Gateway-specific settings
-#
+# 
 gateway:
   # The version of the gateway - this is filled automatically during the build process - do not change this property
   version: ${project.version}
@@ -380,7 +380,7 @@ gateway:
     retries: 5
 ```
 
-### Logging
+### Logging {#logging}
 
 Custom logging configuration can be set during startup by passing the "--logging.config" JVM argument. For more info on how to set up custom logging settings, refer to the ["Logback" documentation](http://logback.qos.ch/manual/configuration.html).
 A sample logging configuration file may look like this:
@@ -427,7 +427,7 @@ A sample logging configuration file may look like this:
 </configuration>
 ```
 
-### Deletion of gateway
+### Deletion of gateway {#deletion-of-gateway}
 
 An OPC UA gateway can be associated with multiple OPC UA servers, and the servers can have multiple child devices
 connected to them. The cleanest approach to delete a gateway is to first delete the OPC UA server managed objects and all its child devices.
@@ -447,7 +447,7 @@ completely remove all the associated managed objects. Thereafter, the gateway ca
 If the gateway is directly deleted from the list of devices before deleting gateway's servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.
 
-### Downgrade to an earlier version
+### Downgrade to an earlier version {#downgrade-to-an-earlier-version}
 
 Due to security improvements, downgrades from 10.12.0 to previous versions are not directly supported.
 However, if required, a downgrade is possible by following the instructions below:

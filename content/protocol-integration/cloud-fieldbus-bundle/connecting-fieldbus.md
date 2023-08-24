@@ -7,7 +7,7 @@ layout: redirect
 
 For the following instructions, it is assumed that you have a Cloud Fieldbus terminal available and it is registered as a device in your {{< product-c8y-iot >}} tenant. To register a terminal with {{< product-c8y-iot >}}, follow the instructions provided with the terminal.
 
-### Connecting Modbus/RTU devices
+### Connecting Modbus/RTU devices {#connecting-modbusrtu-devices}
 
 To connect a Modbus/RTU device, follow these steps:
 
@@ -21,7 +21,7 @@ To connect a Modbus/RTU device, follow these steps:
 
 ![Add Modbus device](/images/device-protocols/cloud-fieldbus/fieldbus-modbus-rtu.png)
 
-#### To add child devices
+#### To add child devices {#to-add-child-devices}
 
 1. To start the communication between the terminal and the Modbus/RTU device, click **Add RTU device**.
 2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device protocols](#configuring-fieldbus) for information on how to add a new device protocol. Set the Modbus address of the connected device.
@@ -29,7 +29,7 @@ To connect a Modbus/RTU device, follow these steps:
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the **Child Devices** tab visible.
 
-### Connecting Modbus/TCP devices
+### Connecting Modbus/TCP devices {#connecting-modbustcp-devices}
 
 To connect a Modbus/TCP device, follow these steps:
 
@@ -42,7 +42,7 @@ To connect a Modbus/TCP device, follow these steps:
 
 ![Add Modbus device](/images/device-protocols/cloud-fieldbus/fieldbus-modbus-tcp.png)
 
-#### To add child devices
+#### To add child devices {#to-add-child-devices}
 
 1. To start the communication between the terminal and the Modbus/TCP device, click **Add TCP device**.
 2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device types](#configuring-fieldbus) for information on how to add a new device protocol. Set the Modbus address and the IP address of the connected device.
@@ -54,7 +54,7 @@ To connect a Modbus/TCP device, follow these steps:
 It is assumed that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200 and NTC 220 series, the port to be used can be configured through the variable "service.cumulocity.modbus.port" via the device shell or the local web user interface of the device.
 {{< /c8y-admon-info >}}
 
-### Connecting CAN devices
+### Connecting CAN devices {#connecting-can-devices}
 
 To connect a CAN device, follow these steps:
 
@@ -67,7 +67,7 @@ To connect a CAN device, follow these steps:
 
 ![Add CAN device](/images/device-protocols/cloud-fieldbus/fieldbus-new-can-device.png)
 
-#### To add child devices
+#### To add child devices {#to-add-child-devices}
 
 1. To start the communication between the terminal and the CAN device, click **Add CAN device**.
 2. Enter a name for the device and select a device protocol from the dropdown field. See [Configuring fieldbus device types](#configuring-fieldbus) for information on how to add a new device protocol.
@@ -77,7 +77,7 @@ To connect a CAN device, follow these steps:
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added fieldbus devices to the terminal, you may have to reload your browser window to make the **Child devices** tab visible.
 
-### Connecting Profibus devices
+### Connecting Profibus devices {#connecting-profibus-devices}
 
 Connecting Profibus devices slightly differs from the regular plug & play approach of other Cloud Fieldbus protocols. The gateway acts as a device on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus device address.
 
@@ -94,7 +94,7 @@ To connect a Profibus device, follow these steps:
 <img src="/images/device-protocols/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">
 <br>
 
-#### To add child devices
+#### To add child devices {#to-add-child-devices}
 
 1. To start the communication between the gateway and the Profibus device, click **Add Profibus device**.
 2. Enter a name for the new device.

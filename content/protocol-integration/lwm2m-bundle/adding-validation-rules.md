@@ -36,7 +36,7 @@ Not all rules are available to each type.
 
 To delete a rule, click on the red delete icon on the right side of that rule. Click **Save** to save your settings.
 
-### Complex rulesets
+### Complex rulesets {#complex-rulesets}
 
 In order to enable more complex conditions,  multiple validation rules can be defined for a resource:
 
@@ -49,7 +49,7 @@ The screenshot above provides an example for the use of validation rule groups: 
 
 Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.
 
-### Device lifecycle events
+### Device lifecycle events {#device-lifecycle-events}
 
 The LWM2M agent creates events of device lifecycle in {{< product-c8y-iot >}}.
 Following are the specific event types for device bootstrap and registration process.

@@ -30,7 +30,7 @@ Possible parameters:
 Very low interval rates (for example 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
 {{< /c8y-admon-important >}}
 
-### Applying constraints
+### Applying constraints {#applying-constraints}
 
 Specifying auto-apply constraints allows you to limit the scope in which the device protocols are applied, for example by specifying a set of possible servers or node IDs. If no constraints are set, device protocols are applied at any fitting location on the OPC UA server.
 

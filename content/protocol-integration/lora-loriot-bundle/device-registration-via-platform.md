@@ -4,11 +4,11 @@ title: Device registration via Cumulocity IoT
 layout: redirect
 ---
 
-### Creation of Loriot LNS Connection in Cumulocity IoT
+### Creation of Loriot LNS Connection in Cumulocity IoT {#creation-of-loriot-lns-connection-in-cumulocity-iot}
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 
-#### To add a new connection
+#### To add a new connection {#to-add-a-new-connection}
 
 When you select **Connectivity** for the first time, you are asked to create a connection. Click **Add Connection**.
 
@@ -29,7 +29,7 @@ Always keep the **Gateway Information** option enabled because the Loriot agent 
 
 ![Enable gateway information option](/images/device-protocols/lora-loriot/loriot-gateway-option-enabled.png)
 
-#### To update a connection
+#### To update a connection {#to-update-a-connection}
 
 Select the connection to be updated, make your edits, and save the connection.
 
@@ -38,7 +38,7 @@ If there are devices associated with the connection, an error message appears, s
 
 ![Update connection information](/images/device-protocols/lora-loriot/loriot-admin-settings-update.png)
 
-#### To delete a connection
+#### To delete a connection {#to-delete-a-connection}
 
 Select the connection to be deleted and click **Delete**.
 
@@ -46,7 +46,7 @@ If there are devices associated with the connection, an error message appears, s
 
 ![Delete connection](/images/device-protocols/lora-loriot/loriot-admin-settings-delete.png)
 
-### Loriot device registration
+### Loriot device registration {#loriot-device-registration}
 
 To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
 

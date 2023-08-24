@@ -85,15 +85,15 @@ If the user agent is not found in the list of trusted or forbidden user agents t
 {{< /c8y-admon-info >}}
 
 
-### OAI-Secure session configuration {#oaisecure-session-configuration}
+### OAI-Secure session configuration {#oai-secure-session-configuration}
 
 OAI-Secure is a more secure alternative to the Basic Auth mode that also supports username and password login. In OAI-Secure mode the credentials in the initial request are exchanged for a JWT token that is set as a cookie in the web browser or returned in the response body. Based on the configuration OAI-Secure can support full session management or work as a standard JWT authentication where the user session lifetime is limited by the token expiration time.
 
-#### OAI-Secure without the configuration related to the session management (session configuration turned off) {#oaisecure-without-the-configuration-related-to-the-session-management-session-configuration-turned-off}
+#### OAI-Secure without the configuration related to the session management (session configuration turned off) {#oai-secure-without-the-configuration-related-to-the-session-management-session-configuration-turned-off}
 
 When there is no configuration related to the session, OAI-Secure issues a JWT token with a certain lifetime. If the token expires then the user is forced to re-login because token refresh is not supported. This behavior is very inconvenient for the user if the token lifetime is short because the user is forced to re-login frequently.  
 
-#### OAI-Secure with the configuration of the session management (session configuration turned on) {#oaisecure-with-the-configuration-of-the-session-management-session-configuration-turned-on}
+#### OAI-Secure with the configuration of the session management (session configuration turned on) {#oai-secure-with-the-configuration-of-the-session-management-session-configuration-turned-on}
 
 Using OAI-Secure with session configuration is more convenient and secure, and can be used to achieve a behavior which is similar to the authentication based on HTTP sessions.
 
@@ -158,7 +158,7 @@ In such configurations, the idle timeout is in the range of 45 to 90 minutes, de
 During the session token renewal the previous token is revoked and a new one is provided. The parameter `renewal token delay` defines the delay used to make this process smooth and not disturbing for the user. The old token is still valid for this period (1 minute by default). This way both tokens, old and new, are accepted by {{< product-c8y-iot >}}. This parameter is only configurable on platform level and cannot be modified by the tenant administrator.
 
 
-### Token generation with OAI-Secure {#token-generation-with-oaisecure}
+### Token generation with OAI-Secure {#token-generation-with-oai-secure}
 
 OAI-Secure is primarily based on JWT stored in a browser cookie. It can be also used to generate JWT in the response body.
 The lifespan of the tokens and the cookie is configurable by tenant options belonging to the category `oauth.internal`.

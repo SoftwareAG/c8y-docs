@@ -28,7 +28,7 @@ Navigate to **Data connectors** in the **Data broker** menu if you would like to
 Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 {{< /c8y-admon-important >}}
 
-### Limitations
+### Limitations {#limitations}
 
 Be aware of the following limitations of the data broker:
 

@@ -62,7 +62,7 @@ The behavior of a block inside a model does not depend on other blocks. There ca
 For details see [Device management > Device integration > Device integration using MQTT](/device-integration/mqtt).
 
 
-### Multi-tenancy {#multitenancy}
+### Multi-tenancy {#multi-tenancy}
 
 With the {{< enterprise-tenant >}} concept, {{< product-c8y-iot >}} supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
 

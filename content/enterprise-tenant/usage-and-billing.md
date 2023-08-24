@@ -264,7 +264,7 @@ The tenant usage statistics are collected on a daily base according to the begin
 
 #### Examples {#examples}
 
-##### Request counting - Example 1 {#request-counting--example-1}
+##### Request counting - Example 1 {#request-counting---example-1}
 
 ||Device| Server|
 |:---|:----|:-----|
@@ -276,7 +276,7 @@ The tenant usage statistics are collected on a daily base according to the begin
 The request will be billed to the day 25.08.2020 as this is the server time of the request handing.
 <br><br>
 
-##### Request counting - Example 2 {#request-counting--example-2}
+##### Request counting - Example 2 {#request-counting---example-2}
 
 ||Device| Server|
 |:---|:----|:-----|
@@ -288,7 +288,7 @@ The request will be billed to the day 25.08.2020 as this is the server time of t
 The request will be billed to the day 26.08.2020 as the server time is the same as the device time.
 <br><br>
 
-##### Microservice resource billing - Example 1 {#microservice-resource-billing--example-1}
+##### Microservice resource billing - Example 1 {#microservice-resource-billing---example-1}
 
 ||User| Server|
 |:---|:----|:-----|
@@ -301,7 +301,7 @@ The request will be billed to the day 26.08.2020 as the server time is the same 
 The resources will be assigned mainly to the day 26.08.2020 as according to the UTC time zone the microservice was active for 14 hours that day and for 10 hours the next day. This might be a bit different from what a user expects as from his perspective the microservice was active for 12 hours each day.
 <br><br>
 
-##### Microservice resource billing - Example 2 {#microservice-resource-billing--example-2}
+##### Microservice resource billing - Example 2 {#microservice-resource-billing---example-2}
 
 ||User| Server|
 |:---|:----|:-----|
@@ -314,7 +314,7 @@ The resources will be assigned mainly to the day 26.08.2020 as according to the 
 From the user perspective the microservice was subscribed for 8 hours at 26.08.2020 but at server time it was 2 hours before EOD of 25.08.2020 and 6 hours after BOD at 26.08.2020.
 <br><br>
 
-##### Microservice resource billing - Example 3 {#microservice-resource-billing--example-3}
+##### Microservice resource billing - Example 3 {#microservice-resource-billing---example-3}
 
 ||User| Server|
 |:---|:----|:-----|

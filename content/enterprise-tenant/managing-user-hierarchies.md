@@ -80,7 +80,7 @@ If the delegated user also needs to manage specific devices, the admin user must
 Delegation works only inside user management and does not have any implication to other places.
 {{< /c8y-admon-info >}}
 
-### Troubleshooting sub-users {#troubleshooting-subusers}
+### Troubleshooting sub-users {#troubleshooting-sub-users}
 
 In the example below the user cannot change the access to the Administration application, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them).
 

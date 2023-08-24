@@ -4,7 +4,7 @@ title: General
 layout: redirect
 ---
 
-### Breadcrumb navigation is displayed incorrectly
+### Breadcrumb navigation is displayed incorrectly {#breadcrumb-navigation-is-displayed-incorrectly}
 
 If an entity is assigned twice to another entity the breadcrumb navigation can be only displayed correctly for one of the assigned entities.
 
@@ -31,13 +31,13 @@ In this case, it may happen that the breadcrumb navigation for "Machine: Drillin
 
  "Dashboard > Darmstadt Hall 2 > Innovative Production > Production Line > Machine Dashboard".
 
-### Where do I find values older than 60 days?
+### Where do I find values older than 60 days? {#where-do-i-find-values-older-than-60-days}
 
 The standard retention for data on {{< product-c8y-iot >}} is 60 days. To save OEE data longer than 60 days, you can change the data retention in your platform settings. For more information on how to change the retention rules, see [Retention rules](/standard-tenant/managing-data/#retention-rules).
 
-### Which roles are distinguished by the application?
+### Which roles are distinguished by the application? {#which-roles-are-distinguished-by-the-application}
 
-#### Default user
+#### Default user {#default-user}
 
 The default user has access to:
 
@@ -47,7 +47,7 @@ The default user has access to:
 
 The default user needs a role assigned with the Oeeconfigurator Read permission enabled.
 
-#### Admin user
+#### Admin user {#admin-user}
 
 Only admin users are allowed to change and create machine and line profiles. Admin users have access to:
 

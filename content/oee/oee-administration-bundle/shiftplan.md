@@ -22,14 +22,14 @@ If there are overlapping shifts defined, the shifts are handled in the following
 -	recurring non-production
 -	recurring production
 
-### To create a shift
+### To create a shift {#to-create-a-shift}
 
 1.	Select the appropriate location in the dropdown menu at the top of the screen.
 2.	Click **Create Shift** to add a new shift to the selected location.
 3.	Fill in all required details in the form on the right-hand side.
 4.	Click **Save** to save the shift.
 
-### To change a shift
+### To change a shift {#to-change-a-shift}
 
 1.	Select the row of the shift that you want to update.
 2.	Update the required fields.
@@ -38,7 +38,7 @@ If there are overlapping shifts defined, the shifts are handled in the following
 Be aware that a non-recurring shift cannot be edited if it is currently running. If you edit a recurring shift, the
 changes only affect the instances that start after you saved it. No current running shift is altered.
 
-### To delete a shift
+### To delete a shift {#to-delete-a-shift}
 
 - Click the red icon in the row of the shift that you want to delete.
 - Alternatively, select the row of the shift that you want to delete and then click **Delete** on the bottom right-hand side.

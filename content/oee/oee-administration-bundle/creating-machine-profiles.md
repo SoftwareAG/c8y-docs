@@ -10,7 +10,7 @@ Click **Create a machine profile** at the right of the top menu bar to start the
 After saving the general profile information in the first step you may skip one or more of the following steps and provide the requested information at a later point in time.
 {{< /c8y-admon-info >}}
 
-### Profile
+### Profile {#profile}
 
 In the first step, you specify the profile name and type.
 
@@ -78,7 +78,7 @@ In the first step, you specify the profile name and type.
 3. Click **Save and continue** to proceed.
 
 
-### Machine
+### Machine {#machine}
 
 Next, select a machine to be connected with the profile.
 
@@ -94,25 +94,25 @@ Next, select a machine to be connected with the profile.
 Once you have saved a profile, the selected machine cannot be changed.
 {{< /c8y-admon-info >}}
 
-#### Location
+#### Location {#location}
 
 The location indicates where the machine is located. It is used to apply a shift plan to this profile. See [Shiftplan](/oee/oee-administration/#shiftplan) for more details regarding shift plans and the calculation implications.
 
 
-### Workpiece
+### Workpiece {#workpiece}
 
 Next, specify the workpiece.
 
 You can either provide static workpiece information if the machine is always producing the same thing in the same quantity or you can use a production plan, where the workpiece information is provided dynamically at runtime. Note that if you select to use a production plan, OEE calculation will only be performed for times when a production plan is available.
 
-#### Define a static workpiece
+#### Define a static workpiece {#define-a-static-workpiece}
 
 ![Workpiece tab](/images/oee/administration/profile-workpiece.png)
 
 1. Provide a name for the workpiece.
 2. Specify the quantity settings. Enter an amount, a unit (either "pcs" or "CMB") and a frequency (per minute or second).
 
-#### Enable a production plan
+#### Enable a production plan {#enable-a-production-plan}
 
 Activate the toggle **Allow production plan workpiece** if you want to use a production plan.
 
@@ -131,7 +131,7 @@ The REST API can be reached at https://[server]/service/oee-bundle/mes/productio
 For details, see the [Rest API documentation](https://{{< domain-c8y >}}/api/oee/10.10.0/#tag/Productionplan).
 
 
-### Resolution
+### Resolution {#resolution}
 
 Next, define the resolution intervals. The default interval is mandatory and will define the interval that is used for this machine in the **Overview**. It will also influence OEE calculation intervals for sites and lines that do not have a dedicated profile.
 
@@ -141,7 +141,7 @@ For each resolution interval, provide an interval and a unit (one of min, hour, 
 
 OEE calculation is performed on the basis of the configured resolution intervals.
 
-### Computation
+### Computation {#computation}
 
 Next, select a calculation method, that means, the values for the mapping of the OEE input variables.
 
@@ -165,14 +165,14 @@ For more information on the input variables and the naming conventions of the pa
 For the calculation methods 2 & 5 (PQL & LQL), you should not use "status event" in the mapping formula for both Actual Quality Amount and Quality Losses (Amount), because as a sum they form the Actual Production Amount. Unlike the other calculation methods, no subset of the Actual Production Amount can be derived using the "status event", since calculation methods 2 & 5 only consist out of subsets.
 {{< /c8y-admon-info >}}
 
-### Matching
+### Matching {#matching}
 
 Next, define rules to determine which machine data is used for the OEE input variables.
 
 For details on matching data, see [Matching data](/oee/oee-administration/#matching-data).
 
 
-### Short stoppages
+### Short stoppages {#short-stoppages}
 
 Optionally, you can record short stoppages. By default, short stoppages are not tracked.
 
@@ -187,7 +187,7 @@ All Availability Losses shorter than the set duration are no longer treated as A
 Short shutdowns currently only work if the Actual Production Time or the Availability Losses (time) are configured via machine status events. The reason is that you can only properly observe machine uptime or downtime with machine status events and thus correctly detect if a shutdown is a short shutdown. With transformation rules you actually get one value for the whole interval and it is unclear if the Availability Loss Time is one long shutdown or consists out of multiple short shutdowns.
 {{< /c8y-admon-info >}}
 
-### Goals
+### Goals {#goals}
 
 Next, you may  specify OEE target goal values in percentage. These values will be displayed in the [Andon Board](/oee/oee-dashboards/#andon-board).
 
@@ -197,7 +197,7 @@ Next, you may  specify OEE target goal values in percentage. These values will b
 The target is only fulfilled if the current value is above (>) the target value.
 {{< /c8y-admon-info >}}
 
-### Summary
+### Summary {#summary}
 
 Finally, the summary shows if the profile configuration is complete or if any (and which) information is missing.
 

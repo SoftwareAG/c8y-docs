@@ -45,25 +45,25 @@ For each profile, the following information is provided:
 </tbody>
 </table>
 
-#### To view profile details
+#### To view profile details {#to-view-profile-details}
 
 Click the arrow icon on the left of an entry to expand or collapse it and show or hide the profile details, for example the machine name and the machine profile in case of machine profiles.
 
-#### To create a new profile
+#### To create a new profile {#to-create-a-new-profile}
 
 Click **Create new machine profile** or **Create new line profile** at the right of the top menu bar to create a new profile.
 
 For details, see [Creating machine profiles](#machine-profiles) or [Creating line profiles](#line-profiles).
 
-#### To edit a profile
+#### To edit a profile {#to-edit-a-profile}
 
 In the context menu of an entry, click **Edit** to edit a profile.
 
-#### To change the the status of a profile
+#### To change the the status of a profile {#to-change-the-the-status-of-a-profile}
 
 The status column shows the current status of the profile. To switch a completed profile from activated to deactivated and vice versa click the toggle button.
 
-#### To delete a profile
+#### To delete a profile {#to-delete-a-profile}
 
 In the context menu of an entry, click **Delete** to delete a profile.
 

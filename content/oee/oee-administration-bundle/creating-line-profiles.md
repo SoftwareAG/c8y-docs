@@ -24,7 +24,7 @@ Next, create a new line in a similar way, this time selecting "Line" as entity t
 
 The line will be added to the site in the **Organization structure** and get represented in the [**Machine Park Overview**](/oee/oee-dashboards/#machine-park-overview).
 
-### Step 4 Add machines to the line {#step-4-add-machines-to-the-line}
+### Step 4 - Add machines to the line {#step-4---add-machines-to-the-line}
 
 1. Click the **Add** button at the right of the line.
 2. Select the machines you want to assign to the line and click **Add**.

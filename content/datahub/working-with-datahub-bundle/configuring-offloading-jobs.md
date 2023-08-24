@@ -16,7 +16,7 @@ helpcontent:
 
 The following steps describe how to set up an offloading pipeline.
 
-### Defining an offloading configuration
+### Defining an offloading configuration {#defining-an-offloading-configuration}
 
 To define an offloading configuration, click **Offload collection** to start a wizard which guides you through the main steps:
 
@@ -29,7 +29,7 @@ To define an offloading configuration, click **Offload collection** to start a w
 
 The wizard prepopulates settings for the different steps to ease the configuration process. You can modify those settings according to your needs.
 
-#### Select collection
+#### Select collection {#select-collection}
 
 In the dropdown box select one of the {{< product-c8y-iot >}} base collections, which are:
 
@@ -46,7 +46,7 @@ In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-d
 
 Click **Next** to proceed with the next configuration step. Click **Cancel** to cancel the offloading configuration.
 
-#### Configure target table
+#### Configure target table {#configure-target-table}
 
 Once you have selected a collection for offloading, you must specify the target table in the data lake. The **Target table name** denotes the folder name in the data lake. In this folder, which will be automatically created, the offloaded data will be stored. In Dremio a table is created with the same name, pointing to this data lake folder. This table is used when querying the corresponding data lake folder and thus the offloaded data. The target table name must follow these syntax rules:
 
@@ -70,7 +70,7 @@ For each base collection, a default set of data fields is derived. This set defi
 Click **Next** to proceed with the next configuration step. Click **Finish** to jump directly to the final step. Both steps will fail if the associated base collection is empty, as it prevents necessary schema investigations. In such a case you must ensure that the base collection is not empty before you can proceed with the offloading configuration. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration wizard.
 
 
-#### Set additional result columns
+#### Set additional result columns {#set-additional-result-columns}
 
 If you have added additional top-level fields while feeding data into {{< product-c8y-iot >}} and you want to access them in your {{< product-c8y-iot >}} DataHub queries, then you can include them in the offloading process by setting them as additional result columns. You can also use additional result columns to offload data fields in the base collection which are not part of the default schema. Additional result columns can be configured optionally. The TrendMiner case does not support this option.
 
@@ -131,7 +131,7 @@ When deleting an additional result column, the data will no longer be included i
 Click **Next** to proceed with the next configuration step. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
 
 
-#### Set filter predicate
+#### Set filter predicate {#set-filter-predicate}
 
 Optionally you can define a filter predicate. Per default, all entries in the base collection are offloaded to the data lake; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out invalid values or outliers. In the **Additional filter predicate** field, you can specify such a filter in SQL syntax. For example, for the alarms collection the filter might be `status='ACTIVE' AND severity='WARNING'` to only persist active alarms with a severe warning. The filter predicate functionality supports complex SQL statements, that is, a combination of `AND/OR`, clauses like `IN(...)` / `NOT IN(...)`, and functions such as `REGEXP_LIKE(text, 'MyText\S+')`.
 
@@ -145,7 +145,7 @@ When defining an additional filter predicate, you can click **Validate** to vali
 
 Click **Next** to proceed with the next configuration step. Click **Previous** to go back one configuration step. Click **Cancel** to cancel the offloading configuration.
 
-#### Set task details
+#### Set task details {#set-task-details}
 
 The task configuration step includes the offloading task name and the description. The **Offloading task name** is an identifier for the offloading pipeline. It must have at minimum one non-whitespace character. Even though the task name does not have to be unique, it is advisable to use a unique name.
 

@@ -13,7 +13,7 @@ You access {{< product-c8y-iot >}} DataHub via a web browser. It has been tested
 Mobile devices like smartphones or tablets are not supported.
 {{< /c8y-admon-info >}}
 
-### How to log into Cumulocity IoT DataHub
+### How to log into Cumulocity IoT DataHub {#how-to-log-into-cumulocity-iot-datahub}
 
 After the {{< product-c8y-iot >}} DataHub services have been subscribed for your tenant, you must log into your tenant. In the **application switcher** you will find the {{< product-c8y-iot >}} DataHub button. By clicking the button you will be taken to the home page of {{< product-c8y-iot >}} DataHub. The UI provides management and monitoring capabilities for {{< product-c8y-iot >}} DataHub. Alternatively your tenant administrator can give you the URL directly navigating to {{< product-c8y-iot >}} DataHub, which requires a login as well.
 

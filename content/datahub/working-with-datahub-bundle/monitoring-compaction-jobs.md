@@ -18,7 +18,7 @@ During offloading, data from the Operational Store of {{< product-c8y-iot >}} is
 You need administration permissions to access the compaction job histories. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-req >}}
 
-### Status of all compaction jobs
+### Status of all compaction jobs {#status-of-all-compaction-jobs}
 
 In the navigator, select **Compaction status** under **Administration** to get an overview of the latest status of the compaction jobs for each pipeline. The list shows the corresponding last compaction job for all pipelines. Each compaction consists of the following details:
 
@@ -55,7 +55,7 @@ Click **Reload** to refresh the list.
 
 You can filter the entries by their status or timestamp by using the filter controls at the top.
 
-### Details of compaction job
+### Details of compaction job {#details-of-compaction-job}
 
 For a given compaction job, you can examine additional details of its execution.
 

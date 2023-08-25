@@ -8,9 +8,9 @@ The application concept of {{< product-c8y-iot >}} includes a basic application 
 
 Tenants can be subscribed to applications which have been deployed by their superior tenant ({{< management-tenant >}} or {{< enterprise-tenant >}}).
 
-[Granting access to subtenants](/standard-tenant/managing-permissions/#application-access) and [subscribing to applications](/enterprise-tenant/managing-tenant/#subscribing-applications) is done in the Administration application.
+[Granting access to subtenants](/standard-tenant/managing-permissions/#application-access) and [subscribing to applications](/enterprise-tenant/managing-tenants/#subscribing-applications) is done in the Administration application.
 
-Tenants can also have their own applications which can also be subscribed to subtenants. See [Custom applications](/standard-tenant/ecosystem/#custom-applications)for details on how to add custom applications.
+Tenants can also have their own applications which can also be subscribed to subtenants. See [Custom applications](/standard-tenant/ecosystem/#custom-applications) for details on how to add custom applications.
 
 ### Service discovery {#service-discovery}
 

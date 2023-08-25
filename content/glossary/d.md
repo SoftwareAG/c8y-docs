@@ -22,7 +22,7 @@ For details see [Application enablement & solutions > Cockpit > Data explorer](/
 
 ### Data lake {#data-lake}
 
-Used in the context of [DataHub](/glossary/c/#c8y-datahub).
+Used in the context of [DataHub](/glossary/c/#cumulocity-iot-datahub).
 
 A data lake serves as a storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), NAS, or HDFS.
 

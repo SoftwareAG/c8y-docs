@@ -4,7 +4,7 @@ title: Device registration via Cumulocity IoT
 layout: redirect
 ---
 
-### Creation of Loriot LNS Connection in Cumulocity IoT {#creation-of-loriot-lns-connection-in-cumulocity-iot}
+### Creation of Loriot LNS Connection in {{< product-c8y-iot >}} {#creation-of-loriot-lns-connection-in-platform}
 
 Before using LoRa devices with {{< product-c8y-iot >}}, you must configure the {{< product-c8y-iot >}} Loriot agent endpoint details in the Administration application. Click the **Connectivity** tab in the **Settings** menu to create, edit, delete or update multiple Loriot connections.
 

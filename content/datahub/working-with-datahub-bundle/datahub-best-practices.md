@@ -98,7 +98,7 @@ To limit the offloaded inventory objects to devices, use:
 convert_from(convert_to("_fragments", 'JSON'), 'UTF8') LIKE '%"c8y_IsDevice"%'
 ```
 
-### Querying additional data with Cumulocity IoT DataHub {#querying-additional-data-with-cumulocity-iot-datahub}
+### Querying additional data with {{< product-c8y-iot >}} DataHub {#querying-additional-data-with-datahub}
 Main use case of {{< product-c8y-iot >}} DataHub is to offload data from the internal {{< product-c8y-iot >}} database to a data lake and query the data lake contents afterwards. In some use cases, {{< product-c8y-iot >}} DataHub is required to query additional data which is not kept in the {{< product-c8y-iot >}} platform. For a cloud environment, the
 additional data must be provided as Parquet files and must be located in the data lake as configured in the initial configuration of {{< product-c8y-iot >}} DataHub. The Parquet files must not be stored in folders that are used as targets for offloadings as this could corrupt offloading pipelines of {{< product-c8y-iot >}} DataHub (if the schema doesn't match with the schema of the Parquet files created via offloading jobs). In addition, the Parquet files must be compliant with the [Dremio limitations for Parquet files](https://docs.dremio.com/current/sonar/query-manage/data-formats/parquet-files).
 

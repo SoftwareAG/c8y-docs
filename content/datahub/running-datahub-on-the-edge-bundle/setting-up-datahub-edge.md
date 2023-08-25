@@ -26,7 +26,7 @@ The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instan
 
 Hardware requirements for the host OS are excluded.
 
-### Setting up {{< product-c8y-iot >}} DataHub Edge {#setting-up-cumulocity-iot-datahub-edge}
+### Setting up {{< product-c8y-iot >}} DataHub Edge {#setting-up-datahub-edge}
 
 Copy the {{< product-c8y-iot >}} DataHub Edge archive to the {{< product-c8y-iot >}} Edge.
 
@@ -69,7 +69,7 @@ The containers are configured to store their application state on the data disk 
 You must not modify the contents of these folders as this may corrupt your installation.
 {{< /c8y-admon-caution >}}
 
-### Upgrading {{< product-c8y-iot >}} DataHub Edge {#upgrading-cumulocity-iot-datahub-edge}
+### Upgrading {{< product-c8y-iot >}} DataHub Edge {#upgrading-datahub-edge}
 An upgrade of {{< product-c8y-iot >}} DataHub Edge follows the same steps as the initial setup. First, you must copy the archive with the new version to {{< product-c8y-iot >}} Edge. Next, you must log in as admin. Then you must run the install script using the new version.
 
 ```shell
@@ -78,11 +78,11 @@ sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<NEW version>.tar
 
 During script execution, the already installed version is detected and the script runs an upgrade using the new version. It takes a few minutes to complete the installation. After completion you can delete the {{< product-c8y-iot >}} DataHub Edge archive.
 
-### Adapting to network changes of Cumulocity IoT Edge {#adapting-to-network-changes-of-cumulocity-iot-edge}
+### Adapting to network changes of {{< product-c8y-iot >}} Edge {#adapting-to-network-changes-of-edge}
 
 There might be cases where you must change the network setup of your Edge installation, for example by setting the IP range used by Edge internally or changing the domain name. The network configuration of {{< product-c8y-iot >}} DataHub Edge must be adapted to such a change by running the script `/opt/softwareag/cdh/bin/restart.sh` once. The script restarts {{< product-c8y-iot >}} DataHub with parameters aligned with the new network configuration.
 
-### Accessing {{< product-c8y-iot >}} DataHub Edge {#accessing-cumulocity-iot-datahub-edge}
+### Accessing {{< product-c8y-iot >}} DataHub Edge {#accessing-datahub-edge}
 
 The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in the same way as in a cloud deployment of {{< product-c8y-iot >}} DataHub.
 
@@ -125,7 +125,7 @@ The different {{< product-c8y-iot >}} DataHub Edge interfaces can be accessed in
 For JDBC/ODBC you must configure {{< product-c8y-iot >}} Edge so that port 32010 can be accessed from the host system. For instructions on port forwarding see [Installing {{< product-c8y-iot >}} Edge](/edge-installation/prerequisites/).
 {{< /c8y-admon-req >}}
 
-### Defining Cumulocity IoT DataHub permissions and roles {#defining-cumulocity-iot-datahub-permissions-and-roles}
+### Defining {{< product-c8y-iot >}} DataHub permissions and roles {#defining-datahub-permissions-and-roles}
 
 The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
 
@@ -135,7 +135,7 @@ The setup of the Dremio account and the data lake is done in the same way as in 
 
 {{< product-c8y-iot >}} DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.
 
-### Changing Dremio memory configuration on Cumulocity IoT DataHub Edge {#changing-dremio-memory-configuration-on-cumulocity-iot-datahub-edge}
+### Changing Dremio memory configuration on {{< product-c8y-iot >}} DataHub Edge {#changing-dremio-memory-configuration-on-datahub-edge}
 
 Depending on the use case, it might be necessary to increase the memory available to Dremio, the internal engine of {{< product-c8y-iot >}} DataHub. By default, Dremio is configured to consume a maximum of 4 GB of RAM (2 GB assigned to both master node and executor node).
 

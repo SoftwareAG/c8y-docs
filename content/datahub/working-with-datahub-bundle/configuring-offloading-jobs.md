@@ -138,7 +138,7 @@ Optionally you can define a filter predicate. Per default, all entries in the ba
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You must use the source definition as defined in the corresponding column instead.
 
 {{< c8y-admon-info >}}
-For querying the attribute `id`, you must use `_id`. For examples on querying different attributes, see also [Cumulocity IoT DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices).
+For querying the attribute `id`, you must use `_id`. For examples on querying different attributes, see also [{{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices).
 {{< /c8y-admon-info >}}
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. You must fix these errors before you can proceed.

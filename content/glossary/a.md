@@ -26,7 +26,7 @@ An alarm represents an [event](/glossary/e/#event) that requires an intervention
 
 ### Analytics Builder {#analytics-builder}
 
-Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#c8y-streaming-analytics) application. It allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
+Analytics Builder is part of the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#streaming-analytics) application. It allows you to build analytic models that transform or analyze streaming data in order to generate new data or output events. The models are capable of processing data in real time.
 
 See also [EPL Apps](/glossary/e/#epl-apps).
 

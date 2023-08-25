@@ -49,7 +49,7 @@ The following tasks should be covered by a platform solution:
   - [Application management](#application-management)
   - [Invoicing and usage data](#invoicing-and-usage-data)
   - [Analytics](#analytics)
-  - [{{< product-c8y-iot >}} DataHub](#cumulocity-iot-datahub)
+  - [{{< product-c8y-iot >}} DataHub](#datahub)
 
 The following sections discuss how these tasks are handled in both approaches.
 
@@ -236,6 +236,6 @@ Choosing the RBAC approach limits you in the options for your business model as 
 
 If you are dealing with a single tenant it will be easier to do analytics across all devices of all customers but it might be more complicated to do separate analytics for just one customer. Having the data spread across multiple tenants will take additional effort to collect the data in one place for such use cases. However, it will ease deployment of custom analytics solutions per customer.
 
-##### Cumulocity IoT DataHub {#cumulocity-iot-datahub}
+##### {{< product-c8y-iot >}} DataHub {#datahub}
 
 {{< product-c8y-iot >}} DataHub currently does not support RBAC. Users who have access to DataHub on the tenant can offload any measurements, events, alarms, and inventory details into the same data lake regardless of the permission in use. Although it might be possible to restrict the offloading job to just data for a user this would require careful and manual configuration. DataHub currently only supports one data lake folder connection per tenant. Also note that only one user is created to access the data lake from analytical tools, therefore enforcing security on the data in the data lake is also currently not possible.

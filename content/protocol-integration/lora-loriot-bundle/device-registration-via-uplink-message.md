@@ -69,4 +69,4 @@ In the Loriot LoRa device message below, `gws` represents a list of gateways inv
 The Loriot LoRa agent picks `gw` with the oldest timestamp for processing.
 The Loriot LoRa agent maps the `rssi` value to the standard {{< product-c8y-iot >}} `SignalStrength` object and updates the device managed object with the `lat` and `lon` values.
 
-In order to be able to send downlink operations, the devices registered via uplink message must be re-registered using {{< product-c8y-iot >}} (see [Device registration via Cumulocity IoT](#device-registration-via-platform)), to be associated with a connection and a device type.
+In order to be able to send downlink operations, the devices registered via uplink message must be re-registered using {{< product-c8y-iot >}} (see [Device registration via {{< product-c8y-iot >}}](#device-registration-via-platform)), to be associated with a connection and a device type.

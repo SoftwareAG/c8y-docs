@@ -72,7 +72,7 @@ Next you can define a workspace to organize your reports. By adding the service 
 
 Only workspaces granting access to the service principal application can be browsed from within {{< product-c8y-iot >}} DataHub. Once the workspace is available, you can publish reports to it and access it in {{< product-c8y-iot >}} DataHub.
 
-### Setting up the connection in Cumulocity IoT DataHub {#setting-up-the-connection-in-cumulocity-iot-datahub}
+### Setting up the connection in {{< product-c8y-iot >}} DataHub {#setting-up-the-connection-in-datahub}
 
 In the navigator, select **Settings** and then **Microsoft Power BI** to define the connection settings.
 

@@ -56,6 +56,6 @@ For clarification, maintenance releases for the same GA release contain only cor
 
 In general, you can run an older application or microservice version against a newer {{< product-c8y-iot >}} backend, as long as the application or microservice uses documented APIs only.  In the rare case of announced breaking changes it might be required to update the application or microservice with a more recent version of an SDK before the change becomes effective.
 
-#### Cumulocity IoT functionality {#cumulocity-iot-functionality}
+#### {{< product-c8y-iot >}} functionality {#platform-functionality}
 
 {{< product-c8y-iot >}} microservices and user interface features may be deprecated. In this case, the {{< product-c8y-iot >}} deprecation process provides an early indication to users of the features. Deprecation notices are included in the documentation and the release notes at least one GA release ahead of the GA release where the change becomes effective.

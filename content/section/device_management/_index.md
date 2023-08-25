@@ -325,4 +325,4 @@ svg: '<svg
 '
 ---
 
-Learn about connecting, monitoring and controlling devices with Cumulocity IoT, be it via technical interfaces or via the Cumulocity IoT user interface. 
+Learn about connecting, monitoring and controlling devices with {{< product-c8y-iot >}}, be it via technical interfaces or via the {{< product-c8y-iot >}} user interface. 

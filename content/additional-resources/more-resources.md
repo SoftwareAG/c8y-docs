@@ -12,7 +12,7 @@ section:
 
 A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}). The OpenAPI Specification describes the entire {{< product-c8y-iot >}} REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
-### Cumulocity IoT YouTube channel {#cumulocity-iot-youtube-channel}
+### {{< product-c8y-iot >}} YouTube channel {#product-youtube-channel}
 
 Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@CumulocityIoT) for more content about the platform. Here you have access to:
 

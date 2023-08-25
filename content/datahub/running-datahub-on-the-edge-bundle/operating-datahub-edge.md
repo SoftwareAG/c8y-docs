@@ -20,7 +20,7 @@ If you need to contact [product support](/additional-resources/contacting-suppor
 
 #### Health check {#health-check}
 
-##### Check Cumulocity IoT DataHub Edge backend status {#check-cumulocity-iot-datahub-edge-backend-status}
+##### Check {{< product-c8y-iot >}} DataHub Edge backend status {#check-datahub-edge-backend-status}
 
 You can check the status of the backend in the **Administration** page of the {{< product-c8y-iot >}} DataHub UI. Alternatively you can query the `isalive` endpoint, which should produce an output similar to:
 

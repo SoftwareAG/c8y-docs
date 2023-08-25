@@ -24,7 +24,7 @@ ROLES & PERMISSIONS
 - To add/update/delete/import asset properties: CREATE/ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-### To create an asset property
+### To create an asset property {#to-create-an-asset-property}
 
 When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system.
 
@@ -91,11 +91,11 @@ The **Default value** field is only shown if the selected **Type** is either "Te
 
 Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-models).
 
-### Asset property types
+### Asset property types {#asset-property-types}
 
 To further define the asset property you can select one of the six following options listed under **Type**:
 
-#### Text
+#### Text {#text}
 
 Select **Text** if the asset property value is a string, for example, a wind turbine manufacturer name. Enter a valid text.
 
@@ -120,7 +120,7 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator  codes have to start with the prefix “MCGEN”.
 
-#### Default value
+#### Default value {#default-value}
 
 Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
 
@@ -132,7 +132,7 @@ The default value has to adhere to all validations provided beforehand. If you s
 
 If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
-#### Number
+#### Number {#number}
 
 For this type you must provide a numeric value for the asset creation, for example, the height of a wind turbine tower.
 
@@ -173,7 +173,7 @@ If the **Minimum** and/or **Maximum** is checked, the given **Default value** is
 
 If the asset property is "Tower height" with a **Minimum** of 80 and a **Maximum** of 110, the **Default value** must be between 80 and 110.
 
-#### Date Picker
+#### Date Picker {#date-picker}
 
 If selected, you must select a date from the calendar displayed in the dialog window during the asset creation.
 
@@ -181,7 +181,7 @@ If selected, you must select a date from the calendar displayed in the dialog wi
 
 If "Installation date" is a property of the "Wind turbine" asset, then you must select the installation date of the wind turbine when creating the asset.
 
-#### Enumeration
+#### Enumeration {#enumeration}
 
 Select **Enumeration** to list several values that apply to this asset property.
 
@@ -195,7 +195,7 @@ If you create an asset property for a wind turbine "drivetrain type" and the typ
 
 ![Asset property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
-#### Boolean
+#### Boolean {#boolean}
 
 If selected, the presence of the asset property can either be true or false during the asset creation.
 
@@ -205,7 +205,7 @@ An asset with this asset property shows a checkbox. Selecting this checkbox sets
 
 If you create an asset property called "Yaw system" to identify wind turbines that rotate towards the wind direction during upwind conditions, the asset property must be created with the type "Boolean". When you create an asset for a wind turbine with a yaw system present, it is then initialized to "true". If there is no yaw system present, the asset is initialized to "false".
 
-#### File upload
+#### File upload {#file-upload}
 
 This option allows you to upload a file during the asset creation.
 
@@ -223,14 +223,14 @@ During the bulk import, the file size validation is skipped as the file is alrea
 
 To upload the schematic diagram for a wind turbine, you name the asset property "Wind turbine schematic" and specify the file type of the schematic file. Then upload the respective file. Once the asset is created, you can view this file for future reference.
 
-### To edit an asset property
+### To edit an asset property {#to-edit-an-asset-property}
 
 1. Select the desired asset property in the **Asset properties** to see all the details on the right of the screen.
 2. Edit any content of the asset property.
 3. Click **Save** to save your changes.
 4. If this property is used by any asset model, in the resulting confirmation dialog, select **Confirm** to continue to save your changes.
 
-### To search and filter asset properties
+### To search and filter asset properties {#to-search-and-filter-asset-properties}
 
 1. Navigate to the **Asset properties** page.
 2. Enter the desired name in the search field on the top left.
@@ -238,7 +238,7 @@ To upload the schematic diagram for a wind turbine, you name the asset property 
 
 All asset properties matching the search values are displayed on the screen on the left. If the search entry does not match with any asset properties, you see a notification.
 
-### To delete an asset property
+### To delete an asset property {#to-delete-an-asset-property}
 
 Select the respective asset property in the **Asset properties** and click **Delete** on the bottom right.
 
@@ -250,11 +250,11 @@ If the asset property you want to delete is part of an existing asset or an asse
 
 {{< /c8y-admon-info>}}
 
-### Types of asset properties
+### Types of asset properties {#types-of-asset-properties}
 
 There are two types of asset properties, both fulfill different requirements:
 
-#### Simple asset property
+#### Simple asset property {#simple-asset-property}
 
 A simple asset property consists of a single key value pair. This option is set by default when creating new asset properties.
 
@@ -266,7 +266,7 @@ In the **Asset properties** simple asset properties are listed with their type.
 
  ![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
 
-#### Complex asset property
+#### Complex asset property {#complex-asset-property}
 
 A complex asset property consists of multiple key value pairs, meaning, it contains a root object followed by one or more key value pairs. You can select the complex asset property option by switching on the toggle. If you switch on the toggle, you must define each key value pair as well as providing a Type for each pair.
 
@@ -280,7 +280,7 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)
 
-### To export asset properties
+### To export asset properties {#to-export-asset-properties}
 
 Follow the steps below:
 
@@ -296,7 +296,7 @@ You can export a maximum of 500 asset properties at a time.
 
 ![Export asset properties](/images/dtm/custom-property/dtm-property-library-export.png)
 
-### To import asset properties
+### To import asset properties {#to-import-asset-properties}
 
 To import asset properties into the DTM application, follow the steps below:
 

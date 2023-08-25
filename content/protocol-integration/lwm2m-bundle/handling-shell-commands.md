@@ -196,7 +196,7 @@ The CoAP response data is populated into the operation response. Note that {{< p
 A shell command can also be used to send multiple operations to a LWM2M device at once. To do that, simply enter all instructions with a line break between them. Make sure that the shell command does not carry any leading or trailing white spaces. The LWM2M agent then uses the line break to split a multi-line operation into separate LWM2M shell operations.
 {{< /c8y-admon-info >}}
 
-## Shell command lifecycle
+## Shell command lifecycle {#shell-command-lifecycle}
 The handling of LWM2M shell commands follows the following lifecycle:
 
 1. When a shell command is created the corresponding operation status is set to PENDING. This means that the corresponding CoAP request has not yet been sent to the device.

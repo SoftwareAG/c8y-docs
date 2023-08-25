@@ -6,7 +6,7 @@ layout: redirect
 
 SNMP-enabled devices can be added manually or through the autodiscovery method.
 
-### Autodiscovery
+### Autodiscovery {#autodiscovery}
 
 The autodiscovery functionality allows to scan SNMP-enabled devices in the network for a given IP range. Identified devices will automatically be added as a child to the agent device in the platform. This functionality is helpful when you must add a large number of devices to the agent. Instead of adding all devices manually, you can use the autodiscovery functionality. The **IP range** field accepts multiple IP ranges separated by comma, for example "10.23.52.51-10.23.52.54,192.168.0.1-192.168.0.5". It also supports the IPv6 IP address format.
 
@@ -19,7 +19,7 @@ Both ways of device discovery can be controlled from the user interface.
 
 ![Autodiscovery](/images/device-protocols/snmp/snmp-autodiscovery.png)
 
-#### To start autodiscovery from the UI
+#### To start autodiscovery from the UI {#to-start-autodiscovery-from-the-ui}
 
 1. In the Device management application, click **All devices** in the **Devices** menu in the navigator.
 2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.
@@ -41,7 +41,7 @@ An alarm will be generated
 * 	if an existing device in the platform is not reachable during the autodiscovery scan.
 * 	if a device is discovered but it is not SNMP-enabled.
 
-#### To start autodiscovery via REST API
+#### To start autodiscovery via REST API {#to-start-autodiscovery-via-rest-api}
 
 The following REST call will trigger autodiscovery once:
 
@@ -72,9 +72,9 @@ The following REST call schedules autodiscovery for the given interval:
         }
     }
 
-### Adding SNMP devices manually
+### Adding SNMP devices manually {#adding-snmp-devices-manually}
 
-#### To add a SNMP device manually from the UI
+#### To add a SNMP device manually from the UI {#to-add-a-snmp-device-manually-from-the-ui}
 
 1. In the Device management application, click **All devices** in the **Devices** menu in the navigator.
 2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.<br><br>![SNMP tab](/images/device-protocols/snmp/snmp-snmp-tab.png)<br>
@@ -119,7 +119,7 @@ The following REST call schedules autodiscovery for the given interval:
 The SNMP device will be listed in the devices list and in the **Child devices** tab.
 
 
-#### To add a SNMP device via REST API
+#### To add a SNMP device via REST API {#to-add-a-snmp-device-via-rest-api}
 
 **Step-1:** Create a device in the platform:
 

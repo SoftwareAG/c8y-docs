@@ -42,7 +42,7 @@ ROLES & PERMISSIONS
 - To add/update/delete/import asset models: CREATE/ADMIN permission for permission type "Inventory"
 {{< /c8y-admon-req >}}
 
-### To create an asset model
+### To create an asset model {#to-create-an-asset-model}
 
 Click **Add asset model** on the top right to create a new asset model. This opens the **New Asset model** page.
 Here, provide the following six parameters:
@@ -100,14 +100,14 @@ By default, no asset properties are selected.</td>
 
 Once all required asset models are created, you can start creating [assets](/dtm/asset-hierarchy/#assets) using these asset models.
 
-#### To select an icon
+#### To select an icon {#to-select-an-icon}
 
 1. Click the select icon on the left.
 2. In the following dialog window, search or filter icons by type or select an icon from the predefined list.
 3. Select the desired icon.
 4. Click **Save**.
 
-#### To add a child asset model
+#### To add a child asset model {#to-add-a-child-asset-model}
 
 1. Click **Add child asset model** to add a new child asset model.
 2. In the dropdown select one or multiple allowed child asset models.
@@ -125,7 +125,7 @@ If one or more child asset models are checked as required, an asset created with
 
 If the asset model is "Rotor" and you select "Blade" as an allowed child asset model, then the newly created asset "AZ-43Y Rotor" can only have "Blade" assets as subassets.
 
-#### To add an asset property to an asset model
+#### To add an asset property to an asset model {#to-add-an-asset-property-to-an-asset-model}
 
 1. Click **Add asset property** to add a new asset property to the asset model.
 2. In the resulting dialog box, select one or multiple asset properties from the dropdown field.
@@ -142,7 +142,7 @@ If there are any validation errors for a field, it is highlighted in red with a 
 
 If there is no asset property meeting your requirements when you search, click **New asset property**. For more details on how to create a new asset property see [To create an asset property](#to-create-an-asset-property).
 
-### Root asset model
+### Root asset model {#root-asset-model}
 
 To create a root asset model follow a bottom-up approach by defining all child asset models and asset properties in the provided templates first.
 
@@ -150,7 +150,7 @@ This root asset model can then be used to create an asset hierarchy, which then 
 
 As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
 
-### To create an asset model for the entire hierarchy
+### To create an asset model for the entire hierarchy {#to-create-an-asset-model-for-the-entire-hierarchy}
 
 
 1. Create all required [asset properties](#asset-properties).
@@ -159,37 +159,37 @@ As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} app
 
 This approach, allows you to create the desired hierarchy including all asset models, child asset models and asset properties in one process.
 
-### To modify an asset model
+### To modify an asset model {#to-modify-an-asset-model}
 
 1. Click the edit icon on the right side of each asset model.
 2. Make your changes in the editor.
 3. Click **Save**.
 4. If this asset model is used by any asset, select **Confirm** in the resulting confirmation dialog to continue saving your changes.
 
-### To delete an asset model
+### To delete an asset model {#to-delete-an-asset-model}
 
 There are two ways to delete an asset model:
 
-#### Delete each asset model individually
+#### Delete each asset model individually {#delete-each-asset-model-individually}
 
 On the **Asset models** page, hover over the desired asset model and click the delete icon on the right.
 
-#### Delete the asset models in bulk
+#### Delete the asset models in bulk {#delete-the-asset-models-in-bulk}
 
 On the **Asset models** page, select the checkboxes next to the desired asset models. Click **Delete** to delete the selected asset models.
 
-### To sort asset models
+### To sort asset models {#to-sort-asset-models}
 
 To sort columns, hover over the respective column header and click the sort icon for an ascending or descending order.
 
-### To filter asset models
+### To filter asset models {#to-filter-asset-models}
 
 1. Use the filter option to filter asset models based on text in the respective asset group.
 2. Hover over a column title for the filter icon to appear on the right.
 3. Click the icon to filter the asset models in this column.
 4. To clear all applied filters click **Clear filters** at the top.
 
-### To export asset models
+### To export asset models {#to-export-asset-models}
 
 To export asset models to add in another tenant, follow the steps below:
 
@@ -213,7 +213,7 @@ You can select a child asset asset model to export without selecting its parent.
 
 ![Export asset models dialog](/images/dtm/asset-type/dtm-asset-type-export.png)
 
-### To import asset models
+### To import asset models {#to-import-asset-models}
 
 To import asset models, follow the steps below:
 
@@ -232,7 +232,7 @@ Review the errors that are reported, resolve them, and attempt the import again.
 You can import a maximum of 250 asset models and 500 associated properties at one time.
 {{< /c8y-admon-info>}}
 
-### To import asset model samples
+### To import asset model samples {#to-import-asset-model-samples}
 
 When you navigate to the **Asset model samples** page following **Configuration > Asset models > Asset model samples**, you see a list of samples with name, description and tags associated with it.
 

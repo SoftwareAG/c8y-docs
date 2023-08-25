@@ -4,7 +4,7 @@ title: OPC UA events
 layout: redirect
 ---
 
-### Model change events
+### Model change events {#model-change-events}
 
 The model change events are created by the OPC UA server to notify about the changes in an address space node on runtime.
 The gateway subscribes to the events of type BaseModelChangeEventType on connection to the servers. The subscription to this event can be enabled or disabled for each server

@@ -13,7 +13,7 @@ You should have read and understood the following concepts:
 * [c8y Command Line Tool (CLI)](/web/development-tools/#c8y-cli), enabling you to install the new tooling.
 
 
-### Setting up a hybrid application
+### Setting up a hybrid application {#setting-up-a-hybrid-application}
 
 With a hybrid application AngularJS and Angular can be used at the same time. It allows to use not-migrated plugins written in AngularJS in an Angular context. The CLI automatically sets up a hybrid application, if you use one of our default applications as a template (cockpit, devicemangement or administration). The command to be used is `c8ycli new <your-app-name> <template-name>`.
 
@@ -32,7 +32,7 @@ When you run this command it provides you with a very simple file structure that
  - `polyfills.ts`: Polyfills setup to run in IE11.
  - `tsconfig.json`: The typescript configuration.
 
-### Importing AngularJS plugins
+### Importing AngularJS plugins {#importing-angularjs-plugins}
 
 If you want to integrate your custom plugin into an application, you must first set up the hybrid application for the application into which you want to import the plugin. Then you simply copy the plugin to the hybrid application and reference the `cumulocity.json` of the plugin in the `ng1.ts` file with an import:
 
@@ -42,7 +42,7 @@ import 'my-custom-plugin/cumulocity.json';
 
 Webpack now reads the manifest file and converts the content to CommonJS require imports so that the plugin will be loaded and applied to the application.
 
-### Custom bootstrapping and upgrading
+### Custom bootstrapping and upgrading {#custom-bootstrapping-and-upgrading}
 
 In the `app.module.ts` file we bootstrap the hybrid application with the following code on the `HybridAppModule`.
 

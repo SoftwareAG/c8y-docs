@@ -27,7 +27,7 @@ In the resulting dialog box, select one of the following methods:
 
 
 
-### To upload a web application
+### To upload a web application {#to-upload-a-web-application}
 
 1. Click **Add application** at the top right of the **Applications** tab.
 2. Select **Upload web application**.
@@ -40,7 +40,7 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 {{< /c8y-admon-important >}}
 
 
-### To link to an external application
+### To link to an external application {#to-link-to-an-external-application}
 
 1. Click **Add application** at the top right of the **Applications** tab.
 2. Select **External application**.
@@ -52,7 +52,7 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 For details on the fields, see also [Application properties](/standard-tenant/ecosystem/#application-properties) below.
 
 
-### To install an application from a blueprint
+### To install an application from a blueprint {#to-install-an-application-from-a-blueprint}
 
 1. Click **Add application** at the top right of the **Applications** tab.
 2. Select **Install from available packages**.
@@ -65,7 +65,7 @@ For details on the fields, see also [Application properties](/standard-tenant/ec
 For details on the fields, see also [Application properties](/standard-tenant/ecosystem/#application-properties) below.
 
 
-### To duplicate an application
+### To duplicate an application {#to-duplicate-an-application}
 
 Duplicating an application might be useful if you want to customize a subscribed application according to your needs. Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
 

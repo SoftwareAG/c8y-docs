@@ -6,7 +6,7 @@ layout: redirect
 
 This section lists the implementation details for the MQTT protocol. The {{< product-c8y-iot >}} implementation supports MQTT Version 3.1.1.
 
-### Connecting via MQTT
+### Connecting via MQTT {#connecting-via-mqtt}
 
 {{< product-c8y-iot >}} supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (for example _mqtt.{{< domain-c8y >}}_) or your tenant domain (for example _mytenant.{{< domain-c8y >}}/mqtt_).
 
@@ -28,7 +28,7 @@ The two-way SSL support is enabled by default. To disable it please contact [pro
 To use WebSockets you must connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 {{< /c8y-admon-info >}}
 
-### SmartREST payload
+### SmartREST payload {#smartrest-payload}
 
 The {{< product-c8y-iot >}} MQTT implementation uses SmartREST as a payload.
 SmartREST is a CSV-like message protocol that uses templates on the server side to create data in {{< product-c8y-iot >}}.
@@ -40,11 +40,11 @@ It can save up to 80% of mobile traffic compared to other HTTP APIs.
 For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
 {{< /c8y-admon-info >}}
 
-#### SmartREST basics
+#### SmartREST basics {#smartrest-basics}
 
 A SmartREST message is a single row in which each parameter is separated by comma. The first parameter is an ID that defines the message. You can send multiple messages in a single publish by using a line break between messages.
 
-#### SmartREST escaping
+#### SmartREST escaping {#smartrest-escaping}
 
 The CSV (comma-separated values) format is used for communication with the SmartREST endpoint. The following rules must be followed to ensure a frictionless communication.
 
@@ -70,7 +70,7 @@ Subscribe example:
 `\n` does not create a new line in the output (for example console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
 {{< /c8y-admon-info >}}
 
-### Device hierarchies
+### Device hierarchies {#device-hierarchies}
 
 MQTT sessions are linked to a single device, but this device can have a freely configurable device hierarchy below it.
 
@@ -82,18 +82,18 @@ The client will automatically receive operations for every child in the hierarch
 
 Every operation received will contain the template ID followed by the ID of the device/child for which the operation was created (followed by other operation parameters).
 
-### MQTT features
+### MQTT features {#mqtt-features}
 
-#### MQTT authentication
+#### MQTT authentication {#mqtt-authentication}
 
 The communication with {{< product-c8y-iot >}} employing MQTT supports authentication in two ways:
 
 *   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
 *   Device certificates. The devices must contain the whole chain of certificates leading to the trusted root certificate. Also, they must contain the server certificate in their truststore.
 
-#### Troubleshooting
+#### Troubleshooting {#troubleshooting}
 
-##### A device sends correct username and password, but incorrect certificate at the same time
+##### A device sends correct username and password, but incorrect certificate at the same time {#a-device-sends-correct-username-and-password-but-incorrect-certificate-at-the-same-time}
 
 If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates, and you want to use basic authorization, we recommend you to turn off sending certificates during connection.
 Certificates may be invalid because they expired or the root certificate is not uploaded to the platform.
@@ -105,7 +105,7 @@ If that is not possible, to make the connection work, check the following:
 * In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/additional-resources/contacting-support/).
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
-#### MQTT ClientId
+#### MQTT ClientId {#mqtt-clientid}
 
 The MQTT ClientId is a field to uniquely identify each connected client. The {{< product-c8y-iot >}} implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
 
@@ -135,7 +135,7 @@ The uniqueness of the MQTT ClientId is determined only by the `deviceIdentifier`
 
 During an SSL connection with certificates, the `deviceIdentifier` must match the 'Common Name' of the used certificate (first certificate in the chain, which is provided by the device).
 
-#### MQTT Quality of Service (QoS)
+#### MQTT Quality of Service (QoS) {#mqtt-quality-of-service-qos}
 
 The {{< product-c8y-iot >}} implementation supports all 3 levels of MQTT QoS:
 
@@ -152,7 +152,7 @@ The {{< product-c8y-iot >}} implementation supports all 3 levels of MQTT QoS:
 
 For subscriptions to the operation or error topics, we will deliver all messages in the QoS which the client defined when subscribing to the topic.
 
-#### MQTT clean session
+#### MQTT clean session {#mqtt-clean-session}
 
 MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
@@ -160,12 +160,12 @@ MQTT clients can set the clean session flag to "0" (false). This will ensure tha
 {{< product-c8y-iot >}} requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
 {{< /c8y-admon-info >}}
 
-#### MQTT retained flag
+#### MQTT retained flag {#mqtt-retained-flag}
 
 In the current {{< product-c8y-iot >}} implementation, subscriptions to topics where devices publish data are not allowed. Publishing data with the retained flag on this topic is allowed but has no practical difference to sending it without the flag.
 Messages published by {{< product-c8y-iot >}} like operations and errors do not contain the retained flag.
 
-#### MQTT last will
+#### MQTT last will {#mqtt-last-will}
 
 In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection. For example, using `400,c8y_ConnectionEvent,"Device connection was lost."` as last will message and <kbd>s/us</kbd> as last will topic, raises an event whenever the device loses the connection.
 
@@ -173,7 +173,7 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 The execution of the "last will" updates the device availability.
 {{< /c8y-admon-info >}}
 
-### MQTT return codes
+### MQTT return codes {#mqtt-return-codes}
 
 When there is an MQTT error, the platform responds with a `CONNACK` message with a non-zero return code.
 This message is the first clue that there is a problem.
@@ -198,7 +198,7 @@ The table below shows the list of errors returned by {{< product-c8y-iot >}}:
 
 Refer to [MQTT Version 3.1.1 > 3.2 CONNACK - Acknowledge connection request](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718033) for details on the official MQTT connection return codes.
 
-### Debugging
+### Debugging {#debugging}
 
 To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>. On this topic the device can retrieve debug and error messages that occur during a publish from the device.
 
@@ -206,7 +206,7 @@ To support developers during development, it is possible to subscribe to the top
 This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
 {{< /c8y-admon-info >}}
 
-### MQTT broker certificates
+### MQTT broker certificates {#mqtt-broker-certificates}
 
 MQTT broker uses the certificates which are assigned to the main environment domain. MQTT broker always sends these certificates during TLS handshake to devices.
 Moreover, {{< enterprise-tenant >}}s are not able to customize MQTT broker certificates via the SSL Management feature.

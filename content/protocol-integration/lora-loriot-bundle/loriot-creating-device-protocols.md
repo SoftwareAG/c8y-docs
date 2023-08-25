@@ -16,7 +16,7 @@ The length for the device payload parts, which is set in the **Number of bits** 
 
 In order to create a device protocol, navigate to the Device management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
 
-### Importing a predefined device protocol
+### Importing a predefined device protocol {#importing-a-predefined-device-protocol}
 
 1. In the **Device protocols** page, click **Import**.
 2. Select the predefined device type, for example "LoRaWAN Demonstrator" or upload from a file.
@@ -26,7 +26,7 @@ In order to create a device protocol, navigate to the Device management applicat
 
 Alternatively, you may also load the device protocol from a file and import it.
 
-### Creating a new device protocol
+### Creating a new device protocol {#creating-a-new-device-protocol}
 
 In the **Device protocols** page, click **New device protocol** in the top menu bar. The following window will open:
 
@@ -115,7 +115,7 @@ Click **OK** to add the values to your device protocol.
 
 After clicking **Save**, your device protocol is created with the values you defined.
 
-#### Example with single property
+#### Example with single property {#example-with-single-property}
 
 The following image shows an example for a message which sends a measurement when the battery level changes.
 
@@ -126,7 +126,7 @@ The following image shows an example for a message which sends a measurement whe
 <br><br>
 ![Battery level changes example](/images/device-protocols/lora-actility/lora-protocols-battery2.png)
 
-#### Example with nested structure
+#### Example with nested structure {#example-with-nested-structure}
 
 The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The display category is named "Position" and contains values for longitude and latitude.
 
@@ -144,6 +144,6 @@ This will be the result:
 
 ![Value configuration in detail: nested structure](/images/device-protocols/lora-actility/lora-protocols-gpsexample.png)
 
-### Using Custom decoding
+### Using Custom decoding {#using-custom-decoding}
 
 The Loriot agent also supports the decoding functionality by plugging in the custom microservice. Refer to [LPWAN custom codec](/protocol-integration/lpwan-custom-codec) for further details.

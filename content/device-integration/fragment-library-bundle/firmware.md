@@ -10,7 +10,7 @@ The **Firmware** tab displays currently installed firmware of a device and allow
 
 Firmware can be installed with a full installation or with a patch. Which variant is sent to the device depends on how the firmware was created in the firmware repository.
 
-#### Installed firmware
+#### Installed firmware {#installed-firmware}
 
 A device must announce its current state to the platform first. Then the installed firmware should be entered into the ```c8y_Firmware``` fragment into the device's own managed object. A device must upload its current state to {{< product-c8y-iot >}} during startup and any time a local change is detected. This includes cases where an update was triggered remotely.
 
@@ -41,7 +41,7 @@ The 115 static template is available for devices to communicate their currently 
 
 `115,ubuntu core,20.04.3,http://test.com`
 
-### Installing a firmware image
+### Installing a firmware image {#installing-a-firmware-image}
 
 When a user selects a complete firmware image for installation, an operation with a similar ```c8y_Firmware``` fragment as found in the device managed object is created. This operation should be considered as the desired state that should be achieved by the device.
 
@@ -84,7 +84,7 @@ Updating a devices often changes fundamental system components. This operation s
 5. Set operation status to SUCCESSFUL <br>
   `503,c8y_Firmware`
 
-### Installing a firmware patch
+### Installing a firmware patch {#installing-a-firmware-patch}
 
 In case a user selects a firmware patch to be installed on a device, a ```c8y_Firmware``` operation is created. In this case two additional parameters are included to help with installation of a firmware patch. The device agent is responsible for a firmware patch process instead of a regular installation.
 

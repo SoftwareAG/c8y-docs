@@ -35,7 +35,7 @@ Retention rules are usually run once per calendar day.  When you edit a retentio
 {{< /c8y-admon-info >}}
 
 
-### To view retention rules
+### To view retention rules {#to-view-retention-rules}
 
 Click **Retention rules** in the **Management** menu to view a list of retention rules configured for your account.
 
@@ -45,7 +45,7 @@ For each rule, the rule name, details on the data to be deleted (fragment type, 
 
 The asterisk ("*") indicates that data with any value will be cleaned up.
 
-### Data types
+### Data types {#data-types}
 
 The following data types are covered under retention rules:
 + Alarms
@@ -60,7 +60,7 @@ Retention rules do not apply to files stored in the files repository.
 {{< /c8y-admon-info >}}
 
 
-### To add a retention rule
+### To add a retention rule {#to-add-a-retention-rule}
 
 1. Click **Add rule** in the top menu bar.
 2. In the resulting dialog box, select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
@@ -77,14 +77,14 @@ Alarms are only removed if they have a status of CLEARED.
 {{< /c8y-admon-info >}}
 
 
-### To edit a retention rule
+### To edit a retention rule {#to-edit-a-retention-rule}
 
 Simply click the row of the rule you want to edit.
 
 For details on the fields, see [To add a retention rule](#add-retention-rule).
 
 
-### To delete a retention rule
+### To delete a retention rule {#to-delete-a-retention-rule}
 
 Hover over the row with the rule you want to delete and click the delete icon that appears on the right.
 

@@ -95,7 +95,7 @@ You may also see the following legacy roles:
 |business|Can access all devices and their data but has no management permission in the tenant.
 |readers|Can read all data (including users, in contrast to "Global Readers").
 
-### To add a global role
+### To add a global role {#to-add-a-global-role}
 
 Click **Add global role** in the **Global roles** tab. In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right. The following screenshot shows the settings for the "admins" role.
 
@@ -244,7 +244,7 @@ There may be additional permissions visible depending on the features in your su
 When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
 {{< /c8y-admon-important >}}
 
-### To assign global roles
+### To assign global roles {#to-assign-global-roles}
 
 You can assign global roles to users either directly in the user list, or by opening the details page for a particular user and adding them there.
 
@@ -252,13 +252,13 @@ You can assign global roles to users either directly in the user list, or by ope
 By default it is not possible to change roles of SSO users (created automatically during SSO login) as those would be overridden by dynamic access mapping. However this behaviour can be changed. For more information refer to [Custom template configuration](/authentication/sso/#custom-template).
 {{< /c8y-admon-important >}}
 
-#### To assign global roles from the user list
+#### To assign global roles from the user list {#to-assign-global-roles-from-the-user-list}
 
 1. Click the **Global roles** column of a particular user to open a list of global roles.
 2. Select or clear the respective checkboxes.
 3. Click **Apply** to save your settings.
 
-#### To assign global roles from the user page
+#### To assign global roles from the user page {#to-assign-global-roles-from-the-user-page}
 
 1. Click on the row of the respective user in the user list.
 2. In the user page, select or clear the checkboxes for the relevant global roles at the right.

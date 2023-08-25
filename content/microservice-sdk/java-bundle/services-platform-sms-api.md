@@ -6,7 +6,7 @@ title: Services platform and SMS API
 
 This section describes the {{< product-c8y-iot >}} SMS API and shows how to access it using the {{< product-c8y-iot >}} Java Client. You will also learn how to send and receive SMS messages via the Java Client API.
 
-### Using the services platform
+### Using the services platform {#using-the-services-platform}
 
 The services platform interface is responsible for connecting to the Java services (SMS) API.
 
@@ -20,7 +20,7 @@ The URL pointing to the platform must be of the form *&lt;tenant>.{{< domain-c8y
 You must have appropriate credentials to be able to access the Services API from outside. See the example above.
 {{< /c8y-admon-info >}}
 
-### Accessing the SMS Messaging API
+### Accessing the SMS Messaging API {#accessing-the-sms-messaging-api}
 
 The following code snippet shows how to obtain a handle to the SMS API from Java.
 
@@ -30,12 +30,12 @@ SmsMessagingApi smsMessagingApi = platform.getSmsMessagingApi();
 
 Using this handle, you can send and retrieve the SMS messages from Java by calling its functions.
 
-### Assigning required roles
+### Assigning required roles {#assigning-required-roles}
 
 To use the SMS messaging API, the user must have the required roles SMS_ADMIN and SMS_READ for sending and receiving messages respectively.
 Refer to [Managing permissions](/standard-tenant/managing-permissions/) for more information.
 
-### Sending a message
+### Sending a message {#sending-a-message}
 
 To send a SMS message using the API, prepare the message with the SendMessageRequest builder and call the sendMessage function of the API with the prepared message.
 
@@ -49,7 +49,7 @@ SendMessageRequest smsMessage = SendMessageRequest.builder()
 smsMessagingApi.sendMessage(smsMessage);
 ```
 
-### Receiving messages
+### Receiving messages {#receiving-messages}
 
 You can use the API as follows to receive all SMS messages. Note that not every SMS provider supports receiving messages.
 
@@ -63,7 +63,7 @@ You can use the API as follows to receive a specific SMS message identified by m
 smsMessagingApi.getMessage(Address.phoneNumber("<phone number>"), "<message id>");
 ```
 
-### SMS management endpoints
+### SMS management endpoints {#sms-management-endpoints}
 
 The Rest API can be used to send and receive SMS messages.
 

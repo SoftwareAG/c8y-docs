@@ -4,19 +4,6 @@ title: Changing visualization
 layout: bundle
 section:
   - app_development
-helpcontent:
-  - label: data-explorer
-    title: Data explorer
-    content: "In the data explorer, data points, (that is, measurements or sensor data) can be visualized. On the right, you see a list of available data points. On the left, you see its visualization.
-
-
-    Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
-
-
-    You can modify the visualization of the data explorer, for example change the time range being shown or aggregate the data being displayed to get an efficient overview over larger time periods.
-
-
-    The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
 In the data explorer, data points (that is measurements or sensor data) can be visualized.
@@ -47,13 +34,13 @@ The visualization is generated based on data point properties.
 
 The data points properties are pre-filled as follows:
 
-* If these properties have been customized previously, these values are used, see [To customize data point properties](#customize-data-points).
+* If these properties have been customized previously, these values are used, see [To customize data point properties](#to-customize-data-point-properties).
 
 * If the data points have a matching definition in the data point library, the values from the data point library are used.
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
-For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#customize-data-points).
+For details on modifying the visualization in general, see [Changing data explorer visualization](#changing-data-explorer-visualization). For details on customizing the properties of a particular data point, see [To customize data point properties](#to-customize-data-point-properties).
 
 **Example:**
 
@@ -69,12 +56,11 @@ Data points are visible to all authenticated users of the tenant, regardless of 
 
 {{< /c8y-admon-related >}}
 
-<a name="change-visualization"></a>
-### Changing data explorer visualization
+### Changing data explorer visualization {#changing-data-explorer-visualization}
 
 To change the visualization in the data explorer, you can modify several properties.
 
-#### Time range
+#### Time range {#time-range}
 
 You can change the time range being shown. By default, you see the values for the last hour.
 
@@ -89,7 +75,7 @@ To change the time range on the x-axis, use one of the following options:
 Real-time updates will be switched off if you set a time range in the past.
 {{< /c8y-admon-info >}}
 
-#### Aggregation
+#### Aggregation {#aggregation}
 
 You may aggregate the data being displayed to get an efficient overview over larger time periods.
 
@@ -103,13 +89,13 @@ When aggregation is activated, the timestamp which is displayed in data point gr
 * If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
 
 
-#### Realtime updating
+#### Realtime updating {#realtime-updating}
 
 By default, realtime updating is enabled which means that the data being shown is updated as new data flows into the system from the connected devices.
 
 To turn realtime updating on or off, click **Realtime** in the top menu bar. A green light indicates, that realtime updating is enabled.
 
 
-#### Data point visibility
+#### Data point visibility {#data-point-visibility}
 
 For each data point, its visibility can be switched on or off by using the toggle left from the data point name.

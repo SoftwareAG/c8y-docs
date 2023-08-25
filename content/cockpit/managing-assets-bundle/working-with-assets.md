@@ -6,8 +6,7 @@ section:
   - app_development
 ---
 
-<a name="navigating"></a>
-### To navigate assets
+### To navigate assets {#to-navigate-assets}
 
 In the asset hierarchy, {{< product-c8y-iot >}} distinguishes between top-level groups and subassets. Subassets can either be other groups or devices.
 
@@ -25,7 +24,7 @@ If you add a gateway device, the child devices are not shown. To show child devi
 
 Use the navigator, to navigate through the asset hierarchy.
 
-### Asset details
+### Asset details {#asset-details}
 
 Depending on the asset type (group or device), various tabs are available with detailed information.
 
@@ -67,8 +66,7 @@ If dashboards have been created for a group or device, they will also be added a
 
 Moreover, additional tabs may be displayed here in case the application has been extended with a custom Web SDK extension. Take a look at our [Web SDK tutorials](/web/tutorials/#add-a-tab-to-a-device) to see how to add a custom tab.
 
-<a name="creating-groups"></a>
-### To add a group
+### To add a group {#to-add-a-group}
 
 1. Click **Add group** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique group name and an optional description and click **Next**.
@@ -83,21 +81,18 @@ A group can be created with "0" devices in it.
 
 To add a new group as a child of an existing asset, navigate to its **Subassets** tab and click **Add Group** in the top menu bar.
 
-<a name="edit-group"></a>
-### To edit a group
+### To edit a group {#to-edit-a-group}
 
 1. In the navigator, click a group to open it.
 2. In the **Subassets** tab, you can edit the name and description of the group.
 
-<a name="delete-group"></a>
-### To delete a group
+### To delete a group {#to-delete-a-group}
 
 To delete a group either on top-level from the **Groups** page or from the **Subassets** tab of another group, hover over the respective entry you want to delete and click the delete icon at the right.
 
 In the resulting dialog box, you can select to also delete all devices inside the selected asset and all its subassets.
 
-<a name="assigning-devices"></a>
-### To assign devices to a group
+### To assign devices to a group {#to-assign-devices-to-a-group}
 
 Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device management application. For details on connecting devices refer to [Device management application](/device-management-application/registering-devices/).
 
@@ -110,8 +105,7 @@ To assign devices to a group, follow these steps:
 
 The devices will be assigned to the selected group and shown as subassets in the **Subassets** page.
 
-<a name="remove-device"></a>
-### To remove a device from a group
+### To remove a device from a group {#to-remove-a-device-from-a-group}
 
 1. Navigate to the **Subassets** tab of the group.
 2. Hover over the respective device you want to remove and click the remove icon at the right.

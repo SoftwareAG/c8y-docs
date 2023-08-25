@@ -8,7 +8,7 @@ section:
 
 The **Child Devices** tab shows a list of all child devices. It will be available only if the device has any child devices assigned to it.
 
-### Assign child device to parent device
+### Assign child device to parent device {#assign-child-device-to-parent-device}
 
 In order to link a device the parent device must post to its inventory API the following request containing the ID of the child device.
 
@@ -34,7 +34,7 @@ To add a child device to an existing device you must connect the connected devic
 
 `101,uniqueChildId,myChildDevice,myChildType`
 
-### Operating a gateway for child devices
+### Operating a gateway for child devices {#operating-a-gateway-for-child-devices}
 Using the agent marker fragment ```com_cumulocity_model_Agent``` on the parent device but not on child devices effectively declares the device as a connected gateway for its children. The children are not directly connected to {{< product-c8y-iot >}} but send and receive data through the device and its integration.
 
 In this case operations for the child devices are delivered to the connected parent device. The parent device then must determine the addressed child device based on the included device ID or other information. Then the command must be forwarded to the correct child.

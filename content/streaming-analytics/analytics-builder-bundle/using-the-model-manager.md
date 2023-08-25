@@ -4,11 +4,11 @@ title: Using the model manager
 layout: redirect
 ---
 
-### The model manager user interface
+### The model manager user interface {#the-model-manager-user-interface}
 
 The model manager contains two tabs: the **Models** tab which shows all currently defined models and the **Samples** tab which shows sample models that are intended to help you get started with creating your own models.
 
-#### The Models tab
+#### The Models tab {#the-models-tab}
 
 The **Models** tab lists all available analytic models within the current {{< product-c8y-iot >}} environment as cards. You add new models and manage the existing models from here.
 
@@ -44,7 +44,7 @@ If you have a long list of cards, you can easily locate the model that you are l
 
 You can also reduce the number of shown cards by using a filter. See [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples) for detailed information.
 
-#### The Samples tab
+#### The Samples tab {#the-samples-tab}
 
 The **Samples** tab lists all sample models that are provided with Analytics Builder as cards.
 
@@ -58,13 +58,13 @@ If you want to use a sample as a basis for further development, you can create a
 
 You can easily locate a sample by entering its name or part of the name in the **Sample name** search box \(for example, "geofence" or "email"\). You enter and clear the search criteria in the same way as described above for the **Model name** search box on the **Models** tab. You can also filter the samples by their tags; see [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples) for more information.
 
-### Filtering the models and samples
+### Filtering the models and samples {#filtering-the-models-and-samples}
 
 The model manager offers several ways to reduce the number of cards that are shown on the **Models** and **Samples** tabs, thus letting you quickly locate the models or samples that you are looking for.
 
 Filtering also works in combination with a model or sample name that you specify in the **Model name** or **Sample name** search box which is explained in [The model manager user interface](/streaming-analytics/analytics-builder/#the-model-manager-user-interface).
 
-#### To filter the models or samples
+#### To filter the models or samples {#to-filter-the-models-or-samples}
 
 1.  On the **Models** or **Samples** tab of the model manager, click **More filters** in the toolbar.
 
@@ -106,7 +106,7 @@ Filtering also works in combination with a model or sample name that you specify
 
     Click **Clear filters** in the toolbar if you want to clear these filters. Or to clear a specific filter, click on the X that is shown in a filter icon, or click the filter name in the icon and deselect that filter \(and other filters if required\) in the resulting dialog box. Clicking **Reset filters** in that dialog box clears all filters.
 
-### Adding a new model
+### Adding a new model {#adding-a-new-model}
 
 When you add a new model, the model editor is invoked. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
 
@@ -116,7 +116,7 @@ The new model will only be listed in the model manager, when you save the model 
 
 You can also create a new model from a sample. See [Creating a model from a sample](/streaming-analytics/analytics-builder/#creating-a-model-from-a-sample) for more information.
 
-#### To add a new model
+#### To add a new model {#to-add-a-new-model}
 
 1.  On the **Models** tab of the model manager, click **New model** in the toolbar.
 
@@ -130,13 +130,13 @@ You can also create a new model from a sample. See [Creating a model from a samp
 
     The model editor appears. See [Overview of steps for adding a model](/streaming-analytics/analytics-builder/#overview-of-steps-for-adding-a-model) for a brief overview of how to add blocks and wires to the new model.
 
-### Editing an existing model
+### Editing an existing model {#editing-an-existing-model}
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
 When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save button in the model editor is therefore disabled.
 
-#### To edit a model
+#### To edit a model {#to-edit-a-model}
 
 On the **Models** tab of the model manager, simply click the card that is shown for the model \(but not on the toggle button for changing the state or the drop-down menu for changing the mode\).
 
@@ -148,7 +148,7 @@ When the model is active, a dialog appears informing you that you can only view 
 If you do not have sufficient permissions \(that is, you only have READ permission for "CEP management" instead of ADMIN permission\), the actions menu provides a **View** command instead of the **Edit** command.
 {{< /c8y-admon-info>}}
 
-### Editing the instances of a model
+### Editing the instances of a model {#editing-the-instances-of-a-model}
 
 When one or more blocks in a model use template parameters \(see also [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\), you can set up different instances of that model.
 
@@ -158,7 +158,7 @@ Each instance can then use different values for the template parameters and can 
 The actions below are only available when template parameters have been defined for the model, that is, when the card for the model shows the number of defined instances.
 {{< /c8y-admon-info>}}
 
-#### To edit the instances of a model
+#### To edit the instances of a model {#to-edit-the-instances-of-a-model}
 
 On the **Models** tab of the model manager, click the total number of instances on the front of the card.
 
@@ -173,7 +173,7 @@ Alternatively, you can also do one the following:
 
 This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for further information.
 
-### Deploying a model
+### Deploying a model {#deploying-a-model}
 
 A model \(or instance\) can have one of two states. The current state is always indicated on the card that is shown for a model:
 
@@ -200,7 +200,7 @@ The above information on the different states and modes similarly applies for th
 
 When a model is imported by loading a JSON file, it is always imported as an inactive model.
 
-#### To deploy a model
+#### To deploy a model {#to-deploy-a-model}
 
 1.  On the **Models** tab of the model manager, click the drop-down menu on the card for the model that you want to deploy and select one of **Production**, **Test** or **Simulation**.
 
@@ -208,7 +208,7 @@ When a model is imported by loading a JSON file, it is always imported as an ina
 
 3.  When the toggle button currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
 
-### Undeploying a model
+### Undeploying a model {#undeploying-a-model}
 
 You can undeploy \(that is, deactivate\) each model that is currently in production, test or simulation mode and for which the toggle button shows **Active**.
 
@@ -218,37 +218,37 @@ When you undeploy a model, the model is stopped and no longer processes incoming
 If you want to undeploy the instances of a template model, see [Undeploying an instance](/streaming-analytics/analytics-builder/#undeploying-an-instance).
 {{< /c8y-admon-info>}}
 
-#### To undeploy a model
+#### To undeploy a model {#to-undeploy-a-model}
 
 In the **Models** tab of the model manager, click the toggle button on the card for the model that you want to undeploy so that **Inactive** is then shown on the button.
 
-### Duplicating a model
+### Duplicating a model {#duplicating-a-model}
 
 You can duplicate each model that is currently listed in the model manager.
 
 The duplicated model gets the same name as the original model followed by the number sign \(\#\) and a number. For example, when the name of the original model is "My Model", the name of the first duplicate is "My Model \#1". The number in the model name is increased by one with each subsequent duplicate that you create. The duplicated model gets the same description as the original model. It is recommended that you edit the duplicate and give the model a meaningful name and description.
 
-#### To duplicate a model
+#### To duplicate a model {#to-duplicate-a-model}
 
 On the **Models** tab of the model manager, click the actions menu of the model that you want to duplicate and then click **Duplicate**.
 
 A card for the duplicated model is immediately shown in the model manager.
 
-### Exporting a model
+### Exporting a model {#exporting-a-model}
 
 You can export each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current {{< product-c8y-iot >}} tenant to a different tenant. The model is saved in JSON format.
 
-#### To export a model
+#### To export a model {#to-export-a-model}
 
 On the **Models** tab of the model manager, click the actions menu of the model that you want to export and then click **Export**.
 
 The resulting behavior depends on your browser. The model is usually exported to the download location of your browser.
 
-### Importing a model
+### Importing a model {#importing-a-model}
 
 You can import a model that has previously been exported \(in JSON format\). This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
 
-#### To import a model
+#### To import a model {#to-import-a-model}
 
 1.  On the **Models** tab of the model manager, click **Import model** in the toolbar.
 
@@ -258,37 +258,37 @@ You can import a model that has previously been exported \(in JSON format\). Thi
 
 A card for the imported model is shown in the model manager.
 
-### Removing a model
+### Removing a model {#removing-a-model}
 
 You can remove each model that is currently listed in the model manager. When you remove a model that is currently deployed, it is first undeployed and then removed.
 
-#### To remove a model
+#### To remove a model {#to-remove-a-model}
 
 1.  On the **Models** tab of the model manager, click the actions menu of the model that you want to remove and then click **Remove**.
 
 2.  In the resulting dialog box, click **Remove** to confirm the removal.
 
-### Reloading all models
+### Reloading all models {#reloading-all-models}
 
 You can refresh the display to show any changes other users have made since the page loaded, or to see whether deployed models have entered a failed state.
 
-#### To reload all models
+#### To reload all models {#to-reload-all-models}
 
 On the **Models** tab of the model manager, click **Reload** in the toolbar.
 
-### Viewing a sample
+### Viewing a sample {#viewing-a-sample}
 
 The samples are always in read-only mode. You can view the contents of each sample that is currently listed in the model manager.
 
 For example, you can look at the block parameters and view the documentation for each block that is used in the sample. You can navigate and zoom the sample in the same way as a regular model, but you cannot add or edit anything. However, you can create a new model from a sample \(see also [Creating a model from a sample](/streaming-analytics/analytics-builder/#creating-a-model-from-a-sample)\).
 
-#### To view a sample
+#### To view a sample {#to-view-a-sample}
 
 On the **Samples** tab of the model manager, simply click the card that is shown for the sample.
 
 Alternatively, click the actions menu of the card and then click **View**.
 
-### Creating a model from a sample
+### Creating a model from a sample {#creating-a-model-from-a-sample}
 
 You can create a new model from each sample that is currently listed in the model manager. The new model gets the same name, description and tags as the sample.
 
@@ -296,7 +296,7 @@ You can create a new model from each sample that is currently listed in the mode
 You must save the new model so that it is listed in the model manager. If a model with that name already exists, you are prompted to save the new model with a different name.
 {{< /c8y-admon-info>}}
 
-#### To create a model from a sample
+#### To create a model from a sample {#to-create-a-model-from-a-sample}
 
 On the **Samples** tab of the model manager, click the actions menu of the sample from which you want to create a new model and then click **Create model from sample**.
 

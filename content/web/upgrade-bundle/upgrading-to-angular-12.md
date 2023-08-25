@@ -15,7 +15,7 @@ Angular 12 is supported from version `10.11.45.0`. The following configuration c
 AOT (Ahead-of-time compilation) is not yet supported.
 {{< /c8y-admon-info >}}
 
-#### How to enable IVY
+#### How to enable IVY {#how-to-enable-ivy}
 
 Ivy is a new rendering engine for Angular applications that improves application speed and facilitates development. Enabling Ivy is not mandatory, but as the older view engine is deprecated, we recommend you to do so.
 

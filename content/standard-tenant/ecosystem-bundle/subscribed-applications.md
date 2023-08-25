@@ -14,7 +14,7 @@ In the **Applications** tab, subscribed applications are labeled as "Subscribed"
 
 Below all applications are listed which are by default available in the {{< standard-tenant >}} or {{< enterprise-tenant >}}. In addition, numerous optional applications might be subscribed to your tenant.
 
-### Applications subscribed by default
+### Applications subscribed by default {#applications-subscribed-by-default}
 
 <table>
 <col width="150">
@@ -33,7 +33,7 @@ Below all applications are listed which are by default available in the {{< stan
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/standard-tenant/home-screen/" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/standard-tenant/" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web application</td>

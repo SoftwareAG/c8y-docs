@@ -4,11 +4,11 @@ title: Prerequisites
 layout: redirect
 ---
 
-### Browsers
+### Browsers {#browsers}
 
 The Streaming Analytics application supports the same browsers as {{< product-c8y-iot >}}, with the following exception: browsers on smartphones and tablets are not supported.
 
-### Permissions
+### Permissions {#permissions}
 
 To use Analytics Builder, you must at least have the following permissions:
 

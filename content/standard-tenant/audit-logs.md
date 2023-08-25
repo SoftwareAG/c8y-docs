@@ -28,7 +28,7 @@ ROLES & PERMISSIONS:
 - [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}} for details on managing audit records via REST.
 {{< /c8y-admon-related >}}
 
-### To view audit logs
+### To view audit logs {#to-view-audit-logs}
 
 To view the audit log list, click **Audit logs** in the **Accounts** menu. For each log entry, the following information is provided:
 
@@ -75,7 +75,7 @@ Only the last 100 logs are visible. Scroll down the page to **Load more** to vie
 The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
 {{< /c8y-admon-info >}}
 
-### To filter logs
+### To filter logs {#to-filter-logs}
 
 In order to easily search through logs, you can filter logs for:
 
@@ -85,7 +85,7 @@ In order to easily search through logs, you can filter logs for:
 
 To apply a filter, click the **Apply** button next to the respective filter field. To discard filters, click the X icon next to the **Apply** button (only visible if filters are set).
 
-### Audit log types
+### Audit log types {#audit-log-types}
 
 <table>
 <colgroup>

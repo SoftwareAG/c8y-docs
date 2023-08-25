@@ -16,7 +16,7 @@ weight: 40
 
 ![CEP architecture](/images/concepts-guide/realtime.png)
 
-### Example
+### Example {#example}
 
 Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once a minute into the database for reporting purposes. This is done using the following statement:
 

@@ -16,7 +16,7 @@ The **Remote access** tab is available if the following criteria are met:
 
 For more information, see [Cloud Remote Access > Using Cloud Remote Access](/cloud-remote-access/using-cloud-remote-access).
 
-### Remote access connect
+### Remote access connect {#remote-access-connect}
 
 When a user selects a remote access endpoint and clicks the **Connect** button a ```c8y_RemoteAccessConnect``` operation is created.
 

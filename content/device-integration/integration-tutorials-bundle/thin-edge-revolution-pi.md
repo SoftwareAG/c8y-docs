@@ -9,6 +9,6 @@ Refer to [Getting started with thin-edge.io on a RevPi from Kunbus]({{< link-sag
 The Revolution PI is an open, modular and cost-effective industrial PC based on the well-known Raspberry Pi.
 Housed in a slim DIN rail case, the three available base modules can be seamlessly expanded with a variety of matching I/O modules and fieldbus gateways.
 
-Kunbus got their Cumulocity IoT device management certification and is listed as a partner within the Device Catalog of [certified devices](https://devicepartnerportal.softwareag.com/devices?search=kunbus&page=1).
+Kunbus got their {{< product-c8y-iot >}} device management certification and is listed as a partner within the Device Catalog of [certified devices](https://devicepartnerportal.softwareag.com/devices?search=kunbus&page=1).
 
 You can get more information about Kunbus and the Revolution Pi on the [Revolution PI website](https://revolutionpi.de/).

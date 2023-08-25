@@ -27,7 +27,7 @@ The `serve` command starts a local development server. It supports two important
 - `-u`: The -u parameter specifies the {{< product-c8y-iot >}} instance to which all API requests are proxied. This means data is actually pulled from the configured {{< product-c8y-iot >}} instance.
 - `-p`: The port to use. If not defined, port 9000 is used. If you have a server running on this port already, the command will fail. The application will then be served at the URL `http://localhost:<<port>>/apps/<<your-application-name>>/`. Tip: Click the URL in the terminal while holding the "control" key.
 
-### General usage
+### General usage {#general-usage}
 
 ```
 c8ycli [options] [command]
@@ -37,7 +37,7 @@ c8ycli [options] [command]
 The commands must be executed from the root path of the project.
 {{< /c8y-admon-info >}}
 
-### Options
+### Options {#options}
 
 ```
     -u, --url <url>                 The URL of the remote instance
@@ -45,7 +45,7 @@ The commands must be executed from the root path of the project.
     -h, --help                      Provides usage information
 ```
 
-### Commands
+### Commands {#commands}
 
 All the commands except of `new` take an array of [glob patterns](<https://en.wikipedia.org/wiki/Glob_(programming)>). These will be resolved to directories or entry point manifests.
 
@@ -57,7 +57,7 @@ All the commands except of `new` take an array of [glob patterns](<https://en.wi
     locale-extract [options] [srcPaths...]  Extracts all strings for translation and outputs the .po files to defined folder
 ```
 
-### The `new` command
+### The `new` command {#the-new-command}
 
 The `c8ycli new [name] [template]` command creates an empty application or extends an existing application (Cockpit, Devicemanagement or Administration). To extend an existing application use the name of the existing application as `[name]` and `[template]` like this:
 
@@ -132,7 +132,7 @@ In the final step, the base project to scaffold from must be selected.
 This step will only show projects which are available for the selected version in Step 2.
 {{< /c8y-admon-info >}}
 
-### Application options
+### Application options {#application-options}
 
 The application options can be defined with `--app.<option>=<value>`. These will be applied to all applications found with `[appPaths...]`.
 
@@ -143,7 +143,7 @@ The application options can be defined with `--app.<option>=<value>`. These will
     --app.brandingEntry="./branding/mybranding.less"
 ```
 
-### Webpack options
+### Webpack options {#webpack-options}
 
 The webpack options can be defined with `--env.<option>=<value>`. These will be directly passed to the webpack configuration.
 

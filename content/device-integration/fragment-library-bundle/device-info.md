@@ -8,7 +8,7 @@ section:
 
 The **Device information** tab is a predefined dashboard with several widgets that combine default device information. The status widget, for example, will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. For details see [Device management application > Monitoring and controlling devices > Availability](/device-management-application/monitoring-and-controlling-devices/#availability).
 
-### Device marker
+### Device marker {#device-marker}
 
  A device is marked in the inventory with a ```c8y_IsDevice``` fragment in its own managed object. Only devices with this fragment appear in the all **All devices** list in the Device management application.
 
@@ -25,7 +25,7 @@ PUT /inventory/managedObjects/<deviceId>
 Devices created through SmartREST 2.0 will automatically contain this fragment.
 {{< /c8y-admon-info >}}
 
-### Agent marker
+### Agent marker {#agent-marker}
 
 In order to receive any operation a device must declare the agent marker fragment in its own managed object. This will enable the platform to send operations to this device to for all child devices in its child hierarchy that don’t carry this fragment themselves.
 
@@ -42,11 +42,11 @@ PUT /inventory/managedObjects/<deviceId>
 Devices created through SmartREST 2.0 will automatically contain this fragment.
 {{< /c8y-admon-info >}}
 
-### Device restart
+### Device restart {#device-restart}
 
 Devices capable of restarting remotely can announce this capability by adding the ```c8y_Restart``` operation to the device's own ```c8y_SupportedOperations``` fragment. Then the **Device details** page will enable a **Restart** button within its context menu.
 
-#### Restart operation
+#### Restart operation {#restart-operation}
 
 Upon clicking the **Restart** button in the Device management application an operation as follows is sent:
 
@@ -77,7 +77,7 @@ The device is expected to perform the following actions:
   `503,c8y_Restart`
 
 
-### Hardware information
+### Hardware information {#hardware-information}
 
 Devices may announce their underlying hardware information to {{< product-c8y-iot >}} using the ```c8y_Hardware``` fragment in the device’s own managed object.
 
@@ -106,7 +106,7 @@ Upload hardware information using the 110 static template. Usually this can be d
 
 `110,1234567890,myModel,1.2.3`
 
-### Agent information
+### Agent information {#agent-information}
 
 All devices should provide information about the agent they are running, that is the software that integrates them with {{< product-c8y-iot >}}.
 

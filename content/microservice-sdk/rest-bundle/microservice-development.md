@@ -7,7 +7,7 @@ layout: redirect
 This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the {{< product-c8y-iot >}} REST APIs can be employed to develop microservice applications.
 
 
-### Creating applications
+### Creating applications {#creating-applications}
 
 In order to start working with microservices, an instance of an application must be created on the platform beforehand. It can be done using the following endpoint:
 
@@ -95,7 +95,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.application+json
 }
 ```
 
-### Deploying applications
+### Deploying applications {#deploying-applications}
 
 A microservice application gets available for {{< product-c8y-iot >}} platform users by uploading a binary ZIP file.
 
@@ -113,7 +113,7 @@ The ZIP file must consist of:
 
 
 
-### Acquiring microservice credentials
+### Acquiring microservice credentials {#acquiring-microservice-credentials}
 
 The following section is a wrap up for user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
 
@@ -181,7 +181,7 @@ Response:
 }
 ```
 
-### Subscriptions
+### Subscriptions {#subscriptions}
 
 Subscription in this scope means tenant subscription to a microservice application. The subscription is an important step after deployment.
 When a microservice application is deployed it becomes available for subscription to other tenants. Subscribing to a microservice is the same as subscribing to any other application and it can be done in the Administration application. Also, a tenant can be subscribed employing a POST request:
@@ -250,7 +250,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.applicationusercollection+json
 The response consists of service user credentials dedicated for each tenant. A service user is a user account in the tenant that has the permissions ("roles") that the microservice requested on [registration](#creating-application) time.
 
 
-### Settings
+### Settings {#settings}
 
 The microservice settings are available to microservice users through the authorized bootstrap or service user.
 When using the bootstrap user, all settings are always loaded for the microservice owner.
@@ -276,9 +276,9 @@ Content-Type: application/vnd.com.nsn.cumulocity.option+json;charset=UTF-8;ver=0
 }
 ```
 
-### Basic use cases
+### Basic use cases {#basic-use-cases}
 
-#### Registering assets
+#### Registering assets {#registering-assets}
 
 Assets are the objects that your business and your application focuses on. For example, assets might be buildings and rooms if your business centers around building management or home automation. Or they might be routes and machines, if your business is about servicing machines.
 
@@ -374,7 +374,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF
 }
 ```
 
-#### Linking devices to assets
+#### Linking devices to assets {#linking-devices-to-assets}
 
 Just like you link assets to other child assets, you can also link assets to devices that monitor and control the asset. For example, assume that you have a light sensor installed in the room, and that light sensor has the URL "https://.../inventory/managedObjects/2480500". POST to <kbd>childDevices</kbd> of the room as follows:
 
@@ -393,14 +393,14 @@ You can link multiple child assets or multiple child devices to the same parent 
 Refer to inventory child operations in the [Inventory API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Child-operations) in the {{< openapi >}} for more details.
 {{< /c8y-admon-info >}}
 
-#### Synchronizing assets with external systems
+#### Synchronizing assets with external systems {#synchronizing-assets-with-external-systems}
 
 Often, {{< product-c8y-iot >}} will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-integration/rest#device-integration):
 
 - Use the Identity API to link the asset ID of the external IT system to the asset ID of {{< product-c8y-iot >}}.
 - Use the Inventory API to create or update the assets in {{< product-c8y-iot >}}'s inventory based on the external system's data.
 
-#### Querying particular capabilities
+#### Querying particular capabilities {#querying-particular-capabilities}
 
 To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model)). For example, to find all managed objects having a location, use:
 
@@ -447,7 +447,7 @@ Querying the <kbd>/platform</kbd> resource will show you further possibilities f
 
 Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
-#### Querying readings from sensors
+#### Querying readings from sensors {#querying-readings-from-sensors}
 
 Similar to the inventory, you can also query for particular sensor readings. For example, you can query the light measurements of the past month (from the time of writing this text) as follows:
 
@@ -484,7 +484,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; cha
 }
 ```
 
-#### Sending operations to devices
+#### Sending operations to devices {#sending-operations-to-devices}
 
 To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/rest#device-integration).
 
@@ -529,7 +529,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; 
 
 A status of PENDING means here that the device has not yet picked up the operation. EXECUTING means that the device is in the process of executing the operation. Finally, SUCCESSFUL or FAILED indicate that the operation is completed.
 
-#### Listening for events
+#### Listening for events {#listening-for-events}
 
 Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time. For example, assume that you would like to display real-time location updates on a map.
 

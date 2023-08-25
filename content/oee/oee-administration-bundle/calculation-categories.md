@@ -8,7 +8,7 @@ Calculation categories can be used to provide multiple calculation rules for the
 
 This allows you to define multiple rules that will handle different types of losses, for example, planned versus unplanned, or to distinguish between multiple sources of incoming data. Each category will be calculated individually and then aggregated to give the final input variable. Further information on the creation of calculation profiles can be found in [Matching data](/oee/oee-administration/#matching-data).
 
-#### Using calculation categories
+#### Using calculation categories {#using-calculation-categories}
 
 In order to use a calculation category in your OEE calculation profiles, the category itself must first be created in **Administration** > **Calculation Categories** in the application. Categories are considered specific to a given input parameter. So, for each input parameter that requires the use of categories, the input parameter must have its categories defined before the input parameter itself can be created. Typically, calculation categories are used when at least two different types of calculation must be combined in order to form an input parameter.
 

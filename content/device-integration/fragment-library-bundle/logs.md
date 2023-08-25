@@ -9,7 +9,7 @@ section:
 The **Logs** tab is used to extract logs from the device. The **Logs** tab is available if the fragment ```c8y_LogfileRequest``` is present in the ```c8y_SupportedOperations``` of the device.
 The device should contain a fragment called ```c8y_SupportedLogs```, which holds an array of the types of logs that it supports. The types of logs will later be referenced when logs are requested.
 
-### Setting supported logs
+### Setting supported logs {#setting-supported-logs}
 
 Supported log types are announced by devices using the ```c8y_SupportedLogs``` fragment in the device’s own managed object.
 
@@ -35,7 +35,7 @@ The 118 static template is available to announce the supported logs of a device:
 
 `118,syslog,dmesg`
 
-### Uploading log files
+### Uploading log files {#uploading-log-files}
 
 When users request log files from devices via the **Logs** tab a ```c8y_LogfileRequest``` operation is created.
 

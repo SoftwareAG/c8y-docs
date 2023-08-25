@@ -24,13 +24,13 @@ The options and rules are copied into the tenant. Editing the policy has no effe
 Tenant options specified in a tenant policy are **not encrypted**. You should not specify or overwrite tenant options here with a "credentials." prefix, since the platform expects those options to be encrypted with data that will appear after the tenant has been created.
 {{< /c8y-admon-important >}}
 
-### To view tenant policies
+### To view tenant policies {#to-view-tenant-policies}
 
 Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
-### To create a tenant policy
+### To create a tenant policy {#to-create-a-tenant-policy}
 
 1. Click **Add policy** in the top menu bar.
 2. In the resulting dialog box, enter a name and an optional description.
@@ -45,7 +45,7 @@ The tenant policy will be added to the tenant policies list.
 When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you must run an update from the {{< management-tenant >}} in order to edit those rules and options.
 {{< /c8y-admon-important >}}
 
-### To edit a tenant policy
+### To edit a tenant policy {#to-edit-a-tenant-policy}
 
 Click the respective policy entry or click the menu icon at the right of the policy entry and then click **Edit**.
 
@@ -53,10 +53,10 @@ In the resulting dialog box, make your edits and click **Save** to save your set
 
 To delete a retention rule or a tenant option from a policy, hover over it and click the delete icon.
 
-### To duplicate a tenant policy
+### To duplicate a tenant policy {#to-duplicate-a-tenant-policy}
 
 Click the menu icon in the tenant policy entry you want to duplicate and then click **Duplicate**.
 
-### To delete a tenant policy
+### To delete a tenant policy {#to-delete-a-tenant-policy}
 
 Click the menu icon in the tenant policy entry you want to delete and then click **Delete**.

@@ -8,7 +8,7 @@ section:
 
 You can monitor microservices hosted by {{< product-c8y-iot >}} in two ways.
 
-### Status information
+### Status information {#status-information}
 
 The status of the microservice can be checked in the **Status** tab of the respective microservice application.
 
@@ -24,7 +24,7 @@ The following information is provided on the **Status** tab:
 * Events - events for given application, provided in realtime.
 * Smart rules - list of applicable smart rules.
 
-#### Alarms and events
+#### Alarms and events {#alarms-and-events}
 
 Most of the alarms and events visible in the **Status** tab are strictly technical descriptions of what's going on with the microservice.
 
@@ -41,7 +41,7 @@ For example, to send an email, if a microservice is down, create an "On alarm se
 
 In the **On alarm matching** section, use `c8y_Application_Down` as an alarm type. As a target asset select the microservice which you would like to monitor, for example "echo-agent-server".
 
-### Log files
+### Log files {#log-files}
 
 {{< product-c8y-iot >}} offers viewing logs which provide more details on the status of microservices owned by the tenant.
 

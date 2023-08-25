@@ -11,7 +11,7 @@ Apama's Event Processing Language covers statements, which are organized into ac
 For further information on using Apama's Event Processing Language in {{< product-c8y-iot >}} refer to [Using the Apama Event Processing Language](/concepts/realtime/using-epl) below and to [Streaming Analytics](/streaming-analytics/overview-analytics/).
 
 
-### What are the benefits of using real-time processing?
+### What are the benefits of using real-time processing? {#what-are-the-benefits-of-using-realtime-processing}
 
 {{< product-c8y-iot >}}'s real-time processing feature has the following benefits:
 

@@ -42,13 +42,13 @@ If you don't have the certificate trusted by your OPC UA server, the server will
 Beside the above authentication certificate, the device gateway also automatically creates a so-called application identity certificate to identify itself with the OPC UA server. This needs to be trusted by the OPC UA server as well.
 {{< /c8y-admon-info >}}
 
-### Child devices
+### Child devices {#child-devices}
 
 All server connections are listed as child devices even if the servers are disconnected. To stop a server connection, either delete the server child device or disable/remove the connection from the **OPC UA server** tab.
 
 ![Gateway child devices](/images/device-protocols/opcua/opcua-server-child-device.png)
 
-### Address space
+### Address space {#address-space}
 
 When you navigate to the child device of the gateway, the **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find "nodeId", "browserName" or "displayName" of an attribute. In case of multiple "ancestorNodeIds", you can click on the desired node to be redirected.
 
@@ -59,7 +59,7 @@ An error entry is written to the opcua-device-gateway log file to provide inform
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-address.png)
 
-### Monitoring measurements
+### Monitoring measurements {#monitoring-measurements}
 
 On the gateway device, the **Measurements** tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
 
@@ -110,7 +110,7 @@ On the gateway device, the **Measurements** tab provides visualization of data i
 
 ![Gateway measurements tab](/images/device-protocols/opcua/opcua-gateway-memory.png)
 
-#### Monitoring measurement details
+#### Monitoring measurement details {#monitoring-measurement-details}
 
 The following is the full list of monitoring measurements created by the gateway:
 
@@ -263,7 +263,7 @@ The following is the full list of monitoring measurements created by the gateway
 </tbody>
 </table>
 
-### Monitoring alarms
+### Monitoring alarms {#monitoring-alarms}
 
 On the gateway device, the **Alarms** tab shows all alarms raised either on the gateway or on the servers.
 
@@ -275,7 +275,7 @@ There are three alarm types which can be raised:
 
 ![Gateway alarms tab](/images/device-protocols/opcua/opcua-alarms.png)
 
-#### Monitoring alarm details
+#### Monitoring alarm details {#monitoring-alarm-details}
 
 The following is the full list of monitoring alarms created by the gateway:
 
@@ -335,13 +335,13 @@ The following is the full list of monitoring alarms created by the gateway:
 </tbody>
 </table>
 
-### Monitoring events
+### Monitoring events {#monitoring-events}
 
 On the gateway device, the **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-events.png)
 
-#### Monitoring event details
+#### Monitoring event details {#monitoring-event-details}
 The following is the full list of monitoring events created by the gateway:
 <table>
 <colgroup>

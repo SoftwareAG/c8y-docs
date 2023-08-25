@@ -58,7 +58,7 @@ The **Bookmarks** section provides links to the most common pages and processes 
 In the **Support** section, the request support item redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a> while the **Documentation** section provides links to the most relevant guides.
 
 
-### To change user settings
+### To change user settings {#to-change-user-settings}
 
 Several account settings can be changed by the user.
 
@@ -71,7 +71,7 @@ Several account settings can be changed by the user.
 7. Click **Save** to apply your settings.
 
 
-### To change your password
+### To change your password {#to-change-your-password}
 
 1. Click the **User** button at the right of the top bar and then click **User settings**.
 2. In the **Edit user** dialog box, click **Change Password**.
@@ -96,7 +96,7 @@ The password rules can be configured by the administrator, that means, your admi
 {{< /c8y-admon-info >}}
 
 
-### To change the language of the UI
+### To change the language of the UI {#to-change-the-language-of-the-ui}
 
 The user interface language is selected along the following criteria, in the order listed below:
 

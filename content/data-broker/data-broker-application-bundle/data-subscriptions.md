@@ -12,7 +12,7 @@ helpcontent:
 
 In the **Data subscriptions** page, you can manage existing data subscriptions or create new ones.
 
-### To view subscriptions
+### To view subscriptions {#to-view-subscriptions}
 
 Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant.
 
@@ -20,7 +20,7 @@ For each subscription, the name, the target tenant and the status (enabled or di
 
 Use the toggle to temporarily stop forwarding data into your tenant.
 
-### To set up data forwarding on the receiving end
+### To set up data forwarding on the receiving end {#to-set-up-data-forwarding-on-the-receiving-end}
 
 1. Click **Add data subscription** in the top menu bar to receive data.
 2. In the new card, enter the security code that you received from the sending end of the data.
@@ -31,6 +31,6 @@ You can now navigate to the Device management application or the Cockpit applica
 
 ![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
 
-### To delete a data connector
+### To delete a data connector {#to-delete-a-data-connector}
 
 Click the menu icon and then click **Delete** to stop data forwarding and delete the data connector.

@@ -35,7 +35,7 @@ To be able to use the tenant functionality, your user must have the appropriate 
 {{< /c8y-admon-req >}}
 
 
-### To view subtenants
+### To view subtenants {#to-view-subtenants}
 
 Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account.
 
@@ -52,7 +52,7 @@ In the {{< management-tenant >}}, you also find a column with information on the
 {{< /c8y-admon-info >}}
 
 
-### To create a subtenant
+### To create a subtenant {#to-create-a-subtenant}
 
 1. Click **Create tenant** at the right of the top menu bar.
 
@@ -121,7 +121,7 @@ When the subtenant is created, it gets an auto-generated ID, which cannot be cha
 
 From the {{< management-tenant >}}, you can enable other tenants to create subtenants. Contact your Operations team on how to configure this setting according to your needs.
 
-### To view or edit subtenant properties
+### To view or edit subtenant properties {#to-view-or-edit-subtenant-properties}
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
@@ -129,7 +129,7 @@ In the **Properties** tab, all fields are editable except of **ID**, **Domain/ U
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
-#### Support user access information
+#### Support user access information {#support-user-access-information}
 
 At the right of the **Properties** tab, you can find information on the support user requests/access for the subtenants.
 
@@ -164,7 +164,7 @@ The following information is displayed here:
 </tbody>
 </table>
 
-### To suspend a subtenant
+### To suspend a subtenant {#to-suspend-a-subtenant}
 
 Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications. In addition all its microservices are undeployed, and if the tenant is reactivated all its microservices are re-deployed.
 
@@ -192,7 +192,7 @@ If data broker connectors are configured for a tenant, suspending this tenant re
 {{< /c8y-admon-info >}}
 
 
-### To delete a subtenant
+### To delete a subtenant {#to-delete-a-subtenant}
 
 {{< c8y-admon-important >}}
 Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the {{< management-tenant >}}. You cannot delete tenants from any tenant but the {{< management-tenant >}}. Contact your Operations team for further support.

@@ -10,13 +10,13 @@ As the web ecosystem evolves, we as a platform evolve with it - while assuring t
 
 This process involves migration effort, so we believe that providing some background information on how the stack and the build process has evolved over time will help developers to better understand why some parts work the way you see today and why migration effort is needed.
 
-### Brief background: plugins vs. modules
+### Brief background: plugins vs. modules {#brief-background-plugins-vs-modules}
 
 From day one the UI has always had a modular architecture. The units of functionality are grouped in "plugins" that can be composed to build applications. In practice plugins are simply modules.
 
 Modules are a very important key feature in the latest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To better understand this concept and the enhancements it provides to the developers, it is important to understand how the module architecture worked in the previous generations of the {{< product-c8y-iot >}} Web SDK.
 
-### 1st Generation: Runtime loading of plugins
+### 1st Generation: Runtime loading of plugins {#1st-generation-runtime-loading-of-plugins}
 
 In the first generation, each application had exported plugins and imported plugins. The exported plugins were the ones available for being used throughout the platform and the imported plugins were the functionality visible in the application. This way each application had two functions:
 
@@ -62,7 +62,7 @@ With a 3rd party client application we might have ended up with something simila
 
 With this approach, each time the platform was updated the 3rd party applications would get the latest version of all plugins and sometimes it was difficult to update 3rd parties due to breaking changes.
 
-### 2nd Generation: Changing to build time bundling
+### 2nd Generation: Changing to build time bundling {#2nd-generation-changing-to-build-time-bundling}
 
 The main conceptual change of the second generation was that applications were self-contained. By this, we no longer used plugins as data that was loaded at runtime, and the list of script tags was rendered into the index.html during build time.
 
@@ -82,7 +82,7 @@ We ended up with an index.html, generated when the application was assembled, lo
 
 Although plugins are not just data any longer, we still allow to change the applications with the UI, but it's actually an API that changes the file system. We delete directories and upload zips to create new directories, and mutate the index.html.
 
-### Today's Generation: Native modules
+### Today's Generation: Native modules {#todays-generation-native-modules}
 
 The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm the modules must be bundled. As bundler we choose to use webpack, as it plays nicely with Angular.
 
@@ -90,7 +90,7 @@ One major change is that so far modules (or plugins) were always represented dur
 
 This was the clear opportunity to modularize the stack. While the focus is still on Angular we provide tools to avoid framework lock-in. This results in multiple packages published to npm which can be used standalone. For example, a developer could use the API abstraction layer implemented in the @c8y/client to develop a React application. The stack is no longer exclusively bound to Angular.
 
-#### Publishing to npm
+#### Publishing to npm {#publishing-to-npm}
 
 While previously publishing a tgz to our server, we will now deploy to npm:
 
@@ -100,11 +100,11 @@ While previously publishing a tgz to our server, we will now deploy to npm:
  - @c8y/ng1-modules
  - @c8y/ngx-components
 
-#### Branding no longer part of the application
+#### Branding no longer part of the application {#branding-no-longer-part-of-the-application}
 
 So far, branding was always considered part of the application, as a module like any other. When there was the need to change it we had to change the application definition. For this we used the targets definitions. Now it is a build time option that reflects into its own entry point in the application. When building an application you will have one entry point for the application and another for the branding. That allows to update the application without redeploying the branding.
 
-## Migrating
+## Migrating {#migrating}
 
 To use the new tooling you must switch the build tools. Previously, we have published the `c8y` command in the npm package "cumulocity-node-tools". Now we changed the command name to `c8ycli` to avoid conflicts and it is published on npm as "@c8y/cli".
 
@@ -175,7 +175,7 @@ The table can be understood as follows:
 The {{< product-c8y-iot >}} platform itself is running as a hybrid application in production since version 9.25.x.
 {{< /c8y-admon-info >}}
 
-#### Deprecating custom manifests
+#### Deprecating custom manifests {#deprecating-custom-manifests}
 
 Now developers have at their disposal all modern JS, so they just need to use normal ESM to import and export dependencies. Although the manifest files will still work, they are no longer required. We still support manifest files as entry points, so it is possible to use these as well as normal package.json files.
 
@@ -197,7 +197,7 @@ And they can also be imported inside any JS file:
 import './plugins/mywidget/cumulocity.json';
 ```
 
-#### Running an existing application with @c8y/cli
+#### Running an existing application with @c8y/cli {#running-an-existing-application-with-c8ycli}
 
 As observed in [this diff](https://github.com/SoftwareAG/cumulocity-ui-plugin-examples/compare/master...next) the changes to include the new tooling to an existing project are quite concise.
 
@@ -208,7 +208,7 @@ npx c8ycli serve ./cumulocity.json
 npx c8ycli serve ./src/main.js
 ```
 
-#### Using target files
+#### Using target files {#using-target-files}
 
 Although target files are deprecated, it is still possible to use them if the entry point of an application is a cumulocity.json manifest.
 
@@ -221,7 +221,7 @@ npx c8ycli serve node_modules/@c8y/ng1-modules/apps/cockpit/cumulocity.json --en
 Although the modification to the application is read from the target file, the definition to run or build the application must be passed as an argument to the CLI.
 
 
-#### Alternative to target files
+#### Alternative to target files {#alternative-to-target-files}
 
 As an alternative to target files developers should now use [application options](/web/application-configuration/#application-options).
 

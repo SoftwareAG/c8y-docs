@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use the Java MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -23,7 +23,7 @@ OS name: "mac os x", version: "10.14.2", arch: "x86_64", family: "mac"
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
-### Developing the "Hello, MQTT world!" client
+### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -32,7 +32,7 @@ To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}
 * create a Java application,
 * build and run the Java application.
 
-#### Create a Maven project
+#### Create a Maven project {#create-a-maven-project}
 
 To create a plain Java project with Maven, execute the following command:
 
@@ -42,7 +42,7 @@ $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-mqtt-java -Dar
 
 This will create a folder _hello-mqtt-java_ in the current directory with a skeleton structure for your project.
 
-#### Add the MQTT Java client library
+#### Add the MQTT Java client library {#add-the-mqtt-java-client-library}
 
 Edit the _pom.xml_ in the _hello-mqtt-java_ folder. Add a dependency to the MQTT Paho Java Client.
 
@@ -63,7 +63,7 @@ If you are using Java 9 or later, you must set the source and target as describe
 </properties>
 ```
 
-#### Create a Java application
+#### Create a Java application {#create-a-java-application}
 
 Edit the _App.java_ file located in the folder _hello-mqtt-java/src/main/java/c8y/example_ with the following content:
 
@@ -166,7 +166,7 @@ What does the code in `main` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Build and run the application
+#### Build and run the application {#build-and-run-the-application}
 
 Use the following commands to build the application:
 
@@ -208,6 +208,6 @@ After starting the application, you should see a new registered device in the De
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
-### Improving the agent
+### Improving the agent {#improving-the-agent}
 
 Now that you have done your first step, check out the Section [Hello MQTT](/device-integration/mqtt-examples/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

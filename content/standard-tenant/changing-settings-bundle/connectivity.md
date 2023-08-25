@@ -24,7 +24,7 @@ The following provider settings may currently be specified:
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/device-management-application/connectivity)
 
-### To provide or replace credentials
+### To provide or replace credentials {#to-provide-or-replace-credentials}
 
 1. Switch to the tab of your desired provider.
 2. Enter the URL of the provider.

@@ -4,7 +4,7 @@ title: Hello REST!
 layout: redirect
 ---
 
-### Overview
+### Overview {#overview}
 
 This section gives a very basic example how to create a device representation in {{< product-c8y-iot >}} and subsequently how to send related measurement data.
 
@@ -13,7 +13,7 @@ All steps are performed by calling REST interfaces. Those REST calls are demonst
 Refer to [Using the REST interface](/microservice-sdk/rest) for a short introduction to CURL.
 
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check if the following prerequisites are met:
 
@@ -21,7 +21,7 @@ In order to follow this tutorial, check if the following prerequisites are met:
 -   The command line tool CURL is installed on your system.
 
 
-### Do the REST calls
+### Do the REST calls {#do-the-rest-calls}
 
 We will now perform a sequence of just two REST calls, which are described in detail next:
 
@@ -34,7 +34,7 @@ Step one is performed just once, when the device is connected to {{< product-c8y
 
 After that, actions related to that device can be performed by referencing the device by an internal ID which is returned when executing this step.
 
-#### Creating a new device
+#### Creating a new device {#creating-a-new-device}
 
 To create a new device in the inventory of {{< product-c8y-iot >}} the following REST request is needed:
 
@@ -80,7 +80,7 @@ You will receive a response like that:
 When creating a device, {{< product-c8y-iot >}} generates an ID, which is needed in further calls in order to reference the device. You can find this ID as the "id" attribute-value pair in the response.
 
 
-#### Sending measurement data
+#### Sending measurement data {#sending-measurement-data}
 
 After the device is created, we can send measurement data.
 
@@ -146,7 +146,7 @@ Now you are done. Enter the Device management application in the {{< product-c8y
 If you do not see data, you might need to change the filter setting to, for example, "last week" to include the timestamp you used in your submitted measurement.
 
 
-#### Go further
+#### Go further {#go-further}
 
 The sequence of REST calls demonstrated here is just a shortened procedure of those described in [Device integration](/device-integration/rest/#device-integration).
 The first step (creating a new device) is part of the 'startup phase', whereas step two (sending measurements) references to the 'cycle phase'.

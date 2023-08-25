@@ -6,7 +6,7 @@ section:
   - device_management
 ---
 
-### Overview
+### Overview {#overview}
 
 This section describes the SmartREST 2.0 payload format that can be used with the {{< product-c8y-iot >}} MQTT implementation.
 
@@ -49,7 +49,7 @@ s/dc/<X-ID>
 The topics for creating templates are described in [Creating templates via MQTT](#creating-templates-via-mqtt).
 
 
-### Changes from SmartREST 1.0
+### Changes from SmartREST 1.0 {#changes-from-smartrest-10}
 
 In its base, SmartREST 2.0 is like the previous version: a CSV-like payload format that is backed by previously created templates to finally create the targeted JSON structure.
 
@@ -63,7 +63,7 @@ Several changes in the functionality have been made:
 * Declaring a default X-ID for the connection
 
 
-### Supported templates
+### Supported templates {#supported-templates}
 
 SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
@@ -77,11 +77,11 @@ SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
 Additionally, you can create templates to return certain values from responses and operations.
 
-### Template collections
+### Template collections {#template-collections}
 
 A template collection is a set of request and response templates that specifies a device communication protocol. Each collection is referenced by a unique ID (called X-ID).
 
-#### Creating templates via MQTT
+#### Creating templates via MQTT {#creating-templates-via-mqtt}
 
 Like in SmartREST 1.0, you must pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.
 
@@ -113,7 +113,7 @@ Empty publish to <kbd>s/ut/myNotExistingTemplateCollection</kbd>
 41,myNotExistingTemplateCollection
 ```
 
-#### Request templates
+#### Request templates {#request-templates}
 
 A request template contains the following basic fields:
 
@@ -206,7 +206,7 @@ This template defines one additional custom property for the measurement. It lea
 
 The following sections will get into more detail of how to create and use different templates.
 
-##### GET templates
+##### GET templates {#get-templates}
 
 GET templates for the inventory do not need any mandatory or custom values. Instead, they use two different fields.
 
@@ -276,7 +276,7 @@ This enables you to query inventory in three different ways:
 999,c8y_Serial,myDeviceImei
 ```
 
-##### POST templates
+##### POST templates {#post-templates}
 
 POST templates require a different set of mandatory values based on the API:
 
@@ -320,7 +320,7 @@ POST Inventory templates start with the value of the externalId after the msgId.
 101,,c8y_MySerial
 ```
 
-##### PUT templates
+##### PUT templates {#put-templates}
 
 PUT templates for inventory follow the same logic as the GET templates, and with the addition that you can also use custom values for PUT.
 
@@ -352,7 +352,7 @@ PUT templates for operations use the fragment of the operation to find the opera
 999,24
 ```
 
-##### Adding custom properties
+##### Adding custom properties {#adding-custom-properties}
 
 All POST and PUT values enable you to add custom properties to the results of the templates.
 
@@ -376,7 +376,7 @@ A single custom property requires you to add the following three values to your 
 |ALARMSTATUS|A status of an alarm. Used to update the status field of alarms|
 |OPERATIONSTATUS|A status of an operation. Used to update the status field of operations|
 
-##### Examples
+##### Examples {#examples}
 
 Template for clearing an alarm with an additional custom property
 
@@ -405,7 +405,7 @@ Template for updating a property in the device
 999,myDeviceImei,updatedValue
 ```
 
-#### Response templates
+#### Response templates {#response-templates}
 
 The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.
 
@@ -424,7 +424,7 @@ You should make use of the condition field to control when response templates sh
 
 In the examples below, you can see how to query data and parse custom operations.
 
-##### Querying data from the device object
+##### Querying data from the device object {#querying-data-from-the-device-object}
 
 Device object:
 
@@ -456,7 +456,7 @@ Client receives:
 888,myMqttDevice,,"val1=1\nval2=2"
 ```
 
-##### Parsing custom operations
+##### Parsing custom operations {#parsing-custom-operations}
 
 Operation object:
 
@@ -494,7 +494,7 @@ Client receives (assuming the ClientId is "myMqttTestDevice"):
 
 The template 444 is not returned as the condition does not match the operation.
 
-##### Querying data from the device object containing key with multiple objects
+##### Querying data from the device object containing key with multiple objects {#querying-data-from-the-device-object-containing-key-with-multiple-objects}
 
 Device object:
 
@@ -536,7 +536,7 @@ Client receives:
 888,test,test2
 ```
 
-### Using a default collection
+### Using a default collection {#using-a-default-collection}
 
 Having the X-ID as part of the topic gives you the freedom to easily use multiple template collections, but adds additional bytes for every message.
 If anyway the device uses mostly (or completely) a single collection, it makes sense to specify this collection as your default collection.

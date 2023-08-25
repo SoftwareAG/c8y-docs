@@ -7,7 +7,7 @@ weight: 30
 
 The application package (`@c8y/apps`) provides example applications for the Web SDK.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 To use the @c8y/apps you must install the [@c8y/cli](/web/development-tools/#c8y-cli). Refer to its documentation for installation instructions.
 
@@ -23,7 +23,7 @@ For example, to generate the tutorial application with the name `my-app` you mus
 $ c8ycli new my-app tutorial
 ```
 
-### Included applications
+### Included applications {#included-applications}
 
 The following table provides an overview on the currently supported applications:
 
@@ -55,7 +55,7 @@ The following table provides an overview on the currently supported applications
 </tr>
 <tr>
 <td>administration</td>
-<td>The <a href="/standard-tenant/home-screen/">Administration</a> default application. Use this to extend the existing Administration application.</td>
+<td>The <a href="/standard-tenant/">Administration</a> default application. Use this to extend the existing Administration application.</td>
 </tr>
 </tbody>
 </table>

@@ -12,7 +12,7 @@ While you can always read that data with any HTTP client, for example, Angular's
 This recipe shows how to access custom endpoints with the `@c8y/client` and get authenticated automatically.
 First, it will take a deeper look at the basics to explain how the client works in Angular applications.
 
-### Basic: How the client works
+### Basic: How the client works {#basic-how-the-client-works}
 
 Let's first look at how the `@c8y/client` works and what its benefits are.
 
@@ -50,7 +50,7 @@ In conclusion, the `@c8y/client` is a helper library for JavaScript that abstrac
 
 The next section shows how you can use that concept in an Angular application with the help of the Dependency Injection (DI) model of Angular.
 
-### Basic: Interaction between @c8y/client and an Angular application
+### Basic: Interaction between @c8y/client and an Angular application {#basic-interaction-between-c8yclient-and-an-angular-application}
 
 `@c8y/ngx-components` is an Angular module that allows to spin up an application.
 It is, for example, used in our basic applications like Cockpit, Administration and Device managament to display the login screen.
@@ -85,7 +85,7 @@ This covers the overview on how to use the common endpoints.
 The following recipe shows how to add a custom endpoint.
 
 
-### 1. Initialize the example application
+### 1. Initialize the example application {#1-initialize-the-example-application}
 
 As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:
@@ -105,7 +105,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
-### 2. Request data directly with fetch
+### 2. Request data directly with fetch {#2-request-data-directly-with-fetch}
 
 If you want to access data from the endpoint `service/acme` via HTTP GET, the easiest way to achieve this with authentication is to reuse the `fetch` implementation of the client.
 Add a file to the application and call it *acme.component.ts*:
@@ -205,7 +205,7 @@ export class AppModule extends HybridAppModule {
 }
 ```
 
-### 3. Run and verify the application
+### 3. Run and verify the application {#3-run-and-verify-the-application}
 
 When you run the application with `c8ycli server` and point your browser to the path defined in the module *http://localhost:9000/apps/cockpit/#/acme*, you should see the following:
 
@@ -215,7 +215,7 @@ The request fails as we don't have a microservice with this context path running
 However, as you can see in the developer tools the request has an authorization cookie attached.
 If the microservice existed, the request would pass and the data would be displayed.
 
-### 4. Bonus: Write a Service.ts abstraction
+### 4. Bonus: Write a Service.ts abstraction {#4-bonus-write-a-servicets-abstraction}
 
 In the example above, you have used the underlying `fetch` abstraction to directly access a custom microservice.
 You might want to achieve the same simplicity for the common service of the client. It handles the URL and the JSON parsing for you internally.
@@ -284,7 +284,7 @@ export class AcmeComponent implements OnInit {
 
 Inject the services (1.) and directly do a `list` request on the service (2.). The service will throw an error which is why you wrap the call in a try/catch block and on error show an `alert` by adding the exception to the `addServerFailure` method (3.).
 
-### Conclusion
+### Conclusion {#conclusion}
 
 The examples above show how to access custom microservices via the client. While it might be simpler to use a well-known client abstraction like Angular's `HttpModule`, reusing the `@c8y/client` gives you authentication out of the box.
 This solution is more robust against changes as you can update the `@c8y/client` without worrying about underlying changes.

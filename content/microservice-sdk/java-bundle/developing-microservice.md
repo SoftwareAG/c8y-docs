@@ -14,7 +14,7 @@ There are two possible deployment types on the platform:
 
 For development and testing purposes, one can deploy a microservice on a local Docker container.
 
-### Annotations
+### Annotations {#annotations}
 
 The simplest way to add required behavior to your application is to annotate a main class with `@MicroserviceApplication`. This is a collective annotation consisting of:
 
@@ -28,7 +28,7 @@ Annotation | Description
 @EnableMicroservicePlatformInternalApi | Injects the platform API services into Spring context for a microservice to use
 @EnableTenantOptionSettings | Provides microservice configuration within tenant options and allows overriding default properties from files
 
-### Context support
+### Context support {#context-support}
 
 It is described below the context support as utility tool for the user management described in [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
 
@@ -64,11 +64,11 @@ public PagedEventCollectionRepresentation get10Events () {
 }
 ```
 
-### Microservice security
+### Microservice security {#microservice-security}
 
 The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
 
-### Microservice subscription
+### Microservice subscription {#microservice-subscription}
 
 The microservice subscription module is responsible for two main features:
 
@@ -100,14 +100,14 @@ public void onAdded (MicroserviceSubscriptionAddedEvent event {
 
 On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered for all subscribed tenants.
 
-### Heap and perm/metadata
+### Heap and perm/metadata {#heap-and-permmetadata}
 
 To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#microservice-manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
 10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
 
-### Platform API
+### Platform API {#platform-api}
 
 The package consists of a number of services that are built and injected into Spring context. A developer can use them to perform basic operations against the platform. The beans are built based on the properties read from a file. For hosted deployment, most of the properties are provided by the platform.
 
@@ -151,13 +151,13 @@ public AlarmRepresentation addHelloAlarm (){
 }
 ```
 
-### Configuration files
+### Configuration files {#configuration-files}
 
 The *application.properties* file used by the hosted deployment must be located in *src/main/resources/*.
 
 The following properties are used by a microservice:
 
-#### General properties
+#### General properties {#general-properties}
 
 | Property                   | Description                                                                                            |
 | -------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -172,7 +172,7 @@ The following properties are used by a microservice:
 | C8Y.bootstrap.initialDelay | Initial subscription delay (milliseconds).                                                             |
 | C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default. |
 
-#### HTTP client configuration properties
+#### HTTP client configuration properties {#http-client-configuration-properties}
 
 | Property                         | Description                                                    | Default value |
 | -------------------------------- | -------------------------------------------------------------- | ------------- |
@@ -186,7 +186,7 @@ The following properties are used by a microservice:
 No changes should be made unless the request/connection timeouts or HTTP client related exceptions are being experienced for the requests to the microservice where the network environment is fully understood.
 {{< /c8y-admon-info >}}
 
-### Microservice settings
+### Microservice settings {#microservice-settings}
 
 The microservice settings module provides two features:
 
@@ -271,11 +271,11 @@ BODY:
 You cannot override a property injected by Spring `@Value("${property.name}")`.
 {{< /c8y-admon-info >}}
 
-### Logging
+### Logging {#logging}
 
 The standard output should be used for hosted deployment.
 
-### Maven plugin
+### Maven plugin {#maven-plugin}
 
 The package module provides a Maven plugin to prepare a ZIP file required by the microservice deployment. The build requires an executable JAR file. To create one, a developer can use `spring-boot-maven-plugin`. An example with minimum configuration is presented below:
 
@@ -329,7 +329,7 @@ The package module provides a Maven plugin to prepare a ZIP file required by the
 </plugin>
 ```
 
-#### Package goal
+#### Package goal {#package-goal}
 
 The package plugin is responsible for the creation of a Docker container, rpm file and for creating a ZIP file that can be deployed on the platform.
 It can be configured with the following parameters:
@@ -359,7 +359,7 @@ Example configuration:
 </configuration>
 ```
 
-#### Push goal
+#### Push goal {#push-goal}
 
 The push plugin is responsible for pushing the Docker image to a registry. The registry can be configured by:
 
@@ -375,7 +375,7 @@ Example configuration:
 </configuration>
 ```
 
-#### Upload goal
+#### Upload goal {#upload-goal}
 
 The upload goal is responsible for deploying the microservice to a server.
 There are three options to configure the server URL and credentials:
@@ -395,7 +395,7 @@ To upload a microservice to the server you must configure the following properti
 * name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
 * skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it needs to be set to `false`)
 
-#### settings.xml
+#### settings.xml {#settingsxml}
 
 To configure the goal in the _settings.xml_ file, add the server configuration as follows:
 
@@ -410,7 +410,7 @@ To configure the goal in the _settings.xml_ file, add the server configuration a
 </server>
 ```
 
-#### pom.xml
+#### pom.xml {#pomxml}
 
 To configure the plugin in the _pom.xml_ file, add the server configuration as follows:
 
@@ -435,7 +435,7 @@ To configure the plugin in the _pom.xml_ file, add the server configuration as f
 </plugin>
 ```
 
-#### Command line
+#### Command line {#command-line}
 
 To pass the configuration only to the particular build, execute the following command:
 
@@ -444,9 +444,9 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 ```
 
 
-### Deployment
+### Deployment {#deployment}
 
-#### Hosted deployment
+#### Hosted deployment {#hosted-deployment}
 
 {{< c8y-admon-info >}}
 For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/concept/#microservice-utility-tool) for easy packaging, deployment and subscription.
@@ -460,7 +460,7 @@ To deploy an application on an environment you need the following:
 * ZIP build from previous steps
 
 
-##### Step 1 - Create the application
+##### Step 1 - Create the application {#step-1---create-the-application}
 
 If the application does not exist, create a new application on the platform:
 
@@ -504,7 +504,7 @@ $ curl -H "Authorization:<AUTHORIZATION>" \
      <URL>/application/applicationsByName/hello-world
 ```
 
-##### Step 2 - Upload the ZIP file
+##### Step 2 - Upload the ZIP file {#step-2---upload-the-zip-file}
 
 ```http
 POST /application/applications/<APPLICATION_ID>/binaries
@@ -521,7 +521,7 @@ $ curl -F "data=@<PATH_TO_ZIP>" \
 	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-##### Step 3 - Subscribe to the microservice
+##### Step 3 - Subscribe to the microservice {#step-3---subscribe-to-the-microservice}
 
 ```http
 POST /tenant/tenants/<TENANT_ID>/applications
@@ -546,7 +546,7 @@ $ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
        "<URL>/tenant/tenants/<TENANT_ID>/applications"
 ```
 
-#### Local Docker deployment
+#### Local Docker deployment {#local-docker-deployment}
 
 To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/concept/#environment-variables).
 
@@ -556,7 +556,7 @@ An example execution could be:
 $ docker run -e "C8Y_BASEURL=<C8Y_BASEURL>" -e "C8Y_BASEURL_MQTT=<C8Y_BASEURL_MQTT>" <IMAGE_NAME>
 ```
 
-### Monitoring
+### Monitoring {#monitoring}
 
 The microservice's health endpoint can be checked to verify if a hosted microservice is running successfully.
 This endpoint is enabled by default for all microservices that are developed using the Java Microservice SDK.
@@ -583,9 +583,9 @@ HTTP/1.1 503
 }
 ```
 
-### Legacy Deployment
+### Legacy Deployment {#legacy-deployment}
 
-#### Properties
+#### Properties {#properties}
 
 For external/legacy deployment, the following paths will be searched in order to find a properties file specific for the environment the application is run on:
 
@@ -597,7 +597,7 @@ For external/legacy deployment, the following paths will be searched in order to
 * {CONF_DIR}/{application_name}
 * /etc/{application_name}
 
-#### Logging
+#### Logging {#logging}
 
 For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
 The following locations are searched for the Logback configuration file:
@@ -610,7 +610,7 @@ The following locations are searched for the Logback configuration file:
 * {CONF_DIR}/{application_name}/logging.xml
 * /etc/{application_name}/logging.xml
 
-### Upgrade to Microservice SDK 10.13+
+### Upgrade to Microservice SDK 10.13+ {#upgrade-to-microservice-sdk-1013}
 
 A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to 10.13+ may require some additional development.
 
@@ -652,7 +652,7 @@ A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to
    server.error.include-message=ALWAYS
    server.error.include-binding-errors=ALWAYS
    ```
-### Upgrade to Microservice SDK 10.17+
+### Upgrade to Microservice SDK 10.17+ {#upgrade-to-microservice-sdk-1017}
 
 A Spring Boot library was upgraded to 2.7.6, hence upgrading Microservice SDK to 10.17+ may require some additional development.
 

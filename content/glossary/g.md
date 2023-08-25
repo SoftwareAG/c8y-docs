@@ -6,12 +6,12 @@ section:
   - getting_started
 ---
 
-### GA release
+### GA release {#ga-release}
 
 A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all {{< product-c8y-iot >}} public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the {{< company-sag >}} {{< sag-portal >}}. GA releases include new features, improvements and fixes.
 
 
-### Global roles
+### Global roles {#global-roles}
 
 Role type in the permission concept of {{< product-c8y-iot >}}. Global roles contain permissions that apply to all data within a tenant.
 

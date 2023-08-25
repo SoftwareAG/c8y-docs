@@ -8,7 +8,7 @@ section:
 
 The **Alarm** tab is always shown for all devices. Its content is filled by alarm statuses reported by the device and other sources like analytics or smart rules. Devices raise alarms in {{< product-c8y-iot >}} as they occur. Once the alarm status was resolved the device must also update the status of its created alarm to CLEARED.
 
-### Raising alarms
+### Raising alarms {#raising-alarms}
 
 A device may raise an alarm at any time. Typically alarms are used to communicate problem statuses in the devices environment.
 
@@ -43,7 +43,7 @@ In addition to the required parameters above, the device may also include custom
 
 `302,c8y_TemperatureAlarm,"CPU temperature too high"`
 
-### Clearing alarms
+### Clearing alarms {#clearing-alarms}
 When a device detects that the local alarm status was resolved it must clear the alarm. This is done by updating the alarm status to CLEARED.
 
 ```http
@@ -67,7 +67,7 @@ The 306 static template is provided to clear an active alarm of a specified type
 
 `306,c8y_TemperatureAlarm`
 
-### Critical alarms
+### Critical alarms {#critical-alarms}
 
 When a device raises an alarm with the severity CRITICAL, the device is considered unavailable for the duration this alarm stays active. The aggregated availability overview in the **Service monitoring** tab will reflect this time as offline.
 

@@ -4,7 +4,7 @@ title: SNMP agent
 layout: redirect
 ---
 
-### Introduction
+### Introduction {#introduction}
 
 The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the {{< product-c8y-iot >}} platform. It receives SNMP data from the devices, converts the data to {{< product-c8y-iot >}}-based objects based on the device protocol mapping, persists the data locally, and forwards the data to {{< product-c8y-iot >}}. The agent must be registered in {{< product-c8y-iot >}} before serving the device request.
 
@@ -17,9 +17,9 @@ To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 * Upload this ZIP file as a microservice into the platform. Refer to [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) for details on how to upload microservices into {{< product-c8y-iot >}}.
 {{< /c8y-admon-info >}}
 
-### Installation
+### Installation {#installation}
 
-#### Prerequisites
+#### Prerequisites {#prerequisites}
 
 |               |              |
 | ------------- |:-------------|
@@ -28,7 +28,7 @@ To add the Mibparser microservice to the {{< product-c8y-iot >}} platform,
 | Disk space    | The {{< product-c8y-iot >}} representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
 | Hardware and OS    | Linux environment, can run on laptops or industrial PCs.     |
 
-#### To install the agent
+#### To install the agent {#to-install-the-agent}
 
 1. Download the latest SNMP agent RPM:
 
@@ -80,7 +80,7 @@ The agent uses the following location as persistent storage:
 		$HOME/.snmp/{gateway.identifier}/chronicle
 
 
-### Upgrading a GA version
+### Upgrading a GA version {#upgrading-a-ga-version}
 
 {{< c8y-admon-info >}}
 This upgrade procedure is only for GA releases. If you have installed any previous release prior to GA release, follow the migration procedure described below.
@@ -109,7 +109,7 @@ This upgrade procedure is only for GA releases. If you have installed any previo
 		$HOME/.snmp/log/snmp-agent-gateway-server.log
 
 
-### Migration
+### Migration {#migration}
 
 Between version 10.4.x and 10.5.x, the SNMP agent has undergone a major revamp regarding persistence storage mechanism, robustness, performance improvements and more. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
 

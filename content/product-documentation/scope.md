@@ -8,11 +8,7 @@ section:
 
 <!-- content to be reworked -->
 
-The Cumulocity IoT documentation website provides the documentation for the latest cloud offering of Cumulocity IoT.
-
-You can switch between the versions by using the dropdown list at the top right.
-
-This documentation describes the **{{< c8y-current-version >}} release** of the {{< product-c8y-iot >}} platform. It includes all new features and functionalities introduced with release {{< c8y-current-version >}} (see the [Release notes](https://{{< domain-c8y >}}/releasenotes/release-{{< c8y-current-version-hyphen >}}/overview-{{< c8y-current-version-hyphen >}}) for details).
+This documentation reflects the latest state of the cloud deployment(s) of the Cumulocity IoT platform. It includes all latest features and functionalities (see the Change log for details) and is continuously updated with each software update.
 
 {{< c8y-admon-important >}}
 Depending on the {{< product-c8y-iot >}} plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you.

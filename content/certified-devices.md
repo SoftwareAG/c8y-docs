@@ -9,4 +9,4 @@ section:
 weight: 70
 ---
 
-Browse Cumulocity IoT certified IoT devices in the Device Catalog of the Cumulocity IoT Connect Device Partner Portal.
+Browse {{< product-c8y-iot >}} certified IoT devices in the Device Catalog of the {{< product-c8y-iot >}} Connect Device Partner Portal.

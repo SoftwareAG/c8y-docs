@@ -4,19 +4,19 @@ title: Study - Circular geofence alarms
 layout: redirect
 ---
 
-### Overview
+### Overview {#overview}
 
 This section gives an in-depth example how you can create more complex rules. It uses multiple of the features explained before in the other sections of this guide.
 
 If you are just starting with Apama EPL, take a look at [Examples](/streaming-analytics/epl-apps/#examples).
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
-#### Goal
+#### Goal {#goal}
 
 We want our tracking devices that are continuously sending location events to automatically generate alarms if they move outside a geofence. This geofence will be a circle and should be configurable for each device separately. The alarm will be created at the moment the device moves outside the geofence. While it is moving outside, it should not create new alarms because the first one will remain active. As soon as the device moves back into the geofence, the alarm will be cleared.
 
-#### {{< product-c8y-iot >}} data model
+#### {{< product-c8y-iot >}} data model {#platform-data-model}
 
 Location event structure (the part we need):
 
@@ -41,7 +41,7 @@ Additionally, we want to enable/disable the geofence alarms for each device with
       "c8y_SupportedOperations": [..., "c8y_Geofence", ...]
     }
 
-#### Calculation
+#### Calculation {#calculation}
 
 The device is outside of the geofence if the distance between the current position and the center is bigger than the configured radius of the geofence. What we need is a function that can calculate the difference between *two* geo-coordinates:
 
@@ -61,7 +61,7 @@ action distance(float lat1, float lon1, float lat2, float lon2) returns float {
 
 The above action will return the distance in meters.
 
-### Step 1: Filtering the input
+### Step 1: Filtering the input {#step-1-filtering-the-input}
 
 The main input for this module will be events. To discard non-matching events as early as possible, we perform this as the first check in the listener:
 
@@ -74,7 +74,7 @@ on all Event() as e {
 }
 ```
 
-### Step 2: Collecting necessary data
+### Step 2: Collecting necessary data {#step-2-collecting-necessary-data}
 
 In the next step, we need the configuration of the geofence for the calculation and grab it.
 
@@ -89,7 +89,7 @@ on FindManagedObjectResponse(reqId = reqId) as resp
    }
 ```
 
-### Step 3: Checking if the device supports c8y_Geofence
+### Step 3: Checking if the device supports c8y_Geofence {#step-3-checking-if-the-device-supports-c8ygeofence}
 
 With the device available we will now check if there is a geofence configured for the device and if it is activated (contains "c8y_Geofence" in `supportedOperations`). To check the `c8y_SupportedOperations` array, we can use the `indexOf()` function. This function will loop through all elements and return the index of that entry, or a negative number if the value is not present. For the configuration, we will just check if the device contains the fragment "c8y_Geofence".
 
@@ -108,7 +108,7 @@ if(dev.params.hasKey("c8y_Geofence") and dev.supportedOperations.indexOf("c8y_Ge
 }
 ```
 
-### Step 4: Creating the trigger
+### Step 4: Creating the trigger {#step-4-creating-the-trigger}
 
 As mentioned earlier, the device is outside of the fence if the distance between the current device position and the geofence center is bigger than the configured geofence radius. To trigger the alarm, we need two events so we can check if the device entered or left the geofence within these two events.
 
@@ -147,7 +147,7 @@ on all LocationEventWithDistance() as firstPos {
 
 This pair of `LocationEventWithDistance` events now holds all data for checking if we should create the alarm or not. Note that we are filtering the `secondPos` event to be for the same source as the first - there will be an active listener for every device we have received an event from.
 
-### Step 5: Creating the alarm
+### Step 5: Creating the alarm {#step-5-creating-the-alarm}
 
 To create the alarm, we now need two events where the first one has a distance smaller than the radius and the second one has a distance bigger than the radius. This would mean that the device just left the geofence.
 
@@ -160,7 +160,7 @@ if firstPos.distance <= firstPos.maxDistance and
 }
 ```
 
-### Step 6: Clearing the alarm
+### Step 6: Clearing the alarm {#step-6-clearing-the-alarm}
 
 To clear the alarm, we must just switch the condition at the bottom and additionally grab the currently active alarm to get its ID. We do not need to care about whether there is an existing alarm at this point. If there is none, the listener will trigger the `and not FindAlarmResponseAck`, terminating the listener:
 
@@ -179,7 +179,7 @@ To clear the alarm, we must just switch the condition at the bottom and addition
 		}
 	}
 
-### Putting everything together
+### Putting everything together {#putting-everything-together}
 
 We can now combine all the parts into one module. The order of the listeners does not matter.
 

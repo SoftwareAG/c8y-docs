@@ -15,7 +15,7 @@ On the {{< product-c8y-iot >}} public cloud instances, the support user function
 {{< /c8y-admon-req >}}
 
 
-### To configure support user access
+### To configure support user access {#to-configure-support-user-access}
 
 Support user access can either be:
 

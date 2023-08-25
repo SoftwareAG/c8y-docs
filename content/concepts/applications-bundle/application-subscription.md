@@ -12,7 +12,7 @@ Tenants can be subscribed to applications which have been deployed by their supe
 
 Tenants can also have their own applications which can also be subscribed to subtenants. See [Custom applications](/standard-tenant/ecosystem/#custom-applications)for details on how to add custom applications.
 
-### Service discovery
+### Service discovery {#service-discovery}
 
 A tenant can have multiple available applications but to use an application's functionality a subscription to the application must be established for the tenant. As an example, when a custom decoder microservice is available in the tenant's marketplace, it is not enabled to be used until the tenant subscribes for the microservice application.
 

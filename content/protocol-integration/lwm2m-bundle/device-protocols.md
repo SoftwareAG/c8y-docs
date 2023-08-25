@@ -7,7 +7,7 @@ layout: redirect
 To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device management application. For details on the general usage, see [Managing device types](/device-management-application/managing-device-types).
 
-### Creating LWM2M device protocols
+### Creating LWM2M device protocols {#creating-lwm2m-device-protocols}
 
 Once you have registered a device, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.
 
@@ -28,11 +28,11 @@ In the next dialog, you can see the name and description of the protocol. Click 
 LWM2M protocol resources cannot be edited.
 {{< /c8y-admon-info >}}
 
-### Adding additional functionalities to a resource
+### Adding additional functionalities to a resource {#adding-additional-functionalities-to-a-resource}
 
 To access resource functionalities proceed to the device protocol page and click one of the resource instances. See below for the functionalities that you may enable:
 
-#### Send measurement
+#### Send measurement {#send-measurement}
 
 Turn on **Send measurement** to specify a measurement.
 
@@ -40,7 +40,7 @@ Turn on **Send measurement** to specify a measurement.
 - Series are any fragments in measurements that contain a "value" property. For example, in the series field you can enter: "c8y_AccelerationMeasurement.acceleration".
 - The "Unit" field specifies the unit of the given measurement. For example, "m/s" for velocity.
 
-#### Create alarm
+#### Create alarm {#create-alarm}
 
 Turn on **Create alarm** if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):
 
@@ -49,20 +49,20 @@ Turn on **Create alarm** if you want to create an alarm out of the resource. Spe
 - Status: ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
-#### Send Event
+#### Send Event {#send-event}
 
 Turn on **Send event** to send an event each time you receive a resource value. Specify the following parameters:
 
 - Enter the type of the event. For example, "com_cumulocity_model_DoorSensorEvent".
 - Enter the text which will be sent. For example, "Door sensor was triggered".
 
-#### Custom Actions
+#### Custom Actions {#custom-actions}
 
 Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
 {{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).
 
-##### Predefined custom actions
+##### Predefined custom actions {#predefined-custom-actions}
 
 There are several predefined custom actions which can be selected to apply actions to the relevant resources.
 
@@ -93,7 +93,7 @@ Below is an example where the “connectivity:updateRssi” custom action is sel
 
 ![Custom action example](/images/device-protocols/lwm2m/lwm2m-custom-action-connectivity-signal.png)
 
-#### Auto observe
+#### Auto observe {#auto-observe}
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
 
@@ -103,7 +103,7 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 At least one functionality must be set to enable "Auto observe".
 {{< /c8y-admon-info >}}
 
-### Alarms on device protocol mapping failures
+### Alarms on device protocol mapping failures {#alarms-on-device-protocol-mapping-failures}
 
 There are two types of alarms raised related to device protocol mapping failures:
 

@@ -7,7 +7,7 @@ layout: redirect
 
 {{< product-c8y-iot >}} operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
 
-### Scanning the address space
+### Scanning the address space {#scanning-the-address-space}
 
 This operation triggers importing address space for a specific OPC-UA server. The server's ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the {{< product-c8y-iot >}} platform.
 
@@ -25,10 +25,10 @@ POST /devicecontrol/operations/
 
 The twinned address space information is persisted in the {{< product-c8y-iot >}} inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
 
-Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server's address space without synchronizing data into Cumulocity IoT. To achieve that, provide `"skipSync": true`.
+Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in {{< product-c8y-iot >}}, you might want the device gateway to learn one more time about server's address space without synchronizing data into {{< product-c8y-iot >}}. To achieve that, provide `"skipSync": true`.
 
 When you would like to scan partial address space, you can provide the `nodeId` property which is used as a start node for the scan operation.
-The subaddress space starting from this node as well as the ancestor nodes will be persisted in the Cumulocity IoT inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
+The subaddress space starting from this node as well as the ancestor nodes will be persisted in the {{< product-c8y-iot >}} inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
 
 ```
 POST /devicecontrol/operations/
@@ -69,16 +69,16 @@ Available arguments for `c8y_ua_command_ScanAddressSpace`:
 <td>skipSync</td>
 <td>Boolean</td>
 <td>no</td>
-<td>If set to true, the address space nodes will not be synchronized to Cumulocity IoT Inventory API. Default is false.</td>
+<td>If set to true, the address space nodes will not be synchronized to {{< product-c8y-iot >}} Inventory API. Default is false.</td>
 </tr>
 </tbody>
 </table>
 
 {{< c8y-admon-info >}}
-We do not recommend you to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+We do not recommend you to directly work with the persisted address space data structures in the {{< product-c8y-iot >}} inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 {{< /c8y-admon-info >}}
 
-### Reading the value of a node/nodes
+### Reading the value of a node/nodes {#reading-the-value-of-a-nodenodes}
 
 This operation reads the value attribute of specific node or list of nodes.
 
@@ -171,7 +171,7 @@ The result of this operation will contain output in the following format:
 }
 ```
 
-### Reading all attributes of a node
+### Reading all attributes of a node {#reading-all-attributes-of-a-node}
 
 This operation returns all attributes of specific node.
 
@@ -236,7 +236,7 @@ The result may differ depending on the node type.
 }
 ```
 
-### Reading an attribute
+### Reading an attribute {#reading-an-attribute}
 
 This operation supports to read one or more attributes of one or more nodes. This includes support of the range parameter to read a single element or a range of elements when the attribute value is an array.
 
@@ -370,7 +370,7 @@ The result may differ depending on the node type.
 }
 ```
 
-### Read complex
+### Read complex {#read-complex}
 
 This operation reads many attributes from many nodes at single call.
 
@@ -443,7 +443,7 @@ Empty string ("") can be given to not define any range.
 </tbody>
 </table>
 
-### Historic read
+### Historic read {#historic-read}
 
 This operation reads history values and applies the mappings except of alarm mappings.
 
@@ -534,7 +534,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tbody>
 </table>
 
-### Historic data binary upload
+### Historic data binary upload {#historic-data-binary-upload}
 
 This operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
 
@@ -626,7 +626,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tbody>
 </table>
 
-### Read file
+### Read file {#read-file}
 
 Prerequisites:
 - Open and Read methods for the file node must be implemented on server side, either as the children of the file node itself or as the children of the data type node
@@ -724,7 +724,7 @@ Now download is possible with the self link provided inside the managedObjects s
 For further information, refer to [binaries API](https://www.{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Binaries) in the {{< openapi >}}.
 
 
-### Write value
+### Write value {#write-value}
 
 This operation writes values to the node/nodes.
 
@@ -815,7 +815,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tbody>
 </table>
 
-### Write attribute
+### Write attribute {#write-attribute}
 
 This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes' values to any writable attributes. The following example writes two different attributes to two different nodes.
 
@@ -932,7 +932,7 @@ Example operation with ranges fragment:
 }
 ```
 
-### Get method description
+### Get method description {#get-method-description}
 
 This operation reads the description of a method node.
 
@@ -1002,7 +1002,7 @@ The result describes a method, it's parent object, input and output arguments.
 }
 ```
 
-### Call method
+### Call method {#call-method}
 
 This operation calls the method on the OPC UA server. It requires complete input arguments with an additional "value" fragment.
 
@@ -1180,7 +1180,7 @@ Power of 5 is 25:
 }
 ```
 
-### Testing a device type against a node on an OPC UA server
+### Testing a device type against a node on an OPC UA server {#testing-a-device-type-against-a-node-on-an-opc-ua-server}
 
 This operation allows for testing a device type against a specific node on an OPC UA server. The operation result provides diagnostic information if the device type could be applied:
 
@@ -1269,7 +1269,7 @@ Otherwise, the operation result provides an explanation why the device type coul
 }
 ```
 
-### Analyzing the set of nodes to which a device type can be applied (dry run)
+### Analyzing the set of nodes to which a device type can be applied (dry run) {#analyzing-the-set-of-nodes-to-which-a-device-type-can-be-applied-dry-run}
 
 As explained earlier, the {{< product-c8y-iot >}} OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device protocol ("device type"). The following operation performs an auto-discovery for the given device protocol on the server, without actually applying it to any node ("dry run"):
 
@@ -1369,7 +1369,7 @@ The result of the operation contains the set of nodes that match the device prot
 }
 ```
 
-### Get the current application state of a device type
+### Get the current application state of a device type {#get-the-current-application-state-of-a-device-type}
 
 In order to know what is the current state of a device type application, use the following operation:
 
@@ -1425,7 +1425,7 @@ Sample result when the device type has been applied to node #1 but not node #2:
     "{root node ID #2}": false
 }
 ```
-### Expiring operations
+### Expiring operations {#expiring-operations}
 
 In certain cases it is desirable that the OPC UA gateway executes an operation only if it processes it before a given expiration time. Providing such an optional expiration time is supported for the following OPC UA operations:
 

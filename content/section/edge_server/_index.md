@@ -255,4 +255,4 @@ svg: '<svg
 '
 ---
 
-Cumulocity IoT Edge is the single-server variant of the Cumulocity IoT platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located.
+{{< product-c8y-iot >}} Edge is the single-server variant of the {{< product-c8y-iot >}} platform, designed to run in factories on industrial PCs or local servers, that is, in the same site (“onsite”) in which the IoT assets are located.

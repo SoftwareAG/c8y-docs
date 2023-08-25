@@ -4,7 +4,7 @@ title: Compatibility and limitations
 layout: redirect
 ---
 
-#### VNC protocol
+#### VNC protocol {#vnc-protocol}
 
 The following versions of the VNC protocol are currently supported:
 
@@ -34,7 +34,7 @@ The following operating systems/browsers are currently supported:
 |Android 6.0.1|Chrome|Yes|Minor|No|n/a
 |Android 6.0.1|Stock browser 5.0|Yes|Minor|No|n/a
 
-#### Telnet protocol
+#### Telnet protocol {#telnet-protocol}
 
 The following limitations apply to Cloud Remote Access for Telnet:
 
@@ -44,7 +44,7 @@ The following limitations apply to Cloud Remote Access for Telnet:
 |xterm|Yes|No|Yes|Yes|Yes|Yes|No|No
 
 
-#### SSH protocol
+#### SSH protocol {#ssh-protocol}
 
 For Cloud Remote Access for SSH, the same limitations as for Telnet apply (see above). Moreover, the following additional limitations are known:
 

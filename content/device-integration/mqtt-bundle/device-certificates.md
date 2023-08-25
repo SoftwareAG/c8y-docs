@@ -4,7 +4,7 @@ title: Device certificates
 layout: redirect
 ---
 
-### Overview
+### Overview {#overview}
 
 Devices can authenticate against the {{< product-c8y-iot >}} platform using X.509 client certificates.  
 
@@ -14,7 +14,7 @@ Each tenant individually defines whom it trusts by uploading the base CA certifi
 
 Devices connecting to the platform with certificates do not need to provide the tenant ID, username and password. Authentication information will be obtained from the certificates.
 
-#### General requirements for connecting devices with certificates
+#### General requirements for connecting devices with certificates {#general-requirements-for-connecting-devices-with-certificates}
 
 * The CA certificate may also be a self-signed certificate.
 * Certificates must be uploaded as X.509 version 3 certificates.
@@ -24,7 +24,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 * Certificates used by devices must contain the certificate chain that includes the uploaded CA certificate.
 * Certificates used by devices must be signed either by uploaded CA certificates or by intermediate certificates signed by uploaded CA certificates.
 
-### Registering devices using certificates
+### Registering devices using certificates {#registering-devices-using-certificates}
 
 {{< product-c8y-iot >}} supports two ways to register devices which will be able to connect using certificates:
 
@@ -49,7 +49,7 @@ Single registration is not supported for devices which are going to use certific
 During device registration, the device user is created, which is necessary for device communication with the platform.
 {{< /c8y-admon-info >}}
 
-### JWT token retrieval
+### JWT token retrieval {#jwt-token-retrieval}
 
 A device which is authenticated by certificates and connected to the {{< product-c8y-iot >}} platform can receive a token which can later be used to authenticate HTTP requests.
 
@@ -72,7 +72,7 @@ A device can fetch a new device token before the old one expires, if it request 
 A device can only subscribe to a topic like <kbd>s/dat</kbd> once certificate based mutual authentication is successful. The MQTT broker will not make any information available on the device's subscribed topics until the device publishes a message to <kbd>s/uat</kbd> or <kbd>s/us</kbd>.
 {{< /c8y-admon-caution >}}
 
-### Introduction to X.509 certificates
+### Introduction to X.509 certificates {#introduction-to-x509-certificates}
 
 X.509 is a standard that defines public key certificates, which are commonly used in the SSL protocol to provide secure connection and data transfer.
 Version 3 is up-to-date since 1995.
@@ -147,11 +147,11 @@ The most popular formats for these files are:
 * PKCS12 (Public Key Cryptography Standards, version 12), which can be generated using the OpenSSL toolkit.
 * JKS (Java KeyStore), which can be generated with the Java Keytool.
 
-### Generating and signing certificates
+### Generating and signing certificates {#generating-and-signing-certificates}
 
 To generate certificates we use the OpenSSL toolkit. If you do not have it already installed, then you can download if from the website: https://www.openssl.org/source/
 
-#### Creating a self-signed CA certificate
+#### Creating a self-signed CA certificate {#creating-a-self-signed-ca-certificate}
 
 1. Create a directory for the root certificate and the signing configuration, for example:
 
@@ -264,7 +264,7 @@ To generate certificates we use the OpenSSL toolkit. If you do not have it alrea
 
     `openssl x509 -noout -text -in caCert.pem`
 
-#### Creating an intermediate certificate
+#### Creating an intermediate certificate {#creating-an-intermediate-certificate}
 
 The intermediate certificate is signed by the CA certificate, but will also be used to sign device certificates.
 This step is optional.
@@ -287,7 +287,7 @@ To create the intermediate certificate:
 9. Go to the caCertificate directory and generate a signed intermediate certificate. You must use the CA configuration here, because the private key specified in the configuration file will be used to sign the certificate: `openssl ca -config caConfig.cnf -extensions v3_ca -days 3650 -notext -md sha256 -in intermediateCertificate/intermediateCsr.pem -out intermediateCertificate/intermediateCert.pem`
 10. Verify if the generated certificate is correctly signed by CA: `openssl verify -CAfile caCert.pem intermediateCertificate/intermediateCert.pem`   
 
-#### Creating a device certificate signed by CA or intermediate
+#### Creating a device certificate signed by CA or intermediate {#creating-a-device-certificate-signed-by-ca-or-intermediate}
 
 1. Go to the directory of your caCertificate or intermediateCertificate depending on which one is used to sign the device certificate.
 2. Generate the private key for the new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
@@ -296,7 +296,7 @@ To create the intermediate certificate:
 4. Generate the certificate signed by the CA or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
 5. Verify if the generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
 
-#### Creating the chain of certificates
+#### Creating the chain of certificates {#creating-the-chain-of-certificates}
 
 Go into your caCertificate directory.
 
@@ -313,7 +313,7 @@ cat deviceCertificates/deviceCert.pem caCert.pem > deviceCertificates/deviceCert
 
 If you are using multiple intermediate certificates between the CA certificate and the device certificate, then remember that you must keep the correct order during the chain creation (Every certificate must be followed by the certificate, which it is signed by).
 
-#### Creating keystore and truststore
+#### Creating keystore and truststore {#creating-keystore-and-truststore}
 
 1. Go into your deviceCertificates directory with the device's private key and the generated chain of certificates. If you are using an intermediate certificate between the CA certificate and the device certificate then it will be the `caCertificate/intermediateCertificate/deviceCertificates` path, otherwise it will be `caCertificate/deviceCertificates`. Create keystore using the generated chain of certificates and the private key of the device: `openssl pkcs12 -export -name devicekeyentry -inkey deviceKey.pem -in deviceCertChain.pem -out deviceKeystore.pkcs12`
 2. If you want to convert your keystore to JKS format then you would need the Java Keytool which is usually downloaded together with Java Development Kit: `keytool -importkeystore -srckeystore deviceKeystore.pkcs12 -srcstoretype PKCS12 -destkeystore deviceKeystore.jks -deststoretype JKS`
@@ -327,13 +327,13 @@ If you are using multiple intermediate certificates between the CA certificate a
     * If your keystore is in the JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
 6. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
 
-### How to test created certificates with MQTT client
+### How to test created certificates with MQTT client {#how-to-test-created-certificates-with-mqtt-client}
 
-### Keystore and truststore
+### Keystore and truststore {#keystore-and-truststore}
 
 Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
 
-### Upload your CA certificate
+### Upload your CA certificate {#upload-your-ca-certificate}
 
 Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways, both of which have a role requirement of either ROLE_TENANT_ADMIN or ROLE_TENANT_MANAGEMENT_ADMIN:
 
@@ -367,7 +367,7 @@ Then new certificate will be added to the trusted certificates list:
     	"certInPemFormat" : "<CERT_PEM_VALUE>"
     }
 ```
-### Perform a proof of possession
+### Perform a proof of possession {#perform-a-proof-of-possession}
 
 {{< product-c8y-iot >}} platform uses X.509 certificates to authenticate end devices.
 The certificates work with a chain of trust: you can create trustworthy subcertificates with a trusted certificate.
@@ -407,7 +407,7 @@ The proof of possession is confirmed if the uploaded signed verification code ma
 If administrators cannot carry out this process on their own for organizational reasons, they can manually request the proof of possession for the corresponding certificate and the {{< product-c8y-iot >}} support team can complete the proof of possession through a back end API upon reasonable verification.
 {{< /c8y-admon-info >}}
 
-### MQTT example client
+### MQTT example client {#mqtt-example-client}
 
 The code of the {{< product-c8y-iot >}} MQTT example client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client.
 This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.

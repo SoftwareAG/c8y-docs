@@ -7,7 +7,7 @@ layout: redirect
 
 SNMP device protocols can either be created manually or by importing a MIB file shared by the device manufacturer. This device protocol will later be used when adding the SNMP device to the platform.
 
-### To create a device protocol from the UI
+### To create a device protocol from the UI {#to-create-a-device-protocol-from-the-ui}
 
 1. Create a ZIP file which contains the top-level MIB file along with dependent MIB files and an index file named mib-index which contains the name of the top level MIB file.<br>
 ![Subscribed applications](/images/device-protocols/snmp/snmp-mib-zipfile-structure.png)
@@ -21,7 +21,7 @@ On successful import, the newly added device protocol will be listed in the devi
 
 ![Device protocol - SNMP](/images/device-protocols/snmp/snmp-device-protocol.png)
 
-### To create a device protocol via REST API
+### To create a device protocol via REST API {#to-create-a-device-protocol-via-rest-api}
 
 **Step-1:** Upload the MIB file and note down the JSON response:
 
@@ -51,7 +51,7 @@ On successful import, the newly added device protocol will be listed in the devi
 		]
 	}
 
-### To create a device protocol manually
+### To create a device protocol manually {#to-create-a-device-protocol-manually}
 
 Device protocols can also be created manually. To do so, you must know the OIDs supported by the device. This method is suitable for small number of OIDs supported by the device or for testing purposes.
 

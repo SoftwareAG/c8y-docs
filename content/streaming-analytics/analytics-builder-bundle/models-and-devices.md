@@ -4,7 +4,7 @@ title: Models and devices
 layout: redirect
 ---
 
-### Model execution for different devices
+### Model execution for different devices {#model-execution-for-different-devices}
 
 Models are executed independently of each other. That is, models for specific devices can execute in parallel, making use of hardware parallelism where possible, if models are processing data \(such as `Measurement`, `Event`, or `Operation` objects\) for a different set of devices. When defining a model, you can configure it to use data from a set of specific devices or from a group of devices, with each device being handled independently.
 
@@ -39,7 +39,7 @@ You can use the model editor to change input and output blocks from one device, 
 
 The test and simulation modes are only permitted for models using specific devices. If you wish to test or simulate a model using a group of devices, then use the model editor to modify it to apply to a single device within the group, and then activate the model in test or simulation mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information on these modes.
 
-#### Configuring the concurrency level
+#### Configuring the concurrency level {#configuring-the-concurrency-level}
 
 By default, the Analytics Builder runtime uses 1 CPU core to execute models. If you want to change the number of CPU cores, send a `POST` request to {{< product-c8y-iot >}} that changes the value for the `numWorkerThreads` key. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for detailed information.
 
@@ -51,7 +51,7 @@ With the concurrency level set to 1, it is still possible to create models which
 Using multiple specific devices in a model with the concurrency level set to more than 1 can lead to connections between models which are deployed across multiple workers. Chains of models using multiple specific devices with high throughput usually scale less well than chains of models all using a single specific device.
 {{< /c8y-admon-info>}}
 
-### Broadcast devices
+### Broadcast devices {#broadcast-devices}
 
 It is sometimes useful to have signals that can apply to all models. These may be signals from devices, or from other systems that are presented as if they were signals from a device. Analytics Builder thus supports devices that are referred to as broadcast devices and signals from these devices are available to all models across all devices.
 
@@ -63,11 +63,11 @@ Unlike other devices, a broadcast device can only be used for synchronous output
 
 It is also not possible to connect models together using synchronous data from a broadcast device output \(that is, no model may use a measurement from a broadcast device that is the output of a different model\). Models can be connected together using asynchronous outputs from a broadcast device \(that is, models may use an operation from a broadcast device that is the output of a different model\).
 
-#### Identifying broadcast devices
+#### Identifying broadcast devices {#identifying-broadcast-devices}
 
 Broadcast devices are identified by the presence of a property on the device object in the inventory for that device; the presence of either the `pas_broadcastDevice` or `c8y_Kpi` property. Thus, whether a device is considered a broadcast device or not is global for that device across all models. It is not permitted to use a group of devices that contains a broadcast device. `c8y_Kpi` objects are typically used with the [KPI](/streaming-analytics/block-reference/#kpi) block. Thus, it is possible to use a KPI object to compare measurements from a group of devices - one KPI object is used for all devices in the group.
 
-### Virtual devices
+### Virtual devices {#virtual-devices}
 
 A virtual device is used when a model is deployed in test or simulation mode. See also [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
 
@@ -89,7 +89,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 Virtual devices are not shown in the Device management application. Use [REST](/smartrest/overview/) operations to find these entries.
 
-### Connections between models
+### Connections between models {#connections-between-models}
 
 You can connect multiple models together using output blocks and input blocks. A model that contains an output block such as **Measurement Output** \(for `Measurement` objects of {{< product-c8y-iot >}}\) will generate a series of events, and this can be consumed by a suitable input block \(such as **Measurement Input**\) in another model. For more details, see [Keys for identifying a series of events](/streaming-analytics/analytics-builder/#keys-for-identifying-a-series-of-events).
 
@@ -132,7 +132,7 @@ Note that only activating any two of these models can be done without error. If 
 Using multiple specific devices in a model with the concurrency level set to more than 1 can lead to connections between models which are deployed across multiple workers. Chains of models using multiple specific devices with high throughput usually scale less well than chains of models all using a single specific device.
 {{< /c8y-admon-info>}}
 
-### Configuring the number of shown devices, groups and/or assets
+### Configuring the number of shown devices, groups and/or assets {#configuring-the-number-of-shown-devices-groups-andor-assets}
 
 By default, a maximum of 10 items are shown in the following cases:
 
@@ -155,7 +155,7 @@ For example, specify the following to set the value to 20:
 
 See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
-### Searching for devices, groups and/or assets
+### Searching for devices, groups and/or assets {#searching-for-devices-groups-andor-assets}
 
 By default, only devices, groups and assets are shown in the following cases:
 

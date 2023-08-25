@@ -4,13 +4,13 @@ title: Overview
 layout: redirect
 ---
 
-### MQTT ClientId
+### MQTT ClientId {#mqtt-clientid}
 
 Although you need to send the IDs in the body of each message with SmartREST 1.0, it is still important to connect with the correct MQTT ClientId.
 
 The MQTT ClientId needs to match the externalId with type `c8y_Serial` of your device. It is used to assign the correct operations and responses.
 
-### Sending and receiving SmartREST 1.0
+### Sending and receiving SmartREST 1.0 {#sending-and-receiving-smartrest-10}
 
 In general, the following holds for SmartREST requests and responses via MQTT:
 
@@ -19,7 +19,7 @@ In general, the following holds for SmartREST requests and responses via MQTT:
 * Every matching response template will yield one row in the response.
 * Response lines are separated by `\n`.
 
-#### Sending SmartREST 1.0
+#### Sending SmartREST 1.0 {#sending-smartrest-10}
 
 To send data to the server you can publish the same content as you would POST to the SmartREST endpoint <kbd>/s</kbd>.
 
@@ -40,7 +40,7 @@ To make sure, we recommend you to use reverse domain names, for example:
 
 We also recommend you to add the protocol version as a postfix in the X-ID.
 
-##### Processing mode
+##### Processing mode {#processing-mode}
 
 Since the {{< product-c8y-iot >}} SmartREST protocol supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
 
@@ -60,7 +60,7 @@ The {{< product-c8y-iot >}} SmartREST protocol also supports CEP processing mode
 c/ul/<X-ID>
 ```
 
-#### Receiving SmartREST 1.0
+#### Receiving SmartREST 1.0 {#receiving-smartrest-10}
 
 If a template triggers a response template, the returning message will be published by the server on the following topic.
 
@@ -70,7 +70,7 @@ s/dl/<X-ID>
 
 This topic can be subscribed by the client.
 
-### Receiving operations
+### Receiving operations {#receiving-operations}
 
 SmartREST 1.0 via HTTP offers the <kbd>/notification/operations</kbd> endpoint to listen to realtime operations. You can receive the same content on the following MQTT topic.
 
@@ -82,7 +82,7 @@ To get notifications running, the platform device must have an external ID set w
 {{< /c8y-admon-info >}}
 
 
-### Limitations
+### Limitations {#limitations}
 
 MQTT currently does not support request/response. Therefore, if you send a request on the publish topic and receive a response on the subscribe topic, the client cannot securely match that they belong together.
 

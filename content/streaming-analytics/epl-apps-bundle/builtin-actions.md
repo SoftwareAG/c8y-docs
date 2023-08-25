@@ -4,13 +4,13 @@ title: Built-in actions
 layout: redirect
 ---
 
-### Overview
+### Overview {#overview}
 
 With Apama EPL, it is possible to utilize functions, called "actions". Every monitor will have at least one action - the `onload` action. This section covers the already built-in actions ready to use.
 
 See also the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}) for actions on the built-in types.
 
-### Querying {{< product-c8y-iot >}} data
+### Querying {{< product-c8y-iot >}} data {#querying-platform-data}
 
 To interact with your historical data, you can use one of the following request-response event pairs to look up resources.
 
@@ -50,7 +50,7 @@ This includes personal identifiable information, such as username, email address
 For more information, see [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) in the {{< openapi >}}
 and [Invoking other parts of the Cumulocity IoT REST API]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
 
-### Invoking HTTP services
+### Invoking HTTP services {#invoking-http-services}
 
 {{< c8y-admon-info >}}
 The information below is for interacting with *external* HTTP services. For making requests to other parts of the {{< product-c8y-iot >}} REST API,
@@ -71,9 +71,9 @@ In the callback, the `Response` object is supplied with `statusCode` and `payloa
 
 Refer to the [API Reference for EPL (ApamaDoc)]({{< link-apamadoc-api >}}) for further details.
 
-### Utility functions
+### Utility functions {#utility-functions}
 
-#### Access fragments
+#### Access fragments {#access-fragments}
 
 You can access fragments via the `params` dictionary of most events. The `AnyExtractor` object can be constructed to help you extract data from any objects containing multiple subfragments and access:
 
@@ -98,7 +98,7 @@ string s := AnyExtractor(measurement.params["fragment"]).getString("sub.fragment
 >Example "fragment": "c8y_TemperatureMeasurement".<br>
 >Example "sub.fragment.object": "c8y_TemperatureMeasurement.T.Unit".
 
-#### Casting "any" values
+#### Casting "any" values {#casting-any-values}
 
 Alternatively, use a cast to convert an `any` to a particular type:
 
@@ -108,7 +108,7 @@ string s := <string> measurement.params["strfragment"];
 
 Note that a cast operation will throw if the object is of a different type.
 
-#### currentTime and the TimeFormatter
+#### currentTime and the TimeFormatter {#currenttime-and-the-timeformatter}
 
 The read-only variable `currentTime` can be used to obtain the current server time. Apama deals with time using seconds since the Unix Epoch (1 Jan 1970 UTC). You can easily transform it to a human-readable form using the `TimeFormat` object.
 The `TimeFormat` object can be used for formatting dates and times, and also for parsing them.
@@ -127,7 +127,7 @@ monitor Example {
 
 For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fre-DevApaAppInEpl_using_the_time_format_plug_in.html) in the Apama documentation and the API Reference for EPL (ApamaDoc).
 
-#### inMaintenanceMode
+#### inMaintenanceMode {#inmaintenancemode}
 
 The `Util.inMaintenanceMode()` function is a fast way to check if the device is currently in maintenance mode. It takes a managed object as a parameter and returns a Boolean which is true if the device is in maintenance mode.
 
@@ -160,7 +160,7 @@ monitor ExampleMonitor {
 }
 ```
 
-#### replacePlaceholders
+#### replacePlaceholders {#replaceplaceholders}
 
 To build strings, you can use concatenation as follows:
 

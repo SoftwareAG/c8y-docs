@@ -9,15 +9,15 @@ In the **Applications** tab you can view all subscribed applications, subscribe 
 
 <img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
-### To subscribe an application
+### To subscribe an application {#to-subscribe-an-application}
 
 Hover over the application under **Available applications** at the right and click **Subscribe** on the desired application.
 
-### To unsubscribe an application
+### To unsubscribe an application {#to-unsubscribe-an-application}
 
 Hover over the application under **Subscribed applications** at the left and click **Unsubscribe**.
 
-### To monitor microservices
+### To monitor microservices {#to-monitor-microservices}
 
 For all applications hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols and may be in one of the following states:
 

@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-### Images and containers
+### Images and containers {#images-and-containers}
 
 Docker is a platform to develop, deploy and run applications with containers. An image is an executable package that includes everything needed to run an application (that is, the code, a runtime, libraries, environment variables and configuration files). A container is a runtime instance of an image (that is, what the image becomes in memory when executed). Refer to the [Docker documentation](https://docs.Docker.com/get-started/) for more information about Docker.
 
@@ -13,7 +13,7 @@ Docker is a platform to develop, deploy and run applications with containers. An
 
 Containers have an upper thread limit of 10240 for microservices.
 
-### Pods
+### Pods {#pods}
 
 Kubernetes is the container orchestration engine for automating deployment, scaling and management of containerized applications. A Pod is the basic building block of Kubernetes and it represents a running process on your cluster. A Pod encapsulates an application container, storage resources, a unique network IP and options that govern how the container should run.
 

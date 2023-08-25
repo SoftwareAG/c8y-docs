@@ -11,7 +11,7 @@ layout: bundle
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups (that is, global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
-### Permissions and ownership
+### Permissions and ownership {#permissions-and-ownership}
 
 The ability to execute certain functionality on the system depends on two concepts: Permissions and ownership.
 
@@ -39,7 +39,7 @@ However, you cannot manage any devices or groups that you did not create yoursel
 
 This concept helps to assign minimal permissions to devices.
 
-### Limiting access to managed objects
+### Limiting access to managed objects {#limiting-access-to-managed-objects}
 
 {{< product-c8y-iot >}} allows you to set global permissions that are applicable to all managed objects, measurements, events and so forth. It also allows a limitation of permits
 
@@ -47,7 +47,7 @@ This concept helps to assign minimal permissions to devices.
 * to a single user or a group of users,
 * to individual fragments.
 
-### Managing roles and assigning permissions
+### Managing roles and assigning permissions {#managing-roles-and-assigning-permissions}
 
 Global roles and inventory roles are created and managed in the **Roles** page of the Administration application in the UI.
 
@@ -55,6 +55,6 @@ A detailed description on available default roles and on creating and assigning 
 
 For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
 
-### Globally accessible objects
+### Globally accessible objects {#globally-accessible-objects}
 
 It is possible to make any object accessible by any user without specific rights. To grant those rights just add a new fragment called `c8y_Global` to the object.

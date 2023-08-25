@@ -20,7 +20,7 @@ Click **Properties library** in the **Settings** menu, to add custom properties 
 
 With custom properties, you can extend the data model of {{< product-c8y-iot >}} built-in objects. You may create the following custom values:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/cockpit/widgets-collection/#widget-asset-table) and [Asset properties widget](/cockpit/widgets-collection/#asset-properties).
+- Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/cockpit/widgets-collection/#asset-table) and [Asset properties widget](/cockpit/widgets-collection/#asset-properties).
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
@@ -31,7 +31,7 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 {{< /c8y-admon-related >}}
 
 
-### To add a custom property
+### To add a custom property {#to-add-a-custom-property}
 
 1. Select the tab for the desired property and click **Add property**.
 
@@ -84,14 +84,14 @@ With custom properties, you can extend the data model of {{< product-c8y-iot >}}
 
 4. Click **Save** to create the new property.
 
-### To edit a custom property
+### To edit a custom property {#to-edit-a-custom-property}
 
 1. Click on the name of a property in the list to open it.
 2. Do your edits. For details on the fields see [To add a custom property](#to-add-a-custom-property).
 3. Click **Save** to save your settings.
 
 
-### To remove a custom property
+### To remove a custom property {#to-remove-a-custom-property}
 
 1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.

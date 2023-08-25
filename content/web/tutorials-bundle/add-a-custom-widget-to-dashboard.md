@@ -14,7 +14,7 @@ A typical dashboard looks like this, showing various widgets:
 
 This recipe will show how to add a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
-### 1. Initialize the example application
+### 1. Initialize the example application {#1-initialize-the-example-application}
 
 As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:
@@ -33,7 +33,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
-### 2. Create the widget components
+### 2. Create the widget components {#2-create-the-widget-components}
 
 Widgets usually consist of two parts:
 
@@ -113,7 +113,7 @@ export class WidgetConfigDemo {
 }
 ```
 
-### 3. Add the widget to your application
+### 3. Add the widget to your application {#3-add-the-widget-to-your-application}
 
 To add the widget you must use the `HOOK_COMPONENTS` and define the created components as `entryComponents`.
 

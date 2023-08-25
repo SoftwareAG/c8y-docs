@@ -20,7 +20,7 @@ You can develop microservices for {{< product-c8y-iot >}} with any IDE and build
 
 If you face any issue or need technical support, please refer to the [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}). You will find there many useful questions and answers.
 
-#### Upgrading the SDK
+#### Upgrading the SDK {#upgrading-the-sdk}
 
 The latest supported SDK is based on .NET Core 3.1 and **Visual Studio 2019** is required for supporting it.
 To migrate your current version (for example 9.20.0 or 1004.12.0) to a new one of the SDK, update all dependencies to the latest version, for example, 1006.6.0, and update the project to .Net SDK 3.1. The developer who is upgrading an existing project to the latest version of SDK (1006.6.0) must follow the offical [Microsoft guidelines](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio) about the code changes to be done for upgrading.
@@ -30,7 +30,7 @@ To migrate your current version (for example 9.20.0 or 1004.12.0) to a new one o
 For new projects, you shall use a new bundle of [building scripts](https://github.com/SoftwareAG/cumulocity-clients-cs/tree/develop/Examples/BuildingScripts/v3.1), and it is recommended to use [Cumulocity.SDK.Microservices v1006.6.0](https://www.nuget.org/packages/Cumulocity.SDK.Microservices/1006.6.0) based on .Net Core 3.1.
 
 
-### Development prerequisites
+### Development prerequisites {#development-prerequisites}
 
 To use the C# client libraries for development, you must install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
@@ -51,19 +51,19 @@ Depending on what you want to do, you need either the .NET Core SDK or the .NET 
 *   .NET Core SDK - Includes tools and libraries to build .NET Core applications.
 *   .NET Core Runtime - Required to run .NET Core applications.
 
-#### Windows system requirements
+#### Windows system requirements {#windows-system-requirements}
 
 *   Powershell (at least Version 6 or Core)
 *   .NET Core SDK (at least Version 3.1)
 *   Docker for Windows (at least Version 17.06)
 
-#### Linux system requirements
+#### Linux system requirements {#linux-system-requirements}
 
 *   .NET Core SDK (at least Version 3.1)
 *   Docker (at least Version 17.06)
 *   Mono (at least Version 6.8.0)
 
-### Runtime prerequisites
+### Runtime prerequisites {#runtime-prerequisites}
 
 The most important requirement is an installation of [Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) or later.
 

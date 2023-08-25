@@ -9,7 +9,7 @@ Here you will learn how to create your first microservice that can be deployed o
 
 Requests to a microservice can be authenticated using basic authentication or OAuth. Refer to [Authentication and authorization](/microservice-sdk/general-aspects/#authentication-and-authorization) for more details.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 You must have {{< product-c8y-iot >}} credentials and a dedicated tenant. In case you do not have that yet, create an account on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
@@ -60,7 +60,7 @@ Server: Docker Engine - Community
   GitCommit:        de40ad0
 ```
 
-### Developing the "Hello world" microservice
+### Developing the "Hello world" microservice {#developing-the-hello-world-microservice}
 
 You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
@@ -68,7 +68,7 @@ You can download the source code of this example from our [GitHub](https://githu
 This microservice example has been tested under macOS, Ubuntu and Windows 10 with Java 17, Maven 3.8.5, Docker 20.10.14; latest version of IntelliJ IDEA as IDE. Other tools or Java versions may require different configurations.
 {{< /c8y-admon-important >}}
 
-#### Create a Maven project
+#### Create a Maven project {#create-a-maven-project}
 
 Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
 
@@ -78,7 +78,7 @@ $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-microservice-j
 
 This will create a folder *hello-microservice-java* in the current directory with a skeleton structure for your project.
 
-#### Specify the properties
+#### Specify the properties {#specify-the-properties}
 
 You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to set the `-source` and `-target` of the [Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 17. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
 
@@ -91,7 +91,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 </properties>
 ```
 
-#### Add the microservice library
+#### Add the microservice library {#add-the-microservice-library}
 
 You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
@@ -120,7 +120,7 @@ In the `<properties>` element specified above, add a child element `<c8y.version
 When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 {{< /c8y-admon-important >}}
 
-#### Add repositories and dependencies
+#### Add repositories and dependencies {#add-repositories-and-dependencies}
 
 Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the {{< product-c8y-iot >}} Maven repository which stores the client libraries.
 
@@ -169,7 +169,7 @@ Add a `<dependencyManagement>` element to automatically manage the required arti
 </dependencyManagement>
 ```
 
-#### Configure the build plugins
+#### Configure the build plugins {#configure-the-build-plugins}
 
 Your microservice application must be packed as a Docker image in a ZIP file including all the required dependencies. To achieve that, include in your _pom.xml_ file build plugins as follows:
 
@@ -217,7 +217,7 @@ Your microservice application must be packed as a Docker image in a ZIP file inc
 The name of the generated ZIP file is specified in the image element as `<image>${microservice.name}</image>`. It takes the name from the previously defined property `microservice.name`, which in this case is *hello-microservice-java*.
 
 
-#### Create a Java application
+#### Create a Java application {#create-a-java-application}
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
 
@@ -256,7 +256,7 @@ Employing the `@MicroserviceApplication` annotation is a simple way to add the r
 * Internal platform API
 * Spring Boot application
 
-#### Configure the microservice application
+#### Configure the microservice application {#configure-the-microservice-application}
 
 Create the directory _src/main/resources_ to contain an _application.properties_ file specifiying the name of the microservice application and the server port:
 
@@ -280,7 +280,7 @@ Create the directory _src/main/configuration_ to contain a _cumulocity.json_ fil
 }
 ```
 
-#### Build the microservice application
+#### Build the microservice application {#build-the-microservice-application}
 
 In a terminal, navigate to the folder where your _pom.xml_ is located and execute the following Maven command:
 
@@ -295,7 +295,7 @@ $ ls target | grep zip
 hello-microservice-java-1.0.0-SNAPSHOT.zip
 ```
 
-### Deploying the "Hello world" microservice
+### Deploying the "Hello world" microservice {#deploying-the-hello-world-microservice}
 
 To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 
@@ -312,7 +312,7 @@ Upload the ZIP file for your microservice application and click **Subscribe** to
 
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
-#### Test the deployed microservice
+#### Test the deployed microservice {#test-the-deployed-microservice}
 
 Employing your tenant credentials, you can test the microservice on any web browser using the URL as follows:
 
@@ -345,7 +345,7 @@ $ curl --user "<TENANTID>/<USERNAME>:<PASSWORD>" https://<yourTenantDomain>/serv
 ```
 
 
-### Running the microservice locally
+### Running the microservice locally {#running-the-microservice-locally}
 
 You can run the Docker container locally in order to test the REST calls from the microservice to {{< product-c8y-iot >}}.
 
@@ -354,7 +354,7 @@ To run a microservice which uses the {{< product-c8y-iot >}} API locally, you ne
 * A valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
-#### Create the application
+#### Create the application {#create-the-application}
 
 If the application does not exist, create a new application on the {{< product-c8y-iot >}} platform employing a POST request.
 
@@ -419,7 +419,7 @@ In case of errors, such as invalid names, you will get the details printed in th
 
 In the Administration application, navigate to **Ecosystem** > **Microservices**. There you will see the created microservice.
 
-#### Acquire the microservice bootstrap user
+#### Acquire the microservice bootstrap user {#acquire-the-microservice-bootstrap-user}
 
 You will need the bootstrap user credentials in order to run the microservice locally. Get the details of your bootstrap user with a GET request.
 
@@ -445,7 +445,7 @@ The response looks like this:
 }
 ```
 
-#### Run the Docker container
+#### Run the Docker container {#run-the-docker-container}
 
 The Docker image was built using your local Docker repository during the [Maven build](#build-the-microservice-application). **Note, that by default the image is deleted to keep your registry clean during development**. You can change this by adding the property `microservice.package.deleteImage=false` to the maven command or *pom.xml*.
 
@@ -496,7 +496,7 @@ If your Docker image has run successfully, you shall see the output on the conso
 2022-10-21 15:53:17.598  INFO 7 --- [main] c8y.example.App                          : Started App in 11.32 seconds (JVM running for 12.192)
 ```
 
-#### Subscribe to the microservice
+#### Subscribe to the microservice {#subscribe-to-the-microservice}
 
 In the Administration application, navigate to **Ecosystem** > **Microservices**. Locate your microservice application and click it to open its details. On the top right, click **Subscribe**.
 
@@ -504,6 +504,6 @@ At this point, you may open your favorite browser and test your microservice at 
 
 You may also use the name parameter, for example, <http://localhost:8082/hello?name=Neo>.
 
-### Improving the microservice
+### Improving the microservice {#improving-the-microservice}
 
 Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/java/#java-example) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

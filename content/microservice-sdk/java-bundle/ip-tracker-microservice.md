@@ -8,7 +8,7 @@ layout: redirect
 Visit our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial) and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
 {{< /c8y-admon-important >}}
 
-### Developing the IP-tracker microservice
+### Developing the IP-tracker microservice {#developing-the-ip-tracker-microservice}
 
 This microservice application creates a warning alarm message (for demonstration purposes) and it exposes endpoints to:
 
@@ -20,7 +20,7 @@ This microservice application creates a warning alarm message (for demonstration
 
 It also uses the {{< product-c8y-iot >}} UI to display the tracked locations on a map.
 
-#### Update the Project Object Model
+#### Update the Project Object Model {#update-the-project-object-model}
 
 Assuming that you have the base code presented in our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial), edit your *pom.xml* file changing the `artifactId` and `microservice.name` of your microservice to `iptracker-microservice`.
 Also add a child element `<java.version>` to the `<properties>` element to specify the Java version you want to use.
@@ -53,7 +53,7 @@ Finally, add the following dependency:
 </dependency>
 ```
 
-#### Update the application manifest
+#### Update the application manifest {#update-the-application-manifest}
 
 In your _cumulocity.json_ file:
 
@@ -107,7 +107,7 @@ Your manifest file should look similar to this:
 }
 ```
 
-### Creating a managed object
+### Creating a managed object {#creating-a-managed-object}
 
 An alarm must be associated with a source and it requires an ID.
 Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
@@ -143,7 +143,7 @@ On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-newdevice.png)
 
-### Getting the client's location
+### Getting the client's location {#getting-the-clients-location}
 
 The microservice will get the approximate location based on the client's IP.
 To achieve this, it uses the free service [ipstack](https://ipstack.com) and you must [get a free API key](https://ipstack.com/product).
@@ -198,7 +198,7 @@ public class Location {
 }
 ```
 
-### Updating the application
+### Updating the application {#updating-the-application}
 
 Modify your _App.java_ file and:
 
@@ -400,7 +400,7 @@ public class App {
 }
 ```
 
-### Building and deploying the application
+### Building and deploying the application {#building-and-deploying-the-application}
 
 Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial) to deploy your microservice.
 You may also employ the cURL command to deploy the microservice.
@@ -411,7 +411,7 @@ $ curl -F "data=@target/iptracker-microservice-1.0.0-SNAPSHOT.zip" \
      "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-### Testing the application
+### Testing the application {#testing-the-application}
 
 You can test any endpoint of your application using the command line or a web browser.
 For example, a GET request to <kbd>location/track</kbd> will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location.
@@ -443,7 +443,7 @@ Refer to [Application library](/web/libraries/#application-library).
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 
-#### Run the Docker container
+#### Run the Docker container {#run-the-docker-container}
 
 The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application) if the following property is set `microservice.package.deleteImage=false`.
 As you have learned in our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial), you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
@@ -457,6 +457,6 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> -e C8Y_B
 If your Docker image has run successfully, you can test the microservice on any web browser.
 For instance, using <http://localhost:8082/location/locations> will return all the tracked locations.
 
-### Source code
+### Source code {#source-code}
 
 The code of our [iptracker-microservice](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/microservices/iptracker-microservice) can be found in our public GitHub repositories.

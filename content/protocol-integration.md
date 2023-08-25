@@ -9,4 +9,4 @@ section:
 weight: 40
 ---
 
-Cumulocity IoT supports numerous device protocols which allow you to use a wide variety of IoT devices with different parameters and network connectivity options. 
+{{< product-c8y-iot >}} supports numerous device protocols which allow you to use a wide variety of IoT devices with different parameters and network connectivity options. 

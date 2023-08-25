@@ -8,7 +8,7 @@ In this tutorial, you will learn how to use the Java MQTT client with {{< produc
 
 In the GitHub repository [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client), you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
 
-### Prerequisites  
+### Prerequisites   {#prerequisites--}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -16,7 +16,7 @@ In order to follow this tutorial, check the following prerequisites:
 *   You have a valid tenant, a user and a password in order to access {{< product-c8y-iot >}}.
 *   You have a valid certificate. If you don't have it, follow the instructions in the next section to generate one.
 
-#### To generate a valid certificate
+#### To generate a valid certificate {#to-generate-a-valid-certificate}
 
 If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
@@ -30,14 +30,14 @@ If you don't have a valid certificate, you can generate one for testing purposes
 $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key-iot-device-0001.jks -alias "Alias"
 ```
 
-### Developing the "Hello, MQTT world!" client with certificates  
+### Developing the "Hello, MQTT world!" client with certificates   {#developing-the-hello-mqtt-world-client-with-certificates--}
 
 To develop a "Hello, world!" MQTT client for {{< product-c8y-iot >}} with certificates, you must
 
 *  copy the certificate and upload it to the platform,
 *  change the configuration in the MQTT client.
 
-#### To copy and upload the certificate
+#### To copy and upload the certificate {#to-copy-and-upload-the-certificate}
 
 Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to the platform employing a POST request:
 
@@ -55,7 +55,7 @@ Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to 
 }
 ```
 
-### To change the configuration
+### To change the configuration {#to-change-the-configuration}
 
 To change the configuration in the MQTT client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
 

@@ -19,7 +19,7 @@ There are several options for building a micro frontend architecture:
 
 {{< product-c8y-iot >}} is already based on a micro frontend architecture. In fact, the server-side option is a concept of the platform since the beginning. The compile-time option was introduced in 2018. However, there is also a need for the runtime extension of applications, which is why it is introduced to {{< product-c8y-iot >}}. See the sections below for more information.
 
-### Introducing plugins: Dynamically extending platform web applications
+### Introducing plugins: Dynamically extending platform web applications {#introducing-plugins-dynamically-extending-platform-web-applications}
 Plugins are a new concept to dynamically load features at runtime and allow an extension of any Web SDK based web application. To extend an application:
  
 1. In the Administration application, clone the application you want to extend, for example clone the Cockpit application.

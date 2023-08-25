@@ -4,7 +4,7 @@ title: Examples
 layout: redirect
 ---
 
-### Calculating an hourly average of measurements
+### Calculating an hourly average of measurements {#calculating-an-hourly-average-of-measurements}
 
 We are assuming the input data looks like this:
 
@@ -60,7 +60,7 @@ monitor HourlyAvgMeasurementDeviceContext {
 }
 ```
 
-### Creating alarms from bit measurements
+### Creating alarms from bit measurements {#creating-alarms-from-bit-measurements}
 
 Devices often keep alarm statuses in registers and cannot interpret the meaning of alarms. In this example, we assume that a device just sends the entire register as a binary value in a measurement. A rule must identify the bits and create the respective alarm.
 
@@ -150,7 +150,7 @@ will trigger the last statement three times.
 
 and therefore create three alarms.
 
-### Consumption measurements
+### Consumption measurements {#consumption-measurements}
 
 Assuming we have a sensor which measures the current fill level of something and sends the values on a regular basis to {{< product-c8y-iot >}}, we can easily create additional consumption values. Calculating the absolute difference between two measurements can be useful, but it will only give you a clear view if the measurements are sent always in the same interval. Therefore, we will put the absolute difference in relation to the time difference and calculate as a per hour consumption.
 
@@ -200,6 +200,6 @@ monitor FillLevelMeasurements {
 }
 ```
 
-### Miscellaneous sample apps
+### Miscellaneous sample apps {#miscellaneous-sample-apps}
 
 The EPL editor in the Streaming Analytics application provides several sample apps which demonstrate how to use Apama EPL, for example, to query for {{< product-c8y-iot >}} objects or to create alarms. You can use these samples to build your own apps.

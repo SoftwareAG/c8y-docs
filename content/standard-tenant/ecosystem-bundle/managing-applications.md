@@ -10,7 +10,7 @@ helpcontent:
     content: "In the **Applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
 
-    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the *User guide*.
+    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the user documentation.
 
     **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
 
@@ -27,7 +27,7 @@ helpcontent:
     Duplicates of subscribed applications.
 
 
-    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
+    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the user documentation."
   - label: features
     title: Features
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
@@ -42,7 +42,7 @@ Your applications are available through the application switcher in the top bar.
 
 <img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
-### To view applications
+### To view applications {#to-view-applications}
 
 Click **Applications** in the **Ecosystem** menu in the navigator to display a list or grid of all applications in your account.
 
@@ -53,7 +53,7 @@ In the **Applications** tab, you can see all applications available in your tena
 Applications can be filtered by name or by availability.
 
 
-### To edit an application
+### To edit an application {#to-edit-an-application}
 
 Click the application or click the menu icon at the right of an entry and then click **Edit**.
 
@@ -63,7 +63,7 @@ In the **Properties** tab, several fields can be modified, depending on the appl
 Never change the system application names (such as "Device management", "Cockpit"). Otherwise, tenant initialization will fail.
 {{< /c8y-admon-important >}}
 
-### To delete an application
+### To delete an application {#to-delete-an-application}
 
 Click the menu icon at the right of an entry and then click **Delete**. You can also delete an application directly from the **Properties** tab in the application details.
 
@@ -72,7 +72,7 @@ If you delete an application that overwrites a subscribed application, the curre
 It is not possible to delete subscribed applications. This can only be done by the owner of the subscribed application.
 
 
-### Features
+### Features {#features}
 
 Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications).
 

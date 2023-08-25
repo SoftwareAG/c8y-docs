@@ -4,7 +4,7 @@ title: Wires and blocks
 layout: redirect
 ---
 
-### Values sent on a wire
+### Values sent on a wire {#values-sent-on-a-wire}
 
 Blocks within a model are connected from block outputs to block inputs with wires.
 
@@ -51,7 +51,7 @@ Wires allow blocks to pass signals and values between blocks. The value sent on 
 
 The type of a wire depends on the output to which it is connected. This can be viewed in the block reference. Similarly, the type \(or supported types\) of a block's input can be viewed in the block reference.
 
-#### Value types
+#### Value types {#value-types}
 
 The following types are referred to as value types:
 
@@ -345,7 +345,7 @@ If the **Average \(Mean\)** block was configured with a window of 10 seconds, th
 
 In the above, note how the current value only has any weighting in the window \(that is, contributing to the output value\) after the measurement is received. At the point the measurement is received, it has zero weighting compared to the previous history. As before, the sensor's value remains the effective input until it is replaced with a newer value \(note that this is different to aggregates with timed-based windows in Apama queries or stream queries\). For example, the block has an effective input value of 23.5 from 10:00:35 to 10:00:40, and the value 23.5 is thus only finally expired from the window at 10:00:50, 10 seconds after it ceased to be the current effective input value, rather than 10 seconds after it first entered the window. Finally, note that when the window is empty, the effective input is used as the output instead, as the window is zero-length.
 
-#### The pulse type
+#### The pulse type {#the-pulse-type}
 
 In contrast to value types, the `pulse` type represents a single point in time. For example, this may be a result of:
 
@@ -361,13 +361,13 @@ Pulses are active momentarily. In some regards, they are similar to a Boolean va
 
 Repeated pulses are typically significant, though they may not necessarily result in any change, depending on how they are being used. For example, repeatedly resetting an **Average \(Mean\)** block while its input value is unchanged will result in the output value remaining the same.
 
-#### The any type
+#### The any type {#the-any-type}
 
 The `any` type is used on blocks which pass through a value of any type \(for example, a **Time Delay** block or a **Gate** block\).
 
 Values of the `any` type can represent a value type or a `pulse` type.
 
-### Type conversions
+### Type conversions {#type-conversions}
 
 It is legal to connect a block output to a block input if they are the same type. Most other connections are also permissible, which result in the conversions as described in the table below. The following image indicates that a connection is not legal; trying to deploy a model with such a wiring connection will fail.
 ![X](/images/streaming-analytics/analytics-builder/type-conversion-error.png)
@@ -484,7 +484,7 @@ Different types of pulse conversions are possible with the **Pulse** block, depe
 </tbody>
 </table>
 
-### Processing order of wires
+### Processing order of wires {#processing-order-of-wires}
 
 Where a block has multiple inputs connected, all of these inputs are calculated before the block performs any calculations based on the inputs. It may be that the inputs for a block occur out of step with each other \(such as in the example for two temperature sensors in [Value types](/streaming-analytics/analytics-builder/#value-types)\), in which case a block uses the latest value for value type inputs.
 
@@ -494,7 +494,7 @@ Where a single value is sent on two or more paths which both lead to the same bl
 
 When the device measurement is received, the **Average \(Mean\)** block calculation is completed to generate an average before the **Difference** block computes the difference between the value and its average.
 
-### Wire restrictions
+### Wire restrictions {#wire-restrictions}
 
 While a block's output can be connected to multiple other blocks, a block's input can only have a single connection.
 
@@ -512,7 +512,7 @@ For example, there are three blocks: Block1, Block2 and Block3. A model would co
 
 There are many possible connections which may lead to cycles in the model. The model editor, however, prevents you from creating cycles.
 
-### Block inputs and outputs
+### Block inputs and outputs {#block-inputs-and-outputs}
 
 Many blocks have inputs or outputs that do not have to be used.
 
@@ -522,7 +522,7 @@ Some blocks have inputs, especially inputs of the `pulse` type, which do not hav
 
 Blocks can, when needed, detect which inputs are connected. For example, the **AND** block has five inputs, but it only requires the inputs that are connected to be `true` to generate a `true` output.
 
-### Common block inputs and parameters
+### Common block inputs and parameters {#common-block-inputs-and-parameters}
 
 The inputs listed below are the names of common input ports that are shown on the left side of a block.
 
@@ -558,7 +558,7 @@ The inputs listed below are the names of common input ports that are shown on th
 
     Note that when a model is running in simulation mode, the setting of the **Ignore Timestamp** parameter is ignored. The block will always use the source timestamp, so that when replaying simulation events, the data is guaranteed to be processed in order and this will yield more realistic results \(and there is no record of when the data was received, only the source timestamp\). See also [About simulation mode](/streaming-analytics/analytics-builder/#about-simulation-mode).
 
-### Input blocks and event timing
+### Input blocks and event timing {#input-blocks-and-event-timing}
 
 Input blocks make data from external sources \(such as {{< product-c8y-iot >}} measurements\) available to the model. Many data sources have timestamps on each piece of data, which reports the time that a measurement or event actually occurred. There may be delays in transmitting the data to the Apama system for processing, leading to events being received by Apama out of order.
 
@@ -589,7 +589,7 @@ If the time delay value is set too low, then a small delay may result in Apama d
 
 The correlator logs the number of dropped events periodically to the correlator log file. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for configuring logging throttling and [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log).
 
-### Output blocks and event timing
+### Output blocks and event timing {#output-blocks-and-event-timing}
 
 Output blocks make data \(such as {{< product-c8y-iot >}} measurements or operations\) from the model available to external systems \(such as {{< product-c8y-iot >}}\). Outputs blocks can either produce synchronous or asynchronous values.
 
@@ -607,7 +607,7 @@ The following table lists the available output blocks and indicates whether the 
 |Measurement Output    |Synchronous|
 |Operation Output      |Asynchronous|
 
-### Fragment properties on wires
+### Fragment properties on wires {#fragment-properties-on-wires}
 
 Each wire has a primary value that is of the type of the wire: one of `float`, `boolean`, `string` or `pulse`.
 
@@ -615,7 +615,7 @@ In addition to this, some blocks may provide other fragments of information alon
 
 Most blocks only operate on the primary value from their input wires, but some blocks can make use of these fragment properties values and extract them into separate output ports \(for an example, see the **Extract Property** block\). This gives more flexibility in processing more complex data from external sources.
 
-### Keys for identifying a series of events
+### Keys for identifying a series of events {#keys-for-identifying-a-series-of-events}
 
 Input and output blocks identify a series of events by specifying a key for the series \(or stream\) of events. This series of events is used to identify correct events to deliver to an input block. The key is made up of multiple block parameters, and identifies that series of events distinct from other series of events through the same block type. For example:
 

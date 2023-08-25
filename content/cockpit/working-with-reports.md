@@ -13,7 +13,7 @@ helpcontent:
     On a report dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the report or use the cogwheel icon to edit or remove widgets.
 
 
-    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See **Widgets collection**  for details on each widget type and its configuration."
+    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
 ---
 
 Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the asset hierarchy.
@@ -25,12 +25,9 @@ ROLES & PERMISSIONS:
 - To edit a report: ADMIN permission for permission type "Inventory"
 - To add a new report: CREATE permission for permission type "Inventory"
 - To delete a report: ADMIN permission for permission type "Inventory"
-
 {{< /c8y-admon-req >}}
 
-
-<a name=""></a>
-### To show all reports
+### To show all reports {#to-show-all-reports}
 
 To show all reports, click **Reports** in the navigator.
 
@@ -44,10 +41,9 @@ Use the toggle in the **Show in navigator** column, if you want to show the repo
 
 ![Report in navigator](/images/users-guide/cockpit/cockpit-reports-navigator.png)
 
-See [To create a report](#create-report) below for details on how to configure the position in the navigator.
+See [To create a report](#to-create-a-report) below for details on how to configure the position in the navigator.
 
-<a name="create-report"></a>
-### To create a report
+### To create a report {#to-create-a-report}
 
 1. Click **Add report** in the top menu bar to open the **Add report** dialog.
   <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
@@ -65,16 +61,16 @@ Next, widgets can be added to the report.
 
 Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
-### To edit a report
+### To edit a report {#to-edit-a-report}
 
 Click on a report name in the report list to open its details.
 
 To edit the report, click **Edit** in the top menu bar.
 
-The report editor will open up. For details on the fields, refer to [To create a report](#create-report).
+The report editor will open up. For details on the fields, refer to [To create a report](#to-create-a-report).
 
 
-### To delete a report
+### To delete a report {#to-delete-a-report}
 
 1. In the **Reports** page, hover over the report item you want to delete and click the delete icon showing up at the right.
 2. Confirm to delete the report.

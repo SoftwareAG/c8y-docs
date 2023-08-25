@@ -31,9 +31,9 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 Reference models for the data can be found in the [fragment library](/device-integration/fragment-library/).
 
 
-### Startup Phase
+### Startup Phase {#startup-phase}
 
-#### Step 0: Request device credentials
+#### Step 0: Request device credentials {#step-0-request-device-credentials}
 
 Every request to {{< product-c8y-iot >}} needs to be authenticated, including requests from devices. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. To do so, request device credentials at first startup through the API and store them locally on the device for further requests.
 
@@ -82,7 +82,7 @@ For example, a credentials request for a device added to *xyz.{{< domain-c8y >}}
 If the valid tenant URL is known (for example *xyz.{{< domain-c8y >}}* as seen in the example above), then the username does not have to be prefixed by `<tenant ID>/` for authentication.
 
 
-#### Step 1: Check if the device is already registered
+#### Step 1: Check if the device is already registered {#step-1-check-if-the-device-is-already-registered}
 
 The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the [Identity API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Identity-API). In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, "c8y\_Serial" for a hardware serial, "c8y\_MAC" for a MAC address and "c8y\_IMEI" for an IMEI.
 
@@ -121,7 +121,7 @@ If a device is not yet registered, a 404 status code and an error message is ret
     }
 
 
-#### Step 2: Create the device in the inventory
+#### Step 2: Create the device in the inventory {#step-2-create-the-device-in-the-inventory}
 
 If Step 1 above indicated that no managed object representing the device exists, create the managed object in {{< product-c8y-iot >}}. The managed object describes the device, both its instance and metadata. Instance data includes hardware and software information, serial numbers, and device configuration data. Metadata describes the capabilities of the devices, including the supported operations.
 
@@ -202,7 +202,7 @@ For more information, refer to the [fragment library](/device-integration/fragme
 If the device could be successfully created, a status code of 201 is returned. If the original request contains an "Accept" header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).
 
 
-#### Step 3: Register the device
+#### Step 3: Register the device {#step-3-register-the-device}
 
 After the new device has been created, it can now be associated with its built-in identifier as described in Step 1. This ensures that the device can find itself in {{< product-c8y-iot >}} after the next power-up.
 
@@ -231,7 +231,7 @@ Continuing the above example, we would associate the newly created device "24803
     }
 
 
-#### Step 4: Update the device in the inventory
+#### Step 4: Update the device in the inventory {#step-4-update-the-device-in-the-inventory}
 
 If Step 1 above returned that the device was previously registered already, we must make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [{{< product-c8y-iot >}}'s domain model](/concepts/domain-model) for more information on fragments.)
 
@@ -254,7 +254,7 @@ Do not update the name of a device from an agent! An agent creates a default nam
 {{< /c8y-admon-important >}}
 
 
-#### Step 5: Discover child devices and create or update them in the inventory
+#### Step 5: Discover child devices and create or update them in the inventory {#step-5-discover-child-devices-and-create-or-update-them-in-the-inventory}
 
 Depending on the complexity of the sensor network, devices may have child devices associated with them. A good example is home automation: You often have a home automation gateway that installs a multitude of different sensors and controls installed in various rooms of the household. The basic registration of child devices is similar to the registration of the main device up to the fact, that child devices usually do not run an agent instance (hence the "com\_cumulocity\_model\_Agent" fragment is left out). To link a device with a child, send a POST request to the child devices URL that was returned when creating the object (see above).
 
@@ -284,7 +284,7 @@ This does not delete the device itself in the inventory, only the reference. To 
 
 This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to lose all historical information associated with the device.
 
-#### Step 6: Complete operations and subscribe
+#### Step 6: Complete operations and subscribe {#step-6-complete-operations-and-subscribe}
 
 Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. When an operation is created through a {{< product-c8y-iot >}} application, its status is PENDING, that means, it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in {{< product-c8y-iot >}}. The agent will then carry out the operation on the device or its children (for example it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (for example it updates the current state of the relay in the inventory). Then the agent will mark the operation in {{< product-c8y-iot >}} as either SUCCESSFUL or FAILED, potentially indicating the error.
 
@@ -391,9 +391,9 @@ Note that there might have been operations that were pending before we subscribe
     GET /devicecontrol/operations?agentId=2480300&status=PENDING HTTP/1.1
 
 
-### Cycle Phase
+### Cycle Phase {#cycle-phase}
 
-#### Step 7: Execute operations
+#### Step 7: Execute operations {#step-7-execute-operations}
 
 Assume now that an operation is queued for the agent. This will make the long polling request that we issued above return with the operation. Here is an example of a response with a single configuration operation:
 
@@ -424,12 +424,12 @@ When the agent picks up the operation, it sets it to EXECUTING status in {{< pro
 The device should reconnect within ten seconds to the server to not lose queued operations. This is the time that {{< product-c8y-iot >}} buffers real-time data. The interval can be specified upon handshake.
 
 
-#### Step 8: Update inventory
+#### Step 8: Update inventory {#step-8-update-inventory}
 
 The inventory entry of a device usually represents its current state, which may be subject of continuous change. As an example, consider a device with a GPS chip. That device will keep its current location up-to-date in the inventory. At the same time, it will report location updates as well as events to maintain a trace of its locations. Technically, such updates are reported with the same requests as shown in Step 4.
 
 
-#### Step 9: Send measurements
+#### Step 9: Send measurements {#step-9-send-measurements}
 
 To create new measurements in {{< product-c8y-iot >}}, issue a POST request with the measurement. The example below shows how to create a signal strength measurement.
 
@@ -449,7 +449,7 @@ To create new measurements in {{< product-c8y-iot >}}, issue a POST request with
     HTTP/1.1 201 Created
 
 
-#### Step 10: Send events
+#### Step 10: Send events {#step-10-send-events}
 
 Similarly, use a POST request for events. The following example shows a location update from a GPS sensor.
 
@@ -473,7 +473,7 @@ Similarly, use a POST request for events. The following example shows a location
 Note that all data types in {{< product-c8y-iot >}} can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
 
 
-#### Step 11: Send alarms
+#### Step 11: Send alarms {#step-11-send-alarms}
 
 Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone needs to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 
@@ -516,7 +516,7 @@ In contrast to events, alarms can be updated. If an issue is resolved (for examp
 
 If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [Real-time rule](/concepts/realtime) if they want to convert the event into an alarm.
 
-### Replacing a physical device
+### Replacing a physical device {#replacing-a-physical-device}
 
 You can replace a physical device that is already connected to the {{< product-c8y-iot >}} platform while keeping its external ID and the data the device has collected.
 Do the following:

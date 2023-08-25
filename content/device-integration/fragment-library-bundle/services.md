@@ -16,7 +16,7 @@ Query, update, add and remove services using {{< product-c8y-iot >}} REST API fo
 
 **REST API examples**
 
-#### Announcing a service to the platform
+#### Announcing a service to the platform {#announcing-a-service-to-the-platform}
 
 Using the Inventory REST API:
 
@@ -49,7 +49,7 @@ We recommend you to prefix the unique ID with a device-specific prefix to avoid 
 
 `102,myDatabaseDevice,systemd,DatabaseService,up`
 
-#### Updating the status of a service
+#### Updating the status of a service {#updating-the-status-of-a-service}
 
 Using Inventory REST API:
 
@@ -73,7 +73,7 @@ Or using [SmartREST static template 104](/smartrest/mqtt-static-templates/#104) 
 
 `104,down`
 
-#### Sending service data
+#### Sending service data {#sending-service-data}
 
 Measurement REST API:
 

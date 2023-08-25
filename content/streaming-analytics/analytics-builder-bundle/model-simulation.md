@@ -4,7 +4,7 @@ title: Model simulation
 layout: redirect
 ---
 
-### About simulation mode
+### About simulation mode {#about-simulation-mode}
 
 You can deploy a model in simulation mode to run it against historical input data \(such as {{< product-c8y-iot >}} measurements\). This allows testing the behavior of a newly developed model against historical data or fine-tuning an existing model. Or it allows testing a model against a set of historical data with known properties.
 
@@ -26,7 +26,7 @@ Simulation mode is not permitted for models with **Managed Object Input** blocks
 
 When running a simulation, historical data is replayed into the Apama correlator from the {{< product-c8y-iot >}} database. If there is a significant delay in the data being queried from the database or high load in the system, this can lead to dropping the input in exceptional circumstances. A simulated model processes input data at normal speed. For example, if the historical data entries are separated by one second, they are processed one second apart. This means that simulating a model with one hour of historical data will take approximately one hour of simulation time.
 
-### Simulation parameters
+### Simulation parameters {#simulation-parameters}
 
 To deploy a model in simulation mode, you have to provide values for two parameters in the model manager: start time and end time. These values determine the time range for which historical data is to be sent into the simulated model.
 
@@ -35,7 +35,7 @@ To deploy a model in simulation mode, you have to provide values for two paramet
 
 Sending of data into the simulated model is stopped when all historical data from the specified time range has been sent.
 
-### Configuring the maximum number of simulation models
+### Configuring the maximum number of simulation models {#configuring-the-maximum-number-of-simulation-models}
 
 By default, a maximum of 3 simulation models can be deployed at a time.
 
@@ -53,7 +53,7 @@ For example, specify the following to set the value to 5:
 
 See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
-### Configuring an alternative data source for simulation
+### Configuring an alternative data source for simulation {#configuring-an-alternative-data-source-for-simulation}
 
 By default, the platform database is used to retrieve the historical data for the simulation of an analytic model. You can configure an alternative data source for simulation, for example, if historical data is maintained separately. The data source must support HTTP `GET` operations for the required path and query parameters. The response to the `GET` operation must conform to the standard JSON format of {{< product-c8y-iot >}}. Refer to the {{< product-c8y-iot >}} documentation for the data and query parameter formats.
 
@@ -93,7 +93,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 The sections below list the path and query parameters that need to be supported by the alternative data source.
 
-#### Alarms
+#### Alarms {#alarms}
 
 Path: `alarm/alarms`
 
@@ -105,7 +105,7 @@ Query parameters:
 -   `pageSize` - Maximum number of records to return.
 -   `currentPage` - The current returned page within the full result set, starting at page 1.
 
-#### Events
+#### Events {#events}
 
 Path: `event/events`
 
@@ -117,7 +117,7 @@ Query parameters:
 -   `pageSize` - Maximum number of records to return.
 -   `currentPage` - The current returned page within the full result set, starting at page 1.
 
-#### Measurements
+#### Measurements {#measurements}
 
 Path: `measurement/measurements`
 
@@ -129,7 +129,7 @@ Query parameters:
 -   `pageSize` - Maximum number of records to return.
 -   `currentPage` - The current returned page within the full result set, starting at page 1.
 
-#### Operations
+#### Operations {#operations}
 
 Path: `devicecontrol/operations`
 
@@ -141,6 +141,6 @@ Query parameters:
 -   `pageSize` - Maximum number of records to return.
 -   `currentPage` - The current returned page within the full result set, starting at page 1.
 
-### Monitoring dropped inputs
+### Monitoring dropped inputs {#monitoring-dropped-inputs}
 
 The simulated model may drop delayed input events in exceptional cases. The number of input events dropped across all the models is exposed as a user-defined status with the name `user-analytics-oldEventsDropped`. See also [Monitoring dropped events](/streaming-analytics/analytics-builder/#monitoring-dropped-events).

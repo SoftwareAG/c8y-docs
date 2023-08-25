@@ -4,22 +4,22 @@ title: Calculation
 layout: redirect
 ---
 
-### How accurate are the calculations of the OEE application?
+### How accurate are the calculations of the OEE application? {#how-accurate-are-the-calculations-of-the-oee-application}
 
 After the OEE values are calculated, they are then checked for consistency and plausibility. No deviations greater than 0.0002 are allowed. However, it should be considered that OEE is fundamentally a statistical value.
 
-### Are resolved alarms still considered in the calculations?
+### Are resolved alarms still considered in the calculations? {#are-resolved-alarms-still-considered-in-the-calculations}
 
 The calculation does not take resolved alarms into account.
 
-### Can the Actual Production Amount (APA) be calculated without using the Actual Production Time (APT)?
+### Can the Actual Production Amount (APA) be calculated without using the Actual Production Time (APT)? {#can-the-actual-production-amount-apa-be-calculated-without-using-the-actual-production-time-apt}
 
 If the APT is not calculated using a machine event, it is not used to calculate the APA.
 Instead, the APA is split from event to event.
 
 APA is not calculated based on machine status event (APT).
 
-### The quality of a workpiece is not met but it is accounted to the Actual Quality Amount.
+### The quality of a workpiece is not met but it is accounted to the Actual Quality Amount. {#the-quality-of-a-workpiece-is-not-met-but-it-is-accounted-to-the-actual-quality-amount}
 
 Short fluctuations of the quality status during discrete manufacturing can lead to a miscalculation of the Actual Quality Amount (AQA), see picture below.
 
@@ -35,7 +35,7 @@ If the quality status is "not OK" for a significantly longer period of time, thi
 
 This problem must also be considered when creating line profiles.
 
-### Does the loss of connection affect the OEE calculation?
+### Does the loss of connection affect the OEE calculation? {#does-the-loss-of-connection-affect-the-oee-calculation}
 
 If the connection is interrupted and no machine data is received for an interval, this interval is ignored and the OEE calculation is not falsified.
 
@@ -45,18 +45,18 @@ The resolution interval is 60 seconds. For the intervals 08:00:14-08:01:14 and 0
 
 ![Loss of connection](/images/oee/faq/faq-loss-of-connection.png)
 
-### If I recalculate the values myself I get different values.
+### If I recalculate the values myself I get different values. {#if-i-recalculate-the-values-myself-i-get-different-values}
 
 If the calculation is attempted on the basis of the input parameters (for example Actual Production Time 60,3454 minutes), the following must be observed:
 * The algorithm of the pathways must be followed.
 * The calculation is done on a millisecond basis (2019-12-09T10:07:04.773).
 * No rounding is performed during the calculation in order to not multiply rounding errors. Only when the data is saved it is rounded to 4 decimal places, as can be seen when the data is exported (in the UI, it is rounded to 2 decimal places).
 
-### How are measurements of lines that work in parallel calculated?
+### How are measurements of lines that work in parallel calculated? {#how-are-measurements-of-lines-that-work-in-parallel-calculated}
 
 ![Line calculation of machines working in parallel](/images/oee/faq/faq-parallel-machine.png)
 
-#### Example
+#### Example {#example}
 
 **Initial situation:**
 
@@ -76,19 +76,19 @@ Alternative starting situation:
 
 If after machine 2 & 3 the workpieces would converge again in machine 4, these machines could be used for bottleneck analysis and there were no performance issues.
 
-### Why are there implausible values shortly after changing and saving the profile?
+### Why are there implausible values shortly after changing and saving the profile? {#why-are-there-implausible-values-shortly-after-changing-and-saving-the-profile}
 
 After entering a profile (via the profile modificator), all OEE machine statuses are set to "true" until the first measurement is sent from the machine. For example, the machine is up and running, so the Availability is 100%. We recommend you to wait some time after editing and saving a running profile, in order to produce plausible calculations again.
 
 <!--Coming Soon: You will receive an alarm (with timestamp) if a profile has been saved again.-->
 
-### What happens if the machine reports a produced part although its status is "not producing"?
+### What happens if the machine reports a produced part although its status is "not producing"? {#what-happens-if-the-machine-reports-a-produced-part-although-its-status-is-not-producing}
 
 If the information of a produced workpiece comes in while the machine is online, it will be split, see the image below (colored lines and arrows). If the machine is not producing and you receive a workpiece (WP) event, the first event is still split to the "machine on" time (pink), but the following events (black lines) are not split and just counted into the interval, in which they appear. Since it is not reasonable, that workpieces are produced while the machine is offline, alarms for the regarding interval will be raised. The produced amounts are still displayed in the machine dashboard and are still taken into account for the graph.
 
 ![Status report](/images/oee/faq/faq-status-report.png)
 
-### Why does the Ideal Amount change?
+### Why does the Ideal Amount change? {#why-does-the-ideal-amount-change}
 
 The Ideal Amount is calculated based on the values you have entered for the workpiece while creating the profile.
 
@@ -103,6 +103,6 @@ You have entered "1.1 pcs/minute" in the Workpiece section, while setting up the
 * If you choose the resolution "1 mins" on the machine overview the displayed Ideal Amount for an interval will be 1,1 pcs.
 * If you choose the resolution "10 mins" on the machine overview the displayed Ideal Amount for an interval will be 11 pcs.
 
-### Can the calculated OEE values be used in a Cockpit widget?
+### Can the calculated OEE values be used in a Cockpit widget? {#can-the-calculated-oee-values-be-used-in-a-cockpit-widget}
 
-For more information on how to use calculated OEE values in {{< product-c8y-iot >}} Cockpit widgets see [Cumulocity IoT](/oee/oee-faq/#platform)
+For more information on how to use calculated OEE values in {{< product-c8y-iot >}} Cockpit widgets see [Frequently Asked Questions > {{< product-c8y-iot >}}](/oee/oee-faq/#platform).

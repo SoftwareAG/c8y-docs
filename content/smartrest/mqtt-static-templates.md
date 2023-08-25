@@ -6,7 +6,7 @@ section:
 weight: 60
 ---
 
-### Overview
+### Overview {#overview}
 
 To ease device integration {{< product-c8y-iot >}} already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
@@ -14,7 +14,7 @@ To use the templates listed below, you must publish the messages to the topic <k
 
 You must subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
-#### Templates quick reference
+#### Templates quick reference {#templates-quick-reference}
 
 Click the commands below to see more information on the respective template.
 If a parameter is in square brackets, it is optional.
@@ -156,14 +156,14 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 </tbody>
 </table>
 
-### Automatic device creation
+### Automatic device creation {#automatic-device-creation}
 
 The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, {{< product-c8y-iot >}} will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case {{< product-c8y-iot >}} will create the device from the template.
 
 The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under the one you want to place the new child.
 
 
-### Handling non-mandatory parameters
+### Handling non-mandatory parameters {#handling-non-mandatory-parameters}
 
 If a parameter is not declared as mandatory, the client can send an empty string in that place.
 
@@ -179,7 +179,7 @@ Tailing commas is not required. The two lines below result in the same message.
 ```
 
 
-### Publish templates
+### Publish templates {#publish-templates}
 
 The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [Processing mode](/smartrest/smartrest-one/#processing-mode) for more information about the <kbd>t/</kbd> topic for transient data processing.
 
@@ -950,9 +950,9 @@ If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 507,c8y_Restart,"Unexpected device restart"
 ```
 
-### Subscribe templates
+### Subscribe templates {#subscribe-templates}
 
-#### Inventory templates (1xx)
+#### Inventory templates (1xx) {#inventory-templates-1xx}
 
 ##### Get children of device (106) {#106}
 
@@ -1296,7 +1296,7 @@ Establish tunneling by Remote Access device agent.
 530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8
 ```
 
-### Updating operations
+### Updating operations {#updating-operations}
 
 When using the template to set an operation to status SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
 The table below shows the operations supporting this feature and what will be done with the parameters.

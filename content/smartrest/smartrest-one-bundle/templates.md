@@ -8,7 +8,7 @@ SmartREST templates are a collection of request and response templates used for 
 
 Each request and response template has a unique numeric identifier called the message identifier which is referenced by the first value of each SmartREST request or response row. To avoid collision with one of the default message identifiers, developers are advised to select message identifiers starting at `100`.
 
-### Request templates
+### Request templates {#request-templates}
 
 A request template contains all necessary information to convert a SmartREST request into a corresponding REST API call which is then sent to the platform.
 
@@ -22,7 +22,7 @@ A request template contains the following information:
 * The expected request parameters such as `STRING`s, `NUMBER`s, `UNSIGNED` integers and `DATE`s
 * The template string with placeholders for each parameter
 
-### Response templates
+### Response templates {#response-templates}
 
 A response template contains the necessary information to extract data values from a platform REST API call response which are then sent back to the client in the CSV data format.
 

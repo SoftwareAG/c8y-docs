@@ -10,7 +10,7 @@ helpcontent:
   content: "Smart rules are a useful means to analyze data in realtime and to perform actions based on data. The global smart rules displayed here apply to a global context (in contrast to local ones for specific groups or devices). Note that you need specific permissions to see and manage smart rules.
 
 
-  Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See **Smart rules** for details on each smart rule template and its configuration."
+  Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See *Smart rules collection* in the user documentation for details on each smart rule template and its configuration."
 ---
 
 {{< product-c8y-iot >}} includes the Streaming Analytics application which can analyze data in realtime and perform actions based on data.
@@ -72,46 +72,44 @@ Smart rules can be seen in two places:
   In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.
 
 {{< c8y-admon-related >}}
-- [Platform administration > {{< standard-tenant >}} management > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
+- [Platform administration > {{< standard-tenant >}} administration > Alarm mapping](/standard-tenant/alarm-mapping/) for details on managing smart rules for your devices.
 {{< /c8y-admon-related >}}
 
-<a name="create-rules"></a>
-
-### To create a smart rule
+### To create a smart rule {#to-create-a-smart-rule}
 
 Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
 
 1. Click **Add smart rule** in the top menu bar. <br>
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
-3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules) for details.
+3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#to-enabledisable-a-smart-rule) for details.
 4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see the individual rule descriptions in [Smart rules collection](/cockpit/smart-rules-collection/).
 6. Click **Create** to create the smart rule.
 
 {{< c8y-admon-info >}}
-When you create a smart rule in the **Global smart rules** page, it will be active for all assets by default, unless you select target asset(s) in step 4 of the dialog box, see also [To enable/disable a smart rule](#toggle-rules).
+When you create a smart rule in the **Global smart rules** page, it will be active for all assets by default, unless you select target asset(s) in step 4 of the dialog box, see also [To enable/disable a smart rule](#to-enabledisable-a-smart-rule).
 {{< /c8y-admon-info >}}
 
 Smart rules can be instantiated multiple times.
 
 
-### To edit a smart rule
+### To edit a smart rule {#to-edit-a-smart-rule}
 
 Click the menu icon at the right of an entry and then click **Edit**.
 
-For details on the fields see [To create a smart rule](#create-rules).
+For details on the fields see [To create a smart rule](#to-create-a-smart-rule).
 
 
-### To duplicate a smart rule
+### To duplicate a smart rule {#to-duplicate-a-smart-rule}
 
 1. Click the menu icon at the right of an entry and then click **Duplicate**.
 2. Modify at least the name.
 3. Click **Save & close** to save the smart rule and return to the smart rule list.
 
-### To delete a smart rule
+### To delete a smart rule {#to-delete-a-smart-rule}
 
 Click the menu icon at the right of an entry and then click **Delete**.
 
-### To debug a smart rule
+### To debug a smart rule {#to-debug-a-smart-rule}
 
 {{< c8y-admon-info >}}
 This feature is not available with Apama.
@@ -121,8 +119,7 @@ For easier debugging, there is a direct link from a smart rule to the correspond
 
 Click the menu icon at the right of an entry and then click **Inspect** to use this link.
 
-<a name="toggle-rules"></a>
-### To enable/disable a smart rule
+### To enable/disable a smart rule {#to-enabledisable-a-smart-rule}
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
 
@@ -146,7 +143,7 @@ In case of a group, you activate/deactivate the smart rule with the toggle for t
 A rule which is activated for a particular object only works if the rule is also globally enabled.
 {{< /c8y-admon-important >}}
 
-### Example: Defining explicit thresholds
+### Example: Defining explicit thresholds {#example-defining-explicit-thresholds}
 
 To define a threshold rule follow these steps:
 
@@ -162,7 +159,7 @@ To define a threshold rule follow these steps:
 
 The rule will automatically be set to active and alarms appear if they arise.
 
-### Chain rule execution
+### Chain rule execution {#chain-rule-execution}
 
 Smart rules can create a new data item on the platform. For example, the threshold rule creates new alarms. This new data can be handled further by selected smart rules, for example, by an "On alarm send e-mail" rule.
 

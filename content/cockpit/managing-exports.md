@@ -29,8 +29,7 @@ ROLES & PERMISSIONS:
 
 With this feature, you can request data for the whole tenant. Additionally, you can choose to filter for specific devices, time ranges or fields. The export data contains information about all specified filters and enabled fields.
 
-<a name=""></a>
-### To show all exports
+### To show all exports {#to-show-all-exports}
 
 To show all exports, click **Export** in the **Configuration** menu in the navigator.
 
@@ -38,8 +37,7 @@ In the **Export** page you will find a list displaying all exports with their na
 
 ![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
-<a name="add-export"></a>
-### To add an export
+### To add an export {#to-add-an-export}
 
 1. Click **Add export** in the top menu bar.<br>
 
@@ -85,7 +83,7 @@ When a field is enabled, predefined or empty properties can be added.
 Documents that have no value defined for any of the selected fields are removed from the resulting export file. This is done only after the result of filters defined above was already calculated. This is commonly the reason why resulting files rarely reach the hard limit of 1 million rows.
 {{< /c8y-admon-info >}}
 
-##### To add a property
+##### To add a property {#to-add-a-property}
 
 Click **Add** to add empty properties. To enter a label or path, click **Column** or **Path** and edit the field. For example, if you enable the **Alarms** field you could enter "Severity" in column and path to receive data for alarm severities.
 
@@ -104,8 +102,7 @@ JsonPath expressions added from data points will be stored in bracket notation i
 
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
-<a name="schedule-export"></a>
-### To schedule an export
+### To schedule an export {#to-schedule-an-export}
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.
 
@@ -142,7 +139,7 @@ Click **Create** to create the new export schedule.
 
 The export schedule will be added to the export details.
 
-#### Migration of scheduled exports
+#### Migration of scheduled exports {#migration-of-scheduled-exports}
 
 With version 10.6.2, a new report agent has been implemented to allow scheduled exports. The export schedules functionality based on smart rules has been deprecated.
 
@@ -156,7 +153,7 @@ You must open each report manually, to migrate the export schedules included in 
 To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 {{< /c8y-admon-info >}}
 
-### To export data
+### To export data {#to-export-data}
 
 To export data to a CSV or XLSX file, select the checkbox in front of the respective row in the list and at the left of the top menu bar click **Export**.
 
@@ -174,19 +171,19 @@ Time,Device name,Creation time,Device name,ID,Source,Text,Time,Type
 [...]
 limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!,result truncated!,limit exceeded!
 
-### To edit an export
+### To edit an export {#to-edit-an-export}
 
 Just click the respective row or click the menu icon at the end of the row and then click **Edit**.
 
 For details on the fields see [To add an export](/cockpit/managing-exports/#to-add-an-export).
 
 
-### To duplicate an export
+### To duplicate an export {#to-duplicate-an-export}
 
 1. Click the menu icon at the end of the row and then click **Duplicate**.
 2. Modify at least the name.
 3. Click **Save & close** to save the export and return to the export list.
 
-### To delete an export
+### To delete an export {#to-delete-an-export}
 
 Click the menu icon at the end of the row and then click **Delete**.

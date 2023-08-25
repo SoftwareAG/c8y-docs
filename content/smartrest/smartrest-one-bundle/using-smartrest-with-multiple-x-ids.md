@@ -6,7 +6,7 @@ layout: redirect
 
 SmartREST supports sending of messages for different X-Ids within the same request. In this case the X-Id header mustn't be used but instead the body will contain additional information about which lines belong to which X-Id.
 
-### Sending messages
+### Sending messages {#sending-messages}
 
 To indicate the X-Id in the body it is possible to include the following line
 
@@ -20,7 +20,7 @@ All following lines will be handled with the given X-Id until you enter the next
 	15,myxid2
 	...
 
-### Receiving messages
+### Receiving messages {#receiving-messages}
 
 When sending with multiple X-Ids the response also can contain responses from multiple X-Ids. The response will contain an additional line that will indicate which X-Id the following lines are from.
 The second value in this line indicates how many lines are following from this X-Id.
@@ -31,7 +31,7 @@ The second value in this line indicates how many lines are following from this X
 	87,1,myxid2
 	...
 
-### Checking if templates are registered
+### Checking if templates are registered {#checking-if-templates-are-registered}
 
 You can check if templates are already existing by just include X-Id lines in the body.
 
@@ -47,7 +47,7 @@ You will get the same response like described in the registration process but fo
 	40,"No template for this X-ID."
 	20,12347
 
-### Registering templates
+### Registering templates {#registering-templates}
 
 Template registration also supports the use of the X-Id in the body. Therefore you can create multiple in a single request.
 

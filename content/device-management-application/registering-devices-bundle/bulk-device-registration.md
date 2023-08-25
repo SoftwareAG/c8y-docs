@@ -10,7 +10,7 @@ To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option 
 There is no restriction on the number of devices that you can bulk-register but the more devices you add the slower the creation and operation gets.
 {{< /c8y-admon-info >}}
 
-### To bulk-register devices {#to-bulkregister-devices}
+### To bulk-register devices {#to-bulk-register-devices}
 
 1. Click **Registration** in the **Devices** menu of the navigator.
 

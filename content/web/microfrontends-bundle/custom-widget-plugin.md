@@ -11,7 +11,7 @@ The following tutorial focuses on how you can add this widget to an application 
 The solution below is fully based on the Module Federation functionality introduced in Webpack 5. For more information on the functionality refer to [Webpack: Module Federation](https://webpack.js.org/concepts/module-federation/).
 {{< /c8y-admon-info >}}
 
-### 1. Initialize the widget plugin example
+### 1. Initialize the widget plugin example {#1-initialize-the-widget-plugin-example}
 
 Use the command shown below to start a multi-step process of creating a sample plugin:
 
@@ -80,7 +80,7 @@ tsconfig.json
 
 You have now created your first plugin that uses the micro frontend architecture.
 
-### 2. Differences in approach to creating custom widgets
+### 2. Differences in approach to creating custom widgets {#2-differences-in-approach-to-creating-custom-widgets}
 
 There are a couple of differences between a simple widget and one that is built according to the micro frontends architecture.
 
@@ -106,9 +106,9 @@ You can extend each module with additional features through the HOOK concept, se
 
 There is also a difference in how to start the local development server, see the following step for more information on the server's role.
 
-### 3. Local server, debugging and deployment
+### 3. Local server, debugging and deployment {#3-local-server-debugging-and-deployment}
 
-#### Local server
+#### Local server {#local-server}
 
 To facilitate the process of creating a new plugin, the local server command was extended with a new flag to proxy all requests to the shell application "Cockpit".
 
@@ -130,7 +130,7 @@ Once logged in, go to your dashboard and click **Add widget**, then select **Mod
 
 For the rest of the widget editing process follow the process for regular widgets. Refresh your browser to see your changes.
 
-#### Debugging
+#### Debugging {#debugging}
 
 Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remotes`, see the example below:
 
@@ -154,7 +154,7 @@ After importing your own modules, execute `npm start` to see if the local server
 
 To check the plugin at a later stage, we recommend you to test it locally with various shell applications, using `npm start -- --shell cockpit`.
 
-#### Deployment
+#### Deployment {#deployment}
 
 Uploading the widget is the same as for regular widgets.
 Execute the following commands sequentially:
@@ -171,7 +171,7 @@ npm run deploy
 
 Follow the console prompt to deploy the application to your tenant.
 
-### 4. Adding a deployed widget to the shell application
+### 4. Adding a deployed widget to the shell application {#4-adding-a-deployed-widget-to-the-shell-application}
 
 To add the uploaded widget-plugin to the dashboard in the Cockpit application, follow these steps:
 

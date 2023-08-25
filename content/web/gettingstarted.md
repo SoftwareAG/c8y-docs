@@ -58,7 +58,7 @@ If you want to extend an existing application like Cockpit, you can spin up a hy
 You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/getCurrentTenantResource) to request it.
 {{< /c8y-admon-info >}}
 
-### First route & component
+### First route & component {#first-route--component}
 
 After creating the empty bootstrapping application you might want to start with your first content. To do so, add a new component to your project and save it as *hello.component.ts*:
 

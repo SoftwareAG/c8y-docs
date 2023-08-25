@@ -4,7 +4,7 @@ title: Using the instance editor
 layout: redirect
 ---
 
-### The instance editor user interface
+### The instance editor user interface {#the-instance-editor-user-interface}
 
 A prerequisite for invoking the instance editor is that one or more template parameters have been defined in the model editor \(see also [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\).
 
@@ -33,11 +33,11 @@ If the following error icon is shown near the end of a row, the corresponding in
 
 When you open the instance editor, it may happen that template parameters have been changed since you last edited the instances and that they no longer use the same values types as before. If the values specified in the instance editor are still compatible, they are converted to the new value types. Incompatible values \(including check boxes for boolean types and values that are shown in drop-down list boxes\) are automatically removed. Each field from which the value has been removed shows an error underline and a corresponding error message.
 
-### Adding an instance
+### Adding an instance {#adding-an-instance}
 
 When you add a new instance, a new row is added to the instance editor table. You can then either immediately fill in the required values, or you can first add all required rows and then fill the rows one after the other.
 
-#### To add an instance
+#### To add an instance {#to-add-an-instance}
 
 1.  In the toolbar of the instance editor, click **New Instance**.
 
@@ -45,7 +45,7 @@ When you add a new instance, a new row is added to the instance editor table. Yo
 
 2.  Fill in the template parameter values, as defined by the model. See also [Editing an instance](/streaming-analytics/analytics-builder/#editing-an-instance).
 
-### Editing an instance
+### Editing an instance {#editing-an-instance}
 
 You provide the parameter values for instances in the same way as you provide values for blocks in the model editor \(see also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 
@@ -60,7 +60,7 @@ Instances \(rows\) that have been edited but have not yet been saved are shown w
 
 When a text box requires a value that has not yet been specified, a message is shown, indicating that this is a required field. It is possible to save the instances and leave the instance editor, and set all of the required values at a later point in time. As long as the missing fields of an instance have not been specified, it is not possible to activate that instance.
 
-### Deploying an instance
+### Deploying an instance {#deploying-an-instance}
 
 You can activate \(that is, deploy\) each instance separately. For example, one instance can be in production mode and another in test mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information on the different modes; that information applies to both regular models and template models.
 
@@ -70,7 +70,7 @@ When an instance is activated, the template parameter values, where supplied, ar
 
 Once an instance is active, you cannot modify the template parameter values or mode without deactivating the instance first. If any instances are active, then the model is read-only and cannot be modified until all instances are deactivated.
 
-#### To deploy an instance
+#### To deploy an instance {#to-deploy-an-instance}
 
 1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
 
@@ -83,17 +83,17 @@ Once an instance is active, you cannot modify the template parameter values or m
     In the case of an error, the following error icon is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
     ![Error icon](/images/streaming-analytics/analytics-builder/instance-editor-error.png)
 
-### Undeploying an instance
+### Undeploying an instance {#undeploying-an-instance}
 
 You can deactivate \(that is, undeploy\) each instance that is currently in production, test or simulation mode and for which the toggle button in the **Status** column of the instance editor shows **Active**.
 
 When you undeploy an instance, the instance is stopped and no longer processes incoming data. Any state built up in the instance is lost. For simulation mode, this means that the instance is stopped before all historical data from the specified time range has been replayed.
 
-#### To undeploy an instance
+#### To undeploy an instance {#to-undeploy-an-instance}
 
 In the **Status** column of the instance editor, click the toggle button for the instance that you want to undeploy so that **Inactive** is then shown on the button.
 
-### Filtering and sorting the instances
+### Filtering and sorting the instances {#filtering-and-sorting-the-instances}
 
 If you have a long list of instances, you can easily locate the instances that you are looking for by entering a value in the search box. Or you can enter part of the value. This searches all input fields in the instance editor and only lists the instances \(rows\) that contain this value. All values that match the filter are highlighted. The search criteria are not case-sensitive. When search criteria are currently applied, an X is shown in the search box; click this to clear the search and thus to show all available instances.
 
@@ -107,27 +107,27 @@ Adding a new instance will not affect the display of rows in the instance editor
 You can also reorder the template parameters in the **Template Parameters** dialog box \(see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\). This affects the sequence in which they are shown in the instance editor.
 {{< /c8y-admon-info>}}
 
-### Duplicating an instance
+### Duplicating an instance {#duplicating-an-instance}
 
 You can duplicate each instance \(row\) that is currently listed in the instance editor. The original instance and its duplicate will then both have the same template parameter values and the same mode. However, the duplicated instance is always inactive even if the original instance is active.
 
-#### To duplicate an instance
+#### To duplicate an instance {#to-duplicate-an-instance}
 
 In the instance editor, click the actions menu of the instance that you want to duplicate and then click **Duplicate**.
 
 A new row for the duplicated instance is immediately shown at the bottom of the instance editor table.
 
-### Removing an instance
+### Removing an instance {#removing-an-instance}
 
 You can remove each instance that is currently listed in the instance editor. When you remove an instance that is currently deployed, it is first undeployed and then removed.
 
-#### To remove an instance
+#### To remove an instance {#to-remove-an-instance}
 
 1.  In the instance editor, click the actions menu of the instance that you want to remove and then click **Remove**.
 
 2.  In the resulting dialog box, click **Remove** to confirm the removal.
 
-### Saving the instances
+### Saving the instances {#saving-the-instances}
 
 You can save the instances even if there are still rows in which required information needs to be specified. This is helpful if you want to add that information at a later point in time.
 
@@ -135,27 +135,27 @@ You can save the instances even if there are still rows in which required inform
 When you activate an instance, all of your recent changes are automatically saved. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).
 {{< /c8y-admon-info>}}
 
-#### To save the instances
+#### To save the instances {#to-save-the-instances}
 
 In the toolbar of the instance editor, click **Save**.
 
 This command is only enabled when changes have been applied to the instances. It saves only those instances where the rows that are highlighted with a background color.
 
-### Reloading the instances
+### Reloading the instances {#reloading-the-instances}
 
 You can refresh the display to show the latest state of all instances, or to see whether deployed instances have entered a failed state.
 
-#### To reload the instances
+#### To reload the instances {#to-reload-the-instances}
 
 In the toolbar of the instance editor, click **Reload**.
 
 If there are unsaved changes when reloading, you are prompted to save these changes first.
 
-### Leaving the instance editor
+### Leaving the instance editor {#leaving-the-instance-editor}
 
 When you leave the instance editor using the corresponding toolbar button, you are returned to the model manager.
 
-#### To leave the instance editor
+#### To leave the instance editor {#to-leave-the-instance-editor}
 
 In the toolbar of the instance editor, click X.
 

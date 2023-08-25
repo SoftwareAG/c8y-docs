@@ -12,7 +12,7 @@ The {{< product-c8y-iot >}} Operational Store provides an enhanced time series s
 The enhanced time series support might be enabled for new tenants by default from a platform administrator.
 {{< /c8y-admon-info >}}
 
-### To configure time series support
+### To configure time series support {#to-configure-time-series-support}
 
 The enhanced time series support can be configured via a REST API as a tenant configuration.
 The following example illustrates how to **enable** time series collections for a subtenant:
@@ -42,7 +42,7 @@ Content-Type: application/json
 Tenant options are not inheritable from the parent tenant, that is, enabling the property on the {{< enterprise-tenant >}} does not affect the subtenants.
 {{< /c8y-admon-info >}}
 
-### Implications of the configuration
+### Implications of the configuration {#implications-of-the-configuration}
 
 The configuration affects the collection that stores measurement data.
 By enabling or disabling the property, the system switches collections in the background.
@@ -54,7 +54,7 @@ Migration and seamless configuration will be part of future releases.
 Once enabled, avoid switching the property back to `DISABLED` as this can lead to experience data loss. Do this only in case of an issue or emergency.
 {{< /c8y-admon-important >}}
 
-### Unsupported APIs
+### Unsupported APIs {#unsupported-apis}
 
 The following APIs are not supported and do not have a replacement:
 
@@ -69,7 +69,7 @@ In release 10.16, the parameters `dateFrom` and `dateTo` are not supported. Inst
 
 In 10.17+ the parameters `dateFrom` and `dateTo` must be truncated to full hours (for example, `2022-08-19T14:00:00.000Z`), otherwise an error is returned.
 
-### To check whether time series collections are enabled
+### To check whether time series collections are enabled {#to-check-whether-time-series-collections-are-enabled}
 
 With the following request, you can check the value of the time series collections property:
 

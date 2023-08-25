@@ -48,7 +48,7 @@ The table below summarizes the main terms used throughout this documentation.
 Google Cloud Storage (GCS) is currently not supported.
 {{< /c8y-admon-info >}}
 
-### Design of offloading pipelines
+### Design of offloading pipelines {#design-of-offloading-pipelines}
 
 Offloading refers to moving data from the Operational Store of {{< product-c8y-iot >}} to a data lake in order to:
 

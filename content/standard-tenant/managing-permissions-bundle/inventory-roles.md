@@ -8,7 +8,7 @@ section:
 
 Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
-### To view inventory roles
+### To view inventory roles {#to-view-inventory-roles}
 
 To view the currently configured inventory roles, click **Roles** in the **Accounts** menu and switch to the **Inventory roles** tab.
 
@@ -26,7 +26,7 @@ The following default inventory roles are initially available in new tenants:
 |Reader|Can read all data of the asset.
 
 
-### To add an inventory role
+### To add an inventory role {#to-add-an-inventory-role}
 
 Click **Add inventory role** in the **Inventory roles** tab.
 In the "New inventory role" page, provide a **name** and a **description**, and assign the **permissions** for the new inventory role.
@@ -71,7 +71,7 @@ As another example, assume that you are using tracking devices. You want to allo
 
 <img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
-### To assign inventory roles to users
+### To assign inventory roles to users {#to-assign-inventory-roles-to-users}
 
 Inventory roles are assigned to a user and a group of devices.
 

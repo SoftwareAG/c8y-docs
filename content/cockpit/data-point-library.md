@@ -10,7 +10,7 @@ helpcontent:
     content: "The data point library provides a collection of data points with default values for data point properties, which serve as templates that can be easily applied to your data points from different devices. To find default values for a data point like color or label, Cumulocity IoT searches the data point library for a matching entry. If there is match, the corresponding data point properties are used for the default visualization.
 
 
-    Either select one of the existing data points from the list or click **Add data point** at the top right to add a new data point to the library which meets your individual needs, see **Data point library** for details."
+    Either select one of the existing data points from the list or click **Add data point** at the top right to add a new data point to the library which meets your individual needs."
 ---
 
 The data point library provides a collection of data points with default values for data point properties.
@@ -40,7 +40,7 @@ A list of available data points will be opened. For each data point, the followi
 * Measurement unit
 * Values (minimum, maximum, red/yellow ranges)
 
-### To add a data point to the library
+### To add a data point to the library {#to-add-a-data-point-to-the-library}
 
 1. Click **Add data point** in the top menu bar.
 2. Provide the following information:
@@ -64,11 +64,11 @@ With the button next to the fragment and series fields you can pick the values f
 
 3. Click **Save** to add the data point to the library.
 
-### To edit a data point
+### To edit a data point {#to-edit-a-data-point}
 
 Simply click the respective entry in the list or click the menu icon at the right of an entry and then click **Edit**.
 
 
-### To delete a data point
+### To delete a data point {#to-delete-a-data-point}
 
 Click the menu icon at the right of an entry and then click **Delete**.

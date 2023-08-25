@@ -1,5 +1,5 @@
 ---
-title: "About this website"
+title: "About this documentation"
 icon: "c8y-icon c8y-icon-notification"
 weight: 80
 svg: '<svg
@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Find details on the versions and sources of the {{< product-c8y-iot >}} documentation and on legal information.
+Find details on the scope of the {{< product-c8y-iot >}} product documentation and on legal information.

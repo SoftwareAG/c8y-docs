@@ -10,7 +10,7 @@ helpcontent:
     content: "The Cumulocity IoT user management allows you to manage the users within your tenant. You can create new users, assign usernames and passwords, store user details, or configure the login and security options.  
 
 
-    Moreover you can select the global roles for a user, see also *Administration > Managing permissions* in the *User guide*."
+    Moreover you can select the global roles for a user, see also *Managing permissions* in the user documentation."
 ---
 
 The **user management feature** allows you to manage the users within your tenant, that is create users, store user details, or configure login and security options.
@@ -57,7 +57,7 @@ Users which are using single sign-on cannot change the password of users which a
 - [Users](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Users) in the {{< openapi >}} for managing users via REST.
 {{< /c8y-admon-related >}}
 
-### To view users
+### To view users {#to-view-users}
 
 To view all users in your tenant, click **Users** in the **Accounts** menu in the navigator.
 
@@ -77,7 +77,7 @@ In order to apply the selected filters click **Apply**.
 Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies).
 
 
-### To add a user
+### To add a user {#to-add-a-user}
 
 1. Click **Add user** at the right of the top menu bar.  
   {{< c8y-admon-info >}}
@@ -155,14 +155,14 @@ The new user will be added to the user list.
 By default, manually created users always have the "Own user management" permissions set to active.
 {{< /c8y-admon-info >}}
 
-### To edit a user
+### To edit a user {#to-edit-a-user}
 
 1. Click the menu icon at the right of the respective row and then click **Edit**. All fields except **Username** and **Send password reset link as email** can be changed. For details on the fields, see [To add a user](#to-add-a-user).
 2. Click **Change password** to change the password.
 3. Click **Save** to apply your settings.
 
 
-### To copy inventory roles
+### To copy inventory roles {#to-copy-inventory-roles}
 
 1. Click the menu icon at the right of the respective row and then click **Copy inventory roles from another user**.
 2. In the resulting dialog box, select if you want to merge the roles to be copied with the existing user roles (the default) or if you want to replace the existing user roles.
@@ -171,7 +171,7 @@ By default, manually created users always have the "Own user management" permiss
 
 The inventory roles will be copied from the selected user.
 
-### To delegate/undelegate user hierarchies
+### To delegate/undelegate user hierarchies {#to-delegateundelegate-user-hierarchies}
 
 Click the menu icon at the right of the respective row and then click **Delegate** to delegate your user hierarchies and permissions to a user.
 
@@ -179,15 +179,15 @@ Click **Undelegate** to remove a delegation.
 
 Refer to [Managing user hierarchies](/enterprise-tenant/managing-user-hierarchies) for details on delegation.
 
-### To disable/enable a user
+### To disable/enable a user {#to-disableenable-a-user}
 
 Click the menu icon at the right of the respective row and then click **Disable** to disable an active user, or click **Enable** to enable a user that has been disabled.
 
-### To delete a user
+### To delete a user {#to-delete-a-user}
 
 Click the menu icon at the right of the respective row and then click **Delete**.
 
-### To log out all users
+### To log out all users {#to-log-out-all-users}
 
 In the event of a security incident involving the session tokens of your tenant's users, you can invalidate any tokens currently in use.
 

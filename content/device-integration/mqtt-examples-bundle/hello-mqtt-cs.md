@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use the C# MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -33,7 +33,7 @@ Host (useful for support):
 
 The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.microsoft.com/download) webpage.
 
-### Developing the "Hello MQTT world" client
+### Developing the "Hello MQTT world" client {#developing-the-hello-mqtt-world-client}
 
 To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -41,7 +41,7 @@ To develop a very simple "Hello world" MQTT client for {{< product-c8y-iot >}}, 
 * add a dependency to the MQTT C# client library (in this example we will use [{{< product-c8y-iot >}} SDK MQTT](https://github.com/SoftwareAG/cumulocity-sdk-cs)),
 * build and run the C# application.
 
-#### Creating a console project
+#### Creating a console project {#creating-a-console-project}
 
 To create a plain C# project with .NET Core SDK, execute the following command:
 
@@ -51,7 +51,7 @@ $ dotnet new console -n hello_mqtt
 
 This will create a new console application _hello-mqtt-cs_ in the current directory with a skeleton structure for your project.
 
-#### Adding the MQTT C# client library
+#### Adding the MQTT C# client library {#adding-the-mqtt-c-client-library}
 
 Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder and add a dependency manually to the {{< product-c8y-iot >}} SDK MQTT.
 
@@ -67,7 +67,7 @@ Or use the `dotnet` command as follows:
 $ dotnet add package Cumulocity.SDK.MQTT
 ```
 
-#### Creating a C# application
+#### Creating a C# application {#creating-a-c-application}
 
 Edit the _Programs.cs_ file in the folder _hello-mqtt-cs_ with the following content:
 
@@ -207,7 +207,7 @@ What does the code in `Main` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Create new event with JSON via MQTT
+#### Create new event with JSON via MQTT {#create-new-event-with-json-via-mqtt}
 
 The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/device-integration/rest/#step-0-request-device-credentials) step.
 
@@ -253,7 +253,7 @@ await client.PublishAsync(messageJson);
 
 For specific procedural details review [JSON via MQTT](/smartrest/json-via-mqtt).
 
-#### Building and running the application
+#### Building and running the application {#building-and-running-the-application}
 
 Use the following commands to build the application:
 
@@ -272,6 +272,6 @@ After starting the application, you should see a new registered device in the De
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), the information about it will be printed to the console.
 
-### Improving the agent
+### Improving the agent {#improving-the-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

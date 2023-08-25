@@ -43,7 +43,7 @@ You can filter the entries by their status or timestamp by using the filter cont
 
 The page navigation buttons at the bottom can be used to traverse the history entries.
 
-### Details of offloading job
+### Details of offloading job {#details-of-offloading-job}
 
 For a given offloading job, you can examine additional details of its execution.
 

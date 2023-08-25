@@ -16,7 +16,7 @@ helpcontent:
     On a dashboard, you can rearrange widgets by drag & drop or resize them using the arrow icon. Click **Add widget** in the top menu bar to add a new widget to the dashboard or use the cogwheel icon to edit or remove widgets.
 
 
-    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* for details on each widget type and its configuration."
+    Cumulocity IoT includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
 ---
 
 {{< product-c8y-iot >}} allows you to create individualized dashboards for all your groups and devices.
@@ -32,18 +32,14 @@ ROLES & PERMISSIONS:
 - To create a dashboard: CREATE or ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
 - To delete a dashboard: ADMIN permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
 - To share/copy a dashboard: CREATE permission for permission type "Inventory" or CHANGE permission for "Inventory" in inventory roles
-  {{< /c8y-admon-req >}}
-
-
-
-<a name="creating-dashboards"></a>
+{{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}
 - [Web SDK > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) to learn how to develop your own widgets and add them to your {{< product-c8y-iot >}} account.
 - [Web SDK > Application configuration](/web/application-configuration/) for further information on how to customize the {{< product-c8y-iot >}} environment.
 {{< /c8y-admon-related >}}
 
-### To create a dashboard
+### To create a dashboard {#to-create-a-dashboard}
 
 To create your individualized dashboard, execute the following steps:
 
@@ -80,8 +76,7 @@ The widget titles will be translated only if a valid translation is available.
 
 Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for details on how to add, modify or remove widgets.
 
-<a name="sharing-dashboards"></a>
-### To share a dashboard
+### To share a dashboard {#to-share-a-dashboard}
 
 You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
 
@@ -97,8 +92,7 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
 {{< /c8y-admon-info >}}
 
-<a name="global-time-context"></a>
-### Global time context
+### Global time context {#global-time-context}
 
 In the widget configuration, you can specify a global time range for your dashboards. When using a global time range, all data in a dashboard will be aligned to this range. After setting the global time range in a first widget, this shared context can then be used by other widgets that are configured to use the global date context.
 
@@ -112,22 +106,22 @@ This feature is currently available for the following widgets: Event list, Data 
 
 Widgets synchronized with the dashboard time range are indicated by a respective icon at the top right of the widget.
 
-### To edit a dashboard
+### To edit a dashboard {#to-edit-a-dashboard}
 
 To edit a dashboard, click **Edit** in the top menu bar.
 
-The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#creating-dashboards).
+The dashboard editor will open up. For details on the fields, refer to [To create a dashboard](#to-create-a-dashboard).
 
-### To copy a dashboard from one object to another
+### To copy a dashboard from one object to another {#to-copy-a-dashboard-from-one-object-to-another}
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the
-"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#sharing-dashboards).
+"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#to-share-a-dashboard).
 
 
-### To delete a dashboard
+### To delete a dashboard {#to-delete-a-dashboard}
 
 To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Delete dashboard**.

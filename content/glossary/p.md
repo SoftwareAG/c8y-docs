@@ -7,7 +7,7 @@ section:
 ---
 
 
-### Permissions
+### Permissions {#permissions}
 
 The ability to execute certain functionality in the {{< product-c8y-iot >}} platform is based on permissions. Permissions define explicitly what functionality can be executed by a user. {{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data.
 

@@ -12,7 +12,7 @@ As the OAuth protocol is based on the execution of HTTP requests and redirects, 
 
 ![Custom authorization request](/images/users-guide/Administration/sso-custom-authorization-request.png)
 
-### To configure a connection
+### To configure a connection {#to-configure-a-connection}
 
 The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
 
@@ -134,7 +134,7 @@ Each access token is signed by a signing certificate. The following options are 
 {{< product-c8y-iot >}} only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (for example Elliptic-curves) are not supported.
 {{< /c8y-admon-info >}}
 
-### Placeholders
+### Placeholders {#placeholders}
 Inside some fields you can use placeholders that are resolved by {{< product-c8y-iot >}} at runtime. Available placeholders are:
 
 |Placeholder|Description|

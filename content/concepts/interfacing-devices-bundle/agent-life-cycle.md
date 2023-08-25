@@ -6,7 +6,7 @@ section:
   - device_management
 ---
 
-### Starting the agent
+### Starting the agent {#starting-the-agent}
 
 Server-side agents run continuously in the cloud, accepting connections from the device types that they support. Device-side agents run on the device and are started along with other device software when the device is powered on.
 
@@ -14,7 +14,7 @@ Both types of agents are pre-configured with a fixed platform endpoint URL. Usin
 
 After starting, the agent will synchronize the inventory with the sensor subnetwork that the agent is responsible for.
 
-### Synchronizing inventory data
+### Synchronizing inventory data {#synchronizing-inventory-data}
 
 To understand inventory synchronization, remember the communication hierarchy described in [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the subnetwork that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes must be reflected in the inventory.
 
@@ -35,7 +35,7 @@ The need for a regular inventory upload depends on the particular device protoco
 
 It is important to know that the device agent is assuming data ownership of configuration properties or device topology data and therefore modifies or overwrites this data accordingly.
 
-### Receiving data and commands from applications
+### Receiving data and commands from applications {#receiving-data-and-commands-from-applications}
 
 Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of [{{< product-c8y-iot >}}´s domain model](/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent must query the core for operations intended for its devices.
 
@@ -43,7 +43,7 @@ If an operation was sent to an agent's device, the agent will translate the oper
 
 Finally, the agent acknowledges the execution of the operation and it would update the state of the switch in the inventory.
 
-### Sending sensor readings, events, alarms and audit logs
+### Sending sensor readings, events, alarms and audit logs {#sending-sensor-readings-events-alarms-and-audit-logs}
 
 Besides remote control of devices, the other main task of agents is to transmit data from sensors. This data can vary as outlined in the domain model section:
 
@@ -52,6 +52,6 @@ Besides remote control of devices, the other main task of agents is to transmit 
 -   **Alarms** are events that require human intervention, for example, tamper events sent by an electrical meter.
 -   **Audit logs** are events that are recorded for risk management purposes, for example, login failures.
 
-### Updating agent configuration
+### Updating agent configuration {#updating-agent-configuration}
 
 The agent configuration may need to be changed during run-time. For example, a new gateway to a sensor network is installed and the address and credentials for accessing that gateway must be sent to the agent. This is performed by sending a device control request targeted to the agent itself. After processing the configuration, the agent will publish changes within the device network.

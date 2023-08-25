@@ -14,7 +14,7 @@ Depending on the capabilities of the device and its configuration in {{< product
 * [Log coil and register changes as events](#logging-events)
 * [Monitor the status of coils and registers](#monitoring-the-device-status)
 
-### Collecting measurements
+### Collecting measurements {#collecting-measurements}
 
 If the device protocol of the fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data explorer](/cockpit/data-explorer) and in [dashboards](/cockpit/dashboards).
 
@@ -22,23 +22,23 @@ Data is collected according to the interval specified in the "transmit rate" pro
 
 ![Fieldbus measurements](/images/device-protocols/cloud-fieldbus/fieldbus-modbus-measurements.png)
 
-### Monitoring alarms
+### Monitoring alarms {#monitoring-alarms}
 
 If the device protocol of the fieldbus device is configured to send alarms, these will be visible in the **Alarms** tab and usable in widgets. To determine the alarm status, the fieldbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
 
 ![Fieldbus alarms](/images/device-protocols/cloud-fieldbus/fieldbus-modbus-alarms.png)
 
-### Logging events
+### Logging events {#logging-events}
 
 Similar to alarms, changes in fieldbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the **Events** tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
 
 ![Fieldbus events](/images/device-protocols/cloud-fieldbus/fieldbus-modbus-events-log.png)
 
-### Monitoring the device status
+### Monitoring the device status {#monitoring-the-device-status}
 
 The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in [Cockpit](/cockpit/).
 
-### Monitoring the device status using the Fieldbus device widget
+### Monitoring the device status using the Fieldbus device widget {#monitoring-the-device-status-using-the-fieldbus-device-widget}
 
 The "Fieldbus device" widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget.
 
@@ -57,7 +57,7 @@ In the widget, the selected coils and registers are grouped into display categor
 
 Registers and coils that can be changed are represented by active widgets. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click **Set**, an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
 
-### Monitoring the device status using the SCADA widget
+### Monitoring the device status using the SCADA widget {#monitoring-the-device-status-using-the-scada-widget}
 
 The "SCADA" widget provides you with a graphic representation of the status of a device.
 
@@ -73,7 +73,7 @@ To use the "SCADA" widget, follow these steps:
 
 ![Adding the SCADA Widget](/images/device-protocols/cloud-fieldbus/fieldbus-scada-edit.png)
 
-### Preparing SVG files for the SCADA widget
+### Preparing SVG files for the SCADA widget {#preparing-svg-files-for-the-scada-widget}
 
 The SCADA widget accepts SVG files which use AngularJS directives, for example `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation.
 
@@ -83,11 +83,11 @@ Data from devices (like latest measurements and other properties) are provided v
 
 For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality Chrome extension.
 
-#### Placeholders
+#### Placeholders {#placeholders}
 
 For a placeholder to be recognized by the SCADA widget, it must occur at least once in double curly braces with no other expression, for example `{{placeholderName}}` (in a comment, attribute's value, or element's content - see example). Once annotated, the placeholder can be used within other expressions, for example `{{placeholderName * 3.1415}}`, `ng-class="{ active: placeholderName > 100 }"` or `ng-if="placeholderName === 'VALUE'"`.
 
-#### Predefined functions
+#### Predefined functions {#predefined-functions}
 
 The following predefined functions are available for use in expressions:
 
@@ -95,7 +95,7 @@ The following predefined functions are available for use in expressions:
 - `goToDeviceDetails(deviceId)` – takes the device ID and redirects the user to the device details view, for example, `<... ng-click="goToDeviceDetails(deviceId)">`,
 - `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`, for example, `<... ng-class="getActiveAlarmsStatusClass(alarmsStatus)">`.
 
-#### Example
+#### Example {#example}
 
 	svg
 	<?xml version="1.0" encoding="utf-8"?>

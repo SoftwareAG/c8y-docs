@@ -9,4 +9,4 @@ section:
 weight: 80
 ---
 
-Learn about the SmartREST protocol and its data format, and find a huge number of static SmartREST templates supported by Cumulocity IoT.
+Learn about the SmartREST protocol and its data format, and find a huge number of static SmartREST templates supported by {{< product-c8y-iot >}}.

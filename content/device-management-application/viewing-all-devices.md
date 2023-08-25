@@ -7,7 +7,7 @@ section:
 helpcontent:
   - label: viewing-devices
     title: Viewing devices
-    content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the *User guide* for details.
+    content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the user documentation for details.
 
 
     You can filter the list by clicking the filter icon next to any column and providing filter options. For a full-text search, click the **Search** button at the top right and enter a search term.

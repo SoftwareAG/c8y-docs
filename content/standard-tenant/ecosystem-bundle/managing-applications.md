@@ -10,7 +10,7 @@ helpcontent:
     content: "In the **Applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 
 
-    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the *User guide*.
+    **Subscribed applications** - Applications subscribed to the tenant, either provided by the platform or a service provider. Cumulocity IoT provides a variety of applications for different purposes. Find a list of all applications in the user documentation.
 
     **Custom applications** - Applications owned by the tenant. You can add custom applications in various ways as own applications.
 
@@ -27,7 +27,7 @@ helpcontent:
     Duplicates of subscribed applications.
 
 
-    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
+    Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the user documentation."
   - label: features
     title: Features
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."

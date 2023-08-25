@@ -2,6 +2,10 @@
 weight: 30
 title: Availability
 layout: redirect
+helpcontent:
+- label: availability
+  title: Availability monitoring
+  content: "Availability shows the availability across all devices for the last 24 hours, last 7 days and last 30 days. The availability is based on raised and cleared alarms and shown in percentage."
 ---
 
 {{< product-c8y-iot >}} distinguishes between connection monitoring and availability. Connection monitoring, as described in the previous section, only indicates if the device is communicating with {{< product-c8y-iot >}}, it does not automatically indicate if it is functional or not.

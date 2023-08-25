@@ -2,6 +2,22 @@
 weight: 50
 title: Working with operations
 layout: redirect
+helpcontent:
+- label: single-operations
+  title: Single operations
+  content: "Using operations, you can control devices remotely. **Single operations** show all operations executed on a single device.
+
+
+  Single operations can have one of the following four statuses: PENDING, EXECUTED, SUCCESSFUL, FAILED. For each operation, the name, status, and device is provided. Clicking the device leads you to the detailed view of the particular device."
+- label: bulk-operations
+  title: Bulk operations
+  content: "**Bulk operations** are single operations executed on a set of devices.
+
+
+  Bulk operations have an operation type, for example 'Software update' or 'Firmware update', and one of the following statuses: SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY.
+
+
+  You can filter the list of bulk operations for type, status or date. Click the arrow button at the right of a bulk operation to see its details."
 ---
 
 Operations are used to remotely control devices.

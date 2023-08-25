@@ -2,6 +2,14 @@
 weight: 60
 title: Managing device profiles
 layout: redirect
+helpcontent:
+- label: device-profiles
+  title: Device profiles
+  content: "Device profiles represent a set of a firmware version, one or multiple software packages, and one or multiple configuration files which can be deployed on a device. Based on device profiles, you can easily deploy a specific target configuration on devices by using bulk operations.
+
+
+  See the user documentation for details on managing device profiles and on applying device profiles to devices."
+
 ---
 
 Device profiles represent a combination of a firmware version, one or multiple software packages, and one or multiple configuration files which can be deployed on a device. Based on device profiles, users can deploy a specific target configuration on devices by using bulk operations.

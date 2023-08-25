@@ -2,6 +2,14 @@
 weight: 30
 title: Managing configurations
 layout: redirect
+helpcontent:
+- label: configuration-repository
+  title: Configuration repository
+  content: "In the configuration repository, you can store and manage configuration data retrieved from your devices as 'configuration snaphots'. The configuration data contains the parameters and the initial settings of a device. Such configuration snapshots help you, for example, to apply the same configuration to multiple devices.
+
+
+  See the user documentation for details on how to retrieve configuration data, and how to store and manage it in the configuration repository as snapshot."
+
 ---
 
 {{< product-c8y-iot >}} allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.

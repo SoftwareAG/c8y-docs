@@ -62,7 +62,7 @@ Below you find a list of all microservices which are by default subscribed in a 
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/cockpit/reports" class="no-ajaxy">Report agent</a></td>
+<td style="text-align:left"><a href="/cockpit/working-with-reports/" class="no-ajaxy">Report agent</a></td>
 <td style="text-align:left">Schedule data exports from within the Cockpit application</td>
 <td style="text-align:left">report agent</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
@@ -99,7 +99,7 @@ All applications listed here are of the type "Microservice".
 3. The microservice application is created once the ZIP file has been successfully uploaded.
 
 {{< c8y-admon-important >}}
-The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/concept) for information on preparing and deploying the microservice package. You can provide the name of the microservice in its manifest file. If no name is provided in the file, the platform will derive it from the ZIP file name by removing the recognized version suffix. In any case the length of the resulting name must not exceed 23 characters.
+The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [General aspects](/microservice-sdk/general-aspects) for information on preparing and deploying the microservice package. You can provide the name of the microservice in its manifest file. If no name is provided in the file, the platform will derive it from the ZIP file name by removing the recognized version suffix. In any case the length of the resulting name must not exceed 23 characters.
 {{< /c8y-admon-important >}}
 
 

@@ -36,7 +36,7 @@ Since the localization feature uses dynamically fetched application options, you
 For details on how to manually install the Public-options application, see [Branding and language customization](/web/application-configuration/#branding-languages-customization).
 
 #### To apply the branding setting {#to-apply-the-branding-setting}
-To apply the branding setting, you must first subscribe to the [Branding feature](/enterprise-tenant/customization/#branding) in the [{{< enterprise-tenant >}} ](/enterprise-tenant/overview/).
+To apply the branding setting, you must first subscribe to the [Branding feature](/enterprise-tenant/customization/#branding) in the [{{< enterprise-tenant >}} ](/enterprise-tenant/enterprise-tenant-introduction/).
 
 Complete the setup in the Administration application following the steps below:
 

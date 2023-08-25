@@ -12,4 +12,4 @@ The model represents the view on quantity as well as on time in one diagram. To 
 
 ![Linking symbol](/images/oee/theory/theory-linking-symbol.png)
 
-This allows a generic application at many different companies as different machine measurement data can be used. The conversion takes place with the help of the Ideal Cycle Amount or Ideal Cycle Time, which is explained in [Calculation logic & variables](#calculation). All quantities described as not ideal thus refer to the real machine and can therefore also be measured directly or indirectly.
+This allows a generic application at many different companies as different machine measurement data can be used. The conversion takes place with the help of the Ideal Cycle Amount or Ideal Cycle Time, which is explained in [Calculation logic & variables](/oee/oee-theory/#calculation-logic-variables). All quantities described as not ideal thus refer to the real machine and can therefore also be measured directly or indirectly.

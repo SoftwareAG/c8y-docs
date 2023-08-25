@@ -47,7 +47,7 @@ The following table provides an overview on the currently supported applications
 </tr>
 <tr>
 <td>cockpit</td>
-<td>The <a href="/cockpit/overview/">Cockpit</a> default application. Use this to extend the existing Cockpit application.</td>
+<td>The <a href="/cockpit/cockpit-introduction/">Cockpit</a> default application. Use this to extend the existing Cockpit application.</td>
 </tr>
 <tr>
 <td>devicemanagement</td>

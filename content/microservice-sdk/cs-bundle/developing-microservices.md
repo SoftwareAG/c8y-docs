@@ -149,7 +149,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Microservice subscription {#microservice-subscription}
 
-The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
+The following section refers to the user management as described under [General aspects](/microservice-sdk/general-aspects) of microservices in {{< product-c8y-iot >}}.
 
 This SDK has a task `CurrentApplicationSubscriptionsTask` which only fetches a list of all subscriptions. The `CurrentApplicationSubscriptionsTask` is the `IScheduledTask` implementation which runs every hour:
 

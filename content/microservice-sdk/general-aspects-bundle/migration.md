@@ -15,7 +15,7 @@ With the API Version change, the microservice is granted the capability NET_BIND
 
 Perform the following steps to migrate your microservice to the new API Version.
 
-1. Change the API Version to 2 in the microservice manifest. See [Microservice manifest](#manifest).   
+1. Change the API Version to 2 in the microservice manifest. See [Microservice manifest](#microservice-manifest).   
 
 2. Deploy your microservice to the test environment.
 

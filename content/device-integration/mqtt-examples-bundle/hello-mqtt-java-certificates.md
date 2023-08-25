@@ -8,7 +8,7 @@ In this tutorial, you will learn how to use the Java MQTT client with {{< produc
 
 In the GitHub repository [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client), you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
 
-### Prerequisites   {#prerequisites--}
+### Prerequisites {#prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -30,7 +30,7 @@ If you don't have a valid certificate, you can generate one for testing purposes
 $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key-iot-device-0001.jks -alias "Alias"
 ```
 
-### Developing the "Hello, MQTT world!" client with certificates   {#developing-the-hello-mqtt-world-client-with-certificates--}
+### Developing the "Hello, MQTT world!" client with certificates {#developing-the-hello-mqtt-world-client-with-certificates}
 
 To develop a "Hello, world!" MQTT client for {{< product-c8y-iot >}} with certificates, you must
 

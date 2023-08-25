@@ -12,8 +12,8 @@ Learn how to access the platform, get introduced to the general functionalities 
 
 In the entire documentation you find detailed description on the usage of the respective applications and functionalities via the UI.
 
-If you are specifically interested in the usage of the standard platform applications, refer to:
+Specifically check out the following sections:
 
-- [Platform administration > {{< standard-tenant >}} administration](/standard-tenant/) and [Platform administration > {{< enterprise-tenant >}} administration](/enterprise-tenant/) for details an the Administration application.
-- [Device management > Device management application](/device-management-application/) for details an the Device management application.
+- [Platform administration > {{< standard-tenant >}} administration](/standard-tenant/) for details on the Administration application.
+- [Device management > Device management application](/device-management-application/) for details on the Device management application.
 - [Application enablement & solutions > Cockpit](/cockpit/) for details on the Cockpit application.

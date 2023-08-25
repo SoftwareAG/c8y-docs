@@ -48,7 +48,7 @@ After selecting the asset, you see all children of this asset. To return to the 
 The full text search is only available in the Home dashboard and the Report dashboards.
 {{< /c8y-admon-info >}}
 
-For details on the search functionality, see [Search and filter functionality](/getting-started/gui-features/#search-and-filter-functionality).
+For details on the search functionality, see [Search and filter functionality](/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality).
 
 #### Filtering {#filtering}
 
@@ -56,4 +56,4 @@ Filtering is another way to find assets. However, it only filters assets on the 
 
 ![Filtering](/images/users-guide/cockpit/cockpit-asset-column-filter.png)
 
-For details on the filter functionality, see [Search and filter functionality](/getting-started/gui-features/#search-and-filter-functionality).
+For details on the filter functionality, see [Search and filter functionality](/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality).

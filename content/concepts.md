@@ -6,7 +6,7 @@ layout: redirect
 bundle: concepts
 section:
   - getting_started
-weight: 30
+weight: 10
 ---
 
 Learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}}. This section serves as a starting point for anyone technically interested in our IoT platform.

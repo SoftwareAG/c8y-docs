@@ -96,7 +96,7 @@ or:
 
 Click **Apply** to apply the changes.
 
-Once all your translations are done, you can change the language under **User settings** to see the translations in action. For more information see [To change user settings](/getting-started/user-settings/#to-change-user-settings).
+Once all your translations are done, you can change the language under **User settings** to see the translations in action. For more information see [To change user settings](/get-familiar-with-the-ui/user-settings/#to-change-user-settings).
 
 
 {{< c8y-admon-info>}}

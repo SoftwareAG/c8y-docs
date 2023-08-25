@@ -20,4 +20,4 @@ Moreover, an {{< enterprise-tenant >}} includes the following additional feature
 * **Domain name** - to provide an individual domain name.
 * **User hierarchy** - to reflect entities with limited permissions to subsets of shared data.
 
-For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierarchy](/getting-started/concepts/#tenant-hierarchy).
+For details on the {{< product-c8y-iot >}} tenant concept see [Tenant hierarchy](/get-familiar-with-the-ui/concepts/#tenant-hierarchy).

@@ -146,7 +146,7 @@ For more details about uploading a microservice ZIP file, refer to [Custom micro
 
 ### Using the microservice utility tool {#using-the-microservice-utility-tool}
 
-You can also build, upload and subscribe the application using the [microservice utility tool](/microservice-sdk/concept/#microservice-utility-tool). In this case, the files must follow the directory structure required by the script.
+You can also build, upload and subscribe the application using the [microservice utility tool](/microservice-sdk/general-aspects/#microservice-utility-tool). In this case, the files must follow the directory structure required by the script.
 
 For this particular microservice example, the structure shall be:
 

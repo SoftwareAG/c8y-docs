@@ -53,7 +53,7 @@ Click the arrow icon on the left of an entry to expand or collapse it and show o
 
 Click **Create new machine profile** or **Create new line profile** at the right of the top menu bar to create a new profile.
 
-For details, see [Creating machine profiles](#machine-profiles) or [Creating line profiles](#line-profiles).
+For details, see [Creating machine profiles](/oee/oee-administration/#creating-machine-profiles) or [Creating line profiles](/oee/oee-administration/#creating-line-profiles).
 
 #### To edit a profile {#to-edit-a-profile}
 

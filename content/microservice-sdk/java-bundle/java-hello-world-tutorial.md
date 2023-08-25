@@ -506,4 +506,4 @@ You may also use the name parameter, for example, <http://localhost:8082/hello?n
 
 ### Improving the microservice {#improving-the-microservice}
 
-Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/java/#java-example) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/java/#create-a-java-application) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

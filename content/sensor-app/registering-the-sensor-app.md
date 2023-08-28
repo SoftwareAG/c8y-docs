@@ -50,7 +50,7 @@ QR codes not supported by the {{< sensor-app >}} are highlighted using a red reg
 
 6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
 
-For further information about registering a device on the platform manually, refer to [Registering devices](/device-management-application/#connecting-devices).
+For further information about registering a device on the platform manually, refer to [Registering devices](/device-management-application/registering-devices/).
 
 If you want to deregister from {{< product-c8y-iot >}}, tap **Deregister** in the top right corner of the screen and approve the confirmation dialog. After that you can connect to the same or any other {{< product-c8y-iot >}} instance or tenant.
 

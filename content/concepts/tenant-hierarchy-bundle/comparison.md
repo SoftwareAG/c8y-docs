@@ -129,7 +129,7 @@ There is no technical limitation on who registers the device on the platform. Ho
 
 In the RBAC approach, managing access is the most complicated part as a misconfiguration can potentially give customers access to data that they mustn't see, like other customers' data. The inventory roles allow you to granularly define access for only certain parts of data but they don't protect you from accidental misconfigurations. Another limitation here is that customers won't be able to create their own roles.
 
-For security aspects on access control see [Security aspects > Access control](/concepts/security/#access-control).
+For security aspects on access control see [Access control](/concepts/security/#access-control).
 
 
 #### User management {#user-management}

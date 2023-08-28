@@ -10,8 +10,8 @@ section:
 ---
 
 {{< c8y-admon-related >}}
-- [Cockpit](/users-guide/cockpit/#overview) for more details on the {{< product-c8y-iot >}} UI.
-- [Administration > Managing applications](/users-guide/administration/#managing-applications) for more information on managing applications in {{< product-c8y-iot >}}.
+- [Cockpit](/cockpit/cockpit-introduction/) for more details on the {{< product-c8y-iot >}} UI.
+- [Managing applications](/standard-tenant/ecosystem/#managing-applications) for more information on managing applications in {{< product-c8y-iot >}}.
 - [Web SDK guide](/web/#overview) for details on building web applications on top of {{< product-c8y-iot >}}.
 {{< /c8y-admon-related >}}
 
@@ -74,7 +74,7 @@ The application switcher allows you to quickly switch between applications. Clic
 
 <img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/standard-tenant/ecosystem/#subscribed-applications) or [custom applications](/standard-tenant/ecosystem/custom-applications). Just click the icon for the desired application to open it as active application.
+The application switcher shows all {{< product-c8y-iot >}} applications you currently have access to. These can be [subscribed applications](/standard-tenant/ecosystem/#subscribed-applications) or [custom applications](/standard-tenant/ecosystem/#custom-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using {{< sag-cloud >}}, the application switcher also shows other {{< sag-cloud >}} applications at the first level, followed by the {{< product-c8y-iot >}} applications.
 

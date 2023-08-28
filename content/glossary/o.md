@@ -11,7 +11,7 @@ section:
 
 OEE (Overall Equipment Effectiveness) is a metric for measuring the efficiency, effectiveness and performance of production processes, by breaking them down into the three components Availability, Performance, and Quality. The {{< product-c8y-iot >}} OEE application uses machine data, master data and planning data from machines and machine lines to calculate the factors of the OEE calculation.
 
-For details see the [Application enablement & solutions > {{< product-c8y-iot >}} OEE](/oee/overview).
+For details see the [Application enablement & solutions > {{< product-c8y-iot >}} OEE](/oee/oee-introduction/).
 
 
 ### OPC UA {#opc-ua}

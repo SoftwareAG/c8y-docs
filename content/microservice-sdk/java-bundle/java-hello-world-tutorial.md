@@ -7,7 +7,7 @@ layout: redirect
 
 Here you will learn how to create your first microservice that can be deployed on the [{{< product-c8y-iot >}} platform](https://{{< domain-c8y >}}) using the Microservice SDK for Java.
 
-Requests to a microservice can be authenticated using basic authentication or OAuth. Refer to [Authentication and authorization](/microservice-sdk/concept/#authentication-and-authorization) for more details.
+Requests to a microservice can be authenticated using basic authentication or OAuth. Refer to [Authentication and authorization](/microservice-sdk/general-aspects/#authentication-and-authorization) for more details.
 
 ### Prerequisites {#prerequisites}
 
@@ -70,7 +70,7 @@ This microservice example has been tested under macOS, Ubuntu and Windows 10 wit
 
 #### Create a Maven project {#create-a-maven-project}
 
-Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/microservice-sdk/concept/#microservice-manifest).
+Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
 
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-microservice-java -Dversion=1.0.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -265,7 +265,7 @@ application.name=my-first-microservice
 server.port=80
 ```
 
-Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the {{< product-c8y-iot >}} platform.
+Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/general-aspects/#microservice-manifest) file and it is required to deploy the microservice in the {{< product-c8y-iot >}} platform.
 
 ```json
 {
@@ -303,7 +303,7 @@ To deploy your microservice on the {{< product-c8y-iot >}} platform you need:
 * The ZIP file built with Maven on the previous steps.
 
 {{< c8y-admon-important >}}
-The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/welcome/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
+The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact [product support](/additional-resources/contacting-support/) so that we can assist you with the activation. Note that this is a paid feature.
 {{< /c8y-admon-important >}}
 
 In the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
@@ -506,4 +506,4 @@ You may also use the name parameter, for example, <http://localhost:8082/hello?n
 
 ### Improving the microservice {#improving-the-microservice}
 
-Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/java/#java-example) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/java/#create-a-java-application) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

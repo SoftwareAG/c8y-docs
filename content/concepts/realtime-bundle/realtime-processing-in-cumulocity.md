@@ -8,7 +8,7 @@ On top of {{< product-c8y-iot >}} you can use the Apama streaming analytics engi
 
 Apama's Event Processing Language covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within {{< product-c8y-iot >}} using the Streaming Analytics application. Alternatively, you can install Apama on your local machine and develop your applications with {{< sag-designer >}} - an Eclipse-based development environment. You can deploy your monitor files as Apama applications to {{< product-c8y-iot >}}, see [Basic functionality](/streaming-analytics/epl-apps/#basic-functionality) for more information.
 
-For further information on using Apama's Event Processing Language in {{< product-c8y-iot >}} refer to [Using the Apama Event Processing Language](/concepts/realtime/using-epl) below and to [Streaming Analytics](/streaming-analytics/overview-analytics/).
+For further information on using Apama's Event Processing Language in {{< product-c8y-iot >}} refer to [Using the Apama Event Processing Language](/concepts/realtime/#using-epl) below and to [Streaming Analytics](/streaming-analytics/overview-analytics/).
 
 
 ### What are the benefits of using real-time processing? {#what-are-the-benefits-of-using-realtime-processing}

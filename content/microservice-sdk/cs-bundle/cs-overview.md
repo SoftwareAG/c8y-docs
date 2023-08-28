@@ -6,7 +6,7 @@ layout: redirect
 
 This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for C#, and it contains:
 
-*   [Prerequisites](#general-prerequisites) – Development and runtime requirements you must develop and run C# microservices.
+*   [Prerequisites](#development-prerequisites) – Development and runtime requirements you must develop and run C# microservices.
 *   [Hello world tutorial for C#](#cs-hello-world-tutorial) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
 *   [Troubleshooting](#cs-troubleshooting) – Some identified common problems and their solutions.

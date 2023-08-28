@@ -31,22 +31,22 @@ It is not recommended to build a microservice that loads most of the functionali
 
 #### Resource consumption {#resource-consumption}
 
-Resource consumption should be defined as necessary in the [microservice manifest](/microservice-sdk/concept/#microservice-manifest). Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started.
+Resource consumption should be defined as necessary in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest). Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started.
 
 
 #### Scaling {#scaling}
 
-There is currently no way to influence load balancer behaviour for scaled microservices, for details on scaling see [Isolation and scaling](/microservice-sdk/concept/#isolation-scaling). The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/concept/#microservice-manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
+There is currently no way to influence load balancer behaviour for scaled microservices, for details on scaling see [Isolation and scaling](/microservice-sdk/general-aspects/#isolation-scaling). The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
 
 
 #### Shared microservices {#shared-microservices}
 
-When building microservices for multiple tenants, try to build them in the multi-tenant isolation level, see [Isolation and scaling](/microservice-sdk/concept/#isolation-scaling).
+When building microservices for multiple tenants, try to build them in the multi-tenant isolation level, see [Isolation and scaling](/microservice-sdk/general-aspects/#isolation-scaling).
 
 
 #### Statefulness {#statefulness}
 
-Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness as one of the requirements listed under [Requirements and interactions](/microservice-sdk/concept/#requirements-interactions).
+Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness as one of the requirements listed under [Requirements and interactions](/microservice-sdk/general-aspects/#requirements-interactions).
 
 
 #### Testing of microservices {#testing-of-microservices}

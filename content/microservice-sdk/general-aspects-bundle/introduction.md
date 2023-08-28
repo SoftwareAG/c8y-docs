@@ -13,7 +13,7 @@ You can extend the {{< product-c8y-iot >}} platform with customer-specific funct
 
 - By default, they provide REST or Websocket APIs.
 - Inbound REST and Websocket endpoints are secured by {{< product-c8y-iot >}} core built-in API gateway functionality.
-- Requests from one microservice to the {{< product-c8y-iot >}} REST API can be executed by either using the original user account (of the inbound request) or by using a [service user](/microservice-sdk/concept/#users-and-roles).
+- Requests from one microservice to the {{< product-c8y-iot >}} REST API can be executed by either using the original user account (of the inbound request) or by using a [service user](/microservice-sdk/general-aspects/#users-and-roles).
 - Multi-tenant support.
 
 The following management features are supported:

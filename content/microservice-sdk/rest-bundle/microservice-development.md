@@ -115,7 +115,7 @@ The ZIP file must consist of:
 
 ### Acquiring microservice credentials {#acquiring-microservice-credentials}
 
-The following section is a wrap up for user management as described under [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
+The following section is a wrap up for user management as described under [General aspects](/microservice-sdk/general-aspects) of microservices in {{< product-c8y-iot >}}.
 
 Microservice related endpoints require a microservice bootstrap user, which can be obtained by a service provider using:
 
@@ -247,7 +247,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.applicationusercollection+json
 }
 ```
 
-The response consists of service user credentials dedicated for each tenant. A service user is a user account in the tenant that has the permissions ("roles") that the microservice requested on [registration](#creating-application) time.
+The response consists of service user credentials dedicated for each tenant. A service user is a user account in the tenant that has the permissions ("roles") that the microservice requested on [registration](#creating-applications) time.
 
 
 ### Settings {#settings}

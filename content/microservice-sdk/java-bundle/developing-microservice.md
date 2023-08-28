@@ -30,7 +30,7 @@ Annotation | Description
 
 ### Context support {#context-support}
 
-It is described below the context support as utility tool for the user management described in [General aspects](/microservice-sdk/concept) of microservices in {{< product-c8y-iot >}}.
+It is described below the context support as utility tool for the user management described in [General aspects](/microservice-sdk/general-aspects) of microservices in {{< product-c8y-iot >}}.
 
 `@UserScope` and `@TenantScope` at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
 
@@ -102,7 +102,7 @@ On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered fo
 
 ### Heap and perm/metadata {#heap-and-permmetadata}
 
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/concept/#microservice-manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
+To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
 10% is reserved for "system", but not less than 50 MB. <br>
 10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.
@@ -449,7 +449,7 @@ $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=http
 #### Hosted deployment {#hosted-deployment}
 
 {{< c8y-admon-info >}}
-For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/concept/#microservice-utility-tool) for easy packaging, deployment and subscription.
+For your convenience, {{< product-c8y-iot >}} provides a [Microservice utility tool](/microservice-sdk/general-aspects/#microservice-utility-tool) for easy packaging, deployment and subscription.
 {{< /c8y-admon-info >}}
 
 To deploy an application on an environment you need the following:
@@ -548,7 +548,7 @@ $ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 
 #### Local Docker deployment {#local-docker-deployment}
 
-To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/concept/#environment-variables).
+To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/general-aspects/#environment-variables).
 
 An example execution could be:
 

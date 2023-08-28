@@ -6,8 +6,8 @@ layout: bundle
 
  There are two types of {{< product-c8y-iot >}} applications:
 
- * [web applications](#web-applications) -  web-based user interface applications
- * [microservices](#microservices) - server-side business logic
+ * [Web applications](#web-applications) -  web-based user interface applications
+ * [Microservices](#microservices) - server-side business logic
 
 Web applications are HTML5 single page applications, that appear in the {{< product-c8y-iot >}} application switcher and that are hosted in the {{< product-c8y-iot >}} platform.
 

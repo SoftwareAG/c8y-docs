@@ -176,7 +176,7 @@ The microservice usage feature gathers information on the resource usage per sub
 
 * **Resource-based billing** - exposes the number of resources used by a microservice to calculate billing.
 
-The billing modes are specified per microservice in the [microservice manifest](/microservice-sdk/concept/#manifest) and are set in the field "billingMode".
+The billing modes are specified per microservice in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) and are set in the field "billingMode".
 
 RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
 
@@ -242,7 +242,7 @@ For more details, refer to [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y
 
 #### Scaling {#scaling}
 
-Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](/microservice-sdk/concept/#manifest).
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
 
 For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
@@ -358,7 +358,7 @@ Any extension deployed to the platform as a microservice is billed as "used" and
   * Pending - the microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
   * Scheduled - the microservice has been assigned to a node, the Docker container initialization has been started. The resources for the microservice have already been allocated so billing is started.
   * Not ready - the microservice container is not ready yet to handle incoming traffic but the application is already running.
-  * Ready - the microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
+  * Ready - the microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest). If probes are not defined then the microservice is immediately ready.
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/standard-tenant/audit-logs/). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 

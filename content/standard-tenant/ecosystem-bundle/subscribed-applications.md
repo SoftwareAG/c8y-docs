@@ -41,7 +41,7 @@ Below all applications are listed which are by default available in the {{< stan
 </tr>
 
 <tr>
-<td style="text-align:left"><a href="/cockpit/overview/" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left"><a href="/cockpit/cockpit-introduction/" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web application</td>

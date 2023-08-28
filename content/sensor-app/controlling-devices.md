@@ -8,7 +8,7 @@ section:
 
 The {{< sensor-app >}} can receive real-time control commands from {{< product-c8y-iot >}}.
 
-You can create a dashboard for your smartphone device as described in [Working with dashboards](/cockpit/dashboards).
+You can create a dashboard for your smartphone device as described in [Working with dashboards](/cockpit/working-with-dashboards/).
 
 For details on how to add new widgets to the dashboard, see [Widgets collection](/cockpit/widgets-collection).
 

@@ -81,7 +81,7 @@ Alarms are only removed if they have a status of CLEARED.
 
 Simply click the row of the rule you want to edit.
 
-For details on the fields, see [To add a retention rule](#add-retention-rule).
+For details on the fields, see [To add a retention rule](#to-add-a-retention-rule).
 
 
 ### To delete a retention rule {#to-delete-a-retention-rule}

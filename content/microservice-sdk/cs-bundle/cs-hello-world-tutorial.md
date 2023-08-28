@@ -298,7 +298,7 @@ To show all the functions are available, type
 ./microservice.ps1 --help
 ```
 
-For further information refer to [Microservice utility tool](/microservice-sdk/concept/#microservice-utility-tool).
+For further information refer to [Microservice utility tool](/microservice-sdk/general-aspects/#microservice-utility-tool).
 
 **Deployment**
 
@@ -557,7 +557,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [Packing](/microservice-sdk/concept/#packing).
+For further information, refer to [Packing](/microservice-sdk/general-aspects/#packing).
 
 **Deployment**
 

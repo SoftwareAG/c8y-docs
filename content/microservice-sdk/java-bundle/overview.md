@@ -5,7 +5,7 @@ title: Overview
 ---
 
 
-This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for Java. It also contains a [Hello world tutorial](#java-microservice) that you may follow to get the basics of developing microservices using Java. After you have successfully deployed your first microservice to {{< product-c8y-iot >}}, you may also continue with the section [Developing microservices](#developing-microservice) to learn more about other features and capabilities of the SDK.
+This section describes how to develop and deploy microservices on top of {{< product-c8y-iot >}} using the Microservice SDK for Java. It also contains a [Hello world tutorial](#java-hello-world-tutorial) that you may follow to get the basics of developing microservices using Java. After you have successfully deployed your first microservice to {{< product-c8y-iot >}}, you may also continue with the section [Developing microservices](#developing-microservice) to learn more about other features and capabilities of the SDK.
 
 {{< c8y-admon-info >}}
 You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this section focuses on Maven and some troubleshooting for Eclipse.

@@ -14,7 +14,7 @@ By default, the **Auto-refresh** option at the top left is activated and [**OEE 
 
 Click **Andon Board** at the right of the top menu bar to switch to the **Andon Board** of this particular machine, see [Andon Board](#andon-board).
 
-Click **Edit configuration** at the right of the top menu bar to edit the machine profile in the profile configurator, see [Creating machine profiles](/oee/oee-administration/#machine-profiles). This link is only visible if the user has a role assigned with the Oeeconfigurator Admin permission enabled.
+Click **Edit configuration** at the right of the top menu bar to edit the machine profile in the profile configurator, see [Creating machine profiles](/oee/oee-administration/#creating-machine-profiles). This link is only visible if the user has a role assigned with the Oeeconfigurator Admin permission enabled.
 
 {{< c8y-admon-info >}}
 To access the OEE dashboards, the permission "Oeeconfigurator" with type READ or ADMIN must be enabled for the user/role. Without the required permission you might see error messages or not see any data in the machine dashboard.
@@ -24,7 +24,7 @@ To access the OEE dashboards, the permission "Oeeconfigurator" with type READ or
 
 In the **Time range** field you can select a time range for which the OEE values will be displayed in the [**OEE status**](#oee-status) and [**OEE data**](#data) sections. By default, this will select a 24-hour period based on the current date. The back and forward arrows will move the time range based on the difference betwen the start and end time, that is, if the difference between the two times is 4 hours, then the arrows will use steps of 4 hours.
 
-In the **Resolution/Shift** dropdown menu you can select the resolution for the selected time period. The available resolutions as well as up to four default periods (for example, 1 minute, 10 minutes, 1 hour, and 8 hours) are configured during the profile creation. For more information see [Creating machine profiles](/oee/oee-administration/#machine-profiles). It is also possible to directly select shifts for that machine's location as the resolution.
+In the **Resolution/Shift** dropdown menu you can select the resolution for the selected time period. The available resolutions as well as up to four default periods (for example, 1 minute, 10 minutes, 1 hour, and 8 hours) are configured during the profile creation. For more information see [Creating machine profiles](/oee/oee-administration/#creating-machine-profiles). It is also possible to directly select shifts for that machine's location as the resolution.
 
 {{< c8y-admon-info >}}
 If the selected time frame is "last hour" you can set the resolution to 1 minute and 10 minutes, but other resolutions that are equal or longer than 1 hour, won't be offered.

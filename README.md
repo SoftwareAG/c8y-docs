@@ -1,42 +1,48 @@
-# Cumulocity Guides website
+# Cumulocity IoT documentation website
 
-<https://cumulocity.com/guides>
+<https://cumulocity.com/guides> - releases 10.18 and older
+<https://cumulocity.com/docs> - CD and yearly releases
 
 **Built with [Hugo](https://gohugo.io/)** (version 0.92.1)
 
 ## Development environment
 
-- Clone the repository
-- Install hugo by using snap `snap install hugo --channel=extended`
-- Open a terminal window on project directory and type `hugo server`
+- Clone the repository.
+- Install Hugo by using snap `snap install hugo --channel=extended`.
+- Open a terminal window in the project directory and type `hugo server`. Specify the subdirectory that contains your content, for example http://localhost:1313/guides/users-guide/. Specifying only http://localhost:1313/guides results in a 404 error.
 
-## Structure
+Details are described in the "How to contribute to the Cumulocity IoT documentation" process document. Contact the Cumulocity IoT documentation team for access.
 
-The Cumulocity Guides website architecture has the following structure:
+## Structure for /guides (for releases 10.18 and older)
 
-- Section (e.g. *<http://cumulocity.com/guides/user-guide>*)
-  - Subsection - renders as a single page (e.g. *<http://cumulocity.com/guides/user-guide/overview>*)
-    - Anchor section - anchor tag in the subsection page (e.g. *<http://cumulocity.com/guides/user-guide/overview#user-settings>*)
+The Cumulocity IoT documentation website architecture has the following structure:
 
-The architecture is built with a mix of front matter and directory structure
+- 1st level  - for example, *<http://cumulocity.com/guides/users-guide/>*
+  - 2nd level - renders as a single page, for example *<http://cumulocity.com/guides/users-guide/administration/>*
+    - Anchor section - anchor tag in the subsection page, for example *<http://cumulocity.com/guides//users-guide/administration/#managing-permissions>*
+
+The architecture is built with a mix of front matter and directory structure.
+
+
+## Structure - /docs (for CD and yearly releases)
+
+The Cumulocity IoT documentation website architecture has the following structure:
+
+- 1st level  - for example, *<http://cumulocity.com/docs/platform_administration>*
+  - 2nd level - for example *<http://cumulocity.com/docs/platform_administration/standard-tenant/>*
+    - 3rd level - renders as a single page, for example *<http://cumulocity.com/docs/standard-tenant/managing-permissions>*
+      - Anchor section - anchor tag in the subsection page, for example *<http://cumulocity.com/docs/standard-tenant/managing-permissions/#global-roles>*
+
+The architecture is built with a mix of front matter and directory structure.
+
 
 ## Adding content
 
 ### 1. Add a new section
 
-Before adding a new section, check if the content fits in any of the available sections:
+In the new documentation structure (/docs) adding level 1 or level 2 sections is restricted to the admin users of the c8y-docs repo.
 
-- Release notes
-- Concepts guide
-- User guide
-- User guide (german version)
-- Device guides
-- Cumulocity-IoT Edge
-- Microservice SDK guide
-- Device SDK guide
-- Web SDK guide
-- Analytics guide
-- Reference guide
+Before adding a new section, check if the content fits in any of the available sections.
 
 A new section is defined by a Markdown file with the following front matter:
 
@@ -50,7 +56,7 @@ layout: root # don't change
 weight: 90 # order the section in the section dropdown in ascending order
 ---
 ```
-Grab the icon classes in the [Styleguide](https://styleguide.cumulocity.com/#/icons/cumulocity)
+Grab the icon classes in the [Styleguide](https://styleguide.cumulocity.com/#/icons/cumulocity).
 
 ### 2. Add the section root directory
 
@@ -58,7 +64,7 @@ All guides are stored in the `content` directory. To add a new section, create a
 
 ### 3. Add a subsection
 
-Inside the newly created directory create a markdown file with the name you wish to use as a url — e.g. `introduction.md` with the following front matter:
+Inside the newly created directory create a Markdown file with the name you wish to use as a URL — for example `introduction.md` with the following front matter:
 
 ```yaml
 ---
@@ -66,8 +72,8 @@ title: Introduction to Cumulocity # the page title
 layout: bundle # don't change
 weight: 10 # set the position of the page within the section in ascending order
 aliases: # if needed, add the redirects here, otherwise remove this
-  - /concepts-guide/introduction-to-cumulocity/
-  - /concepts-guide/introduction-to-cumulocity.html
+  - /concepts/introduction-to-cumulocity/
+  - /concepts/introduction-to-cumulocity.html
 ---
 # add optional content as Markdown
 Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage.
@@ -75,17 +81,17 @@ Cumulocity gives you very fast visibility and control over your remote assets, b
 
 If you're looking to have a short page without anchors, you're good to go, but if you want to add multiple subsections with anchors then proceed to the next step.
 
-When adding multiple subsections, the content provided in this file will be rendered as a lead (text slightly larger) in the top of the page.
+When adding multiple subsections, the content provided in this file will be rendered as a lead in the top of the page.
 
 ### 4. Add blocks of content with anchors to a page
 
 To display multiple blocks of content and provide anchor links to display in the navigator, you'll have to follow these steps:
 
-1. Add a directory with the exact same name as the Markdown file adding the suffix `-bundle`, e.g. `introduction-bundle`.
+#### 1. Add a directory with the exact same name as the Markdown file adding the suffix `-bundle`, e.g. `introduction-bundle`.
 
 &nbsp;
 
-2. Add a `index.html` file into the new directory with the following front matter:
+#### 2. Add a `index.html` file into the new directory with the following front matter:
 
 ```yaml
 ---
@@ -94,7 +100,7 @@ headless: true # states that all content inside this directory is just a resourc
 ---
 ```
 
-3. Add a Markdown file for each block of content with the following front matter:
+#### 3. Add a Markdown file for each block of content with the following front matter:
 
 ```yaml
 ---
@@ -115,14 +121,14 @@ weight: 10 # to set the position in the page
 
 Media should be added to `/static/images/`. Add a new directory if none of the available suits your needs.
 
-Keep all file names url friendly (lowercase, no special characters, and no empty spaces).
+Keep all file names URL-friendly (lowercase, no special characters, and no empty spaces).
 
-To use the images in your pages, just add the relative path e.g `![image title](/images/<directory name>/<file name>)`.
+To use the images in your pages, just add the relative path, for example `![image title](/images/<directory name>/<file name>)`.
 
 
 ## Redirects
 
-Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/guides` out of the url. Check the following example:
+Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/docs` or `/guides` out of the URL. Check the following example:
 
 ```yaml
 ---
@@ -130,26 +136,30 @@ title: Introduction to Cumulocity
 layout: bundle
 weight: 10
 aliases:
-  - /concepts-guide/introduction-to-cumulocity/
-  - /concepts-guide/introduction-to-cumulocity.html
-# this will redirect cumulocity.com/guides/concepts-guide/introduction-to-cumulocity/
-# to cumulocity.com/guides/concepts/introduction
+  - /concepts/introduction-to-cumulocity/
+  - /concepts/introduction-to-cumulocity.html
+# this will redirect cumulocity.com/docs/concepts/introduction-to-cumulocity/
+# to cumulocity.com/docs/concepts/introduction
 ---
 ```
 
 ## Deploying to cumulocity.com/guides
 
-Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, e.g. `release/r10.5.0-GA`. When creating these branches follow the next steps:
-- Create the branch following the same pattern: `release/r[version number]-GA`
+Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, for example `release/r10.16.0`. When creating these branches follow the next steps:
+- Create the branch following the same pattern: `release/r[version number]`
 
-- Edit the `config.toml` file and append the version number to the base url, e.g.: `baseURL = "https://cumulocity.com/guides/10.5.0"`
-- Still on `config.toml` change the `guidesRedirect` to target the about page on the release, e.g.: `guidesRedirect = "https://cumulocity.com/guides/10.5.0/welcome/intro-documentation/"`
-- Add the file `properties.json` adding the name and the long name for the release version, e.g.: ```{
-  "name":"10.5.0",
-  "longname": "Release 10.5.0 (GA)"
+- Edit the `config.toml` file and append the version number to the base URL, for example: `baseURL = "https://cumulocity.com/docs/r10.16.0"`
+- Still on `config.toml` change the `guidesRedirect` to target the about page on the release, for example: `guidesRedirect = "https://cumulocity.com/docs/r10.16.0/welcome/#introduction"`
+- Add the file `properties.json` adding the name and the long name for the release version, for example: ```{
+  "name":"r10.16.0",
+  "longname": "Release 10.16.0"
 }```
 - Deploy using the Jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
 - Deploy the `default` branch using the Jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
+
+## Deploying to cumulocity.com/docs
+
+to be added
 
 ## Automatic cherry-picking and labels
 

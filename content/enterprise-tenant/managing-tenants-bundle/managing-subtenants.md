@@ -103,7 +103,7 @@ In the {{< management-tenant >}}, you also find a column with information on the
 			</tr>
 			<tr>
 				<td style="text-align:left">Send password reset link as email</td>
-				<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/getting-started/user-settings/#to-change-your-password" class="no-ajaxy">To change your password</a> for more information on password strength).</td>
+				<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/get-familiar-with-the-ui/user-settings/#to-change-your-password" class="no-ajaxy">To change your password</a> for more information on password strength).</td>
 				<td>No</td>
 			</tr>
 			<tr>

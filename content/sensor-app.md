@@ -4,7 +4,7 @@ icon: "c8y-icon c8y-icon-saas"
 type: root
 layout: redirect
 bundle: sensor-app
-weight: 50
+weight: 40
 section:
   - getting_started
 ---

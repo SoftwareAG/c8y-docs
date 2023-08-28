@@ -1,16 +1,20 @@
 ---
-title: Contacting product support
+title: Product support
 layout: bundle
-weight: 20
+weight: 30
 section:
   - getting_started
 ---
 
-<!-- content to be reworked -->
+Product support for {{< product-c8y-iot >}} is provided to licensed customers via our [{{< sag-portal >}}]({{< link-sag-portal >}}). Many services on this portal require that you have an account. If you do not yet have one, you can request it at [{{< link-sag-portal >}}register]({{< link-sag-portal >}}register).
 
-Product support for {{< product-c8y-iot >}} is provided to licensed customers by the {{< sag-support >}} team, who you can access on the {{< company-sag >}} {{< sag-portal >}} at [{{< link-sag-portal >}}]({{< link-sag-portal >}}). There you will find information about how to contact us via email or phone. Some services on this site may require credentials.
+Once you have an account, you can, for example:
 
-For further information on the product support website in the {{< sag-portal >}}, see also [Additional resources](/additional-resources).
+Download products, updates, and fixes.
+Search the Knowledge Center for technical information and tips.
+Subscribe to early warnings and critical alerts.
+Open and update support incidents.
+Add product feature requests.
 
 If you are using {{< product-c8y-iot >}} on a trial basis, you can refer to our free {{< sag-dev-community >}} pages at [{{< link-sag-dev-community >}}]({{< link-sag-dev-community >}}) for information sources such as user forums and FAQs.
 

@@ -62,7 +62,7 @@ The **Search** page only shows a limited number of matches. In case of more matc
 The search results include all assets containing the search term in any property (name, model or any fragment), that is, the search results do not only include assets matching the search criteria with their names.
 {{< /c8y-admon-important >}}
 
-The DTM application extends the full text search capability of {{< product-c8y-iot >}} for searching assets. See [Search and filter functionality](/getting-started/gui-features/#search-and-filter-functionality) to know more about available search options.
+The DTM application extends the full text search capability of {{< product-c8y-iot >}} for searching assets. See [Search and filter functionality](/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality) to know more about available search options.
 
 ### To move assets {#to-move-assets}
 

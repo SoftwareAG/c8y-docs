@@ -64,7 +64,7 @@ In the field **Password validity limit**, you can limit the validity of user pas
 The password validity limit is not imposed on users with a "devices" role. This prevents device passwords from expiring.
 {{< /c8y-admon-info >}}
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [To change your password](/getting-started/user-settings/#to-change-your-password).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, users must provide strong passwords as described in [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 
 {{< c8y-admon-info >}}
 The password validity limit and the password strength may not be editable, if configured by the platform administrator.

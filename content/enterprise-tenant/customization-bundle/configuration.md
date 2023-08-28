@@ -38,7 +38,7 @@ The following placeholders can be found in the **Configuration** tab:
 |{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< domain-c8y >}}`. In case of an {{< enterprise-tenant >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.|
 |{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".|
 |{email}|Will be replaced with the email address of the recipient user as stored in the user settings. Some views in the UI recognize this parameter and prefill the respective field with this value, for example, during the process of password reset.|
-|{username}|Will be replaced with the value of the username property specified in the user configuration, see [User options and settings](/getting-started/user-settings/).|
+|{username}|Will be replaced with the value of the username property specified in the user configuration, see [User options and settings](/get-familiar-with-the-ui/user-settings/).|
 |{binaryId}|Will be replaced with the respective `binaryId` for the binary artefact to be used in the download link.|
 |{exportApi}|Will be replaced with the respective API in which the error occurred.|
 |{size}|Will be replaced with the storage usage percentage value.|

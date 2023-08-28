@@ -12,7 +12,7 @@ Learn how to access the platform, get introduced to the general functionalities 
 
 In the entire documentation you find detailed description on the usage of the respective applications and functionalities via the UI.
 
-Specifically check out the following sections:
+Specifically, check out the following sections:
 
 - [Platform administration > {{< standard-tenant >}} administration](/standard-tenant/) for details on the Administration application.
 - [Device management > Device management application](/device-management-application/) for details on the Device management application.

@@ -1,0 +1,92 @@
+name: CI
+on:
+  pull_request:
+    types:
+      # defaults
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - closed
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+# Build job
+  build:
+    name: Build Hugo
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.100.1
+    steps:
+    - name: Install Hugo CLI
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      run: |
+        wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
+        && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+    - name: Setup base URL env var
+      run: |
+        echo BASEURL="https://${{ github.repository_owner }}-${{ github.event.repository.name }}-${{ github.job }}-pr-${{ github.event.number }}.surge.sh" >> $GITHUB_ENV
+
+    - name: Report base URL env var
+      run: echo "${{ env.BASEURL }}"
+
+    - name: Checkout
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Build with Hugo
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      env:
+        # For maximum backward compatibility with Hugo modules
+        HUGO_ENVIRONMENT: production
+        HUGO_ENV: production
+      run: |
+        hugo \
+          --baseURL "${{ env.BASEURL }}/"
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - run: npm install -g surge
+
+    - name: Deploy to surge
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      run: |
+        surge ./public ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+
+    - name: Remove from surge
+      if: ${{ github.event.pull_request.state == 'closed' }}
+      run: |
+        surge teardown ${{ env.BASEURL }} --token ${{ secrets.SURGE_TOKEN }}
+
+    - name: Run Summary
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      run: echo "Preview available **[here](${{ env.BASEURL }})**" >> $GITHUB_STEP_SUMMARY
+
+    - name: Add Comment to PR
+      if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Preview available **[here](${{ env.BASEURL }})**'
+          })

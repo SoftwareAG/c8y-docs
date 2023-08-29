@@ -1,9 +1,7 @@
 
 
 # Production
-# baseURL = "https://cumulocity.com/guides"
-# Dev
-baseURL = "https://jocular-cucurucho-8ab98d.netlify.app/guides"
+baseURL = "https://cumulocity.com/docs"
 
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
@@ -11,7 +9,7 @@ title = "Cumulocity IoT documentation"
 theme = "c8ydocs"
 paginate = 12
 # canonifyurls = false
-publishDir = "public/guides"
+publishDir = "public"
 # googleAnalytics = "UA-xxxxxxxx-x"
 summaryLength = 30
 buildFuture = true

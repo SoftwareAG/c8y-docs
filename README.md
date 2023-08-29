@@ -145,7 +145,7 @@ aliases:
 
 ## Deploying to cumulocity.com/guides
 
-Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, for example `release/r10.16.0`. When creating these branches follow the next steps:
+Cumulocity provides documentation for multiple releases. You must create a release branch for every public release, for example `release/r10.16.0`. When creating these branches follow the next steps:
 - Create the branch following the same pattern: `release/r[version number]`
 
 - Edit the `config.toml` file and append the version number to the base URL, for example: `baseURL = "https://cumulocity.com/docs/r10.16.0"`

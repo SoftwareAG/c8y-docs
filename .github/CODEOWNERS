@@ -6,7 +6,7 @@
 # These owners will be the default owners for everything in the repo.
 * @BeateRixen marlene.windel@softwareag.com @rssag
 
-/content/users-guide/device-management-bundle/ @Oezge-Akin @BeateRixen marlene.windel@softwareag.com @rssag
+/content/device-management-application/ @Oezge-Akin @rssag
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com @rssag
 /content/edge/ @sharath-jk @BeateRixen marlene.windel@softwareag.com @rssag

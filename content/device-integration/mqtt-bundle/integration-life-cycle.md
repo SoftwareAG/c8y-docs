@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Device integration
+title: Integration life cycle
 layout: redirect
 ---
 

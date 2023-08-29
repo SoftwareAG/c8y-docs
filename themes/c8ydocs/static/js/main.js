@@ -2,7 +2,7 @@ var main = (function ($) {
   function initializer() {
 
     //Load releases menu
-    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
+    var json = $.getJSON({ 'url': "//cumulocity.com/docs/releases.json", 'async': false })
       .done(function (json) {
         //json = JSON.parse(json.responseText);
         var urls = json.releases;
@@ -148,7 +148,7 @@ var main = (function ($) {
         $this.wrap("<div class='table-responsive'></div>");
       }
     });
- 
+
   }
   return {
     init: initializer
@@ -219,12 +219,12 @@ function buildToc() {
       if (rect.top <= halfViewportHeight && rect.bottom >= halfViewportHeight) {
         const currentLinkId = link.getAttribute('href').substring(1);
         if (currentLinkId !== lastLinkId) {
-          
+
           let tempActive = document.querySelectorAll('.toc .active');
           tempActive.forEach(temp => {
             temp.classList.remove('active');
           });
-          
+
           link.classList.add('active');
           lastLinkId = currentLinkId;
         }
@@ -287,9 +287,9 @@ function clipboardCode() {
     code.parentElement.prepend(copybar);
 
   });
-    
+
   let copyCode = new Clipboard('.btn-copy-code');
- 
+
   // display clipboard success event
   copyCode.on('success', function (e) {
     $(e.trigger).addClass('copied');

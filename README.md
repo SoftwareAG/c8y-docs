@@ -21,7 +21,7 @@ The Cumulocity IoT documentation website architecture has the following structur
   - 2nd level - renders as a single page, for example *<http://cumulocity.com/guides/users-guide/administration/>*
     - Anchor section - anchor tag in the subsection page, for example *<http://cumulocity.com/guides//users-guide/administration/#managing-permissions>*
 
-The architecture is built with a mix of front matter and directory structure.
+The website is built with a mix of front matter and directory structure.
 
 
 ## Structure - /docs (for CD and yearly releases)
@@ -38,9 +38,9 @@ The architecture is built with a mix of front matter and directory structure.
 
 ## Adding content
 
-### 1. Add a new section
+### Add a new section
 
-In the new documentation structure (/docs) adding level 1 or level 2 sections is restricted to the admin users of the c8y-docs repo.
+Note that in the new documentation structure (/docs) adding level 1 or level 2 sections is restricted to the admin users of the c8y-docs repo. If you want to add a new section in these levels contact the documentation team.
 
 Before adding a new section, check if the content fits in any of the available sections.
 
@@ -58,11 +58,11 @@ weight: 90 # order the section in the section dropdown in ascending order
 ```
 Grab the icon classes in the [Styleguide](https://styleguide.cumulocity.com/#/icons/cumulocity).
 
-### 2. Add the section root directory
+### Add the section root directory
 
 All guides are stored in the `content` directory. To add a new section, create a directory here and name it with the `bundle` value set in the front matter.
 
-### 3. Add a subsection
+### Add a subsection
 
 Inside the newly created directory create a Markdown file with the name you wish to use as a URL — for example `introduction.md` with the following front matter:
 
@@ -83,15 +83,15 @@ If you're looking to have a short page without anchors, you're good to go, but i
 
 When adding multiple subsections, the content provided in this file will be rendered as a lead in the top of the page.
 
-### 4. Add blocks of content with anchors to a page
+### Add blocks of content with anchors to a page
 
 To display multiple blocks of content and provide anchor links to display in the navigator, you'll have to follow these steps:
 
-#### 1. Add a directory with the exact same name as the Markdown file adding the suffix `-bundle`, e.g. `introduction-bundle`.
+  1. Add a directory with the exact same name as the Markdown file adding the suffix `-bundle`, e.g. `introduction-bundle`.
 
 &nbsp;
 
-#### 2. Add a `index.html` file into the new directory with the following front matter:
+  2. Add a `index.html` file into the new directory with the following front matter:
 
 ```yaml
 ---
@@ -100,7 +100,7 @@ headless: true # states that all content inside this directory is just a resourc
 ---
 ```
 
-#### 3. Add a Markdown file for each block of content with the following front matter:
+  3. Add a Markdown file for each block of content with the following front matter:
 
 ```yaml
 ---
@@ -117,7 +117,7 @@ weight: 10 # to set the position in the page
 […]
 ```
 
-### 5. Add media
+### Add media
 
 Media should be added to `/static/images/`. Add a new directory if none of the available suits your needs.
 
@@ -145,7 +145,7 @@ aliases:
 
 ## Deploying to cumulocity.com/guides
 
-Cumulocity provides documentation for multiple releases. You must create a release branch for every public release, for example: `release/r10.16.0`. When creating these branches follow the next steps:
+Cumulocity provides documentation for multiple releases. You must create a release branch for every public release, for example `release/r10.16.0`. When creating these branches follow the next steps:
 - Create the branch following the same pattern: `release/r[version number]`
 
 - Edit the `config.toml` file and append the version number to the base URL, for example: `baseURL = "https://cumulocity.com/docs/r10.16.0"`

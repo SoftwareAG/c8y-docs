@@ -5,7 +5,7 @@ var main = (function ($) {
     var json = $.getJSON({ 'url': "//cumulocity.com/docs/releases.json", 'async': false })
       .done(function (json) {
         //json = JSON.parse(json.responseText);
-        var urls = json.releases;
+        /*var urls = json.releases;
         var vmenu = $('.dropdown.version');
         var loc = window.location;
         var active = false;
@@ -75,7 +75,7 @@ var main = (function ($) {
           nthChild = vmenu.find('.dropdown-menu').children().eq(ind);
           nthChild.addClass('active');
           $('#current-dropdown-version-toggle').text('Release ' + nthChild.text());
-        }
+        }*/
       })
       .fail(function (resp) {
         console.error(resp.statusText);

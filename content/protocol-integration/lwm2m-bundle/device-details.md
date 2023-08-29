@@ -61,7 +61,7 @@ In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current d
 Currently only the "NO_SEC" and "PSK" security modes are supported.
 {{< /c8y-admon-important >}}
 
-For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](#registering-devices).
+For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](/protocol-integration/lwm2m/#registering-lwm2m-devices).
 
 ### LWM2M client awake time {#lwm2m-client-awake-time}
 

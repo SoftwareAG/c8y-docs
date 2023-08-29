@@ -6,7 +6,7 @@ section:
   - device_management
 ---
 
-The **Device information** tab is a predefined dashboard with several widgets that combine default device information. The status widget, for example, will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. For details see [Device management application > Monitoring and controlling devices > Availability](/device-management-application/monitoring-and-controlling-devices/#availability).
+The **Device information** tab is a predefined dashboard with several widgets that combine default device information. The status widget, for example, will get its information from the ```c8y_Availability``` fragment, which holds information about the device's status and when it was last available. For details see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability).
 
 ### Device marker {#device-marker}
 

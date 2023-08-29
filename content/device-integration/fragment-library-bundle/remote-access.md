@@ -2,7 +2,7 @@
 weight: 150
 title: Remote access
 layout: bundle
-section: 
+section:
   - device_management
 ---
 
@@ -14,7 +14,7 @@ The **Remote access** tab is available if the following criteria are met:
 * The user has the correct permissions granted (Remote access admin rights)
 * `c8y_RemoteAccessConnect` is added to the device's ```c8y_SupportedOperations```
 
-For more information, see [Cloud Remote Access > Using Cloud Remote Access](/cloud-remote-access/using-cloud-remote-access).
+For more information, see [Using Cloud Remote Access](/cloud-remote-access/using-cloud-remote-access).
 
 ### Remote access connect {#remote-access-connect}
 

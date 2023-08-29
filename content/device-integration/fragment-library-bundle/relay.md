@@ -11,7 +11,7 @@ In a managed object, a relay control model includes the state of the control. Wh
 
 #### Single Relay {#single-relay}
 
-To manage and monitor a single relay {{< product-c8y-iot >}} offers the [Relay control widget](/users-guide/cockpit#relay-control).
+To manage and monitor a single relay {{< product-c8y-iot >}} offers the [Relay control widget](/cockpit/widgets-collection/#relay-control).
 
 ##### Relay state {#relay-state}
 
@@ -32,7 +32,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 ##### Setting relay state {#setting-relay-state}
 
-Devices that support changing the relay position remotely may add the `c8y_Relay` operation to `c8y_SupportedOperations`. Then users can request an update to the relay position in the [Relay control widget](/users-guide/cockpit#relay-control). This creates an operation of fragment type `c8y_Relay` for the device.
+Devices that support changing the relay position remotely may add the `c8y_Relay` operation to `c8y_SupportedOperations`. Then users can request an update to the relay position in the [Relay control widget](/cockpit/widgets-collection/#relay-control). This creates an operation of fragment type `c8y_Relay` for the device.
 
 The operation representation is the same as the inventory representation:
 
@@ -67,7 +67,7 @@ On receiving the operation the device is expected to perform the following actio
 
 #### Multiple relays {#multiple-relays}
 
-To manage and monitor multiple relays {{< product-c8y-iot >}} offers the [Relay array control widget](/users-guide/cockpit#relay-array-control).
+To manage and monitor multiple relays {{< product-c8y-iot >}} offers the [Relay array control widget](/cockpit/widgets-collection/#relay-array-control).
 
 
 #### Multiple relays state {#multiple-relays-state}
@@ -91,7 +91,7 @@ PUT /inventory/managedObjects/<deviceId>
 
 #### Setting multiple relays states {#setting-multiple-relays-states}
 
-Devices that support changing their relays positions remotely may add the `c8y_RelayArray` operation to `c8y_SupportedOperations`. Then users can request an update to the relay position in the [Relay array control widget](/users-guide/cockpit#relay-array-control). This creates an operation of fragment type `c8y_RelayArray` for the device.
+Devices that support changing their relays positions remotely may add the `c8y_RelayArray` operation to `c8y_SupportedOperations`. Then users can request an update to the relay position in the [Relay array control widget](/cockpit/widgets-collection/#relay-array-control). This creates an operation of fragment type `c8y_RelayArray` for the device.
 
 The operation representation is the same as the inventory representation:
 

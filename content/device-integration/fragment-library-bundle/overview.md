@@ -101,7 +101,7 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 <td>Enables switching device relay</td>
 </tr>
 <tr>
-<td><a href="#relay-array">c8y_RelayArray</a></td>
+<td><a href="#multiple-relays">c8y_RelayArray</a></td>
 <td>Enables switching device relays in the array</td>
 </tr>
 <tr>

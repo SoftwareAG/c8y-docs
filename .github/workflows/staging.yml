@@ -1,0 +1,64 @@
+name: Build and deploy to staging
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - develop
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+
+jobs:
+# Build job
+  build:
+    name: Build Hugo
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.100.1
+    environment:
+        name: staging-resources
+    steps:
+    - name: Install Hugo CLI
+      run: |
+        wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
+        && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Build with Hugo
+      env:
+        # For maximum backward compatibility with Hugo modules
+        HUGO_ENVIRONMENT: production
+        HUGO_ENV: production
+      run: |
+        hugo \
+          --baseURL "${{ secrets.BASE_URL }}"
+
+    - name: Set known SSH hosts
+      run: |
+        mkdir -p ~/.ssh/
+        echo "${{ secrets.KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+    - name: Start SSH agent and import private key from secrets
+      run: |
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+
+    - name: Upload documentation
+      run: |
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DESTINATION_PATH }} --delete

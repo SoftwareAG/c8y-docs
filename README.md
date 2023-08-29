@@ -123,7 +123,7 @@ Media should be added to `/static/images/`. Add a new directory if none of the a
 
 Keep all file names URL-friendly (lowercase, no special characters, and no empty spaces).
 
-To use the images in your pages, just add the relative path, for example `![image title](/images/<directory name>/<file name>)`.
+To use the images in your pages, just add the relative path, for example: `![image title](/images/<directory name>/<file name>)`.
 
 
 ## Redirects

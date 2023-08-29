@@ -33,7 +33,7 @@ The Cumulocity IoT documentation website architecture has the following structur
     - 3rd level - renders as a single page, for example *<http://cumulocity.com/docs/standard-tenant/managing-permissions>*
       - Anchor section - anchor tag in the subsection page, for example *<http://cumulocity.com/docs/standard-tenant/managing-permissions/#global-roles>*
 
-The architecture is built with a mix of front matter and directory structure.
+The website is built with a mix of front matter and directory structure.
 
 
 ## Adding content

@@ -8,7 +8,7 @@ layout: redirect
 
 An EPL app is a monitor (\*.mon) file. You can develop EPL apps in two different ways:
 
-* You can use the [Streaming Analytics application](/streaming-analytics/epl-apps/#epl-apps) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
+* You can use the [Streaming Analytics application](#dev-apps-with-sa) which is available from {{< product-c8y-iot >}}'s application switcher and develop your EPL apps within {{< product-c8y-iot >}}.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [{{< sag-designer >}}](#sag-designer), that is, in a separate environment.
 
 See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl).
@@ -23,7 +23,7 @@ If you do not see the **EPL Apps** page in the Streaming Analytics application a
 An EPL app has the ability to make nearly arbitrary changes to the objects in a tenant, whether that's inventory, alarms or many other sorts of object. A user who has ADMIN permission for "CEP management" is able to create and activate EPL apps and thus also has almost full control over the current tenant. Therefore, you should be careful about which users on the tenant have this permission.
 {{< /c8y-admon-caution >}}
 
-#### Developing apps with the Streaming Analytics application  {#epl-apps}
+#### Developing apps with the Streaming Analytics application {#dev-apps-with-sa}
 
 The **EPL Apps** page of the Streaming Analytics application provides an interface for interactively editing new or existing EPL apps (\*.mon files) as well as importing and activating (deploying) EPL apps.
 
@@ -197,7 +197,7 @@ When any EPL app signals a runtime error, this will be raised as an alarm. Runti
 For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the Apama-ctrl microservice. See [Monitoring microservices](/standard-tenant/ecosystem/#log-files) for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
 
-#### Deploying Apama applications as microservices  {#deploying-as-microservice}
+#### Deploying Apama applications as microservices {#deploying-as-microservice}
 
 Using {{< sag-designer >}}, you can also develop more complex projects which:
 
@@ -631,7 +631,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 | 404  | File with identifier not found. See also the [example value for this response code](#example-404) at the end of this section. |
 
 
-#### Example value for response code 404  {#example-404}
+#### Example value for response code 404 {#example-404}
 The response code 404 indicates that a file with a specific identifier was not found.
 
 ```
@@ -719,7 +719,7 @@ on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_spe
 See also [Measurement fragments](/streaming-analytics/epl-apps/#measurement-fragments-advanced).
 
 
-#### Distinguishing between create and update notifications  {#notifications}
+#### Distinguishing between create and update notifications {#notifications}
 
 When listening for `Alarm`, `Event`, `ManagedObject` or `Operation` events from {{< product-c8y-iot >}}, you may want to to distinguish between create and update operations. Each of these event types have actions named `isCreate()` and `isUpdate()` for this purpose.
 

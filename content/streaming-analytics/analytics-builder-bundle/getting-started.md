@@ -66,7 +66,7 @@ You design your model in the model editor. The model editor is shown after you h
 If the block parameter editor is not shown (for example, because you clicked an empty space on the canvas after dragging the input block onto the canvas), click the block using the left mouse button to show the block parameter editor.
     {{< /c8y-admon-info>}}
 
-3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Choose device** button to select your device. This button is shown when you hover over a device.
+3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button. This button is shown when you hover over a device.
 
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
 
@@ -209,7 +209,7 @@ In the instance editor, a row is shown for each instance that you create. A colu
 
 Use the horizontal scroll bar below the instance table if not all template parameters \(columns\) are shown on the screen.
 
-1.  Click the field below the **Device or group of devices** column header. In the resulting dialog, select the device that you want to use for this instance and click **Choose device**.
+1.  Click the field below the **Device or group of devices** column header. In the resulting dialog, click **Select device** for the device that you want to use for this instance.
 
 2.  In the text box below the **Input fragment and series** column header, specify the details of the measurement input that you want to monitor in the following format:
 

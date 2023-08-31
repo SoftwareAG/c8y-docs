@@ -1,7 +1,7 @@
 
 
 # Production
-baseURL = "/docs"
+baseURL = "https://cumulocity.com/docs"
 
 languageCode = "en-us"
 defaultContentLanguage = "en-us"

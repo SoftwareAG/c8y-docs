@@ -8,10 +8,10 @@ section:
 
 This section of the {{< product-c8y-iot >}} documentation highlights the basic steps to take if you are new to the platform.
 
-If you are technically interested in our IoT platform, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}} found in the <a href="/concepts/introduction/">Concepts guide</a>.
+If you are technically interested in our IoT platform, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}} found in [Technical concepts](/concepts/introduction/).
 
 
-### Step 1: Logging into Cumulocity IoT for the first time
+### Step 1: Logging into {{< product-c8y-iot >}} for the first time
 
 To login into the {{< product-c8y-iot >}} platform and have access to your tenant, use the following URL:
 
@@ -23,22 +23,13 @@ This will direct you to the login page of your default application. See [Tenants
 On the Login page, enter your username and password. The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level. The default value is 100.
 
 
-
-{{< c8y-admon-info >}}
-Find more information on how to access and log into the platform including how to reset your password in the following links:
-
-* [Accessing and logging into the platform](/getting-started/accessing-platform/)
-* [To reset your password](/getting-started/accessing-platform/#to-reset-your-password)
-{{< /c8y-admon-info >}}
-
-
-Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/cockpit/overview/) application (if not configured differently). Read about the three standard applications {{< product-c8y-iot >}} comes with at: [Standard platform applications](/getting-started/platform-applications/).
+Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently). Read about the standard applications {{< product-c8y-iot >}} comes with at: [Available applications](/get-familiar-with-the-ui/available-applications/).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
-You will see a predefined dashboard with a number of [widgets](/cockpit/using-widgets/#using-widgets) such as a welcome message, a [map](/cockpit/widgets-collection/#widget-map) that shows the location of registered devices, and [all critical alarms](/cockpit/widgets-collection/#all-alarms). To see the list of all preset widget types head to [Widgets collection](/cockpit/widgets-collection/).
+You will see a predefined dashboard with a number of [widgets](/cockpit/using-widgets/#using-widgets) such as a welcome message, a [map](/cockpit/widgets-collection/#map) that shows the location of registered devices, and [all critical alarms](/cockpit/widgets-collection/#all-critical-alarms). To see the list of all preset widget types head to [Widgets collection](/cockpit/widgets-collection/).
 
-### Step 2: Learn about Cumulocity IoT's basic UI functionalities and features
+### Step 2: Learn about {{< product-c8y-iot >}}'s basic UI functionalities and features
 
 #### Main screen elements
 
@@ -70,7 +61,7 @@ All {{< product-c8y-iot >}} applications share a common structure and includes t
 </tr>
 <tr>
 <td style="text-align:left"><b>Top bar</b></td>
-<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/getting-started/gui-features/#searching" class="no-ajaxy">Searching</a> for more. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="/getting-started/gui-features/#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. More on <a href="#user-options" class="no-ajaxy">user settings and options</a> below. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality" class="no-ajaxy">Search and filter functionality</a> for more. Not always available. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="/get-familiar-with-the-ui/gui-features/#application-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your username. Clicking it will open up a context menu with commands related to your account settings. More on <a href="#user-options" class="no-ajaxy">user settings and options</a> below. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Top menu bar</b></td>
@@ -84,7 +75,7 @@ All {{< product-c8y-iot >}} applications share a common structure and includes t
 </table>
 
 {{< c8y-admon-info >}}
-See the [UI functionalities and features](/getting-started/gui-features/) section of our documentation for more information on {{< product-c8y-iot >}}'s UI features.
+See the [UI functionalities and features](/get-familiar-with-the-ui/gui-features/) section of our documentation for more information on {{< product-c8y-iot >}}'s UI features.
 {{< /c8y-admon-info >}}
 
 <a name="user-options"></a>
@@ -110,7 +101,7 @@ The **User** menu contains the following items:
 <tbody>
 <tr>
 <td style="text-align:left">User settings</td>
-<td style="text-align:left">Provides access to the user settings, here you can <a href="/getting-started/user-settings/#change-user-settings" class="no-ajaxy">change user settings</a> such as the <a href="/getting-started/user-settings/#languages" class="no-ajaxy">language</a> of the UI and <a href="/getting-started/user-settings/#change-password" class="no-ajaxy">changing your password</a>. </td>
+<td style="text-align:left">Provides access to the user settings, here you can <a href="/get-familiar-with-the-ui/user-settings/#to-change-user-settings" class="no-ajaxy">change user settings</a> such as the <a href="/get-familiar-with-the-ui/user-settings/#to-change-the-language-of-the-ui" class="no-ajaxy">language of the UI</a> and <a href="/get-familiar-with-the-ui/user-settings/#to-change-your-password" class="no-ajaxy">changing your password</a>. </td>
 </tr>
 <tr>
 <td style="text-align:left">Access denied requests</td>
@@ -128,7 +119,7 @@ The **User** menu contains the following items:
 <td style="text-align:left">Activate support</td>
 <td style="text-align:left">Allows support users to access your account.<br>
 <br>
-Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/users-guide/enterprise-tenant/#support-user-access" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
+Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/support-user-access/" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
 <td style="text-align:left">Revoke tokens</td>
@@ -167,7 +158,7 @@ In an {{< enterprise-tenant >}}, the {{< management-tenant >}} may also directly
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 {{< /c8y-admon-info >}}
 
-After successful registration the device(s) will be listed in the [Device registration](/device-management-application/registering-devices/) page with the status "Waiting for connection".
+After successful registration the device(s) will be listed in the [Registering devices](/device-management-application/registering-devices/) page with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
 
@@ -184,7 +175,7 @@ In case of any issues, consult the documentation applicable for your device type
 {{< /c8y-admon-info >}}
 
 
-For more information on registering devices such as [single device registration](/device-management-application/registering-devices/#single-device-registration) and [bulk device registration](/device-management-application/registering-devices/#bulk-device-registration) go to [Device management application > Registering devices](/device-management-application/registering-devices/). To learn how to view all devices connected to your account head to [Device management application > Viewing devices](/device-management-application/viewing-devices/).
+For more information on registering devices such as [single device registration](/device-management-application/registering-devices/#single-device-registration) and [bulk device registration](/device-management-application/registering-devices/#bulk-device-registration) go to [Registering devices](/device-management-application/registering-devices/). To learn how to view all devices connected to your account head to [Viewing all devices](/device-management-application/viewing-all-devices/).
 
 #### Connecting a smartphone with the {{< product-c8y-iot >}} Sensor App
 
@@ -192,7 +183,7 @@ Register and connect your smartphone to {{< product-c8y-iot >}} using the {{< pr
 
 The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< product-c8y-iot >}} Sensor App can also send commands to the smartphone directly from the phone dashboard.
 
-Go to [Getting started > Sensor App](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as [how to install](/sensor-app/installation/) and [how to register the Sensor App in the platform](/sensor-app/register/).
+Go to [Sensor App](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as [how to install](/sensor-app/installing-the-sensor-app/) and [how to register the Sensor App in the platform](/sensor-app/registering-the-sensor-app/).
 
 #### Device integration via thin.edge.io on a Raspberry Pi
 
@@ -200,7 +191,7 @@ thin-edge.io is an open-source project to provide a cloud-agnostic edge framewor
 
 The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
 
-For an overview of the installation and configuration of thin-edge.io with Raspberry Pi go to [Device integration > Integration tutorials > thing-edge.io on a Raspberry Pi](/device-integration/integration-tutorials/#prerequisites).
+For an overview of the installation and configuration of thin-edge.io with Raspberry Pi go to [thing-edge.io on a Raspberry Pi](/device-integration/integration-tutorials/#prerequisites).
 
 #### Grouping devices
 Devices can be grouped according to a particular use case. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
@@ -216,7 +207,7 @@ For more information on this feature, go to our section about [Grouping devices]
 
 The predefined dashboard can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here allowing you to visualize data emanating from your device or devices. The cockpit application in {{< product-c8y-iot >}} provides you with an unrestrained overview and the essential dashboards to monitor your IoT data the way you want.
 
-Follow the instructions below to create a new dashboard with the device you registered in the last step. You may need to check if you meet the [requirements](/cockpit/dashboards/) first.
+Follow the instructions below to create a new dashboard with the device you registered in the last step. You may need to check if you meet the [requirements](/cockpit/working-with-dashboards/) first.
 
 #### Creating a dashboard
 
@@ -251,7 +242,7 @@ The widget titles will be translated only if a valid translation is available.
 
 You have created a dashboard, in step 6 you will learn how to add widgets.
 
-Go to the [Working with dashboards](/cockpit/dashboards/) for more on how to share, edit, copy, and delete dashboards.
+Go to the [Working with dashboards](/cockpit/working-with-dashboards/) for more on how to share, edit, copy, and delete dashboards.
 
 ### Step 5: Working with reports
 
@@ -275,16 +266,16 @@ In the **Preview** section at the right, a preview of the selected layout settin
 
 You have created a report, in step 6 you will learn how to add widgets.
 
-Follow the instructions below to create a new report. You may need to check if you meet the [requirements](/cockpit/reports/) first.
+Follow the instructions below to create a new report. You may need to check if you meet the [requirements](/cockpit/working-with-reports/) first.
 
-Go to the [Working with reports](/cockpit/reports/) for more on how to edit and delete reports.
+Go to the [Working with reports](/cockpit/working-with-reports/) for more on how to edit and delete reports.
 
 ### Step 6: Adding a widget to a dashboard or a report
 
 Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.  Go to [Widgets collection](/cockpit/widgets-collection/) to see a list of all preset widgets that {{< product-c8y-iot >}} provides.
 
 {{< c8y-admon-info >}}
-You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. For more information go to [Developing applications > Tutorials > Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget).
+You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. For more information go to [Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget-to-dashboard).
 {{< /c8y-admon-info >}}
 
 #### To add a widget to a dashboard or a report
@@ -295,7 +286,7 @@ You can also develop your own widgets and add them to your {{< product-c8y-iot >
 
 3. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
 
-4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](/cockpit/dashboards/).
+4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](/cockpit/working-with-dashboards/).
 
 {{< c8y-admon-info >}}
 

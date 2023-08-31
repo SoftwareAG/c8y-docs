@@ -31,7 +31,7 @@ metadata:
 apiVersion: edge.cumulocity.com/v1
 kind: CumulocityIoTEdge
 metadata:
-  name: cumulocity-iot-edge						          # Name this Cumulocity IoT Edge deployment
+  name: cumulocity-iot-edge						# Name this Cumulocity IoT Edge deployment
 spec:
   version: 1017.0.0                                     
   licenseKey:  <EDGE-LICENSE-KEY>               # Replace with the Edge license key you received
@@ -144,9 +144,20 @@ metadata:
  namespace: cumulocity-iot-edge      # Replace with the Edge CR name you used
 type: Opaque
 stringData:
- username: <MONGODB-USERNAME>        # Replace with externally hosted MongoDB's username
- password: <MONGODB-PASSWORD>        # Replace with an externally hosted MongoDB's password
-
+ MONGODB_DATABASE_ADMIN_USER: <ADMIN-USERNAME>                  # Replace with admin username with which the operator managed MongoDB needs to be configured or the admin username the externally hosted MongoDB server is configured.
+ MONGODB_DATABASE_ADMIN_PASSWORD: <ADMIN-PASSWORD>              # Replace with admin password with which the operator managed MongoDB needs to be configured or the admin password the externally hosted MongoDB server is configured.
+ 
+# MONGODB_USER_ADMIN_USER: userAdmin                            # Change if you want to use a different username
+# MONGODB_USER_ADMIN_PASSWORD: <USER-ADMIN-PASSWORD>            # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
+ 
+# MONGODB_CLUSTER_ADMIN_USER: clusterAdmin                      # Change if you want to use a different username
+# MONGODB_CLUSTER_ADMIN_PASSWORD: <CLUSTER-ADMIN-PASSWORD>      # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
+ 
+# MONGODB_CLUSTER_MONITOR_USER: clusterMonitor                  # Change if you want to use a different username
+# MONGODB_CLUSTER_MONITOR_PASSWORD: <CLUSTER-MONITOR-PASSWORD>  # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
+ 
+# MONGODB_BACKUP_USER: backup                                   # Change if you want to use a different username
+# MONGODB_BACKUP_PASSWORD: <BACKUP-USER-PASSWORD>               # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
 ---
 #
 # Secret for supplying the Certificate Authority (CA) certificate issuing the tls key and certificates 

@@ -2,6 +2,9 @@
 weight: 20
 title: Viewing all devices
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 helpcontent:

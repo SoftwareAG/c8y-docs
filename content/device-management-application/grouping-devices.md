@@ -2,6 +2,9 @@
 weight: 30
 title: Grouping devices
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 helpcontent:

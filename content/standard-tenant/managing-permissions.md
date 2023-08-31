@@ -2,6 +2,9 @@
 weight: 20
 title: Managing permissions
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - platform_administration
 helpcontent:

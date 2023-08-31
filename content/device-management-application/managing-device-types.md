@@ -2,6 +2,9 @@
 weight: 50
 title: Managing device types
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 helpcontent:

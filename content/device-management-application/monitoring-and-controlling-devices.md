@@ -2,6 +2,9 @@
 weight: 40
 title: Monitoring and controlling devices
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 ---

@@ -1,6 +1,9 @@
 ---
 title: Managing the ecosystem
 layout: bundle
+outputs:
+  - html
+  - json
 bundle: ecosystem
 section:
   - platform_administration

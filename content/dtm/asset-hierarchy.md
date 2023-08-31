@@ -1,6 +1,9 @@
 ---
 title: Asset hierarchy
 layout: bundle
+outputs:
+  - html
+  - json
 section: 
   - app_development
 weight: 40

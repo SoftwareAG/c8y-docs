@@ -2,6 +2,9 @@
 weight: 10
 title: Managing users
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - platform_administration
 helpcontent:

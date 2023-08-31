@@ -2,6 +2,9 @@
 weight: 60
 title: Managing device data
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 ---

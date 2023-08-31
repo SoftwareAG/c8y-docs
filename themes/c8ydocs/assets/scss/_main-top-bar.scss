@@ -153,3 +153,9 @@ body:not(:has(>.main-content > .article-list)){
     display: none!important;
   }
 }
+
+body:has(>main > .home-top){
+  .breadcrumbs-container{
+    padding: 0 2rem;
+  }
+}

@@ -8,7 +8,7 @@
   letter-spacing: 0.05em;
   font-size: 11px;
   text-decoration: none;
-  text-transform: uppercase;
+  
 
   &.show {
     z-index: 2000;
@@ -37,6 +37,7 @@
     appearance: none;
     background: transparent;
     border:0;
+    text-transform: uppercase;
     .caret {
       margin-left: 6px;
     }

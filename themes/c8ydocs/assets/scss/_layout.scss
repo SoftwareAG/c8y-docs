@@ -1,4 +1,7 @@
 
+html{
+  scroll-padding-top: 104px;
+}
 
 body{
   background-color: $body-bg-color;
@@ -30,6 +33,19 @@ body{
 }
 .flex-nowrap{
   flex-wrap: nowrap!important;
+}
+
+.gap-8{
+  gap: 8px;
+}
+.gap-16{
+  gap: 16px;
+}
+.gap-24{
+  gap: 24px;
+}
+.gap-32{
+  gap: 32px;
 }
 
 .m-r-auto{
@@ -137,12 +153,16 @@ body{
   transition: all .25s ease;
   color: var(--c8y-text-color);
   text-decoration: none;
- 
+  display: flex;
+  flex-direction: column;
   &__header{
     display: flex;
     gap: 1rem;
+    > i{
+      font-size: 24px;
+    }
   }
-  h2, i{
+  h2{
     font-size: 24px;
   }
   p{

@@ -4,7 +4,9 @@
 {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
 {{ $headless := .Site.GetPage $bundle }}
 <main class="main-content">
-  {{- partial "breadcrumbs.html" . -}}
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
   <div class="article-list">
   <article id="{{substr .File.LogicalName 0 -3}}" class="page-section">
     <header class="section-header">

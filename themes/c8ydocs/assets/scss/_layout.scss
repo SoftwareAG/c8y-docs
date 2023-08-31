@@ -6,7 +6,7 @@ html{
 body{
   background-color: $body-bg-color;
   position: relative;
-  padding-top: 64px;
+  padding-top: 56px;
   &.open{
     overflow-x: hidden;
   }
@@ -122,14 +122,22 @@ body{
 }
 
 .breadcrumbs-container{
-    
     max-width: $screen-lg-max;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
     position: sticky;
-    top: 64px;
-  .breadcrumbs{
-    padding: 1rem 2rem;
-  }
+    top: 56px;
+    display: none;
+    .breadcrumbs{
+      padding: .5rem 1rem;
+    }
+    @media(min-width: $screen-sm-min){
+      margin: 0 auto;
+      display: block;
+      .breadcrumbs{
+        padding: 1rem 0;
+      }
+
+    }
 }
 
 .home-grid{

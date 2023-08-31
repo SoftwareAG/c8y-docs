@@ -24,7 +24,7 @@
 .main-content {
   position: relative;
   z-index: 30;
-  padding: 0 1rem 1rem;
+  padding: 2rem 1rem 1rem;
   transition: transform .3s $ease;
   @media (max-width: $grid-breakpoint - 1) {
     .open & {
@@ -84,7 +84,7 @@
 
 @media (min-width: $screen-sm-min) {
   .main-content {
-    padding: 1rem;
+    padding: 0 1rem 1rem;
   }
 }
 
@@ -95,11 +95,14 @@
     gap: 2rem;
     margin-left: 240px;
     padding: 0 3rem 2rem;
-    >.breadcrumbs{
+    >.breadcrumbs-container{
       grid-column: 1 / -1;
-      padding: 1rem 0;
-      position: sticky;
-      top: 64px;
+      width: 100%;;
+      .breadcrumbs{
+        padding: 1rem 0;
+        position: sticky;
+        top: 56px;
+      }
     }
   }
   .article-list{

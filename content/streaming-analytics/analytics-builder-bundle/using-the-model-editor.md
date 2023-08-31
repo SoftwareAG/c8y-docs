@@ -137,7 +137,7 @@ For the input and output blocks, you can globally replace the devices, groups or
 
     The block parameter editor appears, providing input fields for all parameters that can be specified for that block.
 
-2.  For the input and output blocks, you can select a different input source or output destination from the **Choose Device, Group or Asset** dialog box.
+2.  For the input and output blocks, you can select a different input source or output destination from the **Select Device, Group or Asset** dialog box.
 
     The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
 
@@ -150,11 +150,11 @@ For the input and output blocks, you can globally replace the devices, groups or
 
     | Button name | Shown for | Description |
     | ----------- | --------- | ----------- |
-    | **Choose device** | Devices in input and output blocks | Data is received from the device or output is sent to the device. |
-    | **Choose group's devices** | Groups in input blocks | Data is received from all devices within the group hierarchy. You cannot directly receive data from a group. |
-    | **Choose asset** | Assets in input blocks | Data is received from the asset itself. The devices of the assets are ignored. |
-    | **Choose asset's devices** | Assets in input blocks | Data is received from all devices within the asset hierarchy. The block does not receive data from the asset itself. |
-    | **Choose asset** | Assets in output blocks | Output is sent to the asset itself. |
+    | **Select device** | Devices in input and output blocks | Data is received from the device or output is sent to the device. |
+    | **Select group's devices** | Groups in input blocks | Data is received from all devices within the group hierarchy. You cannot directly receive data from a group. |
+    | **Select asset** | Assets in input blocks | Data is received from the asset itself. The devices of the assets are ignored. |
+    | **Select asset's devices** | Assets in input blocks | Data is received from all devices within the asset hierarchy. The block does not receive data from the asset itself. |
+    | **Select asset** | Assets in output blocks | Output is sent to the asset itself. |
 
     For the output blocks, you can also select a trigger device. This sends the output to the device which triggered the output.
 

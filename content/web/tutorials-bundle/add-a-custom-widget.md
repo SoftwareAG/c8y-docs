@@ -4,11 +4,7 @@ layout: redirect
 weight: 10
 ---
 
-<<<<<<< HEAD
  **Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
-=======
- **Version:** 1016.274.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
->>>>>>> be34dec29... Merge pull request #804 from SoftwareAG/feature/MTM-50973-updated-outdated-info
 
 If the widgets that are provided by the platform do not meet your requirements, you might want to create a custom widget and add it to a dashboard.
 

@@ -131,7 +131,7 @@ Enter the actual email message. Available placeholders are {host}, {binaryId}. T
 Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
 
 {{< c8y-admon-info >}}
-Note that the corresponding emails are send with "text/html" as content type.
+Note that the corresponding emails are sent with "text/html" as the `Content-Type` header.
 {{< /c8y-admon-info >}}
 
 Click **Create** to create the new export schedule.

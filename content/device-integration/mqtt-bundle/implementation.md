@@ -154,11 +154,7 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 #### MQTT clean session {#mqtt-clean-session}
 
-MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
-
-{{< c8y-admon-info >}}
 {{< product-c8y-iot >}} requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
-{{< /c8y-admon-info >}}
 
 #### MQTT retained flag {#mqtt-retained-flag}
 

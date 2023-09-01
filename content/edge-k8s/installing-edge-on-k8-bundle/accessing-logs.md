@@ -4,7 +4,7 @@ title: Accessing logs
 layout: redirect
 ---
 
-The operator deploys and configures a Fluent Bit daemonset on the node to collect the container and application logs from the node file system. Fluent Bit queries the Kubernetes API, enriches the logs with metadata about the pods (in the Edge namespaces), and transfers both logs and metadata to Fluentd. Fluentd receives, filters, and persists the logs in the persistent volume claim configured for logging.
+The Operator deploys and configures a Fluent Bit daemonset on the node to collect the container and application logs from the node file system. Fluent Bit queries the Kubernetes API, enriches the logs with metadata about the pods (in the Edge namespaces), and transfers both logs and metadata to Fluentd. Fluentd receives, filters, and persists the logs in the persistent volume claim configured for logging.
 
 Download the log archives by running the following script:
 ```shell

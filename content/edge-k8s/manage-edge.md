@@ -1,5 +1,5 @@
 ---
 weight: 30
-title: Manage Edge deployment
+title: Manage Edge
 layout: bundle
 ---

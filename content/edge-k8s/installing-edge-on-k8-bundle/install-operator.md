@@ -1,26 +1,35 @@
 ---
 weight: 15
-title: Installing the Edge operator
+title: Installing the Edge Operator
 layout: redirect
 ---
 
-A Helm chart is available for installing the Edge Kubernetes operator. To begin, create a new **single node** Kubernetes cluster with the Kubernetes distribution of your choice, and configure `kubectl` to use that cluster. See the [System Requirements](/edge-k8s/installing-edge-on-k8/#prerequisites) page for the supported Kubernetes distributions and versions.
+A Helm chart is available for installing the Edge Operator. To begin, create a new **single node** Kubernetes cluster with the Kubernetes distribution of your choice, and configure `kubectl` to use that cluster. See the [System Requirements](/edge-k8s/installing-edge-on-k8/#prerequisites) page for the supported Kubernetes distributions and versions.
 
 {{< c8y-admon-info >}}
-To use the Helm charts, you need to install Helm v3. Refer to [Installing Heml](https://helm.sh/docs/intro/install/) for the installation instructions.
+To use the Helm charts, you need to install Helm v3. Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.
 {{< /c8y-admon-info >}}
 
-{{< product-c8y-iot >}} Edge provides a script to install the Edge operator. This script is located at [cumulocity-iot-edge-operator-install.sh](/files/edge-k8s/cumulocity-iot-edge-operator-install.sh).
+{{< product-c8y-iot >}} Edge provides a script to install the Edge Operator. This script is located at [c8y-edge-operator-install.sh](/files/edge-k8s/c8y-edge-operator-install.sh).
 
-To install the operator, run and enter the version (for example, 1017.0.0) you want to install, and the repository credentials you received along with the license. To request the repository credentials, contact the logistics team for your region:
-- North and South America: LogisSrvus@softwareagusa.com 
-- All Other Regions: LogisticsServiceCenterGER@softwareag.com 
+To install the Operator, run and enter the version (for example, 1017.0.0) you want to install, and the repository credentials you received along with the license.
 
 ```shell
-curl -sfL https://cumulocity.com/guides/files/edge-k8s/cumulocity-iot-edge-operator-install.sh -O && bash ./cumulocity-iot-edge-operator-install.sh 
+curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8y-edge-operator-install.sh -O && bash ./c8y-edge-operator-install.sh
 ```
+Provide the details in the prompt:
 
-The operator is deployed in the `cumulocityiotedge-operator-system` namespace. Run the following command to follow the logs for the operator pod:
+```
+Enter Cumulocity IoT Edge Operator version (defaults to 1017.0.0):
+Enter repository username: 
+Enter repository password: 
+```
+{{< c8y-admon-info >}}
+To request the repository credentials, contact the logistics team for your region:
+- North and South America: LogisSrvus@softwareagusa.com 
+- All Other Regions: LogisticsServiceCenterGER@softwareag.com {{< /c8y-admon-info >}}
+
+The Operator is deployed in the `cumulocityiotedge-operator-system` namespace. Run the following command to follow the logs for the Operator pod:
 ```bash
 kubectl logs --follow --namespace cumulocityiotedge-operator-system deployment/cumulocityiotedge-operator-controller-manager manager
 ```

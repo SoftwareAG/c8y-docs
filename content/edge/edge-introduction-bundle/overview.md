@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge is delivered as a software appliance designed to run on industrial PC's or local servers.
+{{< product-c8y-iot >}} Edge is delivered as a software appliance designed to run on industrial PC's or local servers and on single node Kubernetes cluster.
 
 In contrast to {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure or other data centers), {{< product-c8y-iot >}} Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.    
 

@@ -4,7 +4,7 @@ title: Resource limits specification
 layout: redirect
 ---
 
-Structure for specifying the resource limits for the operator deployed containers.
+Structure for specifying the resource limits for the Operator deployed containers.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

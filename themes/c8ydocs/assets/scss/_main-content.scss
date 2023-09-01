@@ -58,6 +58,9 @@
   p > img {
     margin-bottom: 40px;
   }
+  p:last-child{
+    margin-bottom: 0;
+  }
 
   @media print {
     margin: 0 auto !important;

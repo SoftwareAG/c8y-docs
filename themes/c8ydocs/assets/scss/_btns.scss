@@ -118,6 +118,12 @@
   
 }
 
+body:has(.home-top){
+  .to-the-top{
+    display: none;
+  }
+}
+
 .to-the-top {
   position: fixed;
   right: 3rem;

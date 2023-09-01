@@ -141,6 +141,8 @@ If the type is "Boolean", the input field must be either "true" or "false".
 If the type is "enumeration", then the input field must be in the list of values specified during creation of the asset property.
 If the type is "text" or "number" and custom criteria were provided during asset property creation, then the input value in CSV template must fulfill all the asset property criteria.
 
+A property can be added with a default value during its creation. If a property has an empty value in CSV file then it will display default value after asset creation. To override the display of default value in created asset then pass null as value in CSV file, this will display undefined as property value after asset creation.
+
 Fill in details for all the assets which must be created as part of the asset hierarchy.
 
 Start with the asset details for root asset model.

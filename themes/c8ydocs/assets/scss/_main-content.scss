@@ -110,7 +110,6 @@
   }
   .article-list > .page-section:first-child{
     padding-bottom: 0;
-    // margin-bottom: -130px;
   }
   .article-list > .page-section:last-child{
     margin-bottom: 0;
@@ -148,12 +147,8 @@
   padding-bottom: 4rem;
   > h2 {
     display: flex;
-    // padding-top: 50px;
     margin-top: 2rem;
     padding-bottom: 16px;
-
-    // border-bottom: 1px dotted #d9d9d9;
-
     > small {
       align-self: center;
       order: 8;
@@ -167,12 +162,10 @@
   > h3 {
     border-bottom: 0;
     padding-top: 3rem;
-    // margin-top: -7rem;
   }
 
   > h4 {
     display: flex;
-    // margin-top: 3rem;
     > small {
       align-self: center;
       order: 8;

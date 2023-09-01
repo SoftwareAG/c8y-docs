@@ -99,7 +99,7 @@ body{
 .home-top{
   display: grid;
   grid-template-columns: 1fr;
-  padding: 0 1rem 1rem;
+  padding: 2rem 1rem 1rem;
     gap: 1rem;
   svg{
     height: 100%;
@@ -112,7 +112,6 @@ body{
     max-width: $screen-lg-max;
     margin: 0 auto;
     &__content{
-      // padding-top: 2rem;
       h1{
         font-size: 4rem;
         margin: 2rem 0;

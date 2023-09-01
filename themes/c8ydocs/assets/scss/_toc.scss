@@ -1,5 +1,11 @@
+.toc-container{
+  display: none;
+  @media (min-width: $grid-breakpoint) {
+    display: block;
+  }
+}
+
 .toc{
-  // display: none;
   margin: 0;
   padding: 2rem 0 4rem;
   font-size: 12px;
@@ -7,7 +13,6 @@
     display: block;
   }
   [data-toc]{
-    // display: none;
     &.current{
       display: block;
     }

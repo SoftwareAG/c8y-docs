@@ -2,8 +2,8 @@ var main = (function ($) {
   function initializer() {
 
     //Load releases menu
-    var json = $.getJSON({ 'url': "//cumulocity.com/docs/releases.json", 'async': false })
-      .done(function (json) {
+    // var json = $.getJSON({ 'url': "//cumulocity.com/docs/releases.json", 'async': false })
+    //   .done(function (json) {
         //json = JSON.parse(json.responseText);
         /*var urls = json.releases;
         var vmenu = $('.dropdown.version');
@@ -76,11 +76,11 @@ var main = (function ($) {
           nthChild.addClass('active');
           $('#current-dropdown-version-toggle').text('Release ' + nthChild.text());
         }*/
-      })
-      .fail(function (resp) {
-        console.error(resp.statusText);
-        // $('#dropdownVersionButton').hide();
-      });
+      // })
+      // .fail(function (resp) {
+      //   console.error(resp.statusText);
+      //   // $('#dropdownVersionButton').hide();
+      // });
 
 
     // apply Highlight js
@@ -149,21 +149,10 @@ var main = (function ($) {
       }
     });
     
-    // Handle anchor navigation
-  //   document.addEventListener('click', function(event) {
-  //     if (event.target.tagName === 'A' && event.target.getAttribute('href').startsWith('#')) {
-  //         event.preventDefault(); // Prevent the default behavior of the anchor link
-  //         const anchorId = event.target.getAttribute('href').substring(1); // Remove the '#' from the href
-          
-  //       console.log('=====>', anchorId);
-  //         const anchorElement = document.getElementById(anchorId);
-  //         if (anchorElement) {
-  //             const offset = 150; // Adjust the offset as needed
-  //             const topPosition = anchorElement.getBoundingClientRect().top + window.pageYOffset - offset;
-  //             window.scrollTo({ top: topPosition });
-  //         }
-  //     }
-  // });
+    setTimeout(function () {
+      $('body').addClass('loaded');
+      window.dispatchEvent(new CustomEvent('scroll'));
+    }, 100);
   
   
   }
@@ -177,32 +166,42 @@ main.init();
 
 // Builds the TOC by retrieving the H3 in the page
 function buildToc() {
-  let h3s = document.getElementsByTagName('h3');
-  let tocLinks = '';
-  let currenth2 = '';
-  if (h3s.length > 1) {
-    for (let index = 0; index < h3s.length; index++) {
-      if ($(h3s[index]).attr('id') && $(h3s[index]).text().length) {
-        let activeh2 = $(h3s[index]).closest('article').attr('id');
-        if (activeh2 != currenth2) {
-          tocLinks += tocLinks.length === 0 ? '<div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>' : '</div><div class="list-group" data-toc="' + activeh2 + '"><p class="text-medium">' + $('#' + activeh2).find('h2').text() + '</p>';
-          currenth2 = activeh2;
+  let articles = document.querySelectorAll('article.page-section');
+
+  articles.forEach(article => {
+    let h3s = article.querySelectorAll('h3');
+    let articleTitle = article.querySelector('h2');
+    let tocLinks = '';
+    
+    if (h3s.length > 1) {
+      if (articleTitle) {
+        tocLinks += `<h5 class="text-regular text-muted">${articleTitle.textContent}</h5>`;
+      }
+      h3s.forEach(h3 => {
+        if (h3.id && h3.textContent.length) {
+          tocLinks += `<div class="list-group-item"><a href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
         }
-        tocLinks += '<div class="list-group-item"><a href="#' + $(h3s[index]).attr('id') + '" title="' + $(h3s[index]).text() + '">' + $(h3s[index]).text() + '</a></div>';
+      });
+
+      if (tocLinks.length) {
+        const existingTocContainer = article.querySelector('.list-group');
+        
+        if (!existingTocContainer) {
+          const tocContainer = document.createElement('div');
+          tocContainer.classList.add('toc-container'); 
+          
+          const listGroup = document.createElement('div');
+          listGroup.classList.add('list-group');
+          listGroup.classList.add('toc');
+          listGroup.innerHTML = tocLinks;
+          tocContainer.appendChild(listGroup);
+          article.appendChild(tocContainer);
+        }
       }
     }
-  }
-  if (tocLinks.length) {
-    tocLinks += '</div>';
-    $('#toc').html(tocLinks);
-    let count = $('#toc').find('.list-group');
-    $(count[0]).addClass('current');
-  } else {
-    $('#toc').html('');
-  }
+  });
 
   const links = document.querySelectorAll('.toc a');
-  let lastLinkId = null;
 
   links.forEach(link => {
     const targetId = link.getAttribute('href').substring(1);
@@ -222,55 +221,33 @@ function buildToc() {
 
     window.addEventListener('scroll', () => {
       const rect = targetElement.getBoundingClientRect();
-      const halfViewportHeight = window.innerHeight / 2;
-
-      let nextElement = targetElement.nextElementSibling;
-      while (nextElement) {
-        if (nextElement.tagName === 'H2' || (nextElement.tagName === 'ARTICLE' && nextElement !== targetElement)) {
-          break;
-        }
-        rect.bottom = Math.max(rect.bottom, nextElement.getBoundingClientRect().bottom);
-        nextElement = nextElement.nextElementSibling;
-      }
-
-      if (rect.top <= halfViewportHeight && rect.bottom >= halfViewportHeight) {
-        const currentLinkId = link.getAttribute('href').substring(1);
-        if (currentLinkId !== lastLinkId) {
-
-          let tempActive = document.querySelectorAll('.toc .active');
-          tempActive.forEach(temp => {
-            temp.classList.remove('active');
-          });
-
-          link.classList.add('active');
-          lastLinkId = currentLinkId;
-        }
-      }
-    });
-
-  });
-  // Hide and show the Toc sections according the current section
-  window.addEventListener('scroll', () => {
-    let activeNav = document.querySelectorAll('.nav-sections a.active');
-    let tocSections = document.querySelectorAll('.toc [data-toc]');
-    let activeSec;
-    activeNav.forEach(sec => {
-      let secPath = sec.getAttribute('href').split('/');
-      if (secPath[0].substring(0, 4) === 'http') {
-        activeSec = secPath[secPath.length - 2];
+      const windowHeight = window.innerHeight;
+    
+      // Calculate the top threshold for activation (top third of the viewport)
+      const topThreshold = windowHeight / 3;
+    
+      // Check if the element's top position is within the top threshold
+      const elementTopInTopThird = rect.top <= topThreshold;
+    
+      if (elementTopInTopThird) {
+        let tempActive = document.querySelectorAll('.toc .active');
+        tempActive.forEach(temp => {
+          temp.classList.remove('active');
+        });
+        link.classList.add('active');
       } else {
-        activeSec = sec.getAttribute('href').substring(1);
+        // If the element is not within the top third, remove the active class
+        link.classList.remove('active');
       }
-      tocSections.forEach(toc => {
-        if (toc.getAttribute('data-toc') === activeSec) {
-          toc.classList.add('current');
-        } else {
-          toc.classList.remove('current');
-        }
-      });
     });
+    
+    
+
   });
 }
+
+// Call the buildToc function to generate and insert TOCs for all articles
+buildToc();
 
 
 // Adds the section to the breadcrumbs

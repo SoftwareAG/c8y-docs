@@ -13,6 +13,15 @@ body{
   @media print{
     background-color: white;
   }
+  > main, .main-content {
+    opacity: 0;
+    transition: opacity .15s linear;
+  }
+  &.loaded{
+   > main,  .main-content{
+      opacity: 1;
+    }
+  }
 }
 
 * {

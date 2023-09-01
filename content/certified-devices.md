@@ -2,8 +2,11 @@
 title: Certified devices
 icon: "c8y-icon c8y-icon-device"
 type: root
+external: "https://devicepartnerportal.softwareag.com/devices"
 layout: redirect
 bundle: certified-devices
+audience:
+  - Developers
 section:
   - device_management
 weight: 70

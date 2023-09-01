@@ -2,6 +2,9 @@
 weight: 75
 title: Data point library
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - app_development
 helpcontent:

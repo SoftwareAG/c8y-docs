@@ -8,9 +8,6 @@ html {
   }
 }
 
-// VISUAL TYPE:
-// base size: 16px
-// scale: Augmented fourth - 1.414
 
 // ====================
 // HEADINGS
@@ -36,9 +33,9 @@ h4 {
 h1,
 .h1 {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 32px;
   @media(min-width: $grid-breakpoint){
-    font-size: 24px;
+    font-size: 36px;
   }
 }
 
@@ -46,53 +43,27 @@ h2,
 .h2 {
   font-size: 22px;
   @media(min-width: $grid-breakpoint){
-    font-size: 22px;
+    font-size: 30px;
   }
 }
 
 h3,
 .h3 {
   font-size: 20px;
-    @media(min-width: $grid-breakpoint){
-      font-size: 20px;
+  @media(min-width: $grid-breakpoint){
+      font-size: 24px;
     }
   }
 
 h4,
 .h4 {
   font-size: 18px;
-  @media(min-width: $grid-breakpoint){
-    font-size: 18px;
-  }
 }
 
 h5, .h5{
   font-size: 16px;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 2rem;
-}
-
-h2 {font-size: 1.5rem;}
-
-h3 {font-size: 1.25rem;}
-
-h4 {font-size: 1.125rem;}
-
-h5 {font-size: 1rem;}
-
-
-// .lead{
-  // p:first-child{
-  //   font-size: 1.2em;
-  //   font-weight: 300;
-  //   @media(min-width: $grid-breakpoint){
-  //     font-size: 1.4em;
-  //   }
-  // }
-// }
 
 p {
   margin: 0 0 1.3em;
@@ -175,6 +146,10 @@ pre .hljs{
 }
 .text-capitalize{
   text-transform: capitalize;
+}
+
+.text-regularcase{
+  text-transform: none;
 }
 
 .text-truncate{

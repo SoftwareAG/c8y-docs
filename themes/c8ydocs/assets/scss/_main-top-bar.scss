@@ -1,14 +1,23 @@
-// versions dropdown
 
+.dropdown.mobile{
+  display: block;
+  @media(min-width: $screen-md-min){
+    display: none;
+  }
+}
+
+// versions dropdown
 .dropdown.version {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   transition: left 0.35s $ease;
   letter-spacing: 0.05em;
   font-size: 11px;
   text-decoration: none;
-  text-transform: uppercase;
+  @media(min-width: $screen-md-min){
+    display: flex;
+  }
 
   &.show {
     z-index: 2000;
@@ -18,11 +27,7 @@
       box-shadow: none;
     }
   }
-  // @media (min-width: $grid-breakpoint) {
-  //   left: $main-nav-width;
-  //   margin-left: 4px;
-  //   padding: 0.9rem 0 0 2.5rem;
-  // }
+  
 
   .dropdown-toggle.version {
     display: flex;
@@ -37,6 +42,12 @@
     appearance: none;
     background: transparent;
     border:0;
+    text-transform: uppercase;
+    text-align: left;
+    
+    >i{
+      margin-right: 4px;
+    }
     .caret {
       margin-left: 6px;
     }
@@ -74,9 +85,10 @@
   top: 0;
   display: flex;
   background-color: var(--c8y-palette-high);
-  padding: 16px;
+  padding: 8px 24px;
   align-items: center;
-  box-shadow: var(--c8y-elevation-md);
+  box-shadow: var(--c8y-elevation-md-bottom);
+  min-height: 56px;
   .brand-logo{
     max-height: 32px;
     width: auto;
@@ -86,9 +98,15 @@
   }
   > .d-flex {
     align-items: center;
-    gap: 16px
+    gap: 16px;
+    flex-wrap: nowrap;
   }
-
+  .search-container{
+    display: none;
+    @media (min-width: $screen-sm-min){
+      display: block;
+    }
+  }
   .nav {
     padding: 0;
     margin: 0;
@@ -119,7 +137,6 @@
 
   .nav-right {
     width: 100%;
-    margin-top: 2.5rem;
     height: 32px;
     @media (min-width: $screen-sm-min) {
       width: 260px;
@@ -127,13 +144,18 @@
       margin-left: auto !important;
       margin-right: 0;
     }
-    @media (min-width: $screen-lg-min) {
-      margin-right: 56px;
-    }
+    
   }
 }
 
+body:not(:has(>.main-content > .article-list)){
+  .sidebar-toggle{
+    display: none!important;
+  }
+}
 
-// .isHome .main-top-bar{
-//   display: none;
-// }
+body:has(>main > .home-top){
+  .breadcrumbs-container{
+    padding: 0 2rem;
+  }
+}

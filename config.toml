@@ -55,7 +55,24 @@ relativeURLs = true
   company_sag = "Software AG"
   enterprise_tenant = "Enterprise tenant"
 
+  [[params.additionalResources]]
+    name = "YouTube"
+    link = "https://www.youtube.com/@CumulocityIoT"
+    
+  [[params.additionalResources]]
+    name = "Tech Community"
+    link = "https://tech.forums.softwareag.com/tag/Cumulocity-IoT"
+  
+  [[params.additionalResources]]
+    name = "Empower Portal"
+    link = "https://empower.softwareag.com/"
+
+  [[params.additionalResources]]
+    name = "Product support"
+    link = "https://empower.softwareag.com/"
+
 # Customize
   [params.footer]
     copyright = "Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors. | <a href='https://www.softwareag.com/en_corporate/impressum.html'> Imprint</a> | <a href='https://www.softwareag.com/en_corporate/privacy.html'>Privacy policy</a>"
     c8ylink = "https://www.softwareag.cloud/site/product/cumulocity-iot.html"
+

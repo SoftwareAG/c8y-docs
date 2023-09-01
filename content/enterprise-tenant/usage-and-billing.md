@@ -2,6 +2,9 @@
 weight: 70
 title: Usage statistics and billing
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - platform_administration
 helpcontent:

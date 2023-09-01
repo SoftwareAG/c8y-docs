@@ -2,6 +2,9 @@
 weight: 80
 title: Smart rules
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - app_development
 helpcontent:

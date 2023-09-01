@@ -1,6 +1,9 @@
 ---
 title: Localization
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - app_development
 weight: 50

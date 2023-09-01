@@ -89,27 +89,27 @@
 }
 
 .sidebar-toggle {
-  position: fixed !important;
-  top: 10px;
-  left: 24px;
-  z-index: 2002;
-  margin: 0;
+  // position: fixed !important;
+  // top: 10px;
+  // right: 24px;
+  // z-index: 2002;
+  margin: 0 0 0 -16px;
   padding: 0;
   width: 50px;
-  height: 50px;
   border: 0;
   border-radius: 2px;
-  background-color: $brand-primary;
+  background-color: white;
   background-image: none;
-  color: white;
+  color: $gray-text;
   font-size: 10px;
   transition: left 0.3s $ease;
+  flex-shrink: 0;
   .icon-bar {
     display: block;
     margin: 4px auto;
     width: 26px;
     height: 3px;
-    background-color: white;
+    background-color: $gray-text;
   }
 
   @media (min-width: $grid-breakpoint) {
@@ -120,7 +120,7 @@
   }
 
   .open & {
-    left: $main-nav-width + 1.5;
+    // left: $main-nav-width + 1.5;
   }
 }
 

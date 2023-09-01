@@ -2,6 +2,9 @@
 weight: 90
 title: Working with simulators
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 helpcontent:

@@ -121,9 +121,16 @@ pre .hljs{
   list-style: none;
 }
 
+.text-regular{
+  font-weight: 400;
+}
 
 .text-medium{
   font-weight: 500;
+}
+
+.text-muted{
+  color: var(--c8y-root-component-color-text-muted);
 }
 
 .text-center{

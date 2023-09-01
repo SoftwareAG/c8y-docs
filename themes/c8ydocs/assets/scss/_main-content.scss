@@ -90,13 +90,9 @@
 
 @media (min-width: $grid-breakpoint) {
   .main-content {
-    display: grid;
-    grid-template-columns: minmax(320px, 9fr) minmax(0, 3fr);
-    gap: 2rem;
     margin-left: 240px;
     padding: 0 3rem 2rem;
     >.breadcrumbs-container{
-      grid-column: 1 / -1;
       width: 100%;;
       .breadcrumbs{
         padding: 1rem 0;
@@ -108,10 +104,13 @@
   .article-list{
     min-height: calc(100vh - 210px);
   }
-  .article-list > .page-section:first-child{
+  .article-list > .page-section:first-child .article-content{
     padding-bottom: 0;
+    .section-header{
+      padding-top: 3rem;
+    }
   }
-  .article-list > .page-section:last-child{
+  .article-list > .page-section:last-child .article-content{
     margin-bottom: 0;
   }
   .toc{
@@ -120,6 +119,11 @@
   }
   .article-list h3{
     padding-top: 3rem;
+  }
+  .article-list > article{
+    display: grid;
+    grid-template-columns: minmax(320px, 9fr) minmax(0, 3fr);
+    gap: 2rem;
   }
 }
 
@@ -143,7 +147,7 @@
   }
 }
 
-.main-content .page-section {
+.main-content .page-section .article-content {
   padding-bottom: 4rem;
   > h2 {
     display: flex;

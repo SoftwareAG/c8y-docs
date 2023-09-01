@@ -2,6 +2,9 @@
 weight: 45
 title: Working with reports
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - app_development
 helpcontent:

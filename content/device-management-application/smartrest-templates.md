@@ -2,6 +2,9 @@
 weight: 80
 title: SmartREST templates
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 helpcontent:

@@ -2,6 +2,9 @@
 weight: 40
 title: Audit logs
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - platform_administration
 helpcontent:

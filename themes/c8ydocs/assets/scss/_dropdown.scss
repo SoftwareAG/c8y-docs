@@ -46,7 +46,7 @@
   list-style: none;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   font-size: $font-size-base;
-  box-shadow: var(--c8y-elevation-md);
+  box-shadow: var(--c8y-elevation-md-bottom);
 
   //.box-shadow(0 6px 12px rgba(0,0,0,.175));
 
@@ -133,7 +133,7 @@
   > a {
     outline: 0;
   }
-  .dropdown-toggle{
+  >.dropdown-toggle{
     outline: 2px solid $brand-primary;
     border-radius: 2px;
     outline-offset: -1px;

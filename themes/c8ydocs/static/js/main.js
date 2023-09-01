@@ -148,7 +148,24 @@ var main = (function ($) {
         $this.wrap("<div class='table-responsive'></div>");
       }
     });
-
+    
+    // Handle anchor navigation
+  //   document.addEventListener('click', function(event) {
+  //     if (event.target.tagName === 'A' && event.target.getAttribute('href').startsWith('#')) {
+  //         event.preventDefault(); // Prevent the default behavior of the anchor link
+  //         const anchorId = event.target.getAttribute('href').substring(1); // Remove the '#' from the href
+          
+  //       console.log('=====>', anchorId);
+  //         const anchorElement = document.getElementById(anchorId);
+  //         if (anchorElement) {
+  //             const offset = 150; // Adjust the offset as needed
+  //             const topPosition = anchorElement.getBoundingClientRect().top + window.pageYOffset - offset;
+  //             window.scrollTo({ top: topPosition });
+  //         }
+  //     }
+  // });
+  
+  
   }
   return {
     init: initializer

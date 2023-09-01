@@ -122,7 +122,6 @@ body{
 }
 
 .breadcrumbs-container{
-    max-width: $screen-lg-max;
     margin: 0 auto 1rem;
     position: sticky;
     top: 56px;
@@ -138,6 +137,12 @@ body{
       }
 
     }
+}
+
+body:has(>main > .home-top){
+  .breadcrumbs-container{
+    max-width: $screen-lg-max;
+  }
 }
 
 .home-grid{

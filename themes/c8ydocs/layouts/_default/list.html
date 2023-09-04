@@ -30,7 +30,6 @@
         {{.Content }}
         {{ if (isset .Params "audience")}}
           <div class="m-t-auto d-flex gap-8 a-i-center">
-            <small>Audience</small>
             {{ range $t := .Params.audience }}
               <div class="label label-{{if eq $t "Users"}}success{{else}}info{{end}}">
                 <i class='dlt-c8y-icon-{{if eq $t "Users"}}users{{else}}programming{{end}}'></i> 

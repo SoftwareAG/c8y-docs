@@ -51,7 +51,7 @@ For details see [Getting started > Technical concepts > Developing applications 
 
 Used in the context of [Analytics Builder](/glossary/a/#analytics-builder).
 
-A model is a container which can have a network of [Blocks](/glossary/b/#blocks) connected to each other with wires.
+A model is a container which can have a network of [blocks](/glossary/b/#blocks) connected to each other with wires.
 The behavior of a block inside a model does not depend on other blocks. There can be multiple instances of the same block in a model where each instance may behave differently, depending on the configurable parameters or the inputs connected to the block.
 
 

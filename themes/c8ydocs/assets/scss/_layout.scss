@@ -1,14 +1,26 @@
 
+html{
+  scroll-padding-top: 104px;
+}
 
 body{
   background-color: $body-bg-color;
   position: relative;
-  padding-top: 64px;
+  padding-top: 56px;
   &.open{
     overflow-x: hidden;
   }
   @media print{
     background-color: white;
+  }
+  > main, .main-content {
+    opacity: 0;
+    transition: opacity .15s linear;
+  }
+  &.loaded{
+   > main,  .main-content{
+      opacity: 1;
+    }
   }
 }
 
@@ -30,6 +42,19 @@ body{
 }
 .flex-nowrap{
   flex-wrap: nowrap!important;
+}
+
+.gap-8{
+  gap: 8px;
+}
+.gap-16{
+  gap: 16px;
+}
+.gap-24{
+  gap: 24px;
+}
+.gap-32{
+  gap: 32px;
 }
 
 .m-r-auto{
@@ -83,7 +108,7 @@ body{
 .home-top{
   display: grid;
   grid-template-columns: 1fr;
-  padding: 0 1rem 1rem;
+  padding: 2rem 1rem 1rem;
     gap: 1rem;
   svg{
     height: 100%;
@@ -96,7 +121,6 @@ body{
     max-width: $screen-lg-max;
     margin: 0 auto;
     &__content{
-      // padding-top: 2rem;
       h1{
         font-size: 4rem;
         margin: 2rem 0;
@@ -106,13 +130,26 @@ body{
 }
 
 .breadcrumbs-container{
-    
-    max-width: $screen-lg-max;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
     position: sticky;
-    top: 64px;
-  .breadcrumbs{
-    padding: 1rem 2rem;
+    top: 56px;
+    display: none;
+    .breadcrumbs{
+      padding: .5rem 1rem;
+    }
+    @media(min-width: $screen-sm-min){
+      margin: 0 auto;
+      display: block;
+      .breadcrumbs{
+        padding: 1rem 0;
+      }
+
+    }
+}
+
+body:has(>main > .home-top){
+  .breadcrumbs-container{
+    max-width: $screen-lg-max;
   }
 }
 
@@ -137,12 +174,16 @@ body{
   transition: all .25s ease;
   color: var(--c8y-text-color);
   text-decoration: none;
- 
+  display: flex;
+  flex-direction: column;
   &__header{
     display: flex;
     gap: 1rem;
+    > i{
+      font-size: 24px;
+    }
   }
-  h2, i{
+  h2{
     font-size: 24px;
   }
   p{

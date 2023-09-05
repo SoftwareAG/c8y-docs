@@ -702,7 +702,7 @@ Note: When running in simulation or test mode, the block logs the output instead
 </tr>
 <tr>
 <th scope="row">Text</th>
-<td><span>The text of the email.</span>
+<td><span>The text of the email, which is processed as HTML. For example, if you want to insert a new line, use the <tt>&lt;br&gt;</tt> tag.</span>
 </td>
 <td><span>string</span>
 </td>

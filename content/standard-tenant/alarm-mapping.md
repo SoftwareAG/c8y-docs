@@ -2,6 +2,9 @@
 weight: 50
 title: Alarm mapping
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - platform_administration
 helpcontent:

@@ -24,7 +24,7 @@
 .main-content {
   position: relative;
   z-index: 30;
-  padding: 0 1rem 1rem;
+  padding: 2rem 1rem 1rem;
   transition: transform .3s $ease;
   @media (max-width: $grid-breakpoint - 1) {
     .open & {
@@ -58,6 +58,9 @@
   p > img {
     margin-bottom: 40px;
   }
+  p:last-child{
+    margin-bottom: 0;
+  }
 
   @media print {
     margin: 0 auto !important;
@@ -84,32 +87,33 @@
 
 @media (min-width: $screen-sm-min) {
   .main-content {
-    padding: 1rem;
+    padding: 0 1rem 1rem;
   }
 }
 
 @media (min-width: $grid-breakpoint) {
   .main-content {
-    display: grid;
-    grid-template-columns: minmax(320px, 9fr) minmax(0, 3fr);
-    gap: 2rem;
     margin-left: 240px;
     padding: 0 3rem 2rem;
-    >.breadcrumbs{
-      grid-column: 1 / -1;
-      padding: 1rem 0;
-      position: sticky;
-      top: 64px;
+    >.breadcrumbs-container{
+      width: 100%;;
+      .breadcrumbs{
+        padding: 1rem 0;
+        position: sticky;
+        top: 56px;
+      }
     }
   }
   .article-list{
     min-height: calc(100vh - 210px);
   }
-  .article-list > .page-section:first-child{
-    padding-top: 0;
-    margin-bottom: -130px;
+  .article-list > .page-section:first-child .article-content{
+    padding-bottom: 0;
+    .section-header{
+      padding-top: 3rem;
+    }
   }
-  .article-list > .page-section:last-child{
+  .article-list > .page-section:last-child .article-content{
     margin-bottom: 0;
   }
   .toc{
@@ -117,7 +121,12 @@
     top: 74px;
   }
   .article-list h3{
-    padding-top: 104px;
+    padding-top: 3rem;
+  }
+  .article-list > article{
+    display: grid;
+    grid-template-columns: minmax(320px, 9fr) minmax(0, 3fr);
+    gap: 2rem;
   }
 }
 
@@ -131,9 +140,7 @@
   label {
     opacity: .8;
   }
-  h1 {
-    // margin: 10px 0;
-  }
+  
   .lead {
     max-width: 660px;
   }
@@ -143,31 +150,29 @@
   }
 }
 
-.main-content .page-section {
-  padding-top: 130px;
+.main-content .page-section .article-content {
+  padding-bottom: 4rem;
   > h2 {
     display: flex;
-    // padding-top: 50px;
-    // // margin-top: 24px;
+    margin-top: 2rem;
     padding-bottom: 16px;
-    border-bottom: 1px dotted #d9d9d9;
-
     > small {
       align-self: center;
       order: 8;
       margin-left: auto;
     }
+    + h3{
+      padding-top: 0;
+    }
   }
 
   > h3 {
     border-bottom: 0;
-    padding-top: 7rem;
-    margin-top: -5rem;
+    padding-top: 3rem;
   }
 
   > h4 {
     display: flex;
-    // margin-top: 3rem;
     > small {
       align-self: center;
       order: 8;

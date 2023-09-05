@@ -2,6 +2,9 @@
 weight: 10
 title: Registering devices
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - device_management
 helpcontent:

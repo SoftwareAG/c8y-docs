@@ -2,6 +2,9 @@
 title: Basic settings
 weight: 70
 layout: bundle
+outputs:
+  - html
+  - json
 section:
   - platform_administration
 helpcontent:

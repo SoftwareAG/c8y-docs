@@ -1,15 +1,14 @@
-<button
-  class="sidebar-toggle"
-  type="button"
->
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span>MENU</span>
-</button>
-
 <header class="main-top-bar">
-  <div class="brand-logo">
+  <button
+    class="sidebar-toggle"
+    type="button"
+  >
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span>MENU</span>
+  </button>
+  <div class="brand-logo p-r-16">
     <a href="/">
       <img
         class="no-zoom"
@@ -19,7 +18,7 @@
     </a>
   </div>
   <nav class="d-flex m-l-auto">
-    <div class="m-l-auto nav flex-end nav-right">
+    <div class="m-l-auto nav flex-end nav-right search-container">
       <script>
         (function () {
           var cx = '008969372384807682938:yeh7xt785g4';
@@ -32,8 +31,8 @@
         })();
       </script>
       <gcse:searchbox></gcse:searchbox>
+      <gcse:searchresults></gcse:searchresults>
     </div>
-    <a href="https://www.cumulocity.com/api/"></a>
     <div class="dropdown version">
       <a
         class="dropdown-toggle version"
@@ -55,6 +54,30 @@
       <button
         class="dropdown-toggle version"
         type="button"
+        title="External links"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Resources"
+        id="resourcesLinks"
+        data-toggle="dropdown"
+      >
+        <i class="dlt-c8y-icon-box-settings icon-20"></i> <span>Additional resources</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-right"
+        aria-labelledby="resourcesLinks"
+        role="listbox"
+      >
+        {{ range $index, $resource :=  .Site.Params.additionalResources }}
+          <li class="text-normal"><a href="{{ $resource.link }}">{{ $resource.name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    <!-- 
+    <div class="dropdown version">
+      <button
+        class="dropdown-toggle version"
+        type="button"
         title="Releases"
         aria-expanded="false"
         aria-haspopup="true"
@@ -68,14 +91,16 @@
       </button>
       <div
         class="dropdown-menu"
+        role="listbox"
         aria-labelledby="dropdownVersionButton"
       >
-        <!-- <a href="#" class="dropdown-menu-item">10.4.6</a>
-        <a href="#" class="dropdown-menu-item">10.4.0</a> -->
+          <a href="#" class="dropdown-menu-item">10.4.6</a>
+        <a href="#" class="dropdown-menu-item">10.4.0</a> 
       </div>
     </div>
+  -->
     <div
-      class="dropdown"
+      class="dropdown visible-lg"
       id="sections-selection"
     >
       <button
@@ -92,35 +117,58 @@
         <i class="dlt-c8y-icon-th icon-20"></i>
       </button>
       <ul
+        role="listbox"
         class="dropdown-menu dropdown-menu-grid dropdown-menu-right"
         aria-labelledby="sectionLinks"
       >
         {{- partial "sections-selector.html" . -}}
       </ul>
     </div>
-    <div class="dropdown">
+    <div class="dropdown mobile">
       <button
-        class="dropdown-toggle btn-dot"
+        class="dropdown-toggle btn-dot p-l-4 p-r-4"
         type="button"
-        title="External links"
+        title="Resources"
         aria-expanded="false"
         aria-haspopup="true"
         aria-label="Resources"
-        id="resourcesLinks"
+        id="allResources"
         data-toggle="dropdown"
       >
-        <i class="dlt-c8y-icon-ellipsis-v icon-20"></i>
+        <i class="dlt-c8y-icon-ellipsis-v"></i>
       </button>
       <ul
         class="dropdown-menu dropdown-menu-right"
-        aria-labelledby="resourcesLinks"
+        aria-labelledby="allResources"
+        role="listbox"
       >
-        <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
-        <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">AngularJS API</a></li>
-        <li><a href="https://techcommunity.softwareag.com/en_en/cumulocity-iot.html">TECHcommunity</a></li>
-        <li><a href="https://empower.softwareag.com/">Empower Portal</a></li>
+        <li class="text-normal">
+          <a
+            title="REST API documentation"
+            href="https://www.cumulocity.com/api/"
+          >
+            <i class="dlt-c8y-icon-rest-api"></i> <span>REST API &nbsp;</span>
+          </a>
+        </li>
+        <li class="text-normal">
+          <a
+            title="Release notes"
+            href="https://cumulocity.com/releasenotes/about/"
+          > 
+            <i class="dlt-c8y-icon-announcement"></i> <span>Release notes&nbsp;</span>
+          </a>
+        </li>
+        <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Additional resources</b></li>
+        {{ range $index, $resource :=  .Site.Params.additionalResources }}
+          <li class="text-normal">
+            <a href="{{ $resource.link }}">
+              {{ $resource.name }}
+            </a>
+          </li>
+        {{ end }}
       </ul>
     </div>
+
   </nav>
 </header>
-<gcse:searchresults></gcse:searchresults>
+

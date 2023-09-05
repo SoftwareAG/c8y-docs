@@ -26,7 +26,7 @@ For details see [Getting started > Technical concepts > Real-time processing > U
 
 ### EPL Apps {#epl-apps}
 
-EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#streaming-analytics) application. It allows you to develop EPL apps (that is, single *.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing*.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
+EPL Apps is part of the [{{< product-c8y-iot >}} Streaming Analytics](/glossary/c/#streaming-analytics) application. It allows you to develop EPL apps (that is, single \*.mon files) directly within {{< product-c8y-iot >}}, written in Apama EPL. You can also import existing \*.mon files as EPL apps into {{< product-c8y-iot >}}. When you activate an EPL app from the Streaming Analytics application, you deploy it to {{< product-c8y-iot >}}.
 
 See also [Event Processing Language (EPL)](/glossary/e/#epl) and [Analytics Builder](/glossary/a/#analytics-builder).
 

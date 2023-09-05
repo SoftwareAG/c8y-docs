@@ -1,6 +1,6 @@
 ---
 title: Enterprise tenant administration
-icon: "c8y-icon c8y-icon-cumulocity-iot"
+icon: "c8y-icon c8y-icon-administration"
 type: root
 layout: redirect
 bundle: enterprise-tenant

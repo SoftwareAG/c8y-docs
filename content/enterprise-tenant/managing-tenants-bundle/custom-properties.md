@@ -36,4 +36,4 @@ Using the checkbox **Enable Gainsight product experience tracking** a parent ten
 
 On tenant level, the product experience tracking by Gainsight can be disabling by disabling the cookie banner on the **Branding** page, see [Branding](/enterprise-tenant/customization/#branding).
 
-Even if tracking is enabled for a tenant, users must actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Accessing and logging into the platform](/get-familiar-with-the-ui/accessing-platform).
+Even if tracking is enabled for a tenant, users must actively accept the tracking of functional cookies, before any functional data on the usage of the platform is tracked, see [Accessing and logging into the platform](/get-familiar-with-the-ui/platform-access).

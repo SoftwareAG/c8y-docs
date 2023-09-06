@@ -50,7 +50,7 @@ We support backward compatibility, not forward compatibility. You can check this
 
 #### Maintenance release {#maintenance-release}
 
-For clarification, maintenance releases for the same yearly release contain only corrective functional changes but no breaking API changes.
+For clarification, maintenance releases for the same Yearly release contain only corrective functional changes but no breaking API changes.
 
 #### Applications and microservices {#applications-and-microservices}
 

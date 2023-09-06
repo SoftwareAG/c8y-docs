@@ -6,7 +6,7 @@ weight: 75
 {{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained.
 
 {{< c8y-admon-info >}}
-For details on the release types (such as GA release or Maintenance release) and their version labels see [Release types](https://cumulocity.com/releasenotes/about/release-types/).
+For details on the release types (such as Yearly release or Maintenance release) and their version labels see [Release types](https://cumulocity.com/releasenotes/about/release-types/).
 {{< /c8y-admon-info >}}
 
 The current compatibility statements are described as follows.
@@ -29,7 +29,7 @@ However, {{< product-c8y-iot >}} is continually improving the user experience an
 
 
 {{< c8y-admon-info >}}
-If changes result in breaking backward compatibility, to provide our customers with the time to change their solution, such changes will be announced at least one GA release ahead of the GA release where the change becomes effective. Where the change has a wide-ranging impact, we will delay taking action until we have ascertained that the impact on our customers is minimal.
+If changes result in breaking backward compatibility, to provide our customers with the time to change their solution, such changes will be announced at least 3 months ahead of the point in time, when the change becomes effective. Where the change has a wide-ranging impact, we will delay taking action until we have ascertained that the impact on our customers is minimal.
 {{< /c8y-admon-info >}}
 
 #### Beta APIs {#beta-apis}
@@ -50,7 +50,7 @@ We support backward compatibility, not forward compatibility. You can check this
 
 #### Maintenance release {#maintenance-release}
 
-For clarification, maintenance releases for the same GA release contain only corrective functional changes but no breaking API changes.
+For clarification, maintenance releases for the same yearly release contain only corrective functional changes but no breaking API changes.
 
 #### Applications and microservices {#applications-and-microservices}
 
@@ -58,4 +58,4 @@ In general, you can run an older application or microservice version against a n
 
 #### {{< product-c8y-iot >}} functionality {#platform-functionality}
 
-{{< product-c8y-iot >}} microservices and user interface features may be deprecated. In this case, the {{< product-c8y-iot >}} deprecation process provides an early indication to users of the features. Deprecation notices are included in the documentation and the release notes at least one GA release ahead of the GA release where the change becomes effective.
+{{< product-c8y-iot >}} microservices and user interface features may be deprecated. In this case, the {{< product-c8y-iot >}} deprecation process provides an early indication to users of the features. Deprecation notices are included in the documentation and the release notes at least 3 months ahead of the point in time when the change becomes effective.

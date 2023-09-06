@@ -6,9 +6,13 @@ section:
   - getting_started
 ---
 
-### GA release {#ga-release}
+### General Availability (GA) {#ga}
 
-A GA release is a release with general availability (GA). GA releases are typically provided in a 3-month cycle. They are published on all {{< product-c8y-iot >}} public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the {{< company-sag >}} {{< sag-portal >}}. GA releases include new features, improvements and fixes.
+In the Continuous deployment model, General Availability (GA) refers to the availability of a feature to all customers.
+
+See also [Private Preview](/glossary/p/#private preview) and [Public Preview](/glossary/p/#public preview).
+
+In the Yearly release model, General Availability (GA) refers to the general availability of a [Yearly release](/glossary/y/#yearly_release), typically on the 31st of March of each year.
 
 
 ### Global roles {#global-roles}

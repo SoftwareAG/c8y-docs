@@ -6,6 +6,13 @@ section:
   - getting_started
 ---
 
+### Continuous Deployment model {#continuous-deplyoment-model}
+
+In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different components of the {{< product-c8y-iot >}} platform are updated on a continuous basis, that is, small incremental improvements are deployed multiple times a week. Continuous updates provide customers with a steady stream of enhancements, bug fixes, and new functionalities as they become available. 
+
+See also [Private Preview](/glossary/p/#private preview), [Public Preview](/glossary/p/#public preview) and [General Availability](/glossary/g/#ga).
+
+
 ### Cockpit application {#cockpit-application}
 
 The Cockpit application is one of the default applications of {{< product-c8y-iot >}}. It provides options to manage and monitor IoT assets and data from a business perspective, like managing assets, visualizing data, working with dashboards and managing reports.

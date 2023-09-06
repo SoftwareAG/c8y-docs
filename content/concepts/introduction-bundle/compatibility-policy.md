@@ -29,7 +29,7 @@ However, {{< product-c8y-iot >}} is continually improving the user experience an
 
 
 {{< c8y-admon-info >}}
-If changes result in breaking backward compatibility, to provide our customers with the time to change their solution, such changes will be announced at least 3 months ahead of the point in time, when the change becomes effective. Where the change has a wide-ranging impact, we will delay taking action until we have ascertained that the impact on our customers is minimal.
+If changes result in breaking backward compatibility, to provide our customers with the time to change their solution, such changes will be announced at least 6 months ahead of the point in time, when the change becomes effective. Where the change has a wide-ranging impact, we will delay taking action until we have ascertained that the impact on our customers is minimal.
 {{< /c8y-admon-info >}}
 
 #### Beta APIs {#beta-apis}
@@ -58,4 +58,4 @@ In general, you can run an older application or microservice version against a n
 
 #### {{< product-c8y-iot >}} functionality {#platform-functionality}
 
-{{< product-c8y-iot >}} microservices and user interface features may be deprecated. In this case, the {{< product-c8y-iot >}} deprecation process provides an early indication to users of the features. Deprecation notices are included in the documentation and the release notes at least 3 months ahead of the point in time when the change becomes effective.
+{{< product-c8y-iot >}} microservices and user interface features may be deprecated. In this case, the {{< product-c8y-iot >}} deprecation process provides an early indication to users of the features. Deprecation notices are included in the documentation and the release notes at least 6 months ahead of the point in time when the change becomes effective.

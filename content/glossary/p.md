@@ -15,14 +15,14 @@ To manage permissions more easily, they are grouped into roles. Every user can b
 
 See also [Global roles](/glossary/g/#global-roles) and [Inventory roles](/glossary/i/#inventory-roles).
 
-### Private Preview mode {#private_preview}
+### Private Preview mode {#private-preview}
 
 In the [Continuous Deployment](/glossary/c/#continuous_deployment) model, the Private Preview mode refers to a feature which is only made available to selected customers.
 
-See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/p/#public preview).
+See also [General Availability](/glossary/g/#ga) and [Public Preview](/glossary/p/#public-preview).
 
-### Private Preview mode {#private_preview}
+### Public Preview mode {#public-preview}
 
 In the [Continuous Deployment](/glossary/c/#continuous_deployment) model, the Public Preview mode refers to a feature for which customers can opt-in to have the feature activated.
 
-See also [General Availability](/glossary/g/#ga) and [Private Preview](/glossary/p/#private preview).
+See also [General Availability](/glossary/g/#ga) and [Private Preview](/glossary/p/#private-preview).

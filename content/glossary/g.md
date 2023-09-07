@@ -10,9 +10,9 @@ section:
 
 In the Continuous deployment model, General Availability (GA) refers to the availability of a feature to all customers.
 
-See also [Private Preview](/glossary/p/#private preview) and [Public Preview](/glossary/p/#public preview).
+See also [Private Preview](/glossary/p/#private-preview) and [Public Preview](/glossary/p/#public-preview).
 
-In the Yearly release model, General Availability (GA) refers to the general availability of a [Yearly release](/glossary/y/#yearly_release), typically on the 31st of March of each year.
+In the Yearly release model, General Availability (GA) refers to the general availability of a [Yearly release](/glossary/y/#yearly-release), typically on the 31st of March of each year.
 
 
 ### Global roles {#global-roles}

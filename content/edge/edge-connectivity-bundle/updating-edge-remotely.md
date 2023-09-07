@@ -60,7 +60,7 @@ To remotely update your Edge appliance:
 13. Restart your Edge appliance after the firmware update is complete. You can remotely restart your Edge appliance from your tenant account as shown in the figure below:
     ![Edge version](/images/edge/edge-firmware-update-restart.png)
 
-### Updating Edge appliances using bulk operations
+### Updating Edge appliances using bulk operations {#updating-edge-appliances-using-bulk-operations}
 
 In your tenant account, you can update multiple Edge appliances using the bulk operations feature. To do so, follow the steps below:
 

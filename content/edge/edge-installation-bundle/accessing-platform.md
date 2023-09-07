@@ -8,7 +8,7 @@ section:
 
 You access the Edge appliance using a [domain name](#domain) in a web browser.
 
-### Supported browsers
+### Supported browsers {#supported-browsers}
 
 Supported browsers in this version are:
 
@@ -42,7 +42,7 @@ For example, loading graphs with large amounts of data points may make the mobil
 
 <a name="domain"></a>
 
-### Accessing the Edge appliance using the domain name
+### Accessing the Edge appliance using the domain name {#accessing-the-edge-appliance-using-the-domain-name}
 
 The Edge appliance is accessible using the domain name configured as part of the installation.
 
@@ -57,7 +57,7 @@ The first option is always preferable so that the Edge appliance is accessible o
 {{< /c8y-admon-info >}}
 
 <a name="add-alias"></a>
-#### Adding the alias
+#### Adding the alias {#adding-the-alias}
 
 On Linux machines, add the following entry to */etc/hosts*:
 
@@ -82,7 +82,7 @@ Using &#60;domain_name>, the Edge appliance can be connected from the host opera
 * On VMware platforms, port forwarding must be enabled as mentioned in [Port forwarding on a VMware platform](/edge/setting-up-edge/#vmware-port-forwarding).
 * The DNS entry must be added in your LAN's DNS server/Name server. The DNS entry must have the domain name and the IP address of the host operating system. Note that this is not the Edge appliance IP.
 
-#### To access the Edge appliance
+#### To access the Edge appliance {#to-access-the-edge-appliance}
 
 Enter the URL in the browser:
 
@@ -136,12 +136,12 @@ To explicitly logout, click the **User** button at the right of the top bar, the
 The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 {{< /c8y-admon-info >}}
 
-### How to reset your password
+### How to reset your password {#how-to-reset-your-password}
 
 To reset your password, you must first configure the “reset password” template and email server settings in the Edge appliance. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
 
 For information about resetting the password, see [How to reset your password](/users-guide/getting-started/#how-to-reset-your-password) in the *User guide*.
 
-### How to access pages using URLs
+### How to access pages using URLs {#how-to-access-pages-using-urls}
 
 For information about accessing pages using the URLs, see [How to access pages using URLs](/users-guide/getting-started/#how-to-access-pages-using-urls) in the *User guide*.

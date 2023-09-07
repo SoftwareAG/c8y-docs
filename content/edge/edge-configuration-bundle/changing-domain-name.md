@@ -13,7 +13,7 @@ using your domain. These will use *\<subtenantName\>.iot.mycompany.com* as their
 Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 {{< /c8y-admon-important >}}
 
-### Changing the domain name using the GUI
+### Changing the domain name using the GUI {#changing-the-domain-name-using-the-gui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
@@ -44,7 +44,7 @@ Before you change the domain name, see [Domain name validation for Edge license 
 
 8. Click **Save**.
 
-### License and certificate compatibility
+### License and certificate compatibility {#license-and-certificate-compatibility}
 
 The example below describes a scenario where an existing license or certificate is compatible with the new domain name:
 

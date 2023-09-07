@@ -10,7 +10,7 @@ When you apply a patch or update your Edge appliance to a newer version, you mus
 You might see alarms when you power on the Edge appliance from hibernation.
 {{< /c8y-admon-info >}}
 
-### Restarting the Edge appliance using the UI
+### Restarting the Edge appliance using the UI {#restarting-the-edge-appliance-using-the-ui}
 
 To restart your Edge appliance:
 

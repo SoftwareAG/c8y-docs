@@ -12,7 +12,7 @@ By default, the `chrony` service is responsible for time synchronization with th
 
 Once the time synchronization is enabled, you can specify the NTP servers and the interval to trigger the time synchronization.
 
-### Configuring the time synchronization using the UI
+### Configuring the time synchronization using the UI {#configuring-the-time-synchronization-using-the-ui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 

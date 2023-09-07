@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-### Setting up ESXi
+### Setting up ESXi {#setting-up-esxi}
 
 To set up an ESXi virtual machine, follow these steps:
 
@@ -29,7 +29,7 @@ To set up an ESXi virtual machine, follow these steps:
 
 A VM with the provided name, for example, "EDGE-server", should now show up in the **Virtual Machines** section. Notifications will appear accordingly in the **Recent tasks** pane.
 
-### VM hardware configuration
+### VM hardware configuration {#vm-hardware-configuration}
 
 * Change VM compatibility to the latest ESXi version.
 * Make sure that only one network interface is configured. Use VMXNET3 as type.

@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-### Updating the memory and CPU limit for OPC UA
+### Updating the memory and CPU limit for OPC UA {#updating-the-memory-and-cpu-limit-for-opc-ua}
 
 The memory limit for OPC UA container is set to 2048 MB and the CPU limit is set to 256 as default values. For most use cases, these values are sufficient. You can change the values as per your requirements.
 

@@ -6,7 +6,7 @@ layout: redirect
 
 This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier than {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7.
 
-### Before you begin
+### Before you begin {#before-you-begin}
 
 - Import the Edge 10.9 appliance, see [Configuring the Edge infrastructure](/edge/setting-up-edge/) for further information.
 - Configure the network and complete the installation procedure on your Edge 10.9 appliance. For details see [Installing {{< product-c8y-iot >}} Edge](/edge/installation/).
@@ -27,7 +27,7 @@ To migrate from Edge 10.7 to 10.9:
 - move the backup to Edge 10.9,
 - restore the data on Edge 10.9.
 
-### Creating a backup on Edge 10.7
+### Creating a backup on Edge 10.7 {#creating-a-backup-on-edge-107}
 
 In your Edge 10.7 setup, back up the data for each tenant and docker collection, and note down the device ID.
 
@@ -60,7 +60,7 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
 
 6. Create a backup of the */var/lib/cumulocity-agent/credentials* file.
 
-## Restoring the data on Edge 10.9
+## Restoring the data on Edge 10.9 {#restoring-the-data-on-edge-109}
 
 To restore the data, you must first copy the MongoDB backup from the Edge 10.7 appliance to your Edge 10.9 appliance.
 
@@ -229,7 +229,7 @@ If enabling the microservice hosting feature fails, it may be due to a [Kubernet
 
 For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
 
-### Sample scripts to automate the migration
+### Sample scripts to automate the migration {#sample-scripts-to-automate-the-migration}
 
 {{< company-sag >}} provides the *backup.sh* and *restore.sh* scripts for your reference. You may customize these scripts for your requirements and automate the migration process. These scripts are available at:
 
@@ -239,9 +239,9 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 
 {{< c8y-admon-important >}}{{< company-sag >}} does not officially support these scripts. These scripts are only for your reference.{{< /c8y-admon-important >}}
 
-### Using the scripts
+### Using the scripts {#using-the-scripts}
 
-#### In 10.7 appliance
+#### In 10.7 appliance {#in-107-appliance}
 
 {{< c8y-admon-important >}}
 Before the data back up, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You need an additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
@@ -280,7 +280,7 @@ Before the data back up, ensure that there is sufficient disk space to save the 
 
 5. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
 
-#### In 10.9 appliance
+#### In 10.9 appliance {#in-109-appliance}
 
 {{< c8y-admon-important >}}
 Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to an additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).

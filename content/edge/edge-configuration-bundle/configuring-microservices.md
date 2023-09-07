@@ -23,7 +23,7 @@ Enabling the microservice hosting feature takes about 10 to 15 minutes to comple
 To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
 {{< /c8y-admon-important >}}
 
-### Enabling or disabling the microservice hosting feature using the UI
+### Enabling or disabling the microservice hosting feature using the UI {#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
@@ -55,7 +55,7 @@ For more information about developing and hosting a microservice, see [Microserv
 {{< product-c8y-iot >}} Edge appliance will be temporarily non-operational during the operation.
 {{< /c8y-admon-info >}}
 
-### Deploying microservices with a lower manifest version
+### Deploying microservices with a lower manifest version {#deploying-microservices-with-a-lower-manifest-version}
 
 A microservice specifies an API version in the microservice manifest. Depending on this API version, the microservice runs with all or only a restricted set of Linux kernel capabilities. More precisely, all capabilities are granted to microservices with API version 1 whereas only the capability `CAP_NET_BIND_SERVICE` is granted to microservices with API version 2. For more information, see [General aspects > Microservice migration to API Version 2](/microservice-sdk/concept/#migration) in the *Microservice SDK guide*.
 

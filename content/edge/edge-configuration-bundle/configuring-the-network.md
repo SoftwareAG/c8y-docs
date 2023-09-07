@@ -17,7 +17,7 @@ Do not use the IP addresses from the below blocks in your network configuration.
 
 {{< /c8y-admon-important >}}
 
-### Configuring the network using the UI
+### Configuring the network using the UI {#configuring-the-network-using-the-ui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
@@ -52,7 +52,7 @@ Do not use the IP addresses from the below blocks in your network configuration.
 If the IP address of the Edge appliance overlaps with the Edge appliance's address range, then you must update the **Address range CIDR**.
 		{{< /c8y-admon-info >}}
 
-### Troubleshooting the network CIDR
+### Troubleshooting the network CIDR {#troubleshooting-the-network-cidr}
 
 The network CIDR fails in the following scenarios:
 

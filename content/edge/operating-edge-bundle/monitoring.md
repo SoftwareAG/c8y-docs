@@ -10,7 +10,7 @@ Monit is a small open-source utility for managing and monitoring the Unix system
 
 In {{< product-c8y-iot >}} Edge, Monit is used to monitor the processes and perform a restart if any of the processes is down or inactive. The usual Monit interval (cycle) is 30 seconds.
 
-### Using Monit
+### Using Monit {#using-monit}
 
 Monit can provide a quick status report of all the configured services and processes by running the following command:
 
@@ -34,7 +34,7 @@ Monit can be restarted by running:
 
 The log file for monit is located in /var/log/monit.log.
 
-#### Monitor
+#### Monitor {#monitor}
 
 The monitor can be started by running the *run_monitor.py* script located under */opt/c8y/utilities/diagnostic-utility/src/*.
 

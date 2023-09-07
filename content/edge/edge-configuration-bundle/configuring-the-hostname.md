@@ -8,7 +8,7 @@ section:
 
 The default hostname of the Edge appliance is **iot-edge-server**. You can define a unique hostname for your Edge appliance as required. A unique hostname ensures seamless communication within the network, avoids any hostname conflicts with other network devices and improves the security of your Edge device.
 
-### Configuring the hostname using the UI
+### Configuring the hostname using the UI {#configuring-the-hostname-using-the-ui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 

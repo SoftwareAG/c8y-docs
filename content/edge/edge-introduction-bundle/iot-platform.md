@@ -12,7 +12,7 @@ For general information about functionalities and features of {{< product-c8y-io
 
 Below you can find the links to the most common functionalities of {{< product-c8y-iot >}}.
 
-### Device Management
+### Device Management {#device-management}
 
 The [Device Management application](/users-guide/device-management) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
 
@@ -29,7 +29,7 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 |[Managing device data](/users-guide/device-management/#managing-device-data)|How to retrieve and manage [firmware](/users-guide/device-management/#firmware-repo) and [software](/users-guide/device-management/#software-repo) for devices; how to retrieve configuration data and store and manage it in a [configuration repository](#configuration-repository) as configuration snapshots.
 |[Using SmartREST templates](/users-guide/device-management#smartrest-templates)|How to work with [SmartREST  templates](/users-guide/device-management#smartrest-templates), a collection of request and response templates used to convert CSV data and {{< product-c8y-iot >}} Rest API calls.
 
-### Cockpit
+### Cockpit {#cockpit}
 
 The [Cockpit application](/users-guide/cockpit) provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.
 
@@ -47,7 +47,7 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 |[Working with Smart Rules](/users-guide/cockpit#smart-rules)|[Create and manage business rules](/users-guide/cockpit#create-rules) to work on incoming data in realtime and to perform actions based on this data.
 |[Smart Rules collection](/users-guide/cockpit#smart-rules-collection)|Use pre-defined [global Smart Rules](/users-guide/cockpit#smart-rules-collection) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email). Describes each smart rule and its configurable parameters in detail.
 
-### Administration
+### Administration {#administration}
 
 The [Administration application](/users-guide/administration) enables account administrators to manage their users, roles, tenants and applications and lets them configure a number of settings for their account.
 

@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-### Setting up for VMware
+### Setting up for VMware {#setting-up-for-vmware}
 
 To set up the Edge appliance in VMware Workstation Player, follow the steps below.
 
@@ -28,7 +28,7 @@ On VMware Workstation, you must use UTC on your host machine. If you choose not 
 
 Next, perform the Edge appliance installation. See, [Installing {{< product-c8y-iot >}} Edge](/edge/installation/).
 
-### Setting up for vmnetcfg utility
+### Setting up for vmnetcfg utility {#setting-up-for-vmnetcfg-utility}
 
 You can use the VMware `vmnetcfg` utility to get the necessary details like the subnet mask and gateway IP required to configure the network.
 

@@ -8,14 +8,14 @@ section:
 
 The {{< product-c8y-iot >}} Cloud Remote Access allows you to remotely access the Edge appliance through a web browser. The remote Edge appliance is represented as a device in the Device Management application of {{< product-c8y-iot >}}.
 
-#### Prerequisites
+#### Prerequisites {#prerequisites}
 
 To use Cloud Remote Access, you need:
 
 * "Remote access" permission granted to the tenant user.
 * A {{< product-c8y-iot >}} tenant subscribed to the Cloud Remote Access microservice. To get the subscription, contact [{{< company-sag >}} support](https://cumulocity.com/guides/welcome/contacting-support/).
 
-#### Supported protocols
+#### Supported protocols {#supported-protocols}
 
 The following protocols are supported to connect to the Edge appliance through remote access from the {{< product-c8y-iot >}} tenant:
 

@@ -57,16 +57,16 @@ You can also get the allocated port number from the */opt/c8y/utilities/vnc-disp
 
 To access and connect to the Edge appliance:
 
-1. In the {{< product-c8y-iot >}} tenant for your registered Edge appliance, add a remote access endpoint. See [Adding remote access endpoints](/cloud-remote-access/using-cloud-remote-access/#to-add-a-remote-access-endpoint-via-vnc). You must use the same port number that is allocated for you.
+1. In the {{< product-c8y-iot >}} tenant for your registered Edge appliance, add a remote access endpoint. See [Adding remote access endpoints](/cloud-remote-access/using-cloud-remote-access/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
 
-2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#to-connect-to-an-endpoint).
+2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#connecting-to-endpoints).
 
 The connection to the Edge appliance is established and the UI appears for the Edge appliance. Right-click in the screen to open the desktop components **xterm** and **firefox**.
 
 <img src="/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
 {{< c8y-admon-important >}}
-Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
+Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
 {{< /c8y-admon-important >}}
 
 ### Changing the VNC password

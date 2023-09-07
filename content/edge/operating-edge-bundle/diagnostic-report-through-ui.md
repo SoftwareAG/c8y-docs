@@ -1,5 +1,5 @@
 ---
-weight: 16
+weight: 35
 title: Downloading diagnostics using the UI
 layout: bundle
 section:

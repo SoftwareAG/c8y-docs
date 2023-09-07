@@ -1,9 +1,7 @@
 ---
 weight: 85
 title: Developing Cumulocity IoT web applications
-layout: bundle
-section:
-  - edge_server
+layout: redirect
 ---
 
 If you develop a {{< product-c8y-iot >}} web application using the [Web SDK](/web/overview/), for an Edge appliance configured with a certificate not trusted by Node.js (for example, a self-signed certificate), then you must ensure that Node.js trusts the root certificate.

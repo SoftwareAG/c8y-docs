@@ -13,7 +13,7 @@ The {{< product-c8y-iot >}} Cloud Remote Access allows you to remotely access th
 To use Cloud Remote Access, you need:
 
 * "Remote access" permission granted to the tenant user.
-* The Cloud Remote Access microservice included into your subscription plan.
+* A {{< product-c8y-iot >}} tenant subscribed to the Cloud Remote Access microservice. To get the subscription, contact [{{< company-sag >}} support](https://cumulocity.com/guides/welcome/contacting-support/).
 
 #### Supported protocols
 

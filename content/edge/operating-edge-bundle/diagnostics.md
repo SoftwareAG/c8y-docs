@@ -1,12 +1,12 @@
 ---
-weight: 15
-title: Diagnostics
+weight: 30
+title: Diagnostic utility
 layout: bundle
 section:
   - edge_server
 ---
 
-The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below.
+The diagnostic utility is a script to collect, for example, the journal logs and performance metrics of various components running on the Edge appliance, which are essential for you and the {{< company-sag >}} support team to troubleshoot the problems. The diagnostic utility is enabled by default and is scheduled to run periodically. However, you can also trigger it manually using the command line (below) or the [user interface](/edge/operating-edge/#diagnostic-report-through-ui).
 
 	cd /opt/c8y/utilities/diagnostic-utility
 	sudo ./run_data_collector.py
@@ -89,14 +89,6 @@ Following are the supported command line arguments which can be used while invok
 * -sw or --software: Allows the script to collect only the software information
 * -c8y or --cumulocity: Allows the script to collect only the cumulocity information
 * -h: Displays the help message
-
-#### Monitor
-
-The monitor can be started by running the "run_monitor.py" script located under "/opt/c8y/utilities/diagnostic-utility/src/".
-
-The monitor script supports only one optional startup parameter:
-
-*  -s or --skipDataCollector: Allows the user to skip the data collection even if one or more monitored components is not working.
 
 ### Microservices log file locations
 

@@ -1,9 +1,7 @@
 ---
-weight: 80
+weight: 60
 title: Connecting a Modbus device
-layout: bundle
-section:
-  - edge_server
+layout: redirect
 ---
 
 Modbus is a serial communications protocol originally published by Modicon and used to establish primary-replica/client-server communication between devices.

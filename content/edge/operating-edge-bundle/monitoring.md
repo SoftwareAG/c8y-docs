@@ -33,3 +33,11 @@ Monit can be restarted by running:
 	[admin@iot-edge-server ~]$ sudo systemctl restart monit
 
 The log file for monit is located in /var/log/monit.log.
+
+#### Monitor
+
+The monitor can be started by running the *run_monitor.py* script located under */opt/c8y/utilities/diagnostic-utility/src/*.
+
+The monitor script supports only one optional startup parameter:
+
+`-s` or `--skipDataCollector` allows you to skip the data collection even if one or more monitored components are not working.

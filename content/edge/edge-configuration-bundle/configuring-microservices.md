@@ -19,6 +19,10 @@ If you want to use the microservice hosting feature, ensure that you do not use 
 
 Enabling the microservice hosting feature takes about 10 to 15 minutes to complete.
 
+{{< c8y-admon-important >}}
+To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
+{{< /c8y-admon-important >}}
+
 ### Enabling or disabling the microservice hosting feature using the UI
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
@@ -41,21 +45,7 @@ The **Add microservice** button will not be available if you have not enabled th
 
 Upload the ZIP file for your microservice application. For more information about deploying a microservice, see [Deploying the "Hello world" microservice](/microservice-sdk/java/#deploying-the-hello-world-microservice).
 
-### Enabling or disabling the microservice hosting feature using the REST APIs
-
-To enable or disable the microservice hosting feature, use the following endpoints:
-
-{{< c8y-admon-important >}}
-To enable or disable the microservice hosting feature, you must have the "Tenant Manager" role.
-{{< /c8y-admon-important >}}
-
-- [GET /edge/configuration/microservices](/edge/rest-api/#get-edgeconfigurationmicroservices)
-- [POST /edge/configuration/microservices](/edge/rest-api/#post-edgeconfigurationmicroservices)
-
-After you enable the microservice hosting feature, ensure that the microservices are active and healthy before using the microservices.
-For more information about microservices runtime, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).
-
-On some hardware configurations, enabling or disabling the microservice hosting feature may take more than 15 minutes.
+After you have enabled the microservice hosting feature, ensure that the microservices are active and healthy before using them. For more information, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).
 
 Before disabling the microservice hosting feature, you should unsubscribe from all the microservices that have been uploaded.
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.

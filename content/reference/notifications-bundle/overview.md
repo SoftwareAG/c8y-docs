@@ -211,10 +211,12 @@ Therefore, to receive notifications informing of new managed object creations, c
 to listen for them.
 An application can use this to discover new managed objects.
 It can then choose to create subscriptions with "mo" **context** for those managed objects.
-It is also possible to subscribe to all alarms or events that are generated in a tenant using "tenant" **context**.
 
 Notifications for managed object deletions are forwarded to topics by subscriptions with "mo" (managed object) **context** 
 that include the "managedobjects" API, and by subscriptions with "tenant" **context** that include the "managedobjects" API.
+
+Subscriptions with "tenant" **context** can also use the alarms API and/or the events API to forward all alarms and/or events,
+respectively, that occur within the tenant, applying filters as desired.
 
 <a name="subscription-filter">&nbsp;</a>
 ### Subscription filters
@@ -286,7 +288,7 @@ To include messages of **type** "temperature" only:
     "id": 2468
   },
   "filter": {
-    "type": "temperature"
+    "type": "'temperature'"
   }
 }
 ```

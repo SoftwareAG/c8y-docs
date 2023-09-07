@@ -1,14 +1,12 @@
-html {
-//  scroll-behavior: smooth;
-}
-
-body{
+body {
   background-color: $body-bg-color;
   position: relative;
-  &.open{
+
+  &.open {
     overflow-x: hidden;
   }
-  @media print{
+
+  @media print {
     background-color: white;
   }
 }
@@ -19,40 +17,41 @@ body{
   box-sizing: border-box;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
   flex-flow: row wrap;
 }
 
-.flex-start{
+.flex-start {
   margin-right: auto !important;
 }
 
-.flex-end{
-  margin-left: auto!important;
+.flex-end {
+  margin-left: auto !important;
 }
 
-.align-center{
+.align-center {
   align-items: center;
 }
 
-.container{
+.container {
   padding: 0 1rem;
   max-width: 1200px;
-  &-fluid{
+
+  &-fluid {
     max-width: 100%;
   }
 }
 
 
 
-.img-responsive{
+.img-responsive {
   max-width: 100%;
   display: block;
   margin-bottom: 20px;
 }
 
-[data-action="zoom"]{
+[data-action="zoom"] {
   transition: all 300ms;
 }
 
@@ -72,24 +71,84 @@ body{
 
 @media (max-width: $screen-xs-max) {
   .hidden-xs {
-      display:none !important
+    display: none !important
   }
 }
 
 @media (min-width: $screen-sm-min) and (max-width:$screen-sm-max) {
   .hidden-sm {
-      display:none !important
+    display: none !important
   }
 }
 
 @media (min-width: $screen-md-min) and (max-width:$screen-md-max) {
   .hidden-md {
-      display:none !important
+    display: none !important
   }
 }
 
 @media (min-width: $screen-lg-min) {
   .hidden-lg {
-      display:none !important
+    display: none !important
+  }
+}
+
+
+.notice-banner {
+  position: sticky;
+
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: #fff794;
+  height: auto;
+  padding: 10px 5px 5px 5px;
+  z-index: 50;
+
+  p {
+    padding-left: 80px;
+    margin: 0;
+  }
+
+  ~.main-nav,
+  ~.main-top-bar {
+    top: 57px;
+  }
+
+  ~.dropdown.version {
+    top: 64px;
+    padding-left: 1.6rem;
+  }
+  @media(min-width: $grid-breakpoint) {
+    text-align: center;
+    height: 45px;
+
+    p {
+      padding-left: 0;
+    }
+
+    ~.main-nav,
+    ~.main-top-bar {
+      top: 45px;
+    }
+    ~.dropdown.version {
+      top: 54px;
+      padding-left: 1.6rem;
+    }
+  }
+
+
+  ~.main-nav .nav-sections {
+    height: calc(100vh - 174px);
+  }
+
+  
+
+  ~.main-content .page-section {
+    padding-top: 45px;
+
+    &.page-header {
+      padding-top: 0;
+    }
   }
 }

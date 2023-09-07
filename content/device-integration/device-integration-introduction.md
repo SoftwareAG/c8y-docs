@@ -53,13 +53,21 @@ aliases:
   - /device-sdk/cpp
   - /device-sdk/linux-agent-developer-guide
   - /device-sdk/linux-agent-user-guide
+  - /thin-edge/thin-edge-doc
+  - /thin-edge/overview
+  - /thin-edge/thin-edge-architecture
+  - /thin-edge/thin-edge-developer-tools
+  - /thin-edge/thin-edge-howto
+  - /thin-edge/thin-edge-tutorials
 ---
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
-This Device integration guide provides detailed information on device integration using [REST](/device-integration/rest) and [C++](/device-integration/cpp).
+We recommend you to can integrate devices via [thin-edge.io](https://thin-edge.io/). See the tutorial for [thin-edge.io on a Raspberry Pi](/device-integration/integration-tutorials/#thin-edge-raspberry-pi) for an easy-to-follow and hands-on example.
 
-For interfacing devices with {{< product-c8y-iot >}}, we recommend you to use MQTT and [SmartREST](/reference/smartrest-two/), which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
+You can also use [MQTT](/device-integration/mqtt) and [SmartREST](/reference/smartrest-two/) to integrate devices, which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
+
+Refer to [Device integration using REST](/device-integration/rest) for detailed information on integrating via REST.
 
 An up-to-date open source reference implementation of a {{< product-c8y-iot >}} agent for embedded Linux systems with many device management features can be found at [https://github.com/SoftwareAG/cumulocity-agents-linux](https://github.com/SoftwareAG/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
 

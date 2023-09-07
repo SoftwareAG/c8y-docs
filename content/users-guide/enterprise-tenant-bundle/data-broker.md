@@ -30,8 +30,6 @@ To be able to use this feature, your tenant must be subscribed to the applicatio
 
 Navigate to **Data connectors** in the **Data broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
-<img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
-
 {{< c8y-admon-important >}}
 Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 {{< /c8y-admon-important >}}
@@ -153,9 +151,6 @@ The heading of a data filter summarizes the configuration in one line. The stand
 
 After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You must communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
-![Security code](/images/users-guide/enterprise-tenant/et-data-broker-connector-security-code.png)
-
-
 #### To edit a data connector
 
 Click the connector title, or click the menu icon at the right of a data connector entry and then click **Edit**.
@@ -172,6 +167,10 @@ Click the menu icon at the right of a data connector entry and then click **Dupl
 
 Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
+{{< c8y-admon-info >}}
+A data connector can also be deleted from the **Settings** tab of a connector configuration.
+{{< /c8y-admon-info >}}
+
 #### To view alarms for a data connector
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
@@ -187,8 +186,6 @@ For details on alarms in general, see [Device Management > Monitoring and contro
 In the **Data subscriptions** page, you can manage existing data subscriptions or create new ones.
 
 Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant.
-
-<img src="/images/users-guide/enterprise-tenant/et-subscriptions.png" alt="Data subscriptions">
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 

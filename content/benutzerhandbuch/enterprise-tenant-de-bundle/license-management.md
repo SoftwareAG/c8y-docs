@@ -8,8 +8,6 @@ weight: 60
 
 Der {{< management-tenant-de >}} kann die Lizenzen für die Domains der {{< enterprise-tenant-de >}}s über die Benutzeroberfläche verwalten.
 
-![License management](/images/benutzerhandbuch/enterprise-tenant/et-license-management.png)
-
 ### So können Sie eine Domain-Lizenz hinzufügen und validieren
 
 1. Melden Sie sich beim {{< management-tenant-de >}} an.

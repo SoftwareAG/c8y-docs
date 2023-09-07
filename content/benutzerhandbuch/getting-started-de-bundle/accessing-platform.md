@@ -37,7 +37,7 @@ Bei diesen Einschränkungen kann es sich um Folgendes handeln:
 * Die Nutzung kann je nach Speicher und Rechenleistung des Geräts eingeschränkt sein. <br>  
 Das Laden von Graphen mit einer großen Anzahl an Datenpunkten etwa kann dazu führen, dass das Gerät nicht mehr reagiert.
 * Die Nutzung des private Modus eines Browsers funktioniert möglicherweise nicht.
-* Die [Anwendung Streaming Analytics](/apama/overview-analytics/) unterstützt keine Mobil- oder Touch-Geräte.
+* Die [Anwendung Streaming Analytics](/streaming-analytics/overview-streaming-analytics/) unterstützt keine Mobil- oder Touch-Geräte.
 {{< /c8y-admon-info >}}
 
 <a name="url"></a>

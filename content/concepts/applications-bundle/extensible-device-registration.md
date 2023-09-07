@@ -63,9 +63,7 @@ There are two types of extensions:
 
 ### Single device registration
 
-After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management application is being extended with an entry corresponding to the extension `name` property:
-
-![Select guide](/images/concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management application is extended with an entry corresponding to the extension `name` property.
 
 From now on, everything will be rendered based on data provided via the custom microservice. The added menu entry opens a window which fetches the form definition using the following endpoint:
 
@@ -173,9 +171,7 @@ The following diagram visualizes the single device registration flow:
 
 Many device integrations require the registration of many devices at the same time. Currently, all protocols have to rely on the bulk registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
 
-After enabling the `extensibleBulkDeviceRegistration` extension type, the Device management > Devices > Register device  `Bulk device registration` modal is being displayed with an extended wizard entry corresponding to the extension `name` property:
-
-![Select guide](/images/concepts-guide/extensible-device-registration/register-device-menu-with-extensible-device-reg.png)
+After enabling the `extensibleBulkDeviceRegistration` extension type, the Device management > Devices > Register device  `Bulk device registration` modal is displayed with an extended wizard entry corresponding to the extension `name` property.
 
 Additionally, the microservice provides the title of the wizard step and example bulk file(s):
 ```json

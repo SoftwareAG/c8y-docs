@@ -1,19 +1,19 @@
 ---
 weight: 50
-title: Configuring OPCUA
+title: Configuring OPC UA
 layout: redirect
 ---
 
-### Updating the memory and CPU limit for OPCUA
+### Updating the memory and CPU limit for OPC UA
 
-The memory limit for OPCUA container is set to 2048 MB and the CPU limit is set to 256 as default values. For most use cases, these values are sufficient. You can change the values as per your requirements.
+The memory limit for OPC UA container is set to 2048 MB and the CPU limit is set to 256 as default values. For most use cases, these values are sufficient. You can change the values as per your requirements.
 
 `CTRL_DOCKER_OPTIONS="--memory 2048m --cpu-shares 256"`
 
 You can specify the CPU limit in `--cpu-shares` or `--cpus`. 
 
 - `--cpu-shares`  specifies the share or percentage of the host machine’s CPU cycles allocated. For example, `--cpu-shares 256`  allocates a quarter of total CPUs available. 
-- `--cpus` specifies how much of the available CPU resources the OPCUA container can use. For example, `--cpus 2`  allocates two CPUs out of the available CPUs from the host machine. 
+- `--cpus` specifies how much of the available CPU resources the OPC UA container can use. For example, `--cpus 2`  allocates two CPUs out of the available CPUs from the host machine. 
 
 For more information about CPU limits, see Docker documentation.
 
@@ -24,7 +24,7 @@ To change the memory and CPU limit:
    - /etc/init.d/opcua-device-gateway
    - /etc/init.d/opcua-mgmt-service
 3. Edit the parameter `CTRL_DOCKER_OPTIONS` to the required values.
-4. Restart the OPCUA services:
+4. Restart the OPC UA services:
    - `[admin@iot-edge-server ~]$ sudo service opcua-mgmt-service restart`
    - `[admin@iot-edge-server ~]$ sudo service opcua-device-gateway restart`
 

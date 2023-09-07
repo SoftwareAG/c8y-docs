@@ -8,7 +8,7 @@ Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Devi
 
 |Abschnitt|Inhalt|
 |:---|:---|
-|[Verbinden von Geräten](#connecting-devices)|Wie Sie [eines oder mehrere Geräte manuell registrieren](#device-registration-manually) und wie Sie [viele Geräte gleichzeitig registrieren](#creds-upload), um diese mit Ihrem Konto zu verbinden.
+|[Verbinden von Geräten](#connecting-devices)|Wie Sie [eines oder mehrere Geräte manuell registrieren](#device-registration-manually) und wie Sie [viele Geräte gleichzeitig registrieren](#bulk-registration), um diese mit Ihrem Konto zu verbinden.
 |[Anzeigen von Geräten](#viewing-devices)|Beschreibt, was in der [Geräteliste](#device-list) angezeigt wird und wie Geräte durch [Filtern von Geräten](#filtering-devices) sortiert werden können.
 |[Gruppieren von Geräten](#grouping-devices)|Wie und warum Geräte in Top-Level-Gruppen, untergeordneten Gruppen und [dynamischen Gruppe](#smart-groups) angeordnet werden.
 |[Gerätedetails](#device-details)|Beschreibt detailliert die verschiedenen Informationen, die für verschiedene Gerätetypen bereitgestellt werden.

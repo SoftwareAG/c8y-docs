@@ -42,7 +42,11 @@ During the initial configuration of {{< product-c8y-iot >}} DataHub, a so-called
 
 The Dremio user can be assigned additional permissions for the data lake source and the space. If the user has the permission for the data lake source assigned, the user can manage grants on that source for other users as well. The same applies to the space permission. Data lake permission and space permission are independent of each other; the setting of one permission does not affect the setting of the other.
 
-Having the corresponding permission assigned, the user can grant other Dremio users, which do not necessarily relate to {{< product-c8y-iot >}} DataHub, different permissions on the data lake source or the space, for example, for reading data from the data lake or creating a table in the data lake. Granting permissions to other users should be done carefully in order to avoid that sensitive information is exposed to the wrong users. 
+Having the corresponding permission assigned, the user can grant other Dremio users, which do not necessarily relate to {{< product-c8y-iot >}} DataHub, different permissions on the data lake source or the space, for example, for reading data from the data lake or creating a table in the data lake. 
+
+{{< c8y-admon-caution >}}
+Granting permissions to other users should be done very carefully in order to avoid that sensitive information is exposed to the wrong users. In particular, permissions should never be granted to all users as in that case all Dremio users of the {{< product-c8y-iot >}} instance can access the data lake source or space respectively.
+{{< /c8y-admon-caution >}} 
 
 For example, IoT data has been offloaded to the data lake using {{< product-c8y-iot >}} DataHub. A data scientist from a different business unit now wants to access the data lake contents. A Dremio account needs to be created for the data scientist. Therefore, a Dremio user created by {{< product-c8y-iot >}} DataHub, having the data lake permission, grants read access on the data lake source to the Dremio account of the data scientist. 
 

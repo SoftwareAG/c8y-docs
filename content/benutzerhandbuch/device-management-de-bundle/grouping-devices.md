@@ -20,11 +20,9 @@ Klicken Sie im Navigator auf **Gruppen**, um alle Gruppen in einem Listenformat 
 
 Zu jeder Gruppe werden verschiedene Informationen wie Typ und Name bereitgestellt. Klicken Sie rechts auf **Spalten konfigurieren**, um Spalten hinzuzufügen oder zu entfernen und die Ansicht nach Ihren Wünschen anzupassen. Siehe auch [Anzeigen von Geräten > Konfigurieren von Spalten](/benutzerhandbuch/device-management-de/#configuring-columns).
 
-Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol, siehe Screenshot unten. Filterung ist jedoch nicht für die Hauptgruppenspalte verfügbar. Die Filteroption ist nur in der Untergruppenspalte verfügbar.
+Um die Gruppen nach bestimmten Kriterien zu filtern, bewegen Sie den Mauszeiger über die Spaltenüberschriften und klicken Sie auf das entsprechende Filtersymbol.
 
- ![Filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-group-filter.png)
-
-Siehe auch [Anzeigen von Geräten > Filtern von Geräten](/benutzerhandbuch/device-management-de/#filtering-devices).
+Siehe auch [Anzeigen von Geräten > So filtern Sie Geräte](/benutzerhandbuch/device-management-de/#filtering-devices).
 
 Beachten Sie, dass diese Funktion nur einen temporären Filter erzeugt. Für permanente Filter können Sie die Funktion [Dynamische Gruppe](#smart-groups) verwenden.  
 
@@ -39,7 +37,7 @@ Oben auf der Seite **Kind-Assets** werden Name und Beschreibung der Gruppe angez
 
 Darunter werden alle der Gruppe zugewiesenen Assets aufgelistet. Zu jedem Asset werden verschiedene Informationen wie Typ und Name angezeigt. Wie bei der Liste der Top-Level-Gruppen können Sie auch hier Spalten hinzufügen oder entfernen und die Liste individuell anpassen oder Filter anwenden, um die Liste nach bestimmten Kriterien zu filtern.
 
-Darüber hinaus können Sie Geräte zuordnen, siehe [So ordnen Sie einer Gruppe ein Gerät zu](#assigning-devices).
+Darüber hinaus können Sie Geräte zuordnen, siehe [So weisen Sie einer Gruppe Geräte zu](#assigning-devices).
 
 <a name="add-group"></a>
 
@@ -96,10 +94,6 @@ Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf d
 1. Wählen Sie ein Gerät aus der Geräteliste und öffnen Sie es.
 2. Scrollen Sie in der Registerkarte **Info** zur Karte **Gruppenzuweisung**. Wählen Sie im Auswahlfeld die Gruppe aus, der Sie das Gerät zuweisen möchten. Sie können hier auch direkt einen Gruppennamen eingeben oder nur Teile eines Namens eingeben, um die Liste danach zu filtern und nur die passenden Gruppennamen anzuzeigen.
 3. Klicken Sie auf **Zuweisen**.
-
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
-
-<br>
 
 Das Geräte wird der ausgewählten Gruppe zugewiesen.
 
@@ -166,11 +160,9 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 
 Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.
 
-![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-smartgroups-icon.png)
-
 Unterhalb des Namens und der Beschreibung der dynamischen Gruppe sehen Sie die Filterkriterien, die beim Erstellen der dynamischen Gruppe angewendet wurden. Sie können die Filtereinstellungen hier ändern und Ihre Auswahl anpassen.
 
-![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 
 #### So löschen Sie eine dynamische Gruppe

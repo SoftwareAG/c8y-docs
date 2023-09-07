@@ -63,10 +63,7 @@ Die Liste der Versionen und Patches enthält den Versionsnamen und den Namen der
 
 Das Firmware-Objekt wird der Firmware-Liste bzw. die Firmware-Version den Firmware-Details hinzugefügt und die Versionsbezeichnung wird entsprechend aktualisiert.
 
-Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Firmware bereits ausgewählt ist.
-
-![Add firmware version](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add-version.png)
-
+Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Firmware bereits ausgewählt ist. Geben Sie die neue Versionsnummer ein und laden Sie eine Binärdatei hoch oder geben Sie einen Dateipfad an.
 
 ##### So fügen Sie einen neuen Firmware-Patch hinzu
 
@@ -80,8 +77,6 @@ Wenn Sie in den Details einer bestimmten Firmware auf **Firmware hinzufügen** k
 Wie beim Hinzufügen von Versionen sieht der Dialog etwas anders aus, wenn Sie in den Details einer bestimmten Firmware auf **Firmware-Patch hinzufügen** klicken. Dies liegt daran, dass die Firmware bereits ausgewählt ist.
 
 Der Firmware-Patch wird den Versionsdetails innerhalb der Firmware-Details hinzugefügt.
-
-![Versions and patches](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
 
 #### So bearbeiten Sie eine Firmware
 
@@ -118,15 +113,11 @@ Die Registerkarte **Firmware** zeigt die aktuell auf dem Gerät installierte Fir
 ![Firmware tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-tab.png)
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
-![Firmware operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-operation-details.png)
-
 ##### So installieren/ersetzen Sie Firmware auf einem Gerät
 
 1. Klicken Sie auf der Registerkarte **Firmware** auf **Firmware installieren** (oder **Firmware ersetzen** wenn bereits Firmware auf dem Gerät installiert ist).
 2. Wählen Sie eine Firmware und die gewünschte Version aus der Liste. Diese enthält die gesamte Firmware, die für diesen Gerätetyp im Firmware-Repository bereitsteht.
 3. Klicken Sie auf **Installieren**.
-
-![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
 
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
@@ -171,7 +162,7 @@ Ist kein Filter gesetzt, wird sie für alle Geräte angeboten.
 Der Software-Typ bewirkt, dass die Software nur auf Geräten installierbar ist, die den jeweiligen Software-Typ explizit unterstützen.
 
 {{< c8y-admon-info >}}
-Im Feld **Software-Typ** wird Ihnen eine Liste von Typen vorgeschlagen, die in Ihrem Software-Repository bereits verwendet werden. Bevor Sie das Definieren eines neuen Software-Typs in Betracht ziehen (das Feld akzeptiert neue Werte direkt), überprüfen Sie anhand der Vorschläge in der Auswahlliste, ob der gewünschte Typ bereits für eine andere Software definiert wurde. Auf diese Weise sorgen Sie für größere Konsistenz der Software-Typen innerhalb Ihres Unternehmens. Wenn Sie z. B. Container-Images verwenden, können Sie nach `container` oder `image` oder versuchsweise nach spezifischeren Typen wie `docker`, `lxc` usw. suchen. Dadurch können Sie verhindern, dass Ihre Software-Typen unübersichtlich werden und Sie verschiedene Namen für ein und denselben Software-Typ verwenden.
+Im Feld **Software-Typ** wird Ihnen eine Liste von Typen vorgeschlagen, die in Ihrem Software-Repository bereits verwendet werden. Bevor Sie das Definieren eines neuen Software-Typs in Betracht ziehen (das Feld akzeptiert neue Werte direkt), überprüfen Sie anhand der Vorschläge in der Auswahlliste, ob der gewünschte Typ bereits für eine andere Software definiert wurde. Auf diese Weise sorgen Sie für größere Konsistenz der Software-Typen innerhalb Ihres Unternehmens. Wenn Sie z. B. Container-Images verwenden, können Sie nach `container` oder `image` oder versuchsweise nach spezifischeren Typen wie `docker`, `lxc` usw. suchen. Dadurch können Sie verhindern, dass Ihre Software-Typen unübersichtlich werden und Sie verschiedene Namen für ein und denselben Software-Typ verwenden.
 {{< /c8y-admon-info >}}
 
 Die Liste der Versionen und Patches enthält den Versionsnamen und den Namen der Software-Binärdatei.
@@ -192,10 +183,7 @@ Die Versionen sind nach ihrem Erstellungszeitpunkt (absteigend) sortiert.
 
 Das Software-Objekt wird der Software-Liste bzw. die Software-Version den Software-Details hinzugefügt und die Versionsnummer wird entsprechend aktualisiert.
 
-Wenn Sie in den Details einer bestimmten Software auf **Software hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Software bereits ausgewählt ist.
-
-![Add software version](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-add-version.png)
-
+Wenn Sie in den Details einer bestimmten Software auf **Software hinzufügen** klicken, sieht der Dialog etwas anders aus, da die Software bereits ausgewählt ist. Geben Sie die neue Versionsnummer ein und laden Sie eine Binärdatei hoch oder geben Sie einen Dateipfad an.
 
 #### So bearbeiten Sie eine Software
 
@@ -234,11 +222,9 @@ Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte So
 
 Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Durch Klicken auf die Operation werden die Operationsdetails angezeigt.
 
-![Software operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-operation-details.png)
-
 ##### So installieren Sie Software auf einem Gerät
 
-1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-install.png)
+1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.
 
     {{< c8y-admon-info >}}
 Im Dialog **Software installieren** werden nur Software-Elemente angezeigt, die dem Gerätetyp entsprechen. Zudem gilt: Wenn für das Gerät `c8y_SupportedSoftwareTypes` deklariert wurden, werden in dem Dialog nur die Software-Elemente angezeigt, die den unterstützten Software-Typen entsprechen.
@@ -252,21 +238,15 @@ Sie können das bereits installierte Software-Element unter **Software-Änderung
 
 4. Überprüfen Sie Ihre geplanten Änderungen unter **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.
 
-	 ![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
-
 Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Klicken Sie auf die Operation, um Details dazu anzuzeigen. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
-
-![Installed software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### So aktualisieren Sie Software auf einem Gerät
 
 Bewegen Sie den Mauszeiger über das Software-Element, das Sie aktualisieren möchten, und klicken Sie auf **Aktualisieren**.
 Wählen Sie eine Version aus der Liste und klicken Sie erneut auf **Aktualisieren**.
-
-![Update software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-update.png)
 
 Die Software wird mit der ausgewählten Version aktualisiert.
 
@@ -328,7 +308,7 @@ Der Konfigurationssnapshot wird aus dem Konfigurationssnapshot-Repository gelös
 
 #### So laden und wenden Sie einen Konfigurationssnapshot an
 
-Das Verwalten von Konfigurationen, also das Anfordern einer Konfiguration von einem Gerät, und das Senden einer Konfiguration an ein Gerät kann auf mehrere Arten erfolgen. Je nach Benutzerberechtigungen und Geräteeinstellungen können Sie mit textbasierter, typenbasierter oder dateibasierter Konfiguration arbeiten. Detailliertere und technische Informationen finden Sie unter [Device management library > Configuration](/reference/device-management-library/#configuration) im *Reference Guide*.
+Das Verwalten von Konfigurationen, also das Anfordern einer Konfiguration von einem Gerät und das Senden einer Konfiguration an ein Gerät, kann auf mehrere Arten erfolgen. Je nach Benutzerberechtigungen und Geräteeinstellungen können Sie mit textbasierter, typenbasierter oder dateibasierter Konfiguration arbeiten. Detailliertere und technische Informationen finden Sie unter [Device management library > Configuration](/reference/device-management-library/#configuration) im *Reference Guide*.
 
 #### So laden Sie einen Konfigurationssnapshot und wenden ihn auf ein Gerät an, das die typenbasierte Konfiguration unterstützt
 
@@ -502,20 +482,12 @@ Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details d
 Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ `c8y_DeviceProfile` unterstützen.
 {{< /c8y-admon-info >}}
 
-Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
-
-![Device profile filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-filter.png)
-
-
 <a name="to-apply-profiles-to-single-devices"></a>
 #### So wenden Sie Geräteprofile auf ein einzelnes Gerät an
 
 Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile auf einzelne Geräte anwenden.
 
 1. Wählen Sie auf der Registerkarte **Geräteprofil** ein Geräteprofil aus der Auswahlliste. Es werden nur die Profile angezeigt, die zu dem Gerätetypen passen (falls angegeben), oder für die kein Gerätetyp angegeben wurde.
-
-	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
-
 2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
 <a name="to-apply-profiles-to-multiple-devices"></a>
@@ -548,11 +520,8 @@ Alle Zertifikate des Mandanten werden angezeigt.
 
 ![Trusted certificates List](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-Das Symbol links neben dem jeweiligen Eintrag zeigt, ob das Zertifikat aktiv (grün) oder inaktiv (rot) ist. Ein Mandant kann jederzeit über eine beliebige Anzahl von aktiven oder inaktiven Zertifikaten verfügen.
-
+Die Spalte **Status** zeigt an, ob das Zertifikat aktiviert oder deaktiviert ist. Ein Mandant kann jederzeit über eine beliebige Anzahl von aktivierten oder deaktivierten Zertifikaten verfügen.
 Durch Klicken auf das Pfeilsymbol rechts neben einem Zertifikat können Sie weitere Details zu dem betreffenden Zertifikat aufklappen.
-
-![Trusted certificates Entry](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
 Die Information in der Tabelle rechts stammt von dem bereitgestellten Zertifikat. Der Inhalt ist schreibgeschützt und kann nicht geändert werden.
 
@@ -572,9 +541,6 @@ Bevor Sie ein neues vertrauenswürdiges Zertifikat hinzufügen, stellen Sie folg
 Um ein Zertifikat hinzuzufügen, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie auf **Vertrauenswürdiges Zertifikat hinzufügen** rechts in der oberen Menüleiste.
-
-	![Trusted certificate details](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-new.png)
-
 2. Geben Sie im nächsten Dialog die folgenden Informationen ein:
 
 | Feld             | Beschreibung                                                                                                                                |
@@ -592,14 +558,11 @@ Aus Leistungsgründen sollten Sie nicht die Zertifikate von jedem Gerät, das Si
 
 #### So bearbeiten Sie ein vertrauenswürdiges Zertifikat
 
-In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
+In der Detailansicht eines Zertifikats können Sie die Parameter auf der linken Seite, d. h. den Zertifikatsnamen und die Einstellungen für die Auto-Registrierung sowie die Eingeschaltet/Ausgeschaltet-Option ändern.
 
 Weitere Informationen zu den Feldern finden Sie in der vorstehenden Beschreibung zum Hinzufügen von Zertifikaten.
 
 #### So löschen Sie ein vertrauenswürdiges Zertifikat
 
 Um ein Zertifikat dauerhaft aus der Liste der vertrauenswürdigen Zertifikate zu löschen, klicken Sie auf das Menüsymbol rechts neben dem betreffenden Eintrag und anschließend im Kontextmenu auf **Löschen**.
-
-![Trusted certificates delete](/images/benutzerhandbuch/DeviceManagement/devmgmt-trusted-certificates-delete.png)
-
 Das Zertifikat wird dauerhaft gelöscht.

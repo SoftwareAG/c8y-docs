@@ -11,13 +11,13 @@ helpcontent:
   content: "The DTM application allows you to create and manage assets around your physical connected devices in Cumulocity IoT through the digital representation of a physical hierarchy of assets and devices.
 
 
-  To create an asset, use asset types as the blueprint, which consist of one or more custom properties as well as one or more child asset types.  
+  To create an asset, use asset models as the blueprint, which consist of one or more asset properties as well as one or more child asset models.  
 
 
-  An asset hierarchy consist of a root asset type followed by all its subsequent child asset types. Each hierarchy level can consist of custom properties for the asset, as well as its subassets and devices.
+  An asset hierarchy consist of a root asset model followed by all its subsequent child asset models. Each hierarchy level can consist of asset properties for the asset, as well as its subassets and devices.
 
 
-  To get started, open the **Digital twin library** in the **Configuration** menu in the navigator and create the necessary asset types and custom properties. Afterwards, navigate to the **Assets** menu in the navigator and click **Add asset** on the top right corner to create the assets. "
+  To get started, open the **Configuration** menu in the navigator and create the necessary asset models and asset properties in the **Asset models** and **Asset properties** pages respectively . Afterwards, navigate back to the **Assets** menu in the navigator and click **Add asset** on the top right corner to create the assets. "
 ---
 
 Welcome to the {{< product-c8y-iot >}} Digital Twin Manager (DTM) application.
@@ -26,8 +26,10 @@ This application allows you to create and manage assets around your physical con
 
 Once the asset hierarchy is created in the DTM application, the hierarchy can be applied to other applications such as OEE or Machine portal. It saves a lot of time and effort, as the hierarchy is created only once and can be used directly in other {{< product-c8y-iot >}} hosted applications.
 
+The home screen of the DTM application gives an overview of the application. You can see the number of asset models, asset properties and assets available at a glance. You can add asset properties, asset models and assets using the quick links.
+
 {{< c8y-admon-req >}}
-* Your tenant must be subscribed to the Digital Twin Manager application and the Dtm-ms microservice.
+* Your tenant must be subscribed to the Digital twin manager application and the Dtm-ms microservice.
 {{< /c8y-admon-req >}}
 
 {{< c8y-admon-related >}}

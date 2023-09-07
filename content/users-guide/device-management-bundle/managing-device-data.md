@@ -94,10 +94,7 @@ The list of versions and patches shows the version name and the name of the firm
 
 The firmware object will be added to the firmware list or the firmware version will be added to the firmware details and the version label will be updated accordingly.
 
-If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.
-
-![Add firmware version](/images/users-guide/DeviceManagement/devmgmt-firmware-add-version.png)
-
+If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. Enter the new version number and upload a binary or provide a file path.
 
 ##### To add a new firmware patch
 
@@ -111,8 +108,6 @@ If you click **Add firmware** from within the details of a specific firmware, th
 As with adding versions, if you click **Add firmware patch** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected.
 
 The firmware patch will be added to the version details within the firmware details.
-
-![Versions and patches](/images/users-guide/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
 
 #### To edit a firmware
 
@@ -149,15 +144,11 @@ The **Firmware** tab shows the current firmware installed on the device.
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
-![Firmware operation details](/images/users-guide/DeviceManagement/devmgmt-firmware-operation-details.png)
-
 ##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
 2. Select a firmware and the desired version from the list, which contains all firmware available for the particular device type (or the ones that have no device type) in the firmware repository.
 3. Click **Install**.
-
-![Install firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-install.png)
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
@@ -223,10 +214,7 @@ The versions are ordered by their creation time (descending).
 
 The software object will be added to the software list or the software version will be added to the software details and the version count label will be updated accordingly.
 
-If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected.
-
-![Add software version](/images/users-guide/DeviceManagement/devmgmt-software-add-version.png)
-
+If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. Enter the new version number and upload a binary or provide a file path.
 
 #### To edit a software
 
@@ -265,11 +253,9 @@ The **Software** tab shows a list of all available software installed on the dev
 
 Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will show you the operation details.
 
-![Software operation details](/images/users-guide/DeviceManagement/devmgmt-software-operation-details.png)
-
 ##### To install software on a device
 
-1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
+1. In the **Software** tab, click **Install software**.
 
     {{< c8y-admon-info >}}
 The **Install software** dialog will only display software items which match the device type or have no device type specified. Additionally, if the device has any `c8y_SupportedSoftwareTypes` declared the dialog will only display the software items matching the supported software types.
@@ -283,21 +269,15 @@ You can remove the already installed software item under **Software changes** or
 
 4. Under **Software changes** at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.
 
-	 ![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
-
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
 Click on the operation to view its details. The status of the last operation is also shown on the **Software** tab.
-
-![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
 
 
 ##### To update software on a device
 
 Hover over the software item which you want to update and click **Update**.
 Select a version from the list and click **Update** again.
-
-![Update software](/images/users-guide/DeviceManagement/devmgmt-software-update.png)
 
 The software will be updated with the selected version.
 
@@ -533,20 +513,12 @@ The **Device profile** tab of a particular device shows the details of the curre
 The **Device profile** tab shows up for a device if the device supports `c8y_DeviceProfile` operations.
 {{< /c8y-admon-info >}}
 
-Moreover, you can filter for devices in the devices list based on their applied profile name and whether the profile has been applied in the past.
-
-![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
-
-
 <a name="to-apply-profiles-to-single-devices"></a>
 #### To apply device profiles to a single device
 
 Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device.
 
 1. In the **Device profile** tab, select a device profile from the dropdown list. Only profiles that match the device type (if specified) or have no device type specified are displayed.
-
-	![Assign device profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-assign.png)
-
 2. Click **Assign device profile** to start the update operation.
 
 <a name="to-apply-profiles-to-multiple-devices"></a>
@@ -579,11 +551,8 @@ All certificates owned by the tenant will be displayed.
 
 ![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-The icon on the left of each entry indicates if the certificate is active (green) or inactive (red). At any given time a tenant can have any number of active or inactive certificates.
-
+The **Status** column indicates if the certificate is enabled or disabled. At any given time a tenant can have any number of enabled or disabled certificates.
 Expand a certificate by clicking the arrow icon at the right to view more details.
-
-![Trusted certificates Entry](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
 The information in the table at the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
 
@@ -603,9 +572,6 @@ Before adding a new trusted certificate, make sure that:
 To add a certificate perform these steps:
 
 1. Click **Add trusted certificate** at the right of the top menu bar.
-
-	![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-new.png)
-
 2. In the resulting dialog box, provide the following information:
 
 | Field             | Description                                                                                                                                |
@@ -630,7 +596,4 @@ For details on the fields, see the description on adding certificates above.
 #### To delete a trusted certificate
 
 To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
-
-![Trusted certificates delete](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-delete.png)
-
 The certificate will be permanently deleted.

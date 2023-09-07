@@ -154,6 +154,4 @@ To export a SmartREST template as CSV file follow these steps:
 2. In the resulting dialog box, specify the preferred options for the field separator, decimal separator and character set.
 3. In the **CSV preview** tab, which provides additional information on messages and responses, click **Copy to clipboard**.
 
-![CSV preview tab](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
-
 The SmartREST template will be exported as CSV file.

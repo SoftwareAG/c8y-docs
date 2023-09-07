@@ -19,16 +19,10 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 In order to see resources in the **Objects** tab, the resources first must be added in the **Device Protocols** page.
 {{< /c8y-admon-info >}}
 
-The following operations may be available in each instance:
+The following operations may be available in each instance after clicking the menu icon ( ⋮ ) at the end of each object row:
 
 - Read Object: Reads all instances for the selected object and lists all available resources for each instance.
-<br><br>
-![Read Objects](/images/device-protocols/lwm2m/lwm2m-devices-readobject.png)
-<br><br>
 - Read Instance: Reads the current instance of the given object and lists all available resources.
-<br><br>
-![Read Instance](/images/device-protocols/lwm2m/lwm2m-devices-readinstance.png)
-<br><br>
 - Create Instance: Creates a new instance for the selected object.
 - Delete Instance: Deletes the selected instance.
 
@@ -36,28 +30,15 @@ The following operations may be available in each instance:
 Some instances do not have all of the listed operations.
 {{< /c8y-admon-info >}}
 
-Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation without parameters, click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
+Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. The possible options are **Write**, **Execute** and **Execute with parameters**. For example, after reading device **Firmware update** in order to perform the operation **Execute** without parameters, find the **Update** section on the object card and click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
-![Execute operation](/images/device-protocols/lwm2m/lwm2m-devices-execute.png)
+More information can be acquired for each resource by hovering over the tooltip icon (<img src="/images/device-protocols/lwm2m/lwm2m-tooltip-help-icon.png" alt="Tooltip icon" style="display: inline; width: 20px; margin-bottom: 3px;">) present on the right of the field name.
 
-More information can be acquired for each resource by hovering over the tooltip icon.
+Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there are two.
 
-![Tooltip](/images/device-protocols/lwm2m/lwm2m-devices-tooltip.png)
+![Operations view](/images/device-protocols/lwm2m/lwm2m-devices-operations.png)
 
-Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
-
-![Recent operations](/images/device-protocols/lwm2m/lwm2m-devices-operations.png)
-![Recent operations 2](/images/device-protocols/lwm2m/lwm2m-devices-operations2.png)
-
-To view the history of all operations, simply click **View history**. Note, that you will be redirected to the **Control** tab.
-
-![View History control tab](/images/device-protocols/lwm2m/lwm2m-devices-control.png)
-
-{{< c8y-admon-info >}}
-If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
-Starved operations are device operations which have had a status of EXECUTING and have not been updated for a long time.
-Platform administrators can configure how long such operations stay alive. This is described in the *LWM2M agent installation & operations guide*, see also [Additional resources > Installation and operations documentation](/welcome/additional-resources/#installation-and-operations). Contact your Operations team for further details. 
-{{< /c8y-admon-info >}}
+To view the history of all operations, click **View history**. Note, that you will be redirected to the **Control** tab.
 
 #### Audit Configuration
 
@@ -65,15 +46,11 @@ In the **Audit configuration** page you can audit the current device by comparin
 
 Click **Audit configuration** in the right of the top menu bar to navigate to the **Audit configuration** page.
 
-![Audit configuration](/images/device-protocols/lwm2m/lwm2m-devices-audit.png)
-
 To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click **Sync selected properties**.
 
 {{< c8y-admon-info >}}
 The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 {{< /c8y-admon-info >}}
-
-![Sync properties](/images/device-protocols/lwm2m/lwm2m-devices-sync.png)
 
 <a name="lwm2m-bootstrap"></a>
 ### LWM2M bootstrap parameters

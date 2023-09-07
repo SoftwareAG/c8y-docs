@@ -51,8 +51,6 @@ The data points properties are pre-filled as follows:
 
 There can be more than one matching data point entry in the data point library. In this case, the first one is selected automatically by the system.
 
-![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
-
 For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
 **Example:**
@@ -115,15 +113,15 @@ To add a data point to the data explorer, click **Add data point** at the bottom
 
 ![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
-In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
+On the left hand side of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
 
-The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
+The center of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
-For further information on the data point library refer to [Data point library](#data-point-library).
+The right hand side shows all of the selected data points.
+
+For details on the data point library refer to [Data point library](#data-point-library).
 
 To remove a data point from the data point list, click the menu icon and select **Remove from list**.
-
-![Remove data point](/images/users-guide/cockpit/cockpit-dataexplorer-removedatapoint.png)
 
 <a name="customize-data-points"></a>
 ### Customizing data point properties
@@ -197,8 +195,6 @@ In addition to data points you can also add alarms or events to the data explore
 
 In the **Alarms/Events** card, click **Add alarm/event** to add an alarm or event.
 
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
-
 In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add** to add your selection.
 
 Expand an event, to modify its properties.
@@ -216,8 +212,6 @@ If you want to keep your current configuration in the data explorer for later us
 
 To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
 
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
-
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
 {{< c8y-admon-info >}}
@@ -227,8 +221,6 @@ To use this function, first a dashboard must be created. For details on dashboar
 **Send as widget to report**
 
 To create a widget from the data explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
-
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 

@@ -1,16 +1,20 @@
 ---
-weight: 10
+weight: 5
 title: Updating Edge using the GUI
 layout: redirect
 ---
 
 You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing installation using the Administration application in the {{< management-tenant >}}.
 
-When you update your Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities.
+Download the {{< product-c8y-iot >}} Edge archive file **Cumulocity IoT Edge (*version*) Update** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}).
 
-{{< c8y-admon-info >}}
-{{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
-{{< /c8y-admon-info >}}
+When you update your Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities. {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
+
+{{< c8y-admon-important >}}
+
+Before you update to {{< product-c8y-iot >}} Edge version 10.15, you must first upgrade to version 10.13.
+
+{{< /c8y-admon-important >}}
 
 To update {{< product-c8y-iot >}} Edge:
 

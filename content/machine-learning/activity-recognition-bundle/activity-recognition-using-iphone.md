@@ -143,7 +143,7 @@ For this active recognition scenario, we need to use Apama streaming analytics. 
 
 We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 
-Instead of creating a new monitor file, you can use the attached *RecognizeActivitiesSmartPhone.mon* file after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
+Instead of creating a new monitor file, you can use the attached *RecognizeActivitiesSmartPhone.mon* file after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.json* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying EPL apps as single \*.mon files with the Streaming Analytics application](/streaming-analytics/epl-apps/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 
 ```
 using com.apama.correlator.Component;

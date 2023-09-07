@@ -39,9 +39,7 @@ If you want an owner to manage only their sub-users, make sure that the owner do
 
 **Example**
 
-A user A has the role "business". User A becomes the owner of a new user B. User  B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner.
-
-![Owner Sample](/images/users-guide/enterprise-tenant/et-user-hierarchy-roles.png)
+A user A has the role "business". User A becomes the owner of a new user B. User B can then only get a business role assigned (and not for example an admin role) as the user cannot have higher permissions than the owner. If you try to assign any other role except "business" for user B, then the role will be unavailable for subscription and will be indicated by a warning icon with a notification that this operation is not permitted.
 
 <a name="delegate"></a>
 ### Delegating user hierarchies to other users
@@ -53,8 +51,6 @@ You may of course also delegate on a temporary basis, for example if you are tem
 #### To delegate permissions to a user
 
 Either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
-
-![User delegation](/images/users-guide/enterprise-tenant/et-user-hierarchy-delegate.png)
 
 #### To undelegate permissions
 

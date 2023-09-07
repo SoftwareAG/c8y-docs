@@ -94,8 +94,6 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
-![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
-
 Alternatively, you can retrieve the backend version with a GET request to <kbd><URL>/tenant/system/options/system/version</kbd>.
 
 The response looks like this:
@@ -313,8 +311,6 @@ Upload the ZIP file for your microservice application and click **Subscribe** to
 
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
-![Deployed microservice](/images/microservices-sdk/admin-microservice-deployed.png)
-
 #### Test the deployed microservice
 
 Employing your tenant credentials, you can test the microservice on any web browser using the URL as follows:
@@ -502,8 +498,6 @@ If your Docker image has run successfully, you shall see the output on the conso
 #### Subscribe to the microservice
 
 In the Administration application, navigate to **Ecosystem** > **Microservices**. Locate your microservice application and click it to open its details. On the top right, click **Subscribe**.
-
-![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 
 At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 

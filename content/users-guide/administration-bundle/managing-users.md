@@ -117,7 +117,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
            </tbody>
        </table>
 
-       {{<c8y-admon-related>}} For additional information see  [User options and settings](/users-guide/getting-started/#user-settings).
+       {{<c8y-admon-related>}} For additional information see  [User options and settings](/users-guide/getting-started/#user-settings). 
        {{</c8y-admon-related>}}
 3. Select the login options for the user.
 	* 	**Two-factor authentication (SMS)** - if selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa).
@@ -183,3 +183,13 @@ Click the menu icon at the right of the respective row and then click **Delete**
 {{< c8y-admon-info >}}
 You need a role with user management permission to perform this option.
 {{< /c8y-admon-info >}}
+
+### To revoke user tokens
+
+In the event of a security incident involving the session tokens of your tenant's users, you can invalidate any tokens currently in use.
+
+To revoke all session tokens click **Revoke tokens**  at the right of the top menu bar. Revoking all tokens logs out all users logged in via "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.
+
+{{< c8y-admon-req >}}
+To revoke tokens, you must have ADMIN permission for the permission type "User management".
+{{< /c8y-admon-req >}}

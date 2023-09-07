@@ -11,6 +11,10 @@ helpcontent:
   Cumulocity IoT includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See the *User guide* for details on each smart rule template and its configuration."
 ---
 
+{{< c8y-admon-related >}}
+- [Administration > Managing business rules](/users-guide/administration#business-rules) for details on managing smart rules for your devices.
+{{< /c8y-admon-related >}}
+
 {{< product-c8y-iot >}} includes the Streaming Analytics application which can analyze data in realtime and perform actions based on data.
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).
@@ -118,8 +122,6 @@ Click the menu icon at the right of an entry and then click **Inspect** to use t
 
 If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (that means, its underlying module gets deployed) so that the rule is available for devices and groups.
 
-<img src="/images/users-guide/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
-
 If it is set to **Disabled** it is "turned off" (that means, its underlying module is not deployed).
 
 In addition to globally enabling/disabling a smart rule, a smart rule can be in **active** or **inactive** state for particular objects (groups or devices). If **active**, the rule will process events for these groups and devices.
@@ -129,8 +131,6 @@ On creating a smart rule in the **Global smart rules** page, it will be active b
 {{< /c8y-admon-info >}}
 
 To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.  
-
-<img src="/images/users-guide/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
 
 An example use case for deactivating a smart rule for a single object could be that a particular device is generating too many threshold alarms. The rule can be deactivated for this device only, but still be active for all other objects.
 
@@ -149,8 +149,7 @@ To define a threshold rule follow these steps:
 1. In the navigator, select the desired group or device to apply a threshold to.
 2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](#add-data-points).
-4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
-<br>
+4. Click the menu icon at the end of the row of the respective data point and select **Create smart rule**.
 5. Select the smart rule "On measurement explicit threshold create alarm".
 6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart rules collection](/users-guide/cockpit#smart-rules-collection).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.

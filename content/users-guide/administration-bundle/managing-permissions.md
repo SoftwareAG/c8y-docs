@@ -280,15 +280,11 @@ By default it is not possible to change roles of SSO users (created automaticall
 2. Select or clear the respective checkboxes.
 3. Click **Apply** to save your settings.
 
-![Apply global role](/images/users-guide/Administration/admin-global-roles-apply-1.png)
-
 ##### To assign global roles from the user page
 
 1. Click on the row of the respective user in the user list.
 2. In the user page, select or clear the checkboxes for the relevant global roles at the right.
 3. Click **Save** to save your settings.
-
-![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
 <a name="inventory"></a>
 ### Inventory roles
@@ -380,9 +376,6 @@ If a user has inventory access to a group of devices, the user will also have th
 
 You can also copy inventory roles from another user. To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles. Copying roles makes it easier to manage the permissions of many users as you can create a reference user and then copy the permissions from there.
 
-<img src="/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles">
-
-
 ### Troubleshooting permissions
 
 If you try to perform actions without sufficient permissions, an error message will occur.
@@ -419,8 +412,6 @@ The **Application Access** tab shows a list of all available applications in you
 To assign applications to the user, simply select the respective applications and click **Save**.
 
 For more information on application management, see [Administration > Managing applications](/users-guide/administration#managing-applications).
-
-![Application access](/images/users-guide/Administration/admin-application-access.png)
 
 {{< c8y-admon-info >}}
 If a user has global permission to read all applications, an information box will be shown.

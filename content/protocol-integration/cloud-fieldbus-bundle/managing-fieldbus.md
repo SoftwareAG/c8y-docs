@@ -51,7 +51,7 @@ To use the "Fieldbus device" widget, follow these steps:
 
 1. Select a dashboard and click **Add widget** in the top menu bar.
 2. Select the "Fieldbus device" widget and edit the title of the widget.
-3. Select the device that should be shown in the widget in the **Target assets or devices** section.
+3. Select the device that should be shown in the widget in the **Asset selection** section.
 4. Select the coils and registers to be shown on the widget.
 
 ![Adding the Fieldbus Device Widget](/images/device-protocols/cloud-fieldbus/fieldbus-widget.png)
@@ -71,7 +71,7 @@ To use the "SCADA" widget, follow these steps:
 
 1. Select a dashboard and click **Add widget** in the top menu bar.
 2. Select the "SCADA" widget and edit the title of the widget.
-3. Select the device that should be shown in the widget in the **Target assets or devices** section.
+3. Select the device that should be shown in the widget in the **Asset selection** section.
 4. Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that must be specifically prepared with placeholders for the status information. See [Preparing SVG files for the SCADA widget](#scadasvg) below.
 5. Assign placeholders to devices. Note that multiple devices can be taken as source.
 6. You now must assign each placeholder to a property of the device. Hover over each placeholder and select **Assign device property** or **Assign fieldbus property**. In the upcoming dialog box, basic device properties or fieldbus properties (that is, status coils and registers) can be selected. Select the desired property and click **Select**.

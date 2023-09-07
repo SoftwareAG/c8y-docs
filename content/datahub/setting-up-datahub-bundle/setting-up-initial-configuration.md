@@ -59,7 +59,7 @@ The following types of data lakes are currently supported:
 While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old value.
 
 {{< c8y-admon-info >}}
-Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**.
+Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**. Also note that in case IP white-listing is activated, {{< product-c8y-iot >}} DataHub might not be able to access the data lake if the data lake and {{< product-c8y-iot >}} DataHub reside in the same Azure region. See also the corresponding [documentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-an-internet-ip-range).
 {{< /c8y-admon-info >}}
 
 ##### Amazon S3

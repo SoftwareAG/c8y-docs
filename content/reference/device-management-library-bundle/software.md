@@ -16,11 +16,10 @@ alarms and events assigned.
 
 ### Installed software
 
-There are two ways in which a device managed object may represent its installed software packages. It may list them
-in `c8y_SoftwareList` fragment or as the child additions. The latter approach also requires the device to
-have `c8y_SupportedSoftwareTypes` fragment. Let's call the first approach *legacy* and the second *advanced*.
+The installed software packages are listed in the `c8y_SoftwareList` fragment which may be placed in the device managed object or in the single child addition of type `c8y_InstalledSoftwareList`.
+The first approach to managing software is referred to as "legacy" and the second as "advanced".
 
-A software package, represented as the list entry or as a child addition, must contain following properties:
+A software package list entry must contain the following properties:
 
 | Field | Mandatory | Details |
 |----|----|----|
@@ -192,14 +191,10 @@ The 528 static response template is available for dealing with software update o
 
 ### Advanced Software Management
 
-In this approach software packages became separate entities and are represented as the device managed object child
-additions. To facilitate the management of them, the Advanced Software Management
-default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices)
-was introduced.
+Using the "advanced" approach, the `c8y_SoftwareList` fragment is no longer present in the device managed object. The data is separated from the device managed object which keeps the size of the device managed object low even for very large lists of installed software. All installed software for a device can be read and managed through the Advanced Software Management default [microservice](https://cumulocity.com/guides/concepts/applications/#microservices).
 
-Devices may indicate their support for Advanced Software Management by including the ```c8y_SoftwareUpdate``` operation
-in their ```c8y_SupportedOperations``` fragment and additionally listing their supported software types in
-the ```c8y_SupportedSoftwareTypes``` fragment.
+Devices support Advanced Software Management when they include the `c8y_SoftwareUpdate` operation
+in their `c8y_SupportedOperations` fragment and list their supported software types in the `c8y_SupportedSoftwareTypes` fragment.
 
 ```json
 {
@@ -212,23 +207,6 @@ the ```c8y_SupportedSoftwareTypes``` fragment.
   ]
 }
 ```
-
-An example managed object for the software package:
-
-```json
-{
-  "type": "c8y_InstalledSoftware",
-  "name": "Software Name",
-  "id": "123",
-  "softwareType": "yum",
-  "version": "1.0",
-  "url": "www.example.com",
-  "owner": "service_advanced-software-mgmt"
-}
-```
-
-Notice that the owner field is required and must be set to `service_advanced-software-mgmt` for the microservice to
-detect the software package.
 
 Querying, adding and removing software packages can be done with the microservice REST endpoints or using SmartREST
 static templates.
@@ -258,9 +236,7 @@ GET /service/advanced-software-mgmt/software?deviceId=<deviceId>
   "statistics": {
     "currentPage": 1,
     "pageSize": 5
-  },
-  "self": ...,
-  "next": ...
+  }
 }
 ```
 

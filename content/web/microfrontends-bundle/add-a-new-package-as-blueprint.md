@@ -35,14 +35,14 @@ c8ycli new
   other
 ```
 
-4. Select an application template as the basis for your plugin, for example, "package-blueprint":
+4. Select an application template as the basis for your plugin, in our case, "package-blueprint":
 
 ```console
 ? Which base project do you want to scaffold from?
   cockpit
   devicemanagement
   hybrid
-❯ package-blueprint
+> package-blueprint
   tutorial
   widget-plugin
   administration
@@ -51,32 +51,32 @@ c8ycli new
 After a few seconds, you should see the following message:
 
 ```console
-Application created. Go into the folder "app-blueprint" and run npm install
+Application created. Go into the folder "package-blueprint" and run npm install
 ```
 
 5. Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are *package.json* and *README.md*.
+For this tutorial, the most important files are _package.json_ and _README.md_.
 
 ```console
-app.module.spec.ts;
-jest.config.js;
-README.md;
-tsconfig.spec.json;
-app.module.ts;
-package.json;
-setup-jest.js;
-index.ts;
-polyfills.ts;
-tsconfig.json;
+app.module.spec.ts
+jest.config.js
+README.md
+tsconfig.spec.json
+app.module.ts
+package.json
+setup-jest.js
+index.ts
+polyfills.ts
+tsconfig.json
 ```
 
 You have now created your first package blueprint that uses Module Federation.
 
 ### Stepper setup (optional)
 
-The HOOK_STEPPER can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
+The `HOOK_STEPPER` can be additionally provided to allow application customization during the first load of an application. In this optional step we show a small single step example in which the user can select whether the navigator will be collapsed or not on startup.
 
 1. Create a new _setup-step1.component.ts_ file with the following content:
 

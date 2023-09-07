@@ -37,7 +37,7 @@ If you don't see either the **Enable support** or **Disable support** button in 
 If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
 {{< /c8y-admon-info >}}
 
-The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours), see [Administration > Platform configuration settings](/users-guide/administration/#platform-configuration-settings).
+The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours), see [Administration > Platform configuration settings > Support user](/users-guide/administration/#config-support-users).
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not activated globally).
 
@@ -47,7 +47,7 @@ Details on the status of support requests and support user access for a tenant c
 
 To log in as support user from the {{< management-tenant >}}, you must provide the following information in the Login screen:
 
-* Tenant ID - the ID of the tenant of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI. In some environments, especially in test environments, you can open the destination tenant´s URL (for example *testtenant.{{< domain-c8y >}}*) and log into the tenant without the tenant ID.
+* Tenant ID - the ID of the tenant of the user to be supported. The tenant ID is shown in the user menu in the UI.
 * Support user - the username of the {{< management-tenant >}} user that executes the support.
 * User - the username of the user to be supported.
 

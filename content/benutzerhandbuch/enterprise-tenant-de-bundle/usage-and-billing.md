@@ -151,7 +151,6 @@ Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher 
 
 1. Klicken Sie auf CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
 2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
-<br> <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Klicken Sie auf **Herunterladen**, um den Export zu starten.
 
 Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
@@ -188,7 +187,7 @@ Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe
 * Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
 * Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
 
-Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant-de >}} eines {{< management-tenant-de >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
+Im Falle der Mehrmandanten-Isolationsstufe werden dem Eigentümer eines Microservice (z. B. der {{< management-tenant-de >}} eines {{< management-tenant-de >}} oder Service Providers) die genutzten Ressourcen der Untermandanten in Rechnung gestellt. Die Gebühren der Untermandanten sollten auf Basis des Abonnements gemäß der Vereinbarung zwischen dem Microservice-Eigentümer und dem abonnierten Mandanten berechnet werden. Die Liste der abonnierten Anwendungen ist als Teil der [Mandantenanwendungen](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-applications) als `subscribedApplications` verfügbar.
 
 #### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
 
@@ -210,7 +209,7 @@ Microservice-Ressourcen werden täglich anhand von Grenzwerten erfasst, die im M
 
 **Beispiel**: Wenn ein Mandant einen Microservice 12 Stunden lang abonniert hat und der Microservice 4 CPUs und 4 GB Speicher aufweist, ist dies als 2000 CPU-Millisekunden und 2048 MB Speicher zu zählen.
 
-Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache der Abrechnung erfasst (z. B. Eigentümer, Abonnement für Mandanten):
+Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache der Abrechnung erfasst (z. B. Eigentümer, Abonnement für Mandanten):
 
 ```json
 {
@@ -231,7 +230,7 @@ Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungs
 
 ![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
+Näheres hierzu finden Sie unter [Tenants](https://{{< domain-c8y >}}/api/core{{< c8y-current-version >}}/#tag/Tenants) in der {{< openapi >}}. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
 #### Skalierung
 
@@ -244,9 +243,7 @@ Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AU
 
 Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag vorgenommen wird.
 
-![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
-
-Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#tag/Audits) in der {{< openapi >}}.
+Näheres hierzu finden Sie unter [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in der {{< openapi >}}.
 
 
 ### Handhabung von Zeitzonen
@@ -342,7 +339,7 @@ Nutzungsstatistiken bestehen aus progressiven Werten wie der Anzahl der Anfragen
 Ein Mandant der {{< product-c8y-iot >}}-Platform kann mehrere Status besitzen:
 
   * Aktiv - Der allgemeine Status, wenn der Mandant mit der Plattform interagieren kann. In diesem Status werden alle Abrechnungswerte gespeichert und aktualisiert.
-  * Gesperrt - Bei gesperrten Mandanten werden die Anzahl der Anfragen und die Microservice-Ressourcen nicht in Rechnung gestellt; der einzige Wert, der weiterhin berechnet wird, ist die Existenz des Mandanten und die Speichergröße. Die Microservice-Ressourcennutzung wird "wie verbraucht" in Rechnung gestellt, d. h. wenn der Mandant in den Status "Gesperrt" wechselt, werden alle Microservices gestoppt, so dass keine Ressourcen berechnet werden können.
+  * Gesperrt - Bei gesperrten Mandanten werden die Anzahl der Anfragen und die Microservice-Ressourcen nicht in Rechnung gestellt; der einzige Wert, der weiterhin berechnet wird, ist die Existenz des Mandanten und die Speichergröße. Die Microservice-Ressourcennutzung wird "wie verbraucht" in Rechnung gestellt, d. h. wenn der Mandant in den Status "Gesperrt" wechselt, werden alle Microservices gestoppt, so dass keine Ressourcen berechnet werden können.
   * Gelöscht - Dieser Vorgang kann nicht rückgängig gemacht werden. Dem Mandanten werden keine Ressourcen in Rechnung gestellt, aber es gibt auch keine Möglichkeit, die Daten wiederherzustellen.
 
 
@@ -355,9 +352,7 @@ Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt 
   * Nicht bereit - Der Microservice-Container ist noch nicht bereit, eingehenden Datenverkehr zu verarbeiten, aber die Anwendung läuft bereits.
   * Bereit - Der Microservice-Container ist bereit, eingehenden Datenverkehr zu verarbeiten. Der Status wird ausgehend von Liveness- und Readiness-Proben, die im [Microservice-Manifest](/microservice-sdk/concept/#manifest) definiert sind, auf "Bereit" gestellt. Wenn keine Proben definiert wurden, ist der Microservice direkt bereit.
 
-Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
-
-  <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
+Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z. B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
 
 Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer Anwendung in den Anwendungsdetails anzuzeigen. Auf der Registerkarte **Status** werden im Abschnitt **Ereignisse** sehr niedrigstufige Phasen des Anwendungsstarts angezeigt. Einige der wichtigsten sind:
 

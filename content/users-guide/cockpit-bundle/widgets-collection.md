@@ -92,6 +92,10 @@ The following types are available:
 <td align="left">Shows the location of a device or all devices of a group.</td>
 </tr>
 <tr>
+<td align="left"><a href="#widget-markdown">Markdown</a></td>
+<td align="left">Displays markdown content either from a URL or from a file.</td>
+</tr>
+<tr>
 <td align="left"><a href="#widget-message-sending">Message sending</a></td>
 <td align="left">Sends a message to a device.</td>
 </tr>
@@ -352,10 +356,6 @@ The "Info gauge" widget visualizes one data point in form of a radial gauge and 
 
 You can select one data point for the gauge, and multiple data points shown with labels at the left side.
 
-![Info gauge widget data point gauge](/images/users-guide/cockpit/cockpit-widget-data-gauge.png)
-
-![Info gauge widget data point label](/images/users-guide/cockpit/cockpit-widget-data-labels.png)
-
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
 
@@ -449,6 +449,19 @@ Target assets or devices: Select which devices are shown on the map. If a group 
 {{< c8y-admon-info >}}
 If none of the target device(s) has a known location, then the widget shows a world map without icons.
 {{< /c8y-admon-info >}}
+
+<a name="widget-markdown"></a>
+### Markdown
+
+The "Markdown" widget can be used to display markdown content. Using the “Markdown” widget you can inform users, for example, on new features.
+
+![Markdown widget](/images/users-guide/cockpit/cockpit-widget-markdown.png)
+
+There are several ways to provide markdown content:
+
+* Upload a markdown file.
+* Provide a URL to an external source.
+* Add "/README.md" as a relative file path in order to provide the README file of the current application as source.
 
 <a name="widget-message-sending"></a>
 ### Message sending

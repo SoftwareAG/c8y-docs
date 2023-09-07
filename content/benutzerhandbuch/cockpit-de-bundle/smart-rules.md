@@ -109,11 +109,9 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 <a name="toggle-rules"></a>
 ### So schalten Sie eine Smart Rule ein/aus
 
-Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
+Wenn eine Smart Rule im Bearbeitungsdialogfeld (aufrufbar über die Seite **Globale Smart Rules** und die Registerkarte **Info** eines Geräts/einer Gruppe) auf **Eingeschaltet** gesetzt ist, ist sie global "eingeschaltet" (d. h. ihr zugrunde liegendes Modul wird gestartet), so dass die Regel für Geräte und Gruppen verfügbar ist.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" />
-
-Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
+Ist sie auf **Ausgeschaltet** gesetzt, so ist sie "ausgeschaltet" (d. h. ihr zugrunde liegendes Modul wird nicht gestartet).
 
 Zusätzlich zum globalen Ein-/Ausschalten einer Smart Rule kann eine Smart Rule für konkrete Objekte (Gruppen oder Geräte) im **aktiven** oder **inaktiven** Zustand sein. Im **aktiven** Zustand verarbeitet die Regel Ereignisse für diese Gruppen und Geräte.
 
@@ -122,8 +120,6 @@ Beim Erstellen einer Smart Rule auf der Seite **Globale Smart Rules** ist die Re
 {{< /c8y-admon-info >}}
 
 Um eine Regel explizit zu aktivieren bzw. zu deaktivieren, navigieren Sie zur Registerkarte **Info** der jeweiligen Gruppe oder des jeweiligen Geräts und stellen Sie den Umschalter **Aktiv/Inaktiv** auf **Aktiv** bzw. **Inaktiv**.  
-
-<img src="/images/benutzerhandbuch/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" />
 
 Ein Anwendungsbeispiel für das Deaktivieren einer Smart Rule für ein einzelnes Objekt könnte sein, dass ein bestimmtes Gerät zu viele Schwellenwert-Alarme generiert. Die Regel kann lediglich für dieses Gerät deaktiviert werden, aber immer noch für alle anderen Objekte aktiv sein.
 
@@ -142,8 +138,7 @@ Führen Sie folgende Schritte aus, um eine Schwellenwertregel zu definieren:
 1. Navigieren Sie im Menü Gruppen zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellenwert anwenden möchten.
 2. Wechseln Sie zur Registerkarte **Daten-Explorer**.
 3. Wenn der Datenpunkt, der den Schwellenwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und [fügen Sie einen Datenpunkt hinzu](#add-data-points).
-4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
-<br>
+4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie auf **Smart Rule erstellen**.
 5. Wählen Sie die Smart Rule "Bei Schwellenwertüberschreitung Alarm erzeugen".
 6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/benutzerhandbuch/cockpit-de#smart-rules-collection).
 7. Unter **Alarm erzeugen** können Sie optional den Alarmtyp und Alarmtext definieren.

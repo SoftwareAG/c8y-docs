@@ -49,7 +49,7 @@ Check out the following developer guides if you are looking for step-by-step ins
 </table>
 
 
-Moreover, the <a href="/apama/overview-analytics/">Streaming Analytics guide</a> provides basics for understanding how to create your own analytics or other business logic in {{< product-c8y-iot >}} with Apama EPL.
+Moreover, the <a href="/streaming-analytics/overview-streaming-analytics/">Streaming Analytics guide</a> provides basics for understanding how to create your own analytics or other business logic in {{< product-c8y-iot >}} with Apama EPL.
 
 ### OpenAPI Specification
 

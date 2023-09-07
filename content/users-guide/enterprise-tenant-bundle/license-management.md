@@ -8,8 +8,6 @@ aliases:
 
 The {{< management-tenant >}} may manage the licenses for the domains of the {{< enterprise-tenant >}}s via the UI.
 
-![License management](/images/users-guide/enterprise-tenant/et-license-management.png)
-
 ### To add and validate a domain license
 
 1. Log into the {{< management-tenant >}}.

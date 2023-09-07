@@ -18,7 +18,7 @@ To develop a microservice using the SDK for C#, the starting point is our [Hello
 You can develop microservices for {{< product-c8y-iot >}} with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
 {{< /c8y-admon-info >}}
 
-If you face any issue or need technical support, please use the [{{< product-c8y-iot >}} community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
+If you face any issue or need technical support, please refer to the [{{< company-sag >}} {{< sag-dev-community >}}]({{< link-sag-dev-community >}}). You will find there many useful questions and answers.
 
 #### Upgrading the SDK
 

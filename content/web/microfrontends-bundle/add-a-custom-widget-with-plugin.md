@@ -39,7 +39,8 @@ Select the version for which you want to create a sample application, for exampl
   other
 ```
 
-Select an application template as the basis for your plugin, for example, "widget-plugin":
+
+Select an application template as the basis for your plugin, in our case, "widget-plugin":
 
 ```console
 ? Which base project do you want to scaffold from?
@@ -61,20 +62,20 @@ Application created. Go into the folder "widget-plugin" and run npm install
 Navigate to your application folder and execute `npm install`.
 
 The application folder should look like the example shown below.
-For this tutorial, the most important files are *package.json* and `README.md`.
+For this tutorial, the most important files are *package.json* and *README.md*.
 
 ```console
-app.module.spec.ts;
-jest.config.js;
-README.md;
-tsconfig.spec.json;
-app.module.ts;
-package.json;
-setup-jest.js;
-widget/;
-index.ts;
-polyfills.ts;
-tsconfig.json;
+app.module.spec.ts
+jest.config.js
+README.md
+tsconfig.spec.json
+app.module.ts
+package.json
+setup-jest.js
+widget/
+index.ts
+polyfills.ts
+tsconfig.json
 ```
 
 You have now created your first plugin that uses the micro frontend architecture.
@@ -91,7 +92,7 @@ The following list shows the fields and what they are responsible for:
 - `exports`: Important field. Defines the Angular modules that will be made available by the widget-plugin for the shell application (see also the *README.md* file):
   - `name`: The name of the exported module (that is, "Example widget plugin").
   - `module`: The name of the Angular module class (that is, "WidgetPluginModule").
-  - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: <kbd>./widget/widget-plugin.module.ts</kbd>.
+  - `path`: The path to the TypeScript file with the module. Since the file is nested, use the following path: *./widget/widget-plugin.module.ts*.
   - `description`: A brief description of what the module does.
 - `contextPath`: The context path tells on which URL your plugin can be loaded. As this is also used to generate a global variable, choose a valid JavaScript variable. For example, your `contextPath` should not start with a number. To avoid conflicts it is a good practice to add a prefix to your context path, for example, the acronym of your company: `acme-`.
 
@@ -123,16 +124,14 @@ Shell application: cockpit
 http://localhost:9000/apps/cockpit/index.html?remotes=%7B%22widget-plugin%22%3A%5B%22WidgetPluginModule%22%5D%7D
 ```
 
-The link redirects you to the Cockpit login screen.
-Once logged in, add the `widget-plugin` to your dashboard in the **Add widget** dialogue window shown below:
-
-![Add widget](/images/web-sdk/module-federation-widget-plugin.png)
+This link redirects you to the Cockpit login screen.
+Once logged in, go to your dashboard and click **Add widget**, then select **Module Federation widget** from the list of available widgets.
 
 For the rest of the widget editing process follow the process for regular widgets. Refresh your browser to see your changes.
 
 #### Debugging
 
-Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remote`, see example below:
+Another difference in the *package.json* file between a regular widget and a widget modified for the micro frontend architecture is the field `remotes`, see the example below:
 
 ```json
 ...
@@ -152,7 +151,7 @@ The plugin imports itself via a field called `remotes`.
 We recommend this as the first step in verifying the correctness of the exported module. It facilitates the application debugging.
 After importing your own modules, execute `npm start` to see if the local server starts.
 
-To check the plugin at a later stage, we recommend you to control it locally with various shell applications, using `npm start -- --shell cockpit`.
+To check the plugin at a later stage, we recommend you to test it locally with various shell applications, using `npm start -- --shell cockpit`.
 
 #### Deployment
 
@@ -177,7 +176,7 @@ To add the uploaded widget-plugin to the dashboard in the Cockpit application, f
 
 - Access the **Packages** tab in **Administration application > Ecosystem > applications > Packages**, where you can see the details of your plugin.
 
-- If you already have a custom Cockpit application, navigate to its **Details** page and then to the **Plugins** tab. Install the widget-plugin.
+- If you already have a custom Cockpit application, navigate to its **Details** page and then to the **Plugins** tab. Install the `widget-plugin`.
 
 - If you don't have your own version of the Cockpit application, navigate to **Administration application > Ecosystem > Applications** and click **Add application**. In the resulting dialog, select the option **Duplicate existing application**. From the list of applications select **Cockpit (Subscribed)**. Edit the available fields such as **Name**, **Application key**, and **Path**. Use the default values and proceed. Install the `widget-plugin` in the cloned application.
 

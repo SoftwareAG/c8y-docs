@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 70
 title: Monitoring compaction jobs
 layout: redirect
 helpcontent:
@@ -12,7 +12,7 @@ helpcontent:
     For each offloading pipeline the system keeps a limited history of the last compaction executions."
 ---
 
-During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, {{< product-c8y-iot >}} DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
+During offloading, data from the Operational Store of {{< product-c8y-iot >}} is written into files in the data lake. In order to ensure a compact physical layout of those files, {{< product-c8y-iot >}} DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled. {{< product-c8y-iot >}} DataHub UI provides insights into the compaction status of the different pipelines so that you can investigate whether everything is running as expected. For the case of compaction failures, you can also configure the offloading pipeline to raise an alarm as described in [Raising alarms](/datahub/configuring-offloading-jobs/#raising-alarms).
 
 {{< c8y-admon-info >}}
 You need administration permissions to access the compaction job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.

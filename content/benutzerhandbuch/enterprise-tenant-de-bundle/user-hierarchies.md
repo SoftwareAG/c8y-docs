@@ -39,9 +39,7 @@ Wenn Sie möchten, dass ein Besitzer nur seine untergeordneten Benutzer verwalte
 
 **Beispiel**
 
-Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neuen Benutzers B. Dem Benutzer B kann dann nur eine business-Rolle zugewiesen werden (und nicht etwa eine admin-Rolle), da der Benutzer keine höhere Berechtigung haben kann als der Besitzer.
-
-![Owner Sample](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-roles.png)
+Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neuen Benutzers B. Dem Benutzer B kann dann nur eine business-Rolle zugewiesen werden (und nicht etwa eine admin-Rolle), da der Benutzer keine höhere Berechtigung haben kann als der Besitzer. Wenn Sie versuchen, Benutzer B eine andere Rolle als "business" zuzuweisen, so ist die Rolle für ein Abonnement nicht verfügbar und wird mit einem Warnsymbol und dem Hinweis versehen, dass diese Operation nicht zulässig ist.
 
 <a name="delegate"></a>
 ### Delegieren von Benutzerhierarchien
@@ -53,8 +51,6 @@ Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig 
 #### So delegieren Sie Berechtigungen an einen Benutzer
 
 Öffnen Sie entweder den Benutzer und klicken Sie auf das Delegieren-Symbol im Feld **Delegiert von** oder öffnen Sie das Kontextmenü über das Menüsymbol rechts vom Benutzer und wählen Sie **Delegieren**.
-
-![User delegation](/images/benutzerhandbuch/enterprise-tenant/et-user-hierarchy-delegate.png)
 
 #### So heben Sie die Delegierung von Berechtigungen auf
 

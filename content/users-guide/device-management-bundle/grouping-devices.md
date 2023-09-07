@@ -29,9 +29,7 @@ Click **Groups** in the navigator to see all groups in a list format.
 
 For each group, various information is provided, for example the type and name. Click **Configure columns** at the right, to add or remove columns and customize the view to your preference. See also [Viewing devices > Configuring columns](/users-guide/device-management/#configuring-columns).
 
-To filter the groups for certain criteria, hover over the column headers and click the respective filter icon, see the screenshot below. However, filtering is not available for the main group column. The filtering option is only available in the subgroup column.
-
- ![Filter](/images/users-guide/DeviceManagement/devmgmt-group-filter.png)
+To filter the groups for certain criteria, hover over the column headers and click the respective filter icon.
 
 See also [Viewing devices > Filtering devices](/users-guide/device-management/#filtering-devices).
 
@@ -106,10 +104,6 @@ The devices will be assigned to the selected group and shown as subassets in the
 2. In the **Info** tab, scroll down to the **Groups assignment** card. From the dropdown field, select the group you want to assign the device to. You can also directly enter a group name here or you can enter just parts of a name to filter the list for it and only show the matching group names.
 3. Click **Assign**.
 
-<img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
-
-<br>
-
 The device will be assigned to the selected group.
 
 If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group.
@@ -175,11 +169,9 @@ Smart groups can be created from the device list.
 
 The new group will appear as a top-level group in the **Groups** menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon.
 
-![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-smartgroups-icon.png)
-
 Below the smart group name and description you can see the filter criteria which have been applied on building the smart group. You can edit the filter settings here and adjust your selection.
 
-![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 
 #### To delete a smart group

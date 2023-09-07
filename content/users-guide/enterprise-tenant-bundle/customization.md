@@ -12,8 +12,6 @@ Apart from various [configuration](#configuration) settings, you can use your in
 
 Click **{{< enterprise-tenant >}}** in the **Settings** menu to access these settings.
 
-![Custom settings](/images/users-guide/enterprise-tenant/et-custom-settings.png)
-
 <a name="configuration"></a>
 ### Configuration
 
@@ -28,27 +26,29 @@ The following placeholders can be found in the **Configuration** tab:
 |{host}|The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.{{< domain-c8y >}}`.
 |{tenant-domain}|This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.{{< domain-c8y >}}`. In case of an {{< enterprise-tenant >}}, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
 |{token}|An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
-|{email}|This placeholder will be replaced with the email address of the recipient user as stored in the user settings. Some views in the UI recognize this parameter and prefill the respective field with this value, for example, during the process of password reset.
+|{email}|Will be replaced with the email address of the recipient user as stored in the user settings. Some views in the UI recognize this parameter and prefill the respective field with this value, for example, during the process of password reset.
+|{username}|Will be replaced with the value of the username property specified in the user configuration, see [User options and settings](/users-guide/getting-started/#user-settings).
+|{binaryId}|Will be replaced with the respective `binaryId` for the binary artefact to be used in the download link.
+|{exportApi}|Will be replaced with the respective API in which the error occurred.
+|{size}|Will be replaced with the storage usage percentage value.
+
+{{< c8y-admon-info >}}
+The above mentioned placeholders might not be applicable to certain templates. While preparing content, note the information provided in the UI.
+{{< /c8y-admon-info >}}
 
 #### Two-factor authentication
 
 Under **Two-factor authentication**, you can change the SMS template which is sent to the users.
 
-![TFA configuration](/images/users-guide/enterprise-tenant/et-configuration-tfa.png)
-
 #### Support link
 
 In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< sag-dev-community >}} page will be used.
-
-![Support link configuration](/images/users-guide/enterprise-tenant/et-configuration-support-link.png)
 
 Enter "false" to hide the link.
 
 #### Password reset
 
 In the **Password reset** section you can change all settings related to password reset email templates.
-
-![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
 
 At the top you can select if you want to allow sending emails to unknown email addresses.
 
@@ -62,8 +62,6 @@ In the following two fields provide an email template to be used on password cha
 
 In the **Email server** section, you can configure custom email server settings.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
-
 In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of:
 
 * SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
@@ -76,19 +74,13 @@ Provide the host, port, username, password, and sender address for the email ser
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
-![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
-
 #### Storage limit
 
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit (warning) and *after* data removal is performed (limit exceeded).
 
-![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
-
 #### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
-
-<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
 
@@ -117,7 +109,7 @@ When you are done or want to store your settings, click **Save** at the bottom o
 
 Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
 
-Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
+Click **Remove branding** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
 <a name="configuration-parameters"></a>
 #### Configuration parameters
@@ -166,7 +158,7 @@ In the **Top bar** section you specify the parameters for the top bar.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color - the default value is "#FFFFF".
+* Background color - the default value is "#FFFFFF".
 * Text color - the default value is "49595B".
 * Button hover text color - the default value is the main brand color.
 
@@ -176,9 +168,9 @@ In the **Navigator** section you specify the parameters for the navigator.
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
-* Background color - the default value is "2c3637".
+* Background color - the default value is "#2c3637".
 * Logo wrapper background color - the default value is "Transparent".
-* Title color - the default value is "FFFFF".
+* Title color - the default value is "#FFFFFF".
 * Text and buttons color - the default value is "#FAFAFA".
 * Separator line color - the default value is "#FAFAFA".
 * Text color of the current item in the navigator - the default value is "#FAFAFA".
@@ -287,10 +279,9 @@ We highly discourage any use of alternative DNS configurations for the following
 Once the DNS configuration is in place and if a certificate with the given requirements is available, it can be easily
 uploaded to the platform.
 
-<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+On the **Domain name** tab in the **Enterprise Tenant** page, click **Upload certificate**. Select the certificate from your file system and click **Upload**.
 
-
-Afterwards, you can activate the domain with a single click. After the domain has been activated, you will be redirected
+Afterwards, you can activate the domain with a single click on its name. After the domain has been activated, you will be redirected
 to your {{< enterprise-tenant >}} using the new domain name. You will also receive an email with information about the
 activation. Note that your {{< management-tenant >}} domain name is static, for example, if your wildcard domain is "*
 .iot.mycompany.com" then your {{< management-tenant >}} domain will be "management.iot.mycompany.com".

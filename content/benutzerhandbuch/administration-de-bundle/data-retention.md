@@ -62,22 +62,26 @@ Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie eine Datenh
 
 #### So löschen Sie eine Datenhaltungsregel
 
-Bewegen Sie die Maus über die Regel, die Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
-
-<img src="/images/benutzerhandbuch/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
+Bewegen Sie die Maus über die Zeile mit der Regel, die Sie löschen möchten, und klicken Sie rechts auf das Löschen-Symbol.
 
 {{< c8y-admon-info >}}
 Alle Datenhaltungsregeln werden sequenziell und unabhängig voneinander ausgeführt. Wenn es zwei Datenhaltungsregeln gibt, von denen eine spezifischere mit einem höheren maximalen Alter eine Untermenge von den Dokumenten definiert, die durch eine allgemeinere Regel mit einem niedrigeren maximalen Alter definiert werden, wird alles so abgearbeitet, als gäbe es nur eine einzige, allgemeinere Regel.
 
 Betrachtet man beispielsweise die beiden folgenden Regeln:
 
-<img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec1.png" alt="Retention rules"/>
+| **Datentyp** | **Fragmenttyp** | **Typ**        | **Quelle** | **Maximales Alter** |
+|---------------|-------------------|-----------------|------------|-----------------|
+| MESSUNG   | *                 | c8y_Temperature | *          | 30 Tage         |
+| MESSUNG   | *                 | c8y_Temperature | 12345      | 60 Tage         |
 
 Alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind, werden entfernt, einschließlich der Messwerte, bei denen die Quelle `12345` entspricht.
 
 Wenn jedoch die folgenden Datenhaltungsregeln definiert wurden:
 
-<img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec2.png" alt="Retention rules"/>
+| **Datentyp** | **Fragmenttyp** | **Typ**        | **Quelle** | **Maximales Alter** |
+|---------------|-------------------|-----------------|------------|-----------------|
+| MESSUNG   | *                 | c8y_Temperature | *          | 30 Tage         |
+| MESSUNG   | *                 | *               | *          | 60 Tage         |
 
 Der Datenhaltungsprozess entfernt alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind. Alle anderen Messwerte werden erst entfernt, wenn sie älter als 60 Tage sind.
 {{< /c8y-admon-info >}}
@@ -95,17 +99,13 @@ Klicken Sie auf **Dateiablage** im Menü **Verwaltung**, um eine Liste aller Dat
 
 Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich um Software Images, Konfigurationssnapshots von Geräten, Logdateien von Geräten oder um Webanwendungen, die auf der Seite **Alle Anwendungen** hochgeladen wurden, handeln.
 
-Für jede Datei werden der Name, der Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
+Für jede Datei werden der Name, der Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
 
 <img src="/images/benutzerhandbuch/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
 #### So laden Sie eine Datei aus Ihrem Dateisystem hoch
 
-Klicken Sie auf **Datei hochladen** in der oberen Menüleiste.
-
-<img src="/images/benutzerhandbuch/Administration/admin-files-repository-upload.png" alt="Files Repository download modal" style="max-width: 100%">
-
-Wählen Sie im darauf folgenden Dialog eine Datei zum Hochladen aus. Wenn Sie mehrere Dateien hochladen möchten, klicken Sie auf **Datei hinzufügen**, um eine weitere Datei auszuwählen. Sie können eine Datei vor dem Hochladen auch löschen, indem Sie rechts neben dem Dateifeld auf das Löschen-Symbol klicken.
+Klicken Sie auf **Datei hochladen** in der oberen Menüleiste. Wählen Sie im darauf folgenden Dialog eine Datei zum Hochladen aus. Wenn Sie mehrere Dateien hochladen möchten, klicken Sie auf **Datei hinzufügen**, um eine weitere Datei auszuwählen. Sie können eine Datei vor dem Hochladen auch löschen, indem Sie rechts neben dem Dateifeld auf das Löschen-Symbol klicken.
 
 
 #### So laden Sie eine Datei von Ihrem Konto herunter

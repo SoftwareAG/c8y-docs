@@ -1,5 +1,5 @@
 ---
-weight: 35
+weight: 65
 title: REST APIs for Edge
 layout: bundle
 ---
@@ -13,3 +13,4 @@ Wherever possible, the REST resources and its representations are maintained in 
 This API is not covered by the general {{< product-c8y-iot >}} API backwards compatibility statement mentioned in [Introduction to our IoT platform > Compatibility policy](/concepts/introduction/#compatibility-policy) in the *Concepts guide*.
 
 {{< /c8y-admon-important >}}
+

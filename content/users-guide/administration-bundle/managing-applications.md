@@ -45,8 +45,6 @@ Both can be accessed via the **Ecosystem** menu in the navigator.
 
 Additionally, in {{< enterprise-tenant >}}s, it is possible to configure **Default subscriptions**, that means you can specify a list of applications that are subscribed by default to every new tenant on creation and/or to all existing tenants on platform upgrade. For details, see [Enterprise tenant > Default subscriptions](/users-guide/enterprise-tenant/#default-subscriptions).
 
-<img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
-
 <a name="applications"></a>
 ### Applications
 
@@ -115,15 +113,14 @@ In the **All applications** tab, subscribed applications are labeled as "Subscri
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}}, {{< enterprise-tenant >}}</td>
+</tr>
 
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left"><a href="/streaming-analytics/overview-streaming-analytics/" class="no-ajaxy">Streaming Analytics</a></td>
 <td style="text-align:left">Manage and edit Analytics Builder models and EPL apps (if enabled)</td>
 <td style="text-align:left">Streaming Analytics</td>
 <td style="text-align:left">Web application</td>
 <td style="text-align:left">{{< standard-tenant >}} (limited version for Analytics Builder), {{< enterprise-tenant >}} (full version)</td>
-</tr>
-
 </tr>
 
 </tbody>
@@ -145,8 +142,6 @@ In the **All applications** tab, custom applications are labeled as "Custom".
 #### To add a custom application
 
 Click **Add application** at the top right of the **All applications** tab.
-
-<img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
 In the resulting dialog box, select one of the following methods:
 
@@ -173,9 +168,6 @@ The ZIP file must contain the *index.html* and *cumulocity.json* in its root dir
 
 1. Click **Add application** at the top right of the **All applications** tab.
 2. Select **External application**.
-<br><br>
-<img src="/images/users-guide/Administration/admin-application-external.png" alt="External application">
-<br><br>
 3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
 5. Enter an application key, used to identify this application.
 6. Enter the external URL where the application can be reached.
@@ -205,9 +197,6 @@ Duplicating an application might be useful if you want to customize a subscribed
 2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list, for example "Cockpit".
 4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.
-<br><br>
-<img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
-<br><br>
     {{< c8y-admon-info >}}
 The platform restricts the use of the prefix "feature-" in the **Name** field. You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
     {{< /c8y-admon-info >}}
@@ -342,9 +331,9 @@ Users can restore previous versions of an application from an archive.
 If a hosted application is not deployed correctly, users may reactivate it.
 
 1. Open the application properties for the respective application by clicking on it.
-3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate**.
+3. In the **Activity log** section, open the context menu for the desired version by clicking the menu icon and select **Reactivate archive**.
 
-The selected application will be reactivated by removing the respective files from the application directory and unpacking the host application package again.
+The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.
 
 ### Packages
 
@@ -367,15 +356,13 @@ Additionally, it is possible to view all available plugins within the selected p
 
 <img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
 
-In the **Archives** tab, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded via the context menu next to each archive.
+In the **Versions** tab, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded via the context menu next to each package version entry.
 
-<img src="/images/users-guide/Administration/admin-application-packages-archives.png" alt="Archive view">
+<img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Versions view">
 
-In the **Versions** tab of a package, you can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+You can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
 To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
-
-<img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Archive view">
 
 ### Features
 

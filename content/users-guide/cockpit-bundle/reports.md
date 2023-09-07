@@ -67,8 +67,6 @@ Click on a report name in the report list to open its details.
 
 To edit the report, click **Edit** in the top menu bar.
 
-<img src="/images/users-guide/cockpit/cockpit-report-edit.png" name="Edit report"/>
-
 The report editor will open up. For details on the fields, refer to [To create a report](#create-report).
 
 

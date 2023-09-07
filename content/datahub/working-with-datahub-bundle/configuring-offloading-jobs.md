@@ -85,7 +85,7 @@ To ease the configuration process, {{< product-c8y-iot >}} DataHub auto-detects 
 Each additional result column, whether it is manually configured or auto-detected, has the following properties:
 
 - **Selected**: With this checkbox, you define if the column is included in the offloading pipeline or not.
-- **Column name**: The column name is the name the column will have in the target table. The column name must be unique.
+- **Column name**: The column name is the name the column will have in the target table. The column name must be unique, non-empty, and contain at least one non-whitespace character.
 - **Auto-detected**: This property denotes whether the column has been auto-detected or manually added by the user.
 - **Source definition**: The source definition is the actual SQL expression, which defines what the data in this column looks like.
 - **Column type**: The column type defines which kind of data the column contains, for example, DOUBLE for double values or VARCHAR for strings.
@@ -233,8 +233,16 @@ With name sanitization, two columns *c8y_TemperatureMeasurement.T.unit* and *c8y
 
 In the first case an offloading run processes multiple fragments with the corresponding column names being equal with respect to case-insensitivity, the sanitization also generates distinct column names, with each name having a unique suffix.
 
+**Raising alarms**
+
+<a id="raising-alarms"></a>
+
+Offloading as well as compaction runs may fail due to various reasons such as network issues, timeouts etc. As described in [History per offloading pipeline](/datahub/working-with-datahub/#history-per-offloading-job) and [History of compactions per offloading pipeline](/datahub/working-with-datahub/#history-compaction-per-offloading-job), the offloading and compaction job histories provide details for successful and failed runs. Additionally, an alarm can be raised within the {{< product-c8y-iot >}} platform in case of a failure. Such an alarm is available in the {{< product-c8y-iot >}} [device management application](https:///{{< domain-c8y >}}/guides/users-guide/device-management/#alarm-monitoring).
+
+Under **Create alarm on** you can activate raising alarms for offloading as well as compaction failures. Per default, the setting is activated for offloading and deactivated for compaction failures. When activated and an offloading run fails, an alarm is raised. If the offloading fails multiple times in a row, the associated alarm is updated with each new failure. The more successive runs fail, the higher the severity of the alarm will be, ranging from warning up to critical. Each alarm comprises information which offloading pipeline has failed and how often it has failed in a row. The same applies to alarms being raised for compaction failures.
+
+The alarm will be active until it is cleared. The latter is the case when either an offloading run completes successfully, or the offloading configuration is deleted. Then, the active alarm is cleared, no matter if the alarms setting is activated or not. The alarm remains active if the offloading is unscheduled or raising alarms is deactivated. Again, the same applies to alarms being raised for compaction failures.
+
 **Completing the offloading configuration**
 
 Finally, click **Save** to save the offloading pipeline. Otherwise click **Cancel** to cancel the offloading configuration. You can also navigate back to adapt previous settings, using the **Previous** buttons.
-
-<img src="/images/datahub-guide/datahub-validate-an-offloading-configuration.png" alt="Validate an offloading configuration"  style="max-width: 100%">

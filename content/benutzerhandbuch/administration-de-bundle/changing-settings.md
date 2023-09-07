@@ -17,7 +17,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 
 Klicken Sie auf **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
-![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
+![Authentication settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
 {{< c8y-admon-info >}}
 Um den Menüeintrag **Authentifizierung** sehen zu können, benötigen Sie die ADMIN-Berechtigung "Mandanten-Management" (`ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`).
@@ -75,7 +75,7 @@ Wenn keine sitzungsbezogene Konfiguration vorliegt, gibt OAI-Secure ein JWT-Toke
 
 Die Verwendung von OAI-Secure mit aktivierter Sitzungskonfiguration ist praktischer und sicherer. So erzielen Sie ein Verhalten, das der Authentifizierung auf Basis von HTTP-Sitzungen ähnelt.
 
-Das OAI-Secure-Token fungiert als Sitzungs-ID auf der Client-Seite (Webbrowser). Eine solche im Cookie gespeicherte Token-ID kann eine vorkonfigurierte kurze Lebensdauer haben. Die {{< product-c8y-iot >}}-Plattform ist dann dafür verantwortlich, die Sitzungs-ID ohne eine Benutzerinteraktion zu erneuern. Es reicht aus, dass die Benutzeraktion den Webbrowser dazu veranlasst, eine Anfrage an {{< product-c8y-iot >}} zu senden. {{< product-c8y-iot >}} kann dann prüfen, ob die Erneuerung der Sitzungs-ID erfolgen soll, und gegebenenfalls die Operation durchführen. {{< product-c8y-iot >}} bietet umfangreiche Konfigurationsmöglichkeiten für dieses Verhalten, so dass die Mandantenadministratoren die Konfiguration nach ihren Wünschen anpassen können.
+Das OAI-Secure-Token fungiert als Client-seitige Sitzungs-ID (Webbrowser). Eine solche im Cookie gespeicherte Token-ID kann eine vorkonfigurierte kurze Lebensdauer haben. Die {{< product-c8y-iot >}}-Plattform ist dann dafür verantwortlich, die Sitzungs-ID ohne eine Benutzerinteraktion zu erneuern. Es reicht aus, dass die Benutzeraktion den Webbrowser dazu veranlasst, eine Anfrage an {{< product-c8y-iot >}} zu senden. {{< product-c8y-iot >}} kann dann prüfen, ob die Erneuerung der Sitzungs-ID erfolgen soll, und gegebenenfalls die Operation durchführen. {{< product-c8y-iot >}} bietet umfangreiche Konfigurationsmöglichkeiten für dieses Verhalten, so dass die Mandantenadministratoren die Konfiguration nach ihren Wünschen anpassen können.
 
 Wenn die Option **Sitzungskonfiguration verwenden** aktiviert ist, können folgende Einstellungen vom Mandantenadministrator auf Mandantenebene konfiguriert werden:
 
@@ -108,14 +108,15 @@ Wenn die Option **Sitzungskonfiguration verwenden** aktiviert ist, können folge
 </tr>
 <tr>
 <td style="text-align:left">Maximale Anzahl der parallelen Sitzungen pro Benutzer</td>
-<td style="text-align:left">Definiert die maximale Anzahl der Sitzungen, die von einem Benutzer gestartet werden können (z. B. auf verschiedenen Maschinen oder Browsern). Wenn ein Benutzer dieses Limit überschreitet, wird die älteste Sitzung beendet und der Benutzer wird auf dem jeweiligen Gerät abgemeldet.</td>
+<td style="text-align:left">Definiert die maximale Anzahl der Sitzungen, die von einem Benutzer gestartet werden können (z. B. auf verschiedenen Maschinen oder Browsern). Wenn ein Benutzer dieses Limit überschreitet, wird die älteste Sitzung beendet und der Benutzer wird auf dem jeweiligen Gerät abgemeldet.</td>
 <td style="text-align:left">5 Sitzungen</td>
 </tr>
 <tr>
 <td style="text-align:left">Token-Laufzeit</td>
-<td style="text-align:left">Definiert, wie lange ein Token aktiv ist. Der Benutzer kann nur mit einem gültigen Token auf {{< product-c8y-iot >}} zugreifen. Diese Konfigurationsoption ist stets verfügbar, unabhängig von der Sitzungskonfiguration. Siehe <a href="#token-settings" class="no-ajaxy">Token-Erzeugung mit OAI-Secure</a> weiter unten. </td>
+<td style="text-align:left">Definiert, wie lange ein Token aktiv ist. Der Benutzer kann nur mit einem gültigen Token auf {{< product-c8y-iot >}} zugreifen. Diese Konfigurationsoption ist stets verfügbar, unabhängig von der Sitzungskonfiguration. Siehe <a href="#token-settings" class="no-ajaxy">Token-Erzeugung mit OAI-Secure</a> unten. </td>
 <td style="text-align:left">2 Tage</td>
 </tr>
+
 </tbody>
 </table>
 
@@ -136,6 +137,7 @@ Während der Erneuerung des Sitzungs-Tokens wird das vorherige Token zurückgese
 
 
 <a name="token-settings"></a>
+
 #### Token-Erzeugung mit OAI-Secure
 
 OAI-Secure basiert im Wesentlichen auf JWT, das in einem Browser-Cookie gespeichert wird. Außerdem kann OAI-Secure zum Erzeugen eines JWT im Antworttext verwendet werden.
@@ -156,7 +158,7 @@ Cookies zum Speichern eines JWT-Tokens in einem Browser haben eine eigene Gülti
 - category: `oauth.internal`;
 - key: `basic-user.cookie.lifespan.seconds`;
 
-Der Standardwert ist zwei Wochen. Damit das Cookie gelöscht wird, wenn der Benutzer den Browser schließt, stellen Sie hier einen beliebigen negativen Wert ein.
+Der Standardwert ist zwei Wochen. Damit das Cookie gelöscht wird, wenn der Benutzer den Browser schließt, geben Sie hier einen beliebigen negativen Wert an.
 
 ##### Lebensdauerkonfiguration von JWT im Antworttext
 
@@ -167,7 +169,7 @@ Die Lebensdauer von JWT-Tokens, die im Antworttext erzeugt werden, wird mit den 
 Weitere Informationen finden Sie unter [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in {{< openapi >}}.
 
 {{< c8y-admon-info >}}
-Falls die externe Kommunikation zum {{< management-tenant-de >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant-de >}} für das Blockieren der externen Kommunikation konfiguriert ist.
+Falls die externe Kommunikation zum {{< management-tenant-de >}}en blockiert wurde, kann nur auf sichere Weise auf den Mandanten zugegriffen werden (z. B. über SSH-Tunnel). Dies bedeutet, dass Sie ebenso gut die Basisauthentifizierung verwenden können. Darüber hinaus ist es nicht möglich, Single-Sign-On zu verwenden, da die vom externen Autorisierungsserver kommende Kommunikation ebenfalls blockiert ist. Daher wird automatisch die Authentifizierungsmethode "Basisauthentifizierung" eingestellt, wenn der {{< management-tenant-de >}} für das Blockieren der externen Kommunikation konfiguriert ist.
 {{< /c8y-admon-info >}}
 
 #### TFA-Einstellungen
@@ -179,7 +181,7 @@ Sie können eine der folgenden Optionen wählen:
 * **SMS-basiert**: unterstützt die folgenden Einstellungen:
 	- **Token-Gültigkeit begrenzen für** - Dauer jeder Sitzung in Minuten. Wenn die Sitzung abgelaufen ist oder ein Benutzer sich abmeldet, muss der Benutzer einen neuen Bestätigungscode eingeben.
   - **Bestätigungscode-Gültigkeit begrenzen für** - Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn der Bestätigungscode abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode anfordern, um sich anmelden zu können.
-
+  
 
 {{< c8y-admon-info >}}
 Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
@@ -202,15 +204,14 @@ Immer wenn Sie die TFA-Methode ändern, werden Sie gezwungen, sich abzumelden. T
 Benutzer mit der Rolle "devices" sind von TFA und TOTP ausgeschlossen. Dies gilt auch dann, wenn TOTP für alle Benutzer erzwungen wird.
 {{< /c8y-admon-info >}}
 
-
 <a name="default-app"></a>
 ### Ändern von Anwendungseinstellungen
 
 Klicken Sie auf **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
+![Application settings](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
-Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
+Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen. Wenn auf die Plattform z. B. nur über den Domain-Namen ohne Erwähnung einer bestimmten Anwendung zugegriffen wird, wird die als Standardanwendung gewählte Anwendung als Standard-Landing-Page verwendet.
 
 {{< c8y-admon-info >}}
 Alle Benutzer müssen Zugriff auf diese Anwendung haben.
@@ -247,8 +248,6 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 
 1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie auf **Attribut hinzufügen**.
 
-	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
-
 2. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
 
 3. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:
@@ -267,7 +266,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 <tbody>
 <tr>
 <td style="text-align:left">Erforderlich</td>
-<td style="text-align:left">Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp "Boolean".</td>
+<td style="text-align:left">Wenn ausgewählt, muss das Attribut bereitgestellt werden, z. B. beim Erstellen eines Alarms. Nicht verfügbar beim Attributtyp "Boolean".</td>
 </tr>
 <tr>
 <td style="text-align:left">Standardwert</td>
@@ -313,7 +312,7 @@ Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Manda
 <a name="sms-provider"></a>
 ### Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
+SMS werden für verschiedene Funktionen der Plattform wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen verwendet, z. B. bei Alarmen.
 
 Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 
@@ -321,9 +320,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 1. Klicken Sie auf **SMS-Anbieter** im Menü **Einstellungen**.
 
-    ![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
-
-	{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berechtigung SMS LESEN. Um die SMS-Anbieter-Konfiguration ändern zu können, benötigen Sie die Berechtigung SMS ADMIN.
 {{< /c8y-admon-info >}}
 
@@ -337,6 +334,7 @@ Um die SMS-Anbieter-Konfiguration einsehen zu können, benötigen Sie die Berech
 OpenIT betreut keine neuen Kunden mehr und ist dabei, das Geschäft mit SMS-Anbietern einzustellen. Wir empfehlen Ihnen daher, einen der anderen SMS-Anbieter zu wählen.
 {{< /c8y-admon-info >}}
 
+
 <a name="connectivity"></a>
 ### Verwalten der Konnektivitätseinstellungen
 
@@ -347,8 +345,6 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/benutzerhandbuch/device-management-de/#connectivity)
-
-![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

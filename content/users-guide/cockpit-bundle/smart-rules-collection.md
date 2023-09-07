@@ -89,8 +89,6 @@ This rule is only available if your tenant has a configured SMS provider.
 
 The rule uses the following parameters:
 
-![On alarm send SMS](/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
-
 <table>
 <thead>
 <colgroup>
@@ -160,8 +158,6 @@ Note that the corresponding emails are send with "text/html" as content type.
 
 The rule uses the following parameters:
 
-![On alarm send email](/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
-
 <table>
 <thead>
 <colgroup>
@@ -225,8 +221,6 @@ This rule is only available if your tenant has a configured SMS provider.
 
 The rule uses the following parameters:
 
-![On alarm escalate](/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
-
 <table>
 <thead>
 <colgroup>
@@ -287,8 +281,6 @@ If an alarm is active for a certain time, the severity is increased.
 **Parameters**
 
 The rule uses the following parameters:
-
-![On alarm increase severity](/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
 
 <table>
 <thead>
@@ -354,8 +346,6 @@ The rule can be configured for entering or leaving the geofence, or both. Existi
 **Parameters**
 
 The rule uses the following parameters:
-
-![On geofence create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |<table>
 <thead>
@@ -424,8 +414,6 @@ Note that the corresponding emails are send with "text/html" as content type.
 
 The rule uses the following parameters:
 
-![On geofence send email](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
-
 <table>
 <thead>
 <colgroup>
@@ -487,8 +475,6 @@ Creates consumption data point based on data from an electric, gas, or water met
 **Parameters**
 
 The rule uses the following parameters:
-
-![Calculate energy consumption](/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
 
 <table>
 <thead>
@@ -552,8 +538,6 @@ If no new measurement data has been received for a specified time, an alarm is c
 
 The rule uses the following parameters:
 
-![On missing measurements create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
-
 <table>
 <thead>
 <colgroup>
@@ -609,8 +593,6 @@ If a certain alarm occurs, the specified operation will be send to the device.
 **Parameters**
 
 The rule uses the following parameters:
-
-![On alarm execute operation](/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
 <colgroup>
@@ -723,8 +705,6 @@ Using these mechanisms, you can configure global threshold ranges in the data po
 
 The rule uses the following parameters:
 
-![On measurement threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
-
 <table>
 <thead>
 <colgroup>
@@ -828,8 +808,6 @@ This rule is similar to the rule "On measurement threshold create alarm". Howeve
 **Parameters**
 
 The rule uses the following parameters:
-
-![On measurement explicit threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 <table>
 <thead>

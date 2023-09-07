@@ -219,7 +219,7 @@ This option allows you to upload a file during the asset creation.
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
 
-- To add/update file: CREATE/ADMIN permission for permission type "Inventory"
+- To add/update file: CREATE/ADMIN permission for permission type "Inventory".
 {{< /c8y-admon-req >}}
 
 If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size in MB** field. When you create an asset with this asset property, you can only upload files that adhere to the allowed file types with their file size not exceeding the set limit.

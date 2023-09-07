@@ -38,7 +38,6 @@ In the **Export** page you will find a list displaying all exports with their na
 #### To add an export
 
 1. Click **Add export** in the top menu bar.<br>
-	![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
 
 2. Enter a name for the export and select the file type (CSV or XLSX) for the report output.
 
@@ -72,8 +71,6 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the toggle to enable/disable a field.
 
-![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
-
 {{< c8y-admon-info >}}
 The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
 {{< /c8y-admon-info >}}
@@ -89,8 +86,6 @@ Documents that have no value defined for any of the selected fields are removed 
 Click **Add** to add empty properties. To enter a label or path, click **Column** or **Path** and edit the field. For example, if you enable the **Alarms** field you could enter "Severity" in column and path to receive data for alarm severities.
 
 Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
-
-![Select properties](/images/users-guide/cockpit/cockpit-export-properties.png)
 
 If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you must set up at least one property for the custom values to appear in the export.
 
@@ -108,9 +103,7 @@ JsonPath expressions added from data points will be stored in bracket notation i
 <a name="schedule-export"></a>
 #### To schedule an export
 
-To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**.
-
-![Export details](/images/users-guide/cockpit/cockpit-export-add-schedule.png)
+To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.
 
 In the resulting dialog box provide the following information to receive the scheduled export via email.
 
@@ -138,22 +131,18 @@ Enter the actual email message. Available placeholders are {host}, {binaryId}. T
 Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
 
 {{< c8y-admon-info >}}
-Note that the corresponding emails are send with "text/html" as content type.
+Note that the corresponding emails are sent with "text/html" as the `Content-Type` header.
 {{< /c8y-admon-info >}}
 
 Click **Create** to create the new export schedule.
 
 The export schedule will be added to the export details.
 
-![Scheduled exports list](/images/users-guide/cockpit/cockpit-export-schedule-list.png)
-
 ##### Migration of scheduled exports
 
-With version 10.6.2, a new report agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated.
+With version 10.6.2, a new report agent has been implemented to allow scheduled exports. The export schedules functionality based on smart rules has been deprecated.
 
 On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
-
-![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
 {{< c8y-admon-important >}}
 You must open each report manually, to migrate the export schedules included in the report.

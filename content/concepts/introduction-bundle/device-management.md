@@ -15,5 +15,3 @@ weight: 40
 * Troubleshooting features such as events list and operations queue.
 
 The level of depth in device management may depend on device features (for example if a device does not support remote firmware upgrade, it will also not be available through {{< product-c8y-iot >}}). For interfacing devices not yet certified with {{< product-c8y-iot >}}, the [Device management library](/reference/device-management-library/) and [Device integration](/device-integration/introduction) are publicly available.
-
-![Device Management](/images/concepts-guide/devices-info.png)

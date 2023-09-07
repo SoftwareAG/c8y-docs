@@ -94,8 +94,8 @@ The following tabs are the most common ones, each described in detail in a separ
 <td align="left">Allows requesting log information for a device.</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a></td>
-<td style="text-align:left">Provides details for devices connected via LORIOT LoRa. For details, see <a href="../../protocol-integration/lora-loriot">LORIOT LoRa</a> for more details.</td>
+<td style="text-align:left"><a href="../../protocol-integration/lora-loriot">Loriot LoRa</a></td>
+<td style="text-align:left">Provides details for devices connected via Loriot LoRa. For details, see <a href="../../protocol-integration/lora-loriot">Loriot LoRa</a> for more details.</td>
 </tr>
 <tr>
 <td align="left"><a href="#measurements">Measurements</a></td>
@@ -325,7 +325,7 @@ The screenshot below, for example, shows a chart for temperature measurement wit
 
 ![Measurements](/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
 
-If a chart contains measurements with different series, one Y-axis is rendered per series. In the example above, temperature data is recorded from two sensors namely "sensors-1" and "sensor-2" having the same unit as °C. Here measurements from different sensors are categorized 
+If a chart contains measurements with different series, one Y-axis is rendered per series. In the example above, temperature data is recorded from two sensors namely "sensors-1" and "sensor-2" having the same unit as °C. Here measurements from different sensors are categorized
 as separate "Series" data. The measurements from the respective sensors are stored using separate series names (same as the sensor names) and hence, two axes are rendered here.
 Only one Y-axis is rendered if the measurements belong to the same series.
 
@@ -413,11 +413,7 @@ Every column allows services to be filtered and/or sorted by the respective valu
 ![Services overview](/images/users-guide/DeviceManagement/devmgmt-services-overview.png)
 
 The platform defines three status options for services: **Up**, **Down** and **Unknown**.
-These predefined statuses have their own graphical representation and can be selected directly from the **Status** filter:
-
-![Status filter](/images/users-guide/DeviceManagement/devmgmt-services-status-filter.png)
-
-Other status options are also allowed and can be freely defined, see [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in the Web SDK documentation resources.
+These predefined statuses have their own graphical representation and can be selected directly from the **Status** filter. Other status options are also allowed and can be freely defined, see [Service module](http://resources.cumulocity.com/documentation/websdk/ngx-components/modules/ServicesModule.html#readme) in the Web SDK documentation resources.
 They all share the same icon and must be entered manually in the **Status** filter.
 A tooltip on the status icon displays their actual value.
 
@@ -437,8 +433,6 @@ When using {{< product-c8y-iot >}} to remotely operate machinery, make sure that
 {{< /c8y-admon-important >}}
 
 For your convenience, {{< product-c8y-iot >}} provides several frequently used commands for some devices. Click **Predefined commands** above the command prompt area to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt. You may also add new commands here for re-use.
-
-![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 <a name="software"></a>
 ### Software

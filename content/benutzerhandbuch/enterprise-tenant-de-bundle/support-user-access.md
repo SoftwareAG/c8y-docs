@@ -47,7 +47,7 @@ Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Man
 
 Um sich vom {{< management-tenant-de >}} aus als Supportbenutzer anzumelden, müssen Sie im Login-Bildschirm folgende Informationen eingeben:
 
-* Mandanten-ID - die ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
+* Mandanten-ID - die ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt. In manchen Umgebungen, insbesondere in Testumgebungen, können Sie die Zielmandanten-URL (z. B. *testtenant.{{< domain-c8y >}}*) aufrufen und sich ohne die Mandanten-ID beim Mandanten anmelden.
 * Supportbenutzer - der Benutzername des {{< management-tenant-de >}}-Benutzers, der den Support leistet.
 * Benutzer - der Benutzername des zu unterstützenden Benutzers.
 

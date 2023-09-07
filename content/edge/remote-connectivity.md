@@ -1,5 +1,5 @@
 ---
-weight: 31
+weight: 40
 title: Connecting Cumulocity IoT Edge to the cloud
 layout: bundle
 ---

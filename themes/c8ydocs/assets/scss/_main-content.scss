@@ -1,6 +1,7 @@
 .main-footer {
   transition: transform .3s $ease;
   -webkit-transition: transform .3s $ease;
+
   @media (max-width: $grid-breakpoint - 1) {
     .open & {
       backface-visibility: hidden;
@@ -9,9 +10,11 @@
       -webkit-backface-visibility: hidden;
     }
   }
+
   @media (min-width: $grid-breakpoint) {
     margin-left: 280px;
   }
+
   @media print {
     display: none !important;
   }
@@ -30,6 +33,7 @@
     0 32px 64px rgba(0, 0, 0, .1), 0 -3px 32px rgba(0, 0, 0, .1);
   transition: transform .3s $ease;
   -webkit-transition: transform .3s $ease;
+
   @media (max-width: $grid-breakpoint - 1) {
     .open & {
       backface-visibility: hidden;
@@ -59,7 +63,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  p > img {
+  p>img {
     margin-bottom: 40px;
   }
 
@@ -69,13 +73,15 @@
     max-width: 100% !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+
     pre {
       border: 5px solid #d9d9d9;
       white-space: normal;
       word-break: break-word;
       background-color: grey;
     }
-    pre > code {
+
+    pre>code {
       padding: 0;
       color: inherit;
       white-space: pre;
@@ -95,7 +101,7 @@
 
 @media (min-width: $grid-breakpoint) {
   .main-content {
-    margin-top: 120px;
+    margin-top: 60px;
     margin-right: 30px;
     margin-left: 280px;
     padding: 60px;
@@ -120,43 +126,53 @@
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
   }
+
   @media (min-width: $grid-breakpoint) {
     margin: -60px -60px 60px;
     padding: 40px 60px;
   }
+
   @media print {
     border-radius: 0;
   }
+
   img {
     margin-right: 10px;
     min-width: 70px;
     opacity: .8;
   }
+
   label {
     opacity: .8;
   }
+
   h1 {
     margin: 10px 0;
     font-weight: 200;
     letter-spacing: -0.03em; //font-size: 48px;
   }
+
   .lead {
     max-width: 660px;
   }
+
   a {
     color: white;
+
     &:hover {
       color: white;
       text-decoration: underline;
     }
-  } // hide empry lead
-  + .lead:empty {
+  }
+
+  // hide empry lead
+  +.lead:empty {
     display: none;
   }
 }
 
 .main-content .page-section {
-  > h2 {
+  >h2 {
     display: flex;
     padding-top: 50px;
     margin-top: 24px;
@@ -166,32 +182,36 @@
     //letter-spacing: -0.03em;
     color: $blue-35;
 
-    > small {
+    >small {
       align-self: center;
       order: 8;
       margin-left: auto;
     }
   }
 
-  > h3 {
+  >h3 {
     border-bottom: 0;
     color: rgba($blue-35, .8);
     font-weight: 300;
     margin-top: 4rem;
+    padding-top: 45px;
   }
 
-  > h4 {
+  >h4 {
     display: flex;
     font-weight: bold;
     color: $gray-40;
     margin-top: 3rem;
-    > small {
+    padding-top: 45px;
+
+    >small {
       align-self: center;
       order: 8;
       margin-left: auto;
     }
   }
-  > h5 {
+
+  >h5 {
     font-weight: bold;
     color: $blue-35;
   }
@@ -207,15 +227,10 @@
     margin: 1.5rem;
   }
 
-  &:nth-child(2) {
-    > h2 {
-      padding-top: 0;
-    }
-  }
 }
 
 table:not(.gsc-search-box):not(.gstl_50) {
-  tr > td {
+  tr>td {
     word-break: break-word;
   }
 }

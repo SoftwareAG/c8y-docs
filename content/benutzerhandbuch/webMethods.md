@@ -1,6 +1,6 @@
 ---
 aliases:
-- benutzerhandbuch/optional-services/#webMethods
+- users-guide/optional-services/#webMethods
 layout: bundle
 outputs:
 - html
@@ -29,7 +29,6 @@ Um die webMethods.io Integration zu abonnieren, gehen Sie folgendermaßen vor:
 
 {{< c8y-admon-info >}}
 Wenn das Symbol nicht verfügbar ist, haben Sie die **webMethods.io Integration** möglicherweise nicht abonniert. Wenn Sie sie abonnieren möchten, öffnen Sie den Application Switcher und klicken Sie auf **MyCloud**. Sie werden zum **{{< sag-cloud >}}**-Portal weitergeleitet, wo sie eine kostenlose Testversion abonnieren können.
-<br><br>![webMethods.io App Switcher My Cloud](/images/benutzerhandbuch/webMethods.io/wmio-appswitcher-mycloud.png)
 {{< /c8y-admon-info >}}
 
 ### Beispiele
@@ -44,4 +43,4 @@ webMethods.io stellt Ihnen auch vorkonfigurierte Workflows zur Verfügung, die s
 
 ![webMethods.io Example Recipe](/images/benutzerhandbuch/webMethods.io/wmio-recipe-salesforce.png)
 
-Weitere Beispiele und technische Anleitungen finden Sie auf der [{{< sag-dev-community >}}-Website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html).
+Weitere Beispiele und technische Anleitungen finden Sie auf der [{{< sag-dev-community >}}-Website](https://techcommunity.softwareag.com/en_en/webmethods-apis-integration-microservices.html). Nähere Informationen zu den Auslösern und Konnektoren von {{< product-c8y-iot >}} in webMethods.io bieten insbesondere [diese Artikel]({{< link-sag-tech-forum >}}tag/webmethods-c8y-connector).

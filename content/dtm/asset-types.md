@@ -1,7 +1,7 @@
 ---
-weight: 20
+weight: 30
 layout: bundle
-title: Asset types
+title: Asset models
 outputs:
 - html
 - json

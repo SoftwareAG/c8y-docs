@@ -39,17 +39,20 @@ To be able to use the tenant functionality, your user needs to have the appropri
 
 ### To view subtenants
 
-Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account, either in a grid or a list.
+Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account.
 
 The **Tenants** page provides the following information on each subtenant:
 
 * The name of the subtenant, for example, company name of your customer.
 * The ID and domain.
-* Optionally, a contact name and phone number.
+* Optionally, a contact name.
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-In the {{< management-tenant >}}, you will also find information on the parent tenant, that is, the tenant that created the listed tenant.
+{{< c8y-admon-info >}}
+In the {{< management-tenant >}}, you also find a column with information on the parent tenant. The parent tenant is the original tenant that created the subtenants that are listed in the table.
+{{< /c8y-admon-info >}}
+
 
 <a name="creating-tenants"></a>
 ### To create a subtenant
@@ -61,49 +64,59 @@ In the {{< management-tenant >}}, you will also find information on the parent t
 2. Provide the following properties:
 
 	<table>
-	<col style="width:20%">
-	<col style="width:80%">
-	<thead>
-	<tr>
-	<th style="text-align:left">Field</th>
-	<th style="text-align:left">Description</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. </td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Name</td>
-	<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Administrator's email</td>
-	<td style="text-align:left">You must provide a valid email address to enable users to reset their password.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Administrator's username</td>
-	<td style="text-align:left">Username for the administrator of this tenant.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Contact name</td>
-	<td style="text-align:left">Optional name of the contact.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Contact phone</td>
-	<td style="text-align:left">Optional phone number of the contact.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Send password reset link as email</td>
-	<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Tenant policy</td>
-	<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
-	</tr>
-	</tbody>
+		<col style="width:20%">
+		<col style="width:80%">
+		<thead>
+			<tr>
+				<th style="text-align:left">Field</th>
+				<th style="text-align:left">Description</th>
+				<th style="text-align:left">Required</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="text-align:left">Domain/ URL</td>
+				<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You can only use one subdomain level. For example, you can only use "acme.{{< domain-c8y >}}" on {{< domain-c8y >}}. You cannot use "mycustomer.acme.{{< domain-c8y >}}". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens (-). It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Name</td>
+				<td style="text-align:left">The name of the tenant, for example, the company's name.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Administrator's email</td>
+				<td style="text-align:left">A valid email address to enable users to reset their password.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Administrator's username</td>
+				<td style="text-align:left">Username for the administrator of this tenant.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Contact name</td>
+				<td style="text-align:left">Name of the contact.</td>
+				<td style="text-align:left">No</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Contact phone</td>
+				<td style="text-align:left">Phone number of the contact.</td>
+				<td style="text-align:left">Yes</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Send password reset link as email</td>
+				<td style="text-align:left">Selected by default. If you deselect this option, you must provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the platform &gt; How to log into the platform</a> for more information on password strength).</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td style="text-align:left">Tenant policy</td>
+				<td style="text-align:left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
+				<td style="text-align:left">No</td>
+			</tr>
+		</tbody>
 	</table>
+
 
 3. Click **Save** to apply your settings.
 
@@ -177,12 +190,11 @@ If data broker connectors are configured for a tenant, suspending this tenant re
 
 	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
 
-2. In the resulting dialog box confirm the suspension by clicking **OK** and entering your password.
-
-As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
+2. In the resulting dialog box confirm the suspension by clicking **Suspend** and then entering your password.
 
 {{< c8y-admon-info >}}
-If you are a service provider, you can suppress this email.
+* As part of suspending the tenant, an email is sent to the email address that was configured for the tenant administrator.
+* If you are a service provider, you can suppress this email.
 {{< /c8y-admon-info >}}
 
 ### Deleting subtenants
@@ -207,19 +219,15 @@ In the **Applications** tab you can view all subscribed applications, subscribe 
 
 #### To subscribe an application
 
-Hover over the applications under **Available applications** at the right and click **Subscribe** on the desired application.
+Hover over the application under **Available applications** at the right and click **Subscribe** on the desired application.
 
 #### To unsubscribe an application
 
-Hover over the applications under **Subscribed applications** at the left and click **Unsubscribe**.
+Hover over the application under **Subscribed applications** at the left and click **Unsubscribe**.
 
 #### Monitoring microservices
 
-For all applications hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols:
-
-<img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
-
-The microservice may be in one of the following states:
+For all applications hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols and may be in one of the following states:
 
 * <img src="/images/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block;"> Microservice is up and running
 * <img src="/images/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block;">&nbsp; Microservice is unhealthy
@@ -235,7 +243,11 @@ The following information is provided:
 * Unhealthy - the number of inactive microservice instances
 * Desired - the number of desired microservice instances
 * Name - microservice instance name
-* Restarts - the number of microservice instance restarts
+* Restarts - the number of microservice instance restarts.
+
+{{< c8y-admon-info >}}
+Information on the microservice instance name and the number of restarts is displayed in case of at least one restart.
+{{< /c8y-admon-info >}}
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
@@ -244,8 +256,6 @@ Further details are provided on the **Status** tab of the respective application
 ### Custom properties
 
 The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-tenant/#usage-and-billing) page.
-
-![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
 #### Limiting subtenant request rate
 
@@ -289,8 +299,6 @@ Even if tracking is enabled for a tenant, users must actively accept the trackin
 
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
-
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 {{< c8y-admon-info >}}
@@ -305,15 +313,13 @@ Tenant options specified in a tenant policy are **not encrypted**. You should no
 
 Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
-
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
 #### To create a tenant policy
 
 1. Click **Add policy** in the top menu bar.
-<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. In the resulting dialog box, enter a name and an optional description.
+<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data > Retention rules](/users-guide/administration#retention-rules).
 4. Optionally, add a tenant option.
 5. Click **Save**.
@@ -353,7 +359,7 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 - Every existing tenant on platform upgrade.
 
 {{< c8y-admon-info >}}
-These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Default subscriptions](#default-subscriptions) below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
+These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Overriding default subscriptions](#default-applications) below or the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:

@@ -18,12 +18,10 @@ At the bottom right of the {{< product-c8y-iot >}} platform UI, click the **Know
 
 ![Knowledge Hub button](/images/users-guide/getting-started/getting-started-knowledge-hub-button.png)
 
-The **Knowlegde Hub** dialog opens, presenting a couple of options in a list.
-
-![Knowledge Hub dialog](/images/users-guide/getting-started/getting-started-knowledge-hub-dialog.png)
+The **Knowlegde Hub** dialog opens, presenting a couple of options in a list, including access to various sessions, resources and communication options.
 
 {{< c8y-admon-info >}}
-The options provided in the **Knowlegde Hub** dialog will frequently be updated so that the sessions, resources and communication options you see in the platform might not match exactly those shown in the image above and described below.
+The options provided in the **Knowlegde Hub** dialog are frequently updated so that the sessions, resources and communication options you see in the platform might not match exactly those described here.
 {{< /c8y-admon-info >}}
 
 ### Sessions
@@ -49,13 +47,9 @@ After following an item and returning to the Knowledge Hub list you will find a 
 
 Below the introductory sessions in the Knowledge Hub list, click **Share feedback** to leave your feedback. You can quickly rate your experience (1-5 stars) and provide further written feedback.
 
-![Knowledge Hub feedback](/images/users-guide/getting-started/getting-started-knowledge-hub-feedback.png)
-
 ### Resources
 
 Click **Resources** to switch to the **Resources** list.
-
-![Knowledge Hub resources](/images/users-guide/getting-started/getting-started-knowledge-hub-resources.png)
 
 Here you can find links to various additional resources like documentation, trainings, developer resources, and release notes.
 

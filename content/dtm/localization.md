@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 50
 layout: bundle
 title: Localization
 outputs:
@@ -9,10 +9,10 @@ helpcontent:
 - label: localization
   title: Localization
   content: "
-  Use the **Localization** feature to add translations for custom properties or asset types, as well as to add custom translations for the existing static text in the DTM application.
+  Use the **Localization** feature to add translations for asset properties or asset models, as well as to add custom translations for the existing static text in the DTM application.
 
 
-  Once you created all custom properties and asset types, their names are added as keys in the **Localization** page. You can add further translations as required.  
+  Once you created all asset properties and asset models, their names are added as keys in the **Localization** page. You can add further translations as required.  
 
 
   To add a new translation, click **Add term** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translation in the respective field.
@@ -21,12 +21,11 @@ helpcontent:
   Note that to use this feature, your tenant must have the Public-options application installed."
 ---
 
-{{< c8y-admon-related >}}
-* [Subscribed applications](/users-guide/administration/#subscribed-applications) for more information on how to access the DTM application in your tenant.
-
-{{< /c8y-admon-related >}}
-
 {{< c8y-admon-req >}}
+* To view the **Localization** page: READ permission for permission type "Application management"
+
+* To add/update/delete localization identifiers: ADMIN permission for permission type "Application management"
+
 * Your user must have a role with READ permission for the permission type "Application management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 * Your tenant must have the Public-options application installed, see details below.
@@ -51,17 +50,15 @@ You must have administrator access to the tenant to install the Public-options a
 {{</c8y-admon-info>}}
 
 <a name=""></a>
-### Localization feature
+### Localization
 
-To use the localization feature, open the **Localization** page in the navigator.
+To open the **Localization** page, navigate to **Configuration > Localization**.
 
-Additionally, if you want to add translations for the [custom property](/dtm/asset-types/#property-library) or [asset types](/dtm/asset-types/#asset-types) created, or if you want to add custom translations for the existing static text in the DTM application, same can be done using the **Localization** feature.
+If you want to add translations for the created [asset properties](/dtm/asset-types/#property-library) or [asset models](/dtm/asset-types/#asset-types), or if you want to add custom translations for the existing static text in the DTM application, use the **Localization** feature.
 
-![Main view localization page](/images/dtm/localization/dtm-localozation-main-page.png)
+![Main view localization page](/images/dtm/localization/dtm-localization-main-page.png)
 
-Initially, the **Localization** page will show a row called **Group** as key. If necessary, add a translation for "Group" according to the explanation above.
-
-Once you create all custom properties and asset types, then all those names are added as keys in the **Localization** page. You can further add the translations as required.
+Once you create an asset property or an asset model, their names are added automatically as keys in the **Localization** page. You can further add the translations as required.
 
 {{< c8y-admon-info>}}
 Note that if an asset property or asset model is present, the corresponding entry on the **Localization** page cannot be deleted. However, if no translation exists for the asset property or asset model, deleting the asset property or asset model will automatically remove the corresponding entry.
@@ -71,19 +68,20 @@ On the other hand, if a translation exists for the asset property or asset model
 
 To add a new translation in the DTM application, you can add the text as key and add the translations as required.
 
+Click **Apply** to apply the changes.
 
 <a name=""></a>
 ### To add new keys for translations
 
 Add new keys and their respective translations using the **Add term** option on the top right.
 
+Fill all the mandatory fields in the **Add term and translations** dialog and click **Save**. The new key is saved including the added translations.
+
+Next, click **Apply** to apply the changes.
+
 
 ![localization-add-term](/images/dtm/localization/dtm-localization-add-term.png)
 
-
-Fill all the mandatory fields in the dialog window and click **Save**. The new key is saved including the added translations.
-
-Next, click **Apply** to apply the changes.
 
 
 <a name=""></a>
@@ -98,7 +96,7 @@ Next, click **Apply** to apply the changes.
 
 or:
 
-1. Click the edit icon in each row to open the dialog window **Edit term translations**.
+1. Click the edit icon in each row to open the **Edit term translation** dialog.
 2. Add or edit the translation for any language.
 3. Click **Save**.
 
@@ -107,11 +105,8 @@ Click **Apply** to apply the changes.
 Once all your translations are done, you can change the language under **User settings** to see the translations in action. For more information see [Getting started > User options and settings > To change user settings](/users-guide/getting-started/#gui-features) in the *User guide*.
 
 
-The added translations are now displayed in the DTM application.
-
-To change the language for the DTM application click the **User settings** option under [User button](/users-guide/getting-started/#gui-features) and select the desired language in the dropdown menu. You need to refresh your screen for the application to display the newly selected language.
-
-
 {{< c8y-admon-info>}}
-The added translations for asset type and custom property will only show up in the **Assets** page. Translations are currently available for English and German.
+The added translations for an asset model or an asset property is seen only in the **Assets** page. 
+
+Translations for other static text of the DTM application are currently available for English and German.
 {{< /c8y-admon-info>}}

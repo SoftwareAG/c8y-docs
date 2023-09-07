@@ -4,15 +4,15 @@ layout: redirect
 weight: 10
 ---
 
- **Version:** 1009.0.18 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 If the widgets that are provided by the platform do not meet your requirements, you might want to create a custom widget and add it to a dashboard.
 
 A typical dashboard looks like this, showing various widgets:
 
-![A dashboard](/images/users-guide/cockpit/cockpit-dashboard-widgets.png)
+![A dashboard](/images/web-sdk/cockpit-dashboard-widgets.png)
 
-This recipe will show how to archive a custom widget to a dashboard with the `HOOK_COMPONENTS`.
+This recipe will show how to add a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
 ### 1. Initialize the example application
 
@@ -20,7 +20,7 @@ As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18
+c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23
 ```
 
 Next, you must install all dependencies. Switch to the new folder and run `npm install`.
@@ -28,7 +28,7 @@ Next, you must install all dependencies. Switch to the new folder and run `npm i
 {{< c8y-admon-info >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1009.0.18` will scaffold an application with the version `10.9.0.18`
+- `c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23` will scaffold an application with the version `10.17.0.23`
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
 - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
@@ -42,7 +42,7 @@ Widgets usually consist of two parts:
 
 That is why you must create two components.
 
-First, create the `demo-widget.component.ts`:
+First, create the *demo-widget.component.ts*:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -60,7 +60,7 @@ export class WidgetDemo {
 The component will show a configured text which is vertically mirrored via CSS.
 You can do anything in it that you can also do in other Angular components.
 
-It must have the `config` input to pass the configuration from the `demo-widget-config.component.ts` which is defined as the following:
+It must have the `config` input to pass the configuration from the *demo-widget-config.component.ts* which is defined as follows:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -70,7 +70,7 @@ import { Component, Input } from '@angular/core';
   template: `<div class="form-group">
     <c8y-form-group>
       <label translate>Text</label>
-      <textarea style="width:100%" [(ngModel)]="config.text"></textarea>
+      <textarea name="text" [(ngModel)]="config.text" style="width:100%"></textarea>
     </c8y-form-group>
   </div>`
 })
@@ -92,7 +92,7 @@ import { ControlContainer, NgForm } from "@angular/forms";
 })
 ```
 
-Combined with the example above, the `demo-widget-config.component.ts` component with enabled configuration validation will be:
+Combined with the example above, the *demo-widget-config.component.ts* component with enabled configuration validation will be:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -103,7 +103,7 @@ import { ControlContainer, NgForm } from "@angular/forms";
   template: `<div class="form-group">
     <c8y-form-group>
       <label translate>Text</label>
-      <textarea style="width:100%" [(ngModel)]="config.text" name="text"></textarea>
+      <textarea name="text" [(ngModel)]="config.text" style="width:100%"></textarea>
     </c8y-form-group>
   </div>`,
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
@@ -115,31 +115,39 @@ export class WidgetConfigDemo {
 
 ### 3. Add the widget to your application
 
-To add the widget you must use the `HOOK_COMPONENTS` and define the created components as `entryComponent`.
+To add the widget you must use the `HOOK_COMPONENTS` and define the created components as `entryComponents`.
 
-To do so, add the following to your `app.module.ts`:
+To do so, add the following to your *app.module.ts*:
 
 ```js
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as NgRouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
-import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES} from '@c8y/ngx-components/upgrade';
 
 // --- 8< changed part ----
-import { CoreModule, RouterModule, HOOK_COMPONENTS } from '@c8y/ngx-components';
+import { CoreModule, RouterModule,HOOK_COMPONENTS } from '@c8y/ngx-components';
 // --- >8 ----
 
-import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
-import { CockpitDashboardModule, ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
+import { DashboardUpgradeModule, UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
+import { SubAssetsModule } from '@c8y/ngx-components/sub-assets';
+import { ChildDevicesModule } from '@c8y/ngx-components/child-devices';
+import { CockpitDashboardModule,ReportDashboardModule } from '@c8y/ngx-components/context-dashboard';
 import { ReportsModule } from '@c8y/ngx-components/reports';
 import { SensorPhoneModule } from '@c8y/ngx-components/sensor-phone';
 import { BinaryFileDownloadModule } from '@c8y/ngx-components/binary-file-download';
+import { SearchModule } from '@c8y/ngx-components/search';
+import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
+import { CockpitConfigModule } from '@c8y/ngx-components/cockpit-config';
+import { DatapointLibraryModule } from '@c8y/ngx-components/datapoint-library';
+import { WidgetsModule } from '@c8y/ngx-components/widgets';
+import { PluginSetupStepperModule } from '@c8y/ngx-components/ecosystem/plugin-setup-stepper';
 
 // --- 8< added part ----
 import { WidgetDemo } from './demo-widget.component';
 import { WidgetConfigDemo } from './demo-widget-config.component';
 // --- >8 ----
+
 
 @NgModule({
   imports: [
@@ -149,14 +157,21 @@ import { WidgetConfigDemo } from './demo-widget-config.component';
     RouterModule.forRoot(),
     NgRouterModule.forRoot([...UPGRADE_ROUTES], { enableTracing: false, useHash: true }),
     CoreModule.forRoot(),
-    AssetsNavigatorModule,
     ReportsModule,
     NgUpgradeModule,
+    AssetsNavigatorModule,
     DashboardUpgradeModule,
     CockpitDashboardModule,
     SensorPhoneModule,
     ReportDashboardModule,
-    BinaryFileDownloadModule
+    BinaryFileDownloadModule,
+    SearchModule,
+    SubAssetsModule,
+    ChildDevicesModule,
+    CockpitConfigModule,
+    DatapointLibraryModule.forRoot(),
+    WidgetsModule,
+    PluginSetupStepperModule
   ],
 
   // --- 8< added part ----
@@ -183,7 +198,6 @@ export class AppModule extends HybridAppModule {
     super();
   }
 }
-
 ```
 
 Explanation of the numbers above:

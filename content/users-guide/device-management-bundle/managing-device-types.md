@@ -28,7 +28,6 @@ The device protocol list shows the following information:
 ### To add a device protocol
 
 1. Click **Add device protocol** in the top menu bar.
- <br>![Add device protocol](/images/users-guide/DeviceManagement/devmgmt-device-protocol-add.png)
 2. Select one of the available device protocol types from the list.
 3. In the resulting dialog box, enter a name and an optional description for the device protocol and click **Create**.
 4. Enter the configuration for the device protocol. The configuration of the device protocol depends on the protocol type. <br>
@@ -42,7 +41,6 @@ The device protocol will be added to the device database.
 To add a device protocol from an existing protocol, perform the following steps:
 
 1. Click **Import** in the top menu bar.
- <br>![Import device protocol](/images/users-guide/DeviceManagement/devmgmt-device-protocol-import.png)
 2. Either select the device protocol to be imported from a list of predefined protocols or load it from a file by browsing.
 3. Provide a name for the new protocol and click **Save**.
 

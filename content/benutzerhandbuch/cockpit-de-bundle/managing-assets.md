@@ -7,10 +7,10 @@ weight: 20
 Klicken Sie im Navigator auf **Gruppen**, um eine Liste aller Gruppen zu sehen. Um eine Gruppe hinzuzufügen, klicken Sie oben rechts auf **Gruppe hinzufügen**.
 
 
-Wählen Sie eine Gruppe aus der Gruppenliste oder aus dem Navigator, um deren Details anzuzeigen, insbesondere alle der Gruppe zugewiesenen Assets. Klicken Sie oben rechts auf **Geräte zuweisen**, um der Gruppe Geräte zuzuweisen.
+Wählen Sie eine Gruppe aus der Gruppenliste oder aus dem Navigator, um ihre Details anzuzeigen, insbesondere alle der Gruppe zugewiesenen Assets. Klicken Sie oben rechts auf **Geräte zuweisen**, um der Gruppe Geräte zuzuweisen.
 
 
-Durch Ziehen und Ablegen von Gruppen oder Geräten im Navigator können Sie Gruppen auf einfache Weise neu strukturieren oder ihnen Geräte zuordnen.
+Sie können auch Gruppen auf einfache Weise neu strukturieren oder ihnen Geräte zuordnen, indem Sie die Gruppen oder Geräte im Navigator an die gewünschte Stelle ziehen.
 
 <a name="assets"></a>
 ### Asset-Hierarchie
@@ -168,8 +168,6 @@ Führen Sie die folgenden Schritte aus, um einer Gruppe Geräte zuzuweisen:
 2. Klicken Sie auf **Geräte zuweisen** rechts in der oberen Menüleiste.
 3. Wählen Sie in der Liste die hinzuzufügenden Geräte aus. Sie können Filter anwenden, um die Anzahl der angezeigten Geräte zu reduzieren.
 4. Klicken Sie auf **Zuweisen**, um die ausgewählten Geräte zuzuweisen.
-
-![Assign devices](/images/benutzerhandbuch/cockpit/cockpit-group-assign.png)
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen und als Kind-Assets auf der Registerkarte **Kind-Assets** angezeigt.
 

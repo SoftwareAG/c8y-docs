@@ -9,9 +9,6 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 #### To configure a new remote device
 
 1. Click **Add endpoint** at the right of the top menu bar.
-
-	![Endpoints](/images/cra/cra-endpoint-add.png)
-
 2. Enter a name for the new endpoint and select the protocol to be used.
 3. Follow the descriptions below for the protocol-specific settings.
 
@@ -93,9 +90,6 @@ An active connection will not be terminated automatically after the endpoint was
 #### To connect to an endpoint
 
 To connect to configured endpoints, select an endpoint in the **Remote access** tab and click **Connect**.
-
-![Connect Endpoint](/images/cra/cra-endpoint-connect.png)
-
 The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area.
 
 ![Telnet connection](/images/cra/cra-connect-telnet.png)
@@ -110,5 +104,3 @@ A host key is a public key of the server which is generated when an SSH server i
 By enabling the auto-saving host key functionality you will no longer need to enter the host key after each connection. Instead, the host key can be automatically saved after the first successfully established connection to a remote access endpoint.
 
 In order to enable the auto-save host key functionality, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Activate the checkbox and then click **Save**.
-
-![Save host key](/images/cra/cra-administration-settings.png)

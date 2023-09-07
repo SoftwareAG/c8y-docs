@@ -33,7 +33,7 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Registerkarten</b></td>
-<td style="text-align:left">Einige Seiten, z. B. die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt und entweder horizontal oder vertikal dargestellt.</td>
+<td style="text-align:left">Einige Seiten, z. B. die Seite für jedes Gerät, sind in mehrere Registerkarten unterteilt und entweder horizontal oder vertikal dargestellt.</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Leiste</b></td>
@@ -45,7 +45,7 @@ Die grundsätzliche Struktur, die in allen {{< product-c8y-iot >}}-Anwendungen v
 </tr>
 <tr>
 <td style="text-align:left"><b>Rechter Einschub</b></td>
-<td style="text-align:left">Klicken Sie auf den kleinen Pfeil rechts in der oberen Leiste, um den rechten Einschub ein- oder auszublenden, der Quick Links zu anderen Anwendungen und relevanter Dokumentation enthält. Standardmäßig ist der rechte Einschub ausgeblendet.</td>
+<td style="text-align:left">Klicken Sie auf das Benutzersymbol rechts in der oberen Leiste, um den rechten Einschub ein- oder auszublenden, der Zugriff auf die Benutzereinstellungen, auf Quick Links zu anderen Anwendungen sowie auf relevante Dokumentation ermöglicht. Standardmäßig ist der rechte Einschub ausgeblendet.</td>
 </tr>
 </tbody>
 </table>
@@ -65,14 +65,9 @@ Die {{< product-c8y-iot >}}-Anwendungen enthalten Tooltips, die angezeigt werden
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-<!-- Screenshot necessary? -->
-
 Der Application Switcher zeigt alle {{< product-c8y-iot >}}-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können [abonnierte Anwendungen](/benutzerhandbuch/administration-de/#subscribed-applications) oder [benutzerdefinierte Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
-Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt:
-
-<img src="/images/benutzerhandbuch/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
-<!-- Screenshot necessary? -->
+Wenn Sie die {{< sag-cloud >}} nutzen, werden im Application Switcher an erster Stelle weitere {{< sag-cloud >}}-Anwendungen, gefolgt von {{< product-c8y-iot >}}-Anwendungen, angezeigt.
 
 <a name="searching-and-filtering"></a>
 ### Such- und Filterfunktionalität
@@ -91,7 +86,7 @@ Unter **Suchergebnisse** werden die Assets angezeigt, die den Suchergebnissen en
 Im Suche-Fenster wird nur eine begrenzte Anzahl von Treffern angezeigt. Sind mehr Treffer vorhanden, müssen Sie zur Asset-Tabelle wechseln, um sämtliche Ergebnisse sehen zu können.
 
 {{< c8y-admon-important title="Wichtig" >}}
-Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
+Zu den Suchergebnissen gehören sämtliche Assets, die den Suchbegriff in einem beliebigen Attribut (Name, Modell, beliebiges Fragment) enthalten, d. h. die Suchergebnisse umfassen nicht nur Assets, deren Namen den Suchkriterien entsprechen.
 {{< /c8y-admon-important >}}
 
 ##### Exakte Übereinstimmung
@@ -114,7 +109,7 @@ Wenn Sie nach Objekten suchen möchten, die exakt eine bestimmte Phrase enthalte
 "Mein Demo Gerät"
 ```
 
-Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen, um z. B. die Stammdaten nach "Mein" und "Demo", aber ohne "Gerät" zu durchsuchen:
+Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen, um z. B. die Stammdaten nach "Mein" und "Demo", aber ohne "Gerät" zu durchsuchen:
 
 ```text
 Mein Demo Gerät
@@ -180,10 +175,10 @@ Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [D
 
 ### Echtzeitverhalten des Navigators
 
-Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h. neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
+Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h. neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
 
 Diese Änderungen werden nur im Navigator der Anwendung angezeigt, in der Sie die Änderungen vorgenommen haben.
 
 **Beispiel**
 
-Wenn Sie in der Device Management-Anwendung die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Gruppe entfernt. Wenn Sie jedoch ein weiteres Fenster mit einer weiteren Device Management-Anwendung geöffnet haben, werden die Änderungen erst nach einer Aktualisierung der Ansicht oder einer weiteren Anfrage (z. B. nach dem Ausklappen einer Gruppe im Navigator) sichtbar.
+Wenn Sie in der Device Management-Anwendung die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Gruppe entfernt. Wenn Sie jedoch ein weiteres Fenster mit einer weiteren Device Management-Anwendung geöffnet haben, werden die Änderungen erst nach einer Aktualisierung der Ansicht oder einer weiteren Anfrage (z. B. nach dem Ausklappen einer Gruppe im Navigator) sichtbar.

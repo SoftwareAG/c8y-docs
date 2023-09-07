@@ -152,5 +152,35 @@ Cumulocity provides documentation for multiple releases, for that you'll have to
 - Deploy using the Jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
 - Deploy the `default` branch using the Jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
 
+## Automatic cherry-picking and labels
+
+Automatic cherry-picking allows you to automatically cherry-pick your PRs to one or multiple release branches.
+It works via the [backport-github-action](https://github.com/sqren/backport-github-action) which uses the [backport cli tool](https://github.com/sqren/backport) internally.
+
+### To enable automatic cherry-picking on a PR
+
+To enable automatic cherry-picking on a PR, add the label `auto-backport` to it.
+Otherwise the responsible GitHub action is not going to be triggered.
+
+To select the target branches you would like to cherry-pick your PR to, add labels of the following structure: `auto-backport-to-<targetBranch>`.
+For example: `auto-backport-to-release/r10.15.0` to cherry-pick it to the branch `release/r10.15.0` or `auto-backport-to-release/r10.14.0` for the branch `release/r10.14.0`.
+
+The feature is triggered by either merging a PR with the `auto-backport` label or by adding the `auto-backport` label to an already closed and merged PR.
+In the latter case, ensure that you first add the labels containing the target branches and then finally the `auto-backport` label.
+Otherwise the automation starts without any target branches.
+
+### Details
+
+The PRs created by this GitHub action will have their heading prefixed with `[GRAFT] [<targetBranch>]`. So, for example, for `release/r10.15.0` as the target branch and `[MTM-47706] fix publishing documentation` as the original PR heading, it results in  `[GRAFT] [release/r1015.0.0] [MTM-47706] fix publishing documentation` as the heading for the backport PR.
+In case an assignee was set for the original PR, the cherry-picked PRs will also receive the same assignee. You must add reviewers manually after the cherry-picked PRs have been created.
+
+The creation of cherry-picked PRs can take a few minutes.
+If you are an assignee of the original PR, you receive an email notification once the cherry-picked PRs have been created.
+The original PR is updated with a comment that contains links to the newly created cherry-picked PRs.
+
+In case of a merge conflict while cherry-picking to a specific release branch, the branch will be skipped. Information on skipped branches is also included in the comment added to the original PR.
+In that case you will have to take care of cherry-picking manually and resolve the conflicts.
+This is not going to influence the other release branches as long as they do not have conflicts.
+
 ---
 © Cumulocity GmbH  2022 + All rights reserved.

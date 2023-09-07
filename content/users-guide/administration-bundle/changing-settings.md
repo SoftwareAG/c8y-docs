@@ -44,7 +44,7 @@ For easier user access management, the above permission(s) are/is included in th
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
 
-![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
+![Authentication settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
 {{< c8y-admon-related >}}
 - [Two-factor authentication](/users-guide/administration/#tfa) for details on the two-factor authentication strategies in {{< product-c8y-iot >}}.
@@ -238,7 +238,7 @@ Users with a "devices" role are excluded from TFA and TOTP. This is also true wh
 
 Click **Application** in the **Settings** menu to change applications settings.
 
-![Default application](/images/users-guide/Administration/admin-settings-application.png)
+![Application settings](/images/users-guide/Administration/admin-settings-application.png)
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant. Whenever the platform is accessed, for example, by domain name only, without mentioning a specific application, the application selected as default application is used as default landing page.
 
@@ -277,11 +277,9 @@ Custom properties are visible to all authenticated users of the tenant, regardle
 
 1. Select the tab for the desired property and click **Add property**.
 
-	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
+2. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list.
 
-1. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list.
-
-1. Additionally, select validation rules for the new property:
+3. Additionally, select validation rules for the new property:
 
 <table>
 <colgroup>
@@ -351,11 +349,9 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 1. Click **SMS provider** in the **Settings** menu.
 
-    ![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
-
-	{{< c8y-admon-info >}}
+{{< c8y-admon-info >}}
 To see the SMS provider configuration, you must have the permission SMS READ. To modify the SMS provider configuration, you must have the permission SMS ADMIN.
-  {{< /c8y-admon-info >}}
+{{< /c8y-admon-info >}}
 
 2. In the **SMS provider** page, select one of the available SMS providers from the **SMS provider** dropdown field. You can start typing to filter items and more easily find your preferred provider.
 
@@ -378,8 +374,6 @@ The following provider settings may currently be specified:
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/users-guide/device-management/#connectivity)
-
-![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
 #### To provide or replace credentials
 

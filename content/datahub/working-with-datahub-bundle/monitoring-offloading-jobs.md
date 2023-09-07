@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 60
 title: Monitoring offloading jobs
 layout: redirect
 helpcontent:
@@ -12,10 +12,10 @@ helpcontent:
     For each offloading pipeline the system keeps a limited history of the last executions."
 ---
 
-Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. {{< product-c8y-iot >}} DataHub provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected.
+Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The {{< product-c8y-iot >}} DataHub UI provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected. For the case of offloading failures, you can also configure the offloading pipeline to raise an alarm as described in [Raising alarms](/datahub/configuring-offloading-jobs/#raising-alarms).
 
 {{< c8y-admon-info >}}
-You need administration or management permissions to monitor the offloading jobs. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+You need administration or management permissions to access the offloading job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 {{< /c8y-admon-info >}}
 
 ### History per offloading pipeline
@@ -41,7 +41,9 @@ The system is configured to keep a limited history of the last job executions.
 
 Click **Reload** to refresh the list.
 
-You can filter the entries by their status or timestamp by using the filter controls at the top. The pagination buttons at the bottom can be used to traverse the history entries.
+You can filter the entries by their status or timestamp by using the filter controls at the top. Click **Apply** to filter entries with the current filter settings. Click **Reset filter** to reset the current filter settings.
+
+The page navigation buttons at the bottom can be used to traverse the history entries.
 
 ### Details of offloading job
 
@@ -83,6 +85,7 @@ In the corresponding list of jobs click on the job you are specifically interest
 | Target table | The folder name in the data lake
 | Target folder | The path to the target table in the data lake
 | Last watermark | The last watermark which indicates the data in the {{< product-c8y-iot >}} collection that has already been processed
+| Data model | The data model, which is either *Time series* or *Standard*, used for a measurements offloading; only available for measuremement pipelines
 
 **Offloading results**
 

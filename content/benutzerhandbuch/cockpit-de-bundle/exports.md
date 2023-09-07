@@ -31,7 +31,6 @@ Die Seite **Exportieren** listet alle Exporte mit Namen, Dateityp und Zeitinterv
 #### So fügen Sie einen Export hinzu
 
 1. Klicken Sie auf **Export hinzufügen** in der oberen Menüleiste.<br>
-	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
 
 2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe.
 
@@ -65,8 +64,6 @@ Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach b
 
 Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
-
 {{< c8y-admon-info >}}
 Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall.
 {{< /c8y-admon-info >}}
@@ -83,27 +80,23 @@ Klicken Sie auf **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie a
 
 Klicken Sie auf **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie auf **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
 
-![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
-
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
 
 Beispiel:
 Ein Export hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und c8y&#95;SpeedMeasurement.speed.value. Die ersten 3 sind vordefinierte Attribute, während es sich bei dem letzten um ein benutzerdefiniertes Attribut handelt. Wenn ein zu exportierender Messwert kein Attribut `c8y_SpeedMeasurement.speed.value` hat, wird er nicht in der Exportdatei erscheinen.
 
-Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
+Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
 
-Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Zum Hinzufügen eines Datenpunkts](#add-data-points).
+Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [So fügen Sie einen Datenpunkt hinzu](#add-data-points).
 
-Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
+Aus Datenpunkten hinzugefügte JsonPath-Ausdrücke werden in Klammerschreibweise gespeichert, um die Flexibilität in Fragment- und Serienbenennungen zu erhöhen (z. B. werden Leerzeichen unterstützt):
 
 ![Measurement added from data point](/images/benutzerhandbuch/cockpit/cockpit-export-adddatapoint-measurement.png)
 
 <a name="schedule-export"></a>
 #### So planen Sie einen Export
 
-Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**.
-
-![Export details](/images/benutzerhandbuch/cockpit/cockpit-export-add-schedule.png)
+Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie unten auf **Zeitplan hinzufügen**.
 
 Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten Export per E-Mail zu erhalten.
 
@@ -111,7 +104,7 @@ Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten 
 
 **1 - Häufigkeit**
 
-Wählen Sie die Frequenz für das Senden des Exports aus der Auswahlliste, d. h. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
+Wählen Sie die Frequenz für das Senden des Exports aus der Auswahlliste, d. h. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
 {{< c8y-admon-info >}}
 Intervalle müssen in Coordinated Universal Time (UTC) angegeben werden.
@@ -138,15 +131,11 @@ Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
 
 Der Exportplan wird zu den Exportdetails hinzugefügt.
 
-![Scheduled exports list](/images/benutzerhandbuch/cockpit/cockpit-export-schedule-list.png)
-
 ##### Migration geplanter Exports
 
-In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in [Apama Streaming Analytics](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt.
+In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in [Streaming Analytics](/streaming-analytics/overview-streaming-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt.
 
 Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert.
-
-![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
 
 {{< c8y-admon-important title="Wichtig" >}}
 Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.

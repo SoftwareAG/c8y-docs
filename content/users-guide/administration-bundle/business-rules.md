@@ -39,8 +39,6 @@ Expand an alarm mapping to edit it. You may modify the description and the alarm
 Refresh the list to discard any changes without saving.
 {{< /c8y-admon-info >}}
 
-<img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
-
 #### To delete an alarm mapping
 
 To delete an alarm mapping, hover over it and click the delete icon which appears on hovering over the row.

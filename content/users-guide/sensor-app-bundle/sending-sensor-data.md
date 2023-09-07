@@ -7,7 +7,7 @@ layout: redirect
 
 Measurements from your smartphone, OBD devices and connected Bluetooth sensors are sent to {{< product-c8y-iot >}} automatically as soon as the device is connected or started and as long as the app is in foreground. All measurements of the smartphone sensors are displayed automatically in the device dashboard in {{< product-c8y-iot >}}.
 
-![Device dashboard](/images/users-guide/csa/csa-device-dashboard.jpg)
+![Device dashboard](/images/users-guide/csa/csa-device-dashboard.png)
 
 Various widgets may be used to display the data points. If your smartphone has a gyroscope sensor, a 3D rotation widget depicts the current sensor data for your smartphone's orientation.
 

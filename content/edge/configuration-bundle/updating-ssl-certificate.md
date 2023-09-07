@@ -6,6 +6,8 @@ layout: redirect
 
 You must always have a valid SSL certificate for your domain name that is configured. If the validity of the certificate expires or if you have changed your domain name, you must upload or generate a new SSL certificate. You can upload the certificate using the GUI and REST APIs.
 
+### Updating the SSL certificate using the GUI
+
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
 	- Username: management/<*Edge admin username*>

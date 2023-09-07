@@ -9,7 +9,9 @@ The microservice-based data broker is an optional component of {{< product-c8y-i
 The bundle for installing the Messaging Service and the microservice-based data broker comes as a `.tgz` file which contains the Messaging Service and data broker files, an install script and a digital signature. This bundle is unpacked, the signature verified and the install script executed by another script that is part of the standard Edge installation. The bundle can be downloaded from the [Software AG Empower server](https://empower.softwareag.com/). The bundle is named "Cumulocity IoT Data Broker Edge".
 
 {{< c8y-admon-req >}}
-Ensure that [microservice hosting feature is enabled](https://cumulocity.com/guides/edge/configuration/#configuring-microservices) for Edge as both the Messaging Service and data broker run as Kubernetes pods. Running microservices on a basic Edge installation requires the number of CPU cores to be increased from 2 to 4 and the RAM to be increased from 6GB to 8GB. Running the Messaging Service and data broker requires an extra 4GB of RAM on top of this.
+Ensure that [microservice hosting feature is enabled](/edge/configuration/#configuring-microservices) for Edge as both the Messaging Service and data broker run as Kubernetes pods. Running microservices on a basic Edge installation requires the number of CPU cores to be increased from 2 to 4 and the RAM to be increased from 6GB to 8GB. Running the Messaging Service and data broker requires an extra 4GB of RAM on top of this.
+
+The Messaging Service microservice uses API version 1. To install the Messaging Service on {{< product-c8y-iot >}} Edge version 10.15, you must subscribe the Edge tenant to the **Feature-privileged-microservice-hosting** application before uploading the Messaging Service microservice with API version 1. For more information, see [Deploying microservices with a lower manifest version](/edge/configuration/#deploying-microservices-with-a-lower-manifest-version).
 
 {{< /c8y-admon-req >}}
 
@@ -58,6 +60,6 @@ tigera-operator          tigera-operator-76bbbcbc85-6clrf                       
 ```
 The key pods that should be running are `pulsar-bookie-0`, `pulsar-broker-0`, `pulsar-zookeeper-0` and `databroker-agent-server`, with a suffix for the pod name specific to the installation. It may take a few minutes for the Kubernetes pods to settle into a running state after the installation has finished.
 
-For more information on installing and troubleshooting the Messaging Service see the *Messaging Service Installation & operations guide*.
+For more information on installing and troubleshooting the Messaging Service see the [Messaging Service Installation & operations guide](https://empower.softwareag.com/sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Messaging_Service_Installation_and_Operations_guide.pdf).
 
 For more information on configuring and using the microservice-based data broker, see [Enterprise tenant > Microservice-based data broker](/users-guide/enterprise-tenant/#ms-data-broker) in the *User guide*.

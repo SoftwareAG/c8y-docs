@@ -74,7 +74,7 @@ For this anomaly detection scenario, we need to use Apama streaming analytics. W
 
 We create an EPL-based monitor file and upload it to {{< product-c8y-iot >}}. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice, and raising an alarm when an anomaly is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps](/apama/analytics-introduction/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
+Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device. Save your changes and upload this monitor file to your tenant. See [Deploying EPL apps as single \*.mon files with the Streaming Analytics application](/streaming-analytics/epl-apps/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 
     using com.apama.correlator.Component;
     using com.apama.cumulocity.Alarm;

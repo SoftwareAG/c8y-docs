@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-**Version:** 1013.0.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
+**Version:** 1016.274.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 Unit testing is an essential part of every development process.
 Since version 10.13.0.0, all new `c8ycli` scaffolded applications include the unit test framework [Jest](https://jestjs.io/) by default.
@@ -15,7 +15,7 @@ This tutorial shows you how to write and verify your first unit test.
 You need an application, for example, the empty default application:
 
 ```js
-c8ycli new my-app application -a @c8y/apps@1013.0.62
+c8ycli new my-app application -a @c8y/apps@1016.274.0
 ```
 
 However, any application supports unit tests in the same way. Next, you must install all dependencies.
@@ -24,9 +24,9 @@ Switch to the new folder and run `npm install`.
 
 {{< c8y-admon-info >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
- - `c8ycli new my-cockpit cockpit -a @c8y/apps@1013.0.62` will scaffold an application with the version `1013.0.62`.
- - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag.
- - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+ - `c8ycli new my-app application -a @c8y/apps@1016.274.0` will scaffold an application with the version `10.16.274.0`.
+ - `c8ycli new my-app application -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag.
+ - `c8ycli new my-app application -a @c8y/apps@next` will scaffold an application with the latest beta release.
 {{< /c8y-admon-info >}}
 
 ### 2. Add a component
@@ -57,14 +57,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule as ngRouterModule } from '@angular/router';
 import { CoreModule, BootstrapComponent, RouterModule } from '@c8y/ngx-components';
 
-// --- 8< changed part ----
-import { TestComponent } from ### 2. Adding a component
+// --- 8< added part ----
+import { TestComponent } from "./test.component";
+// ---- >8 ----
+
+@NgModule({
+  imports: [
+    BrowserAnimationsModule,
+    RouterModule.forRoot(),
     ngRouterModule.forRoot([], { enableTracing: false, useHash: true }),
     CoreModule.forRoot()
   ],
   bootstrap: [BootstrapComponent],
 
-  // --- 8< changed part ----
+  // --- 8< added part ----
   declarations: [
     TestComponent
   ]

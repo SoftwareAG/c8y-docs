@@ -21,6 +21,16 @@ On this community, you can:
 * Use the online discussion forums, moderated by {{< company-sag >}} professionals, to ask questions, discuss best practices, and learn how other customers are using {{< company-sag >}} technology.
 * Link to external websites that discuss open standards and web technology.
 
+### Cumulocity IoT YouTube channel
+
+Visit the [{{< product-c8y-iot >}} YouTube channel](https://www.youtube.com/@CumulocityIoT) for more content about the platform. Here you have access to:
+
+* A tour of the platform.
+* Getting started with {{< product-c8y-iot >}}.
+* The IoT Developer Event Series.
+* Product demos, additional resources, and more.
+
+To learn about [what's new in {{< product-c8y-iot >}}](https://www.youtube.com/@CumulocityIoT/playlists?view=50&sort=dd&shelf_id=6), our YouTube channel also offers content which covers the new and enhanced functionality available in a specific product release.
 
 ### Product support website
 
@@ -44,9 +54,3 @@ If you have any questions, you can find a local or toll-free number for your cou
 ### Cloud environments status page
 
 For {{< product-c8y-iot >}} cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.{{< domain-c8y >}}/](http://status.{{< domain-c8y >}}/).
-
-### Releases delta training
-
-To learn what's new in {{< product-c8y-iot >}} or in a particular area of the platform we offer various eLearning delta trainings on the [{{< company-sag >}} {{< learning-portal >}}]({{< link-sag-training-delta >}}) which cover the new and enhanced functionality available in a specific product release:
-
-![Product training](/images/about/about-product-training.png)

@@ -50,9 +50,7 @@ This warning message shows up if a provided profile ID, username or password is 
 
 <img src="/images/device-protocols/lora-actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
 <br>
-
 To resolve this, provide correct credentials and try again.
-
 #### Authentication to the Actility platform failed. Check if the base URL is correct.
 
 To resolve this, provide a correct URL and try again.

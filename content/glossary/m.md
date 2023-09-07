@@ -8,7 +8,7 @@ section:
 
 ### Maintenance release {#maintenance-release}
 
-{{< company-c8y >}} provides Maintenance releases for supported {{< product-c8y-iot >}} [Yearly releases](/glossary/y/#yearly_release). A Maintenance release contains fixes and improvements for a Yearly release but no new features.
+{{< company-c8y >}} provides Maintenance releases for supported {{< product-c8y-iot >}} [Yearly releases](/glossary/y/#yearly-release). A Maintenance release contains fixes and improvements for a Yearly release but no new features.
 
 
 ### Managed objects {#managed-objects}

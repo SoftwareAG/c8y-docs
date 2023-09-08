@@ -10,7 +10,7 @@ A key feature of {{< product-c8y-iot >}} Edge is the ability to operate the {{< 
 using your domain. These will use *\<subtenantName\>.iot.mycompany.com* as their host names.
 
 {{< c8y-admon-important >}}
-Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).
 {{< /c8y-admon-important >}}
 
 ### Changing the domain name using the GUI {#changing-the-domain-name-using-the-gui}

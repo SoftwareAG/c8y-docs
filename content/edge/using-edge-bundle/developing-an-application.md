@@ -28,4 +28,4 @@ On Linux platforms
 export NODE_EXTRA_CA_CERTS=<path-to-the-certificate>/certificate.pem
 ```
 
- For more information on the {{< product-c8y-iot >}} web application development, see the [Web SDK guide](/web/overview/).
+ For more information on the {{< product-c8y-iot >}} web application development, see [Web SDK](/web/overview/).

@@ -16,4 +16,4 @@ section:
 
 ### Restoring an Edge appliance in VMware ESXi {#restoring-an-edge-appliance-in-vmware-esxi}
 
-Restoring an Edge appliance from an OVF file is similar to deploying a virtual machine in VMware ESXi. To restore an Edge appliance, perform the steps as described in [Setting up an Edge appliance on VMware ESXi](/edge/setting-up-edge/#setting-up-esxi).
+Restoring an Edge appliance from an OVF file is similar to deploying a virtual machine in VMware ESXi. To restore an Edge appliance, perform the steps as described in [Example setup for VMware ESXi](/edge/edge-infrastructure/#setting-up-esxi).

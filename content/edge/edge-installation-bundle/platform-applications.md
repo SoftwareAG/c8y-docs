@@ -1,9 +1,9 @@
 ---
 weight: 30
-title: Standard platform applications
+title: Available applications
 layout: bundle
 section:
   - edge_server
 ---
 
-See [Standard platform applications](/users-guide/getting-started/#platform-applications) in the *User guide*.
+See [Available applications](/get-familiar-with-the-ui/available-applications/).

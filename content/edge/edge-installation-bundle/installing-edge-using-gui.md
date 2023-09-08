@@ -54,7 +54,7 @@ Do not use the root credentials to perform any task. The root credentials must b
 
    For example, "myown.iot.com". Here, you must have the {{< product-c8y-iot >}} Edge license for the domain name **iot.com** or **myown.iot.com**.
 
-   The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+   The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).
 
 10. Provide the {{< product-c8y-iot >}} Edge license file associated with your domain name below **Licence file**.
 
@@ -73,5 +73,5 @@ If you still see the installation in progress, refresh the browser.
 Next, click **Open {{< product-c8y-iot >}} Edge**.
 
 {{< c8y-admon-important >}}
-In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Configuring password reset](/users-guide/enterprise-tenant/#password-reset) and [Configuring email server](/users-guide/enterprise-tenant/#email-server) in the *User guide*.
+In case you need to reset the password, you must configure the "reset password" template and email server settings to receive the password reset email. For more information, see [Password reset](/enterprise-tenant/customization/#password-reset) and [Email server](/enterprise-tenant/customization/#email-server).
 {{< /c8y-admon-important >}}

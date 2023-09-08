@@ -37,7 +37,7 @@ The limitations could be the following:
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  
 For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* The [Streaming Analytics application](/streaming-analytics/overview-streaming-analytics/) does not support mobile or touch devices.
+* The [Streaming Analytics application](/streaming-analytics/overview-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
 <a name="domain"></a>
@@ -79,7 +79,7 @@ If the ping is successful, the DNS resolution is working properly.
 
 Using &#60;domain_name>, the Edge appliance can be connected from the host operating system (operating system which is hosting the Edge appliance). If you want to connect the Edge appliance within your LAN, which is outside of the host operating system, you must do the following:
 
-* On VMware platforms, port forwarding must be enabled as mentioned in [Port forwarding on a VMware platform](/edge/setting-up-edge/#vmware-port-forwarding).
+* On VMware platforms, port forwarding must be enabled as mentioned in [Port forwarding on a VMware platform](/edge/edge-infrastructure/#vmware-port-forwarding).
 * The DNS entry must be added in your LAN's DNS server/Name server. The DNS entry must have the domain name and the IP address of the host operating system. Note that this is not the Edge appliance IP.
 
 #### To access the Edge appliance {#to-access-the-edge-appliance}
@@ -110,7 +110,7 @@ If you are logging in for the first time, you will see a cookie banner at the bo
 <br>
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default on the Edge appliance instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+The cookie banner is turned on by default on the Edge appliance instances. This feature can be configured, see [Branding](/enterprise-tenant/customization/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -121,12 +121,12 @@ The cookie banner is turned on by default on the Edge appliance instances. This 
 * Click **See also our Privacy Notice** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
 
 {{< c8y-admon-info >}}
-If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
+If you have enabled functional cookies you can opt-out from the product experience tracking later on via the **User settings** dialog, see [User options and settings](/get-familiar-with-the-ui/user-settings/).
 {{< /c8y-admon-info >}}
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as the Edge appliance requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
+Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -138,10 +138,10 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the “reset password” template and email server settings in the Edge appliance. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
+To reset your password, you must first configure the “reset password” template and email server settings in the Edge appliance. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
 
-For information about resetting the password, see [How to reset your password](/users-guide/getting-started/#how-to-reset-your-password) in the *User guide*.
+For information about resetting the password, see [How to reset your password](/get-familiar-with-the-ui/platform-access/#to-reset-your-password).
 
 ### How to access pages using URLs {#how-to-access-pages-using-urls}
 
-For information about accessing pages using the URLs, see [How to access pages using URLs](/users-guide/getting-started/#how-to-access-pages-using-urls) in the *User guide*.
+For information about accessing pages using the URLs, see [How to access pages using URLs](/get-familiar-with-the-ui/platform-access/#url).

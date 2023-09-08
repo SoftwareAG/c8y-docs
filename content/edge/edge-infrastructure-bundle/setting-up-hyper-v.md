@@ -12,8 +12,8 @@ To set up Hyper-V, you must first enable Hyper-V on your system, and  create Net
 
 You can create a NAT adapter using two ways:
 
-* [Using default settings](/edge/setting-up-edge/#creating-a-nat-adapter-using-default-settings)  
-* [Using user-defined settings](/edge/setting-up-edge/#creating-a-nat-adapter-using-user-defined-settings)
+* [Using default settings](#creating-a-nat-adapter-using-default-settings)  
+* [Using user-defined settings](#creating-a-nat-adapter-using-userdefined-settings)
 
 {{< c8y-admon-info >}}
 Run all the commands in Windows PowerShell with administrative privileges.

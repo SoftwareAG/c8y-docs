@@ -116,7 +116,7 @@ The hosted microservices are captured at *cumulocity-single-node* path in the ar
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
 
 {{< c8y-admon-important >}}
-The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the *User guide*.
+The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Email server](/enterprise-tenant/customization/#email-server).
 {{< /c8y-admon-important >}}
 
 Following are the available keys used in the configuration file:

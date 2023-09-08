@@ -6,4 +6,4 @@ section:
   - edge_server
 ---
 
-See [User options and settings](/users-guide/getting-started/#user-settings) in the *User guide*.
+See [User options and settings](/get-familiar-with-the-ui/user-settings/).

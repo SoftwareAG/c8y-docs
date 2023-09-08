@@ -17,4 +17,4 @@ section:
 
 ### Restoring an Edge appliance in Hyper-V {#restoring-an-edge-appliance-in-hyperv}
 
-Restoring an Edge appliance is similar to deploying a virtual machine in Hyper-V. To restore an Edge appliance, perform the steps as described in [Setting up an Edge appliance on Hyper-V](/edge/setting-up-edge/#setting-up-the-edge-appliance-in-hyper-v).
+Restoring an Edge appliance is similar to deploying a virtual machine in Hyper-V. To restore an Edge appliance, perform the steps as described in [Example setup for Hyper-V](/edge/edge-infrastructure/#setting-up-hyper-v).

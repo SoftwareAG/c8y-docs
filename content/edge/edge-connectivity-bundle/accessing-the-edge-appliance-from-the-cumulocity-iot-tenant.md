@@ -13,13 +13,13 @@ The {{< product-c8y-iot >}} Cloud Remote Access allows you to remotely access th
 To use Cloud Remote Access, you need:
 
 * "Remote access" permission granted to the tenant user.
-* A {{< product-c8y-iot >}} tenant subscribed to the Cloud Remote Access microservice. To get the subscription, contact [{{< company-sag >}} support](https://cumulocity.com/guides/welcome/contacting-support/).
+* A {{< product-c8y-iot >}} tenant subscribed to the Cloud Remote Access microservice. To get the subscription, contact [{{< company-sag >}} support](/additional-resources/contacting-support/).
 
 #### Supported protocols {#supported-protocols}
 
 The following protocols are supported to connect to the Edge appliance through remote access from the {{< product-c8y-iot >}} tenant:
 
-* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/edge/remote-connectivity/#accessing-the-edge-appliance-remotely-through-vnc).
+* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/edge/edge-connectivity/#accessing-the-edge-appliance-remotely-through-vnc).
   * Shares the desktop of the remote device
   * Mouse and keyboard for interaction
 * Secure Shell (SSH)

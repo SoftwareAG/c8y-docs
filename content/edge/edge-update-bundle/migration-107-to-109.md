@@ -8,16 +8,16 @@ This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10
 
 ### Before you begin {#before-you-begin}
 
-- Import the Edge 10.9 appliance, see [Configuring the Edge infrastructure](/edge/setting-up-edge/) for further information.
-- Configure the network and complete the installation procedure on your Edge 10.9 appliance. For details see [Installing {{< product-c8y-iot >}} Edge](/edge/installation/).
+- Import the Edge 10.9 appliance, see [Configuring the Edge infrastructure](/edge/edge-infrastructure/) for further information.
+- Configure the network and complete the installation procedure on your Edge 10.9 appliance. For details see [Installing {{< product-c8y-iot >}} Edge](/edge/edge-installation/).
 
 {{< c8y-admon-important >}} You can have both the Edge 10.7 and the Edge 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from the IP address of the Edge 10.7 appliance.{{< /c8y-admon-important >}}
 
 For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
-- [Operating Cumulocity IoT Edge > Upgrading on VMware ESX](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi),
-- [Operating Cumulocity IoT Edge > Upgrading on VMware Workstation Player](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation),
-- [Operating Cumulocity IoT Edge > Upgrading on Hyper-V](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v)
+- [Upgrading on VMware ESX](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_esxi)
+- [Upgrading on VMware Workstation Player](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_vmware_workstation)
+- [Upgrading on Hyper-V](https://{{< domain-c8y >}}/guides/10.7.0/edge/operation/#upgrade_hyper_v)
 
 in the *10.7.0 Cumulocity IoT Edge guide*.
 
@@ -227,7 +227,7 @@ To enable the microservice hosting feature, the {{< management-tenant >}} user m
 
 If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+For more information about configuring the Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/).
 
 ### Sample scripts to automate the migration {#sample-scripts-to-automate-the-migration}
 
@@ -322,4 +322,4 @@ To enable the microservice hosting feature, the {{< management-tenant >}} user m
 
 If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/configuration/).
+For more information about configuring the Edge 10.9 appliance, see [Configuring Cumulocity IoT Edge](/edge/edge-configuration/).

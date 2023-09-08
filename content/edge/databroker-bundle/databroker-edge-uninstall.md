@@ -6,7 +6,7 @@ layout: redirect
 
 The bundle for the Messaging Service and data broker microservice does not have an uninstall command. 
 If a mistake is made, or and installation fails, the bundle components must be manually uninstalled.
-Once manually uninstalled, installation can be reattempted.
+Once manually uninstalled, the installation can be reattempted.
 
 #### To manually uninstall:
 1. Login to the edge machine using SSH.

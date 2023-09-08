@@ -9,7 +9,8 @@ If a mistake is made, or and installation fails, the bundle components must be m
 Once manually uninstalled, the installation can be reattempted.
 
 #### To manually uninstall:
-1. Login to the edge machine using SSH.
+1. Login to {{< product-c8y-iot >}} Edge using SSH.
+   
 2. Uninstall the Pulsar helm chart.
 ```shell
 sudo helm uninstall pulsar -n c8y-messaging-service
@@ -24,7 +25,10 @@ watch sudo kubectl get pods -n c8y-messaging-service
 ```shell
 sudo kubectl delete pvc -n c8y-messaging-service --all
 ```
-5. Find the names of and delete Pulsar's persistent volumes.
+5. Find the names of the persistent volumes used by the Pulsar components.
+   
+   Here the GREP command is used to filter the output. The names are in the output's leftmost column.
+
 ```shell
 sudo kubectl get pv | grep pulsar
 journal0     2Gi        RWO            Retain           Released    c8y-messaging-service/pulsar-bookie-journal-pulsar-bookie-0      local-storage            3h

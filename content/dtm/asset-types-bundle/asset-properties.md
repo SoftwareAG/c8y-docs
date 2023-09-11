@@ -17,12 +17,13 @@ helpContent:
 
 Asset properties are the parameters that define an [asset model](#asset-models). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
 
+Default properties are available once you login into the tenant. See [Default properties](/dtm/default-properties/#characteristics-of-default-properties) to know the list of properties that are available.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
 
 - To add/update/delete/import asset properties: CREATE/ADMIN permission for permission type "Inventory"
-{{< /c8y-admon-req >}}
+  {{< /c8y-admon-req >}}
 
 ### To create an asset property {#to-create-an-asset-property}
 
@@ -99,26 +100,25 @@ To further define the asset property you can select one of the six following opt
 
 Select **Text** if the asset property value is a string, for example, a wind turbine manufacturer name. Enter a valid text.
 
- If you select **Text**, the following fields appear:
+If you select **Text**, the following fields appear:
 
-*	**Min Length**:
+- **Min Length**:
 
 Enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
 If not selected, no minimum length criteria is set for this asset property during the asset creation.
 
-* **Max Length**:
+- **Max Length**:
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-
-* **RegExp**:
+- **RegExp**:
 
 Enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
 
 **Example:**
 
-If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator  codes have to start with the prefix “MCGEN”.
+If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]\*$", all generator codes have to start with the prefix “MCGEN”.
 
 #### Default value {#default-value}
 
@@ -130,7 +130,7 @@ The default value has to adhere to all validations provided beforehand. If you s
 
 **Example:**
 
-If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]\*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
 #### Number {#number}
 
@@ -138,7 +138,7 @@ For this type you must provide a numeric value for the asset creation, for examp
 
 The type **Number** contains the following fields for additional information:
 
-* **Minimum**:
+- **Minimum**:
 
 If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot be lower or less than the minimum provided.
 
@@ -148,8 +148,7 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 
 {{< /c8y-admon-info>}}
 
-
-* **Maximum**:
+- **Maximum**:
 
 If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
 
@@ -159,9 +158,8 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 
 {{< /c8y-admon-info>}}
 
-
-* **Default value**:
-Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
+- **Default value**:
+  Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
 
@@ -216,7 +214,6 @@ If selected, enter the allowed file types separated by a comma in the **Allowed 
 If there is a file size limit set for the tenant, you see the limit along with the field name for **Max file size in MB**.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
 
-
 {{< /c8y-admon-info>}}
 
 **Example:**
@@ -260,11 +257,11 @@ A simple asset property consists of a single key value pair. This option is set 
 
 In the **Asset properties** simple asset properties are listed with their type.
 
- **Example:**
+**Example:**
 
- If the asset property is called "Tower height", you use the key "tower_height" with the Default value of "70" (see image below).
+If the asset property is called "Tower height", you use the key "tower_height" with the Default value of "70" (see image below).
 
- ![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
+![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
 
 #### Complex asset property {#complex-asset-property}
 
@@ -274,7 +271,7 @@ In the **Asset properties** complex asset properties are listed with the label "
 
 You see the preview of data model on the right side of properties section.
 
- **Example:**
+**Example:**
 
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
@@ -304,10 +301,8 @@ To import asset properties into the DTM application, follow the steps below:
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant.
 3. Click **Next** to preview the asset properties before importing them.
 4. Click **Import** to import the asset properties.
-4. Alternatively, Click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
-5. View newly imported asset properties in the **Asset properties** page.
-
-
+5. Alternatively, Click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
+6. View newly imported asset properties in the **Asset properties** page.
 
 ![Import asset properties](/images/dtm/custom-property/dtm-property-library-import.png)
 

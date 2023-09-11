@@ -12,28 +12,33 @@ Alternatively, see [Creating assets via bulk import](/dtm/asset-hierarchy/#creat
 
 To add an asset via the UI:
 
-1. Click **Add asset** in the top right corner of the **Assets** page.
+1.  Click **Add asset** in the top right corner of the **Assets** page.
 
-2. In the **New asset** page, select the desired asset model from the **Choose asset model** dropdown menu on the top left.
+2.  In the **New asset** page, select the desired asset model from the **Choose asset model** dropdown menu on the top left.
 
-    {{< c8y-admon-info>}}
+{{< c8y-admon-info>}}
 The asset models here are root asset models.
 They are labeled "START NODE" in the hierarchy.
 Root asset models are asset models which are at the top of hierarchy and don't have any parent asset model above them.
-    {{< /c8y-admon-info>}}
+{{< /c8y-admon-info>}}
 
-3. The asset hierarchy is shown in the left section and the respective dialog window is shown on the right. Fill out the fields labeled "required".
+3.  The asset hierarchy is shown in the left section and the respective dialog window is shown on the right. Fill out the fields labeled "required".
 
-4. Optionally, add a description or [assign devices](#to-assign-devices-to-an-asset) to your root asset.
+4.  Optionally, add a description or [assign devices](#to-assign-devices-to-an-asset) to your root asset.
 
-5. To add more than one root asset, click **Add**.
+5.  To add more than one root asset, click **Add**.
 
-6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
+6.  Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
 
-    {{< c8y-admon-info>}}
- The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
- When creating an asset you must provide the values for all asset properties.
-    {{< /c8y-admon-info>}}
+For an asset with a location property click Choose on Map in the section to set the values for latitude and longitude using map view. Click the full screen icon at the top right corner of the map to view it in full screen.
+
+The marker is positioned at the default value set in the location property. If no defualt value is set,the marker is positioned at D&uuml;sseldorf, Germany. Click or drag the marker to the preferred position to select the value for latitude and longitude. The marker on the map is positioned at an approximated location when either latitude or longitude value is missing. To close the map view, click close above the map.
+
+{{< c8y-admon-info>}}
+The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.<br>
+The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
+When creating an asset you must provide the values for all asset properties.
+{{< /c8y-admon-info>}}
 
 7. Click **Next** to reach the next hierarchy level of your **asset hierarchy** and fill out the fields as necessary for your asset. Repeat for all asset hierarchy levels.
 
@@ -105,7 +110,7 @@ For a wind turbine rotor with three blades, you first create the asset hierarchy
 
 1. Click **Add** at the bottom to add more blade assets.
 
-    ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
+   ![Adding multiple assets](/images/dtm/assets/dtm-assets-add-multiple-instance.png)
 
 2. To delete an added asset template, click the delete icon at the top right.
 
@@ -142,7 +147,7 @@ To add subassets to an asset open the **Asset tree** tab.
 
 2. The root asset is displayed with the label "parent node". The asset hierarchy displayed below, is a subset of the root asset hierarchy.
 
-    ![Subasset](/images/dtm/assets/dtm-assets-add-child-asset.png)
+   ![Subasset](/images/dtm/assets/dtm-assets-add-child-asset.png)
 
 **Example:**
 

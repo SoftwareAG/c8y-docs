@@ -100,7 +100,7 @@ This category contains the following blocks:
 <p></p>
 The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window. The Reset input clears the window contents.
 <p></p>
-If a window is configured, the block will use a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.</p>
+If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.</p>
 
 
 #### Parameters {#crossing-counter-parameters}

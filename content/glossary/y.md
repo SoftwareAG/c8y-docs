@@ -1,6 +1,6 @@
 ---
 weight: 170
-title: Y
+title: "Y"
 layout: bundle
 section:
   - getting_started

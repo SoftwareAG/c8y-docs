@@ -9,7 +9,7 @@
 /content/device-management-application/ @Oezge-Akin @rssag
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com @rssag
-# 'block-reference-bundle' is automatically and frequently committed to - don't bother the streaming analytics CODEOWNERS
-/content/streaming-analytics/block-reference-bundle/
+# 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
+/content/streaming-analytics/block-reference-bundle/ @kailol-sag
 
 /content/edge/ @sharath-jk @BeateRixen marlene.windel@softwareag.com @rssag

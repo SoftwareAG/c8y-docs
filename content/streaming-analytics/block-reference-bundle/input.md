@@ -83,7 +83,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 <tbody>
 <tr>
 <th scope="row">Alarm Type</th>
-<td><span>The alarm type for which the block will listen.</span>
+<td><span>The alarm type the block is listening for.</span>
 </td>
 <td><span>string</span>
 </td>
@@ -100,7 +100,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 </tr>
 <tr>
 <th scope="row">Severity</th>
-<td><span>The severity of the alarm. If not specified, the block will listen for all alarm severities.</span>
+<td><span>The severity of the alarm. If not specified, the block listens for all alarm severities.</span>
 </td>
 <td><span><p>Option - one of:</p>
 <ul>
@@ -115,7 +115,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 </tr>
 <tr>
 <th scope="row">Alarm Status</th>
-<td><span>The status of the alarm. If not specified, the block will listen for alarms with any status.</span>
+<td><span>The status of the alarm. If not specified, the block listens for alarms with any status.</span>
 </td>
 <td><span><p>Option - one of:</p>
 <ul>
@@ -183,7 +183,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 `apama.analyticskit.blocks.cumulocity.DeviceEventInput`
 
 <p>Receives <tt>Event</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</p>
-<p>If the Ignore Timestamp parameter is set, the block ignores the timestamp of the event and processes the events as they are received, otherwise it drops old events.
+<p>If the Ignore Timestamp parameter is set, the block ignores the timestamp of the event and processes the events as they are received. Otherwise, it drops old events.
 <p></p>
 The parameters that define the input stream of the block are "Input Source" and "Event Type". If this block is configured with the same "Input Source" and "Event Type" parameters as an Event Output block in another model, then a connection between the models is formed, as each block refers to the same stream of <tt>Event</tt> objects.
 <p></p>
@@ -221,7 +221,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 </tr>
 <tr>
 <th scope="row">Event Type</th>
-<td><span>The event type for which the block will listen.</span>
+<td><span>The event type the block is listening for.</span>
 </td>
 <td><span>string</span>
 </td>
@@ -330,7 +330,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 <tr>
 <th scope="row">Property Name</th>
 <td><span>The name of the property for which to listen.</span>
-<p>The <tt>ManagedObject</tt> object must have a property of this name otherwise, it will be ignored. If not set, the objects are not filtered - every update will generate a pulse output with all of the properties from the <tt>ManagedObject</tt>.</p>
+<p>The <tt>ManagedObject</tt> object must have a property of this name. Otherwise, it is ignored. If not set, the objects are not filtered. Every update generates a pulse output with all of the properties from the <tt>ManagedObject</tt>.</p>
 </td>
 <td><span>string</span>
 </td>
@@ -381,7 +381,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 `apama.analyticskit.blocks.cumulocity.DeviceMeasurementInput`
 
 <p>Receives <tt>Measurement</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</p>
-<p>If the Ignore Timestamp parameter is set, the block ignores the timestamp of the measurement and processes the measurements as they are received, otherwise it drops old measurements.
+<p>If the Ignore Timestamp parameter is set, the block ignores the timestamp of the measurement and processes the measurements as they are received. Otherwise, it drops old measurements.
 <p></p>
 If using a group for input, select a device within the group to select the fragment and series, and then change to the desired group.
 <p></p>
@@ -419,8 +419,8 @@ Note: When running in simulation mode, because historical input data is used, ti
 </tr>
 <tr>
 <th scope="row">Fragment and Series</th>
-<td><span>The fragment for which the block will listen.</span>
-<p>This only shows fragments and series for measurements associated with the object (device or group) selected. Any measurements on a device within a group will only be shown when a device is selected (unless there are measurements with the group as the source). For example, if a temperature measurement is sent in Celsius, the fragment is <tt>T</tt> and the series is <tt>C(Celsius)</tt>. This means, that this parameter can be set as <tt>T.C</tt> or <tt>T=>C</tt>.</p>
+<td><span>The fragment the block is listening for.</span>
+<p>This only shows fragments and series for measurements associated with the object (device or group) selected. Any measurements on a device within a group are only shown when a device is selected (unless there are measurements with the group as the source). For example, if a temperature measurement is sent in Celsius, the fragment is <tt>T</tt> and the series is <tt>C(Celsius)</tt>. This means, that this parameter can be set as <tt>T.C</tt> or <tt>T=>C</tt>.</p>
 </td>
 <td><span>string</span>
 </td>
@@ -513,8 +513,8 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 </tr>
 <tr>
 <th scope="row">Operation Name</th>
-<td><span>The name of the operation for which the block will listen.</span>
-<p>If specified, the <tt>Operation</tt> object must have a property of this name otherwise, it will be ignored.</p>
+<td><span>The name of the operation the block is listening for.</span>
+<p>If specified, the <tt>Operation</tt> object must have a property of this name. Otherwise, it is ignored.</p>
 </td>
 <td><span>string</span>
 </td>
@@ -524,7 +524,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 <tr>
 <th scope="row">Operation Status</th>
 <td><span>The status for which to listen.</span>
-<p>If not specified, the block will listen for operations with any status.</p>
+<p>If not specified, the block listens for operations with any status.</p>
 </td>
 <td><span><p>Option - one of:</p>
 <ul>
@@ -590,7 +590,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 <p></p>
 The primary value of the output <tt>Value</tt> object can be set to be the latitude, longitude or altitude. All members of the <tt>c8y_Position</tt> fragment are added to the properties dictionary of the <tt>Value</tt> object.
 <p></p>
-If the Ignore Timestamp parameter is set, the block ignores the timestamp of the event and processes the measurements as they are received, otherwise it reorders the events and drops old measurements.
+If the Ignore Timestamp parameter is set, the block ignores the timestamp of the event and processes the measurements as they are received. Otherwise, it reorders the events and drops old measurements.
 <p></p>
 The parameter that defines the input stream of the block is Input Source, and Event Type if set.
 <p></p>

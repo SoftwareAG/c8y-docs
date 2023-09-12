@@ -35,7 +35,7 @@ Once the permissions are assigned, the bulk import feature can be used.
 {{< c8y-admon-info>}}
 If the permissions are not assigned, the CSV template will not be downloaded correctly.
 
-To initiate bulk import from **Assets** page, you must have either CREATE or ADMIN permission for permission type "Inventory". 
+To initiate a bulk import from the **Assets** page, you must either have CREATE or ADMIN permission for the permission type "Inventory".
 
 By default, you have full access to assets created by you regardless of permissions granted. To perform a partial import on an asset created by other users, you will need READ and ADMIN permissions for permission type "Inventory" or alternatively, READ and CHANGE permissions for "Inventory" in the inventory roles for the specific asset.
 {{< /c8y-admon-info>}}

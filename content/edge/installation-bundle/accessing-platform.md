@@ -6,7 +6,7 @@ aliases:
   - /edge/installation/#accessing-cumulocity
 ---
 
-After the installation, you can access the Edge appliance using a [domain name](#domain) in a web browser.
+After the installation, you can access the {{< product-c8y-iot >}}  Edge appliance using a [domain name](#domain) in a web browser.
 
 ### Supported browsers
 

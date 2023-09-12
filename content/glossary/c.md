@@ -29,7 +29,7 @@ For details see [Analytics > DataHub](/datahub/datahub-overview/).
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details see the [Edge](/edge/introduction/).
+For details see the [Edge](/edge/edge-introduction/).
 
 
 ### {{< product-c8y-iot >}} operational store {#operational-store}

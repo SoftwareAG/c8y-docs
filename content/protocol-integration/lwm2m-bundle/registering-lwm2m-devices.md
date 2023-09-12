@@ -338,13 +338,6 @@ See the table below for information on additional fields:
 </td>
 <td style="text-align: left">Optional</td>
 </tr>
-<tr>
-<td style="text-align: left">Server public key</td>
-<td style="text-align: left">serverPublicKey</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">The public key of the server.</td>
-<td style="text-align: left">Optional</td>
-</tr>
 <tr style="height: 26px;">
 <td style="text-align: left">Binding mode</td>
 <td style="text-align: left">bindingMode</td>
@@ -373,8 +366,8 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <tr style="height: 40px;">
 <td style="text-align: left">Disable timeout</td>
 <td style="text-align: left">disableTimeout</td>
-<td style="text-align: left">Boolean</td>
-<td style="text-align: left">See the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a>. Allowed values are true or false. Default: Not configured.</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">See the <a href="http://www.openmobilealliance.org/release/lightweightm2m/V1_0-20170208-A/OMA-TS-LightweightM2M-V1_0-20170208-A.pdf">LWM2M specification</a>. Allowed values are integer numbers. Default: Not configured.</td>
 <td style="text-align: left">Optional, defaults to Leshan default behavior</td>
 </tr>
 <tr>

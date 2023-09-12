@@ -46,7 +46,7 @@ Regular upgrades to the latest SDK versions are strongly recommended to be able 
 
 #### No forward compatibility {#no-forward-compatibility}
 
-We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} {{< c8y-current-version >}}, make sure that the client library or SDK that you use has version {{< c8y-current-version >}}  or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
+We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} 10.18, make sure that the client library or SDK that you use has the same version or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
 
 #### Maintenance release {#maintenance-release}
 

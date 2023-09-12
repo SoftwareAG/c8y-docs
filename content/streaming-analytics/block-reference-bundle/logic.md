@@ -41,7 +41,7 @@ This category contains the following blocks:
 `apama.analyticskit.blocks.core.And`
 
 <p>Performs a logical 'and' on the inputs.</p>
-<p>If all the connected inputs are <tt>true</tt>, then the output will be <tt>true</tt>, else <tt>false</tt>. If any of the inputs is of type <tt>pulse</tt>, then the output will be a <tt>pulse</tt>. Any combination of <tt>pulse</tt> and <tt>boolean</tt> inputs is valid. The block functions even if some inputs are not connected.</p>
+<p>If all the connected inputs are <tt>true</tt>, then the output is <tt>true</tt>, else <tt>false</tt>. If any of the inputs is of type <tt>pulse</tt>, then the output is a <tt>pulse</tt>. Any combination of <tt>pulse</tt> and <tt>boolean</tt> inputs is valid. The block functions even if some inputs are not connected.</p>
 
 
 #### Input Port Details {#and-inputs}
@@ -130,7 +130,7 @@ This category contains the following blocks:
 `apama.analyticskit.blocks.core.Not`
 
 <p>Performs a logical 'not' on the input.</p>
-<p>If the connected input is <tt>true</tt>, then the output will be <tt>false</tt>. If the connected input is <tt>false</tt>, then the output will be <tt>true</tt>.</p>
+<p>If the connected input is <tt>true</tt>, the output is <tt>false</tt>. If the connected input is <tt>false</tt>, the output is <tt>true</tt>.</p>
 
 
 #### Input Port Details {#not-inputs}
@@ -191,7 +191,7 @@ This category contains the following blocks:
 `apama.analyticskit.blocks.core.Or`
 
 <p>Performs a logical 'or' on the inputs.</p>
-<p>If any of the connected inputs is <tt>true</tt>, then the output will be <tt>true</tt>, else <tt>false</tt>. If all the inputs are of type <tt>pulse</tt>, then the output will be a <tt>pulse</tt>. Inputs must be of the same type. The block functions even if some inputs are not connected.</p>
+<p>If any of the connected inputs is <tt>true</tt>, the output is <tt>true</tt>, else <tt>false</tt>. If all the inputs are of type <tt>pulse</tt>, the output is a <tt>pulse</tt>. Inputs must be of the same type. The block functions even if some inputs are not connected.</p>
 
 
 #### Input Port Details {#or-inputs}

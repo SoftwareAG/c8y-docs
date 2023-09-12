@@ -15,6 +15,6 @@ registry=https://registry.npmjs.org/
 @c8y:registry=https://download.cumulocity.com/npm/
 ```
 
-The scaffolding process via `c8ycli` must already include this additional file depending on the version that you use.
+The scaffolding process via `c8ycli` will already include this additional file depending on the version that you use.
 Once the issue with npm is resolved, we plan to deprecate this registry again. This will be announced in advance.
 {{< /c8y-admon-info >}}

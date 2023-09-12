@@ -8,7 +8,7 @@ section:
 
 Since {{< product-c8y-iot >}} Edge is based on the same software as the cloud-based {{< product-c8y-iot >}} platform version, the included applications are the same in both versions, with minor restrictions.
 
-For general information about functionalities and features of {{< product-c8y-iot >}} platform, see [Getting started](/get-familiar-with-the-ui/ui-introduction/).
+For general information about functionalities and features of {{< product-c8y-iot >}} platform, see [Get familiar with the UI](/get-familiar-with-the-ui/ui-introduction/).
 
 Below you can find the links to the most common functionalities of {{< product-c8y-iot >}}.
 
@@ -59,6 +59,6 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 |[Home screen](/standard-tenant/home-screen/)|Providing information on your capacity usage and subscribed applications.
 |[Managing users](/standard-tenant/managing-users/)|How to [create users](/standard-tenant/managing-users/#to-add-a-user), edit, disable or delete them.
 |[Managing permissions](/standard-tenant/managing-permissions/)|How to create and edit [global roles](/standard-tenant/managing-permissions/#global-roles) and [inventory roles](/standard-tenant/managing-permissions/#inventory-roles), how to assign them to users, and how to [grant application access](/standard-tenant/managing-permissions/#application-access).
-|[Managing the ecosystem](/standard-tenant/ecosystem/)|How to manage and [configure own applications](/standard-tenant/ecosystem/#managing-applications) in your {{< product-c8y-iot >}}  Edge account.
+|[Managing applications](/standard-tenant/ecosystem/)|How to manage and [configure own applications](/standard-tenant/ecosystem/#managing-applications) in your {{< product-c8y-iot >}}  Edge account.
 |[Changing settings](/standard-tenant/changing-settings/)|How to change account settings like [application settings](/standard-tenant/changing-settings/#application) or **does this still exist? ->**[password policy settings](/users-guide/administration#changing-password-settings) and how to manage the [properties library](/standard-tenant/changing-settings/#properties-library).
 |[Managing data retention](/standard-tenant/managing-data/)|How to manage and configure [retention rules](/standard-tenant/managing-data/#retention-rules) for your data and how to [manage stored files](/standard-tenant/managing-data/#file-repository) in the file repository.

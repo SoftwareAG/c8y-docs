@@ -6,6 +6,8 @@ layout: redirect
 bundle: get-familiar-with-the-ui
 section:
   - getting_started
+audience:
+  - Users
 weight: 20
 ---
 

@@ -6,6 +6,8 @@ type: root
 bundle: standard-tenant
 section:
   - platform_administration
+audience:
+  - Users
 weight: 10
 ---
 

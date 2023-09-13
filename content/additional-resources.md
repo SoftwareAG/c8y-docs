@@ -5,6 +5,9 @@ icon: "c8y-icon c8y-icon-notification"
 type: root
 bundle: additional-resources
 layout: redirect
+audience:
+  - Users
+  - Developers
 weight: 50
 section:
   - getting_started

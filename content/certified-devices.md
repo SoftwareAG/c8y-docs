@@ -6,6 +6,7 @@ external: "https://devicepartnerportal.softwareag.com/devices"
 layout: redirect
 bundle: certified-devices
 audience:
+  - Users
   - Developers
 section:
   - device_management

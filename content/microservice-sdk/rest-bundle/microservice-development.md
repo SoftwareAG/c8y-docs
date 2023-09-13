@@ -390,7 +390,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 
 {{< c8y-admon-info >}}
 You can link multiple child assets or multiple child devices to the same parent in a single request.
-Refer to inventory child operations in the [Inventory API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Child-operations) in the {{< openapi >}} for more details.
+Refer to inventory child operations in the [Inventory API](https://{{< domain-c8y >}}/api/core/#tag/Child-operations) in the {{< openapi >}} for more details.
 {{< /c8y-admon-info >}}
 
 #### Synchronizing assets with external systems {#synchronizing-assets-with-external-systems}
@@ -445,7 +445,7 @@ Now you could, for example, use the `c8y_Position` property to locate/pin the ob
 
 Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-integration/rest)).
 
-Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
+Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage) in the {{< openapi >}}. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
 #### Querying readings from sensors {#querying-readings-from-sensors}
 
@@ -486,7 +486,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; cha
 
 #### Sending operations to devices {#sending-operations-to-devices}
 
-To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/rest#device-integration).
+To trigger an operation on a device, POST the operation to the [Device Control API](https://{{< domain-c8y >}}/api/core/#tag/Device-control-API). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in [Device integration](/device-integration/rest#device-integration).
 
 ```http
 POST /devicecontrol/operations
@@ -533,7 +533,7 @@ A status of PENDING means here that the device has not yet picked up the operati
 
 Besides querying the {{< product-c8y-iot >}} data store, you can also process and receive events in real time. For example, assume that you would like to display real-time location updates on a map.
 
-If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Real-time-notification-API) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Real-time-notification-API) in the {{< openapi >}}. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the client supports for notifications and allocates a client ID to the client.
+If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](https://{{< domain-c8y >}}/api/core/#tag/Real-time-notification-API) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](https://{{< domain-c8y >}}/api/core/#tag/Real-time-notification-API) in the {{< openapi >}}. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the client supports for notifications and allocates a client ID to the client.
 
 ```http
 POST /notification/realtime

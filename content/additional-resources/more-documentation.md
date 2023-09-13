@@ -8,7 +8,7 @@ section:
 
 ### OpenAPI Specification {#openapi-specification}
 
-A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core/](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}). The OpenAPI Specification describes the {{< product-c8y-iot >}} REST API (that is, available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
+A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core/](https://{{< domain-c8y >}}/api/core). The OpenAPI Specification describes the {{< product-c8y-iot >}} REST API (that is, available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
 ### Installation and operations documentation {#installation-and-operations-documentation}
 

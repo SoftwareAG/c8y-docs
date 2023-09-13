@@ -48,7 +48,7 @@ To access the applications for your {{< product-c8y-iot >}} tenant, use the foll
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
 
-This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/core/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
 
 
 {{< c8y-admon-info >}}

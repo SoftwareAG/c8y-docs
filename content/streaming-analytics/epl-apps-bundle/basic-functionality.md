@@ -660,7 +660,7 @@ where
 In Apama EPL, interactions with the rest of the {{< product-c8y-iot >}} ecosystem are done via events. A number of event definitions is provided for accessing {{< product-c8y-iot >}} data.
 
 {{< c8y-admon-info >}}
-Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events. For more information on Apama events, see [Defining event types]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-c8y-iot >}} events, see [Events](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Events) in the {{< openapi >}}.
+Apama and {{< product-c8y-iot >}} use different "event" concepts. Apama events are used for all interactions with {{< product-c8y-iot >}}, such as listening for and creating device measurements, alarms and ({{< product-c8y-iot >}}) events. For more information on Apama events, see [Defining event types]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on {{< product-c8y-iot >}} events, see [Events](https://{{< domain-c8y >}}/api/core/#tag/Events) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 #### Predefined event types {#predefined-event-types}

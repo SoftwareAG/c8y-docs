@@ -130,7 +130,7 @@ Modify the excel settings to provide the date in a YYYY-MM-DD format. This preve
 
 To provide a file input as an asset property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
 
-Refer to the [Binaries API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
+Refer to the [Binaries API](https://{{< domain-c8y >}}/api/core/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
 
 The binary ID in the API response must be provided as input for the asset property field with type "file" in the CSV template.
 {{< c8y-admon-info>}}

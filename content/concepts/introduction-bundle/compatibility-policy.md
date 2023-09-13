@@ -32,9 +32,9 @@ However, {{< product-c8y-iot >}} is continually improving the user experience an
 If changes result in breaking backward compatibility, to provide our customers with the time to change their solution, such changes will be announced at least 6 months ahead of the change becoming effective. Where the change has a wide-ranging impact, we will delay taking action until we have ascertained that the impact on our customers is minimal.
 {{< /c8y-admon-info >}}
 
-#### Beta APIs {#beta-apis}
+#### Preview APIs {#preview-apis}
 
-To maintain API and product quality we may, from time to time, hold back new APIs in a beta state to make sure that they are robust, properly documented, and provide the capability required. These APIs may change without a prior announcement. Please keep this in mind if you start using APIs that are documented as beta on our [API documentation](https://{{< domain-c8y >}}/api/core/).
+To maintain API and product quality we may, from time to time, hold back new APIs in a preview state to make sure that they are robust, properly documented, and provide the capability required. These APIs may change without a prior announcement. Please keep this in mind if you start using APIs that are documented as beta in our [API documentation](https://{{< domain-c8y >}}/api/core/).
 
 #### SDK and client library compatibility {#sdk-and-client-library-compatibility}
 
@@ -46,7 +46,7 @@ Regular upgrades to the latest SDK versions are strongly recommended to be able 
 
 #### No forward compatibility {#no-forward-compatibility}
 
-We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} {{< c8y-current-version >}}, make sure that the client library or SDK that you use has version {{< c8y-current-version >}}  or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
+We support backward compatibility, not forward compatibility. You can check this using the version of the SDK and the version of the platform. If you wish to develop a device or application against, for example, {{< product-c8y-iot >}} 10.18, make sure that the client library or SDK that you use has the same version or lower. If you take the latest SDK version, build an application with it and deploy on an older {{< product-c8y-iot >}} version, this may not work. The SDK may make use of APIs that are simply not yet present in the older version.
 
 #### Maintenance release {#maintenance-release}
 

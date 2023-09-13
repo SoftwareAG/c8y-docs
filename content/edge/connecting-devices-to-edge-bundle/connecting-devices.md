@@ -1,6 +1,6 @@
 ---
-weight: 50
-title: Connecting devices
+weight: 10
+title: Introduction
 layout: bundle
 section:
   - edge_server
@@ -14,7 +14,7 @@ Additionally, {{< product-c8y-iot >}} Edge offers:
 
 * OPC UA protocol. OPC UA protocols support through the OPC UA device gateway and OPC UA management service.
 
-For details on how to integrate devices using Modbus and OPC UA protocols, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) and [OPC UA](/protocol-integration/opcua/).
+For details on how to integrate devices using Modbus and OPC UA protocols, see [Connecting a Modbus device](/edge/connecting-devices-to-edge/#connecting-modbus-device) and [Connecting an OPC UA device](/edge/connecting-devices-to-edge/#connecting-opcua-device).
 
 {{< c8y-admon-info >}}
 Currently, only the Modbus and OPC UA protocols are supported.

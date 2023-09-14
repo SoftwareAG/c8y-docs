@@ -1,6 +1,6 @@
 ---
 title: Enterprise tenant administration
-icon: "c8y-icon c8y-icon-administration"
+icon: "dlt-c8y-icon-management1"
 type: root
 layout: redirect
 bundle: enterprise-tenant

@@ -5,7 +5,7 @@
   </div>
   <div class="home-top">
     <section class="home-top__content">
-        <h1>{{.Title}}</h1>
+        <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
         {{.Content}}
     </section>
     {{.Params.svg | safeHTML}}
@@ -31,8 +31,28 @@
         {{ if (isset .Params "audience")}}
           <div class="m-t-auto d-flex gap-8 a-i-center">
             {{ range $t := .Params.audience }}
-              <div class="label label-{{if eq $t "Users"}}success{{else}}info{{end}}">
-                <i class='dlt-c8y-icon-{{if eq $t "Users"}}users{{else}}programming{{end}}'></i> 
+              <div class="label 
+                {{if eq $t "Users"}}
+                  label-primary 
+                {{ else if eq $t "Administrator"}}
+                label-success
+                {{ else if eq $t "Developers"}}
+                label-info
+                {{ else if eq $t "Business"}}
+                  label-warning
+                {{end}}
+                  ">
+                <i class='
+                {{if eq $t "Users"}}
+                  dlt-c8y-icon-users
+                {{ else if eq $t "Administrator"}}
+                  dlt-c8y-icon-male-user
+                {{ else if eq $t "Developers"}}
+                  dlt-c8y-icon-programming
+                {{ else if eq $t "Business"}}
+                  dlt-c8y-icon-permanent-job
+                {{end}}
+                '></i> 
                 {{$t}}
               </div>
             {{end}}

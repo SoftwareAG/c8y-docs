@@ -199,7 +199,7 @@ The fields below must be contained to configure security modes for bootstrap and
 <td style="text-align: left">X.509 private key</td>
 <td style="text-align: left">x509ClientPrivateKey</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">X.509 device private key (in PEM format) written to device during bootstrap phase. Empty value means that it won't be written at all.</td>
+<td style="text-align: left">X.509 device private key (in PEM format) written to the device during bootstrap phase. An empty value means that it isn't written at all.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

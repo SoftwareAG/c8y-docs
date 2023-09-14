@@ -75,7 +75,7 @@ Virtual devices are objects in the {{< product-c8y-iot >}} inventory with a `c8y
 
 Use the `creationDate` to find out what `virtualDevice` was created for a model activation and which measurements have that device as their source.
 
-By default, the virtual devices are kept for 30 days. If you want to change this default, you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}. For example, specify the following to set the retention period for the virtual devices to 1 day:
+By default, the virtual devices are kept for 30 days. If you want to change this default, you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}. For example, specify the following to set the retention period for the virtual devices to 1 day:
 
 ```
 {
@@ -141,7 +141,7 @@ By default, a maximum of 10 items are shown in the following cases:
 
 When you use the search box in the above cases, this default also applies to the maximum number of items that are shown in the search result. When you click **Load more**, up to 10 more items are shown.
 
-If you want to change this default value \(to show either more or less items\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}.
+If you want to change this default value \(to show either more or less items\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}.
 
 For example, specify the following to set the value to 20:
 
@@ -164,7 +164,7 @@ By default, only devices, groups and assets are shown in the following cases:
 
 However, when you use the search box in the above cases, all managed objects \(not just devices, groups and assets\) in the {{< product-c8y-iot >}} inventory which match the search criteria are shown. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.
 
-If you want to restrict the search to show only managed objects of a specific type \(for example, to show only devices\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}.
+If you want to restrict the search to show only managed objects of a specific type \(for example, to show only devices\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}.
 
 For example, specify the following if you only want to show devices:
 

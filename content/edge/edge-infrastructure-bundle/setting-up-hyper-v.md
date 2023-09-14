@@ -8,18 +8,18 @@ section:
 
 To set up Hyper-V, you must first enable Hyper-V on your system, and  create Network Address Translation (NAT) adapter. For enabling Hyper-V, see the Microsoft documentation.
 
-### Creating a NAT adapter
+### Creating a NAT adapter {#creating-a-nat-adapter}
 
 You can create a NAT adapter using two ways:
 
-* [Using default settings](/edge/setting-up-edge/#creating-a-nat-adapter-using-default-settings)  
-* [Using user-defined settings](/edge/setting-up-edge/#creating-a-nat-adapter-using-user-defined-settings)
+* [Using default settings](#creating-a-nat-adapter-using-default-settings)  
+* [Using user-defined settings](#creating-a-nat-adapter-using-userdefined-settings)
 
 {{< c8y-admon-info >}}
 Run all the commands in Windows PowerShell with administrative privileges.
 {{< /c8y-admon-info >}}
 
-#### Creating a NAT adapter using default settings
+#### Creating a NAT adapter using default settings {#creating-a-nat-adapter-using-default-settings}
 
 {{< c8y-admon-info >}}
 You must use the default adapter name `NATSwitchForEdge` and the default IP address `192.168.66.1`.
@@ -52,7 +52,7 @@ PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 192.168.66.1 -PrefixLength 2
 PS C:\WINDOWS\system32> New-NetNat -Name NATSwitchForEDGE -InternalIPInterfaceAddressPrefix 192.168.66.0/24
 ```
 
-#### Creating a NAT adapter using user-defined settings
+#### Creating a NAT adapter using user-defined settings {#creating-a-nat-adapter-using-userdefined-settings}
 
 You can define the adapter name and configure the IP address for your Edge appliance. In this example, the adapter name is `EdgeAdapter1` and the IP address is `10.20.30.40`.
 
@@ -83,7 +83,7 @@ PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 10.20.30.40 -PrefixLength 24
 PS C:\WINDOWS\system32> New-NetNat -Name EdgeNATRule1 -InternalIPInterfaceAddressPrefix 10.20.30.0/24
 ```
 
-### Setting up the Edge appliance in Hyper-V
+### Setting up the Edge appliance in Hyper-V {#setting-up-the-edge-appliance-in-hyperv}
 
 After creating a NAT adapter, you must import the Edge appliance image into Hyper-V.
 

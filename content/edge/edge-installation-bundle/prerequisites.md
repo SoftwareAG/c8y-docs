@@ -6,18 +6,18 @@ section:
   - edge_server
 ---
 
-### Installation requirements
+### Installation requirements {#installation-requirements}
 
 |Item|Details|
 |:---|:---|
-|**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 16.2 <br>- Hyper-V on Microsoft Windows 10 Enterprise, version 1809. The supported VM configuration version is 9.0.<br>**Important:** Ensure that you keep the virtualization platform updated and free from vulnerabilities by following the security advisories provided by the vendors of the hypervisor.
-|**Edge appliance image**|To be downloaded from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}), based on the target hypervisor. <br><br> For VMware (ESXi and Workstation Player), download all the 4 files:<br>- CumulocityIoTEdge-Appliance-*version*-VMware-disk1.vmdk<br>- CumulocityIoTEdge-Appliance-*version*-VMware-disk2.vmdk<br>- CumulocityIoTEdge-Appliance-*version*-VMware.mf<br>- CumulocityIoTEdge-Appliance-*version*-VMware.ovf<br><br> For Hyper-V, download the ZIP file:<br>- CumulocityIoTEdge-Appliance-*version*-HyperV.zip <br><br>The fixes for {{< product-c8y-iot >}} Edge:<br>- CumulocityIoTEdge-*version*.tar.gz |
+|**Hypervisor**|- VMWare ESXi 7.0 <br> - VMware Workstation Player 17.x and VMware Workstation Pro 17.x <br>- Hyper-V on Microsoft Windows 10 Enterprise, version 1809. The supported VM configuration version is 9.0.<br>**Important:** Ensure that you keep the virtualization platform updated and free from vulnerabilities by following the security advisories provided by the vendors of the hypervisor.
+|**Edge appliance image**|To be downloaded from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}), based on the target hypervisor. <br><br> For VMware (ESXi and Workstation Player), download all the 4 files:<br>- Cumulocity IoT Edge - VMWare [Disc 1] (*version*)<br>- Cumulocity IoT Edge - VMWare [Disc 2] (*version*)<br>- Cumulocity IoT Edge - VMWare .mf (*version*)<br>- Cumulocity IoT Edge - VMWare .ovf (*version*)<br><br> For Hyper-V, download the ZIP file:<br>- Cumulocity IoT Edge - HyperV (*version*)<br><br>The fixes for {{< product-c8y-iot >}} Edge:<br>- Cumulocity IoT Edge (*version*) Update|
 |**{{< product-c8y-iot >}} Edge license file**|To request the license file for {{< product-c8y-iot >}} Edge, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (for example, myedge.domain.com), where {{< product-c8y-iot >}} Edge will be reachable<br>For more information, see [Domain name validation for Edge license key generation](#domain-name-validation-for-edge-license-key-generation).|
 |**SSL key and SSL certificate**|Optional. Use your internal or an external CA (Certification Authority) to generate these files. These files must not be password-protected. Ensure that the SSL certificate has the complete certificates chain in the right order.<br>**Info:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
 |**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.{{< domain-c8y >}} to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge appliance within your LAN, the DNS entry must be added for the domain name (URL under which {{< product-c8y-iot >}} Edge can be reached) with the IP address of the host.|
 |**Edge cloud remote access**|To connect and manage one (or multiple) Edge appliances to your {{< product-c8y-iot >}} cloud tenant, you need an active {{< product-c8y-iot >}} {{< standard-tenant >}} with the Data Broker and Cloud Remote Access extensions.<br>**Info:** The Edge cloud remote access is an optional feature in {{< product-c8y-iot >}} Edge.|
 
-### Domain name validation for Edge license key generation
+### Domain name validation for Edge license key generation {#domain-name-validation-for-edge-license-key-generation}
 
 To procure the {{< product-c8y-iot >}} Edge license file, you must provide the right domain name to the {{< company-sag >}}'s logistics team for Edge license key generation.
 
@@ -46,7 +46,7 @@ An Internationalized Domain Name (IDN) is an internet domain name that contains 
 		* The Top-Level Domain (TLD) which refers to the last segment of the domain name must be between two to six characters long.
 		* The domain name cannot begin or end with a hyphen.
 
-### Network connectivity
+### Network connectivity {#network-connectivity}
 
 The following network ports must be reachable from the local network:
 
@@ -61,9 +61,9 @@ If {{< product-c8y-iot >}} Edge should communicate with the cloud, the following
 
 There is no internet connection required during installation. Internet connection during runtime is optional, and only used if this is configured in the Data Broker.
 
-#### Incoming traffic
+#### Incoming traffic {#incoming-traffic}
 
-The following ports must be enabled by default in order to accept traffic from users and devices on the internet (also see [Setting up port forwarding](/edge/setting-up-edge/#vmware-port-forwarding):
+The following ports must be enabled by default in order to accept traffic from users and devices on the internet (see [Setting up port forwarding](/edge/edge-infrastructure/#vmware-port-forwarding)):
 
 |Source IP|Source Port|Destination IP|Destination Port|Service
 |:---|:---|:---|:---|:---
@@ -73,7 +73,7 @@ The following ports must be enabled by default in order to accept traffic from u
 
 Depending on additional integrations more ports must be opened.
 
-#### Outgoing Traffic
+#### Outgoing Traffic {#outgoing-traffic}
 
 The core node must be able to connect to the internet. Ports required to outside are:
 
@@ -86,7 +86,7 @@ Depending on the installed integrations (email, SMS, and so on), different ports
 Depending on the DNS and NTP setup it might be the case that DNS (UDP/53) and NTP (UDP/123) connections to the internet must be possible from all hosts.
 
 
-### Hardware requirements
+### Hardware requirements {#hardware-requirements}
 
 The virtual machine has the following minimum hardware requirements:
 

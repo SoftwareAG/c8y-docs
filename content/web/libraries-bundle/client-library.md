@@ -46,7 +46,7 @@ In the following sections, the default signature of these functions is described
 <tr>
 <td><code>list(filter)</code></td>
 <td>Request a list of data with an optional filter.</td>
-<td><code>filter:object</code>: (optional) A filter for query result paging, see<a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage"> Inventory > Query language</a></td>
+<td><code>filter:object</code>: (optional) A filter for query result paging, see<a href="https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage"> Inventory > Query language</a></td>
 <td><code>Promise&lt;IResultList&lt;TData&gt;&gt;</code>: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.</td>
 </tr>
 </tbody>
@@ -148,7 +148,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 <tr>
 <td><code>list$(filter, options)</code></td>
 <td>Returns an observable for a list of entities.</td>
-<td><code>filter: object</code>: (optional) A filter for query result paging, see<a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage"> Inventory > Query language</a> <br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
+<td><code>filter: object</code>: (optional) A filter for query result paging, see<a href="https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage"> Inventory > Query language</a> <br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
 <td><code>ObservableList&lt;TData&gt;&gt;</code>: The list as subscribable observable.</td>
 </tr>
 </tbody>

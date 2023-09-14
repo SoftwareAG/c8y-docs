@@ -22,7 +22,7 @@ Supported browsers in this version are:
 [2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of {{< product-c8y-iot >}} with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
 
 {{< c8y-admon-important >}}
-[3] Though {{< product-c8y-iot >}} is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
+[3] Though {{< product-c8y-iot >}} is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} 10.7 will be the last release that supports this browser. With upcoming releases and versions we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
 {{< /c8y-admon-important >}}
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
@@ -48,7 +48,7 @@ To access the applications for your {{< product-c8y-iot >}} tenant, use the foll
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
 
-This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
+This will direct you to the login page of your default application. See [Tenants](https://{{< domain-c8y >}}/api/core/#tag/Tenants) in the {{< openapi >}} for further details on tenant ID and tenant domain.
 
 
 {{< c8y-admon-info >}}

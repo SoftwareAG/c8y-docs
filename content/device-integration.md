@@ -4,6 +4,8 @@ icon: "c8y-icon c8y-icon-device"
 type: root
 layout: redirect
 bundle: device-integration
+audience:
+  - Developers
 section:
   - device_management
 weight: 50

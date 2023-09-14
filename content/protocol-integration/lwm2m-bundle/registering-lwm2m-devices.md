@@ -206,7 +206,7 @@ The fields below must be contained to configure security modes for bootstrap and
 <td style="text-align: left">X.509 certificate usage</td>
 <td style="text-align: left">x509CertificateUsage</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">LWM2M Certificate Usage written to device during bootstrap phase. Empty value means that it won't be written at all. One of: <ul><li>CA_CONSTRAINT</li> <li>SERVICE_CERTIFICATE_CONSTRAINT</li> <li>TRUST_ANCHOR_ASSERTION</li> <li>DOMAIN_ISSUER_CERTIFICATE</li></ul></td>
+<td style="text-align: left">LWM2M Certificate usage written to the device during bootstrap phase. An empty value means that it isn't written at all. One of: <ul><li>CA_CONSTRAINT</li> <li>SERVICE_CERTIFICATE_CONSTRAINT</li> <li>TRUST_ANCHOR_ASSERTION</li> <li>DOMAIN_ISSUER_CERTIFICATE</li></ul></td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>

@@ -389,7 +389,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align: left">Use common timestamp resources 5518 and 6050 or object specific timestamp for object 6 reported by the device if available</td>
+<td style="text-align: left">Use source timestamp</td>
 <td style="text-align: left">enableResourceLevelTimestamp</td>
 <td style="text-align: left">Boolean</td>
 <td style="text-align: left">If this device property is enabled {{< product-c8y-iot >}} uses time stamps reported by the device for constructing measurements, events and alarms. This is possible if the device reports multiple resources at the same time. For example, this may be done using observes on entire object instances or composite reads and observes. Time stamp data needs to be reported as part of the same object: Either via the common timestamp resources 5518 and 6050 or the specific timestamp resource for object 6. If this feature is disabled or no timestamp information is reported, {{< product-c8y-iot >}} will use its local date and time. Default: false</td>
@@ -408,7 +408,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 </tr>
 <tr>
 <tr>
-<td style="text-align: left">Device protocol serialization format</td>
+<td style="text-align: left">Serialization format</td>
 <td style="text-align: left">serializationFormat</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the preferred content format for {{< product-c8y-iot >}} to communicate with the device. The allowed content formats are: TLV, JSON, CBOR, TEXT, OPAQUE or SENML_JSON and SENML_CBOR. In case of an empty or invalid entry, {{< product-c8y-iot >}} automatically selects the serialization format which the device sends during device registration.</td>

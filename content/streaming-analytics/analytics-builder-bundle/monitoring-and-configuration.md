@@ -518,7 +518,7 @@ If you want to find out which values are currently used for these tenant options
 
 #### Using curl commands for setting various tenant options
 
-You can set or change various tenant options by sending `POST` requests to {{< product-c8y-iot >}}. This topic explains how you can do this using the curl command-line tool. See [https://curl.se/](https://curl.se/) for detailed information on curl. See also the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
+You can set or change various tenant options by sending `POST` requests to {{< product-c8y-iot >}}. This topic explains how you can do this using the curl command-line tool. See [https://curl.se/](https://curl.se/) for detailed information on curl. See also the information on the [tenant options](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
 
 The syntax of the curl command depends on the environment in which you are working. The syntax for a Bash UNIX shell, for example, is as follows:
 

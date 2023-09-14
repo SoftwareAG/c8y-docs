@@ -75,7 +75,7 @@ The numbers in the green circles represent the number of properties in the insta
   * Binding mode
   * Disable timeout
   * Security mode
-    * depending on selected mode there are additional settings for PSK and X.509
+    * depending on the selected mode there are additional settings for PSK and X.509
   * Notifications flag
 * **Connectivity settings** - security configuration for bootstrap and regular LWM2M connection.
 * **Firmware update settings**

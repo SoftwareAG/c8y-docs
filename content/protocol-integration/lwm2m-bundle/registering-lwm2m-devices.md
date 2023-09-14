@@ -213,7 +213,7 @@ The fields below must be contained to configure security modes for bootstrap and
 <td style="text-align: left">Server certificate</td>
 <td style="text-align: left">serverPublicKey</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Name of the server certificate to write to device during bootstrap phase. Server certificates are preconfigured in "management" tenant. Empty value means that it won't be written at all.</td>
+<td style="text-align: left">Name of the server certificate written to the device during bootstrap phase. Server certificates are preconfigured in the {{< management-tenant >}}. An empty value means that it isn't written at all.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>

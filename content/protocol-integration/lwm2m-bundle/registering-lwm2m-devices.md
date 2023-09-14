@@ -124,7 +124,8 @@ openssl pkcs8 -topk8 -inform PEM -outform PEM -in myDevice.key -out myDevice.key
 openssl pkcs8 -topk8 -inform PEM -outform DER -in myDevice.key -out myDevice.der -nocrypt
 ```
 
-##### Trusting CA in {{< product-c8y-iot >}}
+##### Trusting CA in {{< product-c8y-iot >}} {#trusting-ca-in-the-platform}
+
 Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/users-guide/device-management/#trusted-certificates) on how to add and trust CA certificate.
 
 ##### All security fields details

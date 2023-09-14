@@ -1,7 +1,7 @@
 
 ---
 title: Additional resources
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-box-settings"
 type: root
 bundle: additional-resources
 layout: redirect

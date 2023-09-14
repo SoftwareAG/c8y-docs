@@ -1,6 +1,6 @@
 ---
 title: Cumulocity IoT OEE
-icon: "c8y-icon c8y-icon-tools"
+icon: "c8y-icon c8y-icon-oee"
 type: root
 layout: redirect
 bundle: oee

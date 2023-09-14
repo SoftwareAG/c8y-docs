@@ -16,6 +16,7 @@ body{
   > main, .main-content {
     opacity: 0;
     transition: opacity .15s linear;
+    min-height: calc(100vh - 90px);
   }
   &.loaded{
    > main,  .main-content{
@@ -24,10 +25,6 @@ body{
   }
 }
 
-.stop-scrolling {
-  height: 100%;
-  overflow: hidden;
-}
 
 * {
   -webkit-box-sizing: border-box;
@@ -114,7 +111,8 @@ body{
   display: grid;
   grid-template-columns: 1fr;
   padding: 2rem 1rem 1rem;
-    gap: 1rem;
+  gap: 1rem;
+  overflow: hidden;
   svg{
     height: 100%;
     width: auto;
@@ -129,6 +127,10 @@ body{
       h1{
         font-size: 4rem;
         margin: 2rem 0;
+      }
+      p{
+        max-width: 70ch;
+        font-size: 1.15rem;
       }
     }
   }
@@ -155,6 +157,12 @@ body{
 body:has(>main > .home-top){
   .breadcrumbs-container{
     max-width: $screen-lg-max;
+  }
+  .main-footer{
+    max-width:  $screen-lg-max;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0 auto;
   }
 }
 

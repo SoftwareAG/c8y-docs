@@ -10,7 +10,7 @@ While configuring the OPC UA server, ensure that the server is reachable from th
 
 To connect an OPC UA device in the Edge appliance, follow the steps below.
 
-#### Preparation {#preparation}
+### Preparation {#preparation}
 
 **OPC UA Management service**
 
@@ -40,7 +40,7 @@ If the agent is not running, start it with the following command:
 [admin@iot-edge-server ~]$ sudo service opcua-device-gateway start
 ```
 
-#### Registering the device {#registering-the-device}
+### Registering the device {#registering-the-device}
 
 Next, you must register a device in the Device Management application with the name opcua-gateway.
 

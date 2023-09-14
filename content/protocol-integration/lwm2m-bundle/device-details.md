@@ -53,7 +53,7 @@ The numbers in the green circles represent the number of properties in the insta
 
 ### LWM2M configuration {#lwm2m-configuration}
 
-**LWM2M Configuration** tab displays all LWM2M settings related to the device. These settings are grouped logically by the function they affect.
+The **LWM2M configuration** tab displays all LWM2M settings related to the device. These settings are grouped logically by the function they affect.
 
 * **Device settings** - General device parameters:
   * Endpoint ID

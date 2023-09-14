@@ -157,7 +157,7 @@ The fields below must be contained to configure security modes for bootstrap and
 <td style="text-align:left">Bootstrap security mode</td>
 <td style="text-align:left">bootstrapSecurityMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align:left">Determines the type of connection used by the LWM2M device when it connects to {{< product-c8y-iot >}} LWM2M bootstrap server. Possible values are: "NO_SEC", "PSK", "PSK_GENERATED" and "X509".</td>
+<td style="text-align:left">Determines the type of connection used by the LWM2M device when it connects to the {{< product-c8y-iot >}} LWM2M bootstrap server. Possible values are: "NO_SEC", "PSK", "PSK_GENERATED" and "X509".</td>
 <td style="text-align: left">Mandatory</td>
 </tr>
 <tr>

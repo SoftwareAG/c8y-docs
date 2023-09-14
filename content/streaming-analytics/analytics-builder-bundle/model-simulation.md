@@ -39,7 +39,7 @@ Sending of data into the simulated model is stopped when all historical data fro
 
 By default, a maximum of 3 simulation models can be deployed at a time.
 
-If you want to change this default value \(to deploy either more or fewer simulation models at a time\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
+If you want to change this default value \(to deploy either more or fewer simulation models at a time\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
 
 For example, specify the following to set the value to 5:
 
@@ -57,7 +57,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 By default, the platform database is used to retrieve the historical data for the simulation of an analytic model. You can configure an alternative data source for simulation, for example, if historical data is maintained separately. The data source must support HTTP `GET` operations for the required path and query parameters. The response to the `GET` operation must conform to the standard JSON format of {{< product-c8y-iot >}}. Refer to the {{< product-c8y-iot >}} documentation for the data and query parameter formats.
 
-If you want to use an alternative data source for simulation, you need to define the tenant options listed below. That is, you need to send 3 separate `POST /tenant/options` requests. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
+If you want to use an alternative data source for simulation, you need to define the tenant options listed below. That is, you need to send 3 separate `POST /tenant/options` requests. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
 
 -   `simulation.dataSource.url` - The base HTTP URL of the data source.
 -   `simulation.dataSource.username` - The username to be used for the HTTP basic authentication.

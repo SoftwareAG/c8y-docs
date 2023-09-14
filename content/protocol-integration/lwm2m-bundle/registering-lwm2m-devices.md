@@ -128,7 +128,8 @@ openssl pkcs8 -topk8 -inform PEM -outform DER -in myDevice.key -out myDevice.der
 
 Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/users-guide/device-management/#trusted-certificates) on how to add and trust CA certificate.
 
-##### All security fields details
+##### All security field details {#all-security-field-details}
+
 The fields below must be contained to configure security modes for bootstrap and regular server connection:
 <table>
 <col>

@@ -27,7 +27,7 @@ For easier user access management, the above permissions are included in the glo
 
 {{< c8y-admon-related >}}
 - [Device management > Device management application> Monitoring and controlling devices > Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for information on working with alarms in general.
-- [Alarms](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Alarms) in the {{< openapi >}} for details on managing alarms via REST.
+- [Alarms](https://{{< domain-c8y >}}/api/core/#tag/Alarms) in the {{< openapi >}} for details on managing alarms via REST.
 {{< /c8y-admon-related >}}
 
 

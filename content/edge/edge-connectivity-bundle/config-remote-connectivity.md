@@ -17,8 +17,8 @@ section:
 
 4. Switch the **Enable remote connectivity** toggle to enable remote-connectivity.
 
-5. Provide the URL of the {{< product-c8y-iot >}} tenant in the **Remote tenant URL** field.
+5. Provide the URL of the {{< product-c8y-iot >}} cloud tenant in the **Remote tenant URL** field.
 
 6. Click **Save**.
 
-Next steps: Note down the Edge device ID and register your Edge appliance in the {{< product-c8y-iot >}} tenant.
+Next steps: Note down the Edge device ID and [register your Edge appliance](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in the {{< product-c8y-iot >}} cloud tenant.

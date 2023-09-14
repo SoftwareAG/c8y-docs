@@ -6,6 +6,8 @@ layout: redirect
 bundle: welcome-developers
 section:
   - getting_started
+audience:
+  - Developers
 weight: 30
 ---
 

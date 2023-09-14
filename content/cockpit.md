@@ -4,6 +4,8 @@ icon: "c8y-icon c8y-icon-cockpit"
 type: root
 layout: redirect
 bundle: cockpit
+audience:
+  - Users
 section:
   - app_development
 weight: 10

@@ -196,7 +196,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources.
 * Multi-tenant - the owner of the microservice is charged for used resources.
 
-In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< enterprise-tenant >}} or a service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-applications) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (for example the {{< management-tenant >}} of an {{< enterprise-tenant >}} or a service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant applications](https://{{< domain-c8y >}}/api/core/#tag/Tenant-applications) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level {#resources-usage-assignment-for-billing-mode-and-isolation-level}
 
@@ -241,7 +241,7 @@ The information on the microservice usage is presented in the **Usage statistics
 
 ![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
-For more details, refer to [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+For more details, refer to [Tenants](https://{{< domain-c8y >}}/api/core/#tag/Tenants) in the {{< openapi >}}. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 #### Scaling {#scaling}
 
@@ -254,7 +254,7 @@ For instance, when you have a microservice with scale policy set to AUTO and the
 
 Note that an audit record is created for every change of the number of instances.
 
-For more information, refer to [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}}.
+For more information, refer to [Audits](https://{{< domain-c8y >}}/api/core/#tag/Audits) in the {{< openapi >}}.
 
 
 ### Timezone handling {#timezone-handling}
@@ -580,7 +580,7 @@ The table below presents which values are used in each model for billing purpose
       <td style="text-align:left">x</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API">DeviceStatistics</a></td>
+      <td style="text-align:left"><a href="https://{{< domain-c8y >}}/api/core/#tag/Tenant-API">DeviceStatistics</a></td>
       <td style="text-align:left">Monthly measurements, events and alarms created and updated per device</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">x</td>

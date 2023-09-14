@@ -5,7 +5,6 @@ type: root
 layout: redirect
 external: "https://thin-edge.io"
 audience:
-  - Users
   - Developers
 bundle: thin-edge
 section:

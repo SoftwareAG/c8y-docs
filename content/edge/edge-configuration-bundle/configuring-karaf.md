@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-If you want to change the environment variables for Karaf (such as `JAVA_MAX_MEM` and the microservice proxy variables like `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`, `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`  and so on), you must update the file */usr/share/cumulocity-core-karaf/bin/setenv.* To do so:
+To enhance the performance and resource allocation for Karaf, you can change the environment variables for Karaf (such as `JAVA_MAX_MEM` and the microservice proxy variables like `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`, `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`). To do so, you must update the file */usr/share/cumulocity-core-karaf/bin/setenv.*:
 
 1. Log in to the Edge appliance.
 
@@ -34,7 +34,7 @@ Since the changes to this file are overwritten when the Edge appliance is update
 
 {{< /c8y-admon-important >}}
 
-### Increasing the system performance
+### Increasing the system performance {#increasing-the-system-performance}
 
 If the system performance is slow, you must increase the memory. Stop the Edge appliance and increase the memory of the Edge appliance using the hypervisor.
 
@@ -42,7 +42,7 @@ If the system performance is slow, you must increase the memory. Stop the Edge a
 
 Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM. To increase the memory of the JVM, edit the value of the `JAVA_MAX_MEM` parameter as desired by following the steps described above. The default value of this parameter is 2048 MB.
 
-### Changing log level for Karaf
+### Changing log level for Karaf {#changing-log-level-for-karaf}
 
 This section describes how to change the log level for {{< product-c8y-iot >}} Edge specific applications in the back-end. It does not explain how to change log settings for standard components like databases or other operating system related services.
 

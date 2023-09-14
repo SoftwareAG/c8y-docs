@@ -1,18 +1,16 @@
 ---
-weight: 95
+weight: 5
 title: Restarting the Edge appliance
-layout: bundle
-section:
-  - edge_server
+layout: redirect
 ---
 
-Before restarting your Edge appliance, ensure that your appliance is in a safe state.
+When you apply a patch or update your Edge appliance to a newer version, you must restart your Edge appliance after the update. Before restarting your Edge appliance, ensure that your appliance is in a safe state.
 
 {{< c8y-admon-info >}}
 You might see alarms when you power on the Edge appliance from hibernation.
 {{< /c8y-admon-info >}}
 
-### Restarting the Edge appliance using the UI
+### Restarting the Edge appliance using the UI {#restarting-the-edge-appliance-using-the-ui}
 
 To restart your Edge appliance:
 
@@ -26,9 +24,3 @@ To restart your Edge appliance:
 3. Click **Edge** > **Reboot** in the navigator.
 
 4. Click **Reboot**.
-
-### Restarting the Edge appliance using the REST APIs
-
-To restart your Edge appliance, use the following endpoint:
-
-- [POST /edge/reboot](/edge/rest-api/#working-with-rest-api)

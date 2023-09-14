@@ -6,11 +6,11 @@ section:
   - edge_server
 ---
 
-### Network
+### Network {#network}
 
 The following instructions show how to check the network connectivity of the platform.
 
-#### Check network interface of the node
+#### Check network interface of the node {#check-network-interface-of-the-node}
 
 The following commands will show the interface and network settings of the machine:
 
@@ -60,7 +60,7 @@ Example:
 
 Make sure you have the destination 0.0.0.0 in the list which then also has the gateway flag (G) set.
 
-#### Check access to the internet
+#### Check access to the internet {#check-access-to-the-internet}
 
 Try to reach a well-known address in the internet with the following command:
 
@@ -74,11 +74,11 @@ Try to reach a well-known address in the internet with the following command:
 
 As when checking the internal reach ability, you must make sure that you can see the replies from the address you tried to reach. Use Ctrl-C to end the ping command.
 
-### Processing
+### Processing {#processing}
 
 This section lists the required services and processes on the Edge appliance.
 
-#### Check platform status
+#### Check platform status {#check-platform-status}
 
 You can check the status of the platform by running the following command:
 
@@ -188,9 +188,9 @@ The list describes the tenants which on the core node have not been fully initia
 |FULLY_INITIALIZED|Tenant is in working state (should not be displayed)|
 
 
-### Checking the system services
+### Checking the system services {#checking-the-system-services}
 
-#### Checking REST API availability
+#### Checking REST API availability {#checking-rest-api-availability}
 
 Run the following command to check the REST API availability:
 

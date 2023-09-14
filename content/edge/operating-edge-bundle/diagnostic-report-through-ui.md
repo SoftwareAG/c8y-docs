@@ -1,5 +1,5 @@
 ---
-weight: 16
+weight: 35
 title: Downloading diagnostics using the UI
 layout: bundle
 section:
@@ -17,4 +17,4 @@ section:
 
 4. Click **Request diagnostics report** to download the diagnostics.
 
-To download the diagnostics report remotely, see [Remote connectivity > Downloading diagnostics remotely](/edge/remote-connectivity/#downloading-diagnostics-remotely).
+To download the diagnostics report remotely, see [Downloading diagnostics remotely](/edge/edge-connectivity/#downloading-diagnostics-remotely).

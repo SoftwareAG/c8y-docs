@@ -1,17 +1,17 @@
 ---
-weight: 15
-title: Diagnostics
+weight: 30
+title: Diagnostic utility
 layout: bundle
 section:
   - edge_server
 ---
 
-The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below.
+The diagnostic utility is a script to collect, for example, the journal logs and performance metrics of various components running on the Edge appliance, which are essential for you and the {{< company-sag >}} support team to troubleshoot the problems. The diagnostic utility is enabled by default and is scheduled to run periodically. However, you can also trigger it manually using the command line (below) or the [user interface](/edge/operating-edge/#diagnostic-report-through-ui).
 
 	cd /opt/c8y/utilities/diagnostic-utility
 	sudo ./run_data_collector.py
 
-### Hardware information
+### Hardware information {#hardware-information}
 
 The basic hardware information of the target system is captured.  These reports are placed under the 'hardware' directory.
 
@@ -27,7 +27,7 @@ The following hardware information is available:
 |Storage|Data is an aggregation of the output of the commands 'df' and 'lsblk'
 
 
-### Software information
+### Software information {#software-information}
 
 The basic software information of the target system is captured. These reports are placed under the 'software' directory.
 
@@ -41,7 +41,7 @@ The following software information is available:
 |Running processes|A list of running processes is prepared using the 'ps' command
 |Top result|Captures the output of top command. This report is very informative as it holds information of running processes at argument level and their respective resource consumption.
 
-### Cumulocity IoT information
+### Cumulocity IoT information {#cumulocity-iot-information}
 
 This section contains information on the running {{< product-c8y-iot >}} processes, health endpoint check result, {{< product-c8y-iot >}} logs, and so on.
 
@@ -75,11 +75,11 @@ Jstat dumps can provide information on the following options:
 As per the current implementation, the 5 statistics counts are collected at an interval of 50ms. To improve performance, this task is executed via threads.
 
 
-### Optional startup parameters
+### Optional startup parameters {#optional-startup-parameters}
 
 Following are the supported startup parameters for the monitor and the data collector.
 
-#### Data collector
+#### Data collector {#data-collector}
 
 The data collector can be started by running the "run_data_collector.py" script located under "/opt/c8y/utilities/diagnostic-utility/".
 
@@ -90,15 +90,7 @@ Following are the supported command line arguments which can be used while invok
 * -c8y or --cumulocity: Allows the script to collect only the cumulocity information
 * -h: Displays the help message
 
-#### Monitor
-
-The monitor can be started by running the "run_monitor.py" script located under "/opt/c8y/utilities/diagnostic-utility/src/".
-
-The monitor script supports only one optional startup parameter:
-
-*  -s or --skipDataCollector: Allows the user to skip the data collection even if one or more monitored components is not working.
-
-### Microservices log file locations
+### Microservices log file locations {#microservices-log-file-locations}
 
 The logs of the Kubernetes components are captured at:
 */tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
@@ -119,12 +111,12 @@ The *XX* represents randomly generated alphanumeric sequences in these pod names
 
 The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-xx-xx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
-### Utility configuration file
+### Utility configuration file {#utility-configuration-file}
 
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
 
 {{< c8y-admon-important >}}
-The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the *User guide*.
+The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Email server](/enterprise-tenant/customization/#email-server).
 {{< /c8y-admon-important >}}
 
 Following are the available keys used in the configuration file:

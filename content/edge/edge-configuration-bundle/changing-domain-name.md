@@ -6,13 +6,14 @@ section:
   - edge_server
 ---
 
-After the installation, you can change the domain name of your Edge appliance using the GUI and REST APIs.
+A key feature of {{< product-c8y-iot >}} Edge is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the Edge appliance to serve you using a domain name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}} Edge. In addition, you can create subtenants
+using your domain. These will use *\<subtenantName\>.iot.mycompany.com* as their host names.
 
 {{< c8y-admon-important >}}
-Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).
 {{< /c8y-admon-important >}}
 
-### Changing the domain name using the GUI
+### Changing the domain name using the GUI {#changing-the-domain-name-using-the-gui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
@@ -43,14 +44,7 @@ Before you change the domain name, see [Domain name validation for Edge license 
 
 8. Click **Save**.
 
-### Changing the domain name using the REST APIs
-
-To change the domain name, use the following endpoints:
-
-- [GET /edge/configuration/domain](/edge/rest-api/#get-edgeconfigurationdomain)
-- [POST /edge/configuration/domain](/edge/rest-api/#post-edgeconfigurationdomain)
-
-### License and certificate compatibility
+### License and certificate compatibility {#license-and-certificate-compatibility}
 
 The example below describes a scenario where an existing license or certificate is compatible with the new domain name:
 

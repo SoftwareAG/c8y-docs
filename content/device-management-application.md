@@ -6,6 +6,8 @@ layout: redirect
 bundle: device-management-application
 section:
   - device_management
+audience:
+  - Users
 weight: 30
 outputs:
 - html

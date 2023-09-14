@@ -5,7 +5,10 @@ type: root
 layout: redirect
 bundle: cloud-remote-access
 section:
-  - device_management
+  - device_management  
+audience:
+  - Users
+  - Developers
 weight: 90
 ---
 

@@ -97,7 +97,6 @@ var main = (function ($) {
 
     // Set current Guide on navigator guides dropdown
     $('#current-dropdown-toggle').html($('.current-app').html()).attr('title', $('.current-app').text());
-    // console.log('current app: ', $('.current-app').html());
 
 
 
@@ -107,22 +106,32 @@ var main = (function ($) {
       $('body, html').animate({ scrollTop: 0 }, 500, 'swing');
     });
 
+    //==========================================
     // CLIPBOARD
+    //==========================================
+
+    // scroll to the copied url
+    function scrollToCopied(where) {
+      let top = where.offsetTop - 103;
+      $('body, html').animate({ scrollTop: top}, 50, 'swing');
+    }
+
     // copy current window location and add anchor with data-clipboard-text
     var clipboard = new Clipboard('.bookmark', {
       text: function (trigger) {
         return window.location.href.split('#')[0] + trigger.getAttribute('data-clipboard-text');
       }
     });
-    // display clipboard success event
+    // display clipboard success
     clipboard.on('success', function (e) {
+      scrollToCopied(e.trigger); 
       $(e.trigger).addClass('copied');
       setTimeout(function () {
         $(e.trigger).removeClass('copied');
       }, 1500);
     });
 
-       // Fix for code highlight
+    // Fix for code highlight
     $(".highlight pre code").addClass("hljs");
 
     // copy code to clipboard

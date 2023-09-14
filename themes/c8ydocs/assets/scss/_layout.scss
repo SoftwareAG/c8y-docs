@@ -24,6 +24,11 @@ body{
   }
 }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

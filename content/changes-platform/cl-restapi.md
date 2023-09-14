@@ -1,6 +1,6 @@
 ---
 title: RestAPI
-layout: bundle
+layout: change_log
 section:
   - change_log
 weight: 40
@@ -9,7 +9,7 @@ weight: 40
 
 ### October 2023
 
-#### Announcement - Change in full text search feature of Inventory API
+#### -Announcement- Change in full text search feature of Inventory API
 
 As of a future version, the full text search functionality will only include the following properties:
 * `_id`
@@ -28,7 +28,7 @@ At the same time it improves the Inventory API performance.
 
 This change will be implemented after a 3-month period at the earliest.
 
-#### Feature preview: Latest measurement values can be stored as part of a device managed object
+#### -Preview- Latest measurement values can be stored as part of a device managed object
 
 {{< c8y-admon-preview >}}
 The feature is in Public Preview mode, that is, it is not enabled by default and maybe subject to change in the future.
@@ -145,7 +145,7 @@ The value stored in the device managed object is the last value sent to the plat
 If the order of measurement delivery to the platform is different from the measurement creation time
 then also that latest values will be affected.
 
-#### Change - Extended ExplainQuery result
+#### -Change-  Extended ExplainQuery result
 
 The ExplainQuery result info has been extended by the algorithm used when performing queries for a user with inventory roles:
 
@@ -156,21 +156,21 @@ Example: <code>{"algorithm": "Legacy" }</code>
 Possible results: <code>Legacy, LimitedSourcesAcl, PostFilteringBySourceAcl, SingleSourceAcl, HierarchyAcl, SingleAgentAcl, SingleDeviceAcl, SingleAgentAndDeviceAcl</code> [MTM-52350]
 
 
-#### Change - Alarm status and severity now case-insensitive
+#### -Change-  Alarm status and severity now case-insensitive
 
 The alarm status and severity are now case-insensitive. When searching by alarm status <code>active</code> the API also returns alarms with status <code>ACTIVE</code>. The same applies for the alarm severity, that is, searching for <code>critical</code> alarms also returns <code>CRITICAL</code> alarms. Alarms with status <code>active</code> and <code>acknowledged</code> are now subject of alarm deduplication. [MTM-52515]
 
 
-#### Change - Search for fields with null values now possible
+#### -Change-  Search for fields with null values now possible
 
 The query language used by the managed objects API has been improved. You can now search for fields with null values. [MTM-52677]
 
 
-#### Change - Improved performance of GET requests on /user/users
+#### -Change-  Improved performance of GET requests on /user/users
 
 The performance of GET requests on the <code>/user/users</code> endpoint has been improved by better utilization of database indexes. [MTM-52566]
 
-#### Change - Improved performance of the Inventory API
+#### -Change-  Improved performance of the Inventory API
 
 - The performance of the Inventory API has been improved by removing an additional request to the database. [MTM-50840]
 - The performance of the Inventory API has been improved by removing two additional database queries for GET <code>/managedObjects</code>. [MTM-51973]

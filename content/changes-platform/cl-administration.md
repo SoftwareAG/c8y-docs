@@ -9,7 +9,7 @@ weight: 10
 
 ### October 2023
 
-#### -Announcement- Removal of deprecated Esper-related features
+#### -Announcement-  Removal of deprecated Esper-related features
 
 Removed Esper CEP related features from the UI such as:
 

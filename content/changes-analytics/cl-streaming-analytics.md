@@ -1,6 +1,6 @@
 ---
 title: Streaming Analytics
-layout: bundle
+layout: change_log
 section:
   - change_log
 weight: 10
@@ -9,11 +9,11 @@ weight: 10
 
 ### October 2023
 
-#### Change - Basic diagnostics information
+#### -Change-  Basic diagnostics information
 
 The EPL memory profiler snapshots, which were previously only included in the enhanced diagnostics information, are now also included in the basic diagnostics information. This is helpful in case a high memory usage alarm is raised when the Apama-ctrl microservice consumes 90% of the maximum memory permitted for the microservice container and you only have basic diagnostics information available. See also [Downloading diagnostics and logs](https://cumulocity.com/docs/streaming-analytics/troubleshooting/#diagnostics-download) in the user documentation.
 
-#### Feature - New EPL sample
+#### -Feature-  New EPL sample
 
 A new EPL sample named "Receive update notifications"
 can now be accessed from the EPL editor of the Streaming Analytics application.
@@ -23,7 +23,7 @@ in the user documentation.
 
 For more detailed information, see [Receiving update notifications](https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation for the Cumulocity IoT transport connectivity plug-in.
 
-#### Improvement - Analytics Builder
+#### -Change- Analytics Builder
 
 The [Constant Value](https://cumulocity.com/docs/streaming-analytics/block-reference/#constant-value) block now supports `float` and `boolean` value types
 and can produce output of these types. This enables the block's output to be consumed by other blocks that take input of type `float` or `boolean` like the blocks in

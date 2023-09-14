@@ -1,6 +1,6 @@
 ---
 title: Streaming Analytics
-layout: bundle
+layout: change_log
 section:
   - change_log
 weight: 30

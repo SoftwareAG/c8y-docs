@@ -1,6 +1,6 @@
 ---
 title: Security
-layout: bundle
+layout: change_log
 section:
   - change_log
 weight: 50

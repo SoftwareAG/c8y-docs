@@ -110,7 +110,7 @@ Your manifest file should look similar to this:
 ### Creating a managed object {#creating-a-managed-object}
 
 An alarm must be associated with a source and it requires an ID.
-Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
+Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/core/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, for example, [My Current Location](https://mycurrentlocation.net).

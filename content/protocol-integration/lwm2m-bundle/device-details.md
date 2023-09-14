@@ -66,7 +66,7 @@ The numbers in the green circles represent the number of properties in the insta
 * **Bootstrap settings** - related to LWM2M bootstrap
   * Bootstrap server ID
   * Security instance offset
-* **Servers to write during bootstrap** - list of servers that will be written to device when it bootstraps. Each server has:
+* **Servers to write during bootstrap** - list of servers that will be written to the device when it bootstraps. Each server has:
   * Server URI
   * Server ID
   * Registration lifeime

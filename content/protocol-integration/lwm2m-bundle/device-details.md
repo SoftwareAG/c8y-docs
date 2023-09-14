@@ -69,7 +69,7 @@ The numbers in the green circles represent the number of properties in the insta
 * **Servers to write during bootstrap** - list of servers that will be written to the device when it bootstraps. Each server has:
   * Server URI
   * Server ID
-  * Registration lifeime
+  * Registration lifetime
   * Default min period
   * Default max period
   * Binding mode

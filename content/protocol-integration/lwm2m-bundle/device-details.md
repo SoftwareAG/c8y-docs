@@ -84,7 +84,7 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Delivery protocol
   * Reset state machine settings
 
-For detailed description of the parameters above, see [Registering LWM2M devices](#register-device). 
+For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices). 
 
 ### LWM2M client awake time {#lwm2m-client-awake-time}
 

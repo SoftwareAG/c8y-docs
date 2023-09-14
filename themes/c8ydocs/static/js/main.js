@@ -31,7 +31,7 @@ var main = (function ($) {
     // scroll to the copied url
     function scrollToCopied(where) {
       let top = where.offsetTop - 103;
-      $('body, html').animate({ scrollTop: top}, 50, 'swing');
+      $('body, html').animate({ scrollTop: top}, 1, 'swing');
     }
 
     // copy current window location and add anchor with data-clipboard-text

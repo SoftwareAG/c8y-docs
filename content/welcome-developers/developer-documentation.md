@@ -24,7 +24,7 @@ Check out the following sections if you are looking for step-by-step instruction
   - [Device integration using MQTT](/device-integration/mqtt) - Integrate devices using the MQTT protocol.
   - [Device integration using REST](/device-integration/rest) - Integrate devices using REST.
 <br><br>
-  - [Web SDK](/web/) - Extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.
+  - [Web SDK](/web/) - Extend applications with your own plugins, add your own applications or implement additional functionality tailored to your use case.
 <br><br>
   - [Microservice SDK](/microservice-sdk/) - Develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorials for Java and C#.
 

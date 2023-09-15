@@ -1,6 +1,6 @@
 ---
 title: "Change log"
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-logs"
 weight: 5
 svg: '<svg
   viewBox="0 0 881 577"

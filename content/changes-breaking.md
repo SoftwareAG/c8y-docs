@@ -1,6 +1,6 @@
 ---
 title: Breaking changes
-icon: "c8y-icon c8y-icon-notification"
+icon: "dlt-c8y-icon-system-report"
 type: root
 layout: redirect
 bundle: changes-breaking

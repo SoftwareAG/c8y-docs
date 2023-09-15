@@ -1,6 +1,6 @@
 ---
 title: Device management
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-device-management"
 type: root
 layout: redirect
 bundle: changes-device-management

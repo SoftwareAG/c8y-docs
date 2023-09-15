@@ -1,6 +1,6 @@
 ---
 title: Platform services
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
 bundle: changes-platform

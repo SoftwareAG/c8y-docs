@@ -1,6 +1,6 @@
 ---
 title: Application enablement
-icon: "c8y-icon c8y-icon-notification"
+icon: "c8y-icon c8y-icon-tools"
 type: root
 layout: redirect
 bundle: changes-applications

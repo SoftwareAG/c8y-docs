@@ -10,7 +10,7 @@ audience:
   - Users
   - Developers
   - Business
-  - Administrator
+  - Administrators
 weight: 40
 ---
 

@@ -12,9 +12,8 @@
 
 .change-log__label{
   &--announcement{
-    background-color: var(--c8y-palette-status-info-light);
-    color: var(--c8y-palette-status-info-dark);
-    outline: 2px solid var(--c8y-palette-status-info-dark);
+    background-color: var(--c8y-palette-status-warning);
+    color: var(--c8y-palette-high);
   }
   &--change{
     background-color: var(--c8y-brand-primary);
@@ -33,8 +32,9 @@
     color: var(--c8y-palette-high);
   }
   &--issue{
-    background-color: var(--c8y-palette-status-warning);
-    color: var(--c8y-palette-high);
+    background-color: var(--c8y-palette-status-info-light);
+    color: var(--c8y-palette-status-info-dark);
+    outline: 2px solid var(--c8y-palette-status-info-dark);
   }
   &--security{
     background-color: var(--c8y-palette-status-danger);

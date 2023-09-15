@@ -6,6 +6,7 @@ layout: redirect
 bundle: cockpit
 audience:
   - Users
+  - Business
 section:
   - app_development
 weight: 10

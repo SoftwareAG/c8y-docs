@@ -8,6 +8,7 @@ section:
   - platform_administration
 audience:
   - Users
+  - Administrators
 weight: 10
 ---
 

@@ -79,7 +79,7 @@ The fields below must be contained to be able to establish a connection:
 </tbody>
 </table>
 
-#### Security settings {#lwm2m-device-registration-security}
+#### Security settings {#security-settings}
 
 We can distinguish 2 types of connectivity:
 * **bootstrap** - connection established to bootstrap server in order to provision device with server configuration.

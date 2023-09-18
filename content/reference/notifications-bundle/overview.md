@@ -215,8 +215,8 @@ It can then choose to create subscriptions with "mo" **context** for those manag
 Notifications for managed object deletions are forwarded to topics by subscriptions with "mo" (managed object) **context** 
 that include the "managedobjects" API, and by subscriptions with "tenant" **context** that include the "managedobjects" API.
 
-Subscriptions with "tenant" **context** can also use the alarms API and/or the events API to forward all alarms and/or events,
-respectively, that occur within the tenant, applying filters as desired.
+Subscriptions with "tenant" context can also use the alarms API and/or the events API to forward all alarms and/or events,
+respectively, which occur within the tenant, applying filters as desired.
 
 <a name="subscription-filter">&nbsp;</a>
 ### Subscription filters

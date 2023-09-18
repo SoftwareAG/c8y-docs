@@ -21,7 +21,7 @@ To register a LWM2M device in {{< product-c8y-iot >}} navigate to **Devices** > 
 
 The LWM2M device registration wizard has four steps:
 * **Device** - configuration of globally unique device identifier.
-Refer to [Device settings](#lwm2m-device-registration-device) section below for details about the fields.
+Refer to [Device settings](#device-settings) section below for details about the fields.
 * **Security** - configuration of LWM2M security modes, separate for bootstrap server ("Bootstrap Security Mode") and regular server ("Server Security Mode") connections.
 Refer to [Security settings](#lwm2m-device-registration-security) section below for details about the fields.
 * **Bootstrap** settings for enabling the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.

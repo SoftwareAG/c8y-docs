@@ -220,7 +220,7 @@ The fields below must be contained to configure security modes for bootstrap and
 </tbody>
 </table>
 
-#### Bootstrap settings {#lwm2m-device-registration-bootstrap}
+#### Bootstrap settings {#bootstrap-settings}
 
 ##### Registration of NO_SEC devices {#registration-of-nosec-devices}
 

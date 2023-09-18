@@ -74,7 +74,7 @@ separate copies of those messages.
 
 {{< c8y-admon-important >}}
 It is important to manage consumers carefully as they can place significant storage resource demands on a system.
-Only create (connect) consumers they are to be active, 
+Only create (connect) consumers if they are to be active, 
 and unsubscribe them if they are no longer needed or not needed for long periods.
 Unsubscribing is an explicit action - disconnecting a consumer client does not unsubscribe it.
 See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for more details.

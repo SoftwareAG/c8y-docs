@@ -27,7 +27,7 @@ Refer to [Security settings](#security-settings) section below for details about
 * **Bootstrap** settings for enabling the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.
 Refer to [Bootstrap settings](#bootstrap-settings) section below for details about the fields.
 * **Advanced** setting for further optional configurations.
-Refer to [Advanced settings](#lwm2m-device-registration-advanced) section below for details about the fields.
+Refer to [Advanced settings](#advanced-settings) section below for details about the fields.
 
 After filling all applicable information for the device, click **Register**.
 The UI will display a confirmation message.

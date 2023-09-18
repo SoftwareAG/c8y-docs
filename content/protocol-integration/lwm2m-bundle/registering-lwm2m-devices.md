@@ -40,7 +40,7 @@ To register the LWM2M devices in {{< product-c8y-iot >}}, navigate to **Devices*
 Upload a CSV file with the registration data in the resulting bulk registration dialog.
 The dialog also contains CSV template links.
 Refer to [Device settings](#device-settings), [Security settings](#security-settings),
-[Bootstrap settings](#lwm2m-device-registration-bootstrap) and [Advanced settings](#lwm2m-device-registration-advanced)
+[Bootstrap settings](#bootstrap-settings) and [Advanced settings](#advanced-settings)
 below for details about the fields.
 
 {{< c8y-admon-info >}}

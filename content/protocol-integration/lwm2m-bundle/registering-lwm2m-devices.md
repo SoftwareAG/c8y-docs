@@ -50,7 +50,7 @@ The maximum size allowed for the CSV file is 10 MB.
 
 When you upload the CSV file, the dialog will display a confirmation message that tells you where to find the result. The bulk device registration operation will be displayed in the [LWM2M connector device](#connector-device) object created for the tenant.
 
-#### Device settings {#lwm2m-device-registration-device}
+#### Device settings {#device-settings}
 
 The fields below must be contained to be able to establish a connection:
 <table>

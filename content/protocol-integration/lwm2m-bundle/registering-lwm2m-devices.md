@@ -25,7 +25,7 @@ Refer to [Device settings](#device-settings) section below for details about the
 * **Security** - configuration of LWM2M security modes, separate for bootstrap server ("Bootstrap Security Mode") and regular server ("Server Security Mode") connections.
 Refer to [Security settings](#security-settings) section below for details about the fields.
 * **Bootstrap** settings for enabling the device to connect to the {{< product-c8y-iot >}} LWM2M bootstrap server.
-Refer to [Bootstrap settings](#lwm2m-device-registration-bootstrap) section below for details about the fields.
+Refer to [Bootstrap settings](#bootstrap-settings) section below for details about the fields.
 * **Advanced** setting for further optional configurations.
 Refer to [Advanced settings](#lwm2m-device-registration-advanced) section below for details about the fields.
 

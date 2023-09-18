@@ -312,7 +312,7 @@ See the table below for the full set of bootstrap fields you can add:
 After creation, you can view and change device parameters in the **LWM2M configuration** tab in the **Device details** page, see [LWM2M configuration](#lwm2m-configuration).
 {{< /c8y-admon-info >}}
 
-#### Advanced settings {#lwm2m-device-registration-advanced}
+#### Advanced settings {#advanced-settings}
 
 See the table below for information on additional fields:
 

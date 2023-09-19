@@ -136,7 +136,7 @@ Using multiple specific devices in a model with the concurrency level set to mor
 
 By default, a maximum of 10 items are shown in the following cases:
 
--   When you select a different device, group or asset from the **Select Device, Group or Asset** dialog box \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
+-   When you select a different input source or output destination \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 -   When you replace devices, groups or assets \(see [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets)\).
 
 When you use the search box in the above cases, this default also applies to the maximum number of items that are shown in the search result. When you click **Load more**, up to 10 more items are shown.
@@ -159,7 +159,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 By default, only devices, groups and assets are shown in the following cases:
 
--   When you select a different item from the **Select Device, Group or Asset** dialog box \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
+-   When you select a different input source or output destination \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 -   When you replace devices or groups \(see [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets)\).
 
 However, when you use the search box in the above cases, all managed objects \(not just devices, groups and assets\) in the {{< product-c8y-iot >}} inventory which match the search criteria are shown. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.

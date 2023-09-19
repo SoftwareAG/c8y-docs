@@ -859,7 +859,7 @@ Full payload data structure explained:
 <td>processingMode</td>
 <td>string</td>
 <td>no</td>
-<td>Define the {{< product-c8y-iot >}} processing mode for incoming data. Refer to <a href="https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the {{< openapi >}} for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
+<td>Define the {{< product-c8y-iot >}} processing mode for incoming data. Refer to <a href="https://{{< domain-c8y >}}/api/core/#section/REST-implementation/HTTP-usage"> <b>HTTP usage > Process mode</b></a> in the {{< openapi >}} for more information. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT. Note that for the alarm mappings, only the PERSISTENT mode is supported regardless what is being given here.</td>
 </tr>
 <tr>
 <td>overiddenSubscriptions</td>

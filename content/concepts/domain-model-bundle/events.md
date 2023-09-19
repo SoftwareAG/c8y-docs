@@ -83,4 +83,4 @@ This is an example of an alarm that has been cleared:
 }
 ```
 
-More detailed information can be found in [Events](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Events), [Alarms](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Alarms) and [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}}.
+More detailed information can be found in [Events](https://{{< domain-c8y >}}/api/core/#tag/Events), [Alarms](https://{{< domain-c8y >}}/api/core/#tag/Alarms) and [Audits](https://{{< domain-c8y >}}/api/core/#tag/Audits) in the {{< openapi >}}.

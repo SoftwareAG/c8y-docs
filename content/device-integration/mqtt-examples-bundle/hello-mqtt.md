@@ -39,7 +39,7 @@ To configure the MQTT connection, you must pass the following connection paramet
 ![Example MQTTBox Configuration](/images/mqtt/mqttBoxConfig.png)
 
 {{< c8y-admon-info >}}
-You may review [Tenants > Tenant ID and tenant domain](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}} to get a better understanding between tenant ID and tenant domain.
+You may review [Tenants > Tenant ID and tenant domain](https://{{< domain-c8y >}}/api/core/#tag/Tenants) in the {{< openapi >}} to get a better understanding between tenant ID and tenant domain.
 {{< /c8y-admon-info >}}
 
 Other configurations like "clean session" are not important for this example. You can change them to your needs. After clicking **Save**, you will see a screen similar to the following screenshot.

@@ -1,5 +1,5 @@
 ---
-weight: 65
+weight: 30
 title: Connecting an OPC UA device
 layout: redirect
 ---

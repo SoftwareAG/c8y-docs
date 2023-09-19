@@ -21,4 +21,4 @@ One of the great innovations in {{< product-c8y-iot >}} is its standardized repr
 
 As a result, Internet of Things applications can be written independently from connected devices and underlying sensor networks, customized for specific cases in different web configurations or different devices from manufacturers.
 
-The following sections are a walk-through of these concepts and will describe the ideas behind it and give you examples which use {{< product-c8y-iot >}}'s REST APIs as format. To use them with different programming languages, refer to the specified samples in the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}).
+The following sections are a walk-through of these concepts and will describe the ideas behind it and give you examples which use {{< product-c8y-iot >}}'s REST APIs as format. To use them with different programming languages, refer to the specified samples in the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core).

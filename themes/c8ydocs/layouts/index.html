@@ -3,7 +3,7 @@
   <div class="home-top">
     <section class="home-top__content">
         <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
-        <p>Find comprehensive information on the management and usage of the Cumulocity IoT platform both from a user and from a developer perspective.</p>
+        <p>{{replace (replace (replace .Site.Params.description "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</p>
     </section>
     {{- partial "home-illustration.html" . -}}
   </div>
@@ -23,8 +23,6 @@
     </a>
   {{ end }}
 </div>
-
-
 </main>
 {{- partial "footer.html" . -}}
 {{ end }}

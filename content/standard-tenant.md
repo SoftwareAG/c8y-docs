@@ -1,11 +1,14 @@
 ---
 title: Standard tenant administration
-icon: "c8y-icon c8y-icon-administration"
+icon: "dlt-c8y-icon-manager"
 layout: redirect
 type: root
 bundle: standard-tenant
 section:
   - platform_administration
+audience:
+  - Users
+  - Administrators
 weight: 10
 ---
 

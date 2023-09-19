@@ -53,7 +53,7 @@ Global roles and inventory roles are created and managed in the **Roles** page o
 
 A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions](/standard-tenant/managing-permissions).
 
-For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
+For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
 
 ### Globally accessible objects {#globally-accessible-objects}
 

@@ -44,6 +44,7 @@ It is also possible to filter by the presence of a specific value of a JSON "typ
 When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
 For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
 
+<<<<<<< HEAD
 ### Receiving subscribed notifications
 
 In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications.
@@ -98,6 +99,255 @@ Persistent subscriptions ensure that consumers never miss a message if their con
 They use replicated secondary storage to maintain large backlogs (within the constraints of any configured backlog limits)
 and to maintain the consumers' positions in subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,
+=======
+![Notification 2.0 topics and subscriptions diagram](/images/reference-guide/notification2/notification2-subscriptions.svg)
+
+### Consumers and tokens
+A topic's notification messages can be received by WebSocket based consumers that present a valid authorizing
+token for that specific topic when connecting to the Notification 2.0 WebSocket endpoint.
+This token is in the form of a string conforming to the JWT (JSON Web Token) standard. Tokens can be obtained from the
+{{< product-c8y-iot >}} [token](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) REST API by authenticated users.
+
+Consumers receive the topic messages reliably, with at-least-once semantics, in order and must acknowledge each message in turn.
+Notification order is preserved from the point of view of any given device sending in REST and MQTT API requests.
+The protocol is text-based and described in detail in the [Consumer protocol](../notifications/#consumer-protocol) section.
+In typical usage, multiple consumers of a given topic operate independently in parallel, each receiving and acknowledging
+separate copies of those messages.
+
+{{< c8y-admon-important >}}
+It is important to manage consumers carefully as they can place significant storage resource demands on a system.
+Only create (connect) consumers if they are to be active, 
+and unsubscribe them if they are no longer needed or not needed for long periods.
+Unsubscribing is an explicit action - disconnecting a consumer client does not unsubscribe it.
+See the [Consumer lifecycle](../notifications/#consumer-lifecycle) section for more details.
+{{< /c8y-admon-important >}}
+
+The diagram below shows three consumers that have been created in the Messaging Service by four consumer clients.
+
+The rightmost client identifies its consumer as "alarmmonitor" and that consumer receives messages from the "alarms" subscription topic. 
+
+The second to right client identifies its consumer as "tempaudit" and that consumer receives messages from the "temperature" subscription topic.
+
+The leftmost two consumer clients are two shares of a (logically single) [shared consumer](../notifications/#shared-tokens),
+and so share the same copy of topic messages. They both identify the same "tempmonitor" consumer; each receives a non-overlapping subset
+of the messages in the "temperature" topic.
+Collectively, they receive all of the messages in the topic.
+
+![Notification 2.0 consumers and consumer clients diagram](/images/reference-guide/notification2/notification2-consumers.svg)
+
+<a name="consumer-lifecycle">&nbsp;</a>
+### Consumer lifecycle
+
+When a subscription is created, {{< product-c8y-iot >}} starts to create and forward notifications within the subscription's scope 
+to the Messaging Service subsystem. The Message Service does not necessarily retain these messages; it only retains a 
+subscription topic's messages if the topic is persistent, and it has at least one consumer for the topic that is or has been connected.
+
+
+{{< c8y-admon-info >}}
+The set of retained topic messages that have not been received and acknowledged by a given consumer are known as the consumer's *backlog*.
+
+Only consumers of persistent subscription topics have backlogs that are maintained across client reconnections.
+
+Consumers of non-persistent subscription topics get a new backlog pointing only to the next (latest) topic message when 
+they connect/reconnect and any previous backlog is discarded, removing any message references. They can only cause
+backlog size problems if they remain connected but continually consume at a rate lower than the rate at which new messages arrive.
+{{< /c8y-admon-info >}}
+
+Persistent subscription topic messages are only stored once in the Messaging Service, but all associated consumers' backlogs, 
+whether the consumer is connected or not, reference each message until they have received and acknowledged it. 
+Therefore, all consumer backlogs should be considered to have a storage cost from when they first connect until 
+they explicitly express no further interest in the topic by unsubscribing.
+The Messaging Service discards a given message only when there are no backlogs that reference it anymore.
+
+The following diagram shows the lifecycle of a consumer backlog in relation to its associated client connection(s).
+The backlog is created when the consumer first connects to the Messaging Service and is only destroyed when it is explicitly unsubscribed.
+The consumer's backlog is maintained, even if its client connection is interrupted. This is needed for reliable messaging, 
+allowing the consumer to not miss messages during connection outages, but comes at the cost of explicit lifecycle management.
+
+![Notification 2.0 consumer backlog lifecycle](/images/reference-guide/notification2/notifications2-backlog-lifecycle.svg)
+
+To unsubscribe its consumer, pass its token as the **token** parameter to the [/notification2/unsubscribe](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationTokenUnsubscribeResource) REST endpoint.
+
+
+### Creating subscriptions
+The JSON fields sent in a [create subscription request](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource)
+determine which {{< product-c8y-iot >}} messages are forwarded to a topic, and the forwarded message content.
+This request must be made by an authenticated {{< product-c8y-iot >}} user with the `ROLE_NOTIFICATION_2_ADMIN` role.
+
+The **context** field broadly determines the type of {{< product-c8y-iot >}} message a subscription might match and forward.
+There are two valid **context** values: "mo" (managed object) and "tenant". Some subscription fields have 
+constraints that vary according to the value of the **context** field. Where this is the case, it is pointed out in that field's 
+documentation in the [create subscription](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource) documentation.
+
+The **source** field can only be used if the **context** is "mo". It must have a nested **id** field containing the 
+value of a managed object's global identifier (sometimes referred to as a "device ID" or "source ID").
+This is used to target inclusion of messages from the given managed object.
+
+**subscription** is the first of two fields that identify which topic this subscription will forward messages to.
+Multiple subscriptions contribute to a single topic if they have the same values for both the **subscription** and **nonPersistent** fields.
+
+The **nonPersistent** field determines if the topic is [persistent or non-persistent](../notifications/#non-persistent-topics).
+Subscriptions with the same **subscription** field value, but different **nonPersistent** values forward to two different topics.
+It is, therefore, the second of the two fields that identifies the subscription topic. 
+
+The **filter** field can provide a [subscription filter](../notifications/#subscription-filter), allowing more finely 
+grained selection of the included messages, based on the message **type** and API (is it a measurement or alarm, for example). 
+
+The **fragmentsToCopy** field allows the forwarded messages to be transformed so that they contain only a specific subset
+of the fragments present in the original {{< product-c8y-iot >}} messages they are generated from. This can be useful, for example,
+for security, bandwidth saving or functionality scoping reasons. 
+
+The following summarizes the subscription fields.
+<table>
+<thead>
+<tr>
+<th nowrap="nowrap">Field Name&nbsp;</th>
+<th>Value</th>
+<th>Required/Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td nowrap="nowrap">context</td>
+<td>"mo" or "tenant"</td>
+<td>Required</td>
+<td>Only values "mo" and "tenant" are supported</td>
+</tr>
+<tr>
+<td nowrap="nowrap">source</td>
+<td>A managed object global identifier</td>
+<td>Required if context is "mo"</td>
+<td>Has a mandatory child <b>id</b> field</td>
+</tr>
+<tr>
+<td nowrap="nowrap">subscription</td>
+<td>String</td>
+<td>Required</td>
+<td>Determines messaging-service topic used</td>
+</tr>
+<tr>
+<td nowrap="nowrap">nonPersistent</td>
+<td>Boolean</td>
+<td>false</td>
+<td>Determines if a persistent or non-persistent topic is used</td>
+</tr>
+<tr>
+<td nowrap="nowrap">filter</td>
+<td>JSON object</td>
+<td>All messages</td>
+<td>Includes messages based on message values</td>
+</tr>
+<tr>
+<td nowrap="nowrap">fragmentsToCopy</td>
+<td>JSON list of strings</td>
+<td>All fragments</td>
+<td>Determines which fragments are included in forwarded messages</td>
+</tr>
+</tbody>
+</table>
+
+Notifications for new managed objects creations can never be forwarded by subscriptions with an "mo" **context** as the 
+managed object is only given an ID when it is created and that ID is needed as a field to create the subscription.
+Therefore, to receive notifications informing of new managed object creations, create a subscription with "tenant" **context** 
+to listen for them.
+An application can use this to discover new managed objects.
+It can then choose to create subscriptions with "mo" **context** for those managed objects.
+
+Notifications for managed object deletions are forwarded to topics by subscriptions with "mo" (managed object) **context** 
+that include the "managedobjects" API, and by subscriptions with "tenant" **context** that include the "managedobjects" API.
+
+Subscriptions with "tenant" context can also use the alarms API and/or the events API to forward all alarms and/or events,
+respectively, which occur within the tenant, applying filters as desired.
+
+<a name="subscription-filter">&nbsp;</a>
+### Subscription filters
+Subscription filters provide fine-grained selection of the {{< product-c8y-iot >}} messages a subscription will forward.
+Filters can be provided as the **subscriptionFilter** field in a subscription's JSON object at creation time. 
+It is a JSON object with **apis** and **typeFilter** fields.  
+Filters specified by subscriptions with "tenant" **context** must provide a **typeFilter** value.
+Filters specified by those with "mo" **context** can provide either or both filter fields.
+
+The **apis** field is a JSON array that specifies which {{< product-c8y-iot >}} API messages to include.
+Use an array containing just the wildcard value, "*", to include messages from all APIs. 
+To include messages from a subset of the APIs, use an array containing any single or multiple selection from 
+"alarms", "alarmsWithChildren", "events", "eventsWithChildren", "measurements", "managedobjects" and "operations".
+
+For example, to include messages from all APIs:
+```json
+{
+  "context": "mo",
+  "subscription": "subscription01",
+  "source": {
+    "id": 2468
+  },
+  "filter": {
+    "apis": ["*"]
+  }
+}
+```
+
+To include only messages from the measurements and alarms APIs:
+```json
+{
+  "context": "mo",
+  "subscription": "subscription02",
+  "source": {
+    "id": 2468
+  },
+  "filter": {
+    "apis": ["measurements", "alarms"]
+  }
+}
+```
+
+The "alarmsWithChildren" and "eventsWithChildren" **apis** values allow subscriptions with managed object **context**
+to filter in, respectively, alarms or events for all recursively descendant child managed objects of the **source.id**
+managed object in addition to those from the **source.id** managed object itself.
+
+The **typeFilter** string field is matched against the original message's **type** field. It can be a single value, or a
+limited (supporting only `or`) [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) expression.
+
+For example, to include messages with **type** "temperature" and messages with **type** "pressure":
+```json
+{
+  "context": "mo",
+  "subscription": "subscription03",
+  "source": {
+    "id": 2468
+  },
+  "filter": {
+    "type": "'temperature' or 'pressure'"
+  }
+}
+```
+To include messages of **type** "temperature" only:
+```json
+{
+  "context": "mo",
+  "subscription": "subscription04",
+  "source": {
+    "id": 2468
+  },
+  "filter": {
+    "type": "'temperature'"
+  }
+}
+```
+
+<a name="non-persistent-topics">&nbsp;</a>
+### Persistent and non-persistent subscriptions 
+A subscription can be persistent or non-persistent, implying that the Messaging Service topic for it is either persistent
+or non-persistent, respectively.
+These have different qualities which can be useful to satisfy the varying needs of differing use-cases. 
+
+
+Persistent subscriptions are the default. They are used for reliable messaging, ensuring that consumers never miss a 
+message if their connection is interrupted.
+They use replicated secondary storage to maintain backlogs (within the constraints of any configured storage limits)
+and to maintain the consumers' positions in their topics.
+When a consumer of a persistent subscription topic has their connection interrupted,
+>>>>>>> d9d4a7f0f... Merge pull request #1407 from SoftwareAG/feature/MTM-54143/type-filtering-changes-consistency
 whether that is due to network issues or deliberate actions by the consumer,
 upon reconnection they will continue to receive notifications from the position they were at before the outage 
 (specifically, from the message after the last one they acknowledged successfully before the outage). 

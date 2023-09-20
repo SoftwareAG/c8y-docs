@@ -4,8 +4,7 @@ title: Configuring single sign-on
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT.
-
+{{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT. SAML is not supported.
 
 {{< c8y-admon-req >}}
 To use the SSO feature the following requirements must be met:
@@ -196,7 +195,7 @@ Placeholders are not validated for correctness. Any not recognized or misspelled
 
 ### Integration with Azure AD
 
-The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
+The integration was successfully verified against Azure AD using OAuth2 and OpenID Connect (SAML is not supported). The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
 The following steps illustrate how to use Azure AD (Azure Active Directory) for SSO in {{< product-c8y-iot >}}.
 

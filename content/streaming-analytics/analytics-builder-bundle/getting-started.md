@@ -66,7 +66,7 @@ You design your model in the model editor. The model editor is shown after you h
 If the block parameter editor is not shown (for example, because you clicked an empty space on the canvas after dragging the input block onto the canvas), click the block using the left mouse button to show the block parameter editor.
     {{< /c8y-admon-info>}}
 
-3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button. This button is shown when you hover over a device.
+3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
 
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
 

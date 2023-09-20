@@ -123,7 +123,7 @@ The block parameter editor is automatically shown when you add a block for which
 
 Most blocks \(but not all\) have parameters that you have to set according to your requirements.
 
-When "Missing" is shown on an input or output block on the canvas, this means that the defined device, group or asset cannot be found in the {{< product-c8y-iot >}} inventory. You should then either go to the {{< product-c8y-iot >}} inventory and make sure that this device is registered or that the group or asset exists, or you should select a different, existing device, group or asset in the block parameter editor \(see below\).
+When "Missing" is shown on an input or output block on the canvas, this means that the defined input source or output destination cannot be found in the {{< product-c8y-iot >}} inventory. You should then either go to the {{< product-c8y-iot >}} inventory and make sure that the device is registered or that the group or asset exists, or you should select a different, existing input source or output destination in the block parameter editor \(see below\).
 
 The labels of some blocks on the canvas show the value of the most important parameter. For example, the **Expression** block shows the defined expression, and the **Time Delay** block shows the defined delay in seconds.
 
@@ -163,7 +163,7 @@ For output blocks, you cannot select a group. A button is not provided in this c
 Select the "Trigger Device" option instead to send the output to the device which triggered the output.  
     {{< /c8y-admon-info>}}
 
-    The maximum number of shown devices, groups and/or assets depends on a tenant option. For more information, see [Configuring the number of shown devices, groups and/or assets](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets).
+    The maximum number of shown input sources and output destinations depends on a tenant option. For more information, see [Configuring the number of shown devices, groups and/or assets](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets).
 
     The managed objects that are shown when searching also depend on a tenant option. You can restrict the search to show only managed objects of a specific type. For more information, see [Searching for devices, groups and/or assets](/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets).
 

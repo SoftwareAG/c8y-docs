@@ -86,7 +86,7 @@ Filtering also works in combination with a model or sample name that you specify
 
     -   **Data point**
 
-        You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one device has been selected in the **Filter by device, group or asset name** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
+        You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one device has been selected in the **Filter by source or destination** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
 
     -   **Tags**
 

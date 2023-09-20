@@ -129,7 +129,7 @@ The labels of some blocks on the canvas show the value of the most important par
 
 The block parameter editor also contains commands for duplicating and removing the currently selected block. See [Duplicating a block](/streaming-analytics/analytics-builder/#duplicating-a-block) and [Removing a block or wire](/streaming-analytics/analytics-builder/#removing-a-block-or-wire) for detailed information.
 
-For the input and output blocks, you can globally replace the devices, groups or assets that are used. See [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets) for detailed information.
+For the input and output blocks, you can globally replace the input sources and output destinations that are used. See [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets) for detailed information.
 
 ##### To edit the parameters of a block {#to-edit-the-parameters-of-a-block}
 
@@ -368,7 +368,7 @@ After you have replaced the devices, you need to verify that the measurements th
 
 2.  In the **Current** drop-down list box of the resulting dialog box, select the source or destination that you want to replace. All input sources and output destinations that are used in the model are available for selection.
 
-3.  Click the **Replace with** box to display a dialog box. The dialog box is the same as when selecting a input source or output destination in the block parameter editor. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box. Click the button which is shown when you hover over an entry to select the device, group or asset that you want to use instead.
+3.  Click the **Replace with** box to display a dialog box. The dialog box is the same as when selecting a input source or output destination in the block parameter editor. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box. Click the button which is shown when you hover over an entry to select the source or destination that you want to use instead.
 
     The maximum number of shown sources and destinations depends on a tenant option. For more information, see [Configuring the number of shown devices, groups and/or assets](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets).
 
@@ -423,7 +423,7 @@ Models with no template parameters can be directly activated in the model manage
 
         **Multi-line String** is a special type which is used, for example, with the **Text** parameter of the **Send Email** block. Long input is automatically wrapped in the **Default Value** text box and you can press Enter to start text on a new line.
 
-        An input block specifies a device or a group of devices, while an output block specifies a device, a trigger device or an asset. For template parameters, the same template parameter and thus value can be used for both input and output blocks. If a template parameter is set to refer to a group of devices, then using it in an output block will be treated as the trigger device. Typically, a single template parameter would be used for all input and output blocks, and may be a single device or a group of devices, in which case the block output goes to the device within the group that triggered a model evaluation \(so a model calculating an average of a measurement and outputting to a measurement would generate a new measurement for each device independently\). Even if a different template parameter whose value refers to a different group was used, the model output would only be sent to the device that triggered a model's evaluation.
+        An input block specifies a device or a range of devices, while an output block specifies a device, a trigger device or an asset. For template parameters, the same template parameter and thus value can be used for both input and output blocks. If a template parameter is set to refer to a range of devices, then using it in an output block will be treated as the trigger device. Typically, a single template parameter would be used for all input and output blocks, and may be a single device or a range of devices, in which case the block output goes to the device within the range that triggered a model evaluation \(so a model calculating an average of a measurement and outputting to a measurement would generate a new measurement for each device independently\). Even if a different template parameter whose value refers to a different range was used, the model output would only be sent to the device that triggered a model's evaluation.
 
     -   **Optional**. An optional value can remain blank or can be set later by the instance maintainer. When you select this check box, it is not possible to specify a default value.
     -   **Default Value**. You can only specify a default value when the **Optional** check box is not selected.
@@ -482,7 +482,7 @@ You can arrange blocks and their attached wires in a group. A group is a special
 Groups are helpful if commonly required functionality needs to be made available in multiple places. You can give each group a name by which it can be identified. You can copy a group and paste it in either the same model or in a different model.
 
 {{< c8y-admon-info>}}
-Do not confuse this type of group with a group of devices. Input sources may sometimes be a group of devices, which is different. See also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block).
+Do not confuse this type of group with a group (or range) of devices. Input sources may sometimes be a group of devices, which is different. See also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block).
 {{< /c8y-admon-info>}}
 
 ![Example of a group containing several blocks](/images/streaming-analytics/analytics-builder/group-example.png)

@@ -76,6 +76,8 @@ The software and all its versions will be deleted from the software repository.
 
 In the details of a specific software, hover over the version entry you want to delete and click the delete icon. The software version will be deleted from the software details.
 
+When the last version in a software is deleted, this will delete its corresponding parent software as well.
+
 ### To manage software on a device {#to-manage-software-on-a-device}
 
 In the **Software** tab of a device you can manage the software for the particular device.

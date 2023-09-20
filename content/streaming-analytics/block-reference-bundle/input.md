@@ -91,8 +91,8 @@ Note: When running in simulation mode, because only the creation time of the ala
 </tr>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>Defines the device, group, or asset from which the alarm has been received.</span>
-<p>This can be a single device, an asset, or an object that references or contains a group of devices.</p>
+<td><span>Defines the source from which the alarm has been received.</span>
+<p>This can be a single device, an asset, an object that references or contains a group of devices or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>
@@ -212,8 +212,8 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 <tbody>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>Defines the device, group, or asset from which the event has been received.</span>
-<p>This can be a single device, an asset, or an object that references or contains a group of devices.</p>
+<td><span>Defines the source from which the event has been received.</span>
+<p>This can be a single device, an asset, an object that references or contains a group of devices, or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>
@@ -320,8 +320,8 @@ The parameters that define the input stream of the block are "Input Source" and 
 <tbody>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>Defines the device, group, or asset from which the managed object has been received.</span>
-<p>This can be a single device, an asset, or an object that references or contains a group of devices.</p>
+<td><span>Defines the source from which the managed object has been received.</span>
+<p>This can be a single device, an asset, an object that references or contains a group of devices, or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>
@@ -339,7 +339,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 </tr>
 <tr>
 <th scope="row">Capture Start Value</th>
-<td><span>Outputs the initial value when the model is activated.</span>
+<td><span>Outputs the initial value when the model is activated. This parameter must not be selected if the Input Source parameter is set to "All devices".</span>
 </td>
 <td><span>boolean</span>
 </td>
@@ -410,8 +410,8 @@ Note: When running in simulation mode, because historical input data is used, ti
 <tbody>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>Defines the device, group, or asset from which the measurement has been received.</span>
-<p>This can be a single device, an asset, or an object that references or contains a group of devices.</p>
+<td><span>Defines the source from which the measurement has been received.</span>
+<p>This can be a single device, an asset, an object that references or contains a group of devices, or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>
@@ -504,8 +504,8 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 <tbody>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>Defines the device, group, or asset from which the operation has been received.</span>
-<p>This can be a single device, an asset, or an object that references or contains a group of devices.</p>
+<td><span>Defines the source from which the operation has been received.</span>
+<p>This can be a single device, an asset, an object that references or contains a group of devices, or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>
@@ -619,8 +619,8 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 <tbody>
 <tr>
 <th scope="row">Input Source</th>
-<td><span>Defines the device, group, or asset from which the position is received.</span>
-<p>This can be a single device, an asset, or an object that references or contains a group of devices.</p>
+<td><span>Defines the source from which the position is received.</span>
+<p>This can be a single device, an asset, an object that references or contains a group of devices, or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>

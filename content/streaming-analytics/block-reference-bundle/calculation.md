@@ -737,6 +737,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 <tr>
 <th scope="row">Input Source</th>
 <td><span>The device, group, or asset which contains a data point. If specified, then this source (typically the same as the measurement source) is checked to see if it contains a data point for the specified fragment and series. If it contains a data point, the red and yellow range values from the source object are used in place of the KPI values.</span>
+<p>For the KPI block, this parameter must not be set to "All devices".</p>
 </td>
 <td><span>any</span>
 </td>

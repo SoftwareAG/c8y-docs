@@ -11,12 +11,15 @@ To enable this, first register {{< product-c8y-iot >}} Edge as a device in the {
 In case you let the {{< product-c8y-iot >}} Edge use the internally generated TLS key and certificates, you can download the CA certificate by using the command following command:
 
 ```shell
-kubectl --namespace cumulocityiotedge-operator-system get secrets internal-generated-tls-certificates --output jsonpath='{ .data.ca\.crt }' | base64 -d
+kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh
 ```
+{{< c8y-admon-info >}}
+Substitute the {{< product-c8y-iot >}} Edge name and namespace name, which is currently **c8yedge** in the command, with the specific {{< product-c8y-iot >}} Edge name and namespace name you've specified in your Edge CR. 
+{{< /c8y-admon-info >}}
 
 Once registered, you can access your Edge remotely as a device, monitor its metrics, upgrade its version and collect diagnostic data remotely.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|
 |domain|Yes|String||{{< product-c8y-iot >}} cloud tenant domain. For example, `<tenantid>.cumulocity.com`|
-|tlsSecretName|No|string||Name of the Kubernetes Secret containing the TLS key and the certificate chain with which Edge connects to the cloud through MQTT protocol using X.509 certificate for authentication. See [TLS Secret](/edge-k8s/edge-custom-resource-definition/#tls-secret) for details.<br>**Note**: The Operator retrieves this secret from the namespace corresponding to the name specified in the Edge CR. Ensure that this secret is created before initiating the Edge deployment or update process.
+|tlsSecretName|No|string||Name of the Kubernetes Secret containing the TLS key and the certificate chain with which Edge connects to the cloud through MQTT protocol using X.509 certificate for authentication. See [TLS Secret](/edge-k8s/edge-custom-resource-definition/#tls-secret) for details.<br><br>{{< c8y-admon-info >}} The Operator retrieves this secret from the EDGE-CR-NAMESPACE. Ensure that this secret is created before initiating the Edge deployment or update process.{{< /c8y-admon-info >}}

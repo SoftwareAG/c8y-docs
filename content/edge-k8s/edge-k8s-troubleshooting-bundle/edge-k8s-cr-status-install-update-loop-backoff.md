@@ -5,15 +5,15 @@ layout: redirect
 ---
 After deploying or updating Edge, if the Edge CR status appears as **InstallationLoopBackOff** or **UpdateLoopBackOff**, as shown below: 
 
-Output of `kubectl get cumulocityiotedge`:
+Output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
 NAME                   DOMAIN NAME     VERSION     STATUS     
 
 cumulocity-iot-edge    myown.iot.com   1017.0.0    InstallLoopBackOff
-``` 
+```
 
-Describe the Edge CR (cumulocity-iot-edge) `kubectl describe cumulocityiotedge <EDGE-CR-NAME>`.
+Describe the Edge CR (cumulocity-iot-edge) `kubectl describe edge c8yedge -n c8yedge`.
 
 In the events section, you will find the reasons for the install or update failure. For example: 
 
@@ -47,17 +47,17 @@ Check the logs of the Edge Operator, MongoDB and Core pods to get more insights.
 The Edge Operator logs: 
 
 ```shell
-kubectl  logs --namespace cumulocityiotedge-operator-system deployment.apps/cumulocityiotedge-operator-controller-manager -c manager
+kubectl logs c8yedge-operator-system deployment.apps/c8yedge-operator-controller-manager -c manager
 ```
 
 MongoDB logs: 
 
 ```shell
-kubectl logs --namespace <EDGE-CR-NAME>-mongodb logs statefulset.apps/edge-db-rs0 --all-containers --prefix 
+kubectl logs -n c8yedge logs stategulset.apps/edge-db-rs0 –all-containers --prefix
 ```
 
 Core logs: 
 
 ```shell
-kubectl logs --namespace <EDGE-CR-NAME>-core logs statefulset.apps/c8ycore-sts --all-containers --prefix
+kubectl logs -n c8yedge logs stategulset.apps/c8ycore-sts –all-containers --prefix
 ```

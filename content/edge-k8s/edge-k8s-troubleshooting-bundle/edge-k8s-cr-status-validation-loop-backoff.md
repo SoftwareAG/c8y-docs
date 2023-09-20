@@ -6,14 +6,14 @@ layout: redirect
 
 After deploying or updating Edge, if the Edge CR status shows as “ValidationLoopBackOff” as shown below:
 
-Output of `kubectl get cumulocityiotedge`:
+Output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
 NAME                   DOMAIN NAME     VERSION     STATUS     
 
 cumulocity-iot-edge    myown.iot.com   1017.0.0    ValidationLoopBackOff 
 ```
-Describe the Edge CR (cumulocity-iot-edge) `kubectl describe cumulocityiotedge <EDGE-CR-NAME>`.
+Describe the Edge CR (cumulocity-iot-edge) `kubectl describe edge c8yedge -n c8yedge`.
 
 In the events section, you will find the reasons for the validation failure. For example: 
 
@@ -34,5 +34,5 @@ Events:
   Normal   Validating                8m37s  cumulocityiotedge  validating 
 
   Normal   ValidationLoopBackoff     8m37s  cumulocityiotedge  invalid [spec.licenseKey] value [empty]
- ```
+```
 

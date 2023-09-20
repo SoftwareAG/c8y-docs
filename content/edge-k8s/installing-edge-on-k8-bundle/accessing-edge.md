@@ -10,8 +10,12 @@ Before you can access your Edge, you must first get the external IP address. The
 
 To get the external IP to access Edge, run the command:
 ```shell
-kubectl get service cumulocity-core --namespace <EDGE-CR-NAME>-core
+kubectl get service cumulocity-core -n c8yedge
 ```
+{{< c8y-admon-info >}}
+Substitute the namespace name, which is currently **c8yedge** in the command, with the specific namespace name you've specified in your Edge CR. 
+{{< /c8y-admon-info >}}
+
 Sample output of the `kubectl get service command`:
 
 ```shell
@@ -23,14 +27,15 @@ cumulocity-core  LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED 443:31342
 However, sometimes the external IP displays as `<pending>`. This IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the cumulocity-core service (replace `<EXTERNAL-IP>` in the below command with the IP address you want to assign). 
 
 ```shell
-kubectl patch service cumulocity-core –namespace <EDGE-CR-NAME>-core -p '{"spec": {"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}' 
+kubectl patch service cumulocity-core -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
 ```
-
 {{< c8y-admon-info >}}
+Substitute the namespace name, which is currently **c8yedge** in the command, with the specific namespace name you've specified in your Edge CR. 
+{{< /c8y-admon-info >}}
+
 When manually assigning the external IP, be advised that the Kubernetes API documentation has this to say on the subject: 
 
 *These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP.* 
-{{< /c8y-admon-info >}}
 
 You can access Edge using a domain name in a web browser.
 

@@ -6,7 +6,7 @@ layout: redirect
 
 Edge is unable to register itself as a device in your cloud tenant. 
 
-Describe the Edge CR (cumulocity-iot-edge) `kubectl describe cumulocityiotedge <EDGE-CR-NAME>`
+Describe the Edge CR `kubectl describe edge c8yedge -n c8yedge`
 
 In the events section, you will find an event with reason . For example: 
 

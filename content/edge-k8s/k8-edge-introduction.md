@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 5
 title: Cumulocity IoT Edge on Kubernetes
 layout: bundle
 ---

@@ -7,32 +7,33 @@ layout: redirect
 
 To install Edge, create a Kubernetes manifest file with an Edge CR that describes Edge. Use `kubectl` to apply the Edge CR to your Kubernetes cluster.
 
-Use the [sample manifest file](/files/edge-k8s/c8y-edge-manifest.yaml) with the Edge CR and secrets necessary to deploy Edge using the following command:
+Execute the following command to deploy {{< product-c8y-iot >}} Edge after you’ve made the necessary updates to the [manifest file](/files/edge-k8s/c8yedge.yaml), which includes the Edge CR and the required secrets. 
 
 ```bash
-kubectl apply -f c8y-edge-manifest.yaml
+kubectl apply -f c8yedge.yaml
 ```
 For more information about the structure and configuration options available in the Edge CR, see [Edge Custom Resource Definition](/edge-k8s/edge-custom-resource-definition/).
 
-The Edge CR described in the [sample manifest file](/files/edge-k8s/c8y-edge-manifest.yaml) deploys Edge version 1017.0.0 named  "cumulocity-iot-edge", with the details below:
-- myown.iot.com domain with self-signed tls certificates
-- Cumulocity IoT Core and related pods in 'cumulocity-iot-edge-core' namespace
-- thin-edge for connecting Edge to Cumulocity IoT cloud for remote management in 'cumulocity-iot-edge-thin-edge' namespace
-- MongoDB server in the 'cumulocity-iot-edge-mongodb' namespace
-- Private registry in the 'cumulocity-iot-edge-microservices-registry' namespace
-- Apama and Smart Rules and other microservices in the 'cumulocity-iot-edge-microservices' namespace
-- Administration, Cockpit, Device Management and Apama Streaming Analytics applications
-- Logging components in the 'cumulocity-iot-edge-logging' namespace
-
 ### Verify Edge deployment
 
-Use `kubectl describe cumulocityiotedge <EDGE-CR-NAME>` to view the progress of the <EDGE-CR-NAME> deployment.
+To monitor the deployment progress, use the following command: 
 
-You can also follow the events raised for the Edge CR by using the command:
+```shell
+kubectl describe edge c8yedge -n c8yedge
+```
+This command allows you to view the details about the deployment of **c8yedge** in the **c8yedge** namespace. 
 
-`kubectl get event --field-selector involvedObject.name=<EDGE-CR-NAME> --watch`
+{{< c8y-admon-info >}}
+Substitute the Edge name and namespace name, which is currently “c8yedge” in the command, with the specific Edge name and namespace name you've specified in your Edge CR. 
+{{< /c8y-admon-info >}}
 
-The **Events** section in the output of this command specifies the deployment progress and the **Status** section displays the generation of the CR which is being deployed and its current state. Once the deployment succeeds, the **Status** section also displays the generation of the CR which is deployed, version of the Edge, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Operator generated TLS certificates.
+You can also follow the events raised for the Edge CR by using the command: 
+
+```shell
+kubectl get events -n c8yedge –field-selector involvedObject.name=c8yedge –watch 
+```
+
+The **Events** section in the output of the `describe edge` command specifies the deployment progress and the **Status** section displays the generation of the CR which is being deployed and its current state. Once the deployment succeeds, the **Status** section also displays the generation of the CR which is deployed, version of the Edge, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Operator generated TLS certificates.
 
 A sample status output:
 ```

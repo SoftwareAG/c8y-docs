@@ -24,7 +24,7 @@ Operators are particularly valuable for managing stateful applications, like {{<
 
 ### Edge Operator
 
-The Edge Operator automates the deployment and management of Edge on Kubernetes. The Operator manages a [Custom Resource Definition (CRD)](/files/edge-k8s/c8y-edge-CRD.yaml) to extend the Kubernetes API for Edge. You can deploy and manage Edge on a Kubernetes cluster through Edge CR. Modify the Edge CR file and use `kubectl apply -f` to apply the changes. The Operator receives these changes and installs or updates Edge accordingly.
+The Edge Operator automates the deployment and management of Edge on Kubernetes. The Operator manages a Custom Resource Definition (CRD) to extend the Kubernetes API for Edge. You can deploy and manage Edge on a Kubernetes cluster through Edge CR. Modify the Edge CR file and use `kubectl apply -f` to apply the changes. The Operator receives these changes and installs or updates Edge accordingly.
 
 #### What features does it provide?
 

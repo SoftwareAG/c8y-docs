@@ -12,7 +12,7 @@ Execute the following command to deploy {{< product-c8y-iot >}} Edge after youâ€
 ```bash
 kubectl apply -f c8yedge.yaml
 ```
-For more information about the structure and configuration options available in the Edge CR, see [Edge Custom Resource Definition](/edge-k8s/edge-custom-resource-definition/).
+For more information about the structure and configuration options available in the Edge CR, see Edge Custom Resource Definition.
 
 ### Verify Edge deployment
 

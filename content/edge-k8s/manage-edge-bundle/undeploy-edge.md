@@ -18,7 +18,6 @@ You can uninstall {{< product-c8y-iot >}} Edge either by:
    ```shell
    kubectl delete -f c8yedge-sample.yaml
    ```
-   
 {{< c8y-admon-info >}}
 Substitute the namespace name, which is currently **c8yedge** in the command, with the specific namespace name you've specified in your Edge CR. 
 {{< /c8y-admon-info >}}

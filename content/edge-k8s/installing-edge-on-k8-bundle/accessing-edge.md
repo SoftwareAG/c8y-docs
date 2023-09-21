@@ -4,11 +4,11 @@ title: Accessing Edge
 layout: redirect
 ---
 
-Before you can access your Edge, you must first get the external IP address. The Edge Operator creates a cumulocity-core service as a LoadBalancer, which receives an external IP. Clients outside of the cluster access the service through this external IP. 
+Before you can access your {{< product-c8y-iot >}} Edge, you must first get the external IP address. The Edge Operator creates a LoadBalancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the {{< product-c8y-iot >}} Edge through this external IP. 
 
 ### Assigning an external IP
 
-To get the external IP to access Edge, run the command:
+To get the external IP to access {{< product-c8y-iot >}} Edge, run the command below:
 ```shell
 kubectl get service cumulocity-core -n c8yedge
 ```
@@ -16,15 +16,14 @@ kubectl get service cumulocity-core -n c8yedge
 Substitute the namespace name, which is currently **c8yedge** in the command, with the specific namespace name you've specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
-Sample output of the `kubectl get service command`:
+Sample output of the `kubectl get service...` command:
 
 ```shell
 NAME             TYPE           CLUSTER-IP          EXTERNAL-IP        PORT(S)                                      AGE 
 
 cumulocity-core  LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED 443:31342/TCP,1883:32751/TCP,8883:32270/TCP  12m 
 ```
-
-However, sometimes the external IP displays as `<pending>`. This IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the cumulocity-core service (replace `<EXTERNAL-IP>` in the below command with the IP address you want to assign). 
+However, sometimes the external IP displays as `<pending>` or `<none>`. This IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the `cumulocity-core` service (replace `<EXTERNAL-IP>` in the command below with the IP address you want to assign). 
 
 ```shell
 kubectl patch service cumulocity-core -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
@@ -33,22 +32,24 @@ kubectl patch service cumulocity-core -n c8yedge -p '{"spec":{"type": "LoadBalan
 Substitute the namespace name, which is currently **c8yedge** in the command, with the specific namespace name you've specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-info >}}
 When manually assigning the external IP, be advised that the Kubernetes API documentation has this to say on the subject: 
 
 *These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP.* 
+{{< /c8y-admon-info >}}
 
-You can access Edge using a domain name in a web browser.
+You can access {{< product-c8y-iot >}} Edge using a domain name in a web browser.
 
-### Accessing Edge using the domain name
+### Accessing {{< product-c8y-iot >}} Edge using the domain name
 
-Access Edge using the domain name configured as part of the installation. There are two ways to configure the accessibility with the domain names:
+Access {{< product-c8y-iot >}} Edge using the domain name configured as part of the installation. There are two ways to configure the accessibility with the domain names:
 
-* Add an entry of the domain name and IP mapping in the DNS servers.
+* Add an entry of the domain name and IP address mapping in the DNS servers.
 <br>For example, if your domain name is **myown.iot.com**, you must add an entry for both **myown.iot.com** and **management.myown.iot.com**.<br>
 OR
-* [Add the alias](#add-alias) to access Edge through the domain name provided during installation. This needs to be performed on each client host on which Edge is accessed.
+* [Add the alias](#add-alias) to access {{< product-c8y-iot >}} Edge through the domain name provided during installation. This needs to be performed on each client host on which {{< product-c8y-iot >}} Edge is accessed.
 
-The first option is always preferable so that Edge is accessible over LAN.
+The first option is always preferable so that {{< product-c8y-iot >}} Edge is accessible over LAN.
 
 {{< c8y-admon-important >}}
 {{< product-c8y-iot >}} Edge is installed with the admin user **admin** and password **admin-pass**. You must change the password on first login.
@@ -64,7 +65,7 @@ On Linux machines, add the following entry to */etc/hosts*:
  in the previous section.<IP address> management.<domain_name>
 ```
 
-Use the external IP address fetched by running the command `kubectl get service` in the previous section.
+Use the external IP address fetched by running the command `kubectl get service...` in the previous section.
 
 On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
 
@@ -76,11 +77,6 @@ Ping the &#60;domain_name> to verify it.
 ```
 
 If the ping is successful, the DNS resolution is working properly.
-
-Using &#60;domain_name>, Edge can be connected from the host operating system (operating system which is hosting Edge). If you want to connect to Edge within your LAN, which is outside of the host operating system, you must do the following:
-
-* On VMware platforms, port forwarding must be enabled as mentioned in [Port forwarding on a VMware platform](/edge/setting-up-edge/#vmware-port-forwarding).
-* The DNS entry must be added in your LAN's DNS server/Name server. The DNS entry must have the domain name and the IP address of the host operating system. Note that this is not the Edge IP address.
 
 #### To access Edge
 
@@ -104,10 +100,6 @@ After a successful deployment, you must access both the management and edge tena
 - To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
 - To log in to the edge tenant, use the URL `https://edge.<domain_name>`.
-
-{{< c8y-admon-important >}}
-Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to Edge.
-{{< /c8y-admon-important >}}
 
 If you are logging in for the first time, you will see a cookie banner at the bottom:
 

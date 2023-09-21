@@ -15,7 +15,7 @@ To use the Helm charts, you need to install Helm v3. Refer to [Installing Helm](
 To install the Operator, run and enter the version (for example, 1017.0.0) you want to install, and the repository credentials you received along with the license.
 
 ```shell
-curl -sfL https://cumulocity.com/guides/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
+curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
 ```
 Provide the Edge Operator repository credentials in the prompt:
 

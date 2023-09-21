@@ -7,37 +7,38 @@ layout: redirect
 
 To install Edge, create a Kubernetes manifest file with an Edge CR that describes Edge. Use `kubectl` to apply the Edge CR to your Kubernetes cluster.
 
-Execute the following command to deploy {{< product-c8y-iot >}} Edge after you’ve made the necessary updates to the [manifest file](/files/edge-k8s/c8yedge.yaml), which includes the Edge CR and the required secrets. 
+Run the command below to install {{< product-c8y-iot >}} Edge after you’ve made the necessary updates to the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), which includes the Edge CR and the required secrets:
 
 ```bash
 kubectl apply -f c8yedge.yaml
 ```
-For more information about the structure and configuration options available in the Edge CR, see Edge Custom Resource Definition.
+For more information about the structure and configuration options available in the Edge CR, see the [Edge Custom Resource](/edge-k8s/edge-custom-resource-definition/) section.
 
-### Verify Edge deployment
+### Verify Edge installation
 
-To monitor the deployment progress, use the following command: 
+To monitor the installation progress, run the command below: 
 
 ```shell
 kubectl describe edge c8yedge -n c8yedge
 ```
-This command allows you to view the details about the deployment of **c8yedge** in the **c8yedge** namespace. 
+This command allows you to view the details about the installation of **c8yedge** in the **c8yedge** namespace. 
 
 {{< c8y-admon-info >}}
 Substitute the Edge name and namespace name, which is currently “c8yedge” in the command, with the specific Edge name and namespace name you've specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
-You can also follow the events raised for the Edge CR by using the command: 
+You can also follow the events raised for the Edge CR by running the command below: 
 
 ```shell
 kubectl get events -n c8yedge –field-selector involvedObject.name=c8yedge –watch 
 ```
 
-The **Events** section in the output of the `describe edge` command specifies the deployment progress and the **Status** section displays the generation of the CR which is being deployed and its current state. Once the deployment succeeds, the **Status** section also displays the generation of the CR which is deployed, version of the Edge, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Operator generated TLS certificates.
+The **Events** section in the output of the `describe edge` command specifies the installation progress and the **Status** section displays the generation of the Edge CR which is being installed and its current state. Once the installation succeeds, the **Status** section also displays the generation of the CR which is deployed, version of the Edge, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Operator generated TLS certificates.
 
 A sample status output:
 ```
-Name:         <EDGE-CR-NAME> 
+Name:         c8yedge
+Namespace:    c8yedge
 Kind:         CumulocityIoTEdge 
 
 Metadata: 
@@ -49,43 +50,29 @@ Spec:
   License Key:         *************** 
   Company:             IoT Company 
   Domain:              myown.iot.com 
-  Email:               myown@iot.com 
-  Mongodb: 
-    Credentials Secret Name:  mongodb-credentials-secret 
+  Email:               myown@iot.com
+  ....
+  ....
 
 Status: 
   Deployed Generation:  1 
   Last Deployed Time:  2023-08-11T00:15:00Z 
   State:               Ready 
-  Version:             1017.0.0 
-
-  Warnings: 
-    persistent volume reclaim policy of storage class [local-storage] is currently set to    [Delete] instead of the recommended value [Retain] 
-    allow volume to expand setting of the storage class [local-storage] is currently set to [false] instead of the recommended value [true] 
+  Version:             1017.0.0-4638 
 
   Help Commands: 
-    download diagnostic logs:   
-##########################################################################################################\ 
-# Execute this script to download diagnostic logs into your local file system\ 
-# Prerequisites:\ 
-#  - kubectl tool to communicating with Kubernetes cluster's control plane in which Edge is deployed.\ 
-#  - For configuration, kubectl looks for a file named config in the $HOME/.kube directory.\ 
-#    You can specify other kubeconfig files by setting the KUBECONFIG environment variable.\ 
-#########################################################################################################\ 
+    Download Logs:   
 FILE_NAME="edge-diagnostic-archive-$(date +%Y%m%d%H%M%S).tar.gz" && \ 
 kubectl exec -n edge-sample-logging logging-fluentd-0 -c fluentd -- tar -czvf /var/log/$FILE_NAME /var/log/edge && \ 
 kubectl cp edge-sample-logging/logging-fluentd-0:/var/log/$FILE_NAME -c fluentd ./$FILE_NAME && \ 
 kubectl exec -n edge-sample-logging logging-fluentd-0 -c fluentd -- rm /var/log/$FILE_NAME 
 ```
-
 A sample set of installation events:
 ```
 Events: 
   Type     Reason            Age    From               Message 
   ----     ------            ----   ----               ------- 
   Normal   Validating        15m    cumulocityiotedge  validating 
-  Warning  Validating        15m    cumulocityiotedge  persistent volume reclaim policy of storage class [custom-sc] is currently set to [Delete] instead of the recommended value [Retain] 
-  Warning  Validating        15m    cumulocityiotedge  allow volume to expand setting of the storage class [custom-sc] is currently set to [false] instead of the recommended value [true] 
   Normal   ValidationPassed  15m    cumulocityiotedge  validation passed 
   Normal   Installing        15m    cumulocityiotedge  installing 
 ………… 
@@ -99,9 +86,8 @@ Events:
   Normal   Installing        5m     cumulocityiotedge  finished installing and updating microservices 
 ………… 
 ………… 
-  Normal   Installing        2m     cumulocityiotedge  finished finished installing thin-edge 
+  Normal   Installing        2m     cumulocityiotedge  finished installing thin-edge 
 ………… 
   Normal   Ready             1m     cumulocityiotedge  installed successfully 
 ```
-
-Before you continue, wait for the Edge CR status to reach the Ready state. 
+Before you continue, wait for the Edge CR status to reach the **Ready** state. 

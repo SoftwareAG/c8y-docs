@@ -1,5 +1,5 @@
 ---
 weight: 30
-title: Manage Edge
+title: Managing Cumulocity IoT Edge
 layout: bundle
 ---

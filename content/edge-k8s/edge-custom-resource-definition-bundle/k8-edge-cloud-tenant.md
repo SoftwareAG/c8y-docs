@@ -17,9 +17,9 @@ kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fet
 Substitute the {{< product-c8y-iot >}} Edge name and namespace name, which is currently **c8yedge** in the command, with the specific {{< product-c8y-iot >}} Edge name and namespace name you've specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
-Once registered, you can access your Edge remotely as a device, monitor its metrics, upgrade its version and collect diagnostic data remotely.
+Once registered, you can access your {{< product-c8y-iot >}} Edge remotely as a device, monitor its metrics, upgrade its version and collect diagnostic data remotely.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|
 |domain|Yes|String||{{< product-c8y-iot >}} cloud tenant domain. For example, `<tenantid>.cumulocity.com`|
-|tlsSecretName|No|string||Name of the Kubernetes Secret containing the TLS key and the certificate chain with which Edge connects to the cloud through MQTT protocol using X.509 certificate for authentication. See [TLS Secret](/edge-k8s/edge-custom-resource-definition/#tls-secret) for details.<br><br>{{< c8y-admon-info >}} The Operator retrieves this secret from the EDGE-CR-NAMESPACE. Ensure that this secret is created before initiating the Edge deployment or update process.{{< /c8y-admon-info >}}
+|tlsSecretName|No|string||Name of the Kubernetes Secret containing the TLS key and the certificate chain with which Edge connects to the cloud through MQTT protocol using X.509 certificate for authentication. See [TLS Secret](/edge-k8s/edge-custom-resource-definition/#tls-secret) for details.<br><br>{{< c8y-admon-info >}}The Operator retrieves this secret from the **`EDGE-CR-NAMESPACE`**. Ensure that this secret is created before initiating the {{< product-c8y-iot >}} Edge deployment or update process.{{< /c8y-admon-info >}}

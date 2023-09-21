@@ -4,36 +4,32 @@ title: Edge doesn't show up as a device in cloud tenant
 layout: redirect
 ---
 
-Edge is unable to register itself as a device in your cloud tenant. 
+{{< product-c8y-iot >}} Edge is unable to register itself as a device in your cloud tenant. 
 
 Describe the Edge CR `kubectl describe edge c8yedge -n c8yedge`
 
 In the events section, you will find an event with reason . For example: 
 
-```shell
-Name:         <EDGE-CR-NAME> 
-Namespace:     
-API Version:  edge.cumulocity.com/v1 
-Kind:         CumulocityIoTEdge 
+```yaml
+Name: c8yedge
+Namespace: c8yedge
+API Version: edge.cumulocity.com/v1 
+Kind: CumulocityIoTEdge
 
 Status: 
-  Deploying Generation:  x 
-
-  State:  ValidationLoopBackOff 
+	Deployed Generation:  x
+	State: Ready
 
 Events: 
-  Type     Reason                      Age    From               Message 
-  ----     ------                      ----   ----               ------- 
-  Normal   Validating                  8m37s  cumulocityiotedge  validating 
-
-  Normal   ValidationPassed            8m37s  cumulocityiotedge  validation passed 
-
-  Normal   Installing                  8m34s  cumulocityiotedge  installing 
+ Type      Reason                       Age    From               Message 
+ ----      ------                       ----   ----               ------- 
+ Normal    Validating                   8m37s  cumulocityiotedge  validating 
+ Normal    ValidationPassed             8m37s  cumulocityiotedge  validation passed 
+ Normal    Installing                   8m34s  cumulocityiotedge  installing 
 …… 
-….. 
-  Normal   Ready                       1m00s  cumulocityiotedge  installed successfully 
-
-Warning  FailedToRegisterCloudDevice 0m30s  cumulocityiotedge  Device failed to connect to <cloud tenant domain>, you might not have uploaded the device certificate to Cumulocity 
+…… 
+ Normal    Ready                        1m00s  cumulocityiotedge  installed successfully 
+ Warning   FailedToRegisterCloudDevice  0m30s  cumulocityiotedge  Device failed to connect to <cloud tenant domain>, you might not have uploaded the device certificate to Cumulocity 
 ```
 Possible reasons:
 - You didn’t add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant.

@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Accessing Edge
+title: Accessing Cumulocity IoT Edge
 layout: redirect
 ---
 
@@ -18,10 +18,9 @@ Substitute the namespace name, which is currently **c8yedge** in the command, wi
 
 Sample output of the `kubectl get service...` command:
 
-```shell
-NAME             TYPE           CLUSTER-IP          EXTERNAL-IP        PORT(S)                                      AGE 
-
-cumulocity-core  LoadBalancer   X.X.X.X **REDACTED  X.X.X.X **REDACTED 443:31342/TCP,1883:32751/TCP,8883:32270/TCP  12m 
+```text
+NAME              TYPE           CLUSTER-IP          EXTERNAL-IP   PORT(S)                                      AGE 
+cumulocity-core   LoadBalancer   X.X.X.X **REDACTED  <pending>     443:31342/TCP,1883:32751/TCP,8883:32270/TCP  12m  
 ```
 However, sometimes the external IP displays as `<pending>` or `<none>`. This IP assignment process is dependent on the Kubernetes hosting environment. An external load balancer in the hosting environment handles the IP allocation and any other configurations necessary to route the external traffic to the Kubernetes service. Most on-premise Kubernetes clusters do not have external load balancers that can dynamically allocate IPs. The most common solution is to manually assign an external IP to the service. This can be done in the service’s YAML configuration. You can use the following command to manually assign an external IP to the `cumulocity-core` service (replace `<EXTERNAL-IP>` in the command below with the IP address you want to assign). 
 
@@ -62,9 +61,8 @@ On Linux machines, add the following entry to */etc/hosts*:
 
 ```text
 <IP address> <domain_name>
- in the previous section.<IP address> management.<domain_name>
+<IP address> management.<domain_name>
 ```
-
 Use the external IP address fetched by running the command `kubectl get service...` in the previous section.
 
 On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
@@ -78,7 +76,7 @@ Ping the &#60;domain_name> to verify it.
 
 If the ping is successful, the DNS resolution is working properly.
 
-#### To access Edge
+#### To access {{< product-c8y-iot >}} Edge
 
 Enter the URL in the browser:
 
@@ -107,7 +105,7 @@ If you are logging in for the first time, you will see a cookie banner at the bo
 <br>
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default on the Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -123,7 +121,7 @@ If you have enabled functional cookies you can opt-out from the product experien
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter Edge. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
+Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -135,7 +133,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset your password
 
-To reset your password, you must first configure the “reset password” template and email server settings in Edge. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
+To reset your password, you must first configure the “reset password” template and email server settings in {{< product-c8y-iot >}} Edge. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
 
 For information about resetting the password, see [How to reset your password](/users-guide/getting-started/#how-to-reset-your-password) in the *User guide*.
 

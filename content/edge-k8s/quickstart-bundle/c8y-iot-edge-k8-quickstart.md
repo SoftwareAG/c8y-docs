@@ -4,8 +4,6 @@ title: Quickstart for Lightweight Kubernetes (K3s)
 layout: redirect
 ---
 
-
-
 ### Install K3s
 
 Create a file `/etc/sysctl.d/90-kubelet.conf` and add the snippet below:
@@ -37,7 +35,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 Run the command below to install {{< product-c8y-iot >}} Edge Operator in **c8yedge** namespace:
 
 ```shell
-curl -sfL {{< link-c8y-doc-baseurl >}}/guides/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh 
+curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh 
 ```
 Provide the {{< product-c8y-iot >}} Edge Operator repository credentials when prompted, as shown below: 
 
@@ -52,4 +50,4 @@ Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8
 ```shell
 kubectl apply -f c8yedge-sample.yaml
 ```
-See [Verify Edge deployment](/edge-k8s/installing-edge-on-k8/#verify-edge-deployment) and [Accessing Edge](/edge-k8s/installing-edge-on-k8/#accessing-edge) to sign into {{< product-c8y-iot >}} Edge. 
+See [Verify Edge installation](/edge-k8s/installing-edge-on-k8/#verify-edge-installation) and [Accessing Edge](/edge-k8s/installing-edge-on-k8/#accessing-edge) to sign into {{< product-c8y-iot >}} Edge. 

@@ -1,11 +1,11 @@
 ---
 weight: 20
-title: Installing Edge
+title: Installing Cumulocity IoT Edge
 layout: redirect
 ---
 
 
-To install Edge, create a Kubernetes manifest file with an Edge CR that describes Edge. Use `kubectl` to apply the Edge CR to your Kubernetes cluster.
+To install {{< product-c8y-iot >}} Edge, create a Kubernetes manifest file with an Edge CR that describes {{< product-c8y-iot >}} Edge. Use `kubectl` to apply the Edge CR to your Kubernetes cluster.
 
 Run the command below to install {{< product-c8y-iot >}} Edge after you’ve made the necessary updates to the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), which includes the Edge CR and the required secrets:
 
@@ -36,7 +36,7 @@ kubectl get events -n c8yedge –field-selector involvedObject.name=c8yedge –w
 The **Events** section in the output of the `describe edge` command specifies the installation progress and the **Status** section displays the generation of the Edge CR which is being installed and its current state. Once the installation succeeds, the **Status** section also displays the generation of the CR which is deployed, version of the Edge, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Operator generated TLS certificates.
 
 A sample status output:
-```
+```yaml
 Name:         c8yedge
 Namespace:    c8yedge
 Kind:         CumulocityIoTEdge 
@@ -68,7 +68,7 @@ kubectl cp edge-sample-logging/logging-fluentd-0:/var/log/$FILE_NAME -c fluentd 
 kubectl exec -n edge-sample-logging logging-fluentd-0 -c fluentd -- rm /var/log/$FILE_NAME 
 ```
 A sample set of installation events:
-```
+```text
 Events: 
   Type     Reason            Age    From               Message 
   ----     ------            ----   ----               ------- 

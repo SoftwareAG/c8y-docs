@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Upgrading Edge remotely
+title: Upgrading Cumulocity IoT Edge remotely
 layout: redirect
 ---
 

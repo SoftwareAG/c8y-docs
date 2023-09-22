@@ -4,14 +4,16 @@ title: Installing Cumulocity IoT Edge
 layout: redirect
 ---
 
-To install {{< product-c8y-iot >}} Edge, download and update the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), before applying it to your Kubernetes cluster by runnig the command below:
+Before you start the installation, ensure that you have fulfilled the [prerequisites](/edge-k8s/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](/edge-k8s/installing-edge-on-k8/#configuring-storage).
+
+Download and update the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
 
 ```bash
 kubectl apply -f c8yedge.yaml
 ```
 For more information about the structure and configuration options available in the Edge CR, see the [Edge Custom Resource](/edge-k8s/edge-custom-resource-definition/) section.
 
-### Verify the Edge installation
+### Verifying the Edge installation
 
 To monitor the installation progress, run the command below: 
 

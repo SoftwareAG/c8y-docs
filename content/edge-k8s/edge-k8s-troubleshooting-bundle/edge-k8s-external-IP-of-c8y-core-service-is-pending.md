@@ -4,7 +4,7 @@ title: Pending external cumulocity-core service IP
 layout: redirect
 ---
 
-External IP is not assigned to the `cumulocity-core` service. 
+The external IP is not assigned to the `cumulocity-core` service. 
 
 Output of `kubectl get service cumulocity-core -n c8yedge`:
 

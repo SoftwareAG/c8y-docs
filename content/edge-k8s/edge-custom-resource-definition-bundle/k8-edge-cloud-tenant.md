@@ -14,7 +14,7 @@ In case you let the {{< product-c8y-iot >}} Edge use the internally generated TL
 kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh
 ```
 {{< c8y-admon-info >}}
-Substitute the {{< product-c8y-iot >}} Edge name and namespace name, which is currently **c8yedge** in the command, with the specific {{< product-c8y-iot >}} Edge name and namespace name you've specified in your Edge CR. 
+Substitute the {{< product-c8y-iot >}} Edge name and namespace name *c8yedge* in the command above with the specific {{< product-c8y-iot >}} Edge name and namespace name you have specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
 Once registered, you can access your {{< product-c8y-iot >}} Edge remotely as a device, monitor its metrics, upgrade its version and collect diagnostic data remotely.

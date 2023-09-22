@@ -123,7 +123,7 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset your password
 
-To reset your password, you must first configure the “reset password” template and email server settings in {{< product-c8y-iot >}} Edge. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in {{< product-c8y-iot >}} Edge. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
 
 For information about resetting the password, see [To change your password](/guides/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 

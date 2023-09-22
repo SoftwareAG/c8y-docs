@@ -4,7 +4,7 @@ title: Quickstart
 layout: bundle
 ---
 
-This section helps you to quickly install {{< product-c8y-iot >}} Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster with default options. For detailed instructions, see [installation section](/edge-k8s/installing-edge-on-k8/).
+This section helps you to quickly install {{< product-c8y-iot >}} Edge on a [Lightweight Kubernetes (K3s)](https://docs.k3s.io/installation) cluster with default options. For detailed instructions, see [Installing Edge on Kubernetes](/edge-k8s/installing-edge-on-k8/).
 
 1. Verify that your hardware meets the requirements specified in the [Prerequisites](/edge-k8s/installing-edge-on-k8/#prerequisites) section. 
 

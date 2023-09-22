@@ -61,7 +61,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 <IP address> management.<domain_name>
 ```
-Use the external IP address fetched by running the command `kubectl get service...` in the previous section.
+Use the external IP address fetched by running the command `kubectl get service` in the previous section.
 
 On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
 

@@ -4,7 +4,7 @@ title: Upgrading Edge remotely
 layout: redirect
 ---
 
-You can remotely update your Edge using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload a YAML file specifying the Edge version to your  tenant account. For more information about the firmware feature, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+You can remotely update your Edge using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload a YAML file specifying the Edge version to your tenant account. For more information about the firmware feature, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
 Update the [sample version file](/files/edge-k8s/c8y-edge-version.yaml) to specify the Edge version follow the steps below to upgrade:
 

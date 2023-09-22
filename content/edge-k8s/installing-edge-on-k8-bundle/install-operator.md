@@ -4,7 +4,7 @@ title: Installing the Edge Operator
 layout: redirect
 ---
 
-A Helm chart is available for installing the Edge Operator. To begin, create a new **single node** Kubernetes cluster with the Kubernetes distribution of your choice, and configure `kubectl` to use that cluster. See the [prerequisites](/edge-k8s/installing-edge-on-k8/#prerequisites) section for the supported Kubernetes distributions and versions.
+A Helm chart is available for installing the Edge Operator. To begin, create a new single-node Kubernetes cluster with the Kubernetes distribution of your choice, and configure `kubectl` to use that cluster. See [Prerequisites](/edge-k8s/installing-edge-on-k8/#prerequisites) for the supported Kubernetes distributions and versions.
 
 {{< c8y-admon-info >}}
 To use the Helm charts, you need to install Helm v3. Refer to [Installing Helm](https://helm.sh/docs/intro/install/) for the installation instructions.

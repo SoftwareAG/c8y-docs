@@ -36,6 +36,6 @@ Possible reasons:
 For completing the registration process, sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/users-guide/device-management/#managing-trusted-certificates) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more details, see [Device certificates](/device-integration/mqtt/#device-certificates).
 For more information see [Connecting Cumulocity IoT Edge to the cloud](/edge-k8s/k8-edge-connecting-edge-to-cloud/). 
 
-- Specified cloud tenant domain is not reachable or incorrect. 
+* Specified cloud tenant domain is not reachable or incorrect. 
 
 If you need to contact Software AG support, include the output of the diagnostics dump. For more information about accessing diagnostic logs, see [Accessing logs](/edge-k8s/installing-edge-on-k8/#accessing-logs). 

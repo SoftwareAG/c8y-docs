@@ -91,7 +91,7 @@ https://management.<domain_name>
 The login screen appears. If this is your first login, log in with user **admin** and password **admin-pass**, and change the password.
 
 {{< c8y-admon-important >}}
-After a successful deployment, you must access both the management and edge tenants and change the admin credentials.
+After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
 {{< /c8y-admon-important >}}
 
 - To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.

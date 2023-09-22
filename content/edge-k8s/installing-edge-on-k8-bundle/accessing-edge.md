@@ -115,7 +115,7 @@ Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you w
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
-To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
+To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
 {{< c8y-admon-info >}}
 The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.

@@ -32,7 +32,7 @@ Substitute the namespace name, which is currently **c8yedge** in the command, wi
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-When manually assigning the external IP, be advised that the Kubernetes API documentation has this to say on the subject: 
+When manually assigning the external IP, see the following Kubernetes API documentation: 
 
 *These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP.* 
 {{< /c8y-admon-info >}}

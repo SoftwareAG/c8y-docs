@@ -12,7 +12,7 @@ In case you let {{< product-c8y-iot >}} Edge use the internally generated TLS ke
 kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh
 ``` 
 {{< c8y-admon-info >}}
-Substitute the namespace name, which is currently **c8yedge** in the command, with the specific namespace name you've specified in your Edge CR. 
+Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
 Once registered, the Edge deployment appears as a device named after the domain name of your Edge. For example, if you have configured your domain name as **myown.iot.com**, the Edge deployment appears as **myown.iot.com** .

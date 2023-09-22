@@ -4,7 +4,7 @@ title: Microservices
 layout: redirect
 ---
 
-Microservices spec allows specifying resources to allocate to a default microservices, which include the Apama, Smart Rules, OPCUA Management Server and Device Simulator microservices.
+The microservice specification allows specifying resources to allocate to a default microservice, which includes the Apama, Smart Rules, OPCUA Management Server and Device Simulator microservices.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

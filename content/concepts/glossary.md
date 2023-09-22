@@ -79,7 +79,7 @@ For details see the [DataHub guide](/datahub/datahub-overview/).
 ### Cumulocity IoT Edge
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details see the [{{< product-c8y-iot >}} Edge guide](/edge/introduction/).
+For details see the [{{< product-c8y-iot >}} Edge guide](/edge/edge-introduction/).
 
 <a name="c8y-ml"></a>
 ### Cumulocity IoT Machine Learning

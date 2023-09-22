@@ -4,11 +4,7 @@ layout: redirect
 weight: 10
 ---
 
-<<<<<<< HEAD
- **Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
-=======
- **Version:** 1016.274.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
->>>>>>> be34dec29... Merge pull request #804 from SoftwareAG/feature/MTM-50973-updated-outdated-info
+**Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
 If the widgets that are provided by the platform do not meet your requirements, you might want to create a custom widget and add it to a dashboard.
 
@@ -32,9 +28,7 @@ Next, you must install all dependencies. Switch to the new folder and run `npm i
 {{< c8y-admon-info >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23` will scaffold an application with the version `10.17.0.23`
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+`c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23` will scaffold an application with the version `10.17.0.23`
 {{< /c8y-admon-info >}}
 
 ### 2. Create the widget components

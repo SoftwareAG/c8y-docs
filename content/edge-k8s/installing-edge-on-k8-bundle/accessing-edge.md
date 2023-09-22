@@ -74,7 +74,7 @@ Ping the &#60;domain_name> to verify it.
 
 If the ping is successful, the DNS resolution is working properly.
 
-#### To access {{< product-c8y-iot >}} Edge
+#### To access Cumulocity IoT Edge
 
 Enter the URL in the browser:
 

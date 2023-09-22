@@ -21,7 +21,7 @@ To monitor the installation progress, run the command below:
 ```shell
 kubectl describe edge c8yedge -n c8yedge
 ```
-This command allows you to view the details about the installation of **c8yedge** in the **c8yedge** namespace. 
+This command allows you to view the details about the installation of *c8yedge* in the *c8yedge* namespace. 
 
 {{< c8y-admon-info >}}
 Substitute the Edge name and namespace name, which is currently *c8yedge* in the command, with the specific Edge name and namespace name you have specified in your Edge CR. 

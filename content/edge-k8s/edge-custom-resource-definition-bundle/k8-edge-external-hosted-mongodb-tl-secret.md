@@ -1,6 +1,6 @@
 ---
 weight: 39
-title: External hosted MongoDB TLS Secret
+title: Externally hosted MongoDB TLS secret
 layout: redirect
 ---
 

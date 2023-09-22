@@ -50,7 +50,7 @@ Access {{< product-c8y-iot >}} Edge using the domain name configured as part of 
 The first option is always preferable so that {{< product-c8y-iot >}} Edge is accessible over LAN.
 
 {{< c8y-admon-important >}}
-{{< product-c8y-iot >}} Edge is installed with the admin user **admin** and password **admin-pass**. You must change the password on first login.
+{{< product-c8y-iot >}} Edge is installed with the admin user "admin" and password "admin-pass". Change the password on first login.
 {{< /c8y-admon-important >}}
 
 <a name="add-alias"></a>

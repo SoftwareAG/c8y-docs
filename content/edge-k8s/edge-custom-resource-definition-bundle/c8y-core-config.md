@@ -4,7 +4,7 @@ title: Cumulocity IoT Core
 layout: redirect
 ---
 
-The core specification specifies the fields for configuring the {{< product-c8y-iot >}} Core node and its resource limits.
+The core specification specifies the fields for configuring the {{< product-c8y-iot >}} core node and its resource limits.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

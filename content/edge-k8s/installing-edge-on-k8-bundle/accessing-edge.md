@@ -45,7 +45,7 @@ Access {{< product-c8y-iot >}} Edge using the domain name configured as part of 
 
 * Add an entry of the domain name and IP address mapping in the DNS servers.
 <br>For example, if your domain name is **myown.iot.com**, add an entry for both **myown.iot.com** and **management.myown.iot.com**.<br>
-* [Add the alias](#add-alias) to access {{< product-c8y-iot >}} Edge through the domain name provided during installation. This needs to be performed on each client host on which {{< product-c8y-iot >}} Edge is accessed.
+* [Add the alias](#add-alias) to access {{< product-c8y-iot >}} Edge through the domain name provided during installation. This must be performed on each client host on which {{< product-c8y-iot >}} Edge is accessed.
 
 The first option is always preferable so that {{< product-c8y-iot >}} Edge is accessible over LAN.
 

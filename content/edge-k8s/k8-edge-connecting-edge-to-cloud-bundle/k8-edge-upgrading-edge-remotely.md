@@ -8,44 +8,38 @@ You can remotely update your instance of {{< product-c8y-iot >}} Edge using the 
 
 Update the [sample version file](/files/edge-k8s/c8y-edge-version.yaml) to specify the {{< product-c8y-iot >}} Edge version follow the steps below to upgrade:
 
-1. Log in to your {{< product-c8y-iot >}} tenant account.
+1. Log in to your {{< product-c8y-iot >}} tenant account and go to the Device Management application.
 
-2. Go to the Device Management application.
-
-3. Click **Firmware repository** in the **Management** menu in the navigator.
+2. In the **Firmware repository** page, click **Add firmware** and provide a name for the firmware, add a description and its version (all required).
 
    ![Firmware list](/images/edge-k8s/edge-k8s-firmware-repository.png)
 
-4. Click **Add firmware** at the right of the top menu bar.
+   Optionally, you can define the device type filter when adding a new firmware. For example, *c8y_EdgeAgent*.
 
-5. Provide a name for the firmware, add a description and its version (all required).
+3. Select the **Provide a file path** option to specify an HTTPS URL of a server from where the version file can be downloaded.
 
-6. Optionally, you can define the device type filter when adding a new firmware. For example, *c8y_EdgeAgent*.
+   Click **Add firmware**. The firmware object appears in the firmware list.
 
-7. Select the **Provide a file path** option to specify an HTTPS URL of a server from where the version file can be downloaded.
+4. Click **All devices** in the **Devices** menu, select your instance of {{< product-c8y-iot >}} Edge from the device list.
 
-8. Click **Add firmware**. The firmware object appears in the firmware list.
+5. Click **Firmware**. The **Firmware** tab shows the current {{< product-c8y-iot >}} Edge version.
 
-9. Click **All devices** in the **Devices** menu in the navigator, select your instance of {{< product-c8y-iot >}} Edge from the device list.
+   ![Edge version](/images/edge-k8s/edge-k8s-firmware-current-version.png)
 
-10. Click **Firmware**. The **Firmware** tab shows the current Edge version.
+   You can also see the current {{< product-c8y-iot >}} Edge version in the **Info** tab.
 
-    ![Edge version](/images/edge-k8s/edge-k8s-firmware-current-version.png)
+   ![Edge version](/images/edge-k8s/edge-k8s-firmware-version-info-tab.png)
 
-    You can also see the current {{< product-c8y-iot >}} Edge version in the **Info** tab.
+6. Click **Replace firmware**.
 
-    ![Edge version](/images/edge-k8s/edge-k8s-firmware-version-info-tab.png)
+7. Select the firmware that you just uploaded and click **Install**.
+   ![Edge version](/images/edge-k8s/edge-k8s-select-firmware.png)
 
-11. Click **Replace firmware**.
+   - To check the status of the update, hover over the refresh icon as shown in the figure below:
+   ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-status.png)
+   - To check the details of the update, click the text outlined in red in the figure below:
+   ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-full-log.png)
 
-12. Select the firmware that you just uploaded and click **Install**.
-    ![Edge version](/images/edge-k8s/edge-k8s-select-firmware.png)
-
-    - To check the status of the update, hover over the refresh icon as shown in the figure below:
-    ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-status.png)
-    - To check the details of the update, click the text outlined in red in the figure below:
-    ![Edge version](/images/edge-k8s/edge-k8s-check-remote-update-full-log.png)
-    
 ### Updating Edge appliances using bulk operations
 
 For information about updating {{< product-c8y-iot >}} Edge using bulk operations, see [Updating {{< product-c8y-iot >}} Edge using bulk operations](edge/remote-connectivity/#updating-edge-appliances-using-bulk-operations).

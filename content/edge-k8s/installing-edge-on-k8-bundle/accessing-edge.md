@@ -16,7 +16,7 @@ kubectl get service cumulocity-core -n c8yedge
 Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
-Sample output of the `kubectl get service...` command:
+Sample output of the `kubectl get service` command:
 
 ```text
 NAME              TYPE           CLUSTER-IP          EXTERNAL-IP   PORT(S)                                      AGE 

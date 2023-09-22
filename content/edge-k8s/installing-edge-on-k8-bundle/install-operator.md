@@ -31,5 +31,5 @@ Run the following command to follow the logs for the Edge Operator pod:
 kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
 ```
 {{< c8y-admon-info >}}
-Substitute the namespace name, which is currently **c8yedge** in the command, with the namespace name where you have installed the Edge Operator.
+Substitute the namespace name **c8yedge** in the command above with the namespace name where you have installed the Edge Operator.
 {{< /c8y-admon-info >}}

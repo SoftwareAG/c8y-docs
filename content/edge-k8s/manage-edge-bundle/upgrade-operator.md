@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Upgrading Operator
+title: Upgrading the Edge Operator
 layout: redirect
 ---
 

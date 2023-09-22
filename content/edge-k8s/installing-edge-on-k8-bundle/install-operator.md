@@ -12,7 +12,7 @@ To use the Helm charts, you need to install Helm v3. Refer to [Installing Helm](
 
 {{< product-c8y-iot >}} Edge provides a script to install the Edge Operator. This script is located at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).
 
-To install the Operator, run and enter the version (for example, 1017.0.0) you want to install, and the repository credentials you received along with the license.
+To install the Edge Operator, run and enter the version (for example, 1017.0.0) you want to install, and the repository credentials you received along with the license.
 
 ```shell
 curl -sfL {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-operator-install.sh -O && bash ./c8yedge-operator-install.sh
@@ -28,12 +28,12 @@ To request the repository credentials, contact the logistics team for your regio
 - North and South America: LogisSrvus@softwareagusa.com 
 - All Other Regions: LogisticsServiceCenterGER@softwareag.com {{< /c8y-admon-info >}}
 
-By default, the Operator is deployed within the **c8yedge** namespace. If you wish to install the Operator and {{< product-c8y-iot >}} Edge in a different namespace, you can specify it using the `-n` option in the installation script. 
+By default, the Edge Operator is deployed within the **c8yedge** namespace. If you wish to install the Edge Operator and {{< product-c8y-iot >}} Edge in a different namespace, you can specify it using the `-n` option in the installation script. 
 
-Run the following command to follow the logs for the Operator pod:
+Run the following command to follow the logs for the Edge Operator pod:
 ```shell
 kubectl logs -f -n c8yedge deployment/c8yedge-operator-controller-manager manager
 ```
 {{< c8y-admon-info >}}
-Substitute the namespace name, which is currently **c8yedge** in the command, with the namespace name where you have installed the Operator.
+Substitute the namespace name, which is currently **c8yedge** in the command, with the namespace name where you have installed the Edge Operator.
 {{< /c8y-admon-info >}}

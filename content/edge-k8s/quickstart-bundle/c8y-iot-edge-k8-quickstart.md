@@ -6,21 +6,20 @@ layout: redirect
 
 ### Install K3s
 
-Create a file `/etc/sysctl.d/90-kubelet.conf` and add the snippet below:
+Run the commands below:
 
 ```shell
-vm.panic_on_oom=0 
-vm.overcommit_memory=1 
-kernel.panic=10 
-kernel.panic_on_oops=1 
-```
-Run the commands:
-```shell
-sudo run sysctl -p /etc/sysctl.d/90-kubelet.conf
+sudo bash -c 'cat >> /etc/sysctl.d/90-kubelet.conf' <<EOF
+vm.panic_on_oom=0
+vm.overcommit_memory=1
+kernel.panic=10
+kernel.panic_on_oops=1
+EOF
+&& sudo sysctl -p /etc/sysctl.d/90-kubelet.conf
 ```
 
 ```shell
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - --disable=traefik --protect-kernel-defaults true --write-kubeconfig-mode 644 --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - --disable=traefik --protect-kernel-defaults true --write-kubeconfig-mode 644 --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook  && sudo  cp /etc/rancher/k3s/k3s.yaml ~/.kube/config && chmod 600 ~/.kube/config
 ```
 
 ### Install Helm 
@@ -48,6 +47,6 @@ Enter password to access Edge Operator repository:
 Run the command below to apply Edge CR ([c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml)) for installing {{< product-c8y-iot >}} Edge version **1017.0.0** named **c8yedge** with the domain **myown.iot.com**:
 
 ```shell
-kubectl apply -f c8yedge-sample.yaml
+kubectl apply -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-sample.yaml
 ```
 See [Verify Edge installation](/edge-k8s/installing-edge-on-k8/#verify-edge-installation) and [Accessing Edge](/edge-k8s/installing-edge-on-k8/#accessing-edge) to sign into {{< product-c8y-iot >}} Edge. 

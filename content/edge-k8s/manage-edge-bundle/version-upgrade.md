@@ -6,7 +6,7 @@ layout: redirect
 
 The Edge Operator follows the recreate update strategy to upgrade the {{< product-c8y-iot >}} Edge deployment. 
 
-The recreate update strategy is an all-or-nothing process that updates all aspects of the system at once with a brief downtime period. The Edge Operator selects all the outdated pods and deactivates them at once. Once all old pods are deactivated, the Edge Operator creates updated pods for the entire system. {{< product-c8y-iot >}} Edge is not operational while the old pods are deactivating and until the final updated pod is created.
+Recreating update strategy is an all-or-nothing process that updates all aspects of the system at once with a brief downtime period. The Edge Operator selects all the outdated pods and deactivates them at once. Once all old pods are deactivated, the Edge Operator creates updated pods for the entire system. {{< product-c8y-iot >}} Edge is not operational while the old pods are deactivating and until the final updated pod is created.
 
 For this example, assume that {{< product-c8y-iot >}} Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
 

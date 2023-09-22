@@ -10,6 +10,6 @@ Run this command for removing the Edge Operator from your Kubernetes cluster.
 helm uninstall c8yedge-operator -n c8yedge 
 ```
 {{< c8y-admon-info >}}
-Substitute the namespace name, which is currently **c8yedge** in the command, with the namespace name where you have installed the Edge Operator.
+Substitute the namespace name *c8yedge* in the command above with the namespace name where you have installed the Edge Operator.
 {{< /c8y-admon-info >}}
 

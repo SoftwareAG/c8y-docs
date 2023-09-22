@@ -4,7 +4,7 @@ title: MongoDB credentials secret
 layout: redirect
 ---
 
-Specifies the Kubernetes secret containing the admin credentials with which the Edge Operator managed MongoDB must be configured or the admin credentials of the externally hosted MongoDB server. The Edge Operator retrieves this secret from the namespace **`EDGE-CR-NAMESPACE`**. Ensure that this secret is created before initiating the {{< product-c8y-iot >}} Edge deployment or update process.
+Specifies the Kubernetes secret containing the admin credentials with which the MongoDB managed by the Edge Operator must be configured or the admin credentials of the externally hosted MongoDB server. The Edge Operator retrieves this secret from the namespace **`EDGE-CR-NAMESPACE`**. It is important that this secret is created before initiating the {{< product-c8y-iot >}} Edge deployment or update process.
 
 This secret should contain the fields described in the table below:
 

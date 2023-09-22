@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Installing Edge on Kubernetes
+title: Installing Cumulocity IoT Edge on Kubernetes
 layout: bundle
 ---
 

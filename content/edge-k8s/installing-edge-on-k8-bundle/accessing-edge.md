@@ -74,7 +74,7 @@ Ping the &#60;domain_name> to verify it.
 
 If the ping is successful, the DNS resolution is working properly.
 
-#### To access Cumulocity IoT Edge
+#### To access {{< product-c8y-iot >}} Edge
 
 Enter one of the following URLs in the browser:
 * `https://<domain_name>`
@@ -109,7 +109,7 @@ The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge in
 If you have enabled functional cookies you can opt out of the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
 {{< /c8y-admon-info >}}
 
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as {{< product-c8y-iot >}} Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
 Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
 

@@ -13,7 +13,7 @@ layout: redirect
 |{{< product-c8y-iot >}} Edge license file|To request the license file for {{< product-c8y-iot >}} Edge, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - Your company name, under which the license has been bought <br> - The domain name (for example, myedge.domain.com), where {{< product-c8y-iot >}} Edge will be reachable<br>For more information, see [Domain name validation for Edge license key generation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).|
 |The Edge Operator repository credentials|You will receive the Edge Operator repository credentials along with the {{< product-c8y-iot >}} Edge license.|
 |TLS/SSL key and TLS/SSL certificate|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<p>**Note:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
-|Edge cloud remote access|To connect and manage one (or multiple) Edge deployments to your {{< product-c8y-iot >}} cloud tenant, you need an active {{< product-c8y-iot >}} {{< standard-tenant >}} with the Data Broker and Cloud Remote Access extensions.<br><br>**Note:** The Edge cloud remote access is an optional feature in {{< product-c8y-iot >}} Edge.|
+|Edge cloud remote access|To connect and manage one (or multiple) {{< product-c8y-iot >}} Edge deployments to your {{< product-c8y-iot >}} cloud tenant, you need an active {{< product-c8y-iot >}} {{< standard-tenant >}} with the Data Broker and Cloud Remote Access extensions.<br><br>**Note:** The {{< product-c8y-iot >}} Edge cloud remote access is an optional feature in {{< product-c8y-iot >}} Edge.|
 
 ### Configuring storage
 
@@ -35,30 +35,18 @@ Ensure that the [Reclaim](https://kubernetes.io/docs/concepts/storage/persistent
 
 To enable the proper functioning of the Edge Operator on K3s, you must install K3s with the following configuration options.
 
-Run the commands below:
+Run the command below:
 
 ```shell
-sudo bash -c 'cat >> /etc/sysctl.d/90-kubelet.conf' <<EOF
-vm.panic_on_oom=0
-vm.overcommit_memory=1
-kernel.panic=10
-kernel.panic_on_oops=1
-EOF
-&& sudo sysctl -p /etc/sysctl.d/90-kubelet.conf
-```
-To install the latest version of K3s, run the command below: 
-
-```shell
-curl -sfL https://get.k3s.io | sh -s - --disable=traefik --write-kubeconfig-mode 644 --protect-kernel-defaults true --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config && chmod 600 ~/.kube/config
-```
-
-To install K3s version 1.25.13, run the command below: 
-
-```shell
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - --disable=traefik --write-kubeconfig-mode 644 --protect-kernel-defaults true --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook && sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config && chmod 600 ~/.kube/config
+sudo bash -c 'echo -e "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1" >> /etc/sysctl.d/90-kubelet.conf' \
+&& sudo sysctl -p /etc/sysctl.d/90-kubelet.conf \
+&& curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - --disable=traefik --write-kubeconfig-mode 644 --protect-kernel-defaults true  --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook \
+&& sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config \
+&& chmod 600 ~/.kube/config \
+&&echo -e '\e[32mSuccessfully installed k3s!\e[0m'
 ```
 For configuration options, see [K3s configuration options](https://docs.k3s.io/installation/configuration).
 
-- Add `--disable=traefik` in the install command to disable Traefik to avoid port conflicts between Traefik and cumulocity-core service, as both are LoadBalancer type services which expose port 443.
-- Add `--kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook` to enable admission controllers. The flag is set to enable the `ValidatingAdmissionWebhook` and `MutatingAdmissionWebhook` admission controllers, as Edge requires them. See [https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
-- Add `--protect-kernel-defaults` true to protect the default kernel settings on the host system. It prevents modifications to critical kernel parameters by container workloads running in Kubernetes. For more information, see [https://docs.k3s.io/security/hardening-guide#host-level-requirements](https://docs.k3s.io/security/hardening-guide#host-level-requirements). 
+- Added `--disable=traefik` in the install command to disable Traefik to avoid port conflicts between Traefik and cumulocity-core service, as both are LoadBalancer type services which expose port 443.
+- Added `--kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook` to enable admission controllers. The flag is set to enable the `ValidatingAdmissionWebhook` and `MutatingAdmissionWebhook` admission controllers, as {{< product-c8y-iot >}} Edge requires them. See [https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
+- Added `--protect-kernel-defaults` true to protect the default kernel settings on the host system. It prevents modifications to critical kernel parameters by container workloads running in Kubernetes. For more information, see [https://docs.k3s.io/security/hardening-guide#host-level-requirements](https://docs.k3s.io/security/hardening-guide#host-level-requirements). 

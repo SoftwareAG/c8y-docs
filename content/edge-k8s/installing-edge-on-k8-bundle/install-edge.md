@@ -4,10 +4,7 @@ title: Installing Cumulocity IoT Edge
 layout: redirect
 ---
 
-
-To install {{< product-c8y-iot >}} Edge, create a Kubernetes manifest file with an Edge CR that describes {{< product-c8y-iot >}} Edge. Use `kubectl` to apply the Edge CR to your Kubernetes cluster.
-
-Run the command below to install {{< product-c8y-iot >}} Edge after you’ve made the necessary updates to the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), which includes the Edge CR and the required secrets:
+To install {{< product-c8y-iot >}} Edge, download and update the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), before applying it to your Kubernetes cluster by runnig the command below:
 
 ```bash
 kubectl apply -f c8yedge.yaml

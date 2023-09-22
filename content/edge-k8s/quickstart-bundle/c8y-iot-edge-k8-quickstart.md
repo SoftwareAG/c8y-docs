@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Quickstart for Lightweight Kubernetes (K3s)
+title: Quick install On K3s
 layout: redirect
 ---
 

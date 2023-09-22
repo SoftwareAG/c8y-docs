@@ -138,4 +138,4 @@ For information about resetting the password, see [To change your password](/gui
 
 ### How to access pages using URLs
 
-For information about accessing pages using the URLs, see [How to access pages using URLs](/users-guide/getting-started/#how-to-access-pages-using-urls) in the *User guide*.
+For information about accessing pages using the URLs, see [To access pages using URLs](/guides/get-familiar-with-the-ui/platform-access/#to-access-pages-using-urls).

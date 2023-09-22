@@ -1,6 +1,6 @@
 ---
 weight: 15
-title: External IP of cumulocity-core service is <pending>
+title: Pending external cumulocity-core service IP
 layout: redirect
 ---
 

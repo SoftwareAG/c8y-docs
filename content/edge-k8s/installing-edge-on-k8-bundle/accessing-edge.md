@@ -53,8 +53,7 @@ The first option is always preferable so that {{< product-c8y-iot >}} Edge is ac
 {{< product-c8y-iot >}} Edge is installed with the admin user "admin" and password "admin-pass". Change the password on first login.
 {{< /c8y-admon-important >}}
 
-<a name="add-alias"></a>
-#### Adding the alias
+#### Adding the alias {#add-alias}
 
 On Linux machines, add the following entry to */etc/hosts*:
 

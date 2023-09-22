@@ -8,7 +8,7 @@ layout: redirect
 
 Kubernetes offers an efficient platform for deploying, scaling, and managing containerized applications using a centralized control plane. Given this, containers orchestrated by Kubernetes have become standard in contemporary IT, fitting a broad spectrum of deployment contexts. {{< product-c8y-iot >}} Edge on Kubernetes capitalizes on these orchestration and management benefits, streamlining the operations of the {{< product-c8y-iot >}} Edge servers with other containerized applications in your deployment landscape.
 
-{{< product-c8y-iot >}} Edge on Kubernetes captures all the highlighted advantages of a cloud-native deployment strategy by using a Kubernetes Operator, known as the Edge Operator. This Operator serves as the central controller and facilitates the deployment and management of the {{< product-c8y-iot >}} Edge on a single-node Kubernetes cluster. This equips you with:
+{{< product-c8y-iot >}} Edge on Kubernetes captures all the highlighted advantages of a cloud-native deployment strategy by using a Kubernetes Operator, known as the Edge Operator. This Edge Operator serves as the central controller and facilitates the deployment and management of the {{< product-c8y-iot >}} Edge on a single-node Kubernetes cluster. This equips you with:
 
 - **Unified Management**: Manage Edge through an Edge Custom Resource (CR) in consistent with standard Kubernetes resources. This approach provides a unified and familiar interface for administrators and operators.
 - **Desired State Management**: Specify the desired state of Edge through Edge CR. The Edge Operator then ensures that the actual state matches the desired state, simplifying operations and reducing the need for manual intervention.

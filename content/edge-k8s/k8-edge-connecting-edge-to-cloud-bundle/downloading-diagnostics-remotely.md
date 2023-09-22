@@ -4,7 +4,7 @@ title: Downloading diagnostics remotely
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} tenant allows you to download the diagnostics report remotely from your tenant account after you have registered your Edge in the tenant account.
+You can download the diagnostics report remotely from your tenant account after you have registered your Edge in the tenant account.
 
 To download the diagnostics report from your tenant account:
 

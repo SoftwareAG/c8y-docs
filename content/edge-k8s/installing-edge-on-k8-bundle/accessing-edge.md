@@ -80,7 +80,7 @@ Enter one of the following URLs in the browser:
 * `https://<domain_name>`
 * `https://management.<domain_name>`
 
-The login screen appears. If this is your first login, log in with user **admin** and password **admin-pass**, and change the password.
+The login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
 
 {{< c8y-admon-important >}}
 After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.

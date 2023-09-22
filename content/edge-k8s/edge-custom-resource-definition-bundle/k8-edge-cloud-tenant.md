@@ -8,7 +8,7 @@ layout: redirect
 
 To enable this, first register {{< product-c8y-iot >}} Edge as a device in the {{< product-c8y-iot >}} cloud tenant. You can register {{< product-c8y-iot >}} Edge by providing the {{< product-c8y-iot >}} cloud tenant URI, and optionally, TLS key and certificate chain with which {{< product-c8y-iot >}} Edge connects to cloud through MQTT protocol using a X.509 certificate for authentication. If you do not provide the TLS key and the certificate chain, the Edge Operator uses an internally generated TLS key and certificate for identifying {{< product-c8y-iot >}} Edge as a device in the cloud tenant. For completing the registration process, sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/users-guide/device-management/#managing-trusted-certificates) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more information, see [Device certificates](/device-integration/mqtt/#device-certificates).
 
-In case you let the {{< product-c8y-iot >}} Edge use the internally generated TLS key and certificates, you can download the CA certificate by using the command following command:
+In case you let the {{< product-c8y-iot >}} Edge use the internally generated TLS key and certificates, you can download the CA certificate by using the command below:
 
 ```shell
 kubectl get edge c8yedge -n c8yedge --output jsonpath='{.status.helpCommands.fetchGeneratedCACrt}' | sh

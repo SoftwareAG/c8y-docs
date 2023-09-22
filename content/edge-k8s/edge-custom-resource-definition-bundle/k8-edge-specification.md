@@ -4,7 +4,7 @@ title: Specification
 layout: redirect
 ---
 
-This section defines the Edge deployment's configurations.
+This section defines the {{< product-c8y-iot >}} Edge deployment's configurations.
 
 |<div style="width:150px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

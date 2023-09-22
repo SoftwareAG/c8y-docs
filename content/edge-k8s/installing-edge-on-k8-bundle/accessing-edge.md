@@ -28,7 +28,7 @@ Sometimes the external IP displays as `<pending>` or `<none>`. The IP assignment
 kubectl patch service cumulocity-core -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
 ```
 {{< c8y-admon-info >}}
-Substitute the namespace name, which is currently **c8yedge** in the command, with the specific namespace name you've specified in your Edge CR. 
+Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR. 
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}

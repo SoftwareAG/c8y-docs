@@ -22,7 +22,7 @@ The blocks are implemented in the Event Processing Language (EPL) of Apama. At r
 
 This topic gives a brief overview of how to add and design a new model, and how to view its output. It is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
+The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
 
 The model that you add will contain three blocks:
 
@@ -68,6 +68,10 @@ If the block parameter editor is not shown (for example, because you clicked an 
 
 3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
 
+    {{< c8y-admon-info>}}
+By default, the **All Devices** option is selected, which means that the input block is listening to all devices. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
+    {{< /c8y-admon-info>}}
+
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
 
     If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< sensor-app >}} would be **c8y\_Gyroscope =\> gyroscopeY**.
@@ -97,6 +101,10 @@ If you need detailed information on the currently selected block, view the block
 2.  Drag the **Measurement Output** block onto the canvas.
 
 3.  As the output destination, select the same device as for your input block.
+
+    {{< c8y-admon-info>}}
+If you have kept the default option of **All Devices** for the input block, you must set the output destination to **Trigger Device**. However, these first steps assume that you are using a single device, so you must select the same device as for your input block.
+    {{< /c8y-admon-info>}}
 
 4.  Specify "apama\_Average" as the fragment name.
 
@@ -151,7 +159,7 @@ This topic gives a brief overview of how to create a model from a sample. It is 
 
 This topic is not intended to be a comprehensive description of the full range of possibilities provided by Analytics Builder. Therefore, explanations are kept to a minimum. For more detailed information, see the remainder of this documentation.
 
-The steps below require that a device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. This can be, for example, a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
+The steps below require that at least one device has already been registered in {{< product-c8y-iot >}}. Preferably, this is a device which is already sending measurement values to {{< product-c8y-iot >}}. These first steps assume that you are using a smartphone on which the {{< sensor-app >}} has been installed, see [{{< sensor-app >}}](/sensor-app/overview/) for details.
 
 The following image shows the blocks that are defined in the **On missing measurements create alarm** sample.
 

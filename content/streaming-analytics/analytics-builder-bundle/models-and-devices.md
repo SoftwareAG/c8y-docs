@@ -35,7 +35,7 @@ When a model has inputs that are consuming data from each device belonging to an
 
 When a template parameter is used for an output block, then if the parameter's value is a range of devices, then this is treated the same as if it were set to the trigger device. The output goes to whichever device triggered the model's evaluation, with each device within a range being treated independently. Typically, the same template parameter will be used for both input and output, so these will refer to the same range, and each device is processed independently.
 
-You can use the model editor to change input and output blocks from one input source or output destination to another. When changing between a range of devices and a device or asset, output blocks will switch between the trigger device and the device or asset specified, so that the model is kept in a usable state. See also [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets).
+You can use the model editor to change input and output blocks from one input source or output destination to another. When changing between a range of devices and a device or asset, output blocks will switch between the trigger device and the device or asset specified, so that the model is kept in a usable state. See also [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations).
 
 The test and simulation modes are only permitted for models using specific devices. If you wish to test or simulate a model using a range of devices, then use the model editor to modify it to apply to a single device within the range, and then activate the model in test or simulation mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information on these modes.
 
@@ -132,12 +132,12 @@ Note that only activating any two of these models can be done without error. If 
 Using multiple specific devices in a model with the concurrency level set to more than 1 can lead to connections between models which are deployed across multiple workers. Chains of models using multiple specific devices with high throughput usually scale less well than chains of models all using a single specific device.
 {{< /c8y-admon-info>}}
 
-### Configuring the number of shown devices, groups and/or assets {#configuring-the-number-of-shown-devices-groups-andor-assets}
+### Configuring the number of shown input sources and output destinations {#configuring-the-number-of-shown-input-sources-and-output-destinations}
 
 By default, a maximum of 10 items are shown in the following cases:
 
 -   When you select a different input source or output destination \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
--   When you replace devices, groups or assets \(see [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets)\).
+-   When you replace devices, groups or assets \(see [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations)\).
 
 When you use the search box in the above cases, this default also applies to the maximum number of items that are shown in the search result. When you click **Load more**, up to 10 more items are shown.
 
@@ -160,7 +160,7 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 By default, only devices, groups and assets are shown in the following cases:
 
 -   When you select a different input source or output destination \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
--   When you replace devices or groups \(see [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets)\).
+-   When you replace devices or groups \(see [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations)\).
 
 However, when you use the search box in the above cases, all managed objects \(not just devices, groups and assets\) in the {{< product-c8y-iot >}} inventory which match the search criteria are shown. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.
 

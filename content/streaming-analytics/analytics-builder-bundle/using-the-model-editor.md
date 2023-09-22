@@ -129,7 +129,7 @@ The labels of some blocks on the canvas show the value of the most important par
 
 The block parameter editor also contains commands for duplicating and removing the currently selected block. See [Duplicating a block](/streaming-analytics/analytics-builder/#duplicating-a-block) and [Removing a block or wire](/streaming-analytics/analytics-builder/#removing-a-block-or-wire) for detailed information.
 
-For the input and output blocks, you can globally replace the input sources and output destinations that are used. See [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets) for detailed information.
+For the input and output blocks, you can globally replace the input sources and output destinations that are used. See [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations) for detailed information.
 
 ##### To edit the parameters of a block {#to-edit-the-parameters-of-a-block}
 
@@ -150,20 +150,19 @@ For the input and output blocks, you can globally replace the input sources and 
 
     | Button name | Shown for | Description |
     | ----------- | --------- | ----------- |
-    | **Select** | "All Devices" option for input blocks | Data is received from all input devices. |
-    | **Select** | "Trigger Device" option for output blocks | Output is sent to the device which triggered the output. |
+    | **Select** | **All Devices** option for input blocks | Data is received from all devices. |
+    | **Select** | **Trigger Device** option for output blocks | Output is sent to the device which triggered the output. |
     | **Select device** | Devices in input and output blocks | Data is received from the device or output is sent to the device. |
     | **Select group's devices** | Groups in input blocks | Data is received from all devices within the group hierarchy. You cannot directly receive data from a group. |
-    | **Select asset** | Assets in input blocks | Data is received from the asset itself. The devices of the assets are ignored. |
+    | **Select asset** | Assets in input and output blocks | Data is received from the asset itself or output is sent to the asset itself. The devices of the assets are ignored. |
     | **Select asset's devices** | Assets in input blocks | Data is received from all devices within the asset hierarchy. The block does not receive data from the asset itself. |
-    | **Select asset** | Assets in output blocks | Output is sent to the asset itself. |
 
     {{< c8y-admon-info>}}
 For output blocks, you cannot select a group. A button is not provided in this case.
-Select the "Trigger Device" option instead to send the output to the device which triggered the output.  
+Select the **Trigger Device** option instead to send the output to the device which triggered the output.  
     {{< /c8y-admon-info>}}
 
-    The maximum number of shown input sources and output destinations depends on a tenant option. For more information, see [Configuring the number of shown devices, groups and/or assets](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets).
+    The maximum number of shown input sources and output destinations depends on a tenant option. For more information, see [Configuring the number of shown input sources and output destinations](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-input-sources-and-output-destinations).
 
     The managed objects that are shown when searching also depend on a tenant option. You can restrict the search to show only managed objects of a specific type. For more information, see [Searching for devices, groups and/or assets](/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets).
 
@@ -335,9 +334,9 @@ To use the key combinations mentioned below, the canvas must have the focus. Whe
 
 The above toolbar buttons are only enabled when there is an operation that can be undone or redone.
 
-#### Replacing devices, groups and assets {#replacing-devices-groups-and-assets}
+#### Replacing sources or destinations {#replacing-sources-or-destinations}
 
-You can find the devices, groups or assets that are used in the current model and replace them with other devices, groups or assets that are currently registered in the {{< product-c8y-iot >}} inventory \(visualized in the Device management application\).
+You can find the input sources or output destinations that are used in the current model and replace them with other input sources or output destinations that are currently registered in the {{< product-c8y-iot >}} inventory \(visualized in the Device management application\).
 
 {{< c8y-admon-info>}}
 In the rules below, the term device refers to a device or other asset \(but not to a group\).
@@ -356,7 +355,7 @@ The following rules apply:
         {{< c8y-admon-info>}}
 If you change more than one group to a device at a time, then only the first specified device will be used to replace all trigger devices.
         {{< /c8y-admon-info>}}
--   The "Trigger Device" option is not available for selection in the dialog.
+-   The **Trigger Device** option is not available for selection in the dialog.
 
 After you have replaced the devices, you need to verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The {{< product-c8y-iot >}} fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
 
@@ -370,7 +369,7 @@ After you have replaced the devices, you need to verify that the measurements th
 
 3.  Click the **Replace with** box to display a dialog box. The dialog box is the same as when selecting a input source or output destination in the block parameter editor. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box. Click the button which is shown when you hover over an entry to select the source or destination that you want to use instead.
 
-    The maximum number of shown sources and destinations depends on a tenant option. For more information, see [Configuring the number of shown devices, groups and/or assets](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets).
+    The maximum number of shown sources and destinations depends on a tenant option. For more information, see [Configuring the number of shown input sources and output destinations](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-input-sources-and-output-destinations).
 
     The managed objects that are shown when searching also depend on a tenant option. You can restrict the search to show only managed objects of a specific type. For more information, see [Searching for devices, groups and/or assets](/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets).
 

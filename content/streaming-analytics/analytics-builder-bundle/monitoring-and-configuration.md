@@ -496,7 +496,7 @@ After you have changed a tenant option using a REST request, the correlator will
   </tr>
   <tr>
     <td><code>c8yAnalyticsBlocks.queryInventoryPageSize</code></td>
-    <td>The number of items that are shown in the <b>Select Input Source</b> and <b>Select Output Destination</b> dialog boxes. The default value is 10. See also <a href="/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-devices-groups-andor-assets">Configuring the number of shown devices, groups and/or assets</a>.</td>
+    <td>The number of items that are shown in the <b>Select Input Source</b> and <b>Select Output Destination</b> dialog boxes. The default value is 10. See also <a href="/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-input-sources-and-output-destinations">Configuring the number of shown input sources and output destinations</a>.</td>
   </tr>
   <tr>
     <td><code>c8yAnalyticsBlocks.queryInventoryNameSearchAdditionalFilter</code></td>

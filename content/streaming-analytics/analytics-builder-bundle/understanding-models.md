@@ -78,6 +78,10 @@ An input block is a special type of block that receives data from an external so
 
 Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
+{{< c8y-admon-info>}}
+By default, the **All Devices** option is selected, which means that the input block is listening to all devices.
+{{< /c8y-admon-info>}}
+
 In addition, Analytics Builder supports input devices that are referred to as "broadcast devices". Signals from these devices are available to all models across all devices. For detailed information, see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices).
 
 #### Output blocks {#output-blocks}
@@ -85,6 +89,10 @@ In addition, Analytics Builder supports input devices that are referred to as "b
 An output block is a special type of block that receives data from a connected processing block. It converts the data into a format understandable to an external source and transfers the data to the external source. For example, when an output block receives data from a connected processing block, it packages the data into an `Operation` object and then sends the operation to {{< product-c8y-iot >}}.
 
 You can specify a **Trigger Device** for an output block. This is a special device which can be used to send the output back to the device which triggered the output. Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
+
+{{< c8y-admon-info>}}
+If you use the default option of **All Devices** as the input source for an input block, you must set the output destination of the output block to **Trigger Device**.
+{{< /c8y-admon-info>}}
 
 Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages, see also [SMS provider](/standard-tenant/changing-settings/#sms-provider). Unlike the other blocks, these are not associated with devices within the {{< product-c8y-iot >}} platform.
 

@@ -10,7 +10,7 @@ The recreate update strategy is an all-or-nothing process that updates all aspec
 
 For this example, assume that {{< product-c8y-iot >}} Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
 
-### Start the Upgrade
+### Start the upgrade
 
 To upgrade the {{< product-c8y-iot >}} Edge deployment, change the `spec.version` field in the Edge CR file to the appropriate version. For example to `1017.0.1`.
 

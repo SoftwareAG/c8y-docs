@@ -191,5 +191,6 @@ In case of a merge conflict while cherry-picking to a specific release branch, t
 In that case you will have to take care of cherry-picking manually and resolve the conflicts.
 This is not going to influence the other release branches as long as they do not have conflicts.
 
+
 ---
 © Cumulocity GmbH  2023 + All rights reserved.

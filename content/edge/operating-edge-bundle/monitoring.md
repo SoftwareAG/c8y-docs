@@ -34,7 +34,7 @@ Monit can be restarted by running:
 
 The log file for monit is located in /var/log/monit.log.
 
-#### Monitor {#monitor}
+### Monitor {#monitor}
 
 The monitor can be started by running the *run_monitor.py* script located under */opt/c8y/utilities/diagnostic-utility/src/*.
 

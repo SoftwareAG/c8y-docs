@@ -8,7 +8,7 @@ layout: redirect
 
 Describe the Edge CR `kubectl describe edge c8yedge -n c8yedge`
 
-In the events section, you will find an event with reason . For example: 
+In the events section, you will find an event with a reason. For example: 
 
 ```yaml
 Name: c8yedge

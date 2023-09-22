@@ -4,7 +4,11 @@ title: MongoDB
 layout: redirect
 ---
 
-This field is necessary to specify the MongoDB admin credentials or to configure an externally hosted MongoDB server or to specify resource limits for the MongoDB server containers deployed by the Operator.
+This field is necessary for one or more of the following reasons:
+
+* To specify the MongoDB admin credentials.
+* To configure an externally hosted MongoDB server.
+* To specify resource limits for the MongoDB server containers deployed by the Operator.
 
 |<div style="width:170px">Field</div>|Required|<div style="width:115px">Type</div>|Default|Description|
 |:---|:---|:---|:---|:---|

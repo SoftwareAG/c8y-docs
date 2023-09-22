@@ -41,7 +41,7 @@ You can access {{< product-c8y-iot >}} Edge using a domain name in a web browser
 
 ### Accessing Cumulocity IoT Edge using the domain name
 
-Access {{< product-c8y-iot >}} Edge using the domain name configured as part of the installation. There are two ways to configure the accessibility with the domain names:
+Access {{< product-c8y-iot >}} Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
 * Add an entry of the domain name and IP address mapping in the DNS servers.
 <br>For example, if your domain name is **myown.iot.com**, you must add an entry for both **myown.iot.com** and **management.myown.iot.com**.<br>

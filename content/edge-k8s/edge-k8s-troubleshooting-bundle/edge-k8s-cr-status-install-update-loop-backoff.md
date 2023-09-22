@@ -3,9 +3,7 @@ weight: 10
 title: Edge CR status InstallLoopBackOff or UpdateLoopBackOff
 layout: redirect
 ---
-After deploying or updating {{< product-c8y-iot >}} Edge, if the Edge CR status appears as **InstallationLoopBackOff** or **UpdateLoopBackOff**, as shown below: 
-
-Output of `kubectl get edge c8yedge -n c8yedge`:
+After deploying or updating {{< product-c8y-iot >}} Edge, if the Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     

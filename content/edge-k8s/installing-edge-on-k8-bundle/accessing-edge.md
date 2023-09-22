@@ -4,7 +4,7 @@ title: Accessing Cumulocity IoT Edge
 layout: redirect
 ---
 
-Before you can access your {{< product-c8y-iot >}} Edge, you must first get the external IP address. The Edge Operator creates a LoadBalancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the {{< product-c8y-iot >}} Edge through this external IP. 
+Before you can access {{< product-c8y-iot >}} Edge, you must first get the external IP address. The Edge Operator creates a LoadBalancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the {{< product-c8y-iot >}} Edge through this external IP. 
 
 ### Assigning an external IP
 

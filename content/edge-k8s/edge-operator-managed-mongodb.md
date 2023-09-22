@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: With the Edge Operator managed MongoDB
+title: Edge-Operator-managed MongoDB
 layout: bundle
 ---
 

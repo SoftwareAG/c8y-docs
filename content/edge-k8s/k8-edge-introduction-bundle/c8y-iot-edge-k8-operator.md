@@ -14,7 +14,7 @@ Kubernetes offers an efficient platform for deploying, scaling, and managing con
 - **Desired State Management**: Specify the desired state of Edge through Edge CR. The Edge Operator then ensures that the actual state matches the desired state, simplifying operations and reducing the need for manual intervention.
 - **GitOps Friendly**: The declarative nature of CR aligns seamlessly with GitOps workflows. The entire Edge deployment state, including configurations, can be stored and versioned in Git, promoting transparency and traceability. 
 - **Automation**: Edge CR empowers you to automate various operational aspects of Edge like scaling, upgrades, and configuration.
-- **Distribution**: Distribute and replicate the Edge deployments using Edge CR. Simplifies the deployment and accelerates the adoption of {{< product-c8y-iot >}} platform across diverse environments.
+- **Distribution**: Distribute and replicate the Edge deployments using Edge CR. Simplify the deployment and accelerate the adoption of {{< product-c8y-iot >}} platform across diverse environments.
 
 Although the features remain on par with the {{< product-c8y-iot >}} Edge appliance VM, the deployment strategy undergoes a change, as illustrated in the diagram below:
 

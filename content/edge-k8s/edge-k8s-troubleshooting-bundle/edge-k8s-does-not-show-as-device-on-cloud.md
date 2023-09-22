@@ -33,7 +33,7 @@ Events:
 ```
 Possible reasons:
 * You didn’t add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant.
-For completing the registration process, you must sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/users-guide/device-management/#managing-trusted-certificates) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more details, see [Device certificates](/device-integration/mqtt/#device-certificates).
+For completing the registration process, sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/users-guide/device-management/#managing-trusted-certificates) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more details, see [Device certificates](/device-integration/mqtt/#device-certificates).
 You can also see, [Connecting Cumulocity IoT Edge to the cloud](/edge-k8s/k8-edge-connecting-edge-to-cloud/). 
 
 - Specified cloud tenant domain is not reachable or incorrect. 

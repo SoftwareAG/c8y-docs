@@ -38,4 +38,4 @@ For more information see [Connecting Cumulocity IoT Edge to the cloud](/edge-k8s
 
 * Specified cloud tenant domain is not reachable or incorrect. 
 
-If you need to contact Software AG support, include the output of the diagnostics dump. For more information about accessing diagnostic logs, see [Accessing logs](/edge-k8s/installing-edge-on-k8/#accessing-logs). 
+If you need to contact {{< sag-support >}}, include the output of the diagnostics dump. For more information about accessing diagnostic logs, see [Accessing logs](/edge-k8s/installing-edge-on-k8/#accessing-logs). 

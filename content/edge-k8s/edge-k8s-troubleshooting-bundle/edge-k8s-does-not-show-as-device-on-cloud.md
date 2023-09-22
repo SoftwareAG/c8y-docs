@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Edge doesn't show up as a device in cloud tenant 
+title: Edge not showing up as a device in the cloud tenant 
 layout: redirect
 ---
 

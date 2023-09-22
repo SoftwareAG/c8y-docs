@@ -92,8 +92,7 @@ After a successful deployment, you must access both the {{< management-tenant >}
 
 If you are logging in for the first time, you will see a cookie banner at the bottom:
 
-<img src="/images/users-guide/getting-started/getting-started-cookie-banner.png" alt="Login prompt">
-<br>
+![Login prompt](/images/users-guide/getting-started/getting-started-cookie-banner.png)
 
 {{< c8y-admon-info >}}
 The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).

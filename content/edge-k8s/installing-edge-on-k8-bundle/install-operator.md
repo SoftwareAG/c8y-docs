@@ -25,7 +25,7 @@ Enter password to access Edge Operator repository:
 ```
 {{< c8y-admon-info >}}
 To request the repository credentials, contact the logistics team for your region:
-- North and South America: LogisSrvus@softwareagusa.com 
+* North and South America: LogisSrvus@softwareagusa.com 
 - All Other Regions: LogisticsServiceCenterGER@softwareag.com {{< /c8y-admon-info >}}
 
 By default, the Edge Operator is deployed within the **c8yedge** namespace. If you wish to install the Edge Operator and {{< product-c8y-iot >}} Edge in a different namespace, you can specify it using the `-n` option in the installation script. 

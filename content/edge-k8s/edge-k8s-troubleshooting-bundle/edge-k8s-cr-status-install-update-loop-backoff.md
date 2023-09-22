@@ -10,7 +10,7 @@ NAME         DOMAIN NAME     VERSION     STATUS
 c8yedge      myown.iot.com   1017.0.0    InstallLoopBackOff
 ```
 
-Describe the Edge CR (cumulocity-iot-edge) `kubectl describe edge c8yedge -n c8yedge`.
+Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
 
 In the events section, you will find the reasons for the install or update failure. For example: 
 

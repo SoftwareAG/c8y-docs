@@ -34,7 +34,7 @@ Substitute the namespace name, which is currently **c8yedge** in the command, wi
 {{< c8y-admon-info >}}
 When manually assigning the external IP, see the following Kubernetes API documentation: 
 
-*These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP.* 
+"These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP."
 {{< /c8y-admon-info >}}
 
 You can access {{< product-c8y-iot >}} Edge using a domain name in a web browser.

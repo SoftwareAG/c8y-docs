@@ -1,0 +1,157 @@
+########################################################################################################################
+#                                         Defines C8y Edge Custom Resource                                             #
+########################################################################################################################
+---
+#
+# This Custom Resource deploys C8y Edge version 1017.0.0 named 'c8yedge' 
+# accessible at myown.iot.com domain with self-signed certificates.
+#
+
+apiVersion: edge.cumulocity.com/v1
+kind: CumulocityIoTEdge
+metadata:
+  name: c8yedge                                                             # Name of the C8y Edge deployment
+  namespace: c8yedge                                                        # Specify the Namespace name into which you installed the Operator. By default, the Operator is installed in 'c8yedge'
+spec:
+  version: "1017.0.0"                                                       # Edge version you want to install.
+  licenseKey:  <LICENSE-KEY>                                                # Edge license key you received
+
+  company: <COMPANY-NAME>                                                   # Replace with the company name
+  domain: <DOMAIN-NAME>                                                     # Replace with the domain of your choice
+  email: <ADMIN-EMAIL>                                                      # Replace with a valid email, used for admin account
+
+#  tlsSecretName: myown-iot-com-tls                                         # Secret for supplying the TLS Key/Certificates of Edge doamin
+
+#  cloudTenant:                                                             # Specify the 'cloudTenant' field to connect C8y Edge to a Cumulocity Cloud tenant to manage Edge remotely
+#    domain: <TENANT-ID>.cumulocity.com                                     # Cumulocity cloud tenant domain e.g. <tenantid>.cumulocity.com
+#    tlsSecretName: edge-device-tls                                         # Secret for supplying the TLS Key/Certificates of C8y Edge to authenticate with Cumulocity Cloud tenant as a device 
+
+#  storageClassName: <STORAGE-CLASS>                                        # Provide the storage class your Kubernetes administrator provisioned for this deployment
+
+#  core:                                                                    # Specify resource limits for the Cumulocity Core pod
+#    resources:
+#      limits:
+#        cpu: 3000m
+#        memory: 6144M
+
+#  mongodb:
+#    credentialsSecretName: mongodb-credentials                             # Secret for supplying database admin credentials of MongoDB server. If not provided for the Operator managed MongoDB, databaseAdmin and admin-pass are used.
+
+#    connectionString: <CONNECTION-STRING-URI>                              # Connection string to connect to an externally hosted MongoDB server. URI Format: mongodb://host1[:port1][,...hostN[:portN]] 
+#    tlsSecretName: mongodb-tls                                             # Secret for supplying the Certificate Authority (CA) certificate to trust
+
+#    resources:                                                             # Specify resource limits for the MongoDB server pod
+#      limits:
+#        cpu: 3000m
+#        memory: 6144M
+#      requests:
+#        storage: 75G                                                       # Specify the storage to be reserved for MongoDB server to persist data. If not provided, 75 GB storage is reserved.
+
+#  microservices:                                                           # Specify resource limits for the apama-ctrl, smartrule and opcua-mgmt-service microservices
+#    - name: apama-ctrl
+#      resources:
+#        limits:
+#          cpu: 1000m
+#          memory: 1024M
+#    - name: smartrule
+#      resources:
+#        limits:
+#          cpu: 1000m
+#          memory: 1024M
+#    - name: opcua-mgmt-service
+#      resources:
+#        limits:
+#          cpu: 1000m
+#          memory: 1024M
+
+########################################################################################################################
+#                                         Defines Kubernetes Secrets                                                   #
+########################################################################################################################
+---
+#
+# Secret for supplying the TLS Key/Certificates of Edge domain. Accepts only PEM format.
+#
+# This secret is optional. If not provided the Operator will generate self-signed certificates.
+#
+# Name of this secret should be specified in "spec.tlsSecretName" field of Edge CR
+#
+
+#apiVersion: v1
+#kind: Secret
+#metadata:
+#  name: myown-iot-com-tls                                                  # Name of the secret. Same value should be specified in "spec.tlsSecretName" field of Edge CR
+#  namespace: c8yedge                                                       # Specify the Edge CR namespace
+#type: Opaque
+#stringData:
+#  tls.key: <PRIVATE-KEY>                                                   # Specify the tls private key for the domain. In PEM format.
+#  tls.crt: <CERTIFICATE-CHAIN>                                             # Specify the tls certificate chain of the private key for the domain. In PEM format.
+
+---
+#
+# Secret for supplying the TLS Key/Certificates of C8y Edge to authenticate with 
+# Cumulocity cloud tenant as a device. Accepts only PEM format.
+#
+# This secret is optional. If not provided the Operator will generate self-signed certificates.
+#
+# Name of this secret should be specified in "spec.cloud.tlsSecretName" field of Edge CR
+#
+
+#apiVersion: v1
+#kind: Secret
+#metadata:
+#  name: edge-device-tls                                                    # Name of the secret. Same value should be specified in "spec.cloud.tlsSecretName" field of Edge CR
+#  namespace: c8yedge                                                       # Specify the Edge CR namespace
+#type: Opaque
+#stringData:
+#  tls.key: <PRIVATE-KEY>                                                   # Specify the tls private key. In PEM format.
+#  tls.crt: <CERTIFICATE-CHAIN>                                             # Specify the tls certificate chain of the private key. In PEM format.
+
+---
+#
+# Secret for supplying admin credentials of MongoDB server (both Operator managed and externally hosted)
+#
+# This secret is optional. If not provided for Operator managed DB, databaseAdmin and admin-pass are used.
+#
+# Name of this secret should be specified in "spec.mongodb.credentialsSecretName" field of Edge CR
+#
+
+#apiVersion: v1
+#kind: Secret
+#metadata:
+# name: mongodb-credentials                                                 # Name of the secret. Same value should be specified in "spec.mongodb.credentialsSecretName" field of Edge CR
+# namespace: c8yedge                                                        # Specify the Edge CR namespace
+#type: Opaque
+#stringData:
+# MONGODB_DATABASE_ADMIN_USER: admin                                        # Specify the database admin username of the Operator managed MongoDB or that of the externally hosted MongoDB server.
+# MONGODB_DATABASE_ADMIN_PASSWORD: admin-pass                               # Specify the database password of the Operator managed MongoDB or that of the externally hosted MongoDB server. configured.
+ 
+# MONGODB_USER_ADMIN_USER: userAdmin                                        # Specify if you want to use a different username
+# MONGODB_USER_ADMIN_PASSWORD: <USER-ADMIN-PASSWORD>                        # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
+ 
+# MONGODB_CLUSTER_ADMIN_USER: clusterAdmin                                  # Specify if you want to use a different username
+# MONGODB_CLUSTER_ADMIN_PASSWORD: <CLUSTER-ADMIN-PASSWORD>                  # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
+ 
+# MONGODB_CLUSTER_MONITOR_USER: clusterMonitor                              # Specify if you want to use a different username
+# MONGODB_CLUSTER_MONITOR_PASSWORD: <CLUSTER-MONITOR-PASSWORD>              # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
+ 
+# MONGODB_BACKUP_USER: backup                                               # Specify if you want to use a different username
+# MONGODB_BACKUP_PASSWORD: <BACKUP-USER-PASSWORD>                           # If not provided, the password defaults to value provided in the field MONGODB_DATABASE_ADMIN_PASSWORD
+
+---
+#
+# Secret for supplying the Certificate Authority (CA) certificate issuing the tls key and certificates 
+# with which the tls of externally hosted MongoDB server is configured. Accepts only PEM format.
+#
+# Not needed if the server certificates are issued by a trusted public CA.
+#
+# Name of this secret should be specified in "spec.mongodb.tlsSecretName" field of Edge CR
+#
+
+#apiVersion: v1
+#kind: Secret
+#metadata:
+#  name: mongodb-tls                                                        # Name of the secret. Same value should be specified in "spec.mongodb.tlsSecretName" field of Edge CR
+#  namespace: c8yedge                                                       # Specify the Edge CR namespace
+#type: Opaque
+#stringData:
+#  ca.crt: <CA-CERTIFICATE>                                                 # Specify the Certificate Authority (CA) certificate in PEM format

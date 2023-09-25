@@ -83,7 +83,5 @@ This section outlines the steps for configuring the Kubernetes cluster to enable
      ```
 
 {{< c8y-admon-info >}}
-
-Since you manually created the PVs, you need to specify an empty Storage Class as **`""`** in the **`spec.storageClassName`** field of the Edge CR for Kubernetes to carry out static provisioning, thereby binding PVC claims made by the Edge Operator.
-
+Since you manually created the PVs, you must specify an empty storage class as **`""`** in the **`spec.storageClassName`** field of the Edge CR for Kubernetes to carry out static provisioning, thereby binding PVC claims made by the Edge Operator.
 {{< /c8y-admon-info >}}

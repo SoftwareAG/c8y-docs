@@ -23,11 +23,11 @@ When you create an asset model, you see the details of this asset model in the o
 
 In the overview you see the following four categories:
 
-- **Model name**: Name of the asset model
-- **Key**: Unique identifier for the asset model
-- **Description**: Brief description of the asset model
-- **Child asset models**: List of child asset models
-- **Asset properties**: List of asset properties
+*	**Model name**: Name of the asset model
+*	**Key**: Unique identifier for the asset model
+*	**Description**: Brief description of the asset model
+*	**Child asset models**: List of child asset models
+*  **Asset properties**: List of asset properties
 
 Click **Configure columns** to configure the displayed columns.
 
@@ -40,7 +40,7 @@ Use the **Export asset models** and **Import asset models** feature to transfer 
 ROLES & PERMISSIONS
 
 - To add/update/delete/import asset models: CREATE/ADMIN permission for permission type "Inventory"
-  {{< /c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 ### To create an asset model {#to-create-an-asset-model}
 
@@ -152,6 +152,7 @@ This root asset model can then be used to create an asset hierarchy, which then 
 As a result you can use the asset hierarchy in other {{< product-c8y-iot >}} applications, such as the {{< product-c8y-iot >}} OEE or the {{< product-c8y-iot >}} Machine Portal.
 
 ### To create an asset model for the entire hierarchy {#to-create-an-asset-model-for-the-entire-hierarchy}
+
 
 1. Create all required [asset properties](#asset-properties).
 2. Then [create the asset models](#to-create-an-asset-model) in a bottom-up approach, that is, all the child asset models are created first, followed by the root asset model at the end.

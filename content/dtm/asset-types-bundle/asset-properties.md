@@ -23,7 +23,7 @@ Default properties are available once you login into the tenant. See [Default pr
 ROLES & PERMISSIONS
 
 - To add/update/delete/import asset properties: CREATE/ADMIN permission for permission type "Inventory"
-  {{< /c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 ### To create an asset property {#to-create-an-asset-property}
 
@@ -100,19 +100,19 @@ To further define the asset property you can select one of the six following opt
 
 Select **Text** if the asset property value is a string, for example, a wind turbine manufacturer name. Enter a valid text.
 
-If you select **Text**, the following fields appear:
+ If you select **Text**, the following fields appear:
 
-- **Min Length**:
+*  **Min Length**:
 
 Enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
 If not selected, no minimum length criteria is set for this asset property during the asset creation.
 
-- **Max Length**:
+*  **Max Length**:
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-- **RegExp**:
+* **RegExp**:
 
 Enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
 

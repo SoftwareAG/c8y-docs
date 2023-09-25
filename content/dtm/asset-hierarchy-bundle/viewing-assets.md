@@ -15,7 +15,7 @@ Once the [asset hierarchy](/dtm/asset-hierarchy/#asset-hierarchy) is created by 
 3. Optionally [assign devices](/dtm/asset-hierarchy/#to-assign-devices-to-an-asset) from the top bar.
 
 4. The asset name and description along with the icon are displayed at the top.
-   All subassets and devices for this asset will get listed in the **Subassets** section.
+All subassets and devices for this asset will get listed in the **Subassets** section.
 
 5. All the asset properties for this asset will be displayed on the right.
 
@@ -41,12 +41,12 @@ For an asset with a location, Click or drag the marker to the preferred position
 
 To delete a subasset or device in the hierarchy:
 
-1.  Click the delete icon next to it.
+1. Click the delete icon next to it.
 
-{{< c8y-admon-info>}}
+    {{< c8y-admon-info>}}
 
 The delete icon appears on hover of each row under the subassets section.
-{{< /c8y-admon-info>}}
+    {{< /c8y-admon-info>}}
 
 In the following dialog box, click **Confirm** to continue.
 Optionally select the checkbox in the dialog box to delete all subassets and devices for the selected asset.
@@ -82,10 +82,10 @@ Only a maximum of 10 assets can be moved at a time.
 
 The **Move selected** option in the banner is disabled in the following scenarios:
 
-- One or more root assets are selected.
-- Assets of different asset models are selected. Only assets of same asset model can be moved.
-- The selected asset's asset model is no longer a child of its parent asset model.
-- One or more assets with the same name are selected.
+* One or more root assets are selected.
+* Assets of different asset models are selected. Only assets of same asset model can be moved.
+* The selected asset's asset model is no longer a child of its parent asset model.
+* One or more assets with the same name are selected.
 
 {{< /c8y-admon-info >}}
 

@@ -16,11 +16,11 @@ To add an asset via the UI:
 
 2. In the **New asset** page, select the desired asset model from the **Choose asset model** dropdown menu on the top left.
 
-   {{< c8y-admon-info>}}
+    {{< c8y-admon-info>}}
 The asset models here are root asset models.
 They are labeled "START NODE" in the hierarchy.
 Root asset models are asset models which are at the top of hierarchy and don't have any parent asset model above them.
-   {{< /c8y-admon-info>}}
+    {{< /c8y-admon-info>}}
 
 3. The asset hierarchy is shown in the left section and the respective dialog window is shown on the right. Fill out the fields labeled "required".
 

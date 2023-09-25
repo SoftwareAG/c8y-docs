@@ -54,7 +54,7 @@ The first page that is shown when you invoke Analytics Builder is the model mana
 
 #### Step 3: Add the input block {#step-3-add-the-input-block}
 
-You design your model in the model editor. The model editor is shown after you have entered the model name. The palette which is shown on the left contains all blocks that can be added to a model. You add a block by dragging it from the palette onto the canvas. The blocks for the input devices that have been registered in {{< product-c8y-iot >}} are shown under **Input**.
+You design your model in the model editor. The model editor is shown after you have entered the model name. The palette which is shown on the left contains all blocks that can be added to a model. You add a block by dragging it from the palette onto the canvas.
 
 1.  In the palette, expand **Input**.
 
@@ -69,7 +69,7 @@ If the block parameter editor is not shown (for example, because you clicked an 
 3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
 
     {{< c8y-admon-info>}}
-By default, the **All Devices** option is selected, which means that the input block is listening to all devices. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
+By default, an input block is listening to all devices, that is, the **All Devices** option is set. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
     {{< /c8y-admon-info>}}
 
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.

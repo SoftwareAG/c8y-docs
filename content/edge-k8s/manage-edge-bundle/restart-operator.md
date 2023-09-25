@@ -1,5 +1,5 @@
 ---
-weight: 35
+weight: 17
 title: Restarting the Edge Operator
 layout: redirect
 ---

@@ -346,11 +346,13 @@ The following rules apply:
 
 -   You can replace a device with another device.
 -   You can replace a group with another group.
--   When you replace a device with a group:
-    -   all matching input devices are changed to groups, and
+-   You can replace a group with the **All Devices** option.
+-   You can replace the **All Devices** option with a group.
+-   When you replace a device with a group or the **All Devices** option:
+    -   all matching input devices are changed to groups or **All Devices**, whichever is selected, and
     -   all matching output devices are changed to trigger devices.
--   When you replace a group with a device:
-    -   a group is changed to a device, and
+-   When you replace a group or the **All Devices** option with a device:
+    -   a group or **All Devices**, whichever is selected, is changed to a device, and
     -   all matching trigger devices are changed to the specified device.
         {{< c8y-admon-info>}}
 If you change more than one group to a device at a time, then only the first specified device will be used to replace all trigger devices.

@@ -118,7 +118,7 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 **Example:**
 
-If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]\*$", all generator codes have to start with the prefix “MCGEN”.
+If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes have to start with the prefix “MCGEN”.
 
 #### Default value {#default-value}
 
@@ -130,7 +130,7 @@ The default value has to adhere to all validations provided beforehand. If you s
 
 **Example:**
 
-If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]\*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
+If the asset property is "Generator code" with a **Min length** of 8, a **Max length** of 20 and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the default value must fulfill all of these three criteria. If it does not, this results in a validation error. The respective field will be highlighted to modify its content to fit the criteria.
 
 #### Number {#number}
 
@@ -138,7 +138,7 @@ For this type you must provide a numeric value for the asset creation, for examp
 
 The type **Number** contains the following fields for additional information:
 
-- **Minimum**:
+* **Minimum**:
 
 If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot be lower or less than the minimum provided.
 
@@ -148,7 +148,7 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 
 {{< /c8y-admon-info>}}
 
-- **Maximum**:
+* **Maximum**:
 
 If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
 
@@ -158,7 +158,7 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 
 {{< /c8y-admon-info>}}
 
-- **Default value**:
+* **Default value**:
   Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
@@ -257,11 +257,11 @@ A simple asset property consists of a single key value pair. This option is set 
 
 In the **Asset properties** simple asset properties are listed with their type.
 
-**Example:**
+ **Example:**
 
 If the asset property is called "Tower height", you use the key "tower_height" with the Default value of "70" (see image below).
 
-![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
+ ![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
 
 #### Complex asset property {#complex-asset-property}
 
@@ -271,7 +271,7 @@ In the **Asset properties** complex asset properties are listed with the label "
 
 You see the preview of data model on the right side of properties section.
 
-**Example:**
+ **Example:**
 
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
@@ -288,6 +288,7 @@ Follow the steps below:
 Use the downloaded file to import the asset properties into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
+Default properties are not listed under Export asset properties. See [Default properties](/dtm/default-properties/#characteristics-of-default-properties) to know the list of properties that are available.
 You can export a maximum of 500 asset properties at a time.
 {{< /c8y-admon-info>}}
 

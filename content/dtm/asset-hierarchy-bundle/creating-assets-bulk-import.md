@@ -169,6 +169,8 @@ To upload the CSV template follow the steps below:
 If the inputs are not provided in the correct format, the bulk import fails with validation errors, resulting in a **Failed asset imports** notification, showing the issue types, for example, an invalid template or an incorrect asset hierarchy.
 No assets are created.
 
+In case of bulk operation failure, the entire operation is rolled back and user will be navigated to main assets page to cleanup the entities created and try the operation again.
+
 ![bulk-import-failed-import](/images/dtm/bulk-import/dtm-bulk-import-failed-asset-imports.png)
 
 If the bulk import fails, review the reported issues and try again.

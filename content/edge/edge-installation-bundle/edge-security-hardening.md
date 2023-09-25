@@ -6,4 +6,4 @@ section:
   - edge_server
 ---
 
-For information about security configuration, see [Configuring security](/edge/configuration/#configuring-security).
+For information about security configuration, see [Configuring security](/edge/edge-configuration/#configuring-security). 

@@ -39,15 +39,15 @@
         title="REST API documentation"
         href="https://www.cumulocity.com/api/"
       >
-        <i class="dlt-c8y-icon-rest-api"></i> <span>REST API &nbsp;</span></a>
+        <i class="dlt-c8y-icon-rest-api"></i> <span>REST API</span></a>
     </div>
     <div class="dropdown version">
       <a
         class="dropdown-toggle version"
-        title="Release notes"
-        href="https://cumulocity.com/releasenotes/about/"
+        title="Former guides"
+        href="{{.Site.Params.oldguides}}"
       > 
-        <i class="dlt-c8y-icon-announcement"></i> <span>Release notes&nbsp;</span>
+        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>Former guides</span>
       </a>
     </div>
     <div class="dropdown version">
@@ -73,32 +73,7 @@
         {{ end }}
       </ul>
     </div>
-    <!-- 
-    <div class="dropdown version">
-      <button
-        class="dropdown-toggle version"
-        type="button"
-        title="Releases"
-        aria-expanded="false"
-        aria-haspopup="true"
-        id="dropdownVersionButton"
-        data-toggle="dropdown"
-      >
-        <span
-          class="text-truncate"
-          id="current-dropdown-version-toggle"
-        >Release 10.5.0</span> <span class="caret"></span>
-      </button>
-      <div
-        class="dropdown-menu"
-        role="listbox"
-        aria-labelledby="dropdownVersionButton"
-      >
-          <a href="#" class="dropdown-menu-item">10.4.6</a>
-        <a href="#" class="dropdown-menu-item">10.4.0</a> 
-      </div>
-    </div>
-  -->
+    
     <div
       class="dropdown visible-lg"
       id="sections-selection"

@@ -130,7 +130,7 @@ Modify the excel settings to provide the date in a YYYY-MM-DD format. This preve
 
 To provide a file input as an asset property value, the file must first be uploaded to a {{< product-c8y-iot >}} tenant using the {{< product-c8y-iot >}} API.
 
-Refer to the [Binaries API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
+Refer to the [Binaries API](https://{{< domain-c8y >}}/api/core/#operation/postBinariesCollectionResource) in the {{< openapi >}} for details on how to upload a file to {{< product-c8y-iot >}}.
 
 The binary ID in the API response must be provided as input for the asset property field with type "file" in the CSV template.
 {{< c8y-admon-info>}}
@@ -140,6 +140,8 @@ During the bulk import, the file size validation is skipped as the file is alrea
 If the type is "Boolean", the input field must be either "true" or "false".
 If the type is "enumeration", then the input field must be in the list of values specified during creation of the asset property.
 If the type is "text" or "number" and custom criteria were provided during asset property creation, then the input value in CSV template must fulfill all the asset property criteria.
+
+When creating a property, you have the option to assign a default value. If a property's value is left empty in the CSV file during the bulk import, its value is set to default. To override this behavior, enter 'null' as the value in the CSV file. This does not set the value and it is seen as undefined when viewing the asset.
 
 Fill in details for all the assets which must be created as part of the asset hierarchy.
 

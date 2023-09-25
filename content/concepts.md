@@ -6,6 +6,10 @@ layout: redirect
 bundle: concepts
 section:
   - getting_started
+audience:
+  - Users
+  - Developers
+  - Business
 weight: 10
 ---
 

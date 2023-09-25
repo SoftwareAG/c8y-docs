@@ -1,11 +1,13 @@
 ---
 title: Welcome developers
-icon: "c8y-icon c8y-icon-cumulocity-iot"
+icon: "dlt-c8y-icon-programming"
 type: root
 layout: redirect
 bundle: welcome-developers
 section:
   - getting_started
+audience:
+  - Developers
 weight: 30
 ---
 

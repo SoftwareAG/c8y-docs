@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-You can access the Edge appliance from the {{< product-c8y-iot >}} tenant by installing the VNC components on your Edge appliance. Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/remote-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
+You can access the Edge appliance from the {{< product-c8y-iot >}} tenant by installing the VNC components on your Edge appliance. Ensure that you have registered your Edge appliance with the {{< product-c8y-iot >}} tenant. See [Registering the Edge appliance in the {{< product-c8y-iot >}} tenant](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant).
 
 {{< c8y-admon-info >}}
 
@@ -14,7 +14,7 @@ VNC server does not work if SELinux is set to enforcing mode.
 
 {{< /c8y-admon-info >}}
 
-### Step 1: Installing the VNC components
+### Step 1: Installing the VNC components {#step-1-installing-the-vnc-components}
 
 {{< c8y-admon-info >}}
 
@@ -36,7 +36,7 @@ The Edge appliance must be connected to the internet to install the VNC componen
 
     {{< c8y-admon-info >}}These are sample commands and may vary based on your requirements.{{< /c8y-admon-info >}}
 
-### Step 2: Configuring VNC server for a user
+### Step 2: Configuring VNC server for a user {#step-2-configuring-vnc-server-for-a-user}
 
 To configure the VNC server, run the *vnc-user-setup.sh* script. Each user should run this script to set up VNC components and be able to connect to the Edge appliance. The *vnc-user-setup.sh* script enables the current user to use VNC functionality and set a VNC password for the current user.
 
@@ -53,22 +53,22 @@ To configure the VNC server, run the *vnc-user-setup.sh* script. Each user shoul
 You can also get the allocated port number from the */opt/c8y/utilities/vnc-display-mapping* file. In this file, you will find the VNC display number allocated for each user. For example, admin:1. You must add 5900 to the number associated with the user. In this example, the port number for the user **admin** is 5901.
 {{< /c8y-admon-info >}}
 
-### Step 3: Connecting to the Edge appliance using VNC
+### Step 3: Connecting to the Edge appliance using VNC {#step-3-connecting-to-the-edge-appliance-using-vnc}
 
 To access and connect to the Edge appliance:
 
-1. In the {{< product-c8y-iot >}} tenant for your registered Edge appliance, add a remote access endpoint. See [Adding remote access endpoints](/cloud-remote-access/using-cloud-remote-access/#to-add-a-remote-access-endpoint-via-vnc). You must use the same port number that is allocated for you.
+1. In the {{< product-c8y-iot >}} tenant for your registered Edge appliance, add a remote access endpoint. See [To add a remote access endpoint via VNC](/cloud-remote-access/using-cloud-remote-access/#to-add-a-remote-access-endpoint-via-vnc). You must use the same port number that is allocated for you.
 
-2. Connect to the endpoint. See [Connecting to endpoints](/cloud-remote-access/using-cloud-remote-access/#to-connect-to-an-endpoint).
+2. Connect to the endpoint. See [To connect to an endpoint](/cloud-remote-access/using-cloud-remote-access/#to-connect-to-an-endpoint).
 
 The connection to the Edge appliance is established and the UI appears for the Edge appliance. Right-click in the screen to open the desktop components **xterm** and **firefox**.
 
 <img src="/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
 {{< c8y-admon-important >}}
-Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
+Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
 {{< /c8y-admon-important >}}
 
-### Changing the VNC password
+### Changing the VNC password {#changing-the-vnc-password}
 
 You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.

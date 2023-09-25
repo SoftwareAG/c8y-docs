@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-### Updating the memory and CPU limit for Apama
+### Updating the memory and CPU limit for Apama {#updating-the-memory-and-cpu-limit-for-apama}
 
 The memory limit for Apama container is set to 2048 MB and the CPU limit is set to 256 as default values. For most use cases, these values are sufficient. You can change the values as per your requirements.
 

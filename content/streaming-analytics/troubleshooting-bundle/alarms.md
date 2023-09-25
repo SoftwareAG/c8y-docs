@@ -56,7 +56,7 @@ The alarm texts for the alarms below may undergo minor changes in the future.
 
 #### Change in tenant options and restart of Apama-ctrl {#tenant_option_change}
 
-This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}} for more details.
+This alarm is raised when a tenant option changes in the `analytics.builder` or `streaminganalytics` category. For details on the tenant options, refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
 - Alarm type: `tenant_option_change`
 - Alarm text: Detected changes in tenant option. Apama-ctrl will restart in order to use it.
@@ -91,7 +91,7 @@ To diagnose the cause of an unexpected restart, you can try the following:
 
 - Check the audit logs. The audit logs are accessible via the Administration application and the audit API.
 See [Audit logs](/standard-tenant/audit-logs) and
-[Audit API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audit-API) in the {{< openapi >}} for details of accessing the audit logs.
+[Audit API](https://{{< domain-c8y >}}/api/core/#tag/Audit-API) in the {{< openapi >}} for details of accessing the audit logs.
 
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
 

@@ -157,7 +157,7 @@ You can add them to the [application manifest](#microservice-manifest) in the `r
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
-The roles are set in the [Microservice manifest](#microservice-manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/User-API) in the {{< openapi >}}.
+The roles are set in the [Microservice manifest](#microservice-manifest). For more details about users and roles, review the [User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
 
 ### Microservice bootstrap {#microservice-bootstrap}
 
@@ -208,4 +208,4 @@ There is a mechanism to encrypt the tenant options that afterwards are automatic
 
 If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
 
-Refer to tenant options in the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}} for more details.
+Refer to tenant options in the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}} for more details.

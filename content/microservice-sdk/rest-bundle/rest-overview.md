@@ -14,7 +14,7 @@ With this API description you will learn how to use {{< product-c8y-iot >}}'s RE
 
 The description is closely linked to the {{< openapi >}}, which describes each interface in detail. Relevant secions in the {{< openapi >}} are in particular:
 
-- [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
+- [REST implementation](https://{{< domain-c8y >}}/api/core/#section/REST-implementation) is the reference for all general concepts.
 - [Fragment library](/device-integration/fragment-library/) specifies the data model for device management.
 - [Sensor library](/concepts/domain-model/#sensor-library) specifies the data model for sensors and controls.
 
@@ -63,7 +63,7 @@ From this point, you can navigate further to the different returned objects. For
 $ curl -u <username>:<password> https://<yourTenant>.{{< domain-c8y >}}/inventory/managedObjects
 ```
 
-You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation/REST-usage) in the {{< openapi >}}.
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Rest usage > Query result paging](https://{{< domain-c8y >}}/api/core/#section/REST-implementation/REST-usage) in the {{< openapi >}}.
 
 ### Using Postman {#using-postman}
 

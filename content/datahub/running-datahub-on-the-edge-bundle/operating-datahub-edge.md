@@ -16,7 +16,7 @@ If problems occur, you should follow these steps:
 - Check the log files, see the section on [Log files](#log-files)
 - Monitor the system processes, see the section on [Monitoring](#monitoring)
 
-If you still need to contact [product support](/welcome/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics](/edge/diagnostics-and-support/#diagnostics) for details of how to run it.
+If you need to contact [product support](/welcome/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics and support > Diagnostics](/edge/operating-edge/#diagnostics) in the *{{< product-c8y-iot >}} Edge guide* for details of how to run it.
 
 <a name="health-check"></a>
 #### Health check
@@ -71,7 +71,7 @@ The containers are configured to rotate log files with rotation settings of two 
 
 <a name="monitoring"></a>
 #### Monitoring
-{{< product-c8y-iot >}} Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/diagnostics-and-support/#monitoring) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
+{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See the section on [Diagnostics and support > Monitoring](/edge/operating-edge/#monitoring) in the *{{< product-c8y-iot >}} Edge guide* for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 

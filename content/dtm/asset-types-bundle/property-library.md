@@ -3,15 +3,15 @@ weight: 20
 layout: redirect
 title: Asset properties
 
-helpContent: 
+helpContent:
 - label: asset-properties
   title: Asset Properties
   content: "Asset properties are the parameters that define an asset model. One or more asset properties are used to define an asset model.
 
-  
+
   Asset properties can be reused in multiple asset models. You can build your asset property library by adding asset properties which can be used to define any asset model.
-  
-  
+
+
   To add a new asset property, click **Add asset property**."
 ---
 Asset properties are the parameters that define an [asset model](/dtm/asset-types/#asset-types). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
@@ -219,6 +219,12 @@ If you create an asset property called "Yaw system" to identify wind turbines th
 
 This option allows you to upload a file during the asset creation.
 
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS
+
+- To add/update file: CREATE/ADMIN permission for permission type "Inventory".
+{{< /c8y-admon-req >}}
+
 If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size in MB** field. When you create an asset with this asset property, you can only upload files that adhere to the allowed file types with their file size not exceeding the set limit.
 
 {{< c8y-admon-info>}}
@@ -295,7 +301,7 @@ In the **Asset properties** complex asset properties are listed with the label "
 You see the preview of data model on the right side of properties section.
 
  **Example:**
- 
+
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key value pairs defining the property "Gearbox specifications". Switch on the **Complex property** toggle (see image below). Enter the required information for all key value pairs and click **Save**.
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)

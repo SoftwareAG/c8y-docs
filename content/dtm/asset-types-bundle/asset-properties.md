@@ -102,13 +102,13 @@ Select **Text** if the asset property value is a string, for example, a wind tur
 
  If you select **Text**, the following fields appear:
 
-*  **Min Length**:
+* **Min Length**:
 
 Enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
 If not selected, no minimum length criteria is set for this asset property during the asset creation.
 
-*  **Max Length**:
+* **Max Length**:
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
@@ -159,7 +159,7 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 {{< /c8y-admon-info>}}
 
 * **Default value**:
-  Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
+Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
 
@@ -259,7 +259,7 @@ In the **Asset properties** simple asset properties are listed with their type.
 
  **Example:**
 
-If the asset property is called "Tower height", you use the key "tower_height" with the Default value of "70" (see image below).
+ If the asset property is called "Tower height", you use the key "tower_height" with the Default value of "70" (see image below).
 
  ![Simple asset property](/images/dtm/custom-property/dtm-property-library-simple-custom-property.png)
 

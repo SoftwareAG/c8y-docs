@@ -19,14 +19,16 @@ layout: redirect
 
 To enable the proper functioning of the Edge Operator on K3s, you must install K3s with the following configuration options.
 
-Run the command below:
+Run the command below to install Kubernetes version 1.25.13:
 
 ```shell
 sudo bash -c 'echo -e "vm.panic_on_oom=0\nvm.overcommit_memory=1\nkernel.panic=10\nkernel.panic_on_oops=1" >> /etc/sysctl.d/90-kubelet.conf' \
 && sudo sysctl -p /etc/sysctl.d/90-kubelet.conf \
 && curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.25.13+k3s1 sh -s - --disable=traefik --write-kubeconfig-mode 644 --protect-kernel-defaults true  --kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook \
+&& mkdir -p ~/.kube \
 && sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config \
-&& chmod 600 ~/.kube/config \
+&& sudo chown $USER:$USER ~/.kube/config \
+&& sudo chmod 600 ~/.kube/config \
 &&echo -e '\e[32mSuccessfully installed k3s!\e[0m'
 ```
 For configuration options, see [K3s configuration options](https://docs.k3s.io/installation/configuration).
@@ -34,3 +36,9 @@ For configuration options, see [K3s configuration options](https://docs.k3s.io/i
 - Added `--disable=traefik` in the install command to disable Traefik to avoid port conflicts between Traefik and cumulocity-core service, as both are LoadBalancer type services which expose port 443.
 - Added `--kube-apiserver-arg=admission-control=ValidatingAdmissionWebhook,MutatingAdmissionWebhook` to enable admission controllers. The flag is set to enable the `ValidatingAdmissionWebhook` and `MutatingAdmissionWebhook` admission controllers, as {{< product-c8y-iot >}} Edge requires them. See [https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
 - Added `--protect-kernel-defaults` true to protect the default kernel settings on the host system. It prevents modifications to critical kernel parameters by container workloads running in Kubernetes. For more information, see [https://docs.k3s.io/security/hardening-guide#host-level-requirements](https://docs.k3s.io/security/hardening-guide#host-level-requirements). 
+
+{{< c8y-admon-info >}}
+
+To install a later version of Kubernetes, update the environment variable `INSTALL_K3S_VERSION`.
+
+{{< /c8y-admon-info >}}

@@ -54,9 +54,7 @@ Kubernetes provides a variety of persistent volume types, but two specific types
 ### Static provisioning of PVs
 
 {{< c8y-admon-info >}}
-
 You can skip this section if your Kubernetes cluster is already configured for dynamic provisioning of PVs.
-
 {{< /c8y-admon-info >}} 
 
 This section outlines the steps for configuring the Kubernetes cluster to enable {{< product-c8y-iot >}} Edge to utilize NFS as a source for the PVs. For additional storage options, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).

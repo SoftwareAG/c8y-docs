@@ -27,8 +27,8 @@ helpcontent:
 
     Click on an application to view the application details. To add an application, click **Add application** and follow the instructions in the wizard, see also the *User guide*."
   - label: extensions
-    title: Extensions
-    content: "On the **Extensions** page, you find a list of all extension packages available in your tenant. Extension packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new extension package, click **Add extension package** at the top right."
+    title: Packages
+    content: "On the **Packages** page, you find a list of all packages available in your tenant. Packages are combinations of plugins and blueprints which can be packed together into a single file and deployed to the platform. To add a new package, click **Add package** at the top right."
   - label: features
     title: Features
     content: "On the **Features** tab, you will find a list of all features subscribed to your tenant. Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications)."
@@ -276,11 +276,11 @@ In the **Properties** tab, each application will show the following information,
 </table>
 
 <a name="extensions"></a>
-### Extensions
+### Packages
 
-Click **Extensions** in the **Ecosystem** menu in the navigator to display all extensions in your account.
+Click the tab **Packages** in the **Application** menu to display all packages in your account.
 
-Extensions make it easier to share and reuse UI features across different applications. UI features can be developed as plugins and added to an application without coding knowledge. There are two types of extensions:
+Packages make it easier to share and reuse UI features across different applications. UI features can be developed as plugins and added to an application without coding knowledge. There are two types of packages:
 
 - Plugins
 - Blueprints

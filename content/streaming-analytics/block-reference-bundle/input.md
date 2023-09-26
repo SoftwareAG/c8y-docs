@@ -92,7 +92,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 <tr>
 <th scope="row">Input Source</th>
 <td><span>Defines the source from which the alarm has been received.</span>
-<p>This can be a single device, an asset, an object that references or contains a group of devices or all input sources.</p>
+<p>This can be a single device, an asset, an object that references or contains a group of devices, or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>

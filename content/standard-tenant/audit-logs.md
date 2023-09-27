@@ -22,13 +22,13 @@ helpcontent:
 ROLES & PERMISSIONS:
 
 - To view audit logs: READ permission for permission type "Audit"
-- To create audit logs you need Admin permission for the permission type "Audit". Note however, that you cannot create audit logs from the UI. For details on how to create audit logs via REST refer to [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}}.
+- To create audit logs you need Admin permission for the permission type "Audit". Note however, that you cannot create audit logs from the UI. For details on how to create audit logs via REST refer to [Audits](https://{{< domain-c8y >}}/api/core/#tag/Audits) in the {{< openapi >}}.
 {{< /c8y-admon-req >}}
 
 
 {{< c8y-admon-related >}}
 - [Getting started > Technical concepts > Security aspects > Management security](/concepts/security/#management-security) for general aspects of audit logging.
-- [Audits](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Audits) in the {{< openapi >}} for details on managing audit records via REST.
+- [Audits](https://{{< domain-c8y >}}/api/core/#tag/Audits) in the {{< openapi >}} for details on managing audit records via REST.
 {{< /c8y-admon-related >}}
 
 ### To view audit logs {#to-view-audit-logs}

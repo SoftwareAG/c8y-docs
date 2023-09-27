@@ -10,7 +10,7 @@ This section explains how to use {{< product-c8y-iot >}}'s REST interfaces to in
 
 The description is closely linked to the {{< openapi >}}, which describes each interface in detail, as well as the fragment library:
 
-- [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
+- [REST implementation](https://{{< domain-c8y >}}/api/core/#section/REST-implementation) is the reference for all general concepts.
 - [Fragment library](/device-integration/fragment-library/) specifies managed objects (devices) as well as for predefined sensor and control capabilities of devices.
 
 If you develop using Java ME/SE, JavaScript or C/C++, check the relevant chapters in this guide for even more convenient access to {{< product-c8y-iot >}}'s functionality. Also, if you use any of the supported development boards, see the corresponding description in the Devices guide for more information.

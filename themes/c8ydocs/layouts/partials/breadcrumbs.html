@@ -8,7 +8,7 @@
     {{ end }}
     <span>
       {{ if and (eq .p1 .p2) (eq .p1.Title .p2.Title) }}
-      {{ .p1.Title}}
+        {{ .p1.Title}}
       {{else}}
         {{ if ne .p1.Title .p2.Title }}
           <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>

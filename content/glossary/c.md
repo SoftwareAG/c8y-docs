@@ -13,6 +13,13 @@ The Cockpit application is one of the default applications of {{< product-c8y-io
 For details see [Application enablement & solutions > Cockpit](/cockpit/).
 
 
+### Continuous Deployment model {#continuous-deplyoment-model}
+
+In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different components of the {{< product-c8y-iot >}} platform are updated on a continuous basis. This means a frequent deployment of small incremental improvements. Continuous updates provide customers with a steady stream of enhancements, bug fixes, and new functionalities as they become available.
+
+See also [Private Preview](/glossary/p/#private-preview), [Public Preview](/glossary/p/#public-preview) and [General Availability](/glossary/g/#ga).
+
+
 ### {{< product-c8y-iot >}} Core {#core}
 
 {{< product-c8y-iot >}} is the foundation of the {{< product-c8y-iot >}} platform. It comprises all major components such as the default [applications](/glossary/a/#application) (Administration, Cockpit and Device Management), the [{{< product-c8y-iot >}} operational store](/glossary/c/#operational-store), [microservices](/glossary/m/#microservices), [REST API](/glossary/r/#rest-api), [MQTT API](/glossary/m/#mqtt), and [smart rules](/glossary/s/#smart-rules).
@@ -29,7 +36,7 @@ For details see [Analytics > DataHub](/datahub/datahub-overview/).
 
 {{< product-c8y-iot >}} Edge is the onsite solution of {{< product-c8y-iot >}} intended to run as a local software application on industrial PC’s or local servers.
 
-For details see the [Edge](/edge/introduction/).
+For details see the [Edge](/edge/edge-introduction/).
 
 
 ### {{< product-c8y-iot >}} operational store {#operational-store}

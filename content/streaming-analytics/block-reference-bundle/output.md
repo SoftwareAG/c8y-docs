@@ -269,7 +269,7 @@ This block produces synchronous output. The parameters that define the output st
 </tr>
 <tr>
 <th scope="row">Message</th>
-<td><span>The text that will be displayed when the event is created.</span>
+<td><span>The text that is displayed when the event is created.</span>
 <p>This requires that the Text Input input is not connected. If neither are set, the model name is used as the text.</p>
 </td>
 <td><span>string</span>
@@ -556,7 +556,7 @@ Non-finite values are ignored.</p>
 `apama.analyticskit.blocks.cumulocity.CreateOperationStaticValue`
 
 <p>Creates a new <tt>Operation</tt> object for a specified device, asset or for the trigger device.</p>
-<p>If none of the Operation Name, Parameter Name or Parameter Value parameters are set, then the operation will use the Properties input port to populate the <tt>Operation</tt> object.
+<p>If none of the Operation Name, Parameter Name or Parameter Value parameters are set, then the operation uses the Properties input port to populate the <tt>Operation</tt> object.
 <p></p>
 The block does not participate in time-synchronous model-to-model communication. Multiple blocks can be used in a single model or multiple models to create new operations for the same device. Cycles among models can be formed because of this block, so care must be taken not to introduce indefinite cyclic execution of models.
 <p></p>
@@ -702,7 +702,7 @@ Note: When running in simulation or test mode, the block logs the output instead
 </tr>
 <tr>
 <th scope="row">Text</th>
-<td><span>The text of the email.</span>
+<td><span>The text of the email, which is processed as HTML. For example, if you want to insert a new line, use the <tt>&lt;br&gt;</tt> tag.</span>
 </td>
 <td><span>string</span>
 </td>
@@ -738,7 +738,7 @@ Note: When running in simulation or test mode, the block logs the output instead
 </tr>
 <tr>
 <th scope="row">BCC</th>
-<td><span>(Blind carbon copy) The recipients that are to receive a blind copy of the email. One or more email addresses separated by commas. Recipients listed in To and CC will not be able to see the BCC list.</span>
+<td><span>(Blind carbon copy) The recipients that are to receive a blind copy of the email. One or more email addresses separated by commas. Recipients listed in To and CC are not able to see the BCC list.</span>
 </td>
 <td><span>string</span>
 </td>

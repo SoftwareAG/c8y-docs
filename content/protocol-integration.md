@@ -6,7 +6,10 @@ layout: redirect
 bundle: protocol-integration
 section:
   - device_management
+audience:
+  - Users
+  - Developers
 weight: 40
 ---
 
-{{< product-c8y-iot >}} supports numerous device protocols which allow you to use a wide variety of IoT devices with different parameters and network connectivity options. 
+{{< product-c8y-iot >}} supports numerous device protocols which allow you to use a wide variety of IoT devices with different parameters and network connectivity options.

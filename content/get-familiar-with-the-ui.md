@@ -1,11 +1,13 @@
 ---
 title: Get familiar with the UI
-icon: "c8y-icon c8y-icon-c8y-data"
+icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect
 bundle: get-familiar-with-the-ui
 section:
   - getting_started
+audience:
+  - Users
 weight: 20
 ---
 

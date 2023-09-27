@@ -5,6 +5,8 @@ type: root
 layout: redirect
 bundle: sensor-app
 weight: 40
+audience:
+  - Users
 section:
   - getting_started
 ---

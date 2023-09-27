@@ -18,7 +18,7 @@ As an administrator, you can disable the performance feature by doing the follow
 - On platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).
 - On tenant level via a tenant option. The tenant option has 2 possible values: LEGACY/OPTIMIZED, where OPTIMIZED is the global default.
 
-The option looks like the following in the REST API (see also the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postOptionCollectionResource)):
+The option looks like the following in the REST API (see also the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/#operation/postOptionCollectionResource)):
 
 `{"category": "configuration", "key": "acl.algorithm-version", "value": "LEGACY"}`
 

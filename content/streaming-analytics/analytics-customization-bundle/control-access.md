@@ -68,7 +68,7 @@ curl --user username -X POST -H 'Content-Type: application/json' -d '{"name":"fe
 By default, all users can see the same set of pages (according to the limitations above).
 You can also restrict the visibility of the pages to only users who have the permission ROLE_ANALYTICSBUILDER_READ or ROLE_EPLAPPS_READ,
 which can be assigned directly to users or via groups, see also [Managing permissions](/standard-tenant/managing-permissions/).
-To enable this, set the category of the tenant option to `streaminganalytics` and the `applicationAccess` key to the value "role", see the [Tenant API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenant-API) in the {{< openapi >}}, or use a curl command as given in the example below:
+To enable this, set the category of the tenant option to `streaminganalytics` and the `applicationAccess` key to the value "role", see the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}}, or use a curl command as given in the example below:
 
 ```
 curl --user username -X POST -H 'Content-Type: application/json' -d '{"category": "streaminganalytics", "key": "applicationAccess", "value": "role"}' -k https://mytenant/tenant/options

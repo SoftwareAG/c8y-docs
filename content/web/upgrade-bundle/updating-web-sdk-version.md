@@ -49,7 +49,7 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1006.2.0
 ```
 
 {{< c8y-admon-info >}}
-The first two numbers of the version are combined (eg. 10.6 becomes 1006) as npm only supports semver version numbers. You can also remove the `-a` flag to always update to the latest version (the version our cloud platform is running on).
+The first two numbers of the version are combined (for example, 10.6 becomes 1006) as npm only supports semver version numbers. You can also remove the `-a` flag, in this case the version tagged with `latest` will be used.
 {{< /c8y-admon-info >}}
 
 The command simply copies over the files that are used for building a new application in the particular version.

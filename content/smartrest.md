@@ -6,6 +6,8 @@ layout: redirect
 bundle: smartrest
 section:
   - device_management
+audience:
+  - Developers
 weight: 80
 ---
 

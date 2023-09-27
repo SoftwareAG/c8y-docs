@@ -65,71 +65,9 @@ Enter host password for user 'edge/admin':
   },
   "applications": [
     {
-      "owner": {
-        "self": "https://myown.iot.com/tenant/tenants/edge",
-        "tenant": {
-          "id": "edge"
-        }
-      },
-      "requiredRoles": [
-        "ROLE_DATA_BROKER_READ",
-        "ROLE_INVENTORY_READ",
-        "ROLE_INVENTORY_CREATE",
-        "ROLE_ALARM_ADMIN"
-      ],
-      "manifest": {
-        "livenessProbe": {
-          "failureThreshold": 3,
-          "periodSeconds": 10,
-          "timeoutSeconds": 5,
-          "successThreshold": 1,
-          "initialDelaySeconds": 50,
-          "httpGet": {
-            "path": "/health",
-            "port": 80
-          }
-        },
-        "requiredRoles": [
-          "ROLE_DATA_BROKER_READ",
-          "ROLE_INVENTORY_READ",
-          "ROLE_INVENTORY_CREATE",
-          "ROLE_ALARM_ADMIN"
-        ],
-        "roles": [],
-        "resources": {
-          "cpu": "1000m",
-          "memory": "1Gi"
-        },
-        "isolation": "PER_TENANT",
-        "version": "1017.0.275",
-        "apiVersion": "2",
-        "provider": {
-          "name": "Cumulocity GmbH"
-        },
-        "readinessProbe": {
-          "failureThreshold": 3,
-          "periodSeconds": 10,
-          "timeoutSeconds": 5,
-          "successThreshold": 1,
-          "initialDelaySeconds": 50,
-          "httpGet": {
-            "path": "/health",
-            "port": 80
-          }
-        },
-        "billingMode": "RESOURCES",
-        "name": "databroker-agent-server",
-        "dockerBuildInfo": {
-          "builderInfo": "com.nsn.cumulocity.clients-java:microservice-package-maven-plugin:1017.0.275",
-          "hostOS": "Linux",
-          "hostPlatform": "amd64",
-          "buildDate": "2023-08-11T13:35:08Z",
-          "imageArch": "linux/amd64",
-          "hostOSVersion": "5.4.238-148.347.amzn2.x86_64"
-        },
-        "noAppSwitcher": true,
-        "settingsCategory": null
-      },
+      "owner": { ... truncated ... },
+      "requiredRoles": [ ... truncated ... ],
+      "manifest": { ... truncated ... },
       "roles": [],
       "contextPath": "databroker-agent-server",
       "availability": "MARKET",

@@ -1,22 +1,22 @@
 ---
 weight: 50
-title: Uninstalling the Messaging Service and the microservice-based data broker on Edge
+title: Uninstalling the Messaging Service and the microservice-based data broker
 layout: redirect
 ---
 
 The bundle for the Messaging Service and data broker microservice does not have an uninstall command. 
-If a mistake is made, or and installation fails, the bundle components must be manually uninstalled.
-Once manually uninstalled, the installation can be reattempted.
+If a mistake is made or an installation fails, the bundle components must be uninstalled manually.
+Afterwards, the installation can be reattempted.
 
-#### To manually uninstall:
+### To uninstall manually
 1. Login to {{< product-c8y-iot >}} Edge using SSH.
    
-2. Uninstall the Pulsar helm chart.
+2. Uninstall the Pulsar Helm chart.
 ```shell
 sudo helm uninstall pulsar -n c8y-messaging-service
 ```
 3. Wait for the pulsar pods to terminate.  
-   This command updates its state every 2 seconds. When it reports there are no resources, press CTL-C to return to the command line.
+   This command updates its state every two seconds. When it reports that there are no resources, press Ctrl+C to return to the command line.
 
 ```shell
 watch sudo kubectl get pods -n c8y-messaging-service
@@ -35,7 +35,7 @@ journal0     2Gi        RWO            Retain           Released    c8y-messagin
 ledgers0     10Gi       RWO            Retain           Released    c8y-messaging-service/pulsar-bookie-ledgers-pulsar-bookie-0      local-storage            3h
 zookeeper0   2Gi        RWO            Retain           Released    c8y-messaging-service/pulsar-zookeeper-data-pulsar-zookeeper-0   local-storage            3h
 ```
-6. Delete each of the persistent volumes found in step 5.
+6. Delete each of the persistent volumes found in the previous step.
 ```shell 
 sudo kubectl delete pv journal0 ledgers0 zookeeper0
 ```
@@ -46,12 +46,12 @@ sudo rm -rf /opt/bookie/ledgers /opt/bookie/journal /opt/zookeeper
 8. Unsubscribe the edge tenant from and undeploy, the databroker-agent-server microservice.
 
    The databroker-agent-server application ID is required for the HTTP requests used to do both of these.   
-   To find its application ID, you can use a CURL command of the following form and redirect the output to a JQ command to make it easier to read the JSON response.
-   The general structure of command is:
+   To find its application ID, you can use a cURL command of the following form and redirect the output to a JQ command to make it easier to read the JSON response.
+   The general structure of the command is:
 ```shell
 curl http://<EDGE-HOSTNAME>/application/applicationsByName/databroker-agent-server -su <TENANT>/admin | jq --indent 2
 ```   
-   The ID required is the `id` field at the root level of the JSON response.
+   The ID required is the value of the `id` field at the root level of the JSON response.
    In the following example, it has the value '19' (the penultimate JSON field).
 ```shell
 curl http://myown.iot.com/application/applicationsByName/databroker-agent-server -su edge/admin | jq --indent 2
@@ -143,14 +143,13 @@ Enter host password for user 'edge/admin':
   ]
 }
 ```
-   Use that ID value in the request to unsubscribe from the microserive, and again when deleting it. 
+   Use that ID value in the request to unsubscribe from the microservice and again when deleting it. 
 
    To unsubscribe, use a command of the following form:
 ```shell
 curl -X DELETE http://<EDGE-HOSTNAME>/tenant/tenants/<TENANT>/applications/<APP-ID> -u <TENANT>/admin -v
-
 ```
-   This should return an HTTP 204 (no content) response. For example: 
+   This returns an HTTP 204 (no content) response. For example: 
 ```shell
 curl -X DELETE http://myown.iot.com/tenant/tenants/edge/applications/19 -u edge/admin -v
 Enter host password for user 'edge/admin':
@@ -177,11 +176,11 @@ Enter host password for user 'edge/admin':
 * Connection #0 to host myown.iot.com left intact
 ```
 
-   To delete, the use a command of the form:
+   To delete, use a command of the following form:
 ```shell
 curl -X DELETE http://<EDGE-HOSTNAME>/application/applications/<APP-ID> -su <TENANT>/admin -v
 ```   
-   This should return an HTTP 204 (no content) response. For example:
+   This returns an HTTP 204 (no content) response. For example:
 ```shell
 curl -X DELETE http://myown.iot.com/application/applications/19 -su edge/admin -v
 Enter host password for user 'edge/admin':

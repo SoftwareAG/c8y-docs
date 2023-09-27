@@ -30,9 +30,9 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 
 6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
 
-For an asset with a location property click **Choose on Map** in the section to set the values for latitude and longitude using map view. Click the full screen icon at the top right corner of the map to view it in full screen.
+For an asset with a location property, click **Choose on Map** in the section to set the values for latitude and longitude using map view. Click the full screen icon at the top right corner of the map to view it in full screen.
 
-The marker is positioned at the default value set in the location property. If no defualt value is set,the marker is positioned at D&uuml;sseldorf, Germany. Click or drag the marker to the preferred position to select the value for latitude and longitude. The marker on the map is positioned at an approximated location when either latitude or longitude value is missing. To close the map view, click **close** above the map.
+The marker is positioned at the default value set in the location property. If no default value is set, the marker is positioned at D&uuml;sseldorf, Germany. Click or drag the marker to the preferred position to set the value for latitude and longitude. The marker on the map is positioned at an approximated location when either latitude or longitude value is missing. To close the map view, click **Close** above the map.
 
 {{< c8y-admon-info>}}
 The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.<br>
@@ -123,6 +123,8 @@ For a wind turbine rotor with three blades, you first create the asset hierarchy
 On successful asset hierarchy creation, you see a pop-up notification in the top right corner.
 You can view the newly created asset hierarchy in the **Assets** page.
 Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
+
+In case of bulk operation failure, the entire operation is rolled back and user will be navigated to main assets page to cleanup the entities created and try the operation again.
 
 ### To view asset details {#to-view-asset-details}
 

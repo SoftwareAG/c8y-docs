@@ -17,7 +17,7 @@ helpContent:
 
 Asset properties are the parameters that define an [asset model](#asset-models). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
 
-Default properties are available once you login into the tenant. See [Default properties](/dtm/default-properties/#characteristics-of-default-properties) to know the list of properties that are available.
+When you open the DTM application, default properties are readily available for use. See [Default properties](#default-properties) to view the list of properties available.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
@@ -288,7 +288,7 @@ Follow the steps below:
 Use the downloaded file to import the asset properties into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
-Default properties are not listed under Export asset properties. See [Default properties](/dtm/default-properties/#characteristics-of-default-properties) to know the list of properties that are available.
+Default properties are not listed under Export asset properties. See [Default properties](/dtm/default-properties/#characteristics-of-default-properties) to view the list of properties available.
 You can export a maximum of 500 asset properties at a time.
 {{< /c8y-admon-info>}}
 
@@ -313,3 +313,24 @@ Review the errors that are reported, resolve them, and attempt the upload again.
 
 You can import a maximum of 500 asset properties at a time.
 {{</ c8y-admon-info>}}
+
+### Default properties {#default-properties}
+
+### Characteristics {#characteristics-of-default-properties}
+
+* Default properties are readily available when you open the application.
+* Default properties cannot be deleted. 
+* Only selected fields within a default property are editable and the editable fields vary depending on the specific property.
+* Default properties cannot be exported.
+
+### Location {#location}
+
+Location property enables you to assign location (latitude and longitude) to an asset. You can set the default values of latitude and longitude by entering corresponding values or alternatively using the map view.
+
+To set the default values for latitude and longitude using map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. The marker is positioned at D&uuml;sseldorf, Germany by default. Click or drag the marker to the preferred position to select the default value for latitude and longitude. To close the map view, click **Close** above the map.
+
+{{<c8y-admon-info>}}
+The valid range for Latitude is -90 to +90 and valid range for Longitude is -180 to +180. <br>
+The marker on the map is positioned at an approximated location when either latitude or longitude value is missing.<br>
+The default values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.
+{{</c8y-admon-info>}}

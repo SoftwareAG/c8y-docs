@@ -8,4 +8,4 @@ Kubernetes Operators are a powerful concept and pattern for managing complex app
 
 The integral part of the Operator pattern is Custom Resource Definitions (CRDs), which allow you to define application-specific resources and its behavior. An Operator uses these CRDs to understand how to manage and interact with the application. 
 
-Operators are particularly valuable for managing stateful applications, like {{< product-c8y-iot >}}. The Operators automate best practices, routine tasks, and provide a consistent way to manage complex applications across different environments.
+Operators are particularly valuable for managing stateful applications, like {{< product-c8y-iot >}}. Operators automate best practices, routine tasks, and provide a consistent way to manage complex applications across different environments.

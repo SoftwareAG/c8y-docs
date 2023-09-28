@@ -27,7 +27,7 @@ sudo kubectl delete pvc -n c8y-messaging-service --all
 ```
 5. Find the names of the persistent volumes used by the Pulsar components.
    
-   Here the GREP command is used to filter the output. The names are in the output's leftmost column.
+   Here the grep command is used to filter the output. The names are in the output's leftmost column.
 
 ```shell
 sudo kubectl get pv | grep pulsar
@@ -46,7 +46,7 @@ sudo rm -rf /opt/bookie/ledgers /opt/bookie/journal /opt/zookeeper
 8. Unsubscribe the edge tenant from and delete, the databroker-agent-server microservice.
 
    The databroker-agent-server application ID is required for the HTTP requests used to do both of these.   
-   To find its application ID, you can use a cURL command of the following form and redirect the output to a JQ command to make it easier to read the JSON response.
+   To find its application ID, you can use a cURL command of the following form and redirect the output to a jq command to make it easier to read the JSON response.
    The general structure of the command is:
 ```shell
 curl http://<EDGE-HOSTNAME>/application/applicationsByName/databroker-agent-server -su <TENANT>/<USERNAME> | jq --indent 2

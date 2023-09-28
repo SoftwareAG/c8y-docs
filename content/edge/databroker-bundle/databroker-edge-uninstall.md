@@ -49,7 +49,7 @@ sudo rm -rf /opt/bookie/ledgers /opt/bookie/journal /opt/zookeeper
    To find its application ID, you can use a cURL command of the following form and redirect the output to a JQ command to make it easier to read the JSON response.
    The general structure of the command is:
 ```shell
-curl http://<EDGE-HOSTNAME>/application/applicationsByName/databroker-agent-server -su <TENANT>/admin | jq --indent 2
+curl http://<EDGE-HOSTNAME>/application/applicationsByName/databroker-agent-server -su <TENANT>/<USERNAME> | jq --indent 2
 ```   
    The ID required is the value of the `id` field at the root level of the JSON response.
    In the following example, it has the value '19' (the penultimate JSON field).
@@ -85,7 +85,7 @@ Enter host password for user 'edge/admin':
 
    To unsubscribe, use a command of the following form:
 ```shell
-curl -X DELETE http://<EDGE-HOSTNAME>/tenant/tenants/<TENANT>/applications/<APP-ID> -u <TENANT>/admin -v
+curl -X DELETE http://<EDGE-HOSTNAME>/tenant/tenants/<TENANT>/applications/<APP-ID> -u <TENANT>/<USERNAME> -v
 ```
    This returns an HTTP 204 (no content) response. For example: 
 ```shell
@@ -116,7 +116,7 @@ Enter host password for user 'edge/admin':
 
    To delete, use a command of the following form:
 ```shell
-curl -X DELETE http://<EDGE-HOSTNAME>/application/applications/<APP-ID> -su <TENANT>/admin -v
+curl -X DELETE http://<EDGE-HOSTNAME>/application/applications/<APP-ID> -su <TENANT>/<USERNAME> -v
 ```   
    This returns an HTTP 204 (no content) response. For example:
 ```shell

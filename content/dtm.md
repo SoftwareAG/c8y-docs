@@ -1,11 +1,13 @@
 ---
 title: Digital twin manager
-icon: "c8y-icon c8y-icon-tools"
+icon: "c8y-icon c8y-icon-enterprise"
 type: root
 layout: redirect
 bundle: dtm
 section:
   - app_development
+audience:
+  - Users
 weight: 40
 ---
 

@@ -6,6 +6,10 @@ layout: redirect
 bundle: datahub
 section:
   - data_analytics
+audience:
+  - Users
+  - Developers
+  - Business
 weight: 20
 ---
 

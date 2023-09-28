@@ -1,14 +1,14 @@
 ---
-weight: 50
+weight: 10
 title: Copyright
 layout: bundle
 section:
   - about_website
 ---
 
-This content applies to {{< product-c8y-iot >}} {{< c8y-current-version >}} and to all subsequent releases.
+This content applies to the {{< product-c8y-iot >}} cloud deployments.
 
-Specifications contained herein are subject to change and these changes will be reported in subsequent release notes or new editions.
+Specifications contained herein are subject to change and these changes will be reported in subsequent versions.
 
 Copyright © 2012-2023 Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors.
 

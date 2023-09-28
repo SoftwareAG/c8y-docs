@@ -17,4 +17,4 @@ For your convenience, here is an overview of the contents of this document:
 | [Running {{< product-c8y-iot >}} DataHub on {{< product-c8y-iot >}} Edge](/datahub/running-datahub-on-the-edge) | Run the Edge edition of {{< product-c8y-iot >}} DataHub |
 | [Integrating {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products](/datahub/integrating-datahub-with-other-products) | Learn how to integrate {{< product-c8y-iot >}} DataHub with other {{< company-sag >}} products |
 
-The [release notes](https://{{< domain-c8y >}}/releasenotes/release-{{< c8y-current-version-hyphen >}}/datahub-{{< c8y-current-version-hyphen >}}/) provide an overview of features, known issues, and limitations per release.
+The [change log](/changes-analytics/cl-datahub/) provides an overview on features, changes, and other relevant information.

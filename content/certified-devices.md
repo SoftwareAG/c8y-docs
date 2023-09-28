@@ -1,11 +1,12 @@
 ---
 title: Certified devices
-icon: "c8y-icon c8y-icon-device"
+icon: "dlt-c8y-icon-certificate"
 type: root
 external: "https://devicepartnerportal.softwareag.com/devices"
 layout: redirect
 bundle: certified-devices
 audience:
+  - Users
   - Developers
 section:
   - device_management

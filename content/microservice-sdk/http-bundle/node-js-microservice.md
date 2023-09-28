@@ -335,7 +335,7 @@ dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
 
 and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`.
 
-If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/postAlarmCollectionResource) using the {{< product-c8y-iot >}} REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
+If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](https://{{< domain-c8y >}}/api/core/#operation/postAlarmCollectionResource) using the {{< product-c8y-iot >}} REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
 
 ![Slack app posting alarms](/images/microservices-sdk/microservice-slack-alarms.png)
 

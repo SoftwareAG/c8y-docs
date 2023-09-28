@@ -25,7 +25,7 @@ Supported smartphone sensors include:
 *   WiFi strength (selected Android devices only)
 
 {{< c8y-admon-info >}}
-The app only works with sensors supported by your smartphone's hardware which provide official APIs. Depending on platform support, additional sensors may be added in future releases.
+The app only works with sensors supported by your smartphone's hardware which provide official APIs. Depending on platform support, additional sensors may be added in future versions.
 {{< /c8y-admon-info >}}
 
 The latest list of supported Bluetooth devices is provided in the app. A button to take you to this page can be found when scanning for new devices. Currently the app supports the following devices:

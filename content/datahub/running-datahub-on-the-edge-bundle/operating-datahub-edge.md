@@ -16,7 +16,7 @@ If problems occur, you should follow these steps:
 - Check the log files, see [Log files](#log-files)
 - Monitor the system processes, see [Monitoring](#monitoring)
 
-If you need to contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics script. See [Diagnostics](/edge-support/diagnostics/) for details of how to run it.
+If you need to contact [product support](/additional-resources/contacting-support/), include the output of the diagnostics script. See [Diagnostic utility](/edge/operating-edge/#diagnostics) for details of how to run it.
 
 #### Health check {#health-check}
 
@@ -96,4 +96,4 @@ Data being deleted from the data lake cannot be recovered anymore.
 
 #### Backup and Restore {#backup-and-restore}
 
-{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described [Backup and restore](/edge-backup-and-restore/backup_restore_vm_player/).
+{{< product-c8y-iot >}} DataHub's runtime state as well as the data lake containing offloaded data reside in the {{< product-c8y-iot >}} Edge server VM. In order to back up and restore {{< product-c8y-iot >}} DataHub, its runtime state, and its data we recommend you to back up and recover the {{< product-c8y-iot >}} Edge server VM as described [Backup and restore](/edge/backup-and-restore/).

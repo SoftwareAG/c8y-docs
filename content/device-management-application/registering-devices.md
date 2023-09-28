@@ -42,7 +42,7 @@ helpcontent:
 * [Device management > Protocol integration](/protocol-integration/) for details on registering devices using various standard protocol types.
 * [Device management > Device integration > Integration tutorials](/device-integration/integration-tutorials) for step-by-step instructions on registering devices.
 * [Device management > Device integration > Device integration using REST](/device-integration/rest/) for a detailed descriptions on device integration via REST.
-* The [New device requests API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
+* The [New device requests API](https://{{< domain-c8y >}}/api/core/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
 {{< /c8y-admon-related >}}
 
 In the **Device registration** page all devices are displayed which are currently in the registration process.

@@ -186,7 +186,7 @@ This category contains the following blocks:
 `apama.analyticskit.blocks.core.Gate`
 
 <p>Blocks the input from going to output unless the gate is open and enabled.</p>
-<p>The block will start disabled if the Enable input is connected, otherwise the block will always be enabled. The block will start closed if the Open input is connected, otherwise the block will start open.</p>
+<p>The block starts disabled if the Enable input is connected. Otherwise, the block is always enabled. The block starts closed if the Open input is connected. Otherwise, the block starts open.</p>
 
 
 #### Parameters {#gate-parameters}
@@ -339,7 +339,7 @@ This must be a finite and positive number.</p>
 `apama.analyticskit.blocks.core.Latch`
 
 <p>Latches the latest input value received while the block is enabled.</p>
-<p>Only generates an output if the input value changes and the block is enabled. The block will start disabled if the Enable input is connected, otherwise the block will always be enabled.</p>
+<p>Only generates an output if the input value changes and the block is enabled. The block starts disabled if the Enable input is connected. Otherwise, the block is always enabled.</p>
 
 
 #### Input Port Details {#latch-values-inputs}
@@ -895,7 +895,7 @@ The expected use case is that the Selected Input parameter is set to a template 
 <tbody>
 <tr>
 <th scope="row">Delay (secs)</th>
-<td><span>The amount of time (in seconds) by which the input will be delayed.</span>
+<td><span>The amount of time (in seconds) by which the input is delayed.</span>
 <p>This must be a finite and positive number.</p>
 </td>
 <td><span>float</span>

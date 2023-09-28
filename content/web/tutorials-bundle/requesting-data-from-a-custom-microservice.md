@@ -100,9 +100,7 @@ Switch to the new folder and run `npm install`.
 {{< c8y-admon-info >}}
 The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the application you want to scaffold, for example:
 
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23` will scaffold an application with the version `10.17.0.23`
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an application with the latest official release. Same as if used without the `-a` flag
-- `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an application with the latest beta release.
+`c8ycli new my-cockpit cockpit -a @c8y/apps@1017.0.23` will scaffold an application with the version `10.17.0.23`
 {{< /c8y-admon-info >}}
 
 ### 2. Request data directly with fetch {#2-request-data-directly-with-fetch}

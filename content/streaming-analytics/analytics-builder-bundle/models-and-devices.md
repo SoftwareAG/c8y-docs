@@ -6,38 +6,38 @@ layout: redirect
 
 ### Model execution for different devices {#model-execution-for-different-devices}
 
-Models are executed independently of each other. That is, models for specific devices can execute in parallel, making use of hardware parallelism where possible, if models are processing data \(such as `Measurement`, `Event`, or `Operation` objects\) for a different set of devices. When defining a model, you can configure it to use data from a set of specific devices or from a group of devices, with each device being handled independently.
+Models are executed independently of each other. That is, models for specific devices can execute in parallel, making use of hardware parallelism where possible, if models are processing data \(such as `Measurement`, `Event`, or `Operation` objects\) for a different set of devices. When defining a model, you can configure it to use data from a set of specific devices or from a range of devices, with each device being handled independently.
 
 Each model must either:
 
 -   receive input from a set of specific devices and send output to a set of specific devices, or
--   receive input from each device within a group of devices and send output to the trigger device or an asset. Note that asset output can only be used for sending cross-device aggregates.
+-   receive input from each device within a range of devices and send output to the trigger device or an asset. Note that asset output can only be used for sending cross-device aggregates.
 
-    A group of devices can include a {{< product-c8y-iot >}} device group, a smart group, or an asset. When a model uses a group of devices, the model will act on all devices referred to by the group, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
+    A range of devices can include a {{< product-c8y-iot >}} device group, a smart group, an asset, or all input sources on the tenant. When a model uses a range of devices, the model acts on all devices referred to by the range, either directly or indirectly through members of the group that are themselves groups and have device members \(or even "grand-children" group members\). A device can be a member of zero, one or many groups. For more information, see [Grouping devices](/device-management-application/grouping-devices/) and [Managing assets](/cockpit/managing-assets/).
 
     {{< c8y-admon-info>}}
-A model that acts on a group of devices only determines the group membership when the model is activated. If the membership of a group changes while a model is running, the model will not behave any differently for any new or removed members of the group. If a group membership is changed, then models that refer to that group should be de-activated and re-activated.
+A model that acts on a range of devices only determines the group membership when the model is activated. If the membership of a group changes while a model is running, the model will not behave any differently for any new or removed members of the group. If a group membership is changed, then models that refer to that group should be de-activated and re-activated.
     {{< /c8y-admon-info>}}
 
-It is not possible to mix the two types of input blocks above \(but see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices)\). However, data from a model processing specific devices can be sent to and received from other models, including models for groups of devices, and vice versa \(see [Connections between models](/streaming-analytics/analytics-builder/#connections-between-models)\).
+It is not possible to mix the two types of input blocks above \(but see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices)\). However, data from a model processing specific devices can be sent to and received from other models, including models for ranges of devices, and vice versa \(see [Connections between models](/streaming-analytics/analytics-builder/#connections-between-models)\).
 
-When a model consumes data from groups, the model behaves as if multiple instances of the model are running, as illustrated below, each one processing data from each device independently. Each instance processes data for a different device, but all share the same blocks and block parameters. The values of the wires will be independent for different instances. Any blocks that are stateful, such as the **Average \(Mean\)** block, will operate independently of the data from other devices. As with models using specific devices, if any block causes a runtime error or exception, then the entire model will go into a failed state - it will stop processing data for all devices.
+When a model consumes data from a range, the model behaves as if multiple instances of the model are running, as illustrated below, each one processing data from each device independently. Each instance processes data for a different device, but all share the same blocks and block parameters. The values of the wires are independent for different instances. Any blocks that are stateful, such as the **Average \(Mean\)** block, operate independently of the data from other devices. As with models using specific devices, if any block causes a runtime error or exception, then the entire model goes into a failed state - it stops processing data for all devices.
 
 ![Illustration of a model which behaves as if multiple instances of the model are running](/images/streaming-analytics/analytics-builder/model-execution-for-different-devices.png)
 
-Typically, when using groups of devices for inputs, all input blocks would use the same group. It is possible to use different groups. If there are devices in one group but not in another, those blocks will never generate a signal for devices that are not in that group. For some blocks, such as the **Expression** block, this is not useful - an **Expression** block will only generate an output if all of the required inputs have received a value, but it may be useful for `pulse` inputs of a **Gate** block.
+Typically, when using ranges of devices for inputs, all input blocks would use the same group. It is possible to use different groups. If there are devices in one group but not in another, those blocks will never generate a signal for devices that are not in that group. For some blocks, such as the **Expression** block, this is not useful - an **Expression** block will only generate an output if all of the required inputs have received a value, but it may be useful for `pulse` inputs of a **Gate** block.
 
 When a model has inputs that are consuming data from specific devices, then the output blocks generating outputs can specify the same or different specific devices.
 
-When a model has inputs that are consuming data from a group of devices, all synchronous output blocks must specify the trigger device or asset. The trigger device generates data \(`Measurement`, `Event` or `Operation`\) for whichever device that instance applies to - or whichever device sent the data to trigger that instance. Asynchronous output blocks in such models can specify the trigger device, asset or any other specific device.
+When a model has inputs that are consuming data from a range of devices, all synchronous output blocks must specify the trigger device or asset. The trigger device generates data \(`Measurement`, `Event` or `Operation`\) for whichever device that instance applies to - or whichever device sent the data to trigger that instance. Asynchronous output blocks in such models can specify the trigger device, asset or any other specific device.
 
 When a model has inputs that are consuming data from each device belonging to an asset, the output blocks can send the output to a specific asset or trigger device. Keep in mind that asset output can only be used for sending cross-device aggregates.
 
-When a template parameter is used for an output block, then if the parameter's value is a group of devices, then this is treated the same as if it were set to the trigger device. The output will go to whichever device triggered the model's evaluation, with each device within a group being treated independently. Typically, the same template parameter will be used for both input and output, so these will refer to the same group, and each device is processed independently.
+When a template parameter is used for an output block, then if the parameter's value is a range of devices, then this is treated the same as if it were set to the trigger device. The output goes to whichever device triggered the model's evaluation, with each device within a range being treated independently. Typically, the same template parameter will be used for both input and output, so these will refer to the same range, and each device is processed independently.
 
-You can use the model editor to change input and output blocks from one device, group or asset to another. When changing between a group of devices and a device or asset, output blocks will switch between the trigger device and the device or asset specified, so that the model is kept in a usable state. See also [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets).
+You can use the model editor to change input and output blocks from one input source or output destination to another. When changing between a range of devices and a device or asset, output blocks will switch between the trigger device and the device or asset specified, so that the model is kept in a usable state. See also [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations).
 
-The test and simulation modes are only permitted for models using specific devices. If you wish to test or simulate a model using a group of devices, then use the model editor to modify it to apply to a single device within the group, and then activate the model in test or simulation mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information on these modes.
+The test and simulation modes are only permitted for models using specific devices. If you wish to test or simulate a model using a range of devices, then use the model editor to modify it to apply to a single device within the range, and then activate the model in test or simulation mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information on these modes.
 
 #### Configuring the concurrency level {#configuring-the-concurrency-level}
 
@@ -45,7 +45,7 @@ By default, the Analytics Builder runtime uses 1 CPU core to execute models. If 
 
 Typically, this configuration value would be set to the number of CPU cores available for the system, but it may be useful to configure this either higher or lower according to what resources are available. It does not need to scale to the number of devices \(that is, it is quite reasonable to have 4 worker threads with hundreds of devices, assuming a moderate event rate per device\).
 
-With the concurrency level set to 1, it is still possible to create models which use groups of devices as inputs, but these continue to operate independently for each device within the group, and it is still not possible to mix group and single device input or output.
+With the concurrency level set to 1, it is still possible to create models which use ranges of devices as inputs, but these continue to operate independently for each device within the range, and it is still not possible to mix range and single device input or output.
 
 {{< c8y-admon-info>}}
 Using multiple specific devices in a model with the concurrency level set to more than 1 can lead to connections between models which are deployed across multiple workers. Chains of models using multiple specific devices with high throughput usually scale less well than chains of models all using a single specific device.
@@ -55,9 +55,9 @@ Using multiple specific devices in a model with the concurrency level set to mor
 
 It is sometimes useful to have signals that can apply to all models. These may be signals from devices, or from other systems that are presented as if they were signals from a device. Analytics Builder thus supports devices that are referred to as broadcast devices and signals from these devices are available to all models across all devices.
 
-Broadcast devices can be used as inputs in any model, together with either inputs from a specific device or a group of devices. The diagram below illustrates how a broadcast device applies to all devices within a group of devices. It is possible to combine signals from devices in a group of devices with signals from a broadcast device by providing them as different inputs into a processing block such as the **Expression** block.
+Broadcast devices can be used as inputs in any model, together with either inputs from a specific device or a range of devices. The diagram below illustrates how a broadcast device applies to all devices within a range of devices. It is possible to combine signals from devices in a range of devices with signals from a broadcast device by providing them as different inputs into a processing block such as the **Expression** block.
 
-![Illustrates how a broadcast device applies to all devices within a group of devices](/images/streaming-analytics/analytics-builder/broadcast-devices.png)
+![Illustrates how a broadcast device applies to all devices within a range of devices](/images/streaming-analytics/analytics-builder/broadcast-devices.png)
 
 Unlike other devices, a broadcast device can only be used for synchronous output of a model that only consumes data from broadcast devices. Broadcast output of the asynchronous type can be generated by a model consuming non-broadcast inputs.
 
@@ -65,7 +65,7 @@ It is also not possible to connect models together using synchronous data from a
 
 #### Identifying broadcast devices {#identifying-broadcast-devices}
 
-Broadcast devices are identified by the presence of a property on the device object in the inventory for that device; the presence of either the `pas_broadcastDevice` or `c8y_Kpi` property. Thus, whether a device is considered a broadcast device or not is global for that device across all models. It is not permitted to use a group of devices that contains a broadcast device. `c8y_Kpi` objects are typically used with the [KPI](/streaming-analytics/block-reference/#kpi) block. Thus, it is possible to use a KPI object to compare measurements from a group of devices - one KPI object is used for all devices in the group.
+Broadcast devices are identified by the presence of a property on the device object in the inventory for that device; the presence of either the `pas_broadcastDevice` or `c8y_Kpi` property. Thus, whether a device is considered a broadcast device or not is global for that device across all models. It is not permitted to use a range of devices that contains a broadcast device. `c8y_Kpi` objects are typically used with the [KPI](/streaming-analytics/block-reference/#kpi) block. Thus, it is possible to use a KPI object to compare measurements from a range of devices - one KPI object is used for all devices in the range.
 
 ### Virtual devices {#virtual-devices}
 
@@ -75,7 +75,7 @@ Virtual devices are objects in the {{< product-c8y-iot >}} inventory with a `c8y
 
 Use the `creationDate` to find out what `virtualDevice` was created for a model activation and which measurements have that device as their source.
 
-By default, the virtual devices are kept for 30 days. If you want to change this default, you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}. For example, specify the following to set the retention period for the virtual devices to 1 day:
+By default, the virtual devices are kept for 30 days. If you want to change this default, you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}. For example, specify the following to set the retention period for the virtual devices to 1 day:
 
 ```
 {
@@ -132,16 +132,16 @@ Note that only activating any two of these models can be done without error. If 
 Using multiple specific devices in a model with the concurrency level set to more than 1 can lead to connections between models which are deployed across multiple workers. Chains of models using multiple specific devices with high throughput usually scale less well than chains of models all using a single specific device.
 {{< /c8y-admon-info>}}
 
-### Configuring the number of shown devices, groups and/or assets {#configuring-the-number-of-shown-devices-groups-andor-assets}
+### Configuring the number of shown input sources and output destinations {#configuring-the-number-of-shown-input-sources-and-output-destinations}
 
 By default, a maximum of 10 items are shown in the following cases:
 
--   When you select a different device, group or asset from the **Select Device, Group or Asset** dialog box \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
--   When you replace devices, groups or assets \(see [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets)\).
+-   When you select a different input source or output destination \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
+-   When you replace devices, groups or assets \(see [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations)\).
 
 When you use the search box in the above cases, this default also applies to the maximum number of items that are shown in the search result. When you click **Load more**, up to 10 more items are shown.
 
-If you want to change this default value \(to show either more or less items\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
+If you want to change this default value \(to show either more or less items\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}.
 
 For example, specify the following to set the value to 20:
 
@@ -159,12 +159,12 @@ See also [Configuration](/streaming-analytics/analytics-builder/#configuration).
 
 By default, only devices, groups and assets are shown in the following cases:
 
--   When you select a different item from the **Select Device, Group or Asset** dialog box \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
--   When you replace devices or groups \(see [Replacing devices, groups and assets](/streaming-analytics/analytics-builder/#replacing-devices-groups-and-assets)\).
+-   When you select a different input source or output destination \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
+-   When you replace devices or groups \(see [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations)\).
 
 However, when you use the search box in the above cases, all managed objects \(not just devices, groups and assets\) in the {{< product-c8y-iot >}} inventory which match the search criteria are shown. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.
 
-If you want to restrict the search to show only managed objects of a specific type \(for example, to show only devices\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https:/{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Options) in the {{< openapi >}}.
+If you want to restrict the search to show only managed objects of a specific type \(for example, to show only devices\), you need to change the tenant options. That is, you need to send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}.
 
 For example, specify the following if you only want to show devices:
 

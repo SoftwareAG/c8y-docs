@@ -1,6 +1,6 @@
 ---
 title: webMethods.io
-icon: "c8y-icon c8y-icon-cockpit"
+icon: "c8y-icon c8y-icon-wm-integration"
 type: root
 layout: redirect
 bundle: webmethods-io

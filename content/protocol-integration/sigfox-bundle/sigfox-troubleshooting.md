@@ -42,7 +42,7 @@ To verify whether your setup is correct, execute the following REST API request:
 	```
 
 {{< c8y-admon-info >}}
-The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
+The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://{{< domain-c8y >}}/api/core/#tag/Tenants) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
 

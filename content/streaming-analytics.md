@@ -7,7 +7,10 @@ bundle: streaming-analytics
 weight: 10
 section:
   - data_analytics
-
+audience:
+  - Users
+  - Developers
+  - Business
 aliases:
   - "/apama/introduction"
   - "/analytics/overview"

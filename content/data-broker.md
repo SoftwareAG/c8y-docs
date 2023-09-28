@@ -6,6 +6,8 @@ layout: redirect
 bundle: data-broker
 section:
   - platform_administration
+audience:
+  - Users
 weight: 40
 ---
 

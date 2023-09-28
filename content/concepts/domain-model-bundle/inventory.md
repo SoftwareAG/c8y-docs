@@ -147,7 +147,7 @@ This service is used by agents (to register external identifiers) and by busines
 
 As an example, assume that a smart meter would be faulty and a new meter with another meter number and asset tag needs to be installed in a household. The routine business process for replacing faulty hardware can now just update the asset tag and meter ID associated with a customer in the identity service. Afterwards, both previously collected and new meter readings are related to the correct customer.
 
-More information can be found in [Identity](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Identity-API) in the {{< openapi >}}.
+More information can be found in [Identity](https://{{< domain-c8y >}}/api/core/#tag/Identity-API) in the {{< openapi >}}.
 
 ### Object hierarchies {#object-hierarchies}
 
@@ -165,7 +165,7 @@ An example asset hierarchy for building management could be buildings containing
 
 #### Child objects in hierarchies {#child-objects-in-hierarchies}
 
-The two hierarchies above are explicitly supported by the [inventory interface](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-API) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
+The two hierarchies above are explicitly supported by the [inventory interface](https://{{< domain-c8y >}}/api/core/#tag/Inventory-API) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
 
 Note that the object hierarchies do not necessarily need to form a tree, the same asset can be a child of multiple parent assets. This enables applications to create additional, user-defined groups of objects such as working sets or virtual networks. Applications can, in addition, use fragments to define arbitrary alternative hierarchies.
 
@@ -179,4 +179,4 @@ Addressing the device lifecycle properly is important when designing agents. An 
 
 ### Further information {#further-information}
 
-More detailed information for working with the inventory can be found in the [Inventory API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-API) in the {{< openapi >}}.
+More detailed information for working with the inventory can be found in the [Inventory API](https://{{< domain-c8y >}}/api/core/#tag/Inventory-API) in the {{< openapi >}}.

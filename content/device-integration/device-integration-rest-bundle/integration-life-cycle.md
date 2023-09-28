@@ -84,7 +84,7 @@ If the valid tenant URL is known (for example *xyz.{{< domain-c8y >}}* as seen i
 
 #### Step 1: Check if the device is already registered {#step-1-check-if-the-device-is-already-registered}
 
-The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the [Identity API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Identity-API). In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, "c8y\_Serial" for a hardware serial, "c8y\_MAC" for a MAC address and "c8y\_IMEI" for an IMEI.
+The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the [Identity API](https://{{< domain-c8y >}}/api/core/#tag/Identity-API). In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, "c8y\_Serial" for a hardware serial, "c8y\_MAC" for a MAC address and "c8y\_IMEI" for an IMEI.
 
 To check if a device is already registered, use a GET request on the identity API using the device identifier and its type. The following example shows a check for a Raspberry Pi with hardware serial "0000000017b769d5".
 
@@ -329,7 +329,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
     HTTP/1.1 200 OK
 
-Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time operations in {{< product-c8y-iot >}} is described in the [Device control notification API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Device-control-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism for listening to real-time operations in {{< product-c8y-iot >}} is described in the [Device control notification API](https://{{< domain-c8y >}}/api/core/#tag/Device-control-notification-API) in the {{< openapi >}} and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells {{< product-c8y-iot >}} what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /notification/operations HTTP/1.1
     Content-Type: application/json

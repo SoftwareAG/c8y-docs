@@ -6,6 +6,9 @@ layout: redirect
 bundle: authentication
 section:
   - platform_administration
+audience:
+  - Users
+  - Administrators
 weight: 30
 ---
 

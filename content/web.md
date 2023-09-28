@@ -1,11 +1,13 @@
 ---
 title: Web SDK
-icon: "c8y-icon c8y-icon-css"
+icon: "c8y-icon c8y-icon-tools"
 type: root
 layout: redirect
 section:
   - app_development
 bundle: web
+audience:
+  - Developers
 weight: 20
 ---
 

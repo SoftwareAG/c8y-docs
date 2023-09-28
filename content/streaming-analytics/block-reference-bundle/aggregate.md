@@ -76,7 +76,7 @@ See also the "Value types" topic in the Analytics Builder documentation for more
 <p></p>
 If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.
 <p></p>
-Note:The Average (Mean) block generates the mean for an individual device. If the input comes from a group of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
+Note: The Average (Mean) block generates the mean for an individual device. If the input comes from a range of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
 #### Parameters {#average-mean-parameters}
@@ -192,7 +192,7 @@ Note:The Average (Mean) block generates the mean for an individual device. If th
 `apama.analyticskit.blocks.core.Counter`
 
 <p>Gives a count of the total inputs and repeated inputs.</p>
-<p>If two consecutive input values have different types, they will not be evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.</p>
+<p>If two consecutive input values have different types, they are not evaluated as repeat values. All other evaluations for if two values are equal to each other follow the same rules as EPL. For more information, refer <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_types.html%23">Types</a>.</p>
 
 
 #### Input Port Details {#counter-inputs}
@@ -386,7 +386,7 @@ If reset and sample signals are received together, the reset is processed first.
 <p>Calculates the weighted linear regression gradient for the values.</p>
 <p>A gradient measures the rate of change of a value over time. A positive gradient indicates an increase of the input values, and a negative gradient indicates a decrease of the input values. The magnitude of the gradient signifies the scale of change.
 <p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window and the block re-evaluates for every 1 second, and will use 1-second buckets. If a window is configured, the block will use a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval. The first gradient output is generated only when a minimum of two buckets is available for computation.
+The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window and the block re-evaluates for every 1 second, and uses 1-second buckets. If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval. The first gradient output is generated only when a minimum of two buckets is available for computation.
 <p></p>
 The Reset input clears the content of the window. Sample input can be used to force re-evaluation and generate the latest value.</p>
 
@@ -640,7 +640,7 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 <p></p>
 The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window. The Reset input clears the window contents. Output is generated on any new input or, if the Output Threshold parameter is set, only when the output changes by more than the specified output threshold (which includes if no further input occurs, or the value only changes due to old entries expiring). The Sample input can be used to force re-evaluation and generate the latest value.
 <p></p>
-If a window is configured, the block will use a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.</p>
+If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.</p>
 
 
 #### Parameters {#integral-parameters}

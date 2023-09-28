@@ -167,6 +167,7 @@ body:has(.home-top){
   h2 &,
   h3 &,
   h4 &,
+  h5 &,
   h1 & {
     order: 5;
     padding: 0 16px;
@@ -177,6 +178,7 @@ body:has(.home-top){
   h2:hover &,
   h3:hover &,
   h4:hover &,
+  h5:hover &,
   h1:hover & {
     opacity: 1;
   }

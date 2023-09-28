@@ -6,4 +6,4 @@ section:
   - edge_server
 ---
 
-See [Knowledge Hub](/users-guide/getting-started/#knowledge-hub) in the *User guide*.
+See [Knowledge Hub](/get-familiar-with-the-ui/knowledge-hub/).

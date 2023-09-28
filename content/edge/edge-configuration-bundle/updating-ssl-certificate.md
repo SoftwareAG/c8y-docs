@@ -6,9 +6,9 @@ section:
   - edge_server
 ---
 
-You must always have an SSL certificate for your domain name that is configured. If the validity of the certificate expires, you must upload a new certificate. You can upload the certificate using the GUI and REST APIs.
+You must always have a valid SSL certificate for your domain name that is configured. If the validity of the certificate expires or if you have changed your domain name, you must upload or generate a new SSL certificate. You can upload the certificate using the GUI and REST APIs.
 
-### Updating the SSL certificate using the GUI
+### Updating the SSL certificate using the GUI {#updating-the-ssl-certificate-using-the-gui}
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
 
@@ -28,10 +28,3 @@ You must always have an SSL certificate for your domain name that is configured.
    If you do not have an SSL certificate, select **Generate self-signed certificate** to generate one.
 
 5. Click **Save**.
-
-### Updating the SSL certificate using the REST APIs
-
-To upload the new SSL certificate and the key file, use the following endpoints:
-
-- [GET /edge/configuration/certificate](/edge/rest-api/#get-edgeconfigurationcertificate)
-- [POST /edge/configuration/certificate](/edge/rest-api/#post-edgeconfigurationcertificate)

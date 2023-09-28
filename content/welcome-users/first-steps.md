@@ -56,7 +56,51 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for mo
 
 ### Step 3: Registering a device
 
-To integrate a device to {{< product-c8y-iot >}}, you need to register it. This is done in the **Device management application**. Devices can be connected to your {{< product-c8y-iot >}} account in different ways. In this tutorial, follow the instructions to register a single device manually.
+To integrate a device to {{< product-c8y-iot >}}, you need to register it. This is done in the **Device management application**. Devices can be connected to your {{< product-c8y-iot >}} account in three different ways:
+
+* [Via the {{< product-c8y-iot >}} Sensor App](/welcome-users/first-steps/#connecting-a-smartphone-with-the-hahahugoshortcode-s19-hbhb-sensor-app) - Register and connect your smartphone to {{< product-c8y-iot >}} using the {{< product-c8y-iot >}} Sensor App. The {{< product-c8y-iot >}} Sensor App is a free smartphone application available for iOS and Android smartphones.
+* [Via thin.edge.io on a Raspberry Pi](/welcome-users/first-steps/#device-integration-via-thinedgeio-on-a-raspberry-pi) - The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
+* [Connecting a device manually](/welcome-users/first-steps/#to-connect-a-device-manually) - Single device registration to connect devices manually one by one.
+
+#### Connecting a smartphone with the {{< product-c8y-iot >}} Sensor App
+
+The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< product-c8y-iot >}} Sensor App can also send commands to the smartphone directly from the phone dashboard.
+
+Go to [Sensor App](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as more information on [how to install the app](/sensor-app/installing-the-sensor-app/) available for iOS and Android.
+
+Open the Apple App Store or Google Play Store from your smartphone and search for **{{< product-c8y-iot >}} Sensor App** to install it.
+
+To connect your smartphone via QR code follow the instructions below:
+
+1.  On a desktop or laptop computer, open a web browser and log in to your {{< product-c8y-iot >}} tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
+
+    ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone-right-drawer.png)
+
+2.  Follow the instructions in the wizard to step 3, ensuring that the app is installed on the smartphone.
+
+    ![QR code](/images/users-guide/csa/csa-connect-smartphone-wizard-step3.png)
+
+3.  From your smartphone, launch the app and tap **Register** in the top right corner of the screen. 
+4.  Grant access to your camera if the app asks you for permission.
+5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual registration** on your smartphone and fill in the details at the right side of the wizard screen.
+6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
+
+When using the **Connect Smartphone** wizard for device registration, your smartphone is automatically registered by {{< product-c8y-iot >}} and assigned to the "Phones" group. Tap **Done** on your smartphone to return to the main screen.
+
+{{< c8y-admon-info >}}
+For versions earlier than 10.6.6 or if you are unable to scan the QR code, see [Manual registration](/sensor-app/registering-the-sensor-app/#manual-registration).
+{{< /c8y-admon-info >}}
+
+
+You have connected your smartphone with the {{< product-c8y-iot >}} Sensor App. For information on how the app sends information to {{< product-c8y-iot >}} go to [Sending sensor data to the platform](/sensor-app/sending-sensor-data/) and on how to view sensor data go to [Viewing sensor data](/sensor-app/viewing-sensor-data/).
+
+#### Device integration via thin.edge.io on a Raspberry Pi
+
+thin-edge.io is an open-source project to provide a cloud-agnostic edge framework. It is much more generic than the device management agent, so it can connect to multiple IoT cloud platforms, and it allows flexible logic being executed on the device. It is optimized for a very small footprint and high performance.
+
+The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
+
+For an overview of the installation and configuration of thin-edge.io with Raspberry Pi go to [thing-edge.io on a Raspberry Pi](/device-integration/integration-tutorials/#prerequisites).
 
 #### To connect a device manually
 
@@ -67,11 +111,16 @@ Depending on the type of device you want to connect, not all steps of the follow
 1. Click **Registration** in the **Devices** menu of the navigator.
 2. In the **Device registration** page, click **Register device** at the right of the top bar and select **Single registration** > **General** from the dropdown menu. The **Register devices** dialog box will be displayed.
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
-4. Optionally, select a group to assign your device to after registration. See also [Grouping devices](/device-management-application/grouping-devices/) for further information.
+
+![Register device](/images/users-guide/getting-started/getting-started-register-device-manually.png)
+
+4. Optionally, select a group to assign your device to after registration. See [Grouping devices](/welcome-users/first-steps/#grouping-devices) below for further information.
 5. Click **Next** to register your device(s).
 
 
 After successful registration, the device(s) are listed in the [Registering devices](/device-management-application/registering-devices/) page with the status "Waiting for connection".
+
+![Waiting for connection](/images/users-guide/getting-started/getting-started-register-device-waiting-for-connection.png)
 
 Turn on the device(s) and wait for the connection to be established.
 
@@ -90,21 +139,7 @@ In case of any issues, consult the documentation applicable for your device type
 
 For more information on registering devices such as [single device registration](/device-management-application/registering-devices/#single-device-registration) and [bulk device registration](/device-management-application/registering-devices/#bulk-device-registration) go to [Registering devices](/device-management-application/registering-devices/). To learn how to view all devices connected to your account head to [Viewing all devices](/device-management-application/viewing-all-devices/).
 
-#### Connecting a smartphone with the {{< product-c8y-iot >}} Sensor App
 
-Register and connect your smartphone to {{< product-c8y-iot >}} using the {{< product-c8y-iot >}} Sensor App. The {{< product-c8y-iot >}} Sensor App is a free smartphone application available for iOS and Android smartphones.
-
-The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< product-c8y-iot >}} Sensor App can also send commands to the smartphone directly from the phone dashboard.
-
-Go to [Sensor App](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as [how to install](/sensor-app/installing-the-sensor-app/) and [how to register the Sensor App in the platform](/sensor-app/registering-the-sensor-app/).
-
-#### Device integration via thin.edge.io on a Raspberry Pi
-
-thin-edge.io is an open-source project to provide a cloud-agnostic edge framework. It is much more generic than the device management agent, so it can connect to multiple IoT cloud platforms, and it allows flexible logic being executed on the device. It is optimized for a very small footprint and high performance.
-
-The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
-
-For an overview of the installation and configuration of thin-edge.io with Raspberry Pi go to [thing-edge.io on a Raspberry Pi](/device-integration/integration-tutorials/#prerequisites).
 
 #### Grouping devices
 Devices can be grouped according to a particular use case. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
@@ -114,7 +149,7 @@ Devices can be grouped according to a particular use case. A device can be locat
 * **Top-level groups** are shown in the **Group** menu in the navigator at top-level.
 * **Subgroups** can be used to further subdivide top-level groups.
 
-For more information on this feature, go to our section about [Grouping devices](/device-management-application/grouping-devices/).
+For more information on this feature, go to [Grouping devices](/device-management-application/grouping-devices/).
 
 ### Step 4: Customize the dashboard
 
@@ -124,8 +159,10 @@ Follow the instructions below to create a new dashboard with the device you regi
 
 #### Creating a dashboard
 
-1. Select the group or the device in the navigator for which to create a dashboard.
+1. In the Cockpit application, select the group or the device in the navigator for which to create a dashboard.
 2. Click the plus icon right from the tabs to open the dashboard editor.
+
+![Add dashboard](/images/users-guide/getting-started/getting-started-add-dashboard.png)
 
 3. In the **Tab** section of the dashboard editor, provide the following information:
 
@@ -134,19 +171,14 @@ Follow the instructions below to create a new dashboard with the device you regi
     * The location of the dashboard in the navigator, with "10000" being ordered first and "-10000" last.
 <br><br>
 
-4. In the **Availability** section, specify which users have access to the dashboard based on global roles. By default, all available global roles are selected, which means that a user with at least one such role has access to the dashboard.
+![Dashboard editor](/images/users-guide/getting-started/getting-started-add-dashboard-editor.png)
 
-   {{< c8y-admon-info >}}
-- Dashboard are always visible to its owner and to users with ADMIN permission for the permission type "Inventory".
-- This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
-    {{< /c8y-admon-info >}}
+4. In the **Layout** section you can select a theme for the dashboard (for example, "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (for example, "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+5. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
-5. In the **Layout** section you can select a theme for the dashboard (for example, "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (for example, "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
-6. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
+6. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
-7. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
-
-8. Click **Save** to create and open the dashboard.
+7. Click **Save** to create and open the dashboard.
 
 You have successfully created a customized dashboard.
 
@@ -161,7 +193,7 @@ Reports enable you to track applications, alarms, assets, and other data in a da
 #### Creating a report
 
 1. Click **Add report** in the top menu bar to open the **Add report** dialog window.
-  <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
+  <br>![Add report](/images/users-guide/getting-started/getting-started-add-report.png)<br>
 2. In the **Menu label** field, enter a name for the report and optionally provide a description below.
 3. Select **Show in navigator** if you want the report to be displayed in the navigator. Select the position of the report in the navigator. Depending on the value it will be positioned relative to the existing items. If for example "Home" has the value "10000" it will be positioned above "Home", if the value is "10001" or higher.
 4. In the **Layout** section you can select a theme for the report (for example, "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (for example, "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
@@ -190,9 +222,13 @@ You can also develop your own widgets and add them to your {{< product-c8y-iot >
 
 1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
 
+![Add widget](/images/users-guide/getting-started/getting-started-add-widget.png)
+
 2. In the **Add widget** dialog, select a widget type.
 
 3. Next, configure the widget. According to the selected widget type, different parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
+
+![Widget configuration](/images/users-guide/getting-started/getting-started-add-widget-configuration.png)
 
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of a [dashboard](/cockpit/working-with-dashboards/).
 

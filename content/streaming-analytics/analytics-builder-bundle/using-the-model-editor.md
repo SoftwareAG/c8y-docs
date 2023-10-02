@@ -487,13 +487,13 @@ When a selection list is already available, a drop-down arrow is shown instead o
 
 8.  Click **OK** to save the selection list and to close the **Selection List** dialog box.
 
-    In the **Template Parameters** dialog box, you can now select one of the selections you have defined from a drop-down list box.
+    In the **Template Parameters** dialog box, you can now select one of your selections from a drop-down list box.
 
 9.  To clear a selection in the **Template Parameters** dialog box, click the X that is shown next to the selection.
 
-10.  To edit your selection list, click the actions menu (the three vertical dots) in the **Default Value** column of the **Template Parameters** dialog box and click **Edit**. The **Selection List** dialog box is then shown.
+10.  To edit your selection list, click the actions menu (the three vertical dots) in the **Default Value** column of the **Template Parameters** dialog box and then click **Edit**. The **Selection List** dialog box is then shown.
 
-11.  To permanently delete a selection list that has been defined for a template parameter, click the actions menu in the **Default Value** column of the **Template Parameters** dialog box and click **Delete**. Click **OK** in the resulting dialog box.
+11.  To permanently delete your selection list, click the actions menu in the **Default Value** column of the **Template Parameters** dialog box and then click **Delete**. In the resulting dialog box, click **OK**.
 
 #### Copying items to a different model {#copying-items-to-a-different-model}
 

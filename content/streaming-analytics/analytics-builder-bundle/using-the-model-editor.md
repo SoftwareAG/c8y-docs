@@ -465,7 +465,7 @@ When it is possible to add a selection list, the following button is shown in th
 ![Add selection list button](/images/streaming-analytics/analytics-builder/icon-add-selection-list.png)
 When a selection list is already available, a drop-down arrow is shown instead of the above button.
 
-##### To add a selection list for a template parameter
+##### To add a selection list for a template parameter {#to-add-a-selection-list-for-a-template-parameter}
 
 1.  In the **Template Parameters** dialog box, click the following button in the **Default Value** column for a defined template parameter:
     ![Add selection list button](/images/streaming-analytics/analytics-builder/icon-add-selection-list.png)

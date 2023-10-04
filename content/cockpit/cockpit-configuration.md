@@ -56,6 +56,6 @@ The initial home dashboard shows a number of pre-installed widgets. These widget
 
 Click **Reset dashboard** to undo any changes to your home dashboard. This reverts all changes to the dashboard and returns it to the initial state.
 
-#### To hide the navigator {#to-hide-the-navigator}
+#### Title, icon and navigator collapse {#to-select-icon-change-title-hide-navigator}
 
-Finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.
+Under the **Title, icon and navigator collapse** section you can edit the title of the application, change the icon and finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.

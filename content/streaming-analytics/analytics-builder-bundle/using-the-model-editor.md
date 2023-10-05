@@ -459,7 +459,7 @@ Keep in mind that your changes are only written to the inventory when you save t
 #### Adding a selection list for a template parameter {#adding-a-selection-list-for-a-template-parameter}
 
 Several types that you can select in the **Template Parameters** dialog box (see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)) allow you to select a predefined value. An example of such a type is the **Direction** parameter of the **Crossing Counter** block which offers predefined values such as **Upwards** and **Downwards** for selection.
-In addition to the predefined values, you can also add your own selection lists for types such as string, float, source or destination, or geofence. This allows you to select an individual value as the default value. The values that you define for a selection list are then available for selection when you define the instances of the model.
+In addition to the predefined values, you can also add your own selection lists for types such as string, float, source or destination, or geofence, and you can also select a specific value to be the default value. The values that you define for a selection list are then available for selection when you create instances of the model.
 
 When it is possible to add a selection list, the following button is shown in the **Template Parameters** dialog box, next to the text box in which you can add a default value.
 ![Add selection list button](/images/streaming-analytics/analytics-builder/icon-add-selection-list.png)
@@ -487,9 +487,9 @@ When a selection list is already available, a drop-down arrow is shown instead o
 
 8.  Click **OK** to save the selection list and to close the **Selection List** dialog box.
 
-    In the **Template Parameters** dialog box, you can now select one of your selections from a drop-down list box.
+    In the **Template Parameters** dialog box, you can now select one of your selections as the default value from a drop-down list box.
 
-9.  To clear a selection in the **Template Parameters** dialog box, click the X that is shown next to the selection.
+9.  To clear the selected default value in the **Template Parameters** dialog box, click the X that is shown next to the selection.
 
 10.  To edit your selection list, click the actions menu (the three vertical dots) in the **Default Value** column of the **Template Parameters** dialog box and then click **Edit**. The **Selection List** dialog box is then shown.
 

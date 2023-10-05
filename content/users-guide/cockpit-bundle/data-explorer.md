@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: data-explorer
     title: Data explorer
-    content: "In the data explorer, data points, (that is, measurements or sensor data) can be visualized. On the right, you see a list of available data points. On the left, you see its visualization.
+    content: "In the data explorer, data points (measurements or sensor data) can be visualized. On the right, you see a list of available data points. On the left, you see its visualization.
 
 
     Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
@@ -24,7 +24,7 @@ helpcontent:
 {{< /c8y-admon-related >}}
 
 
-In the data explorer, data points (that is measurements or sensor data) can be visualized.
+In the data explorer, data points (measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:

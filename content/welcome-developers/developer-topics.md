@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Developer documentation
+title: Developer topics
 layout: bundle
 section:
   - getting_started

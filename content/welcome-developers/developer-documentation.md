@@ -32,7 +32,7 @@ Check out the following sections if you are looking for step-by-step instruction
 
 A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core](https://{{< domain-c8y >}}/api/core). The OpenAPI Specification describes the entire {{< product-c8y-iot >}} REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
-### Additional resources
+### More resources
 
 Check out further resources for developers like
 

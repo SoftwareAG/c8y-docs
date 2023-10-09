@@ -20,7 +20,7 @@ Users can now customize the dashboard on the <b>Info</b> tab in the device detai
 The Device management home page now also provides a customizable dashboard which lets users add customized widgets. [DM-1644]
 
 
-#### -Change-  Device registration process
+#### -Change-  Improved device registration process
 
 If a pending device in the registration list has been accepted, the device is now removed from the list instead of the list showing the "accepted" status for the device. [DM-1723]
 

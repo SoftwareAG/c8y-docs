@@ -20,7 +20,7 @@ This category contains the following blocks:
 <tbody>
 <tr>
 <td><a href="#alarm-input">Alarm Input</a></td>
-<td><span>Receives <tt>Alarm</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</span>
+<td><span>Receives <tt>Alarm</tt> objects from a device, asset, devices in a group, or all input sources and reorders them based on the timestamp.</span>
 </td>
 </tr>
 <tr>
@@ -30,22 +30,22 @@ This category contains the following blocks:
 </tr>
 <tr>
 <td><a href="#managed-object-input">Managed Object Input</a></td>
-<td><span>Receives <tt>ManagedObject</tt> objects from a device, asset, or devices in a group.</span>
+<td><span>Receives <tt>ManagedObject</tt> objects from a device, asset, devices in a group, or all input sources.</span>
 </td>
 </tr>
 <tr>
 <td><a href="#measurement-input">Measurement Input</a></td>
-<td><span>Receives <tt>Measurement</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</span>
+<td><span>Receives <tt>Measurement</tt> objects from a device, asset, devices in a group, or all input sources and reorders them based on the timestamp.</span>
 </td>
 </tr>
 <tr>
 <td><a href="#operation-input">Operation Input</a></td>
-<td><span>Receives <tt>Operation</tt> objects from a device, asset, or devices in a group.</span>
+<td><span>Receives <tt>Operation</tt> objects from a device, asset, devices in a group, or all input sources.</span>
 </td>
 </tr>
 <tr>
 <td><a href="#position-input">Position Input</a></td>
-<td><span>Receives <tt>Event</tt> objects from a device, asset, or devices in a group and extracts the <tt>c8y_Position</tt> fragment into a <tt>Value</tt> object.</span>
+<td><span>Receives <tt>Event</tt> objects from a device, asset, devices in a group, or all input sources and extracts the <tt>c8y_Position</tt> fragment into a <tt>Value</tt> object.</span>
 </td>
 </tr>
 </tbody>
@@ -55,7 +55,7 @@ This category contains the following blocks:
 
 `apama.analyticskit.blocks.cumulocity.AlarmInput`
 
-<p>Receives <tt>Alarm</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</p>
+<p>Receives <tt>Alarm</tt> objects from a device, asset, devices in a group, or all input sources and reorders them based on the timestamp.</p>
 <p>If the Alarm Status parameter is Active, then the alarms are reordered based on the timestamp (and dropped if they are too old), unless the Ignore Timestamp parameter is set. Otherwise, data is processed as it is received.
 <p></p>
 The parameters that define the input stream of the block are "Input Source" and "Alarm Type". If this block is configured with the same "Input Source" and "Alarm Type" parameters as an Alarm Output block in another model, then a connection between the models is formed, as each block refers to the same stream of <tt>Alarm</tt> objects.
@@ -92,7 +92,7 @@ Note: When running in simulation mode, because only the creation time of the ala
 <tr>
 <th scope="row">Input Source</th>
 <td><span>Defines the source from which the alarm has been received.</span>
-<p>This can be a single device, an asset, an object that references or contains a group of devices or all input sources.</p>
+<p>This can be a single device, an asset, an object that references or contains a group of devices, or all input sources.</p>
 </td>
 <td><span>any</span>
 </td>
@@ -282,7 +282,7 @@ Note: A history of changes is not maintained for <tt>Event</tt> objects, and it 
 
 `apama.analyticskit.blocks.cumulocity.ManagedObjectInput`
 
-<p>Receives <tt>ManagedObject</tt> objects from a device, asset, or devices in a group.</p>
+<p>Receives <tt>ManagedObject</tt> objects from a device, asset, devices in a group, or all input sources.</p>
 <p>The block does not reorder the received <tt>ManagedObject</tt> objects and processes them as they are received. If the Property Name parameter is supplied, then the block does not produce new output if the value of the specified property has not changed since the last output, even if other properties on the same <tt>ManagedObject</tt> object have changed.
 <p></p>
 The Value output from the block contains all properties on the <tt>ManagedObject</tt> object, including the property specified by the Property Name parameter. Property values can be accessed using the Extract Property block.
@@ -380,7 +380,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 
 `apama.analyticskit.blocks.cumulocity.DeviceMeasurementInput`
 
-<p>Receives <tt>Measurement</tt> objects from a device, asset, or devices in a group and reorders them based on the timestamp.</p>
+<p>Receives <tt>Measurement</tt> objects from a device, asset, devices in a group, or all input sources and reorders them based on the timestamp.</p>
 <p>If the Ignore Timestamp parameter is set, the block ignores the timestamp of the measurement and processes the measurements as they are received. Otherwise, it drops old measurements.
 <p></p>
 If using a group for input, select a device within the group to select the fragment and series, and then change to the desired group.
@@ -468,7 +468,7 @@ Note: When running in simulation mode, because historical input data is used, ti
 
 `apama.analyticskit.blocks.cumulocity.OperationInput`
 
-<p>Receives <tt>Operation</tt> objects from a device, asset, or devices in a group.</p>
+<p>Receives <tt>Operation</tt> objects from a device, asset, devices in a group, or all input sources.</p>
 <p>The block does not reorder the received <tt>Operation</tt> objects and processes the operations as they are received. The block can be optionally configured to only process operations having a specified status or property.
 <p></p>
 The output from the block contains all properties on the <tt>Operation</tt> object. Property values can be accessed using the Extract Property block.
@@ -585,7 +585,7 @@ Note: A history of changes is not maintained for <tt>Operation</tt> objects, and
 
 `apama.analyticsbuilder.blocks.PositionInput`
 
-<p>Receives <tt>Event</tt> objects from a device, asset, or devices in a group and extracts the <tt>c8y_Position</tt> fragment into a <tt>Value</tt> object.</p>
+<p>Receives <tt>Event</tt> objects from a device, asset, devices in a group, or all input sources and extracts the <tt>c8y_Position</tt> fragment into a <tt>Value</tt> object.</p>
 <p>If no <tt>c8y_Position</tt> fragment is present, the event is ignored. If the fragment does not contain at least a valid latitude and valid longitude, the event is ignored. If the Primary Value parameter is set to Altitude and the fragment does not contain an altitude, the event is ignored. Latitudes must be between -90 and 90 degrees inclusive. Longitudes must be between -180 and 180 degrees inclusive.
 <p></p>
 The primary value of the output <tt>Value</tt> object can be set to be the latitude, longitude or altitude. All members of the <tt>c8y_Position</tt> fragment are added to the properties dictionary of the <tt>Value</tt> object.

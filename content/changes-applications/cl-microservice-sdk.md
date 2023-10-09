@@ -3,10 +3,19 @@ title: Microservice SDK
 layout: change_log
 section:
   - change_log
-weight: 20
+weight: 40
 ---
 
 ### October 2023
+
+#### -Announcement- Deprecation of the Microservice SDK for C#
+
+With the introduction of auto-generated SDKs, we provide an always up-to-date developer library with the purpose to facilitate the development of Cumulocity IoT microservices in different programming languages including C#.
+
+The new auto-generated SDKs make our existing Microservice SDK for C# obsolete. For this reason, the Microservice SDK for C# has been removed from our public product documentation.
+
+To learn more about using the auto-generated SDKs, refer to our respective [GitHub repository](https://github.com/SoftwareAG/cumulocity-clients-dotnet).
+
 
 #### -Change-  Dependency updates
 

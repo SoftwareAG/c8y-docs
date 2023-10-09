@@ -3,7 +3,7 @@ title: Java SDK
 layout: change_log
 section:
   - change_log
-weight: 10
+weight: 30
 ---
 
 

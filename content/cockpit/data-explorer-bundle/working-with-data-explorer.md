@@ -180,4 +180,4 @@ You may download measurement data as CSV or Excel files. The exported data shows
 
 To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
 
-The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.
+The download will be generated, as shown in the upcoming dialog. This may take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.

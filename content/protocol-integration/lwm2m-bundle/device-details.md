@@ -42,7 +42,7 @@ To view the history of all operations, click **View history**. Note, that you wi
 #### Audit Configuration {#audit-configuration}
 
 {{< c8y-admon-important >}}
-As announced in [release 10.18](https://cumulocity.com/releasenotes/release-10-18-0/announcements-10-18-0), the LWM2M device audit configuration feature is deprecated. This feature will be disabled by default in a future release.
+As announced in the release notes for [release 10.18](https://cumulocity.com/releasenotes/release-10-18-0/announcements-10-18-0), the LWM2M device audit configuration feature is deprecated. This feature will be disabled by default in a future release.
 {{< /c8y-admon-important >}}
 
 In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.

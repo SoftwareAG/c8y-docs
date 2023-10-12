@@ -56,5 +56,15 @@ In the **Properties** tab, each application will show the following information,
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Specified by the user; for example, if you use "hello" as application path, the URL of the application will be "/apps/hello"</td>
 </tr>
+<tr>
+<td style="text-align:left">Select icon</td>
+<td style="text-align:left">Provides a variety of icons from which an icon for the application can be selected.</td>
+<td style="text-align:left">Automatically created</td>
+<td style="text-align:left">Specified by the user</td>
+</tr>
 </tbody>
 </table>
+
+{{< c8y-admon-info >}}
+The icon selector is only available for custom application.
+{{< /c8y-admon-info >}}

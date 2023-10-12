@@ -7,7 +7,7 @@ section:
 helpcontent:
   - label: data-explorer
     title: Data explorer
-    content: "In the data explorer, data points, (that is, measurements or sensor data) can be visualized. On the right, you see a list of available data points. On the left, you see its visualization.
+    content: "In the data explorer, data points (measurements or sensor data) can be visualized. On the right, you see a list of available data points. On the left, you see its visualization.
 
 
     Click **Add data point** to add more data points to the data explorer. In addition, you can also add alarms or events.
@@ -19,7 +19,7 @@ helpcontent:
     The data explorer can be sent as widget to a dashboard or downloaded as CSV or Excel file."
 ---
 
-In the data explorer, data points (that is measurements or sensor data) can be visualized.
+In the data explorer, data points (measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
@@ -180,4 +180,4 @@ You may download measurement data as CSV or Excel files. The exported data shows
 
 To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
 
-The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.
+The download will be generated, as shown in the upcoming dialog. This may take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.

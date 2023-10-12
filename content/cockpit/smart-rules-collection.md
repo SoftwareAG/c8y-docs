@@ -3,7 +3,7 @@ weight: 90
 title: Smart rules collection
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 {{< product-c8y-iot >}} includes preset global smart rule types. Each global smart rule type provides different parameters to configure.

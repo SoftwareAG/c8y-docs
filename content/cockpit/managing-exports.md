@@ -6,7 +6,7 @@ outputs:
   - html
   - json
 section:
-  - app_development
+  - app_enablement
 helpcontent:
   - label: export
     title: Managing exports

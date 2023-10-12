@@ -6,5 +6,5 @@ outputs:
   - json
 weight: 30
 section:
-  - app_development
+  - app_enablement
 ---

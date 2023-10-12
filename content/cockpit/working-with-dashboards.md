@@ -5,7 +5,7 @@ outputs:
   - html
   - json
 section:
-  - app_development
+  - app_enablement
 weight: 40
 helpcontent:
   - label: dashboards

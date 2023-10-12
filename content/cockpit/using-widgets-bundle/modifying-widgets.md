@@ -3,7 +3,7 @@ weight: 20
 title: Modifying widgets
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 ### To modify a widget {#to-modify-a-widget}

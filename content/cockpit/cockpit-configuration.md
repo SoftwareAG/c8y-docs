@@ -3,7 +3,7 @@ weight: 100
 title: Configuring Cockpit applications
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 {{< product-c8y-iot >}} offers you to configure custom Cockpit applications according to your individual needs.

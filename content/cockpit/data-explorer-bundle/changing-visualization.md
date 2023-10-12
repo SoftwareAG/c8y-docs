@@ -3,7 +3,7 @@ weight: 20
 title: Changing visualization
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 In the data explorer, data points (measurements or sensor data) can be visualized.

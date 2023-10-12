@@ -3,7 +3,7 @@ weight: 60
 title: Tutorials
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 This section lists common how-to recipes for the Web SDK. It requires:

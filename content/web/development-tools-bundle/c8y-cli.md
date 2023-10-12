@@ -98,7 +98,7 @@ This step can also be skipped if the name is provided in the initial command: `c
 > other
 ```
 
-In the second step, the base scaffolding version must be selected. The interface will provide the last GA release (latest), the latest available release (next) and four older GA releases. Additionally a version can be manually entered by selecting the `other` option.
+In the second step, the base scaffolding version must be selected. The interface will provide the CD release (latest), as well as older yearly releases. Additionally a version can be manually entered by selecting the `other` option.
 
 **Step 2 (other):**
 

@@ -37,7 +37,7 @@ All {{< product-c8y-iot >}} applications share a common structure and includes t
 
 ![{{< product-c8y-iot >}} application](/images/users-guide/getting-started/getting-started-screen-elements.png)
 
-On the left you have the **Navigator**, where you find a list of entries leading to various pages of the application. On the superior part of the main page is the **Page title** at the left. At the right is the **Search button** that opens a search field to enter text for a full-text search. Next to the Search button is the **Application Switcher button** that allows you to quickly switch between applications. Right from the Application Switcher button is the **User button** which opens up a context menu related to your account settings.
+On the left you have the **Navigator**, where you find a list of entries leading to various pages of the application. On the superior part of the main page is the **Page title** at the left. At the right is the **Search** button that opens a search field to enter text for a full-text search. Next to the Search button is the **Application Switcher** button that allows you to quickly switch between applications. Right from the Application Switcher button is the **User** button which opens up a context menu related to your account settings.
 
 {{< c8y-admon-info >}}
 See the [UI functionalities and features](/get-familiar-with-the-ui/gui-features/) section of our documentation for more information on {{< product-c8y-iot >}}'s UI features.
@@ -46,7 +46,7 @@ See the [UI functionalities and features](/get-familiar-with-the-ui/gui-features
 <a name="user-options"></a>
 #### User options and settings
 
-Clicking the **User button** at the top right will open a menu which provides access to the following actions or information:
+Clicking the **User** button at the top right opens a menu which provides access to the following actions or information:
 
 <img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
@@ -58,17 +58,17 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for mo
 
 To integrate a device to {{< product-c8y-iot >}}, you need to register it. This is done in the **Device management application**. Devices can be connected to your {{< product-c8y-iot >}} account in three different ways:
 
-* [Via the {{< product-c8y-iot >}} Sensor App](/welcome-users/first-steps/#connecting-a-smartphone-with-the-hahahugoshortcode-s19-hbhb-sensor-app) - Register and connect your smartphone to {{< product-c8y-iot >}} using the {{< product-c8y-iot >}} Sensor App. The {{< product-c8y-iot >}} Sensor App is a free smartphone application available for iOS and Android smartphones.
+* [Via the {{< sensor-app >}}](/welcome-users/first-steps/#connecting-a-smartphone-with-the-hahahugoshortcode-s19-hbhb-sensor-app) - Register and connect your smartphone to {{< product-c8y-iot >}} using the {{< sensor-app >}}. The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.
 * [Via thin.edge.io on a Raspberry Pi](/welcome-users/first-steps/#device-integration-via-thinedgeio-on-a-raspberry-pi) - The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
 * [Connecting a device manually](/welcome-users/first-steps/#to-connect-a-device-manually) - Single device registration to connect devices manually one by one.
 
-#### Connecting a smartphone with the {{< product-c8y-iot >}} Sensor App
+#### Connecting a smartphone with the {{< sensor-app >}}
 
-The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< product-c8y-iot >}} Sensor App can also send commands to the smartphone directly from the phone dashboard.
+The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< sensor-app >}} can also send commands to the smartphone directly from the phone dashboard.
 
 Go to [Sensor App](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as more information on [how to install the app](/sensor-app/installing-the-sensor-app/) available for iOS and Android.
 
-Open the Apple App Store or Google Play Store from your smartphone and search for **{{< product-c8y-iot >}} Sensor App** to install it.
+Open the Apple App Store or Google Play Store from your smartphone and search for **{{< sensor-app >}}** to install it.
 
 To connect your smartphone via QR code follow the instructions below:
 
@@ -92,13 +92,13 @@ For versions earlier than 10.6.6 or if you are unable to scan the QR code, see [
 {{< /c8y-admon-info >}}
 
 
-You have connected your smartphone with the {{< product-c8y-iot >}} Sensor App. For information on how the app sends information to {{< product-c8y-iot >}} go to [Sending sensor data to the platform](/sensor-app/sending-sensor-data/) and on how to view sensor data go to [Viewing sensor data](/sensor-app/viewing-sensor-data/).
+You have connected your smartphone with the {{< sensor-app >}}. For information on how the app sends information to {{< product-c8y-iot >}} go to [Sending sensor data to the platform](/sensor-app/sending-sensor-data/) and on how to view sensor data go to [Viewing sensor data](/sensor-app/viewing-sensor-data/).
 
 #### Device integration via thin.edge.io on a Raspberry Pi
 
 thin-edge.io is an open-source project to provide a cloud-agnostic edge framework. It is much more generic than the device management agent, so it can connect to multiple IoT cloud platforms, and it allows flexible logic being executed on the device. It is optimized for a very small footprint and high performance.
 
-The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
+The Raspberry Pi is a relatively simple and cheap, yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
 
 For an overview of the installation and configuration of thin-edge.io with Raspberry Pi go to [thing-edge.io on a Raspberry Pi](/device-integration/integration-tutorials/#prerequisites).
 
@@ -173,7 +173,7 @@ Follow the instructions below to create a new dashboard with the device you regi
 
 ![Dashboard editor](/images/users-guide/getting-started/getting-started-add-dashboard-editor.png)
 
-4. In the **Layout** section you can select a theme for the dashboard (for example, "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (for example, "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+4. In the **Layout** section you can select a theme for the dashboard (for example, "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (for example, "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (the default value is set to 15 px).
 5. Enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 
 6. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
@@ -188,6 +188,8 @@ Go to the [Working with dashboards](/cockpit/working-with-dashboards/) for more 
 
 Reports enable you to track applications, alarms, assets, and other data in a dashboard layout. Reports are global dashboard pages, regardless of the [asset hierarchy](/cockpit/managing-assets/#asset-hierarchy). To work with reports, check if you meet the [requirements](/cockpit/reports/) first.
 
+To create a report click **Reports** in the **Navigator** on the left side and following the steps below.
+
 ![Reports](/images/users-guide/cockpit/cockpit-reports-list.png)
 
 #### Creating a report
@@ -195,8 +197,8 @@ Reports enable you to track applications, alarms, assets, and other data in a da
 1. Click **Add report** in the top menu bar to open the **Add report** dialog window.
   <br>![Add report](/images/users-guide/getting-started/getting-started-add-report.png)<br>
 2. In the **Menu label** field, enter a name for the report and optionally provide a description below.
-3. Select **Show in navigator** if you want the report to be displayed in the navigator. Select the position of the report in the navigator. Depending on the value it will be positioned relative to the existing items. If for example "Home" has the value "10000" it will be positioned above "Home", if the value is "10001" or higher.
-4. In the **Layout** section you can select a theme for the report (for example, "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (for example, "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+3. Select **Show in navigator** if you want the report to be displayed in the navigator. Select the position of the report in the navigator. Depending on the value it will be positioned relative to the existing items. If, for example, "Home" has the value "10000" it will be positioned above "Home", if the value is "10001" or higher.
+4. In the **Layout** section you can select a theme for the report (for example, "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (for example, "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (the default value is set to 15 px).
 If you enable the option **Translate widget titles if possible**, the widget title will be translated every time the language is changed. Note that the widget titles will be translated only if a valid translation is available.
 Click **Save** to create the report and add it to the report list.
 
@@ -220,7 +222,7 @@ You can also develop your own widgets and add them to your {{< product-c8y-iot >
 
 #### To add a widget to a dashboard or a report
 
-1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard/report).
+1. Click **Add widget** in the top menu bar or click the **Add widget** button on the main page (only available in case of an empty dashboard or report).
 
 ![Add widget](/images/users-guide/getting-started/getting-started-add-widget.png)
 

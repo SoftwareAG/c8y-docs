@@ -4,15 +4,15 @@ layout: redirect
 title: Java Client
 ---
 
-MQTT Connect Java Client library provides the classes necessary to interact with MQTT Connect.
+The MQTT Connect Java Client library provides the classes necessary to interact with MQTT Connect.
 The following operations are supported by the client:
 * Publishing messages to the MQTT Connect via WebSocket protocol.
 * Subscribing to messages from the MQTT Connect via WebSocket protocol
 
-#### Repositories and dependencies {#mqtt-connect-client-java-dep}
+#### Repositories and dependencies {#repositories-and-dependencies}
 
-Follow the [Microservice SDK](/microservice-sdk/java/#add-repositories-and-dependencies) documentation for guidance on how to configure maven repositories.
-To include MQTT Connect Java Client into your project just add the following additional dependency inside the `<dependencies>` node.
+Follow the [Microservice SDK](/microservice-sdk/java/#add-repositories-and-dependencies) documentation for guidance on how to configure Maven repositories.
+To include MQTT Connect Java Client into your project, add the following dependency inside the `<dependencies>` node:
 ```xml
 <dependency>
     <groupId>com.cumulocity.client.mqtt</groupId>
@@ -21,7 +21,7 @@ To include MQTT Connect Java Client into your project just add the following add
 </dependency>
 ```
 
-#### Example {#mqtt-connect-client-java-example}
+#### Example {#example}
 Example of publishing messages to the MQTT Connect via WebSocket:
 ```java
 // Message to be sent

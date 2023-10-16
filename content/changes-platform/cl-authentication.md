@@ -13,7 +13,6 @@ weight: 20
 
 The OpenSSL command for generating a "signed verification code" for Proof of Possession has been enhanced to include additional encoding functionality. [MTM-52775]
 
-### September 2023
 
 #### -Change-  External token validation in single sign-on configuration
 

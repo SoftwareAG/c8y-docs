@@ -9,11 +9,15 @@ weight: 10
 
 ### October 2023
 
+#### -Change- Package availability
+
+It is now possible to select the availability (SHARED or PRIVATE) during package upload. [MTM-51454]
+
+
 #### -Feature- New filtering option
 
 It is now possible to filter items on Applications, Features, Microservices and Extensions lists. [MTM-51331]
 
-### September 2023
 
 #### -Announcement-  Removal of deprecated Esper-related features
 
@@ -25,7 +29,6 @@ Removed Esper CEP related services and modules from the AngularJS Web SDK:
 - `eventProcessingSvc` (*@c8y/ng1-modules/administration-eventProcessing/cumulocity.json*)
 - `c8yCepModule`, `c8yCepModuleExamples` (*@c8y/ng1-modules/notifications/cumulocity.json*) [MTM-49963]
 
-### August 2023
 
 #### -Feature- Version matrix for packages
 
@@ -36,16 +39,3 @@ The repository-connect microservice now offers to sync packages that include a v
 
 It is now possible to copy web applications with versions (packages) and web applications with SHARED availability.
 For applications with versions, by default the application with the "latest" tag is copied. The new application has a single version and no tags. If you want to copy different versions of an application, you can specify the query parameters "tag" or "version" (only a single version). For details, refer to the [Cumulocity IoT OpenAPI Specification](//cumulocity.com/api/). [MTM-47717]
-
-
-
-
-#### -Preview- Title 1
-
-#### -Feature- Title 2
-
-#### -Fix- Title 3
-
-#### -Issue- Title 4
-
-#### -Security- Title 5

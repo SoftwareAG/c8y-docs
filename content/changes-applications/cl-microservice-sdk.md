@@ -19,5 +19,5 @@ To learn more about using the auto-generated SDKs, refer to our respective [GitH
 
 #### -Change-  Dependency updates
 
-- Dependencies on <code>org.eclipse.jetty:jetty-*</code> were updated to version 9.4.51.v20230217.[MTM-53359]
-- The Spring Boot dependency has been updated to version 2.7.11.[MTM-53342]
+- Dependencies on <code>org.eclipse.jetty:jetty-*</code> were updated to version 9.4.51.v20230217. [MTM-53359]
+- The Spring Boot dependency has been updated to version 2.7.11. [MTM-53342]

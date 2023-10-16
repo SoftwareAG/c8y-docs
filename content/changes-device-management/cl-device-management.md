@@ -14,6 +14,10 @@ weight: 10
 
 Users can now customize the dashboard on the <b>Info</b> tab in the device details. Widgets can be moved and resized, and new widgets can be added from a list of available widgets. The dashboard can be reset anytime to the default dashboard settings. By default, the "Asset notes" widget has been removed. [DM-2279]
 
+#### -Change- Removal of software item
+
+If the last version of a software is deleted, the software is entirely removed from the repository. [DM-2266]
+
 
 #### -Feature-  Customizable home dashboard
 

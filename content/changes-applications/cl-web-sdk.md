@@ -11,69 +11,85 @@ weight: 60
 
 #### -Change- Fine-grained positioning of widgets on dashboards
 
-The grid used in dashboards for placing widgets now supports 24 instead of 12 columns. This allows finer-grained positioning of widgets on dashboards. In case you share the same dashboards between different application versions, we strongly recommend you to upgrade to a version that includes the fix <b>MTM-55923</b>.[MTM-52888]
+The grid used in dashboards for placing widgets now supports 24 instead of 12 columns. This allows finer-grained positioning of widgets on dashboards. In case you share the same dashboards between different application versions, we strongly recommend you to upgrade to a version that includes the fix <b>MTM-55923</b>. [MTM-52888]
+
+#### -Change- Disable/enable realtime for widgets on dashboard level
+
+If a widget supports realtime, it can now be linked to the dashboard real-time context to disable/enable realtime on dashboard level. The following widgets support the real-time dashboard context: Data point graph, Data point table, Event list, Map. [53779]
 
 
 #### -Change- Improved behavior on plugin installation
 
 When installing a plugin and the tenant has no custom applications, it is now possible to duplicate any existing application. [MTM-51757]
 
+#### -Change- Map in Digital twin manager application
+
+If a complex location property is set in the Digital twin manager application, the map is now visible in the asset view and users can select a location on the map. [MTM-54045]
+
 
 #### -Change- Removal of Impact connectivity feature
 
-The Impact connectivity feature has been removed from @c8y/ngx-components and @c8y/ng1-modules packages.[DM-2548]
+The Impact connectivity feature has been removed from @c8y/ngx-components and @c8y/ng1-modules packages. [DM-2548]
+
+#### -Change- Asset custom property in Digital twin mager application
+
+If a asset custom property in the Digital twin mager application is declared as required and complex, all of its subproperties are required too. [MTM-50101]
+
+#### -Change- Context path in the remotes application option
+
+Scaffolding an application that uses the <code>remotes</code> application option via the c8ycli now also updates the context path used in the <code>remotes</code> application option. [MTM-54357]
 
 
 #### -Change- Removal of references to deprecated classes
 
-References to the deprecated classes <code>ComponentFactory</code> and <code>ComponentFactoryResolver</code> have been removed from the @c8y/ngx-components library.[DM-1829]
+References to the deprecated classes <code>ComponentFactory</code> and <code>ComponentFactoryResolver</code> have been removed from the @c8y/ngx-components library. [DM-1829]
 
 
 #### -Change- Data grid components return to first page after reload
 
-Data grid components no longer persist their current page. After reloading they always return to the first page in the list.[DM-1830]
+Data grid components no longer persist their current page. After reloading they always return to the first page in the list. [DM-1830]
 
 
 #### -Change- Improved shell applications behavior
 
 Shell applications now wait with their initial navigation until all plugins have been loaded. This allows,
-for example, to directly navigate via a link to a route which is provided by a plugin.[MTM-53695]
+for example, to directly navigate via a link to a route which is provided by a plugin. [MTM-53695]
 
 
 #### -Feature- New filter dropdown in data grids
 
 In the data grid component, a new filter overview dropdown has been added. It displays all active filters in one place and allows users to remove filters.
-For custom column implementations, the WebSDK allows developers to provide their own logic to display active filters as items in the filter overview.[DM-1616]
+For custom column implementations, the WebSDK allows developers to provide their own logic to display active filters as items in the filter overview. [DM-1616]
 
 
 #### -Change- New activeClassName input in data-grid and device-grid components
 
-A new <code>activeClassName</code> input has been added to the data-grid and device-grid components. It can be used to define a class name to be appended to the last clicked row in the grid. Its default value is "active". This option can be deactivated by setting the input value to an empty string.[DM-2324]
+A new <code>activeClassName</code> input has been added to the data-grid and device-grid components. It can be used to define a class name to be appended to the last clicked row in the grid. Its default value is "active". This option can be deactivated by setting the input value to an empty string. [DM-2324]
 
 
 #### -Announcement- Removal of deprecated implementations
 
-In release 10.16.0.0, core re-usable data-grid-related components and services have been moved to the <code>@c8y/ngx-components</code>. The initial implementations were deprecated and have now been removed.[DM-1294]
+In release 10.16.0.0, core re-usable data-grid-related components and services have been moved to the <code>@c8y/ngx-components</code>. The initial implementations were deprecated and have now been removed. [DM-1294]
 
 
 #### -Change- Support of versioned documentation links
 
-The context help and other help links point to a documentation website defined by the application option <code>docsBaseUrl</code>. This option now supports the <code>{{ version }}</code> placeholder, which allows the administrator to choose whether to use versioned or unversioned documentation links. By default, versioned links will be used.[MTM-41135]
+The context help and other help links point to a documentation website defined by the application option <code>docsBaseUrl</code>. This option now supports the <code>{{ version }}</code> placeholder, which allows the administrator to choose whether to use versioned or unversioned documentation links. By default, versioned links will be used. [MTM-41135]
 
 
-#### -Change- Upgrade to Angular 15
+#### -Feature- Upgrade to Angular 15
 
-The Web SDK has been upgraded to Angular 15.[MTM-52940]
+The Web SDK has been upgraded to Angular 15. [MTM-52940]
 
 
-#### -Change- Bookmarks in right drawer
+#### -Feature- Bookmarks in right drawer
 
-Users can now add a bookmark in the right drawer for any page in the platform.[MTM-49807]
+Users can now add a bookmark in the right drawer for any page in the platform. [MTM-49807]
 
 
 #### -Feature- New versioning matrix for blueprints/plugins
 
-A versioning matrix can now be added to the <i>cumulocity.json</i> of a blueprint/plugin. When a blueprint/plugin is installed, its version is validated against the platform version. If the versions are incompatible a warning is shown.[MTM-52340]
+A versioning matrix can now be added to the <i>cumulocity.json</i> of a blueprint/plugin. When a blueprint/plugin is installed, its version is validated against the platform version. If the versions are incompatible a warning is shown. [MTM-52340]
 
 
 #### -Announcement- Removal of deprecated device-grid model classes, column implementations and services

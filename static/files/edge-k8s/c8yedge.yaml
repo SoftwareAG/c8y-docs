@@ -3,7 +3,7 @@
 ########################################################################################################################
 ---
 #
-# This Custom Resource (CR) YAML file has the Cumulocity IoT Edge deployment settings. 
+# This Custom Resource (CR) YAML file has the {{< product-c8y-iot >}} Edge deployment settings. 
 # You can edit this file and apply it to your Kubernetes cluster to deploy or update your Edge. 
 #
 # For more information about the CR specification, see https://cumulocity.com/guides/edge-k8s/edge-custom-resource-definition/

@@ -4,4 +4,4 @@ title: Cumulocity IoT Edge Custom Resource
 layout: bundle
 ---
 
-The Edge Custom Resource (CR) YAML file has the {{< product-c8y-iot >}} Edge deployment settings. You can edit this file to make changes to your {{< product-c8y-iot >}} Edge. The Custom Resource Definition (CRD)] defines the CR the Edge Operator uses to manage {{< product-c8y-iot >}} Edge.
+This section describes the structure and configuration options available in the {{< product-c8y-iot >}} Edge CR. Here is the Edge CR template ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)) that you can edit and apply to your Kubernetes cluster to install or update {{< product-c8y-iot >}} Edge.

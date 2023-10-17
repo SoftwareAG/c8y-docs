@@ -3,7 +3,7 @@ weight: 30
 title: Selecting assets in widgets
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 The following section describes how [to select one top-level asset](#to-add-an-asset-to-a-new-or-existing-widget), how [to select child devices as asset](#to-select-child-devices-as-asset) and how [to search or filter for assets](#to-search-and-filter-for-assets) in the widgets configuration.

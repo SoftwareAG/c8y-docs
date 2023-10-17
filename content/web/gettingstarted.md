@@ -3,7 +3,7 @@ weight: 20
 title: Getting started
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 First, install the Command Line Interface (CLI) which helps you with bootstrapping an application:

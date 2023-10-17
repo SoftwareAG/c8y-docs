@@ -229,14 +229,12 @@ Unsecured devices connect during bootstrap connection and server connection thro
 * **5683**: unsecure bootstrap connection
 * **5783**: unsecure direct server connection
 
-##### Registration of PSK-secured devices {#registration-of-psk-secured-devices}
+##### Registration of secured devices {#registration-of-secured-devices}
 
-PSK-secured devices connect during a bootstrap connection and a server connection using a pre-shared key through secured ports:
+Secured devices connect during a bootstrap connection and a server connection through secured ports:
 
-* **5684**: PSK bootstrap connection
-* **5784**: PSK direct server connection
-
-PSK keys must be provided during the device registration.
+* **5684**: secured bootstrap connection
+* **5784**: secured direct server connection
 
 See the table below for the full set of bootstrap fields you can add:
 
@@ -476,7 +474,7 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 </table>
 
 {{< c8y-admon-info >}}
-Firmware updates are also supported for the registration of unsecured devices as well as PSK-secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).
+Firmware updates are also supported for the registration of unsecured devices as well as secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).
 {{< /c8y-admon-info >}}
 
 ### Duplicate LWM2M devices {#duplicate-lwm2m-devices}

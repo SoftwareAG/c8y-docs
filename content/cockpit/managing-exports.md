@@ -6,7 +6,7 @@ outputs:
   - html
   - json
 section:
-  - app_development
+  - app_enablement
 helpcontent:
   - label: export
     title: Managing exports
@@ -57,7 +57,35 @@ To filter for a particular object, enter a name or property value into the searc
 If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
 {{< /c8y-admon-info >}}
 
-The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week", or you may select "Custom" and enter a custom from/to range in the additional fields.
+The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. All times assume platform system time (UTC).
+
+- Last 24 hours:
+  - From: exactly 24 hours before the time of export
+  - To: the time of export
+  - Example: from 2020-12-31 12:34:56 to 2021-01-01 12:34:56 (when the export is done at 2021-01-01 12:34:56)
+- Last 7 days:
+  - From: exactly 7 days before the time of export
+  - To: the time of export
+  - Example: from 2020-12-25 12:34:56 to 2021-01-01 12:34:56 (when the export is done at 2021-01-01 12:34:56)
+- Last 30 days:
+  - From: exactly 30 days before the time of export
+  - To: the time of export
+  - Example: from 2020-12-02 12:34:56 to 2021-01-01 12:34:56 (when the export is done at 2021-01-01 12:34:56)
+- Last week:
+  - From: same day as the time of export, but last week at midnight
+  - To: the time of export
+  - Example: from 2020-12-25 00:00:00 to 2021-01-01 12:34:56 (when the export is done at 2021-01-01 12:34:56)
+- Last month:
+  - From: same day as the time of export, but last month at midnight
+  - To: the time of export
+  - Example: from 2020-12-01 00:00:00 to 2021-01-01 12:34:56 (when the export is done at 2021-01-01 12:34:56)
+- Last year:
+  - From: same day as the time of export, but last year at midnight
+  - To: the time of export
+  - Example: from 2020-01-01 00:00:00 to 2021-01-01 12:34:56 (when the export is done at 2021-01-01 12:34:56)
+- Custom:
+  - From: date and time specified by the user
+  - To: date and time specified by the user
 
 Select the **Object to export** and **Time range** checkboxes to enable the respective filters.
 

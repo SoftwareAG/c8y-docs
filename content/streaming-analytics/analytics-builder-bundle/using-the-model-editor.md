@@ -433,7 +433,9 @@ Models with no template parameters can be directly activated in the model manage
 
         If you specify a default value, this default value will be provided in the instance editor when the instance maintainer creates a new instance. The instance maintainer can then either leave this default value unmodified or change it as required for that instance.
 
-        When setting the default value for a source or destination, an additional dialog box appears when you click the **Default Value** field. The dialog box is the same as when selecting a different input source or output destination in the block parameter editor \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box\). Click the button which is shown when you hover over an entry to select the source or device that you want to use.
+        When setting the default value for a source or destination, an additional dialog box appears when you click the **Default Value** field. The dialog box is the same as when selecting a different input source or output destination in the block parameter editor \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box\). Click the button which is shown when you hover over an entry to select the source or destination that you want to use.
+
+        You can also define your own selection lists for specific types of template parameters. See [Adding a selection list for a template parameter](/streaming-analytics/analytics-builder/#adding-a-selection-list-for-a-template-parameter) for detailed information.
 
     {{< c8y-admon-info>}}
 If there is a block parameter for which a required value has not been specified, then the instance cannot be activated. Attempting to do so will report an error.
@@ -448,11 +450,50 @@ If there is a block parameter for which a required value has not been specified,
 6.  You can only remove a template parameter if it is not used in any block of the model. To remove a template parameter, click the following control which is shown next to the row.
     ![Remove icon](/images/streaming-analytics/analytics-builder/icon-remove-template-parameter.png)  
 
-7.  Click **OK** to store the changes in memory and to close the dialog.
+7.  Click **OK** to store the changes in memory and to close the dialog box.
 
     {{< c8y-admon-info>}}
 Keep in mind that your changes are only written to the inventory when you save the model. See also [Saving a model](/streaming-analytics/analytics-builder/#saving-a-model).
     {{< /c8y-admon-info>}}
+
+#### Adding a selection list for a template parameter {#adding-a-selection-list-for-a-template-parameter}
+
+Several types that you can select in the **Template Parameters** dialog box (see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)) allow you to select a predefined value. An example of such a type is the **Direction** parameter of the **Crossing Counter** block which offers predefined values such as **Upwards** and **Downwards** for selection.
+In addition to the predefined values, you can also add your own selection lists for types such as string, float, source or destination, or geofence, and you can also select a specific value to be the default value. The values that you define for a selection list are then available for selection when you create instances of the model.
+
+When it is possible to add a selection list, the following button is shown in the **Template Parameters** dialog box, next to the text box in which you can add a default value.
+![Add selection list button](/images/streaming-analytics/analytics-builder/icon-add-selection-list.png)
+When a selection list is already available, a drop-down arrow is shown instead of the above button.
+
+##### To add a selection list for a template parameter {#to-add-a-selection-list-for-a-template-parameter}
+
+1.  In the **Template Parameters** dialog box, click the following button in the **Default Value** column for a defined template parameter:
+    ![Add selection list button](/images/streaming-analytics/analytics-builder/icon-add-selection-list.png)
+
+2.  In the resulting **Selection List** dialog box, click **Add selection**.
+
+3.  Specify a unique name and a value for the new selection.
+    The value that you can specify depends on the type of the currently selected template parameter. For example, if **float** is selected as the type, you can only specify a float value. Or if **Source or Destination** is selected as the type, you can select an input source or output destination from a dialog box.
+
+4.  Add at least one more selection, that is, click **Add selection** once more and specify a unique name and a value for the new selection.
+
+5.  Repeat the above step until all required selections have been added.
+
+6.  To reorder the selection list, drag a row to a different position using the following control which is shown next to the row.
+    ![Drag icon](/images/streaming-analytics/analytics-builder/icon-move-row.png)
+
+7.  To delete a selection, click the following control which is shown next to the row.
+    ![Delete selection icon](/images/streaming-analytics/analytics-builder/icon-delete-selection.png)  
+
+8.  Click **OK** to save the selection list and to close the **Selection List** dialog box.
+
+    In the **Template Parameters** dialog box, you can now select one of your selections as the default value from a drop-down list box.
+
+9.  To clear the selected default value in the **Template Parameters** dialog box, click the X that is shown next to the selection.
+
+10.  To edit your selection list, click the actions menu (the three vertical dots) in the **Default Value** column of the **Template Parameters** dialog box and then click **Edit**. The **Selection List** dialog box is then shown.
+
+11.  To permanently delete your selection list, click the actions menu in the **Default Value** column of the **Template Parameters** dialog box and then click **Delete**. In the resulting dialog box, click **OK**.
 
 #### Copying items to a different model {#copying-items-to-a-different-model}
 

@@ -2,7 +2,7 @@
 title: Introduction
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 weight: 10
 ---
 

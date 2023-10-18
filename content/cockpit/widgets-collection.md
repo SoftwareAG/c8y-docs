@@ -3,7 +3,7 @@ weight: 55
 title: Widgets collection
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.

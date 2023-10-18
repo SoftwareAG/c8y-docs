@@ -2,6 +2,6 @@
 title: Using the REST interface
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 weight: 60
 ---

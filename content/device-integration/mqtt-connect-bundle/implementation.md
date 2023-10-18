@@ -44,7 +44,7 @@ Only alphanumeric characters and slash (`/`) can be used in topic name.
 
 ### Payload {#payload}
 
-Original MQTT messages are re-packed into MQTT Connect message format which beside of the original payload contains additional metadata fields.
+The original MQTT messages are re-packed into MQTT Connect message format which includes the original payload and additional metadata fields.
 Assuming Java types, the packed message structure looks as follows:
 
 `MqttMessage`

@@ -26,8 +26,8 @@ then to the microservice where it is converted to the final {{< product-c8y-iot 
 
 ![MQTT Connect send](/images/mqtt-connect/mqtt-connect-send.svg)
 
-All MQTT messages coming to MQTT Connect are forwarded to the Messaging Service, where they are persisted and waiting to be consumed.
-A custom microservice that understands the topic and payload structure can, with the help of [Java Client](/device-integration/mqtt-connect#java-client),    
+All MQTT messages coming to MQTT Connect are forwarded to the Messaging Service, where they are persisted, waiting to be consumed.
+A custom microservice that understands the topic and payload structure can, with the help of [Java Client](/device-integration/mqtt-connect#java-client), 
 consume the MQTT messages, translate them to the {{< product-c8y-iot >}} format, and then use the [Microservice SDK](/microservice-sdk/java) to push them into {{< product-c8y-iot >}}.
 
 Similarly, messages can be sent to devices, as shown in the diagram below.

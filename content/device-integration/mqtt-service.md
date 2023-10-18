@@ -1,6 +1,6 @@
 ---
 weight: 26
-title: MQTT Connect
+title: MQTT Service
 layout: bundle
 section:
   - device_management

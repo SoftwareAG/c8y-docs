@@ -4,11 +4,11 @@ title: MQTT protocol implementation
 layout: redirect
 ---
 
-This section lists the implementation details for MQTT Connect. The MQTT Connect implementation supports MQTT Version 3.1.1, support for 5.0 is planned.
+This section lists the implementation details for MQTT Service. The MQTT Service implementation supports MQTT Version 3.1.1, support for 5.0 is planned.
 
 ### Connecting via MQTT {#connecting-via-mqtt}
 
-MQTT Connect is supported via TCP. Use your tenant domain as the URL.
+MQTT Service is supported via TCP. Use your tenant domain as the URL.
 
 Available ports:
 
@@ -23,13 +23,13 @@ To enable port 2883 please contact [product support](/additional-resources/conta
 
 ### Topic {#topic}
 
-MQTT Connect topics are mapped to the Messaging Service subscriptions of the same name.
+MQTT Service topics are mapped to the Messaging Service subscriptions of the same name.
 The Messaging Service subscriptions reliably store the topic messages for asynchronous processing.
-The messages stored on these subscriptions can be consumed using a dedicated [Java Client](/device-integration/mqtt-connect#java-client).
+The messages stored on these subscriptions can be consumed using a dedicated [Java Client](/device-integration/mqtt-service#java-client).
 
 #### Topic restrictions {#topic-restrictions}
 
-MQTT Connect does not impose any topic structure. There are just a few topic names which are reserved for historic purposes and future use, namely:
+MQTT Service does not impose any topic structure. There are just a few topic names which are reserved for historic purposes and future use, namely:
 * all [SmartREST 2.0](/smartrest/smartrest-two) related topics
 * `error`
 * `devicecontrol/notifications`
@@ -44,7 +44,7 @@ Only alphanumeric characters and slash (`/`) can be used in topic name.
 
 ### Payload {#payload}
 
-The original MQTT messages are re-packed into MQTT Connect message format which includes the original payload and additional metadata fields.
+The original MQTT messages are re-packed into MQTT Service message format which includes the original payload and additional metadata fields.
 Assuming Java types, the packed message structure looks as follows:
 
 `MqttMessage`
@@ -65,11 +65,11 @@ Assuming Java types, the packed message structure looks as follows:
 | correlationData        | byte[]  | Reserved for future use of MQTT 5.0 features                          |
 | responseTopic          | String  | Reserved for future use of MQTT 5.0 features                          |
 
-The [Java Client](/device-integration/mqtt-connect#java-client) contains classes representing the above model.
+The [Java Client](/device-integration/mqtt-service#java-client) contains classes representing the above model.
 
 #### Payload restrictions {#payload-restrictions}
 
-MQTT Connect doesn't force you to use any specific payload format. 
+MQTT Service doesn't force you to use any specific payload format. 
 All the incoming MQTT messages must meet the specification in terms of fixed and variable headers, but the payload for published messages is unrestricted.
 Just keep in mind that you will receive exactly the same set of bytes which was sent from the device in your custom microservice
 and you have to convert them to {{< product-c8y-iot >}} compatible format.
@@ -83,7 +83,7 @@ both message header and body. The header size varies, but its minimum is 2 bytes
 
 #### Authentication {#authentication}
 
-Authentication types supported by MQTT Connect are:
+Authentication types supported by MQTT Service are:
 
 *   Username and password. The MQTT username must include the tenant ID and username in the format `<tenantID>/<username>`.
 *   Device certificates - not yet supported. This will be added in a future release.
@@ -91,7 +91,7 @@ Authentication types supported by MQTT Connect are:
 #### ClientId {#client-id}
 
 The MQTT ClientId field identifies the connected client. ClientId may consist of up to 128 alphanumeric characters.
-Each client connecting to MQTT Connect must have a unique client identifier, connecting a second client with the same identifier will result in the previous client's disconnection.
+Each client connecting to MQTT Service must have a unique client identifier, connecting a second client with the same identifier will result in the previous client's disconnection.
 
 #### Quality of Service (QoS) {#quality-of-service-qos}
 
@@ -108,11 +108,11 @@ The {{< product-c8y-iot >}} implementation supports two levels of MQTT QoS:
     - Subscribers may receive more than one copy of a message.
 * QoS 2: Exactly once - not supported
 
-For subscriptions, MQTT Connect will deliver all messages in the QoS that the client defined when subscribing to the topic.
+For subscriptions, MQTT Service will deliver all messages in the QoS that the client defined when subscribing to the topic.
 
 #### Clean session {#clean-session}
 
-MQTT Connect requires clean session to be set to "1" (true). We cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
+MQTT Service requires clean session to be set to "1" (true). We cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
 
 #### Retained flag {#retained-flag}
 
@@ -121,11 +121,11 @@ Retained flag is ignored. Publishing data with the retained flag on the topic is
 #### Last will {#last-will}
 
 In MQTT, the "last will" is a message that is specified at connection time and that is executed when the client loses the connection. 
-Last will is fully supported by MQTT Connect and like with any other publish messages you can use any unreserved topic and any payload.
+Last will is fully supported by MQTT Service and like with any other publish messages you can use any unreserved topic and any payload.
 
 ### Return codes {#return-codes}
 
-MQTT Connect follows the MQTT specification for server responses. For example, if invalid credentials are sent in the `CONNECT` message,
+MQTT Service follows the MQTT specification for server responses. For example, if invalid credentials are sent in the `CONNECT` message,
 the server response `CONNACK` message contains the `0x05` return code.
 The return code can be treated similarly to REST API HTTP codes, such as 401.
 
@@ -135,5 +135,5 @@ Support for MQTT 5.0 features will be added in the near future.
 
 ### MQTT TLS certificates {#mqtt-tls-certificates}
 
-MQTT Connect uses the certificates which are assigned to the main environment domain. It always sends these certificates during TLS handshake to devices.
+MQTT Service uses the certificates which are assigned to the main environment domain. It always sends these certificates during TLS handshake to devices.
 Moreover, {{< enterprise-tenant >}}s are not able to customize those certificates via the SSL Management feature.

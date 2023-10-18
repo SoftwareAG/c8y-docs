@@ -3,10 +3,10 @@ weight: 20
 title: Changing visualization
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
-In the data explorer, data points (that is measurements or sensor data) can be visualized.
+In the data explorer, data points (measurements or sensor data) can be visualized.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:

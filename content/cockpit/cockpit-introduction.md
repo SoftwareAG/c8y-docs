@@ -3,7 +3,7 @@ weight: 5
 title: Introduction
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 The Cockpit application provides you with options to manage and monitor IoT assets and data from a business perspective, including visualizing data in dashboards and managing reports.

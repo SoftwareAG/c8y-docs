@@ -3,7 +3,7 @@ weight: 100
 title: Configuring Cockpit applications
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 {{< product-c8y-iot >}} offers you to configure custom Cockpit applications according to your individual needs.
@@ -56,6 +56,6 @@ The initial home dashboard shows a number of pre-installed widgets. These widget
 
 Click **Reset dashboard** to undo any changes to your home dashboard. This reverts all changes to the dashboard and returns it to the initial state.
 
-#### To hide the navigator {#to-hide-the-navigator}
+#### Title, icon and navigator collapse {#title-icon-and-navigator-collapse}
 
-Finally, you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.
+Under the **Title, icon and navigator collapse** section you can modify the application title and icon, and you can specify if the navigator should be hidden on start up. By default, the navigator is displayed on start up.

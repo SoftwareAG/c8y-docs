@@ -4,7 +4,7 @@ title: Node.js microservice
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} provides SDKs for developing microservices using C# or Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/general-aspects/#requirements).
+{{< product-c8y-iot >}} provides an SDK for developing microservices using Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/general-aspects/#requirements).
 
 In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to verify if the microservice is up and running and get some of the environment variables.
 

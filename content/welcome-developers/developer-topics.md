@@ -26,7 +26,7 @@ Check out the following sections if you are looking for step-by-step instruction
 <br><br>
   - [Web SDK](/web/) - Extend applications with your own plugins, add your own applications or implement additional functionality tailored to your use case.
 <br><br>
-  - [Microservice SDK](/microservice-sdk/) - Develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorials for Java and C#.
+  - [Microservice SDK](/microservice-sdk/) - Develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorial for Java.
 
 ### OpenAPI Specification {#openapi-Specification}
 

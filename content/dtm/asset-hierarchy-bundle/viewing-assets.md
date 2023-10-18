@@ -35,7 +35,7 @@ You see a warning message if one or more properties associated with the asset ar
 
 Fields are marked editable by an edit icon.
 To modify any of the asset details, click the edit icon, enter new details and save.<br>
-For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon at the top right corner of the map to enter full screen mode. Use Escape key to exit from the full screen mode.
+For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon at the top right corner of the map to enter full screen mode.
 
 ### To delete an asset {#to-delete-an-asset}
 

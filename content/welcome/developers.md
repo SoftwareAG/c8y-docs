@@ -36,7 +36,7 @@ Check out the following developer guides if you are looking for step-by-step ins
 
 <tr>
 <td align="left"><a href="/microservice-sdk/introduction/">Microservice SDK guide</a></td>
-<td align="left">How to use the Microservice SDK to develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorials for Java and C#.
+<td align="left">How to use the Microservice SDK to develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorial for Java.
 </td>
 </tr>
 

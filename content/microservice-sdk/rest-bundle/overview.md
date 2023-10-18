@@ -12,14 +12,15 @@ REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today 
 
 With this API description you will learn how to use {{< product-c8y-iot >}}'s REST interfaces to develop microservice applications on top of the {{< product-c8y-iot >}} platform.
 
-The description is closely linked to the {{< openapi >}}, which describes each interface in detail. Relevant secions in the {{< openapi >}} are in particular:
+The description is closely linked to the {{< openapi >}}, which describes each interface in detail. Relevant sections in the {{< openapi >}} are in particular:
 
 - [REST implementation](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation) is the reference for all general concepts.
 - [Device management library](/reference/device-management-library/) specifies the data model for device management.
 - [Sensor library](/reference/sensor-library/) specifies the data model for sensors and controls.
 
-If you develop applications using Java or C#, check these relevant sections for even more convenient access to {{< product-c8y-iot >}}'s functionality.
-For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-integration/rest) in *Device integration*.
+If you develop applications using Java, check [Microservice SDK for Java](/microservice-sdk/java/#overview) for even more convenient access to {{< product-c8y-iot >}}'s functionality.
+
+For further information on integrating devices using REST, refer to [Device integration using REST](/device-integration/rest) in *Device integration*.
 
 
 ### Using the REST interfaces

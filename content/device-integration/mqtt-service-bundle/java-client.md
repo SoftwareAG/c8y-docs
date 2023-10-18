@@ -4,25 +4,25 @@ layout: redirect
 title: Java Client
 ---
 
-The MQTT Connect Java Client library provides the classes necessary to interact with MQTT Connect.
+The MQTT Service Java Client library provides the classes necessary to interact with MQTT Service.
 The following operations are supported by the client:
-* Publishing messages to the MQTT Connect via WebSocket protocol.
-* Subscribing to messages from the MQTT Connect via WebSocket protocol
+* Publishing messages to the MQTT Service via WebSocket protocol.
+* Subscribing to messages from the MQTT Service via WebSocket protocol
 
 #### Repositories and dependencies {#repositories-and-dependencies}
 
 Follow the [Microservice SDK](/microservice-sdk/java/#add-repositories-and-dependencies) documentation for guidance on how to configure Maven repositories.
-To include MQTT Connect Java Client into your project, add the following dependency inside the `<dependencies>` node:
+To include MQTT Service Java Client into your project, add the following dependency inside the `<dependencies>` node:
 ```xml
 <dependency>
     <groupId>com.cumulocity.client.mqtt</groupId>
-    <artifactId>mqtt-connect-websocket</artifactId>
+    <artifactId>mqtt-service-websocket</artifactId>
     <version>${c8y.version}</version>
 </dependency>
 ```
 
 #### Example {#example}
-Example of publishing messages to the MQTT Connect via WebSocket:
+Example of publishing messages to the MQTT Service via WebSocket:
 ```java
 // Message to be sent
 final String payload = "Hello World";
@@ -48,7 +48,7 @@ try (final MqttPublisher publisher = client.buildPublisher(config)) {
 }
 ```
 
-Example of subscribing to messages from the MQTT Connect via WebSocket:
+Example of subscribing to messages from the MQTT Service via WebSocket:
 ```java
 // Build MqttConfig with topic and subscriber name
 final MqttConfig config = MqttConfig.webSocket().topic(topic).subscriber(subscriberName).build();

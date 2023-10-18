@@ -10,7 +10,7 @@ Recreating update strategy is an all-or-nothing process that updates all aspects
 
 For this example, assume that {{< product-c8y-iot >}} Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
 
-### Starting the upgrade
+### Starting the upgrade {#starting-the-upgrade}
 
 To upgrade the {{< product-c8y-iot >}} Edge deployment, change the `spec.version` field in the Edge CR file to the appropriate version. For example to `1017.0.1`.
 
@@ -22,6 +22,6 @@ kubectl apply -f c8yedge-sample.yaml
 
 To verify the {{< product-c8y-iot >}} Edge deployment, see [Verifying the Edge installation](/edge-k8s/installing-edge-on-k8/#verifying-the-edge-installation).
 
-### Upgrading Edge remotely
+### Upgrading Edge remotely {#upgrading-edge-remotely}
 
 For information about upgrading {{< product-c8y-iot >}} Edge remotely, see [Upgrading Edge remotely](/edge-k8s/k8-edge-connecting-edge-to-cloud/#k8-edge-upgrading-edge-remotely).

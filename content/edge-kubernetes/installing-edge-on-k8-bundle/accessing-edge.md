@@ -6,7 +6,7 @@ layout: redirect
 
 Before you can access {{< product-c8y-iot >}} Edge, you must first get the external IP address. The Edge Operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the {{< product-c8y-iot >}} Edge through this external IP.
 
-### Assigning an external IP
+### Assigning an external IP {#assigning-an-external-ip}
 
 To get the external IP to access {{< product-c8y-iot >}} Edge, run the command below:
 ```shell
@@ -39,7 +39,7 @@ When manually assigning the external IP, see the following Kubernetes API docume
 
 You can access {{< product-c8y-iot >}} Edge using a domain name in a web browser.
 
-### Accessing Cumulocity IoT Edge using the domain name
+### Accessing Cumulocity IoT Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 
 Access {{< product-c8y-iot >}} Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
@@ -74,7 +74,7 @@ Ping the &#60;domain_name> to verify it.
 
 If the ping is successful, the DNS resolution is working properly.
 
-#### To access Cumulocity IoT Edge
+#### To access Cumulocity IoT Edge {#to-access-cumulocity-iot-edge}
 
 Enter one of the following URLs in the browser:
 * `https://<domain_name>`
@@ -121,12 +121,12 @@ To explicitly log out, click the **User** button at the right of the top bar, th
 The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 {{< /c8y-admon-info >}}
 
-### How to reset your password
+### How to reset your password {#how-to-reset-your-password}
 
 To reset your password, you must first configure the "reset password" template and email server settings in {{< product-c8y-iot >}} Edge. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
 
 For information about resetting the password, see [To change your password](/guides/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 
-### How to access pages using URLs
+### How to access pages using URLs {#how-to-access-pages-using-urls}
 
 For information about accessing pages using the URLs, see [To access pages using URLs](/guides/get-familiar-with-the-ui/platform-access/#to-access-pages-using-urls).

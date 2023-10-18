@@ -13,7 +13,7 @@ kubectl apply -f c8yedge.yaml
 ```
 For more information about the structure and configuration options available in the Edge CR, see the [Edge Custom Resource](/edge-k8s/edge-custom-resource-definition/) section.
 
-### Verifying the Edge installation
+### Verifying the Edge installation {#verifying-the-edge-installation}
 
 To monitor the installation progress, run the command below:
 

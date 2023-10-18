@@ -6,7 +6,7 @@ layout: redirect
 
 For this example, assume that the {{< product-c8y-iot >}} Edge is deployed using the [c8yedge-sample.yaml](/files/edge-k8s/c8yedge-sample.yaml).
 
-### Example configuration change
+### Example configuration change {#example-configuration-change}
 
 Change the `spec.domain` field to `sample.myown.iot.com` and if required update the `spec.licenseKey` accordingly.
 

@@ -15,7 +15,7 @@ layout: redirect
 |TLS/SSL key and TLS/SSL certificate|Optional. Use your internal or an external CA (Certification Authority) to generate these files. Ensure that the TLS/SSL certificate has the complete certificate chain in the right order.<p><p>**Info:** The .crt and .key files must be in the PEM format and the .key file must not be encrypted.|
 |Edge cloud remote access|To connect and manage one (or multiple) {{< product-c8y-iot >}} Edge deployments to your {{< product-c8y-iot >}} cloud tenant, you need an active {{< product-c8y-iot >}} {{< standard-tenant >}} with the Data Broker and Cloud Remote Access extensions.<p><p>**Info:** The {{< product-c8y-iot >}} Edge cloud remote access is an optional feature in {{< product-c8y-iot >}} Edge.|
 
-### Special instructions for K3s
+### Special instructions for K3s {#special-instructions-for-k3s}
 
 To enable the proper functioning of the Edge Operator on K3s, you must install K3s with the following configuration options.
 

@@ -22,7 +22,7 @@ You can uninstall {{< product-c8y-iot >}} Edge either by:
    Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
    {{< /c8y-admon-info >}}
 
-### Uninstalling the Edge Operator
+### Uninstalling the Edge Operator {#uninstalling-the-edge-operator}
 
    Run this command for removing the Edge Operator from your Kubernetes cluster.
 

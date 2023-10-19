@@ -1,4 +1,4 @@
-name: Build and deploy to staging
+name: Build and deploy
 on:
   workflow_dispatch:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 defaults:
   run:
@@ -24,10 +24,16 @@ jobs:
   build:
     name: Build Hugo
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ matrix.env }}
+      cancel-in-progress: false
+    strategy:
+      matrix:
+        env: [staging-resources,prod]
     env:
       HUGO_VERSION: 0.100.1
     environment:
-        name: staging-resources
+        name: ${{ matrix.env }}
     steps:
     - name: Install Hugo CLI
       run: |

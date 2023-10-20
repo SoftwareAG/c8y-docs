@@ -8,8 +8,8 @@ Angular 15 is supported from version `1018.157.0`. The following configuration c
 
 - Update all `@angular/*` dependencies to `15.2.7`.
 - Update `TypeScript` to version `4.9.5`.
-- Follow the `Angular 15` upgrade guide: [Updating to version 14](https://update.angular.io/?l=3&v=14.0-15.0).
-- Use Node version `14.20.x`.
+- Follow the `Angular 15` upgrade guide: [Updating to version 15](https://update.angular.io/?l=3&v=14.0-15.0).
+- Use Node version `^14.20.0 || ^16.13.0 || ^18.10.0`.
 - Delete `node_modules` and reinstall them.
 
 {{< c8y-admon-info >}}

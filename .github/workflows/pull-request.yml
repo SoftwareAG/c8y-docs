@@ -57,7 +57,8 @@ jobs:
         HUGO_ENV: production
       run: |
         hugo \
-          --baseURL "${{ env.BASEURL }}/"
+          --baseURL "/" \
+          --relativeURLs
 
     - uses: actions/setup-node@v3
       with:

@@ -12,6 +12,26 @@ Angular 15 is supported from version `1018.157.0`. The following configuration c
 - Use Node version `^14.20.0 || ^16.13.0 || ^18.10.0`.
 - Delete `node_modules` and reinstall them.
 
+- Token hooks were deprecated and replaced by function hooks. Check the table below to see to which function hooks the token hooks have been migrated.
+
+Deprecated HOOK Tokens and Their Replacements
+| Deprecated Token    | Replaced By       |
+|---------------------|-------------------|
+| `HOOK_TABS`         | `hookTab`         |
+| `HOOK_NAVIGATOR_NODES` | `hookNavigator` |
+| `HOOK_ACTION`       | `hookAction`      |
+| `HOOK_BREADCRUMB`   | `hookBreadcrumb`  |
+| `HOOK_SEARCH`       | `hookSearch`      |
+| `HOOK_ONCE_ROUTE`   | `hookRoute`       |
+| `HOOK_COMPONENTS`   | `hookComponent`   |
+| `HOOK_WIZARD`       | `hookWizard`      |
+| `HOOK_STEPPER`      | `hookStepper`     |
+
+{{< c8y-admon-info >}}
+For more information on multi provider, go to this section: [Multi provider (MP)](/web/libraries/#multi-provider-mp)
+{{< /c8y-admon-info >}}
+
+
 {{< c8y-admon-info >}}
 AOT (Ahead-of-time compilation) is not yet supported.
 {{< /c8y-admon-info >}}

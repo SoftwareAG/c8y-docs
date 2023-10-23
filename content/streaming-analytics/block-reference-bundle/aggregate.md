@@ -76,7 +76,7 @@ See also the "Value types" topic in the Analytics Builder documentation for more
 <p></p>
 If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.
 <p></p>
-Note:The Average (Mean) block generates the mean for an individual device. If the input comes from a group of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
+Note: The Average (Mean) block generates the mean for an individual device. If the input comes from a range of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
 #### Parameters {#average-mean-parameters}

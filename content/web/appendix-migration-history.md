@@ -3,7 +3,7 @@ title: "Appendix: Migration history"
 layout: bundle
 weight: 80
 section:
-  - app_development
+  - app_enablement
 ---
 
 As the web ecosystem evolves, we as a platform evolve with it - while assuring to keep upgrade paths as smooth as possible and keep extensions working properly with very little changes.

@@ -10,6 +10,7 @@ section:
 audience:
   - Users
   - Developers
+  - Business
 aliases:
   - "/apama/introduction"
   - "/analytics/overview"

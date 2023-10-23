@@ -9,8 +9,6 @@ section:
 audience:
   - Users
   - Developers
-  - Business
-  - Administrators
 weight: 40
 ---
 

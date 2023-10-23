@@ -72,7 +72,7 @@ Duplicating an application might be useful if you want to customize a subscribed
 1. Click **Add application** at the top right of the **Applications** tab.
 2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list, for example "Cockpit".
-4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.
+4. In the next window, provide a name for the application, an application key to identify the application, and a path as part of the URL to invoke the application.  Finally select an icon for the new application from the available icons. Per default, the values of the original application are provided, extended by a number. If you set the path to the path of the original subscribed application, your own application will overrule the subscribed application.
     {{< c8y-admon-info >}}
 The platform restricts the use of the prefix "feature-" in the **Name** field. You cannot create applications using this prefix in the application name. This also applies to existing applications in cases where the duplicate application feature is used.
     {{< /c8y-admon-info >}}

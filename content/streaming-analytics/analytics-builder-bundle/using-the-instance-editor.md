@@ -54,7 +54,7 @@ The instance editor table provides different types of input controls, depending 
 -   Text boxes are provided in which you can enter values, depending on the setting of the template parameter \(for example, a string or a float or a multi-line string\). Your input is validated as you type. For example, it is not possible to enter a string value in a text box that expects a float value.
 -   Check boxes are provided for boolean values. Selecting a check box corresponds to setting the value to `true`.
 -   Drop-down list boxes are provided when you can select a different value \(for example, to select a different rule for rounding\).
--   When you edit a device, group or asset, an additional dialog box appears. The dialog box is the same as when selecting a different device, group or asset in the block parameter editor \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box\). Click the button which is shown when you hover over an entry to select the device, group or asset that you want to use.
+-   When you edit an input source or output destination, an additional dialog box appears. The dialog box is the same as when selecting a different input source or output destination in the block parameter editor \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box\). Click the button which is shown when you hover over an entry to select the input source or output destination that you want to use.
 
 Instances \(rows\) that have been edited but have not yet been saved are shown with a background color until they have been saved.
 

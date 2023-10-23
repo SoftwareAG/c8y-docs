@@ -11,7 +11,7 @@ You can deploy a model in simulation mode to run it against historical input dat
 You use the model manager to deploy a model in simulation mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more details.
 
 {{< c8y-admon-info>}}
-Simulation mode is only permitted for models using specific devices. If you wish to simulate a model using a group of devices, then use the model editor to modify it to apply to a single device within the group, and then activate the model in simulation mode.
+Simulation mode is only permitted for models using specific devices. If you wish to simulate a model using a range of devices, then use the model editor to modify it to apply to a single device within the range, and then activate the model in simulation mode.
 {{< /c8y-admon-info>}}
 
 When a model is deployed in simulation mode, it uses data from a virtual device \(see also [Virtual devices](/streaming-analytics/analytics-builder/#virtual-devices)\). Thus, a simulated model can run alongside other non-simulated models without interfering with them.

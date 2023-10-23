@@ -35,8 +35,3 @@ For more information on multi provider, go to this section: [Multi provider (MP)
 {{< c8y-admon-info >}}
 AOT (Ahead-of-time compilation) is not yet supported.
 {{< /c8y-admon-info >}}
-
-
-{{< c8y-admon-info >}}
-If you use Visual Studio Code, make sure that in the Angular Language Service Plugin the option "Use legacy View Engine language service" is not selected.
-{{< /c8y-admon-info >}}

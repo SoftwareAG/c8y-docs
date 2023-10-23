@@ -2,9 +2,13 @@
 <html lang="en">
   {{- partial "head.html" . -}}
   <body data-spy="scroll" data-target="#main-nav" {{if .IsHome }} class="isHome" {{end}}>
+    <script type="text/javascript">
+      const docsPreview = {{.Site.Params.docsPreview}};
+    </script>
     {{- partial "header.html" . -}}
     {{- partial "to-the-top.html" . -}}
     
     {{- block "main" . }}{{- end }}
+
   </body>
 </html>

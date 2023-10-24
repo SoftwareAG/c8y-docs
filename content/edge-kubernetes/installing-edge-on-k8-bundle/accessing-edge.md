@@ -95,7 +95,7 @@ If you are logging in for the first time, you will see a cookie banner at the bo
 ![Login prompt](/images/users-guide/getting-started/getting-started-cookie-banner.png)
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/users-guide/enterprise-tenant/#branding).
+The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -106,12 +106,12 @@ The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge in
 * Click **See also our Privacy Notice** to open the [{{< company-sag >}} privacy statement]({{< link-sag-privacy-statement >}}) with details on the {{< company-sag >}} privacy policy.
 
 {{< c8y-admon-info >}}
-If you have enabled functional cookies you can opt out of the product experience tracking later on via the **User settings** dialog, see [User options and settings](/users-guide/getting-started/#user-settings).
+If you have enabled functional cookies you can opt out of the product experience tracking later on via the **User settings** dialog, see [User options and settings](/get-familiar-with-the-ui/user-settings/).
 {{< /c8y-admon-info >}}
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is especially convenient if you frequently switch between {{< product-c8y-iot >}} applications, as {{< product-c8y-iot >}} Edge requests you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/users-guide/cockpit) application (if not configured differently).
+Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
@@ -123,10 +123,10 @@ The maximum number of failed logins (due to invalid credentials), after which a 
 
 ### How to reset your password {#how-to-reset-your-password}
 
-To reset your password, you must first configure the "reset password" template and email server settings in {{< product-c8y-iot >}} Edge. For information about configuring the email server, see [Configuring the email server](/edge/configuration/#configuring-email-server).  
+To reset your password, you must first configure the "reset password" template and email server settings in {{< product-c8y-iot >}} Edge. For information about configuring the email server, see [Configuring the email server](/edge/edge-configuration/#configuring-email-server).  
 
-For information about resetting the password, see [To change your password](/guides/get-familiar-with-the-ui/user-settings/#to-change-your-password).
+For information about resetting the password, see [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password).
 
 ### How to access pages using URLs {#how-to-access-pages-using-urls}
 
-For information about accessing pages using the URLs, see [To access pages using URLs](/guides/get-familiar-with-the-ui/platform-access/#to-access-pages-using-urls).
+For information about accessing pages using the URLs, see [URL](/get-familiar-with-the-ui/platform-access/#url).

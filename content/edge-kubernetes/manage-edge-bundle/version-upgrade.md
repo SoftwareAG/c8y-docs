@@ -20,8 +20,8 @@ Save the file and use the command below to apply the changes:
 kubectl apply -f c8yedge-sample.yaml
 ```
 
-To verify the {{< product-c8y-iot >}} Edge deployment, see [Verifying the Edge installation](/edge-k8s/installing-edge-on-k8/#verifying-the-edge-installation).
+To verify the {{< product-c8y-iot >}} Edge deployment, see [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation).
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
-For information about upgrading {{< product-c8y-iot >}} Edge remotely, see [Upgrading Edge remotely](/edge-k8s/k8-edge-connecting-edge-to-cloud/#k8-edge-upgrading-edge-remotely).
+For information about upgrading {{< product-c8y-iot >}} Edge remotely, see [Upgrading Edge remotely](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/#k8-edge-upgrading-edge-remotely).

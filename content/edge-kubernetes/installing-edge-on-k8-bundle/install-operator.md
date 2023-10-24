@@ -4,7 +4,7 @@ title: Installing the Edge Operator
 layout: redirect
 ---
 
-A Helm chart is available for installing the Edge Operator. To begin, create a new single-node Kubernetes cluster with the Kubernetes distribution of your choice, and configure `kubectl` to use that cluster. See [Prerequisites](/edge-k8s/installing-edge-on-k8/#prerequisites) for the supported Kubernetes distributions and versions.
+A Helm chart is available for installing the Edge Operator. To begin, create a new single-node Kubernetes cluster with the Kubernetes distribution of your choice, and configure `kubectl` to use that cluster. See [Prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) for the supported Kubernetes distributions and versions.
 
 {{< product-c8y-iot >}} Edge provides a script to install the Edge Operator. This script is located at [c8yedge-operator-install.sh](/files/edge-k8s/c8yedge-operator-install.sh).
 

@@ -5,10 +5,7 @@ type: root
 layout: redirect
 external: ""
 audience:
-  - Developers
   - Users
-  - Business
-bundle: app_enablement
 section:
 - app_enablement
 weight: 90

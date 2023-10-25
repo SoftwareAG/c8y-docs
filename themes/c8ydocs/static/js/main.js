@@ -4,6 +4,22 @@ var main = (function ($) {
     // apply Highlight js
     hljs.initHighlightingOnLoad();
 
+
+    if (docsPreview) {
+      let elem;
+      if ($('body > main > .breadcrumbs-container').length) {
+        elem = 'body > main > .breadcrumbs-container';
+      } else {
+        elem = 'body > main > .home-top';
+      }
+      $('<div/>', {
+        id: 'preview-banner',
+        class: 'admonition preview'
+      }).insertAfter(elem);
+      $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
+      $('<span>This is a preview of the documentation for the Cumulocity IoT '+ docsPreview +' release that will soon be publicly available.</span>').appendTo('#preview-banner');
+   }
+
     //Toggle side navigation
     $('.sidebar-toggle').click(function () {
       $('body').toggleClass('open');

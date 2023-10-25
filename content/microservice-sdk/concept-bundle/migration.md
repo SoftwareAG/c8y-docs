@@ -29,7 +29,7 @@ However, for microservices which currently make use of specific privileges of th
 
 Set the API Version field in the microservice manifest to 2 and deploy this service to your {{< company-c8y >}} test environment.
 This environment must be in version 10.15 or higher.
-Verify that the functionality provided by the miroservice still works as expected.
+Verify that the functionality provided by the microservice still works as expected.
 
 #### Microservices still using old user privileges after the environment upgrade
 

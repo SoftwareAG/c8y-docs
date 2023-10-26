@@ -64,6 +64,60 @@ public PagedEventCollectionRepresentation get10Events () {
 }
 ```
 
+By default autowiring will use tenant scoped beans:
+
+```java
+@Autowired
+private EventApi eventApi;
+```
+
+This will inject bean that is in `@TenantScope` and will use service user credentials.
+
+We can inject `@UserScope` version of this Api using `@Qualifier("userEventApi")` each Api bean has name composing of `user` and name of the api in this case `EventApi` in code it will be:
+
+```java
+@Autowired
+@Qualifier("userEventApi")
+private EventApi eventApi;
+```
+
+Scope of the bean can be overridden by using ContextService for user `ContextService<UserCredentials>` and for tenant `ContextService<MicroserviceCredentials`. By using those ContextServices we can use service user credentials like in `@TenantScope` bean with user credentials or use service user credentials in `@UserScope`, for example:
+
+```java
+@Autowired
+private PlatformProperties platformProperties;
+@Autowired
+private ContextService<UserCredentials> contextService;
+@Autowired
+private EventApi eventApi;
+
+public PagedEventCollectionRepresentation get10Events () {
+    return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+}
+```
+
+This function will get events using current user credentials.
+
+In the next example we have two methods. First one will use user credentials to call `EventApi`. Second uses service user credentials.
+
+```java
+@Autowired
+private PlatformProperties platformProperties;
+@Autowired
+private ContextService<MicroserviceCredentials> contextService;
+@Autowired
+@Qualifier("userEventApi")
+private EventApi eventApi;
+
+public PagedEventCollectionRepresentation get10UserEvents () {
+    return eventApi.getEvents().get(10);
+}
+
+public PagedEventCollectionRepresentation get10ServiceUserEvents () {
+    return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+}
+```
+
 ### Microservice security {#microservice-security}
 
 The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.

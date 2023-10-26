@@ -222,7 +222,7 @@ To import asset models, follow the steps below:
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant.
 3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
 4. Click **Import** to import the asset models.
-5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
+5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the remove icon to remove the current file and upload a different one.
 6. The newly imported asset models are listed on the **Asset models** page.
 
 ![Import asset models](/images/dtm/asset-type/dtm-asset-type-import.png)

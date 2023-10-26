@@ -3,7 +3,7 @@ weight: 20
 title: Working with assets
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 ### To navigate assets {#to-navigate-assets}

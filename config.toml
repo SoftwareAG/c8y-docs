@@ -38,6 +38,8 @@ relativeURLs = true
   description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. It reflects the latest state of the cloud deployment(s) of the var-product-c8y-iot platform and is continuously updated to align with recent software updates."
   
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
+
+  docsPreview = false
   
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true

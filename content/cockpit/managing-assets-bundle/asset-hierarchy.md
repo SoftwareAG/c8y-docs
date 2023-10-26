@@ -3,7 +3,7 @@ weight: 10
 title: Asset hierarchy
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 helpcontent:
   - label: managing-assets
     title: Managing assets

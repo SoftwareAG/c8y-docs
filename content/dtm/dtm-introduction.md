@@ -5,7 +5,7 @@ outputs:
   - html
   - json
 section:
-  - app_development
+  - app_enablement
 weight: 10
 helpcontent:
 - label: dtm-introduction

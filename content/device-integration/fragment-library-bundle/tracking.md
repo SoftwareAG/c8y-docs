@@ -2,7 +2,7 @@
 weight: 180
 title: Tracking
 layout: bundle
-section: 
+section:
   - device_management
 ---
 
@@ -18,9 +18,9 @@ POST /event/events
 ```json
 {
     "c8y_Position": {
-    	"alt": 67,
-      "lng": 6.95173,
-      "lat": 51.151977
+       "alt": 67,
+       "lng": 6.95173,
+       "lat": 51.151977
     },
     "time":"2013-06-22T17:03:14.000+02:00",
     "source": {

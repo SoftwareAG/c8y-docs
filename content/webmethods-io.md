@@ -5,7 +5,7 @@ type: root
 layout: redirect
 bundle: webmethods-io
 section:
-  - app_development
+  - app_enablement
 weight: 110
 ---
 

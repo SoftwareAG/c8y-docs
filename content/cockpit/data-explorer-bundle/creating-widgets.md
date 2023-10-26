@@ -3,7 +3,7 @@ weight: 30
 title: Creating widgets
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 

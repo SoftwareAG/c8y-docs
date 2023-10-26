@@ -3,7 +3,7 @@ weight: 10
 title: Widgets in dashboards and reports
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 ---
 
 Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.

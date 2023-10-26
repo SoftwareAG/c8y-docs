@@ -65,63 +65,65 @@ A good example to use this concept is the `c8y-action-bar-item` which uses a `ro
 The above example gives you an action bar item in the header bar, regardless in which component you define it. If the component is initialized the item is shown and it is removed on destroy.
 
 #### Multi Provider (MP) {#multi-provider-mp}
-The Multi Provider extension allows a declarative approach to extend the application. Instead of defining it in the template, you extend an already defined factory via a `HOOK`. This hook gets executed if the application state changes. The return values are then injected into the page. You can use the normal dependency injection system of Angular and as a result you can usually return an Observable, Promise or Array of a certain type. As an example we can define the tabs of certain routes by hooking into the `HOOK_TABS` provider:
+The Multi Provider extension offers a declarative way to extend your application. Instead of defining extensions in the template, you can augment an existing factory using a `HOOK`. This hook is triggered whenever the application state changes, and its return values are subsequently injected into the page. You can leverage Angular's standard dependency injection system, allowing you to commonly return an Observable, Promise, or Array of a specific type. For instance, you can define the tabs for certain routes by utilizing the hookTab provider:
 
 ```js
-   import { Injectable } from '@angular/core';
-   import { Router } from '@angular/router';
-   import { Tab, TabFactory, _ } from '@c8y/ngx-components';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Tab, TabFactory, _ } from '@c8y/ngx-components';
 
-   @Injectable()
-   export class ExampleTabFactory implements TabFactory { // 1
+@Injectable({ providedIn: 'root' })
+export class ExampleTabFactory implements TabFactory { // 1
 
-     constructor(public router: Router) { }
+  constructor(public router: Router) { }
 
-     get() {
-       const tabs: Tab[] = [];
-       if (this.router.url.match(/world/g)) {            // 2
-         tabs.push({
-           path: 'world/awesome',
-           label: 'Awesome',
-           icon: 'angellist'
-         } as Tab);
-       }
-       return tabs;                                      // 3
-     }
-   }
+  get() {
+    const tabs: Tab[] = [];
+    if (this.router.url.match(/world/g)) {            // 2
+      tabs.push({
+        path: 'world/awesome',
+        label: 'Awesome',
+        icon: 'angellist'
+      } as Tab);
+    }
+    return tabs;                                      // 3
+  }
+}
 ```
 
-By defining a `Injectable()` services which implements the `TabFactory` (1) you can define which tabs you want to show on which page. By using the `Router` service of Angular we check in this example if the URL of the route contains the name **world** (2) and only if this matches the tab labeled `Awesome` is returned (3). By hooking this into your provider definition of your module you make sure, that the `get()` function is checked on each route change:
+By defining a service with the `Injectable()` decorator that implements the `TabFactory` interface (1), you can specify which tabs should be displayed on each page. In this example, we use Angular's Router service to check if the route URL contains the word **world** (2). If it does, the tab labeled `Awesome` is returned (3). By incorporating this into your module's provider definition, you ensure that the `get()` function is invoked during each route change:
 
 ```js
-    @NgModule({
-      declarations: [
-        /* ... */
-      ],
-      imports: [
-        BrowserAnimationsModule,
-        RouterModule.forRoot(),
-        ngRouterModule.forRoot([/* ... */], { enableTracing: false, useHash: true }),
-        CoreModule.forRoot()
-      ],
-      providers: [
-        { provide: HOOK_TABS, useClass: ExampleTabFactory, multi: true} // hook the ExampleTabFactory defined earlier
-      ],
-      bootstrap: [BootstrapComponent]
-    })
-    export class AppModule { }
+@NgModule({
+  declarations: [
+    /* ... */
+  ],
+  imports: [
+    BrowserAnimationsModule,
+    RouterModule.forRoot(),
+    ngRouterModule.forRoot([/* ... */], { enableTracing: false, useHash: true }),
+    CoreModule.forRoot()
+  ],
+  providers: [
+    hookTab(ExampleTabFactory) // hook the ExampleTabFactory defined earlier
+  ],
+  bootstrap: [BootstrapComponent]
+})
+export class AppModule { }
 ```
 
-Usually you use Content Projection within a route and Multi Provider if the context is shared across multiple routes or needs more complex logic to resolve the content. Examples: a title is just valid for one route -> use Content Projection. A tab should only be shown on specific routes under certain conditions -> use Multi Provider. The following hooks are currently supported:
+Typically, you use Content Projection within a single route and Multi Provider when the context is shared across multiple routes or requires more complex logic to resolve the content. For example, if a title is valid only for one route, use Content Projection. On the other hand, if a tab should be displayed only on specific routes and under certain conditions, use Multi Provider. The following hooks are currently supported:
 
-   * `HOOK_TABS`: Allows to show tabs on certain conditions.
-   * `HOOK_NAVIGATOR_NODES`: Enables navigator nodes to be shown.
-   * `HOOK_ACTION`: Enables to define the global actions which should be shown or enabled on certain conditions.
-   * `HOOK_BREADCRUMB`: Can be used to show breadcrumbs in the header bar.
-   * `HOOK_SEARCH`: Allows to define the search to be shown or not.
-   * `HOOK_ONCE_ROUTE`: Allows to define a route. Use this if you want to use a context route, for example, add a new tab to the device details view. For all other routes you should use the default Angular router.
-   * `HOOK_COMPONENTS`: Allows to define a dynamic component to display any kind of component dynamically by referencing its id. To use the component you can use the `c8y-dynamic-component`. The most common use case is registration of dashboard widgets.
-
+* `hookTab`: Allows to show tabs on certain conditions.
+* `hookNavigator`: Enables navigator nodes to be shown.
+* `hookAction`: Enables to define the global actions which should be shown or enabled on certain conditions.
+* `hookActionBar`: Enables to define local actions on a page.
+* `hookBreadcrumb`: Can be used to show breadcrumbs in the header bar.
+* `hookSearch`: Allows to define the search to be shown or not.
+* `hookComponent`: A hook to add dynamic components to the UI (e.g. widgets).
+* `hookRoute`: A hook to add a new route.
+* `hookWizard`: A hook to add a entry into a existing wizard.
+* `hookStepper`: A hook to add a step into a existing stepper.
 #### Services {#services}
 
 A service is defined for most components of ngx-components. They can be used via the dependency injection concept of Angular, that means that these services can be injected in the constructor of a component and then add or remove certain UI elements. The following example shows how to use that concept with an alert:

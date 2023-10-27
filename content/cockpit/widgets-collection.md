@@ -303,7 +303,11 @@ Click a device icon, to open a popup with the following information:
 
 **Parameters to configure**
 
-Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+* Marker icon: Icon of the marker on the map.
+* Zoom level: Default zoom level of the map.
+* Center bound: The default map coordinates.
+* Refresh interval: The refresh interval for the selected device or asset.
 
 {{< c8y-admon-info >}}
 If none of the target device(s) has a known location, then the widget shows a world map without icons.

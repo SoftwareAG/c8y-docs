@@ -24,6 +24,8 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device management application.
 
+* **Custom assets**: Objects defined by an asset model and created in the [Digital twin manager](/dtm/dtm-introduction/).
+
 * **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device management application. For details on connecting devices refer to [Registering devices](/device-management-application/registering-devices/).
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
@@ -79,3 +81,5 @@ The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy.
 If you manage trucks within the {{< product-c8y-iot >}} platform, then each truck is represented via its individual tracking device communicating with {{< product-c8y-iot >}}.
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the {{< product-c8y-iot >}} platform.
+
+If more properties and better visualization of business assets is needed, we propose to use the [Digital twin manager](/dtm/dtm-introduction/). A custom asset created via digital twin manager is also shown in the Cockpit application. It uses the chosen icon and additionally shows all the properties in a list next to the sub-assets. Those properties can be edited if the user has the inventory write permission.

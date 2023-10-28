@@ -33,5 +33,5 @@ For more information on multi provider, go to this section: [Multi provider (MP)
 
 
 {{< c8y-admon-info >}}
-AOT (Ahead-of-time compilation) is not yet supported.
+At this point, AOT (Ahead-of-time compilation) is not yet supported.
 {{< /c8y-admon-info >}}

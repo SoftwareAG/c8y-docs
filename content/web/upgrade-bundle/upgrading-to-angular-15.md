@@ -28,7 +28,7 @@ Deprecated HOOK Tokens and Their Replacements
 | `HOOK_STEPPER`      | `hookStepper`     |
 
 {{< c8y-admon-info >}}
-For more information on multi provider, go to this section: [Multi provider (MP)](/web/libraries/#multi-provider-mp)
+For more information on the multi provider, see [Multi provider (MP)](/web/libraries/#multi-provider-mp).
 {{< /c8y-admon-info >}}
 
 

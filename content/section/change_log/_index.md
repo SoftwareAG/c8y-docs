@@ -1,5 +1,5 @@
 ---
-title: "Change log"
+title: "Change logs"
 icon: "dlt-c8y-icon-logs"
 weight: 5
 svg: '<svg

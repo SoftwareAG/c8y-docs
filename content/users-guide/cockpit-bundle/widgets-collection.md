@@ -458,7 +458,7 @@ Click a device icon, to open a popup with the following information:
 * Marker icon: Icon of the marker on the map.
 * Zoom level: Default zoom level of the map.
 * Center bound: The default map coordinates.
-* Refresh interval: The refresh interval for the selected device or asset.
+* Refresh interval: The refresh interval for the selected device or asset. If only one device is selected, instead of refresh interval, realtime option can be selected together with "follow selected" device toggle which would follow the device after location update.
 
 {{< c8y-admon-info >}}
 If none of the target device(s) has a known location, then the widget shows a world map without icons.

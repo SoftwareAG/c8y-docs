@@ -17,7 +17,7 @@ The **Select external IDs** step lists the external IDs assigned to the replacem
 Before proceeding with the actual replacement, you must confirm this action. Click **Replace** in the **Replace device** dialog.
 
 {{< c8y-admon-important >}}
-The replacement process will remove the selected replacement device from the {{< product-c8y-iot >}} database including all its generated data.
+The replacement process removes the replacement device from the {{< product-c8y-iot >}} database including all the data generated for it so far.
 {{< /c8y-admon-important >}}
 
 The **Replace** step displays the progress of the replacement process and the result of every step executed.

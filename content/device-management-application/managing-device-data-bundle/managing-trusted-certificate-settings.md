@@ -44,15 +44,15 @@ Certificate revocation is an irreversible process.
 #### To enable online revocation {#to-enable-online-revocation}
 
 1. Click **CRL check** in the upper right corner of the screen.
-2. Enable **Online** option.
+2. Enable the **Online** option.
 
 ![CRl Details](/images/users-guide/DeviceManagement/devmgmt-crl-option-check.png)
 
-#### To enable offline revocation
+#### To enable offline revocation {#to-enable-offline-revocation}
 
-1. Click **CRL check** in the upper right corner of the screen.
+1. Click **CRL check** in the upper right corn#### To enable offline revocationer of the screen.
 2. Check the **Offline** checkbox.
-3. To add revoked certificate serial numbers manually, enter the serial number and date in **Revoked certificates list**
+3. To add revoked certificate serial numbers manually, enter the serial number and date in the **Revoked certificates list**
    panel.
 
    Use the `+` button to add new entries in the format below:

@@ -1,6 +1,6 @@
 ---
 title: Cumulocity IoT Styleguide
-icon: "dlt-c8y-icon-thin-client"
+icon: "dlt-c8y-icon-programming"
 type: root
 layout: redirect
 external: "https://styleguide.cumulocity.com/#/"

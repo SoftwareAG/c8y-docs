@@ -69,7 +69,7 @@ If the block parameter editor is not shown (for example, because you clicked an 
 3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
 
     {{< c8y-admon-info>}}
-By default, an input block is listening to all devices, that is, the **All Devices** option is set. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
+By default, an input block is listening to all input sources, that is, the **All Inputs** option is set. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
     {{< /c8y-admon-info>}}
 
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
@@ -103,7 +103,7 @@ If you need detailed information on the currently selected block, view the block
 3.  As the output destination, select the same device as for your input block.
 
     {{< c8y-admon-info>}}
-If you have kept the default option of **All Devices** for the input block, you must set the output destination to **Trigger Device**. However, these first steps assume that you are using a single device, so you must select the same device as for your input block.
+If you have kept the default option of **All Inputs** for the input block, you must set the output destination to **Trigger Device**. However, these first steps assume that you are using a single device, so you must select the same device as for your input block.
     {{< /c8y-admon-info>}}
 
 4.  Specify "apama\_Average" as the fragment name.

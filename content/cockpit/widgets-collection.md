@@ -135,13 +135,6 @@ The easiest way to create a "Data point graph" widget is to navigate to the data
 
 Refer to [Changing visualization](/cockpit/data-explorer/#changing-visualization) for further details on the parameters to be configured.
 
-At the top right of the data point graph, an **Auto scroll** toggle determines the display behavior:
-
-* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
-* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
-
-![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
-
 ### Data point list {#data-point-list}
 
 The "Data point list" widget shows data points (measurements), one in each row, with current values and data point properties.
@@ -184,6 +177,13 @@ The "Data point table" widget displays data based on selected data points, time 
 Out of range values, based on configured yellow and red ranges, are highlighted in the table.
 
 ![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
+
+At the top right of the data point list, an **Auto scroll** toggle determines the display behavior:
+
+* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
+* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
+
+![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
 
 ### Event list {#event-list}
 
@@ -303,7 +303,11 @@ Click a device icon, to open a popup with the following information:
 
 **Parameters to configure**
 
-Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
+* Marker icon: Icon of the marker on the map.
+* Zoom level: Default zoom level of the map.
+* Center bound: The default map coordinates.
+* Refresh interval: The refresh interval for the selected device or asset. If only one device is selected, instead of refresh interval, realtime option can be selected together with "follow selected" device toggle which would follow the device after location update.
 
 {{< c8y-admon-info >}}
 If none of the target device(s) has a known location, then the widget shows a world map without icons.

@@ -12,7 +12,7 @@ Angular 15 is supported from version `1018.157.0`. The following configuration c
 - Use Node version `^14.20.0 || ^16.13.0 || ^18.10.0`.
 - Delete `node_modules` and reinstall them.
 
-- Token hooks were deprecated and replaced by function hooks. Check the table below to see to which function hooks the token hooks have been migrated.
+- Token hooks were deprecated and replaced by function hooks. Check the table below to see to which function hooks the token hooks have been migrated to.
 
 Deprecated HOOK Tokens and Their Replacements
 | Deprecated Token    | Replaced By       |

@@ -120,7 +120,7 @@ export class SetupStep1Component {
     this.pending = true;
     try {
       const newConfig = { ...this.setup.data$.value, ...this.config };
-      await this.appState.updateApplicationConfig(newConfig);
+      await this.appState.updateCurrentApplicationConfig(newConfig);
       this.setup.stepCompleted(this.stepper.selectedIndex);
       this.setup.data$.next(newConfig);
       this.stepper.next();

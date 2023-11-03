@@ -48,13 +48,13 @@ Permissions are grouped into the following categories:
 Add a permission to the role by clicking the plus icon next to the desired category.
 
 In the **Type** field, specify a type to further restrict the type of data that this permission applies to. Access will be only granted to objects that contain
-only the specified **Type**. If the selected object contains more fragment types than those defined in the inventory roles configuration, in order to display it, they also need to be added to the inventory role configuration.
+only the specified **Type**. If the selected object contains more fragment types than those defined in the inventory roles configuration, in order to display it, they also must be added to the inventory role configuration.
 
-For example, assume that your device sends measurements related to device management, such as "c8y&#95;SignalStrength" but measurement itself also has "c8y&#95;Temperature" in which we are not interested. You want a user to only see the device management measurements. In the default configuration for measurement, we must provide all types of fragments that measurement has i.e "c8y&#95;SignalStrength" and "c8y&#95;Temperature".
-Note that if a measurements also contains other fragments types, they also must be added in the inventory role configuration, otherwise, such measurements will not be returned because they contain fields to which the user has not been granted access.
+For example, assume that your device sends measurements related to device management, such as "c8y_SignalStrength" but the measurement itself also has "c8y_Temperature" which you are not interested in. You want a user to only see the device management measurements. In the default configuration for the measurement, provide all types of fragments that the measurement has, that is, "c8y_SignalStrength" and "c8y_Temperature".
+Note that if a measurement also contains other fragments types, they must also be added in the inventory role configuration. Otherwise such measurements are not returned because they contain fields to which the user has not been granted access.
 
-From version 10.17, an additional configuration was created for measurements (other categories remain unchanged). After setting the "acl.measurement.only-accessible-fragments" parameter to true, in order to have access to a single measurement parameter, we do not have to grant access to all fragments types that the measurement has. After switching the flag, only measurements that have a defined set of types will be returned, and additional type not listed in the inventory role configuration is removed from the returned measurements.
-This will allow the user to see measurements that contain only defined types e.g. "c8y&#95;SignalStrength" without the additional need to configure other types of fragments that the measurement has.
+With version 10.17 an additional configuration was created for measurements (other categories remain unchanged). After setting the "acl.measurement.only-accessible-fragments" parameter to true, in order to have access to a single measurement parameter, you do not have to grant access to all fragments types that the measurement has. Only measurements that have a defined set of types are returned, and additional types not listed in the inventory role configuration are removed from the returned measurements.
+This allows the user to see measurements that contain only the defined types, for example, "c8y_SignalStrength", without the additional need to configure other types of fragments that the measurement has.
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 

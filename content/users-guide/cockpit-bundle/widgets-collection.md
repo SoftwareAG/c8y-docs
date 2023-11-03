@@ -390,6 +390,10 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 
 	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
+	* {{devices[*deviceId*].name}}: The name of the device at the specified index.
+
+	* {{devices[*deviceId*].*property*}}: More general form of the above. You can address any property of the device at the specified index.
+
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 

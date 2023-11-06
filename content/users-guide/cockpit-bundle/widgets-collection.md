@@ -267,13 +267,6 @@ The easiest way to create a "Data point graph" widget is to navigate to the data
 
 Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
 
-At the top right of the data point graph, an **Auto scroll** toggle determines the display behavior:
-
-* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
-* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
-
-![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
-
 <a name="data-list"></a>
 ### Data point list
 
@@ -318,6 +311,13 @@ The "Data point table" widget displays data based on selected data points, time 
 Out of range values, based on configured yellow and red ranges, are highlighted in the table.
 
 ![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
+
+At the top right of the data point list, an **Auto scroll** toggle determines the display behavior:
+
+* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
+* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
+
+![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
 
 <a name="event-list"></a>
 ### Event list
@@ -385,6 +385,10 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 	* {{device.c8y_Hardware.model}}: The model of the device.
 
 	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
+
+	* {{devices[*deviceId*].name}}: The name of the device at the specified index.
+
+	* {{devices[*deviceId*].*property*}}: More general form of the above. You can address any property of the device at the specified index.
 
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or "Asset table" widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.

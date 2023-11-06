@@ -150,7 +150,7 @@ For the input and output blocks, you can globally replace the input sources and 
 
     | Button name | Shown for | Description |
     | ----------- | --------- | ----------- |
-    | **Select** | **All Devices** option for input blocks | Data is received from all devices. |
+    | **Select** | **All Inputs** option for input blocks | Data is received from all input sources. |
     | **Select** | **Trigger Device** option for output blocks | Output is sent to the device which triggered the output. |
     | **Select device** | Devices in input and output blocks | Data is received from the device or output is sent to the device. |
     | **Select group's devices** | Groups in input blocks | Data is received from all devices within the group hierarchy. You cannot directly receive data from a group. |
@@ -346,13 +346,13 @@ The following rules apply:
 
 -   You can replace a device with another device.
 -   You can replace a group with another group.
--   You can replace a group or a device with the **All Devices** option.
--   You can replace the **All Devices** option with a group or a device.
--   When you replace a device with a group or the **All Devices** option:
-    -   all matching input devices are changed to groups or **All Devices**, whichever is selected, and
+-   You can replace a group or a device with the **All Inputs** option.
+-   You can replace the **All Inputs** option with a group or a device.
+-   When you replace a device with a group or the **All Inputs** option:
+    -   all matching input devices are changed to groups or **All Inputs**, whichever is selected, and
     -   all matching output devices are changed to trigger devices.
--   When you replace a group or the **All Devices** option with a device:
-    -   the group or **All Devices**, whichever is selected, is changed to a device, and
+-   When you replace a group or the **All Inputs** option with a device:
+    -   the group or **All Inputs**, whichever is selected, is changed to a device, and
     -   all matching trigger devices are changed to the specified device.
         {{< c8y-admon-info>}}
 If you change more than one group to a device at a time, then only the first specified device will be used to replace all trigger devices.

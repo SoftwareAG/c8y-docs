@@ -6,6 +6,10 @@ layout: redirect
 
 The device list supports the replacement of a physical device with another by preserving the original device representation in the platform including all its generated data. A wizard guides you through this process. Access the wizard by hovering over the device you want to replace in the device list and click the **Replace device** button.
 
+{{< c8y-admon-info >}}
+Currently LWM2M devices are not supported and the "Replace device" button is not available for this type of devices.
+{{< /c8y-admon-info >}}
+
 In the **Replacement device** step you can see the list of devices available in the platform excluding the device which you are going to replace. Select a replacement device from the list.
 
 {{< c8y-admon-info >}}

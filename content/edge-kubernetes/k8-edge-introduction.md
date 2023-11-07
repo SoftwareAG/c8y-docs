@@ -1,6 +1,6 @@
 ---
 weight: 5
-title: Cumulocity IoT Edge on Kubernetes - Public Preview
+title: Introduction
 layout: bundle
 section:
   - edge_server

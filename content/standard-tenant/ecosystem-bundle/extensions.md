@@ -1,7 +1,7 @@
 ---
 title: Extensions
 layout: bundle
-weight: 30
+weight: 50
 section:
   - platform_administration
 helpcontent:

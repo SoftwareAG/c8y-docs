@@ -17,6 +17,7 @@ helpContent:
 
 Asset properties are the parameters that define an [asset model](#asset-models). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
 
+When you open the DTM application, default properties are readily available for use. See [Default properties](#default-properties) to view the list of properties available.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
@@ -101,7 +102,7 @@ Select **Text** if the asset property value is a string, for example, a wind tur
 
  If you select **Text**, the following fields appear:
 
-*	**Min Length**:
+* **Min Length**:
 
 Enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
@@ -111,14 +112,13 @@ If not selected, no minimum length criteria is set for this asset property durin
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-
 * **RegExp**:
 
 Enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
 
 **Example:**
 
-If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator  codes have to start with the prefix “MCGEN”.
+If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes have to start with the prefix “MCGEN”.
 
 #### Default value {#default-value}
 
@@ -148,7 +148,6 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 
 {{< /c8y-admon-info>}}
 
-
 * **Maximum**:
 
 If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
@@ -158,7 +157,6 @@ If selected, enter a number in the field on the right. When you create the asset
 If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
 
 {{< /c8y-admon-info>}}
-
 
 * **Default value**:
 Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
@@ -221,7 +219,6 @@ If selected, enter the allowed file types separated by a comma in the **Allowed 
 
 If there is a file size limit set for the tenant, you see the limit along with the field name for **Max file size in MB**.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
-
 
 {{< /c8y-admon-info>}}
 
@@ -297,6 +294,7 @@ Follow the steps below:
 Use the downloaded file to import the asset properties into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
+Default properties are not listed under **Export asset properties**. See [Default properties](/dtm/default-properties/#characteristics-of-default-properties) to view the list of properties available.
 You can export a maximum of 500 asset properties at a time.
 {{< /c8y-admon-info>}}
 
@@ -310,10 +308,8 @@ To import asset properties into the DTM application, follow the steps below:
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant.
 3. Click **Next** to preview the asset properties before importing them.
 4. Click **Import** to import the asset properties.
-4. Alternatively, Click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
-5. View newly imported asset properties in the **Asset properties** page.
-
-
+5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
+6. View newly imported asset properties in the **Asset properties** page.
 
 ![Import asset properties](/images/dtm/custom-property/dtm-property-library-import.png)
 
@@ -323,3 +319,24 @@ Review the errors that are reported, resolve them, and attempt the upload again.
 
 You can import a maximum of 500 asset properties at a time.
 {{</ c8y-admon-info>}}
+
+### Default properties {#default-properties}
+
+### Characteristics {#characteristics-of-default-properties}
+
+* Default properties are readily available when you open the application.
+* Default properties cannot be deleted. 
+* Only selected fields within a default property are editable and the editable fields vary depending on the specific property.
+* Default properties cannot be exported.
+
+### Location {#location}
+
+The **Location** property enables you to assign location (latitude and longitude) to an asset. You can set the default values of the latitude and longitude by entering the corresponding values or alternatively using the map view.
+
+To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. The marker is positioned at Duesseldorf, Germany by default. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
+
+{{<c8y-admon-info>}}
+The valid range for the latitude is -90 to +90 and valid range for the longitude is -180 to +180. <br>
+The marker on the map is positioned at an approximated location when either the latitude or longitude value is missing.<br>
+The default values of both latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.
+{{</c8y-admon-info>}}

@@ -2,6 +2,6 @@
 title: Microservice SDK for Java
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 weight: 40
 ---

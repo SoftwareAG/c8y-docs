@@ -80,13 +80,13 @@ Filtering also works in combination with a model or sample name that you specify
 
         You can show only the models that are either active or inactive. For example, if you only want to see active models, select the corresponding check box.
 
-    -   **Device, group or asset**
+    -   **Source or destination**
 
-        You can show only the models that use specific devices in their input blocks and output blocks, specific groups in their input blocks, or even specific assets. Open the **Filter by device, group or asset name** drop-down list box, select one or more items and click **Apply**.
+        You can show only the models that use specific input sources or output destinations. Open the **Filter by source or destination** drop-down list box, select one or more items and click **Apply**.
 
     -   **Data point**
 
-        You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one device has been selected in the **Filter by device, group or asset name** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
+        You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one item has been selected in the **Filter by source or destination** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
 
     -   **Tags**
 

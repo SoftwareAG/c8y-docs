@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Developer documentation
+title: Developer topics
 layout: bundle
 section:
   - getting_started
@@ -26,13 +26,13 @@ Check out the following sections if you are looking for step-by-step instruction
 <br><br>
   - [Web SDK](/web/) - Extend applications with your own plugins, add your own applications or implement additional functionality tailored to your use case.
 <br><br>
-  - [Microservice SDK](/microservice-sdk/) - Develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorials for Java and C#.
+  - [Microservice SDK](/microservice-sdk/) - Develop and deploy microservices (server-side applications) to extend the {{< product-c8y-iot >}} platform with customer-specific functionality. If you want to jump right in, check out the Hello world tutorial for Java.
 
 ### OpenAPI Specification {#openapi-Specification}
 
 A complete OpenAPI Specification for the {{< product-c8y-iot >}} REST API is available at [https://{{< domain-c8y >}}/api/core](https://{{< domain-c8y >}}/api/core). The OpenAPI Specification describes the entire {{< product-c8y-iot >}} REST API (i.e. available endpoints, operations on each endpoint, input and output for each operation, authentication methods and more) following the OpenAPI 3.0 standard.
 
-### Additional resources
+### More resources
 
 Check out further resources for developers like
 

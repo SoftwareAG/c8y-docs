@@ -5,7 +5,7 @@ type: root
 layout: redirect
 bundle: dtm
 section:
-  - app_development
+  - app_enablement
 audience:
   - Users
 weight: 40

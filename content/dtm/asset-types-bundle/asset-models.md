@@ -10,8 +10,8 @@ helpcontent:
 
   Click **Add asset model** in the top menu bar to add a new asset model. To edit an existing asset model, click the edit icon on the right of the desired asset model."
 ---
-The asset model is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset model consists of one or more [asset properties](/dtm/asset-types/#asset-properties) and/or child asset models.
 
+The asset model is a blueprint or template to create one or multiple [assets](/dtm/asset-hierarchy/#assets). It defines how the asset will look like after it is created. An asset model consists of one or more [asset properties](/dtm/asset-types/#asset-properties) and/or child asset models.
 
 To get a quick start to use the DTM application, import pre-defined asset models from **Asset model samples** page. These asset models and associated properties are defined based on best practices. For details about how to import asset models from samples, see [To import asset model samples](#to-import-asset-model-samples).
 
@@ -137,6 +137,7 @@ If the asset model is "Rotor" and you select "Blade" as an allowed child asset m
 6. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
+To assign a location to an asset, add the default property Location to the asset model. For more info on default properties, see [Default properties](/dtm/asset-properties/#default-properties).<br>
 If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 
@@ -220,9 +221,9 @@ To import asset models, follow the steps below:
 1. On the **Asset models** page, click **Import asset models**.
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset models from a DTM application on another tenant.
 3. Click **Next** to preview the asset models. Initially, all the asset models are collapsed. Click the expand icon to the left of each asset model to view the next level of child asset models.
-3. Click **Import** to import the asset models.
-4. Alternatively, click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
-4. The newly imported asset models are listed on the **Asset models** page.
+4. Click **Import** to import the asset models.
+5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the remove icon to remove the current file and upload a different one.
+6. The newly imported asset models are listed on the **Asset models** page.
 
 ![Import asset models](/images/dtm/asset-type/dtm-asset-type-import.png)
 {{< c8y-admon-info>}}

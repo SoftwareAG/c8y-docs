@@ -14,7 +14,7 @@ You can create two different types of models: models without template parameters
 
 #### Models without template parameters {#models-without-template-parameters}
 
-All blocks in the model use defined input devices or groups of devices and contain defined parameter values. Such a model can be activated immediately in the model manager.
+All blocks in the model use defined input devices or ranges of devices and contain defined parameter values. Such a model can be activated immediately in the model manager.
 
 #### Models with template parameters {#models-with-template-parameters}
 
@@ -54,7 +54,7 @@ Blocks are the basic processing units of the model. Each block has some predefin
 
 The palette of the model editor offers for selection the following types of blocks:
 
--   Input blocks, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a device group, a smart group, or an asset. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
+-   Input blocks, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a device group, a smart group, an asset, or all input sources. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
 -   Output blocks, which send data to external sources. An output block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory. But there are also blocks for sending an email or SMS to specified receivers. See also [Output blocks](/streaming-analytics/analytics-builder/#output-blocks).
 -   Processing blocks, which receive data from the input blocks and send the resulting data to the output blocks. See also [Processing blocks](/streaming-analytics/analytics-builder/#processing-blocks).
 
@@ -78,6 +78,10 @@ An input block is a special type of block that receives data from an external so
 
 Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
+{{< c8y-admon-info>}}
+By default, the **All Inputs** option is selected, which means that the input block is listening to all input sources.
+{{< /c8y-admon-info>}}
+
 In addition, Analytics Builder supports input devices that are referred to as "broadcast devices". Signals from these devices are available to all models across all devices. For detailed information, see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices).
 
 #### Output blocks {#output-blocks}
@@ -85,6 +89,10 @@ In addition, Analytics Builder supports input devices that are referred to as "b
 An output block is a special type of block that receives data from a connected processing block. It converts the data into a format understandable to an external source and transfers the data to the external source. For example, when an output block receives data from a connected processing block, it packages the data into an `Operation` object and then sends the operation to {{< product-c8y-iot >}}.
 
 You can specify a **Trigger Device** for an output block. This is a special device which can be used to send the output back to the device which triggered the output. Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
+
+{{< c8y-admon-info>}}
+If you use the default option of **All Inputs** as the input source for an input block, you must set the output destination of the output block to **Trigger Device**.
+{{< /c8y-admon-info>}}
 
 Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages, see also [SMS provider](/standard-tenant/changing-settings/#sms-provider). Unlike the other blocks, these are not associated with devices within the {{< product-c8y-iot >}} platform.
 

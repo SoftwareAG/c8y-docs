@@ -2,7 +2,7 @@
 title: Best practices
 layout: bundle
 section:
-  - app_development
+  - app_enablement
 weight: 80
 ---
 
@@ -11,7 +11,7 @@ The following list is a collection of best practices you should take into consid
 
 #### Microservice SDK {#microservice-sdk}
 
-Whenever possible, use the {{< product-c8y-iot >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The {{< product-c8y-iot >}} Microservice SDK can be found [here](https://github.com/SoftwareAG/cumulocity-clients-java/tree/develop/microservice). See the relevant chapters of this guide for further instructions on the [Microservice SDK for Java](/microservice-sdk/java/) and the [Microservice SDK for C#](/microservice-sdk/cs/).
+Whenever possible, use the {{< product-c8y-iot >}} Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. The {{< product-c8y-iot >}} Microservice SDK can be found [here](https://github.com/SoftwareAG/cumulocity-clients-java/tree/develop/microservice). See also [Microservice SDK for Java](/microservice-sdk/java/) for further instructions.
 
 
 #### Disk I/O and local disk {#disk-io-and-local-disk}

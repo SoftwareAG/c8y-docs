@@ -41,6 +41,10 @@ To view the history of all operations, click **View history**. Note, that you wi
 
 #### Audit Configuration {#audit-configuration}
 
+{{< c8y-admon-important >}}
+As announced in the release notes for [release 10.18](https://cumulocity.com/releasenotes/release-10-18-0/announcements-10-18-0), the LWM2M device audit configuration feature is deprecated. This feature will be disabled by default in a future version.
+{{< /c8y-admon-important >}}
+
 In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.
 
 Click **Audit configuration** in the right of the top menu bar to navigate to the **Audit configuration** page.
@@ -51,17 +55,40 @@ To sync properties, select the desired reference device from the dropdown list. 
 The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 {{< /c8y-admon-info >}}
 
-### LWM2M bootstrap parameters {#lwm2m-bootstrap-parameters}
+### LWM2M configuration {#lwm2m-configuration}
 
-In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click **Save.**
+The **LWM2M configuration** tab displays all LWM2M settings related to the device. These settings are grouped logically by the function they affect.
 
-![Bootstrap customization](/images/device-protocols/lwm2m/lwm2m-devices-bootstrap.png)
+* **Device settings** - General device parameters:
+  * Endpoint ID
+  * Awake time
+  * Request timeout
+  * Serialization format
+  * Binary format
+  * Timestamp resources
+  * Objects tab behavior (keep old values)
+* **Bootstrap settings** - related to LWM2M bootstrap
+  * Bootstrap server ID
+  * Security instance offset
+* **Servers to write during bootstrap** - list of servers that will be written to the device when it bootstraps. Each server has:
+  * Server URI
+  * Server ID
+  * Registration lifetime
+  * Default min period
+  * Default max period
+  * Binding mode
+  * Disable timeout
+  * Security mode
+    * depending on the selected mode there are additional settings for PSK and X.509
+  * Notifications flag
+* **Connectivity settings** - security configuration for bootstrap and regular LWM2M connection.
+* **Firmware update settings**
+  * Firmware URL
+  * Delivery method
+  * Delivery protocol
+  * Reset state machine settings
 
-{{< c8y-admon-important >}}
-Currently only the "NO_SEC" and "PSK" security modes are supported.
-{{< /c8y-admon-important >}}
-
-For further information on the fields in the **LWM2M bootstrap parameters** tab, see [Registering LWM2M devices](/protocol-integration/lwm2m/#registering-lwm2m-devices).
+For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices). 
 
 ### LWM2M client awake time {#lwm2m-client-awake-time}
 

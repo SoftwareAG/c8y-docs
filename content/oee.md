@@ -5,7 +5,7 @@ type: root
 layout: redirect
 bundle: oee
 section:
-  - app_development
+  - app_enablement
 audience:
   - Users
 weight: 100

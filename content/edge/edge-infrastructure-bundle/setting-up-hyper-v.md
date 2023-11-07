@@ -19,7 +19,7 @@ You can create a NAT adapter using two ways:
 Run all the commands in Windows PowerShell with administrative privileges.
 {{< /c8y-admon-info >}}
 
-#### Creating a NAT adapter using default settings {#creating-a-nat-adapter-using-default-settings}
+### Creating a NAT adapter using default settings {#creating-a-nat-adapter-using-default-settings}
 
 {{< c8y-admon-info >}}
 You must use the default adapter name `NATSwitchForEdge` and the default IP address `192.168.66.1`.
@@ -52,7 +52,7 @@ PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 192.168.66.1 -PrefixLength 2
 PS C:\WINDOWS\system32> New-NetNat -Name NATSwitchForEDGE -InternalIPInterfaceAddressPrefix 192.168.66.0/24
 ```
 
-#### Creating a NAT adapter using user-defined settings {#creating-a-nat-adapter-using-userdefined-settings}
+### Creating a NAT adapter using user-defined settings {#creating-a-nat-adapter-using-userdefined-settings}
 
 You can define the adapter name and configure the IP address for your Edge appliance. In this example, the adapter name is `EdgeAdapter1` and the IP address is `10.20.30.40`.
 

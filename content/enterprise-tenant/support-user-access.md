@@ -7,7 +7,7 @@ section:
 ---
 
 {{< c8y-admon-req >}}
-For a support user to log in as a user of your tenant, **support user access** must be enabled. This option is available at the level of each tenant and applies to access for all of its users.
+To allow support users to log in as a user of your tenant, **support user access** must be enabled. This option is available at tenant level and applies to all users of the tenant.
 {{< /c8y-admon-req >}}
 
 The support user access feature enables {{< product-c8y-iot >}} platform providers ({{< company-sag >}} in case of the public cloud instances or service providers in case of individual on-prem installations) to support their customers by accessing their users using a support user. A support user is a user in the {{< management-tenant >}} that has specific permissions, that is, to access subtenant users in case of any issues.

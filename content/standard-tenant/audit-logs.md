@@ -297,3 +297,7 @@ Note that entries of this type are not created when using Basic authentication.
 
 </tbody>
 </table>
+
+{{< c8y-admon-info >}}
+For information on Analytics Builder monitoring including audit logs, see [Monitoring and configuration](/streaming-analytics/analytics-builder/#monitoring-and-configuration).
+{{< /c8y-admon-info >}}

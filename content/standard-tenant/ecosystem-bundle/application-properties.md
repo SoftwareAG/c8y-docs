@@ -1,7 +1,7 @@
 ---
 title: Application properties
 layout: bundle
-weight: 21
+weight: 40
 section:
   - platform_administration
 ---

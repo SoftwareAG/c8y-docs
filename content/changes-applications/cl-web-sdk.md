@@ -13,27 +13,13 @@ weight: 60
 
 The grid used in dashboards for placing widgets now supports 24 instead of 12 columns. This allows finer-grained positioning of widgets on dashboards. In case you share the same dashboards between different application versions, we strongly recommend you to upgrade to a version that includes the fix <b>MTM-55923</b>. [MTM-52888]
 
-#### -Change- Disable/enable realtime for widgets on dashboard level
-
-If a widget supports realtime, it can now be linked to the dashboard real-time context to disable/enable realtime on dashboard level. The following widgets support the real-time dashboard context: Data point graph, Data point table, Event list, Map. [53779]
-
-
 #### -Change- Improved behavior on plugin installation
 
 When installing a plugin and the tenant has no custom applications, it is now possible to duplicate any existing application. [MTM-51757]
 
-#### -Change- Map in Digital twin manager application
-
-If a complex location property is set in the Digital twin manager application, the map is now visible in the asset view and users can select a location on the map. [MTM-54045]
-
-
 #### -Change- Removal of Impact connectivity feature
 
 The Impact connectivity feature has been removed from @c8y/ngx-components and @c8y/ng1-modules packages. [DM-2548]
-
-#### -Change- Asset custom property in Digital twin mager application
-
-If a asset custom property in the Digital twin mager application is declared as required and complex, all of its subproperties are required too. [MTM-50101]
 
 #### -Change- Context path in the remotes application option
 

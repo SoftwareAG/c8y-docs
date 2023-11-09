@@ -40,9 +40,9 @@ To create a bean in the tenant scope, you can use the annotation `@TenantScope`,
 ```java
 @TenantScope
 @Bean(name = "tenantMeasurementApi")
-  public MeasurementApi getMeasurementApi() throws SDKException {
-    return delegate.getMeasurementApi();
-  }
+public MeasurementApi getMeasurementApi() throws SDKException {
+  return delegate.getMeasurementApi();
+}
 ```
 If you then use the bean `tenantMeasurementApi`, the context is automatically set to the `@TenantScope` and the service user credentials are utilized.
 
@@ -67,7 +67,7 @@ In both cases, beans within the tenant scope will be auto-wired.
 #### User scope
 In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request. 
 
-To create a bean from the same class in the user scope, you should specify `@UserScope`, as in the snippet below. 
+To create a bean in the user scope, you should specify `@UserScope`, as in the snippet below. 
 
 ```java
 @UserScope
@@ -77,7 +77,7 @@ public MeasurementApi getMeasurementApi() throws SDKException {
 }
 ```
 
-To use `@UserScope`, you have to use the respective annotations enabling it. Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix `"user"` and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
+Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix `"user"` and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
 
 ```java
 @Autowired

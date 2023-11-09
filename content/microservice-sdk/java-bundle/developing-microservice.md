@@ -32,7 +32,10 @@ Annotation | Description
 
 The context support is covered by the annotation `@EnableContextSupport`. It allows for choosing between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
 
-To create a tenantMeasurementApi bean in the tenant scope, you can use the annotation `@TenantScope`, as in the following code snippet. 
+Within the tenant scope, the service account credentials are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request are used.
+
+#### Tenant scope  
+To create a bean in the tenant scope, you can use the annotation `@TenantScope`, as in the following code snippet. 
 
 ```java
 @TenantScope
@@ -41,25 +44,16 @@ To create a tenantMeasurementApi bean in the tenant scope, you can use the annot
     return delegate.getMeasurementApi();
   }
 ```
+If you then use the bean `tenantMeasurementApi`, the context is automatically set to the `@TenantScope` and the service user credentials are utilized.
 
-To create a bean from the same class in the user scope, you should specify `@UserScope`, as in the snippet below. 
+By default, the beans are created in the tenant scope and use the service user to communicate with the platform. This behaviour is also enabled when using the respective annotation for the tenant context. 
 
-```java
-@UserScope
-@Bean(name = "userMeasurementApi")
-  public MeasurementApi getMeasurementApi() throws SDKException {
-    return delegate.getMeasurementApi();
-  }
-```
-
-#### Tenant scope
-The tenant scope allows for method invocations using the service account credentials.  
-By default, the beans are created in the tenant scope and use the service user to communicate with the platform. This behaviour is enabled when using the proper annotation for the tenant context. 
-
-The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the MeasurementApi in the @TenantScope, you can specify @Qualifier("tenantMeasurementApi"), as shown in the example below. However, as the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent. 
+There are predefined beans both in the `@TenantScope` and `@UserScope`. 
+The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use MeasurementApi in the @TenantScope, you can specify @Qualifier("tenantMeasurementApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform. 
 
 ```java
 @Autowired
+
 @Qualifier("tenantMeasurementApi")
 private MeasurementApi measurementApi;
 ```
@@ -68,21 +62,46 @@ private MeasurementApi measurementApi;
 @Autowired
 private MeasurementApi measurementApi;
 ```
- 
 In both cases, beans within the tenant scope will be auto-wired. 
 
- 
 #### User scope
-In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request. To enable this functionality, you have to use the annotations enabling the user scope. Analogously to the tenant scope case, the prefix "user" in the names of the respective beans suggests the usage of the user scope. 
+In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request. 
 
-Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the commication with the platform. An example on how to use the user context is given below.
+To create a bean from the same class in the user scope, you should specify `@UserScope`, as in the snippet below. 
 
+```java
+@UserScope
+@Bean(name = "userMeasurementApi")
+public MeasurementApi getMeasurementApi() throws SDKException {
+  return delegate.getMeasurementApi();
+}
+```
+
+To use `@UserScope`, you have to use the respective annotations enabling it. Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix `"user"` and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
 
 ```java
 @Autowired
 @Qualifier("userMeasurementApi")
 private MeasurementApi measurementApi;
 ```
+
+Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the commication with the platform. 
+
+#### Setting the credentials explicitly
+We can explicitly set the credentials to be used through ContextService. To use the credentials of the user sending the request, we have to use `ContextService<UserCredentials>`. Analogously, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
+An example on how to use ContextService is given below.
+
+```java
+@Autowired
+private ContextService<UserCredentials> contextService;
+@Autowired
+private EventApi eventApi;
+
+public PagedEventCollectionRepresentation get10Events () {
+  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+}
+```
+In this example, the events will be obtained using the credentials of the authenticated user.
 ### Microservice security {#microservice-security}
 
 The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.

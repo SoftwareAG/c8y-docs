@@ -9,6 +9,11 @@ weight: 10
 
 ### October 2023
 
+#### -Change-  Apama correlator version
+
+This release of Cumulocity IoT Streaming Analytics includes the Apama version 10.15.4 correlator.
+EPL apps developers should also refer to [What's New In Apama 10.15.4](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-WhaNewInApa_10154_top.html) in the Apama documentation.
+
 #### -Change-  Basic diagnostics information
 
 The EPL memory profiler snapshots, which were previously only included in the enhanced diagnostics information, are now also included in the basic diagnostics information. This is helpful in case a high memory usage alarm is raised when the Apama-ctrl microservice consumes 90% of the maximum memory permitted for the microservice container and you only have basic diagnostics information available. See also [Downloading diagnostics and logs](https://cumulocity.com/docs/streaming-analytics/troubleshooting/#diagnostics-download) in the user documentation.
@@ -23,11 +28,128 @@ in the user documentation.
 
 For more detailed information, see [Receiving update notifications](https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation for the Cumulocity IoT transport connectivity plug-in.
 
-#### -Change- Analytics Builder
+#### -Feature-  Receive input from all input sources by default
 
-The [Constant Value](https://cumulocity.com/docs/streaming-analytics/block-reference/#constant-value) block now supports `float` and `boolean` value types
+The Analytics Builder input blocks can now be configured to receive inputs from all input sources. You can simplify global tasks by creating a single Analytics Builder model that works with inputs from all input sources, for example, send an email for every critical alarm of type `C8Y_TemperatureAlarm` that is generated, regardless of the device that generated the alarm. A new **All Inputs** option is available for this purpose.
+When you add a new block to your model or when you edit the parameters of a new template instance, the **All Inputs** option is now set by default. See also [Editing the parameters of a block](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) in the user documentation.
+
+You can also use the new **All Inputs** option in the replace dialog box when replacing input sources. Keep in mind that the replace dialog box is used for both input blocks and output blocks. So when you replace a device with the new **All Inputs** option, all matching output devices are automatically changed to trigger devices.
+See also [Replacing sources or destinations](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#replacing-sources-or-destinations) in the user documentation.
+
+A new Analytics Builder sample named "Aggregate measurements per input source" is now available, which creates new measurements that average the measurement values for each input source that has a specified fragment and series. This is a simple sample that creates a model without template parameters, so you can activate the model directly in the model manager. See also [The Samples tab](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#the-samples-tab) in the user documentation.
+
+#### -Feature-  Additional value types for the Constant Value block
+
+The [Constant Value](https://cumulocity.com/docs/streaming-analytics/block-reference/#constant-value) block in Analytics Builder now supports `float` and `boolean` value types
 and can produce output of these types. This enables the block's output to be consumed by other blocks that take input of type `float` or `boolean` like the blocks in
 the **Logic** and **Aggregate** categories. The **Type** parameter is also now optional. If a type is not selected, the type of the output value is inferred from the **Value** parameter.
 
-An icon is now provided for removing a template parameter from the **Template Parameter** dialog box.
+#### -Change-  Removing template parameters
+
+In Analytics Builder, an icon is now provided for removing a template parameter from the **Template Parameter** dialog box.
 The actions menu (the three vertical dots at the end of a row) has therefore been removed. See also [Managing template parameters](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#managing-template-parameters) in the user documentation.
+
+#### -Feature-  Selection lists for template parameters
+
+You can now create a selection list for an Analytics Builder template parameter. This allows the model author to provide a predefined list of values for the user to choose from, ensuring that the user only enters the values you allow.
+You can define selection lists for types such as string, float, source or destination, or geofence and you can also select a specific value to be the default value. The values that you define for a selection list are then available for selection when you create instances of the model.
+See also [Adding a selection list for a template parameter](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#adding-a-selection-list-for-a-template-parameter) in the user documentation.
+
+#### -Fix-  Filtering models
+
+In Analytics Builder, when filtering the models in the model manager by **Mode** and **Status**, the filter is now also applied to template models.
+Prior to this fix, the filter was only applied to models without template parameters.
+
+#### -Feature-  Cumulocity IoT transport in Apama 10.15.4
+
+Range-based queries (such as `FindManagedObject`) attempt to retrieve all resources matching the query parameters by default. Explicitly setting a value for `currentPage` or setting `withTotalPages` to false can improve the query performance by disabling paging. See the information on REST usage and query result paging in the [Cumulocity IoT OpenAPI Specifications](https://cumulocity.com/api/core/#section/REST-implementation/REST-usage) for more information.
+
+The `Alarm` and `Operation` events have new constants which define the valid values for their respective status and severity members. This allows more robust coding and eliminates runtime errors caused by typographical errors with literal strings.
+
+#### -Feature-  EPL enhancements in Apama 10.15.4
+
+##### String concatenation operator + supports non-string operands
+
+If only one operand expression is of type `string`, then string conversion is now performed on the other operand to produce a string at runtime.
+For more details, see [Additive operators](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fre-ApaEplRef_additive_operators.html) in the Apama documentation.
+
+##### New built-in convenience methods on string, sequence and dictionary
+
+The EPL language has been enhanced with some convenience methods for common operations such as checking if a string or sequence contains a specified substring or item, and determining if a string, sequence or dictionary is empty.
+
+There is a method to get a sequence value with a fallback default if there is no value at the specified index:
+
+```
+mySequence.getOr(100, "default value");
+```
+
+There is also a powerful regular expression group search for strings that finds the first match and returns the text captured by each "(...)" group of the regular expression:
+
+```
+// Prints ["Bob", "Eve"]
+ print "Today Bob met Eve".groupSearch("([a-zA-Z]) met ([a-zA-Z])").toString();
+```
+
+The following table lists all new methods:
+
+| New method | Description |
+| ----------- | ----------- |
+| `string.contains()`, `sequence.contains()` | Determines whether the string or sequence contains the specified substring or item. This is a convenient alternative to checking the `find()` or `indexOf()` integer value. |
+| `string.groupSearch()` | Finds the first regular expression match in this string, and returns a list of the matched "(...)" groups. |
+| `string.startsWith()`, `string.endsWith()` | Determines whether the string has the specified prefix or suffix. |
+| `string.rfind()` | Locates a string within this string, starting from the right (that is, from the end) of the string. |
+| `string.substringFrom()` | Extracts part of this string, starting at a specified character and ending at the end of the string. |
+| `string.quote()` | Adds quotation marks and escaping according to the standard EPL event representation. This method may be useful for logging strings that may contain spaces and newline characters. This is the reverse of the existing `string.parse()` method. |
+| `string.isEmpty()` | Determines whether the string has a length of zero characters. |
+| `dictionary.isEmpty()`, `sequence.isEmpty()` | Determines whether the size is 0. |
+| `any.isEmpty()`, `optional.isEmpty()`, `listener.isEmpty()`, `Channel.isEmpty()`, `chunk.isEmpty()` | Aliases for the existing `empty()` methods on these types. It is recommended to use the new `isEmpty()` methods, but the use of `empty()` is not deprecated. |
+| `sequence.getOr()` | Gets the value at the specified index, or a specified fallback value if the index is not valid. |
+
+For more information, see the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/related/ApamaDoc/index.html).
+
+##### Support for negative indexes for sequence[...] access
+
+Instead of throwing an out of bounds exception, it is now possible to refer to items near the end of a sequence by specifying a negative index. For example, `seq[-1]` gives the last item in the sequence and `seq[-2]` gives the item before that. Negative sequence indexes can also be used in the `sequence.remove()` and `sequence.insert()` methods.
+
+Note that negative values cannot be specified when accessing a sequence item using the `any.getEntry()` method.
+
+##### Mixed-type sequence and dictionary literals are now treated as <any> by default
+
+It is no longer necessary to add an `<any>` cast around the first item in a sequence or dictionary literal that contains a mixture of different types. For example, the following sequence literal which produces a `sequence<any>`:
+
+```
+[<any> 12345, "a string"]
+```
+
+can now be written more simply as
+```
+[12345, "a string"]
+```
+
+This simplifies the functional example given in [EPL enhancements in 10.15.3](https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-ApaRelNot_10153_epl_enhancements.html) in the Apama documentation: the `<any>` is no longer needed in the `setFields` call.
+
+##### Discarding of unused return values
+
+In EPL, it is now possible to discard the return value of a function or expression and not assign it to a variable. This is useful if you only want the side effects of the function and do not need the return value. Be careful not to discard a return value that indicates important conditions that your program may need to use.
+
+Previously, you had to write:
+
+```
+any _ := Functional(newAlarms).map(Fn.getEntry("alarm")).map(allAlarms.append);
+```
+
+But now you can write:
+
+```
+Functional(newAlarms).map(Fn.getEntry("alarm")).map(allAlarms.append);
+```
+
+See also [Using an expression as a statement](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fre-ApaEplRef_using_an_expression_as_a_statement.html) in the Apama documentation.
+
+##### Functional operators
+
+The `com.apama.functional.Fn` and `com.apama.functional.Functional` events now have a new method `mapKeys` which can return a dictionary container with modified keys. For more details, see [Functional operators](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-DevApaAppInEpl_functional_operators.html) in the Apama documentation and the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/related/ApamaDoc/index.html).
+
+##### Functional listeners
+
+The functional `onTimeout` action now returns the wait listener it creates so that it can be quit if needed. For more details, see [Functional listeners](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-DevApaAppInEpl_functional_listeners.html) in the Apama documentation.

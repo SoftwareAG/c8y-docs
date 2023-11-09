@@ -30,12 +30,13 @@ Annotation | Description
 
 ### Context support {#context-support}
 
-The context support is covered by the annotation `@EnableContextSupport`. It allows for choosing between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
+The context support is covered by the annotation `@EnableContextSupport`. It allows to choose between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
 
-Within the tenant scope, the service account credentials are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request are used.
+Each microservice has a service user which can be used for the interaction with the platform. The roles associated with this user are specified in the manifest. 
+Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request are used.
 
 #### Tenant scope  
-To create a bean in the tenant scope, you can use the annotation `@TenantScope`, as in the following code snippet. 
+To create a bean in the tenant scope, use the annotation `@TenantScope`, as in the following code example. 
 
 ```java
 @TenantScope
@@ -44,12 +45,12 @@ public MeasurementApi getMeasurementApi() throws SDKException {
   return delegate.getMeasurementApi();
 }
 ```
-If you then use the bean `tenantMeasurementApi`, the context is automatically set to the `@TenantScope` and the service user credentials are utilized.
+If you then use the bean `tenantMeasurementApi`, the context is set to `@TenantScope` and the service user credentials are utilized.
 
-By default, the beans are created in the tenant scope and use the service user to communicate with the platform. This behaviour is also enabled when using the respective annotation for the tenant context. 
+By default, the beans are created in the tenant scope and use the service user to communicate with the platform. This behavior is also enabled when using the respective annotation for the tenant context. 
 
 There are predefined beans both in the `@TenantScope` and `@UserScope`. 
-The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use MeasurementApi in the @TenantScope, you can specify @Qualifier("tenantMeasurementApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform. 
+The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Measurement Api in the tenant scope, you can specify @Qualifier("tenantMeasurementApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform. 
 
 ```java
 @Autowired
@@ -67,7 +68,7 @@ In both cases, beans within the tenant scope will be auto-wired.
 #### User scope
 In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request. 
 
-To create a bean in the user scope, you should specify `@UserScope`, as in the snippet below. 
+To create a bean in the user scope, specify `@UserScope`, as in the example below. 
 
 ```java
 @UserScope
@@ -77,7 +78,7 @@ public MeasurementApi getMeasurementApi() throws SDKException {
 }
 ```
 
-Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix `"user"` and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
+Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix "user" and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
 
 ```java
 @Autowired
@@ -85,11 +86,11 @@ Analogously to the tenant scope case, there are predefined beans in the user sco
 private MeasurementApi measurementApi;
 ```
 
-Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the commication with the platform. 
+Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform. 
 
 #### Setting the credentials explicitly
-We can explicitly set the credentials to be used through ContextService. To use the credentials of the user sending the request, we have to use `ContextService<UserCredentials>`. Analogously, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
-An example on how to use ContextService is given below.
+You can explicitly set the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Analogously, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
+An example on how to use `ContextService` is given below.
 
 ```java
 @Autowired

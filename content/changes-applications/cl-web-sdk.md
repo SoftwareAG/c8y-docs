@@ -9,6 +9,20 @@ weight: 60
 
 ### October 2023
 
+#### -Change- Support of HTML in input fields
+
+To be able to provide more information in input fields on the expected input, dynamic form fields now support HTML markup in their description. [DM-2606]
+
+#### -Feature- Change aggregation for entire dashboard
+
+It is now possible to change the aggregation for all widgets in a dashboard that support the dashboard context functionality at once. The following widgets support the dashboard context aggregation: Data points graph, Data points graph 2.0, Data points table. [MTM-55298]
+
+#### -Change- Improved error message on failure of device deletion
+
+If a user with minimal permission tries to delete a device an error message showed up stating "Could not delete device."
+Now, together with the failure message, the reason of failure is displayed. [MTM-55536]
+
+
 #### -Change- Fine-grained positioning of widgets on dashboards
 
 The grid used in dashboards for placing widgets now supports 24 instead of 12 columns. This allows finer-grained positioning of widgets on dashboards. In case you share the same dashboards between different application versions, we strongly recommend you to upgrade to a version that includes the fix <b>MTM-55923</b>. [MTM-52888]

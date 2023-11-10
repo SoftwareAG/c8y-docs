@@ -10,9 +10,15 @@ weight: 10
 ### October 2023
 
 
+#### -Change- Improved smart group filter layout
+
+In subasset views, smart group filters are now represented by a filter chips dropdown instead of displaying the raw text filter. [DM-1615]
+
+
 #### -Feature-  Customizable dashboard in the device details
 
 Users can now customize the dashboard on the <b>Info</b> tab in the device details. Widgets can be moved and resized, and new widgets can be added from a list of available widgets. The dashboard can be reset anytime to the default dashboard settings. By default, the "Asset notes" widget has been removed. [DM-2279]
+
 
 #### -Change- Removal of software item
 

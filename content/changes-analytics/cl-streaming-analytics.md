@@ -11,7 +11,7 @@ weight: 10
 
 #### -Change-  Apama correlator version
 
-This release of Cumulocity IoT Streaming Analytics includes the Apama version 10.15.4 correlator.
+This version of Cumulocity IoT Streaming Analytics includes the Apama version 10.15.4 correlator.
 EPL apps developers should also refer to [What's New In Apama 10.15.4](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-WhaNewInApa_10154_top.html) in the Apama documentation.
 
 #### -Change-  Basic diagnostics information

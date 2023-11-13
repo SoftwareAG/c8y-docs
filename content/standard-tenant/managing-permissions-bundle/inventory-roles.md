@@ -106,7 +106,18 @@ The response looks like below:
         }
     }
 
-From version 10.17 a new parameter **"acl.measurement.only-accessible-fragments"** has been introduced for measurements (other APIs remain unchanged).
+From version 10.17 a new tenant options **"acl.measurement.only-accessible-fragments"** in category "configuration" has been introduced for measurements (other APIs remain unchanged). 
+
+To enable it set the option value to "true" as below.
+
+    POST /tenant/options
+    ...
+    {
+        "category": "configuration",
+        "key": "acl.measurement.only-accessible-fragments",
+        "value": "true"
+    }
+
 
 After setting the parameter to true, in order to have access to a single measurement parameter like c8y_SignalStrength, you do not have to grant access to all fragments types that the measurement has.
 

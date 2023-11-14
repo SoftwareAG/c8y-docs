@@ -17,7 +17,7 @@ var main = (function ($) {
         class: 'admonition preview'
       }).insertAfter(elem);
       $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
-      $('<span>This is a preview of the documentation for the Cumulocity IoT '+ docsPreview +' release that will soon be publicly available.</span>').appendTo('#preview-banner');
+      $('<span>This is a preview of the documentation for a future Cumulocity IoT '+ docsPreview +' deployment which is not yet publicly available. Content changes are to be expected.</span>').appendTo('#preview-banner');
    }
 
     //Toggle side navigation
@@ -58,7 +58,7 @@ var main = (function ($) {
     });
     // display clipboard success
     clipboard.on('success', function (e) {
-      scrollToCopied(e.trigger); 
+      scrollToCopied(e.trigger);
       $(e.trigger).addClass('copied');
       setTimeout(function () {
         $(e.trigger).removeClass('copied');
@@ -91,13 +91,13 @@ var main = (function ($) {
         $this.wrap("<div class='table-responsive'></div>");
       }
     });
-    
+
     setTimeout(function () {
       $('body').addClass('loaded');
       window.dispatchEvent(new CustomEvent('scroll'));
     }, 100);
-  
-  
+
+
   }
   return {
     init: initializer
@@ -115,7 +115,7 @@ function buildToc() {
     let h3s = article.querySelectorAll('h3');
     let articleTitle = article.querySelector('h2');
     let tocLinks = '';
-    
+
     if (h3s.length > 1) {
       if (articleTitle) {
         tocLinks += `<h5 class="text-regular text-muted">${articleTitle.textContent}</h5>`;
@@ -128,11 +128,11 @@ function buildToc() {
 
       if (tocLinks.length) {
         const existingTocContainer = article.querySelector('.list-group');
-        
+
         if (!existingTocContainer) {
           const tocContainer = document.createElement('div');
-          tocContainer.classList.add('toc-container'); 
-          
+          tocContainer.classList.add('toc-container');
+
           const listGroup = document.createElement('div');
           listGroup.classList.add('list-group');
           listGroup.classList.add('toc');
@@ -165,13 +165,13 @@ function buildToc() {
     window.addEventListener('scroll', () => {
       const rect = targetElement.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-    
+
       // Calculate the top threshold for activation (top third of the viewport)
       const topThreshold = windowHeight / 3;
-    
+
       // Check if the element's top position is within the top threshold
       const elementTopInTopThird = rect.top <= topThreshold;
-    
+
       if (elementTopInTopThird) {
         let tempActive = document.querySelectorAll('.toc .active');
         tempActive.forEach(temp => {
@@ -183,8 +183,8 @@ function buildToc() {
         link.classList.remove('active');
       }
     });
-    
-    
+
+
 
   });
 }

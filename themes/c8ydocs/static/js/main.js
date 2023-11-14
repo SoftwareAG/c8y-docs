@@ -16,7 +16,7 @@ var main = (function ($) {
         id: 'preview-banner',
         class: 'admonition important'
       }).insertAfter(elem);
-      $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
+      $('<h4 class="title">Important</h4>').appendTo('#preview-banner');
       $('<span>This is a preview of the documentation for a future Cumulocity IoT '+ docsPreview +' deployment which is not yet publicly available. The content might still change before its final publication.</span>').appendTo('#preview-banner');
    }
 

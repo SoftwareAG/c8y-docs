@@ -47,11 +47,11 @@ Permissions are grouped into the following categories:
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
-In the **Type** field, specify a fragments to further restrict the types of data that this permission applies to. Access will be only granted to objects that contain
-exactly the specified **Fragment Types**. If the selected object contains more fragment types than those defined in the inventory roles configuration, in order to display it, they also must be added to the inventory role configuration.
+In the **Type** field, specify a fragment to further restrict the types of data that this permission applies to. Access will only be granted to objects that contain
+exactly the specified fragment types. If the selected object contains more fragment types than those defined in the inventory roles configuration, in order to display it, they also must be added to the inventory role configuration.
 
 For example, assume that your device sends measurements related to device management, such as "c8y_SignalStrength" but the measurement itself also has "c8y_Temperature" which you are not interested in.
-For the selected device, there are also measurements containing only the c8y_Temperature fragment.
+For the selected device, there are also measurements containing only the "c8y_Temperature" fragment.
 
     POST /measurement/measurements
     ...
@@ -79,13 +79,13 @@ For the selected device, there are also measurements containing only the c8y_Tem
     }
 
 
-You want a user to see only the device management measurements which have a fragment c8y_SignalStrength. 
+You want a user to only see the device management measurements which have a fragment "c8y_SignalStrength".
 
 In the default configuration for inventory roles we need to provide access to all fragments that the measurement has, that is, "c8y_SignalStrength" and "c8y_Temperature".
 
 <img src="/images/users-guide/Administration/default-roles-inventory.png" alt="Default inventory role configuration">
 
-Note that if a measurement also contains other fragments types, they must also be added in the inventory role configuration, and they also will be returned in the response. 
+Note that if a measurement also contains other fragments types, they must also be added in the inventory role configuration, and they are also returned in the response.
 
 Otherwise such measurements are not returned because they contain fields to which the user has not been granted access.
 
@@ -106,7 +106,7 @@ The response looks like below:
         }
     }
 
-From version 10.17 a new tenant options **"acl.measurement.only-accessible-fragments"** in category "configuration" has been introduced for measurements (other APIs remain unchanged). 
+A tenant option `acl.measurement.only-accessible-fragments` in the category `configuration` can be used for measurements.
 
 To enable it set the option value to "true" as below.
 
@@ -119,9 +119,9 @@ To enable it set the option value to "true" as below.
     }
 
 
-After setting the parameter to true, in order to have access to a single measurement parameter like c8y_SignalStrength, you do not have to grant access to all fragments types that the measurement has.
+After setting the tenant option value to true, in order to have access to a single measurement fragment like "c8y_SignalStrength", you do not have to grant access to all fragments types that the measurement has.
 
-For example, assume that your device sends measurements such as those in the previous example, including c8y_SignalStrength and c8y_Temperature and other measurements with c8y_Temperature only. 
+For example, assume that your device sends measurements such as those in the previous example, including "c8y_SignalStrength" and "c8y_Temperature" and other measurements with "c8y_Temperature" only.
 
     POST /measurement/measurements
     ...
@@ -150,8 +150,8 @@ For example, assume that your device sends measurements such as those in the pre
 
     HTTP/1.1 201 Created
 
-You want a user to see only the device management measurements which have a fragment c8y_SignalStrength.
-After changing the parameter, we can specify only the types of fragments that interest us.
+You want a user to only see the device management measurements which have a fragment "c8y_SignalStrength".
+After changing the tenant option, we can specify only the types of fragments that interest us.
 
 <img src="/images/users-guide/Administration/only-accessible-fragments-inventory-role.png" alt="Only accessible fragments inventory role">
 

@@ -29,7 +29,7 @@ Configure the user ID or the application ID to any top-level claim in the access
 
 ![External token user id](/images/users-guide/Administration/sso-access-token-external-iam-user-id-config.png)
 
-{{< product-c8y-iot >}} creates a user wich gets assigned the configured user ID or application ID. Additionally, this user is granted the roles to access to the applications defined in the **Access mapping** section.
+{{< product-c8y-iot >}} creates a user which gets assigned the configured user ID or application ID. Additionally, this user is granted the roles to access to the applications defined in the **Access mapping** section.
 
 {{< c8y-admon-info >}}
 If it is set, the configuration allows you to create a {{< product-c8y-iot >}} user representing your applications (the access tokens are obtained via the *client credentials flow*),

@@ -39,12 +39,12 @@ All {{< product-c8y-iot >}} applications share a common structure and include th
 
 On the left you have the navigator, which shows a list of entries leading to various pages of the application. The entries are grouped into menus and menu items.
 In the middle you find the content of the actual page which has been selected in the navigator.
-On the top you find the page title at the left. At the right you find various action buttons. Click the <img class="Default" src="/images/icons/search-icon.png" alt="Search" style="display: inline-block; margin:0"> **Search** button to enter text for a full-text search. The <img class="Default" src="/images/icons/switcher-icon.png" alt="Search" style="display: inline-block; margin:0">  **Application Switcher** button allows you to quickly switch between all available applications. Clicking the <img class="Default" src="/images/icons/users-icon.png" alt="Search" style="display: inline-block; margin:0;"> **User** button at the right opens a context menu with details on your [account settings](#user-options).
+On the top you find the page title at the left. At the right you find various action buttons. Click the <img class="Default" src="/images/icons/search-icon.png" alt="Search" style="display: inline-block; margin:0"> **Search** button to enter text for a full-text search. The <img class="Default" src="/images/icons/switcher-icon.png" alt="Search" style="display: inline-block; margin:0">  **Application Switcher** button allows you to quickly switch between all available applications. Clicking the <img class="Default" src="/images/icons/users-icon.png" alt="Search" style="display: inline-block; margin:0;"> **User** button at the right opens a context menu with details on your [account settings](#account-settings), as described below.
 
 See [UI functionalities and features](/get-familiar-with-the-ui/gui-features/) for more information on all {{< product-c8y-iot >}}'s UI features.
 
 
-#### User options and settings {#user-options}
+#### Account settings {#account-settings}
 
 The user menu provides access to the following actions or information:
 
@@ -96,20 +96,16 @@ To connect your smartphone via QR code follow the instructions below:
 
     ![Register smartphone done](/images/users-guide/getting-started/getting-started-open-dashboard-done.png)
 
-{{< c8y-admon-info >}}
-For versions earlier than 10.6.6 or if you are unable to scan the QR code, see [Manual registration](/sensor-app/registering-the-sensor-app/#manual-registration).
-{{< /c8y-admon-info >}}
 
-
-You have connected your smartphone with the {{< sensor-app >}}. For information on how the app sends information to {{< product-c8y-iot >}} go to [Sending sensor data to the platform](/sensor-app/sending-sensor-data/) and on how to view sensor data go to [Viewing sensor data](/sensor-app/viewing-sensor-data/).
+You have connected your smartphone with the {{< sensor-app >}}. For details on how the app sends information to {{< product-c8y-iot >}} go to [Sending sensor data to the platform](/sensor-app/sending-sensor-data/). For information on how to view sensor data go to [Viewing sensor data](/sensor-app/viewing-sensor-data/).
 
 ### Step 4: Customize the dashboard
 
-The dashboard that was created from the last step can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here allowing you to visualize data emanating from your device or devices. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/). The Cockpit application in {{< product-c8y-iot >}} provides you with an unrestrained overview and the essential dashboards to monitor your IoT data according to your needs.
+The Cockpit application in {{< product-c8y-iot >}} provides you with an unrestrained overview and the essential dashboards to monitor your IoT data according to your needs. The dashboard that was created from the last step can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here allowing you to visualize data emanating from your device or devices. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
 
-Follow the instructions below to customize the new dashboard of the device you registered in the last step.
+Follow the instructions below to customize the new dashboard of the device you registered in the previous step.
 
-1. In the Cockpit application, make sure the group or device is selected in the navigator. Click on the "SensorTag Dashboard" **Tab** on the superior part of the application.
+1. In the Cockpit application, select the device you created in the previous step (for example, your smartphone in the **Phones** group). Click the **SensorTag Dashboard** tab.
 2. Click **Edit** in the top menu bar to open the editor.
 
 ![Customize dashboard](/images/users-guide/getting-started/getting-started-tutorial-dashboard-customize.png)
@@ -118,7 +114,6 @@ Follow the instructions below to customize the new dashboard of the device you r
 
     * In the **General** section, change the menu label to "Phone SensorTag Dashboard".
     * In the **Layout** section, change the theme to "Dark" and set the header style to "Border".
-    * You can enable the option **Translate widget titles if possible**, to have the widget title translated every time the language is changed.
 <br><br>
 
 
@@ -145,7 +140,7 @@ To create a report click **Reports** in the **Navigator** on the left side and f
 ![Reports](/images/users-guide/getting-started/getting-started-add-a-new-report.png)
 
 1. Click the **Add report** button to open the **Add report** dialog window.
-2. In the **Menu label** field, enter a name for the report, for this tutorial name the report "Smartphone Measurements" and optionally provide a description below.
+2. In the **Menu label** field, enter a name for the report. For this tutorial name the report "Smartphone Measurements" and optionally provide a description below.
 3. You can display the report in the navigator with the option **Show in navigator** but we will leave that unchecked in this tutorial.
 4. In the **Layout** section, change the theme to "Branded" and set the header style to "Border". In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
@@ -155,7 +150,7 @@ To create a report click **Reports** in the **Navigator** on the left side and f
 
 ![Reports](/images/users-guide/getting-started/getting-started-report-created.png)
 
-You have successfully created a report.
+You have successfully created a report. Next, we will add a widget to the report.
 
 See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
 

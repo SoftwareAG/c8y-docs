@@ -1,5 +1,5 @@
 ---
-title: Device management changes
+title: Device management & connectivity
 layout: change_log
 section:
   - change_log

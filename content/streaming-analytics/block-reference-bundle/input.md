@@ -339,7 +339,7 @@ The parameters that define the input stream of the block are "Input Source" and 
 </tr>
 <tr>
 <th scope="row">Capture Start Value</th>
-<td><span>Outputs the initial value when the model is activated. This parameter must not be selected if the Input Source parameter is set to "All devices".</span>
+<td><span>Outputs the initial value when the model is activated. This parameter must not be selected if the Input Source parameter is set to "All Inputs".</span>
 </td>
 <td><span>boolean</span>
 </td>

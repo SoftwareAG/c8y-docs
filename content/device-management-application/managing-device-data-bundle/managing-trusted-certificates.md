@@ -47,7 +47,7 @@ To add a certificate perform these steps:
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | Certificate name  | User-provided name for the certificate. This name is not used by {{< product-c8y-iot >}} and can serve as a description of the certificate.         |
 | Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it in your file system.            |
-| Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. |
+| Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. The option does not support devices using the LWM2M protocol. |
 | Enabled/ Disabled | When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.               |
 
 3. Click **Add Certificate** to validate and save the certificate.

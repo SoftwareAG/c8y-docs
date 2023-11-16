@@ -202,7 +202,7 @@ Placeholders are not validated for correctness. Any not recognized or misspelled
 You can directly request {{< product-c8y-iot >}} to use access tokens from your authorization server.
 This way, your applications or users can access resources without logging in to the platform
 or using Basic authentication. This leverages your authorization server to get access tokens for your applications which you can send in subsequent request to
-{{< product-c8y-iot >}}. 
+{{< product-c8y-iot >}}.
 
 {{< c8y-admon-req >}}
 This feature requires the following on top of the above requirements:
@@ -214,22 +214,22 @@ This feature requires the following on top of the above requirements:
 
 Enable or disable this authentication option in the **External token configuration** section.
 ![External token disabled](/images/users-guide/Administration/sso-access-token-external-iam-disabled.png)
- 
+
 If enabled, this authentication takes precedence over the standard [JWT token authentication](https://{{< domain-c8y >}}/guides/{{< c8y-current-version >}}/reference/rest-implementation/#jwt-token-authentication), which means, for example, that an HTTP request to {{< product-c8y-iot >}} with the header `Authentication: Bearer {{access token}}` assumes that the source of the access token is your authorization server instead of the token being issued by {{< product-c8y-iot >}}.
 Configure the user ID or the application ID to any top-level claim in the access token.
 
 ![External token user id](/images/users-guide/Administration/sso-access-token-external-iam-user-id-config.png)
 
-{{< product-c8y-iot >}} creates a user wich gets assigned the configured user ID or application ID. Additionally, this user is granted the roles to access to the applications defined in the **Access mapping** section.
+{{< product-c8y-iot >}} creates a user which gets assigned the configured user ID or application ID. Additionally, this user is granted the roles to access to the applications defined in the **Access mapping** section.
 
 {{< c8y-admon-info >}}
-If it is set, the configuration allows you to create a {{< product-c8y-iot >}} user representing your applications (the access tokens are obtained via the *client credentials flow*), 
+If it is set, the configuration allows you to create a {{< product-c8y-iot >}} user representing your applications (the access tokens are obtained via the *client credentials flow*),
 or the users of your authorization server (the access tokens are obtained with the *password grant type*).
 {{< /c8y-admon-info >}}
 
 By default, {{< product-c8y-iot >}} verifies that the token is not expired and its signature matches the signature you have configured earlier.
 You can strengthen the validation of the token by configuring either an introspection or a user info validation with the necessary credentials.
-This way, the platform knows if the access tokens were intentionally invalidated or expired. You cannot access {{< product-c8y-iot >}} resources with an invalidated access token. 
+This way, the platform knows if the access tokens were intentionally invalidated or expired. You cannot access {{< product-c8y-iot >}} resources with an invalidated access token.
 
 ##### Introspection endpoint
 
@@ -241,7 +241,7 @@ If the token is active, proceed with verifying the token signature.
 
 ![External token introspection validation](/images/users-guide/Administration/sso-access-token-external-iam-introspection-validation.png)
 
-You can configure the **Access token validation frequency** to set how often the introspection is performed 
+You can configure the **Access token validation frequency** to set how often the introspection is performed
 as it may be costly to always call the authorization server for the same access token. The validation status of the token is cached internally for the specified time.
 If the token is revoked in the meantime, {{< product-c8y-iot >}} will only be aware during the next validation, that is, the token is still considered until the next validation.
 To avoid this, use a frequency. The default value is one minute.
@@ -250,7 +250,7 @@ To avoid this, use a frequency. The default value is one minute.
 
 ##### User info endpoint
 
-The user info request can also be used to check the validity of the access token of your users. 
+The user info request can also be used to check the validity of the access token of your users.
 Unlike introspection, a user info request requires a user context. This means you cannot use it to validate access tokens obtained with the client credentials flow.
 
 ![External token userinfo validation](/images/users-guide/Administration/sso-access-token-external-iam-userinfo-validation.png)

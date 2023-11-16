@@ -13,7 +13,7 @@ Cumulocity offers a feature preview program. By participating in Cumulocity’s 
 
 Features available as Public Preview are listed in the change logs with a corresponding preview label: -Preview-
 
-Features in Public Preview have undergone additional testing. Functional changes, however, are both allowed and expected. Users must have no expectation of stability. There is no guarantee of backwards compatibility and that the feature will become part of the product.
+Features in Public Preview have undergone detailed testing. Functional changes, however, are both allowed and expected. Users must have no expectation of stability. There is no guarantee of backwards compatibility and that the feature will become part of the product.
 
 The documentation of features in Public Preview is included in this public documentation. The respective sections are marked accordingly:
 

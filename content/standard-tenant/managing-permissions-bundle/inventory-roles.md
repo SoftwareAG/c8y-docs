@@ -85,7 +85,7 @@ In the default configuration for inventory roles we need to provide access to al
 
 <img src="/images/users-guide/Administration/default-roles-inventory.png" alt="Default inventory role configuration">
 
-Note that if a measurement also contains other fragments types, they must also be added in the inventory role configuration, and they are also returned in the response.
+Note that if a measurement also contains other fragment types, they must also be added in the inventory role configuration, and they are also returned in the response.
 
 Otherwise such measurements are not returned because they contain fields to which the user has not been granted access.
 
@@ -106,7 +106,7 @@ The response looks like below:
         }
     }
 
-A tenant option `acl.measurement.only-accessible-fragments` in the category `configuration` can be used for measurements.
+The tenant option `acl.measurement.only-accessible-fragments` in the category `configuration` can be used for measurements.
 
 To enable it set the option value to "true" as below.
 

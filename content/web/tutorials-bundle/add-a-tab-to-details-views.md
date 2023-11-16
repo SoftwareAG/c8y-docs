@@ -17,8 +17,8 @@ There are a couple of context views, for example, `Device`, `Group`, `User`, `Ap
 You can access them by navigating to a certain `Route` with the hash navigation.
 For example, if you go to the route *apps/cockpit/#/device/1234*, the application tries to resolve the device with the ID `1234`.
 
-The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above.
-It is referenced by another route called */info* but reuses the context of the device to show information about it.
+The details view usually shows a couple of `Tabs`, like the **hello** tab in the screenshot above.
+It is referenced by another route called */hello* but reuses the context of the device to show information about it.
 
 In the following, we will guide you through the process of creating a new tab for this view that is accessible through the route *apps/cockpit/#/device/:id/hello*.
 
@@ -220,12 +220,12 @@ You can do the same for tenants, users or applications details views.
 
 Next you will learn how to show this tab only if a condition is met.
 
-### (Bonus) 4. Show the tab only if a condition is met {#bonus-4-show-the-tab-only-if-a-condition-is-met}
+### 4. Show the tab only if a condition is met (Optional) {#optional-4-show-the-tab-only-if-a-condition-is-met}
 
 In some cases, additional information is available only if a condition is met. For example, it only makes sense to show a location if the device has a location fragment associated.
 To add such a condition, the context routes inherit the [guard concept of Angular](https://angular.io/guide/router#milestone-5-route-guards).
 
-To add a guard, you simply need to add the `canActivate` property to the route definition:
+To add a guard, you simply need to add the `canActivate` property to the route definition in *app.module.ts*:
 
 ```js
 import { NgModule } from '@angular/core';
@@ -304,7 +304,7 @@ export class AppModule extends HybridAppModule {
 
 Now you can write a guard which checks a certain condition. If it resolves to true, the tab will be shown, otherwise not.
 
-A guard to check for a certain fragment on a device can look like *hello.guard.ts*:
+In order for the guard to check for a certain fragment on a device, create a new file called *hello.guard.ts* with the following information:
 
 ```js
 import { Injectable } from '@angular/core';

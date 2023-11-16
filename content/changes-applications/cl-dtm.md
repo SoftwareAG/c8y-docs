@@ -9,13 +9,13 @@ weight: 20
 
 ### October 2023
 
-#### -Change- Improved the visualization of skipped steps during asset instance creation
+#### -Change- Improved visualization of steps skipped during asset instance creation
 
-During asset instance creation skipped steps which are not mandatory are marked with grey coloured ticks. [CTM-654]
+Non-mandatory steps that are skipped during creation of an asset instance are now distinguished by a grey colored ticks. [CTM-654]
 
-#### -Change- Asset entities creation page is implemented with UI debouncing to validate key field.
+#### -Change- Immediate feedback from validation of Key field
 
-Implemented UI debouncing to validate key in asset model, asset and property creation page. This will improve the situation where save button is disabled until the focus is removed from the key field while creating these entities. [CTM-651]
+Immediate feedback from validation of Key field upon value entry without requiring a click outside the field during creation of  asset model, asset property and asset. With Debouncing implementation, API requests are triggered after a brief delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application. [CTM-651]
 
 #### -Change- Improved readability in Localization screen
 
@@ -27,36 +27,36 @@ Realigned Edit/Delete options for translations under localization screen. [CTM-6
 
 #### -Change- Improved validation for number property during asset instance creation
 
-Implemented validation when only E is entered as a value for Number property during asset instance creation. [CTM-681]
+Added validation to handle only 'E' (exponent) entered for a property of type Number during asset creation. [CTM-681]
 
 #### -Change- Bulk assets import to use logged in user instead of service user to import the assets
 
 Implemented the bulk assets import to use logged in user instead of service user to import the assets also to enable inventory role access for bulk import. [CTM-729]
 
-#### -Change- Considered default values for asset properties in case of bulk import of assets
+#### -Change- Default values of asset properties available in assets bulk import template
 
-If a default value is set for a property, then the bulk import template will have it mentioned against the corresponding property. [CTM-702]
+If a default value is set for a property, the bulk import template will have it mentioned against the corresponding property. [CTM-702]
 
-#### -Change- Moved DTM version under platform info section
+#### -Change- DTM version moved under Platform info section
 
-Moved DTM version on the right drawer under platform info section. [CTM-677]
+The DTM version is now in the right drawer under the Platform info section [CTM-677]
 
-#### -Change- Inventory role implementation for DTM assets
+#### -Change- Role based access for bulk import of assets
 
-DTM UI and microservice is implemented with inventory role support for assets. [CTM-649]
+Access to Bulk import feature can now be controlled using Cumulocity Global and Inventory roles. [CTM-649]
 
 #### -Change- Implemented ordering of key value pairs in complex properties
 
-Complex properties are now implemented with ordering for key value pairs. [CTM-902]
+Key value pairs in a Complex property can now be ordered as needed by entering the desired order in the Order field [CTM-902]
 
-#### -Change- Asset hierarchy dropdown with search option
+#### -Change- Improved asset model selection dropdown with search option
 
-Implemented asset hierarchy dropdown in asset creation page with searchable option. [CTM-771]
+Asset model selection dropdown during asset creation is now searchable. [CTM-771]
 
 #### -Change- Modified DTM URLs to match naming conventions of DTM entities.
 
 DTM URLs are now modified to reflect the naming conventions followed for DTM entities. [CTM-689]
 
-#### -Feature- Assets are added with location details
+#### -Feature- Assign a location to an asset
 
-Location is added as a default property with Altitude, Latitude and Longitude. If this property is associated with any asset model then assets are created with location details [CTM-615]
+Introduced **Location**,  a default property available out of the box. Add the Location property to the desired asset model to assign co-ordinates or select the location on a map while creating an asset. [CTM-615]

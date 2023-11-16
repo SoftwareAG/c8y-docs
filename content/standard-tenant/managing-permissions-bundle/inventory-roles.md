@@ -81,7 +81,7 @@ For the selected device, there are also measurements containing only the "c8y_Te
 
 You want a user to only see the device management measurements which have a fragment "c8y_SignalStrength".
 
-In the default configuration for inventory roles we need to provide access to all fragments that the measurement has, that is, "c8y_SignalStrength" and "c8y_Temperature".
+In the default configuration for inventory roles we must provide access to all fragments that the measurement has, that is, "c8y_SignalStrength" and "c8y_Temperature".
 
 <img src="/images/users-guide/Administration/default-roles-inventory.png" alt="Default inventory role configuration">
 

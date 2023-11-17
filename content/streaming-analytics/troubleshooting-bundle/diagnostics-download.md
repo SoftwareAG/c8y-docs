@@ -8,10 +8,15 @@ layout: redirect
 Diagnostics are not available for the Apama-ctrl-smartrules and Apama-ctrl-smartrulesmt microservices.
 {{< /c8y-admon-info >}}
 
-If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available from the bottom of the Streaming Analytics application: one for downloading basic diagnostics information (the **Diagnostics** link) and another one for downloading enhanced (more resource-intensive) diagnostics information (the **Enhanced** link). These links are shown at the bottom of the home screen and also on the pages that appear when you go to the **Analytics Builder** and **EPL Apps** pages (that is, in the EPL app manager and in the model manager).
+If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button in the Streaming Analytics application.
+This opens the right drawer which includes a **Diagnostics** section with the following links:
+
+- A **Download** link for downloading basic diagnostics information.
+- A **Download enhanced** link for downloading enhanced (more resource-intensive) diagnostics information.
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [product support](/additional-resources/contacting-support/) if you are filing a support ticket.
-You can see a version number next to the links.
+You can find the tenant ID and version number in the **Platform info** section of the right drawer.
+See [User options and settings](https://cumulocity.com/docs/get-familiar-with-the-ui/user-settings/) for more details.
 
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
 

@@ -24,12 +24,12 @@ This feature requires the following on top of the general requirements:
 Enable or disable this authentication option in the **External token configuration** section.
 ![External token disabled](/images/users-guide/Administration/sso-access-token-external-iam-disabled.png)
 
-If enabled, this authentication takes precedence over the standard [JWT token authentication](https://cumulocity.com/api/core/#section/Authentication/JWT), which means, for example, that an HTTP request to {{< product-c8y-iot >}} with the header `Authentication: Bearer {{access token}}` assumes that the source of the access token is your authorization server instead of the token being issued by {{< product-c8y-iot >}}.
+If enabled, this authentication takes precedence over the standard [JWT token authentication](https://cumulocity.com/api/core/#section/Authentication/JWT), which means, for example, that an HTTP request to {{< product-c8y-iot >}} with the header `Authorization: Bearer {{access token}}` assumes that the source of the access token is your authorization server instead of the token being issued by {{< product-c8y-iot >}}.
 Configure the user ID or the application ID to any top-level claim in the access token.
 
 ![External token user id](/images/users-guide/Administration/sso-access-token-external-iam-user-id-config.png)
 
-{{< product-c8y-iot >}} creates a user wich gets assigned the configured user ID or application ID. Additionally, this user is granted the roles to access to the applications defined in the **Access mapping** section.
+{{< product-c8y-iot >}} creates a user which gets assigned the configured user ID or application ID. Additionally, this user is granted the roles to access to the applications defined in the **Access mapping** section.
 
 {{< c8y-admon-info >}}
 If it is set, the configuration allows you to create a {{< product-c8y-iot >}} user representing your applications (the access tokens are obtained via the *client credentials flow*),

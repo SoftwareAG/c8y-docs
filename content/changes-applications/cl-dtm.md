@@ -29,10 +29,6 @@ Realigned Edit/Delete options for translations under localization screen. [CTM-6
 
 Added validation to handle only 'E' (exponent) entered for a property of type Number during asset creation. [CTM-681]
 
-#### -Change- Bulk assets import to use logged in user instead of service user to import the assets
-
-Implemented the bulk assets import to use logged in user instead of service user to import the assets also to enable inventory role access for bulk import. [CTM-729]
-
 #### -Change- Default values of asset properties available in assets bulk import template
 
 If a default value is set for a property, the bulk import template will have it mentioned against the corresponding property. [CTM-702]
@@ -43,7 +39,7 @@ The DTM version is now in the right drawer under the Platform info section [CTM-
 
 #### -Change- Role based access for bulk import of assets
 
-Access to Bulk import feature can now be controlled using Cumulocity Global and Inventory roles. [CTM-649]
+Access to Bulk import feature can now be controlled using Cumulocity Global and Inventory roles. [CTM-649,CTM-729]
 
 #### -Change- Implemented ordering of key value pairs in complex properties
 

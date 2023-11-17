@@ -6,7 +6,7 @@ weight: 10
 
  **Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-If the widgets that are provided by the platform do not meet your requirements, you might want to create a custom widget and add it to a dashboard.
+If the widgets that are provided by the platform do not meet your requirements, you can create a custom widget and add it to a dashboard.
 
 A typical dashboard looks like this, showing various widgets:
 

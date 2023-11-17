@@ -56,17 +56,17 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 ### Step 3: Register a device
 
-To connect a device to {{< product-c8y-iot >}}, you need to register it. This is done in the **Device management application**. Devices can be connected to your {{< product-c8y-iot >}} account in three different ways:
+To connect a device to {{< product-c8y-iot >}}, you need to register it in the Device management application. This process is described in general in [Registering devices](/device-management-application/registering-devices/). As a start, see the following ways a device can be connected to your {{< product-c8y-iot >}} account:
+
 
 * Connect a smartphone to {{< product-c8y-iot >}} using the [{{< sensor-app >}}](/sensor-app/overview/). The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.
 * Connect a [Raspberry Pi as demo device using thin.edge.io](/device-integration/integration-tutorials/#prerequisites). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
-* [Connect any device manually](/device-management-application/registering-devices/#to-connect-a-device-manually) by following the manual device registration steps.
+
+For the purpose of this tutorial, we will register a device via the {{< sensor-app >}}.
 
 #### Connecting a smartphone with the {{< sensor-app >}}
 
-In this tutorial, we will register a device via the {{< sensor-app >}}.
-
-The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< sensor-app >}} can also send commands to the smartphone directly from the phone dashboard.
+The {{< sensor-app >}} is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< sensor-app >}} can also send commands to the smartphone directly from the phone dashboard.
 
 Go to [Sensor App](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as more information on [how to install the app](/sensor-app/installing-the-sensor-app/) available for iOS and Android.
 

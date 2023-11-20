@@ -41,9 +41,9 @@ The DTM version is now in the right drawer under the Platform info section [CTM-
 
 Access to the bulk import feature can now be controlled using Cumulocity IoT global and inventory roles. [CTM-649,CTM-729]
 
-#### -Change- Implemented ordering of key value pairs in complex properties
+#### -Feature- Implemented ordering of key value pairs in complex properties
 
-Key value pairs in a Complex property can now be ordered as needed by entering the desired order in the **Order** field. [CTM-902]
+Key value pairs in a Complex property can now be ordered as needed by entering the desired order in the **Order** field. [CTM-846]
 
 #### -Change- Improved asset model selection dropdown with search option
 

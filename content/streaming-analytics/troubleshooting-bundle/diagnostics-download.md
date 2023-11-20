@@ -11,7 +11,7 @@ Diagnostics are not available for the Apama-ctrl-smartrules and Apama-ctrl-smart
 If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button in the Streaming Analytics application.
 This opens the right drawer which includes a **Diagnostics** section with the following links:
 
-- A **Download** link for downloading basic diagnostics information.
+- A **Download basic** link for downloading basic diagnostics information.
 - A **Download enhanced** link for downloading enhanced (more resource-intensive) diagnostics information.
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [product support](/additional-resources/contacting-support/) if you are filing a support ticket.

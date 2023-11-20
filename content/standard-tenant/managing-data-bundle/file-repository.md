@@ -49,9 +49,11 @@ Click the menu icon at the right of the respective row and then click **Download
 
 ### To delete a file from your account {#to-delete-a-file-from-your-account}
 
-Hover over the respective row and click the delete icon <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> to delete the file.
+Hover your mouse over the row containing the file you want to delete, then click the trash icon <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> at the right.
 
-You can also delete multiple files at once by selecting the respective checkboxes next to each file or by selecting all files currently displayed. Click **Delete** and confirm the deletion.
+#### To delete multiple files
+
+Select the checkbox next to each file you want to delete, or click the checkbox at the top of the table to select all displayed files. The table header shows the number of files selected and available actions. Click **Delete** and confirm the deletion.
 
 {{< c8y-admon-info >}}
 * If a file is an application archive, it cannot be deleted from the files repository. You must delete this file from the applications details.

@@ -43,14 +43,16 @@ Certificate revocation is an irreversible process.
 
 #### To enable online revocation {#to-enable-online-revocation}
 
+![CRl Details](/images/users-guide/DeviceManagement/devmgmt-crl-online-option-check.png)
+
 1. Click **CRL check** in the upper right corner of the screen.
 2. Enable the **Online** option.
 
-![CRl Details](/images/users-guide/DeviceManagement/devmgmt-crl-option-check.png)
-
 #### To enable offline revocation {#to-enable-offline-revocation}
 
-1. Click **CRL check** in the upper right corn#### To enable offline revocationer of the screen.
+![CRl Details](/images/users-guide/DeviceManagement/devmgmt-crl-offline-option-check.png)
+
+1. Click **CRL check** in the upper right corner to enable the offline revocation of the screen.
 2. Check the **Offline** checkbox.
 3. To add revoked certificate serial numbers manually, enter the serial number and date in the **Revoked certificates list**
    panel.
@@ -59,8 +61,10 @@ Certificate revocation is an irreversible process.
    | Field | Description |
    |:------------------|:------------------------------------------------------------|
    | Serial number | Must be in `Hexadecimal Value`.|
-   | Date (optional)       | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. The revocation date cannot be a future date. If the date field is empty, the current date is used. |
+   | Date (optional)       | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. |
 4. Click save to confirm your entries.
+
+Note: If the date is in future then that CRL entry is skipped. If the date field is empty, then the current date is used.
 
 #### Offline bulk import {#offline-bulk-import}
 

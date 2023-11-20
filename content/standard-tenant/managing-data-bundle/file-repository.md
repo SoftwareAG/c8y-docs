@@ -56,6 +56,6 @@ Hover your mouse over the row containing the file you want to delete, then click
 Select the checkbox next to each file you want to delete, or click the checkbox at the top of the table to select all displayed files. The table header shows the number of files selected and available actions. Click **Delete** and confirm the deletion.
 
 {{< c8y-admon-info >}}
-* If a file is an application archive, it cannot be deleted from the files repository. You must delete this file from the applications details.
-* If you delete files in bulk and the selection contains files which cannot be deleted, these files will be ignored.
+* If a file is an application archive, you cannot delete it from the files repository. Instead, you must delete this file from the applications details.
+* If you delete files in bulk and your selection contains files not eligible for removal, the deletion will proceed while ignoring the files that cannot be deleted.
 {{< /c8y-admon-info >}}

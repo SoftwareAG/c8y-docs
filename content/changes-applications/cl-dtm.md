@@ -15,15 +15,15 @@ Non-mandatory steps that are skipped during creation of an asset instance are no
 
 #### -Change- Immediate feedback from validation of Key field
 
-Immediate feedback from validation of Key field upon value entry without requiring a click outside the field during creation of asset model, asset property and asset. With debouncing implementation, API requests are triggered after a brief delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application. [CTM-651]
+Immediate feedback from validation of **Key** field upon value entry without requiring a click outside the field during creation of asset model, asset property and asset. With de-bouncing implementation, the API requests are triggered after a brief delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application. [CTM-651]
 
 #### -Change- Improved readability in Localization screen
 
-Renamed <b>Keys</b> to <b>Identifier</b> and <b>Terms</b> to <b>Translation</b> in Localization screen. [CTM-642]
+Renamed <b>Keys</b> to <b>Identifier</b> and <b>Terms</b> to <b>Translation</b> in Localization page. [CTM-642]
 
 #### -Change- Improved action buttons in Localization screen
 
-Realigned Edit/Delete options for translations under localization screen. [CTM-696]
+Realigned **Edit/Delete** icon for translations under localization page. [CTM-696]
 
 #### -Change- Improved validation for number property during asset instance creation
 
@@ -37,22 +37,22 @@ If a default value is set for a property, the bulk import template will have it 
 
 The DTM version is now in the right drawer under the Platform info section [CTM-677]
 
-#### -Change- Role based access for bulk import of assets
+#### -Change- Role-based access for bulk import of assets
 
-Access to Bulk import feature can now be controlled using Cumulocity Global and Inventory roles. [CTM-649,CTM-729]
+Access to the bulk import feature can now be controlled using Cumulocity IoT global and inventory roles. [CTM-649,CTM-729]
 
 #### -Change- Implemented ordering of key value pairs in complex properties
 
-Key value pairs in a Complex property can now be ordered as needed by entering the desired order in the Order field [CTM-902]
+Key value pairs in a Complex property can now be ordered as needed by entering the desired order in the **Order** field. [CTM-902]
 
 #### -Change- Improved asset model selection dropdown with search option
 
-Asset model selection dropdown during asset creation is now searchable. [CTM-771]
+A search function has been added to the asset model dropdown when creating new assets. [CTM-771]
 
-#### -Change- Modified DTM URLs to match naming conventions of DTM entities.
+#### -Change- Modified DTM URLs to match naming conventions of DTM entities
 
-DTM URLs are now modified to reflect the naming conventions followed for DTM entities. [CTM-689]
+DTM URLs have been modified to reflect the naming conventions followed for DTM entities. [CTM-689]
 
 #### -Feature- Assign a location to an asset
 
-Introduced **Location**,  a default property available out of the box. Add the Location property to the desired asset model to assign co-ordinates or select the location on a map while creating an asset. [CTM-615]
+A new default property "Location" has been introduced. Add the Location property to the desired asset model to assign co-ordinates or select the location on a map while creating an asset. [CTM-615]

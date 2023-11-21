@@ -7,6 +7,21 @@ weight: 5
 
 ---
 
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The user must have access to the Administration application.
+
+ROLES & PERMISSIONS:
+
+The user must have "Tenant statistics" permission:
+* To see usage statistics for current tenant: READ permission.
+
+The user must have "Application management" permissions:
+* To view subscribed applications: READ permission.
+
+{{< /c8y-admon-req >}}
+
 The Home screen of the Administration application provides the following content:
 
 * A welcome message

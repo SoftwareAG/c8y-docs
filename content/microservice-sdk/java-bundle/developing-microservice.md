@@ -40,28 +40,27 @@ To create a bean in the tenant scope, use the annotation `@TenantScope`, as in t
 
 ```java
 @TenantScope
-@Bean(name = "tenantMeasurementApi")
-public MeasurementApi getMeasurementApi() throws SDKException {
-  return delegate.getMeasurementApi();
-}
+@Bean(name = "tenantEventApi")
+public EventApi eventApi (Platform platform) throws SDKException {
+  return platform.getEventApi();
+}  
 ```
-If you then use the bean `tenantMeasurementApi`, the context is set to `@TenantScope` and the service user credentials are utilized.
+If you then use the bean `tenantEventApi`, the service user credentials are utilized.
 
-By default, the beans are created in the tenant scope and use the service user to communicate with the platform. This behavior is also enabled when using the respective annotation for the tenant context. 
+By default, the Platform API related beans provided by the Microservice SDK are created in the tenant scope and use the service user to communicate with the platform. This behavior is also enabled when using the respective annotation for the tenant context. 
 
 There are predefined beans both in the `@TenantScope` and `@UserScope`. 
-The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Measurement Api in the tenant scope, you can specify @Qualifier("tenantMeasurementApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform. 
+The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Event Api in the tenant scope, you can specify @Qualifier("tenantEventApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform. 
 
 ```java
 @Autowired
-
-@Qualifier("tenantMeasurementApi")
-private MeasurementApi measurementApi;
+@Qualifier("tenantEventApi")
+private EventApi eventApi;
 ```
 
 ```java
 @Autowired
-private MeasurementApi measurementApi;
+private EventApi eventApi;
 ```
 In both cases, beans within the tenant scope will be auto-wired. 
 
@@ -72,18 +71,18 @@ To create a bean in the user scope, specify `@UserScope`, as in the example belo
 
 ```java
 @UserScope
-@Bean(name = "userMeasurementApi")
-public MeasurementApi getMeasurementApi() throws SDKException {
-  return delegate.getMeasurementApi();
-}
+@Bean(name = "userEventApi")
+public EventApi eventApi (Platform platform) throws SDKException {
+  return platform.getEventApi();
+}  
 ```
 
 Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix "user" and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
 
 ```java
 @Autowired
-@Qualifier("userMeasurementApi")
-private MeasurementApi measurementApi;
+@Qualifier("userEventApi")
+private EventApi eventApi;
 ```
 
 Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform. 

@@ -6,7 +6,14 @@ weight: 20
 
 
 When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add {{< product-c8y-iot >}} CLI to it.
-This functionality is available for Angular 7 from version 10.4.2.0, for Angular 8 from version 10.5.9.0 and for Angular 11 from version 10.10.4.0.
+This functionality is available for:
+  - Angular 7: Supported from version 10.4.2.0
+- Angular 8: Supported from version 10.5.9.0
+- Angular 11: Supported from version 10.10.4.0
+- Angular 12: Supported from version 10.11.45.0
+- Angular 14: Supported from version 10.15.132.0
+- Angular 15: Supported from version 10.18.157.0
+
 
 ### Install Angular CLI {#install-angular-cli}
 

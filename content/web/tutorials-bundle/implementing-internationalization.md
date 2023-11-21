@@ -242,9 +242,9 @@ In your *translations/text-translation.component.html* file, add:
 
 If your language is set to Italian, reloading the application renders the content as **User settings (it)**.
 
-The `translate` pipe allows you to include parameters in the translated strings.
+The `translate` pipe allows you to include parameters in the translated strings. Add a new entry to the following files:
 
-* Add a new entry in *translations/locales/it.po*:
+* *translations/locales/it.po*:
     ```
     msgid "Mr. Smith is {{ age }} years old"
     msgstr "Sig. Smith ha {{ age }} anni"
@@ -388,7 +388,7 @@ It is possible to translate such variables, as in the example below:
     ```
 
 {{< c8y-admon-info >}}
-Wrap such strings with the `gettext` function. This enables automatic extraction of the strings to the *locales/locales.pot* file. This also indicates that such strings are meant to be translated.
+Wrap such strings with the `gettext` function. This enables automatic extraction of the strings to the *locales/locales.po* file. This also indicates that such strings are meant to be translated.
 See [Extracting strings for translation using the locale-extract tool](#extracting-strings-for-translation-using-the-locale-extract-tool) for information about extracting strings for translation.
 {{< /c8y-admon-info >}}
 

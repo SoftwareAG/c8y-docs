@@ -14,6 +14,14 @@ weight: 10
 This version of Cumulocity IoT Streaming Analytics includes the Apama version 10.15.4 correlator.
 EPL apps developers should also refer to [What's New In Apama 10.15.4](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-WhaNewInApa_10154_top.html) in the Apama documentation.
 
+#### -Change- Location of diagnostics links
+
+Previously, two links for downloading diagnostics information were available at the bottom of the Streaming Analytics application.
+These links have been moved. They are now available when you click the **User** button in the Streaming Analytics application to display the right drawer.
+The right drawer now displays these links in a new **Download diagnostics** section. See also [Downloading diagnostics and logs](https://cumulocity.com/docs/streaming-analytics/troubleshooting/#diagnostics-download) in the user documentation.
+
+In addition, the right drawer now also provides a **Documentation** section with links to the Streaming Analytics documentation.
+
 #### -Change- Basic diagnostics information
 
 The EPL memory profiler snapshots, which were previously only included in the enhanced diagnostics information, are now also included in the basic diagnostics information. This is helpful in case a high memory usage alarm is raised when the Apama-ctrl microservice consumes 90% of the maximum memory permitted for the microservice container and you only have basic diagnostics information available. See also [Downloading diagnostics and logs](https://cumulocity.com/docs/streaming-analytics/troubleshooting/#diagnostics-download) in the user documentation.

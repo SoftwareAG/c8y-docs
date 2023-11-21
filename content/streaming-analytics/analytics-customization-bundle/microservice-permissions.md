@@ -37,6 +37,5 @@ The manifest also specifies the permissions with which the microservice runs. Th
 - ROLE_TENANT_MANAGEMENT_READ
 - ROLE_BULK_OPERATION_ADMIN
 - ROLE_BULK_OPERATION_READ
-- ROLE_MACHINE_LEARNING_READ
 
 You can add other roles to this list (or remove them from it) to grant (or remove) permissions to EPL code.

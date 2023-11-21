@@ -56,8 +56,9 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 ### Step 3: Register a device
 
-To connect a device to {{< product-c8y-iot >}}, you need to register it in the **Device management application**. This process is described in general in [Registering devices](/device-management-application/registering-devices/). As a start, see the following ways a device can be connected to your {{< product-c8y-iot >}} account:
+To connect a device to {{< product-c8y-iot >}}, you need to register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
+Moreover we offer two step-by-step description to easily register a first device to your {{< product-c8y-iot >}} account:
 
 * Connect a smartphone to {{< product-c8y-iot >}} using the [{{< sensor-app >}}](/sensor-app/overview/). The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.
 * Connect a [Raspberry Pi as demo device using thin.edge.io](/device-integration/integration-tutorials/#prerequisites). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
@@ -101,7 +102,11 @@ You have connected your smartphone with the {{< sensor-app >}}. For details on h
 
 ### Step 4: Customize the dashboard
 
-The Cockpit application in {{< product-c8y-iot >}} provides you with an unrestrained overview and the essential dashboards to monitor your IoT data according to your needs. The dashboard that was created from the last step can be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here allowing you to visualize data emanating from your device or devices. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
+Next, we will switch to the Cockpit application via the application switcher at the top right to create our first dashboard.
+
+The Cockpit application in {{< product-c8y-iot >}} provides you with an unrestrained overview and the essential dashboards to monitor your IoT data according to your needs.
+
+On registering a device in the last step, a dashboard has automatically been created which can now be edited and designed individually according to your needs. You can add, remove or change widgets being displayed here allowing you to visualize data emanating from your device or devices. For details on each widget type refer to [Widgets collection](/cockpit/widgets-collection/).
 
 Follow the instructions below to customize the new dashboard of the device you registered in the previous step.
 
@@ -128,6 +133,8 @@ You have successfully customized your first dashboard.
 ![Dashboard edited](/images/users-guide/getting-started/getting-started-customize-dashboard-result.png)
 
 See [Working with dashboards](/cockpit/working-with-dashboards/) for more details on how to create, share, edit, copy, and delete dashboards.
+
+Next, we will show you how to create a report.
 
 ### Step 5: Create a report
 
@@ -162,9 +169,9 @@ Widgets can display maps, images, graphs, tables and other graphic representatio
 You can also develop your own widgets and add them to your {{< product-c8y-iot >}} account. For more information go to [Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget-to-dashboard).
 {{< /c8y-admon-info >}}
 
-#### To add a widget to a report
+#### To add a widget to a dashboard or a report
 
-1. Click the **Add widget** button on the main page.
+1. Click the **Add widget** button on the main page of the report you have created in the previous step, or click **Add widget** in the top menu bar.
 
 ![Add widget](/images/users-guide/getting-started/getting-started-add-widget-to-report.png)
 
@@ -180,6 +187,6 @@ You can also develop your own widgets and add them to your {{< product-c8y-iot >
 
 ![Widget added on report](/images/users-guide/getting-started/getting-started-add-widget-to-report-done.png)
 
-You have added a map widget to your report.
+You have added a map widget to your report. Similarly, you can add widgets to dashboards.
 
 For more details on adding widgets on dashboards or reports see [Using widgets in dashboards and reports](/cockpit/using-widgets/).

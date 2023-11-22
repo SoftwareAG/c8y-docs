@@ -35,7 +35,7 @@ If a default value is set for a property, the bulk import template will have it 
 
 #### -Change- DTM version moved under Platform info section
 
-The DTM version is now in the right drawer under the Platform info section [CTM-677]
+The DTM version is now displayed in the right drawer under the **Platform info** section. [CTM-677]
 
 #### -Change- Role-based access for bulk import of assets
 

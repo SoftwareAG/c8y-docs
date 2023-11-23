@@ -299,5 +299,5 @@ Note that entries of this type are not created when using Basic authentication.
 </table>
 
 {{< c8y-admon-info >}}
-For information on Analytics Builder monitoring including audit logs, see [Monitoring and configuration](/streaming-analytics/analytics-builder/#monitoring-and-configuration).
+See also [Audit logs for Streaming Analytics](/streaming-analytics/troubleshooting/#analytics-audit-logs).
 {{< /c8y-admon-info >}}

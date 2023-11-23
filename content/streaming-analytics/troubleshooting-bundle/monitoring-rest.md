@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 50
 title: Monitoring REST endpoints
 layout: redirect
 ---

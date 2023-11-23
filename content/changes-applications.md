@@ -1,5 +1,5 @@
 ---
-title: Application enablement
+title: Application enablement & solutions
 icon: "c8y-icon c8y-icon-tools"
 type: root
 layout: redirect

@@ -58,7 +58,7 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 To connect a device to {{< product-c8y-iot >}}, you need to register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
-Moreover we offer two step-by-step description to easily register a first device to your {{< product-c8y-iot >}} account:
+Moreover we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 
 * Connect a smartphone to {{< product-c8y-iot >}} using the [{{< sensor-app >}}](/sensor-app/overview/). The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.
 * Connect a [Raspberry Pi as demo device using thin.edge.io](/device-integration/integration-tutorials/#prerequisites). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.

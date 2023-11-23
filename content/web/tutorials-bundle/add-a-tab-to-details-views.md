@@ -225,7 +225,7 @@ Next you will learn how to show this tab only if a condition is met.
 In some cases, additional information is available only if a condition is met. For example, it only makes sense to show a location if the device has a location fragment associated.
 To add such a condition, the context routes inherit the [guard concept of Angular](https://angular.io/guide/router#milestone-5-route-guards).
 
-To add a guard, you simply need to add the `canActivate` property to the route definition in *app.module.ts*:
+To add a guard, you simply must add the `canActivate` property to the route definition in *app.module.ts*:
 
 ```js
 import { NgModule } from '@angular/core';

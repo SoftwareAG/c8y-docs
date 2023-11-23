@@ -21,9 +21,9 @@ Immediate feedback from validation of **Key** field upon value entry without req
 
 Renamed <b>Keys</b> to <b>Identifier</b> and <b>Terms</b> to <b>Translation</b> in Localization page. [CTM-642]
 
-#### -Change- Improved action buttons in Localization screen
+#### -Change- Improved action buttons in Localization page
 
-Realigned **Edit/Delete** icon for translations under localization page. [CTM-696]
+Realigned the edit and delete icons for translations in the <b>Localization</b> page. [CTM-696]
 
 #### -Change- Improved validation for number property during asset instance creation
 
@@ -31,7 +31,7 @@ Added validation to handle only 'E' (exponent) entered for a property of type Nu
 
 #### -Change- Default values of asset properties available in assets bulk import template
 
-If a default value is set for a property, the bulk import template will have it mentioned against the corresponding property. [CTM-702]
+The bulk import template now shows any default values that are set for asset properties. [CTM-702]
 
 #### -Change- DTM version moved under Platform info section
 

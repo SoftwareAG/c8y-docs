@@ -163,7 +163,8 @@ You can find `*.po` files with default translations under *node_modules/@c8y/ngx
 
 ### Adding new languages {#adding-new-languages}
 
-To define new languages which are not supported by default, follow the example below. It adds an Italian translation.
+To define new languages which are not supported by default, follow the example below, to add language specific **User settings**.
+
 
 1. Create a new translation file *translations/locales/it.po*:
 
@@ -225,6 +226,10 @@ To define new languages which are not supported by default, follow the example b
 4. Restart the server and the application.
 
 Now you can select Italian and the **User settings** label is changed to **User settings (it)**, as defined in the *it.po* file.
+
+{{< c8y-admon-info >}}
+Note that the entire UI can only be localized if you provide the respective data in the *.po* file.
+{{< /c8y-admon-info >}}
 
 ### Basic text translation {#basic-text-translation}
 

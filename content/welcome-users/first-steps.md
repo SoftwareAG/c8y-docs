@@ -102,7 +102,6 @@ You have connected your smartphone with the {{< sensor-app >}}. For details on h
 
 ### Step 4: Customize the dashboard
 
-Next, we will switch to the Cockpit application via the application switcher at the top right to create our first dashboard.
 
 The Cockpit application in {{< product-c8y-iot >}} provides you with an unrestrained overview and the essential dashboards to monitor your IoT data according to your needs.
 

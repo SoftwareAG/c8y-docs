@@ -159,7 +159,6 @@ To create a report click **Reports** in the **Navigator** on the left side and f
 
 You have successfully created a report. See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
 
-See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
 
 Next, we will add a widget to the report.
 ### Step 6: Add a widget to a report

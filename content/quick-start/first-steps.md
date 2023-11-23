@@ -100,9 +100,11 @@ To connect your smartphone via QR code follow the instructions below:
 
 You have connected your smartphone with the {{< sensor-app >}}. For details on how the app sends information to {{< product-c8y-iot >}} go to [Sending sensor data to the platform](/sensor-app/sending-sensor-data/). For information on how to view sensor data go to [Viewing sensor data](/sensor-app/viewing-sensor-data/).
 
-Next, we will switch to the Cockpit application via the application switcher at the top right to create our first dashboard.
-### Step 4: Customize the dashboard
+Next, you will learn how to customize the dashboard for your smartphone.
 
+### Step 4: Customize a dashboard
+
+Switch to the Cockpit application via the application switcher <img class="Default" src="/images/icons/switcher-icon.png" alt="Search" style="display: inline-block; margin:0"> at the top right.
 
 The Cockpit application in {{< product-c8y-iot >}} provides you with an unrestrained overview and the essential dashboards to monitor your IoT data according to your needs.
 
@@ -134,7 +136,7 @@ You have successfully customized your first dashboard.
 
 See [Working with dashboards](/cockpit/working-with-dashboards/) for more details on how to create, share, edit, copy, and delete dashboards.
 
-Next, we will show you how to create a report.
+Next, we will show you how to create a report to track data.
 
 ### Step 5: Create a report
 
@@ -159,8 +161,8 @@ To create a report click **Reports** in the **Navigator** on the left side and f
 
 You have successfully created a report. See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
 
-
 Next, we will add a widget to the report.
+
 ### Step 6: Add a widget to a report
 
 Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.  Go to [Widgets collection](/cockpit/widgets-collection/) to see a list of all preset widgets that {{< product-c8y-iot >}} provides.

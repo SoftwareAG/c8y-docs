@@ -11,4 +11,4 @@ in the {{< openapi >}} for details of accessing the audit logs.
 Audit log entries include the current action and the the name of the user performing that action.
 For example:
 
-![Audit log entry for Streaming Analytics](/images/streaming-analytics/troubleshooting/audit-logs.png)
+![Audit log entries for Streaming Analytics](/images/streaming-analytics/troubleshooting/audit-logs.png)

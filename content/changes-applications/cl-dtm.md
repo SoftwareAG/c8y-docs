@@ -15,11 +15,11 @@ Non-mandatory steps that are skipped during creation of an asset instance are no
 
 #### -Change- Immediate feedback from validation of Key field
 
-Immediate feedback from validation of **Key** field upon value entry without requiring a click outside the field during creation of asset model, asset property and asset. With de-bouncing implementation, the API requests are triggered after a brief delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application. [CTM-651]
+During the creation of asset models, asset properties and assets, upon entering input in the **Key** field, immediate feedback is now shown - no need to click outside the field. With de-bouncing implementation, the API requests are triggered after a short delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application. [CTM-651]
 
 #### -Change- Improved readability in Localization screen
 
-Renamed <b>Keys</b> to <b>Identifier</b> and <b>Terms</b> to <b>Translation</b> in Localization page. [CTM-642]
+Renamed the column heading <b>Keys</b> to <b>Identifier</b> and the column heading <b>Terms</b> to <b>Translation</b> in the Localization page. [CTM-642]
 
 #### -Change- Improved action buttons in Localization page
 

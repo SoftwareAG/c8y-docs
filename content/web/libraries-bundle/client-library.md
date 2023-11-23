@@ -78,7 +78,7 @@ In the following sections, the default signature of these functions is described
 
 ### Accessing a microservice with the Fetch API {#accessing-a-microservice-with-the-fetch-api}
 
-The client internally uses the Fetch API. By accessing this core function, you can do any authenticated request to any resource. Standalone you can use `core.client.fetch(url, options)` and in `@c8y/ngx-components/data` for Angular you must inject the `FetchClient`:
+The client internally uses the Fetch API. By accessing this core function, you can do any authenticated request to any resource. Standalone you can use `core.client.fetch(url, options)` and in `@c8y/ngx-components/data` for Angular you have to inject the `FetchClient`:
 
 ```js
 constructor(private fetchClient: FetchClient) {} // di

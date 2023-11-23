@@ -177,7 +177,7 @@ The {{< product-c8y-iot >}} platform itself is running as a hybrid application i
 
 #### Deprecating custom manifests {#deprecating-custom-manifests}
 
-Now developers have at their disposal all modern JS, so they must use normal ESM to import and export dependencies. Although the manifest files will still work, they are no longer required. We still support manifest files as entry points, so it is possible to use these as well as normal package.json files.
+Now developers have at their disposal all modern JS, so they just have to use normal ESM to import and export dependencies. Although the manifest files will still work, they are no longer required. We still support manifest files as entry points, so it is possible to use these as well as normal package.json files.
 
 The cumulocity.json manifest is in practice a module descriptor, so with @c8y/cli (which uses webpack as a module bundler) applications and plugin manifests are resolved and loaded into webpack as any other module, by using custom loaders and resolvers.
 

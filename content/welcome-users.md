@@ -9,4 +9,6 @@ section:
 weight: 29
 ---
 
-For our users....
+Follow this tutorial to learn some basics to start with if you are new to the {{< product-c8y-iot >}} platform.
+
+

@@ -161,6 +161,7 @@ You have successfully created a report. See [Working with reports](/cockpit/work
 
 See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
 
+Next, we will add a widget to the report.
 ### Step 6: Add a widget to a report
 
 Widgets can display maps, images, graphs, tables and other graphic representations of data. Widgets are useful to track information, for example on alarms, assets or applications, or provide maps, quick links and more in dashboards or reports.  Go to [Widgets collection](/cockpit/widgets-collection/) to see a list of all preset widgets that {{< product-c8y-iot >}} provides.

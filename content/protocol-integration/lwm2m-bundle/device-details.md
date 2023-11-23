@@ -67,7 +67,7 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Binary format
   * Timestamp resources
   * Objects tab behavior (keep old values)
-  * Disable default behavior for object instances of objects 3 (Device), 4 (Connectivity Monitoring ) and 6 (Location)
+  * Disable the default behavior for object instances of objects 3 (device), 4 (connectivity monitoring) and 6 (location)
 * **Bootstrap settings** - related to LWM2M bootstrap
   * Bootstrap server ID
   * Security instance offset

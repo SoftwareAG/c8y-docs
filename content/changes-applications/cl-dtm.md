@@ -27,7 +27,7 @@ Realigned **Edit/Delete** icon for translations under localization page. [CTM-69
 
 #### -Change- Improved validation for number property during asset instance creation
 
-Added validation to handle only 'E' (exponent) entered for a property of type Number during asset creation. [CTM-681]
+Asset property of type number is now handled for invalid exponential values during asset creation. [CTM-681]
 
 #### -Change- Default values of asset properties available in assets bulk import template
 
@@ -41,7 +41,7 @@ The DTM version is now in the right drawer under the Platform info section [CTM-
 
 Access to the bulk import feature can now be controlled using Cumulocity IoT global and inventory roles. [CTM-649,CTM-729]
 
-#### -Feature- Implemented ordering of key value pairs in complex properties
+#### -Feature- Implemented ordering of key value pairs in Complex properties
 
 Key value pairs in a Complex property can now be ordered as needed by entering the desired order in the **Order** field. [CTM-846]
 

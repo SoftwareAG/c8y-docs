@@ -6,7 +6,7 @@ section:
 weight: 20
 ---
 
-### October 2023
+### December 2023
 
 #### -Announcement-  Introduced required parameters in the Alarms, Events, Measurements APIs
 

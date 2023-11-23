@@ -6,7 +6,7 @@ section:
 weight: 30
 ---
 
-### October 2023
+### December 2023
 
 #### -Announcement- Removal of Machine Learning
 

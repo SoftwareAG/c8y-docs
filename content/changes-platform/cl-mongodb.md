@@ -6,7 +6,7 @@ section:
 weight: 40
 ---
 
-### October 2023
+### December 2023
 
 #### -Change-  New sorting of Inventory API queries
 

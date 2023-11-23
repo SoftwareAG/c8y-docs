@@ -7,7 +7,7 @@ weight: 60
 ---
 
 
-### October 2023
+### December 2023
 
 #### -Security- Update of third-party protobuf-java
 

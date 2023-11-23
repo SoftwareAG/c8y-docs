@@ -7,7 +7,7 @@ weight: 50
 ---
 
 
-### October 2023
+### December 2023
 
 #### -Announcement- Change in full text search feature of Inventory API
 

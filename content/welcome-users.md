@@ -1,5 +1,5 @@
 ---
-title: Quick start for beginners
+title: Quick start tutorial for beginners
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect

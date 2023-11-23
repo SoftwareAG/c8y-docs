@@ -348,10 +348,10 @@ The following is an example of an audit log entry \(with additional line breaks 
 To view diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
 
 {{< c8y-admon-info>}}
-ADMIN permission for "CEP management" do not include READ permission.
+ADMIN permission for "CEP management" does not include READ permission.
 {{< /c8y-admon-info>}}
 
-If you have READ permission for "CEP management", then links for downloading diagnostics information are available at the bottom of the model manager. These will download zip files that include log file contents, copies of EPL applications, and much more.
+If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button in the Streaming Analytics application. These will download ZIP files that include log file contents, copies of EPL applications, and much more.
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL applications. It is also useful to provide to support if you are filing a support ticket.
 

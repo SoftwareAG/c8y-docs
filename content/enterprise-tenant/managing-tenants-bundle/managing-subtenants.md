@@ -11,6 +11,21 @@ helpcontent:
     To create a subtenant click **Create tenant** at the top right."
 ---
 
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The user must have access to the Administration application of {{< enterprise-tenant >}}
+
+ROLES & PERMISSIONS:
+
+The user must have one or more of "Tenant management" permissions:
+* To view all tenants: READ permission.
+* To create tenants: CREATE permission.
+* To edit existing tenants: UPDATE permission.
+* To create and edit existing tenants: ADMIN permission.
+
+{{< /c8y-admon-req >}}
+
 Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
 {{< c8y-admon-important >}}

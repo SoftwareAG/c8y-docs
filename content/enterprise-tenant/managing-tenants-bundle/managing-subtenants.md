@@ -16,12 +16,14 @@ APPLICATION ACCESS:
 
 The user must have access to the Administration application of {{< enterprise-tenant >}}
 
+To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+
 ROLES & PERMISSIONS:
 
 The user must have one or more of "Tenant management" permissions:
 * To view all tenants: READ permission.
 * To create tenants: CREATE permission.
-* To edit existing tenants: UPDATE permission.
+* To edit tenants (incl. subscriptions) and suspend or activate them: UPDATE permission.
 * To create and edit existing tenants: ADMIN permission.
 
 {{< /c8y-admon-req >}}
@@ -31,23 +33,6 @@ Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use
 {{< c8y-admon-important >}}
 There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).
 {{< /c8y-admon-important >}}
-
-{{< c8y-admon-req >}}
-APPLICATION ACCESS
-
-If you would like to use this feature, please contact [product support](/additional-resources/contacting-support/).
-
-PERMISSIONS & ROLES
-
-To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
-
-- READ - Browse and view tenants.
-- CREATE - Create new tenants.
-- UPDATE - Edit tenants (incl. subscriptions) and suspend or activate them.
-- CHANGE - Create, edit and delete tenants.
-
-
-{{< /c8y-admon-req >}}
 
 
 ### To view subtenants {#to-view-subtenants}

@@ -100,6 +100,7 @@ To connect your smartphone via QR code follow the instructions below:
 
 You have connected your smartphone with the {{< sensor-app >}}. For details on how the app sends information to {{< product-c8y-iot >}} go to [Sending sensor data to the platform](/sensor-app/sending-sensor-data/). For information on how to view sensor data go to [Viewing sensor data](/sensor-app/viewing-sensor-data/).
 
+Next, we will switch to the Cockpit application via the application switcher at the top right to create our first dashboard.
 ### Step 4: Customize the dashboard
 
 

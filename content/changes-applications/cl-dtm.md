@@ -11,7 +11,7 @@ weight: 20
 
 #### -Change- Improved visualization of steps skipped during asset instance creation
 
-Non-mandatory steps that are skipped during creation of an asset instance are now distinguished by a grey colored ticks. [CTM-654]
+Non-mandatory steps that are skipped during the creation of an asset instance are now distinguished by a grey-colored tick. [CTM-654]
 
 #### -Change- Immediate feedback from validation of Key field
 

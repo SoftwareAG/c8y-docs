@@ -53,7 +53,7 @@ Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enh
 
 What you can see or do depends on your permissions:
 
-- If you have only READ permission for "CEP management", you have read-only access to EPL apps and analytic models.
+- If you have only READ permission for "CEP management", you have read-only access to EPL apps and analytic models and you can access the diagnostics information.
 - Without ADMIN permission for "CEP management", you are not able to activate or edit EPL apps or analytic models.
-- If you have both READ and ADMIN permissions for "CEP management", you have read-write access and can access the diagnostics information.
+- If you have both READ and ADMIN permissions for "CEP management", you have read-write access and you can access the diagnostics information.
 - If you have only ADMIN permission for "CEP management" and no READ permission, you are able to load, edit and deploy EPL apps and analytic models, but you are not able to see or access the diagnostics information.

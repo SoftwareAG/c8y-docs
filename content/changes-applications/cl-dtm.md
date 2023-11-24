@@ -15,7 +15,7 @@ Non-mandatory steps that are skipped during the creation of an asset instance ar
 
 #### -Change- Immediate feedback from validation of Key field
 
-During the creation of asset models, asset properties and assets, upon entering input in the **Key** field, immediate feedback is now shown - no need to click outside the field. With de-bouncing implementation, the API requests are triggered after a short delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application. [CTM-651]
+During the creation of asset models, asset properties and assets, upon entering input in the **Key** field, if the value entered is invalid then an error message will be shown, and if the value is valid and all required fields in the form are filled, the Save button will be enabled - no need to click outside the field. With de-bouncing implementation, the API requests are triggered after a short delay following the last key entry, significantly reducing the frequency of calls and enhancing the responsiveness of the application. [CTM-651]
 
 #### -Change- Improved readability in Localization screen
 

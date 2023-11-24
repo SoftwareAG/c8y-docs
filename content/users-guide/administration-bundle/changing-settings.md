@@ -216,7 +216,7 @@ You may select one of the following options:
 An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
   {{< /c8y-admon-info >}}
 
-* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
+* **TOTP** (Time-based One-Time Password) supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users** - when enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
 
 {{< c8y-admon-info >}}
@@ -255,6 +255,11 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
+{{< c8y-admon-related >}}
+- [Managing applications](#managing-applications) for general information on managing applications.
+- [Managing users](#managing-users) for general information on managing users.
+{{< /c8y-admon-related >}}
+
 <a name="properties"></a>
 ### Managing the properties library
 
@@ -264,13 +269,19 @@ Click **Properties library** in the **Settings** menu, to add custom properties 
 
 With custom properties, you can extend the data model of {{< product-c8y-iot >}} built-in objects. You may create the following custom values:
 
-- Custom inventory properties are used to extend the inventory data model. They can be used in the "Asset table" and "Asset properties" widgets.
+- Custom inventory properties are used to extend the inventory data model. They can be used in the [Asset table widget](/users-guide/cockpit/#widget-asset-table) and [Asset property widget](/users-guide/cockpit/#asset-property).
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
 {{< c8y-admon-info >}}
 Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 {{< /c8y-admon-info >}}
+
+{{< c8y-admon-related >}}
+- [Cockpit > Widgets collection](/users-guide/cockpit/#widgets-collection) for further information on the usage of properties in the "Asset table" and "Asset properties" widgets.
+- [Cockpit > Managing exports](/users-guide/cockpit/#exports) for further information on the usage of properties in reports and exports.
+- [Enterprise tenant > Managing tenants > To create a subtenant](/users-guide/enterprise-tenant/#creating-tenants) for further information on custom tenant properties.
+{{< /c8y-admon-related >}}
 
 <a name="add-property"></a>
 #### To add a custom property

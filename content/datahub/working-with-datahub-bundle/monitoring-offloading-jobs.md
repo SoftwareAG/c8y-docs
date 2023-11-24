@@ -14,9 +14,9 @@ helpcontent:
 
 Once you have configured and started your offloading pipelines, they regularly offload data to the data lake. The {{< product-c8y-iot >}} DataHub UI provides insights into the execution status of the different pipelines so that you can investigate whether everything is running as expected. For the case of offloading failures, you can also configure the offloading pipeline to raise an alarm as described in [Configuring offloading jobs > Raising alarms](/datahub/working-with-datahub/#raising-alarms).
 
-{{< c8y-admon-info >}}
-You need administration or management permissions to access the offloading job histories. See the section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+You need administration or management permissions to access the offloading job histories. See the section [Setting up {{< product-c8y-iot >}} DataHub > Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+{{< /c8y-admon-req >}}
 
 ### History per offloading pipeline
 
@@ -31,7 +31,7 @@ The list shows the execution history, with each execution consisting of the foll
 | Component | Description |
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
-| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
+| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (user icon)
 | Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
@@ -50,10 +50,6 @@ The page navigation buttons at the bottom can be used to traverse the history en
 <a id="details-offloading-job"></a>
 
 For a given offloading job, you can examine additional details of its execution.
-
-{{< c8y-admon-info >}}
-You need administration or management permissions to access the job details.
-{{< /c8y-admon-info >}}
 
 In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 

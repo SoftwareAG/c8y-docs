@@ -42,12 +42,12 @@ If the agent is not running, start it with the following command:
 
 #### Registering the device
 
-Next, you must register a device in the Device Management application with the name opcua-gateway.
+Next, you must register a device in the Device management application with the name opcua-gateway.
 
 <img src="/images/edge/edge-device-registration-example.png" name="Register device"/>
 
-Follow the description in [Device Management > Connecting devices](/users-guide/device-management#connecting-devices) in the *User guide* to register a device.
+Follow the description in [Device management > Connecting devices](/users-guide/device-management#connecting-devices) in the *User guide* to register a device.
 
-In the Device Management application, click **All devices** in the navigator and find the OPC UA device in the device list.
+In the Device management application, click **All devices** in the navigator and find the OPC UA device in the device list.
 
 For further information about managing and configuring OPC UA devices, see [OPC UA](/protocol-integration/opcua/) in the *Protocol integration guide*.

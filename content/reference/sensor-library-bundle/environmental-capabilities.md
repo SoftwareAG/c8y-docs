@@ -19,7 +19,7 @@ In a managed object, a temperature sensor is modeled as a simple empty fragment:
 
 |Measurement|Units|Description|
 |:----------|:----|:----------|
-|T|C|Measured temperature. |
+|T|C|Measured temperature. |
 
 ```json
 "c8y_TemperatureMeasurement": {
@@ -29,7 +29,7 @@ In a managed object, a temperature sensor is modeled as a simple empty fragment:
 
 ### c8y\_MotionSensor
 
-A motion sensor detects motion. Simple motion sensors may just detect if there is motion or not, based on some predefined threshold. More complicated motion sensors (such as police speed radars) can measure the actual speed of the motion. It is assumed in the model that only the speed towards or away from the sensor is measured. The unit for this sensor type are kilometers per hour (km/h).
+A motion sensor detects motion. Simple motion sensors may just detect if there is motion or not, based on some predefined threshold. More complicated motion sensors (such as police speed radars) can measure the actual speed of the motion. It is assumed in the model that only the speed towards or away from the sensor is measured. The unit for this sensor type are kilometers per hour (km/h).
 In a managed object, a motion sensor is modeled as a simple empty fragment:
 
 ```json
@@ -52,7 +52,7 @@ In a managed object, a motion sensor is modeled as a simple empty fragment:
 
 ### c8y\_AccelerationSensor
 
-An acceleration sensor, or accelerometer, is a device that measures acceleration along an axis. This sensor model does not define the direction of that axis. The units for this sensor type are meters per second per second (m/s<sup>2</sup>).
+An acceleration sensor, or accelerometer, is a device that measures acceleration along an axis. This sensor model does not define the direction of that axis. The units for this sensor type are meters per second per second (m/s<sup>2</sup>).
 In a managed object, an acceleration sensor is modeled as a simple empty fragment:
 
 ```json

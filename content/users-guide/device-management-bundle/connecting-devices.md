@@ -33,6 +33,13 @@ helpcontent:
     To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
+{{< c8y-admon-related >}}
+* The [Protocol integration guide](/protocol-integration/overview) for details on registering devices using various standard protocol types.
+* [Device integration > Integration tutorials](/device-integration/integration-tutorials) for step-by-step instructions on registering devices.
+* [Device integration using REST](/device-integration/rest/) for a detailed descriptions on device integration via REST.
+* The [New device requests API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
+{{< /c8y-admon-related >}}
+
 <a name="dev-registration"></a>
 
 ### Device registration

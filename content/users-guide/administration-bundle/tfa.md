@@ -10,6 +10,12 @@ To check whether TFA is enabled for a certain user, go to the **Users** page and
 
 ![TFA status](/images/users-guide/Administration/admin-tfa-sms.png)
 
+{{< c8y-admon-related >}}
+- [Changing settings > Changing authentication settings](/users-guide/administration/#authentication) for information on how to configure TFA and other authentication settings.
+- [Authentication](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/Authentication) in the {{< openapi >}} for details on managing authentication via REST.
+{{< /c8y-admon-related >}}
+
+
 ### SMS
 
 {{< c8y-admon-req >}}
@@ -29,7 +35,7 @@ When adding a user and TFA is enabled, a mobile phone number must be specified. 
 This process can only be executed in the Administration application and is not available under **User settings**.
 {{< /c8y-admon-info >}}
 
-### TOTP (Google Authenticator)
+### TOTP
 
 {{< c8y-admon-req >}}
 Users must install a TOTP application on their smartphone (Google Authenticator is recommended), freely available both on App Store and Play Store.

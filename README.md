@@ -140,24 +140,47 @@ aliases:
 
 ## Deploying to cumulocity.com/guides
 
-Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, e.g. `release/r10.5.0-GA`. When creating these branches follow the next steps:
-- Create the branch following the same pattern: `release/r[version number]-GA`
+Cumulocity provides documentation for multiple releases.
+For that, you must create a release branch for every public release, for example `release/r10.15.0`.
+When creating these branches follow the next steps:
 
-- Edit the `config.toml` file and append the version number to the base url, e.g.: `baseURL = "https://cumulocity.com/guides/10.5.0"`
-- Still on `config.toml` change the `guidesRedirect` to target the about page on the release, e.g.: `guidesRedirect = "https://cumulocity.com/guides/10.5.0/welcome/intro-documentation/"`
-- Add the file `properties.json` adding the name and the long name for the release version, e.g.: ```{
-  "name":"10.5.0",
-  "longname": "Release 10.5.0 (GA)"
-}```
-- Deploy using the Jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
-- Deploy the `default` branch using the Jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
+- Create the branch following the same pattern: `release/r[version number]`
+- Edit the *config.toml* file and append the version number to the base url, for example: `baseURL = "https://cumulocity.com/guides/10.15.0"`
+- Add the file *properties.json*, adding the name and the long name for the release version, for example:
+    ```
+    {
+      "name":"10.15.0",
+      "longname": "Release 10.15.0"
+    }
+    ```
+- Execute the [Jenkins job](https://jenkins.dev.c8y.io/view/C8Y-DOCS/job/Deploy-c8y-docs-by-branch/) `Deploy-c8y-docs-by-branch` by clicking **Build with Parameters** in the left side navigation.
+- Enter the branch name as the **BRANCH** parameter and click **Build**.
+- If necessary, deploy the `default` branch by executing the [Jenkins job](https://jenkins.dev.c8y.io/view/C8Y-DOCS/job/Deploy-c8y-docs/) `Deploy-c8y-docs` to regenerate the version dropdown links.
 
-## Automatic cherry-picking and labels
+## Cherry-picking
+
+There are two ways of applying changes done to the develop branch also to release branches.
+
+### Manual cherry-picking
+
+To cherry-pick changes from a PR that was merged to the develop branch:
+
+1. Find out the ID of the merge commit of said PR, either from the merge message for the PR on GitHub or via `git log` on the console.
+2. Make sure the develop branch is updated for your git or git UI tool.
+3. Checkout the release branch to which you want to apply the changes, and update the branch locally (for example, via `git pull` using git on the console).
+4. Apply the cherry-pick, for example, via `git cherry-pick -m 1 [COMMIT_ID]` using git on the console.
+
+Note that members of the documentation team usually do this for PRs they review.
+You need WRITE access to the release branch to do this.
+If you don't have WRITE access or are unsure whether or not you do, the documentation team can and will do the cherry-picking for you.
+To let them know what the target release versions for the change are, use GitHub labels, for example "10.17.0" for release 10.17.0.
+
+### Automatic cherry-picking and labels
 
 Automatic cherry-picking allows you to automatically cherry-pick your PRs to one or multiple release branches.
 It works via the [backport-github-action](https://github.com/sqren/backport-github-action) which uses the [backport cli tool](https://github.com/sqren/backport) internally.
 
-### To enable automatic cherry-picking on a PR
+#### To enable automatic cherry-picking on a PR
 
 To enable automatic cherry-picking on a PR, add the label `auto-backport` to it.
 Otherwise the responsible GitHub action is not going to be triggered.
@@ -169,10 +192,10 @@ The feature is triggered by either merging a PR with the `auto-backport` label o
 In the latter case, ensure that you first add the labels containing the target branches and then finally the `auto-backport` label.
 Otherwise the automation starts without any target branches.
 
-### Details
+#### Details
 
-The PRs created by this GitHub action will have their heading prefixed with `[GRAFT] [<targetBranch>]`. So, for example, for `release/r10.15.0` as the target branch and `[MTM-47706] fix publishing documentation` as the original PR heading, it results in  `[GRAFT] [release/r1015.0.0] [MTM-47706] fix publishing documentation` as the heading for the backport PR.
-In case an assignee was set for the original PR, the cherry-picked PRs will also receive the same assignee. You must add reviewers manually after the cherry-picked PRs have been created.
+The PRs created by this GitHub action have their heading prefixed with `[GRAFT] [<targetBranch>]`. So, for example, for `release/r10.15.0` as the target branch and `[MTM-47706] fix publishing documentation` as the original PR heading, it results in `[GRAFT] [release/r1015.0.0] [MTM-47706] fix publishing documentation` as the heading for the backport PR.
+In case an assignee was set for the original PR, the cherry-picked PRs also receive the same assignee. You must add reviewers manually after the cherry-picked PRs have been created.
 
 The creation of cherry-picked PRs can take a few minutes.
 If you are an assignee of the original PR, you receive an email notification once the cherry-picked PRs have been created.

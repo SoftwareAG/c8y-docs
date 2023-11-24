@@ -6,7 +6,11 @@ aliases:
   - /users-guide/overview/#gui-features
 ---
 
-
+{{< c8y-admon-related >}}
+- [Cockpit](/users-guide/cockpit/#overview) for more details on the {{< product-c8y-iot >}} UI.
+- [Administration > Managing applications](/users-guide/administration/#managing-applications) for more information on managing applications in {{< product-c8y-iot >}}.
+- [Web SDK guide](/web/#overview) for details on building web applications on top of {{< product-c8y-iot >}}.
+{{< /c8y-admon-related >}}
 
 <a name="screen"></a>
 ### Main screen elements
@@ -83,7 +87,7 @@ On entering a search term into the textbox at the top of the **Search** window, 
 
 <img src="/images/users-guide/getting-started/getting-started-search-result.png" alt="Search result" style="max-width: 100%">
 
-Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format, see also [Device Management > Grouping devices > Subassets page](/users-guide/device-management#subassets-tab).
+Under **Search results**, the assets matching the search criteria are shown. To see more details click **Go to the assets table** at the bottom right. This will show the entire search results in a table format, see also [Device management > Grouping devices > Subassets page](/users-guide/device-management#subassets-tab).
 
 The Search window only lists a limited number of matches. In case of more matches, to see the complete results you must switch to the asset table.
 
@@ -173,7 +177,7 @@ On certain pages, the filter mechanism only searches through items shown on a pa
 * File repository
 {{< /c8y-admon-important >}}
 
-For details on the filtering mechanism in the devices list refer to [Device Management > Viewing devices > To filter devices](/users-guide/device-management#filtering-devices).
+For details on the filtering mechanism in the devices list refer to [Device management > Viewing devices > To filter devices](/users-guide/device-management#filtering-devices).
 
 ### Real-time behavior of the navigator
 
@@ -183,4 +187,4 @@ You will only see such changes in the navigator of the application, in which you
 
 **Example**
 
-If you unassign a device from a group in the Device Management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).
+If you unassign a device from a group in the Device management application it is immediately removed from the group in the navigator of your current application. However, if you have another window open with another Device management application, you won't see the changes, but will only see the changes after a refresh or another request (expanding a group in the navigator for example).

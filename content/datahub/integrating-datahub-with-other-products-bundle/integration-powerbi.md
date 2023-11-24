@@ -36,7 +36,7 @@ Before setting up the connection to Microsoft Power BI in {{< product-c8y-iot >}
 The Microsoft Power BI datasets should use the DirectQuery mode, which prevents replicating and caching the data from the data lake.
 {{< /c8y-admon-info >}}
 
-A report is typically published so that it is available to other users as well. For a published report, it is currently required to deploy a Microsoft Power BI gateway which establishes the connection between Microsoft Power BI and Dremio.
+In contrast to versions prior to 10.18, it is no longer required to deploy a Microsoft Power BI gateway. A native connector from Power BI Web to Dremio is available now.
 
 <a name="configuring-powerbi-access"></a>
 #### Configuring access to Microsoft Power BI reports

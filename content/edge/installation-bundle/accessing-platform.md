@@ -4,11 +4,14 @@ title: Accessing the Edge appliance
 layout: redirect
 aliases:
   - /edge/installation/#accessing-cumulocity
+
 ---
 
-After the installation, you can access the {{< product-c8y-iot >}}  Edge appliance using a [domain name](#domain) in a web browser.
+You access the Edge appliance using a [domain name](#domain) in a web browser.
 
 ### Supported browsers
+
+Supported browsers in this version are:
 
 * Microsoft Edge (latest Chromium-based version)
 * Mozilla Firefox (latest Extended Support Release [1])

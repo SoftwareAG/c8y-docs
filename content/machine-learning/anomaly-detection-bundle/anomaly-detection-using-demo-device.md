@@ -59,13 +59,13 @@ response = requests.request("POST", url, data=json.dumps(payload), headers=heade
 print("The device id is:" , json.loads(response.text)['id'])
 ```
 
-Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
+Once registered, you can get the device ID by looking up your device on the **All Devices** page of your tenant's Device management application. Now, update the `c_device_source` of the *CONFIG.json* file with the device ID of this demo device.
 
 #### Upload the model and Apama monitor file
 
 1. Upload the attached model *iforest_model.pmml* to {{< product-c8y-iot >}}. To upload the model to {{< product-c8y-iot >}}, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the value of `c_device_source` with the ID of your registered device.
-3. Save your changes and upload this monitor file to your tenant. See [Deploying EPL apps as single \*.mon files with the Streaming Analytics application](/streaming-analytics/epl-apps/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
+3. Save your changes and upload this monitor file to your tenant. See [EPL Apps > Basic functionality > Deploying EPL apps as single \*.mon files with the Streaming Analytics application](/streaming-analytics/epl-apps/#single-mon-file) in the *Streaming Analytics guide* for details on uploading Apama monitor files.
 
 
 #### Trigger an anomaly alert
@@ -130,4 +130,4 @@ response = requests.request("POST", url, data=json.dumps(payload2),
 
 This should send alternate anomalous and non-anomalous measurements to {{< product-c8y-iot >}} on behalf of your demo device.
 
-You should notice anomaly detection alarms for every anomalous measurement that it sends. These alarms generated from your device will be visible under the **Alarms** page of the Device Management application.
+You should notice anomaly detection alarms for every anomalous measurement that it sends. These alarms generated from your device will be visible under the **Alarms** page of the Device management application.

@@ -21,11 +21,11 @@ We have added a script *RegisterDevice.ipynb* which registers a demo device in {
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}.
-3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device management application. The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 
 <img src="/images/zementis/DemandForecasting/demand_forecasting_register_device.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
-Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. The *CONFIG.json* file is already updated by the code with the device ID.
+Upon successful execution, a device named "DemandForecastDemoDevice" is registered in {{< product-c8y-iot >}}. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device management application. The *CONFIG.json* file is already updated by the code with the device ID.
 
 This device is capable of simulating readings of water flow to {{< product-c8y-iot >}} in the form of a measurement named *c8y_Flow*. <br>A higher value of c8y_Flow signifies higher water consumption.
 

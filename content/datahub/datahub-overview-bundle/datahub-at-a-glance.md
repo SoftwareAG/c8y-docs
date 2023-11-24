@@ -4,7 +4,7 @@ title: Cumulocity IoT DataHub at a glance
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of {{< product-c8y-iot >}}, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, {{< product-c8y-iot >}} offers a [REST API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation).
+The {{< product-c8y-iot >}} platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in the Operational Store of {{< product-c8y-iot >}}, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, {{< product-c8y-iot >}} offers a [REST API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#section/REST-implementation), which is described in the {{< openapi >}}.
 
 In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. {{< product-c8y-iot >}} DataHub is the tool designed for this purpose.
 
@@ -16,7 +16,7 @@ With {{< product-c8y-iot >}} DataHub, you can connect existing tools and applica
 
 * Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [web applications](/concepts/applications/#web-applications))
 
-* Other {{< company-sag >}} products like TrendMiner or {{< product-c8y-iot >}} Machine Learning Workbench
+* Other {{< company-sag >}} products like TrendMiner
 
 The main features of the {{< product-c8y-iot >}} DataHub application are:
 
@@ -65,7 +65,7 @@ The starting point is one of the {{< product-c8y-iot >}} base collections, such 
 When an offloading job runs, the contents of the collection are offloaded. The document-based entities of the Operational Store of {{< product-c8y-iot >}} are transformed into a relational format by flattening the entries and mapping them to relational rows.
 
 {{< c8y-admon-info >}}
-The mapping automatically extracts a standard set of attributes from each entity, such as *time*, *source*, *id*, and *type*. It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Non-standard fields can also be offloaded to a limited extent. Section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) provides more details and examples for this transformation.
+The mapping automatically extracts a standard set of attributes from each entity, such as `time`, `source`, `id`, and `type`. It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Non-standard fields can also be offloaded to a limited extent. Section [Working with {{< product-c8y-iot >}}DataHub > Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs) provides more details and examples for this transformation.
 {{< /c8y-admon-info >}}
 
 As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake. Apache Parquet is a column-based storage format which enables compression and efficient data fetching. These Parquet files are managed in a folder structure based on a temporal hierarchy, because analytical queries commonly have a temporal background. For example, compute the average oil pressure of last month. In order to ensure a compact layout of the Parquet files, {{< product-c8y-iot >}} DataHub also regularly runs a compaction algorithm over these files in the background, which combines multiple smaller files in larger files. As the data is stored in a time-based hierarchical manner in the data lake, {{< product-c8y-iot >}} DataHub can efficiently prune partitions. In addition, queries can explicitly leverage this temporal structure to increase query performance.

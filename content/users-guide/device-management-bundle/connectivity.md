@@ -6,7 +6,12 @@ aliases:
   - users-guide/optional-services/#connectivity
 ---
 
-The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device Management application, provides basic information on mobile devices and additional connectivity details.
+{{< c8y-admon-related >}}
+* [Device management library > Connectivity](/reference/device-management-library/#connectivity) in the *Reference guide* for details on the `c8y_Mobile` fragment used in managed objects.
+* [Administration > Changing settings > Managing the connectivity settings](/users-guide/administration/#connectivity) in the *User guide* for information on how to change the connectivity settings via the UI.
+{{< /c8y-admon-related >}}
+
+The Connectivity agent, which works from within the {{< product-c8y-iot >}} Device management application, provides basic information on mobile devices and additional connectivity details.
 
 The {{< product-c8y-iot >}} platform integrates with the SIM connectivity platforms Comarch, Ericsson, Jasper and Kite.
 
@@ -42,7 +47,7 @@ The following sections describe:
 * How to configure the [connectivity for the SIM provider](#connectivity-configuration) in your {{< product-c8y-iot >}} tenant.
 * How to [link SIMs and mobile devices](#link-sims).
 * Which information is shown in the [Connectivity tab](#jasperinfo).
-* How to [manage connectivity](#managing) from Device Management.
+* How to [manage connectivity](#managing) from the Device management application.
 
 <a name="link-account"></a>
 ### Setting up your Jasper Control Center account
@@ -92,7 +97,7 @@ A longer cache duration means less traffic to your SIM provider while a shorter 
 <a name="link-sims"></a>
 ### Linking SIMs and mobile devices
 
-Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
+Switch to the Device management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a **Connectivity** tab. If this tab is not shown, one of the following applies:
 
 * Your user does not have permissions for Connectivity.
 * The device is not linked to a SIM card.

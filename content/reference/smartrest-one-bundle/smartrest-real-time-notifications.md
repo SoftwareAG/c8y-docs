@@ -13,7 +13,7 @@ To tell the {{< product-c8y-iot >}} platform that the real-time notifications sh
 
 #### Message identifiers
 
-Message identifier | Message parameters              | Description
+Message identifier | Message parameters              | Description
 -------------------|-------------------------|------------
 80 | *None* | Initial handshake that will return a unique bayeux clientId.
 81 | clientId,channel | Subscribe for the given channel.

@@ -21,7 +21,7 @@ Supported smartphone sensors include:
 *   Gyroscope
 *   Barometer
 *   Magnetometer and compass
-*   GPS location 
+*   GPS location 
 *   Microphone and voice
 *   WiFi strength (selected Android devices only)
 

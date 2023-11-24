@@ -36,14 +36,6 @@ At the top you find the following items:
 <td style="text-align:left">Logout</td>
 <td style="text-align:left">Logs you out from your {{< product-c8y-iot >}} account. </td>
 </tr>
-</tr>
-<tr>
-<td style="text-align:left">Revoke tokens</td>
-<td style="text-align:left">Revoking tokens logs out all users currently logged in via "OAI-Secure" or "Single sign-on redirect". Note that JWT tokens retrieved by your devices will also be revoked.<br>
-<br>
-To revoke tokens, you must have ADMIN permission for the permission type "User management".  
-</td>
-</tr>
 <tr>
 <td style="text-align:left">Request support</td>
 <td style="text-align:left">Redirects you to the <a href="{{< link-sag-portal >}}" class="no-ajaxy">{{< company-sag >}} {{< sag-portal >}}</a>. </td>
@@ -60,37 +52,13 @@ Note that this option is only available if support user access is not set global
 </tbody>
 </table>
 
-In the **Platform info** section, you find information on the infrastructure of your platform:
-
-- The ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.
-- Release version information for both the backend and the UI.
-
-Moreover you can click **Detailed info** to download more detailed platform information.
-
-The **Quick links** section provides links to the most common pages and processes in the platform while the **Documentation** section provides links to the most relevant guides.
-
-<a name="change-user-settings"></a>
-### To change user settings
-
-Several account settings can be changed by the user.
-
-1. Click the **User** button at the right of the top bar and then click **User Settings**.  
-2. In the **Edit user** dialog box, make the relevant changes.
-3. To change the language, select a [language](#languages) from the dropdown list in the  **Language** field. Reload the page to apply the new language setting.
-4. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies.
-5. Use the **In-product information** toggle to opt-out from the Knowledge Hub which is enabled by default.
-6. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
-7. Click **Set up two-factor authentication** to set up two-factor authentication and increase tenant security.
-8. Click **Save** to apply your settings.
+Change the language in the **UI settings** section. Reload the page to apply the new language setting.
 
 The user interface language will be selected along the following criteria, in the order listed below:
 
 *  The language selected in the {{< product-c8y-iot >}} user settings.
 *  The language selected in the browser preferences.
-* 	The operating system language.
-
-<a name="languages"></a>
-#### Available languages
+*  The operating system language.
 
 The UI is available in the following languages:
 
@@ -109,6 +77,28 @@ The UI is available in the following languages:
 |Russian|ru|
 |Spanish|es|
 
+
+In the **Platform info** section, you find information on the infrastructure of your platform:
+
+- The ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.
+- Release version information for both the backend and the UI.
+
+Moreover you can click **Detailed info** to download more detailed platform information.
+
+The **Quick links** section provides links to the most common pages and processes in the platform while the **Documentation** section provides links to the most relevant guides.
+
+<a name="change-user-settings"></a>
+### To change user settings
+
+Several account settings can be changed by the user.
+
+1. Click the **User** button at the right of the top bar and then click **User Settings**.  
+2. In the **Edit user** dialog box, make the relevant changes.
+3. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies.
+4. Use the **In-product information** toggle to opt-out from the Knowledge Hub which is enabled by default.
+5. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
+6. Click **Set up two-factor authentication** to set up two-factor authentication and increase tenant security.
+7. Click **Save** to apply your settings.
 
 <a name="change-password"></a>
 #### To change your password

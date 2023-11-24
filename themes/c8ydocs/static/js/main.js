@@ -17,7 +17,7 @@ var main = (function ($) {
           $('#dropdownVersionButton').hide();
           return;
         }
-
+        
         vs = []
         for (var i = 0; i < urls.length; i++) {
           vs.push(urls[i].label);
@@ -51,6 +51,14 @@ var main = (function ($) {
             );
           }
         }
+
+        if (true) {
+          $('<div/>', {
+            id: 'preview-banner',
+            class: 'notice-banner'
+          }).prependTo('body');
+          $('<p>This is a preview of the documentation for the Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
+       }
 
         if (vs.indexOf(v) < 0) {
           active = true;

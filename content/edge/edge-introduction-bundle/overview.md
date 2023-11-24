@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} Edge is delivered as a software appliance designed to run on industrial PC's or local servers and on a single node Kubernetes cluster.
+{{< product-c8y-iot >}} Edge is delivered as a software appliance designed to run on industrial PC's or local servers.
 
 In contrast to {{< product-c8y-iot >}} platform, which is available in the cloud (for example, using AWS, Azure or other data centers), {{< product-c8y-iot >}} Edge is installed in factories, that is, in the same site ("onsite") in which the IoT assets are located.    
 
@@ -19,7 +19,7 @@ Features of {{< product-c8y-iot >}} Edge include:
 * Edge Agent, which enables remote monitoring and management of an Edge instance from the {{< product-c8y-iot >}} tenant.
 * Data Broker to send IoT data to the cloud and receive operations from the cloud, with web-based UI to filter data.
 * Streaming Analytics engine for real-time local data analysis including the {{< product-c8y-iot >}} Analytics Builder.
-* Ready-to-use Cockpit and Device Management applications.
+* Ready-to-use Cockpit and Device management applications.
 * Native protocol support for MQTT and REST.
 * Edge database for operational data storage.
 * Cloud Fieldbus with web-based UI to create local Modbus and OPC UA connections.

@@ -6,7 +6,7 @@ layout: bundle
 
 Welcome to the {{< product-c8y-iot >}} user documentation!
 
-Read about the concepts behind {{< product-c8y-iot >}} and get detailed advice on using our standard applications (Cockpit, Device Management and Administration) as well as various optional services.
+Read about the concepts behind {{< product-c8y-iot >}} and get detailed advice on using our standard applications (Cockpit, Device management and Administration) as well as various optional services.
 
 If you are new to {{< product-c8y-iot >}}, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}}. The <a href="/concepts/introduction/">Concepts guide</a> serves as a starting point for anyone technically interested in our  IoT platform.
 
@@ -30,7 +30,7 @@ Check out the following user guides which might serve as a starting point:
 
 <tr>
 <td align="left"><a href="/users-guide/getting-started/">User guide</a></td>
-<td align="left">The <i>User guide</i> is the main reference for working with our platform via the UI and provides in-depth explanation on all aspects of the {{< product-c8y-iot >}} default applications (Administration, Cockpit and Device Management).</td>
+<td align="left">The <i>User guide</i> is the main reference for working with our platform via the UI and provides in-depth explanation on all aspects of the {{< product-c8y-iot >}} default applications (Administration, Cockpit and Device management).</td>
 </tr>
 
 <tr>

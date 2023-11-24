@@ -64,7 +64,7 @@ The connection to the Edge appliance is established and the UI appears for the E
 <img src="/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
 {{< c8y-admon-important >}}
-Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
+Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge appliance.
 {{< /c8y-admon-important >}}
 
 ### Changing the VNC password

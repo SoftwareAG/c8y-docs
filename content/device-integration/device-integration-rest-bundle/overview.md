@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
+REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
 
 This section explains how to use {{< product-c8y-iot >}}'s REST interfaces to integrate devices with {{< product-c8y-iot >}}. For general information on using REST interfaces and for information on developing applications on top of {{< product-c8y-iot >}} using REST refer to the [*Microservice SDK guide*](/microservice-sdk/rest/#overview).
 

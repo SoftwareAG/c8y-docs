@@ -53,7 +53,7 @@ If there are devices associated with the connection, an error message appears, s
 <a name="loriot-device-registration"></a>
 ### Loriot device registration
 
-To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device Management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
+To register a Loriot device in {{< product-c8y-iot >}} navigate to **Devices** > **Registration** in the Device management application, click **Register device** at the top right and select **Single device registration** > **LORIOT LoRa** from the dropdown.
 
 ![Register devices](/images/device-protocols/lora-loriot/loriot-selection.png)
 
@@ -77,7 +77,7 @@ Click **Register** to submit the device registration request and create the devi
 
 You can verify that the device is connected by incoming events. Click on a device and open its **Events** tab. All events related to this device are listed.
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management/) in the *User guide*.
+For more information on viewing and managing your connected devices, also refer to [Device management](/users-guide/device-management/) in the *User guide*.
 
 In order to migrate the device from one LNS connection to another, the device must be re-registered:
 

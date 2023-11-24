@@ -13,6 +13,7 @@ aliases:
   - /users-guide/cockpit/#export
 ---
 
+
 The export functionality lets you export specific data to either CSV or Excel files.
 
 {{< c8y-admon-req >}}

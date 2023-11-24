@@ -23,7 +23,7 @@ If the agent is not running, start it with the following command:
 ```
 
 The Modbus agent is pre-registered.
-In the Device Management application, click **All devices** in the navigator and find the Modbus agent (called "linux-agent") in the device list.
+In the Device management application, click **All devices** in the navigator and find the Modbus agent (called "linux-agent") in the device list.
 
 <img src="/images/edge/edge-modbus-device.png" name="Device list" style="width:100%;"/>
 

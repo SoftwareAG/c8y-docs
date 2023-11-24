@@ -51,9 +51,9 @@ Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enh
 - Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file.
 - In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator. These include the contents of the queues, CPU usage, and so on.
 
-What a user can see or do depends on the permissions:
+What you can see or do depends on your permissions:
 
-- A user with only READ permission for "CEP management" has read-only access to EPL apps and analytic models.
-- Without ADMIN permission for "CEP management", the user is not able to activate or edit EPL apps or analytic models.
-- If a user has both READ and ADMIN permissions for "CEP management", the user has read-write access and can access the diagnostics information.
-- If a user has only the ADMIN permission for "CEP management" and no READ permission, the user is able to load, edit and deploy EPL apps and analytic models, but is not able to see or access the diagnostics information.
+- If you have only READ permission for "CEP management", you have read-only access to EPL apps and analytic models.
+- Without ADMIN permission for "CEP management", you are not able to activate or edit EPL apps or analytic models.
+- If you have both READ and ADMIN permissions for "CEP management", you have read-write access and can access the diagnostics information.
+- If you have only ADMIN permission for "CEP management" and no READ permission, you are able to load, edit and deploy EPL apps and analytic models, but you are not able to see or access the diagnostics information.

@@ -17,7 +17,7 @@ var main = (function ($) {
           $('#dropdownVersionButton').hide();
           return;
         }
-        
+
         vs = []
         for (var i = 0; i < urls.length; i++) {
           vs.push(urls[i].label);
@@ -52,7 +52,7 @@ var main = (function ($) {
           }
         }
 
-        if (true) {
+        if (false) {
           $('<div/>', {
             id: 'preview-banner',
             class: 'notice-banner'

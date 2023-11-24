@@ -14,7 +14,7 @@ A typical dashboard looks like this, showing various widgets:
 
 This recipe will show how to add a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-custom-widget}
 
 As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:

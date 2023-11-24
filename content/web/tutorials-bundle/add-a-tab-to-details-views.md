@@ -22,7 +22,7 @@ It is referenced by another route called */hello* but reuses the context of the 
 
 In the following, we will guide you through the process of creating a new tab for this view that is accessible through the route *apps/cockpit/#/device/:id/hello*.
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-details-view}
 
 As a starting point, you need an application supporting context routes.
 For this purpose, create a new Cockpit application using the `c8ycli`:

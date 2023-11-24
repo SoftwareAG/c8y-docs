@@ -56,7 +56,7 @@ To do so, you must scaffold a hybrid application.
 The `c8ycli` uses this package every time you initialize an application with the `new` command.
 The next section will explain the scaffolding process and how to extend a hybrid application step by step.
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-existing-application}
 
 As a starting point, you need an application.
 For this purpose, create a new Cockpit application using the `c8ycli`:

@@ -10,7 +10,7 @@ Unit testing is an essential part of every development process.
 Since version 10.13.0.0, all new `c8ycli` scaffolded applications include the unit test framework [Jest](https://jestjs.io/) by default.
 This tutorial shows you how to write and verify your first unit test.
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-unit-test}
 
 You need an application, for example, the empty default application:
 

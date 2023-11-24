@@ -8,6 +8,12 @@ layout: redirect
 Diagnostics are not available for the Apama-ctrl-smartrules and Apama-ctrl-smartrulesmt microservices.
 {{< /c8y-admon-info >}}
 
+To download diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
+
+{{< c8y-admon-info>}}
+ADMIN permission for "CEP management" does not include READ permission.
+{{< /c8y-admon-info>}}
+
 If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button in the Streaming Analytics application.
 This opens the right drawer which contains a **Download diagnostics** section with the following links:
 

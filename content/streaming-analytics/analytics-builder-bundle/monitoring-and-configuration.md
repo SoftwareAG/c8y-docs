@@ -317,20 +317,6 @@ Analytics Builder chain of models "Model 1", "Model 2", "Model 3" has been activ
 
 See [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log) for information on where to find the correlator log.
 
-#### Viewing diagnostics information {#viewing-diagnostics-information}
-
-To view diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
-
-{{< c8y-admon-info>}}
-ADMIN permission for "CEP management" does not include READ permission.
-{{< /c8y-admon-info>}}
-
-If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button in the Streaming Analytics application. These will download ZIP files that include log file contents, copies of EPL applications, and much more.
-
-It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL applications. It is also useful to provide to support if you are filing a support ticket.
-
-See [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting/) for detailed information on the available diagnostics. This also includes information on additional endpoints that are available for REST requests.
-
 ### Configuration {#configuration}
 
 You can customize the settings of Analytics Builder, the so-called “tenant options”, by sending REST requests to {{< product-c8y-iot >}}. The key names that you can use with the REST requests are listed in the topics below. A category name is needed along with the key name; this is always `analytics.builder`.

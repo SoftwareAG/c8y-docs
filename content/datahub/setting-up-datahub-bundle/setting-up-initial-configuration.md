@@ -13,15 +13,15 @@ helpcontent:
 
 The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio API user and access to a data lake. In the navigator, select **Initial configuration** under **Settings** to define those settings.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 You need administration permissions to define the settings. See the section on [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 ### Defining the initial configuration
 
 #### Dremio API user
 
-In order to access the data lake contents, you can use ODBC, JDBC, Dremio REST API, or a proxy REST API. See section [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub/#querying-offloaded) for more details. The proxy REST API is served by the {{< product-c8y-iot >}} DataHub server, which acts as a proxy to Dremio. The proxy API requires a Dremio user for the interaction of {{< product-c8y-iot >}} DataHub server and Dremio. This Dremio API user can then also be used for data lake querying based on JDBC, ODBC, or Dremio REST API.
+In order to access the data lake contents, you can use ODBC, JDBC, Dremio REST API, or a proxy REST API. See section [Working with {{< product-c8y-iot >}} DataHub > Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#querying-offloaded) for more details. The proxy REST API is served by the {{< product-c8y-iot >}} DataHub server, which acts as a proxy to Dremio. The proxy API requires a Dremio user for the interaction of {{< product-c8y-iot >}} DataHub server and Dremio. This Dremio API user can then also be used for data lake querying based on JDBC, ODBC, or Dremio REST API.
 
 Therefore, you have to configure in the initial configuration under **Dremio API user** the name and the password of that Dremio API user.
 
@@ -50,17 +50,17 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container *myContainer* and subfolder *mySubFolder*, use */myContainer/mySubFolder* as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
+|Root path|The root path within your data lake for storing the offloaded data. With the default path /, data is stored top-level in your storage container. You can also store data in a subfolder, provided the folder already exists. For example, for storage container `myContainer` and subfolder `mySubFolder`, use `/myContainer/mySubFolder` as root path. This option is especially useful to hide other data inside the container from {{< product-c8y-iot >}} DataHub, for example, when the container is also used by other users or applications.|
 |Azure Storage shared access key|The access key used for authentication if "Shared Access Key" is used as authentication type|
 |Application ID|The application ID used for authentication if "Azure Active Directory" is used as authentication type|
 |OAuth 2.0 Token Endpoint|The authentication endpoint if "Azure Active Directory" is used as authentication type|
 |Client Secret|The client secret if "Azure Active Directory" is used as authentication type|
 
-While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old value.
+While the other settings are fixed once the initial configuration was saved, the authentication type as well as the values of the selected authentication type can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-req >}}
 Note that the account type must be **StorageV2**, and the **Hierarchical namespace** feature must be activated for the corresponding Azure Storage account. It is for performance reasons recommended to set the **Blob access tier** to **Hot**. Also note that in case IP white-listing is activated, {{< product-c8y-iot >}} DataHub might not be able to access the data lake if the data lake and {{< product-c8y-iot >}} DataHub reside in the same Azure region. See also the corresponding [documentation](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-an-internet-ip-range).
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-req >}}
 
 ##### Amazon S3
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings must be defined for this data lake:
@@ -80,11 +80,11 @@ An S3 bucket with default settings works. If specific security policies are appl
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
 
-**SSE-S3**: An AES256 key is generated in S3 and saved alongside the data. Enabling SSE-S3 requires to add the following key-value pair to the *Additional Properties* section:\
+**SSE-S3**: An AES256 key is generated in S3 and saved alongside the data. Enabling SSE-S3 requires to add the following key-value pair to the **Additional Properties** section:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `AES256`
 
-**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by {{< product-c8y-iot >}} DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the *Additional Properties* section:\
+**SSE-KMS**: An AES256 key is generated in S3, and encrypted with a secret key provided by Amazon’s Key Management Service (KMS). The key must be referenced by name by {{< product-c8y-iot >}} DataHub. Enabling SSE-KMS requires to add the following key-value pairs to the **Additional Properties** section:\
 Name: `fs.s3a.server-side-encryption-algorithm`\
 Value: `SSE-KMS`
 
@@ -94,7 +94,7 @@ Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a8
 **SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.**
 
 ##### NAS
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings must be defined for this data lake:
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations. The following settings must be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
@@ -130,7 +130,7 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 ### Editing settings
 To edit the Dremio API user, click **Edit** in the **Dremio API user** section of the **Initial configuration** page. In the editor you can edit all user details, except for the username, which is fixed. In section [Setting up additional Dremio users](/datahub/setting-up-datahub/#setting-up-dremio-users), all user details are described.
 
-The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See the section [Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
+The data lake settings cannot be edited, except for the **Azure Storage** or **Amazon S3** credentials. For editing other values, you must delete the existing settings and define new settings. If you want to keep your offloading configurations, you must export the configurations to a backup file beforehand, delete the settings, define new settings, and import the configurations from the backup file. See the section [Working with {{< product-c8y-iot >}} DataHub > Importing/exporting offloading configurations](/datahub/working-with-datahub/#import-export) for details on import/export.
 
 ### Deleting settings
 Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted, including the Dremio API user as well as additionally created Dremio users. Also the artifacts created by a corresponding Dremio user, like views, are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. As mentioned in the previous section, you can use the import/export functionality to backup your offloading configurations. The data lake and its contents are not deleted, only the Dremio artefacts connecting to the data lake. To delete the data lake and its contents you must use the tooling of your data lake provider.

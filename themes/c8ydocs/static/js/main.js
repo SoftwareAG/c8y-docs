@@ -52,6 +52,14 @@ var main = (function ($) {
           }
         }
 
+        if (false) {
+          $('<div/>', {
+            id: 'preview-banner',
+            class: 'notice-banner'
+          }).prependTo('body');
+          $('<p>This is a preview of the documentation for the Cumulocity IoT ' + v + ' release that will soon be publicly available.</p>').appendTo('#preview-banner');
+       }
+
         if (vs.indexOf(v) < 0) {
           active = true;
           $('#current-dropdown-version-toggle').text('Release ' + v);

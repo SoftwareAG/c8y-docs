@@ -6,7 +6,7 @@ weight: 50
 
 **Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-It is a common use case to extend one of our existing applications like Cockpit or Device Management.
+It is a common use case to extend one of our existing applications like Cockpit or Device management.
 
 This recipe explains step by step, how you can extend the Cockpit application with a custom route and hook this route into the navigator.
 First, we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/libraries/#application) npm package contains.

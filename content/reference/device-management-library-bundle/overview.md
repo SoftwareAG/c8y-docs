@@ -12,10 +12,10 @@ If you are interested in details on exposing the {{< product-c8y-iot >}}´s func
 
 Moreover, see [SmartREST](/reference/smartrest-two) for more information on SmartREST and a complete list of all SmartREST templates mentioned throughout the following sections.
 
-To start with device management, open the **All devices** tab in the **Devices** menu of the Device Management application. Click on a device in the list to open the device details of this particular device. You will see various tabs and particular information on each of them.
+To start with device management, open the **All devices** tab in the **Devices** menu of the Device management application. Click on a device in the list to open the device details of this particular device. You will see various tabs and particular information on each of them.
 
 {{< c8y-admon-info >}}
-For a detailed explanation of each tab and its related configuration via the UI, see also [Device Management > Device details](/users-guide/device-management/#device-details) in the *User guide*.
+For a detailed explanation of each tab and its related configuration via the UI, see also [Device management > Device details](/users-guide/device-management/#device-details) in the *User guide*.
 {{< /c8y-admon-info >}}
 
 ![Device details](/images/reference-guide/device-details.png)
@@ -80,7 +80,7 @@ The following fragments can be added to the ```c8y_SupportedOperations``` fragme
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#network">c8y_Network</a></td>
-<td>Sends data to the <strong>Network</strong> tab in the Device Management application and displays the network information</td>
+<td>Sends data to the <strong>Network</strong> tab in the Device management application and displays the network information</td>
 </tr>
 <tr>
 <td><a href="../../reference/device-management-library/#tracking">c8y_Position</a></td>

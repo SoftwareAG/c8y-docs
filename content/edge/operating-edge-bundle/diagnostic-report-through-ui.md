@@ -2,8 +2,6 @@
 weight: 35
 title: Downloading diagnostics using the UI 
 layout: redirect
-aliases:
-  - /edge/diagnostics-and-support/#diagnostic-report-through-ui
 ---
 
 1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.

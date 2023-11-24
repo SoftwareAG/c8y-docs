@@ -16,7 +16,7 @@ Follow the steps described in [Machine Learning Workbench > Upload a project](/m
 
 #### Train the PMML model
 
-For this use case, we are building a Random Forest machine learning model to predict a remaining useful life (RUL) value for jet engines. 
+For this use case, we are building a Random Forest machine learning model to predict a remaining useful life (RUL) value for jet engines.
 
 The integrated Jupyter Notebook feature within {{< product-c8y-iot >}} Machine Learning Workbench helps in writing the code that creates the Random Forest model in PMML format using the training data *train_FD001.csv* contained in the **Data** folder. The script uses the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)) to train a Random Forest model.
 
@@ -47,7 +47,7 @@ We have added a script *RegisterDevice.ipynb* which registers a demo device in {
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
 2. Execute each cell one by one and you will have a registered device in {{< product-c8y-iot >}}. Upon successful execution, a device named "RemainingUsefulLifeDemo" is registered in {{< product-c8y-iot >}}.
-3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application (see image below). The device ID is already updated by the code and is saved in the *CONFIG.json* file.
+3. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device management application (see image below). The device ID is already updated by the code and is saved in the *CONFIG.json* file.
 
 <img src="/images/zementis/RemainingUsefulLife/remaining-useful-life_get_device_id.PNG" alt="Download" style="display:inline-block; margin:0"> <br>
 
@@ -60,7 +60,7 @@ Use the script *RegisterDeviceForPrediction.ipynb* to register the second demo d
 Use *SimulateData.ipynb* for simulating the measurements for the demo device.
 
 1. Open it and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0">.
-2. Execute each cell one by one. Upon successful execution, `predicted_RUL values` are sent to {{< product-c8y-iot >}} on behalf of the demo device every 60 seconds. 
+2. Execute each cell one by one. Upon successful execution, `predicted_RUL values` are sent to {{< product-c8y-iot >}} on behalf of the demo device every 60 seconds.
 
 #### Schedule scoring the simulated data
 
@@ -79,4 +79,3 @@ For this demo we created a number of widgets to show the {{< product-c8y-iot >}}
 See screenshot below and follow the description in [Cockpit](/users-guide/cockpit) in the *User guide*.
 
 <img src="/images/zementis/RemainingUsefulLife/rul-widgets.png" alt="Download" style="display:inline-block; margin:0"> <br>
-

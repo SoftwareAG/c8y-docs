@@ -23,6 +23,13 @@ The following types of roles can be associated with users:
 
 Moreover, application access can be granted to enable a user to use an application.
 
+{{< c8y-admon-related >}}
+- [Managing users](#managing-users) for information on managing users in general.
+- [Managing applications](#managing-applications) for more information on managing applications.
+- [Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Roles) and [Inventory Roles](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-Roles) in the {{< openapi >}} for managing permissions via REST.
+- {{< product-c8y-iot >}} [sensor library](/reference/sensor-library/) or [device management library](/reference/device-management-library/) for further information on fragment types.
+{{< /c8y-admon-related >}}
+
 <a name="global"></a>
 ### Global roles
 
@@ -83,7 +90,7 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Devicemanagement User</td>
-<td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
+<td align="left">Can access the Device management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
 <tr>
 <td align="left">Global Manager</td>
@@ -254,7 +261,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Own user management</td>
-<td align="left">View or edit your own user.</td>
+<td align="left">View or edit your own user. Note that this permission may only be applicable to technical users.</td>
 </tr>
 </tbody>
 </table>
@@ -388,9 +395,9 @@ The {{< product-c8y-iot >}} platform provides optimized UI performance for users
 
 The performance of the following UI pages is improved:
 * In the [device details view](/users-guide/device-management/#device-details), the tabs **Info**, **Measurements**, **Alarms**, **Events** and **Control**.
-* Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device Management > Home.
-* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device Management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
-* Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device Management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
+* Pages with aggregated alarm views from multiple devices, if the number of alarms in the system is low, for example, [Cockpit > Home dashboard](/users-guide/cockpit/#home-dashboard), Cockpit > Alarms and Device management > Home.
+* Pages with aggregated events from multiple devices, if the number of events is low, for example, [Device management > Monitoring and controlling devices > To view events](/users-guide/device-management/#to-view-events).
+* Pages with aggregated operations from multiple devices, if the number of operations is low, for example, [Device management > Overviews > Device control](/users-guide/device-management/#to-view-single-operations).
 
 As an administrator, you can disable the performance feature by doing the following:
 - On platform level via the configuration file (only available for platform administrators, see the *{{< product-c8y-iot >}} - Operations guide* for details).

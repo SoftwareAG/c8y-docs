@@ -114,7 +114,6 @@ The API provides the following services:
 
 * Alarm - AlarmApi
 * AuditRecord - AuditRecordApi
-* CepModule - CepApi
 * Operation - DeviceControlApi
 * Event - EventApi
 * ExternalID - IdentityApi

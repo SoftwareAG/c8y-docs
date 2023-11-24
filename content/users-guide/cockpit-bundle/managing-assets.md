@@ -9,7 +9,15 @@ helpcontent:
 
 
     Click **Assign devices** at the top right to assign devices to the group. You can also easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
+
 ---
+
+{{< c8y-admon-related >}}
+- [Cumulocity IoT´s domain model](/concepts/domain-model#overview) in the *Concepts guide* for details on {{< product-c8y-iot >}}'s domain model.
+- [Device management](/users-guide/device-management#overview) for details on working with devices in {{< product-c8y-iot >}}.
+- [Tutorials > Add a Jest-based unit test](/guides/web/tutorials/#add-a-unit-test) in the *Web SDK guide* for more information on working with custom tabs in the {{< product-c8y-iot >}} environment.
+{{< /c8y-admon-related >}}
+
 <a name="assets"></a>
 ### Assets hierarchy
 
@@ -21,16 +29,16 @@ Assets are organized in hierarchies. For example, an energy monitoring applicati
 
 The asset hierarchy is composed of two types of objects:
 
-* **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
+* **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device management section.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
 To position a device in the asset hierarchy, you must "assign" the device to the respective group (see below).
 
 {{< c8y-admon-info >}}
-Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
+Single devices are not managed in the Cockpit application. They are managed in the Device management application.
 {{< /c8y-admon-info >}}
 
 <a name="hierarchies"></a>
@@ -55,16 +63,16 @@ The first example shows how smart devices are linked into the asset hierarchy:
 
 ![image alt text](/images/users-guide/cockpit/cockpit-groups-image2.png)
 
-Smart devices are represented as top-level devices in the Device Management application. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
+Smart devices are represented as top-level devices in the Device management application. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
 The second example shows how gateway devices can be used in the Cockpit application.
 
 ![image alt text](/images/users-guide/cockpit/cockpit-groups-image3.png)
 
-Gateway devices are as well represented as top level devices in the Device Management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
+Gateway devices are as well represented as top level devices in the Device management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 
-As you can see from the example, devices can have completely different hierarchies in the Device Management application and in the Cockpit application:
-While inside Device Management all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
+As you can see from the example, devices can have completely different hierarchies in the Device management application and in the Cockpit application:
+While inside the Device management application all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
 
 #### Cockpit assets versus business assets
 
@@ -91,7 +99,7 @@ The count displayed on top of the table on the **Subassets** tab shows the total
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
+If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device management application.
 {{< /c8y-admon-info >}}
 
 Use the navigator, to navigate through the asset hierarchy.
@@ -158,7 +166,7 @@ To add a new group as a child of an existing asset, navigate to its **Subassets*
 <a name="assigning-devices"></a>
 ### How to assign devices to a group
 
-Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/users-guide/device-management).
+Before adding a device to the asset hierarchy, it must be connected to {{< product-c8y-iot >}}. Connecting devices to the platform is done in the Device management application. For details on connecting devices refer to [Device management](/users-guide/device-management).
 
 To assign devices to a group, follow these steps:
 

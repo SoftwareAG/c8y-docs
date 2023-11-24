@@ -25,7 +25,7 @@ To use the Bulk import feature, you must enable the **Digital Twin** permission 
 
 	* Under **Application access**, select "Dtm-ms".
 
-	* Under **Custom applications**, select "Digital Twin Manager".
+	* Under **Custom applications**, select "Digital twin Manager".
 
 5. Click **Save**.
 
@@ -45,15 +45,15 @@ Follow the steps below:
 
 1. Navigate to the **Assets** page and click **Import assets**.
 
-2. The **Import assets** dialog has a dropdown **Choose asset model**. If you have added the asset models, all the root asset models are listed in the dropdown.
+2. The **Import assets** dialog has a dropdown **Select asset model**. If you have added the asset models, all the root asset models are listed in the dropdown.
 
 3. Select the asset model for which you want to create the asset hierarchy.
 
 	![bulk-import-asset](/images/dtm/bulk-import/dtm-bulk-import-import-assets-window.png)
 
-4. On selection, two additional options appear:
+4. On selection, the following options become available:
 
-	* **Drop file here** - upload the CSV template as a file, for importing assets in bulk.
+	* **Drop CSV file here or click to browse** - upload the CSV template as a file, for importing assets in bulk.
 	* **Download Template** - download the CSV template for the selected asset model.
 
 	<br/>
@@ -152,6 +152,9 @@ Then enter the asset details for child a models under the root asset.
 Next, enter the details for the next level in the hierarchy of subassets and repeat until the details for all the assets are entered in the CSV template.
 Save the CSV template in your system.
 
+{{< c8y-admon-info>}}
+It is recommended to import a maximum of 5000 assets at a time for a better user experience.
+{{< /c8y-admon-info>}}
 
 <a name=""></a>
 ### To upload a CSV template

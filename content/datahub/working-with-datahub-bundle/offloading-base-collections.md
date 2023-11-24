@@ -6,7 +6,7 @@ layout: redirect
 
 ### Offloading the base collections
 
-The following tables summarize the resulting schemas for each of the {{< product-c8y-iot >}} base collections. These schemas additionally include the virtual columns *dir0*, ..., *dir3*, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of {{< product-c8y-iot >}}, nor are they persisted in the data lake. Do not use *dir0*, ..., *dir3* as additional columns or rename them accordingly in your offloading configuration.
+The following tables summarize the resulting schemas for each of the {{< product-c8y-iot >}} base collections. These schemas additionally include the virtual columns `dir0`, ..., `dir3`, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Operational Store of {{< product-c8y-iot >}}, nor are they persisted in the data lake. Do not use `dir0`, ..., `dir3` as additional columns or rename them accordingly in your offloading configuration.
 
 {{< c8y-admon-info >}}
 For each offloading run, the current data in the collection is considered. If data has been modified multiple times or deleted between two successful offloading runs, these changes will not be captured in the offloading process and will not be reflected in the data lake. Relevant for the offloading is the current snapshot of the collection when starting an offloading run. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its status from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE, because it happened between two offloading runs.
@@ -32,7 +32,6 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 | time | TIMESTAMP |
 | timeOffset | INTEGER |
 | timeWithOffset | TIMESTAMP |
-| history | LIST |
 | severity | VARCHAR |
 | source | VARCHAR |
 | status | VARCHAR |
@@ -58,7 +57,7 @@ examples use "alarms" as target table name:
     * **alarms_c8y_cdh_latest_materialized** - An optional view which materializes the **alarms_latest** view if the offloading configuration has the view materialization enabled.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section 
-[Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
+[Working with {{< product-c8y-iot >}} DataHub > Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
 #### Offloading the events collection
 
@@ -90,7 +89,7 @@ Additional views over the target table are defined in the tenant's space in Drem
 * **events_latest** - A view containing only the latest state of all events without prior states.
 * **events_c8y_cdh_latest_materialized** - An optional view which materializes the **events_latest** view if the offloading configuration has the view materialization enabled.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section [Working with {{< product-c8y-iot >}} DataHub > Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
 #### Offloading the inventory collection
 
@@ -122,7 +121,7 @@ The inventory collection keeps track of managed objects. Note that {{< product-c
     * **inventory_latest** - A view with the latest status of all managed objects, with all previous transitions being discarded.
     * **inventory_c8y_cdh_latest_materialized** - An optional view which materializes the **inventory_latest** view if the offloading configuration has the view materialization enabled.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see the section [Working with {{< product-c8y-iot >}} DataHub > Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
 {{< c8y-admon-info >}}
 The fields **childDevices** and **childAssets** are not part of the default offloading columns. They were included in previous versions, but lead to problems for a high number of list items in those fields. In such a case, the columns were no more readable by Dremio. If they need to be included in the offloaded data, they can be defined as additional result columns. However, you have to ensure that the number of list items in those fields does not exceed the Dremio limit configured in your environment.
@@ -180,15 +179,15 @@ The following excerpt of a measurement document in the base collection is proces
 }
 ````
 
-The system uses the type attribute to determine *c8y_Temperature* as measurement type. Next it determines the measurement fragment *c8y_Temperature*, which comprises measurement type *T*, measurement value *2.079*, and measurement unit *C* as properties. This fragment is flattened and represented in the target table in the data lake as
+The system uses the type attribute to determine `c8y_Temperature` as measurement type. Next it determines the measurement fragment `c8y_Temperature`, which comprises measurement type `T`, measurement value 2.079, and measurement unit `C` as properties. This fragment is flattened and represented in the target table in the data lake as
 
 | ... | c8y_Temperature.T.unit | c8y_Temperature.T.value |... |
 | ---- | ---- | ---- | ---- |
 | ... | C | 2.0791169082 | ... |
 
-{{< c8y-admon-info >}}
+{{< c8y-admon-important >}}
 Try to ensure that the data you feed into the measurements base collection is consistent. If measurements of the same type vary in the fragment structures, the resulting target table might not have the expected schema. A common problem, for example, are varying data types of the values like one value being 2.079 and another one NaN. 
-{{< /c8y-admon-info >}}
+{{< /c8y-admon-important >}}
 
 ##### Offloading measurements with the TrendMiner target table layout
 
@@ -205,6 +204,9 @@ The resulting schema is defined as follows:
 | time | TIMESTAMP |
 | timeOffset | INTEGER |
 | timeWithOffset | TIMESTAMP |
+| YEAR | VARCHAR |
+| MONTH | VARCHAR |
+| DAY | VARCHAR |
 | source | VARCHAR |
 | type | VARCHAR |
 | tagname | VARCHAR |
@@ -250,7 +252,7 @@ is represented in the target table in the data lake as
 | ... | Temperature | 857.c8y_TemperatureMeasurement.T | C | 2.0791169082 |... |
 | ... | Pressure | 311.c8y_PressureMeasurement.P | kPa | 98.0665 |... |
 
-In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tags** is created. This table stores the tag names and the source IDs, which connect the tagname used in TrendMiner with a device and its id as managed in the {{< product-c8y-iot >}} platform. The schema of the **c8y_cdh_tm_tags** table is defined as:
+In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tags** is created. This table stores the tag names and the source IDs, which connect the tagname used in TrendMiner with a device and its ID as managed in the {{< product-c8y-iot >}} platform. The schema of the **c8y_cdh_tm_tags** table is defined as:
 
 | Column name | Column type |
 | -----       | -----       |
@@ -260,4 +262,4 @@ In addition to the table **c8y_cdh_tm_measurements**, the table **c8y_cdh_tm_tag
 | datatype | VARCHAR |
 | latestCreationTime | TIMESTAMP |
 
-For more details on the interaction of TrendMiner and {{< product-c8y-iot >}} DataHub see also [Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-other-products/#integration-trendminer).
+For more details on the interaction of TrendMiner and {{< product-c8y-iot >}} DataHub see also [Integrating {{< product-c8y-iot >}} DataHub with other products > Integrating {{< product-c8y-iot >}} DataHub with TrendMiner](/datahub/integrating-datahub-with-other-products/#integration-trendminer).

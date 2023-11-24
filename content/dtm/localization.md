@@ -22,10 +22,6 @@ helpcontent:
 ---
 
 {{< c8y-admon-req >}}
-* To view the **Localization** page: READ permission for permission type "Application management"
-
-* To add/update/delete localization identifiers: ADMIN permission for permission type "Application management"
-
 * Your user must have a role with READ permission for the permission type "Application management". See [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 * Your tenant must have the Public-options application installed, see details below.

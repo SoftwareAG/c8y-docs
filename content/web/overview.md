@@ -40,7 +40,7 @@ The Web SDK consists of the following packages deployed to npm in the scope `@c8
 
 These packages depend on each other from top to bottom. While the `@c8y/client` is a very low-level API interface with nearly no dependencies, the `@c8y/apps` provide feature rich applications by including `@c8y/ngx-components` and `@c8y/client`.
 
-The goal of these splittings is to provide the right package for every use case, for example, if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/style`.
+The goal of these splittings is to provide the right package for every use case, for example, if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device management application you could use `@c8y/ngx-components` together with `@c8y/style`.
 
 The following is a list which explains the use cases of each package.
 

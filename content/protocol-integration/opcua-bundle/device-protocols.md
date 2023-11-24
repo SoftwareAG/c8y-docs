@@ -86,7 +86,7 @@ The value will also be populated as a fragment of the created event, under a sta
 {
  "type": "com_cumulocity_model_DoorSensorEvent",
  "text": "Door sensor was triggered",
- "c8y_ua_DataValue": {
+ "c8y_ua_DataValue": {
      "serverTimestamp": 132403410091850000,
      "sourceTimestamp": 132403410091850000,
      "value": {

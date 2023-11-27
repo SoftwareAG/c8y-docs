@@ -7,18 +7,26 @@ weight: 10
 ---
 
 
-### October 2023
+### December 2023
 
-#### -Change-  Apama correlator version
+#### -Change- Apama correlator version
 
 This version of Cumulocity IoT Streaming Analytics includes the Apama version 10.15.4 correlator.
 EPL apps developers should also refer to [What's New In Apama 10.15.4](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-WhaNewInApa_10154_top.html) in the Apama documentation.
 
-#### -Change-  Basic diagnostics information
+#### -Change- Location of diagnostics links
+
+Previously, two links for downloading diagnostics information were available at the bottom of the Streaming Analytics application.
+These links have been moved. They are now available when you click the **User** button in the Streaming Analytics application to display the right drawer.
+The right drawer now displays these links in a new **Download diagnostics** section. See also [Downloading diagnostics and logs](https://cumulocity.com/docs/streaming-analytics/troubleshooting/#diagnostics-download) in the user documentation.
+
+In addition, the right drawer now also provides a **Documentation** section with links to the Streaming Analytics documentation.
+
+#### -Change- Basic diagnostics information
 
 The EPL memory profiler snapshots, which were previously only included in the enhanced diagnostics information, are now also included in the basic diagnostics information. This is helpful in case a high memory usage alarm is raised when the Apama-ctrl microservice consumes 90% of the maximum memory permitted for the microservice container and you only have basic diagnostics information available. See also [Downloading diagnostics and logs](https://cumulocity.com/docs/streaming-analytics/troubleshooting/#diagnostics-download) in the user documentation.
 
-#### -Feature-  New EPL sample
+#### -Feature- New EPL sample
 
 A new EPL sample named "Receive update notifications"
 can now be accessed from the EPL editor of the Streaming Analytics application.
@@ -28,7 +36,7 @@ in the user documentation.
 
 For more detailed information, see [Receiving update notifications](https://documentation.softwareag.com/pam/10.15.3/en/webhelp/pam-webhelp/index.html#page/pam-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation for the Cumulocity IoT transport connectivity plug-in.
 
-#### -Feature-  Receive input from all input sources by default
+#### -Feature- Receive input from all input sources by default
 
 The Analytics Builder input blocks can now be configured to receive inputs from all input sources. You can simplify global tasks by creating a single Analytics Builder model that works with inputs from all input sources, for example, send an email for every critical alarm of type `C8Y_TemperatureAlarm` that is generated, regardless of the device that generated the alarm. A new **All Inputs** option is available for this purpose.
 When you add a new block to your model or when you edit the parameters of a new template instance, the **All Inputs** option is now set by default. See also [Editing the parameters of a block](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) in the user documentation.
@@ -38,35 +46,41 @@ See also [Replacing sources or destinations](https://cumulocity.com/docs/streami
 
 A new Analytics Builder sample named "Aggregate measurements per input source" is now available, which creates new measurements that average the measurement values for each input source that has a specified fragment and series. This is a simple sample that creates a model without template parameters, so you can activate the model directly in the model manager. See also [The Samples tab](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#the-samples-tab) in the user documentation.
 
-#### -Feature-  Additional value types for the Constant Value block
+#### -Feature- Additional value types for the Constant Value block
 
 The [Constant Value](https://cumulocity.com/docs/streaming-analytics/block-reference/#constant-value) block in Analytics Builder now supports `float` and `boolean` value types
 and can produce output of these types. This enables the block's output to be consumed by other blocks that take input of type `float` or `boolean` like the blocks in
 the **Logic** and **Aggregate** categories. The **Type** parameter is also now optional. If a type is not selected, the type of the output value is inferred from the **Value** parameter.
 
-#### -Change-  Removing template parameters
+#### -Change- Removing template parameters
 
 In Analytics Builder, an icon is now provided for removing a template parameter from the **Template Parameter** dialog box.
 The actions menu (the three vertical dots at the end of a row) has therefore been removed. See also [Managing template parameters](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#managing-template-parameters) in the user documentation.
 
-#### -Feature-  Selection lists for template parameters
+#### -Feature- Selection lists for template parameters
 
 You can now create a selection list for an Analytics Builder template parameter. This allows the model author to provide a predefined list of values for the user to choose from, ensuring that the user only enters the values you allow.
 You can define selection lists for types such as string, float, source or destination, or geofence and you can also select a specific value to be the default value. The values that you define for a selection list are then available for selection when you create instances of the model.
 See also [Adding a selection list for a template parameter](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#adding-a-selection-list-for-a-template-parameter) in the user documentation.
 
-#### -Fix-  Filtering models
+#### -Change- Missing subassets in a device group or asset hierarchy
+
+Previously, when reactivating an Analytics Builder model, an error was thrown if a subasset of a device group or asset hierarchy from which the model receives events no longer existed in the inventory, for example, because a device was deleted.
+As of this version, missing subassets in a device group or asset hierarchy are ignored and an error is no longer thrown.
+However, if the deletion of a subasset results in an empty device group or asset hierarchy, an error is still thrown.
+
+#### -Fix- Filtering models
 
 In Analytics Builder, when filtering the models in the model manager by **Mode** and **Status**, the filter is now also applied to template models.
 Prior to this fix, the filter was only applied to models without template parameters.
 
-#### -Feature-  Cumulocity IoT transport in Apama 10.15.4
+#### -Feature- Cumulocity IoT transport in Apama 10.15.4
 
 Range-based queries (such as `FindManagedObject`) attempt to retrieve all resources matching the query parameters by default. Explicitly setting a value for `currentPage` or setting `withTotalPages` to false can improve the query performance by disabling paging. See the information on REST usage and query result paging in the [Cumulocity IoT OpenAPI Specifications](https://cumulocity.com/api/core/#section/REST-implementation/REST-usage) for more information.
 
 The `Alarm` and `Operation` events have new constants which define the valid values for their respective status and severity members. This allows more robust coding and eliminates runtime errors caused by typographical errors with literal strings.
 
-#### -Feature-  EPL enhancements in Apama 10.15.4
+#### -Feature- EPL enhancements in Apama 10.15.4
 
 ##### String concatenation operator + supports non-string operands
 

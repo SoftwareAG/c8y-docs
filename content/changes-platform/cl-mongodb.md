@@ -6,11 +6,11 @@ section:
 weight: 40
 ---
 
-### October 2023
+### December 2023
 
 #### -Change-  New sorting of Inventory API queries
 
-Inventory API queries that use the <code>text</code> parameter are now sorted by relevance. [MTM-54563]
+If users do a search from the UI or via the Inventory API, the text parameters are now sorted by relevance making it easier to see the more appropriate data returned. [MTM-54563]
 
 #### -Change-  New text index
 

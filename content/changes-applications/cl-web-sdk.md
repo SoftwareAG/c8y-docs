@@ -7,7 +7,7 @@ weight: 60
 ---
 
 
-### October 2023
+### December 2023
 
 #### -Change- Support of HTML in input fields
 

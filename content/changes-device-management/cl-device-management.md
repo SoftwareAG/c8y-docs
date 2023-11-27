@@ -1,5 +1,5 @@
 ---
-title: Device management changes
+title: Device management & connectivity
 layout: change_log
 section:
   - change_log
@@ -7,7 +7,7 @@ weight: 10
 ---
 
 
-### October 2023
+### December 2023
 
 
 #### -Change- Device management: Improved smart group filter layout

@@ -6,7 +6,7 @@ section:
 weight: 40
 ---
 
-### October 2023
+### December 2023
 
 #### -Announcement- Deprecation of the Microservice SDK for C#
 

@@ -172,7 +172,7 @@ For more information on `timedelay_secs`, see [Keys for model timeouts](/streami
 
 When chains of models with a high throughput are deployed across multiple workers, it may happen that the chain falls behind in processing input events, creating a backlog of input events that are still to be processed. These chains are referred to as “slow chains”. A message is written to the correlator log if the slowest chain is delayed by more than 1 second. For example:
 "Analytics Builder chain of models "Model 1", "Model 2", "Model 3" is slow by 3 seconds."
-See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles) for information on where to find the correlator log.
+See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles) for information on where to find the log.
 
 The following information on the slowest chain is also available in the periodic status that is published as {{< product-c8y-iot >}} operations or events, within the `apama_status` parameter:
 
@@ -315,7 +315,7 @@ Analytics Builder chain of models "Model 1", "Model 2", "Model 3" is being activ
 Analytics Builder chain of models "Model 1", "Model 2", "Model 3" has been activated.
 ```
 
-See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles) for information on where to find the correlator log.
+See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles) for information on where to find the log.
 
 ### Configuration {#configuration}
 
@@ -474,7 +474,7 @@ The values for some of the tenant options are logged. These are the following:
 -   `timedelay_secs`
 -   `numWorkerThreads`
 
-If you want to find out which values are currently used for these tenant options, you can look them up in the correlator log. See also [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles).
+If you want to find out which values are currently used for these tenant options, you can look them up in the log. See also [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles).
 
 #### Using curl commands for setting various tenant options {#using-curl-commands-for-setting-various-tenant-options}
 

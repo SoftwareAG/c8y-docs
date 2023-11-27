@@ -23,11 +23,11 @@ helpcontent:
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-The user must have access to the Administration application of {{< management-tenant >}} or {{< enterprise-tenant >}}.
+The user must have access to the Administration application of a {{< management-tenant >}} or an {{< enterprise-tenant >}}.
 
 ROLES & PERMISSIONS:
 
-The user must have "Tenant management" permissions:
+"Tenant management" permission type:
 * To view tenants usage statistics: READ permission.
 
 {{< /c8y-admon-req >}}

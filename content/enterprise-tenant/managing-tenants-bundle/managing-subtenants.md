@@ -11,24 +11,24 @@ helpcontent:
     To create a subtenant click **Create tenant** at the top right."
 ---
 
+Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
+
 {{< c8y-admon-req >}}
 APPLICATION ACCESS:
 
-The user must have access to the Administration application of {{< enterprise-tenant >}}
-
-To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+The user must have access to the Administration application of an {{< enterprise-tenant >}}.
 
 ROLES & PERMISSIONS:
 
-The user must have one or more of "Tenant management" permissions:
+To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular.
+
+The user must have at least one permission for the permission type "Tenant management":
 * To view all tenants: READ permission.
 * To create tenants: CREATE permission.
-* To edit tenants (incl. subscriptions) and suspend or activate them: UPDATE permission.
-* To create and edit existing tenants: ADMIN permission.
+* To edit tenants (including subscriptions) and suspend or activate them: UPDATE permission.
+* To create, edit (including subscriptions), suspend or activate tenants: ADMIN permission.
 
 {{< /c8y-admon-req >}}
-
-Using the {{< enterprise-tenant >}} of {{< product-c8y-iot >}}, you can make use of the tenants functionality which allows you to create and manage subtenants.
 
 {{< c8y-admon-important >}}
 There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you must strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants. For details on the role-based access approach versus multi-tenancy, see [RBAC versus multi-tenancy approach](/concepts/tenant-hierarchy/#comparison).

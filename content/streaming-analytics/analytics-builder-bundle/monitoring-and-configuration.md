@@ -317,32 +317,6 @@ Analytics Builder chain of models "Model 1", "Model 2", "Model 3" has been activ
 
 See [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log) for information on where to find the correlator log.
 
-#### Viewing the audit logs {#viewing-the-audit-logs}
-
-Model activations and deactivations are shown in the audit logs. The audit logs are accessible via the Administration application and the audit API.
-See [Audit logs](/standard-tenant/audit-logs/) and [Audit API](https://{{< domain-c8y >}}/api/core/#tag/Audit-API)
-in the {{< openapi >}} for details of accessing the audit logs.
-
-Audit log entries include the name of the user performing the action and the current mode of the model. For test and simulation mode, the identifier of the virtual device and the mode properties are provided.
-
-The following is an example of an audit log entry \(with additional line breaks in the `text` field for better readability\):
-
-```
-{
-    "activity": "Activated model",
-    "application": "apama_ctrl",
-    "severity": "information",
-    "text": "TestingModel1:Activated,
-             Mode:SIMULATION,
-             OutputDevices:[21628],
-             startTime:2019-11-06T09:35:10.000Z,
-             endTime:2019-11-06T09:35:43.000Z,
-             maxDelaySecsSimulation:2",
-    "type": "Inventory",
-    "user": "apama_test_cep_admin"
-}
-```
-
 #### Viewing diagnostics information {#viewing-diagnostics-information}
 
 To view diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.

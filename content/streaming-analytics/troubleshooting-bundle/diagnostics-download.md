@@ -8,6 +8,12 @@ layout: redirect
 Diagnostics are not available for the Apama-ctrl-smartrules and Apama-ctrl-smartrulesmt microservices.
 {{< /c8y-admon-info >}}
 
+To download diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
+
+{{< c8y-admon-info>}}
+ADMIN permission for "CEP management" does not include READ permission.
+{{< /c8y-admon-info>}}
+
 If you have READ permission for "CEP management", links for downloading diagnostics information are available when you click the **User** button in the Streaming Analytics application.
 This opens the right drawer which contains a **Download diagnostics** section with the following links:
 
@@ -23,7 +29,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.
 
     {{< c8y-admon-info >}}
-  In case of {{< product-c8y-iot >}} Edge, since Apama-ctrl is not deployed as a microservice in Edge, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](/edge/operating-edge/#apama-log-file-locations) and [Diagnostic utility](/edge/operating-edge/#diagnostics).
+  In case of {{< product-c8y-iot >}} Edge Applicance VM, since Apama-ctrl is not deployed as a microservice in the VM-based distribution, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](/edge/operating-edge/#apama-log-file-locations) and [Diagnostic utility](/edge/operating-edge/#diagnostics).
     {{< /c8y-admon-info >}}
 
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
@@ -45,9 +51,9 @@ Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enh
 - Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file.
 - In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator. These include the contents of the queues, CPU usage, and so on.
 
-What a user can see or do depends on the permissions:
+What you can see or do depends on your permissions:
 
-- A user with only READ permission for "CEP management" has read-only access to EPL apps and analytic models.
-- Without ADMIN permission for "CEP management", the user is not able to activate or edit EPL apps or analytic models.
-- If a user has both READ and ADMIN permissions for "CEP management", the user has read-write access and can access the diagnostics information.
-- If a user has only the ADMIN permission for "CEP management" and no READ permission, the user is able to load, edit and deploy EPL apps and analytic models, but is not able to see or access the diagnostics information.
+- If you have only READ permission for "CEP management", you have read-only access to EPL apps and analytic models and you can access the diagnostics information.
+- Without ADMIN permission for "CEP management", you are not able to activate or edit EPL apps or analytic models.
+- If you have both READ and ADMIN permissions for "CEP management", you have read-write access and you can access the diagnostics information.
+- If you have only ADMIN permission for "CEP management" and no READ permission, you are able to load, edit and deploy EPL apps and analytic models, but you are not able to see or access the diagnostics information.

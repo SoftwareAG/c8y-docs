@@ -74,16 +74,15 @@ However, if the deletion of a subasset results in an empty device group or asset
 In Analytics Builder, when filtering the models in the model manager by **Mode** and **Status**, the filter is now also applied to template models.
 Prior to this fix, the filter was only applied to models without template parameters.
 
+#### -Change- Enhanced Cumulocity IoT transport in Apama 10.15.4 to reflect changes in REST API
+
+Due to a change in Cumulocity IoT announced with [release 10.17](/release-10-17-0/announcements-10-17-0), Apama 10.15.4 now explicitly sets `withTotalPages` to `true` for applicable requests.
+
 #### -Feature- Cumulocity IoT transport in Apama 10.15.4
 
 Range-based queries (such as `FindManagedObject`) attempt to retrieve all resources matching the query parameters by default. Explicitly setting a value for `currentPage` or setting `withTotalPages` to false can improve the query performance by disabling paging. See the information on REST usage and query result paging in the [Cumulocity IoT OpenAPI Specifications](https://cumulocity.com/api/core/#section/REST-implementation/REST-usage) for more information.
 
 The `Alarm` and `Operation` events have new constants which define the valid values for their respective status and severity members. This allows more robust coding and eliminates runtime errors caused by typographical errors with literal strings.
-
-
-#### -Change- Enhanced Cumulocity IoT transport in Apama 10.15.4 to reflect changes in REST API
-
-Due to a change in Cumulocity IoT announced with [release 10.17](/release-10-17-0/announcements-10-17-0), Apama 10.15.4 now explicitly sets `withTotalPages` to `true` for applicable requests.
 
 #### -Feature- EPL enhancements in Apama 10.15.4
 

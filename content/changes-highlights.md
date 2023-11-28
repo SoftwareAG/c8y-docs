@@ -1,5 +1,5 @@
 ---
-title: New features
+title: Feature highlights
 icon: "dlt-c8y-icon-system-report"
 type: root
 layout: redirect
@@ -9,4 +9,4 @@ section:
 weight: 3
 ---
 
-Check out the latest new features in the Cumulocity IoT platform.
+Check out the latest feature highlights in the Cumulocity IoT platform.

@@ -9,6 +9,10 @@ weight: 60
 
 ### December 2023
 
+#### -Change- Location view migrated to Angular
+
+The location view in the Device management and Cockpit application has been migrated to Angular. The map provider, the location search and the map layers are now configurable via application options or tenant options. The angular.js module <code>@c8y/ng1-modules/devicemanagement-location</code> for location was removed and must be migrated or at least removed on update of a custom build application. [MTM-49947]
+
 #### -Change- Support of HTML in input fields
 
 To be able to provide more information in input fields on the expected input, dynamic form fields now support HTML markup in their description. [DM-2606]

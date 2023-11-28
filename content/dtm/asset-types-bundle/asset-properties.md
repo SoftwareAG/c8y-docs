@@ -219,7 +219,7 @@ If selected, enter the allowed file types separated by a comma in the **Allowed 
 
 If there is a file size limit set for the tenant, you see the limit along with the field name for **Max file size in MB**.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
-File sanitization needs to be taken care by the uploader to prevent security threats.
+To prevent security threats during the file upload, sanitize your files beforehand.
 
 {{< /c8y-admon-info>}}
 

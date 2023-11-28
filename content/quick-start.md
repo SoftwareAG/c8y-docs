@@ -1,6 +1,6 @@
 ---
 title: Quick start tutorial
-icon: "c8y-icon c8y-icon-cumulocity-iot"
+icon: "c8y-icon c8y-icon-users"
 type: root
 layout: redirect
 bundle: quick-start

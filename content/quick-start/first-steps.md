@@ -25,7 +25,7 @@ On the Login page, enter your username and password.
 
 Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![{{< product-c8y-iot >}} application](/images/users-guide/getting-started/getting-started-screen-ui-elements.png)
 
 Go to [Accessing and logging into the platform](/get-familiar-with-the-ui/platform-access/) for more details on supported URLs, password reset, and more.
 

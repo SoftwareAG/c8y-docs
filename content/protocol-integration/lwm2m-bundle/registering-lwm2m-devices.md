@@ -412,6 +412,13 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Indicates the preferred content format for {{< product-c8y-iot >}} to communicate with the device. The allowed content formats are: TLV, JSON, CBOR, TEXT, OPAQUE or SENML_JSON and SENML_CBOR. In case of an empty or invalid entry, {{< product-c8y-iot >}} automatically selects the serialization format which the device sends during device registration.</td>
 <td style="text-align: left">Optional</td>
 </tr>
+<tr>
+<td style="text-align: left">Disable the default behavior for object instances</td>
+<td style="text-align: left">disableInternalObjectInstanceActions</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Cumulocity IoT implements default handlers for objects 3,4 and 6. For example, they update the device name upon the reception of the corresponding resource in object 3 or update the device location. This flag allows those behaviors to be turned off.</td>
+<td style="text-align: left">Optional</td>
+</tr>
 </tbody>
 </table>
 
@@ -470,8 +477,17 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 <td style="text-align: left">Optional</td>
 </tr>
+<tr>
+<td style="text-align: left">Disable automated firmware update support</td>
+<td style="text-align: left">disableFirmwareStateMachine</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Indicates if the default firmware update state machine should be disabled. Default is false.</td>
+<td style="text-align: left">Optional</td>
+</tr>
 </tbody>
 </table>
+
+
 
 {{< c8y-admon-info >}}
 Firmware updates are also supported for the registration of unsecured devices as well as secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).

@@ -76,8 +76,6 @@ Prior to this fix, the filter was only applied to models without template parame
 
 #### -Feature- Cumulocity IoT transport in Apama 10.15.4
 
-Range-based queries (such as `FindManagedObject`) attempt to retrieve all resources matching the query parameters by default. Explicitly setting a value for `currentPage` or setting `withTotalPages` to false can improve the query performance by disabling paging. See the information on REST usage and query result paging in the [Cumulocity IoT OpenAPI Specifications](https://cumulocity.com/api/core/#section/REST-implementation/REST-usage) for more information.
-
 The `Alarm` and `Operation` events have new constants which define the valid values for their respective status and severity members. This allows more robust coding and eliminates runtime errors caused by typographical errors with literal strings.
 
 #### -Feature- EPL enhancements in Apama 10.15.4
@@ -167,3 +165,44 @@ The `com.apama.functional.Fn` and `com.apama.functional.Functional` events now h
 ##### Functional listeners
 
 The functional `onTimeout` action now returns the wait listener it creates so that it can be quit if needed. For more details, see [Functional listeners](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/pam-webhelp/#page/pam-webhelp%2Fco-DevApaAppInEpl_functional_listeners.html) in the Apama documentation.
+
+##### Handling uncaught exceptions
+
+EPL monitors are no longer terminated by default when an uncaught exception is thrown in some cases.
+
+Programming errors and unexpected data in incoming events can cause an uncaught exception in EPL. This causes the monitor instance to be terminated, rendering the application unusable. To provide a better experience, exceptions thrown from listeners and stream listeners which are not caught no longer terminate the monitor instance. Instead, they just stop the handling of the current event.
+
+Developers are still encouraged to correctly catch and handle the exceptions in their EPL. If an exception is thrown and not caught, it is still possible for the events to be lost and not correctly handled.
+
+This is a change in behavior. Some users may be relying on this previous behavior, in combination with an `ondie()` action. EPL with an `ondie()` action retains the previous behavior of always terminating the monitor and calling `ondie()`. If you need to retain the previous behavior, you can add an empty `ondie()` action to your monitor.
+
+{{< c8y-admon-info >}}
+If you have an action that is called from within a stream query (for example, as part of a `where` or `group by` clause, or a window definition) which throws an exception, this still terminates the monitor instance.
+{{< /c8y-admon-info >}}
+
+##### Updated events in com.apama.cumulocity
+
+To avoid confusion as to whether events were being sent towards Cumulocity IoT or being received back as updates from Cumulocity IoT, the Cumulocity event definitions API was changed in a previous release (10.5.2.0) so that the existing `CHANNEL` constant was deprecated and replaced by either `SEND_CHANNEL` or `SUBSCRIBE_CHANNEL` constants as appropriate. Some events were omitted from these changes and this has now been rectified. Therefore, the `CHANNEL` constant is deprecated on the following events:
+
+* `SubscribeMeasurements`
+* `UnsubscribeMeasurements`
+* `FindManagedObjectResponseAck`
+* `FindMeasurementResponseAck`
+* `GenericResponseComplete`
+* `Subscribe`
+* `Unsubscribe`
+
+In addition, a new `SUBSCRIBE_CHANNEL` or `SEND_CHANNEL` has been added to the following events instead:
+
+* `SubscribeMeasurements`
+* `UnsubscribeMeasurements`
+* `Subscribe`
+* `Unsubscribe`
+
+The constants on the following events are instead replaced with `SUBSCRIBE_CHANNEL` constants on their corresponding `Response` types:
+
+* `FindManagedObjectResponseAck`
+* `FindMeasurementResponseAck`
+* `GenericResponseComplete`
+
+The [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/pam/10.15.4/en/webhelp/related/ApamaDoc/index.html) has been amended to make it clear that acknowledgement events are always received on the same channel as the corresponding response events, and to avoid confusion the `CHANNEL` constant has been deprecated on those acknowledgement events where it had been defined.

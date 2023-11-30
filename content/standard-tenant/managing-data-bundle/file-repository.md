@@ -5,7 +5,7 @@ layout: redirect
 section:
   - platform_administration
 helpcontent:
-- label: files
+- label: file-repository
   title: Files repository
   content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page."
 ---

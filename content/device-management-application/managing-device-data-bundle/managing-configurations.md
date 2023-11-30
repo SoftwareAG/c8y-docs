@@ -3,7 +3,7 @@ weight: 30
 title: Managing configurations
 layout: redirect
 helpcontent:
-- label: configuration-repository
+- label: managing-configurations
   title: Configuration repository
   content: "In the configuration repository, you can store and manage configuration data retrieved from your devices as 'configuration snaphots'. The configuration data contains the parameters and the initial settings of a device. Such configuration snapshots help you, for example, to apply the same configuration to multiple devices.
 

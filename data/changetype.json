@@ -1,0 +1,28 @@
+{
+  "options": [
+    {
+      "id": "change-inv-3bw8e",
+      "option": "Announcement"
+    },
+    {
+      "id": "change-QHu1GdukP",
+      "option": "Feature"
+    },
+    {
+      "id": "change-pXAlHAWka",
+      "option": "Preview"
+    },
+    {
+      "id": "change-mAHSMDrke",
+      "option": "Security"
+    },
+    {
+      "id": "change-2c7RdTdXo4",
+      "option": "Change"
+    },
+    {
+      "id": "change-VSkj2iV9m",
+      "option": "Fix"
+    }
+  ]
+}

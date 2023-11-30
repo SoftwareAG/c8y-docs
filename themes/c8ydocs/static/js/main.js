@@ -109,13 +109,19 @@ main.init();
 
 // Builds the TOC by retrieving the H3 in the page
 function buildToc() {
-  let articles = document.querySelectorAll('article.page-section');
-
+  let articlesList = document.querySelector('.article-list');
+  let articles;
+  if (!articlesList.classList.contains('change-logs--list')) {
+    articles = document.querySelectorAll('article.page-section');
+  } else {
+    articles = document.querySelectorAll('article.page-section.change-log__date');
+  }
+  console.log(articles);
   articles.forEach(article => {
     let h3s = article.querySelectorAll('h3');
     let articleTitle = article.querySelector('h2');
     let tocLinks = '';
-    
+    console.log(h3s);
     if (h3s.length > 1) {
       if (articleTitle) {
         tocLinks += `<h5 class="text-regular text-muted">${articleTitle.textContent}</h5>`;

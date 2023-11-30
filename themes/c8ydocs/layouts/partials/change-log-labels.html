@@ -1,11 +1,11 @@
 {{ $content := . }}
-{{ $content := replace $content "-Change-" "<label class='change-log__label--change'>Change</label>" }}
-{{ $content := replace $content "-Announcement-" "<label class='change-log__label--announcement'>Announcement</label>" }}
-{{ $content := replace $content "-Feature-" "<label class='change-log__label--feature'>Feature</label>" }}
-{{ $content := replace $content "-Preview-" "<label class='change-log__label--preview'>Preview</label>" }}
-{{ $content := replace $content "-Fix-" "<label class='change-log__label--fix'>Fix</label>" }}
-{{ $content := replace $content "-Issue-" "<label class='change-log__label--issue'>Issue</label>" }}
-{{ $content := replace $content "-Security-" "<label class='change-log__label--security'>Security</label>" }}
+{{ $content := replace $content "Change" "<label class='change-log__label--change'>Change</label>" }}
+{{ $content := replace $content "Announcement" "<label class='change-log__label--announcement'>Announcement</label>" }}
+{{ $content := replace $content "Feature" "<label class='change-log__label--feature'>Feature</label>" }}
+{{ $content := replace $content "Preview" "<label class='change-log__label--preview'>Preview</label>" }}
+{{ $content := replace $content "Fix" "<label class='change-log__label--fix'>Fix</label>" }}
+{{ $content := replace $content "Issue" "<label class='change-log__label--issue'>Issue</label>" }}
+{{ $content := replace $content "Security" "<label class='change-log__label--security'>Security</label>" }}
 {{ $content | safeHTML }}
 
 

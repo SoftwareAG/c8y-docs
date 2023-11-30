@@ -1,0 +1,105 @@
+{{$current := . }}
+
+{{$currentSection := ""}}
+{{ with .Params.section}}
+  {{$currentSection =  index . 0}}
+{{end}}
+<nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="{{.Page.Permalink}}" class="text-center d-block p-t-8 p-b-8" >
+      <i style="font-size:46px;" class="c8y-icon-duocolor dlt-c8y-icon-logs"></i>
+      <strong class="text-truncate text-muted" title="Change logs">Change logs</strong>
+    </a>
+      <!-- 
+        <div class="dropdown">
+          <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+      aria-labelledby="dropdownMenuButton">
+      <div class="navsections-dropdown-menu">
+        
+        {{ $currentBundle := newScratch}}
+        {{$scratch := newScratch}}
+        {{ with $.Site.GetPage (printf "/%s" $currentSection) }}
+        {{ range where .Pages "Type" "root" }}
+        {{ $subs := where .Site.Pages "Section" .Params.bundle }}
+        
+              {{$rootclass := newScratch}}
+              {{/* grab the link from the first child page  */}}
+              {{ range $sub := first 1 $subs}}
+                {{ $scratch.Set "url" $sub.Permalink}}
+                {{end}}
+                
+                {{/* Check the current page to highlight the right root section  */}}
+                {{$rootclass.Set "active" "" }}
+                {{ if eq .Params.bundle $current.Section }}
+                {{$rootclass.Set "active" "active" }}
+                <span class="current-app"><i class="{{.Params.icon}}"></i> {{.Title}}</span>
+                {{ $currentBundle.Set "bundle" (printf "/%s-%s" .Params.bundle "bundle") }}
+                {{ else}}
+                {{ if and (eq .Params.layout "single") (eq .Title $current.Title) }}
+                  {{$rootclass.Set "active" "active" }}
+                  <span class="current-app">
+                    <i class="{{.Params.icon}}"></i> {{$current.Title}}
+                  </span>
+                {{ end }}
+              {{ end }}
+              
+              {{$url := $scratch.Get "url"}}
+              <a class='dropdown-menu-item text-truncate {{ $rootclass.Get "active"}}'
+                href='{{ $url }}' title="{{.Title}}"><i class="{{.Params.icon}}"></i>{{.Title}}</a>
+                {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  -->
+  </header>
+
+  <nav id="main-nav"
+    class="nav-sections">
+    {{ $currentDate := newScratch }}
+    {{ $currentDate.Set "date" ""}}
+    {{ range sort .Pages ".Date" }}
+      {{$listDate := .Date.Format "January, 2006" }}
+      {{ if ne $listDate ($currentDate.Get "date")}}
+        {{ $currentDate.Set "date" $listDate}}
+        <a href="#{{$listDate | urlize }}">
+          {{$listDate}}
+        </a>
+      {{end}}
+    {{end}}
+    <p>Change type</p>
+    <ul>
+      {{ range site.Data.changetype.options }}
+        <li>{{ .option }}</li>
+      {{ end }}
+    </ul>
+    <p>Component</p>
+    <ul>
+      {{ range site.Data.component.options }}
+        <li>{{ .option }}</li>
+      {{ end }}
+    </ul>
+    <p>Technical component</p>
+    <ul>
+      {{ range site.Data.technicalcomponent.options }}
+        <li>{{ .option }}</li>
+      {{ end }}
+    </ul>
+    <p>Product area</p>
+    <ul>
+      {{ range site.Data.productarea.options }}
+        <li>{{ .option }}</li>
+      {{ end }}
+    </ul>
+    
+  </nav>
+</nav>
+<div class="cover"></div>

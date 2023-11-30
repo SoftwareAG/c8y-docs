@@ -1,0 +1,25 @@
+{
+  "options": [
+    {
+      "id": "product_area-T1-_TpDyv",
+      "option": "Platform services"
+    },
+    {
+      "option": "Device Management",
+      "id": "product_area-m1iHjqikD"
+    },
+    {
+      "option": "Application enablement (including OEE and DTM)",
+      "id": "product_area-eC7h0SiQ2b"
+    },
+    {
+      "option": "Analytics (Streaming Analytics and DataHub)",
+      "id": "product_area-whzlZT2MhT"
+    },
+    {
+      "id": "product_area-dFJhzQsEA",
+      "option": "testing"
+    }
+  ],
+  "option": "hhhhhiei"
+}

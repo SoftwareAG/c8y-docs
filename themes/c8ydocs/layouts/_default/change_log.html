@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- partial "root-nav.html" . -}}
 
-{{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
+{{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle" }}
 {{ $headless := .Site.GetPage $bundle }}
 <main class="main-content">
   <div class="breadcrumbs-container">

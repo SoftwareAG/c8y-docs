@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{- partial "change-log-filters.html" . -}}
+
+{{ $bundle := "/change-logs" }}
+{{ $headless := .Site.GetPage $bundle }}
+<main class="main-content">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  {{ if .Site.Params.yearlyRelease}}
+    <h1>It is Yearly</h1>
+  {{else}}
+  {{- partial "change-logs-list.html" . -}}
+  {{end}}
+
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

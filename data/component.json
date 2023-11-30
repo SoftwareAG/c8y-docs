@@ -1,0 +1,44 @@
+{
+  "options": [
+    {
+      "id": "component-0UgqXH1Ys",
+      "option": "Administration"
+    },
+    {
+      "option": "Authentication",
+      "id": "q3kclF6pO"
+    },
+    {
+      "id": "component-JlFdtOPva",
+      "option": "Rest API"
+    },
+    {
+      "id": "component--KIsStyzM",
+      "option": "Device management"
+    },
+    {
+      "id": "component-1KLUzmqfe",
+      "option": "LWM2M"
+    },
+    {
+      "id": "component-YdSEScrEC",
+      "option": "Cockpit"
+    },
+    {
+      "id": "component-Tl88RYb4A",
+      "option": "Digital Twin manager"
+    },
+    {
+      "id": "component-YbYJ3gLU_",
+      "option": "Web SDK"
+    },
+    {
+      "id": "component-Bcu8iUXgm",
+      "option": "MongoDB"
+    },
+    {
+      "id": "component-1lrV-xHxo",
+      "option": "Security"
+    }
+  ]
+}

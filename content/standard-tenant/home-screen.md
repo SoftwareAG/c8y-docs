@@ -14,11 +14,8 @@ The user must have access to the Administration application.
 
 ROLES & PERMISSIONS:
 
-"Tenant statistics" permission type:
-* To see usage statistics for current tenant: READ permission.
-
-"Application management" permission type:
-* To view subscribed applications: READ permission.
+* To see usage statistics for current tenant: READ permission for the permission type "Tenant statistics".
+* To view subscribed applications: READ permission for the permission type "Application management".
 
 {{< /c8y-admon-req >}}
 

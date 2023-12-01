@@ -27,8 +27,7 @@ The user must have access to the Administration application of a {{< management-
 
 ROLES & PERMISSIONS:
 
-"Tenant management" permission type:
-* To view tenants usage statistics: READ permission.
+* To view tenants usage statistics: READ permission for the permission type "Tenant management".
 
 {{< /c8y-admon-req >}}
 

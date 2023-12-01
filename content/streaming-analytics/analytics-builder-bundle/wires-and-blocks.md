@@ -587,7 +587,7 @@ The input blocks assume that while events may be delivered out of order, they ar
 
 If the time delay value is set too low, then a small delay may result in Apama dropping an event, which can lead to erroneous results. The higher the time delay value is, the larger is the delay before an event is processed. Thus, it is important to pick a suitable value for the time delay to match the environment for events being delivered into Apama.
 
-The correlator logs the number of dropped events periodically to the correlator log file. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for configuring logging throttling and [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log).
+The correlator logs the number of dropped events periodically to the log file. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for configuring logging throttling and [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles).
 
 ### Output blocks and event timing {#output-blocks-and-event-timing}
 

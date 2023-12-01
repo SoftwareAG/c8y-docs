@@ -1,6 +1,7 @@
 ---
-date: 2023-12-01T16:03:34.877Z
+date: 2023-11-29T16:03:34.877Z
 title: Improved performance of the Inventory API
+change_log: false
 product_area:
   - value: product_area-T1-_TpDyv
     label: Platform services
@@ -13,6 +14,7 @@ change_type:
 technical_component:
   - value: tc-QHwMfWtBk7
     label: Core
+jira: MTM-50840, MTM-51973
 ---
-* The performance of the Inventory API has been improved by removing an additional request to the database. \[MTM-50840]
-* The performance of the Inventory API has been improved by removing two additional database queries for GET `/managedObjects`. \[MTM-51973]
+* The performance of the Inventory API has been improved by removing an additional request to the database.
+* The performance of the Inventory API has been improved by removing two additional database queries for GET `/managedObjects`.

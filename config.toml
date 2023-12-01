@@ -39,18 +39,26 @@ relativeURLs = true
   
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
+
   docsPreview = false
 
+  # Change logs configs
+  # Boolean to display the yearly change logs and not the CI/CD change logs
   yearlyRelease = false
+  # The yearly release date
+  yearlyReleaseDate = 2023-09-01T00:00:00
   
-  # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
+  # Change logs date - it's only used when yearlyRelease is set to false
+  # Only change logs with a date after the provided date will be displayed
+  changeLogsDate = 2023-09-01T00:00:00
+  
   thumbnailImage = true
 
   logo = "images/logo-platform.svg"
 
 
   # Your favicon path, default is "/favicon.png"
-  favicon = "https://cumulocity.com/favicon.ico"
+  favicon = "//cumulocity.com/favicon.ico"
 
   # Content variables for Frontmatter titles
   product_c8y_iot = "Cumulocity IoT"

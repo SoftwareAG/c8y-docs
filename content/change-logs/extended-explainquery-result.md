@@ -1,6 +1,7 @@
 ---
-date: 2023-12-01T16:00:52.999Z
+date: 2023-11-29T16:00:52.999Z
 title: Extended ExplainQuery result
+change_log: false
 product_area:
   - value: product_area-T1-_TpDyv
     label: Platform services
@@ -13,6 +14,7 @@ change_type:
 technical_component:
   - value: tc-QHwMfWtBk7
     label: Core
+jira: MTM-52350
 ---
 The ExplainQuery result info has been extended by the algorithm used when performing queries for a user with inventory roles:
 
@@ -20,4 +22,4 @@ The ExplainQuery result info has been extended by the algorithm used when perfor
 
 Example: `{“algorithm”: “Legacy” }`
 
-Possible results: `Legacy, LimitedSourcesAcl, PostFilteringBySourceAcl, SingleSourceAcl, HierarchyAcl, SingleAgentAcl, SingleDeviceAcl, SingleAgentAndDeviceAcl` \[MTM-52350]
+Possible results: `Legacy, LimitedSourcesAcl, PostFilteringBySourceAcl, SingleSourceAcl, HierarchyAcl, SingleAgentAcl, SingleDeviceAcl, SingleAgentAndDeviceAcl`.

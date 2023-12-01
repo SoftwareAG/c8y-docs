@@ -111,92 +111,120 @@ main.init();
 function buildToc() {
   let articlesList = document.querySelector('.article-list');
   let articles;
-  if (!articlesList.classList.contains('change-logs--list')) {
+  let changeLog = false;
+  if (articlesList && !articlesList.classList.contains('change-logs--list')) {
     articles = document.querySelectorAll('article.page-section');
-  } else {
-    articles = document.querySelectorAll('article.page-section.change-log__date');
+  } else{
+    changeLog = true;
+    articles = document.querySelectorAll('.page-section.change-log__date');
   }
-  console.log(articles);
-  articles.forEach(article => {
-    let h3s = article.querySelectorAll('h3');
-    let articleTitle = article.querySelector('h2');
-    let tocLinks = '';
-    console.log(h3s);
-    if (h3s.length > 1) {
-      if (articleTitle) {
-        tocLinks += `<h5 class="text-regular text-muted">${articleTitle.textContent}</h5>`;
-      }
-      h3s.forEach(h3 => {
-        if (h3.id && h3.textContent.length) {
-          tocLinks += `<div class="list-group-item"><a href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
-        }
-      });
+  if (articlesList) {
+    if (!changeLog) {
+      articles.forEach(article => {
+        let h3s = article.querySelectorAll('h3');
+        let articleTitle = article.querySelector('h2');
+        let tocLinks = '';
+        console.log(h3s);
+        if (h3s.length > 1) {
+          if (articleTitle) {
+            tocLinks += `<h5 class="text-regular text-muted">${articleTitle.textContent}</h5>`;
+          }
+          h3s.forEach(h3 => {
+            if (h3.id && h3.textContent.length) {
+              tocLinks += `<div class="list-group-item"><a href="#${h3.id}" title="${h3.textContent}">${h3.textContent}</a></div>`;
+            }
+          });
 
-      if (tocLinks.length) {
-        const existingTocContainer = article.querySelector('.list-group');
+          if (tocLinks.length) {
+            const existingTocContainer = article.querySelector('.list-group');
         
-        if (!existingTocContainer) {
-          const tocContainer = document.createElement('div');
-          tocContainer.classList.add('toc-container'); 
+            if (!existingTocContainer) {
+              const tocContainer = document.createElement('div');
+              tocContainer.classList.add('toc-container');
           
-          const listGroup = document.createElement('div');
-          listGroup.classList.add('list-group');
-          listGroup.classList.add('toc');
-          listGroup.innerHTML = tocLinks;
-          tocContainer.appendChild(listGroup);
-          article.appendChild(tocContainer);
+              const listGroup = document.createElement('div');
+              listGroup.classList.add('list-group');
+              listGroup.classList.add('toc');
+              listGroup.innerHTML = tocLinks;
+              tocContainer.appendChild(listGroup);
+              article.appendChild(tocContainer);
+            }
+          }
         }
-      }
-    }
-  });
-
-  const links = document.querySelectorAll('.toc a');
-
-  links.forEach(link => {
-    const targetId = link.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    link.addEventListener('click', event => {
-      const tempActive = document.querySelectorAll('.toc .active');
-      tempActive.forEach(temp => {
-        temp.classList.remove('active');
       });
-      link.classList.add('active');
-    });
+    } else {
+      let tocLinks = '';
+      articles.forEach(article => {
+        let h2 = article.querySelector('h5');
+        // console.log(h2.parentNode.dataset.id);
+     
+        if (h2.parentNode.dataset.id && h2.textContent.length) {
+          tocLinks += `<div class="list-group-item"><a href="#${h2.parentNode.dataset.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
+        }
+      })
+      console.log("tocLinks", tocLinks);
+      if (tocLinks.length) {
+        const tocContainer = document.createElement('div');
+        tocContainer.classList.add('toc-container');
+    
+        const listGroup = document.createElement('div');
+        listGroup.classList.add('list-group');
+        listGroup.classList.add('toc');
+        listGroup.innerHTML = tocLinks;
+        tocContainer.appendChild(listGroup);
+        const container = document.querySelector('.article-list.change-logs--list > article');
+        container.appendChild(tocContainer);
+      }
+    
+      
+    };
 
-    if (!targetElement) {
-      console.error(`Header element not found with id '${targetId}'`);
-      return;
-    }
+    const links = document.querySelectorAll('.toc a');
 
-    window.addEventListener('scroll', () => {
-      const rect = targetElement.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-    
-      // Calculate the top threshold for activation (top third of the viewport)
-      const topThreshold = windowHeight / 3;
-    
-      // Check if the element's top position is within the top threshold
-      const elementTopInTopThird = rect.top <= topThreshold;
-    
-      if (elementTopInTopThird) {
-        let tempActive = document.querySelectorAll('.toc .active');
+    links.forEach(link => {
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      console.log('target Element', targetElement);
+      link.addEventListener('click', event => {
+        const tempActive = document.querySelectorAll('.toc .active');
         tempActive.forEach(temp => {
           temp.classList.remove('active');
         });
         link.classList.add('active');
-      } else {
-        // If the element is not within the top third, remove the active class
-        link.classList.remove('active');
-      }
-    });
-    
-    
+      });
 
-  });
+      if (!targetElement) {
+        console.error(`Header element not found with id '${targetId}'`);
+        return;
+      }
+
+      window.addEventListener('scroll', () => {
+        const rect = targetElement.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+    
+        // Calculate the top threshold for activation (top third of the viewport)
+        const topThreshold = windowHeight / 3;
+    
+        // Check if the element's top position is within the top threshold
+        const elementTopInTopThird = rect.top <= topThreshold;
+    
+        if (elementTopInTopThird) {
+          let tempActive = document.querySelectorAll('.toc .active');
+          tempActive.forEach(temp => {
+            temp.classList.remove('active');
+          });
+          link.classList.add('active');
+        } else {
+          // If the element is not within the top third, remove the active class
+          link.classList.remove('active');
+        }
+      });
+    });
+  }
 }
 
 // Call the buildToc function to generate and insert TOCs for all articles
-buildToc();
+// buildToc();
 
 
 // Adds the section to the breadcrumbs

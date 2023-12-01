@@ -1,8 +1,8 @@
 ---
-title: Change logs root
+title: Change logs
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
-bundle: change-logs
+layout: change_log
 section:
   - change-logs
 weight: 10

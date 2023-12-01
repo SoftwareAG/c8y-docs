@@ -1,4 +1,6 @@
 <div class="article-list change-logs--list">
+  <article>
+    <div>
   <article id="{{substr .File.LogicalName 0 -3}}" class="page-section change-log">
     <div class="article-content">
       <header class="section-header">
@@ -9,18 +11,31 @@
       </div>
     </div>
   </article>
+  {{ $bundle := "/change-logs" }}
+  {{ $headless := .Site.GetPage $bundle }}
+  {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Date" "desc"}}
 
     {{ $currentDate := newScratch }}
     {{ $currentDate.Set "date" ""}}
-    {{ range .Pages.ByDate.Reverse }}
+    {{ $dateLimit := .Site.Params.changeLogsDate }}
+    <!-- 
+      Starting from {{ $dateLimit.Format "January 2, 2006"}}
+     -->
+
+    {{ range where $reusablePages "Date" "ge" $dateLimit}}
+     <!-- Dates, only adds a new one when it changes -->
+     {{ if ne (index .Params.change_type 0).label "Fix"}}
       {{$listDate := .Date.Format "January 2, 2006" }}
         {{ if ne $listDate ($currentDate.Get "date")}}
           {{ $currentDate.Set "date" $listDate}}
-          <article id="{{$listDate | urlize }}" class="change-log__date page-section">
-              <h2>{{$listDate}}</h2>
-          </article>
+          <div data-id="cl-{{$listDate | urlize }}" class="change-log__date page-section">
+              <h5>{{$listDate}}</h5>
+          </div>
+          
+          <section id="cl-{{$listDate | urlize }}" class="page-section " 
+          {{else}}
+          <section id="{{.Title | urlize }}" class="page-section " 
         {{end}}
-      <article id="{{.Name | urlize }}" class="page-section " 
         data-change="{{(index .Params.change_type 0).label}}"
         data-pa="{{(index .Params.product_area 0).label}}"
         data-component="{{(index .Params.component 0).label}}"
@@ -30,29 +45,41 @@
         <div class="article-content change-log">
           <div class="change-log__header">
             {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
-            <h3>
+            <h2>
               {{replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot}}
-              <button class="btn-link bookmark" data-clipboard-text="#{{.Name | urlize }}">
+              <button title="Copy link" class="btn-link bookmark" data-clipboard-text="#{{.Name | urlize }}">
                 <span class="fa dlt-c8y-icon-link"></span>
               </button>
-            </h3>
+            </h2>
         </div>
           <div class="change-log__summary">
             <div>
-              <small class="text-muted">Product Area</small><br>
+              <small class="text-muted">Product area</small><br>
               <p>{{(index .Params.product_area 0).label}}</p>
             </div>
             <div>
               <small class="text-muted">Component</small>
               <p>{{(index .Params.component 0).label}}</p>
             </div>
+            {{ if .Params.jira }}
+            <div>
+              <small class="text-muted">Ticket</small>
+              <p>{{.Params.jira}}</p>
+            </div>
+            {{end}}
+            <!-- 
             <div>
               <small class="text-muted">Technical component</small>
               <p>{{(index .Params.technical_component 0).label}}</p>
             </div>
+             -->
           </div>
             {{.Content }}
         </div>
-      </article>
+      </section>
+    
     {{ end }}
+    {{ end }}
+  </div>
+</article>
 </div>

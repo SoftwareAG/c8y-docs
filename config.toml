@@ -39,20 +39,9 @@ relativeURLs = true
   
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
-
   docsPreview = false
 
-  # Change logs configs
-  # Boolean to display the yearly change logs and not the CI/CD change logs
-  yearlyRelease = false
-  # The yearly release date
-  yearlyReleaseDate = 2023-09-01T00:00:00
-  
-  # Change logs date - it's only used when yearlyRelease is set to false
-  # Only change logs with a date after the provided date will be displayed
-  changeLogsDate = 2023-09-01T00:00:00
-  
-  thumbnailImage = true
+  thumbnailImage = false
 
   logo = "images/logo-platform.svg"
 

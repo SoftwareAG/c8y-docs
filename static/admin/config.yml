@@ -84,6 +84,20 @@ collections:
   - label: Change logs config
     name: configs
     files:
+      - name: date_settings
+        label: Date settings
+        file: data/date_settings.toml
+        fields:
+          - name: yearly_release
+            label: Yearly release
+            widget: boolean
+            default: false
+            hint: If it is a yearly release, switch on
+          - name: date
+            label: Starting from
+            widget: datetime
+            hint: Starting date to display the change logs (90 days for change logs)
+
       - name: product_area
         label: Product Area options
         file: data/productarea.json

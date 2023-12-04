@@ -1,45 +1,68 @@
 <div class="article-list change-logs--list">
   <article>
-    <div>
-  <article id="{{substr .File.LogicalName 0 -3}}" class="page-section change-log">
-    <div class="article-content">
-      <header class="section-header">
-        <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
-      </header>
-      <div class="lead">
-        {{ .Content }}
-      </div>
-    </div>
-  </article>
-  {{ $bundle := "/change-logs" }}
-  {{ $headless := .Site.GetPage $bundle }}
-  {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Date" "desc"}}
-
-    {{ $currentDate := newScratch }}
-    {{ $currentDate.Set "date" ""}}
-    {{ $dateLimit := .Site.Params.changeLogsDate }}
-    <!-- 
-      Starting from {{ $dateLimit.Format "January 2, 2006"}}
-     -->
-
-    {{ range where $reusablePages "Date" "ge" $dateLimit}}
-     <!-- Dates, only adds a new one when it changes -->
-     {{ if ne (index .Params.change_type 0).label "Fix"}}
-      {{$listDate := .Date.Format "January 2, 2006" }}
-        {{ if ne $listDate ($currentDate.Get "date")}}
-          {{ $currentDate.Set "date" $listDate}}
-          <div data-id="cl-{{$listDate | urlize }}" class="change-log__date page-section">
-              <h5>{{$listDate}}</h5>
+    <div class="isotope">
+      <article
+        id="{{substr .File.LogicalName 0 -3}}"
+        class="page-section change-log"
+      >
+        <div class="article-content">
+          <header class="section-header">
+            <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant) "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
+          </header>
+          <div class="lead">
+            {{ .Content }}
           </div>
-          
-          <section id="cl-{{$listDate | urlize }}" class="page-section " 
-          {{else}}
-          <section id="{{.Title | urlize }}" class="page-section " 
+        </div>
+      </article>
+      {{ $bundle := "/change-logs" }}
+      {{ $headless := .Site.GetPage $bundle }}
+      {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Date" "desc"}}
+
+      {{ $currentDate := newScratch }}
+      {{ $currentDate.Set "date" ""}}
+      {{ $dateLimit := site.Data.date_settings.date }}
+
+      {{ range where $reusablePages "Date" "ge" $dateLimit}}
+      {{$classes := slice}}
+      <!-- Dates, only adds a new one when it changes -->
+      {{ if ne (index .Params.change_type 0).label "Fix"}}
+      
+      {{$listDate := .Date.Format "January 2, 2006" }}
+      {{ if ne $listDate ($currentDate.Get "date")}}
+        {{ $currentDate.Set "date" $listDate}}
+        {{ range $reusablePages }}
+          {{ $recordDate := .Date.Format "January 2, 2006" }}
+          {{ if eq $recordDate $listDate }}
+            {{$changeTypeClass := print "change-type-" (index .Params.change_type 0).label | urlize}}
+            {{$productAreaClass := print "productarea-" (index .Params.product_area 0).label | urlize}}
+            {{$componentClass := print "component-" (index .Params.component 0).label | urlize}}
+            {{$technicalComponentClass := print "technicalcomponent-" (index .Params.technical_component 0).label}}
+            {{ if not (in $classes $changeTypeClass) }}
+                {{$classes = $classes | append $changeTypeClass}}
+            {{end}}
+            {{ if not (in $classes $productAreaClass) }}
+                {{$classes = $classes | append $productAreaClass}}
+            {{end}}
+            {{ if not (in $classes $componentClass) }}
+                {{$classes = $classes | append $componentClass}}
+            {{end}}
+            {{ if not (in $classes $technicalComponentClass) }}
+                {{$classes = $classes | append $technicalComponentClass}}
+            {{end}}
+          {{end}}
         {{end}}
-        data-change="{{(index .Params.change_type 0).label}}"
-        data-pa="{{(index .Params.product_area 0).label}}"
-        data-component="{{(index .Params.component 0).label}}"
-        data-tech-component="{{(index .Params.technical_component 0).label}}}"
+
+      <div
+        data-id="cl-{{$listDate | urlize }}"
+        class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
+      >
+        <h5>{{$listDate}}</h5>
+      </div>
+      {{end}}
+       
+      <section
+        id="{{.Title | urlize }}"
+        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}}  productarea-{{(index .Params.product_area 0).label | urlize}}  component-{{ (index .Params.component 0).label | urlize }}  technicalcomponent-{{(index .Params.technical_component 0).label | urlize}}"
         data-date="{{.Date}}"
       >
         <div class="article-content change-log">
@@ -47,11 +70,15 @@
             {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
             <h2>
               {{replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot}}
-              <button title="Copy link" class="btn-link bookmark" data-clipboard-text="#{{.Name | urlize }}">
+              <button
+                title="Copy link"
+                class="btn-link bookmark"
+                data-clipboard-text="#{{.Name | urlize }}"
+              >
                 <span class="fa dlt-c8y-icon-link"></span>
               </button>
             </h2>
-        </div>
+          </div>
           <div class="change-log__summary">
             <div>
               <small class="text-muted">Product area</small><br>
@@ -74,12 +101,12 @@
             </div>
              -->
           </div>
-            {{.Content }}
+          {{.Content }}
         </div>
       </section>
-    
-    {{ end }}
-    {{ end }}
-  </div>
-</article>
+
+      {{ end }}
+      {{ end }}
+    </div>
+  </article>
 </div>

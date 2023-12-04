@@ -114,6 +114,11 @@ function buildToc() {
   let changeLog = false;
   if (articlesList && !articlesList.classList.contains('change-logs--list')) {
     articles = document.querySelectorAll('article.page-section');
+    let dates = document.querySelectorAll('.change-log__date');
+    dates.forEach(date => {
+      let next = date.nextElementSibling;
+
+    });
   } else{
     changeLog = true;
     articles = document.querySelectorAll('.page-section.change-log__date');
@@ -157,12 +162,13 @@ function buildToc() {
       articles.forEach(article => {
         let h2 = article.querySelector('h5');
         // console.log(h2.parentNode.dataset.id);
-     
-        if (h2.parentNode.dataset.id && h2.textContent.length) {
-          tocLinks += `<div class="list-group-item"><a href="#${h2.parentNode.dataset.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
+        let target = h2.parentNode.nextElementSibling;
+
+        if (target && h2.textContent.length) {
+          tocLinks += `<div class="list-group-item"><a href="#${target.id}" data-refid="${h2.parentNode.dataset.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
         }
       })
-      console.log("tocLinks", tocLinks);
+      // console.log("tocLinks", tocLinks);
       if (tocLinks.length) {
         const tocContainer = document.createElement('div');
         tocContainer.classList.add('toc-container');
@@ -184,7 +190,6 @@ function buildToc() {
     links.forEach(link => {
       const targetId = link.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
-      console.log('target Element', targetElement);
       link.addEventListener('click', event => {
         const tempActive = document.querySelectorAll('.toc .active');
         tempActive.forEach(temp => {

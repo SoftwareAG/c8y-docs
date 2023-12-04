@@ -11,6 +11,7 @@
           </header>
           <div class="lead">
             {{ .Content }}
+            <p class="small">Displaying the latest changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
           </div>
         </div>
       </article>
@@ -24,9 +25,14 @@
 
       {{ range where $reusablePages "Date" "ge" $dateLimit}}
       {{$classes := slice}}
+      {{ if site.Data.date_settings.yearly_release}}
+        {{ $currentDate.Set "out" ""}}
+      {{else}}
+        {{ $currentDate.Set "out" "Fix"}}
+      {{end}}
+    {{ if ne (index .Params.change_type 0).label ($currentDate.Get "out")}}
+
       <!-- Dates, only adds a new one when it changes -->
-      {{ if ne (index .Params.change_type 0).label "Fix"}}
-      
       {{$listDate := .Date.Format "January 2, 2006" }}
       {{ if ne $listDate ($currentDate.Get "date")}}
         {{ $currentDate.Set "date" $listDate}}
@@ -89,17 +95,23 @@
               <p>{{(index .Params.component 0).label}}</p>
             </div>
             {{ if .Params.jira }}
-            <div>
-              <small class="text-muted">Ticket</small>
-              <p>{{.Params.jira}}</p>
-            </div>
+              <div>
+                <small class="text-muted">Ticket</small>
+                <p>{{.Params.jira}}</p>
+              </div>
             {{end}}
-            <!-- 
-            <div>
-              <small class="text-muted">Technical component</small>
-              <p>{{(index .Params.technical_component 0).label}}</p>
-            </div>
-             -->
+            {{ if site.Data.date_settings.yearly_release}}
+              <div>
+                <small class="text-muted">Tech. component</small>
+                <p>{{(index .Params.technical_component 0).label}}</p>
+              </div>
+              {{ if .Params.version}}
+                <div>
+                  <small class="text-muted">Version</small>
+                  <p>{{.Params.version}}</p>
+                </div>
+              {{end}}
+            {{end}}
           </div>
           {{.Content }}
         </div>

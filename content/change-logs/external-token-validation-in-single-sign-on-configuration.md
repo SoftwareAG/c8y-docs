@@ -1,6 +1,7 @@
 ---
-date: 2023-12-01T15:49:50.218Z
+date: 2023-01-01T15:49:50.218Z
 title: External token validation in single sign-on configuration
+change_log: false
 product_area:
   - value: product_area-eC7h0SiQ2b
     label: Application enablement (including OEE and DTM)
@@ -13,5 +14,7 @@ change_type:
 technical_component:
   - value: tc-QHwMfWtBk7
     label: Core
+jira: MTM-49801
+version: 10.17.286
 ---
-In the single sign-on configuration page, users can now enable and configure the external token validation process. \[MTM-49801]
+In the single sign-on configuration page, users can now enable and configure the external token validation process.

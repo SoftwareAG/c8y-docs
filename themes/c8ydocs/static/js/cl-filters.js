@@ -26,9 +26,7 @@ window.onload = (event)=>{
       }
       let items = filterGroupFilters.length ? filterGroupFilters.join(',') : '';
       filters[filterGroup] = items;
-      // console.log('filters', filters);
       let filterValue = concatValues(filters);
-      // console.log('filterValue', filterValue);
       $list.isotope({ filter: filterValue });
 
       dates.forEach(date => {
@@ -42,5 +40,4 @@ window.onload = (event)=>{
       })
     });
   });
-
 }

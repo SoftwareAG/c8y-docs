@@ -68,7 +68,7 @@
       <strong>Filters</strong>
     </p>
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="change-type">
-      <legend>Change type</legend>
+      <legend>Type</legend>
       {{ if site.Data.date_settings.yearly_release}}
         {{ range site.Data.changetype.options }}
         
@@ -108,7 +108,7 @@
     </fieldset>
     {{ if site.Data.date_settings.yearly_release}}
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="technicalcomponent">
-      <legend>Technical component</legend>
+      <legend>Build artifact</legend>
       {{ range site.Data.technicalcomponent.options }}
       <label class="c8y-checkbox m-b-4">
         <input type="checkbox" class="filter-btn" name="technicalcomponent-{{.option | urlize}}">

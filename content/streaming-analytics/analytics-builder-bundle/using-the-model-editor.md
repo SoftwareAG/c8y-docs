@@ -103,13 +103,11 @@ Detailed information for each block is available in the block reference, which i
 ##### To add a block {#to-add-a-block}
 
 1.  In the palette of the model editor, expand the category which contains the block that you want to add.
-
 2.  Drag the block from the palette and drop it on the canvas.
 
     When you drop the block on an existing block on the canvas, the new block is created on top of that block. When you drop the block on a collapsed group, the new block is created below that group. In both cases, you should move the new block to a free space of the canvas. See also [Moving a block](/streaming-analytics/analytics-builder/#moving-a-block).
 
     When you drop the block on an expanded group \(where the contents of the group are visible\), the new block is added to that group. For more information on groups, see [Working with groups](/streaming-analytics/analytics-builder/#working-with-groups).
-
 3.  Specify all required parameters for the block. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block).
 
     {{< c8y-admon-info>}}
@@ -132,7 +130,6 @@ For the input and output blocks, you can globally replace the input sources and 
 
 1.  On the canvas of the model editor, click the block that you want to edit using the left mouse button.
     The block parameter editor appears, providing input fields for all parameters that can be specified for that block.
-
 2.  For the input and output blocks, you can select a different input source or output destination from a dialog box.
 
     The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
@@ -160,24 +157,18 @@ Select the **Trigger Device** option instead to send the output to the device wh
     The maximum number of shown input sources and output destinations depends on a tenant option. For more information, see [Configuring the number of shown input sources and output destinations](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-input-sources-and-output-destinations).
 
     The managed objects that are shown when searching also depend on a tenant option. You can restrict the search to show only managed objects of a specific type. For more information, see [Searching for devices, groups and/or assets](/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets).
-
 3.  It is possible to use a template parameter instead of specifying a value for a block parameter. This allows different values to be used for this block parameter in different instances of the model \(see [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for more information\). Create a template parameter of a matching type in the **Template Parameters** dialog box \(see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\), switch the block parameter to use a template parameter \(see below\) and select the desired template parameter from the drop-down list box. Or create the template parameter directly in the block parameter editor \(see below\).
 
     The block parameter editor provides the following options in a drop-down list box:
-
     - <img src="/images/streaming-analytics/analytics-builder/icon-defined-parameter.png" alt="Option for specifying a parameter value" style="display:inline-block; margin:0"> When selected, you can specify a value for this parameter using the adjacent control. This value is validated in the block parameter editor.
-
     - <img src="/images/streaming-analytics/analytics-builder/icon-model-parameter.png" alt="Option for selecting a template parameter" style="display:inline-block; margin:0"> When selected, you can select a template parameter from the adjacent drop-down list box. You can only select a template parameter that is of the same type as the block parameter to which you want to assign it; template parameters of unsuitable types are not available for selection. Template parameters are not validated in the block parameter editor.
 
         If you want to add a new template parameter directly in the block parameter editor, type a name in the text box of the above drop-down list box. As soon as you start typing and if a template parameter with that name does not yet exist, the option **Add template parameter name** is shown below the text box. Click this option to add the new template parameter and thus make it available in the **Template Parameters** dialog box. The new template parameter will have the same type, optional and default values as the block parameter. If a template parameter with the name that you are specifying exists already, but with an incompatible type, the name and type is shown below the text box but cannot be selected.
-
 4.  Some blocks support multi-line input for certain block parameters. For example, the **Send Email** block supports this in the **Text** parameter and the **Alarm Output** block supports this in the **Message** parameter. Your input is automatically wrapped in the text box and you can press Enter to start text on a new line. When you add a new template parameter for such block parameter directly in the block parameter editor \(as described above\), the type of the new template parameter is automatically set to **Multi-line String**.
-
 5.  For some blocks \(such as the **Range Lookup** block\), the block parameter editor shows text boxes for specifying key-value pairs. If you need to specify more key-value pairs, click **Add row**. The key-value pair in the first row is processed first.
 You can drag a row to a different position using the <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Drag control" style="display:inline-block; margin:0"> control that is shown next to that row.
 You can remove a row that you do not need any more by clicking the <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Removal control" style="display:inline-block; margin:0"> control next to that row.
 Empty rows are automatically removed when you leave the block parameter editor.
-
 6.  Specify all required parameters.
     Detailed reference information for each block is available from the documentation pane. See also [Viewing the documentation for a block](/streaming-analytics/analytics-builder/#viewing-the-documentation-for-a-block).
 
@@ -198,9 +189,7 @@ You can also view the block reference directly in this documentation. See [Analy
 ##### To view the documentation for a block {#to-view-the-documentation-for-a-block}
 
 1.  In the model editor, click the block for which you want to view the documentation. You can do this in the palette or on the canvas.
-
 2.  If the documentation pane is currently not shown, click the area that contains the <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0"> icon \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
-
 3.  If you want to resize the documentation pane \(for example, to make it larger\), move the mouse pointer over the area that contains the above icon. Click and hold down the mouse button and drag the mouse to the left or right \(to make the documentation pane wider or smaller\).
 
 #### Selecting blocks and wires {#selecting-blocks-and-wires}
@@ -243,12 +232,11 @@ When you duplicate a single block, the attached wires are not automatically dupl
 
 ##### To duplicate a block {#to-duplicate-a-block}
 
--   On the canvas of the model editor, click the block that you want to duplicate and then do one of the following:
-    -   Click the **Duplicate** command which is shown at the bottom of the block parameter editor.
-    -   Or press Ctrl+C to copy the block, and then press Ctrl+V to paste the block.
-    -   Or press Ctrl and drag the block to be duplicated to the position at which you want to place the duplicate.
-
--   Or to duplicate several blocks at the same time, select them as described in [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires) and then proceed as described above. Exception: the **Duplicate** command is only available when you select a single block.
+- On the canvas of the model editor, click the block that you want to duplicate and then do one of the following:
+  - Click the **Duplicate** command which is shown at the bottom of the block parameter editor.
+  - Or press Ctrl+C to copy the block, and then press Ctrl+V to paste the block.
+  - Or press Ctrl and drag the block to be duplicated to the position at which you want to place the duplicate.
+- Or to duplicate several blocks at the same time, select them as described in [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires) and then proceed as described above. Exception: the **Duplicate** command is only available when you select a single block.
 
 #### Adding a wire between two blocks {#adding-a-wire-between-two-blocks}
 
@@ -275,12 +263,11 @@ Wires cannot create cycles. See [Wire restrictions](/streaming-analytics/analyti
 
 ##### To change a wire {#to-change-a-wire}
 
-1.  On the canvas of the model editor, click the wire that you want to change.
-    The port names of the attached blocks are then shown, and the ports attached to each end of the wire are highlighted.
+1. On the canvas of the model editor, click the wire that you want to change.
+   The port names of the attached blocks are then shown, and the ports attached to each end of the wire are highlighted.
 
-2.  To change the path that a wire takes between two blocks, drag one of the square resize icons (<img src="/images/streaming-analytics/analytics-builder/icon-square-resize.png" alt="Square resize icon" style="display:inline-block; margin:0">) that are now shown on the selected wire to a different position.
-
-    Or to move the wire to a different port, drag the diamond-shaped move icon (<img src="/images/streaming-analytics/analytics-builder/icon-diamond-move.png" alt="Diamond-shaped move icon" style="display:inline-block; margin:0">) that is now shown at the input or output port \(a hand pointer is shown in this case\) to a different port.
+2. To change the path that a wire takes between two blocks, drag one of the square resize icons (<img src="/images/streaming-analytics/analytics-builder/icon-square-resize.png" alt="Square resize icon" style="display:inline-block; margin:0">) that are now shown on the selected wire to a different position.
+   Or to move the wire to a different port, drag the diamond-shaped move icon (<img src="/images/streaming-analytics/analytics-builder/icon-diamond-move.png" alt="Diamond-shaped move icon" style="display:inline-block; margin:0">) that is now shown at the input or output port \(a hand pointer is shown in this case\) to a different port.
 
 #### Removing a block or wire {#removing-a-block-or-wire}
 
@@ -556,13 +543,11 @@ You can only move/drag blocks into a group when its contents are visible, that i
 
 ##### To move blocks into a group {#to-move-blocks-into-a-group}
 
-1.  Make sure that the group into which you want to move the blocks is not collapsed.
-
-2.  On the canvas of the model editor, select the blocks that you want to move into the group \(see also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires)\). You need not select the wires between the blocks; they are automatically moved together with the blocks.
-
-3.  Do one of the following:
-    -   Drag the selection into the group and drop it there.
-    -   Or select the group into which you want to move the blocks. Then click <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0"> in the toolbar of the model editor, or press Ctrl+G.
+1. Make sure that the group into which you want to move the blocks is not collapsed.
+2. On the canvas of the model editor, select the blocks that you want to move into the group \(see also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires)\). You need not select the wires between the blocks; they are automatically moved together with the blocks.
+3. Do one of the following:
+   - Drag the selection into the group and drop it there.
+   - Or select the group into which you want to move the blocks. Then click <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0"> in the toolbar of the model editor, or press Ctrl+G.
 
 #### Moving blocks from a group to the canvas {#moving-blocks-from-a-group-to-the-canvas}
 
@@ -572,14 +557,11 @@ When the last item of a group has been moved to the canvas, the group is automat
 
 ##### To move blocks from a group to the canvas {#to-move-blocks-from-a-group-to-the-canvas}
 
--   To move one or more blocks at the same time:
-
+- To move one or more blocks at the same time:
     1.  In the expanded group, select the blocks that you want to move.
     2.  In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-ungroup.png" alt="Ungroup icon" style="display:inline-block; margin:0">.
-        Or press Ctrl+Shift+G.
-
--   Or to move a single block:
-
+    Or press Ctrl+Shift+G.
+- Or to move a single block:
     1.  In the expanded group, select the block that you want to move.
     2.  Click the **Ungroup** command which is then shown at the bottom of the block parameter editor.
 

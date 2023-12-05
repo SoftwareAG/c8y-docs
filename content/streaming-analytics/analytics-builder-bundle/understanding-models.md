@@ -28,7 +28,6 @@ There are two relevant roles for this type of model, this can be the same person
 
 -   **Model author**.
     The model author creates the model and defines all of its blocks, parameters and wires. Most importantly, the model author creates the template parameters and binds them to the appropriate parameters in selected blocks.
-
 -   **Instance maintainer**.
     The instance maintainer creates the instances of the model and assigns values to the template parameters that are to be used by each instance.
 

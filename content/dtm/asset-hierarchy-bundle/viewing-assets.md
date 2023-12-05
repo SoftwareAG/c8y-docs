@@ -23,19 +23,20 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 
 7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
 
-If the asset has a location, you can view it on the map under the properties section below its values. Click the full screen icon at the top right corner of the map to view it in full screen.
+If the asset has a location, you can view it on the map under the properties section below its values. You can not click on the map or drag the marker. Click the full screen icon at the top right corner of the map to view it in full screen. If the values for latitude or longitude are not provided while creating the asset, the map is not shown under the properties section.
 
 {{< c8y-admon-info>}}
 The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add asset](/dtm/asset-hierarchy/#to-add-subassets) are not visible for the last hierarchical level.<br>
 If you edit an asset property or an asset model associated with the selected asset, you see a warning icon next to the asset model name.<br>
-You see a warning message if one or more properties associated with the asset are not present.
+You see a warning message if one or more properties associated with the asset are not present.<br>
+Complex properties are displayed in the order specified in the asset properties page.
 {{< /c8y-admon-info>}}
 
 ### To modify an asset {#to-modify-an-asset}
 
 Fields are marked editable by an edit icon.
 To modify any of the asset details, click the edit icon, enter new details and save.<br>
-For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon at the top right corner of the map to enter full screen mode.
+For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon at the top right corner of the map to enter full screen mode. If any one of the values is not provided, the marker is not shown on the map.
 
 ### To delete an asset {#to-delete-an-asset}
 

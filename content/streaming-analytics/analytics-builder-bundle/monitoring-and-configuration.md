@@ -9,8 +9,7 @@ You can monitor the current status of each model in the model manager. The card 
 
 ![Card for a model](/images/streaming-analytics/analytics-builder/card-with-runtime-error.png)
 
-If a model failed to deploy or failed while running, the following is shown on the card for the model.
-![Runtime error](/images/streaming-analytics/analytics-builder/runtime_error.png)
+If a model failed to deploy or failed while running, <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Runtime error" style="display:inline-block; margin:0"> is shown on the card for the model.
 
 To find out whether a model has failed while processing data, reload all models in the model manager to show their latest states.
 See also [Reloading all models](/streaming-analytics/analytics-builder/#reloading-all-models).

@@ -28,8 +28,7 @@ Each row that is shown for an instance has an actions menu \(the three vertical 
 
 You can control the list of instances by filtering and sorting. See [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances) for more information.
 
-If the following error icon is shown near the end of a row, the corresponding instance is no longer processing events. Click that icon to get more information.
-![Error icon](/images/streaming-analytics/analytics-builder/instance-editor-error.png)
+If the <img src="/images/streaming-analytics/analytics-builder/instance-editor-error.png" alt="Error icon" style="display:inline-block; margin:0"> error icon is shown near the end of a row, the corresponding instance is no longer processing events. Click that icon to get more information.
 
 When you open the instance editor, it may happen that template parameters have been changed since you last edited the instances and that they no longer use the same values types as before. If the values specified in the instance editor are still compatible, they are converted to the new value types. Incompatible values \(including check boxes for boolean types and values that are shown in drop-down list boxes\) are automatically removed. Each field from which the value has been removed shows an error underline and a corresponding error message.
 
@@ -80,8 +79,7 @@ Once an instance is active, you cannot modify the template parameter values or m
 
 3.  When the toggle button in the **Status** column currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
 
-    In the case of an error, the following error icon is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
-    ![Error icon](/images/streaming-analytics/analytics-builder/instance-editor-error.png)
+    In the case of an error, the <img src="/images/streaming-analytics/analytics-builder/instance-editor-error.png" alt="Error icon" style="display:inline-block; margin:0"> error icon is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
 
 ### Undeploying an instance {#undeploying-an-instance}
 
@@ -95,7 +93,7 @@ In the **Status** column of the instance editor, click the toggle button for the
 
 ### Filtering and sorting the instances {#filtering-and-sorting-the-instances}
 
-If you have a long list of instances, you can easily locate the instances that you are looking for by entering a value in the search box. Or you can enter part of the value. This searches all input fields in the instance editor and only lists the instances \(rows\) that contain this value. All values that match the filter are highlighted. The search criteria are not case-sensitive. When search criteria are currently applied, an X is shown in the search box; click this to clear the search and thus to show all available instances.
+If you have a long list of instances, you can easily locate the instances that you are looking for by entering a value in the search box. Or you can enter part of the value. This searches all input fields in the instance editor and only lists the instances \(rows\) that contain this value. All values that match the filter are highlighted. The search criteria are not case-sensitive. When search criteria are currently applied, an <img src="/images/streaming-analytics/analytics-builder/icon-clear-search.png" alt="X icon" style="display:inline-block; margin:0"> is shown in the search box; click this to clear the search and thus to show all available instances.
 
 You can also sort the columns of the instance editor table. To do so, click the arrows that are shown when you move the mouse to a column header. This sorts the instances according to the values in that column \(for example, alphabetically or by number\). Clicking again sorts the column in the opposite direction. Fields with required values in that column that have not yet been specified can thus be shown either at the very top or bottom of the column. You can also sort the instances alphabetically according to run mode and status, for example, to show the active instances at the top.
 
@@ -157,6 +155,6 @@ When you leave the instance editor using the corresponding toolbar button, you a
 
 #### To leave the instance editor {#to-leave-the-instance-editor}
 
-In the toolbar of the instance editor, click X.
+In the toolbar of the instance editor, click <img src="/images/streaming-analytics/analytics-builder/icon-instance-editor-exit.png" alt="X icon" style="display:inline-block; margin:0">.
 
 If there are unsaved changes when leaving, you are prompted to save these changes first.

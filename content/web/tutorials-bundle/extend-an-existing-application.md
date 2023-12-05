@@ -42,10 +42,10 @@ First, take a look at the limitations of that approach to understand why the con
 
 ### Hybrid mode limitations {#hybrid-mode-limitations}
 
-As we need to make sure that Angular and angularjs run side by side when running a hybrid application, there are some limitations:
+As we must make sure that Angular and angularjs run side by side when running a hybrid application, there are some limitations:
 
  - It is not possible to access the *index.html*: The whole bootstrapping process needs to be handled by {{< product-c8y-iot >}} to make sure that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template and you can only add routes.
- - As the services need to be loaded first, you can also not inject any service in the root application module. You need to provide them on a route or as `providedIn: root` at the deceleration of the service.
+ - As the services must be loaded first, you can also not inject any service in the root application module. You must provide them on a route or as `providedIn: root` at the deceleration of the service.
  - Routes in the router must be defined before the `UPGRADED_ROUTES`. This is because the Angular router has a `**` path match for all angularjs routes which is defined in the `UPGRADED_ROUTES`. If you define a route after it, the `**` will match before your defined route.
  - Every extension needs to be done via a hook. This is because Angular and angularjs are needed in hybrid applications and the hooks can be used by both.
  - Styling is limited to global styles. That means you can only extend the styling by applying a custom branding or by using inline styles. The `styleUrls` are, as of this version, not supported.
@@ -56,7 +56,7 @@ To do so, you must scaffold a hybrid application.
 The `c8ycli` uses this package every time you initialize an application with the `new` command.
 The next section will explain the scaffolding process and how to extend a hybrid application step by step.
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-existing-application}
 
 As a starting point, you need an application.
 For this purpose, create a new Cockpit application using the `c8ycli`:
@@ -168,7 +168,7 @@ export class AppModule extends HybridAppModule {
 ```
 
 The changes here are straightforward.
-First, you import the component (1.). Then you add it to the declarations (2.). Last you need to bind it to a path, for this example, `hello` (3.).
+First, you import the component (1.). Then you add it to the declarations (2.). Last you have to bind it to a path, for this example, `hello` (3.).
 When you now spin up the application with the `c8ycli server` command and navigate to the URL by adding the right hash to it (*http://localhost:9000/apps/cockpit/#/hello*) you should see the custom component.
 In the next step, you will hook the component in the navigator at the left.
 
@@ -199,7 +199,7 @@ For example, to add a navigator node, use the `HOOK_NAVIGATOR_NODE` in *app.modu
 }
 ```
 
-As you see in (1) you need to take care of the typing on your own.
+As you see in (1) you must take care of the typing on your own.
 To avoid it, you can also use the `hookX` function, which allow the same but without taking care of the boilerplate code.
 The following example uses these functions, to add a navigator node, using `hookRoute` and `hookNavigatorNode`:
 

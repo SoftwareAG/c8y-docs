@@ -131,13 +131,11 @@ For the input and output blocks, you can globally replace the input sources and 
 ##### To edit the parameters of a block {#to-edit-the-parameters-of-a-block}
 
 1.  On the canvas of the model editor, click the block that you want to edit using the left mouse button.
-
     The block parameter editor appears, providing input fields for all parameters that can be specified for that block.
 
 2.  For the input and output blocks, you can select a different input source or output destination from a dialog box.
 
     The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
-
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
     The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
@@ -278,7 +276,6 @@ Wires cannot create cycles. See [Wire restrictions](/streaming-analytics/analyti
 ##### To change a wire {#to-change-a-wire}
 
 1.  On the canvas of the model editor, click the wire that you want to change.
-
     The port names of the attached blocks are then shown, and the ports attached to each end of the wire are highlighted.
 
 2.  To change the path that a wire takes between two blocks, drag one of the square resize icons (<img src="/images/streaming-analytics/analytics-builder/icon-square-resize.png" alt="Square resize icon" style="display:inline-block; margin:0">) that are now shown on the selected wire to a different position.
@@ -292,7 +289,6 @@ You can remove each block or wire that is currently shown on the canvas. When yo
 ##### To remove a block or wire {#to-remove-a-block-or-wire}
 
 -   On the canvas of the model editor, click the block or wire that you want to remove and press Del.
-
     In the case of a block, you can alternatively click the **Remove** command which is shown at the bottom of the block parameter editor.
 
 -   Or to remove several blocks and/or wires at the same time, select them as described in [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires) and then press Del.
@@ -381,7 +377,6 @@ Models with no template parameters can be directly activated in the model manage
 ##### To define the template parameters for the instances of the current model {#to-define-the-template-parameters-for-the-instances-of-the-current-model}
 
 1.  In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters.png" alt="Template parameters icon" style="display:inline-block; margin:0"> to invoke the **Template Parameters** dialog box.
-
     When at least one template parameter has been defined, a checkmark is shown on the above toolbar button: <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters-with-checkmark.png" alt="Template parameters icon with a checkmark" style="display:inline-block; margin:0">.
 
     This dialog box is initially empty and you have to create the template parameters that you want to use in your model. When template parameters have already been defined, they are all shown in this dialog box.
@@ -391,7 +386,6 @@ Models with no template parameters can be directly activated in the model manage
     After a template parameter has been assigned to one or more block parameters, the **Usage Count** column indicates the number of places in which the template parameter is used. For example, when a template parameter is used in two places, this means that it has been assigned to two block parameters. These can be within the same block or in different blocks.
 
 2.  To create a template parameter, click **Create new template parameter**.
-
     This adds an empty row at the bottom of the dialog box. You can click **Create new template parameter** several times to add several empty rows that you can fill one after the other.
 
 3.  Specify the following information for each template parameter:

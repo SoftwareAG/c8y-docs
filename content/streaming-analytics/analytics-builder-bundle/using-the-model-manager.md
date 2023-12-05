@@ -68,24 +68,19 @@ Filtering also works in combination with a model or sample name that you specify
 
     On the **Models** tab, you can filter the models according to the following criteria:
 
-    -   **Mode**
-
+    -   **Mode**.
         You can show only the models that are in a specific mode. For example, if you only want to see the models that are in simulation and test mode, select the corresponding check boxes.
 
-    -   **Status**
-
+    -   **Status**.
         You can show only the models that are either active or inactive. For example, if you only want to see active models, select the corresponding check box.
 
-    -   **Source or destination**
-
+    -   **Source or destination**.
         You can show only the models that use specific input sources or output destinations. Open the **Filter by source or destination** drop-down list box, select one or more items and click **Apply**.
 
-    -   **Data point**
-
+    -   **Data point**.
         You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one item has been selected in the **Filter by source or destination** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
 
-    -   **Tags**
-
+    -   **Tags**.
         You can show only the models for which specific tags have been defined in the **Model Configuration** dialog box, which is shown when you add a new model or when you invoke that dialog box from the model editor \(see also [Adding a new model](/streaming-analytics/analytics-builder#adding-a-new-model) and [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model)\). Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
 
     You can combine several types of filters, for example, to show only active models in production mode that use a specific device.
@@ -95,7 +90,6 @@ Filtering also works in combination with a model or sample name that you specify
     All of the above-mentioned drop-down list boxes include a **Filter** search box that you can use to reduce the number of items that are offered for selection. You can enter a name or part of a name. For example, enter the word "test" to show only the items that have this word in their names. The characters that you type in may be contained at any position within the name. These filter criteria are not case-sensitive. Clicking the **All** check box selects all items that are currently shown in the drop-down list box, depending on the contents of the **Filter** search box.
 
 3.  Click **Apply filters**.
-
     The toolbar of the **Models** or **Samples** tab now shows the types of filters that are currently applied. This is an example of the **Models** tab:
 
     ![Toolbar showing the current filters](/images/streaming-analytics/analytics-builder/filters.png)
@@ -119,11 +113,9 @@ You can also create a new model from a sample. See [Creating a model from a samp
 2.  In the resulting **Model Configuration** dialog box, enter a unique model name.
 
     You can optionally enter a description for the model and one or more tags.
-
     Tags are helpful for filtering the models in the model manager to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\). To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the <img src="/images/streaming-analytics/analytics-builder/icon-delete-tag.png" alt="X icon" style="display:inline-block; margin:0"> that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
 
 3.  Click **OK**.
-
     The model editor appears. See [Overview of steps for adding a model](/streaming-analytics/analytics-builder/#overview-of-steps-for-adding-a-model) for a brief overview of how to add blocks and wires to the new model.
 
 ### Editing an existing model {#editing-an-existing-model}

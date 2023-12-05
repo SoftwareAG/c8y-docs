@@ -12,9 +12,9 @@ You build the models in a graphical environment by combining pre-built blocks in
 
 Analytics Builder consists of the following tools:
 
--   Model manager. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or remove them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the model manager](/streaming-analytics/analytics-builder/#using-the-model-manager) for detailed information.
--   Model editor. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *block reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
--   Instance editor. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
+-   **Model manager**. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or remove them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the model manager](/streaming-analytics/analytics-builder/#using-the-model-manager) for detailed information.
+-   **Model editor**. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *block reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
+-   **Instance editor**. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
 The blocks are implemented in the Event Processing Language (EPL) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
 
@@ -59,7 +59,6 @@ You design your model in the model editor. The model editor is shown after you h
 1.  In the palette, expand **Input**.
 
 2.  Drag the **Measurement Input** block onto the canvas.
-
     The block parameter editor is automatically shown.
 
     {{< c8y-admon-info>}}
@@ -73,11 +72,9 @@ By default, an input block is listening to all input sources, that is, the **All
     {{< /c8y-admon-info>}}
 
 4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
-
     If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< sensor-app >}} would be **c8y\_Gyroscope =\> gyroscopeY**.
 
 5.  Select the **Ignore Timestamp** check box.
-
     This makes sure that the measurements are processed in the same order as they are received.
 
 If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0">.
@@ -87,7 +84,6 @@ If you need detailed information on the currently selected block, view the block
 1.  In the palette, expand **Aggregate**.
 2.  Drag the **Average \(Mean\)** block onto the canvas.
 3.  In the block parameter editor, specify a value for **Window Duration \(secs\)**, for example "10".
-
     The specified number of seconds will be used to control what duration the measurement is averaged over. Smaller values will react quicker to changes in values, larger values will give more smoothing of the value.
 
 
@@ -144,7 +140,6 @@ To view the measurements that are sent from your active model, you have to switc
 3.  Locate your device and click its name to display the device details.
 
 4.  Click **Measurements** on the left. This is a dynamic tab which is only shown when measurements are available for the device.
-
     The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Measurements](/device-management-application/viewing-device-details/#measurements) for more information on the **Measurements** tab.
 
 
@@ -179,7 +174,6 @@ The **Samples** tab of the model manager lists all sample models that are provid
 1.  Go to the **Samples** tab of the model manager.
 
 2.  Click the actions menu of the **On missing measurements create alarm** sample and then click **Create model from sample**.
-
     The new model is immediately shown in the model editor. It has the same name, description and tags as the sample.
 
 3.  If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting **Model Configuration** dialog box.

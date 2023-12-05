@@ -39,7 +39,6 @@ When you add a new instance, a new row is added to the instance editor table. Yo
 #### To add an instance {#to-add-an-instance}
 
 1.  In the toolbar of the instance editor, click **New Instance**.
-
     This adds a new row at the bottom of the table. New instances \(rows\) are shown with a background color until they have been saved.
 
 2.  Fill in the template parameter values, as defined by the model. See also [Editing an instance](/streaming-analytics/analytics-builder/#editing-an-instance).
@@ -72,13 +71,11 @@ Once an instance is active, you cannot modify the template parameter values or m
 #### To deploy an instance {#to-deploy-an-instance}
 
 1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
-
     You cannot activate instances that are in draft mode.
 
 2.  If you have selected simulation mode, click the calendar icon which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 
 3.  When the toggle button in the **Status** column currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
-
     In the case of an error, the <img src="/images/streaming-analytics/analytics-builder/instance-editor-error.png" alt="Error icon" style="display:inline-block; margin:0"> error icon is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
 
 ### Undeploying an instance {#undeploying-an-instance}

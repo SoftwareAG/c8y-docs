@@ -58,7 +58,7 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 To connect a device to {{< product-c8y-iot >}}, you need to register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
-Moreover we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
+Moreover, we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 
 * Connect a smartphone to {{< product-c8y-iot >}} using the [{{< sensor-app >}}](/sensor-app/overview/). The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.
 * Connect a [Raspberry Pi as demo device using thin.edge.io](/device-integration/integration-tutorials/#prerequisites). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
@@ -88,7 +88,7 @@ To connect your smartphone via QR code follow the instructions below:
     ![Register smartphone](/images/users-guide/getting-started/getting-started-register-smartphone.png)
 
 4.  Grant access to your camera if the app asks you for permission.
-5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual registration** on your smartphone and fill in the details at the right side of the wizard screen.
+5.  Scan the QR code shown on your PC's web browser. If you cannot scan the QR code, tap **Manual registration** on your smartphone and fill in the details at the right side of the wizard screen.
 6.  Back on your smartphone, tap **Done**. Your smartphone is automatically registered by {{< product-c8y-iot >}} and assigned to the "Phones" group.
 
     ![Register smartphone done](/images/users-guide/getting-started/getting-started-register-smartphone-done.png)
@@ -126,9 +126,9 @@ Follow the instructions below to customize the new dashboard of the device you r
 
   ![Dashboard editor](/images/users-guide/getting-started/getting-started-customize-dashboard.png)
 
-6. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
+4. In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
-7. Click **Save** to save your modifications.
+5. Click **Save** to save your modifications.
 
 You have successfully customized your first dashboard.
 

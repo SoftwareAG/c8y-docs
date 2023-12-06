@@ -69,10 +69,10 @@ Previously, when reactivating an Analytics Builder model, an error was thrown if
 As of this version, missing subassets in a device group or asset hierarchy are ignored and an error is no longer thrown.
 However, if the deletion of a subasset results in an empty device group or asset hierarchy, an error is still thrown.
 
-#### -Fix- Filtering models
+<!-- #### -Fix- Filtering models
 
 In Analytics Builder, when filtering the models in the model manager by **Mode** and **Status**, the filter is now also applied to template models.
-Prior to this fix, the filter was only applied to models without template parameters.
+Prior to this fix, the filter was only applied to models without template parameters. -->
 
 #### -Feature- Cumulocity IoT transport in Apama 10.15.4
 

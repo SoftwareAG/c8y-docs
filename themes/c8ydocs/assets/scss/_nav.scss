@@ -202,6 +202,9 @@
   max-height: calc(100vh - 230px);
   overflow-x: hidden;
   overflow-y: auto;
+  > a > i{
+    min-width: 1.5rem;
+  }
   &::-webkit-scrollbar {
     width: 4px;
     /* for vertical scrollbars */

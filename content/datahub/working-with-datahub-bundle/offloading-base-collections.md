@@ -57,7 +57,7 @@ examples use "alarms" as target table name:
     * **alarms_c8y_cdh_latest_materialized** - An optional view which materializes the **alarms_latest** view if the offloading configuration has the view materialization enabled.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see
-[Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
+[Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded). In the main panel of the **Offloading** page you find in the details section of an offloading configuration links which navigate you to the corresponding table and views in the Dremio UI.
 
 #### Offloading the events collection {#offloading-the-events-collection}
 
@@ -89,7 +89,7 @@ Additional views over the target table are defined in the tenant's space in Drem
 * **events_latest** - A view containing only the latest state of all events without prior states.
 * **events_c8y_cdh_latest_materialized** - An optional view which materializes the **events_latest** view if the offloading configuration has the view materialization enabled.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded). In the main panel of the **Offloading** page you find in the details section of an offloading configuration links which navigate you to the corresponding table and views in the Dremio UI.
 
 #### Offloading the inventory collection {#offloading-the-inventory-collection}
 
@@ -121,7 +121,7 @@ The inventory collection keeps track of managed objects. Note that {{< product-c
     * **inventory_latest** - A view with the latest status of all managed objects, with all previous transitions being discarded.
     * **inventory_c8y_cdh_latest_materialized** - An optional view which materializes the **inventory_latest** view if the offloading configuration has the view materialization enabled.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded). In the main panel of the **Offloading** page you find in the details section of an offloading configuration links which navigate you to the corresponding table and views in the Dremio UI.
 
 {{< c8y-admon-info >}}
 The fields **childDevices** and **childAssets** are not part of the default offloading columns. They were included in previous versions, but lead to problems for a high number of list items in those fields. In such a case, the columns were no more readable by Dremio. If they need to be included in the offloaded data, they can be defined as additional result columns. However, you have to ensure that the number of list items in those fields does not exceed the Dremio limit configured in your environment.
@@ -129,7 +129,7 @@ The fields **childDevices** and **childAssets** are not part of the default offl
 
 #### Offloading the measurements collection {#offloading-the-measurements-collection}
 
-The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or, for the TrendMiner case, one table with measurements of all types.
+The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or, for the TrendMiner case, one table with measurements of all types. In the main panel of the **Offloading** page you find in the details section of an offloading configuration a link which navigates you to the corresponding table in the Dremio UI.
 
 ##### Offloading measurements with the default target table layout {#offloading-measurements-with-the-default-target-table-layout}
 

@@ -58,7 +58,9 @@ The target table name refers to the target table in Dremio, with which the data 
 
 **Offloading status**
 
-The offloading status is empty if the offloading has not been executed yet. If the offloading has been executed, the status of the most recent run is shown. This includes the execution time and whether the execution was successful or not, indicated by a success or failure icon. An additional icon shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a user icon. In case of a successful run, the number of offloaded records and the runtime is shown as well. The sort control allows for sorting by successful/failed jobs. The filter control allows for filtering by execution status.
+The offloading status is empty if the offloading has not been executed yet. For running and completed executions the start time is shown and either a calendar icon for a scheduled execution or a user icon for a manually triggered execution. For a running execution the elapsed time is additionally shown. For a completed execution the failure/success status, the number of offloaded records and the runtime are shown as well. For running and completed executions clicking on the offloading status navigates you to the detail view for that execution in the job history.
+
+The sort control allows for sorting by successful/failed jobs. The filter control allows for filtering by execution status.
 
 **Compaction status**
 
@@ -66,7 +68,7 @@ The compaction status is empty if the offloading has not been executed yet. If t
 
 **Additional information**
 
-When expanding a configuration, the job schedule, the additional columns, and the filter predicate are shown as well as additional information. This includes a link that navigates in the Dremio UI to the target table of the pipeline so that you can directly examine the contents of the table. The link is only shown if the pipeline has been executed at least once.
+When expanding a configuration, the job schedule, the additional columns, and the filter predicate are shown as well as additional information. This includes links that allow you to explore the table and views associated with this offloading configuration in the Dremio UI. The links are available if the pipeline has been executed at least once.
 
 **Context menu**
 

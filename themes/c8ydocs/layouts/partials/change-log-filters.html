@@ -94,6 +94,18 @@
         {{ end }}
       {{ end }}
     </fieldset>
+    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="productarea">
+      <legend>Product area</legend>
+      {{ range site.Data.productarea.options }}
+      <label class="c8y-checkbox m-b-4">
+        <input type="checkbox" class="filter-btn" name="productarea-{{.option | urlize}}">
+        <span></span>
+        <span>
+          {{.option}}
+        </span>
+      </label>
+      {{ end }}
+    </fieldset>
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="component">
       <legend>Component</legend>
       {{ range site.Data.component.options }}
@@ -120,18 +132,7 @@
       {{ end }}
     </fieldset>
     {{end}}
-    <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="productarea">
-      <legend>Product area</legend>
-      {{ range site.Data.productarea.options }}
-      <label class="c8y-checkbox m-b-4">
-        <input type="checkbox" class="filter-btn" name="productarea-{{.option | urlize}}">
-        <span></span>
-        <span>
-          {{.option}}
-        </span>
-      </label>
-      {{ end }}
-    </fieldset>
+    
     <script src="{{ "js/cl-filters.js" | absURL }}"></script>
   </nav>
 </nav>

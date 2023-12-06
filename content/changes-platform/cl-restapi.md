@@ -143,7 +143,7 @@ can be obtained using the Measurements API.
 
 The value stored in the device managed object is the last value sent to the platform.
 If the order of measurement delivery to the platform is different from the measurement creation time
-then also that latest values will be affected.
+then the latest values will also be affected.
 
 #### -Change-  Extended ExplainQuery result
 

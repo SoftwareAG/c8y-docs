@@ -349,6 +349,6 @@ To set the default values for the latitude and longitude using the map view, cli
 
 {{<c8y-admon-info>}}
 The valid range for the latitude is -90 to +90 and valid range for the longitude is -180 to +180. <br>
-The marker on the map is not visible when either the latitude or longitude value is missing.<br>
+The marker on the map is not shown when either the latitude or longitude value is missing.<br>
 The default values of both latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.
 {{</c8y-admon-info>}}

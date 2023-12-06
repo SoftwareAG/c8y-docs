@@ -23,7 +23,7 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 
 7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
 
-If the asset has a location, you can view it on the map under the properties section below its values. You can not click on the map or drag the marker. Click the full screen icon at the top right corner of the map to view it in full screen. If the values for latitude or longitude are not provided while creating the asset, the map is not shown under the properties section.
+If the asset has a location, it is shown on the map under the properties section below its values.  Click the full screen icon at the top right corner of the map to view it in full screen. If the values for latitude or longitude are not present, the map is not shown. The marker position cannot be modified when viewing the asset. Edit the property in order to change the position of the marker.
 
 {{< c8y-admon-info>}}
 The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add asset](/dtm/asset-hierarchy/#to-add-subassets) are not visible for the last hierarchical level.<br>
@@ -35,7 +35,7 @@ You see a warning message if one or more properties associated with the asset ar
 
 Fields are marked editable by an edit icon.
 To modify any of the asset details, click the edit icon, enter new details and save.<br>
-For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon at the top right corner of the map to enter full screen mode. If any one of the values is not provided, the marker is not shown on the map.
+For an asset with a location, click or drag the marker to the preferred position to select the value for latitude and longitude on the map. Click the full screen icon at the top right corner of the map to enter full screen mode. If the latitude or longitude value is not present, the marker is not shown on the map.
 
 ### To delete an asset {#to-delete-an-asset}
 

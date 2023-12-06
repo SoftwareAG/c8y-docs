@@ -13,7 +13,7 @@ weight: 10
 
 The following time range options have been added to the export configuration: "Last 24 hours", "Last 7 days", "Last 30 days". [MTM-55237]
 
-#### -Change-  New filter option in the datapoint selector
+#### -Feature-  New filter option in the datapoint selector
 
 The asset selection in the datapoint selector is now filterable. [MTM-54463]
 

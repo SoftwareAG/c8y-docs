@@ -70,7 +70,7 @@ By default, an input block is listening to all input sources, that is, the **All
 5. Select the **Ignore Timestamp** check box.
    This makes sure that the measurements are processed in the same order as they are received.
 
-If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0">.
+If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0">.
 
 #### Step 4: Add the block that calculates the mean of the measurement values {#step-4-add-the-block-that-calculates-the-mean-of-the-measurement-values}
 
@@ -99,8 +99,8 @@ To pass the values from one block to another, you have to connect the blocks wit
 
 #### Step 7: Save the model and go back to the model manager {#step-7-save-the-model-and-go-back-to-the-model-manager}
 
-1. In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save your newly created model.
-2. In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager
+1. In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save your newly created model.
+2. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager
 
 {{< c8y-admon-info>}}
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
@@ -155,8 +155,8 @@ The **Samples** tab of the model manager lists all sample models that are provid
 2. Click the actions menu of the **On missing measurements create alarm** sample and then click **Create model from sample**.
    The new model is immediately shown in the model editor. It has the same name, description and tags as the sample.
 3. If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting **Model Configuration** dialog box.
-4. In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save the new model.
-5. In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager.
+4. In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save the new model.
+5. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager.
    {{< c8y-admon-info>}}
 Keep in mind that only saved models are listed on the **Models** tab of the model manager.
    {{< /c8y-admon-info>}}

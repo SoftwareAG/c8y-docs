@@ -23,7 +23,7 @@ The overview area at bottom right of the canvas shows the entire model. This is 
 The documentation pane on the right allows you to view reference information for the currently selected block. See also [Viewing the documentation for a block](/streaming-analytics/analytics-builder/#viewing-the-documentation-for-a-block).
 
 {{< c8y-admon-caution>}}
-Changes are only saved when you click <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0">.
+Changes are only saved when you click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0">.
 See also [Saving a model](/streaming-analytics/analytics-builder/#saving-a-model). The editor warns you if you attempt to navigate away from the editor and there are unsaved changes. However, you should always ensure that your changes are saved before disconnecting the browser from the network or suspending a laptop.
 {{< /c8y-admon-caution>}}
 
@@ -60,7 +60,7 @@ You can also add or remove tags. Tags are helpful in the model manager, to show 
 1.  In the model editor, click on the model name which is shown at the left of the toolbar.
 2.  In the resulting **Model Configuration** dialog box, specify a new unique name for the model, change the description, and/or change the tags.
 
-    To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the <img src="/images/streaming-analytics/analytics-builder/icon-delete-tag.png" alt="X icon" style="display:inline-block; margin:0"> that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
+    To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
 
 3.  Click **OK**.
 
@@ -74,13 +74,13 @@ It may happen that you and another user are editing the same model at the same t
 
 ##### To save a model {#to-save-a-model}
 
-In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0">.
+In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0">.
 
-This toolbar button is only enabled when changes have been applied to the model and the model has been given a name.
+The save icon is only enabled when changes have been applied to the model and the model has been given a name.
 
 #### Leaving the model editor {#leaving-the-model-editor}
 
-When you leave the model editor using the corresponding toolbar button, you are returned to the model manager. You can then, for example, edit a different model, or change the mode or state of the current model.
+When you leave the model editor using the close icon, you are returned to the model manager. You can then, for example, edit a different model, or change the mode or state of the current model.
 
 {{< c8y-admon-caution>}}
 All unsaved changes are lost when you navigate to a different URL or close the browser window.
@@ -88,7 +88,7 @@ All unsaved changes are lost when you navigate to a different URL or close the b
 
 ##### To leave the model editor {#to-leave-the-model-editor}
 
-In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0">.
+In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0">.
 
 In case there are still unsaved changes, you are asked whether to save or discard them.
 
@@ -166,8 +166,8 @@ Select the **Trigger Device** option instead to send the output to the device wh
         If you want to add a new template parameter directly in the block parameter editor, type a name in the text box of the above drop-down list box. As soon as you start typing and if a template parameter with that name does not yet exist, the option **Add template parameter name** is shown below the text box. Click this option to add the new template parameter and thus make it available in the **Template Parameters** dialog box. The new template parameter will have the same type, optional and default values as the block parameter. If a template parameter with the name that you are specifying exists already, but with an incompatible type, the name and type is shown below the text box but cannot be selected.
 4.  Some blocks support multi-line input for certain block parameters. For example, the **Send Email** block supports this in the **Text** parameter and the **Alarm Output** block supports this in the **Message** parameter. Your input is automatically wrapped in the text box and you can press Enter to start text on a new line. When you add a new template parameter for such block parameter directly in the block parameter editor \(as described above\), the type of the new template parameter is automatically set to **Multi-line String**.
 5.  For some blocks \(such as the **Range Lookup** block\), the block parameter editor shows text boxes for specifying key-value pairs. If you need to specify more key-value pairs, click **Add row**. The key-value pair in the first row is processed first.
-You can drag a row to a different position using the <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Drag control" style="display:inline-block; margin:0"> control that is shown next to that row.
-You can remove a row that you do not need any more by clicking the <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Removal control" style="display:inline-block; margin:0"> control next to that row.
+You can drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> that is shown next to that row.
+You can remove a row that you do not need any more by clicking the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Remove icon" style="display:inline-block; margin:0"> next to that row.
 Empty rows are automatically removed when you leave the block parameter editor.
 6.  Specify all required parameters.
     Detailed reference information for each block is available from the documentation pane. See also [Viewing the documentation for a block](/streaming-analytics/analytics-builder/#viewing-the-documentation-for-a-block).
@@ -189,8 +189,8 @@ You can also view the block reference directly in this documentation. See [Analy
 ##### To view the documentation for a block {#to-view-the-documentation-for-a-block}
 
 1.  In the model editor, click the block for which you want to view the documentation. You can do this in the palette or on the canvas.
-2.  If the documentation pane is currently not shown, click the area that contains the <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0"> icon \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
-3.  If you want to resize the documentation pane \(for example, to make it larger\), move the mouse pointer over the area that contains the above icon. Click and hold down the mouse button and drag the mouse to the left or right \(to make the documentation pane wider or smaller\).
+2.  If the documentation pane is currently not shown, click the area that contains the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0"> \(shown at the right of the canvas\) to display the documentation pane. Clicking that area again hides the documentation pane.
+3.  If you want to resize the documentation pane \(for example, to make it larger\), move the mouse pointer over the area that contains the document icon. Click and hold down the mouse button and drag the mouse to the left or right \(to make the documentation pane wider or smaller\).
 
 #### Selecting blocks and wires {#selecting-blocks-and-wires}
 
@@ -292,11 +292,11 @@ To use the key combinations mentioned below, the canvas must have the focus. Whe
 
 ##### To undo or redo an operation {#to-undo-or-redo-an-operation}
 
--   To undo the last operation, click <img src="/images/streaming-analytics/analytics-builder/icon-undo.png" alt="Undo icon" style="display:inline-block; margin:0"> in the toolbar of the model editor or press Ctrl+Z.
+-   To undo the last operation, click the undo icon <img src="/images/streaming-analytics/analytics-builder/icon-undo.png" alt="Undo icon" style="display:inline-block; margin:0"> in the toolbar of the model editor or press Ctrl+Z.
 
--   To redo the last operation, click <img src="/images/streaming-analytics/analytics-builder/icon-redo.png" alt="Redo icon" style="display:inline-block; margin:0"> in the toolbar of the model editor or press Ctrl+Y.
+-   To redo the last operation, click the redo icon <img src="/images/streaming-analytics/analytics-builder/icon-redo.png" alt="Redo icon" style="display:inline-block; margin:0"> in the toolbar of the model editor or press Ctrl+Y.
 
-The above toolbar buttons are only enabled when there is an operation that can be undone or redone.
+The above icons are only enabled when there is an operation that can be undone or redone.
 
 #### Replacing sources or destinations {#replacing-sources-or-destinations}
 
@@ -327,7 +327,7 @@ After you have replaced the devices, you need to verify that the measurements th
 
 ##### To replace sources or destinations {#to-replace-sources-or-destinations}
 
-1.  In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-replace.png" alt="Replace icon" style="display:inline-block; margin:0">. This toolbar button is only enabled when at least one source or destination has been defined in the current model. Any defined trigger devices are not considered in this case.
+1.  In the toolbar of the model editor, click the replace icon <img src="/images/streaming-analytics/analytics-builder/icon-replace.png" alt="Replace icon" style="display:inline-block; margin:0">. This icon is only enabled when at least one source or destination has been defined in the current model. Any defined trigger devices are not considered in this case.
 
 2.  In the **Current** drop-down list box of the resulting dialog box, select the source or destination that you want to replace. All input sources and output destinations that are used in the model are available for selection.
 
@@ -343,7 +343,7 @@ After you have replaced the devices, you need to verify that the measurements th
 
     Repeat this step until all required sources and destinations have been selected for replacement. You can add as many rows as there are sources or destinations in the current model.
 
-5.  If you want to remove a row \(for example, when you no longer want to replace a selected device\), click <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="X icon" style="display:inline-block; margin:0"> next to that row. This is only available if the dialog box currently shows more than one row.
+5.  If you want to remove a row \(for example, when you no longer want to replace a selected device\), click the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Remove icon" style="display:inline-block; margin:0"> next to that row. This is only available if the dialog box currently shows more than one row.
 
 6.  Click **Replace**.
 
@@ -363,12 +363,12 @@ Models with no template parameters can be directly activated in the model manage
 
 ##### To define the template parameters for the instances of the current model {#to-define-the-template-parameters-for-the-instances-of-the-current-model}
 
-1.  In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters.png" alt="Template parameters icon" style="display:inline-block; margin:0"> to invoke the **Template Parameters** dialog box.
-    When at least one template parameter has been defined, a checkmark is shown on the above toolbar button: <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters-with-checkmark.png" alt="Template parameters icon with a checkmark" style="display:inline-block; margin:0">.
+1.  In the toolbar of the model editor, click the template parameters icon <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters.png" alt="Template parameters icon" style="display:inline-block; margin:0"> to invoke the **Template Parameters** dialog box.
+    When at least one template parameter has been defined, a checkmark is shown on the above icon: <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters-with-checkmark.png" alt="Template parameters icon with a checkmark" style="display:inline-block; margin:0">.
 
     This dialog box is initially empty and you have to create the template parameters that you want to use in your model. When template parameters have already been defined, they are all shown in this dialog box.
 
-    If you have a long list of template parameters, you can easily locate the template parameter that you are looking for by entering its name or part of the name in the search box. When search criteria are currently applied, an <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters-clear-search.png" alt="X icon" style="display:inline-block; margin:0"> is shown in the search box; click this to clear the search and thus to show all available template parameters.
+    If you have a long list of template parameters, you can easily locate the template parameter that you are looking for by entering its name or part of the name in the search box. When search criteria are currently applied, an X is shown in the search box; click this to clear the search and thus to show all available template parameters.
 
     After a template parameter has been assigned to one or more block parameters, the **Usage Count** column indicates the number of places in which the template parameter is used. For example, when a template parameter is used in two places, this means that it has been assigned to two block parameters. These can be within the same block or in different blocks.
 
@@ -401,9 +401,9 @@ If there is a block parameter for which a required value has not been specified,
 
 4.  You can update a template parameter at any time. This includes the name, whether it is optional or not, and the default value. All blocks in which the updated template parameter is defined are automatically adapted to use the new values. The only exception is the type. You can only change the type if the template parameter is not used in any block of the model.
 
-5.  When the model is inactive, you can reorder the template parameters. This affects the sequence in which they are shown in the instance editor. Drag a row to a different position using the <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Drag icon" style="display:inline-block; margin:0"> control which is shown next to the row. See also [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances).
+5.  When the model is inactive, you can reorder the template parameters. This affects the sequence in which they are shown in the instance editor. Drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> which is shown next to the row. See also [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances).
 
-6.  You can only remove a template parameter if it is not used in any block of the model. To remove a template parameter, click the <img src="/images/streaming-analytics/analytics-builder/icon-remove-template-parameter.png" alt="Remove icon" style="display:inline-block; margin:0"> control which is shown next to the row.
+6.  You can only remove a template parameter if it is not used in any block of the model. To remove a template parameter, click the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-remove-template-parameter.png" alt="Remove icon" style="display:inline-block; margin:0"> which is shown next to the row.
 
 7.  Click **OK** to store the changes in memory and to close the dialog box.
 
@@ -416,12 +416,12 @@ Keep in mind that your changes are only written to the inventory when you save t
 Several types that you can select in the **Template Parameters** dialog box (see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)) allow you to select a predefined value. An example of such a type is the **Direction** parameter of the **Crossing Counter** block which offers predefined values such as **Upwards** and **Downwards** for selection.
 In addition to the predefined values, you can also add your own selection lists for types such as string, float, source or destination, or geofence, and you can also select a specific value to be the default value. The values that you define for a selection list are then available for selection when you create instances of the model.
 
-When it is possible to add a selection list, the <img src="/images/streaming-analytics/analytics-builder/icon-add-selection-list.png" alt="Add selection list button" style="display:inline-block; margin:0"> button is shown in the **Template Parameters** dialog box, next to the text box in which you can add a default value.
-When a selection list is already available, a drop-down arrow is shown instead of the above button.
+When it is possible to add a selection list, a selection list icon <img src="/images/streaming-analytics/analytics-builder/icon-add-selection-list.png" alt="Add selection list icon" style="display:inline-block; margin:0"> is shown in the **Template Parameters** dialog box, next to the text box in which you can add a default value.
+When a selection list is already available, a drop-down arrow is shown instead of the above icon.
 
 ##### To add a selection list for a template parameter {#to-add-a-selection-list-for-a-template-parameter}
 
-1.  In the **Template Parameters** dialog box, click the <img src="/images/streaming-analytics/analytics-builder/icon-add-selection-list.png" alt="Add selection list button" style="display:inline-block; margin:0"> button in the **Default Value** column for a defined template parameter.
+1.  In the **Template Parameters** dialog box, click the selection list icon <img src="/images/streaming-analytics/analytics-builder/icon-add-selection-list.png" alt="Add selection list icon" style="display:inline-block; margin:0"> in the **Default Value** column for a defined template parameter.
 
 2.  In the resulting **Selection List** dialog box, click **Add selection**.
 
@@ -432,14 +432,14 @@ When a selection list is already available, a drop-down arrow is shown instead o
 
 5.  Repeat the above step until all required selections have been added.
 
-6.  To reorder the selection list, drag a row to a different position using the <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Drag icon" style="display:inline-block; margin:0"> control which is shown next to the row.
+6.  To reorder the selection list, drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> which is shown next to the row.
 
-7.  To delete a selection, click the <img src="/images/streaming-analytics/analytics-builder/icon-delete-selection.png" alt="Delete selection icon" style="display:inline-block; margin:0"> control which is shown next to the row.
+7.  To delete a selection, click the delete icon <img src="/images/streaming-analytics/analytics-builder/icon-delete-selection.png" alt="Delete selection icon" style="display:inline-block; margin:0"> which is shown next to the row.
 
 8.  Click **OK** to save the selection list and to close the **Selection List** dialog box.
     In the **Template Parameters** dialog box, you can now select one of your selections as the default value from a drop-down list box.
 
-9.  To clear the selected default value in the **Template Parameters** dialog box, click the <img src="/images/streaming-analytics/analytics-builder/icon-clear-template-selection.png" alt="X icon" style="display:inline-block; margin:0"> that is shown next to the selection.
+9.  To clear the selected default value in the **Template Parameters** dialog box, click the clear icon <img src="/images/streaming-analytics/analytics-builder/icon-clear-template-selection.png" alt="Clear icon" style="display:inline-block; margin:0"> that is shown next to the selection.
 
 10.  To edit your selection list, click the actions menu (the three vertical dots) in the **Default Value** column of the **Template Parameters** dialog box and then click **Edit**. The **Selection List** dialog box is then shown.
 
@@ -498,7 +498,7 @@ It is not possible to create an empty group. You first have to add a group as de
 
 1.  On the canvas of the model editor, select one or more blocks that you want to add to a group. You need not select wires; all existing wires are retained. See also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires).
 
-2.  In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0">.
+2.  In the toolbar of the model editor, click the group icon <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0">.
     Or press Ctrl+G.
 
 #### Collapsing and expanding a group {#collapsing-and-expanding-a-group}
@@ -515,9 +515,9 @@ When you save the model, the state of each group \(that is, whether it is curren
 
 ##### To collapse or expand a group {#to-collapse-or-expand-a-group}
 
--   To collapse a group, click <img src="/images/streaming-analytics/analytics-builder/icon-group-collapse.png" alt="Collapse icon" style="display:inline-block; margin:0"> which is shown next to the group name.
+-   To collapse a group, click the collapse icon <img src="/images/streaming-analytics/analytics-builder/icon-group-collapse.png" alt="Collapse icon" style="display:inline-block; margin:0"> which is shown next to the group name.
 
--   To expand a group, click <img src="/images/streaming-analytics/analytics-builder/icon-group-expand.png" alt="Expand icon" style="display:inline-block; margin:0"> which is shown above the top right of the collapsed group.
+-   To expand a group, click the expand icon <img src="/images/streaming-analytics/analytics-builder/icon-group-expand.png" alt="Expand icon" style="display:inline-block; margin:0"> which is shown above the top right of the collapsed group.
 
 #### Renaming a group {#renaming-a-group}
 
@@ -547,7 +547,7 @@ You can only move/drag blocks into a group when its contents are visible, that i
 2. On the canvas of the model editor, select the blocks that you want to move into the group \(see also [Selecting blocks and wires](/streaming-analytics/analytics-builder/#selecting-blocks-and-wires)\). You need not select the wires between the blocks; they are automatically moved together with the blocks.
 3. Do one of the following:
    - Drag the selection into the group and drop it there.
-   - Or select the group into which you want to move the blocks. Then click <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0"> in the toolbar of the model editor, or press Ctrl+G.
+   - Or select the group into which you want to move the blocks. Then click the group icon <img src="/images/streaming-analytics/analytics-builder/icon-group.png" alt="Group icon" style="display:inline-block; margin:0"> in the toolbar of the model editor, or press Ctrl+G.
 
 #### Moving blocks from a group to the canvas {#moving-blocks-from-a-group-to-the-canvas}
 
@@ -559,7 +559,7 @@ When the last item of a group has been moved to the canvas, the group is automat
 
 - To move one or more blocks at the same time:
     1.  In the expanded group, select the blocks that you want to move.
-    2.  In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-ungroup.png" alt="Ungroup icon" style="display:inline-block; margin:0">.
+    2.  In the toolbar of the model editor, click the ungroup icon <img src="/images/streaming-analytics/analytics-builder/icon-ungroup.png" alt="Ungroup icon" style="display:inline-block; margin:0">.
     Or press Ctrl+Shift+G.
 - Or to move a single block:
     1.  In the expanded group, select the block that you want to move.
@@ -596,7 +596,7 @@ You can ungroup several groups at the same time. In this case, it is important t
 
 1.  On the canvas of the model editor, select one or more groups that you want to ungroup. It does not matter whether a group is currently collapsed or expanded.
 
-2.  In the toolbar of the model editor, click <img src="/images/streaming-analytics/analytics-builder/icon-ungroup.png" alt="Ungroup icon" style="display:inline-block; margin:0">.
+2.  In the toolbar of the model editor, click the ungroup icon <img src="/images/streaming-analytics/analytics-builder/icon-ungroup.png" alt="Ungroup icon" style="display:inline-block; margin:0">.
     Or press Ctrl+Shift+G.
 
 #### Removing a group {#removing-a-group}
@@ -633,13 +633,13 @@ The overview area, which shows the entire model, is shown at bottom right of the
 
 ##### To show or hide the overview {#to-show-or-hide-the-overview}
 
-To hide the overview, click <img src="/images/streaming-analytics/analytics-builder/icon-overview-hide.png" alt="Hide overview icon" style="display:inline-block; margin:0"> which is shown directly above the overview area.
+To hide the overview, click the hide icon <img src="/images/streaming-analytics/analytics-builder/icon-overview-hide.png" alt="Hide overview icon" style="display:inline-block; margin:0"> which is shown directly above the overview area.
 
-To show the overview, click <img src="/images/streaming-analytics/analytics-builder/icon-overview-show.png" alt="Show overview icon" style="display:inline-block; margin:0"> at the bottom right of the canvas.
+To show the overview, click the show icon <img src="/images/streaming-analytics/analytics-builder/icon-overview-show.png" alt="Show overview icon" style="display:inline-block; margin:0"> at the bottom right of the canvas.
 
 #### Zooming the canvas {#zooming-the-canvas}
 
-The toolbar of the model editor indicates the current zoom percentage for the canvas. The zoom buttons in the toolbar allow you to
+The toolbar of the model editor indicates the current zoom percentage for the canvas. The zoom icons in the toolbar allow you to
 
 -   zoom out, which makes everything on the canvas smaller so that more items can be shown, and to
 -   zoom in, which makes everything on the canvas larger, but less items can then be shown.
@@ -650,10 +650,10 @@ When you use the key combinations mentioned below, the currently selected area d
 
 ##### To zoom the canvas {#to-zoom-the-canvas}
 
-To zoom out, click <img src="/images/streaming-analytics/analytics-builder/icon-zoomout.png" alt="Zoom out icon" style="display:inline-block; margin:0"> in the toolbar of the model editor.
+To zoom out, click the zoom out icon <img src="/images/streaming-analytics/analytics-builder/icon-zoomout.png" alt="Zoom out icon" style="display:inline-block; margin:0"> in the toolbar of the model editor.
 Alternatively, press Ctrl and the minus key.
 
-To zoom in, click <img src="/images/streaming-analytics/analytics-builder/icon-zoomin.png" alt="Zoom in icon" style="display:inline-block; margin:0"> in the toolbar of the model editor.
+To zoom in, click the zoom in icon <img src="/images/streaming-analytics/analytics-builder/icon-zoomin.png" alt="Zoom in icon" style="display:inline-block; margin:0"> in the toolbar of the model editor.
 Alternatively, press Ctrl and the plus key.
 
 #### Showing and hiding the grid {#showing-and-hiding-the-grid}
@@ -662,10 +662,10 @@ The blocks, wires and groups on the canvas always snap to a grid. You can decide
 
 ##### To show or hide the grid {#to-show-or-hide-the-grid}
 
-In the model editor, click the toolbar button for toggling the display of the grid.
+In the model editor, click the toolbar icon for toggling the display of the grid.
 
-When the grid is hidden, the button looks as follows: <img src="/images/streaming-analytics/analytics-builder/icon-grid-inactive.png" alt="Icon when grid is hidden" style="display:inline-block; margin:0">.
+When the grid is hidden, the icon looks as follows: <img src="/images/streaming-analytics/analytics-builder/icon-grid-inactive.png" alt="Icon when grid is hidden" style="display:inline-block; margin:0">.
 
-When the grid is shown, the button looks as follows: <img src="/images/streaming-analytics/analytics-builder/icon-grid-active.png" alt="Icon when grid is shown" style="display:inline-block; margin:0">.
+When the grid is shown, the icon looks as follows: <img src="/images/streaming-analytics/analytics-builder/icon-grid-active.png" alt="Icon when grid is shown" style="display:inline-block; margin:0">.
 
-When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this button is therefore disabled.
+When the model is active \(read-only mode\), it is not possible to toggle the display of the grid and this icon is therefore disabled.

@@ -20,7 +20,7 @@ There are two types of models, and the cards for these models look different:
 
 -   When a card shows a mode \(such as **Draft** or **Production**\) and state \(**Active** or **Inactive**\), it pertains to a model that has no template parameters. Such a model can be activated immediately in the model manager. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information.
 
-    If <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown on the card of a deployed model, this model is no longer processing events. Click the error icon to display information on what went wrong.
+    If a runtime time error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown on the card of a deployed model, this model is no longer processing events. Click the runtime error icon to display information on what went wrong.
 
 -   When a model has template parameters, it acts as a template. In this case, the number of defined and active instances is shown on the card. A template model is not activated directly in the model manager. Instead, you use the instance editor to create a number of instances, where each instance provides values for the template parameters. Each instance has a mode and can be activated and deactivated in the instance editor, as with models without any template parameters.
 
@@ -84,7 +84,7 @@ Filtering also works in combination with a model or sample name that you specify
 3. Click **Apply filters**.
    The toolbar of the **Models** or **Samples** tab now shows the types of filters that are currently applied. This is an example of the **Models** tab:
    ![Toolbar showing the current filters](/images/streaming-analytics/analytics-builder/filters.png)
-   Click **Clear filters** in the toolbar if you want to clear these filters. Or to clear a specific filter, click on the <img src="/images/streaming-analytics/analytics-builder/filters-x.png" alt="X icon" style="display:inline-block; margin:0"> that is shown in a filter icon, or click the filter name in the icon and deselect that filter \(and other filters if required\) in the resulting dialog box. Clicking **Reset filters** in that dialog box clears all filters.
+   Click **Clear filters** in the toolbar if you want to clear these filters. Or to clear a specific filter, click the X that is shown in a filter icon, or click the filter name in the icon and deselect that filter \(and other filters if required\) in the resulting dialog box. Clicking **Reset filters** in that dialog box clears all filters.
 
 ### Adding a new model {#adding-a-new-model}
 
@@ -102,7 +102,7 @@ You can also create a new model from a sample. See [Creating a model from a samp
 2.  In the resulting **Model Configuration** dialog box, enter a unique model name.
 
     You can optionally enter a description for the model and one or more tags.
-    Tags are helpful for filtering the models in the model manager to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\). To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the <img src="/images/streaming-analytics/analytics-builder/icon-delete-tag.png" alt="X icon" style="display:inline-block; margin:0"> that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
+    Tags are helpful for filtering the models in the model manager to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\). To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
 3.  Click **OK**.
     The model editor appears. See [Overview of steps for adding a model](/streaming-analytics/analytics-builder/#overview-of-steps-for-adding-a-model) for a brief overview of how to add blocks and wires to the new model.
 
@@ -110,7 +110,7 @@ You can also create a new model from a sample. See [Creating a model from a samp
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
-When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save button in the model editor is therefore disabled.
+When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save icon in the model editor is therefore disabled.
 
 #### To edit a model {#to-edit-a-model}
 

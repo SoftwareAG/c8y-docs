@@ -21,8 +21,10 @@
     <meta name="msapplication-config" content="{{"images/browserconfig.xml" | absURL}}">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Google search console verification -->
+    <meta name="google-site-verification" content="PYBroo4kQ0NReeuXOSLmXdIILDuxE6lRWUYjeReIy8E" />
+    
     <!--STYLES-->
-
     {{ $cssfile := "style.css" }}
 
     {{ $options := (dict "targetPath" $cssfile "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}

@@ -20,13 +20,11 @@ The user must have access to the Administration application of an {{< enterprise
 
 ROLES & PERMISSIONS:
 
-To be able to use the tenant functionality, your user must have the appropriate permissions. See [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular.
-
 The user must have at least one permission for the permission type "Tenant management":
 * To view all tenants: READ permission.
 * To create tenants: CREATE permission.
-* To edit tenants (including subscriptions) and suspend or activate them: UPDATE permission.
-* To create, edit (including subscriptions), suspend or activate tenants: ADMIN permission.
+* To edit tenants (including subscriptions) and to suspend or activate tenants: UPDATE permission.
+* To create tenants and perform activity permitted by UPDATE permission: ADMIN permission.
 
 {{< /c8y-admon-req >}}
 

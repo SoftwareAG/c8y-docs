@@ -59,11 +59,6 @@ This category contains the following blocks:
 </td>
 </tr>
 <tr>
-<td><a href="#machine-learning">Machine Learning</a></td>
-<td><span>(Deprecated) Invokes the specified Machine Learning model that scores the input data.</span>
-</td>
-</tr>
-<tr>
 <td><a href="#range">Range</a></td>
 <td><span>Compares the input value against the defined lower and upper range values to detect whether the input is within or out of the range, or whether it crosses the range.</span>
 </td>
@@ -484,11 +479,15 @@ If a window is configured, the block uses a set of 20 buckets, so the time of ex
 <p>Evaluates an expression to perform arithmetic or logical calculations or string operations.</p>
 <p>On change of input values (once all in-use inputs have been received), the expression specified in the parameter is re-calculated.
 <p></p>
-The expression language is much like EPL (see <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_how_this_book_is_organized.html%23">EPL reference</a>), but is restricted to <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types. All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision). Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
+The expression language is much like EPL (see <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaEplRef_how_this_book_is_organized.html%23">EPL reference</a>), but is restricted to <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types.
+<p></p>
+Note: All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision).
+<p></p>
+Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
 <p></p>
 The values of the inputs are available as <tt>input1</tt>, <tt>input2</tt>, <tt>input3</tt>, <tt>input4</tt> and <tt>input5</tt>. The input values can be of type <tt>float</tt>, <tt>string</tt>, <tt>boolean</tt> and <tt>any</tt>. Logical, relational, numerical and equality operators can be used on the values of the supported types. Logical operators are case insensitive, so for example, <tt>AND</tt> and <tt>And</tt> are allowed. Built-in methods on the <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types can be called, including <tt>x.abs()</tt> (absolute value of <tt>x</tt>), <tt>x.pow(y)</tt> (raise <tt>x</tt> to the power <tt>y</tt>), <tt>x.sin()</tt> (sine of <tt>x</tt> in radians), <tt>x.round()</tt> (rounds <tt>x</tt> to the nearest integer), and <tt>s.ltrim()</tt> (remove whitespace from the start of the string <tt>s</tt>). Built-in static methods of the supported types can be called by specifying the type name, followed by a dot (<tt>.</tt>) and the method name, for example, <tt>float.max(input1, input2)</tt> (find the larger of two input values). Built-in constants on the supported types can be accessed by specifying the type name, followed by a dot (<tt>.</tt>) and the constant name, for example, <tt>float.E</tt> (Euler's constant). Values of type <tt>any</tt> are unpacked at runtime to evaluate the expression. After unpacking, the value must be of type <tt>float</tt>, <tt>string</tt> or <tt>boolean</tt>. The type checker tries to validate the expressions during the validation phase, but this is not always possible with the <tt>any</tt> type. So if an expression contains the <tt>any</tt> type, even if it passes the validation phase, it can still fail at runtime due to a wrong type of variable being passed or an unsupported operation being performed. For a full list of built-in methods and constants, consult the API <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-ApaDoc_apamadoc_documentation.html%23">Reference for EPL (ApamaDoc)</a>.
 <p></p>
-Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 </tt></li> <li>Convert days to seconds: <tt>input1 * 86400 </tt></li> <li>Average of 4 inputs: <tt>(input1 + input2 + input3 + input4) / 4 </tt></li> <li>Threshold comparison: <tt>input1 &gt; 3.1412 </tt> (but also see the Threshold block)</li> <li>Pythagoras to compute the hypotenuse of a right-angled triangle: <tt>(input1.pow(2) + input2.pow(2)).sqrt() </tt></li> <li>Comparison to 3 decimal places: <tt>(input1 * 1000 - (input1 * 1000).fractionalPart()) = (input2 * 1000 - (input2 * 1000).fractionalPart()) </tt></li> <li>Range check: <tt>input1 &gt;= 1 and input1 &lt;= 10</tt></li> <li>String comparison: <tt>input1 = "my value"</tt></li> <li>Larger value: <tt>float.max(input1, float.PI)</tt></li> <li>Remainder of integer division: <tt>input1.round() % input2.round()</tt></li> </ul></p>
+Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 </tt></li> <li>Convert days to seconds: <tt>input1 * 86400 </tt></li> <li>Average of 4 inputs: <tt>(input1 + input2 + input3 + input4) / 4 </tt></li> <li>Threshold comparison: <tt>input1 &gt; 3.1412 </tt> (but also see the Threshold block)</li> <li>Pythagoras to compute the hypotenuse of a right-angled triangle: <tt>(input1.pow(2) + input2.pow(2)).sqrt() </tt></li> <li>Comparison to 3 decimal places: <tt>(input1 * 1000 - (input1 * 1000).fractionalPart()) = (input2 * 1000 - (input2 * 1000).fractionalPart()) </tt></li> <li>Range check: <tt>input1 &gt;= 1 and input1 &lt;= 10</tt></li> <li>String comparison: <tt>input1 = "my value"</tt></li> <li>Larger value: <tt>float.max(input1, float.PI)</tt></li> <li>Remainder of integer division: <tt>input1.round() % input2.round()</tt></li> <li>Left shift of integer value: <tt>input1.round() &lt;&lt; 4.round()</tt></li> <li>Right shift of integer value: <tt>input1.round() &gt;&gt; 2.round()</tt></li> <li>Bitwise not of integer value: <tt>not input1.round()</tt></li> <li>Bitwise or of integer values: <tt>input1.round() or input2.round()</tt></li> <li>Bitwise and of integer values: <tt>input1.round() and input2.round()</tt></li> <li>Bitwise xor of integer values: <tt>input1.round() xor input2.round()</tt></li> </ul></p>
 
 
 #### Parameters {#expression-parameters}
@@ -737,7 +736,7 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 <tr>
 <th scope="row">Input Source</th>
 <td><span>The device, group, or asset which contains a data point. If specified, then this source (typically the same as the measurement source) is checked to see if it contains a data point for the specified fragment and series. If it contains a data point, the red and yellow range values from the source object are used in place of the KPI values.</span>
-<p>For the KPI block, this parameter must not be set to "All devices".</p>
+<p>For the KPI block, this parameter must not be set to "All Inputs".</p>
 </td>
 <td><span>any</span>
 </td>
@@ -950,226 +949,6 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 <td><span>The input value, if it is within the limits defined by the Lower Limit and Upper Limit parameters. If the input value exceeds one of the limit parameters, it is set to the value of that parameter.</span>
 </td>
 <td><span>float</span>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-### Machine Learning
-
-`apama.analyticskit.blocks.core.Zementis`
-
-<p>(Deprecated) Invokes the specified Machine Learning model that scores the input data.</p>
-<p>To use this block, the Machine Learning application needs to be available with the respective Machine Learning models in the tenant.
-<p></p>
-If the Machine Learning model does not yet exist, use the Machine Learning application to add it. If you have added the Machine Learning model while your Analytics Builder model was still in edit mode, exit the model editor and then edit your Analytics Builder model once more. This refreshes the list of available Machine Learning models and you can then select the newly added model.
-<p></p>
-Block inputs correspond to the Machine Learning model's inputs (that are marked Active) in the order specified by the Machine Learning model. All inputs used by the model must be connected. Outputs correspond to the outputs as specified by the Machine Learning model. If a PMML output is specified as "JSON", then the block outputs a string version of the JSON, but the properties of the object are also available as extra values which can be extracted using the Extract Property block, which is the recommended way of unpacking multiple values from such an output. Currently, timestamp inputs are not supported.</p>
-
-
-#### Parameters {#machine-learning-parameters}
-
-<table>
-<colgroup>
-<col style="width: 15%; text-align: start;">
-<col style="width: 50%; text-align: start;">
-<col style="width: 25%; text-align: start;">
-<col style="width: 10%; text-align: start;">
-</colgroup>
-<thead>
-<tr>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Type</th>
-<th scope="col">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Machine Learning Model</th>
-<td><span>Name of the Machine Learning model.</span>
-</td>
-<td><span>string</span>
-</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-#### Input Port Details {#machine-learning-inputs}
-
-<table>
-<colgroup>
-<col style="width: 15%; text-align: start;">
-<col style="width: 60%; text-align: start;">
-<col style="width: 25%; text-align: start;">
-</colgroup>
-<thead>
-<tr>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Value 1</th>
-<td><span>Input value 1.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 2</th>
-<td><span>Input value 2.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 3</th>
-<td><span>Input value 3.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 4</th>
-<td><span>Input value 4.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 5</th>
-<td><span>Input value 5.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 6</th>
-<td><span>Input value 6.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 7</th>
-<td><span>Input value 7.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 8</th>
-<td><span>Input value 8.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 9</th>
-<td><span>Input value 9.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Value 10</th>
-<td><span>Input value 10.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-</tbody>
-</table>
-
-#### Output Port Details {#machine-learning-outputs}
-
-<table>
-<colgroup>
-<col style="width: 15%; text-align: start;">
-<col style="width: 60%; text-align: start;">
-<col style="width: 25%; text-align: start;">
-</colgroup>
-<thead>
-<tr>
-<th scope="col">Name</th>
-<th scope="col">Description</th>
-<th scope="col">Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Output 1</th>
-<td><span>Output value 1.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 2</th>
-<td><span>Output value 2.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 3</th>
-<td><span>Output value 3.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 4</th>
-<td><span>Output value 4.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 5</th>
-<td><span>Output value 5.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 6</th>
-<td><span>Output value 6.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 7</th>
-<td><span>Output value 7.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 8</th>
-<td><span>Output value 8.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 9</th>
-<td><span>Output value 9.</span>
-</td>
-<td><span>any</span>
-</td>
-</tr>
-<tr>
-<th scope="row">Output 10</th>
-<td><span>Output value 10.</span>
-</td>
-<td><span>any</span>
 </td>
 </tr>
 </tbody>

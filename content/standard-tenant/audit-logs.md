@@ -297,3 +297,7 @@ Note that entries of this type are not created when using Basic authentication.
 
 </tbody>
 </table>
+
+{{< c8y-admon-info >}}
+See also [Audit logs for Streaming Analytics](/streaming-analytics/troubleshooting/#analytics-audit-logs).
+{{< /c8y-admon-info >}}

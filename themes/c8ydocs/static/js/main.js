@@ -14,10 +14,10 @@ var main = (function ($) {
       }
       $('<div/>', {
         id: 'preview-banner',
-        class: 'admonition preview'
+        class: 'admonition important'
       }).insertAfter(elem);
-      $('<h4 class="title">Preview</h4>').appendTo('#preview-banner');
-      $('<span>This is a preview of the documentation for the Cumulocity IoT '+ docsPreview +' release that will soon be publicly available.</span>').appendTo('#preview-banner');
+      $('<h4 class="title">Important</h4>').appendTo('#preview-banner');
+      $('<span>This is a preview of the documentation for a future Cumulocity IoT '+ docsPreview +' deployment which is not yet publicly available. The content might still change before its final publication.</span>').appendTo('#preview-banner');
    }
 
     //Toggle side navigation
@@ -58,7 +58,7 @@ var main = (function ($) {
     });
     // display clipboard success
     clipboard.on('success', function (e) {
-      scrollToCopied(e.trigger); 
+      scrollToCopied(e.trigger);
       $(e.trigger).addClass('copied');
       setTimeout(function () {
         $(e.trigger).removeClass('copied');
@@ -91,13 +91,13 @@ var main = (function ($) {
         $this.wrap("<div class='table-responsive'></div>");
       }
     });
-    
+
     setTimeout(function () {
       $('body').addClass('loaded');
       window.dispatchEvent(new CustomEvent('scroll'));
     }, 100);
-  
-  
+
+
   }
   return {
     init: initializer

@@ -163,7 +163,8 @@ You can find `*.po` files with default translations under *node_modules/@c8y/ngx
 
 ### Adding new languages {#adding-new-languages}
 
-To define new languages which are not supported by default, follow the example below. It adds an Italian translation.
+To define new languages which are not supported by default, follow the example below, to add language specific **User settings**.
+
 
 1. Create a new translation file *translations/locales/it.po*:
 
@@ -226,6 +227,10 @@ To define new languages which are not supported by default, follow the example b
 
 Now you can select Italian and the **User settings** label is changed to **User settings (it)**, as defined in the *it.po* file.
 
+{{< c8y-admon-info >}}
+Note that the entire UI can only be localized if you provide the respective data in the *.po* file.
+{{< /c8y-admon-info >}}
+
 ### Basic text translation {#basic-text-translation}
 
 There are multiple ways of translating content. The most common is the `translate` pipe and directive, which is explained in the following section.
@@ -242,9 +247,9 @@ In your *translations/text-translation.component.html* file, add:
 
 If your language is set to Italian, reloading the application renders the content as **User settings (it)**.
 
-The `translate` pipe allows you to include parameters in the translated strings.
+The `translate` pipe allows you to include parameters in the translated strings. Add a new entry to the following files:
 
-* Add a new entry in *translations/locales/it.po*:
+* *translations/locales/it.po*:
     ```
     msgid "Mr. Smith is {{ age }} years old"
     msgstr "Sig. Smith ha {{ age }} anni"
@@ -388,7 +393,7 @@ It is possible to translate such variables, as in the example below:
     ```
 
 {{< c8y-admon-info >}}
-Wrap such strings with the `gettext` function. This enables automatic extraction of the strings to the *locales/locales.pot* file. This also indicates that such strings are meant to be translated.
+Wrap such strings with the `gettext` function. This enables automatic extraction of the strings to the *locales/locales.po* file. This also indicates that such strings are meant to be translated.
 See [Extracting strings for translation using the locale-extract tool](#extracting-strings-for-translation-using-the-locale-extract-tool) for information about extracting strings for translation.
 {{< /c8y-admon-info >}}
 

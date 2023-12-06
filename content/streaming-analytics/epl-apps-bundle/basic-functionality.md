@@ -207,10 +207,6 @@ Using {{< sag-designer >}}, you can also develop more complex projects which:
 
 These kinds of applications should be deployed as microservices to {{< product-c8y-iot >}}.
 
-{{< c8y-admon-info >}}
-This only applies if you are using Apama 10.3 or later.
-{{< /c8y-admon-info >}}
-
 ##### Required settings in the microservice manifest {#required-settings-in-the-microservice-manifest}
 
 The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
@@ -303,10 +299,6 @@ For more information on PySys, see the [API Reference for Python]({{< link-apama
 EPL apps are designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
 
 To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/standard-tenant/managing-permissions/)).
-
-{{< c8y-admon-info >}}
-This API requires version 10.6.0 or above of the Apama-ctrl microservice.
-{{< /c8y-admon-info >}}
 
 #### Request headers for all operations {#request-headers-for-all-operations}
 

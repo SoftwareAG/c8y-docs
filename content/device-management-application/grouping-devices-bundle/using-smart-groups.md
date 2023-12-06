@@ -2,6 +2,15 @@
 weight: 40
 title: Using smart groups
 layout: redirect
+outputs:
+  - html
+  - json
+helpcontent:
+  - label: using-smart-groups
+    title: Using smart groups
+    content: "Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
+
+    Smart groups can be created from the device list."
 ---
 
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
@@ -24,7 +33,6 @@ The new group will appear as a top-level group in the **Groups** menu of the nav
 Below the smart group name and description you can see the filter criteria which have been applied on building the smart group. You can edit the filter settings here and adjust your selection.
 
 ![Smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
-
 
 ### To delete a smart group {#to-delete-a-smart-group}
 

@@ -9,7 +9,7 @@ weight: 20
 
 ### December 2023
 
-#### -Change-  Enhanced OpenSSl command
+#### -Change-  Enhanced OpenSSL command
 
 The OpenSSL command for generating a "signed verification code" for Proof of Possession has been enhanced to include additional encoding functionality. [MTM-52775]
 

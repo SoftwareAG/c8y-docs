@@ -75,7 +75,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </tr>
 <tr>
 <td style="text-align:left"><b>Order</b></td>
-<td style="text-align:left">Used to define the order in which the keys of a complex property must be shown.</td>
+<td style="text-align:left">Used to define the order in which the key value pairs of a complex property must be shown.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>

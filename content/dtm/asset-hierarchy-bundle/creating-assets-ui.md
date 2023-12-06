@@ -32,7 +32,7 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 
 For an asset with a **Location** property, click **Choose on Map** in the section to set the values for the latitude and longitude using map view. Click the full screen icon at the top right corner of the map to view it in full screen.
 
-The marker is positioned at the default value set in the **Location** property. By default, the marker on the map is not displayed. To make the marker visible, you need to click on the map. Click or drag the marker to the preferred position to set the value for both latitude and longitude. The marker is not visible on the map when either the latitude or the longitude value is missing.
+The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. The marker is not shown on the map when either the latitude or the longitude value is missing.
 
 {{< c8y-admon-info>}}
 The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.<br>

@@ -21,7 +21,7 @@ This opens the right drawer which contains a **Diagnostics** section with the fo
 - An **Enhanced diagnostics (ZIP)** link for downloading enhanced, more resource-intensive diagnostics information.
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL apps. It is also useful to provide to [product support](/additional-resources/contacting-support/) if you are filing a support ticket.
-You can find the tenant ID and version number in the **Platform info** section of the right drawer.
+You can find the tenant ID and version information in the **Platform info** section of the right drawer.
 See [User options and settings](https://cumulocity.com/docs/get-familiar-with-the-ui/user-settings/) for more details.
 
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information:
@@ -44,7 +44,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 
 - Some information from the environment (tenant details, environment variables).
 
-- Version numbers of the components.
+- Version information for the components.
 
 Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enhanced&lt;timestamp&gt;.zip* and includes the following information:
 

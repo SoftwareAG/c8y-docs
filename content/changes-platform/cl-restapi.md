@@ -31,10 +31,12 @@ This change will be implemented after a 3-month period at the earliest.
 #### -Preview- Latest measurement values can be stored as part of a device managed object
 
 {{< c8y-admon-preview >}}
-The feature is in Public Preview mode, that is, it is not enabled by default and maybe subject to change in the future.
+This feature is in Public Preview, that is, it is not enabled by default and maybe subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-Starting from this release we introduce the support of automated persistence of measurement values under the `c8y_LatestMeasurements` fragment.
+Support of automated persistence of measurement values under the `c8y_LatestMeasurements` fragment has been introduced. If a measurement is created with a series that matches the configuration the device managed object is updated with the last series sent to the platform.
+
+For details on how this feature is enabled and how it works, refer to the {{< product-c8y-iot >}}.
 
 ##### How to enable it
 

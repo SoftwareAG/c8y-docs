@@ -18,6 +18,10 @@ To improve usability, the package availability (SHARED or PRIVATE) can now be se
 
 Searching for items has been improved by filtering on applications, features, microservices and extensions lists. [MTM-51331]
 
+#### -Announcement- User administrator can no longer set password for other users
+
+As announced earlier, see the release notes for [release 10.17](https://cumulocity.com/releasenotes/release-10-17-0/announcements-10-17-0), to improve security, from a future version, user administrators will no longer be able to explicitly set passwords or email addresses for other users in the tenant. This change prevents that an attacker could have access to all users, in case the administrator account was compromised. Note that the administrator will still have the option to force the user to reset the password on the next login or disable the user.
+
 
 #### -Announcement-  Removal of deprecated Esper-related features
 

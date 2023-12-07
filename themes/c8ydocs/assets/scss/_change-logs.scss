@@ -10,6 +10,8 @@
   text-align: center;
 }
 
+
+
 .change-log__label{
   &--announcement{
     background-color: var(--c8y-palette-status-info-dark);
@@ -54,6 +56,12 @@
 }
 
 .change-log{
+  &.top > .article-content{
+    padding-bottom: 2rem;
+    .lead{
+      font-size: 1.15rem;
+    }
+  }
   h2{
     margin-bottom: 0;
     margin-top:0;

@@ -572,7 +572,7 @@ The information in the table at the right side is extracted from the provided ce
 
 Before adding a new trusted certificate, make sure that:
 
-* It s a X.509 certificate in PEM format.
+* It is a X.509 certificate in PEM format.
 * It is in version 3.
 * It contains `BasicConstraints:[CA:true]`.
 * It has not already been uploaded to {{< product-c8y-iot >}}.

@@ -8,7 +8,7 @@ outputs:
 section:
   - app_enablement
 helpcontent:
-  - label: export
+  - label: managing-exports
     title: Managing exports
     content: "The export functionality lets you export specific data to files. In each export, you can specify the output file type (Excel or CSV), schedule the export and specify the target email address(es), and optionally select filters for specific devices, time ranges or fields.
 

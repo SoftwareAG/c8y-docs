@@ -8,8 +8,7 @@ section:
 
 
 There are two ways of connecting your smartphone to {{< product-c8y-iot >}}, depending on the platform's version.
-For {{< product-c8y-iot >}} versions starting with release 10.6.6, you can connect your smartphone via [QR code](#registration-using-qr-code).
-For earlier versions of {{< product-c8y-iot >}}, follow the steps in [Manual registration](#manual-registration).
+You can connect your smartphone via [QR code](#registration-using-qr-code). If that does not work, for example, because you are using an earlier {{< product-c8y-iot >}} version, follow the steps in [Manual registration](#manual-registration).
 
 ### Registration using QR code {#registration-using-qr-code}
 

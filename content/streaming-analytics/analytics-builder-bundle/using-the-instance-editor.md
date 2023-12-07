@@ -148,7 +148,7 @@ If there are unsaved changes when reloading, you are prompted to save these chan
 
 ### Leaving the instance editor {#leaving-the-instance-editor}
 
-When you leave the instance editor using the close icon, you are returned to the model manager.
+When you leave the instance editor as described below, you are returned to the model manager.
 
 #### To leave the instance editor {#to-leave-the-instance-editor}
 

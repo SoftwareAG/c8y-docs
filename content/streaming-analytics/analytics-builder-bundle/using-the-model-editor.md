@@ -80,7 +80,7 @@ The save icon is only enabled when changes have been applied to the model and th
 
 #### Leaving the model editor {#leaving-the-model-editor}
 
-When you leave the model editor using the close icon, you are returned to the model manager. You can then, for example, edit a different model, or change the mode or state of the current model.
+When you leave the model editor as described below, you are returned to the model manager. You can then, for example, edit a different model, or change the mode or state of the current model.
 
 {{< c8y-admon-caution>}}
 All unsaved changes are lost when you navigate to a different URL or close the browser window.

@@ -11,12 +11,12 @@ weight: 10
 
 #### -Change- Package availability
 
-It is now possible to select the availability (SHARED or PRIVATE) during package upload. [MTM-51454]
+To improve usability, the package availability (SHARED or PRIVATE) can now be set in the package upload wizard. [MTM-51454]
 
 
-#### -Feature- New filtering option
+#### -Feature- New filter option
 
-It is now possible to filter items on Applications, Features, Microservices and Extensions lists. [MTM-51331]
+Searching for items has been improved by filtering on applications, features, microservices and extensions lists. [MTM-51331]
 
 
 #### -Announcement-  Removal of deprecated Esper-related features

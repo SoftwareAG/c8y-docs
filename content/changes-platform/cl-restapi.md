@@ -168,9 +168,9 @@ The query language used by the managed objects API has been improved. You can no
 
 #### -Change-  Improved performance of GET requests on /user/users
 
-The performance of GET requests on the <code>/user/users</code> endpoint has been improved by better utilization of database indexes. [MTM-52566]
+The performance of GET requests on the <code>/user/users</code> endpoint has been improved. [MTM-52566]
 
 #### -Change-  Improved performance of the Inventory API
 
-- The performance of the Inventory API has been improved by removing an additional request to the database. [MTM-50840]
-- The performance of the Inventory API has been improved by removing two additional database queries for GET <code>/managedObjects</code>. [MTM-51973]
+- The Inventory API performance has been improved.[MTM-50840]
+- The performance of the Inventory API GET <code>/managedObjects</code> has been improved. [MTM-51973]

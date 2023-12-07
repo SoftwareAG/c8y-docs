@@ -12,9 +12,9 @@ You build the models in a graphical environment by combining pre-built blocks in
 
 Analytics Builder consists of the following tools:
 
--   Model manager. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or remove them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the model manager](/streaming-analytics/analytics-builder/#using-the-model-manager) for detailed information.
--   Model editor. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *Block Reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
--   Instance editor. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
+-   **Model manager**. When you invoke Analytics Builder, the model manager is shown first. It lists all available models and lets you manage them. For example, you can test and deploy the models from the model manager, or you can duplicate or remove them. You can create new models or edit existing models; in this case, the model editor is invoked. Samples are also available which help you get started with creating your own models. See [Using the model manager](/streaming-analytics/analytics-builder/#using-the-model-manager) for detailed information.
+-   **Model editor**. The model editor lets you define the blocks that are used within a model and how they are wired together. User-visible documentation \(the so-called *block reference*\) is available in the model editor, describing the functionality of each block. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for detailed information.
+-   **Instance editor**. If template parameters have been defined in a model, the instance editor lets you set up different instances of the same model which can then be activated and managed separately. The instance editor uses the template parameters that have been defined in the model editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
 The blocks are implemented in the Event Processing Language (EPL) of Apama. At runtime, the EPL code runs in an Apama correlator to execute the models. Some runtime behavior and restrictions are important to understand. These are documented in later topics.
 
@@ -48,83 +48,59 @@ If the navigator is currently hidden, click the small arrow at the very left of 
 
 The first page that is shown when you invoke Analytics Builder is the model manager.
 
-1.  On the **Models** tab, click **New model** in the toolbar.
-
-2.  In the resulting dialog box, enter a model name and click **OK**.
+1. On the **Models** tab, click **New model** in the toolbar.
+2. In the resulting dialog box, enter a model name and click **OK**.
 
 #### Step 3: Add the input block {#step-3-add-the-input-block}
 
 You design your model in the model editor. The model editor is shown after you have entered the model name. The palette which is shown on the left contains all blocks that can be added to a model. You add a block by dragging it from the palette onto the canvas.
 
-1.  In the palette, expand **Input**.
-
-2.  Drag the **Measurement Input** block onto the canvas.
-
-    The block parameter editor is automatically shown.
-
-    {{< c8y-admon-info>}}
+1. In the palette, expand **Input**.
+2. Drag the **Measurement Input** block onto the canvas.
+   The block parameter editor is automatically shown.
+   {{< c8y-admon-info>}}
 If the block parameter editor is not shown (for example, because you clicked an empty space on the canvas after dragging the input block onto the canvas), click the block using the left mouse button to show the block parameter editor.
-    {{< /c8y-admon-info>}}
-
-3.  Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
-
-    {{< c8y-admon-info>}}
+   {{< /c8y-admon-info>}}
+3. Click the three dots that are shown for **Input Source**. In the resulting dialog box, click the **Select device** button for the device that you want to use. This button is shown when you hover over a device.
+   {{< c8y-admon-info>}}
 By default, an input block is listening to all input sources, that is, the **All Inputs** option is set. However, these first steps assume that you are using your smartphone. Therefore, you must select a single device as described above.
-    {{< /c8y-admon-info>}}
+   {{< /c8y-admon-info>}}
+4. From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
+   If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< sensor-app >}} would be **c8y\_Gyroscope =\> gyroscopeY**.
+5. Select the **Ignore Timestamp** check box.
+   This makes sure that the measurements are processed in the same order as they are received.
 
-4.  From the **Fragment and Series** drop-down list box, select the fragment and series for which the input block is to listen.
-
-    If the device has previously sent data, the drop-down list box offers one or more values for selection. An example for the {{< sensor-app >}} would be **c8y\_Gyroscope =\> gyroscopeY**.
-
-5.  Select the **Ignore Timestamp** check box.
-
-    This makes sure that the measurements are processed in the same order as they are received.
-
-If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the following icon:
-
-![Document icon](/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png)
-
+If you need detailed information on the currently selected block, view the block reference in the documentation pane on the right. If the documentation pane is currently not shown, click the document icon <img src="/images/streaming-analytics/analytics-builder/icon-docpane-hidden.png" alt="Document icon" style="display:inline-block; margin:0">.
 
 #### Step 4: Add the block that calculates the mean of the measurement values {#step-4-add-the-block-that-calculates-the-mean-of-the-measurement-values}
 
 1.  In the palette, expand **Aggregate**.
 2.  Drag the **Average \(Mean\)** block onto the canvas.
 3.  In the block parameter editor, specify a value for **Window Duration \(secs\)**, for example "10".
-
     The specified number of seconds will be used to control what duration the measurement is averaged over. Smaller values will react quicker to changes in values, larger values will give more smoothing of the value.
-
 
 #### Step 5: Add the output block {#step-5-add-the-output-block}
 
-1.  In the palette, expand **Output**.
-
-2.  Drag the **Measurement Output** block onto the canvas.
-
-3.  As the output destination, select the same device as for your input block.
-
-    {{< c8y-admon-info>}}
+1. In the palette, expand **Output**.
+2. Drag the **Measurement Output** block onto the canvas.
+3. As the output destination, select the same device as for your input block.
+   {{< c8y-admon-info>}}
 If you have kept the default option of **All Inputs** for the input block, you must set the output destination to **Trigger Device**. However, these first steps assume that you are using a single device, so you must select the same device as for your input block.
-    {{< /c8y-admon-info>}}
-
-4.  Specify "apama\_Average" as the fragment name.
-
-5.  Specify "value" as the series name.
+   {{< /c8y-admon-info>}}
+4. Specify "apama\_Average" as the fragment name.
+5. Specify "value" as the series name.
 
 #### Step 6: Connect the blocks {#step-6-connect-the-blocks}
 
 To pass the values from one block to another, you have to connect the blocks with wires. You attach the wires to the ports, that is, to the small circles that are shown to the left and/or right of a block.
 
-1.  Click the **Value** output port of the input block and drag the mouse to the **Value** input port of the **Average \(Mean\)** block.
-
-2.  Click the **Average** output port of the **Average \(Mean\)** block and drag the mouse to the **Value** input port of the output block.
+1. Click the **Value** output port of the input block and drag the mouse to the **Value** input port of the **Average \(Mean\)** block.
+2. Click the **Average** output port of the **Average \(Mean\)** block and drag the mouse to the **Value** input port of the output block.
 
 #### Step 7: Save the model and go back to the model manager {#step-7-save-the-model-and-go-back-to-the-model-manager}
 
-1.  In the toolbar of the model editor, click the following icon to save your newly created model:
-    ![Save icon](/images/streaming-analytics/analytics-builder/icon-save.png)
-
-2.  In the toolbar of the model editor, click the following icon to leave the model editor and thus to return to the model manager:
-    ![Close icon](/images/streaming-analytics/analytics-builder/icon-exit.png)
+1. In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save your newly created model.
+2. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager
 
 {{< c8y-admon-info>}}
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
@@ -134,24 +110,18 @@ Only saved models are listed on the **Models** tab of the model manager. When yo
 
 A card for the newly added model is shown on the **Models** tab of the model manager. A new model is automatically set to draft mode and inactive state. You will now activate your new model in production mode. This deploys the model so that the measurements from your device are processed.
 
-1.  Click the drop-down menu on the card which currently shows **Draft** and select **Production**.
-
-2.  Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
+1. Click the drop-down menu on the card which currently shows **Draft** and select **Production**.
+2. Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
 
 #### Step 9: Go to the Device management and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
 
 To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management application](/device-management-application/) for detailed information.
 
-1.  Go to the Device management application.
-
-2.  In the navigator on the left, click **Devices** and then **All devices**.
-
-3.  Locate your device and click its name to display the device details.
-
-4.  Click **Measurements** on the left. This is a dynamic tab which is only shown when measurements are available for the device.
-
-    The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Measurements](/device-management-application/viewing-device-details/#measurements) for more information on the **Measurements** tab.
-
+1. Go to the Device management application.
+2. In the navigator on the left, click **Devices** and then **All devices**.
+3. Locate your device and click its name to display the device details.
+4. Click **Measurements** on the left. This is a dynamic tab which is only shown when measurements are available for the device.
+  The resulting page shows several charts, visualizing the data sent from your device. It should now also show a chart titled "Apama\_average" in which you can view the values that are sent from your newly created model. You may have to reload the page to see this new chart. See [Measurements](/device-management-application/viewing-device-details/#measurements) for more information on the **Measurements** tab.
 
 ### First Steps: Creating a model from a sample {#first-steps-creating-a-model-from-a-sample}
 
@@ -181,33 +151,23 @@ The following is a brief description of the blocks that are defined within the s
 
 The **Samples** tab of the model manager lists all sample models that are provided with Analytics Builder. You can view a sample by simply clicking on its card, but you cannot edit or deploy it. However, you can use the samples as a basis for developing your own models, by creating a model from a sample.
 
-1.  Go to the **Samples** tab of the model manager.
-
-2.  Click the actions menu of the **On missing measurements create alarm** sample and then click **Create model from sample**.
-
-    The new model is immediately shown in the model editor. It has the same name, description and tags as the sample.
-
-3.  If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting **Model Configuration** dialog box.
-
-4.  In the toolbar of the model editor, click the following icon to save the new model:
-    ![Save icon](/images/streaming-analytics/analytics-builder/icon-save.png)
-
-5.  In the toolbar of the model editor, click the following icon to leave the model editor and thus to return to the model manager:
-    ![Save icon](/images/streaming-analytics/analytics-builder/icon-exit.png)
-
-    {{< c8y-admon-info>}}
+1. Go to the **Samples** tab of the model manager.
+2. Click the actions menu of the **On missing measurements create alarm** sample and then click **Create model from sample**.
+   The new model is immediately shown in the model editor. It has the same name, description and tags as the sample.
+3. If you want to rename the model, click the model name which is shown at the left of the toolbar. You can then specify a new name in the resulting **Model Configuration** dialog box.
+4. In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save the new model.
+5. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager.
+   {{< c8y-admon-info>}}
 Keep in mind that only saved models are listed on the **Models** tab of the model manager.
-    {{< /c8y-admon-info>}}
+   {{< /c8y-admon-info>}}
 
 #### Step 2: Create a new instance of the model {#step-2-create-a-new-instance-of-the-model}
 
 The sample model uses template parameters. So when you turn the sample into a model, you create a so-called template model. You cannot activate a template model directly in the model manager. Instead, you must create at least one instance of the model, and you can then activate that instance using the instance editor.
 
-1.  On the **Models** tab of the model manager, locate the card for your newly created model.
-
-2.  To invoke the instance editor, click **0 Instances** which is currently shown on the card.
-
-3.  Click **New Instance** to create the first instance of your new model.
+1. On the **Models** tab of the model manager, locate the card for your newly created model.
+2. To invoke the instance editor, click **0 Instances** which is currently shown on the card.
+3. Click **New Instance** to create the first instance of your new model.
 
 #### Step 3: Fill in the template parameter values {#step-3-fill-in-the-template-parameter-values}
 
@@ -217,31 +177,27 @@ In the instance editor, a row is shown for each instance that you create. A colu
 
 Use the horizontal scroll bar below the instance table if not all template parameters \(columns\) are shown on the screen.
 
-1.  Click the field below the **Device or group of devices** column header. In the resulting dialog, click **Select device** for the device that you want to use for this instance.
+1. Click the field below the **Device or group of devices** column header. In the resulting dialog, click **Select device** for the device that you want to use for this instance.
+2. In the text box below the **Input fragment and series** column header, specify the details of the measurement input that you want to monitor in the following format:
 
-2.  In the text box below the **Input fragment and series** column header, specify the details of the measurement input that you want to monitor in the following format:
+   `<valueFragmentName>.<valueSeriesName>`
 
-    `<valueFragmentName>.<valueSeriesName>`
+   For example, if the measurement fragment is `c8y_Gyroscope` and the series is `gyroscopeX`, then you must enter the following:
 
-    For example, if the measurement fragment is `c8y_Gyroscope` and the series is `gyroscopeX`, then you must enter the following:
-
-    `c8y_Gyroscope.gyroscopeX`
+   `c8y_Gyroscope.gyroscopeX`
 
     {{< c8y-admon-tip>}}
 If you want to find out which fragments and series are available to your device, without changing the predefined template parameters of the **Measurement Input** block, go back to the model editor, drag the input block for your device from the palette onto the canvas and open the **Fragment and Series** drop-down list box. This lists all the values that you can use. However, instead of the `=>` that you can see in the drop-down list box, you have to use a dot \(.\) in this case. Don't forget to remove this block again after you have decided which value to use.
     {{< /c8y-admon-tip>}}
-
-3.  The fields below the **Duration \(seconds\)**, **Alarm type**, **Alarm text** and **Alarm severity** column headers already contain default values \(see also the above description of the blocks\). Adapt them to your requirements. For example, change the duration to 30 seconds, rename the alarm type to "MyAlarmType", keep the predefined alarm text, and set the alarm severity to **Minor**.
-
-4.  In the toolbar of the instance editor, click **Save**.
+3. The fields below the **Duration \(seconds\)**, **Alarm type**, **Alarm text** and **Alarm severity** column headers already contain default values \(see also the above description of the blocks\). Adapt them to your requirements. For example, change the duration to 30 seconds, rename the alarm type to "MyAlarmType", keep the predefined alarm text, and set the alarm severity to **Minor**.
+4. In the toolbar of the instance editor, click **Save**.
 
 #### Step 4: Activate the instance {#step-4-activate-the-instance}
 
 You will now activate the instance in production mode. This deploys the instance so that the measurements from your device are processed.
 
-1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance and select **Production**.
-
-2.  In the **Status** column of the instance editor, click the button which currently shows **Inactive** to change the status to **Active**.
+1. In the **Run Mode** column of the instance editor, click the drop-down menu for the instance and select **Production**.
+2. In the **Status** column of the instance editor, click the button which currently shows **Inactive** to change the status to **Active**.
 
 #### Step 5: Send in the data from your device {#step-5-send-in-the-data-from-your-device}
 
@@ -254,12 +210,8 @@ For our example case with the gyroscope measurements from a smartphone, it shoul
 To view the alarms that are sent from your active instance, you have to switch to the Device management application.
 See [Device management application](/device-management-application/) for detailed information.
 
-1.  Go to the Device management application.
-
-2.  In the navigator on the left, click **Devices** and then **All devices**.
-
-3.  Locate your device and click its name to display the device details.
-
-4.  Click **Alarms** on the left.
-
-5.  On the resulting page, check the alarms that are sent from your device. If you have edited your instance as described above, you should see a MINOR alarm after 30 seconds, saying "Missing measurements of type: c8y\_Gyroscope". See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for more information on the **Alarms** tab.
+1. Go to the Device management application.
+2. In the navigator on the left, click **Devices** and then **All devices**.
+3. Locate your device and click its name to display the device details.
+4. Click **Alarms** on the left.
+5. On the resulting page, check the alarms that are sent from your device. If you have edited your instance as described above, you should see a MINOR alarm after 30 seconds, saying "Missing measurements of type: c8y\_Gyroscope". See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for more information on the **Alarms** tab.

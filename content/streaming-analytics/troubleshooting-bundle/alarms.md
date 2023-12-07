@@ -78,11 +78,9 @@ You can check the mode of the microservice (either normal or safe mode) by makin
 To diagnose the cause of an unexpected restart, you can try the following:
 
 - Check the EPL apps memory profiler by making a REST request to */service/cep/diagnostics/eplMemoryProfiler* for any memory leaks.
-
     Note that you must re-activate the EPL apps that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to safe mode. To replicate the previous scenario, run the EPL apps and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
 
 - Check the microservice logs for any exceptions by downloading the basic diagnostics ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). In the downloaded ZIP file, you can find the logs under */diagnostics/*.
-
     As mentioned in the above point, re-activate the EPL apps and analytic models that were active before and then check the logs.
 
 - Check the audit logs. The audit logs are accessible via the Administration application and the audit API.

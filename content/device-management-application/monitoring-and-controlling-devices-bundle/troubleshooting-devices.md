@@ -3,7 +3,7 @@ weight: 60
 title: Troubleshooting devices
 layout: redirect
 helpcontent:
-- label: events-all
+- label: troubleshooting-devices
   title: Events
   content: "Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events.
 

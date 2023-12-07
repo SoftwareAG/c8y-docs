@@ -3,7 +3,7 @@
     <div class="isotope">
       <article
         id="{{substr .File.LogicalName 0 -3}}"
-        class="page-section change-log"
+        class="page-section change-log top"
       >
         <div class="article-content">
           <header class="section-header">
@@ -50,7 +50,7 @@
       {{$changeTypeClass := print "change-type-" (index .Params.change_type 0).label | urlize}}
       {{$productAreaClass := print "productarea-" (index .Params.product_area 0).label | urlize}}
       {{$componentClass := print "component-" (index .Params.component 0).label | urlize}}
-      {{$technicalComponentClass := print "technicalcomponent-" (index .Params.technical_component 0).label}}
+      {{$technicalComponentClass := print "technicalcomponent-" (index .Params.technical_component 0).label | urlize}}
       {{ if not (in $classes $changeTypeClass) }}
       {{$classes = $classes | append $changeTypeClass}}
       {{end}}
@@ -67,7 +67,7 @@
       {{end}}
 
       <div
-        data-id="cl-{{$listDate | urlize }}"
+        id="cl-{{$listDate | urlize }}"
         class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
       >
         <h5>{{$listDate}}</h5>

@@ -8,13 +8,13 @@ function concatValues( obj ) {
 
 window.onload = (event)=>{
   $list = $('.change-logs--list > article > .isotope').isotope({
-    itemSelector: '.page-section',
+    itemSelector: '.page-section:not(.top)',
     layoutMode: 'vertical',
     transitionDuration: 0
   });
   let filters = {};
   const fieldsetGroups = document.querySelectorAll('.filter-fieldset.c8y-fieldset');
-  const dates = document.querySelectorAll('[data-id]');
+  const dates = document.querySelectorAll('.change-log__date');
   fieldsetGroups.forEach(fieldsetGroup =>{
     let filterGroup = fieldsetGroup.getAttribute('data-filter-group');
     let filterGroupFilters = [];
@@ -30,8 +30,7 @@ window.onload = (event)=>{
       $list.isotope({ filter: filterValue });
 
       dates.forEach(date => {
-        let el = document.querySelector('[data-refid="' + date.dataset.id + '"]');
-        console.log(el);
+        let el = document.querySelector('[data-refid="' + date.id + '"]');
         if (date.style.display == "none") {
           el.style.display = "none";
         }else{

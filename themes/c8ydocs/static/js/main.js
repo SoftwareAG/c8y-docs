@@ -129,7 +129,6 @@ function buildToc() {
         let h3s = article.querySelectorAll('h3');
         let articleTitle = article.querySelector('h2');
         let tocLinks = '';
-        console.log(h3s);
         if (h3s.length > 1) {
           if (articleTitle) {
             tocLinks += `<h5 class="text-regular text-muted">${articleTitle.textContent}</h5>`;
@@ -161,18 +160,15 @@ function buildToc() {
       let tocLinks = '';
       articles.forEach(article => {
         let h2 = article.querySelector('h5');
-        // console.log(h2.parentNode.dataset.id);
         let target = h2.parentNode.nextElementSibling;
-
         if (target && h2.textContent.length) {
-          tocLinks += `<div class="list-group-item"><a href="#${target.id}" data-refid="${h2.parentNode.dataset.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
+          tocLinks += `<div class="list-group-item"><a href="#${target.id}" data-refid="${h2.parentNode.id}" title="${h2.textContent}">${h2.textContent}</a></div>`;
         }
       })
       // console.log("tocLinks", tocLinks);
       if (tocLinks.length) {
         const tocContainer = document.createElement('div');
         tocContainer.classList.add('toc-container');
-    
         const listGroup = document.createElement('div');
         listGroup.classList.add('list-group');
         listGroup.classList.add('toc');
@@ -181,16 +177,18 @@ function buildToc() {
         const container = document.querySelector('.article-list.change-logs--list > article');
         container.appendChild(tocContainer);
       }
-    
-      
     };
 
     const links = document.querySelectorAll('.toc a');
 
     links.forEach(link => {
-      const targetId = link.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+      const targetId = link.dataset.refid ? link.dataset.refid : link.getAttribute('href').substring(1);
+      let targetElement = document.getElementById(targetId);
       link.addEventListener('click', event => {
+        if (link.dataset.refid) {
+          event.preventDefault();
+          window.location.hash = findVisibleElement(link.getAttribute('href').substring(1));
+        }
         const tempActive = document.querySelectorAll('.toc .active');
         tempActive.forEach(temp => {
           temp.classList.remove('active');
@@ -204,7 +202,8 @@ function buildToc() {
       }
 
       window.addEventListener('scroll', () => {
-        const rect = targetElement.getBoundingClientRect();
+        const srcEl = document.getElementById(findVisibleElement(targetElement.id));
+        const rect = srcEl.getBoundingClientRect();
         const windowHeight = window.innerHeight;
     
         // Calculate the top threshold for activation (top third of the viewport)
@@ -227,6 +226,19 @@ function buildToc() {
     });
   }
 }
+
+
+function findVisibleElement(id) {
+  var elem = document.getElementById(id);
+  if (!elem) {
+      return null;
+  }
+  while (elem && window.getComputedStyle(elem).display === 'none') {
+      elem = elem.nextElementSibling;
+  }
+  return elem ? elem.id : null;
+}
+
 
 // Call the buildToc function to generate and insert TOCs for all articles
 // buildToc();

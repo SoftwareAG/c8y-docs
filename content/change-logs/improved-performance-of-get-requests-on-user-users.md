@@ -12,6 +12,6 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 ---
 The performance of GET requests on the `/user/users` endpoint has been improved by better utilization of database indexes. \[MTM-52566]

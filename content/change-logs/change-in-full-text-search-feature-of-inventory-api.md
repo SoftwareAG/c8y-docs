@@ -12,7 +12,7 @@ change_type:
     label: Fix
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 ---
 As of a future version, the full text search functionality will only include the following properties:
 

@@ -12,6 +12,6 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 ---
 The query language used by the managed objects API has been improved. You can now search for fields with null values. \[MTM-52677]

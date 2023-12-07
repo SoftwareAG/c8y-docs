@@ -2,15 +2,15 @@
   "options": [
     {
       "id": "tc-pjJiURv9Y",
-      "option": "Ui-c8y"
+      "option": "ui-c8y"
     },
     {
       "id": "tc-QHwMfWtBk7",
-      "option": "Cumulocity"
+      "option": "cumulocity"
     },
     {
       "id": "tc-2QVkzf0Er",
-      "option": "Pulsar"
+      "option": "pulsar"
     }
   ]
 }

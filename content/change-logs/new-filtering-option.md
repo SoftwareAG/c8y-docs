@@ -12,7 +12,7 @@ component:
     label: Administration
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 jira: MTM-51331
 ---
 It is now possible to filter items on Applications, Features, Microservices and Extensions lists.

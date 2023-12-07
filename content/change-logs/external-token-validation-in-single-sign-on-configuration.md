@@ -13,7 +13,7 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 jira: MTM-49801
 version: 10.17.286
 ---

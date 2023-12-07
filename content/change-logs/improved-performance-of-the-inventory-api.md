@@ -13,7 +13,7 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 jira: MTM-50840, MTM-51973
 ---
 * The performance of the Inventory API has been improved by removing an additional request to the database.

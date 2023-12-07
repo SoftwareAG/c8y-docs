@@ -13,12 +13,9 @@ change_type:
     label: Security
 technical_component:
   - value: tc-2QVkzf0Er
-    label: Pulsar
+    label: pulsar
 jira: MTM-35460
 version: 1.0.0
 ---
-## H2
-
-### H3 
 
 same as everywhere

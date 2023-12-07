@@ -12,7 +12,7 @@ change_type:
     label: Preview
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 ---
 {{< c8y-admon-preview >}}
 The feature is in Public Preview mode, that is, it is not enabled by default and maybe subject to change in the future.

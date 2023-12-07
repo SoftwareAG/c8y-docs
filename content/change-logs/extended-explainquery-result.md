@@ -13,7 +13,7 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 jira: MTM-52350
 ---
 The ExplainQuery result info has been extended by the algorithm used when performing queries for a user with inventory roles:

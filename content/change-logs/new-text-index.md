@@ -12,7 +12,7 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Cumulocity
+    label: cumulocity
 ---
 A new text index has been introduced for the GET `/inventory/managedObjects` endpoint. By default it only includes the following fields:
 

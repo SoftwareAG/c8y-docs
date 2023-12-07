@@ -1,5 +1,5 @@
 ---
-title: About this change logs
+title: About these change logs
 icon: "dlt-c8y-icon-system-report"
 type: root
 layout: redirect

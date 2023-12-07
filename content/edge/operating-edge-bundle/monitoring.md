@@ -24,6 +24,10 @@ A specific component, for example, `apama-ctrl_proc`, can be restarted using the
 
 	[admin@iot-edge-server ~]$ sudo monit restart apama-ctrl_proc
 
+The status of a specific component, for example, `apama-ctrl_proc`, can be viewed using the following command:
+
+	[admin@iot-edge-server ~]$ sudo monit status apama-ctrl_proc
+
 The Monit status can be checked by running:
 
 	[admin@iot-edge-server ~]$ sudo systemctl status monit

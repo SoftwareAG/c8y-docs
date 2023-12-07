@@ -1,13 +1,17 @@
 ---
-title: Security
+title: 3rd party libraries
 layout: change_log
 section:
   - change_log
-weight: 60
+weight: 5
 ---
 
-
 ### December 2023
+
+#### -Change- MongoDB version upgrades
+
+- A MongoDB Java driver has been upgraded to the latest version 4.10.2. [MTM-53824]
+- The MongoDB version has been upgraded to 5.0.18-1 in offline installation dependencies. [MTM-53200]
 
 #### -Security- Update of third-party protobuf-java
 

@@ -202,25 +202,27 @@ function buildToc() {
       }
 
       window.addEventListener('scroll', () => {
-        const srcEl = document.getElementById(findVisibleElement(targetElement.id));
-        const rect = srcEl.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
+        if (window.getComputedStyle(link).display !== 'none') {
+          const srcEl = document.getElementById(findVisibleElement(targetElement.id));
+          const rect = srcEl.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
     
-        // Calculate the top threshold for activation (top third of the viewport)
-        const topThreshold = windowHeight / 3;
+          // Calculate the top threshold for activation (top third of the viewport)
+          const topThreshold = windowHeight / 3;
     
-        // Check if the element's top position is within the top threshold
-        const elementTopInTopThird = rect.top <= topThreshold;
+          // Check if the element's top position is within the top threshold
+          const elementTopInTopThird = rect.top <= topThreshold;
     
-        if (elementTopInTopThird) {
-          let tempActive = document.querySelectorAll('.toc .active');
-          tempActive.forEach(temp => {
-            temp.classList.remove('active');
-          });
-          link.classList.add('active');
-        } else {
-          // If the element is not within the top third, remove the active class
-          link.classList.remove('active');
+          if (elementTopInTopThird) {
+            let tempActive = document.querySelectorAll('.toc .active');
+            tempActive.forEach(temp => {
+              temp.classList.remove('active');
+            });
+            link.classList.add('active');
+          } else {
+            // If the element is not within the top third, remove the active class
+            link.classList.remove('active');
+          }
         }
       });
     });

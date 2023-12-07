@@ -1,9 +1,7 @@
-function concatValues( obj ) {
-  var value = '';
-  for ( var prop in obj ) {
-    value += obj[ prop ];
-  }
-  return value;
+function concatFilters(obj) {
+  var arrays = Object.values(obj).map(value => value.split(','));
+  var result = arrays.reduce((a, b) => a.flatMap(x => b.map(y => x + y)));
+  return result.join(', ');
 }
 
 window.onload = (event)=>{
@@ -26,7 +24,8 @@ window.onload = (event)=>{
       }
       let items = filterGroupFilters.length ? filterGroupFilters.join(',') : '';
       filters[filterGroup] = items;
-      let filterValue = concatValues(filters);
+      let filterValue = concatFilters(filters);
+      console.log('filterValue', filterValue);
       $list.isotope({ filter: filterValue });
 
       dates.forEach(date => {

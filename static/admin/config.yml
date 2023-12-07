@@ -32,11 +32,16 @@ collections:
     fields:
       - {label: "Date",name: "date",widget: "datetime"}
       - {label: "Title", name: "title", widget: "string"}
-      - label: "Change log only"
-        name: "change_log"
-        widget: boolean
-        hint: "Change log only won't be displayed in the yearly release"
-        default: false
+
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
 
       - label: Product area
         name: product_area
@@ -58,17 +63,7 @@ collections:
         display_fields: option
         required: false
 
-      - label: Change type
-        name: change_type
-        widget: ncw-file-relation
-        collection: configs
-        file: change_type
-        target_field: options
-        id_field: id
-        display_fields: option
-        required: false
-
-      - label: Technical component
+      - label: Build artifact
         name: technical_component
         widget: ncw-file-relation
         collection: configs
@@ -77,7 +72,8 @@ collections:
         id_field: id
         display_fields: option
         required: false
-      - {label: "Jira Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      
+      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
       - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         

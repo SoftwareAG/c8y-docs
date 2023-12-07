@@ -39,7 +39,7 @@ relativeURLs = true
 
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
-  docsPreview = "cloud" 
+  docsPreview = false 
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true

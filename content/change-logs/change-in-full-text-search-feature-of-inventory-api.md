@@ -8,8 +8,8 @@ component:
   - value: component-JlFdtOPva
     label: Rest API
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-VSkj2iV9m
+    label: Fix
 technical_component:
   - value: tc-QHwMfWtBk7
     label: Cumulocity

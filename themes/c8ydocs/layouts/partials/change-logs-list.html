@@ -102,12 +102,6 @@
               <small class="text-muted">Component</small>
               <p>{{(index .Params.component 0).label}}</p>
             </div>
-            {{ if .Params.jira }}
-            <div>
-              <small class="text-muted">Ticket</small>
-              <p>{{.Params.jira}}</p>
-            </div>
-            {{end}}
             {{/*  Display the build artifact and the version info only in yearly releases  */}}
             {{ if site.Data.date_settings.yearly_release}}
             <div>
@@ -118,6 +112,12 @@
             <div>
               <small class="text-muted">Version</small>
               <p>{{.Params.version}}</p>
+            </div>
+            {{end}}
+            {{ if .Params.jira }}
+            <div>
+              <small class="text-muted">Ticket</small>
+              <p>{{.Params.jira}}</p>
             </div>
             {{end}}
             {{end}}

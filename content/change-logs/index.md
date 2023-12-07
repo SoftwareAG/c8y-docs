@@ -4,3 +4,5 @@ layout: change_log
 ---
 
 Introduction text for the change log list.
+
+lorem some stuff.

@@ -12,6 +12,6 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Core
+    label: Cumulocity
 ---
 If users do a search from the UI or via the Inventory API, the text parameters are now sorted by relevance making it easier to see the more appropriate data returned. \[MTM-54563]

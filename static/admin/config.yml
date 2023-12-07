@@ -147,7 +147,7 @@ collections:
                 prefix: change
 
       - name: technical_component
-        label: Technical component options
+        label: Build artifacts options
         file: data/technicalcomponent.json
         fields:
           - name: options

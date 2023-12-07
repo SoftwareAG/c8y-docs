@@ -13,12 +13,9 @@ change_type:
     label: Security
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Core
+    label: Cumulocity
 jira: MTM-35460
-version:
-  - "1"
-  - "2"
-  - "3"
+version: 1.0.0
 ---
 ## H2
 

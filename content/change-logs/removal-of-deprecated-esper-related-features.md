@@ -12,7 +12,7 @@ change_type:
     label: Announcement
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Core
+    label: Cumulocity
 ---
 Esper-CEP-related features have been removed from the UI such as:
 

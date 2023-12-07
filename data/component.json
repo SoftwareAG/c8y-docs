@@ -9,24 +9,24 @@
       "id": "q3kclF6pO"
     },
     {
-      "id": "component-JlFdtOPva",
-      "option": "Rest API"
+      "id": "component-YdSEScrEC",
+      "option": "Cockpit"
     },
     {
       "id": "component--KIsStyzM",
       "option": "Device management"
     },
     {
-      "id": "component-1KLUzmqfe",
-      "option": "LWM2M"
-    },
-    {
-      "id": "component-YdSEScrEC",
-      "option": "Cockpit"
-    },
-    {
       "id": "component-Tl88RYb4A",
       "option": "Digital Twin manager"
+    },
+    {
+      "id": "component-JlFdtOPva",
+      "option": "Rest API"
+    },
+    {
+      "id": "component-1KLUzmqfe",
+      "option": "LWM2M"
     },
     {
       "id": "component-YbYJ3gLU_",

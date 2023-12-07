@@ -13,7 +13,7 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Core
+    label: Cumulocity
 jira: MTM-53200
 ---
 * A MongoDB Java driver has been upgraded to the latest version 4.10.2. \[MTM-53824]

@@ -12,7 +12,6 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Core
-version: --
+    label: Cumulocity
 ---
 It is now possible to select the availability (SHARED or PRIVATE) during package upload. [MTM-51454]

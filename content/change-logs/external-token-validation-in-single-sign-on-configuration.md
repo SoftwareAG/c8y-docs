@@ -4,7 +4,7 @@ title: External token validation in single sign-on configuration
 change_log: false
 product_area:
   - value: product_area-eC7h0SiQ2b
-    label: Application enablement (including OEE and DTM)
+    label: Application enablement 
 component:
   - value: q3kclF6pO
     label: Authentication
@@ -13,7 +13,7 @@ change_type:
     label: Change
 technical_component:
   - value: tc-QHwMfWtBk7
-    label: Core
+    label: Cumulocity
 jira: MTM-49801
 version: 10.17.286
 ---

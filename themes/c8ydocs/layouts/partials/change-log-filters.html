@@ -70,7 +70,7 @@
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="change-type">
       <legend>Type</legend>
       {{ if site.Data.date_settings.yearly_release}}
-        {{ range site.Data.changetype.options }}
+        {{ range sort site.Data.changetype.options "option" "asc" }}
         
         <label class="c8y-checkbox m-b-4">
           <input type="checkbox" class="filter-btn" name="change-type-{{.option | urlize}}">
@@ -81,7 +81,7 @@
         </label>
         {{ end }}
       {{else}}
-        {{ range site.Data.changetype.options }}
+        {{ range sort site.Data.changetype.options "option" "asc" }}
           {{ if ne .option "Fix"}}
             <label class="c8y-checkbox m-b-4">
               <input type="checkbox" class="filter-btn" name="change-type-{{.option | urlize}}">
@@ -96,7 +96,7 @@
     </fieldset>
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="productarea">
       <legend>Product area</legend>
-      {{ range site.Data.productarea.options }}
+      {{ range sort site.Data.productarea.options "option" "asc" }}
       <label class="c8y-checkbox m-b-4">
         <input type="checkbox" class="filter-btn" name="productarea-{{.option | urlize}}">
         <span></span>
@@ -108,7 +108,7 @@
     </fieldset>
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="component">
       <legend>Component</legend>
-      {{ range site.Data.component.options }}
+      {{ range sort site.Data.component.options "option" "asc"}}
       <label class="c8y-checkbox m-b-4">
         <input type="checkbox" class="filter-btn" name="component-{{.option | urlize}}">
         <span></span>
@@ -121,7 +121,7 @@
     {{ if site.Data.date_settings.yearly_release}}
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="technicalcomponent">
       <legend>Build artifact</legend>
-      {{ range site.Data.technicalcomponent.options }}
+      {{ range sort site.Data.technicalcomponent.options "option" "asc"}}
       <label class="c8y-checkbox m-b-4">
         <input type="checkbox" class="filter-btn" name="technicalcomponent-{{.option | urlize}}">
         <span></span>

@@ -2,15 +2,15 @@
   "options": [
     {
       "id": "tc-pjJiURv9Y",
-      "option": "UI"
+      "option": "Ui-c8y"
     },
     {
       "id": "tc-QHwMfWtBk7",
-      "option": "Core"
+      "option": "Cumulocity"
     },
     {
       "id": "tc-2QVkzf0Er",
-      "option": "Messaging service"
+      "option": "Pulsar"
     }
   ]
 }

@@ -75,7 +75,7 @@
       {{end}}
 
       <section
-        id="{{.Title | urlize }}"
+        id='{{(replace .Name ".md" "") | urlize }}'
         class="page-section change-type-{{(index .Params.change_type 0).label | urlize}}  productarea-{{(index .Params.product_area 0).label | urlize}}  component-{{ (index .Params.component 0).label | urlize }}  technicalcomponent-{{(index .Params.technical_component 0).label | urlize}}"
         data-date="{{.Date}}"
       >
@@ -86,7 +86,7 @@
               <button
                 title="Copy link"
                 class="btn-link bookmark"
-                data-clipboard-text="#{{.Name | urlize }}"
+                data-clipboard-text='#{{(replace .Name ".md" "") | urlize }}'
               >
                 <span class="fa dlt-c8y-icon-link"></span>
               </button>

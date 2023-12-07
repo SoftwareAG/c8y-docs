@@ -26,6 +26,10 @@ The cycle phase consists of two kinds of actions:
 
 ![MQTT phases](/images/mqtt/mqttDeviceIntegration.png)
 
+{{< c8y-admon-req >}}
+* Access via bootstrap user credentials
+{{< /c8y-admon-req >}}
+
 
 ### Startup phase {#startup-phase}
 

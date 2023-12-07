@@ -469,4 +469,4 @@ svg: '<svg
 </svg>'
 ---
 
-Explore the latest features and improvements in our cloud environments or check out announcements on deprecations or security-relevant changes.
+Explore the latest features and improvements in our cloud deployments or check out announcements on deprecations or security-relevant changes.

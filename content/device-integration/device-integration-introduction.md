@@ -18,6 +18,7 @@ aliases:
   - /java/developing-services-client
   - /java/hello-world-basic
   - /java/hello-world-me
+  - /device-sdk/rest
   - /device-sdk/device-sdk-java
   - /device-sdk/device-sdk-java/agents
   - /device-sdk/device-sdk-java/developing-java-clients

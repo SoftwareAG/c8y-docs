@@ -50,7 +50,7 @@ Regular upgrades to the latest SDK versions are strongly recommended to be able 
 
 #### Maintenance release {#maintenance-release}
 
-For clarification, maintenance releases for the same GA release or Yearly release contain only corrective functional changes but no breaking API changes.
+For clarification, maintenance releases for the same Yearly release contain only corrective functional changes but no breaking API changes.
 
 #### Applications and microservices {#applications-and-microservices}
 

@@ -5,40 +5,80 @@
       "option": "Administration"
     },
     {
+      "id": "component-M5-cepIIS",
+      "option": "Streaming Analytics"
+    },
+    {
       "option": "Authentication",
       "id": "q3kclF6pO"
+    },
+    {
+      "id": "component-wWIzHJ12j",
+      "option": "Cloud Fieldbus"
+    },
+    {
+      "id": "component-KHZSGmQm0",
+      "option": "Cloud Remote Access"
     },
     {
       "id": "component-YdSEScrEC",
       "option": "Cockpit"
     },
     {
+      "id": "component-V6J_FcOT2",
+      "option": "Data broker"
+    },
+    {
       "id": "component--KIsStyzM",
-      "option": "Device management"
+      "option": "Device Management application"
     },
     {
       "id": "component-Tl88RYb4A",
-      "option": "Digital Twin manager"
+      "option": "Digital Twin Manager"
     },
     {
-      "id": "component-JlFdtOPva",
-      "option": "Rest API"
+      "id": "component-QWPx3rFfn",
+      "option": "Java SDK"
+    },
+    {
+      "id": "component-REmGxwkF2",
+      "option": "Loriot"
+    },
+    {
+      "id": "component-TCiiCOknp5",
+      "option": "LPWAN"
     },
     {
       "id": "component-1KLUzmqfe",
       "option": "LWM2M"
     },
     {
+      "id": "component-7lcnqU5FL",
+      "option": "Microservice SDK"
+    },
+    {
+      "id": "component-Ry7NUJS_4",
+      "option": "OEE"
+    },
+    {
+      "id": "component-Tf05_KQ-B",
+      "option": "OPC UA"
+    },
+    {
+      "id": "component-JlFdtOPva",
+      "option": "Rest API"
+    },
+    {
+      "id": "component-miibhMoXL",
+      "option": "SmartREST"
+    },
+    {
       "id": "component-YbYJ3gLU_",
       "option": "Web SDK"
     },
     {
-      "id": "component-Bcu8iUXgm",
-      "option": "MongoDB"
-    },
-    {
-      "id": "component-1lrV-xHxo",
-      "option": "Security"
+      "id": "component-A8vMaVaTg",
+      "option": "DataHub"
     }
   ]
 }

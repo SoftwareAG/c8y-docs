@@ -1,20 +1,20 @@
 {
   "options": [
     {
-      "id": "product_area-T1-_TpDyv",
-      "option": "Platform services"
+      "option": "Analytics",
+      "id": "product_area-whzlZT2MhT"
+    },
+    {
+      "option": "Application enablement & solutions",
+      "id": "product_area-eC7h0SiQ2b"
     },
     {
       "option": "Device Management",
       "id": "product_area-m1iHjqikD"
     },
     {
-      "option": "Application enablement",
-      "id": "product_area-eC7h0SiQ2b"
-    },
-    {
-      "option": "Analytics",
-      "id": "product_area-whzlZT2MhT"
+      "id": "product_area-T1-_TpDyv",
+      "option": "Platform services"
     }
   ],
   "option": "hhhhhiei"

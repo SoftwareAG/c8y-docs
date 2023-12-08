@@ -1,10 +1,6 @@
 {
   "options": [
     {
-      "id": "change-inv-3bw8e",
-      "option": "Announcement"
-    },
-    {
       "id": "change-QHu1GdukP",
       "option": "Feature"
     },
@@ -13,16 +9,20 @@
       "option": "Preview"
     },
     {
-      "id": "change-mAHSMDrke",
-      "option": "Security"
-    },
-    {
       "id": "change-2c7RdTdXo4",
-      "option": "Change"
+      "option": "Improvement"
     },
     {
       "id": "change-VSkj2iV9m",
       "option": "Fix"
+    },
+    {
+      "id": "change-inv-3bw8e",
+      "option": "Announcement"
+    },
+    {
+      "id": "change-mAHSMDrke",
+      "option": "Security"
     }
   ]
 }

@@ -23,7 +23,7 @@ All subassets and devices for this asset will get listed in the **Subassets** se
 
 7. Optionally [add subassets](/dtm/asset-hierarchy/#to-add-subassets), or [import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import) using the options on the top right.
 
-If the asset has a location, it is shown on the map under the properties section below its values.  Click the full screen icon at the top right corner of the map to view it in full screen. If the values for latitude or longitude are not present, the map is not shown. The marker position cannot be modified when viewing the asset. Edit the property in order to change the position of the marker.
+If the asset has a location, you can see it on the map under the properties section below its values. Click the full screen icon at the top right corner of the map to view it in full screen. To see the map, provide a value for latitude and longitude. You cannot modify the marker when viewing the asset. Edit the property in order to change the position of the marker.
 
 {{< c8y-admon-info>}}
 The buttons [Import assets](/dtm/asset-hierarchy/#creating-assets-bulk-import), and [Add asset](/dtm/asset-hierarchy/#to-add-subassets) are not visible for the last hierarchical level.<br>

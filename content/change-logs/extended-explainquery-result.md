@@ -10,7 +10,7 @@ component:
     label: Rest API
 change_type:
   - value: change-2c7RdTdXo4
-    label: Change
+    label: Improvement
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity

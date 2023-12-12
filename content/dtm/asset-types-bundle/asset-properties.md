@@ -291,7 +291,7 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 {{< c8y-admon-info>}}
 
-If the **Order** field is left empty, the order is determined by the sequence in which the key value pairs are added and the field will be automatically filled on saving the asset property.
+If you do not fill out the **Order** field, the order is determined by the sequence in which the key value pairs are added and the field will be automatically filled on saving the asset property.
 
 {{< /c8y-admon-info>}}
 

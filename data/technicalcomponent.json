@@ -11,6 +11,10 @@
     {
       "id": "tc-2QVkzf0Er",
       "option": "pulsar"
+    },
+    {
+      "id": "tc-KXXmo2SUR",
+      "option": "apama-in-c8y"
     }
   ]
 }

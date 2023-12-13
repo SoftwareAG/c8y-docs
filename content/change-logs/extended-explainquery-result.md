@@ -1,20 +1,21 @@
 ---
-date: 2023-11-29T16:00:52.999Z
+date: 2023-12-06T16:00:52.999Z
 title: Extended ExplainQuery result
-change_log: false
+change_type:
+  - value: change-2c7RdTdXo4
+    label: Improvement
 product_area:
   - value: product_area-T1-_TpDyv
     label: Platform services
 component:
   - value: component-JlFdtOPva
     label: Rest API
-change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: MTM-52350
+change_log: false
+version: 10.18.48.0
 ---
 The ExplainQuery result info has been extended by the algorithm used when performing queries for a user with inventory roles:
 

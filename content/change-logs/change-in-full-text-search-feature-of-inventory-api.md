@@ -1,15 +1,15 @@
 ---
-date: 2023-12-01T15:55:52.890Z
+date: 2023-12-06T15:55:52.890Z
 title: Change in full text search feature of Inventory API
+change_type:
+  - value: change-inv-3bw8e
+    label: Announcement
 product_area:
   - value: product_area-T1-_TpDyv
     label: Platform services
 component:
   - value: component-JlFdtOPva
     label: Rest API
-change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity

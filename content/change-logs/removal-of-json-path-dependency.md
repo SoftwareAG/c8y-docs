@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:19:09.301Z
-title: Removal of json path dependency
+title: Removal of json-path dependency
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

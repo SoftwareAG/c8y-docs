@@ -1,17 +1,19 @@
 ---
-date: 2023-12-01T15:40:21.560Z
+date: 2023-12-06T15:40:21.560Z
 title: Package availability
+change_type:
+  - value: change-2c7RdTdXo4
+    label: Improvement
 product_area:
   - value: product_area-T1-_TpDyv
     label: Platform services
 component:
   - value: component-0UgqXH1Ys
     label: Administration
-change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
 technical_component:
-  - value: tc-QHwMfWtBk7
-    label: cumulocity
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+jira: " MTM-51454"
+version: 10.18.470.0
 ---
-It is now possible to select the availability (SHARED or PRIVATE) during package upload. [MTM-51454]
+To improve usability, the package availability (SHARED or PRIVATE) can now be set in the package upload wizard. 

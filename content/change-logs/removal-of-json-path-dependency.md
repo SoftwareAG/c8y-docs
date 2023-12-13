@@ -1,0 +1,19 @@
+---
+date: 2023-12-06T15:19:09.301Z
+title: Removal of json path dependency
+change_type:
+  - value: change-2c7RdTdXo4
+    label: Improvement
+product_area:
+  - value: product_area-eC7h0SiQ2b
+    label: Application enablement & solutions
+component:
+  - value: component-QWPx3rFfn
+    label: Java SDK
+technical_component:
+  - value: tc-QHwMfWtBk7
+    label: cumulocity
+jira: MTM-53341
+version: 10.18.84.0
+---
+The dependency on <code>com.jayway.jsonpath:json-path</code> has been removed from Java SDK.

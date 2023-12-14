@@ -16,4 +16,4 @@ technical_component:
 jira: MTM-52566
 version: 10.18.16.0
 ---
-The performance of GET requests on the <code>/user/users</code> endpoint has been improved. MTM-52566
+The performance of GET requests on the <code>/user/users</code> endpoint has been improved.

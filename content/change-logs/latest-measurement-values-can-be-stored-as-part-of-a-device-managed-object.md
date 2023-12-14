@@ -1,5 +1,5 @@
 ---
-date: 2023-12-01T15:56:48.325Z
+date: 2023-12-06T15:56:48.325Z
 title: Latest measurement values can be stored as part of a device managed object
 change_type:
   - value: change-pXAlHAWka

@@ -13,9 +13,8 @@ component:
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-50840; MTM-51973
+jira: MTM-51973
 change_log: false
-version: 10.18.12.0; 10.18.15.0
+version: 10.18.12.0
 ---
-- The Inventory API performance has been improved.
-- The performance of the Inventory API GET <code>/managedObjects</code> has been improved.
+The performance of the Inventory API GET <code>/managedObjects</code> has been improved.

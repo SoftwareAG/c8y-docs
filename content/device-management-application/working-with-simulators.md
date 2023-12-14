@@ -8,7 +8,7 @@ outputs:
 section:
   - device_management
 helpcontent:
-  - label: simulator
+  - label: working-with-simulators
     title: Working with simulators
     content: "With the simulator you can create devices that simulate the same level of functionality as connected hardware devices.
 

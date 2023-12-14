@@ -8,7 +8,7 @@ section:
   - app_enablement
 weight: 40
 helpcontent:
-  - label: dashboards
+  - label: working-with-dashboards
     title: Working with Dashboards
     content: "Dashboards let you visualize your data by using a set of widgets. Widgets can display maps, images, graphs, tables, and other graphic representations of data.
 

@@ -369,8 +369,7 @@ Values of the `any` type can represent a value type or a `pulse` type.
 
 ### Type conversions {#type-conversions}
 
-It is legal to connect a block output to a block input if they are the same type. Most other connections are also permissible, which result in the conversions as described in the table below. The following image indicates that a connection is not legal; trying to deploy a model with such a wiring connection will fail.
-![X](/images/streaming-analytics/analytics-builder/type-conversion-error.png)
+It is legal to connect a block output to a block input if they are the same type. Most other connections are also permissible, which result in the conversions as described in the table below. An <img src="/images/streaming-analytics/analytics-builder/type-conversion-error.png" alt="X" style="display:inline-block; margin:0"> indicates that a connection is not legal; trying to deploy a model with such a wiring connection will fail.
 
 <table>
 <thead>

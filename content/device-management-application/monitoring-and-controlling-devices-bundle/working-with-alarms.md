@@ -3,7 +3,7 @@ weight: 40
 title: Working with alarms
 layout: redirect
 helpcontent:
-- label: alarm-monitoring
+- label: working-with-alarms
   title: Alarms
   content: "Devices can raise alarms to indicate that there is a problem. You can find an overview of the alarms across all devices here. To check the alarms of a particular device, switch to the **Alarm** tab in the details of the device.
 

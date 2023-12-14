@@ -53,9 +53,7 @@ Under **Two-factor authentication**, you can change the SMS template which is se
 
 ### Support link {#support-link}
 
-In the **Support link** section, you can enter a URL to be used to link to a support page. If you do not provide a link here, the default link to the {{< sag-dev-community >}} page will be used.
-
-Enter "false" to hide the link.
+In the **Support link** section, you can enter a default URL to be used to link to a support page (available in "Request support" option in the top-right user menu). If you leave it empty or set it to "false", then the link will not be shown by default. However, an application can override this setting by defining "supportUrl" application option.
 
 ### Password reset {#password-reset}
 

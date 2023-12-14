@@ -1,15 +1,15 @@
 ---
-date: 2023-12-01T16:07:09.414Z
+date: 2023-12-06T16:07:09.414Z
 title: User administrator can no longer set password for other users
+change_type:
+  - value: change-inv-3bw8e
+    label: Announcement
 product_area:
   - value: product_area-T1-_TpDyv
     label: Platform services
 component:
-  - value: component-1lrV-xHxo
-    label: Security
-change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: component-0UgqXH1Ys
+    label: Administration
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity

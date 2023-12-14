@@ -74,6 +74,11 @@ Note that the key is automatically generated based on the label. You can modify 
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
+<td style="text-align:left"><b>Order</b></td>
+<td style="text-align:left">Used to define the order in which the key value pairs of a complex property must be shown.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
 <td style="text-align:left"><b>Type</b></td>
 <td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#file-upload" class="no-ajaxy">File upload</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, or <a href="#boolean" class="no-ajaxy">Boolean</a>.</td>
 <td style="text-align:left">Mandatory</td>
@@ -87,7 +92,8 @@ Note that the key is automatically generated based on the label. You can modify 
 </table>
 
 {{< c8y-admon-info>}}
-The **Default value** field is only shown if the selected **Type** is either "Text" or "Number".
+The **Default value** field is only shown if the selected **Type** is either "Text" or "Number". <br>
+The **Order** field is shown only for complex properties with an exception for Default properties. See [Default properties](#default-properties) to view the list of properties available.
 {{< /c8y-admon-info>}}
 
 Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-models).
@@ -283,6 +289,12 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)
 
+{{< c8y-admon-info>}}
+
+If you do not fill out the **Order** field, the order is determined by the sequence in which the key value pairs are added and the field will be automatically filled on saving the asset property.
+
+{{< /c8y-admon-info>}}
+
 ### To export asset properties {#to-export-asset-properties}
 
 Follow the steps below:
@@ -333,10 +345,10 @@ You can import a maximum of 500 asset properties at a time.
 
 The **Location** property enables you to assign location (latitude and longitude) to an asset. You can set the default values of the latitude and longitude by entering the corresponding values or alternatively using the map view.
 
-To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. The marker is positioned at Duesseldorf, Germany by default. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
+To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. Without values for latitude and longitude, the marker is hidden. To see the marker, click anywhere on the map. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
 
 {{<c8y-admon-info>}}
 The valid range for the latitude is -90 to +90 and valid range for the longitude is -180 to +180. <br>
-The marker on the map is positioned at an approximated location when either the latitude or longitude value is missing.<br>
+The marker on the map is only visible when both values for latitude and longitude are provided.<br>
 The default values of both latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.
 {{</c8y-admon-info>}}

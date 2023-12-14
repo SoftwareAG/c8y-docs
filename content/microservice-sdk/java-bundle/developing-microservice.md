@@ -35,19 +35,51 @@ The context support is covered by the annotation `@EnableContextSupport`. It all
 Each microservice has a service user which can be used for the interaction with the platform. The roles associated with this user are specified in the manifest. 
 Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request to the microservice are used.
 
-#### Tenant scope  
-To create a bean in the tenant scope, use the annotation `@TenantScope`, as in the following code example. 
+#### Setting the context
+You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Analogously, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
+Examples on how to use `ContextService` is given below.
 
 ```java
+@Autowired
+private ContextService<UserCredentials> contextService;
+@Autowired
+private EventApi eventApi;
+
+public PagedEventCollectionRepresentation get10Events () {
+  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+}
+```
+In this example, the events will be obtained using the credentials of the authenticated user.
+
+
+Analogously, the credentials of the service user will be utilized to retrieve the events in the example given below.
+```java
+@Autowired
+private ContextService<MicroserviceCredentials> contextService;
+@Autowired
+private EventApi eventApi;
+
+public PagedEventCollectionRepresentation get10Events () {
+  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+}
+```
+
+#### Tenant scope  
+The tenant scope is associated with the usage of the service user credentials and is annotated with `@TenantScope`. 
+To create a bean, named `tenantEventApi` in the tenant scope, use the annotation `@TenantScope`, as in the following code example. 
+
+```java
+@Autowired
+private Platform platform;
+
 @TenantScope
 @Bean(name = "tenantEventApi")
 public EventApi eventApi (Platform platform) throws SDKException {
   return platform.getEventApi();
 }  
 ```
-If you then use the bean `tenantEventApi`, the service user credentials are utilized.
 
-By default, the Platform API related beans provided by the Microservice SDK are created in the tenant scope and use the service user to communicate with the platform. This behavior is also enabled when using the respective annotation for the tenant context. 
+By default, the Platform API related beans provided by the Microservice SDK are created in the tenant scope and use the service user to communicate with the platform.  
 
 There are predefined beans both in the `@TenantScope` and `@UserScope`. 
 The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Event Api in the tenant scope, you can specify @Qualifier("tenantEventApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform. 
@@ -70,6 +102,9 @@ In certain situations the microservice should not use the service user credentia
 To create a bean in the user scope, specify `@UserScope`, as in the example below. 
 
 ```java
+@Autowired
+private Platform platform;
+
 @UserScope
 @Bean(name = "userEventApi")
 public EventApi eventApi (Platform platform) throws SDKException {
@@ -87,21 +122,6 @@ private EventApi eventApi;
 
 Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform. 
 
-#### Setting the credentials explicitly
-You can explicitly set the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Analogously, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
-An example on how to use `ContextService` is given below.
-
-```java
-@Autowired
-private ContextService<UserCredentials> contextService;
-@Autowired
-private EventApi eventApi;
-
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
-}
-```
-In this example, the events will be obtained using the credentials of the authenticated user.
 ### Microservice security {#microservice-security}
 
 The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.

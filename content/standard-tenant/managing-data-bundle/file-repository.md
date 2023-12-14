@@ -5,7 +5,7 @@ layout: redirect
 section:
   - platform_administration
 helpcontent:
-- label: files
+- label: file-repository
   title: Files repository
   content: "The file repository provides an overview of the files stored in your account. The files can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page."
 ---
@@ -49,10 +49,13 @@ Click the menu icon at the right of the respective row and then click **Download
 
 ### To delete a file from your account {#to-delete-a-file-from-your-account}
 
-Hover over the row with file entry and click the <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> to remove the file.
-You can also select multiple files for deletion, by ticking checkbox next to each file or select all currently displayed ones. Within appeared table header you can see the number of files selected and actions that can be performed on those files. Click **Delete** and confirm the removal within confirmation dialog displayed.
+Hover your mouse over the row containing the file you want to delete, then click the trash icon <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> at the right.
+
+#### To delete multiple files
+
+Select the checkbox next to each file you want to delete, or click the checkbox at the top of the table to select all displayed files. The table header shows the number of files selected and available actions. Click **Delete** and confirm the deletion.
 
 {{< c8y-admon-info >}}
-* If a file is an application archive, it cannot be deleted from within files repository. You need to remove that file from application activity log view.
-* If you delete files in bulk and selection contains files illegible for removal, removal will proceed ignoring the files which can't be deleted.
+* If a file is an application archive, you cannot delete it from the files repository. Instead, you must delete this file from the applications details.
+* If you delete files in bulk and your selection contains files not eligible for removal, the deletion will proceed while ignoring the files that cannot be deleted.
 {{< /c8y-admon-info >}}

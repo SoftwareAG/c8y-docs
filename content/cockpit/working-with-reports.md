@@ -8,7 +8,7 @@ outputs:
 section:
   - app_enablement
 helpcontent:
-  - label: reports
+  - label: working-with-reports
     title: Working with reports
     content: "Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
 
@@ -52,7 +52,7 @@ See [To create a report](#to-create-a-report) below for details on how to config
   <br>![Add report](/images/users-guide/cockpit/cockpit-report-add.png)<br>
 2. In the **Menu label** field, enter a name for the report and optionally provide a description below.
 3. Select **Show in navigator** if you want the report to be displayed in the navigator. Select the position of the report in the navigator. Depending on the value it will be positioned relative to the existing items. If for example "Home" has the value "10000" it will be positioned above "Home", if the value is "10001" or higher.
-4. In the **Layout** section you can select a theme for the report (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
+4. In the **Layout** section you can select a theme for the report (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 12 px).
 If you enable the option **Translate widget titles if possible**, the widget title will be translated every time the language is changed. Note that the widget titles will be translated only if a valid translation is available.
 Click **Save** to create the report and add it to the report list.
 

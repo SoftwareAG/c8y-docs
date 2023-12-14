@@ -12,10 +12,19 @@
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
 
-    <link rel="icon" href="{{ with .Site.Params.favicon }}{{ . }}{{ else }}/favicon.png{{ end }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | absURL}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | absURL}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicon-16x16.png" | absURL}}">
+    <link rel="manifest" href="{{ "images/site.webmanifest" | absURL }}">
+    <link rel="shortcut icon" href="{{"images/favicon.ico" | absURL}}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="{{"images/browserconfig.xml" | absURL}}">
+    <meta name="theme-color" content="#ffffff">
 
+    <!-- Google search console verification -->
+    <meta name="google-site-verification" content="PYBroo4kQ0NReeuXOSLmXdIILDuxE6lRWUYjeReIy8E" />
+    
     <!--STYLES-->
-
     {{ $cssfile := "style.css" }}
 
     {{ $options := (dict "targetPath" $cssfile "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
@@ -24,6 +33,7 @@
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <!--STYLES END-->
     <script src="{{ "js/vendor/highlight.min.js" | absURL }}"></script>
-    <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=1sfqr5kpjepyyxbd03qk7w" async="true"></script>
+
+    <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=wmzmiqkyn8isokbvj4xd6g" async="true"></script>
    
   </head>

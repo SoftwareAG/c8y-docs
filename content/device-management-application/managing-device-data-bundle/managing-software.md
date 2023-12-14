@@ -3,7 +3,7 @@ weight: 20
 title: Managing software
 layout: redirect
 helpcontent:
-- label: software-repo
+- label: managing-software
   title: Software repository
   content: "In the software repository, you can collect reference software for devices. Multiple software packages can be installed on a device. At the top left, you can filter the repository entries by name, description, or device type.
 

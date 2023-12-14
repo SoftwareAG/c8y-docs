@@ -1,5 +1,6 @@
 {{ define "main" }}
 <main>
+  <div class="breadcrumbs-container p-t-16"></div>
   <div class="home-top">
     <section class="home-top__content">
         <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>

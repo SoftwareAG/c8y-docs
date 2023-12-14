@@ -23,7 +23,7 @@ The login functionality is part of the `CoreModule` in the  `@c8y/ngx-components
 The default credentials must be passed to the API before that happens.
 The result will be that, when Angular loads the initial page, the user will be already authenticated and the login page will be skipped.
 
-### 1. Initialize a new application {#1-initialize-a-new-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-remove-login}
 
 As a starting point, you need an application.
 For this purpose, create a new application using the `c8ycli`:

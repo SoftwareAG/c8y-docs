@@ -13,13 +13,13 @@ weight: 10
 
 The following time range options have been added to the export configuration: "Last 24 hours", "Last 7 days", "Last 30 days". [MTM-55237]
 
-#### -Change-  New filter option in the datapoint selector
+#### -Feature-  New filter option in the datapoint selector
 
 The asset selection in the datapoint selector is now filterable. [MTM-54463]
 
 #### -Feature- Disable/enable realtime for widgets on dashboard level
 
-If a widget supports realtime, it can now be linked to the dashboard real-time context to disable/enable realtime on dashboard level. The following widgets support the real-time dashboard context: Data point graph, Data point table, Event list, Map. [53779]
+If a widget supports realtime, it can now be linked to the dashboard real-time context to disable/enable realtime on dashboard level. The following widgets support the real-time dashboard context: Data point graph, Data point table, Event list, Map. [MTM-53779]
 
 #### -Feature- Map shown for assets created in the Digital twin manager
 

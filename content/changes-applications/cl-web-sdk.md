@@ -9,6 +9,10 @@ weight: 60
 
 ### December 2023
 
+#### -Change- Location view migrated to Angular
+
+The location view in the Device management and Cockpit application has been migrated to Angular. The map provider, the location search, and the map layers are now configurable via application options or tenant options. The angular.js module <code>@c8y/ng1-modules/devicemanagement-location</code> for location was removed and must be migrated or at least removed on update of a custom build application. [MTM-49947]
+
 #### -Change- Support of HTML in input fields
 
 To be able to provide more information in input fields on the expected input, dynamic form fields now support HTML markup in their description. [DM-2606]
@@ -94,6 +98,6 @@ A versioning matrix can now be added to the <i>cumulocity.json</i> of a blueprin
 
 #### -Announcement- Removal of deprecated device-grid model classes, column implementations and services
 
-As announced earlier, see also [release 10.17](/release-10-17-0/announcements-10-17-0), shared classes, components and services from the @c8y/ngx-components/device-grid are deprecated. Those deprecated items have now been removed.
+As announced earlier, see also [release 10.17](https://cumulocity.com/releasenotes/release-10-17-0/announcements-10-17-0), shared classes, components and services from the @c8y/ngx-components/device-grid are deprecated. Those deprecated items have now been removed.
 
 This change only affects you, if you or your development team use the Web SDK to extend Cumulocity IoT UI applications or to build your own web applications. If you use the device-grid functionalities, check the deprecation documentation and alter your code accordingly. Refer to the deprecations in the [WebSDK resources documentation for the device-grid service](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/DeviceGridService.html). Other deprecations for reference are also marked in this documentation.

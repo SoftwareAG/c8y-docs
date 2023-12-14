@@ -3,7 +3,7 @@ weight: 10
 title: Managing firmware
 layout: redirect
 helpcontent:
-- label: firmware-repo
+- label: managing-firmware
   title: Firmware repository
   content: "In the firmware repository, you can collect reference firmware for devices. At the top left, you can filter the firmware items by name, description, or device type.
 

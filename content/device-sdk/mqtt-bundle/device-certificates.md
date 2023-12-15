@@ -316,8 +316,6 @@ If you are using multiple intermediate certificates between the CA certificate a
     * If your keystore is in the JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
 6. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
 
-### How to test created certificates with MQTT client
-
 ### Keystore and truststore
 
 Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.

@@ -146,7 +146,7 @@ On user login, user data like first name, last name, email and phone number can 
 
 Mapping for alias is not available because it is not used in the context of SSO login.
 
-Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
+Each access token is signed by a signing certificate. The following options are available to configure the signing certificates.
 
 1. By specifying the Azure AD certificate discovery address.
 

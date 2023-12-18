@@ -10,9 +10,9 @@ Application security addresses security at the software level.
 {{< product-c8y-iot >}} follows standard practices for application-level hardening as making sure that only properly upgraded operating systems and web servers are in use. A number of additional "best practices" are employed to make {{< product-c8y-iot >}} secure by design.
 
 * {{< product-c8y-iot >}} supports multiple types of authentication methods, applying the best practices for each type. For more details on each type see [Authentication](/authentication/basic-settings/).
-  * Basic authentication features sessionless REST APIs. This means that none of the popular "session stealing" techniques will work with {{< product-c8y-iot >}}.
+  * "Basic authentication" features sessionless REST APIs. This means that none of the popular "session stealing" techniques will work with {{< product-c8y-iot >}}.
   * "OAI-Secure" provides high security, using authorization tokens to prove the identity of the user.
-  * Single sign-on redirect provides possibility to use an external authorization provider.
+  * "Single sign-on" redirect enables the use of an external authorization provider.
 * {{< product-c8y-iot >}} does not use a SQL database for IoT data storage and is itself not based on a scripting language. This means that so-called "injection attacks" will not work with {{< product-c8y-iot >}}.
 * As discussed above, devices are clients at {{< product-c8y-iot >}} and therefore popular attacks to devices will not work.
 * Devices are individually connected with {{< product-c8y-iot >}}'s device registration feature. This means that if a device is stolen or tampered with, it can be individually disconnected from {{< product-c8y-iot >}}.
@@ -27,7 +27,7 @@ Application management security aspects
 {{< /c8y-admon-related >}}
 
 * {{< product-c8y-iot >}} uses versatile permission model, which consists of application access control and REST API access control. This allows to precisely define the access rules for an end user.
-* {{< product-c8y-iot >}} allows high flexibility on deployed application and microservices. Applications provided as default are configured according to best security practices.
+* In the {{< product-c8y-iot >}} the standard applications are configured according to the best security practices by default.
 
 {{< c8y-admon-important >}}
 Due to the very flexible nature of application management within {{< product-c8y-iot >}}, it is possible to abuse certain security measures by the end users with sufficient permissions. For example, they can deploy a custom application with malicious code and make it available to the wide audience. Therefore, application management capabilities should be restricted only to the trusted and knowledgeable end users.

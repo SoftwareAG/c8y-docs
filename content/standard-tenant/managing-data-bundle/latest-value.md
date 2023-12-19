@@ -11,7 +11,7 @@ helpcontent:
 ---
 This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment.. If a measurement is created with a series that matches the configuration the device managed object is updated with the last series sent to the platform.
 
-##### How to enable it
+### How to enable it
 
 Use the tenant options to create a category named `measurement.series.latestvalue` with a PUT request to a [tenant options category](https://cumulocity.com/api/core/#operation/putCategoryOptionResource).
 Example:
@@ -25,7 +25,7 @@ PUT /tenant/options/measurement.series.latestvalue
 ```
 where the key is a filter of measurement series that must be persistent and its value must always be an empty string (left for a future use case).
 
-##### How it works
+### How it works
 
 If a measurement is created with a series that matches the configuration the device managed object
 is updated with the last series sent to the platform.
@@ -92,7 +92,7 @@ GET /inventory/managedObjects?withLatestValues=true&query=$filter=c8y_LatestMeas
   ]
 }
 ```
-##### Implications & Precondition
+### Implications & Precondition
 
 This feature introduces an additional operation upon measurement creation.
 This results in performance degradation, depending on the number of series
@@ -101,7 +101,7 @@ more than 20% in case of 50 series per measurement. Such drawback applies if the
 the performance degradation can be much higher, up to more than 100%. Therefore
 **disabling the text index is considered as a precondition**.
 
-##### Limitations
+### Limitations
 
 **Security**
 

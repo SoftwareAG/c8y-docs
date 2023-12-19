@@ -18,7 +18,7 @@ See the *Messaging Service - Installation & operations guide* for further techni
 
 ROLES & PERMISSIONS:
 
-* To view and manage Notifications 2.0 subscriptions (read, create, delete): ADMIN permission for the permission type "Notification 2". 
+* To view and manage Notifications 2.0 subscriptions (read, create, delete): ADMIN permission for the permission type "Notification 2".
 
 {{< /c8y-admon-req >}}
 
@@ -36,22 +36,22 @@ For managed objects, an object's global identifier must be used to subscribe in 
 There can be multiple subscriptions for the same subscribed object, with different filters or just to fan out to multiple interested consumer parties.
 
 This subscribed object is known as the source object for the <kdb>notification/event</kdb> and it is referenced in the notifications delivered to subscribers.
-Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
+Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
 When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations, or any combination of these) to filter by. The alarms with children and events with children enable users to create explicit subscriptions that allow the delivery of child as well as parent managed object events and alarms.
 It is also possible to filter by the presence of a specific value of a JSON "type" attribute using an OData expression, at the moment only the "or" operator is supported which allows filtering of multiple types with the use of an expression `'type1' or 'type2' [or 'typeN']` (as the type attribute is assumed, it is equivalent to a `type eq 'type1' or type eq 'type2' [or type eq 'typeN']` expression).
 When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
-For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
+For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
 
 ### Receiving subscribed notifications
 
 In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications.
 
-This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
+This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for both the Notification 2.0 Subscription and Token API.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Tokens) for both the Notification 2.0 Subscription and Token API.
 
 Once subscribed, notifications are persisted and available to be consumed using a new WebSocket-based protocol.
 This protocol implements a reliable delivery with at-least-once semantics.
@@ -66,7 +66,7 @@ Creations of managed objects, which generate a new object identifier that can ac
 This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
 It is also possible to subscribe to all alarms or events that are generated in the tenant context.
 
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
 
 For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
 There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
@@ -91,7 +91,7 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 ### Non-persistent subscriptions and their tokens
 
 When you create a subscription, you can add the optional Boolean body parameter `nonPersistent` to the request.
-If it is set to `true`, the created subscription is non-persistent. 
+If it is set to `true`, the created subscription is non-persistent.
 If it is not present or `false`, the subscription will be persistent.
 
 Persistent subscriptions ensure that consumers never miss a message if their connection is interrupted.
@@ -99,24 +99,24 @@ They use replicated secondary storage to maintain large backlogs (within the con
 and to maintain the consumers' positions in subscription notification streams.
 When a consumer of a persistent subscription has their connection interrupted,
 whether that is due to network issues or deliberate actions by the consumer,
-upon reconnection they will continue to receive notifications from the position they were at before the outage 
-(specifically, from the message after the last one they acknowledged successfully before the outage). 
+upon reconnection they will continue to receive notifications from the position they were at before the outage
+(specifically, from the message after the last one they acknowledged successfully before the outage).
 
 Non-persistent subscriptions are only buffered in memory and their consumers' positions are not persisted across disconnections of the consumer.
 When a consumer of a non-persistent subscription has their connection interrupted,
 upon reconnection they will start receiving notifications from the most recent message of the subscription,
-missing all other notifications that occurred during the connection outage. 
+missing all other notifications that occurred during the connection outage.
 This will be the case for such temporarily disconnected consumers,
-even if other consumers of the same non-persistent subscription 
-are still receiving older messages that occurred while it was not connected. 
+even if other consumers of the same non-persistent subscription
+are still receiving older messages that occurred while it was not connected.
 
-If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request, 
+If you create both a persistent and a non-persistent subscription with the same name, that is, with the same `subscription` body parameter value in the request,
 they are *separate*, independent subscriptions. Such subscriptions can vary by any other body parameters you choose. They do not have to be
 persistent and non-persistent variations of the same notification data. However, we recommend you to keep such subscriptions identical except for the `nonPersistent` parameter to avoid confusion.  
 
-When a consumer creates a token for either a persistent or non-persistent subscription, 
+When a consumer creates a token for either a persistent or non-persistent subscription,
 it must distinguish which type of subscription it is targeting by using the `non-persistent` body parameter in the token creation request.
-For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription. 
+For the subscription, this body parameter defaults to `false`, making the token target a persistent subscription.
 Setting the body parameter to `true` in the token creation request targets a non-persistent subscription.  
 
 ### Shared tokens
@@ -135,10 +135,10 @@ An exclusive consumer receives a copy of all notifications from the subscription
 
 If a consumer's token is shared, the consumer is a *shared consumer*. Additional consumer clients can connect using the same token.
 If only one shared consumer is connected, it receives a copy of all notifications from the subscription.
-As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that 
-each consumer receives a non-overlapping subset (share) of the notifications from the subscription. 
+As additional consumer clients connect using the same token, the consumers' notification load is rebalanced so that
+each consumer receives a non-overlapping subset (share) of the notifications from the subscription.
 The set of consumers sharing a token can be thought of as a single logical consumer.
-Collectively, the set receives all notifications for the subscription. 
+Collectively, the set receives all notifications for the subscription.
 
 The notification load is spread across the shared consumers according to the ID of the source that generated the notification, typically a device ID.
 All notifications for a given ID will be delivered to the same consumer. Each consumer may receive notifications for many different IDs.
@@ -146,8 +146,8 @@ This means that there is no benefit using shared tokens unless the notifications
 Note that the load spreading algorithm may result in an asymmetric balance of notification load across the shares when there are few source IDs in the subscription.
 The load should generally become more evenly distributed as the number of sources increases.
 
-In order to help keep the messages from a given set of source IDs stick to shared consumers in the face of connection interruptions, the consumer clients can provide an 
-optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter. 
+In order to help keep the messages from a given set of source IDs stick to shared consumers in the face of connection interruptions, the consumer clients can provide an
+optional `consumer` parameter in their connection URL string, in addition to their usual `token` parameter.
 
 For example: two consumers identifying themselves as *instance1* and *instance2* connect using URL paths
 `notification2/consumer?token=xyz&consumer=instance1` and `notification2/consumer?token=xyz&consumer=instance2`.
@@ -157,9 +157,9 @@ Subscriptions are always unaware of the nature and number of their consumers: an
 ### Deleting subscriptions and unsubscribing a subscriber
 
 Once a subscription is made, notifications will be retained until consumed by all subscribers who have previously connected to the subscription.
-The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber. 
-The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) is used to delete subscriptions.
-After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications 
+The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber.
+The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Subscriptions) is used to delete subscriptions.
+After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications
 and be removed when that is done.
 
 Once a subscription is made, notifications will be kept until consumed by all subscribers who have previously connected to the subscription.
@@ -183,5 +183,5 @@ To do so, send `unsubscribe_subscriber` instead of a message acknowledgement ide
 The service will then unsubscribe the subscriber and close the connection.
 It's not possible to check if the unsubscribe operation succeeded as the connection always closes so this way of unsubscribing is mostly for testing.
 
-It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed, 
+It is always important to delete subscriptions (Delete operations on `/notification2/subscriptions`) even having unsubscribed,
 as otherwise notifications will be generated even if no subscriptions remain. While they would not persist, load and network traffic would still be incurred.

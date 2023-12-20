@@ -53,7 +53,7 @@ Under **Two-factor authentication**, you can change the SMS template which is se
 
 ### Support link {#support-link}
 
-In the **Support link** section, you can enter a default URL to be used to link to a support page (available in "Request support" option in the top-right user menu). If you leave it empty or set it to "false", then the link will not be shown by default. However, an application can override this setting by defining "supportUrl" application option.
+In the **Support link** section, you can enter a URL which is linked to by default if users click **Request support** in the user menu.  If you leave this field empty or set it to "false", then the link will not be shown by default. However, an application can override this setting by defining the "supportUrl" application option.
 
 ### Password reset {#password-reset}
 

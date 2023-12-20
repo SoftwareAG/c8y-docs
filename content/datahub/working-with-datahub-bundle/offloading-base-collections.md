@@ -49,12 +49,9 @@ additional steps:
 
 1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded
 with the above mentioned standard schema into the target table of the data lake.
-2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as
-follows: target table name plus *_all*, *_latest*, or *_c8y_cdh_latest_materialized* respectively. The following
-examples use "alarms" as target table name:
+2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as target table name plus *_all* or *_latest*. The following examples use "alarms" as target table name:
     * **alarms_all** - A view with the updates between two offloading executions, not including the intermediate updates.
-    * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded.
-    * **alarms_c8y_cdh_latest_materialized** - An optional view which materializes the **alarms_latest** view if the offloading configuration has the view materialization enabled.
+    * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded. For offloading configurations with view materialization enabled, the materialized state in the data lake is used.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see
 [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
@@ -84,10 +81,9 @@ The events collection manages the events. During offloading, the data of the eve
 
 Events, just like alarms, are mutable, that is, they can be changed after their creation. Thus, the same logic as for alarms applies.
 
-Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all*, *_latest*, and *_c8y_cdh_latest_materialized* respectively. The following examples use *events* as target table name:
+Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* or *_latest*. The following examples use *events* as target table name:
 * **events_all** - A view with all captured states of all events.
-* **events_latest** - A view containing only the latest state of all events without prior states.
-* **events_c8y_cdh_latest_materialized** - An optional view which materializes the **events_latest** view if the offloading configuration has the view materialization enabled.
+* **events_latest** - A view containing only the latest state of all events without prior states. For offloading configurations with view materialization enabled, the materialized state in the data lake is used.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
 
@@ -118,8 +114,7 @@ The inventory collection keeps track of managed objects. Note that {{< product-c
 1. Offload those entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
     * **inventory_all** - A view with the updates between two offloading executions, not including the intermediate updates.
-    * **inventory_latest** - A view with the latest status of all managed objects, with all previous transitions being discarded.
-    * **inventory_c8y_cdh_latest_materialized** - An optional view which materializes the **inventory_latest** view if the offloading configuration has the view materialization enabled.
+    * **inventory_latest** - A view with the latest status of all managed objects, with all previous transitions being discarded. For offloading configurations with view materialization enabled, the materialized state in the data lake is used.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
 

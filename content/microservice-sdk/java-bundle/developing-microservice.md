@@ -52,7 +52,7 @@ public PagedEventCollectionRepresentation get10Events () {
 In this first example, the events are obtained using the credentials of the authenticated user.
 
 
-Analogously, the credentials of the service user will be utilized to retrieve the events in the example given below.
+In the second example, the credentials of the service user will be utilized to retrieve the events.
 ```java
 @Autowired
 private ContextService<MicroserviceCredentials> contextService;

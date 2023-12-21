@@ -36,7 +36,7 @@ Each microservice has a service user which can be used for the interaction with 
 Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request to the microservice are used.
 
 #### Setting the context
-You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Analogously, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
+You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Accordingly, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
 Examples on how to use `ContextService` are given below.
 
 ```java

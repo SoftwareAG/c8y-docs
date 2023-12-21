@@ -8,7 +8,7 @@ outputs:
 section:
   - platform_administration
 helpcontent:
-- label: authentication
+- label: basic-settings
   title: Authentication
   content: "Under **Login settings** you can specify your preferred login mode:
 

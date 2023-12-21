@@ -85,7 +85,7 @@ This covers the overview on how to use the common endpoints.
 The following recipe shows how to add a custom endpoint.
 
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-custom-microservice}
 
 As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:

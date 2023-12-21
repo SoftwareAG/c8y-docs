@@ -8,7 +8,7 @@ outputs:
 section:
   - device_management
 helpcontent:
-  - label: viewing-devices
+  - label: viewing-all-devices
     title: Viewing devices
     content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the user documentation for details.
 

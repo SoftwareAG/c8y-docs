@@ -413,10 +413,10 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align: left">Disable default behavior for object instances</td>
+<td style="text-align: left">Disable the default behavior for object instances</td>
 <td style="text-align: left">disableInternalObjectInstanceActions</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">Cumulocity implements default handlers for Objects 3,4 and 6. For example, they update the device name upon the reception of the corresponding resource in Object 3 or update the device location. This flag allows these behaviors to be turned off.</td>
+<td style="text-align: left">Cumulocity IoT implements default handlers for objects 3,4 and 6. For example, they update the device name upon the reception of the corresponding resource in object 3 or update the device location. This flag allows those behaviors to be turned off.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>

@@ -154,11 +154,6 @@ The following table gives a brief description of all blocks that can be selected
 </td>
 </tr>
 <tr>
-<td><a href="#machine-learning">Machine Learning</a></td>
-<td><span>(Deprecated) Invokes the specified Machine Learning model that scores the input data.</span>
-</td>
-</tr>
-<tr>
 <td><a href="#managed-object-input">Managed Object Input</a></td>
 <td><span>Receives <tt>ManagedObject</tt> objects from a device, asset, devices in a group, or all input sources.</span>
 </td>

@@ -5,7 +5,7 @@ layout: bundle
 section:
   - platform_administration
 helpcontent:
-  - label: applications
+  - label: managing-applications
     title: Applications
     content: "In the **Applications** tab, you can see all applications available in your tenant. There are two kinds of applications:
 

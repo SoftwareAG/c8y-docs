@@ -49,7 +49,7 @@ public PagedEventCollectionRepresentation get10Events () {
   return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
 }
 ```
-In this example, the events will be obtained using the credentials of the authenticated user.
+In this first example, the events are obtained using the credentials of the authenticated user.
 
 
 Analogously, the credentials of the service user will be utilized to retrieve the events in the example given below.

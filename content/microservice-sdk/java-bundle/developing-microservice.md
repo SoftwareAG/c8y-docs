@@ -99,7 +99,7 @@ In both cases, beans within the tenant scope will be auto-wired.
 #### User scope
 In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request. 
 
-To create a bean in the user scope, specify `@UserScope`, as in the example below. 
+To create a bean in the user scope, specify `@UserScope`:
 
 ```java
 @Autowired

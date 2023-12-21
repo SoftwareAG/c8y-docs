@@ -37,7 +37,7 @@ Within the tenant scope, the credentials of this service user are used for the c
 
 #### Setting the context
 You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Analogously, `ContextService<MicroserviceCredentials>` can be used for service user credentials. 
-Examples on how to use `ContextService` is given below.
+Examples on how to use `ContextService` are given below.
 
 ```java
 @Autowired

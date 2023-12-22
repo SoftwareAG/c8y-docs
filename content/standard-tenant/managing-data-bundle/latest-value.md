@@ -9,7 +9,8 @@ helpcontent:
   title: Latest measurement values
   content: "This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment.. If a measurement is created with a series that matches the configuration the device managed object is updated with the last series sent to the platform."
 ---
-This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment.. If a measurement is created with a series that matches the configuration the device managed object is updated with the last series sent to the platform.
+{{< c8y-admon-preview >}}
+This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment. 
 
 ### How to enable it
 

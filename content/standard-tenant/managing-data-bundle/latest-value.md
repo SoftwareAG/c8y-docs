@@ -118,3 +118,5 @@ can be obtained using the [Measurements API] (https://www.cumulocity.com/api/cor
 The value stored in the device managed object is the last value sent to the platform.
 If the order of measurement delivery to the platform is different from the measurement creation time
 then the latest values will also be affected.
+
+{{< /c8y-admon-preview >}}

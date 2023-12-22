@@ -111,7 +111,7 @@ The latest measurement values are part of the managed object and they follow the
 **Data model**
 
 The latest measurements do not store the measurement type. This information
-can be obtained using the Measurements API.
+can be obtained using the [Measurements API] (https://www.cumulocity.com/api/core/#tag/Measurement-API).
 
 **Last value**
 

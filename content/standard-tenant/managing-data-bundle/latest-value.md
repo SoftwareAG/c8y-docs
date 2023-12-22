@@ -6,7 +6,6 @@ section:
   - platform_administration
 ---
 {{< c8y-admon-preview >}}
-  - platform_administration
 This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment. 
 
 ### How to enable it

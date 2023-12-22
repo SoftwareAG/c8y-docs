@@ -93,7 +93,7 @@ GET /inventory/managedObjects?withLatestValues=true&query=$filter=c8y_LatestMeas
   ]
 }
 ```
-### Implications & Precondition
+### Implications & precondition
 
 This feature introduces an additional operation upon measurement creation.
 This results in performance degradation, depending on the number of series

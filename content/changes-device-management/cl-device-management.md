@@ -51,6 +51,28 @@ For details, refer to the [LWM2M](https://cumulocity.com/docs/protocol-integrati
 
 If the new <b>LWM2M configuration</b> tab is not displayed and the <b>LWM2M bootstrap parameters</b> tab is displayed instead, the LWM2M agent is installed in an older version that does not yet support the new tab. [DM-342]
 
+#### -Feature- LWM2M: X.509 security mode support
+
+LwM2M device connection with X.509 certificates are now supported.
+The X.509 security mode can be selected separately for Bootstrap Server and LWM2M Server either by using the device registration or for existing devices by using the new LWM2M configuration tab.
+The Certificate Authority that issued device certificates must be added and enabled in [trusted certificates](https://cumulocity.com/docs/device-management-application/managing-device-data/#managing-trusted-certificates) in the tenant.
+
+Together with this change also the following changes are introduced:
+
+##### Separate security mode for Bootstrap and LWM2M Server
+
+Now all LWM2M device security modes can be selected separetely for Bootstrap Server and LWM2M Server connections. This can be defined either during the device registration or using LWM2M configuration tab of the device.
+
+##### Disable authentication for Bootstrap Server or LWM2M server
+
+Using LWM2M configuration -> Connectivity, the Boostrap Server or LWM2M Server connection can be disabled for a device.
+
+##### PSK generated option for LWM2M server security mode
+
+During device registration, the "PSK generated" option can be selected for LWM2M Server connection to make LWM2M agent to generate the PSK ID and PSK key credentials for the device. These will be set to the device during the bootstrap process.
+
+For details, refer to the [LWM2M](https://cumulocity.com/docs/protocol-integration/lwm2m/) user documentation. [DM-554]
+
 #### -Change- LWM2M: Improved performance
 
 The performance of the <code>migrateLwm2mDevices</code> operation has been improved. New command line arguments have been introduced with the operation. A list of legacy LWM2M devices can be specified directly from the shell command. Moreover, the migration of the LWM2M client registration objects can be skipped by using an argument.

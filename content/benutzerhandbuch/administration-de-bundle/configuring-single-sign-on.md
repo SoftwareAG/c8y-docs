@@ -29,7 +29,7 @@ Um die SSO-Funktion zu aktivieren, muss der Administrator eine Verbindung zum Au
 
 SSO-Konfigurationen können so eingerichtet werden, dass ausschließlich der {{< management-tenant-de >}} darauf Zugriff hat. So wird verhindert, dass andere Mandanten auf die Konfigurationen zugreifen.
 Benutzer solcher Mandanten können die Konfiguration nicht aktualisieren. Dies beseitigt das Risiko einer falsch konfigurierten SSO-Funktion, durch die andere Benutzer daran gehindert werden können, sich über SSO anzumelden.
-Der {{< management-tenant-de >}} kann den Zugriff auf SSO-Konfigurationen für spezifische Mandanten gewähren oder einschränken. Weitere Informationen zum Konfigurationszugriff finden Sie unter [Login options API](https://{{< domain-c8y >}}/api/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in der {{< openapi >}}.
+Der {{< management-tenant-de >}} kann den Zugriff auf SSO-Konfigurationen für spezifische Mandanten gewähren oder einschränken. Weitere Informationen zum Konfigurationszugriff finden Sie unter [Login options API](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#operation/putAccessLoginOptionResource) in der {{< openapi >}}.
 
 #### Konfigurationsansicht
 

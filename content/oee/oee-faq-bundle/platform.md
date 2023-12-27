@@ -34,7 +34,7 @@ Property names used for fragments as well as series names must not contain a lea
 
 Umlauts are not permitted when naming measured values.
 
-For more details on how to correctly set up property names and series names see [Inventory > Inventory API](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Inventory-API) in the {{< openapi >}}.
+For more details on how to correctly set up property names and series names see [Inventory > Inventory API](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Inventory-API) in the {{< openapi >}}.
 
 ### Where do I find the calculated OEE measurements of a profile in the platform?
 

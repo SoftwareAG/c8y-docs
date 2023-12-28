@@ -390,7 +390,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Use source timestamp</td>
 <td style="text-align: left">enableResourceLevelTimestamp</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">If this device property is enabled {{< product-c8y-iot >}} uses time stamps reported by the device for constructing measurements, events and alarms. This is possible if the device reports multiple resources at the same time. For example, this may be done using observes on entire object instances or composite reads and observes. Time stamp data needs to be reported as part of the same object: Either via the common timestamp resources 5518 and 6050 or the specific timestamp resource for object 6. If this feature is disabled or no timestamp information is reported, {{< product-c8y-iot >}} will use its local date and time. Default: false</td>
+<td style="text-align: left">If this device property is enabled {{< product-c8y-iot >}} uses time stamps reported by the device for constructing measurements, events and alarms. LWM2M offers various methods for associating timestamp information with data points, including resources 5518 and 6050, SenML, or resource 5 for the location object (6). When activated, the LWM2M agent utilizes this timestamp data source to generate measurements, events, or alarms. If deactivated, the LWM2M agent resorts to using its local time. Default: false</td>
 <td style="text-align: left">Optional, defaults to false</td>
 </tr>
 <tr>

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T11:28:20.356Z
-title: Now possible to pick fragment and series in datapoint library
+title: Fragment and series selection from existing data point
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -16,4 +16,4 @@ technical_component:
 jira: MTM-52704
 version: 10.18.63.0
 ---
-In the datapoint library, it is now possible to pick fragment and series from an existing datapoint.
+In the data point library, it is now possible to pick fragment and series from an existing data point.

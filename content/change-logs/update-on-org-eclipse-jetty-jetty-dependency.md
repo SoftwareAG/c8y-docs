@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T11:38:26.638Z
-title: Update on org.eclipse.jetty:jetty dependency
+title: Updated org.eclipse.jetty:jetty dependencies
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

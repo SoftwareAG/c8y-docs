@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:37:00.467Z
-title: Data export feature in the data explorer has been improved
+title: Improved data export feature in the data explorer
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

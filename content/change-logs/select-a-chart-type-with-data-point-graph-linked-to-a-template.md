@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:08:15.231Z
-title: Select a chart type with data point graph linked to a template
+title: Improved chart type selection in Data point graph widget configuration
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

@@ -31,22 +31,22 @@ For managed objects, an object's global identifier must be used to subscribe in 
 There can be multiple subscriptions for the same subscribed object, with different filters or just to fan out to multiple interested consumer parties.
 
 This subscribed object is known as the source object for the <kdb>notification/event</kdb> and it is referenced in the notifications delivered to subscribers.
-Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
+Subscriptions are set up using the [subscription method](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Subscriptions) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
 When subscribing to notifications, a filter for notifications can be specified which determines the APIs (alarms, alarms with children, events, events with children, measurements, managed objects, operations, or any combination of these) to filter by. The alarms with children and events with children enable users to create explicit subscriptions that allow the delivery of child as well as parent managed object events and alarms.
 It is also possible to filter by presence of a specific JSON fragment or "fragment type".
 When matched, either the whole notification content is forwarded, or one or more fragments can be specified to be copied over to the consumer.
-For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
+For usage, refer to the [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#operation/postNotificationSubscriptionResource).
 
 ### Receiving subscribed notifications
 
 In order to receive subscribed notifications, a consumer application or microservice must obtain an authorization token that provides proof that the holder is allowed to receive subscribed notifications.
 
-This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
+This token is in the form of a string conforming to the JWT (JSON Web Token) standard that is obtained from the [token method](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Tokens) of the Notifications 2.0 API.
 This API requires the calling user to be an authenticated {{< product-c8y-iot >}} user and to have the new ROLE_NOTIFICATION_2_ADMIN role.
 
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Tokens) for both the Notification 2.0 Subscription and Token API.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Tokens) for both the Notification 2.0 Subscription and Token API.
 
 Once subscribed, notifications are persisted and available to be consumed using a new WebSocket-based protocol.
 This protocol implements a reliable delivery with at-least-once semantics.
@@ -61,7 +61,7 @@ Creations of managed objects, which generate a new object identifier that can ac
 This allows an application to discover a new managed object, which can then choose to subscribe to in the managed object context.
 It is also possible to subscribe to all alarms that are generated in the tenant context.
 
-See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
+See the [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Subscriptions) on how to subscribe to these notifications, additionally filtering the notification of interest.
 
 For the protocol consumer, both managed object creations and alarms subscribed under the tenant context are reported in the same way.
 There is no distinction between the two contexts for consumers, and notification ordering is maintained between the two contexts.
@@ -86,12 +86,12 @@ The {{< product-c8y-iot >}} microservice Java SDK [TokenApi](https://github.com/
 ### Deleting subscriptions and unsubscribing a subscriber
 
 Once a subscription is made, notifications will be retained until consumed by all subscribers who have previously connected to the subscription.
-The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber. 
-The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/{{< c8y-current-version >}}/#tag/Subscriptions) is used to delete subscriptions.
-After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications 
+The normal workflow is to delete subscriptions when no longer interested in notifications and this is the resonsibility of the subscriber.
+The subscription API [{{< openapi >}}](https://{{<domain-c8y>}}/api/core/{{< c8y-current-version >}}/#tag/Subscriptions) is used to delete subscriptions.
+After the subscription is deleted no more notifications will be saved. The consuming microservice or application can then drain down notifications
 and be removed when that is done.
 
-However, unconsumed notifications will be retained, and for high throughput scenarios this can result in notifications remaining in storage 
+However, unconsumed notifications will be retained, and for high throughput scenarios this can result in notifications remaining in storage
 if never consumed by the application.
 They will be deleted if a tenant is deleted but otherwise can take up considerable space in permanent storage for high frequency notification sources.
 It is therefore advisable to unsubscribe a subscriber that will never run again.

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T11:22:16.833Z
-title: Child assets activation and deactivation now done with single request
+title: Child assets activation and deactivation with single request
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

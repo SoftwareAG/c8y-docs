@@ -1,7 +1,6 @@
 ---
 date: 2023-12-06T10:44:26.354Z
-title: Missing devices are now removed automatically and smart rules can be
-  edited properly
+title: Fixed issue with smart rules editing
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

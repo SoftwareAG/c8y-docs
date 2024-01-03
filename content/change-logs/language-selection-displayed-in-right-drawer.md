@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T11:21:03.973Z
-title: Language selected in user preferences now always shows in right drawer
+title: Language selection displayed in right drawer
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

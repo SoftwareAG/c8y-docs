@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T09:24:02.026Z
-title: Respective permissions needed to enable Add report button
+title: Fixed issue with Add report button
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T09:24:57.721Z
-title: Refresh interval keeps configured value when opening a map widget configuration
+title: Refresh interval keeps configured value in map widget configuration
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T09:22:23.699Z
-title: Respective permissions needed to enable Copy dashboard button
+title: Fixed issue with Copy dashboard button
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

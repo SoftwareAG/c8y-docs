@@ -83,6 +83,10 @@
     {
       "id": "component-kxtzZZRqL",
       "option": "3rd-party libraries"
+    },
+    {
+      "id": "component-LcWEQW5gs",
+      "option": "MQTT"
     }
   ]
 }

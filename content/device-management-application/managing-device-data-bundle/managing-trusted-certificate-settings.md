@@ -64,7 +64,9 @@ Certificate revocation is an irreversible process.
    | Date (optional)       | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. |
 4. Click save to confirm your entries.
 
-Note: If the date is in future then that CRL entry is skipped. If the date field is empty, then the current date is used.
+{{< c8y-admon-info >}}
+If the date is in the future then the CRL entry is skipped. If the date field is empty, then the current date is used.
+{{< /c8y-admon-info >}}
 
 #### Offline bulk import {#offline-bulk-import}
 

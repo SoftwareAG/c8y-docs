@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:32:50.845Z
-title: LWM2M bulk device registration on Firefox
+title: Fixed issue with LWM2M bulk device registration on Firefox
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

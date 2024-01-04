@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:54:36.563Z
-title: LWM2M persists all registration update parameters
+title: LWM2M agent persists all registration update parameters
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

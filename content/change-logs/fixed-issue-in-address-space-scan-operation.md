@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T16:11:18.279Z
-title: Error message in opcua-device-gateway log files
+title: Fixed issue in address space scan operation
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

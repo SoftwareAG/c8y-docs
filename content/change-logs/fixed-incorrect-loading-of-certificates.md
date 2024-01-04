@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T10:35:36.869Z
-title: Errors in authenticating MQTT devices using certificates has been fixed
+title: Fixed incorrect loading of certificates
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

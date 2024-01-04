@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:55:48.796Z
-title: LWM2M agent content selection
+title: Improved content format selection
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:48:48.480Z
-title: "LWM2M queueMode property "
+title: "Fixed issue with LWM2M queueMode property"
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

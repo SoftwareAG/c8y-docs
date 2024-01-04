@@ -1,6 +1,6 @@
 ---
-date: 2023-12-06T10:36:47.675Z
-title: Device list now shows complex columns
+date: 2023-12-06T10:37:55.655Z
+title: Group filter issues in device grids fixed
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -13,7 +13,7 @@ component:
 technical_component:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2410
-version: 10.18.226.0
+jira: DM-2371
+version: 10.18.236.0
 ---
-The device list now shows complex columns like <code>c8y_SoftwareList</code> correctly after converting them to strings.
+Issues with the group filter in device grids resulting in empty result lists have been fixed. The first matching asset is now correctly shown as the filter value.

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T16:02:04.873Z
-title: LWM2M SEND 1.1 SEND request
+title: Fixed issues with LWM2M device registration
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

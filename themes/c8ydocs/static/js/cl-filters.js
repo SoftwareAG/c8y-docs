@@ -33,6 +33,13 @@ function clearAllFilters() {
   });
 }
 
+function applyCheckbox(name) {
+  const filter = document.querySelector('[name="' + name + '"]');
+  if (filter && !filter.checked) {
+    filter.click();
+  }
+}
+
 
 window.onload = (event)=>{
   $list = $('.change-logs--list > article > .isotope').isotope({
@@ -95,6 +102,15 @@ window.onload = (event)=>{
       })
     });
   });
+
+  const tagBtns = document.querySelectorAll('[data-tag]');
+  tagBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyCheckbox(btn.getAttribute('data-tag'));
+    });
+  });
+
   let startHere = document.querySelector('[name="change-type-feature"]');
-  if(startHere) startHere.click();
+  if (startHere) startHere.click();
+
 }

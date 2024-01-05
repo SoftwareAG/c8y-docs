@@ -125,35 +125,39 @@
           <div class="change-log__summary">
             {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
             <div class="metadata">
-            <div>
-              <small class="text-muted">Product area</small><br>
-              <p>{{.Params.product_area}}</p>
-            </div>
-           
-            <div>
-              <small class="text-muted">Component</small>
-              <p>{{(index .Params.component 0).label}}</p>
-            </div>
-            {{/*  Display the build artifact and the version info only in yearly releases  */}}
-            {{ if site.Data.date_settings.yearly_release}}
-            <div>
-              <small class="text-muted">Build artifact</small>
-              <p>{{(index .Params.technical_component 0).label}}</p>
-            </div>
-            {{ if .Params.version}}
-            <div>
-              <small class="text-muted">Version</small>
-              <p>{{.Params.version}}</p>
-            </div>
-            {{end}}
-            {{ if .Params.jira }}
-            <div>
-              <small class="text-muted">Ticket</small>
-              <p>{{.Params.jira}}</p>
-            </div>
-            {{end}}
-            {{end}}
+              <button class="btn-metadata" data-tag="productarea-{{.Params.product_area | urlize}}">
+                <small class="text-muted">Product area</small><br>
+                <p>{{.Params.product_area}}</p>
+              </button>
+            
+              <button class="btn-metadata" data-tag="component-{{(index .Params.component 0).label | urlize}}">
+                <small class="text-muted">Component</small>
+                <p>{{(index .Params.component 0).label}}</p>
+              </button>
+              {{/*  Display the build artifact only in yearly releases  */}}
+              {{ if site.Data.date_settings.yearly_release}}
+                <button class="btn-metadata" data-tag="technicalcomponent-{{(index .Params.technical_component 0).label | urlize}}">
+                  <small class="text-muted">Build artifact</small>
+                  <p>{{(index .Params.technical_component 0).label}}</p>
+                </button>
+              {{end}}
+              </div>
           </div>
+          <div class="change-log__version">
+            {{ if site.Data.date_settings.yearly_release}}
+                {{ if .Params.version}}
+                  <div class="d-flex gap-8">
+                    <small class="text-muted">Version</small>
+                    <p class="small">{{.Params.version}}</p>
+                  </div>
+                {{end}}
+              {{end}}
+              {{ if .Params.jira }}
+                <div class="d-flex gap-8">
+                  <small class="text-muted">Ticket</small>
+                  <p class="small">{{.Params.jira}}</p>
+                </div>
+              {{end}}
           </div>
           {{.Content }}
         </div>

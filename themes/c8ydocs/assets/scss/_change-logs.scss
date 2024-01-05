@@ -98,8 +98,6 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-    margin-bottom: .5rem;
-    padding: 0 0 .5rem 0;
     > label{
       flex: 0 0 auto;
     }
@@ -107,7 +105,7 @@
       flex-grow: 1;
       display: flex;
       gap: 1rem;
-      > div{
+      > div, .btn-metadata{
         flex: 0 1 33%;
         font-size: $font-size-sm;
         border: 1px solid var(--c8y-root-component-separator-color);
@@ -121,6 +119,11 @@
         }
       }
     }
+  }
+  &__version{
+    padding: .5rem 0 .5rem 9.1rem;
+    display: flex;
+    gap: 1rem;
   }
 }
 

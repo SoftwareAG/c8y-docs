@@ -4,12 +4,65 @@ function concatFilters(obj) {
   return result.join(', ');
 }
 
+function checkPa(pas) {
+  let comps = document.querySelectorAll('[data-filter-group = "component"] [data-pa]');
+  let areas = [];
+  pas.forEach(pa => {
+    areas.push(pa.substr(13));
+  });
+  comps.forEach(comp => {
+    if (areas.length) {
+      let cpa = comp.getAttribute('data-pa');
+      if (areas.includes(cpa)) {
+        comp.removeAttribute('disabled');
+      } else {
+        comp.setAttribute('disabled', 'disabled');
+      }
+    } else {
+      comp.removeAttribute('disabled');
+    }
+  });
+}
+
+function clearAllFilters() {
+  let filters = document.querySelectorAll('.filter-btn');
+  filters.forEach(filter => {
+    if (filter.checked) {
+      filter.click();
+    }
+  });
+}
+
+
 window.onload = (event)=>{
   $list = $('.change-logs--list > article > .isotope').isotope({
     itemSelector: '.page-section:not(.top)',
     layoutMode: 'vertical',
     transitionDuration: 0
   });
+  let $empty = document.getElementById('emptystate');
+  $list.on( 'arrangeComplete',
+    function (event, filteredItems) {
+      if (filteredItems.length === 0) {
+        $empty.style.display = "block";
+      } else {
+        let d = 'block';
+        $empty.classList.add('no-results');
+        for (let index = 0; index < filteredItems.length; index++) {
+          const element = filteredItems[index].element;
+          if (!element.classList.contains('change-log__date')) {
+            d = 'none';
+            $empty.classList.remove('no-results');
+            break;
+          }
+        }
+
+        $empty.style.display = d;
+      }
+    }
+  );
+  const searchClear = document.getElementById('clearFilters');
+  searchClear.addEventListener('click', clearAllFilters);
   let filters = {};
   const fieldsetGroups = document.querySelectorAll('.filter-fieldset.c8y-fieldset');
   const dates = document.querySelectorAll('.change-log__date');
@@ -22,10 +75,14 @@ window.onload = (event)=>{
       }else{
         filterGroupFilters = filterGroupFilters.filter(item => item !== '.' + e.target.name);
       }
+      //disable components when their product area is not selected
+      if (filterGroup === 'productarea') {
+        checkPa(filterGroupFilters);
+      }
+
       let items = filterGroupFilters.length ? filterGroupFilters.join(',') : '';
       filters[filterGroup] = items;
       let filterValue = concatFilters(filters);
-      console.log('filterValue', filterValue);
       $list.isotope({ filter: filterValue });
 
       dates.forEach(date => {
@@ -38,4 +95,6 @@ window.onload = (event)=>{
       })
     });
   });
+  let startHere = document.querySelector('[name="change-type-feature"]');
+  if(startHere) startHere.click();
 }

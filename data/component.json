@@ -2,55 +2,133 @@
   "options": [
     {
       "id": "component-0UgqXH1Ys",
-      "option": "Administration"
+      "option": "Administration",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
     },
     {
       "id": "component-M5-cepIIS",
-      "option": "Streaming Analytics"
+      "option": "Streaming Analytics",
+      "product_area": [
+        {
+          "value": "product_area-whzlZT2MhT",
+          "label": "Analytics"
+        }
+      ]
     },
     {
       "option": "Authentication",
-      "id": "q3kclF6pO"
+      "id": "q3kclF6pO",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
     },
     {
       "id": "component-wWIzHJ12j",
-      "option": "Cloud Fieldbus"
+      "option": "Cloud Fieldbus",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-KHZSGmQm0",
-      "option": "Cloud Remote Access"
+      "option": "Cloud Remote Access",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-YdSEScrEC",
-      "option": "Cockpit"
+      "option": "Cockpit",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
     },
     {
       "id": "component-V6J_FcOT2",
-      "option": "Data broker"
+      "option": "Data broker",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
     },
     {
       "id": "component--KIsStyzM",
-      "option": "Device Management application"
+      "option": "Device Management application",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-Tl88RYb4A",
-      "option": "Digital Twin Manager"
+      "option": "Digital Twin Manager",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
     },
     {
       "id": "component-QWPx3rFfn",
-      "option": "Java SDK"
+      "option": "Java SDK",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
     },
     {
       "id": "component-REmGxwkF2",
-      "option": "Loriot"
+      "option": "Loriot",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-TCiiCOknp5",
-      "option": "LPWAN"
+      "option": "LPWAN",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-1KLUzmqfe",
-      "option": "LWM2M"
+      "option": "LWM2M",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-7lcnqU5FL",
@@ -58,27 +136,63 @@
     },
     {
       "id": "component-Ry7NUJS_4",
-      "option": "OEE"
+      "option": "OEE",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
     },
     {
       "id": "component-Tf05_KQ-B",
-      "option": "OPC UA"
+      "option": "OPC UA",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-JlFdtOPva",
-      "option": "Rest API"
+      "option": "Rest API",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
     },
     {
       "id": "component-miibhMoXL",
-      "option": "SmartREST"
+      "option": "SmartREST",
+      "product_area": [
+        {
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
     },
     {
       "id": "component-YbYJ3gLU_",
-      "option": "Web SDK"
+      "option": "Web SDK",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
     },
     {
       "id": "component-A8vMaVaTg",
-      "option": "DataHub"
+      "option": "DataHub",
+      "product_area": [
+        {
+          "value": "product_area-whzlZT2MhT",
+          "label": "Analytics"
+        }
+      ]
     },
     {
       "id": "component-kxtzZZRqL",

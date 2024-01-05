@@ -81,14 +81,6 @@ For details see the [DataHub guide](/datahub/datahub-overview/).
 
 For details see the [{{< product-c8y-iot >}} Edge guide](/edge/edge-introduction/).
 
-<a name="c8y-ml"></a>
-### Cumulocity IoT Machine Learning
-{{< product-c8y-iot >}} Machine Learning simplifies the complexity of the data science process across the entire machine learning lifecycle from model training to deployment. {{< product-c8y-iot >}} Machine Learning is composed of two applications:
-  * Machine Learning Workbench, which focuses on model training, and
-  * Machine Learning Engine, which focuses on model deployment.
-
-For details see the [Machine Learning guide](/machine-learning/introduction/).
-
 <a name="c8y-operational-store"></a>
 ### Cumulocity IoT operational store
 Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](#alarm), [events](#event), [inventory](#inventory), and [measurements](#measurement)) are stored in so-called base collections.
@@ -218,18 +210,6 @@ For details see [Administration > Managing permissions > Inventory roles](/users
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. {{< product-c8y-iot >}} provides support for easily connecting any LWM2M device to the platform.
 
 For details see [LWM2M](/protocol-integration/lwm2m) in the *Protocol integration guide*.
-
-<a name="ml-engine"></a>
-### Machine Learning Engine
-Machine Learning Engine is an application that enables machine learning/IT operators to manage and operationalize production-ready models for generating predictions on data gathered from connected devices. These capabilities can be leveraged either from a web browser via an easy to use UI or programmatically via REST API. Machine Learning Engine provides a high-performance inference platform with deployed models exposed as endpoints that can be leveraged from Streaming Analytics and other applications for real-time inference.
-
-For details see [Introduction > Machine Learning Engine](/machine-learning/introduction/#mle-overview) in the *Machine Learning guide*.
-
-<a name="ml-workbench"></a>
-### Machine Learning Workbench
-Machine Learning Workbench is an application that enables data scientists and machine learning engineers to build, train and evaluate high-quality machine learning models using an intuitive, easy to use, no-code UI and a programmer-friendly Jupyter Notebook based environment. Machine Learning Workbench provides seamless access to data residing in {{< product-c8y-iot >}} operational store or any cloud data lakes with visual tools to ingest and transform the data.
-
-For details see [Introduction > Machine Learning Workbench](/machine-learning/introduction/#mlw-overview) in the *Machine Learning guide*.
 
 <a name="maintenance-release"></a>
 ### Maintenance release

@@ -16,9 +16,37 @@
         </div>
       </article>
       {{/*  Get the page resources from the right folder  */}}
-      {{ $bundle := "/change-logs" }}
-      {{ $headless := .Site.GetPage $bundle }}
-      {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Date" "desc"}}
+      {{ $bundle1 := "/change-logs/analytics" }}
+      {{ $headless1 := .Site.GetPage $bundle1 }}
+      {{ $bundle2 := "/change-logs/application-enablement" }}
+      {{ $headless2 := .Site.GetPage $bundle2 }}
+      {{ $bundle3 := "/change-logs/device-management" }}
+      {{ $headless3 := .Site.GetPage $bundle3 }}
+      {{ $bundle4 := "/change-logs/platform-services" }}
+      {{ $headless4 := .Site.GetPage $bundle4 }}
+      {{ $currentCollections := newScratch }}
+      {{ if site.Data.date_settings.yearly_release}}
+      {{ $bundle5 := "/change-logs/edge" }}
+      {{ $headless5 := .Site.GetPage $bundle5 }}
+        {{ $currentCollections.Set "list" ($headless1.Resources | union $headless2.Resources | union $headless3.Resources | union $headless4.Resources | union $headless5.Resources) }}
+        {{else}}
+        {{ $currentCollections.Set "list" ($headless1.Resources | union $headless2.Resources | union $headless3.Resources | union $headless4.Resources ) }}
+      {{end}}
+      
+      {{ $merged := $currentCollections.Get "list" }}
+
+      <div id="emptystate" style="display: none">
+        <div class="d-flex a-i-center gap-16 text-muted">
+          <i class="dlt-c8y-icon-search" style="font-size: 4rem;"></i>
+          <div>
+            <p><strong>No change logs to display.</strong><br>
+             <small>Refine or <a href="javascript: void(0)" id="clearFilters">clear</a> your filters.</small>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {{ $reusablePages := sort ($merged.ByType "page") ".Date" "desc"}}
 
       {{/*  retrieve the starting date from the settings  */}}
       {{ $currentDate := newScratch }}
@@ -48,7 +76,7 @@
       {{ $recordDate := .Date.Format "January 2, 2006" }}
       {{ if eq $recordDate $listDate }}
       {{$changeTypeClass := print "change-type-" (index .Params.change_type 0).label | urlize}}
-      {{$productAreaClass := print "productarea-" (index .Params.product_area 0).label | urlize}}
+      {{$productAreaClass := print "productarea-" .Params.product_area | urlize}}
       {{$componentClass := print "component-" (index .Params.component 0).label | urlize}}
       {{$technicalComponentClass := print "technicalcomponent-" (index .Params.technical_component 0).label | urlize}}
       {{ if not (in $classes $changeTypeClass) }}
@@ -74,9 +102,11 @@
       </div>
       {{end}}
 
+
+
       <section
         id='{{(replace .Name ".md" "") | urlize }}'
-        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}}  productarea-{{(index .Params.product_area 0).label | urlize}}  component-{{ (index .Params.component 0).label | urlize }}  technicalcomponent-{{(index .Params.technical_component 0).label | urlize}}"
+        class="page-section change-type-{{(index .Params.change_type 0).label | urlize}} component-{{ (index .Params.component 0).label | urlize }}  productarea-{{.Params.product_area | urlize}} technicalcomponent-{{(index .Params.technical_component 0).label | urlize}}"
         data-date="{{.Date}}"
       >
         <div class="article-content change-log">
@@ -94,33 +124,40 @@
           </div>
           <div class="change-log__summary">
             {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
-            <div>
-              <small class="text-muted">Product area</small><br>
-              <p>{{(index .Params.product_area 0).label}}</p>
-            </div>
-            <div>
-              <small class="text-muted">Component</small>
-              <p>{{(index .Params.component 0).label}}</p>
-            </div>
-            {{/*  Display the build artifact and the version info only in yearly releases  */}}
+            <div class="metadata">
+              <button class="btn-metadata" data-tag="productarea-{{.Params.product_area | urlize}}">
+                <small class="text-muted">Product area</small><br>
+                <p>{{.Params.product_area}}</p>
+              </button>
+            
+              <button class="btn-metadata" data-tag="component-{{(index .Params.component 0).label | urlize}}">
+                <small class="text-muted">Component</small>
+                <p>{{(index .Params.component 0).label}}</p>
+              </button>
+              {{/*  Display the build artifact only in yearly releases  */}}
+              {{ if site.Data.date_settings.yearly_release}}
+                <button class="btn-metadata" data-tag="technicalcomponent-{{(index .Params.technical_component 0).label | urlize}}">
+                  <small class="text-muted">Build artifact</small>
+                  <p>{{(index .Params.technical_component 0).label}}</p>
+                </button>
+              {{end}}
+              </div>
+          </div>
+          <div class="change-log__version">
             {{ if site.Data.date_settings.yearly_release}}
-            <div>
-              <small class="text-muted">Build artifact</small>
-              <p>{{(index .Params.technical_component 0).label}}</p>
-            </div>
-            {{ if .Params.version}}
-            <div>
-              <small class="text-muted">Version</small>
-              <p>{{.Params.version}}</p>
-            </div>
-            {{end}}
-            {{ if .Params.jira }}
-            <div>
-              <small class="text-muted">Ticket</small>
-              <p>{{.Params.jira}}</p>
-            </div>
-            {{end}}
-            {{end}}
+                {{ if .Params.version}}
+                  <div class="d-flex gap-8">
+                    <small class="text-muted">Version</small>
+                    <p class="small">{{.Params.version}}</p>
+                  </div>
+                {{end}}
+              {{end}}
+              {{ if .Params.jira }}
+                <div class="d-flex gap-8">
+                  <small class="text-muted">Ticket</small>
+                  <p class="small">{{.Params.jira}}</p>
+                </div>
+              {{end}}
           </div>
           {{.Content }}
         </div>

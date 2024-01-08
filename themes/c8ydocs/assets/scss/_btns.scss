@@ -211,3 +211,20 @@ body:has(.home-top){
     }
   }
 }
+
+
+.btn-metadata{
+  background: var(--c8y-root-component-background-default);
+  text-align: left;
+  transition: all .25s ease;
+  &:hover{
+    border-color: var(--c8y-brand-primary)!important;
+    p{
+      color: var(--c8y-brand-primary)!important;
+    }
+  }
+  &:focus{
+    outline: 2px solid $brand-primary;
+    outline-offset: -2px;
+  }
+}

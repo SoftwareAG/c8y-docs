@@ -103,6 +103,7 @@ window.onload = (event)=>{
     });
   });
 
+  // filter from the metadata
   const tagBtns = document.querySelectorAll('[data-tag]');
   tagBtns.forEach(btn => {
     btn.addEventListener('click', () => {

@@ -24,15 +24,16 @@ collections:
   # Change logs
   #  ============================== 
 
-  - name: "change_logs"
-    label: "Change Logs"
-    folder: "content/change-logs"
-    description: "Change log entries"
+  - name: "analytics"
+    label: "Analytics"
+    folder: "content/change-logs/analytics"
+    description: "Change log entries for the Analytics product area"
     create: true
+    slug: "{{fields.date}}_{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Title", name: "title", widget: "string"}
-
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Analytics"}
       - label: Change type
         name: change_type
         widget: ncw-file-relation
@@ -41,13 +42,47 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
-      - label: Product area
-        name: product_area
+      - label: Component
+        name: component
         widget: ncw-file-relation
         collection: configs
-        file: product_area
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+
+      - label: Build artifact
+        name: technical_component
+        widget: ncw-file-relation
+        collection: configs
+        file: technical_component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: true
+      
+      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+        
+  - name: "application_enablement"
+    label: "Application enablement & solutions"
+    folder: "content/change-logs/application-enablement"
+    description: "Change log entries for the Application enablement & solutions product area"
+    create: true
+    slug: "{{fields.date}}_{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Application enablement & solutions"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
         target_field: options
         id_field: id
         display_fields: option
@@ -77,6 +112,139 @@ collections:
       - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
+  - name: "device_management"
+    label: "Device management & connectivity"
+    folder: "content/change-logs/device-management"
+    description: "Change log entries for the Device management & connectivity product area"
+    create: true
+    slug: "{{fields.date}}_{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Device management & connectivity"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+
+      - label: Build artifact
+        name: technical_component
+        widget: ncw-file-relation
+        collection: configs
+        file: technical_component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+      
+      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+        
+  - name: "platform_services"
+    label: "Platform services"
+    folder: "content/change-logs/platform-services"
+    description: "Change log entries for the Platform services product area"
+    create: true
+    slug: "{{fields.date}}_{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Platform services"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+
+      - label: Build artifact
+        name: technical_component
+        widget: ncw-file-relation
+        collection: configs
+        file: technical_component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+      
+      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+        
+  - name: "edge"
+    label: "Edge"
+    folder: "content/change-logs/edge"
+    description: "Change log entries for the Edge product area"
+    create: true
+    slug: "{{fields.date}}_{{slug}}"
+    fields:
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Product area", name: "product_area", widget: "hidden", default: "Edge"}
+      - label: Change type
+        name: change_type
+        widget: ncw-file-relation
+        collection: configs
+        file: change_type
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+
+      - label: Component
+        name: component
+        widget: ncw-file-relation
+        collection: configs
+        file: component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+
+      - label: Build artifact
+        name: technical_component
+        widget: ncw-file-relation
+        collection: configs
+        file: technical_component
+        target_field: options
+        id_field: id
+        display_fields: option
+        required: false
+      
+      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - { label: "Body", name: "body", widget: "markdown"}
+
+
   - label: Change logs config
     name: configs
     files:
@@ -94,22 +262,6 @@ collections:
             widget: datetime
             hint: Starting date to display the change logs (90 days for change logs)
 
-      - name: product_area
-        label: Product Area options
-        file: data/productarea.json
-        fields:
-          - name: options
-            label: Options
-            widget: list
-            fields:
-              - label: Option
-                name: option
-                widget: string
-              - label: ID
-                name: id
-                widget: ncw-id
-                prefix: product_area
-            
       - name: component
         label: Component options
         file: data/component.json
@@ -125,6 +277,32 @@ collections:
                 name: id
                 widget: ncw-id
                 prefix: component
+              - label: Product Area
+                name: product_area
+                widget: ncw-file-relation
+                collection: configs
+                file: product_area
+                target_field: options
+                id_field: id
+                display_fields: option
+                required: false 
+
+      - name: product_area
+        label: Product Area options
+        file: data/productarea.json
+        fields:
+          - name: options
+            label: Options
+            widget: list
+            fields:
+              - label: Option
+                name: option
+                widget: string
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: product_area
+              
 
       - name: change_type
         label: Change type options

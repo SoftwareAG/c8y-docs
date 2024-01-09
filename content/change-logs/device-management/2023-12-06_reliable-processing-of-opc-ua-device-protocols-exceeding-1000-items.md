@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T16:09:38.948Z
-title: OPC UA device protocols
+title: Reliable processing of OPC UA device protocols exceeding 1000 items
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

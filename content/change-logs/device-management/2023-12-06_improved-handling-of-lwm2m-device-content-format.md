@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:55:48.796Z
-title: Improved content format selection
+title: Improved handling of LWM2M device content format
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

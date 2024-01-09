@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T10:31:17.177Z
-title: "Repository items now correctly shown"
+title: "Device profiles repository items now correctly shown"
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

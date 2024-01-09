@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:47:22.131Z
-title: LWM2M agent processes and stores instances correctly
+title: LWM2M agent processes and stores object instances correctly
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

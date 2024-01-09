@@ -26,6 +26,10 @@ In addition, the right drawer now also provides a **Documentation** section with
 
 The EPL memory profiler snapshots, which were previously only included in the enhanced diagnostics information, are now also included in the basic diagnostics information. This is helpful in case a high memory usage alarm is raised when the Apama-ctrl microservice consumes 90% of the maximum memory permitted for the microservice container and you only have basic diagnostics information available. See also [Downloading diagnostics and logs](https://cumulocity.com/docs/streaming-analytics/troubleshooting/#diagnostics-download) in the user documentation.
 
+#### -Change- Renamed commands for downloading analytic models and EPL apps
+
+The commands for downloading analytic models and EPL apps have been renamed from **Export** to **Download**. See also [Downloading a model](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#downloading-a-model) and [Developing apps with the Streaming Analytics application](https://cumulocity.com/docs/streaming-analytics/epl-apps/#dev-apps-with-sa).
+
 #### -Feature- New EPL sample
 
 A new EPL sample named "Receive update notifications"

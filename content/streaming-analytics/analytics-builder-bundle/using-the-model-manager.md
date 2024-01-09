@@ -32,7 +32,7 @@ There are two types of models, and the cards for these models look different:
 
 As long as a model has no template parameters, there will be zero instances and the card shows the controls for selecting a mode and activating it.
 
-Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to export or remove the model\).
+Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to download or remove the model\).
 
 If a description or tags have been defined for the model, this is shown on the card for that model. If you want to change the name, the description or the tags of a model, you have to do this in the model editor. See [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
 
@@ -208,19 +208,19 @@ On the **Models** tab of the model manager, click the actions menu of the model 
 
 A card for the duplicated model is immediately shown in the model manager.
 
-### Exporting a model {#exporting-a-model}
+### Downloading a model {#downloading-a-model}
 
-You can export each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current {{< product-c8y-iot >}} tenant to a different tenant. The model is saved in JSON format.
+You can download each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current {{< product-c8y-iot >}} tenant to a different tenant. The model is saved in JSON format.
 
-#### To export a model {#to-export-a-model}
+#### To download a model {#to-download-a-model}
 
-On the **Models** tab of the model manager, click the actions menu of the model that you want to export and then click **Export**.
+On the **Models** tab of the model manager, click the actions menu of the model that you want to download and then click **Download**.
 
-The resulting behavior depends on your browser. The model is usually exported to the download location of your browser.
+The resulting behavior depends on your browser. The model is usually downloaded to the download location of your browser.
 
 ### Importing a model {#importing-a-model}
 
-You can import a model that has previously been exported \(in JSON format\). This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
+You can import a model that has previously been downloaded in JSON format. This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
 
 #### To import a model {#to-import-a-model}
 

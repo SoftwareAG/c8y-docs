@@ -1,0 +1,19 @@
+---
+date: 2023-12-06T16:19:17.461Z
+title: Fixed undelegate action button
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+product_area:
+  - value: product_area-T1-_TpDyv
+    label: Platform services
+component:
+  - value: component-0UgqXH1Ys
+    label: Administration
+technical_component:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+jira: DM-2356
+version: 10.18.108.0
+---
+The undelegate action button in the user details was not working. This has been fixed by re-enabling its functionality.

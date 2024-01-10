@@ -4,9 +4,7 @@ title: Modified pagination check of the user list
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
-product_area:
-  - value: product_area-T1-_TpDyv
-    label: Platform services
+product_area: Platform services
 component:
   - value: component-0UgqXH1Ys
     label: Administration

@@ -1,5 +1,5 @@
 ---
-title: "Change logs new"
+title: "Change logs"
 icon: "dlt-c8y-icon-logs"
 type: change-log
 weight: 2

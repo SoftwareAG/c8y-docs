@@ -9,13 +9,16 @@
       "id": "product_area-eC7h0SiQ2b"
     },
     {
-      "option": "Device Management",
+      "option": "Device management & connectivity",
       "id": "product_area-m1iHjqikD"
     },
     {
-      "id": "product_area-T1-_TpDyv",
-      "option": "Platform services"
+      "option": "Platform services",
+      "id": "product_area-T1-_TpDyv"
+    },
+    {
+      "option": "Edge",
+      "id": "product_area-v8mvxKJVc"
     }
-  ],
-  "option": "hhhhhiei"
+  ]
 }

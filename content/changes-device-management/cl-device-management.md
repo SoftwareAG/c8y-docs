@@ -43,7 +43,7 @@ The Device management home page now also provides a customizable dashboard which
 
 #### -Change Device management: Added information on restrictions to auto-registration
 
-Information has been added that the auto-registration option in trusted certification does not support devices communicating via the LWM2M protocol. This information has been included in the tooltip on the **Trusted certificates** page and in the user documentation. [MTM-56462]
+The auto-registration option in trusted certification does not support devices communicating via the LWM2M protocol. This information has been included in the tooltip on the **Trusted certificates** page and in the user documentation. [MTM-56462]
 
 #### -Feature LWM2M: New toggle for switching off empty data
 

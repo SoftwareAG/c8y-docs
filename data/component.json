@@ -197,6 +197,26 @@
     {
       "id": "component-kxtzZZRqL",
       "option": "3rd-party libraries"
+    },
+    {
+      "id": "component-3UwjneUTb",
+      "option": "Messaging Service",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-lWeHt1rgA",
+      "option": "SMS microservice",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
     }
   ]
 }

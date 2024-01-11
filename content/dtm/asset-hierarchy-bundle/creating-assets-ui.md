@@ -131,6 +131,10 @@ In case of a bulk operation failure, the entire operation is rolled back and the
 
 Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
 It shows all the subassets, child devices and asset properties.
+{{< c8y-admon-info>}}
+The key value pairs for complex properties in **Subassets** page are displayed in the order which has been specified in the **Order** field of property definition in **Asset properties** page.
+{{< /c8y-admon-info>}}
+
 
 In the top right corner of the **Subassets** tab, you can [assign devices](#to-assign-devices-to-an-asset).
 

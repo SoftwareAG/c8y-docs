@@ -41,11 +41,11 @@ In the Device management application, a wizard has been implemented which guides
 
 The Device management home page now also provides a customizable dashboard which lets users add customized widgets. [DM-1644]
 
-#### -Change Device management: Added information on restrictions to auto-registration
+#### -Change- Device management: Added information on restrictions to auto-registration
 
 The auto-registration option in trusted certification does not support devices communicating via the LWM2M protocol. This information has been included in the tooltip on the **Trusted certificates** page and in the user documentation. [MTM-56462]
 
-#### -Feature LWM2M: New toggle for switching off empty data
+#### -Feature- LWM2M: New toggle for switching off empty data
 
 For LWM2M devices, it is now possible to switch off the sending of empty measurement/event/alarm/custom actions data for individual resources. Moreover, you can toggle on/off or optionally skip empty values for all resources using the LWM2M device protocol at once. [DM-2798]
 

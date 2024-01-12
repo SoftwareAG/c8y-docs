@@ -2,8 +2,8 @@
 date: 2023-12-06T16:04:16.688Z
 title: Update of 3-party protobuf-java
 change_type:
-  - value: change-mAHSMDrke
-    label: Security
+  - value: change-2c7RdTdXo4
+    label: Improvement
 product_area: Platform services
 component:
   - value: component-kxtzZZRqL

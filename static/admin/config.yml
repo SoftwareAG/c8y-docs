@@ -29,7 +29,7 @@ collections:
     folder: "content/change-logs/analytics"
     description: "Change log entries for the Analytics product area"
     create: true
-    slug: "{{fields}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
       - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", required: false}
       - {label: "Title", name: "title", widget: "string"}

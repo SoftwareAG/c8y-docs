@@ -14,4 +14,4 @@ technical_component:
 jira: DM-2274
 version: 10.18.72.0
 ---
-The action buttons in the windows <b>Add bulk operation</b> and <b>Add device protocol</b> are now properly aligned when using mobile screens.
+The action buttons in the windows **Add bulk operation** and **Add device protocol** are now properly aligned when using mobile screens.

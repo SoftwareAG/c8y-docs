@@ -6,12 +6,12 @@ change_type:
     label: Improvement
 product_area: Device management & connectivity
 component:
-  - value: component-miibhMoXL
-    label: SmartREST
+  - value: component-LcWEQW5gs
+    label: MQTT
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: DM-2346
 version: 10.18.110.0
 ---
-Added the SmartREST static template 125 for sending heartbeat from a device. 
+Added the SmartREST static template 125 for sending heartbeat from a device.

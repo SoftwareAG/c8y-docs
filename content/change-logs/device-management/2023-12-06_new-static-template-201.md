@@ -6,8 +6,8 @@ change_type:
     label: Improvement
 product_area: Device management & connectivity
 component:
-  - value: component-miibhMoXL
-    label: SmartREST
+  - value: component-LcWEQW5gs
+    label: MQTT
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity

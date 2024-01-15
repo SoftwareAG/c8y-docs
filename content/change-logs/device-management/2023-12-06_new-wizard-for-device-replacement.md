@@ -7,11 +7,11 @@ change_type:
 product_area: Device management & connectivity
 component:
   - value: component--KIsStyzM
-    label: Device Management application
+    label: Device Management app
 technical_component:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 jira: DM-2168
 version: 10.18.242.0
 ---
-In the Device management application, a wizard has been implemented which guides users through replacing a physical device with another one. The replacing device must be registered in the platform in advance and is removed after the replacement procedure has been finished. 
+In the Device management application, a wizard has been implemented which guides users through replacing a physical device with another one. The replacing device must be registered in the platform in advance and is removed after the replacement procedure has been finished.

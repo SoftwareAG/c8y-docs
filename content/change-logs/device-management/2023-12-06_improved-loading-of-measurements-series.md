@@ -7,7 +7,7 @@ change_type:
 product_area: Device Management
 component:
   - value: component--KIsStyzM
-    label: Device Management application
+    label: Device Management app
 technical_component:
   - value: tc-pjJiURv9Y
     label: ui-c8y

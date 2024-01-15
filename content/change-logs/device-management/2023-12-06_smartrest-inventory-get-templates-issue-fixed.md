@@ -8,7 +8,7 @@ product_area:
   - label: Device Management
 component:
   - value: component--KIsStyzM
-    label: Device Management application
+    label: Device Management app
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity

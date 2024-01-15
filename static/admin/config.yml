@@ -31,7 +31,7 @@ collections:
     create: true
     slug: "{{fields}}_{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Analytics"}
       - label: Change type
@@ -75,7 +75,7 @@ collections:
     create: true
     slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Application enablement & solutions"}
       - label: Change type
@@ -86,7 +86,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -96,7 +96,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Build artifact
         name: build_artifact
@@ -106,10 +106,10 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
   - name: "device_management"
@@ -119,7 +119,7 @@ collections:
     create: true
     slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Device management & connectivity"}
       - label: Change type
@@ -130,7 +130,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -140,7 +140,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Build artifact
         name: build_artifact
@@ -150,10 +150,10 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
   - name: "platform_services"
@@ -163,7 +163,7 @@ collections:
     create: true
     slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Platform services"}
       - label: Change type
@@ -174,7 +174,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -184,7 +184,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Build artifact
         name: build_artifact
@@ -194,10 +194,10 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
   - name: "edge"
@@ -207,7 +207,7 @@ collections:
     create: true
     slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Edge"}
       - label: Change type
@@ -218,7 +218,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -238,10 +238,10 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
 
 

@@ -155,16 +155,6 @@
       ]
     },
     {
-      "id": "component-miibhMoXL",
-      "option": "SmartREST",
-      "product_area": [
-        {
-          "value": "product_area-m1iHjqikD",
-          "label": "Device management & connectivity"
-        }
-      ]
-    },
-    {
       "id": "component-YbYJ3gLU_",
       "option": "Web SDK",
       "product_area": [

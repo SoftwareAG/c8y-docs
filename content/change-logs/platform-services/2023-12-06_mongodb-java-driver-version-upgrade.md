@@ -6,8 +6,8 @@ change_type:
     label: Improvement
 product_area: Platform services
 component:
-  - value: component-kxtzZZRqL
-    label: 3rd-party libraries
+  - value: component-9vjGQz8Ag
+    label: Core platform
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity

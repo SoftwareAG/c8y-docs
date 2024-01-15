@@ -15,6 +15,14 @@
     {
       "id": "tc-KXXmo2SUR",
       "option": "apama-in-c8y"
+    },
+    {
+      "id": "tc-wYIY0MBDO",
+      "option": "dtm"
+    },
+    {
+      "id": "tc-0q3fjCuS6",
+      "option": "ontoplb"
     }
   ]
 }

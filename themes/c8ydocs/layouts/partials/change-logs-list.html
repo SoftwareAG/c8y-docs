@@ -146,16 +146,16 @@
           <div class="change-log__version">
             {{ if site.Data.date_settings.yearly_release}}
                 {{ if .Params.version}}
-                  <div class="d-flex gap-8">
+                  <div class="d-flex gap-4">
                     <small class="text-muted">Version</small>
-                    <p class="small">{{.Params.version}}</p>
+                    <strong class="small">{{.Params.version}}</strong>
                   </div>
                 {{end}}
               {{end}}
               {{ if .Params.jira }}
-                <div class="d-flex gap-8">
+                <div class="d-flex gap-4">
                   <small class="text-muted">Ticket</small>
-                  <p class="small">{{.Params.jira}}</p>
+                  <strong class="small">{{.Params.jira}}</strong>
                 </div>
               {{end}}
           </div>

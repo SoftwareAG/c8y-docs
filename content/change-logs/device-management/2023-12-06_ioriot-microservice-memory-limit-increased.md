@@ -1,13 +1,13 @@
 ---
 date: 2023-12-06T10:28:07.693Z
-title: Increased microservice memory limit
+title: Loriot microservice memory limit increased
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
 product_area: Device management & connectivity
 component:
   - value: component-REmGxwkF2
-    label: Loriot
+    label: LPWAN
 technical_component:
   - value: tc-QHwMfWtBk7
     label: cumulocity

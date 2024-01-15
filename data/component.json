@@ -183,6 +183,10 @@
           "label": "Analytics"
         }
       ]
+    },
+    {
+      "id": "component-LcWEQW5gs",
+      "option": "MQTT"
     }
   ]
 }

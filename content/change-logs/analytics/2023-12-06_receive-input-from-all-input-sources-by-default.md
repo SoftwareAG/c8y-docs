@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:51:42.169Z
+date: 2023-12-06T15:56:42.169Z
 title: Receive input from all input sources by default
 change_type:
   - value: change-QHu1GdukP

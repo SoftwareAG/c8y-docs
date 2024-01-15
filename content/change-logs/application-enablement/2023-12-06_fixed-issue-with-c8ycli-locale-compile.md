@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:36:01.897Z
+date: 2023-12-11T11:36:01.897Z
 title: Fixed issue with c8ycli locale-compile
 change_type:
   - value: change-VSkj2iV9m

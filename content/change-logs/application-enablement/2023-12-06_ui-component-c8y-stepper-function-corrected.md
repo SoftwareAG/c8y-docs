@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:38:31.797Z
+date: 2023-12-11T11:38:31.797Z
 title: UI component c8y-stepper function corrected
 change_type:
   - value: change-VSkj2iV9m

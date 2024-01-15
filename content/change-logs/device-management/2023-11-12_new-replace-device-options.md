@@ -1,5 +1,5 @@
 ---
-date: 2023-11-12
+date: 2023-12-11
 title: New "Replace device" options
 product_area: Device management & connectivity
 change_type:

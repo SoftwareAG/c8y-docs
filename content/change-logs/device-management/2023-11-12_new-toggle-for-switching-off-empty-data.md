@@ -1,5 +1,5 @@
 ---
-date: 2023-11-12
+date: 2023-12-11
 title: New toggle for switching off empty data
 product_area: Device management & connectivity
 change_type:
@@ -14,4 +14,4 @@ technical_component:
 jira: DM-2798
 version: 10.18.501.0
 ---
-For LWM2M devices, it is now possible to switch off the sending of empty measurement/event/alarm/custom actions data for individual resources. Moreover, you can toggle on/off or optionally skip empty values for all resources using the LWM2M device protocol at once. 
+For LWM2M devices, it is now possible to switch off the sending of empty measurement/event/alarm/custom actions data for individual resources. Moreover, you can toggle on/off or optionally skip empty values for all resources using the LWM2M device protocol at once.

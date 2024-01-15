@@ -1,5 +1,5 @@
 ---
-date: 2023-11-12
+date: 2023-12-11
 title: Added information on restrictions to auto-registration
 product_area: Device management & connectivity
 change_type:
@@ -14,4 +14,4 @@ technical_component:
 jira: MTM-56462
 version: 10.18.500.14
 ---
-The auto-registration option in trusted certification does not support devices communicating via the LWM2M protocol. This information has been included in the tooltip on the **Trusted certificates** page and in the user documentation. 
+The auto-registration option in trusted certification does not support devices communicating via the LWM2M protocol. This information has been included in the tooltip on the **Trusted certificates** page and in the user documentation.

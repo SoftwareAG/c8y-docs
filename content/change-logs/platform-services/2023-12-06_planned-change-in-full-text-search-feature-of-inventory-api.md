@@ -1,9 +1,9 @@
 ---
 date: 2023-12-06T15:55:52.890Z
-title: Change in full text search feature of Inventory API
+title: Planned change in full text search feature of Inventory API
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-3BQrQ6adS
+    label: API change
 product_area: Platform services
 component:
   - value: component-JlFdtOPva

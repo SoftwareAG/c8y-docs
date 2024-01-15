@@ -2,8 +2,8 @@
 date: 2023-12-06T11:11:58.877Z
 title: Introduced required parameters in the Alarms, Events, Measurements APIs
 change_type:
-  - value: change-inv-3bw8e
-    label: Announcement
+  - value: change-3BQrQ6adS
+    label: API change
 product_area: Platform services
 component:
   - value: component-JlFdtOPva

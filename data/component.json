@@ -101,16 +101,6 @@
       ]
     },
     {
-      "id": "component-REmGxwkF2",
-      "option": "Loriot",
-      "product_area": [
-        {
-          "value": "product_area-m1iHjqikD",
-          "label": "Device management & connectivity"
-        }
-      ]
-    },
-    {
       "id": "component-TCiiCOknp5",
       "option": "LPWAN",
       "product_area": [
@@ -193,10 +183,6 @@
           "label": "Analytics"
         }
       ]
-    },
-    {
-      "id": "component-kxtzZZRqL",
-      "option": "3rd-party libraries"
     }
   ]
 }

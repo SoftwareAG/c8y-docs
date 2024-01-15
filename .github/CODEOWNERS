@@ -4,9 +4,9 @@
 # Either @username and email.address@domain.com can be used
 
 # These owners will be the default owners for everything in the repo.
-* @BeateRixen marlene.windel@softwareag.com @rssag
+* @BeateRixen marlene.windel@softwareag.com
 
 /content/users-guide/device-management-bundle/ @Oezge-Akin @BeateRixen marlene.windel@softwareag.com @rssag
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com @rssag
-/content/edge/ @sharath-jk @BeateRixen marlene.windel@softwareag.com @rssag
+/content/edge/ @sharath-jk @BeateRixen marlene.windel@softwareag.com

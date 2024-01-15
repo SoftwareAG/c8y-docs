@@ -8,7 +8,7 @@ product_area: Platform services
 component:
   - value: component-JlFdtOPva
     label: Rest API
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---

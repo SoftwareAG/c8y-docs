@@ -29,7 +29,7 @@ collections:
     folder: "content/change-logs/analytics"
     description: "Change log entries for the Analytics product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields}}_{{slug}}"
     fields:
       - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Title", name: "title", widget: "string"}
@@ -55,10 +55,10 @@ collections:
         required: true
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
@@ -73,7 +73,7 @@ collections:
     folder: "content/change-logs/application-enablement"
     description: "Change log entries for the Application enablement & solutions product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
       - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Title", name: "title", widget: "string"}
@@ -99,10 +99,10 @@ collections:
         required: false
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
@@ -117,7 +117,7 @@ collections:
     folder: "content/change-logs/device-management"
     description: "Change log entries for the Device management & connectivity product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
       - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Title", name: "title", widget: "string"}
@@ -143,10 +143,10 @@ collections:
         required: false
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
@@ -161,7 +161,7 @@ collections:
     folder: "content/change-logs/platform-services"
     description: "Change log entries for the Platform services product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
       - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Title", name: "title", widget: "string"}
@@ -187,10 +187,10 @@ collections:
         required: false
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
@@ -205,7 +205,7 @@ collections:
     folder: "content/change-logs/edge"
     description: "Change log entries for the Edge product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
       - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Title", name: "title", widget: "string"}
@@ -231,10 +231,10 @@ collections:
         required: false
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
@@ -320,9 +320,9 @@ collections:
                 widget: ncw-id
                 prefix: change
 
-      - name: technical_component
+      - name: build_artifact
         label: Build artifacts options
-        file: data/technicalcomponent.json
+        file: data/buildartifact.json
         fields:
           - name: options
             label: Options

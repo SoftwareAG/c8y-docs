@@ -9,7 +9,7 @@ product_area: Application enablement & solutions
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK
-technical_component:
+build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ---

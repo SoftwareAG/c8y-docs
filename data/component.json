@@ -11,18 +11,68 @@
       ]
     },
     {
-      "id": "component-M5-cepIIS",
-      "option": "Streaming Analytics",
+      "option": "Authentication",
+      "id": "q3kclF6pO",
       "product_area": [
         {
-          "value": "product_area-whzlZT2MhT",
-          "label": "Analytics"
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
         }
       ]
     },
     {
-      "option": "Authentication",
-      "id": "q3kclF6pO",
+      "id": "component-OG_650_b2",
+      "option": "Core platform",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-V6J_FcOT2",
+      "option": "Data broker",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-2Yri1-l3n",
+      "option": "Messaging Service",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-rlV-4nEfO",
+      "option": "Microservice Hosting",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-JlFdtOPva",
+      "option": "Rest API",
+      "product_area": [
+        {
+          "value": "product_area-T1-_TpDyv",
+          "label": "Platform services"
+        }
+      ]
+    },
+    {
+      "id": "component-OwVpu2mA6",
+      "option": "SMS microservice",
       "product_area": [
         {
           "value": "product_area-T1-_TpDyv",
@@ -51,52 +101,12 @@
       ]
     },
     {
-      "id": "component-YdSEScrEC",
-      "option": "Cockpit",
-      "product_area": [
-        {
-          "value": "product_area-eC7h0SiQ2b",
-          "label": "Application enablement & solutions"
-        }
-      ]
-    },
-    {
-      "id": "component-V6J_FcOT2",
-      "option": "Data broker",
-      "product_area": [
-        {
-          "value": "product_area-T1-_TpDyv",
-          "label": "Platform services"
-        }
-      ]
-    },
-    {
       "id": "component--KIsStyzM",
       "option": "Device Management app",
       "product_area": [
         {
           "value": "product_area-m1iHjqikD",
           "label": "Device management & connectivity"
-        }
-      ]
-    },
-    {
-      "id": "component-Tl88RYb4A",
-      "option": "Digital Twin Manager",
-      "product_area": [
-        {
-          "value": "product_area-eC7h0SiQ2b",
-          "label": "Application enablement & solutions"
-        }
-      ]
-    },
-    {
-      "id": "component-QWPx3rFfn",
-      "option": "Java SDK",
-      "product_area": [
-        {
-          "value": "product_area-eC7h0SiQ2b",
-          "label": "Application enablement & solutions"
         }
       ]
     },
@@ -121,16 +131,12 @@
       ]
     },
     {
-      "id": "component-7lcnqU5FL",
-      "option": "Microservice SDK"
-    },
-    {
-      "id": "component-Ry7NUJS_4",
-      "option": "OEE",
+      "id": "component-LcWEQW5gs",
+      "option": "MQTT",
       "product_area": [
         {
-          "value": "product_area-eC7h0SiQ2b",
-          "label": "Application enablement & solutions"
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
         }
       ]
     },
@@ -145,12 +151,62 @@
       ]
     },
     {
-      "id": "component-JlFdtOPva",
-      "option": "Rest API",
+      "id": "component-muqLO0F0Z",
+      "option": "SIM Management",
       "product_area": [
         {
-          "value": "product_area-T1-_TpDyv",
-          "label": "Platform services"
+          "value": "product_area-m1iHjqikD",
+          "label": "Device management & connectivity"
+        }
+      ]
+    },
+    {
+      "id": "component-YdSEScrEC",
+      "option": "Cockpit",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-Tl88RYb4A",
+      "option": "Digital Twin Manager",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-QWPx3rFfn",
+      "option": "Java SDK",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-Sv2buFZ5l",
+      "option": "Microservice SDK",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
+        }
+      ]
+    },
+    {
+      "id": "component-Ry7NUJS_4",
+      "option": "OEE",
+      "product_area": [
+        {
+          "value": "product_area-eC7h0SiQ2b",
+          "label": "Application enablement & solutions"
         }
       ]
     },
@@ -165,8 +221,8 @@
       ]
     },
     {
-      "id": "component-A8vMaVaTg",
-      "option": "DataHub",
+      "id": "component-M5-cepIIS",
+      "option": "Streaming Analytics",
       "product_area": [
         {
           "value": "product_area-whzlZT2MhT",
@@ -175,8 +231,14 @@
       ]
     },
     {
-      "id": "component-LcWEQW5gs",
-      "option": "MQTT"
+      "id": "component-A8vMaVaTg",
+      "option": "DataHub",
+      "product_area": [
+        {
+          "value": "product_area-whzlZT2MhT",
+          "label": "Analytics"
+        }
+      ]
     }
   ]
 }

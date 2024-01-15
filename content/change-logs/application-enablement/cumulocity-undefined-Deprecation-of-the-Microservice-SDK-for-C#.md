@@ -8,7 +8,7 @@ product_area: Application enablement & solutions
 component:
   - value: component-7lcnqU5FL
     label: Microservice SDK
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---

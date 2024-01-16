@@ -1,13 +1,13 @@
 ---
 date: 2023-12-06T16:20:15.159Z
 title: Fixed issues with the Ericsson DCP SMS provider
+product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
-product_area: Platform services
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+  - value: component-OwVpu2mA6
+    label: SMS microservice
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity

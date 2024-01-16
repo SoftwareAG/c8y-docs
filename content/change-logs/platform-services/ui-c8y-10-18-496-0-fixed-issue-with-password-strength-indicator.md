@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:34:00.835Z
-title: Improved password strength indicator
+title: Fixed issue with password strength indicator
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: Improved unsecured login option
+title: Fixed unsecured login option
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

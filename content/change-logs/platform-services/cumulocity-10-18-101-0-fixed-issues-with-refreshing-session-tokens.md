@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: Refreshing session tokens with two-factor-authentication
+title: Fixed issues with refreshing session tokens
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

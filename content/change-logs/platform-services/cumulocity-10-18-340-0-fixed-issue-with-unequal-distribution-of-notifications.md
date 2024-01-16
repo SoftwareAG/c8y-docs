@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: No unequal distribution of notifications
+title: Fixed issue with unequal distribution of notifications
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

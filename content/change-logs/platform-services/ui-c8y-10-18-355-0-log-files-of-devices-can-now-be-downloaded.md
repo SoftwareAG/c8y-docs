@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T16:00:12.648Z
-title: Log files stored in platform can now be downloaded
+title: Log files of devices can now be downloaded
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

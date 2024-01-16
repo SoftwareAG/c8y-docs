@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: Improved Proof of Possession process
+title: Fixed issues with Proof of Possession process
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

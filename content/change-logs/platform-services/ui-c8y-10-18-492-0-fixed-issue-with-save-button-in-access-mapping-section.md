@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:49:04.056Z
-title: Changing data in the access mapping section
+title: Fixed issue with Save button in access mapping section
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

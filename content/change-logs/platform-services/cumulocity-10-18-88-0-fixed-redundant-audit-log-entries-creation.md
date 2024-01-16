@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T16:24:32.165Z
-title: Improved custom alarm property
+title: Fixed redundant audit log entries creation
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

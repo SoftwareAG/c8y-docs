@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: Fixed issue from invalid pageSize or currentPage parameter
+title: Fixed issue with invalid parameters
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

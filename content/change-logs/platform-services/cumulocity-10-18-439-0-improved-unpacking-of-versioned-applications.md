@@ -8,7 +8,7 @@ product_area: Platform services
 component:
   - value: component-0UgqXH1Ys
     label: Administration
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: MTM-53724

@@ -8,7 +8,7 @@ change_type:
 component:
   - value: component-lWeHt1rgA
     label: SMS microservice
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: MTM-56027

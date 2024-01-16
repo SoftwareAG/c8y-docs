@@ -8,7 +8,7 @@ change_type:
 component:
   - value: component-JlFdtOPva
     label: Rest API
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: MTM-52700

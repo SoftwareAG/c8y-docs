@@ -8,7 +8,7 @@ change_type:
 component:
   - value: q3kclF6pO
     label: Authentication
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: MTM-55200

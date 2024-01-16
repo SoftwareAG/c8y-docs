@@ -8,7 +8,7 @@ change_type:
 component:
   - value: component-3UwjneUTb
     label: Messaging Service
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: MTM-53509

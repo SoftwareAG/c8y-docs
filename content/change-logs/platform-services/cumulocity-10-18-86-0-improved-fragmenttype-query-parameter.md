@@ -8,7 +8,7 @@ change_type:
 component:
   - value: component-kxtzZZRqL
     label: 3rd-party libraries
-technical_component:
+build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 jira: MTM-51379

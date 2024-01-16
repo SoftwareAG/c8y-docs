@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-1616
+ticket: DM-1616
 version: 10.18.246.0
 ---
 In the data grid component, a new filter overview dropdown has been added. It displays all active filters in one place and allows users to remove filters.

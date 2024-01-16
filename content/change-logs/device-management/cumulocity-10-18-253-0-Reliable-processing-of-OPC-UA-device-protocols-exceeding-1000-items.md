@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-2634
+ticket: DM-2634
 version: 10.18.253.0
 ---
 The application of OPC UA device protocols was unreliable when there were more than 1000 protocols. This is now fixed.

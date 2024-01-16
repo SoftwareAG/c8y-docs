@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54107
+ticket: MTM-54107
 version: 10.18.370.0
 ---
 Fixed an issue where measurements created at the same time were not displayed in dashboards in the same row, and when using the option to create multiple measurements at once, only the first one from the list was displayed.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53341
+ticket: MTM-53341
 version: 10.18.84.0
 ---
 The dependency on <code>com.jayway.jsonpath:json-path</code> has been removed from Java SDK.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-51514
+ticket: MTM-51514
 version: 10.18.32.0
 ---
 It is now possible to remove a file when updating its file property within a complex property of an asset.

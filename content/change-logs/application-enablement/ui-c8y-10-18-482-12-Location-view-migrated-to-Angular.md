@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-49947
+ticket: MTM-49947
 version: 10.18.482.12
 ---
 The location view in the Device management and Cockpit application has been migrated to Angular. The map provider, the location search, and the map layers are now configurable via application options or tenant options. The angular.js module <code>@c8y/ng1-modules/devicemanagement-location</code> for location was removed and must be migrated or at least removed on update of a custom build application.

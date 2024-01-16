@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-51106
+ticket: MTM-51106
 version: 10.18.32.0
 ---
 Improved the localization of the dialog window titles for adding and editing dashboards and reports.

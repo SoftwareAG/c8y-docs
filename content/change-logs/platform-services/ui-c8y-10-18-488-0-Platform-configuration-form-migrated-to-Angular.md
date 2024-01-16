@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54308
+ticket: MTM-54308
 version: 10.18.488.0
 ---
 The platform configuration form has been migrated to Angular with Schema-form removed.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52704
+ticket: MTM-52704
 version: 10.18.63.0
 ---
 In the data point library, it is now possible to pick fragment and series from an existing data point.

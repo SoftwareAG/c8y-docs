@@ -64,7 +64,7 @@ collections:
         display_fields: option
         required: true
       
-      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
       - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
@@ -108,7 +108,7 @@ collections:
         display_fields: option
         required: true
       
-      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
       - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
@@ -152,7 +152,7 @@ collections:
         display_fields: option
         required: true
       
-      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
       - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
@@ -196,7 +196,7 @@ collections:
         display_fields: option
         required: true
       
-      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
       - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
@@ -240,7 +240,7 @@ collections:
         display_fields: option
         required: true
       
-      - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
+      - {label: "Ticket", name: "ticket", widget: "string", required: false, hint: "The ticket number, e.g. MTM-50245"}
       - {label: "Version", name: "version", widget: "string", required: true, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
 

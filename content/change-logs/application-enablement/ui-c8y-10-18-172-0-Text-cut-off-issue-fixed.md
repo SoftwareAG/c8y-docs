@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53597
+ticket: MTM-53597
 version: 10.18.172.0
 ---
 Fixed an issue where the text for a link on the login screen was cut off.

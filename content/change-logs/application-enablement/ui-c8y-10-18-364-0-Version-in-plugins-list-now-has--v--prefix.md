@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54210
+ticket: MTM-54210
 version: 10.18.364.0
 ---
 The version in the plugins list is now displayed with a "v" prefix.

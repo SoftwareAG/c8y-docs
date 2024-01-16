@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52969
+ticket: MTM-52969
 version: 10.18.54.0
 ---
 REST APIs no longer return the <code>totalPages</code> value if no query criteria are provided.

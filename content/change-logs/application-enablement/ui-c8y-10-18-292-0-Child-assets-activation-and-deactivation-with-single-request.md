@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-49732
+ticket: MTM-49732
 version: 10.18.292.0
 ---
 Activating or deactivating child assets is now executed with a single request.

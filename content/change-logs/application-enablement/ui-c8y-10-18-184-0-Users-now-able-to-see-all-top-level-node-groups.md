@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53394
+ticket: MTM-53394
 version: 10.18.184.0
 ---
 Fixed an issue where users were not able to see all top-level node groups, even if they had the required permissions.

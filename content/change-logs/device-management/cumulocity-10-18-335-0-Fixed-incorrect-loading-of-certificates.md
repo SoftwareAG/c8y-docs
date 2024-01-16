@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-55328
+ticket: MTM-55328
 version: 10.18.335.0
 ---
 Fixed an issue with incorrect loading of certificates to the trust store during core startup/restart, which caused errors in authenticating MQTT devices using certificates.

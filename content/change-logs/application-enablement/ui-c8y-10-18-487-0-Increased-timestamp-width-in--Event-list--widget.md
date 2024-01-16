@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55803
+ticket: MTM-55803
 version: 10.18.487.0
 ---
 The width for the timestamp in the "Event list" widget has been slightly increased.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2221
+ticket: DM-2221
 version: 10.18.23.0
 ---
 The "Connect Smartphone" wizard illustrations have been updated.

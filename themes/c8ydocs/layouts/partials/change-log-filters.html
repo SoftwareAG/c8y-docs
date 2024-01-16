@@ -76,7 +76,7 @@
     <fieldset class="filter-fieldset c8y-fieldset" data-filter-group="change-type">
       <legend>Type</legend>
       {{ if site.Data.date_settings.yearly_release}}
-        {{ range sort site.Data.changetype.options "option" "asc" }}
+        {{ range site.Data.changetype.options }}
         
         <label class="c8y-checkbox m-b-4">
           <input type="checkbox" class="filter-btn" name="change-type-{{.option | urlize}}">

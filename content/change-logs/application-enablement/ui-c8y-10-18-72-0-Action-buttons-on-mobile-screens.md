@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2274
+ticket: DM-2274
 version: 10.18.72.0
 ---
 The action buttons in the windows **Add bulk operation** and **Add device protocol** are now properly aligned when using mobile screens.

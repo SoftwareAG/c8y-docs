@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52677
+ticket: MTM-52677
 version: 10.18.29.0
 ---
 The query language used by the managed objects API has been improved. You can now search for fields with null values. MTM-52677

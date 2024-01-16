@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55865
+ticket: MTM-55865
 version: 10.18.495
 ---
 After creating an asset with the Location property where the default values for longitude and latitude are set, a map showing a marker is displayed. If one or both of these values is deleted, the map is hidden from the sub-assets view. When editing the Location property and these values are missing, the marker for selecting a location is not shown.

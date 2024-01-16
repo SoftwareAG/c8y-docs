@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54362
+ticket: MTM-54362
 version: 10.18.391.0
 ---
 The asset property can now be cleared if not required.

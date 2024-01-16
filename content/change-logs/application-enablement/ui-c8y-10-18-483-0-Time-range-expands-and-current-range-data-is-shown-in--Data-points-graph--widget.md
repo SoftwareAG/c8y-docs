@@ -12,7 +12,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55199
+ticket: MTM-55199
 version: 10.18.483.0
 ---
 In the "Data points graph" widget, when realtime is enabled and users double-click on a chart, the time range expands now and the data for the current range is shown.

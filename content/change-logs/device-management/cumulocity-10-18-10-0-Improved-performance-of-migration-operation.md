@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-1866
+ticket: DM-1866
 version: 10.18.10.0
 ---
 

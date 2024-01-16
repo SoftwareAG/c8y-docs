@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-54562
+ticket: MTM-54562
 version: 10.18.344.0
 ---
 A new text index has been introduced for the GET `/inventory/managedObjects` endpoint. By default it only includes the following fields:

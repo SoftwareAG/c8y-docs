@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-51757
+ticket: MTM-51757
 version: 10.18.457.0
 ---
 When installing a plugin and the tenant has no custom applications, it is now possible to duplicate any existing application.

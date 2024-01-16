@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-1615
+ticket: DM-1615
 version: 10.18.491.0
 ---
 In subasset views, smart group filters are now represented by a filter chips dropdown instead of displaying the raw text filter.

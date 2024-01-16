@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2623
+ticket: DM-2623
 version: 10.18.483.0
 ---
 Fixed an issue with the LWM2M bulk device registration not accepting CSV-typed files when using the Firefox browser on Windows environments.

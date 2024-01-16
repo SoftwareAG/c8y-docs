@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-1830
+ticket: DM-1830
 version: 10.18.353.0
 ---
 Data grid components no longer persist their current page. After reloading they always return to the first page in the list.

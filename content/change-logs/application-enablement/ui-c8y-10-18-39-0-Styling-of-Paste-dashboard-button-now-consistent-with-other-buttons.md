@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2267
+ticket: DM-2267
 version: 10.18.39.0
 ---
 The styling of the <b>Paste dashboard</b> button is now properly applied and consistent with the styling of other buttons.

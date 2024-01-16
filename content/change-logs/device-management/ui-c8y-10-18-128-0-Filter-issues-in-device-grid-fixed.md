@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2321
+ticket: DM-2321
 version: 10.18.128.0
 ---
 In the device grid, issues with applying filters have been fixed.

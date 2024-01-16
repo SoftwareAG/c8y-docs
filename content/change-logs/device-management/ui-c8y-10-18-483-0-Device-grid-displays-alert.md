@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2479
+ticket: DM-2479
 version: 10.18.483.0
 ---
 The device grid now displays an alert if an issue occurs while retrieving the device data. This includes among others errors caused by custom columns configured with an invalid fragment path.

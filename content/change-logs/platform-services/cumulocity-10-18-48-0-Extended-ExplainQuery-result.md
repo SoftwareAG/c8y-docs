@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52350
+ticket: MTM-52350
 change_log: false
 version: 10.18.48.0
 ---

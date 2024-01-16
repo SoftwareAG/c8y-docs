@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55251
+ticket: MTM-55251
 version: 10.18.469.0
 ---
 Custom Web SDK implementations using the <b>ContextDashboardComponent</b> are now shown with the correct title instead of an empty one.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53342
+ticket: MTM-53342
 version: 10.18.79.0
 ---
 The Spring Boot dependency has been updated to version 2.7.11.

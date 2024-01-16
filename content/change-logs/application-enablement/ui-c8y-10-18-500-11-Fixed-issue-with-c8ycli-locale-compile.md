@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-56601
+ticket: MTM-56601
 version: 10.18.500.11
 ---
 Fixed an issue with `c8ycli locale-compile` on Windows where the compiled JSON file was not created if the path to the PO file included folders.

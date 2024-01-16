@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55349
+ticket: MTM-55349
 version: 10.18.487.0
 ---
 If a filter was set in the extensions, applications or microservices lists, reloading the page on item removal or addition did not work. This issue has been fixed.

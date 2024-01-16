@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-1644
+ticket: DM-1644
 version: 10.18.39.0
 ---
 The Device management home page now also provides a customizable dashboard which lets users add customized widgets.

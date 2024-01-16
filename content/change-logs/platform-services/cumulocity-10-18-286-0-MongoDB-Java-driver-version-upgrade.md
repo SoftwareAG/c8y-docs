@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53824
+ticket: MTM-53824
 version: 10.18.286.0
 ---
 The MongoDB Java driver has been upgraded to the latest version 4.10.2.

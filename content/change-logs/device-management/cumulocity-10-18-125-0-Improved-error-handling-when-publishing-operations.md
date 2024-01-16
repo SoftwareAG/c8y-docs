@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53168
+ticket: MTM-53168
 version: 10.18.125.0
 ---
 The error handling when publishing operations to MQTT devices has been improved.

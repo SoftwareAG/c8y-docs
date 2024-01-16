@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-48837
+ticket: MTM-48837
 version: 10.18.366.0
 ---
 The time format (12/24 hours) used for device availability and measurements is now consistent.

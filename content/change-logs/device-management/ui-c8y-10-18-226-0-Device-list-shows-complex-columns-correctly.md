@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2410
+ticket: DM-2410
 version: 10.18.226.0
 ---
 The device list now shows complex columns like <code>c8y_SoftwareList</code> correctly after converting them to strings.

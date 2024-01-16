@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-56385
+ticket: MTM-56385
 version: 10.18.496.6
 ---
 The export of the <code>@c8y/client</code> package was missing the required types which caused issues in certain setups. This has been adjusted.

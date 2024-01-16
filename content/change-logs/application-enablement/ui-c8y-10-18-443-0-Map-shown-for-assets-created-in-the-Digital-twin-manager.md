@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54045
+ticket: MTM-54045
 version: 10.18.443.0
 ---
 If a complex location property is set in the Digital twin manager application, the map is now visible in the asset view and users can select a location on the map.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-1723
+ticket: DM-1723
 version: 10.18.458.0
 ---
 If a pending device in the registration list has been accepted, the device is now removed from the list instead of the list showing the "accepted" status for the device.

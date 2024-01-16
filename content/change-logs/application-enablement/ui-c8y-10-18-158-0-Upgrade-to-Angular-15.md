@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52940
+ticket: MTM-52940
 version: 10.18.158.0
 ---
 The Web SDK has been upgraded to Angular 15.

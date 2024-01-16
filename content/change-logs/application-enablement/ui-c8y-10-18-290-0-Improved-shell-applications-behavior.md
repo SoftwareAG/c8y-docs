@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53695
+ticket: MTM-53695
 version: 10.18.290.0
 ---
 Shell applications now wait with their initial navigation until all plugins have been loaded. This allows,

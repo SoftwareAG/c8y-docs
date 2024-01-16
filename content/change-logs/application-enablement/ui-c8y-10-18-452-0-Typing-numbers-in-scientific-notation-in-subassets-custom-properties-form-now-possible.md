@@ -12,7 +12,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54503
+ticket: MTM-54503
 version: 10.18.452.0
 ---
 It is now possible to type numbers in scientific notation (for example "1.234e2") in the subassets custom properties form.

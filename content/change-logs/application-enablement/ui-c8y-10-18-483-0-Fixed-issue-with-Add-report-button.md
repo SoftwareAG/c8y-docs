@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53334
+ticket: MTM-53334
 version: 10.18.483.0
 ---
 The <b>Add report</b> button is now disabled when the user does not have the respective permissions.

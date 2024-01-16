@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55073
+ticket: MTM-55073
 version: 10.18.460.0
 ---
 It is now possible to install multiple plugins from one package to an application. Users can uninstall plugins only from an application that has this specific plugin installed.

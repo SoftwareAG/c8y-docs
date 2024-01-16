@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2606
+ticket: DM-2606
 version: 10.18.495.0
 ---
 To be able to provide more information in input fields on the expected input, dynamic form fields now support HTML markup in their description.

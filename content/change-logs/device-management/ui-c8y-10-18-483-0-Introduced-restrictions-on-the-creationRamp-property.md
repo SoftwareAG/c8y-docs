@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2661
+ticket: DM-2661
 version: 10.18.483.0
 ---
 In bulk operations, restrictions on the <code>creationRamp</code> property have been introduced. This allows better control over bulk operation creation and ensures adherence to specified limits. They are determined and can be modified by the system options <code>device-control.bulkoperation.maxcreationramp</code> and <code>device-control.bulkoperation.mincreationramp</code>.

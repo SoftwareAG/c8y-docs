@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55619
+ticket: MTM-55619
 version: 10.18.486.0
 ---
 Blueprints are no longer shown in the application switcher if they have not been deployed.

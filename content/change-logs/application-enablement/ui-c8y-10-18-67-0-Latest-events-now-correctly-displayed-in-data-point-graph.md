@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52175
+ticket: MTM-52175
 version: 10.18.67.0
 ---
 The latest events are now correctly displayed in the data point graph, even if a custom interval has been selected.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2700
+ticket: DM-2700
 version: 10.18.487.0
 ---
 After editing a device protocol details page and leaving the page, a confirmation pop-up is now always properly shown.

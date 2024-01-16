@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52566
+ticket: MTM-52566
 version: 10.18.16.0
 ---
 The performance of GET requests on the <code>/user/users</code> endpoint has been improved.

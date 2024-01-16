@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55990
+ticket: MTM-55990
 version: 10.18.490.10
 ---
 Fixed an issue with SVG files in the SCADA widget, where <code>animate</code> or <code>animateTransform</code> tags worked properly in the configuration preview, but did not work in a dashboard.

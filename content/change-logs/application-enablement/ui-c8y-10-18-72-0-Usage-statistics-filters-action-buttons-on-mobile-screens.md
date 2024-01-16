@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2274
+ticket: DM-2274
 version: 10.18.72.0
 ---
 The action buttons in the window <b>Usage statistics filters</b> are now properly aligned when using mobile screens.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53189
+ticket: MTM-53189
 version: 10.18.319.0
 ---
 The right drawer now always shows the language selected in the user preferences.

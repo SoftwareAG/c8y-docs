@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-554
+ticket: DM-554
 version: 10.18.288.0
 ---
 LWM2M device connections with X.509 certificates are now supported.

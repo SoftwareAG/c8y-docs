@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53912
+ticket: MTM-53912
 version: 10.18.338.0
 ---
 The SCADA widget mapping now holds child device data properly and is not overridden by the parent device.

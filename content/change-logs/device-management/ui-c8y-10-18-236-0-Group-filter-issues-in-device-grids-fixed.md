@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2371
+ticket: DM-2371
 version: 10.18.236.0
 ---
 Issues with the group filter in device grids resulting in empty result lists have been fixed. The first matching asset is now correctly shown as the filter value.

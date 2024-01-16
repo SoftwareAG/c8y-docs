@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53340
+ticket: MTM-53340
 version: 10.18.83.0
 ---
 The dependency on <code>org.json:json</code> has been removed from the Java SDK.

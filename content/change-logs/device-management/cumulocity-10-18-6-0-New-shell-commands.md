@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-2153
+ticket: DM-2153
 version: 10.18.6.0
 ---
 Two new LWM2M shell commands have been added.

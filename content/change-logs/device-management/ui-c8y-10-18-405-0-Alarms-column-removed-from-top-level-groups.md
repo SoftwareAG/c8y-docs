@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2106
+ticket: DM-2106
 version: 10.18.405.0
 ---
 The alarms column has been removed from top-level groups because groups do not contain alarms themselves and the column only shows direct alarms.

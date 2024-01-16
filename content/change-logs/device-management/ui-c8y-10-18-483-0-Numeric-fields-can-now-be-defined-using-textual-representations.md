@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2691
+ticket: DM-2691
 version: 10.18.483.0
 ---
 Previously, the CAN bus protocol limited the representation of numeric values in the maximum value field, which posed limitations when dealing with exceptionally large numbers. To address this limitation, we have implemented a transformation mechanism that allows numeric fields to be defined using textual representations.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-49807
+ticket: MTM-49807
 version: 10.18.78.0
 ---
 Users can now add a bookmark in the right drawer for any page in the platform.

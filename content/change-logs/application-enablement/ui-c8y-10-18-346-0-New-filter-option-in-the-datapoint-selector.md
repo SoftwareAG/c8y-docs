@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54463
+ticket: MTM-54463
 version: 10.18.346.0
 ---
 The asset selection in the datapoint selector is now filterable.

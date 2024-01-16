@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-51541
+ticket: MTM-51541
 version: 10.18.106.0
 ---
 Issues with flashing the device availability connection status have been fixed.

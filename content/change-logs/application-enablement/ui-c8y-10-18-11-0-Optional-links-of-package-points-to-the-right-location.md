@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52691
+ticket: MTM-52691
 version: 10.18.11.0
 ---
 The optional links of a package shown in the package details now point to the right location.

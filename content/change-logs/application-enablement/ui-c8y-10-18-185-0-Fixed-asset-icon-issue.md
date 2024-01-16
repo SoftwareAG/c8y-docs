@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53403
+ticket: MTM-53403
 version: 10.18.185.0
 ---
 Fixed an issue where the default group icon was displayed instead of the corresponding asset icon.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2785
+ticket: DM-2785
 version: 10.18.493.6
 ---
 Previously, when loading measurement charts data, there was a performance issue if the measurement series had no units defined, depending on the total number of measurement records. This issue has been addressed and measurements series now load efficiently regardless of units being defined or not.

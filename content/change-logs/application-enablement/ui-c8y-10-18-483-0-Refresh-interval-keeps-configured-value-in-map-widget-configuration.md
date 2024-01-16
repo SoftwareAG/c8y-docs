@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55280
+ticket: MTM-55280
 version: 10.18.483.0
 ---
 When opening a map widget configuration, the refresh interval was accidentally reset to 5s. This has been fixed and the refresh interval keeps the value previously configured.

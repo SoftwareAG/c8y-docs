@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-49364
+ticket: MTM-49364
 version: 10.18.467.0
 ---
 Editing smart rules did not work properly in case of missing (removed) devices. Now missing devices are removed automatically, and smart rules can be edited properly.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55306
+ticket: MTM-55306
 version: 10.18.483.0
 ---
 An issue was fixed where the asset widget was not rendering if deeply nested custom properties were selected.

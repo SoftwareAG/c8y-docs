@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-2427
+ticket: DM-2427
 version: 10.18.112.0
 ---
 The memory limit for the Loriot microservice has been increased to 2Gi.

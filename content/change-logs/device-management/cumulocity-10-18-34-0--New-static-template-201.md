@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-1860
+ticket: DM-1860
 version: 10.18.34.0
 ---
 Added the SmartREST static template 201 for creating measurements with multiple fragments and series.

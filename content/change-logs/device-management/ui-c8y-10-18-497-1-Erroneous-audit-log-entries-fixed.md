@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2852
+ticket: DM-2852
 version: 10.18.497.1
 ---
 Previously, when ID collisions occurred, unrelated audit log entries could appear incorrectly in the "History of changes" view for bulk operations. This has now been resolved. In <code>c8y/ngx-components</code> the <code>c8y-audit-log</code> component now accepts a <code>type</code> input.

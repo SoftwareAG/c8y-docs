@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-2563
+ticket: DM-2563
 version: 10.18.230.0
 ---
 The <code>queueMode</code> property of LWM2M registrations is now persisted correctly for the LWM2M registration updates.

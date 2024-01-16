@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2266
+ticket: DM-2266
 version: 10.18.442.0
 ---
 If the last version of a software is deleted, the software is entirely removed from the repository.

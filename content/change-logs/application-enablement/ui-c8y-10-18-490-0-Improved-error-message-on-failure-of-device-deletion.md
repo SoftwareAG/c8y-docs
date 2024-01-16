@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55536
+ticket: MTM-55536
 version: 10.18.490.0
 ---
 If a user with minimal permission tries to delete a device an error message showed up stating "Could not delete device."

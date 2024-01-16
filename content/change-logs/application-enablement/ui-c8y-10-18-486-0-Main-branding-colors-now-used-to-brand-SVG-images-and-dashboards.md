@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55585
+ticket: MTM-55585
 version: 10.18.486.0
 ---
 On branded applications, the main branding colors are now also used to brand SVG images and dashboards by automatically generating shades of the primary brand color.

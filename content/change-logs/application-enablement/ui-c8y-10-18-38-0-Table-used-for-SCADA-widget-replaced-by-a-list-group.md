@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-51932
+ticket: MTM-51932
 version: 10.18.38.0
 ---
 The table used for the SCADA widget configuration has been replaced by a list group, allowing better visualization of data and actions.

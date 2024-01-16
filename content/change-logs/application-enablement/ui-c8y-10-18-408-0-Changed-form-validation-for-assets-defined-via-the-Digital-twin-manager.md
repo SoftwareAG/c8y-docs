@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-50101
+ticket: MTM-50101
 version: 10.18.408.0
 ---
 If an asset custom property in the Digital twin manager application is declared as required and complex, all of its sub-properties are required too.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55095
+ticket: MTM-55095
 version: 10.18.444.0
 ---
 The KPI widget shows the correct previous value when hovering over the trend indicator, if no real-time updates have been received yet.

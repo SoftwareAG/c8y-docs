@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55005
+ticket: MTM-55005
 version: 10.18.483.0
 ---
 The tooltip in the "Linear gauge" widget no longer overflows the widget card. Moreover, the tooltip color changes according to the type of the declared range (default, red or yellow).

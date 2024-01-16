@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-2037
+ticket: DM-2037
 version: 10.18.50.0
 ---
 In case of bad connectivity or network delay server devices could go to a state where they were disconnected. This resulted in operation execution being suspended. This issue is now resolved.

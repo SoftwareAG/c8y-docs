@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: DM-2342
+ticket: DM-2342
 version: 10.18.69.0
 ---
 The LWM2M agent now ignores trailing commas at the end of object links in the registration request of a LWM2M client.

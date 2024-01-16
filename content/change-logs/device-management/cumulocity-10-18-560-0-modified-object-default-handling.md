@@ -3,8 +3,8 @@ date: ""
 title: Modified object default handling
 product_area: Device management & connectivity
 change_type:
-  - value: change-2c7RdTdXo4
-    label: Improvement
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
   - value: component-1KLUzmqfe
     label: LWM2M

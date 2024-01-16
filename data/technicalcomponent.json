@@ -1,0 +1,20 @@
+{
+  "options": [
+    {
+      "id": "tc-pjJiURv9Y",
+      "option": "ui-c8y"
+    },
+    {
+      "id": "tc-QHwMfWtBk7",
+      "option": "cumulocity"
+    },
+    {
+      "id": "tc-2QVkzf0Er",
+      "option": "pulsar"
+    },
+    {
+      "id": "tc-KXXmo2SUR",
+      "option": "apama-in-c8y"
+    }
+  ]
+}

@@ -29,9 +29,9 @@ collections:
     folder: "content/change-logs/analytics"
     description: "Change log entries for the Analytics product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Analytics"}
       - label: Change type
@@ -55,10 +55,10 @@ collections:
         required: true
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
@@ -73,9 +73,9 @@ collections:
     folder: "content/change-logs/application-enablement"
     description: "Change log entries for the Application enablement & solutions product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Application enablement & solutions"}
       - label: Change type
@@ -86,7 +86,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -96,20 +96,20 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
   - name: "device_management"
@@ -117,9 +117,9 @@ collections:
     folder: "content/change-logs/device-management"
     description: "Change log entries for the Device management & connectivity product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Device management & connectivity"}
       - label: Change type
@@ -130,7 +130,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -140,20 +140,20 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
   - name: "platform_services"
@@ -161,9 +161,9 @@ collections:
     folder: "content/change-logs/platform-services"
     description: "Change log entries for the Platform services product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Platform services"}
       - label: Change type
@@ -174,7 +174,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -184,20 +184,20 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "You can add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
         
   - name: "edge"
@@ -205,9 +205,9 @@ collections:
     folder: "content/change-logs/edge"
     description: "Change log entries for the Edge product area"
     create: true
-    slug: "{{fields.date}}_{{slug}}"
+    slug: "{{fields.build_artifact.0.label}}-{{fields.version}}-{{slug}}"
     fields:
-      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Date",name: "date",widget: "datetime", format: "YYYY-MM-DD", default: "", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Product area", name: "product_area", widget: "hidden", default: "Edge"}
       - label: Change type
@@ -218,7 +218,7 @@ collections:
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
 
       - label: Component
         name: component
@@ -231,17 +231,17 @@ collections:
         required: false
 
       - label: Build artifact
-        name: technical_component
+        name: build_artifact
         widget: ncw-file-relation
         collection: configs
-        file: technical_component
+        file: build_artifact
         target_field: options
         id_field: id
         display_fields: option
-        required: false
+        required: true
       
       - {label: "Ticket", name: "jira", widget: "string", required: false, hint: "The Jira ticket number, e.g. MTM-50245"}
-      - {label: "Version", name: "version", widget: "string", required: false, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
+      - {label: "Version", name: "version", widget: "string", required: true, hint: "Add multiple versions separated by a coma"} # this is for the yearly only and support multiple
       - { label: "Body", name: "body", widget: "markdown"}
 
 
@@ -320,9 +320,9 @@ collections:
                 widget: ncw-id
                 prefix: change
 
-      - name: technical_component
+      - name: build_artifact
         label: Build artifacts options
-        file: data/technicalcomponent.json
+        file: data/buildartifact.json
         fields:
           - name: options
             label: Options

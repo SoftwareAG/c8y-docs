@@ -8,7 +8,7 @@ change_type:
 component:
   - value: q3kclF6pO
     label: Authentication
-technical_component:
+build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 jira: MTM-54617

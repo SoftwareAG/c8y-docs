@@ -1,13 +1,13 @@
 ---
 date: ""
 title: "Fixed an issue in the realtime API "
-product_area: Device management & connectivity
+product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
   - value: component-1KLUzmqfe
-    label: LWM2M
+    label: REST API
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity

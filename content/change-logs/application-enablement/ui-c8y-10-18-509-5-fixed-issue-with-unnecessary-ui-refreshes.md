@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with unnecessary UI refreshes
+title: Fixed issue with unnecessary refreshes of English texts
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-43382
 version: 10.18.509.5
 ---
-An issue has been fixed related to unnecessary refreshes of UI text on each Angular digest cycle.
+An issue has been fixed related to unnecessary refreshes of English texts on each Angular digest cycle.

@@ -1,10 +1,10 @@
 ---
-date: 2023-12-11T11:38:31.797Z
+date: 2023-12-20
 title: UI component c8y-stepper function corrected
+product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
-product_area: Application enablement & solutions
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK

@@ -1,10 +1,10 @@
 ---
-date: 2023-12-11T11:36:01.897Z
+date: 2023-12-20
 title: Fixed issue with c8ycli locale-compile
+product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
-product_area: Application enablement & solutions
 component:
   - value: component-YbYJ3gLU_
     label: Web SDK

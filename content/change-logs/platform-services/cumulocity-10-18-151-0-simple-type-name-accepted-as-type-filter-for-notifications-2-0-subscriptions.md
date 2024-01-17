@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: Simple type name accepted as type filter
+title: Simple type name accepted as type filter for Notifications 2.0 subscriptions
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

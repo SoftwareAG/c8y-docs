@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: DELETE notifications to specific managed objects
+title: DELETE notifications for specific managed objects with Notifications 2.0
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52287
+ticket: MTM-52287
 version: 10.18.380.0
 ---
 The pagination check of the user list has been modified to prevent duplicate requests.

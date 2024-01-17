@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-49370
+ticket: MTM-49370
 version: 10.18.483.0
 ---
 Improved the reliability of deleting a user together with a managed object. When deleting a managed object with the flag "withUser=true", the device user is now deleted if it does not own any other item.

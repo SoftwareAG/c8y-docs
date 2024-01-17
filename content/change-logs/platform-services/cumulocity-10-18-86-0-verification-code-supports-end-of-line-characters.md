@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53296
+ticket: MTM-53296
 version: 10.18.86.0
 ---
 The verification code which is signed in the Proof of Possession process now supports end-of-line characters from various operating systems.

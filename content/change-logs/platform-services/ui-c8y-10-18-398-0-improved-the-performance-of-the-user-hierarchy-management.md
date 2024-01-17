@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-49969
+ticket: MTM-49969
 version: 10.18.398.0
 ---
 Improved the performance of the user hierarchy management by reducing the number of server requests executed when expanding the sub-user list.

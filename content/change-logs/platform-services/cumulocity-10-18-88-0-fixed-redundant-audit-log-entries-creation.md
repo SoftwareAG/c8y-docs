@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-51919
+ticket: MTM-51919
 version: 10.18.88.0
 ---
 Updating a custom alarm property no longer creates a redundant audit log entry with misleading information about alarm clearance.

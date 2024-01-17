@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2471
+ticket: DM-2471
 version: 10.18.355.0
 ---
 In some cases log files of devices stored in the platform could not be downloaded from the <b>Logs</b> tab. This has been addressed by requesting with the correct user credentials.

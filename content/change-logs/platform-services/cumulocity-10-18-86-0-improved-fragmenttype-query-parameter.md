@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-51379
+ticket: MTM-51379
 version: 10.18.86.0
 ---
 Fixed an issue where deleting enhanced time series measurements did not work with the <code>fragmentType</code> query parameter.

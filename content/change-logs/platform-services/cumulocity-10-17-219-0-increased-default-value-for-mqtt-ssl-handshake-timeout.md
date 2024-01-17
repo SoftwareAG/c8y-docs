@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-54184
+ticket: MTM-54184
 version: 10.17.219.0
 ---
 The default value for the MQTT SSL handshake timeout has been increased from 10 seconds to 50 seconds to increase the time for the handshake to be successful. The value of this property can be configured by a platform administrator.

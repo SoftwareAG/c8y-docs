@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-47720
+ticket: MTM-47720
 version: 10.18.166.0
 ---
 Implemented pagination on the <b>Inventory roles</b> tab in the user details to fix an issue with larger numbers of groups and subgroups.

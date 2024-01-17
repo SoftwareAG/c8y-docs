@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53559
+ticket: MTM-53559
 version: 10.18.101.0
 ---
 Issues on refreshing the session tokens when the OAI-Secure login mode is configured with two-factor authentication have been fixed.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-2356
+ticket: DM-2356
 version: 10.18.108.0
 ---
 The undelegate action button in the user details was not working. This has been fixed by re-enabling its functionality.

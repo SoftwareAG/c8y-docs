@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53918
+ticket: MTM-53918
 version: 10.18.221.0
 ---
 The default value of the <code>response_type</code> request parameter for the authorization request in the single sign-on configuration has been set to <code>code</code>.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-45858
+ticket: MTM-45858
 version: 10.18.323.0
 ---
 Fixed an issue with cloning some of the default global roles (for example, "devices").

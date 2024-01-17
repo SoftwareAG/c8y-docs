@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53811
+ticket: MTM-53811
 version: 10.18.369.0
 ---
 Clicking on the popup for the signed verification code no longer closes the tooltip, so that users can now copy the SSL command. The tooltip can be closed by clicking outside of it.

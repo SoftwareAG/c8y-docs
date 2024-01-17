@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52692
+ticket: MTM-52692
 version: 10.18.495.0
 ---
 Fixed an issue with the email template for scheduled exports not being propagated from an Enterprise tenant's setting to its subtenants.

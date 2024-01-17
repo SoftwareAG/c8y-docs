@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53818
+ticket: MTM-53818
 version: 10.18.475.0
 ---
 In the <b>Usage statistics</b> page, in the tooltip for the CPU column "milliseconds" has been changed to "millicores".

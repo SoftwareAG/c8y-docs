@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: DM-1987
+ticket: DM-1987
 version: 10.18.197.0
 ---
 In the Administration application, missing translations have been added in the <b>SIM provider settings</b> tab in the <b>Connectivity</b> page.

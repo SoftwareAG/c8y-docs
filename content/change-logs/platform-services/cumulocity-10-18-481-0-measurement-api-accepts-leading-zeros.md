@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-55156
+ticket: MTM-55156
 version: 10.18.481.0
 ---
 The Measurement API now accepts leading zeros provided for measurement values.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: " MTM-51454"
+ticket: " MTM-51454"
 version: 10.18.470.0
 ---
 To improve usability, the package availability (SHARED or PRIVATE) can now be set in the package upload wizard. 

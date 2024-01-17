@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-49963
+ticket: MTM-49963
 version: 10.18.209.0
 ---
 Esper-CEP-related features have been removed from the UI such as:

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52217
+ticket: MTM-52217
 version: 10.18.193.0
 ---
 The issue of an inaccessible endpoint for obtaining an OAI-Secure access token through cross-origin requests has been resolved.

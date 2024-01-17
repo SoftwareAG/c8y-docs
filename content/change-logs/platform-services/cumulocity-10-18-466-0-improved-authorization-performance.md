@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52061
+ticket: MTM-52061
 version: 10.18.466.0
 ---
 The authorization performance has been improved when multiple users or devices are connecting concurrently for the first time to the restarted or upgraded platform.

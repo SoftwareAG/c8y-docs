@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-51604
+ticket: MTM-51604
 version: 10.18.489.0
 ---
 The unsecured login option endpoint no longer reveals information about session configuration and authentication restrictions.

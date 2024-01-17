@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-55332
+ticket: MTM-55332
 version: 10.18.488.0
 ---
 Blueprint applications shared from a parent tenant can now be updated properly.

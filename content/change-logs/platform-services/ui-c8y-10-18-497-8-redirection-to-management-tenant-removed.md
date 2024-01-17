@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-54617
+ticket: MTM-54617
 version: 10.18.497.8
 ---
 On logging into the platform as a support user, the redirection to the Management tenant has been removed. The platform, despite authentication in the context of the Management tenant, sets a cookie for the domain of the logged-in tenant.

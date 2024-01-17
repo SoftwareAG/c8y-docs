@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52943
+ticket: MTM-52943
 version: 10.18.235.0
 ---
 When removing an application that is used in SSO access mappings, the login configuration will be updated accordingly.

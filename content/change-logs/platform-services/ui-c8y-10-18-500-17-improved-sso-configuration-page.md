@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-56347
+ticket: MTM-56347
 version: 10.18.500.17
 ---
 The SSO configuration page has been updated to support additional signature verification methods for the Azure AD integration template. Users can now optionally specify a public key discovery URL within the signature verification settings when setting up connectivity to Azure Active Directory for single sign-on.

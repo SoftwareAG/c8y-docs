@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52775
+ticket: MTM-52775
 version: 10.18.108.0
 ---
 The OpenSSL command for generating a “signed verification code” for Proof of Possession has been enhanced to include additional encoding functionality. 

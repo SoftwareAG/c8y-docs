@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-49801
+ticket: MTM-49801
 change_log: false
 version: 10.18.3.0
 ---

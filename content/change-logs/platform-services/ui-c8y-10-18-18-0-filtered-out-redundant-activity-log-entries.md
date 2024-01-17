@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52309
+ticket: MTM-52309
 version: 10.18.18.0
 ---
 Redundant activity log entries in the application details are now filtered out.

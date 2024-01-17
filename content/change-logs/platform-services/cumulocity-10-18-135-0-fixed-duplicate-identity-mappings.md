@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-48399
+ticket: MTM-48399
 version: 10.18.135.0
 ---
 Fixed a possible race condition with duplicate identity mappings for devices by introducing a unique database index.

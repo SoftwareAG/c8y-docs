@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-52700
+ticket: MTM-52700
 version: 10.18.29.0
 ---
 Fixed an issue where the alarm source name was not returned after alarm de-duplication.

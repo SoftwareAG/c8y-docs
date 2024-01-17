@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52413
+ticket: MTM-52413
 version: 10.18.90.0
 ---
 Fixed an issue where users which only have inventory roles could not add new groups.

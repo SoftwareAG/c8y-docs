@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-50179
+ticket: MTM-50179
 version: 10.18.496.0
 ---
 The password strength indicator gets updated correctly now, and the <b>Save</b> button is available when the password meets the strength conditions.

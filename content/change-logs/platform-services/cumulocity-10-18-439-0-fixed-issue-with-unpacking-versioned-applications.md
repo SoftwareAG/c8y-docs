@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53724
+ticket: MTM-53724
 version: 10.18.439.0
 ---
 Resolved the issue that versioned applications might not be unpacked upon core startup, which resulted in a 404 error for some requests.

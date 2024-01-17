@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52710
+ticket: MTM-52710
 version: 10.18.17.0
 ---
 In the files repository, an issue has been fixed where the counter of the total files number displayed an incorrect value or was not displayed at all.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-53723
+ticket: MTM-53723
 version: 10.18.211.0
 ---
 Issues with the redirection from the login page to the SSO server have been fixed.

@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-56037
+ticket: MTM-56037
 version: 10.18.491.0
 ---
 Microservices which have been created via API without providing a binary for it can again be subscribed without getting an error message.

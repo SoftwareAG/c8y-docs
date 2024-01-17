@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
-jira: MTM-53509
+ticket: MTM-53509
 version: 10.18.185.0
 ---
 Fixed an issue where requests from the core platform into the Messaging Service could take a long time to complete, slowing down the response to HTTP requests and potentially preventing the platform from handling new incoming requests. For example, a request from the core platform to publish a message using Notifications 2.0 could block if the tenant had reached its quota for unconsumed notifications, only timing out after a long delay. This issue has been resolved by ensuring that Messaging Service requests that would have blocked now time out quickly.

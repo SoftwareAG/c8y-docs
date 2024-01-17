@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52682
+ticket: MTM-52682
 version: 10.18.229.0
 ---
 When uploading files to the files repository, a separate progress bar is now displayed for each file.

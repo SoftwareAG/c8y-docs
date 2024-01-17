@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-jira: MTM-52802
+ticket: MTM-52802
 version: 10.18.492.0
 ---
 If data has been changed in the access mapping section, such as default global roles or default applications, the <b>Save</b> button is now activated.

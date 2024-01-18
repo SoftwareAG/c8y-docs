@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Configurable Time-To-Live duration
+title: LWM2M Time-to-Live duration for device operation realtime subscription
 product_area: Device management & connectivity
 change_type:
   - value: change-QHu1GdukP
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3067
 version: 10.18.540.9
 ---
-The LWM2M agent realtime subscription for device operations now has a configurable Time-To-Live (TTL) duration. The default TTL duration is 3 minutes. 
+The LWM2M agent realtime subscription for device operations now has a limited Time-To-Live (TTL) duration. The default TTL duration is 3 minutes. This setting may be configured on platform level.

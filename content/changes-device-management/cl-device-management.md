@@ -9,8 +9,11 @@ weight: 10
 
 ### December 2023
 
+#### -Feature- Device management: New "Replace device" options
 
-#### -Feature- Device management: Improved filter by software type 
+In the **Subassets** view, a "Replace device" option is now available in the context menu of  every supported device. Previously, the "Replace device" option was only available in the **All devices** page. Moreover, a **Replace device** button has been added to the "Device status" widget on the **Info** tab in the device details. This functionality does not support LWM2M devices. [DM-2673]
+
+#### -Feature- Device management: Improved filter by software type
 
 In the <b>Software</b> tab in the device details, currently the <b>Filter by software type</b> dropdown in the <b>Installed software</b> list and the <b>Install software</b> modal shows types based on existing types in the software repository. This has been changed to show only the supported software types announced by the device in its <code>c8y_SupportedSoftwareTypes</code> fragment. If a device has not announced supported software types, then again all available existing software types are listed. [DM-2809]
 
@@ -37,6 +40,15 @@ In the Device management application, a wizard has been implemented which guides
 #### -Feature- Device management: Customizable home dashboard
 
 The Device management home page now also provides a customizable dashboard which lets users add customized widgets. [DM-1644]
+
+#### -Change- Device management: Added information on restrictions to auto-registration
+
+The auto-registration option in trusted certification does not support devices communicating via the LWM2M protocol. This information has been included in the tooltip on the **Trusted certificates** page and in the user documentation. [MTM-56462]
+
+#### -Feature- LWM2M: New toggle for switching off empty data
+
+For LWM2M devices, it is now possible to switch off the sending of empty measurement/event/alarm/custom actions data for individual resources. Moreover, you can toggle on/off or optionally skip empty values for all resources using the LWM2M device protocol at once. [DM-2798]
+
 
 #### -Feature- LWM2M: New LWM2M configuration tab
 
@@ -88,10 +100,22 @@ Two new LWM2M shell commands have been added.
 
 For details, refer to <a href="https://cumulocity.com/docs/protocol-integration/lwm2m/#shell-commands" class="no-ajaxy">Handling LWM2M shell commands<a/>. [DM-2153]
 
+#### -Change- LWM2M: New configuration flag in device registration settings
+
+The configuration flag <code>fwResetStateMachineOnStart</code> has been added to control if the LWM2M agent resets the firmware update state machine on the client at the beginning of a firmware update. The default of this flag is <code>true</code> which matches the existing behaviour of the LWM2M agent. It is available in the [device registration settings](https://cumulocity.com/docs/protocol-integration/lwm2m/#device-registration-settings). [DM-2292]
+
+#### -Change- Loriot: Increased memory limit
+
+The memory limit for the Loriot microservice has been increased to 2Gi. [DM-2427]
+
+#### -Change- OPC UA: Disabling endpoint validation
+
+The endpoint validation happening during the connection to an OPC UA server can now optionally be disabled. This can be done in the gateway configuration by changing the <code>gateway.connectivity.validateDiscoveredEndpoints</code> setting to "false". Alternatively, it can be controlled via the OPC UA server managed object by setting the fragment <code>validateDiscoveredEndpoints</code> to "false".  For details, refer to <a href="https://cumulocity.com/guides/protocol-integration/opcua/" class="no-ajaxy">OPC UA</a>. [DM-2425]
+
+
 #### -Change- SmartREST: New static template 507
 
 Added the SmartREST static template 507 for changing the device operations status from EXECUTING to FAILED. The operations can be filtered by type. The template is intended for facilitating an operations cleanup after a crash. [DM-2347]
-
 
 #### -Change- SmartREST: New static template 125
 
@@ -101,18 +125,3 @@ Added the SmartREST static template 125 for sending heartbeat from a device. [DM
 #### -Change- SmartREST: New static template 201
 
 Added the SmartREST static template 201 for creating measurements with multiple fragments and series. [DM-1860]
-
-
-#### -Change- Loriot: Increased memory limit
-
-The memory limit for the Loriot microservice has been increased to 2Gi. [DM-2427]
-
-
-#### -Change- LWM2M: New configuration flag in device registration settings
-
-The configuration flag <code>fwResetStateMachineOnStart</code> has been added to control if the LWM2M agent resets the firmware update state machine on the client at the beginning of a firmware update. The default of this flag is <code>true</code> which matches the existing behaviour of the LWM2M agent. It is available in the [device registration settings](https://cumulocity.com/docs/protocol-integration/lwm2m/#device-registration-settings). [DM-2292]
-
-
-#### -Change- OPC UA: Disabling endpoint validation
-
-The endpoint validation happening during the connection to an OPC UA server can now optionally be disabled. This can be done in the gateway configuration by changing the <code>gateway.connectivity.validateDiscoveredEndpoints</code> setting to "false". Alternatively, it can be controlled via the OPC UA server managed object by setting the fragment <code>validateDiscoveredEndpoints</code> to "false".  For details, refer to <a href="https://cumulocity.com/guides/protocol-integration/opcua/" class="no-ajaxy">OPC UA</a>. [DM-2425]

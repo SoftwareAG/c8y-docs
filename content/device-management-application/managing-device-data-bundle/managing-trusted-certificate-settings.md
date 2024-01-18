@@ -25,12 +25,13 @@ These are issued by certificate authorities (CAs) periodically and published thr
 Distribution Point).
 Revocation reasons and dates are included in the CRL.
 
-In {{< product-c8y-iot >}} terms, if there is a breach at device certificates signed by a trusted certificate, users
+In {{< product-c8y-iot >}} terms, if there is a breach at device certificates signed by a trust anchor, users
 can inform the platform about the revoked certificates in two ways:
 
 1. Online revocation :
-    The trusted CA maintains the Certificate Revocation Lists with the list of certificate serial numbers that are
-   breached and provides this information in the form of a CDP (CRL Distribution Point).
+   To perform online revocation checks, the device administrator is expected to upload trusted CA
+   who maintains the Certificate Revocation lists with the list of revoked certificate serial numbers 
+   and should provide this information in its CDP (CRL Distribution point) attribute.
 2. Offline revocation :
     The trusted CA doesn't maintain the revocation details of the certificates, in which case, the platform users
    can manually upload the serial numbers of the revoked certificates.
@@ -38,7 +39,7 @@ can inform the platform about the revoked certificates in two ways:
 Note that both online and offline CRL checks are by default **unchecked**.
 
 {{< c8y-admon-important >}}
-Certificate revocation is an irreversible process.
+Certificate revocation is an irreversible process. So, offline entries once made cannot be removed.
 {{< /c8y-admon-important >}}
 
 #### To enable online revocation {#to-enable-online-revocation}
@@ -58,22 +59,23 @@ Certificate revocation is an irreversible process.
    panel.
 
    Use the `+` button to add new entries in the format below:
-   | Field | Description |
-   |:------------------|:------------------------------------------------------------|
-   | Serial number | Must be in `Hexadecimal Value`.|
-   | Date (optional)       | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. |
+   | Field | Description | Example |
+   |:------------------|:------------------------------------------------------------|:----------|
+   | Serial number | Must be in `Hexadecimal Value`.| 0b8a5b9dd501a88775399b9a048811a3 |
+   | Date (optional)       | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. | 2024-01-17T10:48:51.000Z |
 4. Click save to confirm your entries.
 
 {{< c8y-admon-info >}}
-If the date is in the future then the CRL entry is skipped. If the date field is empty, then the current date is used.
+If the date field is empty, then the current date is used. Future dates are not allowed.
 {{< /c8y-admon-info >}}
 
-#### Offline bulk import {#offline-bulk-import}
+#### Offline CRL bulk upload {#offline-crl-bulk-upload}
 
 {{< c8y-admon-info >}}
 Revoked certificate serial numbers can be added in bulk.
 Each file can hold at maximum 5000 revocation entries.
-Multiple upload is allowed. In case of a duplicate, the latest one (last one uploaded) is used.
+If the date is in the future then the CRL entry is skipped.
+In case of a duplicate, the latest one (last one uploaded) is used.
 {{< /c8y-admon-info >}}
 
 To bulk upload, follow the steps below:

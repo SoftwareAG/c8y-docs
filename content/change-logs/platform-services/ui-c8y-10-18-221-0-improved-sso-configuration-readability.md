@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: Improved response_type request parameter
+title: Improved SSO configuration readability
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

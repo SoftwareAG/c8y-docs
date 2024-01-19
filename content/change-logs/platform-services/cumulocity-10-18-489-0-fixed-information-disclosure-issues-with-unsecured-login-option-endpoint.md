@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06
-title: Fixed unsecured login option
+title: Fixed information disclosure issues with unsecured login option endpoint
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

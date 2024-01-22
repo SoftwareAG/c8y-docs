@@ -30,7 +30,7 @@ jobs:
       cancel-in-progress: false
     strategy:
       matrix:
-        env: [staging-resources]
+        env: [staging-resources,prod]
     env:
       HUGO_VERSION: 0.100.1
     environment:
@@ -45,7 +45,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         submodules: recursive
-        fetch-depth: 0
+        fetch-depth: 1
 
     - name: Extract branch name
       shell: bash

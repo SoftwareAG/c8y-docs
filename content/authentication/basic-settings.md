@@ -73,6 +73,10 @@ By default, users can use any password with eight characters or more. If you sel
 The password validity limit and the password strength may not be editable, if configured by the platform administrator.
 {{< /c8y-admon-info >}}
 
+The **Ignore case when logging in** toggle switch allows enabling or disabling the feature, to authenticate the user into the platform without considering case sensitivity in the username or alias. The feature is applied to all tenant users when the toggle switch is set to enabled. By default, the feature is disabled, and user authentication is carried out in the standard manner.
+{{< c8y-admon-info >}}
+The toggle switch can only be managed by a user with the "tenant administrator" role. Additionally, the feature can be enabled only if there are no case-insensitive collisions for the username or alias fields for all tenant users (excluding "device users"). The check for naming collisions is performed automatically when attempting to enable the feature.
+{{< /c8y-admon-info >}}
 
 ### Basic Auth restrictions {#basic-auth-restrictions}
 

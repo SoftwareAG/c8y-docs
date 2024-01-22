@@ -35,11 +35,11 @@ relativeURLs = true
   # Global keywords configuration. Following keywords will be add to every pages
   keywords = ["Software AG", "Cumulocity IoT", "Internet of things", "analytics", "devices", "connect"]
 
-  description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. It reflects the latest state of the cloud deployment(s) of the var-product-c8y-iot platform and is continuously updated to align with recent software updates."
+  description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. It reflects the var-product-c8y-iot release 2024."
 
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
-  docsPreview = "cloud" 
+  docsPreview = "2024"
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true

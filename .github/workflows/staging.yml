@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - develop
+      - release/y**
 
 permissions:
   contents: read
@@ -25,11 +26,11 @@ jobs:
     name: Build Hugo
     runs-on: ubuntu-latest
     concurrency:
-      group: ${{ github.workflow }}-${{ matrix.env }}
+      group: ${{ github.workflow }}-${{ matrix.env }}-${{ github.ref }}
       cancel-in-progress: false
     strategy:
       matrix:
-        env: [staging-resources,prod]
+        env: [staging-resources]
     env:
       HUGO_VERSION: 0.100.1
     environment:
@@ -46,6 +47,25 @@ jobs:
         submodules: recursive
         fetch-depth: 0
 
+    - name: Extract branch name
+      shell: bash
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      id: extract_branch
+
+    - name: Set path and baseURL
+      if: ${{ steps.extract_branch.outputs.branch != 'develop' }}
+      run: |
+        if [[ "${{ steps.extract_branch.outputs.branch }}" == "develop" ]]; then
+          echo BASEURL="${{ secrets.BASE_URL }}" >> $GITHUB_ENV
+          echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}" >> $GITHUB_ENV
+        else
+          suffix=$(echo "${{ steps.extract_branch.outputs.branch }}" | sed  's/release\/y//g')
+          echo "Suffix: ${suffix}"
+          echo BASEURL="${{ secrets.BASE_URL }}/${suffix}" >> $GITHUB_ENV
+          echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}/${suffix}" >> $GITHUB_ENV
+        fi
+      id: path_to_append
+
     - name: Build with Hugo
       env:
         # For maximum backward compatibility with Hugo modules
@@ -53,7 +73,7 @@ jobs:
         HUGO_ENV: production
       run: |
         hugo \
-          --baseURL "${{ secrets.BASE_URL }}"
+          --baseURL "${{ env.BASEURL }}"
 
     - name: Set known SSH hosts
       run: |
@@ -67,4 +87,4 @@ jobs:
 
     - name: Upload documentation
       run: |
-        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DESTINATION_PATH }} --delete
+        rsync -e 'ssh -A -J ${{ secrets.SSH_USER }}@${{ secrets.SSH_JUMPHOST }}' -avh ./public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ env.DESTINATION_PATH }} --delete

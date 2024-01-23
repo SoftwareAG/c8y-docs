@@ -111,7 +111,7 @@ window.onload = (event)=>{
     });
   });
 
-  let startHere = document.querySelector('[name="change-type-feature"]');
-  if (startHere) startHere.click();
+  // let startHere = document.querySelector('[name="change-type-feature"]');
+  // if (startHere) startHere.click();
 
 }

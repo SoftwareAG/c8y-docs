@@ -12,7 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-51973
-change_log: false
 version: 10.18.12.0
 ---
 The performance of the Inventory API GET <code>/managedObjects</code> has been improved.

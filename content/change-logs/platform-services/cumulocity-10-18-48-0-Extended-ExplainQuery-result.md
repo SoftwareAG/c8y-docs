@@ -12,7 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-52350
-change_log: false
 version: 10.18.48.0
 ---
 The ExplainQuery result info has been extended by the algorithm used when performing queries for a user with inventory roles:

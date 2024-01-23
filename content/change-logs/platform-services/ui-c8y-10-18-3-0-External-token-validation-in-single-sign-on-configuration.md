@@ -12,7 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-49801
-change_log: false
 version: 10.18.3.0
 ---
 In the single sign-on configuration page, users can now enable and configure the external token validation process.

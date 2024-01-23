@@ -32,12 +32,13 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 
 For an asset with a **Location** property, click **Choose on Map** in the section to set the values for the latitude and longitude using map view. Click the full screen icon at the top right corner of the map to view it in full screen.
 
-The marker is positioned at the default value set in the **Location** property. If no default value is set, the marker is positioned at Duesseldorf, Germany. Click or drag the marker to the preferred position to set the value for both latitude and longitude. The marker on the map is positioned at an approximated location when either the latitude or the longitude value is missing.
+The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
 
 {{< c8y-admon-info>}}
 The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.<br>
 The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
-When creating an asset you must provide the values for all asset properties.
+When creating an asset you must provide the values for all asset properties.<br>
+For complex properties, the keys are ordered as specified in the **Order** field of property definition.
 {{< /c8y-admon-info>}}
 
 7. Click **Next** to reach the next hierarchy level of your **asset hierarchy** and fill out the fields as necessary for your asset. Repeat for all asset hierarchy levels.

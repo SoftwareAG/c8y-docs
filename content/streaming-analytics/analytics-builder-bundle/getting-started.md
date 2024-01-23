@@ -100,7 +100,7 @@ To pass the values from one block to another, you have to connect the blocks wit
 #### Step 7: Save the model and go back to the model manager {#step-7-save-the-model-and-go-back-to-the-model-manager}
 
 1. In the toolbar of the model editor, click the save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> to save your newly created model.
-2. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager
+2. In the toolbar of the model editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-exit.png" alt="Close icon" style="display:inline-block; margin:0"> to leave the model editor and thus to return to the model manager.
 
 {{< c8y-admon-info>}}
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.

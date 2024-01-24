@@ -10,9 +10,9 @@ For general information about functionalities and features of {{< product-c8y-io
 
 Below you can find the links to the most common functionalities of {{< product-c8y-iot >}}.
 
-### Device management
+### Device Management
 
-The [Device management application](/users-guide/device-management) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
+The [Device Management application](/users-guide/device-management) provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.
 
 The following functionalities are available in {{< product-c8y-iot >}} Edge and described in detail in these sections:
 
@@ -39,7 +39,7 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 |[Visualizing data using the Data Explorer](/users-guide/cockpit#data-explorer)|Interactively explore, compare and visualize IoT data. <br> Describes how to access and use the [data explorer](/users-guide/cockpit#data-explorer), [add data points](/users-guide/cockpit#add-data-points) to the data explorer, [customize data point properties](/users-guide/cockpit#customize-data-points), [modify the visualization](/users-guide/cockpit#change-visualization), store the [data explorer as widget](/users-guide/cockpit#create-widget), and [export](/users-guide/cockpit#export-data) the data.
 |[Working with dashboards](/users-guide/cockpit#dashboards)|[Create your own analytics and monitor pages](/users-guide/cockpit#creating-dashboards) by adding and arranging [widgets](/users-guide/cockpit#adding-widgets). [Share dashboards](/users-guide/cockpit#sharing-dashboards) among all devices of the same type.
 |[Widgets collection](/users-guide/cockpit#widgets)|Use various types of [widgets](/users-guide/cockpit#widgets) from the Widgets collection that comes with {{< product-c8y-iot >}} Edge and configure them according your needs.
-|[Working with alarms](/users-guide/device-management/#alarm-monitoring)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in the Device management application, refer to [Working with alarms](/users-guide/device-management/#alarm-monitoring) in the Device management application.
+|[Working with alarms](/users-guide/device-management/#alarm-monitoring)|Monitor problems of your assets using severities and workflows. Since working with alarms in the Cockpit application is actually the same as working with alarms in Device Management, refer to [Working with alarms](/users-guide/device-management/#alarm-monitoring) in Device Management.
 |[Managing reports](/users-guide/cockpit#reports)|Handle [reports](/users-guide/cockpit#reports) based on dashboard layouts, create [reports for exporting data](/users-guide/cockpit#reporting) in CSV or excel format and [schedule the export](/users-guide/cockpit#schedule-export).
 |[Using the Data Point Library](/users-guide/cockpit#data-point-library)|Manage default settings ("profiles") of your devices and apply them automatically using the [Data Point Library](/users-guide/cockpit#data-point-library).
 |[Working with Smart Rules](/users-guide/cockpit#smart-rules)|[Create and manage business rules](/users-guide/cockpit#create-rules) to work on incoming data in realtime and to perform actions based on this data.

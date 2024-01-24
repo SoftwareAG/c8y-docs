@@ -8,7 +8,7 @@ Before performing these steps, ensure that you have [configured the URL](/edge/r
 
 1. Log in to your {{< product-c8y-iot >}} tenant.
 
-2. Go to the Device management application.
+2. Go to the Device Management application.
 
 3. Click **Registration** in the **Devices** menu and then click **Register device**.
 

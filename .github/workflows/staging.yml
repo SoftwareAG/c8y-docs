@@ -53,9 +53,10 @@ jobs:
       id: extract_branch
 
     - name: Set path and baseURL
-      if: ${{ steps.extract_branch.outputs.branch != 'develop' }}
       run: |
+        echo "Branch: ${{ steps.extract_branch.outputs.branch }}"
         if [[ "${{ steps.extract_branch.outputs.branch }}" == "develop" ]]; then
+          echo "Branch is develop"
           echo BASEURL="${{ secrets.BASE_URL }}" >> $GITHUB_ENV
           echo DESTINATION_PATH="${{ secrets.DESTINATION_PATH }}" >> $GITHUB_ENV
         else

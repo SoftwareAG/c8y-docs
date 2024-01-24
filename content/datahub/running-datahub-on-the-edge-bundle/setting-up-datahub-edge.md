@@ -4,6 +4,8 @@ title: Setting up Cumulocity IoT DataHub Edge
 layout: redirect
 ---
 
+@UPO: We should check updates for sections Prerequisites/Setting up {{< product-c8y-iot >}} DataHub Edge/Upgrading {{< product-c8y-iot >}} DataHub Edge within this file. We should also check whether operating-datahub-edge.md and datahub-edge-overview.md requires updates.
+
 ### Prerequisites
 
 Before setting up {{< product-c8y-iot >}} DataHub Edge, you must check the following prerequisites:

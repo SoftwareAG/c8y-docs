@@ -58,7 +58,7 @@ Instead of throwing an out of bounds exception, it is now possible to refer to i
 
 Note that negative values cannot be specified when accessing a sequence item using the `any.getEntry()` method.
 
-##### Mixed-type sequence and dictionary literals are now treated as <any> by default
+##### Mixed-type sequence and dictionary literals are now treated as &lt;any&gt; by default
 
 It is no longer necessary to add an `<any>` cast around the first item in a sequence or dictionary literal that contains a mixture of different types. For example, the following sequence literal which produces a `sequence<any>`:
 

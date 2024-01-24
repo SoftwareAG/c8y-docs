@@ -30,6 +30,10 @@ When defining an offloading configuration, you can define an additional filter p
 
 Depending on the collection, you can use different time filters. All collections support `creationTime` which represents the timestamp when the entity was persisted by the platform (UTC timezone). Mutable entities (alarms, events, inventory) also support `lastUpdated` which is the timestamp when the entity was last changed (UTC timezone). `time` is the application timestamp written by the client; it is supported in alarms, events, and measurements.
 
+{{< c8y-admon-caution >}}
+Dremio offers functions to determine the current time or date the system has when executing the query. You should try to avoid filter logic depending on such dynamic data as the offloading results are inherently non-deterministic.
+{{< /c8y-admon-caution >}}
+
 The below time filters are examples only; you can use much more complex or simpler combinations with a mixture of AND/OR-connected conditions.
 
 **Alarms/events**

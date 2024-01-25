@@ -39,7 +39,7 @@ When using the proxy REST API, all queries are processed using the same Dremio A
 Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in [Adding a Dremio user](/datahub/setting-up-datahub/#adding-a-dremio-user).
 
 #### Data Lake {#data-lake}
-Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
+Depending on the configuration of the environment, the data lake provider is either fixed or you can select among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
 
 The following types of data lakes are currently supported:
 

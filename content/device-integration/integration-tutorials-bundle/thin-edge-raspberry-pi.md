@@ -385,7 +385,7 @@ See also [To add a new software or software version](/device-management-applicat
 5. Select the correct version and click **Install**.
 6. Click **Apply changes** and the software will be installed.
 
-When a different version of the already installed software needs to be installed, choose in step 4 the installed software from the list and in step 5 the right version.
+When a different version of the already installed software needs to be installed, in step 4 select the installed software from the list and in step 5 select the correct version.
 
 For more information on how to manage the software, refer to [Managing software on a device](/device-management-application/managing-device-data/#to-manage-software-on-a-device).
 

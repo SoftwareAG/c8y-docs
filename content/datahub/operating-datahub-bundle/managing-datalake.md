@@ -8,6 +8,14 @@ layout: redirect
 
 The contents and hierarchy of the data lake should not be modified. There is a high risk that data gets lost and subsequent querying of the data lake produces incomplete results.
 
+### Folder structure {#folder-structure-data-lake}
+
+The data within the data lake is organized hierarchically. Each offloading pipeline is associated with one target table. Each target table corresponds to a folder in the data lake having the same name. Such a folder consists of three different types of subfolders:
+
+* Monthly/daily folder: The folder name starts with **monthly** or **daily** followed by the timespan of data managed within that folder. For example, monthly_2024_01 contains all data from January 2024, while daily_2024_01_15 contains all data from the 15th of January 2024.
+* Initial offloading folder: When an offloading pipeline for the measurements collection offloads for the first time, all folders with data from this initial offloading is located in folders starting with **chunk**. Within a chunk folder data is also organized hierarchically with respect to years, months, and days, as encoded in the folder names. The chunk folders are optional.
+* Internal folders: Folders starting with **incremental** contain internal information and must not be deleted.
+
 ### Empty Parquet files
 
 {{< product-c8y-iot >}} DataHub may produce empty Parquet files in certain constellations, like an execution node crashing during a write process. In case such empty files exist in the data lake, the initial configuration as well as offloading runs will fail. This requires interaction with the data lake. {{< product-c8y-iot >}} DataHub does not delete those empty files automatically. You have to delete them manually using the tooling of your data lake provider, like AWS S3 Console or Azure Storage Explorer.

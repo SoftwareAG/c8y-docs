@@ -60,7 +60,7 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
-{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).
+We here distinguish between predefined custom actions and decoder microservices
 
 ##### Predefined custom actions {#predefined-custom-actions}
 
@@ -92,6 +92,82 @@ Actions that are relevant for connectivity monitoring (object ID /4):
 Below is an example where the “connectivity:updateRssi” custom action is selected for the Connectivity monitoring (/4) radio signal strength in order to create the signal measurement for the device.
 
 ![Custom action example](/images/device-protocols/lwm2m/lwm2m-custom-action-connectivity-signal.png)
+
+##### Decoder microservices
+
+{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).
+
+
+The LWM2M agent serializes different LWM2M data types to binary data depending on the type of the corresponding resource:
+
+<table>
+<tr>
+<th>LWM2M resource type</th>
+<th>Length (bytes)</th>
+<th>Byte Order</th>
+<th width="30%">Comment</th>
+</tr>
+
+<tr>
+<td>OPAQUE</td>
+<td>dynamic</td>
+<td>unchanged</td>
+<td>OPAQUE data is used to transmit raw binary blobs between a LWM2M device and a LWM2M server. The LWM2M agent simply forwards this data to the decoder microservice. The length and the order of the bytes remain unchanged.</td>
+</tr>
+
+<tr>
+<td>INTEGER</td>
+<td>8</td>
+<td>Big Endian</td>
+<td></td>
+</tr>
+
+<tr>
+<td>FLOAT</td>
+<td>8</td>
+<td>Big Endian</td>
+<td></td>
+</tr>
+
+<tr>
+<td>STRING</td>
+<td>dynamic</td>
+<td></td>
+<td>The string is serialized into a series of bytes, starting from the first character in the string. The first byte corresponds to its first character. Likewise, the last byte corresponds to the last character of the string </td>
+</tr>
+
+<tr>
+<td>CORE LINK</td>
+<td>dynamic</td>
+<td></td>
+<td>The core links are first converted into a string representation of multiple links, separated by comma. Example: <code>&lt;/43/0&gt;,&lt;/33/1&gt;</code>. This string is then serialized to a series of bytes (see above). </td>
+</tr>
+
+<tr>
+<td>TIME</td>
+<td>8</td>
+<td>Big Endian</td>
+<td>Time data is represented as a long value (see above). The long value here corresponds to the number of milliseconds since January 1, 1970, 00:00:00 GMT. </td>
+</tr>
+
+<tr>
+<td>BOOLEAN</td>
+<td>1</td>
+<td></td>
+<td>Boolean data is represented by a single byte (0 = false, 1 = true).</td>
+</tr>
+
+<tr>
+<td>OBJLNK</td>
+<td>dynamic</td>
+<td></td>
+<td>The OBJLNK is converted to a string first. The binary payload corresponds to the bytes of the string, starting with the first character.</td>
+</tr>
+
+</table>
+
+
+
 
 #### Auto observe {#auto-observe}
 

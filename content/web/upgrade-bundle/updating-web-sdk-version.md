@@ -4,13 +4,9 @@ layout: redirect
 weight: 5
 ---
 
- **Version:** 10.6.0.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
-
-A UI build with an earlier version of the Web SDK is locked to the current version.
-A platform update doesn't update the UI version, however a UI running against a newer backend always keeps working as all APIs are backwards compatible.
-That's why an update makes mostly sense if a newer feature of the UI or the Web SDK needs to be used.
-Therefore, a new application needs to be built and deployed to the platform.
-This recipe describes best practices to do so.
+From version 1019.x.x onwards the Web SDK is following semantic versioning. Meaning that every major version bump (for example from 1019 to 1020) may contain breaking changes, but every minor or fix bump should not break your application. So it is save to update to any minor or fix version, but if you update to any major version, you might need to migrate things.
+ 
+Easiest way for migration atm is still comparing the diff with git:
 
 ### Preparation {#preparation}
 
@@ -35,37 +31,15 @@ If you don't want to use git anymore after the update, you can simply erase the 
 
 ### Updating {#updating}
 
-To update the Web SDK you can simply use the `new` command that is used for scaffolding:
+To update the Web SDK you should simply create a new application with the desired version and copy over the files. The diff then tells you, where merge conflicts might happen and which needs to be fixed
 
 ```shell
-c8ycli new <<app-name>> <<cockpit|devicemanagement|administration>> -a @c8y/apps@<<version>>
+ng new cockpit
+cd cockpit
+ng add @c8y/websdk 
 ```
 
-So for example if your current working directory is an application called "my-cockpit" based on {{< product-c8y-iot >}}'s Cockpit application and you want to update to version 10.6.2.0, you must run the following command:
-
-```shell
-cd ..
-c8ycli new my-cockpit cockpit -a @c8y/apps@1006.2.0
-```
-
-{{< c8y-admon-info >}}
-The first two numbers of the version are combined (for example, 10.6 becomes 1006) as npm only supports semver version numbers. You can also remove the `-a` flag, in this case the version tagged with `latest` will be used.
-{{< /c8y-admon-info >}}
-
-The command simply copies over the files that are used for building a new application in the particular version.
-The following files are currently overwritten:
-
- - `app.module.ts`: The Angular module imports which might be aligned by your application to import custom Angular modules.
- - `index.ts`: The bootstrapping file which is called first. This file is usually not changed.
- - `ng1.ts`: The angularjs imports which might have been aligned to add or remove angularjs plugins.
- - `package.json`: The npm dependencies, application options and names are stored in this file. This is very likely changed, for example, when different options or a different dependency are used.
- - `tsconfig.json`: The typescript configuration. It is usually unchanged.
- - `angular.json`: The Angular project configuration defaults for build and development tools
-
-These are the files that are overwritten by an update based on the version of that article.
-The list might change in later versions.
-Next, we must reapply the changes that were made earlier to these files.
-A git diffing tool can be very helpful for that.
+If you now select a newer version of the application you want to scaffold, you get the latest scaffolding files. If you copy them over to your solution which was checked in before, you get very well the difference between the versions visualized.
 
 ### Diffing to reapply changes {#diffing-to-reapply-changes}
 

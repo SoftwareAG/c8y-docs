@@ -1,5 +1,5 @@
 ---
-title: Angular Command Line Tool (CLI)
+title: Angular CLI before 10.19.x.x
 layout: redirect
 weight: 20
 ---

@@ -6,7 +6,7 @@ weight: 10
 
  **Version:** 1017.0.23 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-If the widgets that are provided by the platform do not meet your requirements, you might want to create a custom widget and add it to a dashboard.
+If the widgets that are provided by the platform do not meet your requirements, you can create a custom widget and add it to a dashboard.
 
 A typical dashboard looks like this, showing various widgets:
 
@@ -14,7 +14,7 @@ A typical dashboard looks like this, showing various widgets:
 
 This recipe will show how to add a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-custom-widget}
 
 As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:

@@ -126,7 +126,7 @@ openssl pkcs8 -topk8 -inform PEM -outform DER -in myDevice.key -out myDevice.der
 
 ##### Trusting CA in {{< product-c8y-iot >}} {#trusting-ca-in-the-platform}
 
-Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/users-guide/device-management/#trusted-certificates) on how to add and trust CA certificate.
+Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) on how to add and trust CA certificate.
 
 ##### All security field details {#all-security-field-details}
 
@@ -390,7 +390,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">Use source timestamp</td>
 <td style="text-align: left">enableResourceLevelTimestamp</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">If this device property is enabled {{< product-c8y-iot >}} uses time stamps reported by the device for constructing measurements, events and alarms. This is possible if the device reports multiple resources at the same time. For example, this may be done using observes on entire object instances or composite reads and observes. Time stamp data needs to be reported as part of the same object: Either via the common timestamp resources 5518 and 6050 or the specific timestamp resource for object 6. If this feature is disabled or no timestamp information is reported, {{< product-c8y-iot >}} will use its local date and time. Default: false</td>
+<td style="text-align: left">If this device property is enabled {{< product-c8y-iot >}} uses time stamps reported by the device for constructing measurements, events and alarms. LWM2M offers various methods for associating timestamp information with data points, including resources 5518 and 6050, SenML, or resource 5 for the location object (6). When activated, the LWM2M agent utilizes this timestamp data source to generate measurements, events, or alarms. If deactivated, the LWM2M agent resorts to using its local time. Default: false</td>
 <td style="text-align: left">Optional, defaults to false</td>
 </tr>
 <tr>
@@ -410,6 +410,13 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">serializationFormat</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the preferred content format for {{< product-c8y-iot >}} to communicate with the device. The allowed content formats are: TLV, JSON, CBOR, TEXT, OPAQUE or SENML_JSON and SENML_CBOR. In case of an empty or invalid entry, {{< product-c8y-iot >}} automatically selects the serialization format which the device sends during device registration.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left">Disable the default behavior for object instances</td>
+<td style="text-align: left">disableInternalObjectInstanceActions</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Cumulocity IoT implements default handlers for objects 3,4 and 6. For example, they update the device name upon the reception of the corresponding resource in object 3 or update the device location. This flag allows those behaviors to be turned off.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 </tbody>
@@ -470,8 +477,17 @@ Allowed values are PACKAGE or PACKAGE_URI. Depending on the value, the LWM2M age
 <td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 <td style="text-align: left">Optional</td>
 </tr>
+<tr>
+<td style="text-align: left">Disable automated firmware update support</td>
+<td style="text-align: left">disableFirmwareStateMachine</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Indicates if the default firmware update state machine should be disabled. Default is false.</td>
+<td style="text-align: left">Optional</td>
+</tr>
 </tbody>
 </table>
+
+
 
 {{< c8y-admon-info >}}
 Firmware updates are also supported for the registration of unsecured devices as well as secured devices. For more information, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).

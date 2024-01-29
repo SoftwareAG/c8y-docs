@@ -37,7 +37,7 @@ When you go to the **EPL Apps** page, the EPL app manager is shown first, listin
 
 ![EPL Apps](/images/streaming-analytics/epl-apps/epl-apps-cards.png)
 
-Each card that is shown for an app has an actions menu at the top which allows you to edit, export or remove the app.
+Each card that is shown for an app has an actions menu at the top which allows you to edit, download or remove the app.
 
 From this page, you can:
 
@@ -47,10 +47,9 @@ From this page, you can:
 
 * Import EPL apps. If you prefer to develop your apps outside of {{< product-c8y-iot >}} (for example, using {{< sag-designer >}}), click **Import EPL** in the top menu bar to upload an Apama monitor (\*.mon) file as an app into the Streaming Analytics application.
 
-* Export EPL apps. Use the **Export** command from the actions menu to download the app as a \*.mon file.
+* Download EPL apps. Use the **Download** command from the actions menu to download the app as a \*.mon file.
 
 * Deploy existing EPL apps. On the card that is shown for an app, change the mode from **Inactive** to **Active**. For more information, see [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
-
     When activating an app, any syntax errors are reported back immediately. The error state is shown on the card, helping you to ensure your app is in good shape. Click on the error to display information on what went wrong. It is not possible to activate an app if it has syntax errors. The errors are shown on the card until they have been fixed and the app has been activated again.
 
 * Reload all EPL apps. Click **Reload** in the top menu bar to refresh the display to show any changes other users have made since the page loaded, including any errors that have been introduced in the meantime.
@@ -207,10 +206,6 @@ Using {{< sag-designer >}}, you can also develop more complex projects which:
 
 These kinds of applications should be deployed as microservices to {{< product-c8y-iot >}}.
 
-{{< c8y-admon-info >}}
-This only applies if you are using Apama 10.3 or later.
-{{< /c8y-admon-info >}}
-
 ##### Required settings in the microservice manifest {#required-settings-in-the-microservice-manifest}
 
 The microservice manifest provides the required settings to manage microservice instances and the application deployment in {{< product-c8y-iot >}}. For detailed information, see [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
@@ -248,7 +243,6 @@ The above is the minimum list of permissions that a custom Apama microservice ne
 1. Develop your application in {{< sag-designer >}} in the usual way.
 
 2. You can use Apama's Docker support to turn the entire project into a microservice. In the **Project Explorer** view, right-click the project and select **Apama > Add Docker Support**, which will add a Dockerfile to the root of your project directory.
-
 	When used for building, it will make use of the Apama images available on Docker Hub. You will need Docker Hub credentials that give you access to the Apama images. Apama Docker images are exclusively Linux-based.
 
 3. Add any custom steps to the Dockerfile that might be necessary, for example, building a custom plug-in, or copying your license file into the image.
@@ -303,10 +297,6 @@ For more information on PySys, see the [API Reference for Python]({{< link-apama
 EPL apps are designed to listen for REST (Representational State Transfer) services and supports all GET, POST, PUT and DELETE operations. Example requests for the different operations are listed below.
 
 To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/standard-tenant/managing-permissions/)).
-
-{{< c8y-admon-info >}}
-This API requires version 10.6.0 or above of the Apama-ctrl microservice.
-{{< /c8y-admon-info >}}
 
 #### Request headers for all operations {#request-headers-for-all-operations}
 

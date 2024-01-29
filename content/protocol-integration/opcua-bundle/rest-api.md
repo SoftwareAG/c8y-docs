@@ -971,8 +971,8 @@ is changed to "false", or a number that is less than or equals to 0.</td>
 <td>Selectable event attributes. The nodeId of the event source
 is added by default as the last selected attribute by
 the OPC UA device gateway.
-If <em>alarmSeverityMappings</em> are defined, also the <em>Severity</em> attribute needs to be added to the attributes.
-If <em>alarmStatusMappings</em> are defined, also the variables used in the expression needs to be added to the attributes.
+If <em>alarmSeverityMappings</em> are defined, also the <em>Severity</em> attribute must be added to the attributes.
+If <em>alarmStatusMappings</em> are defined, also the variables used in the expression must be added to the attributes.
 </td>
 </tr>
 <tr>

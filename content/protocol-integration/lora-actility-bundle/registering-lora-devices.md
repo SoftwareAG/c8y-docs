@@ -36,7 +36,7 @@ The provision status is shown under **Device data** in the **Info** tab of the d
 
 For more information on viewing and managing your connected devices, also refer to the [Device management application](/device-management-application).
 
-In order to migrate the device from one LNS Connection to another, the device needs to be re-registered.
+In order to migrate the device from one LNS Connection to another, the device must be re-registered.
 Navigate to the **LPWAN** tab of the Device.
 Click on the **Provider connection** dropdown.
 A prompt will appear stating that in order to migrate the device from one LNS connection to another, you must re-register the device.

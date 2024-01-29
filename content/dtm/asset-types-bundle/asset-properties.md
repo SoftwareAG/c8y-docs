@@ -150,7 +150,7 @@ If selected, enter a number in the field on the right. When you create the asset
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be greater than or equal to the minimum provided. By default, this box is not selected.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be greater than or equal to the minimum provided. By default, this box is not selected.
 
 {{< /c8y-admon-info>}}
 
@@ -160,7 +160,7 @@ If selected, enter a number in the field on the right. When you create the asset
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
 
 {{< /c8y-admon-info>}}
 

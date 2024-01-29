@@ -113,7 +113,7 @@ mo.set(tariff);
 
 ### Accessing the identity service {#accessing-the-identity-service}
 
-A device typically has a technical identifier that an agent needs to know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of {{< product-c8y-iot >}}, agents can use the identity service. Again, to create the association, create an object of type `ExternalIDRepresentation` and send it to the platform.
+A device typically has a technical identifier that an agent must know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of {{< product-c8y-iot >}}, agents can use the identity service. Again, to create the association, create an object of type `ExternalIDRepresentation` and send it to the platform.
 
 The code snippet below shows how to register a REST URL for a device. It assumes that `mo` is the managed object from the above example and `deviceUrl` is a string with the REST URL of the device.
 

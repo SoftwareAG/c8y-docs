@@ -124,7 +124,7 @@ You can remove each instance that is currently listed in the instance editor. Wh
 
 ### Saving the instances {#saving-the-instances}
 
-You can save the instances even if there are still rows in which required information needs to be specified. This is helpful if you want to add that information at a later point in time.
+You can save the instances even if there are still rows in which required information must be specified. This is helpful if you want to add that information at a later point in time.
 
 {{< c8y-admon-info>}}
 When you activate an instance, all of your recent changes are automatically saved. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).

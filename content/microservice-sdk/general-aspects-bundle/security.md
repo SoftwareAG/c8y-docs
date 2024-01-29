@@ -32,7 +32,7 @@ Depending on the authentication method, the credentials can be passed to the mic
   3. Custom HTTP header called `X-XSRF-TOKEN`
   4. Custom HTTP header called `tfatoken`
 
-If the incoming request contains the cookie `authorization`, the microservice must copy the cookie and the header `X-XSRF-TOKEN` to the request to the <kbd>/user/currentUser</kbd> endpoint. In other cases, the header `Authorization` must be copied. This is necessary, if a request contains the header `tfatoken`, which always needs to be included in the request to <kbd>/user/currentUser</kbd>.
+If the incoming request contains the cookie `authorization`, the microservice must copy the cookie and the header `X-XSRF-TOKEN` to the request to the <kbd>/user/currentUser</kbd> endpoint. In other cases, the header `Authorization` must be copied. This is necessary, if a request contains the header `tfatoken`, which always must be included in the request to <kbd>/user/currentUser</kbd>.
 
 You can see the credential validation flow on the sequence diagram below:
 

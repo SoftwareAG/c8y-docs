@@ -64,7 +64,7 @@ The first message sent will create our device. Although the static templates sup
 
 Afterwards, you will find this device in the Device management application as a new device. If you switch to the **Identity** tab of the device you will notice that there was an identity created automatically to link the device to the MQTT ClientId.
 
-Besides the name and the type, the device does not have more information, so master data needs to be added.
+Besides the name and the type, the device does not have more information, so master data must be added.
 
 You can use multiple static templates per publishing separated by a line break (one template per row). This feature is used to set the hardware and the required interval for the device in a single published message.
 

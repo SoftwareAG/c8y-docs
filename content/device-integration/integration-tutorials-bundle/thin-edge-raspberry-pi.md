@@ -117,7 +117,7 @@ You will also use the CLI to configure the thin-edge.io installation on the devi
 
 #### Step 2 Configure and connect to the platform {#step-2-configure-and-connect-to-the-platform}
 
-To connect the device to the {{< product-c8y-iot >}} platform it needs to be configured.
+To connect the device to the {{< product-c8y-iot >}} platform it must be configured.
 The following configuration parameter is mandatory:
 
 ```

@@ -44,10 +44,10 @@ First, take a look at the limitations of that approach to understand why the con
 
 As we must make sure that Angular and angularjs run side by side when running a hybrid application, there are some limitations:
 
- - It is not possible to access the *index.html*: The whole bootstrapping process needs to be handled by {{< product-c8y-iot >}} to make sure that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template and you can only add routes.
+ - It is not possible to access the *index.html*: The whole bootstrapping process must be handled by {{< product-c8y-iot >}} to make sure that all required elements for Angular and angularjs are in place. There is no possibility to change the bootstrapping template and you can only add routes.
  - As the services must be loaded first, you can also not inject any service in the root application module. You must provide them on a route or as `providedIn: root` at the deceleration of the service.
  - Routes in the router must be defined before the `UPGRADED_ROUTES`. This is because the Angular router has a `**` path match for all angularjs routes which is defined in the `UPGRADED_ROUTES`. If you define a route after it, the `**` will match before your defined route.
- - Every extension needs to be done via a hook. This is because Angular and angularjs are needed in hybrid applications and the hooks can be used by both.
+ - Every extension must be done via a hook. This is because Angular and angularjs are needed in hybrid applications and the hooks can be used by both.
  - Styling is limited to global styles. That means you can only extend the styling by applying a custom branding or by using inline styles. The `styleUrls` are, as of this version, not supported.
 
 Now that you know the limitations you can start to extend the first application and develop your first extension hook.
@@ -77,7 +77,7 @@ The `c8ycli new` command has a `-a` flag which defines which package to use for 
 ### 2. Bind a custom component to a route {#2-bind-a-custom-component-to-a-route}
 
 Routes can be added the same way as in Angular.
-The only difference is that it needs to be defined before the `UPGRADE_ROUTES` because of the hybrid limitations.
+The only difference is that it must be defined before the `UPGRADE_ROUTES` because of the hybrid limitations.
 Create the *hello.component.ts* file in our project with the following content:
 
 ```js

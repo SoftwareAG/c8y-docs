@@ -50,7 +50,7 @@ Click **Next** to proceed with the next configuration step. Click **Cancel** to 
 
 Once you have selected a collection for offloading, you must specify the target table in the data lake. The **Target table name** denotes the folder name in the data lake. In this folder, which will be automatically created, the offloaded data will be stored. In Dremio a table is created with the same name, pointing to this data lake folder. This table is used when querying the corresponding data lake folder and thus the offloaded data. The target table name must follow these syntax rules:
 
-* It needs to start with an alphanumeric character (letters and numbers).
+* It must start with an alphanumeric character (letters and numbers).
 * It may contain alphanumeric characters, underscores (_) and dashes (-).
 * Each underscore or dash must be preceded by an alphanumeric character.
 * The name must be at least two characters long.

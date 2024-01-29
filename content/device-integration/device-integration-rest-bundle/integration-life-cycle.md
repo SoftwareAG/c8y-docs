@@ -35,7 +35,7 @@ Reference models for the data can be found in the [fragment library](/device-int
 
 #### Step 0: Request device credentials {#step-0-request-device-credentials}
 
-Every request to {{< product-c8y-iot >}} needs to be authenticated, including requests from devices. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. To do so, request device credentials at first startup through the API and store them locally on the device for further requests.
+Every request to {{< product-c8y-iot >}} must be authenticated, including requests from devices. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. To do so, request device credentials at first startup through the API and store them locally on the device for further requests.
 
 The process works as follows:
 
@@ -290,7 +290,7 @@ Each operation in {{< product-c8y-iot >}} is cycled through an execution flow. W
 
 ![Operation status diagram](/images/rest/operations.png)
 
-The benefit of this execution flow is that it supports devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence needs to query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
+The benefit of this execution flow is that it supports devices that are offline and temporarily out of coverage. It also allows devices to support operations that require a restart -- such as a firmware upgrade. After the restart, the device needs to know what it previously did and hence must query all EXECUTING operations and see if they were successful. Also, it needs to listen what new operations may be queued for it.
 
 To clean up operations that are still in EXECUTING status, query operations by agent ID and status. In our example, the request would be:
 
@@ -354,7 +354,7 @@ Then, listen to new operations created in {{< product-c8y-iot >}}. The mechanism
         "successful": true
     } ]
 
-Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
+Afterwards, the device respectively the agent must subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
 
     POST /notification/operations HTTP/1.1
     Content-Type: application/json
@@ -475,7 +475,7 @@ Note that all data types in {{< product-c8y-iot >}} can include arbitrary extens
 
 #### Step 11: Send alarms {#step-11-send-alarms}
 
-Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone needs to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
+Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone must visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 
     POST /alarm/alarms HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.alarm+json

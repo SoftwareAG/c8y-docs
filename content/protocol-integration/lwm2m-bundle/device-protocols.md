@@ -60,7 +60,7 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
-We here distinguish between predefined custom actions and decoder microservices
+We distinguish here between predefined custom actions and decoder microservices.
 
 ##### Predefined custom actions {#predefined-custom-actions}
 

@@ -60,7 +60,7 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 Turn on **Custom Actions** to map LWM2M data into {{< product-c8y-iot >}} using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
-We here distinguish between predefined custom actions and decoder microservices
+We distinguish here between predefined custom actions and decoder microservices.
 
 ##### Predefined custom actions {#predefined-custom-actions}
 
@@ -95,7 +95,7 @@ Below is an example where the “connectivity:updateRssi” custom action is sel
 
 ##### Decoder microservices
 
-{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).
+{{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We provide an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).
 
 
 The LWM2M agent serializes different LWM2M data types to binary data depending on the type of the corresponding resource:
@@ -133,7 +133,7 @@ The LWM2M agent serializes different LWM2M data types to binary data depending o
 <td>STRING</td>
 <td>dynamic</td>
 <td></td>
-<td>The string is serialized into a series of bytes, starting from the first character in the string. The first byte corresponds to its first character. Likewise, the last byte corresponds to the last character of the string </td>
+<td>The string is serialized into a series of bytes, starting from the first character in the string. The first byte corresponds to its first character. Likewise, the last byte corresponds to the last character of the string. </td>
 </tr>
 
 <tr>

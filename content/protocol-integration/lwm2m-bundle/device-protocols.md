@@ -133,7 +133,7 @@ The LWM2M agent serializes different LWM2M data types to binary data depending o
 <td>STRING</td>
 <td>dynamic</td>
 <td></td>
-<td>The string is serialized into a series of bytes, starting from the first character in the string. The first byte corresponds to its first character. Likewise, the last byte corresponds to the last character of the string </td>
+<td>The string is serialized into a series of bytes, starting from the first character in the string. The first byte corresponds to its first character. Likewise, the last byte corresponds to the last character of the string. </td>
 </tr>
 
 <tr>

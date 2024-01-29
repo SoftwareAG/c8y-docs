@@ -147,7 +147,7 @@ The LWM2M agent serializes different LWM2M data types to binary data depending o
 <td>TIME</td>
 <td>8</td>
 <td>Big Endian</td>
-<td>Time data is represented as a long value (see above). The long value here corresponds to the number of milliseconds since January 1, 1970, 00:00:00 GMT. </td>
+<td>Time data is represented as a 8-byte integer value (see above). The value here corresponds to the number of milliseconds since January 1, 1970, 00:00:00 GMT. </td>
 </tr>
 
 <tr>

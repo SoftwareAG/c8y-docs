@@ -57,7 +57,7 @@ Once you have selected a collection for offloading, you must specify the target 
 
 Each pipeline must have its own target table in the data lake. Thus, you must select distinct target table names for each offloading configuration.
 
-For the **alarms**, **events**, and **inventory** collections, you only need to specify the target table name in this step.
+For the **alarms**, **events**, and **inventory** collections, you must only specify the target table name in this step.
 
 For the **measurements** collection, additional settings are required. The **Target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
 
@@ -98,7 +98,7 @@ If you enter the additional result columns step for an active offloading pipelin
 
 **Add an additional result column**
 
-When adding an additional result column, a dialog box for defining the column opens. You need to define a unique column name as well as a source definition. You can validate the source definition and preview its results by clicking **Validate and preview**.
+When adding an additional result column, a dialog box for defining the column opens. You must define a unique column name as well as a source definition. You can validate the source definition and preview its results by clicking **Validate and preview**.
 
 Regarding the source definition, the first step is to specify a field from the base collection in the source definition editor. Then you can optionally apply SQL functions to adapt the data of this field to your needs, for example, by trimming whitespace or rounding decimal values. The source definition editor supports you in this process with content completion and syntax highlighting. The **Change data type** controls helps you to define a function which changes the data type of the source definition. For example, the source definition is of type VARCHAR and corresponding values are always either true or false. Then you can select Boolean in the **Change data type** dropdown box to define a function which casts the VARCHAR values to BOOLEAN. Different target data types are available in the control, with some of them having options for dealing with non-matching values. For example, if you want to cast all values to type INTEGER and the non-matching literal N/A is processed, you can configure the casting function to use value 0 instead. If you have selected a data type you want to change to, click **Apply** to apply or **Cancel** to revert that type change. Note that functions you can apply to the source definition are not limited to the data type change functions provided under **Change data type**. In the source definition editor you can apply all SQL functions supported by Dremio, as listed under [SQL Function Categories](https://docs.dremio.com/software/sql-reference/sql-functions/).
 

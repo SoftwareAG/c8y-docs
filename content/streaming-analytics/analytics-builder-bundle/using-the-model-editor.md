@@ -111,7 +111,7 @@ Detailed information for each block is available in the block reference, which i
 3.  Specify all required parameters for the block. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block).
 
     {{< c8y-admon-info>}}
-The block parameter editor is automatically shown when you add a block for which parameters need to be specified. It is not shown, however, if the block does not require any parameters \(such as the **OR** block\).
+The block parameter editor is automatically shown when you add a block for which parameters must be specified. It is not shown, however, if the block does not require any parameters \(such as the **OR** block\).
     {{< /c8y-admon-info>}}
 
 #### Editing the parameters of a block {#editing-the-parameters-of-a-block}
@@ -165,7 +165,7 @@ Select the **Trigger Device** option instead to send the output to the device wh
 
         If you want to add a new template parameter directly in the block parameter editor, type a name in the text box of the above drop-down list box. As soon as you start typing and if a template parameter with that name does not yet exist, the option **Add template parameter name** is shown below the text box. Click this option to add the new template parameter and thus make it available in the **Template Parameters** dialog box. The new template parameter will have the same type, optional and default values as the block parameter. If a template parameter with the name that you are specifying exists already, but with an incompatible type, the name and type is shown below the text box but cannot be selected.
 4.  Some blocks support multi-line input for certain block parameters. For example, the **Send Email** block supports this in the **Text** parameter and the **Alarm Output** block supports this in the **Message** parameter. Your input is automatically wrapped in the text box and you can press Enter to start text on a new line. When you add a new template parameter for such block parameter directly in the block parameter editor \(as described above\), the type of the new template parameter is automatically set to **Multi-line String**.
-5.  For some blocks \(such as the **Range Lookup** block\), the block parameter editor shows text boxes for specifying key-value pairs. If you need to specify more key-value pairs, click **Add row**. The key-value pair in the first row is processed first.
+5.  For some blocks \(such as the **Range Lookup** block\), the block parameter editor shows text boxes for specifying key-value pairs. If you must specify more key-value pairs, click **Add row**. The key-value pair in the first row is processed first.
 You can drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> that is shown next to that row.
 You can remove a row that you do not need any more by clicking the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Remove icon" style="display:inline-block; margin:0"> next to that row.
 Empty rows are automatically removed when you leave the block parameter editor.
@@ -196,12 +196,12 @@ You can also view the block reference directly in this documentation. See [Analy
 
 If you want to move, duplicate or remove one or more blocks that are currently shown on the canvas of the model editor, you first must select the required blocks.
 
-To select a single block on the canvas, you just need to click the block. With a block, the resulting behavior depends on the mouse button that you use:
+To select a single block on the canvas, you click the block. With a block, the resulting behavior depends on the mouse button that you use:
 
 -   When you click the block using the left mouse button, the block is selected and the block parameter editor is shown \(see also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 -   When you click the block using the right mouse button, the block is selected only \(the block parameter editor is not shown\). This is helpful if the editor would be in the way, for example, when adding a wire to another block.
 
-To select a single wire, you just need to click the wire \(you can use either mouse button in this case\).
+To select a single wire, just click the wire \(you can use either mouse button in this case\).
 
 To select several blocks and/or wires at the same time, do one of the following:
 
@@ -323,7 +323,7 @@ If you change more than one group to a device at a time, then only the first spe
         {{< /c8y-admon-info>}}
 -   The **Trigger Device** option is not available for selection in the dialog.
 
-After you have replaced the devices, you need to verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The {{< product-c8y-iot >}} fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
+After you have replaced the devices, you must verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The {{< product-c8y-iot >}} fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
 
 ##### To replace sources or destinations {#to-replace-sources-or-destinations}
 

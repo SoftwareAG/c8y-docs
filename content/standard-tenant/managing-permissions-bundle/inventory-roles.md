@@ -17,7 +17,7 @@ To view the currently configured inventory roles, click **Roles** in the **Accou
 In the **Inventory roles** tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs.
 
 The following default inventory roles are initially available in new tenants:
-    
+
 |Role|Description|
 |:---|:---|
 |Manager| Can read all data of the asset and manage all inventory data but cannot perform operations. In addition, can manage inventory data (including dashboards) and alarms.
@@ -90,7 +90,7 @@ Note that if a measurement also contains other fragment types, they must also be
 Otherwise such measurements are not returned because they contain fields to which the user has not been granted access.
 
 The response looks like below:
-    
+
     GET /measurement/measurements
     ...
     {
@@ -172,7 +172,7 @@ The response looks like below:
     }
     ...
 
-This allows the user to see measurements that contain only the defined types, without the additional need to configure other types of fragments that the measurement has.
+This allows the user to see measurements that contain only the defined types, without the additional configuration of other types of fragments that the measurement has.
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 

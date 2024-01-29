@@ -8,7 +8,7 @@ section:
 
 ### Introduction {#introduction}
 
-When you think about offering your applications and services to your customers you need to think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.
+When you think about offering your applications and services to your customers you must think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.
 
 The first is **role-based access control (RBAC)** that is part of every tenant in the {{< product-c8y-iot >}} platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
 
@@ -24,7 +24,7 @@ Starting with one approach and then switching to the other one will require some
 
 ### General setup {#general-setup}
 
-Before going into detail with certain use cases we need to clarify the general setup for each approach and the underlying concepts.
+Before going into detail with certain use cases we must clarify the general setup for each approach and the underlying concepts.
 
 #### Role-Based Access Control (RBAC) {#rolebased-access-control-rbac}
 

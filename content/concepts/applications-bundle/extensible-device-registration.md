@@ -168,7 +168,7 @@ The following diagram visualizes the single device registration flow:
 
 ### Bulk device registration {#bulk-device-registration}
 
-Many device integrations require the registration of many devices at the same time. Currently, all protocols have to rely on the bulk registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
+Many device integrations require the registration of many devices at the same time. Currently, all protocols must rely on the bulk registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
 
 After enabling the `extensibleBulkDeviceRegistration` extension type, the Device management > Devices > Register device  `Bulk device registration` modal is displayed with an extended wizard entry corresponding to the extension `name` property.
 

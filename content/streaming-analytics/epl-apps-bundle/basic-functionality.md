@@ -276,7 +276,7 @@ You must now use the
 [softwareag/apama-cumulocity-builder](https://hub.docker.com/r/softwareag/apama-cumulocity-builder) image as a builder image.
 To do this with the default project Dockerfile created by {{< sag-designer >}} in 10.15.0 and previous versions,
 you must either change the `FROM` lines in the Dockerfile appropriately
-(you only need to do this once) or build using the following flags (you have to do this every time):
+(you only need to do this once) or build using the following flags (you must do this every time):
 
 ```
 --build-arg APAMA_BUILDER=softwareag/apama-cumulocity-builder:10.15 --build-arg APAMA_IMAGE=softwareag/apama-cumulocity-jre:10.15

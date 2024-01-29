@@ -116,7 +116,7 @@ The block parameter editor is automatically shown when you add a block for which
 
 #### Editing the parameters of a block {#editing-the-parameters-of-a-block}
 
-Most blocks \(but not all\) have parameters that you have to set according to your requirements.
+Most blocks \(but not all\) have parameters that you must set according to your requirements.
 
 When "Missing" is shown on an input or output block on the canvas, this means that the defined input source or output destination cannot be found in the {{< product-c8y-iot >}} inventory. You should then either go to the {{< product-c8y-iot >}} inventory and make sure that the device is registered or that the group or asset exists, or you should select a different, existing input source or output destination in the block parameter editor \(see below\).
 
@@ -133,9 +133,9 @@ For the input and output blocks, you can globally replace the input sources and 
 2.  For the input and output blocks, you can select a different input source or output destination from a dialog box.
 
     The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
-    By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
+    By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you must click **Load more** to display any items that are not shown initially.
 
-    The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
+    The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you must click **Load more** to display any managed objects that are initially not shown.
 
     Click the button which is shown when you hover over an entry to select the input source or output destination that you want to use.
     The name of that button depends on the entry that is currently selected:
@@ -194,7 +194,7 @@ You can also view the block reference directly in this documentation. See [Analy
 
 #### Selecting blocks and wires {#selecting-blocks-and-wires}
 
-If you want to move, duplicate or remove one or more blocks that are currently shown on the canvas of the model editor, you first have to select the required blocks.
+If you want to move, duplicate or remove one or more blocks that are currently shown on the canvas of the model editor, you first must select the required blocks.
 
 To select a single block on the canvas, you just need to click the block. With a block, the resulting behavior depends on the mouse button that you use:
 
@@ -366,7 +366,7 @@ Models with no template parameters can be directly activated in the model manage
 1.  In the toolbar of the model editor, click the template parameters icon <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters.png" alt="Template parameters icon" style="display:inline-block; margin:0"> to invoke the **Template Parameters** dialog box.
     When at least one template parameter has been defined, a checkmark is shown on the above icon: <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters-with-checkmark.png" alt="Template parameters icon with a checkmark" style="display:inline-block; margin:0">.
 
-    This dialog box is initially empty and you have to create the template parameters that you want to use in your model. When template parameters have already been defined, they are all shown in this dialog box.
+    This dialog box is initially empty and you must create the template parameters that you want to use in your model. When template parameters have already been defined, they are all shown in this dialog box.
 
     If you have a long list of template parameters, you can easily locate the template parameter that you are looking for by entering its name or part of the name in the search box. When search criteria are currently applied, an X is shown in the search box; click this to clear the search and thus to show all available template parameters.
 
@@ -460,7 +460,7 @@ There may be performance issues if you copy many input blocks and output blocks.
 
 2.  Leave the model editor. See also [Leaving the model editor](/streaming-analytics/analytics-builder/#leaving-the-model-editor).
 
-3.  In the model manager, switch to the model into which you want to paste the copied items. This can be an existing model \(see also [Editing an existing model](/streaming-analytics/analytics-builder/#editing-an-existing-model)\) or a new model that you first have to create \(see also [Adding a new model](/streaming-analytics/analytics-builder/#adding-a-new-model)\).
+3.  In the model manager, switch to the model into which you want to paste the copied items. This can be an existing model \(see also [Editing an existing model](/streaming-analytics/analytics-builder/#editing-an-existing-model)\) or a new model that you first must create \(see also [Adding a new model](/streaming-analytics/analytics-builder/#adding-a-new-model)\).
 
 4.  When the model editor is shown, press Ctrl+V to paste the copied items into the model.
 
@@ -492,7 +492,7 @@ There is one exception when managing the contents of a group: When you duplicate
 
 You can add any blocks that are currently shown on the canvas \(including the wires between the blocks\) to a group.
 
-It is not possible to create an empty group. You first have to add a group as described below. Once the group exists, you can add more blocks to the group, either from the palette or from the canvas, as described in [Adding a block](/streaming-analytics/analytics-builder/#adding-a-block) and [Moving blocks into a group](/streaming-analytics/analytics-builder/#moving-blocks-into-a-group).
+It is not possible to create an empty group. You must first add a group as described below. Once the group exists, you can add more blocks to the group, either from the palette or from the canvas, as described in [Adding a block](/streaming-analytics/analytics-builder/#adding-a-block) and [Moving blocks into a group](/streaming-analytics/analytics-builder/#moving-blocks-into-a-group).
 
 ##### To add a group {#to-add-a-group}
 
@@ -509,7 +509,7 @@ When a group is collapsed, a number is shown on the collapsed group indicating t
 
 ![Example of a collapsed group](/images/streaming-analytics/analytics-builder/collapsed-group-example.png)
 
-If you want to make the group contents visible again \(for example, to edit block parameters or to add wires\), you have to expand the group.
+If you want to make the group contents visible again \(for example, to edit block parameters or to add wires\), you must expand the group.
 
 When you save the model, the state of each group \(that is, whether it is currently collapsed or expanded\) is stored. The next time you edit the model, its contents will be shown as after the last save.
 

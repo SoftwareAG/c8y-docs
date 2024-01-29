@@ -28,7 +28,7 @@ When running a simulation, historical data is replayed into the Apama correlator
 
 ### Simulation parameters {#simulation-parameters}
 
-To deploy a model in simulation mode, you have to provide values for two parameters in the model manager: start time and end time. These values determine the time range for which historical data is to be sent into the simulated model.
+To deploy a model in simulation mode, you must provide values for two parameters in the model manager: start time and end time. These values determine the time range for which historical data is to be sent into the simulated model.
 
 -   The start time from which historical data is to be sent into the model.
 -   The end time until which historical data is to be sent into the model.

@@ -124,7 +124,7 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 **Example:**
 
-If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes have to start with the prefix “MCGEN”.
+If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes must start with the prefix “MCGEN”.
 
 #### Default value {#default-value}
 
@@ -195,7 +195,7 @@ During asset creation, these values appear as options in the dropdown menu. Sele
 
 **Example:**
 
-If you create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you have to provide these options separated by a comma when creating the asset property.
+If you create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you must provide these options separated by a comma when creating the asset property.
 
 ![Asset property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
@@ -338,7 +338,7 @@ You can import a maximum of 500 asset properties at a time.
 ### Characteristics {#characteristics-of-default-properties}
 
 * Default properties are readily available when you open the application.
-* Default properties cannot be deleted. 
+* Default properties cannot be deleted.
 * Only selected fields within a default property are editable and the editable fields vary depending on the specific property.
 * Default properties cannot be exported.
 

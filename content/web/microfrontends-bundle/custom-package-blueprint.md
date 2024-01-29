@@ -229,7 +229,7 @@ import { MiscConfigComponent } from "./misc-config.component";
 export class AppModule {}
 ```
 
-Now on the first application start, users will have to complete the single step wizard above.
+Now on the first application start, users must complete the single step wizard above.
 
 ### Differences in approach to creating custom applications {#differences-in-approach-to-creating-custom-applications}
 

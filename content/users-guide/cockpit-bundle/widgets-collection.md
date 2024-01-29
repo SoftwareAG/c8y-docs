@@ -454,7 +454,6 @@ Click a device icon, to open a popup with the following information:
 
 * The device name. When clicked, the application navigates to the device.
 * The date at which the device last reported its location, if available.
-* A toggle to show/hide the device tracks for the previous and current days.
 
 **Parameters to configure**
 

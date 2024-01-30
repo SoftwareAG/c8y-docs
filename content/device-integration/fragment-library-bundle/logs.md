@@ -61,8 +61,8 @@ When users request log files from devices via the **Logs** tab a ```c8y_LogfileR
 
 When the device has gathered the logs it uploads them to {{< product-c8y-iot >}} as a file.
 We recommend you to create an event and upload the log file as a binary attachment of the event.
-To avoid conflicts with other events bearing binary attachments (e.g. for [typed file-based configuration](#upload-current-configuration-file))
-we recommend to use `c8y_Logfile` as event type.
+To avoid conflicts with other events bearing binary attachments (for example, for [typed file-based configuration](#upload-current-configuration-file))
+we recommend you to use `c8y_Logfile` as event type.
 The following is an example of such an event:
 
 ```http

@@ -11,7 +11,9 @@
           </header>
           <div class="lead">
             {{ .Content }}
-            <p class="small {{ if site.Data.date_settings.yearly_release}}hidden{{end}}">Displaying the latest changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
+            <p class="small {{ if site.Data.date_settings.yearly_release}}hidden{{end}}">Displaying all changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
+            <p class="small {{ if not site.Data.date_settings.yearly_release}}hidden{{end}}">Displaying all changes since Release 10.18</p>
+            {{ if site.Data.date_settings.yearly_release}} <hr> {{end}}
           </div>
         </div>
       </article>
@@ -101,8 +103,6 @@
           >
             <h5>{{$listDate}}</h5>
           </div>
-          {{else}}
-          <hr>
         {{end}}
       {{end}}
 

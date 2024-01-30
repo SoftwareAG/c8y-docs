@@ -11,7 +11,7 @@
           </header>
           <div class="lead">
             {{ .Content }}
-            <p class="small">Displaying the latest changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
+            <p class="small {{ if site.Data.date_settings.yearly_release}}hidden{{end}}">Displaying the latest changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
           </div>
         </div>
       </article>
@@ -94,12 +94,16 @@
       {{end}}
       {{end}}
 
-      <div
-        id="cl-{{$listDate | urlize }}"
-        class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
-      >
-        <h5>{{$listDate}}</h5>
-      </div>
+        {{ if not site.Data.date_settings.yearly_release}}
+          <div
+            id="cl-{{$listDate | urlize }}"
+            class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
+          >
+            <h5>{{$listDate}}</h5>
+          </div>
+          {{else}}
+          <hr>
+        {{end}}
       {{end}}
 
 

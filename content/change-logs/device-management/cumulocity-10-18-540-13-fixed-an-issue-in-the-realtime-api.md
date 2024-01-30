@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-56910
-version: 10.18.540.13
+version: 10.20.18.0
 ---
 Fixed an issue in the realtime API where a subscription marked as "non-retriable" could still be re-subscribed after re-establishing the underlying connection to the server, for example, after a Cumulocity core restart or network outage.

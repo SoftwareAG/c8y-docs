@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-56779
-version: 10.18.540.11
+version: 10.20.23.0
 ---
 To address the CVE-2023-39410 vulnerability, the 3rd-party library Avro has been updated to version 1.11.3.

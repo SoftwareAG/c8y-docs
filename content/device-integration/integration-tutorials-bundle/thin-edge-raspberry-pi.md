@@ -24,7 +24,7 @@ This makes it ideal for testing and trying out as well as some production use ca
 To follow this tutorial, you need the following:
 
 * A [{{< product-c8y-iot >}}]({{< link-sag-cloud-product >}}) trial tenant.
-* A Raspberry Pi (3 or 4) with Raspian installed. For other boards and operating systems, refer to [thin-edge.io platform support](https://github.com/thin-edge/thin-edge.io/blob/main/docs/src/supported-platforms.md) on *GitHub*.
+* A Raspberry Pi (3 or 4) with Raspian installed. For other boards and operating systems, refer to [thin-edge.io platform support](https://thin-edge.github.io/thin-edge.io/references/supported-platforms/).
 * An updated device. To update it, run:
   ```
   $ sudo apt-get update && sudo apt-get upgrade
@@ -61,7 +61,7 @@ There are two ways of installing thin-edge.io:
 The easiest way is to use the installation script with this command:
 
 ```
-curl -fsSL https://raw.githubusercontent.com/thin-edge/thin-edge.io/main/get-thin-edge_io.sh | sudo sh -s
+curl -fsSL https://thin-edge.io/install.sh | sh -s
 ```
 
 This script will install the latest version of thin-edge.io with the following components:
@@ -70,7 +70,7 @@ This script will install the latest version of thin-edge.io with the following c
 * Command line interface (CLI) tool
 * Tedge mapper
 
-It is possible to do the installation of thin-edge.io manually or install another version or upgrade the current version. For more information, refer to [User Documentation > Installation > thin-edge.io manual installation](https://thin-edge.github.io/thin-edge.io/html/howto-guides/002_installation.html#thin-edgeio-manual-installation) in the *thin-edge.io docs*.
+It is possible to do the installation of thin-edge.io manually or install another version or upgrade the current version. For more information, refer to the [Installation Guide](https://thin-edge.github.io/thin-edge.io/install/) in the *thin-edge.io docs*.
 
 After a successful installation, it is possible to use thin-edge.io via the CLI and to use the tedge commands.
 
@@ -88,30 +88,30 @@ Adding the parameter `-h` shows the help for the latest subcommand.
 When running this command something like the following will be displayed:
 
 ```shell
-$ sudo tedge -h
+$ tedge -h
 
-tedge 0.8.1
 tedge is the cli tool for thin-edge.io
 
-USAGE:
-    tedge [OPTIONS] [SUBCOMMAND]
+Usage: tedge [OPTIONS] <COMMAND>
 
-OPTIONS:
-        --config-dir <CONFIG_DIR>    [default: /etc/tedge]
-    -h, --help                       Print help information
-        --init                       Initialize the tedge
-    -V, --version                    Print version information
+Commands:
+  init             Initialize Thin Edge
+  cert             Create and manage device certificate
+  config           Configure Thin Edge
+  connect          Connect to connector provider
+  disconnect       Remove bridge connection for a provider
+  reconnect        Reconnect command, calls disconnect followed by connect
+  refresh-bridges  Refresh all currently active mosquitto bridges
+  mqtt             Publish a message on a topic and subscribe a topic
+  help             Print this message or the help of the given subcommand(s)
 
-SUBCOMMANDS:
-    cert          Create and manage device certificate
-    config        Configure Thin Edge
-    connect       Connect to connector provider
-    disconnect    Remove bridge connection for a provider
-    help          Print this message or the help of the given subcommand(s)
-    mqtt          Publish a message on a topic and subscribe a topic
+Options:
+      --config-dir <CONFIG_DIR>  [default: /etc/tedge]
+  -h, --help                     Print help
+  -V, --version                  Print version
 ```
 
-For an overview of the commands for the CLI tool, refer to the [Command Line Reference](https://thin-edge.github.io/thin-edge.io/html/references/references.html) in the *thin-edge.io docs*.
+For an overview of the commands for the CLI tool, refer to the [Command Line Reference](https://thin-edge.github.io/thin-edge.io/references/cli/) in the *thin-edge.io docs*.
 
 You will also use the CLI to configure the thin-edge.io installation on the device in the next steps.
 
@@ -185,7 +185,7 @@ tedge mqtt pub {{TOPIC}} {{PAYLOAD}}
 ```
 
 thin-edge.io comes with a tedge-mapper daemon.
-This process collects the data from the `tedge/#` topic and translates them to the tedge payloads on the `c8y/#` topic which are mapped directly to {{< product-c8y-iot >}}.
+This process collects the data from the `te/device/main///+/+` topics and translates them to the tedge payloads on the `c8y/#` topic which are mapped directly to {{< product-c8y-iot >}}.
 The mapper translates simple JSON to the desired target payload for {{< product-c8y-iot >}}.
 
 ##### Sending measurements {#sending-measurements}
@@ -202,13 +202,13 @@ The key-value pair represents the measurement type and the numeric value of the 
 The endpoint that is supervised by the tedge-mapper for measurements is:
 
 ```
-tedge/measurements
+te/main/device///m/{{measurement-type}}
 ```
 
 The temperature measurement can be sent as follows:
 
 ```
-tedge mqtt pub tedge/measurements '{ "temperature": 25 }'
+tedge mqtt pub te/device/main///m/environment '{ "temperature": 25 }'
 ```
 
 ##### Sending events {#sending-events}
@@ -227,13 +227,13 @@ An event can be represented in Thin Edge JSON as follows:
 The endpoint that is supervised by the tedge-mapper for events is:
 
 ```
-tedge/events/{{event-type}}
+te/device/main///e/{{event-type}}
 ```
 
 The "door closed" event can be sent as follows:
 
 ```
-tedge mqtt pub tedge/events/door '{"text": "A door was closed","time": "2022-06-10T05:30:45+00:00"}'
+tedge mqtt pub te/device/main///e/door '{"text": "A door was closed","time": "2022-06-10T05:30:45+00:00"}'
 ```
 
 An event entry will be visible in **Device management** > **Your device** > **Events**.
@@ -389,14 +389,14 @@ When a different version of the already installed software needs to be installed
 
 For more information on how to manage the software, refer to [Managing software on a device](/device-management-application/managing-device-data/#to-manage-software-on-a-device).
 
-For more information on how to develop your own plugins, refer to [Developer Documentation > Write my own software management plugin](https://thin-edge.github.io/thin-edge.io/html/tutorials/write-my-software-management-plugin.html) in the *thin-edge.io docs*.
+For more information on how to develop your own plugins, refer to [Extend thin-edge > Write my own software management plugin](https://thin-edge.github.io/thin-edge.io/extend/write-my-software-management-plugin/) in the *thin-edge.io docs*.
 
 #### Step 6 Manage configuration files {#step-6-manage-configuration-files}
 
 With thin-edge.io you can manage configuration files on a device by using the {{< product-c8y-iot >}} configuration management feature as a part of Device management application.
 
 This functionality is installed with the initial script.
-However, you must configure it in */etc/tedge/c8y/c8y-configuration-plugin.toml* and add the entries for the configuration files to be managed.
+However, you must configure it in */etc/tedge/plugins/tedge-configuration-plugin.toml* and add the entries for the configuration files to be managed.
 Add the following to the file:
 
 ```
@@ -413,16 +413,10 @@ Where:
 * `path` is the full path to the configuration file.
 * `type` is a unique alias for each file entry which will be used to represent that file in the Cumulocity UI.
 
-Then start the configuration plugin process and enable it on boot via `systemctl`:
-
-```
-sudo systemctl start c8y-configuration-plugin.service
-sudo systemctl enable c8y-configuration-plugin.service
-```
 Finally, do the following:
 
 1. Navigate to the Device management application and to the desired device and click the **Configuration** tab.
-2. Select the c8y-configuration-plugin from the list of supported configuration types, as declared in the plugin configuration file.
+2. Select the tedge-configuration-plugin from the list of supported configuration types, as declared in the plugin configuration file.
 3. Save the configuration files in the repository or download them.
 
 ##### Change configuration files via the platform {#change-configuration-files-via-the-platform}
@@ -450,7 +444,7 @@ Also see [Managing configurations](/device-management-application/managing-devic
 
 To change the `collectd` metrics of the devices which are displayed in {{< product-c8y-iot >}}, follow the steps below. They are similar to the steps in the previous paragraphs.
 
-1. Add the line below to the `/etc/tedge/c8y/c8y-configuration-plugin.toml` file:
+1. Add the line below to the `/etc/tedge/plugins/tedge-configuration-plugin.toml` file:
 
     ```
     { path = '/etc/collectd/collectd.conf', type = 'collectd.conf' },
@@ -464,7 +458,7 @@ To change the `collectd` metrics of the devices which are displayed in {{< produ
 With thin-edge.io it is possible to request log files from a device by using the {{< product-c8y-iot >}} log request feature as part of Device management application.
 
 This functionality is directly installed with the initial script.
-However, you must configure it in */etc/tedge/c8y/c8y-log-plugin.toml* and add the entries for the configuration files to be managed.
+However, you must configure it in */etc/tedge/plugins/tedge-log-plugin.toml* and add the entries for the configuration files to be managed.
 Add the following to the file:
 
 ```
@@ -481,17 +475,8 @@ files = [
 ]
 ```
 
-The daemon is started and enabled with the commands below:
 
-```
-sudo systemctl start c8y-log-plugin
-sudo systemctl enable c8y-log-plugin
-```
-
-To see the content of the log files in {{< product-c8y-iot >}}, follow the steps in [To request log information](/device-management-application/viewing-device-details/#to-request-log-information).
-
-If `c8y-log-plugin.toml` is added to the *c8y-configuration-plugin.toml* file it is possible to do the administration from there.
-However, keep in mind that the daemon must be restarted if the */etc/tedge/c8y/c8y-log-plugin.toml* file is touched via the command line.
+If `/etc/tedge/plugins/tedge-log-plugin.toml` is added to the */etc/tedge/plugins/tedge-configuration-plugin.toml* file it is possible to do the administration from there.
 
 ##### References {#references}
 

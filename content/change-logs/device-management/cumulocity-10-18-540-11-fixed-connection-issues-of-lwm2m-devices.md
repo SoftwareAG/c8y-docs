@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-3044
-version: 10.18.540.11
+version: 10.18.589.0
 ---
 Under certain rare conditions LWM2M devices were not able to connect due to an internal 409 conflict. The LWM2M agent is now more robust for such scenarios.

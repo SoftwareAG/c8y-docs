@@ -37,8 +37,6 @@ function checkPa(pas) {
   });
 }
 
-
-
 function clearAllFilters() {
   let filters = document.querySelectorAll('.filter-btn');
   filters.forEach(filter => {
@@ -104,7 +102,6 @@ window.onload = (event) => {
           break;
         }
       }
-
       $empty.style.display = d;
     }
   }
@@ -122,7 +119,7 @@ window.onload = (event) => {
     let productAreaFilters = filters['productarea'] || '';
     let selectedProductAreas = productAreaFilters.split(',').map(pa => pa.substr(1));
     checkPa(selectedProductAreas);
-
+    // Handle the dates
     dates.forEach(date => {
       let el = document.querySelector('[data-refid="' + date.id + '"]');
       if (date.style.display == "none") {
@@ -132,7 +129,6 @@ window.onload = (event) => {
       }
     });
 
-    // Update checkboxes based on filters
     updateCheckboxes(filters);
   };
 
@@ -165,8 +161,6 @@ window.onload = (event) => {
         }
       }
       history.replaceState({}, '', window.location.pathname + '?' + params);
-
-      // Apply filters
       applyFilters();
     });
   });
@@ -183,7 +177,8 @@ window.onload = (event) => {
   window.addEventListener('popstate', () => {
     applyFilters();
   });
-     // Get the hash from the URL and scroll into it
+  
+  // Get the hash from the URL and scroll into it
   const hash = window.location.hash;
   const targt = document.querySelector(hash);
   if (hash && targt) {

@@ -1,25 +1,38 @@
+let filters = {};
+let $list;
+let dates;
+
+function getURLParameters() {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = {};
+
+  for (const [key, value] of urlSearchParams) {
+    if (value != '') {
+      params[key] = value;
+    }
+  }
+  return params;
+}
+
 function concatFilters(obj) {
-  var arrays = Object.values(obj).map(value => value.split(','));
-  var result = arrays.reduce((a, b) => a.flatMap(x => b.map(y => x + y)));
+  const nonEmptyValues = Object.values(obj).filter(value => value.length > 0);
+  if (nonEmptyValues.length === 0) {
+    return '';
+  }
+  const result = nonEmptyValues.map(value => value.split(',')).reduce((a, b) => a.flatMap(x => b.map(y => x + y)));
   return result.join(', ');
 }
 
+
 function checkPa(pas) {
-  let comps = document.querySelectorAll('[data-filter-group = "component"] [data-pa]');
-  let areas = [];
-  pas.forEach(pa => {
-    areas.push(pa.substr(13));
-  });
+  let comps = document.querySelectorAll('[data-filter-group="component"] [data-pa]');
+  let areas = pas.map(pa => pa.substr(12));
   comps.forEach(comp => {
-    if (areas.length) {
-      let cpa = comp.getAttribute('data-pa');
-      if (areas.includes(cpa)) {
-        comp.removeAttribute('disabled');
-      } else {
-        comp.setAttribute('disabled', 'disabled');
-      }
-    } else {
+    let cpa = comp.getAttribute('data-pa');
+    if (areas.length === 0 || areas.includes(cpa) || areas.includes('')) {
       comp.removeAttribute('disabled');
+    } else {
+      comp.setAttribute('disabled', 'disabled');
     }
   });
 }
@@ -40,66 +53,115 @@ function applyCheckbox(name) {
   }
 }
 
+/// Function to update checkboxes based on filters
+function updateCheckboxes(filters) {
+  // Loop through filters and update checkboxes
+  Object.keys(filters).forEach(key => {
+    let filterGroup = document.querySelector(`[data-filter-group="${key}"]`);
+    if (filterGroup) {
+      // Uncheck all checkboxes in the group
+      filterGroup.querySelectorAll(':checked').forEach(checkbox => {
+        checkbox.checked = false;
+      });
 
-window.onload = (event)=>{
+      // Check checkboxes based on filters
+      filters[key].split(',').forEach(value => {
+        value = value.substring(1);
+        let checkbox = filterGroup.querySelector('[name="' + value + '"]');
+        if (checkbox) {
+          checkbox.checked = true;
+          checkbox.dispatchEvent(new Event('change'));
+        }
+      });
+    }
+  });
+}
+
+window.onload = (event) => {
   $list = $('.change-logs--list > article > .isotope').isotope({
     itemSelector: '.page-section:not(.top)',
     layoutMode: 'vertical',
     transitionDuration: 0
   });
-  let $empty = document.getElementById('emptystate');
-  $list.on( 'arrangeComplete',
-    function (event, filteredItems) {
-      if (filteredItems.length === 0) {
-        $empty.style.display = "block";
-      } else {
-        let d = 'block';
-        $empty.classList.add('no-results');
-        for (let index = 0; index < filteredItems.length; index++) {
-          const element = filteredItems[index].element;
-          if (!element.classList.contains('change-log__date')) {
-            d = 'none';
-            $empty.classList.remove('no-results');
-            break;
-          }
-        }
 
-        $empty.style.display = d;
-      }
-    }
-  );
+  let $empty = document.getElementById('emptystate');
   const searchClear = document.getElementById('clearFilters');
   searchClear.addEventListener('click', clearAllFilters);
-  let filters = {};
-  const fieldsetGroups = document.querySelectorAll('.filter-fieldset.c8y-fieldset');
-  const dates = document.querySelectorAll('.change-log__date');
-  fieldsetGroups.forEach(fieldsetGroup =>{
-    let filterGroup = fieldsetGroup.getAttribute('data-filter-group');
-    let filterGroupFilters = [];
-    fieldsetGroup.addEventListener('change', (e) =>{
-      if(e.target.checked){
-        filterGroupFilters.push('.' + e.target.name);
-      }else{
-        filterGroupFilters = filterGroupFilters.filter(item => item !== '.' + e.target.name);
-      }
-      //disable components when their product area is not selected
-      if (filterGroup === 'productarea') {
-        checkPa(filterGroupFilters);
-      }
-
-      let items = filterGroupFilters.length ? filterGroupFilters.join(',') : '';
-      filters[filterGroup] = items;
-      let filterValue = concatFilters(filters);
-      $list.isotope({ filter: filterValue });
-
-      dates.forEach(date => {
-        let el = document.querySelector('[data-refid="' + date.id + '"]');
-        if (date.style.display == "none") {
-          el.style.display = "none";
-        }else{
-          el.style.display = '';
+  $list.on( 'arrangeComplete',
+  function (event, filteredItems) {
+    if (filteredItems.length === 0) {
+      $empty.style.display = "block";
+    } else {
+      let d = 'block';
+      $empty.classList.add('no-results');
+      for (let index = 0; index < filteredItems.length; index++) {
+        const element = filteredItems[index].element;
+        if (!element.classList.contains('change-log__date')) {
+          d = 'none';
+          $empty.classList.remove('no-results');
+          break;
         }
-      })
+      }
+      $empty.style.display = d;
+    }
+  }
+);
+
+
+  const applyFilters = () => {
+    // Update filters with the latest URL parameters
+    filters = getURLParameters();
+
+    const filterValueFromParams = concatFilters(filters);
+    $list.isotope({ filter: filterValueFromParams });
+
+    // Disable components based on selected product areas
+    let productAreaFilters = filters['productarea'] || '';
+    let selectedProductAreas = productAreaFilters.split(',').map(pa => pa.substr(1));
+    checkPa(selectedProductAreas);
+    // Handle the dates
+    dates.forEach(date => {
+      let el = document.querySelector('[data-refid="' + date.id + '"]');
+      if (date.style.display == "none") {
+        el.style.display = "none";
+      } else {
+        el.style.display = '';
+      }
+    });
+
+    updateCheckboxes(filters);
+  };
+
+  dates = document.querySelectorAll('.change-log__date');
+
+  const fieldsetGroups = document.querySelectorAll('.filter-fieldset.c8y-fieldset');
+
+  // Apply filters from URL parameters on page load
+  applyFilters();
+
+  // Update filters when URL parameters change
+  window.addEventListener('popstate', () => {
+    applyFilters();
+  });
+
+  fieldsetGroups.forEach(fieldsetGroup => {
+    fieldsetGroup.addEventListener('change', (e) => {
+      let filterGroup = fieldsetGroup.getAttribute('data-filter-group');
+      let filterGroupFilters = [];
+      fieldsetGroup.querySelectorAll(':checked').forEach(checkedFilter => {
+        filterGroupFilters.push('.' + checkedFilter.name);
+      });
+
+      // Update URL parameters
+      let params = new URLSearchParams(window.location.search);
+      params.set(filterGroup, filterGroupFilters.join(','));
+      for (let [key, value] of params.entries()) {
+        if (value === '') {
+          params.delete(key);
+        }
+      }
+      history.replaceState({}, '', window.location.pathname + '?' + params);
+      applyFilters();
     });
   });
 
@@ -111,7 +173,17 @@ window.onload = (event)=>{
     });
   });
 
-  // let startHere = document.querySelector('[name="change-type-feature"]');
-  // if (startHere) startHere.click();
-
-}
+  // Update filters when URL parameters change
+  window.addEventListener('popstate', () => {
+    applyFilters();
+  });
+  
+  // Get the hash from the URL and scroll into it
+  const hash = window.location.hash;
+  const targt = document.querySelector(hash);
+  if (hash && targt) {
+    setTimeout(() => {
+      targt.scrollIntoView();
+    }, 100);
+  }
+};

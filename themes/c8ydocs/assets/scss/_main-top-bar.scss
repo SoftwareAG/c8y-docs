@@ -111,7 +111,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    .dropdown a {
+    .dropdown a, .btn-group .btn {
       color: var(--navigator-text-color, var(--c8y-navigator-text-color-default));
       letter-spacing: 0.05em;
       font-size: 11px;

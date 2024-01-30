@@ -17,7 +17,34 @@
       >
     </a>
   </div>
+  <div class="btn-group m-r-16">
+    <!-- 
+      href=" {{ if site.Data.date_settings.yearly_release}}/{{else}}/2024{{end}}" 
+     -->
+    <a
+      href="/" 
+      title="Switch to Cloud deployments"
+      class="btn {{ if not site.Data.date_settings.yearly_release}}active{{end}}"
+    >
+      <i class="dlt-c8y-icon-cloud-settings m-r-4"></i>
+      <span class="hidden-md">
+        Cloud deployments
+      </span>
+    </a>
+    <a
+      href="/2024" 
+      title="Switch to Release 2024"
+      class="btn {{ if site.Data.date_settings.yearly_release}}active{{end}}"
+    >
+      <i class="dlt-c8y-icon-today m-r-4"></i>
+      <span class="hidden-md">
+        Release 2024
+      </span>
+    </a>
+  </div>
+
   <nav class="d-flex m-l-auto">
+
     <div class="m-l-auto nav flex-end nav-right search-container">
       <!-- 
       -->

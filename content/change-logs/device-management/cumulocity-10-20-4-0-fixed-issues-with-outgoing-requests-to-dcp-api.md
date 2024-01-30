@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-02-06"
 title: Fixed issues with outgoing requests to DCP API
 product_area: Device management & connectivity
 change_type:

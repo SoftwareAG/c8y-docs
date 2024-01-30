@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-02-06"
 title: Information on default login method added to audit logs
 product_area: Platform services
 change_type:

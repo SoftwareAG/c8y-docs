@@ -50,7 +50,7 @@ Access {{< product-c8y-iot >}} Edge using the domain name configured as part of 
 The first option is always preferable so that {{< product-c8y-iot >}} Edge is accessible over LAN.
 
 {{< c8y-admon-important >}}
-{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**. The Email address field can be found by running the command `kubectl describe edge c8yedge -n c8yedge`. Change the password on first login. See [To access Cumulocity IoT Edge](#to-access-cumulocity-iot-edge) for more information.
+{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**. Change the password on first login. The Email address field can be found by running the command `kubectl describe edge c8yedge -n c8yedge`. See [To access Cumulocity IoT Edge](#to-access-cumulocity-iot-edge) for more information.
 {{< /c8y-admon-important >}}
 
 #### Adding the alias {#add-alias}
@@ -80,7 +80,11 @@ Enter one of the following URLs in the browser:
 * `https://<domain_name>`
 * `https://management.<domain_name>`
 
-The login screen appears. If this is your first login, log in with user **"admin"** and password **"admin-pass"** and change the password. The Email address field can be found by running the command:
+The login screen appears. If this is your first login, log in with user **"admin"** and password **"admin-pass"** and change the password on the password reset screen.
+
+![Reset password](/images/edge-k8s/reset-password.png)
+
+The Email address field can be found by running the command:
 
 ```shell
 kubectl describe edge c8yedge -n c8yedge
@@ -100,8 +104,6 @@ Spec:
   ....
 ```
 See [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8s/install-edge/#verifying-the-edge-installation) for more information regarding the above command.
-
-![Reset password](/images/users-guide/getting-started/reset-password.png)
 
 {{< c8y-admon-important >}}
 After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.

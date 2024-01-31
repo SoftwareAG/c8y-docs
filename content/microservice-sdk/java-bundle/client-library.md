@@ -260,7 +260,7 @@ subscriber.disconnect();
 ### Subscribing to Notifications 2.0 {#subscribing-to-notifications-20}
 
 The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory).
-See [Notifications 2.0](https://cumulocity.com/api/core/#tag/Notification-2.0-API) for more details about the API.
+See [Notifications 2.0](https://{{< domain-c8y >}}/api/core/#tag/Notification-2.0-API) for more details about the API.
 
 The following snippet shows how users can create, query and delete notification subscriptions. It also shows how a token string can be obtained.
 

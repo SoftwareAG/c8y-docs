@@ -20,7 +20,7 @@ Without the profiles described below, the required Sigfox API access can not be 
 
 If you already have an associated user make sure it has the profiles mentioned below and proceed to step 2.
 
-The group name is not constrained. "Cumulocity" is used as a sample group name throughout the remaining steps.
+The group name is not constrained. "{{< company-c8y >}}" is used as a sample group name throughout the remaining steps.
 
 First, enter into your Sigfox Cloud account and create a new user. Add the user to the group and select the "Customer [R]" and "Device Manager [W]" profiles.
 
@@ -47,11 +47,11 @@ The following information must be provided in order to create a connection:
 - **Description**: Description of the Sigfox connection being created.
 - **Login:** The login token is located in the API access entry in the Sigfox Cloud.
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to **Password**.
-- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, *https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info*.
+- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "{{< company-c8y >}}" group. For example, *https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info*.
 - **Base URL:** URL that points to the Sigfox Cloud account.
 
 {{< c8y-admon-info >}}
-The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
+The group name in the screenshot below is only an example. It does not necessarily have to be "{{< company-c8y >}}".
 {{< /c8y-admon-info >}}
 
 ![API access page](/images/device-protocols/sigfox/sigfox-parentgroupid.png)

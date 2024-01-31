@@ -69,7 +69,7 @@ For the purpose of this tutorial, we will register a device via the {{< sensor-a
 
 The {{< sensor-app >}} is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< sensor-app >}} can also send commands to the smartphone directly from the phone dashboard.
 
-Go to [Sensor App](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as more information on [how to install the app](/sensor-app/installing-the-sensor-app/) available for iOS and Android.
+Go to [{{< sensor-app >}}](/sensor-app/overview/) to see which smartphone sensors and Bluetooth devices are currently supported as well as more information on [how to install the app](/sensor-app/installing-the-sensor-app/) available for iOS and Android.
 
 Open the Apple App Store or Google Play Store from your smartphone and search for **{{< sensor-app >}}** to install it.
 

@@ -411,7 +411,7 @@ files = [
 Where:
 
 * `path` is the full path to the configuration file.
-* `type` is a unique alias for each file entry which will be used to represent that file in the Cumulocity UI.
+* `type` is a unique alias for each file entry which will be used to represent that file in the {{< company-c8y >}} UI.
 
 Then start the configuration plugin process and enable it on boot via `systemctl`:
 

@@ -6,7 +6,7 @@ section:
   - about_website
 ---
 
-This content applies to the {{< product-c8y-iot >}} cloud deployments.
+This content applies to the {{< product-c8y-iot >}} Release 2024 and to all subsequent releases.
 
 Specifications contained herein are subject to change and these changes will be reported in subsequent versions.
 

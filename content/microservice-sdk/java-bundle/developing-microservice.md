@@ -30,7 +30,7 @@ Annotation | Description
 
 ### Context support {#context-support}
 
-The context support is covered by the annotation `@EnableContextSupport`. It allows to select between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
+The context support is covered by the annotation `@EnableContextSupport`. It allows to choose between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
 
 Each microservice has a service user which can be used for the interaction with the platform. The roles associated with this user are specified in the manifest.
 Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request to the microservice are used.

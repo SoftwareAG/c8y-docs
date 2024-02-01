@@ -125,7 +125,7 @@ Under **General**, you can edit the title which will be used in the browser tab.
 Under **Main logo**, specify the following items:
 
 * The favicon - will be displayed in the browser's address bar. Click **Choose file** to select a file from your file system. The supported favicon format is "ico".
-* Your branding logo - will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png" and "svg".
+* Your branding logo - will be shown during application loading. Click **Choose file** to select a file from your file system. The supported formats are "png", "svg" and "jpg".
 * The brand logo height.
 
 **Navigator logo**

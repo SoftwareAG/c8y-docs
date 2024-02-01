@@ -44,7 +44,7 @@ Be aware of the following limitations of the data broker:
 * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant.
 * While we provide backwards compatibility, we cannot ensure that data broker can send data to {{< product-c8y-iot >}} tenants which run on earlier {{< product-c8y-iot >}} versions than the source.
 
-<a name="data-connectors"></a>
+<a name="data-connector"></a>
 ### Data connectors
 
 A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.

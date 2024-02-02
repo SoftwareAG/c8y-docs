@@ -19,13 +19,13 @@ To enhance the performance and resource allocation for Karaf, you can change the
 After changing the file, restart the `cumulocity-core-karaf` service:
 
 ```shell
-[admin@iot-edge-server ~]$  sudo service cumulocity-core-karaf stop
+sudo service cumulocity-core-karaf stop
 ```
 
 and
 
 ```shell
-[admin@iot-edge-server ~]$  service cumulocity-core-karaf start
+service cumulocity-core-karaf start
 ```
 
 {{< c8y-admon-important >}}

@@ -27,8 +27,8 @@ To change the memory and CPU limit:
    - /etc/init.d/opcua-mgmt-service
 3. Edit the parameter `CTRL_DOCKER_OPTIONS` to the required values.
 4. Restart the OPC UA services:
-   - `[admin@iot-edge-server ~]$ sudo service opcua-mgmt-service restart`
-   - `[admin@iot-edge-server ~]$ sudo service opcua-device-gateway restart`
+   - `sudo service opcua-mgmt-service restart`
+   - `sudo service opcua-device-gateway restart`
 
 {{< c8y-admon-important >}}
 

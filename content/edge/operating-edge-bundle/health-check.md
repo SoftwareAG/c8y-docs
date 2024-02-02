@@ -14,7 +14,9 @@ The following instructions show how to check the network connectivity of the pla
 
 The following commands will show the interface and network settings of the machine:
 
-	[admin@iot-edge-server ~]$ ip a
+```shell
+	ip a
+```
 
 This will list all interfaces and its current configuration.
 
@@ -46,9 +48,9 @@ Example:
 You must make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0, and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this example 255.255.252.0).
 
 The following command lists the local routing information.
-
-	[admin@iot-edge-server ~]$ netstat -rn
-
+```shell
+netstat -rn
+```
 Example:
 
 	[admin@iot-edge-server ~]$ netstat -rn
@@ -63,6 +65,11 @@ Make sure you have the destination 0.0.0.0 in the list which then also has the g
 #### Check access to the internet {#check-access-to-the-internet}
 
 Try to reach a well-known address in the internet with the following command:
+```shell
+ping -s 1500 8.8.8.8
+```
+
+Example:
 
 	[admin@iot-edge-server ~]$ ping -s 1500 8.8.8.8
 	PING 8.8.8.8 (8.8.8.8) 1500(1528) bytes of data.
@@ -194,8 +201,12 @@ The list describes the tenants which on the core node have not been fully initia
 
 Run the following command to check the REST API availability:
 
+```shell
+curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
+```  
+Example:
 	[admin@iot-edge-server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
-
+  
 	* About to connect() to <base_url> port 80 (#0)
 	*   Trying 52.29.189.245... connected
 	* Connected to <base_url> (52.29.189.245) port 80 (#0)

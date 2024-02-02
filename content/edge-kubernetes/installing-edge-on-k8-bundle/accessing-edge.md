@@ -64,8 +64,8 @@ On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\host
 Ping the &#60;domain_name> to verify it.
 
 ```shell
-[admin@iot-edge-server ~]$ ping <domain_name>
-[admin@iot-edge-server ~]$ ping management.<domain_name>
+ping <domain_name>
+ping management.<domain_name>
 ```
 
 If the ping is successful, the DNS resolution is working properly.
@@ -83,7 +83,7 @@ The login screen appears.
 {{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**.
 {{< /c8y-admon-important >}}
 
-TODO LOGIN SCREEN
+![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
 Change the password on first login.
 
@@ -108,7 +108,7 @@ You must access both the Management and Edge tenants and change the respective a
 
 If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 
-![Login prompt](/images/edge-k8s/edge-k8s-getting-started-cookie-banner.png) TODO SPLIT
+![Cookie Banner](/images/edge-k8s/edge-k8s-cookie-banner.png)
 
 {{< c8y-admon-info >}}
 The cookie banner is turned on by default. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).

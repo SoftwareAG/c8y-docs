@@ -98,3 +98,43 @@ $grid-breakpoints: (
   height: 1px;
   border: 0;
 }
+
+
+.hidden{
+  display: none!important;
+}
+
+.visible-xs{
+  display: none!important;
+  @media (max-width: $screen-sm-min) {
+    display: block!important;
+  }
+}
+.hidden-xs{
+  @media (max-width: $screen-sm-min) {
+    display: none!important;
+  }
+}
+.visible-sm{
+  display: none!important;
+  @media (max-width: $screen-sm-max) {
+    display: block!important;
+  }
+}
+.hidden-sm{
+  @media (max-width: $screen-sm-max) {
+    display: none!important;
+  }
+}
+.visible-md{
+  display: none!important;
+  @media (max-width: $screen-md-max) {
+    display: block!important;
+  }
+}
+.hidden-md{
+  @media (max-width: $screen-md-max) {
+    display: none!important;
+  }
+}
+

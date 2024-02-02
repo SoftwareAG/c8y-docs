@@ -49,10 +49,6 @@ Access {{< product-c8y-iot >}} Edge using the domain name configured as part of 
 
 The first option is always preferable so that {{< product-c8y-iot >}} Edge is accessible over LAN.
 
-{{< c8y-admon-important >}}
-{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**. Change the password on first login. The Email address field can be found by running the command `kubectl describe edge c8yedge -n c8yedge`. See [To access Cumulocity IoT Edge](#to-access-cumulocity-iot-edge) for more information.
-{{< /c8y-admon-important >}}
-
 #### Adding the alias {#add-alias}
 
 On Linux machines, add the following entry to */etc/hosts*:
@@ -80,30 +76,16 @@ Enter one of the following URLs in the browser:
 * `https://<domain_name>`
 * `https://management.<domain_name>`
 
-The login screen appears. If this is your first login, log in with user **"admin"** and password **"admin-pass"** and change the password on the password reset screen.
+The login screen appears.
 
-![Reset password](/images/edge-k8s/reset-password.png)
+{{< c8y-admon-important >}}
+{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**. The Email address field to change the password on first login can be found by running the command:
+ 
+`kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`.
+{{< /c8y-admon-important >}}
 
-The Email address field can be found by running the command:
-
-```shell
-kubectl describe edge c8yedge -n c8yedge
-```
-A sample output:
-```yaml
-Name:         c8yedge
-Namespace:    c8yedge
-Kind:         CumulocityIoTEdge
-
-Metadata:
-  ....
-
-Spec:
-  ....
-  Email:			myown@iot.com
-  ....
-```
-See [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8s/install-edge/#verifying-the-edge-installation) for more information regarding the above command.
+Change the password on first login.
+![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
 
 {{< c8y-admon-important >}}
 After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
@@ -115,7 +97,7 @@ After a successful deployment, you must access both the {{< management-tenant >}
 
 If you are logging in for the first time, you will see a cookie banner at the bottom:
 
-![Login prompt](/images/users-guide/getting-started/getting-started-cookie-banner.png)
+![Login prompt](/images/edge-k8s/edge-k8s-getting-started-cookie-banner.png)
 
 {{< c8y-admon-info >}}
 The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).

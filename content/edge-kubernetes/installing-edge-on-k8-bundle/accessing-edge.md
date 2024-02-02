@@ -78,29 +78,40 @@ Enter one of the following URLs in the browser:
 
 The login screen appears.
 
+
 {{< c8y-admon-important >}}
-{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**. The Email address field to change the password on first login can be found by running the command:
- 
-`kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`.
+{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**.
 {{< /c8y-admon-important >}}
 
+TODO LOGIN SCREEN
+
 Change the password on first login.
+
+{{< c8y-admon-important >}}
+The Email address to change the password on the first login is the one you specified in the Edge CR (or myown@iot.com if you followed the Quickstart installation steps).
+Alternatively you can also retrieve the Email address by running the below command:
+
+`kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`
+
+_Substitute the Edge name and namespace name, which is currently **c8yedge** in the command, with the specific Edge name and namespace name you have specified in your Edge CR._
+{{< /c8y-admon-important >}}
+
 ![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
 
 {{< c8y-admon-important >}}
-After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
+You must access both the Management and Edge tenants and change the respective admin credentials.
 {{< /c8y-admon-important >}}
+
+- To log in to the Edge tenant, use the URL `https://<domain_name>`.
 
 - To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
-- To log in to the {{< product-c8y-iot >}}  Edge tenant, use the URL `https://edge.<domain_name>`.
+If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 
-If you are logging in for the first time, you will see a cookie banner at the bottom:
-
-![Login prompt](/images/edge-k8s/edge-k8s-getting-started-cookie-banner.png)
+![Login prompt](/images/edge-k8s/edge-k8s-getting-started-cookie-banner.png) TODO SPLIT
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
+The cookie banner is turned on by default. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).

@@ -1,5 +1,5 @@
 ---
-title: "Device management"
+title: "Device management & connectivity"
 icon: "c8y-icon c8y-icon-device-management"
 weight: 30
 svg: '<svg
@@ -325,4 +325,4 @@ svg: '<svg
 '
 ---
 
-Learn about connecting, monitoring and controlling devices with {{< product-c8y-iot >}}, be it via technical interfaces or via the {{< product-c8y-iot >}} user interface. 
+Learn about connecting, monitoring and controlling devices with {{< product-c8y-iot >}}, be it via technical interfaces or via the {{< product-c8y-iot >}} user interface.

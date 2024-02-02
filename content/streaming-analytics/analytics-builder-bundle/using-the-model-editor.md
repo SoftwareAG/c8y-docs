@@ -133,9 +133,9 @@ For the input and output blocks, you can globally replace the input sources and 
 2.  For the input and output blocks, you can select a different input source or output destination from a dialog box.
 
     The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
-    By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you must click **Load more** to display any items that are not shown initially.
+    By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
-    The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you must click **Load more** to display any managed objects that are initially not shown.
+    The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
 
     Click the button which is shown when you hover over an entry to select the input source or output destination that you want to use.
     The name of that button depends on the entry that is currently selected:

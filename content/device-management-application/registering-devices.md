@@ -64,7 +64,7 @@ The devices may have one of the following status:
 * **Blocked** - The device registration has been blocked due to the exceeded limit of failed attempts.
 
 {{< c8y-admon-info >}}
-If a device registration is **blocked**, you must delete it first and then create it again.
+If a device registration is **blocked**, you will need to delete it first and then create it again.
 {{< /c8y-admon-info >}}
 
 Devices can be connected to your {{< product-c8y-iot >}} account in different ways.

@@ -24,7 +24,7 @@ The extended device registration provides the following advantages:
 
 - **Support for bulk registration using custom CSV**: You can customize the bulk registration and hence implement support for CSV files of a different format.
 
-- **No UI code changes required**: You do not need to write UI Angular code. This keeps the amount of integration work as little as possible. The device integration developer only must subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
+- **No UI code changes required**: You do not need to write UI Angular code. This keeps the amount of integration work as little as possible. The device integration developer must only subscribe a microservice that provides an own wizard, and the wizard shows up automatically.
 
 
 ### Extension enabling {#extension-enabling}

@@ -15,7 +15,7 @@ There are three data reporting mechanisms which can be applied to read all mappe
 Possible parameters:
 
 * **Sampling interval** (required) - Defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes.
-* **Queue size** - The size of the queue where it holds the samples before reporting. If you wish to record samples at a faster rate than reporting interval, you also must reserve a longer queue size, to be able to keep all the samples in the server. The reporting interval is defined for the gateway and the value is configurable with the YAML file (see gateway.subscription.reportingRate).
+* **Queue size** - The size of the queue where it holds the samples before reporting. If you wish to record samples at a faster rate than reporting interval, you will also need to reserve a longer queue size, to be able to keep all the samples in the server. The reporting interval is defined for the gateway and the value is configurable with the YAML file (see gateway.subscription.reportingRate).
 * **Discard** - Select whether to discard the **oldest** or the **newest** item if the samples are exceeding the queue size.
 * **Data change trigger**:
 	* **Status** - Triggers notification if node's status has changed.

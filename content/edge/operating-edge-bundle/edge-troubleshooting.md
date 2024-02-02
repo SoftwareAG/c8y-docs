@@ -16,8 +16,12 @@ These steps help you analyze the issue and provide a fix. If you need to contact
 
 ### Troubleshooting Microservices {#troubleshooting-microservices}
 
-In case of any microservices related issues, {{< company-sag >}} recommends you to additionally check the status of the microservices pods using the following command:
+In case of any microservices related issues, it is recommended to:
 
-	[admin@iot-edge-server ~]$ sudo kubectl get pods -n kube-system
-
-If any pods show their status as evicted, expand the disk size. See [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
+* Check if microservice-hosting is showing as OK using the command `sudo monit summary`
+* If it is not showing as OK, restart microservices through the UI or REST APIs
+* If microservice_hosting is still not showing as OK, check the status of the kubernetes system pods using the command below:
+```shell
+sudo kubectl get pods -n kube-system
+```
+If any of the pods in the list show their status as evicted, the most probably cause could be that the system ran out of disk space. You should expand the disk size, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).

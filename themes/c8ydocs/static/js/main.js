@@ -56,7 +56,7 @@ var main = (function ($) {
           offset = 45;
           $('<div/>', {
             id: 'cd-banner',
-            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #A96CF9; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
+            style: 'position: fixed; top: 0; left: 0; width: 100%; background-color: #DABFFC; height: ' + offset + 'px; padding: 10px 5px 5px 5px; z-index: 50;'
           }).prependTo('body');
 
           cdURL = "https://cumulocity.com/docs";

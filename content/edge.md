@@ -1,5 +1,5 @@
 ---
-title: Cumulocity IoT Edge guide
+title: Edge Appliance VM
 bundle: edge
 icon: "fa fa-book"
 type: root

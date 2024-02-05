@@ -4,7 +4,7 @@ title: Accessing the Edge appliance from the Cumulocity IoT tenant
 layout: redirect
 ---
 
-The {{< product-c8y-iot >}} Cloud Remote Access allows you to remotely access the Edge appliance through a web browser. The remote Edge appliance is represented as a device in the Device management application of {{< product-c8y-iot >}}.
+The {{< product-c8y-iot >}} Cloud Remote Access allows you to remotely access the Edge appliance through a web browser. The remote Edge appliance is represented as a device in the Device Management application of {{< product-c8y-iot >}}.
 
 #### Prerequisites
 

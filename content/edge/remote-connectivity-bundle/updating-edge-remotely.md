@@ -4,7 +4,7 @@ title: Updating Edge remotely
 layout: redirect
 ---
 
-You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account or a server (you must provide the location of the archive on that server). For more information about the firmware feature, see [Device management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
+You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account or a server (you must provide the location of the archive on that server). For more information about the firmware feature, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management/#managing-device-firmware) in the *User guide*.
 
 {{< c8y-admon-important >}}
 The Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
@@ -19,7 +19,7 @@ To remotely update your Edge appliance:
 
 1. Log in to your {{< product-c8y-iot >}} tenant account.
 
-2. Go to the Device management application.
+2. Go to the Device Management application.
 
 3. Click **Firmware repository** in the **Management** menu in the navigator.
 
@@ -64,7 +64,7 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
 
 1. Log in to your {{< product-c8y-iot >}} tenant account.
 
-2. Go to the Device management application.
+2. Go to the Device Management application.
 
 3. Click **Device control** in the **Overviews** menu in the navigator.
    ![Edge version](/images/edge/edge-bulk-operation-page.png)
@@ -88,4 +88,4 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
 9. Enter a new title or use the preset title. Optionally enter a  description. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
    ![Edge version](/images/edge/edge-schedule-bulk-operation.png)
 
-For more information about bulk operations, see [Device management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#to-view-bulk-operations) in the *User guide*.
+For more information about bulk operations, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#to-view-bulk-operations) in the *User guide*.

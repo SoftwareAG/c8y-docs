@@ -10,7 +10,6 @@ aliases:
   - /apama/apama-release-notes
   - /datahub/datahub-release-notes
   - /edge/edge-release-notes
-  - /machine-learning/release-notes
   - /web-sdk-for-plugins
   - /event-language
 ---

@@ -100,8 +100,6 @@ On the **Configuration** tab of the widget editor you can use the full text sear
 
 Through the full text search you can find assets in the whole hierarchy, but it requires exact matches, for example, the whole name of the asset.
 
-![Full text search](/images/users-guide/cockpit/cockpit-asset-global-search.png)
-
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
 {{< c8y-admon-info >}}

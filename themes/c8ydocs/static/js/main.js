@@ -61,7 +61,7 @@ var main = (function ($) {
 
           cdURL = "https://cumulocity.com/docs";
 
-          $('<p style="text-align: center; vertical-align: center;">The cumulocity IoT documentation is going to move to a new URL in the future. Visit a preview <a href="' + cdURL + '">here</a>.</p>').appendTo('#cd-banner');
+          $('<p style="text-align: center; vertical-align: center;">This website holds the Cumulocity IoT product documentation for releases 10.18 and earlier. The latest Cumulocity IoT product documentation is available at a new URL: <a href="' + cdURL + '">here</a>.</p>').appendTo('#cd-banner');
 
           $('.main-top-bar').css('top', offset);
           $('.main-nav.navbar').css('top', offset);

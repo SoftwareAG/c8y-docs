@@ -665,7 +665,7 @@ Sending an event is done by constructing the event, either with `new <type>` fol
 
 #### Listening to events {#listening-to-events}
 
-You can trigger your EPL by listening to events on channels. You can subscribe to channels with the `monitor.subscribe("string name")` method. This can be done in the startup of your monitor, or if you only must receive events some of the time, called as needed, followed by `monitor.unsubscribe("string name")`.
+You can trigger your EPL by listening to events on channels. You can subscribe to channels with the `monitor.subscribe("string name")` method. This can be done in the startup of your monitor, or if you only want to receive events some of the time, called as needed, followed by `monitor.unsubscribe("string name")`.
 
 Listen for events using the `on` statement, followed by the event type that you are listening to, open and close parentheses, and `as <identifier>` to name a variable that will hold the event.
 

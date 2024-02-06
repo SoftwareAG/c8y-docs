@@ -73,8 +73,8 @@ If the ping is successful, the DNS resolution is working properly.
 #### To access Cumulocity IoT Edge {#to-access-cumulocity-iot-edge}
 
 Enter one of the following URLs in the browser:
-* `https://<domain_name>`
-* `https://management.<domain_name>`
+* To log in to the edge tenant: `https://<domain_name>`
+* To log in to the management tenant: `https://management.<domain_name>`
 
 The login screen appears.
 

@@ -15,7 +15,7 @@ The following instructions show how to check the network connectivity of the pla
 The following commands will show the interface and network settings of the machine:
 
 ```shell
-	ip a
+ip a
 ```
 
 This will list all interfaces and its current configuration.
@@ -206,7 +206,7 @@ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
 ```  
 Example:
 	[admin@iot-edge-server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
-  
+
 	* About to connect() to <base_url> port 80 (#0)
 	*   Trying 52.29.189.245... connected
 	* Connected to <base_url> (52.29.189.245) port 80 (#0)

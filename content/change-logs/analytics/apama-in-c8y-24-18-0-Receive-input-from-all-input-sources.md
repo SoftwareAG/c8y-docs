@@ -1,6 +1,6 @@
 ---
 date: 2023-12-06T15:56:42.169Z
-title: Receive input from all input sources by default
+title: Receive input from all input sources
 change_type:
   - value: change-QHu1GdukP
     label: Feature

@@ -24,7 +24,7 @@ To enable or disable the microservice hosting feature, you must have the "Tenant
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-info >}}
-For information regarding any microservices related issues, see [Troubleshooting Microservices](/edge/operating-edge/#troubleshooting-microservices)
+For information regarding any microservices related issues, see [Troubleshooting Microservices](/edge/operating-edge/#troubleshooting-microservices).
 {{< /c8y-admon-info >}}
 
 ### Enabling or disabling the microservice hosting feature using the UI {#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui}

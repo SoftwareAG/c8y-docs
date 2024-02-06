@@ -19,9 +19,10 @@ These steps help you analyze the issue and provide a fix. If you need to contact
 In case of any microservices related issues, it is recommended to:
 
 * Check if microservice_hosting is disabled using the command `sudo monit status microservice_hosting`
-* If it is showing as disabled, restart microservices through the UI or REST APIs
-* If microservice_hosting is still showing as disabled or restarting fails, check the status of the kubernetes system pods using the command below:
+![Microservice Hosting Status](/images/edge/monit_status_microservice_hosting.png)
+* If it is showing as disabled, enable the microservice hosting feature through [the GUI](/edge/edge-configuration/#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui) or [the REST API](/api/edge/#tag/Microservice-hosting-feature)
+* If enabling the microservice hosting feature fails, check the status of the Kubernetes system pods using the command below:
 ```shell
-sudo kubectl get pods -n kube-system
+sudo kubectl get pods --namespace kube-system
 ```
-If any of the pods in the list show their status as evicted, the most probable cause could be that the system ran out of disk space. You should expand the disk size, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
+If any pod in the list show its status as evicted, the most probable cause could be that the system ran out of disk space. You should expand the disk size through [the GUI](/edge/operating-edge/#expanding-the-disk-size) or [the REST API](/api/edge/#operation/expandDiskSize). Enable the microservice hosting feature after disk expansion.

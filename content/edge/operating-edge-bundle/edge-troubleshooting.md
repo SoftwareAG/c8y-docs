@@ -18,10 +18,11 @@ These steps help you analyze the issue and provide a fix. If you need to contact
 
 In case of any microservices related issues, we recommend you to:
 
-* Check if microservice_hosting is disabled using the command `sudo monit status microservice_hosting`
+Check if _microservice_hosting_ is disabled using the command `sudo monit status microservice_hosting`
+
 ![Microservice Hosting Status](/images/edge/monit_status_microservice_hosting.png)
-* If it is showing as disabled, enable the microservice hosting feature through [the GUI](/edge/edge-configuration/#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui) or [the REST API](/api/edge/#tag/Microservice-hosting-feature)
-* If enabling the microservice hosting feature fails, check the status of the Kubernetes system pods using the command below:
+If it is showing as disabled, enable the microservice hosting feature through [the GUI](/edge/edge-configuration/#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui) or [the REST API](/api/edge/#tag/Microservice-hosting-feature)
+If enabling the microservice hosting feature fails, check the status of the Kubernetes system pods using the command below:
 ```shell
 sudo kubectl get pods --namespace kube-system
 ```

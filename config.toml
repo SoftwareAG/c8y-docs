@@ -71,6 +71,14 @@ relativeURLs = true
     name = "Product support"
     link = "https://empower.softwareag.com/"
 
+  [[params.additionalResources]]
+    name = "Device portal"
+    link = "https://devicepartnerportal.softwareag.com/"
+
+  [[params.additionalResources]]
+    name = "Solution portal"
+    link = "https://iotsolutions.softwareag.com/"
+
 # Customize
   [params.footer]
     copyright = "Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors. | <a href='https://www.softwareag.com/en_corporate/impressum.html'> Imprint</a> | <a href='https://www.softwareag.com/en_corporate/privacy.html'>Privacy policy</a>"

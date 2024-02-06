@@ -16,7 +16,7 @@ These steps help you analyze the issue and provide a fix. If you need to contact
 
 ### Troubleshooting Microservices {#troubleshooting-microservices}
 
-In case of any microservices related issues, it is recommended to:
+In case of any microservices related issues, we recommend you to:
 
 * Check if microservice_hosting is disabled using the command `sudo monit status microservice_hosting`
 ![Microservice Hosting Status](/images/edge/monit_status_microservice_hosting.png)

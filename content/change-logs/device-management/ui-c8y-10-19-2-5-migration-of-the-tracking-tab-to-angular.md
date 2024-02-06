@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2996
 version: 10.19.2.5
 ---
-The **Tracking** tab in the device details has been migrated to Angular. The obsolete AngularJS module `AssetTrack` has been removed from the imports of the Device Management application (import `@c8y/ng1-modules/devicemanagement-tracking/cumulocity.json`), should be considered deprecated and will be removed in the future. With this change, an issue with incorrect results of custom date range filters has been fixed. Moreover, position marker popups have been made more informative.
+The **Tracking** tab in the device details has been migrated to Angular. The obsolete AngularJS module `AssetTrack` has been removed from the imports of the Device Management application (import `@c8y/ng1-modules/devicemanagement-tracking/cumulocity.json`). It is deprecated and will be removed in the future. With this change, an issue with incorrect results of custom date range filters has been fixed. Moreover, position marker popups have been made more informative.

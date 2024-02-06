@@ -18,10 +18,10 @@ These steps help you analyze the issue and provide a fix. If you need to contact
 
 In case of any microservices related issues, it is recommended to:
 
-* Check if microservice-hosting is showing as OK using the command `sudo monit summary`
-* If it is not showing as OK, restart microservices through the UI or REST APIs
-* If microservice_hosting is still not showing as OK, check the status of the kubernetes system pods using the command below:
+* Check if microservice_hosting is disabled using the command `sudo monit status microservice_hosting`
+* If it is showing as disabled, restart microservices through the UI or REST APIs
+* If microservice_hosting is still showing as disabled or restarting fails, check the status of the kubernetes system pods using the command below:
 ```shell
 sudo kubectl get pods -n kube-system
 ```
-If any of the pods in the list show their status as evicted, the most probably cause could be that the system ran out of disk space. You should expand the disk size, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
+If any of the pods in the list show their status as evicted, the most probable cause could be that the system ran out of disk space. You should expand the disk size, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).

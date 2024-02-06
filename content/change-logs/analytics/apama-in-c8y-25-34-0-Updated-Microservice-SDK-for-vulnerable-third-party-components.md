@@ -3,8 +3,8 @@ date: 2024-02-07
 title: Updated Microservice SDK for vulnerable third-party components
 product_area: Analytics
 change_type:
-  - value: change-VSkj2iV9m
-    label: Security
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
   - value: component-M5-cepIIS
     label: Streaming Analytics

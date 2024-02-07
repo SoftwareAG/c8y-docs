@@ -113,7 +113,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

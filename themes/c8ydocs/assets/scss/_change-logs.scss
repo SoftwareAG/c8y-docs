@@ -74,6 +74,7 @@
       border-bottom: 1px dotted var(--c8y-root-component-separator-color);
       padding: .5rem 1rem .5rem 0;
       border-radius: 0;
+      z-index: 10;
       h5{
        margin: 0;
         display: flex;
@@ -98,6 +99,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-bottom: 1rem;
     > label{
       flex: 0 0 auto;
     }

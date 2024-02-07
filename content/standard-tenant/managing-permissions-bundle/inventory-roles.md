@@ -172,7 +172,7 @@ The response looks like below:
     }
     ...
 
-This allows the user to see measurements that contain only the defined types, without the additional configuration of other types of fragments that the measurement has.
+This allows the user to see measurements that contain only the defined types, without the additional need to configure other types of fragments that the measurement has.
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 

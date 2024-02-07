@@ -202,7 +202,7 @@ operation.set(relay);
 control.create(operation);
 ```
 
-Now, if you would like to query the pending operations from an agent, the following code must be executed:
+Now, if you want to query the pending operations from an agent, the following code must be executed:
 
 ```java
 OperationFilter operationFilter = new OperationFilter();

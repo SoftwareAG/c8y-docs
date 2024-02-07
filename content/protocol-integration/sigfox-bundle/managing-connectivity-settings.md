@@ -20,7 +20,7 @@ Without the profiles described below, the required Sigfox API access can not be 
 
 If you already have an associated user make sure it has the profiles mentioned below and proceed to step 2.
 
-The group name is not constrained. "{{< company-c8y >}}" is used as a sample group name throughout the remaining steps.
+The group name is not constrained. "Cumulocity" is used as a sample group name throughout the remaining steps.
 
 First, enter into your Sigfox Cloud account and create a new user. Add the user to the group and select the "Customer [R]" and "Device Manager [W]" profiles.
 

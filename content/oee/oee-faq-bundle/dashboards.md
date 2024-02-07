@@ -28,6 +28,6 @@ Only alarms raised for the child device (OEE profile), for example an APAMA calc
 
 That is not a calculation error, this is only an UI issue. All values are calculated and are stored in the platform. The UI does not show all values as the amount is too high.
 
-To see all values, reduce the time span or choose a lower resolution, for example a longer interval.
+To see all values, reduce the time span or select a lower resolution, for example a longer interval.
 
 ![Dashboard alarm](/images/oee/faq/faq-chart-loading-issue.png)

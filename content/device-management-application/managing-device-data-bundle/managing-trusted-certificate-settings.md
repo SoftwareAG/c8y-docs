@@ -15,7 +15,7 @@ Currently, CRL (Certificate Revocation List) is supported.
 This section is meant for advance users, for granular control over certificates attributes like CRL, OCSP, Certificate
 Policy and PKI.
 If you are unfamiliar with these terms it's advisable to leave the defaults.
-Bad configuration might result in changes which cant be reversed.
+Bad configuration might result in changes which cannot be reversed.
 {{< /c8y-admon-info >}}
 
 ### CRL settings {#crl-settings}

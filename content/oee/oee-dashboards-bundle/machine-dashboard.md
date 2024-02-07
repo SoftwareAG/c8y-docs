@@ -98,7 +98,7 @@ Click **Export as CSV** at the right. The **Export** page in the Cockpit applica
 3. In the **Filters** section, select **Objects to export**, enter the profile name to be exported and select it from the list.
 4. In the **Fields** section, turn **Managed objects** on, and add the following columns:
     * OEE Profile > @com_adamos_oee_datamodel_MachineOEEConfiguration
-    * {{< company-c8y >}} ID > ID of the OEE calculation profile
+    * Cumulocity ID > ID of the OEE calculation profile
     * Name > name
 <br><br>
     ![Managed objects](/images/oee/dashboards/dashboard-export-csv-4-2.png)

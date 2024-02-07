@@ -69,16 +69,21 @@ relativeURLs = true
     link = "https://empower.softwareag.com/"
 
   [[params.additionalResources]]
-    name = "Product support"
-    link = "https://empower.softwareag.com/"
-
-  [[params.additionalResources]]
-    name = "Device portal"
+    name = "Device Partner Portal"
     link = "https://devicepartnerportal.softwareag.com/"
 
   [[params.additionalResources]]
-    name = "Solution portal"
+    name = "Solutions Portal"
     link = "https://iotsolutions.softwareag.com/"
+
+  [[params.additionalResources]]
+    name = "Learning Portal"
+    link = "https://learn.softwareag.com/totara/dashboard/index.php"
+
+  [[params.additionalResources]]
+    name = "Product Support"
+    link = "https://empower.softwareag.com/"
+
 
 # Customize
   [params.footer]

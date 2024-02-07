@@ -2,7 +2,8 @@
 title: Change logs
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
-layout: change_log
+layout: redirect
+target: "/change-logs"
 section:
   - change-logs
 weight: 10

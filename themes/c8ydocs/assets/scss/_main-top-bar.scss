@@ -62,12 +62,16 @@
     }
   }
   .dropdown-menu {
-    padding-top: 34px;
+    // padding-top: 34px;
     padding-bottom: 0;
-    top: -35px !important;
+    // top: -35px !important;
     z-index: 10;
     min-width: 0 !important;
-    width: 100%;
+    // width: 100%;
+    width: fit-content;
+    &.dropdown-menu-right{
+      width: 100%;
+    }
   }
   small {
     position: relative;

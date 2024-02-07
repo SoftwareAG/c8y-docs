@@ -13,11 +13,11 @@ It is optimized for a very small footprint and high performance.
 
 To learn more about device integration using thin-edge.io, refer to [thin-edge.io - The open edge framework for lightweight IoT devices](https://thin-edge.io/).
 
-### thin-edge.io on a Raspberry Pi
+### thin-edge.io on a device
 
-Follow the tutorial [Getting started with thin-edge.io on a Raspberry Pi](https://thin-edge.github.io/thin-edge.io/start/getting-started/) to get an overview of the installation and configuration of thin-edge.io.
+Follow the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) to get an overview of the installation and configuration of thin-edge.io.
 
-As an example, a Raspberry Pi is used. The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
+As a sample device, a Raspberry Pi can be used. The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
 
 This tutorial explains in small steps to reach the goal of sending data to Cumulocity IoT and performing some additional device management tasks.
 

@@ -60,7 +60,7 @@ kube-system              kube-scheduler-localhost                               
 kube-system              metrics-server-5b78d5f9c6-7l45k                                  1/1     Running     0          82m
 tigera-operator          tigera-operator-76bbbcbc85-6clrf                                 1/1     Running     0          82m
 ```
-The key pods that should be running are `pulsar-bookie-0`, `pulsar-broker-0`, `pulsar-zookeeper-0` and `databroker-agent-server`, with a suffix for the pod name specific to the installation. It may take a few minutes for the Kubernetes pods to settle into a running state after the installation has finished.
+The key pods that should be running are `pulsar-bookie-0`, `pulsar-broker-0`, `pulsar-zookeeper-0` and `databroker-agent-server`, with a suffix for the pod name specific to the installation. It may take a few minutes for the Kubernetes pods to settle into a running state after the installation has been completed.
 
 For more information on installing and troubleshooting the Messaging Service see the [Messaging Service Installation & operations guide](https://empower.softwareag.com/sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Messaging_Service_Installation_and_Operations_guide.pdf).
 

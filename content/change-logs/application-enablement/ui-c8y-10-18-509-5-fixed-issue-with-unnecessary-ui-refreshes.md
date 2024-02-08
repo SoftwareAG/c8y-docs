@@ -1,5 +1,5 @@
 ---
-date: "2024-02-07"
+date: ""
 title: Fixed issue with unnecessary refreshes of English texts
 product_area: Application enablement & solutions
 change_type:

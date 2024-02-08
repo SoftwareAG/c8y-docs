@@ -1,5 +1,5 @@
 ---
-date: "2024-02-07"
+date: ""
 title: Fixed issue with favicon for custom applications
 product_area: Application enablement & solutions
 change_type:

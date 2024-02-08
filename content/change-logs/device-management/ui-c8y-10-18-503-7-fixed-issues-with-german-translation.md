@@ -1,5 +1,5 @@
 ---
-date: "2024-02-07"
+date: ""
 title: Fixed issues with German translation
 product_area: Device management & connectivity
 change_type:

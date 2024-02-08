@@ -20,9 +20,7 @@ There are two types of models, and the cards for these models look different:
 
 -   When a card shows a mode \(such as **Draft** or **Production**\) and state \(**Active** or **Inactive**\), it pertains to a model that has no template parameters. Such a model can be activated immediately in the model manager. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information.
 
-    If the following is shown on the card of a deployed model, this model is no longer processing events. Click the error icon to display information on what went wrong.
-
-    ![Error icon](/images/streaming-analytics/analytics-builder/runtime_error.png)
+    If a runtime time error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown on the card of a deployed model, this model is no longer processing events. Click the runtime error icon to display information on what went wrong.
 
 -   When a model has template parameters, it acts as a template. In this case, the number of defined and active instances is shown on the card. A template model is not activated directly in the model manager. Instead, you use the instance editor to create a number of instances, where each instance provides values for the template parameters. Each instance has a mode and can be activated and deactivated in the instance editor, as with models without any template parameters.
 
@@ -30,13 +28,11 @@ There are two types of models, and the cards for these models look different:
 
     You can flip the card for a template model to show more details. Click **Show instances summary** to do this. You can then see the number of instances in the different modes.
 
-    If an error icon such as the following is shown on the card of a template model, at least one of the instances is no longer processing events. Click the error icon to display information on what went wrong.
-
-    ![Error icon with 1 error](/images/streaming-analytics/analytics-builder/instance-error.png)
+    If an error icon such as <img src="/images/streaming-analytics/analytics-builder/instance-error.png" alt="Error icon with 1 error" style="display:inline-block; margin:0"> is shown on the card of a template model, at least one of the instances is no longer processing events. Click the error icon to display information on what went wrong.
 
 As long as a model has no template parameters, there will be zero instances and the card shows the controls for selecting a mode and activating it.
 
-Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to export or remove the model\).
+Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to download or remove the model\).
 
 If a description or tags have been defined for the model, this is shown on the card for that model. If you want to change the name, the description or the tags of a model, you have to do this in the model editor. See [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
 
@@ -66,45 +62,29 @@ Filtering also works in combination with a model or sample name that you specify
 
 #### To filter the models or samples {#to-filter-the-models-or-samples}
 
-1.  On the **Models** or **Samples** tab of the model manager, click **More filters** in the toolbar.
+1. On the **Models** or **Samples** tab of the model manager, click **More filters** in the toolbar.
+2. In the resulting dialog, select one or more filters for the models. For samples, it is only possible to filter by tag.
+   On the **Models** tab, you can filter the models according to the following criteria:    
+   -  **Mode**.
+      You can show only the models that are in a specific mode. For example, if you only want to see the models that are in simulation and test mode, select the corresponding check boxes.
+   -  **Status**.
+      You can show only the models that are either active or inactive. For example, if you only want to see active models, select the corresponding check box.
+   -  **Source or destination**.
+      You can show only the models that use specific input sources or output destinations. Open the **Filter by source or destination** drop-down list box, select one or more items and click **Apply**.
+   -  **Data point**.
+      You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one item has been selected in the **Filter by source or destination** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
+   -  **Tags**.
+      You can show only the models for which specific tags have been defined in the **Model Configuration** dialog box, which is shown when you add a new model or when you invoke that dialog box from the model editor \(see also [Adding a new model](/streaming-analytics/analytics-builder#adding-a-new-model) and [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model)\). Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
 
-2.  In the resulting dialog, select one or more filters for the models. For samples, it is only possible to filter by tag.
+   You can combine several types of filters, for example, to show only active models in production mode that use a specific device.
 
-    On the **Models** tab, you can filter the models according to the following criteria:
+   On the **Samples** tab, you can filter the samples by tag only. Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
 
-    -   **Mode**
-
-        You can show only the models that are in a specific mode. For example, if you only want to see the models that are in simulation and test mode, select the corresponding check boxes.
-
-    -   **Status**
-
-        You can show only the models that are either active or inactive. For example, if you only want to see active models, select the corresponding check box.
-
-    -   **Source or destination**
-
-        You can show only the models that use specific input sources or output destinations. Open the **Filter by source or destination** drop-down list box, select one or more items and click **Apply**.
-
-    -   **Data point**
-
-        You can show only the models that use specific data points, such as `c8y_TemperatureMeasurement`. This requires that at least one item has been selected in the **Filter by source or destination** drop-down list box. Open the **Filter by data points** drop-down list box, select one or more data points, and click **Apply**.
-
-    -   **Tags**
-
-        You can show only the models for which specific tags have been defined in the **Model Configuration** dialog box, which is shown when you add a new model or when you invoke that dialog box from the model editor \(see also [Adding a new model](/streaming-analytics/analytics-builder#adding-a-new-model) and [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model)\). Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
-
-    You can combine several types of filters, for example, to show only active models in production mode that use a specific device.
-
-    On the **Samples** tab, you can filter the samples by tag only. Open the **Filter by tag** drop-down list box, select one or more tags, and click **Apply**.
-
-    All of the above-mentioned drop-down list boxes include a **Filter** search box that you can use to reduce the number of items that are offered for selection. You can enter a name or part of a name. For example, enter the word "test" to show only the items that have this word in their names. The characters that you type in may be contained at any position within the name. These filter criteria are not case-sensitive. Clicking the **All** check box selects all items that are currently shown in the drop-down list box, depending on the contents of the **Filter** search box.
-
-3.  Click **Apply filters**.
-
-    The toolbar of the **Models** or **Samples** tab now shows the types of filters that are currently applied. This is an example of the **Models** tab:
-
-    ![Toolbar showing the current filters](/images/streaming-analytics/analytics-builder/filters.png)
-
-    Click **Clear filters** in the toolbar if you want to clear these filters. Or to clear a specific filter, click on the X that is shown in a filter icon, or click the filter name in the icon and deselect that filter \(and other filters if required\) in the resulting dialog box. Clicking **Reset filters** in that dialog box clears all filters.
+   All of the above-mentioned drop-down list boxes include a **Filter** search box that you can use to reduce the number of items that are offered for selection. You can enter a name or part of a name. For example, enter the word "test" to show only the items that have this word in their names. The characters that you type in may be contained at any position within the name. These filter criteria are not case-sensitive. Clicking the **All** check box selects all items that are currently shown in the drop-down list box, depending on the contents of the **Filter** search box.
+3. Click **Apply filters**.
+   The toolbar of the **Models** or **Samples** tab now shows the types of filters that are currently applied. This is an example of the **Models** tab:
+   ![Toolbar showing the current filters](/images/streaming-analytics/analytics-builder/filters.png)
+   Click **Clear filters** in the toolbar if you want to clear these filters. Or to clear a specific filter, click the X that is shown in a filter icon, or click the filter name in the icon and deselect that filter \(and other filters if required\) in the resulting dialog box. Clicking **Reset filters** in that dialog box clears all filters.
 
 ### Adding a new model {#adding-a-new-model}
 
@@ -119,22 +99,18 @@ You can also create a new model from a sample. See [Creating a model from a samp
 #### To add a new model {#to-add-a-new-model}
 
 1.  On the **Models** tab of the model manager, click **New model** in the toolbar.
-
 2.  In the resulting **Model Configuration** dialog box, enter a unique model name.
 
     You can optionally enter a description for the model and one or more tags.
-
-    Tags are helpful for filtering the models in the model manager to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\). To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
-
+    Tags are helpful for filtering the models in the model manager to show only the models for which a specific tag has been defined \(see also [Filtering the models and samples](/streaming-analytics/analytics-builder/#filtering-the-models-and-samples)\). To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
 3.  Click **OK**.
-
     The model editor appears. See [Overview of steps for adding a model](/streaming-analytics/analytics-builder/#overview-of-steps-for-adding-a-model) for a brief overview of how to add blocks and wires to the new model.
 
 ### Editing an existing model {#editing-an-existing-model}
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
-When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save button in the model editor is therefore disabled.
+When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. The save icon <img src="/images/streaming-analytics/analytics-builder/icon-save.png" alt="Save icon" style="display:inline-block; margin:0"> in the model editor is therefore disabled.
 
 #### To edit a model {#to-edit-a-model}
 
@@ -203,9 +179,7 @@ When a model is imported by loading a JSON file, it is always imported as an ina
 #### To deploy a model {#to-deploy-a-model}
 
 1.  On the **Models** tab of the model manager, click the drop-down menu on the card for the model that you want to deploy and select one of **Production**, **Test** or **Simulation**.
-
 2.  If you have selected simulation mode, click the calendar icon which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
-
 3.  When the toggle button currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
 
 ### Undeploying a model {#undeploying-a-model}
@@ -234,26 +208,24 @@ On the **Models** tab of the model manager, click the actions menu of the model 
 
 A card for the duplicated model is immediately shown in the model manager.
 
-### Exporting a model {#exporting-a-model}
+### Downloading a model {#downloading-a-model}
 
-You can export each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current {{< product-c8y-iot >}} tenant to a different tenant. The model is saved in JSON format.
+You can download each model that is currently listed in the model manager. This is helpful, for example, if you want to transfer a model from the current {{< product-c8y-iot >}} tenant to a different tenant. The model is saved in JSON format.
 
-#### To export a model {#to-export-a-model}
+#### To download a model {#to-download-a-model}
 
-On the **Models** tab of the model manager, click the actions menu of the model that you want to export and then click **Export**.
+On the **Models** tab of the model manager, click the actions menu of the model that you want to download and then click **Download**.
 
-The resulting behavior depends on your browser. The model is usually exported to the download location of your browser.
+The resulting behavior depends on your browser. The model is usually downloaded to the download location of your browser.
 
 ### Importing a model {#importing-a-model}
 
-You can import a model that has previously been exported \(in JSON format\). This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
+You can import a model that has previously been downloaded in JSON format. This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.
 
 #### To import a model {#to-import-a-model}
 
 1.  On the **Models** tab of the model manager, click **Import model** in the toolbar.
-
 2.  In the resulting dialog box, navigate to the location where the model that you want to import is stored.
-
 3.  Select the model and click **Open**.
 
 A card for the imported model is shown in the model manager.
@@ -265,7 +237,6 @@ You can remove each model that is currently listed in the model manager. When yo
 #### To remove a model {#to-remove-a-model}
 
 1.  On the **Models** tab of the model manager, click the actions menu of the model that you want to remove and then click **Remove**.
-
 2.  In the resulting dialog box, click **Remove** to confirm the removal.
 
 ### Reloading all models {#reloading-all-models}

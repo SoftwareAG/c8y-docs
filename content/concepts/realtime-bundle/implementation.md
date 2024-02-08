@@ -6,9 +6,9 @@ weight: 40
 
 {{< product-c8y-iot >}} provides several processing modes for API requests:
 
-* **persistent** - Stores data in the {{< product-c8y-iot >}} database and sends data to the real-time engine. Afterwards, {{< product-c8y-iot >}} returns the result of the request. This is the default mode.
+* **persistent** - Stores data in the {{< product-c8y-iot >}} database and sends data to the Streaming Analytics engine. Afterwards, {{< product-c8y-iot >}} returns the result of the request. This is the default mode.
 
-* **transient** - Sends data to the real-time engine and immediately returns the results asynchronously but does not store data in {{< product-c8y-iot >}}'s database. This mode saves storage and processing costs and is useful for example when tracking devices in real time without requiring data to be stored.
+* **transient** - Sends data to the Streaming Analytics engine and immediately returns the results asynchronously but does not store data in {{< product-c8y-iot >}}'s database. This mode saves storage and processing costs and is useful for example when tracking devices in real time without requiring data to be stored.
 
 * **quiescent** - Behaves similar to the persistent mode with the exception that no real-time notifications will be sent. The quiescent processing mode is applicable only for measurements and events.
 

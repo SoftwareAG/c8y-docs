@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2854
 version: 10.18.587.0
 ---
-Clearing of mandatory fragments like type, time, creationTime, owner and source for events, alarms and managed objects is no longer allowed on invocation of SmartREST 2.0 templates like 107, 307 and 407.
+Clearing of mandatory fragments like type, time, creationTime, owner and source for events, alarms and managed objects is no longer allowed on invocation of SmartREST 2.0 static templates that clear fragments like 107, 307 and 407.

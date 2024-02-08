@@ -47,7 +47,7 @@ The page navigation buttons at the bottom can be used to traverse the history en
 
 For a given offloading job, you can examine additional details of its execution.
 
-In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
+In the corresponding list of jobs click the job you are specifically interested in. A details view encompasses the following information:
 
 **Schedule**
 

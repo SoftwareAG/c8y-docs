@@ -23,7 +23,7 @@ To easily create rules, the Cockpit application includes a smart rules builder w
 The smart rules functionality is only available if the tenant is subscribed to the Smartrule microservice and the Apama-ctrl microservice.
 
 {{< c8y-admon-req >}}
-* To use the smart rules functionality, you have to be subscribed to the Smartrule and Apama-ctrl microservice.
+* To use the smart rules functionality, you must be subscribed to the Smartrule and Apama-ctrl microservice.
 {{< /c8y-admon-req >}}
 
 Smart rules are parameterized. There are two sources for parameters:

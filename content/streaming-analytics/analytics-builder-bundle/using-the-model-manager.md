@@ -34,7 +34,7 @@ As long as a model has no template parameters, there will be zero instances and 
 
 Each card that is shown for a model has an actions menu \(the three vertical dots that are shown at the top right of a card\) which contains commands for managing the model \(for example, to download or remove the model\).
 
-If a description or tags have been defined for the model, this is shown on the card for that model. If you want to change the name, the description or the tags of a model, you have to do this in the model editor. See [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
+If a description or tags have been defined for the model, this is shown on the card for that model. If you want to change the name, the description or the tags of a model, you must do this in the model editor. See [Changing the name, description, and tags of a model](/streaming-analytics/analytics-builder/#changing-the-name-description-and-tags-of-a-model).
 
 If you have a long list of cards, you can easily locate the model that you are looking for by entering its name in the **Model name** search box. Or you can enter part of the model name. For example, enter the word "test" to find all models that have this word in their names. The characters that you type in may be contained at any position within the model name. These search criteria are not case-sensitive. When search criteria are currently applied, **Clear search** is shown next to the search box; click this to clear the search and thus to show all available cards.
 

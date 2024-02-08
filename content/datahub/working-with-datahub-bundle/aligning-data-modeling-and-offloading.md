@@ -49,7 +49,7 @@ When modelling your data, take the following guidelines into account:
 
 ### Limitations {#limitations}
 
-When modeling your data, you have to be aware of the following limitations:
+When modeling your data, you must be aware of the following limitations:
 
 |<div style="width:250px">Description</div>
 |:---

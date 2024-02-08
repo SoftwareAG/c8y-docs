@@ -49,10 +49,6 @@ Access {{< product-c8y-iot >}} Edge using the domain name configured as part of 
 
 The first option is always preferable so that {{< product-c8y-iot >}} Edge is accessible over LAN.
 
-{{< c8y-admon-important >}}
-{{< product-c8y-iot >}} Edge is installed with the admin user "admin" and password "admin-pass". Change the password on first login.
-{{< /c8y-admon-important >}}
-
 #### Adding the alias {#add-alias}
 
 On Linux machines, add the following entry to */etc/hosts*:
@@ -68,8 +64,8 @@ On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\host
 Ping the &#60;domain_name> to verify it.
 
 ```shell
-[admin@iot-edge-server ~]$ ping <domain_name>
-[admin@iot-edge-server ~]$ ping management.<domain_name>
+ping <domain_name>
+ping management.<domain_name>
 ```
 
 If the ping is successful, the DNS resolution is working properly.
@@ -77,25 +73,45 @@ If the ping is successful, the DNS resolution is working properly.
 #### To access Cumulocity IoT Edge {#to-access-cumulocity-iot-edge}
 
 Enter one of the following URLs in the browser:
-* `https://<domain_name>`
-* `https://management.<domain_name>`
+* To log in to the edge tenant: `https://<domain_name>`
+* To log in to the management tenant: `https://management.<domain_name>`
 
-The login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
+The login screen appears.
+
 
 {{< c8y-admon-important >}}
-After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
+{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**.
 {{< /c8y-admon-important >}}
 
-- To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
+![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)
 
-- To log in to the {{< product-c8y-iot >}}  Edge tenant, use the URL `https://edge.<domain_name>`.
+Change the password on first login.
 
-If you are logging in for the first time, you will see a cookie banner at the bottom:
+{{< c8y-admon-important >}}
+The Email address to change the password on the first login is the one you specified in the Edge CR (or myown@iot.com if you followed the Quickstart installation steps).
+Alternatively you can also retrieve the Email address by running the below command:
 
-![Login prompt](/images/users-guide/getting-started/getting-started-cookie-banner.png)
+`kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`
+
+_Substitute the Edge name and namespace name, which is currently **c8yedge** in the command, with the specific Edge name and namespace name you have specified in your Edge CR._
+{{< /c8y-admon-important >}}
+
+![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
+
+{{< c8y-admon-important >}}
+You must access both the management and edge tenants and change the respective admin credentials.
+{{< /c8y-admon-important >}}
+
+- To log in to the edge tenant, use the URL `https://<domain_name>`.
+
+- To log in to the management tenant, use the URL `https://management.<domain_name>`.
+
+If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
+
+![Cookie Banner](/images/edge-k8s/edge-k8s-cookie-banner.png)
 
 {{< c8y-admon-info >}}
-The cookie banner is turned on by default on the {{< product-c8y-iot >}} Edge instances. This feature can be configured, see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
+The cookie banner is turned on by default. This feature can be configured. For more information see [{{< enterprise-tenant >}} > Customizing your platform > Branding](/enterprise-tenant/customization/#branding).
 {{< /c8y-admon-info >}}
 
 * Click **Agree and Proceed** to accept the default cookie settings (required and functional cookies enabled).
@@ -118,7 +134,7 @@ Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you w
 To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
 {{< c8y-admon-info >}}
-The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
+The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the management tenant on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 {{< /c8y-admon-info >}}
 
 ### How to reset your password {#how-to-reset-your-password}

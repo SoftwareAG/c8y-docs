@@ -72,7 +72,7 @@ On Windows machines, add the same entry to *C:\Windows\System32\drivers\etc\host
 Ping the &#60;domain_name> to verify it.
 
 ```shell
-[admin@iot-edge-server ~]$ ping <domain_name>
+ping <domain_name>
 ```
 
 If the ping is successful, the DNS resolution is working properly.

@@ -18,9 +18,9 @@ To log in in to the {{< product-c8y-iot >}} platform and access your tenant, use
 ```http
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
-This will direct you to the login page of your default application.
+This will direct you to the Login screen of your default application.
 
-On the Login page, enter your username and password.
+On the Login screen, enter your username and password.
 
 
 Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).

@@ -90,7 +90,7 @@ Enter the URL in the browser:
 https://<domain_name>
 ```
 
-The Edge appliance login screen appears. Log in with your credentials created during the installation.
+The Edge appliance Login screen appears. Log in with your credentials created during the installation.
 
 - To log in to the {{< management-tenant >}}, prefix the username with *management*:
   - Username: management/<*Edge admin username*>

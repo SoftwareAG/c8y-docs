@@ -125,7 +125,7 @@ Shell application: cockpit
 http://localhost:9000/apps/cockpit/index.html?remotes=%7B%22widget-plugin%22%3A%5B%22WidgetPluginModule%22%5D%7D
 ```
 
-This link redirects you to the Cockpit login screen.
+This link redirects you to the Cockpit Login screen.
 Once logged in, go to your dashboard and click **Add widget**, then select **Module Federation widget** from the list of available widgets.
 
 For the rest of the widget editing process follow the process for regular widgets. Refresh your browser to see your changes.

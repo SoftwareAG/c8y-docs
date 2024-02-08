@@ -1,6 +1,6 @@
 ---
 date: "2024-02-07"
-title: Fixed issues with German translation
+title: Fixed issue with 0 as value in custom event and operation fields
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
-ticket: MTM-54257
-version: 10.18.503.7
+ticket: DM-3098
+version: 10.19.2.1
 ---
-Fixed an issue with the German translation of the **Get snapshot from device** operation description and several other similar cases.
+In Chrome, custom event and operation fields having 0 or '0' as a value were incorrectly parsed and displayed as date. This is now fixed.

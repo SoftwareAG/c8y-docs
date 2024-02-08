@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-02-07"
 title: Improved sorting of properties in the complex custom property
 product_area: Application enablement & solutions
 change_type:

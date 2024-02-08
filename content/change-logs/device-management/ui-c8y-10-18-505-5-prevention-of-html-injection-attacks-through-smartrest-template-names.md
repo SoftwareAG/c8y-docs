@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-02-07"
 title: Prevention of HTML injection attacks through SmartREST template names
 product_area: Device management & connectivity
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-02-07"
 title: Improved change password behavior
 product_area: Application enablement & solutions
 change_type:
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55265
 version: 10.18.504.3
 ---
-The password can now only be changed by the currently logged-in user. Administrators can no longer change the password and email for other users. 
+The password can now only be changed by the currently logged-in user. Administrators can no longer change the password and email for other users.

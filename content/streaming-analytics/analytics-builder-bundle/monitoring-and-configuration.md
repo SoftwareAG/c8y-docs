@@ -459,7 +459,7 @@ After you have changed a tenant option using a REST request, the correlator will
   </tr>
   <tr>
     <td><code>c8yAnalyticsBlocks.queryInventoryNameSearchAdditionalFilter</code></td>
-    <td>The managed objects that are shown when you use the search box of the <b>Select Input Source</b> or <b>Select Output Destination</b> dialog box. See also <a href="/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets">Searching for devices, groups and/or assets</a>.</td>
+    <td>The managed objects that are shown when you use the search box and filter check boxes of the <b>Select Input Source</b> or <b>Select Output Destination</b> dialog box. See also <a href="/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets">Searching for devices, groups and/or assets</a>.</td>
   </tr>
 </tbody>
 </table>

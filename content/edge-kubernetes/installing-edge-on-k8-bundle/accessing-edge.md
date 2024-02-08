@@ -99,12 +99,12 @@ _Substitute the Edge name and namespace name, which is currently **c8yedge** in 
 ![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
 
 {{< c8y-admon-important >}}
-You must access both the Management and Edge tenants and change the respective admin credentials.
+You must access both the management and edge tenants and change the respective admin credentials.
 {{< /c8y-admon-important >}}
 
-- To log in to the Edge tenant, use the URL `https://<domain_name>`.
+- To log in to the edge tenant, use the URL `https://<domain_name>`.
 
-- To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
+- To log in to the management tenant, use the URL `https://management.<domain_name>`.
 
 If you are logging in for the first time, you will see a cookie banner at the bottom of the login screen:
 
@@ -134,7 +134,7 @@ Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you w
 To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 
 {{< c8y-admon-info >}}
-The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the {{< management-tenant >}} on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
+The maximum number of failed logins (due to invalid credentials), after which a user is locked, can be configured by the management tenant on platform level, see *{{< product-c8y-iot >}} Core - Operations guide*. The default value is 100.
 {{< /c8y-admon-info >}}
 
 ### How to reset your password {#how-to-reset-your-password}

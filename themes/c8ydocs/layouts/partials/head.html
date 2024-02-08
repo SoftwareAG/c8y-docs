@@ -21,16 +21,20 @@
     <meta name="msapplication-config" content="{{"images/browserconfig.xml" | absURL}}">
     <meta name="theme-color" content="#ffffff">
 
-    <!--STYLES-->
+    <!-- Google search console verification -->
+    <meta name="google-site-verification" content="PYBroo4kQ0NReeuXOSLmXdIILDuxE6lRWUYjeReIy8E" />
 
+    <!--STYLES-->
     {{ $cssfile := "style.css" }}
 
     {{ $options := (dict "targetPath" $cssfile "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
-    
+
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options  }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <!--STYLES END-->
     <script src="{{ "js/vendor/highlight.min.js" | absURL }}"></script>
+    <!--
+    -->
     <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=1sfqr5kpjepyyxbd03qk7w" async="true"></script>
-   
+
   </head>

@@ -3,7 +3,7 @@
 
 {{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
 {{ $headless := .Site.GetPage $bundle }}
-<main class="main-content">
+<main class="main-content bundle-layout">
   <div class="breadcrumbs-container">
     {{- partial "breadcrumbs.html" . -}}
   </div>

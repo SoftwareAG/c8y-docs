@@ -3,7 +3,7 @@ weight: 40
 title: Managing trusted certificates
 layout: redirect
 helpcontent:
-- label: trusted-certificates
+- label: managing-trusted-certificates
   title: Trusted certificates
   content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates."
 ---
@@ -32,7 +32,7 @@ The information in the table at the right side is extracted from the provided ce
 
 Before adding a new trusted certificate, make sure that:
 
-* It s a X.509 certificate in PEM format.
+* It is a X.509 certificate in PEM format.
 * It is in version 3.
 * It contains `BasicConstraints:[CA:true]`.
 * It has not already been uploaded to {{< product-c8y-iot >}}.

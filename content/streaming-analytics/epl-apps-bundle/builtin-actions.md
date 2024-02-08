@@ -180,7 +180,7 @@ myMailText := Util.replacePlaceholders("The device #{source} created an event wi
 ```
 
 If the replacement string is of a form such as `#{source.name}` where `source.name` is the name of the underlying managed object/device
-or `#{source.c8y_hardware.notes}` where `c8y_hardware` is a fragment on the managed object,
+or `#{source.c8y_Hardware.notes}` where `c8y_Hardware` is a fragment on the managed object,
 then special handling is required to achieve the replacement.
 After the initial replacement, you must update the placeholder field name and run `Util::replacePlaceholders` again with the source `managedObject`.
 

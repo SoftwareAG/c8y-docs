@@ -3,7 +3,7 @@ weight: 50
 title: Managing device credentials
 layout: redirect
 helpcontent:
-- label: credentials
+- label: managing-device-credentials
   title: Device credentials
   content: "Manage the device credentials that have been generated for your connected devices. Edit, disable, or delete device credentials as required or modify its permissions in the **Global roles** field."
 ---

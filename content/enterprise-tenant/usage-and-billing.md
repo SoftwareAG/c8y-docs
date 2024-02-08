@@ -20,6 +20,17 @@ helpcontent:
 
 ### To view usage statistics {#to-view-usage-statistics}
 
+{{< c8y-admon-req >}}
+APPLICATION ACCESS:
+
+The user must have access to the Administration application of a {{< management-tenant >}} or an {{< enterprise-tenant >}}.
+
+ROLES & PERMISSIONS:
+
+* To view tenants usage statistics: READ permission for the permission type "Tenant management".
+
+{{< /c8y-admon-req >}}
+
 The **Usage statistics** page provides statistical information on each subtenant.
 
 ![Subtenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics.png)

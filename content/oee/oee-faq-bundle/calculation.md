@@ -100,8 +100,8 @@ Another reason can be that you have changed the resolution. The displayed Ideal 
 
 You have entered "1.1 pcs/minute" in the Workpiece section, while setting up the profile. 	
 
-* If you choose the resolution "1 mins" on the machine overview the displayed Ideal Amount for an interval will be 1,1 pcs.
-* If you choose the resolution "10 mins" on the machine overview the displayed Ideal Amount for an interval will be 11 pcs.
+* If you select the resolution "1 mins" on the machine overview the displayed Ideal Amount for an interval will be 1,1 pcs.
+* If you select the resolution "10 mins" on the machine overview the displayed Ideal Amount for an interval will be 11 pcs.
 
 ### Can the calculated OEE values be used in a Cockpit widget? {#can-the-calculated-oee-values-be-used-in-a-cockpit-widget}
 

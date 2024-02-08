@@ -4,7 +4,7 @@ title: Configuring single sign-on
 layout: redirect
 ---
 
-{{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (ADD). Currently authorization code grant is supported only with access tokens in form of JWT. SAML is not supported.
+{{< product-c8y-iot >}} provides single sign-on (SSO) functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory (AAD). Currently authorization code grant is supported only with access tokens in form of JWT. SAML is not supported.
 
 {{< c8y-admon-req >}}
 To use the SSO feature the following requirements must be met:

@@ -24,7 +24,7 @@ Depending on the format of the uploaded CSV file, one of the following registrat
 * Full registration
 
 {{< c8y-admon-info >}}
-Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status.
+Bulk registration creates an elementary representation of the device. Then, the device must update it to a full representation with its own status.
 {{< /c8y-admon-info >}}
 
 A separator is automatically obtained from the CSV file. Valid separator values are: `\t` (tabulation mark), `;` (semicolon) and `,` (comma).
@@ -40,7 +40,7 @@ Device2;Group A/Group B
 ```
 
 
-After the file is uploaded, all required new groups will be created, new registrations will be created with status "Waiting for connection", and the normal registration process needs to be continued (see above).
+After the file is uploaded, all required new groups will be created, new registrations will be created with status "Waiting for connection", and the normal registration process must be continued (see above).
 
 **Full registration**
 

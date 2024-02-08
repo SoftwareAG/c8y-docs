@@ -64,7 +64,7 @@ The first message sent will create our device. Although the static templates sup
 
 Afterwards, you will find this device in the Device management application as a new device. If you switch to the **Identity** tab of the device you will notice that there was an identity created automatically to link the device to the MQTT ClientId.
 
-Besides the name and the type, the device does not have more information, so master data needs to be added.
+Besides the name and the type, the device does not have more information, so master data must be added.
 
 You can use multiple static templates per publishing separated by a line break (one template per row). This feature is used to set the hardware and the required interval for the device in a single published message.
 
@@ -92,7 +92,7 @@ The temperature and battery measurement just take the value and time as paramete
 
 Passing timestamps in the {{< product-c8y-iot >}} MQTT implementation is always optional. If you don't pass them along, the server will automatically create a timestamp with the current server time.
 
-We will make use of this feature in this example. Also, if you don't set the last parameters, you do not need to enter the remaining commas.
+We will make use of this feature in this example. Also, if you do not set the last parameters, you do not need to enter the remaining commas.
 
 ```text
 210,-87

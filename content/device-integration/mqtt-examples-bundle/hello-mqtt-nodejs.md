@@ -121,7 +121,7 @@ Before running the application, the MQTT middleware must be installed. To achiev
 $ npm install
 ```
 
-Installation needs to be done only once. Afterwards, you only need to execute the following command:
+Installation needs to be done only once. Afterwards, you only must execute the following command:
 
 ```shell
 $ npm start

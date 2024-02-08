@@ -78,7 +78,7 @@ The number of profiles you may have is not limited. To use a specific profile on
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
-The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the "myTenant" profile. The list of profiles must be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
+The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the "myTenant" profile. The list of profiles must be provided as an ordered, comma-separated list. The default profile must always be the first profile in the list.
 
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations must be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with "/". For example:
 
@@ -118,7 +118,7 @@ C8Y:
 
 #
 # Gateway-specific settings
-# 
+#
 gateway:
   # The version of the gateway - this is filled automatically during the build process - do not change this property
   version: ${project.version}

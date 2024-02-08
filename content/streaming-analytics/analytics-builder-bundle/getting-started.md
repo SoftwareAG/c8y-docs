@@ -92,7 +92,7 @@ If you have kept the default option of **All Inputs** for the input block, you m
 
 #### Step 6: Connect the blocks {#step-6-connect-the-blocks}
 
-To pass the values from one block to another, you have to connect the blocks with wires. You attach the wires to the ports, that is, to the small circles that are shown to the left and/or right of a block.
+To pass the values from one block to another, you must connect the blocks with wires. You attach the wires to the ports, that is, to the small circles that are shown to the left and/or right of a block.
 
 1. Click the **Value** output port of the input block and drag the mouse to the **Value** input port of the **Average \(Mean\)** block.
 2. Click the **Average** output port of the **Average \(Mean\)** block and drag the mouse to the **Value** input port of the output block.
@@ -115,7 +115,7 @@ A card for the newly added model is shown on the **Models** tab of the model man
 
 #### Step 9: Go to the Device management and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
 
-To view the measurements that are sent from your active model, you have to switch to the Device management application. See [Device management application](/device-management-application/) for detailed information.
+To view the measurements that are sent from your active model, you must switch to the Device management application. See [Device management application](/device-management-application/) for detailed information.
 
 1. Go to the Device management application.
 2. In the navigator on the left, click **Devices** and then **All devices**.
@@ -187,7 +187,7 @@ Use the horizontal scroll bar below the instance table if not all template param
    `c8y_Gyroscope.gyroscopeX`
 
     {{< c8y-admon-tip>}}
-If you want to find out which fragments and series are available to your device, without changing the predefined template parameters of the **Measurement Input** block, go back to the model editor, drag the input block for your device from the palette onto the canvas and open the **Fragment and Series** drop-down list box. This lists all the values that you can use. However, instead of the `=>` that you can see in the drop-down list box, you have to use a dot \(.\) in this case. Don't forget to remove this block again after you have decided which value to use.
+If you want to find out which fragments and series are available to your device, without changing the predefined template parameters of the **Measurement Input** block, go back to the model editor, drag the input block for your device from the palette onto the canvas and open the **Fragment and Series** drop-down list box. This lists all the values that you can use. However, instead of the `=>` that you can see in the drop-down list box, you must use a dot \(.\) in this case. Don't forget to remove this block again after you have decided which value to use.
     {{< /c8y-admon-tip>}}
 3. The fields below the **Duration \(seconds\)**, **Alarm type**, **Alarm text** and **Alarm severity** column headers already contain default values \(see also the above description of the blocks\). Adapt them to your requirements. For example, change the duration to 30 seconds, rename the alarm type to "MyAlarmType", keep the predefined alarm text, and set the alarm severity to **Minor**.
 4. In the toolbar of the instance editor, click **Save**.
@@ -207,7 +207,7 @@ For our example case with the gyroscope measurements from a smartphone, it shoul
 
 #### Step 6: Go to the Device management application and view the alarms {#step-6-go-to-the-device-management-application-and-view-the-alarms}
 
-To view the alarms that are sent from your active instance, you have to switch to the Device management application.
+To view the alarms that are sent from your active instance, you must switch to the Device management application.
 See [Device management application](/device-management-application/) for detailed information.
 
 1. Go to the Device management application.

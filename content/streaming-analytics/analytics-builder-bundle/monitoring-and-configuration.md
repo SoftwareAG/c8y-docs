@@ -489,7 +489,7 @@ where:
 
     `--user User123:secretpw`
 
-    If your tenant does not have its own unique host name, you have to provide the tenant identifier in the `username` argument. For example:
+    If your tenant does not have its own unique host name, you must provide the tenant identifier in the `username` argument. For example:
 
     `--user management/User123`
 

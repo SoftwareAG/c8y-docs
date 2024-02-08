@@ -67,7 +67,7 @@ Subscribe example:
 ```
 
 {{< c8y-admon-info >}}
-`\n` does not create a new line in the output (for example console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
+`\n` does not create a new line in the output (for example console, UI); to achieve this, a new line character (ASCII 0A) must be used.
 {{< /c8y-admon-info >}}
 
 ### Device hierarchies {#device-hierarchies}
@@ -88,7 +88,7 @@ Every operation received will contain the template ID followed by the ID of the 
 
 The communication with {{< product-c8y-iot >}} employing MQTT supports authentication in two ways:
 
-*   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
+*   Username and password. The MQTT username must include the tenant ID and username in the format &lt;tenantID/username>.
 *   Device certificates. The devices must contain the whole chain of certificates leading to the trusted root certificate. Also, they must contain the server certificate in their truststore.
 
 #### Troubleshooting {#troubleshooting}
@@ -102,7 +102,7 @@ If that is not possible, to make the connection work, check the following:
 
 * The platform's trust store cannot be empty. At least one trusted certificate must be uploaded to the platform.
 * The device's MQTT client must be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it's not working with the MQTT client and Java 11. However, it works with Java 8.
-* In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please contact [product support](/additional-resources/contacting-support/).
+* In order to support this situation, the platform must be configured accordingly. In case you experience issues please contact [product support](/additional-resources/contacting-support/).
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
 #### MQTT ClientId {#mqtt-clientid}

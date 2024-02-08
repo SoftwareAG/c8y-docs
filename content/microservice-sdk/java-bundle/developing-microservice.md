@@ -451,7 +451,7 @@ To upload a microservice to the server you must configure the following properti
 * username - Mandatory tenant ID and username used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
 * name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
-* skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it needs to be set to `false`)
+* skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it must be set to `false`)
 
 #### settings.xml {#settingsxml}
 
@@ -606,7 +606,7 @@ $ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 
 #### Local Docker deployment {#local-docker-deployment}
 
-To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/general-aspects/#environment-variables).
+To deploy the application on a local Docker container, one must inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/general-aspects/#environment-variables).
 
 An example execution could be:
 

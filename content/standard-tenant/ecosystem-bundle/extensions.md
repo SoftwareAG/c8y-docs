@@ -56,6 +56,6 @@ In the **Versions** tab, you see all previously uploaded binaries related to the
 
 <img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Versions view">
 
-You can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
+You can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and must be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
 
 To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.

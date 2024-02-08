@@ -26,7 +26,7 @@ OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 
 You will also need a Docker installation, and in case that you don't have it yet, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
-{{< product-c8y-iot >}} microservices are Docker containers for the Linux/Amd64 platform. Other architectures are currently not supported. The Docker engine has to provide the API version 1.38 or newer. This is the case for Docker versions 18.06 and later. Use the following command to verify your Docker installation:
+{{< product-c8y-iot >}} microservices are Docker containers for the Linux/Amd64 platform. Other architectures are currently not supported. The Docker engine must provide the API version 1.38 or newer. This is the case for Docker versions 18.06 and later. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
@@ -62,7 +62,7 @@ Server: Docker Engine - Community
 
 ### Developing the "Hello world" microservice {#developing-the-hello-world-microservice}
 
-You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
+You can download the source code of this example from our [GitHub](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/hello-world-microservice) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what must be done/configured.
 
 {{< c8y-admon-important >}}
 This microservice example has been tested under macOS, Ubuntu and Windows 10 with Java 17, Maven 3.8.5, Docker 20.10.14; latest version of IntelliJ IDEA as IDE. Other tools or Java versions may require different configurations.
@@ -122,7 +122,7 @@ When naming your microservice application use only lower-case letters, digits an
 
 #### Add repositories and dependencies {#add-repositories-and-dependencies}
 
-Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the {{< product-c8y-iot >}} Maven repository which stores the client libraries.
+Your _pom.xml_ file must have `<repository>` and `<pluginRepository>` elements to point to the {{< product-c8y-iot >}} Maven repository which stores the client libraries.
 
 ```xml
 <repositories>

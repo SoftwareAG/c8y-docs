@@ -50,7 +50,7 @@ There are two ways to configure the accessibility with the domain names:
 
 * Add an entry of the domain name and IP mapping in the DNS servers. <br>
 OR
-* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This needs to be performed on each client host on which the Edge appliance is accessed.
+* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This must be performed on each client host on which the Edge appliance is accessed.
 
 {{< c8y-admon-info >}}
 The first option is always preferable so that the Edge appliance is accessible over LAN.

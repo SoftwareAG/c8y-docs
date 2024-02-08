@@ -131,7 +131,7 @@ In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for 
 Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.
 {{< /c8y-admon-important >}}
 
-Note that {{< product-c8y-iot >}} follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
+Note that {{< product-c8y-iot >}} follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that must be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 
 ### Object identification {#object-identification}
 
@@ -145,7 +145,7 @@ To shield applications from these numbers of identifiers, {{< product-c8y-iot >}
 
 This service is used by agents (to register external identifiers) and by business processes involving reorganisations and changes of devices (to modify maps of external identifiers to global identifiers).
 
-As an example, assume that a smart meter would be faulty and a new meter with another meter number and asset tag needs to be installed in a household. The routine business process for replacing faulty hardware can now just update the asset tag and meter ID associated with a customer in the identity service. Afterwards, both previously collected and new meter readings are related to the correct customer.
+As an example, assume that a smart meter would be faulty and a new meter with another meter number and asset tag must be installed in a household. The routine business process for replacing faulty hardware can now just update the asset tag and meter ID associated with a customer in the identity service. Afterwards, both previously collected and new meter readings are related to the correct customer.
 
 More information can be found in [Identity](https://{{< domain-c8y >}}/api/core/#tag/Identity-API) in the {{< openapi >}}.
 

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Error handling for zero latitude-longitude values in Location property
+title: Display maps for multiple asset instances during asset creation
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-897
-version: 1019.1.0
+ticket: CTM-688
+version: 1019.0.0
 ---
-Managed the error triggered when the latitude or longitude value of the location property is set to 0.
+Fixed issue where map was not correctly shown when adding multiple asset instances associated with Location

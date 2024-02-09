@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Added range validation location property
+title: Handled UI issues in Import Asset properties preview window
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-900
+ticket: CTM-635
 version: 1019.0.0
 ---
-Added range validation for longitude and latitude fields in Location property.
+The Import asset properties preview windows now display a message when no record exists.

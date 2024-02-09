@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Map display for multiple asset instances
+title: Fixed the error when value for Latitude or Longitude is zero
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-688
-version: 1019.0.0
+ticket: CTM-897
+version: 1019.1.0
 ---
-Users can view the map for the location property when adding multiple asset instances.
+Fixed the error seen when the latitude or longitude value of the location property is set to 0.

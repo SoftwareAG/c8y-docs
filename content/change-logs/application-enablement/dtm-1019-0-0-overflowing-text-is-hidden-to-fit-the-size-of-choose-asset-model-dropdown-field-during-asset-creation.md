@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Added ellipses for lengthy names in choose model dropdown in Assets  
+title: Overflowing text is hidden to fit the size of Choose asset model dropdown field during asset creation
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-745
 version: 1019.0.0
 ---
-Added ellipses for lengthier Asset model name in 'choose Asset model dropdown' in Asset creation page.
+Lengthier Asset model names in the options of dropdown field 'Choose Asset model' are truncated to fit to the field size. Hovering over the option shows the complete text.

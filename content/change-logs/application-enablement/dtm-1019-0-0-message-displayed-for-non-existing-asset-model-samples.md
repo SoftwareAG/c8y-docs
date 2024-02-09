@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Actions button made as fixed column in Localization screen
+title: Message displayed for non-existing asset model samples.
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-925
+ticket: CTM-744
 version: 1019.0.0
 ---
-Actions button column is made as fixed column instead of movable column in localization screen.
+User is notified when user tries to search for an Asset model sample that is not present.

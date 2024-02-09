@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Removed redundant network calls in Asset Models Page
+title: Implemented file size validation during Asset creation and Subassets page.
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-930
+ticket: CTM-353
 version: 1019.0.0
 ---
-Eliminated Redundant network calls observed when user navigates to the Asset Models page.
+Implemented file size validation for a file type property during asset creation and in subassets page.

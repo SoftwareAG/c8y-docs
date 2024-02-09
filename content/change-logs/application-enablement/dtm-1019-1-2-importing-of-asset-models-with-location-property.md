@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Implemented informative Message for invalid search.
+title: Importing of Asset models with Location property
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1006
 version: 1019.1.2
 ---
-Importing asset models having Location property is now supported.
+User can now import asset models having Location property.

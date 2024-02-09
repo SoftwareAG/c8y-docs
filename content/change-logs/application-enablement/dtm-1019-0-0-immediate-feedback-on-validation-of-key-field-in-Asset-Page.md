@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: immediate-feedback-on-validation-of-key-field-in-Asset-Page
+title: immediate feedback on validation of key field in Asset Page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-625
 version: 1019.0.0
 ---
-User can now enter a maximum of  254 characters in the input fields during asset creation.
+User can now enter a maximum of 254 characters in the input fields during asset creation.

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Added ellipses for lengthier Model name    
+title: Users navigated to first page of Assets
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-650
+ticket: CTM-937
 version: 1019.0.0
 ---
-User can now see ellipses for lengthier Asset Model name in Asset model page.
+Users are now always taken to the first page of Assets when navigated to the Assets page.

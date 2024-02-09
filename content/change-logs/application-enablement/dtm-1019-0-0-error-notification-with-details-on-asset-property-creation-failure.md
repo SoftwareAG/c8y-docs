@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Updated default icon to 'c8y-enterprise'
+title: Error notification with details on Asset property creation failure
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-805
+ticket:CTM-596
 version: 1019.0.0
 ---
-Modified default Icon from 'c8y-group' to 'c8y-enterprise' in Asset model edit page under allowed asset model.
+ Users will now be notified of the error with details about the cause of the failure during Asset property creation.

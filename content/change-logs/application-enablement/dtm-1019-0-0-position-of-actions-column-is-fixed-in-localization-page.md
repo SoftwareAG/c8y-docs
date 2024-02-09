@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: modified success message on udating asset
+title: Position of Actions column is fixed in Localization page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-660
+ticket: CTM-925
 version: 1019.0.0
 ---
-The success message has been changed to 'Asset updated' from 'Group updated' on updating an Asset and its properties in subasset page.
+Position of Actions column in the Translation grid of Localization page is now fixed and cannot be changed.

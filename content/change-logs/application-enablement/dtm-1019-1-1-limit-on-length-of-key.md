@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Default page set to first page on Assets page navigation
+title: A limit on length of key
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-937
-version: 1019.0.0
+ticket: CTM-646,CTM-673,CTM-658
+version: 1019.1.1
 ---
-Users can now find that the default page is always the first page on navigating to the Assets page.
+A limit of 254 characters is set on length of the Key for assets, properties, and models, ensuring consistent behavior with other Cumulocity IoT applications

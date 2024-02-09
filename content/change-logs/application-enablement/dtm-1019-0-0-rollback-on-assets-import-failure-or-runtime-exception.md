@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Handled 'No cumulocity manifest found' popup on Localization screen
+title: Rollback on assets import failure or runtime exception
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-894
+ticket: CTM-655
 version: 1019.0.0
 ---
-The appearance of 'No cumulocity manifest found' pop up has been handled on Localization screen.
+In the event of a failure or a runtime exception during asset import, the system will automatically discard all assets created until the failure.

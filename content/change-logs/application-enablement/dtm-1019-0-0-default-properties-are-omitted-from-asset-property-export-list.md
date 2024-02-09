@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Improved visualization of steps skipped during asset instance creation   
+title: Default properties are omitted from Asset property export list
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-675
+ticket: CTM-901
 version: 1019.0.0
 ---
-User will now be navigated to child asset model instead of navigating directly to the confirmation page when user creates multiple asset instances with the name field blank.
+ The default asset property (Location) is not  shown during the export of asset properties.

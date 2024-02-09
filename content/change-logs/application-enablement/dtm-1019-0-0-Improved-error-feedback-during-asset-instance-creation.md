@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Fixed issues for users with only Application access  
+title: Improved error feedback during asset instance creation  
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-676
+ticket: CTM-675
 version: 1019.0.0
 ---
-Handled the unexpected error message during bulk assets deletion. 
+Users will now be navigated back to the step having blank value in the name field when there are multiple asset instances instead of navigating to confirmation page.

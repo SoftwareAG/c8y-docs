@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-810
 version: 1019.0.0
 ---
-Bulk import operation is now possible for different concurrent users
+Concurrent users can now import assets in bulk.

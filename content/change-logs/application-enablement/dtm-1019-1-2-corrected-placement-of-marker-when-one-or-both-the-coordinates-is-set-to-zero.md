@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Location included in Asset Property export.
+title: Corrected placement of marker when one or both the co-ordinates is set to zero
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-901
-version: 1019.0.0
+ticket: CTM-995
+version: 1019.1.2
 ---
- The default asset property (Location) is not  shown during the export of asset properties.
+Marker is now shown at the center of the map when both or any one of the value of Latitude and Longitude is "0" for Location property.

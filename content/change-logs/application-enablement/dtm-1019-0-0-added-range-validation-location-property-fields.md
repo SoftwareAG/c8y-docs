@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: 'No items to display'message excluded for newly created Assets
+title: Added range validation for Location property fields
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-842
+ticket: CTM-900
 version: 1019.0.0
 ---
-'No items to display message' does not appear now when the asset is newly created.
+Users can now only enter values that are within the valid range for Latitude(-90 to +90) and Longitude(-180 to +180) fields

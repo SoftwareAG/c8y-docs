@@ -5,14 +5,14 @@ layout: redirect
 helpcontent:
   - label: trusted-certificates
     title: Trusted certificates
-    content: "This section describes how to fine-tune various certificate configurations."
+    content: "This section helps the administrator configure the CRL settings (online or offline). If the revoked certificate information is maintained by the issuing CA, then Online check can be chosen. If the CA doesnt maintain the CRL information, offline setup can be chosen. In offline setup, the revoked certificate serial number can either be added manually or can be uploaded in bulk using the file template attached."
 ---
 
 {{< product-c8y-iot >}} allows administrators to fine-tune various certificate configurations.
 Currently, CRL (Certificate Revocation List) is supported.
 
 {{< c8y-admon-info >}}
-This section is meant for advance users, for granular control over certificates attributes like CRL, OCSP, Certificate
+This section targets at advanced users for granular control over certificate attributes like CRL, OCSP, Certificate
 Policy and PKI.
 If you are unfamiliar with these terms it's advisable to leave the defaults.
 Bad configuration might result in changes which cannot be reversed.
@@ -29,9 +29,9 @@ In {{< product-c8y-iot >}} terms, if there is a breach at device certificates si
 can inform the platform about the revoked certificates in two ways:
 
 1. Online revocation :
-   To perform online revocation checks, the device administrator is expected to upload trusted CA
-   who maintains the Certificate Revocation lists with the list of revoked certificate serial numbers 
-   and should provide this information in its CDP (CRL Distribution point) attribute.
+   To perform online revocation checks, the device administrator is expected to upload a trusted CA
+   which maintains the CRLs with the list of revoked certificate serial numbers 
+   and should provide this information in its CDP attribute.
 2. Offline revocation :
     The trusted CA doesn't maintain the revocation details of the certificates, in which case, the platform users
    can manually upload the serial numbers of the revoked certificates.
@@ -61,9 +61,9 @@ Certificate revocation is an irreversible process. So, offline entries once made
    Use the `+` button to add new entries in the format below:
    | Field | Description | Example |
    |:------------------|:------------------------------------------------------------|:----------|
-   | Serial number | Must be in `Hexadecimal Value`.| 0b8a5b9dd501a88775399b9a048811a3 |
+   | Serial number | Must be a hexadecimal value.| 0b8a5b9dd501a88775399b9a048811a3 |
    | Date (optional)       | Date format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`. | 2024-01-17T10:48:51.000Z |
-4. Click save to confirm your entries.
+4. 4. Click **Save** to confirm your entries.
 
 {{< c8y-admon-info >}}
 If the date field is empty, then the current date is used. Future dates are not allowed.
@@ -78,7 +78,7 @@ If the date is in the future then the CRL entry is skipped.
 In case of a duplicate, the latest one (last one uploaded) is used.
 {{< /c8y-admon-info >}}
 
-To bulk upload, follow the steps below:
+To bulk upload, follow these steps:
 
 1. Download the CSV template from the **Revoked certificates list** panel.
 2. Fill in all revoked certificate serial numbers and revocation dates.

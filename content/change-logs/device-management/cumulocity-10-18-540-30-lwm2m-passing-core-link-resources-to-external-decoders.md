@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: DM-2653
-version: 10.20.106.0
+version: 10.18.540.30
 ---
 LWM2M can now pass core link resources to external decoders. In addition, the user documentation has been extended to better explain how the platform passes LWM2M resource data to decoder microservices.

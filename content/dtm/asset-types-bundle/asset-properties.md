@@ -122,7 +122,7 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 **Example:**
 
-If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes have to start with the prefix “MCGEN”.
+If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes must start with the prefix “MCGEN”.
 
 If any of the above restrictions are not selected, it is not applicable for the asset property during asset creation.
 
@@ -131,7 +131,7 @@ If any of the above restrictions are not selected, it is not applicable for the 
 Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the **Asset model**, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
-The default value has to adhere to all validations provided beforehand. If you selected a property of the type "Text", you can set the **Min length**, **Max length** and/or **RegExp** and the default value must fulfill all set validations.
+The default value must adhere to all validations provided beforehand. If you selected a property of the type "Text", you can set the **Min length**, **Max length** and/or **RegExp** and the default value must fulfill all set validations.
 {{< /c8y-admon-info>}}
 
 **Example:**
@@ -150,7 +150,7 @@ If selected, enter a number in the field on the right. When you create the asset
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be greater than or equal to the **Minimum** provided. By default, this box is not selected.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be greater than or equal to the **Minimum** provided. By default, this box is not selected.
 
 {{< /c8y-admon-info>}}
 
@@ -160,7 +160,7 @@ If selected, enter a number in the field on the right. When you create the asset
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
 
 {{< /c8y-admon-info>}}
 
@@ -195,7 +195,7 @@ During asset creation, these values appear as options in the dropdown menu. Sele
 
 **Example:**
 
-If you create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you have to provide these options separated by a comma when creating the asset property.
+If you create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you must provide these options separated by a comma when creating the asset property.
 
 ![Asset property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
@@ -338,7 +338,7 @@ You can import a maximum of 500 asset properties at a time.
 ### Characteristics {#characteristics-of-default-properties}
 
 * Default properties are readily available when you open the application.
-* Default properties cannot be deleted. 
+* Default properties cannot be deleted.
 * Only selected fields within a default property are editable and the editable fields vary depending on the specific property.
 * Default properties cannot be exported.
 

@@ -23,7 +23,7 @@ Perform the following steps to migrate your microservice to the new API Version.
 
 In the simplest case it is sufficient to set the API Version to 2 in your microservice manifest.  
 
-However, for microservices which currently make use of specific privileges of the Linux Kernel API that are not granted anymore, you additionally need to refactor the source code so that the service doesn't require the invocation of these privileges.  
+However, for microservices which currently make use of specific privileges of the Linux Kernel API that are not granted anymore, you must additionally refactor the source code so that the service doesn't require the invocation of these privileges.  
 
 #### Affected microservices {#affected-microservices}
 

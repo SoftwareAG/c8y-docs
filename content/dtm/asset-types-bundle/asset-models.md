@@ -244,6 +244,6 @@ Click **Import** to import the asset models in the sample.
 Alternatively, to import the asset models in the sample without a preview, click the menu icon to the right of sample name and then click **Convert to asset model**.
 
 {{< c8y-admon-info>}}
-When you choose **View** or **Convert to asset model**, the asset model sample undergoes a validation process. If the validation fails, you see a corresponding message in the resulting dialog box. Click **Download log file** to view the errors.
+When you select **View** or **Convert to asset model**, the asset model sample undergoes a validation process. If the validation fails, you see a corresponding message in the resulting dialog box. Click **Download log file** to view the errors.
 Review the errors that are reported, resolve them and attempt the action again.
 {{< /c8y-admon-info>}}

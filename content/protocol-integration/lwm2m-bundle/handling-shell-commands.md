@@ -35,7 +35,7 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 </tr>
 <tr>
 <td align="left">executeparameters</td>
-<td align="left">The execute parameters have to conform to <i>arglist</i> ANBF syntax as described in the <a href="https://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.pdf">OMA Lightweight M2M specification (Section 6.3.5).</a></td>
+<td align="left">The execute parameters must conform to <i>arglist</i> ANBF syntax as described in the <a href="https://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.pdf">OMA Lightweight M2M specification (Section 6.3.5).</a></td>
 </tr>
 <tr>
 <td align="left">Firmware version</td>

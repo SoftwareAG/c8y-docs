@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Exporting of asset models having multiple properties  
+title: Default asset icon shown for entries in child asset selection dropdown
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-698
+ticket: CTM-805
 version: 1019.0.0
 ---
-Users can now export an asset model having multiple asset properties.
+In the dropdown options for adding child asset models, for an asset whose icon is not set, the default asset icon is displayed instead of default group icon.

@@ -35,7 +35,7 @@ The cycle phase consists of two kinds of actions:
 
 #### Step 0: Request device credentials {#step-0-request-device-credentials}
 
-In {{< product-c8y-iot >}}, every MQTT connection needs to be authenticated. You can use the device credentials topics in the MQTT implementation to generate new credentials for a device.
+In {{< product-c8y-iot >}}, every MQTT connection must be authenticated. You can use the device credentials topics in the MQTT implementation to generate new credentials for a device.
 
 Once the device retrieved the credentials, it needs to store them locally for further connections.
 

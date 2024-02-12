@@ -50,14 +50,14 @@ Click **Next** to proceed with the next configuration step. Click **Cancel** to 
 
 Once you have selected a collection for offloading, you must specify the target table in the data lake. The **Target table name** denotes the folder name in the data lake. In this folder, which will be automatically created, the offloaded data will be stored. In Dremio a table is created with the same name, pointing to this data lake folder. This table is used when querying the corresponding data lake folder and thus the offloaded data. The target table name must follow these syntax rules:
 
-* It needs to start with an alphanumeric character (letters and numbers).
+* It must start with an alphanumeric character (letters and numbers).
 * It may contain alphanumeric characters, underscores (_) and dashes (-).
 * Each underscore or dash must be preceded by an alphanumeric character.
 * The name must be at least two characters long.
 
 Each pipeline must have its own target table in the data lake. Thus, you must select distinct target table names for each offloading configuration.
 
-For the **alarms**, **events**, and **inventory** collections, you only need to specify the target table name in this step.
+For the **alarms**, **events**, and **inventory** collections, you must only specify the target table name in this step.
 
 For the **measurements** collection, additional settings are required. The **Target table layout** refers to the way the measurements are stored. Measurements in the base collection may have different types. For example, the collection may contain temperature, humidity, and pressure measurements. Depending on your layout choice, measurements are stored differently in the target table.
 
@@ -159,7 +159,7 @@ In the offloading preview you can inspect how the actual data will be stored in 
 
 **Offloading frequency**
 
-Per default each active offloading pipeline is executed once an hour, at the same minute. You can adapt the offloading frequency by setting in the dropdown box the hours per day at which the offloading will to be executed. As with the default setting, the exact minute of the hour for the execution is selected by the system. The hours are defined with respect to UTC as timezone. You have to select at least one hour; otherwise the configuration cannot be saved.
+Per default each active offloading pipeline is executed once an hour, at the same minute. You can adapt the offloading frequency by setting in the dropdown box the hours per day at which the offloading will to be executed. As with the default setting, the exact minute of the hour for the execution is selected by the system. The hours are defined with respect to UTC as timezone. You must select at least one hour; otherwise the configuration cannot be saved.
 
 **Compaction strategy**
 

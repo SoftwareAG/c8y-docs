@@ -202,7 +202,7 @@ Explanation of the numbers above:
 
 1. Define the components as entry components and declare them to make them accessible by this module.
 2. Add a multi-provider hook with the `HOOK_COMPONENTS`. This hook is collected by the application and adds the widget based on the values you provide.
-3. The ID needs to be unique as it identifies the data stored in the inventory. The label and description is shown as the title and in the widget dropdown.
+3. The ID must be unique as it identifies the data stored in the inventory. The label and description is shown as the title and in the widget dropdown.
 4. These parts tell the hook to associate the previously defined components to the widget.
 
 If you now start your application with `npm start`, you should be able to add your custom widget to a dashboard.

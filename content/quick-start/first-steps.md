@@ -18,9 +18,9 @@ To log in in to the {{< product-c8y-iot >}} platform and access your tenant, use
 ```http
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
-This will direct you to the login page of your default application.
+This will direct you to the Login screen of your default application.
 
-On the Login page, enter your username and password.
+On the Login screen, enter your username and password.
 
 
 Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
@@ -39,7 +39,7 @@ All {{< product-c8y-iot >}} applications share a common structure and include th
 
 On the left you have the navigator, which shows a list of entries leading to various pages of the application. The entries are grouped into menus and menu items.
 In the middle you find the content of the actual page which has been selected in the navigator.
-On the top you find the page title at the left. At the right you find various action buttons. Click the **Search** button <img class="Default" src="/images/icons/search-icon.png" alt="Search" style="display: inline-block; margin:0"> to enter text for a full-text search. The  **Application Switcher** button <img class="Default" src="/images/icons/switcher-icon.png" alt="Search" style="display: inline-block; margin:0"> allows you to quickly switch between all available applications. Clicking the **User** button <img class="Default" src="/images/icons/user-icon.png" alt="Search" style="display: inline-block; margin:0;"> at the right opens a context menu with details on your [account settings](#account-settings), as described below.
+On the top you find the page title at the left. At the right you find various action buttons. Click the **Search** button <img class="Default" src="/images/icons/search-icon.png" alt="Search" style="display: inline-block; margin:0"> to enter text for a full-text search. The  **Application Switcher** button <img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline-block; margin:0"> allows you to quickly switch between all available applications. Clicking the **User** button <img class="Default" src="/images/icons/user-icon.png" alt="User" style="display: inline-block; margin:0;"> at the right opens a context menu with details on your [account settings](#account-settings), as described below.
 
 See [UI functionalities and features](/get-familiar-with-the-ui/gui-features/) for more information on all {{< product-c8y-iot >}}'s UI features.
 
@@ -56,7 +56,7 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 ### Step 3: Register a device
 
-To connect a device to {{< product-c8y-iot >}}, you need to register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
+To connect a device to {{< product-c8y-iot >}}, you must register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
 Moreover, we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 

@@ -16,7 +16,7 @@ Opposed to the SMS strategy TOTP must be set up by each user. By opening **User 
 
 ![Trigger TOTP setup](/images/users-guide/Administration/admin-user-enable-tfa-2.png)
 
-IF TFA is enabled, the user will be presented a QR code at login, that needs to be scanned with the previously installed TOTP mobile application.
+IF TFA is enabled, the user will be presented a QR code at login, that must be scanned with the previously installed TOTP mobile application.
 
 Alternatively, the secret can also be inserted manually in case scanning the QR code is not an option.
 

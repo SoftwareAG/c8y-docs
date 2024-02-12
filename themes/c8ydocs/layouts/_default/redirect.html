@@ -28,6 +28,6 @@
       {{ if ne (substr .Params.target 0 1) "" }}
         <meta http-equiv="refresh" content='0; URL={{ printf "%s%s" .Site.BaseURL .Params.target }}'/>
       {{ end }}
-    Redirecting…
+    Redirecting… {{.Params.type}}
   </body>
 </html>

@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-It can be overwhemling to decide which approach to use and how to start your development journey.
+It can be overwhelming to decide which approach to use and how to start your development journey.
 If you are a partner or a customer we recommend you join the micro frontend journey.
 It allows to extend and use the ecosystem instead of building silo solutions.
 This section explains our vision of this journey and describes our best practices regarding development.

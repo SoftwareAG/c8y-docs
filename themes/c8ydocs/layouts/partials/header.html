@@ -17,21 +17,18 @@
       >
     </a>
   </div>
+
   <nav class="d-flex m-l-auto">
+
     <div class="m-l-auto nav flex-end nav-right search-container">
-      <script>
-        (function () {
-          var cx = '008969372384807682938:yeh7xt785g4';
-          var gcse = document.createElement('script');
-          gcse.type = 'text/javascript';
-          gcse.async = true;
-          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(gcse, s);
-        })();
+      <!-- 
+      -->
+      <script
+        async
+        src="https://cse.google.com/cse.js?cx=85d98525b40de4670"
+      >
       </script>
-      <gcse:searchbox></gcse:searchbox>
-      <gcse:searchresults></gcse:searchresults>
+      <div class="gcse-search"></div>
     </div>
     <div class="dropdown version">
       <a
@@ -42,13 +39,28 @@
         <i class="dlt-c8y-icon-rest-api"></i> <span>REST API</span></a>
     </div>
     <div class="dropdown version">
-      <a
+      <button
         class="dropdown-toggle version"
-        title="Former guides"
-        href="{{.Site.Params.oldguides}}"
-      > 
-        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>Former guides</span>
-      </a>
+        type="button"
+        title="Releases"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Releases"
+        id="releasesLinks"
+        data-toggle="dropdown"
+      >
+
+        <i class="c8y-icon c8y-icon-cumulocity-iot"></i> <span>Releases</span>
+      </button>
+      <ul
+        class="dropdown-menu"
+        aria-labelledby="releasesLinks"
+        role="listbox"
+      >
+        <li class="text-normal"><a href="//cumulocity.com/docs/2024">Release 2024</a></li>
+        <li class="text-normal"><a href="//cumulocity.com/guides/welcome/intro-documentation/">Release 10.18.0</a></li>
+        <li class="text-normal"><a href="//cumulocity.com/guides/10.17.0/welcome/intro-documentation/">Release 10.17.0</a></li>
+      </ul>
     </div>
     <div class="dropdown version">
       <button
@@ -68,12 +80,12 @@
         aria-labelledby="resourcesLinks"
         role="listbox"
       >
-        {{ range $index, $resource :=  .Site.Params.additionalResources }}
-          <li class="text-normal"><a href="{{ $resource.link }}">{{ $resource.name }}</a></li>
+        {{ range $index, $resource := .Site.Params.additionalResources }}
+        <li class="text-normal"><a href="{{ $resource.link }}">{{ $resource.name }}</a></li>
         {{ end }}
       </ul>
     </div>
-    
+
     <div
       class="dropdown visible-lg"
       id="sections-selection"
@@ -85,7 +97,7 @@
         title="Sections"
         aria-expanded="false"
         aria-haspopup="true"
-        aria-label="Resources"
+        aria-label="Sections"
         id="sectionLinks"
         data-toggle="dropdown"
       >
@@ -125,25 +137,26 @@
             <i class="dlt-c8y-icon-rest-api"></i> <span>REST API &nbsp;</span>
           </a>
         </li>
+        <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Releases</b></li>
         <li class="text-normal">
-          <a
-            title="Release notes"
-            href="https://cumulocity.com/releasenotes/about/"
-          > 
-            <i class="dlt-c8y-icon-announcement"></i> <span>Release notes&nbsp;</span>
-          </a>
+          <a href="//cumulocity.com/docs/2024"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 2024</a>
+        </li>
+        <li class="text-normal">
+          <a href="//cumulocity.com/guides/welcome/intro-documentation/"><i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.18.0</a>
+        </li>
+        <li class="text-normal">
+          <a href="//cumulocity.com/guides/10.17.0/welcome/intro-documentation/"> <i class="c8y-icon c8y-icon-cumulocity-iot"></i> Release 10.17.0</a>
         </li>
         <li class="dropdown-header separator-bottom p-t-8 p-b-8"><b>Additional resources</b></li>
-        {{ range $index, $resource :=  .Site.Params.additionalResources }}
-          <li class="text-normal">
-            <a href="{{ $resource.link }}">
-              {{ $resource.name }}
-            </a>
-          </li>
+        {{ range $index, $resource := .Site.Params.additionalResources }}
+        <li class="text-normal">
+          <a href="{{ $resource.link }}">
+            {{ $resource.name }}
+          </a>
+        </li>
         {{ end }}
       </ul>
     </div>
 
   </nav>
 </header>
-

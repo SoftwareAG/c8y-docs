@@ -2,6 +2,15 @@
 weight: 10
 title: Managing groups
 layout: redirect
+helpcontent:
+  - label: grouping-devices
+    title: Grouping devices
+    content: "Devices can be grouped according to your requirements. A device can be located in multiple groups and groups themselves can again be part of multiple groups.
+
+
+    Select a group from the groups list or from the navigator to see its details. To add a group, click **Add group** at the top right.
+
+    You can easily restructure groups or assign devices to groups by dragging and dropping groups or devices in the navigator."
 ---
 
 ### To view groups {#to-view-groups}
@@ -16,7 +25,7 @@ To filter the groups for certain criteria, hover over the column headers and cli
 
 See also [To filter devices](/device-management-application/viewing-all-devices/#to-filter-devices).
 
-Note that this function only creates a temporary filter. For permanent filters, you can use the [smart groups](#using-smart-groups) function.  
+Note that this function only creates a temporary filter. For permanent filters, you can use the [smart groups](#using-smart-groups) function.
 
 Click a group to view its details.
 

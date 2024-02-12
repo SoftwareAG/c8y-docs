@@ -1,6 +1,9 @@
 
 html{
   scroll-padding-top: 104px;
+  &:has(.change-logs--list){
+    scroll-padding-top: 168px;
+  }
 }
 
 body{
@@ -46,6 +49,9 @@ body{
   flex-wrap: nowrap!important;
 }
 
+.gap-4{
+  gap: 4px;
+}
 .gap-8{
   gap: 8px;
 }
@@ -140,6 +146,7 @@ body{
     margin: 0 auto 1rem;
     position: sticky;
     top: 56px;
+    z-index: 10;
     display: none;
     .breadcrumbs{
       padding: .5rem 1rem;

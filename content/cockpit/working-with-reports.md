@@ -8,7 +8,7 @@ outputs:
 section:
   - app_enablement
 helpcontent:
-  - label: reports
+  - label: working-with-reports
     title: Working with reports
     content: "Reports enable you to track applications, alarms, assets, and other data by using a set of widgets in a dashboard layout. Widgets can display maps, images, graphs, tables and other graphic representations of data. In contrast to dashboards, reports show global data, regardless of the asset hierarchy.
 

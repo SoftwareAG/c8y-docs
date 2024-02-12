@@ -8,7 +8,7 @@ outputs:
 section:
   - app_enablement
 helpcontent:
-  - label: export
+  - label: managing-exports
     title: Managing exports
     content: "The export functionality lets you export specific data to files. In each export, you can specify the output file type (Excel or CSV), schedule the export and specify the target email address(es), and optionally select filters for specific devices, time ranges or fields.
 
@@ -127,7 +127,7 @@ An export has 4 fields defined: time range, device name, type and c8y&#95;SpeedM
 
 If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.dot'] in the path, for example: ['fragment.key.with.dot'].series.value
 
-In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [To add a data point](/cockpit/data-explorer/#to-add-a-data-point).
+In case of measurements enabled, you can also select **Add from data point**. For details on how to add data points see [To add a data point](/cockpit/data-explorer/#to-add-a-data-point).
 
 JsonPath expressions added from data points will be stored in bracket notation in order to increase the flexibility in fragment and series naming (for example whitespaces will be supported):
 

@@ -137,7 +137,7 @@ If the asset model is "Rotor" and you select "Blade" as an allowed child asset m
 6. Click **Save** to save your settings.
 
 {{< c8y-admon-info>}}
-To assign a location to an asset, add the default property Location to the asset model. For more info on default properties, see [Default properties](/dtm/asset-properties/#default-properties).<br>
+To assign a location to an asset, add the default property Location to the asset model. For more info on default properties, see [Default properties](#default-properties).<br>
 If there are any validation errors for a field, it is highlighted in red with a validation error message asking you to fill in the required information. Enter the necessary information and click **Save**.
 {{< /c8y-admon-info>}}
 

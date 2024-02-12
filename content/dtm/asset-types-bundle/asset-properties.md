@@ -27,7 +27,7 @@ ROLES & PERMISSIONS
 
 ### To create an asset property {#to-create-an-asset-property}
 
-When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system.
+When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system except default properties. See [Default properties](#default-properties) to view the list of properties available.
 
 If you use a tenant which already has asset properties defined, you find the list of defined asset properties on the left. You see the selected asset property definition on the right.
 
@@ -80,7 +80,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </tr>
 <tr>
 <td style="text-align:left"><b>Type</b></td>
-<td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#file-upload" class="no-ajaxy">File upload</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, or <a href="#boolean" class="no-ajaxy">Boolean</a>.</td>
+<td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, <a href="#boolean" class="no-ajaxy">Boolean</a> or <a href="#file-upload" class="no-ajaxy">File upload</a>.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -112,8 +112,6 @@ Select **Text** if the asset property value is a string, for example, a wind tur
 
 Enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
-If not selected, no minimum length criteria is set for this asset property during the asset creation.
-
 * **Max Length**:
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
@@ -126,9 +124,11 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes have to start with the prefix “MCGEN”.
 
+If any of the above restrictions are not selected, it is not applicable for the asset property during asset creation.
+
 #### Default value {#default-value}
 
-Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
+Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the asset model, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
 The default value has to adhere to all validations provided beforehand. If you selected a property of the type "Text", you can set the **Min length**, **Max length** and/or **RegExp** and the default value must fulfill all set validations.
@@ -146,11 +146,11 @@ The type **Number** contains the following fields for additional information:
 
 * **Minimum**:
 
-If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot be lower or less than the minimum provided.
+If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot be lower or less than the **Minimum** provided.
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be greater than or equal to the minimum provided. By default, this box is not selected.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be greater than or equal to the **Minimum** provided. By default, this box is not selected.
 
 {{< /c8y-admon-info>}}
 
@@ -165,7 +165,7 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 {{< /c8y-admon-info>}}
 
 * **Default value**:
-Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
+Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the asset model, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
 
@@ -307,7 +307,7 @@ Follow the steps below:
 Use the downloaded file to import the asset properties into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
-Default properties are not listed under **Export asset properties**. See [Default properties](/dtm/default-properties/#characteristics-of-default-properties) to view the list of properties available.
+Default properties are not listed under **Export asset properties**. See [Default properties](#default-properties) to view the list of properties available.
 You can export a maximum of 500 asset properties at a time.
 {{< /c8y-admon-info>}}
 
@@ -349,6 +349,7 @@ The **Location** property enables you to assign location (latitude and longitude
 To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. Without values for latitude and longitude, the marker is hidden. To see the marker, click anywhere on the map. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
 
 {{<c8y-admon-info>}}
+If a property with the label "Location" already exists, the default location property will be created with the label "Asset Location" and with the key "c8y_Position".<br>
 The valid range for the latitude is -90 to +90 and valid range for the longitude is -180 to +180. <br>
 The marker on the map is only visible when both values for latitude and longitude are provided.<br>
 The default values of both latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.

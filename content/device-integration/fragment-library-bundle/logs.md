@@ -83,7 +83,7 @@ POST /event/events
 |Field|DataType|Mandatory|Details|
 |----|----|----|----|
 |source|string|Yes|ID of the device|
-|type|string|Yes|Type of the log file|
+|type|string|Yes|Type of the event holding the log file should always be `c8y_Logfile`|
 |time|string|Yes|Time when the event occurred|
 |text|string|Yes|Event text|
 

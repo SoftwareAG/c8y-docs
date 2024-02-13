@@ -264,24 +264,6 @@ In the **Properties** tab, each application will show the following information,
 </tbody>
 </table>
 
-<a name="extensions"></a>
-### Packages
-
-Click the tab **Packages** in the **Application** menu to display all packages in your account.
-
-Packages make it easier to share and reuse UI features across different applications. UI features can be developed as plugins and added to an application without coding knowledge. There are two types of packages:
-
-- Plugins
-- Blueprints
-
-Blueprint applications must be deployed, while plugins are added to other applications. This allows you to scaffold entire solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime without rebuilding.
-
-Switch to the **Plugins** tab of an application to view all plugins installed on an application.
-
-<img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
-
-In the **Plugins** tab you can add and remove plugins. Additionally, you can install plugins to an application.
-
 <a name="editing-and-removing"></a>
 ### To edit an application
 
@@ -335,6 +317,7 @@ If a hosted application is not deployed correctly, users may reactivate it.
 
 The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.
 
+<a name="extensions"></a>
 ### Packages
 
 Packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
@@ -343,6 +326,12 @@ Packages can contain two types of applications:
 
 - [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
 - **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
+
+Blueprint applications must be deployed, while plugins are added to other applications. This allows you to scaffold entire solutions or to extend existing ones. Due to the micro frontend technology, this can happen at runtime without rebuilding.
+
+Switch to the **Plugins** tab of an application to view all plugins installed on an application.
+
+<img src="/images/users-guide/Administration/admin-application-plugins-grid.png" alt="Plugins grid" style="max-width: 100%">
 
 Packages can be located on the **Packages** tab in the **Applications** page.
 

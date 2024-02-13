@@ -9,7 +9,7 @@ helpcontent:
 ---
 
 {{< product-c8y-iot >}} allows administrators to fine-tune various certificate configurations.
-Currently, CRL (Certificate Revocation List) is supported.
+Currently, Certificate Revocation List (CRL) is supported.
 
 {{< c8y-admon-info >}}
 This section targets at advanced users for granular control over certificate attributes like CRL, OCSP, Certificate

@@ -302,7 +302,7 @@ In the **Properties** tab, each application will show the following information,
 <a name="extensions"></a>
 ### Extensions {#extensions}
 
-Extensions packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, they offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
+Extension packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, they offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
 
 Extension packages can contain two types of content:
 

@@ -244,7 +244,7 @@ In the **Network** tab, mobile network (WAN) and local area network (LAN) parame
 The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be configured remotely or via SMS.
 
 {{< c8y-admon-info >}}
-For SMS configuration, the router needs to be configured to accept SMS commands.
+For SMS configuration, the router must be configured to accept SMS commands.
 {{< /c8y-admon-info >}}
 
 #### To configure WAN parameters {#to-configure-wan-parameters}

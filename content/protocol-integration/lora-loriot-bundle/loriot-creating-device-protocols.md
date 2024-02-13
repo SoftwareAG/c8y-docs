@@ -63,7 +63,7 @@ In the upcoming window, configure the relevant values as shown in this example.
 
 The value configuration maps the value in the payload of a message type to the {{< product-c8y-iot >}} data.
 
-Under **Message type**, configure the **Message ID** according to your device message specification and map it to the {{< product-c8y-iot >}} data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (that is, Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification and map it to the {{< product-c8y-iot >}} data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (that is, Payload or FPort). The message ID must be entered in decimal numbers (not hex).
 
 In this example payload structure the message ID is "1".
 

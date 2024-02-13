@@ -111,12 +111,12 @@ Detailed information for each block is available in the block reference, which i
 3.  Specify all required parameters for the block. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block).
 
     {{< c8y-admon-info>}}
-The block parameter editor is automatically shown when you add a block for which parameters need to be specified. It is not shown, however, if the block does not require any parameters \(such as the **OR** block\).
+The block parameter editor is automatically shown when you add a block for which parameters must be specified. It is not shown, however, if the block does not require any parameters \(such as the **OR** block\).
     {{< /c8y-admon-info>}}
 
 #### Editing the parameters of a block {#editing-the-parameters-of-a-block}
 
-Most blocks \(but not all\) have parameters that you have to set according to your requirements.
+Most blocks \(but not all\) have parameters that you must set according to your requirements.
 
 When "Missing" is shown on an input or output block on the canvas, this means that the defined input source or output destination cannot be found in the {{< product-c8y-iot >}} inventory. You should then either go to the {{< product-c8y-iot >}} inventory and make sure that the device is registered or that the group or asset exists, or you should select a different, existing input source or output destination in the block parameter editor \(see below\).
 
@@ -165,7 +165,7 @@ Select the **Trigger Device** option instead to send the output to the device wh
 
         If you want to add a new template parameter directly in the block parameter editor, type a name in the text box of the above drop-down list box. As soon as you start typing and if a template parameter with that name does not yet exist, the option **Add template parameter name** is shown below the text box. Click this option to add the new template parameter and thus make it available in the **Template Parameters** dialog box. The new template parameter will have the same type, optional and default values as the block parameter. If a template parameter with the name that you are specifying exists already, but with an incompatible type, the name and type is shown below the text box but cannot be selected.
 4.  Some blocks support multi-line input for certain block parameters. For example, the **Send Email** block supports this in the **Text** parameter and the **Alarm Output** block supports this in the **Message** parameter. Your input is automatically wrapped in the text box and you can press Enter to start text on a new line. When you add a new template parameter for such block parameter directly in the block parameter editor \(as described above\), the type of the new template parameter is automatically set to **Multi-line String**.
-5.  For some blocks \(such as the **Range Lookup** block\), the block parameter editor shows text boxes for specifying key-value pairs. If you need to specify more key-value pairs, click **Add row**. The key-value pair in the first row is processed first.
+5.  For some blocks \(such as the **Range Lookup** block\), the block parameter editor shows text boxes for specifying key-value pairs. If you want to specify more key-value pairs, click **Add row**. The key-value pair in the first row is processed first.
 You can drag a row to a different position using the move icon <img src="/images/streaming-analytics/analytics-builder/icon-move-row.png" alt="Move icon" style="display:inline-block; margin:0"> that is shown next to that row.
 You can remove a row that you do not need any more by clicking the remove icon <img src="/images/streaming-analytics/analytics-builder/icon-delete-row.png" alt="Remove icon" style="display:inline-block; margin:0"> next to that row.
 Empty rows are automatically removed when you leave the block parameter editor.
@@ -194,14 +194,14 @@ You can also view the block reference directly in this documentation. See [Analy
 
 #### Selecting blocks and wires {#selecting-blocks-and-wires}
 
-If you want to move, duplicate or remove one or more blocks that are currently shown on the canvas of the model editor, you first have to select the required blocks.
+If you want to move, duplicate or remove one or more blocks that are currently shown on the canvas of the model editor, you must first select the required blocks.
 
-To select a single block on the canvas, you just need to click the block. With a block, the resulting behavior depends on the mouse button that you use:
+To select a single block on the canvas, just click the block. With a block, the resulting behavior depends on the mouse button that you use:
 
 -   When you click the block using the left mouse button, the block is selected and the block parameter editor is shown \(see also [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 -   When you click the block using the right mouse button, the block is selected only \(the block parameter editor is not shown\). This is helpful if the editor would be in the way, for example, when adding a wire to another block.
 
-To select a single wire, you just need to click the wire \(you can use either mouse button in this case\).
+To select a single wire, just click the wire \(you can use either mouse button in this case\).
 
 To select several blocks and/or wires at the same time, do one of the following:
 
@@ -323,7 +323,7 @@ If you change more than one group to a device at a time, then only the first spe
         {{< /c8y-admon-info>}}
 -   The **Trigger Device** option is not available for selection in the dialog.
 
-After you have replaced the devices, you need to verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The {{< product-c8y-iot >}} fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
+After you have replaced the devices, you must verify that the measurements that are used by the input and output blocks of the current model still refer to the appropriate measurements. The {{< product-c8y-iot >}} fragment and series are not changed by the replacement, which may or may not apply to the newly defined device.
 
 ##### To replace sources or destinations {#to-replace-sources-or-destinations}
 
@@ -366,7 +366,7 @@ Models with no template parameters can be directly activated in the model manage
 1.  In the toolbar of the model editor, click the template parameters icon <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters.png" alt="Template parameters icon" style="display:inline-block; margin:0"> to invoke the **Template Parameters** dialog box.
     When at least one template parameter has been defined, a checkmark is shown on the above icon: <img src="/images/streaming-analytics/analytics-builder/icon-model-parameters-with-checkmark.png" alt="Template parameters icon with a checkmark" style="display:inline-block; margin:0">.
 
-    This dialog box is initially empty and you have to create the template parameters that you want to use in your model. When template parameters have already been defined, they are all shown in this dialog box.
+    This dialog box is initially empty and you must create the template parameters that you want to use in your model. When template parameters have already been defined, they are all shown in this dialog box.
 
     If you have a long list of template parameters, you can easily locate the template parameter that you are looking for by entering its name or part of the name in the search box. When search criteria are currently applied, an X is shown in the search box; click this to clear the search and thus to show all available template parameters.
 
@@ -460,7 +460,7 @@ There may be performance issues if you copy many input blocks and output blocks.
 
 2.  Leave the model editor. See also [Leaving the model editor](/streaming-analytics/analytics-builder/#leaving-the-model-editor).
 
-3.  In the model manager, switch to the model into which you want to paste the copied items. This can be an existing model \(see also [Editing an existing model](/streaming-analytics/analytics-builder/#editing-an-existing-model)\) or a new model that you first have to create \(see also [Adding a new model](/streaming-analytics/analytics-builder/#adding-a-new-model)\).
+3.  In the model manager, switch to the model into which you want to paste the copied items. This can be an existing model \(see also [Editing an existing model](/streaming-analytics/analytics-builder/#editing-an-existing-model)\) or a new model that you must first create \(see also [Adding a new model](/streaming-analytics/analytics-builder/#adding-a-new-model)\).
 
 4.  When the model editor is shown, press Ctrl+V to paste the copied items into the model.
 
@@ -492,7 +492,7 @@ There is one exception when managing the contents of a group: When you duplicate
 
 You can add any blocks that are currently shown on the canvas \(including the wires between the blocks\) to a group.
 
-It is not possible to create an empty group. You first have to add a group as described below. Once the group exists, you can add more blocks to the group, either from the palette or from the canvas, as described in [Adding a block](/streaming-analytics/analytics-builder/#adding-a-block) and [Moving blocks into a group](/streaming-analytics/analytics-builder/#moving-blocks-into-a-group).
+It is not possible to create an empty group. You must first add a group as described below. Once the group exists, you can add more blocks to the group, either from the palette or from the canvas, as described in [Adding a block](/streaming-analytics/analytics-builder/#adding-a-block) and [Moving blocks into a group](/streaming-analytics/analytics-builder/#moving-blocks-into-a-group).
 
 ##### To add a group {#to-add-a-group}
 
@@ -509,7 +509,7 @@ When a group is collapsed, a number is shown on the collapsed group indicating t
 
 ![Example of a collapsed group](/images/streaming-analytics/analytics-builder/collapsed-group-example.png)
 
-If you want to make the group contents visible again \(for example, to edit block parameters or to add wires\), you have to expand the group.
+If you want to make the group contents visible again \(for example, to edit block parameters or to add wires\), you must expand the group.
 
 When you save the model, the state of each group \(that is, whether it is currently collapsed or expanded\) is stored. The next time you edit the model, its contents will be shown as after the last save.
 

@@ -39,7 +39,7 @@ If you don't have the certificate trusted by your OPC UA server, the server will
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
-Beside the above authentication certificate, the device gateway also automatically creates a so-called application identity certificate to identify itself with the OPC UA server. This needs to be trusted by the OPC UA server as well.
+Beside the above authentication certificate, the device gateway also automatically creates a so-called application identity certificate to identify itself with the OPC UA server. This must be trusted by the OPC UA server as well.
 {{< /c8y-admon-info >}}
 
 ### Child devices {#child-devices}

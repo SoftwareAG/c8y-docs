@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed issue with SMS requests to Bic provider
+title: Fixed issue with SMS requests to Bics provider
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

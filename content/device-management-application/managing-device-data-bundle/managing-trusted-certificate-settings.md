@@ -21,7 +21,7 @@ Bad configuration might result in changes which cannot be reversed.
 ### CRL settings {#crl-settings}
 
 In general, Certificate Revocation List (CRL) contains a list of serial numbers of revoked certificates.
-These are issued by certificate authorities (CAs) periodically and published through an endpoint called CDP (CRL
+These are issued by Certificate Authorities (CAs) periodically and published through an endpoint called CRL
 Distribution Point).
 Revocation reasons and dates are included in the CRL.
 

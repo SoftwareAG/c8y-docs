@@ -1,6 +1,6 @@
 ---
-date: 2023-12-06T14:53:24.832Z
-title: Deprecation of the Microservice SDK for C#
+date: 2024-02-13T14:53:24.832Z
+title: Switching to Linux cgroup v2
 change_type:
   - value: change-inv-3bw8e
     label: Announcement
@@ -12,8 +12,8 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-With the introduction of auto-generated SDKs, we provide an always up-to-date developer library with the purpose to facilitate the development of Cumulocity IoT microservices in different programming languages including C#.
+As announced earlier, see [release 10.18](/release-10-18-0/announcements-10-18-0), Cumulocity IoT SaaS instances will gradually be switched to Linux cgroup v2 in the second half of 2024. Microservices must use a Linux cgroup v2 aware application runtime from then on. When executing microservices which are not compatible with cgroup v2 on Cumulocity IoT in these versions it might happen that the information provided by the application runtime concerning available CPU and memory is not correct. This might lead to incorrect memory and thread allocation in the microservice container process.
 
-The new auto-generated SDKs make our existing Microservice SDK for C# obsolete. For this reason, the Microservice SDK for C# has been removed from our public product documentation.
+cgroup is a Linux kernel feature to organize processes hierarchically and distribute system resources along the hierarchy in a controlled and configurable manner. Every process in the system belongs to one and only one cgroup. In Cumulocity IoT cgroups are used to enforce container resource limits.
 
-To learn more about using the auto-generated SDKs, refer to our respective [GitHub repository](https://github.com/SoftwareAG/cumulocity-clients-dotnet).
+When using the Cumulocity IoT Microservice SDK for developing microservices, ensure to configure a Java version which is cgroup v2 aware when building your microservice. When using Java 8, ensure to use openjdk8u372 or higher. When using Java 11, use Java 11.0.16 or higher, or use Java 15 or higher. When using a server runtime other than OpenJDK Java as microservice application runtime, refer to the documentation of the provider.

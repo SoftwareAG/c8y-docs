@@ -22,7 +22,7 @@ Bad configuration might result in changes which cannot be reversed.
 
 In general, Certificate Revocation List (CRL) contains a list of serial numbers of revoked certificates.
 These are issued by Certificate Authorities (CAs) periodically and published through an endpoint called CRL
-Distribution Point).
+Distribution Point (CDP).
 Revocation reasons and dates are included in the CRL.
 
 In {{< product-c8y-iot >}} terms, if there is a breach at device certificates signed by a trust anchor, users

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-02-06"
 title: LWM2M passing core link resources to external decoders
 product_area: Device management & connectivity
 change_type:

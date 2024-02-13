@@ -9,11 +9,11 @@ section:
 {{< product-c8y-iot >}} offers you to configure custom Cockpit applications according to your individual needs.
 
 {{< c8y-admon-req >}}
-To use the Cockpit configuration functionality, the following requirements have to be met:
+To use the Cockpit configuration functionality, the following requirements must be met:
 
 * You must have ADMIN permission for the permission type "Application management".
 
-* The Cockpit application can only be configured if it is owned by the tenant. That means that you first have to create an own Cockpit application by duplicating the existing Cockpit application. For details, how to duplicate an application see [To duplicate an application](/standard-tenant/ecosystem/#to-duplicate-an-application).
+* The Cockpit application can only be configured if it is owned by the tenant. That means that you first must create an own Cockpit application by duplicating the existing Cockpit application. For details, how to duplicate an application see [To duplicate an application](/standard-tenant/ecosystem/#to-duplicate-an-application).
 
 If these requirements are met, an **Application configuration** entry is visible in the **Configuration** menu in the navigator of the custom Cockpit application.
 {{< /c8y-admon-req >}}

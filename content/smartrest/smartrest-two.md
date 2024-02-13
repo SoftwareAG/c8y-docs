@@ -85,7 +85,7 @@ A template collection is a set of request and response templates that specifies 
 
 Like in SmartREST 1.0, you must pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.
 
-When creating templates, the client needs to publish to the following topic:
+When creating templates, the client must publish to the following topic:
 
 ```http
 s/ut/<X-ID>
@@ -181,7 +181,7 @@ A request template contains the following basic fields:
 </table>
 
 A request template lists all the fragments in the object structure (mandatory and custom) that should be added when creating or updating the data.
-It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value needs to be included in the publish message (this includes mandatoryValues).
+It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value must be included in the publish message (this includes mandatoryValues).
 
 {{< c8y-admon-info >}}
 If the message rate limit per second is exceeded, the requests are delayed and kept in queue. If the queue limit number is exceeded, the client messages are rejected and the client is disconnected.
@@ -196,7 +196,7 @@ We create a template to create a measurement like this (measurements have two ma
 10,999,POST,MEASUREMENT,,c8y_MyMeasurement,,c8y_MyMeasurement.M.value,NUMBER,
 ```
 
-This template defines one additional custom property for the measurement. It leaves two fields empty in the template declaration (time and the custom property), so to use the template the client needs to send these two values:
+This template defines one additional custom property for the measurement. It leaves two fields empty in the template declaration (time and the custom property), so to use the template the client must send these two values:
 
 ```bash
 999,2016-06-22T17:03:14.000+02:00,25
@@ -413,7 +413,7 @@ The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.
 |:-------|:-------|:-------|:-------|
 |messageId|String|Y|Unique ID to reference the template within the collection|
 |base|String|N|A JsonPath prefix that all patterns will use|
-|condition|String|N|A JsonPath that needs to exist in the object to use the  pattern|
+|condition|String|N|A JsonPath that must exist in the object to use the pattern|
 |pattern|List&lt;String&gt;|Y|A list of JsonPath that will be extracted from the object and returned to the device|
 
 Response templates will be used for every operation and for any request template that defines the response field with true. In each case, the server will try every registered response template, so there might be multiple response lines for a single operation or request.

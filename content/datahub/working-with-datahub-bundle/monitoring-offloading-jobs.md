@@ -32,14 +32,14 @@ The list shows the execution history, with each execution consisting of the foll
 | Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (user icon)
 | Records | The number of records which have been offloaded during this execution
 | Execution time | The point in time the execution was started
-| Runtime (s) | The runtime of the execution in seconds
+| Runtime | The runtime of the execution
 | Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty
 
 The system is configured to keep a limited history of the last job executions.
 
 Click **Reload** to refresh the list.
 
-You can filter the entries by their status or timestamp by using the filter controls at the top. Click **Apply** to filter entries with the current filter settings. Click **Reset filter** to reset the current filter settings.
+You can filter the entries by their status or timestamp by using the filter controls at the top. Click **Apply** to filter entries with the current filter settings. Click **Reset filter** to reset the current filter settings. Per default the entries from the last seven days are shown.
 
 The page navigation buttons at the bottom can be used to traverse the history entries.
 
@@ -47,15 +47,16 @@ The page navigation buttons at the bottom can be used to traverse the history en
 
 For a given offloading job, you can examine additional details of its execution.
 
-In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
+In the corresponding list of jobs click the job you are specifically interested in. A details view encompasses the following information:
 
-**Execution schedule**
+**Schedule**
 
 | Component | Description |
 | ---         | --- |
-| Runtime (s) | The runtime of the execution in seconds
+| Runtime | The runtime of the execution
 | Execution mode | The mode of the execution, which is either *manual* or *scheduled*
-| Execution time | The point in time the execution was started
+| Start time | The point in time the execution was started
+| End time | The point in time the execution has ended
 | Scheduled execution time | The point in time for which the execution was scheduled
 | Previous execution time | The point in time the previous execution was started; for a manual execution it is empty
 | Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty
@@ -76,7 +77,7 @@ In the corresponding list of jobs click on the job you are specifically interest
 | Source collection | The name of the {{< product-c8y-iot >}} base collection
 | Target table | The folder name in the data lake
 | Target folder | The path to the target table in the data lake
-| Last watermark | The last watermark which indicates the data in the {{< product-c8y-iot >}} collection that has already been processed
+| First run | Indicates whether the execution was the first run for this offloading pipeline
 | Data model | The data model, which is either *Time series* or *Standard*, used for a measurements offloading; only available for measuremement pipelines
 
 **Offloading results**

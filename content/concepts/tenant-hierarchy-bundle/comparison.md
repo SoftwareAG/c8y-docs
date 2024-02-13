@@ -8,7 +8,7 @@ section:
 
 ### Introduction {#introduction}
 
-When you think about offering your applications and services to your customers you need to think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.
+When you think about offering your applications and services to your customers you must think at some point about how to structure your customers within the platform. {{< product-c8y-iot >}} can help you with that in two different ways.
 
 The first is **role-based access control (RBAC)** that is part of every tenant in the {{< product-c8y-iot >}} platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
 
@@ -24,7 +24,7 @@ Starting with one approach and then switching to the other one will require some
 
 ### General setup {#general-setup}
 
-Before going into detail with certain use cases we need to clarify the general setup for each approach and the underlying concepts.
+Before going into detail with certain use cases we must clarify the general setup for each approach and the underlying concepts.
 
 #### Role-Based Access Control (RBAC) {#rolebased-access-control-rbac}
 
@@ -93,7 +93,7 @@ The creation of a new customer is equally simple. However, you must consider tha
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">The common scenario in the RBAC setup is that the customer is not responsible for device registration, all devices are registered on the platform by the platform provider. However, it is still technically possible for a customer to register devices. The important detail in this case is that upon creating the registration entry the customer needs to specify the correct group to which the device belongs; otherwise the device would be created outside of any group and as customers can only see their groups they wouldn't be able to see the device.</td>
+<td style="text-align:left">The common scenario in the RBAC setup is that the customer is not responsible for device registration, all devices are registered on the platform by the platform provider. However, it is still technically possible for a customer to register devices. The important detail in this case is that upon creating the registration entry the customer must specify the correct group to which the device belongs; otherwise the device would be created outside of any group and as customers can only see their groups they wouldn't be able to see the device.</td>
 <td style="text-align:left">As customers have full access to their tenants they are free to register devices without any further limitations.</td>
 </tr>
 </tbody>
@@ -119,7 +119,7 @@ There is no technical limitation on who registers the device on the platform. Ho
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">There are two types of roles in {{< product-c8y-iot >}} – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you must use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles must be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.</td>
+<td style="text-align:left">There are two types of roles in {{< product-c8y-iot >}} – global and inventory. Global roles are applied at the tenant level. In an RBAC approach you must use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles must be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This must be done at least once for each customer.</td>
 <td style="text-align:left">As the tenant is completely separated from all other customers you do not necessarily need to be involved in setting up the access rights of the customer. If customers are given administration rights for their tenants they can set up permissions on their own. It is not possible for customers to have any sight or knowledge of other customers.</td>
 </tr>
 </tbody>
@@ -173,7 +173,7 @@ Having a separate tenant for each customer they will not be limited with respect
 <tbody>
 <tr>
 <td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won't be able to create own applications.</td>
-<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the {{< management-tenant >}}. This does not apply for UI applications.</td>
+<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore must be granted to the tenant by the {{< management-tenant >}}. This does not apply for UI applications.</td>
 </tr>
 </tbody>
 </table>

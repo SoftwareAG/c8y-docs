@@ -18,9 +18,9 @@ To log in in to the {{< product-c8y-iot >}} platform and access your tenant, use
 ```http
 https://<tenant-domain>.{{< domain-c8y >}}/
 ```
-This will direct you to the login page of your default application.
+This will direct you to the Login screen of your default application.
 
-On the Login page, enter your username and password.
+On the Login screen, enter your username and password.
 
 
 Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application, if not configured differently. For further information about the {{< product-c8y-iot >}} standard applications see [Available applications](/get-familiar-with-the-ui/available-applications/).
@@ -56,7 +56,7 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 ### Step 3: Register a device
 
-To connect a device to {{< product-c8y-iot >}}, you need to register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
+To connect a device to {{< product-c8y-iot >}}, you must register it in the platform. This is done in the **Device management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
 Moreover, we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 

@@ -47,7 +47,7 @@ If you want to have fixed KPIs or inputs follow these instructions:
 
 * Actual Production Time: Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
 * Availability Loss (time): Can be provided as a static value, use "intervalLength" to ensure correct value per interval.
-* Actual Production Amount: Needs to be derived from actual measurements.
+* Actual Production Amount: Must be derived from actual measurements.
 * Actual Quality Amount & Quality Loss (amount): Can be defined as fraction of the Actual Production Amount using the same formula multiplied by fraction. Exceptions approach in calculation method 2 & 5 as they do not include the Actual Production Amount. Actual Quality Amount and Quality Loss (amount) must be defined.
 
 ![Matching](/images/oee/administration/matching-general.png)

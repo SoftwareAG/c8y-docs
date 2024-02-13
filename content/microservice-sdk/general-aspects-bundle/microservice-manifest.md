@@ -49,6 +49,14 @@ Here is an example manifest:
         "initialDelaySeconds": 20,
         "periodSeconds": 10
     },
+    "terminationGracePeriodSeconds":60,
+    "lifecycle": {
+        "preStop": {
+            "exec": {
+                "command": ["echo called preStop hook"] 
+            }
+        }
+    },
     "settingsCategory": "my-ms",
     "settings": [
         {
@@ -183,6 +191,18 @@ See below for detailed information about available settings.
 <td style="text-align:left">No</td>
 </tr>
 <tr>
+<td style="text-align:left">terminationGracePeriodSeconds</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">Specifies the duration in seconds that the system will wait before forcefully terminating a microservice during shutdown.<br>Default: 30</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">lifecycle</td>
+<td style="text-align:left">LifeCycle</td>
+<td style="text-align:left">Defines the lifecycle configuration for the microservice. <br>Prestop: Defines a hook that is executed before the container is terminated. <br>Exec: Specifies an exec action for the preStop hook which allows running a shell command.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
 <td style="text-align:left">extensions</td>
 <td style="text-align:left">Extension[ ]</td>
 <td style="text-align:left">Defines a set of extensions that should be enabled for a microservice. <br>Default: [ ] (empty list)</td>
@@ -281,3 +301,20 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |:---|:---|:----------|:----------|
 |type | String | Type ID of the extension | Yes
 |* | any | Configuration parameters | No
+#### Lifecycle {#lifecycle}
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|preStop | PreStop | Defines a hook that is executed before the container is terminated. | No
+
+#### PreStop {#preStop}
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|exec | ExecAction | Specifies commands to be executed on a container before termination  | No
+
+#### ExecAction {#execaction}
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|command | String[ ] | Specifies the specific shell commands to be executed as part of the preStop hook | Yes

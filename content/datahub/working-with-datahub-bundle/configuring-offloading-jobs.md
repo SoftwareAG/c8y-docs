@@ -136,7 +136,7 @@ Optionally you can define a filter predicate. Per default, all entries in the ba
 In the filter predicate you can query all standard attributes of the base collection as well as the custom fields. The additional result columns defined in the previous configuration step cannot be accessed by their name in the filter predicate. You must use the source definition as defined in the corresponding column instead.
 
 {{< c8y-admon-info >}}
-For querying the attribute `id`, you must use `_id`. For examples on querying different attributes, see also [{{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices).
+For querying the attribute `id`, you must use `_id`. For examples on querying different attributes and guidelines for filters, see also [{{< product-c8y-iot >}} DataHub best practices](/datahub/working-with-datahub/#datahub-best-practices).
 {{< /c8y-admon-info >}}
 
 When defining an additional filter predicate, you can click **Validate** to validate your predicate. If the validation fails, you will get an error description. You must fix these errors before you can proceed.
@@ -175,7 +175,7 @@ You can change the compaction strategy of an already running offloading pipeline
 
 **View materialization**
 
-In the additional settings, you can enable/disable view materialization for an offloading pipeline based on the alarms, events, or inventory collection. For these three collections, additional views over the target table are defined in the tenant’s space in Dremio. The *_latest* view maintains the latest status of all entities, excluding intermediate transitions of an entity. For large tables, the maintenance of the view might adversely affect overall performance. For that reason, the *_latest* view can be materialized so that the latest state of each entity will be persisted in the data lake. If that setting is activated for a pipeline, the materialized view will be created with the next offloading run and updated for each subsequent run. The materialized view is named with suffix *_c8y_cdh_latest_materialized*. If you deactivate the setting for a pipeline, the view is still available, but no more materialized.
+In the additional settings, you can enable/disable view materialization for an offloading pipeline based on the alarms, events, or inventory collection. For these three collections, additional views over the target table are defined in the tenant’s space in Dremio. The *_latest* view maintains the latest status of all entities, excluding intermediate transitions of an entity. For large tables, the maintenance of the view might adversely affect overall performance. For that reason, the *_latest* view can be materialized so that the latest state of each entity will be persisted in the data lake. If that setting is activated for a pipeline, the materialized view will be created with the next offloading run and updated for each subsequent run. If you deactivate the setting for a pipeline, the view is still available, but no more materialized.
 
 {{< c8y-admon-info >}}
 When view materialization is activated, additional data is stored in the data lake, which might affect your storage costs.

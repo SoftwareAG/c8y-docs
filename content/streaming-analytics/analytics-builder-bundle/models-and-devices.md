@@ -162,7 +162,7 @@ By default, only devices, groups and assets are shown in the following cases:
 -   When you select a different input source or output destination \(see [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block)\).
 -   When you replace devices or groups \(see [Replacing sources or destinations](/streaming-analytics/analytics-builder/#replacing-sources-or-destinations)\).
 
-When you use the search box in the above cases, all managed objects in the {{< product-c8y-iot >}} inventory which match the search and filter criteria are shown. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.
+When you use the search box in the above cases, all managed objects in the {{< product-c8y-iot >}} inventory which match the search and filter criteria are shown, grouped by type. You can thus build analytic models by defining any managed objects in the inventory as input blocks or output blocks.
 
 If you want to restrict the search to show only managed objects of a specific type \(for example, to show only devices\), you must change the tenant options. That is, you must send a `POST /tenant/options` request. For detailed information, see the information on the [tenant options](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}}.
 

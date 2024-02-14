@@ -54,9 +54,9 @@ The following information must be provided in order to create a connection:
 The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
 {{< /c8y-admon-info >}}
 
-![API access page](/images/device-protocols/sigfox/sigfox-parentgroupid.png)
+![Sigfox group ID](/images/device-protocols/sigfox/sigfox-parentgroupid.png)
 
-![API access page](/images/device-protocols/sigfox/sigfox-connectivity-update.png)
+![Sigfox connectivity update](/images/device-protocols/sigfox/sigfox-connectivity-update.png)
 
 Click **Save**. If you have entered the correct information, the message "Credentials successfully saved" will be displayed.
 

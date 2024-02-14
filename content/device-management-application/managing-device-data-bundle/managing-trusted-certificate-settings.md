@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: trusted-certificates-settings
     title: Trusted certificates settings
-    content: "This section helps the administrator configure the CRL settings (online or offline). If the revoked certificate information is maintained by the issuing CA, then Online check can be chosen. If the CA doesnt maintain the CRL information, offline setup can be chosen. In offline setup, the revoked certificate serial number can either be added manually or can be uploaded in bulk using the file template attached."
+    content: "Administrators can configure the Certificate Revocation List (CRL) settings (online or offline). If the revoked certificate information is maintained by the issuing Certificate Authority (CA), the online check option can be selected. If the CA does not maintain the CRL information, the offline setup can be selected. In offline setup, the revoked certificate serial number can either be added manually or can be uploaded in bulk using the file template attached."
 ---
 
 {{< product-c8y-iot >}} allows administrators to fine-tune various certificate configurations.

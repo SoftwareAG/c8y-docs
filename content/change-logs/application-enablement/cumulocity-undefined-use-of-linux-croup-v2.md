@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ---
-As announced earlier, see [release 10.18](https://cumulocity.com/release-10-18-0/announcements-10-18-0), Cumulocity IoT SaaS instances will gradually be switched to Linux cgroup v2 in the second half of the year 2024. Microservices must use a Linux cgroup v2 aware application runtime from then on. When executing microservices which are not compatible with cgroup v2 on Cumulocity IoT in these versions it might happen that the information provided by the application runtime concerning available CPU and memory is not correct. This might lead to incorrect memory and thread allocation in the microservice container process.
+As announced earlier, see [release 10.18](https://cumulocity.com/releasenotes/release-10-18-0/announcements-10-18-0), Cumulocity IoT SaaS instances will gradually be switched to Linux cgroup v2 in the second half of the year 2024. Microservices must use a Linux cgroup v2 aware application runtime from then on. When executing microservices which are not compatible with cgroup v2 on Cumulocity IoT in these versions it might happen that the information provided by the application runtime concerning available CPU and memory is not correct. This might lead to incorrect memory and thread allocation in the microservice container process.
 
 cgroup is a Linux kernel feature to organize processes hierarchically and distribute system resources along the hierarchy in a controlled and configurable manner. Every process in the system belongs to one and only one cgroup. In Cumulocity IoT cgroups are used to enforce container resource limits.
 

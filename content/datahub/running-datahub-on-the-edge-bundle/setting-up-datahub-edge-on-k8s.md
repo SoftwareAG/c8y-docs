@@ -10,12 +10,11 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes, you must c
 
 | Item | Details |
 | -----   | -----   |
-| Kubernetes | Admin access to Kubernetes target environment using kubectl. |
-| {{< product-c8y-iot >}} Edge on Kubernetes  | The corresponding version of {{< product-c8y-iot >}} Edge is set up in the Kubernetes environment |
-| | See https://cumulocity.com/guides/10.17.0/edge-k8s/installing-edge-on-k8/#install-operator |
+| Kubernetes | Admin access with kubectl to Kubernetes target environment |
+| {{< product-c8y-iot >}} Edge on Kubernetes  | The corresponding version of {{< product-c8y-iot >}} Edge is set up in the Kubernetes environment. See also section https://cumulocity.com/guides/10.17.0/edge-k8s/installing-edge-on-k8 |
 | {{< product-c8y-iot >}} DataHub Edge on Kubernetes archive??? | You have downloaded the archive with all installation artifacts from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}). |
 | Internet access | Internet access is required. |
-| Credentials | You have received credentials for access to artifact registry and repository | 
+| Registry and repository access | Access to artifact registry and repository |
 
 #### Hardware requirements
 
@@ -29,15 +28,15 @@ When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the 
 
 ### Setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 
-Subsequently, we assume that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace "c8yedge".
-If another namespace has been chosen you need to replace it subsequently. 
+Subsequently, we assume that {{< product-c8y-iot >}} Edge on Kubernetes has been installed using the default Kubernetes namespace *c8yedge*. If another namespace has been chosen, you need to adapt the  commands and configuration files accordingly.
 
-#### Prepare Persistent Volumes for MySQL and Dremio
+#### Preparing Persistent Volumes for MySQL and Dremio
 
-Let's assume we have two files
+The configuration is available in two files:
 
-1. local-path-retain.yaml
+**local-path-retain.yaml**
 
+```
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -45,17 +44,19 @@ metadata:
 provisioner: rancher.io/local-path
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
+```
 
 ??? (Tim) This is specific to Rancher Desktop
 
-2. datahub-pv-local-path.yaml
+**datahub-pv-local-path.yaml**
 
-########################################################################################################################
-#                            Defines the Persistent Volumes with local filesystem path                                 #
-########################################################################################################################
+```
+###############################################################
+# Definition of Persistent Volumes with local filesystem path #
+###############################################################
 ---
 #
-# This PV is needed for MySQL database
+# Persistent Volume for MySQL database
 #
 apiVersion: v1
 kind: PersistentVolume
@@ -63,18 +64,20 @@ metadata:
   name: datahub-db-pv
 spec:
   capacity:
-    storage: 5G                                # Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Edge CR
+    # Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Edge CR
+    storage: 5G 
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
   hostPath:
-    path: /c8yedge/datahub/database             # Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    # Map an NFS folder to this path in all the Kubernetes cluster's worker nodes. This prevents data loss in case of node crashes.
+    path: /c8yedge/datahub/database
     type: DirectoryOrCreate
 
 ---
 #
-# This PV is needed for Dremio distributed storage 
+# Persistent Volume for Dremio's distributed storage 
 #
 apiVersion: v1
 kind: PersistentVolume
@@ -93,7 +96,7 @@ spec:
 
 ---
 #
-# This PV is needed for datalake used for offloading
+# Persistent Volume for data lake
 #
 apiVersion: v1
 kind: PersistentVolume
@@ -109,47 +112,53 @@ spec:
   hostPath:
     path: /c8yedge/datahub/datalake  
     type: DirectoryOrCreate
-    
-Then execute the following commands to prepare the required pewrsistent volumes:
+```
 
-    kubectl apply -f local-path-retain.yaml
-    kubectl apply -f datahub-pv-local-path.yaml
-
+Execute the following commands to prepare the required persistent volumes:
+```shell
+kubectl apply -f local-path-retain.yaml
+kubectl apply -f datahub-pv-local-path.yaml
+```
 ??? (Tim) to be discussed
     - combine to single file?
     - storage classes
 
-#### Deploy MySQL
+#### Deploying MySQL database
 
-Create a file mysql-values.yaml with following content
+Create a file mysql-values.yaml with the following content
 
+```
 serviceType: ClusterIP
 env:
   "MYSQL_USER" : "root"
   "MYSQL_PASSWORD" : "<mysqlPassword>"
-  
+```
+
 and execute the following command
-
-    helm install -n c8yedge datahub-mysql-helmchart.tar.gz -f mysql-values.yaml
+```shell
+helm install -n c8yedge datahub-mysql-helmchart.tar.gz -f mysql-values.yaml
+``` 
+You can monitor the startup of the MySQL pod *datahub-mysql-0* using
+```shell
+kubectl get pods -n c8yedge datahub-mysql-0 --watch
+```
     
-You can monitor startup of MySQL pod "datahub-mysql-0" using
+The status *Running* indicates that the pod has started successfully.
 
-    kubectl get pods -n c8yedge datahub-mysql-0 --watch
-    
-until it has reached status "Running".
+When running the command
+```shell
+kubectl get svc -n c8yedge
+```
+the output should be similar to 
+```
+NAME          TYPE          CLUSTER-IP          EXTERNAL-IP          PORT(S)          AGE
+mysql-client  ClusterIP     10.43.193.54        <none>               3306/TCP         10m
+```
 
-Output from 
-    kubectl get svc -n c8yedge
+#### Deploying Dremio
 
-should contain entry similar to 
-
-NAME                                                  TYPE           CLUSTER-IP      EXTERNAL-IP                       PORT(S)                                               AGE
-mysql-client                                          ClusterIP      10.43.193.54    <none>                            3306/TCP                                              10m
-
-#### Deploy Dremio
-
-Create a file dremio-values.yaml with following content:
-
+Create a file dremio-values.yaml with the following content:
+```
 automation:
   acceptEULA: true
   createAdmin: true
@@ -176,39 +185,47 @@ distStorage:
   type: nfs
   nfs:
     mountPath: /datalake/distributedStorage
-      
+```
 ??? (Tim) can we reference some other documentation here?
 
-and execute the following command
+Execute the following command to trigger the installation:
+```shell
+helm install -n c8yedge dremio-helmchart.tar.gz -f dremio-values.yaml
+```
 
-    helm install -n c8yedge dremio-helmchart.tar.gz -f dremio-values.yaml
+You can monitor the startup of the Dremio pods *zk-0*, *dremio-executor-0*, and *dremio-master-0* using
+```shell
+kubectl get pods -n c8yedge --watch
+```
     
-You can monitor startup of Dremio pods "zk-0", "dremio-executor-0", and "dremio-master-0" using
+The status *Running* indicates that the pods have started successfully:
 
-    kubectl get pods -n c8yedge --watch
-    
-until all of them have reached status "Running", e.g.
-
-NAME                                                              READY   STATUS             RESTARTS   AGE
+```
+NAME              READY          STATUS          RESTARTS         AGE
 ...
-zk-0                                                              1/1     Running            0          6m34s
-dremio-executor-0                                                 1/1     Running            0          6m34s
-dremio-master-0                                                   1/1     Running            0          6m34s
+zk-0              1/1            Running         0                6m34s
+dremio-executor-0 1/1            Running         0                6m34s
+dremio-master-0   1/1            Running         0                6m34s
+```
 
-Also, output from 
-    kubectl get svc -n c8yedge
+When running the command
+```shell
+kubectl get svc -n c8yedge
+```
 
-should contain entry similar to 
+the output should be similar to 
 
-NAME                                                  TYPE           CLUSTER-IP      EXTERNAL-IP                       PORT(S)                                               AGE
-dremio-client                                         LoadBalancer   10.43.66.19     172.23.161.181                    31010:32334/TCP,9047:30333/TCP,32010:31297/TCP        9m33s
+```
+NAME              TYPE              CLUSTER-IP              EXTERNAL-IP               PORT(S)                                         AGE
+dremio-client     LoadBalancer      10.43.66.19             172.23.161.181            31010:32334/TCP,9047:30333/TCP,32010:31297/TCP  9m33s
+```
 
 #### Installing DataHub Web Application and Microservice
 
-Prepare the following files with given content
+Prepare the following configuration files:
 
-1. systemEnvSecret.yaml
-
+**systemEnvSecret.yaml**
+```
 apiVersion: v1
 kind: Secret
 metadata:
@@ -224,20 +241,21 @@ stringData:
     RESOURCE_PASSWORD: "<RESOURCE_PWD>"
     C8Y_SETTINGS_DEFAULTS_TIMEOUT: "30s"
     RETRY_NUMBER: "1"
+```
 
-where
+using the following configuration settings:
 
 | Item | Details |
 | -----   | -----   |
-| <NAMESPACE> | c8yedge |
-| <C8Y_USER> | Obtain from  kubectl get secret -n c8yedge internal-generated-tls-certificates -o "jsonpath={.data.username}"  |
-| <C8Y_PWD>  | Obtain from  kubectl get secret -n c8yedge internal-generated-tls-certificates -o "jsonpath={.data.password}"  |
-| <RESOURCE_BASE_URL> | https://resources.cumulocity.com/  or (internally) https://staging-resources.cumulocity.com/   |
-| <RESOURCE_USER> | Contact support |
-| <RESOURCE_PWD>  | Contact support |
+| NAMESPACE | c8yedge |
+| C8Y_USER | kubectl get secret -n c8yedge internal-generated-tls-certificates -o "jsonpath={.data.username}"  |
+| C8Y_PWD  | kubectl get secret -n c8yedge internal-generated-tls-certificates -o "jsonpath={.data.password}"  |
+| RESOURCE_BASE_URL | https://resources.cumulocity.com/  or (internally) https://staging-resources.cumulocity.com/   |
+| RESOURCE_USER | Contact support |
+| RESOURCE_PWD  | Contact support |
 
-2. datahub-values.yaml 
-
+**datahub-values.yaml**
+```
 deploy: 
     imagePullSecrets: 
         - name: c8yedge-operator-regcred
@@ -262,24 +280,27 @@ deploy:
         credentials.CDH_MONGODB_USER: backup
         credentials.CDH_MONGODB_PASSWORD: admin-pass
         CDH_STORE_JOB_METRICS: false
-        
+```        
 ??? (Tim) we might also use CDH_DREMIO_PUBLIC_HOST: <edgeDomain>  (i.e. without leading "datahub.") - otherwise we need to mention need to add entry in "/etc/hosts"
 ??? (Bhaskar) for CDH_MONGODB_USER / _PASSWORD : shall we refer to respective K8S secret? 
   
-and execute the following commands
-
-    kubectl apply -f systemEnvSecret.yaml
-    helm install -n c8yedge datahub-helmchart.tar.gz -f datahub-values.yaml
+Trigger the installation by executing:
+```shell
+kubectl apply -f systemEnvSecret.yaml
+helm install -n c8yedge datahub-helmchart.tar.gz -f datahub-values.yaml
+```
     
-You can monitor startup of DataHub microservice pod "datahub-scope-edge-deployment-...." using
+You can monitor the startup of the DataHub microservice pod *datahub-scope-edge-deployment-....* using
+```shell
+kubectl get pods -n c8yedge --watch
+```
 
-    kubectl get pods -n c8yedge --watch
-    
-until it has reached status "Running", e.g.
-
-NAMESPACE     NAME                                                              READY   STATUS             RESTARTS      AGE
+The status *Running* indicates that the pod has started successfully:
+```
+NAMESPACE     NAME                                            READY   STATUS      RESTARTS    AGE
 ...
-c8yedge       datahub-scope-edge-deployment-7985c88469-xg8pc                    1/1     Running            0             16m
+c8yedge       datahub-scope-edge-deployment-7985c88469-xg8pc  1/1     Running     0           16m
+```
 
 #### Using {{< product-c8y-iot >}} DataHub Edge on Kubernetes
 

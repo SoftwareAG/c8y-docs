@@ -8,12 +8,12 @@ Angular 16 is supported from version `1019.0.0`. With the latest release of vers
 the end of further development for c8ycli.
 
 This switch aims to align with industry standards, making it more convenient for developers to work
-with the Web SDK. If you're an Angular developer looking to migrate your existing Web SDK project to
-ng-cli, here's a step-by-step guide to assist you through the process.
+with the Web SDK. If you are an Angular developer looking to migrate your existing Web SDK project to
+ng-cli, the following step-by-step guide leads you through the process.
 
 **1. Create an ng-cli Project**
 
-Start by downloading the appropriate version of ng-cli and scaffold your project using the `ng new`
+First, download the appropriate version of ng-cli and scaffold your project using the `ng new`
 command. Make sure to use the name of your existing project during this process.
 
 **2. Add @c8y/websdk to Build an App**

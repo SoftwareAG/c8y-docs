@@ -6,7 +6,7 @@ section:
   - app_enablement
 ---
 
-You can start your custom development by creating a default Angular application. You need to ensure that you scaffold the right
+To start your custom development, create a default Angular application first. You must to ensure that you scaffold the right
 Angular version. The following table shows an overview of the supported versions:
 
 | Angular version | Web SDK version | Comment |
@@ -16,7 +16,7 @@ Angular version. The following table shows an overview of the supported versions
 | 14.x.x | 16.x.x - 18.0.x | Using `c8ycli` tooling |
 
 {{< c8y-admon-info >}}
-If you consider to use an older version then `19.x.x` you need to use our old tooling based on the `c8ycli` tool-set. Please [references to this documentation](ADDDOCLINKHERE!!!) in this case.
+If you want to use an older version then `19.x.x` you must to use our old tooling based on the `c8ycli` tool-set. For more information see [C8Y Command Line Tool (CLI)](/docs/web/development-tools/#c8y-cli).
 {{< /c8y-admon-info >}}  
 
 
@@ -40,7 +40,7 @@ ng add @c8y/websdk
 Required is a node.js installation. If you have the wrong node.js version installed, the `npm install` step will prompt you with the needed version number.
 {{< /c8y-admon-info >}}
 
-The CLI will prompt you in 2 simple steps for the version and the base template. Afterwards your application is set and you can start your first development server in step 3.
+The CLI will prompt you in two steps for the version and the base template. Afterwards your application is set and you can start your first development server in step 3.
 
 ### Step 1: Select the version
 
@@ -76,8 +76,8 @@ can be found [here](#/getting-started/library/overview#c8yapps-extendable-applic
 
 ### Step 3: Start the local development server
 
-Now you are ready to start the application by running the `npm start` command. By default, the
-application will proxy to the Cumulocity IoT cloud platform, however, you can proxy to a different
+Now you can start the application by running the `npm start` command. By default, the
+application will proxy to the {{< product-c8y-iot >}} cloud platform, however, you can proxy to a different
 application using the `-u` flag. For example:
 
 ```bash
@@ -91,7 +91,7 @@ When started, the application begins to compile. After it is compiled, you can n
 You must provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can click on your username in your tenant and get the information from the section Platform Information.
 {{< /c8y-admon-info >}}  
 
-**You are now setup.** Any changes you make to your local files will lead to recompiling. After a
+You are now setup. Any changes you make to your local files will lead to recompiling. After a
 refresh you will see your changes. Read more about the `@c8y` library setup and learn how to use
 them in the next chapter.
 
@@ -113,7 +113,7 @@ import { Component } from '@angular/core';
 export class HelloComponent {}
 ```
 
-To hook the new component into the application, you need to declare the new component and add it to
+To hook the new component into the application, you must declare the new component and add it to
 a route in the `app.module.ts`. In the following example we extended the `application` project,
 which gives you a very clear application frame.
 
@@ -155,8 +155,8 @@ The CLI provides a command to deploy the application, you can simply run the com
 and the current application will be deployed. However, before deploying your application you need to
 build it, you can run `c8ycli build` to do so.
 
-Deploying needs an application role, username, password and a tenant. You can also run it by
-providing this information as parameters. The following will build and deploy the application
+For deployment you need an application role, username, password and a tenant. You can also run it by
+providing this information as parameters. Use the following code to build and deploy the application
 without prompting:
 
 ```bash
@@ -170,9 +170,9 @@ example `C8Y_USER` for the `-U` flag.
 
 ### Next steps
 
-We recommend to make your self comfortable with our
+We recommend you to familiarize yourself with our
 [package setup](/web/overview/#libraries) and read about which library is used in which case.
-Afterwards it is a good idea to read our guides which will explain you in detail:
+Afterwards, we recommend you to read our guides which will explain the following topics in detail:
 
-- [How to extend the platform.](#/getting-started/guides/extension-points)
-- [Adding data to your application.](#/getting-started/guides/data-access)
+- [How to extend the platform](#/getting-started/guides/extension-points)
+- [Adding data to your application](#/getting-started/guides/data-access)

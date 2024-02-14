@@ -31,7 +31,7 @@ If you don't want to use git anymore after the update, you can simply erase the 
 
 ### Updating {#updating}
 
-To update the Web SDK you should simply create a new application with the desired version and copy over the files. The diff then tells you, where merge conflicts might happen and which needs to be fixed
+To update the Web SDK you must create a new application with the desired version and copy over the files. The diff then tells you, where merge conflicts might happen. Fix any merge conflicts prior to merging.
 
 ```shell
 ng new cockpit
@@ -39,7 +39,7 @@ cd cockpit
 ng add @c8y/websdk 
 ```
 
-If you now select a newer version of the application you want to scaffold, you get the latest scaffolding files. If you copy them over to your solution which was checked in before, you get very well the difference between the versions visualized.
+If you select a newer version of the application you want to scaffold, you get the latest scaffolding files. If you copy them over to your solution which was checked in before, you can see the difference between the versions.
 
 ### Diffing to reapply changes {#diffing-to-reapply-changes}
 

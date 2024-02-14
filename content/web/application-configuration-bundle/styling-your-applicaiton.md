@@ -8,8 +8,8 @@ A branding should always be applied to all of your applications. Therefore it is
 dynamic public options for branding your application. You only need to set the right
 [design tokens](https://styleguide.cumulocity.com/apps/codex/#/ui-guidelines/foundations/design-tokens/overview) in the `brandingCssVars`
 application option. Those are css variables that get applied to all default stylesheets of
-Cumulocity and will show your custom branding for any Web SDK application. Your `options.json` then
-might look like this:
+{{< product-c8y-iot >}} and will show your custom branding for any Web SDK application. Your `options.json` then
+look like this:
 
 ```json
 {
@@ -23,7 +23,7 @@ might look like this:
 }
 ```
 
-You can add other options, for example the `hideNavigator` or add an own CSS file:
+You can add other options, for example, the `hideNavigator` or add an own CSS file:
 
 ```json
 {
@@ -39,7 +39,7 @@ You can add other options, for example the `hideNavigator` or add an own CSS fil
 }
 ```
 
-And in you CSS file you simply add your own styles:
+In the CSS file you can add your own styles:
 
 ```css
 h1 {
@@ -47,14 +47,14 @@ h1 {
 }
 ```  
 
-Using this is simple:
+Follow the steps below:
 
 1. Zip the files (ensure that they are in the root of the zip without any wrapping folder).
 2. Name the zip file `public-options.zip`.
-3. Upload it as a web application in Administration -> Ecosystem -> Applications
-4. Subscribe your applications to one of your tenants under Tenants -> Subtenants
+3. Upload it as a web application in Administration > Ecosystem > Applications.
+4. Subscribe your applications to one of your tenants under Tenants > Subtenants.
 
-Once done, you can simply always update the existing application with new variables in the detail
+Afterwards, you can update the existing application with new variables in the detail
 view of the application.
 
 {{< c8y-admon-info >}}
@@ -67,9 +67,9 @@ manual generating of a JSON file and uploading applications.
 
 For styling the application global CSS created with [LESS](http://lesscss.org/) is used. The
 original LESS source is distributed via the npm package
-[@c8y/style](https://www.npmjs.com/package/@c8y/style). By extending these styles it is possible to
-change any detail of the application but the vast majority of developers want to change: colors,
-logos and fonts and these can be very easily achieved by replacing a few variables.
+[@c8y/style](https://www.npmjs.com/package/@c8y/style). By extending these styles you can
+change any detail of the application, the most requested changes are: colors,
+logos and fonts. Tese can be very easily achieved by replacing a number of variables.
 
 To override the variables it is possible to use:
 
@@ -112,26 +112,26 @@ The first line of code within the `branding.less` has to be:
 
 At this point we are able to change the desired variables according to our needs.
 
-Let us change for example the most important color of your branding, the main color, called
+For example, change the most important color of your branding, the main color, called
 **brand-primary**.
 
-This is done by setting the respective LESS variable to a new color.
+To change this, set the respective LESS variable to a new color.
 
 ```css
 @brand-primary: red;
 ```
 
-User interface elements like buttons, active navigation nodes or even active tabs as well as also
-hover-states of buttons are red now.
+User interface elements like buttons, active navigation nodes or even active tabs as well as
+hover-states of buttons are now red.
 
-What about changing the main logo that is located at the top of the login dialog? Look at this:
+The following example shows hot to change the main logo that is located at the top of the login dialog.
 
 ```css
 @{logo-login} { background-image: url('./img/logo-main.svg')}
 @brand-logo-height: 48%;
 ```
 
-The last step is to add your custom less branding to the `cumulocity.config.ts` file in the `buildTime` setting:
+As the last step, add your custom less branding to the `cumulocity.config.ts` file in the `buildTime` setting:
 
 ```ts
 [...]
@@ -148,4 +148,4 @@ export default {
 [...]
 ```
 
-If you now start the development server you should see you custom styling applied to your application.
+If you start the development server now, you can see you custom styling applied to your application.

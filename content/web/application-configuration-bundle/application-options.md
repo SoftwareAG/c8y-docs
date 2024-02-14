@@ -4,9 +4,9 @@ layout: redirect
 weight: 10
 ---
 
-The easiest option for customization are application options. They apply to any Web SDK application and
-use inheritance to allow applying same configurations to all your applications. One example
-configuration is `hideNavigator`, which is a simple flag that configures if the navigator should be
+The easiest option to customize your application are application options. They apply to any Web SDK application and
+use inheritance which allows you to apply the same configurations to all your applications. One example
+configuration is `hideNavigator`, which is a simple flag that configures if the navigator must be
 shown on application start or not. You can configure this in 4 ways:
 
 1. as a URL parameter
@@ -14,16 +14,16 @@ shown on application start or not. You can configure this in 4 ways:
 3. as a static private option
 
 The URL parameter (1) is the highest privileged option and wins over the public (2) and private (3)
-option. It is also very simple to use: Simply add a URL parameter to your application. So to hide
+Simply add a URL parameter to your application. For example, to hide
 the navigator you would simply use the URL
-`apps/<<your-app-name>>/index.html?hideNavigator=true#/route` (note that the URL parameter needs to
-be set before the #-hash navigation).
+`apps/<<your-app-name>>/index.html?hideNavigator=true#/route`. Note that the URL parameter needs to
+be set before the #-hash navigation.
 
-The dynamic public options (2) are options requested by each Web SDK based application on startup.
-The default fetch URL for this options are stored in the `dynamicOptionsUrl` which is by default set
+The dynamic public option is requested by each Web SDK based application upon startup.
+The default fetch URL for this options is stored in the `dynamicOptionsUrl` which is by default set
 to `"/apps/public/public-options/options.json"`. As you can see by the context-path, the default
-setting points to an application deployed to your tenant. You can create this application on your
-own: Simply create a zip file called `public-options.zip` and add a `options.json` to it:
+setting points to an application deployed to your tenant. To create this application on your
+own ceate a zip file called `public-options.zip` and add a `options.json` to it:
 
 ```json
 {
@@ -32,16 +32,16 @@ own: Simply create a zip file called `public-options.zip` and add a `options.jso
 ```
 
 If you upload this application to your tenant and subscribe it to at least one of your subtenants,
-all Web SDK based applications will hide the navigator by default.
+all Web SDK based applications hide the navigator by default.
 
 {{< c8y-admon-info >}}
 If you are an enterprise customer, the easiest way to manipulate this options is to use the
-branding manager in administration. It provides an form to set most of the settings without any
-manual generating of a JSON file and uploading applications.
+branding manager in administration. It allows you to set most of the settings without the need to
+manually generate a JSON file and upload any applications.
 {{</ c8y-admon-info >}}
 
-The static private options (3) are options that can only be defined by a custom application. They
-are the lowest level of option and can be overwritten by any of the upper options (1 and 2). They
+The static private option (3) can only be defined by a custom application. They
+are the lowest option level and can be overwritten by any of the upper options (1 and 2). They
 are also private, meaning they only apply to the current application they are applied to. You can
 define those options in the `cumulocity.config.ts` file by adding them to the `runTime` fragment:
 
@@ -56,6 +56,6 @@ export default {
 [...]
 ```
 
-It is good practice to use URL options (1) to verify an option behavior, to use dynamic options (2)
-to set the option platform wide (branding) and use the private static option (3) to set the default for your
+It is good practice to use URL option (1) in order to verify an option behavior, or to use the dynamic option (2)
+in order to set the option platform wide (branding) and  touse the private static option (3) in order to set the default for your
 custom application.

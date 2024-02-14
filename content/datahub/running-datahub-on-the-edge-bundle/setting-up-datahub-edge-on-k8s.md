@@ -20,7 +20,7 @@ Before setting up {{< product-c8y-iot >}} DataHub Edge on Kubernetes, you must c
 #### Hardware requirements
 
 The hardware requirements for running a bare {{< product-c8y-iot >}} Edge instance are described in section [Requirements](/edge/installation#prerequisites). 
-When {{< product-c8y-iot >}} DataHub Edge onKubernetes is additionally running, the hardware requirements of the virtual machine are as follows:
+When {{< product-c8y-iot >}} DataHub Edge on Kubernetes is deployed on top, the hardware requirements of the virtual machine are as follows:
 
 ???
 * 100 GB of free disk space plus sufficient free disk space for the data lake contents
@@ -34,7 +34,7 @@ If another namespace has been chosen you need to replace it subsequently.
 
 #### Prepare Persistent Volumes for MySQL and Dremio
 
-Let's assume we have two file
+Let's assume we have two files
 
 1. local-path-retain.yaml
 
@@ -46,6 +46,8 @@ provisioner: rancher.io/local-path
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 
+??? (Tim) This is specific to Rancher Desktop
+
 2. datahub-pv-local-path.yaml
 
 ########################################################################################################################
@@ -53,7 +55,7 @@ volumeBindingMode: WaitForFirstConsumer
 ########################################################################################################################
 ---
 #
-# This PV will be claimed by PVC named '...' for MySQL database
+# This PV is needed for MySQL database
 #
 apiVersion: v1
 kind: PersistentVolume
@@ -72,7 +74,7 @@ spec:
 
 ---
 #
-# This PV will be claimed by PVC named '???' for Dremio 
+# This PV is needed for Dremio distributed storage 
 #
 apiVersion: v1
 kind: PersistentVolume
@@ -91,7 +93,7 @@ spec:
 
 ---
 #
-# This PV will be claimed by PVC named '???' for datalake used for offloading
+# This PV is needed for datalake used for offloading
 #
 apiVersion: v1
 kind: PersistentVolume

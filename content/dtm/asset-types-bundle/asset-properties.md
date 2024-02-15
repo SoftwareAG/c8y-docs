@@ -27,7 +27,7 @@ ROLES & PERMISSIONS
 
 ### To create an asset property {#to-create-an-asset-property}
 
-When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system except default properties. See [Default properties](#default-properties) to view the list of properties available.
+When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system except the default properties. See [Default properties](#default-properties) to view the list of properties available.
 
 If you use a tenant which already has asset properties defined, you find the list of defined asset properties on the left. You see the selected asset property definition on the right.
 

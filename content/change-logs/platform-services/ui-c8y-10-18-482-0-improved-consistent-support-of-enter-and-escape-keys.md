@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-45977
-version: 10.19.0.0
+version: 10.18.482.0
 ---
 Improved the consistency of support of Enter and Escape keys (for save and cancel actions, respectively) on the following views: tenant details, user details, global role details, retention rule settings, branding configuration.

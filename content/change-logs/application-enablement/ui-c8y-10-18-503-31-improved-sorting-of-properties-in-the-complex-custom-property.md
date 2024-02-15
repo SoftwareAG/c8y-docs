@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-56566
-version: 10.18.505.11
+version: 10.18.503.31
 ---
 In the **Subassets page**, the properties in the complex custom property were sorted alphabetically. Now, the sorting reflects the order specified by the user in the Digital Twin Manager.

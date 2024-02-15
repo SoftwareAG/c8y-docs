@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-57256
-version: 10.19.530.21
+version: 10.19.503.21
 ---
 If a user navigated to an asset which had a file attached, the file was immediately downloaded. Now the file is only downloaded on clicking the download button.

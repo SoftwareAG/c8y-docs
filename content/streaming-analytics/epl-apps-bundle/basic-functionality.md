@@ -104,7 +104,7 @@ Once installed, create an Apama project in {{< sag-designer >}} and enable it fo
 
 Add the following Apama bundles to the newly created Apama project. These are required by {{< product-c8y-iot >}} so that it can activate your app. For instructions on how to add bundles to a project, refer to [Adding bundles to projects]({{< link-apama-webhelp >}}index.html#page/pam-webhelp%2Fco-UsiApaStu_adding_bundles_to_projects.html) in the Apama documentation.
 
-* **Cumulocity IoT > Event Definitions for Cumulocity*** <br>
+* **Cumulocity IoT > Event Definitions for Cumulocity** <br>
 Provides event APIs required for sending and receiving data to/from {{< product-c8y-iot >}}.
 * **Cumulocity IoT > Utilities for Cumulocity** <br>
 Provides helper utility functions for working with data received from {{< product-c8y-iot >}}.

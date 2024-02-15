@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-660
 version: 1019.0.0
 ---
-The success message has been changed to 'Asset updated' from 'Group updated' on updating an Asset and its properties in Subasset page.
+The success message has been changed from "Group updated" to "Asset updated" on updating an asset and its properties in **Subasset** page.

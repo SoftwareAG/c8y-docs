@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-620
 version: 1019.0.0
 ---
-Handeled an issue wherein assets screen goes blank for one user if data deleted by another user due to grid configuration. 
+Fixed an issue where the assets screen goes blank for one user if data is deleted by another user due to grid configuration. 

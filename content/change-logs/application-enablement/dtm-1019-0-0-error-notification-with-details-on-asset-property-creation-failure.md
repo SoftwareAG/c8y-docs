@@ -14,4 +14,4 @@ build_artifact:
 ticket:CTM-596
 version: 1019.0.0
 ---
- Users will now be notified of the error with details about the cause of the failure during Asset property creation.
+Users are now notified of the error with details about the cause of the failure during the Asset property creation.

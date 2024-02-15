@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-937
 version: 1019.0.0
 ---
-Users are now always taken to the first page of Assets when navigated to the Assets page.
+Users are now always taken to the first page of the asset list when navigated to the **Assets** page.

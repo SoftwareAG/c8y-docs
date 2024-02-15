@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1006
 version: 1019.1.2
 ---
-User can now import asset models having Location property.
+User can now import asset models with a Location property.

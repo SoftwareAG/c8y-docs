@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-981
 version: 1019.1.2
 ---
-Preview of data model in complex property now displays null value in case if empty value is given for number type property.
+The preview of the data model in the complex property now displays a null value if an empty value is given for the Number type property.

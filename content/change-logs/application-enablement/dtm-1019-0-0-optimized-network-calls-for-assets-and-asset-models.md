@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-892
 version: 1019.0.0
 ---
-Optimized calls to the backend from the Assets property and Asset Model page.
+Optimized calls to the backend from the **Assets property** and **Asset model** page.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-353
 version: 1019.0.0
 ---
-Implemented file size validation for a file type property during asset creation and in subassets page.
+Implemented file size validation for a file type property during asset creation and in the **Subassets** page.

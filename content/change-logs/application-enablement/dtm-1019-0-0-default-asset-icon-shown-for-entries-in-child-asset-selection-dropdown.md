@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-805
 version: 1019.0.0
 ---
-In the dropdown options for adding child asset models, for an asset whose icon is not set, the default asset icon is displayed instead of default group icon.
+For an asset without a designated icon, the default asset icon is displayed instead of default group icon in the dropdown menu for adding child asset models.

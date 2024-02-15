@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-625
 version: 1019.0.0
 ---
-User can now enter a maximum of 254 characters in the input fields during asset creation.
+Users can now enter a maximum of 254 characters in the input fields during the asset creation.

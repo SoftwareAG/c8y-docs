@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-741
 version: 1019.0.0
 ---
-User can now find a label "DTM" along with the version in the user profile under the 'platform info section.
+Users can now find the label "DTM" along with the version in the user profile under the platform info section.

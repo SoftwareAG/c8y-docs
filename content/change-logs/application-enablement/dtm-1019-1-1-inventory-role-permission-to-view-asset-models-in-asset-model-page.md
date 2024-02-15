@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-648
 version: 1019.1.1
 ---
-Users with access only to specific assets via inventory roles can now view all Asset models in Asset model page.
+Users with access only to specific assets via inventory roles can now view all asset models in **Asset model** page.

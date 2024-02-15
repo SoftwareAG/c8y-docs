@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-690
 version: 1019.0.0
 ---
-The import asset icon has been changed  in Asset tree page .
+The import asset icon has been changed in **Asset tree** page.

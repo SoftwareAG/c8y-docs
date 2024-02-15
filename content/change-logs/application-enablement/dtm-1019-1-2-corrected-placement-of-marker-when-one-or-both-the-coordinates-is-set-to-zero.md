@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-995
 version: 1019.1.2
 ---
-Marker is now shown at the center of the map when both or any one of the value of Latitude and Longitude is "0" for Location property.
+The marker is now shown at the center of the map when both or any one of the value of latitude and longitude is "0" for the Location property.

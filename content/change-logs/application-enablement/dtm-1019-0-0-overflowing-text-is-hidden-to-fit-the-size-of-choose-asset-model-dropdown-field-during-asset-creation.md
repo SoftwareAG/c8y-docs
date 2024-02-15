@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-745
 version: 1019.0.0
 ---
-Lengthier Asset model names in the options of dropdown field 'Choose Asset model' are truncated to fit to the field size. Hovering over the option shows the complete text.
+Lengthier asset model names in the options of dropdown field **Choose Asset model** are truncated to fit to the field size. Hovering over the option shows the complete text.

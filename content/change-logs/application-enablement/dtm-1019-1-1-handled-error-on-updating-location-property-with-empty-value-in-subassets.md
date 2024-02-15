@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-904
 version: 1019.1.1
 ---
-Addressed an issue where errors occurred when updating the Location property with an empty value on the Subassets page.
+Addressed an issue where errors occurred when updating the Location property with an empty value on the **Subassets** page.

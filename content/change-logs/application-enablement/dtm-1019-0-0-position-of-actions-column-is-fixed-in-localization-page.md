@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-925
 version: 1019.0.0
 ---
-Position of Actions column in the Translation grid of Localization page is now fixed and cannot be changed.
+The position of the **Actions** column in the translation grid of **Localization** page is now fixed and cannot be changed.

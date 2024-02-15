@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-657
 version: 1019.0.0
 ---
-Users can now see a label 'Complex properties' instead of the previous 'Property key' label  in the Subassets page.
+Users can now see a label "Complex properties" instead of the previous "Property key" label in the **Subassets** page.

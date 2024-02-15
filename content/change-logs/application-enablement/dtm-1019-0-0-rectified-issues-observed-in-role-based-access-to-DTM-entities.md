@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-676
 version: 1019.0.0
 ---
-Users can now view Asset model labels and property labels as keys on the Localization page. Furthermore, the issue of simultaneously displaying "items deleted successfully" and an error message when deleting multiple assets has been resolved.
+Users can now view asset model and property labels as keys on the **Localization** page. Furthermore, the issue of simultaneously displaying "items deleted successfully" and an error message when deleting multiple assets has been resolved.

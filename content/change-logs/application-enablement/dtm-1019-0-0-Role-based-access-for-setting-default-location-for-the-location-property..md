@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-836
 version: 1019.0.0
 ---
-Only users having edit access to Asset properties can set the default location values in the Location property using 'Choose on map' button.
+Only users with edit access to Asset properties can set the default location values in the Location property through the 'Choose on map' button.

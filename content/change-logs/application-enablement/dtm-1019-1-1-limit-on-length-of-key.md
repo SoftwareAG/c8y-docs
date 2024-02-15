@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-646,CTM-673,CTM-658
 version: 1019.1.1
 ---
-A limit of 254 characters is set on length of the Key for assets, properties, and models, ensuring consistent behavior with other Cumulocity IoT applications
+The key for asset, properties and models is set to 254 characters maximum to ensure consistent behavior with other Cumulocity IoT applications

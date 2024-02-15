@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-650
 version: 1019.0.0
 ---
-Lengthier Asset model names are truncated to fit to the field size during Asset model creation. Hovering over the option shows the complete text.
+Lengthier asset model names are truncated to fit to the field size during the asset model creation. Hovering over the option shows the complete text.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-901
 version: 1019.0.0
 ---
- The default asset property (Location) is not  shown during the export of asset properties.
+The default asset property (Location) does not show up during the export of asset properties.

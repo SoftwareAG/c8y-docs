@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-936
 version: 1019.0.0
 ---
-Filters applied for columns in the Localization page is now saved automatically.
+Filters that apply for columns in the **Localization** page are now saved automatically.

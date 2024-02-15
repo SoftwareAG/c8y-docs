@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-635
 version: 1019.0.0
 ---
-The Import asset properties preview windows now display a message when no record exists.
+The Import asset properties preview window now displays a message when no record exists.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-694
 version: 1019.0.0
 ---
-Handled the unexpected error message when a user cancels the delete operation in the Asset models and Asset properties page.
+Handled the unexpected error message when a user cancels the delete operation in the **Asset models** and **Asset properties** page.

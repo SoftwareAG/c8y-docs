@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-744
 version: 1019.0.0
 ---
-User is notified when user tries to search for an Asset model sample that is not present.
+Users are notified when a user tries to search for an asset model sample that is not present.

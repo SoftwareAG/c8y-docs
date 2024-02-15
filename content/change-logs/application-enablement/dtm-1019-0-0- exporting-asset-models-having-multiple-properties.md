@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-698
 version: 1019.0.0
 ---
-Users can now export an asset model having multiple asset properties.
+Users can now export an asset model with multiple asset properties.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-675
 version: 1019.0.0
 ---
-Users will now be navigated back to the step having blank value in the name field when there are multiple asset instances instead of navigating to confirmation page.
+When there are multiple asset instances, users are now navigated back to the step showing a blank value in the name field instead of navigating to the confirmation page.

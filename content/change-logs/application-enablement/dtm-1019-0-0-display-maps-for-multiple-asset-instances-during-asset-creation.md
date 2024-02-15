@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-688
 version: 1019.0.0
 ---
-Fixed issue where map was not correctly shown when adding multiple asset instances associated with Location
+Fixed an issue where the map did not show up correctly when adding multiple asset instances associated with Location.

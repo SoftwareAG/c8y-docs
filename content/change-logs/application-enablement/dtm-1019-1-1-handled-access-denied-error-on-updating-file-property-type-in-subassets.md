@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-724
 version: 1019.1.1
 ---
-Handled access denied error message when the user try to update the property type file in Subassets page.
+Handled access denied error message when the users try to update the property type file in **Subassets** page.

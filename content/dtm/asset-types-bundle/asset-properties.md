@@ -124,7 +124,7 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes must start with the prefix “MCGEN”.
 
-If any of the above restrictions are not selected, it is not applicable for the asset property during asset creation.
+If you do not select any of the restrictions above, it is not applicable for the asset property during asset creation.
 
 #### Default value {#default-value}
 

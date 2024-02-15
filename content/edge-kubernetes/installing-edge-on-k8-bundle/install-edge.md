@@ -87,6 +87,6 @@ Events:
 …………
   Normal   Installing        2m     cumulocityiotedge  finished installing thin-edge
 …………
-  Normal   Ready             1m     cumulocityiotedge  installed successfully
+  Normal   Ready             1m     cumulocityiotedge  Cumulocity IoT Edge installation is complete, and it's now running version 1017.0.0-4638
 ```
 Before you continue, wait for the Edge CR status to reach the **Ready** state.

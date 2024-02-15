@@ -17,6 +17,6 @@ When developing a {{< product-c8y-iot >}} microservice, a developer is not restr
 
 The hosting of the microservice is provided by {{< product-c8y-iot >}}. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to {{< product-c8y-iot >}}. Microservices can be built on top of the API exposed by the {{< product-c8y-iot >}}. This way, {{< product-c8y-iot >}} microservices are a comfortable means to provide new functionality and extend existing ones.
 
-![microservice_infrastructure](/images/concepts-guide/microservice_infrastructure.png)
+![Microservice infrastructure](/images/concepts-guide/microservice_infrastructure.png)
 
 For detailed information on developing and deploying microservices on top of {{< product-c8y-iot >}} refer to [Microservice SDK](/microservice-sdk/microservice-sdk-introduction/) which provides information on the general concept of microservices in {{< product-c8y-iot >}} as well as specific guidance and examples for various programming languages. For microservice developers {{< company-c8y >}} provides a Microservice SDK in the [Java programming language](/microservice-sdk/java).

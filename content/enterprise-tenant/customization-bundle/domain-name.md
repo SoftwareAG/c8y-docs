@@ -82,7 +82,7 @@ openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -ce
 
 The DNS entries for your custom domain must be configured in a way that all requests are routed to the {{< product-c8y-iot >}} platform.
 
-We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME needs to contain your wildcard
+We **strongly recommend** you to use a wildcard CNAME entry for this purpose. The CNAME must contain your wildcard
 domain from the certificate in the NAME field. The VALUE field of the CNAME entry must point to the hostname of {{< product-c8y-iot >}}. This target hostname can be easily determined by looking at your current tenant URL. If your tenant URL
 is *http://mytenant.{{< domain-c8y >}}*, the target hostname is *mytenant.{{< domain-c8y >}}*. Please also make sure to delete any
 conflicting A entries.

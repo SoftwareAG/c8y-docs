@@ -33,6 +33,17 @@ You can easily look up the paths to the tables in Dremio's UI. Click on your dat
 The offloading pipeline must be executed at least once with corresponding data being offloaded before you can run a query.
 {{< /c8y-admon-info >}}
 
+### Getting schema information
+
+Each table in the data lake is associated with an offloading pipeline. The schema of the table depends on the configuration of the offloading pipeline. It comprises the schema of the base collection for which the pipeline is configured as well as optionally configured additional result columns. In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find the default schema per base collection. In order to get the overall schema of the table you have different options:
+
+* Navigate to the offloading page providing an overview of all offloadings. In the context menu of the corresponding offloading pipeline, select **Edit** or **Show**. Navigate to the final step of the wizard, which provides the overall schema plus sample data. Prerequisite for that procedure is that you have the administrator or manager role as specified in section [Defining {{< product-c8y-iot >}} DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions). Also the offloading pipeline feeding data into the according table in the data lake must still exist.
+* Log into the Dremio UI with the aforementioned Dremio account. Click on your data lake under "Sources" at the left, then navigate to the table in the right canvas. Hover over the target table to get the schema information.
+* Run the following SQL query, with the table path adapted accordingly, to get the schema as well as sample data, using below listed connectivity options:
+```
+SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms LIMIT 5;
+```
+
 ### Using the Dremio UI {#using-the-dremio-ui}
 
 You can use the Dremio UI to interactively run queries against the data lake. See [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded) for more details.

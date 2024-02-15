@@ -80,7 +80,7 @@ Enter one of the following URLs in the browser:
 * `https://<domain_name>`
 * `https://management.<domain_name>`
 
-The login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
+The Login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
 
 {{< c8y-admon-important >}}
 After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
@@ -113,7 +113,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

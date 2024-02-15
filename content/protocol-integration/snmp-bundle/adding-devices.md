@@ -29,7 +29,7 @@ Both ways of device discovery can be controlled from the user interface.
 
 If a new SNMP-enabled device is identified, it will be added to the devices list. Alternatively, added SNMP devices can be seen in the **Child devices** tab.
 
-If you want to run autodiscovery after every interval, enter the interval in the **Scheduled interval** field and click **Save**. When the agent refreshes the configuration data, the scheduled autodiscovery will automatically be started. You don´t need to click **Start autodiscovery** in case of scheduled autodiscovery.
+If you want to run autodiscovery after every interval, enter the interval in the **Scheduled interval** field and click **Save**. When the agent refreshes the configuration data, the scheduled autodiscovery will automatically be started. You do not need to click **Start autodiscovery** in case of scheduled autodiscovery.
 
 ![Autodiscovery SNMP device list](/images/device-protocols/snmp/snmp-autodiscovered-devices.png)
 

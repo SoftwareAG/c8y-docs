@@ -209,13 +209,13 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
     - Upload the *streaming-analytics-app.zip* file as a web application.
 
-    - Subscribe the Streaming Analytics application to the edge tenant.
+    - Subscribe the Streaming Analytics application to the "edge" tenant.
 
       {{< c8y-admon-important >}} To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.{{< /c8y-admon-important >}}
 
     - Delete the Apama Analytics Builder and Apama EPL Apps applications.
 
-    - Log in to the edge tenant and verify the Streaming Analytics application.
+    - Log in to the "edge" tenant and verify the Streaming Analytics application.
 
 Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from the Edge 10.9 installation are removed after the successful migration. You are now be able to log in using the Edge 10.7 user credentials.
 

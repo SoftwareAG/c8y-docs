@@ -10,7 +10,7 @@ This section defines the {{< product-c8y-iot >}} Edge deployment's configuration
 |:---|:---|:---|:---|:---|
 |version|Yes|String| |{{< product-c8y-iot >}} Edge version to deploy.<br><br>For example, 1017.0.0 for 10.17 and 1017.0.1 for a fix-1 of 10.17.
 |licenseKey|Yes|String||{{< product-c8y-iot >}} Edge license key.
-|company|Yes|String||Name of the edge tenant, for example, the company's name.
+|company|Yes|String||Name of the "edge" tenant, for example, the company's name.
 |domain|Yes|String||A fully qualified domain name. <p>For example, *myown.iot.com*. Here, you must have the {{< product-c8y-iot >}} Edge license for the domain name *iot.com* or *myown.iot.com*.
 |tlsSecretName| No|String|The Edge Operator generates and assigns self-signed certificates.|Name of the Kubernetes secret containing the TLS key and certificates for the name specified in the `spec.domain` field. See [TLS secret](#tls-secret) for details.<p><p>**Info:** The Edge Operator retrieves this secret from the **`EDGE-CR-NAMESPACE`**. Ensure that this secret is created before initiating the {{< product-c8y-iot >}} Edge deployment or update process.
 |email|Yes|String||Email used for the admin user.

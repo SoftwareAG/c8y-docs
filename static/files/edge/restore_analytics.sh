@@ -97,5 +97,5 @@ curl -v -u "management/${USER}:${PASSWORD}" -H "Content-Type: application/vnd.co
 
 curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/management/applications" --header "Content-Type: application/json" -d "{\"application\":{\"id\":\"$SAAPP_ID\"}}"
 
-# Subscribe edge tenant
+# Subscribe "edge" tenant
 curl -v -u "management/${USER}:${PASSWORD}" --location --request POST "localhost/tenant/tenants/edge/applications" --header "Content-Type: application/json" -d "{\"application\": {\"id\":\"$SAAPP_ID\"}}"

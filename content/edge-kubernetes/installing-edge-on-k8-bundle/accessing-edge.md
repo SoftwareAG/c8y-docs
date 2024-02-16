@@ -73,7 +73,7 @@ If the ping is successful, the DNS resolution is working properly.
 #### To access Cumulocity IoT Edge {#to-access-cumulocity-iot-edge}
 
 Enter one of the following URLs in the browser:
-* To log in to the edge tenant: `https://<domain_name>`
+* To log in to the "edge" tenant: `https://<domain_name>`
 * To log in to the {{< management-tenant >}}: `https://management.<domain_name>`
 
 The login screen appears.
@@ -99,10 +99,10 @@ Substitute the Edge name and namespace name, which is currently **c8yedge** in t
 ![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)
 
 {{< c8y-admon-important >}}
-You must access both the {{< management-tenant >}} and edge tenant and change the respective admin credentials.
+You must access both the {{< management-tenant >}} and "edge" tenant and change the respective admin credentials.
 {{< /c8y-admon-important >}}
 
-- To log in to the edge tenant, use the URL `https://<domain_name>`.
+- To log in to the "edge" tenant, use the URL `https://<domain_name>`.
 
 - To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 

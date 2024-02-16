@@ -68,7 +68,8 @@ docker logs -f cdh-executor
 The containers are configured to rotate log files with rotation settings of two days and a maximum file size of 10 MB.
 
 #### Monitoring {#monitoring}
-{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](/edge-support/monitoring/) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
+
+{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](/edge/operating-edge/#monitoring) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring {#data-disk-management-and-monitoring}
 

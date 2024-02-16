@@ -10,7 +10,7 @@ The Edge appliance is security hardened by default.
 Furthermore, you can apply specific security configurations to enhance the security of your Edge appliance.
 
 {{< c8y-admon-important >}}
-For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines](https://empower.softwareag.com/sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
+For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines]({{< link-sag-portal >}}sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
 {{< /c8y-admon-important >}}
 
 To apply the security configuration, follow the steps below:

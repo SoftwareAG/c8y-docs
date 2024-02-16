@@ -27,8 +27,8 @@ Due to the very flexible nature of application management within {{< product-c8y
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-related >}}
-- [Platform administration > Standard tenant > Managing ecosystem](/standard-tenant/ecosystem/) for details on managing applications in {{< product-c8y-iot >}}.
-- [Platform administration > Standard tenant > Changing settings > Application settings](/standard-tenant/changing-settings/) for details on managing application settings in {{< product-c8y-iot >}}.
+- [Platform administration > {{< standard-tenant >}} > Managing ecosystem](/standard-tenant/ecosystem/) for details on managing applications in {{< product-c8y-iot >}}.
+- [Platform administration > {{< standard-tenant >}} > Changing settings > Application settings](/standard-tenant/changing-settings/) for details on managing application settings in {{< product-c8y-iot >}}.
 - [Application enablement & solutions > Web SDK > Application configuration > Application options](/web/application-configuration/#application-options) for details on application configuration in {{< product-c8y-iot >}}.
 - [Access control](/concepts/security/#access-control) for details on access control configuration.
 - [Managing permissions](/standard-tenant/managing-permissions/) for details on permission management.

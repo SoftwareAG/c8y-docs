@@ -16,4 +16,4 @@ Save the file and use the command below to apply the changes:
 kubectl apply -f c8yedge-sample.yaml
 ```
 
-To verify the Edge deployment, see [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation).
+To verify the {{< product-c8y-iot >}} Edge deployment, see [Verifying the {{< product-c8y-iot >}} Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation).

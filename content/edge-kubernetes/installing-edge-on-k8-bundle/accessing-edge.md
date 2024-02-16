@@ -4,7 +4,7 @@ title: Accessing Cumulocity IoT Edge
 layout: redirect
 ---
 
-Before you can access {{< product-c8y-iot >}} Edge, you must first get the external IP address. The Edge Operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the {{< product-c8y-iot >}} Edge through this external IP.
+Before you can access {{< product-c8y-iot >}} Edge, you must first get the external IP address. The {{< product-c8y-iot >}} Edge Operator creates a load balancer service named **cumulocity-core**, which receives an external IP. Clients outside of the cluster can access the {{< product-c8y-iot >}} Edge through this external IP.
 
 ### Assigning an external IP {#assigning-an-external-ip}
 
@@ -13,7 +13,7 @@ To get the external IP to access {{< product-c8y-iot >}} Edge, run the command b
 kubectl get service cumulocity-core -n c8yedge
 ```
 {{< c8y-admon-info >}}
-Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
+Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your {{< product-c8y-iot >}} Edge CR.
 {{< /c8y-admon-info >}}
 
 Sample output of the `kubectl get service` command:
@@ -28,7 +28,7 @@ Sometimes the external IP displays as `<pending>` or `<none>`. The IP assignment
 kubectl patch service cumulocity-core -n c8yedge -p '{"spec":{"type": "LoadBalancer", "externalIPs":["<EXTERNAL-IP>"]}}'
 ```
 {{< c8y-admon-info >}}
-Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your Edge CR.
+Substitute the namespace name *c8yedge* in the command above with the specific namespace name you have specified in your {{< product-c8y-iot >}} Edge CR.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
@@ -83,12 +83,12 @@ Enter one of the following URLs in the browser:
 The Login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
 
 {{< c8y-admon-important >}}
-After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
+After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}} Edge tenants and change the admin credentials.
 {{< /c8y-admon-important >}}
 
 - To log in to the {{< management-tenant >}}, use the URL `https://management.<domain_name>`.
 
-- To log in to the {{< product-c8y-iot >}}  Edge tenant, use the URL `https://edge.<domain_name>`.
+- To log in to the {{< product-c8y-iot >}} Edge tenant, use the URL `https://edge.<domain_name>`.
 
 If you are logging in for the first time, you will see a cookie banner at the bottom:
 

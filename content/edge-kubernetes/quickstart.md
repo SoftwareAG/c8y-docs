@@ -41,4 +41,4 @@ This section helps you to quickly install {{< product-c8y-iot >}} Edge on a [Lig
    kubectl apply -f {{< link-c8y-doc-baseurl >}}/files/edge-k8s/c8yedge-sample.yaml
    ```
 
-6. See [Verifying the Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation) and [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) to sign into {{< product-c8y-iot >}} Edge.
+6. See [Verifying the {{< product-c8y-iot >}} Edge installation](/edge-kubernetes/installing-edge-on-k8/#verifying-the-edge-installation) and [Accessing {{< product-c8y-iot >}} Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge) to sign into {{< product-c8y-iot >}} Edge.

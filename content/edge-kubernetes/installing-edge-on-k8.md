@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Installing Cumulocity IoT {{< product-c8y-iot >}} Edge on Kubernetes
+title: Installing Cumulocity IoT Edge on Kubernetes
 layout: bundle
 section:
   - edge_server

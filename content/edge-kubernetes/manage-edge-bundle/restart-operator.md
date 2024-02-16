@@ -1,6 +1,6 @@
 ---
 weight: 17
-title: Restarting the {{< product-c8y-iot >}} Edge Operator
+title: Restarting the Cumulocity IoT Edge Operator
 layout: redirect
 ---
 

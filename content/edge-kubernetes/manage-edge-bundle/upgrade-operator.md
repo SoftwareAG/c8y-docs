@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Upgrading the {{< product-c8y-iot >}} Edge Operator
+title: Upgrading the Cumulocity IoT Edge Operator
 layout: redirect
 ---
 

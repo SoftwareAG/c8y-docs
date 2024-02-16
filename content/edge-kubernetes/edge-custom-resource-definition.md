@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Cumulocity IoT {{< product-c8y-iot >}} Edge Custom Resource
+title: Cumulocity IoT Edge Custom Resource
 layout: bundle
 section:
   - edge_server

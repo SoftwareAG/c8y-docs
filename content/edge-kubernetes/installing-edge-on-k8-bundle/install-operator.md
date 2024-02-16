@@ -1,6 +1,6 @@
 ---
 weight: 15
-title: Installing the {{< product-c8y-iot >}} Edge Operator
+title: Installing the Cumulocity IoT Edge Operator
 layout: redirect
 ---
 

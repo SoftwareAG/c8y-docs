@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: {{< product-c8y-iot >}} Edge Operator
+title: Cumulocity IoT Edge Operator
 layout: redirect
 ---
 

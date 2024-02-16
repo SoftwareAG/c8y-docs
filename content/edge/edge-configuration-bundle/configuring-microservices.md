@@ -59,15 +59,15 @@ For more information about developing and hosting a microservice, see [Microserv
 
 A microservice specifies an API version in the microservice manifest. Depending on this API version, the microservice runs with all or only a restricted set of Linux kernel capabilities. More precisely, all capabilities are granted to microservices with API version 1 whereas only the capability `CAP_NET_BIND_SERVICE` is granted to microservices with API version 2. For more information, see [Microservice migration to API Version 2](/microservice-sdk/general-aspects/#migration).
 
-By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the Edge tenant.
+By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the edge tenant.
 
-{{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on {{< product-c8y-iot >}} Edge version 10.15, you must subscribe the Edge tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on {{< product-c8y-iot >}} Edge version 10.15, you must subscribe the edge tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
 
-To upload and subscribe to a microservice with API version 1 in the Edge tenant:
+To upload and subscribe to a microservice with API version 1 in the edge tenant:
 
 1. Log in to the {{< management-tenant >}}.
 2. Enable the microservice hosting feature, if not already enabled.
 3. Go to **Tenants** > **Subtenants** and click the edge tenant.
 4. Go to **Applications** and subscribe to the **Feature-privileged-microservice-hosting** application from the **Available applications**.
-   {{< c8y-admon-info >}} It might take up to ten minutes until the Edge tenant is able to upload and subscribe to privileged microservices. {{< /c8y-admon-info >}}
-5. Log in to the Edge tenant and upload a microservice with API version 1.
+   {{< c8y-admon-info >}} It might take up to ten minutes until the edge tenant is able to upload and subscribe to privileged microservices. {{< /c8y-admon-info >}}
+5. Log in to the edge tenant and upload a microservice with API version 1.

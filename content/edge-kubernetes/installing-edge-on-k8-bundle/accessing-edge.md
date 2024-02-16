@@ -80,7 +80,7 @@ The login screen appears.
 
 
 {{< c8y-admon-important >}}
-{{< product-c8y-iot >}} Edge is installed with the admin user **"admin"** and password **"admin-pass"**.
+{{< product-c8y-iot >}} Edge is installed with the admin user "admin" and password "admin-pass".
 {{< /c8y-admon-important >}}
 
 ![Login prompt](/images/edge-k8s/edge-k8s-login-banner.png)

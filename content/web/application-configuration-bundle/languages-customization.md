@@ -60,7 +60,7 @@ export default {
 You can change the imported language in the UI after login. To do so, click the User icon at the top right, select User settings from the menu and in the upcoming window select the language of your choice.
 
 #### How to add your own translations at runtime {#how-to-add-your-own-translations-at-runtime}
-You can translate certain strings at runtime, which means they don't have to be included in the build and can simply be added to the [application options](/web/application-configuration/#application-options). However, this concept doesn't allow to add new languages. You can only add new strings to existing languages or align certain translations on existing ones. To translate a certain key you must add the following structure to the application options:
+You can translate certain strings at runtime, which means they do not have to be included in the build and can simply be added to the [application options](/web/application-configuration/#application-options). However, this concept doesn't allow to add new languages. You can only add new strings to existing languages or align certain translations on existing ones. To translate a certain key you must add the following structure to the application options:
 
 ```typescript
   i18nExtra?: {

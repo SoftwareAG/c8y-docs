@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-55200
-version: 10.18.0.376
+version: 10.18.376.0
 ---
 When a user logs in using OAI-Secure and a password change is required, a <code>PasswordResetToken</code> is returned in the response header, enabling the password reset.

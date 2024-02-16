@@ -41,7 +41,7 @@ Once the connection is established, a new browser tab will open displaying the f
 	![SSH public/private keys sign in](/images/cra/cra-endpoint-ssh-publicprivatekeys.png)
 
 	{{< c8y-admon-info >}}
-The public key needs to be installed on the remote device as authorized key.
+The public key must be installed on the remote device as authorized key.
 	{{< /c8y-admon-info >}}
 
 	Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.

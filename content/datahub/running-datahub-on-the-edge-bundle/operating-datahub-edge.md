@@ -68,7 +68,8 @@ docker logs -f cdh-executor
 The containers are configured to rotate log files with rotation settings of two days and a maximum file size of 10 MB.
 
 #### Monitoring {#monitoring}
-{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](/edge-support/monitoring/) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
+
+{{< product-c8y-iot >}} Edge uses **Monit** for management and monitoring of relevant processes. See [Monitoring](/edge/operating-edge/#monitoring) for details. The {{< product-c8y-iot >}} DataHub Edge processes, namely the {{< product-c8y-iot >}} DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring {#data-disk-management-and-monitoring}
 
@@ -82,12 +83,12 @@ Dremio is configured to perform the cleanup of job results automatically without
 
 #### Cleanup of data lake contents {#cleanup-of-data-lake-contents}
 
-The data lake contents are not automatically purged, as the main purpose of {{< product-c8y-iot >}} DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents must be deleted.
+The data lake contents are not automatically purged, as the main purpose of {{< product-c8y-iot >}} DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents must be deleted. Instead of deleting you might also move the data. 
 
-Browse to the data lake folder **/opt/mongodb/cdh-master/datalake**. The data within the data lake is organized hierarchically. Delete the temporal folders you deem adequate to be deleted. After that you must run with the administrator account the following query in Dremio to refresh the metadata:
+Browse to the data lake folder **/opt/mongodb/cdh-master/datalake** and select the folder whose name equals the target table of the offloading pipeline. The data within the data lake is organized hierarchically, as described in section [Folder structure](/datahub/operating-datahub/#folder-structure-data-lake). To free up disk space, delete the chunk folders and all monthly/daily folders up to a point in time fitting to your needs. For example, delete all folders whose filename indicates that the data is older than 1st of January 2024. In general, you must delete complete folders, not single files within a folder. After you delete the folders, you must make Dremio aware of the changed data lake contents. Given the path to your target table, run the following query in Dremio as an administrator:
 
 ```
-ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE
+ALTER PDS <target_table_path> REFRESH METADATA FORCE UPDATE
 ```
 
 {{< c8y-admon-caution >}}

@@ -10,7 +10,6 @@ section:
 audience:
   - Users
   - Developers
-  - Business
 ---
 
 Use the Streaming Analytics application to add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources.

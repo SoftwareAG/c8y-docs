@@ -26,7 +26,7 @@ In the navigator, select **Compaction status** under **Administration** to get a
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or failed
 | Execution time | The point in time the execution was started
-| Runtime (s) | The runtime of the execution in seconds
+| Runtime | The runtime of the execution
 | Next execution time | The point in time for which the next execution is scheduled
 
 Click **Reload** to refresh the status being shown.
@@ -46,27 +46,28 @@ The list shows the execution history with each execution consisting of the follo
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or failed
 | Execution time | The point in time the execution was started
-| Runtime (s) | The runtime of the execution in seconds
+| Runtime | The runtime of the execution
 | Next execution time | The point in time for which the next execution is scheduled
 
 The system is configured to keep a limited history of the last compaction jobs.
 
 Click **Reload** to refresh the list.
 
-You can filter the entries by their status or timestamp by using the filter controls at the top.
+You can filter the entries by their status or timestamp by using the filter controls at the top. Click **Apply** to filter entries with the current filter settings. Click **Reset filter** to reset the current filter settings. Per default the entries from the last seven days are shown.
 
 ### Details of compaction job {#details-of-compaction-job}
 
 For a given compaction job, you can examine additional details of its execution.
 
-In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
+In the corresponding list of jobs click the job you are specifically interested in. A details view encompasses the following information:
 
-**Execution schedule**
+**Schedule**
 
 | Component | Description |
 | ---         | --- |
-| Runtime (s) | The runtime of the execution in seconds
-| Execution time | The point in time the execution was started
+| Runtime | The runtime of the execution
+| Start time | The point in time the execution was started
+| End time | The point in time the execution has ended
 | Scheduled execution time | The point in time for which the execution was scheduled
 | Next execution time | The point in time for which the next execution is scheduled
 

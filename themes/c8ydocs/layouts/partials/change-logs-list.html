@@ -11,7 +11,12 @@
           </header>
           <div class="lead">
             {{ .Content }}
-            <p class="small">Displaying the latest changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
+            {{ if site.Data.date_settings.yearly_release}} 
+              <p class="small">Displaying all changes since Release 10.18</p>
+              <hr> 
+            {{else}}
+              <p class="small">Displaying all changes since {{site.Data.date_settings.date.Format "January 2, 2006"}}</p>
+            {{end}}
           </div>
         </div>
       </article>
@@ -94,12 +99,14 @@
       {{end}}
       {{end}}
 
-      <div
-        id="cl-{{$listDate | urlize }}"
-        class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
-      >
-        <h5>{{$listDate}}</h5>
-      </div>
+        {{ if not site.Data.date_settings.yearly_release}}
+          <div
+            id="cl-{{$listDate | urlize }}"
+            class="page-section change-log__date {{range $classes}}{{.}} {{end}}"
+          >
+            <h5>{{$listDate}}</h5>
+          </div>
+        {{end}}
       {{end}}
 
 
@@ -123,7 +130,13 @@
             </h2>
           </div>
           <div class="change-log__summary">
-            {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
+            {{ if .Params.ticket }} 
+            <button class="btn-tooltip" data-tooltip="{{ .Params.ticket }}">
+              {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
+            </button>
+            {{else}}
+              {{ partial "change-log-labels.html" (index .Params.change_type 0).label}}
+            {{end}}
             <div class="metadata">
               <button class="btn-metadata" data-tag="productarea-{{.Params.product_area | urlize}}">
                 <small class="text-muted">Product area</small><br>
@@ -137,12 +150,15 @@
               {{/*  Display the build artifact only in yearly releases  */}}
               {{ if site.Data.date_settings.yearly_release}}
                 <button class="btn-metadata" data-tag="technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}">
-                  <small class="text-muted">Build artifact</small>
-                  <p>{{(index .Params.build_artifact 0).label}}</p>
+                  <small class="text-muted">Build artifact {{ if .Params.version}}/ version{{end}}</small>
+                  <p>{{(index .Params.build_artifact 0).label}}
+                  {{ if .Params.version}} - {{ .Params.version}}{{end}}
+                  </p>
                 </button>
               {{end}}
-              </div>
+            </div>
           </div>
+          <!-- 
           <div class="change-log__version">
             {{ if site.Data.date_settings.yearly_release}}
                 {{ if .Params.version}}
@@ -159,6 +175,7 @@
                 </div>
               {{end}}
           </div>
+           -->
           {{.Content }}
         </div>
       </section>

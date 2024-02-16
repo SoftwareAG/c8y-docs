@@ -191,6 +191,9 @@ See below for detailed information about available settings.
 </tbody>
 </table>
 
+{{< c8y-admon-caution >}}
+Some manifest settings are used exclusively by internal components, and are not documented here. Use of these features outside of internal components is not supported, and is subject to change without notice.
+{{< /c8y-admon-caution >}}
 
 #### Version {#version}
 

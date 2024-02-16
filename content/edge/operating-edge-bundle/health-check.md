@@ -43,7 +43,7 @@ Example:
     inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 
-You must make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0, and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this example 255.255.252.0).
+You must make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface must have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0, and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this example 255.255.252.0).
 
 The following command lists the local routing information.
 
@@ -215,4 +215,4 @@ Run the following command to check the REST API availability:
 	<
 	{"alarm":{"alarms":{"alarms":null,"self":"http://management.<base_url>/alarm/alarms"},"alarmsForSource":"http://management.<base_url>/alarm/alarms?source={source}","alarmsForSourceAndStatus":"http://management.<base_url>/alarm/alarms?source={source}&status={status}","alarmsForSourceAndStatusAndTime":"http://management.<base_url>/alarm/alarms?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForSourceAndTime":"http://management.<base_url>/alarm/alarms?source={source}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForStatus":"http://management.<base_url>/alarm/alarms?status={status}","alarmsForStatusAndTime":"http://management.<base_url>/alarm/alarms?status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForTime":"http://management.<base_url>/alarm/alarms?dateFrom={dateFrom}&dateTo={dateTo}","self":"http://management.<base_url>/alarm"},…}
 
-This example shows the correct response of the platform. The username and password must have full read access to the {{< management-tenant >}}. The &#60;base_url> needs to be given to connect to the correct platform and the {{< management-tenant >}} must not be blocked from outside.  
+This example shows the correct response of the platform. The username and password must have full read access to the {{< management-tenant >}}. The &#60;base_url> must be given to connect to the correct platform and the {{< management-tenant >}} must not be blocked from outside.  

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2024-02-06"
 title: Fixed issue with SmartREST 2.0 inventory POST template
 product_area: Device management & connectivity
 change_type:

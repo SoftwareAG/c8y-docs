@@ -53,10 +53,14 @@ last the latest available release. Additionally a version can be manually entere
   package-blueprint
 ```
 
+<<<<<<< HEAD
 In step two, the base project to scaffold from must be selected. You can select any of the default
 Cumulocity applications to reuse the functions provided there. In alternative, you could start a
 blank application by selecting _"application"_ project. A complete list of all applications provided
 can be found [here](#/getting-started/library/overview#c8yapps-extendable-applications)
+=======
+If you point your browser to *http://localhost:9000/apps/myapp/* you will get a Login screen which proxies to the tenant defined in the start script. If you cannot log in, it might be pointing to the wrong instance. To change the proxy to your tenant URL change the `start` script in the script section of the newly created *package.json*:
+>>>>>>> develop
 
 ### Step 3: Start the local development server
 

@@ -8,8 +8,8 @@ weight: 5
 
 A UI build with an earlier version of the Web SDK is locked to the current version.
 A platform update doesn't update the UI version, however a UI running against a newer backend always keeps working as all APIs are backwards compatible.
-That's why an update makes mostly sense if a newer feature of the UI or the Web SDK needs to be used.
-Therefore, a new application needs to be built and deployed to the platform.
+That's why an update makes mostly sense if a newer feature of the UI or the Web SDK must be used.
+Therefore, a new application must be built and deployed to the platform.
 This recipe describes best practices to do so.
 
 ### Preparation {#preparation}

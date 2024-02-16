@@ -79,7 +79,7 @@ Furthermore, the following pre-configured roles are initially provided.
 </tr>
 <tr>
 <td align="left">Shared User Manager</td>
-<td align="left">Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.</td>
+<td align="left">Can manage sub-users. The subscription plan must include user hierarchies to be able to manage sub-users.</td>
 </tr>
 <tr>
 <td align="left">Tenant Manager</td>

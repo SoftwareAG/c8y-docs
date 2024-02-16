@@ -26,4 +26,4 @@ Under **Web application** you will find the version of the web application.
 
 Under **Dremio** you will find the status of Dremio, which is either marked as green or red. This status reflects whether Dremio can be accessed from the microservice. If Dremio is accessible, its current version is shown. If not, check the status of the microservice and its logs as described in [Managing applications](/standard-tenant/ecosystem/#managing-applications).
 
-Under **Management** you will find the setup of the system. If you expand that box by clicking on the arrow to the right, all relevant system properties and their values are listed. Note that these values cannot be modified for a running microservice. The tenant administrator needs to redeploy the microservice with corresponding new values.
+Under **Management** you will find the setup of the system. If you expand that box by clicking on the arrow to the right, all relevant system properties and their values are listed. Note that these values cannot be modified for a running microservice. The tenant administrator must redeploy the microservice with corresponding new values.

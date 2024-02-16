@@ -50,7 +50,7 @@ There are two ways to configure the accessibility with the domain names:
 
 * Add an entry of the domain name and IP mapping in the DNS servers. <br>
 OR
-* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This needs to be performed on each client host on which the Edge appliance is accessed.
+* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This must be performed on each client host on which the Edge appliance is accessed.
 
 {{< c8y-admon-info >}}
 The first option is always preferable so that the Edge appliance is accessible over LAN.
@@ -90,7 +90,7 @@ Enter the URL in the browser:
 https://<domain_name>
 ```
 
-The Edge appliance login screen appears. Log in with your credentials created during the installation.
+The Edge appliance Login screen appears. Log in with your credentials created during the installation.
 
 - To log in to the {{< management-tenant >}}, prefix the username with *management*:
   - Username: management/<*Edge admin username*>
@@ -128,7 +128,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

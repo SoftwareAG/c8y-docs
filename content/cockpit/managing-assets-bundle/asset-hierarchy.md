@@ -18,7 +18,7 @@ Assets represent business objects in general like buildings, machines, productio
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image1.png)
+![Cockpit asset hierarchy](/images/users-guide/cockpit/cockpit-groups-image1.png)
 
 The asset hierarchy is composed of two types of objects:
 
@@ -61,13 +61,13 @@ The following section explains how to work with smart devices and gateway device
 
 The first example shows how smart devices are linked into the asset hierarchy:
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image2.png)
+![Linked smart devices](/images/users-guide/cockpit/cockpit-groups-image2.png)
 
 Smart devices are represented as top-level devices in the Device Management application. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
 The second example shows how gateway devices can be used in the Cockpit application.
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image3.png)
+![Linked gateway devices](/images/users-guide/cockpit/cockpit-groups-image3.png)
 
 Gateway devices are as well represented as top level devices in the Device management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 

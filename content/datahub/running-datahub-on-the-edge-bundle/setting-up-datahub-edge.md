@@ -139,7 +139,7 @@ The setup of the Dremio account and the data lake is done in the same way as in 
 
 Depending on the use case, it might be necessary to increase the memory available to Dremio, the internal engine of {{< product-c8y-iot >}} DataHub. By default, Dremio is configured to consume a maximum of 4 GB of RAM (2 GB assigned to both master node and executor node).
 
-Depending on the situation, one either needs to increase the memory of Dremio's master or executor node. In many cases, the master node’s memory is the limiting factor, but not always. Inspecting the query profiles in Dremio helps to determine where the bottleneck occurs.
+Depending on the situation, one either must increase the memory of Dremio's master or executor node. In many cases, the master node’s memory is the limiting factor, but not always. Inspecting the query profiles in Dremio helps to determine where the bottleneck occurs.
 
 #### Master node memory configuration {#master-node-memory-configuration}
 

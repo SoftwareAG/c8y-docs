@@ -98,7 +98,7 @@ The following list shows the fields and what they are responsible for:
 - `versioningMatrix`: Optional field which indicates the supported package versions and the recommended frontend and backend platform versions. If the package is not compatible with any of the recommended platform versions a warning is shown. The matrix must have the following format and all versions must be [SemVer](https://semver.org/). For example: `versioningMatrix: [{"1.0.0": {"api": ">1016.0.0", "sdk": ">1016.0.0"}}, {"2.0.0": {"api": ">1017.0.0", "sdk":">1017.0.0"}}]`. In case of repository-connect, versions which exist in the platform but are not included in the versioning matrix are removed during sync.
 
 {{< c8y-admon-info >}}
-When creating plugins, the custom modules are the backbone of this approach. The exported module is treated as the entry point that links the plugin with the application, which is referred to as the shell. You can create and export several modules, which have to contain ready-made functionality.
+When creating plugins, the custom modules are the backbone of this approach. The exported module is treated as the entry point that links the plugin with the application, which is referred to as the shell. You can create and export several modules, which must contain ready-made functionality.
 
 Furthermore, these modules behave like lazy loading modules. They are not loaded upfront as one big package, but instead like a collection of smaller packages loaded on demand.
 You can extend each module with additional features through the HOOK concept, see [Extend an existing application and use hooks](/web/tutorials/#extend-an-existing-application) for more information. For example, a plugin can add another entry to the navigation menu using HOOK_NAVIGATOR_NODES, see [Hooking a navigator node](/web/tutorials/#3-hooking-a-navigator-node) for more information.
@@ -125,7 +125,7 @@ Shell application: cockpit
 http://localhost:9000/apps/cockpit/index.html?remotes=%7B%22widget-plugin%22%3A%5B%22WidgetPluginModule%22%5D%7D
 ```
 
-This link redirects you to the Cockpit login screen.
+This link redirects you to the Cockpit Login screen.
 Once logged in, go to your dashboard and click **Add widget**, then select **Module Federation widget** from the list of available widgets.
 
 For the rest of the widget editing process follow the process for regular widgets. Refresh your browser to see your changes.

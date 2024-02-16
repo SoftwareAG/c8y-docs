@@ -6,23 +6,7 @@ section:
   - app_enablement
 ---
 
-To start your custom development, create a default Angular application first. You must to ensure that you scaffold the right
-Angular version. The following table shows an overview of the supported versions:
-
-| Angular version | Web SDK version | Comment |
-| --- | --- | --- |
-| 16.x.x | 19.x.x | |
-| 15.x.x | 18.1.x - 18.x.x | Using `c8ycli` tooling, only yearly release |
-| 14.x.x | 16.x.x - 18.0.x | Using `c8ycli` tooling |
-
-{{< c8y-admon-info >}}
-If you want to use an older version then `19.x.x` you must to use our old tooling based on the `c8ycli` tool-set. For more information see [C8Y Command Line Tool (CLI)](/docs/web/development-tools/#c8y-cli).
-{{< /c8y-admon-info >}}  
-
-
-## Scaffolding a new application for development
-
-First, install the `@angular/cli` in the right version.
+This guide will setup your first application. First step is to install the `@angular/cli` in the right version.
 
 
 ```bash

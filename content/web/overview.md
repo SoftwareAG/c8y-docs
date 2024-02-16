@@ -26,7 +26,7 @@ The Web SDK is designed to extend default application or build new IoT solutions
  2. Build a new application with the help of the Web SDK
  3. Build a application from scratch
 
-Option 3. is the hardest option as you need to build nearly everything new. But you are free to choose your frameworks and tools. To support you on either of the options, we have developed and published certain packages to npm. Those packages help you to connect to our data, provides you with default components or help you test and deploy the app. Depending on your needs, you can decide which package you want to include. However we always encourage everyone to start with our boilerplates and the full Web SDK. You can find a description on how to use them in the [Getting started](/docs/web/gettingstarted/) guide.
+Option 3. is the hardest option as you need to build nearly everything new. But you are free to choose your frameworks and tools. To support you on either of the options, we have developed and published certain packages to npm. Those packages help you to connect to our data, provides you with default components or help you test and deploy the app. Depending on your needs, you can decide which package you want to include. However we always encourage everyone to start with our boilerplates and the full Web SDK. You can find a description on how to use them in the [Getting started](/web/gettingstarted/) guide.
 
 ### Packages {#packages}
 
@@ -83,5 +83,31 @@ The following table provides an overview on the current packages existing for ap
 #### Build tooling: @c8y/websdk and @c8y/devkit
 Additional two build tools are added, which help scaffolding (`@c8y/websdk`) and developing (`@c8y/devkit`) the application. The package `@c8y/websdk` is quite simple and only provides the promps for creating a new applicaiton. The overall havy lifting is done by the `@c8y/devkit`. It replaces the default dev-server and builder options in the `angular.json` and extends the webpack configuration with everything needed.
 
+### Versioning: The WebSDK uses semantic version numbers
+Since version 1019.0.0 the versioning schema of the Web SDK isn't aligned anymore to the versioning schema of the {{< product-c8y-iot >}} platform. The versioning schema is now reflecting via semantic versioning the changes in the Web SDK:
+ - Major version (e.g. **1019**.x.x): Can contain breaking changes. Updating to such versions needs proper testing and validation. Often those versions also contain an Angular upgrade.
+ - Minor version (e.g. x.**3**.x): Contains features that should work without breaking anything. However it is recommended to properly verify the feature a minor version contains.
+ - Fix version (e.g. x.x.**7**): Cotains only fixes that should not break anything.
+
+
+{{< c8y-admon-info >}}
+As npm and semantic versioning only support three parts in the version number, the WebSDK will not use the commonly seen four parts versioning. For example a version sometimes refered to 10.19.0.0, will in the WebSDK be displayed as 1019.0.0. For simplicity this guide will only show three parts versioning numbers.
+{{< /c8y-admon-info >}} 
+
+We recommend to use the `^` or `~` in the `package.json` for all `@c8y` liberaries. When you are using a yealy long term support release, it is best to use the npm tag in your `package.json`. The long term support versions always end with `-lts`.
+
+As our releases are bound to the Angular versioning, you must to ensure that you scaffold the right Angular version. Otherwise the scaffolding process will fail and give you a peer dependency error. The following table shows an overview of the supported versions:
+
+| Angular version | Web SDK version | Comment |
+| --- | --- | --- |
+| 16.x.x | 1019.x.x | |
+| 15.x.x | 1018.1.x - 1018.x.x | Using `c8ycli` tooling, only yearly release |
+| 14.x.x | 1016.x.x - 1018.0.x | Using `c8ycli` tooling |
+
+{{< c8y-admon-info >}}
+If you want to use an older version then `1019.x.x` you must to use our old tooling based on the `c8ycli` tool-set. For more information see [C8Y Command Line Tool (CLI)](/web/upgrade/#c8y-cli).
+{{< /c8y-admon-info >}}  
+
+
 ### Next steps
-If you just want to get started, we recommend to read the [next chapter](/docs/web/gettingstarted/) which explains how you can setup your first Web SDK based Angular application. If you already have setup an application and want to understand more details of the concept, we recommend to jump to our [Codex developer](https://styleguide.cumulocity.com) documentation which explains the concepts, list all the components and defines guidlines for the styling.
+If you just want to get started, we recommend to read the [next chapter](/web/gettingstarted/) which explains how you can setup your first Web SDK based Angular application. If you already have setup an application and want to understand more details of the concept, we recommend to jump to our [Codex developer](https://styleguide.cumulocity.com) documentation which explains the concepts, list all the components and defines guidlines for the styling.

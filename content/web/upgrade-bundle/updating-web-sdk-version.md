@@ -6,7 +6,7 @@ weight: 0
 
 From version 1019.x.x onwards the Web SDK is following semantic versioning. Meaning that every major version bump (for example from 1019 to 1020) may contain breaking changes, but every minor or fix bump should not break your application. So it is save to update to any minor or fix version, but if you update to any major version, you might need to migrate things.
  
-Easiest way for migration atm is still comparing the diff with git:
+Easiest way for migration at the moment is still comparing the diff with git:
 
 ### Preparation {#preparation}
 

@@ -7,7 +7,7 @@ weight: 10
 The easiest option to customize your application are application options. They apply to any Web SDK application and
 use inheritance which allows you to apply the same configurations to all your applications. One example
 configuration is `hideNavigator`, which is a simple flag that configures if the navigator must be
-shown on application start or not. You can configure this in 4 ways:
+shown on application start or not. You can configure this in 3 ways:
 
 1. as a URL parameter
 2. as a dynamic public option

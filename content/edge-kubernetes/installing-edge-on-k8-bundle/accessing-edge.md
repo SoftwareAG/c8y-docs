@@ -88,7 +88,7 @@ The login screen appears.
 Change the password on first login.
 
 {{< c8y-admon-important >}}
-The Email address to change the password on the first login is the one you specified in the Edge CR (or myown@iot.com if you followed the Quickstart installation steps).
+The email address to change the password on the first login is the one you specified in the {{< product-c8y-iot >}} Edge CR (or myown@iot.com if you followed the Quickstart installation steps).
 Alternatively you can also retrieve the Email address by running the below command:
 
 `kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`

@@ -6,12 +6,12 @@ layout: redirect
 
 Before you start the installation, ensure that you have fulfilled the [prerequisites](/edge-kubernetes/installing-edge-on-k8/#prerequisites) and configured the storage as described in [Configuring storage](/edge-kubernetes/installing-edge-on-k8/#configuring-storage).
 
-Download and edit the Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
+Download and edit the {{< product-c8y-iot >}} Edge CR ([c8yedge.yaml](/files/edge-k8s/c8yedge.yaml)), before applying it to your Kubernetes cluster by running the command below:
 
 ```bash
 kubectl apply -f c8yedge.yaml
 ```
-For more information about the structure and configuration options available in the Edge CR, see [Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/).
+For more information about the structure and configuration options available in the {{< product-c8y-iot >}} Edge CR, see [{{< product-c8y-iot >}} Edge Custom Resource](/edge-kubernetes/edge-custom-resource-definition/).
 
 ### Verifying the Edge installation {#verifying-the-edge-installation}
 
@@ -23,16 +23,16 @@ kubectl describe edge c8yedge -n c8yedge
 This command allows you to view the details about the installation of *c8yedge* in the *c8yedge* namespace.
 
 {{< c8y-admon-info >}}
-Substitute the Edge name and namespace name, which is currently *c8yedge* in the command, with the specific Edge name and namespace name you have specified in your Edge CR.
+Substitute the {{< product-c8y-iot >}} Edge name and namespace name, which is currently *c8yedge* in the command, with the specific {{< product-c8y-iot >}} Edge name and namespace name you have specified in your {{< product-c8y-iot >}} Edge CR.
 {{< /c8y-admon-info >}}
 
-You can also follow the events raised for the Edge CR by running the command below:
+You can also follow the events raised for the {{< product-c8y-iot >}} Edge CR by running the command below:
 
 ```shell
 kubectl get events -n c8yedge --field-selector involvedObject.name=c8yedge --watch
 ```
 
-The **Events** section in the output of the `describe edge` command specifies the installation progress and the **Status** section displays the generation of the Edge CR which is being installed and its current state. Once the installation succeeds, the **Status** section also displays the generation of the CR which is deployed, {{< product-c8y-iot >}} Edge version, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Edge Operator generated TLS certificates.
+The **Events** section in the output of the `describe edge` command specifies the installation progress and the **Status** section displays the generation of the {{< product-c8y-iot >}} Edge CR which is being installed and its current state. Once the installation succeeds, the **Status** section also displays the generation of the CR which is deployed, {{< product-c8y-iot >}} Edge version, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the {{< product-c8y-iot >}} Edge Operator generated TLS certificates.
 
 A sample status output:
 ```yaml
@@ -89,4 +89,4 @@ Events:
 …………
   Normal   Ready             1m     cumulocityiotedge  installed successfully
 ```
-Before you continue, wait for the Edge CR status to reach the **Ready** state.
+Before you continue, wait for the {{< product-c8y-iot >}} Edge CR status to reach the **Ready** state.

@@ -8,13 +8,13 @@ layout: redirect
 
 Kubernetes offers an efficient platform for deploying, scaling, and managing containerized applications using a centralized control plane. Given this, containers orchestrated by Kubernetes have become standard in contemporary IT, fitting a broad spectrum of deployment contexts. {{< product-c8y-iot >}} Edge on Kubernetes capitalizes on these orchestration and management benefits, streamlining the operations of the {{< product-c8y-iot >}} Edge servers with other containerized applications in your deployment landscape.
 
-{{< product-c8y-iot >}} Edge on Kubernetes captures all the highlighted advantages of a cloud-native deployment strategy by using a Kubernetes Operator, known as the Edge Operator. This Edge Operator serves as the central controller and facilitates the deployment and management of the {{< product-c8y-iot >}} Edge on a single-node Kubernetes cluster. This equips you with:
+{{< product-c8y-iot >}} Edge on Kubernetes captures all the highlighted advantages of a cloud-native deployment strategy by using a Kubernetes Operator, known as the {{< product-c8y-iot >}} Edge Operator. This {{< product-c8y-iot >}} Edge Operator serves as the central controller and facilitates the deployment and management of the {{< product-c8y-iot >}} Edge on a single-node Kubernetes cluster. This equips you with:
 
-- **Unified Management**: Manage Edge through an Edge Custom Resource (CR) in accordance with standard Kubernetes resources. This approach provides a unified and familiar interface for administrators and operators.
-- **Desired State Management**: Specify the desired state of Edge through Edge CR. The Edge Operator then ensures that the actual state matches the desired state, simplifying operations and reducing the need for manual intervention.
+- **Unified Management**: Manage Edge through an {{< product-c8y-iot >}} Edge Custom Resource (CR) in accordance with standard Kubernetes resources. This approach provides a unified and familiar interface for administrators and operators.
+- **Desired State Management**: Specify the desired state of Edge through {{< product-c8y-iot >}} Edge CR. The {{< product-c8y-iot >}} Edge Operator then ensures that the actual state matches the desired state, simplifying operations and reducing the need for manual intervention.
 - **GitOps Friendly**: The declarative nature of CR aligns seamlessly with GitOps workflows. The entire Edge deployment state, including configurations, can be stored and versioned in Git, promoting transparency and traceability.
-- **Automation**: Edge CR empowers you to automate various operational aspects of Edge like scaling, upgrades, and configuration.
-- **Distribution**: Distribute and replicate the Edge deployments using Edge CR. Simplify the deployment and accelerate the adoption of {{< product-c8y-iot >}} platform across diverse environments.
+- **Automation**: {{< product-c8y-iot >}} Edge CR empowers you to automate various operational aspects of Edge like scaling, upgrades, and configuration.
+- **Distribution**: Distribute and replicate the Edge deployments using {{< product-c8y-iot >}} Edge CR. Simplify the deployment and accelerate the adoption of {{< product-c8y-iot >}} platform across diverse environments.
 
 Although the features remain on par with the {{< product-c8y-iot >}} Edge appliance VM, the deployment strategy undergoes a change, as illustrated in the diagram below:
 

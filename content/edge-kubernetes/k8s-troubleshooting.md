@@ -6,9 +6,9 @@ section:
   - edge_server
 ---
 
-### Edge CR status ValidationLoopBackOff
+### {{< product-c8y-iot >}} Edge CR status ValidationLoopBackOff
 
-After deploying or updating {{< product-c8y-iot >}} Edge, if the Edge CR status shows as “ValidationLoopBackOff” as shown below:
+After deploying or updating {{< product-c8y-iot >}} Edge, if the {{< product-c8y-iot >}} Edge CR status shows as “ValidationLoopBackOff” as shown below:
 
 Output of `kubectl get edge c8yedge -n c8yedge`:
 
@@ -16,7 +16,7 @@ Output of `kubectl get edge c8yedge -n c8yedge`:
 NAME        DOMAIN NAME     VERSION     STATUS
 c8yedge     myown.iot.com   1017.0.0    ValidationLoopBackOff
 ```
-Describe the Edge CR (c8yedge): `kubectl describe edge c8yedge -n c8yedge`.
+Describe the {{< product-c8y-iot >}} Edge CR (c8yedge): `kubectl describe edge c8yedge -n c8yedge`.
 
 In the events section, you will find the reasons for the validation failure. For example:
 
@@ -37,16 +37,16 @@ Events:
  Normal    ValidationLoopBackoff    8m37s   cumulocityiotedge  invalid [spec.licenseKey] value [empty]
 ```
 
-### Edge CR status InstallLoopBackOff or UpdateLoopBackOff
+### {{< product-c8y-iot >}} Edge CR status InstallLoopBackOff or UpdateLoopBackOff
 
-After deploying or updating {{< product-c8y-iot >}} Edge, if the Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
+After deploying or updating {{< product-c8y-iot >}} Edge, if the {{< product-c8y-iot >}} Edge CR status is `InstallationLoopBackOff` or `UpdateLoopBackOff`, as part of the output of `kubectl get edge c8yedge -n c8yedge`:
 
 ```shell
 NAME         DOMAIN NAME     VERSION     STATUS     
 c8yedge      myown.iot.com   1017.0.0    InstallLoopBackOff
 ```
 
-Describe the Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
+Describe the {{< product-c8y-iot >}} Edge CR (cumulocity-iot-edge) with the command `kubectl describe edge c8yedge -n c8yedge`.
 
 In the events section, you will find the reasons for the install or update failure. For example:
 
@@ -71,9 +71,9 @@ Events:
  Normal  InstallLoopBackOff   1m00s  cumulocityiotedge  waiting for mongo server to be ready
 ```
 
-Check the logs of the Edge Operator, MongoDB and core pods to get more insights.
+Check the logs of the {{< product-c8y-iot >}} Edge Operator, MongoDB and core pods to get more insights.
 
-The Edge Operator logs:
+The {{< product-c8y-iot >}} Edge Operator logs:
 
 ```shell
 kubectl logs -n c8yedge deployment.apps/c8yedge-operator-controller-manager -c manager
@@ -107,7 +107,7 @@ For more information, see [Assigning an external IP](/edge-kubernetes/installing
 
 {{< product-c8y-iot >}} Edge is unable to register itself as a device in your cloud tenant.
 
-Describe the Edge CR `kubectl describe edge c8yedge -n c8yedge`
+Describe the {{< product-c8y-iot >}} Edge CR `kubectl describe edge c8yedge -n c8yedge`
 
 In the events section, you will find an event with a reason. For example:
 

@@ -21,4 +21,4 @@ section:
 
 6. Click **Save**.
 
-Next steps: Note down the Edge device ID and [register your Edge appliance](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in the {{< product-c8y-iot >}} cloud tenant.
+Next steps: Note down the {{< product-c8y-iot >}} Edge device ID and [register your {{< product-c8y-iot >}} Edge appliance](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in the {{< product-c8y-iot >}} cloud tenant.

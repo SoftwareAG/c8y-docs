@@ -14,7 +14,7 @@ For more information about Device simulator, see [Working with simulators](/devi
 Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM.
 {{< /c8y-admon-info >}}
 
-If you want to use the microservice hosting feature, ensure that you do not use these IP ranges in your local network where the Edge virtual machines are configured. When you enable the microservice hosting feature, the Kubernetes system reserves these IP ranges on the Edge instances.
+If you want to use the microservice hosting feature, ensure that you do not use these IP ranges in your local network where the {{< product-c8y-iot >}} Edge virtual machines are configured. When you enable the microservice hosting feature, the Kubernetes system reserves these IP ranges on the {{< product-c8y-iot >}} Edge instances.
 - 10.96.0.0/12
 
 Enabling the microservice hosting feature takes about 10 to 15 minutes to complete.
@@ -25,16 +25,16 @@ To enable or disable the microservice hosting feature, you must have the "Tenant
 
 ### Enabling or disabling the microservice hosting feature using the UI {#enabling-or-disabling-the-microservice-hosting-feature-using-the-ui}
 
-1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
+1. Log in to the {{< management-tenant >}} using the {{< product-c8y-iot >}} Edge administrator credentials created during the installation.
 
-	- Username: management/<*Edge admin username*>
+	- Username: management/<*{{< product-c8y-iot >}} Edge admin username*>
 	- Password: password provided during the installation
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 3. Click **Edge** > **Microservices** in the navigator.
 4. Use the toggle button to enable the microservice hosting feature.
 
 {{< c8y-admon-important >}}
-If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
+If you have enabled the remote-connectivity and also the microservice hosting feature, disabling the microservice hosting feature, reconfiguring the network or updating the {{< product-c8y-iot >}} Edge appliance might result in an alarm in the remote tenant for the Kubernetes network interfaces that are removed or altered.
 {{< /c8y-admon-important >}}
 
 To deploy a microservice, in the Administration application, navigate to **Ecosystem** > **Microservices**, and click **Add microservice**.
@@ -59,7 +59,7 @@ For more information about developing and hosting a microservice, see [Microserv
 
 A microservice specifies an API version in the microservice manifest. Depending on this API version, the microservice runs with all or only a restricted set of Linux kernel capabilities. More precisely, all capabilities are granted to microservices with API version 1 whereas only the capability `CAP_NET_BIND_SERVICE` is granted to microservices with API version 2. For more information, see [Microservice migration to API Version 2](/microservice-sdk/general-aspects/#migration).
 
-By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the Edge tenant.
+By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the {{< product-c8y-iot >}} Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the {{< product-c8y-iot >}} Edge tenant.
 
 {{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on {{< product-c8y-iot >}} Edge version 10.15, you must subscribe the Edge tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
 

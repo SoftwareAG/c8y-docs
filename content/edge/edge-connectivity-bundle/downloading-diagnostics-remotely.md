@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-The {{< product-c8y-iot >}} tenant allows you to download the diagnostics report remotely from your tenant account after you have registered your Edge appliance in the tenant account.
+The {{< product-c8y-iot >}} tenant allows you to download the diagnostics report remotely from your tenant account after you have registered your {{< product-c8y-iot >}} Edge appliance in the tenant account.
 
 To download the diagnostics report from your tenant account:
 
@@ -16,7 +16,7 @@ To download the diagnostics report from your tenant account:
 
 3. Click **Devices** > **All devices** in the navigator.
 
-4. Select the Edge appliance for which you want to download the diagnostics report.
+4. Select the {{< product-c8y-iot >}} Edge appliance for which you want to download the diagnostics report.
 
 5. Click **Diagnostics** > **Request diagnostic file**.
 

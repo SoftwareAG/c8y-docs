@@ -8,7 +8,7 @@ section:
 
 To enhance the performance and resource allocation for Karaf, you can change the environment variables for Karaf (such as `JAVA_MAX_MEM` and the microservice proxy variables like `MICROSERVICE_RUNTIME_PROXY_HTTP_HOST`, `MICROSERVICE_RUNTIME_PROXY_HTTP_PORT`). To do so, you must update the file */usr/share/cumulocity-core-karaf/bin/setenv.*:
 
-1. Log in to the Edge appliance.
+1. Log in to the {{< product-c8y-iot >}} Edge appliance.
 
 3. Open the file */usr/share/cumulocity-core-karaf/bin/setenv*.
 
@@ -30,17 +30,17 @@ and
 
 {{< c8y-admon-important >}}
 
-Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+Since the changes to this file are overwritten when the {{< product-c8y-iot >}} Edge appliance is updated, you must reapply the changes to this file after the update process.
 
 {{< /c8y-admon-important >}}
 
 ### Increasing the system performance {#increasing-the-system-performance}
 
-If the system performance is slow, you must increase the memory. Stop the Edge appliance and increase the memory of the Edge appliance using the hypervisor.
+If the system performance is slow, you must increase the memory. Stop the {{< product-c8y-iot >}} Edge appliance and increase the memory of the {{< product-c8y-iot >}} Edge appliance using the hypervisor.
 
 <img src="/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
 
-Increasing the memory of the Edge appliance must be followed by increasing the memory of the JVM. To increase the memory of the JVM, edit the value of the `JAVA_MAX_MEM` parameter as desired by following the steps described above. The default value of this parameter is 2048 MB.
+Increasing the memory of the {{< product-c8y-iot >}} Edge appliance must be followed by increasing the memory of the JVM. To increase the memory of the JVM, edit the value of the `JAVA_MAX_MEM` parameter as desired by following the steps described above. The default value of this parameter is 2048 MB.
 
 ### Changing log level for Karaf {#changing-log-level-for-karaf}
 

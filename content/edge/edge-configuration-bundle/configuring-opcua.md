@@ -21,7 +21,7 @@ For more information about CPU limits, see Docker documentation.
 
 To change the memory and CPU limit:
 
-1. Log in to the Edge appliance.
+1. Log in to the {{< product-c8y-iot >}} Edge appliance.
 2. Open the files:
    - /etc/init.d/opcua-device-gateway
    - /etc/init.d/opcua-mgmt-service
@@ -32,6 +32,6 @@ To change the memory and CPU limit:
 
 {{< c8y-admon-important >}}
 
-Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+Since the changes to this file are overwritten when the {{< product-c8y-iot >}} Edge appliance is updated, you must reapply the changes to this file after the update process.
 
 {{< /c8y-admon-important >}}

@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-The {{< product-c8y-iot >}} tenant allows you to remotely restart your Edge appliance. To do so:
+The {{< product-c8y-iot >}} tenant allows you to remotely restart your {{< product-c8y-iot >}} Edge appliance. To do so:
 
 1. Log in to your {{< product-c8y-iot >}} tenant.
 
@@ -14,7 +14,7 @@ The {{< product-c8y-iot >}} tenant allows you to remotely restart your Edge appl
 
 3. Click **Devices** > **All devices** in the navigator.
 
-4. Select the Edge appliance that you want to restart.
+4. Select the {{< product-c8y-iot >}} Edge appliance that you want to restart.
 
 5. Click **Restart device**.
 

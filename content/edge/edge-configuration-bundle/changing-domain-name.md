@@ -6,18 +6,18 @@ section:
   - edge_server
 ---
 
-A key feature of {{< product-c8y-iot >}} Edge is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the Edge appliance to serve you using a domain name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}} Edge. In addition, you can create subtenants
+A key feature of {{< product-c8y-iot >}} Edge is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the {{< product-c8y-iot >}} Edge appliance to serve you using a domain name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}} Edge. In addition, you can create subtenants
 using your domain. These will use *\<subtenantName\>.iot.mycompany.com* as their host names.
 
 {{< c8y-admon-important >}}
-Before you change the domain name, see [Domain name validation for Edge license key generation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).
+Before you change the domain name, see [Domain name validation for {{< product-c8y-iot >}} Edge license key generation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).
 {{< /c8y-admon-important >}}
 
 ### Changing the domain name using the GUI {#changing-the-domain-name-using-the-gui}
 
-1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
+1. Log in to the {{< management-tenant >}} using the {{< product-c8y-iot >}} Edge administrator credentials created during the installation.
 
-	- Username: management/<*Edge admin username*>
+	- Username: management/<*{{< product-c8y-iot >}} Edge admin username*>
 	- Password: password provided during the installation
 
 2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.

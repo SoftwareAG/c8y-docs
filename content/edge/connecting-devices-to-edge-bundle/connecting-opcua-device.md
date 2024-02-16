@@ -5,10 +5,10 @@ layout: redirect
 ---
 
 {{< c8y-admon-important >}}
-While configuring the OPC UA server, ensure that the server is reachable from the Edge appliance. If you are using a hostname, configure the DNS accordingly.
+While configuring the OPC UA server, ensure that the server is reachable from the {{< product-c8y-iot >}} Edge appliance. If you are using a hostname, configure the DNS accordingly.
 {{< /c8y-admon-important >}}
 
-To connect an OPC UA device in the Edge appliance, follow the steps below.
+To connect an OPC UA device in the {{< product-c8y-iot >}} Edge appliance, follow the steps below.
 
 ### Preparation {#preparation}
 

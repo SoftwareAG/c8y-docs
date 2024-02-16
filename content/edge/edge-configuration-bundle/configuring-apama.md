@@ -21,7 +21,7 @@ For more information about CPU limits, see Docker documentation.
 
 To change the memory and CPU limit:
 
-1. Log in to the Edge appliance.
+1. Log in to the {{< product-c8y-iot >}} Edge appliance.
 2. Open the file "/etc/init.d/apama".
 3. Edit the parameter `CTRL_DOCKER_OPTIONS` to the required values.
 4. Restart the Apama service:
@@ -29,6 +29,6 @@ To change the memory and CPU limit:
 
 {{< c8y-admon-important >}}
 
-Since the changes to this file are overwritten when the Edge appliance is updated, you must reapply the changes to this file after the update process.
+Since the changes to this file are overwritten when the {{< product-c8y-iot >}} Edge appliance is updated, you must reapply the changes to this file after the update process.
 
 {{< /c8y-admon-important >}}

@@ -93,7 +93,7 @@ Alternatively, run the following command to retrieve the email address:
 
 `kubectl get edge c8yedge -n c8yedge -o jsonpath='{.spec.email}' && echo`
 
-_Substitute the Edge name and namespace name, which is currently **c8yedge** in the command, with the specific Edge name and namespace name you have specified in your Edge CR._
+Substitute the {{< product-c8y-iot >}} Edge name and namespace name, which is currently **c8yedge** in the command, with the specific {{< product-c8y-iot >}} Edge name and namespace name you have specified in your {{< product-c8y-iot >}} Edge CR.
 {{< /c8y-admon-important >}}
 
 ![Reset password](/images/edge-k8s/edge-k8s-reset-password.png)

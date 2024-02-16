@@ -11,7 +11,7 @@ metadata:
   name: c8yedge-db-pv
 spec:
   capacity:
-    storage: 75G                        # Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Edge CR
+    storage: 75G                        # Modify the capacity to match the value you plan to specify in 'spec.mongodb.resources.requests.storage' field of the Cumulocity IoT Edge CR
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain

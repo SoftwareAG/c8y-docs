@@ -15,19 +15,19 @@
 #
 # Environment variables:
 #   - C8YEDGE_OPERATOR_VERSION
-#	  Version of C8y Edge Operator to install. Will install latest version if not specificed.
+#	  Version of Cumulocity IoT Edge Operator to install. Will install latest version if not specificed.
 #
 #	- C8YEDGE_OPERATOR_NAMESPACE
 #	  Namespace in which to install. Will install in 'c8yedge' namespace if not specified.
 #
 #	- C8YEDGE_REPO_URI
-#	  Edge Operator repository URI. Points to production repository 'registry.c8y.io' if not specified.
+#	  Cumulocity IoT Edge Operator repository URI. Points to production repository 'registry.c8y.io' if not specified.
 #
 #	- C8YEDGE_REPO_USERNAME
-#	  Username to access Edge Operator repository. Prompted if not specified.
+#	  Username to access Cumulocity IoT Edge Operator repository. Prompted if not specified.
 #
 #	- C8YEDGE_REPO_PASSWORD
-#	  Password to access Edge Operator repository. Prompted if not specified.
+#	  Password to access Cumulocity IoT Edge Operator repository. Prompted if not specified.
 #
 
 display_usage() {
@@ -45,19 +45,19 @@ display_usage() {
 	echo ""
 	echo "Environment variables:"
 	echo "  - C8YEDGE_OPERATOR_VERSION"
-	echo "    Version of C8y Edge Operator to install. Will install latest version if not specificed."
+	echo "    Version of Cumulocity IoT Edge Operator to install. Will install latest version if not specificed."
 	echo ""
 	echo "  - C8YEDGE_OPERATOR_NAMESPACE"
 	echo "    Namespace in which to install. Will install in 'c8yedge' namespace if not specified."
 	echo ""
 	echo "  - C8YEDGE_REPO_URI"
-	echo "    Edge Operator repository URI. Points to production repository 'registry.c8y.io' if not specified."
+	echo "    Cumulocity IoT Edge Operator repository URI. Points to production repository 'registry.c8y.io' if not specified."
 	echo ""
 	echo "  - C8YEDGE_REPO_USERNAME"
-	echo "    Username to access Edge Operator repository. Prompted if not specified."
+	echo "    Username to access Cumulocity IoT Edge Operator repository. Prompted if not specified."
 	echo ""
 	echo "  - C8YEDGE_REPO_PASSWORD"
-	echo "    Password to access Edge Operator repository. Prompted if not specified."
+	echo "    Password to access Cumulocity IoT Edge Operator repository. Prompted if not specified."
 	echo ""
 	exit 1
 }
@@ -89,11 +89,11 @@ if [ -z "$C8YEDGE_REPO_URI" ]; then
 fi
 
 if [ -z "$C8YEDGE_REPO_USERNAME" ]; then
-	read -p "Enter username to access Edge Operator repository: " C8YEDGE_REPO_USERNAME
+	read -p "Enter username to access Cumulocity IoT Edge Operator repository: " C8YEDGE_REPO_USERNAME
 fi
 
 if [ -z "$C8YEDGE_REPO_PASSWORD" ]; then
-	read -s -p "Enter password to access Edge Operator repository: " C8YEDGE_REPO_PASSWORD
+	read -s -p "Enter password to access Cumulocity IoT Edge Operator repository: " C8YEDGE_REPO_PASSWORD
 fi
 
 
@@ -103,11 +103,11 @@ set -e
 
 echo -e "\n\nInstalling Cumulocity IoT Edge Operator, version ${C8YEDGE_OPERATOR_VERSION} from ${C8YEDGE_REPO_URI}\n\n"
 
-# Add Edge Operator chart repository to Helm
+# Add Cumulocity IoT Edge Operator chart repository to Helm
 helm repo add --username "${C8YEDGE_REPO_USERNAME}" --password "${C8YEDGE_REPO_PASSWORD}" --force-update c8yedge-repo "https://${C8YEDGE_REPO_URI}/chartrepo/edge"
 helm repo update
 
-# Install or upgrade Edge Operator 
+# Install or upgrade Cumulocity IoT Edge Operator 
 helm upgrade --install c8yedge-operator c8yedge-repo/cumulocity-iot-edge-operator \
     --namespace "${C8YEDGE_OPERATOR_NAMESPACE}" \
     --create-namespace \

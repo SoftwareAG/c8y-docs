@@ -1,9 +1,9 @@
 ########################################################################################################################
-#                                         Defines C8y Edge Custom Resource                                             #
+#                                         Defines Cumulocity IoT Edge Custom Resource                                  #
 ########################################################################################################################
 ---
 #
-# This Custom Resource deploys C8y Edge version 1017.0.0 named 'c8yedge' 
+# This Custom Resource deploys Cumulocity IoT Edge version 1017.0.0 named 'c8yedge' 
 # accessible at myown.iot.com domain with self-signed certificates.
 #
 

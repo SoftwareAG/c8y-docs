@@ -6,7 +6,7 @@ layout: bundle
 
 This section describes how to implement a device agent at a gateway.
 
-![Image 1](/images/cra/cra-api-image1.png)
+![Implementing a device agent](/images/cra/cra-api-image1.png)
 
 The device agent is responsible for creating the device part of the tunnel between an unencrypted TCP/IP connection at private network and the secure device WebSocket endpoint.
 
@@ -50,7 +50,7 @@ Example of an `c8y_RemoteAccessConnect` operation:
 
 For each `c8y_RemoteAccessConnect` operation received the device agent connects to the provided hostname and port using TCP. Using the provided ConnectionKey the agent also securely connects to the WebSocket endpoint on server side. If all these operations succeeded the device reports the operation as SUCCESSFUL and starts forwarding binary packets between the TCP connection and the WebSocket in both directions.
 
-![Image 2](/images/cra/cra-api-image2.png)
+![Connecting to new endpoint](/images/cra/cra-api-image2.png)
 
 The following events are triggered when the device agent receives a `c8y_RemoteAccessConnect` operation.
 

@@ -132,7 +132,7 @@ Follow the instructions below to customize the new dashboard of the device you r
 
 You have successfully customized your first dashboard.
 
-![Dashboard edited](/images/users-guide/getting-started/getting-started-customize-dashboard-result.png)
+![Dashboard editor result](/images/users-guide/getting-started/getting-started-customize-dashboard-result.png)
 
 See [Working with dashboards](/cockpit/working-with-dashboards/) for more details on how to create, share, edit, copy, and delete dashboards.
 
@@ -153,11 +153,11 @@ To create a report click **Reports** in the **Navigator** on the left side and f
 3. You can display the report in the navigator with the option **Show in navigator** but we will leave that unchecked in this tutorial.
 4. In the **Layout** section, change the theme to "Branded" and set the header style to "Border". In the **Preview** section at the right, a preview of the selected layout settings is immediately displayed to visualize your selections.
 
-![Reports](/images/users-guide/getting-started/getting-started-add-new-report.png)
+![Add new report](/images/users-guide/getting-started/getting-started-add-new-report.png)
 
 5. Click **Save** to create the report and add it to the report list.
 
-![Reports](/images/users-guide/getting-started/getting-started-report-created.png)
+![Report created](/images/users-guide/getting-started/getting-started-report-created.png)
 
 You have successfully created a report. See [Working with reports](/cockpit/working-with-reports/) for more details on how to add, edit and delete reports.
 

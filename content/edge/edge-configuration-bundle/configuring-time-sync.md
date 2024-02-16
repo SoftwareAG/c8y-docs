@@ -18,7 +18,7 @@ Once the time synchronization is enabled, you can specify the NTP servers and th
 
    - Username: management/<*Edge admin username*>
    - Password: password provided during the installation
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 3. Click **Edge** > **Time synchronization** in the navigator.
 4. Use the toggle button to enable the time synchronization.
 5. Click **Edit** to specify the NTP servers and the interval to trigger the time synchronization.

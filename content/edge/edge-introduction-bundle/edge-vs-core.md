@@ -21,7 +21,7 @@ The following differences apply:
 |Horizontal scalability|No|Yes, nearly unlimited scalability
 |Upgrades with no downtime|No|Yes
 |Root access|Yes|Yes, if customer is hosting
-|Installation|Offline, with VM image|Online, with chef & RPM
+|Installation|Offline, with VM image|Online
 |Cloud Field Bus|Included|Optional
 |Streaming Analytics|Included|Optional
 |Data Broker|Included|Optional

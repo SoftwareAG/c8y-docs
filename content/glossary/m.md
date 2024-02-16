@@ -18,7 +18,7 @@ In {{< product-c8y-iot >}}, all [assets](/glossary/a/#asset) are represented as 
 Hierarchical structures of managed objects allow for the implementation of complex structures like a factory with many machines which consist of devices and sensors which can report [events](/glossary/e/#event), [alarms](/glossary/a/#alarm), and [measurements](#measurement).
 
 
-### Management tenant {#management-tenant}
+### {{< management-tenant >}} {#management-tenant}
 
 A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
 

@@ -36,7 +36,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Button name|Name displayed on the button on the **Login** page
 |Provider name|Name of the provider
 |Audience|Expected aud parameter of JWT
-|Visible on Login page|Indicates whether the login option is enabled or not
+|Visible on Login screen|Indicates whether the login option is enabled or not
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 

@@ -7,7 +7,7 @@ section:
 ---
 
 
-### Enterprise tenant {#enterprise-tenant}
+### {{< enterprise-tenant >}} {#enterprise-tenant}
 
 A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
 

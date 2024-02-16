@@ -7,7 +7,7 @@ layout: redirect
 
 The following image shows the relevant aspects of devices and assets in the Internet of Things:
 
-![model](/images/concepts-guide/model.png)
+![Domain model](/images/concepts-guide/model.png)
 
 * The **inventory** stores all master data related to devices, their configuration and their connections. It also contains all related assets (like vehicles, machines, buildings) and their structure.
 

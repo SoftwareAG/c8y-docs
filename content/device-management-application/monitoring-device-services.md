@@ -7,10 +7,10 @@ section:
 ---
 
 {{< c8y-admon-related >}}
-* The [alarms API](https://cumulocity.com/api/core/#tag/Alarms) for REST API methods concerning alarms.
+* The [alarms API](https://{{< domain-c8y >}}/api/core/#tag/Alarms) for REST API methods concerning alarms.
 * [Device management > Device integration > Fragment library > Alarms](/device-integration/fragment-library/#alarms) for details on how to raise and clear alarms.
-* The [events API](https://cumulocity.com/api/core/#tag/Events) for REST API methods concerning events.
-* The [measurements API](https://cumulocity.com/api/core/#tag/Measurements) for REST API methods concerning measurements.
+* The [events API](https://{{< domain-c8y >}}/api/core/#tag/Events) for REST API methods concerning events.
+* The [measurements API](https://{{< domain-c8y >}}/api/core/#tag/Measurements) for REST API methods concerning measurements.
 * [Device management > Device integration > Fragment library > Measurements](/device-integration/fragment-library/#measurements) for details on measurements.
 {{< /c8y-admon-related >}}
 

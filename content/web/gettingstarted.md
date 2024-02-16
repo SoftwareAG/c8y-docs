@@ -40,7 +40,7 @@ After all packages are installed you can start the application by running:
 $ npm start
 ```
 
-If you point your browser to *http://localhost:9000/apps/myapp/* you will get a login screen which proxies to the tenant defined in the start script. If you cannot log in, it might be pointing to the wrong instance. To change the proxy to your tenant URL change the `start` script in the script section of the newly created *package.json*:
+If you point your browser to *http://localhost:9000/apps/myapp/* you will get a Login screen which proxies to the tenant defined in the start script. If you cannot log in, it might be pointing to the wrong instance. To change the proxy to your tenant URL change the `start` script in the script section of the newly created *package.json*:
 
 ```json
 {

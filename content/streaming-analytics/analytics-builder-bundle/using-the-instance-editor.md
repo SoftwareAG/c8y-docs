@@ -94,7 +94,7 @@ If you have a long list of instances, you can easily locate the instances that y
 
 You can also sort the columns of the instance editor table. To do so, click the arrows that are shown when you move the mouse to a column header. This sorts the instances according to the values in that column \(for example, alphabetically or by number\). Clicking again sorts the column in the opposite direction. Fields with required values in that column that have not yet been specified can thus be shown either at the very top or bottom of the column. You can also sort the instances alphabetically according to run mode and status, for example, to show the active instances at the top.
 
-Editing a value will not affect the display of rows in the instance editor table. If you want to reapply the search and sorting, you have to save and reload the instances.
+Editing a value will not affect the display of rows in the instance editor table. If you want to reapply the search and sorting, you must save and reload the instances.
 
 Adding a new instance will not affect the display of rows in the instance editor table. If you add a row after sorting, the row is always added at the bottom of the table, unless you reload the instances.
 
@@ -124,7 +124,7 @@ You can remove each instance that is currently listed in the instance editor. Wh
 
 ### Saving the instances {#saving-the-instances}
 
-You can save the instances even if there are still rows in which required information needs to be specified. This is helpful if you want to add that information at a later point in time.
+You can save the instances even if there are still rows in which required information must be specified. This is helpful if you want to add that information at a later point in time.
 
 {{< c8y-admon-info>}}
 When you activate an instance, all of your recent changes are automatically saved. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).

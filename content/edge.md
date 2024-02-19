@@ -12,4 +12,4 @@ section:
 weight: 10
 ---
 
-Find a detailed description of the usage of Cumulocity IoT Edge as a VM software appliance.
+Find a detailed description of the usage of {{< product-c8y-iot >}} Edge as a VM software appliance.

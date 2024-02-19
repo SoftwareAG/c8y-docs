@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title:  Corrected placement of marker if coordinate value is set to zero
+title: Handled grid configuration issues in the Assets page  
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-995
-version: 1019.1.2
+ticket: CTM-620
+version: 1019.0.0
 ---
-The marker is now shown at the center of the map when one or both of the values for latitude and longitude is "0" for the Location property.
+Fixed an issue where the Assets page goes blank for one user if data is deleted by another user due to grid configuration. 

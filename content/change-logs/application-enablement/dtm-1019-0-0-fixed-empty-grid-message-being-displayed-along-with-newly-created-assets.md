@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-842
 version: 1019.0.0
 ---
-Fixed the issue of an empty grid message being displayed along with newly created assets.
+Previously, upon creating a new asset, a message stating "No items to display" was displayed. This issue has been addressed, and the message will no longer be shown.

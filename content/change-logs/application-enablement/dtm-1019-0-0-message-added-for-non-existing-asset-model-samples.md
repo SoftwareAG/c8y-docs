@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Message added for non-existing asset model samples.
+title: Message added for non-existing asset model samples
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

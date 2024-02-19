@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-723
 version: 1019.1.1
 ---
-The message shown in pop up dialog windows are kept consistent across the entire application.
+The messages shown in pop up dialog windows are kept consistent across the entire application.

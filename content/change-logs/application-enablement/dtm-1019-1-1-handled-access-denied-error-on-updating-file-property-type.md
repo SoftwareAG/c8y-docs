@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-724
 version: 1019.1.1
 ---
-The 'Access Denied' error message is no longer displayed to the users attempting to update the file property type in the **Subassets** page.
+The "Access denied" error message is no longer displayed on attempting to update the file property type in the **Subassets** page.

@@ -188,7 +188,7 @@ There are several issues to avoid:
 
 
 #### How to bundle assets in a package {#how-to-bundle-assets-in-a-package}
-Bundling assets is not as easy as only copying them over. The path must be correctly reflected. E.g. if you import an image, the path to the image is something like:
+Bundling assets is not as easy as only copying them over. The path must be correctly reflected. For example, if you import an image, the path to the image is something like:
 `http://<<instance>>/apps/<<context-path>>@<<version>>/my-image.png`.
 You may not want to change the version on each deployment.
 Therefore we recommend you to let the bundler handle images.

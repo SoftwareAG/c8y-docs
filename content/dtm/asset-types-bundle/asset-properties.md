@@ -165,7 +165,7 @@ If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it
 {{< /c8y-admon-info>}}
 
 * **Default value**:
-Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the **Asset model**, you must enter a value during the asset creation.
+Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the asset model, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
 

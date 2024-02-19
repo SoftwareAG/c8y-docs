@@ -128,7 +128,7 @@ If you do not select any of the restrictions above, it is not applicable for the
 
 #### Default value {#default-value}
 
-Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the **Asset model**, you must enter a value during the asset creation.
+Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the asset model, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
 The default value must adhere to all validations provided beforehand. If you selected a property of the type "Text", you can set the **Min length**, **Max length** and/or **RegExp** and the default value must fulfill all set validations.

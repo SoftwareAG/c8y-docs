@@ -150,7 +150,7 @@ If selected, enter a number in the field **Minimum** on the right. When you crea
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be greater than or equal to the **Minimum** provided. By default, this box is not selected.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be greater than or equal to the value provided in the field **Minimum.** By default, this box is not selected.
 
 {{< /c8y-admon-info>}}
 

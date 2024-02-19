@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Handled error on updating Location property with empty value in Subassets
+title: Handled error on updating Location property with empty value
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Displaying null for empty Number values in Asset Property page
+title: Displaying null for empty number values in Asset property page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

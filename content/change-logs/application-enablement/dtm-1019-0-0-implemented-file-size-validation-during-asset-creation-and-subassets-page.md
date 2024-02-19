@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Handled access denied error on updating file property type in Subassets
+title: Implemented file size validation during asset creation and in the Subassets page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-724
-version: 1019.1.1
+ticket: CTM-353
+version: 1019.0.0
 ---
-Handled access denied error message when the users try to update the property type file in **Subassets** page.
+Users are now prevented from uploading files exceeding the specified size during asset creation and in the **Subassets** page.

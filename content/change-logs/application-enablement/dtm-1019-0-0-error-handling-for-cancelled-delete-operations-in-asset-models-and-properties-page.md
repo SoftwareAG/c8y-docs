@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Error handling for cancelled delete operations in Asset Models and Properties Page
+title: Error handling for cancelled delete operations in Asset models and Asset properties page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-694
 version: 1019.0.0
 ---
-Handled the unexpected error message when a user cancels the delete operation in the **Asset models** and **Asset properties** page.
+ Users can now cancel the delete operation on the **Asset models** and **Asset properties** page without encountering any error message.

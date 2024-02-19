@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Implemented file type validation in Assets page
+title: Exporting asset models with multiple properties   
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-742
+ticket: CTM-698
 version: 1019.0.0
 ---
- File type validation has been implemented to restrict users from uploading files other than the specified type during the asset creation.
+Users can now export asset models which have multiple asset properties.

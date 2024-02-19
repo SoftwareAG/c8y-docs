@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Rectified issues observed in Role-based access to DTM entities.
+title: Rectified issues observed in role-based access to DTM entities
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

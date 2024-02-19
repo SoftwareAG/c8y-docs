@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Users navigated to first page of Assets
+title: Overflowing text is hidden to fit the Model name field size
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-937
+ticket: CTM-650
 version: 1019.0.0
 ---
-Users are now always taken to the first page of the asset list when navigated to the **Assets** page.
+Lengthier asset model names are now truncated to fit the field size of the **Model name** in the asset model creation window. Hovering over the respective option shows the complete text.

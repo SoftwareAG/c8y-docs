@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Position of Actions column is fixed in Localization page
+title: Set limit for key length
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-925
-version: 1019.0.0
+ticket: CTM-646,CTM-673,CTM-658
+version: 1019.1.1
 ---
-The position of the **Actions** column in the translation grid of **Localization** page is now fixed and cannot be changed.
+The key for assets, properties and models is set to 254 characters maximum to ensure consistent behavior with other Cumulocity IoT applications.

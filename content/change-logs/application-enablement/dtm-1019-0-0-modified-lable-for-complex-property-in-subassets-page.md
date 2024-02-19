@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Modified label for complex property in Subassets page.
+title: Modified label for complex property in Subassets page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

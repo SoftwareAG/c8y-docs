@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Fixed the error when value for Latitude or Longitude is zero
+title: Fixed the error when value for latitude or longitude is zero
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

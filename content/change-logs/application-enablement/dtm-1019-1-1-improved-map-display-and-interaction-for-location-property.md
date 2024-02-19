@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title:  Improved map display and interaction for Location property in subassets.
+title:  Improved map display and interaction for Location property in subassets
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

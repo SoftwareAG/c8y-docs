@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Role-based access for setting default location for the Location property.
+title: Role-based access for setting default location for the Location property
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-836
 version: 1019.0.0
 ---
-Only users with edit access to Asset properties can set the default location values in the Location property through the 'Choose on map' button.
+Only users with edit access to asset properties can set the default location values in the Location property through the **Choose on map** button.

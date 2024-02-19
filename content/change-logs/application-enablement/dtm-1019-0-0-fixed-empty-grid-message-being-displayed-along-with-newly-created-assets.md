@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Fixed empty grid message being displayed along with newly created assets
+title: Fixed empty grid message in newly created assets
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

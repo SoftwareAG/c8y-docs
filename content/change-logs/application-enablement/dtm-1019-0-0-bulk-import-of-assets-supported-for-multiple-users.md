@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Bulk import of Assets supported for multiple users 
+title: Bulk import of assets supported for multiple users 
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-810
 version: 1019.0.0
 ---
-Concurrent users can now import assets in bulk.
+DTM now supports concurrent bulk asset imports by multiple users.

@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Implemented file size validation during Asset creation and Subassets page.
+title: Message added for non-existing asset model samples.
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-353
+ticket: CTM-744
 version: 1019.0.0
 ---
-Implemented file size validation for a file type property during asset creation and in the **Subassets** page.
+Users are now notified when searching for an asset model sample that does not exist.

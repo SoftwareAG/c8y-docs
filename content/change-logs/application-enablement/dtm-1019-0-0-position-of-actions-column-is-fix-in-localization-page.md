@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Improved error feedback during asset instance creation  
+title:  Position of Actions column is fix in Localization page
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-675
+ticket: CTM-925
 version: 1019.0.0
 ---
-When there are multiple asset instances, users are now navigated back to the step showing a blank value in the name field instead of navigating to the confirmation page.
+The position of the **Actions** column in the translation grid of the **Localization** page is now fix and cannot be changed.

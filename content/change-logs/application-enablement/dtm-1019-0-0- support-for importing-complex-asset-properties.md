@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Support for importing complex Asset Properties
+title: Support for importing complex asset properties
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

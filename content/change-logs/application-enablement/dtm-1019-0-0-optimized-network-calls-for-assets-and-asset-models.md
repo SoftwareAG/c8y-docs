@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: Optimized network calls for Assets and Asset models
+title:  Optimized network calls for assets and asset models
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4

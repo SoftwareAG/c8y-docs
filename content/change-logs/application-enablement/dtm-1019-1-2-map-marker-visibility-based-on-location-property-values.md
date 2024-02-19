@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-1023
 version: 1019.1.2
 ---
-Users are not shown the marker on the map if there are no values for latitude and longitude within the Location property in **Asset properties** page.
+Users are no longer shown the marker on the map if there are no values for latitude and longitude within the Location property in **Asset properties** page.

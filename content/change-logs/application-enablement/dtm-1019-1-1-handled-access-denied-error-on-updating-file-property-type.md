@@ -1,6 +1,6 @@
 ---
 date: 2023-12-14
-title: A limit on length of key
+title: Handled access denied error on updating file property type
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-646,CTM-673,CTM-658
+ticket: CTM-724
 version: 1019.1.1
 ---
-The key for asset, properties and models is set to 254 characters maximum to ensure consistent behavior with other Cumulocity IoT applications
+The 'Access Denied' error message is no longer displayed to the users attempting to update the file property type in the **Subassets** page.

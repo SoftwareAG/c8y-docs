@@ -349,7 +349,7 @@ The **Location** property enables you to assign location (latitude and longitude
 To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. Without values for latitude and longitude, the marker is hidden. To see the marker, click anywhere on the map. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
 
 {{<c8y-admon-info>}}
-If a property with the label "Location" already exists, the default location property will be created with the label "Asset Location" and with the key "c8y_Position".<br>
+If a property with the label "Location" already exists, the default Location property will be created with the label "Asset Location" and with the key "c8y_Position".<br>
 The valid range for the latitude is -90 to +90 and valid range for the longitude is -180 to +180. <br>
 The marker on the map is only visible when both values for latitude and longitude are provided.<br>
 The default values of both latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.

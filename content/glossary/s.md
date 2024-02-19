@@ -22,7 +22,7 @@ For details see [Getting started > Technical concepts > {{< product-c8y-iot >}}'
 For details see [Application enablement & solutions > Cockpit > Smart rules](/cockpit/smart-rules).
 
 
-### Standard tenant {#standard-tenant}
+### {{< standard-tenant >}} {#standard-tenant}
 
 A tenant type in the [{{< product-c8y-iot >}} tenant hierarchy](/glossary/t/#tenant-hierarchy).
 

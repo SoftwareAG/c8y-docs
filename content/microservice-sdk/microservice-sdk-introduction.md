@@ -17,4 +17,4 @@ For detailed information, see:
 
 * [General aspects](/microservice-sdk/general-aspects) and functionality of using microservices on top of {{< product-c8y-iot >}}
 * How to develop and deploy microservices using the SDK for [Java](/microservice-sdk/java)
-* How to use the [Cumulocity's REST interface](/microservice-sdk/rest) to develop microservices
+* How to use the [{{< company-c8y >}}'s REST interface](/microservice-sdk/rest) to develop microservices

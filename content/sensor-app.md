@@ -11,4 +11,4 @@ section:
   - getting_started
 ---
 
-The {{< product-c8y-iot >}} Sensor App is a free smartphone application able to collect measurements for example from your smartphone or nearby Bluetooth device sensors.
+The {{< sensor-app >}} is a free smartphone application able to collect measurements for example from your smartphone or nearby Bluetooth device sensors.

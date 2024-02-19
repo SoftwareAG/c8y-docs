@@ -120,7 +120,7 @@ Typically, you use Content Projection within a single route and Multi Provider w
 * `hookActionBar`: Enables to define local actions on a page.
 * `hookBreadcrumb`: Can be used to show breadcrumbs in the header bar.
 * `hookSearch`: Allows to define the search to be shown or not.
-* `hookComponent`: A hook to add dynamic components to the UI (e.g. widgets).
+* `hookComponent`: A hook to add dynamic components to the UI (for example, widgets).
 * `hookRoute`: A hook to add a new route.
 * `hookWizard`: A hook to add a entry into a existing wizard.
 * `hookStepper`: A hook to add a step into a existing stepper.

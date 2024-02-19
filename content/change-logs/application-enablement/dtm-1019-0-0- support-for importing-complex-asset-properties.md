@@ -14,4 +14,4 @@ build_artifact:
 ticket: CTM-695
 version: 1019.0.0
 ---
-Importing a complex asset property is now supported.
+Importing a complex asset property is now supported by the platform.

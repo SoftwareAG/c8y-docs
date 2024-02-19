@@ -146,7 +146,7 @@ The type **Number** contains the following fields for additional information:
 
 * **Minimum**:
 
-If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot be lower or less than the **Minimum** provided.
+If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
 
 {{< c8y-admon-info>}}
 

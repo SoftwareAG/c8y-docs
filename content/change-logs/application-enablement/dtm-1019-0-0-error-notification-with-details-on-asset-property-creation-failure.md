@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket:CTM-596
+ticket: CTM-596
 version: 1019.0.0
 ---
 Users are now notified of errors with detailed information on the cause of failures when creating asset properties.

@@ -135,7 +135,7 @@ Events:
 Possible reasons:
 * You didn’t add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant.
 For completing the registration process, sign into your cloud tenant and follow the steps described in [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) to add the Certificate Authority (CA) certificate to the trusted certificate list of your tenant. For more details, see [Device certificates](/device-integration/mqtt/#device-certificates).
-For more information see [Connecting Cumulocity IoT Edge to the cloud](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/).
+For more information see [Connecting {{< product-c8y-iot >}} Edge to the cloud](/edge-kubernetes/k8-edge-connecting-edge-to-cloud/).
 
 * The specified cloud tenant domain is not reachable or incorrect.
 

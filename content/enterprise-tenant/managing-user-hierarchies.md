@@ -74,7 +74,7 @@ Either open the user and click the delegate icon in the **Delegated by** field, 
 
 Remove the delegation in the **Delegate by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Undelegate**.
 
-If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Assigning inventory roles to users](/standard-tenant/managing-permissions/#to-assign-inventory-roles-to-users).
+If the delegated user must also manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Assigning inventory roles to users](/standard-tenant/managing-permissions/#to-assign-inventory-roles-to-users).
 
 {{< c8y-admon-info >}}
 Delegation works only inside user management and does not have any implication to other places.

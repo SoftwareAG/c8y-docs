@@ -113,7 +113,7 @@ mo.set(tariff);
 
 ### Accessing the identity service {#accessing-the-identity-service}
 
-A device typically has a technical identifier that an agent needs to know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of {{< product-c8y-iot >}}, agents can use the identity service. Again, to create the association, create an object of type `ExternalIDRepresentation` and send it to the platform.
+A device typically has a technical identifier that an agent must know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of {{< product-c8y-iot >}}, agents can use the identity service. Again, to create the association, create an object of type `ExternalIDRepresentation` and send it to the platform.
 
 The code snippet below shows how to register a REST URL for a device. It assumes that `mo` is the managed object from the above example and `deviceUrl` is a string with the REST URL of the device.
 
@@ -202,7 +202,7 @@ operation.set(relay);
 control.create(operation);
 ```
 
-Now, if you would like to query the pending operations from an agent, the following code would need to be executed:
+Now, if you want to query the pending operations from an agent, the following code must be executed:
 
 ```java
 OperationFilter operationFilter = new OperationFilter();
@@ -260,7 +260,7 @@ subscriber.disconnect();
 ### Subscribing to Notifications 2.0 {#subscribing-to-notifications-20}
 
 The Notifications 2.0 API can be accessed in a very similar manner as described above in [Accessing the inventory](#accessing-the-inventory).
-See [Notifications 2.0](https://cumulocity.com/api/core/#tag/Notification-2.0-API) for more details about the API.
+See [Notifications 2.0](https://{{< domain-c8y >}}/api/core/#tag/Notification-2.0-API) for more details about the API.
 
 The following snippet shows how users can create, query and delete notification subscriptions. It also shows how a token string can be obtained.
 

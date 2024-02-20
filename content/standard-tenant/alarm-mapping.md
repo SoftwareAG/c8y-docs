@@ -49,7 +49,7 @@ For each alarm mapping, the alarm severity, the alarm type and a description (op
 5. Click **Save** to save your settings.
 
 {{< c8y-admon-info >}}
-The alarm type provided as an alarm mapping is interpreted as alarm type prefix: &quot;&#60;type-prefix&#62;*&quot;. If you create, for example, an alarm mapping to address alarms of type &quot;crit-alarm&quot;, the mapping is effective for any type of alarm that starts with this value e.g. &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot;, or &quot;crit-alarm-xyz&quot;.
+The alarm type provided as an alarm mapping is interpreted as alarm type prefix: &quot;&#60;type-prefix&#62;*&quot;. If you create, for example, an alarm mapping to address alarms of type &quot;crit-alarm&quot;, the mapping is effective for any type of alarm that starts with this value, for example, &quot;crit-alarm-1&quot;, &quot;crit-alarm-2&quot;, or &quot;crit-alarm-xyz&quot;.
 {{< /c8y-admon-info >}}
 
 ### To edit an alarm mapping {#to-edit-an-alarm-mapping}

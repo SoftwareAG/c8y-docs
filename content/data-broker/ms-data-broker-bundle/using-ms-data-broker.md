@@ -18,7 +18,7 @@ For dedicated and self-hosted instances, the Messaging Service and microservice-
 Please [contact product support](/additional-resources/contacting-support/) to inquire about using the Messaging Service and microservice-based data broker capabilities in your {{< product-c8y-iot >}} environment.
 See the *Messaging Service - Installation & operations guide* for further technical details of the configuration required, but note that these tasks can only be performed by a {{< product-c8y-iot >}} platform operator, not by a normal user.
 
-In summary, to work with the microservice-based data broker, the following requirements have to be met:
+In summary, to work with the microservice-based data broker, the following requirements must be met:
   * The {{< product-c8y-iot >}} Messaging Service should be available on your {{< product-c8y-iot >}} platform.
   * Your tenant must be subscribed to the application “feature-broker”.
   * Your tenant must be subscribed to the microservice “databroker-agent-server”.

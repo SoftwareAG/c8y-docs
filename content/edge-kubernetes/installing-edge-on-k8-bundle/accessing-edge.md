@@ -39,7 +39,7 @@ When manually assigning the external IP, see the following Kubernetes API docume
 
 You can access {{< product-c8y-iot >}} Edge using a domain name in a web browser.
 
-### Accessing Cumulocity IoT Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
+### Accessing {{< product-c8y-iot >}} Edge using the domain name {#accessing-cumulocity-iot-edge-using-the-domain-name}
 
 Access {{< product-c8y-iot >}} Edge using the domain name configured as part of the installation. There are two ways of configuring the accessibility with the domain names:
 
@@ -74,13 +74,13 @@ Ping the &#60;domain_name> to verify it.
 
 If the ping is successful, the DNS resolution is working properly.
 
-#### To access Cumulocity IoT Edge {#to-access-cumulocity-iot-edge}
+#### To access {{< product-c8y-iot >}} Edge {#to-access-cumulocity-iot-edge}
 
 Enter one of the following URLs in the browser:
 * `https://<domain_name>`
 * `https://management.<domain_name>`
 
-The login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
+The Login screen appears. If this is your first login, log in with user "admin" and password "admin-pass" and change the password.
 
 {{< c8y-admon-important >}}
 After a successful deployment, you must access both the {{< management-tenant >}} and {{< product-c8y-iot >}}  Edge tenants and change the admin credentials.
@@ -113,7 +113,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter {{< product-c8y-iot >}} Edge. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly log out, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

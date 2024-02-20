@@ -41,7 +41,7 @@ The following software information is available:
 |Running processes|A list of running processes is prepared using the 'ps' command
 |Top result|Captures the output of top command. This report is very informative as it holds information of running processes at argument level and their respective resource consumption.
 
-### Cumulocity IoT information {#cumulocity-iot-information}
+### {{< product-c8y-iot >}} information {#cumulocity-iot-information}
 
 This section contains information on the running {{< product-c8y-iot >}} processes, health endpoint check result, {{< product-c8y-iot >}} logs, and so on.
 
@@ -87,7 +87,7 @@ Following are the supported command line arguments which can be used while invok
 
 * -hw or --hardware: Allows the script to collect only the hardware information
 * -sw or --software: Allows the script to collect only the software information
-* -c8y or --cumulocity: Allows the script to collect only the cumulocity information
+* -c8y or --cumulocity: Allows the script to collect only the {{< product-c8y >}} information
 * -h: Displays the help message
 
 ### Microservices log file locations {#microservices-log-file-locations}
@@ -131,7 +131,7 @@ Following are the available keys used in the configuration file:
 |smtp.password|SMTP password to be used by the utility while sending support email
 |components.for.log.backup|Components for which the log backup must be performed
 |components.for.configuration.backup|Components for which the configuration backup must be performed
-|report.directory|Report directory where the diagnostic reports have to be placed
+|report.directory|Report directory where the diagnostic reports must be placed
 |{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
 |containers.to.monitor|Containers for which log backup is required. The container names are separated by a comma. These log files are retrieved using `docker logs`.
 |services.to.monitor|Services for which log backup is required. The service names are separated by a comma. These log files are retrieved using `journalctl`.

@@ -394,35 +394,6 @@ If a hosted application is not deployed correctly, users may reactivate it.
 
 The selected application will be reactivated by removing the respective files from the application directory and unpacking the web application package again.
 
-### Packages
-
-Packages are combinations of plugins and blueprints which can be packed together into a single file and then be deployed to the platform. Thus, packages offer better shareability and reusability of UI features across different applications and allow to add UI features to applications without coding knowledge.
-
-Packages can contain two types of applications:
-
-- [**Plugins**](#application-plugins) can be used to extend existing applications without the need of re-building the application.
-- **Blueprints** are combinations of multiple UI functionalities which can be hosted by the platform and can be used to create a new application from scratch.
-
-Packages can be located on the **Packages** tab in the **Applications** page.
-
-<img src="/images/users-guide/Administration/admin-application-packages.png" alt="Packages view">
-
-To add a new package click **Add package** at the top right.
-
-By clicking on a package, you can see the package details such as **Package overview** which includes a description and images as well as some meta information which is taken from the *package.json*.
-
-Additionally, it is possible to view all available plugins within the selected package at the right. To install a plugin click **Install plugin** and select the desired application.  
-
-<img src="/images/users-guide/Administration/admin-application-packages-info.png" alt="Packages overview">
-
-In the **Versions** tab, you see all previously uploaded binaries related to the current package. The binaries displayed on this tab can be downloaded via the context menu next to each package version entry.
-
-<img src="/images/users-guide/Administration/admin-application-packages-versions.png" alt="Versions view">
-
-You can select or upload different versions. Versions indicate the state of the package. They can be used to verify whether a certain package is outdated and needs to be updated. By clicking on a version additional information is provided such as package contents, applications or plugins. Tags can be used to give versions meaningful names. The "latest" tag is used to indicate the default version which will be selected in case no tag is provided. The "latest" tag is set by default to the latest version whenever a version is uploaded without a given tag.
-
-To switch to a different version open the context menu for the desired version and click **Set as latest**. To delete a version click **Delete**.
-
 ### Features
 
 Features are applications which are built-in and not represented by an explicit artifact (like microservices or web applications).

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Breadcrumps added to all device tab
+title: Breadcrumps added to all device details tabs
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-2981
 version: 10.18.497.0
 ---
-On device details page, breadcrumbs have been added to every tab.
+In the device details, breadcrumbs have been added to every tab.

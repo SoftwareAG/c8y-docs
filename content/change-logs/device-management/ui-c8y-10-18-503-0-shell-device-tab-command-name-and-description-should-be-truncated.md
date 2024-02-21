@@ -1,5 +1,5 @@
 ---
-date: 2024-02-21
+date: 
 title: Shell device tab - command name and description should be truncated
 product_area: Device management & connectivity
 change_type:

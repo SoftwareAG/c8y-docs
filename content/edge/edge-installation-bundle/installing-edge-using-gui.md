@@ -1,6 +1,6 @@
 ---
 weight: 15
-title: Installing Edge using the UI
+title: Installing Cumulocity IoT Edge using the UI
 layout: bundle
 section:
   - edge_server
@@ -8,14 +8,14 @@ section:
 
 To install {{< product-c8y-iot >}} Edge using the user interface:
 
-1. Connect and start the Edge appliance in the hypervisor. Wait until the network configuration screen appears.
+1. Connect and start the {{< product-c8y-iot >}} Edge appliance in the hypervisor. Wait until the network configuration screen appears.
     <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
 
     {{< c8y-admon-info >}}
 The network configuration blue screen does not appear post installation. After the installation, you must use the Administration application or the REST API to configure the network.
     {{< /c8y-admon-info >}}
 
-2. Configure the network for your Edge appliance, see the sample screenshot.
+2. Configure the network for your {{< product-c8y-iot >}} Edge appliance, see the sample screenshot.
     <img src="/images/edge/edge-network-configurator-1.png" name="Network Configurator" style="width:75%;"/>
 
     {{< c8y-admon-important >}}
@@ -64,7 +64,7 @@ Do not use the root credentials to perform any task. The root credentials must b
 
 12. Click **Install**.
 
-During the installation, the certificates are updated in the Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears.
+During the installation, the certificates are updated in the {{< product-c8y-iot >}} Edge appliance. If these certificates are not accepted by your browser, the browser does not get the progress of the installation. In such case, you must refresh the browser and follow the browser instructions for more details. The installation takes some time to complete. After the installation is complete, the "{{< product-c8y-iot >}} Edge installation is now complete" message appears.
 
 {{< c8y-admon-info >}}
 If you still see the installation in progress, refresh the browser.

@@ -8,25 +8,25 @@ section:
 
 ### Setting up for VMware {#setting-up-for-vmware}
 
-To set up the Edge appliance in VMware Workstation Player, follow the steps below.
+To set up the {{< product-c8y-iot >}} Edge appliance in VMware Workstation Player, follow the steps below.
 
 {{< c8y-admon-info >}}
 The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
 {{< /c8y-admon-info >}}
 
-1. In VMware, navigate to **Player** > **File** > **Open** to import the Edge appliance.
+1. In VMware, navigate to **Player** > **File** > **Open** to import the {{< product-c8y-iot >}} Edge appliance.
 
-2. Navigate to the folder where the Edge appliance files are located, select the OVF file and click **Open**.
+2. Navigate to the folder where the {{< product-c8y-iot >}} Edge appliance files are located, select the OVF file and click **Open**.
 
-3. Change the Edge appliance name if required and click **Import**. You can also change the storage path of the Edge appliance here.
+3. Change the {{< product-c8y-iot >}} Edge appliance name if required and click **Import**. You can also change the storage path of the {{< product-c8y-iot >}} Edge appliance here.
 
    {{< c8y-admon-important >}}
 On VMware Workstation, you must use UTC on your host machine. If you choose not to use UTC, you may have time sync issues. Set `rtc.diffFromUTC=0` in the .vmx file to avoid the time sync issues.
    {{< /c8y-admon-important >}}
 
-4. Start the Edge appliance by clicking **Play virtual machine**.
+4. Start the {{< product-c8y-iot >}} Edge appliance by clicking **Play virtual machine**.
 
-Next, perform the Edge appliance installation. See, [Installing {{< product-c8y-iot >}} Edge](/edge/edge-installation/).
+Next, perform the {{< product-c8y-iot >}} Edge appliance installation. See, [Installing {{< product-c8y-iot >}} Edge](/edge/edge-installation/).
 
 ### Setting up for vmnetcfg utility {#setting-up-for-vmnetcfg-utility}
 

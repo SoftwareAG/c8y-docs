@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Accessing the Edge appliance remotely through VNC
+title: Accessing the Cumulocity IoT Edge appliance remotely through VNC
 layout: bundle
 section:
   - edge_server

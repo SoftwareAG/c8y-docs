@@ -1,6 +1,6 @@
 ---
 weight: 35
-title: Accessing the Edge appliance remotely through SSH
+title: Accessing the Cumulocity IoT Edge appliance remotely through SSH
 layout: bundle
 section:
   - edge_server

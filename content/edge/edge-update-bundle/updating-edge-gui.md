@@ -1,6 +1,6 @@
 ---
 weight: 5
-title: Updating Edge using the GUI
+title: Updating Cumulocity IoT Edge using the GUI
 layout: redirect
 ---
 
@@ -8,7 +8,7 @@ You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing inst
 
 Download the {{< product-c8y-iot >}} Edge archive file **Cumulocity IoT Edge (*version*) Update** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}).
 
-When you update your Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities. {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
+When you update your {{< product-c8y-iot >}} Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities. {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
 
 {{< c8y-admon-important >}}
 
@@ -30,10 +30,10 @@ To update {{< product-c8y-iot >}} Edge:
 
 6. Click **Update**.
 
-   While updating the Edge appliance with the microservice hosting feature enabled, the following notification may appear on the user interface:
+   While updating the {{< product-c8y-iot >}} Edge appliance with the microservice hosting feature enabled, the following notification may appear on the user interface:
 
    *Could not get the details on the update status. Do refresh after some time to check if the update has completed*.
 
    Refresh the page to check if the update has been completed by verifying the version number.
 
-7. Restart your Edge appliance.
+7. Restart your {{< product-c8y-iot >}} Edge appliance.

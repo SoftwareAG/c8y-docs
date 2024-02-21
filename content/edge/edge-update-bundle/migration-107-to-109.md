@@ -4,14 +4,14 @@ title: Migrating Cumulocity IoT Edge 10.7 to 10.9
 layout: redirect
 ---
 
-This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier than {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7.
+This section describes the steps to migrate from {{< product-c8y-iot >}} Edge 10.7 to {{< product-c8y-iot >}} Edge 10.9. If you are using a version earlier tha {{< product-c8y-iot >}} Edge 10.7 and plan to upgrade to {{< product-c8y-iot >}} Edge 10.9, you must first upgrade to {{< product-c8y-iot >}} Edge 10.7.
 
 ### Before you begin {#before-you-begin}
 
-- Import the Edge 10.9 appliance, see [Configuring the Edge infrastructure](/edge/edge-infrastructure/) for further information.
-- Configure the network and complete the installation procedure on your Edge 10.9 appliance. For details see [Installing {{< product-c8y-iot >}} Edge](/edge/edge-installation/).
+- Import the {{< product-c8y-iot >}} Edge 10.9 appliance, see [Configuring the {{< product-c8y-iot >}} Edge infrastructure](/edge/edge-infrastructure/) for further information.
+- Configure the network and complete the installation procedure on your {{< product-c8y-iot >}} Edge 10.9 appliance. For details see [Installing {{< product-c8y-iot >}} Edge](/edge/edge-installation/).
 
-{{< c8y-admon-important >}} You can have both the Edge 10.7 and the Edge 10.9 appliances on the same host machine. Ensure that the IP address of the Edge 10.9 appliance is different from the IP address of the Edge 10.7 appliance.{{< /c8y-admon-important >}}
+{{< c8y-admon-important >}} You can have both the {{< product-c8y-iot >}} Edge 10.7 and the {{< product-c8y-iot >}} Edge 10.9 appliances on the same host machine. Ensure that the IP address of the {{< product-c8y-iot >}} Edge 10.9 appliance is different from the IP address of the {{< product-c8y-iot >}} Edge 10.7 appliance.{{< /c8y-admon-important >}}
 
 For information about upgrading from an earlier version to {{< product-c8y-iot >}} Edge 10.7, see:
 
@@ -21,17 +21,17 @@ For information about upgrading from an earlier version to {{< product-c8y-iot >
 
 in the *10.7.0 {{< product-c8y-iot >}} Edge guide*.
 
-To migrate from Edge 10.7 to 10.9:
+To migrate from {{< product-c8y-iot >}} Edge 10.7 to 10.9:
 
-- back up the data on Edge 10.7,
-- move the backup to Edge 10.9,
-- restore the data on Edge 10.9.
+- back up the data on {{< product-c8y-iot >}} Edge 10.7,
+- move the backup to {{< product-c8y-iot >}} Edge 10.9,
+- restore the data on {{< product-c8y-iot >}} Edge 10.9.
 
-### Creating a backup on Edge 10.7 {#creating-a-backup-on-edge-107}
+### Creating a backup on {{< product-c8y-iot >}} Edge 10.7 {#creating-a-backup-on-edge-107}
 
-In your Edge 10.7 setup, back up the data for each tenant and docker collection, and note down the device ID.
+In your {{< product-c8y-iot >}} Edge 10.7 setup, back up the data for each tenant and docker collection, and note down the device ID.
 
-{{< c8y-admon-important >}} Before the data back up, ensure that there is sufficient disk space to save the back up in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You need an additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.  
+{{< c8y-admon-important >}} Before the data back up, ensure that there is sufficient disk space to save the back up in your {{< product-c8y-iot >}} Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You need an additional 100 GB of disk space to save the MongoDB backup in your {{< product-c8y-iot >}} Edge 10.7 appliance.  
 {{< /c8y-admon-important >}}
 
 1. Run the following command to stop monitoring all processes:
@@ -54,27 +54,27 @@ In your Edge 10.7 setup, back up the data for each tenant and docker collection,
    mongodump --db=docker --out OUTPUT_DIRECTORY # This only needs to be done if microservices are enabled on 10.7.
    ```
 
-4. Note down the device ID of your Edge 10.7 appliance available at */usr/edge/properties/edge-agent/device-id*.
+4. Note down the device ID of your {{< product-c8y-iot >}} Edge 10.7 appliance available at */usr/edge/properties/edge-agent/device-id*.
 
 5. Create a backup of the */etc/opcua* directory.
 
 6. Create a backup of the */var/lib/cumulocity-agent/credentials* file.
 
-## Restoring the data on Edge 10.9 {#restoring-the-data-on-edge-109}
+## Restoring the data on {{< product-c8y-iot >}} Edge 10.9 {#restoring-the-data-on-edge-109}
 
-To restore the data, you must first copy the MongoDB backup from the Edge 10.7 appliance to your Edge 10.9 appliance.
+To restore the data, you must first copy the MongoDB backup from the {{< product-c8y-iot >}} Edge 10.7 appliance to your {{< product-c8y-iot >}} Edge 10.9 appliance.
 
 {{< c8y-admon-important >}}
-Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to an additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
+Before copying the backup, ensure that there is sufficient disk space in your {{< product-c8y-iot >}} Edge 10.9 appliance. For example, in the {{< product-c8y-iot >}} Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to an additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
  {{< /c8y-admon-important >}}
 
-Perform the following steps as a root user in your Edge 10.9 appliance.
+Perform the following steps as a root user in your {{< product-c8y-iot >}} Edge 10.9 appliance.
 
-1. Copy the backup folders from your Edge 10.7 appliance to the Edge 10.9 appliance using any file transfer tool such as WINSCP, SCP, or FTP.
+1. Copy the backup folders from your {{< product-c8y-iot >}} Edge 10.7 appliance to the {{< product-c8y-iot >}} Edge 10.9 appliance using any file transfer tool such as WINSCP, SCP, or FTP.
 
-   Copy the backup folders to */home/admin/migration_data/* in your Edge 10.9 appliance.
+   Copy the backup folders to */home/admin/migration_data/* in your {{< product-c8y-iot >}} Edge 10.9 appliance.
 
-2. Backup the web applications in the Edge 10.9 appliance. To do this, first detect the IDs of the applications by using the following command:
+2. Backup the web applications in the {{< product-c8y-iot >}} Edge 10.9 appliance. To do this, first detect the IDs of the applications by using the following command:
 
    ```shell
    mongo management --quiet --eval 'db.cmdata.files.find({},{"_id":false, "metadata.id":true,"metadata.name":true})' | jq
@@ -134,7 +134,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm
    ```
 
-   If your Edge appliance is not connected to the internet, ensure that the RPM package is available locally and run the following command:
+   If your {{< product-c8y-iot >}} Edge appliance is not connected to the internet, ensure that the RPM package is available locally and run the following command:
 
    ```shell
    rpm -ivh zip-3.0-11.el7.x86_64.rpm
@@ -145,7 +145,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    {{< c8y-admon-important >}}Do not include the *streaming-analytics-app.zip* file in the ZIP package.{{< /c8y-admon-important >}}
 
     ```shell
-    UI_VERSION=1009.0.14 #The Edge appliance UI version number. Must be in the format xxxx.x.x
+    UI_VERSION=1009.0.14 #The Cumulocity IoT Edge appliance UI version number. Must be in the format xxxx.x.x
     cd /tmp/apps
     zip package-cumulocity-$UI_VERSION.zip cockpit.zip devicemanagement.zip administration.zip #Do not include the streaming-analytics-app.zip file.
     chown karaf:karaf package-cumulocity-$UI_VERSION.zip
@@ -153,7 +153,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
     chown karaf:karaf $UI_VERSION.zip
     ```
 
-6. Restore the device ID of the Edge 10.7 appliance by using the following commands:
+6. Restore the device ID of the {{< product-c8y-iot >}} Edge 10.7 appliance by using the following commands:
 
    ```shell
    DEVICE_ID="DEVICE_ID_OF_EDGE_10.7"
@@ -164,13 +164,13 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    systemctl restart edge-agent
    ```
 
-7. Restore the MongoDB collections from the Edge 10.7 appliance by using the following command:
+7. Restore the MongoDB collections from the {{< product-c8y-iot >}} Edge 10.7 appliance by using the following command:
 
    ```shell
    mongorestore --drop --db TENANT_NAME PATH_TO_BACKED_UP_COLLECTION
    ```
    Here:
-    - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your Edge 10.9 appliance.
+    - PATH_TO_BACKED_UP_COLLECTION refers to the location of the 10.7 backup folders in your {{< product-c8y-iot >}} Edge 10.9 appliance.
 
    For example:
    ```shell
@@ -179,7 +179,7 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    mongorestore --drop --db docker /home/admin/migration_data/docker/
    ```
 
-8. Restore the web applications of the Edge 10.9 appliance by using the following command:
+8. Restore the web applications of the {{< product-c8y-iot >}} Edge 10.9 appliance by using the following command:
 
    ```shell
    chown -R karaf:karaf /webapps/
@@ -189,9 +189,9 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
    Wait for Karaf to install the applications. After the installation is complete, the *$UI_VERSION.zip.installed* file appears at */webapps/2Install*.
 
 
-9. Copy the */etc/opcua* directory from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+9. Copy the */etc/opcua* directory from the {{< product-c8y-iot >}} Edge 10.7 appliance to the same location on the {{< product-c8y-iot >}} Edge 10.9 appliance.
 
-10. Copy the */var/lib/cumulocity-agent/credentials* file from the Edge 10.7 appliance to the same location on the Edge 10.9 appliance.
+10. Copy the */var/lib/cumulocity-agent/credentials* file from the {{< product-c8y-iot >}} Edge 10.7 appliance to the same location on the {{< product-c8y-iot >}} Edge 10.9 appliance.
 
 11. Restart the services by using the following commands:
 
@@ -209,17 +209,17 @@ Perform the following steps as a root user in your Edge 10.9 appliance.
 
     - Upload the *streaming-analytics-app.zip* file as a web application.
 
-    - Subscribe the Streaming Analytics application to the Edge tenant.
+    - Subscribe the Streaming Analytics application to the "edge" tenant.
 
       {{< c8y-admon-important >}} To subscribe the application, the {{< management-tenant >}} user must have the "Tenant Manager" role.{{< /c8y-admon-important >}}
 
     - Delete the Apama Analytics Builder and Apama EPL Apps applications.
 
-    - Log in to the Edge tenant and verify the Streaming Analytics application.
+    - Log in to the "edge" tenant and verify the Streaming Analytics application.
 
-Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from the Edge 10.9 installation are removed after the successful migration. You are now be able to log in using the Edge 10.7 user credentials.
+Restoring the Streaming Analytics application completes the migration procedure. Note that the tenants from the {{< product-c8y-iot >}} Edge 10.9 installation are removed after the successful migration. You are now be able to log in using the {{< product-c8y-iot >}} Edge 10.7 user credentials.
 
-Next, configure the Edge 10.9 appliance. For example, if you enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
+Next, configure the {{< product-c8y-iot >}} Edge 10.9 appliance. For example, if you enabled microservices and configured NTP in the {{< product-c8y-iot >}} Edge 10.7 appliance, you must enable microservices and configure NTP in the {{< product-c8y-iot >}} Edge 10.9 appliance.
 
 {{< c8y-admon-important >}}
 To enable the microservice hosting feature, the {{< management-tenant >}} user must have the "Tenant Manager" role. Use the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
@@ -227,7 +227,7 @@ To enable the microservice hosting feature, the {{< management-tenant >}} user m
 
 If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/).
+For more information about configuring the {{< product-c8y-iot >}} Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/).
 
 ### Sample scripts to automate the migration {#sample-scripts-to-automate-the-migration}
 
@@ -244,7 +244,7 @@ For more information about configuring the Edge 10.9 appliance, see [Configuring
 #### In 10.7 appliance {#in-107-appliance}
 
 {{< c8y-admon-important >}}
-Before the data back up, ensure that there is sufficient disk space to save the backup in your Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You need an additional 100 GB of disk space to save the MongoDB backup in your Edge 10.7 appliance.
+Before the data back up, ensure that there is sufficient disk space to save the backup in your {{< product-c8y-iot >}} Edge 10.7 appliance. The MongoDB backup requires the same amount of space as the database. For example, if the size of the database is 100 GB, the MongoDB backup also requires 100 GB of disk space. You need an additional 100 GB of disk space to save the MongoDB backup in your {{< product-c8y-iot >}} Edge 10.7 appliance.
 {{< /c8y-admon-important >}}
 
 1. Run the following command to stop monitoring all the processes:
@@ -259,7 +259,7 @@ Before the data back up, ensure that there is sufficient disk space to save the 
    sudo service cumulocity-core-karaf stop
    ```
 
-3. Copy the *backup.sh* script to your Edge 10.7 appliance.
+3. Copy the *backup.sh* script to your {{< product-c8y-iot >}} Edge 10.7 appliance.
 
 4. Run the *backup.sh* as a root user.
 
@@ -278,17 +278,17 @@ Before the data back up, ensure that there is sufficient disk space to save the 
 
    The script creates a ZIP archive file with the migration data in the OUTPUT_DIRECTORY.
 
-5. Move the ZIP archive with the migration data to your Edge 10.9 appliance.
+5. Move the ZIP archive with the migration data to your {{< product-c8y-iot >}} Edge 10.9 appliance.
 
 #### In 10.9 appliance {#in-109-appliance}
 
 {{< c8y-admon-important >}}
-Before copying the backup, ensure that there is sufficient disk space in your Edge 10.9 appliance. For example, in the Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to an additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
+Before copying the backup, ensure that there is sufficient disk space in your {{< product-c8y-iot >}} Edge 10.9 appliance. For example, in the {{< product-c8y-iot >}} Edge 10.9 appliance, if the size of the data disk is 75 GB and the size of the MongoDB backup is 100 GB, you must expand the size of the data disk to an additional 100 GB before copying the MongoDB backup. For more information about disk size expansion, see [Expanding the disk size](/edge/operating-edge/#expanding-the-disk-size).
 {{< /c8y-admon-important >}}
 
 1. Log in as a root user.
 
-2. Copy the *restore.sh* and *restore_analytics.sh* scripts to your Edge 10.9 appliance.
+2. Copy the *restore.sh* and *restore_analytics.sh* scripts to your {{< product-c8y-iot >}} Edge 10.9 appliance.
 
 3. Run the *restore.sh* script with the parameters:
 
@@ -301,7 +301,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
     ./restore.sh migration_data.tgz /home/admin/migration_data
     ```
 
-    The *restore.sh* script fails if your Edge appliance is not connected to the internet. In such cases, ensure that the RPM package is available locally, and replace the command `rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm` with `rpm -ivh zip-3.0-11.el7.x86_64.rpm` in the *restore.sh* script.
+    The *restore.sh* script fails if your {{< product-c8y-iot >}} Edge appliance is not connected to the internet. In such cases, ensure that the RPM package is available locally, and replace the command `rpm -ivh http://mirror.centos.org/centos/7/os/x86_64/Packages/zip-3.0-11.el7.x86_64.rpm` with `rpm -ivh zip-3.0-11.el7.x86_64.rpm` in the *restore.sh* script.
 
 4. Run the *restore_analytics.sh* script. This script restores the Streaming Analytics application.
 
@@ -314,7 +314,7 @@ Before copying the backup, ensure that there is sufficient disk space in your Ed
 
    Running the *restore_analytics.sh* script completes the migration process.
 
-Next, you must configure the Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the Edge 10.7 appliance, you must enable microservices and configure NTP in the Edge 10.9 appliance.
+Next, you must configure the {{< product-c8y-iot >}} Edge 10.9 appliance. For example, if you had enabled microservices and configured NTP in the {{< product-c8y-iot >}} Edge 10.7 appliance, you must enable microservices and configure NTP in the {{< product-c8y-iot >}} Edge 10.9 appliance.
 
 {{< c8y-admon-important >}}
 To enable the microservice hosting feature, the {{< management-tenant >}} user must have the "Tenant Manager" role. Use the 10.7 {{< management-tenant >}} admin credentials. By default, the credentials are sysadmin/sysadmin-pass.
@@ -322,4 +322,4 @@ To enable the microservice hosting feature, the {{< management-tenant >}} user m
 
 If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
-For more information about configuring the Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/).
+For more information about configuring the {{< product-c8y-iot >}} Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/).

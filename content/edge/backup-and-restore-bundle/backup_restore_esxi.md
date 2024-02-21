@@ -14,6 +14,6 @@ section:
 
 3. Click **OK** to download the files.
 
-### Restoring an {{< product-c8y-iot >}} Edge appliance in VMware ESXi {#restoring-an-edge-appliance-in-vmware-esxi}
+### Restoring a {{< product-c8y-iot >}} Edge appliance in VMware ESXi {#restoring-an-edge-appliance-in-vmware-esxi}
 
-Restoring an {{< product-c8y-iot >}} Edge appliance from an OVF file is similar to deploying a virtual machine in VMware ESXi. To restore an {{< product-c8y-iot >}} Edge appliance, perform the steps as described in [Example setup for VMware ESXi](/edge/edge-infrastructure/#setting-up-esxi).
+Restoring a {{< product-c8y-iot >}} Edge appliance from an OVF file is similar to deploying a virtual machine in VMware ESXi. To restore a {{< product-c8y-iot >}} Edge appliance, perform the steps as described in [Example setup for VMware ESXi](/edge/edge-infrastructure/#setting-up-esxi).

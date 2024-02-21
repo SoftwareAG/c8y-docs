@@ -1,6 +1,6 @@
 ---
 weight: 26
-title: Security harden the Edge appliance
+title: Security harden the Cumulocity IoT Edge appliance
 layout: bundle
 section:
   - edge_server

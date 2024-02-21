@@ -1,6 +1,6 @@
 ---
 weight: 25
-title: Accessing the Edge appliance from the Cumulocity IoT tenant
+title: Accessing the Cumulocity IoT Edge appliance from the Cumulocity IoT tenant
 layout: bundle
 section:
   - edge_server

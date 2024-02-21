@@ -1,23 +1,23 @@
 ---
 weight: 45
-title: Updating Edge remotely
+title: Updating Cumulocity IoT Edge remotely
 layout: bundle
 section:
   - edge_server
 ---
 
-You can remotely update your Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the Edge archive file (tar.gz) to your tenant account or a server (you must provide the location of the archive on that server). For more information about the firmware feature, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).
+You can remotely update your {{< product-c8y-iot >}} Edge appliance using the {{< product-c8y-iot >}}'s firmware update feature. This process requires you to upload the {{< product-c8y-iot >}} Edge archive file (tar.gz) to your tenant account or a server (you must provide the location of the archive on that server). For more information about the firmware feature, see [Managing firmware](/device-management-application/managing-device-data/#managing-firmware).
 
 {{< c8y-admon-important >}}
-The Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
+The {{< product-c8y-iot >}} Edge archive file size is about 3GB. If your tenant account has a limitation for uploading files with size over 1GB, contact Software AG support to increase the maximum file size for upload.
 {{< /c8y-admon-important >}}
 
-Before you update your Edge appliance remotely, you must:
+Before you update your {{< product-c8y-iot >}} Edge appliance remotely, you must:
 
 - [Enable the remote-connectivity](/edge/edge-connectivity/#config-remote-connectivity) feature in your Edge appliance
-- [Register your Edge appliance](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
+- [Register your {{< product-c8y-iot >}} Edge appliance](/edge/edge-connectivity/#registering-the-edge-appliance-in-the-cumulocity-iot-tenant) in your {{< product-c8y-iot >}} tenant account
 
-To remotely update your Edge appliance:
+To remotely update your {{< product-c8y-iot >}} Edge appliance:
 
 1. Log in to your {{< product-c8y-iot >}} tenant account.
 
@@ -37,13 +37,13 @@ To remotely update your Edge appliance:
 
 8. Click **Add firmware**. The firmware object appears in the firmware list.
 
-9. Click **All devices** in the **Devices** menu in the navigator, select your Edge appliance from the device list.
+9. Click **All devices** in the **Devices** menu in the navigator, select your {{< product-c8y-iot >}} Edge appliance from the device list.
 
-10. Click **Firmware**. The **Firmware** tab shows the current Edge appliance version.
+10. Click **Firmware**. The **Firmware** tab shows the current {{< product-c8y-iot >}} Edge appliance version.
 
     ![Edge current version](/images/edge/edge-firmware-current-version.png)
 
-    You can also see the current Edge appliance version in the **Info** tab.
+    You can also see the current {{< product-c8y-iot >}} Edge appliance version in the **Info** tab.
 
     ![Edge version info tab](/images/edge/edge-firmware-version-info-tab.png)
 
@@ -57,12 +57,12 @@ To remotely update your Edge appliance:
     - To check the details of the update, click the text outlined in red in the figure below:
     ![Edge update log](/images/edge/edge-check-remote-update-full-log.png)
 
-13. Restart your Edge appliance after the firmware update is complete. You can remotely restart your Edge appliance from your tenant account as shown in the figure below:
+13. Restart your {{< product-c8y-iot >}} Edge appliance after the firmware update is complete. You can remotely restart your {{< product-c8y-iot >}} Edge appliance from your tenant account as shown in the figure below:
     ![Edge update restart](/images/edge/edge-firmware-update-restart.png)
 
-### Updating Edge appliances using bulk operations {#updating-edge-appliances-using-bulk-operations}
+### Updating {{< product-c8y-iot >}} Edge appliances using bulk operations {#updating-edge-appliances-using-bulk-operations}
 
-In your tenant account, you can update multiple Edge appliances using the bulk operations feature. To do so, follow the steps below:
+In your tenant account, you can update multiple {{< product-c8y-iot >}} Edge appliances using the bulk operations feature. To do so, follow the steps below:
 
 1. Log in to your {{< product-c8y-iot >}} tenant account.
 
@@ -82,7 +82,7 @@ In your tenant account, you can update multiple Edge appliances using the bulk o
 7. Expand the version and select the archive file. Click **Next**.
    ![Edge bulk firmware selection](/images/edge/edge-bulk-operation-select-version.png)
 
-8. Select the Edge appliances that you want to update by applying filters to the paginated list of all devices.
+8. Select the {{< product-c8y-iot >}} Edge appliances that you want to update by applying filters to the paginated list of all devices.
 
    You can filter by status, name, type, model, group, registration date and alarms. You may apply multiple filters. To apply a filter, click the column header,  make your filter option choices in the context menu and click **Apply**.
    ![Edge bulk operation filter](/images/edge/edge-bulk-operation-filter.png)

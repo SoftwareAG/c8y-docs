@@ -1,12 +1,12 @@
 ---
 weight: 20
-title: Registering the Edge appliance in the Cumulocity IoT tenant
+title: Registering the Cumulocity IoT Edge appliance in the Cumulocity IoT tenant
 layout: bundle
 section:
   - edge_server
 ---
 
-Before performing these steps, ensure that you have [configured the URL](/edge/edge-connectivity/#config-remote-connectivity) for the {{< product-c8y-iot >}} cloud tenant in the Edge appliance.   
+Before performing these steps, ensure that you have [configured the URL](/edge/edge-connectivity/#config-remote-connectivity) for the {{< product-c8y-iot >}} cloud tenant in the {{< product-c8y-iot >}} Edge appliance.   
 
 1. Log in to your {{< product-c8y-iot >}} tenant.
 
@@ -18,13 +18,13 @@ Before performing these steps, ensure that you have [configured the URL](/edge/e
 
    <img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
-5. In the **Device ID** field, enter the Edge device ID.
+5. In the **Device ID** field, enter the {{< product-c8y-iot >}} Edge device ID.
 
 6. Click **Next**.
 
-7. Click **Complete** to register your Edge appliance.<br>
-   After successful registration, the Edge appliance appears in the [**Device registration**](/device-management-application/registering-devices/) page with the status **Waiting for connection**.<br>
-   Turn on the Edge appliance and wait for the connection to be established.
+7. Click **Complete** to register your {{< product-c8y-iot >}} Edge appliance.<br>
+   After successful registration, the {{< product-c8y-iot >}} Edge appliance appears in the [**Device registration**](/device-management-application/registering-devices/) page with the status **Waiting for connection**.<br>
+   Turn on the {{< product-c8y-iot >}} Edge appliance and wait for the connection to be established.
    Once the device is connected, the device status changes to **Pending acceptance**.
 
 8. Click **Accept** to confirm the connection. The status of the device changes to **Accepted**.

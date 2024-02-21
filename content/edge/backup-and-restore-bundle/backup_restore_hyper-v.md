@@ -15,6 +15,6 @@ section:
 
 3. Provide the location to save the backup files and click **Export**.
 
-### Restoring an {{< product-c8y-iot >}} Edge appliance in Hyper-V {#restoring-an-edge-appliance-in-hyperv}
+### Restoring a {{< product-c8y-iot >}} Edge appliance in Hyper-V {#restoring-an-edge-appliance-in-hyperv}
 
-Restoring an {{< product-c8y-iot >}} Edge appliance is similar to deploying a virtual machine in Hyper-V. To restore an {{< product-c8y-iot >}} Edge appliance, perform the steps as described in [Example setup for Hyper-V](/edge/edge-infrastructure/#setting-up-hyper-v).
+Restoring a {{< product-c8y-iot >}} Edge appliance is similar to deploying a virtual machine in Hyper-V. To restore a {{< product-c8y-iot >}} Edge appliance, perform the steps as described in [Example setup for Hyper-V](/edge/edge-infrastructure/#setting-up-hyper-v).

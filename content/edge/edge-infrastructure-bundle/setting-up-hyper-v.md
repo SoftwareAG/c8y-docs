@@ -54,7 +54,7 @@ PS C:\WINDOWS\system32> New-NetNat -Name NATSwitchForEDGE -InternalIPInterfaceAd
 
 ### Creating a NAT adapter using user-defined settings {#creating-a-nat-adapter-using-userdefined-settings}
 
-You can define the adapter name and configure the IP address for your Edge appliance. In this example, the adapter name is `EdgeAdapter1` and the IP address is `10.20.30.40`.
+You can define the adapter name and configure the IP address for your {{< product-c8y-iot >}} Edge appliance. In this example, the adapter name is `EdgeAdapter1` and the IP address is `10.20.30.40`.
 
 {{< c8y-admon-info >}}
 The following steps show a reference example. The final configuration also depends on the end user setup.
@@ -83,18 +83,18 @@ PS C:\WINDOWS\system32> New-NetIPAddress -IPAddress 10.20.30.40 -PrefixLength 24
 PS C:\WINDOWS\system32> New-NetNat -Name EdgeNATRule1 -InternalIPInterfaceAddressPrefix 10.20.30.0/24
 ```
 
-### Setting up the Edge appliance in Hyper-V {#setting-up-the-edge-appliance-in-hyperv}
+### Setting up the {{< product-c8y-iot >}} appliance in Hyper-V {#setting-up-the-edge-appliance-in-hyperv}
 
-After creating a NAT adapter, you must import the Edge appliance image into Hyper-V.
+After creating a NAT adapter, you must import the {{< product-c8y-iot >}} Edge appliance image into Hyper-V.
 
 1. In Hyper-V Manager, go to **Action** > **Import Virtual Machine**. <br>
 <img src="/images/edge/edge-hyper-v-001.png" name="Import Virtual Machine" style="width:75%;"/>
 
 2. In the **Before You Begin** wizard, click **Next**. <br>
 
-3. Provide the location of the Edge appliance image and click **Next**. <br>
+3. Provide the location of the {{< product-c8y-iot >}} Edge appliance image and click **Next**. <br>
 
-4. Select the Edge appliance and click **Next**. <br>
+4. Select the {{< product-c8y-iot >}} Edge appliance and click **Next**. <br>
 
 5. In the **Choose Import Type** wizard, select **Register the virtual machine in-place (use the existing unique ID)** and click **Next**. <br>
 
@@ -104,9 +104,9 @@ If you have used a different NAT adapter name, you will see the following screen
 <img src="/images/edge/edge-hyper-v-008.png" name="Select-NetAdapter" style="width:75%;"/>
 Select the adapter from the **Connection** drop down list and click **Next**.
 
-7. Click **Finish**. The Edge appliance image appears in the Hyper-V Manager. <br>
+7. Click **Finish**. The {{< product-c8y-iot >}} Edge appliance image appears in the Hyper-V Manager. <br>
 
-8. Right-click the Edge appliance image and click **Connect**. <br>
+8. Right-click the {{< product-c8y-iot >}} Edge appliance image and click **Connect**. <br>
 <img src="/images/edge/edge-hyper-v-007.png" name="Connecting to Edge appliance" style="width:75%;"/>
 
 {{< c8y-admon-info >}}

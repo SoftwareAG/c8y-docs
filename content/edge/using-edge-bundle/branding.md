@@ -18,7 +18,7 @@ Use the domain name to access the {{< product-c8y-iot >}} Edge platform to prope
 
 To access the branding feature:
 
-1. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
+1. Log in to the {{< management-tenant >}} using the {{< product-c8y-iot >}} Edge administrator credentials created during the installation.
 
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation

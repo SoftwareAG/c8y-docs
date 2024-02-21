@@ -12,7 +12,7 @@ If the processes are monitored by **monit**, the processes restart after you run
 
 ### Karaf processes {#karaf-processes}
 
-In the Edge appliance, run the following commands as admin user.
+In the {{< product-c8y-iot >}} Edge appliance, run the following commands as admin user.
 
 |Process|Command|
 |:---|:---
@@ -22,7 +22,7 @@ In the Edge appliance, run the following commands as admin user.
 
 ### opcua-mgmt-service {#opcuamgmtservice}
 
-In the Edge appliance, run the following commands as admin user.
+In the {{< product-c8y-iot >}} Edge appliance, run the following commands as admin user.
 
 |Process|Command|
 |:---|:---
@@ -33,7 +33,7 @@ In the Edge appliance, run the following commands as admin user.
 
 ### opcua-device-gateway {#opcuadevicegateway}
 
-In the Edge appliance, run the following commands as admin user.
+In the {{< product-c8y-iot >}} Edge appliance, run the following commands as admin user.
 
 |Process|Command|
 |:---|:---
@@ -44,7 +44,7 @@ In the Edge appliance, run the following commands as admin user.
 
 ### smartrule {#smartrule}
 
-In the Edge appliance, run the following commands as admin user.
+In the {{< product-c8y-iot >}} Edge appliance, run the following commands as admin user.
 
 |Process|Command|
 |:---|:---
@@ -54,7 +54,7 @@ In the Edge appliance, run the following commands as admin user.
 
 ### Apama {#apama}
 
-In the Edge appliance, run the following commands as admin user.
+In the {{< product-c8y-iot >}} Edge appliance, run the following commands as admin user.
 
 |Process|Command|
 |:---|:---

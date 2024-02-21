@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Edge functionalities
+title: Cumulocity IoT Edge functionalities
 layout: bundle
 section:
   - edge_server
@@ -60,11 +60,11 @@ The following functionalities are available in {{< product-c8y-iot >}} Edge and 
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/)|Providing information on Edge specific configuration options.
+|[Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/)|Providing information on {{< product-c8y-iot >}} Edge specific configuration options.
 |[Home screen](/standard-tenant/home-screen/)|Providing information on your capacity usage and subscribed applications.
 |[Managing users](/standard-tenant/managing-users/)|How to [add users](/standard-tenant/managing-users/#to-add-a-user), edit, disable or delete them.
 |[Managing permissions](/standard-tenant/managing-permissions/)|How to create and edit [global roles](/standard-tenant/managing-permissions/#global-roles) and [inventory roles](/standard-tenant/managing-permissions/#inventory-roles), how to assign them to users, and how to [grant application access](/standard-tenant/managing-permissions/#application-access).
-|[Managing applications](/standard-tenant/ecosystem/)|How to manage and [configure own applications](/standard-tenant/ecosystem/#managing-applications) in your {{< product-c8y-iot >}}  Edge account.
+|[Managing applications](/standard-tenant/ecosystem/)|How to manage and [configure own applications](/standard-tenant/ecosystem/#managing-applications) in your {{< product-c8y-iot >}} Edge account.
 |[Audit logs](/standard-tenant/audit-logs/)|How to [view](/standard-tenant/audit-logs/#to-view-audit-logs) and [filter](/standard-tenant/audit-logs/#to-filter-logs) audit logs that show security-relevant operations that have been processed by a user. See the different [audit log types](/standard-tenant/audit-logs/#audit-log-types) for more information.
 |[Alarm mapping](/standard-tenant/alarm-mapping/)|Change the severity and text of alarms to adapt them to your business priorities.
 |[Managing data](/standard-tenant/managing-data/)|How to manage and configure [retention rules](/standard-tenant/managing-data/#retention-rules) for your data and how to [manage stored files](/standard-tenant/managing-data/#file-repository) in the file repository.

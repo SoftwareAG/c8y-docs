@@ -32,4 +32,4 @@ The following differences apply:
 
 **Footnote**: * The underlying infrastructure including the virtualization is not part of the product. For further details on high availability or fault tolerance options, refer to the relevant information provided by third parties (for example, [vSphere Availability](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-63F459B7-8884-4818-8872-C9753B2E0215.html)).
 
-In addition to {{< product-c8y-iot >}} Edge, we provide a light-weight approach to implement Edge functionality: the open-source {{< product-c8y-iot >}} Device SDKs. These can be utilized to build agents on less powerful devices like embedded devices.
+In addition to {{< product-c8y-iot >}} Edge, we provide a light-weight approach to implement {{< product-c8y-iot >}} Edge functionality: the open-source {{< product-c8y-iot >}} Device SDKs. These can be utilized to build agents on less powerful devices like embedded devices.

@@ -21,7 +21,7 @@ The IP addresses used in the screenshots are sample IP addresses, for the purpos
 3. Click **Add** to add the port forwarding rules. Enter the port forwarding rules for HTTPS, MQTT and MQTT over SSL protocols as described in the table below:
 
 	{{< c8y-admon-info >}}
-Ensure that the **Virtual machine IP address** is the same as the IP address that you have configured for the Edge appliance.
+Ensure that the **Virtual machine IP address** is the same as the IP address that you have configured for the {{< product-c8y-iot >}} Edge appliance.
 	{{< /c8y-admon-info >}}
 
 	|Host Port|Type|VM IP Address|VM Port|Description

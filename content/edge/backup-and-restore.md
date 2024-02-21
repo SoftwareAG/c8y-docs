@@ -6,4 +6,4 @@ section:
   - edge_server
 ---
 
-Read about the steps to backup and restore an {{< product-c8y-iot >}} Edge appliance in various environments.
+Read about the steps to backup and restore a {{< product-c8y-iot >}} Edge appliance in various environments.

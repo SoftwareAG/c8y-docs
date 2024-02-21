@@ -30,7 +30,7 @@ A data connector describes the subset of the data that you would like to send to
 
 To create a data connector and upload the data to the tenant account, perform the following steps:
 
-1. In your {{< product-c8y-iot >}} Edge applaince, log in to the *edge* tenant.
+1. In your {{< product-c8y-iot >}} Edge applaince, log in to the "edge" tenant.
 
 2. In your {{< product-c8y-iot >}} Edge appliance, go to the Administration application. Click **Data broker** > **Data connectors**.
 

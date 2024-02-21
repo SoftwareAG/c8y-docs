@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Updating Edge using the REST APIs
+title: Updating Cumulocity IoT Edge using the REST APIs
 layout: redirect
 ---
 

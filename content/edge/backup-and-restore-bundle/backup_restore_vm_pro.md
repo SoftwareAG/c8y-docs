@@ -18,7 +18,7 @@ section:
 
 4. Click **Save**.
 
-### Restoring an {{< product-c8y-iot >}} Edge appliance in VMware Workstation Pro {#restoring-an-edge-appliance-in-vmware-workstation-pro}
+### Restoring a {{< product-c8y-iot >}} Edge appliance in VMware Workstation Pro {#restoring-an-edge-appliance-in-vmware-workstation-pro}
 
 1. Click **File** > **Open**.
 

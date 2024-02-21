@@ -45,7 +45,7 @@ sudo kubectl delete pv journal0 ledgers0 zookeeper0
 ```shell
 sudo rm -rf /opt/bookie/ledgers /opt/bookie/journal /opt/zookeeper
 ```
-8. Unsubscribe the edge tenant from and delete, the databroker-agent-server microservice.
+8. Unsubscribe the "edge" tenant from and delete, the databroker-agent-server microservice.
 
    The databroker-agent-server application ID is required for the HTTP requests used to do both of these.   
    To find its application ID, you can use a cURL command of the following form and redirect the output to a jq command to make it easier to read the JSON response.

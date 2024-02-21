@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Restarting Edge remotely
+title: Restarting Cumulocity IoT Edge remotely
 layout: bundle
 section:
   - edge_server

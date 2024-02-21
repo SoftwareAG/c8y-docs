@@ -8,13 +8,13 @@ You can expand the disk size of the installation disk and the data disk using th
 
 ### Expanding the disk size using the UI {#expanding-the-disk-size-using-the-ui}
 
-1. Shut down your Edge appliance.
+1. Shut down your {{< product-c8y-iot >}} Edge appliance.
 
 2. Increase the size of the installation and data disks in you hypervisor.
 
-3. Restart your Edge appliance.
+3. Restart your {{< product-c8y-iot >}} Edge appliance.
 
-4. Log in to the {{< management-tenant >}} using the Edge administrator credentials created during the installation.
+4. Log in to the {{< management-tenant >}} using the {{< product-c8y-iot >}} Edge administrator credentials created during the installation.
 
 	- Username: management/<*Edge admin username*>
 	- Password: password provided during the installation

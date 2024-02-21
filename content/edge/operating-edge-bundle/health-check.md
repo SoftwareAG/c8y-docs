@@ -76,7 +76,7 @@ As when checking the internal reach ability, you must make sure that you can see
 
 ### Processing {#processing}
 
-This section lists the required services and processes on the Edge appliance.
+This section lists the required services and processes on the {{< product-c8y-iot >}} Edge appliance.
 
 #### Check platform status {#check-platform-status}
 

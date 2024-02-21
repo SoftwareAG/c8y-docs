@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3121
 version: 10.19.5.12
 ---
-The descriptions of some numeric fields may have appeared only in its English version. This is now fixed and the descriptions of numeric fields appears in the selected platform language.
+The descriptions of some numeric fields may have appeared only in its English version. This is now fixed and the descriptions of numeric fields appear in the selected platform language.

@@ -322,4 +322,5 @@ To enable the microservice hosting feature, the {{< management-tenant >}} user m
 
 If enabling the microservice hosting feature fails, it may be due to a [Kubernetes limitation](https://support.f5.com/csp/article/K18352919). After resolving the issue, delete the kube-registry pod and wait for it to be recreated.
 
+
 For more information about configuring the {{< product-c8y-iot >}} Edge 10.9 appliance, see [Configuring {{< product-c8y-iot >}} Edge](/edge/edge-configuration/).

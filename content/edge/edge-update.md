@@ -8,4 +8,4 @@ This section describes how to update {{< product-c8y-iot >}} Edge using the GUI 
 
 Keeping your {{< product-c8y-iot >}} Edge appliance updated ensures that the {{< product-c8y-iot >}} Edge appliance is running the latest version with new features and enhancements, and helps in improving the security vulnerabilities and performance of the {{< product-c8y-iot >}} Edge appliance.
 
-You can update the {{< product-c8y-iot >}} Edge appliance using [the GUI](/edge/edge-update/#updating-edge-gui) or [the REST API](https://cumulocity.com/api/edge/#tag/Update).
+You can update the {{< product-c8y-iot >}} Edge appliance using [the GUI](/edge/edge-update/#updating-edge-gui) or [the REST API](https://{{< domain-c8y >}}/api/edge/#tag/Update).

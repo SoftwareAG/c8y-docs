@@ -59,7 +59,7 @@ For more information about developing and hosting a microservice, see [Microserv
 
 A microservice specifies an API version in the microservice manifest. Depending on this API version, the microservice runs with all or only a restricted set of Linux kernel capabilities. More precisely, all capabilities are granted to microservices with API version 1 whereas only the capability `CAP_NET_BIND_SERVICE` is granted to microservices with API version 2. For more information, see [Microservice migration to API Version 2](/microservice-sdk/general-aspects/#migration).
 
-By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the {{< product-c8y-iot >}} Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the {{< product-c8y-iot >}} Edge tenant.
+By default, only the {{< management-tenant >}} can upload and subscribe to the microservices with API version 1. To improve the security of the {{< product-c8y-iot >}} Edge appliance, the minimum API version has been configured to API version 2. Due to the minimum API version configuration, you cannot upload and subscribe to a microservice with API version 1 in the "edge" tenant.
 
 {{< c8y-admon-important >}}The MLW and the Messaging Service microservices use API version 1. To install the MLW and the Messaging Service on {{< product-c8y-iot >}} Edge version 10.15, you must subscribe the "edge" tenant to the **Feature-privileged-microservice-hosting** application before uploading the MLW and the Messaging Service microservices with API version 1.{{< /c8y-admon-important >}}
 

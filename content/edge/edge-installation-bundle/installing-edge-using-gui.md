@@ -48,7 +48,7 @@ While configuring the network on VMware based hypervisors, do not us the IP addr
 Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
     {{< /c8y-admon-important >}}
 
-8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
+8. Create an administrator account to access the "edge" tenant and the {{< management-tenant >}}, and click **Next**.
 
 9. Provide a fully qualified domain name below **Domain name**.
 

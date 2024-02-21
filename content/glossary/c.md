@@ -44,7 +44,7 @@ For details see the [Edge](/edge/edge-introduction/).
 Internal datastore of {{< product-c8y-iot >}} where all data (such as [alarms](/glossary/a/#alarm), [events](/glossary/e/#event), [inventory](/glossary/i/#inventory), and [measurements](/glossary/m/#measurement)) are stored in so-called base collections.
 
 
-### {{< product-c8y-iot >}} Sensor App {#sensor-app}
+### {{< sensor-app >}} {#sensor-app}
 
 The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones. The app is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. It has a straightforward registration workflow to get you up and running quickly and provides an easy way to get data into {{< product-c8y-iot >}}.
 

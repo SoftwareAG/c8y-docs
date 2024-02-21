@@ -6,11 +6,11 @@ section:
   - platform_administration
 ---
 {{< c8y-admon-preview >}}
-This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment. 
+This section describes how to create a configuration for automated persistence of measurement values under the `c8y_LatestMeasurements` fragment.
 
 ### How to enable it
 
-Use the tenant options to create a category named `measurement.series.latestvalue` with a PUT request to a [tenant options category](https://cumulocity.com/api/core/#operation/putCategoryOptionResource).
+Use the tenant options to create a category named `measurement.series.latestvalue` with a PUT request to a [tenant options category](https://{{< domain-c8y >}}/api/core/#operation/putCategoryOptionResource).
 Example:
 ```
 PUT /tenant/options/measurement.series.latestvalue
@@ -107,7 +107,7 @@ The latest measurement values are part of the managed object and they follow the
 **Data model**
 
 The latest measurements do not store the measurement type. This information
-can be obtained using the [Measurements API](https://www.cumulocity.com/api/core/#tag/Measurement-API).
+can be obtained using the [Measurements API](https://www.{{< domain-c8y >}}/api/core/#tag/Measurement-API).
 
 **Last value**
 

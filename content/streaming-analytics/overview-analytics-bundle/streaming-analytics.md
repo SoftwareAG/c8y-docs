@@ -21,8 +21,4 @@ Typical real-time analytics use cases include:
 The {{< product-c8y-iot >}} platform includes an Apama correlator component, which is managed by the {{< product-c8y-iot >}} platform \(this is not manually started or stopped\) and is preconfigured to communicate to {{< product-c8y-iot >}}. This correlator hosts the Analytics Builder runtime, and also executes any operation logic added using EPL apps.
 The operation logic is based on Apama's Event Processing Language (Apama EPL).
 
-{{< c8y-admon-info >}}
-This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation]({{< link-apama-webhelp >}}) for further details.
-{{< /c8y-admon-info >}}
-
 The Streaming Analytics application can be used with both {{< product-c8y-iot >}} Core \(cloud\) and {{< product-c8y-iot >}} Edge \(local installation\).

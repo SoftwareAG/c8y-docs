@@ -25,7 +25,6 @@ The following operating systems/browsers are currently supported:
 |Operating system|Browser|Touch|Swipe|Keyboard|Pointer
 |:---|:---|:---|:---|:---|:---
 |Windows 10|Edge 38|Yes|Yes|Yes|Minor
-|Windows 10|Internet Explorer 11.5.6.7|Yes|Yes|Yes|Minor
 |Windows 10|Firefox 51|Yes|Yes|Yes|Yes
 |Ubuntu 16.04|Chrome 56|Minor|Yes|Yes|Yes
 |Ubuntu 16.04|Firefox 51|Minor|Yes|Yes|Yes

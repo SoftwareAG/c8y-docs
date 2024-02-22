@@ -49,7 +49,7 @@ Click the menu icon at the right of the respective row and then click **Download
 
 ### To delete a file from your account {#to-delete-a-file-from-your-account}
 
-Hover your mouse over the row containing the file you want to delete, then click the trash icon <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin:0"> at the right.
+Hover your mouse over the row containing the file you want to delete, then click the trash icon <img src="/images/icons/trash-can.png" alt="Trash can icon" style="display:inline-block; margin-bottom:3px"> at the right.
 
 #### To delete multiple files
 

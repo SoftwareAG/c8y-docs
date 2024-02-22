@@ -21,9 +21,9 @@ Hover over the application under **Subscribed applications** at the left and cli
 
 For all applications hosted as microservices by {{< product-c8y-iot >}} the status of the microservice is indicated next to its name by symbols and may be in one of the following states:
 
-* <img src="/images/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block;"> Microservice is up and running
-* <img src="/images/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block;">&nbsp; Microservice is unhealthy
-* <img src="/images/icons/danger.png" alt="Down" style="max-width: 100%; display: inline-block;"> Microservice is down
+* <img src="/images/icons/ok.png" alt="Up" style="max-width: 100%; display: inline-block; margin-bottom: 3px;"> Microservice is up and running
+* <img src="/images/icons/warning.png" alt="Unhealthy" style="max-width: 100%; display: inline-block; margin-bottom: 3px;"> Microservice is unhealthy
+* <img src="/images/icons/danger.png" alt="Down" style="max-width: 100%; display: inline-block; margin-bottom: 3px;"> Microservice is down
 
 You may view details on their status by expanding the respective entry.
 

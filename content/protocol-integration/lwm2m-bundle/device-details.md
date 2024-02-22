@@ -31,7 +31,7 @@ Some instances do not have all of the listed operations.
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. The possible options are **Write**, **Execute** and **Execute with parameters**. For example, after reading device **Firmware update** in order to perform the operation **Execute** without parameters, find the **Update** section on the object card and click **Execute**. To perform an operation with parameters click **Execute with parameters** and enter a value.
 
-More information can be acquired for each resource by hovering over the tooltip icon (<img src="/images/device-protocols/lwm2m/lwm2m-tooltip-help-icon.png" alt="Tooltip icon" style="display: inline; width: 20px; margin-bottom: 3px;">) present on the right of the field name.
+More information can be acquired for each resource by hovering over the tooltip icon (<img src="/images/icons/lwm2m-tooltip-help-icon.png" alt="Tooltip icon" style="display: inline; margin-bottom: 3px;">) present on the right of the field name.
 
 Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there are two.
 

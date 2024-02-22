@@ -13,11 +13,7 @@ shown on application start or not. You can configure this in 3 ways:
 2. as a dynamic public option
 3. as a static private option
 
-The URL parameter (1) is the highest privileged option and wins over the public (2) and private (3)
-Simply add a URL parameter to your application. For example, to hide
-the navigator you use the URL
-`apps/<<your-app-name>>/index.html?hideNavigator=true#/route`. Note that the URL parameter needs to
-be set before the #-hash navigation.
+With regard to inheritance, the option "a URL parameter" contains the highest privilege, followed by the "dynamic public option" and the "static private option" respectively. Simply add a URL parameter to your application for testing out certain options. For example, to hide the navigator you would simply use the URL: `apps/<<your-app-name>>/index.html?hideNavigator=true#/route`. Note that the URL parameter needs to be set before the #-hash navigation.
 
 The dynamic public option is requested by each Web SDK based application upon startup.
 The default fetch URL for this options is stored in the `dynamicOptionsUrl` which is by default set
@@ -35,7 +31,7 @@ If you upload this application to your tenant and subscribe it to at least one o
 all Web SDK based applications hide the navigator by default.
 
 {{< c8y-admon-info >}}
-If you are an enterprise customer, the easiest way to manipulate this options is to use the
+If you are an {{< enterprise-tenant >}} customer, the easiest way to manipulate this options is to use the
 branding manager in administration. It allows you to set most of the settings without the need to
 manually generate a JSON file and upload any applications.
 {{</ c8y-admon-info >}}

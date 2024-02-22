@@ -58,7 +58,7 @@ Afterwards, you can update the existing application with new variables in the de
 view of the application.
 
 {{< c8y-admon-info >}}
-If you are an enterprise customer, the easiest way to manipulate this options is to use the
+If you are an {{< enterprise-tenant >}} customer, the easiest way to manipulate this options is to use the
 branding manager in administration. It provides an form to set most of the settings without any
 manual generating of a JSON file and uploading applications.
 {{</ c8y-admon-info >}}
@@ -124,7 +124,9 @@ To change this, set the respective LESS variable to a new color.
 User interface elements like buttons, active navigation nodes or even active tabs as well as
 hover-states of buttons are now red.
 
-The following example shows how to change the main logo that is located at the top of the login dialog.
+### To change the main logo
+
+The following example shows hot to change the main logo that is located at the top of the login dialog.
 
 ```css
 @{logo-login} { background-image: url('./img/logo-main.svg')}

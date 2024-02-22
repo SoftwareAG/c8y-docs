@@ -35,7 +35,7 @@ The CLI will prompt you in two steps for the version and the base template. Afte
 > other
 ```
 
-In the second step, the base scaffolding version must be selected. The interface will provide the
+In the first step, the base scaffolding version must be selected. The interface will provide the
 last the latest available release. Additionally a version can be manually entered by selecting the
 `other` option. If you do not know which version to select, we recommend to use the latest.
 
@@ -53,14 +53,9 @@ last the latest available release. Additionally a version can be manually entere
   package-blueprint
 ```
 
-<<<<<<< HEAD
 In step two, the base project to scaffold from must be selected. You can select any of the default
 Cumulocity applications to reuse the functions provided there. In alternative, you could start a
-blank application by selecting _"application"_ project. A complete list of all applications provided
-can be found [here](#/getting-started/library/overview#c8yapps-extendable-applications)
-=======
-If you point your browser to *http://localhost:9000/apps/myapp/* you will get a Login screen which proxies to the tenant defined in the start script. If you cannot log in, it might be pointing to the wrong instance. To change the proxy to your tenant URL change the `start` script in the script section of the newly created *package.json*:
->>>>>>> develop
+blank application by selecting _"application"_ project.
 
 ### Step 3: Start the local development server
 
@@ -72,7 +67,7 @@ application using the `-u` flag. For example:
 npm start -- -u http://mytenant.acme.iot
 ```
 
-When started, the application begins to compile. After it is compiled, you can navigate to
+When you start the command the application begins to compile. After it is compiled, you can navigate to
 `http://localhost:4200/apps/<<your-app-name>>/` and login to your tenant.
 
 {{< c8y-admon-info >}}  
@@ -80,8 +75,7 @@ You must provide your tenant name or the tenant ID on login (as the application 
 {{< /c8y-admon-info >}}  
 
 You are now setup. Any changes you make to your local files will lead to recompiling. After a
-refresh you will see your changes. Read more about the `@c8y` library setup and learn how to use
-them in the next chapter.
+refresh you will see your changes. 
 
 ### Create your first custom component
 

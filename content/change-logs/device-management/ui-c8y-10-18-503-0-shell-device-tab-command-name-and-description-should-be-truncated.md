@@ -1,6 +1,6 @@
 ---
 date: 
-title: Shell device tab - command name and description should be truncated
+title: Input in text fields on the Shell tab no longer truncated
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3100
 version: 10.18.503.0
 ---
-When adding a new predefined command on Shell device tab, all text fields are now properly formatted making all information visible.
+When adding a new predefined command on the **Shell** tab in the device details, all text fields are now properly formatted making all information visible.

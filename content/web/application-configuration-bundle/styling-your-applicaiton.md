@@ -4,10 +4,10 @@ layout: redirect
 weight: 20
 ---
 
-A branding should always be applied to all of your applications. Therefore it is recommended to use
-dynamic public options for branding your application. You only need to set the right
+A branding must always be applied to all of your applications. Therefore, it is recommended to use
+dynamic public options for branding your application. You must set the right
 [design tokens](https://styleguide.cumulocity.com/apps/codex/#/ui-guidelines/foundations/design-tokens/overview) in the `brandingCssVars`
-application option. Those are css variables that get applied to all default stylesheets of
+application option. Those are CSS variables that get applied to all default style sheets of
 {{< product-c8y-iot >}} and will show your custom branding for any Web SDK application. Your `options.json` then
 look like this:
 
@@ -23,7 +23,7 @@ look like this:
 }
 ```
 
-You can add other options, for example, the `hideNavigator` or add an own CSS file:
+You can add other options, for example, the `hideNavigator` or add your own CSS file:
 
 ```json
 {
@@ -49,7 +49,7 @@ h1 {
 
 Follow the steps below:
 
-1. Zip the files (ensure that they are in the root of the zip without any wrapping folder).
+1. Zip the files to ensure that they are in the root of the zip without any wrapping folder.
 2. Name the zip file `public-options.zip`.
 3. Upload it as a web application in Administration > Ecosystem > Applications.
 4. Subscribe your applications to one of your tenants under Tenants > Subtenants.
@@ -65,13 +65,13 @@ manual generating of a JSON file and uploading applications.
 
 ## Styling by extending @c8y/style
 
-For styling the application global CSS created with [LESS](http://lesscss.org/) is used. The
+A global CSS file created with [LESS](http://lesscss.org/) is used to style the application. The
 original LESS source is distributed via the npm package
 [@c8y/style](https://www.npmjs.com/package/@c8y/style). By extending these styles you can
 change any detail of the application, the most requested changes are: colors,
-logos and fonts. Tese can be very easily achieved by replacing a number of variables.
+logos and fonts. These can be very easily achieved by replacing a number of variables.
 
-To override the variables it is possible to use:
+To override the variables it is possible to use one of the following:
 
 - LESS variables at build time
 - Custom CSS properties (at build time or configurable at runtime)
@@ -85,7 +85,7 @@ npm install @c8y/style
 
 1. Create a LESS file called for instance `branding.less`.
 2. Save it inside a new folder, which can have any name you like.
-3. Inside this folder, create a sub folder for images.
+3. Inside this folder, create a subfolder for images.
 
 ```bash
 my-application
@@ -124,14 +124,14 @@ To change this, set the respective LESS variable to a new color.
 User interface elements like buttons, active navigation nodes or even active tabs as well as
 hover-states of buttons are now red.
 
-The following example shows hot to change the main logo that is located at the top of the login dialog.
+The following example shows how to change the main logo that is located at the top of the login dialog.
 
 ```css
 @{logo-login} { background-image: url('./img/logo-main.svg')}
 @brand-logo-height: 48%;
 ```
 
-As the last step, add your custom less branding to the `cumulocity.config.ts` file in the `buildTime` setting:
+As the last step, add your custom LESS branding to the `cumulocity.config.ts` file in the `buildTime` setting:
 
 ```ts
 [...]

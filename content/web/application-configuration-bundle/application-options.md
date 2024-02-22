@@ -15,7 +15,7 @@ shown on application start or not. You can configure this in 3 ways:
 
 The URL parameter (1) is the highest privileged option and wins over the public (2) and private (3)
 Simply add a URL parameter to your application. For example, to hide
-the navigator you would simply use the URL
+the navigator you use the URL
 `apps/<<your-app-name>>/index.html?hideNavigator=true#/route`. Note that the URL parameter needs to
 be set before the #-hash navigation.
 
@@ -40,7 +40,7 @@ branding manager in administration. It allows you to set most of the settings wi
 manually generate a JSON file and upload any applications.
 {{</ c8y-admon-info >}}
 
-The static private option (3) can only be defined by a custom application. They
+The static private option can only be defined by a custom application. They
 are the lowest option level and can be overwritten by any of the upper options (1 and 2). They
 are also private, meaning they only apply to the current application they are applied to. You can
 define those options in the `cumulocity.config.ts` file by adding them to the `runTime` fragment:
@@ -56,6 +56,6 @@ export default {
 [...]
 ```
 
-It is good practice to use URL option (1) in order to verify an option behavior, or to use the dynamic option (2)
-in order to set the option platform wide (branding) and  touse the private static option (3) in order to set the default for your
+It is good practice to use the URL option in order to verify an option behavior, or to use the dynamic option
+in order to set the option platform wide (branding) and to use the private static option in order to set the default for your
 custom application.

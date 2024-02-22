@@ -6,7 +6,7 @@ section:
   - app_enablement
 ---
 
-This guide will setup your first application. First step is to install the `@angular/cli` in the right version.
+This guide will setup your first application. The first step is to install the `@angular/cli` in the right version.
 
 
 ```bash

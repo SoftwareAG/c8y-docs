@@ -65,7 +65,7 @@ This call can be done by executing the following curl statement:
 
 Replace `<cert-chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}.
 
-The same credentials used to access the {{< product-c8y-iot >}} Web GUI can be used to execute the REST calls.
+The same credentials used to access the {{< product-c8y-iot >}} Web UI can be used to execute the REST calls.
 
 You will receive a response like that:
 

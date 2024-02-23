@@ -93,6 +93,10 @@ Below is an example where the “connectivity:updateRssi” custom action is sel
 
 ![Custom action example](/images/device-protocols/lwm2m/lwm2m-custom-action-connectivity-signal.png)
 
+##### Ignore empty values {#ignore-empty-values}
+
+When this option is selected and device sends empty data, no action will be performed by the agent even if it's configured. If this option is not selected and device sends empty data, then agent will still perform mapped action (default behavior). 
+
 ##### Decoder microservices
 
 {{< product-c8y-iot >}} LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary {{< product-c8y-iot >}} microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We provide an according example how to write such a decoder microservice in our public [GitHub repository](https://github.com/SoftwareAG/cumulocity-examples).

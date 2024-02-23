@@ -117,7 +117,7 @@ Here are some configuration needed before calling device access token API:
 * DEVICE_ACCESS_TOKEN_PATH API - The endpoint responsible for the mTLS protocol.
 * LOCAL_DEVICE_CHAIN - The whole chain in PEM format.
 
-After filling in this data, the example client will use the provided data to retrieve device access token to the specified platform using certificates.
+After filling in this data, the example client will use the provided data to retrieve the device access token to the specified platform using certificates.
 
 In general, the mTLS protocol Client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
 JSSE provides the Java implementation of the SSL and TLS protocol, which can be configured by developers using its classes.

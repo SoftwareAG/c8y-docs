@@ -92,7 +92,7 @@ Only devices which are registered to use cert auth can retrieve a JWT token via 
 
 The code of the {{< product-c8y-iot >}} mTLS example client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mtls-client.
 
-Here are some configuration needed before calling device access token API:
+The following configuration is required before calling the device access token API:
 
     private static final String KEYSTORE_NAME = "";
 	 private static final String KEYSTORE_PASSWORD = "";

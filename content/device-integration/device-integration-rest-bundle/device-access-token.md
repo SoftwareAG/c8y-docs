@@ -6,9 +6,7 @@ layout: redirect
 
 ### Overview {#overview}
 
-Devices can authenticate against the {{< product-c8y-iot >}} platform using X.509 client certificates.  
-
-{{< product-c8y-iot >}} allows devices to connect via mTLS protocol using a X.509 certificate for authentication.
+Devices can authenticate against the {{< product-c8y-iot >}} platform via mTLS protocol using X.509 client certificates.  
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate.
 
@@ -120,6 +118,6 @@ Here are some configuration needed before calling device access token API:
 After filling in this data, the example client will use the provided data to retrieve the device access token to the specified platform using certificates.
 
 In general, the mTLS protocol client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
-JSSE provides the Java implementation of the SSL and TLS protocol, which can be configured by developers using its classes.
+JSSE provides the Java implementation of the SSL and TLS protocol which can be configured by developers using its classes.
 The documentation of the Java Secure Socket Extension shows how the SSL connection is established and provides some examples of customizing the implementation.
 The full document is available on the [official Oracle website](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html).

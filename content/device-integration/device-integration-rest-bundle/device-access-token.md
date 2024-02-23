@@ -108,7 +108,7 @@ The following configuration is required before calling the device access token A
 * KEYSTORE_NAME - The path to your keystore which contains the private key and the chain of certificates, which the device uses to authenticate itself.
 * KEYSTORE_PASSWORD is the password created for keystore to use its private key.
 * KEYSTORE_FORMAT - Either "JKS" or "PKCS12" depending on the file format. The path is provided by KEYSTORE_NAME.
-* TRUSTSTORE_NAME is the path to your truststore, which contains the certificate of the server.
+* TRUSTSTORE_NAME - The path to your truststore which contains the certificate of the server.
 * TRUSTSTORE_PASSWORD - The password to access the truststore.
 * TRUSTSTORE_FORMAT should be "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
 * PLATFORM_URL should be platform URL.

@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Device access token
+title: Device access tokens
 layout: redirect
 ---
 

@@ -111,7 +111,7 @@ The following configuration is required before calling the device access token A
 * TRUSTSTORE_NAME - The path to your truststore which contains the certificate of the server.
 * TRUSTSTORE_PASSWORD - The password to access the truststore.
 * TRUSTSTORE_FORMAT - Either "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
-* PLATFORM_URL should be platform URL.
+* PLATFORM_URL - The URL of the platform.
 * DEVICE_ACCESS_TOKEN_PATH API - The endpoint responsible for the mTLS protocol.
 * LOCAL_DEVICE_CHAIN - The whole chain in PEM format.
 

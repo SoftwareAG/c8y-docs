@@ -93,6 +93,10 @@ Below is an example where the “connectivity:updateRssi” custom action is sel
 
 ![Custom action example](/images/device-protocols/lwm2m/lwm2m-custom-action-connectivity-signal.png)
 
+##### Ignore empty values {#ignore-empty-values}
+
+When this option is selected and device sends empty data, no action will be performed by the agent even if it's configured. If this option is not selected and device sends empty data, then agent will still perform mapped action (default behavior).
+
 #### Auto observe {#auto-observe}
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.

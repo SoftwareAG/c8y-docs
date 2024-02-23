@@ -12,7 +12,7 @@ Devices can authenticate against the {{< product-c8y-iot >}} platform using X.50
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate.
 
-Retrieving device access token from the platform with certificates do not need to provide the tenant ID, username and password. Authentication information will be obtained from the certificates.
+Retrieving device access tokens from the platform with certificates does not require the tenant ID, username and password. Authentication information will be obtained from the certificates.
 
 #### General requirements for connecting devices with certificates {#general-requirements-for-connecting-devices-with-certificates}
 

@@ -50,7 +50,7 @@ During device registration, the device user is created, which is necessary for d
 
 ### JWT token retrieval {#jwt-token-retrieval}
 
-A device which is authenticated by certificates and retrieve token from {{< product-c8y-iot >}} platform which can later be used to authenticate HTTP requests.
+A device which is authenticated by certificates and retrieves tokens from the {{< product-c8y-iot >}} platform which can later be used to authenticate HTTP requests.
 
 
 	POST /devicecontrol/deviceAccessToken

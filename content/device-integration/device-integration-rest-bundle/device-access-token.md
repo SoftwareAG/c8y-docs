@@ -81,7 +81,7 @@ The default value is 1 hour.
 The minimum allowed value is 5 minutes.
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
-A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
+A device can fetch a new device token before the old one expires, if it requests a JWT token after half of the token's lifetime has passed.
 
 {{< c8y-admon-caution >}}
 A Only those devices can retrieve JWT token via mTLS protocol using this endpoint which are registered to use cert auth. Once certificate based mutual authentication is successful with valid certificate chain device will retrieve token. The mTLS protocol can be leveraged using device certificate and its key using this endpoint only.

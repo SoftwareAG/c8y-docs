@@ -115,7 +115,7 @@ Here are some configuration needed before calling device access token API:
 * TRUSTSTORE_FORMAT should be "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
 * PLATFORM_URL should be platform URL.
 * DEVICE_ACCESS_TOKEN_PATH API endpoint should be responsible for mTLS protocol.
-* LOCAL_DEVICE_CHAIN should be whole chain in PEM format.
+* LOCAL_DEVICE_CHAIN - The whole chain in PEM format.
 
 After filling in this data, the example client will use the provided data to retrieve device access token to the specified platform using certificates.
 

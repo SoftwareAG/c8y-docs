@@ -84,7 +84,7 @@ Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) i
 A device can fetch a new device token before the old one expires, if it requests a JWT token after half of the token's lifetime has passed.
 
 {{< c8y-admon-caution >}}
-Only devices which are registered to use cert auth can retrieve a JWT token via mTLS protocol using this endpoint. Once the certificate-based mutual authentication is successful with a valid certificate chain the device retrieves the token. The mTLS protocol can be leveraged using the device certificate and its key using this endpoint only.
+Only devices which are registered to use certificate authentication can retrieve a JWT token via mTLS protocol using this endpoint. Once the certificate-based mutual authentication is successful with a valid certificate chain the device retrieves the token. The mTLS protocol can be leveraged using the device certificate and its key using this endpoint only.
 {{< /c8y-admon-caution >}}
 
 

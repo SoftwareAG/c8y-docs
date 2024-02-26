@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Map widget without assigned device in dashboard when connecting smartphone
+title: Map widget correctly assigns smartphone as device
 product_area: Application enablement \u0026 solutions
 change_type:
   - value: change-VSkj2iV9m

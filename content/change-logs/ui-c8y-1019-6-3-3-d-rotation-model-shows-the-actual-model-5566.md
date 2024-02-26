@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57985
 version: 1019.6.3
 ---
-An issue has been addressed that caused the 3D rotation widget to not show the actual model.
+A bug has been fixed that prevented the "Rotation" widget from displaying the actual model.

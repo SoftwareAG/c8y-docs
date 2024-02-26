@@ -1,7 +1,7 @@
 ---
 date: ""
 title: Rotation widget shows the actual model
-product_area: undefined
+product_area: Application enablement \u0026 solutions
 change_type:
   - value: change-VSkj2iV9m
     label: Fix

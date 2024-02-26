@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57689
 version: 1019.6.4
 ---
-The Map widget displayed in the dashboard did not have a device assigned to it when connecting a smartphone. This issue has been fixed so that the Map widget correctly assigns the connected smartphone as the device to display location data from.
+The "Map" widget displayed in the dashboard did not have a device assigned to it when connecting a smartphone. This issue has been fixed so that the "Map" widget correctly assigns the connected smartphone as the device to display location data from.

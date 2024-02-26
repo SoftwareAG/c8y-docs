@@ -120,5 +120,4 @@ The UI is available in the following languages:
 |Japanese|ja_JP|
 |Korean|ko|
 |Polish|pl|
-|Russian|ru|
 |Spanish|es|

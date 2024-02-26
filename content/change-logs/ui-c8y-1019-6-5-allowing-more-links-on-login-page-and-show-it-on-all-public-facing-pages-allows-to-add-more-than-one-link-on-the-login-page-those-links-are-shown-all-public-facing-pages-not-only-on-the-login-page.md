@@ -1,6 +1,7 @@
 ---
 date: ""
-title: Allowing more links on the login page and showing it on all public-facing pages
+title: Enabling multiple links on the Login page which are shown on all public-facing pages
+
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

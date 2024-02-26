@@ -1,6 +1,6 @@
 ---
 date: ""
-title: 3D rotation model shows the actual model (#5566)
+title: Rotation widget shows the actual model
 product_area: undefined
 change_type:
   - value: change-VSkj2iV9m

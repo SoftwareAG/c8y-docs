@@ -8,7 +8,7 @@ outputs:
 section:
   - device_management
 helpcontent:
-  - label: viewing-devices
+  - label: viewing-all-devices
     title: Viewing devices
     content: "The device list shows the most relevant information for all devices connected to your account. The columns shown in the device list may be customized to your needs, see the user documentation for details.
 
@@ -20,7 +20,7 @@ helpcontent:
 ---
 
 {{< c8y-admon-related >}}
-* The [managed objects API](https://cumulocity.com/api/core/#tag/Managed-objects) for REST API methods concerning managed objects (devices or groups of devices).
+* The [managed objects API](https://{{< domain-c8y >}}/api/core/#tag/Managed-objects) for REST API methods concerning managed objects (devices or groups of devices).
 {{< /c8y-admon-related >}}
 
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.

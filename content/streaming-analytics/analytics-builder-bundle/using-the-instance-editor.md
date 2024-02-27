@@ -28,8 +28,7 @@ Each row that is shown for an instance has an actions menu \(the three vertical 
 
 You can control the list of instances by filtering and sorting. See [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances) for more information.
 
-If the following error icon is shown near the end of a row, the corresponding instance is no longer processing events. Click that icon to get more information.
-![Error icon](/images/streaming-analytics/analytics-builder/instance-editor-error.png)
+If the error icon <img src="/images/streaming-analytics/analytics-builder/instance-editor-error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown near the end of a row, the corresponding instance is no longer processing events. Click that icon to get more information.
 
 When you open the instance editor, it may happen that template parameters have been changed since you last edited the instances and that they no longer use the same values types as before. If the values specified in the instance editor are still compatible, they are converted to the new value types. Incompatible values \(including check boxes for boolean types and values that are shown in drop-down list boxes\) are automatically removed. Each field from which the value has been removed shows an error underline and a corresponding error message.
 
@@ -40,7 +39,6 @@ When you add a new instance, a new row is added to the instance editor table. Yo
 #### To add an instance {#to-add-an-instance}
 
 1.  In the toolbar of the instance editor, click **New Instance**.
-
     This adds a new row at the bottom of the table. New instances \(rows\) are shown with a background color until they have been saved.
 
 2.  Fill in the template parameter values, as defined by the model. See also [Editing an instance](/streaming-analytics/analytics-builder/#editing-an-instance).
@@ -73,15 +71,12 @@ Once an instance is active, you cannot modify the template parameter values or m
 #### To deploy an instance {#to-deploy-an-instance}
 
 1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
-
     You cannot activate instances that are in draft mode.
 
 2.  If you have selected simulation mode, click the calendar icon which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 
 3.  When the toggle button in the **Status** column currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
-
-    In the case of an error, the following error icon is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
-    ![Error icon](/images/streaming-analytics/analytics-builder/instance-editor-error.png)
+    In the case of an error, the error icon <img src="/images/streaming-analytics/analytics-builder/instance-editor-error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown at the right of the table and the instance cannot be activated. Click the error icon to get more information.
 
 ### Undeploying an instance {#undeploying-an-instance}
 
@@ -99,7 +94,7 @@ If you have a long list of instances, you can easily locate the instances that y
 
 You can also sort the columns of the instance editor table. To do so, click the arrows that are shown when you move the mouse to a column header. This sorts the instances according to the values in that column \(for example, alphabetically or by number\). Clicking again sorts the column in the opposite direction. Fields with required values in that column that have not yet been specified can thus be shown either at the very top or bottom of the column. You can also sort the instances alphabetically according to run mode and status, for example, to show the active instances at the top.
 
-Editing a value will not affect the display of rows in the instance editor table. If you want to reapply the search and sorting, you have to save and reload the instances.
+Editing a value will not affect the display of rows in the instance editor table. If you want to reapply the search and sorting, you must save and reload the instances.
 
 Adding a new instance will not affect the display of rows in the instance editor table. If you add a row after sorting, the row is always added at the bottom of the table, unless you reload the instances.
 
@@ -129,7 +124,7 @@ You can remove each instance that is currently listed in the instance editor. Wh
 
 ### Saving the instances {#saving-the-instances}
 
-You can save the instances even if there are still rows in which required information needs to be specified. This is helpful if you want to add that information at a later point in time.
+You can save the instances even if there are still rows in which required information must be specified. This is helpful if you want to add that information at a later point in time.
 
 {{< c8y-admon-info>}}
 When you activate an instance, all of your recent changes are automatically saved. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).
@@ -153,10 +148,10 @@ If there are unsaved changes when reloading, you are prompted to save these chan
 
 ### Leaving the instance editor {#leaving-the-instance-editor}
 
-When you leave the instance editor using the corresponding toolbar button, you are returned to the model manager.
+When you leave the instance editor as described below, you are returned to the model manager.
 
 #### To leave the instance editor {#to-leave-the-instance-editor}
 
-In the toolbar of the instance editor, click X.
+In the toolbar of the instance editor, click the close icon <img src="/images/streaming-analytics/analytics-builder/icon-instance-editor-exit.png" alt="X icon" style="display:inline-block; margin:0">.
 
 If there are unsaved changes when leaving, you are prompted to save these changes first.

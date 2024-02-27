@@ -1,11 +1,11 @@
 ---
-weight: 50
+weight: 70
 title: Managing microservices
 layout: bundle
 section:
   - platform_administration
 helpcontent:
-  - label: microservices
+  - label: managing-microservices
     title: Microservices
     content: "A microservice is a specific type of application, that is a server-side application used to develop further functionality on top of Cumulocity IoT.
 

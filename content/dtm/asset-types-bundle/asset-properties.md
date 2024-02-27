@@ -17,6 +17,7 @@ helpContent:
 
 Asset properties are the parameters that define an [asset model](#asset-models). One or more asset properties are used to define an asset model. Asset properties are created in the **Asset properties** page.
 
+When you open the DTM application, default properties are readily available for use. See [Default properties](#default-properties) to view the list of properties available.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
@@ -26,7 +27,7 @@ ROLES & PERMISSIONS
 
 ### To create an asset property {#to-create-an-asset-property}
 
-When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system.
+When you navigate to the **Asset properties** page following **Configuration > Asset properties** for the first time, there will be no asset properties present in the system except the default properties. See [Default properties](#default-properties) to view the list of properties available.
 
 If you use a tenant which already has asset properties defined, you find the list of defined asset properties on the left. You see the selected asset property definition on the right.
 
@@ -73,8 +74,13 @@ Note that the key is automatically generated based on the label. You can modify 
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
+<td style="text-align:left"><b>Order</b></td>
+<td style="text-align:left">Used to define the order in which the key value pairs of a complex property must be shown.</td>
+<td style="text-align:left">Optional</td>
+</tr>
+<tr>
 <td style="text-align:left"><b>Type</b></td>
-<td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#file-upload" class="no-ajaxy">File upload</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, or <a href="#boolean" class="no-ajaxy">Boolean</a>.</td>
+<td style="text-align:left">Defines the type of the asset property. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, <a href="#boolean" class="no-ajaxy">Boolean</a> or <a href="#file-upload" class="no-ajaxy">File upload</a>.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -86,7 +92,8 @@ Note that the key is automatically generated based on the label. You can modify 
 </table>
 
 {{< c8y-admon-info>}}
-The **Default value** field is only shown if the selected **Type** is either "Text" or "Number".
+The **Default value** field is only shown if the selected **Type** is either "Text" or "Number". <br>
+The **Order** field is shown only for complex properties with an exception for Default properties. See [Default properties](#default-properties) to view the list of properties available.
 {{< /c8y-admon-info>}}
 
 Once you have defined all necessary asset properties for your project, you must define the [asset models](/dtm/asset-types/#asset-models).
@@ -101,16 +108,13 @@ Select **Text** if the asset property value is a string, for example, a wind tur
 
  If you select **Text**, the following fields appear:
 
-*	**Min Length**:
+* **Min Length**:
 
 Enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
-
-If not selected, no minimum length criteria is set for this asset property during the asset creation.
 
 * **Max Length**:
 
 Enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
-
 
 * **RegExp**:
 
@@ -118,14 +122,16 @@ Enter a valid regular expression. During the asset creation, you must provide th
 
 **Example:**
 
-If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator  codes have to start with the prefix “MCGEN”.
+If the asset property is "Generator code" with the regular expression "^MCGEN[a-zA-Z0-9]*$", all generator codes must start with the prefix “MCGEN”.
+
+If you do not select any of the restrictions above, it is not applicable for the asset property during asset creation.
 
 #### Default value {#default-value}
 
-Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
+Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the asset model, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
-The default value has to adhere to all validations provided beforehand. If you selected a property of the type "Text", you can set the **Min length**, **Max length** and/or **RegExp** and the default value must fulfill all set validations.
+The default value must adhere to all validations provided beforehand. If you selected a property of the type "Text", you can set the **Min length**, **Max length** and/or **RegExp** and the default value must fulfill all set validations.
 {{< /c8y-admon-info>}}
 
 **Example:**
@@ -140,14 +146,13 @@ The type **Number** contains the following fields for additional information:
 
 * **Minimum**:
 
-If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot be lower or less than the minimum provided.
+If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be greater than or equal to the minimum provided. By default, this box is not selected.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be greater than or equal to the value provided in the field **Minimum.** By default, this box is not selected.
 
 {{< /c8y-admon-info>}}
-
 
 * **Maximum**:
 
@@ -155,13 +160,12 @@ If selected, enter a number in the field on the right. When you create the asset
 
 {{< c8y-admon-info>}}
 
-If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it needs to be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
+If you entered a [default value](/dtm/asset-types/#default-value) beforehand, it must be lesser than or equal to the **Maximum** entered here. By default, this box is not checked.
 
 {{< /c8y-admon-info>}}
 
-
 * **Default value**:
-Assigns a default value to the asset property. If this field is left empty in the asset property, you must enter a value during the asset creation.
+Assigns a default value to the asset property. If this field is left empty in the asset property and marked as required in the asset model, you must enter a value during the asset creation.
 
 {{< c8y-admon-info>}}
 
@@ -191,7 +195,7 @@ During asset creation, these values appear as options in the dropdown menu. Sele
 
 **Example:**
 
-If you create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you have to provide these options separated by a comma when creating the asset property.
+If you create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you must provide these options separated by a comma when creating the asset property.
 
 ![Asset property enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
 
@@ -221,7 +225,7 @@ If selected, enter the allowed file types separated by a comma in the **Allowed 
 
 If there is a file size limit set for the tenant, you see the limit along with the field name for **Max file size in MB**.<br>
 During the bulk import, the file size validation is skipped as the file is already uploaded to the tenant.
-
+To prevent security threats, sanitize your files beforehand.
 
 {{< /c8y-admon-info>}}
 
@@ -286,6 +290,12 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 
 ![Complex asset property](/images/dtm/custom-property/dtm-property-library-complex-property.png)
 
+{{< c8y-admon-info>}}
+
+If you do not fill out the **Order** field, the order is determined by the sequence in which the key value pairs are added and the field will be automatically filled on saving the asset property.
+
+{{< /c8y-admon-info>}}
+
 ### To export asset properties {#to-export-asset-properties}
 
 Follow the steps below:
@@ -297,6 +307,7 @@ Follow the steps below:
 Use the downloaded file to import the asset properties into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
+Default properties are not listed under **Export asset properties**. See [Default properties](#default-properties) to view the list of properties available.
 You can export a maximum of 500 asset properties at a time.
 {{< /c8y-admon-info>}}
 
@@ -310,10 +321,8 @@ To import asset properties into the DTM application, follow the steps below:
 2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported asset properties from a DTM application on another tenant.
 3. Click **Next** to preview the asset properties before importing them.
 4. Click **Import** to import the asset properties.
-4. Alternatively, Click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
-5. View newly imported asset properties in the **Asset properties** page.
-
-
+5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
+6. View newly imported asset properties in the **Asset properties** page.
 
 ![Import asset properties](/images/dtm/custom-property/dtm-property-library-import.png)
 
@@ -323,3 +332,25 @@ Review the errors that are reported, resolve them, and attempt the upload again.
 
 You can import a maximum of 500 asset properties at a time.
 {{</ c8y-admon-info>}}
+
+### Default properties {#default-properties}
+
+### Characteristics {#characteristics-of-default-properties}
+
+* Default properties are readily available when you open the application.
+* Default properties cannot be deleted.
+* Only selected fields within a default property are editable and the editable fields vary depending on the specific property.
+* Default properties cannot be exported.
+
+### Location {#location}
+
+The **Location** property enables you to assign location (latitude and longitude) to an asset. You can set the default values of the latitude and longitude by entering the corresponding values or alternatively using the map view.
+
+To set the default values for the latitude and longitude using the map view, click **Choose on Map** at the end of the section. Click the full screen icon at the top right corner of the map to view it in full screen. Without values for latitude and longitude, the marker is hidden. To see the marker, click anywhere on the map. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
+
+{{<c8y-admon-info>}}
+If a property with the label "Location" already exists, the default Location property will be created with the label "Asset Location" and with the key "c8y_Position".<br>
+The valid range for the latitude is -90 to +90 and valid range for the longitude is -180 to +180. <br>
+The marker on the map is only visible when both values for latitude and longitude are provided.<br>
+The default values of both latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The Altitude value is not represented on the map.
+{{</c8y-admon-info>}}

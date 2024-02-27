@@ -30,10 +30,16 @@ Root asset models are asset models which are at the top of hierarchy and don't h
 
 6. Under **Asset properties**, fill in the required information. Here you find all [asset properties](/dtm/asset-types/#asset-properties) assigned to the asset model that you create.
 
-    {{< c8y-admon-info>}}
- The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
- When creating an asset you must provide the values for all asset properties.
-    {{< /c8y-admon-info>}}
+For an asset with a **Location** property, click **Choose on Map** in the section to set the values for the latitude and longitude using map view. Click the full screen icon at the top right corner of the map to view it in full screen.
+
+The marker is positioned at the default value set in the **Location** property. Click or drag the marker to the preferred position to set the value for both latitude and longitude. If you do not enter a latitude or longitude value, you will not see a marker on the map.
+
+{{< c8y-admon-info>}}
+The values of latitude and longitude are automatically updated whenever a new location is selected on the map and vice-versa. The altitude value is not represented on the map.<br>
+The asset properties are defined when [creating the asset model](/dtm/asset-types/#to-create-an-asset-model).
+When creating an asset you must provide the values for all asset properties.<br>
+For complex properties, the keys are ordered as specified in the **Order** field of property definition.
+{{< /c8y-admon-info>}}
 
 7. Click **Next** to reach the next hierarchy level of your **asset hierarchy** and fill out the fields as necessary for your asset. Repeat for all asset hierarchy levels.
 
@@ -119,10 +125,16 @@ On successful asset hierarchy creation, you see a pop-up notification in the top
 You can view the newly created asset hierarchy in the **Assets** page.
 Also see [viewing assets](/dtm/asset-hierarchy/#viewing-assets).
 
+In case of a bulk operation failure, the entire operation is rolled back and the user will be navigated to main assets page to cleanup the entities created and to try the operation again.
+
 ### To view asset details {#to-view-asset-details}
 
 Select an asset in the **Assets** page to view the asset details in **Subassets** tab.
 It shows all the subassets, child devices and asset properties.
+{{< c8y-admon-info>}}
+The key value pairs for complex properties in the **Subassets** page are displayed in the order which has been specified in the **Order** field of property definition in the **Asset properties** page.
+{{< /c8y-admon-info>}}
+
 
 In the top right corner of the **Subassets** tab, you can [assign devices](#to-assign-devices-to-an-asset).
 

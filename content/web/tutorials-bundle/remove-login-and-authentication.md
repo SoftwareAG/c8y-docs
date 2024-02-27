@@ -1,5 +1,5 @@
 ---
-title: Remove login page and authentication
+title: Remove Login screen and authentication
 layout: redirect
 weight: 60
 ---
@@ -10,20 +10,20 @@ weight: 60
 This technique exposes the username and password. Ensure that this user doesn't have access to sensible data.
 {{< /c8y-admon-info >}}
 
-The default application always takes you to the login page for authentication before it allows you to access a page.
+The default application always takes you to the Login screen for authentication before it allows you to access a page.
 This recipe will explain how to remove the login authentication and use the application directly.
 
 ### Brief background {#brief-background}
 
 The removal of all authentication is not possible.
 In order to get around it you must pass default credentials that the application will read upon request.
-Your goal is to trigger the login with the default credentials before the application requests the login page because it is not authenticated.
+Your goal is to trigger the login with the default credentials before the application requests the Login screen because it is not authenticated.
 
 The login functionality is part of the `CoreModule` in the  `@c8y/ngx-components` package which is loaded when Angular bootstraps the application.
 The default credentials must be passed to the API before that happens.
-The result will be that, when Angular loads the initial page, the user will be already authenticated and the login page will be skipped.
+The result will be that, when Angular loads the initial page, the user will be already authenticated and the Login screen will be skipped.
 
-### 1. Initialize a new application {#1-initialize-a-new-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-remove-login}
 
 As a starting point, you need an application.
 For this purpose, create a new application using the `c8ycli`:

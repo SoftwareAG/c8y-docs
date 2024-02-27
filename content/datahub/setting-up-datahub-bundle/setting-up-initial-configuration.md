@@ -8,7 +8,7 @@ helpcontent:
     content: "The setup of Cumulocity IoT DataHub requires you to configure a **Dremio API user** and access to a **data lake**. The Dremio API user is required for connecting to Dremio and letting you run queries against the data lake contents via JDBC, ODBC, or REST API.
 
 
-    A data lake is required to store the data being offloaded from a Cumulocity IoT base collection. You have to specify the location in the data lake under which the offloaded data will reside."
+    A data lake is required to store the data being offloaded from a Cumulocity IoT base collection. You must specify the location in the data lake under which the offloaded data will reside."
 ---
 
 The setup of {{< product-c8y-iot >}} DataHub requires you to configure a Dremio API user and access to a data lake. In the navigator, select **Initial configuration** under **Settings** to define those settings.
@@ -23,7 +23,7 @@ You need administration permissions to define the settings. See [Defining {{< pr
 
 In order to access the data lake contents, you can use ODBC, JDBC, Dremio REST API, or a proxy REST API. See [Querying offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#querying-offloaded) for more details. The proxy REST API is served by the {{< product-c8y-iot >}} DataHub server, which acts as a proxy to Dremio. The proxy API requires a Dremio user for the interaction of {{< product-c8y-iot >}} DataHub server and Dremio. This Dremio API user can then also be used for data lake querying based on JDBC, ODBC, or Dremio REST API.
 
-Therefore, you have to configure in the initial configuration under **Dremio API user** the name and the password of that Dremio API user.
+Therefore, you must configure in the initial configuration under **Dremio API user** the name and the password of that Dremio API user.
 
 The name is composed of two parts, with the first part being fixed:
 

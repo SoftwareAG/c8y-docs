@@ -32,7 +32,7 @@ To ease the device integration, {{< product-c8y-iot >}} supports static template
 
 Open the **SmartREST template** page from the **Device Types** menu in the navigator.
 
-![template view](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest.png)
+![SmartREST template view](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest.png)
 
 For each template, the following information is provided:
 

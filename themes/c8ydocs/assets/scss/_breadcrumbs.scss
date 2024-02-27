@@ -3,8 +3,8 @@
   flex-wrap: nowrap;
   align-items: center;
   font-size: var(--c8y-font-size-small);
-  background-color: rgba(255,255,255,.85);
-  backdrop-filter: blur(2px);
+  background-color: var(--c8y-palette-high);
+  
   span{
     display: flex;
     align-items: center;

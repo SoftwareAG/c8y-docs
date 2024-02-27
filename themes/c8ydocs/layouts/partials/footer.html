@@ -1,7 +1,7 @@
 
 <footer class="main-footer">
   <div class="copyright">
-    <div class="">
+    <div class="text-center">
       <p class="small ">Copyright &copy; 2019-{{ now.Format "2006" }} {{ with .Site.Params.footer.copyright }}{{ . | safeHTML }}{{ end }}.</p>
     </div>
   </div>  
@@ -10,13 +10,14 @@
 {{ "<!-- Essential Scripts -->" | safeHTML }}
 
 {{ "<!-- jQuery -->" | safeHTML }}
+
 <script src="{{ "js/vendor/jquery.min.js" | absURL }}"></script>
 <script src="{{ "js/vendor/bootstrap.bundle.min.js" | absURL }}"></script>
 <script src="{{ "js/vendor/clipboard.js" | absURL }}"></script>
 
 <script src="{{ "js/vendor/zoom.js" | absURL }}"></script>
 <script src="{{ "js/main.js" | absURL }}"></script>
-
+<script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
 {{/*  <script src="{{ "js/vendor/util.js" | absURL }}"></script>
 <script src="{{ "js/vendor/scrollspy.js" | absURL }}"></script>  */}}
 

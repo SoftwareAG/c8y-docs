@@ -369,8 +369,7 @@ Values of the `any` type can represent a value type or a `pulse` type.
 
 ### Type conversions {#type-conversions}
 
-It is legal to connect a block output to a block input if they are the same type. Most other connections are also permissible, which result in the conversions as described in the table below. The following image indicates that a connection is not legal; trying to deploy a model with such a wiring connection will fail.
-![X](/images/streaming-analytics/analytics-builder/type-conversion-error.png)
+It is legal to connect a block output to a block input if they are the same type. Most other connections are also permissible, which result in the conversions as described in the table below. An <img src="/images/streaming-analytics/analytics-builder/type-conversion-error.png" alt="X icon" style="display:inline-block; margin:0"> indicates that a connection is not legal; trying to deploy a model with such a wiring connection will fail.
 
 <table>
 <thead>
@@ -587,7 +586,7 @@ The input blocks assume that while events may be delivered out of order, they ar
 
 If the time delay value is set too low, then a small delay may result in Apama dropping an event, which can lead to erroneous results. The higher the time delay value is, the larger is the delay before an event is processed. Thus, it is important to pick a suitable value for the time delay to match the environment for events being delivered into Apama.
 
-The correlator logs the number of dropped events periodically to the correlator log file. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for configuring logging throttling and [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log).
+The correlator logs the number of dropped events periodically to the log file. See [Configuration](/streaming-analytics/analytics-builder/#configuration) for configuring logging throttling and [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles).
 
 ### Output blocks and event timing {#output-blocks-and-event-timing}
 

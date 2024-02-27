@@ -53,7 +53,7 @@ The next section shows how you can use that concept in an Angular application wi
 ### Basic: Interaction between @c8y/client and an Angular application {#basic-interaction-between-c8yclient-and-an-angular-application}
 
 `@c8y/ngx-components` is an Angular module that allows to spin up an application.
-It is, for example, used in our basic applications like Cockpit, Administration and Device managament to display the login screen.
+It is, for example, used in our basic applications like Cockpit, Administration and Device managament to display the Login screen.
 When you spin up a new Angular-based application the `@c8y/client` and the `@c8y/ngx-components` are always included.
 Moreover the ngx-components have a subpackage which is called `@c8y/ngx-components/api` and which exports a `DataModule`.
 That module already imports all common endpoint services, so that you can use the standard dependency injection of Angular to access data.
@@ -85,7 +85,7 @@ This covers the overview on how to use the common endpoints.
 The following recipe shows how to add a custom endpoint.
 
 
-### 1. Initialize the example application {#1-initialize-the-example-application}
+### 1. Initialize the example application {#1-initialize-the-example-application-custom-microservice}
 
 As a starting point, you need an application showing dashboards.
 For this purpose, create a new Cockpit application using the `c8ycli`:

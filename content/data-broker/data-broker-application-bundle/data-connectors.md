@@ -5,7 +5,7 @@ layout: bundle
 section:
   - platform_administration
 helpcontent:
-  - label: data-connector
+  - label: data-connectors
     title: Data connector
     content: "The **Data connectors** page shows a list of all currently defined data connectors with their status. A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant. To add a data connector, click **Add data connector** at the top right."
 ---
@@ -79,7 +79,7 @@ If the source tenant has been suspended all its data broker connectors will be s
 	</tr>
 	<tr>
 	<td style="text-align:left">Type filter</td>
-	<td style="text-align:left">Forwarded data needs to have this value in its "type" property.</td>
+	<td style="text-align:left">Forwarded data must have this value in its "type" property.</td>
 	</tr>
 	</tbody>
 	</table>

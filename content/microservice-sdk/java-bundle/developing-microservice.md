@@ -30,39 +30,97 @@ Annotation | Description
 
 ### Context support {#context-support}
 
-It is described below the context support as utility tool for the user management described in [General aspects](/microservice-sdk/general-aspects) of microservices in {{< product-c8y-iot >}}.
+The context support is covered by the annotation `@EnableContextSupport`. It allows to choose between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
 
-`@UserScope` and `@TenantScope` at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
+Each microservice has a service user which can be used for the interaction with the platform. The roles associated with this user are specified in the manifest.
+Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request to the microservice are used.
 
-An example of injecting a bean into the tenant scope is available in the platform API module as follows:
-
-```java
-@TenantScope
-public EventApi eventApi (Platform platform) throws SDKException {
-    return platform.getEventApi();
-}  
-```
-
-A sample utilization of the bean can be as follows:
+#### Setting the context
+You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Accordingly, `ContextService<MicroserviceCredentials>` can be used for service user credentials.
+Examples on how to use `ContextService` are given below.
 
 ```java
 @Autowired
-private PlatformProperties platformProperties;
+private ContextService<UserCredentials> contextService;
+@Autowired
+private EventApi eventApi;
+
+public PagedEventCollectionRepresentation get10Events () {
+  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+}
+```
+In this first example, the events are obtained using the credentials of the authenticated user.
+
+
+In the second example, the credentials of the service user will be utilized to retrieve the events.
+```java
 @Autowired
 private ContextService<MicroserviceCredentials> contextService;
 @Autowired
 private EventApi eventApi;
 
 public PagedEventCollectionRepresentation get10Events () {
-    return contextService.callWithinContext(
-            (MicroserviceCredentials) platformProperties.getMicroserviceBoostrapUser(),
-             new Callable<PagedEventCollectionRepresentation>(){
-        public PagedEventCollectionRepresentation call(){
-            return eventApi.getEvents().get(10);
-        }
-    });
+  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
 }
 ```
+
+#### Tenant scope  
+The tenant scope is associated with the usage of the service user credentials and is annotated with `@TenantScope`.
+To create a bean, named `tenantEventApi` in the tenant scope, use the annotation `@TenantScope`, as in the following code example.
+
+```java
+@Autowired
+private Platform platform;
+
+@TenantScope
+@Bean(name = "tenantEventApi")
+public EventApi eventApi (Platform platform) throws SDKException {
+  return platform.getEventApi();
+}  
+```
+
+By default, the Platform API related beans provided by the Microservice SDK are created in the tenant scope and use the service user to communicate with the platform.  
+
+There are predefined beans both in the `@TenantScope` and `@UserScope`.
+The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Event API in the tenant scope, you can specify @Qualifier("tenantEventApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform.
+
+```java
+@Autowired
+@Qualifier("tenantEventApi")
+private EventApi eventApi;
+```
+
+```java
+@Autowired
+private EventApi eventApi;
+```
+In both cases, beans within the tenant scope will be auto-wired.
+
+#### User scope
+In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request.
+
+To create a bean in the user scope, specify `@UserScope`:
+
+```java
+@Autowired
+private Platform platform;
+
+@UserScope
+@Bean(name = "userEventApi")
+public EventApi eventApi (Platform platform) throws SDKException {
+  return platform.getEventApi();
+}  
+```
+
+Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix "user" and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
+
+```java
+@Autowired
+@Qualifier("userEventApi")
+private EventApi eventApi;
+```
+
+Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform.
 
 ### Microservice security {#microservice-security}
 
@@ -393,7 +451,7 @@ To upload a microservice to the server you must configure the following properti
 * username - Mandatory tenant ID and username used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
 * name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
-* skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it needs to be set to `false`)
+* skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it must be set to `false`)
 
 #### settings.xml {#settingsxml}
 
@@ -548,7 +606,7 @@ $ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 
 #### Local Docker deployment {#local-docker-deployment}
 
-To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/general-aspects/#environment-variables).
+To deploy the application on a local Docker container, one must inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/general-aspects/#environment-variables).
 
 An example execution could be:
 

@@ -9,8 +9,7 @@ You can monitor the current status of each model in the model manager. The card 
 
 ![Card for a model](/images/streaming-analytics/analytics-builder/card-with-runtime-error.png)
 
-If a model failed to deploy or failed while running, the following is shown on the card for the model.
-![Runtime error](/images/streaming-analytics/analytics-builder/runtime_error.png)
+If a model failed to deploy or failed while running, a runtime error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Runtime error" style="display:inline-block; margin:0"> is shown on the card for the model.
 
 To find out whether a model has failed while processing data, reload all models in the model manager to show their latest states.
 See also [Reloading all models](/streaming-analytics/analytics-builder/#reloading-all-models).
@@ -172,7 +171,7 @@ For more information on `timedelay_secs`, see [Keys for model timeouts](/streami
 
 When chains of models with a high throughput are deployed across multiple workers, it may happen that the chain falls behind in processing input events, creating a backlog of input events that are still to be processed. These chains are referred to as “slow chains”. A message is written to the correlator log if the slowest chain is delayed by more than 1 second. For example:
 "Analytics Builder chain of models "Model 1", "Model 2", "Model 3" is slow by 3 seconds."
-See [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log) for information on where to find the correlator log.
+See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles) for information on where to find the log.
 
 The following information on the slowest chain is also available in the periodic status that is published as {{< product-c8y-iot >}} operations or events, within the `apama_status` parameter:
 
@@ -315,47 +314,7 @@ Analytics Builder chain of models "Model 1", "Model 2", "Model 3" is being activ
 Analytics Builder chain of models "Model 1", "Model 2", "Model 3" has been activated.
 ```
 
-See [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log) for information on where to find the correlator log.
-
-#### Viewing the audit logs {#viewing-the-audit-logs}
-
-Model activations and deactivations are shown in the audit logs. The audit logs are accessible via the Administration application and the audit API.
-See [Audit logs](/standard-tenant/audit-logs/) and [Audit API](https://{{< domain-c8y >}}/api/core/#tag/Audit-API)
-in the {{< openapi >}} for details of accessing the audit logs.
-
-Audit log entries include the name of the user performing the action and the current mode of the model. For test and simulation mode, the identifier of the virtual device and the mode properties are provided.
-
-The following is an example of an audit log entry \(with additional line breaks in the `text` field for better readability\):
-
-```
-{
-    "activity": "Activated model",
-    "application": "apama_ctrl",
-    "severity": "information",
-    "text": "TestingModel1:Activated,
-             Mode:SIMULATION,
-             OutputDevices:[21628],
-             startTime:2019-11-06T09:35:10.000Z,
-             endTime:2019-11-06T09:35:43.000Z,
-             maxDelaySecsSimulation:2",
-    "type": "Inventory",
-    "user": "apama_test_cep_admin"
-}
-```
-
-#### Viewing diagnostics information {#viewing-diagnostics-information}
-
-To view diagnostics information, you need READ permission for "CEP management". See [Managing permissions](/standard-tenant/managing-permissions/) for more information.
-
-{{< c8y-admon-info>}}
-ADMIN permission for "CEP management" do not include READ permission.
-{{< /c8y-admon-info>}}
-
-If you have READ permission for "CEP management", then links for downloading diagnostics information are available at the bottom of the model manager. These will download zip files that include log file contents, copies of EPL applications, and much more.
-
-It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL applications. It is also useful to provide to support if you are filing a support ticket.
-
-See [Troubleshooting and diagnostics](/streaming-analytics/troubleshooting/) for detailed information on the available diagnostics. This also includes information on additional endpoints that are available for REST requests.
+See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles) for information on where to find the log.
 
 ### Configuration {#configuration}
 
@@ -514,7 +473,7 @@ The values for some of the tenant options are logged. These are the following:
 -   `timedelay_secs`
 -   `numWorkerThreads`
 
-If you want to find out which values are currently used for these tenant options, you can look them up in the correlator log. See also [Accessing the correlator log](/streaming-analytics/analytics-builder/#accessing-the-correlator-log).
+If you want to find out which values are currently used for these tenant options, you can look them up in the log. See also [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles).
 
 #### Using curl commands for setting various tenant options {#using-curl-commands-for-setting-various-tenant-options}
 
@@ -530,7 +489,7 @@ where:
 
     `--user User123:secretpw`
 
-    If your tenant does not have its own unique host name, you have to provide the tenant identifier in the `username` argument. For example:
+    If your tenant does not have its own unique host name, you must provide the tenant identifier in the `username` argument. For example:
 
     `--user management/User123`
 
@@ -546,15 +505,3 @@ where:
 **Example (Bash shell):**
 
 `curl --user User123 -X POST -H 'Content-Type: application/json' -d '{"category": "analytics.builder", "key": "numWorkerThreads", "value": "4"}' -k https://mytenant/tenant/options`
-
-### Accessing the correlator log {#accessing-the-correlator-log}
-
-The location of the correlator log depends on the environment in which you are working:
-
--   {{< product-c8y-iot >}} Core:
-
-    The correlator log is accessible via the Administration application. You can find it on the **Logs** tab of the Apama-ctrl microservice. You have to subscribe to the microservice so that you can see the logs. For more information on microservices and log files, see [Managing microservices](/standard-tenant/ecosystem/#managing-microservices) and [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices).
-
--   {{< product-c8y-iot >}} Edge:
-
-    See [Logging](/edge/operating-edge/#logs-files) for information on the log file location.

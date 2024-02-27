@@ -47,9 +47,132 @@ Permissions are grouped into the following categories:
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
-In the **Type** field, specify a type to further restrict the type of data that this permission applies to. Access will be only granted to objects that contain the specified **Type**.
+In the **Type** field, specify a fragment to further restrict the types of data that this permission applies to. Access will only be granted to objects that contain
+exactly the specified fragment types. If the selected object contains more fragment types than those defined in the inventory roles configuration, in order to display it, they also must be added to the inventory role configuration.
 
-For example, assume that your device sends measurements related to device management, such as "c8y&#95;SignalStrength", and actual production measurements. You want a user to only see the device management measurements. In this case, enter "c8y&#95;SignalStrength" as type. This will allow the user to only see measurements that contain the type "c8y&#95;SignalStrength". Note that the user will be able to see the entire measurement object including other types that may be part of the same measurement object.
+For example, assume that your device sends measurements related to device management, such as "c8y_SignalStrength" but the measurement itself also has "c8y_Temperature" which you are not interested in.
+For the selected device, there are also measurements containing only the "c8y_Temperature" fragment.
+
+    POST /measurement/measurements
+    ...
+    {
+        "source": { "id": "2480300" },
+        "time": "2013-07-02T16:32:30.152+02:00",
+        "type": "SignalStrength",
+        "c8y_SignalStrength": {
+            "rssi": { "value": -53, "unit": "dBm" },
+            "ber": { "value": 0.14, "unit": "%" }
+        },
+        "c8y_Temperature": {
+            "T": { "value": 10, "unit": "C" }
+        }
+    }
+    POST /measurement/measurements
+    ...
+    {
+        "source": { "id": "2480300" },
+        "time": "2013-07-02T16:32:30.152+02:00",
+        "type": "SignalStrength",
+        "c8y_Temperature": {
+            "T": { "value": 10, "unit": "C" }
+        }
+    }
+
+
+You want a user to only see the device management measurements which have a fragment "c8y_SignalStrength".
+
+In the default configuration for inventory roles we must provide access to all fragments that the measurement has, that is, "c8y_SignalStrength" and "c8y_Temperature".
+
+<img src="/images/users-guide/Administration/default-roles-inventory.png" alt="Default inventory role configuration">
+
+Note that if a measurement also contains other fragment types, they must also be added in the inventory role configuration, and they are also returned in the response.
+
+Otherwise such measurements are not returned because they contain fields to which the user has not been granted access.
+
+The response looks like below:
+
+    GET /measurement/measurements
+    ...
+    {
+        "source": { "id": "2480300" },
+        "time": "2013-07-02T16:32:30.152+02:00",
+        "type": "SignalStrength",
+        "c8y_SignalStrength": {
+            "rssi": { "value": -53, "unit": "dBm" },
+            "ber": { "value": 0.14, "unit": "%" }
+        },
+        "c8y_Temperature": {
+            "T": { "value": 10, "unit": "C" }
+        }
+    }
+
+The tenant option `acl.measurement.only-accessible-fragments` in the category `configuration` can be used for measurements.
+
+To enable it set the option value to "true" as below.
+
+    POST /tenant/options
+    ...
+    {
+        "category": "configuration",
+        "key": "acl.measurement.only-accessible-fragments",
+        "value": "true"
+    }
+
+
+After setting the tenant option value to true, in order to have access to a single measurement fragment like "c8y_SignalStrength", you do not have to grant access to all fragments types that the measurement has.
+
+For example, assume that your device sends measurements such as those in the previous example, including "c8y_SignalStrength" and "c8y_Temperature" and other measurements with "c8y_Temperature" only.
+
+    POST /measurement/measurements
+    ...
+    {
+        "source": { "id": "2480300" },
+        "time": "2013-07-02T16:32:30.152+02:00",
+        "type": "SignalStrength",
+        "c8y_SignalStrength": {
+            "rssi": { "value": -53, "unit": "dBm" },
+            "ber": { "value": 0.14, "unit": "%" }
+        },
+        "c8y_Temperature": {
+            "T": { "value": 10, "unit": "C" }
+        }
+    }
+    POST /measurement/measurements
+    ...
+    {
+        "source": { "id": "2480300" },
+        "time": "2013-07-02T16:32:30.152+02:00",
+        "type": "SignalStrength",
+        "c8y_Temperature": {
+            "T": { "value": 10, "unit": "C" }
+        }
+    }    
+
+    HTTP/1.1 201 Created
+
+You want a user to only see the device management measurements which have a fragment "c8y_SignalStrength".
+After changing the tenant option, we can specify only the types of fragments that interest us.
+
+<img src="/images/users-guide/Administration/only-accessible-fragments-inventory-role.png" alt="Only accessible fragments inventory role">
+
+Note that only measurements that have a defined set of types are returned, and additional types not listed in the inventory role configuration are removed from the returned measurements.
+
+The response looks like below:
+
+    GET /measurement/measurements
+    ...
+    {
+        "source": { "id": "2480300" },
+        "time": "2013-07-02T16:32:30.152+02:00",
+        "type": "SignalStrength",
+        "c8y_SignalStrength": {
+            "rssi": { "value": -53, "unit": "dBm" },
+            "ber": { "value": 0.14, "unit": "%" }
+        }
+    }
+    ...
+
+This allows the user to see measurements that contain only the defined types, without the additional need to configure other types of fragments that the measurement has.
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 

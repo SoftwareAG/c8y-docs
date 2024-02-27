@@ -20,18 +20,15 @@ All blocks in the model use defined input devices or ranges of devices and conta
 
 A model in which one or more template parameters are defined is called a "template model". Template parameters can be bound to any number of block parameters, provided that the type of the block parameter is the same as that of the template parameter.
 
-For example, you can define a template parameter for the device name and another for the threshold value. These template parameters can later be set individually in the different instances of the model. For example, one template parameter can specify a device which can then be used for several input and output blocks. Or one instance can use device ABC with a threshold value of 100, and another instance can use device XYZ with a threshold of 200. Models with template parameters are not activated directly in the model manager. You have to create at least one instance of the model, and you can then activate each instance separately using the instance editor.
+For example, you can define a template parameter for the device name and another for the threshold value. These template parameters can later be set individually in the different instances of the model. For example, one template parameter can specify a device which can then be used for several input and output blocks. Or one instance can use device ABC with a threshold value of 100, and another instance can use device XYZ with a threshold of 200. Models with template parameters are not activated directly in the model manager. You must create at least one instance of the model, and you can then activate each instance separately using the instance editor.
 
 The scope of the template parameters is local to the model in which they are defined. In other words, template parameters defined in one model cannot be used in any other model that is deployed in same tenant or subtenant. The names of the template parameters must be unique within the scope of the model in which they are defined.
 
 There are two relevant roles for this type of model, this can be the same person or different persons:
 
--   **Model author**
-
+-   **Model author**.
     The model author creates the model and defines all of its blocks, parameters and wires. Most importantly, the model author creates the template parameters and binds them to the appropriate parameters in selected blocks.
-
--   **Instance maintainer**
-
+-   **Instance maintainer**.
     The instance maintainer creates the instances of the model and assigns values to the template parameters that are to be used by each instance.
 
 The model author has the following options to define a template parameter:
@@ -54,9 +51,9 @@ Blocks are the basic processing units of the model. Each block has some predefin
 
 The palette of the model editor offers for selection the following types of blocks:
 
--   Input blocks, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a device group, a smart group, an asset, or all input sources. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
--   Output blocks, which send data to external sources. An output block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory. But there are also blocks for sending an email or SMS to specified receivers. See also [Output blocks](/streaming-analytics/analytics-builder/#output-blocks).
--   Processing blocks, which receive data from the input blocks and send the resulting data to the output blocks. See also [Processing blocks](/streaming-analytics/analytics-builder/#processing-blocks).
+-   **Input blocks**, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a device group, a smart group, an asset, or all input sources. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
+-   **Output blocks**, which send data to external sources. An output block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory. But there are also blocks for sending an email or SMS to specified receivers. See also [Output blocks](/streaming-analytics/analytics-builder/#output-blocks).
+-   **Processing blocks**, which receive data from the input blocks and send the resulting data to the output blocks. See also [Processing blocks](/streaming-analytics/analytics-builder/#processing-blocks).
 
 {{< c8y-admon-info>}}
 For detailed information on each block, see [Overview of all blocks](/streaming-analytics/block-reference/#overview-of-all-blocks) which provides links to the descriptions of all the blocks in the block reference.
@@ -79,7 +76,7 @@ An input block is a special type of block that receives data from an external so
 Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
 {{< c8y-admon-info>}}
-By default, the **All Devices** option is selected, which means that the input block is listening to all devices.
+By default, the **All Inputs** option is selected, which means that the input block is listening to all input sources.
 {{< /c8y-admon-info>}}
 
 In addition, Analytics Builder supports input devices that are referred to as "broadcast devices". Signals from these devices are available to all models across all devices. For detailed information, see [Broadcast devices](/streaming-analytics/analytics-builder/#broadcast-devices).
@@ -91,7 +88,7 @@ An output block is a special type of block that receives data from a connected p
 You can specify a **Trigger Device** for an output block. This is a special device which can be used to send the output back to the device which triggered the output. Models can process data from multiple devices, and scale up \(using multiple cores\) when doing so. For detailed information, see [Model execution for different devices](/streaming-analytics/analytics-builder/#model-execution-for-different-devices).
 
 {{< c8y-admon-info>}}
-If you use the default option of **All Devices** as the input source for an input block, you must set the output destination of the output block to **Trigger Device**.
+If you use the default option of **All Inputs** as the input source for an input block, you must set the output destination of the output block to **Trigger Device**.
 {{< /c8y-admon-info>}}
 
 Other output blocks are **Send Email** and **Send SMS** to send emails and text messages. These blocks depend on the tenant environment being correctly configured to be able to deliver the emails and text messages, see also [SMS provider](/standard-tenant/changing-settings/#sms-provider). Unlike the other blocks, these are not associated with devices within the {{< product-c8y-iot >}} platform.
@@ -166,26 +163,19 @@ The model for this example has the following blocks:
 
 ![Example model with several blocks](/images/streaming-analytics/analytics-builder/sample-use-case.png)
 
--   An input block which shows **Input Device** as the device name
-
+-   The input block shows **Input Device** as the device name.
     The incoming data is in real time and continuous. The input block receives the data from the sensor. It passes the data to the **Average \(Mean\)**, **Delta** and **Threshold** blocks. The input ports of these blocks are connected to the output port of the input block.
 
--   An **Average \(Mean\)** block
+-   The **Average \(Mean\)** block finds the average \(or mean\) of the readings that it receives over a period of time and passes this to the connected output block.
 
-    This block finds the average \(or mean\) of the readings that it receives over a period of time and passes this to the connected output block.
+-   The **Delta** block calculates the difference between successive input values and passes the calculated value to the connected **Threshold** block.
 
--   A **Delta** block
-
-    This block calculates the difference between successive input values and passes the calculated value to the connected **Threshold** block.
-
--   Two different instances of a **Threshold** block
-
+-   The model has two different instances of a **Threshold** block.
     A **Threshold** block compares the input value against the defined threshold value to detect whether the input breaches the threshold or not.
     The first instance is connected to the **Delta** block and reports a breach if the delta value goes beyond the threshold.
     The second instance is connected to the input block and reports a breach if the input value is not within the threshold.
 
--   Three instances of an output block which show **Output Device** as the device name
-
+-   The model has three instances of an output block which show **Output Device** as the device name.
     The first instance sends the average of the sensor reading.
     The second instance generates an output if the values of successive sensor readings change by more than the configured threshold.
     The third instance generates an output if the sensor value goes beyond the configured threshold.

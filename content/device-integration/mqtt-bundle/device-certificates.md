@@ -31,7 +31,7 @@ Devices connecting to the platform with certificates do not need to provide the 
 **Auto registration**
 
 The user for the device will be created during the first MQTT call, if a device certificate is derived from a trusted certificate which was uploaded to the {{< product-c8y-iot >}} platform with a flag _autoRegistrationEnabled_ with a value of true.
-Auto-registration needs to be activated for the uploaded certificate.
+Auto-registration must be activated for the uploaded certificate.
 If auto-registration is not activated it is required to use the bulk registration (see below).
 To manage the auto registration field of uploaded certificates in the UI refer to [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates).
 
@@ -327,8 +327,6 @@ If you are using multiple intermediate certificates between the CA certificate a
     * If your keystore is in the JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
 6. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
 
-### How to test created certificates with MQTT client {#how-to-test-created-certificates-with-mqtt-client}
-
 ### Keystore and truststore {#keystore-and-truststore}
 
 Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
@@ -428,7 +426,7 @@ Then the instance of the MQTT client can be created with a single line:
 The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
 The CLIENT_ID value must match the value of the common name of the device certificate that will be used.
 The "d:" prefix is used in {{< product-c8y-iot >}} for device connections and it should not be removed or changed.
-Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:
+Now the only thing that must be configured to establish the SSL connection is to fill paths in the code fragment:
 
     sslProperties.put(SSLSocketFactoryFactory.KEYSTORE, getClass().getClassLoader().getResource(KEYSTORE_NAME).getPath());
     sslProperties.put(SSLSocketFactoryFactory.KEYSTOREPWD, KEYSTORE_PASSWORD);

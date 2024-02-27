@@ -42,7 +42,7 @@ To view the history of all operations, click **View history**. Note, that you wi
 #### Audit Configuration {#audit-configuration}
 
 {{< c8y-admon-important >}}
-As announced in the release notes for [release 10.18](https://cumulocity.com/releasenotes/release-10-18-0/announcements-10-18-0), the LWM2M device audit configuration feature is deprecated. This feature will be disabled by default in a future version.
+As announced in the release notes for [release 10.18](https://{{< domain-c8y >}}/releasenotes/release-10-18-0/announcements-10-18-0), the LWM2M device audit configuration feature is deprecated. This feature will be disabled by default in a future version.
 {{< /c8y-admon-important >}}
 
 In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.
@@ -67,6 +67,7 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Binary format
   * Timestamp resources
   * Objects tab behavior (keep old values)
+  * Disable the default behavior for object instances of objects 3 (device), 4 (connectivity monitoring) and 6 (location)
 * **Bootstrap settings** - related to LWM2M bootstrap
   * Bootstrap server ID
   * Security instance offset
@@ -83,12 +84,13 @@ The **LWM2M configuration** tab displays all LWM2M settings related to the devic
   * Notifications flag
 * **Connectivity settings** - security configuration for bootstrap and regular LWM2M connection.
 * **Firmware update settings**
+  * Disable automated firmware update support
   * Firmware URL
   * Delivery method
   * Delivery protocol
   * Reset state machine settings
 
-For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices). 
+For a detailed description of the parameters above, see [Registering LWM2M devices](#registering-lwm2m-devices).
 
 ### LWM2M client awake time {#lwm2m-client-awake-time}
 

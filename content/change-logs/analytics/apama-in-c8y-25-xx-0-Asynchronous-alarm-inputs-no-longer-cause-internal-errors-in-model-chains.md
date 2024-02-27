@@ -11,7 +11,7 @@ component:
 build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
-ticket: PAB-xxxx
+ticket: PAB-4379
 version: 25.xx.0
 ---
 Asynchronous alarm inputs declared by the **Alarm Output** blocks were considered for connectivity chains between models, leading to "Internal error : inconsistent chain ID" errors in some scenarios. This is now fixed and synchronous inputs declared by a block are now no longer considered for model chains.

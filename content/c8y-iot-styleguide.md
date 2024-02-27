@@ -11,4 +11,4 @@ section:
 weight: 90
 ---
 
-Learn more about the Cumulocity IoT UI guidelines to create interfaces consistent with the Cumulocity principles and best practices.
+Learn more about the {{< product-c8y-iot >}} UI guidelines to create interfaces consistent with the {{< company-c8y >}} principles and best practices with the [{{< product-c8y-iot >}} Style Codex](styleguide.cumulocity.com/apps/codex/).

@@ -15,15 +15,10 @@ Supported browsers in this version are:
 * Microsoft Edge (latest Chromium-based version)
 * Mozilla Firefox (latest Extended Support Release [1])
 * Google Chrome [2]
-* Internet Explorer 11 [3]
 
 [1] Only the latest Extended Support Release of Mozilla Firefox is explicitly supported. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of the Edge appliance with other versions of Mozilla Firefox cannot be guaranteed.
 
 [2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of the Edge appliance with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of {{< product-c8y-iot >}}.
-
-{{< c8y-admon-important >}}
-[3] Though the Edge appliance is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, {{< product-c8y-iot >}} Edge 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
-{{< /c8y-admon-important >}}
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
 
@@ -50,7 +45,7 @@ There are two ways to configure the accessibility with the domain names:
 
 * Add an entry of the domain name and IP mapping in the DNS servers. <br>
 OR
-* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This needs to be performed on each client host on which the Edge appliance is accessed.
+* [Add the alias](#add-alias) to access the Edge appliance through the domain name provided during installation. This must be performed on each client host on which the Edge appliance is accessed.
 
 {{< c8y-admon-info >}}
 The first option is always preferable so that the Edge appliance is accessible over LAN.
@@ -90,7 +85,7 @@ Enter the URL in the browser:
 https://<domain_name>
 ```
 
-The Edge appliance login screen appears. Log in with your credentials created during the installation.
+The Edge appliance Login screen appears. Log in with your credentials created during the installation.
 
 - To log in to the {{< management-tenant >}}, prefix the username with *management*:
   - Username: management/<*Edge admin username*>
@@ -128,7 +123,7 @@ Select the **Remember me** checkbox if you want the browser to remember your cre
 
 Finally, click **Login** to enter the Edge appliance. Initially, you will be taken to the [Cockpit](/cockpit/cockpit-introduction/) application (if not configured differently).
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Cockpit home screen](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 To explicitly logout, click the **User** button at the right of the top bar, then select **Logout** from the context menu.
 

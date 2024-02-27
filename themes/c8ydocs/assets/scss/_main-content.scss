@@ -116,6 +116,7 @@
   .toc{
     position: sticky;
     top: 74px;
+    // min-height: calc(100vh - 74px);
   }
   .article-list h3{
     padding-top: 3rem;
@@ -149,6 +150,9 @@
 
 .main-content .page-section .article-content {
   padding-bottom: 4rem;
+  &.change-log{
+    padding-bottom: 5rem;
+  }
   > h2 {
     display: flex;
     margin-top: 2rem;

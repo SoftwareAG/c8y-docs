@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-It can be overwhemling to decide which approach to use and how to start your development journey.
+It can be overwhelming to decide which approach to use and how to start your development journey.
 If you are a partner or a customer we recommend you join the micro frontend journey.
 It allows to extend and use the ecosystem instead of building silo solutions.
 This section explains our vision of this journey and describes our best practices regarding development.
@@ -188,7 +188,7 @@ There are several issues to avoid:
 
 
 #### How to bundle assets in a package {#how-to-bundle-assets-in-a-package}
-Bundling assets is not as easy as only copying them over. The path must be correctly reflected. E.g. if you import an image, the path to the image is something like:
+Bundling assets is not as easy as only copying them over. The path must be correctly reflected. For example, if you import an image, the path to the image is something like:
 `http://<<instance>>/apps/<<context-path>>@<<version>>/my-image.png`.
 You may not want to change the version on each deployment.
 Therefore we recommend you to let the bundler handle images.
@@ -261,7 +261,7 @@ For plugin developers who want to always provide the most compatible version of 
 
 Repository connect is a microservice which synchronizes plugins or blueprints with an instance of the {{< product-c8y-iot >}} platform.
 It must be installed on the {{< management-tenant >}} and you can connect multiple repositories.
-Currently, only our Software AG public GitHub is connected.
+Currently, only our {{< company-sag >}} public GitHub is connected.
 You can participate and share blueprints or plugins in multiple ways:
  1. Contribute to our open source plugins. A list can be found in our [{{< product-c8y-iot >}} GitHub packages](https://github.com/topics/cumulocity-package). There is an [official repository]({{< link-sag-community-plugins >}}) which is managed by the internal R&D team of {{< product-c8y-iot >}}.
  2. Configure repository connect on your on-prem instance and point it to your organization.

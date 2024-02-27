@@ -14,7 +14,7 @@ In the example below the selected calculation interval is '1 minute'. There are 
 
 ### What do alarms in a Machine Dashboard mean? {#what-do-alarms-in-a-machine-dashboard-mean}
 
-If an alarm occurs in an OEE Machine Dashboard, this indicates that the mapping needs to be revised and adapted again. If this has been done, no further alarms should occur. Nevertheless, it is recommended to clear the alarm in the device details of the profile in the {{< product-c8y-iot >}} Device management application. This is the only way, the parameters displayed in the alarm will be renewed if a similar alarm occurs. The time stamp is also updated automatically without further action.
+If an alarm occurs in an OEE Machine Dashboard, this indicates that the mapping must be revised and adapted again. If this has been done, no further alarms should occur. Nevertheless, it is recommended to clear the alarm in the device details of the profile in the {{< product-c8y-iot >}} Device management application. This is the only way, the parameters displayed in the alarm will be renewed if a similar alarm occurs. The time stamp is also updated automatically without further action.
 
 ![Dashboard alarm](/images/oee/faq/faq-dashboard-alarm.png)
 
@@ -28,6 +28,6 @@ Only alarms raised for the child device (OEE profile), for example an APAMA calc
 
 That is not a calculation error, this is only an UI issue. All values are calculated and are stored in the platform. The UI does not show all values as the amount is too high.
 
-To see all values, reduce the time span or choose a lower resolution, for example a longer interval.
+To see all values, reduce the time span or select a lower resolution, for example a longer interval.
 
 ![Dashboard alarm](/images/oee/faq/faq-chart-loading-issue.png)

@@ -64,8 +64,8 @@ Several account settings can be changed by the user.
 
 1. Click the **User** button at the right of the top bar and then click **User Settings**.  
 2. In the **Edit user** dialog box, make the relevant changes.
-3. Use the **Product experience** toggle to opt-out from the product experience tracking by Gainsight which is enabled by default if you accepted functional cookies.
-4. Use the **In-product information** toggle to opt-out from the Knowledge Hub which is enabled by default.
+3. Use the **Enable personalized product experience tracking** toggle to opt-out of sending Personally Identifiable Information to Gainsight, which is enabled by default if you accepted functional cookies.
+4. Use the **Enable in-product information & communication** toggle to opt-out from the Knowledge Hub and all forms of engagements, which is enabled by default.
 5. Click **Change password** to change your current password, see [To change your password](#to-change-your-password) for details.
 6. Click **Set up two-factor authentication** to set up two-factor authentication and increase tenant security.
 7. Click **Save** to apply your settings.
@@ -120,5 +120,4 @@ The UI is available in the following languages:
 |Japanese|ja_JP|
 |Korean|ko|
 |Polish|pl|
-|Russian|ru|
 |Spanish|es|

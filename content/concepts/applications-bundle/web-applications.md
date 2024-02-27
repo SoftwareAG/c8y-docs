@@ -23,7 +23,7 @@ When designing a web application, data properties retrieved or persisted using t
 
 For an application to be available it must be deployed on the {{< product-c8y-iot >}} platform.
 
-For details on how to deploy an application to {{< product-c8y-iot >}}, refer to Custom applications](/standard-tenant/ecosystem/#custom-applications).
+For details on how to deploy an application to {{< product-c8y-iot >}}, refer to [Custom applications](/standard-tenant/ecosystem/#custom-applications).
 
 {{< c8y-admon-info >}}
 In case of a web application, the application is active for you as owner without subscribing to it.

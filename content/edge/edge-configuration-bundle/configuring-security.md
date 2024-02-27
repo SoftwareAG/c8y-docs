@@ -10,7 +10,7 @@ The Edge appliance is security hardened by default.
 Furthermore, you can apply specific security configurations to enhance the security of your Edge appliance.
 
 {{< c8y-admon-important >}}
-For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines](https://empower.softwareag.com/sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
+For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines]({{< link-sag-portal >}}sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
 {{< /c8y-admon-important >}}
 
 To apply the security configuration, follow the steps below:
@@ -20,7 +20,7 @@ To apply the security configuration, follow the steps below:
    - Username: management/<*Edge admin username*>
    - Password: password provided during the installation
 
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Security** in the navigator.
 
@@ -39,7 +39,7 @@ In the enforcing mode, you cannot access the Edge appliance remotely through VNC
     ||SSH|**SSH enabled**|Enables or disables the SSH functionality of the Edge appliance. By default, the SSH functionality is enabled.<br><br>Changing the value to false disables the SSH functionality. When disabled, you will not be able to SSH into the Edge appliance, locally or remotely.<br><br>Default value: True
     ||Session inactivity|**Login sessions inactivity timeout (seconds)**|The idle duration before a user session is terminated. When configured, the user session terminates after the specified idle duration.<br><br>Default value: 600 seconds<br>Minimum value: 0<br>
     ||Linux Auditing System|**Audit logging enabled**|The *Linux Auditing System* helps system administrators create an audit trail, a log for every action on the server. You can track the security-relevant events, record the events in a log file, and detect misuse or unauthorized activities by inspecting the audit log files.<p>Enables or disables Linux Auditing System. A value of true enables and creates an audit log file at `/var/log/audit/audit.log`.<p>Enabling auditing system increases the consumption of disk space.<br>You can configure the operating system to transfer the audit logs to a centralized logging server by configuring **Audisp remote logging server**.<br>{{< c8y-admon-important >}}
-Once enabled, you cannot disable the auditing system configuration. 
+Once enabled, you cannot disable the auditing system configuration.
     {{< /c8y-admon-important >}}<br>Default value: False
     ||Remote logging|**Audisp remote logging server**|The centralized logging server to transfer the audit logs to.<br> When configured, the operating system audit logs are transferred to the specified centralized logging server.
     |||**Server**|The IP address or the hostname of the destination server.
@@ -50,7 +50,7 @@ Once enabled, you cannot disable the auditing system configuration.
     |||**Protocol**|The protocol (TCP or UDP) used to transfer the logs.
     ||Login banner|**Login banner**|The login banner for your Edge appliance.
     |Kubernetes|Audit policy||Kubernetes audit policy defines the rules about what events should be recorded and what data they should include.
-    |||**Level**|The audit level controls what Kubernetes event data is recorded. When configured, the Kubernetes event data is logged to the specified level. Logging more data increases the consumption of disk space. <br><br>**None** - do not log events.<br>**Metadata** - log request metadata (requesting user, timestamp, resource, verb, etc.) but not request or response body.<br>**Request** - log event metadata and request body but not response body. This does not apply for non-resource requests.<br>**RequestResponse** - log event metadata, request and response bodies. This does not apply for non-resource requests.<br><br>Default value: None
+    |||**Level**|The audit level controls what Kubernetes event data is recorded. When configured, the Kubernetes event data is logged to the specified level. Logging more data increases the consumption of disk space. <br><br>**None** - do not log events.<br>**Metadata** - log request metadata (requesting user, timestamp, resource, verb, and so on) but not request or response body.<br>**Request** - log event metadata and request body but not response body. This does not apply for non-resource requests.<br>**RequestResponse** - log event metadata, request and response bodies. This does not apply for non-resource requests.<br><br>Default value: None
     |||**Maximum age (days)**|The maximum number of days to retain the old Kubernetes audit log files. A high value has more impact on the disk space.<br><br>Default value: 30 days<br>Minimum value: 0<br>
       |||**Maximum numbers of log files to retain**|The maximum number of Kubernetes audit log files to retain. Setting a value of 0 indicates that there is no restriction on the number of files to retain. A high value has more impact on the disk space.<br><br>Default value: 10 files<br>Minimum value: 0<br>
       |||**Maximum size (megabytes)**|The maximum size in megabytes of the Kubernetes audit log file before it gets rotated. A high value has more impact on the disk space.<br><br>Default value: 100 MB<br>Minimum value: 0<br>

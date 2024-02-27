@@ -6,7 +6,7 @@ layout: redirect
 
 You can update {{< product-c8y-iot >}} Edge or apply fixes to your existing installation using the Administration application in the {{< management-tenant >}}.
 
-Download the {{< product-c8y-iot >}} Edge archive file **Cumulocity IoT Edge (*version*) Update** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}).
+Download the {{< product-c8y-iot >}} Edge archive file **{{< product-c8y-iot >}} Edge (*version*) Update** from the [{{< company-sag >}} {{< sag-portal >}}]({{< link-sag-portal >}}).
 
 When you update your Edge appliance, the update also applies operating system patches and fixes for security vulnerabilities. {{< company-sag >}} recommends you to create a backup of your existing {{< product-c8y-iot >}} Edge installation before performing any update.
 
@@ -20,7 +20,7 @@ To update {{< product-c8y-iot >}} Edge:
 
 1. Log in to the {{< management-tenant >}}.
 
-2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the Administration application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="Application switcher" style="display: inline; float: none">**.
 
 3. Click **Edge** > **Update** in the navigator.
 

@@ -1,5 +1,6 @@
 {{ define "main" }}
 <main>
+  <div class="breadcrumbs-container p-t-16"></div>
   <div class="home-top">
     <section class="home-top__content">
         <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
@@ -14,12 +15,13 @@
     {{ $pages := where .Pages "Type" "!=" "page" }}
     {{ $page := index $pages 0 }}
 
-    <a href='{{.Page.Permalink}}' class="product-card">
+    <a href='{{ if eq .Page.Params.type "change-log"}}/change-logs{{else}}{{.Page.Permalink}}{{end}}' class="product-card">
       <div class="product-card__header">
         <i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>
         <h2>{{.Page.Title}}</h2>
       </div>
         {{.Page.Content}}
+       
     </a>
   {{ end }}
 </div>

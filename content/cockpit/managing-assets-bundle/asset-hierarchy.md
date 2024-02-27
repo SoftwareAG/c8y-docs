@@ -18,11 +18,13 @@ Assets represent business objects in general like buildings, machines, productio
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image1.png)
+![Cockpit asset hierarchy](/images/users-guide/cockpit/cockpit-groups-image1.png)
 
 The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device management application.
+
+* **Custom assets**: Objects defined by an asset model and created in the [Digital twin manager](/dtm/dtm-introduction/) application.
 
 * **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they must be connected to {{< product-c8y-iot >}}. This is done in the Device management application. For details on connecting devices refer to [Registering devices](/device-management-application/registering-devices/).
 
@@ -59,13 +61,13 @@ The following section explains how to work with smart devices and gateway device
 
 The first example shows how smart devices are linked into the asset hierarchy:
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image2.png)
+![Linked smart devices](/images/users-guide/cockpit/cockpit-groups-image2.png)
 
 Smart devices are represented as top-level devices in the Device Management application. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
 The second example shows how gateway devices can be used in the Cockpit application.
 
-![image alt text](/images/users-guide/cockpit/cockpit-groups-image3.png)
+![Linked gateway devices](/images/users-guide/cockpit/cockpit-groups-image3.png)
 
 Gateway devices are as well represented as top level devices in the Device management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 
@@ -79,3 +81,5 @@ The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy.
 If you manage trucks within the {{< product-c8y-iot >}} platform, then each truck is represented via its individual tracking device communicating with {{< product-c8y-iot >}}.
 
 For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the {{< product-c8y-iot >}} platform.
+
+If you need more properties and better visualization of business assets, we recommend you to use the [Digital twin manager](/dtm/dtm-introduction/) application. A custom asset created via the Digital twin manager application is also shown in the Cockpit application. It uses the chosen icon and additionally shows all properties in a list next to the subassets. These properties can be edited if the user has WRITE permission for the permission type "Inventory".

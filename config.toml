@@ -35,12 +35,13 @@ relativeURLs = true
   # Global keywords configuration. Following keywords will be add to every pages
   keywords = ["Software AG", "Cumulocity IoT", "Internet of things", "analytics", "devices", "connect"]
 
-  description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. It reflects the latest state of the cloud deployment(s) of the var-product-c8y-iot platform and is continuously updated to align with recent software updates."
-  
+  description = "This documentation offers comprehensive information on the var-product-c8y-iot platform both from a user and from a developer perspective. It reflects the latest state of the var-product-c8y-iot platform and is continuously updated to align with recent software updates."
+
   oldguides = "//cumulocity.com/guides/welcome/intro-documentation/"
 
+  # Boolean to display the admonition stating it is a preview version
   docsPreview = false
-  
+
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true
 
@@ -48,7 +49,7 @@ relativeURLs = true
 
 
   # Your favicon path, default is "/favicon.png"
-  favicon = "https://cumulocity.com/favicon.ico"
+  favicon = "//cumulocity.com/favicon.ico"
 
   # Content variables for Frontmatter titles
   product_c8y_iot = "Cumulocity IoT"
@@ -58,21 +59,33 @@ relativeURLs = true
   [[params.additionalResources]]
     name = "YouTube"
     link = "https://www.youtube.com/@CumulocityIoT"
-    
+
   [[params.additionalResources]]
     name = "Tech Community"
     link = "https://tech.forums.softwareag.com/tag/Cumulocity-IoT"
-  
+
   [[params.additionalResources]]
     name = "Empower Portal"
     link = "https://empower.softwareag.com/"
 
   [[params.additionalResources]]
-    name = "Product support"
+    name = "Device Partner Portal"
+    link = "https://devicepartnerportal.softwareag.com/"
+
+  [[params.additionalResources]]
+    name = "Solutions Portal"
+    link = "https://iotsolutions.softwareag.com/"
+
+  [[params.additionalResources]]
+    name = "Learning Portal"
+    link = "https://learn.softwareag.com/totara/dashboard/index.php"
+
+  [[params.additionalResources]]
+    name = "Product Support"
     link = "https://empower.softwareag.com/"
+
 
 # Customize
   [params.footer]
     copyright = "Software AG, Darmstadt, Germany and/or Software AG USA Inc., Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their licensors. | <a href='https://www.softwareag.com/en_corporate/impressum.html'> Imprint</a> | <a href='https://www.softwareag.com/en_corporate/privacy.html'>Privacy policy</a>"
     c8ylink = "https://www.softwareag.cloud/site/product/cumulocity-iot.html"
-

@@ -9,7 +9,7 @@ Microservices typically provide a REST API and {{< product-c8y-iot >}} provides 
 * Authorization: All calls are authenticated using {{< product-c8y-iot >}} credentials with basic or OAuth authorization.
 * TLS Termination: TLS inbound calls are terminated and only HTTP is used inside the cluster.
 * Metering: The API calls are metered in the API calls tenant statistics.
-* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers. If `contextPath` is defined in the application manifest, the API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
+* Routing: The API gateway routes requests for <kbd>/service/&lt;name&gt;</kbd> to the microservice _&lt;name&gt;_. The request routed to the microservice container and tenant options are added to the request headers. Note that therefore a space (" ") is not allowed as a tenant option value.  If `contextPath` is defined in the application manifest, the API gateway routes requests for <kbd>/service/&lt;contextPath&gt;</kbd>.
 
 ### Authentication and authorization {#authentication-and-authorization}
 
@@ -32,7 +32,7 @@ Depending on the authentication method, the credentials can be passed to the mic
   3. Custom HTTP header called `X-XSRF-TOKEN`
   4. Custom HTTP header called `tfatoken`
 
-If the incoming request contains the cookie `authorization`, the microservice has to copy the cookie and the header `X-XSRF-TOKEN` to the request to the <kbd>/user/currentUser</kbd> endpoint. In other cases, the header `Authorization` has to be copied. This is necessary, if a request contains the header `tfatoken`, which always needs to be included in the request to <kbd>/user/currentUser</kbd>.
+If the incoming request contains the cookie `authorization`, the microservice must copy the cookie and the header `X-XSRF-TOKEN` to the request to the <kbd>/user/currentUser</kbd> endpoint. In other cases, the header `Authorization` must be copied. This is necessary, if a request contains the header `tfatoken`, which always must be included in the request to <kbd>/user/currentUser</kbd>.
 
 You can see the credential validation flow on the sequence diagram below:
 
@@ -103,7 +103,7 @@ Furthermore, most of the HTTP requests which are sent by microservices must cont
 
 Thus, the microservice must only include `X-Cumulocity-Application-Key` if the microservice proxy requests from an IoT device to the {{< product-c8y-iot >}} platform.
 
-If the microservice includes the header `X-Cumulocity-Application-Key`, the header must contain the correct application key. Then, the microservice retrieves the application key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request must contain  the credentials for basic authentication in the following format: `tenantId/username:password`. The tenant ID, username and password are read by the microservice from the following operating system environment variables: C8Y_BOOTSTRAP_TENANT, C8Y_BOOTSTRAP_USER, and C8Y_BOOTSTRAP_PASSWORD. In order to increase the performance, the microservice has to implement a caching mechanism related to the user credentials.
+If the microservice includes the header `X-Cumulocity-Application-Key`, the header must contain the correct application key. Then, the microservice retrieves the application key by sending a REST request to the endpoint <kbd>/application/currentApplication</kbd> exposed by the {{< product-c8y-iot >}} platform. The REST request must contain  the credentials for basic authentication in the following format: `tenantId/username:password`. The tenant ID, username and password are read by the microservice from the following operating system environment variables: C8Y_BOOTSTRAP_TENANT, C8Y_BOOTSTRAP_USER, and C8Y_BOOTSTRAP_PASSWORD. In order to increase the performance, the microservice must implement a caching mechanism related to the user credentials.
 
 #### Microservice authentication and multi-tenancy {#microservice-authentication-and-multi-tenancy}
 
@@ -206,6 +206,6 @@ Steps:
 
 There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests.
 
-If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
+If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). Note that therefore a space (" ") is not allowed as a tenant option value. All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
 
 Refer to tenant options in the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Options) in the {{< openapi >}} for more details.

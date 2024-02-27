@@ -49,15 +49,12 @@ additional steps:
 
 1. Offload those entries of the alarms collection that were added or updated since the last offload. They are offloaded
 with the above mentioned standard schema into the target table of the data lake.
-2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as
-follows: target table name plus *_all*, *_latest*, or *_c8y_cdh_latest_materialized* respectively. The following
-examples use "alarms" as target table name:
+2. Additional views on the target table are defined in the tenant's space in Dremio. Their names are composed as target table name plus *_all* or *_latest*. The following examples use "alarms" as target table name:
     * **alarms_all** - A view with the updates between two offloading executions, not including the intermediate updates.
-    * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded.
-    * **alarms_c8y_cdh_latest_materialized** - An optional view which materializes the **alarms_latest** view if the offloading configuration has the view materialization enabled.
+    * **alarms_latest** - A view with the latest status of all alarms, with all previous transitions being discarded. For offloading configurations with view materialization enabled, the materialized state in the data lake is used.
 
 The views are provided in your Dremio space. For details on views and spaces in Dremio, see
-[Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
+[Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded). In the main panel of the **Offloading** page you find in the details section of an offloading configuration links which navigate you to the corresponding table and views in the Dremio UI.
 
 #### Offloading the events collection {#offloading-the-events-collection}
 
@@ -84,12 +81,11 @@ The events collection manages the events. During offloading, the data of the eve
 
 Events, just like alarms, are mutable, that is, they can be changed after their creation. Thus, the same logic as for alarms applies.
 
-Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all*, *_latest*, and *_c8y_cdh_latest_materialized* respectively. The following examples use *events* as target table name:
+Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* or *_latest*. The following examples use *events* as target table name:
 * **events_all** - A view with all captured states of all events.
-* **events_latest** - A view containing only the latest state of all events without prior states.
-* **events_c8y_cdh_latest_materialized** - An optional view which materializes the **events_latest** view if the offloading configuration has the view materialization enabled.
+* **events_latest** - A view containing only the latest state of all events without prior states. For offloading configurations with view materialization enabled, the materialized state in the data lake is used.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded). In the main panel of the **Offloading** page you find in the details section of an offloading configuration links which navigate you to the corresponding table and views in the Dremio UI.
 
 #### Offloading the inventory collection {#offloading-the-inventory-collection}
 
@@ -118,18 +114,17 @@ The inventory collection keeps track of managed objects. Note that {{< product-c
 1. Offload those entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake.
 2. Additional views over the target table are defined in the tenant's space in Dremio. Their names are defined as target table name plus *_all* and *_latest* respectively. The following examples use *inventory* as target table name:
     * **inventory_all** - A view with the updates between two offloading executions, not including the intermediate updates.
-    * **inventory_latest** - A view with the latest status of all managed objects, with all previous transitions being discarded.
-    * **inventory_c8y_cdh_latest_materialized** - An optional view which materializes the **inventory_latest** view if the offloading configuration has the view materialization enabled.
+    * **inventory_latest** - A view with the latest status of all managed objects, with all previous transitions being discarded. For offloading configurations with view materialization enabled, the materialized state in the data lake is used.
 
-The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded).
+The views are provided in your Dremio space. For details on views and spaces in Dremio, see [Refining offloaded {{< product-c8y-iot >}} data](/datahub/working-with-datahub/#refining-offloaded). In the main panel of the **Offloading** page you find in the details section of an offloading configuration links which navigate you to the corresponding table and views in the Dremio UI.
 
 {{< c8y-admon-info >}}
-The fields **childDevices** and **childAssets** are not part of the default offloading columns. They were included in previous versions, but lead to problems for a high number of list items in those fields. In such a case, the columns were no more readable by Dremio. If they need to be included in the offloaded data, they can be defined as additional result columns. However, you have to ensure that the number of list items in those fields does not exceed the Dremio limit configured in your environment.
+The fields **childDevices** and **childAssets** are not part of the default offloading columns. They were included in previous versions, but lead to problems for a high number of list items in those fields. In such a case, the columns were no more readable by Dremio. If they must be included in the offloaded data, they can be defined as additional result columns. However, you must ensure that the number of list items in those fields does not exceed the Dremio limit configured in your environment.
 {{< /c8y-admon-info >}}
 
 #### Offloading the measurements collection {#offloading-the-measurements-collection}
 
-The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or, for the TrendMiner case, one table with measurements of all types.
+The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you must explicitly select a target table layout, which is either having one table for one type or, for the TrendMiner case, one table with measurements of all types. In the main panel of the **Offloading** page you find in the details section of an offloading configuration a link which navigates you to the corresponding table in the Dremio UI.
 
 ##### Offloading measurements with the default target table layout {#offloading-measurements-with-the-default-target-table-layout}
 

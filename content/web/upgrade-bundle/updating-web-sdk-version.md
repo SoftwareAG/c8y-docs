@@ -8,8 +8,8 @@ weight: 5
 
 A UI build with an earlier version of the Web SDK is locked to the current version.
 A platform update doesn't update the UI version, however a UI running against a newer backend always keeps working as all APIs are backwards compatible.
-That's why an update makes mostly sense if a newer feature of the UI or the Web SDK needs to be used.
-Therefore, a new application needs to be built and deployed to the platform.
+That's why an update makes mostly sense if a newer feature of the UI or the Web SDK must be used.
+Therefore, a new application must be built and deployed to the platform.
 This recipe describes best practices to do so.
 
 ### Preparation {#preparation}
@@ -69,12 +69,12 @@ A git diffing tool can be very helpful for that.
 
 ### Diffing to reapply changes {#diffing-to-reapply-changes}
 
-A git diffing tool is useful to identify which changes have been made with the upgrade and which have been made earlier and now need to be reapplied.
+A git diffing tool is useful to identify which changes have been made with the upgrade and which have been made earlier and now must be reapplied.
 In the following screenshot we are using [Visual Studio Code](https://code.visualstudio.com/) to identify the changes, as it has a well integrated diffing tool for git (mostly all other IDEs have support for git diffing as well):
 
 ![Comparing the difference with vscode](/images/web-sdk/update-diff.png)
 
-With that tool it is easy to compare which file was changed with the upgrade and where custom changes may need to be reapplied.
+With that tool it is easy to compare which file was changed with the upgrade and where custom changes may have to be reapplied.
 In this case `MyCustomModule` must only be placed in the upgrade `app.module.ts`.
 When this change is done, the update can be verified.
 

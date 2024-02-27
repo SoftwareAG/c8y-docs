@@ -3,9 +3,9 @@ weight: 40
 title: Managing trusted certificates
 layout: redirect
 helpcontent:
-- label: trusted-certificates
+- label: managing-trusted-certificates
   title: Trusted certificates
-  content: "Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be 'trusted' by Cumulocity IoT, that is, added to the trusted certificates."
+  content: "Cumulocity IoT allows devices to connect via MQTT and LWM2M protocol using a X.509 certificate for authentication. To do so, the public certificate (root or intermediate) of the certificate authority must be 'trusted' by Cumulocity IoT. This public certificate should be added to the trusted certificates."
 ---
 
 {{< product-c8y-iot >}} allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by {{< product-c8y-iot >}}. A certificate is trusted when it is added to the trusted certificates and is in activated state.
@@ -32,7 +32,7 @@ The information in the table at the right side is extracted from the provided ce
 
 Before adding a new trusted certificate, make sure that:
 
-* It s a X.509 certificate in PEM format.
+* It is a X.509 certificate in PEM format.
 * It is in version 3.
 * It contains `BasicConstraints:[CA:true]`.
 * It has not already been uploaded to {{< product-c8y-iot >}}.
@@ -47,7 +47,7 @@ To add a certificate perform these steps:
 |:------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | Certificate name  | User-provided name for the certificate. This name is not used by {{< product-c8y-iot >}} and can serve as a description of the certificate.         |
 | Certificate       | File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it in your file system.            |
-| Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. |
+| Auto registration | If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered. The option does not support devices using the LWM2M protocol. |
 | Enabled/ Disabled | When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.               |
 
 3. Click **Add Certificate** to validate and save the certificate.

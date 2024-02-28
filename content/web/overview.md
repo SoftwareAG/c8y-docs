@@ -19,7 +19,7 @@ This guide provides information on the Web SDK which enables you to
 Web SDK for plugins is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. You can import plugins to Angular as described in [Extension points](/web/libraries/#extension-points).
 {{< /c8y-admon-important >}}
 
-### When should I use the Web SDK?
+### When can I use the Web SDK?
 
 The Web SDK is designed to extend default application or build new IoT solutions. It provides many default components to compose such applications. However, if one of our default applications already fits your usecase, you should think about extending it via the less-code approach and install plugins to them. If you simply have very special needs or can't find the right plugin for you use-case, consider building a custom application with the help of the Web SDK. There you basically have three options:
  1. Extend existing applications

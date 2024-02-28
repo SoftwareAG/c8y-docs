@@ -23,4 +23,4 @@ In {{< product-c8y-iot >}}, REST (Representational State Transfer) is used for a
 
 The {{< product-c8y-iot >}} REST API is an interface that allows for communication between the {{< product-c8y-iot >}} platform and other systems via HTTP and REST. It allows the user to perform operations and process data by issuing a simple request using any HTTP client such as a web browser.
 
-For details see the [{{< product-c8y-iot >}} OpenAPI Specification](https://{{< domain-c8y >}}/api/core/).
+For details see the [{{< openapi >}}](https://{{< domain-c8y >}}/api/core/).

@@ -10,7 +10,7 @@ The Edge appliance is security hardened by default.
 Furthermore, you can apply specific security configurations to enhance the security of your Edge appliance.
 
 {{< c8y-admon-important >}}
-For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines](https://empower.softwareag.com/sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
+For information about deployment security best practices and tenant administration security configuration guidelines, see [Security Hardening Guidelines]({{< link-sag-portal >}}sl24sec/SecuredServices/document/java/cumulocity_iot_platform/iot10-15-0/10-15-0_Security_Hardening_Guidelines_guide.pdf).
 {{< /c8y-admon-important >}}
 
 To apply the security configuration, follow the steps below:
@@ -50,7 +50,7 @@ Once enabled, you cannot disable the auditing system configuration.
     |||**Protocol**|The protocol (TCP or UDP) used to transfer the logs.
     ||Login banner|**Login banner**|The login banner for your Edge appliance.
     |Kubernetes|Audit policy||Kubernetes audit policy defines the rules about what events should be recorded and what data they should include.
-    |||**Level**|The audit level controls what Kubernetes event data is recorded. When configured, the Kubernetes event data is logged to the specified level. Logging more data increases the consumption of disk space. <br><br>**None** - do not log events.<br>**Metadata** - log request metadata (requesting user, timestamp, resource, verb, etc.) but not request or response body.<br>**Request** - log event metadata and request body but not response body. This does not apply for non-resource requests.<br>**RequestResponse** - log event metadata, request and response bodies. This does not apply for non-resource requests.<br><br>Default value: None
+    |||**Level**|The audit level controls what Kubernetes event data is recorded. When configured, the Kubernetes event data is logged to the specified level. Logging more data increases the consumption of disk space. <br><br>**None** - do not log events.<br>**Metadata** - log request metadata (requesting user, timestamp, resource, verb, and so on) but not request or response body.<br>**Request** - log event metadata and request body but not response body. This does not apply for non-resource requests.<br>**RequestResponse** - log event metadata, request and response bodies. This does not apply for non-resource requests.<br><br>Default value: None
     |||**Maximum age (days)**|The maximum number of days to retain the old Kubernetes audit log files. A high value has more impact on the disk space.<br><br>Default value: 30 days<br>Minimum value: 0<br>
       |||**Maximum numbers of log files to retain**|The maximum number of Kubernetes audit log files to retain. Setting a value of 0 indicates that there is no restriction on the number of files to retain. A high value has more impact on the disk space.<br><br>Default value: 10 files<br>Minimum value: 0<br>
       |||**Maximum size (megabytes)**|The maximum size in megabytes of the Kubernetes audit log file before it gets rotated. A high value has more impact on the disk space.<br><br>Default value: 100 MB<br>Minimum value: 0<br>

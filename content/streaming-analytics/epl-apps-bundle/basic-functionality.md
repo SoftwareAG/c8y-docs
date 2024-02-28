@@ -84,7 +84,7 @@ Once your app is activated, you should be able to see the results of it running.
 
 See also [Deploying apps](/streaming-analytics/epl-apps/#deploying-apps).
 
-#### Developing apps with Software AG Designer {#sag-designer}
+#### Developing apps with {{< sag-designer >}} {#sag-designer}
 
 {{< sag-designer >}} provides a full development environment and is the tool of choice when you have a complex EPL application. When your EPL app (that is, the monitor file) is ready, you must import it into {{< product-c8y-iot >}}.
 

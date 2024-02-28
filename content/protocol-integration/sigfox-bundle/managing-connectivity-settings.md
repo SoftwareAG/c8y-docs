@@ -47,11 +47,11 @@ The following information must be provided in order to create a connection:
 - **Description**: Description of the Sigfox connection being created.
 - **Login:** The login token is located in the API access entry in the Sigfox Cloud.
 - **Password:** The password token is located in the API access entry in the Sigfox Cloud next to **Password**.
-- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "Cumulocity" group. For example, *https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info*.
+- **Parent Group ID:** This ID is written in your URL when you are logged into your Sigfox account and you have selected the "{{< company-c8y >}}" group. For example, *https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info*.
 - **Base URL:** URL that points to the Sigfox Cloud account.
 
 {{< c8y-admon-info >}}
-The group name in the screenshot below is only an example. It does not necessarily have to be "Cumulocity".
+The group name in the screenshot below is only an example. It does not necessarily have to be "{{< company-c8y >}}".
 {{< /c8y-admon-info >}}
 
 ![Sigfox group ID](/images/device-protocols/sigfox/sigfox-parentgroupid.png)

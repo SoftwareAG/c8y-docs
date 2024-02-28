@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-4379
 version: 
 ---
-Asynchronous alarm inputs declared by the **Alarm Output** blocks were considered for connectivity chains between models, leading to "Internal error : inconsistent chain ID" errors in some scenarios. This is now fixed and synchronous inputs declared by a block are now no longer considered for model chains.
+Asynchronous alarm inputs declared by the **Alarm Output** blocks were considered for connectivity chains between models, leading to "Internal error : inconsistent chain ID" errors in some scenarios. This is now fixed and asynchronous inputs declared by a block are now no longer considered for model chains.

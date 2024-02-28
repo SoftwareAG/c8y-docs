@@ -26,7 +26,7 @@ The Web SDK is designed to extend default application or build new IoT solutions
  2. Build a new application with the help of the Web SDK
  3. Build a application from scratch
 
-Option 3. is the hardest option as you need to build nearly everything new. But you are free to choose your frameworks and tools. To support you on either of the options, we have developed and published certain packages to npm. Those packages help you to connect to our data, provides you with default components or help you test and deploy the app. Depending on your needs, you can decide which package you want to include. However we always encourage everyone to start with our boilerplates and the full Web SDK. You can find a description on how to use them in the [Getting started](/web/gettingstarted/) guide.
+The third option is the hardest option as you need to build nearly everything new. However, you are free to choose your frameworks and tools. To support you on either of the options, we have developed and published certain packages to npm. Those packages help you to connect to our data, provides you with default components or help you test and deploy the app. Depending on your needs, you can decide which package you want to include. However we always encourage everyone to start with our boilerplates and the full Web SDK. You can find a description on how to use them in the [Getting started](/web/gettingstarted/) guide.
 
 ### Packages {#packages}
 

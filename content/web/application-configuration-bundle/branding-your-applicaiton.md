@@ -74,35 +74,35 @@ logos and fonts and these can be very easily achieved by replacing a few variabl
 
 To override variables, `Custom CSS Properties`—also known as `CSS Variables`—can be utilized, offering configurability at runtime or during the build process.
 
-1. Ensure that you have installed the `@c8y/style` package; if not, you can install the base styles from npm using:
-
-```bash
-npm install @c8y/style
-```
-
-2. Create an Angular application based on the Cumulocity IoT application `blueprint` (refer to the [getting-started guide](#/getting-started/quickstart/overview)). In your `styles.less` file, located in the `src` folder, add the following line at the top:
+1. Ensure that your project is based on the Angular CLI (whether upgraded or created from scratch).
+2. Make sure you have installed the `@c8y/style` package. If not, you can install the base styles from npm using the following command.
 
 ```less
 @import '~@c8y/style/main.less';
 ```
 
+The example is based on this file structure:
+
 ```bash
 my-application
 |   ...
 │   angular.json
-│   packages.json
+│   package.json
 |   ...
 └───src
-│   │   styles.less
-|   |   favicon.ico
-|   |   ...
-|   └─── assets
-|        |      logo.jpg
-|        |      ...
-|        |
+    │   styles.less
+    │   favicon.ico
+    │   ...
+    └─── assets
+         │   logo.jpg
+         │   ...
 ```
 
-3. In the `cumulocity.config.ts` file, `buildTime` entry add `brandingEntry: './src/styles.less'`.
+3. If `styles.less` already exists, add the line `@import '~@c8y/style/main.less'` at the top of the file. If it does not exist, create it and add the mentioned line. Also, include it in the `styles` entry in `angular.json` under your project entry.
+
+4. In the `cumulocity.config.ts` file, add `brandingEntry: './src/styles.less'` to the `buildTime` entry.
+
+If you are using a different file from `styles.less` located in another location, please adjust the paths as described in the previous step. Ensure to correctly set both the `brandingEntry` and the `styles` entry in `angular.json`.
 
 ## Example customizations
 

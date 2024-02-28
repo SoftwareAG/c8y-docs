@@ -1,6 +1,6 @@
 ---
-weight: 30
-title: MQTT client examples
+weight: 20
+title: Device certificate
 layout: bundle
 section: 
   - device_management

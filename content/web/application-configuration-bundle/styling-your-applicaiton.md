@@ -51,8 +51,8 @@ Follow the steps below:
 
 1. Zip the files to ensure that they are in the root of the zip without any wrapping folder.
 2. Name the zip file `public-options.zip`.
-3. Upload it as a web application in Administration > Ecosystem > Applications.
-4. Subscribe your applications to one of your tenants under Tenants > Subtenants.
+3. Upload it as a web application in **Administration** > **Ecosystem** > **Applications**.
+4. Subscribe your applications to one of your tenants under **Tenants** > **Subtenants**.
 
 Afterwards, you can update the existing application with new variables in the detail
 view of the application.
@@ -63,7 +63,7 @@ branding manager in administration. It provides an form to set most of the setti
 manual generating of a JSON file and uploading applications.
 {{</ c8y-admon-info >}}
 
-## Styling by extending @c8y/style
+### Styling by extending @c8y/style
 
 A global CSS file created with [LESS](http://lesscss.org/) is used to style the application. The
 original LESS source is distributed via the npm package
@@ -108,7 +108,7 @@ The first line of code within the `branding.less` has to be:
 @import '~@c8y/style/extend.less';
 ```
 
-## Example customizations
+#### Example customizations
 
 At this point we are able to change the desired variables according to our needs.
 

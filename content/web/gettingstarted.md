@@ -55,7 +55,7 @@ last the latest available release. Additionally a version can be manually entere
 
 In step two, the base project to scaffold from must be selected. You can select any of the default
 Cumulocity applications to reuse the functions provided there. In alternative, you could start a
-blank application by selecting _"application"_ project.
+blank application by selecting the "application" project.
 
 ### Step 3: Start the local development server
 

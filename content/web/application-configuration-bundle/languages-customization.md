@@ -70,7 +70,7 @@ You can translate certain strings at runtime, which means they do not have to be
   };
 ```
 
-** Example:** 
+**Example:** 
 
 The following will translate a custom cookie banner:
 

@@ -1,6 +1,6 @@
 ---
 date: ""
-title: crl c8y-help (#5440) [GRAFT][release/y2024] (#5487)
+title: Additional information about certificate settings page.
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57827
 version: 1018.503.52
 ---
-crl c8y-help (#5440) [GRAFT][release/y2024] (#5487)
+The information regarding certificate management along with a link to the documentation is available on the certificate settings page.

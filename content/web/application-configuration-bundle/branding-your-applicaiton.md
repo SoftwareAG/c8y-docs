@@ -14,11 +14,11 @@ look like this:
 ```json
 {
   "brandingCssVars": {
-    "c8y-brand-primary": "#B10F2E",
-    "c8y-brand-complementary": "#DE7C5A",
-    "c8y-brand-dark": "#280000",
-    "c8y-brand-light": "#DE7C5A",
-    "c8y-palette-status-realtime" : "#f0f"
+    "--brand-primary": "#B10F2E",
+    "--brand-complementary": "#DE7C5A",
+    "--brand-dark": "#280000",
+    "--brand-light": "#DE7C5A",
+    "--palette-status-realtime" : "#f0f"
   }
 }
 ```
@@ -28,11 +28,11 @@ You can add other options, for example, the `hideNavigator` or add your own CSS 
 ```json
 {
   "brandingCssVars": {
-    "c8y-brand-primary": "#B10F2E",
-    "c8y-brand-complementary": "#DE7C5A",
-    "c8y-brand-dark": "#280000",
-    "c8y-brand-light": "#DE7C5A",
-    "c8y-palette-status-realtime" : "#f0f"
+    "--brand-primary": "#B10F2E",
+    "--brand-complementary": "#DE7C5A",
+    "--brand-dark": "#280000",
+    "--brand-light": "#DE7C5A",
+    "--palette-status-realtime" : "#f0f"
   },
   "hideNavigator": true,
   "extraCssUrls": "./custom.css",
@@ -63,91 +63,72 @@ branding manager in administration. It provides an form to set most of the setti
 manual generating of a JSON file and uploading applications.
 {{</ c8y-admon-info >}}
 
-### Styling by extending @c8y/style
 
-A global CSS file created with [LESS](http://lesscss.org/) is used to style the application. The
+## Styling by extending @c8y/style
+
+For styling the application global CSS created with [LESS](http://lesscss.org/) is used. The
 original LESS source is distributed via the npm package
-[@c8y/style](https://www.npmjs.com/package/@c8y/style). By extending these styles you can
-change any detail of the application, the most requested changes are: colors,
-logos and fonts. These can be very easily achieved by replacing a number of variables.
+[@c8y/style](https://www.npmjs.com/package/@c8y/style). By extending these styles it is possible to
+change any detail of the application but the vast majority of developers want to change: colors,
+logos and fonts and these can be very easily achieved by replacing a few variables.
 
-To override the variables it is possible to use one of the following:
+To override variables, `Custom CSS Properties`—also known as `CSS Variables`—can be utilized, offering configurability at runtime or during the build process.
 
-- LESS variables at build time
-- Custom CSS properties (at build time or configurable at runtime)
-
-If you do not use the [@c8y/cli](https://www.npmjs.com/package/@c8y/cli) make sure that you install
-the base styles from npm with:
+1. Ensure that you have installed the `@c8y/style` package; if not, you can install the base styles from npm using:
 
 ```bash
 npm install @c8y/style
 ```
 
-1. Create a LESS file called for instance `branding.less`.
-2. Save it inside a new folder, which can have any name you like.
-3. Inside this folder, create a subfolder for images.
+2. Create an Angular application based on the Cumulocity IoT application `blueprint` (refer to the [getting-started guide](#/getting-started/quickstart/overview)). In your `styles.less` file, located in the `src` folder, add the following line at the top:
+
+```less
+@import '~@c8y/style/main.less';
+```
 
 ```bash
 my-application
-│   app.modules.ts
-│   index.ts
+|   ...
+│   angular.json
 │   packages.json
 |   ...
-└───branding
-│   │   branding.less
-│   └───img
-│       │   favicon.ico
-│       │   main-logo.svg
-│       │   tenant-brand.svg
-│
+└───src
+│   │   styles.less
+|   |   favicon.ico
+|   |   ...
+|   └─── assets
+|        |      logo.jpg
+|        |      ...
+|        |
 ```
 
-The first line of code within the `branding.less` has to be:
+3. In the `cumulocity.config.ts` file, `buildTime` entry add `brandingEntry: './src/styles.less'`.
 
-```css
-@import '~@c8y/style/extend.less';
-```
+## Example customizations
 
-#### Example customizations
+At this point, we can modify the desired variables to suit our needs. To implement these changes, follow the examples below and add the specified code to your `styles.less` file.
 
-At this point we are able to change the desired variables according to our needs.
-
-For example, change the most important color of your branding, the main color, called
+Let us change for example the most important color of your branding, the main color, called
 **brand-primary**.
 
-To change this, set the respective LESS variable to a new color.
+This is done by setting the respective CSS variables to a new color.
 
-```css
-@brand-primary: red;
-```
-
-User interface elements like buttons, active navigation nodes or even active tabs as well as
-hover-states of buttons are now red.
-
-### To change the main logo
-
-The following example shows hot to change the main logo that is located at the top of the login dialog.
-
-```css
-@{logo-login} { background-image: url('./img/logo-main.svg')}
-@brand-logo-height: 48%;
-```
-
-As the last step, add your custom LESS branding to the `cumulocity.config.ts` file in the `buildTime` setting:
-
-```ts
-[...]
-
-export default {
-  runTime: {
-    [...]
-  },
-  buildTime: {
-    [...]
-    brandingEntry: './your_path_to_custom_style/style.less',
-  }
+```less
+:root {
+  --brand-primary: red;
 }
-[...]
 ```
 
-If you start the development server now, you can see you custom styling applied to your application.
+User interface elements like buttons, active navigation nodes or even active tabs as well as also
+hover-states of buttons are red now.
+
+To change the brand logo you can use this:
+
+```less
+:root {
+  --brand-logo-img: url('/apps/<applicationContextPath>/assets/logo.jpg');
+  --brand-logo-img-height: 48%;
+}
+```
+
+The `applicationContextPath` can be any application that you uploaded to the platform and which contains the `logo.jpg` file.

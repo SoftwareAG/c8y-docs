@@ -6,7 +6,7 @@
 # These owners will be the default owners for everything in the repo.
 * @BeateRixen marlene.windel@softwareag.com
 
-/content/device-management-application/ @Oezge-Akin @rssag
+/content/device-management-application/ @Oezge-Akin
 
 /content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com
 /content/change-logs/analytics/apama-in-c8y* @kailol-sag @BeateRixen marlene.windel@softwareag.com

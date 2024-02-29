@@ -1,5 +1,5 @@
 ---
-date:
+date: 2024-02-29T12:00:00.000Z
 title: Upgrade to Red Hat UBI 9
 change_type:
   - value: change-2c7RdTdXo4

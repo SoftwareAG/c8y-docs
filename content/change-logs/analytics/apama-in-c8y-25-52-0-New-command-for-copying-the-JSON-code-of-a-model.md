@@ -14,4 +14,4 @@ build_artifact:
 ticket: PAB-3198
 version: 25.52.0
 ---
-In the model manager, the **Copy** command has been added to the actions menu of a model. This command is also available to read-only users. In addition, the **Download** command, which also appears in this actions menu, is now also available to read-only users. See also [Copying a model](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#copying-a-model) and [Downloading a model](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#downloading-a-model) in the user documentation.
+In the Analytics Builder model manager, the **Copy** command has been added to the actions menu of a model. This command is also available to read-only users. In addition, the **Download** command, which also appears in this actions menu, is now also available to read-only users. See also [Copying a model](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#copying-a-model) and [Downloading a model](https://cumulocity.com/docs/streaming-analytics/analytics-builder/#downloading-a-model) in the user documentation.

@@ -1,6 +1,6 @@
 ---
 date: 2024-02-29T12:00:00.000Z
-title: New command for copying the JSON code of a model
+title: Copy the JSON code of an Analytics Builder model to the clipboard
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement

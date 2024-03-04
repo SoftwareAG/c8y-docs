@@ -45,7 +45,7 @@ Following is a list which explains the use cases of each package.
 * [@c8y/ngx-components](https://www.npmjs.com/package/@c8y/ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
 * [@c8y/style](https://www.npmjs.com/package/@c8y/style): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
 * @c8y/&lt;&lt;apps&gt;&gt;: The different applications. E.g. `@c8y/cockpit`, `@c8y/devicemanagement` and `@c8y/administraiton`.
-* [@c8y/websdk](https://www.npmjs.com/package/@c8y/): The scaffolding package that you can use to add the Cumulocity applicaiton to your Angular application.
+* [@c8y/websdk](https://www.npmjs.com/package/@c8y/websdk): The scaffolding package that you can use to add the Cumulocity applicaiton to your Angular application.
 * [@c8y/devkit](https://www.npmjs.com/package/@c8y/devkit): The builders to build or run a dev server.
 
 #### @c8y/client: Accessing data

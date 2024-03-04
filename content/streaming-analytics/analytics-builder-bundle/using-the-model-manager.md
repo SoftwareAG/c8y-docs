@@ -218,6 +218,22 @@ On the **Models** tab of the model manager, click the actions menu of the model 
 
 The resulting behavior depends on your browser. The model is usually downloaded to the download location of your browser.
 
+{{< c8y-admon-info>}}
+The **Download** command is also available when the model is active (read-only mode). This allows you to download the model at any time.
+{{< /c8y-admon-info>}}
+
+### Copying a model {#copying-a-model}
+
+Instead of downloading a model, you can also copy the JSON code of the model to the clipboard and then paste it into an editor of your choice.
+
+#### To copy a model {#to-copy-a-model}
+
+On the **Models** tab of the model manager, click the actions menu of the model that you want to copy and then click **Copy**.
+
+{{< c8y-admon-info>}}
+The **Copy** command is also available when the model is active (read-only mode). This allows you to copy the JSON code at any time.
+{{< /c8y-admon-info>}}
+
 ### Importing a model {#importing-a-model}
 
 You can import a model that has previously been downloaded in JSON format. This is helpful, for example, if you want to import a model from a different {{< product-c8y-iot >}} tenant.

@@ -77,7 +77,6 @@ import javax.net.ssl.TrustManagerFactory;
 
 public class MtlsClient {
 
-	// Configuration
 	private static final String KEYSTORE_NAME = "";
 	private static final String KEYSTORE_PASSWORD = "";
 	private static final String KEYSTORE_FORMAT = "";
@@ -89,15 +88,6 @@ public class MtlsClient {
 	private static final String DEVICE_ACCESS_TOKEN_PATH = "/devicecontrol/deviceAccessToken";
 	private static final String LOCAL_DEVICE_CHAIN = "";
 
-	//PEM format
-	// example. LOCAL_DEVICE_CHAIN = "-----BEGIN CERTIFICATE----- MIIcQhNJJ0F/lfjm -----END CERTIFICATE-----";
-
-	/**
-	 * The main method.
-	 *
-	 * @param args the arguments
-	 * @throws Exception the exception
-	 */
 	public static void main(String[] args) throws Exception {
 
 		TrustManagerFactory trustManagerFactory = getTrustManagerFactory();
@@ -108,14 +98,7 @@ public class MtlsClient {
 		HttpResponse<String> response = httpClient.send(buildRequest(), HttpResponse.BodyHandlers.ofString());
 		System.out.println(response.body());
 	}
-
-	/**
-	 * Gets the SSL context.
-	 *
-	 * @param trustManagerFactory the trust manager factory
-	 * @param keyManagerFactory the key manager factory
-	 * @return the SSL context
-	 */
+    
 	private static SSLContext getSSLContext(TrustManagerFactory trustManagerFactory, KeyManagerFactory keyManagerFactory) {
 		try {
 			SSLContext sslContext = SSLContext.getInstance("TLS");
@@ -136,12 +119,7 @@ public class MtlsClient {
 			throw new RuntimeException("Error in creating SSLContext", uRISyntaxException);
 		}
 	}
-
-	/**
-	 * Gets the trust manager factory.
-	 *
-	 * @return the trust manager factory
-	 */
+    
 	private static TrustManagerFactory getTrustManagerFactory() {
 		try {
 			KeyStore trustStore = KeyStore.getInstance(TRUSTSTORE_FORMAT);
@@ -155,11 +133,6 @@ public class MtlsClient {
 		}
 	}
 
-	/**
-	 * Gets the key manager factory.
-	 *
-	 * @return the key manager factory
-	 */
 	private static KeyManagerFactory getKeyManagerFactory() {
 		try {
 			KeyStore trustStore = KeyStore.getInstance(KEYSTORE_FORMAT);
@@ -175,9 +148,62 @@ public class MtlsClient {
 	}
 }
 ```
+#### To generate a valid certificate {#to-generate-a-valid-certificate}
 
-Replace `KEYSTORE_NAME`, `KEYSTORE_PASSWORD`, `KEYSTORE_FORMAT`, `TRUSTSTORE_NAME`, `TRUSTSTORE_PASSWORD`, `TRUSTSTORE_FORMAT`, `PLATFORM_URL` and `LOCAL_DEVICE_CHAIN` as needed.
+If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
+1.  Download the scripts from the [cumulocity-examples](https://github.com/SoftwareAG/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
+2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device management application in the UI](/device-management-application/managing-device-data/#managing-trusted-certificates) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
+3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
+4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*).
+5.  Download Public Server key from respective environment and import it into JKS using this command:
+
+```shell
+$ keytool -import -file platform.dev.c8y.io.crt -alias servercertificate -keystore truststore.jks 
+```
+
+The code of the {{< product-c8y-iot >}} client implemented in Java, which connects to the platform using x.509 certificates, is available here: https://github.com/SoftwareAG/cumulocity-examples/tree/develop/device-jwt-rest-client.
+The following configuration is required before calling the device access token API:
+
+* KEYSTORE_NAME - The path to your keystore which contains the private key and the chain of certificates, which the device uses to authenticate itself.
+* KEYSTORE_PASSWORD is the password created for keystore to use its private key.
+* KEYSTORE_FORMAT - Either "JKS" or "PKCS12" depending on the file format. The path is provided by KEYSTORE_NAME.
+* TRUSTSTORE_NAME - The path to your truststore which contains the certificate of the server.
+* TRUSTSTORE_PASSWORD - The password to access the truststore.
+* TRUSTSTORE_FORMAT - Either "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
+* PLATFORM_URL - The URL of the platform.
+* DEVICE_ACCESS_TOKEN_PATH API - The endpoint responsible for the mTLS protocol.
+* LOCAL_DEVICE_CHAIN - The whole chain in PEM format.
+
+### To change the configuration {#to-change-the-configuration}
+
+To change the configuration in the REST java client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
+
+```java
+private static final String KEYSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";
+private static final String KEYSTORE_PASSWORD = "changeit";
+private static final String KEYSTORE_FORMAT = "jks";
+
+private static final String TRUSTSTORE_NAME = "truststore.jks";
+private static final String TRUSTSTORE_PASSWORD = "changeit";
+private static final String TRUSTSTORE_FORMAT = "jks";
+
+private static final String LOCAL_DEVICE_CHAIN = "-----BEGIN CERTIFICATE----- MIIcQhNJJ0F/lfjm -----END CERTIFICATE-----";
+private static final String PLATFORM_URL = "<URL of the platform>";
+```  
+
+The device can now generate JWT token. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/certificate/#device-certificates) process.
+
+{{< c8y-admon-info >}}
+You do not need to set a password, user or tenant for the REST java client using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
+{{< /c8y-admon-info >}}
+
+After filling in this data, the example client will use the provided data to retrieve the device access token to the specified platform using certificates.
+
+In general, the mTLS protocol client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
+JSSE provides the Java implementation of the SSL and TLS protocol which can be configured by developers using its classes.
+The documentation of the Java Secure Socket Extension shows how the SSL connection is established and provides some examples of customizing the implementation.
+The full document is available on the [official Oracle website](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html).
 {{< product-c8y-iot >}} mTLS protocol supports secured SSL connections.
 
 What does the code in `main` do?

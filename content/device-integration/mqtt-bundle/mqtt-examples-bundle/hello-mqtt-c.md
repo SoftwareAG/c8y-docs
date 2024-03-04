@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Hello MQTT C
 layout: redirect
 ---

@@ -1,5 +1,5 @@
 ---
-weight: 35
+weight: 30
 title: Device integration using REST
 layout: bundle
 slug: rest

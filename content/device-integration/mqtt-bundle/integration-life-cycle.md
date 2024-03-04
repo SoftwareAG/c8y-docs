@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 15
 title: Integration life cycle
 layout: redirect
 ---

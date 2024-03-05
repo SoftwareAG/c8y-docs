@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Unable to switch tabs when dashboard has two widgets with dashboard date context (#5682) [GRAFT][release/cd] (#5707)
+title: Fix inability to switch tabs with multiple widgets using dashboard date context
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-58128
 version: 1019.7.3
 ---
-Unable to switch tabs when dashboard has two widgets with dashboard date context (#5682) [GRAFT][release/cd] (#5707)
+Fixed an issue where users were unable to switch between dashboard tabs if the dashboard contained two or more widgets using the dashboard date context filter. Users can now smoothly transition between tabs regardless of the number of dashboard date context widgets present.

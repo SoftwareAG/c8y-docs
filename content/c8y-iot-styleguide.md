@@ -8,7 +8,7 @@ audience:
   - Users
 section:
 - app_enablement
-weight: 90
+weight: 30
 ---
 
 Learn more about the {{< product-c8y-iot >}} UI guidelines to create interfaces consistent with the {{< company-c8y >}} principles and best practices.

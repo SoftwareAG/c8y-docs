@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Adjust font-family and font size for Japanese (#5407) [GRAFT][release/cd] (#5647)
+title: Adjust font family and size for Japanese text
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

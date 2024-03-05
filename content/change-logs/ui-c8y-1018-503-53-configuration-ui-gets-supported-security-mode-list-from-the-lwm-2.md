@@ -1,6 +1,6 @@
 ---
 date: ""
-title: configuration UI gets supported security mode list from the lwm2m agent  [GRAFT][release/y2024] (#5659)
+title: Configuration UI gets supported security mode list from LWM2M Agent
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4

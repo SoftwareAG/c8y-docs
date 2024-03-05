@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57758
 version: 1019.6.12
 ---
-Adjust font-family and font size for Japanese (#5407) [GRAFT][release/cd] (#5647)
+The font family and size for Japanese text have been adjusted to improve readability and visual consistency across different platforms. These tweaks help ensure Japanese characters render cleanly at an appropriate size across varying screen densities and resolutions.

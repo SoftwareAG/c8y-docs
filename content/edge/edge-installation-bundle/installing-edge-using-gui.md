@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-To install {{< product-c8y-iot >}} Edge using the user interface:
+To install Edge using the user interface:
 
 1. Connect and start the Edge appliance in the hypervisor. Wait until the network configuration screen appears.
     <img src="/images/edge/edge-network-configurator.png" name="Network Configurator" style="width:75%;"/>
@@ -48,15 +48,15 @@ While configuring the network on VMware based hypervisors, do not us the IP addr
 Do not use the root credentials to perform any task. The root credentials must be used only when asked by {{< company-sag >}} support personnel. Using it otherwise might void the appliance support.
     {{< /c8y-admon-important >}}
 
-8. Create an administrator account to access the {{< product-c8y-iot >}} Edge tenant and the {{< product-c8y-iot >}} Edge {{< management-tenant >}}, and click **Next**.
+8. Create an administrator account to access the Edge tenant and the Edge {{< management-tenant >}}, and click **Next**.
 
 9. Provide a fully qualified domain name below **Domain name**.
 
-   For example, "myown.iot.com". Here, you must have the {{< product-c8y-iot >}} Edge license for the domain name **iot.com** or **myown.iot.com**.
+   For example, "myown.iot.com". Here, you must have the Edge license for the domain name **iot.com** or **myown.iot.com**.
 
    The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/edge-installation/#domain-name-validation-for-edge-license-key-generation).
 
-10. Provide the {{< product-c8y-iot >}} Edge license file associated with your domain name below **Licence file**.
+10. Provide the Edge license file associated with your domain name below **Licence file**.
 
 11. Provide the SSL certificate file and the SSL certificate key file.
 

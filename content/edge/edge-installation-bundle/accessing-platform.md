@@ -26,7 +26,7 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
 {{< c8y-admon-info >}}
-{{< product-c8y-iot >}} Edge on mobile devices shows some limitations.
+Edge on mobile devices shows some limitations.
 The limitations could be the following:
 
 * The usage may be constrained by the memory and the processing power available on the devices. <br>  

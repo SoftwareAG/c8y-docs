@@ -21,7 +21,7 @@ You can share the following data with the tenant account:
 * measurements
 
 {{< c8y-admon-important >}}
-Data broker in {{< product-c8y-iot >}} Edge does not support synchronization of the [operations](/concepts/domain-model/#operations).
+Data broker in Edge does not support synchronization of the [operations](/concepts/domain-model/#operations).
 {{< /c8y-admon-important >}}
 
 To upload the data to a {{< product-c8y-iot >}} tenant account, you must first create a data connector in the Edge appliance and subscribe this connector in the tenant account.

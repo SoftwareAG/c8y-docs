@@ -6,7 +6,7 @@ section:
   - edge_server
 ---
 
-A key feature of {{< product-c8y-iot >}} Edge is the ability to operate the {{< product-c8y-iot >}} platform using a custom domain name. This means that you can configure the Edge appliance to serve you using a domain name of choice, for example *.iot.mycompany.com rather than the default URL of {{< product-c8y-iot >}} Edge. In addition, you can create subtenants
+A key feature of Edge is the ability to operate the platform using a custom domain name. This means that you can configure the Edge appliance to serve you using a domain name of choice, for example *.iot.mycompany.com rather than the default URL of Edge. In addition, you can create subtenants
 using your domain. These will use *\<subtenantName\>.iot.mycompany.com* as their host names.
 
 {{< c8y-admon-important >}}

@@ -29,7 +29,7 @@ Substitute the Edge name and namespace name, which is currently *c8yedge* in the
 You can also follow the events raised for the Edge CR by running the command below:
 
 ```shell
-kubectl get events -n c8yedge --field-selector involvedObject.name=c8yedge --watch
+kubectl get events -n c8yedge --field-selector involvedObject.name=c8yedge --sort-by=.metadata.creationTimestamp --watch
 ```
 
 The **Events** section in the output of the `describe edge` command specifies the installation progress and the **Status** section displays the generation of the Edge CR which is being installed and its current state. Once the installation succeeds, the **Status** section also displays the generation of the CR which is deployed, {{< product-c8y-iot >}} Edge version, last deployed time/age, validation warnings, if any and some help commands for downloading the diagnostic logs, extracting the Root CA of the Edge Operator generated TLS certificates.

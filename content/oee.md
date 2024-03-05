@@ -8,7 +8,7 @@ section:
   - app_enablement
 audience:
   - Users
-weight: 100
+weight: 50
 ---
 
 Use the OEE application to measure the efficiency, effectiveness and performance of your production processesby creating OEE configuration calculations for machines and machine lines.

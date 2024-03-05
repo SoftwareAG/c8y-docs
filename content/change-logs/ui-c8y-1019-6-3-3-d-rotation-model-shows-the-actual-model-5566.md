@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-57985
-version: 1019.6.3
+version: 1018.503.47
 ---
 A bug has been fixed that prevented the "Rotation" widget from displaying the actual model.

@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3161
 version: 1018.503.53
 ---
-configuration UI gets supported security mode list from the lwm2m agent  [GRAFT][release/y2024] (#5659)
+The Configuration UI now gets the supported security mode list from the LWM2M agent. This allows the UI to display the available security modes for the user to select when configuring the LWM2M client. The supported security modes are retrieved directly from the LWM2M agent via its API.

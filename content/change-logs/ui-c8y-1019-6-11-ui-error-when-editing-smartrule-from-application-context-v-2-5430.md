@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-53381
 version: 1019.6.11
 ---
-UI error when editing smartrule from application context v2 (#5430) [GRAFT][release/cd] (#5646)
+Fixed an UI error that occurred when editing a Smart rule from the Application context. This prevents sending request with wrong MO id and then displaying alert message in UI when making edits to Smart rules.

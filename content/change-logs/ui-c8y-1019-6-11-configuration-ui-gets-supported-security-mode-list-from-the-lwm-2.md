@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Configuration UI gets supported security mode list from LWM2M agent
+title: Supported security modes retrieved dynamically from LWM2M agent
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4

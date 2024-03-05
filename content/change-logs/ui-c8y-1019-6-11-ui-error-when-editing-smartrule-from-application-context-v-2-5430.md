@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-53381
 version: 1019.6.11
 ---
-Fixed an UI error that occurred when editing a Smart rule from the Application context. This prevents sending request with wrong MO id and then displaying alert message in UI when making edits to Smart rules.
+Fixed an UI error that occurred when editing a smart rule from the application context. This fix prevents sending a request with a wrong managed object ID and then displaying an alert message.

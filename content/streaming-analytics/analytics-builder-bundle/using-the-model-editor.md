@@ -135,7 +135,11 @@ For the input and output blocks, you can globally replace the input sources and 
     The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
-    The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
+    Using the check boxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, device groups, smart groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" check box.
+
+    The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search and filter criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
+
+    The managed objects that are shown when searching depend on a tenant option. You can restrict the search to show only managed objects of a specific type. For more information, see [Searching for devices, groups and/or assets](/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets).
 
     Click the button which is shown when you hover over an entry to select the input source or output destination that you want to use.
     The name of that button depends on the entry that is currently selected:
@@ -156,7 +160,6 @@ Select the **Trigger Device** option instead to send the output to the device wh
 
     The maximum number of shown input sources and output destinations depends on a tenant option. For more information, see [Configuring the number of shown input sources and output destinations](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-input-sources-and-output-destinations).
 
-    The managed objects that are shown when searching also depend on a tenant option. You can restrict the search to show only managed objects of a specific type. For more information, see [Searching for devices, groups and/or assets](/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets).
 3.  It is possible to use a template parameter instead of specifying a value for a block parameter. This allows different values to be used for this block parameter in different instances of the model \(see [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for more information\). Create a template parameter of a matching type in the **Template Parameters** dialog box \(see [Managing template parameters](/streaming-analytics/analytics-builder/#managing-template-parameters)\), switch the block parameter to use a template parameter \(see below\) and select the desired template parameter from the drop-down list box. Or create the template parameter directly in the block parameter editor \(see below\).
 
     The block parameter editor provides the following options in a drop-down list box:
@@ -332,10 +335,6 @@ After you have replaced the devices, you must verify that the measurements that 
 2.  In the **Current** drop-down list box of the resulting dialog box, select the source or destination that you want to replace. All input sources and output destinations that are used in the model are available for selection.
 
 3.  Click the **Replace with** box to display a dialog box. The dialog box is the same as when selecting a input source or output destination in the block parameter editor. See [Editing the parameters of a block](/streaming-analytics/analytics-builder/#editing-the-parameters-of-a-block) for more information on this dialog box. Click the button which is shown when you hover over an entry to select the source or destination that you want to use instead.
-
-    The maximum number of shown sources and destinations depends on a tenant option. For more information, see [Configuring the number of shown input sources and output destinations](/streaming-analytics/analytics-builder/#configuring-the-number-of-shown-input-sources-and-output-destinations).
-
-    The managed objects that are shown when searching also depend on a tenant option. You can restrict the search to show only managed objects of a specific type. For more information, see [Searching for devices, groups and/or assets](/streaming-analytics/analytics-builder/#searching-for-devices-groups-andor-assets).
 
 4.  If you want to replace further sources or destinations, click **Add row**. This is only shown if more than one source or destination has been defined in the current model.
 

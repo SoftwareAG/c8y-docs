@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI error when editing smartrule from application context v2 (#5430) [GRAFT][release/cd] (#5646)
+title: Fix UI error when editing Smart rule from Application context
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

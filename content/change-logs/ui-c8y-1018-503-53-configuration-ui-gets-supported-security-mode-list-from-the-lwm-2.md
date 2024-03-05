@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Configuration UI gets supported security mode list from LWM2M Agent
+title: Supported security modes retrieved dynamically from LWM2M agent
 product_area: Device management & connectivity
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-3161
 version: 1018.503.53
 ---
-The Configuration UI now gets the supported security mode list from the LWM2M agent. This allows the UI to display the available security modes for the user to select when configuring the LWM2M client. The supported security modes are retrieved directly from the LWM2M agent via its API.
+The supported security modes, which are available for selection on the configuration page, are now retrieved dynamically from the LWM2M agent rather than being hardcoded in the UI.

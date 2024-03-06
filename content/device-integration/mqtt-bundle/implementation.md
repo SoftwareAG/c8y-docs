@@ -1,5 +1,5 @@
 ---
-weight: 25
+weight: 15
 title: MQTT implementation
 layout: redirect
 ---

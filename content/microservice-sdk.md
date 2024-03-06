@@ -8,7 +8,7 @@ section:
   - app_enablement
 audience:
   - Developers
-weight: 30
+weight: 40
 ---
 
 Learn how to extend your platform with customer-specific functionality by developing and deploying microservices using the Microservice SDK.

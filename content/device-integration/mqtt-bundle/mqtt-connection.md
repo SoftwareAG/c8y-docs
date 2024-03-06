@@ -1,31 +1,10 @@
 ---
-weight: 20
+weight: 25
 title: MQTT connection
 layout: redirect
 ---
 
-### JWT token retrieval {#jwt-token-retrieval}
 
-A device which is authenticated by certificates and connected to the {{< product-c8y-iot >}} platform can receive a token which can later be used to authenticate HTTP requests.
-
-* First the device subscribes to the topic <kbd>s/dat</kbd>.
-* Then the device publishes an empty message on the topic <kbd>s/uat</kbd>.
-* After a while a token will be published on the subscribed <kbd>s/dat</kbd> topic in the format:
-
-```plain
-71,<<Base64 encoded JWT token>>
-```
-
-A device token lifetime can be configured using tenant options with a category of `oauth.internal` and a key of `device-token.lifespan.seconds`.
-The default value is 1 hour.
-The minimum allowed value is 5 minutes.
-Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}} for more details.
-
-A device can fetch a new device token before the old one expires, if it request a JWT token after half of the token's lifetime has passed.
-
-{{< c8y-admon-caution >}}
-A device can only subscribe to a topic like <kbd>s/dat</kbd> once certificate based mutual authentication is successful. The MQTT broker will not make any information available on the device's subscribed topics until the device publishes a message to <kbd>s/uat</kbd> or <kbd>s/us</kbd>.
-{{< /c8y-admon-caution >}}
 
 ### MQTT example client {#mqtt-example-client}
 
@@ -40,16 +19,7 @@ Here is an example that shows how to add the needed dependency in Maven to use E
         <version>${paho.version}</version>
     </dependency>
 
-Then the instance of the MQTT client can be created with a single line:
 
-
-    MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
-
-The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
-The certificate's common name should not contain `:` characters, see [MQTT ClientId](#mqtt-clientid) for more information.
-The CLIENT_ID value must match the value of the common name of the device certificate that will be used.
-The "d:" prefix is used in {{< product-c8y-iot >}} for device connections and it should not be removed or changed.
-Now the only thing that must be configured to establish the SSL connection is to fill paths in the code fragment:
 
     sslProperties.put(SSLSocketFactoryFactory.KEYSTORE, getClass().getClassLoader().getResource(KEYSTORE_NAME).getPath());
     sslProperties.put(SSLSocketFactoryFactory.KEYSTOREPWD, KEYSTORE_PASSWORD);

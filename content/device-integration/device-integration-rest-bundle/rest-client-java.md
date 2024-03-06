@@ -36,7 +36,7 @@ To develop a very simple "Hello, world!" REST client for {{< product-c8y-iot >}}
 To create a plain Java project with Maven, execute the following command:
 
 ```shell
-$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=device-jwt-rest-client -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+$ mvn archetype:generate -DgroupId=c8y.example.x509 -DartifactId=x509-rest-client -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
 This will create a folder device-jwt-rest-client in the current directory with a skeleton structure for your project.
@@ -51,10 +51,10 @@ If you are using Java 9 or later, you must set the source and target as describe
 
 #### Create a Java application {#create-a-java-application}
 
-Edit the _App.java_ file located in the folder device-jwt-rest-client -java/src/main/java/c8y/example_ with the following content:
+Edit the X509RestClient.java file located in the folder x509-rest-client -java/src/main/java/c8y/example/x509 with the following content:
 
 ```java
-package c8y.example;
+package c8y.example.x509;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -75,7 +75,7 @@ import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 
-public class MtlsClient {
+public class X509RestClient {
 
 	private static final String KEYSTORE_NAME = "";
 	private static final String KEYSTORE_PASSWORD = "";
@@ -218,16 +218,16 @@ What does the code in `main` do?
 Use the following commands to build the application:
 
 ```shell
-$ cd mtls-rest-client
+$ cd x509-rest-client
 $ mvn clean install
 ...
 [INFO]
-[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ device-jwt-rest-client ---
-[INFO] Building jar: /home/schm/Pulpit/device-jwt-rest-client/target/device-jwt-rest-client-1.0-SNAPSHOT.jar
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ x509-rest-client ---
+[INFO] Building jar: /home/schm/Pulpit/device-jwt-rest-client/target/x509-rest-client-1.0-SNAPSHOT.jar
 [INFO]
-[INFO] --- maven-install-plugin:2.4:install (default-install) @ device-jwt-rest-client ---
-[INFO] Installing /home/schm/Pulpit/device-jwt-rest-client/target/device-jwt-rest-client-1.0-SNAPSHOT.jar to /home/schm/.m2/repository/c8y/example/device-jwt-rest-client/1.0-SNAPSHOT/device-jwt-rest-client-1.0-SNAPSHOT.jar
-[INFO] Installing /home/schm/Pulpit/mtls-rest-client/pom.xml to /home/schm/.m2/repository/c8y/example/device-jwt-rest-client/1.0-SNAPSHOT/device-jwt-rest-client-1.0-SNAPSHOT.pom
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ x509-rest-client ---
+[INFO] Installing /home/schm/Pulpit/x509-rest-client/target/x509-rest-client-1.0-SNAPSHOT.jar to /home/schm/.m2/repository/c8y/example/x509/x509-rest-client/1.0-SNAPSHOT/x509-rest-client-1.0-SNAPSHOT.jar
+[INFO] Installing /home/schm/Pulpit/x509-rest-client/pom.xml to /home/schm/.m2/repository/c8y/example/x509/x509-rest-client/1.0-SNAPSHOT/x509-rest-client-1.0-SNAPSHOT.pom
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -240,13 +240,13 @@ $ mvn clean install
 and this command to run it:
 
 ```shell
-$ mvn exec:java -Dexec.mainClass="c8y.example.App"
+$ mvn exec:java -Dexec.mainClass="c8y.example.x509.X509RestClient"
 ...
 [INFO]                                                                         
 [INFO] ------------------------------------------------------------------------
-[INFO] Building device-jwt-rest-client 1.0-SNAPSHOT
+[INFO] Building x509-rest-client 1.0-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
 [INFO]
-[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ device-jwt-rest-client ---
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ x509-rest-client ---
 access_token ="eyJhbGciOiJSUI6IkpXVCJ9.eyJktYTJmYy0x...S 04HPk3GQUd-fHyJ2oKSuetWFWpUSBPzJzl_73_3yauIlplHorlSoQ"
 ```

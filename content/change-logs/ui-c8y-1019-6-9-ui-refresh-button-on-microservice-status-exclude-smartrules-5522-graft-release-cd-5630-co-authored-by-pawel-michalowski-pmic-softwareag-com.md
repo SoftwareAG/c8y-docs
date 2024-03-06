@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-55911
 version: 1019.6.9
 ---
-The **Refresh** button on the microservice status details page includes the smart rules list.
+The **Refresh** button on the **Status** tab of the microservice details now includes the smart rules list.

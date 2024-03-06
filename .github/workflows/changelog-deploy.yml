@@ -1,0 +1,29 @@
+name: Changelog deployment date
+
+on:
+  schedule:
+    # Runs the workflow every weekday at 10:00 and 18:00
+    - cron: '0 10,18 * * 1-5'
+
+  workflow_dispatch:
+
+jobs:
+  update-changelog-deployment :
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        #TODO figure out how to run this on develop and release/y2024 branches and be able to extend this branch list in the future
+
+      #TODO figure out how to best prepare python libraries
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+          cache: pip
+
+      - name: Run script
+        run: python scripts/workflow/changelog_compare.py
+
+      # TODO: Figure out how to push to the correct branch
+      - name: Force push
+        run: git push origin main --force

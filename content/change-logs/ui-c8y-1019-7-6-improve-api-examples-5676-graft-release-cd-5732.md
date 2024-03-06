@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Improve api examples (#5676) [GRAFT][release/cd] (#5732)
+title: Improved JSDoc annotations
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57884
 version: 1019.7.6
 ---
-Improve api examples (#5676) [GRAFT][release/cd] (#5732)
+The JSDoc annotations have been improved in this release. Changes include fixing broken links, updating outdated information, adding missing code snippets, and improving overall clarity. These improvements aim to provide developers with better references and guides when working with the Web SDK.

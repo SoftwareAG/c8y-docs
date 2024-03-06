@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-57884
 version: 1019.7.6
 ---
-The JSDoc annotations have been improved in this release. Changes include fixing broken links, updating outdated information, adding missing code snippets, and improving overall clarity. These improvements aim to provide developers with better references and guides when working with the Web SDK.
+The JSDoc annotations have been improved. Changes include fixing broken links, updating outdated information, adding missing code snippets, and improving overall clarity. These improvements aim at providing developers with better references and guides when working with the Web SDK.

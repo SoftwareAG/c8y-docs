@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix inability to switch tabs with multiple widgets using dashboard date context
+title: Switching tabs with multiple widgets using the dashboard date context works smoothly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m

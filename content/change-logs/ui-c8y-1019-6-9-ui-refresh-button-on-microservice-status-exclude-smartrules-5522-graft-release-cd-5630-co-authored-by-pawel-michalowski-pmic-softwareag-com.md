@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Updated user interface refresh button to exclude SmartRules microservice status
+title: Refresh button includes smart rules list in microservice status page
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m

@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Rest client java
+title: X509 Rest client java
 layout: redirect
 ---
 

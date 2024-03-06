@@ -1,17 +1,15 @@
 ---
 weight: 70
-title: Device access tokens
+title: Access token using X509 certificates
 layout: redirect
 ---
-Devices can authenticate against the {{< product-c8y-iot >}} platform via mTLS protocol using X.509 client certificates.
-
-Each tenant individually defines whom it trusts by uploading the base CA certificate.
+Devices can authenticate against the {{< product-c8y-iot >}} platform via mTLS over REST protocol using X.509 client certificates.
 
 Retrieving device access tokens from the platform with certificates does not require the tenant ID, username and password. Authentication information will be obtained from the certificates.
 
 ### JWT token retrieval {#jwt-token-retrieval}
 
-A device which is authenticated by certificates and retrieves tokens from the {{< product-c8y-iot >}} platform which can later be used to authenticate HTTP requests.
+The devices can connect to {{< product-c8y-iot >}} using the below REST endpoint and authenticate using the certificates. In response, a JWT session token is issued by the platform after successful authentication which can later be used to make subsequent requests.
 
 
 	POST /devicecontrol/deviceAccessToken
@@ -22,11 +20,11 @@ This call can be done by executing the following curl statement:
 
     curl -v -cert domain-cert.pem -key domain-private-key.pem \
        -H 'Accept: application/json' \
-       -H 'X-Ssl-Cert-Chain:<cert-chain>' \
+       -H 'X-Ssl-Cert-Chain:<device certificate chain>' \
        -X POST \
        https://<{{< product-c8y-iot >}} tenant domain>/devicecontrol/deviceAccessToken
 
-Replace `<cert-chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}.
+Replace `<device certificate chain>` with your valid certificate chain when registering with {{< product-c8y-iot >}}.
 
 You will receive a response like that:
 
@@ -42,8 +40,14 @@ The default value is 1 hour.
 The minimum allowed value is 5 minutes.
 Refer to the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}} for more details.
 
-A device can fetch a new device token before the old one expires, if it requests a JWT token after half of the token's lifetime has passed.
+It is recommended that the devices invalidate the session by explicitly calling 'logout' API before closing the HTTP connection. This will avoid any misuse of JWT session tokens generated.
+Here is the logout API. Refer to the [Users API](https://{{< domain-c8y >}}/api/core/#tag/Users) in the {{< openapi >}} for more details.
+
+        POST /user/logout
+        Accept: application/json
+        Content-Type: application/json
+        Authorization: Bearer "JWT Session token"
 
 {{< c8y-admon-caution >}}
-Only devices which are registered to use cert auth can retrieve a JWT token via REST protocol using this endpoint. Once the certificate-based mutual authentication is successful with a valid certificate chain the device retrieves the token. The mTLS protocol can be leveraged using the device certificate and its key using this endpoint only.
+Only devices that are registered to use certificate authentication can retrieve a JWT session token using this endpoint. Once the device successfully authenticates using certificates (ie., by using its private key and the certificate chain), the device retrieves the JWT session token. This mTLS over HTTP endpoint can be leveraged only over this endpoint.
 {{< /c8y-admon-caution >}}

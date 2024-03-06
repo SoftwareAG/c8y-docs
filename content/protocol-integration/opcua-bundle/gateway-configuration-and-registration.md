@@ -374,10 +374,11 @@ gateway:
   applicationIdentity:
     validityTime: 3650
 
-  # Timeout scanning address space in minutes
+  # Timeout scanning address space in minutes and a pause between retries in milliseconds
   scanAddressSpace:
     timeout: 1440
     retries: 5
+    pauseMillisForRetry: 700
 ```
 
 ### Logging {#logging}

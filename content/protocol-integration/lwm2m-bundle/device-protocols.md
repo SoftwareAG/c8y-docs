@@ -167,6 +167,9 @@ The LWM2M agent serializes different LWM2M data types to binary data depending o
 </table>
 
 
+#### Ignore empty values {#ignore-empty-values}
+
+If the **Ignore empty values** option is selected and a device sends empty data, the agent does not perform any action that is configured. If this option is not selected and a device sends empty data, the agent performs the mapped action (default behavior).
 
 
 #### Auto observe {#auto-observe}

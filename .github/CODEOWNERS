@@ -6,8 +6,9 @@
 # These owners will be the default owners for everything in the repo.
 * @BeateRixen marlene.windel@softwareag.com
 
-/content/device-management-application/ @Oezge-Akin @rssag
+/content/device-management-application/ @Oezge-Akin
 
-/content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com @rssag
+/content/streaming-analytics/ @kailol-sag @BeateRixen marlene.windel@softwareag.com
+/content/change-logs/analytics/apama-in-c8y* @kailol-sag @Rob-J-SAG @BeateRixen marlene.windel@softwareag.com
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @kailol-sag
